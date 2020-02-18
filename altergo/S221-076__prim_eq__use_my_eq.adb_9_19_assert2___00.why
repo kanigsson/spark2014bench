@@ -1,0 +1,183 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type us_main_type
+
+logic us_main_eq : us_main_type, us_main_type -> bool
+
+type us_rep
+
+logic bool_eq : us_rep, us_rep -> bool
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic user_eq : us_rep, us_rep -> bool
+
+logic dummy : us_rep
+
+type t__ref = { t__content : us_rep
+}
+
+function t__ref_t__content__projection(a: t__ref) : us_rep = (a).t__content
+
+logic my_prop : us_rep, us_rep -> bool
+
+logic my_prop__function_guard : bool, us_rep, us_rep -> prop
+
+logic oeq : us_rep, us_rep -> bool
+
+logic oeq__function_guard : bool, us_rep, us_rep -> prop
+
+axiom user_eq__def_axiom :
+  (forall a:us_rep. forall b:us_rep. oeq__function_guard(oeq(a, b), a, b))
+
+axiom user_eq__def_axiom1 :
+  (forall a:us_rep. forall b:us_rep [user_eq(a, b)]. (user_eq(a, b) = oeq(a,
+  b)))
+
+type us_split_fields = { rec__use_my_eq__holder__content : us_rep
+}
+
+function us_split_fields_rec__use_my_eq__holder__content__projection(a: us_split_fields) : us_rep =
+  (a).rec__use_my_eq__holder__content
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep1 = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep1) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq1(a: us_rep1, b: us_rep1) : bool =
+  (if (user_eq(((a).us_split_fields1).rec__use_my_eq__holder__content,
+  ((b).us_split_fields1).rec__use_my_eq__holder__content) = true) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic use_my_eq__holder__content__first__bit : int
+
+logic use_my_eq__holder__content__last__bit : int
+
+logic use_my_eq__holder__content__position : int
+
+axiom use_my_eq__holder__content__first__bit_axiom :
+  (0 <= use_my_eq__holder__content__first__bit)
+
+axiom use_my_eq__holder__content__last__bit_axiom :
+  (use_my_eq__holder__content__first__bit <  use_my_eq__holder__content__last__bit)
+
+axiom use_my_eq__holder__content__position_axiom :
+  (0 <= use_my_eq__holder__content__position)
+
+logic user_eq1 : us_rep1, us_rep1 -> bool
+
+logic dummy1 : us_rep1
+
+type holder__ref = { holder__content : us_rep1
+}
+
+function holder__ref_holder__content__projection(a: holder__ref) : us_rep1 =
+  (a).holder__content
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+axiom oeq__post_axiom :
+  (forall x:us_rep. forall y:us_rep. my_prop__function_guard(my_prop(x, y),
+  x, y))
+
+axiom oeq__post_axiom1 :
+  (forall x:us_rep. forall y:us_rep [oeq(x, y)]. (let result = oeq(x, y)
+  : bool in (oeq__function_guard(result, x, y) -> ((result = true) ->
+  (my_prop(x, y) = true)))))
+
+ (* File "use_my_eq.adb", line 2, characters 0-0 *)
+goal defqtvc :
+  (forall x__split_fields:us_rep. forall y__split_fields:us_rep. ((bool_eq1({
+  us_split_fields1 = { rec__use_my_eq__holder__content = x__split_fields } },
+  { us_split_fields1 = { rec__use_my_eq__holder__content = y__split_fields }
+  }) = true) ->
+  ((forall x__split_fields1:us_rep. forall y__split_fields1:us_rep.
+   my_prop__function_guard(my_prop(x__split_fields1, y__split_fields1),
+   x__split_fields1, y__split_fields1)) ->
+  (my_prop(x__split_fields, y__split_fields) = true))))

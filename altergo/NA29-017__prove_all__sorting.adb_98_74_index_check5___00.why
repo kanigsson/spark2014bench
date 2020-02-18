@@ -1,0 +1,492 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+logic bool_eq : int, int -> bool
+
+logic bool_ne : int, int -> bool
+
+logic bool_lt : int, int -> bool
+
+logic bool_le : int, int -> bool
+
+logic bool_gt : int, int -> bool
+
+logic bool_ge : int, int -> bool
+
+axiom bool_eq_axiom :
+  (forall x:int. (forall y:int. ((bool_eq(x, y) = true) -> (x = y))))
+
+axiom bool_eq_axiom1 :
+  (forall x:int. (forall y:int. ((x = y) -> (bool_eq(x, y) = true))))
+
+axiom bool_ne_axiom :
+  (forall x:int. (forall y:int. ((bool_ne(x, y) = true) -> (not (x = y)))))
+
+axiom bool_ne_axiom1 :
+  (forall x:int. (forall y:int. ((not (x = y)) -> (bool_ne(x, y) = true))))
+
+axiom bool_lt_axiom :
+  (forall x:int. (forall y:int. ((bool_lt(x, y) = true) -> (x <  y))))
+
+axiom bool_lt_axiom1 :
+  (forall x:int. (forall y:int. ((x <  y) -> (bool_lt(x, y) = true))))
+
+axiom bool_int__le_axiom :
+  (forall x:int. (forall y:int. ((bool_le(x, y) = true) -> (x <= y))))
+
+axiom bool_int__le_axiom1 :
+  (forall x:int. (forall y:int. ((x <= y) -> (bool_le(x, y) = true))))
+
+axiom bool_gt_axiom :
+  (forall x:int. (forall y:int. ((bool_gt(x, y) = true) -> (y <  x))))
+
+axiom bool_gt_axiom1 :
+  (forall x:int. (forall y:int. ((y <  x) -> (bool_gt(x, y) = true))))
+
+axiom bool_ge_axiom :
+  (forall x:int. (forall y:int. ((bool_ge(x, y) = true) -> (y <= x))))
+
+axiom bool_ge_axiom1 :
+  (forall x:int. (forall y:int. ((y <= x) -> (bool_ge(x, y) = true))))
+
+function length(x: int, y: int) : int =
+  (if (x <= y) then ((y - x) + 1) else 0)
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq1(x: bool, y: bool) : bool =
+  (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_39))
+
+type map__ref = { map__content : (int,integer) farray
+}
+
+logic slide : (int,integer) farray, int, int -> (int,integer) farray
+
+axiom slide_eq :
+  (forall a:(int,integer) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,integer) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq4(a: (int,integer) farray, a__first: int, a__last: int,
+  b: (int,integer) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)]))))))))
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (in_range2(low) and in_range2(high)))))
+
+type us_t = { elts : (int,integer) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,integer) farray = (a).elts
+
+function of_array(a: (int,integer) farray, f: int, l: int) : us_t = { elts =
+  a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep(first((a).rt))
+
+function last1(a: us_t) : int = to_rep(last((a).rt))
+
+function length1(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq5(x: us_t, y: us_t) : bool = bool_eq4((x).elts,
+  to_rep(first((x).rt)), to_rep(last((x).rt)), (y).elts,
+  to_rep(first((y).rt)), to_rep(last((y).rt)))
+
+logic user_eq2 : us_t, us_t -> bool
+
+logic dummy2 : us_t
+
+type int_array__ref = { int_array__content : us_t
+}
+
+function int_array__ref_int_array__content__projection(a: int_array__ref) : us_t =
+  (a).int_array__content
+
+logic sorted : us_t, int, int -> bool
+
+logic sorted__function_guard : bool, us_t, int, int -> prop
+
+predicate dynamic_invariant1(temp___expr_163: us_t, temp___is_init_159: bool,
+  temp___skip_constant_160: bool, temp___do_toplevel_161: bool,
+  temp___do_typ_inv_162: bool) = ((not (temp___skip_constant_160 = true)) ->
+  dynamic_property(0, 2147483647, first1(temp___expr_163),
+  last1(temp___expr_163)))
+
+logic perm : us_t, us_t, int, int -> bool
+
+logic perm__function_guard : bool, us_t, us_t, int, int -> prop
+
+logic perm2 : us_t, us_t, int, int, int, int, int -> bool
+
+logic perm2__function_guard : bool, us_t, us_t, int, int, int, int,
+  int -> prop
+
+logic le_array : us_t, us_t, int, int, int, int -> bool
+
+logic le_array__function_guard : bool, us_t, us_t, int, int, int, int -> prop
+
+logic a__first : integer
+
+logic a__last : integer
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic b__first : integer
+
+logic b__last : integer
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic a_first : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic length11 : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic length2 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+predicate dynamic_invariant2(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+ (* File "sorting.adb", line 59, characters 0-0 *)
+goal defqtvc :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  forall i:int. forall j:int.
+  (forall a1:(int,integer) farray. ((a1 = a) -> (dynamic_property(0,
+  2147483647, to_rep(a__first), to_rep(a__last)) -> (dynamic_property(0,
+  2147483647, to_rep(b__first), to_rep(b__last)) ->
+  (dynamic_invariant(a_first, true, false, true, true) ->
+  (dynamic_invariant(length11, true, false, true, true) ->
+  (dynamic_invariant(length2, true, false, true, true) ->
+  ((forall a2:(int,integer) farray.
+   sorted__function_guard(sorted(of_array(a2, to_rep(a__first),
+   to_rep(a__last)), a_first, length11), of_array(a2, to_rep(a__first),
+   to_rep(a__last)), a_first, length11)) ->
+  ((forall a2:(int,integer) farray.
+   sorted__function_guard(sorted(of_array(a2, to_rep(a__first),
+   to_rep(a__last)), (a_first + length11), length2), of_array(a2,
+   to_rep(a__first), to_rep(a__last)), (a_first + length11), length2)) ->
+  ((((((((to_rep(a__first) <= a_first) and
+  (((a_first + length11) + length2) <= (to_rep(a__last) + 1))) and
+  ((length11 + length2) <= length(to_rep(b__first), to_rep(b__last)))) and
+  ((length11 + length2) <= 2147483647)) and (sorted(of_array(a,
+  to_rep(a__first), to_rep(a__last)), a_first, length11) = true)) and
+  (sorted(of_array(a, to_rep(a__first), to_rep(a__last)),
+  (a_first + length11), length2) = true)) and
+  (to_rep(b__first) <= to_rep(b__last))) -> (dynamic_invariant(i, false,
+  false, true, true) -> (dynamic_invariant(j, false, false, true, true) ->
+  (forall i1:int. ((i1 = 0) ->
+  (forall j1:int. ((j1 = 0) ->
+  (forall temp___loop_entry_325:(int,integer) farray.
+  ((temp___loop_entry_325 = a) ->
+  (forall o:int. ((to_rep(a__last) = o) ->
+  (forall o1:int. ((to_rep(a__first) = o1) ->
+  (forall o2:int. ((to_rep(a__last) = o2) ->
+  (forall o3:int. ((to_rep(a__first) = o3) -> (let o4 = (length2 - j1)
+  : int in (in_range1(o4) -> (in_range2(o4) -> (let o5 = (i1 + j1) : int in
+  (in_range1(o5) -> (let o6 = (a_first + length11) : int in (in_range1(o6) ->
+  (let o7 = (o6 + j1) : int in (in_range1(o7) ->
+  (forall o8:int. ((to_rep(b__first) = o8) -> (in_range2(o8) ->
+  (forall o9:int. ((to_rep(a__last) = o9) ->
+  (forall o10:int. ((to_rep(a__first) = o10) -> (let o11 = of_array(a, o10,
+  o9) : us_t in
+  (forall o12:int. ((to_rep(b__last) = o12) ->
+  (forall o13:int. ((to_rep(b__first) = o13) -> (let o14 = of_array(b, o13,
+  o12) : us_t in (le_array__function_guard(le_array(o14, o11, o8, o7, o5,
+  o4), o14, o11, o8, o7, o5, o4) -> (let o15 = (length11 - i1) : int in
+  (in_range1(o15) -> (in_range2(o15) -> (let o16 = (i1 + j1) : int in
+  (in_range1(o16) -> (let o17 = (a_first + i1) : int in (in_range1(o17) ->
+  (forall o18:int. ((to_rep(b__first) = o18) -> (in_range2(o18) ->
+  (forall o19:int. ((to_rep(a__last) = o19) ->
+  (forall o20:int. ((to_rep(a__first) = o20) -> (let o21 = of_array(a, o20,
+  o19) : us_t in
+  (forall o22:int. ((to_rep(b__last) = o22) ->
+  (forall o23:int. ((to_rep(b__first) = o23) -> (let o24 = of_array(b, o23,
+  o22) : us_t in (le_array__function_guard(le_array(o24, o21, o18, o17, o16,
+  o15), o24, o21, o18, o17, o16, o15) ->
+  (forall o25:int. ((to_rep(b__first) = o25) -> (in_range2(o25) -> (let o26 =
+  (a_first + length11) : int in (in_range1(o26) -> (let o27 = a_first
+  : int in
+  (forall o28:int. ((to_rep(b__last) = o28) ->
+  (forall o29:int. ((to_rep(b__first) = o29) -> (let o30 = of_array(b, o29,
+  o28) : us_t in
+  (forall o31:int. ((to_rep(a__last) = o31) ->
+  (forall o32:int. ((to_rep(a__first) = o32) -> (let o33 = of_array(a, o32,
+  o31) : us_t in (perm2__function_guard(perm2(o33, o30, o27, o26, o25, i1,
+  j1), o33, o30, o27, o26, o25, i1, j1) -> (let o34 = (i1 + j1) : int in
+  (in_range1(o34) ->
+  (forall o35:int. ((to_rep(b__first) = o35) -> (in_range2(o35) ->
+  (forall o36:int. ((to_rep(b__last) = o36) ->
+  (forall o37:int. ((to_rep(b__first) = o37) -> (let o38 = of_array(b, o37,
+  o36) : us_t in (sorted__function_guard(sorted(o38, o35, o34), o38, o35,
+  o34) ->
+  (forall b1:(int,integer) farray. forall i2:int. forall j2:int.
+  ((forall b2:(int,integer) farray. forall i3:int. forall j3:int.
+   sorted__function_guard(sorted(of_array(b2, to_rep(b__first),
+   to_rep(b__last)), to_rep(b__first), (i3 + j3)), of_array(b2,
+   to_rep(b__first), to_rep(b__last)), to_rep(b__first), (i3 + j3))) ->
+  ((forall a2:(int,integer) farray. forall b2:(int,integer) farray.
+   forall i3:int. forall j3:int. perm2__function_guard(perm2(of_array(a2,
+   to_rep(a__first), to_rep(a__last)), of_array(b2, to_rep(b__first),
+   to_rep(b__last)), a_first, (a_first + length11), to_rep(b__first), i3,
+   j3), of_array(a2, to_rep(a__first), to_rep(a__last)), of_array(b2,
+   to_rep(b__first), to_rep(b__last)), a_first, (a_first + length11),
+   to_rep(b__first), i3, j3)) ->
+  ((forall a2:(int,integer) farray. forall b2:(int,integer) farray.
+   forall i3:int. forall j3:int.
+   le_array__function_guard(le_array(of_array(b2, to_rep(b__first),
+   to_rep(b__last)), of_array(a2, to_rep(a__first), to_rep(a__last)),
+   to_rep(b__first), (a_first + i3), (i3 + j3), (length11 - i3)),
+   of_array(b2, to_rep(b__first), to_rep(b__last)), of_array(a2,
+   to_rep(a__first), to_rep(a__last)), to_rep(b__first), (a_first + i3),
+   (i3 + j3), (length11 - i3))) ->
+  ((forall a2:(int,integer) farray. forall b2:(int,integer) farray.
+   forall i3:int. forall j3:int.
+   le_array__function_guard(le_array(of_array(b2, to_rep(b__first),
+   to_rep(b__last)), of_array(a2, to_rep(a__first), to_rep(a__last)),
+   to_rep(b__first), ((a_first + length11) + j3), (i3 + j3), (length2 - j3)),
+   of_array(b2, to_rep(b__first), to_rep(b__last)), of_array(a2,
+   to_rep(a__first), to_rep(a__last)), to_rep(b__first),
+   ((a_first + length11) + j3), (i3 + j3), (length2 - j3))) ->
+  ((((((((i2 <= length11) and (j2 <= length2)) and (sorted(of_array(b1,
+  to_rep(b__first), to_rep(b__last)), to_rep(b__first),
+  (i2 + j2)) = true)) and (perm2(of_array(a, to_rep(a__first),
+  to_rep(a__last)), of_array(b1, to_rep(b__first), to_rep(b__last)), a_first,
+  (a_first + length11), to_rep(b__first), i2, j2) = true)) and
+  (le_array(of_array(b1, to_rep(b__first), to_rep(b__last)), of_array(a,
+  to_rep(a__first), to_rep(a__last)), to_rep(b__first), (a_first + i2),
+  (i2 + j2), (length11 - i2)) = true)) and (le_array(of_array(b1,
+  to_rep(b__first), to_rep(b__last)), of_array(a, to_rep(a__first),
+  to_rep(a__last)), to_rep(b__first), ((a_first + length11) + j2), (i2 + j2),
+  (length2 - j2)) = true)) and (bool_eq4(a, to_rep(a__first),
+  to_rep(a__last), temp___loop_entry_325, to_rep(a__first),
+  to_rep(a__last)) = true)) -> ((dynamic_invariant(i2, false, true, true,
+  true) and dynamic_invariant(j2, false, true, true, true)) ->
+  (((not (i2 <  length11)) -> (j2 <  length2)) -> ((not (j2 = length2)) ->
+  ((i2 <  length11) -> (let o39 = (a_first + length11) : int in
+  (in_range1(o39) -> (let o40 = (o39 + j2) : int in (in_range1(o40) ->
+  (o40 <= to_rep(a__last)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))

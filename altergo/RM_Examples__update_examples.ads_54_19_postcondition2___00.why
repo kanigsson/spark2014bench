@@ -1,0 +1,612 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type us_split_fields = { rec__update_examples__rec__x : integer;
+rec__update_examples__rec__y : integer
+}
+
+function us_split_fields_rec__update_examples__rec__x__projection(a: us_split_fields) : integer =
+  (a).rec__update_examples__rec__x
+
+function us_split_fields_rec__update_examples__rec__y__projection(a: us_split_fields) : integer =
+  (a).rec__update_examples__rec__y
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq1(a: us_rep, b: us_rep) : bool =
+  (if ((to_rep(((a).us_split_fields1).rec__update_examples__rec__x) = to_rep(((b).us_split_fields1).rec__update_examples__rec__x)) and
+  (to_rep(((a).us_split_fields1).rec__update_examples__rec__y) = to_rep(((b).us_split_fields1).rec__update_examples__rec__y))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic update_examples__rec__x__first__bit : int
+
+logic update_examples__rec__x__last__bit : int
+
+logic update_examples__rec__x__position : int
+
+axiom update_examples__rec__x__first__bit_axiom :
+  (0 <= update_examples__rec__x__first__bit)
+
+axiom update_examples__rec__x__last__bit_axiom :
+  (update_examples__rec__x__first__bit <  update_examples__rec__x__last__bit)
+
+axiom update_examples__rec__x__position_axiom :
+  (0 <= update_examples__rec__x__position)
+
+logic update_examples__rec__y__first__bit : int
+
+logic update_examples__rec__y__last__bit : int
+
+logic update_examples__rec__y__position : int
+
+axiom update_examples__rec__y__first__bit_axiom :
+  (0 <= update_examples__rec__y__first__bit)
+
+axiom update_examples__rec__y__last__bit_axiom :
+  (update_examples__rec__y__first__bit <  update_examples__rec__y__last__bit)
+
+axiom update_examples__rec__y__position_axiom :
+  (0 <= update_examples__rec__y__position)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type rec____ref = { rec____content : us_rep
+}
+
+function rec____ref_rec____content__projection(a: rec____ref) : us_rep =
+  (a).rec____content
+
+type map__ref = { map__content : (int,integer) farray
+}
+
+logic slide : (int,integer) farray, int, int -> (int,integer) farray
+
+axiom slide_eq :
+  (forall a:(int,integer) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,integer) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq2(a: (int,integer) farray, a__first: int, a__last: int,
+  b: (int,integer) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)]))))))))
+
+logic dummy2 : (int,integer) farray
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic component__size : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic user_eq2 : (int,integer) farray, (int,integer) farray -> bool
+
+type map
+
+type map__ref1 = { map__content1 : map
+}
+
+logic get : map, int, int -> integer
+
+logic set : map, int, int, integer -> map
+
+axiom Select_eq :
+  (forall m:map.
+  (forall i:int.
+  (forall j:int.
+  (forall a:integer [set(m, i, j, a)]. (get(set(m, i, j, a), i, j) = a)))))
+
+axiom Select_neq :
+  (forall m:map.
+  (forall i:int. forall i2:int.
+  (forall j:int. forall j2:int.
+  (forall a:integer [get(set(m, i, j, a), i2, j2)| set(m, i, j, a), get(m,
+  i2, j2)]. ((not ((i = i2) and (j = j2))) -> (get(set(m, i, j, a), i2,
+  j2) = get(m, i2, j2)))))))
+
+logic slide1 : map, int, int, int, int -> map
+
+axiom slide_def1 :
+  (forall a:map.
+  (forall new_first:int. forall old_first:int.
+  (forall new_first_2:int. forall old_first_2:int.
+  (forall i:int.
+  (forall j:int [get(slide1(a, old_first, new_first, old_first_2,
+  new_first_2), i, j)]. (get(slide1(a, old_first, new_first, old_first_2,
+  new_first_2), i, j) = get(a, (i - (new_first - old_first)),
+  (j - (new_first_2 - old_first_2)))))))))
+
+function bool_eq3(a: map, a__first: int, a__last: int, a__first_2: int,
+  a__last_2: int, b: map, b__first: int, b__last: int, b__first_2: int,
+  b__last_2: int) : bool =
+  (if (((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (if (a__first_2 <= a__last_2) then ((b__first_2 <= b__last_2) and
+  ((a__last_2 - a__first_2) = (b__last_2 - b__first_2))) else (b__last_2 <  b__first_2))) and
+  (forall temp___idx_155:int. forall temp___idx_156:int.
+  ((((a__first <= temp___idx_155) and (temp___idx_155 <= a__last)) and
+  ((a__first_2 <= temp___idx_156) and (temp___idx_156 <= a__last_2))) ->
+  (to_rep(get(a, temp___idx_155, temp___idx_156)) = to_rep(get(b,
+  ((b__first - a__first) + temp___idx_155),
+  ((b__first_2 - a__first_2) + temp___idx_156))))))) then true else false)
+
+axiom bool_eq_rev4 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq3(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev5 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq3(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev6 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq3(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev7 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq3(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first_2 <= a__last_2) ->
+  (b__first_2 <= b__last_2)))))
+
+axiom bool_eq_rev8 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq3(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first_2 <= a__last_2) ->
+  ((a__last_2 - a__first_2) = (b__last_2 - b__first_2))))))
+
+axiom bool_eq_rev9 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq3(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((not (a__first_2 <= a__last_2)) ->
+  (b__last_2 <  b__first_2)))))
+
+axiom bool_eq_rev10 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq3(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) ->
+  (forall temp___idx_155:int. forall temp___idx_156:int.
+  ((((a__first <= temp___idx_155) and (temp___idx_155 <= a__last)) and
+  ((a__first_2 <= temp___idx_156) and (temp___idx_156 <= a__last_2))) ->
+  (to_rep(get(a, temp___idx_155, temp___idx_156)) = to_rep(get(b,
+  ((b__first - a__first) + temp___idx_155),
+  ((b__first_2 - a__first_2) + temp___idx_156)))))))))
+
+logic dummy3 : map
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic component__size1 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom component__size_axiom1 : (0 <= component__size1)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic user_eq3 : map, map -> bool
+
+type us_split_fields2 = { rec__update_examples__nested_rec__a : integer;
+rec__update_examples__nested_rec__b : us_rep;
+rec__update_examples__nested_rec__c : (int,integer) farray;
+rec__update_examples__nested_rec__d : map
+}
+
+function us_split_fields_rec__update_examples__nested_rec__a__projection(a: us_split_fields2) : integer =
+  (a).rec__update_examples__nested_rec__a
+
+function us_split_fields_rec__update_examples__nested_rec__b__projection(a: us_split_fields2) : us_rep =
+  (a).rec__update_examples__nested_rec__b
+
+function us_split_fields_rec__update_examples__nested_rec__c__projection(a: us_split_fields2) : (int,integer) farray =
+  (a).rec__update_examples__nested_rec__c
+
+function us_split_fields_rec__update_examples__nested_rec__d__projection(a: us_split_fields2) : map =
+  (a).rec__update_examples__nested_rec__d
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_fields3 : us_split_fields2
+}
+
+function us_rep___split_fields__2__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function bool_eq4(a: us_rep1, b: us_rep1) : bool =
+  (if (((to_rep(((a).us_split_fields3).rec__update_examples__nested_rec__a) = to_rep(((b).us_split_fields3).rec__update_examples__nested_rec__a)) and
+  (bool_eq1(((a).us_split_fields3).rec__update_examples__nested_rec__b,
+  ((b).us_split_fields3).rec__update_examples__nested_rec__b) = true)) and
+  ((bool_eq2(((a).us_split_fields3).rec__update_examples__nested_rec__c, 1,
+  3, ((b).us_split_fields3).rec__update_examples__nested_rec__c, 1,
+  3) = true) and
+  (bool_eq3(((a).us_split_fields3).rec__update_examples__nested_rec__d, 1, 3,
+  1, 3, ((b).us_split_fields3).rec__update_examples__nested_rec__d, 1, 3, 1,
+  3) = true))) then true else false)
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic update_examples__nested_rec__a__first__bit : int
+
+logic update_examples__nested_rec__a__last__bit : int
+
+logic update_examples__nested_rec__a__position : int
+
+axiom update_examples__nested_rec__a__first__bit_axiom :
+  (0 <= update_examples__nested_rec__a__first__bit)
+
+axiom update_examples__nested_rec__a__last__bit_axiom :
+  (update_examples__nested_rec__a__first__bit <  update_examples__nested_rec__a__last__bit)
+
+axiom update_examples__nested_rec__a__position_axiom :
+  (0 <= update_examples__nested_rec__a__position)
+
+logic update_examples__nested_rec__b__first__bit : int
+
+logic update_examples__nested_rec__b__last__bit : int
+
+logic update_examples__nested_rec__b__position : int
+
+axiom update_examples__nested_rec__b__first__bit_axiom :
+  (0 <= update_examples__nested_rec__b__first__bit)
+
+axiom update_examples__nested_rec__b__last__bit_axiom :
+  (update_examples__nested_rec__b__first__bit <  update_examples__nested_rec__b__last__bit)
+
+axiom update_examples__nested_rec__b__position_axiom :
+  (0 <= update_examples__nested_rec__b__position)
+
+logic update_examples__nested_rec__c__first__bit : int
+
+logic update_examples__nested_rec__c__last__bit : int
+
+logic update_examples__nested_rec__c__position : int
+
+axiom update_examples__nested_rec__c__first__bit_axiom :
+  (0 <= update_examples__nested_rec__c__first__bit)
+
+axiom update_examples__nested_rec__c__last__bit_axiom :
+  (update_examples__nested_rec__c__first__bit <  update_examples__nested_rec__c__last__bit)
+
+axiom update_examples__nested_rec__c__position_axiom :
+  (0 <= update_examples__nested_rec__c__position)
+
+logic update_examples__nested_rec__d__first__bit : int
+
+logic update_examples__nested_rec__d__last__bit : int
+
+logic update_examples__nested_rec__d__position : int
+
+axiom update_examples__nested_rec__d__first__bit_axiom :
+  (0 <= update_examples__nested_rec__d__first__bit)
+
+axiom update_examples__nested_rec__d__last__bit_axiom :
+  (update_examples__nested_rec__d__first__bit <  update_examples__nested_rec__d__last__bit)
+
+axiom update_examples__nested_rec__d__position_axiom :
+  (0 <= update_examples__nested_rec__d__position)
+
+logic user_eq4 : us_rep1, us_rep1 -> bool
+
+logic dummy4 : us_rep1
+
+type nested_rec__ref = { nested_rec__content : us_rep1
+}
+
+function nested_rec__ref_nested_rec__content__projection(a: nested_rec__ref) : us_rep1 =
+  (a).nested_rec__content
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic temp_____aggregate_def_247 : (int,integer) farray, int,
+  int -> (int,integer) farray
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_18))
+
+type tarrD1
+
+logic tarrD1qtint : tarrD1 -> int
+
+axiom tarrD1qtaxiom : (forall i:tarrD1. (1 <= tarrD1qtint(i)))
+
+axiom tarrD1qtaxiom1 : (forall i:tarrD1. (tarrD1qtint(i) <= 3))
+
+predicate in_range1(x: int) = ((1 <= x) and (x <= 3))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq5 : tarrD1, tarrD1 -> bool
+
+logic dummy5 : tarrD1
+
+type tarrD1__ref = { tarrD1__content : tarrD1
+}
+
+function tarrD1__ref_tarrD1__content__projection(a: tarrD1__ref) : tarrD1 =
+  (a).tarrD1__content
+
+logic rliteral : integer
+
+axiom rliteral_axiom : (integerqtint(rliteral) = 5)
+
+axiom def_axiom :
+  (forall temp___249:(int,integer) farray.
+  (forall temp___250:int. forall temp___251:int. ((in_range1(temp___250) and
+  dynamic_invariant(temp___251, true, true, true, true)) ->
+  (forall temp___252:int. ((temp___252 = temp___250) ->
+  ((temp_____aggregate_def_247(temp___249, temp___250,
+  temp___251)[temp___252]) = rliteral))))))
+
+axiom def_axiom1 :
+  (forall temp___249:(int,integer) farray.
+  (forall temp___250:int. forall temp___251:int. ((in_range1(temp___250) and
+  dynamic_invariant(temp___251, true, true, true, true)) ->
+  (forall temp___252:int. ((not (temp___252 = temp___250)) ->
+  ((temp_____aggregate_def_247(temp___249, temp___250,
+  temp___251)[temp___252]) = (temp___249[temp___252])))))))
+
+logic rliteral1 : integer
+
+axiom rliteral_axiom1 : (integerqtint(rliteral1) = 1)
+
+ (* File "update_examples.ads", line 53, characters 0-0 *)
+goal defqtvc :
+  (forall nr__split_fields:us_split_fields2.
+  (forall nr__split_fields1:us_split_fields2.
+  ((nr__split_fields1 = nr__split_fields) ->
+  (forall nr__split_fields2:us_split_fields2. ((nr__split_fields2 = {
+  rec__update_examples__nested_rec__a = rliteral1;
+  rec__update_examples__nested_rec__b =
+  (nr__split_fields).rec__update_examples__nested_rec__b;
+  rec__update_examples__nested_rec__c =
+  (nr__split_fields).rec__update_examples__nested_rec__c;
+  rec__update_examples__nested_rec__d =
+  (nr__split_fields).rec__update_examples__nested_rec__d }) ->
+  (forall nr__split_fields3:us_split_fields2. ((nr__split_fields3 = {
+  rec__update_examples__nested_rec__a =
+  (nr__split_fields2).rec__update_examples__nested_rec__a;
+  rec__update_examples__nested_rec__b = { us_split_fields1 = {
+  rec__update_examples__rec__x = rliteral1; rec__update_examples__rec__y =
+  (((nr__split_fields2).rec__update_examples__nested_rec__b).us_split_fields1).rec__update_examples__rec__y
+  } }; rec__update_examples__nested_rec__c =
+  (nr__split_fields2).rec__update_examples__nested_rec__c;
+  rec__update_examples__nested_rec__d =
+  (nr__split_fields2).rec__update_examples__nested_rec__d }) ->
+  (forall nr__split_fields4:us_split_fields2. ((nr__split_fields4 = {
+  rec__update_examples__nested_rec__a =
+  (nr__split_fields3).rec__update_examples__nested_rec__a;
+  rec__update_examples__nested_rec__b =
+  (nr__split_fields3).rec__update_examples__nested_rec__b;
+  rec__update_examples__nested_rec__c =
+  ((nr__split_fields3).rec__update_examples__nested_rec__c[1 <- rliteral]);
+  rec__update_examples__nested_rec__d =
+  (nr__split_fields3).rec__update_examples__nested_rec__d }) -> (bool_eq4({
+  us_split_fields3 = nr__split_fields4 }, { us_split_fields3 = {
+  rec__update_examples__nested_rec__a = rliteral1;
+  rec__update_examples__nested_rec__b = { us_split_fields1 = {
+  rec__update_examples__rec__x = rliteral1; rec__update_examples__rec__y =
+  (((nr__split_fields1).rec__update_examples__nested_rec__b).us_split_fields1).rec__update_examples__rec__y
+  } }; rec__update_examples__nested_rec__c =
+  temp_____aggregate_def_247((nr__split_fields1).rec__update_examples__nested_rec__c,
+  1, 5); rec__update_examples__nested_rec__d =
+  (nr__split_fields1).rec__update_examples__nested_rec__d } }) = true))))))))))

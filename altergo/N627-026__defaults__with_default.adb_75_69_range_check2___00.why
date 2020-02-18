@@ -1,0 +1,317 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : natural, natural -> bool
+
+logic dummy : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range(temp___expr_39))
+
+logic c : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+type scalar_with_default
+
+logic scalar_with_defaultqtint : scalar_with_default -> int
+
+axiom scalar_with_defaultqtaxiom :
+  (forall i:scalar_with_default. (0 <= scalar_with_defaultqtint(i)))
+
+axiom scalar_with_defaultqtaxiom1 :
+  (forall i:scalar_with_default. (scalar_with_defaultqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq1 : scalar_with_default, scalar_with_default -> bool
+
+logic dummy1 : scalar_with_default
+
+type scalar_with_default__ref = { scalar_with_default__content :
+scalar_with_default
+}
+
+function scalar_with_default__ref_scalar_with_default__content__5__projection(a: scalar_with_default__ref) : scalar_with_default =
+  (a).scalar_with_default__content
+
+function to_rep(x: scalar_with_default) : int = scalar_with_defaultqtint(x)
+
+logic of_rep : int -> scalar_with_default
+
+axiom inversion_axiom :
+  (forall x:scalar_with_default [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom :
+  (forall x:scalar_with_default [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq2 : integer, integer -> bool
+
+logic dummy2 : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep1(x: integer) : int = integerqtint(x)
+
+logic of_rep1 : int -> integer
+
+axiom inversion_axiom1 :
+  (forall x:integer [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range2(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+logic first : int
+
+predicate dynamic_property(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq3 : integer, integer -> bool
+
+logic dummy3 : integer
+
+type scalar_no_default__ref = { scalar_no_default__content : integer
+}
+
+function scalar_no_default__ref_scalar_no_default__content__4__projection(a: scalar_no_default__ref) : integer =
+  (a).scalar_no_default__content
+
+type us_split_fields = { rec__with_default__bad_record1__simple_rec__f1 :
+scalar_with_default; rec__with_default__bad_record1__simple_rec__f2 : integer
+}
+
+function us_split_fields_rec__with_default__bad_record1__simple_rec__f1__projection(a: us_split_fields) : scalar_with_default =
+  (a).rec__with_default__bad_record1__simple_rec__f1
+
+function us_split_fields_rec__with_default__bad_record1__simple_rec__f2__projection(a: us_split_fields) : integer =
+  (a).rec__with_default__bad_record1__simple_rec__f2
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq4(a: us_rep, b: us_rep) : bool =
+  (if ((to_rep(((a).us_split_fields1).rec__with_default__bad_record1__simple_rec__f1) = to_rep(((b).us_split_fields1).rec__with_default__bad_record1__simple_rec__f1)) and
+  (to_rep1(((a).us_split_fields1).rec__with_default__bad_record1__simple_rec__f2) = to_rep1(((b).us_split_fields1).rec__with_default__bad_record1__simple_rec__f2))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic with_default__bad_record1__simple_rec__f1__first__bit : int
+
+logic with_default__bad_record1__simple_rec__f1__last__bit : int
+
+logic with_default__bad_record1__simple_rec__f1__position : int
+
+axiom with_default__bad_record1__simple_rec__f1__first__bit_axiom :
+  (0 <= with_default__bad_record1__simple_rec__f1__first__bit)
+
+axiom with_default__bad_record1__simple_rec__f1__last__bit_axiom :
+  (with_default__bad_record1__simple_rec__f1__first__bit <  with_default__bad_record1__simple_rec__f1__last__bit)
+
+axiom with_default__bad_record1__simple_rec__f1__position_axiom :
+  (0 <= with_default__bad_record1__simple_rec__f1__position)
+
+logic with_default__bad_record1__simple_rec__f2__first__bit : int
+
+logic with_default__bad_record1__simple_rec__f2__last__bit : int
+
+logic with_default__bad_record1__simple_rec__f2__position : int
+
+axiom with_default__bad_record1__simple_rec__f2__first__bit_axiom :
+  (0 <= with_default__bad_record1__simple_rec__f2__first__bit)
+
+axiom with_default__bad_record1__simple_rec__f2__last__bit_axiom :
+  (with_default__bad_record1__simple_rec__f2__first__bit <  with_default__bad_record1__simple_rec__f2__last__bit)
+
+axiom with_default__bad_record1__simple_rec__f2__position_axiom :
+  (0 <= with_default__bad_record1__simple_rec__f2__position)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type simple_rec__ref = { simple_rec__content : us_rep
+}
+
+function simple_rec__ref_simple_rec__content__projection(a: simple_rec__ref) : us_rep =
+  (a).simple_rec__content
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+predicate dynamic_invariant1(temp___expr_383: us_rep,
+  temp___is_init_379: bool, temp___skip_constant_380: bool,
+  temp___do_toplevel_381: bool, temp___do_typ_inv_382: bool) =
+  (((temp___is_init_379 = true) or (first <= 2147483647)) ->
+  dynamic_property(first, 2147483647,
+  to_rep1(((temp___expr_383).us_split_fields1).rec__with_default__bad_record1__simple_rec__f2)))
+
+predicate default_initial_assumption(temp___expr_384: us_rep,
+  temp___skip_top_level_385: bool) =
+  ((to_rep(((temp___expr_384).us_split_fields1).rec__with_default__bad_record1__simple_rec__f1) = 0) and
+  (to_rep1(((temp___expr_384).us_split_fields1).rec__with_default__bad_record1__simple_rec__f2) = 0))
+
+predicate dynamic_invariant2(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range2(temp___expr_18))
+
+predicate dynamic_invariant3(temp___expr_369: int, temp___is_init_365: bool,
+  temp___skip_constant_366: bool, temp___do_toplevel_367: bool,
+  temp___do_typ_inv_368: bool) = (((temp___is_init_365 = true) or
+  (0 <= 2147483647)) -> in_range1(temp___expr_369))
+
+predicate dynamic_invariant4(temp___expr_376: int, temp___is_init_372: bool,
+  temp___skip_constant_373: bool, temp___do_toplevel_374: bool,
+  temp___do_typ_inv_375: bool) = (((temp___is_init_372 = true) or
+  (first <= 2147483647)) -> dynamic_property(first, 2147483647,
+  temp___expr_376))
+
+axiom first__def_axiom : (first = c)
+
+ (* File "with_default.ads", line 16, characters 0-0 *)
+goal defqtvc : (dynamic_invariant(c, true, false, true, true) ->
+  in_range1(0))

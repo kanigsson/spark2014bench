@@ -1,0 +1,373 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type index
+
+logic indexqtint : index -> int
+
+axiom indexqtaxiom : (forall i:index. (1 <= indexqtint(i)))
+
+axiom indexqtaxiom1 : (forall i:index. (indexqtint(i) <= 100))
+
+predicate in_range1(x: int) = ((1 <= x) and (x <= 100))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : index, index -> bool
+
+logic dummy : index
+
+type index__ref = { index__content : index
+}
+
+function index__ref_index__content__projection(a: index__ref) : index =
+  (a).index__content
+
+function to_rep(x: index) : int = indexqtint(x)
+
+logic of_rep : int -> index
+
+axiom inversion_axiom : (forall x:index [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:index [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type us_split_discrs = { rec__lists__cell__is_set : bool
+}
+
+function us_split_discrs_rec__lists__cell__is_set__projection(a: us_split_discrs) : bool =
+  (a).rec__lists__cell__is_set
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_split_fields = { rec__lists__cell__next : index
+}
+
+function us_split_fields_rec__lists__cell__next__projection(a: us_split_fields) : index =
+  (a).rec__lists__cell__next
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_discrs1 : us_split_discrs; us_split_fields1 :
+us_split_fields
+}
+
+function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
+  (a).us_split_discrs1
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+predicate lists__cell__next__pred(a: us_rep) =
+  (to_int(((a).us_split_discrs1).rec__lists__cell__is_set) = 1)
+
+function bool_eq2(a: us_rep, b: us_rep) : bool =
+  (if ((to_int(((a).us_split_discrs1).rec__lists__cell__is_set) = to_int(((b).us_split_discrs1).rec__lists__cell__is_set)) and
+  (lists__cell__next__pred(a) ->
+  (to_rep(((a).us_split_fields1).rec__lists__cell__next) = to_rep(((b).us_split_fields1).rec__lists__cell__next)))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic lists__cell__is_set__first__bit : int
+
+logic lists__cell__is_set__last__bit : int
+
+logic lists__cell__is_set__position : int
+
+axiom lists__cell__is_set__first__bit_axiom :
+  (0 <= lists__cell__is_set__first__bit)
+
+axiom lists__cell__is_set__last__bit_axiom :
+  (lists__cell__is_set__first__bit <  lists__cell__is_set__last__bit)
+
+axiom lists__cell__is_set__position_axiom :
+  (0 <= lists__cell__is_set__position)
+
+logic lists__cell__next__first__bit : int
+
+logic lists__cell__next__last__bit : int
+
+logic lists__cell__next__position : int
+
+axiom lists__cell__next__first__bit_axiom :
+  (0 <= lists__cell__next__first__bit)
+
+axiom lists__cell__next__last__bit_axiom :
+  (lists__cell__next__first__bit <  lists__cell__next__last__bit)
+
+axiom lists__cell__next__position_axiom : (0 <= lists__cell__next__position)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type cell__ref = { cell__content : us_rep
+}
+
+function cell__ref_cell__content__projection(a: cell__ref) : us_rep =
+  (a).cell__content
+
+type map__ref = { map__content : (int,us_rep) farray
+}
+
+logic slide : (int,us_rep) farray, int, int -> (int,us_rep) farray
+
+axiom slide_eq :
+  (forall a:(int,us_rep) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,us_rep) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq3(a: (int,us_rep) farray, a__first: int, a__last: int,
+  b: (int,us_rep) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_155:int. (((a__first <= temp___idx_155) and
+  (temp___idx_155 <= a__last)) -> (bool_eq2((a[temp___idx_155]),
+  (b[((b__first - a__first) + temp___idx_155)])) = true)))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_155:int. (((a__first <= temp___idx_155) and
+  (temp___idx_155 <= a__last)) -> (bool_eq2((a[temp___idx_155]),
+  (b[((b__first - a__first) + temp___idx_155)])) = true))))))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic goes_to2 : int, int, (int,us_rep) farray -> bool
+
+logic goes_to2__function_guard : bool, int, int, (int,us_rep) farray -> prop
+
+predicate dynamic_invariant(temp___expr_161: int, temp___is_init_157: bool,
+  temp___skip_constant_158: bool, temp___do_toplevel_159: bool,
+  temp___do_typ_inv_160: bool) = (((temp___is_init_157 = true) or
+  (1 <= 100)) -> in_range1(temp___expr_161))
+
+predicate default_initial_assumption(temp___expr_185: (int,us_rep) farray,
+  temp___skip_top_level_186: bool) =
+  (forall temp___187:int. (((1 <= temp___187) and (temp___187 <= 100)) ->
+  ((((temp___expr_185[temp___187])).us_split_discrs1).rec__lists__cell__is_set = of_int(1))))
+
+axiom goes_to2__def_axiom :
+  (forall i:int. forall j:int.
+  (forall lists__memory1:(int,us_rep) farray [goes_to2(i, j,
+  lists__memory1)]. ((goes_to2(i, j, lists__memory1) = true) ->
+  ((((lists__memory1[i])).us_split_discrs1).rec__lists__cell__is_set = true))))
+
+axiom goes_to2__def_axiom1 :
+  (forall i:int. forall j:int.
+  (forall lists__memory1:(int,us_rep) farray [goes_to2(i, j,
+  lists__memory1)]. ((goes_to2(i, j, lists__memory1) = true) ->
+  (to_rep((((lists__memory1[i])).us_split_fields1).rec__lists__cell__next) = j))))
+
+axiom goes_to2__def_axiom2 :
+  (forall i:int. forall j:int.
+  (forall lists__memory1:(int,us_rep) farray [goes_to2(i, j,
+  lists__memory1)].
+  ((((((lists__memory1[i])).us_split_discrs1).rec__lists__cell__is_set = true) and
+  (to_rep((((lists__memory1[i])).us_split_fields1).rec__lists__cell__next) = j)) ->
+  (goes_to2(i, j, lists__memory1) = true))))
+
+logic i : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic j : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+predicate in_range2(rec__lists__cell__is_set1: bool, a: us_rep) =
+  (rec__lists__cell__is_set1 = ((a).us_split_discrs1).rec__lists__cell__is_set)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic lists__cell__is_set__first__bit1 : int
+
+logic lists__cell__is_set__last__bit1 : int
+
+logic lists__cell__is_set__position1 : int
+
+axiom lists__cell__is_set__first__bit_axiom1 :
+  (0 <= lists__cell__is_set__first__bit1)
+
+axiom lists__cell__is_set__last__bit_axiom1 :
+  (lists__cell__is_set__first__bit1 <  lists__cell__is_set__last__bit1)
+
+axiom lists__cell__is_set__position_axiom1 :
+  (0 <= lists__cell__is_set__position1)
+
+logic lists__cell__next__first__bit1 : int
+
+logic lists__cell__next__last__bit1 : int
+
+logic lists__cell__next__position1 : int
+
+axiom lists__cell__next__first__bit_axiom1 :
+  (0 <= lists__cell__next__first__bit1)
+
+axiom lists__cell__next__last__bit_axiom1 :
+  (lists__cell__next__first__bit1 <  lists__cell__next__last__bit1)
+
+axiom lists__cell__next__position_axiom1 :
+  (0 <= lists__cell__next__position1)
+
+logic user_eq2 : us_rep, us_rep -> bool
+
+logic dummy2 : us_rep
+
+type t3b__ref = { t3b__content : us_rep
+}
+
+function t3b__ref_t3b__content__projection(a: t3b__ref) : us_rep =
+  (a).t3b__content
+
+predicate default_initial_assumption1(temp___expr_174: us_rep,
+  temp___skip_top_level_175: bool) =
+  (((temp___expr_174).us_split_discrs1).rec__lists__cell__is_set = of_int(1))
+
+ (* File "lists.ads", line 9, characters 0-0 *)
+goal defqtvc :
+  (forall memory1:(int,us_rep) farray. (dynamic_invariant(i, true, false,
+  true, true) -> (dynamic_invariant(j, true, false, true, true) ->
+  (forall o:index. ((to_rep(o) = j) ->
+  (forall memory11:(int,us_rep) farray. ((memory11 = (memory1[i <- {
+  us_split_discrs1 = { rec__lists__cell__is_set = of_int(1) };
+  us_split_fields1 = { rec__lists__cell__next = o } }])) ->
+  ((forall memory12:(int,us_rep) farray. goes_to2__function_guard(goes_to2(i,
+   j, memory12), i, j, memory12)) ->
+  (goes_to2(i, j, memory11) = true)))))))))

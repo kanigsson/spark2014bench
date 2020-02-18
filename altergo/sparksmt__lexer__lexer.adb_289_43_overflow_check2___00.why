@@ -1,0 +1,1452 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_39))
+
+function to_rep(x: natural) : int = naturalqtint(x)
+
+logic of_rep : int -> natural
+
+axiom inversion_axiom :
+  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:natural [to_rep(x)]. in_range2(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range2(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type positive
+
+logic positiveqtint : positive -> int
+
+axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
+
+axiom positiveqtaxiom1 :
+  (forall i:positive. (positiveqtint(i) <= 2147483647))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : positive, positive -> bool
+
+logic dummy2 : positive
+
+type positive__ref = { positive__content : positive
+}
+
+function positive__ref_positive__content__projection(a: positive__ref) : positive =
+  (a).positive__content
+
+type character
+
+predicate in_range4(x: int) = ((0 <= x) and (x <= 255))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq3 : character, character -> bool
+
+logic dummy3 : character
+
+type character__ref = { character__content : character
+}
+
+function character__ref_character__content__projection(a: character__ref) : character =
+  (a).character__content
+
+logic to_rep1 : character -> int
+
+logic of_rep1 : int -> character
+
+axiom inversion_axiom1 :
+  (forall x:character [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:character [to_rep1(x)]. in_range4(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range4(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type map__ref = { map__content : (int,character) farray
+}
+
+logic slide : (int,character) farray, int, int -> (int,character) farray
+
+axiom slide_eq :
+  (forall a:(int,character) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,character) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq5(a: (int,character) farray, a__first: int, a__last: int,
+  b: (int,character) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep1((a[temp___idx_91])) = to_rep1((b[((b__first - a__first) + temp___idx_91)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep1((a[temp___idx_91])) = to_rep1((b[((b__first - a__first) + temp___idx_91)]))))))))
+
+function to_rep2(x: integer) : int = integerqtint(x)
+
+logic of_rep2 : int -> integer
+
+axiom inversion_axiom2 :
+  (forall x:integer [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
+
+axiom range_axiom2 : (forall x:integer [to_rep2(x)]. in_range1(to_rep2(x)))
+
+axiom coerce_axiom2 :
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range1(x) ->
+  (to_rep2(of_rep2(x)) = x)))
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep2(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep2(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (in_range3(low) and in_range3(high)))))
+
+type us_t = { elts : (int,character) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,character) farray = (a).elts
+
+function of_array(a: (int,character) farray, f: int, l: int) : us_t = {
+  elts = a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep2(first((a).rt))
+
+function last1(a: us_t) : int = to_rep2(last((a).rt))
+
+function length(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq6(x: us_t, y: us_t) : bool = bool_eq5((x).elts,
+  to_rep2(first((x).rt)), to_rep2(last((x).rt)), (y).elts,
+  to_rep2(first((y).rt)), to_rep2(last((y).rt)))
+
+logic user_eq4 : us_t, us_t -> bool
+
+logic dummy4 : us_t
+
+type string____ref = { string____content : us_t
+}
+
+function string____ref_string____content__projection(a: string____ref) : us_t =
+  (a).string____content
+
+predicate dynamic_invariant1(temp___expr_96: us_t, temp___is_init_92: bool,
+  temp___skip_constant_93: bool, temp___do_toplevel_94: bool,
+  temp___do_typ_inv_95: bool) = ((not (temp___skip_constant_93 = true)) ->
+  dynamic_property(1, 2147483647, first1(temp___expr_96),
+  last1(temp___expr_96)))
+
+logic invariant__ : us_private -> bool
+
+logic invariant____function_guard : bool, us_private -> prop
+
+type token_kind
+
+predicate in_range5(x: int) = ((0 <= x) and (x <= 8))
+
+function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq5 : token_kind, token_kind -> bool
+
+logic dummy5 : token_kind
+
+type token_kind__ref = { token_kind__content : token_kind
+}
+
+function token_kind__ref_token_kind__content__projection(a: token_kind__ref) : token_kind =
+  (a).token_kind__content
+
+logic to_rep3 : token_kind -> int
+
+logic of_rep3 : int -> token_kind
+
+axiom inversion_axiom3 :
+  (forall x:token_kind [to_rep3(x)]. (of_rep3(to_rep3(x)) = x))
+
+axiom range_axiom3 :
+  (forall x:token_kind [to_rep3(x)]. in_range5(to_rep3(x)))
+
+axiom coerce_axiom3 :
+  (forall x:int [to_rep3(of_rep3(x))]. (in_range5(x) ->
+  (to_rep3(of_rep3(x)) = x)))
+
+type name_id
+
+logic name_idqtint : name_id -> int
+
+axiom name_idqtaxiom : (forall i:name_id. (0 <= name_idqtint(i)))
+
+axiom name_idqtaxiom1 : (forall i:name_id. (name_idqtint(i) <= 2147483647))
+
+predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> int
+
+logic user_eq6 : name_id, name_id -> bool
+
+logic dummy6 : name_id
+
+type name_id__ref = { name_id__content : name_id
+}
+
+function name_id__ref_name_id__content__projection(a: name_id__ref) : name_id =
+  (a).name_id__content
+
+function to_rep4(x: name_id) : int = name_idqtint(x)
+
+logic of_rep4 : int -> name_id
+
+axiom inversion_axiom4 :
+  (forall x:name_id [to_rep4(x)]. (of_rep4(to_rep4(x)) = x))
+
+axiom range_axiom4 : (forall x:name_id [to_rep4(x)]. in_range6(to_rep4(x)))
+
+axiom coerce_axiom4 :
+  (forall x:int [to_rep4(of_rep4(x))]. (in_range6(x) ->
+  (to_rep4(of_rep4(x)) = x)))
+
+type us_split_discrs = { rec__lexer__token__kind : token_kind
+}
+
+function us_split_discrs_rec__lexer__token__kind__projection(a: us_split_discrs) : token_kind =
+  (a).rec__lexer__token__kind
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_split_fields = { rec__lexer__token__line : natural;
+rec__lexer__token__col : natural; rec__lexer__token__length : natural;
+rec__lexer__token__value : name_id
+}
+
+function us_split_fields_rec__lexer__token__line__projection(a: us_split_fields) : natural =
+  (a).rec__lexer__token__line
+
+function us_split_fields_rec__lexer__token__col__projection(a: us_split_fields) : natural =
+  (a).rec__lexer__token__col
+
+function us_split_fields_rec__lexer__token__length__projection(a: us_split_fields) : natural =
+  (a).rec__lexer__token__length
+
+function us_split_fields_rec__lexer__token__value__projection(a: us_split_fields) : name_id =
+  (a).rec__lexer__token__value
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_discrs1 : us_split_discrs; us_split_fields1 :
+us_split_fields
+}
+
+function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
+  (a).us_split_discrs1
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+predicate lexer__token__value__pred(a: us_rep) =
+  ((3 <= to_rep3(((a).us_split_discrs1).rec__lexer__token__kind)) and
+  (to_rep3(((a).us_split_discrs1).rec__lexer__token__kind) <= 8))
+
+function bool_eq9(a: us_rep, b: us_rep) : bool =
+  (if ((to_rep3(((a).us_split_discrs1).rec__lexer__token__kind) = to_rep3(((b).us_split_discrs1).rec__lexer__token__kind)) and
+  (((to_rep(((a).us_split_fields1).rec__lexer__token__line) = to_rep(((b).us_split_fields1).rec__lexer__token__line)) and
+  (to_rep(((a).us_split_fields1).rec__lexer__token__col) = to_rep(((b).us_split_fields1).rec__lexer__token__col))) and
+  ((to_rep(((a).us_split_fields1).rec__lexer__token__length) = to_rep(((b).us_split_fields1).rec__lexer__token__length)) and
+  (lexer__token__value__pred(a) ->
+  (to_rep4(((a).us_split_fields1).rec__lexer__token__value) = to_rep4(((b).us_split_fields1).rec__lexer__token__value)))))) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic lexer__token__kind__first__bit : int
+
+logic lexer__token__kind__last__bit : int
+
+logic lexer__token__kind__position : int
+
+axiom lexer__token__kind__first__bit_axiom :
+  (0 <= lexer__token__kind__first__bit)
+
+axiom lexer__token__kind__last__bit_axiom :
+  (lexer__token__kind__first__bit <  lexer__token__kind__last__bit)
+
+axiom lexer__token__kind__position_axiom :
+  (0 <= lexer__token__kind__position)
+
+logic lexer__token__line__first__bit : int
+
+logic lexer__token__line__last__bit : int
+
+logic lexer__token__line__position : int
+
+axiom lexer__token__line__first__bit_axiom :
+  (0 <= lexer__token__line__first__bit)
+
+axiom lexer__token__line__last__bit_axiom :
+  (lexer__token__line__first__bit <  lexer__token__line__last__bit)
+
+axiom lexer__token__line__position_axiom :
+  (0 <= lexer__token__line__position)
+
+logic lexer__token__col__first__bit : int
+
+logic lexer__token__col__last__bit : int
+
+logic lexer__token__col__position : int
+
+axiom lexer__token__col__first__bit_axiom :
+  (0 <= lexer__token__col__first__bit)
+
+axiom lexer__token__col__last__bit_axiom :
+  (lexer__token__col__first__bit <  lexer__token__col__last__bit)
+
+axiom lexer__token__col__position_axiom : (0 <= lexer__token__col__position)
+
+logic lexer__token__length__first__bit : int
+
+logic lexer__token__length__last__bit : int
+
+logic lexer__token__length__position : int
+
+axiom lexer__token__length__first__bit_axiom :
+  (0 <= lexer__token__length__first__bit)
+
+axiom lexer__token__length__last__bit_axiom :
+  (lexer__token__length__first__bit <  lexer__token__length__last__bit)
+
+axiom lexer__token__length__position_axiom :
+  (0 <= lexer__token__length__position)
+
+logic lexer__token__value__first__bit : int
+
+logic lexer__token__value__last__bit : int
+
+logic lexer__token__value__position : int
+
+axiom lexer__token__value__first__bit_axiom :
+  (0 <= lexer__token__value__first__bit)
+
+axiom lexer__token__value__last__bit_axiom :
+  (lexer__token__value__first__bit <  lexer__token__value__last__bit)
+
+axiom lexer__token__value__position_axiom :
+  (0 <= lexer__token__value__position)
+
+logic user_eq7 : us_rep, us_rep -> bool
+
+logic dummy7 : us_rep
+
+type token__ref = { token__content : us_rep
+}
+
+function token__ref_token__content__projection(a: token__ref) : us_rep =
+  (a).token__content
+
+logic t__attr__constrained : bool
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate default_initial_assumption(temp___expr_195: us_rep,
+  temp___skip_top_level_196: bool) =
+  (to_rep3(((temp___expr_195).us_split_discrs1).rec__lexer__token__kind) = 0)
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+predicate dynamic_invariant2(temp___expr_186: int, temp___is_init_182: bool,
+  temp___skip_constant_183: bool, temp___do_toplevel_184: bool,
+  temp___do_typ_inv_185: bool) = (((temp___is_init_182 = true) or
+  (0 <= 2147483647)) -> in_range6(temp___expr_186))
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic kind : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic value : us_t
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+logic t_length : int
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+logic attr__ATTRIBUTE_ADDRESS8 : int
+
+logic r28b : int
+
+logic attr__ATTRIBUTE_ADDRESS9 : int
+
+logic r31b : int
+
+logic attr__ATTRIBUTE_ADDRESS10 : int
+
+logic r34b : int
+
+logic attr__ATTRIBUTE_ADDRESS11 : int
+
+logic r37b : int
+
+logic attr__ATTRIBUTE_ADDRESS12 : int
+
+logic r40b : int
+
+logic attr__ATTRIBUTE_ADDRESS13 : int
+
+logic r43b : int
+
+logic attr__ATTRIBUTE_ADDRESS14 : int
+
+predicate dynamic_invariant3(temp___expr_172: int, temp___is_init_168: bool,
+  temp___skip_constant_169: bool, temp___do_toplevel_170: bool,
+  temp___do_typ_inv_171: bool) = (((temp___is_init_168 = true) or
+  (0 <= 8)) -> in_range5(temp___expr_172))
+
+type valued_tokens
+
+predicate in_range7(x: int) = ((3 <= x) and (x <= 8))
+
+function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE7 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check7 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE7 : us_image -> int
+
+logic user_eq8 : valued_tokens, valued_tokens -> bool
+
+logic dummy8 : valued_tokens
+
+type valued_tokens__ref = { valued_tokens__content : valued_tokens
+}
+
+function valued_tokens__ref_valued_tokens__content__projection(a: valued_tokens__ref) : valued_tokens =
+  (a).valued_tokens__content
+
+predicate dynamic_invariant4(temp___expr_179: int, temp___is_init_175: bool,
+  temp___skip_constant_176: bool, temp___do_toplevel_177: bool,
+  temp___do_typ_inv_178: bool) = (((temp___is_init_175 = true) or
+  (3 <= 8)) -> in_range7(temp___expr_179))
+
+predicate in_range8(rec__lexer__token__kind1: int, a: us_rep) =
+  (rec__lexer__token__kind1 = to_rep3(((a).us_split_discrs1).rec__lexer__token__kind))
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic lexer__token__kind__first__bit1 : int
+
+logic lexer__token__kind__last__bit1 : int
+
+logic lexer__token__kind__position1 : int
+
+axiom lexer__token__kind__first__bit_axiom1 :
+  (0 <= lexer__token__kind__first__bit1)
+
+axiom lexer__token__kind__last__bit_axiom1 :
+  (lexer__token__kind__first__bit1 <  lexer__token__kind__last__bit1)
+
+axiom lexer__token__kind__position_axiom1 :
+  (0 <= lexer__token__kind__position1)
+
+logic lexer__token__line__first__bit1 : int
+
+logic lexer__token__line__last__bit1 : int
+
+logic lexer__token__line__position1 : int
+
+axiom lexer__token__line__first__bit_axiom1 :
+  (0 <= lexer__token__line__first__bit1)
+
+axiom lexer__token__line__last__bit_axiom1 :
+  (lexer__token__line__first__bit1 <  lexer__token__line__last__bit1)
+
+axiom lexer__token__line__position_axiom1 :
+  (0 <= lexer__token__line__position1)
+
+logic lexer__token__col__first__bit1 : int
+
+logic lexer__token__col__last__bit1 : int
+
+logic lexer__token__col__position1 : int
+
+axiom lexer__token__col__first__bit_axiom1 :
+  (0 <= lexer__token__col__first__bit1)
+
+axiom lexer__token__col__last__bit_axiom1 :
+  (lexer__token__col__first__bit1 <  lexer__token__col__last__bit1)
+
+axiom lexer__token__col__position_axiom1 :
+  (0 <= lexer__token__col__position1)
+
+logic lexer__token__length__first__bit1 : int
+
+logic lexer__token__length__last__bit1 : int
+
+logic lexer__token__length__position1 : int
+
+axiom lexer__token__length__first__bit_axiom1 :
+  (0 <= lexer__token__length__first__bit1)
+
+axiom lexer__token__length__last__bit_axiom1 :
+  (lexer__token__length__first__bit1 <  lexer__token__length__last__bit1)
+
+axiom lexer__token__length__position_axiom1 :
+  (0 <= lexer__token__length__position1)
+
+logic lexer__token__value__first__bit1 : int
+
+logic lexer__token__value__last__bit1 : int
+
+logic lexer__token__value__position1 : int
+
+axiom lexer__token__value__first__bit_axiom1 :
+  (0 <= lexer__token__value__first__bit1)
+
+axiom lexer__token__value__last__bit_axiom1 :
+  (lexer__token__value__first__bit1 <  lexer__token__value__last__bit1)
+
+axiom lexer__token__value__position_axiom1 :
+  (0 <= lexer__token__value__position1)
+
+logic user_eq9 : us_rep, us_rep -> bool
+
+logic dummy9 : us_rep
+
+type t29b__ref = { t29b__content : us_rep
+}
+
+function t29b__ref_t29b__content__projection(a: t29b__ref) : us_rep =
+  (a).t29b__content
+
+predicate in_range9(rec__lexer__token__kind1: int, a: us_rep) =
+  (rec__lexer__token__kind1 = to_rep3(((a).us_split_discrs1).rec__lexer__token__kind))
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic lexer__token__kind__first__bit2 : int
+
+logic lexer__token__kind__last__bit2 : int
+
+logic lexer__token__kind__position2 : int
+
+axiom lexer__token__kind__first__bit_axiom2 :
+  (0 <= lexer__token__kind__first__bit2)
+
+axiom lexer__token__kind__last__bit_axiom2 :
+  (lexer__token__kind__first__bit2 <  lexer__token__kind__last__bit2)
+
+axiom lexer__token__kind__position_axiom2 :
+  (0 <= lexer__token__kind__position2)
+
+logic lexer__token__line__first__bit2 : int
+
+logic lexer__token__line__last__bit2 : int
+
+logic lexer__token__line__position2 : int
+
+axiom lexer__token__line__first__bit_axiom2 :
+  (0 <= lexer__token__line__first__bit2)
+
+axiom lexer__token__line__last__bit_axiom2 :
+  (lexer__token__line__first__bit2 <  lexer__token__line__last__bit2)
+
+axiom lexer__token__line__position_axiom2 :
+  (0 <= lexer__token__line__position2)
+
+logic lexer__token__col__first__bit2 : int
+
+logic lexer__token__col__last__bit2 : int
+
+logic lexer__token__col__position2 : int
+
+axiom lexer__token__col__first__bit_axiom2 :
+  (0 <= lexer__token__col__first__bit2)
+
+axiom lexer__token__col__last__bit_axiom2 :
+  (lexer__token__col__first__bit2 <  lexer__token__col__last__bit2)
+
+axiom lexer__token__col__position_axiom2 :
+  (0 <= lexer__token__col__position2)
+
+logic lexer__token__length__first__bit2 : int
+
+logic lexer__token__length__last__bit2 : int
+
+logic lexer__token__length__position2 : int
+
+axiom lexer__token__length__first__bit_axiom2 :
+  (0 <= lexer__token__length__first__bit2)
+
+axiom lexer__token__length__last__bit_axiom2 :
+  (lexer__token__length__first__bit2 <  lexer__token__length__last__bit2)
+
+axiom lexer__token__length__position_axiom2 :
+  (0 <= lexer__token__length__position2)
+
+logic lexer__token__value__first__bit2 : int
+
+logic lexer__token__value__last__bit2 : int
+
+logic lexer__token__value__position2 : int
+
+axiom lexer__token__value__first__bit_axiom2 :
+  (0 <= lexer__token__value__first__bit2)
+
+axiom lexer__token__value__last__bit_axiom2 :
+  (lexer__token__value__first__bit2 <  lexer__token__value__last__bit2)
+
+axiom lexer__token__value__position_axiom2 :
+  (0 <= lexer__token__value__position2)
+
+logic user_eq10 : us_rep, us_rep -> bool
+
+logic dummy10 : us_rep
+
+type t32b__ref = { t32b__content : us_rep
+}
+
+function t32b__ref_t32b__content__projection(a: t32b__ref) : us_rep =
+  (a).t32b__content
+
+predicate in_range10(rec__lexer__token__kind1: int, a: us_rep) =
+  (rec__lexer__token__kind1 = to_rep3(((a).us_split_discrs1).rec__lexer__token__kind))
+
+logic value__size4 : int
+
+logic object__size4 : int
+
+logic alignment4 : int
+
+axiom value__size_axiom4 : (0 <= value__size4)
+
+axiom object__size_axiom4 : (0 <= object__size4)
+
+axiom alignment_axiom4 : (0 <= alignment4)
+
+logic lexer__token__kind__first__bit3 : int
+
+logic lexer__token__kind__last__bit3 : int
+
+logic lexer__token__kind__position3 : int
+
+axiom lexer__token__kind__first__bit_axiom3 :
+  (0 <= lexer__token__kind__first__bit3)
+
+axiom lexer__token__kind__last__bit_axiom3 :
+  (lexer__token__kind__first__bit3 <  lexer__token__kind__last__bit3)
+
+axiom lexer__token__kind__position_axiom3 :
+  (0 <= lexer__token__kind__position3)
+
+logic lexer__token__line__first__bit3 : int
+
+logic lexer__token__line__last__bit3 : int
+
+logic lexer__token__line__position3 : int
+
+axiom lexer__token__line__first__bit_axiom3 :
+  (0 <= lexer__token__line__first__bit3)
+
+axiom lexer__token__line__last__bit_axiom3 :
+  (lexer__token__line__first__bit3 <  lexer__token__line__last__bit3)
+
+axiom lexer__token__line__position_axiom3 :
+  (0 <= lexer__token__line__position3)
+
+logic lexer__token__col__first__bit3 : int
+
+logic lexer__token__col__last__bit3 : int
+
+logic lexer__token__col__position3 : int
+
+axiom lexer__token__col__first__bit_axiom3 :
+  (0 <= lexer__token__col__first__bit3)
+
+axiom lexer__token__col__last__bit_axiom3 :
+  (lexer__token__col__first__bit3 <  lexer__token__col__last__bit3)
+
+axiom lexer__token__col__position_axiom3 :
+  (0 <= lexer__token__col__position3)
+
+logic lexer__token__length__first__bit3 : int
+
+logic lexer__token__length__last__bit3 : int
+
+logic lexer__token__length__position3 : int
+
+axiom lexer__token__length__first__bit_axiom3 :
+  (0 <= lexer__token__length__first__bit3)
+
+axiom lexer__token__length__last__bit_axiom3 :
+  (lexer__token__length__first__bit3 <  lexer__token__length__last__bit3)
+
+axiom lexer__token__length__position_axiom3 :
+  (0 <= lexer__token__length__position3)
+
+logic lexer__token__value__first__bit3 : int
+
+logic lexer__token__value__last__bit3 : int
+
+logic lexer__token__value__position3 : int
+
+axiom lexer__token__value__first__bit_axiom3 :
+  (0 <= lexer__token__value__first__bit3)
+
+axiom lexer__token__value__last__bit_axiom3 :
+  (lexer__token__value__first__bit3 <  lexer__token__value__last__bit3)
+
+axiom lexer__token__value__position_axiom3 :
+  (0 <= lexer__token__value__position3)
+
+logic user_eq11 : us_rep, us_rep -> bool
+
+logic dummy11 : us_rep
+
+type t35b__ref = { t35b__content : us_rep
+}
+
+function t35b__ref_t35b__content__projection(a: t35b__ref) : us_rep =
+  (a).t35b__content
+
+predicate in_range11(rec__lexer__token__kind1: int, a: us_rep) =
+  (rec__lexer__token__kind1 = to_rep3(((a).us_split_discrs1).rec__lexer__token__kind))
+
+logic value__size5 : int
+
+logic object__size5 : int
+
+logic alignment5 : int
+
+axiom value__size_axiom5 : (0 <= value__size5)
+
+axiom object__size_axiom5 : (0 <= object__size5)
+
+axiom alignment_axiom5 : (0 <= alignment5)
+
+logic lexer__token__kind__first__bit4 : int
+
+logic lexer__token__kind__last__bit4 : int
+
+logic lexer__token__kind__position4 : int
+
+axiom lexer__token__kind__first__bit_axiom4 :
+  (0 <= lexer__token__kind__first__bit4)
+
+axiom lexer__token__kind__last__bit_axiom4 :
+  (lexer__token__kind__first__bit4 <  lexer__token__kind__last__bit4)
+
+axiom lexer__token__kind__position_axiom4 :
+  (0 <= lexer__token__kind__position4)
+
+logic lexer__token__line__first__bit4 : int
+
+logic lexer__token__line__last__bit4 : int
+
+logic lexer__token__line__position4 : int
+
+axiom lexer__token__line__first__bit_axiom4 :
+  (0 <= lexer__token__line__first__bit4)
+
+axiom lexer__token__line__last__bit_axiom4 :
+  (lexer__token__line__first__bit4 <  lexer__token__line__last__bit4)
+
+axiom lexer__token__line__position_axiom4 :
+  (0 <= lexer__token__line__position4)
+
+logic lexer__token__col__first__bit4 : int
+
+logic lexer__token__col__last__bit4 : int
+
+logic lexer__token__col__position4 : int
+
+axiom lexer__token__col__first__bit_axiom4 :
+  (0 <= lexer__token__col__first__bit4)
+
+axiom lexer__token__col__last__bit_axiom4 :
+  (lexer__token__col__first__bit4 <  lexer__token__col__last__bit4)
+
+axiom lexer__token__col__position_axiom4 :
+  (0 <= lexer__token__col__position4)
+
+logic lexer__token__length__first__bit4 : int
+
+logic lexer__token__length__last__bit4 : int
+
+logic lexer__token__length__position4 : int
+
+axiom lexer__token__length__first__bit_axiom4 :
+  (0 <= lexer__token__length__first__bit4)
+
+axiom lexer__token__length__last__bit_axiom4 :
+  (lexer__token__length__first__bit4 <  lexer__token__length__last__bit4)
+
+axiom lexer__token__length__position_axiom4 :
+  (0 <= lexer__token__length__position4)
+
+logic lexer__token__value__first__bit4 : int
+
+logic lexer__token__value__last__bit4 : int
+
+logic lexer__token__value__position4 : int
+
+axiom lexer__token__value__first__bit_axiom4 :
+  (0 <= lexer__token__value__first__bit4)
+
+axiom lexer__token__value__last__bit_axiom4 :
+  (lexer__token__value__first__bit4 <  lexer__token__value__last__bit4)
+
+axiom lexer__token__value__position_axiom4 :
+  (0 <= lexer__token__value__position4)
+
+logic user_eq12 : us_rep, us_rep -> bool
+
+logic dummy12 : us_rep
+
+type t38b__ref = { t38b__content : us_rep
+}
+
+function t38b__ref_t38b__content__projection(a: t38b__ref) : us_rep =
+  (a).t38b__content
+
+predicate in_range12(rec__lexer__token__kind1: int, a: us_rep) =
+  (rec__lexer__token__kind1 = to_rep3(((a).us_split_discrs1).rec__lexer__token__kind))
+
+logic value__size6 : int
+
+logic object__size6 : int
+
+logic alignment6 : int
+
+axiom value__size_axiom6 : (0 <= value__size6)
+
+axiom object__size_axiom6 : (0 <= object__size6)
+
+axiom alignment_axiom6 : (0 <= alignment6)
+
+logic lexer__token__kind__first__bit5 : int
+
+logic lexer__token__kind__last__bit5 : int
+
+logic lexer__token__kind__position5 : int
+
+axiom lexer__token__kind__first__bit_axiom5 :
+  (0 <= lexer__token__kind__first__bit5)
+
+axiom lexer__token__kind__last__bit_axiom5 :
+  (lexer__token__kind__first__bit5 <  lexer__token__kind__last__bit5)
+
+axiom lexer__token__kind__position_axiom5 :
+  (0 <= lexer__token__kind__position5)
+
+logic lexer__token__line__first__bit5 : int
+
+logic lexer__token__line__last__bit5 : int
+
+logic lexer__token__line__position5 : int
+
+axiom lexer__token__line__first__bit_axiom5 :
+  (0 <= lexer__token__line__first__bit5)
+
+axiom lexer__token__line__last__bit_axiom5 :
+  (lexer__token__line__first__bit5 <  lexer__token__line__last__bit5)
+
+axiom lexer__token__line__position_axiom5 :
+  (0 <= lexer__token__line__position5)
+
+logic lexer__token__col__first__bit5 : int
+
+logic lexer__token__col__last__bit5 : int
+
+logic lexer__token__col__position5 : int
+
+axiom lexer__token__col__first__bit_axiom5 :
+  (0 <= lexer__token__col__first__bit5)
+
+axiom lexer__token__col__last__bit_axiom5 :
+  (lexer__token__col__first__bit5 <  lexer__token__col__last__bit5)
+
+axiom lexer__token__col__position_axiom5 :
+  (0 <= lexer__token__col__position5)
+
+logic lexer__token__length__first__bit5 : int
+
+logic lexer__token__length__last__bit5 : int
+
+logic lexer__token__length__position5 : int
+
+axiom lexer__token__length__first__bit_axiom5 :
+  (0 <= lexer__token__length__first__bit5)
+
+axiom lexer__token__length__last__bit_axiom5 :
+  (lexer__token__length__first__bit5 <  lexer__token__length__last__bit5)
+
+axiom lexer__token__length__position_axiom5 :
+  (0 <= lexer__token__length__position5)
+
+logic lexer__token__value__first__bit5 : int
+
+logic lexer__token__value__last__bit5 : int
+
+logic lexer__token__value__position5 : int
+
+axiom lexer__token__value__first__bit_axiom5 :
+  (0 <= lexer__token__value__first__bit5)
+
+axiom lexer__token__value__last__bit_axiom5 :
+  (lexer__token__value__first__bit5 <  lexer__token__value__last__bit5)
+
+axiom lexer__token__value__position_axiom5 :
+  (0 <= lexer__token__value__position5)
+
+logic user_eq13 : us_rep, us_rep -> bool
+
+logic dummy13 : us_rep
+
+type t41b__ref = { t41b__content : us_rep
+}
+
+function t41b__ref_t41b__content__projection(a: t41b__ref) : us_rep =
+  (a).t41b__content
+
+predicate in_range13(rec__lexer__token__kind1: int, a: us_rep) =
+  (rec__lexer__token__kind1 = to_rep3(((a).us_split_discrs1).rec__lexer__token__kind))
+
+logic value__size7 : int
+
+logic object__size7 : int
+
+logic alignment7 : int
+
+axiom value__size_axiom7 : (0 <= value__size7)
+
+axiom object__size_axiom7 : (0 <= object__size7)
+
+axiom alignment_axiom7 : (0 <= alignment7)
+
+logic lexer__token__kind__first__bit6 : int
+
+logic lexer__token__kind__last__bit6 : int
+
+logic lexer__token__kind__position6 : int
+
+axiom lexer__token__kind__first__bit_axiom6 :
+  (0 <= lexer__token__kind__first__bit6)
+
+axiom lexer__token__kind__last__bit_axiom6 :
+  (lexer__token__kind__first__bit6 <  lexer__token__kind__last__bit6)
+
+axiom lexer__token__kind__position_axiom6 :
+  (0 <= lexer__token__kind__position6)
+
+logic lexer__token__line__first__bit6 : int
+
+logic lexer__token__line__last__bit6 : int
+
+logic lexer__token__line__position6 : int
+
+axiom lexer__token__line__first__bit_axiom6 :
+  (0 <= lexer__token__line__first__bit6)
+
+axiom lexer__token__line__last__bit_axiom6 :
+  (lexer__token__line__first__bit6 <  lexer__token__line__last__bit6)
+
+axiom lexer__token__line__position_axiom6 :
+  (0 <= lexer__token__line__position6)
+
+logic lexer__token__col__first__bit6 : int
+
+logic lexer__token__col__last__bit6 : int
+
+logic lexer__token__col__position6 : int
+
+axiom lexer__token__col__first__bit_axiom6 :
+  (0 <= lexer__token__col__first__bit6)
+
+axiom lexer__token__col__last__bit_axiom6 :
+  (lexer__token__col__first__bit6 <  lexer__token__col__last__bit6)
+
+axiom lexer__token__col__position_axiom6 :
+  (0 <= lexer__token__col__position6)
+
+logic lexer__token__length__first__bit6 : int
+
+logic lexer__token__length__last__bit6 : int
+
+logic lexer__token__length__position6 : int
+
+axiom lexer__token__length__first__bit_axiom6 :
+  (0 <= lexer__token__length__first__bit6)
+
+axiom lexer__token__length__last__bit_axiom6 :
+  (lexer__token__length__first__bit6 <  lexer__token__length__last__bit6)
+
+axiom lexer__token__length__position_axiom6 :
+  (0 <= lexer__token__length__position6)
+
+logic lexer__token__value__first__bit6 : int
+
+logic lexer__token__value__last__bit6 : int
+
+logic lexer__token__value__position6 : int
+
+axiom lexer__token__value__first__bit_axiom6 :
+  (0 <= lexer__token__value__first__bit6)
+
+axiom lexer__token__value__last__bit_axiom6 :
+  (lexer__token__value__first__bit6 <  lexer__token__value__last__bit6)
+
+axiom lexer__token__value__position_axiom6 :
+  (0 <= lexer__token__value__position6)
+
+logic user_eq14 : us_rep, us_rep -> bool
+
+logic dummy14 : us_rep
+
+type t44b__ref = { t44b__content : us_rep
+}
+
+function t44b__ref_t44b__content__projection(a: t44b__ref) : us_rep =
+  (a).t44b__content
+
+predicate dynamic_invariant5(temp___expr_46: int, temp___is_init_42: bool,
+  temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
+  temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
+  (1 <= 2147483647)) -> in_range3(temp___expr_46))
+
+predicate dynamic_invariant6(temp___expr_74: int, temp___is_init_70: bool,
+  temp___skip_constant_71: bool, temp___do_toplevel_72: bool,
+  temp___do_typ_inv_73: bool) = (((temp___is_init_70 = true) or
+  (0 <= 255)) -> in_range4(temp___expr_74))
+
+predicate dynamic_invariant7(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+ (* File "lexer.adb", line 274, characters 0-0 *)
+goal defqtvc :
+  (forall name_table:us_private. forall t__split_discrs:token_kind.
+  forall current_pos:int. forall first_line:int. forall first_col:int.
+  forall first_pos:int. forall n:int. (dynamic_invariant(current_pos, true,
+  false, true, true) -> (dynamic_invariant(first_line, true, false, true,
+  true) -> (dynamic_invariant(first_col, true, false, true, true) ->
+  (dynamic_invariant(first_pos, true, false, true, true) ->
+  (dynamic_invariant4(kind, true, false, true, true) ->
+  (dynamic_invariant1(value, true, false, true, true) ->
+  ((forall name_table1:us_private.
+   invariant____function_guard(invariant__(name_table1), name_table1)) ->
+  ((((not (t__attr__constrained = true)) and
+  (invariant__(name_table) = true)) and (first_pos <= current_pos)) ->
+  (let o = (current_pos - first_pos) : int in (in_range1(o) ->
+  (in_range2(o) -> ((o = t_length) -> (dynamic_invariant(t_length, true,
+  false, true, true) -> (dynamic_invariant2(n, false, false, true, true) ->
+  (forall name_table1:us_private. forall n1:int.
+  ((forall name_table2:us_private.
+   invariant____function_guard(invariant__(name_table2), name_table2)) ->
+  (((invariant__(name_table1) = true) and dynamic_invariant2(n1, true, true,
+  true, true)) ->
+  (forall t__split_fields:us_split_fields.
+  forall t__split_discrs1:token_kind.
+  ((exists spark__branch:bool.
+   ((spark__branch = (if (kind = 3) then true else false)) and
+   (if (spark__branch = true) then (exists lexer__read_token__new_token__2__R28b__assume:int.
+                                   ((to_rep3(t__split_discrs) = lexer__read_token__new_token__2__R28b__assume) and
+                                   ((lexer__read_token__new_token__2__R28b__assume = r28b) and
+                                   (dynamic_invariant3(r28b, true, false,
+                                   true, true) and
+                                   (exists o1:name_id.
+                                   ((to_rep4(o1) = n1) and
+                                   (exists o2:natural.
+                                   ((to_rep(o2) = t_length) and
+                                   (exists o3:natural.
+                                   ((to_rep(o3) = first_col) and
+                                   (exists o4:natural.
+                                   ((to_rep(o4) = first_line) and
+                                   (exists o5:token_kind.
+                                   ((to_rep3(o5) = 3) and
+                                   (((t__attr__constrained = true) ->
+                                   (o5 = t__split_discrs)) and
+                                   ((t__split_fields = {
+                                   rec__lexer__token__line = o4;
+                                   rec__lexer__token__col = o3;
+                                   rec__lexer__token__length = o2;
+                                   rec__lexer__token__value = o1 }) and
+                                   (t__split_discrs1 = o5))))))))))))))))) else 
+   (exists spark__branch1:bool.
+   ((spark__branch1 = (if (kind = 4) then true else false)) and
+   (if (spark__branch1 = true) then (exists lexer__read_token__new_token__2__R31b__assume:int.
+                                    ((to_rep3(t__split_discrs) = lexer__read_token__new_token__2__R31b__assume) and
+                                    ((lexer__read_token__new_token__2__R31b__assume = r31b) and
+                                    (dynamic_invariant3(r31b, true, false,
+                                    true, true) and
+                                    (exists o1:name_id.
+                                    ((to_rep4(o1) = n1) and
+                                    (exists o2:natural.
+                                    ((to_rep(o2) = t_length) and
+                                    (exists o3:natural.
+                                    ((to_rep(o3) = first_col) and
+                                    (exists o4:natural.
+                                    ((to_rep(o4) = first_line) and
+                                    (exists o5:token_kind.
+                                    ((to_rep3(o5) = 4) and
+                                    (((t__attr__constrained = true) ->
+                                    (o5 = t__split_discrs)) and
+                                    ((t__split_fields = {
+                                    rec__lexer__token__line = o4;
+                                    rec__lexer__token__col = o3;
+                                    rec__lexer__token__length = o2;
+                                    rec__lexer__token__value = o1 }) and
+                                    (t__split_discrs1 = o5))))))))))))))))) else 
+   (exists spark__branch2:bool.
+   ((spark__branch2 = (if (kind = 5) then true else false)) and
+   (if (spark__branch2 = true) then (exists lexer__read_token__new_token__2__R34b__assume:int.
+                                    ((to_rep3(t__split_discrs) = lexer__read_token__new_token__2__R34b__assume) and
+                                    ((lexer__read_token__new_token__2__R34b__assume = r34b) and
+                                    (dynamic_invariant3(r34b, true, false,
+                                    true, true) and
+                                    (exists o1:name_id.
+                                    ((to_rep4(o1) = n1) and
+                                    (exists o2:natural.
+                                    ((to_rep(o2) = t_length) and
+                                    (exists o3:natural.
+                                    ((to_rep(o3) = first_col) and
+                                    (exists o4:natural.
+                                    ((to_rep(o4) = first_line) and
+                                    (exists o5:token_kind.
+                                    ((to_rep3(o5) = 5) and
+                                    (((t__attr__constrained = true) ->
+                                    (o5 = t__split_discrs)) and
+                                    ((t__split_fields = {
+                                    rec__lexer__token__line = o4;
+                                    rec__lexer__token__col = o3;
+                                    rec__lexer__token__length = o2;
+                                    rec__lexer__token__value = o1 }) and
+                                    (t__split_discrs1 = o5))))))))))))))))) else 
+   (exists spark__branch3:bool.
+   ((spark__branch3 = (if (kind = 6) then true else false)) and
+   (if (spark__branch3 = true) then (exists lexer__read_token__new_token__2__R37b__assume:int.
+                                    ((to_rep3(t__split_discrs) = lexer__read_token__new_token__2__R37b__assume) and
+                                    ((lexer__read_token__new_token__2__R37b__assume = r37b) and
+                                    (dynamic_invariant3(r37b, true, false,
+                                    true, true) and
+                                    (exists o1:name_id.
+                                    ((to_rep4(o1) = n1) and
+                                    (exists o2:natural.
+                                    ((to_rep(o2) = t_length) and
+                                    (exists o3:natural.
+                                    ((to_rep(o3) = first_col) and
+                                    (exists o4:natural.
+                                    ((to_rep(o4) = first_line) and
+                                    (exists o5:token_kind.
+                                    ((to_rep3(o5) = 6) and
+                                    (((t__attr__constrained = true) ->
+                                    (o5 = t__split_discrs)) and
+                                    ((t__split_fields = {
+                                    rec__lexer__token__line = o4;
+                                    rec__lexer__token__col = o3;
+                                    rec__lexer__token__length = o2;
+                                    rec__lexer__token__value = o1 }) and
+                                    (t__split_discrs1 = o5))))))))))))))))) else 
+   (exists spark__branch4:bool.
+   ((spark__branch4 = (if (kind = 7) then true else false)) and
+   (if (spark__branch4 = true) then (exists lexer__read_token__new_token__2__R40b__assume:int.
+                                    ((to_rep3(t__split_discrs) = lexer__read_token__new_token__2__R40b__assume) and
+                                    ((lexer__read_token__new_token__2__R40b__assume = r40b) and
+                                    (dynamic_invariant3(r40b, true, false,
+                                    true, true) and
+                                    (exists o1:name_id.
+                                    ((to_rep4(o1) = n1) and
+                                    (exists o2:natural.
+                                    ((to_rep(o2) = t_length) and
+                                    (exists o3:natural.
+                                    ((to_rep(o3) = first_col) and
+                                    (exists o4:natural.
+                                    ((to_rep(o4) = first_line) and
+                                    (exists o5:token_kind.
+                                    ((to_rep3(o5) = 7) and
+                                    (((t__attr__constrained = true) ->
+                                    (o5 = t__split_discrs)) and
+                                    ((t__split_fields = {
+                                    rec__lexer__token__line = o4;
+                                    rec__lexer__token__col = o3;
+                                    rec__lexer__token__length = o2;
+                                    rec__lexer__token__value = o1 }) and
+                                    (t__split_discrs1 = o5))))))))))))))))) else 
+   (exists lexer__read_token__new_token__2__R43b__assume:int.
+   ((to_rep3(t__split_discrs) = lexer__read_token__new_token__2__R43b__assume) and
+   ((lexer__read_token__new_token__2__R43b__assume = r43b) and
+   (dynamic_invariant3(r43b, true, false, true, true) and
+   (exists o1:name_id. ((to_rep4(o1) = n1) and
+   (exists o2:natural. ((to_rep(o2) = t_length) and
+   (exists o3:natural. ((to_rep(o3) = first_col) and
+   (exists o4:natural. ((to_rep(o4) = first_line) and
+   (exists o5:token_kind. ((to_rep3(o5) = 8) and
+   (((t__attr__constrained = true) -> (o5 = t__split_discrs)) and
+   ((t__split_fields = { rec__lexer__token__line = o4;
+   rec__lexer__token__col = o3; rec__lexer__token__length = o2;
+   rec__lexer__token__value = o1 }) and (t__split_discrs1 = o5)))))))))))))))))))))))))))))))) ->
+  in_range1((current_pos - first_pos))))))))))))))))))))))

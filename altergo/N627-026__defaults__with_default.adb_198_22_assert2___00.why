@@ -1,0 +1,1907 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+logic bool_eq : int, int -> bool
+
+logic bool_ne : int, int -> bool
+
+logic bool_lt : int, int -> bool
+
+logic bool_le : int, int -> bool
+
+logic bool_gt : int, int -> bool
+
+logic bool_ge : int, int -> bool
+
+axiom bool_eq_axiom :
+  (forall x:int. (forall y:int. ((bool_eq(x, y) = true) -> (x = y))))
+
+axiom bool_eq_axiom1 :
+  (forall x:int. (forall y:int. ((x = y) -> (bool_eq(x, y) = true))))
+
+axiom bool_ne_axiom :
+  (forall x:int. (forall y:int. ((bool_ne(x, y) = true) -> (not (x = y)))))
+
+axiom bool_ne_axiom1 :
+  (forall x:int. (forall y:int. ((not (x = y)) -> (bool_ne(x, y) = true))))
+
+axiom bool_lt_axiom :
+  (forall x:int. (forall y:int. ((bool_lt(x, y) = true) -> (x <  y))))
+
+axiom bool_lt_axiom1 :
+  (forall x:int. (forall y:int. ((x <  y) -> (bool_lt(x, y) = true))))
+
+axiom bool_int__le_axiom :
+  (forall x:int. (forall y:int. ((bool_le(x, y) = true) -> (x <= y))))
+
+axiom bool_int__le_axiom1 :
+  (forall x:int. (forall y:int. ((x <= y) -> (bool_le(x, y) = true))))
+
+axiom bool_gt_axiom :
+  (forall x:int. (forall y:int. ((bool_gt(x, y) = true) -> (y <  x))))
+
+axiom bool_gt_axiom1 :
+  (forall x:int. (forall y:int. ((y <  x) -> (bool_gt(x, y) = true))))
+
+axiom bool_ge_axiom :
+  (forall x:int. (forall y:int. ((bool_ge(x, y) = true) -> (y <= x))))
+
+axiom bool_ge_axiom1 :
+  (forall x:int. (forall y:int. ((y <= x) -> (bool_ge(x, y) = true))))
+
+function length(x: int, y: int) : int =
+  (if (x <= y) then ((y - x) + 1) else 0)
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq1(x: bool, y: bool) : bool =
+  (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : natural, natural -> bool
+
+logic dummy : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range1(temp___expr_39))
+
+logic c : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+type scalar_with_default
+
+logic scalar_with_defaultqtint : scalar_with_default -> int
+
+axiom scalar_with_defaultqtaxiom :
+  (forall i:scalar_with_default. (0 <= scalar_with_defaultqtint(i)))
+
+axiom scalar_with_defaultqtaxiom1 :
+  (forall i:scalar_with_default. (scalar_with_defaultqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : scalar_with_default, scalar_with_default -> bool
+
+logic dummy1 : scalar_with_default
+
+type scalar_with_default__ref = { scalar_with_default__content :
+scalar_with_default
+}
+
+function scalar_with_default__ref_scalar_with_default__content__8__projection(a: scalar_with_default__ref) : scalar_with_default =
+  (a).scalar_with_default__content
+
+function to_rep(x: scalar_with_default) : int = scalar_with_defaultqtint(x)
+
+logic of_rep : int -> scalar_with_default
+
+axiom inversion_axiom :
+  (forall x:scalar_with_default [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom :
+  (forall x:scalar_with_default [to_rep(x)]. in_range2(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range2(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type tscalar_with_defaultB
+
+logic tscalar_with_defaultBqtint : tscalar_with_defaultB -> int
+
+axiom tscalar_with_defaultBqtaxiom :
+  (forall i:tscalar_with_defaultB.
+  ((- 2147483648) <= tscalar_with_defaultBqtint(i)))
+
+axiom tscalar_with_defaultBqtaxiom1 :
+  (forall i:tscalar_with_defaultB.
+  (tscalar_with_defaultBqtint(i) <= 2147483647))
+
+predicate in_range3(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : tscalar_with_defaultB, tscalar_with_defaultB -> bool
+
+logic dummy2 : tscalar_with_defaultB
+
+type tscalar_with_defaultB__ref = { tscalar_with_defaultB__content :
+tscalar_with_defaultB
+}
+
+function tscalar_with_defaultB__ref_tscalar_with_defaultB__content__8__projection(a: tscalar_with_defaultB__ref) : tscalar_with_defaultB =
+  (a).tscalar_with_defaultB__content
+
+function to_rep1(x: tscalar_with_defaultB) : int =
+  tscalar_with_defaultBqtint(x)
+
+logic of_rep1 : int -> tscalar_with_defaultB
+
+axiom inversion_axiom1 :
+  (forall x:tscalar_with_defaultB [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 :
+  (forall x:tscalar_with_defaultB [to_rep1(x)]. in_range3(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range3(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+logic first : int
+
+predicate dynamic_property(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq3 : tscalar_with_defaultB, tscalar_with_defaultB -> bool
+
+logic dummy3 : tscalar_with_defaultB
+
+type scalar_bad_default__ref = { scalar_bad_default__content :
+tscalar_with_defaultB
+}
+
+function scalar_bad_default__ref_scalar_bad_default__content__7__projection(a: scalar_bad_default__ref) : tscalar_with_defaultB =
+  (a).scalar_bad_default__content
+
+type us_split_discrs = { rec__with_default__ok_record__rec_with_bad_discr__b
+: bool
+}
+
+function us_split_discrs_rec__with_default__ok_record__rec_with_bad_discr__b__projection(a: us_split_discrs) : bool =
+  (a).rec__with_default__ok_record__rec_with_bad_discr__b
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__5__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_split_fields = { rec__with_default__ok_record__rec_with_bad_discr__f1
+: scalar_with_default; rec__with_default__ok_record__rec_with_bad_discr__f2 :
+tscalar_with_defaultB
+}
+
+function us_split_fields_rec__with_default__ok_record__rec_with_bad_discr__f1__projection(a: us_split_fields) : scalar_with_default =
+  (a).rec__with_default__ok_record__rec_with_bad_discr__f1
+
+function us_split_fields_rec__with_default__ok_record__rec_with_bad_discr__f2__projection(a: us_split_fields) : tscalar_with_defaultB =
+  (a).rec__with_default__ok_record__rec_with_bad_discr__f2
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__7__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_discrs1 : us_split_discrs; us_split_fields1 :
+us_split_fields
+}
+
+function us_rep___split_discrs__5__projection(a: us_rep) : us_split_discrs =
+  (a).us_split_discrs1
+
+function us_rep___split_fields__7__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+predicate with_default__ok_record__rec_with_bad_discr__f1__pred(a: us_rep) =
+  (to_int(((a).us_split_discrs1).rec__with_default__ok_record__rec_with_bad_discr__b) = 1)
+
+predicate with_default__ok_record__rec_with_bad_discr__f2__pred(a: us_rep) =
+  (to_int(((a).us_split_discrs1).rec__with_default__ok_record__rec_with_bad_discr__b) = 0)
+
+function bool_eq6(a: us_rep, b: us_rep) : bool =
+  (if ((to_int(((a).us_split_discrs1).rec__with_default__ok_record__rec_with_bad_discr__b) = to_int(((b).us_split_discrs1).rec__with_default__ok_record__rec_with_bad_discr__b)) and
+  ((with_default__ok_record__rec_with_bad_discr__f1__pred(a) ->
+  (to_rep(((a).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f1) = to_rep(((b).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f1))) and
+  (with_default__ok_record__rec_with_bad_discr__f2__pred(a) ->
+  (to_rep1(((a).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f2) = to_rep1(((b).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f2))))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic with_default__ok_record__rec_with_bad_discr__b__first__bit : int
+
+logic with_default__ok_record__rec_with_bad_discr__b__last__bit : int
+
+logic with_default__ok_record__rec_with_bad_discr__b__position : int
+
+axiom with_default__ok_record__rec_with_bad_discr__b__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_with_bad_discr__b__first__bit)
+
+axiom with_default__ok_record__rec_with_bad_discr__b__last__bit_axiom :
+  (with_default__ok_record__rec_with_bad_discr__b__first__bit <  with_default__ok_record__rec_with_bad_discr__b__last__bit)
+
+axiom with_default__ok_record__rec_with_bad_discr__b__position_axiom :
+  (0 <= with_default__ok_record__rec_with_bad_discr__b__position)
+
+logic with_default__ok_record__rec_with_bad_discr__f1__first__bit : int
+
+logic with_default__ok_record__rec_with_bad_discr__f1__last__bit : int
+
+logic with_default__ok_record__rec_with_bad_discr__f1__position : int
+
+axiom with_default__ok_record__rec_with_bad_discr__f1__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f1__first__bit)
+
+axiom with_default__ok_record__rec_with_bad_discr__f1__last__bit_axiom :
+  (with_default__ok_record__rec_with_bad_discr__f1__first__bit <  with_default__ok_record__rec_with_bad_discr__f1__last__bit)
+
+axiom with_default__ok_record__rec_with_bad_discr__f1__position_axiom :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f1__position)
+
+logic with_default__ok_record__rec_with_bad_discr__f2__first__bit : int
+
+logic with_default__ok_record__rec_with_bad_discr__f2__last__bit : int
+
+logic with_default__ok_record__rec_with_bad_discr__f2__position : int
+
+axiom with_default__ok_record__rec_with_bad_discr__f2__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f2__first__bit)
+
+axiom with_default__ok_record__rec_with_bad_discr__f2__last__bit_axiom :
+  (with_default__ok_record__rec_with_bad_discr__f2__first__bit <  with_default__ok_record__rec_with_bad_discr__f2__last__bit)
+
+axiom with_default__ok_record__rec_with_bad_discr__f2__position_axiom :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f2__position)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type rec_with_bad_discr__ref = { rec_with_bad_discr__content : us_rep
+}
+
+function rec_with_bad_discr__ref_rec_with_bad_discr__content__2__projection(a: rec_with_bad_discr__ref) : us_rep =
+  (a).rec_with_bad_discr__content
+
+logic no_def__attr__constrained : bool
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+predicate dynamic_invariant1(temp___expr_493: us_rep,
+  temp___is_init_489: bool, temp___skip_constant_490: bool,
+  temp___do_toplevel_491: bool, temp___do_typ_inv_492: bool) =
+  (with_default__ok_record__rec_with_bad_discr__f2__pred(temp___expr_493) ->
+  (((temp___is_init_489 = true) or (first <= 2147483647)) ->
+  dynamic_property(first, 2147483647,
+  to_rep1(((temp___expr_493).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f2))))
+
+predicate default_initial_assumption(temp___expr_495: us_rep,
+  temp___skip_top_level_496: bool) =
+  ((((temp___expr_495).us_split_discrs1).rec__with_default__ok_record__rec_with_bad_discr__b = of_int(0)) and
+  ((with_default__ok_record__rec_with_bad_discr__f1__pred(temp___expr_495) ->
+  (to_rep(((temp___expr_495).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f1) = 0)) and
+  (with_default__ok_record__rec_with_bad_discr__f2__pred(temp___expr_495) ->
+  (to_rep1(((temp___expr_495).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f2) = 0))))
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range4(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq5 : integer, integer -> bool
+
+logic dummy5 : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep2(x: integer) : int = integerqtint(x)
+
+logic of_rep2 : int -> integer
+
+axiom inversion_axiom2 :
+  (forall x:integer [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
+
+axiom range_axiom2 : (forall x:integer [to_rep2(x)]. in_range4(to_rep2(x)))
+
+axiom coerce_axiom2 :
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range4(x) ->
+  (to_rep2(of_rep2(x)) = x)))
+
+logic first1 : int
+
+predicate dynamic_property1(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> int
+
+logic user_eq6 : integer, integer -> bool
+
+logic dummy6 : integer
+
+type scalar_no_default__ref = { scalar_no_default__content : integer
+}
+
+function scalar_no_default__ref_scalar_no_default__content__5__projection(a: scalar_no_default__ref) : integer =
+  (a).scalar_no_default__content
+
+type us_split_fields2 = { rec__with_default__ok_record__simple_rec__f1 :
+scalar_with_default; rec__with_default__ok_record__simple_rec__f2 : integer
+}
+
+function us_split_fields_rec__with_default__ok_record__simple_rec__f1__projection(a: us_split_fields2) : scalar_with_default =
+  (a).rec__with_default__ok_record__simple_rec__f1
+
+function us_split_fields_rec__with_default__ok_record__simple_rec__f2__projection(a: us_split_fields2) : integer =
+  (a).rec__with_default__ok_record__simple_rec__f2
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__4__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_fields3 : us_split_fields2
+}
+
+function us_rep___split_fields__4__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function bool_eq9(a: us_rep1, b: us_rep1) : bool =
+  (if ((to_rep(((a).us_split_fields3).rec__with_default__ok_record__simple_rec__f1) = to_rep(((b).us_split_fields3).rec__with_default__ok_record__simple_rec__f1)) and
+  (to_rep2(((a).us_split_fields3).rec__with_default__ok_record__simple_rec__f2) = to_rep2(((b).us_split_fields3).rec__with_default__ok_record__simple_rec__f2))) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic with_default__ok_record__simple_rec__f1__first__bit : int
+
+logic with_default__ok_record__simple_rec__f1__last__bit : int
+
+logic with_default__ok_record__simple_rec__f1__position : int
+
+axiom with_default__ok_record__simple_rec__f1__first__bit_axiom :
+  (0 <= with_default__ok_record__simple_rec__f1__first__bit)
+
+axiom with_default__ok_record__simple_rec__f1__last__bit_axiom :
+  (with_default__ok_record__simple_rec__f1__first__bit <  with_default__ok_record__simple_rec__f1__last__bit)
+
+axiom with_default__ok_record__simple_rec__f1__position_axiom :
+  (0 <= with_default__ok_record__simple_rec__f1__position)
+
+logic with_default__ok_record__simple_rec__f2__first__bit : int
+
+logic with_default__ok_record__simple_rec__f2__last__bit : int
+
+logic with_default__ok_record__simple_rec__f2__position : int
+
+axiom with_default__ok_record__simple_rec__f2__first__bit_axiom :
+  (0 <= with_default__ok_record__simple_rec__f2__first__bit)
+
+axiom with_default__ok_record__simple_rec__f2__last__bit_axiom :
+  (with_default__ok_record__simple_rec__f2__first__bit <  with_default__ok_record__simple_rec__f2__last__bit)
+
+axiom with_default__ok_record__simple_rec__f2__position_axiom :
+  (0 <= with_default__ok_record__simple_rec__f2__position)
+
+logic user_eq7 : us_rep1, us_rep1 -> bool
+
+logic dummy7 : us_rep1
+
+type simple_rec__ref = { simple_rec__content : us_rep1
+}
+
+function simple_rec__ref_simple_rec__content__2__projection(a: simple_rec__ref) : us_rep1 =
+  (a).simple_rec__content
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+predicate dynamic_invariant2(temp___expr_468: us_rep1,
+  temp___is_init_464: bool, temp___skip_constant_465: bool,
+  temp___do_toplevel_466: bool, temp___do_typ_inv_467: bool) =
+  (((temp___is_init_464 = true) or (first1 <= 2147483647)) ->
+  dynamic_property1(first1, 2147483647,
+  to_rep2(((temp___expr_468).us_split_fields3).rec__with_default__ok_record__simple_rec__f2)))
+
+predicate default_initial_assumption1(temp___expr_469: us_rep1,
+  temp___skip_top_level_470: bool) =
+  ((to_rep(((temp___expr_469).us_split_fields3).rec__with_default__ok_record__simple_rec__f1) = 0) and
+  (to_rep2(((temp___expr_469).us_split_fields3).rec__with_default__ok_record__simple_rec__f2) = c))
+
+type us_split_discrs2 = { rec__with_default__ok_record__rec_with_discr__b :
+bool
+}
+
+function us_split_discrs_rec__with_default__ok_record__rec_with_discr__b__projection(a: us_split_discrs2) : bool =
+  (a).rec__with_default__ok_record__rec_with_discr__b
+
+type us_split_discrs__ref1 = { us_split_discrs__content1 : us_split_discrs2
+}
+
+function us_split_discrs__ref___split_discrs__content__3__projection(a: us_split_discrs__ref1) : us_split_discrs2 =
+  (a).us_split_discrs__content1
+
+type us_split_fields4 = { rec__with_default__ok_record__rec_with_discr__f1 :
+scalar_with_default; rec__with_default__ok_record__rec_with_discr__f2 :
+tscalar_with_defaultB
+}
+
+function us_split_fields_rec__with_default__ok_record__rec_with_discr__f1__projection(a: us_split_fields4) : scalar_with_default =
+  (a).rec__with_default__ok_record__rec_with_discr__f1
+
+function us_split_fields_rec__with_default__ok_record__rec_with_discr__f2__projection(a: us_split_fields4) : tscalar_with_defaultB =
+  (a).rec__with_default__ok_record__rec_with_discr__f2
+
+type us_split_fields__ref2 = { us_split_fields__content2 : us_split_fields4
+}
+
+function us_split_fields__ref___split_fields__content__5__projection(a: us_split_fields__ref2) : us_split_fields4 =
+  (a).us_split_fields__content2
+
+type us_rep2 = { us_split_discrs3 : us_split_discrs2; us_split_fields5 :
+us_split_fields4
+}
+
+function us_rep___split_discrs__3__projection(a: us_rep2) : us_split_discrs2 =
+  (a).us_split_discrs3
+
+function us_rep___split_fields__5__projection(a: us_rep2) : us_split_fields4 =
+  (a).us_split_fields5
+
+predicate with_default__ok_record__rec_with_discr__f1__pred(a: us_rep2) =
+  (to_int(((a).us_split_discrs3).rec__with_default__ok_record__rec_with_discr__b) = 1)
+
+predicate with_default__ok_record__rec_with_discr__f2__pred(a: us_rep2) =
+  (to_int(((a).us_split_discrs3).rec__with_default__ok_record__rec_with_discr__b) = 0)
+
+function bool_eq10(a: us_rep2, b: us_rep2) : bool =
+  (if ((to_int(((a).us_split_discrs3).rec__with_default__ok_record__rec_with_discr__b) = to_int(((b).us_split_discrs3).rec__with_default__ok_record__rec_with_discr__b)) and
+  ((with_default__ok_record__rec_with_discr__f1__pred(a) ->
+  (to_rep(((a).us_split_fields5).rec__with_default__ok_record__rec_with_discr__f1) = to_rep(((b).us_split_fields5).rec__with_default__ok_record__rec_with_discr__f1))) and
+  (with_default__ok_record__rec_with_discr__f2__pred(a) ->
+  (to_rep1(((a).us_split_fields5).rec__with_default__ok_record__rec_with_discr__f2) = to_rep1(((b).us_split_fields5).rec__with_default__ok_record__rec_with_discr__f2))))) then true else false)
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic with_default__ok_record__rec_with_discr__b__first__bit : int
+
+logic with_default__ok_record__rec_with_discr__b__last__bit : int
+
+logic with_default__ok_record__rec_with_discr__b__position : int
+
+axiom with_default__ok_record__rec_with_discr__b__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_with_discr__b__first__bit)
+
+axiom with_default__ok_record__rec_with_discr__b__last__bit_axiom :
+  (with_default__ok_record__rec_with_discr__b__first__bit <  with_default__ok_record__rec_with_discr__b__last__bit)
+
+axiom with_default__ok_record__rec_with_discr__b__position_axiom :
+  (0 <= with_default__ok_record__rec_with_discr__b__position)
+
+logic with_default__ok_record__rec_with_discr__f1__first__bit : int
+
+logic with_default__ok_record__rec_with_discr__f1__last__bit : int
+
+logic with_default__ok_record__rec_with_discr__f1__position : int
+
+axiom with_default__ok_record__rec_with_discr__f1__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_with_discr__f1__first__bit)
+
+axiom with_default__ok_record__rec_with_discr__f1__last__bit_axiom :
+  (with_default__ok_record__rec_with_discr__f1__first__bit <  with_default__ok_record__rec_with_discr__f1__last__bit)
+
+axiom with_default__ok_record__rec_with_discr__f1__position_axiom :
+  (0 <= with_default__ok_record__rec_with_discr__f1__position)
+
+logic with_default__ok_record__rec_with_discr__f2__first__bit : int
+
+logic with_default__ok_record__rec_with_discr__f2__last__bit : int
+
+logic with_default__ok_record__rec_with_discr__f2__position : int
+
+axiom with_default__ok_record__rec_with_discr__f2__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_with_discr__f2__first__bit)
+
+axiom with_default__ok_record__rec_with_discr__f2__last__bit_axiom :
+  (with_default__ok_record__rec_with_discr__f2__first__bit <  with_default__ok_record__rec_with_discr__f2__last__bit)
+
+axiom with_default__ok_record__rec_with_discr__f2__position_axiom :
+  (0 <= with_default__ok_record__rec_with_discr__f2__position)
+
+logic user_eq8 : us_rep2, us_rep2 -> bool
+
+logic dummy8 : us_rep2
+
+type rec_with_discr__ref = { rec_with_discr__content : us_rep2
+}
+
+function rec_with_discr__ref_rec_with_discr__content__2__projection(a: rec_with_discr__ref) : us_rep2 =
+  (a).rec_with_discr__content
+
+predicate in_range5(rec__with_default__ok_record__rec_with_discr__b1: bool,
+  a: us_rep2) =
+  (rec__with_default__ok_record__rec_with_discr__b1 = ((a).us_split_discrs3).rec__with_default__ok_record__rec_with_discr__b)
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic with_default__ok_record__rec_with_discr__b__first__bit1 : int
+
+logic with_default__ok_record__rec_with_discr__b__last__bit1 : int
+
+logic with_default__ok_record__rec_with_discr__b__position1 : int
+
+axiom with_default__ok_record__rec_with_discr__b__first__bit_axiom1 :
+  (0 <= with_default__ok_record__rec_with_discr__b__first__bit1)
+
+axiom with_default__ok_record__rec_with_discr__b__last__bit_axiom1 :
+  (with_default__ok_record__rec_with_discr__b__first__bit1 <  with_default__ok_record__rec_with_discr__b__last__bit1)
+
+axiom with_default__ok_record__rec_with_discr__b__position_axiom1 :
+  (0 <= with_default__ok_record__rec_with_discr__b__position1)
+
+logic with_default__ok_record__rec_with_discr__f2__first__bit1 : int
+
+logic with_default__ok_record__rec_with_discr__f2__last__bit1 : int
+
+logic with_default__ok_record__rec_with_discr__f2__position1 : int
+
+axiom with_default__ok_record__rec_with_discr__f2__first__bit_axiom1 :
+  (0 <= with_default__ok_record__rec_with_discr__f2__first__bit1)
+
+axiom with_default__ok_record__rec_with_discr__f2__last__bit_axiom1 :
+  (with_default__ok_record__rec_with_discr__f2__first__bit1 <  with_default__ok_record__rec_with_discr__f2__last__bit1)
+
+axiom with_default__ok_record__rec_with_discr__f2__position_axiom1 :
+  (0 <= with_default__ok_record__rec_with_discr__f2__position1)
+
+logic with_default__ok_record__rec_with_discr__f1__first__bit1 : int
+
+logic with_default__ok_record__rec_with_discr__f1__last__bit1 : int
+
+logic with_default__ok_record__rec_with_discr__f1__position1 : int
+
+axiom with_default__ok_record__rec_with_discr__f1__first__bit_axiom1 :
+  (0 <= with_default__ok_record__rec_with_discr__f1__first__bit1)
+
+axiom with_default__ok_record__rec_with_discr__f1__last__bit_axiom1 :
+  (with_default__ok_record__rec_with_discr__f1__first__bit1 <  with_default__ok_record__rec_with_discr__f1__last__bit1)
+
+axiom with_default__ok_record__rec_with_discr__f1__position_axiom1 :
+  (0 <= with_default__ok_record__rec_with_discr__f1__position1)
+
+logic user_eq9 : us_rep2, us_rep2 -> bool
+
+logic dummy9 : us_rep2
+
+type tw_discS__ref = { tw_discS__content : us_rep2
+}
+
+function tw_discS__ref_tw_discS__content__projection(a: tw_discS__ref) : us_rep2 =
+  (a).tw_discS__content
+
+logic w_disc__split_discrs : us_split_discrs2
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+predicate dynamic_invariant3(temp___expr_561: us_rep2,
+  temp___is_init_557: bool, temp___skip_constant_558: bool,
+  temp___do_toplevel_559: bool, temp___do_typ_inv_560: bool) =
+  (((not (temp___skip_constant_558 = true)) -> in_range5(of_int(1),
+  temp___expr_561)) and
+  (with_default__ok_record__rec_with_discr__f2__pred(temp___expr_561) ->
+  (((temp___is_init_557 = true) or (first <= 2147483647)) ->
+  dynamic_property(first, 2147483647,
+  to_rep1(((temp___expr_561).us_split_fields5).rec__with_default__ok_record__rec_with_discr__f2)))))
+
+predicate default_initial_assumption2(temp___expr_563: us_rep2,
+  temp___skip_top_level_564: bool) =
+  ((((temp___expr_563).us_split_discrs3).rec__with_default__ok_record__rec_with_discr__b = of_int(1)) and
+  ((with_default__ok_record__rec_with_discr__f2__pred(temp___expr_563) ->
+  (to_rep1(((temp___expr_563).us_split_fields5).rec__with_default__ok_record__rec_with_discr__f2) = 0)) and
+  (with_default__ok_record__rec_with_discr__f1__pred(temp___expr_563) ->
+  (to_rep(((temp___expr_563).us_split_fields5).rec__with_default__ok_record__rec_with_discr__f1) = 0))))
+
+type us_split_discrs4 = {
+rec__with_default__ok_record__rec_with_default_discr__b : bool
+}
+
+function us_split_discrs_rec__with_default__ok_record__rec_with_default_discr__b__projection(a: us_split_discrs4) : bool =
+  (a).rec__with_default__ok_record__rec_with_default_discr__b
+
+type us_split_discrs__ref2 = { us_split_discrs__content2 : us_split_discrs4
+}
+
+function us_split_discrs__ref___split_discrs__content__4__projection(a: us_split_discrs__ref2) : us_split_discrs4 =
+  (a).us_split_discrs__content2
+
+type us_split_fields6 = {
+rec__with_default__ok_record__rec_with_default_discr__f1 :
+scalar_with_default; rec__with_default__ok_record__rec_with_default_discr__f2
+: tscalar_with_defaultB
+}
+
+function us_split_fields_rec__with_default__ok_record__rec_with_default_discr__f1__projection(a: us_split_fields6) : scalar_with_default =
+  (a).rec__with_default__ok_record__rec_with_default_discr__f1
+
+function us_split_fields_rec__with_default__ok_record__rec_with_default_discr__f2__projection(a: us_split_fields6) : tscalar_with_defaultB =
+  (a).rec__with_default__ok_record__rec_with_default_discr__f2
+
+type us_split_fields__ref3 = { us_split_fields__content3 : us_split_fields6
+}
+
+function us_split_fields__ref___split_fields__content__6__projection(a: us_split_fields__ref3) : us_split_fields6 =
+  (a).us_split_fields__content3
+
+type us_rep3 = { us_split_discrs5 : us_split_discrs4; us_split_fields7 :
+us_split_fields6
+}
+
+function us_rep___split_discrs__4__projection(a: us_rep3) : us_split_discrs4 =
+  (a).us_split_discrs5
+
+function us_rep___split_fields__6__projection(a: us_rep3) : us_split_fields6 =
+  (a).us_split_fields7
+
+predicate with_default__ok_record__rec_with_default_discr__f1__pred(a: us_rep3) =
+  (to_int(((a).us_split_discrs5).rec__with_default__ok_record__rec_with_default_discr__b) = 1)
+
+predicate with_default__ok_record__rec_with_default_discr__f2__pred(a: us_rep3) =
+  (to_int(((a).us_split_discrs5).rec__with_default__ok_record__rec_with_default_discr__b) = 0)
+
+function bool_eq11(a: us_rep3, b: us_rep3) : bool =
+  (if ((to_int(((a).us_split_discrs5).rec__with_default__ok_record__rec_with_default_discr__b) = to_int(((b).us_split_discrs5).rec__with_default__ok_record__rec_with_default_discr__b)) and
+  ((with_default__ok_record__rec_with_default_discr__f1__pred(a) ->
+  (to_rep(((a).us_split_fields7).rec__with_default__ok_record__rec_with_default_discr__f1) = to_rep(((b).us_split_fields7).rec__with_default__ok_record__rec_with_default_discr__f1))) and
+  (with_default__ok_record__rec_with_default_discr__f2__pred(a) ->
+  (to_rep1(((a).us_split_fields7).rec__with_default__ok_record__rec_with_default_discr__f2) = to_rep1(((b).us_split_fields7).rec__with_default__ok_record__rec_with_default_discr__f2))))) then true else false)
+
+logic value__size4 : int
+
+logic object__size4 : int
+
+logic alignment4 : int
+
+axiom value__size_axiom4 : (0 <= value__size4)
+
+axiom object__size_axiom4 : (0 <= object__size4)
+
+axiom alignment_axiom4 : (0 <= alignment4)
+
+logic with_default__ok_record__rec_with_default_discr__b__first__bit : int
+
+logic with_default__ok_record__rec_with_default_discr__b__last__bit : int
+
+logic with_default__ok_record__rec_with_default_discr__b__position : int
+
+axiom with_default__ok_record__rec_with_default_discr__b__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_with_default_discr__b__first__bit)
+
+axiom with_default__ok_record__rec_with_default_discr__b__last__bit_axiom :
+  (with_default__ok_record__rec_with_default_discr__b__first__bit <  with_default__ok_record__rec_with_default_discr__b__last__bit)
+
+axiom with_default__ok_record__rec_with_default_discr__b__position_axiom :
+  (0 <= with_default__ok_record__rec_with_default_discr__b__position)
+
+logic with_default__ok_record__rec_with_default_discr__f1__first__bit : int
+
+logic with_default__ok_record__rec_with_default_discr__f1__last__bit : int
+
+logic with_default__ok_record__rec_with_default_discr__f1__position : int
+
+axiom with_default__ok_record__rec_with_default_discr__f1__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_with_default_discr__f1__first__bit)
+
+axiom with_default__ok_record__rec_with_default_discr__f1__last__bit_axiom :
+  (with_default__ok_record__rec_with_default_discr__f1__first__bit <  with_default__ok_record__rec_with_default_discr__f1__last__bit)
+
+axiom with_default__ok_record__rec_with_default_discr__f1__position_axiom :
+  (0 <= with_default__ok_record__rec_with_default_discr__f1__position)
+
+logic with_default__ok_record__rec_with_default_discr__f2__first__bit : int
+
+logic with_default__ok_record__rec_with_default_discr__f2__last__bit : int
+
+logic with_default__ok_record__rec_with_default_discr__f2__position : int
+
+axiom with_default__ok_record__rec_with_default_discr__f2__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_with_default_discr__f2__first__bit)
+
+axiom with_default__ok_record__rec_with_default_discr__f2__last__bit_axiom :
+  (with_default__ok_record__rec_with_default_discr__f2__first__bit <  with_default__ok_record__rec_with_default_discr__f2__last__bit)
+
+axiom with_default__ok_record__rec_with_default_discr__f2__position_axiom :
+  (0 <= with_default__ok_record__rec_with_default_discr__f2__position)
+
+logic user_eq10 : us_rep3, us_rep3 -> bool
+
+logic dummy10 : us_rep3
+
+type rec_with_default_discr__ref = { rec_with_default_discr__content :
+us_rep3
+}
+
+function rec_with_default_discr__ref_rec_with_default_discr__content__projection(a: rec_with_default_discr__ref) : us_rep3 =
+  (a).rec_with_default_discr__content
+
+logic w_d_di__attr__constrained : bool
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+predicate dynamic_invariant4(temp___expr_482: us_rep3,
+  temp___is_init_478: bool, temp___skip_constant_479: bool,
+  temp___do_toplevel_480: bool, temp___do_typ_inv_481: bool) =
+  (with_default__ok_record__rec_with_default_discr__f2__pred(temp___expr_482) ->
+  (((temp___is_init_478 = true) or (first <= 2147483647)) ->
+  dynamic_property(first, 2147483647,
+  to_rep1(((temp___expr_482).us_split_fields7).rec__with_default__ok_record__rec_with_default_discr__f2))))
+
+predicate default_initial_assumption3(temp___expr_484: us_rep3,
+  temp___skip_top_level_485: bool) =
+  ((((temp___expr_484).us_split_discrs5).rec__with_default__ok_record__rec_with_default_discr__b = of_int(1)) and
+  ((with_default__ok_record__rec_with_default_discr__f1__pred(temp___expr_484) ->
+  (to_rep(((temp___expr_484).us_split_fields7).rec__with_default__ok_record__rec_with_default_discr__f1) = 0)) and
+  (with_default__ok_record__rec_with_default_discr__f2__pred(temp___expr_484) ->
+  (to_rep1(((temp___expr_484).us_split_fields7).rec__with_default__ok_record__rec_with_default_discr__f2) = 0))))
+
+type us_split_discrs6 = { rec__with_default__ok_record__rec_with_ok_discr__b
+: bool
+}
+
+function us_split_discrs_rec__with_default__ok_record__rec_with_ok_discr__b__projection(a: us_split_discrs6) : bool =
+  (a).rec__with_default__ok_record__rec_with_ok_discr__b
+
+type us_split_discrs__ref3 = { us_split_discrs__content3 : us_split_discrs6
+}
+
+function us_split_discrs__ref___split_discrs__content__6__projection(a: us_split_discrs__ref3) : us_split_discrs6 =
+  (a).us_split_discrs__content3
+
+type us_split_fields8 = { rec__with_default__ok_record__rec_with_ok_discr__f1
+: scalar_with_default; rec__with_default__ok_record__rec_with_ok_discr__f3 :
+tscalar_with_defaultB
+}
+
+function us_split_fields_rec__with_default__ok_record__rec_with_ok_discr__f1__projection(a: us_split_fields8) : scalar_with_default =
+  (a).rec__with_default__ok_record__rec_with_ok_discr__f1
+
+function us_split_fields_rec__with_default__ok_record__rec_with_ok_discr__f3__projection(a: us_split_fields8) : tscalar_with_defaultB =
+  (a).rec__with_default__ok_record__rec_with_ok_discr__f3
+
+type us_split_fields__ref4 = { us_split_fields__content4 : us_split_fields8
+}
+
+function us_split_fields__ref___split_fields__content__8__projection(a: us_split_fields__ref4) : us_split_fields8 =
+  (a).us_split_fields__content4
+
+type us_rep4 = { us_split_discrs7 : us_split_discrs6; us_split_fields9 :
+us_split_fields8
+}
+
+function us_rep___split_discrs__6__projection(a: us_rep4) : us_split_discrs6 =
+  (a).us_split_discrs7
+
+function us_rep___split_fields__8__projection(a: us_rep4) : us_split_fields8 =
+  (a).us_split_fields9
+
+predicate with_default__ok_record__rec_with_ok_discr__f1__pred(a: us_rep4) =
+  (to_int(((a).us_split_discrs7).rec__with_default__ok_record__rec_with_ok_discr__b) = 1)
+
+predicate with_default__ok_record__rec_with_ok_discr__f3__pred(a: us_rep4) =
+  (to_int(((a).us_split_discrs7).rec__with_default__ok_record__rec_with_ok_discr__b) = 0)
+
+function bool_eq12(a: us_rep4, b: us_rep4) : bool =
+  (if ((to_int(((a).us_split_discrs7).rec__with_default__ok_record__rec_with_ok_discr__b) = to_int(((b).us_split_discrs7).rec__with_default__ok_record__rec_with_ok_discr__b)) and
+  ((with_default__ok_record__rec_with_ok_discr__f1__pred(a) ->
+  (to_rep(((a).us_split_fields9).rec__with_default__ok_record__rec_with_ok_discr__f1) = to_rep(((b).us_split_fields9).rec__with_default__ok_record__rec_with_ok_discr__f1))) and
+  (with_default__ok_record__rec_with_ok_discr__f3__pred(a) ->
+  (to_rep1(((a).us_split_fields9).rec__with_default__ok_record__rec_with_ok_discr__f3) = to_rep1(((b).us_split_fields9).rec__with_default__ok_record__rec_with_ok_discr__f3))))) then true else false)
+
+logic value__size5 : int
+
+logic object__size5 : int
+
+logic alignment5 : int
+
+axiom value__size_axiom5 : (0 <= value__size5)
+
+axiom object__size_axiom5 : (0 <= object__size5)
+
+axiom alignment_axiom5 : (0 <= alignment5)
+
+logic with_default__ok_record__rec_with_ok_discr__b__first__bit : int
+
+logic with_default__ok_record__rec_with_ok_discr__b__last__bit : int
+
+logic with_default__ok_record__rec_with_ok_discr__b__position : int
+
+axiom with_default__ok_record__rec_with_ok_discr__b__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_with_ok_discr__b__first__bit)
+
+axiom with_default__ok_record__rec_with_ok_discr__b__last__bit_axiom :
+  (with_default__ok_record__rec_with_ok_discr__b__first__bit <  with_default__ok_record__rec_with_ok_discr__b__last__bit)
+
+axiom with_default__ok_record__rec_with_ok_discr__b__position_axiom :
+  (0 <= with_default__ok_record__rec_with_ok_discr__b__position)
+
+logic with_default__ok_record__rec_with_ok_discr__f1__first__bit : int
+
+logic with_default__ok_record__rec_with_ok_discr__f1__last__bit : int
+
+logic with_default__ok_record__rec_with_ok_discr__f1__position : int
+
+axiom with_default__ok_record__rec_with_ok_discr__f1__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_with_ok_discr__f1__first__bit)
+
+axiom with_default__ok_record__rec_with_ok_discr__f1__last__bit_axiom :
+  (with_default__ok_record__rec_with_ok_discr__f1__first__bit <  with_default__ok_record__rec_with_ok_discr__f1__last__bit)
+
+axiom with_default__ok_record__rec_with_ok_discr__f1__position_axiom :
+  (0 <= with_default__ok_record__rec_with_ok_discr__f1__position)
+
+logic with_default__ok_record__rec_with_ok_discr__f3__first__bit : int
+
+logic with_default__ok_record__rec_with_ok_discr__f3__last__bit : int
+
+logic with_default__ok_record__rec_with_ok_discr__f3__position : int
+
+axiom with_default__ok_record__rec_with_ok_discr__f3__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_with_ok_discr__f3__first__bit)
+
+axiom with_default__ok_record__rec_with_ok_discr__f3__last__bit_axiom :
+  (with_default__ok_record__rec_with_ok_discr__f3__first__bit <  with_default__ok_record__rec_with_ok_discr__f3__last__bit)
+
+axiom with_default__ok_record__rec_with_ok_discr__f3__position_axiom :
+  (0 <= with_default__ok_record__rec_with_ok_discr__f3__position)
+
+logic user_eq11 : us_rep4, us_rep4 -> bool
+
+logic dummy11 : us_rep4
+
+type rec_with_ok_discr__ref = { rec_with_ok_discr__content : us_rep4
+}
+
+function rec_with_ok_discr__ref_rec_with_ok_discr__content__projection(a: rec_with_ok_discr__ref) : us_rep4 =
+  (a).rec_with_ok_discr__content
+
+logic w_o_di__attr__constrained : bool
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+predicate dynamic_invariant5(temp___expr_504: us_rep4,
+  temp___is_init_500: bool, temp___skip_constant_501: bool,
+  temp___do_toplevel_502: bool, temp___do_typ_inv_503: bool) =
+  (with_default__ok_record__rec_with_ok_discr__f3__pred(temp___expr_504) ->
+  (((temp___is_init_500 = true) or (first <= 2147483647)) ->
+  dynamic_property(first, 2147483647,
+  to_rep1(((temp___expr_504).us_split_fields9).rec__with_default__ok_record__rec_with_ok_discr__f3))))
+
+predicate default_initial_assumption4(temp___expr_506: us_rep4,
+  temp___skip_top_level_507: bool) =
+  ((((temp___expr_506).us_split_discrs7).rec__with_default__ok_record__rec_with_ok_discr__b = of_int(0)) and
+  ((with_default__ok_record__rec_with_ok_discr__f1__pred(temp___expr_506) ->
+  (to_rep(((temp___expr_506).us_split_fields9).rec__with_default__ok_record__rec_with_ok_discr__f1) = 0)) and
+  (with_default__ok_record__rec_with_ok_discr__f3__pred(temp___expr_506) ->
+  (to_rep1(((temp___expr_506).us_split_fields9).rec__with_default__ok_record__rec_with_ok_discr__f3) = c))))
+
+type small_natural
+
+logic small_naturalqtint : small_natural -> int
+
+axiom small_naturalqtaxiom :
+  (forall i:small_natural. (0 <= small_naturalqtint(i)))
+
+axiom small_naturalqtaxiom1 :
+  (forall i:small_natural. (small_naturalqtint(i) <= 100))
+
+predicate in_range6(x: int) = ((0 <= x) and (x <= 100))
+
+function bool_eq13(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE7 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check7 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE7 : us_image -> int
+
+logic user_eq12 : small_natural, small_natural -> bool
+
+logic dummy12 : small_natural
+
+type small_natural__ref = { small_natural__content : small_natural
+}
+
+function small_natural__ref_small_natural__content__projection(a: small_natural__ref) : small_natural =
+  (a).small_natural__content
+
+function to_rep3(x: small_natural) : int = small_naturalqtint(x)
+
+logic of_rep3 : int -> small_natural
+
+axiom inversion_axiom3 :
+  (forall x:small_natural [to_rep3(x)]. (of_rep3(to_rep3(x)) = x))
+
+axiom range_axiom3 :
+  (forall x:small_natural [to_rep3(x)]. in_range6(to_rep3(x)))
+
+axiom coerce_axiom3 :
+  (forall x:int [to_rep3(of_rep3(x))]. (in_range6(x) ->
+  (to_rep3(of_rep3(x)) = x)))
+
+type tsmall_naturalB
+
+logic tsmall_naturalBqtint : tsmall_naturalB -> int
+
+axiom tsmall_naturalBqtaxiom :
+  (forall i:tsmall_naturalB. ((- 2147483648) <= tsmall_naturalBqtint(i)))
+
+axiom tsmall_naturalBqtaxiom1 :
+  (forall i:tsmall_naturalB. (tsmall_naturalBqtint(i) <= 2147483647))
+
+predicate in_range7(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq14(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE8 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check8 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE8 : us_image -> int
+
+logic user_eq13 : tsmall_naturalB, tsmall_naturalB -> bool
+
+logic dummy13 : tsmall_naturalB
+
+type tsmall_naturalB__ref = { tsmall_naturalB__content : tsmall_naturalB
+}
+
+function tsmall_naturalB__ref_tsmall_naturalB__content__projection(a: tsmall_naturalB__ref) : tsmall_naturalB =
+  (a).tsmall_naturalB__content
+
+function to_rep4(x: tsmall_naturalB) : int = tsmall_naturalBqtint(x)
+
+logic of_rep4 : int -> tsmall_naturalB
+
+axiom inversion_axiom4 :
+  (forall x:tsmall_naturalB [to_rep4(x)]. (of_rep4(to_rep4(x)) = x))
+
+axiom range_axiom4 :
+  (forall x:tsmall_naturalB [to_rep4(x)]. in_range7(to_rep4(x)))
+
+axiom coerce_axiom4 :
+  (forall x:int [to_rep4(of_rep4(x))]. (in_range7(x) ->
+  (to_rep4(of_rep4(x)) = x)))
+
+type small_positive
+
+logic small_positiveqtint : small_positive -> int
+
+axiom small_positiveqtaxiom :
+  (forall i:small_positive. (1 <= small_positiveqtint(i)))
+
+axiom small_positiveqtaxiom1 :
+  (forall i:small_positive. (small_positiveqtint(i) <= 100))
+
+predicate in_range8(x: int) = ((1 <= x) and (x <= 100))
+
+function bool_eq15(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE9 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check9 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE9 : us_image -> int
+
+logic user_eq14 : small_positive, small_positive -> bool
+
+logic dummy14 : small_positive
+
+type small_positive__ref = { small_positive__content : small_positive
+}
+
+function small_positive__ref_small_positive__content__projection(a: small_positive__ref) : small_positive =
+  (a).small_positive__content
+
+type map__ref = { map__content : (int,tscalar_with_defaultB) farray
+}
+
+logic slide : (int,tscalar_with_defaultB) farray, int,
+  int -> (int,tscalar_with_defaultB) farray
+
+axiom slide_eq :
+  (forall a:(int,tscalar_with_defaultB) farray.
+  (forall first2:int [slide(a, first2, first2)]. (slide(a, first2,
+  first2) = a)))
+
+axiom slide_def :
+  (forall a:(int,tscalar_with_defaultB) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq16(a: (int,tscalar_with_defaultB) farray, a__first: int,
+  a__last: int, b: (int,tscalar_with_defaultB) farray, b__first: int,
+  b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_160:int. (((a__first <= temp___idx_160) and
+  (temp___idx_160 <= a__last)) ->
+  (to_rep1((a[temp___idx_160])) = to_rep1((b[((b__first - a__first) + temp___idx_160)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,tscalar_with_defaultB) farray.
+  forall b:(int,tscalar_with_defaultB) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq16(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,tscalar_with_defaultB) farray.
+  forall b:(int,tscalar_with_defaultB) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq16(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,tscalar_with_defaultB) farray.
+  forall b:(int,tscalar_with_defaultB) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq16(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,tscalar_with_defaultB) farray.
+  forall b:(int,tscalar_with_defaultB) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq16(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_160:int. (((a__first <= temp___idx_160) and
+  (temp___idx_160 <= a__last)) ->
+  (to_rep1((a[temp___idx_160])) = to_rep1((b[((b__first - a__first) + temp___idx_160)]))))))))
+
+type t
+
+logic first2 : t -> tsmall_naturalB
+
+logic last : t -> tsmall_naturalB
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range7(f) -> (in_range7(l) ->
+  (to_rep4(first2(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range7(f) -> (in_range7(l) ->
+  (to_rep4(last(mk(f, l))) = l))))
+
+predicate dynamic_property2(range_first: int, range_last: int, low: int,
+  high: int) = (in_range7(low) and (in_range7(high) and ((low <= high) ->
+  (in_range8(low) and in_range8(high)))))
+
+type us_t = { elts : (int,tscalar_with_defaultB) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,tscalar_with_defaultB) farray = (a).elts
+
+function of_array(a: (int,tscalar_with_defaultB) farray, f: int,
+  l: int) : us_t = { elts = a; rt = mk(f, l) }
+
+function first3(a: us_t) : int = to_rep4(first2((a).rt))
+
+function last1(a: us_t) : int = to_rep4(last((a).rt))
+
+function length1(a: us_t) : int =
+  (if (first3(a) <= last1(a)) then ((last1(a) - first3(a)) + 1) else 0)
+
+logic value__size6 : int
+
+logic object__size6 : int
+
+logic component__size : int
+
+logic alignment6 : int
+
+axiom value__size_axiom6 : (0 <= value__size6)
+
+axiom object__size_axiom6 : (0 <= object__size6)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom6 : (0 <= alignment6)
+
+function bool_eq17(x: us_t, y: us_t) : bool = bool_eq16((x).elts,
+  to_rep4(first2((x).rt)), to_rep4(last((x).rt)), (y).elts,
+  to_rep4(first2((y).rt)), to_rep4(last((y).rt)))
+
+logic user_eq15 : us_t, us_t -> bool
+
+logic dummy15 : us_t
+
+type array_bad_default__ref = { array_bad_default__content : us_t
+}
+
+function array_bad_default__ref_array_bad_default__content__projection(a: array_bad_default__ref) : us_t =
+  (a).array_bad_default__content
+
+type t22b__ref = { t22b__content : us_t
+}
+
+function t22b__ref_t22b__content__projection(a: t22b__ref) : us_t =
+  (a).t22b__content
+
+type us_split_discrs8 = { rec__with_default__ok_record__rec_empty_array__d :
+small_natural
+}
+
+function us_split_discrs_rec__with_default__ok_record__rec_empty_array__d__projection(a: us_split_discrs8) : small_natural =
+  (a).rec__with_default__ok_record__rec_empty_array__d
+
+type us_split_discrs__ref4 = { us_split_discrs__content4 : us_split_discrs8
+}
+
+function us_split_discrs__ref___split_discrs__content__7__projection(a: us_split_discrs__ref4) : us_split_discrs8 =
+  (a).us_split_discrs__content4
+
+type us_split_fields10 = {
+rec__with_default__ok_record__rec_empty_array__content : us_t
+}
+
+function us_split_fields_rec__with_default__ok_record__rec_empty_array__content__projection(a: us_split_fields10) : us_t =
+  (a).rec__with_default__ok_record__rec_empty_array__content
+
+type us_split_fields__ref5 = { us_split_fields__content5 : us_split_fields10
+}
+
+function us_split_fields__ref___split_fields__content__9__projection(a: us_split_fields__ref5) : us_split_fields10 =
+  (a).us_split_fields__content5
+
+type us_rep5 = { us_split_discrs9 : us_split_discrs8; us_split_fields11 :
+us_split_fields10
+}
+
+function us_rep___split_discrs__7__projection(a: us_rep5) : us_split_discrs8 =
+  (a).us_split_discrs9
+
+function us_rep___split_fields__9__projection(a: us_rep5) : us_split_fields10 =
+  (a).us_split_fields11
+
+function bool_eq18(a: us_rep5, b: us_rep5) : bool =
+  (if ((to_rep3(((a).us_split_discrs9).rec__with_default__ok_record__rec_empty_array__d) = to_rep3(((b).us_split_discrs9).rec__with_default__ok_record__rec_empty_array__d)) and
+  (bool_eq17(((a).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content,
+  ((b).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content) = true)) then true else false)
+
+logic value__size7 : int
+
+logic object__size7 : int
+
+logic alignment7 : int
+
+axiom value__size_axiom7 : (0 <= value__size7)
+
+axiom object__size_axiom7 : (0 <= object__size7)
+
+axiom alignment_axiom7 : (0 <= alignment7)
+
+logic with_default__ok_record__rec_empty_array__d__first__bit : int
+
+logic with_default__ok_record__rec_empty_array__d__last__bit : int
+
+logic with_default__ok_record__rec_empty_array__d__position : int
+
+axiom with_default__ok_record__rec_empty_array__d__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_empty_array__d__first__bit)
+
+axiom with_default__ok_record__rec_empty_array__d__last__bit_axiom :
+  (with_default__ok_record__rec_empty_array__d__first__bit <  with_default__ok_record__rec_empty_array__d__last__bit)
+
+axiom with_default__ok_record__rec_empty_array__d__position_axiom :
+  (0 <= with_default__ok_record__rec_empty_array__d__position)
+
+logic with_default__ok_record__rec_empty_array__content__first__bit : int
+
+logic with_default__ok_record__rec_empty_array__content__last__bit : int
+
+logic with_default__ok_record__rec_empty_array__content__position : int
+
+axiom with_default__ok_record__rec_empty_array__content__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_empty_array__content__first__bit)
+
+axiom with_default__ok_record__rec_empty_array__content__last__bit_axiom :
+  (with_default__ok_record__rec_empty_array__content__first__bit <  with_default__ok_record__rec_empty_array__content__last__bit)
+
+axiom with_default__ok_record__rec_empty_array__content__position_axiom :
+  (0 <= with_default__ok_record__rec_empty_array__content__position)
+
+logic user_eq16 : us_rep5, us_rep5 -> bool
+
+logic dummy16 : us_rep5
+
+type rec_empty_array__ref = { rec_empty_array__content : us_rep5
+}
+
+function rec_empty_array__ref_rec_empty_array__content__projection(a: rec_empty_array__ref) : us_rep5 =
+  (a).rec_empty_array__content
+
+logic empty__attr__constrained : bool
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+predicate dynamic_invariant6(temp___expr_534: us_rep5,
+  temp___is_init_530: bool, temp___skip_constant_531: bool,
+  temp___do_toplevel_532: bool, temp___do_typ_inv_533: bool) =
+  (let temp___535 =
+  ((temp___expr_534).us_split_discrs9).rec__with_default__ok_record__rec_empty_array__d
+  : small_natural in ((dynamic_property2(1, to_rep3(temp___535),
+  first3(((temp___expr_534).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content),
+  last1(((temp___expr_534).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content)) and
+  ((first3(((temp___expr_534).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content) = 1) and
+  (last1(((temp___expr_534).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content) = to_rep3(temp___535)))) and
+  (forall temp___536:int.
+  (((first3(((temp___expr_534).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content) <= temp___536) and
+  (temp___536 <= last1(((temp___expr_534).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content))) ->
+  (((temp___is_init_530 = true) or (first <= 2147483647)) ->
+  dynamic_property(first, 2147483647,
+  to_rep1((to_array(((temp___expr_534).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content)[temp___536]))))))))
+
+predicate default_initial_assumption5(temp___expr_537: us_rep5,
+  temp___skip_top_level_538: bool) =
+  ((to_rep3(((temp___expr_537).us_split_discrs9).rec__with_default__ok_record__rec_empty_array__d) = 0) and
+  (((first3(((temp___expr_537).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content) = 1) and
+  (last1(((temp___expr_537).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content) = to_rep3(((temp___expr_537).us_split_discrs9).rec__with_default__ok_record__rec_empty_array__d))) and
+  (forall temp___541:int.
+  (((first3(((temp___expr_537).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content) <= temp___541) and
+  (temp___541 <= last1(((temp___expr_537).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content))) ->
+  (to_rep1((to_array(((temp___expr_537).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content)[temp___541])) = 0)))))
+
+predicate in_range9(rec__with_default__ok_record__rec_with_bad_discr__b1: bool,
+  a: us_rep) =
+  (rec__with_default__ok_record__rec_with_bad_discr__b1 = ((a).us_split_discrs1).rec__with_default__ok_record__rec_with_bad_discr__b)
+
+logic value__size8 : int
+
+logic object__size8 : int
+
+logic alignment8 : int
+
+axiom value__size_axiom8 : (0 <= value__size8)
+
+axiom object__size_axiom8 : (0 <= object__size8)
+
+axiom alignment_axiom8 : (0 <= alignment8)
+
+logic with_default__ok_record__rec_with_bad_discr__b__first__bit1 : int
+
+logic with_default__ok_record__rec_with_bad_discr__b__last__bit1 : int
+
+logic with_default__ok_record__rec_with_bad_discr__b__position1 : int
+
+axiom with_default__ok_record__rec_with_bad_discr__b__first__bit_axiom1 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__b__first__bit1)
+
+axiom with_default__ok_record__rec_with_bad_discr__b__last__bit_axiom1 :
+  (with_default__ok_record__rec_with_bad_discr__b__first__bit1 <  with_default__ok_record__rec_with_bad_discr__b__last__bit1)
+
+axiom with_default__ok_record__rec_with_bad_discr__b__position_axiom1 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__b__position1)
+
+logic with_default__ok_record__rec_with_bad_discr__f1__first__bit1 : int
+
+logic with_default__ok_record__rec_with_bad_discr__f1__last__bit1 : int
+
+logic with_default__ok_record__rec_with_bad_discr__f1__position1 : int
+
+axiom with_default__ok_record__rec_with_bad_discr__f1__first__bit_axiom1 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f1__first__bit1)
+
+axiom with_default__ok_record__rec_with_bad_discr__f1__last__bit_axiom1 :
+  (with_default__ok_record__rec_with_bad_discr__f1__first__bit1 <  with_default__ok_record__rec_with_bad_discr__f1__last__bit1)
+
+axiom with_default__ok_record__rec_with_bad_discr__f1__position_axiom1 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f1__position1)
+
+logic with_default__ok_record__rec_with_bad_discr__f2__first__bit1 : int
+
+logic with_default__ok_record__rec_with_bad_discr__f2__last__bit1 : int
+
+logic with_default__ok_record__rec_with_bad_discr__f2__position1 : int
+
+axiom with_default__ok_record__rec_with_bad_discr__f2__first__bit_axiom1 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f2__first__bit1)
+
+axiom with_default__ok_record__rec_with_bad_discr__f2__last__bit_axiom1 :
+  (with_default__ok_record__rec_with_bad_discr__f2__first__bit1 <  with_default__ok_record__rec_with_bad_discr__f2__last__bit1)
+
+axiom with_default__ok_record__rec_with_bad_discr__f2__position_axiom1 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f2__position1)
+
+logic user_eq17 : us_rep, us_rep -> bool
+
+logic dummy17 : us_rep
+
+type t23b__ref = { t23b__content : us_rep
+}
+
+function t23b__ref_t23b__content__projection(a: t23b__ref) : us_rep =
+  (a).t23b__content
+
+type us_split_discrs10 = { rec__with_default__ok_record__rec_discr_rec__b :
+bool
+}
+
+function us_split_discrs_rec__with_default__ok_record__rec_discr_rec__b__projection(a: us_split_discrs10) : bool =
+  (a).rec__with_default__ok_record__rec_discr_rec__b
+
+type us_split_discrs__ref5 = { us_split_discrs__content5 : us_split_discrs10
+}
+
+function us_split_discrs__ref___split_discrs__content__8__projection(a: us_split_discrs__ref5) : us_split_discrs10 =
+  (a).us_split_discrs__content5
+
+type us_split_fields12 = {
+rec__with_default__ok_record__rec_discr_rec__content : us_rep
+}
+
+function us_split_fields_rec__with_default__ok_record__rec_discr_rec__content__projection(a: us_split_fields12) : us_rep =
+  (a).rec__with_default__ok_record__rec_discr_rec__content
+
+type us_split_fields__ref6 = { us_split_fields__content6 : us_split_fields12
+}
+
+function us_split_fields__ref___split_fields__content__10__projection(a: us_split_fields__ref6) : us_split_fields12 =
+  (a).us_split_fields__content6
+
+type us_rep6 = { us_split_discrs11 : us_split_discrs10; us_split_fields13 :
+us_split_fields12
+}
+
+function us_rep___split_discrs__8__projection(a: us_rep6) : us_split_discrs10 =
+  (a).us_split_discrs11
+
+function us_rep___split_fields__10__projection(a: us_rep6) : us_split_fields12 =
+  (a).us_split_fields13
+
+function bool_eq19(a: us_rep6, b: us_rep6) : bool =
+  (if ((to_int(((a).us_split_discrs11).rec__with_default__ok_record__rec_discr_rec__b) = to_int(((b).us_split_discrs11).rec__with_default__ok_record__rec_discr_rec__b)) and
+  (bool_eq6(((a).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content,
+  ((b).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content) = true)) then true else false)
+
+logic value__size9 : int
+
+logic object__size9 : int
+
+logic alignment9 : int
+
+axiom value__size_axiom9 : (0 <= value__size9)
+
+axiom object__size_axiom9 : (0 <= object__size9)
+
+axiom alignment_axiom9 : (0 <= alignment9)
+
+logic with_default__ok_record__rec_discr_rec__b__first__bit : int
+
+logic with_default__ok_record__rec_discr_rec__b__last__bit : int
+
+logic with_default__ok_record__rec_discr_rec__b__position : int
+
+axiom with_default__ok_record__rec_discr_rec__b__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_discr_rec__b__first__bit)
+
+axiom with_default__ok_record__rec_discr_rec__b__last__bit_axiom :
+  (with_default__ok_record__rec_discr_rec__b__first__bit <  with_default__ok_record__rec_discr_rec__b__last__bit)
+
+axiom with_default__ok_record__rec_discr_rec__b__position_axiom :
+  (0 <= with_default__ok_record__rec_discr_rec__b__position)
+
+logic with_default__ok_record__rec_discr_rec__content__first__bit : int
+
+logic with_default__ok_record__rec_discr_rec__content__last__bit : int
+
+logic with_default__ok_record__rec_discr_rec__content__position : int
+
+axiom with_default__ok_record__rec_discr_rec__content__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_discr_rec__content__first__bit)
+
+axiom with_default__ok_record__rec_discr_rec__content__last__bit_axiom :
+  (with_default__ok_record__rec_discr_rec__content__first__bit <  with_default__ok_record__rec_discr_rec__content__last__bit)
+
+axiom with_default__ok_record__rec_discr_rec__content__position_axiom :
+  (0 <= with_default__ok_record__rec_discr_rec__content__position)
+
+logic user_eq18 : us_rep6, us_rep6 -> bool
+
+logic dummy18 : us_rep6
+
+type rec_discr_rec__ref = { rec_discr_rec__content : us_rep6
+}
+
+function rec_discr_rec__ref_rec_discr_rec__content__projection(a: rec_discr_rec__ref) : us_rep6 =
+  (a).rec_discr_rec__content
+
+logic wrap__attr__constrained : bool
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+predicate dynamic_invariant7(temp___expr_547: us_rep6,
+  temp___is_init_543: bool, temp___skip_constant_544: bool,
+  temp___do_toplevel_545: bool, temp___do_typ_inv_546: bool) =
+  (in_range9(((temp___expr_547).us_split_discrs11).rec__with_default__ok_record__rec_discr_rec__b,
+  ((temp___expr_547).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content) and
+  (with_default__ok_record__rec_with_bad_discr__f2__pred(((temp___expr_547).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content) ->
+  (((temp___is_init_543 = true) or (first <= 2147483647)) ->
+  dynamic_property(first, 2147483647,
+  to_rep1(((((temp___expr_547).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f2)))))
+
+predicate default_initial_assumption6(temp___expr_550: us_rep6,
+  temp___skip_top_level_551: bool) =
+  ((((temp___expr_550).us_split_discrs11).rec__with_default__ok_record__rec_discr_rec__b = of_int(1)) and
+  ((((((temp___expr_550).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content).us_split_discrs1).rec__with_default__ok_record__rec_with_bad_discr__b = ((temp___expr_550).us_split_discrs11).rec__with_default__ok_record__rec_discr_rec__b) and
+  ((with_default__ok_record__rec_with_bad_discr__f1__pred(((temp___expr_550).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content) ->
+  (to_rep(((((temp___expr_550).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f1) = 0)) and
+  (with_default__ok_record__rec_with_bad_discr__f2__pred(((temp___expr_550).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content) ->
+  (to_rep1(((((temp___expr_550).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f2) = 0)))))
+
+logic r26b : bool
+
+logic attr__ATTRIBUTE_ADDRESS8 : int
+
+predicate dynamic_invariant8(temp___expr_514: int, temp___is_init_510: bool,
+  temp___skip_constant_511: bool, temp___do_toplevel_512: bool,
+  temp___do_typ_inv_513: bool) = (((temp___is_init_510 = true) or
+  (0 <= 100)) -> in_range6(temp___expr_514))
+
+predicate in_range10(rec__with_default__ok_record__rec_with_bad_discr__b1: bool,
+  a: us_rep) =
+  (rec__with_default__ok_record__rec_with_bad_discr__b1 = ((a).us_split_discrs1).rec__with_default__ok_record__rec_with_bad_discr__b)
+
+logic value__size10 : int
+
+logic object__size10 : int
+
+logic alignment10 : int
+
+axiom value__size_axiom10 : (0 <= value__size10)
+
+axiom object__size_axiom10 : (0 <= object__size10)
+
+axiom alignment_axiom10 : (0 <= alignment10)
+
+logic with_default__ok_record__rec_with_bad_discr__b__first__bit2 : int
+
+logic with_default__ok_record__rec_with_bad_discr__b__last__bit2 : int
+
+logic with_default__ok_record__rec_with_bad_discr__b__position2 : int
+
+axiom with_default__ok_record__rec_with_bad_discr__b__first__bit_axiom2 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__b__first__bit2)
+
+axiom with_default__ok_record__rec_with_bad_discr__b__last__bit_axiom2 :
+  (with_default__ok_record__rec_with_bad_discr__b__first__bit2 <  with_default__ok_record__rec_with_bad_discr__b__last__bit2)
+
+axiom with_default__ok_record__rec_with_bad_discr__b__position_axiom2 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__b__position2)
+
+logic with_default__ok_record__rec_with_bad_discr__f1__first__bit2 : int
+
+logic with_default__ok_record__rec_with_bad_discr__f1__last__bit2 : int
+
+logic with_default__ok_record__rec_with_bad_discr__f1__position2 : int
+
+axiom with_default__ok_record__rec_with_bad_discr__f1__first__bit_axiom2 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f1__first__bit2)
+
+axiom with_default__ok_record__rec_with_bad_discr__f1__last__bit_axiom2 :
+  (with_default__ok_record__rec_with_bad_discr__f1__first__bit2 <  with_default__ok_record__rec_with_bad_discr__f1__last__bit2)
+
+axiom with_default__ok_record__rec_with_bad_discr__f1__position_axiom2 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f1__position2)
+
+logic with_default__ok_record__rec_with_bad_discr__f2__first__bit2 : int
+
+logic with_default__ok_record__rec_with_bad_discr__f2__last__bit2 : int
+
+logic with_default__ok_record__rec_with_bad_discr__f2__position2 : int
+
+axiom with_default__ok_record__rec_with_bad_discr__f2__first__bit_axiom2 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f2__first__bit2)
+
+axiom with_default__ok_record__rec_with_bad_discr__f2__last__bit_axiom2 :
+  (with_default__ok_record__rec_with_bad_discr__f2__first__bit2 <  with_default__ok_record__rec_with_bad_discr__f2__last__bit2)
+
+axiom with_default__ok_record__rec_with_bad_discr__f2__position_axiom2 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f2__position2)
+
+logic user_eq19 : us_rep, us_rep -> bool
+
+logic dummy19 : us_rep
+
+type t24b__ref = { t24b__content : us_rep
+}
+
+function t24b__ref_t24b__content__projection(a: t24b__ref) : us_rep =
+  (a).t24b__content
+
+predicate in_range11(rec__with_default__ok_record__rec_with_bad_discr__b1: bool,
+  a: us_rep) =
+  (rec__with_default__ok_record__rec_with_bad_discr__b1 = ((a).us_split_discrs1).rec__with_default__ok_record__rec_with_bad_discr__b)
+
+logic value__size11 : int
+
+logic object__size11 : int
+
+logic alignment11 : int
+
+axiom value__size_axiom11 : (0 <= value__size11)
+
+axiom object__size_axiom11 : (0 <= object__size11)
+
+axiom alignment_axiom11 : (0 <= alignment11)
+
+logic with_default__ok_record__rec_with_bad_discr__b__first__bit3 : int
+
+logic with_default__ok_record__rec_with_bad_discr__b__last__bit3 : int
+
+logic with_default__ok_record__rec_with_bad_discr__b__position3 : int
+
+axiom with_default__ok_record__rec_with_bad_discr__b__first__bit_axiom3 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__b__first__bit3)
+
+axiom with_default__ok_record__rec_with_bad_discr__b__last__bit_axiom3 :
+  (with_default__ok_record__rec_with_bad_discr__b__first__bit3 <  with_default__ok_record__rec_with_bad_discr__b__last__bit3)
+
+axiom with_default__ok_record__rec_with_bad_discr__b__position_axiom3 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__b__position3)
+
+logic with_default__ok_record__rec_with_bad_discr__f1__first__bit3 : int
+
+logic with_default__ok_record__rec_with_bad_discr__f1__last__bit3 : int
+
+logic with_default__ok_record__rec_with_bad_discr__f1__position3 : int
+
+axiom with_default__ok_record__rec_with_bad_discr__f1__first__bit_axiom3 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f1__first__bit3)
+
+axiom with_default__ok_record__rec_with_bad_discr__f1__last__bit_axiom3 :
+  (with_default__ok_record__rec_with_bad_discr__f1__first__bit3 <  with_default__ok_record__rec_with_bad_discr__f1__last__bit3)
+
+axiom with_default__ok_record__rec_with_bad_discr__f1__position_axiom3 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f1__position3)
+
+logic with_default__ok_record__rec_with_bad_discr__f2__first__bit3 : int
+
+logic with_default__ok_record__rec_with_bad_discr__f2__last__bit3 : int
+
+logic with_default__ok_record__rec_with_bad_discr__f2__position3 : int
+
+axiom with_default__ok_record__rec_with_bad_discr__f2__first__bit_axiom3 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f2__first__bit3)
+
+axiom with_default__ok_record__rec_with_bad_discr__f2__last__bit_axiom3 :
+  (with_default__ok_record__rec_with_bad_discr__f2__first__bit3 <  with_default__ok_record__rec_with_bad_discr__f2__last__bit3)
+
+axiom with_default__ok_record__rec_with_bad_discr__f2__position_axiom3 :
+  (0 <= with_default__ok_record__rec_with_bad_discr__f2__position3)
+
+logic user_eq20 : us_rep, us_rep -> bool
+
+logic dummy20 : us_rep
+
+type s25b__ref = { s25b__content : us_rep
+}
+
+function s25b__ref_s25b__content__projection(a: s25b__ref) : us_rep =
+  (a).s25b__content
+
+predicate dynamic_invariant9(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range4(temp___expr_18))
+
+predicate dynamic_invariant10(temp___expr_447: int, temp___is_init_443: bool,
+  temp___skip_constant_444: bool, temp___do_toplevel_445: bool,
+  temp___do_typ_inv_446: bool) = (((temp___is_init_443 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_447))
+
+predicate dynamic_invariant11(temp___expr_454: int, temp___is_init_450: bool,
+  temp___skip_constant_451: bool, temp___do_toplevel_452: bool,
+  temp___do_typ_inv_453: bool) = (((temp___is_init_450 = true) or
+  (first <= 2147483647)) -> dynamic_property(first, 2147483647,
+  temp___expr_454))
+
+axiom first__def_axiom : (first = c)
+
+predicate dynamic_invariant12(temp___expr_461: int, temp___is_init_457: bool,
+  temp___skip_constant_458: bool, temp___do_toplevel_459: bool,
+  temp___do_typ_inv_460: bool) = (((temp___is_init_457 = true) or
+  (first1 <= 2147483647)) -> dynamic_property1(first1, 2147483647,
+  temp___expr_461))
+
+axiom first__def_axiom1 : (first1 = c)
+
+predicate dynamic_invariant13(temp___expr_476: us_rep2,
+  temp___is_init_472: bool, temp___skip_constant_473: bool,
+  temp___do_toplevel_474: bool, temp___do_typ_inv_475: bool) =
+  (with_default__ok_record__rec_with_discr__f2__pred(temp___expr_476) ->
+  (((temp___is_init_472 = true) or (first <= 2147483647)) ->
+  dynamic_property(first, 2147483647,
+  to_rep1(((temp___expr_476).us_split_fields5).rec__with_default__ok_record__rec_with_discr__f2))))
+
+predicate dynamic_invariant14(temp___expr_521: int, temp___is_init_517: bool,
+  temp___skip_constant_518: bool, temp___do_toplevel_519: bool,
+  temp___do_typ_inv_520: bool) = (((temp___is_init_517 = true) or
+  (1 <= 100)) -> in_range8(temp___expr_521))
+
+predicate dynamic_invariant15(temp___expr_572: us_rep,
+  temp___is_init_568: bool, temp___skip_constant_569: bool,
+  temp___do_toplevel_570: bool, temp___do_typ_inv_571: bool) =
+  (((not (temp___skip_constant_569 = true)) -> in_range11(r26b,
+  temp___expr_572)) and
+  (with_default__ok_record__rec_with_bad_discr__f2__pred(temp___expr_572) ->
+  (((temp___is_init_568 = true) or (first <= 2147483647)) ->
+  dynamic_property(first, 2147483647,
+  to_rep1(((temp___expr_572).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f2)))))
+
+predicate default_initial_assumption7(temp___expr_574: us_rep,
+  temp___skip_top_level_575: bool) =
+  ((((temp___expr_574).us_split_discrs1).rec__with_default__ok_record__rec_with_bad_discr__b = r26b) and
+  ((with_default__ok_record__rec_with_bad_discr__f1__pred(temp___expr_574) ->
+  (to_rep(((temp___expr_574).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f1) = 0)) and
+  (with_default__ok_record__rec_with_bad_discr__f2__pred(temp___expr_574) ->
+  (to_rep1(((temp___expr_574).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f2) = 0))))
+
+ (* File "with_default.ads", line 14, characters 0-0 *)
+goal defqtvc :
+  (forall simple__split_fields:us_split_fields2.
+  forall w_disc__split_fields:us_split_fields4.
+  forall w_d_di__split_fields:us_split_fields6.
+  forall w_d_di__split_discrs:bool.
+  forall w_o_di__split_fields:us_split_fields8.
+  forall w_o_di__split_discrs:bool. forall empty__split_fields:us_t.
+  forall empty__split_discrs:small_natural. forall wrap__split_fields:us_rep.
+  forall wrap__split_discrs:bool. (dynamic_invariant(c, true, false, true,
+  true) ->
+  ((exists usf:int. (dynamic_invariant8(usf, true, true, true, true) and
+   (exists usf1:us_rep5.
+   (to_rep3(((usf1).us_split_discrs9).rec__with_default__ok_record__rec_empty_array__d) = usf)))) ->
+  ((exists usf:bool.
+   (exists usf1:us_rep6.
+   (((usf1).us_split_discrs11).rec__with_default__ok_record__rec_discr_rec__b = usf))) ->
+  (let o = c : int in (dynamic_property(first, 2147483647, o) ->
+  (forall no_def__split_fields:us_split_fields. ((no_def__split_fields = {
+  rec__with_default__ok_record__rec_with_bad_discr__f1 = dummy1;
+  rec__with_default__ok_record__rec_with_bad_discr__f2 = of_rep1(o) }) ->
+  (forall no_def__split_discrs:bool. ((no_def__split_discrs = of_int(0)) ->
+  ((no_def__attr__constrained = false) -> (dynamic_invariant1({
+  us_split_discrs1 = { rec__with_default__ok_record__rec_with_bad_discr__b =
+  no_def__split_discrs }; us_split_fields1 = no_def__split_fields }, true,
+  false, true, true) -> (default_initial_assumption1({ us_split_fields3 =
+  simple__split_fields }, false) -> (dynamic_invariant2({ us_split_fields3 =
+  simple__split_fields }, false, false, true, true) ->
+  (default_initial_assumption2({ us_split_discrs3 = w_disc__split_discrs;
+  us_split_fields5 = w_disc__split_fields }, false) -> (dynamic_invariant3({
+  us_split_discrs3 = w_disc__split_discrs; us_split_fields5 =
+  w_disc__split_fields }, false, false, true, true) ->
+  ((w_d_di__attr__constrained = false) -> (default_initial_assumption3({
+  us_split_discrs5 = {
+  rec__with_default__ok_record__rec_with_default_discr__b =
+  w_d_di__split_discrs }; us_split_fields7 = w_d_di__split_fields },
+  false) -> (dynamic_invariant4({ us_split_discrs5 = {
+  rec__with_default__ok_record__rec_with_default_discr__b =
+  w_d_di__split_discrs }; us_split_fields7 = w_d_di__split_fields }, false,
+  false, true, true) -> ((w_o_di__attr__constrained = false) ->
+  (default_initial_assumption4({ us_split_discrs7 = {
+  rec__with_default__ok_record__rec_with_ok_discr__b = w_o_di__split_discrs
+  }; us_split_fields9 = w_o_di__split_fields }, false) ->
+  (dynamic_invariant5({ us_split_discrs7 = {
+  rec__with_default__ok_record__rec_with_ok_discr__b = w_o_di__split_discrs
+  }; us_split_fields9 = w_o_di__split_fields }, false, false, true, true) ->
+  ((empty__attr__constrained = false) -> (default_initial_assumption5({
+  us_split_discrs9 = { rec__with_default__ok_record__rec_empty_array__d =
+  empty__split_discrs }; us_split_fields11 = {
+  rec__with_default__ok_record__rec_empty_array__content =
+  empty__split_fields } }, false) -> (dynamic_invariant6({ us_split_discrs9 =
+  { rec__with_default__ok_record__rec_empty_array__d = empty__split_discrs };
+  us_split_fields11 = {
+  rec__with_default__ok_record__rec_empty_array__content =
+  empty__split_fields } }, false, false, true, true) ->
+  ((wrap__attr__constrained = false) -> (default_initial_assumption6({
+  us_split_discrs11 = { rec__with_default__ok_record__rec_discr_rec__b =
+  wrap__split_discrs }; us_split_fields13 = {
+  rec__with_default__ok_record__rec_discr_rec__content = wrap__split_fields }
+  }, false) -> (dynamic_invariant7({ us_split_discrs11 = {
+  rec__with_default__ok_record__rec_discr_rec__b = wrap__split_discrs };
+  us_split_fields13 = {
+  rec__with_default__ok_record__rec_discr_rec__content = wrap__split_fields }
+  }, false, false, true, true) ->
+  ((to_rep((simple__split_fields).rec__with_default__ok_record__simple_rec__f1) = 0) ->
+  ((to_rep2((simple__split_fields).rec__with_default__ok_record__simple_rec__f2) = c) ->
+  ((to_rep((w_disc__split_fields).rec__with_default__ok_record__rec_with_discr__f1) = 0) ->
+  (to_rep((w_d_di__split_fields).rec__with_default__ok_record__rec_with_default_discr__f1) = 0))))))))))))))))))))))))))))))))

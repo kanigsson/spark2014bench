@@ -1,0 +1,792 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+logic div : int, int -> int
+
+logic mod : int, int -> int
+
+axiom Div_mod :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (x = ((y * div(x,
+  y)) + mod(x, y)))))
+
+axiom Div_bound :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= div(x, y))))
+
+axiom Div_bound1 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (div(x, y) <= x)))
+
+axiom Mod_bound :
+  (forall x:int. forall y:int. ((not (y = 0)) -> ((-abs_int(y)) <  mod(x,
+  y))))
+
+axiom Mod_bound1 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (mod(x, y) <  abs_int(y))))
+
+axiom Div_sign_pos :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= div(x, y))))
+
+axiom Div_sign_neg :
+  (forall x:int. forall y:int. (((x <= 0) and (0 <  y)) -> (div(x, y) <= 0)))
+
+axiom Mod_sign_pos :
+  (forall x:int. forall y:int. (((0 <= x) and (not (y = 0))) -> (0 <= mod(x,
+  y))))
+
+axiom Mod_sign_neg :
+  (forall x:int. forall y:int. (((x <= 0) and (not (y = 0))) -> (mod(x,
+  y) <= 0)))
+
+axiom Rounds_toward_zero :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (abs_int((div(x,
+  y) * y)) <= abs_int(x))))
+
+axiom Div_1 : (forall x:int. (div(x, 1) = x))
+
+axiom Mod_1 : (forall x:int. (mod(x, 1) = 0))
+
+axiom Div_inf :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> (div(x, y) = 0)))
+
+axiom Mod_inf :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> (mod(x, y) = x)))
+
+axiom Div_mult :
+  (forall x:int. forall y:int. forall z:int [div(((x * y) + z), x)].
+  (((0 <  x) and ((0 <= y) and (0 <= z))) -> (div(((x * y) + z),
+  x) = (y + div(z, x)))))
+
+axiom Mod_mult :
+  (forall x:int. forall y:int. forall z:int [mod(((x * y) + z), x)].
+  (((0 <  x) and ((0 <= y) and (0 <= z))) -> (mod(((x * y) + z), x) = mod(z,
+  x))))
+
+axiom Div_mod1 :
+  (forall x:int. forall y:int. ((not (y = 0)) ->
+  (x = ((y * (x / y)) + (x % y)))))
+
+axiom Mod_bound2 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (0 <= (x % y))))
+
+axiom Mod_bound3 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> ((x % y) <  abs_int(y))))
+
+axiom Div_unique :
+  (forall x:int. forall y:int. forall q:int. ((0 <  y) ->
+  ((((q * y) <= x) and (x <  ((q * y) + y))) -> ((x / y) = q))))
+
+axiom Div_bound2 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= (x / y))))
+
+axiom Div_bound3 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> ((x / y) <= x)))
+
+axiom Mod_11 : (forall x:int. ((x % 1) = 0))
+
+axiom Div_11 : (forall x:int. ((x / 1) = x))
+
+axiom Div_inf1 :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> ((x / y) = 0)))
+
+axiom Div_inf_neg :
+  (forall x:int. forall y:int. (((0 <  x) and (x <= y)) ->
+  (((-x) / y) = (- 1))))
+
+axiom Mod_0 : (forall y:int. ((not (y = 0)) -> ((0 % y) = 0)))
+
+axiom Div_1_left : (forall y:int. ((1 <  y) -> ((1 / y) = 0)))
+
+axiom Div_minus1_left : (forall y:int. ((1 <  y) -> (((- 1) / y) = (- 1))))
+
+axiom Mod_1_left : (forall y:int. ((1 <  y) -> ((1 % y) = 1)))
+
+axiom Mod_minus1_left :
+  (forall y:int [((- 1) % y)]. ((1 <  y) -> (((- 1) % y) = (y - 1))))
+
+axiom Div_mult1 :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) / x)].
+  ((0 <  x) -> ((((x * y) + z) / x) = (y + (z / x)))))
+
+axiom Mod_mult1 :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) % x)].
+  ((0 <  x) -> ((((x * y) + z) % x) = (z % x))))
+
+function mod1(x: int, y: int) : int =
+  (if (0 <  y) then (x % y) else ((x % y) + y))
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_18))
+
+type character
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 255))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq1 : character, character -> bool
+
+logic dummy1 : character
+
+type character__ref = { character__content : character
+}
+
+function character__ref_character__content__projection(a: character__ref) : character =
+  (a).character__content
+
+logic to_rep : character -> int
+
+logic of_rep : int -> character
+
+axiom inversion_axiom :
+  (forall x:character [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:character [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type map__ref = { map__content : (int,character) farray
+}
+
+logic slide : (int,character) farray, int, int -> (int,character) farray
+
+axiom slide_eq :
+  (forall a:(int,character) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,character) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq2(a: (int,character) farray, a__first: int, a__last: int,
+  b: (int,character) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep((a[temp___idx_91])) = to_rep((b[((b__first - a__first) + temp___idx_91)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep((a[temp___idx_91])) = to_rep((b[((b__first - a__first) + temp___idx_91)]))))))))
+
+logic dummy2 : (int,character) farray
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic user_eq2 : (int,character) farray, (int,character) farray -> bool
+
+type us_split_fields = { rec__instr__instrument__name :
+(int,character) farray; rec__ext__ : us_private
+}
+
+function us_split_fields_rec__instr__instrument__name__projection(a: us_split_fields) : (int,character) farray =
+  (a).rec__instr__instrument__name
+
+function us_split_fields_rec__ext____projection(a: us_split_fields) : us_private =
+  (a).rec__ext__
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields; attr__tag : int
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function us_rep_attr__tag__projection(a: us_rep) : int = (a).attr__tag
+
+function bool_eq3(a: us_rep, b: us_rep) : bool =
+  (if (bool_eq2(((a).us_split_fields1).rec__instr__instrument__name, 1, 14,
+  ((b).us_split_fields1).rec__instr__instrument__name, 1,
+  14) = true) then true else false)
+
+logic us_dispatch_eq : us_rep, us_rep -> bool
+
+logic us_tag : int
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic instr__instrument__name__first__bit : int
+
+logic instr__instrument__name__last__bit : int
+
+logic instr__instrument__name__position : int
+
+axiom instr__instrument__name__first__bit_axiom :
+  (0 <= instr__instrument__name__first__bit)
+
+axiom instr__instrument__name__last__bit_axiom :
+  (instr__instrument__name__first__bit <  instr__instrument__name__last__bit)
+
+axiom instr__instrument__name__position_axiom :
+  (0 <= instr__instrument__name__position)
+
+logic user_eq3 : us_rep, us_rep -> bool
+
+logic dummy3 : us_rep
+
+type instrument__ref = { instrument__content : us_rep
+}
+
+function instrument__ref_instrument__content__projection(a: instrument__ref) : us_rep =
+  (a).instrument__content
+
+type sixty
+
+logic sixtyqtint : sixty -> int
+
+axiom sixtyqtaxiom : (forall i:sixty. (0 <= sixtyqtint(i)))
+
+axiom sixtyqtaxiom1 : (forall i:sixty. (sixtyqtint(i) <= 60))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 60))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq4 : sixty, sixty -> bool
+
+logic dummy4 : sixty
+
+type sixty__ref = { sixty__content : sixty
+}
+
+function sixty__ref_sixty__content__projection(a: sixty__ref) : sixty =
+  (a).sixty__content
+
+function to_rep1(x: sixty) : int = sixtyqtint(x)
+
+logic of_rep1 : int -> sixty
+
+axiom inversion_axiom1 :
+  (forall x:sixty [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:sixty [to_rep1(x)]. in_range2(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type twenty_four
+
+logic twenty_fourqtint : twenty_four -> int
+
+axiom twenty_fourqtaxiom : (forall i:twenty_four. (0 <= twenty_fourqtint(i)))
+
+axiom twenty_fourqtaxiom1 :
+  (forall i:twenty_four. (twenty_fourqtint(i) <= 24))
+
+predicate in_range3(x: int) = ((0 <= x) and (x <= 24))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq5 : twenty_four, twenty_four -> bool
+
+logic dummy5 : twenty_four
+
+type twenty_four__ref = { twenty_four__content : twenty_four
+}
+
+function twenty_four__ref_twenty_four__content__projection(a: twenty_four__ref) : twenty_four =
+  (a).twenty_four__content
+
+function to_rep2(x: twenty_four) : int = twenty_fourqtint(x)
+
+logic of_rep2 : int -> twenty_four
+
+axiom inversion_axiom2 :
+  (forall x:twenty_four [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
+
+axiom range_axiom2 :
+  (forall x:twenty_four [to_rep2(x)]. in_range3(to_rep2(x)))
+
+axiom coerce_axiom2 :
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range3(x) ->
+  (to_rep2(of_rep2(x)) = x)))
+
+type us_split_fields2 = { rec__instr__clock__seconds : sixty;
+rec__instr__clock__minutes : sixty; rec__instr__clock__hours : twenty_four;
+rec__instr__instrument__name1 : (int,character) farray; rec__ext__1 :
+us_private
+}
+
+function us_split_fields_rec__instr__clock__seconds__projection(a: us_split_fields2) : sixty =
+  (a).rec__instr__clock__seconds
+
+function us_split_fields_rec__instr__clock__minutes__projection(a: us_split_fields2) : sixty =
+  (a).rec__instr__clock__minutes
+
+function us_split_fields_rec__instr__clock__hours__projection(a: us_split_fields2) : twenty_four =
+  (a).rec__instr__clock__hours
+
+function us_split_fields_rec__instr__instrument__name__5__projection(a: us_split_fields2) : (int,character) farray =
+  (a).rec__instr__instrument__name1
+
+function us_split_fields_rec__ext____5__projection(a: us_split_fields2) : us_private =
+  (a).rec__ext__1
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__5__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_fields3 : us_split_fields2; attr__tag1 : int
+}
+
+function us_rep___split_fields__5__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function us_rep_attr__tag__5__projection(a: us_rep1) : int = (a).attr__tag1
+
+logic hide_ext__ : sixty, sixty, twenty_four, us_private -> us_private
+
+logic extract__instr__clock__seconds : us_private -> sixty
+
+axiom extract__instr__clock__seconds__conv :
+  (forall instr__clock__seconds:sixty. forall instr__clock__minutes:sixty.
+  (forall instr__clock__hours:twenty_four.
+  (forall rec__ext__2:us_private.
+  (extract__instr__clock__seconds(hide_ext__(instr__clock__seconds,
+  instr__clock__minutes, instr__clock__hours,
+  rec__ext__2)) = instr__clock__seconds))))
+
+logic extract__instr__clock__minutes : us_private -> sixty
+
+axiom extract__instr__clock__minutes__conv :
+  (forall instr__clock__seconds:sixty. forall instr__clock__minutes:sixty.
+  (forall instr__clock__hours:twenty_four.
+  (forall rec__ext__2:us_private.
+  (extract__instr__clock__minutes(hide_ext__(instr__clock__seconds,
+  instr__clock__minutes, instr__clock__hours,
+  rec__ext__2)) = instr__clock__minutes))))
+
+logic extract__instr__clock__hours : us_private -> twenty_four
+
+axiom extract__instr__clock__hours__conv :
+  (forall instr__clock__seconds:sixty. forall instr__clock__minutes:sixty.
+  (forall instr__clock__hours:twenty_four.
+  (forall rec__ext__2:us_private.
+  (extract__instr__clock__hours(hide_ext__(instr__clock__seconds,
+  instr__clock__minutes, instr__clock__hours,
+  rec__ext__2)) = instr__clock__hours))))
+
+logic extract__ext__ : us_private -> us_private
+
+function to_base(a: us_rep1) : us_rep = { us_split_fields1 = {
+  rec__instr__instrument__name =
+  ((a).us_split_fields3).rec__instr__instrument__name1; rec__ext__ =
+  hide_ext__(((a).us_split_fields3).rec__instr__clock__seconds,
+  ((a).us_split_fields3).rec__instr__clock__minutes,
+  ((a).us_split_fields3).rec__instr__clock__hours,
+  ((a).us_split_fields3).rec__ext__1) }; attr__tag = (a).attr__tag1 }
+
+function of_base(r: us_rep) : us_rep1 = { us_split_fields3 = {
+  rec__instr__clock__seconds =
+  extract__instr__clock__seconds(((r).us_split_fields1).rec__ext__);
+  rec__instr__clock__minutes =
+  extract__instr__clock__minutes(((r).us_split_fields1).rec__ext__);
+  rec__instr__clock__hours =
+  extract__instr__clock__hours(((r).us_split_fields1).rec__ext__);
+  rec__instr__instrument__name1 =
+  ((r).us_split_fields1).rec__instr__instrument__name; rec__ext__1 =
+  extract__ext__(((r).us_split_fields1).rec__ext__) }; attr__tag1 =
+  (r).attr__tag }
+
+function bool_eq6(a: us_rep1, b: us_rep1) : bool =
+  (if (((to_rep1(((a).us_split_fields3).rec__instr__clock__seconds) = to_rep1(((b).us_split_fields3).rec__instr__clock__seconds)) and
+  (to_rep1(((a).us_split_fields3).rec__instr__clock__minutes) = to_rep1(((b).us_split_fields3).rec__instr__clock__minutes))) and
+  ((to_rep2(((a).us_split_fields3).rec__instr__clock__hours) = to_rep2(((b).us_split_fields3).rec__instr__clock__hours)) and
+  (bool_eq2(((a).us_split_fields3).rec__instr__instrument__name1, 1, 14,
+  ((b).us_split_fields3).rec__instr__instrument__name1, 1,
+  14) = true))) then true else false)
+
+logic us_tag1 : int
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic instr__clock__seconds__first__bit : int
+
+logic instr__clock__seconds__last__bit : int
+
+logic instr__clock__seconds__position : int
+
+axiom instr__clock__seconds__first__bit_axiom :
+  (0 <= instr__clock__seconds__first__bit)
+
+axiom instr__clock__seconds__last__bit_axiom :
+  (instr__clock__seconds__first__bit <  instr__clock__seconds__last__bit)
+
+axiom instr__clock__seconds__position_axiom :
+  (0 <= instr__clock__seconds__position)
+
+logic instr__clock__minutes__first__bit : int
+
+logic instr__clock__minutes__last__bit : int
+
+logic instr__clock__minutes__position : int
+
+axiom instr__clock__minutes__first__bit_axiom :
+  (0 <= instr__clock__minutes__first__bit)
+
+axiom instr__clock__minutes__last__bit_axiom :
+  (instr__clock__minutes__first__bit <  instr__clock__minutes__last__bit)
+
+axiom instr__clock__minutes__position_axiom :
+  (0 <= instr__clock__minutes__position)
+
+logic instr__clock__hours__first__bit : int
+
+logic instr__clock__hours__last__bit : int
+
+logic instr__clock__hours__position : int
+
+axiom instr__clock__hours__first__bit_axiom :
+  (0 <= instr__clock__hours__first__bit)
+
+axiom instr__clock__hours__last__bit_axiom :
+  (instr__clock__hours__first__bit <  instr__clock__hours__last__bit)
+
+axiom instr__clock__hours__position_axiom :
+  (0 <= instr__clock__hours__position)
+
+logic instr__instrument__name__first__bit1 : int
+
+logic instr__instrument__name__last__bit1 : int
+
+logic instr__instrument__name__position1 : int
+
+axiom instr__instrument__name__first__bit_axiom1 :
+  (0 <= instr__instrument__name__first__bit1)
+
+axiom instr__instrument__name__last__bit_axiom1 :
+  (instr__instrument__name__first__bit1 <  instr__instrument__name__last__bit1)
+
+axiom instr__instrument__name__position_axiom1 :
+  (0 <= instr__instrument__name__position1)
+
+logic user_eq6 : us_rep1, us_rep1 -> bool
+
+logic dummy6 : us_rep1
+
+type clock__ref = { clock__content : us_rep1
+}
+
+function clock__ref_clock__content__projection(a: clock__ref) : us_rep1 =
+  (a).clock__content
+
+logic temp___String_Literal_177 : unit -> (int,character) farray
+
+axiom temp___String_Literal_177__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_177(us_void_param)].
+  (to_rep((temp___String_Literal_177(us_void_param)[1])) = 32))
+
+axiom temp___String_Literal_177__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_177(us_void_param)].
+  (to_rep((temp___String_Literal_177(us_void_param)[2])) = 32))
+
+axiom temp___String_Literal_177__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_177(us_void_param)].
+  (to_rep((temp___String_Literal_177(us_void_param)[3])) = 32))
+
+axiom temp___String_Literal_177__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_177(us_void_param)].
+  (to_rep((temp___String_Literal_177(us_void_param)[4])) = 32))
+
+axiom temp___String_Literal_177__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_177(us_void_param)].
+  (to_rep((temp___String_Literal_177(us_void_param)[5])) = 32))
+
+axiom temp___String_Literal_177__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_177(us_void_param)].
+  (to_rep((temp___String_Literal_177(us_void_param)[6])) = 32))
+
+axiom temp___String_Literal_177__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_177(us_void_param)].
+  (to_rep((temp___String_Literal_177(us_void_param)[7])) = 32))
+
+axiom temp___String_Literal_177__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_177(us_void_param)].
+  (to_rep((temp___String_Literal_177(us_void_param)[8])) = 32))
+
+axiom temp___String_Literal_177__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_177(us_void_param)].
+  (to_rep((temp___String_Literal_177(us_void_param)[9])) = 32))
+
+axiom temp___String_Literal_177__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_177(us_void_param)].
+  (to_rep((temp___String_Literal_177(us_void_param)[10])) = 32))
+
+axiom temp___String_Literal_177__def_axiom10 :
+  (forall us_void_param:unit [temp___String_Literal_177(us_void_param)].
+  (to_rep((temp___String_Literal_177(us_void_param)[11])) = 32))
+
+axiom temp___String_Literal_177__def_axiom11 :
+  (forall us_void_param:unit [temp___String_Literal_177(us_void_param)].
+  (to_rep((temp___String_Literal_177(us_void_param)[12])) = 32))
+
+axiom temp___String_Literal_177__def_axiom12 :
+  (forall us_void_param:unit [temp___String_Literal_177(us_void_param)].
+  (to_rep((temp___String_Literal_177(us_void_param)[13])) = 32))
+
+axiom temp___String_Literal_177__def_axiom13 :
+  (forall us_void_param:unit [temp___String_Literal_177(us_void_param)].
+  (to_rep((temp___String_Literal_177(us_void_param)[14])) = 32))
+
+predicate default_initial_assumption(temp___expr_274: us_rep1,
+  temp___skip_top_level_275: bool) =
+  (((temp___expr_274).attr__tag1 = us_tag1) and
+  (((to_rep1(((temp___expr_274).us_split_fields3).rec__instr__clock__seconds) = 0) and
+  (to_rep1(((temp___expr_274).us_split_fields3).rec__instr__clock__minutes) = 0)) and
+  ((to_rep2(((temp___expr_274).us_split_fields3).rec__instr__clock__hours) = 0) and
+  (((temp___expr_274).us_split_fields3).rec__instr__instrument__name1 = temp___String_Literal_177(void)))))
+
+logic x__attr__tag : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic inc : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+predicate dynamic_invariant1(temp___expr_74: int, temp___is_init_70: bool,
+  temp___skip_constant_71: bool, temp___do_toplevel_72: bool,
+  temp___do_typ_inv_73: bool) = (((temp___is_init_70 = true) or
+  (0 <= 255)) -> in_range1(temp___expr_74))
+
+predicate dynamic_invariant2(temp___expr_258: int, temp___is_init_254: bool,
+  temp___skip_constant_255: bool, temp___do_toplevel_256: bool,
+  temp___do_typ_inv_257: bool) = (((temp___is_init_254 = true) or
+  (0 <= 60)) -> in_range2(temp___expr_258))
+
+predicate dynamic_invariant3(temp___expr_265: int, temp___is_init_261: bool,
+  temp___skip_constant_262: bool, temp___do_toplevel_263: bool,
+  temp___do_typ_inv_264: bool) = (((temp___is_init_261 = true) or
+  (0 <= 24)) -> in_range3(temp___expr_265))
+
+predicate default_initial_assumption1(temp___expr_175: us_rep,
+  temp___skip_top_level_176: bool) =
+  (((temp___expr_175).attr__tag = us_tag) and
+  (((temp___expr_175).us_split_fields1).rec__instr__instrument__name = temp___String_Literal_177(void)))
+
+axiom cdiv_cases :
+  (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((0 <  d) -> (div(n,
+  d) = (n / d)))))
+
+axiom cdiv_cases1 :
+  (forall n:int. forall d:int [div(n, d)]. ((n <= 0) -> ((0 <  d) -> (div(n,
+  d) = (-((-n) / d))))))
+
+axiom cdiv_cases2 :
+  (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((d <  0) -> (div(n,
+  d) = (-(n / (-d)))))))
+
+axiom cdiv_cases3 :
+  (forall n:int. forall d:int [div(n, d)]. ((n <= 0) -> ((d <  0) -> (div(n,
+  d) = ((-n) / (-d))))))
+
+axiom cmod_cases :
+  (forall n:int. forall d:int [mod(n, d)]. ((0 <= n) -> ((0 <  d) -> (mod(n,
+  d) = (n % d)))))
+
+axiom cmod_cases1 :
+  (forall n:int. forall d:int [mod(n, d)]. ((n <= 0) -> ((0 <  d) -> (mod(n,
+  d) = (-((-n) % d))))))
+
+axiom cmod_cases2 :
+  (forall n:int. forall d:int [mod(n, d)]. ((0 <= n) -> ((d <  0) -> (mod(n,
+  d) = (n % (-d))))))
+
+axiom cmod_cases3 :
+  (forall n:int. forall d:int [mod(n, d)]. ((n <= 0) -> ((d <  0) -> (mod(n,
+  d) = (-((-n) % (-d)))))))
+
+ (* File "instr.ads", line 75, characters 0-0 *)
+goal defqtvc :
+  (forall x__split_fields:us_split_fields2. forall ninc:int.
+  (dynamic_invariant(inc, true, false, true, true) ->
+  (dynamic_invariant(ninc, false, false, true, true) ->
+  (forall o:int.
+  ((to_rep1((x__split_fields).rec__instr__clock__seconds) = o) -> (let o1 =
+  (o + inc) : int in (in_range(o1) ->
+  (forall o2:sixty. ((to_rep1(o2) = mod1(o1, 60)) ->
+  (forall x__split_fields1:us_split_fields2. ((x__split_fields1 = {
+  rec__instr__clock__seconds = o2; rec__instr__clock__minutes =
+  (x__split_fields).rec__instr__clock__minutes; rec__instr__clock__hours =
+  (x__split_fields).rec__instr__clock__hours; rec__instr__instrument__name1 =
+  (x__split_fields).rec__instr__instrument__name1; rec__ext__1 =
+  (x__split_fields).rec__ext__1 }) ->
+  (forall o3:int.
+  ((to_rep1((x__split_fields1).rec__instr__clock__seconds) = o3) ->
+  in_range((o3 + inc)))))))))))))))

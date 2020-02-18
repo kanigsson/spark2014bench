@@ -1,0 +1,348 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+logic div : int, int -> int
+
+logic mod : int, int -> int
+
+axiom Div_mod :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (x = ((y * div(x,
+  y)) + mod(x, y)))))
+
+axiom Div_bound :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= div(x, y))))
+
+axiom Div_bound1 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (div(x, y) <= x)))
+
+axiom Mod_bound :
+  (forall x:int. forall y:int. ((not (y = 0)) -> ((-abs_int(y)) <  mod(x,
+  y))))
+
+axiom Mod_bound1 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (mod(x, y) <  abs_int(y))))
+
+axiom Div_sign_pos :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= div(x, y))))
+
+axiom Div_sign_neg :
+  (forall x:int. forall y:int. (((x <= 0) and (0 <  y)) -> (div(x, y) <= 0)))
+
+axiom Mod_sign_pos :
+  (forall x:int. forall y:int. (((0 <= x) and (not (y = 0))) -> (0 <= mod(x,
+  y))))
+
+axiom Mod_sign_neg :
+  (forall x:int. forall y:int. (((x <= 0) and (not (y = 0))) -> (mod(x,
+  y) <= 0)))
+
+axiom Rounds_toward_zero :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (abs_int((div(x,
+  y) * y)) <= abs_int(x))))
+
+axiom Div_1 : (forall x:int. (div(x, 1) = x))
+
+axiom Mod_1 : (forall x:int. (mod(x, 1) = 0))
+
+axiom Div_inf :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> (div(x, y) = 0)))
+
+axiom Mod_inf :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> (mod(x, y) = x)))
+
+axiom Div_mult :
+  (forall x:int. forall y:int. forall z:int [div(((x * y) + z), x)].
+  (((0 <  x) and ((0 <= y) and (0 <= z))) -> (div(((x * y) + z),
+  x) = (y + div(z, x)))))
+
+axiom Mod_mult :
+  (forall x:int. forall y:int. forall z:int [mod(((x * y) + z), x)].
+  (((0 <  x) and ((0 <= y) and (0 <= z))) -> (mod(((x * y) + z), x) = mod(z,
+  x))))
+
+axiom Div_mod1 :
+  (forall x:int. forall y:int. ((not (y = 0)) ->
+  (x = ((y * (x / y)) + (x % y)))))
+
+axiom Mod_bound2 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (0 <= (x % y))))
+
+axiom Mod_bound3 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> ((x % y) <  abs_int(y))))
+
+axiom Div_unique :
+  (forall x:int. forall y:int. forall q:int. ((0 <  y) ->
+  ((((q * y) <= x) and (x <  ((q * y) + y))) -> ((x / y) = q))))
+
+axiom Div_bound2 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= (x / y))))
+
+axiom Div_bound3 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> ((x / y) <= x)))
+
+axiom Mod_11 : (forall x:int. ((x % 1) = 0))
+
+axiom Div_11 : (forall x:int. ((x / 1) = x))
+
+axiom Div_inf1 :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> ((x / y) = 0)))
+
+axiom Div_inf_neg :
+  (forall x:int. forall y:int. (((0 <  x) and (x <= y)) ->
+  (((-x) / y) = (- 1))))
+
+axiom Mod_0 : (forall y:int. ((not (y = 0)) -> ((0 % y) = 0)))
+
+axiom Div_1_left : (forall y:int. ((1 <  y) -> ((1 / y) = 0)))
+
+axiom Div_minus1_left : (forall y:int. ((1 <  y) -> (((- 1) / y) = (- 1))))
+
+axiom Mod_1_left : (forall y:int. ((1 <  y) -> ((1 % y) = 1)))
+
+axiom Mod_minus1_left :
+  (forall y:int [((- 1) % y)]. ((1 <  y) -> (((- 1) % y) = (y - 1))))
+
+axiom Div_mult1 :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) / x)].
+  ((0 <  x) -> ((((x * y) + z) / x) = (y + (z / x)))))
+
+axiom Mod_mult1 :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) % x)].
+  ((0 <  x) -> ((((x * y) + z) % x) = (z % x))))
+
+function mod1(x: int, y: int) : int =
+  (if (0 <  y) then (x % y) else ((x % y) + y))
+
+type int__
+
+logic int__qtint : int__ -> int
+
+axiom int__qtaxiom : (forall i:int__. (0 <= int__qtint(i)))
+
+axiom int__qtaxiom1 : (forall i:int__. (int__qtint(i) <= 256))
+
+predicate in_range(x: int) = ((0 <= x) and (x <= 256))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : int__, int__ -> bool
+
+logic dummy : int__
+
+type int____ref = { int____content : int__
+}
+
+function int____ref_int____content__projection(a: int____ref) : int__ =
+  (a).int____content
+
+function to_rep(x: int__) : int = int__qtint(x)
+
+logic of_rep : int -> int__
+
+axiom inversion_axiom : (forall x:int__ [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:int__ [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type us_split_fields = { rec__test__context__value : int__
+}
+
+function us_split_fields_rec__test__context__value__projection(a: us_split_fields) : int__ =
+  (a).rec__test__context__value
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq1(a: us_rep, b: us_rep) : bool =
+  (if (to_rep(((a).us_split_fields1).rec__test__context__value) = to_rep(((b).us_split_fields1).rec__test__context__value)) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic test__context__value__first__bit : int
+
+logic test__context__value__last__bit : int
+
+logic test__context__value__position : int
+
+axiom test__context__value__first__bit_axiom :
+  (0 <= test__context__value__first__bit)
+
+axiom test__context__value__last__bit_axiom :
+  (test__context__value__first__bit <  test__context__value__last__bit)
+
+axiom test__context__value__position_axiom :
+  (0 <= test__context__value__position)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type context__ref = { context__content : us_rep
+}
+
+function context__ref_context__content__projection(a: context__ref) : us_rep =
+  (a).context__content
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic valid_context : int -> bool
+
+logic valid_context__function_guard : bool, int -> prop
+
+axiom temp___result_169qtdef :
+  (forall temp___168:us_rep.
+  valid_context__function_guard(valid_context(to_rep(((temp___168).us_split_fields1).rec__test__context__value)),
+  to_rep(((temp___168).us_split_fields1).rec__test__context__value)))
+
+predicate dynamic_invariant(temp___expr_167: us_rep,
+  temp___is_init_163: bool, temp___skip_constant_164: bool,
+  temp___do_toplevel_165: bool, temp___do_typ_inv_166: bool) =
+  ((temp___do_toplevel_165 = true) -> ((temp___is_init_163 = true) ->
+  (valid_context(to_rep(((temp___expr_167).us_split_fields1).rec__test__context__value)) = true)))
+
+axiom temp___result_175qtdef :
+  (forall temp___174:us_rep.
+  valid_context__function_guard(valid_context(to_rep(((temp___174).us_split_fields1).rec__test__context__value)),
+  to_rep(((temp___174).us_split_fields1).rec__test__context__value)))
+
+predicate dynamic_predicate(temp___173: us_rep) =
+  (valid_context(to_rep(((temp___173).us_split_fields1).rec__test__context__value)) = true)
+
+logic i1s : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+predicate dynamic_invariant1(temp___expr_160: int, temp___is_init_156: bool,
+  temp___skip_constant_157: bool, temp___do_toplevel_158: bool,
+  temp___do_typ_inv_159: bool) = (((temp___is_init_156 = true) or
+  (0 <= 256)) -> in_range(temp___expr_160))
+
+axiom valid_context__def_axiom :
+  (forall value:int [valid_context(value)]. ((valid_context(value) = true) ->
+  (not (value = 255))))
+
+axiom valid_context__def_axiom1 :
+  (forall value:int [valid_context(value)]. ((not (value = 255)) ->
+  (valid_context(value) = true)))
+
+axiom cdiv_cases :
+  (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((0 <  d) -> (div(n,
+  d) = (n / d)))))
+
+axiom cdiv_cases1 :
+  (forall n:int. forall d:int [div(n, d)]. ((n <= 0) -> ((0 <  d) -> (div(n,
+  d) = (-((-n) / d))))))
+
+axiom cdiv_cases2 :
+  (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((d <  0) -> (div(n,
+  d) = (-(n / (-d)))))))
+
+axiom cdiv_cases3 :
+  (forall n:int. forall d:int [div(n, d)]. ((n <= 0) -> ((d <  0) -> (div(n,
+  d) = ((-n) / (-d))))))
+
+axiom cmod_cases :
+  (forall n:int. forall d:int [mod(n, d)]. ((0 <= n) -> ((0 <  d) -> (mod(n,
+  d) = (n % d)))))
+
+axiom cmod_cases1 :
+  (forall n:int. forall d:int [mod(n, d)]. ((n <= 0) -> ((0 <  d) -> (mod(n,
+  d) = (-((-n) % d))))))
+
+axiom cmod_cases2 :
+  (forall n:int. forall d:int [mod(n, d)]. ((0 <= n) -> ((d <  0) -> (mod(n,
+  d) = (n % (-d))))))
+
+axiom cmod_cases3 :
+  (forall n:int. forall d:int [mod(n, d)]. ((n <= 0) -> ((d <  0) -> (mod(n,
+  d) = (-((-n) % (-d)))))))
+
+ (* File "test.ads", line 17, characters 0-0 *)
+goal defqtvc :
+  (forall ctx__split_fields:int__. (dynamic_invariant(i1s, true, false, true,
+  true) -> (dynamic_invariant(i1s, true, false, true, true) ->
+  (dynamic_invariant({ us_split_fields1 = { rec__test__context__value =
+  ctx__split_fields } }, true, false, true, true) ->
+  (forall o:int. ((to_rep(ctx__split_fields) = o) -> (not (2 = 0))))))))

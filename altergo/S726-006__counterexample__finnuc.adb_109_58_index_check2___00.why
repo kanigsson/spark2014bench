@@ -1,0 +1,1363 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type t
+
+logic tqtint : t -> int
+
+axiom tqtaxiom : (forall i:t. (0 <= tqtint(i)))
+
+axiom tqtaxiom1 : (forall i:t. (tqtint(i) <= 255))
+
+logic nth : t, int -> bool
+
+axiom nth_out_of_bound :
+  (forall x:t. forall n:int. (((n <  0) or (8 <= n)) -> (nth(x, n) = false)))
+
+logic zeros : t
+
+axiom Nth_zeros : (forall n:int. (nth(zeros, n) = false))
+
+logic one : t
+
+logic ones : t
+
+axiom Nth_ones :
+  (forall n:int. (((0 <= n) and (n <  8)) -> (nth(ones, n) = true)))
+
+logic bw_and : t, t -> t
+
+axiom Nth_bw_and :
+  (forall v1:t. forall v2:t. forall n:int. (((0 <= n) and (n <  8)) ->
+  (nth(bw_and(v1, v2), n) = andb(nth(v1, n), nth(v2, n)))))
+
+logic bw_or : t, t -> t
+
+axiom Nth_bw_or :
+  (forall v1:t. forall v2:t. forall n:int. (((0 <= n) and (n <  8)) ->
+  (nth(bw_or(v1, v2), n) = orb(nth(v1, n), nth(v2, n)))))
+
+logic bw_xor : t, t -> t
+
+axiom Nth_bw_xor :
+  (forall v1:t. forall v2:t. forall n:int. (((0 <= n) and (n <  8)) ->
+  (nth(bw_xor(v1, v2), n) = xorb(nth(v1, n), nth(v2, n)))))
+
+logic bw_not : t -> t
+
+axiom Nth_bw_not :
+  (forall v:t. forall n:int. (((0 <= n) and (n <  8)) -> (nth(bw_not(v),
+  n) = notb(nth(v, n)))))
+
+logic lsr : t, int -> t
+
+axiom Lsr_nth_low :
+  (forall b:t. forall n:int. forall s:int. ((0 <= s) -> ((0 <= n) ->
+  (((n + s) <  8) -> (nth(lsr(b, s), n) = nth(b, (n + s)))))))
+
+axiom Lsr_nth_high :
+  (forall b:t. forall n:int. forall s:int. ((0 <= s) -> ((0 <= n) ->
+  ((8 <= (n + s)) -> (nth(lsr(b, s), n) = false)))))
+
+axiom lsr_zeros : (forall x:t. (lsr(x, 0) = x))
+
+logic asr : t, int -> t
+
+axiom Asr_nth_low :
+  (forall b:t. forall n:int. forall s:int. ((0 <= s) -> (((0 <= n) and
+  (n <  8)) -> (((n + s) <  8) -> (nth(asr(b, s), n) = nth(b, (n + s)))))))
+
+axiom Asr_nth_high :
+  (forall b:t. forall n:int. forall s:int. ((0 <= s) -> (((0 <= n) and
+  (n <  8)) -> ((8 <= (n + s)) -> (nth(asr(b, s), n) = nth(b, (8 - 1)))))))
+
+axiom asr_zeros : (forall x:t. (asr(x, 0) = x))
+
+logic lsl : t, int -> t
+
+axiom Lsl_nth_high :
+  (forall b:t. forall n:int. forall s:int. (((0 <= s) and ((s <= n) and
+  (n <  8))) -> (nth(lsl(b, s), n) = nth(b, (n - s)))))
+
+axiom Lsl_nth_low :
+  (forall b:t. forall n:int. forall s:int. (((0 <= n) and (n <  s)) ->
+  (nth(lsl(b, s), n) = false)))
+
+axiom lsl_zeros : (forall x:t. (lsl(x, 0) = x))
+
+axiom Div_mod :
+  (forall x:int. forall y:int. ((not (y = 0)) ->
+  (x = ((y * (x / y)) + (x % y)))))
+
+axiom Mod_bound :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (0 <= (x % y))))
+
+axiom Mod_bound1 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> ((x % y) <  abs_int(y))))
+
+axiom Div_unique :
+  (forall x:int. forall y:int. forall q:int. ((0 <  y) ->
+  ((((q * y) <= x) and (x <  ((q * y) + y))) -> ((x / y) = q))))
+
+axiom Div_bound :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= (x / y))))
+
+axiom Div_bound1 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> ((x / y) <= x)))
+
+axiom Mod_1 : (forall x:int. ((x % 1) = 0))
+
+axiom Div_1 : (forall x:int. ((x / 1) = x))
+
+axiom Div_inf :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> ((x / y) = 0)))
+
+axiom Div_inf_neg :
+  (forall x:int. forall y:int. (((0 <  x) and (x <= y)) ->
+  (((-x) / y) = (- 1))))
+
+axiom Mod_0 : (forall y:int. ((not (y = 0)) -> ((0 % y) = 0)))
+
+axiom Div_1_left : (forall y:int. ((1 <  y) -> ((1 / y) = 0)))
+
+axiom Div_minus1_left : (forall y:int. ((1 <  y) -> (((- 1) / y) = (- 1))))
+
+axiom Mod_1_left : (forall y:int. ((1 <  y) -> ((1 % y) = 1)))
+
+axiom Mod_minus1_left :
+  (forall y:int [((- 1) % y)]. ((1 <  y) -> (((- 1) % y) = (y - 1))))
+
+axiom Div_mult :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) / x)].
+  ((0 <  x) -> ((((x * y) + z) / x) = (y + (z / x)))))
+
+axiom Mod_mult :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) % x)].
+  ((0 <  x) -> ((((x * y) + z) % x) = (z % x))))
+
+logic rotate_right : t, int -> t
+
+axiom Nth_rotate_right :
+  (forall v:t. forall n:int. forall i:int. (((0 <= i) and (i <  8)) ->
+  ((0 <= n) -> (nth(rotate_right(v, n), i) = nth(v, ((i + n) % 8))))))
+
+logic rotate_left : t, int -> t
+
+axiom Nth_rotate_left :
+  (forall v:t. forall n:int. forall i:int. (((0 <= i) and (i <  8)) ->
+  ((0 <= n) -> (nth(rotate_left(v, n), i) = nth(v, ((i - n) % 8))))))
+
+logic pow2 : int -> int
+
+axiom Power_0 : (pow2(0) = 1)
+
+axiom Power_s : (forall n:int. ((0 <= n) -> (pow2((n + 1)) = (2 * pow2(n)))))
+
+axiom Power_1 : (pow2(1) = 2)
+
+axiom Power_sum :
+  (forall n:int. forall m:int. (((0 <= n) and (0 <= m)) ->
+  (pow2((n + m)) = (pow2(n) * pow2(m)))))
+
+axiom pow2pos : (forall i:int. ((0 <= i) -> (0 <  pow2(i))))
+
+axiom pow2_0 : (pow2(0) = 1)
+
+axiom pow2_1 : (pow2(1) = 2)
+
+axiom pow2_2 : (pow2(2) = 4)
+
+axiom pow2_3 : (pow2(3) = 8)
+
+axiom pow2_4 : (pow2(4) = 16)
+
+axiom pow2_5 : (pow2(5) = 32)
+
+axiom pow2_6 : (pow2(6) = 64)
+
+axiom pow2_7 : (pow2(7) = 128)
+
+axiom pow2_8 : (pow2(8) = 256)
+
+axiom pow2_9 : (pow2(9) = 512)
+
+axiom pow2_10 : (pow2(10) = 1024)
+
+axiom pow2_11 : (pow2(11) = 2048)
+
+axiom pow2_12 : (pow2(12) = 4096)
+
+axiom pow2_13 : (pow2(13) = 8192)
+
+axiom pow2_14 : (pow2(14) = 16384)
+
+axiom pow2_15 : (pow2(15) = 32768)
+
+axiom pow2_16 : (pow2(16) = 65536)
+
+axiom pow2_17 : (pow2(17) = 131072)
+
+axiom pow2_18 : (pow2(18) = 262144)
+
+axiom pow2_19 : (pow2(19) = 524288)
+
+axiom pow2_20 : (pow2(20) = 1048576)
+
+axiom pow2_21 : (pow2(21) = 2097152)
+
+axiom pow2_22 : (pow2(22) = 4194304)
+
+axiom pow2_23 : (pow2(23) = 8388608)
+
+axiom pow2_24 : (pow2(24) = 16777216)
+
+axiom pow2_25 : (pow2(25) = 33554432)
+
+axiom pow2_26 : (pow2(26) = 67108864)
+
+axiom pow2_27 : (pow2(27) = 134217728)
+
+axiom pow2_28 : (pow2(28) = 268435456)
+
+axiom pow2_29 : (pow2(29) = 536870912)
+
+axiom pow2_30 : (pow2(30) = 1073741824)
+
+axiom pow2_31 : (pow2(31) = 2147483648)
+
+axiom pow2_32 : (pow2(32) = 4294967296)
+
+axiom pow2_33 : (pow2(33) = 8589934592)
+
+axiom pow2_34 : (pow2(34) = 17179869184)
+
+axiom pow2_35 : (pow2(35) = 34359738368)
+
+axiom pow2_36 : (pow2(36) = 68719476736)
+
+axiom pow2_37 : (pow2(37) = 137438953472)
+
+axiom pow2_38 : (pow2(38) = 274877906944)
+
+axiom pow2_39 : (pow2(39) = 549755813888)
+
+axiom pow2_40 : (pow2(40) = 1099511627776)
+
+axiom pow2_41 : (pow2(41) = 2199023255552)
+
+axiom pow2_42 : (pow2(42) = 4398046511104)
+
+axiom pow2_43 : (pow2(43) = 8796093022208)
+
+axiom pow2_44 : (pow2(44) = 17592186044416)
+
+axiom pow2_45 : (pow2(45) = 35184372088832)
+
+axiom pow2_46 : (pow2(46) = 70368744177664)
+
+axiom pow2_47 : (pow2(47) = 140737488355328)
+
+axiom pow2_48 : (pow2(48) = 281474976710656)
+
+axiom pow2_49 : (pow2(49) = 562949953421312)
+
+axiom pow2_50 : (pow2(50) = 1125899906842624)
+
+axiom pow2_51 : (pow2(51) = 2251799813685248)
+
+axiom pow2_52 : (pow2(52) = 4503599627370496)
+
+axiom pow2_53 : (pow2(53) = 9007199254740992)
+
+axiom pow2_54 : (pow2(54) = 18014398509481984)
+
+axiom pow2_55 : (pow2(55) = 36028797018963968)
+
+axiom pow2_56 : (pow2(56) = 72057594037927936)
+
+axiom pow2_57 : (pow2(57) = 144115188075855872)
+
+axiom pow2_58 : (pow2(58) = 288230376151711744)
+
+axiom pow2_59 : (pow2(59) = 576460752303423488)
+
+axiom pow2_60 : (pow2(60) = 1152921504606846976)
+
+axiom pow2_61 : (pow2(61) = 2305843009213693952)
+
+axiom pow2_62 : (pow2(62) = 4611686018427387904)
+
+axiom pow2_63 : (pow2(63) = 9223372036854775808)
+
+axiom pow2_64 : (pow2(64) = 18446744073709551616)
+
+logic is_signed_positive : t -> prop
+
+logic of_int : int -> t
+
+function to_int(x: t) : int =
+  (if is_signed_positive(x) then tqtint(x) else (-(256 - tqtint(x))))
+
+axiom to_uint_extensionality :
+  (forall v:t. forall vqt:t. ((tqtint(v) = tqtint(vqt)) -> (v = vqt)))
+
+axiom to_int_extensionality :
+  (forall v:t. forall vqt:t. ((to_int(v) = to_int(vqt)) -> (v = vqt)))
+
+predicate uint_in_range(i: int) = ((0 <= i) and (i <= 255))
+
+axiom to_uint_bounds : (forall v:t. (0 <= tqtint(v)))
+
+axiom to_uint_bounds1 : (forall v:t. (tqtint(v) <  256))
+
+axiom to_uint_of_int :
+  (forall i:int. (((0 <= i) and (i <  256)) -> (tqtint(of_int(i)) = i)))
+
+logic size_bv : t
+
+axiom to_uint_size_bv : (tqtint(size_bv) = 8)
+
+axiom to_uint_zeros : (tqtint(zeros) = 0)
+
+axiom to_uint_one : (tqtint(one) = 1)
+
+axiom to_uint_ones : (tqtint(ones) = 255)
+
+predicate ult(x: t, y: t) = (tqtint(x) <  tqtint(y))
+
+predicate ule(x: t, y: t) = (tqtint(x) <= tqtint(y))
+
+predicate ugt(x: t, y: t) = (tqtint(y) <  tqtint(x))
+
+predicate uge(x: t, y: t) = (tqtint(y) <= tqtint(x))
+
+predicate slt(v1: t, v2: t) = (to_int(v1) <  to_int(v2))
+
+predicate sle(v1: t, v2: t) = (to_int(v1) <= to_int(v2))
+
+predicate sgt(v1: t, v2: t) = (to_int(v2) <  to_int(v1))
+
+predicate sge(v1: t, v2: t) = (to_int(v2) <= to_int(v1))
+
+axiom positive_is_ge_zeros :
+  (forall x:t. (is_signed_positive(x) -> sge(x, zeros)))
+
+axiom positive_is_ge_zeros1 :
+  (forall x:t. (sge(x, zeros) -> is_signed_positive(x)))
+
+logic add : t, t -> t
+
+axiom to_uint_add_bounded :
+  (forall v1:t. forall v2:t. (((tqtint(v1) + tqtint(v2)) <  256) ->
+  (tqtint(add(v1, v2)) = (tqtint(v1) + tqtint(v2)))))
+
+logic sub : t, t -> t
+
+axiom to_uint_sub_bounded :
+  (forall v1:t. forall v2:t. (((0 <= (tqtint(v1) - tqtint(v2))) and
+  ((tqtint(v1) - tqtint(v2)) <  256)) -> (tqtint(sub(v1,
+  v2)) = (tqtint(v1) - tqtint(v2)))))
+
+logic neg : t -> t
+
+axiom to_uint_neg : (forall v:t. (tqtint(neg(v)) = ((-tqtint(v)) % 256)))
+
+logic mul : t, t -> t
+
+axiom to_uint_mul_bounded :
+  (forall v1:t. forall v2:t. (((tqtint(v1) * tqtint(v2)) <  256) ->
+  (tqtint(mul(v1, v2)) = (tqtint(v1) * tqtint(v2)))))
+
+logic udiv : t, t -> t
+
+axiom to_uint_udiv :
+  (forall v1:t. forall v2:t. (tqtint(udiv(v1,
+  v2)) = (tqtint(v1) / tqtint(v2))))
+
+logic urem : t, t -> t
+
+axiom to_uint_urem :
+  (forall v1:t. forall v2:t. (tqtint(urem(v1,
+  v2)) = (tqtint(v1) % tqtint(v2))))
+
+logic lsr_bv : t, t -> t
+
+axiom lsr_bv_is_lsr :
+  (forall x:t. forall n:t. (lsr_bv(x, n) = lsr(x, tqtint(n))))
+
+axiom to_uint_lsr :
+  (forall v:t. forall n:t. (tqtint(lsr_bv(v,
+  n)) = (tqtint(v) / pow2(tqtint(n)))))
+
+logic asr_bv : t, t -> t
+
+axiom asr_bv_is_asr :
+  (forall x:t. forall n:t. (asr_bv(x, n) = asr(x, tqtint(n))))
+
+logic lsl_bv : t, t -> t
+
+axiom lsl_bv_is_lsl :
+  (forall x:t. forall n:t. (lsl_bv(x, n) = lsl(x, tqtint(n))))
+
+axiom to_uint_lsl :
+  (forall v:t. forall n:t. (tqtint(lsl_bv(v,
+  n)) = ((tqtint(v) * pow2(tqtint(n))) % 256)))
+
+logic rotate_right_bv : t, t -> t
+
+logic rotate_left_bv : t, t -> t
+
+axiom rotate_left_bv_is_rotate_left :
+  (forall v:t. forall n:t. (rotate_left_bv(v, n) = rotate_left(v,
+  tqtint(n))))
+
+axiom rotate_right_bv_is_rotate_right :
+  (forall v:t. forall n:t. (rotate_right_bv(v, n) = rotate_right(v,
+  tqtint(n))))
+
+logic nth_bv : t, t -> bool
+
+axiom Nth_bv_is_nth :
+  (forall x:t. forall i:t. (nth(x, tqtint(i)) = nth_bv(x, i)))
+
+axiom Nth_bv_is_nth2 :
+  (forall x:t. forall i:int. (((0 <= i) and (i <  256)) -> (nth_bv(x,
+  of_int(i)) = nth(x, i))))
+
+logic eq_sub_bv : t, t, t, t -> prop
+
+predicate eq_sub(a: t, b: t, i: int, n: int) =
+  (forall j:int. (((i <= j) and (j <  (i + n))) -> (nth(a, j) = nth(b, j))))
+
+axiom eq_sub_equiv :
+  (forall a:t. forall b:t. forall i:t. forall n:t. (eq_sub(a, b, tqtint(i),
+  tqtint(n)) -> eq_sub_bv(a, b, i, n)))
+
+axiom eq_sub_equiv1 :
+  (forall a:t. forall b:t. forall i:t. forall n:t. (eq_sub_bv(a, b, i, n) ->
+  eq_sub(a, b, tqtint(i), tqtint(n))))
+
+axiom Extensionality :
+  (forall x:t. forall y:t [eq_sub(x, y, 0, 8)]. (eq_sub(x, y, 0, 8) ->
+  (x = y)))
+
+type t__ref = { t__content : t
+}
+
+function bool_eq(x: t, y: t) : bool = (if (x = y) then true else false)
+
+function bool_ne(x: t, y: t) : bool = (if (not (x = y)) then true else false)
+
+function bool_lt(x: t, y: t) : bool = (if ult(x, y) then true else false)
+
+function bool_le(x: t, y: t) : bool = (if ule(x, y) then true else false)
+
+function bool_gt(x: t, y: t) : bool = (if ugt(x, y) then true else false)
+
+function bool_ge(x: t, y: t) : bool = (if uge(x, y) then true else false)
+
+logic power : t, int -> t
+
+axiom Power_01 : (forall x:t. (power(x, 0) = one))
+
+axiom Power_11 : (forall x:t. (power(x, 1) = x))
+
+axiom Power_s1 :
+  (forall x:t. forall n:int. ((0 <= n) -> (power(x, (n + 1)) = mul(x,
+  power(x, n)))))
+
+axiom Power_s_alt :
+  (forall x:t. forall n:int. ((0 <  n) -> (power(x, n) = mul(x, power(x,
+  (n - 1))))))
+
+axiom Power_sum1 :
+  (forall x:t. forall n:int. forall m:int. ((0 <= n) -> ((0 <= m) ->
+  (power(x, (n + m)) = mul(power(x, n), power(x, m))))))
+
+axiom Power_mult :
+  (forall x:t. forall n:int. forall m:int. ((0 <= n) -> ((0 <= m) ->
+  (power(x, (n * m)) = power(power(x, n), m)))))
+
+axiom Power_mult2 :
+  (forall x:t. forall y:t. forall n:int. ((0 <= n) -> (power(mul(x, y),
+  n) = mul(power(x, n), power(y, n)))))
+
+function bv_min(x: t, y: t) : t = (if ule(x, y) then x else y)
+
+function bv_max(x: t, y: t) : t = (if ule(x, y) then y else x)
+
+function min(x: int, y: int) : int = (if (x <= y) then x else y)
+
+function max(x: int, y: int) : int = (if (x <= y) then y else x)
+
+axiom Min_r : (forall x:int. forall y:int. ((y <= x) -> (min(x, y) = y)))
+
+axiom Max_l : (forall x:int. forall y:int. ((y <= x) -> (max(x, y) = x)))
+
+axiom Min_comm : (forall x:int. forall y:int. (min(x, y) = min(y, x)))
+
+axiom Max_comm : (forall x:int. forall y:int. (max(x, y) = max(y, x)))
+
+axiom Min_assoc :
+  (forall x:int. forall y:int. forall z:int. (min(min(x, y), z) = min(x,
+  min(y, z))))
+
+axiom Max_assoc :
+  (forall x:int. forall y:int. forall z:int. (max(max(x, y), z) = max(x,
+  max(y, z))))
+
+axiom bv_min_to_uint :
+  (forall x:t. forall y:t. (tqtint(bv_min(x, y)) = min(tqtint(x),
+  tqtint(y))))
+
+axiom bv_max_to_uint :
+  (forall x:t. forall y:t. (tqtint(bv_max(x, y)) = max(tqtint(x),
+  tqtint(y))))
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq1(x: bool, y: bool) : bool =
+  (if (x = y) then true else false)
+
+function to_int1(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int1(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+logic r_1 : bool, bool, bool -> bool
+
+logic r_1__function_guard : bool, bool, bool, bool -> prop
+
+axiom r_1__def_axiom :
+  (forall seta:bool. forall a:bool. forall b:bool [r_1(seta, a, b)].
+  ((r_1(seta, a, b) = true) -> (((seta = true) and (not (b = true))) ->
+  (a = true))))
+
+axiom r_1__def_axiom1 :
+  (forall seta:bool. forall a:bool. forall b:bool [r_1(seta, a, b)].
+  ((((seta = true) and (not (b = true))) -> (a = true)) -> (r_1(seta, a,
+  b) = true)))
+
+logic seta : bool
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic setb : bool
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic c : bool
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+logic attr__ATTRIBUTE_ADDRESS8 : int
+
+logic boolean_to_unsigned_8 : bool -> t
+
+logic boolean_to_unsigned_8__function_guard : t, bool -> prop
+
+type unsigned_8
+
+logic attr__ATTRIBUTE_MODULUS : t
+
+function bool_eq2(x: t, y: t) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : t -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> t
+
+logic user_eq : unsigned_8, unsigned_8 -> bool
+
+logic dummy : unsigned_8
+
+type unsigned_8__ref = { unsigned_8__content : unsigned_8
+}
+
+function unsigned_8__ref_unsigned_8__content__projection(a: unsigned_8__ref) : unsigned_8 =
+  (a).unsigned_8__content
+
+logic rliteral : t
+
+axiom rliteral_axiom : (tqtint(rliteral) = 0)
+
+logic rliteral1 : t
+
+axiom rliteral_axiom1 : (tqtint(rliteral1) = 255)
+
+predicate dynamic_invariant(temp___expr_177: t, temp___is_init_173: bool,
+  temp___skip_constant_174: bool, temp___do_toplevel_175: bool,
+  temp___do_typ_inv_176: bool) = true
+
+axiom boolean_to_unsigned_8__post_axiom :
+  (forall b:bool [boolean_to_unsigned_8(b)]. (let result =
+  boolean_to_unsigned_8(b) : t in
+  (boolean_to_unsigned_8__function_guard(result, b) ->
+  dynamic_invariant(result, true, false, true, true))))
+
+logic rliteral2 : t
+
+axiom rliteral_axiom2 : (tqtint(rliteral2) = 1)
+
+axiom boolean_to_unsigned_8__def_axiom :
+  (forall b:bool [boolean_to_unsigned_8(b)].
+  (boolean_to_unsigned_8(b) = (if (b = true) then rliteral2 else rliteral)))
+
+logic attr__ATTRIBUTE_ADDRESS9 : int
+
+logic attr__ATTRIBUTE_ADDRESS10 : int
+
+logic attr__ATTRIBUTE_ADDRESS11 : int
+
+logic attr__ATTRIBUTE_ADDRESS12 : int
+
+logic attr__ATTRIBUTE_ADDRESS13 : int
+
+type map__ref = { map__content : (int,bool) farray
+}
+
+logic slide : (int,bool) farray, int, int -> (int,bool) farray
+
+axiom slide_eq :
+  (forall a:(int,bool) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,bool) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq3(a: (int,bool) farray, a__first: int, a__last: int,
+  b: (int,bool) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_162:int. (((a__first <= temp___idx_162) and
+  (temp___idx_162 <= a__last)) ->
+  (to_int1((a[temp___idx_162])) = to_int1((b[((b__first - a__first) + temp___idx_162)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_162:int. (((a__first <= temp___idx_162) and
+  (temp___idx_162 <= a__last)) ->
+  (to_int1((a[temp___idx_162])) = to_int1((b[((b__first - a__first) + temp___idx_162)]))))))))
+
+logic attr__ATTRIBUTE_ADDRESS14 : int
+
+logic attr__ATTRIBUTE_ADDRESS15 : int
+
+type map
+
+type map__ref1 = { map__content1 : map
+}
+
+logic get : map, int, int -> bool
+
+logic set : map, int, int, bool -> map
+
+axiom Select_eq :
+  (forall m:map.
+  (forall i:int.
+  (forall j:int.
+  (forall a:bool [set(m, i, j, a)]. (get(set(m, i, j, a), i, j) = a)))))
+
+axiom Select_neq :
+  (forall m:map.
+  (forall i:int. forall i2:int.
+  (forall j:int. forall j2:int.
+  (forall a:bool [get(set(m, i, j, a), i2, j2)| set(m, i, j, a), get(m, i2,
+  j2)]. ((not ((i = i2) and (j = j2))) -> (get(set(m, i, j, a), i2,
+  j2) = get(m, i2, j2)))))))
+
+logic slide1 : map, int, int, int, int -> map
+
+axiom slide_def1 :
+  (forall a:map.
+  (forall new_first:int. forall old_first:int.
+  (forall new_first_2:int. forall old_first_2:int.
+  (forall i:int.
+  (forall j:int [get(slide1(a, old_first, new_first, old_first_2,
+  new_first_2), i, j)]. (get(slide1(a, old_first, new_first, old_first_2,
+  new_first_2), i, j) = get(a, (i - (new_first - old_first)),
+  (j - (new_first_2 - old_first_2)))))))))
+
+function bool_eq4(a: map, a__first: int, a__last: int, a__first_2: int,
+  a__last_2: int, b: map, b__first: int, b__last: int, b__first_2: int,
+  b__last_2: int) : bool =
+  (if (((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (if (a__first_2 <= a__last_2) then ((b__first_2 <= b__last_2) and
+  ((a__last_2 - a__first_2) = (b__last_2 - b__first_2))) else (b__last_2 <  b__first_2))) and
+  (forall temp___idx_163:int. forall temp___idx_164:int.
+  ((((a__first <= temp___idx_163) and (temp___idx_163 <= a__last)) and
+  ((a__first_2 <= temp___idx_164) and (temp___idx_164 <= a__last_2))) ->
+  (to_int1(get(a, temp___idx_163, temp___idx_164)) = to_int1(get(b,
+  ((b__first - a__first) + temp___idx_163),
+  ((b__first_2 - a__first_2) + temp___idx_164))))))) then true else false)
+
+axiom bool_eq_rev4 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq4(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev5 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq4(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev6 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq4(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev7 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq4(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first_2 <= a__last_2) ->
+  (b__first_2 <= b__last_2)))))
+
+axiom bool_eq_rev8 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq4(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first_2 <= a__last_2) ->
+  ((a__last_2 - a__first_2) = (b__last_2 - b__first_2))))))
+
+axiom bool_eq_rev9 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq4(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((not (a__first_2 <= a__last_2)) ->
+  (b__last_2 <  b__first_2)))))
+
+axiom bool_eq_rev10 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq4(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) ->
+  (forall temp___idx_163:int. forall temp___idx_164:int.
+  ((((a__first <= temp___idx_163) and (temp___idx_163 <= a__last)) and
+  ((a__first_2 <= temp___idx_164) and (temp___idx_164 <= a__last_2))) ->
+  (to_int1(get(a, temp___idx_163, temp___idx_164)) = to_int1(get(b,
+  ((b__first - a__first) + temp___idx_163),
+  ((b__first_2 - a__first_2) + temp___idx_164)))))))))
+
+logic attr__ATTRIBUTE_ADDRESS16 : int
+
+logic attr__ATTRIBUTE_ADDRESS17 : int
+
+logic attr__ATTRIBUTE_ADDRESS18 : int
+
+logic attr__ATTRIBUTE_ADDRESS19 : int
+
+type boolean_array_8_2_range_1
+
+logic boolean_array_8_2_range_1qtint : boolean_array_8_2_range_1 -> int
+
+axiom boolean_array_8_2_range_1qtaxiom :
+  (forall i:boolean_array_8_2_range_1.
+  (1 <= boolean_array_8_2_range_1qtint(i)))
+
+axiom boolean_array_8_2_range_1qtaxiom1 :
+  (forall i:boolean_array_8_2_range_1.
+  (boolean_array_8_2_range_1qtint(i) <= 8))
+
+predicate in_range1(x: int) = ((1 <= x) and (x <= 8))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : boolean_array_8_2_range_1, boolean_array_8_2_range_1 -> bool
+
+logic dummy1 : boolean_array_8_2_range_1
+
+type boolean_array_8_2_range_1__ref = { boolean_array_8_2_range_1__content :
+boolean_array_8_2_range_1
+}
+
+function boolean_array_8_2_range_1__ref_boolean_array_8_2_range_1__content__projection(a: boolean_array_8_2_range_1__ref) : boolean_array_8_2_range_1 =
+  (a).boolean_array_8_2_range_1__content
+
+logic finnuc__comp__mux_out1__aggregate_def : bool -> (int,bool) farray
+
+logic finnuc__comp__mux_out1_1__aggregate_def : bool -> (int,bool) farray
+
+logic finnuc__comp__logic_table__aggregate_def : bool, bool, bool, bool,
+  bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool,
+  bool -> map
+
+logic finnuc__comp__logic_table_1__aggregate_def : bool, bool, bool, bool,
+  bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool,
+  bool -> map
+
+axiom def_axiom :
+  (forall temp___224:bool.
+  (forall temp___225:int.
+  ((finnuc__comp__mux_out1__aggregate_def(temp___224)[temp___225]) = temp___224)))
+
+axiom def_axiom1 :
+  (forall temp___227:bool.
+  (forall temp___228:int.
+  ((finnuc__comp__mux_out1_1__aggregate_def(temp___227)[temp___228]) = temp___227)))
+
+axiom def_axiom2 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 1, 1) = temp___230))
+
+axiom def_axiom3 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 1, 2) = temp___231))
+
+axiom def_axiom4 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 2, 1) = temp___232))
+
+axiom def_axiom5 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 2, 2) = temp___233))
+
+axiom def_axiom6 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 3, 1) = temp___234))
+
+axiom def_axiom7 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 3, 2) = temp___235))
+
+axiom def_axiom8 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 4, 1) = temp___236))
+
+axiom def_axiom9 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 4, 2) = temp___237))
+
+axiom def_axiom10 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 5, 1) = temp___238))
+
+axiom def_axiom11 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 5, 2) = temp___239))
+
+axiom def_axiom12 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 6, 1) = temp___240))
+
+axiom def_axiom13 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 6, 2) = temp___241))
+
+axiom def_axiom14 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 7, 1) = temp___242))
+
+axiom def_axiom15 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 7, 2) = temp___243))
+
+axiom def_axiom16 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 8, 1) = temp___244))
+
+axiom def_axiom17 :
+  (forall temp___230:bool. forall temp___231:bool. forall temp___232:bool.
+  forall temp___233:bool. forall temp___234:bool. forall temp___235:bool.
+  forall temp___236:bool. forall temp___237:bool. forall temp___238:bool.
+  forall temp___239:bool. forall temp___240:bool. forall temp___241:bool.
+  forall temp___242:bool. forall temp___243:bool. forall temp___244:bool.
+  forall temp___245:bool.
+  (get(finnuc__comp__logic_table__aggregate_def(temp___230, temp___231,
+  temp___232, temp___233, temp___234, temp___235, temp___236, temp___237,
+  temp___238, temp___239, temp___240, temp___241, temp___242, temp___243,
+  temp___244, temp___245), 8, 2) = temp___245))
+
+axiom def_axiom18 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 1, 1) = temp___249))
+
+axiom def_axiom19 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 1, 2) = temp___250))
+
+axiom def_axiom20 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 2, 1) = temp___251))
+
+axiom def_axiom21 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 2, 2) = temp___252))
+
+axiom def_axiom22 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 3, 1) = temp___253))
+
+axiom def_axiom23 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 3, 2) = temp___254))
+
+axiom def_axiom24 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 4, 1) = temp___255))
+
+axiom def_axiom25 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 4, 2) = temp___256))
+
+axiom def_axiom26 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 5, 1) = temp___257))
+
+axiom def_axiom27 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 5, 2) = temp___258))
+
+axiom def_axiom28 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 6, 1) = temp___259))
+
+axiom def_axiom29 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 6, 2) = temp___260))
+
+axiom def_axiom30 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 7, 1) = temp___261))
+
+axiom def_axiom31 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 7, 2) = temp___262))
+
+axiom def_axiom32 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 8, 1) = temp___263))
+
+axiom def_axiom33 :
+  (forall temp___249:bool. forall temp___250:bool. forall temp___251:bool.
+  forall temp___252:bool. forall temp___253:bool. forall temp___254:bool.
+  forall temp___255:bool. forall temp___256:bool. forall temp___257:bool.
+  forall temp___258:bool. forall temp___259:bool. forall temp___260:bool.
+  forall temp___261:bool. forall temp___262:bool. forall temp___263:bool.
+  forall temp___264:bool.
+  (get(finnuc__comp__logic_table_1__aggregate_def(temp___249, temp___250,
+  temp___251, temp___252, temp___253, temp___254, temp___255, temp___256,
+  temp___257, temp___258, temp___259, temp___260, temp___261, temp___262,
+  temp___263, temp___264), 8, 2) = temp___264))
+
+predicate dynamic_invariant1(temp___expr_201: int, temp___is_init_197: bool,
+  temp___skip_constant_198: bool, temp___do_toplevel_199: bool,
+  temp___do_typ_inv_200: bool) = (((temp___is_init_197 = true) or
+  (1 <= 8)) -> in_range1(temp___expr_201))
+
+logic rliteral3 : t
+
+axiom rliteral_axiom3 : (tqtint(rliteral3) = 4)
+
+logic rliteral4 : t
+
+axiom rliteral_axiom4 : (tqtint(rliteral4) = 2)
+
+ (* File "finnuc.ads", line 45, characters 0-0 *)
+goal defqtvc :
+  (forall unit_delay_memory:bool. forall memory_memory:bool.
+  forall logic_index:t. forall logic_index_1:t.
+  (forall mux_out1:(int,bool) farray.
+  ((mux_out1 = finnuc__comp__mux_out1__aggregate_def(of_int1(0))) ->
+  (forall mux_out1_1:(int,bool) farray.
+  ((mux_out1_1 = finnuc__comp__mux_out1_1__aggregate_def(of_int1(0))) ->
+  (forall logic_table:map.
+  ((logic_table = finnuc__comp__logic_table__aggregate_def(of_int1(0),
+  of_int1(1), of_int1(1), of_int1(0), of_int1(0), of_int1(1), of_int1(0),
+  of_int1(1), of_int1(1), of_int1(0), of_int1(1), of_int1(0), of_int1(0),
+  of_int1(0), of_int1(0), of_int1(0))) -> (dynamic_invariant(logic_index,
+  false, false, true, true) ->
+  (forall logic_table_1:map.
+  ((logic_table_1 = finnuc__comp__logic_table_1__aggregate_def(of_int1(0),
+  of_int1(1), of_int1(1), of_int1(0), of_int1(0), of_int1(1), of_int1(0),
+  of_int1(1), of_int1(1), of_int1(0), of_int1(1), of_int1(0), of_int1(0),
+  of_int1(0), of_int1(0), of_int1(0))) -> (dynamic_invariant(logic_index_1,
+  false, false, true, true) ->
+  (forall logical_operator1_out1:bool.
+  ((logical_operator1_out1 = (if ((if (unit_delay_memory = true) then c else false) = true) then true else setb)) ->
+  (forall mux_out11:(int,bool) farray.
+  ((mux_out11 = (mux_out1[1 <- seta])) ->
+  (forall mux_out12:(int,bool) farray.
+  ((mux_out12 = (mux_out11[2 <- logical_operator1_out1])) ->
+  (forall mux_out13:(int,bool) farray.
+  ((mux_out13 = (mux_out12[3 <- memory_memory])) -> (let o = (mux_out13[3])
+  : bool in (let o1 = boolean_to_unsigned_8(o) : t in
+  ((boolean_to_unsigned_8__function_guard(o1, o) and (dynamic_invariant(o1,
+  true, false, true, true) and
+  (o1 = (if (o = true) then rliteral2 else rliteral)))) -> (let o2 =
+  (mux_out13[2]) : bool in (let o3 = boolean_to_unsigned_8(o2) : t in
+  ((boolean_to_unsigned_8__function_guard(o3, o2) and (dynamic_invariant(o3,
+  true, false, true, true) and
+  (o3 = (if (o2 = true) then rliteral2 else rliteral)))) -> (let o4 =
+  (mux_out13[1]) : bool in (let o5 = boolean_to_unsigned_8(o4) : t in
+  ((boolean_to_unsigned_8__function_guard(o5, o4) and (dynamic_invariant(o5,
+  true, false, true, true) and
+  (o5 = (if (o4 = true) then rliteral2 else rliteral)))) ->
+  (forall logic_index1:t. ((logic_index1 = add(add(mul(o5, rliteral3),
+  mul(o3, rliteral4)), mul(o1, rliteral2))) ->
+  (1 <= (tqtint(logic_index1) + 1))))))))))))))))))))))))))))))))

@@ -1,0 +1,1754 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+logic bool_eq : int, int -> bool
+
+logic bool_ne : int, int -> bool
+
+logic bool_lt : int, int -> bool
+
+logic bool_le : int, int -> bool
+
+logic bool_gt : int, int -> bool
+
+logic bool_ge : int, int -> bool
+
+axiom bool_eq_axiom :
+  (forall x:int. (forall y:int. ((bool_eq(x, y) = true) -> (x = y))))
+
+axiom bool_eq_axiom1 :
+  (forall x:int. (forall y:int. ((x = y) -> (bool_eq(x, y) = true))))
+
+axiom bool_ne_axiom :
+  (forall x:int. (forall y:int. ((bool_ne(x, y) = true) -> (not (x = y)))))
+
+axiom bool_ne_axiom1 :
+  (forall x:int. (forall y:int. ((not (x = y)) -> (bool_ne(x, y) = true))))
+
+axiom bool_lt_axiom :
+  (forall x:int. (forall y:int. ((bool_lt(x, y) = true) -> (x <  y))))
+
+axiom bool_lt_axiom1 :
+  (forall x:int. (forall y:int. ((x <  y) -> (bool_lt(x, y) = true))))
+
+axiom bool_int__le_axiom :
+  (forall x:int. (forall y:int. ((bool_le(x, y) = true) -> (x <= y))))
+
+axiom bool_int__le_axiom1 :
+  (forall x:int. (forall y:int. ((x <= y) -> (bool_le(x, y) = true))))
+
+axiom bool_gt_axiom :
+  (forall x:int. (forall y:int. ((bool_gt(x, y) = true) -> (y <  x))))
+
+axiom bool_gt_axiom1 :
+  (forall x:int. (forall y:int. ((y <  x) -> (bool_gt(x, y) = true))))
+
+axiom bool_ge_axiom :
+  (forall x:int. (forall y:int. ((bool_ge(x, y) = true) -> (y <= x))))
+
+axiom bool_ge_axiom1 :
+  (forall x:int. (forall y:int. ((y <= x) -> (bool_ge(x, y) = true))))
+
+function length(x: int, y: int) : int =
+  (if (x <= y) then ((y - x) + 1) else 0)
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+type positive
+
+logic positiveqtint : positive -> int
+
+axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
+
+axiom positiveqtaxiom1 :
+  (forall i:positive. (positiveqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq1 : positive, positive -> bool
+
+logic dummy1 : positive
+
+type positive__ref = { positive__content : positive
+}
+
+function positive__ref_positive__content__projection(a: positive__ref) : positive =
+  (a).positive__content
+
+type character
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 255))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq2 : character, character -> bool
+
+logic dummy2 : character
+
+type character__ref = { character__content : character
+}
+
+function character__ref_character__content__projection(a: character__ref) : character =
+  (a).character__content
+
+logic to_rep : character -> int
+
+logic of_rep : int -> character
+
+axiom inversion_axiom :
+  (forall x:character [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:character [to_rep(x)]. in_range2(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range2(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type map__ref = { map__content : (int,character) farray
+}
+
+logic slide : (int,character) farray, int, int -> (int,character) farray
+
+axiom slide_eq :
+  (forall a:(int,character) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,character) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq4(a: (int,character) farray, a__first: int, a__last: int,
+  b: (int,character) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep((a[temp___idx_91])) = to_rep((b[((b__first - a__first) + temp___idx_91)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep((a[temp___idx_91])) = to_rep((b[((b__first - a__first) + temp___idx_91)]))))))))
+
+function to_rep1(x: integer) : int = integerqtint(x)
+
+logic of_rep1 : int -> integer
+
+axiom inversion_axiom1 :
+  (forall x:integer [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range(f) -> (in_range(l) ->
+  (to_rep1(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range(f) -> (in_range(l) ->
+  (to_rep1(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range(low) and (in_range(high) and ((low <= high) ->
+  (in_range1(low) and in_range1(high)))))
+
+type us_t = { elts : (int,character) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,character) farray = (a).elts
+
+function of_array(a: (int,character) farray, f: int, l: int) : us_t = {
+  elts = a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep1(first((a).rt))
+
+function last1(a: us_t) : int = to_rep1(last((a).rt))
+
+function length1(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq5(x: us_t, y: us_t) : bool = bool_eq4((x).elts,
+  to_rep1(first((x).rt)), to_rep1(last((x).rt)), (y).elts,
+  to_rep1(first((y).rt)), to_rep1(last((y).rt)))
+
+logic user_eq3 : us_t, us_t -> bool
+
+logic dummy3 : us_t
+
+type string____ref = { string____content : us_t
+}
+
+function string____ref_string____content__projection(a: string____ref) : us_t =
+  (a).string____content
+
+logic to_string : us_image, int -> us_t
+
+logic from_string : us_t -> us_image
+
+axiom to_string__first :
+  (forall x:us_image.
+  (forall s:int [to_string(x, s)]. (first1(to_string(x, s)) = 1)))
+
+axiom to_string__length :
+  (forall x:us_image.
+  (forall s:int [to_string(x, s)]. ((0 <= s) -> (length1(to_string(x,
+  s)) <= s))))
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_18))
+
+logic concat : (int,character) farray, int, int, (int,character) farray, int,
+  int -> (int,character) farray
+
+axiom concat_def :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a_first:int. forall a_last:int. forall b_first:int.
+  forall b_last:int.
+  (forall i:int [(concat(a, a_first, a_last, b, b_first, b_last)[i])].
+  (((a_first <= i) and (i <= a_last)) -> ((concat(a, a_first, a_last, b,
+  b_first, b_last)[i]) = (a[i]))))))
+
+axiom concat_def1 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a_first:int. forall a_last:int. forall b_first:int.
+  forall b_last:int.
+  (forall i:int [(concat(a, a_first, a_last, b, b_first, b_last)[i])].
+  ((a_last <  i) -> ((concat(a, a_first, a_last, b, b_first,
+  b_last)[i]) = (b[((i - a_last) + (b_first - 1))]))))))
+
+logic concat_singleton_left : character, int, (int,character) farray, int,
+  int -> (int,character) farray
+
+axiom concat_singleton_left_def :
+  (forall a:character.
+  (forall b:(int,character) farray.
+  (forall a_first:int. forall b_first:int. forall b_last:int
+  [concat_singleton_left(a, a_first, b, b_first, b_last)].
+  ((concat_singleton_left(a, a_first, b, b_first, b_last)[a_first]) = a))))
+
+axiom concat_singleton_left_def1 :
+  (forall a:character.
+  (forall b:(int,character) farray.
+  (forall a_first:int. forall b_first:int. forall b_last:int
+  [concat_singleton_left(a, a_first, b, b_first, b_last)].
+  (forall i:int [(concat_singleton_left(a, a_first, b, b_first, b_last)[i])].
+  ((a_first <  i) -> ((concat_singleton_left(a, a_first, b, b_first,
+  b_last)[i]) = (b[((i - a_first) + (b_first - 1))])))))))
+
+logic concat_singleton_right : (int,character) farray, int, int,
+  character -> (int,character) farray
+
+axiom concat_singleton_right_def :
+  (forall a:(int,character) farray.
+  (forall b:character.
+  (forall a_first:int. forall a_last:int [concat_singleton_right(a, a_first,
+  a_last, b)]. ((concat_singleton_right(a, a_first, a_last,
+  b)[(a_last + 1)]) = b))))
+
+axiom concat_singleton_right_def1 :
+  (forall a:(int,character) farray.
+  (forall b:character.
+  (forall a_first:int. forall a_last:int [concat_singleton_right(a, a_first,
+  a_last, b)].
+  (forall i:int [(concat_singleton_right(a, a_first, a_last, b)[i])| (a[i])].
+  (((a_first <= i) and (i <= a_last)) -> ((concat_singleton_right(a, a_first,
+  a_last, b)[i]) = (a[i])))))))
+
+logic concat_singletons : character, int, character -> (int,character) farray
+
+axiom concat_singletons_def :
+  (forall a:character. forall b:character.
+  (forall a_first:int [concat_singletons(a, a_first, b)].
+  ((concat_singletons(a, a_first, b)[a_first]) = a)))
+
+axiom concat_singletons_def1 :
+  (forall a:character. forall b:character.
+  (forall a_first:int [concat_singletons(a, a_first, b)].
+  ((concat_singletons(a, a_first, b)[(a_first + 1)]) = b)))
+
+logic singleton : character, int -> (int,character) farray
+
+axiom singleton_def :
+  (forall v:character.
+  (forall i:int [(singleton(v, i)[i])]. ((singleton(v, i)[i]) = v)))
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq6(x: bool, y: bool) : bool =
+  (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range3(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE3 : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> bool
+
+type us_rep = { rec__spark05__data__ai__is_null_pointer : bool;
+rec__spark05__data__ai__pointer_address : int;
+rec__spark05__data__ai__pointer_value : integer
+}
+
+function us_rep_rec__spark05__data__ai__is_null_pointer__projection(a: us_rep) : bool =
+  (a).rec__spark05__data__ai__is_null_pointer
+
+function us_rep_rec__spark05__data__ai__pointer_address__projection(a: us_rep) : int =
+  (a).rec__spark05__data__ai__pointer_address
+
+function us_rep_rec__spark05__data__ai__pointer_value__projection(a: us_rep) : integer =
+  (a).rec__spark05__data__ai__pointer_value
+
+type us_rep__ref = { us_rep__content : us_rep
+}
+
+function us_rep__ref___rep__content__projection(a: us_rep__ref) : us_rep =
+  (a).us_rep__content
+
+function bool_eq7(a: us_rep, b: us_rep) : bool =
+  (if (((a).rec__spark05__data__ai__is_null_pointer = (b).rec__spark05__data__ai__is_null_pointer) and
+  ((not ((a).rec__spark05__data__ai__is_null_pointer = true)) ->
+  (((a).rec__spark05__data__ai__pointer_address = (b).rec__spark05__data__ai__pointer_address) and
+  ((a).rec__spark05__data__ai__pointer_value = (b).rec__spark05__data__ai__pointer_value)))) then true else false)
+
+predicate rec__spark05__data__ai__pointer_value__pred(a: us_rep) =
+  (not ((a).rec__spark05__data__ai__is_null_pointer = true))
+
+logic us_null_pointer : us_rep
+
+axiom us_null_pointer__def_axiom :
+  ((us_null_pointer).rec__spark05__data__ai__is_null_pointer = true)
+
+logic dummy4 : us_rep
+
+type ai__ref = { ai__content : us_rep
+}
+
+function ai__ref_ai__content__projection(a: ai__ref) : us_rep =
+  (a).ai__content
+
+type us_split_fields = { rec__spark05__data__point__x : integer;
+rec__spark05__data__point__y : integer
+}
+
+function us_split_fields_rec__spark05__data__point__x__projection(a: us_split_fields) : integer =
+  (a).rec__spark05__data__point__x
+
+function us_split_fields_rec__spark05__data__point__y__projection(a: us_split_fields) : integer =
+  (a).rec__spark05__data__point__y
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep1 = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep1) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq8(a: us_rep1, b: us_rep1) : bool =
+  (if ((to_rep1(((a).us_split_fields1).rec__spark05__data__point__x) = to_rep1(((b).us_split_fields1).rec__spark05__data__point__x)) and
+  (to_rep1(((a).us_split_fields1).rec__spark05__data__point__y) = to_rep1(((b).us_split_fields1).rec__spark05__data__point__y))) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic spark05__data__point__x__first__bit : int
+
+logic spark05__data__point__x__last__bit : int
+
+logic spark05__data__point__x__position : int
+
+axiom spark05__data__point__x__first__bit_axiom :
+  (0 <= spark05__data__point__x__first__bit)
+
+axiom spark05__data__point__x__last__bit_axiom :
+  (spark05__data__point__x__first__bit <  spark05__data__point__x__last__bit)
+
+axiom spark05__data__point__x__position_axiom :
+  (0 <= spark05__data__point__x__position)
+
+logic spark05__data__point__y__first__bit : int
+
+logic spark05__data__point__y__last__bit : int
+
+logic spark05__data__point__y__position : int
+
+axiom spark05__data__point__y__first__bit_axiom :
+  (0 <= spark05__data__point__y__first__bit)
+
+axiom spark05__data__point__y__last__bit_axiom :
+  (spark05__data__point__y__first__bit <  spark05__data__point__y__last__bit)
+
+axiom spark05__data__point__y__position_axiom :
+  (0 <= spark05__data__point__y__position)
+
+logic user_eq4 : us_rep1, us_rep1 -> bool
+
+logic dummy5 : us_rep1
+
+type point__ref = { point__content : us_rep1
+}
+
+function point__ref_point__content__projection(a: point__ref) : us_rep1 =
+  (a).point__content
+
+logic createpoint : us_rep, us_rep -> us_rep1
+
+logic createpoint__function_guard : us_rep1, us_rep, us_rep -> prop
+
+predicate default_initial_assumption(temp___expr_199: us_rep,
+  temp___skip_top_level_200: bool) =
+  ((temp___expr_199).rec__spark05__data__ai__is_null_pointer = true)
+
+axiom createpoint__def_axiom :
+  (forall x:us_rep. forall y:us_rep [createpoint(x, y)]. (createpoint(x,
+  y) = { us_split_fields1 = { rec__spark05__data__point__x =
+  (x).rec__spark05__data__ai__pointer_value; rec__spark05__data__point__y =
+  (y).rec__spark05__data__ai__pointer_value } }))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+type us_rep2 = { rec__spark05__data__ap__is_null_pointer : bool;
+rec__spark05__data__ap__pointer_address : int;
+rec__spark05__data__ap__pointer_value : us_rep1
+}
+
+function us_rep_rec__spark05__data__ap__is_null_pointer__projection(a: us_rep2) : bool =
+  (a).rec__spark05__data__ap__is_null_pointer
+
+function us_rep_rec__spark05__data__ap__pointer_address__projection(a: us_rep2) : int =
+  (a).rec__spark05__data__ap__pointer_address
+
+function us_rep_rec__spark05__data__ap__pointer_value__projection(a: us_rep2) : us_rep1 =
+  (a).rec__spark05__data__ap__pointer_value
+
+type us_rep__ref1 = { us_rep__content1 : us_rep2
+}
+
+function us_rep__ref___rep__content__2__projection(a: us_rep__ref1) : us_rep2 =
+  (a).us_rep__content1
+
+function bool_eq9(a: us_rep2, b: us_rep2) : bool =
+  (if (((a).rec__spark05__data__ap__is_null_pointer = (b).rec__spark05__data__ap__is_null_pointer) and
+  ((not ((a).rec__spark05__data__ap__is_null_pointer = true)) ->
+  (((a).rec__spark05__data__ap__pointer_address = (b).rec__spark05__data__ap__pointer_address) and
+  ((a).rec__spark05__data__ap__pointer_value = (b).rec__spark05__data__ap__pointer_value)))) then true else false)
+
+predicate rec__spark05__data__ap__pointer_value__pred(a: us_rep2) =
+  (not ((a).rec__spark05__data__ap__is_null_pointer = true))
+
+logic us_null_pointer1 : us_rep2
+
+axiom us_null_pointer__def_axiom1 :
+  ((us_null_pointer1).rec__spark05__data__ap__is_null_pointer = true)
+
+logic dummy6 : us_rep2
+
+type ap__ref = { ap__content : us_rep2
+}
+
+function ap__ref_ap__content__projection(a: ap__ref) : us_rep2 =
+  (a).ap__content
+
+type us_split_fields2 = { rec__spark05__data__meta__a : us_rep2
+}
+
+function us_split_fields_rec__spark05__data__meta__a__projection(a: us_split_fields2) : us_rep2 =
+  (a).rec__spark05__data__meta__a
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep3 = { us_split_fields3 : us_split_fields2
+}
+
+function us_rep___split_fields__2__projection(a: us_rep3) : us_split_fields2 =
+  (a).us_split_fields3
+
+function bool_eq10(a: us_rep3, b: us_rep3) : bool =
+  (if (bool_eq9(((a).us_split_fields3).rec__spark05__data__meta__a,
+  ((b).us_split_fields3).rec__spark05__data__meta__a) = true) then true else false)
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic spark05__data__meta__a__first__bit : int
+
+logic spark05__data__meta__a__last__bit : int
+
+logic spark05__data__meta__a__position : int
+
+axiom spark05__data__meta__a__first__bit_axiom :
+  (0 <= spark05__data__meta__a__first__bit)
+
+axiom spark05__data__meta__a__last__bit_axiom :
+  (spark05__data__meta__a__first__bit <  spark05__data__meta__a__last__bit)
+
+axiom spark05__data__meta__a__position_axiom :
+  (0 <= spark05__data__meta__a__position)
+
+logic user_eq5 : us_rep3, us_rep3 -> bool
+
+logic dummy7 : us_rep3
+
+type meta____ref = { meta____content : us_rep3
+}
+
+function meta____ref_meta____content__projection(a: meta____ref) : us_rep3 =
+  (a).meta____content
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+predicate default_initial_assumption1(temp___expr_213: us_rep3,
+  temp___skip_top_level_214: bool) =
+  ((((temp___expr_213).us_split_fields3).rec__spark05__data__meta__a).rec__spark05__data__ap__is_null_pointer = true)
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+logic attr__ATTRIBUTE_ADDRESS8 : int
+
+logic attr__ATTRIBUTE_ADDRESS9 : int
+
+logic line_length : us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> int
+
+logic line_length__function_guard : int, us_private, us_private, us_private,
+  us_private, us_private, us_private, us_private -> prop
+
+logic page_length : us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> int
+
+logic page_length__function_guard : int, us_private, us_private, us_private,
+  us_private, us_private, us_private, us_private -> prop
+
+logic attr__ATTRIBUTE_ADDRESS10 : int
+
+logic attr__ATTRIBUTE_ADDRESS11 : int
+
+predicate default_initial_assumption2(temp___expr_206: us_rep2,
+  temp___skip_top_level_207: bool) =
+  ((temp___expr_206).rec__spark05__data__ap__is_null_pointer = true)
+
+type us_rep4 = { rec__spark05__data__am__is_null_pointer : bool;
+rec__spark05__data__am__pointer_address : int;
+rec__spark05__data__am__pointer_value : us_rep3
+}
+
+function us_rep_rec__spark05__data__am__is_null_pointer__projection(a: us_rep4) : bool =
+  (a).rec__spark05__data__am__is_null_pointer
+
+function us_rep_rec__spark05__data__am__pointer_address__projection(a: us_rep4) : int =
+  (a).rec__spark05__data__am__pointer_address
+
+function us_rep_rec__spark05__data__am__pointer_value__projection(a: us_rep4) : us_rep3 =
+  (a).rec__spark05__data__am__pointer_value
+
+type us_rep__ref2 = { us_rep__content2 : us_rep4
+}
+
+function us_rep__ref___rep__content__3__projection(a: us_rep__ref2) : us_rep4 =
+  (a).us_rep__content2
+
+function bool_eq11(a: us_rep4, b: us_rep4) : bool =
+  (if (((a).rec__spark05__data__am__is_null_pointer = (b).rec__spark05__data__am__is_null_pointer) and
+  ((not ((a).rec__spark05__data__am__is_null_pointer = true)) ->
+  (((a).rec__spark05__data__am__pointer_address = (b).rec__spark05__data__am__pointer_address) and
+  ((a).rec__spark05__data__am__pointer_value = (b).rec__spark05__data__am__pointer_value)))) then true else false)
+
+predicate rec__spark05__data__am__pointer_value__pred(a: us_rep4) =
+  (not ((a).rec__spark05__data__am__is_null_pointer = true))
+
+logic us_null_pointer2 : us_rep4
+
+axiom us_null_pointer__def_axiom2 :
+  ((us_null_pointer2).rec__spark05__data__am__is_null_pointer = true)
+
+logic dummy8 : us_rep4
+
+type am__ref = { am__content : us_rep4
+}
+
+function am__ref_am__content__projection(a: am__ref) : us_rep4 =
+  (a).am__content
+
+predicate default_initial_assumption3(temp___expr_221: us_rep4,
+  temp___skip_top_level_222: bool) =
+  ((temp___expr_221).rec__spark05__data__am__is_null_pointer = true)
+
+logic temp___String_Literal_230 : unit -> (int,character) farray
+
+axiom temp___String_Literal_230__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_230(us_void_param)].
+  (to_rep((temp___String_Literal_230(us_void_param)[1])) = 80))
+
+axiom temp___String_Literal_230__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_230(us_void_param)].
+  (to_rep((temp___String_Literal_230(us_void_param)[2])) = 46))
+
+axiom temp___String_Literal_230__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_230(us_void_param)].
+  (to_rep((temp___String_Literal_230(us_void_param)[3])) = 88))
+
+axiom temp___String_Literal_230__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_230(us_void_param)].
+  (to_rep((temp___String_Literal_230(us_void_param)[4])) = 32))
+
+axiom temp___String_Literal_230__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_230(us_void_param)].
+  (to_rep((temp___String_Literal_230(us_void_param)[5])) = 61))
+
+logic temp___String_Literal_233 : unit -> (int,character) farray
+
+axiom temp___String_Literal_233__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_233(us_void_param)].
+  (to_rep((temp___String_Literal_233(us_void_param)[1])) = 44))
+
+axiom temp___String_Literal_233__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_233(us_void_param)].
+  (to_rep((temp___String_Literal_233(us_void_param)[2])) = 32))
+
+axiom temp___String_Literal_233__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_233(us_void_param)].
+  (to_rep((temp___String_Literal_233(us_void_param)[3])) = 80))
+
+axiom temp___String_Literal_233__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_233(us_void_param)].
+  (to_rep((temp___String_Literal_233(us_void_param)[4])) = 46))
+
+axiom temp___String_Literal_233__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_233(us_void_param)].
+  (to_rep((temp___String_Literal_233(us_void_param)[5])) = 89))
+
+axiom temp___String_Literal_233__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_233(us_void_param)].
+  (to_rep((temp___String_Literal_233(us_void_param)[6])) = 32))
+
+axiom temp___String_Literal_233__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_233(us_void_param)].
+  (to_rep((temp___String_Literal_233(us_void_param)[7])) = 61))
+
+logic temp___String_Literal_238 : unit -> (int,character) farray
+
+axiom temp___String_Literal_238__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_238(us_void_param)].
+  (to_rep((temp___String_Literal_238(us_void_param)[1])) = 44))
+
+axiom temp___String_Literal_238__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_238(us_void_param)].
+  (to_rep((temp___String_Literal_238(us_void_param)[2])) = 32))
+
+axiom temp___String_Literal_238__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_238(us_void_param)].
+  (to_rep((temp___String_Literal_238(us_void_param)[3])) = 65))
+
+axiom temp___String_Literal_238__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_238(us_void_param)].
+  (to_rep((temp___String_Literal_238(us_void_param)[4])) = 88))
+
+axiom temp___String_Literal_238__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_238(us_void_param)].
+  (to_rep((temp___String_Literal_238(us_void_param)[5])) = 46))
+
+axiom temp___String_Literal_238__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_238(us_void_param)].
+  (to_rep((temp___String_Literal_238(us_void_param)[6])) = 97))
+
+axiom temp___String_Literal_238__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_238(us_void_param)].
+  (to_rep((temp___String_Literal_238(us_void_param)[7])) = 108))
+
+axiom temp___String_Literal_238__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_238(us_void_param)].
+  (to_rep((temp___String_Literal_238(us_void_param)[8])) = 108))
+
+axiom temp___String_Literal_238__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_238(us_void_param)].
+  (to_rep((temp___String_Literal_238(us_void_param)[9])) = 32))
+
+axiom temp___String_Literal_238__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_238(us_void_param)].
+  (to_rep((temp___String_Literal_238(us_void_param)[10])) = 61))
+
+logic temp___String_Literal_243 : unit -> (int,character) farray
+
+axiom temp___String_Literal_243__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_243(us_void_param)].
+  (to_rep((temp___String_Literal_243(us_void_param)[1])) = 44))
+
+axiom temp___String_Literal_243__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_243(us_void_param)].
+  (to_rep((temp___String_Literal_243(us_void_param)[2])) = 32))
+
+axiom temp___String_Literal_243__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_243(us_void_param)].
+  (to_rep((temp___String_Literal_243(us_void_param)[3])) = 65))
+
+axiom temp___String_Literal_243__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_243(us_void_param)].
+  (to_rep((temp___String_Literal_243(us_void_param)[4])) = 89))
+
+axiom temp___String_Literal_243__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_243(us_void_param)].
+  (to_rep((temp___String_Literal_243(us_void_param)[5])) = 46))
+
+axiom temp___String_Literal_243__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_243(us_void_param)].
+  (to_rep((temp___String_Literal_243(us_void_param)[6])) = 97))
+
+axiom temp___String_Literal_243__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_243(us_void_param)].
+  (to_rep((temp___String_Literal_243(us_void_param)[7])) = 108))
+
+axiom temp___String_Literal_243__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_243(us_void_param)].
+  (to_rep((temp___String_Literal_243(us_void_param)[8])) = 108))
+
+axiom temp___String_Literal_243__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_243(us_void_param)].
+  (to_rep((temp___String_Literal_243(us_void_param)[9])) = 32))
+
+axiom temp___String_Literal_243__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_243(us_void_param)].
+  (to_rep((temp___String_Literal_243(us_void_param)[10])) = 61))
+
+logic temp___String_Literal_254 : unit -> (int,character) farray
+
+axiom temp___String_Literal_254__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_254(us_void_param)].
+  (to_rep((temp___String_Literal_254(us_void_param)[1])) = 80))
+
+axiom temp___String_Literal_254__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_254(us_void_param)].
+  (to_rep((temp___String_Literal_254(us_void_param)[2])) = 46))
+
+axiom temp___String_Literal_254__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_254(us_void_param)].
+  (to_rep((temp___String_Literal_254(us_void_param)[3])) = 88))
+
+axiom temp___String_Literal_254__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_254(us_void_param)].
+  (to_rep((temp___String_Literal_254(us_void_param)[4])) = 32))
+
+axiom temp___String_Literal_254__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_254(us_void_param)].
+  (to_rep((temp___String_Literal_254(us_void_param)[5])) = 61))
+
+logic temp___String_Literal_257 : unit -> (int,character) farray
+
+axiom temp___String_Literal_257__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_257(us_void_param)].
+  (to_rep((temp___String_Literal_257(us_void_param)[1])) = 44))
+
+axiom temp___String_Literal_257__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_257(us_void_param)].
+  (to_rep((temp___String_Literal_257(us_void_param)[2])) = 32))
+
+axiom temp___String_Literal_257__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_257(us_void_param)].
+  (to_rep((temp___String_Literal_257(us_void_param)[3])) = 80))
+
+axiom temp___String_Literal_257__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_257(us_void_param)].
+  (to_rep((temp___String_Literal_257(us_void_param)[4])) = 46))
+
+axiom temp___String_Literal_257__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_257(us_void_param)].
+  (to_rep((temp___String_Literal_257(us_void_param)[5])) = 89))
+
+axiom temp___String_Literal_257__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_257(us_void_param)].
+  (to_rep((temp___String_Literal_257(us_void_param)[6])) = 32))
+
+axiom temp___String_Literal_257__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_257(us_void_param)].
+  (to_rep((temp___String_Literal_257(us_void_param)[7])) = 61))
+
+logic temp___String_Literal_262 : unit -> (int,character) farray
+
+axiom temp___String_Literal_262__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_262(us_void_param)].
+  (to_rep((temp___String_Literal_262(us_void_param)[1])) = 44))
+
+axiom temp___String_Literal_262__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_262(us_void_param)].
+  (to_rep((temp___String_Literal_262(us_void_param)[2])) = 32))
+
+axiom temp___String_Literal_262__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_262(us_void_param)].
+  (to_rep((temp___String_Literal_262(us_void_param)[3])) = 65))
+
+axiom temp___String_Literal_262__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_262(us_void_param)].
+  (to_rep((temp___String_Literal_262(us_void_param)[4])) = 88))
+
+axiom temp___String_Literal_262__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_262(us_void_param)].
+  (to_rep((temp___String_Literal_262(us_void_param)[5])) = 46))
+
+axiom temp___String_Literal_262__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_262(us_void_param)].
+  (to_rep((temp___String_Literal_262(us_void_param)[6])) = 97))
+
+axiom temp___String_Literal_262__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_262(us_void_param)].
+  (to_rep((temp___String_Literal_262(us_void_param)[7])) = 108))
+
+axiom temp___String_Literal_262__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_262(us_void_param)].
+  (to_rep((temp___String_Literal_262(us_void_param)[8])) = 108))
+
+axiom temp___String_Literal_262__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_262(us_void_param)].
+  (to_rep((temp___String_Literal_262(us_void_param)[9])) = 32))
+
+axiom temp___String_Literal_262__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_262(us_void_param)].
+  (to_rep((temp___String_Literal_262(us_void_param)[10])) = 61))
+
+logic temp___String_Literal_267 : unit -> (int,character) farray
+
+axiom temp___String_Literal_267__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_267(us_void_param)].
+  (to_rep((temp___String_Literal_267(us_void_param)[1])) = 44))
+
+axiom temp___String_Literal_267__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_267(us_void_param)].
+  (to_rep((temp___String_Literal_267(us_void_param)[2])) = 32))
+
+axiom temp___String_Literal_267__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_267(us_void_param)].
+  (to_rep((temp___String_Literal_267(us_void_param)[3])) = 65))
+
+axiom temp___String_Literal_267__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_267(us_void_param)].
+  (to_rep((temp___String_Literal_267(us_void_param)[4])) = 89))
+
+axiom temp___String_Literal_267__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_267(us_void_param)].
+  (to_rep((temp___String_Literal_267(us_void_param)[5])) = 46))
+
+axiom temp___String_Literal_267__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_267(us_void_param)].
+  (to_rep((temp___String_Literal_267(us_void_param)[6])) = 97))
+
+axiom temp___String_Literal_267__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_267(us_void_param)].
+  (to_rep((temp___String_Literal_267(us_void_param)[7])) = 108))
+
+axiom temp___String_Literal_267__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_267(us_void_param)].
+  (to_rep((temp___String_Literal_267(us_void_param)[8])) = 108))
+
+axiom temp___String_Literal_267__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_267(us_void_param)].
+  (to_rep((temp___String_Literal_267(us_void_param)[9])) = 32))
+
+axiom temp___String_Literal_267__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_267(us_void_param)].
+  (to_rep((temp___String_Literal_267(us_void_param)[10])) = 61))
+
+logic temp___String_Literal_272 : unit -> (int,character) farray
+
+axiom temp___String_Literal_272__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_272(us_void_param)].
+  (to_rep((temp___String_Literal_272(us_void_param)[1])) = 44))
+
+axiom temp___String_Literal_272__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_272(us_void_param)].
+  (to_rep((temp___String_Literal_272(us_void_param)[2])) = 32))
+
+axiom temp___String_Literal_272__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_272(us_void_param)].
+  (to_rep((temp___String_Literal_272(us_void_param)[3])) = 103))
+
+axiom temp___String_Literal_272__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_272(us_void_param)].
+  (to_rep((temp___String_Literal_272(us_void_param)[4])) = 101))
+
+axiom temp___String_Literal_272__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_272(us_void_param)].
+  (to_rep((temp___String_Literal_272(us_void_param)[5])) = 116))
+
+axiom temp___String_Literal_272__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_272(us_void_param)].
+  (to_rep((temp___String_Literal_272(us_void_param)[6])) = 88))
+
+axiom temp___String_Literal_272__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_272(us_void_param)].
+  (to_rep((temp___String_Literal_272(us_void_param)[7])) = 32))
+
+axiom temp___String_Literal_272__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_272(us_void_param)].
+  (to_rep((temp___String_Literal_272(us_void_param)[8])) = 61))
+
+logic temp___String_Literal_277 : unit -> (int,character) farray
+
+axiom temp___String_Literal_277__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_277(us_void_param)].
+  (to_rep((temp___String_Literal_277(us_void_param)[1])) = 44))
+
+axiom temp___String_Literal_277__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_277(us_void_param)].
+  (to_rep((temp___String_Literal_277(us_void_param)[2])) = 32))
+
+axiom temp___String_Literal_277__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_277(us_void_param)].
+  (to_rep((temp___String_Literal_277(us_void_param)[3])) = 103))
+
+axiom temp___String_Literal_277__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_277(us_void_param)].
+  (to_rep((temp___String_Literal_277(us_void_param)[4])) = 101))
+
+axiom temp___String_Literal_277__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_277(us_void_param)].
+  (to_rep((temp___String_Literal_277(us_void_param)[5])) = 116))
+
+axiom temp___String_Literal_277__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_277(us_void_param)].
+  (to_rep((temp___String_Literal_277(us_void_param)[6])) = 89))
+
+axiom temp___String_Literal_277__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_277(us_void_param)].
+  (to_rep((temp___String_Literal_277(us_void_param)[7])) = 32))
+
+axiom temp___String_Literal_277__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_277(us_void_param)].
+  (to_rep((temp___String_Literal_277(us_void_param)[8])) = 61))
+
+logic temp___String_Literal_284 : unit -> (int,character) farray
+
+axiom temp___String_Literal_284__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_284(us_void_param)].
+  (to_rep((temp___String_Literal_284(us_void_param)[1])) = 80))
+
+axiom temp___String_Literal_284__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_284(us_void_param)].
+  (to_rep((temp___String_Literal_284(us_void_param)[2])) = 46))
+
+axiom temp___String_Literal_284__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_284(us_void_param)].
+  (to_rep((temp___String_Literal_284(us_void_param)[3])) = 88))
+
+axiom temp___String_Literal_284__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_284(us_void_param)].
+  (to_rep((temp___String_Literal_284(us_void_param)[4])) = 32))
+
+axiom temp___String_Literal_284__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_284(us_void_param)].
+  (to_rep((temp___String_Literal_284(us_void_param)[5])) = 61))
+
+logic temp___String_Literal_287 : unit -> (int,character) farray
+
+axiom temp___String_Literal_287__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_287(us_void_param)].
+  (to_rep((temp___String_Literal_287(us_void_param)[1])) = 44))
+
+axiom temp___String_Literal_287__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_287(us_void_param)].
+  (to_rep((temp___String_Literal_287(us_void_param)[2])) = 32))
+
+axiom temp___String_Literal_287__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_287(us_void_param)].
+  (to_rep((temp___String_Literal_287(us_void_param)[3])) = 80))
+
+axiom temp___String_Literal_287__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_287(us_void_param)].
+  (to_rep((temp___String_Literal_287(us_void_param)[4])) = 46))
+
+axiom temp___String_Literal_287__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_287(us_void_param)].
+  (to_rep((temp___String_Literal_287(us_void_param)[5])) = 89))
+
+axiom temp___String_Literal_287__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_287(us_void_param)].
+  (to_rep((temp___String_Literal_287(us_void_param)[6])) = 32))
+
+axiom temp___String_Literal_287__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_287(us_void_param)].
+  (to_rep((temp___String_Literal_287(us_void_param)[7])) = 61))
+
+logic temp___String_Literal_292 : unit -> (int,character) farray
+
+axiom temp___String_Literal_292__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_292(us_void_param)].
+  (to_rep((temp___String_Literal_292(us_void_param)[1])) = 44))
+
+axiom temp___String_Literal_292__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_292(us_void_param)].
+  (to_rep((temp___String_Literal_292(us_void_param)[2])) = 32))
+
+axiom temp___String_Literal_292__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_292(us_void_param)].
+  (to_rep((temp___String_Literal_292(us_void_param)[3])) = 65))
+
+axiom temp___String_Literal_292__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_292(us_void_param)].
+  (to_rep((temp___String_Literal_292(us_void_param)[4])) = 88))
+
+axiom temp___String_Literal_292__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_292(us_void_param)].
+  (to_rep((temp___String_Literal_292(us_void_param)[5])) = 46))
+
+axiom temp___String_Literal_292__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_292(us_void_param)].
+  (to_rep((temp___String_Literal_292(us_void_param)[6])) = 97))
+
+axiom temp___String_Literal_292__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_292(us_void_param)].
+  (to_rep((temp___String_Literal_292(us_void_param)[7])) = 108))
+
+axiom temp___String_Literal_292__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_292(us_void_param)].
+  (to_rep((temp___String_Literal_292(us_void_param)[8])) = 108))
+
+axiom temp___String_Literal_292__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_292(us_void_param)].
+  (to_rep((temp___String_Literal_292(us_void_param)[9])) = 32))
+
+axiom temp___String_Literal_292__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_292(us_void_param)].
+  (to_rep((temp___String_Literal_292(us_void_param)[10])) = 61))
+
+logic temp___String_Literal_297 : unit -> (int,character) farray
+
+axiom temp___String_Literal_297__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_297(us_void_param)].
+  (to_rep((temp___String_Literal_297(us_void_param)[1])) = 44))
+
+axiom temp___String_Literal_297__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_297(us_void_param)].
+  (to_rep((temp___String_Literal_297(us_void_param)[2])) = 32))
+
+axiom temp___String_Literal_297__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_297(us_void_param)].
+  (to_rep((temp___String_Literal_297(us_void_param)[3])) = 65))
+
+axiom temp___String_Literal_297__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_297(us_void_param)].
+  (to_rep((temp___String_Literal_297(us_void_param)[4])) = 89))
+
+axiom temp___String_Literal_297__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_297(us_void_param)].
+  (to_rep((temp___String_Literal_297(us_void_param)[5])) = 46))
+
+axiom temp___String_Literal_297__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_297(us_void_param)].
+  (to_rep((temp___String_Literal_297(us_void_param)[6])) = 97))
+
+axiom temp___String_Literal_297__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_297(us_void_param)].
+  (to_rep((temp___String_Literal_297(us_void_param)[7])) = 108))
+
+axiom temp___String_Literal_297__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_297(us_void_param)].
+  (to_rep((temp___String_Literal_297(us_void_param)[8])) = 108))
+
+axiom temp___String_Literal_297__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_297(us_void_param)].
+  (to_rep((temp___String_Literal_297(us_void_param)[9])) = 32))
+
+axiom temp___String_Literal_297__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_297(us_void_param)].
+  (to_rep((temp___String_Literal_297(us_void_param)[10])) = 61))
+
+logic temp___String_Literal_302 : unit -> (int,character) farray
+
+axiom temp___String_Literal_302__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_302(us_void_param)].
+  (to_rep((temp___String_Literal_302(us_void_param)[1])) = 44))
+
+axiom temp___String_Literal_302__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_302(us_void_param)].
+  (to_rep((temp___String_Literal_302(us_void_param)[2])) = 32))
+
+axiom temp___String_Literal_302__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_302(us_void_param)].
+  (to_rep((temp___String_Literal_302(us_void_param)[3])) = 103))
+
+axiom temp___String_Literal_302__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_302(us_void_param)].
+  (to_rep((temp___String_Literal_302(us_void_param)[4])) = 101))
+
+axiom temp___String_Literal_302__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_302(us_void_param)].
+  (to_rep((temp___String_Literal_302(us_void_param)[5])) = 116))
+
+axiom temp___String_Literal_302__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_302(us_void_param)].
+  (to_rep((temp___String_Literal_302(us_void_param)[6])) = 88))
+
+axiom temp___String_Literal_302__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_302(us_void_param)].
+  (to_rep((temp___String_Literal_302(us_void_param)[7])) = 32))
+
+axiom temp___String_Literal_302__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_302(us_void_param)].
+  (to_rep((temp___String_Literal_302(us_void_param)[8])) = 61))
+
+logic temp___String_Literal_307 : unit -> (int,character) farray
+
+axiom temp___String_Literal_307__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_307(us_void_param)].
+  (to_rep((temp___String_Literal_307(us_void_param)[1])) = 44))
+
+axiom temp___String_Literal_307__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_307(us_void_param)].
+  (to_rep((temp___String_Literal_307(us_void_param)[2])) = 32))
+
+axiom temp___String_Literal_307__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_307(us_void_param)].
+  (to_rep((temp___String_Literal_307(us_void_param)[3])) = 103))
+
+axiom temp___String_Literal_307__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_307(us_void_param)].
+  (to_rep((temp___String_Literal_307(us_void_param)[4])) = 101))
+
+axiom temp___String_Literal_307__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_307(us_void_param)].
+  (to_rep((temp___String_Literal_307(us_void_param)[5])) = 116))
+
+axiom temp___String_Literal_307__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_307(us_void_param)].
+  (to_rep((temp___String_Literal_307(us_void_param)[6])) = 89))
+
+axiom temp___String_Literal_307__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_307(us_void_param)].
+  (to_rep((temp___String_Literal_307(us_void_param)[7])) = 32))
+
+axiom temp___String_Literal_307__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_307(us_void_param)].
+  (to_rep((temp___String_Literal_307(us_void_param)[8])) = 61))
+
+predicate dynamic_invariant1(temp___expr_46: int, temp___is_init_42: bool,
+  temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
+  temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
+  (1 <= 2147483647)) -> in_range1(temp___expr_46))
+
+predicate dynamic_invariant2(temp___expr_74: int, temp___is_init_70: bool,
+  temp___skip_constant_71: bool, temp___do_toplevel_72: bool,
+  temp___do_typ_inv_73: bool) = (((temp___is_init_70 = true) or
+  (0 <= 255)) -> in_range2(temp___expr_74))
+
+predicate dynamic_invariant3(temp___expr_96: us_t, temp___is_init_92: bool,
+  temp___skip_constant_93: bool, temp___do_toplevel_94: bool,
+  temp___do_typ_inv_95: bool) = ((not (temp___skip_constant_93 = true)) ->
+  dynamic_property(1, 2147483647, first1(temp___expr_96),
+  last1(temp___expr_96)))
+
+type count
+
+logic countqtint : count -> int
+
+axiom countqtaxiom : (forall i:count. (0 <= countqtint(i)))
+
+axiom countqtaxiom1 : (forall i:count. (countqtint(i) <= 2147483647))
+
+predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq6 : count, count -> bool
+
+logic dummy9 : count
+
+type count__ref = { count__content : count
+}
+
+function count__ref_count__content__projection(a: count__ref) : count =
+  (a).count__content
+
+predicate dynamic_invariant4(temp___expr_161: int, temp___is_init_157: bool,
+  temp___skip_constant_158: bool, temp___do_toplevel_159: bool,
+  temp___do_typ_inv_160: bool) = (((temp___is_init_157 = true) or
+  (0 <= 2147483647)) -> in_range4(temp___expr_161))
+
+axiom line_length__post_axiom :
+  (forall ada___ada__text_io__standard_in:us_private.
+  forall ada___ada__text_io__file_system:us_private.
+  forall ada___ada__text_io__standard_out:us_private.
+  forall ada___ada__text_io__standard_err:us_private.
+  forall ada___ada__text_io__current_in:us_private.
+  forall ada___ada__text_io__current_out:us_private.
+  forall ada___ada__text_io__current_err:us_private
+  [line_length(ada___ada__text_io__standard_in,
+  ada___ada__text_io__file_system, ada___ada__text_io__standard_out,
+  ada___ada__text_io__standard_err, ada___ada__text_io__current_in,
+  ada___ada__text_io__current_out, ada___ada__text_io__current_err)].
+  dynamic_invariant4(line_length(ada___ada__text_io__standard_in,
+  ada___ada__text_io__file_system, ada___ada__text_io__standard_out,
+  ada___ada__text_io__standard_err, ada___ada__text_io__current_in,
+  ada___ada__text_io__current_out, ada___ada__text_io__current_err), true,
+  false, true, true))
+
+axiom page_length__post_axiom :
+  (forall ada___ada__text_io__standard_in:us_private.
+  forall ada___ada__text_io__file_system:us_private.
+  forall ada___ada__text_io__standard_out:us_private.
+  forall ada___ada__text_io__standard_err:us_private.
+  forall ada___ada__text_io__current_in:us_private.
+  forall ada___ada__text_io__current_out:us_private.
+  forall ada___ada__text_io__current_err:us_private
+  [page_length(ada___ada__text_io__standard_in,
+  ada___ada__text_io__file_system, ada___ada__text_io__standard_out,
+  ada___ada__text_io__standard_err, ada___ada__text_io__current_in,
+  ada___ada__text_io__current_out, ada___ada__text_io__current_err)].
+  dynamic_invariant4(page_length(ada___ada__text_io__standard_in,
+  ada___ada__text_io__file_system, ada___ada__text_io__standard_out,
+  ada___ada__text_io__standard_err, ada___ada__text_io__current_in,
+  ada___ada__text_io__current_out, ada___ada__text_io__current_err), true,
+  false, true, true))
+
+logic rliteral : integer
+
+axiom rliteral_axiom : (integerqtint(rliteral) = 102)
+
+logic rliteral1 : integer
+
+axiom rliteral_axiom1 : (integerqtint(rliteral1) = 103)
+
+logic rliteral2 : integer
+
+axiom rliteral_axiom2 : (integerqtint(rliteral2) = 42)
+
+logic rliteral3 : integer
+
+axiom rliteral_axiom3 : (integerqtint(rliteral3) = 40)
+
+ (* File "spark05.adb", line 4, characters 0-0 *)
+goal defqtvc :
+  (forall m__split_fields:us_rep2. forall aam__pointer_value:us_rep2.
+  forall aam__pointer_address:int. forall aam__is_null_pointer:bool.
+  forall getx:int. forall gety:int. forall standard_in:us_private.
+  forall file_system:us_private. forall standard_out:us_private.
+  forall standard_err:us_private. forall current_in:us_private.
+  forall current_out:us_private. forall current_err:us_private.
+  (forall x:int. ((x = 10) -> (dynamic_invariant(x, true, false, true,
+  true) ->
+  (forall y:int. ((y = 14) -> (dynamic_invariant(y, true, false, true,
+  true) ->
+  (forall us_next_pointer_address:int.
+  (forall spark05__ax__assume:us_rep.
+  ((andb((if ((not ((spark05__ax__assume).rec__spark05__data__ai__is_null_pointer = true)) and
+  ((spark05__ax__assume).rec__spark05__data__ai__pointer_address = us_next_pointer_address)) then true else false),
+  (if ((spark05__ax__assume).rec__spark05__data__ai__pointer_value = of_rep1(x)) then true else false)) = true) ->
+  (forall ax__pointer_value:integer.
+  ((ax__pointer_value = (spark05__ax__assume).rec__spark05__data__ai__pointer_value) ->
+  (forall ax__pointer_address:int.
+  ((ax__pointer_address = (spark05__ax__assume).rec__spark05__data__ai__pointer_address) ->
+  (forall ax__is_null_pointer:bool.
+  ((ax__is_null_pointer = (spark05__ax__assume).rec__spark05__data__ai__is_null_pointer) ->
+  (forall us_next_pointer_address1:int.
+  (forall spark05__ay__assume:us_rep.
+  ((andb((if ((not ((spark05__ay__assume).rec__spark05__data__ai__is_null_pointer = true)) and
+  ((spark05__ay__assume).rec__spark05__data__ai__pointer_address = us_next_pointer_address1)) then true else false),
+  (if ((spark05__ay__assume).rec__spark05__data__ai__pointer_value = of_rep1(y)) then true else false)) = true) ->
+  (forall ay__pointer_value:integer.
+  ((ay__pointer_value = (spark05__ay__assume).rec__spark05__data__ai__pointer_value) ->
+  (forall ay__pointer_address:int.
+  ((ay__pointer_address = (spark05__ay__assume).rec__spark05__data__ai__pointer_address) ->
+  (forall ay__is_null_pointer:bool.
+  ((ay__is_null_pointer = (spark05__ay__assume).rec__spark05__data__ai__is_null_pointer) ->
+  (default_initial_assumption1({ us_split_fields3 = {
+  rec__spark05__data__meta__a = m__split_fields } }, false) ->
+  (default_initial_assumption3({ rec__spark05__data__am__is_null_pointer =
+  aam__is_null_pointer; rec__spark05__data__am__pointer_address =
+  aam__pointer_address; rec__spark05__data__am__pointer_value = {
+  us_split_fields3 = { rec__spark05__data__meta__a = aam__pointer_value } }
+  }, false) ->
+  (forall p2__split_fields:us_split_fields. ((p2__split_fields = {
+  rec__spark05__data__point__x = rliteral; rec__spark05__data__point__y =
+  rliteral1 }) -> (dynamic_invariant(getx, false, false, true, true) ->
+  (dynamic_invariant(gety, false, false, true, true) -> (let o = {
+  rec__spark05__data__ai__is_null_pointer = ay__is_null_pointer;
+  rec__spark05__data__ai__pointer_address = ay__pointer_address;
+  rec__spark05__data__ai__pointer_value = ay__pointer_value } : us_rep in
+  (let o1 = { rec__spark05__data__ai__is_null_pointer = ax__is_null_pointer;
+  rec__spark05__data__ai__pointer_address = ax__pointer_address;
+  rec__spark05__data__ai__pointer_value = ax__pointer_value } : us_rep in
+  (let temp___229 = createpoint(o1, o) : us_rep1 in
+  ((createpoint__function_guard(temp___229, o1, o) and (temp___229 = {
+  us_split_fields1 = { rec__spark05__data__point__x = ax__pointer_value;
+  rec__spark05__data__point__y = ay__pointer_value } })) ->
+  (forall p__split_fields:us_split_fields.
+  ((p__split_fields = (temp___229).us_split_fields1) ->
+  ((exists o2:int. ((to_rep1(ay__pointer_value) = o2) and (let temp___247 =
+   to_string(attr__ATTRIBUTE_IMAGE(o2), 12) : us_t in
+   (exists temp___246:us_t. ((let temp___245 =
+   temp___String_Literal_243(void) : (int,character) farray in
+   (exists temp___244:us_t.
+   ((exists o3:int. ((to_rep1(ax__pointer_value) = o3) and (let temp___242 =
+    to_string(attr__ATTRIBUTE_IMAGE(o3), 12) : us_t in
+    (exists temp___241:us_t. ((let temp___240 =
+    temp___String_Literal_238(void) : (int,character) farray in
+    (exists temp___239:us_t.
+    ((exists o4:int.
+     ((to_rep1((p__split_fields).rec__spark05__data__point__y) = o4) and
+     (let temp___237 = to_string(attr__ATTRIBUTE_IMAGE(o4), 12) : us_t in
+     (exists temp___236:us_t. ((let temp___235 =
+     temp___String_Literal_233(void) : (int,character) farray in
+     (exists o5:int.
+     ((to_rep1((p__split_fields).rec__spark05__data__point__x) = o5) and
+     (let temp___232 = to_string(attr__ATTRIBUTE_IMAGE(o5), 12) : us_t in
+     (let o6 = ((1 + (length(1, 5) + length(first1(temp___232),
+     last1(temp___232)))) - 1) : int in (in_range1(o6) and (let temp___234 =
+     of_array(concat(temp___String_Literal_230(void), 1, 5,
+     to_array(temp___232), first1(temp___232), last1(temp___232)), 1, o6)
+     : us_t in
+     (if (length1(temp___234) = 0) then (temp___236 = of_array(temp___235, 1,
+     7)) else (let o7 = ((first1(temp___234) + (length(first1(temp___234),
+     last1(temp___234)) + length(1, 7))) - 1) : int in (in_range1(o7) and
+     (temp___236 = of_array(concat(to_array(temp___234), first1(temp___234),
+     last1(temp___234), temp___235, 1, 7), first1(temp___234), o7)))))))))))) and
+     (if (length1(temp___236) = 0) then (temp___239 = of_array(to_array(temp___237),
+     first1(temp___237), last1(temp___237))) else (let o5 =
+     ((first1(temp___236) + (length(first1(temp___236),
+     last1(temp___236)) + length(first1(temp___237),
+     last1(temp___237)))) - 1) : int in (in_range1(o5) and
+     (temp___239 = of_array(concat(to_array(temp___236), first1(temp___236),
+     last1(temp___236), to_array(temp___237), first1(temp___237),
+     last1(temp___237)), first1(temp___236), o5)))))))))) and
+    (if (length1(temp___239) = 0) then (temp___241 = of_array(temp___240, 1,
+    10)) else (let o4 = ((first1(temp___239) + (length(first1(temp___239),
+    last1(temp___239)) + length(1, 10))) - 1) : int in (in_range1(o4) and
+    (temp___241 = of_array(concat(to_array(temp___239), first1(temp___239),
+    last1(temp___239), temp___240, 1, 10), first1(temp___239), o4)))))))) and
+    (if (length1(temp___241) = 0) then (temp___244 = of_array(to_array(temp___242),
+    first1(temp___242), last1(temp___242))) else (let o4 =
+    ((first1(temp___241) + (length(first1(temp___241),
+    last1(temp___241)) + length(first1(temp___242), last1(temp___242)))) - 1)
+    : int in (in_range1(o4) and
+    (temp___244 = of_array(concat(to_array(temp___241), first1(temp___241),
+    last1(temp___241), to_array(temp___242), first1(temp___242),
+    last1(temp___242)), first1(temp___241), o4)))))))))) and
+   (if (length1(temp___244) = 0) then (temp___246 = of_array(temp___245, 1,
+   10)) else (let o3 = ((first1(temp___244) + (length(first1(temp___244),
+   last1(temp___244)) + length(1, 10))) - 1) : int in (in_range1(o3) and
+   (temp___246 = of_array(concat(to_array(temp___244), first1(temp___244),
+   last1(temp___244), temp___245, 1, 10), first1(temp___244), o3)))))))) and
+   ((length1(temp___246) = 0) or
+   in_range1(((first1(temp___246) + (length(first1(temp___246),
+   last1(temp___246)) + length(first1(temp___247),
+   last1(temp___247)))) - 1)))))))) ->
+  (forall standard_in1:us_private. forall file_system1:us_private.
+  forall standard_out1:us_private. forall standard_err1:us_private.
+  forall current_in1:us_private. forall current_out1:us_private.
+  forall current_err1:us_private. (((line_length(standard_in, file_system,
+  standard_out, standard_err, current_in, current_out,
+  current_err) = line_length(standard_in1, file_system1, standard_out1,
+  standard_err1, current_in1, current_out1, current_err1)) and
+  (page_length(standard_in, file_system, standard_out, standard_err,
+  current_in, current_out, current_err) = page_length(standard_in1,
+  file_system1, standard_out1, standard_err1, current_in1, current_out1,
+  current_err1))) ->
+  (forall ay__pointer_value1:integer. ((ay__pointer_value1 = rliteral2) ->
+  (forall ax__pointer_value1:integer. ((ax__pointer_value1 = rliteral3) ->
+  (forall us_next_pointer_address2:int.
+  (forall spark05__B_1__tmp__assume:us_rep2.
+  ((andb((if ((not ((spark05__B_1__tmp__assume).rec__spark05__data__ap__is_null_pointer = true)) and
+  ((spark05__B_1__tmp__assume).rec__spark05__data__ap__pointer_address = us_next_pointer_address2)) then true else false),
+  (if ((spark05__B_1__tmp__assume).rec__spark05__data__ap__pointer_value = {
+  us_split_fields1 = p__split_fields }) then true else false)) = true) ->
+  (forall tmp__pointer_value:us_split_fields. (({ us_split_fields1 =
+  tmp__pointer_value
+  } = (spark05__B_1__tmp__assume).rec__spark05__data__ap__pointer_value) ->
+  (forall tmp__pointer_address:int.
+  ((tmp__pointer_address = (spark05__B_1__tmp__assume).rec__spark05__data__ap__pointer_address) ->
+  (forall tmp__is_null_pointer:bool.
+  ((tmp__is_null_pointer = (spark05__B_1__tmp__assume).rec__spark05__data__ap__is_null_pointer) ->
+  (forall m__split_fields1:us_rep2. ((m__split_fields1 = {
+  rec__spark05__data__ap__is_null_pointer = tmp__is_null_pointer;
+  rec__spark05__data__ap__pointer_address = tmp__pointer_address;
+  rec__spark05__data__ap__pointer_value = { us_split_fields1 =
+  tmp__pointer_value } }) ->
+  (forall us_next_pointer_address3:int.
+  (forall temp___253:us_rep4.
+  ((andb((if ((not ((temp___253).rec__spark05__data__am__is_null_pointer = true)) and
+  ((temp___253).rec__spark05__data__am__pointer_address = us_next_pointer_address3)) then true else false),
+  (if ((temp___253).rec__spark05__data__am__pointer_value = {
+  us_split_fields3 = { rec__spark05__data__meta__a = m__split_fields1 }
+  }) then true else false)) = true) ->
+  (forall aam__pointer_value1:us_rep2. (({ us_split_fields3 = {
+  rec__spark05__data__meta__a = aam__pointer_value1 }
+  } = (temp___253).rec__spark05__data__am__pointer_value) ->
+  (forall aam__pointer_address1:int.
+  ((aam__pointer_address1 = (temp___253).rec__spark05__data__am__pointer_address) ->
+  (forall aam__is_null_pointer1:bool.
+  ((aam__is_null_pointer1 = (temp___253).rec__spark05__data__am__is_null_pointer) ->
+  (forall o2:int.
+  ((to_rep1((((aam__pointer_value1).rec__spark05__data__ap__pointer_value).us_split_fields1).rec__spark05__data__point__x) = o2) ->
+  (forall getx1:int. ((getx1 = o2) ->
+  (forall o3:int.
+  ((to_rep1((((aam__pointer_value1).rec__spark05__data__ap__pointer_value).us_split_fields1).rec__spark05__data__point__y) = o3) ->
+  (forall gety1:int. ((gety1 = o3) -> ((let temp___281 =
+  to_string(attr__ATTRIBUTE_IMAGE(gety1), 12) : us_t in
+  (exists temp___280:us_t. ((let temp___279 = temp___String_Literal_277(void)
+  : (int,character) farray in
+  (exists temp___278:us_t. ((let temp___276 =
+  to_string(attr__ATTRIBUTE_IMAGE(getx1), 12) : us_t in
+  (exists temp___275:us_t. ((let temp___274 = temp___String_Literal_272(void)
+  : (int,character) farray in
+  (exists temp___273:us_t.
+  ((exists o4:int. ((to_rep1(ay__pointer_value1) = o4) and (let temp___271 =
+   to_string(attr__ATTRIBUTE_IMAGE(o4), 12) : us_t in
+   (exists temp___270:us_t. ((let temp___269 =
+   temp___String_Literal_267(void) : (int,character) farray in
+   (exists temp___268:us_t.
+   ((exists o5:int. ((to_rep1(ax__pointer_value1) = o5) and (let temp___266 =
+    to_string(attr__ATTRIBUTE_IMAGE(o5), 12) : us_t in
+    (exists temp___265:us_t. ((let temp___264 =
+    temp___String_Literal_262(void) : (int,character) farray in
+    (exists temp___263:us_t.
+    ((exists o6:int.
+     ((to_rep1((p__split_fields).rec__spark05__data__point__y) = o6) and
+     (let temp___261 = to_string(attr__ATTRIBUTE_IMAGE(o6), 12) : us_t in
+     (exists temp___260:us_t. ((let temp___259 =
+     temp___String_Literal_257(void) : (int,character) farray in
+     (exists o7:int.
+     ((to_rep1((p__split_fields).rec__spark05__data__point__x) = o7) and
+     (let temp___256 = to_string(attr__ATTRIBUTE_IMAGE(o7), 12) : us_t in
+     (let o8 = ((1 + (length(1, 5) + length(first1(temp___256),
+     last1(temp___256)))) - 1) : int in (in_range1(o8) and (let temp___258 =
+     of_array(concat(temp___String_Literal_254(void), 1, 5,
+     to_array(temp___256), first1(temp___256), last1(temp___256)), 1, o8)
+     : us_t in
+     (if (length1(temp___258) = 0) then (temp___260 = of_array(temp___259, 1,
+     7)) else (let o9 = ((first1(temp___258) + (length(first1(temp___258),
+     last1(temp___258)) + length(1, 7))) - 1) : int in (in_range1(o9) and
+     (temp___260 = of_array(concat(to_array(temp___258), first1(temp___258),
+     last1(temp___258), temp___259, 1, 7), first1(temp___258), o9)))))))))))) and
+     (if (length1(temp___260) = 0) then (temp___263 = of_array(to_array(temp___261),
+     first1(temp___261), last1(temp___261))) else (let o7 =
+     ((first1(temp___260) + (length(first1(temp___260),
+     last1(temp___260)) + length(first1(temp___261),
+     last1(temp___261)))) - 1) : int in (in_range1(o7) and
+     (temp___263 = of_array(concat(to_array(temp___260), first1(temp___260),
+     last1(temp___260), to_array(temp___261), first1(temp___261),
+     last1(temp___261)), first1(temp___260), o7)))))))))) and
+    (if (length1(temp___263) = 0) then (temp___265 = of_array(temp___264, 1,
+    10)) else (let o6 = ((first1(temp___263) + (length(first1(temp___263),
+    last1(temp___263)) + length(1, 10))) - 1) : int in (in_range1(o6) and
+    (temp___265 = of_array(concat(to_array(temp___263), first1(temp___263),
+    last1(temp___263), temp___264, 1, 10), first1(temp___263), o6)))))))) and
+    (if (length1(temp___265) = 0) then (temp___268 = of_array(to_array(temp___266),
+    first1(temp___266), last1(temp___266))) else (let o6 =
+    ((first1(temp___265) + (length(first1(temp___265),
+    last1(temp___265)) + length(first1(temp___266), last1(temp___266)))) - 1)
+    : int in (in_range1(o6) and
+    (temp___268 = of_array(concat(to_array(temp___265), first1(temp___265),
+    last1(temp___265), to_array(temp___266), first1(temp___266),
+    last1(temp___266)), first1(temp___265), o6)))))))))) and
+   (if (length1(temp___268) = 0) then (temp___270 = of_array(temp___269, 1,
+   10)) else (let o5 = ((first1(temp___268) + (length(first1(temp___268),
+   last1(temp___268)) + length(1, 10))) - 1) : int in (in_range1(o5) and
+   (temp___270 = of_array(concat(to_array(temp___268), first1(temp___268),
+   last1(temp___268), temp___269, 1, 10), first1(temp___268), o5)))))))) and
+   (if (length1(temp___270) = 0) then (temp___273 = of_array(to_array(temp___271),
+   first1(temp___271), last1(temp___271))) else (let o5 =
+   ((first1(temp___270) + (length(first1(temp___270),
+   last1(temp___270)) + length(first1(temp___271), last1(temp___271)))) - 1)
+   : int in (in_range1(o5) and
+   (temp___273 = of_array(concat(to_array(temp___270), first1(temp___270),
+   last1(temp___270), to_array(temp___271), first1(temp___271),
+   last1(temp___271)), first1(temp___270), o5)))))))))) and
+  (if (length1(temp___273) = 0) then (temp___275 = of_array(temp___274, 1,
+  8)) else (let o4 = ((first1(temp___273) + (length(first1(temp___273),
+  last1(temp___273)) + length(1, 8))) - 1) : int in (in_range1(o4) and
+  (temp___275 = of_array(concat(to_array(temp___273), first1(temp___273),
+  last1(temp___273), temp___274, 1, 8), first1(temp___273), o4)))))))) and
+  (if (length1(temp___275) = 0) then (temp___278 = of_array(to_array(temp___276),
+  first1(temp___276), last1(temp___276))) else (let o4 =
+  ((first1(temp___275) + (length(first1(temp___275),
+  last1(temp___275)) + length(first1(temp___276), last1(temp___276)))) - 1)
+  : int in (in_range1(o4) and
+  (temp___278 = of_array(concat(to_array(temp___275), first1(temp___275),
+  last1(temp___275), to_array(temp___276), first1(temp___276),
+  last1(temp___276)), first1(temp___275), o4)))))))) and
+  (if (length1(temp___278) = 0) then (temp___280 = of_array(temp___279, 1,
+  8)) else (let o4 = ((first1(temp___278) + (length(first1(temp___278),
+  last1(temp___278)) + length(1, 8))) - 1) : int in (in_range1(o4) and
+  (temp___280 = of_array(concat(to_array(temp___278), first1(temp___278),
+  last1(temp___278), temp___279, 1, 8), first1(temp___278), o4)))))))) and
+  ((length1(temp___280) = 0) or
+  in_range1(((first1(temp___280) + (length(first1(temp___280),
+  last1(temp___280)) + length(first1(temp___281),
+  last1(temp___281)))) - 1)))))) ->
+  (forall standard_in2:us_private. forall file_system2:us_private.
+  forall standard_out2:us_private. forall standard_err2:us_private.
+  forall current_in2:us_private. forall current_out2:us_private.
+  forall current_err2:us_private. (((line_length(standard_in1, file_system1,
+  standard_out1, standard_err1, current_in1, current_out1,
+  current_err1) = line_length(standard_in2, file_system2, standard_out2,
+  standard_err2, current_in2, current_out2, current_err2)) and
+  (page_length(standard_in1, file_system1, standard_out1, standard_err1,
+  current_in1, current_out1, current_err1) = page_length(standard_in2,
+  file_system2, standard_out2, standard_err2, current_in2, current_out2,
+  current_err2))) ->
+  (forall us_next_pointer_address4:int.
+  (forall spark05__B_2__tmp__assume:us_rep2.
+  ((andb((if ((not ((spark05__B_2__tmp__assume).rec__spark05__data__ap__is_null_pointer = true)) and
+  ((spark05__B_2__tmp__assume).rec__spark05__data__ap__pointer_address = us_next_pointer_address4)) then true else false),
+  (if ((spark05__B_2__tmp__assume).rec__spark05__data__ap__pointer_value = {
+  us_split_fields1 = p2__split_fields }) then true else false)) = true) ->
+  (forall tmp__pointer_value1:us_split_fields. (({ us_split_fields1 =
+  tmp__pointer_value1
+  } = (spark05__B_2__tmp__assume).rec__spark05__data__ap__pointer_value) ->
+  (forall tmp__pointer_address1:int.
+  ((tmp__pointer_address1 = (spark05__B_2__tmp__assume).rec__spark05__data__ap__pointer_address) ->
+  (forall tmp__is_null_pointer1:bool.
+  ((tmp__is_null_pointer1 = (spark05__B_2__tmp__assume).rec__spark05__data__ap__is_null_pointer) ->
+  (forall aam__pointer_value2:us_rep2. ((aam__pointer_value2 = {
+  rec__spark05__data__ap__is_null_pointer = tmp__is_null_pointer1;
+  rec__spark05__data__ap__pointer_address = tmp__pointer_address1;
+  rec__spark05__data__ap__pointer_value = { us_split_fields1 =
+  tmp__pointer_value1 } }) ->
+  (forall o4:int.
+  ((to_rep1((((aam__pointer_value2).rec__spark05__data__ap__pointer_value).us_split_fields1).rec__spark05__data__point__x) = o4) ->
+  (forall getx2:int. ((getx2 = o4) ->
+  (forall o5:int.
+  ((to_rep1((((aam__pointer_value2).rec__spark05__data__ap__pointer_value).us_split_fields1).rec__spark05__data__point__y) = o5) ->
+  (forall gety2:int. ((gety2 = o5) ->
+  (forall o6:int. ((to_rep1(ay__pointer_value1) = o6) ->
+  (forall temp___298:us_t.
+  ((exists o7:int. ((to_rep1(ax__pointer_value1) = o7) and (let temp___296 =
+   to_string(attr__ATTRIBUTE_IMAGE(o7), 12) : us_t in
+   (exists temp___295:us_t. ((let temp___294 =
+   temp___String_Literal_292(void) : (int,character) farray in
+   (exists temp___293:us_t.
+   ((exists o8:int.
+    ((to_rep1((p__split_fields).rec__spark05__data__point__y) = o8) and
+    (let temp___291 = to_string(attr__ATTRIBUTE_IMAGE(o8), 12) : us_t in
+    (exists temp___290:us_t. ((let temp___289 =
+    temp___String_Literal_287(void) : (int,character) farray in
+    (exists o9:int.
+    ((to_rep1((p__split_fields).rec__spark05__data__point__x) = o9) and
+    (let temp___286 = to_string(attr__ATTRIBUTE_IMAGE(o9), 12) : us_t in
+    (let o10 = ((1 + (length(1, 5) + length(first1(temp___286),
+    last1(temp___286)))) - 1) : int in (in_range1(o10) and (let temp___288 =
+    of_array(concat(temp___String_Literal_284(void), 1, 5,
+    to_array(temp___286), first1(temp___286), last1(temp___286)), 1, o10)
+    : us_t in
+    (if (length1(temp___288) = 0) then (temp___290 = of_array(temp___289, 1,
+    7)) else (let o11 = ((first1(temp___288) + (length(first1(temp___288),
+    last1(temp___288)) + length(1, 7))) - 1) : int in (in_range1(o11) and
+    (temp___290 = of_array(concat(to_array(temp___288), first1(temp___288),
+    last1(temp___288), temp___289, 1, 7), first1(temp___288), o11)))))))))))) and
+    (if (length1(temp___290) = 0) then (temp___293 = of_array(to_array(temp___291),
+    first1(temp___291), last1(temp___291))) else (let o9 =
+    ((first1(temp___290) + (length(first1(temp___290),
+    last1(temp___290)) + length(first1(temp___291), last1(temp___291)))) - 1)
+    : int in (in_range1(o9) and
+    (temp___293 = of_array(concat(to_array(temp___290), first1(temp___290),
+    last1(temp___290), to_array(temp___291), first1(temp___291),
+    last1(temp___291)), first1(temp___290), o9)))))))))) and
+   (if (length1(temp___293) = 0) then (temp___295 = of_array(temp___294, 1,
+   10)) else (let o8 = ((first1(temp___293) + (length(first1(temp___293),
+   last1(temp___293)) + length(1, 10))) - 1) : int in (in_range1(o8) and
+   (temp___295 = of_array(concat(to_array(temp___293), first1(temp___293),
+   last1(temp___293), temp___294, 1, 10), first1(temp___293), o8)))))))) and
+   (if (length1(temp___295) = 0) then (temp___298 = of_array(to_array(temp___296),
+   first1(temp___296), last1(temp___296))) else (let o8 =
+   ((first1(temp___295) + (length(first1(temp___295),
+   last1(temp___295)) + length(first1(temp___296), last1(temp___296)))) - 1)
+   : int in (in_range1(o8) and
+   (temp___298 = of_array(concat(to_array(temp___295), first1(temp___295),
+   last1(temp___295), to_array(temp___296), first1(temp___296),
+   last1(temp___296)), first1(temp___295), o8)))))))))) ->
+  ((not (length1(temp___298) = 0)) ->
+  in_range1(((first1(temp___298) + (length(first1(temp___298),
+  last1(temp___298)) + length(1, 10))) - 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))

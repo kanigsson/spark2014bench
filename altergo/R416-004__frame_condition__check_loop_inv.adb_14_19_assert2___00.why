@@ -1,0 +1,1345 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+type positive
+
+logic positiveqtint : positive -> int
+
+axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
+
+axiom positiveqtaxiom1 :
+  (forall i:positive. (positiveqtint(i) <= 2147483647))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : positive, positive -> bool
+
+logic dummy2 : positive
+
+type positive__ref = { positive__content : positive
+}
+
+function positive__ref_positive__content__projection(a: positive__ref) : positive =
+  (a).positive__content
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+function to_rep1(x: natural) : int = naturalqtint(x)
+
+logic of_rep1 : int -> natural
+
+axiom inversion_axiom1 :
+  (forall x:natural [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:natural [to_rep1(x)]. in_range2(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type map__ref = { map__content : (int,natural) farray
+}
+
+logic slide : (int,natural) farray, int, int -> (int,natural) farray
+
+axiom slide_eq :
+  (forall a:(int,natural) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,natural) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq4(a: (int,natural) farray, a__first: int, a__last: int,
+  b: (int,natural) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep1((a[temp___idx_154])) = to_rep1((b[((b__first - a__first) + temp___idx_154)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep1((a[temp___idx_154])) = to_rep1((b[((b__first - a__first) + temp___idx_154)]))))))))
+
+logic a__first : integer
+
+logic a__last : integer
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic get_v : int -> int
+
+logic get_v__function_guard : int, int -> prop
+
+axiom get_v__post_axiom :
+  (forall check_loop_inv__v:int [get_v(check_loop_inv__v)].
+  (dynamic_invariant(check_loop_inv__v, true, true, true, true) ->
+  (let result = get_v(check_loop_inv__v) : int in
+  (get_v__function_guard(result, check_loop_inv__v) ->
+  dynamic_invariant(result, true, false, true, true)))))
+
+axiom get_v__def_axiom :
+  (forall check_loop_inv__v:int [get_v(check_loop_inv__v)].
+  (dynamic_invariant(check_loop_inv__v, true, true, true, true) ->
+  (get_v(check_loop_inv__v) = check_loop_inv__v)))
+
+logic r6b : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (in_range3(low) and in_range3(high)))))
+
+type us_t = { elts : (int,natural) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,natural) farray = (a).elts
+
+function of_array(a: (int,natural) farray, f: int, l: int) : us_t = { elts =
+  a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep(first((a).rt))
+
+function last1(a: us_t) : int = to_rep(last((a).rt))
+
+function length(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq5(x: us_t, y: us_t) : bool = bool_eq4((x).elts,
+  to_rep(first((x).rt)), to_rep(last((x).rt)), (y).elts,
+  to_rep(first((y).rt)), to_rep(last((y).rt)))
+
+logic user_eq3 : us_t, us_t -> bool
+
+logic dummy3 : us_t
+
+type nat_array__ref = { nat_array__content : us_t
+}
+
+function nat_array__ref_nat_array__content__projection(a: nat_array__ref) : us_t =
+  (a).nat_array__content
+
+type t3b
+
+logic t3bqtint : t3b -> int
+
+axiom t3bqtaxiom : (forall i:t3b. (1 <= t3bqtint(i)))
+
+axiom t3bqtaxiom1 : (forall i:t3b. (t3bqtint(i) <= 100))
+
+predicate in_range4(x: int) = ((1 <= x) and (x <= 100))
+
+function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq4 : t3b, t3b -> bool
+
+logic dummy4 : t3b
+
+type t3b__ref = { t3b__content : t3b
+}
+
+function t3b__ref_t3b__content__projection(a: t3b__ref) : t3b =
+  (a).t3b__content
+
+predicate dynamic_property1(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq5 : integer, integer -> bool
+
+logic dummy5 : integer
+
+type t7b__ref = { t7b__content : integer
+}
+
+function t7b__ref_t7b__content__projection(a: t7b__ref) : integer =
+  (a).t7b__content
+
+type t9b
+
+logic t9bqtint : t9b -> int
+
+axiom t9bqtaxiom : (forall i:t9b. (1 <= t9bqtint(i)))
+
+axiom t9bqtaxiom1 : (forall i:t9b. (t9bqtint(i) <= 10))
+
+predicate in_range5(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> int
+
+logic user_eq6 : t9b, t9b -> bool
+
+logic dummy6 : t9b
+
+type t9b__ref = { t9b__content : t9b
+}
+
+function t9b__ref_t9b__content__projection(a: t9b__ref) : t9b =
+  (a).t9b__content
+
+type t11b
+
+logic t11bqtint : t11b -> int
+
+axiom t11bqtaxiom : (forall i:t11b. (1 <= t11bqtint(i)))
+
+axiom t11bqtaxiom1 : (forall i:t11b. (t11bqtint(i) <= 10))
+
+predicate in_range6(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE7 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check7 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE7 : us_image -> int
+
+logic user_eq7 : t11b, t11b -> bool
+
+logic dummy7 : t11b
+
+type t11b__ref = { t11b__content : t11b
+}
+
+function t11b__ref_t11b__content__projection(a: t11b__ref) : t11b =
+  (a).t11b__content
+
+type t14b
+
+logic t14bqtint : t14b -> int
+
+axiom t14bqtaxiom : (forall i:t14b. (21 <= t14bqtint(i)))
+
+axiom t14bqtaxiom1 : (forall i:t14b. (t14bqtint(i) <= 100))
+
+predicate in_range7(x: int) = ((21 <= x) and (x <= 100))
+
+function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE8 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check8 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE8 : us_image -> int
+
+logic user_eq8 : t14b, t14b -> bool
+
+logic dummy8 : t14b
+
+type t14b__ref = { t14b__content : t14b
+}
+
+function t14b__ref_t14b__content__projection(a: t14b__ref) : t14b =
+  (a).t14b__content
+
+type t16b
+
+logic t16bqtint : t16b -> int
+
+axiom t16bqtaxiom : (forall i:t16b. (21 <= t16bqtint(i)))
+
+axiom t16bqtaxiom1 : (forall i:t16b. (t16bqtint(i) <= 100))
+
+predicate in_range8(x: int) = ((21 <= x) and (x <= 100))
+
+function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE9 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check9 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE9 : us_image -> int
+
+logic user_eq9 : t16b, t16b -> bool
+
+logic dummy9 : t16b
+
+type t16b__ref = { t16b__content : t16b
+}
+
+function t16b__ref_t16b__content__projection(a: t16b__ref) : t16b =
+  (a).t16b__content
+
+type t19b
+
+logic t19bqtint : t19b -> int
+
+axiom t19bqtaxiom : (forall i:t19b. (11 <= t19bqtint(i)))
+
+axiom t19bqtaxiom1 : (forall i:t19b. (t19bqtint(i) <= 20))
+
+predicate in_range9(x: int) = ((11 <= x) and (x <= 20))
+
+function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE10 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check10 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE10 : us_image -> int
+
+logic user_eq10 : t19b, t19b -> bool
+
+logic dummy10 : t19b
+
+type t19b__ref = { t19b__content : t19b
+}
+
+function t19b__ref_t19b__content__projection(a: t19b__ref) : t19b =
+  (a).t19b__content
+
+type t21b
+
+logic t21bqtint : t21b -> int
+
+axiom t21bqtaxiom : (forall i:t21b. (11 <= t21bqtint(i)))
+
+axiom t21bqtaxiom1 : (forall i:t21b. (t21bqtint(i) <= 20))
+
+predicate in_range10(x: int) = ((11 <= x) and (x <= 20))
+
+function bool_eq13(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE11 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check11 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE11 : us_image -> int
+
+logic user_eq11 : t21b, t21b -> bool
+
+logic dummy11 : t21b
+
+type t21b__ref = { t21b__content : t21b
+}
+
+function t21b__ref_t21b__content__projection(a: t21b__ref) : t21b =
+  (a).t21b__content
+
+predicate dynamic_property2(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq14(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE12 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check12 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE12 : us_image -> int
+
+logic user_eq12 : integer, integer -> bool
+
+logic dummy12 : integer
+
+type t68b__ref = { t68b__content : integer
+}
+
+function t68b__ref_t68b__content__projection(a: t68b__ref) : integer =
+  (a).t68b__content
+
+type t73b
+
+logic t73bqtint : t73b -> int
+
+axiom t73bqtaxiom : (forall i:t73b. (1 <= t73bqtint(i)))
+
+axiom t73bqtaxiom1 : (forall i:t73b. (t73bqtint(i) <= 10))
+
+predicate in_range11(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq15(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE13 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check13 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE13 : us_image -> int
+
+logic user_eq13 : t73b, t73b -> bool
+
+logic dummy13 : t73b
+
+type t73b__ref = { t73b__content : t73b
+}
+
+function t73b__ref_t73b__content__projection(a: t73b__ref) : t73b =
+  (a).t73b__content
+
+type t75b
+
+logic t75bqtint : t75b -> int
+
+axiom t75bqtaxiom : (forall i:t75b. (1 <= t75bqtint(i)))
+
+axiom t75bqtaxiom1 : (forall i:t75b. (t75bqtint(i) <= 10))
+
+predicate in_range12(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq16(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE14 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check14 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE14 : us_image -> int
+
+logic user_eq14 : t75b, t75b -> bool
+
+logic dummy14 : t75b
+
+type t75b__ref = { t75b__content : t75b
+}
+
+function t75b__ref_t75b__content__projection(a: t75b__ref) : t75b =
+  (a).t75b__content
+
+type t78b
+
+logic t78bqtint : t78b -> int
+
+axiom t78bqtaxiom : (forall i:t78b. (31 <= t78bqtint(i)))
+
+axiom t78bqtaxiom1 : (forall i:t78b. (t78bqtint(i) <= 100))
+
+predicate in_range13(x: int) = ((31 <= x) and (x <= 100))
+
+function bool_eq17(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE15 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check15 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE15 : us_image -> int
+
+logic user_eq15 : t78b, t78b -> bool
+
+logic dummy15 : t78b
+
+type t78b__ref = { t78b__content : t78b
+}
+
+function t78b__ref_t78b__content__projection(a: t78b__ref) : t78b =
+  (a).t78b__content
+
+type t80b
+
+logic t80bqtint : t80b -> int
+
+axiom t80bqtaxiom : (forall i:t80b. (31 <= t80bqtint(i)))
+
+axiom t80bqtaxiom1 : (forall i:t80b. (t80bqtint(i) <= 100))
+
+predicate in_range14(x: int) = ((31 <= x) and (x <= 100))
+
+function bool_eq18(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE16 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check16 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE16 : us_image -> int
+
+logic user_eq16 : t80b, t80b -> bool
+
+logic dummy16 : t80b
+
+type t80b__ref = { t80b__content : t80b
+}
+
+function t80b__ref_t80b__content__projection(a: t80b__ref) : t80b =
+  (a).t80b__content
+
+type t83b
+
+logic t83bqtint : t83b -> int
+
+axiom t83bqtaxiom : (forall i:t83b. (11 <= t83bqtint(i)))
+
+axiom t83bqtaxiom1 : (forall i:t83b. (t83bqtint(i) <= 20))
+
+predicate in_range15(x: int) = ((11 <= x) and (x <= 20))
+
+function bool_eq19(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE17 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check17 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE17 : us_image -> int
+
+logic user_eq17 : t83b, t83b -> bool
+
+logic dummy17 : t83b
+
+type t83b__ref = { t83b__content : t83b
+}
+
+function t83b__ref_t83b__content__projection(a: t83b__ref) : t83b =
+  (a).t83b__content
+
+type t85b
+
+logic t85bqtint : t85b -> int
+
+axiom t85bqtaxiom : (forall i:t85b. (11 <= t85bqtint(i)))
+
+axiom t85bqtaxiom1 : (forall i:t85b. (t85bqtint(i) <= 20))
+
+predicate in_range16(x: int) = ((11 <= x) and (x <= 20))
+
+function bool_eq20(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE18 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check18 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE18 : us_image -> int
+
+logic user_eq18 : t85b, t85b -> bool
+
+logic dummy18 : t85b
+
+type t85b__ref = { t85b__content : t85b
+}
+
+function t85b__ref_t85b__content__projection(a: t85b__ref) : t85b =
+  (a).t85b__content
+
+type t88b
+
+logic t88bqtint : t88b -> int
+
+axiom t88bqtaxiom : (forall i:t88b. (21 <= t88bqtint(i)))
+
+axiom t88bqtaxiom1 : (forall i:t88b. (t88bqtint(i) <= 30))
+
+predicate in_range17(x: int) = ((21 <= x) and (x <= 30))
+
+function bool_eq21(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE19 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check19 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE19 : us_image -> int
+
+logic user_eq19 : t88b, t88b -> bool
+
+logic dummy19 : t88b
+
+type t88b__ref = { t88b__content : t88b
+}
+
+function t88b__ref_t88b__content__projection(a: t88b__ref) : t88b =
+  (a).t88b__content
+
+type t90b
+
+logic t90bqtint : t90b -> int
+
+axiom t90bqtaxiom : (forall i:t90b. (21 <= t90bqtint(i)))
+
+axiom t90bqtaxiom1 : (forall i:t90b. (t90bqtint(i) <= 30))
+
+predicate in_range18(x: int) = ((21 <= x) and (x <= 30))
+
+function bool_eq22(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE20 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check20 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE20 : us_image -> int
+
+logic user_eq20 : t90b, t90b -> bool
+
+logic dummy20 : t90b
+
+type t90b__ref = { t90b__content : t90b
+}
+
+function t90b__ref_t90b__content__projection(a: t90b__ref) : t90b =
+  (a).t90b__content
+
+predicate dynamic_property3(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq23(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE21 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check21 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE21 : us_image -> int
+
+logic user_eq21 : integer, integer -> bool
+
+logic dummy21 : integer
+
+type t137b__ref = { t137b__content : integer
+}
+
+function t137b__ref_t137b__content__projection(a: t137b__ref) : integer =
+  (a).t137b__content
+
+type t142b__ref = { t142b__content : us_t
+}
+
+function t142b__ref_t142b__content__projection(a: t142b__ref) : us_t =
+  (a).t142b__content
+
+type t139b
+
+logic t139bqtint : t139b -> int
+
+axiom t139bqtaxiom : (forall i:t139b. (31 <= t139bqtint(i)))
+
+axiom t139bqtaxiom1 : (forall i:t139b. (t139bqtint(i) <= 40))
+
+predicate in_range19(x: int) = ((31 <= x) and (x <= 40))
+
+function bool_eq24(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE22 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check22 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE22 : us_image -> int
+
+logic user_eq22 : t139b, t139b -> bool
+
+logic dummy22 : t139b
+
+type t139b__ref = { t139b__content : t139b
+}
+
+function t139b__ref_t139b__content__projection(a: t139b__ref) : t139b =
+  (a).t139b__content
+
+type t144b__ref = { t144b__content : us_t
+}
+
+function t144b__ref_t144b__content__projection(a: t144b__ref) : us_t =
+  (a).t144b__content
+
+type t146b
+
+logic t146bqtint : t146b -> int
+
+axiom t146bqtaxiom : (forall i:t146b. (1 <= t146bqtint(i)))
+
+axiom t146bqtaxiom1 : (forall i:t146b. (t146bqtint(i) <= 10))
+
+predicate in_range20(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq25(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE23 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check23 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE23 : us_image -> int
+
+logic user_eq23 : t146b, t146b -> bool
+
+logic dummy23 : t146b
+
+type t146b__ref = { t146b__content : t146b
+}
+
+function t146b__ref_t146b__content__projection(a: t146b__ref) : t146b =
+  (a).t146b__content
+
+type t148b
+
+logic t148bqtint : t148b -> int
+
+axiom t148bqtaxiom : (forall i:t148b. (1 <= t148bqtint(i)))
+
+axiom t148bqtaxiom1 : (forall i:t148b. (t148bqtint(i) <= 10))
+
+predicate in_range21(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq26(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE24 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check24 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE24 : us_image -> int
+
+logic user_eq24 : t148b, t148b -> bool
+
+logic dummy24 : t148b
+
+type t148b__ref = { t148b__content : t148b
+}
+
+function t148b__ref_t148b__content__projection(a: t148b__ref) : t148b =
+  (a).t148b__content
+
+type t151b
+
+logic t151bqtint : t151b -> int
+
+axiom t151bqtaxiom : (forall i:t151b. (41 <= t151bqtint(i)))
+
+axiom t151bqtaxiom1 : (forall i:t151b. (t151bqtint(i) <= 100))
+
+predicate in_range22(x: int) = ((41 <= x) and (x <= 100))
+
+function bool_eq27(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE25 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check25 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE25 : us_image -> int
+
+logic user_eq25 : t151b, t151b -> bool
+
+logic dummy25 : t151b
+
+type t151b__ref = { t151b__content : t151b
+}
+
+function t151b__ref_t151b__content__projection(a: t151b__ref) : t151b =
+  (a).t151b__content
+
+type t153b
+
+logic t153bqtint : t153b -> int
+
+axiom t153bqtaxiom : (forall i:t153b. (41 <= t153bqtint(i)))
+
+axiom t153bqtaxiom1 : (forall i:t153b. (t153bqtint(i) <= 100))
+
+predicate in_range23(x: int) = ((41 <= x) and (x <= 100))
+
+function bool_eq28(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE26 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check26 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE26 : us_image -> int
+
+logic user_eq26 : t153b, t153b -> bool
+
+logic dummy26 : t153b
+
+type t153b__ref = { t153b__content : t153b
+}
+
+function t153b__ref_t153b__content__projection(a: t153b__ref) : t153b =
+  (a).t153b__content
+
+type t156b
+
+logic t156bqtint : t156b -> int
+
+axiom t156bqtaxiom : (forall i:t156b. (11 <= t156bqtint(i)))
+
+axiom t156bqtaxiom1 : (forall i:t156b. (t156bqtint(i) <= 20))
+
+predicate in_range24(x: int) = ((11 <= x) and (x <= 20))
+
+function bool_eq29(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE27 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check27 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE27 : us_image -> int
+
+logic user_eq27 : t156b, t156b -> bool
+
+logic dummy27 : t156b
+
+type t156b__ref = { t156b__content : t156b
+}
+
+function t156b__ref_t156b__content__projection(a: t156b__ref) : t156b =
+  (a).t156b__content
+
+type t158b
+
+logic t158bqtint : t158b -> int
+
+axiom t158bqtaxiom : (forall i:t158b. (11 <= t158bqtint(i)))
+
+axiom t158bqtaxiom1 : (forall i:t158b. (t158bqtint(i) <= 20))
+
+predicate in_range25(x: int) = ((11 <= x) and (x <= 20))
+
+function bool_eq30(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE28 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check28 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE28 : us_image -> int
+
+logic user_eq28 : t158b, t158b -> bool
+
+logic dummy28 : t158b
+
+type t158b__ref = { t158b__content : t158b
+}
+
+function t158b__ref_t158b__content__projection(a: t158b__ref) : t158b =
+  (a).t158b__content
+
+type t161b
+
+logic t161bqtint : t161b -> int
+
+axiom t161bqtaxiom : (forall i:t161b. (21 <= t161bqtint(i)))
+
+axiom t161bqtaxiom1 : (forall i:t161b. (t161bqtint(i) <= 30))
+
+predicate in_range26(x: int) = ((21 <= x) and (x <= 30))
+
+function bool_eq31(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE29 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check29 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE29 : us_image -> int
+
+logic user_eq29 : t161b, t161b -> bool
+
+logic dummy29 : t161b
+
+type t161b__ref = { t161b__content : t161b
+}
+
+function t161b__ref_t161b__content__projection(a: t161b__ref) : t161b =
+  (a).t161b__content
+
+type t163b
+
+logic t163bqtint : t163b -> int
+
+axiom t163bqtaxiom : (forall i:t163b. (21 <= t163bqtint(i)))
+
+axiom t163bqtaxiom1 : (forall i:t163b. (t163bqtint(i) <= 30))
+
+predicate in_range27(x: int) = ((21 <= x) and (x <= 30))
+
+function bool_eq32(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE30 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check30 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE30 : us_image -> int
+
+logic user_eq30 : t163b, t163b -> bool
+
+logic dummy30 : t163b
+
+type t163b__ref = { t163b__content : t163b
+}
+
+function t163b__ref_t163b__content__projection(a: t163b__ref) : t163b =
+  (a).t163b__content
+
+type t166b
+
+logic t166bqtint : t166b -> int
+
+axiom t166bqtaxiom : (forall i:t166b. (31 <= t166bqtint(i)))
+
+axiom t166bqtaxiom1 : (forall i:t166b. (t166bqtint(i) <= 40))
+
+predicate in_range28(x: int) = ((31 <= x) and (x <= 40))
+
+function bool_eq33(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE31 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check31 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE31 : us_image -> int
+
+logic user_eq31 : t166b, t166b -> bool
+
+logic dummy31 : t166b
+
+type t166b__ref = { t166b__content : t166b
+}
+
+function t166b__ref_t166b__content__projection(a: t166b__ref) : t166b =
+  (a).t166b__content
+
+type t168b
+
+logic t168bqtint : t168b -> int
+
+axiom t168bqtaxiom : (forall i:t168b. (31 <= t168bqtint(i)))
+
+axiom t168bqtaxiom1 : (forall i:t168b. (t168bqtint(i) <= 40))
+
+predicate in_range29(x: int) = ((31 <= x) and (x <= 40))
+
+function bool_eq34(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE32 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check32 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE32 : us_image -> int
+
+logic user_eq32 : t168b, t168b -> bool
+
+logic dummy32 : t168b
+
+type t168b__ref = { t168b__content : t168b
+}
+
+function t168b__ref_t168b__content__projection(a: t168b__ref) : t168b =
+  (a).t168b__content
+
+logic check_loop_inv__a__aggregate_def : int -> (int,natural) farray
+
+logic temp_____aggregate_def_199 : int -> (int,natural) farray
+
+logic temp_____aggregate_def_216 : int -> (int,natural) farray
+
+logic temp_____aggregate_def_233 : int -> (int,natural) farray
+
+logic temp_____aggregate_def_262 : int -> (int,natural) farray
+
+logic temp_____aggregate_def_279 : int -> (int,natural) farray
+
+logic temp_____aggregate_def_296 : int -> (int,natural) farray
+
+logic temp_____aggregate_def_313 : int -> (int,natural) farray
+
+logic temp_____aggregate_def_329 : int, int, int -> us_t
+
+logic temp_____aggregate_def_358 : int -> (int,natural) farray
+
+logic temp_____aggregate_def_375 : int -> (int,natural) farray
+
+logic temp_____aggregate_def_392 : int -> (int,natural) farray
+
+logic temp_____aggregate_def_409 : int -> (int,natural) farray
+
+logic temp_____aggregate_def_426 : int -> (int,natural) farray
+
+predicate dynamic_invariant1(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_39))
+
+predicate dynamic_invariant2(temp___expr_46: int, temp___is_init_42: bool,
+  temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
+  temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
+  (1 <= 2147483647)) -> in_range3(temp___expr_46))
+
+predicate dynamic_invariant3(temp___expr_182: us_t, temp___is_init_178: bool,
+  temp___skip_constant_179: bool, temp___do_toplevel_180: bool,
+  temp___do_typ_inv_181: bool) = ((not (temp___skip_constant_179 = true)) ->
+  dynamic_property(1, 2147483647, first1(temp___expr_182),
+  last1(temp___expr_182)))
+
+logic rliteral : natural
+
+axiom rliteral_axiom : (naturalqtint(rliteral) = 0)
+
+axiom def_axiom :
+  (forall temp___185:int. (dynamic_invariant1(temp___185, true, true, true,
+  true) ->
+  (forall temp___186:int.
+  ((check_loop_inv__a__aggregate_def(temp___185)[temp___186]) = rliteral))))
+
+axiom def_axiom1 :
+  (forall temp___201:int. (dynamic_invariant1(temp___201, true, true, true,
+  true) ->
+  (forall temp___202:int.
+  ((temp_____aggregate_def_199(temp___201)[temp___202]) = rliteral))))
+
+axiom def_axiom2 :
+  (forall temp___218:int. (dynamic_invariant1(temp___218, true, true, true,
+  true) ->
+  (forall temp___219:int.
+  ((temp_____aggregate_def_216(temp___218)[temp___219]) = rliteral))))
+
+logic rliteral1 : natural
+
+axiom rliteral_axiom1 : (naturalqtint(rliteral1) = 1)
+
+axiom def_axiom3 :
+  (forall temp___235:int. (dynamic_invariant1(temp___235, true, true, true,
+  true) ->
+  (forall temp___236:int.
+  ((temp_____aggregate_def_233(temp___235)[temp___236]) = rliteral1))))
+
+axiom def_axiom4 :
+  (forall temp___264:int. (dynamic_invariant1(temp___264, true, true, true,
+  true) ->
+  (forall temp___265:int.
+  ((temp_____aggregate_def_262(temp___264)[temp___265]) = rliteral))))
+
+axiom def_axiom5 :
+  (forall temp___281:int. (dynamic_invariant1(temp___281, true, true, true,
+  true) ->
+  (forall temp___282:int.
+  ((temp_____aggregate_def_279(temp___281)[temp___282]) = rliteral))))
+
+axiom def_axiom6 :
+  (forall temp___298:int. (dynamic_invariant1(temp___298, true, true, true,
+  true) ->
+  (forall temp___299:int.
+  ((temp_____aggregate_def_296(temp___298)[temp___299]) = rliteral1))))
+
+logic rliteral2 : natural
+
+axiom rliteral_axiom2 : (naturalqtint(rliteral2) = 2)
+
+axiom def_axiom7 :
+  (forall temp___315:int. (dynamic_invariant1(temp___315, true, true, true,
+  true) ->
+  (forall temp___316:int.
+  ((temp_____aggregate_def_313(temp___315)[temp___316]) = rliteral2))))
+
+logic rliteral3 : natural
+
+axiom rliteral_axiom3 : (naturalqtint(rliteral3) = 3)
+
+axiom def_axiom8 :
+  (forall temp___331:int. forall temp___332:int. forall temp___333:int.
+  (dynamic_invariant1(temp___331, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___332, temp___333) ->
+  (first1(temp_____aggregate_def_329(temp___331, temp___332,
+  temp___333)) = temp___332))))
+
+axiom def_axiom9 :
+  (forall temp___331:int. forall temp___332:int. forall temp___333:int.
+  (dynamic_invariant1(temp___331, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___332, temp___333) ->
+  (last1(temp_____aggregate_def_329(temp___331, temp___332,
+  temp___333)) = temp___333))))
+
+axiom def_axiom10 :
+  (forall temp___331:int. forall temp___332:int. forall temp___333:int.
+  (dynamic_invariant1(temp___331, true, true, true, true) ->
+  (forall temp___334:int. ((to_array(temp_____aggregate_def_329(temp___331,
+  temp___332, temp___333))[temp___334]) = rliteral3))))
+
+axiom def_axiom11 :
+  (forall temp___360:int. (dynamic_invariant1(temp___360, true, true, true,
+  true) ->
+  (forall temp___361:int.
+  ((temp_____aggregate_def_358(temp___360)[temp___361]) = rliteral))))
+
+axiom def_axiom12 :
+  (forall temp___377:int. (dynamic_invariant1(temp___377, true, true, true,
+  true) ->
+  (forall temp___378:int.
+  ((temp_____aggregate_def_375(temp___377)[temp___378]) = rliteral))))
+
+axiom def_axiom13 :
+  (forall temp___394:int. (dynamic_invariant1(temp___394, true, true, true,
+  true) ->
+  (forall temp___395:int.
+  ((temp_____aggregate_def_392(temp___394)[temp___395]) = rliteral1))))
+
+axiom def_axiom14 :
+  (forall temp___411:int. (dynamic_invariant1(temp___411, true, true, true,
+  true) ->
+  (forall temp___412:int.
+  ((temp_____aggregate_def_409(temp___411)[temp___412]) = rliteral2))))
+
+axiom def_axiom15 :
+  (forall temp___428:int. (dynamic_invariant1(temp___428, true, true, true,
+  true) ->
+  (forall temp___429:int.
+  ((temp_____aggregate_def_426(temp___428)[temp___429]) = rliteral3))))
+
+ (* File "check_loop_inv.adb", line 1, characters 0-0 *)
+goal defqtvc :
+  (forall v:int. ((v = 20) -> (dynamic_invariant(v, true, false, true,
+  true) -> (let check_loop_inv__a__assume =
+  of_array(check_loop_inv__a__aggregate_def(0), 1, 100) : us_t in
+  (forall a:(int,natural) farray.
+  ((a = to_array(check_loop_inv__a__assume)) ->
+  ((to_rep(a__first) = first1(check_loop_inv__a__assume)) ->
+  ((to_rep(a__last) = last1(check_loop_inv__a__assume)) ->
+  (dynamic_property(1, 2147483647, to_rep(a__first), to_rep(a__last)) ->
+  (let check_loop_inv__L_1__R6b__assume = get_v(v) : int in
+  ((get_v__function_guard(check_loop_inv__L_1__R6b__assume, v) and
+  (dynamic_invariant(check_loop_inv__L_1__R6b__assume, true, false, true,
+  true) and (check_loop_inv__L_1__R6b__assume = v))) ->
+  ((check_loop_inv__L_1__R6b__assume = r6b) -> (dynamic_invariant(r6b, true,
+  false, true, true) ->
+  (forall a1:(int,natural) farray. ((let temp___189 = r6b : int in
+  (exists i:int. ((i = 11) and (if (andb((if (11 <= i) then true else false),
+  (if (i <= temp___189) then true else false)) = true) then (exists v1:int.
+                                                            exists a2:(int,natural) farray.
+                                                            exists i1:int.
+                                                            ((andb((if ((dynamic_property1(11,
+                                                            r6b, i1) and
+                                                            dynamic_invariant(v1,
+                                                            true, true, true,
+                                                            true)) and
+                                                            (forall temp___194:int.
+                                                            (((to_rep(a__first) <= temp___194) and
+                                                            (temp___194 <= to_rep(a__last))) ->
+                                                            (((temp___189 <  temp___194) or
+                                                            ((temp___194 <  11) or
+                                                            (i1 <= temp___194))) ->
+                                                            ((a2[temp___194]) = (a[temp___194])))))) then true else false),
+                                                            (if ((11 <= i1) and
+                                                            (i1 <= r6b)) then true else false)) = true) and
+                                                            (((to_rep(a__first) <= i1) and
+                                                            (i1 <= to_rep(a__last))) and
+                                                            ((a1 = (a2[i1 <- rliteral1])) and
+                                                            (i1 = temp___189))))) else (a1 = a))))) ->
+  ((bool_eq4(a1, 1, 10, temp_____aggregate_def_199(0), 1, 10) = true) ->
+  ((bool_eq4(a1, 21, 100, temp_____aggregate_def_216(0), 21, 100) = true) ->
+  (bool_eq4(a1, 11, 20, temp_____aggregate_def_233(1), 11, 20) = true))))))))))))))))))

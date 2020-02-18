@@ -1,0 +1,572 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type foo_kind
+
+predicate in_range(x: int) = ((0 <= x) and (x <= 2))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : foo_kind, foo_kind -> bool
+
+logic dummy : foo_kind
+
+type foo_kind__ref = { foo_kind__content : foo_kind
+}
+
+function foo_kind__ref_foo_kind__content__projection(a: foo_kind__ref) : foo_kind =
+  (a).foo_kind__content
+
+predicate dynamic_invariant(temp___expr_158: int, temp___is_init_154: bool,
+  temp___skip_constant_155: bool, temp___do_toplevel_156: bool,
+  temp___do_typ_inv_157: bool) = (((temp___is_init_154 = true) or
+  (0 <= 2)) -> in_range(temp___expr_158))
+
+logic to_rep : foo_kind -> int
+
+logic of_rep : int -> foo_kind
+
+axiom inversion_axiom :
+  (forall x:foo_kind [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:foo_kind [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type bar_kind
+
+predicate in_range1(x: int) = ((1 <= x) and (x <= 2))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq1 : bar_kind, bar_kind -> bool
+
+logic dummy1 : bar_kind
+
+type bar_kind__ref = { bar_kind__content : bar_kind
+}
+
+function bar_kind__ref_bar_kind__content__projection(a: bar_kind__ref) : bar_kind =
+  (a).bar_kind__content
+
+type character
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 255))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq2 : character, character -> bool
+
+logic dummy2 : character
+
+type character__ref = { character__content : character
+}
+
+function character__ref_character__content__projection(a: character__ref) : character =
+  (a).character__content
+
+logic to_rep1 : character -> int
+
+logic of_rep1 : int -> character
+
+axiom inversion_axiom1 :
+  (forall x:character [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:character [to_rep1(x)]. in_range2(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq3(x: bool, y: bool) : bool =
+  (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range3(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE3 : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range4(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq3 : integer, integer -> bool
+
+logic dummy3 : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep2(x: integer) : int = integerqtint(x)
+
+logic of_rep2 : int -> integer
+
+axiom inversion_axiom2 :
+  (forall x:integer [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
+
+axiom range_axiom2 : (forall x:integer [to_rep2(x)]. in_range4(to_rep2(x)))
+
+axiom coerce_axiom2 :
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range4(x) ->
+  (to_rep2(of_rep2(x)) = x)))
+
+logic to_rep3 : bar_kind -> int
+
+logic of_rep3 : int -> bar_kind
+
+axiom inversion_axiom3 :
+  (forall x:bar_kind [to_rep3(x)]. (of_rep3(to_rep3(x)) = x))
+
+axiom range_axiom3 : (forall x:bar_kind [to_rep3(x)]. in_range1(to_rep3(x)))
+
+axiom coerce_axiom3 :
+  (forall x:int [to_rep3(of_rep3(x))]. (in_range1(x) ->
+  (to_rep3(of_rep3(x)) = x)))
+
+type us_split_discrs = { rec__repro__blech_type__opt : bar_kind
+}
+
+function us_split_discrs_rec__repro__blech_type__opt__projection(a: us_split_discrs) : bar_kind =
+  (a).rec__repro__blech_type__opt
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_split_fields = { rec__repro__blech_type__x : integer;
+rec__repro__blech_type__y : bool
+}
+
+function us_split_fields_rec__repro__blech_type__x__projection(a: us_split_fields) : integer =
+  (a).rec__repro__blech_type__x
+
+function us_split_fields_rec__repro__blech_type__y__projection(a: us_split_fields) : bool =
+  (a).rec__repro__blech_type__y
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_discrs1 : us_split_discrs; us_split_fields1 :
+us_split_fields
+}
+
+function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
+  (a).us_split_discrs1
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+predicate repro__blech_type__x__pred(a: us_rep) =
+  (to_rep3(((a).us_split_discrs1).rec__repro__blech_type__opt) = 1)
+
+predicate repro__blech_type__y__pred(a: us_rep) =
+  (to_rep3(((a).us_split_discrs1).rec__repro__blech_type__opt) = 2)
+
+function bool_eq5(a: us_rep, b: us_rep) : bool =
+  (if ((to_rep3(((a).us_split_discrs1).rec__repro__blech_type__opt) = to_rep3(((b).us_split_discrs1).rec__repro__blech_type__opt)) and
+  ((repro__blech_type__x__pred(a) ->
+  (to_rep2(((a).us_split_fields1).rec__repro__blech_type__x) = to_rep2(((b).us_split_fields1).rec__repro__blech_type__x))) and
+  (repro__blech_type__y__pred(a) ->
+  (to_int(((a).us_split_fields1).rec__repro__blech_type__y) = to_int(((b).us_split_fields1).rec__repro__blech_type__y))))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic repro__blech_type__opt__first__bit : int
+
+logic repro__blech_type__opt__last__bit : int
+
+logic repro__blech_type__opt__position : int
+
+axiom repro__blech_type__opt__first__bit_axiom :
+  (0 <= repro__blech_type__opt__first__bit)
+
+axiom repro__blech_type__opt__last__bit_axiom :
+  (repro__blech_type__opt__first__bit <  repro__blech_type__opt__last__bit)
+
+axiom repro__blech_type__opt__position_axiom :
+  (0 <= repro__blech_type__opt__position)
+
+logic repro__blech_type__x__first__bit : int
+
+logic repro__blech_type__x__last__bit : int
+
+logic repro__blech_type__x__position : int
+
+axiom repro__blech_type__x__first__bit_axiom :
+  (0 <= repro__blech_type__x__first__bit)
+
+axiom repro__blech_type__x__last__bit_axiom :
+  (repro__blech_type__x__first__bit <  repro__blech_type__x__last__bit)
+
+axiom repro__blech_type__x__position_axiom :
+  (0 <= repro__blech_type__x__position)
+
+logic repro__blech_type__y__first__bit : int
+
+logic repro__blech_type__y__last__bit : int
+
+logic repro__blech_type__y__position : int
+
+axiom repro__blech_type__y__first__bit_axiom :
+  (0 <= repro__blech_type__y__first__bit)
+
+axiom repro__blech_type__y__last__bit_axiom :
+  (repro__blech_type__y__first__bit <  repro__blech_type__y__last__bit)
+
+axiom repro__blech_type__y__position_axiom :
+  (0 <= repro__blech_type__y__position)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type blech_type__ref = { blech_type__content : us_rep
+}
+
+function blech_type__ref_blech_type__content__projection(a: blech_type__ref) : us_rep =
+  (a).blech_type__content
+
+predicate in_range5(rec__repro__blech_type__opt1: int, a: us_rep) =
+  (rec__repro__blech_type__opt1 = to_rep3(((a).us_split_discrs1).rec__repro__blech_type__opt))
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic repro__blech_type__opt__first__bit1 : int
+
+logic repro__blech_type__opt__last__bit1 : int
+
+logic repro__blech_type__opt__position1 : int
+
+axiom repro__blech_type__opt__first__bit_axiom1 :
+  (0 <= repro__blech_type__opt__first__bit1)
+
+axiom repro__blech_type__opt__last__bit_axiom1 :
+  (repro__blech_type__opt__first__bit1 <  repro__blech_type__opt__last__bit1)
+
+axiom repro__blech_type__opt__position_axiom1 :
+  (0 <= repro__blech_type__opt__position1)
+
+logic repro__blech_type__x__first__bit1 : int
+
+logic repro__blech_type__x__last__bit1 : int
+
+logic repro__blech_type__x__position1 : int
+
+axiom repro__blech_type__x__first__bit_axiom1 :
+  (0 <= repro__blech_type__x__first__bit1)
+
+axiom repro__blech_type__x__last__bit_axiom1 :
+  (repro__blech_type__x__first__bit1 <  repro__blech_type__x__last__bit1)
+
+axiom repro__blech_type__x__position_axiom1 :
+  (0 <= repro__blech_type__x__position1)
+
+logic repro__blech_type__y__first__bit1 : int
+
+logic repro__blech_type__y__last__bit1 : int
+
+logic repro__blech_type__y__position1 : int
+
+axiom repro__blech_type__y__first__bit_axiom1 :
+  (0 <= repro__blech_type__y__first__bit1)
+
+axiom repro__blech_type__y__last__bit_axiom1 :
+  (repro__blech_type__y__first__bit1 <  repro__blech_type__y__last__bit1)
+
+axiom repro__blech_type__y__position_axiom1 :
+  (0 <= repro__blech_type__y__position1)
+
+logic user_eq5 : us_rep, us_rep -> bool
+
+logic dummy5 : us_rep
+
+type t1s__ref = { t1s__content : us_rep
+}
+
+function t1s__ref_t1s__content__projection(a: t1s__ref) : us_rep =
+  (a).t1s__content
+
+type us_split_discrs2 = { rec__repro__fnord_type__opt : foo_kind
+}
+
+function us_split_discrs_rec__repro__fnord_type__opt__projection(a: us_split_discrs2) : foo_kind =
+  (a).rec__repro__fnord_type__opt
+
+type us_split_discrs__ref1 = { us_split_discrs__content1 : us_split_discrs2
+}
+
+function us_split_discrs__ref___split_discrs__content__2__projection(a: us_split_discrs__ref1) : us_split_discrs2 =
+  (a).us_split_discrs__content1
+
+type us_split_fields2 = { rec__repro__fnord_type__z : character;
+rec__repro__fnord_type__blech : us_rep
+}
+
+function us_split_fields_rec__repro__fnord_type__z__projection(a: us_split_fields2) : character =
+  (a).rec__repro__fnord_type__z
+
+function us_split_fields_rec__repro__fnord_type__blech__projection(a: us_split_fields2) : us_rep =
+  (a).rec__repro__fnord_type__blech
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_discrs3 : us_split_discrs2; us_split_fields3 :
+us_split_fields2
+}
+
+function us_rep___split_discrs__2__projection(a: us_rep1) : us_split_discrs2 =
+  (a).us_split_discrs3
+
+function us_rep___split_fields__2__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+predicate repro__fnord_type__z__pred(a: us_rep1) =
+  (to_rep(((a).us_split_discrs3).rec__repro__fnord_type__opt) = 0)
+
+predicate repro__fnord_type__blech__pred(a: us_rep1) =
+  ((1 <= to_rep(((a).us_split_discrs3).rec__repro__fnord_type__opt)) and
+  (to_rep(((a).us_split_discrs3).rec__repro__fnord_type__opt) <= 2))
+
+function bool_eq6(a: us_rep1, b: us_rep1) : bool =
+  (if ((to_rep(((a).us_split_discrs3).rec__repro__fnord_type__opt) = to_rep(((b).us_split_discrs3).rec__repro__fnord_type__opt)) and
+  ((repro__fnord_type__z__pred(a) ->
+  (to_rep1(((a).us_split_fields3).rec__repro__fnord_type__z) = to_rep1(((b).us_split_fields3).rec__repro__fnord_type__z))) and
+  (repro__fnord_type__blech__pred(a) ->
+  (bool_eq5(((a).us_split_fields3).rec__repro__fnord_type__blech,
+  ((b).us_split_fields3).rec__repro__fnord_type__blech) = true)))) then true else false)
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic repro__fnord_type__opt__first__bit : int
+
+logic repro__fnord_type__opt__last__bit : int
+
+logic repro__fnord_type__opt__position : int
+
+axiom repro__fnord_type__opt__first__bit_axiom :
+  (0 <= repro__fnord_type__opt__first__bit)
+
+axiom repro__fnord_type__opt__last__bit_axiom :
+  (repro__fnord_type__opt__first__bit <  repro__fnord_type__opt__last__bit)
+
+axiom repro__fnord_type__opt__position_axiom :
+  (0 <= repro__fnord_type__opt__position)
+
+logic repro__fnord_type__z__first__bit : int
+
+logic repro__fnord_type__z__last__bit : int
+
+logic repro__fnord_type__z__position : int
+
+axiom repro__fnord_type__z__first__bit_axiom :
+  (0 <= repro__fnord_type__z__first__bit)
+
+axiom repro__fnord_type__z__last__bit_axiom :
+  (repro__fnord_type__z__first__bit <  repro__fnord_type__z__last__bit)
+
+axiom repro__fnord_type__z__position_axiom :
+  (0 <= repro__fnord_type__z__position)
+
+logic repro__fnord_type__blech__first__bit : int
+
+logic repro__fnord_type__blech__last__bit : int
+
+logic repro__fnord_type__blech__position : int
+
+axiom repro__fnord_type__blech__first__bit_axiom :
+  (0 <= repro__fnord_type__blech__first__bit)
+
+axiom repro__fnord_type__blech__last__bit_axiom :
+  (repro__fnord_type__blech__first__bit <  repro__fnord_type__blech__last__bit)
+
+axiom repro__fnord_type__blech__position_axiom :
+  (0 <= repro__fnord_type__blech__position)
+
+logic user_eq6 : us_rep1, us_rep1 -> bool
+
+logic dummy6 : us_rep1
+
+type fnord_type__ref = { fnord_type__content : us_rep1
+}
+
+function fnord_type__ref_fnord_type__content__projection(a: fnord_type__ref) : us_rep1 =
+  (a).fnord_type__content
+
+predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range4(temp___expr_18))
+
+predicate dynamic_invariant2(temp___expr_74: int, temp___is_init_70: bool,
+  temp___skip_constant_71: bool, temp___do_toplevel_72: bool,
+  temp___do_typ_inv_73: bool) = (((temp___is_init_70 = true) or
+  (0 <= 255)) -> in_range2(temp___expr_74))
+
+predicate dynamic_invariant3(temp___expr_165: int, temp___is_init_161: bool,
+  temp___skip_constant_162: bool, temp___do_toplevel_163: bool,
+  temp___do_typ_inv_164: bool) = (((temp___is_init_161 = true) or
+  (1 <= 2)) -> in_range1(temp___expr_165))
+
+predicate default_initial_assumption(temp___expr_174: us_rep,
+  temp___skip_top_level_175: bool) =
+  (to_rep3(((temp___expr_174).us_split_discrs1).rec__repro__blech_type__opt) = 1)
+
+predicate dynamic_invariant4(temp___expr_183: us_rep1,
+  temp___is_init_179: bool, temp___skip_constant_180: bool,
+  temp___do_toplevel_181: bool, temp___do_typ_inv_182: bool) =
+  (repro__fnord_type__blech__pred(temp___expr_183) ->
+  in_range5(to_rep(((temp___expr_183).us_split_discrs3).rec__repro__fnord_type__opt),
+  ((temp___expr_183).us_split_fields3).rec__repro__fnord_type__blech))
+
+predicate default_initial_assumption1(temp___expr_186: us_rep1,
+  temp___skip_top_level_187: bool) =
+  ((to_rep(((temp___expr_186).us_split_discrs3).rec__repro__fnord_type__opt) = 0) and
+  (repro__fnord_type__blech__pred(temp___expr_186) ->
+  (to_rep3(((((temp___expr_186).us_split_fields3).rec__repro__fnord_type__blech).us_split_discrs1).rec__repro__blech_type__opt) = to_rep(((temp___expr_186).us_split_discrs3).rec__repro__fnord_type__opt))))
+
+ (* File "repro.ads", line 1, characters 0-0 *)
+goal defqtvc :
+  (forall usf:int. (dynamic_invariant(usf, true, true, true, true) ->
+  (forall usf1:us_rep1.
+  ((to_rep(((usf1).us_split_discrs3).rec__repro__fnord_type__opt) = usf) ->
+  (repro__fnord_type__blech__pred(usf1) -> in_range1(usf))))))

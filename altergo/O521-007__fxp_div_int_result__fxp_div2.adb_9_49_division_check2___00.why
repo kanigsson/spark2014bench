@@ -1,0 +1,383 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type duration
+
+predicate in_range(x: int) = (((- 9223372036854775808) <= x) and
+  (x <= 9223372036854775807))
+
+logic dummy : duration
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : duration, duration -> bool
+
+type duration__ref = { duration__content : duration
+}
+
+function duration__ref_duration__content__projection(a: duration__ref) : duration =
+  (a).duration__content
+
+predicate dynamic_invariant(temp___expr_116: int, temp___is_init_112: bool,
+  temp___skip_constant_113: bool, temp___do_toplevel_114: bool,
+  temp___do_typ_inv_115: bool) = (((temp___is_init_112 = true) or
+  ((- 9223372036854775808) <= 9223372036854775807)) ->
+  in_range(temp___expr_116))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic y : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic z : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+type tduration_repB
+
+logic tduration_repBqtint : tduration_repB -> int
+
+axiom tduration_repBqtaxiom :
+  (forall i:tduration_repB.
+  ((- 9223372036854775808) <= tduration_repBqtint(i)))
+
+axiom tduration_repBqtaxiom1 :
+  (forall i:tduration_repB. (tduration_repBqtint(i) <= 9223372036854775807))
+
+predicate in_range1(x: int) = (((- 9223372036854775808) <= x) and
+  (x <= 9223372036854775807))
+
+function bool_eq(x: int, y1: int) : bool = (if (x = y1) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq1 : tduration_repB, tduration_repB -> bool
+
+logic dummy1 : tduration_repB
+
+type tduration_repB__ref = { tduration_repB__content : tduration_repB
+}
+
+function tduration_repB__ref_tduration_repB__content__projection(a: tduration_repB__ref) : tduration_repB =
+  (a).tduration_repB__content
+
+type duration_rep
+
+logic duration_repqtint : duration_rep -> int
+
+axiom duration_repqtaxiom :
+  (forall i:duration_rep. ((- 9223372036854775808) <= duration_repqtint(i)))
+
+axiom duration_repqtaxiom1 :
+  (forall i:duration_rep. (duration_repqtint(i) <= 9223372036854775807))
+
+predicate in_range2(x: int) = (((- 9223372036854775808) <= x) and
+  (x <= 9223372036854775807))
+
+function bool_eq1(x: int, y1: int) : bool =
+  (if (x = y1) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq2 : duration_rep, duration_rep -> bool
+
+logic dummy2 : duration_rep
+
+type duration_rep__ref = { duration_rep__content : duration_rep
+}
+
+function duration_rep__ref_duration_rep__content__projection(a: duration_rep__ref) : duration_rep =
+  (a).duration_rep__content
+
+predicate dynamic_invariant1(temp___expr_179: int, temp___is_init_175: bool,
+  temp___skip_constant_176: bool, temp___do_toplevel_177: bool,
+  temp___do_typ_inv_178: bool) = (((temp___is_init_175 = true) or
+  ((- 9223372036854775808) <= 9223372036854775807)) ->
+  in_range2(temp___expr_179))
+
+logic div : int, int -> int
+
+logic mod : int, int -> int
+
+axiom Div_mod :
+  (forall x:int. forall y1:int. ((not (y1 = 0)) -> (x = ((y1 * div(x,
+  y1)) + mod(x, y1)))))
+
+axiom Div_bound :
+  (forall x:int. forall y1:int. (((0 <= x) and (0 <  y1)) -> (0 <= div(x,
+  y1))))
+
+axiom Div_bound1 :
+  (forall x:int. forall y1:int. (((0 <= x) and (0 <  y1)) -> (div(x,
+  y1) <= x)))
+
+axiom Mod_bound :
+  (forall x:int. forall y1:int. ((not (y1 = 0)) -> ((-abs_int(y1)) <  mod(x,
+  y1))))
+
+axiom Mod_bound1 :
+  (forall x:int. forall y1:int. ((not (y1 = 0)) -> (mod(x,
+  y1) <  abs_int(y1))))
+
+axiom Div_sign_pos :
+  (forall x:int. forall y1:int. (((0 <= x) and (0 <  y1)) -> (0 <= div(x,
+  y1))))
+
+axiom Div_sign_neg :
+  (forall x:int. forall y1:int. (((x <= 0) and (0 <  y1)) -> (div(x,
+  y1) <= 0)))
+
+axiom Mod_sign_pos :
+  (forall x:int. forall y1:int. (((0 <= x) and (not (y1 = 0))) ->
+  (0 <= mod(x, y1))))
+
+axiom Mod_sign_neg :
+  (forall x:int. forall y1:int. (((x <= 0) and (not (y1 = 0))) -> (mod(x,
+  y1) <= 0)))
+
+axiom Rounds_toward_zero :
+  (forall x:int. forall y1:int. ((not (y1 = 0)) -> (abs_int((div(x,
+  y1) * y1)) <= abs_int(x))))
+
+axiom Div_1 : (forall x:int. (div(x, 1) = x))
+
+axiom Mod_1 : (forall x:int. (mod(x, 1) = 0))
+
+axiom Div_inf :
+  (forall x:int. forall y1:int. (((0 <= x) and (x <  y1)) -> (div(x,
+  y1) = 0)))
+
+axiom Mod_inf :
+  (forall x:int. forall y1:int. (((0 <= x) and (x <  y1)) -> (mod(x,
+  y1) = x)))
+
+axiom Div_mult :
+  (forall x:int. forall y1:int. forall z1:int [div(((x * y1) + z1), x)].
+  (((0 <  x) and ((0 <= y1) and (0 <= z1))) -> (div(((x * y1) + z1),
+  x) = (y1 + div(z1, x)))))
+
+axiom Mod_mult :
+  (forall x:int. forall y1:int. forall z1:int [mod(((x * y1) + z1), x)].
+  (((0 <  x) and ((0 <= y1) and (0 <= z1))) -> (mod(((x * y1) + z1),
+  x) = mod(z1, x))))
+
+axiom Div_mod1 :
+  (forall x:int. forall y1:int. ((not (y1 = 0)) ->
+  (x = ((y1 * (x / y1)) + (x % y1)))))
+
+axiom Mod_bound2 :
+  (forall x:int. forall y1:int. ((not (y1 = 0)) -> (0 <= (x % y1))))
+
+axiom Mod_bound3 :
+  (forall x:int. forall y1:int. ((not (y1 = 0)) ->
+  ((x % y1) <  abs_int(y1))))
+
+axiom Div_unique :
+  (forall x:int. forall y1:int. forall q:int. ((0 <  y1) ->
+  ((((q * y1) <= x) and (x <  ((q * y1) + y1))) -> ((x / y1) = q))))
+
+axiom Div_bound2 :
+  (forall x:int. forall y1:int. (((0 <= x) and (0 <  y1)) ->
+  (0 <= (x / y1))))
+
+axiom Div_bound3 :
+  (forall x:int. forall y1:int. (((0 <= x) and (0 <  y1)) ->
+  ((x / y1) <= x)))
+
+axiom Mod_11 : (forall x:int. ((x % 1) = 0))
+
+axiom Div_11 : (forall x:int. ((x / 1) = x))
+
+axiom Div_inf1 :
+  (forall x:int. forall y1:int. (((0 <= x) and (x <  y1)) -> ((x / y1) = 0)))
+
+axiom Div_inf_neg :
+  (forall x:int. forall y1:int. (((0 <  x) and (x <= y1)) ->
+  (((-x) / y1) = (- 1))))
+
+axiom Mod_0 : (forall y1:int. ((not (y1 = 0)) -> ((0 % y1) = 0)))
+
+axiom Div_1_left : (forall y1:int. ((1 <  y1) -> ((1 / y1) = 0)))
+
+axiom Div_minus1_left :
+  (forall y1:int. ((1 <  y1) -> (((- 1) / y1) = (- 1))))
+
+axiom Mod_1_left : (forall y1:int. ((1 <  y1) -> ((1 % y1) = 1)))
+
+axiom Mod_minus1_left :
+  (forall y1:int [((- 1) % y1)]. ((1 <  y1) -> (((- 1) % y1) = (y1 - 1))))
+
+axiom Div_mult1 :
+  (forall x:int. forall y1:int. forall z1:int [(((x * y1) + z1) / x)].
+  ((0 <  x) -> ((((x * y1) + z1) / x) = (y1 + (z1 / x)))))
+
+axiom Mod_mult1 :
+  (forall x:int. forall y1:int. forall z1:int [(((x * y1) + z1) % x)].
+  ((0 <  x) -> ((((x * y1) + z1) % x) = (z1 % x))))
+
+function mod1(x: int, y1: int) : int =
+  (if (0 <  y1) then (x % y1) else ((x % y1) + y1))
+
+predicate pos_div_relation(res: int, num: int, den: int) = (let exact =
+  div(num, den) : int in
+  (if (num = 0) then (res = 0) else (if (num = (exact * den)) then (res = exact) else ((exact <= res) and
+  (res <= (exact + 1))))))
+
+logic fxp_mult : int, int -> int
+
+axiom fxp_mult_def :
+  (forall x:int.
+  (forall y1:int [fxp_mult(x, y1)]. (((x = 0) or (y1 = 0)) -> (fxp_mult(x,
+  y1) = 0))))
+
+axiom fxp_mult_def1 :
+  (forall x:int.
+  (forall y1:int [fxp_mult(x, y1)]. ((not ((x = 0) or (y1 = 0))) ->
+  ((((0 <  x) and (0 <  y1)) or ((x <  0) and (y1 <  0))) ->
+  pos_div_relation(fxp_mult(x, y1), ((((x * y1) * 1) * 1) * 1),
+  ((1000000000 * 1000000000) * 1))))))
+
+axiom fxp_mult_def2 :
+  (forall x:int.
+  (forall y1:int [fxp_mult(x, y1)]. ((not ((x = 0) or (y1 = 0))) ->
+  ((not (((0 <  x) and (0 <  y1)) or ((x <  0) and (y1 <  0)))) ->
+  pos_div_relation((-fxp_mult(x, y1)), (-((((x * y1) * 1) * 1) * 1)),
+  ((1000000000 * 1000000000) * 1))))))
+
+logic fxp_div : int, int -> int
+
+axiom fxp_div_def :
+  (forall x:int.
+  (forall y1:int [fxp_div(x, y1)]. ((x = 0) -> (fxp_div(x, y1) = 0))))
+
+axiom fxp_div_def1 :
+  (forall x:int.
+  (forall y1:int [fxp_div(x, y1)]. ((not (x = 0)) -> (((0 <  x) and
+  (0 <  y1)) -> pos_div_relation(fxp_div(x, y1),
+  (((x * 1) * 1000000000) * 1), (((y1 * 1000000000) * 1) * 1))))))
+
+axiom fxp_div_def2 :
+  (forall x:int.
+  (forall y1:int [fxp_div(x, y1)]. ((not (x = 0)) -> ((not ((0 <  x) and
+  (0 <  y1))) -> (((x <  0) and (y1 <  0)) -> pos_div_relation(fxp_div(x,
+  y1), ((((-x) * 1) * 1000000000) * 1), ((((-y1) * 1000000000) * 1) * 1)))))))
+
+axiom fxp_div_def3 :
+  (forall x:int.
+  (forall y1:int [fxp_div(x, y1)]. ((not (x = 0)) -> ((not ((0 <  x) and
+  (0 <  y1))) -> ((not ((x <  0) and (y1 <  0))) -> (((x <  0) and
+  (0 <  y1)) -> pos_div_relation((-fxp_div(x, y1)),
+  ((((-x) * 1) * 1000000000) * 1), (((y1 * 1000000000) * 1) * 1))))))))
+
+axiom fxp_div_def4 :
+  (forall x:int.
+  (forall y1:int [fxp_div(x, y1)]. ((not (x = 0)) -> ((not ((0 <  x) and
+  (0 <  y1))) -> ((not ((x <  0) and (y1 <  0))) -> ((not ((x <  0) and
+  (0 <  y1))) -> (((0 <  x) and (y1 <  0)) -> pos_div_relation((-fxp_div(x,
+  y1)), (((x * 1) * 1000000000) * 1), ((((-y1) * 1000000000) * 1) * 1)))))))))
+
+axiom cdiv_cases :
+  (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((0 <  d) -> (div(n,
+  d) = (n / d)))))
+
+axiom cdiv_cases1 :
+  (forall n:int. forall d:int [div(n, d)]. ((n <= 0) -> ((0 <  d) -> (div(n,
+  d) = (-((-n) / d))))))
+
+axiom cdiv_cases2 :
+  (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((d <  0) -> (div(n,
+  d) = (-(n / (-d)))))))
+
+axiom cdiv_cases3 :
+  (forall n:int. forall d:int [div(n, d)]. ((n <= 0) -> ((d <  0) -> (div(n,
+  d) = ((-n) / (-d))))))
+
+axiom cmod_cases :
+  (forall n:int. forall d:int [mod(n, d)]. ((0 <= n) -> ((0 <  d) -> (mod(n,
+  d) = (n % d)))))
+
+axiom cmod_cases1 :
+  (forall n:int. forall d:int [mod(n, d)]. ((n <= 0) -> ((0 <  d) -> (mod(n,
+  d) = (-((-n) % d))))))
+
+axiom cmod_cases2 :
+  (forall n:int. forall d:int [mod(n, d)]. ((0 <= n) -> ((d <  0) -> (mod(n,
+  d) = (n % (-d))))))
+
+axiom cmod_cases3 :
+  (forall n:int. forall d:int [mod(n, d)]. ((n <= 0) -> ((d <  0) -> (mod(n,
+  d) = (-((-n) % (-d)))))))
+
+ (* File "fxp_div2.adb", line 1, characters 0-0 *)
+goal defqtvc :
+  (forall x:int. ((x = 3000000000) -> (dynamic_invariant(x, true, false,
+  true, true) -> (let o = fxp_div(x, x) : int in (in_range1(o) ->
+  (in_range2(o) -> ((o = y) -> (dynamic_invariant1(y, true, false, true,
+  true) -> (not (2 = 0))))))))))

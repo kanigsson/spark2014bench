@@ -1,0 +1,310 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq1(x: bool, y: bool) : bool =
+  (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range1(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE1 : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> bool
+
+type us_rep = { rec__walker__int_acc__is_null_pointer : bool;
+rec__walker__int_acc__pointer_address : int;
+rec__walker__int_acc__pointer_value : integer
+}
+
+function us_rep_rec__walker__int_acc__is_null_pointer__projection(a: us_rep) : bool =
+  (a).rec__walker__int_acc__is_null_pointer
+
+function us_rep_rec__walker__int_acc__pointer_address__projection(a: us_rep) : int =
+  (a).rec__walker__int_acc__pointer_address
+
+function us_rep_rec__walker__int_acc__pointer_value__projection(a: us_rep) : integer =
+  (a).rec__walker__int_acc__pointer_value
+
+type us_rep__ref = { us_rep__content : us_rep
+}
+
+function us_rep__ref___rep__content__projection(a: us_rep__ref) : us_rep =
+  (a).us_rep__content
+
+function bool_eq2(a: us_rep, b: us_rep) : bool =
+  (if (((a).rec__walker__int_acc__is_null_pointer = (b).rec__walker__int_acc__is_null_pointer) and
+  ((not ((a).rec__walker__int_acc__is_null_pointer = true)) ->
+  (((a).rec__walker__int_acc__pointer_address = (b).rec__walker__int_acc__pointer_address) and
+  ((a).rec__walker__int_acc__pointer_value = (b).rec__walker__int_acc__pointer_value)))) then true else false)
+
+predicate rec__walker__int_acc__pointer_value__pred(a: us_rep) =
+  (not ((a).rec__walker__int_acc__is_null_pointer = true))
+
+logic us_null_pointer : us_rep
+
+axiom us_null_pointer__def_axiom :
+  ((us_null_pointer).rec__walker__int_acc__is_null_pointer = true)
+
+logic dummy1 : us_rep
+
+type int_acc__ref = { int_acc__content : us_rep
+}
+
+function int_acc__ref_int_acc__content__projection(a: int_acc__ref) : us_rep =
+  (a).int_acc__content
+
+type us_split_fields = { rec__walker__two_acc__fst : us_rep;
+rec__walker__two_acc__snd : us_rep
+}
+
+function us_split_fields_rec__walker__two_acc__fst__projection(a: us_split_fields) : us_rep =
+  (a).rec__walker__two_acc__fst
+
+function us_split_fields_rec__walker__two_acc__snd__projection(a: us_split_fields) : us_rep =
+  (a).rec__walker__two_acc__snd
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep1 = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep1) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq3(a: us_rep1, b: us_rep1) : bool =
+  (if ((bool_eq2(((a).us_split_fields1).rec__walker__two_acc__fst,
+  ((b).us_split_fields1).rec__walker__two_acc__fst) = true) and
+  (bool_eq2(((a).us_split_fields1).rec__walker__two_acc__snd,
+  ((b).us_split_fields1).rec__walker__two_acc__snd) = true)) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic walker__two_acc__fst__first__bit : int
+
+logic walker__two_acc__fst__last__bit : int
+
+logic walker__two_acc__fst__position : int
+
+axiom walker__two_acc__fst__first__bit_axiom :
+  (0 <= walker__two_acc__fst__first__bit)
+
+axiom walker__two_acc__fst__last__bit_axiom :
+  (walker__two_acc__fst__first__bit <  walker__two_acc__fst__last__bit)
+
+axiom walker__two_acc__fst__position_axiom :
+  (0 <= walker__two_acc__fst__position)
+
+logic walker__two_acc__snd__first__bit : int
+
+logic walker__two_acc__snd__last__bit : int
+
+logic walker__two_acc__snd__position : int
+
+axiom walker__two_acc__snd__first__bit_axiom :
+  (0 <= walker__two_acc__snd__first__bit)
+
+axiom walker__two_acc__snd__last__bit_axiom :
+  (walker__two_acc__snd__first__bit <  walker__two_acc__snd__last__bit)
+
+axiom walker__two_acc__snd__position_axiom :
+  (0 <= walker__two_acc__snd__position)
+
+logic user_eq1 : us_rep1, us_rep1 -> bool
+
+logic dummy2 : us_rep1
+
+type two_acc__ref = { two_acc__content : us_rep1
+}
+
+function two_acc__ref_two_acc__content__projection(a: two_acc__ref) : us_rep1 =
+  (a).two_acc__content
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate default_initial_assumption(temp___expr_187: us_rep1,
+  temp___skip_top_level_188: bool) =
+  (((((temp___expr_187).us_split_fields1).rec__walker__two_acc__fst).rec__walker__int_acc__is_null_pointer = true) and
+  ((((temp___expr_187).us_split_fields1).rec__walker__two_acc__snd).rec__walker__int_acc__is_null_pointer = true))
+
+logic dummy3 : us_rep
+
+type t3b__ref = { t3b__content : us_rep
+}
+
+function t3b__ref_t3b__content__projection(a: t3b__ref) : us_rep =
+  (a).t3b__content
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+type us_pledge_ty
+
+type us_pledge_ty__ref = { us_pledge_ty__content : us_pledge_ty
+}
+
+logic us_pledge_get : us_pledge_ty, us_rep1, us_rep -> bool
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_18))
+
+predicate default_initial_assumption1(temp___expr_180: us_rep,
+  temp___skip_top_level_181: bool) =
+  ((temp___expr_180).rec__walker__int_acc__is_null_pointer = true)
+
+ (* File "walker.adb", line 1, characters 0-0 *)
+goal defqtvc :
+  (forall x__split_fields:us_split_fields. (default_initial_assumption({
+  us_split_fields1 = x__split_fields }, false) ->
+  (forall us_next_pointer_address:int.
+  (forall o:us_rep.
+  ((andb((if ((not ((o).rec__walker__int_acc__is_null_pointer = true)) and
+  ((o).rec__walker__int_acc__pointer_address = us_next_pointer_address)) then true else false),
+  (if ((o).rec__walker__int_acc__pointer_value = of_rep(1)) then true else false)) = true) ->
+  (forall x__split_fields1:us_split_fields. ((x__split_fields1 = {
+  rec__walker__two_acc__fst = o; rec__walker__two_acc__snd =
+  (x__split_fields).rec__walker__two_acc__snd }) ->
+  (forall us_next_pointer_address1:int.
+  (forall o1:us_rep.
+  ((andb((if ((not ((o1).rec__walker__int_acc__is_null_pointer = true)) and
+  ((o1).rec__walker__int_acc__pointer_address = us_next_pointer_address1)) then true else false),
+  (if ((o1).rec__walker__int_acc__pointer_value = of_rep(2)) then true else false)) = true) ->
+  (forall x__split_fields2:us_split_fields. ((x__split_fields2 = {
+  rec__walker__two_acc__fst = (x__split_fields1).rec__walker__two_acc__fst;
+  rec__walker__two_acc__snd = o1 }) -> (let walker__B_1__y__assume =
+  (x__split_fields2).rec__walker__two_acc__fst : us_rep in
+  (forall usf:us_pledge_ty.
+  ((forall temp___borrowed_206:us_rep1.
+   (forall temp___brower_204:us_rep [us_pledge_get(usf, temp___borrowed_206,
+   temp___brower_204)]. ((us_pledge_get(usf, temp___borrowed_206,
+   temp___brower_204) = true) <->
+   (((temp___borrowed_206).us_split_fields1).rec__walker__two_acc__fst = temp___brower_204)))) ->
+  (forall walker__B_1__y__pledge:us_pledge_ty.
+  ((walker__B_1__y__pledge = usf) ->
+  (forall y__pointer_value:integer.
+  ((y__pointer_value = (walker__B_1__y__assume).rec__walker__int_acc__pointer_value) ->
+  (forall y__pointer_address:int.
+  ((y__pointer_address = (walker__B_1__y__assume).rec__walker__int_acc__pointer_address) ->
+  (forall y__is_null_pointer:bool.
+  ((y__is_null_pointer = (walker__B_1__y__assume).rec__walker__int_acc__is_null_pointer) ->
+  rec__walker__int_acc__pointer_value__pred({
+  rec__walker__int_acc__is_null_pointer = y__is_null_pointer;
+  rec__walker__int_acc__pointer_address = y__pointer_address;
+  rec__walker__int_acc__pointer_value = y__pointer_value }))))))))))))))))))))))))

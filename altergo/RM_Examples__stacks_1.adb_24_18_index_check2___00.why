@@ -1,0 +1,447 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type pointer_type
+
+logic pointer_typeqtint : pointer_type -> int
+
+axiom pointer_typeqtaxiom :
+  (forall i:pointer_type. (0 <= pointer_typeqtint(i)))
+
+axiom pointer_typeqtaxiom1 :
+  (forall i:pointer_type. (pointer_typeqtint(i) <= 100))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 100))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : pointer_type, pointer_type -> bool
+
+logic dummy1 : pointer_type
+
+type pointer_type__ref = { pointer_type__content : pointer_type
+}
+
+function pointer_type__ref_pointer_type__content__projection(a: pointer_type__ref) : pointer_type =
+  (a).pointer_type__content
+
+function to_rep1(x: pointer_type) : int = pointer_typeqtint(x)
+
+logic of_rep1 : int -> pointer_type
+
+axiom inversion_axiom1 :
+  (forall x:pointer_type [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 :
+  (forall x:pointer_type [to_rep1(x)]. in_range2(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type map__ref = { map__content : (int,integer) farray
+}
+
+logic slide : (int,integer) farray, int, int -> (int,integer) farray
+
+axiom slide_eq :
+  (forall a:(int,integer) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,integer) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq3(a: (int,integer) farray, a__first: int, a__last: int,
+  b: (int,integer) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)]))))))))
+
+logic dummy2 : (int,integer) farray
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic user_eq2 : (int,integer) farray, (int,integer) farray -> bool
+
+type us_split_fields = { rec__stacks_1__stack_type__pointer : pointer_type;
+rec__stacks_1__stack_type__vector : (int,integer) farray
+}
+
+function us_split_fields_rec__stacks_1__stack_type__pointer__projection(a: us_split_fields) : pointer_type =
+  (a).rec__stacks_1__stack_type__pointer
+
+function us_split_fields_rec__stacks_1__stack_type__vector__projection(a: us_split_fields) : (int,integer) farray =
+  (a).rec__stacks_1__stack_type__vector
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq4(a: us_rep, b: us_rep) : bool =
+  (if ((to_rep1(((a).us_split_fields1).rec__stacks_1__stack_type__pointer) = to_rep1(((b).us_split_fields1).rec__stacks_1__stack_type__pointer)) and
+  (bool_eq3(((a).us_split_fields1).rec__stacks_1__stack_type__vector, 1, 100,
+  ((b).us_split_fields1).rec__stacks_1__stack_type__vector, 1,
+  100) = true)) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic stacks_1__stack_type__pointer__first__bit : int
+
+logic stacks_1__stack_type__pointer__last__bit : int
+
+logic stacks_1__stack_type__pointer__position : int
+
+axiom stacks_1__stack_type__pointer__first__bit_axiom :
+  (0 <= stacks_1__stack_type__pointer__first__bit)
+
+axiom stacks_1__stack_type__pointer__last__bit_axiom :
+  (stacks_1__stack_type__pointer__first__bit <  stacks_1__stack_type__pointer__last__bit)
+
+axiom stacks_1__stack_type__pointer__position_axiom :
+  (0 <= stacks_1__stack_type__pointer__position)
+
+logic stacks_1__stack_type__vector__first__bit : int
+
+logic stacks_1__stack_type__vector__last__bit : int
+
+logic stacks_1__stack_type__vector__position : int
+
+axiom stacks_1__stack_type__vector__first__bit_axiom :
+  (0 <= stacks_1__stack_type__vector__first__bit)
+
+axiom stacks_1__stack_type__vector__last__bit_axiom :
+  (stacks_1__stack_type__vector__first__bit <  stacks_1__stack_type__vector__last__bit)
+
+axiom stacks_1__stack_type__vector__position_axiom :
+  (0 <= stacks_1__stack_type__vector__position)
+
+logic user_eq3 : us_rep, us_rep -> bool
+
+logic dummy3 : us_rep
+
+type stack_type__ref = { stack_type__content : us_rep
+}
+
+function stack_type__ref_stack_type__content__projection(a: stack_type__ref) : us_rep =
+  (a).stack_type__content
+
+logic is_empty : us_rep -> bool
+
+logic is_empty__function_guard : bool, us_rep -> prop
+
+logic temp_____aggregate_def_190 : int -> (int,integer) farray
+
+predicate default_initial_assumption(temp___expr_188: us_rep,
+  temp___skip_top_level_189: bool) =
+  ((to_rep1(((temp___expr_188).us_split_fields1).rec__stacks_1__stack_type__pointer) = 0) and
+  (((temp___expr_188).us_split_fields1).rec__stacks_1__stack_type__vector = temp_____aggregate_def_190(0)))
+
+axiom is_empty__def_axiom :
+  (forall s:us_rep [is_empty(s)]. ((is_empty(s) = true) ->
+  (to_rep1(((s).us_split_fields1).rec__stacks_1__stack_type__pointer) = 0)))
+
+axiom is_empty__def_axiom1 :
+  (forall s:us_rep [is_empty(s)].
+  ((to_rep1(((s).us_split_fields1).rec__stacks_1__stack_type__pointer) = 0) ->
+  (is_empty(s) = true)))
+
+logic is_full : us_rep -> bool
+
+logic is_full__function_guard : bool, us_rep -> prop
+
+axiom is_full__def_axiom :
+  (forall s:us_rep [is_full(s)]. ((is_full(s) = true) ->
+  (to_rep1(((s).us_split_fields1).rec__stacks_1__stack_type__pointer) = 100)))
+
+axiom is_full__def_axiom1 :
+  (forall s:us_rep [is_full(s)].
+  ((to_rep1(((s).us_split_fields1).rec__stacks_1__stack_type__pointer) = 100) ->
+  (is_full(s) = true)))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic i : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+type stack_index
+
+logic stack_indexqtint : stack_index -> int
+
+axiom stack_indexqtaxiom :
+  (forall i1:stack_index. (1 <= stack_indexqtint(i1)))
+
+axiom stack_indexqtaxiom1 :
+  (forall i1:stack_index. (stack_indexqtint(i1) <= 100))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 100))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq4 : stack_index, stack_index -> bool
+
+logic dummy4 : stack_index
+
+type stack_index__ref = { stack_index__content : stack_index
+}
+
+function stack_index__ref_stack_index__content__projection(a: stack_index__ref) : stack_index =
+  (a).stack_index__content
+
+logic temp_____aggregate_def_200 : (int,integer) farray, int,
+  int -> (int,integer) farray
+
+predicate dynamic_invariant1(temp___expr_169: int, temp___is_init_165: bool,
+  temp___skip_constant_166: bool, temp___do_toplevel_167: bool,
+  temp___do_typ_inv_168: bool) = (((temp___is_init_165 = true) or
+  (1 <= 100)) -> in_range3(temp___expr_169))
+
+axiom def_axiom :
+  (forall temp___202:(int,integer) farray.
+  (forall temp___203:int. forall temp___204:int.
+  ((dynamic_invariant1(temp___203, true, true, true, true) and
+  dynamic_invariant(temp___204, true, true, true, true)) ->
+  (forall temp___205:int. ((temp___205 = temp___203) ->
+  (to_rep((temp_____aggregate_def_200(temp___202, temp___203,
+  temp___204)[temp___205])) = temp___204))))))
+
+axiom def_axiom1 :
+  (forall temp___202:(int,integer) farray.
+  (forall temp___203:int. forall temp___204:int.
+  ((dynamic_invariant1(temp___203, true, true, true, true) and
+  dynamic_invariant(temp___204, true, true, true, true)) ->
+  (forall temp___205:int. ((not (temp___205 = temp___203)) ->
+  ((temp_____aggregate_def_200(temp___202, temp___203,
+  temp___204)[temp___205]) = (temp___202[temp___205])))))))
+
+predicate dynamic_invariant2(temp___expr_162: int, temp___is_init_158: bool,
+  temp___skip_constant_159: bool, temp___do_toplevel_160: bool,
+  temp___do_typ_inv_161: bool) = (((temp___is_init_158 = true) or
+  (0 <= 100)) -> in_range2(temp___expr_162))
+
+logic rliteral : integer
+
+axiom rliteral_axiom : (integerqtint(rliteral) = 0)
+
+axiom def_axiom2 :
+  (forall temp___192:int. (dynamic_invariant(temp___192, true, true, true,
+  true) ->
+  (forall temp___193:int.
+  ((temp_____aggregate_def_190(temp___192)[temp___193]) = rliteral))))
+
+ (* File "stacks_1.ads", line 12, characters 0-0 *)
+goal defqtvc :
+  (forall s__split_fields:us_split_fields. (dynamic_invariant(i, true, false,
+  true, true) ->
+  ((forall s__split_fields1:us_split_fields.
+   is_full__function_guard(is_full({ us_split_fields1 = s__split_fields1 }),
+   { us_split_fields1 = s__split_fields1 })) ->
+  ((not (is_full({ us_split_fields1 = s__split_fields }) = true)) ->
+  (forall o:int.
+  ((to_rep1((s__split_fields).rec__stacks_1__stack_type__pointer) = o) ->
+  (let o1 = (o + 1) : int in (in_range2(o1) ->
+  (forall o2:pointer_type. ((to_rep1(o2) = o1) ->
+  (forall s__split_fields1:us_split_fields. ((s__split_fields1 = {
+  rec__stacks_1__stack_type__pointer = o2;
+  rec__stacks_1__stack_type__vector =
+  (s__split_fields).rec__stacks_1__stack_type__vector }) ->
+  (forall o3:integer. ((to_rep(o3) = i) ->
+  (forall temp___228:int.
+  ((to_rep1((s__split_fields1).rec__stacks_1__stack_type__pointer) = temp___228) ->
+  (1 <= temp___228)))))))))))))))))

@@ -1,0 +1,1321 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type character
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 255))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq1 : character, character -> bool
+
+logic dummy1 : character
+
+type character__ref = { character__content : character
+}
+
+function character__ref_character__content__projection(a: character__ref) : character =
+  (a).character__content
+
+logic to_rep1 : character -> int
+
+logic of_rep1 : int -> character
+
+axiom inversion_axiom1 :
+  (forall x:character [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:character [to_rep1(x)]. in_range1(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type map__ref = { map__content : (int,character) farray
+}
+
+logic slide : (int,character) farray, int, int -> (int,character) farray
+
+axiom slide_eq :
+  (forall a:(int,character) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,character) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq2(a: (int,character) farray, a__first: int, a__last: int,
+  b: (int,character) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep1((a[temp___idx_91])) = to_rep1((b[((b__first - a__first) + temp___idx_91)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep1((a[temp___idx_91])) = to_rep1((b[((b__first - a__first) + temp___idx_91)]))))))))
+
+type positive
+
+logic positiveqtint : positive -> int
+
+axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
+
+axiom positiveqtaxiom1 :
+  (forall i:positive. (positiveqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq2 : positive, positive -> bool
+
+logic dummy2 : positive
+
+type positive__ref = { positive__content : positive
+}
+
+function positive__ref_positive__content__projection(a: positive__ref) : positive =
+  (a).positive__content
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range(f) -> (in_range(l) ->
+  (to_rep(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range(f) -> (in_range(l) ->
+  (to_rep(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range(low) and (in_range(high) and ((low <= high) ->
+  (in_range2(low) and in_range2(high)))))
+
+type us_t = { elts : (int,character) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,character) farray = (a).elts
+
+function of_array(a: (int,character) farray, f: int, l: int) : us_t = {
+  elts = a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep(first((a).rt))
+
+function last1(a: us_t) : int = to_rep(last((a).rt))
+
+function length(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq4(x: us_t, y: us_t) : bool = bool_eq2((x).elts,
+  to_rep(first((x).rt)), to_rep(last((x).rt)), (y).elts,
+  to_rep(first((y).rt)), to_rep(last((y).rt)))
+
+logic user_eq3 : us_t, us_t -> bool
+
+logic dummy3 : us_t
+
+type string____ref = { string____content : us_t
+}
+
+function string____ref_string____content__projection(a: string____ref) : us_t =
+  (a).string____content
+
+type email_address_type__ref = { email_address_type__content : us_t
+}
+
+function email_address_type__ref_email_address_type__content__projection(a: email_address_type__ref) : us_t =
+  (a).email_address_type__content
+
+logic email : us_t
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+type count_type
+
+logic count_typeqtint : count_type -> int
+
+axiom count_typeqtaxiom : (forall i:count_type. (0 <= count_typeqtint(i)))
+
+axiom count_typeqtaxiom1 :
+  (forall i:count_type. (count_typeqtint(i) <= 2147483647))
+
+predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq4 : count_type, count_type -> bool
+
+logic dummy4 : count_type
+
+type count_type__ref = { count_type__content : count_type
+}
+
+function count_type__ref_count_type__content__projection(a: count_type__ref) : count_type =
+  (a).count_type__content
+
+function to_rep2(x: count_type) : int = count_typeqtint(x)
+
+logic of_rep2 : int -> count_type
+
+axiom inversion_axiom2 :
+  (forall x:count_type [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
+
+axiom range_axiom2 :
+  (forall x:count_type [to_rep2(x)]. in_range3(to_rep2(x)))
+
+axiom coerce_axiom2 :
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range3(x) ->
+  (to_rep2(of_rep2(x)) = x)))
+
+type us_split_fields = { rec__database__db_pack__cursor__node : count_type
+}
+
+function us_split_fields_rec__database__db_pack__cursor__node__projection(a: us_split_fields) : count_type =
+  (a).rec__database__db_pack__cursor__node
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__3__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__3__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq6(a: us_rep, b: us_rep) : bool =
+  (if (to_rep2(((a).us_split_fields1).rec__database__db_pack__cursor__node) = to_rep2(((b).us_split_fields1).rec__database__db_pack__cursor__node)) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic database__db_pack__cursor__node__first__bit : int
+
+logic database__db_pack__cursor__node__last__bit : int
+
+logic database__db_pack__cursor__node__position : int
+
+axiom database__db_pack__cursor__node__first__bit_axiom :
+  (0 <= database__db_pack__cursor__node__first__bit)
+
+axiom database__db_pack__cursor__node__last__bit_axiom :
+  (database__db_pack__cursor__node__first__bit <  database__db_pack__cursor__node__last__bit)
+
+axiom database__db_pack__cursor__node__position_axiom :
+  (0 <= database__db_pack__cursor__node__position)
+
+logic user_eq5 : us_rep, us_rep -> bool
+
+logic dummy5 : us_rep
+
+type cursor__ref = { cursor__content : us_rep
+}
+
+function cursor__ref_cursor__content__projection(a: cursor__ref) : us_rep =
+  (a).cursor__content
+
+type us_main_type
+
+logic us_main_eq : us_main_type, us_main_type -> bool
+
+type us_split_discrs = { rec__database__db_pack__list__capacity : count_type
+}
+
+function us_split_discrs_rec__database__db_pack__list__capacity__projection(a: us_split_discrs) : count_type =
+  (a).rec__database__db_pack__list__capacity
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_split_fields2 = { rec__database__db_pack__list : us_main_type
+}
+
+function us_split_fields_rec__database__db_pack__list__projection(a: us_split_fields2) : us_main_type =
+  (a).rec__database__db_pack__list
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_discrs1 : us_split_discrs; us_split_fields3 :
+us_split_fields2
+}
+
+function us_rep___split_discrs__projection(a: us_rep1) : us_split_discrs =
+  (a).us_split_discrs1
+
+function us_rep___split_fields__2__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function bool_eq7(a: us_rep1, b: us_rep1) : bool =
+  (if ((to_rep2(((a).us_split_discrs1).rec__database__db_pack__list__capacity) = to_rep2(((b).us_split_discrs1).rec__database__db_pack__list__capacity)) and
+  (us_main_eq(((a).us_split_fields3).rec__database__db_pack__list,
+  ((b).us_split_fields3).rec__database__db_pack__list) = true)) then true else false)
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic database__db_pack__list__capacity__first__bit : int
+
+logic database__db_pack__list__capacity__last__bit : int
+
+logic database__db_pack__list__capacity__position : int
+
+axiom database__db_pack__list__capacity__first__bit_axiom :
+  (0 <= database__db_pack__list__capacity__first__bit)
+
+axiom database__db_pack__list__capacity__last__bit_axiom :
+  (database__db_pack__list__capacity__first__bit <  database__db_pack__list__capacity__last__bit)
+
+axiom database__db_pack__list__capacity__position_axiom :
+  (0 <= database__db_pack__list__capacity__position)
+
+logic user_eq6 : us_rep1, us_rep1 -> bool
+
+logic dummy6 : us_rep1
+
+type list__ref = { list__content : us_rep1
+}
+
+function list__ref_list__content__projection(a: list__ref) : us_rep1 =
+  (a).list__content
+
+type us_main_type1
+
+logic us_main_eq1 : us_main_type1, us_main_type1 -> bool
+
+type us_rep2
+
+logic bool_eq8 : us_rep2, us_rep2 -> bool
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic user_eq7 : us_rep2, us_rep2 -> bool
+
+logic dummy7 : us_rep2
+
+type map__ref1 = { map__content1 : us_rep2
+}
+
+function map__ref_map__content__projection(a: map__ref1) : us_rep2 =
+  (a).map__content1
+
+type key_type__ref = { key_type__content : us_rep
+}
+
+function key_type__ref_key_type__content__projection(a: key_type__ref) : us_rep =
+  (a).key_type__content
+
+logic has_key : us_rep2, us_rep -> bool
+
+logic has_key__function_guard : bool, us_rep2, us_rep -> prop
+
+logic positions : us_rep1 -> us_rep2
+
+logic positions__function_guard : us_rep2, us_rep1 -> prop
+
+function has_element(container: us_rep1, position: us_rep) : bool =
+  has_key(positions(container), position)
+
+logic has_element__function_guard : bool, us_rep1, us_rep -> prop
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq9(x: bool, y: bool) : bool =
+  (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range4(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE4 : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> bool
+
+type us_rep3 = { rec__database__email_access__is_null_pointer : bool;
+rec__database__email_access__pointer_address : int;
+rec__database__email_access__pointer_value : us_t
+}
+
+function us_rep_rec__database__email_access__is_null_pointer__projection(a: us_rep3) : bool =
+  (a).rec__database__email_access__is_null_pointer
+
+function us_rep_rec__database__email_access__pointer_address__projection(a: us_rep3) : int =
+  (a).rec__database__email_access__pointer_address
+
+function us_rep_rec__database__email_access__pointer_value__projection(a: us_rep3) : us_t =
+  (a).rec__database__email_access__pointer_value
+
+type us_rep__ref = { us_rep__content : us_rep3
+}
+
+function us_rep__ref___rep__content__projection(a: us_rep__ref) : us_rep3 =
+  (a).us_rep__content
+
+function bool_eq10(a: us_rep3, b: us_rep3) : bool =
+  (if (((a).rec__database__email_access__is_null_pointer = (b).rec__database__email_access__is_null_pointer) and
+  ((not ((a).rec__database__email_access__is_null_pointer = true)) ->
+  (((a).rec__database__email_access__pointer_address = (b).rec__database__email_access__pointer_address) and
+  ((a).rec__database__email_access__pointer_value = (b).rec__database__email_access__pointer_value)))) then true else false)
+
+predicate rec__database__email_access__pointer_value__pred(a: us_rep3) =
+  (not ((a).rec__database__email_access__is_null_pointer = true))
+
+logic us_null_pointer : us_rep3
+
+axiom us_null_pointer__def_axiom :
+  ((us_null_pointer).rec__database__email_access__is_null_pointer = true)
+
+logic dummy8 : us_rep3
+
+type email_access__ref = { email_access__content : us_rep3
+}
+
+function email_access__ref_email_access__content__projection(a: email_access__ref) : us_rep3 =
+  (a).email_access__content
+
+type us_split_fields4 = { rec__database__db_entry_type__key : integer;
+rec__database__db_entry_type__email : us_rep3
+}
+
+function us_split_fields_rec__database__db_entry_type__key__projection(a: us_split_fields4) : integer =
+  (a).rec__database__db_entry_type__key
+
+function us_split_fields_rec__database__db_entry_type__email__projection(a: us_split_fields4) : us_rep3 =
+  (a).rec__database__db_entry_type__email
+
+type us_split_fields__ref2 = { us_split_fields__content2 : us_split_fields4
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref2) : us_split_fields4 =
+  (a).us_split_fields__content2
+
+type us_rep4 = { us_split_fields5 : us_split_fields4
+}
+
+function us_rep___split_fields__projection(a: us_rep4) : us_split_fields4 =
+  (a).us_split_fields5
+
+function bool_eq11(a: us_rep4, b: us_rep4) : bool =
+  (if ((to_rep(((a).us_split_fields5).rec__database__db_entry_type__key) = to_rep(((b).us_split_fields5).rec__database__db_entry_type__key)) and
+  (bool_eq10(((a).us_split_fields5).rec__database__db_entry_type__email,
+  ((b).us_split_fields5).rec__database__db_entry_type__email) = true)) then true else false)
+
+logic value__size4 : int
+
+logic object__size4 : int
+
+logic alignment4 : int
+
+axiom value__size_axiom4 : (0 <= value__size4)
+
+axiom object__size_axiom4 : (0 <= object__size4)
+
+axiom alignment_axiom4 : (0 <= alignment4)
+
+logic database__db_entry_type__key__first__bit : int
+
+logic database__db_entry_type__key__last__bit : int
+
+logic database__db_entry_type__key__position : int
+
+axiom database__db_entry_type__key__first__bit_axiom :
+  (0 <= database__db_entry_type__key__first__bit)
+
+axiom database__db_entry_type__key__last__bit_axiom :
+  (database__db_entry_type__key__first__bit <  database__db_entry_type__key__last__bit)
+
+axiom database__db_entry_type__key__position_axiom :
+  (0 <= database__db_entry_type__key__position)
+
+logic database__db_entry_type__email__first__bit : int
+
+logic database__db_entry_type__email__last__bit : int
+
+logic database__db_entry_type__email__position : int
+
+axiom database__db_entry_type__email__first__bit_axiom :
+  (0 <= database__db_entry_type__email__first__bit)
+
+axiom database__db_entry_type__email__last__bit_axiom :
+  (database__db_entry_type__email__first__bit <  database__db_entry_type__email__last__bit)
+
+axiom database__db_entry_type__email__position_axiom :
+  (0 <= database__db_entry_type__email__position)
+
+logic user_eq8 : us_rep4, us_rep4 -> bool
+
+logic dummy9 : us_rep4
+
+type db_entry_type__ref = { db_entry_type__content : us_rep4
+}
+
+function db_entry_type__ref_db_entry_type__content__projection(a: db_entry_type__ref) : us_rep4 =
+  (a).db_entry_type__content
+
+type element_type__ref = { element_type__content : us_rep4
+}
+
+function element_type__ref_element_type__content__projection(a: element_type__ref) : us_rep4 =
+  (a).element_type__content
+
+type us_main_type2
+
+logic us_main_eq2 : us_main_type2, us_main_type2 -> bool
+
+type us_rep5
+
+logic bool_eq12 : us_rep5, us_rep5 -> bool
+
+logic value__size5 : int
+
+logic object__size5 : int
+
+logic alignment5 : int
+
+axiom value__size_axiom5 : (0 <= value__size5)
+
+axiom object__size_axiom5 : (0 <= object__size5)
+
+axiom alignment_axiom5 : (0 <= alignment5)
+
+logic user_eq9 : us_rep5, us_rep5 -> bool
+
+logic dummy10 : us_rep5
+
+type sequence__ref = { sequence__content : us_rep5
+}
+
+function sequence__ref_sequence__content__projection(a: sequence__ref) : us_rep5 =
+  (a).sequence__content
+
+type element_type__ref1 = { element_type__content1 : us_rep4
+}
+
+function element_type__ref_element_type__content__2__projection(a: element_type__ref1) : us_rep4 =
+  (a).element_type__content1
+
+logic get : us_rep5, int -> us_rep4
+
+logic get__function_guard : us_rep4, us_rep5, int -> prop
+
+logic get1 : us_rep2, us_rep -> int
+
+logic get__function_guard1 : int, us_rep2, us_rep -> prop
+
+logic model : us_rep1 -> us_rep5
+
+logic model__function_guard : us_rep5, us_rep1 -> prop
+
+function element(container: us_rep1, position: us_rep) : us_rep4 =
+  get(model(container), get1(positions(container), position))
+
+logic element__function_guard : us_rep4, us_rep1, us_rep -> prop
+
+predicate dynamic_invariant(temp___expr_289: us_rep4,
+  temp___is_init_285: bool, temp___skip_constant_286: bool,
+  temp___do_toplevel_287: bool, temp___do_typ_inv_288: bool) =
+  ((not ((((temp___expr_289).us_split_fields5).rec__database__db_entry_type__email).rec__database__email_access__is_null_pointer = true)) ->
+  dynamic_property(1, 2147483647,
+  first1((((temp___expr_289).us_split_fields5).rec__database__db_entry_type__email).rec__database__email_access__pointer_value),
+  last1((((temp___expr_289).us_split_fields5).rec__database__db_entry_type__email).rec__database__email_access__pointer_value)))
+
+predicate default_initial_assumption(temp___expr_291: us_rep4,
+  temp___skip_top_level_292: bool) =
+  ((((temp___expr_291).us_split_fields5).rec__database__db_entry_type__email).rec__database__email_access__is_null_pointer = true)
+
+logic bool_eq13 : int, int -> bool
+
+logic bool_ne : int, int -> bool
+
+logic bool_lt : int, int -> bool
+
+logic bool_le : int, int -> bool
+
+logic bool_gt : int, int -> bool
+
+logic bool_ge : int, int -> bool
+
+axiom bool_eq_axiom :
+  (forall x:int. (forall y:int. ((bool_eq13(x, y) = true) -> (x = y))))
+
+axiom bool_eq_axiom1 :
+  (forall x:int. (forall y:int. ((x = y) -> (bool_eq13(x, y) = true))))
+
+axiom bool_ne_axiom :
+  (forall x:int. (forall y:int. ((bool_ne(x, y) = true) -> (not (x = y)))))
+
+axiom bool_ne_axiom1 :
+  (forall x:int. (forall y:int. ((not (x = y)) -> (bool_ne(x, y) = true))))
+
+axiom bool_lt_axiom :
+  (forall x:int. (forall y:int. ((bool_lt(x, y) = true) -> (x <  y))))
+
+axiom bool_lt_axiom1 :
+  (forall x:int. (forall y:int. ((x <  y) -> (bool_lt(x, y) = true))))
+
+axiom bool_int__le_axiom :
+  (forall x:int. (forall y:int. ((bool_le(x, y) = true) -> (x <= y))))
+
+axiom bool_int__le_axiom1 :
+  (forall x:int. (forall y:int. ((x <= y) -> (bool_le(x, y) = true))))
+
+axiom bool_gt_axiom :
+  (forall x:int. (forall y:int. ((bool_gt(x, y) = true) -> (y <  x))))
+
+axiom bool_gt_axiom1 :
+  (forall x:int. (forall y:int. ((y <  x) -> (bool_gt(x, y) = true))))
+
+axiom bool_ge_axiom :
+  (forall x:int. (forall y:int. ((bool_ge(x, y) = true) -> (y <= x))))
+
+axiom bool_ge_axiom1 :
+  (forall x:int. (forall y:int. ((y <= x) -> (bool_ge(x, y) = true))))
+
+function length1(x: int, y: int) : int =
+  (if (x <= y) then ((y - x) + 1) else 0)
+
+logic no_element : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic length2 : us_rep1 -> int
+
+logic length__function_guard : int, us_rep1 -> prop
+
+logic oeq : us_rep1, us_rep1 -> bool
+
+logic oeq__function_guard : bool, us_rep1, us_rep1 -> prop
+
+axiom user_eq__def_axiom :
+  (forall a:us_rep1. forall b:us_rep1 [user_eq6(a, b)]. (user_eq6(a,
+  b) = oeq(a, b)))
+
+predicate default_initial_assumption1(temp___expr_313: us_rep,
+  temp___skip_top_level_314: bool) =
+  (to_rep2(((temp___expr_313).us_split_fields1).rec__database__db_pack__cursor__node) = 0)
+
+logic first2 : us_rep1 -> us_rep
+
+logic first__function_guard : us_rep, us_rep1 -> prop
+
+axiom first__post_axiom :
+  (forall container:us_rep1 [first2(container)]. ((length2(container) = 0) ->
+  (bool_eq6(first2(container), no_element) = true)))
+
+axiom first__post_axiom1 :
+  (forall container:us_rep1 [first2(container)].
+  ((not (length2(container) = 0)) -> (has_element(container,
+  first2(container)) = true)))
+
+axiom first__post_axiom2 :
+  (forall container:us_rep1 [first2(container)].
+  ((not (length2(container) = 0)) -> (get1(positions(container),
+  first2(container)) = 1)))
+
+logic next : us_rep1, us_rep -> us_rep
+
+logic next__function_guard : us_rep, us_rep1, us_rep -> prop
+
+axiom next__post_axiom :
+  (forall container:us_rep1.
+  (forall position:us_rep [next(container, position)].
+  (((has_element(container, position) = true) or (bool_eq6(position,
+  no_element) = true)) -> (((bool_eq6(position, no_element) = true) or
+  (get1(positions(container), position) = length2(container))) ->
+  (bool_eq6(next(container, position), no_element) = true)))))
+
+axiom next__post_axiom1 :
+  (forall container:us_rep1.
+  (forall position:us_rep [next(container, position)].
+  (((has_element(container, position) = true) or (bool_eq6(position,
+  no_element) = true)) -> ((not ((bool_eq6(position, no_element) = true) or
+  (get1(positions(container), position) = length2(container)))) ->
+  (has_element(container, next(container, position)) = true)))))
+
+axiom next__post_axiom2 :
+  (forall container:us_rep1.
+  (forall position:us_rep [next(container, position)].
+  (((has_element(container, position) = true) or (bool_eq6(position,
+  no_element) = true)) -> ((not ((bool_eq6(position, no_element) = true) or
+  (get1(positions(container), position) = length2(container)))) ->
+  (get1(positions(container), next(container,
+  position)) = (get1(positions(container), position) + 1))))))
+
+predicate in_range5(rec__database__db_pack__list__capacity1: int,
+  a: us_rep1) =
+  (rec__database__db_pack__list__capacity1 = to_rep2(((a).us_split_discrs1).rec__database__db_pack__list__capacity))
+
+logic value__size6 : int
+
+logic object__size6 : int
+
+logic alignment6 : int
+
+axiom value__size_axiom6 : (0 <= value__size6)
+
+axiom object__size_axiom6 : (0 <= object__size6)
+
+axiom alignment_axiom6 : (0 <= alignment6)
+
+logic database__db_pack__list__capacity__first__bit1 : int
+
+logic database__db_pack__list__capacity__last__bit1 : int
+
+logic database__db_pack__list__capacity__position1 : int
+
+axiom database__db_pack__list__capacity__first__bit_axiom1 :
+  (0 <= database__db_pack__list__capacity__first__bit1)
+
+axiom database__db_pack__list__capacity__last__bit_axiom1 :
+  (database__db_pack__list__capacity__first__bit1 <  database__db_pack__list__capacity__last__bit1)
+
+axiom database__db_pack__list__capacity__position_axiom1 :
+  (0 <= database__db_pack__list__capacity__position1)
+
+logic user_eq10 : us_rep1, us_rep1 -> bool
+
+logic dummy11 : us_rep1
+
+type tdatabaseS__ref = { tdatabaseS__content : us_rep1
+}
+
+function tdatabaseS__ref_tdatabaseS__content__projection(a: tdatabaseS__ref) : us_rep1 =
+  (a).tdatabaseS__content
+
+logic database__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic is_empty : us_rep1 -> bool
+
+logic is_empty__function_guard : bool, us_rep1 -> prop
+
+axiom user_eq__def_axiom1 :
+  (forall a:us_rep1. forall b:us_rep1 [user_eq10(a, b)]. (user_eq10(a,
+  b) = oeq(a, b)))
+
+predicate dynamic_invariant1(temp___expr_670: us_rep1,
+  temp___is_init_666: bool, temp___skip_constant_667: bool,
+  temp___do_toplevel_668: bool, temp___do_typ_inv_669: bool) =
+  ((not (temp___skip_constant_667 = true)) -> in_range5(1000,
+  temp___expr_670))
+
+predicate default_initial_assumption2(temp___expr_672: us_rep1,
+  temp___skip_top_level_673: bool) =
+  ((to_rep2(((temp___expr_672).us_split_discrs1).rec__database__db_pack__list__capacity) = 1000) and
+  ((not (temp___skip_top_level_673 = true)) ->
+  (is_empty(temp___expr_672) = true)))
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+predicate dynamic_invariant2(temp___expr_263: us_t, temp___is_init_259: bool,
+  temp___skip_constant_260: bool, temp___do_toplevel_261: bool,
+  temp___do_typ_inv_262: bool) = ((not (temp___skip_constant_260 = true)) ->
+  dynamic_property(1, 2147483647, first1(temp___expr_263),
+  last1(temp___expr_263)))
+
+predicate dynamic_invariant3(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_18))
+
+predicate dynamic_invariant4(temp___expr_46: int, temp___is_init_42: bool,
+  temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
+  temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
+  (1 <= 2147483647)) -> in_range2(temp___expr_46))
+
+predicate dynamic_invariant5(temp___expr_279: us_rep4,
+  temp___is_init_275: bool, temp___skip_constant_276: bool,
+  temp___do_toplevel_277: bool, temp___do_typ_inv_278: bool) =
+  ((not ((((temp___expr_279).us_split_fields5).rec__database__db_entry_type__email).rec__database__email_access__is_null_pointer = true)) ->
+  dynamic_property(1, 2147483647,
+  first1((((temp___expr_279).us_split_fields5).rec__database__db_entry_type__email).rec__database__email_access__pointer_value),
+  last1((((temp___expr_279).us_split_fields5).rec__database__db_entry_type__email).rec__database__email_access__pointer_value)))
+
+predicate default_initial_assumption3(temp___expr_281: us_rep4,
+  temp___skip_top_level_282: bool) =
+  ((((temp___expr_281).us_split_fields5).rec__database__db_entry_type__email).rec__database__email_access__is_null_pointer = true)
+
+predicate dynamic_invariant6(temp___expr_269: us_rep3,
+  temp___is_init_265: bool, temp___skip_constant_266: bool,
+  temp___do_toplevel_267: bool, temp___do_typ_inv_268: bool) =
+  ((not ((temp___expr_269).rec__database__email_access__is_null_pointer = true)) ->
+  dynamic_property(1, 2147483647,
+  first1((temp___expr_269).rec__database__email_access__pointer_value),
+  last1((temp___expr_269).rec__database__email_access__pointer_value)))
+
+predicate default_initial_assumption4(temp___expr_271: us_rep3,
+  temp___skip_top_level_272: bool) =
+  ((temp___expr_271).rec__database__email_access__is_null_pointer = true)
+
+predicate dynamic_invariant7(temp___expr_299: int, temp___is_init_295: bool,
+  temp___skip_constant_296: bool, temp___do_toplevel_297: bool,
+  temp___do_typ_inv_298: bool) = (((temp___is_init_295 = true) or
+  (0 <= 2147483647)) -> in_range3(temp___expr_299))
+
+logic rliteral : count_type
+
+axiom rliteral_axiom : (count_typeqtint(rliteral) = 0)
+
+axiom no_element__def_axiom : (no_element = { us_split_fields1 = {
+  rec__database__db_pack__cursor__node = rliteral } })
+
+axiom length__post_axiom :
+  (forall container:us_rep1 [length2(container)].
+  (length2(container) <= to_rep2(((container).us_split_discrs1).rec__database__db_pack__list__capacity)))
+
+axiom length__post_axiom1 :
+  (forall container:us_rep1 [length2(container)].
+  dynamic_invariant7(length2(container), true, false, true, true))
+
+logic length3 : us_rep5 -> int
+
+logic length__function_guard1 : int, us_rep5 -> prop
+
+function last2(container: us_rep5) : int = (0 + length3(container))
+
+logic last__function_guard : int, us_rep5 -> prop
+
+function oeq1(left: us_rep5, right: us_rep5) : bool =
+  andb(bool_eq13(length3(left), length3(right)),
+  (if (forall n:int. (((1 <= n) and (n <= last2(left))) ->
+      (bool_eq11(get(left, n), get(right, n)) = true))) then true else false))
+
+logic oeq__function_guard1 : bool, us_rep5, us_rep5 -> prop
+
+axiom user_eq__def_axiom2 :
+  (forall a:us_rep5. forall b:us_rep5 [user_eq9(a, b)]. (user_eq9(a,
+  b) = oeq1(a, b)))
+
+predicate default_initial_assumption5(temp___expr_351: us_rep5,
+  temp___skip_top_level_352: bool) =
+  ((not (temp___skip_top_level_352 = true)) ->
+  (length3(temp___expr_351) = 0))
+
+axiom model__post_axiom :
+  (forall container:us_rep1 [model(container)].
+  (length3(model(container)) = length2(container)))
+
+logic length4 : us_rep2 -> int
+
+logic length__function_guard2 : int, us_rep2 -> prop
+
+logic oeq2 : us_rep2, us_rep2 -> bool
+
+logic oeq__function_guard2 : bool, us_rep2, us_rep2 -> prop
+
+logic is_empty1 : us_rep2 -> bool
+
+logic is_empty__function_guard1 : bool, us_rep2 -> prop
+
+axiom user_eq__def_axiom3 :
+  (forall a:us_rep2. forall b:us_rep2 [user_eq7(a, b)]. (user_eq7(a,
+  b) = oeq2(a, b)))
+
+predicate default_initial_assumption6(temp___expr_453: us_rep2,
+  temp___skip_top_level_454: bool) =
+  ((not (temp___skip_top_level_454 = true)) ->
+  ((is_empty1(temp___expr_453) = true) and (length4(temp___expr_453) = 0)))
+
+predicate default_initial_assumption7(temp___expr_439: us_rep,
+  temp___skip_top_level_440: bool) =
+  (to_rep2(((temp___expr_439).us_split_fields1).rec__database__db_pack__cursor__node) = 0)
+
+axiom positions__post_axiom :
+  (forall container:us_rep1 [positions(container)].
+  (not (has_key(positions(container), no_element) = true)))
+
+axiom positions__post_axiom1 :
+  (forall container:us_rep1 [positions(container)]. (let result =
+  positions(container) : us_rep2 in
+  (forall i:us_rep. ((has_key(result, i) = true) -> (1 <= get1(result, i))))))
+
+axiom positions__post_axiom2 :
+  (forall container:us_rep1 [positions(container)]. (let result =
+  positions(container) : us_rep2 in
+  (forall i:us_rep. ((has_key(result, i) = true) -> (get1(result,
+  i) <= length2(container))))))
+
+axiom positions__post_axiom3 :
+  (forall container:us_rep1 [positions(container)]. (let result =
+  positions(container) : us_rep2 in
+  (forall i:us_rep. ((has_key(result, i) = true) ->
+  (forall j:us_rep. ((has_key(result, j) = true) -> ((get1(result,
+  i) = get1(result, j)) -> (bool_eq6(i, j) = true))))))))
+
+axiom oeq__post_axiom :
+  (forall left:us_rep1. forall right:us_rep1 [oeq(left, right)]. ((oeq(left,
+  right) = true) -> (oeq1(model(left), model(right)) = true)))
+
+axiom oeq__post_axiom1 :
+  (forall left:us_rep1. forall right:us_rep1 [oeq(left, right)].
+  ((oeq1(model(left), model(right)) = true) -> (oeq(left, right) = true)))
+
+axiom is_empty__post_axiom :
+  (forall container:us_rep1 [is_empty(container)].
+  ((is_empty(container) = true) -> (length2(container) = 0)))
+
+axiom is_empty__post_axiom1 :
+  (forall container:us_rep1 [is_empty(container)].
+  ((length2(container) = 0) -> (is_empty(container) = true)))
+
+type extended_index
+
+logic extended_indexqtint : extended_index -> int
+
+axiom extended_indexqtaxiom :
+  (forall i:extended_index. (0 <= extended_indexqtint(i)))
+
+axiom extended_indexqtaxiom1 :
+  (forall i:extended_index. (extended_indexqtint(i) <= 2147483647))
+
+predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq14(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq11 : extended_index, extended_index -> bool
+
+logic dummy12 : extended_index
+
+type extended_index__ref = { extended_index__content : extended_index
+}
+
+function extended_index__ref_extended_index__content__projection(a: extended_index__ref) : extended_index =
+  (a).extended_index__content
+
+predicate dynamic_invariant8(temp___expr_343: int, temp___is_init_339: bool,
+  temp___skip_constant_340: bool, temp___do_toplevel_341: bool,
+  temp___do_typ_inv_342: bool) = (((temp___is_init_339 = true) or
+  (0 <= 2147483647)) -> in_range6(temp___expr_343))
+
+axiom length__post_axiom2 :
+  (forall container:us_rep5 [length3(container)].
+  ((0 + length3(container)) <= 2147483647))
+
+axiom length__post_axiom3 :
+  (forall container:us_rep5 [length3(container)].
+  dynamic_invariant7(length3(container), true, false, true, true))
+
+predicate dynamic_invariant9(temp___expr_333: us_rep4,
+  temp___is_init_329: bool, temp___skip_constant_330: bool,
+  temp___do_toplevel_331: bool, temp___do_typ_inv_332: bool) =
+  ((not ((((temp___expr_333).us_split_fields5).rec__database__db_entry_type__email).rec__database__email_access__is_null_pointer = true)) ->
+  dynamic_property(1, 2147483647,
+  first1((((temp___expr_333).us_split_fields5).rec__database__db_entry_type__email).rec__database__email_access__pointer_value),
+  last1((((temp___expr_333).us_split_fields5).rec__database__db_entry_type__email).rec__database__email_access__pointer_value)))
+
+predicate default_initial_assumption8(temp___expr_335: us_rep4,
+  temp___skip_top_level_336: bool) =
+  ((((temp___expr_335).us_split_fields5).rec__database__db_entry_type__email).rec__database__email_access__is_null_pointer = true)
+
+axiom get__post_axiom :
+  (forall container:us_rep5.
+  (forall position:int [get(container, position)].
+  ((dynamic_invariant8(position, true, true, true, true) and
+  ((1 <= position) and (position <= last2(container)))) ->
+  dynamic_invariant9(get(container, position), true, false, true, true))))
+
+axiom has_key__post_axiom :
+  (forall container:us_rep2.
+  (forall key:us_rep [has_key(container, key)]. ((of_int(0) = true) ->
+  ((exists k:us_rep. ((has_key(container, k) = true) and (bool_eq6(k,
+   key) = true))) ->
+  (has_key(container, key) = true)))))
+
+logic witness : us_rep2, us_rep -> int
+
+logic witness__function_guard : int, us_rep2, us_rep -> prop
+
+logic w_get : us_rep2, int -> int
+
+logic w_get__function_guard : int, us_rep2, int -> prop
+
+type element_type
+
+logic element_typeqtint : element_type -> int
+
+axiom element_typeqtaxiom :
+  (forall i:element_type. (1 <= element_typeqtint(i)))
+
+axiom element_typeqtaxiom1 :
+  (forall i:element_type. (element_typeqtint(i) <= 2147483647))
+
+predicate in_range7(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq15(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> int
+
+logic user_eq12 : element_type, element_type -> bool
+
+logic dummy13 : element_type
+
+type element_type__ref2 = { element_type__content2 : element_type
+}
+
+function element_type__ref_element_type__content__3__projection(a: element_type__ref2) : element_type =
+  (a).element_type__content2
+
+predicate dynamic_invariant10(temp___expr_445: int, temp___is_init_441: bool,
+  temp___skip_constant_442: bool, temp___do_toplevel_443: bool,
+  temp___do_typ_inv_444: bool) = (((temp___is_init_441 = true) or
+  (1 <= 2147483647)) -> in_range7(temp___expr_445))
+
+axiom get__post_axiom1 :
+  (forall container:us_rep2.
+  (forall key:us_rep [get1(container, key)]. ((has_key(container,
+  key) = true) -> ((of_int(0) = true) -> (get1(container,
+  key) = w_get(container, witness(container, key)))))))
+
+axiom get__post_axiom2 :
+  (forall container:us_rep2.
+  (forall key:us_rep [get1(container, key)]. ((has_key(container,
+  key) = true) -> ((of_int(0) = true) ->
+  (forall k:us_rep. ((has_key(container, k) = true) -> ((bool_eq6(k,
+  key) = true) -> (witness(container, key) = witness(container, k)))))))))
+
+axiom get__post_axiom3 :
+  (forall container:us_rep2.
+  (forall key:us_rep [get1(container, key)]. ((has_key(container,
+  key) = true) -> ((of_int(0) = true) ->
+  (forall k:us_rep. ((has_key(container, k) = true) -> ((witness(container,
+  key) = witness(container, k)) -> (bool_eq6(k, key) = true))))))))
+
+axiom get__post_axiom4 :
+  (forall container:us_rep2.
+  (forall key:us_rep [get1(container, key)]. ((has_key(container,
+  key) = true) -> dynamic_invariant10(get1(container, key), true, false,
+  true, true))))
+
+axiom length__post_axiom4 :
+  (forall container:us_rep2 [length4(container)].
+  dynamic_invariant7(length4(container), true, false, true, true))
+
+axiom oeq__post_axiom2 :
+  (forall left:us_rep2. forall right:us_rep2 [oeq2(left, right)].
+  ((oeq2(left, right) = true) ->
+  (forall key:us_rep. ((has_key(left, key) = true) -> (has_key(right,
+  key) = true)))))
+
+axiom oeq__post_axiom3 :
+  (forall left:us_rep2. forall right:us_rep2 [oeq2(left, right)].
+  ((oeq2(left, right) = true) ->
+  (forall key:us_rep. ((has_key(left, key) = true) -> (get1(right,
+  key) = get1(left, key))))))
+
+axiom oeq__post_axiom4 :
+  (forall left:us_rep2. forall right:us_rep2 [oeq2(left, right)].
+  ((oeq2(left, right) = true) ->
+  (forall key:us_rep. ((has_key(right, key) = true) -> (has_key(left,
+  key) = true)))))
+
+axiom oeq__post_axiom5 :
+  (forall left:us_rep2. forall right:us_rep2 [oeq2(left, right)].
+  (((forall key:us_rep. ((has_key(left, key) = true) -> ((has_key(right,
+    key) = true) and (get1(right, key) = get1(left, key))))) and
+  (forall key:us_rep. ((has_key(right, key) = true) -> (has_key(left,
+  key) = true)))) -> (oeq2(left, right) = true)))
+
+axiom is_empty__post_axiom2 :
+  (forall container:us_rep2 [is_empty1(container)].
+  ((is_empty1(container) = true) ->
+  (forall key:us_rep. (not (has_key(container, key) = true)))))
+
+axiom is_empty__post_axiom3 :
+  (forall container:us_rep2 [is_empty1(container)].
+  ((forall key:us_rep. (not (has_key(container, key) = true))) ->
+  (is_empty1(container) = true)))
+
+logic has_witness : us_rep2, int -> bool
+
+logic has_witness__function_guard : bool, us_rep2, int -> prop
+
+axiom witness__post_axiom :
+  (forall container:us_rep2.
+  (forall key:us_rep [witness(container, key)]. ((has_key(container,
+  key) = true) -> (has_witness(container, witness(container, key)) = true))))
+
+axiom witness__post_axiom1 :
+  (forall container:us_rep2.
+  (forall key:us_rep [witness(container, key)]. ((has_key(container,
+  key) = true) -> dynamic_invariant7(witness(container, key), true, false,
+  true, true))))
+
+axiom w_get__post_axiom :
+  (forall container:us_rep2.
+  (forall witness1:int [w_get(container, witness1)].
+  ((dynamic_invariant7(witness1, true, true, true, true) and
+  (has_witness(container, witness1) = true)) ->
+  dynamic_invariant10(w_get(container, witness1), true, false, true, true))))
+
+ (* File "database.ads", line 6, characters 0-0 *)
+goal defqtvc :
+  (forall database__split_fields:us_main_type. forall ent:us_split_fields4.
+  (dynamic_invariant1({ us_split_discrs1 = database__split_discrs;
+  us_split_fields3 = { rec__database__db_pack__list = database__split_fields
+  } }, true, false, true, true) -> (dynamic_invariant2(email, true, false,
+  true, true) -> (let o = { us_split_discrs1 = database__split_discrs;
+  us_split_fields3 = { rec__database__db_pack__list = database__split_fields
+  } } : us_rep1 in (let o1 = first2(o) : us_rep in
+  ((if (bool_eq13(length2(o), 0) = true) then (bool_eq6(o1,
+  no_element) = true) else ((has_element(o, o1) = true) and
+  (get1(positions(o), o1) = 1))) ->
+  (forall ent1:us_split_fields4. ((let o2 = { us_split_discrs1 =
+  database__split_discrs; us_split_fields3 = { rec__database__db_pack__list =
+  database__split_fields } } : us_rep1 in (let o3 = has_element(o2, o1)
+  : bool in (((o3 = true) <-> (has_key(positions(o2), o1) = true)) and
+  (if (o3 = true) then (let o4 = { us_split_discrs1 = database__split_discrs;
+  us_split_fields3 = { rec__database__db_pack__list = database__split_fields
+  } } : us_rep1 in (let o5 = element(o4, o1) : us_rep4 in
+  ((dynamic_invariant(o5, true, false, true, true) and (bool_eq11(o5,
+  get(model(o4), get1(positions(o4), o1))) = true)) and ({ us_split_fields5 =
+  ent1 } = o5)))) else (ent1 = ent))))) -> (let o2 = { us_split_discrs1 =
+  database__split_discrs; us_split_fields3 = { rec__database__db_pack__list =
+  database__split_fields } } : us_rep1 in (let o3 = has_element(o2, o1)
+  : bool in (((o3 = true) <-> (has_key(positions(o2), o1) = true)) ->
+  ((o3 = true) ->
+  (forall ent2:us_split_fields4. forall temp___696:count_type.
+  (((has_element({ us_split_discrs1 = database__split_discrs;
+  us_split_fields3 = { rec__database__db_pack__list = database__split_fields
+  } }, { us_split_fields1 = { rec__database__db_pack__cursor__node =
+  temp___696 } }) = true) and ({ us_split_fields5 = ent2 } = element({
+  us_split_discrs1 = database__split_discrs; us_split_fields3 = {
+  rec__database__db_pack__list = database__split_fields } }, {
+  us_split_fields1 = { rec__database__db_pack__cursor__node = temp___696 }
+  }))) -> (let temp___695 =
+  ((ent2).rec__database__db_entry_type__email).rec__database__email_access__pointer_value
+  : us_t in
+  (forall spark__branch:bool.
+  ((spark__branch = bool_eq2(to_array(temp___695), first1(temp___695),
+  last1(temp___695), to_array(email), first1(email), last1(email))) ->
+  ((not (spark__branch = true)) -> (let o4 = { us_split_fields1 = {
+  rec__database__db_pack__cursor__node = temp___696 } } : us_rep in (let o5 =
+  { us_split_discrs1 = database__split_discrs; us_split_fields3 = {
+  rec__database__db_pack__list = database__split_fields } } : us_rep1 in
+  (let o6 = next(o5, o4) : us_rep in ((if (orb(bool_eq6(o4, no_element),
+  bool_eq13(get1(positions(o5), o4), length2(o5))) = true) then (bool_eq6(o6,
+  no_element) = true) else ((has_element(o5, o6) = true) and
+  (get1(positions(o5), o6) = (get1(positions(o5), o4) + 1)))) -> (let o7 = {
+  us_split_discrs1 = database__split_discrs; us_split_fields3 = {
+  rec__database__db_pack__list = database__split_fields } } : us_rep1 in
+  (let o8 = has_element(o7, o6) : bool in (((o8 = true) <->
+  (has_key(positions(o7), o6) = true)) -> ((o8 = true) -> (let o9 = {
+  us_split_fields1 = { rec__database__db_pack__cursor__node = temp___696 } }
+  : us_rep in ((has_element({ us_split_discrs1 = database__split_discrs;
+  us_split_fields3 = { rec__database__db_pack__list = database__split_fields
+  } }, o9) = true) or (bool_eq6(o9, no_element) = true)))))))))))))))))))))))))))))

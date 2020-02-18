@@ -1,0 +1,1536 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+logic div : int, int -> int
+
+logic mod : int, int -> int
+
+axiom Div_mod :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (x = ((y * div(x,
+  y)) + mod(x, y)))))
+
+axiom Div_bound :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= div(x, y))))
+
+axiom Div_bound1 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (div(x, y) <= x)))
+
+axiom Mod_bound :
+  (forall x:int. forall y:int. ((not (y = 0)) -> ((-abs_int(y)) <  mod(x,
+  y))))
+
+axiom Mod_bound1 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (mod(x, y) <  abs_int(y))))
+
+axiom Div_sign_pos :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= div(x, y))))
+
+axiom Div_sign_neg :
+  (forall x:int. forall y:int. (((x <= 0) and (0 <  y)) -> (div(x, y) <= 0)))
+
+axiom Mod_sign_pos :
+  (forall x:int. forall y:int. (((0 <= x) and (not (y = 0))) -> (0 <= mod(x,
+  y))))
+
+axiom Mod_sign_neg :
+  (forall x:int. forall y:int. (((x <= 0) and (not (y = 0))) -> (mod(x,
+  y) <= 0)))
+
+axiom Rounds_toward_zero :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (abs_int((div(x,
+  y) * y)) <= abs_int(x))))
+
+axiom Div_1 : (forall x:int. (div(x, 1) = x))
+
+axiom Mod_1 : (forall x:int. (mod(x, 1) = 0))
+
+axiom Div_inf :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> (div(x, y) = 0)))
+
+axiom Mod_inf :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> (mod(x, y) = x)))
+
+axiom Div_mult :
+  (forall x:int. forall y:int. forall z:int [div(((x * y) + z), x)].
+  (((0 <  x) and ((0 <= y) and (0 <= z))) -> (div(((x * y) + z),
+  x) = (y + div(z, x)))))
+
+axiom Mod_mult :
+  (forall x:int. forall y:int. forall z:int [mod(((x * y) + z), x)].
+  (((0 <  x) and ((0 <= y) and (0 <= z))) -> (mod(((x * y) + z), x) = mod(z,
+  x))))
+
+axiom Div_mod1 :
+  (forall x:int. forall y:int. ((not (y = 0)) ->
+  (x = ((y * (x / y)) + (x % y)))))
+
+axiom Mod_bound2 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (0 <= (x % y))))
+
+axiom Mod_bound3 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> ((x % y) <  abs_int(y))))
+
+axiom Div_unique :
+  (forall x:int. forall y:int. forall q:int. ((0 <  y) ->
+  ((((q * y) <= x) and (x <  ((q * y) + y))) -> ((x / y) = q))))
+
+axiom Div_bound2 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= (x / y))))
+
+axiom Div_bound3 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> ((x / y) <= x)))
+
+axiom Mod_11 : (forall x:int. ((x % 1) = 0))
+
+axiom Div_11 : (forall x:int. ((x / 1) = x))
+
+axiom Div_inf1 :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> ((x / y) = 0)))
+
+axiom Div_inf_neg :
+  (forall x:int. forall y:int. (((0 <  x) and (x <= y)) ->
+  (((-x) / y) = (- 1))))
+
+axiom Mod_0 : (forall y:int. ((not (y = 0)) -> ((0 % y) = 0)))
+
+axiom Div_1_left : (forall y:int. ((1 <  y) -> ((1 / y) = 0)))
+
+axiom Div_minus1_left : (forall y:int. ((1 <  y) -> (((- 1) / y) = (- 1))))
+
+axiom Mod_1_left : (forall y:int. ((1 <  y) -> ((1 % y) = 1)))
+
+axiom Mod_minus1_left :
+  (forall y:int [((- 1) % y)]. ((1 <  y) -> (((- 1) % y) = (y - 1))))
+
+axiom Div_mult1 :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) / x)].
+  ((0 <  x) -> ((((x * y) + z) / x) = (y + (z / x)))))
+
+axiom Mod_mult1 :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) % x)].
+  ((0 <  x) -> ((((x * y) + z) % x) = (z % x))))
+
+function mod1(x: int, y: int) : int =
+  (if (0 <  y) then (x % y) else ((x % y) + y))
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_39))
+
+type positive
+
+logic positiveqtint : positive -> int
+
+axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
+
+axiom positiveqtaxiom1 :
+  (forall i:positive. (positiveqtint(i) <= 2147483647))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : positive, positive -> bool
+
+logic dummy2 : positive
+
+type positive__ref = { positive__content : positive
+}
+
+function positive__ref_positive__content__projection(a: positive__ref) : positive =
+  (a).positive__content
+
+predicate dynamic_invariant1(temp___expr_46: int, temp___is_init_42: bool,
+  temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
+  temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
+  (1 <= 2147483647)) -> in_range3(temp___expr_46))
+
+type character
+
+predicate in_range4(x: int) = ((0 <= x) and (x <= 255))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq3 : character, character -> bool
+
+logic dummy3 : character
+
+type character__ref = { character__content : character
+}
+
+function character__ref_character__content__projection(a: character__ref) : character =
+  (a).character__content
+
+predicate dynamic_invariant2(temp___expr_74: int, temp___is_init_70: bool,
+  temp___skip_constant_71: bool, temp___do_toplevel_72: bool,
+  temp___do_typ_inv_73: bool) = (((temp___is_init_70 = true) or
+  (0 <= 255)) -> in_range4(temp___expr_74))
+
+logic to_rep : character -> int
+
+logic of_rep : int -> character
+
+axiom inversion_axiom :
+  (forall x:character [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:character [to_rep(x)]. in_range4(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range4(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type map__ref = { map__content : (int,character) farray
+}
+
+logic slide : (int,character) farray, int, int -> (int,character) farray
+
+axiom slide_eq :
+  (forall a:(int,character) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,character) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq5(a: (int,character) farray, a__first: int, a__last: int,
+  b: (int,character) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep((a[temp___idx_91])) = to_rep((b[((b__first - a__first) + temp___idx_91)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep((a[temp___idx_91])) = to_rep((b[((b__first - a__first) + temp___idx_91)]))))))))
+
+function to_rep1(x: integer) : int = integerqtint(x)
+
+logic of_rep1 : int -> integer
+
+axiom inversion_axiom1 :
+  (forall x:integer [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range1(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (in_range3(low) and in_range3(high)))))
+
+type us_t = { elts : (int,character) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,character) farray = (a).elts
+
+function of_array(a: (int,character) farray, f: int, l: int) : us_t = {
+  elts = a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep1(first((a).rt))
+
+function last1(a: us_t) : int = to_rep1(last((a).rt))
+
+function length(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq6(x: us_t, y: us_t) : bool = bool_eq5((x).elts,
+  to_rep1(first((x).rt)), to_rep1(last((x).rt)), (y).elts,
+  to_rep1(first((y).rt)), to_rep1(last((y).rt)))
+
+logic user_eq4 : us_t, us_t -> bool
+
+logic dummy4 : us_t
+
+type string____ref = { string____content : us_t
+}
+
+function string____ref_string____content__projection(a: string____ref) : us_t =
+  (a).string____content
+
+predicate dynamic_invariant3(temp___expr_96: us_t, temp___is_init_92: bool,
+  temp___skip_constant_93: bool, temp___do_toplevel_94: bool,
+  temp___do_typ_inv_95: bool) = ((not (temp___skip_constant_93 = true)) ->
+  dynamic_property(1, 2147483647, first1(temp___expr_96),
+  last1(temp___expr_96)))
+
+type file_descr
+
+logic file_descrqtint : file_descr -> int
+
+axiom file_descrqtaxiom :
+  (forall i:file_descr. ((- 2147483648) <= file_descrqtint(i)))
+
+axiom file_descrqtaxiom1 :
+  (forall i:file_descr. (file_descrqtint(i) <= 2147483647))
+
+predicate in_range5(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq5 : file_descr, file_descr -> bool
+
+logic dummy5 : file_descr
+
+type file_descr__ref = { file_descr__content : file_descr
+}
+
+function file_descr__ref_file_descr__content__projection(a: file_descr__ref) : file_descr =
+  (a).file_descr__content
+
+function to_rep2(x: file_descr) : int = file_descrqtint(x)
+
+logic of_rep2 : int -> file_descr
+
+axiom inversion_axiom2 :
+  (forall x:file_descr [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
+
+axiom range_axiom2 :
+  (forall x:file_descr [to_rep2(x)]. in_range5(to_rep2(x)))
+
+axiom coerce_axiom2 :
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range5(x) ->
+  (to_rep2(of_rep2(x)) = x)))
+
+type count
+
+logic countqtint : count -> int
+
+axiom countqtaxiom : (forall i:count. (0 <= countqtint(i)))
+
+axiom countqtaxiom1 : (forall i:count. (countqtint(i) <= 2147483647))
+
+predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> int
+
+logic user_eq6 : count, count -> bool
+
+logic dummy6 : count
+
+type count__ref = { count__content : count
+}
+
+function count__ref_count__content__projection(a: count__ref) : count =
+  (a).count__content
+
+function to_rep3(x: count) : int = countqtint(x)
+
+logic of_rep3 : int -> count
+
+axiom inversion_axiom3 :
+  (forall x:count [to_rep3(x)]. (of_rep3(to_rep3(x)) = x))
+
+axiom range_axiom3 : (forall x:count [to_rep3(x)]. in_range6(to_rep3(x)))
+
+axiom coerce_axiom3 :
+  (forall x:int [to_rep3(of_rep3(x))]. (in_range6(x) ->
+  (to_rep3(of_rep3(x)) = x)))
+
+type us_split_fields = { rec__textio__file_type__descr : file_descr;
+rec__textio__file_type__before_lm : bool;
+rec__textio__file_type__before_lm_pm : bool; rec__textio__file_type__col :
+count; rec__textio__file_type__line : count; rec__textio__file_type__page :
+count; rec__textio__file_type__is_regular_file : bool
+}
+
+function us_split_fields_rec__textio__file_type__descr__projection(a: us_split_fields) : file_descr =
+  (a).rec__textio__file_type__descr
+
+function us_split_fields_rec__textio__file_type__before_lm__projection(a: us_split_fields) : bool =
+  (a).rec__textio__file_type__before_lm
+
+function us_split_fields_rec__textio__file_type__before_lm_pm__projection(a: us_split_fields) : bool =
+  (a).rec__textio__file_type__before_lm_pm
+
+function us_split_fields_rec__textio__file_type__col__projection(a: us_split_fields) : count =
+  (a).rec__textio__file_type__col
+
+function us_split_fields_rec__textio__file_type__line__projection(a: us_split_fields) : count =
+  (a).rec__textio__file_type__line
+
+function us_split_fields_rec__textio__file_type__page__projection(a: us_split_fields) : count =
+  (a).rec__textio__file_type__page
+
+function us_split_fields_rec__textio__file_type__is_regular_file__projection(a: us_split_fields) : bool =
+  (a).rec__textio__file_type__is_regular_file
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq9(a: us_rep, b: us_rep) : bool =
+  (if (((to_rep2(((a).us_split_fields1).rec__textio__file_type__descr) = to_rep2(((b).us_split_fields1).rec__textio__file_type__descr)) and
+  (to_int(((a).us_split_fields1).rec__textio__file_type__before_lm) = to_int(((b).us_split_fields1).rec__textio__file_type__before_lm))) and
+  ((((to_int(((a).us_split_fields1).rec__textio__file_type__before_lm_pm) = to_int(((b).us_split_fields1).rec__textio__file_type__before_lm_pm)) and
+  (to_rep3(((a).us_split_fields1).rec__textio__file_type__col) = to_rep3(((b).us_split_fields1).rec__textio__file_type__col))) and
+  (to_rep3(((a).us_split_fields1).rec__textio__file_type__line) = to_rep3(((b).us_split_fields1).rec__textio__file_type__line))) and
+  ((to_rep3(((a).us_split_fields1).rec__textio__file_type__page) = to_rep3(((b).us_split_fields1).rec__textio__file_type__page)) and
+  (to_int(((a).us_split_fields1).rec__textio__file_type__is_regular_file) = to_int(((b).us_split_fields1).rec__textio__file_type__is_regular_file))))) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic textio__file_type__descr__first__bit : int
+
+logic textio__file_type__descr__last__bit : int
+
+logic textio__file_type__descr__position : int
+
+axiom textio__file_type__descr__first__bit_axiom :
+  (0 <= textio__file_type__descr__first__bit)
+
+axiom textio__file_type__descr__last__bit_axiom :
+  (textio__file_type__descr__first__bit <  textio__file_type__descr__last__bit)
+
+axiom textio__file_type__descr__position_axiom :
+  (0 <= textio__file_type__descr__position)
+
+logic textio__file_type__before_lm__first__bit : int
+
+logic textio__file_type__before_lm__last__bit : int
+
+logic textio__file_type__before_lm__position : int
+
+axiom textio__file_type__before_lm__first__bit_axiom :
+  (0 <= textio__file_type__before_lm__first__bit)
+
+axiom textio__file_type__before_lm__last__bit_axiom :
+  (textio__file_type__before_lm__first__bit <  textio__file_type__before_lm__last__bit)
+
+axiom textio__file_type__before_lm__position_axiom :
+  (0 <= textio__file_type__before_lm__position)
+
+logic textio__file_type__before_lm_pm__first__bit : int
+
+logic textio__file_type__before_lm_pm__last__bit : int
+
+logic textio__file_type__before_lm_pm__position : int
+
+axiom textio__file_type__before_lm_pm__first__bit_axiom :
+  (0 <= textio__file_type__before_lm_pm__first__bit)
+
+axiom textio__file_type__before_lm_pm__last__bit_axiom :
+  (textio__file_type__before_lm_pm__first__bit <  textio__file_type__before_lm_pm__last__bit)
+
+axiom textio__file_type__before_lm_pm__position_axiom :
+  (0 <= textio__file_type__before_lm_pm__position)
+
+logic textio__file_type__col__first__bit : int
+
+logic textio__file_type__col__last__bit : int
+
+logic textio__file_type__col__position : int
+
+axiom textio__file_type__col__first__bit_axiom :
+  (0 <= textio__file_type__col__first__bit)
+
+axiom textio__file_type__col__last__bit_axiom :
+  (textio__file_type__col__first__bit <  textio__file_type__col__last__bit)
+
+axiom textio__file_type__col__position_axiom :
+  (0 <= textio__file_type__col__position)
+
+logic textio__file_type__line__first__bit : int
+
+logic textio__file_type__line__last__bit : int
+
+logic textio__file_type__line__position : int
+
+axiom textio__file_type__line__first__bit_axiom :
+  (0 <= textio__file_type__line__first__bit)
+
+axiom textio__file_type__line__last__bit_axiom :
+  (textio__file_type__line__first__bit <  textio__file_type__line__last__bit)
+
+axiom textio__file_type__line__position_axiom :
+  (0 <= textio__file_type__line__position)
+
+logic textio__file_type__page__first__bit : int
+
+logic textio__file_type__page__last__bit : int
+
+logic textio__file_type__page__position : int
+
+axiom textio__file_type__page__first__bit_axiom :
+  (0 <= textio__file_type__page__first__bit)
+
+axiom textio__file_type__page__last__bit_axiom :
+  (textio__file_type__page__first__bit <  textio__file_type__page__last__bit)
+
+axiom textio__file_type__page__position_axiom :
+  (0 <= textio__file_type__page__position)
+
+logic textio__file_type__is_regular_file__first__bit : int
+
+logic textio__file_type__is_regular_file__last__bit : int
+
+logic textio__file_type__is_regular_file__position : int
+
+axiom textio__file_type__is_regular_file__first__bit_axiom :
+  (0 <= textio__file_type__is_regular_file__first__bit)
+
+axiom textio__file_type__is_regular_file__last__bit_axiom :
+  (textio__file_type__is_regular_file__first__bit <  textio__file_type__is_regular_file__last__bit)
+
+axiom textio__file_type__is_regular_file__position_axiom :
+  (0 <= textio__file_type__is_regular_file__position)
+
+logic user_eq7 : us_rep, us_rep -> bool
+
+logic dummy7 : us_rep
+
+type file_type__ref = { file_type__content : us_rep
+}
+
+function file_type__ref_file_type__content__projection(a: file_type__ref) : us_rep =
+  (a).file_type__content
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic item__first : integer
+
+logic item__last : integer
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic eof : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic eof_ch : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+logic end_of_file : us_rep, int, (int,character) farray -> bool
+
+logic end_of_file__function_guard : bool, us_rep, int,
+  (int,character) farray -> prop
+
+logic fpeek : us_rep, int, (int,character) farray -> int
+
+logic fpeek__function_guard : int, us_rep, int,
+  (int,character) farray -> prop
+
+axiom end_of_file__post_axiom :
+  (forall file:us_rep.
+  (forall helpers__cur_position:int.
+  (forall helpers__the_file:(int,character) farray [end_of_file(file,
+  helpers__cur_position, helpers__the_file)].
+  (dynamic_invariant1(helpers__cur_position, true, true, true, true) ->
+  ((end_of_file(file, helpers__cur_position, helpers__the_file) = true) ->
+  (fpeek(file, helpers__cur_position, helpers__the_file) = eof))))))
+
+axiom end_of_file__post_axiom1 :
+  (forall file:us_rep.
+  (forall helpers__cur_position:int.
+  (forall helpers__the_file:(int,character) farray [end_of_file(file,
+  helpers__cur_position, helpers__the_file)].
+  (dynamic_invariant1(helpers__cur_position, true, true, true, true) ->
+  ((fpeek(file, helpers__cur_position, helpers__the_file) = eof) ->
+  (end_of_file(file, helpers__cur_position, helpers__the_file) = true))))))
+
+logic ferror : int -> int
+
+logic ferror__function_guard : int, int -> prop
+
+predicate dynamic_invariant4(temp___expr_172: int, temp___is_init_168: bool,
+  temp___skip_constant_169: bool, temp___do_toplevel_170: bool,
+  temp___do_typ_inv_171: bool) = (((temp___is_init_168 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range5(temp___expr_172))
+
+type int__
+
+logic int__qtint : int__ -> int
+
+axiom int__qtaxiom : (forall i:int__. ((- 2147483648) <= int__qtint(i)))
+
+axiom int__qtaxiom1 : (forall i:int__. (int__qtint(i) <= 2147483647))
+
+predicate in_range7(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE7 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check7 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE7 : us_image -> int
+
+logic user_eq8 : int__, int__ -> bool
+
+logic dummy8 : int__
+
+type int____ref = { int____content : int__
+}
+
+function int____ref_int____content__2__projection(a: int____ref) : int__ =
+  (a).int____content
+
+predicate dynamic_invariant5(temp___expr_207: int, temp___is_init_203: bool,
+  temp___skip_constant_204: bool, temp___do_toplevel_205: bool,
+  temp___do_typ_inv_206: bool) = (((temp___is_init_203 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range7(temp___expr_207))
+
+axiom ferror__post_axiom :
+  (forall stream:int [ferror(stream)]. (dynamic_invariant4(stream, true,
+  true, true, true) -> dynamic_invariant5(ferror(stream), true, false, true,
+  true)))
+
+logic bool_eq11 : int, int -> bool
+
+logic bool_ne : int, int -> bool
+
+logic bool_lt : int, int -> bool
+
+logic bool_le : int, int -> bool
+
+logic bool_gt : int, int -> bool
+
+logic bool_ge : int, int -> bool
+
+axiom bool_eq_axiom :
+  (forall x:int. (forall y:int. ((bool_eq11(x, y) = true) -> (x = y))))
+
+axiom bool_eq_axiom1 :
+  (forall x:int. (forall y:int. ((x = y) -> (bool_eq11(x, y) = true))))
+
+axiom bool_ne_axiom :
+  (forall x:int. (forall y:int. ((bool_ne(x, y) = true) -> (not (x = y)))))
+
+axiom bool_ne_axiom1 :
+  (forall x:int. (forall y:int. ((not (x = y)) -> (bool_ne(x, y) = true))))
+
+axiom bool_lt_axiom :
+  (forall x:int. (forall y:int. ((bool_lt(x, y) = true) -> (x <  y))))
+
+axiom bool_lt_axiom1 :
+  (forall x:int. (forall y:int. ((x <  y) -> (bool_lt(x, y) = true))))
+
+axiom bool_int__le_axiom :
+  (forall x:int. (forall y:int. ((bool_le(x, y) = true) -> (x <= y))))
+
+axiom bool_int__le_axiom1 :
+  (forall x:int. (forall y:int. ((x <= y) -> (bool_le(x, y) = true))))
+
+axiom bool_gt_axiom :
+  (forall x:int. (forall y:int. ((bool_gt(x, y) = true) -> (y <  x))))
+
+axiom bool_gt_axiom1 :
+  (forall x:int. (forall y:int. ((y <  x) -> (bool_gt(x, y) = true))))
+
+axiom bool_ge_axiom :
+  (forall x:int. (forall y:int. ((bool_ge(x, y) = true) -> (y <= x))))
+
+axiom bool_ge_axiom1 :
+  (forall x:int. (forall y:int. ((y <= x) -> (bool_ge(x, y) = true))))
+
+function length1(x: int, y: int) : int =
+  (if (x <= y) then ((y - x) + 1) else 0)
+
+logic has_char_in_string : us_t, int, int -> bool
+
+logic has_char_in_string__function_guard : bool, us_t, int, int -> prop
+
+logic find_char_in_string : us_t, int, int -> int
+
+logic find_char_in_string__function_guard : int, us_t, int, int -> prop
+
+logic memchr : us_t, int, int -> int
+
+logic memchr__function_guard : int, us_t, int, int -> prop
+
+axiom memchr__post_axiom :
+  (forall s:us_t.
+  (forall ch:int. forall n:int [memchr(s, ch, n)]. ((((dynamic_invariant3(s,
+  true, true, true, true) and dynamic_invariant2(ch, true, true, true,
+  true)) and dynamic_invariant(n, true, true, true, true)) and
+  (n <= length(s))) -> ((has_char_in_string(s, ch, n) = true) -> (memchr(s,
+  ch, n) = find_char_in_string(s, ch, n))))))
+
+axiom memchr__post_axiom1 :
+  (forall s:us_t.
+  (forall ch:int. forall n:int [memchr(s, ch, n)]. ((((dynamic_invariant3(s,
+  true, true, true, true) and dynamic_invariant2(ch, true, true, true,
+  true)) and dynamic_invariant(n, true, true, true, true)) and
+  (n <= length(s))) -> ((not (has_char_in_string(s, ch, n) = true)) ->
+  (memchr(s, ch, n) = 0)))))
+
+axiom memchr__post_axiom2 :
+  (forall s:us_t.
+  (forall ch:int. forall n:int [memchr(s, ch, n)]. ((((dynamic_invariant3(s,
+  true, true, true, true) and dynamic_invariant2(ch, true, true, true,
+  true)) and dynamic_invariant(n, true, true, true, true)) and
+  (n <= length(s))) -> dynamic_invariant(memchr(s, ch, n), true, false, true,
+  true))))
+
+logic n : int
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+logic attr__ATTRIBUTE_ADDRESS8 : int
+
+logic no_char_in_slice : int, int, int, (int,character) farray -> bool
+
+logic no_char_in_slice__function_guard : bool, int, int, int,
+  (int,character) farray -> prop
+
+axiom no_char_in_slice__def_axiom :
+  (forall ch:int. forall from:int. forall to__:int.
+  (forall helpers__the_file:(int,character) farray [no_char_in_slice(ch,
+  from, to__, helpers__the_file)]. ((no_char_in_slice(ch, from, to__,
+  helpers__the_file) = true) ->
+  (forall idx:int. (((from <= idx) and (idx <= to__)) ->
+  (not (to_rep((helpers__the_file[idx])) = ch)))))))
+
+axiom no_char_in_slice__def_axiom1 :
+  (forall ch:int. forall from:int. forall to__:int.
+  (forall helpers__the_file:(int,character) farray [no_char_in_slice(ch,
+  from, to__, helpers__the_file)].
+  ((forall idx:int. (((from <= idx) and (idx <= to__)) ->
+   (not (to_rep((helpers__the_file[idx])) = ch)))) ->
+  (no_char_in_slice(ch, from, to__, helpers__the_file) = true))))
+
+logic find_char_in_slice : int, int, int, (int,character) farray -> int
+
+logic find_char_in_slice__function_guard : int, int, int, int,
+  (int,character) farray -> prop
+
+logic has_char_in_slice : int, int, int, (int,character) farray -> bool
+
+logic has_char_in_slice__function_guard : bool, int, int, int,
+  (int,character) farray -> prop
+
+axiom find_char_in_slice__post_axiom :
+  (forall ch:int. forall from:int. forall to__:int.
+  (forall helpers__the_file:(int,character) farray [find_char_in_slice(ch,
+  from, to__, helpers__the_file)]. ((((dynamic_invariant2(ch, true, true,
+  true, true) and dynamic_invariant1(from, true, true, true, true)) and
+  dynamic_invariant1(to__, true, true, true, true)) and
+  (has_char_in_slice(ch, from, to__, helpers__the_file) = true)) ->
+  (from <= find_char_in_slice(ch, from, to__, helpers__the_file)))))
+
+axiom find_char_in_slice__post_axiom1 :
+  (forall ch:int. forall from:int. forall to__:int.
+  (forall helpers__the_file:(int,character) farray [find_char_in_slice(ch,
+  from, to__, helpers__the_file)]. ((((dynamic_invariant2(ch, true, true,
+  true, true) and dynamic_invariant1(from, true, true, true, true)) and
+  dynamic_invariant1(to__, true, true, true, true)) and
+  (has_char_in_slice(ch, from, to__, helpers__the_file) = true)) ->
+  (find_char_in_slice(ch, from, to__, helpers__the_file) <= to__))))
+
+axiom find_char_in_slice__post_axiom2 :
+  (forall ch:int. forall from:int. forall to__:int.
+  (forall helpers__the_file:(int,character) farray [find_char_in_slice(ch,
+  from, to__, helpers__the_file)]. ((((dynamic_invariant2(ch, true, true,
+  true, true) and dynamic_invariant1(from, true, true, true, true)) and
+  dynamic_invariant1(to__, true, true, true, true)) and
+  (has_char_in_slice(ch, from, to__, helpers__the_file) = true)) ->
+  (no_char_in_slice(ch, from, (find_char_in_slice(ch, from, to__,
+  helpers__the_file) - 1), helpers__the_file) = true))))
+
+axiom find_char_in_slice__post_axiom3 :
+  (forall ch:int. forall from:int. forall to__:int.
+  (forall helpers__the_file:(int,character) farray [find_char_in_slice(ch,
+  from, to__, helpers__the_file)]. ((((dynamic_invariant2(ch, true, true,
+  true, true) and dynamic_invariant1(from, true, true, true, true)) and
+  dynamic_invariant1(to__, true, true, true, true)) and
+  (has_char_in_slice(ch, from, to__, helpers__the_file) = true)) ->
+  (to_rep((helpers__the_file[find_char_in_slice(ch, from, to__,
+  helpers__the_file)])) = ch))))
+
+axiom find_char_in_slice__post_axiom4 :
+  (forall ch:int. forall from:int. forall to__:int.
+  (forall helpers__the_file:(int,character) farray [find_char_in_slice(ch,
+  from, to__, helpers__the_file)]. ((((dynamic_invariant2(ch, true, true,
+  true, true) and dynamic_invariant1(from, true, true, true, true)) and
+  dynamic_invariant1(to__, true, true, true, true)) and
+  (has_char_in_slice(ch, from, to__, helpers__the_file) = true)) ->
+  dynamic_invariant1(find_char_in_slice(ch, from, to__, helpers__the_file),
+  true, false, true, true))))
+
+logic attr__ATTRIBUTE_ADDRESS9 : int
+
+logic attr__ATTRIBUTE_ADDRESS10 : int
+
+logic attr__ATTRIBUTE_ADDRESS11 : int
+
+logic eof_at_start : bool
+
+logic attr__ATTRIBUTE_ADDRESS12 : int
+
+logic last_at_start : int
+
+logic attr__ATTRIBUTE_ADDRESS13 : int
+
+logic cur_position_at_start : int
+
+logic attr__ATTRIBUTE_ADDRESS14 : int
+
+logic item_at_start : us_t
+
+logic attr__ATTRIBUTE_ADDRESS15 : int
+
+logic fpeek1 : int, int, (int,character) farray -> int
+
+logic fpeek__function_guard1 : int, int, int, (int,character) farray -> prop
+
+logic no_char_in_string : us_t, int, int -> bool
+
+logic no_char_in_string__function_guard : bool, us_t, int, int -> prop
+
+logic attr__ATTRIBUTE_ADDRESS16 : int
+
+type tTbufSP1
+
+logic tTbufSP1qtint : tTbufSP1 -> int
+
+axiom tTbufSP1qtaxiom : (forall i:tTbufSP1. (1 <= tTbufSP1qtint(i)))
+
+axiom tTbufSP1qtaxiom1 : (forall i:tTbufSP1. (tTbufSP1qtint(i) <= 80))
+
+predicate in_range8(x: int) = ((1 <= x) and (x <= 80))
+
+function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE8 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check8 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE8 : us_image -> int
+
+logic user_eq9 : tTbufSP1, tTbufSP1 -> bool
+
+logic dummy9 : tTbufSP1
+
+type tTbufSP1__ref = { tTbufSP1__content : tTbufSP1
+}
+
+function tTbufSP1__ref_tTbufSP1__content__projection(a: tTbufSP1__ref) : tTbufSP1 =
+  (a).tTbufSP1__content
+
+logic temp_____aggregate_def_413 : int -> (int,character) farray
+
+predicate dynamic_invariant6(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+predicate dynamic_invariant7(temp___expr_179: int, temp___is_init_175: bool,
+  temp___skip_constant_176: bool, temp___do_toplevel_177: bool,
+  temp___do_typ_inv_178: bool) = (((temp___is_init_175 = true) or
+  (0 <= 2147483647)) -> in_range6(temp___expr_179))
+
+axiom fpeek__post_axiom :
+  (forall file:us_rep.
+  (forall helpers__cur_position:int.
+  (forall helpers__the_file:(int,character) farray [fpeek(file,
+  helpers__cur_position, helpers__the_file)].
+  (dynamic_invariant1(helpers__cur_position, true, true, true, true) ->
+  dynamic_invariant5(fpeek(file, helpers__cur_position, helpers__the_file),
+  true, false, true, true)))))
+
+axiom fpeek__def_axiom :
+  (forall file:us_rep.
+  (forall helpers__cur_position:int.
+  (forall helpers__the_file:(int,character) farray [fpeek(file,
+  helpers__cur_position, helpers__the_file)].
+  (dynamic_invariant1(helpers__cur_position, true, true, true, true) ->
+  (fpeek(file, helpers__cur_position,
+  helpers__the_file) = fpeek1(to_rep2(((file).us_split_fields1).rec__textio__file_type__descr),
+  helpers__cur_position, helpers__the_file))))))
+
+axiom eof_ch__def_axiom : (eof_ch = mod1(eof, 256))
+
+axiom fpeek__post_axiom1 :
+  (forall stream:int. forall helpers__cur_position:int.
+  (forall helpers__the_file:(int,character) farray [fpeek1(stream,
+  helpers__cur_position, helpers__the_file)]. ((dynamic_invariant4(stream,
+  true, true, true, true) and dynamic_invariant1(helpers__cur_position, true,
+  true, true, true)) -> dynamic_invariant5(fpeek1(stream,
+  helpers__cur_position, helpers__the_file), true, false, true, true))))
+
+axiom fpeek__def_axiom1 :
+  (forall stream:int. forall helpers__cur_position:int.
+  (forall helpers__the_file:(int,character) farray [fpeek1(stream,
+  helpers__cur_position, helpers__the_file)]. ((dynamic_invariant4(stream,
+  true, true, true, true) and dynamic_invariant1(helpers__cur_position, true,
+  true, true, true)) -> (fpeek1(stream, helpers__cur_position,
+  helpers__the_file) = (if (to_rep((helpers__the_file[helpers__cur_position])) = eof_ch) then eof else to_rep((helpers__the_file[helpers__cur_position])))))))
+
+axiom has_char_in_slice__def_axiom :
+  (forall ch:int. forall from:int. forall to__:int.
+  (forall helpers__the_file:(int,character) farray [has_char_in_slice(ch,
+  from, to__, helpers__the_file)]. ((has_char_in_slice(ch, from, to__,
+  helpers__the_file) = true) ->
+  (exists idx:int. (((from <= idx) and (idx <= to__)) and
+  (to_rep((helpers__the_file[idx])) = ch))))))
+
+axiom has_char_in_slice__def_axiom1 :
+  (forall ch:int. forall from:int. forall to__:int.
+  (forall helpers__the_file:(int,character) farray [has_char_in_slice(ch,
+  from, to__, helpers__the_file)].
+  ((exists idx:int. (((from <= idx) and (idx <= to__)) and
+   (to_rep((helpers__the_file[idx])) = ch))) ->
+  (has_char_in_slice(ch, from, to__, helpers__the_file) = true))))
+
+axiom no_char_in_string__def_axiom :
+  (forall s:us_t.
+  (forall ch:int. forall n1:int [no_char_in_string(s, ch, n1)].
+  ((no_char_in_string(s, ch, n1) = true) ->
+  (forall idx:int. (((first1(s) <= idx) and
+  (idx <= ((first1(s) - 1) + n1))) ->
+  (not (to_rep((to_array(s)[idx])) = ch)))))))
+
+axiom no_char_in_string__def_axiom1 :
+  (forall s:us_t.
+  (forall ch:int. forall n1:int [no_char_in_string(s, ch, n1)].
+  ((forall idx:int. (((first1(s) <= idx) and
+   (idx <= ((first1(s) - 1) + n1))) ->
+   (not (to_rep((to_array(s)[idx])) = ch)))) ->
+  (no_char_in_string(s, ch, n1) = true))))
+
+axiom has_char_in_string__def_axiom :
+  (forall s:us_t.
+  (forall ch:int. forall n1:int [has_char_in_string(s, ch, n1)].
+  ((has_char_in_string(s, ch, n1) = true) ->
+  (exists idx:int. (((first1(s) <= idx) and
+  (idx <= ((first1(s) - 1) + n1))) and (to_rep((to_array(s)[idx])) = ch))))))
+
+axiom has_char_in_string__def_axiom1 :
+  (forall s:us_t.
+  (forall ch:int. forall n1:int [has_char_in_string(s, ch, n1)].
+  ((exists idx:int. (((first1(s) <= idx) and
+   (idx <= ((first1(s) - 1) + n1))) and (to_rep((to_array(s)[idx])) = ch))) ->
+  (has_char_in_string(s, ch, n1) = true))))
+
+axiom find_char_in_string__post_axiom :
+  (forall s:us_t.
+  (forall ch:int. forall n1:int [find_char_in_string(s, ch, n1)].
+  ((((dynamic_invariant3(s, true, true, true, true) and
+  dynamic_invariant2(ch, true, true, true, true)) and dynamic_invariant(n1,
+  true, true, true, true)) and ((((first1(s) + n1) - 1) <= last1(s)) and
+  (has_char_in_string(s, ch, n1) = true))) ->
+  (first1(s) <= find_char_in_string(s, ch, n1)))))
+
+axiom find_char_in_string__post_axiom1 :
+  (forall s:us_t.
+  (forall ch:int. forall n1:int [find_char_in_string(s, ch, n1)].
+  ((((dynamic_invariant3(s, true, true, true, true) and
+  dynamic_invariant2(ch, true, true, true, true)) and dynamic_invariant(n1,
+  true, true, true, true)) and ((((first1(s) + n1) - 1) <= last1(s)) and
+  (has_char_in_string(s, ch, n1) = true))) -> (find_char_in_string(s, ch,
+  n1) <= ((first1(s) - 1) + n1)))))
+
+axiom find_char_in_string__post_axiom2 :
+  (forall s:us_t.
+  (forall ch:int. forall n1:int [find_char_in_string(s, ch, n1)].
+  ((((dynamic_invariant3(s, true, true, true, true) and
+  dynamic_invariant2(ch, true, true, true, true)) and dynamic_invariant(n1,
+  true, true, true, true)) and ((((first1(s) + n1) - 1) <= last1(s)) and
+  (has_char_in_string(s, ch, n1) = true))) -> (no_char_in_string(s, ch,
+  (find_char_in_string(s, ch, n1) - 1)) = true))))
+
+axiom find_char_in_string__post_axiom3 :
+  (forall s:us_t.
+  (forall ch:int. forall n1:int [find_char_in_string(s, ch, n1)].
+  ((((dynamic_invariant3(s, true, true, true, true) and
+  dynamic_invariant2(ch, true, true, true, true)) and dynamic_invariant(n1,
+  true, true, true, true)) and ((((first1(s) + n1) - 1) <= last1(s)) and
+  (has_char_in_string(s, ch, n1) = true))) ->
+  (to_rep((to_array(s)[find_char_in_string(s, ch, n1)])) = ch))))
+
+axiom find_char_in_string__post_axiom4 :
+  (forall s:us_t.
+  (forall ch:int. forall n1:int [find_char_in_string(s, ch, n1)].
+  ((((dynamic_invariant3(s, true, true, true, true) and
+  dynamic_invariant2(ch, true, true, true, true)) and dynamic_invariant(n1,
+  true, true, true, true)) and ((((first1(s) + n1) - 1) <= last1(s)) and
+  (has_char_in_string(s, ch, n1) = true))) ->
+  dynamic_invariant1(find_char_in_string(s, ch, n1), true, false, true,
+  true))))
+
+axiom def_axiom :
+  (forall temp___415:int. (dynamic_invariant2(temp___415, true, true, true,
+  true) ->
+  (forall temp___416:int.
+  (to_rep((temp_____aggregate_def_413(temp___415)[temp___416])) = temp___415))))
+
+axiom cdiv_cases :
+  (forall n1:int. forall d:int [div(n1, d)]. ((0 <= n1) -> ((0 <  d) ->
+  (div(n1, d) = (n1 / d)))))
+
+axiom cdiv_cases1 :
+  (forall n1:int. forall d:int [div(n1, d)]. ((n1 <= 0) -> ((0 <  d) ->
+  (div(n1, d) = (-((-n1) / d))))))
+
+axiom cdiv_cases2 :
+  (forall n1:int. forall d:int [div(n1, d)]. ((0 <= n1) -> ((d <  0) ->
+  (div(n1, d) = (-(n1 / (-d)))))))
+
+axiom cdiv_cases3 :
+  (forall n1:int. forall d:int [div(n1, d)]. ((n1 <= 0) -> ((d <  0) ->
+  (div(n1, d) = ((-n1) / (-d))))))
+
+axiom cmod_cases :
+  (forall n1:int. forall d:int [mod(n1, d)]. ((0 <= n1) -> ((0 <  d) ->
+  (mod(n1, d) = (n1 % d)))))
+
+axiom cmod_cases1 :
+  (forall n1:int. forall d:int [mod(n1, d)]. ((n1 <= 0) -> ((0 <  d) ->
+  (mod(n1, d) = (-((-n1) % d))))))
+
+axiom cmod_cases2 :
+  (forall n1:int. forall d:int [mod(n1, d)]. ((0 <= n1) -> ((d <  0) ->
+  (mod(n1, d) = (n1 % (-d))))))
+
+axiom cmod_cases3 :
+  (forall n1:int. forall d:int [mod(n1, d)]. ((n1 <= 0) -> ((d <  0) ->
+  (mod(n1, d) = (-((-n1) % (-d)))))))
+
+ (* File "textio-get_line.adb", line 25, characters 0-0 *)
+goal defqtvc :
+  (forall file__split_fields:us_split_fields.
+  forall item:(int,character) farray. forall last2:int.
+  forall the_file:(int,character) farray. forall cur_position:int.
+  forall rest:int. forall p:int.
+  (forall file__split_fields1:us_split_fields.
+  ((file__split_fields1 = file__split_fields) ->
+  (forall the_file1:(int,character) farray. ((the_file1 = the_file) ->
+  (forall cur_position1:int. ((cur_position1 = cur_position) ->
+  (forall item1:(int,character) farray. ((item1 = item) ->
+  (forall last3:int. ((last3 = last2) -> (dynamic_property(1, 2147483647,
+  to_rep1(item__first), to_rep1(item__last)) -> (dynamic_invariant(last2,
+  true, false, true, true) -> (dynamic_invariant1(cur_position, true, false,
+  true, true) -> (dynamic_invariant2(eof_ch, true, false, true, true) ->
+  ((mod1(eof, 256) = eof_ch) -> (dynamic_invariant5(eof, true, false, true,
+  true) -> (dynamic_invariant1(n, true, false, true, true) ->
+  (dynamic_invariant(rest, false, false, true, true) -> ((((((n <= 80) and
+  (((to_rep1(item__first) - 1) <= last2) and
+  (last2 <= to_rep1(item__last)))) and ((1 <  n) ->
+  ((to_rep1(item__first) <= (last2 + 1)) and
+  (((last2 + n) - 1) <= to_rep1(item__last))))) and ((end_of_file({
+  us_split_fields1 = file__split_fields }, cur_position, the_file) = true) ->
+  (to_rep1(item__first) <= last2))) and (cur_position <= 10000)) ->
+  (forall item2:(int,character) farray. forall last4:int.
+  forall cur_position2:int. forall rest1:int. ((dynamic_invariant(p, false,
+  false, true, true) and (let o = { us_split_fields1 = file__split_fields }
+  : us_rep in (let textio__get_line__get_chunk__eof_at_start__assume =
+  end_of_file(o, cur_position, the_file) : bool in
+  (((textio__get_line__get_chunk__eof_at_start__assume = true) <-> (fpeek(o,
+  cur_position, the_file) = eof)) and
+  ((textio__get_line__get_chunk__eof_at_start__assume = eof_at_start) and
+  ((last2 = last_at_start) and (dynamic_invariant(last_at_start, true, false,
+  true, true) and ((cur_position = cur_position_at_start) and
+  (dynamic_invariant1(cur_position_at_start, true, false, true, true) and
+  (exists o1:int. ((to_rep1(item__last) = o1) and
+  (exists o2:int. ((to_rep1(item__first) = o2) and ((of_array(item, o2,
+  o1) = item_at_start) and (dynamic_invariant3(item_at_start, true, false,
+  true, true) and
+  (exists buf:(int,character) farray.
+  ((buf = temp_____aggregate_def_413(32)) and
+  (exists spark__branch:bool.
+  ((spark__branch = (if (n = 1) then true else false)) and
+  (if (spark__branch = true) then ((((rest1 = n) and (item2 = item)) and
+  (last4 = last2)) and
+  (cur_position2 = cur_position)) else (exists o3:integer.
+                                       ((to_rep1(o3) = 80) and
+                                       (exists o4:integer.
+                                       ((to_rep1(o4) = 1) and
+                                       (exists textio__memset__b:(int,character) farray.
+                                       ((forall idx:int.
+                                        (((to_rep1(o4) <= idx) and
+                                        (idx <= to_rep1(o3))) ->
+                                        (if (idx <  (to_rep1(o4) + n)) then (to_rep((textio__memset__b[idx])) = 10) else (to_rep((textio__memset__b[idx])) = to_rep((buf[idx])))))) and
+                                       (let temp___417 =
+                                       of_array(textio__memset__b, 1, 80)
+                                       : us_t in
+                                       (exists buf1:(int,character) farray.
+                                       ((buf1 = slide(to_array(temp___417),
+                                       first1(temp___417), 1)) and
+                                       ((to_rep((buf1[n])) = 10) and
+                                       (exists o5:int.
+                                       ((to_rep2((file__split_fields).rec__textio__file_type__descr) = o5) and
+                                       (let o6 = n : int in
+                                       (exists o7:integer.
+                                       ((to_rep1(o7) = 80) and
+                                       (exists o8:integer.
+                                       ((to_rep1(o8) = 1) and
+                                       (exists cur_position3:int.
+                                       ((cur_position3 = cur_position) and
+                                       (exists the_file2:(int,character) farray.
+                                       ((the_file2 = the_file) and
+                                       (exists success:bool.
+                                       exists helpers__fgets__strng:(int,character) farray.
+                                       (((if (success = true) then (((ferror(o5) = 0) and
+                                       (not (fpeek1(o5, cur_position3,
+                                       the_file2) = eof))) and
+                                       (if ((no_char_in_slice(10,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file) = true) and
+                                       (no_char_in_slice(eof_ch,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file) = true)) then ((((cur_position2 = ((cur_position3 + o6) - 1)) and
+                                       (forall idx:int. (((1 <= idx) and
+                                       (idx <= (o6 - 1))) ->
+                                       (to_rep((helpers__fgets__strng[idx])) = to_rep((the_file[((cur_position3 + idx) - 1)])))))) and
+                                       (to_rep((helpers__fgets__strng[o6])) = 0)) and
+                                       (forall idx:int.
+                                       ((((o6 + 1) <= idx) and
+                                       (idx <= to_rep1(o7))) ->
+                                       (to_rep((helpers__fgets__strng[idx])) = to_rep((buf1[idx])))))) else (if ((has_char_in_slice(10,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file) = true) and
+                                       (no_char_in_slice(eof_ch,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file) = true)) then (((((cur_position2 = find_char_in_slice(10,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file)) and
+                                       (forall idx:int.
+                                       (((cur_position3 <= idx) and
+                                       (idx <= (find_char_in_slice(10,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file) - 1))) ->
+                                       (to_rep((helpers__fgets__strng[((idx - cur_position3) + 1)])) = to_rep((the_file[idx])))))) and
+                                       (to_rep((helpers__fgets__strng[((find_char_in_slice(10,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file) - cur_position3) + 1)])) = 10)) and
+                                       (to_rep((helpers__fgets__strng[((find_char_in_slice(10,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file) - cur_position3) + 2)])) = 0)) and
+                                       (forall idx:int.
+                                       (((((find_char_in_slice(10,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file) - cur_position3) + 3) <= idx) and
+                                       (idx <= to_rep1(o7))) ->
+                                       (to_rep((helpers__fgets__strng[idx])) = to_rep((buf1[idx])))))) else (((no_char_in_slice(10,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file) = true) and
+                                       (has_char_in_slice(eof_ch,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file) = true)) and
+                                       (((((cur_position2 = find_char_in_slice(eof_ch,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file)) and
+                                       (forall idx:int.
+                                       (((cur_position3 <= idx) and
+                                       (idx <= (find_char_in_slice(eof_ch,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file) - 1))) ->
+                                       (to_rep((helpers__fgets__strng[((idx - cur_position3) + 1)])) = to_rep((the_file[idx])))))) and
+                                       (to_rep((helpers__fgets__strng[((find_char_in_slice(eof_ch,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file) - cur_position3) + 1)])) = 0)) and
+                                       (forall idx:int.
+                                       (((((find_char_in_slice(eof_ch,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file) - cur_position3) + 2) <= idx) and
+                                       (idx <= to_rep1(o7))) ->
+                                       (to_rep((helpers__fgets__strng[idx])) = to_rep((buf1[idx])))))) and
+                                       (no_char_in_string(of_array(helpers__fgets__strng,
+                                       to_rep1(o8), to_rep1(o7)), 10,
+                                       ((find_char_in_slice(eof_ch,
+                                       cur_position3,
+                                       ((cur_position3 + o6) - 2),
+                                       the_file) - cur_position3) + 1)) = true)))))) else ((not (ferror(o5) = 0)) or
+                                       ((fpeek1(o5, cur_position3,
+                                       the_file2) = eof) and
+                                       (cur_position2 = cur_position3)))) and
+                                       dynamic_invariant1(cur_position2,
+                                       true, true, true, true)) and
+                                       (let temp___418 =
+                                       of_array(helpers__fgets__strng, 1, 80)
+                                       : us_t in
+                                       (exists buf2:(int,character) farray.
+                                       ((buf2 = slide(to_array(temp___418),
+                                       first1(temp___418), 1)) and
+                                       (exists spark__branch1:bool.
+                                       ((spark__branch1 = (if (success = true) then false else true)) and
+                                       (if (spark__branch1 = true) then ((
+                                       (exists o9:int.
+                                       ((to_rep2((file__split_fields).rec__textio__file_type__descr) = o9) and
+                                       (let o10 = ferror(o9) : int in
+                                       (dynamic_invariant5(o10, true, false,
+                                       true, true) and
+                                       (exists spark__branch2:bool.
+                                       ((spark__branch2 = (if (o10 = 0) then false else true)) and
+                                       ((not (spark__branch2 = true)) and
+                                       (exists o11:int.
+                                       ((to_rep1(item__first) = o11) and
+                                       (exists spark__branch3:bool.
+                                       ((spark__branch3 = (if (o11 <= last2) then true else false)) and
+                                       ((spark__branch3 = true) and
+                                       (rest1 = 0))))))))))))) and
+                                       (item2 = item)) and
+                                       (last4 = last2)) else (let o9 = n
+                                       : int in (let o10 = of_array(buf2, 1,
+                                       80) : us_t in (let o11 = memchr(o10,
+                                       10, o9) : int in
+                                       ((dynamic_invariant(o11, true, false,
+                                       true, true) and
+                                       (if (has_char_in_string(o10, 10,
+                                       o9) = true) then (o11 = find_char_in_string(o10,
+                                       10, o9)) else (o11 = 0))) and
+                                       (exists p1:int. ((p1 = o11) and
+                                       (exists spark__branch2:bool.
+                                       ((spark__branch2 = (if (p1 = 0) then true else false)) and
+                                       (if (spark__branch2 = true) then (let o12 =
+                                       (n - 1) : int in (let o13 =
+                                       (last2 + 1) : int in
+                                       (in_range1(o13) and (let o14 =
+                                       item__last : integer in (let o15 =
+                                       item__first : integer in
+                                       (exists o16:(int,character) farray.
+                                       ((o16 = item2) and
+                                       ((if (bool_eq11(o12,
+                                       0) = true) then (bool_eq5(o16,
+                                       to_rep1(o15), to_rep1(o14), item,
+                                       to_rep1(o15),
+                                       to_rep1(o14)) = true) else ((bool_ne(o12,
+                                       0) = true) ->
+                                       (forall idx:int.
+                                       (((to_rep1(o15) <= idx) and
+                                       (idx <= to_rep1(o14))) ->
+                                       (if ((o13 <= idx) and
+                                       (idx <= ((o13 + o12) - 1))) then (to_rep((o16[idx])) = to_rep((to_array(of_array(buf2,
+                                       1,
+                                       80))[((idx - o13) + 1)]))) else (to_rep((o16[idx])) = to_rep((item[idx])))))))) and
+                                       (let o17 = ((last2 - 1) + n) : int in
+                                       (in_range1(o17) and ((last4 = o17) and
+                                       (rest1 = 1)))))))))))) else (let o12 =
+                                       (p1 - 1) : int in (in_range2(o12) and
+                                       (exists k:int. ((k = o12) and
+                                       (dynamic_invariant(k, true, false,
+                                       true, true) and
+                                       (((no_char_in_slice(eof_ch,
+                                       cur_position_at_start,
+                                       ((cur_position_at_start + n) - 2),
+                                       the_file) = true) ->
+                                       (k = (find_char_in_slice(10,
+                                       cur_position_at_start,
+                                       ((cur_position_at_start + n) - 2),
+                                       the_file) - cur_position_at_start))) and
+                                       (exists k1:int.
+                                       ((exists o13:bool. ((let o14 = (k + 2)
+                                        : int in (in_range1(o14) and
+                                        (if (n <  o14) then (o13 = true) else (let o15 =
+                                        (k + 2) : int in (in_range1(o15) and
+                                        (((1 <= o15) and (o15 <= 80)) and
+                                        (exists o16:int.
+                                        ((to_rep((buf2[o15])) = o16) and
+                                        (o13 = (if (o16 = 0) then false else true)))))))))) and
+                                        (exists spark__branch3:bool.
+                                        ((spark__branch3 = o13) and
+                                        (if (spark__branch3 = true) then ((to_rep((buf2[k])) = 0) and
+                                        (let o14 = (k - 1) : int in
+                                        (in_range2(o14) and
+                                        (k1 = o14)))) else (k1 = k)))))) and
+                                       (let o13 = (last2 + 1) : int in
+                                       (in_range1(o13) and (let o14 =
+                                       item__last : integer in (let o15 =
+                                       item__first : integer in
+                                       (exists o16:(int,character) farray.
+                                       ((o16 = item2) and ((if (bool_eq11(k1,
+                                       0) = true) then (bool_eq5(o16,
+                                       to_rep1(o15), to_rep1(o14), item,
+                                       to_rep1(o15),
+                                       to_rep1(o14)) = true) else ((bool_ne(k1,
+                                       0) = true) ->
+                                       (forall idx:int.
+                                       (((to_rep1(o15) <= idx) and
+                                       (idx <= to_rep1(o14))) ->
+                                       (if ((o13 <= idx) and
+                                       (idx <= ((o13 + k1) - 1))) then (to_rep((o16[idx])) = to_rep((to_array(of_array(buf2,
+                                       1,
+                                       80))[((idx - o13) + 1)]))) else (to_rep((o16[idx])) = to_rep((item[idx])))))))) and
+                                       (let o17 = (last2 + k1) : int in
+                                       (in_range1(o17) and ((last4 = o17) and
+                                       (rest1 = 0))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) ->
+  (forall o:bool. (((exists o1:int. (to_rep1(item__first) = o1)) and
+  (if ((forall idx:int. (((to_rep1(item__first) <= idx) and
+       (idx <= last2)) -> (to_rep((item2[idx])) = to_rep((item[idx]))))) and
+  ((cur_position2 - cur_position) = (last4 - last2))) then (o = (if (forall idx:int.
+                                                                    ((((last2 + 1) <= idx) and
+                                                                    (idx <= last4)) ->
+                                                                    (to_rep((item2[idx])) = to_rep((the_file[(((idx - last2) - 1) + cur_position)]))))) then true else false)) else (o = false))) ->
+  ((o = true) -> ((not (n = 1)) -> ((not (end_of_file({ us_split_fields1 =
+  file__split_fields }, cur_position, the_file) = true)) -> (let o1 =
+  ((cur_position + n) - 2) : int in (in_range3(o1) -> (let o2 =
+  no_char_in_slice(10, cur_position, o1, the_file) : bool in
+  (((o2 = true) <->
+  (forall idx:int. (((cur_position <= idx) and (idx <= o1)) ->
+  (not (to_rep((the_file[idx])) = 10))))) -> (((not (o2 = true)) or
+  in_range3(((cur_position + n) - 2))) -> (let o3 =
+  (if (o2 = true) then no_char_in_slice(eof_ch, cur_position,
+  ((cur_position + n) - 2), the_file) else false) : bool in
+  (((not (o2 = true)) or ((o3 = true) <->
+  (forall idx:int. (((cur_position <= idx) and
+  (idx <= ((cur_position + n) - 2))) ->
+  (not (to_rep((the_file[idx])) = eof_ch)))))) -> ((not (o3 = true)) ->
+  (let o4 = ((cur_position + n) - 2) : int in (in_range3(o4) -> (let o5 =
+  eof_ch : int in (let o6 = no_char_in_slice(o5, cur_position, o4, the_file)
+  : bool in (((o6 = true) <->
+  (forall idx:int. (((cur_position <= idx) and (idx <= o4)) ->
+  (not (to_rep((the_file[idx])) = o5))))) -> ((not (o6 = true)) -> (let o7 =
+  ((cur_position + n) - 2) : int in (in_range3(o7) -> (let o8 = eof_ch
+  : int in (let o9 = find_char_in_slice(o8, cur_position, o7, the_file)
+  : int in ((dynamic_invariant1(o9, true, false, true, true) and
+  ((((cur_position <= o9) and (o9 <= o7)) and (no_char_in_slice(o8,
+  cur_position, (o9 - 1), the_file) = true)) and
+  (to_rep((the_file[o9])) = o8))) ->
+  ((last4 = ((last2 + o9) - cur_position)) -> (let o10 =
+  ((cur_position + n) - 2) : int in (in_range3(o10) ->
+  (has_char_in_slice(eof_ch, cur_position, o10,
+  the_file) = true))))))))))))))))))))))))))))))))))))))))))))))))))

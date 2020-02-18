@@ -1,0 +1,438 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type red_or_black
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 1))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : red_or_black, red_or_black -> bool
+
+logic dummy1 : red_or_black
+
+type red_or_black__ref = { red_or_black__content : red_or_black
+}
+
+function red_or_black__ref_red_or_black__content__projection(a: red_or_black__ref) : red_or_black =
+  (a).red_or_black__content
+
+logic to_rep1 : red_or_black -> int
+
+logic of_rep1 : int -> red_or_black
+
+axiom inversion_axiom1 :
+  (forall x:red_or_black [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 :
+  (forall x:red_or_black [to_rep1(x)]. in_range2(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type us_main_type
+
+type us_rep = { rec__red_black_trees__tree__is_null_pointer : bool;
+rec__red_black_trees__tree__pointer_address : int;
+rec__red_black_trees__tree__pointer_value_abstr : us_main_type
+}
+
+function us_rep_rec__red_black_trees__tree__is_null_pointer__projection(a: us_rep) : bool =
+  (a).rec__red_black_trees__tree__is_null_pointer
+
+function us_rep_rec__red_black_trees__tree__pointer_address__projection(a: us_rep) : int =
+  (a).rec__red_black_trees__tree__pointer_address
+
+function us_rep_rec__red_black_trees__tree__pointer_value_abstr__projection(a: us_rep) : us_main_type =
+  (a).rec__red_black_trees__tree__pointer_value_abstr
+
+type us_rep__ref = { us_rep__content : us_rep
+}
+
+function us_rep__ref___rep__content__projection(a: us_rep__ref) : us_rep =
+  (a).us_rep__content
+
+function bool_eq3(a: us_rep, b: us_rep) : bool =
+  (if (((a).rec__red_black_trees__tree__is_null_pointer = (b).rec__red_black_trees__tree__is_null_pointer) and
+  ((not ((a).rec__red_black_trees__tree__is_null_pointer = true)) ->
+  (((a).rec__red_black_trees__tree__pointer_address = (b).rec__red_black_trees__tree__pointer_address) and
+  ((a).rec__red_black_trees__tree__pointer_value_abstr = (b).rec__red_black_trees__tree__pointer_value_abstr)))) then true else false)
+
+logic dummy2 : us_rep
+
+type tree__ref = { tree__content : us_rep
+}
+
+function tree__ref_tree__content__projection(a: tree__ref) : us_rep =
+  (a).tree__content
+
+type us_split_fields = { rec__red_black_trees__tree_cell__value : integer;
+rec__red_black_trees__tree_cell__color : red_or_black;
+rec__red_black_trees__tree_cell__left : us_rep;
+rec__red_black_trees__tree_cell__right : us_rep
+}
+
+function us_split_fields_rec__red_black_trees__tree_cell__value__projection(a: us_split_fields) : integer =
+  (a).rec__red_black_trees__tree_cell__value
+
+function us_split_fields_rec__red_black_trees__tree_cell__color__projection(a: us_split_fields) : red_or_black =
+  (a).rec__red_black_trees__tree_cell__color
+
+function us_split_fields_rec__red_black_trees__tree_cell__left__projection(a: us_split_fields) : us_rep =
+  (a).rec__red_black_trees__tree_cell__left
+
+function us_split_fields_rec__red_black_trees__tree_cell__right__projection(a: us_split_fields) : us_rep =
+  (a).rec__red_black_trees__tree_cell__right
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep1 = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep1) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq4(a: us_rep1, b: us_rep1) : bool =
+  (if (((to_rep(((a).us_split_fields1).rec__red_black_trees__tree_cell__value) = to_rep(((b).us_split_fields1).rec__red_black_trees__tree_cell__value)) and
+  (to_rep1(((a).us_split_fields1).rec__red_black_trees__tree_cell__color) = to_rep1(((b).us_split_fields1).rec__red_black_trees__tree_cell__color))) and
+  ((bool_eq3(((a).us_split_fields1).rec__red_black_trees__tree_cell__left,
+  ((b).us_split_fields1).rec__red_black_trees__tree_cell__left) = true) and
+  (bool_eq3(((a).us_split_fields1).rec__red_black_trees__tree_cell__right,
+  ((b).us_split_fields1).rec__red_black_trees__tree_cell__right) = true))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic red_black_trees__tree_cell__value__first__bit : int
+
+logic red_black_trees__tree_cell__value__last__bit : int
+
+logic red_black_trees__tree_cell__value__position : int
+
+axiom red_black_trees__tree_cell__value__first__bit_axiom :
+  (0 <= red_black_trees__tree_cell__value__first__bit)
+
+axiom red_black_trees__tree_cell__value__last__bit_axiom :
+  (red_black_trees__tree_cell__value__first__bit <  red_black_trees__tree_cell__value__last__bit)
+
+axiom red_black_trees__tree_cell__value__position_axiom :
+  (0 <= red_black_trees__tree_cell__value__position)
+
+logic red_black_trees__tree_cell__color__first__bit : int
+
+logic red_black_trees__tree_cell__color__last__bit : int
+
+logic red_black_trees__tree_cell__color__position : int
+
+axiom red_black_trees__tree_cell__color__first__bit_axiom :
+  (0 <= red_black_trees__tree_cell__color__first__bit)
+
+axiom red_black_trees__tree_cell__color__last__bit_axiom :
+  (red_black_trees__tree_cell__color__first__bit <  red_black_trees__tree_cell__color__last__bit)
+
+axiom red_black_trees__tree_cell__color__position_axiom :
+  (0 <= red_black_trees__tree_cell__color__position)
+
+logic red_black_trees__tree_cell__left__first__bit : int
+
+logic red_black_trees__tree_cell__left__last__bit : int
+
+logic red_black_trees__tree_cell__left__position : int
+
+axiom red_black_trees__tree_cell__left__first__bit_axiom :
+  (0 <= red_black_trees__tree_cell__left__first__bit)
+
+axiom red_black_trees__tree_cell__left__last__bit_axiom :
+  (red_black_trees__tree_cell__left__first__bit <  red_black_trees__tree_cell__left__last__bit)
+
+axiom red_black_trees__tree_cell__left__position_axiom :
+  (0 <= red_black_trees__tree_cell__left__position)
+
+logic red_black_trees__tree_cell__right__first__bit : int
+
+logic red_black_trees__tree_cell__right__last__bit : int
+
+logic red_black_trees__tree_cell__right__position : int
+
+axiom red_black_trees__tree_cell__right__first__bit_axiom :
+  (0 <= red_black_trees__tree_cell__right__first__bit)
+
+axiom red_black_trees__tree_cell__right__last__bit_axiom :
+  (red_black_trees__tree_cell__right__first__bit <  red_black_trees__tree_cell__right__last__bit)
+
+axiom red_black_trees__tree_cell__right__position_axiom :
+  (0 <= red_black_trees__tree_cell__right__position)
+
+logic user_eq2 : us_rep1, us_rep1 -> bool
+
+logic dummy3 : us_rep1
+
+type tree_cell__ref = { tree_cell__content : us_rep1
+}
+
+function tree_cell__ref_tree_cell__content__projection(a: tree_cell__ref) : us_rep1 =
+  (a).tree_cell__content
+
+predicate default_initial_assumption(temp___expr_166: us_rep,
+  temp___skip_top_level_167: bool) =
+  ((temp___expr_166).rec__red_black_trees__tree__is_null_pointer = true)
+
+logic us_open : us_main_type -> us_rep1
+
+logic us_close : us_rep1 -> us_main_type
+
+axiom close_open :
+  (forall x:us_main_type [us_open(x)]. (us_close(us_open(x)) = x))
+
+axiom open_close :
+  (forall x:us_rep1 [us_close(x)]. (us_open(us_close(x)) = x))
+
+function rec__red_black_trees__tree__pointer_value(a: us_rep) : us_rep1 =
+  us_open((a).rec__red_black_trees__tree__pointer_value_abstr)
+
+predicate rec__red_black_trees__tree__pointer_value__pred(a: us_rep) =
+  (not ((a).rec__red_black_trees__tree__is_null_pointer = true))
+
+logic us_null_pointer : us_rep
+
+axiom us_null_pointer__def_axiom :
+  ((us_null_pointer).rec__red_black_trees__tree__is_null_pointer = true)
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+predicate dynamic_invariant1(temp___expr_158: int, temp___is_init_154: bool,
+  temp___skip_constant_155: bool, temp___do_toplevel_156: bool,
+  temp___do_typ_inv_157: bool) = (((temp___is_init_154 = true) or
+  (0 <= 1)) -> in_range2(temp___expr_158))
+
+predicate default_initial_assumption1(temp___expr_173: us_rep1,
+  temp___skip_top_level_174: bool) =
+  (((((temp___expr_173).us_split_fields1).rec__red_black_trees__tree_cell__left).rec__red_black_trees__tree__is_null_pointer = true) and
+  ((((temp___expr_173).us_split_fields1).rec__red_black_trees__tree_cell__right).rec__red_black_trees__tree__is_null_pointer = true))
+
+ (* File "red_black_trees.adb", line 19, characters 0-0 *)
+goal defqtvc :
+  (forall t__pointer_value:us_split_fields. forall t__pointer_address:int.
+  forall t__is_null_pointer:bool.
+  (forall o:bool.
+  ((exists o1:int. ((to_rep1(((rec__red_black_trees__tree__pointer_value({
+   rec__red_black_trees__tree__is_null_pointer = t__is_null_pointer;
+   rec__red_black_trees__tree__pointer_address = t__pointer_address;
+   rec__red_black_trees__tree__pointer_value_abstr = us_close({
+   us_split_fields1 = t__pointer_value })
+   })).us_split_fields1).rec__red_black_trees__tree_cell__color) = o1) and
+   (if ((if (o1 = 1) then notb(bool_eq3(((rec__red_black_trees__tree__pointer_value({
+   rec__red_black_trees__tree__is_null_pointer = t__is_null_pointer;
+   rec__red_black_trees__tree__pointer_address = t__pointer_address;
+   rec__red_black_trees__tree__pointer_value_abstr = us_close({
+   us_split_fields1 = t__pointer_value })
+   })).us_split_fields1).rec__red_black_trees__tree_cell__left,
+   us_null_pointer)) else false) = true) then (exists o2:int.
+                                              ((to_rep1(((rec__red_black_trees__tree__pointer_value(((rec__red_black_trees__tree__pointer_value({
+                                              rec__red_black_trees__tree__is_null_pointer =
+                                              t__is_null_pointer;
+                                              rec__red_black_trees__tree__pointer_address =
+                                              t__pointer_address;
+                                              rec__red_black_trees__tree__pointer_value_abstr =
+                                              us_close({ us_split_fields1 =
+                                              t__pointer_value })
+                                              })).us_split_fields1).rec__red_black_trees__tree_cell__left)).us_split_fields1).rec__red_black_trees__tree_cell__color) = o2) and
+                                              (o = (if (o2 = 0) then true else false)))) else (o = false)))) ->
+  (forall spark__branch:bool. ((spark__branch = o) ->
+  ((not (spark__branch = true)) ->
+  (forall o1:bool.
+  ((exists o2:int. ((to_rep1(((rec__red_black_trees__tree__pointer_value({
+   rec__red_black_trees__tree__is_null_pointer = t__is_null_pointer;
+   rec__red_black_trees__tree__pointer_address = t__pointer_address;
+   rec__red_black_trees__tree__pointer_value_abstr = us_close({
+   us_split_fields1 = t__pointer_value })
+   })).us_split_fields1).rec__red_black_trees__tree_cell__color) = o2) and
+   (if ((if (o2 = 1) then notb(bool_eq3(((rec__red_black_trees__tree__pointer_value({
+   rec__red_black_trees__tree__is_null_pointer = t__is_null_pointer;
+   rec__red_black_trees__tree__pointer_address = t__pointer_address;
+   rec__red_black_trees__tree__pointer_value_abstr = us_close({
+   us_split_fields1 = t__pointer_value })
+   })).us_split_fields1).rec__red_black_trees__tree_cell__right,
+   us_null_pointer)) else false) = true) then (exists o3:int.
+                                              ((to_rep1(((rec__red_black_trees__tree__pointer_value(((rec__red_black_trees__tree__pointer_value({
+                                              rec__red_black_trees__tree__is_null_pointer =
+                                              t__is_null_pointer;
+                                              rec__red_black_trees__tree__pointer_address =
+                                              t__pointer_address;
+                                              rec__red_black_trees__tree__pointer_value_abstr =
+                                              us_close({ us_split_fields1 =
+                                              t__pointer_value })
+                                              })).us_split_fields1).rec__red_black_trees__tree_cell__right)).us_split_fields1).rec__red_black_trees__tree_cell__color) = o3) and
+                                              (o1 = (if (o3 = 0) then true else false)))) else (o1 = false)))) ->
+  (forall spark__branch1:bool. ((spark__branch1 = o1) ->
+  ((spark__branch1 = true) ->
+  (forall o2:bool.
+  ((if (notb(bool_eq3(((rec__red_black_trees__tree__pointer_value(((rec__red_black_trees__tree__pointer_value({
+  rec__red_black_trees__tree__is_null_pointer = t__is_null_pointer;
+  rec__red_black_trees__tree__pointer_address = t__pointer_address;
+  rec__red_black_trees__tree__pointer_value_abstr = us_close({
+  us_split_fields1 = t__pointer_value })
+  })).us_split_fields1).rec__red_black_trees__tree_cell__right)).us_split_fields1).rec__red_black_trees__tree_cell__left,
+  us_null_pointer)) = true) then (exists o3:int.
+                                 ((to_rep1(((rec__red_black_trees__tree__pointer_value(((rec__red_black_trees__tree__pointer_value(((rec__red_black_trees__tree__pointer_value({
+                                 rec__red_black_trees__tree__is_null_pointer =
+                                 t__is_null_pointer;
+                                 rec__red_black_trees__tree__pointer_address =
+                                 t__pointer_address;
+                                 rec__red_black_trees__tree__pointer_value_abstr =
+                                 us_close({ us_split_fields1 =
+                                 t__pointer_value })
+                                 })).us_split_fields1).rec__red_black_trees__tree_cell__right)).us_split_fields1).rec__red_black_trees__tree_cell__left)).us_split_fields1).rec__red_black_trees__tree_cell__color) = o3) and
+                                 (o2 = (if (o3 = 0) then true else false)))) else (o2 = false)) ->
+  (forall spark__branch2:bool. ((spark__branch2 = o2) ->
+  ((not (spark__branch2 = true)) ->
+  ((notb(bool_eq3(((rec__red_black_trees__tree__pointer_value(((rec__red_black_trees__tree__pointer_value({
+  rec__red_black_trees__tree__is_null_pointer = t__is_null_pointer;
+  rec__red_black_trees__tree__pointer_address = t__pointer_address;
+  rec__red_black_trees__tree__pointer_value_abstr = us_close({
+  us_split_fields1 = t__pointer_value })
+  })).us_split_fields1).rec__red_black_trees__tree_cell__right)).us_split_fields1).rec__red_black_trees__tree_cell__right,
+  us_null_pointer)) = true) ->
+  rec__red_black_trees__tree__pointer_value__pred(((rec__red_black_trees__tree__pointer_value(((rec__red_black_trees__tree__pointer_value({
+  rec__red_black_trees__tree__is_null_pointer = t__is_null_pointer;
+  rec__red_black_trees__tree__pointer_address = t__pointer_address;
+  rec__red_black_trees__tree__pointer_value_abstr = us_close({
+  us_split_fields1 = t__pointer_value })
+  })).us_split_fields1).rec__red_black_trees__tree_cell__right)).us_split_fields1).rec__red_black_trees__tree_cell__right))))))))))))))))))

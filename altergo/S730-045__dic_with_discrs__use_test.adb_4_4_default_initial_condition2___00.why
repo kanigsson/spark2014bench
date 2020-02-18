@@ -1,0 +1,330 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type positive
+
+logic positiveqtint : positive -> int
+
+axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
+
+axiom positiveqtaxiom1 :
+  (forall i:positive. (positiveqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : positive, positive -> bool
+
+logic dummy : positive
+
+type positive__ref = { positive__content : positive
+}
+
+function positive__ref_positive__content__projection(a: positive__ref) : positive =
+  (a).positive__content
+
+function to_rep(x: positive) : int = positiveqtint(x)
+
+logic of_rep : int -> positive
+
+axiom inversion_axiom :
+  (forall x:positive [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:positive [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type us_split_discrs = { rec__test_2__context_type__first : positive;
+rec__test_2__context_type__last : positive
+}
+
+function us_split_discrs_rec__test_2__context_type__first__projection(a: us_split_discrs) : positive =
+  (a).rec__test_2__context_type__first
+
+function us_split_discrs_rec__test_2__context_type__last__projection(a: us_split_discrs) : positive =
+  (a).rec__test_2__context_type__last
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_split_fields = { rec__test_2__context_type__index : positive
+}
+
+function us_split_fields_rec__test_2__context_type__index__projection(a: us_split_fields) : positive =
+  (a).rec__test_2__context_type__index
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_discrs1 : us_split_discrs; us_split_fields1 :
+us_split_fields
+}
+
+function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
+  (a).us_split_discrs1
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq1(a: us_rep, b: us_rep) : bool =
+  (if (((to_rep(((a).us_split_discrs1).rec__test_2__context_type__first) = to_rep(((b).us_split_discrs1).rec__test_2__context_type__first)) and
+  (to_rep(((a).us_split_discrs1).rec__test_2__context_type__last) = to_rep(((b).us_split_discrs1).rec__test_2__context_type__last))) and
+  (to_rep(((a).us_split_fields1).rec__test_2__context_type__index) = to_rep(((b).us_split_fields1).rec__test_2__context_type__index))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic test_2__context_type__first__first__bit : int
+
+logic test_2__context_type__first__last__bit : int
+
+logic test_2__context_type__first__position : int
+
+axiom test_2__context_type__first__first__bit_axiom :
+  (0 <= test_2__context_type__first__first__bit)
+
+axiom test_2__context_type__first__last__bit_axiom :
+  (test_2__context_type__first__first__bit <  test_2__context_type__first__last__bit)
+
+axiom test_2__context_type__first__position_axiom :
+  (0 <= test_2__context_type__first__position)
+
+logic test_2__context_type__last__first__bit : int
+
+logic test_2__context_type__last__last__bit : int
+
+logic test_2__context_type__last__position : int
+
+axiom test_2__context_type__last__first__bit_axiom :
+  (0 <= test_2__context_type__last__first__bit)
+
+axiom test_2__context_type__last__last__bit_axiom :
+  (test_2__context_type__last__first__bit <  test_2__context_type__last__last__bit)
+
+axiom test_2__context_type__last__position_axiom :
+  (0 <= test_2__context_type__last__position)
+
+logic test_2__context_type__index__first__bit : int
+
+logic test_2__context_type__index__last__bit : int
+
+logic test_2__context_type__index__position : int
+
+axiom test_2__context_type__index__first__bit_axiom :
+  (0 <= test_2__context_type__index__first__bit)
+
+axiom test_2__context_type__index__last__bit_axiom :
+  (test_2__context_type__index__first__bit <  test_2__context_type__index__last__bit)
+
+axiom test_2__context_type__index__position_axiom :
+  (0 <= test_2__context_type__index__position)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type context_type__ref = { context_type__content : us_rep
+}
+
+function context_type__ref_context_type__content__projection(a: context_type__ref) : us_rep =
+  (a).context_type__content
+
+logic x__attr__constrained : bool
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate dynamic_invariant(temp___expr_180: us_rep,
+  temp___is_init_176: bool, temp___skip_constant_177: bool,
+  temp___do_toplevel_178: bool, temp___do_typ_inv_179: bool) =
+  ((temp___do_toplevel_178 = true) ->
+  (((to_rep(((temp___expr_180).us_split_discrs1).rec__test_2__context_type__first) <= to_rep(((temp___expr_180).us_split_discrs1).rec__test_2__context_type__last)) and
+  (to_rep(((temp___expr_180).us_split_discrs1).rec__test_2__context_type__first) <= to_rep(((temp___expr_180).us_split_fields1).rec__test_2__context_type__index))) and
+  (to_rep(((temp___expr_180).us_split_fields1).rec__test_2__context_type__index) <= to_rep(((temp___expr_180).us_split_discrs1).rec__test_2__context_type__last))))
+
+predicate default_initial_assumption(temp___expr_184: us_rep,
+  temp___skip_top_level_185: bool) =
+  ((((to_rep(((temp___expr_184).us_split_discrs1).rec__test_2__context_type__first) = 1) and
+  (to_rep(((temp___expr_184).us_split_discrs1).rec__test_2__context_type__last) = 2147483647)) and
+  (to_rep(((temp___expr_184).us_split_fields1).rec__test_2__context_type__index) = to_rep(((temp___expr_184).us_split_discrs1).rec__test_2__context_type__first))) and
+  ((not (temp___skip_top_level_185 = true)) ->
+  (to_rep(((temp___expr_184).us_split_discrs1).rec__test_2__context_type__first) <  to_rep(((temp___expr_184).us_split_discrs1).rec__test_2__context_type__last))))
+
+predicate dynamic_predicate(temp___189: us_rep) =
+  (((to_rep(((temp___189).us_split_discrs1).rec__test_2__context_type__first) <= to_rep(((temp___189).us_split_discrs1).rec__test_2__context_type__last)) and
+  (to_rep(((temp___189).us_split_discrs1).rec__test_2__context_type__first) <= to_rep(((temp___189).us_split_fields1).rec__test_2__context_type__index))) and
+  (to_rep(((temp___189).us_split_fields1).rec__test_2__context_type__index) <= to_rep(((temp___189).us_split_discrs1).rec__test_2__context_type__last)))
+
+predicate in_range1(rec__test_2__context_type__first1: int,
+  rec__test_2__context_type__last1: int, a: us_rep) =
+  ((rec__test_2__context_type__first1 = to_rep(((a).us_split_discrs1).rec__test_2__context_type__first)) and
+  (rec__test_2__context_type__last1 = to_rep(((a).us_split_discrs1).rec__test_2__context_type__last)))
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic test_2__context_type__first__first__bit1 : int
+
+logic test_2__context_type__first__last__bit1 : int
+
+logic test_2__context_type__first__position1 : int
+
+axiom test_2__context_type__first__first__bit_axiom1 :
+  (0 <= test_2__context_type__first__first__bit1)
+
+axiom test_2__context_type__first__last__bit_axiom1 :
+  (test_2__context_type__first__first__bit1 <  test_2__context_type__first__last__bit1)
+
+axiom test_2__context_type__first__position_axiom1 :
+  (0 <= test_2__context_type__first__position1)
+
+logic test_2__context_type__last__first__bit1 : int
+
+logic test_2__context_type__last__last__bit1 : int
+
+logic test_2__context_type__last__position1 : int
+
+axiom test_2__context_type__last__first__bit_axiom1 :
+  (0 <= test_2__context_type__last__first__bit1)
+
+axiom test_2__context_type__last__last__bit_axiom1 :
+  (test_2__context_type__last__first__bit1 <  test_2__context_type__last__last__bit1)
+
+axiom test_2__context_type__last__position_axiom1 :
+  (0 <= test_2__context_type__last__position1)
+
+logic test_2__context_type__index__first__bit1 : int
+
+logic test_2__context_type__index__last__bit1 : int
+
+logic test_2__context_type__index__position1 : int
+
+axiom test_2__context_type__index__first__bit_axiom1 :
+  (0 <= test_2__context_type__index__first__bit1)
+
+axiom test_2__context_type__index__last__bit_axiom1 :
+  (test_2__context_type__index__first__bit1 <  test_2__context_type__index__last__bit1)
+
+axiom test_2__context_type__index__position_axiom1 :
+  (0 <= test_2__context_type__index__position1)
+
+logic user_eq2 : us_rep, us_rep -> bool
+
+logic dummy2 : us_rep
+
+type tyS__ref = { tyS__content : us_rep
+}
+
+function tyS__ref_tyS__content__projection(a: tyS__ref) : us_rep =
+  (a).tyS__content
+
+logic y__split_discrs : us_split_discrs
+
+logic y__attr__constrained : bool
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+predicate dynamic_invariant1(temp___expr_46: int, temp___is_init_42: bool,
+  temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
+  temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
+  (1 <= 2147483647)) -> in_range(temp___expr_46))
+
+ (* File "use_test.adb", line 2, characters 0-0 *)
+goal defqtvc :
+  (forall x__split_fields:positive. forall x__split_discrs:us_split_discrs.
+  ((x__attr__constrained = false) -> (default_initial_assumption({
+  us_split_discrs1 = x__split_discrs; us_split_fields1 = {
+  rec__test_2__context_type__index = x__split_fields } }, false) ->
+  (dynamic_invariant({ us_split_discrs1 = x__split_discrs; us_split_fields1 =
+  { rec__test_2__context_type__index = x__split_fields } }, false, false,
+  true, true) -> (in_range(1) -> (in_range(1) ->
+  (forall usf:us_rep.
+  (((1 = to_rep(((usf).us_split_discrs1).rec__test_2__context_type__first)) and
+  (1 = to_rep(((usf).us_split_discrs1).rec__test_2__context_type__last))) ->
+  (to_rep(((usf).us_split_discrs1).rec__test_2__context_type__first) <  to_rep(((usf).us_split_discrs1).rec__test_2__context_type__last))))))))))

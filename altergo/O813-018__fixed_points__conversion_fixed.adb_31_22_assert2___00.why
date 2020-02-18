@@ -1,0 +1,691 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+logic x : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic x2 : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic x3 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic x4 : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+type t
+
+predicate in_range1(x1: int) = (((- 25) <= x1) and (x1 <= 25))
+
+logic dummy : t
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : t, t -> bool
+
+type t__ref = { t__content : t
+}
+
+function t__ref_t__content__projection(a: t__ref) : t = (a).t__content
+
+predicate dynamic_invariant(temp___expr_158: int, temp___is_init_154: bool,
+  temp___skip_constant_155: bool, temp___do_toplevel_156: bool,
+  temp___do_typ_inv_157: bool) = (((temp___is_init_154 = true) or
+  ((- 25) <= 25)) -> in_range1(temp___expr_158))
+
+type t2
+
+predicate in_range2(x5: int) = (((- 250) <= x5) and (x5 <= 250))
+
+logic dummy1 : t2
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : t2, t2 -> bool
+
+type t2__ref = { t2__content : t2
+}
+
+function t2__ref_t2__content__projection(a: t2__ref) : t2 = (a).t2__content
+
+predicate dynamic_invariant1(temp___expr_165: int, temp___is_init_161: bool,
+  temp___skip_constant_162: bool, temp___do_toplevel_163: bool,
+  temp___do_typ_inv_164: bool) = (((temp___is_init_161 = true) or
+  ((- 250) <= 250)) -> in_range2(temp___expr_165))
+
+type t3
+
+predicate in_range3(x5: int) = (((- 10) <= x5) and (x5 <= 10))
+
+logic dummy2 : t3
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : t3, t3 -> bool
+
+type t3__ref = { t3__content : t3
+}
+
+function t3__ref_t3__content__projection(a: t3__ref) : t3 = (a).t3__content
+
+predicate dynamic_invariant2(temp___expr_172: int, temp___is_init_168: bool,
+  temp___skip_constant_169: bool, temp___do_toplevel_170: bool,
+  temp___do_typ_inv_171: bool) = (((temp___is_init_168 = true) or
+  ((- 10) <= 10)) -> in_range3(temp___expr_172))
+
+type t4
+
+predicate in_range4(x5: int) = (((- 5) <= x5) and (x5 <= 5))
+
+logic dummy3 : t4
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq3 : t4, t4 -> bool
+
+type t4__ref = { t4__content : t4
+}
+
+function t4__ref_t4__content__projection(a: t4__ref) : t4 = (a).t4__content
+
+predicate dynamic_invariant3(temp___expr_179: int, temp___is_init_175: bool,
+  temp___skip_constant_176: bool, temp___do_toplevel_177: bool,
+  temp___do_typ_inv_178: bool) = (((temp___is_init_175 = true) or
+  ((- 5) <= 5)) -> in_range4(temp___expr_179))
+
+logic div : int, int -> int
+
+logic mod : int, int -> int
+
+axiom Div_mod :
+  (forall x5:int. forall y:int. ((not (y = 0)) -> (x5 = ((y * div(x5,
+  y)) + mod(x5, y)))))
+
+axiom Div_bound :
+  (forall x5:int. forall y:int. (((0 <= x5) and (0 <  y)) -> (0 <= div(x5,
+  y))))
+
+axiom Div_bound1 :
+  (forall x5:int. forall y:int. (((0 <= x5) and (0 <  y)) -> (div(x5,
+  y) <= x5)))
+
+axiom Mod_bound :
+  (forall x5:int. forall y:int. ((not (y = 0)) -> ((-abs_int(y)) <  mod(x5,
+  y))))
+
+axiom Mod_bound1 :
+  (forall x5:int. forall y:int. ((not (y = 0)) -> (mod(x5,
+  y) <  abs_int(y))))
+
+axiom Div_sign_pos :
+  (forall x5:int. forall y:int. (((0 <= x5) and (0 <  y)) -> (0 <= div(x5,
+  y))))
+
+axiom Div_sign_neg :
+  (forall x5:int. forall y:int. (((x5 <= 0) and (0 <  y)) -> (div(x5,
+  y) <= 0)))
+
+axiom Mod_sign_pos :
+  (forall x5:int. forall y:int. (((0 <= x5) and (not (y = 0))) ->
+  (0 <= mod(x5, y))))
+
+axiom Mod_sign_neg :
+  (forall x5:int. forall y:int. (((x5 <= 0) and (not (y = 0))) -> (mod(x5,
+  y) <= 0)))
+
+axiom Rounds_toward_zero :
+  (forall x5:int. forall y:int. ((not (y = 0)) -> (abs_int((div(x5,
+  y) * y)) <= abs_int(x5))))
+
+axiom Div_1 : (forall x5:int. (div(x5, 1) = x5))
+
+axiom Mod_1 : (forall x5:int. (mod(x5, 1) = 0))
+
+axiom Div_inf :
+  (forall x5:int. forall y:int. (((0 <= x5) and (x5 <  y)) -> (div(x5,
+  y) = 0)))
+
+axiom Mod_inf :
+  (forall x5:int. forall y:int. (((0 <= x5) and (x5 <  y)) -> (mod(x5,
+  y) = x5)))
+
+axiom Div_mult :
+  (forall x5:int. forall y:int. forall z:int [div(((x5 * y) + z), x5)].
+  (((0 <  x5) and ((0 <= y) and (0 <= z))) -> (div(((x5 * y) + z),
+  x5) = (y + div(z, x5)))))
+
+axiom Mod_mult :
+  (forall x5:int. forall y:int. forall z:int [mod(((x5 * y) + z), x5)].
+  (((0 <  x5) and ((0 <= y) and (0 <= z))) -> (mod(((x5 * y) + z),
+  x5) = mod(z, x5))))
+
+axiom Div_mod1 :
+  (forall x5:int. forall y:int. ((not (y = 0)) ->
+  (x5 = ((y * (x5 / y)) + (x5 % y)))))
+
+axiom Mod_bound2 :
+  (forall x5:int. forall y:int. ((not (y = 0)) -> (0 <= (x5 % y))))
+
+axiom Mod_bound3 :
+  (forall x5:int. forall y:int. ((not (y = 0)) -> ((x5 % y) <  abs_int(y))))
+
+axiom Div_unique :
+  (forall x5:int. forall y:int. forall q:int. ((0 <  y) ->
+  ((((q * y) <= x5) and (x5 <  ((q * y) + y))) -> ((x5 / y) = q))))
+
+axiom Div_bound2 :
+  (forall x5:int. forall y:int. (((0 <= x5) and (0 <  y)) ->
+  (0 <= (x5 / y))))
+
+axiom Div_bound3 :
+  (forall x5:int. forall y:int. (((0 <= x5) and (0 <  y)) ->
+  ((x5 / y) <= x5)))
+
+axiom Mod_11 : (forall x5:int. ((x5 % 1) = 0))
+
+axiom Div_11 : (forall x5:int. ((x5 / 1) = x5))
+
+axiom Div_inf1 :
+  (forall x5:int. forall y:int. (((0 <= x5) and (x5 <  y)) ->
+  ((x5 / y) = 0)))
+
+axiom Div_inf_neg :
+  (forall x5:int. forall y:int. (((0 <  x5) and (x5 <= y)) ->
+  (((-x5) / y) = (- 1))))
+
+axiom Mod_0 : (forall y:int. ((not (y = 0)) -> ((0 % y) = 0)))
+
+axiom Div_1_left : (forall y:int. ((1 <  y) -> ((1 / y) = 0)))
+
+axiom Div_minus1_left : (forall y:int. ((1 <  y) -> (((- 1) / y) = (- 1))))
+
+axiom Mod_1_left : (forall y:int. ((1 <  y) -> ((1 % y) = 1)))
+
+axiom Mod_minus1_left :
+  (forall y:int [((- 1) % y)]. ((1 <  y) -> (((- 1) % y) = (y - 1))))
+
+axiom Div_mult1 :
+  (forall x5:int. forall y:int. forall z:int [(((x5 * y) + z) / x5)].
+  ((0 <  x5) -> ((((x5 * y) + z) / x5) = (y + (z / x5)))))
+
+axiom Mod_mult1 :
+  (forall x5:int. forall y:int. forall z:int [(((x5 * y) + z) % x5)].
+  ((0 <  x5) -> ((((x5 * y) + z) % x5) = (z % x5))))
+
+function mod1(x5: int, y: int) : int =
+  (if (0 <  y) then (x5 % y) else ((x5 % y) + y))
+
+predicate pos_div_relation(res: int, num: int, den: int) = (let exact =
+  div(num, den) : int in
+  (if (num = 0) then (res = 0) else (if (num = (exact * den)) then (res = exact) else ((exact <= res) and
+  (res <= (exact + 1))))))
+
+logic fxp_mult : int, int -> int
+
+axiom fxp_mult_def :
+  (forall x5:int.
+  (forall y:int [fxp_mult(x5, y)]. (((x5 = 0) or (y = 0)) -> (fxp_mult(x5,
+  y) = 0))))
+
+axiom fxp_mult_def1 :
+  (forall x5:int.
+  (forall y:int [fxp_mult(x5, y)]. ((not ((x5 = 0) or (y = 0))) ->
+  ((((0 <  x5) and (0 <  y)) or ((x5 <  0) and (y <  0))) ->
+  pos_div_relation(fxp_mult(x5, y), ((((x5 * y) * 2) * 1) * 5),
+  ((1 * 1) * 2))))))
+
+axiom fxp_mult_def2 :
+  (forall x5:int.
+  (forall y:int [fxp_mult(x5, y)]. ((not ((x5 = 0) or (y = 0))) ->
+  ((not (((0 <  x5) and (0 <  y)) or ((x5 <  0) and (y <  0)))) ->
+  pos_div_relation((-fxp_mult(x5, y)), (-((((x5 * y) * 2) * 1) * 5)),
+  ((1 * 1) * 2))))))
+
+logic fxp_div : int, int -> int
+
+axiom fxp_div_def :
+  (forall x5:int.
+  (forall y:int [fxp_div(x5, y)]. ((x5 = 0) -> (fxp_div(x5, y) = 0))))
+
+axiom fxp_div_def1 :
+  (forall x5:int.
+  (forall y:int [fxp_div(x5, y)]. ((not (x5 = 0)) -> (((0 <  x5) and
+  (0 <  y)) -> pos_div_relation(fxp_div(x5, y), (((x5 * 2) * 1) * 5),
+  (((y * 1) * 1) * 2))))))
+
+axiom fxp_div_def2 :
+  (forall x5:int.
+  (forall y:int [fxp_div(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> (((x5 <  0) and (y <  0)) -> pos_div_relation(fxp_div(x5, y),
+  ((((-x5) * 2) * 1) * 5), ((((-y) * 1) * 1) * 2)))))))
+
+axiom fxp_div_def3 :
+  (forall x5:int.
+  (forall y:int [fxp_div(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> ((not ((x5 <  0) and (y <  0))) -> (((x5 <  0) and
+  (0 <  y)) -> pos_div_relation((-fxp_div(x5, y)), ((((-x5) * 2) * 1) * 5),
+  (((y * 1) * 1) * 2))))))))
+
+axiom fxp_div_def4 :
+  (forall x5:int.
+  (forall y:int [fxp_div(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> ((not ((x5 <  0) and (y <  0))) -> ((not ((x5 <  0) and
+  (0 <  y))) -> (((0 <  x5) and (y <  0)) -> pos_div_relation((-fxp_div(x5,
+  y)), (((x5 * 2) * 1) * 5), ((((-y) * 1) * 1) * 2)))))))))
+
+logic fxp_mult1 : int, int -> int
+
+axiom fxp_mult_def3 :
+  (forall x5:int.
+  (forall y:int [fxp_mult1(x5, y)]. (((x5 = 0) or (y = 0)) -> (fxp_mult1(x5,
+  y) = 0))))
+
+axiom fxp_mult_def4 :
+  (forall x5:int.
+  (forall y:int [fxp_mult1(x5, y)]. ((not ((x5 = 0) or (y = 0))) ->
+  ((((0 <  x5) and (0 <  y)) or ((x5 <  0) and (y <  0))) ->
+  pos_div_relation(fxp_mult1(x5, y), ((((x5 * y) * 1) * 1) * 25),
+  ((1 * 1) * 1))))))
+
+axiom fxp_mult_def5 :
+  (forall x5:int.
+  (forall y:int [fxp_mult1(x5, y)]. ((not ((x5 = 0) or (y = 0))) ->
+  ((not (((0 <  x5) and (0 <  y)) or ((x5 <  0) and (y <  0)))) ->
+  pos_div_relation((-fxp_mult1(x5, y)), (-((((x5 * y) * 1) * 1) * 25)),
+  ((1 * 1) * 1))))))
+
+logic fxp_div1 : int, int -> int
+
+axiom fxp_div_def5 :
+  (forall x5:int.
+  (forall y:int [fxp_div1(x5, y)]. ((x5 = 0) -> (fxp_div1(x5, y) = 0))))
+
+axiom fxp_div_def6 :
+  (forall x5:int.
+  (forall y:int [fxp_div1(x5, y)]. ((not (x5 = 0)) -> (((0 <  x5) and
+  (0 <  y)) -> pos_div_relation(fxp_div1(x5, y), (((x5 * 1) * 1) * 25),
+  (((y * 1) * 1) * 1))))))
+
+axiom fxp_div_def7 :
+  (forall x5:int.
+  (forall y:int [fxp_div1(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> (((x5 <  0) and (y <  0)) -> pos_div_relation(fxp_div1(x5,
+  y), ((((-x5) * 1) * 1) * 25), ((((-y) * 1) * 1) * 1)))))))
+
+axiom fxp_div_def8 :
+  (forall x5:int.
+  (forall y:int [fxp_div1(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> ((not ((x5 <  0) and (y <  0))) -> (((x5 <  0) and
+  (0 <  y)) -> pos_div_relation((-fxp_div1(x5, y)), ((((-x5) * 1) * 1) * 25),
+  (((y * 1) * 1) * 1))))))))
+
+axiom fxp_div_def9 :
+  (forall x5:int.
+  (forall y:int [fxp_div1(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> ((not ((x5 <  0) and (y <  0))) -> ((not ((x5 <  0) and
+  (0 <  y))) -> (((0 <  x5) and (y <  0)) -> pos_div_relation((-fxp_div1(x5,
+  y)), (((x5 * 1) * 1) * 25), ((((-y) * 1) * 1) * 1)))))))))
+
+logic fxp_mult2 : int, int -> int
+
+axiom fxp_mult_def6 :
+  (forall x5:int.
+  (forall y:int [fxp_mult2(x5, y)]. (((x5 = 0) or (y = 0)) -> (fxp_mult2(x5,
+  y) = 0))))
+
+axiom fxp_mult_def7 :
+  (forall x5:int.
+  (forall y:int [fxp_mult2(x5, y)]. ((not ((x5 = 0) or (y = 0))) ->
+  ((((0 <  x5) and (0 <  y)) or ((x5 <  0) and (y <  0))) ->
+  pos_div_relation(fxp_mult2(x5, y), ((((x5 * y) * 1) * 1) * 1),
+  ((25 * 1) * 1))))))
+
+axiom fxp_mult_def8 :
+  (forall x5:int.
+  (forall y:int [fxp_mult2(x5, y)]. ((not ((x5 = 0) or (y = 0))) ->
+  ((not (((0 <  x5) and (0 <  y)) or ((x5 <  0) and (y <  0)))) ->
+  pos_div_relation((-fxp_mult2(x5, y)), (-((((x5 * y) * 1) * 1) * 1)),
+  ((25 * 1) * 1))))))
+
+logic fxp_div2 : int, int -> int
+
+axiom fxp_div_def10 :
+  (forall x5:int.
+  (forall y:int [fxp_div2(x5, y)]. ((x5 = 0) -> (fxp_div2(x5, y) = 0))))
+
+axiom fxp_div_def11 :
+  (forall x5:int.
+  (forall y:int [fxp_div2(x5, y)]. ((not (x5 = 0)) -> (((0 <  x5) and
+  (0 <  y)) -> pos_div_relation(fxp_div2(x5, y), (((x5 * 1) * 1) * 1),
+  (((y * 25) * 1) * 1))))))
+
+axiom fxp_div_def12 :
+  (forall x5:int.
+  (forall y:int [fxp_div2(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> (((x5 <  0) and (y <  0)) -> pos_div_relation(fxp_div2(x5,
+  y), ((((-x5) * 1) * 1) * 1), ((((-y) * 25) * 1) * 1)))))))
+
+axiom fxp_div_def13 :
+  (forall x5:int.
+  (forall y:int [fxp_div2(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> ((not ((x5 <  0) and (y <  0))) -> (((x5 <  0) and
+  (0 <  y)) -> pos_div_relation((-fxp_div2(x5, y)), ((((-x5) * 1) * 1) * 1),
+  (((y * 25) * 1) * 1))))))))
+
+axiom fxp_div_def14 :
+  (forall x5:int.
+  (forall y:int [fxp_div2(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> ((not ((x5 <  0) and (y <  0))) -> ((not ((x5 <  0) and
+  (0 <  y))) -> (((0 <  x5) and (y <  0)) -> pos_div_relation((-fxp_div2(x5,
+  y)), (((x5 * 1) * 1) * 1), ((((-y) * 25) * 1) * 1)))))))))
+
+logic fxp_mult3 : int, int -> int
+
+axiom fxp_mult_def9 :
+  (forall x5:int.
+  (forall y:int [fxp_mult3(x5, y)]. (((x5 = 0) or (y = 0)) -> (fxp_mult3(x5,
+  y) = 0))))
+
+axiom fxp_mult_def10 :
+  (forall x5:int.
+  (forall y:int [fxp_mult3(x5, y)]. ((not ((x5 = 0) or (y = 0))) ->
+  ((((0 <  x5) and (0 <  y)) or ((x5 <  0) and (y <  0))) ->
+  pos_div_relation(fxp_mult3(x5, y), ((((x5 * y) * 2) * 1) * 1),
+  ((1 * 1) * 1))))))
+
+axiom fxp_mult_def11 :
+  (forall x5:int.
+  (forall y:int [fxp_mult3(x5, y)]. ((not ((x5 = 0) or (y = 0))) ->
+  ((not (((0 <  x5) and (0 <  y)) or ((x5 <  0) and (y <  0)))) ->
+  pos_div_relation((-fxp_mult3(x5, y)), (-((((x5 * y) * 2) * 1) * 1)),
+  ((1 * 1) * 1))))))
+
+logic fxp_div3 : int, int -> int
+
+axiom fxp_div_def15 :
+  (forall x5:int.
+  (forall y:int [fxp_div3(x5, y)]. ((x5 = 0) -> (fxp_div3(x5, y) = 0))))
+
+axiom fxp_div_def16 :
+  (forall x5:int.
+  (forall y:int [fxp_div3(x5, y)]. ((not (x5 = 0)) -> (((0 <  x5) and
+  (0 <  y)) -> pos_div_relation(fxp_div3(x5, y), (((x5 * 2) * 1) * 1),
+  (((y * 1) * 1) * 1))))))
+
+axiom fxp_div_def17 :
+  (forall x5:int.
+  (forall y:int [fxp_div3(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> (((x5 <  0) and (y <  0)) -> pos_div_relation(fxp_div3(x5,
+  y), ((((-x5) * 2) * 1) * 1), ((((-y) * 1) * 1) * 1)))))))
+
+axiom fxp_div_def18 :
+  (forall x5:int.
+  (forall y:int [fxp_div3(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> ((not ((x5 <  0) and (y <  0))) -> (((x5 <  0) and
+  (0 <  y)) -> pos_div_relation((-fxp_div3(x5, y)), ((((-x5) * 2) * 1) * 1),
+  (((y * 1) * 1) * 1))))))))
+
+axiom fxp_div_def19 :
+  (forall x5:int.
+  (forall y:int [fxp_div3(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> ((not ((x5 <  0) and (y <  0))) -> ((not ((x5 <  0) and
+  (0 <  y))) -> (((0 <  x5) and (y <  0)) -> pos_div_relation((-fxp_div3(x5,
+  y)), (((x5 * 2) * 1) * 1), ((((-y) * 1) * 1) * 1)))))))))
+
+logic fxp_mult4 : int, int -> int
+
+axiom fxp_mult_def12 :
+  (forall x5:int.
+  (forall y:int [fxp_mult4(x5, y)]. (((x5 = 0) or (y = 0)) -> (fxp_mult4(x5,
+  y) = 0))))
+
+axiom fxp_mult_def13 :
+  (forall x5:int.
+  (forall y:int [fxp_mult4(x5, y)]. ((not ((x5 = 0) or (y = 0))) ->
+  ((((0 <  x5) and (0 <  y)) or ((x5 <  0) and (y <  0))) ->
+  pos_div_relation(fxp_mult4(x5, y), ((((x5 * y) * 2) * 1) * 1),
+  ((5 * 1) * 2))))))
+
+axiom fxp_mult_def14 :
+  (forall x5:int.
+  (forall y:int [fxp_mult4(x5, y)]. ((not ((x5 = 0) or (y = 0))) ->
+  ((not (((0 <  x5) and (0 <  y)) or ((x5 <  0) and (y <  0)))) ->
+  pos_div_relation((-fxp_mult4(x5, y)), (-((((x5 * y) * 2) * 1) * 1)),
+  ((5 * 1) * 2))))))
+
+logic fxp_div4 : int, int -> int
+
+axiom fxp_div_def20 :
+  (forall x5:int.
+  (forall y:int [fxp_div4(x5, y)]. ((x5 = 0) -> (fxp_div4(x5, y) = 0))))
+
+axiom fxp_div_def21 :
+  (forall x5:int.
+  (forall y:int [fxp_div4(x5, y)]. ((not (x5 = 0)) -> (((0 <  x5) and
+  (0 <  y)) -> pos_div_relation(fxp_div4(x5, y), (((x5 * 2) * 1) * 1),
+  (((y * 5) * 1) * 2))))))
+
+axiom fxp_div_def22 :
+  (forall x5:int.
+  (forall y:int [fxp_div4(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> (((x5 <  0) and (y <  0)) -> pos_div_relation(fxp_div4(x5,
+  y), ((((-x5) * 2) * 1) * 1), ((((-y) * 5) * 1) * 2)))))))
+
+axiom fxp_div_def23 :
+  (forall x5:int.
+  (forall y:int [fxp_div4(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> ((not ((x5 <  0) and (y <  0))) -> (((x5 <  0) and
+  (0 <  y)) -> pos_div_relation((-fxp_div4(x5, y)), ((((-x5) * 2) * 1) * 1),
+  (((y * 5) * 1) * 2))))))))
+
+axiom fxp_div_def24 :
+  (forall x5:int.
+  (forall y:int [fxp_div4(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> ((not ((x5 <  0) and (y <  0))) -> ((not ((x5 <  0) and
+  (0 <  y))) -> (((0 <  x5) and (y <  0)) -> pos_div_relation((-fxp_div4(x5,
+  y)), (((x5 * 2) * 1) * 1), ((((-y) * 5) * 1) * 2)))))))))
+
+logic fxp_mult5 : int, int -> int
+
+axiom fxp_mult_def15 :
+  (forall x5:int.
+  (forall y:int [fxp_mult5(x5, y)]. (((x5 = 0) or (y = 0)) -> (fxp_mult5(x5,
+  y) = 0))))
+
+axiom fxp_mult_def16 :
+  (forall x5:int.
+  (forall y:int [fxp_mult5(x5, y)]. ((not ((x5 = 0) or (y = 0))) ->
+  ((((0 <  x5) and (0 <  y)) or ((x5 <  0) and (y <  0))) ->
+  pos_div_relation(fxp_mult5(x5, y), ((((x5 * y) * 1) * 1) * 1),
+  ((1 * 1) * 2))))))
+
+axiom fxp_mult_def17 :
+  (forall x5:int.
+  (forall y:int [fxp_mult5(x5, y)]. ((not ((x5 = 0) or (y = 0))) ->
+  ((not (((0 <  x5) and (0 <  y)) or ((x5 <  0) and (y <  0)))) ->
+  pos_div_relation((-fxp_mult5(x5, y)), (-((((x5 * y) * 1) * 1) * 1)),
+  ((1 * 1) * 2))))))
+
+logic fxp_div5 : int, int -> int
+
+axiom fxp_div_def25 :
+  (forall x5:int.
+  (forall y:int [fxp_div5(x5, y)]. ((x5 = 0) -> (fxp_div5(x5, y) = 0))))
+
+axiom fxp_div_def26 :
+  (forall x5:int.
+  (forall y:int [fxp_div5(x5, y)]. ((not (x5 = 0)) -> (((0 <  x5) and
+  (0 <  y)) -> pos_div_relation(fxp_div5(x5, y), (((x5 * 1) * 1) * 1),
+  (((y * 1) * 1) * 2))))))
+
+axiom fxp_div_def27 :
+  (forall x5:int.
+  (forall y:int [fxp_div5(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> (((x5 <  0) and (y <  0)) -> pos_div_relation(fxp_div5(x5,
+  y), ((((-x5) * 1) * 1) * 1), ((((-y) * 1) * 1) * 2)))))))
+
+axiom fxp_div_def28 :
+  (forall x5:int.
+  (forall y:int [fxp_div5(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> ((not ((x5 <  0) and (y <  0))) -> (((x5 <  0) and
+  (0 <  y)) -> pos_div_relation((-fxp_div5(x5, y)), ((((-x5) * 1) * 1) * 1),
+  (((y * 1) * 1) * 2))))))))
+
+axiom fxp_div_def29 :
+  (forall x5:int.
+  (forall y:int [fxp_div5(x5, y)]. ((not (x5 = 0)) -> ((not ((0 <  x5) and
+  (0 <  y))) -> ((not ((x5 <  0) and (y <  0))) -> ((not ((x5 <  0) and
+  (0 <  y))) -> (((0 <  x5) and (y <  0)) -> pos_div_relation((-fxp_div5(x5,
+  y)), (((x5 * 1) * 1) * 1), ((((-y) * 1) * 1) * 2)))))))))
+
+axiom cdiv_cases :
+  (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((0 <  d) -> (div(n,
+  d) = (n / d)))))
+
+axiom cdiv_cases1 :
+  (forall n:int. forall d:int [div(n, d)]. ((n <= 0) -> ((0 <  d) -> (div(n,
+  d) = (-((-n) / d))))))
+
+axiom cdiv_cases2 :
+  (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((d <  0) -> (div(n,
+  d) = (-(n / (-d)))))))
+
+axiom cdiv_cases3 :
+  (forall n:int. forall d:int [div(n, d)]. ((n <= 0) -> ((d <  0) -> (div(n,
+  d) = ((-n) / (-d))))))
+
+axiom cmod_cases :
+  (forall n:int. forall d:int [mod(n, d)]. ((0 <= n) -> ((0 <  d) -> (mod(n,
+  d) = (n % d)))))
+
+axiom cmod_cases1 :
+  (forall n:int. forall d:int [mod(n, d)]. ((n <= 0) -> ((0 <  d) -> (mod(n,
+  d) = (-((-n) % d))))))
+
+axiom cmod_cases2 :
+  (forall n:int. forall d:int [mod(n, d)]. ((0 <= n) -> ((d <  0) -> (mod(n,
+  d) = (n % (-d))))))
+
+axiom cmod_cases3 :
+  (forall n:int. forall d:int [mod(n, d)]. ((n <= 0) -> ((d <  0) -> (mod(n,
+  d) = (-((-n) % (-d)))))))
+
+ (* File "conversion_fixed.ads", line 8, characters 0-0 *)
+goal defqtvc :
+  (forall y:int. forall y2:int. forall y3:int. forall y4:int.
+  (dynamic_invariant(x, true, false, true, true) -> (dynamic_invariant1(x2,
+  true, false, true, true) -> (dynamic_invariant2(x3, true, false, true,
+  true) -> (dynamic_invariant3(x4, true, false, true, true) ->
+  (dynamic_invariant(y, false, false, true, true) -> (dynamic_invariant1(y2,
+  false, false, true, true) -> (dynamic_invariant2(y3, false, false, true,
+  true) -> (dynamic_invariant3(y4, false, false, true, true) ->
+  (forall y1:int. ((y1 = fxp_mult(x4, 1)) -> (((x4 = (- 5)) ->
+  (y1 = (- 25))) -> (((x4 = 1) -> (y1 = 5)) -> (((x4 = 2) -> (y1 = 10)) ->
+  (forall y21:int. ((y21 = fxp_mult1(x3, 1)) -> (((x3 = (- 10)) ->
+  (y21 = (- 250))) -> (((x3 = 2) -> (y21 = 50)) -> (((x3 = 4) ->
+  (y21 = 100)) ->
+  (forall y31:int. ((y31 = fxp_mult2(x2, 1)) -> (((x2 = (- 250)) ->
+  (y31 = (- 10))) -> (((x2 = 50) -> (y31 = 2)) -> (((x2 = 100) ->
+  (y31 = 4)) ->
+  (forall y32:int. ((y32 = fxp_mult3(x4, 1)) -> (((x4 = (- 5)) ->
+  (y32 = (- 10))) -> (((x4 = 1) -> (y32 = 2)) -> (((x4 = 2) -> (y32 = 4)) ->
+  (forall y41:int. ((y41 = fxp_mult4(x, 1)) -> (((x = (- 25)) ->
+  (y41 = (- 5))) -> ((x = 5) -> (y41 = 1))))))))))))))))))))))))))))))))))

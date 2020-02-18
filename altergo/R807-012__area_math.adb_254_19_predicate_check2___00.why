@@ -1,0 +1,1595 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type t
+
+logic tqtint : t -> int
+
+axiom tqtaxiom : (forall i:t. (0 <= tqtint(i)))
+
+axiom tqtaxiom1 : (forall i:t. (tqtint(i) <= 4294967295))
+
+logic nth : t, int -> bool
+
+axiom nth_out_of_bound :
+  (forall x:t. forall n:int. (((n <  0) or (32 <= n)) -> (nth(x,
+  n) = false)))
+
+logic zeros : t
+
+axiom Nth_zeros : (forall n:int. (nth(zeros, n) = false))
+
+logic one : t
+
+logic ones : t
+
+axiom Nth_ones :
+  (forall n:int. (((0 <= n) and (n <  32)) -> (nth(ones, n) = true)))
+
+logic bw_and : t, t -> t
+
+axiom Nth_bw_and :
+  (forall v1:t. forall v2:t. forall n:int. (((0 <= n) and (n <  32)) ->
+  (nth(bw_and(v1, v2), n) = andb(nth(v1, n), nth(v2, n)))))
+
+logic bw_or : t, t -> t
+
+axiom Nth_bw_or :
+  (forall v1:t. forall v2:t. forall n:int. (((0 <= n) and (n <  32)) ->
+  (nth(bw_or(v1, v2), n) = orb(nth(v1, n), nth(v2, n)))))
+
+logic bw_xor : t, t -> t
+
+axiom Nth_bw_xor :
+  (forall v1:t. forall v2:t. forall n:int. (((0 <= n) and (n <  32)) ->
+  (nth(bw_xor(v1, v2), n) = xorb(nth(v1, n), nth(v2, n)))))
+
+logic bw_not : t -> t
+
+axiom Nth_bw_not :
+  (forall v:t. forall n:int. (((0 <= n) and (n <  32)) -> (nth(bw_not(v),
+  n) = notb(nth(v, n)))))
+
+logic lsr : t, int -> t
+
+axiom Lsr_nth_low :
+  (forall b:t. forall n:int. forall s:int. ((0 <= s) -> ((0 <= n) ->
+  (((n + s) <  32) -> (nth(lsr(b, s), n) = nth(b, (n + s)))))))
+
+axiom Lsr_nth_high :
+  (forall b:t. forall n:int. forall s:int. ((0 <= s) -> ((0 <= n) ->
+  ((32 <= (n + s)) -> (nth(lsr(b, s), n) = false)))))
+
+axiom lsr_zeros : (forall x:t. (lsr(x, 0) = x))
+
+logic asr : t, int -> t
+
+axiom Asr_nth_low :
+  (forall b:t. forall n:int. forall s:int. ((0 <= s) -> (((0 <= n) and
+  (n <  32)) -> (((n + s) <  32) -> (nth(asr(b, s), n) = nth(b, (n + s)))))))
+
+axiom Asr_nth_high :
+  (forall b:t. forall n:int. forall s:int. ((0 <= s) -> (((0 <= n) and
+  (n <  32)) -> ((32 <= (n + s)) -> (nth(asr(b, s), n) = nth(b,
+  (32 - 1)))))))
+
+axiom asr_zeros : (forall x:t. (asr(x, 0) = x))
+
+logic lsl : t, int -> t
+
+axiom Lsl_nth_high :
+  (forall b:t. forall n:int. forall s:int. (((0 <= s) and ((s <= n) and
+  (n <  32))) -> (nth(lsl(b, s), n) = nth(b, (n - s)))))
+
+axiom Lsl_nth_low :
+  (forall b:t. forall n:int. forall s:int. (((0 <= n) and (n <  s)) ->
+  (nth(lsl(b, s), n) = false)))
+
+axiom lsl_zeros : (forall x:t. (lsl(x, 0) = x))
+
+axiom Div_mod :
+  (forall x:int. forall y:int. ((not (y = 0)) ->
+  (x = ((y * (x / y)) + (x % y)))))
+
+axiom Mod_bound :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (0 <= (x % y))))
+
+axiom Mod_bound1 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> ((x % y) <  abs_int(y))))
+
+axiom Div_unique :
+  (forall x:int. forall y:int. forall q:int. ((0 <  y) ->
+  ((((q * y) <= x) and (x <  ((q * y) + y))) -> ((x / y) = q))))
+
+axiom Div_bound :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= (x / y))))
+
+axiom Div_bound1 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> ((x / y) <= x)))
+
+axiom Mod_1 : (forall x:int. ((x % 1) = 0))
+
+axiom Div_1 : (forall x:int. ((x / 1) = x))
+
+axiom Div_inf :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> ((x / y) = 0)))
+
+axiom Div_inf_neg :
+  (forall x:int. forall y:int. (((0 <  x) and (x <= y)) ->
+  (((-x) / y) = (- 1))))
+
+axiom Mod_0 : (forall y:int. ((not (y = 0)) -> ((0 % y) = 0)))
+
+axiom Div_1_left : (forall y:int. ((1 <  y) -> ((1 / y) = 0)))
+
+axiom Div_minus1_left : (forall y:int. ((1 <  y) -> (((- 1) / y) = (- 1))))
+
+axiom Mod_1_left : (forall y:int. ((1 <  y) -> ((1 % y) = 1)))
+
+axiom Mod_minus1_left :
+  (forall y:int [((- 1) % y)]. ((1 <  y) -> (((- 1) % y) = (y - 1))))
+
+axiom Div_mult :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) / x)].
+  ((0 <  x) -> ((((x * y) + z) / x) = (y + (z / x)))))
+
+axiom Mod_mult :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) % x)].
+  ((0 <  x) -> ((((x * y) + z) % x) = (z % x))))
+
+logic rotate_right : t, int -> t
+
+axiom Nth_rotate_right :
+  (forall v:t. forall n:int. forall i:int. (((0 <= i) and (i <  32)) ->
+  ((0 <= n) -> (nth(rotate_right(v, n), i) = nth(v, ((i + n) % 32))))))
+
+logic rotate_left : t, int -> t
+
+axiom Nth_rotate_left :
+  (forall v:t. forall n:int. forall i:int. (((0 <= i) and (i <  32)) ->
+  ((0 <= n) -> (nth(rotate_left(v, n), i) = nth(v, ((i - n) % 32))))))
+
+logic pow2 : int -> int
+
+axiom Power_0 : (pow2(0) = 1)
+
+axiom Power_s : (forall n:int. ((0 <= n) -> (pow2((n + 1)) = (2 * pow2(n)))))
+
+axiom Power_1 : (pow2(1) = 2)
+
+axiom Power_sum :
+  (forall n:int. forall m:int. (((0 <= n) and (0 <= m)) ->
+  (pow2((n + m)) = (pow2(n) * pow2(m)))))
+
+axiom pow2pos : (forall i:int. ((0 <= i) -> (0 <  pow2(i))))
+
+axiom pow2_0 : (pow2(0) = 1)
+
+axiom pow2_1 : (pow2(1) = 2)
+
+axiom pow2_2 : (pow2(2) = 4)
+
+axiom pow2_3 : (pow2(3) = 8)
+
+axiom pow2_4 : (pow2(4) = 16)
+
+axiom pow2_5 : (pow2(5) = 32)
+
+axiom pow2_6 : (pow2(6) = 64)
+
+axiom pow2_7 : (pow2(7) = 128)
+
+axiom pow2_8 : (pow2(8) = 256)
+
+axiom pow2_9 : (pow2(9) = 512)
+
+axiom pow2_10 : (pow2(10) = 1024)
+
+axiom pow2_11 : (pow2(11) = 2048)
+
+axiom pow2_12 : (pow2(12) = 4096)
+
+axiom pow2_13 : (pow2(13) = 8192)
+
+axiom pow2_14 : (pow2(14) = 16384)
+
+axiom pow2_15 : (pow2(15) = 32768)
+
+axiom pow2_16 : (pow2(16) = 65536)
+
+axiom pow2_17 : (pow2(17) = 131072)
+
+axiom pow2_18 : (pow2(18) = 262144)
+
+axiom pow2_19 : (pow2(19) = 524288)
+
+axiom pow2_20 : (pow2(20) = 1048576)
+
+axiom pow2_21 : (pow2(21) = 2097152)
+
+axiom pow2_22 : (pow2(22) = 4194304)
+
+axiom pow2_23 : (pow2(23) = 8388608)
+
+axiom pow2_24 : (pow2(24) = 16777216)
+
+axiom pow2_25 : (pow2(25) = 33554432)
+
+axiom pow2_26 : (pow2(26) = 67108864)
+
+axiom pow2_27 : (pow2(27) = 134217728)
+
+axiom pow2_28 : (pow2(28) = 268435456)
+
+axiom pow2_29 : (pow2(29) = 536870912)
+
+axiom pow2_30 : (pow2(30) = 1073741824)
+
+axiom pow2_31 : (pow2(31) = 2147483648)
+
+axiom pow2_32 : (pow2(32) = 4294967296)
+
+axiom pow2_33 : (pow2(33) = 8589934592)
+
+axiom pow2_34 : (pow2(34) = 17179869184)
+
+axiom pow2_35 : (pow2(35) = 34359738368)
+
+axiom pow2_36 : (pow2(36) = 68719476736)
+
+axiom pow2_37 : (pow2(37) = 137438953472)
+
+axiom pow2_38 : (pow2(38) = 274877906944)
+
+axiom pow2_39 : (pow2(39) = 549755813888)
+
+axiom pow2_40 : (pow2(40) = 1099511627776)
+
+axiom pow2_41 : (pow2(41) = 2199023255552)
+
+axiom pow2_42 : (pow2(42) = 4398046511104)
+
+axiom pow2_43 : (pow2(43) = 8796093022208)
+
+axiom pow2_44 : (pow2(44) = 17592186044416)
+
+axiom pow2_45 : (pow2(45) = 35184372088832)
+
+axiom pow2_46 : (pow2(46) = 70368744177664)
+
+axiom pow2_47 : (pow2(47) = 140737488355328)
+
+axiom pow2_48 : (pow2(48) = 281474976710656)
+
+axiom pow2_49 : (pow2(49) = 562949953421312)
+
+axiom pow2_50 : (pow2(50) = 1125899906842624)
+
+axiom pow2_51 : (pow2(51) = 2251799813685248)
+
+axiom pow2_52 : (pow2(52) = 4503599627370496)
+
+axiom pow2_53 : (pow2(53) = 9007199254740992)
+
+axiom pow2_54 : (pow2(54) = 18014398509481984)
+
+axiom pow2_55 : (pow2(55) = 36028797018963968)
+
+axiom pow2_56 : (pow2(56) = 72057594037927936)
+
+axiom pow2_57 : (pow2(57) = 144115188075855872)
+
+axiom pow2_58 : (pow2(58) = 288230376151711744)
+
+axiom pow2_59 : (pow2(59) = 576460752303423488)
+
+axiom pow2_60 : (pow2(60) = 1152921504606846976)
+
+axiom pow2_61 : (pow2(61) = 2305843009213693952)
+
+axiom pow2_62 : (pow2(62) = 4611686018427387904)
+
+axiom pow2_63 : (pow2(63) = 9223372036854775808)
+
+axiom pow2_64 : (pow2(64) = 18446744073709551616)
+
+logic is_signed_positive : t -> prop
+
+logic of_int : int -> t
+
+function to_int(x: t) : int =
+  (if is_signed_positive(x) then tqtint(x) else (-(4294967296 - tqtint(x))))
+
+axiom to_uint_extensionality :
+  (forall v:t. forall vqt:t. ((tqtint(v) = tqtint(vqt)) -> (v = vqt)))
+
+axiom to_int_extensionality :
+  (forall v:t. forall vqt:t. ((to_int(v) = to_int(vqt)) -> (v = vqt)))
+
+predicate uint_in_range(i: int) = ((0 <= i) and (i <= 4294967295))
+
+axiom to_uint_bounds : (forall v:t. (0 <= tqtint(v)))
+
+axiom to_uint_bounds1 : (forall v:t. (tqtint(v) <  4294967296))
+
+axiom to_uint_of_int :
+  (forall i:int. (((0 <= i) and (i <  4294967296)) ->
+  (tqtint(of_int(i)) = i)))
+
+logic size_bv : t
+
+axiom to_uint_size_bv : (tqtint(size_bv) = 32)
+
+axiom to_uint_zeros : (tqtint(zeros) = 0)
+
+axiom to_uint_one : (tqtint(one) = 1)
+
+axiom to_uint_ones : (tqtint(ones) = 4294967295)
+
+predicate ult(x: t, y: t) = (tqtint(x) <  tqtint(y))
+
+predicate ule(x: t, y: t) = (tqtint(x) <= tqtint(y))
+
+predicate ugt(x: t, y: t) = (tqtint(y) <  tqtint(x))
+
+predicate uge(x: t, y: t) = (tqtint(y) <= tqtint(x))
+
+predicate slt(v1: t, v2: t) = (to_int(v1) <  to_int(v2))
+
+predicate sle(v1: t, v2: t) = (to_int(v1) <= to_int(v2))
+
+predicate sgt(v1: t, v2: t) = (to_int(v2) <  to_int(v1))
+
+predicate sge(v1: t, v2: t) = (to_int(v2) <= to_int(v1))
+
+axiom positive_is_ge_zeros :
+  (forall x:t. (is_signed_positive(x) -> sge(x, zeros)))
+
+axiom positive_is_ge_zeros1 :
+  (forall x:t. (sge(x, zeros) -> is_signed_positive(x)))
+
+logic add : t, t -> t
+
+axiom to_uint_add_bounded :
+  (forall v1:t. forall v2:t. (((tqtint(v1) + tqtint(v2)) <  4294967296) ->
+  (tqtint(add(v1, v2)) = (tqtint(v1) + tqtint(v2)))))
+
+logic sub : t, t -> t
+
+axiom to_uint_sub_bounded :
+  (forall v1:t. forall v2:t. (((0 <= (tqtint(v1) - tqtint(v2))) and
+  ((tqtint(v1) - tqtint(v2)) <  4294967296)) -> (tqtint(sub(v1,
+  v2)) = (tqtint(v1) - tqtint(v2)))))
+
+logic neg : t -> t
+
+axiom to_uint_neg :
+  (forall v:t. (tqtint(neg(v)) = ((-tqtint(v)) % 4294967296)))
+
+logic mul : t, t -> t
+
+axiom to_uint_mul_bounded :
+  (forall v1:t. forall v2:t. (((tqtint(v1) * tqtint(v2)) <  4294967296) ->
+  (tqtint(mul(v1, v2)) = (tqtint(v1) * tqtint(v2)))))
+
+logic udiv : t, t -> t
+
+axiom to_uint_udiv :
+  (forall v1:t. forall v2:t. (tqtint(udiv(v1,
+  v2)) = (tqtint(v1) / tqtint(v2))))
+
+logic urem : t, t -> t
+
+axiom to_uint_urem :
+  (forall v1:t. forall v2:t. (tqtint(urem(v1,
+  v2)) = (tqtint(v1) % tqtint(v2))))
+
+logic lsr_bv : t, t -> t
+
+axiom lsr_bv_is_lsr :
+  (forall x:t. forall n:t. (lsr_bv(x, n) = lsr(x, tqtint(n))))
+
+axiom to_uint_lsr :
+  (forall v:t. forall n:t. (tqtint(lsr_bv(v,
+  n)) = (tqtint(v) / pow2(tqtint(n)))))
+
+logic asr_bv : t, t -> t
+
+axiom asr_bv_is_asr :
+  (forall x:t. forall n:t. (asr_bv(x, n) = asr(x, tqtint(n))))
+
+logic lsl_bv : t, t -> t
+
+axiom lsl_bv_is_lsl :
+  (forall x:t. forall n:t. (lsl_bv(x, n) = lsl(x, tqtint(n))))
+
+axiom to_uint_lsl :
+  (forall v:t. forall n:t. (tqtint(lsl_bv(v,
+  n)) = ((tqtint(v) * pow2(tqtint(n))) % 4294967296)))
+
+logic rotate_right_bv : t, t -> t
+
+logic rotate_left_bv : t, t -> t
+
+axiom rotate_left_bv_is_rotate_left :
+  (forall v:t. forall n:t. (rotate_left_bv(v, n) = rotate_left(v,
+  tqtint(n))))
+
+axiom rotate_right_bv_is_rotate_right :
+  (forall v:t. forall n:t. (rotate_right_bv(v, n) = rotate_right(v,
+  tqtint(n))))
+
+logic nth_bv : t, t -> bool
+
+axiom Nth_bv_is_nth :
+  (forall x:t. forall i:t. (nth(x, tqtint(i)) = nth_bv(x, i)))
+
+axiom Nth_bv_is_nth2 :
+  (forall x:t. forall i:int. (((0 <= i) and (i <  4294967296)) -> (nth_bv(x,
+  of_int(i)) = nth(x, i))))
+
+logic eq_sub_bv : t, t, t, t -> prop
+
+predicate eq_sub(a: t, b: t, i: int, n: int) =
+  (forall j:int. (((i <= j) and (j <  (i + n))) -> (nth(a, j) = nth(b, j))))
+
+axiom eq_sub_equiv :
+  (forall a:t. forall b:t. forall i:t. forall n:t. (eq_sub(a, b, tqtint(i),
+  tqtint(n)) -> eq_sub_bv(a, b, i, n)))
+
+axiom eq_sub_equiv1 :
+  (forall a:t. forall b:t. forall i:t. forall n:t. (eq_sub_bv(a, b, i, n) ->
+  eq_sub(a, b, tqtint(i), tqtint(n))))
+
+axiom Extensionality :
+  (forall x:t. forall y:t [eq_sub(x, y, 0, 32)]. (eq_sub(x, y, 0, 32) ->
+  (x = y)))
+
+type t__ref = { t__content : t
+}
+
+function bool_eq(x: t, y: t) : bool = (if (x = y) then true else false)
+
+function bool_ne(x: t, y: t) : bool = (if (not (x = y)) then true else false)
+
+function bool_lt(x: t, y: t) : bool = (if ult(x, y) then true else false)
+
+function bool_le(x: t, y: t) : bool = (if ule(x, y) then true else false)
+
+function bool_gt(x: t, y: t) : bool = (if ugt(x, y) then true else false)
+
+function bool_ge(x: t, y: t) : bool = (if uge(x, y) then true else false)
+
+logic power : t, int -> t
+
+axiom Power_01 : (forall x:t. (power(x, 0) = one))
+
+axiom Power_11 : (forall x:t. (power(x, 1) = x))
+
+axiom Power_s1 :
+  (forall x:t. forall n:int. ((0 <= n) -> (power(x, (n + 1)) = mul(x,
+  power(x, n)))))
+
+axiom Power_s_alt :
+  (forall x:t. forall n:int. ((0 <  n) -> (power(x, n) = mul(x, power(x,
+  (n - 1))))))
+
+axiom Power_sum1 :
+  (forall x:t. forall n:int. forall m:int. ((0 <= n) -> ((0 <= m) ->
+  (power(x, (n + m)) = mul(power(x, n), power(x, m))))))
+
+axiom Power_mult :
+  (forall x:t. forall n:int. forall m:int. ((0 <= n) -> ((0 <= m) ->
+  (power(x, (n * m)) = power(power(x, n), m)))))
+
+axiom Power_mult2 :
+  (forall x:t. forall y:t. forall n:int. ((0 <= n) -> (power(mul(x, y),
+  n) = mul(power(x, n), power(y, n)))))
+
+function bv_min(x: t, y: t) : t = (if ule(x, y) then x else y)
+
+function bv_max(x: t, y: t) : t = (if ule(x, y) then y else x)
+
+function min(x: int, y: int) : int = (if (x <= y) then x else y)
+
+function max(x: int, y: int) : int = (if (x <= y) then y else x)
+
+axiom Min_r : (forall x:int. forall y:int. ((y <= x) -> (min(x, y) = y)))
+
+axiom Max_l : (forall x:int. forall y:int. ((y <= x) -> (max(x, y) = x)))
+
+axiom Min_comm : (forall x:int. forall y:int. (min(x, y) = min(y, x)))
+
+axiom Max_comm : (forall x:int. forall y:int. (max(x, y) = max(y, x)))
+
+axiom Min_assoc :
+  (forall x:int. forall y:int. forall z:int. (min(min(x, y), z) = min(x,
+  min(y, z))))
+
+axiom Max_assoc :
+  (forall x:int. forall y:int. forall z:int. (max(max(x, y), z) = max(x,
+  max(y, z))))
+
+axiom bv_min_to_uint :
+  (forall x:t. forall y:t. (tqtint(bv_min(x, y)) = min(tqtint(x),
+  tqtint(y))))
+
+axiom bv_max_to_uint :
+  (forall x:t. forall y:t. (tqtint(bv_max(x, y)) = max(tqtint(x),
+  tqtint(y))))
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq1(x: bool, y: bool) : bool =
+  (if (x = y) then true else false)
+
+function to_int1(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int1(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_39))
+
+function to_rep(x: natural) : int = naturalqtint(x)
+
+logic of_rep : int -> natural
+
+axiom inversion_axiom :
+  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:natural [to_rep(x)]. in_range2(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range2(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+function to_rep1(x: integer) : int = integerqtint(x)
+
+logic of_rep1 : int -> integer
+
+axiom inversion_axiom1 :
+  (forall x:integer [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range1(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type address_type
+
+logic attr__ATTRIBUTE_MODULUS : t
+
+function bool_eq4(x: t, y: t) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : t -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> t
+
+logic user_eq2 : address_type, address_type -> bool
+
+logic dummy2 : address_type
+
+type address_type__ref = { address_type__content : address_type
+}
+
+function address_type__ref_address_type__content__projection(a: address_type__ref) : address_type =
+  (a).address_type__content
+
+logic to_rep2 : address_type -> t
+
+logic of_rep2 : t -> address_type
+
+axiom inversion_axiom2 :
+  (forall x:address_type [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
+
+axiom coerce_axiom2 :
+  (forall x:t [to_rep2(of_rep2(x))]. (to_rep2(of_rep2(x)) = x))
+
+function to_int2(x: address_type) : int = tqtint(to_rep2(x))
+
+axiom range_int_axiom :
+  (forall x:address_type [to_int2(x)]. uint_in_range(to_int2(x)))
+
+type map__ref = { map__content : (int,address_type) farray
+}
+
+logic slide : (int,address_type) farray, int,
+  int -> (int,address_type) farray
+
+axiom slide_eq :
+  (forall a:(int,address_type) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,address_type) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq5(a: (int,address_type) farray, a__first: int, a__last: int,
+  b: (int,address_type) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep2((a[temp___idx_154])) = to_rep2((b[((b__first - a__first) + temp___idx_154)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,address_type) farray. forall b:(int,address_type) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,address_type) farray. forall b:(int,address_type) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,address_type) farray. forall b:(int,address_type) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,address_type) farray. forall b:(int,address_type) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep2((a[temp___idx_154])) = to_rep2((b[((b__first - a__first) + temp___idx_154)]))))))))
+
+type t1
+
+logic first : t1 -> integer
+
+logic last : t1 -> integer
+
+logic mk : int, int -> t1
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (in_range1(low) and in_range1(high)))))
+
+type us_t = { elts : (int,address_type) farray; rt : t1
+}
+
+function to_array(a: us_t) : (int,address_type) farray = (a).elts
+
+function of_array(a: (int,address_type) farray, f: int, l: int) : us_t = {
+  elts = a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep1(first((a).rt))
+
+function last1(a: us_t) : int = to_rep1(last((a).rt))
+
+function length(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq6(x: us_t, y: us_t) : bool = bool_eq5((x).elts,
+  to_rep1(first((x).rt)), to_rep1(last((x).rt)), (y).elts,
+  to_rep1(first((y).rt)), to_rep1(last((y).rt)))
+
+logic user_eq3 : us_t, us_t -> bool
+
+logic dummy3 : us_t
+
+type area_array__ref = { area_array__content : us_t
+}
+
+function area_array__ref_area_array__content__projection(a: area_array__ref) : us_t =
+  (a).area_array__content
+
+type t6s__ref = { t6s__content : us_t
+}
+
+function t6s__ref_t6s__content__projection(a: t6s__ref) : us_t =
+  (a).t6s__content
+
+type t8s__ref = { t8s__content : us_t
+}
+
+function t8s__ref_t8s__content__projection(a: t8s__ref) : us_t =
+  (a).t8s__content
+
+type us_split_discrs = { rec__area_math__ensemble__max : natural
+}
+
+function us_split_discrs_rec__area_math__ensemble__max__projection(a: us_split_discrs) : natural =
+  (a).rec__area_math__ensemble__max
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_split_fields = { rec__area_math__ensemble__size : natural;
+rec__area_math__ensemble__from : us_t; rec__area_math__ensemble__to : us_t
+}
+
+function us_split_fields_rec__area_math__ensemble__size__projection(a: us_split_fields) : natural =
+  (a).rec__area_math__ensemble__size
+
+function us_split_fields_rec__area_math__ensemble__from__projection(a: us_split_fields) : us_t =
+  (a).rec__area_math__ensemble__from
+
+function us_split_fields_rec__area_math__ensemble__to__projection(a: us_split_fields) : us_t =
+  (a).rec__area_math__ensemble__to
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_discrs1 : us_split_discrs; us_split_fields1 :
+us_split_fields
+}
+
+function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
+  (a).us_split_discrs1
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq7(a: us_rep, b: us_rep) : bool =
+  (if ((to_rep(((a).us_split_discrs1).rec__area_math__ensemble__max) = to_rep(((b).us_split_discrs1).rec__area_math__ensemble__max)) and
+  (((to_rep(((a).us_split_fields1).rec__area_math__ensemble__size) = to_rep(((b).us_split_fields1).rec__area_math__ensemble__size)) and
+  (bool_eq6(((a).us_split_fields1).rec__area_math__ensemble__from,
+  ((b).us_split_fields1).rec__area_math__ensemble__from) = true)) and
+  (bool_eq6(((a).us_split_fields1).rec__area_math__ensemble__to,
+  ((b).us_split_fields1).rec__area_math__ensemble__to) = true))) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic area_math__ensemble__max__first__bit : int
+
+logic area_math__ensemble__max__last__bit : int
+
+logic area_math__ensemble__max__position : int
+
+axiom area_math__ensemble__max__first__bit_axiom :
+  (0 <= area_math__ensemble__max__first__bit)
+
+axiom area_math__ensemble__max__last__bit_axiom :
+  (area_math__ensemble__max__first__bit <  area_math__ensemble__max__last__bit)
+
+axiom area_math__ensemble__max__position_axiom :
+  (0 <= area_math__ensemble__max__position)
+
+logic area_math__ensemble__size__first__bit : int
+
+logic area_math__ensemble__size__last__bit : int
+
+logic area_math__ensemble__size__position : int
+
+axiom area_math__ensemble__size__first__bit_axiom :
+  (0 <= area_math__ensemble__size__first__bit)
+
+axiom area_math__ensemble__size__last__bit_axiom :
+  (area_math__ensemble__size__first__bit <  area_math__ensemble__size__last__bit)
+
+axiom area_math__ensemble__size__position_axiom :
+  (0 <= area_math__ensemble__size__position)
+
+logic area_math__ensemble__from__first__bit : int
+
+logic area_math__ensemble__from__last__bit : int
+
+logic area_math__ensemble__from__position : int
+
+axiom area_math__ensemble__from__first__bit_axiom :
+  (0 <= area_math__ensemble__from__first__bit)
+
+axiom area_math__ensemble__from__last__bit_axiom :
+  (area_math__ensemble__from__first__bit <  area_math__ensemble__from__last__bit)
+
+axiom area_math__ensemble__from__position_axiom :
+  (0 <= area_math__ensemble__from__position)
+
+logic area_math__ensemble__to__first__bit : int
+
+logic area_math__ensemble__to__last__bit : int
+
+logic area_math__ensemble__to__position : int
+
+axiom area_math__ensemble__to__first__bit_axiom :
+  (0 <= area_math__ensemble__to__first__bit)
+
+axiom area_math__ensemble__to__last__bit_axiom :
+  (area_math__ensemble__to__first__bit <  area_math__ensemble__to__last__bit)
+
+axiom area_math__ensemble__to__position_axiom :
+  (0 <= area_math__ensemble__to__position)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type ensemble__ref = { ensemble__content : us_rep
+}
+
+function ensemble__ref_ensemble__content__projection(a: ensemble__ref) : us_rep =
+  (a).ensemble__content
+
+logic is_consistent : us_rep -> bool
+
+logic is_consistent__function_guard : bool, us_rep -> prop
+
+predicate dynamic_invariant1(temp___expr_206: us_rep,
+  temp___is_init_202: bool, temp___skip_constant_203: bool,
+  temp___do_toplevel_204: bool, temp___do_typ_inv_205: bool) =
+  (((temp___do_toplevel_204 = true) -> ((temp___is_init_202 = true) ->
+  ((to_rep(((temp___expr_206).us_split_fields1).rec__area_math__ensemble__size) <= last1(((temp___expr_206).us_split_fields1).rec__area_math__ensemble__from)) and
+  (to_rep(((temp___expr_206).us_split_fields1).rec__area_math__ensemble__size) <= last1(((temp___expr_206).us_split_fields1).rec__area_math__ensemble__to))))) and
+  (let temp___208 =
+  ((temp___expr_206).us_split_discrs1).rec__area_math__ensemble__max
+  : natural in ((dynamic_property(1, to_rep(temp___208),
+  first1(((temp___expr_206).us_split_fields1).rec__area_math__ensemble__from),
+  last1(((temp___expr_206).us_split_fields1).rec__area_math__ensemble__from)) and
+  ((first1(((temp___expr_206).us_split_fields1).rec__area_math__ensemble__from) = 1) and
+  (last1(((temp___expr_206).us_split_fields1).rec__area_math__ensemble__from) = to_rep(temp___208)))) and
+  (dynamic_property(1, to_rep(temp___208),
+  first1(((temp___expr_206).us_split_fields1).rec__area_math__ensemble__to),
+  last1(((temp___expr_206).us_split_fields1).rec__area_math__ensemble__to)) and
+  ((first1(((temp___expr_206).us_split_fields1).rec__area_math__ensemble__to) = 1) and
+  (last1(((temp___expr_206).us_split_fields1).rec__area_math__ensemble__to) = to_rep(temp___208)))))))
+
+predicate dynamic_predicate(temp___211: us_rep) =
+  ((to_rep(((temp___211).us_split_fields1).rec__area_math__ensemble__size) <= last1(((temp___211).us_split_fields1).rec__area_math__ensemble__from)) and
+  (to_rep(((temp___211).us_split_fields1).rec__area_math__ensemble__size) <= last1(((temp___211).us_split_fields1).rec__area_math__ensemble__to)))
+
+logic rliteral : t
+
+axiom rliteral_axiom : (tqtint(rliteral) = 1)
+
+axiom is_consistent__def_axiom :
+  (forall e:us_rep [is_consistent(e)]. ((is_consistent(e) = true) ->
+  (forall r:int. (((1 <= r) and
+  (r <= (to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) - 1))) ->
+  ult(to_rep2((to_array(((e).us_split_fields1).rec__area_math__ensemble__to)[r])),
+  to_rep2((to_array(((e).us_split_fields1).rec__area_math__ensemble__from)[(r + 1)])))))))
+
+axiom is_consistent__def_axiom1 :
+  (forall e:us_rep [is_consistent(e)]. ((is_consistent(e) = true) ->
+  (forall r:int. (((1 <= r) and
+  (r <= (to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) - 1))) ->
+  ugt(sub(to_rep2((to_array(((e).us_split_fields1).rec__area_math__ensemble__from)[(r + 1)])),
+  to_rep2((to_array(((e).us_split_fields1).rec__area_math__ensemble__to)[r]))),
+  rliteral)))))
+
+axiom is_consistent__def_axiom2 :
+  (forall e:us_rep [is_consistent(e)]. ((is_consistent(e) = true) ->
+  (forall r:int. (((1 <= r) and
+  (r <= to_rep(((e).us_split_fields1).rec__area_math__ensemble__size))) ->
+  ule(to_rep2((to_array(((e).us_split_fields1).rec__area_math__ensemble__from)[r])),
+  to_rep2((to_array(((e).us_split_fields1).rec__area_math__ensemble__to)[r])))))))
+
+axiom is_consistent__def_axiom3 :
+  (forall e:us_rep [is_consistent(e)].
+  (((forall r:int. (((1 <= r) and
+    (r <= (to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) - 1))) ->
+    (ult(to_rep2((to_array(((e).us_split_fields1).rec__area_math__ensemble__to)[r])),
+    to_rep2((to_array(((e).us_split_fields1).rec__area_math__ensemble__from)[(r + 1)]))) and
+    ugt(sub(to_rep2((to_array(((e).us_split_fields1).rec__area_math__ensemble__from)[(r + 1)])),
+    to_rep2((to_array(((e).us_split_fields1).rec__area_math__ensemble__to)[r]))),
+    rliteral)))) and
+  (forall r:int. (((1 <= r) and
+  (r <= to_rep(((e).us_split_fields1).rec__area_math__ensemble__size))) ->
+  ule(to_rep2((to_array(((e).us_split_fields1).rec__area_math__ensemble__from)[r])),
+  to_rep2((to_array(((e).us_split_fields1).rec__area_math__ensemble__to)[r])))))) ->
+  (is_consistent(e) = true)))
+
+logic i13s : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic olt : t, us_rep -> bool
+
+logic olt__function_guard : bool, t, us_rep -> prop
+
+logic rliteral1 : t
+
+axiom rliteral_axiom1 : (tqtint(rliteral1) = 0)
+
+logic rliteral2 : t
+
+axiom rliteral_axiom2 : (tqtint(rliteral2) = 4294967295)
+
+predicate dynamic_invariant2(temp___expr_183: t, temp___is_init_179: bool,
+  temp___skip_constant_180: bool, temp___do_toplevel_181: bool,
+  temp___do_typ_inv_182: bool) = true
+
+axiom olt__def_axiom :
+  (forall b:t.
+  (forall a:us_rep [olt(b, a)]. ((olt(b, a) = true) ->
+  (exists r:int. (((1 <= r) and
+  (r <= to_rep(((a).us_split_fields1).rec__area_math__ensemble__size))) and
+  (ule(to_rep2((to_array(((a).us_split_fields1).rec__area_math__ensemble__from)[r])),
+  b) and ule(b,
+  to_rep2((to_array(((a).us_split_fields1).rec__area_math__ensemble__to)[r])))))))))
+
+axiom olt__def_axiom1 :
+  (forall b:t.
+  (forall a:us_rep [olt(b, a)].
+  ((exists r:int. (((1 <= r) and
+   (r <= to_rep(((a).us_split_fields1).rec__area_math__ensemble__size))) and
+   (ule(to_rep2((to_array(((a).us_split_fields1).rec__area_math__ensemble__from)[r])),
+   b) and ule(b,
+   to_rep2((to_array(((a).us_split_fields1).rec__area_math__ensemble__to)[r])))))) ->
+  (olt(b, a) = true))))
+
+logic e : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+type t55b__ref = { t55b__content : us_t
+}
+
+function t55b__ref_t55b__content__projection(a: t55b__ref) : us_t =
+  (a).t55b__content
+
+type t56b__ref = { t56b__content : us_t
+}
+
+function t56b__ref_t56b__content__projection(a: t56b__ref) : us_t =
+  (a).t56b__content
+
+type us_split_fields2 = { rec__area_math__ensemble__size1 : natural;
+rec__area_math__ensemble__from1 : us_t; rec__area_math__ensemble__to1 : us_t
+}
+
+function us_split_fields_rec__area_math__ensemble__size__5__projection(a: us_split_fields2) : natural =
+  (a).rec__area_math__ensemble__size1
+
+function us_split_fields_rec__area_math__ensemble__from__5__projection(a: us_split_fields2) : us_t =
+  (a).rec__area_math__ensemble__from1
+
+function us_split_fields_rec__area_math__ensemble__to__5__projection(a: us_split_fields2) : us_t =
+  (a).rec__area_math__ensemble__to1
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__5__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_discrs2 : us_split_discrs; us_split_fields3 :
+us_split_fields2
+}
+
+function us_rep___split_discrs__5__projection(a: us_rep1) : us_split_discrs =
+  (a).us_split_discrs2
+
+function us_rep___split_fields__5__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function to_base(a: us_rep1) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs2; us_split_fields1 = { rec__area_math__ensemble__size =
+  ((a).us_split_fields3).rec__area_math__ensemble__size1;
+  rec__area_math__ensemble__from =
+  of_array(to_array(((a).us_split_fields3).rec__area_math__ensemble__from1),
+  first1(((a).us_split_fields3).rec__area_math__ensemble__from1),
+  last1(((a).us_split_fields3).rec__area_math__ensemble__from1));
+  rec__area_math__ensemble__to =
+  of_array(to_array(((a).us_split_fields3).rec__area_math__ensemble__to1),
+  first1(((a).us_split_fields3).rec__area_math__ensemble__to1),
+  last1(((a).us_split_fields3).rec__area_math__ensemble__to1)) } }
+
+function of_base(r: us_rep) : us_rep1 = { us_split_discrs2 =
+  (r).us_split_discrs1; us_split_fields3 = {
+  rec__area_math__ensemble__size1 =
+  ((r).us_split_fields1).rec__area_math__ensemble__size;
+  rec__area_math__ensemble__from1 =
+  of_array(to_array(((r).us_split_fields1).rec__area_math__ensemble__from),
+  first1(((r).us_split_fields1).rec__area_math__ensemble__from),
+  last1(((r).us_split_fields1).rec__area_math__ensemble__from));
+  rec__area_math__ensemble__to1 =
+  of_array(to_array(((r).us_split_fields1).rec__area_math__ensemble__to),
+  first1(((r).us_split_fields1).rec__area_math__ensemble__to),
+  last1(((r).us_split_fields1).rec__area_math__ensemble__to)) } }
+
+function bool_eq8(a: us_rep1, b: us_rep1) : bool =
+  (if ((to_rep(((a).us_split_discrs2).rec__area_math__ensemble__max) = to_rep(((b).us_split_discrs2).rec__area_math__ensemble__max)) and
+  (((to_rep(((a).us_split_fields3).rec__area_math__ensemble__size1) = to_rep(((b).us_split_fields3).rec__area_math__ensemble__size1)) and
+  (bool_eq6(((a).us_split_fields3).rec__area_math__ensemble__from1,
+  ((b).us_split_fields3).rec__area_math__ensemble__from1) = true)) and
+  (bool_eq6(((a).us_split_fields3).rec__area_math__ensemble__to1,
+  ((b).us_split_fields3).rec__area_math__ensemble__to1) = true))) then true else false)
+
+predicate in_range3(rec__area_math__ensemble__max1: int, a: us_rep) =
+  (rec__area_math__ensemble__max1 = to_rep(((a).us_split_discrs1).rec__area_math__ensemble__max))
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic area_math__ensemble__max__first__bit1 : int
+
+logic area_math__ensemble__max__last__bit1 : int
+
+logic area_math__ensemble__max__position1 : int
+
+axiom area_math__ensemble__max__first__bit_axiom1 :
+  (0 <= area_math__ensemble__max__first__bit1)
+
+axiom area_math__ensemble__max__last__bit_axiom1 :
+  (area_math__ensemble__max__first__bit1 <  area_math__ensemble__max__last__bit1)
+
+axiom area_math__ensemble__max__position_axiom1 :
+  (0 <= area_math__ensemble__max__position1)
+
+logic area_math__ensemble__size__first__bit1 : int
+
+logic area_math__ensemble__size__last__bit1 : int
+
+logic area_math__ensemble__size__position1 : int
+
+axiom area_math__ensemble__size__first__bit_axiom1 :
+  (0 <= area_math__ensemble__size__first__bit1)
+
+axiom area_math__ensemble__size__last__bit_axiom1 :
+  (area_math__ensemble__size__first__bit1 <  area_math__ensemble__size__last__bit1)
+
+axiom area_math__ensemble__size__position_axiom1 :
+  (0 <= area_math__ensemble__size__position1)
+
+logic area_math__ensemble__from__first__bit1 : int
+
+logic area_math__ensemble__from__last__bit1 : int
+
+logic area_math__ensemble__from__position1 : int
+
+axiom area_math__ensemble__from__first__bit_axiom1 :
+  (0 <= area_math__ensemble__from__first__bit1)
+
+axiom area_math__ensemble__from__last__bit_axiom1 :
+  (area_math__ensemble__from__first__bit1 <  area_math__ensemble__from__last__bit1)
+
+axiom area_math__ensemble__from__position_axiom1 :
+  (0 <= area_math__ensemble__from__position1)
+
+logic area_math__ensemble__to__first__bit1 : int
+
+logic area_math__ensemble__to__last__bit1 : int
+
+logic area_math__ensemble__to__position1 : int
+
+axiom area_math__ensemble__to__first__bit_axiom1 :
+  (0 <= area_math__ensemble__to__first__bit1)
+
+axiom area_math__ensemble__to__last__bit_axiom1 :
+  (area_math__ensemble__to__first__bit1 <  area_math__ensemble__to__last__bit1)
+
+axiom area_math__ensemble__to__position_axiom1 :
+  (0 <= area_math__ensemble__to__position1)
+
+logic user_eq5 : us_rep1, us_rep1 -> bool
+
+logic dummy5 : us_rep1
+
+type tresultS__ref = { tresultS__content : us_rep1
+}
+
+function tresultS__ref_tresultS__content__projection(a: tresultS__ref) : us_rep1 =
+  (a).tresultS__content
+
+logic result____split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+predicate dynamic_invariant3(temp___expr_337: us_rep1,
+  temp___is_init_333: bool, temp___skip_constant_334: bool,
+  temp___do_toplevel_335: bool, temp___do_typ_inv_336: bool) =
+  ((((not (temp___skip_constant_334 = true)) ->
+  in_range3((to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1),
+  to_base(temp___expr_337))) and ((temp___is_init_333 = true) ->
+  ((to_rep(((to_base(temp___expr_337)).us_split_fields1).rec__area_math__ensemble__size) <= last1(((to_base(temp___expr_337)).us_split_fields1).rec__area_math__ensemble__from)) and
+  (to_rep(((to_base(temp___expr_337)).us_split_fields1).rec__area_math__ensemble__size) <= last1(((to_base(temp___expr_337)).us_split_fields1).rec__area_math__ensemble__to))))) and
+  ((dynamic_property(1,
+  (to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1),
+  first1(((temp___expr_337).us_split_fields3).rec__area_math__ensemble__from1),
+  last1(((temp___expr_337).us_split_fields3).rec__area_math__ensemble__from1)) and
+  ((first1(((temp___expr_337).us_split_fields3).rec__area_math__ensemble__from1) = 1) and
+  (last1(((temp___expr_337).us_split_fields3).rec__area_math__ensemble__from1) = (to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1)))) and
+  (dynamic_property(1,
+  (to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1),
+  first1(((temp___expr_337).us_split_fields3).rec__area_math__ensemble__to1),
+  last1(((temp___expr_337).us_split_fields3).rec__area_math__ensemble__to1)) and
+  ((first1(((temp___expr_337).us_split_fields3).rec__area_math__ensemble__to1) = 1) and
+  (last1(((temp___expr_337).us_split_fields3).rec__area_math__ensemble__to1) = (to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1))))))
+
+predicate default_initial_assumption(temp___expr_343: us_rep1,
+  temp___skip_top_level_344: bool) =
+  ((to_rep(((temp___expr_343).us_split_discrs2).rec__area_math__ensemble__max) = (to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1)) and
+  (((first1(((temp___expr_343).us_split_fields3).rec__area_math__ensemble__from1) = 1) and
+  (last1(((temp___expr_343).us_split_fields3).rec__area_math__ensemble__from1) = (to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1))) and
+  ((first1(((temp___expr_343).us_split_fields3).rec__area_math__ensemble__to1) = 1) and
+  (last1(((temp___expr_343).us_split_fields3).rec__area_math__ensemble__to1) = (to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1)))))
+
+predicate dynamic_predicate1(temp___353: us_rep1) =
+  ((to_rep(((to_base(temp___353)).us_split_fields1).rec__area_math__ensemble__size) <= last1(((to_base(temp___353)).us_split_fields1).rec__area_math__ensemble__from)) and
+  (to_rep(((to_base(temp___353)).us_split_fields1).rec__area_math__ensemble__size) <= last1(((to_base(temp___353)).us_split_fields1).rec__area_math__ensemble__to)))
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic r61b : int
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+type t58b__ref = { t58b__content : us_t
+}
+
+function t58b__ref_t58b__content__projection(a: t58b__ref) : us_t =
+  (a).t58b__content
+
+type t60b__ref = { t60b__content : us_t
+}
+
+function t60b__ref_t60b__content__projection(a: t60b__ref) : us_t =
+  (a).t60b__content
+
+predicate dynamic_property1(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq6 : integer, integer -> bool
+
+logic dummy6 : integer
+
+type t62b__ref = { t62b__content : integer
+}
+
+function t62b__ref_t62b__content__projection(a: t62b__ref) : integer =
+  (a).t62b__content
+
+logic temp_____aggregate_def_422 : t, int, int -> us_t
+
+logic temp_____aggregate_def_435 : t, int, int -> us_t
+
+predicate dynamic_invariant4(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+axiom def_axiom :
+  (forall temp___424:t.
+  (forall temp___425:int. forall temp___426:int.
+  (dynamic_invariant2(temp___424, true, true, true, true) ->
+  (dynamic_property((- 2147483648), 2147483647, temp___425, temp___426) ->
+  (first1(temp_____aggregate_def_422(temp___424, temp___425,
+  temp___426)) = temp___425)))))
+
+axiom def_axiom1 :
+  (forall temp___424:t.
+  (forall temp___425:int. forall temp___426:int.
+  (dynamic_invariant2(temp___424, true, true, true, true) ->
+  (dynamic_property((- 2147483648), 2147483647, temp___425, temp___426) ->
+  (last1(temp_____aggregate_def_422(temp___424, temp___425,
+  temp___426)) = temp___426)))))
+
+axiom def_axiom2 :
+  (forall temp___424:t.
+  (forall temp___425:int. forall temp___426:int.
+  (dynamic_invariant2(temp___424, true, true, true, true) ->
+  (forall temp___427:int.
+  (to_rep2((to_array(temp_____aggregate_def_422(temp___424, temp___425,
+  temp___426))[temp___427])) = temp___424)))))
+
+axiom def_axiom3 :
+  (forall temp___437:t.
+  (forall temp___438:int. forall temp___439:int.
+  (dynamic_invariant2(temp___437, true, true, true, true) ->
+  (dynamic_property((- 2147483648), 2147483647, temp___438, temp___439) ->
+  (first1(temp_____aggregate_def_435(temp___437, temp___438,
+  temp___439)) = temp___438)))))
+
+axiom def_axiom4 :
+  (forall temp___437:t.
+  (forall temp___438:int. forall temp___439:int.
+  (dynamic_invariant2(temp___437, true, true, true, true) ->
+  (dynamic_property((- 2147483648), 2147483647, temp___438, temp___439) ->
+  (last1(temp_____aggregate_def_435(temp___437, temp___438,
+  temp___439)) = temp___439)))))
+
+axiom def_axiom5 :
+  (forall temp___437:t.
+  (forall temp___438:int. forall temp___439:int.
+  (dynamic_invariant2(temp___437, true, true, true, true) ->
+  (forall temp___440:int.
+  (to_rep2((to_array(temp_____aggregate_def_435(temp___437, temp___438,
+  temp___439))[temp___440])) = temp___437)))))
+
+predicate dynamic_invariant5(temp___expr_190: us_t, temp___is_init_186: bool,
+  temp___skip_constant_187: bool, temp___do_toplevel_188: bool,
+  temp___do_typ_inv_189: bool) = ((not (temp___skip_constant_187 = true)) ->
+  dynamic_property((- 2147483648), 2147483647, first1(temp___expr_190),
+  last1(temp___expr_190)))
+
+axiom r61b__def_axiom :
+  (r61b = to_rep(((e).us_split_fields1).rec__area_math__ensemble__size))
+
+logic rliteral3 : natural
+
+axiom rliteral_axiom3 : (naturalqtint(rliteral3) = 0)
+
+ (* File "area_math.ads", line 46, characters 0-0 *)
+goal defqtvc :
+  (forall result____split_fields:us_split_fields2. (dynamic_invariant1(i13s,
+  true, false, true, true) -> (dynamic_invariant1(i13s, true, false, true,
+  true) -> (dynamic_invariant1(e, true, false, true, true) ->
+  (is_consistent__function_guard(is_consistent(e), e) ->
+  (((0 <  (2147483647 - to_rep(((e).us_split_discrs1).rec__area_math__ensemble__max))) and
+  (is_consistent(e) = true)) ->
+  (forall o:int.
+  ((to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) = o) ->
+  (let o1 = (o + 1) : int in (in_range1(o1) -> (in_range2(o1) ->
+  (default_initial_assumption({ us_split_discrs2 = result____split_discrs;
+  us_split_fields3 = result____split_fields }, false) ->
+  (dynamic_invariant3({ us_split_discrs2 = result____split_discrs;
+  us_split_fields3 = result____split_fields }, false, false, true, true) ->
+  (forall prev:t. ((prev = rliteral1) -> (dynamic_invariant2(prev, true,
+  false, true, true) ->
+  (forall next:t. ((next = rliteral1) -> (dynamic_invariant2(next, true,
+  false, true, true) -> (dynamic_predicate1({ us_split_discrs2 =
+  result____split_discrs; us_split_fields3 = {
+  rec__area_math__ensemble__size1 = rliteral3;
+  rec__area_math__ensemble__from1 =
+  (result____split_fields).rec__area_math__ensemble__from1;
+  rec__area_math__ensemble__to1 =
+  (result____split_fields).rec__area_math__ensemble__to1 } }) ->
+  (forall result____split_fields1:us_split_fields2.
+  ((result____split_fields1 = { rec__area_math__ensemble__size1 = rliteral3;
+  rec__area_math__ensemble__from1 =
+  (result____split_fields).rec__area_math__ensemble__from1;
+  rec__area_math__ensemble__to1 =
+  (result____split_fields).rec__area_math__ensemble__to1 }) ->
+  (forall o2:int.
+  ((to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) = o2) ->
+  (let temp___428 = temp_____aggregate_def_422(rliteral1, 1, (o2 + 1))
+  : us_t in ((first1(temp___428) = 1) ->
+  ((last1(temp___428) = (to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1)) ->
+  ((if (first1(temp___428) <= last1(temp___428)) then ((1 <= (to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1)) and
+  ((last1(temp___428) - first1(temp___428)) = ((to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1) - 1))) else ((to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1) <  1)) ->
+  (let temp___430 = of_array(to_array(temp___428), first1(temp___428),
+  last1(temp___428)) : us_t in (let temp___431 =
+  (result____split_fields1).rec__area_math__ensemble__from1 : us_t in
+  ((if (first1(temp___430) <= last1(temp___430)) then ((first1(temp___431) <= last1(temp___431)) and
+  ((last1(temp___430) - first1(temp___430)) = (last1(temp___431) - first1(temp___431)))) else (last1(temp___431) <  first1(temp___431))) ->
+  (dynamic_predicate1({ us_split_discrs2 = result____split_discrs;
+  us_split_fields3 = { rec__area_math__ensemble__size1 =
+  (result____split_fields1).rec__area_math__ensemble__size1;
+  rec__area_math__ensemble__from1 = temp___430;
+  rec__area_math__ensemble__to1 =
+  (result____split_fields1).rec__area_math__ensemble__to1 } }) ->
+  (forall result____split_fields2:us_split_fields2.
+  ((result____split_fields2 = { rec__area_math__ensemble__size1 =
+  (result____split_fields1).rec__area_math__ensemble__size1;
+  rec__area_math__ensemble__from1 = temp___430;
+  rec__area_math__ensemble__to1 =
+  (result____split_fields1).rec__area_math__ensemble__to1 }) ->
+  (forall o3:int.
+  ((to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) = o3) ->
+  (let temp___441 = temp_____aggregate_def_435(rliteral1, 1, (o3 + 1))
+  : us_t in ((first1(temp___441) = 1) ->
+  ((last1(temp___441) = (to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1)) ->
+  ((if (first1(temp___441) <= last1(temp___441)) then ((1 <= (to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1)) and
+  ((last1(temp___441) - first1(temp___441)) = ((to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1) - 1))) else ((to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) + 1) <  1)) ->
+  (let temp___443 = of_array(to_array(temp___441), first1(temp___441),
+  last1(temp___441)) : us_t in (let temp___444 =
+  (result____split_fields2).rec__area_math__ensemble__to1 : us_t in
+  ((if (first1(temp___443) <= last1(temp___443)) then ((first1(temp___444) <= last1(temp___444)) and
+  ((last1(temp___443) - first1(temp___443)) = (last1(temp___444) - first1(temp___444)))) else (last1(temp___444) <  first1(temp___444))) ->
+  (dynamic_predicate1({ us_split_discrs2 = result____split_discrs;
+  us_split_fields3 = { rec__area_math__ensemble__size1 =
+  (result____split_fields2).rec__area_math__ensemble__size1;
+  rec__area_math__ensemble__from1 =
+  (result____split_fields2).rec__area_math__ensemble__from1;
+  rec__area_math__ensemble__to1 = temp___443 } }) ->
+  (forall result____split_fields3:us_split_fields2.
+  ((result____split_fields3 = { rec__area_math__ensemble__size1 =
+  (result____split_fields2).rec__area_math__ensemble__size1;
+  rec__area_math__ensemble__from1 =
+  (result____split_fields2).rec__area_math__ensemble__from1;
+  rec__area_math__ensemble__to1 = temp___443 }) ->
+  (forall area_math__Onot__L_7__R61b__assume:int.
+  ((to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) = area_math__Onot__L_7__R61b__assume) ->
+  ((area_math__Onot__L_7__R61b__assume = r61b) -> (dynamic_invariant(r61b,
+  true, false, true, true) ->
+  (forall i:int. ((i = 0) -> ((andb((if (0 <= i) then true else false),
+  (if (i <= r61b) then true else false)) = true) ->
+  (forall skip:bool. ((skip = of_int1(0)) ->
+  (forall spark__branch:bool. forall prev1:t. forall skip1:bool.
+  ((exists spark__branch1:bool.
+   ((spark__branch1 = (if (i = 0) then true else false)) and
+   (if (spark__branch1 = true) then (exists o4:bool.
+                                    ((exists o5:int.
+                                     ((to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) = o5) and
+                                     (if (not (o5 = 0)) then (let temp___450 =
+                                     ((e).us_split_fields1).rec__area_math__ensemble__from
+                                     : us_t in (let o6 = (i + 1) : int in
+                                     (in_range1(o6) and
+                                     (((first1(temp___450) <= o6) and
+                                     (o6 <= last1(temp___450))) and
+                                     (exists o7:t.
+                                     ((to_rep2((to_array(temp___450)[o6])) = o7) and
+                                     (o4 = (if (o7 = rliteral1) then true else false)))))))) else (o4 = false)))) and
+                                    ((spark__branch = o4) and
+                                    (if (spark__branch = true) then ((skip1 = of_int1(1)) and
+                                    (prev1 = prev)) else ((prev1 = rliteral1) and
+                                    (skip1 = skip)))))) else (((let temp___452 =
+   ((e).us_split_fields1).rec__area_math__ensemble__to : us_t in
+   (((first1(temp___452) <= i) and (i <= last1(temp___452))) and
+   (exists o4:t. ((to_rep2((to_array(temp___452)[i])) = o4) and
+   (prev1 = add(o4, rliteral)))))) and (spark__branch = spark__branch1)) and
+   (skip1 = skip))))) ->
+  (forall spark__branch1:bool. forall next1:t. forall skip2:bool.
+  ((exists o4:int.
+   ((to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) = o4) and
+   (exists spark__branch2:bool.
+   ((spark__branch2 = (if (i = o4) then true else false)) and
+   (if (spark__branch2 = true) then (exists o5:bool.
+                                    ((exists o6:int.
+                                     ((to_rep(((e).us_split_fields1).rec__area_math__ensemble__size) = o6) and
+                                     (if (not (o6 = 0)) then (let temp___453 =
+                                     ((e).us_split_fields1).rec__area_math__ensemble__to
+                                     : us_t in
+                                     (((first1(temp___453) <= i) and
+                                     (i <= last1(temp___453))) and
+                                     (exists o7:t.
+                                     ((to_rep2((to_array(temp___453)[i])) = o7) and
+                                     (o5 = (if (o7 = rliteral2) then true else false)))))) else (o5 = false)))) and
+                                    ((spark__branch1 = o5) and
+                                    (if (spark__branch1 = true) then ((skip2 = of_int1(1)) and
+                                    (next1 = next)) else ((next1 = rliteral2) and
+                                    (skip2 = skip1)))))) else (((let temp___454 =
+   ((e).us_split_fields1).rec__area_math__ensemble__from : us_t in (let o5 =
+   (i + 1) : int in (in_range1(o5) and (((first1(temp___454) <= o5) and
+   (o5 <= last1(temp___454))) and
+   (exists o6:t. ((to_rep2((to_array(temp___454)[o5])) = o6) and
+   (next1 = sub(o6, rliteral)))))))) and
+   (spark__branch1 = spark__branch2)) and (skip2 = skip1))))))) ->
+  (forall spark__branch2:bool.
+  ((spark__branch2 = (if (skip2 = true) then false else true)) ->
+  ((spark__branch2 = true) -> (ule(prev1, next1) ->
+  (((0 <  to_rep((result____split_fields3).rec__area_math__ensemble__size1)) ->
+  ugt(prev1,
+  to_rep2((to_array((result____split_fields3).rec__area_math__ensemble__to1)[to_rep((result____split_fields3).rec__area_math__ensemble__size1)])))) ->
+  (forall o4:int.
+  ((to_rep((result____split_fields3).rec__area_math__ensemble__size1) = o4) ->
+  (let o5 = (o4 + 1) : int in (in_range1(o5) ->
+  (forall o6:natural. ((to_rep(o6) = o5) -> (dynamic_predicate1({
+  us_split_discrs2 = result____split_discrs; us_split_fields3 = {
+  rec__area_math__ensemble__size1 = o6; rec__area_math__ensemble__from1 =
+  (result____split_fields3).rec__area_math__ensemble__from1;
+  rec__area_math__ensemble__to1 =
+  (result____split_fields3).rec__area_math__ensemble__to1 } }) ->
+  (forall result____split_fields4:us_split_fields2.
+  ((result____split_fields4 = { rec__area_math__ensemble__size1 = o6;
+  rec__area_math__ensemble__from1 =
+  (result____split_fields3).rec__area_math__ensemble__from1;
+  rec__area_math__ensemble__to1 =
+  (result____split_fields3).rec__area_math__ensemble__to1 }) ->
+  (let temp___462 = (result____split_fields4).rec__area_math__ensemble__from1
+  : us_t in
+  (forall o7:address_type. ((to_rep2(o7) = prev1) ->
+  (forall temp___463:int.
+  ((to_rep((result____split_fields4).rec__area_math__ensemble__size1) = temp___463) ->
+  (((first1(temp___462) <= temp___463) and
+  (temp___463 <= last1(temp___462))) -> (dynamic_predicate1({
+  us_split_discrs2 = result____split_discrs; us_split_fields3 = {
+  rec__area_math__ensemble__size1 =
+  (result____split_fields4).rec__area_math__ensemble__size1;
+  rec__area_math__ensemble__from1 = { elts =
+  (to_array((result____split_fields4).rec__area_math__ensemble__from1)[temp___463 <- o7]);
+  rt = ((result____split_fields4).rec__area_math__ensemble__from1).rt };
+  rec__area_math__ensemble__to1 =
+  (result____split_fields4).rec__area_math__ensemble__to1 } }) ->
+  (forall result____split_fields5:us_split_fields2.
+  ((result____split_fields5 = { rec__area_math__ensemble__size1 =
+  (result____split_fields4).rec__area_math__ensemble__size1;
+  rec__area_math__ensemble__from1 = { elts =
+  (to_array((result____split_fields4).rec__area_math__ensemble__from1)[temp___463 <- o7]);
+  rt = ((result____split_fields4).rec__area_math__ensemble__from1).rt };
+  rec__area_math__ensemble__to1 =
+  (result____split_fields4).rec__area_math__ensemble__to1 }) ->
+  (let temp___467 = (result____split_fields5).rec__area_math__ensemble__to1
+  : us_t in
+  (forall o8:address_type. ((to_rep2(o8) = next1) ->
+  (forall temp___468:int.
+  ((to_rep((result____split_fields5).rec__area_math__ensemble__size1) = temp___468) ->
+  (((first1(temp___467) <= temp___468) and
+  (temp___468 <= last1(temp___467))) -> dynamic_predicate1({
+  us_split_discrs2 = result____split_discrs; us_split_fields3 = {
+  rec__area_math__ensemble__size1 =
+  (result____split_fields5).rec__area_math__ensemble__size1;
+  rec__area_math__ensemble__from1 =
+  (result____split_fields5).rec__area_math__ensemble__from1;
+  rec__area_math__ensemble__to1 = { elts =
+  (to_array((result____split_fields5).rec__area_math__ensemble__to1)[temp___468 <- o8]);
+  rt = ((result____split_fields5).rec__area_math__ensemble__to1).rt } } })))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))

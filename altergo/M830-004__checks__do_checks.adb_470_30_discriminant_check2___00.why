@@ -1,0 +1,5223 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant1(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_39))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+type map__ref = { map__content : (int,bool) farray
+}
+
+logic slide : (int,bool) farray, int, int -> (int,bool) farray
+
+axiom slide_eq :
+  (forall a:(int,bool) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,bool) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq3(a: (int,bool) farray, a__first: int, a__last: int,
+  b: (int,bool) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_156:int. (((a__first <= temp___idx_156) and
+  (temp___idx_156 <= a__last)) ->
+  (to_int((a[temp___idx_156])) = to_int((b[((b__first - a__first) + temp___idx_156)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_156:int. (((a__first <= temp___idx_156) and
+  (temp___idx_156 <= a__last)) ->
+  (to_int((a[temp___idx_156])) = to_int((b[((b__first - a__first) + temp___idx_156)]))))))))
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (in_range2(low) and in_range2(high)))))
+
+type us_t = { elts : (int,bool) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,bool) farray = (a).elts
+
+function of_array(a: (int,bool) farray, f: int, l: int) : us_t = { elts = a;
+  rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep(first((a).rt))
+
+function last1(a: us_t) : int = to_rep(last((a).rt))
+
+function length(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq4(x: us_t, y: us_t) : bool = bool_eq3((x).elts,
+  to_rep(first((x).rt)), to_rep(last((x).rt)), (y).elts,
+  to_rep(first((y).rt)), to_rep(last((y).rt)))
+
+logic user_eq2 : us_t, us_t -> bool
+
+logic dummy2 : us_t
+
+type a1__ref = { a1__content : us_t
+}
+
+function a1__ref_a1__content__2__projection(a: a1__ref) : us_t =
+  (a).a1__content
+
+type t61b__ref = { t61b__content : us_t
+}
+
+function t61b__ref_t61b__content__projection(a: t61b__ref) : us_t =
+  (a).t61b__content
+
+type us_split_discrs = { rec__do_checks__do_discriminant_check__r1__j :
+integer
+}
+
+function us_split_discrs_rec__do_checks__do_discriminant_check__r1__j__projection(a: us_split_discrs) : integer =
+  (a).rec__do_checks__do_discriminant_check__r1__j
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__3__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_split_fields = { rec__do_checks__do_discriminant_check__r1__arr :
+us_t
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__projection(a: us_split_fields) : us_t =
+  (a).rec__do_checks__do_discriminant_check__r1__arr
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__5__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_discrs1 : us_split_discrs; us_split_fields1 :
+us_split_fields
+}
+
+function us_rep___split_discrs__3__projection(a: us_rep) : us_split_discrs =
+  (a).us_split_discrs1
+
+function us_rep___split_fields__5__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+predicate do_checks__do_discriminant_check__r1__arr__pred(a: us_rep) =
+  ((1 <= to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq5(a: us_rep, b: us_rep) : bool =
+  (if ((to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred(a) ->
+  (bool_eq4(((a).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr,
+  ((b).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = true))) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit : int
+
+logic do_checks__do_discriminant_check__r1__j__position : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom :
+  (do_checks__do_discriminant_check__r1__j__first__bit <  do_checks__do_discriminant_check__r1__j__last__bit)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom :
+  (0 <= do_checks__do_discriminant_check__r1__j__position)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit : int
+
+logic do_checks__do_discriminant_check__r1__arr__position : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom :
+  (do_checks__do_discriminant_check__r1__arr__first__bit <  do_checks__do_discriminant_check__r1__arr__last__bit)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position)
+
+logic user_eq3 : us_rep, us_rep -> bool
+
+logic dummy3 : us_rep
+
+type r1__ref = { r1__content : us_rep
+}
+
+function r1__ref_r1__content__projection(a: r1__ref) : us_rep =
+  (a).r1__content
+
+predicate dynamic_invariant2(temp___expr_552: us_rep,
+  temp___is_init_548: bool, temp___skip_constant_549: bool,
+  temp___do_toplevel_550: bool, temp___do_typ_inv_551: bool) =
+  (let temp___553 =
+  ((temp___expr_552).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j
+  : integer in
+  (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_552) ->
+  (dynamic_property(1, to_rep(temp___553),
+  first1(((temp___expr_552).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr),
+  last1(((temp___expr_552).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)) and
+  ((first1(((temp___expr_552).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
+  (last1(((temp___expr_552).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(temp___553))))))
+
+predicate in_range3(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit1 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit1 : int
+
+logic do_checks__do_discriminant_check__r1__j__position1 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom1 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit1)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom1 :
+  (do_checks__do_discriminant_check__r1__j__first__bit1 <  do_checks__do_discriminant_check__r1__j__last__bit1)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom1 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position1)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit1 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit1 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position1 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom1 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit1)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom1 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit1 <  do_checks__do_discriminant_check__r1__arr__last__bit1)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom1 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position1)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type txS__ref = { txS__content : us_rep
+}
+
+function txS__ref_txS__content__projection(a: txS__ref) : us_rep =
+  (a).txS__content
+
+logic x__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+predicate dynamic_invariant3(temp___expr_585: us_rep,
+  temp___is_init_581: bool, temp___skip_constant_582: bool,
+  temp___do_toplevel_583: bool, temp___do_typ_inv_584: bool) =
+  (((not (temp___skip_constant_582 = true)) -> in_range3(0,
+  temp___expr_585)) and (let temp___586 =
+  ((temp___expr_585).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j
+  : integer in
+  (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_585) ->
+  (dynamic_property(1, to_rep(temp___586),
+  first1(((temp___expr_585).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr),
+  last1(((temp___expr_585).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)) and
+  ((first1(((temp___expr_585).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
+  (last1(((temp___expr_585).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(temp___586)))))))
+
+predicate default_initial_assumption(temp___expr_588: us_rep,
+  temp___skip_top_level_589: bool) =
+  ((to_rep(((temp___expr_588).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j) = 0) and
+  (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_588) ->
+  ((first1(((temp___expr_588).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
+  (last1(((temp___expr_588).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(((temp___expr_588).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j)))))
+
+predicate in_range4(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit2 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit2 : int
+
+logic do_checks__do_discriminant_check__r1__j__position2 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom2 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit2)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom2 :
+  (do_checks__do_discriminant_check__r1__j__first__bit2 <  do_checks__do_discriminant_check__r1__j__last__bit2)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom2 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position2)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit2 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit2 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position2 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom2 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit2)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom2 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit2 <  do_checks__do_discriminant_check__r1__arr__last__bit2)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom2 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position2)
+
+logic user_eq5 : us_rep, us_rep -> bool
+
+logic dummy5 : us_rep
+
+type tyS__ref = { tyS__content : us_rep
+}
+
+function tyS__ref_tyS__content__projection(a: tyS__ref) : us_rep =
+  (a).tyS__content
+
+logic y__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+predicate dynamic_invariant4(temp___expr_598: us_rep,
+  temp___is_init_594: bool, temp___skip_constant_595: bool,
+  temp___do_toplevel_596: bool, temp___do_typ_inv_597: bool) =
+  (((not (temp___skip_constant_595 = true)) -> in_range4((- 1),
+  temp___expr_598)) and (let temp___599 =
+  ((temp___expr_598).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j
+  : integer in
+  (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_598) ->
+  (dynamic_property(1, to_rep(temp___599),
+  first1(((temp___expr_598).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr),
+  last1(((temp___expr_598).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)) and
+  ((first1(((temp___expr_598).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
+  (last1(((temp___expr_598).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(temp___599)))))))
+
+predicate default_initial_assumption1(temp___expr_601: us_rep,
+  temp___skip_top_level_602: bool) =
+  ((to_rep(((temp___expr_601).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j) = (- 1)) and
+  (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_601) ->
+  ((first1(((temp___expr_601).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
+  (last1(((temp___expr_601).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(((temp___expr_601).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j)))))
+
+type tT62bP1
+
+logic tT62bP1qtint : tT62bP1 -> int
+
+axiom tT62bP1qtaxiom : (forall i:tT62bP1. (1 <= tT62bP1qtint(i)))
+
+axiom tT62bP1qtaxiom1 : (forall i:tT62bP1. (tT62bP1qtint(i) <= 10))
+
+predicate in_range5(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq6 : tT62bP1, tT62bP1 -> bool
+
+logic dummy6 : tT62bP1
+
+type tT62bP1__ref = { tT62bP1__content : tT62bP1
+}
+
+function tT62bP1__ref_tT62bP1__content__projection(a: tT62bP1__ref) : tT62bP1 =
+  (a).tT62bP1__content
+
+logic dummy7 : (int,bool) farray
+
+logic value__size4 : int
+
+logic object__size4 : int
+
+logic component__size1 : int
+
+logic alignment4 : int
+
+axiom value__size_axiom4 : (0 <= value__size4)
+
+axiom object__size_axiom4 : (0 <= object__size4)
+
+axiom component__size_axiom1 : (0 <= component__size1)
+
+axiom alignment_axiom4 : (0 <= alignment4)
+
+logic user_eq7 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields2 = { rec__do_checks__do_discriminant_check__r1__arr1 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__2__projection(a: us_split_fields2) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr1
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__6__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_discrs2 : us_split_discrs; us_split_fields3 :
+us_split_fields2
+}
+
+function us_rep___split_discrs__4__projection(a: us_rep1) : us_split_discrs =
+  (a).us_split_discrs2
+
+function us_rep___split_fields__6__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function to_base(a: us_rep1) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs2; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields3).rec__do_checks__do_discriminant_check__r1__arr1,
+  1, 10) } }
+
+function of_base(r: us_rep) : us_rep1 = { us_split_discrs2 =
+  (r).us_split_discrs1; us_split_fields3 = {
+  rec__do_checks__do_discriminant_check__r1__arr1 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred1(a: us_rep1) =
+  ((1 <= to_rep(((a).us_split_discrs2).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs2).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq7(a: us_rep1, b: us_rep1) : bool =
+  (if ((to_rep(((a).us_split_discrs2).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs2).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred1(a) ->
+  (bool_eq3(((a).us_split_fields3).rec__do_checks__do_discriminant_check__r1__arr1,
+  1, 10,
+  ((b).us_split_fields3).rec__do_checks__do_discriminant_check__r1__arr1, 1,
+  10) = true))) then true else false)
+
+predicate in_range6(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size5 : int
+
+logic object__size5 : int
+
+logic alignment5 : int
+
+axiom value__size_axiom5 : (0 <= value__size5)
+
+axiom object__size_axiom5 : (0 <= object__size5)
+
+axiom alignment_axiom5 : (0 <= alignment5)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit3 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit3 : int
+
+logic do_checks__do_discriminant_check__r1__j__position3 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom3 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit3)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom3 :
+  (do_checks__do_discriminant_check__r1__j__first__bit3 <  do_checks__do_discriminant_check__r1__j__last__bit3)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom3 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position3)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit3 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit3 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position3 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom3 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit3)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom3 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit3 <  do_checks__do_discriminant_check__r1__arr__last__bit3)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom3 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position3)
+
+logic user_eq8 : us_rep1, us_rep1 -> bool
+
+logic dummy8 : us_rep1
+
+type r2__ref = { r2__content : us_rep1
+}
+
+function r2__ref_r2__content__projection(a: r2__ref) : us_rep1 =
+  (a).r2__content
+
+logic x__split_discrs1 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+predicate dynamic_invariant5(temp___expr_559: us_rep1,
+  temp___is_init_555: bool, temp___skip_constant_556: bool,
+  temp___do_toplevel_557: bool, temp___do_typ_inv_558: bool) =
+  ((not (temp___skip_constant_556 = true)) -> in_range6(10,
+  to_base(temp___expr_559)))
+
+predicate default_initial_assumption2(temp___expr_562: us_rep1,
+  temp___skip_top_level_563: bool) =
+  (to_rep(((temp___expr_562).us_split_discrs2).rec__do_checks__do_discriminant_check__r1__j) = 10)
+
+logic y__split_discrs1 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+type tT65bP1
+
+logic tT65bP1qtint : tT65bP1 -> int
+
+axiom tT65bP1qtaxiom : (forall i:tT65bP1. (1 <= tT65bP1qtint(i)))
+
+axiom tT65bP1qtaxiom1 : (forall i:tT65bP1. (tT65bP1qtint(i) <= 10))
+
+predicate in_range7(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq9 : tT65bP1, tT65bP1 -> bool
+
+logic dummy9 : tT65bP1
+
+type tT65bP1__ref = { tT65bP1__content : tT65bP1
+}
+
+function tT65bP1__ref_tT65bP1__content__projection(a: tT65bP1__ref) : tT65bP1 =
+  (a).tT65bP1__content
+
+logic dummy10 : (int,bool) farray
+
+logic value__size6 : int
+
+logic object__size6 : int
+
+logic component__size2 : int
+
+logic alignment6 : int
+
+axiom value__size_axiom6 : (0 <= value__size6)
+
+axiom object__size_axiom6 : (0 <= object__size6)
+
+axiom component__size_axiom2 : (0 <= component__size2)
+
+axiom alignment_axiom6 : (0 <= alignment6)
+
+logic user_eq10 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields4 = { rec__do_checks__do_discriminant_check__r1__arr2 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__4__projection(a: us_split_fields4) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr2
+
+type us_split_fields__ref2 = { us_split_fields__content2 : us_split_fields4
+}
+
+function us_split_fields__ref___split_fields__content__8__projection(a: us_split_fields__ref2) : us_split_fields4 =
+  (a).us_split_fields__content2
+
+type us_rep2 = { us_split_discrs3 : us_split_discrs; us_split_fields5 :
+us_split_fields4
+}
+
+function us_rep___split_discrs__6__projection(a: us_rep2) : us_split_discrs =
+  (a).us_split_discrs3
+
+function us_rep___split_fields__8__projection(a: us_rep2) : us_split_fields4 =
+  (a).us_split_fields5
+
+function to_base1(a: us_rep2) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs3; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields5).rec__do_checks__do_discriminant_check__r1__arr2,
+  1, 10) } }
+
+function of_base1(r: us_rep) : us_rep2 = { us_split_discrs3 =
+  (r).us_split_discrs1; us_split_fields5 = {
+  rec__do_checks__do_discriminant_check__r1__arr2 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred2(a: us_rep2) =
+  ((1 <= to_rep(((a).us_split_discrs3).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs3).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq9(a: us_rep2, b: us_rep2) : bool =
+  (if ((to_rep(((a).us_split_discrs3).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs3).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred2(a) ->
+  (bool_eq3(((a).us_split_fields5).rec__do_checks__do_discriminant_check__r1__arr2,
+  1, 10,
+  ((b).us_split_fields5).rec__do_checks__do_discriminant_check__r1__arr2, 1,
+  10) = true))) then true else false)
+
+predicate in_range8(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size7 : int
+
+logic object__size7 : int
+
+logic alignment7 : int
+
+axiom value__size_axiom7 : (0 <= value__size7)
+
+axiom object__size_axiom7 : (0 <= object__size7)
+
+axiom alignment_axiom7 : (0 <= alignment7)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit4 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit4 : int
+
+logic do_checks__do_discriminant_check__r1__j__position4 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom4 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit4)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom4 :
+  (do_checks__do_discriminant_check__r1__j__first__bit4 <  do_checks__do_discriminant_check__r1__j__last__bit4)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom4 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position4)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit4 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit4 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position4 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom4 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit4)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom4 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit4 <  do_checks__do_discriminant_check__r1__arr__last__bit4)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom4 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position4)
+
+logic user_eq11 : us_rep2, us_rep2 -> bool
+
+logic dummy11 : us_rep2
+
+type r3__ref = { r3__content : us_rep2
+}
+
+function r3__ref_r3__content__projection(a: r3__ref) : us_rep2 =
+  (a).r3__content
+
+predicate dynamic_invariant6(temp___expr_572: us_rep2,
+  temp___is_init_568: bool, temp___skip_constant_569: bool,
+  temp___do_toplevel_570: bool, temp___do_typ_inv_571: bool) =
+  ((not (temp___skip_constant_569 = true)) -> in_range8(10,
+  to_base1(temp___expr_572)))
+
+predicate default_initial_assumption3(temp___expr_575: us_rep2,
+  temp___skip_top_level_576: bool) =
+  (to_rep(((temp___expr_575).us_split_discrs3).rec__do_checks__do_discriminant_check__r1__j) = 10)
+
+predicate in_range9(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size8 : int
+
+logic object__size8 : int
+
+logic alignment8 : int
+
+axiom value__size_axiom8 : (0 <= value__size8)
+
+axiom object__size_axiom8 : (0 <= object__size8)
+
+axiom alignment_axiom8 : (0 <= alignment8)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit5 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit5 : int
+
+logic do_checks__do_discriminant_check__r1__j__position5 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom5 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit5)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom5 :
+  (do_checks__do_discriminant_check__r1__j__first__bit5 <  do_checks__do_discriminant_check__r1__j__last__bit5)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom5 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position5)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit5 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit5 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position5 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom5 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit5)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom5 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit5 <  do_checks__do_discriminant_check__r1__arr__last__bit5)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom5 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position5)
+
+logic user_eq12 : us_rep, us_rep -> bool
+
+logic dummy12 : us_rep
+
+type txS__ref1 = { txS__content1 : us_rep
+}
+
+function txS__ref_txS__content__2__projection(a: txS__ref1) : us_rep =
+  (a).txS__content1
+
+logic x__split_discrs2 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+predicate dynamic_invariant7(temp___expr_624: us_rep,
+  temp___is_init_620: bool, temp___skip_constant_621: bool,
+  temp___do_toplevel_622: bool, temp___do_typ_inv_623: bool) =
+  (((not (temp___skip_constant_621 = true)) -> in_range9(0,
+  temp___expr_624)) and (let temp___625 =
+  ((temp___expr_624).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j
+  : integer in
+  (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_624) ->
+  (dynamic_property(1, to_rep(temp___625),
+  first1(((temp___expr_624).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr),
+  last1(((temp___expr_624).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)) and
+  ((first1(((temp___expr_624).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
+  (last1(((temp___expr_624).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(temp___625)))))))
+
+predicate default_initial_assumption4(temp___expr_627: us_rep,
+  temp___skip_top_level_628: bool) =
+  ((to_rep(((temp___expr_627).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j) = 0) and
+  (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_627) ->
+  ((first1(((temp___expr_627).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
+  (last1(((temp___expr_627).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(((temp___expr_627).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j)))))
+
+logic y__split_discrs2 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+type tT89bP1
+
+logic tT89bP1qtint : tT89bP1 -> int
+
+axiom tT89bP1qtaxiom : (forall i:tT89bP1. (1 <= tT89bP1qtint(i)))
+
+axiom tT89bP1qtaxiom1 : (forall i:tT89bP1. (tT89bP1qtint(i) <= 10))
+
+predicate in_range10(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq13 : tT89bP1, tT89bP1 -> bool
+
+logic dummy13 : tT89bP1
+
+type tT89bP1__ref = { tT89bP1__content : tT89bP1
+}
+
+function tT89bP1__ref_tT89bP1__content__projection(a: tT89bP1__ref) : tT89bP1 =
+  (a).tT89bP1__content
+
+logic dummy14 : (int,bool) farray
+
+logic value__size9 : int
+
+logic object__size9 : int
+
+logic component__size3 : int
+
+logic alignment9 : int
+
+axiom value__size_axiom9 : (0 <= value__size9)
+
+axiom object__size_axiom9 : (0 <= object__size9)
+
+axiom component__size_axiom3 : (0 <= component__size3)
+
+axiom alignment_axiom9 : (0 <= alignment9)
+
+logic user_eq14 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields6 = { rec__do_checks__do_discriminant_check__r1__arr3 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__10__projection(a: us_split_fields6) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr3
+
+type us_split_fields__ref3 = { us_split_fields__content3 : us_split_fields6
+}
+
+function us_split_fields__ref___split_fields__content__14__projection(a: us_split_fields__ref3) : us_split_fields6 =
+  (a).us_split_fields__content3
+
+type us_rep3 = { us_split_discrs4 : us_split_discrs; us_split_fields7 :
+us_split_fields6
+}
+
+function us_rep___split_discrs__12__projection(a: us_rep3) : us_split_discrs =
+  (a).us_split_discrs4
+
+function us_rep___split_fields__14__projection(a: us_rep3) : us_split_fields6 =
+  (a).us_split_fields7
+
+function to_base2(a: us_rep3) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs4; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields7).rec__do_checks__do_discriminant_check__r1__arr3,
+  1, 10) } }
+
+function of_base2(r: us_rep) : us_rep3 = { us_split_discrs4 =
+  (r).us_split_discrs1; us_split_fields7 = {
+  rec__do_checks__do_discriminant_check__r1__arr3 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred3(a: us_rep3) =
+  ((1 <= to_rep(((a).us_split_discrs4).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs4).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq11(a: us_rep3, b: us_rep3) : bool =
+  (if ((to_rep(((a).us_split_discrs4).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs4).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred3(a) ->
+  (bool_eq3(((a).us_split_fields7).rec__do_checks__do_discriminant_check__r1__arr3,
+  1, 10,
+  ((b).us_split_fields7).rec__do_checks__do_discriminant_check__r1__arr3, 1,
+  10) = true))) then true else false)
+
+predicate in_range11(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size10 : int
+
+logic object__size10 : int
+
+logic alignment10 : int
+
+axiom value__size_axiom10 : (0 <= value__size10)
+
+axiom object__size_axiom10 : (0 <= object__size10)
+
+axiom alignment_axiom10 : (0 <= alignment10)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit6 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit6 : int
+
+logic do_checks__do_discriminant_check__r1__j__position6 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom6 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit6)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom6 :
+  (do_checks__do_discriminant_check__r1__j__first__bit6 <  do_checks__do_discriminant_check__r1__j__last__bit6)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom6 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position6)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit6 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit6 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position6 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom6 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit6)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom6 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit6 <  do_checks__do_discriminant_check__r1__arr__last__bit6)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom6 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position6)
+
+logic user_eq15 : us_rep3, us_rep3 -> bool
+
+logic dummy15 : us_rep3
+
+type txS__ref2 = { txS__content2 : us_rep3
+}
+
+function txS__ref_txS__content__3__projection(a: txS__ref2) : us_rep3 =
+  (a).txS__content2
+
+logic x__split_discrs3 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+predicate dynamic_invariant8(temp___expr_650: us_rep3,
+  temp___is_init_646: bool, temp___skip_constant_647: bool,
+  temp___do_toplevel_648: bool, temp___do_typ_inv_649: bool) =
+  ((not (temp___skip_constant_647 = true)) -> in_range11(10,
+  to_base2(temp___expr_650)))
+
+predicate default_initial_assumption5(temp___expr_653: us_rep3,
+  temp___skip_top_level_654: bool) =
+  (to_rep(((temp___expr_653).us_split_discrs4).rec__do_checks__do_discriminant_check__r1__j) = 10)
+
+logic y__split_discrs3 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS8 : int
+
+predicate in_range12(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size11 : int
+
+logic object__size11 : int
+
+logic alignment11 : int
+
+axiom value__size_axiom11 : (0 <= value__size11)
+
+axiom object__size_axiom11 : (0 <= object__size11)
+
+axiom alignment_axiom11 : (0 <= alignment11)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit7 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit7 : int
+
+logic do_checks__do_discriminant_check__r1__j__position7 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom7 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit7)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom7 :
+  (do_checks__do_discriminant_check__r1__j__first__bit7 <  do_checks__do_discriminant_check__r1__j__last__bit7)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom7 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position7)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit7 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit7 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position7 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom7 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit7)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom7 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit7 <  do_checks__do_discriminant_check__r1__arr__last__bit7)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom7 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position7)
+
+logic user_eq16 : us_rep, us_rep -> bool
+
+logic dummy16 : us_rep
+
+type txS__ref3 = { txS__content3 : us_rep
+}
+
+function txS__ref_txS__content__4__projection(a: txS__ref3) : us_rep =
+  (a).txS__content3
+
+logic x__split_discrs4 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS9 : int
+
+predicate dynamic_invariant9(temp___expr_676: us_rep,
+  temp___is_init_672: bool, temp___skip_constant_673: bool,
+  temp___do_toplevel_674: bool, temp___do_typ_inv_675: bool) =
+  (((not (temp___skip_constant_673 = true)) -> in_range12(0,
+  temp___expr_676)) and (let temp___677 =
+  ((temp___expr_676).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j
+  : integer in
+  (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_676) ->
+  (dynamic_property(1, to_rep(temp___677),
+  first1(((temp___expr_676).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr),
+  last1(((temp___expr_676).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)) and
+  ((first1(((temp___expr_676).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
+  (last1(((temp___expr_676).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(temp___677)))))))
+
+predicate default_initial_assumption6(temp___expr_679: us_rep,
+  temp___skip_top_level_680: bool) =
+  ((to_rep(((temp___expr_679).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j) = 0) and
+  (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_679) ->
+  ((first1(((temp___expr_679).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
+  (last1(((temp___expr_679).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(((temp___expr_679).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j)))))
+
+logic y__split_discrs4 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS10 : int
+
+type tT110bP1
+
+logic tT110bP1qtint : tT110bP1 -> int
+
+axiom tT110bP1qtaxiom : (forall i:tT110bP1. (1 <= tT110bP1qtint(i)))
+
+axiom tT110bP1qtaxiom1 : (forall i:tT110bP1. (tT110bP1qtint(i) <= 10))
+
+predicate in_range13(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> int
+
+logic user_eq17 : tT110bP1, tT110bP1 -> bool
+
+logic dummy17 : tT110bP1
+
+type tT110bP1__ref = { tT110bP1__content : tT110bP1
+}
+
+function tT110bP1__ref_tT110bP1__content__projection(a: tT110bP1__ref) : tT110bP1 =
+  (a).tT110bP1__content
+
+logic dummy18 : (int,bool) farray
+
+logic value__size12 : int
+
+logic object__size12 : int
+
+logic component__size4 : int
+
+logic alignment12 : int
+
+axiom value__size_axiom12 : (0 <= value__size12)
+
+axiom object__size_axiom12 : (0 <= object__size12)
+
+axiom component__size_axiom4 : (0 <= component__size4)
+
+axiom alignment_axiom12 : (0 <= alignment12)
+
+logic user_eq18 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields8 = { rec__do_checks__do_discriminant_check__r1__arr4 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__15__projection(a: us_split_fields8) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr4
+
+type us_split_fields__ref4 = { us_split_fields__content4 : us_split_fields8
+}
+
+function us_split_fields__ref___split_fields__content__19__projection(a: us_split_fields__ref4) : us_split_fields8 =
+  (a).us_split_fields__content4
+
+type us_rep4 = { us_split_discrs5 : us_split_discrs; us_split_fields9 :
+us_split_fields8
+}
+
+function us_rep___split_discrs__17__projection(a: us_rep4) : us_split_discrs =
+  (a).us_split_discrs5
+
+function us_rep___split_fields__19__projection(a: us_rep4) : us_split_fields8 =
+  (a).us_split_fields9
+
+function to_base3(a: us_rep4) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs5; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields9).rec__do_checks__do_discriminant_check__r1__arr4,
+  1, 10) } }
+
+function of_base3(r: us_rep) : us_rep4 = { us_split_discrs5 =
+  (r).us_split_discrs1; us_split_fields9 = {
+  rec__do_checks__do_discriminant_check__r1__arr4 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred4(a: us_rep4) =
+  ((1 <= to_rep(((a).us_split_discrs5).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs5).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq13(a: us_rep4, b: us_rep4) : bool =
+  (if ((to_rep(((a).us_split_discrs5).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs5).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred4(a) ->
+  (bool_eq3(((a).us_split_fields9).rec__do_checks__do_discriminant_check__r1__arr4,
+  1, 10,
+  ((b).us_split_fields9).rec__do_checks__do_discriminant_check__r1__arr4, 1,
+  10) = true))) then true else false)
+
+predicate in_range14(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size13 : int
+
+logic object__size13 : int
+
+logic alignment13 : int
+
+axiom value__size_axiom13 : (0 <= value__size13)
+
+axiom object__size_axiom13 : (0 <= object__size13)
+
+axiom alignment_axiom13 : (0 <= alignment13)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit8 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit8 : int
+
+logic do_checks__do_discriminant_check__r1__j__position8 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom8 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit8)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom8 :
+  (do_checks__do_discriminant_check__r1__j__first__bit8 <  do_checks__do_discriminant_check__r1__j__last__bit8)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom8 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position8)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit8 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit8 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position8 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom8 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit8)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom8 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit8 <  do_checks__do_discriminant_check__r1__arr__last__bit8)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom8 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position8)
+
+logic user_eq19 : us_rep4, us_rep4 -> bool
+
+logic dummy19 : us_rep4
+
+type txS__ref4 = { txS__content4 : us_rep4
+}
+
+function txS__ref_txS__content__5__projection(a: txS__ref4) : us_rep4 =
+  (a).txS__content4
+
+logic x__split_discrs5 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS11 : int
+
+predicate dynamic_invariant10(temp___expr_689: us_rep4,
+  temp___is_init_685: bool, temp___skip_constant_686: bool,
+  temp___do_toplevel_687: bool, temp___do_typ_inv_688: bool) =
+  ((not (temp___skip_constant_686 = true)) -> in_range14(10,
+  to_base3(temp___expr_689)))
+
+predicate default_initial_assumption7(temp___expr_692: us_rep4,
+  temp___skip_top_level_693: bool) =
+  (to_rep(((temp___expr_692).us_split_discrs5).rec__do_checks__do_discriminant_check__r1__j) = 10)
+
+logic y__split_discrs5 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS12 : int
+
+logic x__split_discrs6 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS13 : int
+
+logic y__split_discrs6 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS14 : int
+
+type tT126bP1
+
+logic tT126bP1qtint : tT126bP1 -> int
+
+axiom tT126bP1qtaxiom : (forall i:tT126bP1. (1 <= tT126bP1qtint(i)))
+
+axiom tT126bP1qtaxiom1 : (forall i:tT126bP1. (tT126bP1qtint(i) <= 10))
+
+predicate in_range15(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq14(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE7 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check7 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE7 : us_image -> int
+
+logic user_eq20 : tT126bP1, tT126bP1 -> bool
+
+logic dummy20 : tT126bP1
+
+type tT126bP1__ref = { tT126bP1__content : tT126bP1
+}
+
+function tT126bP1__ref_tT126bP1__content__projection(a: tT126bP1__ref) : tT126bP1 =
+  (a).tT126bP1__content
+
+logic dummy21 : (int,bool) farray
+
+logic value__size14 : int
+
+logic object__size14 : int
+
+logic component__size5 : int
+
+logic alignment14 : int
+
+axiom value__size_axiom14 : (0 <= value__size14)
+
+axiom object__size_axiom14 : (0 <= object__size14)
+
+axiom component__size_axiom5 : (0 <= component__size5)
+
+axiom alignment_axiom14 : (0 <= alignment14)
+
+logic user_eq21 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields10 = { rec__do_checks__do_discriminant_check__r1__arr5 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__19__projection(a: us_split_fields10) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr5
+
+type us_split_fields__ref5 = { us_split_fields__content5 : us_split_fields10
+}
+
+function us_split_fields__ref___split_fields__content__23__projection(a: us_split_fields__ref5) : us_split_fields10 =
+  (a).us_split_fields__content5
+
+type us_rep5 = { us_split_discrs6 : us_split_discrs; us_split_fields11 :
+us_split_fields10
+}
+
+function us_rep___split_discrs__21__projection(a: us_rep5) : us_split_discrs =
+  (a).us_split_discrs6
+
+function us_rep___split_fields__23__projection(a: us_rep5) : us_split_fields10 =
+  (a).us_split_fields11
+
+function to_base4(a: us_rep5) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs6; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields11).rec__do_checks__do_discriminant_check__r1__arr5,
+  1, 10) } }
+
+function of_base4(r: us_rep) : us_rep5 = { us_split_discrs6 =
+  (r).us_split_discrs1; us_split_fields11 = {
+  rec__do_checks__do_discriminant_check__r1__arr5 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred5(a: us_rep5) =
+  ((1 <= to_rep(((a).us_split_discrs6).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs6).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq15(a: us_rep5, b: us_rep5) : bool =
+  (if ((to_rep(((a).us_split_discrs6).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs6).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred5(a) ->
+  (bool_eq3(((a).us_split_fields11).rec__do_checks__do_discriminant_check__r1__arr5,
+  1, 10,
+  ((b).us_split_fields11).rec__do_checks__do_discriminant_check__r1__arr5, 1,
+  10) = true))) then true else false)
+
+predicate in_range16(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size15 : int
+
+logic object__size15 : int
+
+logic alignment15 : int
+
+axiom value__size_axiom15 : (0 <= value__size15)
+
+axiom object__size_axiom15 : (0 <= object__size15)
+
+axiom alignment_axiom15 : (0 <= alignment15)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit9 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit9 : int
+
+logic do_checks__do_discriminant_check__r1__j__position9 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom9 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit9)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom9 :
+  (do_checks__do_discriminant_check__r1__j__first__bit9 <  do_checks__do_discriminant_check__r1__j__last__bit9)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom9 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position9)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit9 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit9 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position9 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom9 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit9)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom9 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit9 <  do_checks__do_discriminant_check__r1__arr__last__bit9)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom9 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position9)
+
+logic user_eq22 : us_rep5, us_rep5 -> bool
+
+logic dummy22 : us_rep5
+
+type txS__ref5 = { txS__content5 : us_rep5
+}
+
+function txS__ref_txS__content__6__projection(a: txS__ref5) : us_rep5 =
+  (a).txS__content5
+
+logic x__split_discrs7 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS15 : int
+
+predicate dynamic_invariant11(temp___expr_702: us_rep5,
+  temp___is_init_698: bool, temp___skip_constant_699: bool,
+  temp___do_toplevel_700: bool, temp___do_typ_inv_701: bool) =
+  ((not (temp___skip_constant_699 = true)) -> in_range16(10,
+  to_base4(temp___expr_702)))
+
+predicate default_initial_assumption8(temp___expr_705: us_rep5,
+  temp___skip_top_level_706: bool) =
+  (to_rep(((temp___expr_705).us_split_discrs6).rec__do_checks__do_discriminant_check__r1__j) = 10)
+
+logic y__split_discrs7 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS16 : int
+
+predicate in_range17(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size16 : int
+
+logic object__size16 : int
+
+logic alignment16 : int
+
+axiom value__size_axiom16 : (0 <= value__size16)
+
+axiom object__size_axiom16 : (0 <= object__size16)
+
+axiom alignment_axiom16 : (0 <= alignment16)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit10 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit10 : int
+
+logic do_checks__do_discriminant_check__r1__j__position10 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom10 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit10)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom10 :
+  (do_checks__do_discriminant_check__r1__j__first__bit10 <  do_checks__do_discriminant_check__r1__j__last__bit10)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom10 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position10)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit10 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit10 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position10 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom10 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit10)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom10 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit10 <  do_checks__do_discriminant_check__r1__arr__last__bit10)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom10 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position10)
+
+logic user_eq23 : us_rep, us_rep -> bool
+
+logic dummy23 : us_rep
+
+type txS__ref6 = { txS__content6 : us_rep
+}
+
+function txS__ref_txS__content__7__projection(a: txS__ref6) : us_rep =
+  (a).txS__content6
+
+logic x__split_discrs8 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS17 : int
+
+predicate dynamic_invariant12(temp___expr_715: us_rep,
+  temp___is_init_711: bool, temp___skip_constant_712: bool,
+  temp___do_toplevel_713: bool, temp___do_typ_inv_714: bool) =
+  (((not (temp___skip_constant_712 = true)) -> in_range17(0,
+  temp___expr_715)) and (let temp___716 =
+  ((temp___expr_715).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j
+  : integer in
+  (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_715) ->
+  (dynamic_property(1, to_rep(temp___716),
+  first1(((temp___expr_715).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr),
+  last1(((temp___expr_715).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)) and
+  ((first1(((temp___expr_715).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
+  (last1(((temp___expr_715).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(temp___716)))))))
+
+predicate default_initial_assumption9(temp___expr_718: us_rep,
+  temp___skip_top_level_719: bool) =
+  ((to_rep(((temp___expr_718).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j) = 0) and
+  (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_718) ->
+  ((first1(((temp___expr_718).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
+  (last1(((temp___expr_718).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(((temp___expr_718).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j)))))
+
+logic y__split_discrs8 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS18 : int
+
+type tT143bP1
+
+logic tT143bP1qtint : tT143bP1 -> int
+
+axiom tT143bP1qtaxiom : (forall i:tT143bP1. (1 <= tT143bP1qtint(i)))
+
+axiom tT143bP1qtaxiom1 : (forall i:tT143bP1. (tT143bP1qtint(i) <= 10))
+
+predicate in_range18(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq16(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE8 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check8 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE8 : us_image -> int
+
+logic user_eq24 : tT143bP1, tT143bP1 -> bool
+
+logic dummy24 : tT143bP1
+
+type tT143bP1__ref = { tT143bP1__content : tT143bP1
+}
+
+function tT143bP1__ref_tT143bP1__content__projection(a: tT143bP1__ref) : tT143bP1 =
+  (a).tT143bP1__content
+
+logic dummy25 : (int,bool) farray
+
+logic value__size17 : int
+
+logic object__size17 : int
+
+logic component__size6 : int
+
+logic alignment17 : int
+
+axiom value__size_axiom17 : (0 <= value__size17)
+
+axiom object__size_axiom17 : (0 <= object__size17)
+
+axiom component__size_axiom6 : (0 <= component__size6)
+
+axiom alignment_axiom17 : (0 <= alignment17)
+
+logic user_eq25 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields12 = { rec__do_checks__do_discriminant_check__r1__arr6 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__23__projection(a: us_split_fields12) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr6
+
+type us_split_fields__ref6 = { us_split_fields__content6 : us_split_fields12
+}
+
+function us_split_fields__ref___split_fields__content__27__projection(a: us_split_fields__ref6) : us_split_fields12 =
+  (a).us_split_fields__content6
+
+type us_rep6 = { us_split_discrs7 : us_split_discrs; us_split_fields13 :
+us_split_fields12
+}
+
+function us_rep___split_discrs__25__projection(a: us_rep6) : us_split_discrs =
+  (a).us_split_discrs7
+
+function us_rep___split_fields__27__projection(a: us_rep6) : us_split_fields12 =
+  (a).us_split_fields13
+
+function to_base5(a: us_rep6) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs7; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields13).rec__do_checks__do_discriminant_check__r1__arr6,
+  1, 10) } }
+
+function of_base5(r: us_rep) : us_rep6 = { us_split_discrs7 =
+  (r).us_split_discrs1; us_split_fields13 = {
+  rec__do_checks__do_discriminant_check__r1__arr6 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred6(a: us_rep6) =
+  ((1 <= to_rep(((a).us_split_discrs7).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs7).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq17(a: us_rep6, b: us_rep6) : bool =
+  (if ((to_rep(((a).us_split_discrs7).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs7).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred6(a) ->
+  (bool_eq3(((a).us_split_fields13).rec__do_checks__do_discriminant_check__r1__arr6,
+  1, 10,
+  ((b).us_split_fields13).rec__do_checks__do_discriminant_check__r1__arr6, 1,
+  10) = true))) then true else false)
+
+predicate in_range19(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size18 : int
+
+logic object__size18 : int
+
+logic alignment18 : int
+
+axiom value__size_axiom18 : (0 <= value__size18)
+
+axiom object__size_axiom18 : (0 <= object__size18)
+
+axiom alignment_axiom18 : (0 <= alignment18)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit11 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit11 : int
+
+logic do_checks__do_discriminant_check__r1__j__position11 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom11 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit11)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom11 :
+  (do_checks__do_discriminant_check__r1__j__first__bit11 <  do_checks__do_discriminant_check__r1__j__last__bit11)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom11 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position11)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit11 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit11 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position11 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom11 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit11)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom11 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit11 <  do_checks__do_discriminant_check__r1__arr__last__bit11)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom11 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position11)
+
+logic user_eq26 : us_rep6, us_rep6 -> bool
+
+logic dummy26 : us_rep6
+
+type txS__ref7 = { txS__content7 : us_rep6
+}
+
+function txS__ref_txS__content__8__projection(a: txS__ref7) : us_rep6 =
+  (a).txS__content7
+
+logic x__split_discrs9 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS19 : int
+
+predicate dynamic_invariant13(temp___expr_728: us_rep6,
+  temp___is_init_724: bool, temp___skip_constant_725: bool,
+  temp___do_toplevel_726: bool, temp___do_typ_inv_727: bool) =
+  ((not (temp___skip_constant_725 = true)) -> in_range19(10,
+  to_base5(temp___expr_728)))
+
+predicate default_initial_assumption10(temp___expr_731: us_rep6,
+  temp___skip_top_level_732: bool) =
+  (to_rep(((temp___expr_731).us_split_discrs7).rec__do_checks__do_discriminant_check__r1__j) = 10)
+
+logic y__split_discrs9 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS20 : int
+
+predicate in_range20(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size19 : int
+
+logic object__size19 : int
+
+logic alignment19 : int
+
+axiom value__size_axiom19 : (0 <= value__size19)
+
+axiom object__size_axiom19 : (0 <= object__size19)
+
+axiom alignment_axiom19 : (0 <= alignment19)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit12 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit12 : int
+
+logic do_checks__do_discriminant_check__r1__j__position12 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom12 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit12)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom12 :
+  (do_checks__do_discriminant_check__r1__j__first__bit12 <  do_checks__do_discriminant_check__r1__j__last__bit12)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom12 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position12)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit12 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit12 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position12 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom12 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit12)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom12 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit12 <  do_checks__do_discriminant_check__r1__arr__last__bit12)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom12 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position12)
+
+logic user_eq27 : us_rep, us_rep -> bool
+
+logic dummy27 : us_rep
+
+type txS__ref8 = { txS__content8 : us_rep
+}
+
+function txS__ref_txS__content__9__projection(a: txS__ref8) : us_rep =
+  (a).txS__content8
+
+logic x__split_discrs10 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS21 : int
+
+predicate dynamic_invariant14(temp___expr_741: us_rep,
+  temp___is_init_737: bool, temp___skip_constant_738: bool,
+  temp___do_toplevel_739: bool, temp___do_typ_inv_740: bool) =
+  (((not (temp___skip_constant_738 = true)) -> in_range20(0,
+  temp___expr_741)) and (let temp___742 =
+  ((temp___expr_741).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j
+  : integer in
+  (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_741) ->
+  (dynamic_property(1, to_rep(temp___742),
+  first1(((temp___expr_741).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr),
+  last1(((temp___expr_741).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)) and
+  ((first1(((temp___expr_741).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
+  (last1(((temp___expr_741).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(temp___742)))))))
+
+predicate default_initial_assumption11(temp___expr_744: us_rep,
+  temp___skip_top_level_745: bool) =
+  ((to_rep(((temp___expr_744).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j) = 0) and
+  (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_744) ->
+  ((first1(((temp___expr_744).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
+  (last1(((temp___expr_744).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(((temp___expr_744).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j)))))
+
+logic y__split_discrs10 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS22 : int
+
+type tT159bP1
+
+logic tT159bP1qtint : tT159bP1 -> int
+
+axiom tT159bP1qtaxiom : (forall i:tT159bP1. (1 <= tT159bP1qtint(i)))
+
+axiom tT159bP1qtaxiom1 : (forall i:tT159bP1. (tT159bP1qtint(i) <= 10))
+
+predicate in_range21(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq18(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE9 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check9 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE9 : us_image -> int
+
+logic user_eq28 : tT159bP1, tT159bP1 -> bool
+
+logic dummy28 : tT159bP1
+
+type tT159bP1__ref = { tT159bP1__content : tT159bP1
+}
+
+function tT159bP1__ref_tT159bP1__content__projection(a: tT159bP1__ref) : tT159bP1 =
+  (a).tT159bP1__content
+
+logic dummy29 : (int,bool) farray
+
+logic value__size20 : int
+
+logic object__size20 : int
+
+logic component__size7 : int
+
+logic alignment20 : int
+
+axiom value__size_axiom20 : (0 <= value__size20)
+
+axiom object__size_axiom20 : (0 <= object__size20)
+
+axiom component__size_axiom7 : (0 <= component__size7)
+
+axiom alignment_axiom20 : (0 <= alignment20)
+
+logic user_eq29 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields14 = { rec__do_checks__do_discriminant_check__r1__arr7 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__27__projection(a: us_split_fields14) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr7
+
+type us_split_fields__ref7 = { us_split_fields__content7 : us_split_fields14
+}
+
+function us_split_fields__ref___split_fields__content__31__projection(a: us_split_fields__ref7) : us_split_fields14 =
+  (a).us_split_fields__content7
+
+type us_rep7 = { us_split_discrs8 : us_split_discrs; us_split_fields15 :
+us_split_fields14
+}
+
+function us_rep___split_discrs__29__projection(a: us_rep7) : us_split_discrs =
+  (a).us_split_discrs8
+
+function us_rep___split_fields__31__projection(a: us_rep7) : us_split_fields14 =
+  (a).us_split_fields15
+
+function to_base6(a: us_rep7) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs8; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields15).rec__do_checks__do_discriminant_check__r1__arr7,
+  1, 10) } }
+
+function of_base6(r: us_rep) : us_rep7 = { us_split_discrs8 =
+  (r).us_split_discrs1; us_split_fields15 = {
+  rec__do_checks__do_discriminant_check__r1__arr7 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred7(a: us_rep7) =
+  ((1 <= to_rep(((a).us_split_discrs8).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs8).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq19(a: us_rep7, b: us_rep7) : bool =
+  (if ((to_rep(((a).us_split_discrs8).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs8).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred7(a) ->
+  (bool_eq3(((a).us_split_fields15).rec__do_checks__do_discriminant_check__r1__arr7,
+  1, 10,
+  ((b).us_split_fields15).rec__do_checks__do_discriminant_check__r1__arr7, 1,
+  10) = true))) then true else false)
+
+predicate in_range22(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size21 : int
+
+logic object__size21 : int
+
+logic alignment21 : int
+
+axiom value__size_axiom21 : (0 <= value__size21)
+
+axiom object__size_axiom21 : (0 <= object__size21)
+
+axiom alignment_axiom21 : (0 <= alignment21)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit13 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit13 : int
+
+logic do_checks__do_discriminant_check__r1__j__position13 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom13 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit13)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom13 :
+  (do_checks__do_discriminant_check__r1__j__first__bit13 <  do_checks__do_discriminant_check__r1__j__last__bit13)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom13 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position13)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit13 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit13 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position13 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom13 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit13)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom13 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit13 <  do_checks__do_discriminant_check__r1__arr__last__bit13)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom13 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position13)
+
+logic user_eq30 : us_rep7, us_rep7 -> bool
+
+logic dummy30 : us_rep7
+
+type txS__ref9 = { txS__content9 : us_rep7
+}
+
+function txS__ref_txS__content__10__projection(a: txS__ref9) : us_rep7 =
+  (a).txS__content9
+
+logic x__split_discrs11 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS23 : int
+
+predicate dynamic_invariant15(temp___expr_754: us_rep7,
+  temp___is_init_750: bool, temp___skip_constant_751: bool,
+  temp___do_toplevel_752: bool, temp___do_typ_inv_753: bool) =
+  ((not (temp___skip_constant_751 = true)) -> in_range22(10,
+  to_base6(temp___expr_754)))
+
+predicate default_initial_assumption12(temp___expr_757: us_rep7,
+  temp___skip_top_level_758: bool) =
+  (to_rep(((temp___expr_757).us_split_discrs8).rec__do_checks__do_discriminant_check__r1__j) = 10)
+
+logic y__split_discrs11 : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS24 : int
+
+predicate in_range23(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size22 : int
+
+logic object__size22 : int
+
+logic alignment22 : int
+
+axiom value__size_axiom22 : (0 <= value__size22)
+
+axiom object__size_axiom22 : (0 <= object__size22)
+
+axiom alignment_axiom22 : (0 <= alignment22)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit14 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit14 : int
+
+logic do_checks__do_discriminant_check__r1__j__position14 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom14 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit14)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom14 :
+  (do_checks__do_discriminant_check__r1__j__first__bit14 <  do_checks__do_discriminant_check__r1__j__last__bit14)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom14 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position14)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit14 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit14 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position14 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom14 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit14)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom14 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit14 <  do_checks__do_discriminant_check__r1__arr__last__bit14)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom14 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position14)
+
+logic user_eq31 : us_rep, us_rep -> bool
+
+logic dummy31 : us_rep
+
+type t67b__ref = { t67b__content : us_rep
+}
+
+function t67b__ref_t67b__content__projection(a: t67b__ref) : us_rep =
+  (a).t67b__content
+
+predicate in_range24(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size23 : int
+
+logic object__size23 : int
+
+logic alignment23 : int
+
+axiom value__size_axiom23 : (0 <= value__size23)
+
+axiom object__size_axiom23 : (0 <= object__size23)
+
+axiom alignment_axiom23 : (0 <= alignment23)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit15 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit15 : int
+
+logic do_checks__do_discriminant_check__r1__j__position15 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom15 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit15)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom15 :
+  (do_checks__do_discriminant_check__r1__j__first__bit15 <  do_checks__do_discriminant_check__r1__j__last__bit15)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom15 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position15)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit15 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit15 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position15 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom15 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit15)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom15 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit15 <  do_checks__do_discriminant_check__r1__arr__last__bit15)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom15 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position15)
+
+logic user_eq32 : us_rep, us_rep -> bool
+
+logic dummy32 : us_rep
+
+type t68b__ref = { t68b__content : us_rep
+}
+
+function t68b__ref_t68b__content__projection(a: t68b__ref) : us_rep =
+  (a).t68b__content
+
+type tT71bP1
+
+logic tT71bP1qtint : tT71bP1 -> int
+
+axiom tT71bP1qtaxiom : (forall i:tT71bP1. (1 <= tT71bP1qtint(i)))
+
+axiom tT71bP1qtaxiom1 : (forall i:tT71bP1. (tT71bP1qtint(i) <= 10))
+
+predicate in_range25(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq20(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE10 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check10 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE10 : us_image -> int
+
+logic user_eq33 : tT71bP1, tT71bP1 -> bool
+
+logic dummy33 : tT71bP1
+
+type tT71bP1__ref = { tT71bP1__content : tT71bP1
+}
+
+function tT71bP1__ref_tT71bP1__content__projection(a: tT71bP1__ref) : tT71bP1 =
+  (a).tT71bP1__content
+
+logic dummy34 : (int,bool) farray
+
+logic value__size24 : int
+
+logic object__size24 : int
+
+logic component__size8 : int
+
+logic alignment24 : int
+
+axiom value__size_axiom24 : (0 <= value__size24)
+
+axiom object__size_axiom24 : (0 <= object__size24)
+
+axiom component__size_axiom8 : (0 <= component__size8)
+
+axiom alignment_axiom24 : (0 <= alignment24)
+
+logic user_eq34 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields16 = { rec__do_checks__do_discriminant_check__r1__arr8 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__5__projection(a: us_split_fields16) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr8
+
+type us_split_fields__ref8 = { us_split_fields__content8 : us_split_fields16
+}
+
+function us_split_fields__ref___split_fields__content__9__projection(a: us_split_fields__ref8) : us_split_fields16 =
+  (a).us_split_fields__content8
+
+type us_rep8 = { us_split_discrs9 : us_split_discrs; us_split_fields17 :
+us_split_fields16
+}
+
+function us_rep___split_discrs__7__projection(a: us_rep8) : us_split_discrs =
+  (a).us_split_discrs9
+
+function us_rep___split_fields__9__projection(a: us_rep8) : us_split_fields16 =
+  (a).us_split_fields17
+
+function to_base7(a: us_rep8) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs9; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields17).rec__do_checks__do_discriminant_check__r1__arr8,
+  1, 10) } }
+
+function of_base7(r: us_rep) : us_rep8 = { us_split_discrs9 =
+  (r).us_split_discrs1; us_split_fields17 = {
+  rec__do_checks__do_discriminant_check__r1__arr8 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred8(a: us_rep8) =
+  ((1 <= to_rep(((a).us_split_discrs9).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs9).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq21(a: us_rep8, b: us_rep8) : bool =
+  (if ((to_rep(((a).us_split_discrs9).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs9).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred8(a) ->
+  (bool_eq3(((a).us_split_fields17).rec__do_checks__do_discriminant_check__r1__arr8,
+  1, 10,
+  ((b).us_split_fields17).rec__do_checks__do_discriminant_check__r1__arr8, 1,
+  10) = true))) then true else false)
+
+predicate in_range26(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size25 : int
+
+logic object__size25 : int
+
+logic alignment25 : int
+
+axiom value__size_axiom25 : (0 <= value__size25)
+
+axiom object__size_axiom25 : (0 <= object__size25)
+
+axiom alignment_axiom25 : (0 <= alignment25)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit16 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit16 : int
+
+logic do_checks__do_discriminant_check__r1__j__position16 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom16 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit16)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom16 :
+  (do_checks__do_discriminant_check__r1__j__first__bit16 <  do_checks__do_discriminant_check__r1__j__last__bit16)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom16 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position16)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit16 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit16 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position16 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom16 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit16)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom16 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit16 <  do_checks__do_discriminant_check__r1__arr__last__bit16)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom16 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position16)
+
+logic user_eq35 : us_rep8, us_rep8 -> bool
+
+logic dummy35 : us_rep8
+
+type t70b__ref = { t70b__content : us_rep8
+}
+
+function t70b__ref_t70b__content__projection(a: t70b__ref) : us_rep8 =
+  (a).t70b__content
+
+type tT75bP1
+
+logic tT75bP1qtint : tT75bP1 -> int
+
+axiom tT75bP1qtaxiom : (forall i:tT75bP1. (1 <= tT75bP1qtint(i)))
+
+axiom tT75bP1qtaxiom1 : (forall i:tT75bP1. (tT75bP1qtint(i) <= 10))
+
+predicate in_range27(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq22(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE11 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check11 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE11 : us_image -> int
+
+logic user_eq36 : tT75bP1, tT75bP1 -> bool
+
+logic dummy36 : tT75bP1
+
+type tT75bP1__ref = { tT75bP1__content : tT75bP1
+}
+
+function tT75bP1__ref_tT75bP1__content__projection(a: tT75bP1__ref) : tT75bP1 =
+  (a).tT75bP1__content
+
+logic dummy37 : (int,bool) farray
+
+logic value__size26 : int
+
+logic object__size26 : int
+
+logic component__size9 : int
+
+logic alignment26 : int
+
+axiom value__size_axiom26 : (0 <= value__size26)
+
+axiom object__size_axiom26 : (0 <= object__size26)
+
+axiom component__size_axiom9 : (0 <= component__size9)
+
+axiom alignment_axiom26 : (0 <= alignment26)
+
+logic user_eq37 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields18 = { rec__do_checks__do_discriminant_check__r1__arr9 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__6__projection(a: us_split_fields18) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr9
+
+type us_split_fields__ref9 = { us_split_fields__content9 : us_split_fields18
+}
+
+function us_split_fields__ref___split_fields__content__10__projection(a: us_split_fields__ref9) : us_split_fields18 =
+  (a).us_split_fields__content9
+
+type us_rep9 = { us_split_discrs10 : us_split_discrs; us_split_fields19 :
+us_split_fields18
+}
+
+function us_rep___split_discrs__8__projection(a: us_rep9) : us_split_discrs =
+  (a).us_split_discrs10
+
+function us_rep___split_fields__10__projection(a: us_rep9) : us_split_fields18 =
+  (a).us_split_fields19
+
+function to_base8(a: us_rep9) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs10; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields19).rec__do_checks__do_discriminant_check__r1__arr9,
+  1, 10) } }
+
+function of_base8(r: us_rep) : us_rep9 = { us_split_discrs10 =
+  (r).us_split_discrs1; us_split_fields19 = {
+  rec__do_checks__do_discriminant_check__r1__arr9 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred9(a: us_rep9) =
+  ((1 <= to_rep(((a).us_split_discrs10).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs10).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq23(a: us_rep9, b: us_rep9) : bool =
+  (if ((to_rep(((a).us_split_discrs10).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs10).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred9(a) ->
+  (bool_eq3(((a).us_split_fields19).rec__do_checks__do_discriminant_check__r1__arr9,
+  1, 10,
+  ((b).us_split_fields19).rec__do_checks__do_discriminant_check__r1__arr9, 1,
+  10) = true))) then true else false)
+
+predicate in_range28(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size27 : int
+
+logic object__size27 : int
+
+logic alignment27 : int
+
+axiom value__size_axiom27 : (0 <= value__size27)
+
+axiom object__size_axiom27 : (0 <= object__size27)
+
+axiom alignment_axiom27 : (0 <= alignment27)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit17 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit17 : int
+
+logic do_checks__do_discriminant_check__r1__j__position17 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom17 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit17)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom17 :
+  (do_checks__do_discriminant_check__r1__j__first__bit17 <  do_checks__do_discriminant_check__r1__j__last__bit17)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom17 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position17)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit17 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit17 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position17 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom17 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit17)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom17 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit17 <  do_checks__do_discriminant_check__r1__arr__last__bit17)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom17 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position17)
+
+logic user_eq38 : us_rep9, us_rep9 -> bool
+
+logic dummy38 : us_rep9
+
+type t74b__ref = { t74b__content : us_rep9
+}
+
+function t74b__ref_t74b__content__projection(a: t74b__ref) : us_rep9 =
+  (a).t74b__content
+
+predicate in_range29(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size28 : int
+
+logic object__size28 : int
+
+logic alignment28 : int
+
+axiom value__size_axiom28 : (0 <= value__size28)
+
+axiom object__size_axiom28 : (0 <= object__size28)
+
+axiom alignment_axiom28 : (0 <= alignment28)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit18 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit18 : int
+
+logic do_checks__do_discriminant_check__r1__j__position18 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom18 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit18)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom18 :
+  (do_checks__do_discriminant_check__r1__j__first__bit18 <  do_checks__do_discriminant_check__r1__j__last__bit18)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom18 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position18)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit18 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit18 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position18 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom18 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit18)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom18 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit18 <  do_checks__do_discriminant_check__r1__arr__last__bit18)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom18 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position18)
+
+logic user_eq39 : us_rep, us_rep -> bool
+
+logic dummy39 : us_rep
+
+type t81b__ref = { t81b__content : us_rep
+}
+
+function t81b__ref_t81b__content__projection(a: t81b__ref) : us_rep =
+  (a).t81b__content
+
+type tT83bP1
+
+logic tT83bP1qtint : tT83bP1 -> int
+
+axiom tT83bP1qtaxiom : (forall i:tT83bP1. (1 <= tT83bP1qtint(i)))
+
+axiom tT83bP1qtaxiom1 : (forall i:tT83bP1. (tT83bP1qtint(i) <= 10))
+
+predicate in_range30(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq24(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE12 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check12 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE12 : us_image -> int
+
+logic user_eq40 : tT83bP1, tT83bP1 -> bool
+
+logic dummy40 : tT83bP1
+
+type tT83bP1__ref = { tT83bP1__content : tT83bP1
+}
+
+function tT83bP1__ref_tT83bP1__content__projection(a: tT83bP1__ref) : tT83bP1 =
+  (a).tT83bP1__content
+
+logic dummy41 : (int,bool) farray
+
+logic value__size29 : int
+
+logic object__size29 : int
+
+logic component__size10 : int
+
+logic alignment29 : int
+
+axiom value__size_axiom29 : (0 <= value__size29)
+
+axiom object__size_axiom29 : (0 <= object__size29)
+
+axiom component__size_axiom10 : (0 <= component__size10)
+
+axiom alignment_axiom29 : (0 <= alignment29)
+
+logic user_eq41 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields20 = { rec__do_checks__do_discriminant_check__r1__arr10 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__8__projection(a: us_split_fields20) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr10
+
+type us_split_fields__ref10 = { us_split_fields__content10 :
+us_split_fields20
+}
+
+function us_split_fields__ref___split_fields__content__12__projection(a: us_split_fields__ref10) : us_split_fields20 =
+  (a).us_split_fields__content10
+
+type us_rep10 = { us_split_discrs11 : us_split_discrs; us_split_fields21 :
+us_split_fields20
+}
+
+function us_rep___split_discrs__10__projection(a: us_rep10) : us_split_discrs =
+  (a).us_split_discrs11
+
+function us_rep___split_fields__12__projection(a: us_rep10) : us_split_fields20 =
+  (a).us_split_fields21
+
+function to_base9(a: us_rep10) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs11; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields21).rec__do_checks__do_discriminant_check__r1__arr10,
+  1, 10) } }
+
+function of_base9(r: us_rep) : us_rep10 = { us_split_discrs11 =
+  (r).us_split_discrs1; us_split_fields21 = {
+  rec__do_checks__do_discriminant_check__r1__arr10 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred10(a: us_rep10) =
+  ((1 <= to_rep(((a).us_split_discrs11).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs11).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq25(a: us_rep10, b: us_rep10) : bool =
+  (if ((to_rep(((a).us_split_discrs11).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs11).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred10(a) ->
+  (bool_eq3(((a).us_split_fields21).rec__do_checks__do_discriminant_check__r1__arr10,
+  1, 10,
+  ((b).us_split_fields21).rec__do_checks__do_discriminant_check__r1__arr10,
+  1, 10) = true))) then true else false)
+
+predicate in_range31(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size30 : int
+
+logic object__size30 : int
+
+logic alignment30 : int
+
+axiom value__size_axiom30 : (0 <= value__size30)
+
+axiom object__size_axiom30 : (0 <= object__size30)
+
+axiom alignment_axiom30 : (0 <= alignment30)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit19 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit19 : int
+
+logic do_checks__do_discriminant_check__r1__j__position19 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom19 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit19)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom19 :
+  (do_checks__do_discriminant_check__r1__j__first__bit19 <  do_checks__do_discriminant_check__r1__j__last__bit19)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom19 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position19)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit19 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit19 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position19 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom19 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit19)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom19 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit19 <  do_checks__do_discriminant_check__r1__arr__last__bit19)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom19 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position19)
+
+logic user_eq42 : us_rep10, us_rep10 -> bool
+
+logic dummy42 : us_rep10
+
+type t82b__ref = { t82b__content : us_rep10
+}
+
+function t82b__ref_t82b__content__projection(a: t82b__ref) : us_rep10 =
+  (a).t82b__content
+
+type tT91bP1
+
+logic tT91bP1qtint : tT91bP1 -> int
+
+axiom tT91bP1qtaxiom : (forall i:tT91bP1. (1 <= tT91bP1qtint(i)))
+
+axiom tT91bP1qtaxiom1 : (forall i:tT91bP1. (tT91bP1qtint(i) <= 10))
+
+predicate in_range32(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq26(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE13 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check13 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE13 : us_image -> int
+
+logic user_eq43 : tT91bP1, tT91bP1 -> bool
+
+logic dummy43 : tT91bP1
+
+type tT91bP1__ref = { tT91bP1__content : tT91bP1
+}
+
+function tT91bP1__ref_tT91bP1__content__projection(a: tT91bP1__ref) : tT91bP1 =
+  (a).tT91bP1__content
+
+logic dummy44 : (int,bool) farray
+
+logic value__size31 : int
+
+logic object__size31 : int
+
+logic component__size11 : int
+
+logic alignment31 : int
+
+axiom value__size_axiom31 : (0 <= value__size31)
+
+axiom object__size_axiom31 : (0 <= object__size31)
+
+axiom component__size_axiom11 : (0 <= component__size11)
+
+axiom alignment_axiom31 : (0 <= alignment31)
+
+logic user_eq44 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields22 = { rec__do_checks__do_discriminant_check__r1__arr11 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__11__projection(a: us_split_fields22) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr11
+
+type us_split_fields__ref11 = { us_split_fields__content11 :
+us_split_fields22
+}
+
+function us_split_fields__ref___split_fields__content__15__projection(a: us_split_fields__ref11) : us_split_fields22 =
+  (a).us_split_fields__content11
+
+type us_rep11 = { us_split_discrs12 : us_split_discrs; us_split_fields23 :
+us_split_fields22
+}
+
+function us_rep___split_discrs__13__projection(a: us_rep11) : us_split_discrs =
+  (a).us_split_discrs12
+
+function us_rep___split_fields__15__projection(a: us_rep11) : us_split_fields22 =
+  (a).us_split_fields23
+
+function to_base10(a: us_rep11) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs12; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields23).rec__do_checks__do_discriminant_check__r1__arr11,
+  1, 10) } }
+
+function of_base10(r: us_rep) : us_rep11 = { us_split_discrs12 =
+  (r).us_split_discrs1; us_split_fields23 = {
+  rec__do_checks__do_discriminant_check__r1__arr11 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred11(a: us_rep11) =
+  ((1 <= to_rep(((a).us_split_discrs12).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs12).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq27(a: us_rep11, b: us_rep11) : bool =
+  (if ((to_rep(((a).us_split_discrs12).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs12).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred11(a) ->
+  (bool_eq3(((a).us_split_fields23).rec__do_checks__do_discriminant_check__r1__arr11,
+  1, 10,
+  ((b).us_split_fields23).rec__do_checks__do_discriminant_check__r1__arr11,
+  1, 10) = true))) then true else false)
+
+predicate in_range33(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size32 : int
+
+logic object__size32 : int
+
+logic alignment32 : int
+
+axiom value__size_axiom32 : (0 <= value__size32)
+
+axiom object__size_axiom32 : (0 <= object__size32)
+
+axiom alignment_axiom32 : (0 <= alignment32)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit20 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit20 : int
+
+logic do_checks__do_discriminant_check__r1__j__position20 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom20 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit20)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom20 :
+  (do_checks__do_discriminant_check__r1__j__first__bit20 <  do_checks__do_discriminant_check__r1__j__last__bit20)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom20 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position20)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit20 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit20 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position20 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom20 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit20)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom20 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit20 <  do_checks__do_discriminant_check__r1__arr__last__bit20)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom20 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position20)
+
+logic user_eq45 : us_rep11, us_rep11 -> bool
+
+logic dummy45 : us_rep11
+
+type t90b__ref = { t90b__content : us_rep11
+}
+
+function t90b__ref_t90b__content__projection(a: t90b__ref) : us_rep11 =
+  (a).t90b__content
+
+type tT95bP1
+
+logic tT95bP1qtint : tT95bP1 -> int
+
+axiom tT95bP1qtaxiom : (forall i:tT95bP1. (1 <= tT95bP1qtint(i)))
+
+axiom tT95bP1qtaxiom1 : (forall i:tT95bP1. (tT95bP1qtint(i) <= 10))
+
+predicate in_range34(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq28(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE14 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check14 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE14 : us_image -> int
+
+logic user_eq46 : tT95bP1, tT95bP1 -> bool
+
+logic dummy46 : tT95bP1
+
+type tT95bP1__ref = { tT95bP1__content : tT95bP1
+}
+
+function tT95bP1__ref_tT95bP1__content__projection(a: tT95bP1__ref) : tT95bP1 =
+  (a).tT95bP1__content
+
+logic dummy47 : (int,bool) farray
+
+logic value__size33 : int
+
+logic object__size33 : int
+
+logic component__size12 : int
+
+logic alignment33 : int
+
+axiom value__size_axiom33 : (0 <= value__size33)
+
+axiom object__size_axiom33 : (0 <= object__size33)
+
+axiom component__size_axiom12 : (0 <= component__size12)
+
+axiom alignment_axiom33 : (0 <= alignment33)
+
+logic user_eq47 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields24 = { rec__do_checks__do_discriminant_check__r1__arr12 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__12__projection(a: us_split_fields24) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr12
+
+type us_split_fields__ref12 = { us_split_fields__content12 :
+us_split_fields24
+}
+
+function us_split_fields__ref___split_fields__content__16__projection(a: us_split_fields__ref12) : us_split_fields24 =
+  (a).us_split_fields__content12
+
+type us_rep12 = { us_split_discrs13 : us_split_discrs; us_split_fields25 :
+us_split_fields24
+}
+
+function us_rep___split_discrs__14__projection(a: us_rep12) : us_split_discrs =
+  (a).us_split_discrs13
+
+function us_rep___split_fields__16__projection(a: us_rep12) : us_split_fields24 =
+  (a).us_split_fields25
+
+function to_base11(a: us_rep12) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs13; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields25).rec__do_checks__do_discriminant_check__r1__arr12,
+  1, 10) } }
+
+function of_base11(r: us_rep) : us_rep12 = { us_split_discrs13 =
+  (r).us_split_discrs1; us_split_fields25 = {
+  rec__do_checks__do_discriminant_check__r1__arr12 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred12(a: us_rep12) =
+  ((1 <= to_rep(((a).us_split_discrs13).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs13).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq29(a: us_rep12, b: us_rep12) : bool =
+  (if ((to_rep(((a).us_split_discrs13).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs13).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred12(a) ->
+  (bool_eq3(((a).us_split_fields25).rec__do_checks__do_discriminant_check__r1__arr12,
+  1, 10,
+  ((b).us_split_fields25).rec__do_checks__do_discriminant_check__r1__arr12,
+  1, 10) = true))) then true else false)
+
+predicate in_range35(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size34 : int
+
+logic object__size34 : int
+
+logic alignment34 : int
+
+axiom value__size_axiom34 : (0 <= value__size34)
+
+axiom object__size_axiom34 : (0 <= object__size34)
+
+axiom alignment_axiom34 : (0 <= alignment34)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit21 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit21 : int
+
+logic do_checks__do_discriminant_check__r1__j__position21 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom21 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit21)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom21 :
+  (do_checks__do_discriminant_check__r1__j__first__bit21 <  do_checks__do_discriminant_check__r1__j__last__bit21)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom21 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position21)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit21 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit21 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position21 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom21 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit21)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom21 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit21 <  do_checks__do_discriminant_check__r1__arr__last__bit21)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom21 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position21)
+
+logic user_eq48 : us_rep12, us_rep12 -> bool
+
+logic dummy48 : us_rep12
+
+type t94b__ref = { t94b__content : us_rep12
+}
+
+function t94b__ref_t94b__content__projection(a: t94b__ref) : us_rep12 =
+  (a).t94b__content
+
+predicate in_range36(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size35 : int
+
+logic object__size35 : int
+
+logic alignment35 : int
+
+axiom value__size_axiom35 : (0 <= value__size35)
+
+axiom object__size_axiom35 : (0 <= object__size35)
+
+axiom alignment_axiom35 : (0 <= alignment35)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit22 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit22 : int
+
+logic do_checks__do_discriminant_check__r1__j__position22 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom22 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit22)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom22 :
+  (do_checks__do_discriminant_check__r1__j__first__bit22 <  do_checks__do_discriminant_check__r1__j__last__bit22)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom22 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position22)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit22 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit22 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position22 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom22 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit22)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom22 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit22 <  do_checks__do_discriminant_check__r1__arr__last__bit22)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom22 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position22)
+
+logic user_eq49 : us_rep, us_rep -> bool
+
+logic dummy49 : us_rep
+
+type t101b__ref = { t101b__content : us_rep
+}
+
+function t101b__ref_t101b__content__projection(a: t101b__ref) : us_rep =
+  (a).t101b__content
+
+type tT103bP1
+
+logic tT103bP1qtint : tT103bP1 -> int
+
+axiom tT103bP1qtaxiom : (forall i:tT103bP1. (1 <= tT103bP1qtint(i)))
+
+axiom tT103bP1qtaxiom1 : (forall i:tT103bP1. (tT103bP1qtint(i) <= 10))
+
+predicate in_range37(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq30(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE15 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check15 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE15 : us_image -> int
+
+logic user_eq50 : tT103bP1, tT103bP1 -> bool
+
+logic dummy50 : tT103bP1
+
+type tT103bP1__ref = { tT103bP1__content : tT103bP1
+}
+
+function tT103bP1__ref_tT103bP1__content__projection(a: tT103bP1__ref) : tT103bP1 =
+  (a).tT103bP1__content
+
+logic dummy51 : (int,bool) farray
+
+logic value__size36 : int
+
+logic object__size36 : int
+
+logic component__size13 : int
+
+logic alignment36 : int
+
+axiom value__size_axiom36 : (0 <= value__size36)
+
+axiom object__size_axiom36 : (0 <= object__size36)
+
+axiom component__size_axiom13 : (0 <= component__size13)
+
+axiom alignment_axiom36 : (0 <= alignment36)
+
+logic user_eq51 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields26 = { rec__do_checks__do_discriminant_check__r1__arr13 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__14__projection(a: us_split_fields26) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr13
+
+type us_split_fields__ref13 = { us_split_fields__content13 :
+us_split_fields26
+}
+
+function us_split_fields__ref___split_fields__content__18__projection(a: us_split_fields__ref13) : us_split_fields26 =
+  (a).us_split_fields__content13
+
+type us_rep13 = { us_split_discrs14 : us_split_discrs; us_split_fields27 :
+us_split_fields26
+}
+
+function us_rep___split_discrs__16__projection(a: us_rep13) : us_split_discrs =
+  (a).us_split_discrs14
+
+function us_rep___split_fields__18__projection(a: us_rep13) : us_split_fields26 =
+  (a).us_split_fields27
+
+function to_base12(a: us_rep13) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs14; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields27).rec__do_checks__do_discriminant_check__r1__arr13,
+  1, 10) } }
+
+function of_base12(r: us_rep) : us_rep13 = { us_split_discrs14 =
+  (r).us_split_discrs1; us_split_fields27 = {
+  rec__do_checks__do_discriminant_check__r1__arr13 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred13(a: us_rep13) =
+  ((1 <= to_rep(((a).us_split_discrs14).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs14).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq31(a: us_rep13, b: us_rep13) : bool =
+  (if ((to_rep(((a).us_split_discrs14).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs14).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred13(a) ->
+  (bool_eq3(((a).us_split_fields27).rec__do_checks__do_discriminant_check__r1__arr13,
+  1, 10,
+  ((b).us_split_fields27).rec__do_checks__do_discriminant_check__r1__arr13,
+  1, 10) = true))) then true else false)
+
+predicate in_range38(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size37 : int
+
+logic object__size37 : int
+
+logic alignment37 : int
+
+axiom value__size_axiom37 : (0 <= value__size37)
+
+axiom object__size_axiom37 : (0 <= object__size37)
+
+axiom alignment_axiom37 : (0 <= alignment37)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit23 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit23 : int
+
+logic do_checks__do_discriminant_check__r1__j__position23 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom23 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit23)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom23 :
+  (do_checks__do_discriminant_check__r1__j__first__bit23 <  do_checks__do_discriminant_check__r1__j__last__bit23)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom23 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position23)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit23 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit23 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position23 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom23 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit23)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom23 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit23 <  do_checks__do_discriminant_check__r1__arr__last__bit23)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom23 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position23)
+
+logic user_eq52 : us_rep13, us_rep13 -> bool
+
+logic dummy52 : us_rep13
+
+type t102b__ref = { t102b__content : us_rep13
+}
+
+function t102b__ref_t102b__content__projection(a: t102b__ref) : us_rep13 =
+  (a).t102b__content
+
+type tT112bP1
+
+logic tT112bP1qtint : tT112bP1 -> int
+
+axiom tT112bP1qtaxiom : (forall i:tT112bP1. (1 <= tT112bP1qtint(i)))
+
+axiom tT112bP1qtaxiom1 : (forall i:tT112bP1. (tT112bP1qtint(i) <= 10))
+
+predicate in_range39(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq32(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE16 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check16 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE16 : us_image -> int
+
+logic user_eq53 : tT112bP1, tT112bP1 -> bool
+
+logic dummy53 : tT112bP1
+
+type tT112bP1__ref = { tT112bP1__content : tT112bP1
+}
+
+function tT112bP1__ref_tT112bP1__content__projection(a: tT112bP1__ref) : tT112bP1 =
+  (a).tT112bP1__content
+
+logic dummy54 : (int,bool) farray
+
+logic value__size38 : int
+
+logic object__size38 : int
+
+logic component__size14 : int
+
+logic alignment38 : int
+
+axiom value__size_axiom38 : (0 <= value__size38)
+
+axiom object__size_axiom38 : (0 <= object__size38)
+
+axiom component__size_axiom14 : (0 <= component__size14)
+
+axiom alignment_axiom38 : (0 <= alignment38)
+
+logic user_eq54 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields28 = { rec__do_checks__do_discriminant_check__r1__arr14 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__16__projection(a: us_split_fields28) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr14
+
+type us_split_fields__ref14 = { us_split_fields__content14 :
+us_split_fields28
+}
+
+function us_split_fields__ref___split_fields__content__20__projection(a: us_split_fields__ref14) : us_split_fields28 =
+  (a).us_split_fields__content14
+
+type us_rep14 = { us_split_discrs15 : us_split_discrs; us_split_fields29 :
+us_split_fields28
+}
+
+function us_rep___split_discrs__18__projection(a: us_rep14) : us_split_discrs =
+  (a).us_split_discrs15
+
+function us_rep___split_fields__20__projection(a: us_rep14) : us_split_fields28 =
+  (a).us_split_fields29
+
+function to_base13(a: us_rep14) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs15; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields29).rec__do_checks__do_discriminant_check__r1__arr14,
+  1, 10) } }
+
+function of_base13(r: us_rep) : us_rep14 = { us_split_discrs15 =
+  (r).us_split_discrs1; us_split_fields29 = {
+  rec__do_checks__do_discriminant_check__r1__arr14 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred14(a: us_rep14) =
+  ((1 <= to_rep(((a).us_split_discrs15).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs15).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq33(a: us_rep14, b: us_rep14) : bool =
+  (if ((to_rep(((a).us_split_discrs15).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs15).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred14(a) ->
+  (bool_eq3(((a).us_split_fields29).rec__do_checks__do_discriminant_check__r1__arr14,
+  1, 10,
+  ((b).us_split_fields29).rec__do_checks__do_discriminant_check__r1__arr14,
+  1, 10) = true))) then true else false)
+
+predicate in_range40(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size39 : int
+
+logic object__size39 : int
+
+logic alignment39 : int
+
+axiom value__size_axiom39 : (0 <= value__size39)
+
+axiom object__size_axiom39 : (0 <= object__size39)
+
+axiom alignment_axiom39 : (0 <= alignment39)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit24 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit24 : int
+
+logic do_checks__do_discriminant_check__r1__j__position24 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom24 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit24)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom24 :
+  (do_checks__do_discriminant_check__r1__j__first__bit24 <  do_checks__do_discriminant_check__r1__j__last__bit24)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom24 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position24)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit24 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit24 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position24 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom24 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit24)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom24 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit24 <  do_checks__do_discriminant_check__r1__arr__last__bit24)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom24 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position24)
+
+logic user_eq55 : us_rep14, us_rep14 -> bool
+
+logic dummy55 : us_rep14
+
+type t111b__ref = { t111b__content : us_rep14
+}
+
+function t111b__ref_t111b__content__projection(a: t111b__ref) : us_rep14 =
+  (a).t111b__content
+
+type tT116bP1
+
+logic tT116bP1qtint : tT116bP1 -> int
+
+axiom tT116bP1qtaxiom : (forall i:tT116bP1. (1 <= tT116bP1qtint(i)))
+
+axiom tT116bP1qtaxiom1 : (forall i:tT116bP1. (tT116bP1qtint(i) <= 10))
+
+predicate in_range41(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq34(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE17 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check17 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE17 : us_image -> int
+
+logic user_eq56 : tT116bP1, tT116bP1 -> bool
+
+logic dummy56 : tT116bP1
+
+type tT116bP1__ref = { tT116bP1__content : tT116bP1
+}
+
+function tT116bP1__ref_tT116bP1__content__projection(a: tT116bP1__ref) : tT116bP1 =
+  (a).tT116bP1__content
+
+logic dummy57 : (int,bool) farray
+
+logic value__size40 : int
+
+logic object__size40 : int
+
+logic component__size15 : int
+
+logic alignment40 : int
+
+axiom value__size_axiom40 : (0 <= value__size40)
+
+axiom object__size_axiom40 : (0 <= object__size40)
+
+axiom component__size_axiom15 : (0 <= component__size15)
+
+axiom alignment_axiom40 : (0 <= alignment40)
+
+logic user_eq57 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields30 = { rec__do_checks__do_discriminant_check__r1__arr15 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__17__projection(a: us_split_fields30) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr15
+
+type us_split_fields__ref15 = { us_split_fields__content15 :
+us_split_fields30
+}
+
+function us_split_fields__ref___split_fields__content__21__projection(a: us_split_fields__ref15) : us_split_fields30 =
+  (a).us_split_fields__content15
+
+type us_rep15 = { us_split_discrs16 : us_split_discrs; us_split_fields31 :
+us_split_fields30
+}
+
+function us_rep___split_discrs__19__projection(a: us_rep15) : us_split_discrs =
+  (a).us_split_discrs16
+
+function us_rep___split_fields__21__projection(a: us_rep15) : us_split_fields30 =
+  (a).us_split_fields31
+
+function to_base14(a: us_rep15) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs16; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields31).rec__do_checks__do_discriminant_check__r1__arr15,
+  1, 10) } }
+
+function of_base14(r: us_rep) : us_rep15 = { us_split_discrs16 =
+  (r).us_split_discrs1; us_split_fields31 = {
+  rec__do_checks__do_discriminant_check__r1__arr15 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred15(a: us_rep15) =
+  ((1 <= to_rep(((a).us_split_discrs16).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs16).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq35(a: us_rep15, b: us_rep15) : bool =
+  (if ((to_rep(((a).us_split_discrs16).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs16).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred15(a) ->
+  (bool_eq3(((a).us_split_fields31).rec__do_checks__do_discriminant_check__r1__arr15,
+  1, 10,
+  ((b).us_split_fields31).rec__do_checks__do_discriminant_check__r1__arr15,
+  1, 10) = true))) then true else false)
+
+predicate in_range42(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size41 : int
+
+logic object__size41 : int
+
+logic alignment41 : int
+
+axiom value__size_axiom41 : (0 <= value__size41)
+
+axiom object__size_axiom41 : (0 <= object__size41)
+
+axiom alignment_axiom41 : (0 <= alignment41)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit25 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit25 : int
+
+logic do_checks__do_discriminant_check__r1__j__position25 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom25 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit25)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom25 :
+  (do_checks__do_discriminant_check__r1__j__first__bit25 <  do_checks__do_discriminant_check__r1__j__last__bit25)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom25 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position25)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit25 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit25 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position25 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom25 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit25)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom25 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit25 <  do_checks__do_discriminant_check__r1__arr__last__bit25)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom25 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position25)
+
+logic user_eq58 : us_rep15, us_rep15 -> bool
+
+logic dummy58 : us_rep15
+
+type t115b__ref = { t115b__content : us_rep15
+}
+
+function t115b__ref_t115b__content__projection(a: t115b__ref) : us_rep15 =
+  (a).t115b__content
+
+predicate in_range43(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size42 : int
+
+logic object__size42 : int
+
+logic alignment42 : int
+
+axiom value__size_axiom42 : (0 <= value__size42)
+
+axiom object__size_axiom42 : (0 <= object__size42)
+
+axiom alignment_axiom42 : (0 <= alignment42)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit26 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit26 : int
+
+logic do_checks__do_discriminant_check__r1__j__position26 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom26 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit26)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom26 :
+  (do_checks__do_discriminant_check__r1__j__first__bit26 <  do_checks__do_discriminant_check__r1__j__last__bit26)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom26 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position26)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit26 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit26 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position26 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom26 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit26)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom26 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit26 <  do_checks__do_discriminant_check__r1__arr__last__bit26)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom26 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position26)
+
+logic user_eq59 : us_rep, us_rep -> bool
+
+logic dummy59 : us_rep
+
+type t120b__ref = { t120b__content : us_rep
+}
+
+function t120b__ref_t120b__content__projection(a: t120b__ref) : us_rep =
+  (a).t120b__content
+
+type tT122bP1
+
+logic tT122bP1qtint : tT122bP1 -> int
+
+axiom tT122bP1qtaxiom : (forall i:tT122bP1. (1 <= tT122bP1qtint(i)))
+
+axiom tT122bP1qtaxiom1 : (forall i:tT122bP1. (tT122bP1qtint(i) <= 10))
+
+predicate in_range44(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq36(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE18 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check18 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE18 : us_image -> int
+
+logic user_eq60 : tT122bP1, tT122bP1 -> bool
+
+logic dummy60 : tT122bP1
+
+type tT122bP1__ref = { tT122bP1__content : tT122bP1
+}
+
+function tT122bP1__ref_tT122bP1__content__projection(a: tT122bP1__ref) : tT122bP1 =
+  (a).tT122bP1__content
+
+logic dummy61 : (int,bool) farray
+
+logic value__size43 : int
+
+logic object__size43 : int
+
+logic component__size16 : int
+
+logic alignment43 : int
+
+axiom value__size_axiom43 : (0 <= value__size43)
+
+axiom object__size_axiom43 : (0 <= object__size43)
+
+axiom component__size_axiom16 : (0 <= component__size16)
+
+axiom alignment_axiom43 : (0 <= alignment43)
+
+logic user_eq61 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields32 = { rec__do_checks__do_discriminant_check__r1__arr16 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__18__projection(a: us_split_fields32) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr16
+
+type us_split_fields__ref16 = { us_split_fields__content16 :
+us_split_fields32
+}
+
+function us_split_fields__ref___split_fields__content__22__projection(a: us_split_fields__ref16) : us_split_fields32 =
+  (a).us_split_fields__content16
+
+type us_rep16 = { us_split_discrs17 : us_split_discrs; us_split_fields33 :
+us_split_fields32
+}
+
+function us_rep___split_discrs__20__projection(a: us_rep16) : us_split_discrs =
+  (a).us_split_discrs17
+
+function us_rep___split_fields__22__projection(a: us_rep16) : us_split_fields32 =
+  (a).us_split_fields33
+
+function to_base15(a: us_rep16) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs17; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields33).rec__do_checks__do_discriminant_check__r1__arr16,
+  1, 10) } }
+
+function of_base15(r: us_rep) : us_rep16 = { us_split_discrs17 =
+  (r).us_split_discrs1; us_split_fields33 = {
+  rec__do_checks__do_discriminant_check__r1__arr16 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred16(a: us_rep16) =
+  ((1 <= to_rep(((a).us_split_discrs17).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs17).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq37(a: us_rep16, b: us_rep16) : bool =
+  (if ((to_rep(((a).us_split_discrs17).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs17).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred16(a) ->
+  (bool_eq3(((a).us_split_fields33).rec__do_checks__do_discriminant_check__r1__arr16,
+  1, 10,
+  ((b).us_split_fields33).rec__do_checks__do_discriminant_check__r1__arr16,
+  1, 10) = true))) then true else false)
+
+predicate in_range45(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size44 : int
+
+logic object__size44 : int
+
+logic alignment44 : int
+
+axiom value__size_axiom44 : (0 <= value__size44)
+
+axiom object__size_axiom44 : (0 <= object__size44)
+
+axiom alignment_axiom44 : (0 <= alignment44)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit27 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit27 : int
+
+logic do_checks__do_discriminant_check__r1__j__position27 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom27 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit27)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom27 :
+  (do_checks__do_discriminant_check__r1__j__first__bit27 <  do_checks__do_discriminant_check__r1__j__last__bit27)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom27 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position27)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit27 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit27 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position27 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom27 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit27)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom27 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit27 <  do_checks__do_discriminant_check__r1__arr__last__bit27)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom27 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position27)
+
+logic user_eq62 : us_rep16, us_rep16 -> bool
+
+logic dummy62 : us_rep16
+
+type t121b__ref = { t121b__content : us_rep16
+}
+
+function t121b__ref_t121b__content__projection(a: t121b__ref) : us_rep16 =
+  (a).t121b__content
+
+type tT128bP1
+
+logic tT128bP1qtint : tT128bP1 -> int
+
+axiom tT128bP1qtaxiom : (forall i:tT128bP1. (1 <= tT128bP1qtint(i)))
+
+axiom tT128bP1qtaxiom1 : (forall i:tT128bP1. (tT128bP1qtint(i) <= 10))
+
+predicate in_range46(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq38(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE19 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check19 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE19 : us_image -> int
+
+logic user_eq63 : tT128bP1, tT128bP1 -> bool
+
+logic dummy63 : tT128bP1
+
+type tT128bP1__ref = { tT128bP1__content : tT128bP1
+}
+
+function tT128bP1__ref_tT128bP1__content__projection(a: tT128bP1__ref) : tT128bP1 =
+  (a).tT128bP1__content
+
+logic dummy64 : (int,bool) farray
+
+logic value__size45 : int
+
+logic object__size45 : int
+
+logic component__size17 : int
+
+logic alignment45 : int
+
+axiom value__size_axiom45 : (0 <= value__size45)
+
+axiom object__size_axiom45 : (0 <= object__size45)
+
+axiom component__size_axiom17 : (0 <= component__size17)
+
+axiom alignment_axiom45 : (0 <= alignment45)
+
+logic user_eq64 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields34 = { rec__do_checks__do_discriminant_check__r1__arr17 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__20__projection(a: us_split_fields34) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr17
+
+type us_split_fields__ref17 = { us_split_fields__content17 :
+us_split_fields34
+}
+
+function us_split_fields__ref___split_fields__content__24__projection(a: us_split_fields__ref17) : us_split_fields34 =
+  (a).us_split_fields__content17
+
+type us_rep17 = { us_split_discrs18 : us_split_discrs; us_split_fields35 :
+us_split_fields34
+}
+
+function us_rep___split_discrs__22__projection(a: us_rep17) : us_split_discrs =
+  (a).us_split_discrs18
+
+function us_rep___split_fields__24__projection(a: us_rep17) : us_split_fields34 =
+  (a).us_split_fields35
+
+function to_base16(a: us_rep17) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs18; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields35).rec__do_checks__do_discriminant_check__r1__arr17,
+  1, 10) } }
+
+function of_base16(r: us_rep) : us_rep17 = { us_split_discrs18 =
+  (r).us_split_discrs1; us_split_fields35 = {
+  rec__do_checks__do_discriminant_check__r1__arr17 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred17(a: us_rep17) =
+  ((1 <= to_rep(((a).us_split_discrs18).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs18).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq39(a: us_rep17, b: us_rep17) : bool =
+  (if ((to_rep(((a).us_split_discrs18).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs18).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred17(a) ->
+  (bool_eq3(((a).us_split_fields35).rec__do_checks__do_discriminant_check__r1__arr17,
+  1, 10,
+  ((b).us_split_fields35).rec__do_checks__do_discriminant_check__r1__arr17,
+  1, 10) = true))) then true else false)
+
+predicate in_range47(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size46 : int
+
+logic object__size46 : int
+
+logic alignment46 : int
+
+axiom value__size_axiom46 : (0 <= value__size46)
+
+axiom object__size_axiom46 : (0 <= object__size46)
+
+axiom alignment_axiom46 : (0 <= alignment46)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit28 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit28 : int
+
+logic do_checks__do_discriminant_check__r1__j__position28 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom28 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit28)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom28 :
+  (do_checks__do_discriminant_check__r1__j__first__bit28 <  do_checks__do_discriminant_check__r1__j__last__bit28)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom28 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position28)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit28 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit28 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position28 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom28 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit28)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom28 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit28 <  do_checks__do_discriminant_check__r1__arr__last__bit28)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom28 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position28)
+
+logic user_eq65 : us_rep17, us_rep17 -> bool
+
+logic dummy65 : us_rep17
+
+type t127b__ref = { t127b__content : us_rep17
+}
+
+function t127b__ref_t127b__content__projection(a: t127b__ref) : us_rep17 =
+  (a).t127b__content
+
+type tT132bP1
+
+logic tT132bP1qtint : tT132bP1 -> int
+
+axiom tT132bP1qtaxiom : (forall i:tT132bP1. (1 <= tT132bP1qtint(i)))
+
+axiom tT132bP1qtaxiom1 : (forall i:tT132bP1. (tT132bP1qtint(i) <= 10))
+
+predicate in_range48(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq40(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE20 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check20 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE20 : us_image -> int
+
+logic user_eq66 : tT132bP1, tT132bP1 -> bool
+
+logic dummy66 : tT132bP1
+
+type tT132bP1__ref = { tT132bP1__content : tT132bP1
+}
+
+function tT132bP1__ref_tT132bP1__content__projection(a: tT132bP1__ref) : tT132bP1 =
+  (a).tT132bP1__content
+
+logic dummy67 : (int,bool) farray
+
+logic value__size47 : int
+
+logic object__size47 : int
+
+logic component__size18 : int
+
+logic alignment47 : int
+
+axiom value__size_axiom47 : (0 <= value__size47)
+
+axiom object__size_axiom47 : (0 <= object__size47)
+
+axiom component__size_axiom18 : (0 <= component__size18)
+
+axiom alignment_axiom47 : (0 <= alignment47)
+
+logic user_eq67 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields36 = { rec__do_checks__do_discriminant_check__r1__arr18 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__21__projection(a: us_split_fields36) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr18
+
+type us_split_fields__ref18 = { us_split_fields__content18 :
+us_split_fields36
+}
+
+function us_split_fields__ref___split_fields__content__25__projection(a: us_split_fields__ref18) : us_split_fields36 =
+  (a).us_split_fields__content18
+
+type us_rep18 = { us_split_discrs19 : us_split_discrs; us_split_fields37 :
+us_split_fields36
+}
+
+function us_rep___split_discrs__23__projection(a: us_rep18) : us_split_discrs =
+  (a).us_split_discrs19
+
+function us_rep___split_fields__25__projection(a: us_rep18) : us_split_fields36 =
+  (a).us_split_fields37
+
+function to_base17(a: us_rep18) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs19; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields37).rec__do_checks__do_discriminant_check__r1__arr18,
+  1, 10) } }
+
+function of_base17(r: us_rep) : us_rep18 = { us_split_discrs19 =
+  (r).us_split_discrs1; us_split_fields37 = {
+  rec__do_checks__do_discriminant_check__r1__arr18 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred18(a: us_rep18) =
+  ((1 <= to_rep(((a).us_split_discrs19).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs19).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq41(a: us_rep18, b: us_rep18) : bool =
+  (if ((to_rep(((a).us_split_discrs19).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs19).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred18(a) ->
+  (bool_eq3(((a).us_split_fields37).rec__do_checks__do_discriminant_check__r1__arr18,
+  1, 10,
+  ((b).us_split_fields37).rec__do_checks__do_discriminant_check__r1__arr18,
+  1, 10) = true))) then true else false)
+
+predicate in_range49(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size48 : int
+
+logic object__size48 : int
+
+logic alignment48 : int
+
+axiom value__size_axiom48 : (0 <= value__size48)
+
+axiom object__size_axiom48 : (0 <= object__size48)
+
+axiom alignment_axiom48 : (0 <= alignment48)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit29 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit29 : int
+
+logic do_checks__do_discriminant_check__r1__j__position29 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom29 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit29)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom29 :
+  (do_checks__do_discriminant_check__r1__j__first__bit29 <  do_checks__do_discriminant_check__r1__j__last__bit29)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom29 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position29)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit29 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit29 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position29 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom29 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit29)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom29 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit29 <  do_checks__do_discriminant_check__r1__arr__last__bit29)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom29 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position29)
+
+logic user_eq68 : us_rep18, us_rep18 -> bool
+
+logic dummy68 : us_rep18
+
+type t131b__ref = { t131b__content : us_rep18
+}
+
+function t131b__ref_t131b__content__projection(a: t131b__ref) : us_rep18 =
+  (a).t131b__content
+
+predicate in_range50(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size49 : int
+
+logic object__size49 : int
+
+logic alignment49 : int
+
+axiom value__size_axiom49 : (0 <= value__size49)
+
+axiom object__size_axiom49 : (0 <= object__size49)
+
+axiom alignment_axiom49 : (0 <= alignment49)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit30 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit30 : int
+
+logic do_checks__do_discriminant_check__r1__j__position30 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom30 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit30)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom30 :
+  (do_checks__do_discriminant_check__r1__j__first__bit30 <  do_checks__do_discriminant_check__r1__j__last__bit30)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom30 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position30)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit30 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit30 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position30 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom30 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit30)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom30 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit30 <  do_checks__do_discriminant_check__r1__arr__last__bit30)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom30 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position30)
+
+logic user_eq69 : us_rep, us_rep -> bool
+
+logic dummy69 : us_rep
+
+type t137b__ref = { t137b__content : us_rep
+}
+
+function t137b__ref_t137b__content__projection(a: t137b__ref) : us_rep =
+  (a).t137b__content
+
+type tT139bP1
+
+logic tT139bP1qtint : tT139bP1 -> int
+
+axiom tT139bP1qtaxiom : (forall i:tT139bP1. (1 <= tT139bP1qtint(i)))
+
+axiom tT139bP1qtaxiom1 : (forall i:tT139bP1. (tT139bP1qtint(i) <= 10))
+
+predicate in_range51(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq42(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE21 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check21 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE21 : us_image -> int
+
+logic user_eq70 : tT139bP1, tT139bP1 -> bool
+
+logic dummy70 : tT139bP1
+
+type tT139bP1__ref = { tT139bP1__content : tT139bP1
+}
+
+function tT139bP1__ref_tT139bP1__content__projection(a: tT139bP1__ref) : tT139bP1 =
+  (a).tT139bP1__content
+
+logic dummy71 : (int,bool) farray
+
+logic value__size50 : int
+
+logic object__size50 : int
+
+logic component__size19 : int
+
+logic alignment50 : int
+
+axiom value__size_axiom50 : (0 <= value__size50)
+
+axiom object__size_axiom50 : (0 <= object__size50)
+
+axiom component__size_axiom19 : (0 <= component__size19)
+
+axiom alignment_axiom50 : (0 <= alignment50)
+
+logic user_eq71 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields38 = { rec__do_checks__do_discriminant_check__r1__arr19 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__22__projection(a: us_split_fields38) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr19
+
+type us_split_fields__ref19 = { us_split_fields__content19 :
+us_split_fields38
+}
+
+function us_split_fields__ref___split_fields__content__26__projection(a: us_split_fields__ref19) : us_split_fields38 =
+  (a).us_split_fields__content19
+
+type us_rep19 = { us_split_discrs20 : us_split_discrs; us_split_fields39 :
+us_split_fields38
+}
+
+function us_rep___split_discrs__24__projection(a: us_rep19) : us_split_discrs =
+  (a).us_split_discrs20
+
+function us_rep___split_fields__26__projection(a: us_rep19) : us_split_fields38 =
+  (a).us_split_fields39
+
+function to_base18(a: us_rep19) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs20; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields39).rec__do_checks__do_discriminant_check__r1__arr19,
+  1, 10) } }
+
+function of_base18(r: us_rep) : us_rep19 = { us_split_discrs20 =
+  (r).us_split_discrs1; us_split_fields39 = {
+  rec__do_checks__do_discriminant_check__r1__arr19 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred19(a: us_rep19) =
+  ((1 <= to_rep(((a).us_split_discrs20).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs20).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq43(a: us_rep19, b: us_rep19) : bool =
+  (if ((to_rep(((a).us_split_discrs20).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs20).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred19(a) ->
+  (bool_eq3(((a).us_split_fields39).rec__do_checks__do_discriminant_check__r1__arr19,
+  1, 10,
+  ((b).us_split_fields39).rec__do_checks__do_discriminant_check__r1__arr19,
+  1, 10) = true))) then true else false)
+
+predicate in_range52(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size51 : int
+
+logic object__size51 : int
+
+logic alignment51 : int
+
+axiom value__size_axiom51 : (0 <= value__size51)
+
+axiom object__size_axiom51 : (0 <= object__size51)
+
+axiom alignment_axiom51 : (0 <= alignment51)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit31 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit31 : int
+
+logic do_checks__do_discriminant_check__r1__j__position31 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom31 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit31)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom31 :
+  (do_checks__do_discriminant_check__r1__j__first__bit31 <  do_checks__do_discriminant_check__r1__j__last__bit31)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom31 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position31)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit31 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit31 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position31 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom31 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit31)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom31 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit31 <  do_checks__do_discriminant_check__r1__arr__last__bit31)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom31 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position31)
+
+logic user_eq72 : us_rep19, us_rep19 -> bool
+
+logic dummy72 : us_rep19
+
+type t138b__ref = { t138b__content : us_rep19
+}
+
+function t138b__ref_t138b__content__projection(a: t138b__ref) : us_rep19 =
+  (a).t138b__content
+
+type tT145bP1
+
+logic tT145bP1qtint : tT145bP1 -> int
+
+axiom tT145bP1qtaxiom : (forall i:tT145bP1. (1 <= tT145bP1qtint(i)))
+
+axiom tT145bP1qtaxiom1 : (forall i:tT145bP1. (tT145bP1qtint(i) <= 10))
+
+predicate in_range53(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq44(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE22 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check22 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE22 : us_image -> int
+
+logic user_eq73 : tT145bP1, tT145bP1 -> bool
+
+logic dummy73 : tT145bP1
+
+type tT145bP1__ref = { tT145bP1__content : tT145bP1
+}
+
+function tT145bP1__ref_tT145bP1__content__projection(a: tT145bP1__ref) : tT145bP1 =
+  (a).tT145bP1__content
+
+logic dummy74 : (int,bool) farray
+
+logic value__size52 : int
+
+logic object__size52 : int
+
+logic component__size20 : int
+
+logic alignment52 : int
+
+axiom value__size_axiom52 : (0 <= value__size52)
+
+axiom object__size_axiom52 : (0 <= object__size52)
+
+axiom component__size_axiom20 : (0 <= component__size20)
+
+axiom alignment_axiom52 : (0 <= alignment52)
+
+logic user_eq74 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields40 = { rec__do_checks__do_discriminant_check__r1__arr20 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__24__projection(a: us_split_fields40) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr20
+
+type us_split_fields__ref20 = { us_split_fields__content20 :
+us_split_fields40
+}
+
+function us_split_fields__ref___split_fields__content__28__projection(a: us_split_fields__ref20) : us_split_fields40 =
+  (a).us_split_fields__content20
+
+type us_rep20 = { us_split_discrs21 : us_split_discrs; us_split_fields41 :
+us_split_fields40
+}
+
+function us_rep___split_discrs__26__projection(a: us_rep20) : us_split_discrs =
+  (a).us_split_discrs21
+
+function us_rep___split_fields__28__projection(a: us_rep20) : us_split_fields40 =
+  (a).us_split_fields41
+
+function to_base19(a: us_rep20) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs21; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields41).rec__do_checks__do_discriminant_check__r1__arr20,
+  1, 10) } }
+
+function of_base19(r: us_rep) : us_rep20 = { us_split_discrs21 =
+  (r).us_split_discrs1; us_split_fields41 = {
+  rec__do_checks__do_discriminant_check__r1__arr20 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred20(a: us_rep20) =
+  ((1 <= to_rep(((a).us_split_discrs21).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs21).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq45(a: us_rep20, b: us_rep20) : bool =
+  (if ((to_rep(((a).us_split_discrs21).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs21).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred20(a) ->
+  (bool_eq3(((a).us_split_fields41).rec__do_checks__do_discriminant_check__r1__arr20,
+  1, 10,
+  ((b).us_split_fields41).rec__do_checks__do_discriminant_check__r1__arr20,
+  1, 10) = true))) then true else false)
+
+predicate in_range54(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size53 : int
+
+logic object__size53 : int
+
+logic alignment53 : int
+
+axiom value__size_axiom53 : (0 <= value__size53)
+
+axiom object__size_axiom53 : (0 <= object__size53)
+
+axiom alignment_axiom53 : (0 <= alignment53)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit32 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit32 : int
+
+logic do_checks__do_discriminant_check__r1__j__position32 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom32 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit32)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom32 :
+  (do_checks__do_discriminant_check__r1__j__first__bit32 <  do_checks__do_discriminant_check__r1__j__last__bit32)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom32 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position32)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit32 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit32 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position32 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom32 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit32)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom32 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit32 <  do_checks__do_discriminant_check__r1__arr__last__bit32)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom32 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position32)
+
+logic user_eq75 : us_rep20, us_rep20 -> bool
+
+logic dummy75 : us_rep20
+
+type t144b__ref = { t144b__content : us_rep20
+}
+
+function t144b__ref_t144b__content__projection(a: t144b__ref) : us_rep20 =
+  (a).t144b__content
+
+type tT149bP1
+
+logic tT149bP1qtint : tT149bP1 -> int
+
+axiom tT149bP1qtaxiom : (forall i:tT149bP1. (1 <= tT149bP1qtint(i)))
+
+axiom tT149bP1qtaxiom1 : (forall i:tT149bP1. (tT149bP1qtint(i) <= 10))
+
+predicate in_range55(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq46(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE23 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check23 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE23 : us_image -> int
+
+logic user_eq76 : tT149bP1, tT149bP1 -> bool
+
+logic dummy76 : tT149bP1
+
+type tT149bP1__ref = { tT149bP1__content : tT149bP1
+}
+
+function tT149bP1__ref_tT149bP1__content__projection(a: tT149bP1__ref) : tT149bP1 =
+  (a).tT149bP1__content
+
+logic dummy77 : (int,bool) farray
+
+logic value__size54 : int
+
+logic object__size54 : int
+
+logic component__size21 : int
+
+logic alignment54 : int
+
+axiom value__size_axiom54 : (0 <= value__size54)
+
+axiom object__size_axiom54 : (0 <= object__size54)
+
+axiom component__size_axiom21 : (0 <= component__size21)
+
+axiom alignment_axiom54 : (0 <= alignment54)
+
+logic user_eq77 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields42 = { rec__do_checks__do_discriminant_check__r1__arr21 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__25__projection(a: us_split_fields42) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr21
+
+type us_split_fields__ref21 = { us_split_fields__content21 :
+us_split_fields42
+}
+
+function us_split_fields__ref___split_fields__content__29__projection(a: us_split_fields__ref21) : us_split_fields42 =
+  (a).us_split_fields__content21
+
+type us_rep21 = { us_split_discrs22 : us_split_discrs; us_split_fields43 :
+us_split_fields42
+}
+
+function us_rep___split_discrs__27__projection(a: us_rep21) : us_split_discrs =
+  (a).us_split_discrs22
+
+function us_rep___split_fields__29__projection(a: us_rep21) : us_split_fields42 =
+  (a).us_split_fields43
+
+function to_base20(a: us_rep21) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs22; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields43).rec__do_checks__do_discriminant_check__r1__arr21,
+  1, 10) } }
+
+function of_base20(r: us_rep) : us_rep21 = { us_split_discrs22 =
+  (r).us_split_discrs1; us_split_fields43 = {
+  rec__do_checks__do_discriminant_check__r1__arr21 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred21(a: us_rep21) =
+  ((1 <= to_rep(((a).us_split_discrs22).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs22).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq47(a: us_rep21, b: us_rep21) : bool =
+  (if ((to_rep(((a).us_split_discrs22).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs22).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred21(a) ->
+  (bool_eq3(((a).us_split_fields43).rec__do_checks__do_discriminant_check__r1__arr21,
+  1, 10,
+  ((b).us_split_fields43).rec__do_checks__do_discriminant_check__r1__arr21,
+  1, 10) = true))) then true else false)
+
+predicate in_range56(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size55 : int
+
+logic object__size55 : int
+
+logic alignment55 : int
+
+axiom value__size_axiom55 : (0 <= value__size55)
+
+axiom object__size_axiom55 : (0 <= object__size55)
+
+axiom alignment_axiom55 : (0 <= alignment55)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit33 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit33 : int
+
+logic do_checks__do_discriminant_check__r1__j__position33 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom33 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit33)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom33 :
+  (do_checks__do_discriminant_check__r1__j__first__bit33 <  do_checks__do_discriminant_check__r1__j__last__bit33)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom33 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position33)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit33 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit33 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position33 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom33 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit33)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom33 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit33 <  do_checks__do_discriminant_check__r1__arr__last__bit33)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom33 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position33)
+
+logic user_eq78 : us_rep21, us_rep21 -> bool
+
+logic dummy78 : us_rep21
+
+type t148b__ref = { t148b__content : us_rep21
+}
+
+function t148b__ref_t148b__content__projection(a: t148b__ref) : us_rep21 =
+  (a).t148b__content
+
+predicate in_range57(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size56 : int
+
+logic object__size56 : int
+
+logic alignment56 : int
+
+axiom value__size_axiom56 : (0 <= value__size56)
+
+axiom object__size_axiom56 : (0 <= object__size56)
+
+axiom alignment_axiom56 : (0 <= alignment56)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit34 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit34 : int
+
+logic do_checks__do_discriminant_check__r1__j__position34 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom34 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit34)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom34 :
+  (do_checks__do_discriminant_check__r1__j__first__bit34 <  do_checks__do_discriminant_check__r1__j__last__bit34)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom34 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position34)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit34 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit34 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position34 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom34 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit34)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom34 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit34 <  do_checks__do_discriminant_check__r1__arr__last__bit34)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom34 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position34)
+
+logic user_eq79 : us_rep, us_rep -> bool
+
+logic dummy79 : us_rep
+
+type t153b__ref = { t153b__content : us_rep
+}
+
+function t153b__ref_t153b__content__projection(a: t153b__ref) : us_rep =
+  (a).t153b__content
+
+type tT155bP1
+
+logic tT155bP1qtint : tT155bP1 -> int
+
+axiom tT155bP1qtaxiom : (forall i:tT155bP1. (1 <= tT155bP1qtint(i)))
+
+axiom tT155bP1qtaxiom1 : (forall i:tT155bP1. (tT155bP1qtint(i) <= 10))
+
+predicate in_range58(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq48(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE24 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check24 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE24 : us_image -> int
+
+logic user_eq80 : tT155bP1, tT155bP1 -> bool
+
+logic dummy80 : tT155bP1
+
+type tT155bP1__ref = { tT155bP1__content : tT155bP1
+}
+
+function tT155bP1__ref_tT155bP1__content__projection(a: tT155bP1__ref) : tT155bP1 =
+  (a).tT155bP1__content
+
+logic dummy81 : (int,bool) farray
+
+logic value__size57 : int
+
+logic object__size57 : int
+
+logic component__size22 : int
+
+logic alignment57 : int
+
+axiom value__size_axiom57 : (0 <= value__size57)
+
+axiom object__size_axiom57 : (0 <= object__size57)
+
+axiom component__size_axiom22 : (0 <= component__size22)
+
+axiom alignment_axiom57 : (0 <= alignment57)
+
+logic user_eq81 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields44 = { rec__do_checks__do_discriminant_check__r1__arr22 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__26__projection(a: us_split_fields44) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr22
+
+type us_split_fields__ref22 = { us_split_fields__content22 :
+us_split_fields44
+}
+
+function us_split_fields__ref___split_fields__content__30__projection(a: us_split_fields__ref22) : us_split_fields44 =
+  (a).us_split_fields__content22
+
+type us_rep22 = { us_split_discrs23 : us_split_discrs; us_split_fields45 :
+us_split_fields44
+}
+
+function us_rep___split_discrs__28__projection(a: us_rep22) : us_split_discrs =
+  (a).us_split_discrs23
+
+function us_rep___split_fields__30__projection(a: us_rep22) : us_split_fields44 =
+  (a).us_split_fields45
+
+function to_base21(a: us_rep22) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs23; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields45).rec__do_checks__do_discriminant_check__r1__arr22,
+  1, 10) } }
+
+function of_base21(r: us_rep) : us_rep22 = { us_split_discrs23 =
+  (r).us_split_discrs1; us_split_fields45 = {
+  rec__do_checks__do_discriminant_check__r1__arr22 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred22(a: us_rep22) =
+  ((1 <= to_rep(((a).us_split_discrs23).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs23).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq49(a: us_rep22, b: us_rep22) : bool =
+  (if ((to_rep(((a).us_split_discrs23).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs23).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred22(a) ->
+  (bool_eq3(((a).us_split_fields45).rec__do_checks__do_discriminant_check__r1__arr22,
+  1, 10,
+  ((b).us_split_fields45).rec__do_checks__do_discriminant_check__r1__arr22,
+  1, 10) = true))) then true else false)
+
+predicate in_range59(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size58 : int
+
+logic object__size58 : int
+
+logic alignment58 : int
+
+axiom value__size_axiom58 : (0 <= value__size58)
+
+axiom object__size_axiom58 : (0 <= object__size58)
+
+axiom alignment_axiom58 : (0 <= alignment58)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit35 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit35 : int
+
+logic do_checks__do_discriminant_check__r1__j__position35 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom35 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit35)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom35 :
+  (do_checks__do_discriminant_check__r1__j__first__bit35 <  do_checks__do_discriminant_check__r1__j__last__bit35)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom35 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position35)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit35 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit35 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position35 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom35 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit35)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom35 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit35 <  do_checks__do_discriminant_check__r1__arr__last__bit35)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom35 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position35)
+
+logic user_eq82 : us_rep22, us_rep22 -> bool
+
+logic dummy82 : us_rep22
+
+type t154b__ref = { t154b__content : us_rep22
+}
+
+function t154b__ref_t154b__content__projection(a: t154b__ref) : us_rep22 =
+  (a).t154b__content
+
+type tT161bP1
+
+logic tT161bP1qtint : tT161bP1 -> int
+
+axiom tT161bP1qtaxiom : (forall i:tT161bP1. (1 <= tT161bP1qtint(i)))
+
+axiom tT161bP1qtaxiom1 : (forall i:tT161bP1. (tT161bP1qtint(i) <= 10))
+
+predicate in_range60(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq50(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE25 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check25 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE25 : us_image -> int
+
+logic user_eq83 : tT161bP1, tT161bP1 -> bool
+
+logic dummy83 : tT161bP1
+
+type tT161bP1__ref = { tT161bP1__content : tT161bP1
+}
+
+function tT161bP1__ref_tT161bP1__content__projection(a: tT161bP1__ref) : tT161bP1 =
+  (a).tT161bP1__content
+
+logic dummy84 : (int,bool) farray
+
+logic value__size59 : int
+
+logic object__size59 : int
+
+logic component__size23 : int
+
+logic alignment59 : int
+
+axiom value__size_axiom59 : (0 <= value__size59)
+
+axiom object__size_axiom59 : (0 <= object__size59)
+
+axiom component__size_axiom23 : (0 <= component__size23)
+
+axiom alignment_axiom59 : (0 <= alignment59)
+
+logic user_eq84 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields46 = { rec__do_checks__do_discriminant_check__r1__arr23 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__28__projection(a: us_split_fields46) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr23
+
+type us_split_fields__ref23 = { us_split_fields__content23 :
+us_split_fields46
+}
+
+function us_split_fields__ref___split_fields__content__32__projection(a: us_split_fields__ref23) : us_split_fields46 =
+  (a).us_split_fields__content23
+
+type us_rep23 = { us_split_discrs24 : us_split_discrs; us_split_fields47 :
+us_split_fields46
+}
+
+function us_rep___split_discrs__30__projection(a: us_rep23) : us_split_discrs =
+  (a).us_split_discrs24
+
+function us_rep___split_fields__32__projection(a: us_rep23) : us_split_fields46 =
+  (a).us_split_fields47
+
+function to_base22(a: us_rep23) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs24; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields47).rec__do_checks__do_discriminant_check__r1__arr23,
+  1, 10) } }
+
+function of_base22(r: us_rep) : us_rep23 = { us_split_discrs24 =
+  (r).us_split_discrs1; us_split_fields47 = {
+  rec__do_checks__do_discriminant_check__r1__arr23 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred23(a: us_rep23) =
+  ((1 <= to_rep(((a).us_split_discrs24).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs24).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq51(a: us_rep23, b: us_rep23) : bool =
+  (if ((to_rep(((a).us_split_discrs24).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs24).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred23(a) ->
+  (bool_eq3(((a).us_split_fields47).rec__do_checks__do_discriminant_check__r1__arr23,
+  1, 10,
+  ((b).us_split_fields47).rec__do_checks__do_discriminant_check__r1__arr23,
+  1, 10) = true))) then true else false)
+
+predicate in_range61(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size60 : int
+
+logic object__size60 : int
+
+logic alignment60 : int
+
+axiom value__size_axiom60 : (0 <= value__size60)
+
+axiom object__size_axiom60 : (0 <= object__size60)
+
+axiom alignment_axiom60 : (0 <= alignment60)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit36 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit36 : int
+
+logic do_checks__do_discriminant_check__r1__j__position36 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom36 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit36)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom36 :
+  (do_checks__do_discriminant_check__r1__j__first__bit36 <  do_checks__do_discriminant_check__r1__j__last__bit36)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom36 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position36)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit36 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit36 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position36 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom36 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit36)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom36 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit36 <  do_checks__do_discriminant_check__r1__arr__last__bit36)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom36 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position36)
+
+logic user_eq85 : us_rep23, us_rep23 -> bool
+
+logic dummy85 : us_rep23
+
+type t160b__ref = { t160b__content : us_rep23
+}
+
+function t160b__ref_t160b__content__projection(a: t160b__ref) : us_rep23 =
+  (a).t160b__content
+
+type tT165bP1
+
+logic tT165bP1qtint : tT165bP1 -> int
+
+axiom tT165bP1qtaxiom : (forall i:tT165bP1. (1 <= tT165bP1qtint(i)))
+
+axiom tT165bP1qtaxiom1 : (forall i:tT165bP1. (tT165bP1qtint(i) <= 10))
+
+predicate in_range62(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq52(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE26 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check26 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE26 : us_image -> int
+
+logic user_eq86 : tT165bP1, tT165bP1 -> bool
+
+logic dummy86 : tT165bP1
+
+type tT165bP1__ref = { tT165bP1__content : tT165bP1
+}
+
+function tT165bP1__ref_tT165bP1__content__projection(a: tT165bP1__ref) : tT165bP1 =
+  (a).tT165bP1__content
+
+logic dummy87 : (int,bool) farray
+
+logic value__size61 : int
+
+logic object__size61 : int
+
+logic component__size24 : int
+
+logic alignment61 : int
+
+axiom value__size_axiom61 : (0 <= value__size61)
+
+axiom object__size_axiom61 : (0 <= object__size61)
+
+axiom component__size_axiom24 : (0 <= component__size24)
+
+axiom alignment_axiom61 : (0 <= alignment61)
+
+logic user_eq87 : (int,bool) farray, (int,bool) farray -> bool
+
+type us_split_fields48 = { rec__do_checks__do_discriminant_check__r1__arr24 :
+(int,bool) farray
+}
+
+function us_split_fields_rec__do_checks__do_discriminant_check__r1__arr__29__projection(a: us_split_fields48) : (int,bool) farray =
+  (a).rec__do_checks__do_discriminant_check__r1__arr24
+
+type us_split_fields__ref24 = { us_split_fields__content24 :
+us_split_fields48
+}
+
+function us_split_fields__ref___split_fields__content__33__projection(a: us_split_fields__ref24) : us_split_fields48 =
+  (a).us_split_fields__content24
+
+type us_rep24 = { us_split_discrs25 : us_split_discrs; us_split_fields49 :
+us_split_fields48
+}
+
+function us_rep___split_discrs__31__projection(a: us_rep24) : us_split_discrs =
+  (a).us_split_discrs25
+
+function us_rep___split_fields__33__projection(a: us_rep24) : us_split_fields48 =
+  (a).us_split_fields49
+
+function to_base23(a: us_rep24) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs25; us_split_fields1 = {
+  rec__do_checks__do_discriminant_check__r1__arr =
+  of_array(((a).us_split_fields49).rec__do_checks__do_discriminant_check__r1__arr24,
+  1, 10) } }
+
+function of_base23(r: us_rep) : us_rep24 = { us_split_discrs25 =
+  (r).us_split_discrs1; us_split_fields49 = {
+  rec__do_checks__do_discriminant_check__r1__arr24 =
+  to_array(((r).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr)
+  } }
+
+predicate do_checks__do_discriminant_check__r1__arr__pred24(a: us_rep24) =
+  ((1 <= to_rep(((a).us_split_discrs25).rec__do_checks__do_discriminant_check__r1__j)) and
+  (to_rep(((a).us_split_discrs25).rec__do_checks__do_discriminant_check__r1__j) <= 2147483647))
+
+function bool_eq53(a: us_rep24, b: us_rep24) : bool =
+  (if ((to_rep(((a).us_split_discrs25).rec__do_checks__do_discriminant_check__r1__j) = to_rep(((b).us_split_discrs25).rec__do_checks__do_discriminant_check__r1__j)) and
+  (do_checks__do_discriminant_check__r1__arr__pred24(a) ->
+  (bool_eq3(((a).us_split_fields49).rec__do_checks__do_discriminant_check__r1__arr24,
+  1, 10,
+  ((b).us_split_fields49).rec__do_checks__do_discriminant_check__r1__arr24,
+  1, 10) = true))) then true else false)
+
+predicate in_range63(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_rep) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
+
+logic value__size62 : int
+
+logic object__size62 : int
+
+logic alignment62 : int
+
+axiom value__size_axiom62 : (0 <= value__size62)
+
+axiom object__size_axiom62 : (0 <= object__size62)
+
+axiom alignment_axiom62 : (0 <= alignment62)
+
+logic do_checks__do_discriminant_check__r1__j__first__bit37 : int
+
+logic do_checks__do_discriminant_check__r1__j__last__bit37 : int
+
+logic do_checks__do_discriminant_check__r1__j__position37 : int
+
+axiom do_checks__do_discriminant_check__r1__j__first__bit_axiom37 :
+  (0 <= do_checks__do_discriminant_check__r1__j__first__bit37)
+
+axiom do_checks__do_discriminant_check__r1__j__last__bit_axiom37 :
+  (do_checks__do_discriminant_check__r1__j__first__bit37 <  do_checks__do_discriminant_check__r1__j__last__bit37)
+
+axiom do_checks__do_discriminant_check__r1__j__position_axiom37 :
+  (0 <= do_checks__do_discriminant_check__r1__j__position37)
+
+logic do_checks__do_discriminant_check__r1__arr__first__bit37 : int
+
+logic do_checks__do_discriminant_check__r1__arr__last__bit37 : int
+
+logic do_checks__do_discriminant_check__r1__arr__position37 : int
+
+axiom do_checks__do_discriminant_check__r1__arr__first__bit_axiom37 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__first__bit37)
+
+axiom do_checks__do_discriminant_check__r1__arr__last__bit_axiom37 :
+  (do_checks__do_discriminant_check__r1__arr__first__bit37 <  do_checks__do_discriminant_check__r1__arr__last__bit37)
+
+axiom do_checks__do_discriminant_check__r1__arr__position_axiom37 :
+  (0 <= do_checks__do_discriminant_check__r1__arr__position37)
+
+logic user_eq88 : us_rep24, us_rep24 -> bool
+
+logic dummy88 : us_rep24
+
+type t164b__ref = { t164b__content : us_rep24
+}
+
+function t164b__ref_t164b__content__projection(a: t164b__ref) : us_rep24 =
+  (a).t164b__content
+
+logic temp_____aggregate_def_837 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_841 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_846 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_851 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_855 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_860 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_866 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_870 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_875 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_881 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_885 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_891 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_897 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_901 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_907 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_913 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_917 : bool -> (int,bool) farray
+
+axiom def_axiom :
+  (forall temp___839:bool.
+  (forall temp___840:int.
+  ((temp_____aggregate_def_837(temp___839)[temp___840]) = temp___839)))
+
+axiom def_axiom1 :
+  (forall temp___843:bool.
+  (forall temp___844:int.
+  ((temp_____aggregate_def_841(temp___843)[temp___844]) = temp___843)))
+
+axiom def_axiom2 :
+  (forall temp___848:bool.
+  (forall temp___849:int.
+  ((temp_____aggregate_def_846(temp___848)[temp___849]) = temp___848)))
+
+axiom def_axiom3 :
+  (forall temp___853:bool.
+  (forall temp___854:int.
+  ((temp_____aggregate_def_851(temp___853)[temp___854]) = temp___853)))
+
+axiom def_axiom4 :
+  (forall temp___857:bool.
+  (forall temp___858:int.
+  ((temp_____aggregate_def_855(temp___857)[temp___858]) = temp___857)))
+
+axiom def_axiom5 :
+  (forall temp___862:bool.
+  (forall temp___863:int.
+  ((temp_____aggregate_def_860(temp___862)[temp___863]) = temp___862)))
+
+axiom def_axiom6 :
+  (forall temp___868:bool.
+  (forall temp___869:int.
+  ((temp_____aggregate_def_866(temp___868)[temp___869]) = temp___868)))
+
+axiom def_axiom7 :
+  (forall temp___872:bool.
+  (forall temp___873:int.
+  ((temp_____aggregate_def_870(temp___872)[temp___873]) = temp___872)))
+
+axiom def_axiom8 :
+  (forall temp___877:bool.
+  (forall temp___878:int.
+  ((temp_____aggregate_def_875(temp___877)[temp___878]) = temp___877)))
+
+axiom def_axiom9 :
+  (forall temp___883:bool.
+  (forall temp___884:int.
+  ((temp_____aggregate_def_881(temp___883)[temp___884]) = temp___883)))
+
+axiom def_axiom10 :
+  (forall temp___887:bool.
+  (forall temp___888:int.
+  ((temp_____aggregate_def_885(temp___887)[temp___888]) = temp___887)))
+
+axiom def_axiom11 :
+  (forall temp___893:bool.
+  (forall temp___894:int.
+  ((temp_____aggregate_def_891(temp___893)[temp___894]) = temp___893)))
+
+axiom def_axiom12 :
+  (forall temp___899:bool.
+  (forall temp___900:int.
+  ((temp_____aggregate_def_897(temp___899)[temp___900]) = temp___899)))
+
+axiom def_axiom13 :
+  (forall temp___903:bool.
+  (forall temp___904:int.
+  ((temp_____aggregate_def_901(temp___903)[temp___904]) = temp___903)))
+
+axiom def_axiom14 :
+  (forall temp___909:bool.
+  (forall temp___910:int.
+  ((temp_____aggregate_def_907(temp___909)[temp___910]) = temp___909)))
+
+axiom def_axiom15 :
+  (forall temp___915:bool.
+  (forall temp___916:int.
+  ((temp_____aggregate_def_913(temp___915)[temp___916]) = temp___915)))
+
+axiom def_axiom16 :
+  (forall temp___919:bool.
+  (forall temp___920:int.
+  ((temp_____aggregate_def_917(temp___919)[temp___920]) = temp___919)))
+
+logic rliteral : integer
+
+axiom rliteral_axiom : (integerqtint(rliteral) = 10)
+
+ (* File "do_checks.adb", line 7, characters 0-0 *)
+goal defqtvc :
+  (forall branch:int. (dynamic_invariant1(branch, true, false, true, true) ->
+  ((exists usf:int. (dynamic_invariant(usf, true, true, true, true) and
+   (exists usf1:us_rep.
+   (to_rep(((usf1).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j) = usf)))) ->
+  (in_range1(10) -> (in_range1(10) ->
+  (forall spark__branch:bool.
+  ((spark__branch = (if (branch = 1000) then true else false)) ->
+  ((not (spark__branch = true)) ->
+  (forall spark__branch1:bool.
+  ((spark__branch1 = (if (branch = 1001) then true else false)) ->
+  ((not (spark__branch1 = true)) ->
+  (forall spark__branch2:bool.
+  ((spark__branch2 = orb((if (branch = 1002) then true else false),
+  (if (branch = 1003) then true else false))) ->
+  ((not (spark__branch2 = true)) ->
+  (forall spark__branch3:bool.
+  ((spark__branch3 = (if (branch = 1004) then true else false)) ->
+  ((not (spark__branch3 = true)) ->
+  (forall spark__branch4:bool.
+  ((spark__branch4 = (if (branch = 1005) then true else false)) ->
+  ((not (spark__branch4 = true)) ->
+  (forall spark__branch5:bool.
+  ((spark__branch5 = (if (branch = 1006) then true else false)) ->
+  ((not (spark__branch5 = true)) ->
+  (forall spark__branch6:bool.
+  ((spark__branch6 = (if (branch = 1007) then true else false)) ->
+  ((not (spark__branch6 = true)) ->
+  (forall spark__branch7:bool.
+  ((spark__branch7 = (if (branch = 1008) then true else false)) ->
+  ((not (spark__branch7 = true)) ->
+  (forall spark__branch8:bool.
+  ((spark__branch8 = (if (branch = 1009) then true else false)) ->
+  ((not (spark__branch8 = true)) ->
+  (forall spark__branch9:bool.
+  ((spark__branch9 = (if (branch = 1010) then true else false)) ->
+  ((not (spark__branch9 = true)) ->
+  (forall spark__branch10:bool.
+  ((spark__branch10 = (if (branch = 1011) then true else false)) ->
+  ((not (spark__branch10 = true)) ->
+  (forall spark__branch11:bool.
+  ((spark__branch11 = (if (branch = 1012) then true else false)) ->
+  ((not (spark__branch11 = true)) ->
+  (forall spark__branch12:bool.
+  ((spark__branch12 = (if (branch = 1013) then true else false)) ->
+  ((spark__branch12 = true) -> (in_range1(10) -> in_range22(10, to_base22({
+  us_split_discrs24 = { rec__do_checks__do_discriminant_check__r1__j =
+  rliteral }; us_split_fields47 = {
+  rec__do_checks__do_discriminant_check__r1__arr23 =
+  temp_____aggregate_def_913(of_int(1)) } })))))))))))))))))))))))))))))))))))))))))))))))

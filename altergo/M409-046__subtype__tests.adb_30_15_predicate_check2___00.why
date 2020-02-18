@@ -1,0 +1,158 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+logic i1s : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic x : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+type my_enum
+
+predicate in_range1(x1: int) = ((0 <= x1) and (x1 <= 4))
+
+function bool_eq1(x1: int, y: int) : bool =
+  (if (x1 = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : my_enum, my_enum -> bool
+
+logic dummy : my_enum
+
+type my_enum__ref = { my_enum__content : my_enum
+}
+
+function my_enum__ref_my_enum__content__projection(a: my_enum__ref) : my_enum =
+  (a).my_enum__content
+
+predicate dynamic_invariant(temp___expr_162: int, temp___is_init_158: bool,
+  temp___skip_constant_159: bool, temp___do_toplevel_160: bool,
+  temp___do_typ_inv_161: bool) = (((temp___is_init_158 = true) or
+  (0 <= 4)) -> in_range1(temp___expr_162))
+
+type vowels
+
+predicate in_range2(x1: int) = ((0 <= x1) and (x1 <= 4))
+
+function bool_eq2(x1: int, y: int) : bool =
+  (if (x1 = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : vowels, vowels -> bool
+
+logic dummy1 : vowels
+
+type vowels__ref = { vowels__content : vowels
+}
+
+function vowels__ref_vowels__content__projection(a: vowels__ref) : vowels =
+  (a).vowels__content
+
+predicate dynamic_invariant1(temp___expr_169: int, temp___is_init_165: bool,
+  temp___skip_constant_166: bool, temp___do_toplevel_167: bool,
+  temp___do_typ_inv_168: bool) = ((((temp___is_init_165 = true) or
+  (0 <= 4)) -> in_range2(temp___expr_169)) and
+  ((temp___do_toplevel_167 = true) -> ((temp___is_init_165 = true) ->
+  (((0 <= temp___expr_169) and (temp___expr_169 <= 0)) or
+  ((4 <= temp___expr_169) and (temp___expr_169 <= 4))))))
+
+predicate dynamic_predicate(temp___173: int) = (((0 <= temp___173) and
+  (temp___173 <= 0)) or ((4 <= temp___173) and (temp___173 <= 4)))
+
+ (* File "tests.adb", line 27, characters 0-0 *)
+goal defqtvc :
+  (forall v:int. (dynamic_invariant1(i1s, true, false, true, true) ->
+  (dynamic_invariant1(i1s, true, false, true, true) -> (dynamic_invariant1(v,
+  true, false, true, true) -> (dynamic_invariant(x, true, false, true,
+  true) ->
+  (forall spark__branch:bool.
+  ((spark__branch = andb((if in_range2(x) then true else false),
+  (if (let temp___215 = x : int in (((0 <= temp___215) and
+  (temp___215 <= 0)) or ((4 <= temp___215) and
+  (temp___215 <= 4)))) then true else false))) -> ((spark__branch = true) ->
+  (let temp___214 = x : int in (((0 <= temp___214) and (temp___214 <= 0)) or
+  ((4 <= temp___214) and (temp___214 <= 4))))))))))))

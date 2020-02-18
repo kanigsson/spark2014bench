@@ -1,0 +1,178 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic r11b : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic r13b : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic r15b : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+type k
+
+logic kqtint : k -> int
+
+axiom kqtaxiom : (forall i:k. (11 <= kqtint(i)))
+
+axiom kqtaxiom1 : (forall i:k. (kqtint(i) <= 19))
+
+predicate in_range2(x: int) = ((11 <= x) and (x <= 19))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : k, k -> bool
+
+logic dummy1 : k
+
+type k__ref = { k__content : k
+}
+
+function k__ref_k__content__projection(a: k__ref) : k = (a).k__content
+
+predicate dynamic_invariant1(temp___expr_265: int, temp___is_init_261: bool,
+  temp___skip_constant_262: bool, temp___do_toplevel_263: bool,
+  temp___do_typ_inv_264: bool) = (((temp___is_init_261 = true) or
+  (11 <= 19)) -> in_range2(temp___expr_265))
+
+ (* File "subar.adb", line 45, characters 0-0 *)
+goal defqtvc :
+  (forall x:int. ((x = 18) -> (dynamic_invariant(x, true, false, true,
+  true) -> ((x = r11b) -> (dynamic_invariant(r11b, true, false, true,
+  true) -> (let temp___288 = r11b : int in
+  (forall i:int. ((i = 12) ->
+  (((not (andb((if (12 <= i) then true else false),
+  (if (i <= temp___288) then true else false)) = true)) or
+  (exists i1:int. (((12 <= i1) and (i1 <= r11b)) and (i1 = temp___288)))) ->
+  (let o = (x + 1) : int in (in_range1(o) ->
+  (forall x1:int. ((x1 = o) -> ((x1 = r13b) -> (dynamic_invariant(r13b, true,
+  false, true, true) -> (let temp___290 = r13b : int in
+  (forall i1:int. ((i1 = 20) ->
+  (((not (andb((if (20 <= i1) then true else false),
+  (if (i1 <= temp___290) then true else false)) = true)) or
+  (exists i2:int. (((20 <= i2) and (i2 <= r13b)) and (i2 = temp___290)))) ->
+  (let o1 = (x1 + 1) : int in (in_range1(o1) ->
+  (forall x2:int. ((x2 = o1) -> ((x2 = r15b) -> (dynamic_invariant(r15b,
+  true, false, true, true) -> ((19 <= r15b) -> (11 <= 19)))))))))))))))))))))))))))

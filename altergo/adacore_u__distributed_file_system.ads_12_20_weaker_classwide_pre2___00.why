@@ -1,0 +1,622 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type character
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 255))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : character, character -> bool
+
+logic dummy1 : character
+
+type character__ref = { character__content : character
+}
+
+function character__ref_character__content__projection(a: character__ref) : character =
+  (a).character__content
+
+logic to_rep1 : character -> int
+
+logic of_rep1 : int -> character
+
+axiom inversion_axiom1 :
+  (forall x:character [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:character [to_rep1(x)]. in_range2(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type map__ref = { map__content : (int,character) farray
+}
+
+logic slide : (int,character) farray, int, int -> (int,character) farray
+
+axiom slide_eq :
+  (forall a:(int,character) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,character) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq3(a: (int,character) farray, a__first: int, a__last: int,
+  b: (int,character) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep1((a[temp___idx_91])) = to_rep1((b[((b__first - a__first) + temp___idx_91)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep1((a[temp___idx_91])) = to_rep1((b[((b__first - a__first) + temp___idx_91)]))))))))
+
+logic dummy2 : (int,character) farray
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic user_eq2 : (int,character) farray, (int,character) farray -> bool
+
+type state
+
+predicate in_range3(x: int) = ((0 <= x) and (x <= 2))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq3 : state, state -> bool
+
+logic dummy3 : state
+
+type state__ref = { state__content : state
+}
+
+function state__ref_state__content__projection(a: state__ref) : state =
+  (a).state__content
+
+logic to_rep2 : state -> int
+
+logic of_rep2 : int -> state
+
+axiom inversion_axiom2 :
+  (forall x:state [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
+
+axiom range_axiom2 : (forall x:state [to_rep2(x)]. in_range3(to_rep2(x)))
+
+axiom coerce_axiom2 :
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range3(x) ->
+  (to_rep2(of_rep2(x)) = x)))
+
+type us_split_fields = { rec__file_system__file__filename :
+(int,character) farray; rec__file_system__file__cursor : integer;
+rec__file_system__file__status : state; rec__ext__ : us_private
+}
+
+function us_split_fields_rec__file_system__file__filename__projection(a: us_split_fields) : (int,character) farray =
+  (a).rec__file_system__file__filename
+
+function us_split_fields_rec__file_system__file__cursor__projection(a: us_split_fields) : integer =
+  (a).rec__file_system__file__cursor
+
+function us_split_fields_rec__file_system__file__status__projection(a: us_split_fields) : state =
+  (a).rec__file_system__file__status
+
+function us_split_fields_rec__ext____projection(a: us_split_fields) : us_private =
+  (a).rec__ext__
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields; attr__tag : int
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function us_rep_attr__tag__projection(a: us_rep) : int = (a).attr__tag
+
+function bool_eq5(a: us_rep, b: us_rep) : bool =
+  (if (((bool_eq3(((a).us_split_fields1).rec__file_system__file__filename, 1,
+  20, ((b).us_split_fields1).rec__file_system__file__filename, 1,
+  20) = true) and
+  (to_rep(((a).us_split_fields1).rec__file_system__file__cursor) = to_rep(((b).us_split_fields1).rec__file_system__file__cursor))) and
+  (to_rep2(((a).us_split_fields1).rec__file_system__file__status) = to_rep2(((b).us_split_fields1).rec__file_system__file__status))) then true else false)
+
+logic us_dispatch_eq : us_rep, us_rep -> bool
+
+logic us_tag : int
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic file_system__file__filename__first__bit : int
+
+logic file_system__file__filename__last__bit : int
+
+logic file_system__file__filename__position : int
+
+axiom file_system__file__filename__first__bit_axiom :
+  (0 <= file_system__file__filename__first__bit)
+
+axiom file_system__file__filename__last__bit_axiom :
+  (file_system__file__filename__first__bit <  file_system__file__filename__last__bit)
+
+axiom file_system__file__filename__position_axiom :
+  (0 <= file_system__file__filename__position)
+
+logic file_system__file__cursor__first__bit : int
+
+logic file_system__file__cursor__last__bit : int
+
+logic file_system__file__cursor__position : int
+
+axiom file_system__file__cursor__first__bit_axiom :
+  (0 <= file_system__file__cursor__first__bit)
+
+axiom file_system__file__cursor__last__bit_axiom :
+  (file_system__file__cursor__first__bit <  file_system__file__cursor__last__bit)
+
+axiom file_system__file__cursor__position_axiom :
+  (0 <= file_system__file__cursor__position)
+
+logic file_system__file__status__first__bit : int
+
+logic file_system__file__status__last__bit : int
+
+logic file_system__file__status__position : int
+
+axiom file_system__file__status__first__bit_axiom :
+  (0 <= file_system__file__status__first__bit)
+
+axiom file_system__file__status__last__bit_axiom :
+  (file_system__file__status__first__bit <  file_system__file__status__last__bit)
+
+axiom file_system__file__status__position_axiom :
+  (0 <= file_system__file__status__position)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type file__ref = { file__content : us_rep
+}
+
+function file__ref_file__content__projection(a: file__ref) : us_rep =
+  (a).file__content
+
+type us_split_fields2 = { rec__distributed_file_system__file__in_synch :
+bool; rec__file_system__file__filename1 : (int,character) farray;
+rec__file_system__file__cursor1 : integer; rec__file_system__file__status1 :
+state; rec__ext__1 : us_private
+}
+
+function us_split_fields_rec__distributed_file_system__file__in_synch__projection(a: us_split_fields2) : bool =
+  (a).rec__distributed_file_system__file__in_synch
+
+function us_split_fields_rec__file_system__file__filename__2__projection(a: us_split_fields2) : (int,character) farray =
+  (a).rec__file_system__file__filename1
+
+function us_split_fields_rec__file_system__file__cursor__2__projection(a: us_split_fields2) : integer =
+  (a).rec__file_system__file__cursor1
+
+function us_split_fields_rec__file_system__file__status__2__projection(a: us_split_fields2) : state =
+  (a).rec__file_system__file__status1
+
+function us_split_fields_rec__ext____2__projection(a: us_split_fields2) : us_private =
+  (a).rec__ext__1
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_fields3 : us_split_fields2; attr__tag1 : int
+}
+
+function us_rep___split_fields__2__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function us_rep_attr__tag__2__projection(a: us_rep1) : int = (a).attr__tag1
+
+logic hide_ext__ : bool, us_private -> us_private
+
+logic extract__distributed_file_system__file__in_synch : us_private -> bool
+
+axiom extract__distributed_file_system__file__in_synch__conv :
+  (forall distributed_file_system__file__in_synch:bool.
+  (forall rec__ext__2:us_private.
+  (to_int(extract__distributed_file_system__file__in_synch(hide_ext__(distributed_file_system__file__in_synch,
+  rec__ext__2))) = to_int(distributed_file_system__file__in_synch))))
+
+logic extract__ext__ : us_private -> us_private
+
+function to_base(a: us_rep1) : us_rep = { us_split_fields1 = {
+  rec__file_system__file__filename =
+  ((a).us_split_fields3).rec__file_system__file__filename1;
+  rec__file_system__file__cursor =
+  ((a).us_split_fields3).rec__file_system__file__cursor1;
+  rec__file_system__file__status =
+  ((a).us_split_fields3).rec__file_system__file__status1; rec__ext__ =
+  hide_ext__(((a).us_split_fields3).rec__distributed_file_system__file__in_synch,
+  ((a).us_split_fields3).rec__ext__1) }; attr__tag = (a).attr__tag1 }
+
+function of_base(r: us_rep) : us_rep1 = { us_split_fields3 = {
+  rec__distributed_file_system__file__in_synch =
+  extract__distributed_file_system__file__in_synch(((r).us_split_fields1).rec__ext__);
+  rec__file_system__file__filename1 =
+  ((r).us_split_fields1).rec__file_system__file__filename;
+  rec__file_system__file__cursor1 =
+  ((r).us_split_fields1).rec__file_system__file__cursor;
+  rec__file_system__file__status1 =
+  ((r).us_split_fields1).rec__file_system__file__status; rec__ext__1 =
+  extract__ext__(((r).us_split_fields1).rec__ext__) }; attr__tag1 =
+  (r).attr__tag }
+
+function bool_eq6(a: us_rep1, b: us_rep1) : bool =
+  (if (((to_int(((a).us_split_fields3).rec__distributed_file_system__file__in_synch) = to_int(((b).us_split_fields3).rec__distributed_file_system__file__in_synch)) and
+  (bool_eq3(((a).us_split_fields3).rec__file_system__file__filename1, 1, 20,
+  ((b).us_split_fields3).rec__file_system__file__filename1, 1,
+  20) = true)) and
+  ((to_rep(((a).us_split_fields3).rec__file_system__file__cursor1) = to_rep(((b).us_split_fields3).rec__file_system__file__cursor1)) and
+  (to_rep2(((a).us_split_fields3).rec__file_system__file__status1) = to_rep2(((b).us_split_fields3).rec__file_system__file__status1)))) then true else false)
+
+logic us_tag1 : int
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic distributed_file_system__file__in_synch__first__bit : int
+
+logic distributed_file_system__file__in_synch__last__bit : int
+
+logic distributed_file_system__file__in_synch__position : int
+
+axiom distributed_file_system__file__in_synch__first__bit_axiom :
+  (0 <= distributed_file_system__file__in_synch__first__bit)
+
+axiom distributed_file_system__file__in_synch__last__bit_axiom :
+  (distributed_file_system__file__in_synch__first__bit <  distributed_file_system__file__in_synch__last__bit)
+
+axiom distributed_file_system__file__in_synch__position_axiom :
+  (0 <= distributed_file_system__file__in_synch__position)
+
+logic file_system__file__filename__first__bit1 : int
+
+logic file_system__file__filename__last__bit1 : int
+
+logic file_system__file__filename__position1 : int
+
+axiom file_system__file__filename__first__bit_axiom1 :
+  (0 <= file_system__file__filename__first__bit1)
+
+axiom file_system__file__filename__last__bit_axiom1 :
+  (file_system__file__filename__first__bit1 <  file_system__file__filename__last__bit1)
+
+axiom file_system__file__filename__position_axiom1 :
+  (0 <= file_system__file__filename__position1)
+
+logic file_system__file__cursor__first__bit1 : int
+
+logic file_system__file__cursor__last__bit1 : int
+
+logic file_system__file__cursor__position1 : int
+
+axiom file_system__file__cursor__first__bit_axiom1 :
+  (0 <= file_system__file__cursor__first__bit1)
+
+axiom file_system__file__cursor__last__bit_axiom1 :
+  (file_system__file__cursor__first__bit1 <  file_system__file__cursor__last__bit1)
+
+axiom file_system__file__cursor__position_axiom1 :
+  (0 <= file_system__file__cursor__position1)
+
+logic file_system__file__status__first__bit1 : int
+
+logic file_system__file__status__last__bit1 : int
+
+logic file_system__file__status__position1 : int
+
+axiom file_system__file__status__first__bit_axiom1 :
+  (0 <= file_system__file__status__first__bit1)
+
+axiom file_system__file__status__last__bit_axiom1 :
+  (file_system__file__status__first__bit1 <  file_system__file__status__last__bit1)
+
+axiom file_system__file__status__position_axiom1 :
+  (0 <= file_system__file__status__position1)
+
+logic user_eq5 : us_rep1, us_rep1 -> bool
+
+logic dummy5 : us_rep1
+
+type file__ref1 = { file__content1 : us_rep1
+}
+
+function file__ref_file__content__2__projection(a: file__ref1) : us_rep1 =
+  (a).file__content1
+
+predicate default_initial_assumption(temp___expr_187: us_rep1,
+  temp___skip_top_level_188: bool) = ((temp___expr_187).attr__tag1 = us_tag1)
+
+logic closed : us_rep1 -> bool
+
+logic closed__function_guard : bool, us_rep1 -> prop
+
+logic closed1 : int, us_rep1 -> bool
+
+logic closed__function_guard1 : bool, int, us_rep1 -> prop
+
+axiom distributed_file_system__file__compat_axiom :
+  (forall f:us_rep1 [closed1(us_tag1, f)].
+  (closed__function_guard1(closed1(us_tag1, f), us_tag1, f) ->
+  (forall f1:us_rep1. closed__function_guard(closed(f1), f1))))
+
+axiom distributed_file_system__file__compat_axiom1 :
+  (forall f:us_rep1 [closed1(us_tag1, f)].
+  (closed__function_guard1(closed1(us_tag1, f), us_tag1, f) ->
+  (to_int(closed(f)) = to_int(closed1(us_tag1, f)))))
+
+logic f__attr__tag : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic is_open : us_rep1 -> bool
+
+logic is_open__function_guard : bool, us_rep1 -> prop
+
+logic is_open1 : int, us_rep1 -> bool
+
+logic is_open__function_guard1 : bool, int, us_rep1 -> prop
+
+axiom distributed_file_system__file__compat_axiom2 :
+  (forall f:us_rep1 [is_open1(us_tag1, f)].
+  (is_open__function_guard1(is_open1(us_tag1, f), us_tag1, f) ->
+  (forall f1:us_rep1. is_open__function_guard(is_open(f1), f1))))
+
+axiom distributed_file_system__file__compat_axiom3 :
+  (forall f:us_rep1 [is_open1(us_tag1, f)].
+  (is_open__function_guard1(is_open1(us_tag1, f), us_tag1, f) ->
+  (to_int(is_open(f)) = to_int(is_open1(us_tag1, f)))))
+
+logic is_synchronized : us_rep1 -> bool
+
+logic is_synchronized__function_guard : bool, us_rep1 -> prop
+
+logic is_synchronized1 : int, us_rep1 -> bool
+
+logic is_synchronized__function_guard1 : bool, int, us_rep1 -> prop
+
+axiom distributed_file_system__file__compat_axiom4 :
+  (forall f:us_rep1 [is_synchronized1(us_tag1, f)].
+  (is_synchronized__function_guard1(is_synchronized1(us_tag1, f), us_tag1,
+  f) ->
+  (forall f1:us_rep1. is_synchronized__function_guard(is_synchronized(f1),
+  f1))))
+
+axiom distributed_file_system__file__compat_axiom5 :
+  (forall f:us_rep1 [is_synchronized1(us_tag1, f)].
+  (is_synchronized__function_guard1(is_synchronized1(us_tag1, f), us_tag1,
+  f) -> (to_int(is_synchronized(f)) = to_int(is_synchronized1(us_tag1, f)))))
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+predicate dynamic_invariant1(temp___expr_74: int, temp___is_init_70: bool,
+  temp___skip_constant_71: bool, temp___do_toplevel_72: bool,
+  temp___do_typ_inv_73: bool) = (((temp___is_init_70 = true) or
+  (0 <= 255)) -> in_range2(temp___expr_74))
+
+predicate dynamic_invariant2(temp___expr_165: int, temp___is_init_161: bool,
+  temp___skip_constant_162: bool, temp___do_toplevel_163: bool,
+  temp___do_typ_inv_164: bool) = (((temp___is_init_161 = true) or
+  (0 <= 2)) -> in_range3(temp___expr_165))
+
+predicate default_initial_assumption1(temp___expr_174: us_rep,
+  temp___skip_top_level_175: bool) = ((temp___expr_174).attr__tag = us_tag)
+
+ (* File "distributed_file_system.ads", line 11, characters 0-0 *)
+goal defqtvc :
+  (forall f__split_fields:us_split_fields2.
+  ((forall f__split_fields1:us_split_fields2. closed__function_guard(closed({
+   us_split_fields3 = f__split_fields1; attr__tag1 = f__attr__tag }), {
+   us_split_fields3 = f__split_fields1; attr__tag1 = f__attr__tag })) ->
+  ((closed({ us_split_fields3 = f__split_fields; attr__tag1 = f__attr__tag
+  }) = true) ->
+  ((forall f__split_fields1:us_split_fields2. closed__function_guard(closed({
+   us_split_fields3 = f__split_fields1; attr__tag1 = f__attr__tag }), {
+   us_split_fields3 = f__split_fields1; attr__tag1 = f__attr__tag })) ->
+  (closed({ us_split_fields3 = f__split_fields; attr__tag1 = f__attr__tag
+  }) = true)))))

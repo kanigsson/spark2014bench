@@ -1,0 +1,433 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+function to_rep(x: natural) : int = naturalqtint(x)
+
+logic of_rep : int -> natural
+
+axiom inversion_axiom :
+  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:natural [to_rep(x)]. in_range2(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range2(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+logic choose : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+type us_split_fields = { rec__main__rec__comp : natural
+}
+
+function us_split_fields_rec__main__rec__comp__projection(a: us_split_fields) : natural =
+  (a).rec__main__rec__comp
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq3(a: us_rep, b: us_rep) : bool =
+  (if (to_rep(((a).us_split_fields1).rec__main__rec__comp) = to_rep(((b).us_split_fields1).rec__main__rec__comp)) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic main__rec__comp__first__bit : int
+
+logic main__rec__comp__last__bit : int
+
+logic main__rec__comp__position : int
+
+axiom main__rec__comp__first__bit_axiom : (0 <= main__rec__comp__first__bit)
+
+axiom main__rec__comp__last__bit_axiom :
+  (main__rec__comp__first__bit <  main__rec__comp__last__bit)
+
+axiom main__rec__comp__position_axiom : (0 <= main__rec__comp__position)
+
+logic user_eq2 : us_rep, us_rep -> bool
+
+logic dummy2 : us_rep
+
+type rec____ref = { rec____content : us_rep
+}
+
+function rec____ref_rec____content__projection(a: rec____ref) : us_rep =
+  (a).rec____content
+
+logic get_rec : unit -> us_rep
+
+logic get_rec__function_guard : us_rep, unit -> prop
+
+predicate default_initial_assumption(temp___expr_170: us_rep,
+  temp___skip_top_level_171: bool) =
+  (to_rep(((temp___expr_170).us_split_fields1).rec__main__rec__comp) = 1234)
+
+logic rliteral : natural
+
+axiom rliteral_axiom : (naturalqtint(rliteral) = 5678)
+
+axiom get_rec__post_axiom :
+  (forall us_void_param:unit [get_rec(us_void_param)]. (let result =
+  get_rec(us_void_param) : us_rep in (get_rec__function_guard(result,
+  us_void_param) -> (bool_eq3(result, { us_split_fields1 = {
+  rec__main__rec__comp = rliteral } }) = true))))
+
+type map__ref = { map__content : (int,us_rep) farray
+}
+
+logic slide : (int,us_rep) farray, int, int -> (int,us_rep) farray
+
+axiom slide_eq :
+  (forall a:(int,us_rep) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,us_rep) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq4(a: (int,us_rep) farray, a__first: int, a__last: int,
+  b: (int,us_rep) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) -> (bool_eq3((a[temp___idx_154]),
+  (b[((b__first - a__first) + temp___idx_154)])) = true)))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) -> (bool_eq3((a[temp___idx_154]),
+  (b[((b__first - a__first) + temp___idx_154)])) = true))))))
+
+logic get_arr : unit -> (int,us_rep) farray
+
+logic get_arr__function_guard : (int,us_rep) farray, unit -> prop
+
+type index
+
+logic indexqtint : index -> int
+
+axiom indexqtaxiom : (forall i:index. (1 <= indexqtint(i)))
+
+axiom indexqtaxiom1 : (forall i:index. (indexqtint(i) <= 10))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq3 : index, index -> bool
+
+logic dummy3 : index
+
+type index__ref = { index__content : index
+}
+
+function index__ref_index__content__projection(a: index__ref) : index =
+  (a).index__content
+
+predicate default_initial_assumption1(temp___expr_185: (int,us_rep) farray,
+  temp___skip_top_level_186: bool) =
+  (forall temp___187:int. (((1 <= temp___187) and (temp___187 <= 10)) ->
+  (to_rep((((temp___expr_185[temp___187])).us_split_fields1).rec__main__rec__comp) = 1234)))
+
+logic temp_____aggregate_def_193 : us_rep -> (int,us_rep) farray
+
+logic rliteral1 : natural
+
+axiom rliteral_axiom1 : (naturalqtint(rliteral1) = 9012)
+
+axiom get_arr__post_axiom :
+  (forall us_void_param:unit [get_arr(us_void_param)]. (let result =
+  get_arr(us_void_param) : (int,us_rep) farray in
+  (get_arr__function_guard(result, us_void_param) -> (bool_eq4(result, 1, 10,
+  temp_____aggregate_def_193({ us_split_fields1 = { rec__main__rec__comp =
+  rliteral1 } }), 1, 10) = true))))
+
+logic get_index : bool -> int
+
+logic get_index__function_guard : int, bool -> prop
+
+predicate dynamic_invariant1(temp___expr_176: int, temp___is_init_172: bool,
+  temp___skip_constant_173: bool, temp___do_toplevel_174: bool,
+  temp___do_typ_inv_175: bool) = (((temp___is_init_172 = true) or
+  (1 <= 10)) -> in_range3(temp___expr_176))
+
+axiom get_index__post_axiom :
+  (forall main__cheat:bool [get_index(main__cheat)]. (let result =
+  get_index(main__cheat) : int in (get_index__function_guard(result,
+  main__cheat) -> ((main__cheat = true) -> (result = 3)))))
+
+axiom get_index__post_axiom1 :
+  (forall main__cheat:bool [get_index(main__cheat)]. (let result =
+  get_index(main__cheat) : int in (get_index__function_guard(result,
+  main__cheat) -> ((not (main__cheat = true)) -> (result = 5)))))
+
+axiom get_index__post_axiom2 :
+  (forall main__cheat:bool [get_index(main__cheat)]. (let result =
+  get_index(main__cheat) : int in (get_index__function_guard(result,
+  main__cheat) -> dynamic_invariant1(result, true, false, true, true))))
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic the_index : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic r14b : (int,us_rep) farray
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic r15b : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+logic r16b : (int,us_rep) farray
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+predicate dynamic_invariant2(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_39))
+
+axiom def_axiom :
+  (forall temp___195:us_rep.
+  (forall temp___196:int.
+  ((temp_____aggregate_def_193(temp___195)[temp___196]) = temp___195)))
+
+axiom r14b__def_axiom : get_arr__function_guard(get_arr(void), void)
+
+axiom r14b__def_axiom1 : (r14b = get_arr(void))
+
+axiom r15b__def_axiom : get_rec__function_guard(get_rec(void), void)
+
+axiom r15b__def_axiom1 : (r15b = get_rec(void))
+
+axiom r16b__def_axiom : get_arr__function_guard(get_arr(void), void)
+
+axiom r16b__def_axiom1 : (r16b = get_arr(void))
+
+ (* File "main.adb", line 1, characters 0-0 *)
+goal defqtvc : (dynamic_invariant(choose, true, false, true, true) ->
+  (forall cheat:bool. ((cheat = of_int(1)) -> (let o = get_arr(void)
+  : (int,us_rep) farray in ((get_arr__function_guard(o, void) and
+  (bool_eq4(o, 1, 10, temp_____aggregate_def_193({ us_split_fields1 = {
+  rec__main__rec__comp = rliteral1 } }), 1, 10) = true)) ->
+  (forall arr_obj:(int,us_rep) farray. ((arr_obj = o) ->
+  (let main__rec_obj__assume = get_rec(void) : us_rep in
+  ((get_rec__function_guard(main__rec_obj__assume, void) and
+  (bool_eq3(main__rec_obj__assume, { us_split_fields1 = {
+  rec__main__rec__comp = rliteral } }) = true)) ->
+  (forall rec_obj__split_fields:natural. (({ rec__main__rec__comp =
+  rec_obj__split_fields } = (main__rec_obj__assume).us_split_fields1) ->
+  (let main__the_index__assume = get_index(cheat) : int in
+  ((get_index__function_guard(main__the_index__assume, cheat) and
+  (dynamic_invariant1(main__the_index__assume, true, false, true, true) and
+  (if (cheat = true) then (main__the_index__assume = 3) else (main__the_index__assume = 5)))) ->
+  ((main__the_index__assume = the_index) -> (dynamic_invariant1(the_index,
+  true, false, true, true) -> (let main__R14b__assume = get_arr(void)
+  : (int,us_rep) farray in ((get_arr__function_guard(main__R14b__assume,
+  void) and (bool_eq4(main__R14b__assume, 1, 10, temp_____aggregate_def_193({
+  us_split_fields1 = { rec__main__rec__comp = rliteral1 } }), 1,
+  10) = true)) -> ((main__R14b__assume = r14b) -> (let main__R15b__assume =
+  get_rec(void) : us_rep in ((get_rec__function_guard(main__R15b__assume,
+  void) and (bool_eq3(main__R15b__assume, { us_split_fields1 = {
+  rec__main__rec__comp = rliteral } }) = true)) ->
+  ((main__R15b__assume = r15b) -> (let main__R16b__assume = get_arr(void)
+  : (int,us_rep) farray in ((get_arr__function_guard(main__R16b__assume,
+  void) and (bool_eq4(main__R16b__assume, 1, 10, temp_____aggregate_def_193({
+  us_split_fields1 = { rec__main__rec__comp = rliteral1 } }), 1,
+  10) = true)) -> ((main__R16b__assume = r16b) ->
+  ((to_rep((((arr_obj[1])).us_split_fields1).rec__main__rec__comp) = 9012) ->
+  ((to_rep((((arr_obj[the_index])).us_split_fields1).rec__main__rec__comp) = 9012) ->
+  ((to_rep((((r14b[the_index])).us_split_fields1).rec__main__rec__comp) = 9012) ->
+  ((to_rep(rec_obj__split_fields) = 5678) ->
+  (to_rep(((r15b).us_split_fields1).rec__main__rec__comp) = 5678)))))))))))))))))))))))))))))

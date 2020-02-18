@@ -1,0 +1,690 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type us_main_type
+
+type us_rep = { rec__list_borrow__list__is_null_pointer : bool;
+rec__list_borrow__list__pointer_address : int;
+rec__list_borrow__list__pointer_value_abstr : us_main_type
+}
+
+function us_rep_rec__list_borrow__list__is_null_pointer__projection(a: us_rep) : bool =
+  (a).rec__list_borrow__list__is_null_pointer
+
+function us_rep_rec__list_borrow__list__pointer_address__projection(a: us_rep) : int =
+  (a).rec__list_borrow__list__pointer_address
+
+function us_rep_rec__list_borrow__list__pointer_value_abstr__projection(a: us_rep) : us_main_type =
+  (a).rec__list_borrow__list__pointer_value_abstr
+
+type us_rep__ref = { us_rep__content : us_rep
+}
+
+function us_rep__ref___rep__content__projection(a: us_rep__ref) : us_rep =
+  (a).us_rep__content
+
+function bool_eq1(a: us_rep, b: us_rep) : bool =
+  (if (((a).rec__list_borrow__list__is_null_pointer = (b).rec__list_borrow__list__is_null_pointer) and
+  ((not ((a).rec__list_borrow__list__is_null_pointer = true)) ->
+  (((a).rec__list_borrow__list__pointer_address = (b).rec__list_borrow__list__pointer_address) and
+  ((a).rec__list_borrow__list__pointer_value_abstr = (b).rec__list_borrow__list__pointer_value_abstr)))) then true else false)
+
+logic dummy1 : us_rep
+
+type list__ref = { list__content : us_rep
+}
+
+function list__ref_list__content__projection(a: list__ref) : us_rep =
+  (a).list__content
+
+logic all_pos : us_rep -> bool
+
+logic all_pos__function_guard : bool, us_rep -> prop
+
+logic dummy2 : us_rep
+
+type list_pos__ref = { list_pos__content : us_rep
+}
+
+function list_pos__ref_list_pos__content__projection(a: list_pos__ref) : us_rep =
+  (a).list_pos__content
+
+type us_split_fields = { rec__list_borrow__list_cell__value : integer;
+rec__list_borrow__list_cell__next : us_rep
+}
+
+function us_split_fields_rec__list_borrow__list_cell__value__projection(a: us_split_fields) : integer =
+  (a).rec__list_borrow__list_cell__value
+
+function us_split_fields_rec__list_borrow__list_cell__next__projection(a: us_split_fields) : us_rep =
+  (a).rec__list_borrow__list_cell__next
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep1 = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep1) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq2(a: us_rep1, b: us_rep1) : bool =
+  (if ((to_rep(((a).us_split_fields1).rec__list_borrow__list_cell__value) = to_rep(((b).us_split_fields1).rec__list_borrow__list_cell__value)) and
+  (bool_eq1(((a).us_split_fields1).rec__list_borrow__list_cell__next,
+  ((b).us_split_fields1).rec__list_borrow__list_cell__next) = true)) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic list_borrow__list_cell__value__first__bit : int
+
+logic list_borrow__list_cell__value__last__bit : int
+
+logic list_borrow__list_cell__value__position : int
+
+axiom list_borrow__list_cell__value__first__bit_axiom :
+  (0 <= list_borrow__list_cell__value__first__bit)
+
+axiom list_borrow__list_cell__value__last__bit_axiom :
+  (list_borrow__list_cell__value__first__bit <  list_borrow__list_cell__value__last__bit)
+
+axiom list_borrow__list_cell__value__position_axiom :
+  (0 <= list_borrow__list_cell__value__position)
+
+logic list_borrow__list_cell__next__first__bit : int
+
+logic list_borrow__list_cell__next__last__bit : int
+
+logic list_borrow__list_cell__next__position : int
+
+axiom list_borrow__list_cell__next__first__bit_axiom :
+  (0 <= list_borrow__list_cell__next__first__bit)
+
+axiom list_borrow__list_cell__next__last__bit_axiom :
+  (list_borrow__list_cell__next__first__bit <  list_borrow__list_cell__next__last__bit)
+
+axiom list_borrow__list_cell__next__position_axiom :
+  (0 <= list_borrow__list_cell__next__position)
+
+logic user_eq1 : us_rep1, us_rep1 -> bool
+
+logic dummy3 : us_rep1
+
+type list_cell__ref = { list_cell__content : us_rep1
+}
+
+function list_cell__ref_list_cell__content__projection(a: list_cell__ref) : us_rep1 =
+  (a).list_cell__content
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic dummy4 : us_rep
+
+type t10b__ref = { t10b__content : us_rep
+}
+
+function t10b__ref_t10b__content__projection(a: t10b__ref) : us_rep =
+  (a).t10b__content
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+type us_pledge_ty
+
+type us_pledge_ty__ref = { us_pledge_ty__content : us_pledge_ty
+}
+
+logic us_pledge_get : us_pledge_ty, us_rep, us_rep -> bool
+
+logic dummy5 : us_rep
+
+type t11b__ref = { t11b__content : us_rep
+}
+
+function t11b__ref_t11b__content__projection(a: t11b__ref) : us_rep =
+  (a).t11b__content
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+type us_pledge_ty1
+
+type us_pledge_ty__ref1 = { us_pledge_ty__content1 : us_pledge_ty1
+}
+
+logic us_pledge_get1 : us_pledge_ty1, us_rep, us_rep -> bool
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq3(x: bool, y: bool) : bool =
+  (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range1(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE1 : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> bool
+
+logic us_open : us_main_type -> us_rep1
+
+logic us_close : us_rep1 -> us_main_type
+
+axiom close_open :
+  (forall x:us_main_type [us_open(x)]. (us_close(us_open(x)) = x))
+
+axiom open_close :
+  (forall x:us_rep1 [us_close(x)]. (us_open(us_close(x)) = x))
+
+function rec__list_borrow__list__pointer_value(a: us_rep) : us_rep1 =
+  us_open((a).rec__list_borrow__list__pointer_value_abstr)
+
+predicate rec__list_borrow__list__pointer_value__pred(a: us_rep) =
+  (not ((a).rec__list_borrow__list__is_null_pointer = true))
+
+logic us_null_pointer : us_rep
+
+axiom us_null_pointer__def_axiom :
+  ((us_null_pointer).rec__list_borrow__list__is_null_pointer = true)
+
+axiom temp___result_201qtdef :
+  (forall temp___200:us_rep. all_pos__function_guard(all_pos(temp___200),
+  temp___200))
+
+predicate dynamic_invariant(temp___expr_199: us_rep,
+  temp___is_init_195: bool, temp___skip_constant_196: bool,
+  temp___do_toplevel_197: bool, temp___do_typ_inv_198: bool) =
+  ((temp___do_toplevel_197 = true) -> (all_pos(temp___expr_199) = true))
+
+predicate default_initial_assumption(temp___expr_202: us_rep,
+  temp___skip_top_level_203: bool) =
+  ((temp___expr_202).rec__list_borrow__list__is_null_pointer = true)
+
+axiom temp___result_206qtdef :
+  (forall temp___205:us_rep. all_pos__function_guard(all_pos(temp___205),
+  temp___205))
+
+predicate dynamic_predicate(temp___204: us_rep) =
+  (all_pos(temp___204) = true)
+
+predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_18))
+
+predicate default_initial_assumption1(temp___expr_182: us_rep,
+  temp___skip_top_level_183: bool) =
+  ((temp___expr_182).rec__list_borrow__list__is_null_pointer = true)
+
+predicate default_initial_assumption2(temp___expr_189: us_rep1,
+  temp___skip_top_level_190: bool) =
+  ((((temp___expr_189).us_split_fields1).rec__list_borrow__list_cell__next).rec__list_borrow__list__is_null_pointer = true)
+
+axiom all_pos__def_axiom :
+  (forall x:us_rep [all_pos(x)]. (all_pos__function_guard(all_pos(x), x) ->
+  (forall x1:us_rep.
+  all_pos__function_guard(all_pos(((rec__list_borrow__list__pointer_value(x1)).us_split_fields1).rec__list_borrow__list_cell__next),
+  ((rec__list_borrow__list__pointer_value(x1)).us_split_fields1).rec__list_borrow__list_cell__next))))
+
+axiom all_pos__def_axiom1 :
+  (forall x:us_rep [all_pos(x)]. (all_pos__function_guard(all_pos(x), x) ->
+  ((all_pos(x) = true) -> ((not (bool_eq1(x, us_null_pointer) = true)) ->
+  (0 <  to_rep(((rec__list_borrow__list__pointer_value(x)).us_split_fields1).rec__list_borrow__list_cell__value))))))
+
+axiom all_pos__def_axiom2 :
+  (forall x:us_rep [all_pos(x)]. (all_pos__function_guard(all_pos(x), x) ->
+  ((all_pos(x) = true) -> ((not (bool_eq1(x, us_null_pointer) = true)) ->
+  (all_pos(((rec__list_borrow__list__pointer_value(x)).us_split_fields1).rec__list_borrow__list_cell__next) = true)))))
+
+axiom all_pos__def_axiom3 :
+  (forall x:us_rep [all_pos(x)]. (all_pos__function_guard(all_pos(x), x) ->
+  (((not (bool_eq1(x, us_null_pointer) = true)) ->
+  ((0 <  to_rep(((rec__list_borrow__list__pointer_value(x)).us_split_fields1).rec__list_borrow__list_cell__value)) and
+  (all_pos(((rec__list_borrow__list__pointer_value(x)).us_split_fields1).rec__list_borrow__list_cell__next) = true))) ->
+  (all_pos(x) = true))))
+
+logic rliteral : integer
+
+axiom rliteral_axiom : (integerqtint(rliteral) = 1)
+
+logic rliteral1 : integer
+
+axiom rliteral_axiom1 : (integerqtint(rliteral1) = 2)
+
+logic rliteral2 : integer
+
+axiom rliteral_axiom2 : (integerqtint(rliteral2) = 3)
+
+logic rliteral3 : integer
+
+axiom rliteral_axiom3 : (integerqtint(rliteral3) = (- 1))
+
+ (* File "list_borrow.adb", line 1, characters 0-0 *)
+goal defqtvc :
+  (forall us_next_pointer_address:int.
+  (forall temp___208:us_rep.
+  ((andb((if ((not ((temp___208).rec__list_borrow__list__is_null_pointer = true)) and
+  ((temp___208).rec__list_borrow__list__pointer_address = us_next_pointer_address)) then true else false),
+  (if (rec__list_borrow__list__pointer_value(temp___208) = {
+  us_split_fields1 = { rec__list_borrow__list_cell__value = rliteral;
+  rec__list_borrow__list_cell__next = us_null_pointer }
+  }) then true else false)) = true) ->
+  ((forall temp___2081:us_rep. all_pos__function_guard(all_pos(temp___2081),
+   temp___2081)) ->
+  ((all_pos(temp___208) = true) ->
+  (forall x1__pointer_value:us_split_fields. (({ us_split_fields1 =
+  x1__pointer_value } = rec__list_borrow__list__pointer_value(temp___208)) ->
+  (forall x1__pointer_address:int.
+  ((x1__pointer_address = (temp___208).rec__list_borrow__list__pointer_address) ->
+  (forall x1__is_null_pointer:bool.
+  ((x1__is_null_pointer = (temp___208).rec__list_borrow__list__is_null_pointer) ->
+  (dynamic_invariant({ rec__list_borrow__list__is_null_pointer =
+  x1__is_null_pointer; rec__list_borrow__list__pointer_address =
+  x1__pointer_address; rec__list_borrow__list__pointer_value_abstr =
+  us_close({ us_split_fields1 = x1__pointer_value }) }, true, false, true,
+  true) ->
+  (forall us_next_pointer_address1:int.
+  (forall temp___211:us_rep.
+  ((andb((if ((not ((temp___211).rec__list_borrow__list__is_null_pointer = true)) and
+  ((temp___211).rec__list_borrow__list__pointer_address = us_next_pointer_address1)) then true else false),
+  (if (rec__list_borrow__list__pointer_value(temp___211) = {
+  us_split_fields1 = { rec__list_borrow__list_cell__value = rliteral1;
+  rec__list_borrow__list_cell__next = {
+  rec__list_borrow__list__is_null_pointer = x1__is_null_pointer;
+  rec__list_borrow__list__pointer_address = x1__pointer_address;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  x1__pointer_value }) } } }) then true else false)) = true) ->
+  ((forall temp___2111:us_rep. all_pos__function_guard(all_pos(temp___2111),
+   temp___2111)) ->
+  ((all_pos(temp___211) = true) ->
+  (forall x2__pointer_value:us_split_fields. (({ us_split_fields1 =
+  x2__pointer_value } = rec__list_borrow__list__pointer_value(temp___211)) ->
+  (forall x2__pointer_address:int.
+  ((x2__pointer_address = (temp___211).rec__list_borrow__list__pointer_address) ->
+  (forall x2__is_null_pointer:bool.
+  ((x2__is_null_pointer = (temp___211).rec__list_borrow__list__is_null_pointer) ->
+  (dynamic_invariant({ rec__list_borrow__list__is_null_pointer =
+  x2__is_null_pointer; rec__list_borrow__list__pointer_address =
+  x2__pointer_address; rec__list_borrow__list__pointer_value_abstr =
+  us_close({ us_split_fields1 = x2__pointer_value }) }, true, false, true,
+  true) ->
+  (forall us_next_pointer_address2:int.
+  (forall temp___214:us_rep.
+  ((andb((if ((not ((temp___214).rec__list_borrow__list__is_null_pointer = true)) and
+  ((temp___214).rec__list_borrow__list__pointer_address = us_next_pointer_address2)) then true else false),
+  (if (rec__list_borrow__list__pointer_value(temp___214) = {
+  us_split_fields1 = { rec__list_borrow__list_cell__value = rliteral2;
+  rec__list_borrow__list_cell__next = {
+  rec__list_borrow__list__is_null_pointer = x2__is_null_pointer;
+  rec__list_borrow__list__pointer_address = x2__pointer_address;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  x2__pointer_value }) } } }) then true else false)) = true) ->
+  ((forall temp___2141:us_rep. all_pos__function_guard(all_pos(temp___2141),
+   temp___2141)) ->
+  ((all_pos(temp___214) = true) ->
+  (forall x__pointer_value:us_split_fields. (({ us_split_fields1 =
+  x__pointer_value } = rec__list_borrow__list__pointer_value(temp___214)) ->
+  (forall x__pointer_address:int.
+  ((x__pointer_address = (temp___214).rec__list_borrow__list__pointer_address) ->
+  (forall x__is_null_pointer:bool.
+  ((x__is_null_pointer = (temp___214).rec__list_borrow__list__is_null_pointer) ->
+  (dynamic_invariant({ rec__list_borrow__list__is_null_pointer =
+  x__is_null_pointer; rec__list_borrow__list__pointer_address =
+  x__pointer_address; rec__list_borrow__list__pointer_value_abstr =
+  us_close({ us_split_fields1 = x__pointer_value }) }, true, false, true,
+  true) ->
+  (forall us_next_pointer_address3:int.
+  (forall temp___217:us_rep.
+  ((andb((if ((not ((temp___217).rec__list_borrow__list__is_null_pointer = true)) and
+  ((temp___217).rec__list_borrow__list__pointer_address = us_next_pointer_address3)) then true else false),
+  (if (rec__list_borrow__list__pointer_value(temp___217) = {
+  us_split_fields1 = { rec__list_borrow__list_cell__value = rliteral;
+  rec__list_borrow__list_cell__next = us_null_pointer }
+  }) then true else false)) = true) ->
+  ((forall temp___2171:us_rep. all_pos__function_guard(all_pos(temp___2171),
+   temp___2171)) ->
+  ((all_pos(temp___217) = true) ->
+  (forall z1__pointer_value:us_split_fields. (({ us_split_fields1 =
+  z1__pointer_value } = rec__list_borrow__list__pointer_value(temp___217)) ->
+  (forall z1__pointer_address:int.
+  ((z1__pointer_address = (temp___217).rec__list_borrow__list__pointer_address) ->
+  (forall z1__is_null_pointer:bool.
+  ((z1__is_null_pointer = (temp___217).rec__list_borrow__list__is_null_pointer) ->
+  (dynamic_invariant({ rec__list_borrow__list__is_null_pointer =
+  z1__is_null_pointer; rec__list_borrow__list__pointer_address =
+  z1__pointer_address; rec__list_borrow__list__pointer_value_abstr =
+  us_close({ us_split_fields1 = z1__pointer_value }) }, true, false, true,
+  true) ->
+  (forall us_next_pointer_address4:int.
+  (forall temp___220:us_rep.
+  ((andb((if ((not ((temp___220).rec__list_borrow__list__is_null_pointer = true)) and
+  ((temp___220).rec__list_borrow__list__pointer_address = us_next_pointer_address4)) then true else false),
+  (if (rec__list_borrow__list__pointer_value(temp___220) = {
+  us_split_fields1 = { rec__list_borrow__list_cell__value = rliteral1;
+  rec__list_borrow__list_cell__next = {
+  rec__list_borrow__list__is_null_pointer = z1__is_null_pointer;
+  rec__list_borrow__list__pointer_address = z1__pointer_address;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  z1__pointer_value }) } } }) then true else false)) = true) ->
+  ((forall temp___2201:us_rep. all_pos__function_guard(all_pos(temp___2201),
+   temp___2201)) ->
+  ((all_pos(temp___220) = true) ->
+  (forall z2__pointer_value:us_split_fields. (({ us_split_fields1 =
+  z2__pointer_value } = rec__list_borrow__list__pointer_value(temp___220)) ->
+  (forall z2__pointer_address:int.
+  ((z2__pointer_address = (temp___220).rec__list_borrow__list__pointer_address) ->
+  (forall z2__is_null_pointer:bool.
+  ((z2__is_null_pointer = (temp___220).rec__list_borrow__list__is_null_pointer) ->
+  (dynamic_invariant({ rec__list_borrow__list__is_null_pointer =
+  z2__is_null_pointer; rec__list_borrow__list__pointer_address =
+  z2__pointer_address; rec__list_borrow__list__pointer_value_abstr =
+  us_close({ us_split_fields1 = z2__pointer_value }) }, true, false, true,
+  true) ->
+  (forall us_next_pointer_address5:int.
+  (forall temp___223:us_rep.
+  ((andb((if ((not ((temp___223).rec__list_borrow__list__is_null_pointer = true)) and
+  ((temp___223).rec__list_borrow__list__pointer_address = us_next_pointer_address5)) then true else false),
+  (if (rec__list_borrow__list__pointer_value(temp___223) = {
+  us_split_fields1 = { rec__list_borrow__list_cell__value = rliteral2;
+  rec__list_borrow__list_cell__next = {
+  rec__list_borrow__list__is_null_pointer = z2__is_null_pointer;
+  rec__list_borrow__list__pointer_address = z2__pointer_address;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  z2__pointer_value }) } } }) then true else false)) = true) ->
+  ((forall temp___2231:us_rep. all_pos__function_guard(all_pos(temp___2231),
+   temp___2231)) ->
+  ((all_pos(temp___223) = true) ->
+  (forall z__pointer_value:us_split_fields. (({ us_split_fields1 =
+  z__pointer_value } = rec__list_borrow__list__pointer_value(temp___223)) ->
+  (forall z__pointer_address:int.
+  ((z__pointer_address = (temp___223).rec__list_borrow__list__pointer_address) ->
+  (forall z__is_null_pointer:bool.
+  ((z__is_null_pointer = (temp___223).rec__list_borrow__list__is_null_pointer) ->
+  (dynamic_invariant({ rec__list_borrow__list__is_null_pointer =
+  z__is_null_pointer; rec__list_borrow__list__pointer_address =
+  z__pointer_address; rec__list_borrow__list__pointer_value_abstr =
+  us_close({ us_split_fields1 = z__pointer_value }) }, true, false, true,
+  true) ->
+  (forall usf:us_pledge_ty.
+  ((forall temp___borrowed_241:us_rep.
+   (forall temp___brower_240:us_rep [us_pledge_get(usf, temp___borrowed_241,
+   temp___brower_240)]. ((us_pledge_get(usf, temp___borrowed_241,
+   temp___brower_240) = true) <-> (temp___borrowed_241 = temp___brower_240)))) ->
+  (forall list_borrow__B_1__y__pledge:us_pledge_ty.
+  ((list_borrow__B_1__y__pledge = usf) ->
+  (forall y__pointer_value:us_split_fields. (({ us_split_fields1 =
+  y__pointer_value } = rec__list_borrow__list__pointer_value({
+  rec__list_borrow__list__is_null_pointer = x__is_null_pointer;
+  rec__list_borrow__list__pointer_address = x__pointer_address;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  x__pointer_value }) })) ->
+  (forall y__pointer_address:int.
+  ((y__pointer_address = x__pointer_address) ->
+  (forall y__is_null_pointer:bool.
+  ((y__is_null_pointer = x__is_null_pointer) ->
+  (forall usf1:us_pledge_ty.
+  ((forall temp___borrowed_230:us_rep.
+   (forall temp___brower_227:us_rep [us_pledge_get(usf1, temp___borrowed_230,
+   temp___brower_227)]. (us_pledge_get(usf1, temp___borrowed_230,
+   temp___brower_227) = us_pledge_get(list_borrow__B_1__y__pledge,
+   temp___borrowed_230, { rec__list_borrow__list__is_null_pointer =
+   y__is_null_pointer; rec__list_borrow__list__pointer_address =
+   y__pointer_address; rec__list_borrow__list__pointer_value_abstr =
+   us_close({ us_split_fields1 = { rec__list_borrow__list_cell__value =
+   ((rec__list_borrow__list__pointer_value({
+   rec__list_borrow__list__is_null_pointer = y__is_null_pointer;
+   rec__list_borrow__list__pointer_address = y__pointer_address;
+   rec__list_borrow__list__pointer_value_abstr = us_close({
+   us_split_fields1 = y__pointer_value })
+   })).us_split_fields1).rec__list_borrow__list_cell__value;
+   rec__list_borrow__list_cell__next = temp___brower_227 } }) })))) ->
+  (forall list_borrow__B_1__y__pledge1:us_pledge_ty.
+  ((list_borrow__B_1__y__pledge1 = usf1) -> (let temp___226 =
+  ((rec__list_borrow__list__pointer_value({
+  rec__list_borrow__list__is_null_pointer = y__is_null_pointer;
+  rec__list_borrow__list__pointer_address = y__pointer_address;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  y__pointer_value }) })).us_split_fields1).rec__list_borrow__list_cell__next
+  : us_rep in
+  (forall y__pointer_value1:us_split_fields. (({ us_split_fields1 =
+  y__pointer_value1 } = rec__list_borrow__list__pointer_value(temp___226)) ->
+  (forall y__pointer_address1:int.
+  ((y__pointer_address1 = (temp___226).rec__list_borrow__list__pointer_address) ->
+  (forall y__is_null_pointer1:bool.
+  ((y__is_null_pointer1 = (temp___226).rec__list_borrow__list__is_null_pointer) ->
+  (forall y__pointer_value2:us_split_fields. (({ us_split_fields1 =
+  y__pointer_value2 } = rec__list_borrow__list__pointer_value({
+  rec__list_borrow__list__is_null_pointer = y__is_null_pointer1;
+  rec__list_borrow__list__pointer_address = y__pointer_address1;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  { rec__list_borrow__list_cell__value = rliteral;
+  rec__list_borrow__list_cell__next =
+  ((rec__list_borrow__list__pointer_value({
+  rec__list_borrow__list__is_null_pointer = y__is_null_pointer1;
+  rec__list_borrow__list__pointer_address = y__pointer_address1;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  y__pointer_value1 })
+  })).us_split_fields1).rec__list_borrow__list_cell__next } }) })) ->
+  (forall usf2:us_rep. (((us_pledge_get(list_borrow__B_1__y__pledge1, usf2, {
+  rec__list_borrow__list__is_null_pointer = y__is_null_pointer1;
+  rec__list_borrow__list__pointer_address = y__pointer_address1;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  y__pointer_value2 }) }) = true) and
+  (x__is_null_pointer = (usf2).rec__list_borrow__list__is_null_pointer)) ->
+  ((forall usf3:us_rep. all_pos__function_guard(all_pos(usf3), usf3)) ->
+  ((all_pos(usf2) = true) ->
+  (forall x__pointer_value1:us_split_fields. (({ us_split_fields1 =
+  x__pointer_value1 } = rec__list_borrow__list__pointer_value(usf2)) ->
+  (forall x__pointer_address1:int.
+  ((x__pointer_address1 = (usf2).rec__list_borrow__list__pointer_address) ->
+  (forall x__is_null_pointer1:bool.
+  ((x__is_null_pointer1 = (usf2).rec__list_borrow__list__is_null_pointer) ->
+  ((to_rep(((rec__list_borrow__list__pointer_value({
+  rec__list_borrow__list__is_null_pointer = x__is_null_pointer1;
+  rec__list_borrow__list__pointer_address = x__pointer_address1;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  x__pointer_value1 })
+  })).us_split_fields1).rec__list_borrow__list_cell__value) = 3) ->
+  ((to_rep(((rec__list_borrow__list__pointer_value(((rec__list_borrow__list__pointer_value(((rec__list_borrow__list__pointer_value({
+  rec__list_borrow__list__is_null_pointer = x__is_null_pointer1;
+  rec__list_borrow__list__pointer_address = x__pointer_address1;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  x__pointer_value1 })
+  })).us_split_fields1).rec__list_borrow__list_cell__next)).us_split_fields1).rec__list_borrow__list_cell__next)).us_split_fields1).rec__list_borrow__list_cell__value) = 1) ->
+  ((to_rep(((rec__list_borrow__list__pointer_value(((rec__list_borrow__list__pointer_value({
+  rec__list_borrow__list__is_null_pointer = x__is_null_pointer1;
+  rec__list_borrow__list__pointer_address = x__pointer_address1;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  x__pointer_value1 })
+  })).us_split_fields1).rec__list_borrow__list_cell__next)).us_split_fields1).rec__list_borrow__list_cell__value) = 1) ->
+  (forall usf3:us_pledge_ty1.
+  ((forall temp___borrowed_257:us_rep.
+   (forall temp___brower_256:us_rep [us_pledge_get1(usf3,
+   temp___borrowed_257, temp___brower_256)]. ((us_pledge_get1(usf3,
+   temp___borrowed_257, temp___brower_256) = true) <->
+   (temp___borrowed_257 = temp___brower_256)))) ->
+  (forall list_borrow__B_2__y__pledge:us_pledge_ty1.
+  ((list_borrow__B_2__y__pledge = usf3) ->
+  (forall y__pointer_value3:us_split_fields. (({ us_split_fields1 =
+  y__pointer_value3 } = rec__list_borrow__list__pointer_value({
+  rec__list_borrow__list__is_null_pointer = z__is_null_pointer;
+  rec__list_borrow__list__pointer_address = z__pointer_address;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  z__pointer_value }) })) ->
+  (forall y__pointer_address2:int.
+  ((y__pointer_address2 = z__pointer_address) ->
+  (forall y__is_null_pointer2:bool.
+  ((y__is_null_pointer2 = z__is_null_pointer) ->
+  (forall usf4:us_pledge_ty1.
+  ((forall temp___borrowed_246:us_rep.
+   (forall temp___brower_243:us_rep [us_pledge_get1(usf4,
+   temp___borrowed_246, temp___brower_243)]. (us_pledge_get1(usf4,
+   temp___borrowed_246,
+   temp___brower_243) = us_pledge_get1(list_borrow__B_2__y__pledge,
+   temp___borrowed_246, { rec__list_borrow__list__is_null_pointer =
+   y__is_null_pointer2; rec__list_borrow__list__pointer_address =
+   y__pointer_address2; rec__list_borrow__list__pointer_value_abstr =
+   us_close({ us_split_fields1 = { rec__list_borrow__list_cell__value =
+   ((rec__list_borrow__list__pointer_value({
+   rec__list_borrow__list__is_null_pointer = y__is_null_pointer2;
+   rec__list_borrow__list__pointer_address = y__pointer_address2;
+   rec__list_borrow__list__pointer_value_abstr = us_close({
+   us_split_fields1 = y__pointer_value3 })
+   })).us_split_fields1).rec__list_borrow__list_cell__value;
+   rec__list_borrow__list_cell__next = temp___brower_243 } }) })))) ->
+  (forall list_borrow__B_2__y__pledge1:us_pledge_ty1.
+  ((list_borrow__B_2__y__pledge1 = usf4) -> (let temp___242 =
+  ((rec__list_borrow__list__pointer_value({
+  rec__list_borrow__list__is_null_pointer = y__is_null_pointer2;
+  rec__list_borrow__list__pointer_address = y__pointer_address2;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  y__pointer_value3 })
+  })).us_split_fields1).rec__list_borrow__list_cell__next : us_rep in
+  (forall y__pointer_value4:us_split_fields. (({ us_split_fields1 =
+  y__pointer_value4 } = rec__list_borrow__list__pointer_value(temp___242)) ->
+  (forall y__pointer_address3:int.
+  ((y__pointer_address3 = (temp___242).rec__list_borrow__list__pointer_address) ->
+  (forall y__is_null_pointer3:bool.
+  ((y__is_null_pointer3 = (temp___242).rec__list_borrow__list__is_null_pointer) ->
+  (forall y__pointer_value5:us_split_fields. (({ us_split_fields1 =
+  y__pointer_value5 } = rec__list_borrow__list__pointer_value({
+  rec__list_borrow__list__is_null_pointer = y__is_null_pointer3;
+  rec__list_borrow__list__pointer_address = y__pointer_address3;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  { rec__list_borrow__list_cell__value = rliteral3;
+  rec__list_borrow__list_cell__next =
+  ((rec__list_borrow__list__pointer_value({
+  rec__list_borrow__list__is_null_pointer = y__is_null_pointer3;
+  rec__list_borrow__list__pointer_address = y__pointer_address3;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  y__pointer_value4 })
+  })).us_split_fields1).rec__list_borrow__list_cell__next } }) })) ->
+  (forall usf5:us_rep. (((us_pledge_get1(list_borrow__B_2__y__pledge1, usf5,
+  { rec__list_borrow__list__is_null_pointer = y__is_null_pointer3;
+  rec__list_borrow__list__pointer_address = y__pointer_address3;
+  rec__list_borrow__list__pointer_value_abstr = us_close({ us_split_fields1 =
+  y__pointer_value5 }) }) = true) and
+  (z__is_null_pointer = (usf5).rec__list_borrow__list__is_null_pointer)) ->
+  ((forall usf6:us_rep. all_pos__function_guard(all_pos(usf6), usf6)) ->
+  (all_pos(usf5) = true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))

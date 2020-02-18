@@ -1,0 +1,623 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+logic div : int, int -> int
+
+logic mod : int, int -> int
+
+axiom Div_mod :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (x = ((y * div(x,
+  y)) + mod(x, y)))))
+
+axiom Div_bound :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= div(x, y))))
+
+axiom Div_bound1 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (div(x, y) <= x)))
+
+axiom Mod_bound :
+  (forall x:int. forall y:int. ((not (y = 0)) -> ((-abs_int(y)) <  mod(x,
+  y))))
+
+axiom Mod_bound1 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (mod(x, y) <  abs_int(y))))
+
+axiom Div_sign_pos :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= div(x, y))))
+
+axiom Div_sign_neg :
+  (forall x:int. forall y:int. (((x <= 0) and (0 <  y)) -> (div(x, y) <= 0)))
+
+axiom Mod_sign_pos :
+  (forall x:int. forall y:int. (((0 <= x) and (not (y = 0))) -> (0 <= mod(x,
+  y))))
+
+axiom Mod_sign_neg :
+  (forall x:int. forall y:int. (((x <= 0) and (not (y = 0))) -> (mod(x,
+  y) <= 0)))
+
+axiom Rounds_toward_zero :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (abs_int((div(x,
+  y) * y)) <= abs_int(x))))
+
+axiom Div_1 : (forall x:int. (div(x, 1) = x))
+
+axiom Mod_1 : (forall x:int. (mod(x, 1) = 0))
+
+axiom Div_inf :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> (div(x, y) = 0)))
+
+axiom Mod_inf :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> (mod(x, y) = x)))
+
+axiom Div_mult :
+  (forall x:int. forall y:int. forall z:int [div(((x * y) + z), x)].
+  (((0 <  x) and ((0 <= y) and (0 <= z))) -> (div(((x * y) + z),
+  x) = (y + div(z, x)))))
+
+axiom Mod_mult :
+  (forall x:int. forall y:int. forall z:int [mod(((x * y) + z), x)].
+  (((0 <  x) and ((0 <= y) and (0 <= z))) -> (mod(((x * y) + z), x) = mod(z,
+  x))))
+
+axiom Div_mod1 :
+  (forall x:int. forall y:int. ((not (y = 0)) ->
+  (x = ((y * (x / y)) + (x % y)))))
+
+axiom Mod_bound2 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (0 <= (x % y))))
+
+axiom Mod_bound3 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> ((x % y) <  abs_int(y))))
+
+axiom Div_unique :
+  (forall x:int. forall y:int. forall q:int. ((0 <  y) ->
+  ((((q * y) <= x) and (x <  ((q * y) + y))) -> ((x / y) = q))))
+
+axiom Div_bound2 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= (x / y))))
+
+axiom Div_bound3 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> ((x / y) <= x)))
+
+axiom Mod_11 : (forall x:int. ((x % 1) = 0))
+
+axiom Div_11 : (forall x:int. ((x / 1) = x))
+
+axiom Div_inf1 :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> ((x / y) = 0)))
+
+axiom Div_inf_neg :
+  (forall x:int. forall y:int. (((0 <  x) and (x <= y)) ->
+  (((-x) / y) = (- 1))))
+
+axiom Mod_0 : (forall y:int. ((not (y = 0)) -> ((0 % y) = 0)))
+
+axiom Div_1_left : (forall y:int. ((1 <  y) -> ((1 / y) = 0)))
+
+axiom Div_minus1_left : (forall y:int. ((1 <  y) -> (((- 1) / y) = (- 1))))
+
+axiom Mod_1_left : (forall y:int. ((1 <  y) -> ((1 % y) = 1)))
+
+axiom Mod_minus1_left :
+  (forall y:int [((- 1) % y)]. ((1 <  y) -> (((- 1) % y) = (y - 1))))
+
+axiom Div_mult1 :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) / x)].
+  ((0 <  x) -> ((((x * y) + z) / x) = (y + (z / x)))))
+
+axiom Mod_mult1 :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) % x)].
+  ((0 <  x) -> ((((x * y) + z) % x) = (z % x))))
+
+function mod1(x: int, y: int) : int =
+  (if (0 <  y) then (x % y) else ((x % y) + y))
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type signature_type
+
+logic signature_typeqtint : signature_type -> int
+
+axiom signature_typeqtaxiom :
+  (forall i:signature_type. (0 <= signature_typeqtint(i)))
+
+axiom signature_typeqtaxiom1 :
+  (forall i:signature_type. (signature_typeqtint(i) <= 7))
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 7))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : signature_type, signature_type -> bool
+
+logic dummy : signature_type
+
+type signature_type__ref = { signature_type__content : signature_type
+}
+
+function signature_type__ref_signature_type__content__projection(a: signature_type__ref) : signature_type =
+  (a).signature_type__content
+
+function to_rep(x: signature_type) : int = signature_typeqtint(x)
+
+logic of_rep : int -> signature_type
+
+axiom inversion_axiom :
+  (forall x:signature_type [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom :
+  (forall x:signature_type [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type columns
+
+logic columnsqtint : columns -> int
+
+axiom columnsqtaxiom : (forall i:columns. (0 <= columnsqtint(i)))
+
+axiom columnsqtaxiom1 : (forall i:columns. (columnsqtint(i) <= 319))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 319))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : columns, columns -> bool
+
+logic dummy1 : columns
+
+type columns__ref = { columns__content : columns
+}
+
+function columns__ref_columns__content__projection(a: columns__ref) : columns =
+  (a).columns__content
+
+function to_rep1(x: columns) : int = columnsqtint(x)
+
+logic of_rep1 : int -> columns
+
+axiom inversion_axiom1 :
+  (forall x:columns [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:columns [to_rep1(x)]. in_range2(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type rows
+
+logic rowsqtint : rows -> int
+
+axiom rowsqtaxiom : (forall i:rows. (0 <= rowsqtint(i)))
+
+axiom rowsqtaxiom1 : (forall i:rows. (rowsqtint(i) <= 199))
+
+predicate in_range3(x: int) = ((0 <= x) and (x <= 199))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : rows, rows -> bool
+
+logic dummy2 : rows
+
+type rows__ref = { rows__content : rows
+}
+
+function rows__ref_rows__content__projection(a: rows__ref) : rows =
+  (a).rows__content
+
+function to_rep2(x: rows) : int = rowsqtint(x)
+
+logic of_rep2 : int -> rows
+
+axiom inversion_axiom2 :
+  (forall x:rows [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
+
+axiom range_axiom2 : (forall x:rows [to_rep2(x)]. in_range3(to_rep2(x)))
+
+axiom coerce_axiom2 :
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range3(x) ->
+  (to_rep2(of_rep2(x)) = x)))
+
+type widths
+
+logic widthsqtint : widths -> int
+
+axiom widthsqtaxiom : (forall i:widths. (0 <= widthsqtint(i)))
+
+axiom widthsqtaxiom1 : (forall i:widths. (widthsqtint(i) <= 320))
+
+predicate in_range4(x: int) = ((0 <= x) and (x <= 320))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq3 : widths, widths -> bool
+
+logic dummy3 : widths
+
+type widths__ref = { widths__content : widths
+}
+
+function widths__ref_widths__content__projection(a: widths__ref) : widths =
+  (a).widths__content
+
+function to_rep3(x: widths) : int = widthsqtint(x)
+
+logic of_rep3 : int -> widths
+
+axiom inversion_axiom3 :
+  (forall x:widths [to_rep3(x)]. (of_rep3(to_rep3(x)) = x))
+
+axiom range_axiom3 : (forall x:widths [to_rep3(x)]. in_range4(to_rep3(x)))
+
+axiom coerce_axiom3 :
+  (forall x:int [to_rep3(of_rep3(x))]. (in_range4(x) ->
+  (to_rep3(of_rep3(x)) = x)))
+
+type heights
+
+logic heightsqtint : heights -> int
+
+axiom heightsqtaxiom : (forall i:heights. (0 <= heightsqtint(i)))
+
+axiom heightsqtaxiom1 : (forall i:heights. (heightsqtint(i) <= 200))
+
+predicate in_range5(x: int) = ((0 <= x) and (x <= 200))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq4 : heights, heights -> bool
+
+logic dummy4 : heights
+
+type heights__ref = { heights__content : heights
+}
+
+function heights__ref_heights__content__projection(a: heights__ref) : heights =
+  (a).heights__content
+
+function to_rep4(x: heights) : int = heightsqtint(x)
+
+logic of_rep4 : int -> heights
+
+axiom inversion_axiom4 :
+  (forall x:heights [to_rep4(x)]. (of_rep4(to_rep4(x)) = x))
+
+axiom range_axiom4 : (forall x:heights [to_rep4(x)]. in_range5(to_rep4(x)))
+
+axiom coerce_axiom4 :
+  (forall x:int [to_rep4(of_rep4(x))]. (in_range5(x) ->
+  (to_rep4(of_rep4(x)) = x)))
+
+type us_split_fields = { rec__camera_types__blob_type__signature :
+signature_type; rec__camera_types__blob_type__x : columns;
+rec__camera_types__blob_type__y : rows; rec__camera_types__blob_type__width :
+widths; rec__camera_types__blob_type__height : heights
+}
+
+function us_split_fields_rec__camera_types__blob_type__signature__projection(a: us_split_fields) : signature_type =
+  (a).rec__camera_types__blob_type__signature
+
+function us_split_fields_rec__camera_types__blob_type__x__projection(a: us_split_fields) : columns =
+  (a).rec__camera_types__blob_type__x
+
+function us_split_fields_rec__camera_types__blob_type__y__projection(a: us_split_fields) : rows =
+  (a).rec__camera_types__blob_type__y
+
+function us_split_fields_rec__camera_types__blob_type__width__projection(a: us_split_fields) : widths =
+  (a).rec__camera_types__blob_type__width
+
+function us_split_fields_rec__camera_types__blob_type__height__projection(a: us_split_fields) : heights =
+  (a).rec__camera_types__blob_type__height
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq6(a: us_rep, b: us_rep) : bool =
+  (if (((to_rep(((a).us_split_fields1).rec__camera_types__blob_type__signature) = to_rep(((b).us_split_fields1).rec__camera_types__blob_type__signature)) and
+  (to_rep1(((a).us_split_fields1).rec__camera_types__blob_type__x) = to_rep1(((b).us_split_fields1).rec__camera_types__blob_type__x))) and
+  (((to_rep2(((a).us_split_fields1).rec__camera_types__blob_type__y) = to_rep2(((b).us_split_fields1).rec__camera_types__blob_type__y)) and
+  (to_rep3(((a).us_split_fields1).rec__camera_types__blob_type__width) = to_rep3(((b).us_split_fields1).rec__camera_types__blob_type__width))) and
+  (to_rep4(((a).us_split_fields1).rec__camera_types__blob_type__height) = to_rep4(((b).us_split_fields1).rec__camera_types__blob_type__height)))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic camera_types__blob_type__signature__first__bit : int
+
+logic camera_types__blob_type__signature__last__bit : int
+
+logic camera_types__blob_type__signature__position : int
+
+axiom camera_types__blob_type__signature__first__bit_axiom :
+  (0 <= camera_types__blob_type__signature__first__bit)
+
+axiom camera_types__blob_type__signature__last__bit_axiom :
+  (camera_types__blob_type__signature__first__bit <  camera_types__blob_type__signature__last__bit)
+
+axiom camera_types__blob_type__signature__position_axiom :
+  (0 <= camera_types__blob_type__signature__position)
+
+logic camera_types__blob_type__x__first__bit : int
+
+logic camera_types__blob_type__x__last__bit : int
+
+logic camera_types__blob_type__x__position : int
+
+axiom camera_types__blob_type__x__first__bit_axiom :
+  (0 <= camera_types__blob_type__x__first__bit)
+
+axiom camera_types__blob_type__x__last__bit_axiom :
+  (camera_types__blob_type__x__first__bit <  camera_types__blob_type__x__last__bit)
+
+axiom camera_types__blob_type__x__position_axiom :
+  (0 <= camera_types__blob_type__x__position)
+
+logic camera_types__blob_type__y__first__bit : int
+
+logic camera_types__blob_type__y__last__bit : int
+
+logic camera_types__blob_type__y__position : int
+
+axiom camera_types__blob_type__y__first__bit_axiom :
+  (0 <= camera_types__blob_type__y__first__bit)
+
+axiom camera_types__blob_type__y__last__bit_axiom :
+  (camera_types__blob_type__y__first__bit <  camera_types__blob_type__y__last__bit)
+
+axiom camera_types__blob_type__y__position_axiom :
+  (0 <= camera_types__blob_type__y__position)
+
+logic camera_types__blob_type__width__first__bit : int
+
+logic camera_types__blob_type__width__last__bit : int
+
+logic camera_types__blob_type__width__position : int
+
+axiom camera_types__blob_type__width__first__bit_axiom :
+  (0 <= camera_types__blob_type__width__first__bit)
+
+axiom camera_types__blob_type__width__last__bit_axiom :
+  (camera_types__blob_type__width__first__bit <  camera_types__blob_type__width__last__bit)
+
+axiom camera_types__blob_type__width__position_axiom :
+  (0 <= camera_types__blob_type__width__position)
+
+logic camera_types__blob_type__height__first__bit : int
+
+logic camera_types__blob_type__height__last__bit : int
+
+logic camera_types__blob_type__height__position : int
+
+axiom camera_types__blob_type__height__first__bit_axiom :
+  (0 <= camera_types__blob_type__height__first__bit)
+
+axiom camera_types__blob_type__height__last__bit_axiom :
+  (camera_types__blob_type__height__first__bit <  camera_types__blob_type__height__last__bit)
+
+axiom camera_types__blob_type__height__position_axiom :
+  (0 <= camera_types__blob_type__height__position)
+
+logic user_eq5 : us_rep, us_rep -> bool
+
+logic dummy5 : us_rep
+
+type blob_type__ref = { blob_type__content : us_rep
+}
+
+function blob_type__ref_blob_type__content__projection(a: blob_type__ref) : us_rep =
+  (a).blob_type__content
+
+logic i1s : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate dynamic_invariant(temp___expr_207: us_rep,
+  temp___is_init_203: bool, temp___skip_constant_204: bool,
+  temp___do_toplevel_205: bool, temp___do_typ_inv_206: bool) =
+  ((temp___do_toplevel_205 = true) ->
+  (in_range2((to_rep1(((temp___expr_207).us_split_fields1).rec__camera_types__blob_type__x) + div(to_rep3(((temp___expr_207).us_split_fields1).rec__camera_types__blob_type__width),
+  2))) and
+  in_range3((to_rep2(((temp___expr_207).us_split_fields1).rec__camera_types__blob_type__y) + div(to_rep4(((temp___expr_207).us_split_fields1).rec__camera_types__blob_type__height),
+  2)))))
+
+predicate default_initial_assumption(temp___expr_209: us_rep,
+  temp___skip_top_level_210: bool) =
+  (((to_rep(((temp___expr_209).us_split_fields1).rec__camera_types__blob_type__signature) = 0) and
+  (to_rep1(((temp___expr_209).us_split_fields1).rec__camera_types__blob_type__x) = 0)) and
+  (((to_rep2(((temp___expr_209).us_split_fields1).rec__camera_types__blob_type__y) = 0) and
+  (to_rep3(((temp___expr_209).us_split_fields1).rec__camera_types__blob_type__width) = 0)) and
+  (to_rep4(((temp___expr_209).us_split_fields1).rec__camera_types__blob_type__height) = 0)))
+
+predicate dynamic_predicate(temp___211: us_rep) =
+  (in_range2((to_rep1(((temp___211).us_split_fields1).rec__camera_types__blob_type__x) + div(to_rep3(((temp___211).us_split_fields1).rec__camera_types__blob_type__width),
+  2))) and
+  in_range3((to_rep2(((temp___211).us_split_fields1).rec__camera_types__blob_type__y) + div(to_rep4(((temp___211).us_split_fields1).rec__camera_types__blob_type__height),
+  2))))
+
+predicate dynamic_invariant1(temp___expr_165: int, temp___is_init_161: bool,
+  temp___skip_constant_162: bool, temp___do_toplevel_163: bool,
+  temp___do_typ_inv_164: bool) = (((temp___is_init_161 = true) or
+  (0 <= 7)) -> in_range1(temp___expr_165))
+
+predicate dynamic_invariant2(temp___expr_179: int, temp___is_init_175: bool,
+  temp___skip_constant_176: bool, temp___do_toplevel_177: bool,
+  temp___do_typ_inv_178: bool) = (((temp___is_init_175 = true) or
+  (0 <= 319)) -> in_range2(temp___expr_179))
+
+predicate dynamic_invariant3(temp___expr_186: int, temp___is_init_182: bool,
+  temp___skip_constant_183: bool, temp___do_toplevel_184: bool,
+  temp___do_typ_inv_185: bool) = (((temp___is_init_182 = true) or
+  (0 <= 199)) -> in_range3(temp___expr_186))
+
+predicate dynamic_invariant4(temp___expr_193: int, temp___is_init_189: bool,
+  temp___skip_constant_190: bool, temp___do_toplevel_191: bool,
+  temp___do_typ_inv_192: bool) = (((temp___is_init_189 = true) or
+  (0 <= 320)) -> in_range4(temp___expr_193))
+
+predicate dynamic_invariant5(temp___expr_200: int, temp___is_init_196: bool,
+  temp___skip_constant_197: bool, temp___do_toplevel_198: bool,
+  temp___do_typ_inv_199: bool) = (((temp___is_init_196 = true) or
+  (0 <= 200)) -> in_range5(temp___expr_200))
+
+axiom cdiv_cases :
+  (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((0 <  d) -> (div(n,
+  d) = (n / d)))))
+
+axiom cdiv_cases1 :
+  (forall n:int. forall d:int [div(n, d)]. ((n <= 0) -> ((0 <  d) -> (div(n,
+  d) = (-((-n) / d))))))
+
+axiom cdiv_cases2 :
+  (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((d <  0) -> (div(n,
+  d) = (-(n / (-d)))))))
+
+axiom cdiv_cases3 :
+  (forall n:int. forall d:int [div(n, d)]. ((n <= 0) -> ((d <  0) -> (div(n,
+  d) = ((-n) / (-d))))))
+
+axiom cmod_cases :
+  (forall n:int. forall d:int [mod(n, d)]. ((0 <= n) -> ((0 <  d) -> (mod(n,
+  d) = (n % d)))))
+
+axiom cmod_cases1 :
+  (forall n:int. forall d:int [mod(n, d)]. ((n <= 0) -> ((0 <  d) -> (mod(n,
+  d) = (-((-n) % d))))))
+
+axiom cmod_cases2 :
+  (forall n:int. forall d:int [mod(n, d)]. ((0 <= n) -> ((d <  0) -> (mod(n,
+  d) = (n % (-d))))))
+
+axiom cmod_cases3 :
+  (forall n:int. forall d:int [mod(n, d)]. ((n <= 0) -> ((d <  0) -> (mod(n,
+  d) = (-((-n) % (-d)))))))
+
+ (* File "camera_types.ads", line 12, characters 0-0 *)
+goal defqtvc : (dynamic_invariant(i1s, true, false, false, true) ->
+  (forall o:int.
+  ((to_rep4(((i1s).us_split_fields1).rec__camera_types__blob_type__height) = o) ->
+  (forall o1:int.
+  ((to_rep2(((i1s).us_split_fields1).rec__camera_types__blob_type__y) = o1) ->
+  (forall o2:int.
+  ((to_rep3(((i1s).us_split_fields1).rec__camera_types__blob_type__width) = o2) ->
+  (not (2 = 0)))))))))

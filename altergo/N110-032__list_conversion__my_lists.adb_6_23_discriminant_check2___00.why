@@ -1,0 +1,876 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type count_type
+
+logic count_typeqtint : count_type -> int
+
+axiom count_typeqtaxiom : (forall i:count_type. (0 <= count_typeqtint(i)))
+
+axiom count_typeqtaxiom1 :
+  (forall i:count_type. (count_typeqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : count_type, count_type -> bool
+
+logic dummy : count_type
+
+type count_type__ref = { count_type__content : count_type
+}
+
+function count_type__ref_count_type__content__projection(a: count_type__ref) : count_type =
+  (a).count_type__content
+
+function to_rep(x: count_type) : int = count_typeqtint(x)
+
+logic of_rep : int -> count_type
+
+axiom inversion_axiom :
+  (forall x:count_type [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:count_type [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type us_main_type
+
+logic us_main_eq : us_main_type, us_main_type -> bool
+
+type us_split_discrs = { rec__my_lists__my_lists__list__capacity : count_type
+}
+
+function us_split_discrs_rec__my_lists__my_lists__list__capacity__projection(a: us_split_discrs) : count_type =
+  (a).rec__my_lists__my_lists__list__capacity
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_split_fields = { rec__my_lists__my_lists__list : us_main_type
+}
+
+function us_split_fields_rec__my_lists__my_lists__list__projection(a: us_split_fields) : us_main_type =
+  (a).rec__my_lists__my_lists__list
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_discrs1 : us_split_discrs; us_split_fields1 :
+us_split_fields
+}
+
+function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
+  (a).us_split_discrs1
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq1(a: us_rep, b: us_rep) : bool =
+  (if ((to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = to_rep(((b).us_split_discrs1).rec__my_lists__my_lists__list__capacity)) and
+  (us_main_eq(((a).us_split_fields1).rec__my_lists__my_lists__list,
+  ((b).us_split_fields1).rec__my_lists__my_lists__list) = true)) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic my_lists__my_lists__list__capacity__first__bit : int
+
+logic my_lists__my_lists__list__capacity__last__bit : int
+
+logic my_lists__my_lists__list__capacity__position : int
+
+axiom my_lists__my_lists__list__capacity__first__bit_axiom :
+  (0 <= my_lists__my_lists__list__capacity__first__bit)
+
+axiom my_lists__my_lists__list__capacity__last__bit_axiom :
+  (my_lists__my_lists__list__capacity__first__bit <  my_lists__my_lists__list__capacity__last__bit)
+
+axiom my_lists__my_lists__list__capacity__position_axiom :
+  (0 <= my_lists__my_lists__list__capacity__position)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type list__ref = { list__content : us_rep
+}
+
+function list__ref_list__content__projection(a: list__ref) : us_rep =
+  (a).list__content
+
+logic length : us_rep -> int
+
+logic length__function_guard : int, us_rep -> prop
+
+logic oeq : us_rep, us_rep -> bool
+
+logic oeq__function_guard : bool, us_rep, us_rep -> prop
+
+axiom user_eq__def_axiom :
+  (forall a:us_rep. forall b:us_rep [user_eq1(a, b)]. (user_eq1(a,
+  b) = oeq(a, b)))
+
+predicate in_range1(rec__my_lists__my_lists__list__capacity1: int,
+  a: us_rep) =
+  (rec__my_lists__my_lists__list__capacity1 = to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity))
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic my_lists__my_lists__list__capacity__first__bit1 : int
+
+logic my_lists__my_lists__list__capacity__last__bit1 : int
+
+logic my_lists__my_lists__list__capacity__position1 : int
+
+axiom my_lists__my_lists__list__capacity__first__bit_axiom1 :
+  (0 <= my_lists__my_lists__list__capacity__first__bit1)
+
+axiom my_lists__my_lists__list__capacity__last__bit_axiom1 :
+  (my_lists__my_lists__list__capacity__first__bit1 <  my_lists__my_lists__list__capacity__last__bit1)
+
+axiom my_lists__my_lists__list__capacity__position_axiom1 :
+  (0 <= my_lists__my_lists__list__capacity__position1)
+
+logic user_eq2 : us_rep, us_rep -> bool
+
+logic dummy2 : us_rep
+
+type tl1S__ref = { tl1S__content : us_rep
+}
+
+function tl1S__ref_tl1S__content__projection(a: tl1S__ref) : us_rep =
+  (a).tl1S__content
+
+logic l1__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic is_empty : us_rep -> bool
+
+logic is_empty__function_guard : bool, us_rep -> prop
+
+axiom user_eq__def_axiom1 :
+  (forall a:us_rep. forall b:us_rep [user_eq2(a, b)]. (user_eq2(a,
+  b) = oeq(a, b)))
+
+predicate dynamic_invariant(temp___expr_655: us_rep,
+  temp___is_init_651: bool, temp___skip_constant_652: bool,
+  temp___do_toplevel_653: bool, temp___do_typ_inv_654: bool) =
+  ((not (temp___skip_constant_652 = true)) -> in_range1(100,
+  temp___expr_655))
+
+predicate default_initial_assumption(temp___expr_657: us_rep,
+  temp___skip_top_level_658: bool) =
+  ((to_rep(((temp___expr_657).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
+  ((not (temp___skip_top_level_658 = true)) ->
+  (is_empty(temp___expr_657) = true)))
+
+predicate in_range2(rec__my_lists__my_lists__list__capacity1: int,
+  a: us_rep) =
+  (rec__my_lists__my_lists__list__capacity1 = to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity))
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic my_lists__my_lists__list__capacity__first__bit2 : int
+
+logic my_lists__my_lists__list__capacity__last__bit2 : int
+
+logic my_lists__my_lists__list__capacity__position2 : int
+
+axiom my_lists__my_lists__list__capacity__first__bit_axiom2 :
+  (0 <= my_lists__my_lists__list__capacity__first__bit2)
+
+axiom my_lists__my_lists__list__capacity__last__bit_axiom2 :
+  (my_lists__my_lists__list__capacity__first__bit2 <  my_lists__my_lists__list__capacity__last__bit2)
+
+axiom my_lists__my_lists__list__capacity__position_axiom2 :
+  (0 <= my_lists__my_lists__list__capacity__position2)
+
+logic user_eq3 : us_rep, us_rep -> bool
+
+logic dummy3 : us_rep
+
+type c_list1__ref = { c_list1__content : us_rep
+}
+
+function c_list1__ref_c_list1__content__projection(a: c_list1__ref) : us_rep =
+  (a).c_list1__content
+
+logic l2__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+axiom user_eq__def_axiom2 :
+  (forall a:us_rep. forall b:us_rep [user_eq3(a, b)]. (user_eq3(a,
+  b) = oeq(a, b)))
+
+predicate dynamic_invariant1(temp___expr_583: us_rep,
+  temp___is_init_579: bool, temp___skip_constant_580: bool,
+  temp___do_toplevel_581: bool, temp___do_typ_inv_582: bool) =
+  ((not (temp___skip_constant_580 = true)) -> in_range2(100,
+  temp___expr_583))
+
+predicate default_initial_assumption1(temp___expr_585: us_rep,
+  temp___skip_top_level_586: bool) =
+  ((to_rep(((temp___expr_585).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
+  ((not (temp___skip_top_level_586 = true)) ->
+  (is_empty(temp___expr_585) = true)))
+
+predicate in_range3(rec__my_lists__my_lists__list__capacity1: int,
+  a: us_rep) =
+  (rec__my_lists__my_lists__list__capacity1 = to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity))
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic my_lists__my_lists__list__capacity__first__bit3 : int
+
+logic my_lists__my_lists__list__capacity__last__bit3 : int
+
+logic my_lists__my_lists__list__capacity__position3 : int
+
+axiom my_lists__my_lists__list__capacity__first__bit_axiom3 :
+  (0 <= my_lists__my_lists__list__capacity__first__bit3)
+
+axiom my_lists__my_lists__list__capacity__last__bit_axiom3 :
+  (my_lists__my_lists__list__capacity__first__bit3 <  my_lists__my_lists__list__capacity__last__bit3)
+
+axiom my_lists__my_lists__list__capacity__position_axiom3 :
+  (0 <= my_lists__my_lists__list__capacity__position3)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type c_list2__ref = { c_list2__content : us_rep
+}
+
+function c_list2__ref_c_list2__content__projection(a: c_list2__ref) : us_rep =
+  (a).c_list2__content
+
+logic l3__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+axiom user_eq__def_axiom3 :
+  (forall a:us_rep. forall b:us_rep [user_eq4(a, b)]. (user_eq4(a,
+  b) = oeq(a, b)))
+
+predicate dynamic_invariant2(temp___expr_593: us_rep,
+  temp___is_init_589: bool, temp___skip_constant_590: bool,
+  temp___do_toplevel_591: bool, temp___do_typ_inv_592: bool) =
+  ((not (temp___skip_constant_590 = true)) -> in_range3(100,
+  temp___expr_593))
+
+predicate default_initial_assumption2(temp___expr_595: us_rep,
+  temp___skip_top_level_596: bool) =
+  ((to_rep(((temp___expr_595).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
+  ((not (temp___skip_top_level_596 = true)) ->
+  (is_empty(temp___expr_595) = true)))
+
+predicate in_range4(rec__my_lists__my_lists__list__capacity1: int,
+  a: us_rep) =
+  (rec__my_lists__my_lists__list__capacity1 = to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity))
+
+logic value__size4 : int
+
+logic object__size4 : int
+
+logic alignment4 : int
+
+axiom value__size_axiom4 : (0 <= value__size4)
+
+axiom object__size_axiom4 : (0 <= object__size4)
+
+axiom alignment_axiom4 : (0 <= alignment4)
+
+logic my_lists__my_lists__list__capacity__first__bit4 : int
+
+logic my_lists__my_lists__list__capacity__last__bit4 : int
+
+logic my_lists__my_lists__list__capacity__position4 : int
+
+axiom my_lists__my_lists__list__capacity__first__bit_axiom4 :
+  (0 <= my_lists__my_lists__list__capacity__first__bit4)
+
+axiom my_lists__my_lists__list__capacity__last__bit_axiom4 :
+  (my_lists__my_lists__list__capacity__first__bit4 <  my_lists__my_lists__list__capacity__last__bit4)
+
+axiom my_lists__my_lists__list__capacity__position_axiom4 :
+  (0 <= my_lists__my_lists__list__capacity__position4)
+
+logic user_eq5 : us_rep, us_rep -> bool
+
+logic dummy5 : us_rep
+
+type c_list11__ref = { c_list11__content : us_rep
+}
+
+function c_list11__ref_c_list11__content__projection(a: c_list11__ref) : us_rep =
+  (a).c_list11__content
+
+logic l4__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+axiom user_eq__def_axiom4 :
+  (forall a:us_rep. forall b:us_rep [user_eq5(a, b)]. (user_eq5(a,
+  b) = oeq(a, b)))
+
+predicate dynamic_invariant3(temp___expr_615: us_rep,
+  temp___is_init_611: bool, temp___skip_constant_612: bool,
+  temp___do_toplevel_613: bool, temp___do_typ_inv_614: bool) =
+  ((not (temp___skip_constant_612 = true)) -> in_range4(100,
+  temp___expr_615))
+
+predicate default_initial_assumption3(temp___expr_617: us_rep,
+  temp___skip_top_level_618: bool) =
+  ((to_rep(((temp___expr_617).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
+  ((not (temp___skip_top_level_618 = true)) ->
+  (is_empty(temp___expr_617) = true)))
+
+predicate in_range5(rec__my_lists__my_lists__list__capacity1: int,
+  a: us_rep) =
+  (rec__my_lists__my_lists__list__capacity1 = to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity))
+
+logic value__size5 : int
+
+logic object__size5 : int
+
+logic alignment5 : int
+
+axiom value__size_axiom5 : (0 <= value__size5)
+
+axiom object__size_axiom5 : (0 <= object__size5)
+
+axiom alignment_axiom5 : (0 <= alignment5)
+
+logic my_lists__my_lists__list__capacity__first__bit5 : int
+
+logic my_lists__my_lists__list__capacity__last__bit5 : int
+
+logic my_lists__my_lists__list__capacity__position5 : int
+
+axiom my_lists__my_lists__list__capacity__first__bit_axiom5 :
+  (0 <= my_lists__my_lists__list__capacity__first__bit5)
+
+axiom my_lists__my_lists__list__capacity__last__bit_axiom5 :
+  (my_lists__my_lists__list__capacity__first__bit5 <  my_lists__my_lists__list__capacity__last__bit5)
+
+axiom my_lists__my_lists__list__capacity__position_axiom5 :
+  (0 <= my_lists__my_lists__list__capacity__position5)
+
+logic user_eq6 : us_rep, us_rep -> bool
+
+logic dummy6 : us_rep
+
+type c_list12__ref = { c_list12__content : us_rep
+}
+
+function c_list12__ref_c_list12__content__projection(a: c_list12__ref) : us_rep =
+  (a).c_list12__content
+
+logic l5__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+axiom user_eq__def_axiom5 :
+  (forall a:us_rep. forall b:us_rep [user_eq6(a, b)]. (user_eq6(a,
+  b) = oeq(a, b)))
+
+predicate dynamic_invariant4(temp___expr_625: us_rep,
+  temp___is_init_621: bool, temp___skip_constant_622: bool,
+  temp___do_toplevel_623: bool, temp___do_typ_inv_624: bool) =
+  ((not (temp___skip_constant_622 = true)) -> in_range5(100,
+  temp___expr_625))
+
+predicate default_initial_assumption4(temp___expr_627: us_rep,
+  temp___skip_top_level_628: bool) =
+  ((to_rep(((temp___expr_627).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
+  ((not (temp___skip_top_level_628 = true)) ->
+  (is_empty(temp___expr_627) = true)))
+
+predicate in_range6(rec__my_lists__my_lists__list__capacity1: int,
+  a: us_rep) =
+  (rec__my_lists__my_lists__list__capacity1 = to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity))
+
+logic value__size6 : int
+
+logic object__size6 : int
+
+logic alignment6 : int
+
+axiom value__size_axiom6 : (0 <= value__size6)
+
+axiom object__size_axiom6 : (0 <= object__size6)
+
+axiom alignment_axiom6 : (0 <= alignment6)
+
+logic my_lists__my_lists__list__capacity__first__bit6 : int
+
+logic my_lists__my_lists__list__capacity__last__bit6 : int
+
+logic my_lists__my_lists__list__capacity__position6 : int
+
+axiom my_lists__my_lists__list__capacity__first__bit_axiom6 :
+  (0 <= my_lists__my_lists__list__capacity__first__bit6)
+
+axiom my_lists__my_lists__list__capacity__last__bit_axiom6 :
+  (my_lists__my_lists__list__capacity__first__bit6 <  my_lists__my_lists__list__capacity__last__bit6)
+
+axiom my_lists__my_lists__list__capacity__position_axiom6 :
+  (0 <= my_lists__my_lists__list__capacity__position6)
+
+logic user_eq7 : us_rep, us_rep -> bool
+
+logic dummy7 : us_rep
+
+type c_list21__ref = { c_list21__content : us_rep
+}
+
+function c_list21__ref_c_list21__content__projection(a: c_list21__ref) : us_rep =
+  (a).c_list21__content
+
+logic l6__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+axiom user_eq__def_axiom6 :
+  (forall a:us_rep. forall b:us_rep [user_eq7(a, b)]. (user_eq7(a,
+  b) = oeq(a, b)))
+
+predicate dynamic_invariant5(temp___expr_635: us_rep,
+  temp___is_init_631: bool, temp___skip_constant_632: bool,
+  temp___do_toplevel_633: bool, temp___do_typ_inv_634: bool) =
+  ((not (temp___skip_constant_632 = true)) -> in_range6(100,
+  temp___expr_635))
+
+predicate default_initial_assumption5(temp___expr_637: us_rep,
+  temp___skip_top_level_638: bool) =
+  ((to_rep(((temp___expr_637).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
+  ((not (temp___skip_top_level_638 = true)) ->
+  (is_empty(temp___expr_637) = true)))
+
+predicate in_range7(rec__my_lists__my_lists__list__capacity1: int,
+  a: us_rep) =
+  (rec__my_lists__my_lists__list__capacity1 = to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity))
+
+logic value__size7 : int
+
+logic object__size7 : int
+
+logic alignment7 : int
+
+axiom value__size_axiom7 : (0 <= value__size7)
+
+axiom object__size_axiom7 : (0 <= object__size7)
+
+axiom alignment_axiom7 : (0 <= alignment7)
+
+logic my_lists__my_lists__list__capacity__first__bit7 : int
+
+logic my_lists__my_lists__list__capacity__last__bit7 : int
+
+logic my_lists__my_lists__list__capacity__position7 : int
+
+axiom my_lists__my_lists__list__capacity__first__bit_axiom7 :
+  (0 <= my_lists__my_lists__list__capacity__first__bit7)
+
+axiom my_lists__my_lists__list__capacity__last__bit_axiom7 :
+  (my_lists__my_lists__list__capacity__first__bit7 <  my_lists__my_lists__list__capacity__last__bit7)
+
+axiom my_lists__my_lists__list__capacity__position_axiom7 :
+  (0 <= my_lists__my_lists__list__capacity__position7)
+
+logic user_eq8 : us_rep, us_rep -> bool
+
+logic dummy8 : us_rep
+
+type c_list22__ref = { c_list22__content : us_rep
+}
+
+function c_list22__ref_c_list22__content__projection(a: c_list22__ref) : us_rep =
+  (a).c_list22__content
+
+logic l7__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+predicate dynamic_invariant6(temp___expr_645: us_rep,
+  temp___is_init_641: bool, temp___skip_constant_642: bool,
+  temp___do_toplevel_643: bool, temp___do_typ_inv_644: bool) =
+  ((not (temp___skip_constant_642 = true)) -> in_range7(100,
+  temp___expr_645))
+
+predicate default_initial_assumption6(temp___expr_647: us_rep,
+  temp___skip_top_level_648: bool) =
+  ((to_rep(((temp___expr_647).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
+  ((not (temp___skip_top_level_648 = true)) ->
+  (is_empty(temp___expr_647) = true)))
+
+predicate dynamic_invariant7(temp___expr_243: int, temp___is_init_239: bool,
+  temp___skip_constant_240: bool, temp___do_toplevel_241: bool,
+  temp___do_typ_inv_242: bool) = (((temp___is_init_239 = true) or
+  (0 <= 2147483647)) -> in_range(temp___expr_243))
+
+axiom length__post_axiom :
+  (forall container:us_rep [length(container)].
+  (length(container) <= to_rep(((container).us_split_discrs1).rec__my_lists__my_lists__list__capacity)))
+
+axiom length__post_axiom1 :
+  (forall container:us_rep [length(container)].
+  dynamic_invariant7(length(container), true, false, true, true))
+
+type us_main_type1
+
+logic us_main_eq1 : us_main_type1, us_main_type1 -> bool
+
+type us_rep1
+
+logic bool_eq2 : us_rep1, us_rep1 -> bool
+
+logic value__size8 : int
+
+logic object__size8 : int
+
+logic alignment8 : int
+
+axiom value__size_axiom8 : (0 <= value__size8)
+
+axiom object__size_axiom8 : (0 <= object__size8)
+
+axiom alignment_axiom8 : (0 <= alignment8)
+
+logic user_eq9 : us_rep1, us_rep1 -> bool
+
+logic dummy9 : us_rep1
+
+type sequence__ref = { sequence__content : us_rep1
+}
+
+function sequence__ref_sequence__content__projection(a: sequence__ref) : us_rep1 =
+  (a).sequence__content
+
+logic length1 : us_rep1 -> int
+
+logic length__function_guard1 : int, us_rep1 -> prop
+
+logic model : us_rep -> us_rep1
+
+logic model__function_guard : us_rep1, us_rep -> prop
+
+logic bool_eq3 : int, int -> bool
+
+logic bool_ne : int, int -> bool
+
+logic bool_lt : int, int -> bool
+
+logic bool_le : int, int -> bool
+
+logic bool_gt : int, int -> bool
+
+logic bool_ge : int, int -> bool
+
+axiom bool_eq_axiom :
+  (forall x:int. (forall y:int. ((bool_eq3(x, y) = true) -> (x = y))))
+
+axiom bool_eq_axiom1 :
+  (forall x:int. (forall y:int. ((x = y) -> (bool_eq3(x, y) = true))))
+
+axiom bool_ne_axiom :
+  (forall x:int. (forall y:int. ((bool_ne(x, y) = true) -> (not (x = y)))))
+
+axiom bool_ne_axiom1 :
+  (forall x:int. (forall y:int. ((not (x = y)) -> (bool_ne(x, y) = true))))
+
+axiom bool_lt_axiom :
+  (forall x:int. (forall y:int. ((bool_lt(x, y) = true) -> (x <  y))))
+
+axiom bool_lt_axiom1 :
+  (forall x:int. (forall y:int. ((x <  y) -> (bool_lt(x, y) = true))))
+
+axiom bool_int__le_axiom :
+  (forall x:int. (forall y:int. ((bool_le(x, y) = true) -> (x <= y))))
+
+axiom bool_int__le_axiom1 :
+  (forall x:int. (forall y:int. ((x <= y) -> (bool_le(x, y) = true))))
+
+axiom bool_gt_axiom :
+  (forall x:int. (forall y:int. ((bool_gt(x, y) = true) -> (y <  x))))
+
+axiom bool_gt_axiom1 :
+  (forall x:int. (forall y:int. ((y <  x) -> (bool_gt(x, y) = true))))
+
+axiom bool_ge_axiom :
+  (forall x:int. (forall y:int. ((bool_ge(x, y) = true) -> (y <= x))))
+
+axiom bool_ge_axiom1 :
+  (forall x:int. (forall y:int. ((y <= x) -> (bool_ge(x, y) = true))))
+
+function length2(x: int, y: int) : int =
+  (if (x <= y) then ((y - x) + 1) else 0)
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq4(x: bool, y: bool) : bool =
+  (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range8(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE1 : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> bool
+
+function last(container: us_rep1) : int = (0 + length1(container))
+
+logic last__function_guard : int, us_rep1 -> prop
+
+logic get : us_rep1, int -> int
+
+logic get__function_guard : int, us_rep1, int -> prop
+
+function oeq1(left: us_rep1, right: us_rep1) : bool =
+  andb(bool_eq3(length1(left), length1(right)),
+  (if (forall n:int. (((1 <= n) and (n <= last(left))) -> (get(left,
+      n) = get(right, n)))) then true else false))
+
+logic oeq__function_guard1 : bool, us_rep1, us_rep1 -> prop
+
+axiom user_eq__def_axiom7 :
+  (forall a:us_rep1. forall b:us_rep1 [user_eq9(a, b)]. (user_eq9(a,
+  b) = oeq1(a, b)))
+
+predicate default_initial_assumption7(temp___expr_294: us_rep1,
+  temp___skip_top_level_295: bool) =
+  ((not (temp___skip_top_level_295 = true)) ->
+  (length1(temp___expr_294) = 0))
+
+axiom model__post_axiom :
+  (forall container:us_rep [model(container)].
+  (length1(model(container)) = length(container)))
+
+axiom oeq__post_axiom :
+  (forall left:us_rep. forall right:us_rep [oeq(left, right)]. ((oeq(left,
+  right) = true) -> (oeq1(model(left), model(right)) = true)))
+
+axiom oeq__post_axiom1 :
+  (forall left:us_rep. forall right:us_rep [oeq(left, right)].
+  ((oeq1(model(left), model(right)) = true) -> (oeq(left, right) = true)))
+
+axiom is_empty__post_axiom :
+  (forall container:us_rep [is_empty(container)].
+  ((is_empty(container) = true) -> (length(container) = 0)))
+
+axiom is_empty__post_axiom1 :
+  (forall container:us_rep [is_empty(container)]. ((length(container) = 0) ->
+  (is_empty(container) = true)))
+
+type extended_index
+
+logic extended_indexqtint : extended_index -> int
+
+axiom extended_indexqtaxiom :
+  (forall i:extended_index. (0 <= extended_indexqtint(i)))
+
+axiom extended_indexqtaxiom1 :
+  (forall i:extended_index. (extended_indexqtint(i) <= 2147483647))
+
+predicate in_range9(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq10 : extended_index, extended_index -> bool
+
+logic dummy10 : extended_index
+
+type extended_index__ref = { extended_index__content : extended_index
+}
+
+function extended_index__ref_extended_index__content__projection(a: extended_index__ref) : extended_index =
+  (a).extended_index__content
+
+predicate dynamic_invariant8(temp___expr_286: int, temp___is_init_282: bool,
+  temp___skip_constant_283: bool, temp___do_toplevel_284: bool,
+  temp___do_typ_inv_285: bool) = (((temp___is_init_282 = true) or
+  (0 <= 2147483647)) -> in_range9(temp___expr_286))
+
+axiom length__post_axiom2 :
+  (forall container:us_rep1 [length1(container)].
+  ((0 + length1(container)) <= 2147483647))
+
+axiom length__post_axiom3 :
+  (forall container:us_rep1 [length1(container)].
+  dynamic_invariant7(length1(container), true, false, true, true))
+
+type element_type
+
+logic element_typeqtint : element_type -> int
+
+axiom element_typeqtaxiom :
+  (forall i:element_type. (0 <= element_typeqtint(i)))
+
+axiom element_typeqtaxiom1 :
+  (forall i:element_type. (element_typeqtint(i) <= 100))
+
+predicate in_range10(x: int) = ((0 <= x) and (x <= 100))
+
+function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq11 : element_type, element_type -> bool
+
+logic dummy11 : element_type
+
+type element_type__ref = { element_type__content : element_type
+}
+
+function element_type__ref_element_type__content__3__projection(a: element_type__ref) : element_type =
+  (a).element_type__content
+
+predicate dynamic_invariant9(temp___expr_279: int, temp___is_init_275: bool,
+  temp___skip_constant_276: bool, temp___do_toplevel_277: bool,
+  temp___do_typ_inv_278: bool) = (((temp___is_init_275 = true) or
+  (0 <= 100)) -> in_range10(temp___expr_279))
+
+axiom get__post_axiom :
+  (forall container:us_rep1.
+  (forall position:int [get(container, position)].
+  ((dynamic_invariant8(position, true, true, true, true) and
+  ((1 <= position) and (position <= last(container)))) ->
+  dynamic_invariant9(get(container, position), true, false, true, true))))
+
+ (* File "my_lists.ads", line 32, characters 0-0 *)
+goal defqtvc :
+  (forall l1__split_fields:us_main_type. (in_range(100) ->
+  (default_initial_assumption({ us_split_discrs1 = l1__split_discrs;
+  us_split_fields1 = { rec__my_lists__my_lists__list = l1__split_fields } },
+  false) -> (dynamic_invariant({ us_split_discrs1 = l1__split_discrs;
+  us_split_fields1 = { rec__my_lists__my_lists__list = l1__split_fields } },
+  false, false, true, true) -> in_range2(100, { us_split_discrs1 =
+  l1__split_discrs; us_split_fields1 = { rec__my_lists__my_lists__list =
+  l1__split_fields } })))))

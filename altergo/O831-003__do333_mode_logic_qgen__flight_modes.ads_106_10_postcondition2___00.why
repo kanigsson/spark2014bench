@@ -1,0 +1,1684 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+logic pilot_flying_side : bool
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic is_ap_engaged : bool
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic overspeed : bool
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic is_offside_fd_on : bool
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic is_offside_vappr_active : bool
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic is_offside_vga_active : bool
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic pilot_flying_transfer : bool
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+logic when_ap_engaged : bool
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+logic sync_switch_pressed : bool
+
+logic attr__ATTRIBUTE_ADDRESS8 : int
+
+logic fd_switch_pressed : bool
+
+logic attr__ATTRIBUTE_ADDRESS9 : int
+
+logic hdg_switch_pressed : bool
+
+logic attr__ATTRIBUTE_ADDRESS10 : int
+
+logic nav_switch_pressed : bool
+
+logic attr__ATTRIBUTE_ADDRESS11 : int
+
+logic appr_switch_pressed : bool
+
+logic attr__ATTRIBUTE_ADDRESS12 : int
+
+logic ga_switch_pressed : bool
+
+logic attr__ATTRIBUTE_ADDRESS13 : int
+
+logic vs_switch_pressed : bool
+
+logic attr__ATTRIBUTE_ADDRESS14 : int
+
+logic flc_switch_pressed : bool
+
+logic attr__ATTRIBUTE_ADDRESS15 : int
+
+logic alt_switch_pressed : bool
+
+logic attr__ATTRIBUTE_ADDRESS16 : int
+
+logic vs_pitch_wheel_rotated : bool
+
+logic attr__ATTRIBUTE_ADDRESS17 : int
+
+logic altsel_target_changed : bool
+
+logic attr__ATTRIBUTE_ADDRESS18 : int
+
+logic nav_capture_condition_met : bool
+
+logic attr__ATTRIBUTE_ADDRESS19 : int
+
+logic lappr_capture_condition_met : bool
+
+logic attr__ATTRIBUTE_ADDRESS20 : int
+
+logic altsel_capture_condition_met : bool
+
+logic attr__ATTRIBUTE_ADDRESS21 : int
+
+logic altsel_track_condition_met : bool
+
+logic attr__ATTRIBUTE_ADDRESS22 : int
+
+logic vappr_capture_condition_met : bool
+
+logic attr__ATTRIBUTE_ADDRESS23 : int
+
+logic selected_nav_source_changed : bool
+
+logic attr__ATTRIBUTE_ADDRESS24 : int
+
+logic selected_nav_frequency_changed : bool
+
+logic attr__ATTRIBUTE_ADDRESS25 : int
+
+logic attr__ATTRIBUTE_ADDRESS26 : int
+
+logic attr__ATTRIBUTE_ADDRESS27 : int
+
+logic attr__ATTRIBUTE_ADDRESS28 : int
+
+logic attr__ATTRIBUTE_ADDRESS29 : int
+
+logic attr__ATTRIBUTE_ADDRESS30 : int
+
+logic attr__ATTRIBUTE_ADDRESS31 : int
+
+logic attr__ATTRIBUTE_ADDRESS32 : int
+
+logic attr__ATTRIBUTE_ADDRESS33 : int
+
+logic attr__ATTRIBUTE_ADDRESS34 : int
+
+logic attr__ATTRIBUTE_ADDRESS35 : int
+
+logic attr__ATTRIBUTE_ADDRESS36 : int
+
+logic attr__ATTRIBUTE_ADDRESS37 : int
+
+logic attr__ATTRIBUTE_ADDRESS38 : int
+
+logic attr__ATTRIBUTE_ADDRESS39 : int
+
+logic attr__ATTRIBUTE_ADDRESS40 : int
+
+logic attr__ATTRIBUTE_ADDRESS41 : int
+
+logic attr__ATTRIBUTE_ADDRESS42 : int
+
+logic attr__ATTRIBUTE_ADDRESS43 : int
+
+logic attr__ATTRIBUTE_ADDRESS44 : int
+
+logic attr__ATTRIBUTE_ADDRESS45 : int
+
+logic attr__ATTRIBUTE_ADDRESS46 : int
+
+logic attr__ATTRIBUTE_ADDRESS47 : int
+
+logic attr__ATTRIBUTE_ADDRESS48 : int
+
+logic attr__ATTRIBUTE_ADDRESS49 : int
+
+logic attr__ATTRIBUTE_ADDRESS50 : int
+
+logic attr__ATTRIBUTE_ADDRESS51 : int
+
+logic attr__ATTRIBUTE_ADDRESS52 : int
+
+logic attr__ATTRIBUTE_ADDRESS53 : int
+
+logic attr__ATTRIBUTE_ADDRESS54 : int
+
+logic attr__ATTRIBUTE_ADDRESS55 : int
+
+logic attr__ATTRIBUTE_ADDRESS56 : int
+
+logic attr__ATTRIBUTE_ADDRESS57 : int
+
+logic attr__ATTRIBUTE_ADDRESS58 : int
+
+logic attr__ATTRIBUTE_ADDRESS59 : int
+
+logic attr__ATTRIBUTE_ADDRESS60 : int
+
+logic attr__ATTRIBUTE_ADDRESS61 : int
+
+logic attr__ATTRIBUTE_ADDRESS62 : int
+
+logic attr__ATTRIBUTE_ADDRESS63 : int
+
+logic attr__ATTRIBUTE_ADDRESS64 : int
+
+logic attr__ATTRIBUTE_ADDRESS65 : int
+
+logic attr__ATTRIBUTE_ADDRESS66 : int
+
+logic attr__ATTRIBUTE_ADDRESS67 : int
+
+logic attr__ATTRIBUTE_ADDRESS68 : int
+
+logic attr__ATTRIBUTE_ADDRESS69 : int
+
+logic attr__ATTRIBUTE_ADDRESS70 : int
+
+logic attr__ATTRIBUTE_ADDRESS71 : int
+
+logic attr__ATTRIBUTE_ADDRESS72 : int
+
+logic attr__ATTRIBUTE_ADDRESS73 : int
+
+logic attr__ATTRIBUTE_ADDRESS74 : int
+
+logic attr__ATTRIBUTE_ADDRESS75 : int
+
+logic attr__ATTRIBUTE_ADDRESS76 : int
+
+logic attr__ATTRIBUTE_ADDRESS77 : int
+
+logic attr__ATTRIBUTE_ADDRESS78 : int
+
+logic attr__ATTRIBUTE_ADDRESS79 : int
+
+logic attr__ATTRIBUTE_ADDRESS80 : int
+
+logic attr__ATTRIBUTE_ADDRESS81 : int
+
+logic attr__ATTRIBUTE_ADDRESS82 : int
+
+logic attr__ATTRIBUTE_ADDRESS83 : int
+
+logic attr__ATTRIBUTE_ADDRESS84 : int
+
+logic attr__ATTRIBUTE_ADDRESS85 : int
+
+logic attr__ATTRIBUTE_ADDRESS86 : int
+
+logic attr__ATTRIBUTE_ADDRESS87 : int
+
+logic attr__ATTRIBUTE_ADDRESS88 : int
+
+logic attr__ATTRIBUTE_ADDRESS89 : int
+
+logic attr__ATTRIBUTE_ADDRESS90 : int
+
+logic attr__ATTRIBUTE_ADDRESS91 : int
+
+logic attr__ATTRIBUTE_ADDRESS92 : int
+
+logic attr__ATTRIBUTE_ADDRESS93 : int
+
+logic attr__ATTRIBUTE_ADDRESS94 : int
+
+logic attr__ATTRIBUTE_ADDRESS95 : int
+
+logic attr__ATTRIBUTE_ADDRESS96 : int
+
+logic attr__ATTRIBUTE_ADDRESS97 : int
+
+logic attr__ATTRIBUTE_ADDRESS98 : int
+
+logic attr__ATTRIBUTE_ADDRESS99 : int
+
+logic attr__ATTRIBUTE_ADDRESS100 : int
+
+logic attr__ATTRIBUTE_ADDRESS101 : int
+
+logic attr__ATTRIBUTE_ADDRESS102 : int
+
+logic attr__ATTRIBUTE_ADDRESS103 : int
+
+logic attr__ATTRIBUTE_ADDRESS104 : int
+
+logic attr__ATTRIBUTE_ADDRESS105 : int
+
+logic attr__ATTRIBUTE_ADDRESS106 : int
+
+logic attr__ATTRIBUTE_ADDRESS107 : int
+
+logic attr__ATTRIBUTE_ADDRESS108 : int
+
+logic attr__ATTRIBUTE_ADDRESS109 : int
+
+logic attr__ATTRIBUTE_ADDRESS110 : int
+
+logic attr__ATTRIBUTE_ADDRESS111 : int
+
+logic attr__ATTRIBUTE_ADDRESS112 : int
+
+logic attr__ATTRIBUTE_ADDRESS113 : int
+
+logic attr__ATTRIBUTE_ADDRESS114 : int
+
+logic attr__ATTRIBUTE_ADDRESS115 : int
+
+logic attr__ATTRIBUTE_ADDRESS116 : int
+
+logic attr__ATTRIBUTE_ADDRESS117 : int
+
+logic attr__ATTRIBUTE_ADDRESS118 : int
+
+logic attr__ATTRIBUTE_ADDRESS119 : int
+
+logic attr__ATTRIBUTE_ADDRESS120 : int
+
+logic attr__ATTRIBUTE_ADDRESS121 : int
+
+logic attr__ATTRIBUTE_ADDRESS122 : int
+
+logic attr__ATTRIBUTE_ADDRESS123 : int
+
+logic attr__ATTRIBUTE_ADDRESS124 : int
+
+logic attr__ATTRIBUTE_ADDRESS125 : int
+
+logic attr__ATTRIBUTE_ADDRESS126 : int
+
+logic attr__ATTRIBUTE_ADDRESS127 : int
+
+logic attr__ATTRIBUTE_ADDRESS128 : int
+
+logic attr__ATTRIBUTE_ADDRESS129 : int
+
+logic attr__ATTRIBUTE_ADDRESS130 : int
+
+logic attr__ATTRIBUTE_ADDRESS131 : int
+
+logic attr__ATTRIBUTE_ADDRESS132 : int
+
+logic attr__ATTRIBUTE_ADDRESS133 : int
+
+logic attr__ATTRIBUTE_ADDRESS134 : int
+
+logic attr__ATTRIBUTE_ADDRESS135 : int
+
+logic attr__ATTRIBUTE_ADDRESS136 : int
+
+logic attr__ATTRIBUTE_ADDRESS137 : int
+
+logic attr__ATTRIBUTE_ADDRESS138 : int
+
+logic attr__ATTRIBUTE_ADDRESS139 : int
+
+logic attr__ATTRIBUTE_ADDRESS140 : int
+
+logic attr__ATTRIBUTE_ADDRESS141 : int
+
+logic attr__ATTRIBUTE_ADDRESS142 : int
+
+logic attr__ATTRIBUTE_ADDRESS143 : int
+
+logic attr__ATTRIBUTE_ADDRESS144 : int
+
+logic attr__ATTRIBUTE_ADDRESS145 : int
+
+logic attr__ATTRIBUTE_ADDRESS146 : int
+
+logic attr__ATTRIBUTE_ADDRESS147 : int
+
+logic attr__ATTRIBUTE_ADDRESS148 : int
+
+logic attr__ATTRIBUTE_ADDRESS149 : int
+
+logic attr__ATTRIBUTE_ADDRESS150 : int
+
+logic attr__ATTRIBUTE_ADDRESS151 : int
+
+logic attr__ATTRIBUTE_ADDRESS152 : int
+
+logic attr__ATTRIBUTE_ADDRESS153 : int
+
+logic attr__ATTRIBUTE_ADDRESS154 : int
+
+logic attr__ATTRIBUTE_ADDRESS155 : int
+
+logic attr__ATTRIBUTE_ADDRESS156 : int
+
+logic attr__ATTRIBUTE_ADDRESS157 : int
+
+logic attr__ATTRIBUTE_ADDRESS158 : int
+
+logic attr__ATTRIBUTE_ADDRESS159 : int
+
+logic attr__ATTRIBUTE_ADDRESS160 : int
+
+logic attr__ATTRIBUTE_ADDRESS161 : int
+
+logic attr__ATTRIBUTE_ADDRESS162 : int
+
+logic attr__ATTRIBUTE_ADDRESS163 : int
+
+logic attr__ATTRIBUTE_ADDRESS164 : int
+
+logic attr__ATTRIBUTE_ADDRESS165 : int
+
+logic attr__ATTRIBUTE_ADDRESS166 : int
+
+logic attr__ATTRIBUTE_ADDRESS167 : int
+
+logic attr__ATTRIBUTE_ADDRESS168 : int
+
+logic attr__ATTRIBUTE_ADDRESS169 : int
+
+logic attr__ATTRIBUTE_ADDRESS170 : int
+
+logic attr__ATTRIBUTE_ADDRESS171 : int
+
+logic attr__ATTRIBUTE_ADDRESS172 : int
+
+logic attr__ATTRIBUTE_ADDRESS173 : int
+
+logic attr__ATTRIBUTE_ADDRESS174 : int
+
+logic attr__ATTRIBUTE_ADDRESS175 : int
+
+logic attr__ATTRIBUTE_ADDRESS176 : int
+
+logic attr__ATTRIBUTE_ADDRESS177 : int
+
+logic attr__ATTRIBUTE_ADDRESS178 : int
+
+logic attr__ATTRIBUTE_ADDRESS179 : int
+
+logic attr__ATTRIBUTE_ADDRESS180 : int
+
+logic attr__ATTRIBUTE_ADDRESS181 : int
+
+logic attr__ATTRIBUTE_ADDRESS182 : int
+
+logic attr__ATTRIBUTE_ADDRESS183 : int
+
+logic attr__ATTRIBUTE_ADDRESS184 : int
+
+logic attr__ATTRIBUTE_ADDRESS185 : int
+
+logic attr__ATTRIBUTE_ADDRESS186 : int
+
+logic attr__ATTRIBUTE_ADDRESS187 : int
+
+logic attr__ATTRIBUTE_ADDRESS188 : int
+
+logic fd_turn_fd_on : bool, bool, bool, bool, bool, bool, bool, bool, bool,
+  bool, bool, bool, bool, bool, bool, bool, bool, bool, bool -> bool
+
+logic fd_turn_fd_on__function_guard : bool, bool, bool, bool, bool, bool,
+  bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool,
+  bool, bool -> prop
+
+logic fd_turn_fd_off : bool, bool -> bool
+
+logic fd_turn_fd_off__function_guard : bool, bool, bool -> prop
+
+logic annunciations_turn_annunciations_on : bool, bool, bool -> bool
+
+logic annunciations_turn_annunciations_on__function_guard : bool, bool, bool,
+  bool -> prop
+
+logic annunciations_turn_annunciations_off : bool, bool, bool -> bool
+
+logic annunciations_turn_annunciations_off__function_guard : bool, bool,
+  bool, bool -> prop
+
+logic independent_in_independent_mode : bool, bool, bool, bool -> bool
+
+logic independent_in_independent_mode__function_guard : bool, bool, bool,
+  bool, bool -> prop
+
+logic active_in_active_mode : bool, bool -> bool
+
+logic active_in_active_mode__function_guard : bool, bool, bool -> prop
+
+logic lateral_hdg_select : bool -> bool
+
+logic lateral_hdg_select__function_guard : bool, bool -> prop
+
+logic lateral_hdg_clear : bool, bool, bool -> bool
+
+logic lateral_hdg_clear__function_guard : bool, bool, bool, bool -> prop
+
+logic lateral_nav_select : bool -> bool
+
+logic lateral_nav_select__function_guard : bool, bool -> prop
+
+logic lateral_nav_capture : bool -> bool
+
+logic lateral_nav_capture__function_guard : bool, bool -> prop
+
+logic lateral_nav_clear : bool, bool, bool, bool, bool -> bool
+
+logic lateral_nav_clear__function_guard : bool, bool, bool, bool, bool,
+  bool -> prop
+
+logic lateral_lappr_select : bool -> bool
+
+logic lateral_lappr_select__function_guard : bool, bool -> prop
+
+logic lateral_lappr_capture : bool -> bool
+
+logic lateral_lappr_capture__function_guard : bool, bool -> prop
+
+logic lateral_lappr_clear : bool, bool, bool, bool, bool -> bool
+
+logic lateral_lappr_clear__function_guard : bool, bool, bool, bool, bool,
+  bool -> prop
+
+logic lateral_lga_select : bool, bool -> bool
+
+logic lateral_lga_select__function_guard : bool, bool, bool -> prop
+
+logic lateral_lga_clear : bool, bool, bool, bool, bool -> bool
+
+logic lateral_lga_clear__function_guard : bool, bool, bool, bool, bool,
+  bool -> prop
+
+logic lateral_lateral_mode_active : bool, bool, bool, bool -> bool
+
+logic lateral_lateral_mode_active__function_guard : bool, bool, bool, bool,
+  bool -> prop
+
+logic lateral_new_lateral_mode_activated : bool, bool, bool, bool -> bool
+
+logic lateral_new_lateral_mode_activated__function_guard : bool, bool, bool,
+  bool, bool -> prop
+
+logic vertical_vs_select : bool, bool, bool -> bool
+
+logic vertical_vs_select__function_guard : bool, bool, bool, bool -> prop
+
+logic vertical_vs_clear : bool, bool, bool -> bool
+
+logic vertical_vs_clear__function_guard : bool, bool, bool, bool -> prop
+
+logic vertical_flc_select : bool, bool, bool, bool, bool, bool, bool -> bool
+
+logic vertical_flc_select__function_guard : bool, bool, bool, bool, bool,
+  bool, bool, bool -> prop
+
+logic vertical_flc_clear : bool, bool, bool, bool, bool -> bool
+
+logic vertical_flc_clear__function_guard : bool, bool, bool, bool, bool,
+  bool -> prop
+
+logic vertical_alt_select : bool, bool, bool, bool -> bool
+
+logic vertical_alt_select__function_guard : bool, bool, bool, bool,
+  bool -> prop
+
+logic vertical_alt_clear : bool, bool, bool, bool -> bool
+
+logic vertical_alt_clear__function_guard : bool, bool, bool, bool,
+  bool -> prop
+
+logic vertical_vappr_select : bool -> bool
+
+logic vertical_vappr_select__function_guard : bool, bool -> prop
+
+logic vertical_vappr_capture : bool, bool, bool -> bool
+
+logic vertical_vappr_capture__function_guard : bool, bool, bool, bool -> prop
+
+logic vertical_vappr_clear : bool, bool, bool, bool, bool, bool -> bool
+
+logic vertical_vappr_clear__function_guard : bool, bool, bool, bool, bool,
+  bool, bool -> prop
+
+logic vertical_vga_select : bool, bool -> bool
+
+logic vertical_vga_select__function_guard : bool, bool, bool -> prop
+
+logic vertical_vga_clear : bool, bool, bool, bool, bool, bool -> bool
+
+logic vertical_vga_clear__function_guard : bool, bool, bool, bool, bool,
+  bool, bool -> prop
+
+logic vertical_altsel_select : bool, bool, bool -> bool
+
+logic vertical_altsel_select__function_guard : bool, bool, bool, bool -> prop
+
+logic vertical_altsel_capture : bool -> bool
+
+logic vertical_altsel_capture__function_guard : bool, bool -> prop
+
+logic vertical_altsel_track : bool -> bool
+
+logic vertical_altsel_track__function_guard : bool, bool -> prop
+
+logic vertical_altsel_deactivate : bool, bool, bool, bool, bool, bool, bool,
+  bool, bool -> bool
+
+logic vertical_altsel_deactivate__function_guard : bool, bool, bool, bool,
+  bool, bool, bool, bool, bool, bool -> prop
+
+logic vertical_altsel_clear : bool, bool, bool, bool -> bool
+
+logic vertical_altsel_clear__function_guard : bool, bool, bool, bool,
+  bool -> prop
+
+logic vertical_new_vertical_mode_activated : bool, bool, bool, bool, bool,
+  bool -> bool
+
+logic vertical_new_vertical_mode_activated__function_guard : bool, bool,
+  bool, bool, bool, bool, bool -> prop
+
+logic vertical_vertical_mode_active : bool, bool, bool, bool, bool,
+  bool -> bool
+
+logic vertical_vertical_mode_active__function_guard : bool, bool, bool, bool,
+  bool, bool, bool -> prop
+
+ (* File "flight_modes.ads", line 48, characters 0-0 *)
+goal defqtvc :
+  (forall c2_active:bool. forall c2_fd_on_active:bool.
+  forall c2_fd_off_active:bool. forall c2_annunciations_on_active:bool.
+  forall c2_annunciations_off_active:bool.
+  forall c2_independent_independent_active:bool.
+  forall c2_independent_dependent_active:bool.
+  forall c2_active_active_active:bool. forall c2_active_inactive_active:bool.
+  forall c2_lateral_hdg_selected_active:bool.
+  forall c2_lateral_hdg_selected_active_active:bool.
+  forall c2_lateral_hdg_cleared_active:bool.
+  forall c2_lateral_nav_selected_active:bool.
+  forall c2_lateral_nav_selected_active_active:bool.
+  forall c2_lateral_nav_selected_armed_active:bool.
+  forall c2_lateral_nav_cleared_active:bool.
+  forall c2_lateral_lappr_selected_active:bool.
+  forall c2_lateral_lappr_selected_active_active:bool.
+  forall c2_lateral_lappr_selected_armed_active:bool.
+  forall c2_lateral_lappr_cleared_active:bool.
+  forall c2_lateral_lga_selected_active:bool.
+  forall c2_lateral_lga_selected_active_active:bool.
+  forall c2_lateral_lga_cleared_active:bool.
+  forall c2_lateral_roll_selected_active:bool.
+  forall c2_lateral_roll_selected_active_active:bool.
+  forall c2_lateral_roll_cleared_active:bool.
+  forall c2_vertical_vs_selected_active:bool.
+  forall c2_vertical_vs_selected_active_active:bool.
+  forall c2_vertical_vs_cleared_active:bool.
+  forall c2_vertical_flc_selected_active:bool.
+  forall c2_vertical_flc_selected_active_active:bool.
+  forall c2_vertical_flc_cleared_active:bool.
+  forall c2_vertical_alt_selected_active:bool.
+  forall c2_vertical_alt_selected_active_active:bool.
+  forall c2_vertical_alt_cleared_active:bool.
+  forall c2_vertical_vappr_selected_active:bool.
+  forall c2_vertical_vappr_selected_active_active:bool.
+  forall c2_vertical_vappr_selected_armed_active:bool.
+  forall c2_vertical_vappr_cleared_active:bool.
+  forall c2_vertical_vga_selected_active:bool.
+  forall c2_vertical_vga_selected_active_active:bool.
+  forall c2_vertical_vga_cleared_active:bool.
+  forall c2_vertical_altsel_selected_active:bool.
+  forall c2_vertical_altsel_selected_active_active:bool.
+  forall c2_vertical_altsel_selected_active_capture_active:bool.
+  forall c2_vertical_altsel_selected_active_track_active:bool.
+  forall c2_vertical_altsel_selected_armed_active:bool.
+  forall c2_vertical_altsel_cleared_active:bool.
+  forall c2_vertical_pitch_selected_active:bool.
+  forall c2_vertical_pitch_selected_active_active:bool.
+  forall c2_vertical_pitch_cleared_active:bool. forall c2_modes_on:bool.
+  forall c2_fd_on:bool. forall c2_independent_mode:bool.
+  forall c2_active_side:bool. forall c2_roll_selected:bool.
+  forall c2_roll_active:bool. forall c2_hdg_selected:bool.
+  forall c2_hdg_active:bool. forall c2_nav_selected:bool.
+  forall c2_nav_active:bool. forall c2_lappr_selected:bool.
+  forall c2_lappr_active:bool. forall c2_lga_selected:bool.
+  forall c2_lga_active:bool. forall c2_pitch_selected:bool.
+  forall c2_pitch_active:bool. forall c2_vs_selected:bool.
+  forall c2_vs_active:bool. forall c2_flc_selected:bool.
+  forall c2_flc_active:bool. forall c2_alt_selected:bool.
+  forall c2_alt_active:bool. forall c2_altsel_selected:bool.
+  forall c2_altsel_active:bool. forall c2_altsel_track:bool.
+  forall c2_vappr_selected:bool. forall c2_vappr_active:bool.
+  forall c2_vga_selected:bool. forall c2_vga_active:bool.
+  (forall c2_pilot_flying_side:bool.
+  ((c2_pilot_flying_side = pilot_flying_side) ->
+  (forall c2_is_ap_engaged:bool. ((c2_is_ap_engaged = is_ap_engaged) ->
+  (forall c2_overspeed:bool. ((c2_overspeed = overspeed) ->
+  (forall c2_is_offside_fd_on:bool.
+  ((c2_is_offside_fd_on = is_offside_fd_on) ->
+  (forall c2_is_offside_vappr_active:bool.
+  ((c2_is_offside_vappr_active = is_offside_vappr_active) ->
+  (forall c2_is_offside_vga_active:bool.
+  ((c2_is_offside_vga_active = is_offside_vga_active) ->
+  (forall c2_pilot_flying_transfer:bool.
+  ((c2_pilot_flying_transfer = pilot_flying_transfer) ->
+  (forall c2_when_ap_engaged:bool. ((c2_when_ap_engaged = when_ap_engaged) ->
+  (forall c2_sync_switch_pressed:bool.
+  ((c2_sync_switch_pressed = sync_switch_pressed) ->
+  (forall c2_fd_switch_pressed:bool.
+  ((c2_fd_switch_pressed = fd_switch_pressed) ->
+  (forall c2_hdg_switch_pressed:bool.
+  ((c2_hdg_switch_pressed = hdg_switch_pressed) ->
+  (forall c2_nav_switch_pressed:bool.
+  ((c2_nav_switch_pressed = nav_switch_pressed) ->
+  (forall c2_appr_switch_pressed:bool.
+  ((c2_appr_switch_pressed = appr_switch_pressed) ->
+  (forall c2_ga_switch_pressed:bool.
+  ((c2_ga_switch_pressed = ga_switch_pressed) ->
+  (forall c2_vs_switch_pressed:bool.
+  ((c2_vs_switch_pressed = vs_switch_pressed) ->
+  (forall c2_flc_switch_pressed:bool.
+  ((c2_flc_switch_pressed = flc_switch_pressed) ->
+  (forall c2_alt_switch_pressed:bool.
+  ((c2_alt_switch_pressed = alt_switch_pressed) ->
+  (forall c2_vs_pitch_wheel_rotated:bool.
+  ((c2_vs_pitch_wheel_rotated = vs_pitch_wheel_rotated) ->
+  (forall c2_altsel_target_changed:bool.
+  ((c2_altsel_target_changed = altsel_target_changed) ->
+  (forall c2_nav_capture_condition_met:bool.
+  ((c2_nav_capture_condition_met = nav_capture_condition_met) ->
+  (forall c2_lappr_capture_condition_met:bool.
+  ((c2_lappr_capture_condition_met = lappr_capture_condition_met) ->
+  (forall c2_altsel_capture_condition_met:bool.
+  ((c2_altsel_capture_condition_met = altsel_capture_condition_met) ->
+  (forall c2_altsel_track_condition_met:bool.
+  ((c2_altsel_track_condition_met = altsel_track_condition_met) ->
+  (forall c2_vappr_capture_condition_met:bool.
+  ((c2_vappr_capture_condition_met = vappr_capture_condition_met) ->
+  (forall c2_selected_nav_source_changed:bool.
+  ((c2_selected_nav_source_changed = selected_nav_source_changed) ->
+  (forall c2_selected_nav_frequency_changed:bool.
+  ((c2_selected_nav_frequency_changed = selected_nav_frequency_changed) ->
+  (forall c2_modes_on1:bool. forall c2_fd_on1:bool.
+  forall c2_independent_mode1:bool. forall c2_active_side1:bool.
+  forall c2_roll_selected1:bool. forall c2_roll_active1:bool.
+  forall c2_hdg_selected1:bool. forall c2_hdg_active1:bool.
+  forall c2_nav_selected1:bool. forall c2_nav_active1:bool.
+  forall c2_lappr_selected1:bool. forall c2_lappr_active1:bool.
+  forall c2_lga_selected1:bool. forall c2_lga_active1:bool.
+  forall c2_pitch_selected1:bool. forall c2_pitch_active1:bool.
+  forall c2_vs_selected1:bool. forall c2_vs_active1:bool.
+  forall c2_flc_selected1:bool. forall c2_flc_active1:bool.
+  forall c2_alt_selected1:bool. forall c2_alt_active1:bool.
+  forall c2_altsel_selected1:bool. forall c2_altsel_active1:bool.
+  forall c2_altsel_track1:bool. forall c2_vappr_selected1:bool.
+  forall c2_vappr_active1:bool. forall c2_vga_selected1:bool.
+  forall c2_vga_active1:bool.
+  ((exists spark__branch:bool.
+   ((spark__branch = (if (c2_active = true) then false else true)) and
+   (if (spark__branch = true) then ((((((((((((((((((((((((((c2_roll_selected1 = of_int(1)) and
+   ((c2_roll_active1 = of_int(1)) and ((c2_altsel_selected1 = of_int(1)) and
+   ((c2_pitch_selected1 = of_int(1)) and
+   (c2_pitch_active1 = of_int(1)))))) and (c2_modes_on1 = c2_modes_on)) and
+   (c2_fd_on1 = c2_fd_on)) and
+   (c2_independent_mode1 = c2_independent_mode)) and
+   (c2_active_side1 = c2_active_side)) and
+   (c2_hdg_selected1 = c2_hdg_selected)) and
+   (c2_hdg_active1 = c2_hdg_active)) and
+   (c2_nav_selected1 = c2_nav_selected)) and
+   (c2_nav_active1 = c2_nav_active)) and
+   (c2_lappr_selected1 = c2_lappr_selected)) and
+   (c2_lappr_active1 = c2_lappr_active)) and
+   (c2_lga_selected1 = c2_lga_selected)) and
+   (c2_lga_active1 = c2_lga_active)) and
+   (c2_vs_selected1 = c2_vs_selected)) and
+   (c2_vs_active1 = c2_vs_active)) and
+   (c2_flc_selected1 = c2_flc_selected)) and
+   (c2_flc_active1 = c2_flc_active)) and
+   (c2_alt_selected1 = c2_alt_selected)) and
+   (c2_alt_active1 = c2_alt_active)) and
+   (c2_altsel_active1 = c2_altsel_active)) and
+   (c2_altsel_track1 = c2_altsel_track)) and
+   (c2_vappr_selected1 = c2_vappr_selected)) and
+   (c2_vappr_active1 = c2_vappr_active)) and
+   (c2_vga_selected1 = c2_vga_selected)) and
+   (c2_vga_active1 = c2_vga_active)) else (exists spark__branch1:bool.
+                                          ((exists spark__branch2:bool.
+                                           ((spark__branch2 = c2_fd_on_active) and
+                                           (if (spark__branch2 = true) then (let o =
+                                           fd_turn_fd_off(c2_overspeed,
+                                           c2_fd_switch_pressed) : bool in
+                                           (fd_turn_fd_off__function_guard(o,
+                                           c2_overspeed,
+                                           c2_fd_switch_pressed) and
+                                           ((spark__branch1 = o) and
+                                           (if (spark__branch1 = true) then (c2_fd_on1 = of_int(0)) else (c2_fd_on1 = c2_fd_on))))) else 
+                                           (exists spark__branch3:bool.
+                                           ((spark__branch3 = c2_fd_off_active) and
+                                           (if (spark__branch3 = true) then (let o =
+                                           fd_turn_fd_on(c2_vs_active,
+                                           c2_altsel_active, c2_overspeed,
+                                           c2_vs_switch_pressed, c2_modes_on,
+                                           c2_fd_switch_pressed,
+                                           c2_flc_switch_pressed,
+                                           c2_hdg_switch_pressed,
+                                           c2_alt_switch_pressed,
+                                           c2_vappr_active,
+                                           c2_nav_switch_pressed,
+                                           c2_vs_pitch_wheel_rotated,
+                                           c2_active_side,
+                                           c2_pilot_flying_side,
+                                           c2_pilot_flying_transfer,
+                                           c2_appr_switch_pressed,
+                                           c2_altsel_target_changed,
+                                           c2_when_ap_engaged,
+                                           c2_ga_switch_pressed) : bool in
+                                           (fd_turn_fd_on__function_guard(o,
+                                           c2_vs_active, c2_altsel_active,
+                                           c2_overspeed,
+                                           c2_vs_switch_pressed, c2_modes_on,
+                                           c2_fd_switch_pressed,
+                                           c2_flc_switch_pressed,
+                                           c2_hdg_switch_pressed,
+                                           c2_alt_switch_pressed,
+                                           c2_vappr_active,
+                                           c2_nav_switch_pressed,
+                                           c2_vs_pitch_wheel_rotated,
+                                           c2_active_side,
+                                           c2_pilot_flying_side,
+                                           c2_pilot_flying_transfer,
+                                           c2_appr_switch_pressed,
+                                           c2_altsel_target_changed,
+                                           c2_when_ap_engaged,
+                                           c2_ga_switch_pressed) and
+                                           ((spark__branch1 = o) and
+                                           (if (spark__branch1 = true) then (c2_fd_on1 = of_int(1)) else (c2_fd_on1 = c2_fd_on))))) else ((spark__branch1 = spark__branch3) and
+                                           (c2_fd_on1 = c2_fd_on)))))))) and
+                                          (exists spark__branch2:bool.
+                                          ((exists spark__branch3:bool.
+                                           ((spark__branch3 = c2_annunciations_on_active) and
+                                           (if (spark__branch3 = true) then (let o =
+                                           annunciations_turn_annunciations_off(c2_is_offside_fd_on,
+                                           c2_fd_on1, c2_is_ap_engaged)
+                                           : bool in
+                                           (annunciations_turn_annunciations_off__function_guard(o,
+                                           c2_is_offside_fd_on, c2_fd_on1,
+                                           c2_is_ap_engaged) and
+                                           ((spark__branch2 = o) and
+                                           (if (spark__branch2 = true) then (c2_modes_on1 = of_int(0)) else (c2_modes_on1 = c2_modes_on))))) else 
+                                           (exists spark__branch4:bool.
+                                           ((spark__branch4 = c2_annunciations_off_active) and
+                                           (if (spark__branch4 = true) then (let o =
+                                           annunciations_turn_annunciations_on(c2_is_offside_fd_on,
+                                           c2_fd_on1, c2_is_ap_engaged)
+                                           : bool in
+                                           (annunciations_turn_annunciations_on__function_guard(o,
+                                           c2_is_offside_fd_on, c2_fd_on1,
+                                           c2_is_ap_engaged) and
+                                           ((spark__branch2 = o) and
+                                           (if (spark__branch2 = true) then (c2_modes_on1 = of_int(1)) else (c2_modes_on1 = c2_modes_on))))) else ((spark__branch2 = spark__branch4) and
+                                           (c2_modes_on1 = c2_modes_on)))))))) and
+                                          (exists spark__branch3:bool.
+                                          ((exists spark__branch4:bool.
+                                           ((spark__branch4 = c2_independent_independent_active) and
+                                           (if (spark__branch4 = true) then (let o =
+                                           independent_in_independent_mode(c2_is_offside_vappr_active,
+                                           c2_vappr_active,
+                                           c2_is_offside_vga_active,
+                                           c2_vga_active) : bool in
+                                           (independent_in_independent_mode__function_guard(o,
+                                           c2_is_offside_vappr_active,
+                                           c2_vappr_active,
+                                           c2_is_offside_vga_active,
+                                           c2_vga_active) and
+                                           ((spark__branch3 = (if (o = true) then false else true)) and
+                                           (if (spark__branch3 = true) then (c2_independent_mode1 = of_int(0)) else (c2_independent_mode1 = c2_independent_mode))))) else 
+                                           (exists spark__branch5:bool.
+                                           ((spark__branch5 = c2_independent_dependent_active) and
+                                           (if (spark__branch5 = true) then (let o =
+                                           independent_in_independent_mode(c2_is_offside_vappr_active,
+                                           c2_vappr_active,
+                                           c2_is_offside_vga_active,
+                                           c2_vga_active) : bool in
+                                           (independent_in_independent_mode__function_guard(o,
+                                           c2_is_offside_vappr_active,
+                                           c2_vappr_active,
+                                           c2_is_offside_vga_active,
+                                           c2_vga_active) and
+                                           ((spark__branch3 = o) and
+                                           (if (spark__branch3 = true) then (c2_independent_mode1 = of_int(1)) else (c2_independent_mode1 = c2_independent_mode))))) else ((spark__branch3 = spark__branch5) and
+                                           (c2_independent_mode1 = c2_independent_mode)))))))) and
+                                          (exists spark__branch4:bool.
+                                          ((exists spark__branch5:bool.
+                                           ((spark__branch5 = c2_active_active_active) and
+                                           (if (spark__branch5 = true) then (let o =
+                                           active_in_active_mode(c2_independent_mode1,
+                                           c2_pilot_flying_side) : bool in
+                                           (active_in_active_mode__function_guard(o,
+                                           c2_independent_mode1,
+                                           c2_pilot_flying_side) and
+                                           ((spark__branch4 = (if (o = true) then false else true)) and
+                                           (if (spark__branch4 = true) then (c2_active_side1 = of_int(0)) else (c2_active_side1 = c2_active_side))))) else 
+                                           (exists spark__branch6:bool.
+                                           ((spark__branch6 = c2_active_inactive_active) and
+                                           (if (spark__branch6 = true) then (let o =
+                                           active_in_active_mode(c2_independent_mode1,
+                                           c2_pilot_flying_side) : bool in
+                                           (active_in_active_mode__function_guard(o,
+                                           c2_independent_mode1,
+                                           c2_pilot_flying_side) and
+                                           ((spark__branch4 = o) and
+                                           (if (spark__branch4 = true) then (c2_active_side1 = of_int(1)) else (c2_active_side1 = c2_active_side))))) else ((spark__branch4 = spark__branch6) and
+                                           (c2_active_side1 = c2_active_side)))))))) and
+                                          (exists c2_lateral_hdg_will_be_activated:bool.
+                                          exists c2_lateral_nav_will_be_activated:bool.
+                                          exists c2_lateral_lappr_will_be_activated:bool.
+                                          exists c2_lateral_lga_will_be_activated:bool.
+                                          (exists spark__branch5:bool.
+                                          ((exists spark__branch6:bool.
+                                           ((spark__branch6 = c2_lateral_hdg_selected_active) and
+                                           (if (spark__branch6 = true) then (let o =
+                                           lateral_hdg_clear(c2_modes_on1,
+                                           c2_hdg_switch_pressed,
+                                           c2_pilot_flying_transfer)
+                                           : bool in
+                                           (lateral_hdg_clear__function_guard(o,
+                                           c2_modes_on1,
+                                           c2_hdg_switch_pressed,
+                                           c2_pilot_flying_transfer) and
+                                           (exists spark__branch7:bool.
+                                           ((spark__branch7 = o) and
+                                           (if (spark__branch7 = true) then (((spark__branch5 = c2_lateral_hdg_selected_active_active) and
+                                           (if (spark__branch5 = true) then (c2_hdg_active1 = of_int(0)) else (c2_hdg_active1 = c2_hdg_active))) and
+                                           (c2_hdg_selected1 = of_int(0))) else 
+                                           (exists spark__branch8:bool.
+                                           ((spark__branch8 = c2_lateral_hdg_selected_active_active) and
+                                           (if (spark__branch8 = true) then (let o1 =
+                                           lateral_new_lateral_mode_activated(c2_lateral_hdg_will_be_activated,
+                                           c2_lateral_nav_will_be_activated,
+                                           c2_lateral_lappr_will_be_activated,
+                                           c2_lateral_lga_will_be_activated)
+                                           : bool in
+                                           (lateral_new_lateral_mode_activated__function_guard(o1,
+                                           c2_lateral_hdg_will_be_activated,
+                                           c2_lateral_nav_will_be_activated,
+                                           c2_lateral_lappr_will_be_activated,
+                                           c2_lateral_lga_will_be_activated) and
+                                           ((spark__branch5 = o1) and
+                                           (if (spark__branch5 = true) then ((c2_hdg_active1 = of_int(0)) and
+                                           (c2_hdg_selected1 = of_int(0))) else ((c2_hdg_selected1 = c2_hdg_selected) and
+                                           (c2_hdg_active1 = c2_hdg_active)))))) else (((spark__branch5 = spark__branch8) and
+                                           (c2_hdg_selected1 = c2_hdg_selected)) and
+                                           (c2_hdg_active1 = c2_hdg_active)))))))))) else 
+                                           (exists spark__branch7:bool.
+                                           ((spark__branch7 = c2_lateral_hdg_cleared_active) and
+                                           (if (spark__branch7 = true) then (let o =
+                                           lateral_hdg_select(c2_hdg_switch_pressed)
+                                           : bool in
+                                           (lateral_hdg_select__function_guard(o,
+                                           c2_hdg_switch_pressed) and
+                                           ((spark__branch5 = o) and
+                                           (if (spark__branch5 = true) then ((c2_hdg_selected1 = of_int(1)) and
+                                           (c2_hdg_active1 = of_int(1))) else ((c2_hdg_selected1 = c2_hdg_selected) and
+                                           (c2_hdg_active1 = c2_hdg_active)))))) else (((spark__branch5 = spark__branch7) and
+                                           (c2_hdg_selected1 = c2_hdg_selected)) and
+                                           (c2_hdg_active1 = c2_hdg_active)))))))) and
+                                          (exists spark__branch6:bool.
+                                          ((exists spark__branch7:bool.
+                                           ((spark__branch7 = c2_lateral_nav_selected_active) and
+                                           (if (spark__branch7 = true) then (let o =
+                                           lateral_nav_clear(c2_modes_on1,
+                                           c2_nav_switch_pressed,
+                                           c2_pilot_flying_transfer,
+                                           c2_selected_nav_source_changed,
+                                           c2_selected_nav_frequency_changed)
+                                           : bool in
+                                           (lateral_nav_clear__function_guard(o,
+                                           c2_modes_on1,
+                                           c2_nav_switch_pressed,
+                                           c2_pilot_flying_transfer,
+                                           c2_selected_nav_source_changed,
+                                           c2_selected_nav_frequency_changed) and
+                                           (exists spark__branch8:bool.
+                                           ((spark__branch8 = o) and
+                                           (if (spark__branch8 = true) then (
+                                           (exists spark__branch9:bool.
+                                           ((spark__branch9 = c2_lateral_nav_selected_active_active) and
+                                           (if (spark__branch9 = true) then ((c2_nav_active1 = of_int(0)) and
+                                           (spark__branch6 = spark__branch9)) else ((spark__branch6 = c2_lateral_nav_selected_armed_active) and
+                                           (c2_nav_active1 = c2_nav_active))))) and
+                                           (c2_nav_selected1 = of_int(0))) else 
+                                           (exists spark__branch9:bool.
+                                           ((spark__branch9 = c2_lateral_nav_selected_active_active) and
+                                           (if (spark__branch9 = true) then (let o1 =
+                                           lateral_new_lateral_mode_activated(c2_lateral_hdg_will_be_activated,
+                                           c2_lateral_nav_will_be_activated,
+                                           c2_lateral_lappr_will_be_activated,
+                                           c2_lateral_lga_will_be_activated)
+                                           : bool in
+                                           (lateral_new_lateral_mode_activated__function_guard(o1,
+                                           c2_lateral_hdg_will_be_activated,
+                                           c2_lateral_nav_will_be_activated,
+                                           c2_lateral_lappr_will_be_activated,
+                                           c2_lateral_lga_will_be_activated) and
+                                           ((spark__branch6 = o1) and
+                                           (if (spark__branch6 = true) then ((c2_nav_active1 = of_int(0)) and
+                                           (c2_nav_selected1 = of_int(0))) else ((c2_nav_selected1 = c2_nav_selected) and
+                                           (c2_nav_active1 = c2_nav_active)))))) else (
+                                           (exists spark__branch10:bool.
+                                           ((spark__branch10 = c2_lateral_nav_selected_armed_active) and
+                                           (if (spark__branch10 = true) then (let o1 =
+                                           lateral_nav_capture(c2_nav_capture_condition_met)
+                                           : bool in
+                                           (lateral_nav_capture__function_guard(o1,
+                                           c2_nav_capture_condition_met) and
+                                           ((spark__branch6 = o1) and
+                                           (if (spark__branch6 = true) then (c2_nav_active1 = of_int(1)) else (c2_nav_active1 = c2_nav_active))))) else ((spark__branch6 = spark__branch10) and
+                                           (c2_nav_active1 = c2_nav_active))))) and
+                                           (c2_nav_selected1 = c2_nav_selected)))))))))) else (
+                                           (exists spark__branch8:bool.
+                                           ((spark__branch8 = c2_lateral_nav_cleared_active) and
+                                           (if (spark__branch8 = true) then (let o =
+                                           lateral_nav_select(c2_nav_switch_pressed)
+                                           : bool in
+                                           (lateral_nav_select__function_guard(o,
+                                           c2_nav_switch_pressed) and
+                                           ((spark__branch6 = o) and
+                                           (if (spark__branch6 = true) then (c2_nav_selected1 = of_int(1)) else (c2_nav_selected1 = c2_nav_selected))))) else ((spark__branch6 = spark__branch8) and
+                                           (c2_nav_selected1 = c2_nav_selected))))) and
+                                           (c2_nav_active1 = c2_nav_active))))) and
+                                          (exists spark__branch7:bool.
+                                          ((exists spark__branch8:bool.
+                                           ((spark__branch8 = c2_lateral_lappr_selected_active) and
+                                           (if (spark__branch8 = true) then (let o =
+                                           lateral_lappr_clear(c2_modes_on1,
+                                           c2_pilot_flying_transfer,
+                                           c2_appr_switch_pressed,
+                                           c2_selected_nav_source_changed,
+                                           c2_selected_nav_frequency_changed)
+                                           : bool in
+                                           (lateral_lappr_clear__function_guard(o,
+                                           c2_modes_on1,
+                                           c2_pilot_flying_transfer,
+                                           c2_appr_switch_pressed,
+                                           c2_selected_nav_source_changed,
+                                           c2_selected_nav_frequency_changed) and
+                                           (exists spark__branch9:bool.
+                                           ((spark__branch9 = o) and
+                                           (if (spark__branch9 = true) then (
+                                           (exists spark__branch10:bool.
+                                           ((spark__branch10 = c2_lateral_lappr_selected_active_active) and
+                                           (if (spark__branch10 = true) then ((c2_lappr_active1 = of_int(0)) and
+                                           (spark__branch7 = spark__branch10)) else ((spark__branch7 = c2_lateral_lappr_selected_armed_active) and
+                                           (c2_lappr_active1 = c2_lappr_active))))) and
+                                           (c2_lappr_selected1 = of_int(0))) else 
+                                           (exists spark__branch10:bool.
+                                           ((spark__branch10 = c2_lateral_lappr_selected_active_active) and
+                                           (if (spark__branch10 = true) then (let o1 =
+                                           lateral_new_lateral_mode_activated(c2_lateral_hdg_will_be_activated,
+                                           c2_lateral_nav_will_be_activated,
+                                           c2_lateral_lappr_will_be_activated,
+                                           c2_lateral_lga_will_be_activated)
+                                           : bool in
+                                           (lateral_new_lateral_mode_activated__function_guard(o1,
+                                           c2_lateral_hdg_will_be_activated,
+                                           c2_lateral_nav_will_be_activated,
+                                           c2_lateral_lappr_will_be_activated,
+                                           c2_lateral_lga_will_be_activated) and
+                                           ((spark__branch7 = o1) and
+                                           (if (spark__branch7 = true) then ((c2_lappr_active1 = of_int(0)) and
+                                           (c2_lappr_selected1 = of_int(0))) else ((c2_lappr_selected1 = c2_lappr_selected) and
+                                           (c2_lappr_active1 = c2_lappr_active)))))) else (
+                                           (exists spark__branch11:bool.
+                                           ((spark__branch11 = c2_lateral_lappr_selected_armed_active) and
+                                           (if (spark__branch11 = true) then (let o1 =
+                                           lateral_lappr_capture(c2_lappr_capture_condition_met)
+                                           : bool in
+                                           (lateral_lappr_capture__function_guard(o1,
+                                           c2_lappr_capture_condition_met) and
+                                           ((spark__branch7 = o1) and
+                                           (if (spark__branch7 = true) then (c2_lappr_active1 = of_int(1)) else (c2_lappr_active1 = c2_lappr_active))))) else ((spark__branch7 = spark__branch11) and
+                                           (c2_lappr_active1 = c2_lappr_active))))) and
+                                           (c2_lappr_selected1 = c2_lappr_selected)))))))))) else (
+                                           (exists spark__branch9:bool.
+                                           ((spark__branch9 = c2_lateral_lappr_cleared_active) and
+                                           (if (spark__branch9 = true) then (let o =
+                                           lateral_lappr_select(c2_appr_switch_pressed)
+                                           : bool in
+                                           (lateral_lappr_select__function_guard(o,
+                                           c2_appr_switch_pressed) and
+                                           ((spark__branch7 = o) and
+                                           (if (spark__branch7 = true) then (c2_lappr_selected1 = of_int(1)) else (c2_lappr_selected1 = c2_lappr_selected))))) else ((spark__branch7 = spark__branch9) and
+                                           (c2_lappr_selected1 = c2_lappr_selected))))) and
+                                           (c2_lappr_active1 = c2_lappr_active))))) and
+                                          (exists spark__branch8:bool.
+                                          ((exists spark__branch9:bool.
+                                           ((spark__branch9 = c2_lateral_lga_selected_active) and
+                                           (if (spark__branch9 = true) then (let o =
+                                           lateral_lga_clear(c2_sync_switch_pressed,
+                                           c2_modes_on1,
+                                           c2_pilot_flying_transfer,
+                                           c2_vga_active, c2_when_ap_engaged)
+                                           : bool in
+                                           (lateral_lga_clear__function_guard(o,
+                                           c2_sync_switch_pressed,
+                                           c2_modes_on1,
+                                           c2_pilot_flying_transfer,
+                                           c2_vga_active,
+                                           c2_when_ap_engaged) and
+                                           (exists spark__branch10:bool.
+                                           ((spark__branch10 = o) and
+                                           (if (spark__branch10 = true) then (((spark__branch8 = c2_lateral_lga_selected_active_active) and
+                                           (if (spark__branch8 = true) then (c2_lga_active1 = of_int(0)) else (c2_lga_active1 = c2_lga_active))) and
+                                           (c2_lga_selected1 = of_int(0))) else 
+                                           (exists spark__branch11:bool.
+                                           ((spark__branch11 = c2_lateral_lga_selected_active_active) and
+                                           (if (spark__branch11 = true) then (let o1 =
+                                           lateral_new_lateral_mode_activated(c2_lateral_hdg_will_be_activated,
+                                           c2_lateral_nav_will_be_activated,
+                                           c2_lateral_lappr_will_be_activated,
+                                           c2_lateral_lga_will_be_activated)
+                                           : bool in
+                                           (lateral_new_lateral_mode_activated__function_guard(o1,
+                                           c2_lateral_hdg_will_be_activated,
+                                           c2_lateral_nav_will_be_activated,
+                                           c2_lateral_lappr_will_be_activated,
+                                           c2_lateral_lga_will_be_activated) and
+                                           ((spark__branch8 = o1) and
+                                           (if (spark__branch8 = true) then ((c2_lga_active1 = of_int(0)) and
+                                           (c2_lga_selected1 = of_int(0))) else ((c2_lga_selected1 = c2_lga_selected) and
+                                           (c2_lga_active1 = c2_lga_active)))))) else (((spark__branch8 = spark__branch11) and
+                                           (c2_lga_selected1 = c2_lga_selected)) and
+                                           (c2_lga_active1 = c2_lga_active)))))))))) else 
+                                           (exists spark__branch10:bool.
+                                           ((spark__branch10 = c2_lateral_lga_cleared_active) and
+                                           (if (spark__branch10 = true) then (let o =
+                                           lateral_lga_select(c2_overspeed,
+                                           c2_ga_switch_pressed) : bool in
+                                           (lateral_lga_select__function_guard(o,
+                                           c2_overspeed,
+                                           c2_ga_switch_pressed) and
+                                           ((spark__branch8 = o) and
+                                           (if (spark__branch8 = true) then ((c2_lga_selected1 = of_int(1)) and
+                                           (c2_lga_active1 = of_int(1))) else ((c2_lga_selected1 = c2_lga_selected) and
+                                           (c2_lga_active1 = c2_lga_active)))))) else (((spark__branch8 = spark__branch10) and
+                                           (c2_lga_selected1 = c2_lga_selected)) and
+                                           (c2_lga_active1 = c2_lga_active)))))))) and
+                                          (exists spark__branch9:bool.
+                                          ((exists spark__branch10:bool.
+                                           ((spark__branch10 = c2_lateral_roll_selected_active) and
+                                           (if (spark__branch10 = true) then 
+                                           (exists spark__branch11:bool.
+                                           ((spark__branch11 = c2_lateral_roll_selected_active_active) and
+                                           (if (spark__branch11 = true) then (let o =
+                                           lateral_lateral_mode_active(c2_hdg_active1,
+                                           c2_lga_active1, c2_nav_active1,
+                                           c2_lappr_active1) : bool in
+                                           (lateral_lateral_mode_active__function_guard(o,
+                                           c2_hdg_active1, c2_lga_active1,
+                                           c2_nav_active1,
+                                           c2_lappr_active1) and
+                                           ((spark__branch9 = o) and
+                                           (if (spark__branch9 = true) then ((c2_roll_active1 = of_int(0)) and
+                                           (c2_roll_selected1 = of_int(0))) else ((c2_roll_selected1 = c2_roll_selected) and
+                                           (c2_roll_active1 = c2_roll_active)))))) else (((spark__branch9 = spark__branch11) and
+                                           (c2_roll_selected1 = c2_roll_selected)) and
+                                           (c2_roll_active1 = c2_roll_active))))) else 
+                                           (exists spark__branch11:bool.
+                                           ((spark__branch11 = c2_lateral_roll_cleared_active) and
+                                           (if (spark__branch11 = true) then (let o =
+                                           lateral_lateral_mode_active(c2_hdg_active1,
+                                           c2_lga_active1, c2_nav_active1,
+                                           c2_lappr_active1) : bool in
+                                           (lateral_lateral_mode_active__function_guard(o,
+                                           c2_hdg_active1, c2_lga_active1,
+                                           c2_nav_active1,
+                                           c2_lappr_active1) and
+                                           ((spark__branch9 = (if (o = true) then false else true)) and
+                                           (if (spark__branch9 = true) then ((c2_roll_selected1 = of_int(1)) and
+                                           (c2_roll_active1 = of_int(1))) else ((c2_roll_selected1 = c2_roll_selected) and
+                                           (c2_roll_active1 = c2_roll_active)))))) else (((spark__branch9 = spark__branch11) and
+                                           (c2_roll_selected1 = c2_roll_selected)) and
+                                           (c2_roll_active1 = c2_roll_active)))))))) and
+                                          (exists c2_vertical_vs_will_be_activated:bool.
+                                          exists c2_vertical_flc_will_be_activated:bool.
+                                          exists c2_vertical_alt_will_be_activated:bool.
+                                          exists c2_vertical_altsel_will_be_activated:bool.
+                                          exists c2_vertical_vappr_will_be_activated:bool.
+                                          exists c2_vertical_vga_will_be_activated:bool.
+                                          (exists spark__branch10:bool.
+                                          ((exists spark__branch11:bool.
+                                           ((spark__branch11 = c2_vertical_vs_selected_active) and
+                                           (if (spark__branch11 = true) then (let o =
+                                           vertical_vs_clear(c2_vs_switch_pressed,
+                                           c2_modes_on1,
+                                           c2_pilot_flying_transfer)
+                                           : bool in
+                                           (vertical_vs_clear__function_guard(o,
+                                           c2_vs_switch_pressed,
+                                           c2_modes_on1,
+                                           c2_pilot_flying_transfer) and
+                                           (exists spark__branch12:bool.
+                                           ((spark__branch12 = o) and
+                                           (if (spark__branch12 = true) then (((spark__branch10 = c2_vertical_vs_selected_active_active) and
+                                           (if (spark__branch10 = true) then (c2_vs_active1 = of_int(0)) else (c2_vs_active1 = c2_vs_active))) and
+                                           (c2_vs_selected1 = of_int(0))) else 
+                                           (exists spark__branch13:bool.
+                                           ((spark__branch13 = c2_vertical_vs_selected_active_active) and
+                                           (if (spark__branch13 = true) then (let o1 =
+                                           vertical_new_vertical_mode_activated(c2_vertical_alt_will_be_activated,
+                                           c2_vertical_altsel_will_be_activated,
+                                           c2_vertical_vappr_will_be_activated,
+                                           c2_vertical_vga_will_be_activated,
+                                           c2_vertical_vs_will_be_activated,
+                                           c2_vertical_flc_will_be_activated)
+                                           : bool in
+                                           (vertical_new_vertical_mode_activated__function_guard(o1,
+                                           c2_vertical_alt_will_be_activated,
+                                           c2_vertical_altsel_will_be_activated,
+                                           c2_vertical_vappr_will_be_activated,
+                                           c2_vertical_vga_will_be_activated,
+                                           c2_vertical_vs_will_be_activated,
+                                           c2_vertical_flc_will_be_activated) and
+                                           ((spark__branch10 = o1) and
+                                           (if (spark__branch10 = true) then ((c2_vs_active1 = of_int(0)) and
+                                           (c2_vs_selected1 = of_int(0))) else ((c2_vs_selected1 = c2_vs_selected) and
+                                           (c2_vs_active1 = c2_vs_active)))))) else (((spark__branch10 = spark__branch13) and
+                                           (c2_vs_selected1 = c2_vs_selected)) and
+                                           (c2_vs_active1 = c2_vs_active)))))))))) else 
+                                           (exists spark__branch12:bool.
+                                           ((spark__branch12 = c2_vertical_vs_cleared_active) and
+                                           (if (spark__branch12 = true) then (let o =
+                                           vertical_vs_select(c2_overspeed,
+                                           c2_vs_switch_pressed,
+                                           c2_vappr_active) : bool in
+                                           (vertical_vs_select__function_guard(o,
+                                           c2_overspeed,
+                                           c2_vs_switch_pressed,
+                                           c2_vappr_active) and
+                                           ((spark__branch10 = o) and
+                                           (if (spark__branch10 = true) then ((c2_vs_selected1 = of_int(1)) and
+                                           (c2_vs_active1 = of_int(1))) else ((c2_vs_selected1 = c2_vs_selected) and
+                                           (c2_vs_active1 = c2_vs_active)))))) else (((spark__branch10 = spark__branch12) and
+                                           (c2_vs_selected1 = c2_vs_selected)) and
+                                           (c2_vs_active1 = c2_vs_active)))))))) and
+                                          (exists spark__branch11:bool.
+                                          ((exists spark__branch12:bool.
+                                           ((spark__branch12 = c2_vertical_flc_selected_active) and
+                                           (if (spark__branch12 = true) then (let o =
+                                           vertical_flc_clear(c2_overspeed,
+                                           c2_modes_on1,
+                                           c2_flc_switch_pressed,
+                                           c2_vs_pitch_wheel_rotated,
+                                           c2_pilot_flying_transfer)
+                                           : bool in
+                                           (vertical_flc_clear__function_guard(o,
+                                           c2_overspeed, c2_modes_on1,
+                                           c2_flc_switch_pressed,
+                                           c2_vs_pitch_wheel_rotated,
+                                           c2_pilot_flying_transfer) and
+                                           (exists spark__branch13:bool.
+                                           ((spark__branch13 = o) and
+                                           (if (spark__branch13 = true) then (((spark__branch11 = c2_vertical_flc_selected_active_active) and
+                                           (if (spark__branch11 = true) then (c2_flc_active1 = of_int(0)) else (c2_flc_active1 = c2_flc_active))) and
+                                           (c2_flc_selected1 = of_int(0))) else 
+                                           (exists spark__branch14:bool.
+                                           ((spark__branch14 = c2_vertical_flc_selected_active_active) and
+                                           (if (spark__branch14 = true) then (let o1 =
+                                           vertical_new_vertical_mode_activated(c2_vertical_alt_will_be_activated,
+                                           c2_vertical_altsel_will_be_activated,
+                                           c2_vertical_vappr_will_be_activated,
+                                           c2_vertical_vga_will_be_activated,
+                                           c2_vertical_vs_will_be_activated,
+                                           c2_vertical_flc_will_be_activated)
+                                           : bool in
+                                           (vertical_new_vertical_mode_activated__function_guard(o1,
+                                           c2_vertical_alt_will_be_activated,
+                                           c2_vertical_altsel_will_be_activated,
+                                           c2_vertical_vappr_will_be_activated,
+                                           c2_vertical_vga_will_be_activated,
+                                           c2_vertical_vs_will_be_activated,
+                                           c2_vertical_flc_will_be_activated) and
+                                           ((spark__branch11 = o1) and
+                                           (if (spark__branch11 = true) then ((c2_flc_active1 = of_int(0)) and
+                                           (c2_flc_selected1 = of_int(0))) else ((c2_flc_selected1 = c2_flc_selected) and
+                                           (c2_flc_active1 = c2_flc_active)))))) else (((spark__branch11 = spark__branch14) and
+                                           (c2_flc_selected1 = c2_flc_selected)) and
+                                           (c2_flc_active1 = c2_flc_active)))))))))) else 
+                                           (exists spark__branch13:bool.
+                                           ((spark__branch13 = c2_vertical_flc_cleared_active) and
+                                           (if (spark__branch13 = true) then (let o =
+                                           vertical_flc_select(c2_altsel_active,
+                                           c2_vertical_alt_will_be_activated,
+                                           c2_overspeed,
+                                           c2_vertical_altsel_will_be_activated,
+                                           c2_flc_switch_pressed,
+                                           c2_vappr_active, c2_alt_active)
+                                           : bool in
+                                           (vertical_flc_select__function_guard(o,
+                                           c2_altsel_active,
+                                           c2_vertical_alt_will_be_activated,
+                                           c2_overspeed,
+                                           c2_vertical_altsel_will_be_activated,
+                                           c2_flc_switch_pressed,
+                                           c2_vappr_active,
+                                           c2_alt_active) and
+                                           ((spark__branch11 = o) and
+                                           (if (spark__branch11 = true) then ((c2_flc_selected1 = of_int(1)) and
+                                           (c2_flc_active1 = of_int(1))) else ((c2_flc_selected1 = c2_flc_selected) and
+                                           (c2_flc_active1 = c2_flc_active)))))) else (((spark__branch11 = spark__branch13) and
+                                           (c2_flc_selected1 = c2_flc_selected)) and
+                                           (c2_flc_active1 = c2_flc_active)))))))) and
+                                          (exists spark__branch12:bool.
+                                          ((exists spark__branch13:bool.
+                                           ((spark__branch13 = c2_vertical_alt_selected_active) and
+                                           (if (spark__branch13 = true) then (let o =
+                                           vertical_alt_clear(c2_modes_on1,
+                                           c2_alt_switch_pressed,
+                                           c2_vs_pitch_wheel_rotated,
+                                           c2_pilot_flying_transfer)
+                                           : bool in
+                                           (vertical_alt_clear__function_guard(o,
+                                           c2_modes_on1,
+                                           c2_alt_switch_pressed,
+                                           c2_vs_pitch_wheel_rotated,
+                                           c2_pilot_flying_transfer) and
+                                           (exists spark__branch14:bool.
+                                           ((spark__branch14 = o) and
+                                           (if (spark__branch14 = true) then (((spark__branch12 = c2_vertical_alt_selected_active_active) and
+                                           (if (spark__branch12 = true) then (c2_alt_active1 = of_int(0)) else (c2_alt_active1 = c2_alt_active))) and
+                                           (c2_alt_selected1 = of_int(0))) else 
+                                           (exists spark__branch15:bool.
+                                           ((spark__branch15 = c2_vertical_alt_selected_active_active) and
+                                           (if (spark__branch15 = true) then (let o1 =
+                                           vertical_new_vertical_mode_activated(c2_vertical_alt_will_be_activated,
+                                           c2_vertical_altsel_will_be_activated,
+                                           c2_vertical_vappr_will_be_activated,
+                                           c2_vertical_vga_will_be_activated,
+                                           c2_vertical_vs_will_be_activated,
+                                           c2_vertical_flc_will_be_activated)
+                                           : bool in
+                                           (vertical_new_vertical_mode_activated__function_guard(o1,
+                                           c2_vertical_alt_will_be_activated,
+                                           c2_vertical_altsel_will_be_activated,
+                                           c2_vertical_vappr_will_be_activated,
+                                           c2_vertical_vga_will_be_activated,
+                                           c2_vertical_vs_will_be_activated,
+                                           c2_vertical_flc_will_be_activated) and
+                                           ((spark__branch12 = o1) and
+                                           (if (spark__branch12 = true) then ((c2_alt_active1 = of_int(0)) and
+                                           (c2_alt_selected1 = of_int(0))) else ((c2_alt_selected1 = c2_alt_selected) and
+                                           (c2_alt_active1 = c2_alt_active)))))) else (((spark__branch12 = spark__branch15) and
+                                           (c2_alt_selected1 = c2_alt_selected)) and
+                                           (c2_alt_active1 = c2_alt_active)))))))))) else 
+                                           (exists spark__branch14:bool.
+                                           ((spark__branch14 = c2_vertical_alt_cleared_active) and
+                                           (if (spark__branch14 = true) then (let o =
+                                           vertical_alt_select(c2_altsel_track,
+                                           c2_alt_switch_pressed,
+                                           c2_vappr_active,
+                                           c2_altsel_target_changed)
+                                           : bool in
+                                           (vertical_alt_select__function_guard(o,
+                                           c2_altsel_track,
+                                           c2_alt_switch_pressed,
+                                           c2_vappr_active,
+                                           c2_altsel_target_changed) and
+                                           ((spark__branch12 = o) and
+                                           (if (spark__branch12 = true) then ((c2_alt_selected1 = of_int(1)) and
+                                           (c2_alt_active1 = of_int(1))) else ((c2_alt_selected1 = c2_alt_selected) and
+                                           (c2_alt_active1 = c2_alt_active)))))) else (((spark__branch12 = spark__branch14) and
+                                           (c2_alt_selected1 = c2_alt_selected)) and
+                                           (c2_alt_active1 = c2_alt_active)))))))) and
+                                          (exists spark__branch13:bool.
+                                          ((exists spark__branch14:bool.
+                                           ((spark__branch14 = c2_vertical_vappr_selected_active) and
+                                           (if (spark__branch14 = true) then (let o =
+                                           vertical_vappr_clear(c2_modes_on1,
+                                           c2_pilot_flying_transfer,
+                                           c2_appr_switch_pressed,
+                                           c2_selected_nav_source_changed,
+                                           c2_lappr_selected1,
+                                           c2_selected_nav_frequency_changed)
+                                           : bool in
+                                           (vertical_vappr_clear__function_guard(o,
+                                           c2_modes_on1,
+                                           c2_pilot_flying_transfer,
+                                           c2_appr_switch_pressed,
+                                           c2_selected_nav_source_changed,
+                                           c2_lappr_selected1,
+                                           c2_selected_nav_frequency_changed) and
+                                           (exists spark__branch15:bool.
+                                           ((spark__branch15 = o) and
+                                           (if (spark__branch15 = true) then (
+                                           (exists spark__branch16:bool.
+                                           ((spark__branch16 = c2_vertical_vappr_selected_active_active) and
+                                           (if (spark__branch16 = true) then ((c2_vappr_active1 = of_int(0)) and
+                                           (spark__branch13 = spark__branch16)) else ((spark__branch13 = c2_vertical_vappr_selected_armed_active) and
+                                           (c2_vappr_active1 = c2_vappr_active))))) and
+                                           (c2_vappr_selected1 = of_int(0))) else 
+                                           (exists spark__branch16:bool.
+                                           ((spark__branch16 = c2_vertical_vappr_selected_active_active) and
+                                           (if (spark__branch16 = true) then (let o1 =
+                                           vertical_new_vertical_mode_activated(c2_vertical_alt_will_be_activated,
+                                           c2_vertical_altsel_will_be_activated,
+                                           c2_vertical_vappr_will_be_activated,
+                                           c2_vertical_vga_will_be_activated,
+                                           c2_vertical_vs_will_be_activated,
+                                           c2_vertical_flc_will_be_activated)
+                                           : bool in
+                                           (vertical_new_vertical_mode_activated__function_guard(o1,
+                                           c2_vertical_alt_will_be_activated,
+                                           c2_vertical_altsel_will_be_activated,
+                                           c2_vertical_vappr_will_be_activated,
+                                           c2_vertical_vga_will_be_activated,
+                                           c2_vertical_vs_will_be_activated,
+                                           c2_vertical_flc_will_be_activated) and
+                                           ((spark__branch13 = o1) and
+                                           (if (spark__branch13 = true) then ((c2_vappr_active1 = of_int(0)) and
+                                           (c2_vappr_selected1 = of_int(0))) else ((c2_vappr_selected1 = c2_vappr_selected) and
+                                           (c2_vappr_active1 = c2_vappr_active)))))) else (
+                                           (exists spark__branch17:bool.
+                                           ((spark__branch17 = c2_vertical_vappr_selected_armed_active) and
+                                           (if (spark__branch17 = true) then (let o1 =
+                                           vertical_vappr_capture(c2_overspeed,
+                                           c2_vappr_capture_condition_met,
+                                           c2_lappr_active1) : bool in
+                                           (vertical_vappr_capture__function_guard(o1,
+                                           c2_overspeed,
+                                           c2_vappr_capture_condition_met,
+                                           c2_lappr_active1) and
+                                           ((spark__branch13 = o1) and
+                                           (if (spark__branch13 = true) then (c2_vappr_active1 = of_int(1)) else (c2_vappr_active1 = c2_vappr_active))))) else ((spark__branch13 = spark__branch17) and
+                                           (c2_vappr_active1 = c2_vappr_active))))) and
+                                           (c2_vappr_selected1 = c2_vappr_selected)))))))))) else (
+                                           (exists spark__branch15:bool.
+                                           ((spark__branch15 = c2_vertical_vappr_cleared_active) and
+                                           (if (spark__branch15 = true) then (let o =
+                                           vertical_vappr_select(c2_appr_switch_pressed)
+                                           : bool in
+                                           (vertical_vappr_select__function_guard(o,
+                                           c2_appr_switch_pressed) and
+                                           ((spark__branch13 = o) and
+                                           (if (spark__branch13 = true) then (c2_vappr_selected1 = of_int(1)) else (c2_vappr_selected1 = c2_vappr_selected))))) else ((spark__branch13 = spark__branch15) and
+                                           (c2_vappr_selected1 = c2_vappr_selected))))) and
+                                           (c2_vappr_active1 = c2_vappr_active))))) and
+                                          (exists spark__branch14:bool.
+                                          ((exists spark__branch15:bool.
+                                           ((spark__branch15 = c2_vertical_vga_selected_active) and
+                                           (if (spark__branch15 = true) then (let o =
+                                           vertical_vga_clear(c2_sync_switch_pressed,
+                                           c2_modes_on1, c2_lga_active1,
+                                           c2_vs_pitch_wheel_rotated,
+                                           c2_pilot_flying_transfer,
+                                           c2_when_ap_engaged) : bool in
+                                           (vertical_vga_clear__function_guard(o,
+                                           c2_sync_switch_pressed,
+                                           c2_modes_on1, c2_lga_active1,
+                                           c2_vs_pitch_wheel_rotated,
+                                           c2_pilot_flying_transfer,
+                                           c2_when_ap_engaged) and
+                                           (exists spark__branch16:bool.
+                                           ((spark__branch16 = o) and
+                                           (if (spark__branch16 = true) then (((spark__branch14 = c2_vertical_vga_selected_active_active) and
+                                           (if (spark__branch14 = true) then (c2_vga_active1 = of_int(0)) else (c2_vga_active1 = c2_vga_active))) and
+                                           (c2_vga_selected1 = of_int(0))) else 
+                                           (exists spark__branch17:bool.
+                                           ((spark__branch17 = c2_vertical_vga_selected_active_active) and
+                                           (if (spark__branch17 = true) then (let o1 =
+                                           vertical_new_vertical_mode_activated(c2_vertical_alt_will_be_activated,
+                                           c2_vertical_altsel_will_be_activated,
+                                           c2_vertical_vappr_will_be_activated,
+                                           c2_vertical_vga_will_be_activated,
+                                           c2_vertical_vs_will_be_activated,
+                                           c2_vertical_flc_will_be_activated)
+                                           : bool in
+                                           (vertical_new_vertical_mode_activated__function_guard(o1,
+                                           c2_vertical_alt_will_be_activated,
+                                           c2_vertical_altsel_will_be_activated,
+                                           c2_vertical_vappr_will_be_activated,
+                                           c2_vertical_vga_will_be_activated,
+                                           c2_vertical_vs_will_be_activated,
+                                           c2_vertical_flc_will_be_activated) and
+                                           ((spark__branch14 = o1) and
+                                           (if (spark__branch14 = true) then ((c2_vga_active1 = of_int(0)) and
+                                           (c2_vga_selected1 = of_int(0))) else ((c2_vga_selected1 = c2_vga_selected) and
+                                           (c2_vga_active1 = c2_vga_active)))))) else (((spark__branch14 = spark__branch17) and
+                                           (c2_vga_selected1 = c2_vga_selected)) and
+                                           (c2_vga_active1 = c2_vga_active)))))))))) else 
+                                           (exists spark__branch16:bool.
+                                           ((spark__branch16 = c2_vertical_vga_cleared_active) and
+                                           (if (spark__branch16 = true) then (let o =
+                                           vertical_vga_select(c2_overspeed,
+                                           c2_ga_switch_pressed) : bool in
+                                           (vertical_vga_select__function_guard(o,
+                                           c2_overspeed,
+                                           c2_ga_switch_pressed) and
+                                           ((spark__branch14 = o) and
+                                           (if (spark__branch14 = true) then ((c2_vga_selected1 = of_int(1)) and
+                                           (c2_vga_active1 = of_int(1))) else ((c2_vga_selected1 = c2_vga_selected) and
+                                           (c2_vga_active1 = c2_vga_active)))))) else (((spark__branch14 = spark__branch16) and
+                                           (c2_vga_selected1 = c2_vga_selected)) and
+                                           (c2_vga_active1 = c2_vga_active)))))))) and
+                                          (exists spark__branch15:bool.
+                                          ((exists spark__branch16:bool.
+                                           ((spark__branch16 = c2_vertical_altsel_selected_active) and
+                                           (if (spark__branch16 = true) then (let o =
+                                           vertical_altsel_clear(c2_modes_on1,
+                                           c2_vappr_active1, c2_alt_active1,
+                                           c2_vga_active1) : bool in
+                                           (vertical_altsel_clear__function_guard(o,
+                                           c2_modes_on1, c2_vappr_active1,
+                                           c2_alt_active1,
+                                           c2_vga_active1) and
+                                           (exists spark__branch17:bool.
+                                           ((spark__branch17 = o) and
+                                           (if (spark__branch17 = true) then (
+                                           (exists spark__branch18:bool.
+                                           ((spark__branch18 = c2_vertical_altsel_selected_active_active) and
+                                           (if (spark__branch18 = true) then (
+                                           (exists spark__branch19:bool.
+                                           ((spark__branch19 = c2_vertical_altsel_selected_active_capture_active) and
+                                           (if (spark__branch19 = true) then ((spark__branch15 = spark__branch19) and
+                                           (c2_altsel_track1 = c2_altsel_track)) else ((spark__branch15 = c2_vertical_altsel_selected_active_track_active) and
+                                           (if (spark__branch15 = true) then (c2_altsel_track1 = of_int(0)) else (c2_altsel_track1 = c2_altsel_track)))))) and
+                                           (c2_altsel_active1 = of_int(0))) else (((spark__branch15 = c2_vertical_altsel_selected_armed_active) and
+                                           (c2_altsel_active1 = c2_altsel_active)) and
+                                           (c2_altsel_track1 = c2_altsel_track))))) and
+                                           (c2_altsel_selected1 = of_int(0))) else (
+                                           (exists spark__branch18:bool.
+                                           ((spark__branch18 = c2_vertical_altsel_selected_active_active) and
+                                           (if (spark__branch18 = true) then (let o1 =
+                                           vertical_altsel_deactivate(c2_vertical_alt_will_be_activated,
+                                           c2_vertical_altsel_will_be_activated,
+                                           c2_vertical_vappr_will_be_activated,
+                                           c2_vertical_vga_will_be_activated,
+                                           c2_vs_pitch_wheel_rotated,
+                                           c2_vertical_vs_will_be_activated,
+                                           c2_pilot_flying_transfer,
+                                           c2_altsel_target_changed,
+                                           c2_vertical_flc_will_be_activated)
+                                           : bool in
+                                           (vertical_altsel_deactivate__function_guard(o1,
+                                           c2_vertical_alt_will_be_activated,
+                                           c2_vertical_altsel_will_be_activated,
+                                           c2_vertical_vappr_will_be_activated,
+                                           c2_vertical_vga_will_be_activated,
+                                           c2_vs_pitch_wheel_rotated,
+                                           c2_vertical_vs_will_be_activated,
+                                           c2_pilot_flying_transfer,
+                                           c2_altsel_target_changed,
+                                           c2_vertical_flc_will_be_activated) and
+                                           (exists spark__branch19:bool.
+                                           ((spark__branch19 = o1) and
+                                           (if (spark__branch19 = true) then (
+                                           (exists spark__branch20:bool.
+                                           ((spark__branch20 = c2_vertical_altsel_selected_active_capture_active) and
+                                           (if (spark__branch20 = true) then ((spark__branch15 = spark__branch20) and
+                                           (c2_altsel_track1 = c2_altsel_track)) else ((spark__branch15 = c2_vertical_altsel_selected_active_track_active) and
+                                           (if (spark__branch15 = true) then (c2_altsel_track1 = of_int(0)) else (c2_altsel_track1 = c2_altsel_track)))))) and
+                                           (c2_altsel_active1 = of_int(0))) else (
+                                           (exists spark__branch20:bool.
+                                           ((spark__branch20 = c2_vertical_altsel_selected_active_capture_active) and
+                                           (if (spark__branch20 = true) then (let o2 =
+                                           vertical_altsel_track(c2_altsel_track_condition_met)
+                                           : bool in
+                                           (vertical_altsel_track__function_guard(o2,
+                                           c2_altsel_track_condition_met) and
+                                           ((spark__branch15 = o2) and
+                                           (if (spark__branch15 = true) then (c2_altsel_track1 = of_int(1)) else (c2_altsel_track1 = c2_altsel_track))))) else ((spark__branch15 = spark__branch20) and
+                                           (c2_altsel_track1 = c2_altsel_track))))) and
+                                           (c2_altsel_active1 = c2_altsel_active))))))) else (
+                                           (exists spark__branch19:bool.
+                                           ((spark__branch19 = c2_vertical_altsel_selected_armed_active) and
+                                           (if (spark__branch19 = true) then (let o1 =
+                                           vertical_altsel_capture(c2_altsel_capture_condition_met)
+                                           : bool in
+                                           (vertical_altsel_capture__function_guard(o1,
+                                           c2_altsel_capture_condition_met) and
+                                           ((spark__branch15 = o1) and
+                                           (if (spark__branch15 = true) then (c2_altsel_active1 = of_int(1)) else (c2_altsel_active1 = c2_altsel_active))))) else ((spark__branch15 = spark__branch19) and
+                                           (c2_altsel_active1 = c2_altsel_active))))) and
+                                           (c2_altsel_track1 = c2_altsel_track))))) and
+                                           (c2_altsel_selected1 = c2_altsel_selected))))))) else ((
+                                           (exists spark__branch17:bool.
+                                           ((spark__branch17 = c2_vertical_altsel_cleared_active) and
+                                           (if (spark__branch17 = true) then (let o =
+                                           vertical_altsel_select(c2_vappr_active1,
+                                           c2_alt_active1, c2_vga_active1)
+                                           : bool in
+                                           (vertical_altsel_select__function_guard(o,
+                                           c2_vappr_active1, c2_alt_active1,
+                                           c2_vga_active1) and
+                                           ((spark__branch15 = o) and
+                                           (if (spark__branch15 = true) then (c2_altsel_selected1 = of_int(1)) else (c2_altsel_selected1 = c2_altsel_selected))))) else ((spark__branch15 = spark__branch17) and
+                                           (c2_altsel_selected1 = c2_altsel_selected))))) and
+                                           (c2_altsel_active1 = c2_altsel_active)) and
+                                           (c2_altsel_track1 = c2_altsel_track))))) and
+                                          (exists spark__branch16:bool.
+                                          ((spark__branch16 = c2_vertical_pitch_selected_active) and
+                                          (if (spark__branch16 = true) then 
+                                          (exists spark__branch17:bool.
+                                          ((spark__branch17 = c2_vertical_pitch_selected_active_active) and
+                                          (if (spark__branch17 = true) then (let o =
+                                          vertical_vertical_mode_active(c2_vs_active1,
+                                          c2_altsel_active1, c2_flc_active1,
+                                          c2_vappr_active1, c2_alt_active1,
+                                          c2_vga_active1) : bool in
+                                          (vertical_vertical_mode_active__function_guard(o,
+                                          c2_vs_active1, c2_altsel_active1,
+                                          c2_flc_active1, c2_vappr_active1,
+                                          c2_alt_active1, c2_vga_active1) and
+                                          (exists spark__branch18:bool.
+                                          ((spark__branch18 = o) and
+                                          (if (spark__branch18 = true) then ((c2_pitch_active1 = of_int(0)) and
+                                          (c2_pitch_selected1 = of_int(0))) else ((c2_pitch_selected1 = c2_pitch_selected) and
+                                          (c2_pitch_active1 = c2_pitch_active))))))) else ((c2_pitch_selected1 = c2_pitch_selected) and
+                                          (c2_pitch_active1 = c2_pitch_active))))) else 
+                                          (exists spark__branch17:bool.
+                                          ((spark__branch17 = c2_vertical_pitch_cleared_active) and
+                                          (if (spark__branch17 = true) then (let o =
+                                          vertical_vertical_mode_active(c2_vs_active1,
+                                          c2_altsel_active1, c2_flc_active1,
+                                          c2_vappr_active1, c2_alt_active1,
+                                          c2_vga_active1) : bool in
+                                          (vertical_vertical_mode_active__function_guard(o,
+                                          c2_vs_active1, c2_altsel_active1,
+                                          c2_flc_active1, c2_vappr_active1,
+                                          c2_alt_active1, c2_vga_active1) and
+                                          (exists spark__branch18:bool.
+                                          ((spark__branch18 = (if (o = true) then false else true)) and
+                                          (if (spark__branch18 = true) then ((c2_pitch_selected1 = of_int(1)) and
+                                          (c2_pitch_active1 = of_int(1))) else ((c2_pitch_selected1 = c2_pitch_selected) and
+                                          (c2_pitch_active1 = c2_pitch_active))))))) else ((c2_pitch_selected1 = c2_pitch_selected) and
+                                          (c2_pitch_active1 = c2_pitch_active))))))))))))))))))))))))))))))))))))))))))) ->
+  (forall roll_active:bool. ((roll_active = c2_roll_active1) ->
+  (forall hdg_active:bool. ((hdg_active = c2_hdg_active1) ->
+  (forall nav_active:bool. ((nav_active = c2_nav_active1) ->
+  (forall lappr_active:bool. ((lappr_active = c2_lappr_active1) ->
+  (forall lga_active:bool. ((lga_active = c2_lga_active1) ->
+  (((((roll_active = true) or (hdg_active = true)) or (nav_active = true)) or
+  (lappr_active = true)) or (lga_active = true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))

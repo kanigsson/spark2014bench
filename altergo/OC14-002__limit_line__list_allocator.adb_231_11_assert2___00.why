@@ -1,0 +1,1790 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+type positive
+
+logic positiveqtint : positive -> int
+
+axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
+
+axiom positiveqtaxiom1 :
+  (forall i:positive. (positiveqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : positive, positive -> bool
+
+logic dummy1 : positive
+
+type positive__ref = { positive__content : positive
+}
+
+function positive__ref_positive__content__projection(a: positive__ref) : positive =
+  (a).positive__content
+
+type resource
+
+logic resourceqtint : resource -> int
+
+axiom resourceqtaxiom : (forall i:resource. (0 <= resourceqtint(i)))
+
+axiom resourceqtaxiom1 : (forall i:resource. (resourceqtint(i) <= 3))
+
+predicate in_range3(x: int) = ((0 <= x) and (x <= 3))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : resource, resource -> bool
+
+logic dummy2 : resource
+
+type resource__ref = { resource__content : resource
+}
+
+function resource__ref_resource__content__projection(a: resource__ref) : resource =
+  (a).resource__content
+
+function to_rep(x: resource) : int = resourceqtint(x)
+
+logic of_rep : int -> resource
+
+axiom inversion_axiom :
+  (forall x:resource [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:resource [to_rep(x)]. in_range3(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range3(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type status
+
+predicate in_range4(x: int) = ((0 <= x) and (x <= 1))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq3 : status, status -> bool
+
+logic dummy3 : status
+
+type status__ref = { status__content : status
+}
+
+function status__ref_status__content__projection(a: status__ref) : status =
+  (a).status__content
+
+logic to_rep1 : status -> int
+
+logic of_rep1 : int -> status
+
+axiom inversion_axiom1 :
+  (forall x:status [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:status [to_rep1(x)]. in_range4(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range4(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type us_split_fields = { rec__list_allocator__cell__stat : status;
+rec__list_allocator__cell__prev : resource; rec__list_allocator__cell__next :
+resource
+}
+
+function us_split_fields_rec__list_allocator__cell__stat__projection(a: us_split_fields) : status =
+  (a).rec__list_allocator__cell__stat
+
+function us_split_fields_rec__list_allocator__cell__prev__projection(a: us_split_fields) : resource =
+  (a).rec__list_allocator__cell__prev
+
+function us_split_fields_rec__list_allocator__cell__next__projection(a: us_split_fields) : resource =
+  (a).rec__list_allocator__cell__next
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq5(a: us_rep, b: us_rep) : bool =
+  (if (((to_rep1(((a).us_split_fields1).rec__list_allocator__cell__stat) = to_rep1(((b).us_split_fields1).rec__list_allocator__cell__stat)) and
+  (to_rep(((a).us_split_fields1).rec__list_allocator__cell__prev) = to_rep(((b).us_split_fields1).rec__list_allocator__cell__prev))) and
+  (to_rep(((a).us_split_fields1).rec__list_allocator__cell__next) = to_rep(((b).us_split_fields1).rec__list_allocator__cell__next))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic list_allocator__cell__stat__first__bit : int
+
+logic list_allocator__cell__stat__last__bit : int
+
+logic list_allocator__cell__stat__position : int
+
+axiom list_allocator__cell__stat__first__bit_axiom :
+  (0 <= list_allocator__cell__stat__first__bit)
+
+axiom list_allocator__cell__stat__last__bit_axiom :
+  (list_allocator__cell__stat__first__bit <  list_allocator__cell__stat__last__bit)
+
+axiom list_allocator__cell__stat__position_axiom :
+  (0 <= list_allocator__cell__stat__position)
+
+logic list_allocator__cell__prev__first__bit : int
+
+logic list_allocator__cell__prev__last__bit : int
+
+logic list_allocator__cell__prev__position : int
+
+axiom list_allocator__cell__prev__first__bit_axiom :
+  (0 <= list_allocator__cell__prev__first__bit)
+
+axiom list_allocator__cell__prev__last__bit_axiom :
+  (list_allocator__cell__prev__first__bit <  list_allocator__cell__prev__last__bit)
+
+axiom list_allocator__cell__prev__position_axiom :
+  (0 <= list_allocator__cell__prev__position)
+
+logic list_allocator__cell__next__first__bit : int
+
+logic list_allocator__cell__next__last__bit : int
+
+logic list_allocator__cell__next__position : int
+
+axiom list_allocator__cell__next__first__bit_axiom :
+  (0 <= list_allocator__cell__next__first__bit)
+
+axiom list_allocator__cell__next__last__bit_axiom :
+  (list_allocator__cell__next__first__bit <  list_allocator__cell__next__last__bit)
+
+axiom list_allocator__cell__next__position_axiom :
+  (0 <= list_allocator__cell__next__position)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type cell__ref = { cell__content : us_rep
+}
+
+function cell__ref_cell__content__projection(a: cell__ref) : us_rep =
+  (a).cell__content
+
+type map__ref = { map__content : (int,us_rep) farray
+}
+
+logic slide : (int,us_rep) farray, int, int -> (int,us_rep) farray
+
+axiom slide_eq :
+  (forall a:(int,us_rep) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,us_rep) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq6(a: (int,us_rep) farray, a__first: int, a__last: int,
+  b: (int,us_rep) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) -> (bool_eq5((a[temp___idx_154]),
+  (b[((b__first - a__first) + temp___idx_154)])) = true)))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq6(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq6(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq6(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq6(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) -> (bool_eq5((a[temp___idx_154]),
+  (b[((b__first - a__first) + temp___idx_154)])) = true))))))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+type us_main_type
+
+logic us_main_eq : us_main_type, us_main_type -> bool
+
+type us_rep1
+
+logic bool_eq7 : us_rep1, us_rep1 -> bool
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic user_eq5 : us_rep1, us_rep1 -> bool
+
+logic dummy5 : us_rep1
+
+type sequence__ref = { sequence__content : us_rep1
+}
+
+function sequence__ref_sequence__content__projection(a: sequence__ref) : us_rep1 =
+  (a).sequence__content
+
+logic length : us_rep1 -> int
+
+logic length__function_guard : int, us_rep1 -> prop
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq6 : natural, natural -> bool
+
+logic dummy6 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range5(temp___expr_39))
+
+logic oeq : us_rep1, us_rep1 -> bool
+
+logic oeq__function_guard : bool, us_rep1, us_rep1 -> prop
+
+axiom user_eq__def_axiom :
+  (forall a:us_rep1. forall b:us_rep1. oeq__function_guard(oeq(a, b), a, b))
+
+axiom user_eq__def_axiom1 :
+  (forall a:us_rep1. forall b:us_rep1 [user_eq5(a, b)]. (user_eq5(a,
+  b) = oeq(a, b)))
+
+axiom temp___result_240qtdef :
+  (forall temp___239:us_rep1. length__function_guard(length(temp___239),
+  temp___239))
+
+predicate default_initial_assumption(temp___expr_237: us_rep1,
+  temp___skip_top_level_238: bool) =
+  ((not (temp___skip_top_level_238 = true)) -> (length(temp___expr_237) = 0))
+
+axiom length__post_axiom :
+  (forall s:us_rep1 [length(s)]. (let result = length(s) : int in
+  (length__function_guard(result, s) -> dynamic_invariant(result, true,
+  false, true, true))))
+
+logic get : us_rep1, int -> int
+
+logic get__function_guard : int, us_rep1, int -> prop
+
+predicate dynamic_invariant1(temp___expr_46: int, temp___is_init_42: bool,
+  temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
+  temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
+  (1 <= 2147483647)) -> in_range2(temp___expr_46))
+
+type element_type
+
+logic element_typeqtint : element_type -> int
+
+axiom element_typeqtaxiom :
+  (forall i:element_type. (0 <= element_typeqtint(i)))
+
+axiom element_typeqtaxiom1 :
+  (forall i:element_type. (element_typeqtint(i) <= 3))
+
+predicate in_range6(x: int) = ((0 <= x) and (x <= 3))
+
+function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> int
+
+logic user_eq7 : element_type, element_type -> bool
+
+logic dummy7 : element_type
+
+type element_type__ref = { element_type__content : element_type
+}
+
+function element_type__ref_element_type__content__projection(a: element_type__ref) : element_type =
+  (a).element_type__content
+
+predicate dynamic_invariant2(temp___expr_228: int, temp___is_init_224: bool,
+  temp___skip_constant_225: bool, temp___do_toplevel_226: bool,
+  temp___do_typ_inv_227: bool) = (((temp___is_init_224 = true) or
+  (0 <= 3)) -> in_range6(temp___expr_228))
+
+axiom get__post_axiom :
+  (forall s:us_rep1. length__function_guard(length(s), s))
+
+axiom get__post_axiom1 :
+  (forall s:us_rep1.
+  (forall n:int [get(s, n)]. ((dynamic_invariant1(n, true, true, true,
+  true) and ((1 <= n) and (n <= length(s)))) -> (let result = get(s, n)
+  : int in (get__function_guard(result, s, n) -> dynamic_invariant2(result,
+  true, false, true, true))))))
+
+logic is_prepend : us_rep1, int, us_rep1 -> bool
+
+logic is_prepend__function_guard : bool, us_rep1, int, us_rep1 -> prop
+
+axiom is_prepend__post_axiom :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall e:int [is_prepend(s, e, result__)]. (dynamic_invariant2(e, true,
+  true, true, true) ->
+  (forall result__1:us_rep1. length__function_guard(length(result__1),
+  result__1)))))
+
+axiom is_prepend__post_axiom1 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall e:int [is_prepend(s, e, result__)]. (dynamic_invariant2(e, true,
+  true, true, true) ->
+  (forall s1:us_rep1. length__function_guard(length(s1), s1)))))
+
+axiom is_prepend__post_axiom2 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall e:int [is_prepend(s, e, result__)]. (dynamic_invariant2(e, true,
+  true, true, true) ->
+  (forall result__1:us_rep1. get__function_guard(get(result__1, 1),
+  result__1, 1)))))
+
+axiom is_prepend__post_axiom3 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall e:int [is_prepend(s, e, result__)]. (dynamic_invariant2(e, true,
+  true, true, true) ->
+  (forall result__1:us_rep1. length__function_guard(length(result__1),
+  result__1)))))
+
+axiom is_prepend__post_axiom4 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall e:int [is_prepend(s, e, result__)]. (dynamic_invariant2(e, true,
+  true, true, true) ->
+  (forall result__1:us_rep1. forall m:int. get__function_guard(get(result__1,
+  m), result__1, m)))))
+
+axiom is_prepend__post_axiom5 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall e:int [is_prepend(s, e, result__)]. (dynamic_invariant2(e, true,
+  true, true, true) ->
+  (forall s1:us_rep1. forall m:int. get__function_guard(get(s1, (m - 1)), s1,
+  (m - 1))))))
+
+axiom is_prepend__post_axiom6 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall e:int [is_prepend(s, e, result__)]. (dynamic_invariant2(e, true,
+  true, true, true) -> (let result = is_prepend(s, e, result__) : bool in
+  (is_prepend__function_guard(result, s, e, result__) -> ((result = true) ->
+  (length(result__) = (length(s) + 1))))))))
+
+axiom is_prepend__post_axiom7 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall e:int [is_prepend(s, e, result__)]. (dynamic_invariant2(e, true,
+  true, true, true) -> (let result = is_prepend(s, e, result__) : bool in
+  (is_prepend__function_guard(result, s, e, result__) -> ((result = true) ->
+  (get(result__, 1) = e)))))))
+
+axiom is_prepend__post_axiom8 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall e:int [is_prepend(s, e, result__)]. (dynamic_invariant2(e, true,
+  true, true, true) -> (let result = is_prepend(s, e, result__) : bool in
+  (is_prepend__function_guard(result, s, e, result__) -> ((result = true) ->
+  (forall m:int. (((2 <= m) and (m <= length(result__))) -> (get(result__,
+  m) = get(s, (m - 1)))))))))))
+
+axiom is_prepend__post_axiom9 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall e:int [is_prepend(s, e, result__)]. (dynamic_invariant2(e, true,
+  true, true, true) -> (let result = is_prepend(s, e, result__) : bool in
+  (is_prepend__function_guard(result, s, e, result__) ->
+  ((((length(result__) = (length(s) + 1)) and (get(result__, 1) = e)) and
+  (forall m:int. (((2 <= m) and (m <= length(result__))) -> (get(result__,
+  m) = get(s, (m - 1)))))) -> (result = true)))))))
+
+logic prepend : us_rep1, int -> us_rep1
+
+logic prepend__function_guard : us_rep1, us_rep1, int -> prop
+
+axiom prepend__post_axiom :
+  (forall s:us_rep1.
+  (forall e:int [prepend(s, e)]. (dynamic_invariant2(e, true, true, true,
+  true) ->
+  (forall s1:us_rep1. forall e1:int. forall result:us_rep1.
+  is_prepend__function_guard(is_prepend(s1, e1, result), s1, e1, result)))))
+
+axiom prepend__post_axiom1 :
+  (forall s:us_rep1.
+  (forall e:int [prepend(s, e)]. (dynamic_invariant2(e, true, true, true,
+  true) -> (let result = prepend(s, e) : us_rep1 in
+  (prepend__function_guard(result, s, e) -> (is_prepend(s, e,
+  result) = true))))))
+
+logic is_removed_at : us_rep1, int, us_rep1 -> bool
+
+logic is_removed_at__function_guard : bool, us_rep1, int, us_rep1 -> prop
+
+logic remove_at : us_rep1, int -> us_rep1
+
+logic remove_at__function_guard : us_rep1, us_rep1, int -> prop
+
+axiom remove_at__post_axiom :
+  (forall s:us_rep1. length__function_guard(length(s), s))
+
+axiom remove_at__post_axiom1 :
+  (forall s:us_rep1.
+  (forall n:int [remove_at(s, n)]. ((dynamic_invariant1(n, true, true, true,
+  true) and ((1 <= n) and (n <= length(s)))) ->
+  (forall s1:us_rep1. forall n1:int. forall result:us_rep1.
+  is_removed_at__function_guard(is_removed_at(s1, n1, result), s1, n1,
+  result)))))
+
+axiom remove_at__post_axiom2 :
+  (forall s:us_rep1.
+  (forall n:int [remove_at(s, n)]. ((dynamic_invariant1(n, true, true, true,
+  true) and ((1 <= n) and (n <= length(s)))) -> (let result = remove_at(s, n)
+  : us_rep1 in (remove_at__function_guard(result, s, n) -> (is_removed_at(s,
+  n, result) = true))))))
+
+type us_split_fields2 = { rec__list_allocator__m__t__available : us_rep1;
+rec__list_allocator__m__t__allocated : us_rep1
+}
+
+function us_split_fields_rec__list_allocator__m__t__available__projection(a: us_split_fields2) : us_rep1 =
+  (a).rec__list_allocator__m__t__available
+
+function us_split_fields_rec__list_allocator__m__t__allocated__projection(a: us_split_fields2) : us_rep1 =
+  (a).rec__list_allocator__m__t__allocated
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep2 = { us_split_fields3 : us_split_fields2
+}
+
+function us_rep___split_fields__2__projection(a: us_rep2) : us_split_fields2 =
+  (a).us_split_fields3
+
+function bool_eq10(a: us_rep2, b: us_rep2) : bool =
+  (if ((user_eq5(((a).us_split_fields3).rec__list_allocator__m__t__available,
+  ((b).us_split_fields3).rec__list_allocator__m__t__available) = true) and
+  (user_eq5(((a).us_split_fields3).rec__list_allocator__m__t__allocated,
+  ((b).us_split_fields3).rec__list_allocator__m__t__allocated) = true)) then true else false)
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic list_allocator__m__t__available__first__bit : int
+
+logic list_allocator__m__t__available__last__bit : int
+
+logic list_allocator__m__t__available__position : int
+
+axiom list_allocator__m__t__available__first__bit_axiom :
+  (0 <= list_allocator__m__t__available__first__bit)
+
+axiom list_allocator__m__t__available__last__bit_axiom :
+  (list_allocator__m__t__available__first__bit <  list_allocator__m__t__available__last__bit)
+
+axiom list_allocator__m__t__available__position_axiom :
+  (0 <= list_allocator__m__t__available__position)
+
+logic list_allocator__m__t__allocated__first__bit : int
+
+logic list_allocator__m__t__allocated__last__bit : int
+
+logic list_allocator__m__t__allocated__position : int
+
+axiom list_allocator__m__t__allocated__first__bit_axiom :
+  (0 <= list_allocator__m__t__allocated__first__bit)
+
+axiom list_allocator__m__t__allocated__last__bit_axiom :
+  (list_allocator__m__t__allocated__first__bit <  list_allocator__m__t__allocated__last__bit)
+
+axiom list_allocator__m__t__allocated__position_axiom :
+  (0 <= list_allocator__m__t__allocated__position)
+
+logic user_eq8 : us_rep2, us_rep2 -> bool
+
+logic dummy8 : us_rep2
+
+type t__ref = { t__content : us_rep2
+}
+
+function t__ref_t__content__projection(a: t__ref) : us_rep2 = (a).t__content
+
+logic oeq1 : us_rep2, us_rep2 -> bool
+
+logic oeq__function_guard1 : bool, us_rep2, us_rep2 -> prop
+
+axiom user_eq__def_axiom2 :
+  (forall a:us_rep2. forall b:us_rep2. oeq__function_guard1(oeq1(a, b), a,
+  b))
+
+axiom user_eq__def_axiom3 :
+  (forall a:us_rep2. forall b:us_rep2 [user_eq8(a, b)]. (user_eq8(a,
+  b) = oeq1(a, b)))
+
+axiom temp___result_331qtdef :
+  (forall temp___330:us_rep1. length__function_guard(length(temp___330),
+  temp___330))
+
+axiom temp___result_334qtdef :
+  (forall temp___333:us_rep1. length__function_guard(length(temp___333),
+  temp___333))
+
+predicate default_initial_assumption1(temp___expr_327: us_rep2,
+  temp___skip_top_level_328: bool) =
+  ((length(((temp___expr_327).us_split_fields3).rec__list_allocator__m__t__available) = 0) and
+  (length(((temp___expr_327).us_split_fields3).rec__list_allocator__m__t__allocated) = 0))
+
+axiom oeq__def_axiom :
+  (forall x:us_rep2. forall y:us_rep2.
+  oeq__function_guard(oeq(((x).us_split_fields3).rec__list_allocator__m__t__available,
+  ((y).us_split_fields3).rec__list_allocator__m__t__available),
+  ((x).us_split_fields3).rec__list_allocator__m__t__available,
+  ((y).us_split_fields3).rec__list_allocator__m__t__available))
+
+axiom oeq__def_axiom1 :
+  (forall x:us_rep2. forall y:us_rep2.
+  oeq__function_guard(oeq(((x).us_split_fields3).rec__list_allocator__m__t__allocated,
+  ((y).us_split_fields3).rec__list_allocator__m__t__allocated),
+  ((x).us_split_fields3).rec__list_allocator__m__t__allocated,
+  ((y).us_split_fields3).rec__list_allocator__m__t__allocated))
+
+axiom oeq__def_axiom2 :
+  (forall x:us_rep2. forall y:us_rep2 [oeq1(x, y)]. ((oeq1(x, y) = true) ->
+  (oeq(((x).us_split_fields3).rec__list_allocator__m__t__available,
+  ((y).us_split_fields3).rec__list_allocator__m__t__available) = true)))
+
+axiom oeq__def_axiom3 :
+  (forall x:us_rep2. forall y:us_rep2 [oeq1(x, y)]. ((oeq1(x, y) = true) ->
+  (oeq(((x).us_split_fields3).rec__list_allocator__m__t__allocated,
+  ((y).us_split_fields3).rec__list_allocator__m__t__allocated) = true)))
+
+axiom oeq__def_axiom4 :
+  (forall x:us_rep2. forall y:us_rep2 [oeq1(x, y)].
+  (((oeq(((x).us_split_fields3).rec__list_allocator__m__t__available,
+  ((y).us_split_fields3).rec__list_allocator__m__t__available) = true) and
+  (oeq(((x).us_split_fields3).rec__list_allocator__m__t__allocated,
+  ((y).us_split_fields3).rec__list_allocator__m__t__allocated) = true)) ->
+  (oeq1(x, y) = true)))
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic mem : us_rep1, int -> bool
+
+logic mem__function_guard : bool, us_rep1, int -> prop
+
+predicate dynamic_invariant3(temp___expr_178: int, temp___is_init_174: bool,
+  temp___skip_constant_175: bool, temp___do_toplevel_176: bool,
+  temp___do_typ_inv_177: bool) = (((temp___is_init_174 = true) or
+  (0 <= 3)) -> in_range3(temp___expr_178))
+
+axiom mem__def_axiom :
+  (forall s:us_rep1. length__function_guard(length(s), s))
+
+axiom mem__def_axiom1 :
+  (forall s:us_rep1. forall j:int. get__function_guard(get(s, j), s, j))
+
+axiom mem__def_axiom2 :
+  (forall s:us_rep1.
+  (forall r:int [mem(s, r)]. ((mem(s, r) = true) ->
+  (exists j:int. (((1 <= j) and (j <= length(s))) and (get(s, j) = r))))))
+
+axiom mem__def_axiom3 :
+  (forall s:us_rep1.
+  (forall r:int [mem(s, r)].
+  ((exists j:int. (((1 <= j) and (j <= length(s))) and (get(s, j) = r))) ->
+  (mem(s, r) = true))))
+
+logic find : us_rep1, int -> int
+
+logic find__function_guard : int, us_rep1, int -> prop
+
+axiom find__post_axiom :
+  (forall s:us_rep1.
+  (forall r:int [find(s, r)]. (dynamic_invariant3(r, true, true, true,
+  true) ->
+  (forall s1:us_rep1. forall r1:int. mem__function_guard(mem(s1, r1), s1,
+  r1)))))
+
+axiom find__post_axiom1 :
+  (forall s:us_rep1.
+  (forall r:int [find(s, r)]. (dynamic_invariant3(r, true, true, true,
+  true) -> (forall s1:us_rep1. length__function_guard(length(s1), s1)))))
+
+axiom find__post_axiom2 :
+  (forall s:us_rep1.
+  (forall r:int [find(s, r)]. (dynamic_invariant3(r, true, true, true,
+  true) ->
+  (forall s1:us_rep1. forall result:int. get__function_guard(get(s1, result),
+  s1, result)))))
+
+axiom find__post_axiom3 :
+  (forall s:us_rep1.
+  (forall r:int [find(s, r)]. (dynamic_invariant3(r, true, true, true,
+  true) -> (let result = find(s, r) : int in (find__function_guard(result, s,
+  r) -> ((mem(s, r) = true) -> (1 <= result)))))))
+
+axiom find__post_axiom4 :
+  (forall s:us_rep1.
+  (forall r:int [find(s, r)]. (dynamic_invariant3(r, true, true, true,
+  true) -> (let result = find(s, r) : int in (find__function_guard(result, s,
+  r) -> ((mem(s, r) = true) -> (result <= length(s))))))))
+
+axiom find__post_axiom5 :
+  (forall s:us_rep1.
+  (forall r:int [find(s, r)]. (dynamic_invariant3(r, true, true, true,
+  true) -> (let result = find(s, r) : int in (find__function_guard(result, s,
+  r) -> ((mem(s, r) = true) -> (get(s, result) = r)))))))
+
+axiom find__post_axiom6 :
+  (forall s:us_rep1.
+  (forall r:int [find(s, r)]. (dynamic_invariant3(r, true, true, true,
+  true) -> (let result = find(s, r) : int in (find__function_guard(result, s,
+  r) -> ((not (mem(s, r) = true)) -> (result = 0)))))))
+
+axiom find__post_axiom7 :
+  (forall s:us_rep1.
+  (forall r:int [find(s, r)]. (dynamic_invariant3(r, true, true, true,
+  true) -> (let result = find(s, r) : int in (find__function_guard(result, s,
+  r) -> dynamic_invariant(result, true, false, true, true))))))
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic is_valid : int, us_split_fields2, int, (int,us_rep) farray -> bool
+
+logic is_valid__function_guard : bool, int, us_split_fields2, int,
+  (int,us_rep) farray -> prop
+
+type valid_resource
+
+logic valid_resourceqtint : valid_resource -> int
+
+axiom valid_resourceqtaxiom :
+  (forall i:valid_resource. (1 <= valid_resourceqtint(i)))
+
+axiom valid_resourceqtaxiom1 :
+  (forall i:valid_resource. (valid_resourceqtint(i) <= 3))
+
+predicate in_range7(x: int) = ((1 <= x) and (x <= 3))
+
+function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE7 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check7 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE7 : us_image -> int
+
+logic user_eq9 : valid_resource, valid_resource -> bool
+
+logic dummy9 : valid_resource
+
+type valid_resource__ref = { valid_resource__content : valid_resource
+}
+
+function valid_resource__ref_valid_resource__content__projection(a: valid_resource__ref) : valid_resource =
+  (a).valid_resource__content
+
+axiom is_valid__def_axiom :
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  length__function_guard(length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available))
+
+axiom is_valid__def_axiom1 :
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, 1), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, 1))
+
+axiom is_valid__def_axiom2 :
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  length__function_guard(length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available))
+
+axiom is_valid__def_axiom3 :
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  length__function_guard(length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated))
+
+axiom is_valid__def_axiom4 :
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, 1), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, 1))
+
+axiom is_valid__def_axiom5 :
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  length__function_guard(length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated))
+
+axiom is_valid__def_axiom6 :
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  length__function_guard(length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available))
+
+axiom is_valid__def_axiom7 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall j:int.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, j), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, j))
+
+axiom is_valid__def_axiom8 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall j:int.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, j), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, j))
+
+axiom is_valid__def_axiom9 :
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  length__function_guard(length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available))
+
+axiom is_valid__def_axiom10 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall j:int.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, (j + 1)), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, (j + 1)))
+
+axiom is_valid__def_axiom11 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall j:int.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, j), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, j))
+
+axiom is_valid__def_axiom12 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall j:int.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, (j - 1)), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, (j - 1)))
+
+axiom is_valid__def_axiom13 :
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  length__function_guard(length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available))
+
+axiom is_valid__def_axiom14 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall j:int.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, j), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, j))
+
+axiom is_valid__def_axiom15 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall k:int.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, k), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, k))
+
+axiom is_valid__def_axiom16 :
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  length__function_guard(length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated))
+
+axiom is_valid__def_axiom17 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall j:int.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, j), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, j))
+
+axiom is_valid__def_axiom18 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall j:int.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, j), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, j))
+
+axiom is_valid__def_axiom19 :
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  length__function_guard(length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated))
+
+axiom is_valid__def_axiom20 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall j:int.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, (j + 1)), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, (j + 1)))
+
+axiom is_valid__def_axiom21 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall j:int.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, j), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, j))
+
+axiom is_valid__def_axiom22 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall j:int.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, (j - 1)), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, (j - 1)))
+
+axiom is_valid__def_axiom23 :
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  length__function_guard(length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated))
+
+axiom is_valid__def_axiom24 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall j:int.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, j), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, j))
+
+axiom is_valid__def_axiom25 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall k:int.
+  get__function_guard(get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, k), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, k))
+
+axiom is_valid__def_axiom26 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall r:int.
+  mem__function_guard(mem((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, r), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, r))
+
+axiom is_valid__def_axiom27 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall r:int.
+  mem__function_guard(mem((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, r), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, r))
+
+axiom is_valid__def_axiom28 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall r:int.
+  mem__function_guard(mem((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, r), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, r))
+
+axiom is_valid__def_axiom29 :
+  (forall list_allocator__m__model__fields:us_split_fields2. forall r:int.
+  mem__function_guard(mem((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, r), (({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, r))
+
+axiom is_valid__def_axiom30 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  ((not (list_allocator__first_available = 0)) -> (0 <  length((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available)))))))
+
+axiom is_valid__def_axiom31 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  ((not (list_allocator__first_available = 0)) -> (get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available,
+  1) = list_allocator__first_available))))))
+
+axiom is_valid__def_axiom32 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) -> ((list_allocator__first_available = 0) ->
+  (length((({ us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available) = 0))))))
+
+axiom is_valid__def_axiom33 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  ((not (list_allocator__first_allocated = 0)) -> (0 <  length((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated)))))))
+
+axiom is_valid__def_axiom34 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  ((not (list_allocator__first_allocated = 0)) -> (get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated,
+  1) = list_allocator__first_allocated))))))
+
+axiom is_valid__def_axiom35 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) -> ((list_allocator__first_allocated = 0) ->
+  (length((({ us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated) = 0))))))
+
+axiom is_valid__def_axiom36 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  (forall j:int. (((1 <= j) and (j <= length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available))) ->
+  in_range7(get((({ us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, j))))))))
+
+axiom is_valid__def_axiom37 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  (forall j:int. (((1 <= j) and (j <= length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available))) ->
+  (to_rep((((list_allocator__data[get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available,
+  j)])).us_split_fields1).rec__list_allocator__cell__next) = (if (j <  length((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available)) then get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available,
+  (j + 1)) else 0))))))))
+
+axiom is_valid__def_axiom38 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  (forall j:int. (((1 <= j) and (j <= length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available))) ->
+  (to_rep((((list_allocator__data[get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available,
+  j)])).us_split_fields1).rec__list_allocator__cell__prev) = (if (1 <  j) then get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available,
+  (j - 1)) else 0))))))))
+
+axiom is_valid__def_axiom39 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  (forall j:int. (((1 <= j) and (j <= length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available))) ->
+  (forall k:int. (((1 <= k) and (k <= length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available))) ->
+  ((not (j = k)) -> (not (get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, j) = get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, k))))))))))))
+
+axiom is_valid__def_axiom40 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  (forall j:int. (((1 <= j) and (j <= length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated))) ->
+  in_range7(get((({ us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, j))))))))
+
+axiom is_valid__def_axiom41 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  (forall j:int. (((1 <= j) and (j <= length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated))) ->
+  (to_rep((((list_allocator__data[get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated,
+  j)])).us_split_fields1).rec__list_allocator__cell__next) = (if (j <  length((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated)) then get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated,
+  (j + 1)) else 0))))))))
+
+axiom is_valid__def_axiom42 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  (forall j:int. (((1 <= j) and (j <= length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated))) ->
+  (to_rep((((list_allocator__data[get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated,
+  j)])).us_split_fields1).rec__list_allocator__cell__prev) = (if (1 <  j) then get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated,
+  (j - 1)) else 0))))))))
+
+axiom is_valid__def_axiom43 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  (forall j:int. (((1 <= j) and (j <= length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated))) ->
+  (forall k:int. (((1 <= k) and (k <= length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated))) ->
+  ((not (j = k)) -> (not (get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, j) = get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, k))))))))))))
+
+axiom is_valid__def_axiom44 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  (forall r:int. (((1 <= r) and (r <= 3)) ->
+  ((to_rep1((((list_allocator__data[r])).us_split_fields1).rec__list_allocator__cell__stat) = 0) ->
+  (mem((({ us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, r) = true))))))))
+
+axiom is_valid__def_axiom45 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  (forall r:int. (((1 <= r) and (r <= 3)) ->
+  ((to_rep1((((list_allocator__data[r])).us_split_fields1).rec__list_allocator__cell__stat) = 0) ->
+  (not (mem((({ us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, r) = true)))))))))
+
+axiom is_valid__def_axiom46 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  (forall r:int. (((1 <= r) and (r <= 3)) ->
+  ((not (to_rep1((((list_allocator__data[r])).us_split_fields1).rec__list_allocator__cell__stat) = 0)) ->
+  (not (mem((({ us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, r) = true)))))))))
+
+axiom is_valid__def_axiom47 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)]. ((is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true) ->
+  (forall r:int. (((1 <= r) and (r <= 3)) ->
+  ((not (to_rep1((((list_allocator__data[r])).us_split_fields1).rec__list_allocator__cell__stat) = 0)) ->
+  (mem((({ us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, r) = true))))))))
+
+axiom is_valid__def_axiom48 :
+  (forall list_allocator__first_available:int.
+  forall list_allocator__first_allocated:int.
+  (forall list_allocator__m__model__fields:us_split_fields2.
+  (forall list_allocator__data:(int,us_rep) farray
+  [is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data)].
+  ((((((if (not (list_allocator__first_available = 0)) then ((0 <  length((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available)) and (get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available,
+  1) = list_allocator__first_available)) else (length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available) = 0)) and
+  (if (not (list_allocator__first_allocated = 0)) then ((0 <  length((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated)) and (get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated,
+  1) = list_allocator__first_allocated)) else (length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated) = 0))) and
+  (forall j:int. (((1 <= j) and (j <= length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available))) ->
+  (((in_range7(get((({ us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, j)) and
+  (to_rep((((list_allocator__data[get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available,
+  j)])).us_split_fields1).rec__list_allocator__cell__next) = (if (j <  length((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available)) then get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available,
+  (j + 1)) else 0))) and (to_rep((((list_allocator__data[get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available,
+  j)])).us_split_fields1).rec__list_allocator__cell__prev) = (if (1 <  j) then get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available,
+  (j - 1)) else 0))) and
+  (forall k:int. (((1 <= k) and (k <= length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available))) ->
+  ((not (j = k)) -> (not (get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, j) = get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, k)))))))))) and
+  (forall j:int. (((1 <= j) and (j <= length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated))) ->
+  (((in_range7(get((({ us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, j)) and
+  (to_rep((((list_allocator__data[get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated,
+  j)])).us_split_fields1).rec__list_allocator__cell__next) = (if (j <  length((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated)) then get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated,
+  (j + 1)) else 0))) and (to_rep((((list_allocator__data[get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated,
+  j)])).us_split_fields1).rec__list_allocator__cell__prev) = (if (1 <  j) then get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated,
+  (j - 1)) else 0))) and
+  (forall k:int. (((1 <= k) and (k <= length((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated))) ->
+  ((not (j = k)) -> (not (get((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, j) = get((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, k)))))))))) and
+  (forall r:int. (((1 <= r) and (r <= 3)) ->
+  (if (to_rep1((((list_allocator__data[r])).us_split_fields1).rec__list_allocator__cell__stat) = 0) then ((mem((({
+  us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, r) = true) and
+  (not (mem((({ us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated,
+  r) = true))) else ((not (mem((({ us_split_fields3 =
+  list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__available, r) = true)) and
+  (mem((({ us_split_fields3 = list_allocator__m__model__fields
+  }).us_split_fields3).rec__list_allocator__m__t__allocated, r) = true)))))) ->
+  (is_valid(list_allocator__first_available,
+  list_allocator__m__model__fields, list_allocator__first_allocated,
+  list_allocator__data) = true)))))
+
+logic res : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+predicate dynamic_invariant4(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+predicate dynamic_invariant5(temp___expr_192: int, temp___is_init_188: bool,
+  temp___skip_constant_189: bool, temp___do_toplevel_190: bool,
+  temp___do_typ_inv_191: bool) = (((temp___is_init_188 = true) or
+  (0 <= 1)) -> in_range4(temp___expr_192))
+
+predicate dynamic_invariant6(temp___expr_185: int, temp___is_init_181: bool,
+  temp___skip_constant_182: bool, temp___do_toplevel_183: bool,
+  temp___do_typ_inv_184: bool) = (((temp___is_init_181 = true) or
+  (1 <= 3)) -> in_range7(temp___expr_185))
+
+axiom oeq__post_axiom :
+  (forall s1:us_rep1. length__function_guard(length(s1), s1))
+
+axiom oeq__post_axiom1 :
+  (forall s2:us_rep1. length__function_guard(length(s2), s2))
+
+axiom oeq__post_axiom2 :
+  (forall s1:us_rep1. length__function_guard(length(s1), s1))
+
+axiom oeq__post_axiom3 :
+  (forall s1:us_rep1. forall n:int. get__function_guard(get(s1, n), s1, n))
+
+axiom oeq__post_axiom4 :
+  (forall s2:us_rep1. forall n:int. get__function_guard(get(s2, n), s2, n))
+
+axiom oeq__post_axiom5 :
+  (forall s1:us_rep1. forall s2:us_rep1 [oeq(s1, s2)]. (let result = oeq(s1,
+  s2) : bool in (oeq__function_guard(result, s1, s2) -> ((result = true) ->
+  (length(s1) = length(s2))))))
+
+axiom oeq__post_axiom6 :
+  (forall s1:us_rep1. forall s2:us_rep1 [oeq(s1, s2)]. (let result = oeq(s1,
+  s2) : bool in (oeq__function_guard(result, s1, s2) -> ((result = true) ->
+  (forall n:int. (((1 <= n) and (n <= length(s1))) -> (get(s1, n) = get(s2,
+  n))))))))
+
+axiom oeq__post_axiom7 :
+  (forall s1:us_rep1. forall s2:us_rep1 [oeq(s1, s2)]. (let result = oeq(s1,
+  s2) : bool in (oeq__function_guard(result, s1, s2) ->
+  (((length(s1) = length(s2)) and
+  (forall n:int. (((1 <= n) and (n <= length(s1))) -> (get(s1, n) = get(s2,
+  n))))) -> (result = true)))))
+
+axiom is_removed_at__post_axiom :
+  (forall s:us_rep1. length__function_guard(length(s), s))
+
+axiom is_removed_at__post_axiom1 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall n:int [is_removed_at(s, n, result__)]. ((dynamic_invariant1(n,
+  true, true, true, true) and ((1 <= n) and (n <= length(s)))) ->
+  (forall result__1:us_rep1. length__function_guard(length(result__1),
+  result__1)))))
+
+axiom is_removed_at__post_axiom2 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall n:int [is_removed_at(s, n, result__)]. ((dynamic_invariant1(n,
+  true, true, true, true) and ((1 <= n) and (n <= length(s)))) ->
+  (forall s1:us_rep1. length__function_guard(length(s1), s1)))))
+
+axiom is_removed_at__post_axiom3 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall n:int [is_removed_at(s, n, result__)]. ((dynamic_invariant1(n,
+  true, true, true, true) and ((1 <= n) and (n <= length(s)))) ->
+  (forall result__1:us_rep1. length__function_guard(length(result__1),
+  result__1)))))
+
+axiom is_removed_at__post_axiom4 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall n:int [is_removed_at(s, n, result__)]. ((dynamic_invariant1(n,
+  true, true, true, true) and ((1 <= n) and (n <= length(s)))) ->
+  (forall result__1:us_rep1. forall m:int. get__function_guard(get(result__1,
+  m), result__1, m)))))
+
+axiom is_removed_at__post_axiom5 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall n:int [is_removed_at(s, n, result__)]. ((dynamic_invariant1(n,
+  true, true, true, true) and ((1 <= n) and (n <= length(s)))) ->
+  (forall s1:us_rep1. forall m:int. get__function_guard(get(s1, m), s1, m)))))
+
+axiom is_removed_at__post_axiom6 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall n:int [is_removed_at(s, n, result__)]. ((dynamic_invariant1(n,
+  true, true, true, true) and ((1 <= n) and (n <= length(s)))) ->
+  (forall result__1:us_rep1. forall m:int. get__function_guard(get(result__1,
+  m), result__1, m)))))
+
+axiom is_removed_at__post_axiom7 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall n:int [is_removed_at(s, n, result__)]. ((dynamic_invariant1(n,
+  true, true, true, true) and ((1 <= n) and (n <= length(s)))) ->
+  (forall s1:us_rep1. forall m:int. get__function_guard(get(s1, (m + 1)), s1,
+  (m + 1))))))
+
+axiom is_removed_at__post_axiom8 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall n:int [is_removed_at(s, n, result__)]. ((dynamic_invariant1(n,
+  true, true, true, true) and ((1 <= n) and (n <= length(s)))) ->
+  (let result = is_removed_at(s, n, result__) : bool in
+  (is_removed_at__function_guard(result, s, n, result__) ->
+  ((result = true) -> (length(result__) = (length(s) - 1))))))))
+
+axiom is_removed_at__post_axiom9 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall n:int [is_removed_at(s, n, result__)]. ((dynamic_invariant1(n,
+  true, true, true, true) and ((1 <= n) and (n <= length(s)))) ->
+  (let result = is_removed_at(s, n, result__) : bool in
+  (is_removed_at__function_guard(result, s, n, result__) ->
+  ((result = true) ->
+  (forall m:int. (((1 <= m) and (m <= length(result__))) -> ((m <  n) ->
+  (get(result__, m) = get(s, m)))))))))))
+
+axiom is_removed_at__post_axiom10 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall n:int [is_removed_at(s, n, result__)]. ((dynamic_invariant1(n,
+  true, true, true, true) and ((1 <= n) and (n <= length(s)))) ->
+  (let result = is_removed_at(s, n, result__) : bool in
+  (is_removed_at__function_guard(result, s, n, result__) ->
+  ((result = true) ->
+  (forall m:int. (((1 <= m) and (m <= length(result__))) ->
+  ((not (m <  n)) -> ((n <= m) -> (get(result__, m) = get(s, (m + 1)))))))))))))
+
+axiom is_removed_at__post_axiom11 :
+  (forall s:us_rep1. forall result__:us_rep1.
+  (forall n:int [is_removed_at(s, n, result__)]. ((dynamic_invariant1(n,
+  true, true, true, true) and ((1 <= n) and (n <= length(s)))) ->
+  (let result = is_removed_at(s, n, result__) : bool in
+  (is_removed_at__function_guard(result, s, n, result__) ->
+  (((length(result__) = (length(s) - 1)) and
+  (forall m:int. (((1 <= m) and (m <= length(result__))) ->
+  (if (m <  n) then (get(result__, m) = get(s, m)) else ((n <= m) ->
+  (get(result__, m) = get(s, (m + 1)))))))) -> (result = true)))))))
+
+logic rliteral : resource
+
+axiom rliteral_axiom : (resourceqtint(rliteral) = 0)
+
+ (* File "list_allocator.ads", line 76, characters 0-0 *)
+goal defqtvc :
+  (forall data:(int,us_rep) farray.
+  forall model__split_fields:us_split_fields2. forall first_available:int.
+  forall first_allocated:int. forall prev_alloc:int. forall next_alloc:int.
+  (dynamic_invariant3(first_available, true, false, true, true) ->
+  (dynamic_invariant3(first_allocated, true, false, true, true) ->
+  (dynamic_invariant3(res, true, false, true, true) ->
+  ((forall data1:(int,us_rep) farray.
+   forall model__split_fields1:us_split_fields2. forall first_available1:int.
+   forall first_allocated1:int.
+   is_valid__function_guard(is_valid(first_available1, model__split_fields1,
+   first_allocated1, data1), first_available1, model__split_fields1,
+   first_allocated1, data1)) ->
+  ((is_valid(first_available, model__split_fields, first_allocated,
+  data) = true) ->
+  ((forall model__split_fields1:us_split_fields2.
+   mem__function_guard(mem((model__split_fields1).rec__list_allocator__m__t__allocated,
+   res), (model__split_fields1).rec__list_allocator__m__t__allocated, res)) ->
+  ((forall model__split_fields1:us_split_fields2.
+   length__function_guard(length((model__split_fields1).rec__list_allocator__m__t__allocated),
+   (model__split_fields1).rec__list_allocator__m__t__allocated)) ->
+  (forall temp___old_847:us_split_fields2.
+  ((temp___old_847 = model__split_fields) ->
+  ((forall model__split_fields1:us_split_fields2.
+   length__function_guard(length((model__split_fields1).rec__list_allocator__m__t__allocated),
+   (model__split_fields1).rec__list_allocator__m__t__allocated)) ->
+  (dynamic_invariant3(prev_alloc, false, false, true, true) ->
+  (dynamic_invariant3(next_alloc, false, false, true, true) ->
+  (forall o:bool. ((if (not (res = 0)) then (((1 <= res) and (res <= 3)) and
+  (exists o1:int.
+  ((to_rep1((((data[res])).us_split_fields1).rec__list_allocator__cell__stat) = o1) and
+  (o = (if (o1 = 1) then true else false))))) else (o = false)) ->
+  (forall spark__branch:bool. ((spark__branch = o) ->
+  ((spark__branch = true) -> (((1 <= res) and (res <= 3)) ->
+  (forall o1:int.
+  ((to_rep((((data[res])).us_split_fields1).rec__list_allocator__cell__prev) = o1) ->
+  (forall prev_alloc1:int. ((prev_alloc1 = o1) -> (((1 <= res) and
+  (res <= 3)) ->
+  (forall o2:int.
+  ((to_rep((((data[res])).us_split_fields1).rec__list_allocator__cell__next) = o2) ->
+  (forall next_alloc1:int. ((next_alloc1 = o2) ->
+  (forall o3:resource. ((to_rep(o3) = first_available) ->
+  (forall o4:status. ((to_rep1(o4) = 0) -> (((1 <= res) and (res <= 3)) ->
+  (forall data1:(int,us_rep) farray. ((data1 = (data[res <- {
+  us_split_fields1 = { rec__list_allocator__cell__stat = o4;
+  rec__list_allocator__cell__prev = rliteral;
+  rec__list_allocator__cell__next = o3 } }])) ->
+  (forall spark__branch1:bool. forall data2:(int,us_rep) farray.
+  (((spark__branch1 = (if (prev_alloc1 = 0) then false else true)) and
+  (if (spark__branch1 = true) then (let q_ =
+  ((data1[prev_alloc1])).us_split_fields1 : us_split_fields in
+  (exists o5:resource. ((to_rep(o5) = next_alloc1) and
+  (((1 <= prev_alloc1) and (prev_alloc1 <= 3)) and
+  (data2 = (data1[prev_alloc1 <- { us_split_fields1 = {
+  rec__list_allocator__cell__stat = (q_).rec__list_allocator__cell__stat;
+  rec__list_allocator__cell__prev = (q_).rec__list_allocator__cell__prev;
+  rec__list_allocator__cell__next = o5 } }])))))) else (data2 = data1))) ->
+  (forall spark__branch2:bool. forall data3:(int,us_rep) farray.
+  (((spark__branch2 = (if (next_alloc1 = 0) then false else true)) and
+  (if (spark__branch2 = true) then (let q_ =
+  ((data2[next_alloc1])).us_split_fields1 : us_split_fields in
+  (exists o5:resource. ((to_rep(o5) = prev_alloc1) and
+  (((1 <= next_alloc1) and (next_alloc1 <= 3)) and
+  (data3 = (data2[next_alloc1 <- { us_split_fields1 = {
+  rec__list_allocator__cell__stat = (q_).rec__list_allocator__cell__stat;
+  rec__list_allocator__cell__prev = o5; rec__list_allocator__cell__next =
+  (q_).rec__list_allocator__cell__next } }])))))) else (data3 = data2))) ->
+  (forall first_available1:int. ((first_available1 = res) ->
+  (forall first_allocated1:int.
+  ((exists spark__branch3:bool.
+   ((spark__branch3 = (if (res = first_allocated) then true else false)) and
+   (if (spark__branch3 = true) then (first_allocated1 = next_alloc1) else (first_allocated1 = first_allocated)))) ->
+  (let o5 = res : int in (let o6 =
+  (model__split_fields).rec__list_allocator__m__t__allocated : us_rep1 in
+  (let o7 = find(o6, o5) : int in
+  ((forall o8:int. forall o9:us_rep1. mem__function_guard(mem(o9, o8), o9,
+   o8)) ->
+  ((forall o8:us_rep1. length__function_guard(length(o8), o8)) ->
+  ((forall o8:us_rep1. forall o9:int. get__function_guard(get(o8, o9), o8,
+   o9)) ->
+  ((find__function_guard(o7, o6, o5) and (dynamic_invariant(o7, true, false,
+  true, true) and (if (mem(o6, o5) = true) then (((1 <= o7) and
+  (o7 <= length(o6))) and (get(o6, o7) = o5)) else (o7 = 0)))) ->
+  (in_range2(o7) -> (let o8 =
+  (model__split_fields).rec__list_allocator__m__t__allocated : us_rep1 in
+  (let o9 = remove_at(o8, o7) : us_rep1 in
+  ((forall o10:int. forall o11:us_rep1. forall o12:us_rep1.
+   is_removed_at__function_guard(is_removed_at(o11, o10, o12), o11, o10,
+   o12)) ->
+  ((remove_at__function_guard(o9, o8, o7) and (is_removed_at(o8, o7,
+  o9) = true)) ->
+  (forall model__split_fields1:us_split_fields2. ((model__split_fields1 = {
+  rec__list_allocator__m__t__available =
+  (model__split_fields).rec__list_allocator__m__t__available;
+  rec__list_allocator__m__t__allocated = o9 }) -> (let o10 = res : int in
+  (let o11 = (model__split_fields1).rec__list_allocator__m__t__available
+  : us_rep1 in (let o12 = prepend(o11, o10) : us_rep1 in
+  ((forall o13:int. forall o14:us_rep1. forall o15:us_rep1.
+   is_prepend__function_guard(is_prepend(o14, o13, o15), o14, o13, o15)) ->
+  ((prepend__function_guard(o12, o11, o10) and (is_prepend(o11, o10,
+  o12) = true)) ->
+  (forall model__split_fields2:us_split_fields2. ((model__split_fields2 = {
+  rec__list_allocator__m__t__available = o12;
+  rec__list_allocator__m__t__allocated =
+  (model__split_fields1).rec__list_allocator__m__t__allocated }) ->
+  (forall j:int.
+  ((forall model__split_fields3:us_split_fields2.
+   length__function_guard(length((model__split_fields3).rec__list_allocator__m__t__available),
+   (model__split_fields3).rec__list_allocator__m__t__available)) ->
+  (((1 <= j) and
+  (j <= length((model__split_fields2).rec__list_allocator__m__t__available))) ->
+  ((forall model__split_fields3:us_split_fields2. forall j1:int.
+   get__function_guard(get((model__split_fields3).rec__list_allocator__m__t__available,
+   j1), (model__split_fields3).rec__list_allocator__m__t__available, j1)) ->
+  in_range7(get((model__split_fields2).rec__list_allocator__m__t__available,
+  j))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))

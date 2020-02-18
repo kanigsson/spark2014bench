@@ -1,0 +1,1413 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_39))
+
+function to_rep(x: natural) : int = naturalqtint(x)
+
+logic of_rep : int -> natural
+
+axiom inversion_axiom :
+  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:natural [to_rep(x)]. in_range2(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range2(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type positive
+
+logic positiveqtint : positive -> int
+
+axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
+
+axiom positiveqtaxiom1 :
+  (forall i:positive. (positiveqtint(i) <= 2147483647))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : positive, positive -> bool
+
+logic dummy2 : positive
+
+type positive__ref = { positive__content : positive
+}
+
+function positive__ref_positive__content__projection(a: positive__ref) : positive =
+  (a).positive__content
+
+predicate dynamic_invariant1(temp___expr_46: int, temp___is_init_42: bool,
+  temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
+  temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
+  (1 <= 2147483647)) -> in_range3(temp___expr_46))
+
+function to_rep1(x: integer) : int = integerqtint(x)
+
+logic of_rep1 : int -> integer
+
+axiom inversion_axiom1 :
+  (forall x:integer [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range1(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type us_rep = { rec__use_formal_vectors__element_type__is_null_pointer :
+bool; rec__use_formal_vectors__element_type__pointer_address : int;
+rec__use_formal_vectors__element_type__pointer_value : integer
+}
+
+function us_rep_rec__use_formal_vectors__element_type__is_null_pointer__projection(a: us_rep) : bool =
+  (a).rec__use_formal_vectors__element_type__is_null_pointer
+
+function us_rep_rec__use_formal_vectors__element_type__pointer_address__projection(a: us_rep) : int =
+  (a).rec__use_formal_vectors__element_type__pointer_address
+
+function us_rep_rec__use_formal_vectors__element_type__pointer_value__projection(a: us_rep) : integer =
+  (a).rec__use_formal_vectors__element_type__pointer_value
+
+type us_rep__ref = { us_rep__content : us_rep
+}
+
+function us_rep__ref___rep__content__projection(a: us_rep__ref) : us_rep =
+  (a).us_rep__content
+
+function bool_eq4(a: us_rep, b: us_rep) : bool =
+  (if (((a).rec__use_formal_vectors__element_type__is_null_pointer = (b).rec__use_formal_vectors__element_type__is_null_pointer) and
+  ((not ((a).rec__use_formal_vectors__element_type__is_null_pointer = true)) ->
+  (((a).rec__use_formal_vectors__element_type__pointer_address = (b).rec__use_formal_vectors__element_type__pointer_address) and
+  ((a).rec__use_formal_vectors__element_type__pointer_value = (b).rec__use_formal_vectors__element_type__pointer_value)))) then true else false)
+
+predicate rec__use_formal_vectors__element_type__pointer_value__pred(a: us_rep) =
+  (not ((a).rec__use_formal_vectors__element_type__is_null_pointer = true))
+
+logic us_null_pointer : us_rep
+
+axiom us_null_pointer__def_axiom :
+  ((us_null_pointer).rec__use_formal_vectors__element_type__is_null_pointer = true)
+
+logic dummy3 : us_rep
+
+type element_type__ref = { element_type__content : us_rep
+}
+
+function element_type__ref_element_type__content__projection(a: element_type__ref) : us_rep =
+  (a).element_type__content
+
+logic model : us_rep -> int
+
+logic model__function_guard : int, us_rep -> prop
+
+predicate dynamic_invariant2(temp___expr_193: us_rep,
+  temp___is_init_189: bool, temp___skip_constant_190: bool,
+  temp___do_toplevel_191: bool, temp___do_typ_inv_192: bool) =
+  (not ((temp___expr_193).rec__use_formal_vectors__element_type__is_null_pointer = true))
+
+predicate default_initial_assumption(temp___expr_194: us_rep,
+  temp___skip_top_level_195: bool) =
+  ((temp___expr_194).rec__use_formal_vectors__element_type__is_null_pointer = true)
+
+type element_model
+
+logic element_modelqtint : element_model -> int
+
+axiom element_modelqtaxiom :
+  (forall i:element_model. ((- 2147483648) <= element_modelqtint(i)))
+
+axiom element_modelqtaxiom1 :
+  (forall i:element_model. (element_modelqtint(i) <= 2147483647))
+
+predicate in_range4(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq3 : element_model, element_model -> bool
+
+logic dummy4 : element_model
+
+type element_model__ref = { element_model__content : element_model
+}
+
+function element_model__ref_element_model__content__projection(a: element_model__ref) : element_model =
+  (a).element_model__content
+
+predicate dynamic_invariant3(temp___expr_200: int, temp___is_init_196: bool,
+  temp___skip_constant_197: bool, temp___do_toplevel_198: bool,
+  temp___do_typ_inv_199: bool) = (((temp___is_init_196 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range4(temp___expr_200))
+
+axiom model__post_axiom :
+  (forall x:us_rep [model(x)]. (dynamic_invariant2(x, true, true, true,
+  true) -> (let result = model(x) : int in (model__function_guard(result,
+  x) -> dynamic_invariant3(result, true, false, true, true)))))
+
+axiom model__def_axiom :
+  (forall x:us_rep [model(x)]. (dynamic_invariant2(x, true, true, true,
+  true) ->
+  (model(x) = to_rep1((x).rec__use_formal_vectors__element_type__pointer_value))))
+
+logic copy : us_rep, us_type_of_heap -> us_rep
+
+logic copy__function_guard : us_rep, us_rep, us_type_of_heap -> prop
+
+axiom copy__post_axiom :
+  (forall x:us_rep. (dynamic_invariant2(x, true, true, true, true) ->
+  (forall result:us_rep. model__function_guard(model(result), result))))
+
+axiom copy__post_axiom1 :
+  (forall x:us_rep. (dynamic_invariant2(x, true, true, true, true) ->
+  (forall x1:us_rep. model__function_guard(model(x1), x1))))
+
+axiom copy__post_axiom2 :
+  (forall x:us_rep.
+  (forall us_HEAP:us_type_of_heap [copy(x, us_HEAP)]. (dynamic_invariant2(x,
+  true, true, true, true) -> (let result = copy(x, us_HEAP) : us_rep in
+  (copy__function_guard(result, x, us_HEAP) -> (model(result) = model(x)))))))
+
+axiom copy__post_axiom3 :
+  (forall x:us_rep.
+  (forall us_HEAP:us_type_of_heap [copy(x, us_HEAP)]. (dynamic_invariant2(x,
+  true, true, true, true) -> (let result = copy(x, us_HEAP) : us_rep in
+  (copy__function_guard(result, x, us_HEAP) -> dynamic_invariant2(result,
+  true, false, true, true))))))
+
+logic dummy5 : us_rep
+
+type element_type__ref1 = { element_type__content1 : us_rep
+}
+
+function element_type__ref_element_type__content__2__projection(a: element_type__ref1) : us_rep =
+  (a).element_type__content1
+
+type us_rep1 = {
+rec__use_formal_vectors__my_vect__element_access__is_null_pointer : bool;
+rec__use_formal_vectors__my_vect__element_access__pointer_address : int;
+rec__use_formal_vectors__my_vect__element_access__pointer_value : us_rep
+}
+
+function us_rep_rec__use_formal_vectors__my_vect__element_access__is_null_pointer__projection(a: us_rep1) : bool =
+  (a).rec__use_formal_vectors__my_vect__element_access__is_null_pointer
+
+function us_rep_rec__use_formal_vectors__my_vect__element_access__pointer_address__projection(a: us_rep1) : int =
+  (a).rec__use_formal_vectors__my_vect__element_access__pointer_address
+
+function us_rep_rec__use_formal_vectors__my_vect__element_access__pointer_value__projection(a: us_rep1) : us_rep =
+  (a).rec__use_formal_vectors__my_vect__element_access__pointer_value
+
+type us_rep__ref1 = { us_rep__content1 : us_rep1
+}
+
+function us_rep__ref___rep__content__2__projection(a: us_rep__ref1) : us_rep1 =
+  (a).us_rep__content1
+
+function bool_eq6(a: us_rep1, b: us_rep1) : bool =
+  (if (((a).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = (b).rec__use_formal_vectors__my_vect__element_access__is_null_pointer) and
+  ((not ((a).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)) ->
+  (((a).rec__use_formal_vectors__my_vect__element_access__pointer_address = (b).rec__use_formal_vectors__my_vect__element_access__pointer_address) and
+  ((a).rec__use_formal_vectors__my_vect__element_access__pointer_value = (b).rec__use_formal_vectors__my_vect__element_access__pointer_value)))) then true else false)
+
+predicate rec__use_formal_vectors__my_vect__element_access__pointer_value__pred(a: us_rep1) =
+  (not ((a).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true))
+
+logic us_null_pointer1 : us_rep1
+
+axiom us_null_pointer__def_axiom1 :
+  ((us_null_pointer1).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)
+
+logic dummy6 : us_rep1
+
+type element_access__ref = { element_access__content : us_rep1
+}
+
+function element_access__ref_element_access__content__projection(a: element_access__ref) : us_rep1 =
+  (a).element_access__content
+
+type map__ref = { map__content : (int,us_rep1) farray
+}
+
+logic slide : (int,us_rep1) farray, int, int -> (int,us_rep1) farray
+
+axiom slide_eq :
+  (forall a:(int,us_rep1) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,us_rep1) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq7(a: (int,us_rep1) farray, a__first: int, a__last: int,
+  b: (int,us_rep1) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_156:int. (((a__first <= temp___idx_156) and
+  (temp___idx_156 <= a__last)) -> (bool_eq6((a[temp___idx_156]),
+  (b[((b__first - a__first) + temp___idx_156)])) = true)))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,us_rep1) farray. forall b:(int,us_rep1) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq7(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,us_rep1) farray. forall b:(int,us_rep1) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq7(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,us_rep1) farray. forall b:(int,us_rep1) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq7(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,us_rep1) farray. forall b:(int,us_rep1) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq7(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_156:int. (((a__first <= temp___idx_156) and
+  (temp___idx_156 <= a__last)) -> (bool_eq6((a[temp___idx_156]),
+  (b[((b__first - a__first) + temp___idx_156)])) = true))))))
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (in_range3(low) and in_range3(high)))))
+
+type us_t = { elts : (int,us_rep1) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,us_rep1) farray = (a).elts
+
+function of_array(a: (int,us_rep1) farray, f: int, l: int) : us_t = { elts =
+  a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep1(first((a).rt))
+
+function last1(a: us_t) : int = to_rep1(last((a).rt))
+
+function length(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq8(x: us_t, y: us_t) : bool = bool_eq7((x).elts,
+  to_rep1(first((x).rt)), to_rep1(last((x).rt)), (y).elts,
+  to_rep1(first((y).rt)), to_rep1(last((y).rt)))
+
+logic user_eq4 : us_t, us_t -> bool
+
+logic dummy7 : us_t
+
+type element_array__ref = { element_array__content : us_t
+}
+
+function element_array__ref_element_array__content__projection(a: element_array__ref) : us_t =
+  (a).element_array__content
+
+type us_rep2 = {
+rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer :
+bool; rec__use_formal_vectors__my_vect__element_array_access__pointer_address
+: int; rec__use_formal_vectors__my_vect__element_array_access__pointer_value
+: us_t
+}
+
+function us_rep_rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer__projection(a: us_rep2) : bool =
+  (a).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer
+
+function us_rep_rec__use_formal_vectors__my_vect__element_array_access__pointer_address__projection(a: us_rep2) : int =
+  (a).rec__use_formal_vectors__my_vect__element_array_access__pointer_address
+
+function us_rep_rec__use_formal_vectors__my_vect__element_array_access__pointer_value__projection(a: us_rep2) : us_t =
+  (a).rec__use_formal_vectors__my_vect__element_array_access__pointer_value
+
+type us_rep__ref2 = { us_rep__content2 : us_rep2
+}
+
+function us_rep__ref___rep__content__3__projection(a: us_rep__ref2) : us_rep2 =
+  (a).us_rep__content2
+
+function bool_eq9(a: us_rep2, b: us_rep2) : bool =
+  (if (((a).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer = (b).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer) and
+  ((not ((a).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer = true)) ->
+  (((a).rec__use_formal_vectors__my_vect__element_array_access__pointer_address = (b).rec__use_formal_vectors__my_vect__element_array_access__pointer_address) and
+  ((a).rec__use_formal_vectors__my_vect__element_array_access__pointer_value = (b).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)))) then true else false)
+
+predicate rec__use_formal_vectors__my_vect__element_array_access__pointer_value__pred(a: us_rep2) =
+  (not ((a).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer = true))
+
+logic us_null_pointer2 : us_rep2
+
+axiom us_null_pointer__def_axiom2 :
+  ((us_null_pointer2).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer = true)
+
+logic dummy8 : us_rep2
+
+type element_array_access__ref = { element_array_access__content : us_rep2
+}
+
+function element_array_access__ref_element_array_access__content__projection(a: element_array_access__ref) : us_rep2 =
+  (a).element_array_access__content
+
+type us_split_fields = { rec__use_formal_vectors__my_vect__vector__top :
+natural; rec__use_formal_vectors__my_vect__vector__content : us_rep2
+}
+
+function us_split_fields_rec__use_formal_vectors__my_vect__vector__top__projection(a: us_split_fields) : natural =
+  (a).rec__use_formal_vectors__my_vect__vector__top
+
+function us_split_fields_rec__use_formal_vectors__my_vect__vector__content__projection(a: us_split_fields) : us_rep2 =
+  (a).rec__use_formal_vectors__my_vect__vector__content
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep3 = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep3) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq10(a: us_rep3, b: us_rep3) : bool =
+  (if ((to_rep(((a).us_split_fields1).rec__use_formal_vectors__my_vect__vector__top) = to_rep(((b).us_split_fields1).rec__use_formal_vectors__my_vect__vector__top)) and
+  (bool_eq9(((a).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content,
+  ((b).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content) = true)) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic use_formal_vectors__my_vect__vector__top__first__bit : int
+
+logic use_formal_vectors__my_vect__vector__top__last__bit : int
+
+logic use_formal_vectors__my_vect__vector__top__position : int
+
+axiom use_formal_vectors__my_vect__vector__top__first__bit_axiom :
+  (0 <= use_formal_vectors__my_vect__vector__top__first__bit)
+
+axiom use_formal_vectors__my_vect__vector__top__last__bit_axiom :
+  (use_formal_vectors__my_vect__vector__top__first__bit <  use_formal_vectors__my_vect__vector__top__last__bit)
+
+axiom use_formal_vectors__my_vect__vector__top__position_axiom :
+  (0 <= use_formal_vectors__my_vect__vector__top__position)
+
+logic use_formal_vectors__my_vect__vector__content__first__bit : int
+
+logic use_formal_vectors__my_vect__vector__content__last__bit : int
+
+logic use_formal_vectors__my_vect__vector__content__position : int
+
+axiom use_formal_vectors__my_vect__vector__content__first__bit_axiom :
+  (0 <= use_formal_vectors__my_vect__vector__content__first__bit)
+
+axiom use_formal_vectors__my_vect__vector__content__last__bit_axiom :
+  (use_formal_vectors__my_vect__vector__content__first__bit <  use_formal_vectors__my_vect__vector__content__last__bit)
+
+axiom use_formal_vectors__my_vect__vector__content__position_axiom :
+  (0 <= use_formal_vectors__my_vect__vector__content__position)
+
+logic user_eq5 : us_rep3, us_rep3 -> bool
+
+logic dummy9 : us_rep3
+
+type vector__ref = { vector__content : us_rep3
+}
+
+function vector__ref_vector__content__projection(a: vector__ref) : us_rep3 =
+  (a).vector__content
+
+logic length1 : us_rep3 -> int
+
+logic length__function_guard : int, us_rep3 -> prop
+
+predicate dynamic_invariant4(temp___expr_246: us_rep3,
+  temp___is_init_242: bool, temp___skip_constant_243: bool,
+  temp___do_toplevel_244: bool, temp___do_typ_inv_245: bool) =
+  (((temp___do_toplevel_244 = true) ->
+  ((to_rep(((temp___expr_246).us_split_fields1).rec__use_formal_vectors__my_vect__vector__top) = 0) or
+  (((not (bool_eq9(((temp___expr_246).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content,
+  us_null_pointer2) = true)) and
+  (to_rep(((temp___expr_246).us_split_fields1).rec__use_formal_vectors__my_vect__vector__top) <= last1((((temp___expr_246).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value))) and
+  (forall i:int. (((1 <= i) and
+  (i <= to_rep(((temp___expr_246).us_split_fields1).rec__use_formal_vectors__my_vect__vector__top))) ->
+  (not (bool_eq6((to_array((((temp___expr_246).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i]),
+  us_null_pointer1) = true))))))) and
+  ((not ((((temp___expr_246).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer = true)) ->
+  (dynamic_property(1, 2147483647,
+  first1((((temp___expr_246).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value),
+  last1((((temp___expr_246).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)) and
+  (forall temp___249:int.
+  (((first1((((temp___expr_246).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value) <= temp___249) and
+  (temp___249 <= last1((((temp___expr_246).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value))) ->
+  ((not (((to_array((((temp___expr_246).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[temp___249])).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)) ->
+  (not ((((to_array((((temp___expr_246).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[temp___249])).rec__use_formal_vectors__my_vect__element_access__pointer_value).rec__use_formal_vectors__element_type__is_null_pointer = true))))))))
+
+predicate default_initial_assumption1(temp___expr_250: us_rep3,
+  temp___skip_top_level_251: bool) =
+  ((to_rep(((temp___expr_250).us_split_fields1).rec__use_formal_vectors__my_vect__vector__top) = 0) and
+  ((((temp___expr_250).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer = true))
+
+predicate dynamic_predicate(temp___253: us_rep3) =
+  ((to_rep(((temp___253).us_split_fields1).rec__use_formal_vectors__my_vect__vector__top) = 0) or
+  (((not (bool_eq9(((temp___253).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content,
+  us_null_pointer2) = true)) and
+  (to_rep(((temp___253).us_split_fields1).rec__use_formal_vectors__my_vect__vector__top) <= last1((((temp___253).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value))) and
+  (forall i:int. (((1 <= i) and
+  (i <= to_rep(((temp___253).us_split_fields1).rec__use_formal_vectors__my_vect__vector__top))) ->
+  (not (bool_eq6((to_array((((temp___253).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i]),
+  us_null_pointer1) = true))))))
+
+axiom length__post_axiom :
+  (forall v:us_rep3 [length1(v)]. (dynamic_invariant4(v, true, true, true,
+  true) -> (let result = length1(v) : int in (length__function_guard(result,
+  v) -> dynamic_invariant(result, true, false, true, true)))))
+
+axiom length__def_axiom :
+  (forall v:us_rep3 [length1(v)]. (dynamic_invariant4(v, true, true, true,
+  true) ->
+  (length1(v) = to_rep(((v).us_split_fields1).rec__use_formal_vectors__my_vect__vector__top))))
+
+type us_main_type
+
+logic us_main_eq : us_main_type, us_main_type -> bool
+
+type us_rep4
+
+logic bool_eq11 : us_rep4, us_rep4 -> bool
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic user_eq6 : us_rep4, us_rep4 -> bool
+
+logic dummy10 : us_rep4
+
+type sequence__ref = { sequence__content : us_rep4
+}
+
+function sequence__ref_sequence__content__projection(a: sequence__ref) : us_rep4 =
+  (a).sequence__content
+
+logic length2 : us_rep4 -> int
+
+logic length__function_guard1 : int, us_rep4 -> prop
+
+function last2(container: us_rep4) : int = (0 + length2(container))
+
+logic last__function_guard : int, us_rep4 -> prop
+
+type extended_index
+
+logic extended_indexqtint : extended_index -> int
+
+axiom extended_indexqtaxiom :
+  (forall i:extended_index. (0 <= extended_indexqtint(i)))
+
+axiom extended_indexqtaxiom1 :
+  (forall i:extended_index. (extended_indexqtint(i) <= 2147483647))
+
+predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq7 : extended_index, extended_index -> bool
+
+logic dummy11 : extended_index
+
+type extended_index__ref = { extended_index__content : extended_index
+}
+
+function extended_index__ref_extended_index__content__projection(a: extended_index__ref) : extended_index =
+  (a).extended_index__content
+
+predicate dynamic_invariant5(temp___expr_283: int, temp___is_init_279: bool,
+  temp___skip_constant_280: bool, temp___do_toplevel_281: bool,
+  temp___do_typ_inv_282: bool) = (((temp___is_init_279 = true) or
+  (0 <= 2147483647)) -> in_range5(temp___expr_283))
+
+type model_type__ref = { model_type__content : us_rep4
+}
+
+function model_type__ref_model_type__content__projection(a: model_type__ref) : us_rep4 =
+  (a).model_type__content
+
+logic model1 : us_rep3 -> us_rep4
+
+logic model__function_guard1 : us_rep4, us_rep3 -> prop
+
+logic model2 : us_rep3 -> us_rep4
+
+logic model__function_guard2 : us_rep4, us_rep3 -> prop
+
+logic get : us_rep4, int -> int
+
+logic get__function_guard : int, us_rep4, int -> prop
+
+logic bool_eq13 : int, int -> bool
+
+logic bool_ne : int, int -> bool
+
+logic bool_lt : int, int -> bool
+
+logic bool_le : int, int -> bool
+
+logic bool_gt : int, int -> bool
+
+logic bool_ge : int, int -> bool
+
+axiom bool_eq_axiom :
+  (forall x:int. (forall y:int. ((bool_eq13(x, y) = true) -> (x = y))))
+
+axiom bool_eq_axiom1 :
+  (forall x:int. (forall y:int. ((x = y) -> (bool_eq13(x, y) = true))))
+
+axiom bool_ne_axiom :
+  (forall x:int. (forall y:int. ((bool_ne(x, y) = true) -> (not (x = y)))))
+
+axiom bool_ne_axiom1 :
+  (forall x:int. (forall y:int. ((not (x = y)) -> (bool_ne(x, y) = true))))
+
+axiom bool_lt_axiom :
+  (forall x:int. (forall y:int. ((bool_lt(x, y) = true) -> (x <  y))))
+
+axiom bool_lt_axiom1 :
+  (forall x:int. (forall y:int. ((x <  y) -> (bool_lt(x, y) = true))))
+
+axiom bool_int__le_axiom :
+  (forall x:int. (forall y:int. ((bool_le(x, y) = true) -> (x <= y))))
+
+axiom bool_int__le_axiom1 :
+  (forall x:int. (forall y:int. ((x <= y) -> (bool_le(x, y) = true))))
+
+axiom bool_gt_axiom :
+  (forall x:int. (forall y:int. ((bool_gt(x, y) = true) -> (y <  x))))
+
+axiom bool_gt_axiom1 :
+  (forall x:int. (forall y:int. ((y <  x) -> (bool_gt(x, y) = true))))
+
+axiom bool_ge_axiom :
+  (forall x:int. (forall y:int. ((bool_ge(x, y) = true) -> (y <= x))))
+
+axiom bool_ge_axiom1 :
+  (forall x:int. (forall y:int. ((y <= x) -> (bool_ge(x, y) = true))))
+
+function length3(x: int, y: int) : int =
+  (if (x <= y) then ((y - x) + 1) else 0)
+
+function oeq(left: us_rep4, right: us_rep4) : bool =
+  andb(bool_eq13(length2(left), length2(right)),
+  (if (forall n:int. (((1 <= n) and (n <= last2(left))) -> (get(left,
+      n) = get(right, n)))) then true else false))
+
+logic oeq__function_guard : bool, us_rep4, us_rep4 -> prop
+
+axiom user_eq__def_axiom :
+  (forall a:us_rep4. forall b:us_rep4 [user_eq6(a, b)]. (user_eq6(a,
+  b) = oeq(a, b)))
+
+predicate default_initial_assumption2(temp___expr_276: us_rep4,
+  temp___skip_top_level_277: bool) =
+  ((not (temp___skip_top_level_277 = true)) ->
+  (length2(temp___expr_276) = 0))
+
+axiom model__post_axiom1 :
+  (forall v:us_rep3 [model1(v)]. (dynamic_invariant4(v, true, true, true,
+  true) -> (forall v1:us_rep3. length__function_guard(length1(v1), v1))))
+
+axiom model__post_axiom2 :
+  (forall v:us_rep3 [model1(v)]. (dynamic_invariant4(v, true, true, true,
+  true) -> (let result = model1(v) : us_rep4 in
+  (model__function_guard1(result, v) -> (last2(result) = length1(v))))))
+
+axiom model__post_refine_axiom :
+  (forall v:us_rep3 [model2(v)]. (dynamic_invariant4(v, true, true, true,
+  true) ->
+  (forall v1:us_rep3. forall i:int.
+  model__function_guard(model(((to_array((((v1).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i])).rec__use_formal_vectors__my_vect__element_access__pointer_value),
+  ((to_array((((v1).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i])).rec__use_formal_vectors__my_vect__element_access__pointer_value))))
+
+axiom model__post_refine_axiom1 :
+  (forall v:us_rep3 [model2(v)]. (dynamic_invariant4(v, true, true, true,
+  true) -> (let result = model2(v) : us_rep4 in
+  (model__function_guard2(result, v) ->
+  (last2(result) = to_rep(((v).us_split_fields1).rec__use_formal_vectors__my_vect__vector__top))))))
+
+axiom model__post_refine_axiom2 :
+  (forall v:us_rep3 [model2(v)]. (dynamic_invariant4(v, true, true, true,
+  true) -> (let result = model2(v) : us_rep4 in
+  (model__function_guard2(result, v) ->
+  (forall i:int. (((1 <= i) and
+  (i <= to_rep(((v).us_split_fields1).rec__use_formal_vectors__my_vect__vector__top))) ->
+  (get(result,
+  i) = model(((to_array((((v).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i])).rec__use_formal_vectors__my_vect__element_access__pointer_value))))))))
+
+type element_type
+
+logic element_typeqtint : element_type -> int
+
+axiom element_typeqtaxiom :
+  (forall i:element_type. ((- 2147483648) <= element_typeqtint(i)))
+
+axiom element_typeqtaxiom1 :
+  (forall i:element_type. (element_typeqtint(i) <= 2147483647))
+
+predicate in_range6(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq14(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> int
+
+logic user_eq8 : element_type, element_type -> bool
+
+logic dummy12 : element_type
+
+type element_type__ref2 = { element_type__content2 : element_type
+}
+
+function element_type__ref_element_type__content__3__projection(a: element_type__ref2) : element_type =
+  (a).element_type__content2
+
+predicate dynamic_invariant6(temp___expr_260: int, temp___is_init_256: bool,
+  temp___skip_constant_257: bool, temp___do_toplevel_258: bool,
+  temp___do_typ_inv_259: bool) = (((temp___is_init_256 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range6(temp___expr_260))
+
+axiom user_eq__def_axiom1 :
+  (forall a:us_rep4. forall b:us_rep4 [user_eq6(a, b)]. (user_eq6(a,
+  b) = oeq(a, b)))
+
+predicate default_initial_assumption3(temp___expr_268: us_rep4,
+  temp___skip_top_level_269: bool) =
+  ((not (temp___skip_top_level_269 = true)) ->
+  (length2(temp___expr_268) = 0))
+
+axiom get__post_axiom :
+  (forall container:us_rep4.
+  (forall position:int [get(container, position)].
+  ((dynamic_invariant5(position, true, true, true, true) and
+  ((1 <= position) and (position <= last2(container)))) ->
+  dynamic_invariant6(get(container, position), true, false, true, true))))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic i : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic e__pointer_address : int
+
+logic e__is_null_pointer : bool
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic i72s : us_rep3
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic size : us_rep3 -> int
+
+logic size__function_guard : int, us_rep3 -> prop
+
+predicate dynamic_invariant7(temp___expr_225: us_rep1,
+  temp___is_init_221: bool, temp___skip_constant_222: bool,
+  temp___do_toplevel_223: bool, temp___do_typ_inv_224: bool) =
+  ((not ((temp___expr_225).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)) ->
+  (not (((temp___expr_225).rec__use_formal_vectors__my_vect__element_access__pointer_value).rec__use_formal_vectors__element_type__is_null_pointer = true)))
+
+predicate default_initial_assumption4(temp___expr_226: us_rep1,
+  temp___skip_top_level_227: bool) =
+  ((temp___expr_226).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)
+
+logic v_mod : us_rep4
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic r121s : int
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+predicate dynamic_invariant8(temp___expr_211: us_rep,
+  temp___is_init_207: bool, temp___skip_constant_208: bool,
+  temp___do_toplevel_209: bool, temp___do_typ_inv_210: bool) =
+  (not ((temp___expr_211).rec__use_formal_vectors__element_type__is_null_pointer = true))
+
+predicate default_initial_assumption5(temp___expr_212: us_rep,
+  temp___skip_top_level_213: bool) =
+  ((temp___expr_212).rec__use_formal_vectors__element_type__is_null_pointer = true)
+
+predicate dynamic_property1(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq15(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE7 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check7 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE7 : us_image -> int
+
+logic user_eq9 : integer, integer -> bool
+
+logic dummy13 : integer
+
+type t122s__ref = { t122s__content : integer
+}
+
+function t122s__ref_t122s__content__projection(a: t122s__ref) : integer =
+  (a).t122s__content
+
+predicate dynamic_invariant9(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+type count_type
+
+logic count_typeqtint : count_type -> int
+
+axiom count_typeqtaxiom : (forall i1:count_type. (0 <= count_typeqtint(i1)))
+
+axiom count_typeqtaxiom1 :
+  (forall i1:count_type. (count_typeqtint(i1) <= 2147483647))
+
+predicate in_range7(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq16(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE8 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check8 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE8 : us_image -> int
+
+logic user_eq10 : count_type, count_type -> bool
+
+logic dummy14 : count_type
+
+type count_type__ref = { count_type__content : count_type
+}
+
+function count_type__ref_count_type__content__projection(a: count_type__ref) : count_type =
+  (a).count_type__content
+
+predicate dynamic_invariant10(temp___expr_297: int, temp___is_init_293: bool,
+  temp___skip_constant_294: bool, temp___do_toplevel_295: bool,
+  temp___do_typ_inv_296: bool) = (((temp___is_init_293 = true) or
+  (0 <= 2147483647)) -> in_range7(temp___expr_297))
+
+predicate dynamic_invariant11(temp___expr_232: us_t,
+  temp___is_init_228: bool, temp___skip_constant_229: bool,
+  temp___do_toplevel_230: bool, temp___do_typ_inv_231: bool) =
+  (((not (temp___skip_constant_229 = true)) -> dynamic_property(1,
+  2147483647, first1(temp___expr_232), last1(temp___expr_232))) and
+  (forall temp___233:int. (((first1(temp___expr_232) <= temp___233) and
+  (temp___233 <= last1(temp___expr_232))) ->
+  ((not (((to_array(temp___expr_232)[temp___233])).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)) ->
+  (not ((((to_array(temp___expr_232)[temp___233])).rec__use_formal_vectors__my_vect__element_access__pointer_value).rec__use_formal_vectors__element_type__is_null_pointer = true))))))
+
+predicate dynamic_invariant12(temp___expr_238: us_rep2,
+  temp___is_init_234: bool, temp___skip_constant_235: bool,
+  temp___do_toplevel_236: bool, temp___do_typ_inv_237: bool) =
+  ((not ((temp___expr_238).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer = true)) ->
+  (dynamic_property(1, 2147483647,
+  first1((temp___expr_238).rec__use_formal_vectors__my_vect__element_array_access__pointer_value),
+  last1((temp___expr_238).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)) and
+  (forall temp___239:int.
+  (((first1((temp___expr_238).rec__use_formal_vectors__my_vect__element_array_access__pointer_value) <= temp___239) and
+  (temp___239 <= last1((temp___expr_238).rec__use_formal_vectors__my_vect__element_array_access__pointer_value))) ->
+  ((not (((to_array((temp___expr_238).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[temp___239])).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)) ->
+  (not ((((to_array((temp___expr_238).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[temp___239])).rec__use_formal_vectors__my_vect__element_access__pointer_value).rec__use_formal_vectors__element_type__is_null_pointer = true)))))))
+
+predicate default_initial_assumption6(temp___expr_240: us_rep2,
+  temp___skip_top_level_241: bool) =
+  ((temp___expr_240).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer = true)
+
+axiom length__post_axiom1 :
+  (forall container:us_rep4 [length2(container)].
+  ((0 + length2(container)) <= 2147483647))
+
+axiom length__post_axiom2 :
+  (forall container:us_rep4 [length2(container)].
+  dynamic_invariant10(length2(container), true, false, true, true))
+
+axiom size__post_axiom :
+  (forall v:us_rep3 [size(v)]. (dynamic_invariant4(v, true, true, true,
+  true) -> (let result = size(v) : int in (size__function_guard(result, v) ->
+  dynamic_invariant(result, true, false, true, true)))))
+
+axiom size__def_axiom :
+  (forall v:us_rep3 [size(v)]. (dynamic_invariant4(v, true, true, true,
+  true) ->
+  (size(v) = (if (bool_eq9(((v).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content,
+  us_null_pointer2) = true) then 0 else length((((v).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)))))
+
+ (* File "formal_vectors.ads", line 27, characters 0-0 *)
+goal defqtvc :
+  (forall us_HEAP:us_type_of_heap. forall v__split_fields:us_split_fields.
+  forall e__pointer_value:integer. (dynamic_invariant4(i72s, true, false,
+  true, true) -> (dynamic_invariant4(i72s, true, false, true, true) ->
+  (dynamic_invariant4({ us_split_fields1 = v__split_fields }, true, false,
+  true, true) -> (dynamic_invariant1(i, true, false, true, true) ->
+  (dynamic_invariant8({
+  rec__use_formal_vectors__element_type__is_null_pointer =
+  e__is_null_pointer;
+  rec__use_formal_vectors__element_type__pointer_address =
+  e__pointer_address; rec__use_formal_vectors__element_type__pointer_value =
+  e__pointer_value }, true, false, true, true) ->
+  ((forall v__split_fields1:us_split_fields. length__function_guard(length1({
+   us_split_fields1 = v__split_fields1 }), { us_split_fields1 =
+   v__split_fields1 })) ->
+  ((forall v__split_fields1:us_split_fields. length__function_guard(length1({
+   us_split_fields1 = v__split_fields1 }), { us_split_fields1 =
+   v__split_fields1 })) ->
+  (((length1({ us_split_fields1 = v__split_fields }) <  2147483647) and
+  ((1 <= i) and (i <= (length1({ us_split_fields1 = v__split_fields
+  }) + 1)))) -> (let o = { us_split_fields1 = v__split_fields } : us_rep3 in
+  (let use_formal_vectors__my_vect__insert__v_mod__assume = model2(o)
+  : us_rep4 in
+  ((forall v__split_fields1:us_split_fields. forall i1:int.
+   model__function_guard(model(((to_array(((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i1])).rec__use_formal_vectors__my_vect__element_access__pointer_value),
+   ((to_array(((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i1])).rec__use_formal_vectors__my_vect__element_access__pointer_value)) ->
+  ((model__function_guard2(use_formal_vectors__my_vect__insert__v_mod__assume,
+  o) and
+  ((last2(use_formal_vectors__my_vect__insert__v_mod__assume) = to_rep((v__split_fields).rec__use_formal_vectors__my_vect__vector__top)) and
+  (forall i1:int. (((1 <= i1) and
+  (i1 <= to_rep((v__split_fields).rec__use_formal_vectors__my_vect__vector__top))) ->
+  (get(use_formal_vectors__my_vect__insert__v_mod__assume,
+  i1) = model(((to_array(((v__split_fields).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i1])).rec__use_formal_vectors__my_vect__element_access__pointer_value)))))) ->
+  ((use_formal_vectors__my_vect__insert__v_mod__assume = v_mod) -> (let o1 =
+  { rec__use_formal_vectors__element_type__is_null_pointer =
+  e__is_null_pointer;
+  rec__use_formal_vectors__element_type__pointer_address =
+  e__pointer_address; rec__use_formal_vectors__element_type__pointer_value =
+  e__pointer_value } : us_rep in (let o2 = copy(o1, us_HEAP) : us_rep in
+  ((forall o3:us_rep. model__function_guard(model(o3), o3)) ->
+  ((forall o3:us_rep. model__function_guard(model(o3), o3)) ->
+  ((copy__function_guard(o2, o1, us_HEAP) and (dynamic_invariant2(o2, true,
+  false, true, true) and (model(o2) = model(o1)))) ->
+  (forall us_next_pointer_address:int.
+  (forall use_formal_vectors__my_vect__insert__x__assume:us_rep1.
+  ((andb((if ((not ((use_formal_vectors__my_vect__insert__x__assume).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)) and
+  ((use_formal_vectors__my_vect__insert__x__assume).rec__use_formal_vectors__my_vect__element_access__pointer_address = us_next_pointer_address)) then true else false),
+  (if ((use_formal_vectors__my_vect__insert__x__assume).rec__use_formal_vectors__my_vect__element_access__pointer_value = o2) then true else false)) = true) ->
+  (forall x__pointer_value:us_rep.
+  ((x__pointer_value = (use_formal_vectors__my_vect__insert__x__assume).rec__use_formal_vectors__my_vect__element_access__pointer_value) ->
+  (forall x__pointer_address:int.
+  ((x__pointer_address = (use_formal_vectors__my_vect__insert__x__assume).rec__use_formal_vectors__my_vect__element_access__pointer_address) ->
+  (forall x__is_null_pointer:bool.
+  ((x__is_null_pointer = (use_formal_vectors__my_vect__insert__x__assume).rec__use_formal_vectors__my_vect__element_access__is_null_pointer) ->
+  (dynamic_invariant7({
+  rec__use_formal_vectors__my_vect__element_access__is_null_pointer =
+  x__is_null_pointer;
+  rec__use_formal_vectors__my_vect__element_access__pointer_address =
+  x__pointer_address;
+  rec__use_formal_vectors__my_vect__element_access__pointer_value =
+  x__pointer_value }, true, false, true, true) ->
+  (forall v__split_fields1:us_split_fields.
+  ((forall v__split_fields2:us_split_fields. size__function_guard(size({
+   us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
+   v__split_fields2 })) ->
+  ((forall v__split_fields2:us_split_fields. size__function_guard(size({
+   us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
+   v__split_fields2 })) ->
+  ((forall v__split_fields2:us_split_fields. size__function_guard(size({
+   us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
+   v__split_fields2 })) ->
+  ((forall v__split_fields2:us_split_fields. size__function_guard(size({
+   us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
+   v__split_fields2 })) ->
+  ((forall v__split_fields2:us_split_fields. size__function_guard(size({
+   us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
+   v__split_fields2 })) ->
+  ((forall v__split_fields2:us_split_fields. model__function_guard2(model2({
+   us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
+   v__split_fields2 })) ->
+  ((forall v__split_fields2:us_split_fields. model__function_guard2(model2({
+   us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
+   v__split_fields2 })) ->
+  (((((((0 <= size({ us_split_fields1 = v__split_fields1 })) and (size({
+  us_split_fields1 = v__split_fields }) <= size({ us_split_fields1 =
+  v__split_fields1 }))) and ((size({ us_split_fields1 = v__split_fields
+  }) <  2147483647) ->
+  (to_rep((v__split_fields1).rec__use_formal_vectors__my_vect__vector__top) <  size({
+  us_split_fields1 = v__split_fields1 })))) and
+  (to_rep((v__split_fields1).rec__use_formal_vectors__my_vect__vector__top) = to_rep((v__split_fields).rec__use_formal_vectors__my_vect__vector__top))) and
+  (oeq(model2({ us_split_fields1 = v__split_fields1 }), model2({
+  us_split_fields1 = v__split_fields })) = true)) and dynamic_invariant4({
+  us_split_fields1 = v__split_fields1 }, true, true, true, true)) ->
+  (forall use_formal_vectors__my_vect__insert__L_3__R121s__assume:int.
+  ((to_rep((v__split_fields1).rec__use_formal_vectors__my_vect__vector__top) = use_formal_vectors__my_vect__insert__L_3__R121s__assume) ->
+  ((use_formal_vectors__my_vect__insert__L_3__R121s__assume = r121s) ->
+  (dynamic_invariant(r121s, true, false, true, true) ->
+  (forall v__split_fields2:us_split_fields. forall x__pointer_value1:us_rep.
+  forall x__pointer_address1:int. forall x__is_null_pointer1:bool.
+  ((forall v__split_fields3:us_split_fields. forall j:int.
+   model__function_guard(model(((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[j])).rec__use_formal_vectors__my_vect__element_access__pointer_value),
+   ((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[j])).rec__use_formal_vectors__my_vect__element_access__pointer_value)) ->
+  ((forall v__split_fields3:us_split_fields.
+   model__function_guard(model(((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i])).rec__use_formal_vectors__my_vect__element_access__pointer_value),
+   ((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i])).rec__use_formal_vectors__my_vect__element_access__pointer_value)) ->
+  ((forall e__pointer_value1:integer. model__function_guard(model({
+   rec__use_formal_vectors__element_type__is_null_pointer =
+   e__is_null_pointer;
+   rec__use_formal_vectors__element_type__pointer_address =
+   e__pointer_address; rec__use_formal_vectors__element_type__pointer_value =
+   e__pointer_value1 }), {
+   rec__use_formal_vectors__element_type__is_null_pointer =
+   e__is_null_pointer;
+   rec__use_formal_vectors__element_type__pointer_address =
+   e__pointer_address; rec__use_formal_vectors__element_type__pointer_value =
+   e__pointer_value1 })) ->
+  ((forall x__pointer_value2:us_rep.
+   model__function_guard(model(x__pointer_value2), x__pointer_value2)) ->
+  ((forall v__split_fields3:us_split_fields. forall k:int.
+   model__function_guard(model(((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[k])).rec__use_formal_vectors__my_vect__element_access__pointer_value),
+   ((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[k])).rec__use_formal_vectors__my_vect__element_access__pointer_value)) ->
+  ((forall v__split_fields3:us_split_fields. forall k:int.
+   model__function_guard(model(((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[k])).rec__use_formal_vectors__my_vect__element_access__pointer_value),
+   ((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[k])).rec__use_formal_vectors__my_vect__element_access__pointer_value)) ->
+  ((forall v__split_fields3:us_split_fields. forall j:int.
+   model__function_guard(model(((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[j])).rec__use_formal_vectors__my_vect__element_access__pointer_value),
+   ((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[j])).rec__use_formal_vectors__my_vect__element_access__pointer_value)) ->
+  ((forall v__split_fields3:us_split_fields.
+   model__function_guard(model(((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i])).rec__use_formal_vectors__my_vect__element_access__pointer_value),
+   ((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i])).rec__use_formal_vectors__my_vect__element_access__pointer_value)) ->
+  ((forall e__pointer_value1:integer. model__function_guard(model({
+   rec__use_formal_vectors__element_type__is_null_pointer =
+   e__is_null_pointer;
+   rec__use_formal_vectors__element_type__pointer_address =
+   e__pointer_address; rec__use_formal_vectors__element_type__pointer_value =
+   e__pointer_value1 }), {
+   rec__use_formal_vectors__element_type__is_null_pointer =
+   e__is_null_pointer;
+   rec__use_formal_vectors__element_type__pointer_address =
+   e__pointer_address; rec__use_formal_vectors__element_type__pointer_value =
+   e__pointer_value1 })) ->
+  ((forall x__pointer_value2:us_rep.
+   model__function_guard(model(x__pointer_value2), x__pointer_value2)) ->
+  ((forall v__split_fields3:us_split_fields. forall k:int.
+   model__function_guard(model(((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[k])).rec__use_formal_vectors__my_vect__element_access__pointer_value),
+   ((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[k])).rec__use_formal_vectors__my_vect__element_access__pointer_value)) ->
+  ((forall v__split_fields3:us_split_fields. forall k:int.
+   model__function_guard(model(((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[k])).rec__use_formal_vectors__my_vect__element_access__pointer_value),
+   ((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[k])).rec__use_formal_vectors__my_vect__element_access__pointer_value)) ->
+  ((forall x__pointer_value2:us_rep.
+   model__function_guard(model(x__pointer_value2), x__pointer_value2)) ->
+  ((forall use_formal_vectors__my_vect__swap__from__compl:us_rep1.
+   model__function_guard(model((use_formal_vectors__my_vect__swap__from__compl).rec__use_formal_vectors__my_vect__element_access__pointer_value),
+   (use_formal_vectors__my_vect__swap__from__compl).rec__use_formal_vectors__my_vect__element_access__pointer_value)) ->
+  ((forall use_formal_vectors__my_vect__swap__from__value:us_rep.
+   model__function_guard(model(use_formal_vectors__my_vect__swap__from__value),
+   use_formal_vectors__my_vect__swap__from__value)) ->
+  ((forall x__pointer_value2:us_rep.
+   model__function_guard(model(x__pointer_value2), x__pointer_value2)) ->
+  ((let temp___538 = i : int in (let temp___539 = r121s : int in
+  (exists j:int. ((j = temp___538) and
+  (if (andb((if (temp___538 <= j) then true else false),
+  (if (j <= temp___539) then true else false)) = true) then (exists v__split_fields3:us_split_fields.
+                                                            exists x__pointer_value2:us_rep.
+                                                            exists x__pointer_address2:int.
+                                                            exists x__is_null_pointer2:bool.
+                                                            exists j1:int.
+                                                            (((not (bool_eq9((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content,
+                                                            us_null_pointer2) = true)) and
+                                                            ((last2(v_mod) <  length(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)) and
+                                                            ((forall j2:int.
+                                                             (((1 <= j2) and
+                                                             (j2 <= to_rep((v__split_fields3).rec__use_formal_vectors__my_vect__vector__top))) ->
+                                                             (not (bool_eq6((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[j2]),
+                                                             us_null_pointer1) = true)))) and
+                                                            ((forall j2:int.
+                                                             (((1 <= j2) and
+                                                             (j2 <= (i - 1))) ->
+                                                             (model(((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[j2])).rec__use_formal_vectors__my_vect__element_access__pointer_value) = get(v_mod,
+                                                             j2)))) and
+                                                            ((not (bool_eq6({
+                                                            rec__use_formal_vectors__my_vect__element_access__is_null_pointer =
+                                                            x__is_null_pointer2;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_address =
+                                                            x__pointer_address2;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_value =
+                                                            x__pointer_value2
+                                                            },
+                                                            us_null_pointer1) = true)) and
+                                                            ((if (i <  j1) then ((model(((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i])).rec__use_formal_vectors__my_vect__element_access__pointer_value) = model({
+                                                            rec__use_formal_vectors__element_type__is_null_pointer =
+                                                            e__is_null_pointer;
+                                                            rec__use_formal_vectors__element_type__pointer_address =
+                                                            e__pointer_address;
+                                                            rec__use_formal_vectors__element_type__pointer_value =
+                                                            e__pointer_value
+                                                            })) and
+                                                            (model(x__pointer_value2) = get(v_mod,
+                                                            (j1 - 1)))) else (bool_eq4(x__pointer_value2,
+                                                            {
+                                                            rec__use_formal_vectors__element_type__is_null_pointer =
+                                                            e__is_null_pointer;
+                                                            rec__use_formal_vectors__element_type__pointer_address =
+                                                            e__pointer_address;
+                                                            rec__use_formal_vectors__element_type__pointer_value =
+                                                            e__pointer_value
+                                                            }) = true)) and
+                                                            ((forall k:int.
+                                                             ((((i + 1) <= k) and
+                                                             (k <= (j1 - 1))) ->
+                                                             (model(((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[k])).rec__use_formal_vectors__my_vect__element_access__pointer_value) = get(v_mod,
+                                                             (k - 1))))) and
+                                                            (forall k:int.
+                                                            (((j1 <= k) and
+                                                            (k <= to_rep((v__split_fields3).rec__use_formal_vectors__my_vect__vector__top))) ->
+                                                            (model(((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[k])).rec__use_formal_vectors__my_vect__element_access__pointer_value) = get(v_mod,
+                                                            k))))))))))) and
+                                                            ((andb((if (((dynamic_invariant7({
+                                                            rec__use_formal_vectors__my_vect__element_access__is_null_pointer =
+                                                            x__is_null_pointer2;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_address =
+                                                            x__pointer_address2;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_value =
+                                                            x__pointer_value2
+                                                            }, true, true,
+                                                            true, true) and
+                                                            dynamic_invariant4({
+                                                            us_split_fields1 =
+                                                            v__split_fields3
+                                                            }, true, true,
+                                                            true, true)) and
+                                                            (((v__split_fields3).rec__use_formal_vectors__my_vect__vector__top = (v__split_fields1).rec__use_formal_vectors__my_vect__vector__top) and
+                                                            (((((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer = ((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer) and
+                                                            (((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_address = ((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_address)) and
+                                                            ((((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer = false) ->
+                                                            (((first1(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value) = first1(((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)) and
+                                                            (last1(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value) = last1(((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value))) and
+                                                            (forall temp___548:int.
+                                                            (((first1(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value) <= temp___548) and
+                                                            (temp___548 <= last1(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value))) ->
+                                                            (((temp___539 <  temp___548) or
+                                                            ((temp___548 <  temp___538) or
+                                                            (j1 <= temp___548))) ->
+                                                            ((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[temp___548]) = (to_array(((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[temp___548])))))))))) and
+                                                            dynamic_property1(i,
+                                                            r121s,
+                                                            j1)) then true else false),
+                                                            (if ((i <= j1) and
+                                                            (j1 <= r121s)) then true else false)) = true) and
+                                                            (let temp___540 =
+                                                            ((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value
+                                                            : us_t in
+                                                            (((first1(temp___540) <= j1) and
+                                                            (j1 <= last1(temp___540))) and
+                                                            (exists use_formal_vectors__my_vect__swap__from__is_null:bool.
+                                                            exists use_formal_vectors__my_vect__swap__from__addr:int.
+                                                            exists use_formal_vectors__my_vect__swap__from__value:us_rep.
+                                                            ((((((not (bool_eq6({
+                                                            rec__use_formal_vectors__my_vect__element_access__is_null_pointer =
+                                                            use_formal_vectors__my_vect__swap__from__is_null;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_address =
+                                                            use_formal_vectors__my_vect__swap__from__addr;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_value =
+                                                            use_formal_vectors__my_vect__swap__from__value
+                                                            },
+                                                            us_null_pointer1) = true)) and
+                                                            (not (bool_eq6({
+                                                            rec__use_formal_vectors__my_vect__element_access__is_null_pointer =
+                                                            x__is_null_pointer1;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_address =
+                                                            x__pointer_address1;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_value =
+                                                            x__pointer_value1
+                                                            },
+                                                            us_null_pointer1) = true))) and
+                                                            (model(x__pointer_value1) = model(((to_array(temp___540)[j1])).rec__use_formal_vectors__my_vect__element_access__pointer_value))) and
+                                                            (model(use_formal_vectors__my_vect__swap__from__value) = model(x__pointer_value2))) and
+                                                            (dynamic_invariant7({
+                                                            rec__use_formal_vectors__my_vect__element_access__is_null_pointer =
+                                                            use_formal_vectors__my_vect__swap__from__is_null;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_address =
+                                                            use_formal_vectors__my_vect__swap__from__addr;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_value =
+                                                            use_formal_vectors__my_vect__swap__from__value
+                                                            }, true, true,
+                                                            true, true) and
+                                                            dynamic_invariant7({
+                                                            rec__use_formal_vectors__my_vect__element_access__is_null_pointer =
+                                                            x__is_null_pointer1;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_address =
+                                                            x__pointer_address1;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_value =
+                                                            x__pointer_value1
+                                                            }, true, true,
+                                                            true, true))) and
+                                                            (let temp___542 =
+                                                            (v__split_fields3).rec__use_formal_vectors__my_vect__vector__content
+                                                            : us_rep2 in
+                                                            (let temp___541 =
+                                                            ((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value
+                                                            : us_t in
+                                                            (((first1(temp___541) <= j1) and
+                                                            (j1 <= last1(temp___541))) and
+                                                            (dynamic_predicate({
+                                                            us_split_fields1 =
+                                                            {
+                                                            rec__use_formal_vectors__my_vect__vector__top =
+                                                            (v__split_fields3).rec__use_formal_vectors__my_vect__vector__top;
+                                                            rec__use_formal_vectors__my_vect__vector__content =
+                                                            {
+                                                            rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer =
+                                                            (temp___542).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer;
+                                                            rec__use_formal_vectors__my_vect__element_array_access__pointer_address =
+                                                            (temp___542).rec__use_formal_vectors__my_vect__element_array_access__pointer_address;
+                                                            rec__use_formal_vectors__my_vect__element_array_access__pointer_value =
+                                                            { elts =
+                                                            (to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[j1 <- {
+                                                            rec__use_formal_vectors__my_vect__element_access__is_null_pointer =
+                                                            use_formal_vectors__my_vect__swap__from__is_null;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_address =
+                                                            use_formal_vectors__my_vect__swap__from__addr;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_value =
+                                                            use_formal_vectors__my_vect__swap__from__value
+                                                            }]); rt =
+                                                            (((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value).rt
+                                                            } } } }) and
+                                                            ((v__split_fields2 = {
+                                                            rec__use_formal_vectors__my_vect__vector__top =
+                                                            (v__split_fields3).rec__use_formal_vectors__my_vect__vector__top;
+                                                            rec__use_formal_vectors__my_vect__vector__content =
+                                                            {
+                                                            rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer =
+                                                            (temp___542).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer;
+                                                            rec__use_formal_vectors__my_vect__element_array_access__pointer_address =
+                                                            (temp___542).rec__use_formal_vectors__my_vect__element_array_access__pointer_address;
+                                                            rec__use_formal_vectors__my_vect__element_array_access__pointer_value =
+                                                            { elts =
+                                                            (to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[j1 <- {
+                                                            rec__use_formal_vectors__my_vect__element_access__is_null_pointer =
+                                                            use_formal_vectors__my_vect__swap__from__is_null;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_address =
+                                                            use_formal_vectors__my_vect__swap__from__addr;
+                                                            rec__use_formal_vectors__my_vect__element_access__pointer_value =
+                                                            use_formal_vectors__my_vect__swap__from__value
+                                                            }]); rt =
+                                                            (((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value).rt
+                                                            } } }) and
+                                                            (j1 = temp___539))))))))))))) else ((((v__split_fields2 = v__split_fields1) and
+  (x__pointer_value1 = x__pointer_value)) and
+  (x__pointer_address1 = x__pointer_address)) and
+  (x__is_null_pointer1 = x__is_null_pointer))))))) ->
+  rec__use_formal_vectors__my_vect__element_array_access__pointer_value__pred((v__split_fields2).rec__use_formal_vectors__my_vect__vector__content)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))

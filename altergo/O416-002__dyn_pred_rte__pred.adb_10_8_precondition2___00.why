@@ -1,0 +1,402 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type positive
+
+logic positiveqtint : positive -> int
+
+axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
+
+axiom positiveqtaxiom1 :
+  (forall i:positive. (positiveqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : positive, positive -> bool
+
+logic dummy : positive
+
+type positive__ref = { positive__content : positive
+}
+
+function positive__ref_positive__content__projection(a: positive__ref) : positive =
+  (a).positive__content
+
+predicate dynamic_invariant(temp___expr_46: int, temp___is_init_42: bool,
+  temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
+  temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
+  (1 <= 2147483647)) -> in_range(temp___expr_46))
+
+logic x : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic y : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic div : int, int -> int
+
+logic mod : int, int -> int
+
+axiom Div_mod :
+  (forall x1:int. forall y1:int. ((not (y1 = 0)) -> (x1 = ((y1 * div(x1,
+  y1)) + mod(x1, y1)))))
+
+axiom Div_bound :
+  (forall x1:int. forall y1:int. (((0 <= x1) and (0 <  y1)) -> (0 <= div(x1,
+  y1))))
+
+axiom Div_bound1 :
+  (forall x1:int. forall y1:int. (((0 <= x1) and (0 <  y1)) -> (div(x1,
+  y1) <= x1)))
+
+axiom Mod_bound :
+  (forall x1:int. forall y1:int. ((not (y1 = 0)) ->
+  ((-abs_int(y1)) <  mod(x1, y1))))
+
+axiom Mod_bound1 :
+  (forall x1:int. forall y1:int. ((not (y1 = 0)) -> (mod(x1,
+  y1) <  abs_int(y1))))
+
+axiom Div_sign_pos :
+  (forall x1:int. forall y1:int. (((0 <= x1) and (0 <  y1)) -> (0 <= div(x1,
+  y1))))
+
+axiom Div_sign_neg :
+  (forall x1:int. forall y1:int. (((x1 <= 0) and (0 <  y1)) -> (div(x1,
+  y1) <= 0)))
+
+axiom Mod_sign_pos :
+  (forall x1:int. forall y1:int. (((0 <= x1) and (not (y1 = 0))) ->
+  (0 <= mod(x1, y1))))
+
+axiom Mod_sign_neg :
+  (forall x1:int. forall y1:int. (((x1 <= 0) and (not (y1 = 0))) -> (mod(x1,
+  y1) <= 0)))
+
+axiom Rounds_toward_zero :
+  (forall x1:int. forall y1:int. ((not (y1 = 0)) -> (abs_int((div(x1,
+  y1) * y1)) <= abs_int(x1))))
+
+axiom Div_1 : (forall x1:int. (div(x1, 1) = x1))
+
+axiom Mod_1 : (forall x1:int. (mod(x1, 1) = 0))
+
+axiom Div_inf :
+  (forall x1:int. forall y1:int. (((0 <= x1) and (x1 <  y1)) -> (div(x1,
+  y1) = 0)))
+
+axiom Mod_inf :
+  (forall x1:int. forall y1:int. (((0 <= x1) and (x1 <  y1)) -> (mod(x1,
+  y1) = x1)))
+
+axiom Div_mult :
+  (forall x1:int. forall y1:int. forall z:int [div(((x1 * y1) + z), x1)].
+  (((0 <  x1) and ((0 <= y1) and (0 <= z))) -> (div(((x1 * y1) + z),
+  x1) = (y1 + div(z, x1)))))
+
+axiom Mod_mult :
+  (forall x1:int. forall y1:int. forall z:int [mod(((x1 * y1) + z), x1)].
+  (((0 <  x1) and ((0 <= y1) and (0 <= z))) -> (mod(((x1 * y1) + z),
+  x1) = mod(z, x1))))
+
+axiom Div_mod1 :
+  (forall x1:int. forall y1:int. ((not (y1 = 0)) ->
+  (x1 = ((y1 * (x1 / y1)) + (x1 % y1)))))
+
+axiom Mod_bound2 :
+  (forall x1:int. forall y1:int. ((not (y1 = 0)) -> (0 <= (x1 % y1))))
+
+axiom Mod_bound3 :
+  (forall x1:int. forall y1:int. ((not (y1 = 0)) ->
+  ((x1 % y1) <  abs_int(y1))))
+
+axiom Div_unique :
+  (forall x1:int. forall y1:int. forall q:int. ((0 <  y1) ->
+  ((((q * y1) <= x1) and (x1 <  ((q * y1) + y1))) -> ((x1 / y1) = q))))
+
+axiom Div_bound2 :
+  (forall x1:int. forall y1:int. (((0 <= x1) and (0 <  y1)) ->
+  (0 <= (x1 / y1))))
+
+axiom Div_bound3 :
+  (forall x1:int. forall y1:int. (((0 <= x1) and (0 <  y1)) ->
+  ((x1 / y1) <= x1)))
+
+axiom Mod_11 : (forall x1:int. ((x1 % 1) = 0))
+
+axiom Div_11 : (forall x1:int. ((x1 / 1) = x1))
+
+axiom Div_inf1 :
+  (forall x1:int. forall y1:int. (((0 <= x1) and (x1 <  y1)) ->
+  ((x1 / y1) = 0)))
+
+axiom Div_inf_neg :
+  (forall x1:int. forall y1:int. (((0 <  x1) and (x1 <= y1)) ->
+  (((-x1) / y1) = (- 1))))
+
+axiom Mod_0 : (forall y1:int. ((not (y1 = 0)) -> ((0 % y1) = 0)))
+
+axiom Div_1_left : (forall y1:int. ((1 <  y1) -> ((1 / y1) = 0)))
+
+axiom Div_minus1_left :
+  (forall y1:int. ((1 <  y1) -> (((- 1) / y1) = (- 1))))
+
+axiom Mod_1_left : (forall y1:int. ((1 <  y1) -> ((1 % y1) = 1)))
+
+axiom Mod_minus1_left :
+  (forall y1:int [((- 1) % y1)]. ((1 <  y1) -> (((- 1) % y1) = (y1 - 1))))
+
+axiom Div_mult1 :
+  (forall x1:int. forall y1:int. forall z:int [(((x1 * y1) + z) / x1)].
+  ((0 <  x1) -> ((((x1 * y1) + z) / x1) = (y1 + (z / x1)))))
+
+axiom Mod_mult1 :
+  (forall x1:int. forall y1:int. forall z:int [(((x1 * y1) + z) % x1)].
+  ((0 <  x1) -> ((((x1 * y1) + z) % x1) = (z % x1))))
+
+function mod1(x1: int, y1: int) : int =
+  (if (0 <  y1) then (x1 % y1) else ((x1 % y1) + y1))
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x1: int) = (((- 2147483648) <= x1) and
+  (x1 <= 2147483647))
+
+function bool_eq1(x1: int, y1: int) : bool =
+  (if (x1 = y1) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq1 : integer, integer -> bool
+
+logic dummy1 : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+logic prop1 : int -> bool
+
+logic prop__function_guard : bool, int -> prop
+
+axiom prop__def_axiom :
+  (forall x1:int [prop1(x1)]. ((prop1(x1) = true) -> (not (mod1(10,
+  x1) = 0))))
+
+axiom prop__def_axiom1 :
+  (forall x1:int [prop1(x1)]. ((not (mod1(10, x1) = 0)) ->
+  (prop1(x1) = true)))
+
+logic i5b : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+type ttB
+
+logic ttBqtint : ttB -> int
+
+axiom ttBqtaxiom : (forall i:ttB. ((- 2147483648) <= ttBqtint(i)))
+
+axiom ttBqtaxiom1 : (forall i:ttB. (ttBqtint(i) <= 2147483647))
+
+predicate in_range2(x1: int) = (((- 2147483648) <= x1) and
+  (x1 <= 2147483647))
+
+function bool_eq2(x1: int, y1: int) : bool =
+  (if (x1 = y1) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq2 : ttB, ttB -> bool
+
+logic dummy2 : ttB
+
+type ttB__ref = { ttB__content : ttB
+}
+
+function ttB__ref_ttB__content__projection(a: ttB__ref) : ttB =
+  (a).ttB__content
+
+function to_rep(x1: ttB) : int = ttBqtint(x1)
+
+logic of_rep : int -> ttB
+
+axiom inversion_axiom :
+  (forall x1:ttB [to_rep(x1)]. (of_rep(to_rep(x1)) = x1))
+
+axiom range_axiom : (forall x1:ttB [to_rep(x1)]. in_range2(to_rep(x1)))
+
+axiom coerce_axiom :
+  (forall x1:int [to_rep(of_rep(x1))]. (in_range2(x1) ->
+  (to_rep(of_rep(x1)) = x1)))
+
+logic first : int
+
+logic last : int
+
+predicate dynamic_property(first_int: int, last_int: int, x1: int) =
+  ((first_int <= x1) and (x1 <= last_int))
+
+function bool_eq3(x1: int, y1: int) : bool =
+  (if (x1 = y1) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq3 : ttB, ttB -> bool
+
+logic dummy3 : ttB
+
+type t__ref = { t__content : ttB
+}
+
+function t__ref_t__content__projection(a: t__ref) : ttB = (a).t__content
+
+axiom temp___result_165qtdef :
+  (forall temp___164:int. prop__function_guard(prop1(temp___164),
+  temp___164))
+
+predicate dynamic_invariant2(temp___expr_163: int, temp___is_init_159: bool,
+  temp___skip_constant_160: bool, temp___do_toplevel_161: bool,
+  temp___do_typ_inv_162: bool) = ((((temp___is_init_159 = true) or
+  (first <= last)) -> dynamic_property(first, last, temp___expr_163)) and
+  ((temp___do_toplevel_161 = true) -> ((temp___is_init_159 = true) ->
+  (prop1(temp___expr_163) = true))))
+
+axiom temp___result_170qtdef :
+  (forall temp___169:int. prop__function_guard(prop1(temp___169),
+  temp___169))
+
+predicate dynamic_predicate(temp___168: int) = (prop1(temp___168) = true)
+
+axiom first__def_axiom : (first = x)
+
+axiom last__def_axiom : (last = y)
+
+axiom cdiv_cases :
+  (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((0 <  d) -> (div(n,
+  d) = (n / d)))))
+
+axiom cdiv_cases1 :
+  (forall n:int. forall d:int [div(n, d)]. ((n <= 0) -> ((0 <  d) -> (div(n,
+  d) = (-((-n) / d))))))
+
+axiom cdiv_cases2 :
+  (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((d <  0) -> (div(n,
+  d) = (-(n / (-d)))))))
+
+axiom cdiv_cases3 :
+  (forall n:int. forall d:int [div(n, d)]. ((n <= 0) -> ((d <  0) -> (div(n,
+  d) = ((-n) / (-d))))))
+
+axiom cmod_cases :
+  (forall n:int. forall d:int [mod(n, d)]. ((0 <= n) -> ((0 <  d) -> (mod(n,
+  d) = (n % d)))))
+
+axiom cmod_cases1 :
+  (forall n:int. forall d:int [mod(n, d)]. ((n <= 0) -> ((0 <  d) -> (mod(n,
+  d) = (-((-n) % d))))))
+
+axiom cmod_cases2 :
+  (forall n:int. forall d:int [mod(n, d)]. ((0 <= n) -> ((d <  0) -> (mod(n,
+  d) = (n % (-d))))))
+
+axiom cmod_cases3 :
+  (forall n:int. forall d:int [mod(n, d)]. ((n <= 0) -> ((d <  0) -> (mod(n,
+  d) = (-((-n) % (-d)))))))
+
+ (* File "pred.adb", line 8, characters 0-0 *)
+goal defqtvc : (dynamic_invariant(x, true, false, true, true) ->
+  (dynamic_invariant(y, true, false, true, true) -> (dynamic_invariant(x,
+  true, false, true, true) -> (dynamic_invariant(y, true, false, true,
+  true) -> (dynamic_invariant2(i5b, true, false, false, true) ->
+  (not (i5b = 0)))))))

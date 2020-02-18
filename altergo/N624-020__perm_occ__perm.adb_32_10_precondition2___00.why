@@ -1,0 +1,575 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : natural, natural -> bool
+
+logic dummy : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range1(temp___expr_39))
+
+function to_rep(x: natural) : int = naturalqtint(x)
+
+logic of_rep : int -> natural
+
+axiom inversion_axiom :
+  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:natural [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : integer, integer -> bool
+
+logic dummy1 : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep1(x: integer) : int = integerqtint(x)
+
+logic of_rep1 : int -> integer
+
+axiom inversion_axiom1 :
+  (forall x:integer [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range2(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type index
+
+logic indexqtint : index -> int
+
+axiom indexqtaxiom : (forall i:index. (1 <= indexqtint(i)))
+
+axiom indexqtaxiom1 : (forall i:index. (indexqtint(i) <= 100))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 100))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : index, index -> bool
+
+logic dummy2 : index
+
+type index__ref = { index__content : index
+}
+
+function index__ref_index__content__projection(a: index__ref) : index =
+  (a).index__content
+
+type map__ref = { map__content : (int,natural) farray
+}
+
+logic slide : (int,natural) farray, int, int -> (int,natural) farray
+
+axiom slide_eq :
+  (forall a:(int,natural) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,natural) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq4(a: (int,natural) farray, a__first: int, a__last: int,
+  b: (int,natural) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)]))))))))
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range2(f) -> (in_range2(l) ->
+  (to_rep1(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range2(f) -> (in_range2(l) ->
+  (to_rep1(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range2(low) and (in_range2(high) and ((low <= high) ->
+  (in_range3(low) and in_range3(high)))))
+
+type us_t = { elts : (int,natural) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,natural) farray = (a).elts
+
+function of_array(a: (int,natural) farray, f: int, l: int) : us_t = { elts =
+  a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep1(first((a).rt))
+
+function last1(a: us_t) : int = to_rep1(last((a).rt))
+
+function length(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq5(x: us_t, y: us_t) : bool = bool_eq4((x).elts,
+  to_rep1(first((x).rt)), to_rep1(last((x).rt)), (y).elts,
+  to_rep1(first((y).rt)), to_rep1(last((y).rt)))
+
+logic user_eq3 : us_t, us_t -> bool
+
+logic dummy3 : us_t
+
+type nat_array__ref = { nat_array__content : us_t
+}
+
+function nat_array__ref_nat_array__content__projection(a: nat_array__ref) : us_t =
+  (a).nat_array__content
+
+logic remove_last : us_t -> us_t
+
+logic remove_last__function_guard : us_t, us_t -> prop
+
+predicate dynamic_invariant1(temp___expr_178: us_t, temp___is_init_174: bool,
+  temp___skip_constant_175: bool, temp___do_toplevel_176: bool,
+  temp___do_typ_inv_177: bool) = ((not (temp___skip_constant_175 = true)) ->
+  dynamic_property(1, 100, first1(temp___expr_178), last1(temp___expr_178)))
+
+type t17s__ref = { t17s__content : us_t
+}
+
+function t17s__ref_t17s__content__projection(a: t17s__ref) : us_t =
+  (a).t17s__content
+
+axiom remove_last__post_axiom :
+  (forall a:us_t [remove_last(a)]. ((dynamic_invariant1(a, true, true, true,
+  true) and (0 <  length(a))) -> (let result = remove_last(a) : us_t in
+  (remove_last__function_guard(result, a) -> dynamic_invariant1(result, true,
+  false, true, true)))))
+
+axiom remove_last__def_axiom :
+  (forall a:us_t [remove_last(a)]. (dynamic_invariant1(a, true, true, true,
+  true) -> (remove_last(a) = of_array(to_array(of_array(to_array(a),
+  first1(a), (last1(a) - 1))), first1(of_array(to_array(a), first1(a),
+  (last1(a) - 1))), last1(of_array(to_array(a), first1(a),
+  (last1(a) - 1)))))))
+
+logic occ : us_t, int -> int
+
+logic occ__function_guard : int, us_t, int -> prop
+
+logic occ_def : us_t, int -> int
+
+logic occ_def__function_guard : int, us_t, int -> prop
+
+type nb_occ
+
+logic nb_occqtint : nb_occ -> int
+
+axiom nb_occqtaxiom : (forall i:nb_occ. (0 <= nb_occqtint(i)))
+
+axiom nb_occqtaxiom1 : (forall i:nb_occ. (nb_occqtint(i) <= 100))
+
+predicate in_range4(x: int) = ((0 <= x) and (x <= 100))
+
+function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq4 : nb_occ, nb_occ -> bool
+
+logic dummy4 : nb_occ
+
+type nb_occ__ref = { nb_occ__content : nb_occ
+}
+
+function nb_occ__ref_nb_occ__content__projection(a: nb_occ__ref) : nb_occ =
+  (a).nb_occ__content
+
+predicate dynamic_invariant2(temp___expr_164: int, temp___is_init_160: bool,
+  temp___skip_constant_161: bool, temp___do_toplevel_162: bool,
+  temp___do_typ_inv_163: bool) = (((temp___is_init_160 = true) or
+  (0 <= 100)) -> in_range4(temp___expr_164))
+
+axiom occ__post_axiom :
+  (forall a:us_t.
+  (forall e:int [occ(a, e)]. ((dynamic_invariant1(a, true, true, true,
+  true) and dynamic_invariant(e, true, true, true, true)) -> (let result =
+  occ(a, e) : int in (occ__function_guard(result, a, e) ->
+  (result <= length(a)))))))
+
+axiom occ__post_axiom1 :
+  (forall a:us_t.
+  (forall e:int [occ(a, e)]. ((dynamic_invariant1(a, true, true, true,
+  true) and dynamic_invariant(e, true, true, true, true)) -> (let result =
+  occ(a, e) : int in (occ__function_guard(result, a, e) ->
+  dynamic_invariant2(result, true, false, true, true))))))
+
+axiom occ__def_axiom :
+  (forall a:us_t.
+  (forall e:int [occ(a, e)]. ((dynamic_invariant1(a, true, true, true,
+  true) and dynamic_invariant(e, true, true, true, true)) ->
+  (forall a1:us_t. forall e1:int. occ_def__function_guard(occ_def(a1, e1),
+  a1, e1)))))
+
+axiom occ__def_axiom1 :
+  (forall a:us_t.
+  (forall e:int [occ(a, e)]. ((dynamic_invariant1(a, true, true, true,
+  true) and dynamic_invariant(e, true, true, true, true)) -> (occ(a,
+  e) = occ_def(a, e)))))
+
+logic is_set : us_t, int, int, us_t -> bool
+
+logic is_set__function_guard : bool, us_t, int, int, us_t -> prop
+
+predicate dynamic_invariant3(temp___expr_171: int, temp___is_init_167: bool,
+  temp___skip_constant_168: bool, temp___do_toplevel_169: bool,
+  temp___do_typ_inv_170: bool) = (((temp___is_init_167 = true) or
+  (1 <= 100)) -> in_range3(temp___expr_171))
+
+axiom is_set__def_axiom :
+  (forall a:us_t. forall r:us_t.
+  (forall i:int. forall v:int [is_set(a, i, v, r)]. ((is_set(a, i, v,
+  r) = true) -> (first1(r) = first1(a)))))
+
+axiom is_set__def_axiom1 :
+  (forall a:us_t. forall r:us_t.
+  (forall i:int. forall v:int [is_set(a, i, v, r)]. ((is_set(a, i, v,
+  r) = true) -> (last1(r) = last1(a)))))
+
+axiom is_set__def_axiom2 :
+  (forall a:us_t. forall r:us_t.
+  (forall i:int. forall v:int [is_set(a, i, v, r)]. ((is_set(a, i, v,
+  r) = true) -> (to_rep((to_array(r)[i])) = v))))
+
+axiom is_set__def_axiom3 :
+  (forall a:us_t. forall r:us_t.
+  (forall i:int. forall v:int [is_set(a, i, v, r)]. ((is_set(a, i, v,
+  r) = true) ->
+  (forall j:int. (((first1(a) <= j) and (j <= last1(a))) -> ((not (i = j)) ->
+  (to_rep((to_array(r)[j])) = to_rep((to_array(a)[j])))))))))
+
+axiom is_set__def_axiom4 :
+  (forall a:us_t. forall r:us_t.
+  (forall i:int. forall v:int [is_set(a, i, v, r)].
+  (((((first1(r) = first1(a)) and (last1(r) = last1(a))) and
+  (to_rep((to_array(r)[i])) = v)) and
+  (forall j:int. (((first1(a) <= j) and (j <= last1(a))) -> ((not (i = j)) ->
+  (to_rep((to_array(r)[j])) = to_rep((to_array(a)[j]))))))) -> (is_set(a, i,
+  v, r) = true))))
+
+logic a : us_t
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic i : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic v : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic e : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic r : us_t
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic b__first : integer
+
+logic b__last : integer
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+predicate dynamic_invariant4(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range2(temp___expr_18))
+
+axiom occ_def__def_axiom :
+  (forall a1:us_t.
+  (forall e1:int [occ_def(a1, e1)]. (((dynamic_invariant1(a1, true, true,
+  true, true) and dynamic_invariant(e1, true, true, true, true)) and
+  occ_def__function_guard(occ_def(a1, e1), a1, e1)) ->
+  (forall a2:us_t. remove_last__function_guard(remove_last(a2), a2)))))
+
+axiom occ_def__def_axiom1 :
+  (forall a1:us_t.
+  (forall e1:int [occ_def(a1, e1)]. (((dynamic_invariant1(a1, true, true,
+  true, true) and dynamic_invariant(e1, true, true, true, true)) and
+  occ_def__function_guard(occ_def(a1, e1), a1, e1)) ->
+  (forall a2:us_t. remove_last__function_guard(remove_last(a2), a2)))))
+
+axiom occ_def__def_axiom2 :
+  (forall a1:us_t.
+  (forall e1:int [occ_def(a1, e1)]. (((dynamic_invariant1(a1, true, true,
+  true, true) and dynamic_invariant(e1, true, true, true, true)) and
+  occ_def__function_guard(occ_def(a1, e1), a1, e1)) ->
+  (forall a2:us_t. forall e2:int.
+  occ_def__function_guard(occ_def(remove_last(a2), e2), remove_last(a2), e2)))))
+
+axiom occ_def__def_axiom3 :
+  (forall a1:us_t.
+  (forall e1:int [occ_def(a1, e1)]. (((dynamic_invariant1(a1, true, true,
+  true, true) and dynamic_invariant(e1, true, true, true, true)) and
+  occ_def__function_guard(occ_def(a1, e1), a1, e1)) ->
+  (forall a2:us_t. remove_last__function_guard(remove_last(a2), a2)))))
+
+axiom occ_def__def_axiom4 :
+  (forall a1:us_t.
+  (forall e1:int [occ_def(a1, e1)]. (((dynamic_invariant1(a1, true, true,
+  true, true) and dynamic_invariant(e1, true, true, true, true)) and
+  occ_def__function_guard(occ_def(a1, e1), a1, e1)) ->
+  (forall a2:us_t. remove_last__function_guard(remove_last(a2), a2)))))
+
+axiom occ_def__def_axiom5 :
+  (forall a1:us_t.
+  (forall e1:int [occ_def(a1, e1)]. (((dynamic_invariant1(a1, true, true,
+  true, true) and dynamic_invariant(e1, true, true, true, true)) and
+  occ_def__function_guard(occ_def(a1, e1), a1, e1)) ->
+  (forall a2:us_t. forall e2:int.
+  occ_def__function_guard(occ_def(remove_last(a2), e2), remove_last(a2), e2)))))
+
+axiom occ_def__def_axiom6 :
+  (forall a1:us_t.
+  (forall e1:int [occ_def(a1, e1)]. (((dynamic_invariant1(a1, true, true,
+  true, true) and dynamic_invariant(e1, true, true, true, true)) and
+  occ_def__function_guard(occ_def(a1, e1), a1, e1)) -> (occ_def(a1,
+  e1) = (if (length(a1) = 0) then 0 else (if (to_rep((to_array(a1)[last1(a1)])) = e1) then (occ_def(remove_last(a1),
+  e1) + 1) else occ_def(remove_last(a1), e1)))))))
+
+axiom occ_def__post_axiom :
+  (forall a1:us_t.
+  (forall e1:int [occ_def(a1, e1)]. ((dynamic_invariant1(a1, true, true,
+  true, true) and dynamic_invariant(e1, true, true, true, true)) ->
+  (let result = occ_def(a1, e1) : int in (occ_def__function_guard(result, a1,
+  e1) -> (result <= length(a1)))))))
+
+axiom occ_def__post_axiom1 :
+  (forall a1:us_t.
+  (forall e1:int [occ_def(a1, e1)]. ((dynamic_invariant1(a1, true, true,
+  true, true) and dynamic_invariant(e1, true, true, true, true)) ->
+  (let result = occ_def(a1, e1) : int in (occ_def__function_guard(result, a1,
+  e1) -> dynamic_invariant2(result, true, false, true, true))))))
+
+ (* File "perm.ads", line 30, characters 0-0 *)
+goal defqtvc : (dynamic_invariant1(a, true, false, true, true) ->
+  (dynamic_invariant3(i, true, false, true, true) -> (dynamic_invariant(v,
+  true, false, true, true) -> (dynamic_invariant(e, true, false, true,
+  true) -> (dynamic_invariant1(r, true, false, true, true) ->
+  (is_set__function_guard(is_set(a, i, v, r), a, i, v, r) ->
+  ((((first1(a) <= i) and (i <= last1(a))) and (is_set(a, i, v,
+  r) = true)) -> (let o = a : us_t in (let perm__occ_set__b__assume =
+  remove_last(o) : us_t in
+  ((remove_last__function_guard(perm__occ_set__b__assume, o) and
+  (dynamic_invariant1(perm__occ_set__b__assume, true, false, true, true) and
+  (perm__occ_set__b__assume = of_array(to_array(of_array(to_array(o),
+  first1(o), (last1(o) - 1))), first1(of_array(to_array(o), first1(o),
+  (last1(o) - 1))), last1(of_array(to_array(o), first1(o),
+  (last1(o) - 1))))))) ->
+  (forall b:(int,natural) farray.
+  ((b = to_array(perm__occ_set__b__assume)) ->
+  ((to_rep1(b__first) = first1(perm__occ_set__b__assume)) ->
+  ((to_rep1(b__last) = last1(perm__occ_set__b__assume)) ->
+  (dynamic_property(1, 100, to_rep1(b__first), to_rep1(b__last)) ->
+  (forall spark__branch:bool.
+  ((spark__branch = (if (length(a) = 0) then true else false)) ->
+  ((not (spark__branch = true)) ->
+  (forall spark__branch1:bool.
+  ((spark__branch1 = (if (i = last1(a)) then true else false)) ->
+  ((spark__branch1 = true) -> (let o1 = r : us_t in (let o2 = remove_last(o1)
+  : us_t in ((remove_last__function_guard(o2, o1) and (dynamic_invariant1(o2,
+  true, false, true, true) and (o2 = of_array(to_array(of_array(to_array(o1),
+  first1(o1), (last1(o1) - 1))), first1(of_array(to_array(o1), first1(o1),
+  (last1(o1) - 1))), last1(of_array(to_array(o1), first1(o1),
+  (last1(o1) - 1))))))) ->
+  (forall o3:int. ((to_rep1(b__last) = o3) ->
+  (forall o4:int. ((to_rep1(b__first) = o4) -> (let o5 = of_array(b, o4, o3)
+  : us_t in (bool_eq4(to_array(o5), first1(o5), last1(o5), to_array(o2),
+  first1(o2), last1(o2)) = true))))))))))))))))))))))))))))))

@@ -1,0 +1,568 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic get_state : int -> int
+
+logic get_state__function_guard : int, int -> prop
+
+type states_t
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 3))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : states_t, states_t -> bool
+
+logic dummy : states_t
+
+type states_t__ref = { states_t__content : states_t
+}
+
+function states_t__ref_states_t__content__projection(a: states_t__ref) : states_t =
+  (a).states_t__content
+
+predicate dynamic_invariant(temp___expr_173: int, temp___is_init_169: bool,
+  temp___skip_constant_170: bool, temp___do_toplevel_171: bool,
+  temp___do_typ_inv_172: bool) = (((temp___is_init_169 = true) or
+  (0 <= 3)) -> in_range1(temp___expr_173))
+
+axiom get_state__post_axiom :
+  (forall sm_using_case_expression__state:int
+  [get_state(sm_using_case_expression__state)].
+  (dynamic_invariant(sm_using_case_expression__state, true, true, true,
+  true) -> (let result = get_state(sm_using_case_expression__state) : int in
+  (get_state__function_guard(result, sm_using_case_expression__state) ->
+  dynamic_invariant(result, true, false, true, true)))))
+
+axiom get_state__def_axiom :
+  (forall sm_using_case_expression__state:int
+  [get_state(sm_using_case_expression__state)].
+  (dynamic_invariant(sm_using_case_expression__state, true, true, true,
+  true) ->
+  (get_state(sm_using_case_expression__state) = sm_using_case_expression__state)))
+
+logic to_rep : states_t -> int
+
+logic of_rep : int -> states_t
+
+axiom inversion_axiom :
+  (forall x:states_t [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:states_t [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type triggers_t
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 4))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : triggers_t, triggers_t -> bool
+
+logic dummy1 : triggers_t
+
+type triggers_t__ref = { triggers_t__content : triggers_t
+}
+
+function triggers_t__ref_triggers_t__content__projection(a: triggers_t__ref) : triggers_t =
+  (a).triggers_t__content
+
+logic to_rep1 : triggers_t -> int
+
+logic of_rep1 : int -> triggers_t
+
+axiom inversion_axiom1 :
+  (forall x:triggers_t [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 :
+  (forall x:triggers_t [to_rep1(x)]. in_range2(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type us_split_fields = {
+rec__sm_using_case_expression__invalid_transition_record_t__initial_state :
+states_t; rec__sm_using_case_expression__invalid_transition_record_t__trigger
+: triggers_t
+}
+
+function us_split_fields_rec__sm_using_case_expression__invalid_transition_record_t__initial_state__projection(a: us_split_fields) : states_t =
+  (a).rec__sm_using_case_expression__invalid_transition_record_t__initial_state
+
+function us_split_fields_rec__sm_using_case_expression__invalid_transition_record_t__trigger__projection(a: us_split_fields) : triggers_t =
+  (a).rec__sm_using_case_expression__invalid_transition_record_t__trigger
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq3(a: us_rep, b: us_rep) : bool =
+  (if ((to_rep(((a).us_split_fields1).rec__sm_using_case_expression__invalid_transition_record_t__initial_state) = to_rep(((b).us_split_fields1).rec__sm_using_case_expression__invalid_transition_record_t__initial_state)) and
+  (to_rep1(((a).us_split_fields1).rec__sm_using_case_expression__invalid_transition_record_t__trigger) = to_rep1(((b).us_split_fields1).rec__sm_using_case_expression__invalid_transition_record_t__trigger))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic sm_using_case_expression__invalid_transition_record_t__initial_state__first__bit : int
+
+logic sm_using_case_expression__invalid_transition_record_t__initial_state__last__bit : int
+
+logic sm_using_case_expression__invalid_transition_record_t__initial_state__position : int
+
+axiom sm_using_case_expression__invalid_transition_record_t__initial_state__first__bit_axiom :
+  (0 <= sm_using_case_expression__invalid_transition_record_t__initial_state__first__bit)
+
+axiom sm_using_case_expression__invalid_transition_record_t__initial_state__last__bit_axiom :
+  (sm_using_case_expression__invalid_transition_record_t__initial_state__first__bit <  sm_using_case_expression__invalid_transition_record_t__initial_state__last__bit)
+
+axiom sm_using_case_expression__invalid_transition_record_t__initial_state__position_axiom :
+  (0 <= sm_using_case_expression__invalid_transition_record_t__initial_state__position)
+
+logic sm_using_case_expression__invalid_transition_record_t__trigger__first__bit : int
+
+logic sm_using_case_expression__invalid_transition_record_t__trigger__last__bit : int
+
+logic sm_using_case_expression__invalid_transition_record_t__trigger__position : int
+
+axiom sm_using_case_expression__invalid_transition_record_t__trigger__first__bit_axiom :
+  (0 <= sm_using_case_expression__invalid_transition_record_t__trigger__first__bit)
+
+axiom sm_using_case_expression__invalid_transition_record_t__trigger__last__bit_axiom :
+  (sm_using_case_expression__invalid_transition_record_t__trigger__first__bit <  sm_using_case_expression__invalid_transition_record_t__trigger__last__bit)
+
+axiom sm_using_case_expression__invalid_transition_record_t__trigger__position_axiom :
+  (0 <= sm_using_case_expression__invalid_transition_record_t__trigger__position)
+
+logic user_eq2 : us_rep, us_rep -> bool
+
+logic dummy2 : us_rep
+
+type invalid_transition_record_t__ref = {
+invalid_transition_record_t__content : us_rep
+}
+
+function invalid_transition_record_t__ref_invalid_transition_record_t__content__projection(a: invalid_transition_record_t__ref) : us_rep =
+  (a).invalid_transition_record_t__content
+
+type map__ref = { map__content : (int,us_rep) farray
+}
+
+logic slide : (int,us_rep) farray, int, int -> (int,us_rep) farray
+
+axiom slide_eq :
+  (forall a:(int,us_rep) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,us_rep) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq4(a: (int,us_rep) farray, a__first: int, a__last: int,
+  b: (int,us_rep) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_155:int. (((a__first <= temp___idx_155) and
+  (temp___idx_155 <= a__last)) -> (bool_eq3((a[temp___idx_155]),
+  (b[((b__first - a__first) + temp___idx_155)])) = true)))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_155:int. (((a__first <= temp___idx_155) and
+  (temp___idx_155 <= a__last)) -> (bool_eq3((a[temp___idx_155]),
+  (b[((b__first - a__first) + temp___idx_155)])) = true))))))
+
+logic invalid_transition_array : (int,us_rep) farray
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic my_sm : int, int -> int
+
+logic my_sm__function_guard : int, int, int -> prop
+
+predicate dynamic_invariant1(temp___expr_181: int, temp___is_init_177: bool,
+  temp___skip_constant_178: bool, temp___do_toplevel_179: bool,
+  temp___do_typ_inv_180: bool) = (((temp___is_init_177 = true) or
+  (0 <= 4)) -> in_range2(temp___expr_181))
+
+axiom my_sm__post_axiom :
+  (forall state:int. forall trigger:int [my_sm(state, trigger)].
+  ((dynamic_invariant(state, true, true, true, true) and
+  dynamic_invariant1(trigger, true, true, true, true)) -> (let result =
+  my_sm(state, trigger) : int in (my_sm__function_guard(result, state,
+  trigger) -> dynamic_invariant(result, true, false, true, true)))))
+
+axiom my_sm__def_axiom :
+  (forall state:int. forall trigger:int [my_sm(state, trigger)].
+  ((dynamic_invariant(state, true, true, true, true) and
+  dynamic_invariant1(trigger, true, true, true, true)) -> (my_sm(state,
+  trigger) = (if (state = 0) then (if (trigger = 2) then 0 else (if (trigger = 3) then 2 else (if (trigger = 0) then 1 else (if (trigger = 1) then 0 else 3)))) else (if (state = 1) then (if (trigger = 2) then 0 else (if (trigger = 3) then 2 else (if (trigger = 0) then 2 else (if (trigger = 1) then 1 else 3)))) else (if (state = 2) then (if (trigger = 2) then 0 else (if (trigger = 3) then 2 else (if (trigger = 0) then 2 else (if (trigger = 1) then 2 else 3)))) else (if (trigger = 2) then 0 else (if (trigger = 3) then 2 else 3))))))))
+
+logic trigger : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic old_state : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic sm_using_case_expression__invalid_transition_array__aggregate_def : us_rep,
+  us_rep, us_rep, us_rep, us_rep, us_rep, us_rep, us_rep,
+  us_rep -> (int,us_rep) farray
+
+axiom invalid_transition_array__def_axiom :
+  (invalid_transition_array = sm_using_case_expression__invalid_transition_array__aggregate_def({
+  us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  of_rep(0);
+  rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  of_rep1(4) } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  of_rep(1);
+  rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  of_rep1(4) } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  of_rep(2);
+  rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  of_rep1(4) } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  of_rep(3);
+  rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  of_rep1(0) } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  of_rep(3);
+  rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  of_rep1(1) } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  of_rep(3);
+  rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  of_rep1(2) } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  of_rep(3);
+  rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  of_rep1(3) } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  of_rep(3);
+  rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  of_rep1(4) } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  of_rep(3);
+  rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  of_rep1(4) } }))
+
+axiom def_axiom :
+  (forall temp___157:us_rep. forall temp___158:us_rep.
+  forall temp___159:us_rep. forall temp___160:us_rep.
+  forall temp___161:us_rep. forall temp___162:us_rep.
+  forall temp___163:us_rep. forall temp___164:us_rep.
+  forall temp___165:us_rep.
+  (forall temp___166:int. ((temp___166 = 8) ->
+  ((sm_using_case_expression__invalid_transition_array__aggregate_def(temp___157,
+  temp___158, temp___159, temp___160, temp___161, temp___162, temp___163,
+  temp___164, temp___165)[temp___166]) = temp___164))))
+
+axiom def_axiom1 :
+  (forall temp___157:us_rep. forall temp___158:us_rep.
+  forall temp___159:us_rep. forall temp___160:us_rep.
+  forall temp___161:us_rep. forall temp___162:us_rep.
+  forall temp___163:us_rep. forall temp___164:us_rep.
+  forall temp___165:us_rep.
+  (forall temp___166:int. ((not (temp___166 = 8)) -> ((temp___166 = 7) ->
+  ((sm_using_case_expression__invalid_transition_array__aggregate_def(temp___157,
+  temp___158, temp___159, temp___160, temp___161, temp___162, temp___163,
+  temp___164, temp___165)[temp___166]) = temp___163)))))
+
+axiom def_axiom2 :
+  (forall temp___157:us_rep. forall temp___158:us_rep.
+  forall temp___159:us_rep. forall temp___160:us_rep.
+  forall temp___161:us_rep. forall temp___162:us_rep.
+  forall temp___163:us_rep. forall temp___164:us_rep.
+  forall temp___165:us_rep.
+  (forall temp___166:int. ((not (temp___166 = 8)) ->
+  ((not (temp___166 = 7)) -> ((temp___166 = 6) ->
+  ((sm_using_case_expression__invalid_transition_array__aggregate_def(temp___157,
+  temp___158, temp___159, temp___160, temp___161, temp___162, temp___163,
+  temp___164, temp___165)[temp___166]) = temp___162))))))
+
+axiom def_axiom3 :
+  (forall temp___157:us_rep. forall temp___158:us_rep.
+  forall temp___159:us_rep. forall temp___160:us_rep.
+  forall temp___161:us_rep. forall temp___162:us_rep.
+  forall temp___163:us_rep. forall temp___164:us_rep.
+  forall temp___165:us_rep.
+  (forall temp___166:int. ((not (temp___166 = 8)) ->
+  ((not (temp___166 = 7)) -> ((not (temp___166 = 6)) -> ((temp___166 = 5) ->
+  ((sm_using_case_expression__invalid_transition_array__aggregate_def(temp___157,
+  temp___158, temp___159, temp___160, temp___161, temp___162, temp___163,
+  temp___164, temp___165)[temp___166]) = temp___161)))))))
+
+axiom def_axiom4 :
+  (forall temp___157:us_rep. forall temp___158:us_rep.
+  forall temp___159:us_rep. forall temp___160:us_rep.
+  forall temp___161:us_rep. forall temp___162:us_rep.
+  forall temp___163:us_rep. forall temp___164:us_rep.
+  forall temp___165:us_rep.
+  (forall temp___166:int. ((not (temp___166 = 8)) ->
+  ((not (temp___166 = 7)) -> ((not (temp___166 = 6)) ->
+  ((not (temp___166 = 5)) -> ((temp___166 = 4) ->
+  ((sm_using_case_expression__invalid_transition_array__aggregate_def(temp___157,
+  temp___158, temp___159, temp___160, temp___161, temp___162, temp___163,
+  temp___164, temp___165)[temp___166]) = temp___160))))))))
+
+axiom def_axiom5 :
+  (forall temp___157:us_rep. forall temp___158:us_rep.
+  forall temp___159:us_rep. forall temp___160:us_rep.
+  forall temp___161:us_rep. forall temp___162:us_rep.
+  forall temp___163:us_rep. forall temp___164:us_rep.
+  forall temp___165:us_rep.
+  (forall temp___166:int. ((not (temp___166 = 8)) ->
+  ((not (temp___166 = 7)) -> ((not (temp___166 = 6)) ->
+  ((not (temp___166 = 5)) -> ((not (temp___166 = 4)) -> ((temp___166 = 3) ->
+  ((sm_using_case_expression__invalid_transition_array__aggregate_def(temp___157,
+  temp___158, temp___159, temp___160, temp___161, temp___162, temp___163,
+  temp___164, temp___165)[temp___166]) = temp___159)))))))))
+
+axiom def_axiom6 :
+  (forall temp___157:us_rep. forall temp___158:us_rep.
+  forall temp___159:us_rep. forall temp___160:us_rep.
+  forall temp___161:us_rep. forall temp___162:us_rep.
+  forall temp___163:us_rep. forall temp___164:us_rep.
+  forall temp___165:us_rep.
+  (forall temp___166:int. ((not (temp___166 = 8)) ->
+  ((not (temp___166 = 7)) -> ((not (temp___166 = 6)) ->
+  ((not (temp___166 = 5)) -> ((not (temp___166 = 4)) ->
+  ((not (temp___166 = 3)) -> ((temp___166 = 2) ->
+  ((sm_using_case_expression__invalid_transition_array__aggregate_def(temp___157,
+  temp___158, temp___159, temp___160, temp___161, temp___162, temp___163,
+  temp___164, temp___165)[temp___166]) = temp___158))))))))))
+
+axiom def_axiom7 :
+  (forall temp___157:us_rep. forall temp___158:us_rep.
+  forall temp___159:us_rep. forall temp___160:us_rep.
+  forall temp___161:us_rep. forall temp___162:us_rep.
+  forall temp___163:us_rep. forall temp___164:us_rep.
+  forall temp___165:us_rep.
+  (forall temp___166:int. ((not (temp___166 = 8)) ->
+  ((not (temp___166 = 7)) -> ((not (temp___166 = 6)) ->
+  ((not (temp___166 = 5)) -> ((not (temp___166 = 4)) ->
+  ((not (temp___166 = 3)) -> ((not (temp___166 = 2)) -> ((temp___166 = 1) ->
+  ((sm_using_case_expression__invalid_transition_array__aggregate_def(temp___157,
+  temp___158, temp___159, temp___160, temp___161, temp___162, temp___163,
+  temp___164, temp___165)[temp___166]) = temp___157)))))))))))
+
+axiom def_axiom8 :
+  (forall temp___157:us_rep. forall temp___158:us_rep.
+  forall temp___159:us_rep. forall temp___160:us_rep.
+  forall temp___161:us_rep. forall temp___162:us_rep.
+  forall temp___163:us_rep. forall temp___164:us_rep.
+  forall temp___165:us_rep.
+  (forall temp___166:int. ((not (temp___166 = 8)) ->
+  ((not (temp___166 = 7)) -> ((not (temp___166 = 6)) ->
+  ((not (temp___166 = 5)) -> ((not (temp___166 = 4)) ->
+  ((not (temp___166 = 3)) -> ((not (temp___166 = 2)) ->
+  ((not (temp___166 = 1)) ->
+  ((sm_using_case_expression__invalid_transition_array__aggregate_def(temp___157,
+  temp___158, temp___159, temp___160, temp___161, temp___162, temp___163,
+  temp___164, temp___165)[temp___166]) = temp___165)))))))))))
+
+ (* File "sm_using_case_expression.ads", line 94, characters 0-0 *)
+goal defqtvc :
+  (forall state:int.
+  (forall state1:int. ((state1 = state) ->
+  (forall o:triggers_t. ((to_rep1(o) = 4) ->
+  (forall o1:states_t. ((to_rep(o1) = 3) ->
+  (forall o2:triggers_t. ((to_rep1(o2) = 4) ->
+  (forall o3:states_t. ((to_rep(o3) = 3) ->
+  (forall o4:triggers_t. ((to_rep1(o4) = 3) ->
+  (forall o5:states_t. ((to_rep(o5) = 3) ->
+  (forall o6:triggers_t. ((to_rep1(o6) = 2) ->
+  (forall o7:states_t. ((to_rep(o7) = 3) ->
+  (forall o8:triggers_t. ((to_rep1(o8) = 1) ->
+  (forall o9:states_t. ((to_rep(o9) = 3) ->
+  (forall o10:triggers_t. ((to_rep1(o10) = 0) ->
+  (forall o11:states_t. ((to_rep(o11) = 3) ->
+  (forall o12:triggers_t. ((to_rep1(o12) = 4) ->
+  (forall o13:states_t. ((to_rep(o13) = 2) ->
+  (forall o14:triggers_t. ((to_rep1(o14) = 4) ->
+  (forall o15:states_t. ((to_rep(o15) = 1) ->
+  (forall o16:triggers_t. ((to_rep1(o16) = 4) ->
+  (forall o17:states_t. ((to_rep(o17) = 0) ->
+  ((sm_using_case_expression__invalid_transition_array__aggregate_def({
+  us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  o17; rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  o16 } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  o15; rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  o14 } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  o13; rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  o12 } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  o11; rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  o10 } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  o9; rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  o8 } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  o7; rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  o6 } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  o5; rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  o4 } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  o3; rec__sm_using_case_expression__invalid_transition_record_t__trigger =
+  o2 } }, { us_split_fields1 = {
+  rec__sm_using_case_expression__invalid_transition_record_t__initial_state =
+  o1; rec__sm_using_case_expression__invalid_transition_record_t__trigger = o
+  } }) = invalid_transition_array) -> (dynamic_invariant(state, true, false,
+  true, true) -> (dynamic_invariant1(trigger, true, false, true, true) ->
+  ((forall state2:int. get_state__function_guard(get_state(state2), state2)) ->
+  ((state = old_state) -> (dynamic_invariant(old_state, true, false, true,
+  true) ->
+  ((forall initial_state:int. forall trigger2:int.
+   my_sm__function_guard(my_sm(initial_state, trigger2), initial_state,
+   trigger2)) ->
+  ((forall final_state:int. (((0 <= final_state) and (final_state <= 3)) ->
+   (exists initial_state:int. (((0 <= initial_state) and
+   (initial_state <= 3)) and
+   (exists trigger2:int. (((0 <= trigger2) and (trigger2 <= 4)) and
+   (final_state = my_sm(initial_state, trigger2)))))))) ->
+  (forall state2:int. (((0 <= state2) and (state2 <= 3)) ->
+  (forall trigger1:int. (((0 <= trigger1) and (trigger1 <= 4)) ->
+  (((forall state21:int. forall trigger2:int.
+    my_sm__function_guard(my_sm(state21, trigger2), state21, trigger2)) ->
+  (not (my_sm(state2, trigger1) = 3))) or
+  (exists idx:int. (((1 <= idx) and (idx <= 20)) and
+  ((to_rep((((invalid_transition_array[idx])).us_split_fields1).rec__sm_using_case_expression__invalid_transition_record_t__initial_state) = state2) and
+  (to_rep1((((invalid_transition_array[idx])).us_split_fields1).rec__sm_using_case_expression__invalid_transition_record_t__trigger) = trigger1))))))))))))))))))))))))))))))))))))))))))))))))))))))))

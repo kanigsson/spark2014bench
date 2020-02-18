@@ -1,0 +1,1139 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function min(x: int, y: int) : int = (if (x <= y) then x else y)
+
+function max(x: int, y: int) : int = (if (x <= y) then y else x)
+
+axiom Min_r : (forall x:int. forall y:int. ((y <= x) -> (min(x, y) = y)))
+
+axiom Max_l : (forall x:int. forall y:int. ((y <= x) -> (max(x, y) = x)))
+
+axiom Min_comm : (forall x:int. forall y:int. (min(x, y) = min(y, x)))
+
+axiom Max_comm : (forall x:int. forall y:int. (max(x, y) = max(y, x)))
+
+axiom Min_assoc :
+  (forall x:int. forall y:int. forall z:int. (min(min(x, y), z) = min(x,
+  min(y, z))))
+
+axiom Max_assoc :
+  (forall x:int. forall y:int. forall z:int. (max(max(x, y), z) = max(x,
+  max(y, z))))
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+type positive
+
+logic positiveqtint : positive -> int
+
+axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
+
+axiom positiveqtaxiom1 :
+  (forall i:positive. (positiveqtint(i) <= 2147483647))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : positive, positive -> bool
+
+logic dummy2 : positive
+
+type positive__ref = { positive__content : positive
+}
+
+function positive__ref_positive__content__projection(a: positive__ref) : positive =
+  (a).positive__content
+
+type character
+
+predicate in_range4(x: int) = ((0 <= x) and (x <= 255))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq3 : character, character -> bool
+
+logic dummy3 : character
+
+type character__ref = { character__content : character
+}
+
+function character__ref_character__content__projection(a: character__ref) : character =
+  (a).character__content
+
+logic to_rep : character -> int
+
+logic of_rep : int -> character
+
+axiom inversion_axiom :
+  (forall x:character [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:character [to_rep(x)]. in_range4(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range4(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type map__ref = { map__content : (int,character) farray
+}
+
+logic slide : (int,character) farray, int, int -> (int,character) farray
+
+axiom slide_eq :
+  (forall a:(int,character) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,character) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq5(a: (int,character) farray, a__first: int, a__last: int,
+  b: (int,character) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep((a[temp___idx_91])) = to_rep((b[((b__first - a__first) + temp___idx_91)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep((a[temp___idx_91])) = to_rep((b[((b__first - a__first) + temp___idx_91)]))))))))
+
+function to_rep1(x: integer) : int = integerqtint(x)
+
+logic of_rep1 : int -> integer
+
+axiom inversion_axiom1 :
+  (forall x:integer [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range1(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (in_range3(low) and in_range3(high)))))
+
+type us_t = { elts : (int,character) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,character) farray = (a).elts
+
+function of_array(a: (int,character) farray, f: int, l: int) : us_t = {
+  elts = a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep1(first((a).rt))
+
+function last1(a: us_t) : int = to_rep1(last((a).rt))
+
+function length(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq6(x: us_t, y: us_t) : bool = bool_eq5((x).elts,
+  to_rep1(first((x).rt)), to_rep1(last((x).rt)), (y).elts,
+  to_rep1(first((y).rt)), to_rep1(last((y).rt)))
+
+logic user_eq4 : us_t, us_t -> bool
+
+logic dummy4 : us_t
+
+type string____ref = { string____content : us_t
+}
+
+function string____ref_string____content__projection(a: string____ref) : us_t =
+  (a).string____content
+
+predicate dynamic_invariant1(temp___expr_96: us_t, temp___is_init_92: bool,
+  temp___skip_constant_93: bool, temp___do_toplevel_94: bool,
+  temp___do_typ_inv_95: bool) = ((not (temp___skip_constant_93 = true)) ->
+  dynamic_property(1, 2147483647, first1(temp___expr_96),
+  last1(temp___expr_96)))
+
+logic is_subsequence : us_t, us_t -> bool
+
+logic is_subsequence__function_guard : bool, us_t, us_t -> prop
+
+logic head : us_t -> int
+
+logic head__function_guard : int, us_t -> prop
+
+logic tail : us_t -> us_t
+
+logic tail__function_guard : us_t, us_t -> prop
+
+logic temp___String_Literal_183 : unit -> (int,character) farray
+
+logic temp___String_Literal_187 : unit -> (int,character) farray
+
+logic slow_lcs_length : us_t, us_t -> int
+
+logic slow_lcs_length__function_guard : int, us_t, us_t -> prop
+
+predicate dynamic_invariant2(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_39))
+
+logic temp___String_Literal_202 : unit -> (int,character) farray
+
+logic temp___String_Literal_206 : unit -> (int,character) farray
+
+logic s1 : us_t
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic s2 : us_t
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+type tseq_lengthB
+
+logic tseq_lengthBqtint : tseq_lengthB -> int
+
+axiom tseq_lengthBqtaxiom :
+  (forall i:tseq_lengthB. ((- 2147483648) <= tseq_lengthBqtint(i)))
+
+axiom tseq_lengthBqtaxiom1 :
+  (forall i:tseq_lengthB. (tseq_lengthBqtint(i) <= 2147483647))
+
+predicate in_range5(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq5 : tseq_lengthB, tseq_lengthB -> bool
+
+logic dummy5 : tseq_lengthB
+
+type tseq_lengthB__ref = { tseq_lengthB__content : tseq_lengthB
+}
+
+function tseq_lengthB__ref_tseq_lengthB__content__projection(a: tseq_lengthB__ref) : tseq_lengthB =
+  (a).tseq_lengthB__content
+
+function to_rep2(x: tseq_lengthB) : int = tseq_lengthBqtint(x)
+
+logic of_rep2 : int -> tseq_lengthB
+
+axiom inversion_axiom2 :
+  (forall x:tseq_lengthB [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
+
+axiom range_axiom2 :
+  (forall x:tseq_lengthB [to_rep2(x)]. in_range5(to_rep2(x)))
+
+axiom coerce_axiom2 :
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range5(x) ->
+  (to_rep2(of_rep2(x)) = x)))
+
+logic last2 : int
+
+predicate dynamic_property1(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> int
+
+logic user_eq6 : tseq_lengthB, tseq_lengthB -> bool
+
+logic dummy6 : tseq_lengthB
+
+type seq_length__ref = { seq_length__content : tseq_lengthB
+}
+
+function seq_length__ref_seq_length__content__projection(a: seq_length__ref) : tseq_lengthB =
+  (a).seq_length__content
+
+type map
+
+type map__ref1 = { map__content1 : map
+}
+
+logic get : map, int, int -> tseq_lengthB
+
+logic set : map, int, int, tseq_lengthB -> map
+
+axiom Select_eq :
+  (forall m:map.
+  (forall i:int.
+  (forall j:int.
+  (forall a:tseq_lengthB [set(m, i, j, a)]. (get(set(m, i, j, a), i, j) = a)))))
+
+axiom Select_neq :
+  (forall m:map.
+  (forall i:int. forall i2:int.
+  (forall j:int. forall j2:int.
+  (forall a:tseq_lengthB [get(set(m, i, j, a), i2, j2)| set(m, i, j, a),
+  get(m, i2, j2)]. ((not ((i = i2) and (j = j2))) -> (get(set(m, i, j, a),
+  i2, j2) = get(m, i2, j2)))))))
+
+logic slide1 : map, int, int, int, int -> map
+
+axiom slide_def1 :
+  (forall a:map.
+  (forall new_first:int. forall old_first:int.
+  (forall new_first_2:int. forall old_first_2:int.
+  (forall i:int.
+  (forall j:int [get(slide1(a, old_first, new_first, old_first_2,
+  new_first_2), i, j)]. (get(slide1(a, old_first, new_first, old_first_2,
+  new_first_2), i, j) = get(a, (i - (new_first - old_first)),
+  (j - (new_first_2 - old_first_2)))))))))
+
+function bool_eq9(a: map, a__first: int, a__last: int, a__first_2: int,
+  a__last_2: int, b: map, b__first: int, b__last: int, b__first_2: int,
+  b__last_2: int) : bool =
+  (if (((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (if (a__first_2 <= a__last_2) then ((b__first_2 <= b__last_2) and
+  ((a__last_2 - a__first_2) = (b__last_2 - b__first_2))) else (b__last_2 <  b__first_2))) and
+  (forall temp___idx_159:int. forall temp___idx_160:int.
+  ((((a__first <= temp___idx_159) and (temp___idx_159 <= a__last)) and
+  ((a__first_2 <= temp___idx_160) and (temp___idx_160 <= a__last_2))) ->
+  (to_rep2(get(a, temp___idx_159, temp___idx_160)) = to_rep2(get(b,
+  ((b__first - a__first) + temp___idx_159),
+  ((b__first_2 - a__first_2) + temp___idx_160))))))) then true else false)
+
+axiom bool_eq_rev4 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq9(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev5 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq9(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev6 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq9(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev7 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq9(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first_2 <= a__last_2) ->
+  (b__first_2 <= b__last_2)))))
+
+axiom bool_eq_rev8 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq9(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first_2 <= a__last_2) ->
+  ((a__last_2 - a__first_2) = (b__last_2 - b__first_2))))))
+
+axiom bool_eq_rev9 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq9(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((not (a__first_2 <= a__last_2)) ->
+  (b__last_2 <  b__first_2)))))
+
+axiom bool_eq_rev10 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq9(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) ->
+  (forall temp___idx_159:int. forall temp___idx_160:int.
+  ((((a__first <= temp___idx_159) and (temp___idx_159 <= a__last)) and
+  ((a__first_2 <= temp___idx_160) and (temp___idx_160 <= a__last_2))) ->
+  (to_rep2(get(a, temp___idx_159, temp___idx_160)) = to_rep2(get(b,
+  ((b__first - a__first) + temp___idx_159),
+  ((b__first_2 - a__first_2) + temp___idx_160)))))))))
+
+logic lengths__first : integer
+
+logic lengths__last : integer
+
+logic lengths__first_2 : integer
+
+logic lengths__last_2 : integer
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic get_length : int, int, map -> int
+
+logic get_length__function_guard : int, int, int, map -> prop
+
+logic first2 : int
+
+logic last3 : int
+
+predicate dynamic_property2(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE7 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check7 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE7 : us_image -> int
+
+logic user_eq7 : integer, integer -> bool
+
+logic dummy7 : integer
+
+type s1_index__ref = { s1_index__content : integer
+}
+
+function s1_index__ref_s1_index__content__projection(a: s1_index__ref) : integer =
+  (a).s1_index__content
+
+logic first3 : int
+
+logic last4 : int
+
+predicate dynamic_property3(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE8 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check8 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE8 : us_image -> int
+
+logic user_eq8 : integer, integer -> bool
+
+logic dummy8 : integer
+
+type s2_index__ref = { s2_index__content : integer
+}
+
+function s2_index__ref_s2_index__content__projection(a: s2_index__ref) : integer =
+  (a).s2_index__content
+
+predicate dynamic_invariant3(temp___expr_256: int, temp___is_init_252: bool,
+  temp___skip_constant_253: bool, temp___do_toplevel_254: bool,
+  temp___do_typ_inv_255: bool) = (((temp___is_init_252 = true) or
+  (0 <= last2)) -> dynamic_property1(0, last2, temp___expr_256))
+
+axiom last__def_axiom : (last2 = max(length(s1), length(s2)))
+
+axiom get_length__post_axiom :
+  (forall x1:int. forall x2:int.
+  (forall string_utilities__longest_common_subsequence__lengths:map
+  [get_length(x1, x2,
+  string_utilities__longest_common_subsequence__lengths)].
+  (((dynamic_invariant(x1, true, true, true, true) and dynamic_invariant2(x2,
+  true, true, true, true)) and
+  (forall temp___261:int. forall temp___262:int.
+  ((((to_rep1(lengths__first) <= temp___261) and
+  (temp___261 <= to_rep1(lengths__last))) and
+  ((to_rep1(lengths__first_2) <= temp___262) and
+  (temp___262 <= to_rep1(lengths__last_2)))) -> dynamic_property1(0, last2,
+  to_rep2(get(string_utilities__longest_common_subsequence__lengths,
+  temp___261, temp___262)))))) -> (let result = get_length(x1, x2,
+  string_utilities__longest_common_subsequence__lengths) : int in
+  (get_length__function_guard(result, x1, x2,
+  string_utilities__longest_common_subsequence__lengths) ->
+  dynamic_invariant3(result, true, false, true, true))))))
+
+axiom get_length__def_axiom :
+  (forall x1:int. forall x2:int.
+  (forall string_utilities__longest_common_subsequence__lengths:map
+  [get_length(x1, x2,
+  string_utilities__longest_common_subsequence__lengths)].
+  (((dynamic_invariant(x1, true, true, true, true) and dynamic_invariant2(x2,
+  true, true, true, true)) and
+  (forall temp___265:int. forall temp___266:int.
+  ((((to_rep1(lengths__first) <= temp___265) and
+  (temp___265 <= to_rep1(lengths__last))) and
+  ((to_rep1(lengths__first_2) <= temp___266) and
+  (temp___266 <= to_rep1(lengths__last_2)))) -> dynamic_property1(0, last2,
+  to_rep2(get(string_utilities__longest_common_subsequence__lengths,
+  temp___265, temp___266)))))) -> (get_length(x1, x2,
+  string_utilities__longest_common_subsequence__lengths) = (if (dynamic_property2(first2,
+  last3, x1) and dynamic_property3(first3, last4,
+  x2)) then to_rep2(get(string_utilities__longest_common_subsequence__lengths,
+  x1, x2)) else 0)))))
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic last5 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic result____first : integer
+
+logic result____last : integer
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+logic attr__ATTRIBUTE_ADDRESS8 : int
+
+logic attr__ATTRIBUTE_ADDRESS9 : int
+
+predicate dynamic_invariant4(temp___expr_242: int, temp___is_init_238: bool,
+  temp___skip_constant_239: bool, temp___do_toplevel_240: bool,
+  temp___do_typ_inv_241: bool) = (((temp___is_init_238 = true) or
+  (first2 <= last3)) -> dynamic_property2(first2, last3, temp___expr_242))
+
+axiom first__def_axiom : (first2 = first1(s1))
+
+axiom last__def_axiom1 : (last3 = last1(s1))
+
+predicate dynamic_invariant5(temp___expr_249: int, temp___is_init_245: bool,
+  temp___skip_constant_246: bool, temp___do_toplevel_247: bool,
+  temp___do_typ_inv_248: bool) = (((temp___is_init_245 = true) or
+  (first3 <= last4)) -> dynamic_property3(first3, last4, temp___expr_249))
+
+axiom first__def_axiom1 : (first3 = first1(s2))
+
+axiom last__def_axiom2 : (last4 = last1(s2))
+
+type t1
+
+logic first4 : t1 -> integer
+
+logic last6 : t1 -> integer
+
+logic mk1 : int, int -> t1
+
+axiom mk_def2 :
+  (forall f:int. forall l:int [mk1(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(first4(mk1(f, l))) = f))))
+
+axiom mk_def3 :
+  (forall f:int. forall l:int [mk1(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(last6(mk1(f, l))) = l))))
+
+predicate dynamic_property4(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (dynamic_property2(range_first, range_last, low) and
+  dynamic_property2(range_first, range_last, high)))))
+
+type t2
+
+logic first5 : t2 -> integer
+
+logic last7 : t2 -> integer
+
+logic mk2 : int, int -> t2
+
+axiom mk_def4 :
+  (forall f:int. forall l:int [mk2(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(first5(mk2(f, l))) = f))))
+
+axiom mk_def5 :
+  (forall f:int. forall l:int [mk2(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(last7(mk2(f, l))) = l))))
+
+predicate dynamic_property5(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (dynamic_property3(range_first, range_last, low) and
+  dynamic_property3(range_first, range_last, high)))))
+
+type us_t1 = { elts1 : map; rt1 : t1; rt_2 : t2
+}
+
+function to_array1(a: us_t1) : map = (a).elts1
+
+function of_array1(a: map, f: int, l: int, f2: int, l2: int) : us_t1 = {
+  elts1 = a; rt1 = mk1(f, l); rt_2 = mk2(f2, l2) }
+
+function first6(a: us_t1) : int = to_rep1(first4((a).rt1))
+
+function last8(a: us_t1) : int = to_rep1(last6((a).rt1))
+
+function length1(a: us_t1) : int =
+  (if (first6(a) <= last8(a)) then ((last8(a) - first6(a)) + 1) else 0)
+
+function first_2(a: us_t1) : int = to_rep1(first5((a).rt_2))
+
+function last_2(a: us_t1) : int = to_rep1(last7((a).rt_2))
+
+function length_2(a: us_t1) : int =
+  (if (first_2(a) <= last_2(a)) then ((last_2(a) - first_2(a)) + 1) else 0)
+
+predicate dynamic_property6(range_first1: int, range_last1: int, f1: int,
+  l1: int, range_first2: int, range_last2: int, f2: int, l2: int) =
+  (dynamic_property4(range_first1, range_last1, f1, l1) and
+  dynamic_property5(range_first2, range_last2, f2, l2))
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic component__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom component__size_axiom1 : (0 <= component__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+function bool_eq12(x: us_t1, y: us_t1) : bool = bool_eq9((x).elts1,
+  to_rep1(first4((x).rt1)), to_rep1(last6((x).rt1)),
+  to_rep1(first5((x).rt_2)), to_rep1(last7((x).rt_2)), (y).elts1,
+  to_rep1(first4((y).rt1)), to_rep1(last6((y).rt1)),
+  to_rep1(first5((y).rt_2)), to_rep1(last7((y).rt_2)))
+
+logic user_eq9 : us_t1, us_t1 -> bool
+
+logic dummy9 : us_t1
+
+type tlengthsB__ref = { tlengthsB__content : us_t1
+}
+
+function tlengthsB__ref_tlengthsB__content__projection(a: tlengthsB__ref) : us_t1 =
+  (a).tlengthsB__content
+
+type tlengthsT__ref = { tlengthsT__content : us_t1
+}
+
+function tlengthsT__ref_tlengthsT__content__projection(a: tlengthsT__ref) : us_t1 =
+  (a).tlengthsT__content
+
+type tresultS__ref = { tresultS__content : us_t
+}
+
+function tresultS__ref_tresultS__content__projection(a: tresultS__ref) : us_t =
+  (a).tresultS__content
+
+logic last9 : int
+
+predicate dynamic_property7(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq13(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE9 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check9 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE9 : us_image -> int
+
+logic user_eq10 : integer, integer -> bool
+
+logic dummy10 : integer
+
+type trxS__ref = { trxS__content : integer
+}
+
+function trxS__ref_trxS__content__projection(a: trxS__ref) : integer =
+  (a).trxS__content
+
+predicate dynamic_invariant6(temp___expr_289: int, temp___is_init_285: bool,
+  temp___skip_constant_286: bool, temp___do_toplevel_287: bool,
+  temp___do_typ_inv_288: bool) = (((temp___is_init_285 = true) or
+  (1 <= last9)) -> dynamic_property7(1, last9, temp___expr_289))
+
+axiom last__def_axiom3 : (last9 = to_rep1(result____last))
+
+predicate dynamic_invariant7(temp___expr_279: us_t, temp___is_init_275: bool,
+  temp___skip_constant_276: bool, temp___do_toplevel_277: bool,
+  temp___do_typ_inv_278: bool) = ((not (temp___skip_constant_276 = true)) ->
+  (dynamic_property(1, last5, first1(temp___expr_279),
+  last1(temp___expr_279)) and ((first1(temp___expr_279) = 1) and
+  (last1(temp___expr_279) = last5))))
+
+predicate default_initial_assumption(temp___expr_281: us_t,
+  temp___skip_top_level_282: bool) = ((first1(temp___expr_281) = 1) and
+  (last1(temp___expr_281) = last5))
+
+logic temp___String_Literal_337 : unit -> (int,character) farray
+
+predicate dynamic_invariant8(temp___expr_46: int, temp___is_init_42: bool,
+  temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
+  temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
+  (1 <= 2147483647)) -> in_range3(temp___expr_46))
+
+predicate dynamic_invariant9(temp___expr_74: int, temp___is_init_70: bool,
+  temp___skip_constant_71: bool, temp___do_toplevel_72: bool,
+  temp___do_typ_inv_73: bool) = (((temp___is_init_70 = true) or
+  (0 <= 255)) -> in_range4(temp___expr_74))
+
+ (* File "string_utilities.ads", line 22, characters 0-0 *)
+goal defqtvc :
+  (forall spark__branch:bool. forall lengths:map.
+  forall result__:(int,character) farray. (dynamic_invariant1(s1, true,
+  false, true, true) -> (dynamic_invariant1(s2, true, false, true, true) ->
+  (((((first6(of_array1(lengths, to_rep1(lengths__first),
+  to_rep1(lengths__last), to_rep1(lengths__first_2),
+  to_rep1(lengths__last_2))) = first2) and (last8(of_array1(lengths,
+  to_rep1(lengths__first), to_rep1(lengths__last), to_rep1(lengths__first_2),
+  to_rep1(lengths__last_2))) = last3)) and (first_2(of_array1(lengths,
+  to_rep1(lengths__first), to_rep1(lengths__last), to_rep1(lengths__first_2),
+  to_rep1(lengths__last_2))) = first3)) and (last_2(of_array1(lengths,
+  to_rep1(lengths__first), to_rep1(lengths__last), to_rep1(lengths__first_2),
+  to_rep1(lengths__last_2))) = last4)) -> ((((dynamic_property6(first2,
+  last3, to_rep1(lengths__first), to_rep1(lengths__last), first3, last4,
+  to_rep1(lengths__first_2), to_rep1(lengths__last_2)) and
+  ((to_rep1(lengths__first) = first1(s1)) and
+  (to_rep1(lengths__last) = last1(s1)))) and
+  ((to_rep1(lengths__first_2) = first1(s2)) and
+  (to_rep1(lengths__last_2) = last1(s2)))) and
+  (forall temp___319:int. forall temp___320:int.
+  ((((to_rep1(lengths__first) <= temp___319) and
+  (temp___319 <= to_rep1(lengths__last))) and
+  ((to_rep1(lengths__first_2) <= temp___320) and
+  (temp___320 <= to_rep1(lengths__last_2)))) -> ((0 <= last2) ->
+  dynamic_property1(0, last2, to_rep2(get(lengths, temp___319,
+  temp___320))))))) ->
+  (forall spark__branch1:bool. forall lengths1:map. ((let temp___321 =
+  first1(s1) : int in (let temp___322 = last1(s1) : int in
+  (exists x1:int. ((x1 = temp___321) and
+  (if (andb((if (temp___321 <= x1) then true else false),
+  (if (x1 <= temp___322) then true else false)) = true) then (exists spark__branch2:bool.
+                                                             exists lengths2:map.
+                                                             exists x11:int.
+                                                             ((andb((if (
+                                                             (forall temp___332:int.
+                                                             forall temp___333:int.
+                                                             ((((to_rep1(lengths__first) <= temp___332) and
+                                                             (temp___332 <= to_rep1(lengths__last))) and
+                                                             ((to_rep1(lengths__first_2) <= temp___333) and
+                                                             (temp___333 <= to_rep1(lengths__last_2)))) ->
+                                                             ((0 <= last2) ->
+                                                             dynamic_property1(0,
+                                                             last2,
+                                                             to_rep2(get(lengths2,
+                                                             temp___332,
+                                                             temp___333)))))) and
+                                                             (forall temp___335:int.
+                                                             forall temp___336:int.
+                                                             ((((to_rep1(lengths__first) <= temp___335) and
+                                                             (temp___335 <= to_rep1(lengths__last))) and
+                                                             ((to_rep1(lengths__first_2) <= temp___336) and
+                                                             (temp___336 <= to_rep1(lengths__last_2)))) ->
+                                                             (((temp___322 <  temp___335) or
+                                                             ((temp___335 <  temp___321) or
+                                                             (x11 <= temp___335))) ->
+                                                             (get(lengths2,
+                                                             temp___335,
+                                                             temp___336) = get(lengths,
+                                                             temp___335,
+                                                             temp___336)))))) then true else false),
+                                                             (if ((first1(s1) <= x11) and
+                                                             (x11 <= last1(s1))) then true else false)) = true) and
+                                                             ((let temp___323 =
+                                                             first1(s2)
+                                                             : int in
+                                                             (let temp___324 =
+                                                             last1(s2)
+                                                             : int in
+                                                             (exists x2:int.
+                                                             ((x2 = temp___323) and
+                                                             (if (andb((if (temp___323 <= x2) then true else false),
+                                                             (if (x2 <= temp___324) then true else false)) = true) then 
+                                                             (exists lengths3:map.
+                                                             exists x21:int.
+                                                             ((andb((if (
+                                                             (forall temp___327:int.
+                                                             forall temp___328:int.
+                                                             ((((to_rep1(lengths__first) <= temp___327) and
+                                                             (temp___327 <= to_rep1(lengths__last))) and
+                                                             ((to_rep1(lengths__first_2) <= temp___328) and
+                                                             (temp___328 <= to_rep1(lengths__last_2)))) ->
+                                                             ((0 <= last2) ->
+                                                             dynamic_property1(0,
+                                                             last2,
+                                                             to_rep2(get(lengths3,
+                                                             temp___327,
+                                                             temp___328)))))) and
+                                                             (forall temp___330:int.
+                                                             forall temp___331:int.
+                                                             ((((to_rep1(lengths__first) <= temp___330) and
+                                                             (temp___330 <= to_rep1(lengths__last))) and
+                                                             ((to_rep1(lengths__first_2) <= temp___331) and
+                                                             (temp___331 <= to_rep1(lengths__last_2)))) ->
+                                                             (((temp___324 <  temp___331) or
+                                                             ((temp___331 <  temp___323) or
+                                                             ((x21 <= temp___331) or
+                                                             (not (x11 = temp___330))))) ->
+                                                             (get(lengths3,
+                                                             temp___330,
+                                                             temp___331) = get(lengths2,
+                                                             temp___330,
+                                                             temp___331)))))) then true else false),
+                                                             (if ((first1(s2) <= x21) and
+                                                             (x21 <= last1(s2))) then true else false)) = true) and
+                                                             ((exists o:int.
+                                                              ((to_rep((to_array(s2)[x21])) = o) and
+                                                              (exists o1:int.
+                                                              ((to_rep((to_array(s1)[x11])) = o1) and
+                                                              ((spark__branch1 = (if (o1 = o) then true else false)) and
+                                                              (if (spark__branch1 = true) then (let o2 =
+                                                              (x21 - 1)
+                                                              : int in
+                                                              (in_range1(o2) and
+                                                              (in_range2(o2) and
+                                                              (let o3 =
+                                                              (x11 - 1)
+                                                              : int in
+                                                              (in_range1(o3) and
+                                                              (let o4 =
+                                                              get_length(o3,
+                                                              o2, lengths3)
+                                                              : int in
+                                                              ((get_length__function_guard(o4,
+                                                              o3, o2,
+                                                              lengths3) and
+                                                              (dynamic_invariant3(o4,
+                                                              true, false,
+                                                              true, true) and
+                                                              (o4 = (if (dynamic_property2(first2,
+                                                              last3, o3) and
+                                                              dynamic_property3(first3,
+                                                              last4,
+                                                              o2)) then to_rep2(get(lengths3,
+                                                              o3,
+                                                              o2)) else 0)))) and
+                                                              (let o5 =
+                                                              (1 + o4)
+                                                              : int in
+                                                              (in_range5(o5) and
+                                                              (dynamic_property1(0,
+                                                              last2, o5) and
+                                                              (lengths1 = set(lengths3,
+                                                              x11, x21,
+                                                              of_rep2(o5))))))))))))) else (let o2 =
+                                                              (x21 - 1)
+                                                              : int in
+                                                              (in_range1(o2) and
+                                                              (in_range2(o2) and
+                                                              (let o3 =
+                                                              get_length(x11,
+                                                              o2, lengths3)
+                                                              : int in
+                                                              ((get_length__function_guard(o3,
+                                                              x11, o2,
+                                                              lengths3) and
+                                                              (dynamic_invariant3(o3,
+                                                              true, false,
+                                                              true, true) and
+                                                              (o3 = (if (dynamic_property2(first2,
+                                                              last3, x11) and
+                                                              dynamic_property3(first3,
+                                                              last4,
+                                                              o2)) then to_rep2(get(lengths3,
+                                                              x11,
+                                                              o2)) else 0)))) and
+                                                              (in_range2(x21) and
+                                                              (let o4 =
+                                                              (x11 - 1)
+                                                              : int in
+                                                              (in_range1(o4) and
+                                                              (let o5 =
+                                                              get_length(o4,
+                                                              x21, lengths3)
+                                                              : int in
+                                                              ((get_length__function_guard(o5,
+                                                              o4, x21,
+                                                              lengths3) and
+                                                              (dynamic_invariant3(o5,
+                                                              true, false,
+                                                              true, true) and
+                                                              (o5 = (if (dynamic_property2(first2,
+                                                              last3, o4) and
+                                                              dynamic_property3(first3,
+                                                              last4,
+                                                              x21)) then to_rep2(get(lengths3,
+                                                              o4,
+                                                              x21)) else 0)))) and
+                                                              (let temp___326 =
+                                                              max(o5, o3)
+                                                              : int in
+                                                              (dynamic_property1(0,
+                                                              last2,
+                                                              temp___326) and
+                                                              (lengths1 = set(lengths3,
+                                                              x11, x21,
+                                                              of_rep2(temp___326))))))))))))))))))))) and
+                                                             (x21 = temp___324)))) else ((spark__branch1 = spark__branch2) and
+                                                             (lengths1 = lengths2))))))) and
+                                                             (x11 = temp___322)))) else ((spark__branch1 = spark__branch) and
+  (lengths1 = lengths))))))) -> (let o = last1(s2) : int in (in_range2(o) ->
+  (let o1 = last1(s1) : int in (let o2 = get_length(o1, o, lengths1) : int in
+  ((get_length__function_guard(o2, o1, o, lengths1) and
+  (dynamic_invariant3(o2, true, false, true, true) and
+  (o2 = (if (dynamic_property2(first2, last3, o1) and
+  dynamic_property3(first3, last4, o)) then to_rep2(get(lengths1, o1,
+  o)) else 0)))) ->
+  (forall spark__branch2:bool.
+  ((spark__branch2 = (if (o2 = 0) then true else false)) ->
+  ((not (spark__branch2 = true)) -> (let o3 = last1(s2) : int in
+  (in_range2(o3) -> (let o4 = last1(s1) : int in
+  (let string_utilities__longest_common_subsequence__B_4__last__assume =
+  get_length(o4, o3, lengths1) : int in
+  ((get_length__function_guard(string_utilities__longest_common_subsequence__B_4__last__assume,
+  o4, o3, lengths1) and
+  (dynamic_invariant3(string_utilities__longest_common_subsequence__B_4__last__assume,
+  true, false, true, true) and
+  (string_utilities__longest_common_subsequence__B_4__last__assume = (if (dynamic_property2(first2,
+  last3, o4) and dynamic_property3(first3, last4,
+  o3)) then to_rep2(get(lengths1, o4, o3)) else 0)))) ->
+  ((string_utilities__longest_common_subsequence__B_4__last__assume = last5) ->
+  (dynamic_invariant(last5, true, false, true, true) ->
+  (default_initial_assumption(of_array(result__, to_rep1(result____first),
+  to_rep1(result____last)), false) -> ((dynamic_property(1, last5,
+  to_rep1(result____first), to_rep1(result____last)) and
+  ((to_rep1(result____first) = 1) and (to_rep1(result____last) = last5))) ->
+  (forall temp___352:int. ((to_rep1(result____last) = temp___352) ->
+  (dynamic_property7(1, last9, temp___352) ->
+  (forall rx:int. ((rx = temp___352) -> (dynamic_invariant6(rx, true, false,
+  true, true) -> (let temp___353 = last3 : int in (dynamic_property2(first2,
+  last3, temp___353) ->
+  (forall x1:int. ((x1 = temp___353) -> (dynamic_invariant4(x1, true, false,
+  true, true) -> (let temp___354 = last4 : int in (dynamic_property3(first3,
+  last4, temp___354) ->
+  (forall x2:int. ((x2 = temp___354) -> (dynamic_invariant5(x2, true, false,
+  true, true) ->
+  (forall rx1:int. forall x11:int. forall x21:int. (((dynamic_invariant6(rx1,
+  true, true, true, true) and dynamic_invariant4(x11, true, true, true,
+  true)) and dynamic_invariant5(x21, true, true, true, true)) ->
+  (forall o5:int. ((to_rep((to_array(s2)[x21])) = o5) ->
+  (forall o6:int. ((to_rep((to_array(s1)[x11])) = o6) ->
+  (forall spark__branch3:bool.
+  ((spark__branch3 = (if (o6 = o5) then true else false)) ->
+  ((not (spark__branch3 = true)) -> (in_range2(x21) -> (let o7 = (x11 - 1)
+  : int in (in_range1(o7) -> (let o8 = get_length(o7, x21, lengths1) : int in
+  ((get_length__function_guard(o8, o7, x21, lengths1) and
+  (dynamic_invariant3(o8, true, false, true, true) and
+  (o8 = (if (dynamic_property2(first2, last3, o7) and
+  dynamic_property3(first3, last4, x21)) then to_rep2(get(lengths1, o7,
+  x21)) else 0)))) -> in_range1((x21 - 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))

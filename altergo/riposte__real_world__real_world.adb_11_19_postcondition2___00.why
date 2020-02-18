@@ -1,0 +1,158 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+logic sort : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+type enum_a
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 11))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : enum_a, enum_a -> bool
+
+logic dummy : enum_a
+
+type enum_a__ref = { enum_a__content : enum_a
+}
+
+function enum_a__ref_enum_a__content__projection(a: enum_a__ref) : enum_a =
+  (a).enum_a__content
+
+predicate dynamic_invariant(temp___expr_162: int, temp___is_init_158: bool,
+  temp___skip_constant_159: bool, temp___do_toplevel_160: bool,
+  temp___do_typ_inv_161: bool) = (((temp___is_init_158 = true) or
+  (0 <= 11)) -> in_range1(temp___expr_162))
+
+type enum_b
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 5))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : enum_b, enum_b -> bool
+
+logic dummy1 : enum_b
+
+type enum_b__ref = { enum_b__content : enum_b
+}
+
+function enum_b__ref_enum_b__content__projection(a: enum_b__ref) : enum_b =
+  (a).enum_b__content
+
+predicate dynamic_invariant1(temp___expr_169: int, temp___is_init_165: bool,
+  temp___skip_constant_166: bool, temp___do_toplevel_167: bool,
+  temp___do_typ_inv_168: bool) = (((temp___is_init_165 = true) or
+  (0 <= 5)) -> in_range2(temp___expr_169))
+
+ (* File "real_world.adb", line 10, characters 0-0 *)
+goal defqtvc :
+  (forall r:int. (dynamic_invariant(sort, true, false, true, true) ->
+  (dynamic_invariant1(r, false, false, true, true) ->
+  (forall r1:int.
+  ((exists spark__branch:bool.
+   ((spark__branch = (if (sort = 2) then true else false)) and
+   (if (spark__branch = true) then (r1 = 3) else (exists spark__branch1:bool.
+                                                 ((spark__branch1 = (if (sort = 4) then true else false)) and
+                                                 (if (spark__branch1 = true) then (r1 = 1) else 
+                                                 (exists spark__branch2:bool.
+                                                 ((spark__branch2 = orb(orb(orb((if (sort = 5) then true else false),
+                                                 (if (sort = 9) then true else false)),
+                                                 (if (sort = 6) then true else false)),
+                                                 (if (sort = 7) then true else false))) and
+                                                 (if (spark__branch2 = true) then (r1 = 2) else 
+                                                 (exists spark__branch3:bool.
+                                                 ((spark__branch3 = (if (sort = 1) then true else false)) and
+                                                 (if (spark__branch3 = true) then (r1 = 4) else 
+                                                 (exists spark__branch4:bool.
+                                                 ((spark__branch4 = (if (sort = 8) then true else false)) and
+                                                 (if (spark__branch4 = true) then (r1 = 5) else (r1 = 0)))))))))))))))) ->
+  (forall real_world__example_a__result:int.
+  ((real_world__example_a__result = r1) -> ((sort = 2) ->
+  (real_world__example_a__result = 3)))))))))

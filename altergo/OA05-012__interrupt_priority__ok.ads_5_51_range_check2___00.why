@@ -1,0 +1,930 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+type any_priority
+
+logic any_priorityqtint : any_priority -> int
+
+axiom any_priorityqtaxiom :
+  (forall i:any_priority. (0 <= any_priorityqtint(i)))
+
+axiom any_priorityqtaxiom1 :
+  (forall i:any_priority. (any_priorityqtint(i) <= 98))
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 98))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq1 : any_priority, any_priority -> bool
+
+logic dummy1 : any_priority
+
+type any_priority__ref = { any_priority__content : any_priority
+}
+
+function any_priority__ref_any_priority__content__projection(a: any_priority__ref) : any_priority =
+  (a).any_priority__content
+
+type us_split_discrs = { rec__interrupt_priority__no_interrupt_needed_1__c :
+any_priority
+}
+
+function us_split_discrs_rec__interrupt_priority__no_interrupt_needed_1__c__projection(a: us_split_discrs) : any_priority =
+  (a).rec__interrupt_priority__no_interrupt_needed_1__c
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_split_fields = { rec__interrupt_priority__no_interrupt_needed_1__i :
+integer
+}
+
+function us_split_fields_rec__interrupt_priority__no_interrupt_needed_1__i__projection(a: us_split_fields) : integer =
+  (a).rec__interrupt_priority__no_interrupt_needed_1__i
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_discrs1 : us_split_discrs; us_split_fields1 :
+us_split_fields
+}
+
+function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
+  (a).us_split_discrs1
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic interrupt_priority__no_interrupt_needed_1__c__first__bit : int
+
+logic interrupt_priority__no_interrupt_needed_1__c__last__bit : int
+
+logic interrupt_priority__no_interrupt_needed_1__c__position : int
+
+axiom interrupt_priority__no_interrupt_needed_1__c__first__bit_axiom :
+  (0 <= interrupt_priority__no_interrupt_needed_1__c__first__bit)
+
+axiom interrupt_priority__no_interrupt_needed_1__c__last__bit_axiom :
+  (interrupt_priority__no_interrupt_needed_1__c__first__bit <  interrupt_priority__no_interrupt_needed_1__c__last__bit)
+
+axiom interrupt_priority__no_interrupt_needed_1__c__position_axiom :
+  (0 <= interrupt_priority__no_interrupt_needed_1__c__position)
+
+logic interrupt_priority__no_interrupt_needed_1__i__first__bit : int
+
+logic interrupt_priority__no_interrupt_needed_1__i__last__bit : int
+
+logic interrupt_priority__no_interrupt_needed_1__i__position : int
+
+axiom interrupt_priority__no_interrupt_needed_1__i__first__bit_axiom :
+  (0 <= interrupt_priority__no_interrupt_needed_1__i__first__bit)
+
+axiom interrupt_priority__no_interrupt_needed_1__i__last__bit_axiom :
+  (interrupt_priority__no_interrupt_needed_1__i__first__bit <  interrupt_priority__no_interrupt_needed_1__i__last__bit)
+
+axiom interrupt_priority__no_interrupt_needed_1__i__position_axiom :
+  (0 <= interrupt_priority__no_interrupt_needed_1__i__position)
+
+logic user_eq2 : us_rep, us_rep -> bool
+
+type no_interrupt_needed_1__ref = { no_interrupt_needed_1__content : us_rep
+}
+
+function no_interrupt_needed_1__ref_no_interrupt_needed_1__content__projection(a: no_interrupt_needed_1__ref) : us_rep =
+  (a).no_interrupt_needed_1__content
+
+type us_split_fields2 = { rec__interrupt_priority__no_interrupt_needed_1__i1
+: integer
+}
+
+function us_split_fields_rec__interrupt_priority__no_interrupt_needed_1__i__2__projection(a: us_split_fields2) : integer =
+  (a).rec__interrupt_priority__no_interrupt_needed_1__i1
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_discrs2 : us_split_discrs; us_split_fields3 :
+us_split_fields2
+}
+
+function us_rep___split_discrs__2__projection(a: us_rep1) : us_split_discrs =
+  (a).us_split_discrs2
+
+function us_rep___split_fields__2__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function to_base(a: us_rep1) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs2; us_split_fields1 = {
+  rec__interrupt_priority__no_interrupt_needed_1__i =
+  ((a).us_split_fields3).rec__interrupt_priority__no_interrupt_needed_1__i1 }
+  }
+
+function of_base(r: us_rep) : us_rep1 = { us_split_discrs2 =
+  (r).us_split_discrs1; us_split_fields3 = {
+  rec__interrupt_priority__no_interrupt_needed_1__i1 =
+  ((r).us_split_fields1).rec__interrupt_priority__no_interrupt_needed_1__i }
+  }
+
+function to_rep(x: any_priority) : int = any_priorityqtint(x)
+
+logic of_rep : int -> any_priority
+
+axiom inversion_axiom :
+  (forall x:any_priority [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:any_priority [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+predicate in_range2(rec__interrupt_priority__no_interrupt_needed_1__c1: int,
+  a: us_rep) =
+  (rec__interrupt_priority__no_interrupt_needed_1__c1 = to_rep(((a).us_split_discrs1).rec__interrupt_priority__no_interrupt_needed_1__c))
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic interrupt_priority__no_interrupt_needed_1__c__first__bit1 : int
+
+logic interrupt_priority__no_interrupt_needed_1__c__last__bit1 : int
+
+logic interrupt_priority__no_interrupt_needed_1__c__position1 : int
+
+axiom interrupt_priority__no_interrupt_needed_1__c__first__bit_axiom1 :
+  (0 <= interrupt_priority__no_interrupt_needed_1__c__first__bit1)
+
+axiom interrupt_priority__no_interrupt_needed_1__c__last__bit_axiom1 :
+  (interrupt_priority__no_interrupt_needed_1__c__first__bit1 <  interrupt_priority__no_interrupt_needed_1__c__last__bit1)
+
+axiom interrupt_priority__no_interrupt_needed_1__c__position_axiom1 :
+  (0 <= interrupt_priority__no_interrupt_needed_1__c__position1)
+
+logic interrupt_priority__no_interrupt_needed_1__i__first__bit1 : int
+
+logic interrupt_priority__no_interrupt_needed_1__i__last__bit1 : int
+
+logic interrupt_priority__no_interrupt_needed_1__i__position1 : int
+
+axiom interrupt_priority__no_interrupt_needed_1__i__first__bit_axiom1 :
+  (0 <= interrupt_priority__no_interrupt_needed_1__i__first__bit1)
+
+axiom interrupt_priority__no_interrupt_needed_1__i__last__bit_axiom1 :
+  (interrupt_priority__no_interrupt_needed_1__i__first__bit1 <  interrupt_priority__no_interrupt_needed_1__i__last__bit1)
+
+axiom interrupt_priority__no_interrupt_needed_1__i__position_axiom1 :
+  (0 <= interrupt_priority__no_interrupt_needed_1__i__position1)
+
+logic user_eq3 : us_rep1, us_rep1 -> bool
+
+type tp1S__ref = { tp1S__content : us_rep1
+}
+
+function tp1S__ref_tp1S__content__projection(a: tp1S__ref) : us_rep1 =
+  (a).tp1S__content
+
+logic p1__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+function to_rep1(x: integer) : int = integerqtint(x)
+
+logic of_rep1 : int -> integer
+
+axiom inversion_axiom1 :
+  (forall x:integer [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+predicate dynamic_invariant(temp___expr_185: us_rep1,
+  temp___is_init_181: bool, temp___skip_constant_182: bool,
+  temp___do_toplevel_183: bool, temp___do_typ_inv_184: bool) =
+  ((not (temp___skip_constant_182 = true)) -> in_range2(0,
+  to_base(temp___expr_185)))
+
+predicate default_initial_assumption(temp___expr_187: us_rep1,
+  temp___skip_top_level_188: bool) =
+  ((to_rep(((temp___expr_187).us_split_discrs2).rec__interrupt_priority__no_interrupt_needed_1__c) = 0) and
+  (to_rep1(((temp___expr_187).us_split_fields3).rec__interrupt_priority__no_interrupt_needed_1__i1) = 0))
+
+type us_split_fields4 = { rec__interrupt_priority__no_interrupt_needed_1__i2
+: integer
+}
+
+function us_split_fields_rec__interrupt_priority__no_interrupt_needed_1__i__3__projection(a: us_split_fields4) : integer =
+  (a).rec__interrupt_priority__no_interrupt_needed_1__i2
+
+type us_split_fields__ref2 = { us_split_fields__content2 : us_split_fields4
+}
+
+function us_split_fields__ref___split_fields__content__3__projection(a: us_split_fields__ref2) : us_split_fields4 =
+  (a).us_split_fields__content2
+
+type us_rep2 = { us_split_discrs3 : us_split_discrs; us_split_fields5 :
+us_split_fields4
+}
+
+function us_rep___split_discrs__3__projection(a: us_rep2) : us_split_discrs =
+  (a).us_split_discrs3
+
+function us_rep___split_fields__3__projection(a: us_rep2) : us_split_fields4 =
+  (a).us_split_fields5
+
+function to_base1(a: us_rep2) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs3; us_split_fields1 = {
+  rec__interrupt_priority__no_interrupt_needed_1__i =
+  ((a).us_split_fields5).rec__interrupt_priority__no_interrupt_needed_1__i2 }
+  }
+
+function of_base1(r: us_rep) : us_rep2 = { us_split_discrs3 =
+  (r).us_split_discrs1; us_split_fields5 = {
+  rec__interrupt_priority__no_interrupt_needed_1__i2 =
+  ((r).us_split_fields1).rec__interrupt_priority__no_interrupt_needed_1__i }
+  }
+
+predicate in_range3(rec__interrupt_priority__no_interrupt_needed_1__c1: int,
+  a: us_rep) =
+  (rec__interrupt_priority__no_interrupt_needed_1__c1 = to_rep(((a).us_split_discrs1).rec__interrupt_priority__no_interrupt_needed_1__c))
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic interrupt_priority__no_interrupt_needed_1__c__first__bit2 : int
+
+logic interrupt_priority__no_interrupt_needed_1__c__last__bit2 : int
+
+logic interrupt_priority__no_interrupt_needed_1__c__position2 : int
+
+axiom interrupt_priority__no_interrupt_needed_1__c__first__bit_axiom2 :
+  (0 <= interrupt_priority__no_interrupt_needed_1__c__first__bit2)
+
+axiom interrupt_priority__no_interrupt_needed_1__c__last__bit_axiom2 :
+  (interrupt_priority__no_interrupt_needed_1__c__first__bit2 <  interrupt_priority__no_interrupt_needed_1__c__last__bit2)
+
+axiom interrupt_priority__no_interrupt_needed_1__c__position_axiom2 :
+  (0 <= interrupt_priority__no_interrupt_needed_1__c__position2)
+
+logic interrupt_priority__no_interrupt_needed_1__i__first__bit2 : int
+
+logic interrupt_priority__no_interrupt_needed_1__i__last__bit2 : int
+
+logic interrupt_priority__no_interrupt_needed_1__i__position2 : int
+
+axiom interrupt_priority__no_interrupt_needed_1__i__first__bit_axiom2 :
+  (0 <= interrupt_priority__no_interrupt_needed_1__i__first__bit2)
+
+axiom interrupt_priority__no_interrupt_needed_1__i__last__bit_axiom2 :
+  (interrupt_priority__no_interrupt_needed_1__i__first__bit2 <  interrupt_priority__no_interrupt_needed_1__i__last__bit2)
+
+axiom interrupt_priority__no_interrupt_needed_1__i__position_axiom2 :
+  (0 <= interrupt_priority__no_interrupt_needed_1__i__position2)
+
+logic user_eq4 : us_rep2, us_rep2 -> bool
+
+type tp2S__ref = { tp2S__content : us_rep2
+}
+
+function tp2S__ref_tp2S__content__projection(a: tp2S__ref) : us_rep2 =
+  (a).tp2S__content
+
+logic p2__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+predicate dynamic_invariant1(temp___expr_194: us_rep2,
+  temp___is_init_190: bool, temp___skip_constant_191: bool,
+  temp___do_toplevel_192: bool, temp___do_typ_inv_193: bool) =
+  ((not (temp___skip_constant_191 = true)) -> in_range3(98,
+  to_base1(temp___expr_194)))
+
+predicate default_initial_assumption1(temp___expr_196: us_rep2,
+  temp___skip_top_level_197: bool) =
+  ((to_rep(((temp___expr_196).us_split_discrs3).rec__interrupt_priority__no_interrupt_needed_1__c) = 98) and
+  (to_rep1(((temp___expr_196).us_split_fields5).rec__interrupt_priority__no_interrupt_needed_1__i2) = 0))
+
+type us_split_discrs4 = { rec__interrupt_priority__no_interrupt_needed_2__c :
+any_priority
+}
+
+function us_split_discrs_rec__interrupt_priority__no_interrupt_needed_2__c__projection(a: us_split_discrs4) : any_priority =
+  (a).rec__interrupt_priority__no_interrupt_needed_2__c
+
+type us_split_discrs__ref1 = { us_split_discrs__content1 : us_split_discrs4
+}
+
+function us_split_discrs__ref___split_discrs__content__2__projection(a: us_split_discrs__ref1) : us_split_discrs4 =
+  (a).us_split_discrs__content1
+
+type us_split_fields6 = { rec__interrupt_priority__no_interrupt_needed_2__i :
+integer
+}
+
+function us_split_fields_rec__interrupt_priority__no_interrupt_needed_2__i__projection(a: us_split_fields6) : integer =
+  (a).rec__interrupt_priority__no_interrupt_needed_2__i
+
+type us_split_fields__ref3 = { us_split_fields__content3 : us_split_fields6
+}
+
+function us_split_fields__ref___split_fields__content__4__projection(a: us_split_fields__ref3) : us_split_fields6 =
+  (a).us_split_fields__content3
+
+type us_rep3 = { us_split_discrs5 : us_split_discrs4; us_split_fields7 :
+us_split_fields6
+}
+
+function us_rep___split_discrs__4__projection(a: us_rep3) : us_split_discrs4 =
+  (a).us_split_discrs5
+
+function us_rep___split_fields__4__projection(a: us_rep3) : us_split_fields6 =
+  (a).us_split_fields7
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic interrupt_priority__no_interrupt_needed_2__c__first__bit : int
+
+logic interrupt_priority__no_interrupt_needed_2__c__last__bit : int
+
+logic interrupt_priority__no_interrupt_needed_2__c__position : int
+
+axiom interrupt_priority__no_interrupt_needed_2__c__first__bit_axiom :
+  (0 <= interrupt_priority__no_interrupt_needed_2__c__first__bit)
+
+axiom interrupt_priority__no_interrupt_needed_2__c__last__bit_axiom :
+  (interrupt_priority__no_interrupt_needed_2__c__first__bit <  interrupt_priority__no_interrupt_needed_2__c__last__bit)
+
+axiom interrupt_priority__no_interrupt_needed_2__c__position_axiom :
+  (0 <= interrupt_priority__no_interrupt_needed_2__c__position)
+
+logic interrupt_priority__no_interrupt_needed_2__i__first__bit : int
+
+logic interrupt_priority__no_interrupt_needed_2__i__last__bit : int
+
+logic interrupt_priority__no_interrupt_needed_2__i__position : int
+
+axiom interrupt_priority__no_interrupt_needed_2__i__first__bit_axiom :
+  (0 <= interrupt_priority__no_interrupt_needed_2__i__first__bit)
+
+axiom interrupt_priority__no_interrupt_needed_2__i__last__bit_axiom :
+  (interrupt_priority__no_interrupt_needed_2__i__first__bit <  interrupt_priority__no_interrupt_needed_2__i__last__bit)
+
+axiom interrupt_priority__no_interrupt_needed_2__i__position_axiom :
+  (0 <= interrupt_priority__no_interrupt_needed_2__i__position)
+
+logic user_eq5 : us_rep3, us_rep3 -> bool
+
+type no_interrupt_needed_2__ref = { no_interrupt_needed_2__content : us_rep3
+}
+
+function no_interrupt_needed_2__ref_no_interrupt_needed_2__content__projection(a: no_interrupt_needed_2__ref) : us_rep3 =
+  (a).no_interrupt_needed_2__content
+
+type us_split_fields8 = { rec__interrupt_priority__no_interrupt_needed_2__i1
+: integer
+}
+
+function us_split_fields_rec__interrupt_priority__no_interrupt_needed_2__i__2__projection(a: us_split_fields8) : integer =
+  (a).rec__interrupt_priority__no_interrupt_needed_2__i1
+
+type us_split_fields__ref4 = { us_split_fields__content4 : us_split_fields8
+}
+
+function us_split_fields__ref___split_fields__content__5__projection(a: us_split_fields__ref4) : us_split_fields8 =
+  (a).us_split_fields__content4
+
+type us_rep4 = { us_split_discrs6 : us_split_discrs4; us_split_fields9 :
+us_split_fields8
+}
+
+function us_rep___split_discrs__5__projection(a: us_rep4) : us_split_discrs4 =
+  (a).us_split_discrs6
+
+function us_rep___split_fields__5__projection(a: us_rep4) : us_split_fields8 =
+  (a).us_split_fields9
+
+function to_base2(a: us_rep4) : us_rep3 = { us_split_discrs5 =
+  (a).us_split_discrs6; us_split_fields7 = {
+  rec__interrupt_priority__no_interrupt_needed_2__i =
+  ((a).us_split_fields9).rec__interrupt_priority__no_interrupt_needed_2__i1 }
+  }
+
+function of_base2(r: us_rep3) : us_rep4 = { us_split_discrs6 =
+  (r).us_split_discrs5; us_split_fields9 = {
+  rec__interrupt_priority__no_interrupt_needed_2__i1 =
+  ((r).us_split_fields7).rec__interrupt_priority__no_interrupt_needed_2__i }
+  }
+
+predicate in_range4(rec__interrupt_priority__no_interrupt_needed_2__c1: int,
+  a: us_rep3) =
+  (rec__interrupt_priority__no_interrupt_needed_2__c1 = to_rep(((a).us_split_discrs5).rec__interrupt_priority__no_interrupt_needed_2__c))
+
+logic value__size4 : int
+
+logic object__size4 : int
+
+logic alignment4 : int
+
+axiom value__size_axiom4 : (0 <= value__size4)
+
+axiom object__size_axiom4 : (0 <= object__size4)
+
+axiom alignment_axiom4 : (0 <= alignment4)
+
+logic interrupt_priority__no_interrupt_needed_2__c__first__bit1 : int
+
+logic interrupt_priority__no_interrupt_needed_2__c__last__bit1 : int
+
+logic interrupt_priority__no_interrupt_needed_2__c__position1 : int
+
+axiom interrupt_priority__no_interrupt_needed_2__c__first__bit_axiom1 :
+  (0 <= interrupt_priority__no_interrupt_needed_2__c__first__bit1)
+
+axiom interrupt_priority__no_interrupt_needed_2__c__last__bit_axiom1 :
+  (interrupt_priority__no_interrupt_needed_2__c__first__bit1 <  interrupt_priority__no_interrupt_needed_2__c__last__bit1)
+
+axiom interrupt_priority__no_interrupt_needed_2__c__position_axiom1 :
+  (0 <= interrupt_priority__no_interrupt_needed_2__c__position1)
+
+logic interrupt_priority__no_interrupt_needed_2__i__first__bit1 : int
+
+logic interrupt_priority__no_interrupt_needed_2__i__last__bit1 : int
+
+logic interrupt_priority__no_interrupt_needed_2__i__position1 : int
+
+axiom interrupt_priority__no_interrupt_needed_2__i__first__bit_axiom1 :
+  (0 <= interrupt_priority__no_interrupt_needed_2__i__first__bit1)
+
+axiom interrupt_priority__no_interrupt_needed_2__i__last__bit_axiom1 :
+  (interrupt_priority__no_interrupt_needed_2__i__first__bit1 <  interrupt_priority__no_interrupt_needed_2__i__last__bit1)
+
+axiom interrupt_priority__no_interrupt_needed_2__i__position_axiom1 :
+  (0 <= interrupt_priority__no_interrupt_needed_2__i__position1)
+
+logic user_eq6 : us_rep4, us_rep4 -> bool
+
+type tp3S__ref = { tp3S__content : us_rep4
+}
+
+function tp3S__ref_tp3S__content__projection(a: tp3S__ref) : us_rep4 =
+  (a).tp3S__content
+
+logic p3__split_discrs : us_split_discrs4
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+predicate dynamic_invariant2(temp___expr_209: us_rep4,
+  temp___is_init_205: bool, temp___skip_constant_206: bool,
+  temp___do_toplevel_207: bool, temp___do_typ_inv_208: bool) =
+  ((not (temp___skip_constant_206 = true)) -> in_range4(0,
+  to_base2(temp___expr_209)))
+
+predicate default_initial_assumption2(temp___expr_211: us_rep4,
+  temp___skip_top_level_212: bool) =
+  ((to_rep(((temp___expr_211).us_split_discrs6).rec__interrupt_priority__no_interrupt_needed_2__c) = 0) and
+  (to_rep1(((temp___expr_211).us_split_fields9).rec__interrupt_priority__no_interrupt_needed_2__i1) = 0))
+
+type us_split_fields10 = { rec__interrupt_priority__no_interrupt_needed_2__i2
+: integer
+}
+
+function us_split_fields_rec__interrupt_priority__no_interrupt_needed_2__i__3__projection(a: us_split_fields10) : integer =
+  (a).rec__interrupt_priority__no_interrupt_needed_2__i2
+
+type us_split_fields__ref5 = { us_split_fields__content5 : us_split_fields10
+}
+
+function us_split_fields__ref___split_fields__content__6__projection(a: us_split_fields__ref5) : us_split_fields10 =
+  (a).us_split_fields__content5
+
+type us_rep5 = { us_split_discrs7 : us_split_discrs4; us_split_fields11 :
+us_split_fields10
+}
+
+function us_rep___split_discrs__6__projection(a: us_rep5) : us_split_discrs4 =
+  (a).us_split_discrs7
+
+function us_rep___split_fields__6__projection(a: us_rep5) : us_split_fields10 =
+  (a).us_split_fields11
+
+function to_base3(a: us_rep5) : us_rep3 = { us_split_discrs5 =
+  (a).us_split_discrs7; us_split_fields7 = {
+  rec__interrupt_priority__no_interrupt_needed_2__i =
+  ((a).us_split_fields11).rec__interrupt_priority__no_interrupt_needed_2__i2
+  } }
+
+function of_base3(r: us_rep3) : us_rep5 = { us_split_discrs7 =
+  (r).us_split_discrs5; us_split_fields11 = {
+  rec__interrupt_priority__no_interrupt_needed_2__i2 =
+  ((r).us_split_fields7).rec__interrupt_priority__no_interrupt_needed_2__i }
+  }
+
+predicate in_range5(rec__interrupt_priority__no_interrupt_needed_2__c1: int,
+  a: us_rep3) =
+  (rec__interrupt_priority__no_interrupt_needed_2__c1 = to_rep(((a).us_split_discrs5).rec__interrupt_priority__no_interrupt_needed_2__c))
+
+logic value__size5 : int
+
+logic object__size5 : int
+
+logic alignment5 : int
+
+axiom value__size_axiom5 : (0 <= value__size5)
+
+axiom object__size_axiom5 : (0 <= object__size5)
+
+axiom alignment_axiom5 : (0 <= alignment5)
+
+logic interrupt_priority__no_interrupt_needed_2__c__first__bit2 : int
+
+logic interrupt_priority__no_interrupt_needed_2__c__last__bit2 : int
+
+logic interrupt_priority__no_interrupt_needed_2__c__position2 : int
+
+axiom interrupt_priority__no_interrupt_needed_2__c__first__bit_axiom2 :
+  (0 <= interrupt_priority__no_interrupt_needed_2__c__first__bit2)
+
+axiom interrupt_priority__no_interrupt_needed_2__c__last__bit_axiom2 :
+  (interrupt_priority__no_interrupt_needed_2__c__first__bit2 <  interrupt_priority__no_interrupt_needed_2__c__last__bit2)
+
+axiom interrupt_priority__no_interrupt_needed_2__c__position_axiom2 :
+  (0 <= interrupt_priority__no_interrupt_needed_2__c__position2)
+
+logic interrupt_priority__no_interrupt_needed_2__i__first__bit2 : int
+
+logic interrupt_priority__no_interrupt_needed_2__i__last__bit2 : int
+
+logic interrupt_priority__no_interrupt_needed_2__i__position2 : int
+
+axiom interrupt_priority__no_interrupt_needed_2__i__first__bit_axiom2 :
+  (0 <= interrupt_priority__no_interrupt_needed_2__i__first__bit2)
+
+axiom interrupt_priority__no_interrupt_needed_2__i__last__bit_axiom2 :
+  (interrupt_priority__no_interrupt_needed_2__i__first__bit2 <  interrupt_priority__no_interrupt_needed_2__i__last__bit2)
+
+axiom interrupt_priority__no_interrupt_needed_2__i__position_axiom2 :
+  (0 <= interrupt_priority__no_interrupt_needed_2__i__position2)
+
+logic user_eq7 : us_rep5, us_rep5 -> bool
+
+type tp4S__ref = { tp4S__content : us_rep5
+}
+
+function tp4S__ref_tp4S__content__projection(a: tp4S__ref) : us_rep5 =
+  (a).tp4S__content
+
+logic p4__split_discrs : us_split_discrs4
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+predicate dynamic_invariant3(temp___expr_218: us_rep5,
+  temp___is_init_214: bool, temp___skip_constant_215: bool,
+  temp___do_toplevel_216: bool, temp___do_typ_inv_217: bool) =
+  ((not (temp___skip_constant_215 = true)) -> in_range5(98,
+  to_base3(temp___expr_218)))
+
+predicate default_initial_assumption3(temp___expr_220: us_rep5,
+  temp___skip_top_level_221: bool) =
+  ((to_rep(((temp___expr_220).us_split_discrs7).rec__interrupt_priority__no_interrupt_needed_2__c) = 98) and
+  (to_rep1(((temp___expr_220).us_split_fields11).rec__interrupt_priority__no_interrupt_needed_2__i2) = 0))
+
+type us_split_discrs8 = { rec__interrupt_priority__interrupt_needed_1__c :
+any_priority
+}
+
+function us_split_discrs_rec__interrupt_priority__interrupt_needed_1__c__projection(a: us_split_discrs8) : any_priority =
+  (a).rec__interrupt_priority__interrupt_needed_1__c
+
+type us_split_discrs__ref2 = { us_split_discrs__content2 : us_split_discrs8
+}
+
+function us_split_discrs__ref___split_discrs__content__3__projection(a: us_split_discrs__ref2) : us_split_discrs8 =
+  (a).us_split_discrs__content2
+
+type us_split_fields12 = { rec__interrupt_priority__interrupt_needed_1__i :
+integer
+}
+
+function us_split_fields_rec__interrupt_priority__interrupt_needed_1__i__projection(a: us_split_fields12) : integer =
+  (a).rec__interrupt_priority__interrupt_needed_1__i
+
+type us_split_fields__ref6 = { us_split_fields__content6 : us_split_fields12
+}
+
+function us_split_fields__ref___split_fields__content__7__projection(a: us_split_fields__ref6) : us_split_fields12 =
+  (a).us_split_fields__content6
+
+type us_rep6 = { us_split_discrs9 : us_split_discrs8; us_split_fields13 :
+us_split_fields12
+}
+
+function us_rep___split_discrs__7__projection(a: us_rep6) : us_split_discrs8 =
+  (a).us_split_discrs9
+
+function us_rep___split_fields__7__projection(a: us_rep6) : us_split_fields12 =
+  (a).us_split_fields13
+
+logic value__size6 : int
+
+logic object__size6 : int
+
+logic alignment6 : int
+
+axiom value__size_axiom6 : (0 <= value__size6)
+
+axiom object__size_axiom6 : (0 <= object__size6)
+
+axiom alignment_axiom6 : (0 <= alignment6)
+
+logic interrupt_priority__interrupt_needed_1__c__first__bit : int
+
+logic interrupt_priority__interrupt_needed_1__c__last__bit : int
+
+logic interrupt_priority__interrupt_needed_1__c__position : int
+
+axiom interrupt_priority__interrupt_needed_1__c__first__bit_axiom :
+  (0 <= interrupt_priority__interrupt_needed_1__c__first__bit)
+
+axiom interrupt_priority__interrupt_needed_1__c__last__bit_axiom :
+  (interrupt_priority__interrupt_needed_1__c__first__bit <  interrupt_priority__interrupt_needed_1__c__last__bit)
+
+axiom interrupt_priority__interrupt_needed_1__c__position_axiom :
+  (0 <= interrupt_priority__interrupt_needed_1__c__position)
+
+logic interrupt_priority__interrupt_needed_1__i__first__bit : int
+
+logic interrupt_priority__interrupt_needed_1__i__last__bit : int
+
+logic interrupt_priority__interrupt_needed_1__i__position : int
+
+axiom interrupt_priority__interrupt_needed_1__i__first__bit_axiom :
+  (0 <= interrupt_priority__interrupt_needed_1__i__first__bit)
+
+axiom interrupt_priority__interrupt_needed_1__i__last__bit_axiom :
+  (interrupt_priority__interrupt_needed_1__i__first__bit <  interrupt_priority__interrupt_needed_1__i__last__bit)
+
+axiom interrupt_priority__interrupt_needed_1__i__position_axiom :
+  (0 <= interrupt_priority__interrupt_needed_1__i__position)
+
+logic user_eq8 : us_rep6, us_rep6 -> bool
+
+type interrupt_needed_1__ref = { interrupt_needed_1__content : us_rep6
+}
+
+function interrupt_needed_1__ref_interrupt_needed_1__content__projection(a: interrupt_needed_1__ref) : us_rep6 =
+  (a).interrupt_needed_1__content
+
+type us_split_fields14 = { rec__interrupt_priority__interrupt_needed_1__i1 :
+integer
+}
+
+function us_split_fields_rec__interrupt_priority__interrupt_needed_1__i__2__projection(a: us_split_fields14) : integer =
+  (a).rec__interrupt_priority__interrupt_needed_1__i1
+
+type us_split_fields__ref7 = { us_split_fields__content7 : us_split_fields14
+}
+
+function us_split_fields__ref___split_fields__content__8__projection(a: us_split_fields__ref7) : us_split_fields14 =
+  (a).us_split_fields__content7
+
+type us_rep7 = { us_split_discrs10 : us_split_discrs8; us_split_fields15 :
+us_split_fields14
+}
+
+function us_rep___split_discrs__8__projection(a: us_rep7) : us_split_discrs8 =
+  (a).us_split_discrs10
+
+function us_rep___split_fields__8__projection(a: us_rep7) : us_split_fields14 =
+  (a).us_split_fields15
+
+function to_base4(a: us_rep7) : us_rep6 = { us_split_discrs9 =
+  (a).us_split_discrs10; us_split_fields13 = {
+  rec__interrupt_priority__interrupt_needed_1__i =
+  ((a).us_split_fields15).rec__interrupt_priority__interrupt_needed_1__i1 } }
+
+function of_base4(r: us_rep6) : us_rep7 = { us_split_discrs10 =
+  (r).us_split_discrs9; us_split_fields15 = {
+  rec__interrupt_priority__interrupt_needed_1__i1 =
+  ((r).us_split_fields13).rec__interrupt_priority__interrupt_needed_1__i } }
+
+predicate in_range6(rec__interrupt_priority__interrupt_needed_1__c1: int,
+  a: us_rep6) =
+  (rec__interrupt_priority__interrupt_needed_1__c1 = to_rep(((a).us_split_discrs9).rec__interrupt_priority__interrupt_needed_1__c))
+
+logic value__size7 : int
+
+logic object__size7 : int
+
+logic alignment7 : int
+
+axiom value__size_axiom7 : (0 <= value__size7)
+
+axiom object__size_axiom7 : (0 <= object__size7)
+
+axiom alignment_axiom7 : (0 <= alignment7)
+
+logic interrupt_priority__interrupt_needed_1__c__first__bit1 : int
+
+logic interrupt_priority__interrupt_needed_1__c__last__bit1 : int
+
+logic interrupt_priority__interrupt_needed_1__c__position1 : int
+
+axiom interrupt_priority__interrupt_needed_1__c__first__bit_axiom1 :
+  (0 <= interrupt_priority__interrupt_needed_1__c__first__bit1)
+
+axiom interrupt_priority__interrupt_needed_1__c__last__bit_axiom1 :
+  (interrupt_priority__interrupt_needed_1__c__first__bit1 <  interrupt_priority__interrupt_needed_1__c__last__bit1)
+
+axiom interrupt_priority__interrupt_needed_1__c__position_axiom1 :
+  (0 <= interrupt_priority__interrupt_needed_1__c__position1)
+
+logic interrupt_priority__interrupt_needed_1__i__first__bit1 : int
+
+logic interrupt_priority__interrupt_needed_1__i__last__bit1 : int
+
+logic interrupt_priority__interrupt_needed_1__i__position1 : int
+
+axiom interrupt_priority__interrupt_needed_1__i__first__bit_axiom1 :
+  (0 <= interrupt_priority__interrupt_needed_1__i__first__bit1)
+
+axiom interrupt_priority__interrupt_needed_1__i__last__bit_axiom1 :
+  (interrupt_priority__interrupt_needed_1__i__first__bit1 <  interrupt_priority__interrupt_needed_1__i__last__bit1)
+
+axiom interrupt_priority__interrupt_needed_1__i__position_axiom1 :
+  (0 <= interrupt_priority__interrupt_needed_1__i__position1)
+
+logic user_eq9 : us_rep7, us_rep7 -> bool
+
+type tp5S__ref = { tp5S__content : us_rep7
+}
+
+function tp5S__ref_tp5S__content__projection(a: tp5S__ref) : us_rep7 =
+  (a).tp5S__content
+
+logic p5__split_discrs : us_split_discrs8
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+predicate dynamic_invariant4(temp___expr_240: us_rep7,
+  temp___is_init_236: bool, temp___skip_constant_237: bool,
+  temp___do_toplevel_238: bool, temp___do_typ_inv_239: bool) =
+  ((not (temp___skip_constant_237 = true)) -> in_range6(98,
+  to_base4(temp___expr_240)))
+
+predicate default_initial_assumption4(temp___expr_242: us_rep7,
+  temp___skip_top_level_243: bool) =
+  ((to_rep(((temp___expr_242).us_split_discrs10).rec__interrupt_priority__interrupt_needed_1__c) = 98) and
+  (to_rep1(((temp___expr_242).us_split_fields15).rec__interrupt_priority__interrupt_needed_1__i1) = 0))
+
+predicate dynamic_invariant5(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_18))
+
+predicate dynamic_invariant6(temp___expr_158: int, temp___is_init_154: bool,
+  temp___skip_constant_155: bool, temp___do_toplevel_156: bool,
+  temp___do_typ_inv_157: bool) = (((temp___is_init_154 = true) or
+  (0 <= 98)) -> in_range1(temp___expr_158))
+
+ (* File "ok.ads", line 4, characters 0-0 *)
+goal defqtvc : in_range1(0)

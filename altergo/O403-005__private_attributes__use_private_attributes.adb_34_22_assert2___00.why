@@ -1,0 +1,936 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : natural, natural -> bool
+
+logic dummy : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range1(temp___expr_39))
+
+function to_rep(x: natural) : int = naturalqtint(x)
+
+logic of_rep : int -> natural
+
+axiom inversion_axiom :
+  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:natural [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+logic c : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+type us_main_type
+
+logic us_main_eq : us_main_type, us_main_type -> bool
+
+type us_split_fields = { rec__private_with_attributes__root_private_tagged :
+us_main_type; rec__ext__ : us_private
+}
+
+function us_split_fields_rec__private_with_attributes__root_private_tagged__projection(a: us_split_fields) : us_main_type =
+  (a).rec__private_with_attributes__root_private_tagged
+
+function us_split_fields_rec__ext____projection(a: us_split_fields) : us_private =
+  (a).rec__ext__
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields; attr__tag : int
+}
+
+function us_rep___split_fields__2__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function us_rep_attr__tag__projection(a: us_rep) : int = (a).attr__tag
+
+function bool_eq2(a: us_rep, b: us_rep) : bool =
+  (if (us_main_eq(((a).us_split_fields1).rec__private_with_attributes__root_private_tagged,
+  ((b).us_split_fields1).rec__private_with_attributes__root_private_tagged) = true) then true else false)
+
+logic us_dispatch_eq : us_rep, us_rep -> bool
+
+logic us_tag : int
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type root_private_tagged__ref = { root_private_tagged__content : us_rep
+}
+
+function root_private_tagged__ref_root_private_tagged__content__projection(a: root_private_tagged__ref) : us_rep =
+  (a).root_private_tagged__content
+
+logic r__attr__tag : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+predicate default_initial_assumption(temp___expr_189: us_rep,
+  temp___skip_top_level_190: bool) = ((temp___expr_189).attr__tag = us_tag)
+
+type us_main_type1
+
+logic us_main_eq1 : us_main_type1, us_main_type1 -> bool
+
+type us_split_fields2 = { rec__private_with_attributes__root_private_tagged1
+: us_main_type; rec__private_with_attributes__child_private_tagged :
+us_main_type1; rec__ext__1 : us_private
+}
+
+function us_split_fields_rec__private_with_attributes__root_private_tagged__2__projection(a: us_split_fields2) : us_main_type =
+  (a).rec__private_with_attributes__root_private_tagged1
+
+function us_split_fields_rec__private_with_attributes__child_private_tagged__projection(a: us_split_fields2) : us_main_type1 =
+  (a).rec__private_with_attributes__child_private_tagged
+
+function us_split_fields_rec__ext____2__projection(a: us_split_fields2) : us_private =
+  (a).rec__ext__1
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__3__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_fields3 : us_split_fields2; attr__tag1 : int
+}
+
+function us_rep___split_fields__3__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function us_rep_attr__tag__2__projection(a: us_rep1) : int = (a).attr__tag1
+
+logic hide_ext__ : us_main_type1, us_private -> us_private
+
+logic extract__private_with_attributes__child_private_tagged : us_private -> us_main_type1
+
+axiom extract__private_with_attributes__child_private_tagged__conv :
+  (forall private_with_attributes__child_private_tagged:us_main_type1.
+  (forall rec__ext__2:us_private.
+  (extract__private_with_attributes__child_private_tagged(hide_ext__(private_with_attributes__child_private_tagged,
+  rec__ext__2)) = private_with_attributes__child_private_tagged)))
+
+logic extract__ext__ : us_private -> us_private
+
+function to_base(a: us_rep1) : us_rep = { us_split_fields1 = {
+  rec__private_with_attributes__root_private_tagged =
+  ((a).us_split_fields3).rec__private_with_attributes__root_private_tagged1;
+  rec__ext__ =
+  hide_ext__(((a).us_split_fields3).rec__private_with_attributes__child_private_tagged,
+  ((a).us_split_fields3).rec__ext__1) }; attr__tag = (a).attr__tag1 }
+
+function of_base(r: us_rep) : us_rep1 = { us_split_fields3 = {
+  rec__private_with_attributes__root_private_tagged1 =
+  ((r).us_split_fields1).rec__private_with_attributes__root_private_tagged;
+  rec__private_with_attributes__child_private_tagged =
+  extract__private_with_attributes__child_private_tagged(((r).us_split_fields1).rec__ext__);
+  rec__ext__1 = extract__ext__(((r).us_split_fields1).rec__ext__) };
+  attr__tag1 = (r).attr__tag }
+
+function bool_eq3(a: us_rep1, b: us_rep1) : bool =
+  (if ((us_main_eq(((a).us_split_fields3).rec__private_with_attributes__root_private_tagged1,
+  ((b).us_split_fields3).rec__private_with_attributes__root_private_tagged1) = true) and
+  (us_main_eq1(((a).us_split_fields3).rec__private_with_attributes__child_private_tagged,
+  ((b).us_split_fields3).rec__private_with_attributes__child_private_tagged) = true)) then true else false)
+
+logic us_tag1 : int
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic user_eq2 : us_rep1, us_rep1 -> bool
+
+logic dummy2 : us_rep1
+
+type child_private_tagged__ref = { child_private_tagged__content : us_rep1
+}
+
+function child_private_tagged__ref_child_private_tagged__content__projection(a: child_private_tagged__ref) : us_rep1 =
+  (a).child_private_tagged__content
+
+logic f__attr__tag : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+predicate default_initial_assumption1(temp___expr_196: us_rep1,
+  temp___skip_top_level_197: bool) = ((temp___expr_196).attr__tag1 = us_tag1)
+
+type us_split_fields4 = { rec__private_with_attributes__root_private_tagged2
+: us_main_type; rec__private_with_attributes__child_private_tagged1 :
+us_main_type1; rec__public_derives_private__grand_child_private_tagged__f2 :
+natural; rec__ext__2 : us_private
+}
+
+function us_split_fields_rec__private_with_attributes__root_private_tagged__3__projection(a: us_split_fields4) : us_main_type =
+  (a).rec__private_with_attributes__root_private_tagged2
+
+function us_split_fields_rec__private_with_attributes__child_private_tagged__2__projection(a: us_split_fields4) : us_main_type1 =
+  (a).rec__private_with_attributes__child_private_tagged1
+
+function us_split_fields_rec__public_derives_private__grand_child_private_tagged__f2__projection(a: us_split_fields4) : natural =
+  (a).rec__public_derives_private__grand_child_private_tagged__f2
+
+function us_split_fields_rec__ext____3__projection(a: us_split_fields4) : us_private =
+  (a).rec__ext__2
+
+type us_split_fields__ref2 = { us_split_fields__content2 : us_split_fields4
+}
+
+function us_split_fields__ref___split_fields__content__4__projection(a: us_split_fields__ref2) : us_split_fields4 =
+  (a).us_split_fields__content2
+
+type us_rep2 = { us_split_fields5 : us_split_fields4; attr__tag2 : int
+}
+
+function us_rep___split_fields__4__projection(a: us_rep2) : us_split_fields4 =
+  (a).us_split_fields5
+
+function us_rep_attr__tag__3__projection(a: us_rep2) : int = (a).attr__tag2
+
+logic hide_ext__1 : us_main_type1, natural, us_private -> us_private
+
+axiom extract__private_with_attributes__child_private_tagged__conv1 :
+  (forall private_with_attributes__child_private_tagged:us_main_type1.
+  (forall public_derives_private__grand_child_private_tagged__f2:natural.
+  (forall rec__ext__3:us_private.
+  (extract__private_with_attributes__child_private_tagged(hide_ext__1(private_with_attributes__child_private_tagged,
+  public_derives_private__grand_child_private_tagged__f2,
+  rec__ext__3)) = private_with_attributes__child_private_tagged))))
+
+logic extract__public_derives_private__grand_child_private_tagged__f2 : us_private -> natural
+
+axiom extract__public_derives_private__grand_child_private_tagged__f2__conv :
+  (forall private_with_attributes__child_private_tagged:us_main_type1.
+  (forall public_derives_private__grand_child_private_tagged__f2:natural.
+  (forall rec__ext__3:us_private.
+  (extract__public_derives_private__grand_child_private_tagged__f2(hide_ext__1(private_with_attributes__child_private_tagged,
+  public_derives_private__grand_child_private_tagged__f2,
+  rec__ext__3)) = public_derives_private__grand_child_private_tagged__f2))))
+
+logic extract__ext__1 : us_private -> us_private
+
+function to_base1(a: us_rep2) : us_rep = { us_split_fields1 = {
+  rec__private_with_attributes__root_private_tagged =
+  ((a).us_split_fields5).rec__private_with_attributes__root_private_tagged2;
+  rec__ext__ =
+  hide_ext__1(((a).us_split_fields5).rec__private_with_attributes__child_private_tagged1,
+  ((a).us_split_fields5).rec__public_derives_private__grand_child_private_tagged__f2,
+  ((a).us_split_fields5).rec__ext__2) }; attr__tag = (a).attr__tag2 }
+
+function of_base1(r: us_rep) : us_rep2 = { us_split_fields5 = {
+  rec__private_with_attributes__root_private_tagged2 =
+  ((r).us_split_fields1).rec__private_with_attributes__root_private_tagged;
+  rec__private_with_attributes__child_private_tagged1 =
+  extract__private_with_attributes__child_private_tagged(((r).us_split_fields1).rec__ext__);
+  rec__public_derives_private__grand_child_private_tagged__f2 =
+  extract__public_derives_private__grand_child_private_tagged__f2(((r).us_split_fields1).rec__ext__);
+  rec__ext__2 = extract__ext__1(((r).us_split_fields1).rec__ext__) };
+  attr__tag2 = (r).attr__tag }
+
+function bool_eq4(a: us_rep2, b: us_rep2) : bool =
+  (if (((us_main_eq(((a).us_split_fields5).rec__private_with_attributes__root_private_tagged2,
+  ((b).us_split_fields5).rec__private_with_attributes__root_private_tagged2) = true) and
+  (us_main_eq1(((a).us_split_fields5).rec__private_with_attributes__child_private_tagged1,
+  ((b).us_split_fields5).rec__private_with_attributes__child_private_tagged1) = true)) and
+  (to_rep(((a).us_split_fields5).rec__public_derives_private__grand_child_private_tagged__f2) = to_rep(((b).us_split_fields5).rec__public_derives_private__grand_child_private_tagged__f2))) then true else false)
+
+logic us_tag2 : int
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic public_derives_private__grand_child_private_tagged__f2__first__bit : int
+
+logic public_derives_private__grand_child_private_tagged__f2__last__bit : int
+
+logic public_derives_private__grand_child_private_tagged__f2__position : int
+
+axiom public_derives_private__grand_child_private_tagged__f2__first__bit_axiom :
+  (0 <= public_derives_private__grand_child_private_tagged__f2__first__bit)
+
+axiom public_derives_private__grand_child_private_tagged__f2__last__bit_axiom :
+  (public_derives_private__grand_child_private_tagged__f2__first__bit <  public_derives_private__grand_child_private_tagged__f2__last__bit)
+
+axiom public_derives_private__grand_child_private_tagged__f2__position_axiom :
+  (0 <= public_derives_private__grand_child_private_tagged__f2__position)
+
+logic user_eq3 : us_rep2, us_rep2 -> bool
+
+logic dummy3 : us_rep2
+
+type grand_child_private_tagged__ref = { grand_child_private_tagged__content
+: us_rep2
+}
+
+function grand_child_private_tagged__ref_grand_child_private_tagged__content__projection(a: grand_child_private_tagged__ref) : us_rep2 =
+  (a).grand_child_private_tagged__content
+
+logic g__attr__tag : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+predicate default_initial_assumption2(temp___expr_203: us_rep2,
+  temp___skip_top_level_204: bool) =
+  (((temp___expr_203).attr__tag2 = us_tag2) and
+  (to_rep(((temp___expr_203).us_split_fields5).rec__public_derives_private__grand_child_private_tagged__f2) = 0))
+
+type us_split_fields6 = { rec__private_with_attributes__root_private_tagged3
+: us_main_type; rec__private_with_attributes__child_private_tagged2 :
+us_main_type1;
+rec__public_derives_private__private_grand_child_private_tagged__f2 :
+natural; rec__ext__3 : us_private
+}
+
+function us_split_fields_rec__private_with_attributes__root_private_tagged__4__projection(a: us_split_fields6) : us_main_type =
+  (a).rec__private_with_attributes__root_private_tagged3
+
+function us_split_fields_rec__private_with_attributes__child_private_tagged__3__projection(a: us_split_fields6) : us_main_type1 =
+  (a).rec__private_with_attributes__child_private_tagged2
+
+function us_split_fields_rec__public_derives_private__private_grand_child_private_tagged__f2__projection(a: us_split_fields6) : natural =
+  (a).rec__public_derives_private__private_grand_child_private_tagged__f2
+
+function us_split_fields_rec__ext____4__projection(a: us_split_fields6) : us_private =
+  (a).rec__ext__3
+
+type us_split_fields__ref3 = { us_split_fields__content3 : us_split_fields6
+}
+
+function us_split_fields__ref___split_fields__content__5__projection(a: us_split_fields__ref3) : us_split_fields6 =
+  (a).us_split_fields__content3
+
+type us_rep3 = { us_split_fields7 : us_split_fields6; attr__tag3 : int
+}
+
+function us_rep___split_fields__5__projection(a: us_rep3) : us_split_fields6 =
+  (a).us_split_fields7
+
+function us_rep_attr__tag__4__projection(a: us_rep3) : int = (a).attr__tag3
+
+logic hide_ext__2 : us_main_type1, natural, us_private -> us_private
+
+axiom extract__private_with_attributes__child_private_tagged__conv2 :
+  (forall private_with_attributes__child_private_tagged:us_main_type1.
+  (forall public_derives_private__private_grand_child_private_tagged__f2:natural.
+  (forall rec__ext__4:us_private.
+  (extract__private_with_attributes__child_private_tagged(hide_ext__2(private_with_attributes__child_private_tagged,
+  public_derives_private__private_grand_child_private_tagged__f2,
+  rec__ext__4)) = private_with_attributes__child_private_tagged))))
+
+logic extract__public_derives_private__private_grand_child_private_tagged__f2 : us_private -> natural
+
+axiom extract__public_derives_private__private_grand_child_private_tagged__f2__conv :
+  (forall private_with_attributes__child_private_tagged:us_main_type1.
+  (forall public_derives_private__private_grand_child_private_tagged__f2:natural.
+  (forall rec__ext__4:us_private.
+  (extract__public_derives_private__private_grand_child_private_tagged__f2(hide_ext__2(private_with_attributes__child_private_tagged,
+  public_derives_private__private_grand_child_private_tagged__f2,
+  rec__ext__4)) = public_derives_private__private_grand_child_private_tagged__f2))))
+
+logic extract__ext__2 : us_private -> us_private
+
+function to_base2(a: us_rep3) : us_rep = { us_split_fields1 = {
+  rec__private_with_attributes__root_private_tagged =
+  ((a).us_split_fields7).rec__private_with_attributes__root_private_tagged3;
+  rec__ext__ =
+  hide_ext__2(((a).us_split_fields7).rec__private_with_attributes__child_private_tagged2,
+  ((a).us_split_fields7).rec__public_derives_private__private_grand_child_private_tagged__f2,
+  ((a).us_split_fields7).rec__ext__3) }; attr__tag = (a).attr__tag3 }
+
+function of_base2(r: us_rep) : us_rep3 = { us_split_fields7 = {
+  rec__private_with_attributes__root_private_tagged3 =
+  ((r).us_split_fields1).rec__private_with_attributes__root_private_tagged;
+  rec__private_with_attributes__child_private_tagged2 =
+  extract__private_with_attributes__child_private_tagged(((r).us_split_fields1).rec__ext__);
+  rec__public_derives_private__private_grand_child_private_tagged__f2 =
+  extract__public_derives_private__private_grand_child_private_tagged__f2(((r).us_split_fields1).rec__ext__);
+  rec__ext__3 = extract__ext__2(((r).us_split_fields1).rec__ext__) };
+  attr__tag3 = (r).attr__tag }
+
+function bool_eq5(a: us_rep3, b: us_rep3) : bool =
+  (if (((us_main_eq(((a).us_split_fields7).rec__private_with_attributes__root_private_tagged3,
+  ((b).us_split_fields7).rec__private_with_attributes__root_private_tagged3) = true) and
+  (us_main_eq1(((a).us_split_fields7).rec__private_with_attributes__child_private_tagged2,
+  ((b).us_split_fields7).rec__private_with_attributes__child_private_tagged2) = true)) and
+  (to_rep(((a).us_split_fields7).rec__public_derives_private__private_grand_child_private_tagged__f2) = to_rep(((b).us_split_fields7).rec__public_derives_private__private_grand_child_private_tagged__f2))) then true else false)
+
+logic us_tag3 : int
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic public_derives_private__private_grand_child_private_tagged__f2__first__bit : int
+
+logic public_derives_private__private_grand_child_private_tagged__f2__last__bit : int
+
+logic public_derives_private__private_grand_child_private_tagged__f2__position : int
+
+axiom public_derives_private__private_grand_child_private_tagged__f2__first__bit_axiom :
+  (0 <= public_derives_private__private_grand_child_private_tagged__f2__first__bit)
+
+axiom public_derives_private__private_grand_child_private_tagged__f2__last__bit_axiom :
+  (public_derives_private__private_grand_child_private_tagged__f2__first__bit <  public_derives_private__private_grand_child_private_tagged__f2__last__bit)
+
+axiom public_derives_private__private_grand_child_private_tagged__f2__position_axiom :
+  (0 <= public_derives_private__private_grand_child_private_tagged__f2__position)
+
+logic user_eq4 : us_rep3, us_rep3 -> bool
+
+logic dummy4 : us_rep3
+
+type private_grand_child_private_tagged__ref = {
+private_grand_child_private_tagged__content : us_rep3
+}
+
+function private_grand_child_private_tagged__ref_private_grand_child_private_tagged__content__projection(a: private_grand_child_private_tagged__ref) : us_rep3 =
+  (a).private_grand_child_private_tagged__content
+
+logic p__attr__tag : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+predicate default_initial_assumption3(temp___expr_210: us_rep3,
+  temp___skip_top_level_211: bool) =
+  (((temp___expr_210).attr__tag3 = us_tag3) and
+  (to_rep(((temp___expr_210).us_split_fields7).rec__public_derives_private__private_grand_child_private_tagged__f2) = 0))
+
+logic rc__attr__tag : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic fc__attr__tag : int
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+type us_split_fields8 = { rec__private_with_attributes__root__f : natural;
+rec__ext__4 : us_private
+}
+
+function us_split_fields_rec__private_with_attributes__root__f__projection(a: us_split_fields8) : natural =
+  (a).rec__private_with_attributes__root__f
+
+function us_split_fields_rec__ext____5__projection(a: us_split_fields8) : us_private =
+  (a).rec__ext__4
+
+type us_split_fields__ref4 = { us_split_fields__content4 : us_split_fields8
+}
+
+function us_split_fields__ref___split_fields__content__6__projection(a: us_split_fields__ref4) : us_split_fields8 =
+  (a).us_split_fields__content4
+
+type us_rep4 = { us_split_fields9 : us_split_fields8; attr__tag4 : int
+}
+
+function us_rep___split_fields__6__projection(a: us_rep4) : us_split_fields8 =
+  (a).us_split_fields9
+
+function us_rep_attr__tag__5__projection(a: us_rep4) : int = (a).attr__tag4
+
+function bool_eq6(a: us_rep4, b: us_rep4) : bool =
+  (if (to_rep(((a).us_split_fields9).rec__private_with_attributes__root__f) = to_rep(((b).us_split_fields9).rec__private_with_attributes__root__f)) then true else false)
+
+logic us_dispatch_eq1 : us_rep4, us_rep4 -> bool
+
+logic us_tag4 : int
+
+logic value__size4 : int
+
+logic object__size4 : int
+
+logic alignment4 : int
+
+axiom value__size_axiom4 : (0 <= value__size4)
+
+axiom object__size_axiom4 : (0 <= object__size4)
+
+axiom alignment_axiom4 : (0 <= alignment4)
+
+logic private_with_attributes__root__f__first__bit : int
+
+logic private_with_attributes__root__f__last__bit : int
+
+logic private_with_attributes__root__f__position : int
+
+axiom private_with_attributes__root__f__first__bit_axiom :
+  (0 <= private_with_attributes__root__f__first__bit)
+
+axiom private_with_attributes__root__f__last__bit_axiom :
+  (private_with_attributes__root__f__first__bit <  private_with_attributes__root__f__last__bit)
+
+axiom private_with_attributes__root__f__position_axiom :
+  (0 <= private_with_attributes__root__f__position)
+
+logic user_eq5 : us_rep4, us_rep4 -> bool
+
+logic dummy5 : us_rep4
+
+type root__ref = { root__content : us_rep4
+}
+
+function root__ref_root__content__projection(a: root__ref) : us_rep4 =
+  (a).root__content
+
+type us_main_type2
+
+logic us_main_eq2 : us_main_type2, us_main_type2 -> bool
+
+type us_split_fields10 = { rec__private_with_attributes__child :
+us_main_type2; rec__private_with_attributes__root__f1 : natural; rec__ext__5
+: us_private
+}
+
+function us_split_fields_rec__private_with_attributes__child__projection(a: us_split_fields10) : us_main_type2 =
+  (a).rec__private_with_attributes__child
+
+function us_split_fields_rec__private_with_attributes__root__f__2__projection(a: us_split_fields10) : natural =
+  (a).rec__private_with_attributes__root__f1
+
+function us_split_fields_rec__ext____6__projection(a: us_split_fields10) : us_private =
+  (a).rec__ext__5
+
+type us_split_fields__ref5 = { us_split_fields__content5 : us_split_fields10
+}
+
+function us_split_fields__ref___split_fields__content__7__projection(a: us_split_fields__ref5) : us_split_fields10 =
+  (a).us_split_fields__content5
+
+type us_rep5 = { us_split_fields11 : us_split_fields10; attr__tag5 : int
+}
+
+function us_rep___split_fields__7__projection(a: us_rep5) : us_split_fields10 =
+  (a).us_split_fields11
+
+function us_rep_attr__tag__6__projection(a: us_rep5) : int = (a).attr__tag5
+
+logic hide_ext__3 : us_main_type2, us_private -> us_private
+
+logic extract__private_with_attributes__child : us_private -> us_main_type2
+
+axiom extract__private_with_attributes__child__conv :
+  (forall private_with_attributes__child:us_main_type2.
+  (forall rec__ext__6:us_private.
+  (extract__private_with_attributes__child(hide_ext__3(private_with_attributes__child,
+  rec__ext__6)) = private_with_attributes__child)))
+
+logic extract__ext__3 : us_private -> us_private
+
+function to_base3(a: us_rep5) : us_rep4 = { us_split_fields9 = {
+  rec__private_with_attributes__root__f =
+  ((a).us_split_fields11).rec__private_with_attributes__root__f1;
+  rec__ext__4 =
+  hide_ext__3(((a).us_split_fields11).rec__private_with_attributes__child,
+  ((a).us_split_fields11).rec__ext__5) }; attr__tag4 = (a).attr__tag5 }
+
+function of_base3(r: us_rep4) : us_rep5 = { us_split_fields11 = {
+  rec__private_with_attributes__child =
+  extract__private_with_attributes__child(((r).us_split_fields9).rec__ext__4);
+  rec__private_with_attributes__root__f1 =
+  ((r).us_split_fields9).rec__private_with_attributes__root__f; rec__ext__5 =
+  extract__ext__3(((r).us_split_fields9).rec__ext__4) }; attr__tag5 =
+  (r).attr__tag4 }
+
+function bool_eq7(a: us_rep5, b: us_rep5) : bool =
+  (if ((us_main_eq2(((a).us_split_fields11).rec__private_with_attributes__child,
+  ((b).us_split_fields11).rec__private_with_attributes__child) = true) and
+  (to_rep(((a).us_split_fields11).rec__private_with_attributes__root__f1) = to_rep(((b).us_split_fields11).rec__private_with_attributes__root__f1))) then true else false)
+
+logic us_tag5 : int
+
+logic value__size5 : int
+
+logic object__size5 : int
+
+logic alignment5 : int
+
+axiom value__size_axiom5 : (0 <= value__size5)
+
+axiom object__size_axiom5 : (0 <= object__size5)
+
+axiom alignment_axiom5 : (0 <= alignment5)
+
+logic private_with_attributes__root__f__first__bit1 : int
+
+logic private_with_attributes__root__f__last__bit1 : int
+
+logic private_with_attributes__root__f__position1 : int
+
+axiom private_with_attributes__root__f__first__bit_axiom1 :
+  (0 <= private_with_attributes__root__f__first__bit1)
+
+axiom private_with_attributes__root__f__last__bit_axiom1 :
+  (private_with_attributes__root__f__first__bit1 <  private_with_attributes__root__f__last__bit1)
+
+axiom private_with_attributes__root__f__position_axiom1 :
+  (0 <= private_with_attributes__root__f__position1)
+
+logic user_eq6 : us_rep5, us_rep5 -> bool
+
+logic dummy6 : us_rep5
+
+type child__ref = { child__content : us_rep5
+}
+
+function child__ref_child__content__projection(a: child__ref) : us_rep5 =
+  (a).child__content
+
+logic c1 : us_rep5
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+type us_split_fields12 = { rec__private_with_attributes__child1 :
+us_main_type2; rec__public_derives_private__grand_child__f2 : natural;
+rec__private_with_attributes__root__f2 : natural; rec__ext__6 : us_private
+}
+
+function us_split_fields_rec__private_with_attributes__child__2__projection(a: us_split_fields12) : us_main_type2 =
+  (a).rec__private_with_attributes__child1
+
+function us_split_fields_rec__public_derives_private__grand_child__f2__projection(a: us_split_fields12) : natural =
+  (a).rec__public_derives_private__grand_child__f2
+
+function us_split_fields_rec__private_with_attributes__root__f__3__projection(a: us_split_fields12) : natural =
+  (a).rec__private_with_attributes__root__f2
+
+function us_split_fields_rec__ext____7__projection(a: us_split_fields12) : us_private =
+  (a).rec__ext__6
+
+type us_split_fields__ref6 = { us_split_fields__content6 : us_split_fields12
+}
+
+function us_split_fields__ref___split_fields__content__8__projection(a: us_split_fields__ref6) : us_split_fields12 =
+  (a).us_split_fields__content6
+
+type us_rep6 = { us_split_fields13 : us_split_fields12; attr__tag6 : int
+}
+
+function us_rep___split_fields__8__projection(a: us_rep6) : us_split_fields12 =
+  (a).us_split_fields13
+
+function us_rep_attr__tag__7__projection(a: us_rep6) : int = (a).attr__tag6
+
+logic hide_ext__4 : us_main_type2, natural, us_private -> us_private
+
+axiom extract__private_with_attributes__child__conv1 :
+  (forall private_with_attributes__child:us_main_type2.
+  (forall public_derives_private__grand_child__f2:natural.
+  (forall rec__ext__7:us_private.
+  (extract__private_with_attributes__child(hide_ext__4(private_with_attributes__child,
+  public_derives_private__grand_child__f2,
+  rec__ext__7)) = private_with_attributes__child))))
+
+logic extract__public_derives_private__grand_child__f2 : us_private -> natural
+
+axiom extract__public_derives_private__grand_child__f2__conv :
+  (forall private_with_attributes__child:us_main_type2.
+  (forall public_derives_private__grand_child__f2:natural.
+  (forall rec__ext__7:us_private.
+  (extract__public_derives_private__grand_child__f2(hide_ext__4(private_with_attributes__child,
+  public_derives_private__grand_child__f2,
+  rec__ext__7)) = public_derives_private__grand_child__f2))))
+
+logic extract__ext__4 : us_private -> us_private
+
+function to_base4(a: us_rep6) : us_rep4 = { us_split_fields9 = {
+  rec__private_with_attributes__root__f =
+  ((a).us_split_fields13).rec__private_with_attributes__root__f2;
+  rec__ext__4 =
+  hide_ext__4(((a).us_split_fields13).rec__private_with_attributes__child1,
+  ((a).us_split_fields13).rec__public_derives_private__grand_child__f2,
+  ((a).us_split_fields13).rec__ext__6) }; attr__tag4 = (a).attr__tag6 }
+
+function of_base4(r: us_rep4) : us_rep6 = { us_split_fields13 = {
+  rec__private_with_attributes__child1 =
+  extract__private_with_attributes__child(((r).us_split_fields9).rec__ext__4);
+  rec__public_derives_private__grand_child__f2 =
+  extract__public_derives_private__grand_child__f2(((r).us_split_fields9).rec__ext__4);
+  rec__private_with_attributes__root__f2 =
+  ((r).us_split_fields9).rec__private_with_attributes__root__f; rec__ext__6 =
+  extract__ext__4(((r).us_split_fields9).rec__ext__4) }; attr__tag6 =
+  (r).attr__tag4 }
+
+function bool_eq8(a: us_rep6, b: us_rep6) : bool =
+  (if (((us_main_eq2(((a).us_split_fields13).rec__private_with_attributes__child1,
+  ((b).us_split_fields13).rec__private_with_attributes__child1) = true) and
+  (to_rep(((a).us_split_fields13).rec__public_derives_private__grand_child__f2) = to_rep(((b).us_split_fields13).rec__public_derives_private__grand_child__f2))) and
+  (to_rep(((a).us_split_fields13).rec__private_with_attributes__root__f2) = to_rep(((b).us_split_fields13).rec__private_with_attributes__root__f2))) then true else false)
+
+logic us_tag6 : int
+
+logic value__size6 : int
+
+logic object__size6 : int
+
+logic alignment6 : int
+
+axiom value__size_axiom6 : (0 <= value__size6)
+
+axiom object__size_axiom6 : (0 <= object__size6)
+
+axiom alignment_axiom6 : (0 <= alignment6)
+
+logic public_derives_private__grand_child__f2__first__bit : int
+
+logic public_derives_private__grand_child__f2__last__bit : int
+
+logic public_derives_private__grand_child__f2__position : int
+
+axiom public_derives_private__grand_child__f2__first__bit_axiom :
+  (0 <= public_derives_private__grand_child__f2__first__bit)
+
+axiom public_derives_private__grand_child__f2__last__bit_axiom :
+  (public_derives_private__grand_child__f2__first__bit <  public_derives_private__grand_child__f2__last__bit)
+
+axiom public_derives_private__grand_child__f2__position_axiom :
+  (0 <= public_derives_private__grand_child__f2__position)
+
+logic private_with_attributes__root__f__first__bit2 : int
+
+logic private_with_attributes__root__f__last__bit2 : int
+
+logic private_with_attributes__root__f__position2 : int
+
+axiom private_with_attributes__root__f__first__bit_axiom2 :
+  (0 <= private_with_attributes__root__f__first__bit2)
+
+axiom private_with_attributes__root__f__last__bit_axiom2 :
+  (private_with_attributes__root__f__first__bit2 <  private_with_attributes__root__f__last__bit2)
+
+axiom private_with_attributes__root__f__position_axiom2 :
+  (0 <= private_with_attributes__root__f__position2)
+
+logic user_eq7 : us_rep6, us_rep6 -> bool
+
+logic dummy7 : us_rep6
+
+type grand_child__ref = { grand_child__content : us_rep6
+}
+
+function grand_child__ref_grand_child__content__projection(a: grand_child__ref) : us_rep6 =
+  (a).grand_child__content
+
+logic g1__attr__tag : int
+
+logic attr__ATTRIBUTE_ADDRESS8 : int
+
+predicate default_initial_assumption4(temp___expr_238: us_rep6,
+  temp___skip_top_level_239: bool) =
+  (((temp___expr_238).attr__tag6 = us_tag6) and
+  (to_rep(((temp___expr_238).us_split_fields13).rec__public_derives_private__grand_child__f2) = 0))
+
+logic c2 : us_rep5
+
+logic attr__ATTRIBUTE_ADDRESS9 : int
+
+logic g2__attr__tag : int
+
+logic attr__ATTRIBUTE_ADDRESS10 : int
+
+logic get_f2 : us_rep3 -> int
+
+logic get_f2__function_guard : int, us_rep3 -> prop
+
+axiom get_f2__post_axiom :
+  (forall g:us_rep3 [get_f2(g)]. (let result = get_f2(g) : int in
+  (get_f2__function_guard(result, g) -> dynamic_invariant(result, true,
+  false, true, true))))
+
+axiom get_f2__def_axiom :
+  (forall g:us_rep3 [get_f2(g)].
+  (get_f2(g) = to_rep(((g).us_split_fields7).rec__public_derives_private__private_grand_child_private_tagged__f2)))
+
+predicate default_initial_assumption5(temp___expr_230: us_rep5,
+  temp___skip_top_level_231: bool) = ((temp___expr_230).attr__tag5 = us_tag5)
+
+predicate default_initial_assumption6(temp___expr_222: us_rep4,
+  temp___skip_top_level_223: bool) = ((temp___expr_222).attr__tag4 = us_tag4)
+
+logic rliteral : natural
+
+axiom rliteral_axiom : (naturalqtint(rliteral) = 1)
+
+ (* File "use_private_attributes.ads", line 8, characters 0-0 *)
+goal defqtvc :
+  (forall r__split_fields:us_split_fields.
+  forall f__split_fields:us_split_fields2.
+  forall g__split_fields:us_split_fields4.
+  forall p__split_fields:us_split_fields6. (dynamic_invariant(c, true, false,
+  true, true) -> (default_initial_assumption({ us_split_fields1 =
+  r__split_fields; attr__tag = r__attr__tag }, false) ->
+  (default_initial_assumption1({ us_split_fields3 = f__split_fields;
+  attr__tag1 = f__attr__tag }, false) -> (default_initial_assumption2({
+  us_split_fields5 = g__split_fields; attr__tag2 = g__attr__tag }, false) ->
+  (default_initial_assumption3({ us_split_fields7 = p__split_fields;
+  attr__tag3 = p__attr__tag }, false) ->
+  (forall rc__split_fields:us_split_fields.
+  ((rc__split_fields = r__split_fields) -> ((rc__attr__tag = r__attr__tag) ->
+  (let use_private_attributes__test_tag__fc__assume = to_base({
+  us_split_fields3 = f__split_fields; attr__tag1 = f__attr__tag })
+  : us_rep in
+  (forall fc__split_fields:us_split_fields.
+  ((fc__split_fields = (use_private_attributes__test_tag__fc__assume).us_split_fields1) ->
+  ((fc__attr__tag = (use_private_attributes__test_tag__fc__assume).attr__tag) ->
+  (forall g1__split_fields:us_split_fields12. ((g1__split_fields = {
+  rec__private_with_attributes__child1 =
+  ((c1).us_split_fields11).rec__private_with_attributes__child;
+  rec__public_derives_private__grand_child__f2 = rliteral;
+  rec__private_with_attributes__root__f2 =
+  ((c1).us_split_fields11).rec__private_with_attributes__root__f1;
+  rec__ext__6 = us_null_ext__ }) -> ((g1__attr__tag = us_tag6) ->
+  (forall g2__split_fields:us_split_fields12. ((g2__split_fields = {
+  rec__private_with_attributes__child1 =
+  ((c2).us_split_fields11).rec__private_with_attributes__child;
+  rec__public_derives_private__grand_child__f2 = rliteral;
+  rec__private_with_attributes__root__f2 =
+  ((c2).us_split_fields11).rec__private_with_attributes__root__f1;
+  rec__ext__6 = us_null_ext__ }) -> ((g2__attr__tag = us_tag6) ->
+  ((not (bool_eq7(c1, c2) = true)) ->
+  ((to_rep(((c1).us_split_fields11).rec__private_with_attributes__root__f1) = to_rep(((c2).us_split_fields11).rec__private_with_attributes__root__f1)) ->
+  (not (andb((if (rc__attr__tag = fc__attr__tag) then true else false),
+  us_dispatch_eq({ us_split_fields1 = rc__split_fields; attr__tag =
+  rc__attr__tag }, { us_split_fields1 = fc__split_fields; attr__tag =
+  fc__attr__tag })) = true)))))))))))))))))))))))

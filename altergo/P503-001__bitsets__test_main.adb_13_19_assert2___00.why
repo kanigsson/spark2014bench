@@ -1,0 +1,276 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type map__ref = { map__content : (int,bool) farray
+}
+
+logic slide : (int,bool) farray, int, int -> (int,bool) farray
+
+axiom slide_eq :
+  (forall a:(int,bool) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,bool) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq1(a: (int,bool) farray, a__first: int, a__last: int,
+  b: (int,bool) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_int((a[temp___idx_154])) = to_int((b[((b__first - a__first) + temp___idx_154)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq1(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq1(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq1(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq1(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_int((a[temp___idx_154])) = to_int((b[((b__first - a__first) + temp___idx_154)]))))))))
+
+logic mem : (int,bool) farray, int -> bool
+
+logic mem__function_guard : bool, (int,bool) farray, int -> prop
+
+type element
+
+logic elementqtint : element -> int
+
+axiom elementqtaxiom : (forall i:element. (1 <= elementqtint(i)))
+
+axiom elementqtaxiom1 : (forall i:element. (elementqtint(i) <= 10))
+
+predicate in_range1(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : element, element -> bool
+
+logic dummy : element
+
+type element__ref = { element__content : element
+}
+
+function element__ref_element__content__projection(a: element__ref) : element =
+  (a).element__content
+
+predicate dynamic_invariant(temp___expr_186: int, temp___is_init_182: bool,
+  temp___skip_constant_183: bool, temp___do_toplevel_184: bool,
+  temp___do_typ_inv_185: bool) = (((temp___is_init_182 = true) or
+  (1 <= 10)) -> in_range1(temp___expr_186))
+
+axiom mem__def_axiom :
+  (forall s:(int,bool) farray.
+  (forall e:int [mem(s, e)]. ((mem(s, e) = true) -> ((s[e]) = true))))
+
+axiom mem__def_axiom1 :
+  (forall s:(int,bool) farray.
+  (forall e:int [mem(s, e)]. (((s[e]) = true) -> (mem(s, e) = true))))
+
+logic empty : unit -> (int,bool) farray
+
+logic empty__function_guard : (int,bool) farray, unit -> prop
+
+axiom empty__post_axiom :
+  (forall result:(int,bool) farray. forall elt:int.
+  mem__function_guard(mem(result, elt), result, elt))
+
+axiom empty__post_axiom1 :
+  (forall us_void_param:unit [empty(us_void_param)]. (let result =
+  empty(us_void_param) : (int,bool) farray in (empty__function_guard(result,
+  us_void_param) ->
+  (forall elt:int. (((1 <= elt) and (elt <= 10)) -> (not (mem(result,
+  elt) = true)))))))
+
+logic add : (int,bool) farray, int -> (int,bool) farray
+
+logic add__function_guard : (int,bool) farray, (int,bool) farray, int -> prop
+
+logic ext_equal : (int,bool) farray, (int,bool) farray -> bool
+
+logic ext_equal__function_guard : bool, (int,bool) farray,
+  (int,bool) farray -> prop
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+axiom add__post_axiom :
+  (forall s:(int,bool) farray.
+  (forall e:int [add(s, e)]. (dynamic_invariant(e, true, true, true, true) ->
+  (forall result:(int,bool) farray. forall elt:int.
+  mem__function_guard(mem(result, elt), result, elt)))))
+
+axiom add__post_axiom1 :
+  (forall s:(int,bool) farray.
+  (forall e:int [add(s, e)]. (dynamic_invariant(e, true, true, true, true) ->
+  (forall s1:(int,bool) farray. forall elt:int. mem__function_guard(mem(s1,
+  elt), s1, elt)))))
+
+axiom add__post_axiom2 :
+  (forall s:(int,bool) farray.
+  (forall e:int [add(s, e)]. (dynamic_invariant(e, true, true, true, true) ->
+  (let result = add(s, e) : (int,bool) farray in (add__function_guard(result,
+  s, e) ->
+  (forall elt:int. (((1 <= elt) and (elt <= 10)) -> ((mem(result,
+  elt) = true) -> ((not (elt = e)) -> (mem(s, elt) = true))))))))))
+
+axiom add__post_axiom3 :
+  (forall s:(int,bool) farray.
+  (forall e:int [add(s, e)]. (dynamic_invariant(e, true, true, true, true) ->
+  (let result = add(s, e) : (int,bool) farray in (add__function_guard(result,
+  s, e) ->
+  (forall elt:int. (((1 <= elt) and (elt <= 10)) -> (((not (elt = e)) ->
+  (mem(s, elt) = true)) -> (mem(result, elt) = true)))))))))
+
+axiom ext_equal__def_axiom :
+  (forall a:(int,bool) farray. forall elt:int. mem__function_guard(mem(a,
+  elt), a, elt))
+
+axiom ext_equal__def_axiom1 :
+  (forall b:(int,bool) farray. forall elt:int. mem__function_guard(mem(b,
+  elt), b, elt))
+
+axiom ext_equal__def_axiom2 :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray [ext_equal(a, b)].
+  ((ext_equal(a, b) = true) ->
+  (forall elt:int. (((1 <= elt) and (elt <= 10)) -> ((mem(a, elt) = true) ->
+  (mem(b, elt) = true))))))
+
+axiom ext_equal__def_axiom3 :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray [ext_equal(a, b)].
+  ((ext_equal(a, b) = true) ->
+  (forall elt:int. (((1 <= elt) and (elt <= 10)) -> ((mem(b, elt) = true) ->
+  (mem(a, elt) = true))))))
+
+axiom ext_equal__def_axiom4 :
+  (forall a:(int,bool) farray. forall b:(int,bool) farray [ext_equal(a, b)].
+  ((forall elt:int. (((1 <= elt) and (elt <= 10)) -> ((mem(a,
+   elt) = true) <-> (mem(b, elt) = true)))) ->
+  (ext_equal(a, b) = true)))
+
+ (* File "test_main.adb", line 3, characters 0-0 *)
+goal defqtvc : (let o = empty(void) : (int,bool) farray in
+  ((forall o1:(int,bool) farray. forall elt:int. mem__function_guard(mem(o1,
+   elt), o1, elt)) -> ((empty__function_guard(o, void) and
+  (forall elt:int. (((1 <= elt) and (elt <= 10)) -> (not (mem(o,
+  elt) = true))))) ->
+  (forall s:(int,bool) farray. ((s = o) ->
+  (forall s1:(int,bool) farray.
+  ((forall s2:(int,bool) farray. add__function_guard(add(s2, 8), s2, 8)) ->
+  ((forall s2:(int,bool) farray. add__function_guard(add(s2, 8), s2, 8)) ->
+  ((forall s2:(int,bool) farray. forall s3:(int,bool) farray.
+   ext_equal__function_guard(ext_equal(s3, add(s2, 8)), s3, add(s2, 8))) ->
+  ((ext_equal(s1, add(s, 8)) = true) ->
+  (forall s2:(int,bool) farray.
+  ((forall s3:(int,bool) farray. add__function_guard(add(s3, 3), s3, 3)) ->
+  ((forall s3:(int,bool) farray. add__function_guard(add(s3, 3), s3, 3)) ->
+  ((forall s3:(int,bool) farray. forall s4:(int,bool) farray.
+   ext_equal__function_guard(ext_equal(s4, add(s3, 3)), s4, add(s3, 3))) ->
+  ((ext_equal(s2, add(s1, 3)) = true) ->
+  ((forall s3:(int,bool) farray. mem__function_guard(mem(s3, 3), s3, 3)) ->
+  ((mem(s2, 3) = true) ->
+  ((forall s3:(int,bool) farray. mem__function_guard(mem(s3, 8), s3, 8)) ->
+  ((mem(s2, 8) = true) ->
+  ((forall s3:(int,bool) farray. mem__function_guard(mem(s3, 1), s3, 1)) ->
+  (not (mem(s2, 1) = true))))))))))))))))))))))

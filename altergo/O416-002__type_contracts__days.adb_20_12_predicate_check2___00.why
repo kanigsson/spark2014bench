@@ -1,0 +1,170 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type day
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 6))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : day, day -> bool
+
+logic dummy : day
+
+type day__ref = { day__content : day
+}
+
+function day__ref_day__content__projection(a: day__ref) : day =
+  (a).day__content
+
+predicate dynamic_invariant(temp___expr_159: int, temp___is_init_155: bool,
+  temp___skip_constant_156: bool, temp___do_toplevel_157: bool,
+  temp___do_typ_inv_158: bool) = (((temp___is_init_155 = true) or
+  (0 <= 6)) -> in_range1(temp___expr_159))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic i1s : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+type t_day
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 6))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : t_day, t_day -> bool
+
+logic dummy1 : t_day
+
+type t_day__ref = { t_day__content : t_day
+}
+
+function t_day__ref_t_day__content__projection(a: t_day__ref) : t_day =
+  (a).t_day__content
+
+predicate dynamic_invariant1(temp___expr_166: int, temp___is_init_162: bool,
+  temp___skip_constant_163: bool, temp___do_toplevel_164: bool,
+  temp___do_typ_inv_165: bool) = ((((temp___is_init_162 = true) or
+  (0 <= 6)) -> in_range2(temp___expr_166)) and
+  ((temp___do_toplevel_164 = true) -> ((temp___is_init_162 = true) ->
+  (((1 <= temp___expr_166) and (temp___expr_166 <= 1)) or
+  ((3 <= temp___expr_166) and (temp___expr_166 <= 3))))))
+
+predicate dynamic_predicate(temp___170: int) = (((1 <= temp___170) and
+  (temp___170 <= 1)) or ((3 <= temp___170) and (temp___170 <= 3)))
+
+ (* File "days.ads", line 11, characters 0-0 *)
+goal defqtvc :
+  (forall d:int. (dynamic_invariant1(i1s, true, false, true, true) ->
+  (dynamic_invariant1(i1s, true, false, true, true) -> (dynamic_invariant1(d,
+  true, false, true, true) ->
+  (forall tmp:int. ((tmp = d) -> (dynamic_invariant(tmp, true, false, true,
+  true) ->
+  (forall tmp1:int. (dynamic_invariant(tmp1, true, true, true, true) ->
+  (forall tmp2:int.
+  ((if (not (andb((if in_range2(tmp1) then true else false),
+  (if (((1 <= tmp1) and (tmp1 <= 1)) or ((3 <= tmp1) and
+  (tmp1 <= 3))) then true else false)) = true)) then (exists tmp3:int.
+                                                     ((andb((if dynamic_invariant(tmp3,
+                                                     true, true, true,
+                                                     true) then true else false),
+                                                     (if (notb(andb((if in_range2(tmp3) then true else false),
+                                                     (if (((1 <= tmp3) and
+                                                     (tmp3 <= 1)) or
+                                                     ((3 <= tmp3) and
+                                                     (tmp3 <= 3))) then true else false))) = true) then true else false)) = true) and
+                                                     (dynamic_invariant(tmp2,
+                                                     true, true, true,
+                                                     true) and
+                                                     (andb((if in_range2(tmp2) then true else false),
+                                                     (if (((1 <= tmp2) and
+                                                     (tmp2 <= 1)) or
+                                                     ((3 <= tmp2) and
+                                                     (tmp2 <= 3))) then true else false)) = true)))) else (tmp2 = tmp1)) ->
+  (((1 <= tmp2) and (tmp2 <= 1)) or ((3 <= tmp2) and (tmp2 <= 3))))))))))))))

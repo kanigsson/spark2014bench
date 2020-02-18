@@ -1,0 +1,849 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_39))
+
+type positive
+
+logic positiveqtint : positive -> int
+
+axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
+
+axiom positiveqtaxiom1 :
+  (forall i:positive. (positiveqtint(i) <= 2147483647))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : positive, positive -> bool
+
+logic dummy2 : positive
+
+type positive__ref = { positive__content : positive
+}
+
+function positive__ref_positive__content__projection(a: positive__ref) : positive =
+  (a).positive__content
+
+logic c : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+type map__ref = { map__content : (int,integer) farray
+}
+
+logic slide : (int,integer) farray, int, int -> (int,integer) farray
+
+axiom slide_eq :
+  (forall a:(int,integer) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,integer) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq4(a: (int,integer) farray, a__first: int, a__last: int,
+  b: (int,integer) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)]))))))))
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (in_range3(low) and in_range3(high)))))
+
+type us_t = { elts : (int,integer) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,integer) farray = (a).elts
+
+function of_array(a: (int,integer) farray, f: int, l: int) : us_t = { elts =
+  a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep(first((a).rt))
+
+function last1(a: us_t) : int = to_rep(last((a).rt))
+
+function length(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq5(x: us_t, y: us_t) : bool = bool_eq4((x).elts,
+  to_rep(first((x).rt)), to_rep(last((x).rt)), (y).elts,
+  to_rep(first((y).rt)), to_rep(last((y).rt)))
+
+logic user_eq3 : us_t, us_t -> bool
+
+logic dummy3 : us_t
+
+type a__ref = { a__content : us_t
+}
+
+function a__ref_a__content__projection(a: a__ref) : us_t = (a).a__content
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+type us_split_discrs = { rec__constr_ty__r__x : bool
+}
+
+function us_split_discrs_rec__constr_ty__r__x__projection(a: us_split_discrs) : bool =
+  (a).rec__constr_ty__r__x
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_rep = { us_split_discrs1 : us_split_discrs
+}
+
+function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
+  (a).us_split_discrs1
+
+function bool_eq6(a: us_rep, b: us_rep) : bool =
+  (if (to_int(((a).us_split_discrs1).rec__constr_ty__r__x) = to_int(((b).us_split_discrs1).rec__constr_ty__r__x)) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic constr_ty__r__x__first__bit : int
+
+logic constr_ty__r__x__last__bit : int
+
+logic constr_ty__r__x__position : int
+
+axiom constr_ty__r__x__first__bit_axiom : (0 <= constr_ty__r__x__first__bit)
+
+axiom constr_ty__r__x__last__bit_axiom :
+  (constr_ty__r__x__first__bit <  constr_ty__r__x__last__bit)
+
+axiom constr_ty__r__x__position_axiom : (0 <= constr_ty__r__x__position)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type r__ref = { r__content : us_rep
+}
+
+function r__ref_r__content__projection(a: r__ref) : us_rep = (a).r__content
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+type t10b__ref = { t10b__content : us_t
+}
+
+function t10b__ref_t10b__content__projection(a: t10b__ref) : us_t =
+  (a).t10b__content
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+type us_rep1 = { rec__constr_ty__a_acc__is_null_pointer : bool;
+rec__constr_ty__a_acc__pointer_address : int;
+rec__constr_ty__a_acc__pointer_value : us_t
+}
+
+function us_rep_rec__constr_ty__a_acc__is_null_pointer__projection(a: us_rep1) : bool =
+  (a).rec__constr_ty__a_acc__is_null_pointer
+
+function us_rep_rec__constr_ty__a_acc__pointer_address__projection(a: us_rep1) : int =
+  (a).rec__constr_ty__a_acc__pointer_address
+
+function us_rep_rec__constr_ty__a_acc__pointer_value__projection(a: us_rep1) : us_t =
+  (a).rec__constr_ty__a_acc__pointer_value
+
+type us_rep__ref = { us_rep__content : us_rep1
+}
+
+function us_rep__ref___rep__content__projection(a: us_rep__ref) : us_rep1 =
+  (a).us_rep__content
+
+function bool_eq7(a: us_rep1, b: us_rep1) : bool =
+  (if (((a).rec__constr_ty__a_acc__is_null_pointer = (b).rec__constr_ty__a_acc__is_null_pointer) and
+  ((not ((a).rec__constr_ty__a_acc__is_null_pointer = true)) ->
+  (((a).rec__constr_ty__a_acc__pointer_address = (b).rec__constr_ty__a_acc__pointer_address) and
+  ((a).rec__constr_ty__a_acc__pointer_value = (b).rec__constr_ty__a_acc__pointer_value)))) then true else false)
+
+predicate rec__constr_ty__a_acc__pointer_value__pred(a: us_rep1) =
+  (not ((a).rec__constr_ty__a_acc__is_null_pointer = true))
+
+logic us_null_pointer : us_rep1
+
+axiom us_null_pointer__def_axiom :
+  ((us_null_pointer).rec__constr_ty__a_acc__is_null_pointer = true)
+
+logic dummy5 : us_rep1
+
+type a_acc__ref = { a_acc__content : us_rep1
+}
+
+function a_acc__ref_a_acc__content__projection(a: a_acc__ref) : us_rep1 =
+  (a).a_acc__content
+
+predicate dynamic_invariant1(temp___expr_168: us_rep1,
+  temp___is_init_164: bool, temp___skip_constant_165: bool,
+  temp___do_toplevel_166: bool, temp___do_typ_inv_167: bool) =
+  ((not ((temp___expr_168).rec__constr_ty__a_acc__is_null_pointer = true)) ->
+  dynamic_property(1, 2147483647,
+  first1((temp___expr_168).rec__constr_ty__a_acc__pointer_value),
+  last1((temp___expr_168).rec__constr_ty__a_acc__pointer_value)))
+
+predicate default_initial_assumption(temp___expr_170: us_rep1,
+  temp___skip_top_level_171: bool) =
+  ((temp___expr_170).rec__constr_ty__a_acc__is_null_pointer = true)
+
+type ta_acc_2P1
+
+logic ta_acc_2P1qtint : ta_acc_2P1 -> int
+
+axiom ta_acc_2P1qtaxiom : (forall i:ta_acc_2P1. (1 <= ta_acc_2P1qtint(i)))
+
+axiom ta_acc_2P1qtaxiom1 : (forall i:ta_acc_2P1. (ta_acc_2P1qtint(i) <= 10))
+
+predicate in_range4(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq5 : ta_acc_2P1, ta_acc_2P1 -> bool
+
+logic dummy6 : ta_acc_2P1
+
+type ta_acc_2P1__ref = { ta_acc_2P1__content : ta_acc_2P1
+}
+
+function ta_acc_2P1__ref_ta_acc_2P1__content__projection(a: ta_acc_2P1__ref) : ta_acc_2P1 =
+  (a).ta_acc_2P1__content
+
+type us_rep2 = { rec__constr_ty__a_acc__is_null_pointer1 : bool;
+rec__constr_ty__a_acc__pointer_address1 : int;
+rec__constr_ty__a_acc__pointer_value1 : (int,integer) farray
+}
+
+function us_rep_rec__constr_ty__a_acc__is_null_pointer__2__projection(a: us_rep2) : bool =
+  (a).rec__constr_ty__a_acc__is_null_pointer1
+
+function us_rep_rec__constr_ty__a_acc__pointer_address__2__projection(a: us_rep2) : int =
+  (a).rec__constr_ty__a_acc__pointer_address1
+
+function us_rep_rec__constr_ty__a_acc__pointer_value__2__projection(a: us_rep2) : (int,integer) farray =
+  (a).rec__constr_ty__a_acc__pointer_value1
+
+type us_rep__ref1 = { us_rep__content1 : us_rep2
+}
+
+function us_rep__ref___rep__content__2__projection(a: us_rep__ref1) : us_rep2 =
+  (a).us_rep__content1
+
+function bool_eq9(a: us_rep2, b: us_rep2) : bool =
+  (if (((a).rec__constr_ty__a_acc__is_null_pointer1 = (b).rec__constr_ty__a_acc__is_null_pointer1) and
+  ((not ((a).rec__constr_ty__a_acc__is_null_pointer1 = true)) ->
+  (((a).rec__constr_ty__a_acc__pointer_address1 = (b).rec__constr_ty__a_acc__pointer_address1) and
+  ((a).rec__constr_ty__a_acc__pointer_value1 = (b).rec__constr_ty__a_acc__pointer_value1)))) then true else false)
+
+predicate rec__constr_ty__a_acc_2__pointer_value__pred(a: us_rep2) =
+  (not ((a).rec__constr_ty__a_acc__is_null_pointer1 = true))
+
+logic us_null_pointer1 : us_rep2
+
+axiom us_null_pointer__def_axiom1 :
+  ((us_null_pointer1).rec__constr_ty__a_acc__is_null_pointer1 = true)
+
+function to_base(a: us_rep2) : us_rep1 = {
+  rec__constr_ty__a_acc__is_null_pointer =
+  (a).rec__constr_ty__a_acc__is_null_pointer1;
+  rec__constr_ty__a_acc__pointer_address =
+  (a).rec__constr_ty__a_acc__pointer_address1;
+  rec__constr_ty__a_acc__pointer_value =
+  of_array((a).rec__constr_ty__a_acc__pointer_value1, 1, 10) }
+
+function of_base(r: us_rep1) : us_rep2 = {
+  rec__constr_ty__a_acc__is_null_pointer1 =
+  (r).rec__constr_ty__a_acc__is_null_pointer;
+  rec__constr_ty__a_acc__pointer_address1 =
+  (r).rec__constr_ty__a_acc__pointer_address;
+  rec__constr_ty__a_acc__pointer_value1 =
+  to_array((r).rec__constr_ty__a_acc__pointer_value) }
+
+predicate in_range5(first2: int, last2: int, r: us_rep1) =
+  ((not ((r).rec__constr_ty__a_acc__is_null_pointer = true)) ->
+  ((first1((r).rec__constr_ty__a_acc__pointer_value) = first2) and
+  (last1((r).rec__constr_ty__a_acc__pointer_value) = last2)))
+
+logic dummy7 : us_rep2
+
+type a_acc_2__ref = { a_acc_2__content : us_rep2
+}
+
+function a_acc_2__ref_a_acc_2__content__projection(a: a_acc_2__ref) : us_rep2 =
+  (a).a_acc_2__content
+
+predicate default_initial_assumption1(temp___expr_177: us_rep2,
+  temp___skip_top_level_178: bool) =
+  ((temp___expr_177).rec__constr_ty__a_acc__is_null_pointer1 = true)
+
+type t6b__ref = { t6b__content : us_t
+}
+
+function t6b__ref_t6b__content__projection(a: t6b__ref) : us_t =
+  (a).t6b__content
+
+type us_rep3 = { rec__constr_ty__r_acc__is_null_pointer : bool;
+rec__constr_ty__r_acc__pointer_address : int;
+rec__constr_ty__r_acc__pointer_value : us_rep
+}
+
+function us_rep_rec__constr_ty__r_acc__is_null_pointer__projection(a: us_rep3) : bool =
+  (a).rec__constr_ty__r_acc__is_null_pointer
+
+function us_rep_rec__constr_ty__r_acc__pointer_address__projection(a: us_rep3) : int =
+  (a).rec__constr_ty__r_acc__pointer_address
+
+function us_rep_rec__constr_ty__r_acc__pointer_value__projection(a: us_rep3) : us_rep =
+  (a).rec__constr_ty__r_acc__pointer_value
+
+type us_rep__ref2 = { us_rep__content2 : us_rep3
+}
+
+function us_rep__ref___rep__content__3__projection(a: us_rep__ref2) : us_rep3 =
+  (a).us_rep__content2
+
+function bool_eq10(a: us_rep3, b: us_rep3) : bool =
+  (if (((a).rec__constr_ty__r_acc__is_null_pointer = (b).rec__constr_ty__r_acc__is_null_pointer) and
+  ((not ((a).rec__constr_ty__r_acc__is_null_pointer = true)) ->
+  (((a).rec__constr_ty__r_acc__pointer_address = (b).rec__constr_ty__r_acc__pointer_address) and
+  ((a).rec__constr_ty__r_acc__pointer_value = (b).rec__constr_ty__r_acc__pointer_value)))) then true else false)
+
+predicate rec__constr_ty__r_acc__pointer_value__pred(a: us_rep3) =
+  (not ((a).rec__constr_ty__r_acc__is_null_pointer = true))
+
+logic us_null_pointer2 : us_rep3
+
+axiom us_null_pointer__def_axiom2 :
+  ((us_null_pointer2).rec__constr_ty__r_acc__is_null_pointer = true)
+
+logic dummy8 : us_rep3
+
+type r_acc__ref = { r_acc__content : us_rep3
+}
+
+function r_acc__ref_r_acc__content__projection(a: r_acc__ref) : us_rep3 =
+  (a).r_acc__content
+
+predicate default_initial_assumption2(temp___expr_190: us_rep3,
+  temp___skip_top_level_191: bool) =
+  ((temp___expr_190).rec__constr_ty__r_acc__is_null_pointer = true)
+
+predicate in_range6(rec__constr_ty__r__x1: bool, a: us_rep) =
+  (rec__constr_ty__r__x1 = ((a).us_split_discrs1).rec__constr_ty__r__x)
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic constr_ty__r__x__first__bit1 : int
+
+logic constr_ty__r__x__last__bit1 : int
+
+logic constr_ty__r__x__position1 : int
+
+axiom constr_ty__r__x__first__bit_axiom1 :
+  (0 <= constr_ty__r__x__first__bit1)
+
+axiom constr_ty__r__x__last__bit_axiom1 :
+  (constr_ty__r__x__first__bit1 <  constr_ty__r__x__last__bit1)
+
+axiom constr_ty__r__x__position_axiom1 : (0 <= constr_ty__r__x__position1)
+
+logic user_eq6 : us_rep, us_rep -> bool
+
+logic dummy9 : us_rep
+
+type t8b__ref = { t8b__content : us_rep
+}
+
+function t8b__ref_t8b__content__projection(a: t8b__ref) : us_rep =
+  (a).t8b__content
+
+type us_rep4 = { rec__constr_ty__a_acc__is_null_pointer2 : bool;
+rec__constr_ty__a_acc__pointer_address2 : int;
+rec__constr_ty__a_acc__pointer_value2 : us_t
+}
+
+function us_rep_rec__constr_ty__a_acc__is_null_pointer__3__projection(a: us_rep4) : bool =
+  (a).rec__constr_ty__a_acc__is_null_pointer2
+
+function us_rep_rec__constr_ty__a_acc__pointer_address__3__projection(a: us_rep4) : int =
+  (a).rec__constr_ty__a_acc__pointer_address2
+
+function us_rep_rec__constr_ty__a_acc__pointer_value__3__projection(a: us_rep4) : us_t =
+  (a).rec__constr_ty__a_acc__pointer_value2
+
+type us_rep__ref3 = { us_rep__content3 : us_rep4
+}
+
+function us_rep__ref___rep__content__4__projection(a: us_rep__ref3) : us_rep4 =
+  (a).us_rep__content3
+
+function bool_eq11(a: us_rep4, b: us_rep4) : bool =
+  (if (((a).rec__constr_ty__a_acc__is_null_pointer2 = (b).rec__constr_ty__a_acc__is_null_pointer2) and
+  ((not ((a).rec__constr_ty__a_acc__is_null_pointer2 = true)) ->
+  (((a).rec__constr_ty__a_acc__pointer_address2 = (b).rec__constr_ty__a_acc__pointer_address2) and
+  ((a).rec__constr_ty__a_acc__pointer_value2 = (b).rec__constr_ty__a_acc__pointer_value2)))) then true else false)
+
+predicate rec__constr_ty__B_2__a_acc_3__pointer_value__pred(a: us_rep4) =
+  (not ((a).rec__constr_ty__a_acc__is_null_pointer2 = true))
+
+logic us_null_pointer3 : us_rep4
+
+axiom us_null_pointer__def_axiom3 :
+  ((us_null_pointer3).rec__constr_ty__a_acc__is_null_pointer2 = true)
+
+function to_base1(a: us_rep4) : us_rep1 = {
+  rec__constr_ty__a_acc__is_null_pointer =
+  (a).rec__constr_ty__a_acc__is_null_pointer2;
+  rec__constr_ty__a_acc__pointer_address =
+  (a).rec__constr_ty__a_acc__pointer_address2;
+  rec__constr_ty__a_acc__pointer_value =
+  of_array(to_array((a).rec__constr_ty__a_acc__pointer_value2),
+  first1((a).rec__constr_ty__a_acc__pointer_value2),
+  last1((a).rec__constr_ty__a_acc__pointer_value2)) }
+
+function of_base1(r: us_rep1) : us_rep4 = {
+  rec__constr_ty__a_acc__is_null_pointer2 =
+  (r).rec__constr_ty__a_acc__is_null_pointer;
+  rec__constr_ty__a_acc__pointer_address2 =
+  (r).rec__constr_ty__a_acc__pointer_address;
+  rec__constr_ty__a_acc__pointer_value2 =
+  of_array(to_array((r).rec__constr_ty__a_acc__pointer_value),
+  first1((r).rec__constr_ty__a_acc__pointer_value),
+  last1((r).rec__constr_ty__a_acc__pointer_value)) }
+
+predicate in_range7(first2: int, last2: int, r: us_rep1) =
+  ((not ((r).rec__constr_ty__a_acc__is_null_pointer = true)) ->
+  ((first1((r).rec__constr_ty__a_acc__pointer_value) = first2) and
+  (last1((r).rec__constr_ty__a_acc__pointer_value) = last2)))
+
+logic dummy10 : us_rep4
+
+type a_acc_3__ref = { a_acc_3__content : us_rep4
+}
+
+function a_acc_3__ref_a_acc_3__content__projection(a: a_acc_3__ref) : us_rep4 =
+  (a).a_acc_3__content
+
+predicate dynamic_invariant2(temp___expr_196: us_rep4,
+  temp___is_init_192: bool, temp___skip_constant_193: bool,
+  temp___do_toplevel_194: bool, temp___do_typ_inv_195: bool,
+  constr_ty__L_1__i: int) =
+  ((not ((temp___expr_196).rec__constr_ty__a_acc__is_null_pointer2 = true)) ->
+  (dynamic_property(1, constr_ty__L_1__i,
+  first1((temp___expr_196).rec__constr_ty__a_acc__pointer_value2),
+  last1((temp___expr_196).rec__constr_ty__a_acc__pointer_value2)) and
+  ((first1((temp___expr_196).rec__constr_ty__a_acc__pointer_value2) = 1) and
+  (last1((temp___expr_196).rec__constr_ty__a_acc__pointer_value2) = constr_ty__L_1__i))))
+
+predicate default_initial_assumption3(temp___expr_198: us_rep4,
+  temp___skip_top_level_199: bool) =
+  ((temp___expr_198).rec__constr_ty__a_acc__is_null_pointer2 = true)
+
+type t13b__ref = { t13b__content : us_t
+}
+
+function t13b__ref_t13b__content__projection(a: t13b__ref) : us_t =
+  (a).t13b__content
+
+logic temp_____aggregate_def_200 : int, int, int -> us_t
+
+logic temp_____aggregate_def_212 : int, int, int -> us_t
+
+predicate dynamic_invariant3(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+predicate dynamic_invariant4(temp___expr_46: int, temp___is_init_42: bool,
+  temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
+  temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
+  (1 <= 2147483647)) -> in_range3(temp___expr_46))
+
+predicate dynamic_invariant5(temp___expr_162: us_t, temp___is_init_158: bool,
+  temp___skip_constant_159: bool, temp___do_toplevel_160: bool,
+  temp___do_typ_inv_161: bool) = ((not (temp___skip_constant_159 = true)) ->
+  dynamic_property(1, 2147483647, first1(temp___expr_162),
+  last1(temp___expr_162)))
+
+logic rliteral : integer
+
+axiom rliteral_axiom : (integerqtint(rliteral) = 0)
+
+axiom def_axiom :
+  (forall temp___202:int. forall temp___203:int. forall temp___204:int.
+  (dynamic_invariant3(temp___202, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___203, temp___204) ->
+  (first1(temp_____aggregate_def_200(temp___202, temp___203,
+  temp___204)) = temp___203))))
+
+axiom def_axiom1 :
+  (forall temp___202:int. forall temp___203:int. forall temp___204:int.
+  (dynamic_invariant3(temp___202, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___203, temp___204) ->
+  (last1(temp_____aggregate_def_200(temp___202, temp___203,
+  temp___204)) = temp___204))))
+
+axiom def_axiom2 :
+  (forall temp___202:int. forall temp___203:int. forall temp___204:int.
+  (dynamic_invariant3(temp___202, true, true, true, true) ->
+  (forall temp___205:int. ((to_array(temp_____aggregate_def_200(temp___202,
+  temp___203, temp___204))[temp___205]) = rliteral))))
+
+logic rliteral1 : integer
+
+axiom rliteral_axiom1 : (integerqtint(rliteral1) = 1)
+
+axiom def_axiom3 :
+  (forall temp___214:int. forall temp___215:int. forall temp___216:int.
+  (dynamic_invariant3(temp___214, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___215, temp___216) ->
+  (first1(temp_____aggregate_def_212(temp___214, temp___215,
+  temp___216)) = temp___215))))
+
+axiom def_axiom4 :
+  (forall temp___214:int. forall temp___215:int. forall temp___216:int.
+  (dynamic_invariant3(temp___214, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___215, temp___216) ->
+  (last1(temp_____aggregate_def_212(temp___214, temp___215,
+  temp___216)) = temp___216))))
+
+axiom def_axiom5 :
+  (forall temp___214:int. forall temp___215:int. forall temp___216:int.
+  (dynamic_invariant3(temp___214, true, true, true, true) ->
+  (forall temp___217:int. ((to_array(temp_____aggregate_def_212(temp___214,
+  temp___215, temp___216))[temp___217]) = rliteral1))))
+
+ (* File "constr_ty.adb", line 1, characters 0-0 *)
+goal defqtvc : (dynamic_invariant(c, true, false, true, true) ->
+  (let temp___206 = temp_____aggregate_def_200(0, 1, c) : us_t in
+  ((first1(temp___206) = 1) -> ((last1(temp___206) = c) ->
+  (forall us_next_pointer_address:int.
+  (forall constr_ty__z__assume:us_rep1.
+  ((andb((if ((not ((constr_ty__z__assume).rec__constr_ty__a_acc__is_null_pointer = true)) and
+  ((constr_ty__z__assume).rec__constr_ty__a_acc__pointer_address = us_next_pointer_address)) then true else false),
+  (if ((constr_ty__z__assume).rec__constr_ty__a_acc__pointer_value = of_array(to_array(temp___206),
+  first1(temp___206), last1(temp___206))) then true else false)) = true) ->
+  (forall z__pointer_value:us_t.
+  ((z__pointer_value = (constr_ty__z__assume).rec__constr_ty__a_acc__pointer_value) ->
+  (forall z__pointer_address:int.
+  ((z__pointer_address = (constr_ty__z__assume).rec__constr_ty__a_acc__pointer_address) ->
+  (forall z__is_null_pointer:bool.
+  ((z__is_null_pointer = (constr_ty__z__assume).rec__constr_ty__a_acc__is_null_pointer) ->
+  (dynamic_invariant1({ rec__constr_ty__a_acc__is_null_pointer =
+  z__is_null_pointer; rec__constr_ty__a_acc__pointer_address =
+  z__pointer_address; rec__constr_ty__a_acc__pointer_value = z__pointer_value
+  }, true, false, true, true) -> (let constr_ty__w__assume = of_base({
+  rec__constr_ty__a_acc__is_null_pointer = z__is_null_pointer;
+  rec__constr_ty__a_acc__pointer_address = z__pointer_address;
+  rec__constr_ty__a_acc__pointer_value = z__pointer_value }) : us_rep2 in
+  (forall w__pointer_value:(int,integer) farray.
+  ((w__pointer_value = (constr_ty__w__assume).rec__constr_ty__a_acc__pointer_value1) ->
+  (forall w__pointer_address:int.
+  ((w__pointer_address = (constr_ty__w__assume).rec__constr_ty__a_acc__pointer_address1) ->
+  (forall w__is_null_pointer:bool.
+  ((w__is_null_pointer = (constr_ty__w__assume).rec__constr_ty__a_acc__is_null_pointer1) ->
+  (forall us_next_pointer_address1:int.
+  (forall constr_ty__x__assume:us_rep3.
+  ((andb((if ((not ((constr_ty__x__assume).rec__constr_ty__r_acc__is_null_pointer = true)) and
+  ((constr_ty__x__assume).rec__constr_ty__r_acc__pointer_address = us_next_pointer_address1)) then true else false),
+  (if ((constr_ty__x__assume).rec__constr_ty__r_acc__pointer_value = {
+  us_split_discrs1 = { rec__constr_ty__r__x = of_int(1) }
+  }) then true else false)) = true) ->
+  (forall x__pointer_value:bool. (({ us_split_discrs1 = {
+  rec__constr_ty__r__x = x__pointer_value }
+  } = (constr_ty__x__assume).rec__constr_ty__r_acc__pointer_value) ->
+  (forall x__pointer_address:int.
+  ((x__pointer_address = (constr_ty__x__assume).rec__constr_ty__r_acc__pointer_address) ->
+  (forall x__is_null_pointer:bool.
+  ((x__is_null_pointer = (constr_ty__x__assume).rec__constr_ty__r_acc__is_null_pointer) ->
+  ((let temp___211 = c : int in
+  (exists i:int. ((i = 1) and ((not (andb((if (1 <= i) then true else false),
+  (if (i <= temp___211) then true else false)) = true)) or
+  (exists i1:int. (((1 <= i1) and (i1 <= c)) and (let temp___218 =
+  temp_____aggregate_def_212(1, 1, c) : us_t in ((first1(temp___218) = 1) and
+  ((last1(temp___218) = c) and
+  (exists us_next_pointer_address2:int.
+  (exists constr_ty__B_2__m__assume:us_rep1.
+  ((andb((if ((not ((constr_ty__B_2__m__assume).rec__constr_ty__a_acc__is_null_pointer = true)) and
+  ((constr_ty__B_2__m__assume).rec__constr_ty__a_acc__pointer_address = us_next_pointer_address2)) then true else false),
+  (if ((constr_ty__B_2__m__assume).rec__constr_ty__a_acc__pointer_value = of_array(to_array(temp___218),
+  first1(temp___218), last1(temp___218))) then true else false)) = true) and
+  (exists m__pointer_value:us_t.
+  ((m__pointer_value = (constr_ty__B_2__m__assume).rec__constr_ty__a_acc__pointer_value) and
+  (exists m__pointer_address:int.
+  ((m__pointer_address = (constr_ty__B_2__m__assume).rec__constr_ty__a_acc__pointer_address) and
+  (exists m__is_null_pointer:bool.
+  ((m__is_null_pointer = (constr_ty__B_2__m__assume).rec__constr_ty__a_acc__is_null_pointer) and
+  (dynamic_invariant1({ rec__constr_ty__a_acc__is_null_pointer =
+  m__is_null_pointer; rec__constr_ty__a_acc__pointer_address =
+  m__pointer_address; rec__constr_ty__a_acc__pointer_value = m__pointer_value
+  }, true, false, true, true) and (let constr_ty__B_2__n__assume = of_base1({
+  rec__constr_ty__a_acc__is_null_pointer = m__is_null_pointer;
+  rec__constr_ty__a_acc__pointer_address = m__pointer_address;
+  rec__constr_ty__a_acc__pointer_value = m__pointer_value }) : us_rep4 in
+  (exists n__pointer_value:us_t.
+  ((n__pointer_value = (constr_ty__B_2__n__assume).rec__constr_ty__a_acc__pointer_value2) and
+  (exists n__pointer_address:int.
+  ((n__pointer_address = (constr_ty__B_2__n__assume).rec__constr_ty__a_acc__pointer_address2) and
+  (exists n__is_null_pointer:bool.
+  ((n__is_null_pointer = (constr_ty__B_2__n__assume).rec__constr_ty__a_acc__is_null_pointer2) and
+  (dynamic_invariant2({ rec__constr_ty__a_acc__is_null_pointer2 =
+  n__is_null_pointer; rec__constr_ty__a_acc__pointer_address2 =
+  n__pointer_address; rec__constr_ty__a_acc__pointer_value2 =
+  n__pointer_value }, true, false, true, true, i1) and (i1 = temp___211)))))))))))))))))))))))))))) ->
+  rec__constr_ty__a_acc_2__pointer_value__pred({
+  rec__constr_ty__a_acc__is_null_pointer1 = w__is_null_pointer;
+  rec__constr_ty__a_acc__pointer_address1 = w__pointer_address;
+  rec__constr_ty__a_acc__pointer_value1 = w__pointer_value }))))))))))))))))))))))))))))))))

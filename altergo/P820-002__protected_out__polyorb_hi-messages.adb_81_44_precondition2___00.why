@@ -1,0 +1,1468 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type t
+
+logic tqtint : t -> int
+
+axiom tqtaxiom : (forall i:t. (0 <= tqtint(i)))
+
+axiom tqtaxiom1 : (forall i:t. (tqtint(i) <= 255))
+
+logic nth : t, int -> bool
+
+axiom nth_out_of_bound :
+  (forall x:t. forall n:int. (((n <  0) or (8 <= n)) -> (nth(x, n) = false)))
+
+logic zeros : t
+
+axiom Nth_zeros : (forall n:int. (nth(zeros, n) = false))
+
+logic one : t
+
+logic ones : t
+
+axiom Nth_ones :
+  (forall n:int. (((0 <= n) and (n <  8)) -> (nth(ones, n) = true)))
+
+logic bw_and : t, t -> t
+
+axiom Nth_bw_and :
+  (forall v1:t. forall v2:t. forall n:int. (((0 <= n) and (n <  8)) ->
+  (nth(bw_and(v1, v2), n) = andb(nth(v1, n), nth(v2, n)))))
+
+logic bw_or : t, t -> t
+
+axiom Nth_bw_or :
+  (forall v1:t. forall v2:t. forall n:int. (((0 <= n) and (n <  8)) ->
+  (nth(bw_or(v1, v2), n) = orb(nth(v1, n), nth(v2, n)))))
+
+logic bw_xor : t, t -> t
+
+axiom Nth_bw_xor :
+  (forall v1:t. forall v2:t. forall n:int. (((0 <= n) and (n <  8)) ->
+  (nth(bw_xor(v1, v2), n) = xorb(nth(v1, n), nth(v2, n)))))
+
+logic bw_not : t -> t
+
+axiom Nth_bw_not :
+  (forall v:t. forall n:int. (((0 <= n) and (n <  8)) -> (nth(bw_not(v),
+  n) = notb(nth(v, n)))))
+
+logic lsr : t, int -> t
+
+axiom Lsr_nth_low :
+  (forall b:t. forall n:int. forall s:int. ((0 <= s) -> ((0 <= n) ->
+  (((n + s) <  8) -> (nth(lsr(b, s), n) = nth(b, (n + s)))))))
+
+axiom Lsr_nth_high :
+  (forall b:t. forall n:int. forall s:int. ((0 <= s) -> ((0 <= n) ->
+  ((8 <= (n + s)) -> (nth(lsr(b, s), n) = false)))))
+
+axiom lsr_zeros : (forall x:t. (lsr(x, 0) = x))
+
+logic asr : t, int -> t
+
+axiom Asr_nth_low :
+  (forall b:t. forall n:int. forall s:int. ((0 <= s) -> (((0 <= n) and
+  (n <  8)) -> (((n + s) <  8) -> (nth(asr(b, s), n) = nth(b, (n + s)))))))
+
+axiom Asr_nth_high :
+  (forall b:t. forall n:int. forall s:int. ((0 <= s) -> (((0 <= n) and
+  (n <  8)) -> ((8 <= (n + s)) -> (nth(asr(b, s), n) = nth(b, (8 - 1)))))))
+
+axiom asr_zeros : (forall x:t. (asr(x, 0) = x))
+
+logic lsl : t, int -> t
+
+axiom Lsl_nth_high :
+  (forall b:t. forall n:int. forall s:int. (((0 <= s) and ((s <= n) and
+  (n <  8))) -> (nth(lsl(b, s), n) = nth(b, (n - s)))))
+
+axiom Lsl_nth_low :
+  (forall b:t. forall n:int. forall s:int. (((0 <= n) and (n <  s)) ->
+  (nth(lsl(b, s), n) = false)))
+
+axiom lsl_zeros : (forall x:t. (lsl(x, 0) = x))
+
+axiom Div_mod :
+  (forall x:int. forall y:int. ((not (y = 0)) ->
+  (x = ((y * (x / y)) + (x % y)))))
+
+axiom Mod_bound :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (0 <= (x % y))))
+
+axiom Mod_bound1 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> ((x % y) <  abs_int(y))))
+
+axiom Div_unique :
+  (forall x:int. forall y:int. forall q:int. ((0 <  y) ->
+  ((((q * y) <= x) and (x <  ((q * y) + y))) -> ((x / y) = q))))
+
+axiom Div_bound :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= (x / y))))
+
+axiom Div_bound1 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> ((x / y) <= x)))
+
+axiom Mod_1 : (forall x:int. ((x % 1) = 0))
+
+axiom Div_1 : (forall x:int. ((x / 1) = x))
+
+axiom Div_inf :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> ((x / y) = 0)))
+
+axiom Div_inf_neg :
+  (forall x:int. forall y:int. (((0 <  x) and (x <= y)) ->
+  (((-x) / y) = (- 1))))
+
+axiom Mod_0 : (forall y:int. ((not (y = 0)) -> ((0 % y) = 0)))
+
+axiom Div_1_left : (forall y:int. ((1 <  y) -> ((1 / y) = 0)))
+
+axiom Div_minus1_left : (forall y:int. ((1 <  y) -> (((- 1) / y) = (- 1))))
+
+axiom Mod_1_left : (forall y:int. ((1 <  y) -> ((1 % y) = 1)))
+
+axiom Mod_minus1_left :
+  (forall y:int [((- 1) % y)]. ((1 <  y) -> (((- 1) % y) = (y - 1))))
+
+axiom Div_mult :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) / x)].
+  ((0 <  x) -> ((((x * y) + z) / x) = (y + (z / x)))))
+
+axiom Mod_mult :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) % x)].
+  ((0 <  x) -> ((((x * y) + z) % x) = (z % x))))
+
+logic rotate_right : t, int -> t
+
+axiom Nth_rotate_right :
+  (forall v:t. forall n:int. forall i:int. (((0 <= i) and (i <  8)) ->
+  ((0 <= n) -> (nth(rotate_right(v, n), i) = nth(v, ((i + n) % 8))))))
+
+logic rotate_left : t, int -> t
+
+axiom Nth_rotate_left :
+  (forall v:t. forall n:int. forall i:int. (((0 <= i) and (i <  8)) ->
+  ((0 <= n) -> (nth(rotate_left(v, n), i) = nth(v, ((i - n) % 8))))))
+
+logic pow2 : int -> int
+
+axiom Power_0 : (pow2(0) = 1)
+
+axiom Power_s : (forall n:int. ((0 <= n) -> (pow2((n + 1)) = (2 * pow2(n)))))
+
+axiom Power_1 : (pow2(1) = 2)
+
+axiom Power_sum :
+  (forall n:int. forall m:int. (((0 <= n) and (0 <= m)) ->
+  (pow2((n + m)) = (pow2(n) * pow2(m)))))
+
+axiom pow2pos : (forall i:int. ((0 <= i) -> (0 <  pow2(i))))
+
+axiom pow2_0 : (pow2(0) = 1)
+
+axiom pow2_1 : (pow2(1) = 2)
+
+axiom pow2_2 : (pow2(2) = 4)
+
+axiom pow2_3 : (pow2(3) = 8)
+
+axiom pow2_4 : (pow2(4) = 16)
+
+axiom pow2_5 : (pow2(5) = 32)
+
+axiom pow2_6 : (pow2(6) = 64)
+
+axiom pow2_7 : (pow2(7) = 128)
+
+axiom pow2_8 : (pow2(8) = 256)
+
+axiom pow2_9 : (pow2(9) = 512)
+
+axiom pow2_10 : (pow2(10) = 1024)
+
+axiom pow2_11 : (pow2(11) = 2048)
+
+axiom pow2_12 : (pow2(12) = 4096)
+
+axiom pow2_13 : (pow2(13) = 8192)
+
+axiom pow2_14 : (pow2(14) = 16384)
+
+axiom pow2_15 : (pow2(15) = 32768)
+
+axiom pow2_16 : (pow2(16) = 65536)
+
+axiom pow2_17 : (pow2(17) = 131072)
+
+axiom pow2_18 : (pow2(18) = 262144)
+
+axiom pow2_19 : (pow2(19) = 524288)
+
+axiom pow2_20 : (pow2(20) = 1048576)
+
+axiom pow2_21 : (pow2(21) = 2097152)
+
+axiom pow2_22 : (pow2(22) = 4194304)
+
+axiom pow2_23 : (pow2(23) = 8388608)
+
+axiom pow2_24 : (pow2(24) = 16777216)
+
+axiom pow2_25 : (pow2(25) = 33554432)
+
+axiom pow2_26 : (pow2(26) = 67108864)
+
+axiom pow2_27 : (pow2(27) = 134217728)
+
+axiom pow2_28 : (pow2(28) = 268435456)
+
+axiom pow2_29 : (pow2(29) = 536870912)
+
+axiom pow2_30 : (pow2(30) = 1073741824)
+
+axiom pow2_31 : (pow2(31) = 2147483648)
+
+axiom pow2_32 : (pow2(32) = 4294967296)
+
+axiom pow2_33 : (pow2(33) = 8589934592)
+
+axiom pow2_34 : (pow2(34) = 17179869184)
+
+axiom pow2_35 : (pow2(35) = 34359738368)
+
+axiom pow2_36 : (pow2(36) = 68719476736)
+
+axiom pow2_37 : (pow2(37) = 137438953472)
+
+axiom pow2_38 : (pow2(38) = 274877906944)
+
+axiom pow2_39 : (pow2(39) = 549755813888)
+
+axiom pow2_40 : (pow2(40) = 1099511627776)
+
+axiom pow2_41 : (pow2(41) = 2199023255552)
+
+axiom pow2_42 : (pow2(42) = 4398046511104)
+
+axiom pow2_43 : (pow2(43) = 8796093022208)
+
+axiom pow2_44 : (pow2(44) = 17592186044416)
+
+axiom pow2_45 : (pow2(45) = 35184372088832)
+
+axiom pow2_46 : (pow2(46) = 70368744177664)
+
+axiom pow2_47 : (pow2(47) = 140737488355328)
+
+axiom pow2_48 : (pow2(48) = 281474976710656)
+
+axiom pow2_49 : (pow2(49) = 562949953421312)
+
+axiom pow2_50 : (pow2(50) = 1125899906842624)
+
+axiom pow2_51 : (pow2(51) = 2251799813685248)
+
+axiom pow2_52 : (pow2(52) = 4503599627370496)
+
+axiom pow2_53 : (pow2(53) = 9007199254740992)
+
+axiom pow2_54 : (pow2(54) = 18014398509481984)
+
+axiom pow2_55 : (pow2(55) = 36028797018963968)
+
+axiom pow2_56 : (pow2(56) = 72057594037927936)
+
+axiom pow2_57 : (pow2(57) = 144115188075855872)
+
+axiom pow2_58 : (pow2(58) = 288230376151711744)
+
+axiom pow2_59 : (pow2(59) = 576460752303423488)
+
+axiom pow2_60 : (pow2(60) = 1152921504606846976)
+
+axiom pow2_61 : (pow2(61) = 2305843009213693952)
+
+axiom pow2_62 : (pow2(62) = 4611686018427387904)
+
+axiom pow2_63 : (pow2(63) = 9223372036854775808)
+
+axiom pow2_64 : (pow2(64) = 18446744073709551616)
+
+logic is_signed_positive : t -> prop
+
+logic of_int : int -> t
+
+function to_int(x: t) : int =
+  (if is_signed_positive(x) then tqtint(x) else (-(256 - tqtint(x))))
+
+axiom to_uint_extensionality :
+  (forall v:t. forall vqt:t. ((tqtint(v) = tqtint(vqt)) -> (v = vqt)))
+
+axiom to_int_extensionality :
+  (forall v:t. forall vqt:t. ((to_int(v) = to_int(vqt)) -> (v = vqt)))
+
+predicate uint_in_range(i: int) = ((0 <= i) and (i <= 255))
+
+axiom to_uint_bounds : (forall v:t. (0 <= tqtint(v)))
+
+axiom to_uint_bounds1 : (forall v:t. (tqtint(v) <  256))
+
+axiom to_uint_of_int :
+  (forall i:int. (((0 <= i) and (i <  256)) -> (tqtint(of_int(i)) = i)))
+
+logic size_bv : t
+
+axiom to_uint_size_bv : (tqtint(size_bv) = 8)
+
+axiom to_uint_zeros : (tqtint(zeros) = 0)
+
+axiom to_uint_one : (tqtint(one) = 1)
+
+axiom to_uint_ones : (tqtint(ones) = 255)
+
+predicate ult(x: t, y: t) = (tqtint(x) <  tqtint(y))
+
+predicate ule(x: t, y: t) = (tqtint(x) <= tqtint(y))
+
+predicate ugt(x: t, y: t) = (tqtint(y) <  tqtint(x))
+
+predicate uge(x: t, y: t) = (tqtint(y) <= tqtint(x))
+
+predicate slt(v1: t, v2: t) = (to_int(v1) <  to_int(v2))
+
+predicate sle(v1: t, v2: t) = (to_int(v1) <= to_int(v2))
+
+predicate sgt(v1: t, v2: t) = (to_int(v2) <  to_int(v1))
+
+predicate sge(v1: t, v2: t) = (to_int(v2) <= to_int(v1))
+
+axiom positive_is_ge_zeros :
+  (forall x:t. (is_signed_positive(x) -> sge(x, zeros)))
+
+axiom positive_is_ge_zeros1 :
+  (forall x:t. (sge(x, zeros) -> is_signed_positive(x)))
+
+logic add : t, t -> t
+
+axiom to_uint_add_bounded :
+  (forall v1:t. forall v2:t. (((tqtint(v1) + tqtint(v2)) <  256) ->
+  (tqtint(add(v1, v2)) = (tqtint(v1) + tqtint(v2)))))
+
+logic sub : t, t -> t
+
+axiom to_uint_sub_bounded :
+  (forall v1:t. forall v2:t. (((0 <= (tqtint(v1) - tqtint(v2))) and
+  ((tqtint(v1) - tqtint(v2)) <  256)) -> (tqtint(sub(v1,
+  v2)) = (tqtint(v1) - tqtint(v2)))))
+
+logic neg : t -> t
+
+axiom to_uint_neg : (forall v:t. (tqtint(neg(v)) = ((-tqtint(v)) % 256)))
+
+logic mul : t, t -> t
+
+axiom to_uint_mul_bounded :
+  (forall v1:t. forall v2:t. (((tqtint(v1) * tqtint(v2)) <  256) ->
+  (tqtint(mul(v1, v2)) = (tqtint(v1) * tqtint(v2)))))
+
+logic udiv : t, t -> t
+
+axiom to_uint_udiv :
+  (forall v1:t. forall v2:t. (tqtint(udiv(v1,
+  v2)) = (tqtint(v1) / tqtint(v2))))
+
+logic urem : t, t -> t
+
+axiom to_uint_urem :
+  (forall v1:t. forall v2:t. (tqtint(urem(v1,
+  v2)) = (tqtint(v1) % tqtint(v2))))
+
+logic lsr_bv : t, t -> t
+
+axiom lsr_bv_is_lsr :
+  (forall x:t. forall n:t. (lsr_bv(x, n) = lsr(x, tqtint(n))))
+
+axiom to_uint_lsr :
+  (forall v:t. forall n:t. (tqtint(lsr_bv(v,
+  n)) = (tqtint(v) / pow2(tqtint(n)))))
+
+logic asr_bv : t, t -> t
+
+axiom asr_bv_is_asr :
+  (forall x:t. forall n:t. (asr_bv(x, n) = asr(x, tqtint(n))))
+
+logic lsl_bv : t, t -> t
+
+axiom lsl_bv_is_lsl :
+  (forall x:t. forall n:t. (lsl_bv(x, n) = lsl(x, tqtint(n))))
+
+axiom to_uint_lsl :
+  (forall v:t. forall n:t. (tqtint(lsl_bv(v,
+  n)) = ((tqtint(v) * pow2(tqtint(n))) % 256)))
+
+logic rotate_right_bv : t, t -> t
+
+logic rotate_left_bv : t, t -> t
+
+axiom rotate_left_bv_is_rotate_left :
+  (forall v:t. forall n:t. (rotate_left_bv(v, n) = rotate_left(v,
+  tqtint(n))))
+
+axiom rotate_right_bv_is_rotate_right :
+  (forall v:t. forall n:t. (rotate_right_bv(v, n) = rotate_right(v,
+  tqtint(n))))
+
+logic nth_bv : t, t -> bool
+
+axiom Nth_bv_is_nth :
+  (forall x:t. forall i:t. (nth(x, tqtint(i)) = nth_bv(x, i)))
+
+axiom Nth_bv_is_nth2 :
+  (forall x:t. forall i:int. (((0 <= i) and (i <  256)) -> (nth_bv(x,
+  of_int(i)) = nth(x, i))))
+
+logic eq_sub_bv : t, t, t, t -> prop
+
+predicate eq_sub(a: t, b: t, i: int, n: int) =
+  (forall j:int. (((i <= j) and (j <  (i + n))) -> (nth(a, j) = nth(b, j))))
+
+axiom eq_sub_equiv :
+  (forall a:t. forall b:t. forall i:t. forall n:t. (eq_sub(a, b, tqtint(i),
+  tqtint(n)) -> eq_sub_bv(a, b, i, n)))
+
+axiom eq_sub_equiv1 :
+  (forall a:t. forall b:t. forall i:t. forall n:t. (eq_sub_bv(a, b, i, n) ->
+  eq_sub(a, b, tqtint(i), tqtint(n))))
+
+axiom Extensionality :
+  (forall x:t. forall y:t [eq_sub(x, y, 0, 8)]. (eq_sub(x, y, 0, 8) ->
+  (x = y)))
+
+type t__ref = { t__content : t
+}
+
+function bool_eq(x: t, y: t) : bool = (if (x = y) then true else false)
+
+function bool_ne(x: t, y: t) : bool = (if (not (x = y)) then true else false)
+
+function bool_lt(x: t, y: t) : bool = (if ult(x, y) then true else false)
+
+function bool_le(x: t, y: t) : bool = (if ule(x, y) then true else false)
+
+function bool_gt(x: t, y: t) : bool = (if ugt(x, y) then true else false)
+
+function bool_ge(x: t, y: t) : bool = (if uge(x, y) then true else false)
+
+logic power : t, int -> t
+
+axiom Power_01 : (forall x:t. (power(x, 0) = one))
+
+axiom Power_11 : (forall x:t. (power(x, 1) = x))
+
+axiom Power_s1 :
+  (forall x:t. forall n:int. ((0 <= n) -> (power(x, (n + 1)) = mul(x,
+  power(x, n)))))
+
+axiom Power_s_alt :
+  (forall x:t. forall n:int. ((0 <  n) -> (power(x, n) = mul(x, power(x,
+  (n - 1))))))
+
+axiom Power_sum1 :
+  (forall x:t. forall n:int. forall m:int. ((0 <= n) -> ((0 <= m) ->
+  (power(x, (n + m)) = mul(power(x, n), power(x, m))))))
+
+axiom Power_mult :
+  (forall x:t. forall n:int. forall m:int. ((0 <= n) -> ((0 <= m) ->
+  (power(x, (n * m)) = power(power(x, n), m)))))
+
+axiom Power_mult2 :
+  (forall x:t. forall y:t. forall n:int. ((0 <= n) -> (power(mul(x, y),
+  n) = mul(power(x, n), power(y, n)))))
+
+function bv_min(x: t, y: t) : t = (if ule(x, y) then x else y)
+
+function bv_max(x: t, y: t) : t = (if ule(x, y) then y else x)
+
+function min(x: int, y: int) : int = (if (x <= y) then x else y)
+
+function max(x: int, y: int) : int = (if (x <= y) then y else x)
+
+axiom Min_r : (forall x:int. forall y:int. ((y <= x) -> (min(x, y) = y)))
+
+axiom Max_l : (forall x:int. forall y:int. ((y <= x) -> (max(x, y) = x)))
+
+axiom Min_comm : (forall x:int. forall y:int. (min(x, y) = min(y, x)))
+
+axiom Max_comm : (forall x:int. forall y:int. (max(x, y) = max(y, x)))
+
+axiom Min_assoc :
+  (forall x:int. forall y:int. forall z:int. (min(min(x, y), z) = min(x,
+  min(y, z))))
+
+axiom Max_assoc :
+  (forall x:int. forall y:int. forall z:int. (max(max(x, y), z) = max(x,
+  max(y, z))))
+
+axiom bv_min_to_uint :
+  (forall x:t. forall y:t. (tqtint(bv_min(x, y)) = min(tqtint(x),
+  tqtint(y))))
+
+axiom bv_max_to_uint :
+  (forall x:t. forall y:t. (tqtint(bv_max(x, y)) = max(tqtint(x),
+  tqtint(y))))
+
+type stream_element
+
+logic attr__ATTRIBUTE_MODULUS : t
+
+function bool_eq1(x: t, y: t) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : t -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> t
+
+logic user_eq : stream_element, stream_element -> bool
+
+logic dummy : stream_element
+
+type stream_element__ref = { stream_element__content : stream_element
+}
+
+function stream_element__ref_stream_element__content__projection(a: stream_element__ref) : stream_element =
+  (a).stream_element__content
+
+logic to_rep : stream_element -> t
+
+logic of_rep : t -> stream_element
+
+axiom inversion_axiom :
+  (forall x:stream_element [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom coerce_axiom :
+  (forall x:t [to_rep(of_rep(x))]. (to_rep(of_rep(x)) = x))
+
+function to_int1(x: stream_element) : int = tqtint(to_rep(x))
+
+axiom range_int_axiom :
+  (forall x:stream_element [to_int1(x)]. uint_in_range(to_int1(x)))
+
+type map__ref = { map__content : (int,stream_element) farray
+}
+
+logic slide : (int,stream_element) farray, int,
+  int -> (int,stream_element) farray
+
+axiom slide_eq :
+  (forall a:(int,stream_element) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,stream_element) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq2(a: (int,stream_element) farray, a__first: int,
+  a__last: int, b: (int,stream_element) farray, b__first: int,
+  b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,stream_element) farray.
+  forall b:(int,stream_element) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,stream_element) farray.
+  forall b:(int,stream_element) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,stream_element) farray.
+  forall b:(int,stream_element) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,stream_element) farray.
+  forall b:(int,stream_element) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)]))))))))
+
+logic to_buffer : int -> (int,stream_element) farray
+
+logic to_buffer__function_guard : (int,stream_element) farray, int -> prop
+
+type stream_element_count
+
+logic stream_element_countqtint : stream_element_count -> int
+
+axiom stream_element_countqtaxiom :
+  (forall i:stream_element_count. (0 <= stream_element_countqtint(i)))
+
+axiom stream_element_countqtaxiom1 :
+  (forall i:stream_element_count.
+  (stream_element_countqtint(i) <= 9223372036854775807))
+
+predicate in_range(x: int) = ((0 <= x) and (x <= 9223372036854775807))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq1 : stream_element_count, stream_element_count -> bool
+
+logic dummy1 : stream_element_count
+
+type stream_element_count__ref = { stream_element_count__content :
+stream_element_count
+}
+
+function stream_element_count__ref_stream_element_count__content__projection(a: stream_element_count__ref) : stream_element_count =
+  (a).stream_element_count__content
+
+predicate dynamic_invariant(temp___expr_209: int, temp___is_init_205: bool,
+  temp___skip_constant_206: bool, temp___do_toplevel_207: bool,
+  temp___do_typ_inv_208: bool) = (((temp___is_init_205 = true) or
+  (0 <= 9223372036854775807)) -> in_range(temp___expr_209))
+
+logic dummy2 : (int,stream_element) farray
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic user_eq2 : (int,stream_element) farray,
+  (int,stream_element) farray -> bool
+
+type pdu_index
+
+logic pdu_indexqtint : pdu_index -> int
+
+axiom pdu_indexqtaxiom : (forall i:pdu_index. (0 <= pdu_indexqtint(i)))
+
+axiom pdu_indexqtaxiom1 : (forall i:pdu_index. (pdu_indexqtint(i) <= 19))
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 19))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq3 : pdu_index, pdu_index -> bool
+
+logic dummy3 : pdu_index
+
+type pdu_index__ref = { pdu_index__content : pdu_index
+}
+
+function pdu_index__ref_pdu_index__content__projection(a: pdu_index__ref) : pdu_index =
+  (a).pdu_index__content
+
+function to_rep1(x: pdu_index) : int = pdu_indexqtint(x)
+
+logic of_rep1 : int -> pdu_index
+
+axiom inversion_axiom1 :
+  (forall x:pdu_index [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom : (forall x:pdu_index [to_rep1(x)]. in_range1(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type us_split_fields = {
+rec__ada___polyorb_hi__messages__message_type__content :
+(int,stream_element) farray;
+rec__ada___polyorb_hi__messages__message_type__first : pdu_index;
+rec__ada___polyorb_hi__messages__message_type__last : pdu_index
+}
+
+function us_split_fields_rec__ada___polyorb_hi__messages__message_type__content__projection(a: us_split_fields) : (int,stream_element) farray =
+  (a).rec__ada___polyorb_hi__messages__message_type__content
+
+function us_split_fields_rec__ada___polyorb_hi__messages__message_type__first__projection(a: us_split_fields) : pdu_index =
+  (a).rec__ada___polyorb_hi__messages__message_type__first
+
+function us_split_fields_rec__ada___polyorb_hi__messages__message_type__last__projection(a: us_split_fields) : pdu_index =
+  (a).rec__ada___polyorb_hi__messages__message_type__last
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq5(a: us_rep, b: us_rep) : bool =
+  (if (((bool_eq2(((a).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  1, 19,
+  ((b).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  1, 19) = true) and
+  (to_rep1(((a).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first) = to_rep1(((b).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first))) and
+  (to_rep1(((a).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last) = to_rep1(((b).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last))) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic ada___polyorb_hi__messages__message_type__content__first__bit : int
+
+logic ada___polyorb_hi__messages__message_type__content__last__bit : int
+
+logic ada___polyorb_hi__messages__message_type__content__position : int
+
+axiom ada___polyorb_hi__messages__message_type__content__first__bit_axiom :
+  (0 <= ada___polyorb_hi__messages__message_type__content__first__bit)
+
+axiom ada___polyorb_hi__messages__message_type__content__last__bit_axiom :
+  (ada___polyorb_hi__messages__message_type__content__first__bit <  ada___polyorb_hi__messages__message_type__content__last__bit)
+
+axiom ada___polyorb_hi__messages__message_type__content__position_axiom :
+  (0 <= ada___polyorb_hi__messages__message_type__content__position)
+
+logic ada___polyorb_hi__messages__message_type__first__first__bit : int
+
+logic ada___polyorb_hi__messages__message_type__first__last__bit : int
+
+logic ada___polyorb_hi__messages__message_type__first__position : int
+
+axiom ada___polyorb_hi__messages__message_type__first__first__bit_axiom :
+  (0 <= ada___polyorb_hi__messages__message_type__first__first__bit)
+
+axiom ada___polyorb_hi__messages__message_type__first__last__bit_axiom :
+  (ada___polyorb_hi__messages__message_type__first__first__bit <  ada___polyorb_hi__messages__message_type__first__last__bit)
+
+axiom ada___polyorb_hi__messages__message_type__first__position_axiom :
+  (0 <= ada___polyorb_hi__messages__message_type__first__position)
+
+logic ada___polyorb_hi__messages__message_type__last__first__bit : int
+
+logic ada___polyorb_hi__messages__message_type__last__last__bit : int
+
+logic ada___polyorb_hi__messages__message_type__last__position : int
+
+axiom ada___polyorb_hi__messages__message_type__last__first__bit_axiom :
+  (0 <= ada___polyorb_hi__messages__message_type__last__first__bit)
+
+axiom ada___polyorb_hi__messages__message_type__last__last__bit_axiom :
+  (ada___polyorb_hi__messages__message_type__last__first__bit <  ada___polyorb_hi__messages__message_type__last__last__bit)
+
+axiom ada___polyorb_hi__messages__message_type__last__position_axiom :
+  (0 <= ada___polyorb_hi__messages__message_type__last__position)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type message_type__ref = { message_type__content : us_rep
+}
+
+function message_type__ref_message_type__content__projection(a: message_type__ref) : us_rep =
+  (a).message_type__content
+
+logic valid : us_rep -> bool
+
+logic valid__function_guard : bool, us_rep -> prop
+
+logic empty_pdu : (int,stream_element) farray
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate default_initial_assumption(temp___expr_225: us_rep,
+  temp___skip_top_level_226: bool) =
+  (((((temp___expr_225).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content = empty_pdu) and
+  (to_rep1(((temp___expr_225).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first) = 1)) and
+  (to_rep1(((temp___expr_225).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last) = 0))
+
+type tpduP1
+
+logic tpduP1qtint : tpduP1 -> int
+
+axiom tpduP1qtaxiom : (forall i:tpduP1. (1 <= tpduP1qtint(i)))
+
+axiom tpduP1qtaxiom1 : (forall i:tpduP1. (tpduP1qtint(i) <= 19))
+
+predicate in_range2(x: int) = ((1 <= x) and (x <= 19))
+
+function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq5 : tpduP1, tpduP1 -> bool
+
+logic dummy5 : tpduP1
+
+type tpduP1__ref = { tpduP1__content : tpduP1
+}
+
+function tpduP1__ref_tpduP1__content__projection(a: tpduP1__ref) : tpduP1 =
+  (a).tpduP1__content
+
+axiom valid__def_axiom :
+  (forall message:us_rep [valid(message)]. ((valid(message) = true) ->
+  ((bool_eq2(((message).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  1, 19, empty_pdu, 1, 19) = true) or
+  (((1 <= to_rep1(((message).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first)) and
+  (to_rep1(((message).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last) <= 19)) and
+  (to_rep1(((message).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first) <= to_rep1(((message).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last))))))
+
+axiom valid__def_axiom1 :
+  (forall message:us_rep [valid(message)].
+  (((bool_eq2(((message).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  1, 19, empty_pdu, 1, 19) = true) or
+  (((1 <= to_rep1(((message).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first)) and
+  (to_rep1(((message).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last) <= 19)) and
+  (to_rep1(((message).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first) <= to_rep1(((message).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last)))) ->
+  (valid(message) = true)))
+
+logic length : us_rep -> int
+
+logic length__function_guard : int, us_rep -> prop
+
+predicate dynamic_invariant1(temp___expr_216: int, temp___is_init_212: bool,
+  temp___skip_constant_213: bool, temp___do_toplevel_214: bool,
+  temp___do_typ_inv_215: bool) = (((temp___is_init_212 = true) or
+  (0 <= 19)) -> in_range1(temp___expr_216))
+
+axiom length__post_axiom :
+  (forall m:us_rep. valid__function_guard(valid(m), m))
+
+axiom length__post_axiom1 :
+  (forall m:us_rep [length(m)]. ((valid(m) = true) -> (let result = length(m)
+  : int in (length__function_guard(result, m) -> dynamic_invariant1(result,
+  true, false, true, true)))))
+
+axiom length__def_axiom :
+  (forall m:us_rep [length(m)].
+  (length(m) = (if (bool_eq2(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  1, 19, empty_pdu, 1,
+  19) = true) then 0 else ((to_rep1(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last) - to_rep1(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first)) + 1))))
+
+type tstream_element_offsetB
+
+logic tstream_element_offsetBqtint : tstream_element_offsetB -> int
+
+axiom tstream_element_offsetBqtaxiom :
+  (forall i:tstream_element_offsetB.
+  ((- 9223372036854775808) <= tstream_element_offsetBqtint(i)))
+
+axiom tstream_element_offsetBqtaxiom1 :
+  (forall i:tstream_element_offsetB.
+  (tstream_element_offsetBqtint(i) <= 9223372036854775807))
+
+predicate in_range3(x: int) = (((- 9223372036854775808) <= x) and
+  (x <= 9223372036854775807))
+
+function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq6 : tstream_element_offsetB, tstream_element_offsetB -> bool
+
+logic dummy6 : tstream_element_offsetB
+
+type tstream_element_offsetB__ref = { tstream_element_offsetB__content :
+tstream_element_offsetB
+}
+
+function tstream_element_offsetB__ref_tstream_element_offsetB__content__projection(a: tstream_element_offsetB__ref) : tstream_element_offsetB =
+  (a).tstream_element_offsetB__content
+
+function to_rep2(x: tstream_element_offsetB) : int =
+  tstream_element_offsetBqtint(x)
+
+logic of_rep2 : int -> tstream_element_offsetB
+
+axiom inversion_axiom2 :
+  (forall x:tstream_element_offsetB [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
+
+axiom range_axiom1 :
+  (forall x:tstream_element_offsetB [to_rep2(x)]. in_range3(to_rep2(x)))
+
+axiom coerce_axiom2 :
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range3(x) ->
+  (to_rep2(of_rep2(x)) = x)))
+
+type stream_element_offset
+
+logic stream_element_offsetqtint : stream_element_offset -> int
+
+axiom stream_element_offsetqtaxiom :
+  (forall i:stream_element_offset.
+  ((- 9223372036854775808) <= stream_element_offsetqtint(i)))
+
+axiom stream_element_offsetqtaxiom1 :
+  (forall i:stream_element_offset.
+  (stream_element_offsetqtint(i) <= 9223372036854775807))
+
+predicate in_range4(x: int) = (((- 9223372036854775808) <= x) and
+  (x <= 9223372036854775807))
+
+function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq7 : stream_element_offset, stream_element_offset -> bool
+
+logic dummy7 : stream_element_offset
+
+type stream_element_offset__ref = { stream_element_offset__content :
+stream_element_offset
+}
+
+function stream_element_offset__ref_stream_element_offset__content__projection(a: stream_element_offset__ref) : stream_element_offset =
+  (a).stream_element_offset__content
+
+type t1
+
+logic first : t1 -> tstream_element_offsetB
+
+logic last : t1 -> tstream_element_offsetB
+
+logic mk : int, int -> t1
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range3(f) -> (in_range3(l) ->
+  (to_rep2(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range3(f) -> (in_range3(l) ->
+  (to_rep2(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range3(low) and (in_range3(high) and ((low <= high) ->
+  (in_range4(low) and in_range4(high)))))
+
+type us_t = { elts : (int,stream_element) farray; rt : t1
+}
+
+function to_array(a: us_t) : (int,stream_element) farray = (a).elts
+
+function of_array(a: (int,stream_element) farray, f: int, l: int) : us_t = {
+  elts = a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep2(first((a).rt))
+
+function last1(a: us_t) : int = to_rep2(last((a).rt))
+
+function length1(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic component__size1 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom component__size_axiom1 : (0 <= component__size1)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+function bool_eq9(x: us_t, y: us_t) : bool = bool_eq2((x).elts,
+  to_rep2(first((x).rt)), to_rep2(last((x).rt)), (y).elts,
+  to_rep2(first((y).rt)), to_rep2(last((y).rt)))
+
+logic user_eq8 : us_t, us_t -> bool
+
+logic dummy8 : us_t
+
+type stream_element_array__ref = { stream_element_array__content : us_t
+}
+
+function stream_element_array__ref_stream_element_array__content__projection(a: stream_element_array__ref) : us_t =
+  (a).stream_element_array__content
+
+logic is_empty : us_rep -> bool
+
+logic is_empty__function_guard : bool, us_rep -> prop
+
+axiom is_empty__post_axiom :
+  (forall m:us_rep. valid__function_guard(valid(m), m))
+
+axiom is_empty__def_axiom :
+  (forall m:us_rep [is_empty(m)]. ((is_empty(m) = true) ->
+  (bool_eq2(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  1, 19, empty_pdu, 1, 19) = true)))
+
+axiom is_empty__def_axiom1 :
+  (forall m:us_rep [is_empty(m)]. ((is_empty(m) = true) ->
+  (to_rep1(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first) = 1)))
+
+axiom is_empty__def_axiom2 :
+  (forall m:us_rep [is_empty(m)]. ((is_empty(m) = true) ->
+  (to_rep1(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last) = 0)))
+
+axiom is_empty__def_axiom3 :
+  (forall m:us_rep [is_empty(m)].
+  ((((bool_eq2(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  1, 19, empty_pdu, 1, 19) = true) and
+  (to_rep1(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first) = 1)) and
+  (to_rep1(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last) = 0)) ->
+  (is_empty(m) = true)))
+
+logic payload : us_rep -> us_t
+
+logic payload__function_guard : us_t, us_rep -> prop
+
+predicate dynamic_invariant2(temp___expr_193: us_t, temp___is_init_189: bool,
+  temp___skip_constant_190: bool, temp___do_toplevel_191: bool,
+  temp___do_typ_inv_192: bool) = ((not (temp___skip_constant_190 = true)) ->
+  dynamic_property((- 9223372036854775808), 9223372036854775807,
+  first1(temp___expr_193), last1(temp___expr_193)))
+
+type t19s__ref = { t19s__content : us_t
+}
+
+function t19s__ref_t19s__content__projection(a: t19s__ref) : us_t =
+  (a).t19s__content
+
+axiom payload__post_axiom :
+  (forall m:us_rep. valid__function_guard(valid(m), m))
+
+axiom payload__post_axiom1 :
+  (forall m:us_rep. is_empty__function_guard(is_empty(m), m))
+
+axiom payload__post_axiom2 :
+  (forall m:us_rep [payload(m)]. (((valid(m) = true) and
+  (not (is_empty(m) = true))) ->
+  (forall m1:us_rep. length__function_guard(length(m1), m1))))
+
+axiom payload__post_axiom3 :
+  (forall m:us_rep [payload(m)]. (((valid(m) = true) and
+  (not (is_empty(m) = true))) -> (let result = payload(m) : us_t in
+  (payload__function_guard(result, m) -> (length1(result) = length(m))))))
+
+axiom payload__post_axiom4 :
+  (forall m:us_rep [payload(m)]. (((valid(m) = true) and
+  (not (is_empty(m) = true))) -> (let result = payload(m) : us_t in
+  (payload__function_guard(result, m) -> dynamic_invariant2(result, true,
+  false, true, true)))))
+
+axiom payload__def_axiom :
+  (forall m:us_rep [payload(m)].
+  (payload(m) = (if (bool_eq2(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  1, 19, empty_pdu, 1, 19) = true) then of_array(empty_pdu, 1,
+  19) else of_array(to_array(of_array(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  to_rep1(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first),
+  to_rep1(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last))),
+  first1(of_array(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  to_rep1(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first),
+  to_rep1(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last))),
+  last1(of_array(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  to_rep1(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first),
+  to_rep1(((m).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last)))))))
+
+logic message : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic from : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic entity : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic l : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic r__first : tstream_element_offsetB
+
+logic r__last : tstream_element_offsetB
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic p : us_t
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+logic internal_code : int -> t
+
+logic internal_code__function_guard : t, int -> prop
+
+type target
+
+logic attr__ATTRIBUTE_MODULUS1 : t
+
+function bool_eq10(x: t, y: t) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : t -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> t
+
+logic user_eq9 : target, target -> bool
+
+logic dummy9 : target
+
+type target__ref = { target__content : target
+}
+
+function target__ref_target__content__2__projection(a: target__ref) : target =
+  (a).target__content
+
+logic rliteral : t
+
+axiom rliteral_axiom : (tqtint(rliteral) = 0)
+
+logic rliteral1 : t
+
+axiom rliteral_axiom1 : (tqtint(rliteral1) = 255)
+
+predicate dynamic_invariant3(temp___expr_392: t, temp___is_init_388: bool,
+  temp___skip_constant_389: bool, temp___do_toplevel_390: bool,
+  temp___do_typ_inv_391: bool) = true
+
+type source
+
+predicate in_range5(x: int) = ((0 <= x) and (x <= 3))
+
+function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE7 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check7 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE7 : us_image -> int
+
+logic user_eq10 : source, source -> bool
+
+logic dummy10 : source
+
+type source__ref = { source__content : source
+}
+
+function source__ref_source__content__2__projection(a: source__ref) : source =
+  (a).source__content
+
+predicate dynamic_invariant4(temp___expr_399: int, temp___is_init_395: bool,
+  temp___skip_constant_396: bool, temp___do_toplevel_397: bool,
+  temp___do_typ_inv_398: bool) = (((temp___is_init_395 = true) or
+  (0 <= 3)) -> in_range5(temp___expr_399))
+
+axiom internal_code__post_axiom :
+  (forall s:int [internal_code(s)]. (dynamic_invariant4(s, true, true, true,
+  true) -> (let result = internal_code(s) : t in
+  (internal_code__function_guard(result, s) -> dynamic_invariant3(result,
+  true, false, true, true)))))
+
+logic r5b : int
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+type entity_type
+
+function pos_to_rep(x: int) : int =
+  (if (x = 3) then 4 else (if (x = 2) then 3 else (if (x = 1) then 2 else 1)))
+
+predicate in_range6(x: int) = ((0 <= x) and (x <= 3))
+
+function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE8 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check8 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE8 : us_image -> int
+
+logic user_eq11 : entity_type, entity_type -> bool
+
+logic dummy11 : entity_type
+
+type entity_type__ref = { entity_type__content : entity_type
+}
+
+function entity_type__ref_entity_type__content__projection(a: entity_type__ref) : entity_type =
+  (a).entity_type__content
+
+predicate dynamic_invariant5(temp___expr_307: int, temp___is_init_303: bool,
+  temp___skip_constant_304: bool, temp___do_toplevel_305: bool,
+  temp___do_typ_inv_306: bool) = (((temp___is_init_303 = true) or
+  (0 <= 3)) -> in_range6(temp___expr_307))
+
+type trS__ref = { trS__content : us_t
+}
+
+function trS__ref_trS__content__projection(a: trS__ref) : us_t =
+  (a).trS__content
+
+type t2b__ref = { t2b__content : us_t
+}
+
+function t2b__ref_t2b__content__projection(a: t2b__ref) : us_t =
+  (a).t2b__content
+
+type t7b__ref = { t7b__content : us_t
+}
+
+function t7b__ref_t7b__content__projection(a: t7b__ref) : us_t =
+  (a).t7b__content
+
+logic ada___polyorb_hi__messages__encapsulate__r__aggregate_def : t, int,
+  int -> us_t
+
+axiom l__def_axiom :
+  (l = (to_rep1(((message).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last) + 4))
+
+predicate dynamic_invariant6(temp___expr_186: t, temp___is_init_182: bool,
+  temp___skip_constant_183: bool, temp___do_toplevel_184: bool,
+  temp___do_typ_inv_185: bool) = true
+
+axiom def_axiom :
+  (forall temp___542:t.
+  (forall temp___543:int. forall temp___544:int.
+  (dynamic_invariant6(temp___542, true, true, true, true) ->
+  (dynamic_property((- 9223372036854775808), 9223372036854775807, temp___543,
+  temp___544) ->
+  (first1(ada___polyorb_hi__messages__encapsulate__r__aggregate_def(temp___542,
+  temp___543, temp___544)) = temp___543)))))
+
+axiom def_axiom1 :
+  (forall temp___542:t.
+  (forall temp___543:int. forall temp___544:int.
+  (dynamic_invariant6(temp___542, true, true, true, true) ->
+  (dynamic_property((- 9223372036854775808), 9223372036854775807, temp___543,
+  temp___544) ->
+  (last1(ada___polyorb_hi__messages__encapsulate__r__aggregate_def(temp___542,
+  temp___543, temp___544)) = temp___544)))))
+
+axiom def_axiom2 :
+  (forall temp___542:t.
+  (forall temp___543:int. forall temp___544:int.
+  (dynamic_invariant6(temp___542, true, true, true, true) ->
+  (forall temp___545:int.
+  (to_rep((to_array(ada___polyorb_hi__messages__encapsulate__r__aggregate_def(temp___542,
+  temp___543, temp___544))[temp___545])) = temp___542)))))
+
+axiom p__def_axiom : payload__function_guard(payload(message), message)
+
+axiom p__def_axiom1 : (p = payload(message))
+
+logic ada___polyorb_hi__messages__empty_pdu__aggregate_def : t -> (int,stream_element) farray
+
+axiom empty_pdu__def_axiom :
+  (empty_pdu = ada___polyorb_hi__messages__empty_pdu__aggregate_def(rliteral))
+
+axiom def_axiom3 :
+  (forall temp___156:t. (dynamic_invariant6(temp___156, true, true, true,
+  true) ->
+  (forall temp___157:int.
+  (to_rep((ada___polyorb_hi__messages__empty_pdu__aggregate_def(temp___156)[temp___157])) = temp___156))))
+
+predicate dynamic_invariant7(temp___expr_179: int, temp___is_init_175: bool,
+  temp___skip_constant_176: bool, temp___do_toplevel_177: bool,
+  temp___do_typ_inv_178: bool) = (((temp___is_init_175 = true) or
+  ((- 9223372036854775808) <= 9223372036854775807)) ->
+  in_range4(temp___expr_179))
+
+predicate dynamic_invariant8(temp___expr_375: us_t, temp___is_init_371: bool,
+  temp___skip_constant_372: bool, temp___do_toplevel_373: bool,
+  temp___do_typ_inv_374: bool) = ((not (temp___skip_constant_372 = true)) ->
+  (dynamic_property(1, l, first1(temp___expr_375),
+  last1(temp___expr_375)) and ((first1(temp___expr_375) = 1) and
+  (last1(temp___expr_375) = l))))
+
+predicate default_initial_assumption1(temp___expr_377: us_t,
+  temp___skip_top_level_378: bool) = ((first1(temp___expr_377) = 1) and
+  (last1(temp___expr_377) = l))
+
+axiom r5b__def_axiom : length__function_guard(length(message), message)
+
+axiom r5b__def_axiom1 : (r5b = (4 + length(message)))
+
+ (* File "polyorb_hi-messages.ads", line 107, characters 0-0 *)
+goal defqtvc : (dynamic_invariant5(from, true, false, true, true) ->
+  (dynamic_invariant5(entity, true, false, true, true) ->
+  (valid__function_guard(valid(message), message) ->
+  (is_empty__function_guard(is_empty(message), message) ->
+  (((valid(message) = true) and (not (is_empty(message) = true))) ->
+  (forall o:int.
+  ((to_rep1(((message).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last) = o) ->
+  (let o1 = (o + 4) : int in (in_range(o1) -> ((o1 = l) ->
+  (dynamic_invariant(l, true, false, true, true) -> (let temp___546 =
+  ada___polyorb_hi__messages__encapsulate__r__aggregate_def(rliteral, 1, l)
+  : us_t in ((first1(temp___546) = 1) -> ((last1(temp___546) = l) ->
+  ((if (first1(temp___546) <= last1(temp___546)) then ((1 <= l) and
+  ((last1(temp___546) - first1(temp___546)) = (l - 1))) else (l <  1)) ->
+  (let ada___polyorb_hi__messages__encapsulate__r__assume =
+  of_array(to_array(temp___546), first1(temp___546), last1(temp___546))
+  : us_t in
+  (forall r:(int,stream_element) farray.
+  ((r = to_array(ada___polyorb_hi__messages__encapsulate__r__assume)) ->
+  ((to_rep2(r__first) = first1(ada___polyorb_hi__messages__encapsulate__r__assume)) ->
+  ((to_rep2(r__last) = last1(ada___polyorb_hi__messages__encapsulate__r__assume)) ->
+  ((dynamic_property(1, l, to_rep2(r__first), to_rep2(r__last)) and
+  ((to_rep2(r__first) = 1) and (to_rep2(r__last) = l))) -> (let o2 = message
+  : us_rep in (let ada___polyorb_hi__messages__encapsulate__p__assume =
+  payload(o2) : us_t in
+  ((forall o3:us_rep. length__function_guard(length(o3), o3)) ->
+  ((payload__function_guard(ada___polyorb_hi__messages__encapsulate__p__assume,
+  o2) and
+  (dynamic_invariant2(ada___polyorb_hi__messages__encapsulate__p__assume,
+  true, false, true, true) and
+  ((ada___polyorb_hi__messages__encapsulate__p__assume = (if (bool_eq2(((o2).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  1, 19, empty_pdu, 1, 19) = true) then of_array(empty_pdu, 1,
+  19) else of_array(to_array(of_array(((o2).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  to_rep1(((o2).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first),
+  to_rep1(((o2).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last))),
+  first1(of_array(((o2).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  to_rep1(((o2).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first),
+  to_rep1(((o2).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last))),
+  last1(of_array(((o2).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__content,
+  to_rep1(((o2).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__first),
+  to_rep1(((o2).us_split_fields1).rec__ada___polyorb_hi__messages__message_type__last)))))) and
+  (length1(ada___polyorb_hi__messages__encapsulate__p__assume) = length(o2))))) ->
+  ((ada___polyorb_hi__messages__encapsulate__p__assume = p) ->
+  (dynamic_invariant2(p, true, false, true, true) -> (let o3 = (l - 1)
+  : int in (in_range(o3) -> (let temp___549 = to_buffer(o3)
+  : (int,stream_element) farray in (to_buffer__function_guard(temp___549,
+  o3) ->
+  (forall usf:(int,stream_element) farray.
+  ((forall temp___550:int. (if ((1 <= temp___550) and
+   (temp___550 <= 2)) then ((usf[temp___550]) = (temp___549[temp___550])) else ((usf[temp___550]) = (r[temp___550])))) ->
+  (forall r1:(int,stream_element) farray. ((r1 = usf) -> (let o4 = entity
+  : int in (let o5 = internal_code(o4) : t in
+  ((internal_code__function_guard(o5, o4) and dynamic_invariant3(o5, true,
+  false, true, true)) ->
+  (forall o6:stream_element. ((to_rep(o6) = o5) ->
+  (((to_rep2(r__first) <= 3) and (3 <= to_rep2(r__last))) ->
+  (forall r2:(int,stream_element) farray. ((r2 = (r1[3 <- o6])) -> (let o7 =
+  from : int in (let o8 = internal_code(o7) : t in
+  ((internal_code__function_guard(o8, o7) and dynamic_invariant3(o8, true,
+  false, true, true)) ->
+  (forall o9:stream_element. ((to_rep(o9) = o8) ->
+  (((to_rep2(r__first) <= 4) and (4 <= to_rep2(r__last))) ->
+  (forall r3:(int,stream_element) farray. ((r3 = (r2[4 <- o9])) ->
+  ((forall o10:us_rep. valid__function_guard(valid(o10), o10)) ->
+  (valid(message) = true)))))))))))))))))))))))))))))))))))))))))))))))))))))

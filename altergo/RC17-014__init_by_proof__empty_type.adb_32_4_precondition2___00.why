@@ -1,0 +1,362 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_39))
+
+logic c : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+logic last : int
+
+predicate dynamic_property(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : integer, integer -> bool
+
+logic dummy2 : integer
+
+type empty__ref = { empty__content : integer
+}
+
+function empty__ref_empty__content__projection(a: empty__ref) : integer =
+  (a).empty__content
+
+type empty__init_wrapper = { rec__value : integer; attr__init : bool
+}
+
+function empty__init_wrapper_rec__value__projection(a: empty__init_wrapper) : integer =
+  (a).rec__value
+
+function empty__init_wrapper_attr__init__projection(a: empty__init_wrapper) : bool =
+  (a).attr__init
+
+type my_nat
+
+logic my_natqtint : my_nat -> int
+
+axiom my_natqtaxiom : (forall i:my_nat. (0 <= my_natqtint(i)))
+
+axiom my_natqtaxiom1 : (forall i:my_nat. (my_natqtint(i) <= 2147483647))
+
+predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq3 : my_nat, my_nat -> bool
+
+logic dummy3 : my_nat
+
+type my_nat__ref = { my_nat__content : my_nat
+}
+
+function my_nat__ref_my_nat__content__projection(a: my_nat__ref) : my_nat =
+  (a).my_nat__content
+
+type my_nat__init_wrapper = { rec__value1 : my_nat; attr__init1 : bool
+}
+
+function my_nat__init_wrapper_rec__value__projection(a: my_nat__init_wrapper) : my_nat =
+  (a).rec__value1
+
+function my_nat__init_wrapper_attr__init__projection(a: my_nat__init_wrapper) : bool =
+  (a).attr__init1
+
+function to_rep1(x: my_nat) : int = my_natqtint(x)
+
+logic of_rep1 : int -> my_nat
+
+axiom inversion_axiom1 :
+  (forall x:my_nat [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:my_nat [to_rep1(x)]. in_range3(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range3(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type us_split_fields = { rec__empty_type__rec__f : empty__init_wrapper;
+rec__empty_type__rec__g : my_nat__init_wrapper
+}
+
+function us_split_fields_rec__empty_type__rec__f__projection(a: us_split_fields) : empty__init_wrapper =
+  (a).rec__empty_type__rec__f
+
+function us_split_fields_rec__empty_type__rec__g__projection(a: us_split_fields) : my_nat__init_wrapper =
+  (a).rec__empty_type__rec__g
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq5(a: us_rep, b: us_rep) : bool =
+  (if ((to_rep((((a).us_split_fields1).rec__empty_type__rec__f).rec__value) = to_rep((((b).us_split_fields1).rec__empty_type__rec__f).rec__value)) and
+  (to_rep1((((a).us_split_fields1).rec__empty_type__rec__g).rec__value1) = to_rep1((((b).us_split_fields1).rec__empty_type__rec__g).rec__value1))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic empty_type__rec__f__first__bit : int
+
+logic empty_type__rec__f__last__bit : int
+
+logic empty_type__rec__f__position : int
+
+axiom empty_type__rec__f__first__bit_axiom :
+  (0 <= empty_type__rec__f__first__bit)
+
+axiom empty_type__rec__f__last__bit_axiom :
+  (empty_type__rec__f__first__bit <  empty_type__rec__f__last__bit)
+
+axiom empty_type__rec__f__position_axiom :
+  (0 <= empty_type__rec__f__position)
+
+logic empty_type__rec__g__first__bit : int
+
+logic empty_type__rec__g__last__bit : int
+
+logic empty_type__rec__g__position : int
+
+axiom empty_type__rec__g__first__bit_axiom :
+  (0 <= empty_type__rec__g__first__bit)
+
+axiom empty_type__rec__g__last__bit_axiom :
+  (empty_type__rec__g__first__bit <  empty_type__rec__g__last__bit)
+
+axiom empty_type__rec__g__position_axiom :
+  (0 <= empty_type__rec__g__position)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type rec____ref = { rec____content : us_rep
+}
+
+function rec____ref_rec____content__projection(a: rec____ref) : us_rep =
+  (a).rec____content
+
+predicate dynamic_invariant1(temp___expr_172: us_rep,
+  temp___is_init_168: bool, temp___skip_constant_169: bool,
+  temp___do_toplevel_170: bool, temp___do_typ_inv_171: bool) =
+  ((((((temp___expr_172).us_split_fields1).rec__empty_type__rec__f).attr__init = true) or
+  (1 <= last)) -> dynamic_property(1, last,
+  to_rep((((temp___expr_172).us_split_fields1).rec__empty_type__rec__f).rec__value)))
+
+predicate default_initial_assumption(temp___expr_173: us_rep,
+  temp___skip_top_level_174: bool) =
+  (((((temp___expr_173).us_split_fields1).rec__empty_type__rec__f).attr__init = false) and
+  ((((temp___expr_173).us_split_fields1).rec__empty_type__rec__g).attr__init1 = false))
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+predicate dynamic_invariant2(temp___expr_158: int, temp___is_init_154: bool,
+  temp___skip_constant_155: bool, temp___do_toplevel_156: bool,
+  temp___do_typ_inv_157: bool) = (((temp___is_init_154 = true) or
+  (1 <= last)) -> dynamic_property(1, last, temp___expr_158))
+
+axiom last__def_axiom : (last = c)
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+predicate dynamic_invariant3(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+predicate dynamic_invariant4(temp___expr_165: int, temp___is_init_161: bool,
+  temp___skip_constant_162: bool, temp___do_toplevel_163: bool,
+  temp___do_typ_inv_164: bool) = (((temp___is_init_161 = true) or
+  (0 <= 2147483647)) -> in_range3(temp___expr_165))
+
+logic rliteral : my_nat
+
+axiom rliteral_axiom : (my_natqtint(rliteral) = 3)
+
+ (* File "empty_type.adb", line 1, characters 0-0 *)
+goal defqtvc :
+  (forall y:int. forall x__split_fields:us_split_fields.
+  (dynamic_invariant(c, true, false, true, true) ->
+  (forall y__attr__init:bool. ((y__attr__init = false) ->
+  (dynamic_invariant2(y, y__attr__init, false, true, true) ->
+  (default_initial_assumption({ us_split_fields1 = x__split_fields },
+  false) -> (dynamic_invariant1({ us_split_fields1 = x__split_fields },
+  false, false, true, true) ->
+  (forall x__split_fields1:us_split_fields. ((x__split_fields1 = {
+  rec__empty_type__rec__f = (x__split_fields).rec__empty_type__rec__f;
+  rec__empty_type__rec__g = { rec__value1 = rliteral; attr__init1 = true }
+  }) -> (((x__split_fields1).rec__empty_type__rec__g).attr__init1 = true))))))))))

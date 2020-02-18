@@ -1,0 +1,1595 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+logic b : int -> bool
+
+logic b__function_guard : bool, int -> prop
+
+logic e : unit -> int
+
+logic e__function_guard : int, unit -> prop
+
+type enum
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : enum, enum -> bool
+
+logic dummy1 : enum
+
+type enum__ref = { enum__content : enum
+}
+
+function enum__ref_enum__content__projection(a: enum__ref) : enum =
+  (a).enum__content
+
+predicate dynamic_invariant1(temp___expr_181: int, temp___is_init_177: bool,
+  temp___skip_constant_178: bool, temp___do_toplevel_179: bool,
+  temp___do_typ_inv_180: bool) = (((temp___is_init_177 = true) or
+  (0 <= 2)) -> in_range2(temp___expr_181))
+
+axiom e__post_axiom :
+  (forall us_void_param:unit [e(us_void_param)]. (let result =
+  e(us_void_param) : int in (e__function_guard(result, us_void_param) ->
+  dynamic_invariant1(result, true, false, true, true))))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+type t1b
+
+logic t1bqtint : t1b -> int
+
+axiom t1bqtaxiom : (forall i:t1b. (1 <= t1bqtint(i)))
+
+axiom t1bqtaxiom1 : (forall i:t1b. (t1bqtint(i) <= 2))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 2))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : t1b, t1b -> bool
+
+logic dummy2 : t1b
+
+type t1b__ref = { t1b__content : t1b
+}
+
+function t1b__ref_t1b__content__projection(a: t1b__ref) : t1b =
+  (a).t1b__content
+
+ (* File "test_goto.adb", line 1, characters 0-0 *)
+goal defqtvc :
+  (forall spark__branch:bool. forall y:int. forall r2b:int. forall i:int.
+  (forall x:int. ((x = 0) -> (dynamic_invariant(x, true, false, true,
+  true) ->
+  (forall x1:int.
+  (((exists i1:int. ((i1 = 1) and ((andb((if (1 <= i1) then true else false),
+    (if (i1 <= 2) then true else false)) = true) and (((let o = b(1)
+    : bool in (b__function_guard(o, 1) and
+    (exists spark__branch1:bool. ((spark__branch1 = o) and
+    (if (spark__branch1 = true) then (exists spark__branch2:bool.
+                                     exists y1:int. exists r2b1:int.
+                                     exists i2:int. ((let o1 = e(void)
+                                     : int in ((e__function_guard(o1,
+                                     void) and dynamic_invariant1(o1, true,
+                                     false, true, true)) and
+                                     (exists spark__branch3:bool.
+                                     ((spark__branch3 = (if (o1 = 1) then true else false)) and
+                                     (if (spark__branch3 = true) then 
+                                     (exists x2:int. (((let o2 = b(3)
+                                     : bool in (b__function_guard(o2, 3) and
+                                     (exists spark__branch4:bool.
+                                     ((spark__branch4 = o2) and
+                                     ((spark__branch4 = true) and
+                                     ((y1 = 10) and (dynamic_invariant(y1,
+                                     true, false, true, true) and
+                                     ((r2b1 = y1) and
+                                     (dynamic_invariant(r2b1, true, false,
+                                     true, true) and
+                                     (exists spark__branch5:bool.
+                                     ((exists i3:int. ((i3 = 1) and
+                                      (if (andb((if (1 <= i3) then true else false),
+                                      (if (i3 <= r2b1) then true else false)) = true) then 
+                                      (exists x3:int.
+                                      ((andb((if dynamic_invariant(x3, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i2) and
+                                      (i2 <= r2b1)) then true else false)) = true) and
+                                      (((let o3 = (x3 + 1) : int in
+                                      (in_range1(o3) and ((x2 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch6:bool.
+                                      ((spark__branch6 = o4) and
+                                      ((not (spark__branch6 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch5 = o5) and
+                                      (not (spark__branch5 = true))))))))))))) or
+                                      (let o3 = (x3 + 1) : int in
+                                      (in_range1(o3) and ((x2 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      ((spark__branch5 = o4) and
+                                      (spark__branch5 = true)))))))) and
+                                      (i2 = r2b1)))) else (((spark__branch5 = spark__branch4) and
+                                      (x2 = x)) and (i2 = i3))))) and
+                                     (let o3 = b(30) : bool in
+                                     (b__function_guard(o3, 30) and
+                                     ((spark__branch2 = o3) and
+                                     (spark__branch2 = true))))))))))))))) or
+                                     (let o2 = b(3) : bool in
+                                     (b__function_guard(o2, 3) and
+                                     (exists spark__branch4:bool.
+                                     ((spark__branch4 = o2) and
+                                     (if (spark__branch4 = true) then ((y1 = 10) and
+                                     (dynamic_invariant(y1, true, false,
+                                     true, true) and (((r2b1 = y1) and
+                                     (dynamic_invariant(r2b1, true, false,
+                                     true, true) and
+                                     (exists spark__branch5:bool.
+                                     ((exists i3:int. ((i3 = 1) and
+                                      (if (andb((if (1 <= i3) then true else false),
+                                      (if (i3 <= r2b1) then true else false)) = true) then 
+                                      (exists x3:int.
+                                      ((andb((if dynamic_invariant(x3, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i2) and
+                                      (i2 <= r2b1)) then true else false)) = true) and
+                                      (((let o3 = (x3 + 1) : int in
+                                      (in_range1(o3) and ((x2 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch6:bool.
+                                      ((spark__branch6 = o4) and
+                                      ((not (spark__branch6 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch5 = o5) and
+                                      (not (spark__branch5 = true))))))))))))) or
+                                      (let o3 = (x3 + 1) : int in
+                                      (in_range1(o3) and ((x2 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      ((spark__branch5 = o4) and
+                                      (spark__branch5 = true)))))))) and
+                                      (i2 = r2b1)))) else (((spark__branch5 = spark__branch4) and
+                                      (x2 = x)) and (i2 = i3))))) and
+                                     (let o3 = b(30) : bool in
+                                     (b__function_guard(o3, 30) and
+                                     (exists spark__branch6:bool.
+                                     ((spark__branch6 = o3) and
+                                     ((not (spark__branch6 = true)) and
+                                     (let o4 = b(31) : bool in
+                                     (b__function_guard(o4, 31) and
+                                     ((spark__branch2 = o4) and
+                                     (not (spark__branch2 = true)))))))))))))) or
+                                     ((r2b1 = y1) and
+                                     (dynamic_invariant(r2b1, true, false,
+                                     true, true) and
+                                     ((exists i3:int. ((i3 = 1) and
+                                      ((andb((if (1 <= i3) then true else false),
+                                      (if (i3 <= r2b1) then true else false)) = true) and
+                                      (exists x3:int.
+                                      ((andb((if dynamic_invariant(x3, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i2) and
+                                      (i2 <= r2b1)) then true else false)) = true) and
+                                      (let o3 = (x3 + 1) : int in
+                                      (in_range1(o3) and ((x2 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch5:bool.
+                                      ((spark__branch5 = o4) and
+                                      ((not (spark__branch5 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch2 = o5) and
+                                      (spark__branch2 = true))))))))))))))))) or
+                                     (exists spark__branch5:bool.
+                                     ((exists i3:int. ((i3 = 1) and
+                                      (if (andb((if (1 <= i3) then true else false),
+                                      (if (i3 <= r2b1) then true else false)) = true) then 
+                                      (exists x3:int.
+                                      ((andb((if dynamic_invariant(x3, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i2) and
+                                      (i2 <= r2b1)) then true else false)) = true) and
+                                      (((let o3 = (x3 + 1) : int in
+                                      (in_range1(o3) and ((x2 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch6:bool.
+                                      ((spark__branch6 = o4) and
+                                      ((not (spark__branch6 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch5 = o5) and
+                                      (not (spark__branch5 = true))))))))))))) or
+                                      (let o3 = (x3 + 1) : int in
+                                      (in_range1(o3) and ((x2 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      ((spark__branch5 = o4) and
+                                      (spark__branch5 = true)))))))) and
+                                      (i2 = r2b1)))) else (((spark__branch5 = spark__branch4) and
+                                      (x2 = x)) and (i2 = i3))))) and
+                                     (let o3 = b(30) : bool in
+                                     (b__function_guard(o3, 30) and
+                                     (exists spark__branch6:bool.
+                                     ((spark__branch6 = o3) and
+                                     ((not (spark__branch6 = true)) and
+                                     (let o4 = b(31) : bool in
+                                     (b__function_guard(o4, 31) and
+                                     ((spark__branch2 = o4) and
+                                     (spark__branch2 = true))))))))))))))))) else (((((let o3 =
+                                     b(4) : bool in (b__function_guard(o3,
+                                     4) and ((spark__branch2 = o3) and
+                                     (not (spark__branch2 = true))))) and
+                                     (x2 = x)) and (y1 = y)) and
+                                     (r2b1 = r2b)) and (i2 = i)))))))) and
+                                     (x1 = 5))) else (((((let o2 = b(3)
+                                     : bool in (b__function_guard(o2, 3) and
+                                     (exists spark__branch4:bool.
+                                     ((spark__branch4 = o2) and
+                                     (if (spark__branch4 = true) then (spark__branch2 = spark__branch4) else (let o3 =
+                                     b(4) : bool in (b__function_guard(o3,
+                                     4) and ((spark__branch2 = o3) and
+                                     (not (spark__branch2 = true)))))))))) and
+                                     (x1 = 6)) and (y1 = y)) and
+                                     (r2b1 = r2b)) and (i2 = i))))))) and
+                                     (let o1 = b(5) : bool in
+                                     (b__function_guard(o1, 5) and
+                                     (exists spark__branch3:bool.
+                                     ((spark__branch3 = o1) and
+                                     ((not (spark__branch3 = true)) and
+                                     (let o2 = b(6) : bool in
+                                     (b__function_guard(o2, 6) and
+                                     (exists spark__branch4:bool.
+                                     ((spark__branch4 = o2) and
+                                     (spark__branch4 = true)))))))))))) else ((let o1 =
+    b(2) : bool in (b__function_guard(o1, 2) and
+    (exists spark__branch2:bool. ((spark__branch2 = o1) and
+    (if (spark__branch2 = true) then (let o2 = b(7) : bool in
+    (b__function_guard(o2, 7) and
+    (exists spark__branch3:bool. ((spark__branch3 = o2) and
+    (spark__branch3 = true))))) else (let o2 = b(7) : bool in
+    (b__function_guard(o2, 7) and
+    (exists spark__branch3:bool. ((spark__branch3 = o2) and
+    ((not (spark__branch3 = true)) and (let o3 = b(8) : bool in
+    (b__function_guard(o3, 8) and
+    (exists spark__branch4:bool. ((spark__branch4 = o3) and
+    (spark__branch4 = true))))))))))))))) and (x1 = x))))))) or
+    (exists spark__branch1:bool. exists y1:int. exists r2b1:int.
+    exists i2:int. ((let o = b(1) : bool in (b__function_guard(o, 1) and
+    (exists spark__branch2:bool. ((spark__branch2 = o) and
+    (if (spark__branch2 = true) then (exists spark__branch3:bool. ((let o1 =
+                                     e(void) : int in ((e__function_guard(o1,
+                                     void) and dynamic_invariant1(o1, true,
+                                     false, true, true)) and
+                                     (exists spark__branch4:bool.
+                                     ((spark__branch4 = (if (o1 = 1) then true else false)) and
+                                     (if (spark__branch4 = true) then 
+                                     (exists x2:int. (((let o2 = b(3)
+                                     : bool in (b__function_guard(o2, 3) and
+                                     (exists spark__branch5:bool.
+                                     ((spark__branch5 = o2) and
+                                     ((spark__branch5 = true) and
+                                     ((y1 = 10) and (dynamic_invariant(y1,
+                                     true, false, true, true) and
+                                     ((r2b1 = y1) and
+                                     (dynamic_invariant(r2b1, true, false,
+                                     true, true) and
+                                     (exists spark__branch6:bool.
+                                     ((exists i3:int. ((i3 = 1) and
+                                      (if (andb((if (1 <= i3) then true else false),
+                                      (if (i3 <= r2b1) then true else false)) = true) then 
+                                      (exists x3:int.
+                                      ((andb((if dynamic_invariant(x3, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i2) and
+                                      (i2 <= r2b1)) then true else false)) = true) and
+                                      (((let o3 = (x3 + 1) : int in
+                                      (in_range1(o3) and ((x2 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch7:bool.
+                                      ((spark__branch7 = o4) and
+                                      ((not (spark__branch7 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch6 = o5) and
+                                      (not (spark__branch6 = true))))))))))))) or
+                                      (let o3 = (x3 + 1) : int in
+                                      (in_range1(o3) and ((x2 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      ((spark__branch6 = o4) and
+                                      (spark__branch6 = true)))))))) and
+                                      (i2 = r2b1)))) else (((spark__branch6 = spark__branch5) and
+                                      (x2 = x)) and (i2 = i3))))) and
+                                     (let o3 = b(30) : bool in
+                                     (b__function_guard(o3, 30) and
+                                     ((spark__branch3 = o3) and
+                                     (spark__branch3 = true))))))))))))))) or
+                                     (let o2 = b(3) : bool in
+                                     (b__function_guard(o2, 3) and
+                                     (exists spark__branch5:bool.
+                                     ((spark__branch5 = o2) and
+                                     (if (spark__branch5 = true) then ((y1 = 10) and
+                                     (dynamic_invariant(y1, true, false,
+                                     true, true) and (((r2b1 = y1) and
+                                     (dynamic_invariant(r2b1, true, false,
+                                     true, true) and
+                                     (exists spark__branch6:bool.
+                                     ((exists i3:int. ((i3 = 1) and
+                                      (if (andb((if (1 <= i3) then true else false),
+                                      (if (i3 <= r2b1) then true else false)) = true) then 
+                                      (exists x3:int.
+                                      ((andb((if dynamic_invariant(x3, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i2) and
+                                      (i2 <= r2b1)) then true else false)) = true) and
+                                      (((let o3 = (x3 + 1) : int in
+                                      (in_range1(o3) and ((x2 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch7:bool.
+                                      ((spark__branch7 = o4) and
+                                      ((not (spark__branch7 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch6 = o5) and
+                                      (not (spark__branch6 = true))))))))))))) or
+                                      (let o3 = (x3 + 1) : int in
+                                      (in_range1(o3) and ((x2 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      ((spark__branch6 = o4) and
+                                      (spark__branch6 = true)))))))) and
+                                      (i2 = r2b1)))) else (((spark__branch6 = spark__branch5) and
+                                      (x2 = x)) and (i2 = i3))))) and
+                                     (let o3 = b(30) : bool in
+                                     (b__function_guard(o3, 30) and
+                                     (exists spark__branch7:bool.
+                                     ((spark__branch7 = o3) and
+                                     ((not (spark__branch7 = true)) and
+                                     (let o4 = b(31) : bool in
+                                     (b__function_guard(o4, 31) and
+                                     ((spark__branch3 = o4) and
+                                     (not (spark__branch3 = true)))))))))))))) or
+                                     ((r2b1 = y1) and
+                                     (dynamic_invariant(r2b1, true, false,
+                                     true, true) and
+                                     ((exists i3:int. ((i3 = 1) and
+                                      ((andb((if (1 <= i3) then true else false),
+                                      (if (i3 <= r2b1) then true else false)) = true) and
+                                      (exists x3:int.
+                                      ((andb((if dynamic_invariant(x3, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i2) and
+                                      (i2 <= r2b1)) then true else false)) = true) and
+                                      (let o3 = (x3 + 1) : int in
+                                      (in_range1(o3) and ((x2 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch6:bool.
+                                      ((spark__branch6 = o4) and
+                                      ((not (spark__branch6 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch3 = o5) and
+                                      (spark__branch3 = true))))))))))))))))) or
+                                     (exists spark__branch6:bool.
+                                     ((exists i3:int. ((i3 = 1) and
+                                      (if (andb((if (1 <= i3) then true else false),
+                                      (if (i3 <= r2b1) then true else false)) = true) then 
+                                      (exists x3:int.
+                                      ((andb((if dynamic_invariant(x3, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i2) and
+                                      (i2 <= r2b1)) then true else false)) = true) and
+                                      (((let o3 = (x3 + 1) : int in
+                                      (in_range1(o3) and ((x2 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch7:bool.
+                                      ((spark__branch7 = o4) and
+                                      ((not (spark__branch7 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch6 = o5) and
+                                      (not (spark__branch6 = true))))))))))))) or
+                                      (let o3 = (x3 + 1) : int in
+                                      (in_range1(o3) and ((x2 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      ((spark__branch6 = o4) and
+                                      (spark__branch6 = true)))))))) and
+                                      (i2 = r2b1)))) else (((spark__branch6 = spark__branch5) and
+                                      (x2 = x)) and (i2 = i3))))) and
+                                     (let o3 = b(30) : bool in
+                                     (b__function_guard(o3, 30) and
+                                     (exists spark__branch7:bool.
+                                     ((spark__branch7 = o3) and
+                                     ((not (spark__branch7 = true)) and
+                                     (let o4 = b(31) : bool in
+                                     (b__function_guard(o4, 31) and
+                                     ((spark__branch3 = o4) and
+                                     (spark__branch3 = true))))))))))))))))) else (((((let o3 =
+                                     b(4) : bool in (b__function_guard(o3,
+                                     4) and ((spark__branch3 = o3) and
+                                     (not (spark__branch3 = true))))) and
+                                     (x2 = x)) and (y1 = y)) and
+                                     (r2b1 = r2b)) and (i2 = i)))))))) and
+                                     (x1 = 5))) else (((((let o2 = b(3)
+                                     : bool in (b__function_guard(o2, 3) and
+                                     (exists spark__branch5:bool.
+                                     ((spark__branch5 = o2) and
+                                     (if (spark__branch5 = true) then (spark__branch3 = spark__branch5) else (let o3 =
+                                     b(4) : bool in (b__function_guard(o3,
+                                     4) and ((spark__branch3 = o3) and
+                                     (not (spark__branch3 = true)))))))))) and
+                                     (x1 = 6)) and (y1 = y)) and
+                                     (r2b1 = r2b)) and (i2 = i))))))) and
+                                     (let o1 = b(5) : bool in
+                                     (b__function_guard(o1, 5) and
+                                     (exists spark__branch4:bool.
+                                     ((spark__branch4 = o1) and
+                                     (if (spark__branch4 = true) then (spark__branch1 = spark__branch4) else (let o2 =
+                                     b(6) : bool in (b__function_guard(o2,
+                                     6) and ((spark__branch1 = o2) and
+                                     (not (spark__branch1 = true)))))))))))) else ((((let o1 =
+    b(2) : bool in (b__function_guard(o1, 2) and
+    (exists spark__branch3:bool. ((spark__branch3 = o1) and
+    (if (spark__branch3 = true) then ((let o2 = b(7) : bool in
+    (b__function_guard(o2, 7) and
+    (exists spark__branch4:bool. ((spark__branch4 = o2) and
+    ((not (spark__branch4 = true)) and (let o3 = b(8) : bool in
+    (b__function_guard(o3, 8) and (spark__branch1 = o3)))))))) and
+    (x1 = 3)) else (let o2 = b(7) : bool in (b__function_guard(o2, 7) and
+    (exists spark__branch4:bool. ((spark__branch4 = o2) and
+    ((not (spark__branch4 = true)) and (let o3 = b(8) : bool in
+    (b__function_guard(o3, 8) and ((spark__branch1 = o3) and
+    ((not (spark__branch1 = true)) and (x1 = 4))))))))))))))) and
+    (y1 = y)) and (r2b1 = r2b)) and (i2 = i))))))) and (let o = b(9)
+    : bool in (b__function_guard(o, 9) and
+    (exists spark__branch2:bool. ((spark__branch2 = o) and
+    ((not (spark__branch2 = true)) and (let o1 = b(10) : bool in
+    (b__function_guard(o1, 10) and
+    (exists spark__branch3:bool. ((spark__branch3 = o1) and
+    (spark__branch3 = true))))))))))))) or
+    (exists spark__branch1:bool. exists x2:int. exists y1:int.
+    exists r2b1:int. exists i2:int. (((((((let o = b(1) : bool in
+    (b__function_guard(o, 1) and
+    (exists spark__branch2:bool. ((spark__branch2 = o) and
+    (if (spark__branch2 = true) then (let o1 = e(void) : int in
+    ((e__function_guard(o1, void) and dynamic_invariant1(o1, true, false,
+    true, true)) and
+    (exists spark__branch3:bool.
+    ((spark__branch3 = (if (o1 = 1) then true else false)) and (let o2 = b(3)
+    : bool in (b__function_guard(o2, 3) and
+    (exists spark__branch4:bool. ((spark__branch4 = o2) and
+    ((not (spark__branch4 = true)) and (let o3 = b(4) : bool in
+    (b__function_guard(o3, 4) and ((spark__branch1 = o3) and
+    (spark__branch1 = true))))))))))))) else (let o1 = b(2) : bool in
+    (b__function_guard(o1, 2) and
+    (exists spark__branch3:bool. ((spark__branch3 = o1) and
+    ((not (spark__branch3 = true)) and (let o2 = b(7) : bool in
+    (b__function_guard(o2, 7) and ((spark__branch1 = o2) and
+    (spark__branch1 = true)))))))))))))) and (x2 = x)) and (y1 = y)) and
+    (r2b1 = r2b)) and (i2 = i)) or
+    (exists spark__branch2:bool. ((let o = b(1) : bool in
+    (b__function_guard(o, 1) and
+    (exists spark__branch3:bool. ((spark__branch3 = o) and
+    (if (spark__branch3 = true) then (exists spark__branch4:bool. ((let o1 =
+                                     e(void) : int in ((e__function_guard(o1,
+                                     void) and dynamic_invariant1(o1, true,
+                                     false, true, true)) and
+                                     (exists spark__branch5:bool.
+                                     ((spark__branch5 = (if (o1 = 1) then true else false)) and
+                                     (if (spark__branch5 = true) then 
+                                     (exists x3:int. (((let o2 = b(3)
+                                     : bool in (b__function_guard(o2, 3) and
+                                     (exists spark__branch6:bool.
+                                     ((spark__branch6 = o2) and
+                                     ((spark__branch6 = true) and
+                                     ((y1 = 10) and (dynamic_invariant(y1,
+                                     true, false, true, true) and
+                                     ((r2b1 = y1) and
+                                     (dynamic_invariant(r2b1, true, false,
+                                     true, true) and
+                                     (exists spark__branch7:bool.
+                                     ((exists i3:int. ((i3 = 1) and
+                                      (if (andb((if (1 <= i3) then true else false),
+                                      (if (i3 <= r2b1) then true else false)) = true) then 
+                                      (exists x4:int.
+                                      ((andb((if dynamic_invariant(x4, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i2) and
+                                      (i2 <= r2b1)) then true else false)) = true) and
+                                      (((let o3 = (x4 + 1) : int in
+                                      (in_range1(o3) and ((x3 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch8:bool.
+                                      ((spark__branch8 = o4) and
+                                      ((not (spark__branch8 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch7 = o5) and
+                                      (not (spark__branch7 = true))))))))))))) or
+                                      (let o3 = (x4 + 1) : int in
+                                      (in_range1(o3) and ((x3 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      ((spark__branch7 = o4) and
+                                      (spark__branch7 = true)))))))) and
+                                      (i2 = r2b1)))) else (((spark__branch7 = spark__branch6) and
+                                      (x3 = x)) and (i2 = i3))))) and
+                                     (let o3 = b(30) : bool in
+                                     (b__function_guard(o3, 30) and
+                                     ((spark__branch4 = o3) and
+                                     (spark__branch4 = true))))))))))))))) or
+                                     (let o2 = b(3) : bool in
+                                     (b__function_guard(o2, 3) and
+                                     (exists spark__branch6:bool.
+                                     ((spark__branch6 = o2) and
+                                     (if (spark__branch6 = true) then ((y1 = 10) and
+                                     (dynamic_invariant(y1, true, false,
+                                     true, true) and (((r2b1 = y1) and
+                                     (dynamic_invariant(r2b1, true, false,
+                                     true, true) and
+                                     (exists spark__branch7:bool.
+                                     ((exists i3:int. ((i3 = 1) and
+                                      (if (andb((if (1 <= i3) then true else false),
+                                      (if (i3 <= r2b1) then true else false)) = true) then 
+                                      (exists x4:int.
+                                      ((andb((if dynamic_invariant(x4, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i2) and
+                                      (i2 <= r2b1)) then true else false)) = true) and
+                                      (((let o3 = (x4 + 1) : int in
+                                      (in_range1(o3) and ((x3 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch8:bool.
+                                      ((spark__branch8 = o4) and
+                                      ((not (spark__branch8 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch7 = o5) and
+                                      (not (spark__branch7 = true))))))))))))) or
+                                      (let o3 = (x4 + 1) : int in
+                                      (in_range1(o3) and ((x3 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      ((spark__branch7 = o4) and
+                                      (spark__branch7 = true)))))))) and
+                                      (i2 = r2b1)))) else (((spark__branch7 = spark__branch6) and
+                                      (x3 = x)) and (i2 = i3))))) and
+                                     (let o3 = b(30) : bool in
+                                     (b__function_guard(o3, 30) and
+                                     (exists spark__branch8:bool.
+                                     ((spark__branch8 = o3) and
+                                     ((not (spark__branch8 = true)) and
+                                     (let o4 = b(31) : bool in
+                                     (b__function_guard(o4, 31) and
+                                     ((spark__branch4 = o4) and
+                                     (not (spark__branch4 = true)))))))))))))) or
+                                     ((r2b1 = y1) and
+                                     (dynamic_invariant(r2b1, true, false,
+                                     true, true) and
+                                     ((exists i3:int. ((i3 = 1) and
+                                      ((andb((if (1 <= i3) then true else false),
+                                      (if (i3 <= r2b1) then true else false)) = true) and
+                                      (exists x4:int.
+                                      ((andb((if dynamic_invariant(x4, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i2) and
+                                      (i2 <= r2b1)) then true else false)) = true) and
+                                      (let o3 = (x4 + 1) : int in
+                                      (in_range1(o3) and ((x3 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch7:bool.
+                                      ((spark__branch7 = o4) and
+                                      ((not (spark__branch7 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch4 = o5) and
+                                      (spark__branch4 = true))))))))))))))))) or
+                                     (exists spark__branch7:bool.
+                                     ((exists i3:int. ((i3 = 1) and
+                                      (if (andb((if (1 <= i3) then true else false),
+                                      (if (i3 <= r2b1) then true else false)) = true) then 
+                                      (exists x4:int.
+                                      ((andb((if dynamic_invariant(x4, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i2) and
+                                      (i2 <= r2b1)) then true else false)) = true) and
+                                      (((let o3 = (x4 + 1) : int in
+                                      (in_range1(o3) and ((x3 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch8:bool.
+                                      ((spark__branch8 = o4) and
+                                      ((not (spark__branch8 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch7 = o5) and
+                                      (not (spark__branch7 = true))))))))))))) or
+                                      (let o3 = (x4 + 1) : int in
+                                      (in_range1(o3) and ((x3 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      ((spark__branch7 = o4) and
+                                      (spark__branch7 = true)))))))) and
+                                      (i2 = r2b1)))) else (((spark__branch7 = spark__branch6) and
+                                      (x3 = x)) and (i2 = i3))))) and
+                                     (let o3 = b(30) : bool in
+                                     (b__function_guard(o3, 30) and
+                                     (exists spark__branch8:bool.
+                                     ((spark__branch8 = o3) and
+                                     ((not (spark__branch8 = true)) and
+                                     (let o4 = b(31) : bool in
+                                     (b__function_guard(o4, 31) and
+                                     ((spark__branch4 = o4) and
+                                     (spark__branch4 = true))))))))))))))))) else (((((let o3 =
+                                     b(4) : bool in (b__function_guard(o3,
+                                     4) and ((spark__branch4 = o3) and
+                                     (not (spark__branch4 = true))))) and
+                                     (x3 = x)) and (y1 = y)) and
+                                     (r2b1 = r2b)) and (i2 = i)))))))) and
+                                     (x2 = 5))) else (((((let o2 = b(3)
+                                     : bool in (b__function_guard(o2, 3) and
+                                     (exists spark__branch6:bool.
+                                     ((spark__branch6 = o2) and
+                                     (if (spark__branch6 = true) then (spark__branch4 = spark__branch6) else (let o3 =
+                                     b(4) : bool in (b__function_guard(o3,
+                                     4) and ((spark__branch4 = o3) and
+                                     (not (spark__branch4 = true)))))))))) and
+                                     (x2 = 6)) and (y1 = y)) and
+                                     (r2b1 = r2b)) and (i2 = i))))))) and
+                                     (let o1 = b(5) : bool in
+                                     (b__function_guard(o1, 5) and
+                                     (exists spark__branch5:bool.
+                                     ((spark__branch5 = o1) and
+                                     (if (spark__branch5 = true) then (spark__branch2 = spark__branch5) else (let o2 =
+                                     b(6) : bool in (b__function_guard(o2,
+                                     6) and ((spark__branch2 = o2) and
+                                     (not (spark__branch2 = true)))))))))))) else ((((let o1 =
+    b(2) : bool in (b__function_guard(o1, 2) and
+    (exists spark__branch4:bool. ((spark__branch4 = o1) and
+    (if (spark__branch4 = true) then ((let o2 = b(7) : bool in
+    (b__function_guard(o2, 7) and
+    (exists spark__branch5:bool. ((spark__branch5 = o2) and
+    ((not (spark__branch5 = true)) and (let o3 = b(8) : bool in
+    (b__function_guard(o3, 8) and (spark__branch2 = o3)))))))) and
+    (x2 = 3)) else (let o2 = b(7) : bool in (b__function_guard(o2, 7) and
+    (exists spark__branch5:bool. ((spark__branch5 = o2) and
+    ((not (spark__branch5 = true)) and (let o3 = b(8) : bool in
+    (b__function_guard(o3, 8) and ((spark__branch2 = o3) and
+    ((not (spark__branch2 = true)) and (x2 = 4))))))))))))))) and
+    (y1 = y)) and (r2b1 = r2b)) and (i2 = i))))))) and (let o = b(9)
+    : bool in (b__function_guard(o, 9) and
+    (exists spark__branch3:bool. ((spark__branch3 = o) and
+    (if (spark__branch3 = true) then (spark__branch1 = spark__branch3) else (let o1 =
+    b(10) : bool in (b__function_guard(o1, 10) and ((spark__branch1 = o1) and
+    (not (spark__branch1 = true))))))))))))) and
+    (exists x3:int. exists i3:int. ((andb((if (dynamic_invariant(x3, true,
+    true, true, true) and in_range3(i3)) then true else false),
+    (if ((1 <= i3) and (i3 <= 2)) then true else false)) = true) and
+    (exists x4:int. ((x4 = 1) and ((not (i3 = 2)) and ((let o = b(1)
+    : bool in (b__function_guard(o, 1) and
+    (exists spark__branch2:bool. ((spark__branch2 = o) and
+    (if (spark__branch2 = true) then (exists spark__branch3:bool. ((let o1 =
+                                     e(void) : int in ((e__function_guard(o1,
+                                     void) and dynamic_invariant1(o1, true,
+                                     false, true, true)) and
+                                     (exists spark__branch4:bool.
+                                     ((spark__branch4 = (if (o1 = 1) then true else false)) and
+                                     (if (spark__branch4 = true) then 
+                                     (exists x5:int. (((let o2 = b(3)
+                                     : bool in (b__function_guard(o2, 3) and
+                                     (exists spark__branch5:bool.
+                                     ((spark__branch5 = o2) and
+                                     ((spark__branch5 = true) and
+                                     (exists y2:int. ((y2 = 10) and
+                                     (dynamic_invariant(y2, true, false,
+                                     true, true) and
+                                     (exists r2b2:int. ((r2b2 = y2) and
+                                     (dynamic_invariant(r2b2, true, false,
+                                     true, true) and
+                                     (exists spark__branch6:bool.
+                                     ((exists i4:int. ((i4 = 1) and
+                                      (if (andb((if (1 <= i4) then true else false),
+                                      (if (i4 <= r2b2) then true else false)) = true) then 
+                                      (exists x6:int. exists i5:int.
+                                      ((andb((if dynamic_invariant(x6, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i5) and
+                                      (i5 <= r2b2)) then true else false)) = true) and
+                                      (((let o3 = (x6 + 1) : int in
+                                      (in_range1(o3) and ((x5 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch7:bool.
+                                      ((spark__branch7 = o4) and
+                                      ((not (spark__branch7 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch6 = o5) and
+                                      (not (spark__branch6 = true))))))))))))) or
+                                      (let o3 = (x6 + 1) : int in
+                                      (in_range1(o3) and ((x5 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      ((spark__branch6 = o4) and
+                                      (spark__branch6 = true)))))))) and
+                                      (i5 = r2b2)))) else ((spark__branch6 = spark__branch5) and
+                                      (x5 = x4))))) and
+                                     (let o3 = b(30) : bool in
+                                     (b__function_guard(o3, 30) and
+                                     ((spark__branch3 = o3) and
+                                     (spark__branch3 = true))))))))))))))))) or
+                                     (let o2 = b(3) : bool in
+                                     (b__function_guard(o2, 3) and
+                                     (exists spark__branch5:bool.
+                                     ((spark__branch5 = o2) and
+                                     (if (spark__branch5 = true) then 
+                                     (exists y2:int. ((y2 = 10) and
+                                     (dynamic_invariant(y2, true, false,
+                                     true, true) and
+                                     ((exists r2b2:int. ((r2b2 = y2) and
+                                      (dynamic_invariant(r2b2, true, false,
+                                      true, true) and
+                                      (exists spark__branch6:bool.
+                                      ((exists i4:int. ((i4 = 1) and
+                                       (if (andb((if (1 <= i4) then true else false),
+                                       (if (i4 <= r2b2) then true else false)) = true) then 
+                                       (exists x6:int. exists i5:int.
+                                       ((andb((if dynamic_invariant(x6, true,
+                                       true, true,
+                                       true) then true else false),
+                                       (if ((1 <= i5) and
+                                       (i5 <= r2b2)) then true else false)) = true) and
+                                       (((let o3 = (x6 + 1) : int in
+                                       (in_range1(o3) and ((x5 = o3) and
+                                       (let o4 = b(32) : bool in
+                                       (b__function_guard(o4, 32) and
+                                       (exists spark__branch7:bool.
+                                       ((spark__branch7 = o4) and
+                                       ((not (spark__branch7 = true)) and
+                                       (let o5 = b(33) : bool in
+                                       (b__function_guard(o5, 33) and
+                                       ((spark__branch6 = o5) and
+                                       (not (spark__branch6 = true))))))))))))) or
+                                       (let o3 = (x6 + 1) : int in
+                                       (in_range1(o3) and ((x5 = o3) and
+                                       (let o4 = b(32) : bool in
+                                       (b__function_guard(o4, 32) and
+                                       ((spark__branch6 = o4) and
+                                       (spark__branch6 = true)))))))) and
+                                       (i5 = r2b2)))) else ((spark__branch6 = spark__branch5) and
+                                       (x5 = x4))))) and
+                                      (let o3 = b(30) : bool in
+                                      (b__function_guard(o3, 30) and
+                                      (exists spark__branch7:bool.
+                                      ((spark__branch7 = o3) and
+                                      ((not (spark__branch7 = true)) and
+                                      (let o4 = b(31) : bool in
+                                      (b__function_guard(o4, 31) and
+                                      ((spark__branch3 = o4) and
+                                      (not (spark__branch3 = true))))))))))))))) or
+                                     (exists r2b2:int. ((r2b2 = y2) and
+                                     (dynamic_invariant(r2b2, true, false,
+                                     true, true) and
+                                     ((exists i4:int. ((i4 = 1) and
+                                      ((andb((if (1 <= i4) then true else false),
+                                      (if (i4 <= r2b2) then true else false)) = true) and
+                                      (exists x6:int. exists i5:int.
+                                      ((andb((if dynamic_invariant(x6, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i5) and
+                                      (i5 <= r2b2)) then true else false)) = true) and
+                                      (let o3 = (x6 + 1) : int in
+                                      (in_range1(o3) and ((x5 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch6:bool.
+                                      ((spark__branch6 = o4) and
+                                      ((not (spark__branch6 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch3 = o5) and
+                                      (spark__branch3 = true))))))))))))))))) or
+                                     (exists spark__branch6:bool.
+                                     ((exists i4:int. ((i4 = 1) and
+                                      (if (andb((if (1 <= i4) then true else false),
+                                      (if (i4 <= r2b2) then true else false)) = true) then 
+                                      (exists x6:int. exists i5:int.
+                                      ((andb((if dynamic_invariant(x6, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i5) and
+                                      (i5 <= r2b2)) then true else false)) = true) and
+                                      (((let o3 = (x6 + 1) : int in
+                                      (in_range1(o3) and ((x5 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch7:bool.
+                                      ((spark__branch7 = o4) and
+                                      ((not (spark__branch7 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch6 = o5) and
+                                      (not (spark__branch6 = true))))))))))))) or
+                                      (let o3 = (x6 + 1) : int in
+                                      (in_range1(o3) and ((x5 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      ((spark__branch6 = o4) and
+                                      (spark__branch6 = true)))))))) and
+                                      (i5 = r2b2)))) else ((spark__branch6 = spark__branch5) and
+                                      (x5 = x4))))) and
+                                     (let o3 = b(30) : bool in
+                                     (b__function_guard(o3, 30) and
+                                     (exists spark__branch7:bool.
+                                     ((spark__branch7 = o3) and
+                                     ((not (spark__branch7 = true)) and
+                                     (let o4 = b(31) : bool in
+                                     (b__function_guard(o4, 31) and
+                                     ((spark__branch3 = o4) and
+                                     (spark__branch3 = true))))))))))))))))))) else ((let o3 =
+                                     b(4) : bool in (b__function_guard(o3,
+                                     4) and ((spark__branch3 = o3) and
+                                     (not (spark__branch3 = true))))) and
+                                     (x5 = x4)))))))) and (x1 = 5))) else ((let o2 =
+                                     b(3) : bool in (b__function_guard(o2,
+                                     3) and
+                                     (exists spark__branch5:bool.
+                                     ((spark__branch5 = o2) and
+                                     (if (spark__branch5 = true) then (spark__branch3 = spark__branch5) else (let o3 =
+                                     b(4) : bool in (b__function_guard(o3,
+                                     4) and ((spark__branch3 = o3) and
+                                     (not (spark__branch3 = true)))))))))) and
+                                     (x1 = 6))))))) and (let o1 = b(5)
+                                     : bool in (b__function_guard(o1, 5) and
+                                     (exists spark__branch4:bool.
+                                     ((spark__branch4 = o1) and
+                                     ((not (spark__branch4 = true)) and
+                                     (let o2 = b(6) : bool in
+                                     (b__function_guard(o2, 6) and
+                                     (exists spark__branch5:bool.
+                                     ((spark__branch5 = o2) and
+                                     (spark__branch5 = true)))))))))))) else ((let o1 =
+    b(2) : bool in (b__function_guard(o1, 2) and
+    (exists spark__branch3:bool. ((spark__branch3 = o1) and
+    (if (spark__branch3 = true) then (let o2 = b(7) : bool in
+    (b__function_guard(o2, 7) and
+    (exists spark__branch4:bool. ((spark__branch4 = o2) and
+    (spark__branch4 = true))))) else (let o2 = b(7) : bool in
+    (b__function_guard(o2, 7) and
+    (exists spark__branch4:bool. ((spark__branch4 = o2) and
+    ((not (spark__branch4 = true)) and (let o3 = b(8) : bool in
+    (b__function_guard(o3, 8) and
+    (exists spark__branch5:bool. ((spark__branch5 = o3) and
+    (spark__branch5 = true))))))))))))))) and (x1 = x4))))))) or
+    (exists spark__branch2:bool. ((let o = b(1) : bool in
+    (b__function_guard(o, 1) and
+    (exists spark__branch3:bool. ((spark__branch3 = o) and
+    (if (spark__branch3 = true) then (exists spark__branch4:bool. ((let o1 =
+                                     e(void) : int in ((e__function_guard(o1,
+                                     void) and dynamic_invariant1(o1, true,
+                                     false, true, true)) and
+                                     (exists spark__branch5:bool.
+                                     ((spark__branch5 = (if (o1 = 1) then true else false)) and
+                                     (if (spark__branch5 = true) then 
+                                     (exists x5:int. (((let o2 = b(3)
+                                     : bool in (b__function_guard(o2, 3) and
+                                     (exists spark__branch6:bool.
+                                     ((spark__branch6 = o2) and
+                                     ((spark__branch6 = true) and
+                                     (exists y2:int. ((y2 = 10) and
+                                     (dynamic_invariant(y2, true, false,
+                                     true, true) and
+                                     (exists r2b2:int. ((r2b2 = y2) and
+                                     (dynamic_invariant(r2b2, true, false,
+                                     true, true) and
+                                     (exists spark__branch7:bool.
+                                     ((exists i4:int. ((i4 = 1) and
+                                      (if (andb((if (1 <= i4) then true else false),
+                                      (if (i4 <= r2b2) then true else false)) = true) then 
+                                      (exists x6:int. exists i5:int.
+                                      ((andb((if dynamic_invariant(x6, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i5) and
+                                      (i5 <= r2b2)) then true else false)) = true) and
+                                      (((let o3 = (x6 + 1) : int in
+                                      (in_range1(o3) and ((x5 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch8:bool.
+                                      ((spark__branch8 = o4) and
+                                      ((not (spark__branch8 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch7 = o5) and
+                                      (not (spark__branch7 = true))))))))))))) or
+                                      (let o3 = (x6 + 1) : int in
+                                      (in_range1(o3) and ((x5 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      ((spark__branch7 = o4) and
+                                      (spark__branch7 = true)))))))) and
+                                      (i5 = r2b2)))) else ((spark__branch7 = spark__branch6) and
+                                      (x5 = x4))))) and
+                                     (let o3 = b(30) : bool in
+                                     (b__function_guard(o3, 30) and
+                                     ((spark__branch4 = o3) and
+                                     (spark__branch4 = true))))))))))))))))) or
+                                     (let o2 = b(3) : bool in
+                                     (b__function_guard(o2, 3) and
+                                     (exists spark__branch6:bool.
+                                     ((spark__branch6 = o2) and
+                                     (if (spark__branch6 = true) then 
+                                     (exists y2:int. ((y2 = 10) and
+                                     (dynamic_invariant(y2, true, false,
+                                     true, true) and
+                                     ((exists r2b2:int. ((r2b2 = y2) and
+                                      (dynamic_invariant(r2b2, true, false,
+                                      true, true) and
+                                      (exists spark__branch7:bool.
+                                      ((exists i4:int. ((i4 = 1) and
+                                       (if (andb((if (1 <= i4) then true else false),
+                                       (if (i4 <= r2b2) then true else false)) = true) then 
+                                       (exists x6:int. exists i5:int.
+                                       ((andb((if dynamic_invariant(x6, true,
+                                       true, true,
+                                       true) then true else false),
+                                       (if ((1 <= i5) and
+                                       (i5 <= r2b2)) then true else false)) = true) and
+                                       (((let o3 = (x6 + 1) : int in
+                                       (in_range1(o3) and ((x5 = o3) and
+                                       (let o4 = b(32) : bool in
+                                       (b__function_guard(o4, 32) and
+                                       (exists spark__branch8:bool.
+                                       ((spark__branch8 = o4) and
+                                       ((not (spark__branch8 = true)) and
+                                       (let o5 = b(33) : bool in
+                                       (b__function_guard(o5, 33) and
+                                       ((spark__branch7 = o5) and
+                                       (not (spark__branch7 = true))))))))))))) or
+                                       (let o3 = (x6 + 1) : int in
+                                       (in_range1(o3) and ((x5 = o3) and
+                                       (let o4 = b(32) : bool in
+                                       (b__function_guard(o4, 32) and
+                                       ((spark__branch7 = o4) and
+                                       (spark__branch7 = true)))))))) and
+                                       (i5 = r2b2)))) else ((spark__branch7 = spark__branch6) and
+                                       (x5 = x4))))) and
+                                      (let o3 = b(30) : bool in
+                                      (b__function_guard(o3, 30) and
+                                      (exists spark__branch8:bool.
+                                      ((spark__branch8 = o3) and
+                                      ((not (spark__branch8 = true)) and
+                                      (let o4 = b(31) : bool in
+                                      (b__function_guard(o4, 31) and
+                                      ((spark__branch4 = o4) and
+                                      (not (spark__branch4 = true))))))))))))))) or
+                                     (exists r2b2:int. ((r2b2 = y2) and
+                                     (dynamic_invariant(r2b2, true, false,
+                                     true, true) and
+                                     ((exists i4:int. ((i4 = 1) and
+                                      ((andb((if (1 <= i4) then true else false),
+                                      (if (i4 <= r2b2) then true else false)) = true) and
+                                      (exists x6:int. exists i5:int.
+                                      ((andb((if dynamic_invariant(x6, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i5) and
+                                      (i5 <= r2b2)) then true else false)) = true) and
+                                      (let o3 = (x6 + 1) : int in
+                                      (in_range1(o3) and ((x5 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch7:bool.
+                                      ((spark__branch7 = o4) and
+                                      ((not (spark__branch7 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch4 = o5) and
+                                      (spark__branch4 = true))))))))))))))))) or
+                                     (exists spark__branch7:bool.
+                                     ((exists i4:int. ((i4 = 1) and
+                                      (if (andb((if (1 <= i4) then true else false),
+                                      (if (i4 <= r2b2) then true else false)) = true) then 
+                                      (exists x6:int. exists i5:int.
+                                      ((andb((if dynamic_invariant(x6, true,
+                                      true, true,
+                                      true) then true else false),
+                                      (if ((1 <= i5) and
+                                      (i5 <= r2b2)) then true else false)) = true) and
+                                      (((let o3 = (x6 + 1) : int in
+                                      (in_range1(o3) and ((x5 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      (exists spark__branch8:bool.
+                                      ((spark__branch8 = o4) and
+                                      ((not (spark__branch8 = true)) and
+                                      (let o5 = b(33) : bool in
+                                      (b__function_guard(o5, 33) and
+                                      ((spark__branch7 = o5) and
+                                      (not (spark__branch7 = true))))))))))))) or
+                                      (let o3 = (x6 + 1) : int in
+                                      (in_range1(o3) and ((x5 = o3) and
+                                      (let o4 = b(32) : bool in
+                                      (b__function_guard(o4, 32) and
+                                      ((spark__branch7 = o4) and
+                                      (spark__branch7 = true)))))))) and
+                                      (i5 = r2b2)))) else ((spark__branch7 = spark__branch6) and
+                                      (x5 = x4))))) and
+                                     (let o3 = b(30) : bool in
+                                     (b__function_guard(o3, 30) and
+                                     (exists spark__branch8:bool.
+                                     ((spark__branch8 = o3) and
+                                     ((not (spark__branch8 = true)) and
+                                     (let o4 = b(31) : bool in
+                                     (b__function_guard(o4, 31) and
+                                     ((spark__branch4 = o4) and
+                                     (spark__branch4 = true))))))))))))))))))) else ((let o3 =
+                                     b(4) : bool in (b__function_guard(o3,
+                                     4) and ((spark__branch4 = o3) and
+                                     (not (spark__branch4 = true))))) and
+                                     (x5 = x4)))))))) and (x1 = 5))) else ((let o2 =
+                                     b(3) : bool in (b__function_guard(o2,
+                                     3) and
+                                     (exists spark__branch6:bool.
+                                     ((spark__branch6 = o2) and
+                                     (if (spark__branch6 = true) then (spark__branch4 = spark__branch6) else (let o3 =
+                                     b(4) : bool in (b__function_guard(o3,
+                                     4) and ((spark__branch4 = o3) and
+                                     (not (spark__branch4 = true)))))))))) and
+                                     (x1 = 6))))))) and (let o1 = b(5)
+                                     : bool in (b__function_guard(o1, 5) and
+                                     (exists spark__branch5:bool.
+                                     ((spark__branch5 = o1) and
+                                     (if (spark__branch5 = true) then (spark__branch2 = spark__branch5) else (let o2 =
+                                     b(6) : bool in (b__function_guard(o2,
+                                     6) and ((spark__branch2 = o2) and
+                                     (not (spark__branch2 = true)))))))))))) else (let o1 =
+    b(2) : bool in (b__function_guard(o1, 2) and
+    (exists spark__branch4:bool. ((spark__branch4 = o1) and
+    (if (spark__branch4 = true) then ((let o2 = b(7) : bool in
+    (b__function_guard(o2, 7) and
+    (exists spark__branch5:bool. ((spark__branch5 = o2) and
+    ((not (spark__branch5 = true)) and (let o3 = b(8) : bool in
+    (b__function_guard(o3, 8) and (spark__branch2 = o3)))))))) and
+    (x1 = 3)) else (let o2 = b(7) : bool in (b__function_guard(o2, 7) and
+    (exists spark__branch5:bool. ((spark__branch5 = o2) and
+    ((not (spark__branch5 = true)) and (let o3 = b(8) : bool in
+    (b__function_guard(o3, 8) and ((spark__branch2 = o3) and
+    ((not (spark__branch2 = true)) and (x1 = 4)))))))))))))))))))) and
+    (let o = b(9) : bool in (b__function_guard(o, 9) and
+    (exists spark__branch3:bool. ((spark__branch3 = o) and
+    ((not (spark__branch3 = true)) and (let o1 = b(10) : bool in
+    (b__function_guard(o1, 10) and
+    (exists spark__branch4:bool. ((spark__branch4 = o1) and
+    (spark__branch4 = true)))))))))))))))))))))))) or
+  (exists spark__branch1:bool.
+  ((exists i1:int. ((i1 = 1) and
+   (if (andb((if (1 <= i1) then true else false),
+   (if (i1 <= 2) then true else false)) = true) then (exists spark__branch2:bool.
+                                                     exists x2:int.
+                                                     exists y1:int.
+                                                     exists r2b1:int.
+                                                     exists i2:int.
+                                                     (((((((let o = b(1)
+                                                     : bool in
+                                                     (b__function_guard(o,
+                                                     1) and
+                                                     (exists spark__branch3:bool.
+                                                     ((spark__branch3 = o) and
+                                                     (if (spark__branch3 = true) then (let o1 =
+                                                     e(void) : int in
+                                                     ((e__function_guard(o1,
+                                                     void) and
+                                                     dynamic_invariant1(o1,
+                                                     true, false, true,
+                                                     true)) and
+                                                     (exists spark__branch4:bool.
+                                                     ((spark__branch4 = (if (o1 = 1) then true else false)) and
+                                                     (let o2 = b(3) : bool in
+                                                     (b__function_guard(o2,
+                                                     3) and
+                                                     (exists spark__branch5:bool.
+                                                     ((spark__branch5 = o2) and
+                                                     ((not (spark__branch5 = true)) and
+                                                     (let o3 = b(4) : bool in
+                                                     (b__function_guard(o3,
+                                                     4) and
+                                                     ((spark__branch2 = o3) and
+                                                     (spark__branch2 = true))))))))))))) else (let o1 =
+                                                     b(2) : bool in
+                                                     (b__function_guard(o1,
+                                                     2) and
+                                                     (exists spark__branch4:bool.
+                                                     ((spark__branch4 = o1) and
+                                                     ((not (spark__branch4 = true)) and
+                                                     (let o2 = b(7) : bool in
+                                                     (b__function_guard(o2,
+                                                     7) and
+                                                     ((spark__branch2 = o2) and
+                                                     (spark__branch2 = true)))))))))))))) and
+                                                     (x2 = x)) and
+                                                     (y1 = y)) and
+                                                     (r2b1 = r2b)) and
+                                                     (i2 = i)) or
+                                                     (exists spark__branch3:bool.
+                                                     ((let o = b(1) : bool in
+                                                     (b__function_guard(o,
+                                                     1) and
+                                                     (exists spark__branch4:bool.
+                                                     ((spark__branch4 = o) and
+                                                     (if (spark__branch4 = true) then 
+                                                     (exists spark__branch5:bool.
+                                                     ((let o1 = e(void)
+                                                     : int in
+                                                     ((e__function_guard(o1,
+                                                     void) and
+                                                     dynamic_invariant1(o1,
+                                                     true, false, true,
+                                                     true)) and
+                                                     (exists spark__branch6:bool.
+                                                     ((spark__branch6 = (if (o1 = 1) then true else false)) and
+                                                     (if (spark__branch6 = true) then 
+                                                     (exists x3:int.
+                                                     (((let o2 = b(3)
+                                                     : bool in
+                                                     (b__function_guard(o2,
+                                                     3) and
+                                                     (exists spark__branch7:bool.
+                                                     ((spark__branch7 = o2) and
+                                                     ((spark__branch7 = true) and
+                                                     ((y1 = 10) and
+                                                     (dynamic_invariant(y1,
+                                                     true, false, true,
+                                                     true) and
+                                                     ((r2b1 = y1) and
+                                                     (dynamic_invariant(r2b1,
+                                                     true, false, true,
+                                                     true) and
+                                                     (exists spark__branch8:bool.
+                                                     ((exists i3:int.
+                                                      ((i3 = 1) and
+                                                      (if (andb((if (1 <= i3) then true else false),
+                                                      (if (i3 <= r2b1) then true else false)) = true) then 
+                                                      (exists x4:int.
+                                                      ((andb((if dynamic_invariant(x4,
+                                                      true, true, true,
+                                                      true) then true else false),
+                                                      (if ((1 <= i2) and
+                                                      (i2 <= r2b1)) then true else false)) = true) and
+                                                      (((let o3 = (x4 + 1)
+                                                      : int in
+                                                      (in_range1(o3) and
+                                                      ((x3 = o3) and
+                                                      (let o4 = b(32)
+                                                      : bool in
+                                                      (b__function_guard(o4,
+                                                      32) and
+                                                      (exists spark__branch9:bool.
+                                                      ((spark__branch9 = o4) and
+                                                      ((not (spark__branch9 = true)) and
+                                                      (let o5 = b(33)
+                                                      : bool in
+                                                      (b__function_guard(o5,
+                                                      33) and
+                                                      ((spark__branch8 = o5) and
+                                                      (not (spark__branch8 = true))))))))))))) or
+                                                      (let o3 = (x4 + 1)
+                                                      : int in
+                                                      (in_range1(o3) and
+                                                      ((x3 = o3) and
+                                                      (let o4 = b(32)
+                                                      : bool in
+                                                      (b__function_guard(o4,
+                                                      32) and
+                                                      ((spark__branch8 = o4) and
+                                                      (spark__branch8 = true)))))))) and
+                                                      (i2 = r2b1)))) else (((spark__branch8 = spark__branch7) and
+                                                      (x3 = x)) and
+                                                      (i2 = i3))))) and
+                                                     (let o3 = b(30)
+                                                     : bool in
+                                                     (b__function_guard(o3,
+                                                     30) and
+                                                     ((spark__branch5 = o3) and
+                                                     (spark__branch5 = true))))))))))))))) or
+                                                     (let o2 = b(3) : bool in
+                                                     (b__function_guard(o2,
+                                                     3) and
+                                                     (exists spark__branch7:bool.
+                                                     ((spark__branch7 = o2) and
+                                                     (if (spark__branch7 = true) then ((y1 = 10) and
+                                                     (dynamic_invariant(y1,
+                                                     true, false, true,
+                                                     true) and
+                                                     (((r2b1 = y1) and
+                                                     (dynamic_invariant(r2b1,
+                                                     true, false, true,
+                                                     true) and
+                                                     (exists spark__branch8:bool.
+                                                     ((exists i3:int.
+                                                      ((i3 = 1) and
+                                                      (if (andb((if (1 <= i3) then true else false),
+                                                      (if (i3 <= r2b1) then true else false)) = true) then 
+                                                      (exists x4:int.
+                                                      ((andb((if dynamic_invariant(x4,
+                                                      true, true, true,
+                                                      true) then true else false),
+                                                      (if ((1 <= i2) and
+                                                      (i2 <= r2b1)) then true else false)) = true) and
+                                                      (((let o3 = (x4 + 1)
+                                                      : int in
+                                                      (in_range1(o3) and
+                                                      ((x3 = o3) and
+                                                      (let o4 = b(32)
+                                                      : bool in
+                                                      (b__function_guard(o4,
+                                                      32) and
+                                                      (exists spark__branch9:bool.
+                                                      ((spark__branch9 = o4) and
+                                                      ((not (spark__branch9 = true)) and
+                                                      (let o5 = b(33)
+                                                      : bool in
+                                                      (b__function_guard(o5,
+                                                      33) and
+                                                      ((spark__branch8 = o5) and
+                                                      (not (spark__branch8 = true))))))))))))) or
+                                                      (let o3 = (x4 + 1)
+                                                      : int in
+                                                      (in_range1(o3) and
+                                                      ((x3 = o3) and
+                                                      (let o4 = b(32)
+                                                      : bool in
+                                                      (b__function_guard(o4,
+                                                      32) and
+                                                      ((spark__branch8 = o4) and
+                                                      (spark__branch8 = true)))))))) and
+                                                      (i2 = r2b1)))) else (((spark__branch8 = spark__branch7) and
+                                                      (x3 = x)) and
+                                                      (i2 = i3))))) and
+                                                     (let o3 = b(30)
+                                                     : bool in
+                                                     (b__function_guard(o3,
+                                                     30) and
+                                                     (exists spark__branch9:bool.
+                                                     ((spark__branch9 = o3) and
+                                                     ((not (spark__branch9 = true)) and
+                                                     (let o4 = b(31)
+                                                     : bool in
+                                                     (b__function_guard(o4,
+                                                     31) and
+                                                     ((spark__branch5 = o4) and
+                                                     (not (spark__branch5 = true)))))))))))))) or
+                                                     ((r2b1 = y1) and
+                                                     (dynamic_invariant(r2b1,
+                                                     true, false, true,
+                                                     true) and
+                                                     ((exists i3:int.
+                                                      ((i3 = 1) and
+                                                      ((andb((if (1 <= i3) then true else false),
+                                                      (if (i3 <= r2b1) then true else false)) = true) and
+                                                      (exists x4:int.
+                                                      ((andb((if dynamic_invariant(x4,
+                                                      true, true, true,
+                                                      true) then true else false),
+                                                      (if ((1 <= i2) and
+                                                      (i2 <= r2b1)) then true else false)) = true) and
+                                                      (let o3 = (x4 + 1)
+                                                      : int in
+                                                      (in_range1(o3) and
+                                                      ((x3 = o3) and
+                                                      (let o4 = b(32)
+                                                      : bool in
+                                                      (b__function_guard(o4,
+                                                      32) and
+                                                      (exists spark__branch8:bool.
+                                                      ((spark__branch8 = o4) and
+                                                      ((not (spark__branch8 = true)) and
+                                                      (let o5 = b(33)
+                                                      : bool in
+                                                      (b__function_guard(o5,
+                                                      33) and
+                                                      ((spark__branch5 = o5) and
+                                                      (spark__branch5 = true))))))))))))))))) or
+                                                     (exists spark__branch8:bool.
+                                                     ((exists i3:int.
+                                                      ((i3 = 1) and
+                                                      (if (andb((if (1 <= i3) then true else false),
+                                                      (if (i3 <= r2b1) then true else false)) = true) then 
+                                                      (exists x4:int.
+                                                      ((andb((if dynamic_invariant(x4,
+                                                      true, true, true,
+                                                      true) then true else false),
+                                                      (if ((1 <= i2) and
+                                                      (i2 <= r2b1)) then true else false)) = true) and
+                                                      (((let o3 = (x4 + 1)
+                                                      : int in
+                                                      (in_range1(o3) and
+                                                      ((x3 = o3) and
+                                                      (let o4 = b(32)
+                                                      : bool in
+                                                      (b__function_guard(o4,
+                                                      32) and
+                                                      (exists spark__branch9:bool.
+                                                      ((spark__branch9 = o4) and
+                                                      ((not (spark__branch9 = true)) and
+                                                      (let o5 = b(33)
+                                                      : bool in
+                                                      (b__function_guard(o5,
+                                                      33) and
+                                                      ((spark__branch8 = o5) and
+                                                      (not (spark__branch8 = true))))))))))))) or
+                                                      (let o3 = (x4 + 1)
+                                                      : int in
+                                                      (in_range1(o3) and
+                                                      ((x3 = o3) and
+                                                      (let o4 = b(32)
+                                                      : bool in
+                                                      (b__function_guard(o4,
+                                                      32) and
+                                                      ((spark__branch8 = o4) and
+                                                      (spark__branch8 = true)))))))) and
+                                                      (i2 = r2b1)))) else (((spark__branch8 = spark__branch7) and
+                                                      (x3 = x)) and
+                                                      (i2 = i3))))) and
+                                                     (let o3 = b(30)
+                                                     : bool in
+                                                     (b__function_guard(o3,
+                                                     30) and
+                                                     (exists spark__branch9:bool.
+                                                     ((spark__branch9 = o3) and
+                                                     ((not (spark__branch9 = true)) and
+                                                     (let o4 = b(31)
+                                                     : bool in
+                                                     (b__function_guard(o4,
+                                                     31) and
+                                                     ((spark__branch5 = o4) and
+                                                     (spark__branch5 = true))))))))))))))))) else (((((let o3 =
+                                                     b(4) : bool in
+                                                     (b__function_guard(o3,
+                                                     4) and
+                                                     ((spark__branch5 = o3) and
+                                                     (not (spark__branch5 = true))))) and
+                                                     (x3 = x)) and
+                                                     (y1 = y)) and
+                                                     (r2b1 = r2b)) and
+                                                     (i2 = i)))))))) and
+                                                     (x2 = 5))) else (((((let o2 =
+                                                     b(3) : bool in
+                                                     (b__function_guard(o2,
+                                                     3) and
+                                                     (exists spark__branch7:bool.
+                                                     ((spark__branch7 = o2) and
+                                                     (if (spark__branch7 = true) then (spark__branch5 = spark__branch7) else (let o3 =
+                                                     b(4) : bool in
+                                                     (b__function_guard(o3,
+                                                     4) and
+                                                     ((spark__branch5 = o3) and
+                                                     (not (spark__branch5 = true)))))))))) and
+                                                     (x2 = 6)) and
+                                                     (y1 = y)) and
+                                                     (r2b1 = r2b)) and
+                                                     (i2 = i))))))) and
+                                                     (let o1 = b(5) : bool in
+                                                     (b__function_guard(o1,
+                                                     5) and
+                                                     (exists spark__branch6:bool.
+                                                     ((spark__branch6 = o1) and
+                                                     (if (spark__branch6 = true) then (spark__branch3 = spark__branch6) else (let o2 =
+                                                     b(6) : bool in
+                                                     (b__function_guard(o2,
+                                                     6) and
+                                                     ((spark__branch3 = o2) and
+                                                     (not (spark__branch3 = true)))))))))))) else ((((let o1 =
+                                                     b(2) : bool in
+                                                     (b__function_guard(o1,
+                                                     2) and
+                                                     (exists spark__branch5:bool.
+                                                     ((spark__branch5 = o1) and
+                                                     (if (spark__branch5 = true) then ((let o2 =
+                                                     b(7) : bool in
+                                                     (b__function_guard(o2,
+                                                     7) and
+                                                     (exists spark__branch6:bool.
+                                                     ((spark__branch6 = o2) and
+                                                     ((not (spark__branch6 = true)) and
+                                                     (let o3 = b(8) : bool in
+                                                     (b__function_guard(o3,
+                                                     8) and
+                                                     (spark__branch3 = o3)))))))) and
+                                                     (x2 = 3)) else (let o2 =
+                                                     b(7) : bool in
+                                                     (b__function_guard(o2,
+                                                     7) and
+                                                     (exists spark__branch6:bool.
+                                                     ((spark__branch6 = o2) and
+                                                     ((not (spark__branch6 = true)) and
+                                                     (let o3 = b(8) : bool in
+                                                     (b__function_guard(o3,
+                                                     8) and
+                                                     ((spark__branch3 = o3) and
+                                                     ((not (spark__branch3 = true)) and
+                                                     (x2 = 4))))))))))))))) and
+                                                     (y1 = y)) and
+                                                     (r2b1 = r2b)) and
+                                                     (i2 = i))))))) and
+                                                     (let o = b(9) : bool in
+                                                     (b__function_guard(o,
+                                                     9) and
+                                                     (exists spark__branch4:bool.
+                                                     ((spark__branch4 = o) and
+                                                     (if (spark__branch4 = true) then (spark__branch2 = spark__branch4) else (let o1 =
+                                                     b(10) : bool in
+                                                     (b__function_guard(o1,
+                                                     10) and
+                                                     ((spark__branch2 = o1) and
+                                                     (not (spark__branch2 = true))))))))))))) and
+                                                     (exists x3:int.
+                                                     exists i3:int.
+                                                     ((andb((if (dynamic_invariant(x3,
+                                                     true, true, true,
+                                                     true) and
+                                                     in_range3(i3)) then true else false),
+                                                     (if ((1 <= i3) and
+                                                     (i3 <= 2)) then true else false)) = true) and
+                                                     ((x1 = 1) and
+                                                     (i3 = 2)))))) else ((spark__branch1 = spark__branch) and
+   (x1 = x))))) and
+  (let o = b(11) : bool in (b__function_guard(o, 11) and
+  (exists spark__branch2:bool. (spark__branch2 = o))))))) ->
+  ((forall x2:int. b__function_guard(b(x2), x2)) -> (b(x1) = true))))))))

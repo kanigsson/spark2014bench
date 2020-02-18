@@ -1,0 +1,795 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+logic bool_eq : int, int -> bool
+
+logic bool_ne : int, int -> bool
+
+logic bool_lt : int, int -> bool
+
+logic bool_le : int, int -> bool
+
+logic bool_gt : int, int -> bool
+
+logic bool_ge : int, int -> bool
+
+axiom bool_eq_axiom :
+  (forall x:int. (forall y:int. ((bool_eq(x, y) = true) -> (x = y))))
+
+axiom bool_eq_axiom1 :
+  (forall x:int. (forall y:int. ((x = y) -> (bool_eq(x, y) = true))))
+
+axiom bool_ne_axiom :
+  (forall x:int. (forall y:int. ((bool_ne(x, y) = true) -> (not (x = y)))))
+
+axiom bool_ne_axiom1 :
+  (forall x:int. (forall y:int. ((not (x = y)) -> (bool_ne(x, y) = true))))
+
+axiom bool_lt_axiom :
+  (forall x:int. (forall y:int. ((bool_lt(x, y) = true) -> (x <  y))))
+
+axiom bool_lt_axiom1 :
+  (forall x:int. (forall y:int. ((x <  y) -> (bool_lt(x, y) = true))))
+
+axiom bool_int__le_axiom :
+  (forall x:int. (forall y:int. ((bool_le(x, y) = true) -> (x <= y))))
+
+axiom bool_int__le_axiom1 :
+  (forall x:int. (forall y:int. ((x <= y) -> (bool_le(x, y) = true))))
+
+axiom bool_gt_axiom :
+  (forall x:int. (forall y:int. ((bool_gt(x, y) = true) -> (y <  x))))
+
+axiom bool_gt_axiom1 :
+  (forall x:int. (forall y:int. ((y <  x) -> (bool_gt(x, y) = true))))
+
+axiom bool_ge_axiom :
+  (forall x:int. (forall y:int. ((bool_ge(x, y) = true) -> (y <= x))))
+
+axiom bool_ge_axiom1 :
+  (forall x:int. (forall y:int. ((y <= x) -> (bool_ge(x, y) = true))))
+
+function length(x: int, y: int) : int =
+  (if (x <= y) then ((y - x) + 1) else 0)
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : natural, natural -> bool
+
+logic dummy : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range(temp___expr_39))
+
+logic id : int -> int
+
+logic id__function_guard : int, int -> prop
+
+axiom id__post_axiom :
+  (forall x:int [id(x)]. (dynamic_invariant(x, true, true, true, true) ->
+  (let result = id(x) : int in (id__function_guard(result, x) ->
+  dynamic_invariant(result, true, false, true, true)))))
+
+axiom id__def_axiom :
+  (forall x:int [id(x)]. (dynamic_invariant(x, true, true, true, true) ->
+  (id(x) = x)))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic d : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+function to_rep(x: natural) : int = naturalqtint(x)
+
+logic of_rep : int -> natural
+
+axiom inversion_axiom :
+  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:natural [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type map__ref = { map__content : (int,natural) farray
+}
+
+logic slide : (int,natural) farray, int, int -> (int,natural) farray
+
+axiom slide_eq :
+  (forall a:(int,natural) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,natural) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq2(a: (int,natural) farray, a__first: int, a__last: int,
+  b: (int,natural) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_155:int. (((a__first <= temp___idx_155) and
+  (temp___idx_155 <= a__last)) ->
+  (to_rep((a[temp___idx_155])) = to_rep((b[((b__first - a__first) + temp___idx_155)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_155:int. (((a__first <= temp___idx_155) and
+  (temp___idx_155 <= a__last)) ->
+  (to_rep((a[temp___idx_155])) = to_rep((b[((b__first - a__first) + temp___idx_155)]))))))))
+
+type tindexB
+
+logic tindexBqtint : tindexB -> int
+
+axiom tindexBqtaxiom :
+  (forall i:tindexB. ((- 2147483648) <= tindexBqtint(i)))
+
+axiom tindexBqtaxiom1 : (forall i:tindexB. (tindexBqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq1 : tindexB, tindexB -> bool
+
+logic dummy1 : tindexB
+
+type tindexB__ref = { tindexB__content : tindexB
+}
+
+function tindexB__ref_tindexB__content__projection(a: tindexB__ref) : tindexB =
+  (a).tindexB__content
+
+logic a__first : tindexB
+
+logic a__last : tindexB
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic b__first : tindexB
+
+logic b__last : tindexB
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic c__first : tindexB
+
+logic c__last : tindexB
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+function to_rep1(x: tindexB) : int = tindexBqtint(x)
+
+logic of_rep1 : int -> tindexB
+
+axiom inversion_axiom1 :
+  (forall x:tindexB [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:tindexB [to_rep1(x)]. in_range1(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+logic first : int
+
+predicate dynamic_property(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq2 : tindexB, tindexB -> bool
+
+logic dummy2 : tindexB
+
+type index__ref = { index__content : tindexB
+}
+
+function index__ref_index__content__projection(a: index__ref) : tindexB =
+  (a).index__content
+
+logic concat : (int,natural) farray, int, int, (int,natural) farray, int,
+  int -> (int,natural) farray
+
+axiom concat_def :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a_first:int. forall a_last:int. forall b_first:int.
+  forall b_last:int.
+  (forall i:int [(concat(a, a_first, a_last, b, b_first, b_last)[i])].
+  (((a_first <= i) and (i <= a_last)) -> ((concat(a, a_first, a_last, b,
+  b_first, b_last)[i]) = (a[i]))))))
+
+axiom concat_def1 :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a_first:int. forall a_last:int. forall b_first:int.
+  forall b_last:int.
+  (forall i:int [(concat(a, a_first, a_last, b, b_first, b_last)[i])].
+  ((a_last <  i) -> ((concat(a, a_first, a_last, b, b_first,
+  b_last)[i]) = (b[((i - a_last) + (b_first - 1))]))))))
+
+logic concat_singleton_left : natural, int, (int,natural) farray, int,
+  int -> (int,natural) farray
+
+axiom concat_singleton_left_def :
+  (forall a:natural.
+  (forall b:(int,natural) farray.
+  (forall a_first:int. forall b_first:int. forall b_last:int
+  [concat_singleton_left(a, a_first, b, b_first, b_last)].
+  ((concat_singleton_left(a, a_first, b, b_first, b_last)[a_first]) = a))))
+
+axiom concat_singleton_left_def1 :
+  (forall a:natural.
+  (forall b:(int,natural) farray.
+  (forall a_first:int. forall b_first:int. forall b_last:int
+  [concat_singleton_left(a, a_first, b, b_first, b_last)].
+  (forall i:int [(concat_singleton_left(a, a_first, b, b_first, b_last)[i])].
+  ((a_first <  i) -> ((concat_singleton_left(a, a_first, b, b_first,
+  b_last)[i]) = (b[((i - a_first) + (b_first - 1))])))))))
+
+logic concat_singleton_right : (int,natural) farray, int, int,
+  natural -> (int,natural) farray
+
+axiom concat_singleton_right_def :
+  (forall a:(int,natural) farray.
+  (forall b:natural.
+  (forall a_first:int. forall a_last:int [concat_singleton_right(a, a_first,
+  a_last, b)]. ((concat_singleton_right(a, a_first, a_last,
+  b)[(a_last + 1)]) = b))))
+
+axiom concat_singleton_right_def1 :
+  (forall a:(int,natural) farray.
+  (forall b:natural.
+  (forall a_first:int. forall a_last:int [concat_singleton_right(a, a_first,
+  a_last, b)].
+  (forall i:int [(concat_singleton_right(a, a_first, a_last, b)[i])| (a[i])].
+  (((a_first <= i) and (i <= a_last)) -> ((concat_singleton_right(a, a_first,
+  a_last, b)[i]) = (a[i])))))))
+
+logic concat_singletons : natural, int, natural -> (int,natural) farray
+
+axiom concat_singletons_def :
+  (forall a:natural. forall b:natural.
+  (forall a_first:int [concat_singletons(a, a_first, b)].
+  ((concat_singletons(a, a_first, b)[a_first]) = a)))
+
+axiom concat_singletons_def1 :
+  (forall a:natural. forall b:natural.
+  (forall a_first:int [concat_singletons(a, a_first, b)].
+  ((concat_singletons(a, a_first, b)[(a_first + 1)]) = b)))
+
+logic singleton : natural, int -> (int,natural) farray
+
+axiom singleton_def :
+  (forall v:natural.
+  (forall i:int [(singleton(v, i)[i])]. ((singleton(v, i)[i]) = v)))
+
+type t
+
+logic first1 : t -> tindexB
+
+logic last : t -> tindexB
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(first1(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(last(mk(f, l))) = l))))
+
+predicate dynamic_property1(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (dynamic_property(range_first, range_last, low) and
+  dynamic_property(range_first, range_last, high)))))
+
+type us_t = { elts : (int,natural) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,natural) farray = (a).elts
+
+function of_array(a: (int,natural) farray, f: int, l: int) : us_t = { elts =
+  a; rt = mk(f, l) }
+
+function first2(a: us_t) : int = to_rep1(first1((a).rt))
+
+function last1(a: us_t) : int = to_rep1(last((a).rt))
+
+function length1(a: us_t) : int =
+  (if (first2(a) <= last1(a)) then ((last1(a) - first2(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq5(x: us_t, y: us_t) : bool = bool_eq2((x).elts,
+  to_rep1(first1((x).rt)), to_rep1(last((x).rt)), (y).elts,
+  to_rep1(first1((y).rt)), to_rep1(last((y).rt)))
+
+logic user_eq3 : us_t, us_t -> bool
+
+logic dummy3 : us_t
+
+type tnat_arrayB__ref = { tnat_arrayB__content : us_t
+}
+
+function tnat_arrayB__ref_tnat_arrayB__content__projection(a: tnat_arrayB__ref) : us_t =
+  (a).tnat_arrayB__content
+
+type nat_array__ref = { nat_array__content : us_t
+}
+
+function nat_array__ref_nat_array__content__projection(a: nat_array__ref) : us_t =
+  (a).nat_array__content
+
+type t4b__ref = { t4b__content : us_t
+}
+
+function t4b__ref_t4b__content__projection(a: t4b__ref) : us_t =
+  (a).t4b__content
+
+type t6b__ref = { t6b__content : us_t
+}
+
+function t6b__ref_t6b__content__projection(a: t6b__ref) : us_t =
+  (a).t6b__content
+
+type t7b
+
+logic t7bqtint : t7b -> int
+
+axiom t7bqtaxiom : (forall i:t7b. (4 <= t7bqtint(i)))
+
+axiom t7bqtaxiom1 : (forall i:t7b. (t7bqtint(i) <= 7))
+
+predicate in_range2(x: int) = ((4 <= x) and (x <= 7))
+
+function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq4 : t7b, t7b -> bool
+
+logic dummy4 : t7b
+
+type t7b__ref = { t7b__content : t7b
+}
+
+function t7b__ref_t7b__content__projection(a: t7b__ref) : t7b =
+  (a).t7b__content
+
+type t9b
+
+logic t9bqtint : t9b -> int
+
+axiom t9bqtaxiom : (forall i:t9b. (5 <= t9bqtint(i)))
+
+axiom t9bqtaxiom1 : (forall i:t9b. (t9bqtint(i) <= 8))
+
+predicate in_range3(x: int) = ((5 <= x) and (x <= 8))
+
+function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq5 : t9b, t9b -> bool
+
+logic dummy5 : t9b
+
+type t9b__ref = { t9b__content : t9b
+}
+
+function t9b__ref_t9b__content__projection(a: t9b__ref) : t9b =
+  (a).t9b__content
+
+type t13b__ref = { t13b__content : us_t
+}
+
+function t13b__ref_t13b__content__projection(a: t13b__ref) : us_t =
+  (a).t13b__content
+
+logic concat__a__aggregate_def : int, int, int -> us_t
+
+logic concat__b__aggregate_def : int, int, int -> us_t
+
+logic temp_____aggregate_def_221 : int, int, int, int, int, int, int, int,
+  int, int -> us_t
+
+predicate dynamic_invariant1(temp___expr_181: int, temp___is_init_177: bool,
+  temp___skip_constant_178: bool, temp___do_toplevel_179: bool,
+  temp___do_typ_inv_180: bool) = (((temp___is_init_177 = true) or
+  (first <= 8)) -> dynamic_property(first, 8, temp___expr_181))
+
+axiom first__def_axiom : (first = d)
+
+predicate dynamic_invariant2(temp___expr_188: us_t, temp___is_init_184: bool,
+  temp___skip_constant_185: bool, temp___do_toplevel_186: bool,
+  temp___do_typ_inv_187: bool) = ((not (temp___skip_constant_185 = true)) ->
+  (dynamic_property1(first, 8, first2(temp___expr_188),
+  last1(temp___expr_188)) and ((first2(temp___expr_188) = d) and
+  (last1(temp___expr_188) = 8))))
+
+predicate default_initial_assumption(temp___expr_190: us_t,
+  temp___skip_top_level_191: bool) = ((first2(temp___expr_190) = first) and
+  (last1(temp___expr_190) = 8))
+
+logic rliteral : natural
+
+axiom rliteral_axiom : (naturalqtint(rliteral) = 0)
+
+axiom def_axiom :
+  (forall temp___195:int. forall temp___196:int. forall temp___197:int.
+  (dynamic_invariant(temp___195, true, true, true, true) ->
+  (dynamic_property1(first, 8, temp___196, temp___197) ->
+  (first2(concat__a__aggregate_def(temp___195, temp___196,
+  temp___197)) = temp___196))))
+
+axiom def_axiom1 :
+  (forall temp___195:int. forall temp___196:int. forall temp___197:int.
+  (dynamic_invariant(temp___195, true, true, true, true) ->
+  (dynamic_property1(first, 8, temp___196, temp___197) ->
+  (last1(concat__a__aggregate_def(temp___195, temp___196,
+  temp___197)) = temp___197))))
+
+axiom def_axiom2 :
+  (forall temp___195:int. forall temp___196:int. forall temp___197:int.
+  (dynamic_invariant(temp___195, true, true, true, true) ->
+  (forall temp___198:int. ((to_array(concat__a__aggregate_def(temp___195,
+  temp___196, temp___197))[temp___198]) = rliteral))))
+
+logic rliteral1 : natural
+
+axiom rliteral_axiom1 : (naturalqtint(rliteral1) = 1)
+
+axiom def_axiom3 :
+  (forall temp___203:int. forall temp___204:int. forall temp___205:int.
+  (dynamic_invariant(temp___203, true, true, true, true) ->
+  (dynamic_property1(first, 8, temp___204, temp___205) ->
+  (first2(concat__b__aggregate_def(temp___203, temp___204,
+  temp___205)) = temp___204))))
+
+axiom def_axiom4 :
+  (forall temp___203:int. forall temp___204:int. forall temp___205:int.
+  (dynamic_invariant(temp___203, true, true, true, true) ->
+  (dynamic_property1(first, 8, temp___204, temp___205) ->
+  (last1(concat__b__aggregate_def(temp___203, temp___204,
+  temp___205)) = temp___205))))
+
+axiom def_axiom5 :
+  (forall temp___203:int. forall temp___204:int. forall temp___205:int.
+  (dynamic_invariant(temp___203, true, true, true, true) ->
+  (forall temp___206:int. ((to_array(concat__b__aggregate_def(temp___203,
+  temp___204, temp___205))[temp___206]) = rliteral1))))
+
+axiom def_axiom6 :
+  (forall temp___223:int. forall temp___224:int. forall temp___225:int.
+  forall temp___226:int. forall temp___227:int. forall temp___228:int.
+  forall temp___229:int. forall temp___230:int. forall temp___231:int.
+  forall temp___232:int. (((dynamic_invariant(temp___223, true, true, true,
+  true) and dynamic_invariant(temp___224, true, true, true, true)) and
+  (((dynamic_invariant(temp___225, true, true, true, true) and
+  dynamic_invariant(temp___226, true, true, true, true)) and
+  dynamic_invariant(temp___227, true, true, true, true)) and
+  ((dynamic_invariant(temp___228, true, true, true, true) and
+  dynamic_invariant(temp___229, true, true, true, true)) and
+  dynamic_invariant(temp___230, true, true, true, true)))) ->
+  (dynamic_property1(first, 8, temp___231, temp___232) ->
+  (first2(temp_____aggregate_def_221(temp___223, temp___224, temp___225,
+  temp___226, temp___227, temp___228, temp___229, temp___230, temp___231,
+  temp___232)) = temp___231))))
+
+axiom def_axiom7 :
+  (forall temp___223:int. forall temp___224:int. forall temp___225:int.
+  forall temp___226:int. forall temp___227:int. forall temp___228:int.
+  forall temp___229:int. forall temp___230:int. forall temp___231:int.
+  forall temp___232:int. (((dynamic_invariant(temp___223, true, true, true,
+  true) and dynamic_invariant(temp___224, true, true, true, true)) and
+  (((dynamic_invariant(temp___225, true, true, true, true) and
+  dynamic_invariant(temp___226, true, true, true, true)) and
+  dynamic_invariant(temp___227, true, true, true, true)) and
+  ((dynamic_invariant(temp___228, true, true, true, true) and
+  dynamic_invariant(temp___229, true, true, true, true)) and
+  dynamic_invariant(temp___230, true, true, true, true)))) ->
+  (dynamic_property1(first, 8, temp___231, temp___232) ->
+  (last1(temp_____aggregate_def_221(temp___223, temp___224, temp___225,
+  temp___226, temp___227, temp___228, temp___229, temp___230, temp___231,
+  temp___232)) = temp___232))))
+
+axiom def_axiom8 :
+  (forall temp___223:int. forall temp___224:int. forall temp___225:int.
+  forall temp___226:int. forall temp___227:int. forall temp___228:int.
+  forall temp___229:int. forall temp___230:int. forall temp___231:int.
+  forall temp___232:int. (((dynamic_invariant(temp___223, true, true, true,
+  true) and dynamic_invariant(temp___224, true, true, true, true)) and
+  (((dynamic_invariant(temp___225, true, true, true, true) and
+  dynamic_invariant(temp___226, true, true, true, true)) and
+  dynamic_invariant(temp___227, true, true, true, true)) and
+  ((dynamic_invariant(temp___228, true, true, true, true) and
+  dynamic_invariant(temp___229, true, true, true, true)) and
+  dynamic_invariant(temp___230, true, true, true, true)))) ->
+  ((to_array(temp_____aggregate_def_221(temp___223, temp___224, temp___225,
+  temp___226, temp___227, temp___228, temp___229, temp___230, temp___231,
+  temp___232))[(d + 0)]) = rliteral)))
+
+axiom def_axiom9 :
+  (forall temp___223:int. forall temp___224:int. forall temp___225:int.
+  forall temp___226:int. forall temp___227:int. forall temp___228:int.
+  forall temp___229:int. forall temp___230:int. forall temp___231:int.
+  forall temp___232:int. (((dynamic_invariant(temp___223, true, true, true,
+  true) and dynamic_invariant(temp___224, true, true, true, true)) and
+  (((dynamic_invariant(temp___225, true, true, true, true) and
+  dynamic_invariant(temp___226, true, true, true, true)) and
+  dynamic_invariant(temp___227, true, true, true, true)) and
+  ((dynamic_invariant(temp___228, true, true, true, true) and
+  dynamic_invariant(temp___229, true, true, true, true)) and
+  dynamic_invariant(temp___230, true, true, true, true)))) ->
+  ((to_array(temp_____aggregate_def_221(temp___223, temp___224, temp___225,
+  temp___226, temp___227, temp___228, temp___229, temp___230, temp___231,
+  temp___232))[(d + 1)]) = rliteral)))
+
+axiom def_axiom10 :
+  (forall temp___223:int. forall temp___224:int. forall temp___225:int.
+  forall temp___226:int. forall temp___227:int. forall temp___228:int.
+  forall temp___229:int. forall temp___230:int. forall temp___231:int.
+  forall temp___232:int. (((dynamic_invariant(temp___223, true, true, true,
+  true) and dynamic_invariant(temp___224, true, true, true, true)) and
+  (((dynamic_invariant(temp___225, true, true, true, true) and
+  dynamic_invariant(temp___226, true, true, true, true)) and
+  dynamic_invariant(temp___227, true, true, true, true)) and
+  ((dynamic_invariant(temp___228, true, true, true, true) and
+  dynamic_invariant(temp___229, true, true, true, true)) and
+  dynamic_invariant(temp___230, true, true, true, true)))) ->
+  ((to_array(temp_____aggregate_def_221(temp___223, temp___224, temp___225,
+  temp___226, temp___227, temp___228, temp___229, temp___230, temp___231,
+  temp___232))[(d + 2)]) = rliteral)))
+
+axiom def_axiom11 :
+  (forall temp___223:int. forall temp___224:int. forall temp___225:int.
+  forall temp___226:int. forall temp___227:int. forall temp___228:int.
+  forall temp___229:int. forall temp___230:int. forall temp___231:int.
+  forall temp___232:int. (((dynamic_invariant(temp___223, true, true, true,
+  true) and dynamic_invariant(temp___224, true, true, true, true)) and
+  (((dynamic_invariant(temp___225, true, true, true, true) and
+  dynamic_invariant(temp___226, true, true, true, true)) and
+  dynamic_invariant(temp___227, true, true, true, true)) and
+  ((dynamic_invariant(temp___228, true, true, true, true) and
+  dynamic_invariant(temp___229, true, true, true, true)) and
+  dynamic_invariant(temp___230, true, true, true, true)))) ->
+  ((to_array(temp_____aggregate_def_221(temp___223, temp___224, temp___225,
+  temp___226, temp___227, temp___228, temp___229, temp___230, temp___231,
+  temp___232))[(d + 3)]) = rliteral)))
+
+axiom def_axiom12 :
+  (forall temp___223:int. forall temp___224:int. forall temp___225:int.
+  forall temp___226:int. forall temp___227:int. forall temp___228:int.
+  forall temp___229:int. forall temp___230:int. forall temp___231:int.
+  forall temp___232:int. (((dynamic_invariant(temp___223, true, true, true,
+  true) and dynamic_invariant(temp___224, true, true, true, true)) and
+  (((dynamic_invariant(temp___225, true, true, true, true) and
+  dynamic_invariant(temp___226, true, true, true, true)) and
+  dynamic_invariant(temp___227, true, true, true, true)) and
+  ((dynamic_invariant(temp___228, true, true, true, true) and
+  dynamic_invariant(temp___229, true, true, true, true)) and
+  dynamic_invariant(temp___230, true, true, true, true)))) ->
+  ((to_array(temp_____aggregate_def_221(temp___223, temp___224, temp___225,
+  temp___226, temp___227, temp___228, temp___229, temp___230, temp___231,
+  temp___232))[(d + 4)]) = rliteral1)))
+
+axiom def_axiom13 :
+  (forall temp___223:int. forall temp___224:int. forall temp___225:int.
+  forall temp___226:int. forall temp___227:int. forall temp___228:int.
+  forall temp___229:int. forall temp___230:int. forall temp___231:int.
+  forall temp___232:int. (((dynamic_invariant(temp___223, true, true, true,
+  true) and dynamic_invariant(temp___224, true, true, true, true)) and
+  (((dynamic_invariant(temp___225, true, true, true, true) and
+  dynamic_invariant(temp___226, true, true, true, true)) and
+  dynamic_invariant(temp___227, true, true, true, true)) and
+  ((dynamic_invariant(temp___228, true, true, true, true) and
+  dynamic_invariant(temp___229, true, true, true, true)) and
+  dynamic_invariant(temp___230, true, true, true, true)))) ->
+  ((to_array(temp_____aggregate_def_221(temp___223, temp___224, temp___225,
+  temp___226, temp___227, temp___228, temp___229, temp___230, temp___231,
+  temp___232))[(d + 5)]) = rliteral1)))
+
+axiom def_axiom14 :
+  (forall temp___223:int. forall temp___224:int. forall temp___225:int.
+  forall temp___226:int. forall temp___227:int. forall temp___228:int.
+  forall temp___229:int. forall temp___230:int. forall temp___231:int.
+  forall temp___232:int. (((dynamic_invariant(temp___223, true, true, true,
+  true) and dynamic_invariant(temp___224, true, true, true, true)) and
+  (((dynamic_invariant(temp___225, true, true, true, true) and
+  dynamic_invariant(temp___226, true, true, true, true)) and
+  dynamic_invariant(temp___227, true, true, true, true)) and
+  ((dynamic_invariant(temp___228, true, true, true, true) and
+  dynamic_invariant(temp___229, true, true, true, true)) and
+  dynamic_invariant(temp___230, true, true, true, true)))) ->
+  ((to_array(temp_____aggregate_def_221(temp___223, temp___224, temp___225,
+  temp___226, temp___227, temp___228, temp___229, temp___230, temp___231,
+  temp___232))[(d + 6)]) = rliteral1)))
+
+axiom def_axiom15 :
+  (forall temp___223:int. forall temp___224:int. forall temp___225:int.
+  forall temp___226:int. forall temp___227:int. forall temp___228:int.
+  forall temp___229:int. forall temp___230:int. forall temp___231:int.
+  forall temp___232:int. (((dynamic_invariant(temp___223, true, true, true,
+  true) and dynamic_invariant(temp___224, true, true, true, true)) and
+  (((dynamic_invariant(temp___225, true, true, true, true) and
+  dynamic_invariant(temp___226, true, true, true, true)) and
+  dynamic_invariant(temp___227, true, true, true, true)) and
+  ((dynamic_invariant(temp___228, true, true, true, true) and
+  dynamic_invariant(temp___229, true, true, true, true)) and
+  dynamic_invariant(temp___230, true, true, true, true)))) ->
+  ((to_array(temp_____aggregate_def_221(temp___223, temp___224, temp___225,
+  temp___226, temp___227, temp___228, temp___229, temp___230, temp___231,
+  temp___232))[(d + 7)]) = rliteral1)))
+
+ (* File "concat.adb", line 1, characters 0-0 *)
+goal defqtvc : (let o = id(1) : int in ((id__function_guard(o, 1) and
+  (dynamic_invariant(o, true, false, true, true) and (o = 1))) ->
+  (forall v:int. ((v = o) -> (dynamic_invariant(v, true, false, true,
+  true) -> ((v = d) -> (dynamic_invariant(d, true, false, true, true) ->
+  (let temp___199 = concat__a__aggregate_def(0, d, 8) : us_t in
+  ((first2(temp___199) = d) -> ((last1(temp___199) = 8) ->
+  ((if (first2(temp___199) <= last1(temp___199)) then ((first <= 8) and
+  ((last1(temp___199) - first2(temp___199)) = (8 - first))) else (8 <  first)) ->
+  (let concat__a__assume = of_array(slide(to_array(temp___199),
+  first2(temp___199), first), first, 8) : us_t in
+  (forall a:(int,natural) farray. ((a = to_array(concat__a__assume)) ->
+  ((to_rep1(a__first) = first2(concat__a__assume)) ->
+  ((to_rep1(a__last) = last1(concat__a__assume)) ->
+  ((dynamic_property1(first, 8, to_rep1(a__first), to_rep1(a__last)) and
+  ((to_rep1(a__first) = d) and (to_rep1(a__last) = 8))) -> (let temp___207 =
+  concat__b__aggregate_def(1, d, 8) : us_t in ((first2(temp___207) = d) ->
+  ((last1(temp___207) = 8) ->
+  ((if (first2(temp___207) <= last1(temp___207)) then ((first <= 8) and
+  ((last1(temp___207) - first2(temp___207)) = (8 - first))) else (8 <  first)) ->
+  (let concat__b__assume = of_array(slide(to_array(temp___207),
+  first2(temp___207), first), first, 8) : us_t in
+  (forall b:(int,natural) farray. ((b = to_array(concat__b__assume)) ->
+  ((to_rep1(b__first) = first2(concat__b__assume)) ->
+  ((to_rep1(b__last) = last1(concat__b__assume)) ->
+  ((dynamic_property1(first, 8, to_rep1(b__first), to_rep1(b__last)) and
+  ((to_rep1(b__first) = d) and (to_rep1(b__last) = 8))) -> (((5 <= 8) ->
+  (((to_rep1(b__first) <= 5) and (5 <= to_rep1(b__last))) and
+  ((to_rep1(b__first) <= 8) and (8 <= to_rep1(b__last))))) -> ((4 <= 7) ->
+  (to_rep1(a__first) <= 4))))))))))))))))))))))))))))))

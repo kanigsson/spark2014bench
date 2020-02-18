@@ -1,0 +1,272 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type positive
+
+logic positiveqtint : positive -> int
+
+axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
+
+axiom positiveqtaxiom1 :
+  (forall i:positive. (positiveqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : positive, positive -> bool
+
+logic dummy : positive
+
+type positive__ref = { positive__content : positive
+}
+
+function positive__ref_positive__content__projection(a: positive__ref) : positive =
+  (a).positive__content
+
+predicate dynamic_invariant(temp___expr_46: int, temp___is_init_42: bool,
+  temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
+  temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
+  (1 <= 2147483647)) -> in_range(temp___expr_46))
+
+type us_main_type
+
+logic us_main_eq : us_main_type, us_main_type -> bool
+
+type us_split_fields = { rec__vk__tag__fs__name__t : us_main_type; rec__ext__
+: us_private
+}
+
+function us_split_fields_rec__vk__tag__fs__name__t__projection(a: us_split_fields) : us_main_type =
+  (a).rec__vk__tag__fs__name__t
+
+function us_split_fields_rec__ext____projection(a: us_split_fields) : us_private =
+  (a).rec__ext__
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields; attr__tag : int
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function us_rep_attr__tag__projection(a: us_rep) : int = (a).attr__tag
+
+function bool_eq1(a: us_rep, b: us_rep) : bool =
+  (if (us_main_eq(((a).us_split_fields1).rec__vk__tag__fs__name__t,
+  ((b).us_split_fields1).rec__vk__tag__fs__name__t) = true) then true else false)
+
+logic us_dispatch_eq : us_rep, us_rep -> bool
+
+logic us_tag : int
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type t__ref = { t__content : us_rep
+}
+
+function t__ref_t__content__projection(a: t__ref) : us_rep = (a).t__content
+
+logic length : us_rep -> int
+
+logic length__function_guard : int, us_rep -> prop
+
+logic length1 : int, us_rep -> int
+
+logic length__function_guard1 : int, int, us_rep -> prop
+
+logic us_tag1 : int
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic user_eq2 : us_rep, us_rep -> bool
+
+logic dummy2 : us_rep
+
+type mutable_t__ref = { mutable_t__content : us_rep
+}
+
+function mutable_t__ref_mutable_t__content__projection(a: mutable_t__ref) : us_rep =
+  (a).mutable_t__content
+
+type count_type
+
+logic count_typeqtint : count_type -> int
+
+axiom count_typeqtaxiom : (forall i:count_type. (0 <= count_typeqtint(i)))
+
+axiom count_typeqtaxiom1 :
+  (forall i:count_type. (count_typeqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq3 : count_type, count_type -> bool
+
+logic dummy3 : count_type
+
+type count_type__ref = { count_type__content : count_type
+}
+
+function count_type__ref_count_type__content__projection(a: count_type__ref) : count_type =
+  (a).count_type__content
+
+predicate dynamic_invariant1(temp___expr_162: int, temp___is_init_158: bool,
+  temp___skip_constant_159: bool, temp___do_toplevel_160: bool,
+  temp___do_typ_inv_161: bool) = (((temp___is_init_158 = true) or
+  (0 <= 2147483647)) -> in_range1(temp___expr_162))
+
+axiom length__post_axiom :
+  (forall this:us_rep [length(this)]. in_range1(length(this)))
+
+axiom vk__tag__fs__name__t__compat_axiom :
+  (forall this:us_rep [length1(us_tag, this)].
+  (length__function_guard1(length1(us_tag, this), us_tag, this) ->
+  (forall this1:us_rep. length__function_guard(length(this1), this1))))
+
+axiom vk__tag__fs__name__t__compat_axiom1 :
+  (forall this:us_rep [length1(us_tag, this)].
+  (length__function_guard1(length1(us_tag, this), us_tag, this) ->
+  (length(this) = length1(us_tag, this))))
+
+axiom vk__tag__name_p__mutable_t__compat_axiom :
+  (forall this:us_rep [length1(us_tag1, this)].
+  (length__function_guard1(length1(us_tag1, this), us_tag1, this) ->
+  (forall this1:us_rep. length__function_guard(length(this1), this1))))
+
+axiom vk__tag__name_p__mutable_t__compat_axiom1 :
+  (forall this:us_rep [length1(us_tag1, this)].
+  (length__function_guard1(length1(us_tag1, this), us_tag1, this) ->
+  (length(this) = length1(us_tag1, this))))
+
+logic this : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic index : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+axiom temp___result_173qtdef :
+  (forall temp___172:us_rep. length__function_guard(length(temp___172),
+  temp___172))
+
+predicate default_initial_assumption(temp___expr_170: us_rep,
+  temp___skip_top_level_171: bool) =
+  (((temp___expr_170).attr__tag = us_tag) and
+  ((not (temp___skip_top_level_171 = true)) ->
+  (length(temp___expr_170) = 0)))
+
+axiom temp___result_200qtdef :
+  (forall temp___199:us_rep. length__function_guard(length(temp___199),
+  temp___199))
+
+predicate default_initial_assumption1(temp___expr_197: us_rep,
+  temp___skip_top_level_198: bool) =
+  (((temp___expr_197).attr__tag = us_tag1) and
+  ((not (temp___skip_top_level_198 = true)) ->
+  (length(temp___expr_197) = 0)))
+
+ (* File "aida-strings-generic_immutable_unbounded_string_shared_ptr.ads", line 16, characters 0-0 *)
+goal defqtvc : (dynamic_invariant(index, true, false, true, true) -> (let o =
+  this : us_rep in (let o1 = length(o) : int in ((length__function_guard(o1,
+  o) and dynamic_invariant1(o1, true, false, true, true)) -> ((0 <  o1) ->
+  (let o2 = this : us_rep in (let o3 = length(o2) : int in
+  ((length__function_guard(o3, o2) and dynamic_invariant1(o3, true, false,
+  true, true)) -> in_range(o3)))))))))

@@ -1,0 +1,1334 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+type positive
+
+logic positiveqtint : positive -> int
+
+axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
+
+axiom positiveqtaxiom1 :
+  (forall i:positive. (positiveqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : positive, positive -> bool
+
+logic dummy1 : positive
+
+type positive__ref = { positive__content : positive
+}
+
+function positive__ref_positive__content__projection(a: positive__ref) : positive =
+  (a).positive__content
+
+type character
+
+predicate in_range3(x: int) = ((0 <= x) and (x <= 255))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : character, character -> bool
+
+logic dummy2 : character
+
+type character__ref = { character__content : character
+}
+
+function character__ref_character__content__projection(a: character__ref) : character =
+  (a).character__content
+
+logic to_rep : character -> int
+
+logic of_rep : int -> character
+
+axiom inversion_axiom :
+  (forall x:character [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:character [to_rep(x)]. in_range3(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range3(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type map__ref = { map__content : (int,character) farray
+}
+
+logic slide : (int,character) farray, int, int -> (int,character) farray
+
+axiom slide_eq :
+  (forall a:(int,character) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,character) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq4(a: (int,character) farray, a__first: int, a__last: int,
+  b: (int,character) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep((a[temp___idx_91])) = to_rep((b[((b__first - a__first) + temp___idx_91)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,character) farray. forall b:(int,character) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_91:int. (((a__first <= temp___idx_91) and
+  (temp___idx_91 <= a__last)) ->
+  (to_rep((a[temp___idx_91])) = to_rep((b[((b__first - a__first) + temp___idx_91)]))))))))
+
+function to_rep1(x: integer) : int = integerqtint(x)
+
+logic of_rep1 : int -> integer
+
+axiom inversion_axiom1 :
+  (forall x:integer [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range1(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (in_range2(low) and in_range2(high)))))
+
+type us_t = { elts : (int,character) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,character) farray = (a).elts
+
+function of_array(a: (int,character) farray, f: int, l: int) : us_t = {
+  elts = a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep1(first((a).rt))
+
+function last1(a: us_t) : int = to_rep1(last((a).rt))
+
+function length(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq5(x: us_t, y: us_t) : bool = bool_eq4((x).elts,
+  to_rep1(first((x).rt)), to_rep1(last((x).rt)), (y).elts,
+  to_rep1(first((y).rt)), to_rep1(last((y).rt)))
+
+logic user_eq3 : us_t, us_t -> bool
+
+logic dummy3 : us_t
+
+type string____ref = { string____content : us_t
+}
+
+function string____ref_string____content__projection(a: string____ref) : us_t =
+  (a).string____content
+
+logic to_string : us_image, int -> us_t
+
+logic from_string : us_t -> us_image
+
+axiom to_string__first :
+  (forall x:us_image.
+  (forall s:int [to_string(x, s)]. (first1(to_string(x, s)) = 1)))
+
+axiom to_string__length :
+  (forall x:us_image.
+  (forall s:int [to_string(x, s)]. ((0 <= s) -> (length(to_string(x,
+  s)) <= s))))
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq4 : natural, natural -> bool
+
+logic dummy4 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant1(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range4(temp___expr_39))
+
+predicate dynamic_invariant2(temp___expr_74: int, temp___is_init_70: bool,
+  temp___skip_constant_71: bool, temp___do_toplevel_72: bool,
+  temp___do_typ_inv_73: bool) = (((temp___is_init_70 = true) or
+  (0 <= 255)) -> in_range3(temp___expr_74))
+
+logic line_length : us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> int
+
+logic line_length__function_guard : int, us_private, us_private, us_private,
+  us_private, us_private, us_private, us_private -> prop
+
+type count
+
+logic countqtint : count -> int
+
+axiom countqtaxiom : (forall i:count. (0 <= countqtint(i)))
+
+axiom countqtaxiom1 : (forall i:count. (countqtint(i) <= 2147483647))
+
+predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq5 : count, count -> bool
+
+logic dummy5 : count
+
+type count__ref = { count__content : count
+}
+
+function count__ref_count__content__projection(a: count__ref) : count =
+  (a).count__content
+
+predicate dynamic_invariant3(temp___expr_178: int, temp___is_init_174: bool,
+  temp___skip_constant_175: bool, temp___do_toplevel_176: bool,
+  temp___do_typ_inv_177: bool) = (((temp___is_init_174 = true) or
+  (0 <= 2147483647)) -> in_range5(temp___expr_178))
+
+axiom line_length__post_axiom :
+  (forall ada___ada__text_io__standard_in:us_private.
+  forall ada___ada__text_io__standard_out:us_private.
+  forall ada___ada__text_io__standard_err:us_private.
+  forall ada___ada__text_io__current_err:us_private.
+  forall ada___ada__text_io__file_system:us_private.
+  forall ada___ada__text_io__current_in:us_private.
+  forall ada___ada__text_io__current_out:us_private
+  [line_length(ada___ada__text_io__standard_in,
+  ada___ada__text_io__standard_out, ada___ada__text_io__standard_err,
+  ada___ada__text_io__current_err, ada___ada__text_io__file_system,
+  ada___ada__text_io__current_in, ada___ada__text_io__current_out)].
+  dynamic_invariant3(line_length(ada___ada__text_io__standard_in,
+  ada___ada__text_io__standard_out, ada___ada__text_io__standard_err,
+  ada___ada__text_io__current_err, ada___ada__text_io__file_system,
+  ada___ada__text_io__current_in, ada___ada__text_io__current_out), true,
+  false, true, true))
+
+logic page_length : us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> int
+
+logic page_length__function_guard : int, us_private, us_private, us_private,
+  us_private, us_private, us_private, us_private -> prop
+
+axiom page_length__post_axiom :
+  (forall ada___ada__text_io__standard_in:us_private.
+  forall ada___ada__text_io__standard_out:us_private.
+  forall ada___ada__text_io__standard_err:us_private.
+  forall ada___ada__text_io__current_err:us_private.
+  forall ada___ada__text_io__file_system:us_private.
+  forall ada___ada__text_io__current_in:us_private.
+  forall ada___ada__text_io__current_out:us_private
+  [page_length(ada___ada__text_io__standard_in,
+  ada___ada__text_io__standard_out, ada___ada__text_io__standard_err,
+  ada___ada__text_io__current_err, ada___ada__text_io__file_system,
+  ada___ada__text_io__current_in, ada___ada__text_io__current_out)].
+  dynamic_invariant3(page_length(ada___ada__text_io__standard_in,
+  ada___ada__text_io__standard_out, ada___ada__text_io__standard_err,
+  ada___ada__text_io__current_err, ada___ada__text_io__file_system,
+  ada___ada__text_io__current_in, ada___ada__text_io__current_out), true,
+  false, true, true))
+
+type us_main_type
+
+logic us_main_eq : us_main_type, us_main_type -> bool
+
+type us_rep
+
+logic bool_eq8 : us_rep, us_rep -> bool
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic user_eq6 : us_rep, us_rep -> bool
+
+logic dummy6 : us_rep
+
+type file_type__ref = { file_type__content : us_rep
+}
+
+function file_type__ref_file_type__content__projection(a: file_type__ref) : us_rep =
+  (a).file_type__content
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic is_open : us_rep -> bool
+
+logic is_open__function_guard : bool, us_rep -> prop
+
+predicate default_initial_assumption(temp___expr_207: us_rep,
+  temp___skip_top_level_208: bool) =
+  ((not (temp___skip_top_level_208 = true)) ->
+  (not (is_open(temp___expr_207) = true)))
+
+logic mode : us_rep -> int
+
+logic mode__function_guard : int, us_rep -> prop
+
+type file_mode
+
+function pos_to_rep(x: int) : int =
+  (if (x = 2) then 3 else (if (x = 1) then 2 else 0))
+
+predicate in_range6(x: int) = ((0 <= x) and (x <= 2))
+
+function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> int
+
+logic user_eq7 : file_mode, file_mode -> bool
+
+logic dummy7 : file_mode
+
+type file_mode__ref = { file_mode__content : file_mode
+}
+
+function file_mode__ref_file_mode__content__projection(a: file_mode__ref) : file_mode =
+  (a).file_mode__content
+
+predicate dynamic_invariant4(temp___expr_242: int, temp___is_init_238: bool,
+  temp___skip_constant_239: bool, temp___do_toplevel_240: bool,
+  temp___do_typ_inv_241: bool) = (((temp___is_init_238 = true) or
+  (0 <= 2)) -> in_range6(temp___expr_242))
+
+axiom mode__post_axiom :
+  (forall file:us_rep [mode(file)]. ((is_open(file) = true) ->
+  dynamic_invariant4(mode(file), true, false, true, true)))
+
+type num
+
+logic numqtint : num -> int
+
+axiom numqtaxiom : (forall i:num. ((- 20) <= numqtint(i)))
+
+axiom numqtaxiom1 : (forall i:num. (numqtint(i) <= 20))
+
+predicate in_range7(x: int) = (((- 20) <= x) and (x <= 20))
+
+function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE7 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check7 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE7 : us_image -> int
+
+logic user_eq8 : num, num -> bool
+
+logic dummy8 : num
+
+type num__ref = { num__content : num
+}
+
+function num__ref_num__content__projection(a: num__ref) : num =
+  (a).num__content
+
+predicate dynamic_invariant5(temp___expr_221: int, temp___is_init_217: bool,
+  temp___skip_constant_218: bool, temp___do_toplevel_219: bool,
+  temp___do_typ_inv_220: bool) = (((temp___is_init_217 = true) or
+  ((- 20) <= 20)) -> in_range7(temp___expr_221))
+
+logic line_length1 : us_rep, us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> int
+
+logic line_length__function_guard1 : int, us_rep, us_private, us_private,
+  us_private, us_private, us_private, us_private, us_private -> prop
+
+axiom line_length__post_axiom1 :
+  (forall file:us_rep.
+  (forall ada___ada__text_io__standard_in:us_private.
+  forall ada___ada__text_io__standard_out:us_private.
+  forall ada___ada__text_io__standard_err:us_private.
+  forall ada___ada__text_io__current_err:us_private.
+  forall ada___ada__text_io__file_system:us_private.
+  forall ada___ada__text_io__current_in:us_private.
+  forall ada___ada__text_io__current_out:us_private [line_length1(file,
+  ada___ada__text_io__standard_in, ada___ada__text_io__standard_out,
+  ada___ada__text_io__standard_err, ada___ada__text_io__current_err,
+  ada___ada__text_io__file_system, ada___ada__text_io__current_in,
+  ada___ada__text_io__current_out)]. (((is_open(file) = true) and
+  (not (mode(file) = 0))) -> dynamic_invariant3(line_length1(file,
+  ada___ada__text_io__standard_in, ada___ada__text_io__standard_out,
+  ada___ada__text_io__standard_err, ada___ada__text_io__current_err,
+  ada___ada__text_io__file_system, ada___ada__text_io__current_in,
+  ada___ada__text_io__current_out), true, false, true, true))))
+
+logic page_length1 : us_rep, us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> int
+
+logic page_length__function_guard1 : int, us_rep, us_private, us_private,
+  us_private, us_private, us_private, us_private, us_private -> prop
+
+axiom page_length__post_axiom1 :
+  (forall file:us_rep.
+  (forall ada___ada__text_io__standard_in:us_private.
+  forall ada___ada__text_io__standard_out:us_private.
+  forall ada___ada__text_io__standard_err:us_private.
+  forall ada___ada__text_io__current_err:us_private.
+  forall ada___ada__text_io__file_system:us_private.
+  forall ada___ada__text_io__current_in:us_private.
+  forall ada___ada__text_io__current_out:us_private [page_length1(file,
+  ada___ada__text_io__standard_in, ada___ada__text_io__standard_out,
+  ada___ada__text_io__standard_err, ada___ada__text_io__current_err,
+  ada___ada__text_io__file_system, ada___ada__text_io__current_in,
+  ada___ada__text_io__current_out)]. (((is_open(file) = true) and
+  (not (mode(file) = 0))) -> dynamic_invariant3(page_length1(file,
+  ada___ada__text_io__standard_in, ada___ada__text_io__standard_out,
+  ada___ada__text_io__standard_err, ada___ada__text_io__current_err,
+  ada___ada__text_io__file_system, ada___ada__text_io__current_in,
+  ada___ada__text_io__current_out), true, false, true, true))))
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+logic attr__ATTRIBUTE_ADDRESS8 : int
+
+logic attr__ATTRIBUTE_ADDRESS9 : int
+
+logic attr__ATTRIBUTE_ADDRESS10 : int
+
+logic bool_eq11 : int, int -> bool
+
+logic bool_ne : int, int -> bool
+
+logic bool_lt : int, int -> bool
+
+logic bool_le : int, int -> bool
+
+logic bool_gt : int, int -> bool
+
+logic bool_ge : int, int -> bool
+
+axiom bool_eq_axiom :
+  (forall x:int. (forall y:int. ((bool_eq11(x, y) = true) -> (x = y))))
+
+axiom bool_eq_axiom1 :
+  (forall x:int. (forall y:int. ((x = y) -> (bool_eq11(x, y) = true))))
+
+axiom bool_ne_axiom :
+  (forall x:int. (forall y:int. ((bool_ne(x, y) = true) -> (not (x = y)))))
+
+axiom bool_ne_axiom1 :
+  (forall x:int. (forall y:int. ((not (x = y)) -> (bool_ne(x, y) = true))))
+
+axiom bool_lt_axiom :
+  (forall x:int. (forall y:int. ((bool_lt(x, y) = true) -> (x <  y))))
+
+axiom bool_lt_axiom1 :
+  (forall x:int. (forall y:int. ((x <  y) -> (bool_lt(x, y) = true))))
+
+axiom bool_int__le_axiom :
+  (forall x:int. (forall y:int. ((bool_le(x, y) = true) -> (x <= y))))
+
+axiom bool_int__le_axiom1 :
+  (forall x:int. (forall y:int. ((x <= y) -> (bool_le(x, y) = true))))
+
+axiom bool_gt_axiom :
+  (forall x:int. (forall y:int. ((bool_gt(x, y) = true) -> (y <  x))))
+
+axiom bool_gt_axiom1 :
+  (forall x:int. (forall y:int. ((y <  x) -> (bool_gt(x, y) = true))))
+
+axiom bool_ge_axiom :
+  (forall x:int. (forall y:int. ((bool_ge(x, y) = true) -> (y <= x))))
+
+axiom bool_ge_axiom1 :
+  (forall x:int. (forall y:int. ((y <= x) -> (bool_ge(x, y) = true))))
+
+function length1(x: int, y: int) : int =
+  (if (x <= y) then ((y - x) + 1) else 0)
+
+logic attr__ATTRIBUTE_ADDRESS11 : int
+
+predicate dynamic_invariant6(temp___expr_96: us_t, temp___is_init_92: bool,
+  temp___skip_constant_93: bool, temp___do_toplevel_94: bool,
+  temp___do_typ_inv_95: bool) = ((not (temp___skip_constant_93 = true)) ->
+  dynamic_property(1, 2147483647, first1(temp___expr_96),
+  last1(temp___expr_96)))
+
+logic name : us_rep -> us_t
+
+logic name__function_guard : us_t, us_rep -> prop
+
+axiom name__post_axiom :
+  (forall file:us_rep [name(file)]. ((is_open(file) = true) ->
+  dynamic_invariant6(name(file), true, false, true, true)))
+
+logic form : us_rep -> us_t
+
+logic form__function_guard : us_t, us_rep -> prop
+
+axiom form__post_axiom :
+  (forall file:us_rep [form(file)]. ((is_open(file) = true) ->
+  dynamic_invariant6(form(file), true, false, true, true)))
+
+logic end_of_line : us_rep, us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> bool
+
+logic end_of_line__function_guard : bool, us_rep, us_private, us_private,
+  us_private, us_private, us_private, us_private, us_private -> prop
+
+logic end_of_line1 : us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> bool
+
+logic end_of_line__function_guard1 : bool, us_private, us_private,
+  us_private, us_private, us_private, us_private, us_private -> prop
+
+logic end_of_page : us_rep, us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> bool
+
+logic end_of_page__function_guard : bool, us_rep, us_private, us_private,
+  us_private, us_private, us_private, us_private, us_private -> prop
+
+logic end_of_page1 : us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> bool
+
+logic end_of_page__function_guard1 : bool, us_private, us_private,
+  us_private, us_private, us_private, us_private, us_private -> prop
+
+logic end_of_file : us_rep, us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> bool
+
+logic end_of_file__function_guard : bool, us_rep, us_private, us_private,
+  us_private, us_private, us_private, us_private, us_private -> prop
+
+logic end_of_file1 : us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> bool
+
+logic end_of_file__function_guard1 : bool, us_private, us_private,
+  us_private, us_private, us_private, us_private, us_private -> prop
+
+logic col : us_rep, us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> int
+
+logic col__function_guard : int, us_rep, us_private, us_private, us_private,
+  us_private, us_private, us_private, us_private -> prop
+
+type positive_count
+
+logic positive_countqtint : positive_count -> int
+
+axiom positive_countqtaxiom :
+  (forall i:positive_count. (1 <= positive_countqtint(i)))
+
+axiom positive_countqtaxiom1 :
+  (forall i:positive_count. (positive_countqtint(i) <= 2147483647))
+
+predicate in_range8(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE8 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check8 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE8 : us_image -> int
+
+logic user_eq9 : positive_count, positive_count -> bool
+
+logic dummy9 : positive_count
+
+type positive_count__ref = { positive_count__content : positive_count
+}
+
+function positive_count__ref_positive_count__content__projection(a: positive_count__ref) : positive_count =
+  (a).positive_count__content
+
+predicate dynamic_invariant7(temp___expr_272: int, temp___is_init_268: bool,
+  temp___skip_constant_269: bool, temp___do_toplevel_270: bool,
+  temp___do_typ_inv_271: bool) = (((temp___is_init_268 = true) or
+  (1 <= 2147483647)) -> in_range8(temp___expr_272))
+
+axiom col__post_axiom :
+  (forall file:us_rep.
+  (forall ada___ada__text_io__standard_in:us_private.
+  forall ada___ada__text_io__standard_out:us_private.
+  forall ada___ada__text_io__standard_err:us_private.
+  forall ada___ada__text_io__current_err:us_private.
+  forall ada___ada__text_io__file_system:us_private.
+  forall ada___ada__text_io__current_in:us_private.
+  forall ada___ada__text_io__current_out:us_private [col(file,
+  ada___ada__text_io__standard_in, ada___ada__text_io__standard_out,
+  ada___ada__text_io__standard_err, ada___ada__text_io__current_err,
+  ada___ada__text_io__file_system, ada___ada__text_io__current_in,
+  ada___ada__text_io__current_out)]. ((is_open(file) = true) ->
+  dynamic_invariant7(col(file, ada___ada__text_io__standard_in,
+  ada___ada__text_io__standard_out, ada___ada__text_io__standard_err,
+  ada___ada__text_io__current_err, ada___ada__text_io__file_system,
+  ada___ada__text_io__current_in, ada___ada__text_io__current_out), true,
+  false, true, true))))
+
+logic col1 : us_private, us_private, us_private, us_private, us_private,
+  us_private, us_private -> int
+
+logic col__function_guard1 : int, us_private, us_private, us_private,
+  us_private, us_private, us_private, us_private -> prop
+
+axiom col__post_axiom1 :
+  (forall ada___ada__text_io__standard_in:us_private.
+  forall ada___ada__text_io__standard_out:us_private.
+  forall ada___ada__text_io__standard_err:us_private.
+  forall ada___ada__text_io__current_err:us_private.
+  forall ada___ada__text_io__file_system:us_private.
+  forall ada___ada__text_io__current_in:us_private.
+  forall ada___ada__text_io__current_out:us_private
+  [col1(ada___ada__text_io__standard_in, ada___ada__text_io__standard_out,
+  ada___ada__text_io__standard_err, ada___ada__text_io__current_err,
+  ada___ada__text_io__file_system, ada___ada__text_io__current_in,
+  ada___ada__text_io__current_out)].
+  dynamic_invariant7(col1(ada___ada__text_io__standard_in,
+  ada___ada__text_io__standard_out, ada___ada__text_io__standard_err,
+  ada___ada__text_io__current_err, ada___ada__text_io__file_system,
+  ada___ada__text_io__current_in, ada___ada__text_io__current_out), true,
+  false, true, true))
+
+logic line : us_rep, us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> int
+
+logic line__function_guard : int, us_rep, us_private, us_private, us_private,
+  us_private, us_private, us_private, us_private -> prop
+
+axiom line__post_axiom :
+  (forall file:us_rep.
+  (forall ada___ada__text_io__standard_in:us_private.
+  forall ada___ada__text_io__standard_out:us_private.
+  forall ada___ada__text_io__standard_err:us_private.
+  forall ada___ada__text_io__current_err:us_private.
+  forall ada___ada__text_io__file_system:us_private.
+  forall ada___ada__text_io__current_in:us_private.
+  forall ada___ada__text_io__current_out:us_private [line(file,
+  ada___ada__text_io__standard_in, ada___ada__text_io__standard_out,
+  ada___ada__text_io__standard_err, ada___ada__text_io__current_err,
+  ada___ada__text_io__file_system, ada___ada__text_io__current_in,
+  ada___ada__text_io__current_out)]. ((is_open(file) = true) ->
+  dynamic_invariant7(line(file, ada___ada__text_io__standard_in,
+  ada___ada__text_io__standard_out, ada___ada__text_io__standard_err,
+  ada___ada__text_io__current_err, ada___ada__text_io__file_system,
+  ada___ada__text_io__current_in, ada___ada__text_io__current_out), true,
+  false, true, true))))
+
+logic line1 : us_private, us_private, us_private, us_private, us_private,
+  us_private, us_private -> int
+
+logic line__function_guard1 : int, us_private, us_private, us_private,
+  us_private, us_private, us_private, us_private -> prop
+
+axiom line__post_axiom1 :
+  (forall ada___ada__text_io__standard_in:us_private.
+  forall ada___ada__text_io__standard_out:us_private.
+  forall ada___ada__text_io__standard_err:us_private.
+  forall ada___ada__text_io__current_err:us_private.
+  forall ada___ada__text_io__file_system:us_private.
+  forall ada___ada__text_io__current_in:us_private.
+  forall ada___ada__text_io__current_out:us_private
+  [line1(ada___ada__text_io__standard_in, ada___ada__text_io__standard_out,
+  ada___ada__text_io__standard_err, ada___ada__text_io__current_err,
+  ada___ada__text_io__file_system, ada___ada__text_io__current_in,
+  ada___ada__text_io__current_out)].
+  dynamic_invariant7(line1(ada___ada__text_io__standard_in,
+  ada___ada__text_io__standard_out, ada___ada__text_io__standard_err,
+  ada___ada__text_io__current_err, ada___ada__text_io__file_system,
+  ada___ada__text_io__current_in, ada___ada__text_io__current_out), true,
+  false, true, true))
+
+logic page : us_rep, us_private, us_private, us_private, us_private,
+  us_private, us_private, us_private -> int
+
+logic page__function_guard : int, us_rep, us_private, us_private, us_private,
+  us_private, us_private, us_private, us_private -> prop
+
+axiom page__post_axiom :
+  (forall file:us_rep.
+  (forall ada___ada__text_io__standard_in:us_private.
+  forall ada___ada__text_io__standard_out:us_private.
+  forall ada___ada__text_io__standard_err:us_private.
+  forall ada___ada__text_io__current_err:us_private.
+  forall ada___ada__text_io__file_system:us_private.
+  forall ada___ada__text_io__current_in:us_private.
+  forall ada___ada__text_io__current_out:us_private [page(file,
+  ada___ada__text_io__standard_in, ada___ada__text_io__standard_out,
+  ada___ada__text_io__standard_err, ada___ada__text_io__current_err,
+  ada___ada__text_io__file_system, ada___ada__text_io__current_in,
+  ada___ada__text_io__current_out)]. ((is_open(file) = true) ->
+  dynamic_invariant7(page(file, ada___ada__text_io__standard_in,
+  ada___ada__text_io__standard_out, ada___ada__text_io__standard_err,
+  ada___ada__text_io__current_err, ada___ada__text_io__file_system,
+  ada___ada__text_io__current_in, ada___ada__text_io__current_out), true,
+  false, true, true))))
+
+logic page1 : us_private, us_private, us_private, us_private, us_private,
+  us_private, us_private -> int
+
+logic page__function_guard1 : int, us_private, us_private, us_private,
+  us_private, us_private, us_private, us_private -> prop
+
+axiom page__post_axiom1 :
+  (forall ada___ada__text_io__standard_in:us_private.
+  forall ada___ada__text_io__standard_out:us_private.
+  forall ada___ada__text_io__standard_err:us_private.
+  forall ada___ada__text_io__current_err:us_private.
+  forall ada___ada__text_io__file_system:us_private.
+  forall ada___ada__text_io__current_in:us_private.
+  forall ada___ada__text_io__current_out:us_private
+  [page1(ada___ada__text_io__standard_in, ada___ada__text_io__standard_out,
+  ada___ada__text_io__standard_err, ada___ada__text_io__current_err,
+  ada___ada__text_io__file_system, ada___ada__text_io__current_in,
+  ada___ada__text_io__current_out)].
+  dynamic_invariant7(page1(ada___ada__text_io__standard_in,
+  ada___ada__text_io__standard_out, ada___ada__text_io__standard_err,
+  ada___ada__text_io__current_err, ada___ada__text_io__file_system,
+  ada___ada__text_io__current_in, ada___ada__text_io__current_out), true,
+  false, true, true))
+
+logic r14b : int
+
+logic attr__ATTRIBUTE_ADDRESS12 : int
+
+logic r17b : int
+
+logic attr__ATTRIBUTE_ADDRESS13 : int
+
+type int_num
+
+logic int_numqtint : int_num -> int
+
+axiom int_numqtaxiom : (forall i:int_num. ((- 20) <= int_numqtint(i)))
+
+axiom int_numqtaxiom1 : (forall i:int_num. (int_numqtint(i) <= 20))
+
+predicate in_range9(x: int) = (((- 20) <= x) and (x <= 20))
+
+function bool_eq13(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE9 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check9 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE9 : us_image -> int
+
+logic user_eq10 : int_num, int_num -> bool
+
+logic dummy10 : int_num
+
+type int_num__ref = { int_num__content : int_num
+}
+
+function int_num__ref_int_num__content__projection(a: int_num__ref) : int_num =
+  (a).int_num__content
+
+predicate dynamic_invariant8(temp___expr_214: int, temp___is_init_210: bool,
+  temp___skip_constant_211: bool, temp___do_toplevel_212: bool,
+  temp___do_typ_inv_213: bool) = (((temp___is_init_210 = true) or
+  ((- 20) <= 20)) -> in_range9(temp___expr_214))
+
+type field
+
+logic fieldqtint : field -> int
+
+axiom fieldqtaxiom : (forall i:field. (0 <= fieldqtint(i)))
+
+axiom fieldqtaxiom1 : (forall i:field. (fieldqtint(i) <= 255))
+
+predicate in_range10(x: int) = ((0 <= x) and (x <= 255))
+
+function bool_eq14(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE10 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check10 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE10 : us_image -> int
+
+logic user_eq11 : field, field -> bool
+
+logic dummy11 : field
+
+type field__ref = { field__content : field
+}
+
+function field__ref_field__content__projection(a: field__ref) : field =
+  (a).field__content
+
+predicate dynamic_invariant9(temp___expr_228: int, temp___is_init_224: bool,
+  temp___skip_constant_225: bool, temp___do_toplevel_226: bool,
+  temp___do_typ_inv_227: bool) = (((temp___is_init_224 = true) or
+  (0 <= 255)) -> in_range10(temp___expr_228))
+
+type number_base
+
+logic number_baseqtint : number_base -> int
+
+axiom number_baseqtaxiom : (forall i:number_base. (2 <= number_baseqtint(i)))
+
+axiom number_baseqtaxiom1 :
+  (forall i:number_base. (number_baseqtint(i) <= 16))
+
+predicate in_range11(x: int) = ((2 <= x) and (x <= 16))
+
+function bool_eq15(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE11 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check11 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE11 : us_image -> int
+
+logic user_eq12 : number_base, number_base -> bool
+
+logic dummy12 : number_base
+
+type number_base__ref = { number_base__content : number_base
+}
+
+function number_base__ref_number_base__content__projection(a: number_base__ref) : number_base =
+  (a).number_base__content
+
+predicate dynamic_invariant10(temp___expr_235: int, temp___is_init_231: bool,
+  temp___skip_constant_232: bool, temp___do_toplevel_233: bool,
+  temp___do_typ_inv_234: bool) = (((temp___is_init_231 = true) or
+  (2 <= 16)) -> in_range11(temp___expr_235))
+
+type tTstrSP1
+
+logic tTstrSP1qtint : tTstrSP1 -> int
+
+axiom tTstrSP1qtaxiom : (forall i:tTstrSP1. (1 <= tTstrSP1qtint(i)))
+
+axiom tTstrSP1qtaxiom1 : (forall i:tTstrSP1. (tTstrSP1qtint(i) <= 6))
+
+predicate in_range12(x: int) = ((1 <= x) and (x <= 6))
+
+function bool_eq16(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE12 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check12 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE12 : us_image -> int
+
+logic user_eq13 : tTstrSP1, tTstrSP1 -> bool
+
+logic dummy13 : tTstrSP1
+
+type tTstrSP1__ref = { tTstrSP1__content : tTstrSP1
+}
+
+function tTstrSP1__ref_tTstrSP1__content__projection(a: tTstrSP1__ref) : tTstrSP1 =
+  (a).tTstrSP1__content
+
+type tTa_lineSP1
+
+logic tTa_lineSP1qtint : tTa_lineSP1 -> int
+
+axiom tTa_lineSP1qtaxiom : (forall i:tTa_lineSP1. (1 <= tTa_lineSP1qtint(i)))
+
+axiom tTa_lineSP1qtaxiom1 :
+  (forall i:tTa_lineSP1. (tTa_lineSP1qtint(i) <= 40))
+
+predicate in_range13(x: int) = ((1 <= x) and (x <= 40))
+
+function bool_eq17(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE13 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check13 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE13 : us_image -> int
+
+logic user_eq14 : tTa_lineSP1, tTa_lineSP1 -> bool
+
+logic dummy14 : tTa_lineSP1
+
+type tTa_lineSP1__ref = { tTa_lineSP1__content : tTa_lineSP1
+}
+
+function tTa_lineSP1__ref_tTa_lineSP1__content__projection(a: tTa_lineSP1__ref) : tTa_lineSP1 =
+  (a).tTa_lineSP1__content
+
+type t9b
+
+logic t9bqtint : t9b -> int
+
+axiom t9bqtaxiom : (forall i:t9b. (1 <= t9bqtint(i)))
+
+axiom t9bqtaxiom1 : (forall i:t9b. (t9bqtint(i) <= 100))
+
+predicate in_range14(x: int) = ((1 <= x) and (x <= 100))
+
+function bool_eq18(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE14 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check14 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE14 : us_image -> int
+
+logic user_eq15 : t9b, t9b -> bool
+
+logic dummy15 : t9b
+
+type t9b__ref = { t9b__content : t9b
+}
+
+function t9b__ref_t9b__content__projection(a: t9b__ref) : t9b =
+  (a).t9b__content
+
+type t16b__ref = { t16b__content : us_t
+}
+
+function t16b__ref_t16b__content__projection(a: t16b__ref) : us_t =
+  (a).t16b__content
+
+type t19b__ref = { t19b__content : us_t
+}
+
+function t19b__ref_t19b__content__projection(a: t19b__ref) : us_t =
+  (a).t19b__content
+
+logic temp___String_Literal_295 : unit -> (int,character) farray
+
+axiom temp___String_Literal_295__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_295(us_void_param)].
+  (to_rep((temp___String_Literal_295(us_void_param)[1])) = 115))
+
+axiom temp___String_Literal_295__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_295(us_void_param)].
+  (to_rep((temp___String_Literal_295(us_void_param)[2])) = 111))
+
+axiom temp___String_Literal_295__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_295(us_void_param)].
+  (to_rep((temp___String_Literal_295(us_void_param)[3])) = 117))
+
+axiom temp___String_Literal_295__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_295(us_void_param)].
+  (to_rep((temp___String_Literal_295(us_void_param)[4])) = 114))
+
+axiom temp___String_Literal_295__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_295(us_void_param)].
+  (to_rep((temp___String_Literal_295(us_void_param)[5])) = 99))
+
+axiom temp___String_Literal_295__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_295(us_void_param)].
+  (to_rep((temp___String_Literal_295(us_void_param)[6])) = 101))
+
+axiom temp___String_Literal_295__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_295(us_void_param)].
+  (to_rep((temp___String_Literal_295(us_void_param)[7])) = 46))
+
+axiom temp___String_Literal_295__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_295(us_void_param)].
+  (to_rep((temp___String_Literal_295(us_void_param)[8])) = 116))
+
+axiom temp___String_Literal_295__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_295(us_void_param)].
+  (to_rep((temp___String_Literal_295(us_void_param)[9])) = 120))
+
+axiom temp___String_Literal_295__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_295(us_void_param)].
+  (to_rep((temp___String_Literal_295(us_void_param)[10])) = 116))
+
+logic temp___String_Literal_296 : unit -> (int,character) farray
+
+logic temp___String_Literal_303 : unit -> (int,character) farray
+
+axiom temp___String_Literal_303__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_303(us_void_param)].
+  (to_rep((temp___String_Literal_303(us_void_param)[1])) = 116))
+
+axiom temp___String_Literal_303__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_303(us_void_param)].
+  (to_rep((temp___String_Literal_303(us_void_param)[2])) = 97))
+
+axiom temp___String_Literal_303__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_303(us_void_param)].
+  (to_rep((temp___String_Literal_303(us_void_param)[3])) = 114))
+
+axiom temp___String_Literal_303__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_303(us_void_param)].
+  (to_rep((temp___String_Literal_303(us_void_param)[4])) = 103))
+
+axiom temp___String_Literal_303__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_303(us_void_param)].
+  (to_rep((temp___String_Literal_303(us_void_param)[5])) = 101))
+
+axiom temp___String_Literal_303__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_303(us_void_param)].
+  (to_rep((temp___String_Literal_303(us_void_param)[6])) = 116))
+
+axiom temp___String_Literal_303__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_303(us_void_param)].
+  (to_rep((temp___String_Literal_303(us_void_param)[7])) = 46))
+
+axiom temp___String_Literal_303__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_303(us_void_param)].
+  (to_rep((temp___String_Literal_303(us_void_param)[8])) = 116))
+
+axiom temp___String_Literal_303__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_303(us_void_param)].
+  (to_rep((temp___String_Literal_303(us_void_param)[9])) = 120))
+
+axiom temp___String_Literal_303__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_303(us_void_param)].
+  (to_rep((temp___String_Literal_303(us_void_param)[10])) = 116))
+
+logic temp___String_Literal_304 : unit -> (int,character) farray
+
+logic temp___String_Literal_305 : unit -> (int,character) farray
+
+axiom temp___String_Literal_305__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_305(us_void_param)].
+  (to_rep((temp___String_Literal_305(us_void_param)[1])) = 115))
+
+axiom temp___String_Literal_305__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_305(us_void_param)].
+  (to_rep((temp___String_Literal_305(us_void_param)[2])) = 111))
+
+axiom temp___String_Literal_305__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_305(us_void_param)].
+  (to_rep((temp___String_Literal_305(us_void_param)[3])) = 117))
+
+axiom temp___String_Literal_305__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_305(us_void_param)].
+  (to_rep((temp___String_Literal_305(us_void_param)[4])) = 114))
+
+axiom temp___String_Literal_305__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_305(us_void_param)].
+  (to_rep((temp___String_Literal_305(us_void_param)[5])) = 99))
+
+axiom temp___String_Literal_305__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_305(us_void_param)].
+  (to_rep((temp___String_Literal_305(us_void_param)[6])) = 101))
+
+axiom temp___String_Literal_305__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_305(us_void_param)].
+  (to_rep((temp___String_Literal_305(us_void_param)[7])) = 46))
+
+axiom temp___String_Literal_305__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_305(us_void_param)].
+  (to_rep((temp___String_Literal_305(us_void_param)[8])) = 116))
+
+axiom temp___String_Literal_305__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_305(us_void_param)].
+  (to_rep((temp___String_Literal_305(us_void_param)[9])) = 120))
+
+axiom temp___String_Literal_305__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_305(us_void_param)].
+  (to_rep((temp___String_Literal_305(us_void_param)[10])) = 116))
+
+logic temp___String_Literal_306 : unit -> (int,character) farray
+
+predicate dynamic_invariant11(temp___expr_46: int, temp___is_init_42: bool,
+  temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
+  temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
+  (1 <= 2147483647)) -> in_range2(temp___expr_46))
+
+ (* File "text_io_warnings.adb", line 3, characters 0-0 *)
+goal defqtvc :
+  (forall standard_in:us_private. forall standard_out:us_private.
+  forall standard_err:us_private. forall current_err:us_private.
+  forall file_system:us_private. forall current_in:us_private.
+  forall current_out:us_private. forall source:us_rep.
+  forall default_width:int. forall default_base:int. forall int_get:int.
+  forall target:us_rep. forall nat:int. forall ch:int.
+  (((line_length(standard_in, standard_out, standard_err, current_err,
+  file_system, current_in, current_out) = 0) and (page_length(standard_in,
+  standard_out, standard_err, current_err, file_system, current_in,
+  current_out) = 0)) -> (default_initial_assumption(source, false) ->
+  (dynamic_invariant9(default_width, true, false, true, true) ->
+  (dynamic_invariant10(default_base, true, false, true, true) ->
+  (dynamic_invariant8(int_get, false, false, true, true) ->
+  (forall sum:int. ((sum = 0) -> (dynamic_invariant(sum, true, false, true,
+  true) -> (default_initial_assumption(target, false) ->
+  (dynamic_invariant1(nat, false, false, true, true) ->
+  (dynamic_invariant2(ch, false, false, true, true) ->
+  (forall standard_in1:us_private. forall standard_out1:us_private.
+  forall standard_err1:us_private. forall current_err1:us_private.
+  forall file_system1:us_private. forall current_in1:us_private.
+  forall current_out1:us_private. forall source1:us_rep.
+  (((is_open(source1) = true) and (mode(source1) = 0)) ->
+  (forall standard_in2:us_private. forall standard_out2:us_private.
+  forall standard_err2:us_private. forall current_err2:us_private.
+  forall file_system2:us_private. forall current_in2:us_private.
+  forall current_out2:us_private. (((bool_ne(mode(source1), 0) = true) ->
+  ((line_length1(source1, standard_in1, standard_out1, standard_err1,
+  current_err1, file_system1, current_in1,
+  current_out1) = line_length1(source1, standard_in2, standard_out2,
+  standard_err2, current_err2, file_system2, current_in2, current_out2)) and
+  (page_length1(source1, standard_in1, standard_out1, standard_err1,
+  current_err1, file_system1, current_in1,
+  current_out1) = page_length1(source1, standard_in2, standard_out2,
+  standard_err2, current_err2, file_system2, current_in2, current_out2)))) ->
+  (forall standard_in3:us_private. forall standard_out3:us_private.
+  forall standard_err3:us_private. forall current_err3:us_private.
+  forall file_system3:us_private. forall current_in3:us_private.
+  forall current_out3:us_private. forall sum1:int.
+  ((exists j:int. ((j = 1) and (if (andb((if (1 <= j) then true else false),
+   (if (j <= 100) then true else false)) = true) then (exists text_io_warnings__int_io__get__item:int.
+                                                      (dynamic_invariant5(text_io_warnings__int_io__get__item,
+                                                      true, true, true,
+                                                      true) and
+                                                      (exists int_get1:int.
+                                                      ((int_get1 = text_io_warnings__int_io__get__item) and
+                                                      (let o =
+                                                      (sum + int_get1)
+                                                      : int in
+                                                      (in_range1(o) and
+                                                      (exists sum2:int.
+                                                      ((sum2 = o) and
+                                                      (in_range1((j * 20)) and
+                                                      (in_range1((j * (- 20))) and
+                                                      (exists int_get2:int.
+                                                      exists j1:int.
+                                                      ((((j1 * (- 20)) <= sum1) and
+                                                      (sum1 <= (j1 * 20))) and
+                                                      ((andb((if ((in_range14(j1) and
+                                                      dynamic_invariant8(int_get2,
+                                                      false, true, true,
+                                                      true)) and
+                                                      dynamic_invariant(sum1,
+                                                      true, true, true,
+                                                      true)) then true else false),
+                                                      (if ((1 <= j1) and
+                                                      (j1 <= 100)) then true else false)) = true) and
+                                                      (j1 = 100)))))))))))))) else ((((((((standard_in3 = standard_in2) and
+   (standard_out3 = standard_out2)) and (standard_err3 = standard_err2)) and
+   (current_err3 = current_err2)) and (file_system3 = file_system2)) and
+   (current_in3 = current_in2)) and (current_out3 = current_out2)) and
+   (sum1 = sum))))) ->
+  (forall standard_in4:us_private. forall standard_out4:us_private.
+  forall standard_err4:us_private. forall current_err4:us_private.
+  forall file_system4:us_private. forall current_in4:us_private.
+  forall current_out4:us_private. forall source2:us_rep.
+  ((((is_open(source2) = true) and (mode(source2) = 2)) and ((not (2 = 0)) ->
+  ((line_length1(source2, standard_in4, standard_out4, standard_err4,
+  current_err4, file_system4, current_in4, current_out4) = 0) and
+  (page_length1(source2, standard_in4, standard_out4, standard_err4,
+  current_err4, file_system4, current_in4, current_out4) = 0)))) ->
+  (is_open(source2) = true)))))))))))))))))))))

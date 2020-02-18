@@ -1,0 +1,2014 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : natural, natural -> bool
+
+logic dummy : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+function to_rep(x: natural) : int = naturalqtint(x)
+
+logic of_rep : int -> natural
+
+axiom inversion_axiom :
+  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:natural [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type us_split_discrs = {
+rec__split_records__record_with_mutable_discrs__present : bool
+}
+
+function us_split_discrs_rec__split_records__record_with_mutable_discrs__present__projection(a: us_split_discrs) : bool =
+  (a).rec__split_records__record_with_mutable_discrs__present
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_split_fields = {
+rec__split_records__record_with_mutable_discrs__field : natural
+}
+
+function us_split_fields_rec__split_records__record_with_mutable_discrs__field__projection(a: us_split_fields) : natural =
+  (a).rec__split_records__record_with_mutable_discrs__field
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_discrs1 : us_split_discrs; us_split_fields1 :
+us_split_fields
+}
+
+function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
+  (a).us_split_discrs1
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+predicate split_records__record_with_mutable_discrs__field__pred(a: us_rep) =
+  (to_int(((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present) = 1)
+
+function bool_eq2(a: us_rep, b: us_rep) : bool =
+  (if ((to_int(((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present) = to_int(((b).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)) and
+  (split_records__record_with_mutable_discrs__field__pred(a) ->
+  (to_rep(((a).us_split_fields1).rec__split_records__record_with_mutable_discrs__field) = to_rep(((b).us_split_fields1).rec__split_records__record_with_mutable_discrs__field)))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic split_records__record_with_mutable_discrs__present__first__bit : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit : int
+
+logic split_records__record_with_mutable_discrs__present__position : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom :
+  (split_records__record_with_mutable_discrs__present__first__bit <  split_records__record_with_mutable_discrs__present__last__bit)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom :
+  (0 <= split_records__record_with_mutable_discrs__present__position)
+
+logic split_records__record_with_mutable_discrs__field__first__bit : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit : int
+
+logic split_records__record_with_mutable_discrs__field__position : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom :
+  (split_records__record_with_mutable_discrs__field__first__bit <  split_records__record_with_mutable_discrs__field__last__bit)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom :
+  (0 <= split_records__record_with_mutable_discrs__field__position)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type record_with_mutable_discrs__ref = { record_with_mutable_discrs__content
+: us_rep
+}
+
+function record_with_mutable_discrs__ref_record_with_mutable_discrs__content__projection(a: record_with_mutable_discrs__ref) : us_rep =
+  (a).record_with_mutable_discrs__content
+
+predicate default_initial_assumption(temp___expr_164: us_rep,
+  temp___skip_top_level_165: bool) =
+  (((temp___expr_164).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present = of_int(0))
+
+predicate in_range2(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic split_records__record_with_mutable_discrs__present__first__bit1 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit1 : int
+
+logic split_records__record_with_mutable_discrs__present__position1 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom1 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit1)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom1 :
+  (split_records__record_with_mutable_discrs__present__first__bit1 <  split_records__record_with_mutable_discrs__present__last__bit1)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom1 :
+  (0 <= split_records__record_with_mutable_discrs__present__position1)
+
+logic split_records__record_with_mutable_discrs__field__first__bit1 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit1 : int
+
+logic split_records__record_with_mutable_discrs__field__position1 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom1 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit1)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom1 :
+  (split_records__record_with_mutable_discrs__field__first__bit1 <  split_records__record_with_mutable_discrs__field__last__bit1)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom1 :
+  (0 <= split_records__record_with_mutable_discrs__field__position1)
+
+logic user_eq2 : us_rep, us_rep -> bool
+
+logic dummy2 : us_rep
+
+type tc1S__ref = { tc1S__content : us_rep
+}
+
+function tc1S__ref_tc1S__content__projection(a: tc1S__ref) : us_rep =
+  (a).tc1S__content
+
+logic c1__split_discrs : us_split_discrs
+
+logic c1__attr__constrained : bool
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate dynamic_invariant(temp___expr_199: us_rep,
+  temp___is_init_195: bool, temp___skip_constant_196: bool,
+  temp___do_toplevel_197: bool, temp___do_typ_inv_198: bool) =
+  ((not (temp___skip_constant_196 = true)) -> in_range2(of_int(0),
+  temp___expr_199))
+
+predicate default_initial_assumption1(temp___expr_201: us_rep,
+  temp___skip_top_level_202: bool) =
+  (((temp___expr_201).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present = of_int(0))
+
+logic c2__attr__constrained : bool
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+predicate in_range3(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic split_records__record_with_mutable_discrs__present__first__bit2 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit2 : int
+
+logic split_records__record_with_mutable_discrs__present__position2 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom2 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit2)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom2 :
+  (split_records__record_with_mutable_discrs__present__first__bit2 <  split_records__record_with_mutable_discrs__present__last__bit2)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom2 :
+  (0 <= split_records__record_with_mutable_discrs__present__position2)
+
+logic split_records__record_with_mutable_discrs__field__first__bit2 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit2 : int
+
+logic split_records__record_with_mutable_discrs__field__position2 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom2 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit2)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom2 :
+  (split_records__record_with_mutable_discrs__field__first__bit2 <  split_records__record_with_mutable_discrs__field__last__bit2)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom2 :
+  (0 <= split_records__record_with_mutable_discrs__field__position2)
+
+logic user_eq3 : us_rep, us_rep -> bool
+
+logic dummy3 : us_rep
+
+type t1s__ref = { t1s__content : us_rep
+}
+
+function t1s__ref_t1s__content__projection(a: t1s__ref) : us_rep =
+  (a).t1s__content
+
+type us_split_discrs2 = { rec__split_records__holder__present : bool
+}
+
+function us_split_discrs_rec__split_records__holder__present__projection(a: us_split_discrs2) : bool =
+  (a).rec__split_records__holder__present
+
+type us_split_discrs__ref1 = { us_split_discrs__content1 : us_split_discrs2
+}
+
+function us_split_discrs__ref___split_discrs__content__2__projection(a: us_split_discrs__ref1) : us_split_discrs2 =
+  (a).us_split_discrs__content1
+
+type us_split_fields2 = { rec__split_records__holder__content : us_rep
+}
+
+function us_split_fields_rec__split_records__holder__content__projection(a: us_split_fields2) : us_rep =
+  (a).rec__split_records__holder__content
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__3__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_discrs3 : us_split_discrs2; us_split_fields3 :
+us_split_fields2
+}
+
+function us_rep___split_discrs__2__projection(a: us_rep1) : us_split_discrs2 =
+  (a).us_split_discrs3
+
+function us_rep___split_fields__3__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function bool_eq3(a: us_rep1, b: us_rep1) : bool =
+  (if ((to_int(((a).us_split_discrs3).rec__split_records__holder__present) = to_int(((b).us_split_discrs3).rec__split_records__holder__present)) and
+  (bool_eq2(((a).us_split_fields3).rec__split_records__holder__content,
+  ((b).us_split_fields3).rec__split_records__holder__content) = true)) then true else false)
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic split_records__holder__present__first__bit : int
+
+logic split_records__holder__present__last__bit : int
+
+logic split_records__holder__present__position : int
+
+axiom split_records__holder__present__first__bit_axiom :
+  (0 <= split_records__holder__present__first__bit)
+
+axiom split_records__holder__present__last__bit_axiom :
+  (split_records__holder__present__first__bit <  split_records__holder__present__last__bit)
+
+axiom split_records__holder__present__position_axiom :
+  (0 <= split_records__holder__present__position)
+
+logic split_records__holder__content__first__bit : int
+
+logic split_records__holder__content__last__bit : int
+
+logic split_records__holder__content__position : int
+
+axiom split_records__holder__content__first__bit_axiom :
+  (0 <= split_records__holder__content__first__bit)
+
+axiom split_records__holder__content__last__bit_axiom :
+  (split_records__holder__content__first__bit <  split_records__holder__content__last__bit)
+
+axiom split_records__holder__content__position_axiom :
+  (0 <= split_records__holder__content__position)
+
+logic user_eq4 : us_rep1, us_rep1 -> bool
+
+logic dummy4 : us_rep1
+
+type holder__ref = { holder__content : us_rep1
+}
+
+function holder__ref_holder__content__projection(a: holder__ref) : us_rep1 =
+  (a).holder__content
+
+predicate in_range4(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size4 : int
+
+logic object__size4 : int
+
+logic alignment4 : int
+
+axiom value__size_axiom4 : (0 <= value__size4)
+
+axiom object__size_axiom4 : (0 <= object__size4)
+
+axiom alignment_axiom4 : (0 <= alignment4)
+
+logic split_records__record_with_mutable_discrs__present__first__bit3 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit3 : int
+
+logic split_records__record_with_mutable_discrs__present__position3 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom3 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit3)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom3 :
+  (split_records__record_with_mutable_discrs__present__first__bit3 <  split_records__record_with_mutable_discrs__present__last__bit3)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom3 :
+  (0 <= split_records__record_with_mutable_discrs__present__position3)
+
+logic split_records__record_with_mutable_discrs__field__first__bit3 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit3 : int
+
+logic split_records__record_with_mutable_discrs__field__position3 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom3 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit3)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom3 :
+  (split_records__record_with_mutable_discrs__field__first__bit3 <  split_records__record_with_mutable_discrs__field__last__bit3)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom3 :
+  (0 <= split_records__record_with_mutable_discrs__field__position3)
+
+logic user_eq5 : us_rep, us_rep -> bool
+
+logic dummy5 : us_rep
+
+type t5b__ref = { t5b__content : us_rep
+}
+
+function t5b__ref_t5b__content__projection(a: t5b__ref) : us_rep =
+  (a).t5b__content
+
+type us_split_fields4 = { rec__split_records__holder__content1 : us_rep
+}
+
+function us_split_fields_rec__split_records__holder__content__2__projection(a: us_split_fields4) : us_rep =
+  (a).rec__split_records__holder__content1
+
+type us_split_fields__ref2 = { us_split_fields__content2 : us_split_fields4
+}
+
+function us_split_fields__ref___split_fields__content__4__projection(a: us_split_fields__ref2) : us_split_fields4 =
+  (a).us_split_fields__content2
+
+type us_rep2 = { us_split_discrs4 : us_split_discrs2; us_split_fields5 :
+us_split_fields4
+}
+
+function us_rep___split_discrs__3__projection(a: us_rep2) : us_split_discrs2 =
+  (a).us_split_discrs4
+
+function us_rep___split_fields__4__projection(a: us_rep2) : us_split_fields4 =
+  (a).us_split_fields5
+
+function to_base(a: us_rep2) : us_rep1 = { us_split_discrs3 =
+  (a).us_split_discrs4; us_split_fields3 = {
+  rec__split_records__holder__content =
+  ((a).us_split_fields5).rec__split_records__holder__content1 } }
+
+function of_base(r: us_rep1) : us_rep2 = { us_split_discrs4 =
+  (r).us_split_discrs3; us_split_fields5 = {
+  rec__split_records__holder__content1 =
+  ((r).us_split_fields3).rec__split_records__holder__content } }
+
+function bool_eq4(a: us_rep2, b: us_rep2) : bool =
+  (if ((to_int(((a).us_split_discrs4).rec__split_records__holder__present) = to_int(((b).us_split_discrs4).rec__split_records__holder__present)) and
+  (bool_eq2(((a).us_split_fields5).rec__split_records__holder__content1,
+  ((b).us_split_fields5).rec__split_records__holder__content1) = true)) then true else false)
+
+predicate in_range5(rec__split_records__holder__present1: bool, a: us_rep1) =
+  (rec__split_records__holder__present1 = ((a).us_split_discrs3).rec__split_records__holder__present)
+
+logic value__size5 : int
+
+logic object__size5 : int
+
+logic alignment5 : int
+
+axiom value__size_axiom5 : (0 <= value__size5)
+
+axiom object__size_axiom5 : (0 <= object__size5)
+
+axiom alignment_axiom5 : (0 <= alignment5)
+
+logic split_records__holder__present__first__bit1 : int
+
+logic split_records__holder__present__last__bit1 : int
+
+logic split_records__holder__present__position1 : int
+
+axiom split_records__holder__present__first__bit_axiom1 :
+  (0 <= split_records__holder__present__first__bit1)
+
+axiom split_records__holder__present__last__bit_axiom1 :
+  (split_records__holder__present__first__bit1 <  split_records__holder__present__last__bit1)
+
+axiom split_records__holder__present__position_axiom1 :
+  (0 <= split_records__holder__present__position1)
+
+logic split_records__holder__content__first__bit1 : int
+
+logic split_records__holder__content__last__bit1 : int
+
+logic split_records__holder__content__position1 : int
+
+axiom split_records__holder__content__first__bit_axiom1 :
+  (0 <= split_records__holder__content__first__bit1)
+
+axiom split_records__holder__content__last__bit_axiom1 :
+  (split_records__holder__content__first__bit1 <  split_records__holder__content__last__bit1)
+
+axiom split_records__holder__content__position_axiom1 :
+  (0 <= split_records__holder__content__position1)
+
+logic user_eq6 : us_rep2, us_rep2 -> bool
+
+logic dummy6 : us_rep2
+
+type th1S__ref = { th1S__content : us_rep2
+}
+
+function th1S__ref_th1S__content__projection(a: th1S__ref) : us_rep2 =
+  (a).th1S__content
+
+logic h1__split_discrs : us_split_discrs2
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+predicate dynamic_invariant1(temp___expr_209: us_rep2,
+  temp___is_init_205: bool, temp___skip_constant_206: bool,
+  temp___do_toplevel_207: bool, temp___do_typ_inv_208: bool) =
+  (((not (temp___skip_constant_206 = true)) -> in_range5(of_int(0),
+  to_base(temp___expr_209))) and in_range4(of_int(0),
+  ((temp___expr_209).us_split_fields5).rec__split_records__holder__content1))
+
+predicate default_initial_assumption2(temp___expr_212: us_rep2,
+  temp___skip_top_level_213: bool) =
+  ((((temp___expr_212).us_split_discrs4).rec__split_records__holder__present = of_int(0)) and
+  (((((temp___expr_212).us_split_fields5).rec__split_records__holder__content1).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present = of_int(0)))
+
+type us_split_fields6 = { rec__split_records__mutable_holder__content :
+us_rep
+}
+
+function us_split_fields_rec__split_records__mutable_holder__content__projection(a: us_split_fields6) : us_rep =
+  (a).rec__split_records__mutable_holder__content
+
+type us_split_fields__ref3 = { us_split_fields__content3 : us_split_fields6
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref3) : us_split_fields6 =
+  (a).us_split_fields__content3
+
+type us_rep3 = { us_split_fields7 : us_split_fields6
+}
+
+function us_rep___split_fields__2__projection(a: us_rep3) : us_split_fields6 =
+  (a).us_split_fields7
+
+function bool_eq5(a: us_rep3, b: us_rep3) : bool =
+  (if (bool_eq2(((a).us_split_fields7).rec__split_records__mutable_holder__content,
+  ((b).us_split_fields7).rec__split_records__mutable_holder__content) = true) then true else false)
+
+logic value__size6 : int
+
+logic object__size6 : int
+
+logic alignment6 : int
+
+axiom value__size_axiom6 : (0 <= value__size6)
+
+axiom object__size_axiom6 : (0 <= object__size6)
+
+axiom alignment_axiom6 : (0 <= alignment6)
+
+logic split_records__mutable_holder__content__first__bit : int
+
+logic split_records__mutable_holder__content__last__bit : int
+
+logic split_records__mutable_holder__content__position : int
+
+axiom split_records__mutable_holder__content__first__bit_axiom :
+  (0 <= split_records__mutable_holder__content__first__bit)
+
+axiom split_records__mutable_holder__content__last__bit_axiom :
+  (split_records__mutable_holder__content__first__bit <  split_records__mutable_holder__content__last__bit)
+
+axiom split_records__mutable_holder__content__position_axiom :
+  (0 <= split_records__mutable_holder__content__position)
+
+logic user_eq7 : us_rep3, us_rep3 -> bool
+
+logic dummy7 : us_rep3
+
+type mutable_holder__ref = { mutable_holder__content : us_rep3
+}
+
+function mutable_holder__ref_mutable_holder__content__projection(a: mutable_holder__ref) : us_rep3 =
+  (a).mutable_holder__content
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+predicate default_initial_assumption3(temp___expr_174: us_rep3,
+  temp___skip_top_level_175: bool) =
+  (((((temp___expr_174).us_split_fields7).rec__split_records__mutable_holder__content).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present = of_int(0))
+
+type map__ref = { map__content : (int,us_rep) farray
+}
+
+logic slide : (int,us_rep) farray, int, int -> (int,us_rep) farray
+
+axiom slide_eq :
+  (forall a:(int,us_rep) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,us_rep) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq6(a: (int,us_rep) farray, a__first: int, a__last: int,
+  b: (int,us_rep) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) -> (bool_eq2((a[temp___idx_154]),
+  (b[((b__first - a__first) + temp___idx_154)])) = true)))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq6(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq6(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq6(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq6(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) -> (bool_eq2((a[temp___idx_154]),
+  (b[((b__first - a__first) + temp___idx_154)])) = true))))))
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+predicate in_range6(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size7 : int
+
+logic object__size7 : int
+
+logic alignment7 : int
+
+axiom value__size_axiom7 : (0 <= value__size7)
+
+axiom object__size_axiom7 : (0 <= object__size7)
+
+axiom alignment_axiom7 : (0 <= alignment7)
+
+logic split_records__record_with_mutable_discrs__present__first__bit4 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit4 : int
+
+logic split_records__record_with_mutable_discrs__present__position4 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom4 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit4)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom4 :
+  (split_records__record_with_mutable_discrs__present__first__bit4 <  split_records__record_with_mutable_discrs__present__last__bit4)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom4 :
+  (0 <= split_records__record_with_mutable_discrs__present__position4)
+
+logic split_records__record_with_mutable_discrs__field__first__bit4 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit4 : int
+
+logic split_records__record_with_mutable_discrs__field__position4 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom4 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit4)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom4 :
+  (split_records__record_with_mutable_discrs__field__first__bit4 <  split_records__record_with_mutable_discrs__field__last__bit4)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom4 :
+  (0 <= split_records__record_with_mutable_discrs__field__position4)
+
+logic user_eq8 : us_rep, us_rep -> bool
+
+logic dummy8 : us_rep
+
+type tc3S__ref = { tc3S__content : us_rep
+}
+
+function tc3S__ref_tc3S__content__projection(a: tc3S__ref) : us_rep =
+  (a).tc3S__content
+
+logic c3 : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+predicate in_range7(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size8 : int
+
+logic object__size8 : int
+
+logic alignment8 : int
+
+axiom value__size_axiom8 : (0 <= value__size8)
+
+axiom object__size_axiom8 : (0 <= object__size8)
+
+axiom alignment_axiom8 : (0 <= alignment8)
+
+logic split_records__record_with_mutable_discrs__present__first__bit5 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit5 : int
+
+logic split_records__record_with_mutable_discrs__present__position5 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom5 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit5)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom5 :
+  (split_records__record_with_mutable_discrs__present__first__bit5 <  split_records__record_with_mutable_discrs__present__last__bit5)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom5 :
+  (0 <= split_records__record_with_mutable_discrs__present__position5)
+
+logic split_records__record_with_mutable_discrs__field__first__bit5 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit5 : int
+
+logic split_records__record_with_mutable_discrs__field__position5 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom5 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit5)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom5 :
+  (split_records__record_with_mutable_discrs__field__first__bit5 <  split_records__record_with_mutable_discrs__field__last__bit5)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom5 :
+  (0 <= split_records__record_with_mutable_discrs__field__position5)
+
+logic user_eq9 : us_rep, us_rep -> bool
+
+logic dummy9 : us_rep
+
+type t14b__ref = { t14b__content : us_rep
+}
+
+function t14b__ref_t14b__content__projection(a: t14b__ref) : us_rep =
+  (a).t14b__content
+
+logic c4 : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+predicate in_range8(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size9 : int
+
+logic object__size9 : int
+
+logic alignment9 : int
+
+axiom value__size_axiom9 : (0 <= value__size9)
+
+axiom object__size_axiom9 : (0 <= object__size9)
+
+axiom alignment_axiom9 : (0 <= alignment9)
+
+logic split_records__record_with_mutable_discrs__present__first__bit6 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit6 : int
+
+logic split_records__record_with_mutable_discrs__present__position6 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom6 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit6)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom6 :
+  (split_records__record_with_mutable_discrs__present__first__bit6 <  split_records__record_with_mutable_discrs__present__last__bit6)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom6 :
+  (0 <= split_records__record_with_mutable_discrs__present__position6)
+
+logic split_records__record_with_mutable_discrs__field__first__bit6 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit6 : int
+
+logic split_records__record_with_mutable_discrs__field__position6 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom6 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit6)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom6 :
+  (split_records__record_with_mutable_discrs__field__first__bit6 <  split_records__record_with_mutable_discrs__field__last__bit6)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom6 :
+  (0 <= split_records__record_with_mutable_discrs__field__position6)
+
+logic user_eq10 : us_rep, us_rep -> bool
+
+logic dummy10 : us_rep
+
+type t15b__ref = { t15b__content : us_rep
+}
+
+function t15b__ref_t15b__content__projection(a: t15b__ref) : us_rep =
+  (a).t15b__content
+
+type us_split_fields8 = { rec__split_records__holder__content2 : us_rep
+}
+
+function us_split_fields_rec__split_records__holder__content__4__projection(a: us_split_fields8) : us_rep =
+  (a).rec__split_records__holder__content2
+
+type us_split_fields__ref4 = { us_split_fields__content4 : us_split_fields8
+}
+
+function us_split_fields__ref___split_fields__content__6__projection(a: us_split_fields__ref4) : us_split_fields8 =
+  (a).us_split_fields__content4
+
+type us_rep4 = { us_split_discrs5 : us_split_discrs2; us_split_fields9 :
+us_split_fields8
+}
+
+function us_rep___split_discrs__5__projection(a: us_rep4) : us_split_discrs2 =
+  (a).us_split_discrs5
+
+function us_rep___split_fields__6__projection(a: us_rep4) : us_split_fields8 =
+  (a).us_split_fields9
+
+function to_base1(a: us_rep4) : us_rep1 = { us_split_discrs3 =
+  (a).us_split_discrs5; us_split_fields3 = {
+  rec__split_records__holder__content =
+  ((a).us_split_fields9).rec__split_records__holder__content2 } }
+
+function of_base1(r: us_rep1) : us_rep4 = { us_split_discrs5 =
+  (r).us_split_discrs3; us_split_fields9 = {
+  rec__split_records__holder__content2 =
+  ((r).us_split_fields3).rec__split_records__holder__content } }
+
+function bool_eq7(a: us_rep4, b: us_rep4) : bool =
+  (if ((to_int(((a).us_split_discrs5).rec__split_records__holder__present) = to_int(((b).us_split_discrs5).rec__split_records__holder__present)) and
+  (bool_eq2(((a).us_split_fields9).rec__split_records__holder__content2,
+  ((b).us_split_fields9).rec__split_records__holder__content2) = true)) then true else false)
+
+predicate in_range9(rec__split_records__holder__present1: bool, a: us_rep1) =
+  (rec__split_records__holder__present1 = ((a).us_split_discrs3).rec__split_records__holder__present)
+
+logic value__size10 : int
+
+logic object__size10 : int
+
+logic alignment10 : int
+
+axiom value__size_axiom10 : (0 <= value__size10)
+
+axiom object__size_axiom10 : (0 <= object__size10)
+
+axiom alignment_axiom10 : (0 <= alignment10)
+
+logic split_records__holder__present__first__bit2 : int
+
+logic split_records__holder__present__last__bit2 : int
+
+logic split_records__holder__present__position2 : int
+
+axiom split_records__holder__present__first__bit_axiom2 :
+  (0 <= split_records__holder__present__first__bit2)
+
+axiom split_records__holder__present__last__bit_axiom2 :
+  (split_records__holder__present__first__bit2 <  split_records__holder__present__last__bit2)
+
+axiom split_records__holder__present__position_axiom2 :
+  (0 <= split_records__holder__present__position2)
+
+logic split_records__holder__content__first__bit2 : int
+
+logic split_records__holder__content__last__bit2 : int
+
+logic split_records__holder__content__position2 : int
+
+axiom split_records__holder__content__first__bit_axiom2 :
+  (0 <= split_records__holder__content__first__bit2)
+
+axiom split_records__holder__content__last__bit_axiom2 :
+  (split_records__holder__content__first__bit2 <  split_records__holder__content__last__bit2)
+
+axiom split_records__holder__content__position_axiom2 :
+  (0 <= split_records__holder__content__position2)
+
+logic user_eq11 : us_rep4, us_rep4 -> bool
+
+logic dummy11 : us_rep4
+
+type th3S__ref = { th3S__content : us_rep4
+}
+
+function th3S__ref_th3S__content__projection(a: th3S__ref) : us_rep4 =
+  (a).th3S__content
+
+logic h3 : us_rep4
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+logic h4 : us_rep3
+
+logic attr__ATTRIBUTE_ADDRESS8 : int
+
+logic a2 : (int,us_rep) farray
+
+logic attr__ATTRIBUTE_ADDRESS9 : int
+
+predicate in_range10(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size11 : int
+
+logic object__size11 : int
+
+logic alignment11 : int
+
+axiom value__size_axiom11 : (0 <= value__size11)
+
+axiom object__size_axiom11 : (0 <= object__size11)
+
+axiom alignment_axiom11 : (0 <= alignment11)
+
+logic split_records__record_with_mutable_discrs__present__first__bit7 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit7 : int
+
+logic split_records__record_with_mutable_discrs__present__position7 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom7 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit7)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom7 :
+  (split_records__record_with_mutable_discrs__present__first__bit7 <  split_records__record_with_mutable_discrs__present__last__bit7)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom7 :
+  (0 <= split_records__record_with_mutable_discrs__present__position7)
+
+logic split_records__record_with_mutable_discrs__field__first__bit7 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit7 : int
+
+logic split_records__record_with_mutable_discrs__field__position7 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom7 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit7)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom7 :
+  (split_records__record_with_mutable_discrs__field__first__bit7 <  split_records__record_with_mutable_discrs__field__last__bit7)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom7 :
+  (0 <= split_records__record_with_mutable_discrs__field__position7)
+
+logic user_eq12 : us_rep, us_rep -> bool
+
+logic dummy12 : us_rep
+
+type t4b__ref = { t4b__content : us_rep
+}
+
+function t4b__ref_t4b__content__projection(a: t4b__ref) : us_rep =
+  (a).t4b__content
+
+predicate in_range11(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size12 : int
+
+logic object__size12 : int
+
+logic alignment12 : int
+
+axiom value__size_axiom12 : (0 <= value__size12)
+
+axiom object__size_axiom12 : (0 <= object__size12)
+
+axiom alignment_axiom12 : (0 <= alignment12)
+
+logic split_records__record_with_mutable_discrs__present__first__bit8 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit8 : int
+
+logic split_records__record_with_mutable_discrs__present__position8 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom8 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit8)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom8 :
+  (split_records__record_with_mutable_discrs__present__first__bit8 <  split_records__record_with_mutable_discrs__present__last__bit8)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom8 :
+  (0 <= split_records__record_with_mutable_discrs__present__position8)
+
+logic split_records__record_with_mutable_discrs__field__first__bit8 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit8 : int
+
+logic split_records__record_with_mutable_discrs__field__position8 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom8 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit8)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom8 :
+  (split_records__record_with_mutable_discrs__field__first__bit8 <  split_records__record_with_mutable_discrs__field__last__bit8)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom8 :
+  (0 <= split_records__record_with_mutable_discrs__field__position8)
+
+logic user_eq13 : us_rep, us_rep -> bool
+
+logic dummy13 : us_rep
+
+type t7b__ref = { t7b__content : us_rep
+}
+
+function t7b__ref_t7b__content__projection(a: t7b__ref) : us_rep =
+  (a).t7b__content
+
+type us_split_fields10 = { rec__split_records__holder__content3 : us_rep
+}
+
+function us_split_fields_rec__split_records__holder__content__3__projection(a: us_split_fields10) : us_rep =
+  (a).rec__split_records__holder__content3
+
+type us_split_fields__ref5 = { us_split_fields__content5 : us_split_fields10
+}
+
+function us_split_fields__ref___split_fields__content__5__projection(a: us_split_fields__ref5) : us_split_fields10 =
+  (a).us_split_fields__content5
+
+type us_rep5 = { us_split_discrs6 : us_split_discrs2; us_split_fields11 :
+us_split_fields10
+}
+
+function us_rep___split_discrs__4__projection(a: us_rep5) : us_split_discrs2 =
+  (a).us_split_discrs6
+
+function us_rep___split_fields__5__projection(a: us_rep5) : us_split_fields10 =
+  (a).us_split_fields11
+
+function to_base2(a: us_rep5) : us_rep1 = { us_split_discrs3 =
+  (a).us_split_discrs6; us_split_fields3 = {
+  rec__split_records__holder__content =
+  ((a).us_split_fields11).rec__split_records__holder__content3 } }
+
+function of_base2(r: us_rep1) : us_rep5 = { us_split_discrs6 =
+  (r).us_split_discrs3; us_split_fields11 = {
+  rec__split_records__holder__content3 =
+  ((r).us_split_fields3).rec__split_records__holder__content } }
+
+function bool_eq8(a: us_rep5, b: us_rep5) : bool =
+  (if ((to_int(((a).us_split_discrs6).rec__split_records__holder__present) = to_int(((b).us_split_discrs6).rec__split_records__holder__present)) and
+  (bool_eq2(((a).us_split_fields11).rec__split_records__holder__content3,
+  ((b).us_split_fields11).rec__split_records__holder__content3) = true)) then true else false)
+
+predicate in_range12(rec__split_records__holder__present1: bool,
+  a: us_rep1) =
+  (rec__split_records__holder__present1 = ((a).us_split_discrs3).rec__split_records__holder__present)
+
+logic value__size13 : int
+
+logic object__size13 : int
+
+logic alignment13 : int
+
+axiom value__size_axiom13 : (0 <= value__size13)
+
+axiom object__size_axiom13 : (0 <= object__size13)
+
+axiom alignment_axiom13 : (0 <= alignment13)
+
+logic split_records__holder__present__first__bit3 : int
+
+logic split_records__holder__present__last__bit3 : int
+
+logic split_records__holder__present__position3 : int
+
+axiom split_records__holder__present__first__bit_axiom3 :
+  (0 <= split_records__holder__present__first__bit3)
+
+axiom split_records__holder__present__last__bit_axiom3 :
+  (split_records__holder__present__first__bit3 <  split_records__holder__present__last__bit3)
+
+axiom split_records__holder__present__position_axiom3 :
+  (0 <= split_records__holder__present__position3)
+
+logic split_records__holder__content__first__bit3 : int
+
+logic split_records__holder__content__last__bit3 : int
+
+logic split_records__holder__content__position3 : int
+
+axiom split_records__holder__content__first__bit_axiom3 :
+  (0 <= split_records__holder__content__first__bit3)
+
+axiom split_records__holder__content__last__bit_axiom3 :
+  (split_records__holder__content__first__bit3 <  split_records__holder__content__last__bit3)
+
+axiom split_records__holder__content__position_axiom3 :
+  (0 <= split_records__holder__content__position3)
+
+logic user_eq14 : us_rep5, us_rep5 -> bool
+
+logic dummy14 : us_rep5
+
+type t6b__ref = { t6b__content : us_rep5
+}
+
+function t6b__ref_t6b__content__projection(a: t6b__ref) : us_rep5 =
+  (a).t6b__content
+
+predicate in_range13(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size14 : int
+
+logic object__size14 : int
+
+logic alignment14 : int
+
+axiom value__size_axiom14 : (0 <= value__size14)
+
+axiom object__size_axiom14 : (0 <= object__size14)
+
+axiom alignment_axiom14 : (0 <= alignment14)
+
+logic split_records__record_with_mutable_discrs__present__first__bit9 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit9 : int
+
+logic split_records__record_with_mutable_discrs__present__position9 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom9 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit9)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom9 :
+  (split_records__record_with_mutable_discrs__present__first__bit9 <  split_records__record_with_mutable_discrs__present__last__bit9)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom9 :
+  (0 <= split_records__record_with_mutable_discrs__present__position9)
+
+logic split_records__record_with_mutable_discrs__field__first__bit9 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit9 : int
+
+logic split_records__record_with_mutable_discrs__field__position9 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom9 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit9)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom9 :
+  (split_records__record_with_mutable_discrs__field__first__bit9 <  split_records__record_with_mutable_discrs__field__last__bit9)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom9 :
+  (0 <= split_records__record_with_mutable_discrs__field__position9)
+
+logic user_eq15 : us_rep, us_rep -> bool
+
+logic dummy15 : us_rep
+
+type t8b__ref = { t8b__content : us_rep
+}
+
+function t8b__ref_t8b__content__projection(a: t8b__ref) : us_rep =
+  (a).t8b__content
+
+predicate in_range14(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size15 : int
+
+logic object__size15 : int
+
+logic alignment15 : int
+
+axiom value__size_axiom15 : (0 <= value__size15)
+
+axiom object__size_axiom15 : (0 <= object__size15)
+
+axiom alignment_axiom15 : (0 <= alignment15)
+
+logic split_records__record_with_mutable_discrs__present__first__bit10 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit10 : int
+
+logic split_records__record_with_mutable_discrs__present__position10 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom10 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit10)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom10 :
+  (split_records__record_with_mutable_discrs__present__first__bit10 <  split_records__record_with_mutable_discrs__present__last__bit10)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom10 :
+  (0 <= split_records__record_with_mutable_discrs__present__position10)
+
+logic split_records__record_with_mutable_discrs__field__first__bit10 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit10 : int
+
+logic split_records__record_with_mutable_discrs__field__position10 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom10 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit10)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom10 :
+  (split_records__record_with_mutable_discrs__field__first__bit10 <  split_records__record_with_mutable_discrs__field__last__bit10)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom10 :
+  (0 <= split_records__record_with_mutable_discrs__field__position10)
+
+logic user_eq16 : us_rep, us_rep -> bool
+
+logic dummy16 : us_rep
+
+type t9b__ref = { t9b__content : us_rep
+}
+
+function t9b__ref_t9b__content__projection(a: t9b__ref) : us_rep =
+  (a).t9b__content
+
+type tTaSP1
+
+logic tTaSP1qtint : tTaSP1 -> int
+
+axiom tTaSP1qtaxiom : (forall i:tTaSP1. (1 <= tTaSP1qtint(i)))
+
+axiom tTaSP1qtaxiom1 : (forall i:tTaSP1. (tTaSP1qtint(i) <= 1))
+
+predicate in_range15(x: int) = ((1 <= x) and (x <= 1))
+
+function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq17 : tTaSP1, tTaSP1 -> bool
+
+logic dummy17 : tTaSP1
+
+type tTaSP1__ref = { tTaSP1__content : tTaSP1
+}
+
+function tTaSP1__ref_tTaSP1__content__projection(a: tTaSP1__ref) : tTaSP1 =
+  (a).tTaSP1__content
+
+predicate default_initial_assumption4(temp___expr_225: (int,us_rep) farray,
+  temp___skip_top_level_226: bool) =
+  (forall temp___227:int. (((1 <= temp___227) and (temp___227 <= 1)) ->
+  ((((temp___expr_225[temp___227])).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present = of_int(0))))
+
+predicate in_range16(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size16 : int
+
+logic object__size16 : int
+
+logic alignment16 : int
+
+axiom value__size_axiom16 : (0 <= value__size16)
+
+axiom object__size_axiom16 : (0 <= object__size16)
+
+axiom alignment_axiom16 : (0 <= alignment16)
+
+logic split_records__record_with_mutable_discrs__present__first__bit11 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit11 : int
+
+logic split_records__record_with_mutable_discrs__present__position11 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom11 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit11)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom11 :
+  (split_records__record_with_mutable_discrs__present__first__bit11 <  split_records__record_with_mutable_discrs__present__last__bit11)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom11 :
+  (0 <= split_records__record_with_mutable_discrs__present__position11)
+
+logic split_records__record_with_mutable_discrs__field__first__bit11 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit11 : int
+
+logic split_records__record_with_mutable_discrs__field__position11 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom11 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit11)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom11 :
+  (split_records__record_with_mutable_discrs__field__first__bit11 <  split_records__record_with_mutable_discrs__field__last__bit11)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom11 :
+  (0 <= split_records__record_with_mutable_discrs__field__position11)
+
+logic user_eq18 : us_rep, us_rep -> bool
+
+logic dummy18 : us_rep
+
+type t10b__ref = { t10b__content : us_rep
+}
+
+function t10b__ref_t10b__content__projection(a: t10b__ref) : us_rep =
+  (a).t10b__content
+
+predicate dynamic_invariant2(temp___expr_235: us_rep,
+  temp___is_init_231: bool, temp___skip_constant_232: bool,
+  temp___do_toplevel_233: bool, temp___do_typ_inv_234: bool) =
+  ((not (temp___skip_constant_232 = true)) -> in_range6(of_int(0),
+  temp___expr_235))
+
+predicate default_initial_assumption5(temp___expr_237: us_rep,
+  temp___skip_top_level_238: bool) =
+  (((temp___expr_237).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present = of_int(0))
+
+predicate in_range17(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size17 : int
+
+logic object__size17 : int
+
+logic alignment17 : int
+
+axiom value__size_axiom17 : (0 <= value__size17)
+
+axiom object__size_axiom17 : (0 <= object__size17)
+
+axiom alignment_axiom17 : (0 <= alignment17)
+
+logic split_records__record_with_mutable_discrs__present__first__bit12 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit12 : int
+
+logic split_records__record_with_mutable_discrs__present__position12 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom12 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit12)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom12 :
+  (split_records__record_with_mutable_discrs__present__first__bit12 <  split_records__record_with_mutable_discrs__present__last__bit12)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom12 :
+  (0 <= split_records__record_with_mutable_discrs__present__position12)
+
+logic split_records__record_with_mutable_discrs__field__first__bit12 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit12 : int
+
+logic split_records__record_with_mutable_discrs__field__position12 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom12 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit12)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom12 :
+  (split_records__record_with_mutable_discrs__field__first__bit12 <  split_records__record_with_mutable_discrs__field__last__bit12)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom12 :
+  (0 <= split_records__record_with_mutable_discrs__field__position12)
+
+logic user_eq19 : us_rep, us_rep -> bool
+
+logic dummy19 : us_rep
+
+type t13b__ref = { t13b__content : us_rep
+}
+
+function t13b__ref_t13b__content__projection(a: t13b__ref) : us_rep =
+  (a).t13b__content
+
+predicate dynamic_invariant3(temp___expr_245: us_rep4,
+  temp___is_init_241: bool, temp___skip_constant_242: bool,
+  temp___do_toplevel_243: bool, temp___do_typ_inv_244: bool) =
+  (((not (temp___skip_constant_242 = true)) -> in_range9(of_int(0),
+  to_base1(temp___expr_245))) and in_range8(of_int(0),
+  ((temp___expr_245).us_split_fields9).rec__split_records__holder__content2))
+
+predicate default_initial_assumption6(temp___expr_248: us_rep4,
+  temp___skip_top_level_249: bool) =
+  ((((temp___expr_248).us_split_discrs5).rec__split_records__holder__present = of_int(0)) and
+  (((((temp___expr_248).us_split_fields9).rec__split_records__holder__content2).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present = of_int(0)))
+
+predicate in_range18(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size18 : int
+
+logic object__size18 : int
+
+logic alignment18 : int
+
+axiom value__size_axiom18 : (0 <= value__size18)
+
+axiom object__size_axiom18 : (0 <= object__size18)
+
+axiom alignment_axiom18 : (0 <= alignment18)
+
+logic split_records__record_with_mutable_discrs__present__first__bit13 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit13 : int
+
+logic split_records__record_with_mutable_discrs__present__position13 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom13 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit13)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom13 :
+  (split_records__record_with_mutable_discrs__present__first__bit13 <  split_records__record_with_mutable_discrs__present__last__bit13)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom13 :
+  (0 <= split_records__record_with_mutable_discrs__present__position13)
+
+logic split_records__record_with_mutable_discrs__field__first__bit13 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit13 : int
+
+logic split_records__record_with_mutable_discrs__field__position13 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom13 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit13)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom13 :
+  (split_records__record_with_mutable_discrs__field__first__bit13 <  split_records__record_with_mutable_discrs__field__last__bit13)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom13 :
+  (0 <= split_records__record_with_mutable_discrs__field__position13)
+
+logic user_eq20 : us_rep, us_rep -> bool
+
+logic dummy20 : us_rep
+
+type t17b__ref = { t17b__content : us_rep
+}
+
+function t17b__ref_t17b__content__projection(a: t17b__ref) : us_rep =
+  (a).t17b__content
+
+type us_split_fields12 = { rec__split_records__holder__content4 : us_rep
+}
+
+function us_split_fields_rec__split_records__holder__content__5__projection(a: us_split_fields12) : us_rep =
+  (a).rec__split_records__holder__content4
+
+type us_split_fields__ref6 = { us_split_fields__content6 : us_split_fields12
+}
+
+function us_split_fields__ref___split_fields__content__7__projection(a: us_split_fields__ref6) : us_split_fields12 =
+  (a).us_split_fields__content6
+
+type us_rep6 = { us_split_discrs7 : us_split_discrs2; us_split_fields13 :
+us_split_fields12
+}
+
+function us_rep___split_discrs__6__projection(a: us_rep6) : us_split_discrs2 =
+  (a).us_split_discrs7
+
+function us_rep___split_fields__7__projection(a: us_rep6) : us_split_fields12 =
+  (a).us_split_fields13
+
+function to_base3(a: us_rep6) : us_rep1 = { us_split_discrs3 =
+  (a).us_split_discrs7; us_split_fields3 = {
+  rec__split_records__holder__content =
+  ((a).us_split_fields13).rec__split_records__holder__content4 } }
+
+function of_base3(r: us_rep1) : us_rep6 = { us_split_discrs7 =
+  (r).us_split_discrs3; us_split_fields13 = {
+  rec__split_records__holder__content4 =
+  ((r).us_split_fields3).rec__split_records__holder__content } }
+
+function bool_eq10(a: us_rep6, b: us_rep6) : bool =
+  (if ((to_int(((a).us_split_discrs7).rec__split_records__holder__present) = to_int(((b).us_split_discrs7).rec__split_records__holder__present)) and
+  (bool_eq2(((a).us_split_fields13).rec__split_records__holder__content4,
+  ((b).us_split_fields13).rec__split_records__holder__content4) = true)) then true else false)
+
+predicate in_range19(rec__split_records__holder__present1: bool,
+  a: us_rep1) =
+  (rec__split_records__holder__present1 = ((a).us_split_discrs3).rec__split_records__holder__present)
+
+logic value__size19 : int
+
+logic object__size19 : int
+
+logic alignment19 : int
+
+axiom value__size_axiom19 : (0 <= value__size19)
+
+axiom object__size_axiom19 : (0 <= object__size19)
+
+axiom alignment_axiom19 : (0 <= alignment19)
+
+logic split_records__holder__present__first__bit4 : int
+
+logic split_records__holder__present__last__bit4 : int
+
+logic split_records__holder__present__position4 : int
+
+axiom split_records__holder__present__first__bit_axiom4 :
+  (0 <= split_records__holder__present__first__bit4)
+
+axiom split_records__holder__present__last__bit_axiom4 :
+  (split_records__holder__present__first__bit4 <  split_records__holder__present__last__bit4)
+
+axiom split_records__holder__present__position_axiom4 :
+  (0 <= split_records__holder__present__position4)
+
+logic split_records__holder__content__first__bit4 : int
+
+logic split_records__holder__content__last__bit4 : int
+
+logic split_records__holder__content__position4 : int
+
+axiom split_records__holder__content__first__bit_axiom4 :
+  (0 <= split_records__holder__content__first__bit4)
+
+axiom split_records__holder__content__last__bit_axiom4 :
+  (split_records__holder__content__first__bit4 <  split_records__holder__content__last__bit4)
+
+axiom split_records__holder__content__position_axiom4 :
+  (0 <= split_records__holder__content__position4)
+
+logic user_eq21 : us_rep6, us_rep6 -> bool
+
+logic dummy21 : us_rep6
+
+type t16b__ref = { t16b__content : us_rep6
+}
+
+function t16b__ref_t16b__content__projection(a: t16b__ref) : us_rep6 =
+  (a).t16b__content
+
+predicate in_range20(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size20 : int
+
+logic object__size20 : int
+
+logic alignment20 : int
+
+axiom value__size_axiom20 : (0 <= value__size20)
+
+axiom object__size_axiom20 : (0 <= object__size20)
+
+axiom alignment_axiom20 : (0 <= alignment20)
+
+logic split_records__record_with_mutable_discrs__present__first__bit14 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit14 : int
+
+logic split_records__record_with_mutable_discrs__present__position14 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom14 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit14)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom14 :
+  (split_records__record_with_mutable_discrs__present__first__bit14 <  split_records__record_with_mutable_discrs__present__last__bit14)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom14 :
+  (0 <= split_records__record_with_mutable_discrs__present__position14)
+
+logic split_records__record_with_mutable_discrs__field__first__bit14 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit14 : int
+
+logic split_records__record_with_mutable_discrs__field__position14 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom14 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit14)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom14 :
+  (split_records__record_with_mutable_discrs__field__first__bit14 <  split_records__record_with_mutable_discrs__field__last__bit14)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom14 :
+  (0 <= split_records__record_with_mutable_discrs__field__position14)
+
+logic user_eq22 : us_rep, us_rep -> bool
+
+logic dummy22 : us_rep
+
+type t18b__ref = { t18b__content : us_rep
+}
+
+function t18b__ref_t18b__content__projection(a: t18b__ref) : us_rep =
+  (a).t18b__content
+
+predicate in_range21(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size21 : int
+
+logic object__size21 : int
+
+logic alignment21 : int
+
+axiom value__size_axiom21 : (0 <= value__size21)
+
+axiom object__size_axiom21 : (0 <= object__size21)
+
+axiom alignment_axiom21 : (0 <= alignment21)
+
+logic split_records__record_with_mutable_discrs__present__first__bit15 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit15 : int
+
+logic split_records__record_with_mutable_discrs__present__position15 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom15 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit15)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom15 :
+  (split_records__record_with_mutable_discrs__present__first__bit15 <  split_records__record_with_mutable_discrs__present__last__bit15)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom15 :
+  (0 <= split_records__record_with_mutable_discrs__present__position15)
+
+logic split_records__record_with_mutable_discrs__field__first__bit15 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit15 : int
+
+logic split_records__record_with_mutable_discrs__field__position15 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom15 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit15)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom15 :
+  (split_records__record_with_mutable_discrs__field__first__bit15 <  split_records__record_with_mutable_discrs__field__last__bit15)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom15 :
+  (0 <= split_records__record_with_mutable_discrs__field__position15)
+
+logic user_eq23 : us_rep, us_rep -> bool
+
+logic dummy23 : us_rep
+
+type t19b__ref = { t19b__content : us_rep
+}
+
+function t19b__ref_t19b__content__projection(a: t19b__ref) : us_rep =
+  (a).t19b__content
+
+type tTa2SP1
+
+logic tTa2SP1qtint : tTa2SP1 -> int
+
+axiom tTa2SP1qtaxiom : (forall i:tTa2SP1. (1 <= tTa2SP1qtint(i)))
+
+axiom tTa2SP1qtaxiom1 : (forall i:tTa2SP1. (tTa2SP1qtint(i) <= 1))
+
+predicate in_range22(x: int) = ((1 <= x) and (x <= 1))
+
+function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq24 : tTa2SP1, tTa2SP1 -> bool
+
+logic dummy24 : tTa2SP1
+
+type tTa2SP1__ref = { tTa2SP1__content : tTa2SP1
+}
+
+function tTa2SP1__ref_tTa2SP1__content__projection(a: tTa2SP1__ref) : tTa2SP1 =
+  (a).tTa2SP1__content
+
+predicate default_initial_assumption7(temp___expr_261: (int,us_rep) farray,
+  temp___skip_top_level_262: bool) =
+  (forall temp___263:int. (((1 <= temp___263) and (temp___263 <= 1)) ->
+  ((((temp___expr_261[temp___263])).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present = of_int(0))))
+
+predicate in_range23(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size22 : int
+
+logic object__size22 : int
+
+logic alignment22 : int
+
+axiom value__size_axiom22 : (0 <= value__size22)
+
+axiom object__size_axiom22 : (0 <= object__size22)
+
+axiom alignment_axiom22 : (0 <= alignment22)
+
+logic split_records__record_with_mutable_discrs__present__first__bit16 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit16 : int
+
+logic split_records__record_with_mutable_discrs__present__position16 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom16 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit16)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom16 :
+  (split_records__record_with_mutable_discrs__present__first__bit16 <  split_records__record_with_mutable_discrs__present__last__bit16)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom16 :
+  (0 <= split_records__record_with_mutable_discrs__present__position16)
+
+logic split_records__record_with_mutable_discrs__field__first__bit16 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit16 : int
+
+logic split_records__record_with_mutable_discrs__field__position16 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom16 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit16)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom16 :
+  (split_records__record_with_mutable_discrs__field__first__bit16 <  split_records__record_with_mutable_discrs__field__last__bit16)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom16 :
+  (0 <= split_records__record_with_mutable_discrs__field__position16)
+
+logic user_eq25 : us_rep, us_rep -> bool
+
+logic dummy25 : us_rep
+
+type t20b__ref = { t20b__content : us_rep
+}
+
+function t20b__ref_t20b__content__projection(a: t20b__ref) : us_rep =
+  (a).t20b__content
+
+logic split_records__test__a2__aggregate_def : us_rep -> (int,us_rep) farray
+
+predicate in_range24(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size23 : int
+
+logic object__size23 : int
+
+logic alignment23 : int
+
+axiom value__size_axiom23 : (0 <= value__size23)
+
+axiom object__size_axiom23 : (0 <= object__size23)
+
+axiom alignment_axiom23 : (0 <= alignment23)
+
+logic split_records__record_with_mutable_discrs__present__first__bit17 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit17 : int
+
+logic split_records__record_with_mutable_discrs__present__position17 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom17 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit17)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom17 :
+  (split_records__record_with_mutable_discrs__present__first__bit17 <  split_records__record_with_mutable_discrs__present__last__bit17)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom17 :
+  (0 <= split_records__record_with_mutable_discrs__present__position17)
+
+logic split_records__record_with_mutable_discrs__field__first__bit17 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit17 : int
+
+logic split_records__record_with_mutable_discrs__field__position17 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom17 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit17)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom17 :
+  (split_records__record_with_mutable_discrs__field__first__bit17 <  split_records__record_with_mutable_discrs__field__last__bit17)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom17 :
+  (0 <= split_records__record_with_mutable_discrs__field__position17)
+
+logic user_eq26 : us_rep, us_rep -> bool
+
+logic dummy26 : us_rep
+
+type t23b__ref = { t23b__content : us_rep
+}
+
+function t23b__ref_t23b__content__projection(a: t23b__ref) : us_rep =
+  (a).t23b__content
+
+predicate in_range25(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_rep) =
+  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
+
+logic value__size24 : int
+
+logic object__size24 : int
+
+logic alignment24 : int
+
+axiom value__size_axiom24 : (0 <= value__size24)
+
+axiom object__size_axiom24 : (0 <= object__size24)
+
+axiom alignment_axiom24 : (0 <= alignment24)
+
+logic split_records__record_with_mutable_discrs__present__first__bit18 : int
+
+logic split_records__record_with_mutable_discrs__present__last__bit18 : int
+
+logic split_records__record_with_mutable_discrs__present__position18 : int
+
+axiom split_records__record_with_mutable_discrs__present__first__bit_axiom18 :
+  (0 <= split_records__record_with_mutable_discrs__present__first__bit18)
+
+axiom split_records__record_with_mutable_discrs__present__last__bit_axiom18 :
+  (split_records__record_with_mutable_discrs__present__first__bit18 <  split_records__record_with_mutable_discrs__present__last__bit18)
+
+axiom split_records__record_with_mutable_discrs__present__position_axiom18 :
+  (0 <= split_records__record_with_mutable_discrs__present__position18)
+
+logic split_records__record_with_mutable_discrs__field__first__bit18 : int
+
+logic split_records__record_with_mutable_discrs__field__last__bit18 : int
+
+logic split_records__record_with_mutable_discrs__field__position18 : int
+
+axiom split_records__record_with_mutable_discrs__field__first__bit_axiom18 :
+  (0 <= split_records__record_with_mutable_discrs__field__first__bit18)
+
+axiom split_records__record_with_mutable_discrs__field__last__bit_axiom18 :
+  (split_records__record_with_mutable_discrs__field__first__bit18 <  split_records__record_with_mutable_discrs__field__last__bit18)
+
+axiom split_records__record_with_mutable_discrs__field__position_axiom18 :
+  (0 <= split_records__record_with_mutable_discrs__field__position18)
+
+logic user_eq27 : us_rep, us_rep -> bool
+
+logic dummy27 : us_rep
+
+type t24b__ref = { t24b__content : us_rep
+}
+
+function t24b__ref_t24b__content__projection(a: t24b__ref) : us_rep =
+  (a).t24b__content
+
+logic split_records__test__a__aggregate_def : us_rep -> (int,us_rep) farray
+
+predicate dynamic_invariant4(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range1(temp___expr_39))
+
+axiom def_axiom :
+  (forall temp___285:us_rep.
+  ((split_records__test__a__aggregate_def(temp___285)[1]) = temp___285))
+
+axiom c3__def_axiom : (c3 = { us_split_discrs1 = {
+  rec__split_records__record_with_mutable_discrs__present = of_int(0) };
+  us_split_fields1 = {
+  rec__split_records__record_with_mutable_discrs__field = dummy } })
+
+axiom c4__def_axiom : (c4 = { us_split_discrs1 = {
+  rec__split_records__record_with_mutable_discrs__present = of_int(0) };
+  us_split_fields1 = {
+  rec__split_records__record_with_mutable_discrs__field = dummy } })
+
+axiom h3__def_axiom : (h3 = of_base1(to_base3({ us_split_discrs7 = {
+  rec__split_records__holder__present = of_int(0) }; us_split_fields13 = {
+  rec__split_records__holder__content4 = { us_split_discrs1 = {
+  rec__split_records__record_with_mutable_discrs__present = of_int(0) };
+  us_split_fields1 = {
+  rec__split_records__record_with_mutable_discrs__field = dummy } } } })))
+
+axiom h4__def_axiom : (h4 = { us_split_fields7 = {
+  rec__split_records__mutable_holder__content = { us_split_discrs1 = {
+  rec__split_records__record_with_mutable_discrs__present = of_int(0) };
+  us_split_fields1 = {
+  rec__split_records__record_with_mutable_discrs__field = dummy } } } })
+
+axiom a2__def_axiom : (a2 = split_records__test__a2__aggregate_def({
+  us_split_discrs1 = {
+  rec__split_records__record_with_mutable_discrs__present = of_int(0) };
+  us_split_fields1 = {
+  rec__split_records__record_with_mutable_discrs__field = dummy } }))
+
+axiom def_axiom1 :
+  (forall temp___156:us_rep.
+  ((split_records__test__a2__aggregate_def(temp___156)[1]) = temp___156))
+
+predicate dynamic_invariant5(temp___expr_183: us_rep1,
+  temp___is_init_179: bool, temp___skip_constant_180: bool,
+  temp___do_toplevel_181: bool, temp___do_typ_inv_182: bool) =
+  in_range3(((temp___expr_183).us_split_discrs3).rec__split_records__holder__present,
+  ((temp___expr_183).us_split_fields3).rec__split_records__holder__content)
+
+ (* File "split_records.ads", line 27, characters 0-0 *)
+goal defqtvc :
+  (forall c1__split_fields:natural. ((c1__attr__constrained = true) ->
+  (default_initial_assumption1({ us_split_discrs1 = c1__split_discrs;
+  us_split_fields1 = {
+  rec__split_records__record_with_mutable_discrs__field = c1__split_fields }
+  }, false) -> (dynamic_invariant({ us_split_discrs1 = c1__split_discrs;
+  us_split_fields1 = {
+  rec__split_records__record_with_mutable_discrs__field = c1__split_fields }
+  }, false, false, true, true) ->
+  (forall c2__split_fields:natural. ((c2__split_fields = dummy) ->
+  (forall c2__split_discrs:bool. ((c2__split_discrs = of_int(0)) ->
+  ((c2__attr__constrained = false) -> in_range(0))))))))))

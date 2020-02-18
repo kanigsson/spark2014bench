@@ -1,0 +1,1046 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+logic bool_eq : int, int -> bool
+
+logic bool_ne : int, int -> bool
+
+logic bool_lt : int, int -> bool
+
+logic bool_le : int, int -> bool
+
+logic bool_gt : int, int -> bool
+
+logic bool_ge : int, int -> bool
+
+axiom bool_eq_axiom :
+  (forall x:int. (forall y:int. ((bool_eq(x, y) = true) -> (x = y))))
+
+axiom bool_eq_axiom1 :
+  (forall x:int. (forall y:int. ((x = y) -> (bool_eq(x, y) = true))))
+
+axiom bool_ne_axiom :
+  (forall x:int. (forall y:int. ((bool_ne(x, y) = true) -> (not (x = y)))))
+
+axiom bool_ne_axiom1 :
+  (forall x:int. (forall y:int. ((not (x = y)) -> (bool_ne(x, y) = true))))
+
+axiom bool_lt_axiom :
+  (forall x:int. (forall y:int. ((bool_lt(x, y) = true) -> (x <  y))))
+
+axiom bool_lt_axiom1 :
+  (forall x:int. (forall y:int. ((x <  y) -> (bool_lt(x, y) = true))))
+
+axiom bool_int__le_axiom :
+  (forall x:int. (forall y:int. ((bool_le(x, y) = true) -> (x <= y))))
+
+axiom bool_int__le_axiom1 :
+  (forall x:int. (forall y:int. ((x <= y) -> (bool_le(x, y) = true))))
+
+axiom bool_gt_axiom :
+  (forall x:int. (forall y:int. ((bool_gt(x, y) = true) -> (y <  x))))
+
+axiom bool_gt_axiom1 :
+  (forall x:int. (forall y:int. ((y <  x) -> (bool_gt(x, y) = true))))
+
+axiom bool_ge_axiom :
+  (forall x:int. (forall y:int. ((bool_ge(x, y) = true) -> (y <= x))))
+
+axiom bool_ge_axiom1 :
+  (forall x:int. (forall y:int. ((y <= x) -> (bool_ge(x, y) = true))))
+
+function length(x: int, y: int) : int =
+  (if (x <= y) then ((y - x) + 1) else 0)
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq1(x: bool, y: bool) : bool =
+  (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+type my_nat
+
+logic my_natqtint : my_nat -> int
+
+axiom my_natqtaxiom : (forall i:my_nat. (0 <= my_natqtint(i)))
+
+axiom my_natqtaxiom1 : (forall i:my_nat. (my_natqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : my_nat, my_nat -> bool
+
+logic dummy1 : my_nat
+
+type my_nat__ref = { my_nat__content : my_nat
+}
+
+function my_nat__ref_my_nat__content__projection(a: my_nat__ref) : my_nat =
+  (a).my_nat__content
+
+type my_nat__init_wrapper = { rec__value : my_nat; attr__init : bool
+}
+
+function my_nat__init_wrapper_rec__value__projection(a: my_nat__init_wrapper) : my_nat =
+  (a).rec__value
+
+function my_nat__init_wrapper_attr__init__projection(a: my_nat__init_wrapper) : bool =
+  (a).attr__init
+
+function to_rep(x: my_nat) : int = my_natqtint(x)
+
+logic of_rep : int -> my_nat
+
+axiom inversion_axiom :
+  (forall x:my_nat [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:my_nat [to_rep(x)]. in_range2(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range2(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type us_split_discrs = { rec__nested_init_by_proof__rec__d : bool
+}
+
+function us_split_discrs_rec__nested_init_by_proof__rec__d__projection(a: us_split_discrs) : bool =
+  (a).rec__nested_init_by_proof__rec__d
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_split_fields = { rec__nested_init_by_proof__rec__f2 :
+my_nat__init_wrapper; rec__nested_init_by_proof__rec__f1 :
+my_nat__init_wrapper; rec__nested_init_by_proof__rec__f3 :
+my_nat__init_wrapper
+}
+
+function us_split_fields_rec__nested_init_by_proof__rec__f2__projection(a: us_split_fields) : my_nat__init_wrapper =
+  (a).rec__nested_init_by_proof__rec__f2
+
+function us_split_fields_rec__nested_init_by_proof__rec__f1__projection(a: us_split_fields) : my_nat__init_wrapper =
+  (a).rec__nested_init_by_proof__rec__f1
+
+function us_split_fields_rec__nested_init_by_proof__rec__f3__projection(a: us_split_fields) : my_nat__init_wrapper =
+  (a).rec__nested_init_by_proof__rec__f3
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_discrs1 : us_split_discrs; us_split_fields1 :
+us_split_fields
+}
+
+function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
+  (a).us_split_discrs1
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+predicate nested_init_by_proof__rec__f1__pred(a: us_rep) =
+  (to_int(((a).us_split_discrs1).rec__nested_init_by_proof__rec__d) = 1)
+
+predicate nested_init_by_proof__rec__f3__pred(a: us_rep) =
+  (to_int(((a).us_split_discrs1).rec__nested_init_by_proof__rec__d) = 0)
+
+function bool_eq4(a: us_rep, b: us_rep) : bool =
+  (if ((to_int(((a).us_split_discrs1).rec__nested_init_by_proof__rec__d) = to_int(((b).us_split_discrs1).rec__nested_init_by_proof__rec__d)) and
+  (((to_rep((((a).us_split_fields1).rec__nested_init_by_proof__rec__f2).rec__value) = to_rep((((b).us_split_fields1).rec__nested_init_by_proof__rec__f2).rec__value)) and
+  (nested_init_by_proof__rec__f1__pred(a) ->
+  (to_rep((((a).us_split_fields1).rec__nested_init_by_proof__rec__f1).rec__value) = to_rep((((b).us_split_fields1).rec__nested_init_by_proof__rec__f1).rec__value)))) and
+  (nested_init_by_proof__rec__f3__pred(a) ->
+  (to_rep((((a).us_split_fields1).rec__nested_init_by_proof__rec__f3).rec__value) = to_rep((((b).us_split_fields1).rec__nested_init_by_proof__rec__f3).rec__value))))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic nested_init_by_proof__rec__d__first__bit : int
+
+logic nested_init_by_proof__rec__d__last__bit : int
+
+logic nested_init_by_proof__rec__d__position : int
+
+axiom nested_init_by_proof__rec__d__first__bit_axiom :
+  (0 <= nested_init_by_proof__rec__d__first__bit)
+
+axiom nested_init_by_proof__rec__d__last__bit_axiom :
+  (nested_init_by_proof__rec__d__first__bit <  nested_init_by_proof__rec__d__last__bit)
+
+axiom nested_init_by_proof__rec__d__position_axiom :
+  (0 <= nested_init_by_proof__rec__d__position)
+
+logic nested_init_by_proof__rec__f2__first__bit : int
+
+logic nested_init_by_proof__rec__f2__last__bit : int
+
+logic nested_init_by_proof__rec__f2__position : int
+
+axiom nested_init_by_proof__rec__f2__first__bit_axiom :
+  (0 <= nested_init_by_proof__rec__f2__first__bit)
+
+axiom nested_init_by_proof__rec__f2__last__bit_axiom :
+  (nested_init_by_proof__rec__f2__first__bit <  nested_init_by_proof__rec__f2__last__bit)
+
+axiom nested_init_by_proof__rec__f2__position_axiom :
+  (0 <= nested_init_by_proof__rec__f2__position)
+
+logic nested_init_by_proof__rec__f1__first__bit : int
+
+logic nested_init_by_proof__rec__f1__last__bit : int
+
+logic nested_init_by_proof__rec__f1__position : int
+
+axiom nested_init_by_proof__rec__f1__first__bit_axiom :
+  (0 <= nested_init_by_proof__rec__f1__first__bit)
+
+axiom nested_init_by_proof__rec__f1__last__bit_axiom :
+  (nested_init_by_proof__rec__f1__first__bit <  nested_init_by_proof__rec__f1__last__bit)
+
+axiom nested_init_by_proof__rec__f1__position_axiom :
+  (0 <= nested_init_by_proof__rec__f1__position)
+
+logic nested_init_by_proof__rec__f3__first__bit : int
+
+logic nested_init_by_proof__rec__f3__last__bit : int
+
+logic nested_init_by_proof__rec__f3__position : int
+
+axiom nested_init_by_proof__rec__f3__first__bit_axiom :
+  (0 <= nested_init_by_proof__rec__f3__first__bit)
+
+axiom nested_init_by_proof__rec__f3__last__bit_axiom :
+  (nested_init_by_proof__rec__f3__first__bit <  nested_init_by_proof__rec__f3__last__bit)
+
+axiom nested_init_by_proof__rec__f3__position_axiom :
+  (0 <= nested_init_by_proof__rec__f3__position)
+
+logic user_eq2 : us_rep, us_rep -> bool
+
+logic dummy2 : us_rep
+
+type rec____ref = { rec____content : us_rep
+}
+
+function rec____ref_rec____content__projection(a: rec____ref) : us_rep =
+  (a).rec____content
+
+predicate dynamic_invariant1(temp___expr_183: int, temp___is_init_179: bool,
+  temp___skip_constant_180: bool, temp___do_toplevel_181: bool,
+  temp___do_typ_inv_182: bool) = (((temp___is_init_179 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_183))
+
+logic my_eq : us_rep, us_rep -> bool
+
+logic my_eq__function_guard : bool, us_rep, us_rep -> prop
+
+predicate default_initial_assumption(temp___expr_198: us_rep,
+  temp___skip_top_level_199: bool) =
+  ((((temp___expr_198).us_split_discrs1).rec__nested_init_by_proof__rec__d = of_int(0)) and
+  ((((((temp___expr_198).us_split_fields1).rec__nested_init_by_proof__rec__f2).attr__init = false) and
+  (nested_init_by_proof__rec__f1__pred(temp___expr_198) ->
+  ((to_rep((((temp___expr_198).us_split_fields1).rec__nested_init_by_proof__rec__f1).rec__value) = 15) and
+  ((((temp___expr_198).us_split_fields1).rec__nested_init_by_proof__rec__f1).attr__init = true)))) and
+  (nested_init_by_proof__rec__f3__pred(temp___expr_198) ->
+  ((((temp___expr_198).us_split_fields1).rec__nested_init_by_proof__rec__f3).attr__init = false))))
+
+function to_rep1(x: integer) : int = integerqtint(x)
+
+logic of_rep1 : int -> integer
+
+axiom inversion_axiom1 :
+  (forall x:integer [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range1(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type map__ref = { map__content : (int,us_rep) farray
+}
+
+logic slide : (int,us_rep) farray, int, int -> (int,us_rep) farray
+
+axiom slide_eq :
+  (forall a:(int,us_rep) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,us_rep) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq5(a: (int,us_rep) farray, a__first: int, a__last: int,
+  b: (int,us_rep) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_156:int. (((a__first <= temp___idx_156) and
+  (temp___idx_156 <= a__last)) -> (bool_eq4((a[temp___idx_156]),
+  (b[((b__first - a__first) + temp___idx_156)])) = true)))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_156:int. (((a__first <= temp___idx_156) and
+  (temp___idx_156 <= a__last)) -> (bool_eq4((a[temp___idx_156]),
+  (b[((b__first - a__first) + temp___idx_156)])) = true))))))
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep1(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (in_range2(low) and in_range2(high)))))
+
+type us_t = { elts : (int,us_rep) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,us_rep) farray = (a).elts
+
+function of_array(a: (int,us_rep) farray, f: int, l: int) : us_t = { elts =
+  a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep1(first((a).rt))
+
+function last1(a: us_t) : int = to_rep1(last((a).rt))
+
+function length1(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic component__size : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+function bool_eq6(x: us_t, y: us_t) : bool = bool_eq5((x).elts,
+  to_rep1(first((x).rt)), to_rep1(last((x).rt)), (y).elts,
+  to_rep1(first((y).rt)), to_rep1(last((y).rt)))
+
+logic user_eq3 : us_t, us_t -> bool
+
+logic dummy3 : us_t
+
+type my_arr__ref = { my_arr__content : us_t
+}
+
+function my_arr__ref_my_arr__content__projection(a: my_arr__ref) : us_t =
+  (a).my_arr__content
+
+type t4b__ref = { t4b__content : us_t
+}
+
+function t4b__ref_t4b__content__projection(a: t4b__ref) : us_t =
+  (a).t4b__content
+
+type us_split_discrs2 = { rec__nested_init_by_proof__holder__d : my_nat
+}
+
+function us_split_discrs_rec__nested_init_by_proof__holder__d__projection(a: us_split_discrs2) : my_nat =
+  (a).rec__nested_init_by_proof__holder__d
+
+type us_split_discrs__ref1 = { us_split_discrs__content1 : us_split_discrs2
+}
+
+function us_split_discrs__ref___split_discrs__content__2__projection(a: us_split_discrs__ref1) : us_split_discrs2 =
+  (a).us_split_discrs__content1
+
+type us_split_fields2 = { rec__nested_init_by_proof__holder__content : us_t
+}
+
+function us_split_fields_rec__nested_init_by_proof__holder__content__projection(a: us_split_fields2) : us_t =
+  (a).rec__nested_init_by_proof__holder__content
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_discrs3 : us_split_discrs2; us_split_fields3 :
+us_split_fields2
+}
+
+function us_rep___split_discrs__2__projection(a: us_rep1) : us_split_discrs2 =
+  (a).us_split_discrs3
+
+function us_rep___split_fields__2__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function bool_eq7(a: us_rep1, b: us_rep1) : bool =
+  (if ((to_rep(((a).us_split_discrs3).rec__nested_init_by_proof__holder__d) = to_rep(((b).us_split_discrs3).rec__nested_init_by_proof__holder__d)) and
+  (bool_eq6(((a).us_split_fields3).rec__nested_init_by_proof__holder__content,
+  ((b).us_split_fields3).rec__nested_init_by_proof__holder__content) = true)) then true else false)
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic nested_init_by_proof__holder__d__first__bit : int
+
+logic nested_init_by_proof__holder__d__last__bit : int
+
+logic nested_init_by_proof__holder__d__position : int
+
+axiom nested_init_by_proof__holder__d__first__bit_axiom :
+  (0 <= nested_init_by_proof__holder__d__first__bit)
+
+axiom nested_init_by_proof__holder__d__last__bit_axiom :
+  (nested_init_by_proof__holder__d__first__bit <  nested_init_by_proof__holder__d__last__bit)
+
+axiom nested_init_by_proof__holder__d__position_axiom :
+  (0 <= nested_init_by_proof__holder__d__position)
+
+logic nested_init_by_proof__holder__content__first__bit : int
+
+logic nested_init_by_proof__holder__content__last__bit : int
+
+logic nested_init_by_proof__holder__content__position : int
+
+axiom nested_init_by_proof__holder__content__first__bit_axiom :
+  (0 <= nested_init_by_proof__holder__content__first__bit)
+
+axiom nested_init_by_proof__holder__content__last__bit_axiom :
+  (nested_init_by_proof__holder__content__first__bit <  nested_init_by_proof__holder__content__last__bit)
+
+axiom nested_init_by_proof__holder__content__position_axiom :
+  (0 <= nested_init_by_proof__holder__content__position)
+
+logic user_eq4 : us_rep1, us_rep1 -> bool
+
+logic dummy4 : us_rep1
+
+type holder__ref = { holder__content : us_rep1
+}
+
+function holder__ref_holder__content__projection(a: holder__ref) : us_rep1 =
+  (a).holder__content
+
+type tT6bP1
+
+logic tT6bP1qtint : tT6bP1 -> int
+
+axiom tT6bP1qtaxiom : (forall i:tT6bP1. (1 <= tT6bP1qtint(i)))
+
+axiom tT6bP1qtaxiom1 : (forall i:tT6bP1. (tT6bP1qtint(i) <= 15))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 15))
+
+function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq5 : tT6bP1, tT6bP1 -> bool
+
+logic dummy5 : tT6bP1
+
+type tT6bP1__ref = { tT6bP1__content : tT6bP1
+}
+
+function tT6bP1__ref_tT6bP1__content__projection(a: tT6bP1__ref) : tT6bP1 =
+  (a).tT6bP1__content
+
+logic dummy6 : (int,us_rep) farray
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic component__size1 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom component__size_axiom1 : (0 <= component__size1)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic user_eq6 : (int,us_rep) farray, (int,us_rep) farray -> bool
+
+type us_split_fields4 = { rec__nested_init_by_proof__holder__content1 :
+(int,us_rep) farray
+}
+
+function us_split_fields_rec__nested_init_by_proof__holder__content__2__projection(a: us_split_fields4) : (int,us_rep) farray =
+  (a).rec__nested_init_by_proof__holder__content1
+
+type us_split_fields__ref2 = { us_split_fields__content2 : us_split_fields4
+}
+
+function us_split_fields__ref___split_fields__content__3__projection(a: us_split_fields__ref2) : us_split_fields4 =
+  (a).us_split_fields__content2
+
+type us_rep2 = { us_split_discrs4 : us_split_discrs2; us_split_fields5 :
+us_split_fields4
+}
+
+function us_rep___split_discrs__3__projection(a: us_rep2) : us_split_discrs2 =
+  (a).us_split_discrs4
+
+function us_rep___split_fields__3__projection(a: us_rep2) : us_split_fields4 =
+  (a).us_split_fields5
+
+function to_base(a: us_rep2) : us_rep1 = { us_split_discrs3 =
+  (a).us_split_discrs4; us_split_fields3 = {
+  rec__nested_init_by_proof__holder__content =
+  of_array(((a).us_split_fields5).rec__nested_init_by_proof__holder__content1,
+  1, 15) } }
+
+function of_base(r: us_rep1) : us_rep2 = { us_split_discrs4 =
+  (r).us_split_discrs3; us_split_fields5 = {
+  rec__nested_init_by_proof__holder__content1 =
+  to_array(((r).us_split_fields3).rec__nested_init_by_proof__holder__content)
+  } }
+
+function bool_eq9(a: us_rep2, b: us_rep2) : bool =
+  (if ((to_rep(((a).us_split_discrs4).rec__nested_init_by_proof__holder__d) = to_rep(((b).us_split_discrs4).rec__nested_init_by_proof__holder__d)) and
+  (bool_eq5(((a).us_split_fields5).rec__nested_init_by_proof__holder__content1,
+  1, 15, ((b).us_split_fields5).rec__nested_init_by_proof__holder__content1,
+  1, 15) = true)) then true else false)
+
+predicate in_range4(rec__nested_init_by_proof__holder__d1: int, a: us_rep1) =
+  (rec__nested_init_by_proof__holder__d1 = to_rep(((a).us_split_discrs3).rec__nested_init_by_proof__holder__d))
+
+logic value__size4 : int
+
+logic object__size4 : int
+
+logic alignment4 : int
+
+axiom value__size_axiom4 : (0 <= value__size4)
+
+axiom object__size_axiom4 : (0 <= object__size4)
+
+axiom alignment_axiom4 : (0 <= alignment4)
+
+logic nested_init_by_proof__holder__d__first__bit1 : int
+
+logic nested_init_by_proof__holder__d__last__bit1 : int
+
+logic nested_init_by_proof__holder__d__position1 : int
+
+axiom nested_init_by_proof__holder__d__first__bit_axiom1 :
+  (0 <= nested_init_by_proof__holder__d__first__bit1)
+
+axiom nested_init_by_proof__holder__d__last__bit_axiom1 :
+  (nested_init_by_proof__holder__d__first__bit1 <  nested_init_by_proof__holder__d__last__bit1)
+
+axiom nested_init_by_proof__holder__d__position_axiom1 :
+  (0 <= nested_init_by_proof__holder__d__position1)
+
+logic nested_init_by_proof__holder__content__first__bit1 : int
+
+logic nested_init_by_proof__holder__content__last__bit1 : int
+
+logic nested_init_by_proof__holder__content__position1 : int
+
+axiom nested_init_by_proof__holder__content__first__bit_axiom1 :
+  (0 <= nested_init_by_proof__holder__content__first__bit1)
+
+axiom nested_init_by_proof__holder__content__last__bit_axiom1 :
+  (nested_init_by_proof__holder__content__first__bit1 <  nested_init_by_proof__holder__content__last__bit1)
+
+axiom nested_init_by_proof__holder__content__position_axiom1 :
+  (0 <= nested_init_by_proof__holder__content__position1)
+
+logic user_eq7 : us_rep2, us_rep2 -> bool
+
+logic dummy7 : us_rep2
+
+type txS__ref = { txS__content : us_rep2
+}
+
+function txS__ref_txS__content__projection(a: txS__ref) : us_rep2 =
+  (a).txS__content
+
+logic x__split_discrs : us_split_discrs2
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate dynamic_invariant2(temp___expr_245: us_rep2,
+  temp___is_init_241: bool, temp___skip_constant_242: bool,
+  temp___do_toplevel_243: bool, temp___do_typ_inv_244: bool) =
+  ((not (temp___skip_constant_242 = true)) -> in_range4(15,
+  to_base(temp___expr_245)))
+
+predicate default_initial_assumption1(temp___expr_249: us_rep2,
+  temp___skip_top_level_250: bool) =
+  ((to_rep(((temp___expr_249).us_split_discrs4).rec__nested_init_by_proof__holder__d) = 15) and
+  (forall temp___253:int. (((1 <= temp___253) and (temp___253 <= 15)) ->
+  (((((((temp___expr_249).us_split_fields5).rec__nested_init_by_proof__holder__content1[temp___253])).us_split_discrs1).rec__nested_init_by_proof__rec__d = of_int(0)) and
+  (((((((((temp___expr_249).us_split_fields5).rec__nested_init_by_proof__holder__content1[temp___253])).us_split_fields1).rec__nested_init_by_proof__rec__f2).attr__init = false) and
+  (nested_init_by_proof__rec__f1__pred((((temp___expr_249).us_split_fields5).rec__nested_init_by_proof__holder__content1[temp___253])) ->
+  ((to_rep(((((((temp___expr_249).us_split_fields5).rec__nested_init_by_proof__holder__content1[temp___253])).us_split_fields1).rec__nested_init_by_proof__rec__f1).rec__value) = 15) and
+  (((((((temp___expr_249).us_split_fields5).rec__nested_init_by_proof__holder__content1[temp___253])).us_split_fields1).rec__nested_init_by_proof__rec__f1).attr__init = true)))) and
+  (nested_init_by_proof__rec__f3__pred((((temp___expr_249).us_split_fields5).rec__nested_init_by_proof__holder__content1[temp___253])) ->
+  (((((((temp___expr_249).us_split_fields5).rec__nested_init_by_proof__holder__content1[temp___253])).us_split_fields1).rec__nested_init_by_proof__rec__f3).attr__init = false)))))))
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+predicate in_range5(rec__nested_init_by_proof__rec__d1: bool, a: us_rep) =
+  (rec__nested_init_by_proof__rec__d1 = ((a).us_split_discrs1).rec__nested_init_by_proof__rec__d)
+
+logic value__size5 : int
+
+logic object__size5 : int
+
+logic alignment5 : int
+
+axiom value__size_axiom5 : (0 <= value__size5)
+
+axiom object__size_axiom5 : (0 <= object__size5)
+
+axiom alignment_axiom5 : (0 <= alignment5)
+
+logic nested_init_by_proof__rec__d__first__bit1 : int
+
+logic nested_init_by_proof__rec__d__last__bit1 : int
+
+logic nested_init_by_proof__rec__d__position1 : int
+
+axiom nested_init_by_proof__rec__d__first__bit_axiom1 :
+  (0 <= nested_init_by_proof__rec__d__first__bit1)
+
+axiom nested_init_by_proof__rec__d__last__bit_axiom1 :
+  (nested_init_by_proof__rec__d__first__bit1 <  nested_init_by_proof__rec__d__last__bit1)
+
+axiom nested_init_by_proof__rec__d__position_axiom1 :
+  (0 <= nested_init_by_proof__rec__d__position1)
+
+logic nested_init_by_proof__rec__f3__first__bit1 : int
+
+logic nested_init_by_proof__rec__f3__last__bit1 : int
+
+logic nested_init_by_proof__rec__f3__position1 : int
+
+axiom nested_init_by_proof__rec__f3__first__bit_axiom1 :
+  (0 <= nested_init_by_proof__rec__f3__first__bit1)
+
+axiom nested_init_by_proof__rec__f3__last__bit_axiom1 :
+  (nested_init_by_proof__rec__f3__first__bit1 <  nested_init_by_proof__rec__f3__last__bit1)
+
+axiom nested_init_by_proof__rec__f3__position_axiom1 :
+  (0 <= nested_init_by_proof__rec__f3__position1)
+
+logic nested_init_by_proof__rec__f2__first__bit1 : int
+
+logic nested_init_by_proof__rec__f2__last__bit1 : int
+
+logic nested_init_by_proof__rec__f2__position1 : int
+
+axiom nested_init_by_proof__rec__f2__first__bit_axiom1 :
+  (0 <= nested_init_by_proof__rec__f2__first__bit1)
+
+axiom nested_init_by_proof__rec__f2__last__bit_axiom1 :
+  (nested_init_by_proof__rec__f2__first__bit1 <  nested_init_by_proof__rec__f2__last__bit1)
+
+axiom nested_init_by_proof__rec__f2__position_axiom1 :
+  (0 <= nested_init_by_proof__rec__f2__position1)
+
+logic nested_init_by_proof__rec__f1__first__bit1 : int
+
+logic nested_init_by_proof__rec__f1__last__bit1 : int
+
+logic nested_init_by_proof__rec__f1__position1 : int
+
+axiom nested_init_by_proof__rec__f1__first__bit_axiom1 :
+  (0 <= nested_init_by_proof__rec__f1__first__bit1)
+
+axiom nested_init_by_proof__rec__f1__last__bit_axiom1 :
+  (nested_init_by_proof__rec__f1__first__bit1 <  nested_init_by_proof__rec__f1__last__bit1)
+
+axiom nested_init_by_proof__rec__f1__position_axiom1 :
+  (0 <= nested_init_by_proof__rec__f1__position1)
+
+logic user_eq8 : us_rep, us_rep -> bool
+
+logic dummy8 : us_rep
+
+type trS__ref = { trS__content : us_rep
+}
+
+function trS__ref_trS__content__projection(a: trS__ref) : us_rep =
+  (a).trS__content
+
+logic r__split_discrs : us_split_discrs
+
+logic r__attr__constrained : bool
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+predicate dynamic_invariant3(temp___expr_262: us_rep,
+  temp___is_init_258: bool, temp___skip_constant_259: bool,
+  temp___do_toplevel_260: bool, temp___do_typ_inv_261: bool) =
+  ((not (temp___skip_constant_259 = true)) -> in_range5(of_int(1),
+  temp___expr_262))
+
+predicate default_initial_assumption2(temp___expr_264: us_rep,
+  temp___skip_top_level_265: bool) =
+  ((((temp___expr_264).us_split_discrs1).rec__nested_init_by_proof__rec__d = of_int(1)) and
+  (((nested_init_by_proof__rec__f3__pred(temp___expr_264) ->
+  ((((temp___expr_264).us_split_fields1).rec__nested_init_by_proof__rec__f3).attr__init = false)) and
+  ((((temp___expr_264).us_split_fields1).rec__nested_init_by_proof__rec__f2).attr__init = false)) and
+  (nested_init_by_proof__rec__f1__pred(temp___expr_264) ->
+  ((to_rep((((temp___expr_264).us_split_fields1).rec__nested_init_by_proof__rec__f1).rec__value) = 15) and
+  ((((temp___expr_264).us_split_fields1).rec__nested_init_by_proof__rec__f1).attr__init = true)))))
+
+predicate in_range6(rec__nested_init_by_proof__rec__d1: bool, a: us_rep) =
+  (rec__nested_init_by_proof__rec__d1 = ((a).us_split_discrs1).rec__nested_init_by_proof__rec__d)
+
+logic value__size6 : int
+
+logic object__size6 : int
+
+logic alignment6 : int
+
+axiom value__size_axiom6 : (0 <= value__size6)
+
+axiom object__size_axiom6 : (0 <= object__size6)
+
+axiom alignment_axiom6 : (0 <= alignment6)
+
+logic nested_init_by_proof__rec__d__first__bit2 : int
+
+logic nested_init_by_proof__rec__d__last__bit2 : int
+
+logic nested_init_by_proof__rec__d__position2 : int
+
+axiom nested_init_by_proof__rec__d__first__bit_axiom2 :
+  (0 <= nested_init_by_proof__rec__d__first__bit2)
+
+axiom nested_init_by_proof__rec__d__last__bit_axiom2 :
+  (nested_init_by_proof__rec__d__first__bit2 <  nested_init_by_proof__rec__d__last__bit2)
+
+axiom nested_init_by_proof__rec__d__position_axiom2 :
+  (0 <= nested_init_by_proof__rec__d__position2)
+
+logic nested_init_by_proof__rec__f3__first__bit2 : int
+
+logic nested_init_by_proof__rec__f3__last__bit2 : int
+
+logic nested_init_by_proof__rec__f3__position2 : int
+
+axiom nested_init_by_proof__rec__f3__first__bit_axiom2 :
+  (0 <= nested_init_by_proof__rec__f3__first__bit2)
+
+axiom nested_init_by_proof__rec__f3__last__bit_axiom2 :
+  (nested_init_by_proof__rec__f3__first__bit2 <  nested_init_by_proof__rec__f3__last__bit2)
+
+axiom nested_init_by_proof__rec__f3__position_axiom2 :
+  (0 <= nested_init_by_proof__rec__f3__position2)
+
+logic nested_init_by_proof__rec__f2__first__bit2 : int
+
+logic nested_init_by_proof__rec__f2__last__bit2 : int
+
+logic nested_init_by_proof__rec__f2__position2 : int
+
+axiom nested_init_by_proof__rec__f2__first__bit_axiom2 :
+  (0 <= nested_init_by_proof__rec__f2__first__bit2)
+
+axiom nested_init_by_proof__rec__f2__last__bit_axiom2 :
+  (nested_init_by_proof__rec__f2__first__bit2 <  nested_init_by_proof__rec__f2__last__bit2)
+
+axiom nested_init_by_proof__rec__f2__position_axiom2 :
+  (0 <= nested_init_by_proof__rec__f2__position2)
+
+logic nested_init_by_proof__rec__f1__first__bit2 : int
+
+logic nested_init_by_proof__rec__f1__last__bit2 : int
+
+logic nested_init_by_proof__rec__f1__position2 : int
+
+axiom nested_init_by_proof__rec__f1__first__bit_axiom2 :
+  (0 <= nested_init_by_proof__rec__f1__first__bit2)
+
+axiom nested_init_by_proof__rec__f1__last__bit_axiom2 :
+  (nested_init_by_proof__rec__f1__first__bit2 <  nested_init_by_proof__rec__f1__last__bit2)
+
+axiom nested_init_by_proof__rec__f1__position_axiom2 :
+  (0 <= nested_init_by_proof__rec__f1__position2)
+
+logic user_eq9 : us_rep, us_rep -> bool
+
+logic dummy9 : us_rep
+
+type t9b__ref = { t9b__content : us_rep
+}
+
+function t9b__ref_t9b__content__projection(a: t9b__ref) : us_rep =
+  (a).t9b__content
+
+axiom my_eq__def_axiom :
+  (forall x:us_rep. forall y:us_rep [my_eq(x, y)]. ((my_eq(x, y) = true) ->
+  ((((x).us_split_discrs1).rec__nested_init_by_proof__rec__d = true) ->
+  (((y).us_split_discrs1).rec__nested_init_by_proof__rec__d = true))))
+
+axiom my_eq__def_axiom1 :
+  (forall x:us_rep. forall y:us_rep [my_eq(x, y)]. ((my_eq(x, y) = true) ->
+  ((((y).us_split_discrs1).rec__nested_init_by_proof__rec__d = true) ->
+  (((x).us_split_discrs1).rec__nested_init_by_proof__rec__d = true))))
+
+axiom my_eq__def_axiom2 :
+  (forall x:us_rep. forall y:us_rep [my_eq(x, y)]. ((my_eq(x, y) = true) ->
+  (((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f2).attr__init = true) then true else false) = true) ->
+  ((if ((((y).us_split_fields1).rec__nested_init_by_proof__rec__f2).attr__init = true) then true else false) = true))))
+
+axiom my_eq__def_axiom3 :
+  (forall x:us_rep. forall y:us_rep [my_eq(x, y)]. ((my_eq(x, y) = true) ->
+  (((if ((((y).us_split_fields1).rec__nested_init_by_proof__rec__f2).attr__init = true) then true else false) = true) ->
+  ((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f2).attr__init = true) then true else false) = true))))
+
+axiom my_eq__def_axiom4 :
+  (forall x:us_rep. forall y:us_rep [my_eq(x, y)]. ((my_eq(x, y) = true) ->
+  (((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f2).attr__init = true) then true else false) = true) ->
+  (to_rep((((x).us_split_fields1).rec__nested_init_by_proof__rec__f2).rec__value) = to_rep((((y).us_split_fields1).rec__nested_init_by_proof__rec__f2).rec__value)))))
+
+axiom my_eq__def_axiom5 :
+  (forall x:us_rep. forall y:us_rep [my_eq(x, y)]. ((my_eq(x, y) = true) ->
+  ((((x).us_split_discrs1).rec__nested_init_by_proof__rec__d = true) ->
+  (((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f1).attr__init = true) then true else false) = true) ->
+  ((if ((((y).us_split_fields1).rec__nested_init_by_proof__rec__f1).attr__init = true) then true else false) = true)))))
+
+axiom my_eq__def_axiom6 :
+  (forall x:us_rep. forall y:us_rep [my_eq(x, y)]. ((my_eq(x, y) = true) ->
+  ((((x).us_split_discrs1).rec__nested_init_by_proof__rec__d = true) ->
+  (((if ((((y).us_split_fields1).rec__nested_init_by_proof__rec__f1).attr__init = true) then true else false) = true) ->
+  ((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f1).attr__init = true) then true else false) = true)))))
+
+axiom my_eq__def_axiom7 :
+  (forall x:us_rep. forall y:us_rep [my_eq(x, y)]. ((my_eq(x, y) = true) ->
+  ((((x).us_split_discrs1).rec__nested_init_by_proof__rec__d = true) ->
+  (((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f1).attr__init = true) then true else false) = true) ->
+  (to_rep((((x).us_split_fields1).rec__nested_init_by_proof__rec__f1).rec__value) = to_rep((((y).us_split_fields1).rec__nested_init_by_proof__rec__f1).rec__value))))))
+
+axiom my_eq__def_axiom8 :
+  (forall x:us_rep. forall y:us_rep [my_eq(x, y)]. ((my_eq(x, y) = true) ->
+  ((not (((x).us_split_discrs1).rec__nested_init_by_proof__rec__d = true)) ->
+  (((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f3).attr__init = true) then true else false) = true) ->
+  ((if ((((y).us_split_fields1).rec__nested_init_by_proof__rec__f3).attr__init = true) then true else false) = true)))))
+
+axiom my_eq__def_axiom9 :
+  (forall x:us_rep. forall y:us_rep [my_eq(x, y)]. ((my_eq(x, y) = true) ->
+  ((not (((x).us_split_discrs1).rec__nested_init_by_proof__rec__d = true)) ->
+  (((if ((((y).us_split_fields1).rec__nested_init_by_proof__rec__f3).attr__init = true) then true else false) = true) ->
+  ((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f3).attr__init = true) then true else false) = true)))))
+
+axiom my_eq__def_axiom10 :
+  (forall x:us_rep. forall y:us_rep [my_eq(x, y)]. ((my_eq(x, y) = true) ->
+  ((not (((x).us_split_discrs1).rec__nested_init_by_proof__rec__d = true)) ->
+  (((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f3).attr__init = true) then true else false) = true) ->
+  (to_rep((((x).us_split_fields1).rec__nested_init_by_proof__rec__f3).rec__value) = to_rep((((y).us_split_fields1).rec__nested_init_by_proof__rec__f3).rec__value))))))
+
+axiom my_eq__def_axiom11 :
+  (forall x:us_rep. forall y:us_rep [my_eq(x, y)].
+  ((((((((x).us_split_discrs1).rec__nested_init_by_proof__rec__d = true) <->
+  (((y).us_split_discrs1).rec__nested_init_by_proof__rec__d = true)) and
+  (((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f2).attr__init = true) then true else false) = true) <->
+  ((if ((((y).us_split_fields1).rec__nested_init_by_proof__rec__f2).attr__init = true) then true else false) = true))) and
+  (((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f2).attr__init = true) then true else false) = true) ->
+  (to_rep((((x).us_split_fields1).rec__nested_init_by_proof__rec__f2).rec__value) = to_rep((((y).us_split_fields1).rec__nested_init_by_proof__rec__f2).rec__value)))) and
+  (if (((x).us_split_discrs1).rec__nested_init_by_proof__rec__d = true) then ((((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f1).attr__init = true) then true else false) = true) <->
+  ((if ((((y).us_split_fields1).rec__nested_init_by_proof__rec__f1).attr__init = true) then true else false) = true)) and
+  (((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f1).attr__init = true) then true else false) = true) ->
+  (to_rep((((x).us_split_fields1).rec__nested_init_by_proof__rec__f1).rec__value) = to_rep((((y).us_split_fields1).rec__nested_init_by_proof__rec__f1).rec__value)))) else ((((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f3).attr__init = true) then true else false) = true) <->
+  ((if ((((y).us_split_fields1).rec__nested_init_by_proof__rec__f3).attr__init = true) then true else false) = true)) and
+  (((if ((((x).us_split_fields1).rec__nested_init_by_proof__rec__f3).attr__init = true) then true else false) = true) ->
+  (to_rep((((x).us_split_fields1).rec__nested_init_by_proof__rec__f3).rec__value) = to_rep((((y).us_split_fields1).rec__nested_init_by_proof__rec__f3).rec__value)))))) ->
+  (my_eq(x, y) = true)))
+
+predicate dynamic_invariant4(temp___expr_232: us_rep1,
+  temp___is_init_228: bool, temp___skip_constant_229: bool,
+  temp___do_toplevel_230: bool, temp___do_typ_inv_231: bool) =
+  (let temp___233 =
+  ((temp___expr_232).us_split_discrs3).rec__nested_init_by_proof__holder__d
+  : my_nat in (dynamic_property(1, to_rep(temp___233),
+  first1(((temp___expr_232).us_split_fields3).rec__nested_init_by_proof__holder__content),
+  last1(((temp___expr_232).us_split_fields3).rec__nested_init_by_proof__holder__content)) and
+  ((first1(((temp___expr_232).us_split_fields3).rec__nested_init_by_proof__holder__content) = 1) and
+  (last1(((temp___expr_232).us_split_fields3).rec__nested_init_by_proof__holder__content) = to_rep(temp___233)))))
+
+ (* File "nested_init_by_proof.adb", line 1, characters 0-0 *)
+goal defqtvc : true

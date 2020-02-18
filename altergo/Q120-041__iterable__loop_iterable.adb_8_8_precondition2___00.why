@@ -1,0 +1,723 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : natural, natural -> bool
+
+logic dummy : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+function to_rep(x: natural) : int = naturalqtint(x)
+
+logic of_rep : int -> natural
+
+axiom inversion_axiom :
+  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:natural [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type map__ref = { map__content : (int,natural) farray
+}
+
+logic slide : (int,natural) farray, int, int -> (int,natural) farray
+
+axiom slide_eq :
+  (forall a:(int,natural) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,natural) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq2(a: (int,natural) farray, a__first: int, a__last: int,
+  b: (int,natural) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,natural) farray. forall b:(int,natural) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)]))))))))
+
+logic dummy1 : (int,natural) farray
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic user_eq1 : (int,natural) farray, (int,natural) farray -> bool
+
+type us_split_fields = { rec__composite_cursors__cont1__content :
+(int,natural) farray; rec__composite_cursors__cont1__length : natural
+}
+
+function us_split_fields_rec__composite_cursors__cont1__content__projection(a: us_split_fields) : (int,natural) farray =
+  (a).rec__composite_cursors__cont1__content
+
+function us_split_fields_rec__composite_cursors__cont1__length__projection(a: us_split_fields) : natural =
+  (a).rec__composite_cursors__cont1__length
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq3(a: us_rep, b: us_rep) : bool =
+  (if ((bool_eq2(((a).us_split_fields1).rec__composite_cursors__cont1__content,
+  1, 100, ((b).us_split_fields1).rec__composite_cursors__cont1__content, 1,
+  100) = true) and
+  (to_rep(((a).us_split_fields1).rec__composite_cursors__cont1__length) = to_rep(((b).us_split_fields1).rec__composite_cursors__cont1__length))) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic composite_cursors__cont1__content__first__bit : int
+
+logic composite_cursors__cont1__content__last__bit : int
+
+logic composite_cursors__cont1__content__position : int
+
+axiom composite_cursors__cont1__content__first__bit_axiom :
+  (0 <= composite_cursors__cont1__content__first__bit)
+
+axiom composite_cursors__cont1__content__last__bit_axiom :
+  (composite_cursors__cont1__content__first__bit <  composite_cursors__cont1__content__last__bit)
+
+axiom composite_cursors__cont1__content__position_axiom :
+  (0 <= composite_cursors__cont1__content__position)
+
+logic composite_cursors__cont1__length__first__bit : int
+
+logic composite_cursors__cont1__length__last__bit : int
+
+logic composite_cursors__cont1__length__position : int
+
+axiom composite_cursors__cont1__length__first__bit_axiom :
+  (0 <= composite_cursors__cont1__length__first__bit)
+
+axiom composite_cursors__cont1__length__last__bit_axiom :
+  (composite_cursors__cont1__length__first__bit <  composite_cursors__cont1__length__last__bit)
+
+axiom composite_cursors__cont1__length__position_axiom :
+  (0 <= composite_cursors__cont1__length__position)
+
+logic user_eq2 : us_rep, us_rep -> bool
+
+logic dummy2 : us_rep
+
+type cont1__ref = { cont1__content : us_rep
+}
+
+function cont1__ref_cont1__content__projection(a: cont1__ref) : us_rep =
+  (a).cont1__content
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate dynamic_invariant(temp___expr_196: us_rep,
+  temp___is_init_192: bool, temp___skip_constant_193: bool,
+  temp___do_toplevel_194: bool, temp___do_typ_inv_195: bool) =
+  ((temp___do_toplevel_194 = true) -> ((temp___is_init_192 = true) ->
+  (to_rep(((temp___expr_196).us_split_fields1).rec__composite_cursors__cont1__length) <= 100)))
+
+predicate dynamic_predicate(temp___205: us_rep) =
+  (to_rep(((temp___205).us_split_fields1).rec__composite_cursors__cont1__length) <= 100)
+
+logic dummy3 : (int,natural) farray
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic component__size1 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom component__size_axiom1 : (0 <= component__size1)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic user_eq3 : (int,natural) farray, (int,natural) farray -> bool
+
+type us_split_fields2 = { rec__composite_cursors__cont2__content :
+(int,natural) farray; rec__composite_cursors__cont2__length : natural
+}
+
+function us_split_fields_rec__composite_cursors__cont2__content__projection(a: us_split_fields2) : (int,natural) farray =
+  (a).rec__composite_cursors__cont2__content
+
+function us_split_fields_rec__composite_cursors__cont2__length__projection(a: us_split_fields2) : natural =
+  (a).rec__composite_cursors__cont2__length
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_fields3 : us_split_fields2
+}
+
+function us_rep___split_fields__2__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function bool_eq4(a: us_rep1, b: us_rep1) : bool =
+  (if ((bool_eq2(((a).us_split_fields3).rec__composite_cursors__cont2__content,
+  1, 100, ((b).us_split_fields3).rec__composite_cursors__cont2__content, 1,
+  100) = true) and
+  (to_rep(((a).us_split_fields3).rec__composite_cursors__cont2__length) = to_rep(((b).us_split_fields3).rec__composite_cursors__cont2__length))) then true else false)
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic composite_cursors__cont2__content__first__bit : int
+
+logic composite_cursors__cont2__content__last__bit : int
+
+logic composite_cursors__cont2__content__position : int
+
+axiom composite_cursors__cont2__content__first__bit_axiom :
+  (0 <= composite_cursors__cont2__content__first__bit)
+
+axiom composite_cursors__cont2__content__last__bit_axiom :
+  (composite_cursors__cont2__content__first__bit <  composite_cursors__cont2__content__last__bit)
+
+axiom composite_cursors__cont2__content__position_axiom :
+  (0 <= composite_cursors__cont2__content__position)
+
+logic composite_cursors__cont2__length__first__bit : int
+
+logic composite_cursors__cont2__length__last__bit : int
+
+logic composite_cursors__cont2__length__position : int
+
+axiom composite_cursors__cont2__length__first__bit_axiom :
+  (0 <= composite_cursors__cont2__length__first__bit)
+
+axiom composite_cursors__cont2__length__last__bit_axiom :
+  (composite_cursors__cont2__length__first__bit <  composite_cursors__cont2__length__last__bit)
+
+axiom composite_cursors__cont2__length__position_axiom :
+  (0 <= composite_cursors__cont2__length__position)
+
+logic user_eq4 : us_rep1, us_rep1 -> bool
+
+logic dummy4 : us_rep1
+
+type cont2__ref = { cont2__content : us_rep1
+}
+
+function cont2__ref_cont2__content__projection(a: cont2__ref) : us_rep1 =
+  (a).cont2__content
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+predicate dynamic_invariant1(temp___expr_211: us_rep1,
+  temp___is_init_207: bool, temp___skip_constant_208: bool,
+  temp___do_toplevel_209: bool, temp___do_typ_inv_210: bool) =
+  ((temp___do_toplevel_209 = true) -> ((temp___is_init_207 = true) ->
+  (to_rep(((temp___expr_211).us_split_fields3).rec__composite_cursors__cont2__length) <= 100)))
+
+predicate dynamic_predicate1(temp___220: us_rep1) =
+  (to_rep(((temp___220).us_split_fields3).rec__composite_cursors__cont2__length) <= 100)
+
+logic first : us_rep -> (int,natural) farray
+
+logic first__function_guard : (int,natural) farray, us_rep -> prop
+
+logic temp_____aggregate_def_233 : int -> (int,natural) farray
+
+axiom first__def_axiom :
+  (forall c:us_rep [first(c)]. (dynamic_invariant(c, true, true, true,
+  true) -> (first(c) = temp_____aggregate_def_233(1))))
+
+logic has_element : us_rep, (int,natural) farray -> bool
+
+logic has_element__function_guard : bool, us_rep,
+  (int,natural) farray -> prop
+
+axiom has_element__def_axiom :
+  (forall c:us_rep.
+  (forall p:(int,natural) farray [has_element(c, p)]. ((has_element(c,
+  p) = true) -> (1 <= to_rep((p[1]))))))
+
+axiom has_element__def_axiom1 :
+  (forall c:us_rep.
+  (forall p:(int,natural) farray [has_element(c, p)]. ((has_element(c,
+  p) = true) ->
+  (to_rep((p[1])) <= to_rep(((c).us_split_fields1).rec__composite_cursors__cont1__length)))))
+
+axiom has_element__def_axiom2 :
+  (forall c:us_rep.
+  (forall p:(int,natural) farray [has_element(c, p)].
+  (((1 <= to_rep((p[1]))) and
+  (to_rep((p[1])) <= to_rep(((c).us_split_fields1).rec__composite_cursors__cont1__length))) ->
+  (has_element(c, p) = true))))
+
+logic next : us_rep, (int,natural) farray -> (int,natural) farray
+
+logic next__function_guard : (int,natural) farray, us_rep,
+  (int,natural) farray -> prop
+
+logic temp_____aggregate_def_246 : int -> (int,natural) farray
+
+axiom next__post_axiom :
+  (forall c:us_rep. forall p:(int,natural) farray.
+  has_element__function_guard(has_element(c, p), c, p))
+
+axiom next__def_axiom :
+  (forall c:us_rep.
+  (forall p:(int,natural) farray [next(c, p)]. (dynamic_invariant(c, true,
+  true, true, true) -> (next(c,
+  p) = temp_____aggregate_def_246((to_rep((p[1])) + 1))))))
+
+logic element : us_rep, (int,natural) farray -> int
+
+logic element__function_guard : int, us_rep, (int,natural) farray -> prop
+
+predicate dynamic_invariant2(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range1(temp___expr_39))
+
+axiom element__post_axiom :
+  (forall c:us_rep. forall p:(int,natural) farray.
+  has_element__function_guard(has_element(c, p), c, p))
+
+axiom element__post_axiom1 :
+  (forall c:us_rep.
+  (forall p:(int,natural) farray [element(c, p)]. ((dynamic_invariant(c,
+  true, true, true, true) and (has_element(c, p) = true)) -> (let result =
+  element(c, p) : int in (element__function_guard(result, c, p) ->
+  dynamic_invariant2(result, true, false, true, true))))))
+
+axiom element__def_axiom :
+  (forall c:us_rep.
+  (forall p:(int,natural) farray [element(c, p)]. (dynamic_invariant(c, true,
+  true, true, true) -> (element(c,
+  p) = to_rep((((c).us_split_fields1).rec__composite_cursors__cont1__content[to_rep((p[1]))]))))))
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+type us_split_fields4 = { rec__composite_cursors__rec_cursor__content :
+natural
+}
+
+function us_split_fields_rec__composite_cursors__rec_cursor__content__projection(a: us_split_fields4) : natural =
+  (a).rec__composite_cursors__rec_cursor__content
+
+type us_split_fields__ref2 = { us_split_fields__content2 : us_split_fields4
+}
+
+function us_split_fields__ref___split_fields__content__3__projection(a: us_split_fields__ref2) : us_split_fields4 =
+  (a).us_split_fields__content2
+
+type us_rep2 = { us_split_fields5 : us_split_fields4
+}
+
+function us_rep___split_fields__3__projection(a: us_rep2) : us_split_fields4 =
+  (a).us_split_fields5
+
+function bool_eq5(a: us_rep2, b: us_rep2) : bool =
+  (if (to_rep(((a).us_split_fields5).rec__composite_cursors__rec_cursor__content) = to_rep(((b).us_split_fields5).rec__composite_cursors__rec_cursor__content)) then true else false)
+
+logic value__size4 : int
+
+logic object__size4 : int
+
+logic alignment4 : int
+
+axiom value__size_axiom4 : (0 <= value__size4)
+
+axiom object__size_axiom4 : (0 <= object__size4)
+
+axiom alignment_axiom4 : (0 <= alignment4)
+
+logic composite_cursors__rec_cursor__content__first__bit : int
+
+logic composite_cursors__rec_cursor__content__last__bit : int
+
+logic composite_cursors__rec_cursor__content__position : int
+
+axiom composite_cursors__rec_cursor__content__first__bit_axiom :
+  (0 <= composite_cursors__rec_cursor__content__first__bit)
+
+axiom composite_cursors__rec_cursor__content__last__bit_axiom :
+  (composite_cursors__rec_cursor__content__first__bit <  composite_cursors__rec_cursor__content__last__bit)
+
+axiom composite_cursors__rec_cursor__content__position_axiom :
+  (0 <= composite_cursors__rec_cursor__content__position)
+
+logic user_eq5 : us_rep2, us_rep2 -> bool
+
+logic dummy5 : us_rep2
+
+type rec_cursor__ref = { rec_cursor__content : us_rep2
+}
+
+function rec_cursor__ref_rec_cursor__content__projection(a: rec_cursor__ref) : us_rep2 =
+  (a).rec_cursor__content
+
+logic first1 : us_rep1 -> us_rep2
+
+logic first__function_guard1 : us_rep2, us_rep1 -> prop
+
+logic rliteral : natural
+
+axiom rliteral_axiom : (naturalqtint(rliteral) = 1)
+
+axiom first__def_axiom1 :
+  (forall c:us_rep1 [first1(c)]. (dynamic_invariant1(c, true, true, true,
+  true) -> (first1(c) = { us_split_fields5 = {
+  rec__composite_cursors__rec_cursor__content = rliteral } })))
+
+logic has_element1 : us_rep1, us_rep2 -> bool
+
+logic has_element__function_guard1 : bool, us_rep1, us_rep2 -> prop
+
+axiom has_element__def_axiom3 :
+  (forall c:us_rep1.
+  (forall p:us_rep2 [has_element1(c, p)]. ((has_element1(c, p) = true) ->
+  (1 <= to_rep(((p).us_split_fields5).rec__composite_cursors__rec_cursor__content)))))
+
+axiom has_element__def_axiom4 :
+  (forall c:us_rep1.
+  (forall p:us_rep2 [has_element1(c, p)]. ((has_element1(c, p) = true) ->
+  (to_rep(((p).us_split_fields5).rec__composite_cursors__rec_cursor__content) <= to_rep(((c).us_split_fields3).rec__composite_cursors__cont2__length)))))
+
+axiom has_element__def_axiom5 :
+  (forall c:us_rep1.
+  (forall p:us_rep2 [has_element1(c, p)].
+  (((1 <= to_rep(((p).us_split_fields5).rec__composite_cursors__rec_cursor__content)) and
+  (to_rep(((p).us_split_fields5).rec__composite_cursors__rec_cursor__content) <= to_rep(((c).us_split_fields3).rec__composite_cursors__cont2__length))) ->
+  (has_element1(c, p) = true))))
+
+logic next1 : us_rep1, us_rep2 -> us_rep2
+
+logic next__function_guard1 : us_rep2, us_rep1, us_rep2 -> prop
+
+axiom next__post_axiom1 :
+  (forall c:us_rep1. forall p:us_rep2.
+  has_element__function_guard1(has_element1(c, p), c, p))
+
+axiom next__def_axiom1 :
+  (forall c:us_rep1.
+  (forall p:us_rep2 [next1(c, p)]. (dynamic_invariant1(c, true, true, true,
+  true) -> (next1(c, p) = { us_split_fields5 = {
+  rec__composite_cursors__rec_cursor__content =
+  of_rep((to_rep(((p).us_split_fields5).rec__composite_cursors__rec_cursor__content) + 1))
+  } }))))
+
+logic element1 : us_rep1, us_rep2 -> int
+
+logic element__function_guard1 : int, us_rep1, us_rep2 -> prop
+
+axiom element__post_axiom2 :
+  (forall c:us_rep1. forall p:us_rep2.
+  has_element__function_guard1(has_element1(c, p), c, p))
+
+axiom element__post_axiom3 :
+  (forall c:us_rep1.
+  (forall p:us_rep2 [element1(c, p)]. ((dynamic_invariant1(c, true, true,
+  true, true) and (has_element1(c, p) = true)) -> (let result = element1(c,
+  p) : int in (element__function_guard1(result, c, p) ->
+  dynamic_invariant2(result, true, false, true, true))))))
+
+axiom element__def_axiom1 :
+  (forall c:us_rep1.
+  (forall p:us_rep2 [element1(c, p)]. (dynamic_invariant1(c, true, true,
+  true, true) -> (element1(c,
+  p) = to_rep((((c).us_split_fields3).rec__composite_cursors__cont2__content[to_rep(((p).us_split_fields5).rec__composite_cursors__rec_cursor__content)]))))))
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic temp_____aggregate_def_290 : int, int -> (int,natural) farray
+
+logic temp_____aggregate_def_296 : int, int -> (int,natural) farray
+
+axiom def_axiom :
+  (forall temp___235:int. (dynamic_invariant2(temp___235, true, true, true,
+  true) -> ((temp_____aggregate_def_233(temp___235)[1]) = rliteral)))
+
+axiom def_axiom1 :
+  (forall temp___248:int. (dynamic_invariant2(temp___248, true, true, true,
+  true) ->
+  (to_rep((temp_____aggregate_def_246(temp___248)[1])) = temp___248)))
+
+logic rliteral1 : natural
+
+axiom rliteral_axiom1 : (naturalqtint(rliteral1) = 0)
+
+axiom def_axiom2 :
+  (forall temp___292:int. forall temp___293:int.
+  ((dynamic_invariant2(temp___292, true, true, true, true) and
+  dynamic_invariant2(temp___293, true, true, true, true)) ->
+  (forall temp___294:int. (((1 <= temp___294) and (temp___294 <= 10)) ->
+  ((temp_____aggregate_def_290(temp___292,
+  temp___293)[temp___294]) = rliteral)))))
+
+axiom def_axiom3 :
+  (forall temp___292:int. forall temp___293:int.
+  ((dynamic_invariant2(temp___292, true, true, true, true) and
+  dynamic_invariant2(temp___293, true, true, true, true)) ->
+  (forall temp___294:int. ((not ((1 <= temp___294) and
+  (temp___294 <= 10))) -> ((temp_____aggregate_def_290(temp___292,
+  temp___293)[temp___294]) = rliteral1)))))
+
+axiom def_axiom4 :
+  (forall temp___298:int. forall temp___299:int.
+  ((dynamic_invariant2(temp___298, true, true, true, true) and
+  dynamic_invariant2(temp___299, true, true, true, true)) ->
+  (forall temp___300:int. (((1 <= temp___300) and (temp___300 <= 10)) ->
+  ((temp_____aggregate_def_296(temp___298,
+  temp___299)[temp___300]) = rliteral)))))
+
+axiom def_axiom5 :
+  (forall temp___298:int. forall temp___299:int.
+  ((dynamic_invariant2(temp___298, true, true, true, true) and
+  dynamic_invariant2(temp___299, true, true, true, true)) ->
+  (forall temp___300:int. ((not ((1 <= temp___300) and
+  (temp___300 <= 10))) -> ((temp_____aggregate_def_296(temp___298,
+  temp___299)[temp___300]) = rliteral1)))))
+
+logic rliteral2 : natural
+
+axiom rliteral_axiom2 : (naturalqtint(rliteral2) = 10)
+
+ (* File "loop_iterable.adb", line 2, characters 0-0 *)
+goal defqtvc :
+  (forall e:int. (dynamic_predicate({ us_split_fields1 = {
+  rec__composite_cursors__cont1__content = temp_____aggregate_def_290(1, 0);
+  rec__composite_cursors__cont1__length = rliteral2 } }) ->
+  (forall c1__split_fields:us_split_fields. ((c1__split_fields = {
+  rec__composite_cursors__cont1__content = temp_____aggregate_def_290(1, 0);
+  rec__composite_cursors__cont1__length = rliteral2 }) ->
+  (dynamic_invariant({ us_split_fields1 = c1__split_fields }, true, false,
+  true, true) -> (dynamic_predicate1({ us_split_fields3 = {
+  rec__composite_cursors__cont2__content = temp_____aggregate_def_296(1, 0);
+  rec__composite_cursors__cont2__length = rliteral2 } }) ->
+  (forall c2__split_fields:us_split_fields2. ((c2__split_fields = {
+  rec__composite_cursors__cont2__content = temp_____aggregate_def_296(1, 0);
+  rec__composite_cursors__cont2__length = rliteral2 }) ->
+  (dynamic_invariant1({ us_split_fields3 = c2__split_fields }, true, false,
+  true, true) -> (let o = { us_split_fields1 = c1__split_fields } : us_rep in
+  (let o1 = first(o) : (int,natural) farray in ((first__function_guard(o1,
+  o) and (o1 = temp_____aggregate_def_233(1))) ->
+  (forall e1:int. ((let o2 = { us_split_fields1 = c1__split_fields }
+  : us_rep in (let o3 = has_element(o2, o1) : bool in
+  ((has_element__function_guard(o3, o2, o1) and ((o3 = true) <->
+  ((1 <= to_rep((o1[1]))) and
+  (to_rep((o1[1])) <= to_rep((c1__split_fields).rec__composite_cursors__cont1__length))))) and
+  (if (o3 = true) then (let o4 = { us_split_fields1 = c1__split_fields }
+  : us_rep in (let o5 = element(o4, o1) : int in
+  ((element__function_guard(o5, o4, o1) and (dynamic_invariant2(o5, true,
+  false, true, true) and
+  (o5 = to_rep(((c1__split_fields).rec__composite_cursors__cont1__content[to_rep((o1[1]))]))))) and
+  (e1 = o5)))) else (e1 = e))))) -> (let o2 = { us_split_fields1 =
+  c1__split_fields } : us_rep in (let o3 = has_element(o2, o1) : bool in
+  ((has_element__function_guard(o3, o2, o1) and ((o3 = true) <->
+  ((1 <= to_rep((o1[1]))) and
+  (to_rep((o1[1])) <= to_rep((c1__split_fields).rec__composite_cursors__cont1__length))))) ->
+  ((o3 = true) ->
+  (forall e2:int. forall temp___304:(int,natural) farray.
+  ((forall c1__split_fields1:us_split_fields.
+   forall temp___3041:(int,natural) farray.
+   has_element__function_guard(has_element({ us_split_fields1 =
+   c1__split_fields1 }, temp___3041), { us_split_fields1 = c1__split_fields1
+   }, temp___3041)) ->
+  ((forall c1__split_fields1:us_split_fields.
+   forall temp___3041:(int,natural) farray. element__function_guard(element({
+   us_split_fields1 = c1__split_fields1 }, temp___3041), { us_split_fields1 =
+   c1__split_fields1 }, temp___3041)) ->
+  (((has_element({ us_split_fields1 = c1__split_fields },
+  temp___304) = true) and (e2 = element({ us_split_fields1 = c1__split_fields
+  }, temp___304))) -> ((e2 = 1) -> (let o4 = { us_split_fields1 =
+  c1__split_fields } : us_rep in (let o5 = next(o4, temp___304)
+  : (int,natural) farray in ((next__function_guard(o5, o4, temp___304) and
+  (o5 = temp_____aggregate_def_246((to_rep((temp___304[1])) + 1)))) ->
+  (let o6 = { us_split_fields1 = c1__split_fields } : us_rep in (let o7 =
+  has_element(o6, o5) : bool in ((has_element__function_guard(o7, o6, o5) and
+  ((o7 = true) <-> ((1 <= to_rep((o5[1]))) and
+  (to_rep((o5[1])) <= to_rep((c1__split_fields).rec__composite_cursors__cont1__length))))) ->
+  ((o7 = true) -> (let o8 = { us_split_fields1 = c1__split_fields }
+  : us_rep in (let o9 = next(o8, temp___304) : (int,natural) farray in
+  ((next__function_guard(o9, o8, temp___304) and
+  (o9 = temp_____aggregate_def_246((to_rep((temp___304[1])) + 1)))) ->
+  (forall temp___3041:(int,natural) farray. ((temp___3041 = o9) -> (let o10 =
+  { us_split_fields1 = c1__split_fields } : us_rep in (let o11 =
+  has_element(o10, temp___3041) : bool in ((has_element__function_guard(o11,
+  o10, temp___3041) and ((o11 = true) <->
+  ((1 <= to_rep((temp___3041[1]))) and
+  (to_rep((temp___3041[1])) <= to_rep((c1__split_fields).rec__composite_cursors__cont1__length))))) ->
+  ((o11 = true) ->
+  ((forall temp___3042:(int,natural) farray. forall o12:us_rep.
+   has_element__function_guard(has_element(o12, temp___3042), o12,
+   temp___3042)) ->
+  (has_element({ us_split_fields1 = c1__split_fields },
+  temp___3041) = true)))))))))))))))))))))))))))))))))))))))))

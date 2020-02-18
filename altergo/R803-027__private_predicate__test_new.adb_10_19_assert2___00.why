@@ -1,0 +1,1137 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type us_split_fields = { rec__pred_vis__root__f1 : integer;
+rec__pred_vis__root__g1 : integer; rec__pred_vis__root__g2 : integer;
+rec__ext__ : us_private
+}
+
+function us_split_fields_rec__pred_vis__root__f1__projection(a: us_split_fields) : integer =
+  (a).rec__pred_vis__root__f1
+
+function us_split_fields_rec__pred_vis__root__g1__projection(a: us_split_fields) : integer =
+  (a).rec__pred_vis__root__g1
+
+function us_split_fields_rec__pred_vis__root__g2__projection(a: us_split_fields) : integer =
+  (a).rec__pred_vis__root__g2
+
+function us_split_fields_rec__ext____projection(a: us_split_fields) : us_private =
+  (a).rec__ext__
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields; attr__tag : int
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function us_rep_attr__tag__projection(a: us_rep) : int = (a).attr__tag
+
+function bool_eq2(a: us_rep, b: us_rep) : bool =
+  (if (((to_rep(((a).us_split_fields1).rec__pred_vis__root__f1) = to_rep(((b).us_split_fields1).rec__pred_vis__root__f1)) and
+  (to_rep(((a).us_split_fields1).rec__pred_vis__root__g1) = to_rep(((b).us_split_fields1).rec__pred_vis__root__g1))) and
+  (to_rep(((a).us_split_fields1).rec__pred_vis__root__g2) = to_rep(((b).us_split_fields1).rec__pred_vis__root__g2))) then true else false)
+
+logic us_dispatch_eq : us_rep, us_rep -> bool
+
+logic us_tag : int
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic pred_vis__root__f1__first__bit : int
+
+logic pred_vis__root__f1__last__bit : int
+
+logic pred_vis__root__f1__position : int
+
+axiom pred_vis__root__f1__first__bit_axiom :
+  (0 <= pred_vis__root__f1__first__bit)
+
+axiom pred_vis__root__f1__last__bit_axiom :
+  (pred_vis__root__f1__first__bit <  pred_vis__root__f1__last__bit)
+
+axiom pred_vis__root__f1__position_axiom :
+  (0 <= pred_vis__root__f1__position)
+
+logic pred_vis__root__g1__first__bit : int
+
+logic pred_vis__root__g1__last__bit : int
+
+logic pred_vis__root__g1__position : int
+
+axiom pred_vis__root__g1__first__bit_axiom :
+  (0 <= pred_vis__root__g1__first__bit)
+
+axiom pred_vis__root__g1__last__bit_axiom :
+  (pred_vis__root__g1__first__bit <  pred_vis__root__g1__last__bit)
+
+axiom pred_vis__root__g1__position_axiom :
+  (0 <= pred_vis__root__g1__position)
+
+logic pred_vis__root__g2__first__bit : int
+
+logic pred_vis__root__g2__last__bit : int
+
+logic pred_vis__root__g2__position : int
+
+axiom pred_vis__root__g2__first__bit_axiom :
+  (0 <= pred_vis__root__g2__first__bit)
+
+axiom pred_vis__root__g2__last__bit_axiom :
+  (pred_vis__root__g2__first__bit <  pred_vis__root__g2__last__bit)
+
+axiom pred_vis__root__g2__position_axiom :
+  (0 <= pred_vis__root__g2__position)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type root__ref = { root__content : us_rep
+}
+
+function root__ref_root__content__projection(a: root__ref) : us_rep =
+  (a).root__content
+
+type us_main_type
+
+logic us_main_eq : us_main_type, us_main_type -> bool
+
+type us_split_fields2 = { rec__pred_vis__grand_grand_child : us_main_type;
+rec__pred_vis__root__f11 : integer; rec__pred_vis__root__g11 : integer;
+rec__pred_vis__root__g21 : integer; rec__ext__1 : us_private
+}
+
+function us_split_fields_rec__pred_vis__grand_grand_child__projection(a: us_split_fields2) : us_main_type =
+  (a).rec__pred_vis__grand_grand_child
+
+function us_split_fields_rec__pred_vis__root__f1__2__projection(a: us_split_fields2) : integer =
+  (a).rec__pred_vis__root__f11
+
+function us_split_fields_rec__pred_vis__root__g1__2__projection(a: us_split_fields2) : integer =
+  (a).rec__pred_vis__root__g11
+
+function us_split_fields_rec__pred_vis__root__g2__2__projection(a: us_split_fields2) : integer =
+  (a).rec__pred_vis__root__g21
+
+function us_split_fields_rec__ext____2__projection(a: us_split_fields2) : us_private =
+  (a).rec__ext__1
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_fields3 : us_split_fields2; attr__tag1 : int
+}
+
+function us_rep___split_fields__2__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function us_rep_attr__tag__2__projection(a: us_rep1) : int = (a).attr__tag1
+
+logic hide_ext__ : us_main_type, us_private -> us_private
+
+logic extract__pred_vis__grand_grand_child : us_private -> us_main_type
+
+axiom extract__pred_vis__grand_grand_child__conv :
+  (forall pred_vis__grand_grand_child:us_main_type.
+  (forall rec__ext__2:us_private.
+  (extract__pred_vis__grand_grand_child(hide_ext__(pred_vis__grand_grand_child,
+  rec__ext__2)) = pred_vis__grand_grand_child)))
+
+logic extract__ext__ : us_private -> us_private
+
+function to_base(a: us_rep1) : us_rep = { us_split_fields1 = {
+  rec__pred_vis__root__f1 = ((a).us_split_fields3).rec__pred_vis__root__f11;
+  rec__pred_vis__root__g1 = ((a).us_split_fields3).rec__pred_vis__root__g11;
+  rec__pred_vis__root__g2 = ((a).us_split_fields3).rec__pred_vis__root__g21;
+  rec__ext__ =
+  hide_ext__(((a).us_split_fields3).rec__pred_vis__grand_grand_child,
+  ((a).us_split_fields3).rec__ext__1) }; attr__tag = (a).attr__tag1 }
+
+function of_base(r: us_rep) : us_rep1 = { us_split_fields3 = {
+  rec__pred_vis__grand_grand_child =
+  extract__pred_vis__grand_grand_child(((r).us_split_fields1).rec__ext__);
+  rec__pred_vis__root__f11 = ((r).us_split_fields1).rec__pred_vis__root__f1;
+  rec__pred_vis__root__g11 = ((r).us_split_fields1).rec__pred_vis__root__g1;
+  rec__pred_vis__root__g21 = ((r).us_split_fields1).rec__pred_vis__root__g2;
+  rec__ext__1 = extract__ext__(((r).us_split_fields1).rec__ext__) };
+  attr__tag1 = (r).attr__tag }
+
+function bool_eq3(a: us_rep1, b: us_rep1) : bool =
+  (if (((us_main_eq(((a).us_split_fields3).rec__pred_vis__grand_grand_child,
+  ((b).us_split_fields3).rec__pred_vis__grand_grand_child) = true) and
+  (to_rep(((a).us_split_fields3).rec__pred_vis__root__f11) = to_rep(((b).us_split_fields3).rec__pred_vis__root__f11))) and
+  ((to_rep(((a).us_split_fields3).rec__pred_vis__root__g11) = to_rep(((b).us_split_fields3).rec__pred_vis__root__g11)) and
+  (to_rep(((a).us_split_fields3).rec__pred_vis__root__g21) = to_rep(((b).us_split_fields3).rec__pred_vis__root__g21)))) then true else false)
+
+logic us_tag1 : int
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic pred_vis__root__f1__first__bit1 : int
+
+logic pred_vis__root__f1__last__bit1 : int
+
+logic pred_vis__root__f1__position1 : int
+
+axiom pred_vis__root__f1__first__bit_axiom1 :
+  (0 <= pred_vis__root__f1__first__bit1)
+
+axiom pred_vis__root__f1__last__bit_axiom1 :
+  (pred_vis__root__f1__first__bit1 <  pred_vis__root__f1__last__bit1)
+
+axiom pred_vis__root__f1__position_axiom1 :
+  (0 <= pred_vis__root__f1__position1)
+
+logic pred_vis__root__g1__first__bit1 : int
+
+logic pred_vis__root__g1__last__bit1 : int
+
+logic pred_vis__root__g1__position1 : int
+
+axiom pred_vis__root__g1__first__bit_axiom1 :
+  (0 <= pred_vis__root__g1__first__bit1)
+
+axiom pred_vis__root__g1__last__bit_axiom1 :
+  (pred_vis__root__g1__first__bit1 <  pred_vis__root__g1__last__bit1)
+
+axiom pred_vis__root__g1__position_axiom1 :
+  (0 <= pred_vis__root__g1__position1)
+
+logic pred_vis__root__g2__first__bit1 : int
+
+logic pred_vis__root__g2__last__bit1 : int
+
+logic pred_vis__root__g2__position1 : int
+
+axiom pred_vis__root__g2__first__bit_axiom1 :
+  (0 <= pred_vis__root__g2__first__bit1)
+
+axiom pred_vis__root__g2__last__bit_axiom1 :
+  (pred_vis__root__g2__first__bit1 <  pred_vis__root__g2__last__bit1)
+
+axiom pred_vis__root__g2__position_axiom1 :
+  (0 <= pred_vis__root__g2__position1)
+
+logic user_eq2 : us_rep1, us_rep1 -> bool
+
+logic dummy2 : us_rep1
+
+type grand_grand_child__ref = { grand_grand_child__content : us_rep1
+}
+
+function grand_grand_child__ref_grand_grand_child__content__projection(a: grand_grand_child__ref) : us_rep1 =
+  (a).grand_grand_child__content
+
+logic x : us_rep1
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+type us_main_type1
+
+logic us_main_eq1 : us_main_type1, us_main_type1 -> bool
+
+type us_split_fields4 = { rec__pred_vis__grand_child : us_main_type1;
+rec__pred_vis__root__f12 : integer; rec__pred_vis__root__g12 : integer;
+rec__pred_vis__root__g22 : integer; rec__ext__2 : us_private
+}
+
+function us_split_fields_rec__pred_vis__grand_child__projection(a: us_split_fields4) : us_main_type1 =
+  (a).rec__pred_vis__grand_child
+
+function us_split_fields_rec__pred_vis__root__f1__3__projection(a: us_split_fields4) : integer =
+  (a).rec__pred_vis__root__f12
+
+function us_split_fields_rec__pred_vis__root__g1__3__projection(a: us_split_fields4) : integer =
+  (a).rec__pred_vis__root__g12
+
+function us_split_fields_rec__pred_vis__root__g2__3__projection(a: us_split_fields4) : integer =
+  (a).rec__pred_vis__root__g22
+
+function us_split_fields_rec__ext____3__projection(a: us_split_fields4) : us_private =
+  (a).rec__ext__2
+
+type us_split_fields__ref2 = { us_split_fields__content2 : us_split_fields4
+}
+
+function us_split_fields__ref___split_fields__content__3__projection(a: us_split_fields__ref2) : us_split_fields4 =
+  (a).us_split_fields__content2
+
+type us_rep2 = { us_split_fields5 : us_split_fields4; attr__tag2 : int
+}
+
+function us_rep___split_fields__3__projection(a: us_rep2) : us_split_fields4 =
+  (a).us_split_fields5
+
+function us_rep_attr__tag__3__projection(a: us_rep2) : int = (a).attr__tag2
+
+logic hide_ext__1 : us_main_type1, us_private -> us_private
+
+logic extract__pred_vis__grand_child : us_private -> us_main_type1
+
+axiom extract__pred_vis__grand_child__conv :
+  (forall pred_vis__grand_child:us_main_type1.
+  (forall rec__ext__3:us_private.
+  (extract__pred_vis__grand_child(hide_ext__1(pred_vis__grand_child,
+  rec__ext__3)) = pred_vis__grand_child)))
+
+logic extract__ext__1 : us_private -> us_private
+
+function to_base1(a: us_rep2) : us_rep = { us_split_fields1 = {
+  rec__pred_vis__root__f1 = ((a).us_split_fields5).rec__pred_vis__root__f12;
+  rec__pred_vis__root__g1 = ((a).us_split_fields5).rec__pred_vis__root__g12;
+  rec__pred_vis__root__g2 = ((a).us_split_fields5).rec__pred_vis__root__g22;
+  rec__ext__ = hide_ext__1(((a).us_split_fields5).rec__pred_vis__grand_child,
+  ((a).us_split_fields5).rec__ext__2) }; attr__tag = (a).attr__tag2 }
+
+function of_base1(r: us_rep) : us_rep2 = { us_split_fields5 = {
+  rec__pred_vis__grand_child =
+  extract__pred_vis__grand_child(((r).us_split_fields1).rec__ext__);
+  rec__pred_vis__root__f12 = ((r).us_split_fields1).rec__pred_vis__root__f1;
+  rec__pred_vis__root__g12 = ((r).us_split_fields1).rec__pred_vis__root__g1;
+  rec__pred_vis__root__g22 = ((r).us_split_fields1).rec__pred_vis__root__g2;
+  rec__ext__2 = extract__ext__1(((r).us_split_fields1).rec__ext__) };
+  attr__tag2 = (r).attr__tag }
+
+function bool_eq4(a: us_rep2, b: us_rep2) : bool =
+  (if (((us_main_eq1(((a).us_split_fields5).rec__pred_vis__grand_child,
+  ((b).us_split_fields5).rec__pred_vis__grand_child) = true) and
+  (to_rep(((a).us_split_fields5).rec__pred_vis__root__f12) = to_rep(((b).us_split_fields5).rec__pred_vis__root__f12))) and
+  ((to_rep(((a).us_split_fields5).rec__pred_vis__root__g12) = to_rep(((b).us_split_fields5).rec__pred_vis__root__g12)) and
+  (to_rep(((a).us_split_fields5).rec__pred_vis__root__g22) = to_rep(((b).us_split_fields5).rec__pred_vis__root__g22)))) then true else false)
+
+logic us_tag2 : int
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic pred_vis__root__f1__first__bit2 : int
+
+logic pred_vis__root__f1__last__bit2 : int
+
+logic pred_vis__root__f1__position2 : int
+
+axiom pred_vis__root__f1__first__bit_axiom2 :
+  (0 <= pred_vis__root__f1__first__bit2)
+
+axiom pred_vis__root__f1__last__bit_axiom2 :
+  (pred_vis__root__f1__first__bit2 <  pred_vis__root__f1__last__bit2)
+
+axiom pred_vis__root__f1__position_axiom2 :
+  (0 <= pred_vis__root__f1__position2)
+
+logic pred_vis__root__g1__first__bit2 : int
+
+logic pred_vis__root__g1__last__bit2 : int
+
+logic pred_vis__root__g1__position2 : int
+
+axiom pred_vis__root__g1__first__bit_axiom2 :
+  (0 <= pred_vis__root__g1__first__bit2)
+
+axiom pred_vis__root__g1__last__bit_axiom2 :
+  (pred_vis__root__g1__first__bit2 <  pred_vis__root__g1__last__bit2)
+
+axiom pred_vis__root__g1__position_axiom2 :
+  (0 <= pred_vis__root__g1__position2)
+
+logic pred_vis__root__g2__first__bit2 : int
+
+logic pred_vis__root__g2__last__bit2 : int
+
+logic pred_vis__root__g2__position2 : int
+
+axiom pred_vis__root__g2__first__bit_axiom2 :
+  (0 <= pred_vis__root__g2__first__bit2)
+
+axiom pred_vis__root__g2__last__bit_axiom2 :
+  (pred_vis__root__g2__first__bit2 <  pred_vis__root__g2__last__bit2)
+
+axiom pred_vis__root__g2__position_axiom2 :
+  (0 <= pred_vis__root__g2__position2)
+
+logic user_eq3 : us_rep2, us_rep2 -> bool
+
+logic dummy3 : us_rep2
+
+type grand_child__ref = { grand_child__content : us_rep2
+}
+
+function grand_child__ref_grand_child__content__projection(a: grand_child__ref) : us_rep2 =
+  (a).grand_child__content
+
+type us_main_type2
+
+logic us_main_eq2 : us_main_type2, us_main_type2 -> bool
+
+type us_split_fields6 = { rec__pred_vis__grand_child1 : us_main_type1;
+rec__pred_vis__grand_grand_child_2 : us_main_type2; rec__pred_vis__root__f13
+: integer; rec__pred_vis__root__g13 : integer; rec__pred_vis__root__g23 :
+integer; rec__ext__3 : us_private
+}
+
+function us_split_fields_rec__pred_vis__grand_child__2__projection(a: us_split_fields6) : us_main_type1 =
+  (a).rec__pred_vis__grand_child1
+
+function us_split_fields_rec__pred_vis__grand_grand_child_2__projection(a: us_split_fields6) : us_main_type2 =
+  (a).rec__pred_vis__grand_grand_child_2
+
+function us_split_fields_rec__pred_vis__root__f1__4__projection(a: us_split_fields6) : integer =
+  (a).rec__pred_vis__root__f13
+
+function us_split_fields_rec__pred_vis__root__g1__4__projection(a: us_split_fields6) : integer =
+  (a).rec__pred_vis__root__g13
+
+function us_split_fields_rec__pred_vis__root__g2__4__projection(a: us_split_fields6) : integer =
+  (a).rec__pred_vis__root__g23
+
+function us_split_fields_rec__ext____4__projection(a: us_split_fields6) : us_private =
+  (a).rec__ext__3
+
+type us_split_fields__ref3 = { us_split_fields__content3 : us_split_fields6
+}
+
+function us_split_fields__ref___split_fields__content__4__projection(a: us_split_fields__ref3) : us_split_fields6 =
+  (a).us_split_fields__content3
+
+type us_rep3 = { us_split_fields7 : us_split_fields6; attr__tag3 : int
+}
+
+function us_rep___split_fields__4__projection(a: us_rep3) : us_split_fields6 =
+  (a).us_split_fields7
+
+function us_rep_attr__tag__4__projection(a: us_rep3) : int = (a).attr__tag3
+
+logic hide_ext__2 : us_main_type1, us_main_type2, us_private -> us_private
+
+axiom extract__pred_vis__grand_child__conv1 :
+  (forall pred_vis__grand_child:us_main_type1.
+  (forall pred_vis__grand_grand_child_2:us_main_type2.
+  (forall rec__ext__4:us_private.
+  (extract__pred_vis__grand_child(hide_ext__2(pred_vis__grand_child,
+  pred_vis__grand_grand_child_2, rec__ext__4)) = pred_vis__grand_child))))
+
+logic extract__pred_vis__grand_grand_child_2 : us_private -> us_main_type2
+
+axiom extract__pred_vis__grand_grand_child_2__conv :
+  (forall pred_vis__grand_child:us_main_type1.
+  (forall pred_vis__grand_grand_child_2:us_main_type2.
+  (forall rec__ext__4:us_private.
+  (extract__pred_vis__grand_grand_child_2(hide_ext__2(pred_vis__grand_child,
+  pred_vis__grand_grand_child_2,
+  rec__ext__4)) = pred_vis__grand_grand_child_2))))
+
+logic extract__ext__2 : us_private -> us_private
+
+function to_base2(a: us_rep3) : us_rep = { us_split_fields1 = {
+  rec__pred_vis__root__f1 = ((a).us_split_fields7).rec__pred_vis__root__f13;
+  rec__pred_vis__root__g1 = ((a).us_split_fields7).rec__pred_vis__root__g13;
+  rec__pred_vis__root__g2 = ((a).us_split_fields7).rec__pred_vis__root__g23;
+  rec__ext__ =
+  hide_ext__2(((a).us_split_fields7).rec__pred_vis__grand_child1,
+  ((a).us_split_fields7).rec__pred_vis__grand_grand_child_2,
+  ((a).us_split_fields7).rec__ext__3) }; attr__tag = (a).attr__tag3 }
+
+function of_base2(r: us_rep) : us_rep3 = { us_split_fields7 = {
+  rec__pred_vis__grand_child1 =
+  extract__pred_vis__grand_child(((r).us_split_fields1).rec__ext__);
+  rec__pred_vis__grand_grand_child_2 =
+  extract__pred_vis__grand_grand_child_2(((r).us_split_fields1).rec__ext__);
+  rec__pred_vis__root__f13 = ((r).us_split_fields1).rec__pred_vis__root__f1;
+  rec__pred_vis__root__g13 = ((r).us_split_fields1).rec__pred_vis__root__g1;
+  rec__pred_vis__root__g23 = ((r).us_split_fields1).rec__pred_vis__root__g2;
+  rec__ext__3 = extract__ext__2(((r).us_split_fields1).rec__ext__) };
+  attr__tag3 = (r).attr__tag }
+
+function bool_eq5(a: us_rep3, b: us_rep3) : bool =
+  (if (((us_main_eq1(((a).us_split_fields7).rec__pred_vis__grand_child1,
+  ((b).us_split_fields7).rec__pred_vis__grand_child1) = true) and
+  (us_main_eq2(((a).us_split_fields7).rec__pred_vis__grand_grand_child_2,
+  ((b).us_split_fields7).rec__pred_vis__grand_grand_child_2) = true)) and
+  (((to_rep(((a).us_split_fields7).rec__pred_vis__root__f13) = to_rep(((b).us_split_fields7).rec__pred_vis__root__f13)) and
+  (to_rep(((a).us_split_fields7).rec__pred_vis__root__g13) = to_rep(((b).us_split_fields7).rec__pred_vis__root__g13))) and
+  (to_rep(((a).us_split_fields7).rec__pred_vis__root__g23) = to_rep(((b).us_split_fields7).rec__pred_vis__root__g23)))) then true else false)
+
+logic us_tag3 : int
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic pred_vis__root__f1__first__bit3 : int
+
+logic pred_vis__root__f1__last__bit3 : int
+
+logic pred_vis__root__f1__position3 : int
+
+axiom pred_vis__root__f1__first__bit_axiom3 :
+  (0 <= pred_vis__root__f1__first__bit3)
+
+axiom pred_vis__root__f1__last__bit_axiom3 :
+  (pred_vis__root__f1__first__bit3 <  pred_vis__root__f1__last__bit3)
+
+axiom pred_vis__root__f1__position_axiom3 :
+  (0 <= pred_vis__root__f1__position3)
+
+logic pred_vis__root__g1__first__bit3 : int
+
+logic pred_vis__root__g1__last__bit3 : int
+
+logic pred_vis__root__g1__position3 : int
+
+axiom pred_vis__root__g1__first__bit_axiom3 :
+  (0 <= pred_vis__root__g1__first__bit3)
+
+axiom pred_vis__root__g1__last__bit_axiom3 :
+  (pred_vis__root__g1__first__bit3 <  pred_vis__root__g1__last__bit3)
+
+axiom pred_vis__root__g1__position_axiom3 :
+  (0 <= pred_vis__root__g1__position3)
+
+logic pred_vis__root__g2__first__bit3 : int
+
+logic pred_vis__root__g2__last__bit3 : int
+
+logic pred_vis__root__g2__position3 : int
+
+axiom pred_vis__root__g2__first__bit_axiom3 :
+  (0 <= pred_vis__root__g2__first__bit3)
+
+axiom pred_vis__root__g2__last__bit_axiom3 :
+  (pred_vis__root__g2__first__bit3 <  pred_vis__root__g2__last__bit3)
+
+axiom pred_vis__root__g2__position_axiom3 :
+  (0 <= pred_vis__root__g2__position3)
+
+logic user_eq4 : us_rep3, us_rep3 -> bool
+
+logic dummy4 : us_rep3
+
+type grand_grand_child_2__ref = { grand_grand_child_2__content : us_rep3
+}
+
+function grand_grand_child_2__ref_grand_grand_child_2__content__projection(a: grand_grand_child_2__ref) : us_rep3 =
+  (a).grand_grand_child_2__content
+
+logic y : us_rep3
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+type us_split_fields8 = { rec__pred_vis__child__f2 : integer;
+rec__pred_vis__root__f14 : integer; rec__pred_vis__root__g14 : integer;
+rec__pred_vis__root__g24 : integer; rec__ext__4 : us_private
+}
+
+function us_split_fields_rec__pred_vis__child__f2__projection(a: us_split_fields8) : integer =
+  (a).rec__pred_vis__child__f2
+
+function us_split_fields_rec__pred_vis__root__f1__5__projection(a: us_split_fields8) : integer =
+  (a).rec__pred_vis__root__f14
+
+function us_split_fields_rec__pred_vis__root__g1__5__projection(a: us_split_fields8) : integer =
+  (a).rec__pred_vis__root__g14
+
+function us_split_fields_rec__pred_vis__root__g2__5__projection(a: us_split_fields8) : integer =
+  (a).rec__pred_vis__root__g24
+
+function us_split_fields_rec__ext____5__projection(a: us_split_fields8) : us_private =
+  (a).rec__ext__4
+
+type us_split_fields__ref4 = { us_split_fields__content4 : us_split_fields8
+}
+
+function us_split_fields__ref___split_fields__content__5__projection(a: us_split_fields__ref4) : us_split_fields8 =
+  (a).us_split_fields__content4
+
+type us_rep4 = { us_split_fields9 : us_split_fields8; attr__tag4 : int
+}
+
+function us_rep___split_fields__5__projection(a: us_rep4) : us_split_fields8 =
+  (a).us_split_fields9
+
+function us_rep_attr__tag__5__projection(a: us_rep4) : int = (a).attr__tag4
+
+logic hide_ext__3 : integer, us_private -> us_private
+
+logic extract__pred_vis__child__f2 : us_private -> integer
+
+axiom extract__pred_vis__child__f2__conv :
+  (forall pred_vis__child__f2:integer.
+  (forall rec__ext__5:us_private.
+  (extract__pred_vis__child__f2(hide_ext__3(pred_vis__child__f2,
+  rec__ext__5)) = pred_vis__child__f2)))
+
+logic extract__ext__3 : us_private -> us_private
+
+function to_base3(a: us_rep4) : us_rep = { us_split_fields1 = {
+  rec__pred_vis__root__f1 = ((a).us_split_fields9).rec__pred_vis__root__f14;
+  rec__pred_vis__root__g1 = ((a).us_split_fields9).rec__pred_vis__root__g14;
+  rec__pred_vis__root__g2 = ((a).us_split_fields9).rec__pred_vis__root__g24;
+  rec__ext__ = hide_ext__3(((a).us_split_fields9).rec__pred_vis__child__f2,
+  ((a).us_split_fields9).rec__ext__4) }; attr__tag = (a).attr__tag4 }
+
+function of_base3(r: us_rep) : us_rep4 = { us_split_fields9 = {
+  rec__pred_vis__child__f2 =
+  extract__pred_vis__child__f2(((r).us_split_fields1).rec__ext__);
+  rec__pred_vis__root__f14 = ((r).us_split_fields1).rec__pred_vis__root__f1;
+  rec__pred_vis__root__g14 = ((r).us_split_fields1).rec__pred_vis__root__g1;
+  rec__pred_vis__root__g24 = ((r).us_split_fields1).rec__pred_vis__root__g2;
+  rec__ext__4 = extract__ext__3(((r).us_split_fields1).rec__ext__) };
+  attr__tag4 = (r).attr__tag }
+
+function bool_eq6(a: us_rep4, b: us_rep4) : bool =
+  (if (((to_rep(((a).us_split_fields9).rec__pred_vis__child__f2) = to_rep(((b).us_split_fields9).rec__pred_vis__child__f2)) and
+  (to_rep(((a).us_split_fields9).rec__pred_vis__root__f14) = to_rep(((b).us_split_fields9).rec__pred_vis__root__f14))) and
+  ((to_rep(((a).us_split_fields9).rec__pred_vis__root__g14) = to_rep(((b).us_split_fields9).rec__pred_vis__root__g14)) and
+  (to_rep(((a).us_split_fields9).rec__pred_vis__root__g24) = to_rep(((b).us_split_fields9).rec__pred_vis__root__g24)))) then true else false)
+
+logic us_tag4 : int
+
+logic value__size4 : int
+
+logic object__size4 : int
+
+logic alignment4 : int
+
+axiom value__size_axiom4 : (0 <= value__size4)
+
+axiom object__size_axiom4 : (0 <= object__size4)
+
+axiom alignment_axiom4 : (0 <= alignment4)
+
+logic pred_vis__child__f2__first__bit : int
+
+logic pred_vis__child__f2__last__bit : int
+
+logic pred_vis__child__f2__position : int
+
+axiom pred_vis__child__f2__first__bit_axiom :
+  (0 <= pred_vis__child__f2__first__bit)
+
+axiom pred_vis__child__f2__last__bit_axiom :
+  (pred_vis__child__f2__first__bit <  pred_vis__child__f2__last__bit)
+
+axiom pred_vis__child__f2__position_axiom :
+  (0 <= pred_vis__child__f2__position)
+
+logic pred_vis__root__f1__first__bit4 : int
+
+logic pred_vis__root__f1__last__bit4 : int
+
+logic pred_vis__root__f1__position4 : int
+
+axiom pred_vis__root__f1__first__bit_axiom4 :
+  (0 <= pred_vis__root__f1__first__bit4)
+
+axiom pred_vis__root__f1__last__bit_axiom4 :
+  (pred_vis__root__f1__first__bit4 <  pred_vis__root__f1__last__bit4)
+
+axiom pred_vis__root__f1__position_axiom4 :
+  (0 <= pred_vis__root__f1__position4)
+
+logic pred_vis__root__g1__first__bit4 : int
+
+logic pred_vis__root__g1__last__bit4 : int
+
+logic pred_vis__root__g1__position4 : int
+
+axiom pred_vis__root__g1__first__bit_axiom4 :
+  (0 <= pred_vis__root__g1__first__bit4)
+
+axiom pred_vis__root__g1__last__bit_axiom4 :
+  (pred_vis__root__g1__first__bit4 <  pred_vis__root__g1__last__bit4)
+
+axiom pred_vis__root__g1__position_axiom4 :
+  (0 <= pred_vis__root__g1__position4)
+
+logic pred_vis__root__g2__first__bit4 : int
+
+logic pred_vis__root__g2__last__bit4 : int
+
+logic pred_vis__root__g2__position4 : int
+
+axiom pred_vis__root__g2__first__bit_axiom4 :
+  (0 <= pred_vis__root__g2__first__bit4)
+
+axiom pred_vis__root__g2__last__bit_axiom4 :
+  (pred_vis__root__g2__first__bit4 <  pred_vis__root__g2__last__bit4)
+
+axiom pred_vis__root__g2__position_axiom4 :
+  (0 <= pred_vis__root__g2__position4)
+
+logic user_eq5 : us_rep4, us_rep4 -> bool
+
+logic dummy5 : us_rep4
+
+type child__ref = { child__content : us_rep4
+}
+
+function child__ref_child__content__projection(a: child__ref) : us_rep4 =
+  (a).child__content
+
+type us_main_type3
+
+logic us_main_eq3 : us_main_type3, us_main_type3 -> bool
+
+type us_split_fields10 = { rec__pred_vis__grand_grand_child_3 :
+us_main_type3; rec__pred_vis__root__f15 : integer; rec__pred_vis__root__g15 :
+integer; rec__pred_vis__root__g25 : integer; rec__pred_vis__child__f21 :
+integer; rec__ext__5 : us_private
+}
+
+function us_split_fields_rec__pred_vis__grand_grand_child_3__projection(a: us_split_fields10) : us_main_type3 =
+  (a).rec__pred_vis__grand_grand_child_3
+
+function us_split_fields_rec__pred_vis__root__f1__6__projection(a: us_split_fields10) : integer =
+  (a).rec__pred_vis__root__f15
+
+function us_split_fields_rec__pred_vis__root__g1__6__projection(a: us_split_fields10) : integer =
+  (a).rec__pred_vis__root__g15
+
+function us_split_fields_rec__pred_vis__root__g2__6__projection(a: us_split_fields10) : integer =
+  (a).rec__pred_vis__root__g25
+
+function us_split_fields_rec__pred_vis__child__f2__2__projection(a: us_split_fields10) : integer =
+  (a).rec__pred_vis__child__f21
+
+function us_split_fields_rec__ext____6__projection(a: us_split_fields10) : us_private =
+  (a).rec__ext__5
+
+type us_split_fields__ref5 = { us_split_fields__content5 : us_split_fields10
+}
+
+function us_split_fields__ref___split_fields__content__6__projection(a: us_split_fields__ref5) : us_split_fields10 =
+  (a).us_split_fields__content5
+
+type us_rep5 = { us_split_fields11 : us_split_fields10; attr__tag5 : int
+}
+
+function us_rep___split_fields__6__projection(a: us_rep5) : us_split_fields10 =
+  (a).us_split_fields11
+
+function us_rep_attr__tag__6__projection(a: us_rep5) : int = (a).attr__tag5
+
+logic hide_ext__4 : us_main_type3, integer, us_private -> us_private
+
+logic extract__pred_vis__grand_grand_child_3 : us_private -> us_main_type3
+
+axiom extract__pred_vis__grand_grand_child_3__conv :
+  (forall pred_vis__grand_grand_child_3:us_main_type3.
+  (forall pred_vis__grand_grand_child_3__f2:integer.
+  (forall rec__ext__6:us_private.
+  (extract__pred_vis__grand_grand_child_3(hide_ext__4(pred_vis__grand_grand_child_3,
+  pred_vis__grand_grand_child_3__f2,
+  rec__ext__6)) = pred_vis__grand_grand_child_3))))
+
+axiom extract__pred_vis__child__f2__conv1 :
+  (forall pred_vis__grand_grand_child_3:us_main_type3.
+  (forall pred_vis__grand_grand_child_3__f2:integer.
+  (forall rec__ext__6:us_private.
+  (extract__pred_vis__child__f2(hide_ext__4(pred_vis__grand_grand_child_3,
+  pred_vis__grand_grand_child_3__f2,
+  rec__ext__6)) = pred_vis__grand_grand_child_3__f2))))
+
+logic extract__ext__4 : us_private -> us_private
+
+function to_base4(a: us_rep5) : us_rep = { us_split_fields1 = {
+  rec__pred_vis__root__f1 = ((a).us_split_fields11).rec__pred_vis__root__f15;
+  rec__pred_vis__root__g1 = ((a).us_split_fields11).rec__pred_vis__root__g15;
+  rec__pred_vis__root__g2 = ((a).us_split_fields11).rec__pred_vis__root__g25;
+  rec__ext__ =
+  hide_ext__4(((a).us_split_fields11).rec__pred_vis__grand_grand_child_3,
+  ((a).us_split_fields11).rec__pred_vis__child__f21,
+  ((a).us_split_fields11).rec__ext__5) }; attr__tag = (a).attr__tag5 }
+
+function of_base4(r: us_rep) : us_rep5 = { us_split_fields11 = {
+  rec__pred_vis__grand_grand_child_3 =
+  extract__pred_vis__grand_grand_child_3(((r).us_split_fields1).rec__ext__);
+  rec__pred_vis__root__f15 = ((r).us_split_fields1).rec__pred_vis__root__f1;
+  rec__pred_vis__root__g15 = ((r).us_split_fields1).rec__pred_vis__root__g1;
+  rec__pred_vis__root__g25 = ((r).us_split_fields1).rec__pred_vis__root__g2;
+  rec__pred_vis__child__f21 =
+  extract__pred_vis__child__f2(((r).us_split_fields1).rec__ext__);
+  rec__ext__5 = extract__ext__4(((r).us_split_fields1).rec__ext__) };
+  attr__tag5 = (r).attr__tag }
+
+function bool_eq7(a: us_rep5, b: us_rep5) : bool =
+  (if (((us_main_eq3(((a).us_split_fields11).rec__pred_vis__grand_grand_child_3,
+  ((b).us_split_fields11).rec__pred_vis__grand_grand_child_3) = true) and
+  (to_rep(((a).us_split_fields11).rec__pred_vis__root__f15) = to_rep(((b).us_split_fields11).rec__pred_vis__root__f15))) and
+  (((to_rep(((a).us_split_fields11).rec__pred_vis__root__g15) = to_rep(((b).us_split_fields11).rec__pred_vis__root__g15)) and
+  (to_rep(((a).us_split_fields11).rec__pred_vis__root__g25) = to_rep(((b).us_split_fields11).rec__pred_vis__root__g25))) and
+  (to_rep(((a).us_split_fields11).rec__pred_vis__child__f21) = to_rep(((b).us_split_fields11).rec__pred_vis__child__f21)))) then true else false)
+
+logic us_tag5 : int
+
+logic value__size5 : int
+
+logic object__size5 : int
+
+logic alignment5 : int
+
+axiom value__size_axiom5 : (0 <= value__size5)
+
+axiom object__size_axiom5 : (0 <= object__size5)
+
+axiom alignment_axiom5 : (0 <= alignment5)
+
+logic pred_vis__root__f1__first__bit5 : int
+
+logic pred_vis__root__f1__last__bit5 : int
+
+logic pred_vis__root__f1__position5 : int
+
+axiom pred_vis__root__f1__first__bit_axiom5 :
+  (0 <= pred_vis__root__f1__first__bit5)
+
+axiom pred_vis__root__f1__last__bit_axiom5 :
+  (pred_vis__root__f1__first__bit5 <  pred_vis__root__f1__last__bit5)
+
+axiom pred_vis__root__f1__position_axiom5 :
+  (0 <= pred_vis__root__f1__position5)
+
+logic pred_vis__root__g1__first__bit5 : int
+
+logic pred_vis__root__g1__last__bit5 : int
+
+logic pred_vis__root__g1__position5 : int
+
+axiom pred_vis__root__g1__first__bit_axiom5 :
+  (0 <= pred_vis__root__g1__first__bit5)
+
+axiom pred_vis__root__g1__last__bit_axiom5 :
+  (pred_vis__root__g1__first__bit5 <  pred_vis__root__g1__last__bit5)
+
+axiom pred_vis__root__g1__position_axiom5 :
+  (0 <= pred_vis__root__g1__position5)
+
+logic pred_vis__root__g2__first__bit5 : int
+
+logic pred_vis__root__g2__last__bit5 : int
+
+logic pred_vis__root__g2__position5 : int
+
+axiom pred_vis__root__g2__first__bit_axiom5 :
+  (0 <= pred_vis__root__g2__first__bit5)
+
+axiom pred_vis__root__g2__last__bit_axiom5 :
+  (pred_vis__root__g2__first__bit5 <  pred_vis__root__g2__last__bit5)
+
+axiom pred_vis__root__g2__position_axiom5 :
+  (0 <= pred_vis__root__g2__position5)
+
+logic pred_vis__child__f2__first__bit1 : int
+
+logic pred_vis__child__f2__last__bit1 : int
+
+logic pred_vis__child__f2__position1 : int
+
+axiom pred_vis__child__f2__first__bit_axiom1 :
+  (0 <= pred_vis__child__f2__first__bit1)
+
+axiom pred_vis__child__f2__last__bit_axiom1 :
+  (pred_vis__child__f2__first__bit1 <  pred_vis__child__f2__last__bit1)
+
+axiom pred_vis__child__f2__position_axiom1 :
+  (0 <= pred_vis__child__f2__position1)
+
+logic user_eq6 : us_rep5, us_rep5 -> bool
+
+logic dummy6 : us_rep5
+
+type grand_grand_child_3__ref = { grand_grand_child_3__content : us_rep5
+}
+
+function grand_grand_child_3__ref_grand_grand_child_3__content__projection(a: grand_grand_child_3__ref) : us_rep5 =
+  (a).grand_grand_child_3__content
+
+logic z : us_rep5
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic i1s : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic i14s : us_rep1
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic i4s : us_rep4
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic i3s : us_rep5
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+predicate dynamic_invariant(temp___expr_162: us_rep,
+  temp___is_init_158: bool, temp___skip_constant_159: bool,
+  temp___do_toplevel_160: bool, temp___do_typ_inv_161: bool) =
+  ((temp___do_toplevel_160 = true) -> ((temp___is_init_158 = true) ->
+  (0 <  to_rep(((temp___expr_162).us_split_fields1).rec__pred_vis__root__f1))))
+
+predicate default_initial_assumption(temp___expr_164: us_rep,
+  temp___skip_top_level_165: bool) = ((temp___expr_164).attr__tag = us_tag)
+
+predicate dynamic_predicate(temp___169: us_rep) =
+  (0 <  to_rep(((temp___169).us_split_fields1).rec__pred_vis__root__f1))
+
+predicate dynamic_invariant1(temp___expr_175: us_rep1,
+  temp___is_init_171: bool, temp___skip_constant_172: bool,
+  temp___do_toplevel_173: bool, temp___do_typ_inv_174: bool) =
+  (if (temp___do_toplevel_173 = true) then ((temp___is_init_171 = true) ->
+  ((0 <  to_rep(((to_base(temp___expr_175)).us_split_fields1).rec__pred_vis__root__f1)) and
+  (15 <  to_rep(((temp___expr_175).us_split_fields3).rec__pred_vis__root__g21)))) else ((temp___is_init_171 = true) ->
+  (0 <  to_rep(((to_base(temp___expr_175)).us_split_fields1).rec__pred_vis__root__f1))))
+
+predicate default_initial_assumption1(temp___expr_179: us_rep1,
+  temp___skip_top_level_180: bool) = ((temp___expr_179).attr__tag1 = us_tag1)
+
+predicate dynamic_predicate1(temp___184: us_rep1) =
+  ((0 <  to_rep(((to_base(temp___184)).us_split_fields1).rec__pred_vis__root__f1)) and
+  (15 <  to_rep(((temp___184).us_split_fields3).rec__pred_vis__root__g21)))
+
+predicate dynamic_invariant2(temp___expr_205: us_rep3,
+  temp___is_init_201: bool, temp___skip_constant_202: bool,
+  temp___do_toplevel_203: bool, temp___do_typ_inv_204: bool) =
+  ((temp___is_init_201 = true) ->
+  (0 <  to_rep(((to_base2(temp___expr_205)).us_split_fields1).rec__pred_vis__root__f1)))
+
+predicate default_initial_assumption2(temp___expr_208: us_rep3,
+  temp___skip_top_level_209: bool) = ((temp___expr_208).attr__tag3 = us_tag3)
+
+predicate dynamic_predicate2(temp___213: us_rep3) =
+  (0 <  to_rep(((to_base2(temp___213)).us_split_fields1).rec__pred_vis__root__f1))
+
+predicate dynamic_invariant3(temp___expr_219: us_rep4,
+  temp___is_init_215: bool, temp___skip_constant_216: bool,
+  temp___do_toplevel_217: bool, temp___do_typ_inv_218: bool) =
+  (if (temp___do_toplevel_217 = true) then ((temp___is_init_215 = true) ->
+  ((0 <  to_rep(((to_base3(temp___expr_219)).us_split_fields1).rec__pred_vis__root__f1)) and
+  ((0 <  to_rep(((temp___expr_219).us_split_fields9).rec__pred_vis__child__f2)) and
+  (to_rep(((temp___expr_219).us_split_fields9).rec__pred_vis__root__f14) <  100)))) else ((temp___is_init_215 = true) ->
+  (0 <  to_rep(((to_base3(temp___expr_219)).us_split_fields1).rec__pred_vis__root__f1))))
+
+predicate default_initial_assumption3(temp___expr_223: us_rep4,
+  temp___skip_top_level_224: bool) = ((temp___expr_223).attr__tag4 = us_tag4)
+
+predicate dynamic_predicate3(temp___229: us_rep4) =
+  ((0 <  to_rep(((to_base3(temp___229)).us_split_fields1).rec__pred_vis__root__f1)) and
+  ((0 <  to_rep(((temp___229).us_split_fields9).rec__pred_vis__child__f2)) and
+  (to_rep(((temp___229).us_split_fields9).rec__pred_vis__root__f14) <  100)))
+
+predicate dynamic_invariant4(temp___expr_236: us_rep5,
+  temp___is_init_232: bool, temp___skip_constant_233: bool,
+  temp___do_toplevel_234: bool, temp___do_typ_inv_235: bool) =
+  (if (temp___do_toplevel_234 = true) then ((temp___is_init_232 = true) ->
+  ((0 <  to_rep(((to_base4(temp___expr_236)).us_split_fields1).rec__pred_vis__root__f1)) and
+  (((0 <  to_rep(((of_base3(to_base4(temp___expr_236))).us_split_fields9).rec__pred_vis__child__f2)) and
+  (to_rep(((of_base3(to_base4(temp___expr_236))).us_split_fields9).rec__pred_vis__root__f14) <  100)) and
+  (15 <  to_rep(((temp___expr_236).us_split_fields11).rec__pred_vis__root__g25))))) else ((temp___is_init_232 = true) ->
+  ((0 <  to_rep(((to_base4(temp___expr_236)).us_split_fields1).rec__pred_vis__root__f1)) and
+  ((0 <  to_rep(((of_base3(to_base4(temp___expr_236))).us_split_fields9).rec__pred_vis__child__f2)) and
+  (to_rep(((of_base3(to_base4(temp___expr_236))).us_split_fields9).rec__pred_vis__root__f14) <  100)))))
+
+predicate default_initial_assumption4(temp___expr_242: us_rep5,
+  temp___skip_top_level_243: bool) = ((temp___expr_242).attr__tag5 = us_tag5)
+
+predicate dynamic_predicate4(temp___248: us_rep5) =
+  ((0 <  to_rep(((to_base4(temp___248)).us_split_fields1).rec__pred_vis__root__f1)) and
+  (((0 <  to_rep(((of_base3(to_base4(temp___248))).us_split_fields9).rec__pred_vis__child__f2)) and
+  (to_rep(((of_base3(to_base4(temp___248))).us_split_fields9).rec__pred_vis__root__f14) <  100)) and
+  (15 <  to_rep(((temp___248).us_split_fields11).rec__pred_vis__root__g25))))
+
+predicate dynamic_invariant5(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+predicate dynamic_invariant6(temp___expr_191: us_rep2,
+  temp___is_init_187: bool, temp___skip_constant_188: bool,
+  temp___do_toplevel_189: bool, temp___do_typ_inv_190: bool) =
+  ((temp___is_init_187 = true) ->
+  (0 <  to_rep(((to_base1(temp___expr_191)).us_split_fields1).rec__pred_vis__root__f1)))
+
+predicate default_initial_assumption5(temp___expr_194: us_rep2,
+  temp___skip_top_level_195: bool) = ((temp___expr_194).attr__tag2 = us_tag2)
+
+predicate dynamic_predicate5(temp___199: us_rep2) =
+  (0 <  to_rep(((to_base1(temp___199)).us_split_fields1).rec__pred_vis__root__f1))
+
+ (* File "test_new.adb", line 2, characters 0-0 *)
+goal defqtvc : (dynamic_invariant(i1s, true, false, true, true) ->
+  (dynamic_invariant4(i3s, true, false, true, true) ->
+  (dynamic_invariant3(i4s, true, false, true, true) ->
+  (dynamic_invariant1(i14s, true, false, true, true) ->
+  (dynamic_invariant(i1s, true, false, true, true) ->
+  (dynamic_invariant4(i3s, true, false, true, true) ->
+  (dynamic_invariant3(i4s, true, false, true, true) ->
+  (dynamic_invariant1(i14s, true, false, true, true) ->
+  (dynamic_invariant1(x, true, false, true, true) -> (dynamic_invariant2(y,
+  true, false, true, true) -> (dynamic_invariant4(z, true, false, true,
+  true) -> ((0 <  to_rep(((x).us_split_fields3).rec__pred_vis__root__f11)) ->
+  ((10 <  to_rep(((x).us_split_fields3).rec__pred_vis__root__g11)) ->
+  ((15 <  to_rep(((x).us_split_fields3).rec__pred_vis__root__g21)) ->
+  ((to_rep(((x).us_split_fields3).rec__pred_vis__root__f11) <  100) ->
+  ((0 <  to_rep(((y).us_split_fields7).rec__pred_vis__root__f13)) ->
+  ((10 <  to_rep(((y).us_split_fields7).rec__pred_vis__root__g13)) ->
+  ((15 <  to_rep(((y).us_split_fields7).rec__pred_vis__root__g23)) ->
+  (to_rep(((y).us_split_fields7).rec__pred_vis__root__f13) <  100)))))))))))))))))))

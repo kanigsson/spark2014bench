@@ -1,0 +1,740 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range1(temp___expr_39))
+
+function to_rep(x: natural) : int = naturalqtint(x)
+
+logic of_rep : int -> natural
+
+axiom inversion_axiom :
+  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:natural [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+function to_rep1(x: integer) : int = integerqtint(x)
+
+logic of_rep1 : int -> integer
+
+axiom inversion_axiom1 :
+  (forall x:integer [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type us_split_fields = { rec__object__t__area : integer;
+rec__object__t__max_width : integer; rec__object__t__max_height : integer;
+rec__ext__ : us_private
+}
+
+function us_split_fields_rec__object__t__area__projection(a: us_split_fields) : integer =
+  (a).rec__object__t__area
+
+function us_split_fields_rec__object__t__max_width__projection(a: us_split_fields) : integer =
+  (a).rec__object__t__max_width
+
+function us_split_fields_rec__object__t__max_height__projection(a: us_split_fields) : integer =
+  (a).rec__object__t__max_height
+
+function us_split_fields_rec__ext____projection(a: us_split_fields) : us_private =
+  (a).rec__ext__
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields; attr__tag : int
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function us_rep_attr__tag__projection(a: us_rep) : int = (a).attr__tag
+
+function bool_eq2(a: us_rep, b: us_rep) : bool =
+  (if (((to_rep1(((a).us_split_fields1).rec__object__t__area) = to_rep1(((b).us_split_fields1).rec__object__t__area)) and
+  (to_rep1(((a).us_split_fields1).rec__object__t__max_width) = to_rep1(((b).us_split_fields1).rec__object__t__max_width))) and
+  (to_rep1(((a).us_split_fields1).rec__object__t__max_height) = to_rep1(((b).us_split_fields1).rec__object__t__max_height))) then true else false)
+
+logic us_dispatch_eq : us_rep, us_rep -> bool
+
+logic us_tag : int
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic object__t__area__first__bit : int
+
+logic object__t__area__last__bit : int
+
+logic object__t__area__position : int
+
+axiom object__t__area__first__bit_axiom : (0 <= object__t__area__first__bit)
+
+axiom object__t__area__last__bit_axiom :
+  (object__t__area__first__bit <  object__t__area__last__bit)
+
+axiom object__t__area__position_axiom : (0 <= object__t__area__position)
+
+logic object__t__max_width__first__bit : int
+
+logic object__t__max_width__last__bit : int
+
+logic object__t__max_width__position : int
+
+axiom object__t__max_width__first__bit_axiom :
+  (0 <= object__t__max_width__first__bit)
+
+axiom object__t__max_width__last__bit_axiom :
+  (object__t__max_width__first__bit <  object__t__max_width__last__bit)
+
+axiom object__t__max_width__position_axiom :
+  (0 <= object__t__max_width__position)
+
+logic object__t__max_height__first__bit : int
+
+logic object__t__max_height__last__bit : int
+
+logic object__t__max_height__position : int
+
+axiom object__t__max_height__first__bit_axiom :
+  (0 <= object__t__max_height__first__bit)
+
+axiom object__t__max_height__last__bit_axiom :
+  (object__t__max_height__first__bit <  object__t__max_height__last__bit)
+
+axiom object__t__max_height__position_axiom :
+  (0 <= object__t__max_height__position)
+
+logic user_eq2 : us_rep, us_rep -> bool
+
+logic dummy2 : us_rep
+
+type t__ref = { t__content : us_rep
+}
+
+function t__ref_t__content__projection(a: t__ref) : us_rep = (a).t__content
+
+type us_split_fields2 = { rec__rectangle__t__width : natural;
+rec__rectangle__t__height : natural; rec__object__t__area1 : integer;
+rec__object__t__max_width1 : integer; rec__object__t__max_height1 : integer;
+rec__ext__1 : us_private
+}
+
+function us_split_fields_rec__rectangle__t__width__projection(a: us_split_fields2) : natural =
+  (a).rec__rectangle__t__width
+
+function us_split_fields_rec__rectangle__t__height__projection(a: us_split_fields2) : natural =
+  (a).rec__rectangle__t__height
+
+function us_split_fields_rec__object__t__area__2__projection(a: us_split_fields2) : integer =
+  (a).rec__object__t__area1
+
+function us_split_fields_rec__object__t__max_width__2__projection(a: us_split_fields2) : integer =
+  (a).rec__object__t__max_width1
+
+function us_split_fields_rec__object__t__max_height__2__projection(a: us_split_fields2) : integer =
+  (a).rec__object__t__max_height1
+
+function us_split_fields_rec__ext____2__projection(a: us_split_fields2) : us_private =
+  (a).rec__ext__1
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_fields3 : us_split_fields2; attr__tag1 : int
+}
+
+function us_rep___split_fields__2__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function us_rep_attr__tag__2__projection(a: us_rep1) : int = (a).attr__tag1
+
+logic hide_ext__ : natural, natural, us_private -> us_private
+
+logic extract__rectangle__t__width : us_private -> natural
+
+axiom extract__rectangle__t__width__conv :
+  (forall rectangle__t__width:natural. forall rectangle__t__height:natural.
+  (forall rec__ext__2:us_private.
+  (extract__rectangle__t__width(hide_ext__(rectangle__t__width,
+  rectangle__t__height, rec__ext__2)) = rectangle__t__width)))
+
+logic extract__rectangle__t__height : us_private -> natural
+
+axiom extract__rectangle__t__height__conv :
+  (forall rectangle__t__width:natural. forall rectangle__t__height:natural.
+  (forall rec__ext__2:us_private.
+  (extract__rectangle__t__height(hide_ext__(rectangle__t__width,
+  rectangle__t__height, rec__ext__2)) = rectangle__t__height)))
+
+logic extract__ext__ : us_private -> us_private
+
+function to_base(a: us_rep1) : us_rep = { us_split_fields1 = {
+  rec__object__t__area = ((a).us_split_fields3).rec__object__t__area1;
+  rec__object__t__max_width =
+  ((a).us_split_fields3).rec__object__t__max_width1;
+  rec__object__t__max_height =
+  ((a).us_split_fields3).rec__object__t__max_height1; rec__ext__ =
+  hide_ext__(((a).us_split_fields3).rec__rectangle__t__width,
+  ((a).us_split_fields3).rec__rectangle__t__height,
+  ((a).us_split_fields3).rec__ext__1) }; attr__tag = (a).attr__tag1 }
+
+function of_base(r: us_rep) : us_rep1 = { us_split_fields3 = {
+  rec__rectangle__t__width =
+  extract__rectangle__t__width(((r).us_split_fields1).rec__ext__);
+  rec__rectangle__t__height =
+  extract__rectangle__t__height(((r).us_split_fields1).rec__ext__);
+  rec__object__t__area1 = ((r).us_split_fields1).rec__object__t__area;
+  rec__object__t__max_width1 =
+  ((r).us_split_fields1).rec__object__t__max_width;
+  rec__object__t__max_height1 =
+  ((r).us_split_fields1).rec__object__t__max_height; rec__ext__1 =
+  extract__ext__(((r).us_split_fields1).rec__ext__) }; attr__tag1 =
+  (r).attr__tag }
+
+function bool_eq3(a: us_rep1, b: us_rep1) : bool =
+  (if (((to_rep(((a).us_split_fields3).rec__rectangle__t__width) = to_rep(((b).us_split_fields3).rec__rectangle__t__width)) and
+  (to_rep(((a).us_split_fields3).rec__rectangle__t__height) = to_rep(((b).us_split_fields3).rec__rectangle__t__height))) and
+  (((to_rep1(((a).us_split_fields3).rec__object__t__area1) = to_rep1(((b).us_split_fields3).rec__object__t__area1)) and
+  (to_rep1(((a).us_split_fields3).rec__object__t__max_width1) = to_rep1(((b).us_split_fields3).rec__object__t__max_width1))) and
+  (to_rep1(((a).us_split_fields3).rec__object__t__max_height1) = to_rep1(((b).us_split_fields3).rec__object__t__max_height1)))) then true else false)
+
+logic us_tag1 : int
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic rectangle__t__width__first__bit : int
+
+logic rectangle__t__width__last__bit : int
+
+logic rectangle__t__width__position : int
+
+axiom rectangle__t__width__first__bit_axiom :
+  (0 <= rectangle__t__width__first__bit)
+
+axiom rectangle__t__width__last__bit_axiom :
+  (rectangle__t__width__first__bit <  rectangle__t__width__last__bit)
+
+axiom rectangle__t__width__position_axiom :
+  (0 <= rectangle__t__width__position)
+
+logic rectangle__t__height__first__bit : int
+
+logic rectangle__t__height__last__bit : int
+
+logic rectangle__t__height__position : int
+
+axiom rectangle__t__height__first__bit_axiom :
+  (0 <= rectangle__t__height__first__bit)
+
+axiom rectangle__t__height__last__bit_axiom :
+  (rectangle__t__height__first__bit <  rectangle__t__height__last__bit)
+
+axiom rectangle__t__height__position_axiom :
+  (0 <= rectangle__t__height__position)
+
+logic object__t__area__first__bit1 : int
+
+logic object__t__area__last__bit1 : int
+
+logic object__t__area__position1 : int
+
+axiom object__t__area__first__bit_axiom1 :
+  (0 <= object__t__area__first__bit1)
+
+axiom object__t__area__last__bit_axiom1 :
+  (object__t__area__first__bit1 <  object__t__area__last__bit1)
+
+axiom object__t__area__position_axiom1 : (0 <= object__t__area__position1)
+
+logic object__t__max_width__first__bit1 : int
+
+logic object__t__max_width__last__bit1 : int
+
+logic object__t__max_width__position1 : int
+
+axiom object__t__max_width__first__bit_axiom1 :
+  (0 <= object__t__max_width__first__bit1)
+
+axiom object__t__max_width__last__bit_axiom1 :
+  (object__t__max_width__first__bit1 <  object__t__max_width__last__bit1)
+
+axiom object__t__max_width__position_axiom1 :
+  (0 <= object__t__max_width__position1)
+
+logic object__t__max_height__first__bit1 : int
+
+logic object__t__max_height__last__bit1 : int
+
+logic object__t__max_height__position1 : int
+
+axiom object__t__max_height__first__bit_axiom1 :
+  (0 <= object__t__max_height__first__bit1)
+
+axiom object__t__max_height__last__bit_axiom1 :
+  (object__t__max_height__first__bit1 <  object__t__max_height__last__bit1)
+
+axiom object__t__max_height__position_axiom1 :
+  (0 <= object__t__max_height__position1)
+
+logic user_eq3 : us_rep1, us_rep1 -> bool
+
+logic dummy3 : us_rep1
+
+type t__ref1 = { t__content1 : us_rep1
+}
+
+function t__ref_t__content__2__projection(a: t__ref1) : us_rep1 =
+  (a).t__content1
+
+logic rec____attr__tag : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate default_initial_assumption(temp___expr_168: us_rep1,
+  temp___skip_top_level_169: bool) =
+  (((temp___expr_168).attr__tag1 = us_tag1) and
+  (((to_rep1(((temp___expr_168).us_split_fields3).rec__object__t__area1) = (- 1)) and
+  (to_rep1(((temp___expr_168).us_split_fields3).rec__object__t__max_width1) = (- 1))) and
+  (to_rep1(((temp___expr_168).us_split_fields3).rec__object__t__max_height1) = (- 1))))
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic has_stored_area : us_rep -> bool
+
+logic has_stored_area__function_guard : bool, us_rep -> prop
+
+logic has_stored_area1 : int, us_rep -> bool
+
+logic has_stored_area__function_guard1 : bool, int, us_rep -> prop
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq4(x: bool, y: bool) : bool =
+  (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range2(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE2 : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> bool
+
+predicate default_initial_assumption1(temp___expr_161: us_rep,
+  temp___skip_top_level_162: bool) =
+  (((temp___expr_161).attr__tag = us_tag) and
+  (((to_rep1(((temp___expr_161).us_split_fields1).rec__object__t__area) = (- 1)) and
+  (to_rep1(((temp___expr_161).us_split_fields1).rec__object__t__max_width) = (- 1))) and
+  (to_rep1(((temp___expr_161).us_split_fields1).rec__object__t__max_height) = (- 1))))
+
+axiom rectangle__t__compat_axiom :
+  (forall obj:us_rep [has_stored_area1(us_tag1, obj)].
+  (has_stored_area__function_guard1(has_stored_area1(us_tag1, obj), us_tag1,
+  obj) ->
+  (forall obj1:us_rep. has_stored_area__function_guard(has_stored_area(obj1),
+  obj1))))
+
+axiom rectangle__t__compat_axiom1 :
+  (forall obj:us_rep [has_stored_area1(us_tag1, obj)].
+  (has_stored_area__function_guard1(has_stored_area1(us_tag1, obj), us_tag1,
+  obj) -> (to_int(has_stored_area(obj)) = to_int(has_stored_area1(us_tag1,
+  obj)))))
+
+axiom object__t__compat_axiom :
+  (forall obj:us_rep [has_stored_area1(us_tag, obj)].
+  (has_stored_area__function_guard1(has_stored_area1(us_tag, obj), us_tag,
+  obj) ->
+  (forall obj1:us_rep. has_stored_area__function_guard(has_stored_area(obj1),
+  obj1))))
+
+axiom object__t__compat_axiom1 :
+  (forall obj:us_rep [has_stored_area1(us_tag, obj)].
+  (has_stored_area__function_guard1(has_stored_area1(us_tag, obj), us_tag,
+  obj) -> (to_int(has_stored_area(obj)) = to_int(has_stored_area1(us_tag,
+  obj)))))
+
+axiom has_stored_area__def_axiom :
+  (forall obj:us_rep [has_stored_area(obj)].
+  ((has_stored_area(obj) = true) ->
+  in_range1(to_rep1(((obj).us_split_fields1).rec__object__t__area))))
+
+axiom has_stored_area__def_axiom1 :
+  (forall obj:us_rep [has_stored_area(obj)].
+  (in_range1(to_rep1(((obj).us_split_fields1).rec__object__t__area)) ->
+  (has_stored_area(obj) = true)))
+
+logic get_stored_area : us_rep -> int
+
+logic get_stored_area__function_guard : int, us_rep -> prop
+
+logic get_stored_area1 : int, us_rep -> int
+
+logic get_stored_area__function_guard1 : int, int, us_rep -> prop
+
+axiom get_stored_area__post_axiom :
+  (forall obj:us_rep. has_stored_area__function_guard(has_stored_area(obj),
+  obj))
+
+axiom get_stored_area__post_axiom1 :
+  (forall obj:us_rep [get_stored_area(obj)].
+  ((has_stored_area(obj) = true) -> (let result = get_stored_area(obj)
+  : int in (get_stored_area__function_guard(result, obj) ->
+  dynamic_invariant(result, true, false, true, true)))))
+
+axiom get_stored_area__post__dispatch_axiom :
+  (forall obj:us_rep.
+  has_stored_area__function_guard1(has_stored_area1((obj).attr__tag, obj),
+  (obj).attr__tag, obj))
+
+axiom get_stored_area__post__dispatch_axiom1 :
+  (forall attr__tag2:int.
+  (forall obj:us_rep [get_stored_area1(attr__tag2, obj)].
+  ((has_stored_area1((obj).attr__tag, obj) = true) -> (let result =
+  get_stored_area1(attr__tag2, obj) : int in
+  (get_stored_area__function_guard1(result, attr__tag2, obj) ->
+  dynamic_invariant(result, true, false, true, true))))))
+
+axiom rectangle__t__compat_axiom2 :
+  (forall obj:us_rep [get_stored_area1(us_tag1, obj)].
+  (get_stored_area__function_guard1(get_stored_area1(us_tag1, obj), us_tag1,
+  obj) ->
+  (forall obj1:us_rep. get_stored_area__function_guard(get_stored_area(obj1),
+  obj1))))
+
+axiom rectangle__t__compat_axiom3 :
+  (forall obj:us_rep [get_stored_area1(us_tag1, obj)].
+  (get_stored_area__function_guard1(get_stored_area1(us_tag1, obj), us_tag1,
+  obj) -> (get_stored_area(obj) = get_stored_area1(us_tag1, obj))))
+
+axiom object__t__compat_axiom2 :
+  (forall obj:us_rep [get_stored_area1(us_tag, obj)].
+  (get_stored_area__function_guard1(get_stored_area1(us_tag, obj), us_tag,
+  obj) ->
+  (forall obj1:us_rep. get_stored_area__function_guard(get_stored_area(obj1),
+  obj1))))
+
+axiom object__t__compat_axiom3 :
+  (forall obj:us_rep [get_stored_area1(us_tag, obj)].
+  (get_stored_area__function_guard1(get_stored_area1(us_tag, obj), us_tag,
+  obj) -> (get_stored_area(obj) = get_stored_area1(us_tag, obj))))
+
+axiom get_stored_area__def_axiom :
+  (forall obj:us_rep [get_stored_area(obj)].
+  (get_stored_area(obj) = to_rep1(((obj).us_split_fields1).rec__object__t__area)))
+
+logic set_area__specific_post : int, us_split_fields, int, int,
+  us_split_fields -> prop
+
+axiom rectangle__t__compat_axiom4 :
+  (forall object__set_area__obj__fields:us_split_fields.
+  forall object__set_area__obj__old__fields:us_split_fields.
+  (forall obj__attr__tag:int. forall value:int
+  [set_area__specific_post(us_tag1, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields)].
+  (set_area__specific_post(us_tag1, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields) ->
+  (forall object__set_area__obj__fields1:us_split_fields.
+  forall obj__attr__tag1:int.
+  has_stored_area__function_guard(has_stored_area({ us_split_fields1 =
+  object__set_area__obj__fields1; attr__tag = obj__attr__tag1 }), {
+  us_split_fields1 = object__set_area__obj__fields1; attr__tag =
+  obj__attr__tag1 })))))
+
+axiom rectangle__t__compat_axiom5 :
+  (forall object__set_area__obj__fields:us_split_fields.
+  forall object__set_area__obj__old__fields:us_split_fields.
+  (forall obj__attr__tag:int. forall value:int
+  [set_area__specific_post(us_tag1, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields)].
+  (set_area__specific_post(us_tag1, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields) ->
+  (has_stored_area({ us_split_fields1 = object__set_area__obj__fields;
+  attr__tag = obj__attr__tag }) = true))))
+
+axiom rectangle__t__compat_axiom6 :
+  (forall object__set_area__obj__fields:us_split_fields.
+  forall object__set_area__obj__old__fields:us_split_fields.
+  (forall obj__attr__tag:int. forall value:int
+  [set_area__specific_post(us_tag1, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields)].
+  (set_area__specific_post(us_tag1, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields) ->
+  (forall object__set_area__obj__fields1:us_split_fields.
+  forall obj__attr__tag1:int.
+  get_stored_area__function_guard(get_stored_area({ us_split_fields1 =
+  object__set_area__obj__fields1; attr__tag = obj__attr__tag1 }), {
+  us_split_fields1 = object__set_area__obj__fields1; attr__tag =
+  obj__attr__tag1 })))))
+
+axiom rectangle__t__compat_axiom7 :
+  (forall object__set_area__obj__fields:us_split_fields.
+  forall object__set_area__obj__old__fields:us_split_fields.
+  (forall obj__attr__tag:int. forall value:int
+  [set_area__specific_post(us_tag1, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields)].
+  (set_area__specific_post(us_tag1, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields) ->
+  (value = get_stored_area({ us_split_fields1 =
+  object__set_area__obj__fields; attr__tag = obj__attr__tag })))))
+
+axiom object__t__compat_axiom4 :
+  (forall object__set_area__obj__fields:us_split_fields.
+  forall object__set_area__obj__old__fields:us_split_fields.
+  (forall obj__attr__tag:int. forall value:int
+  [set_area__specific_post(us_tag, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields)].
+  (set_area__specific_post(us_tag, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields) ->
+  (forall object__set_area__obj__fields1:us_split_fields.
+  forall obj__attr__tag1:int.
+  has_stored_area__function_guard(has_stored_area({ us_split_fields1 =
+  object__set_area__obj__fields1; attr__tag = obj__attr__tag1 }), {
+  us_split_fields1 = object__set_area__obj__fields1; attr__tag =
+  obj__attr__tag1 })))))
+
+axiom object__t__compat_axiom5 :
+  (forall object__set_area__obj__fields:us_split_fields.
+  forall object__set_area__obj__old__fields:us_split_fields.
+  (forall obj__attr__tag:int. forall value:int
+  [set_area__specific_post(us_tag, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields)].
+  (set_area__specific_post(us_tag, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields) ->
+  (has_stored_area({ us_split_fields1 = object__set_area__obj__fields;
+  attr__tag = obj__attr__tag }) = true))))
+
+axiom object__t__compat_axiom6 :
+  (forall object__set_area__obj__fields:us_split_fields.
+  forall object__set_area__obj__old__fields:us_split_fields.
+  (forall obj__attr__tag:int. forall value:int
+  [set_area__specific_post(us_tag, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields)].
+  (set_area__specific_post(us_tag, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields) ->
+  (forall object__set_area__obj__fields1:us_split_fields.
+  forall obj__attr__tag1:int.
+  get_stored_area__function_guard(get_stored_area({ us_split_fields1 =
+  object__set_area__obj__fields1; attr__tag = obj__attr__tag1 }), {
+  us_split_fields1 = object__set_area__obj__fields1; attr__tag =
+  obj__attr__tag1 })))))
+
+axiom object__t__compat_axiom7 :
+  (forall object__set_area__obj__fields:us_split_fields.
+  forall object__set_area__obj__old__fields:us_split_fields.
+  (forall obj__attr__tag:int. forall value:int
+  [set_area__specific_post(us_tag, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields)].
+  (set_area__specific_post(us_tag, object__set_area__obj__fields,
+  obj__attr__tag, value, object__set_area__obj__old__fields) ->
+  (value = get_stored_area({ us_split_fields1 =
+  object__set_area__obj__fields; attr__tag = obj__attr__tag })))))
+
+predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_18))
+
+ (* File "rectangle.ads", line 6, characters 0-0 *)
+goal defqtvc :
+  (forall rec____split_fields:us_split_fields2. forall result__:int.
+  (dynamic_invariant(result__, false, false, true, true) ->
+  (forall rec____split_fields1:us_split_fields2.
+  ((forall o:int. forall object__set_area__obj__fields:us_split_fields.
+   has_stored_area__function_guard(has_stored_area({ us_split_fields1 =
+   object__set_area__obj__fields; attr__tag = o }), { us_split_fields1 =
+   object__set_area__obj__fields; attr__tag = o })) ->
+  ((forall o:int. forall object__set_area__obj__fields:us_split_fields.
+   get_stored_area__function_guard(get_stored_area({ us_split_fields1 =
+   object__set_area__obj__fields; attr__tag = o }), { us_split_fields1 =
+   object__set_area__obj__fields; attr__tag = o })) ->
+  ((let o = to_base({ us_split_fields3 = rec____split_fields; attr__tag1 =
+  rec____attr__tag }) : us_rep in (let o1 = has_stored_area(o) : bool in
+  ((has_stored_area__function_guard(o1, o) and ((o1 = true) <->
+  in_range1(to_rep1(((o).us_split_fields1).rec__object__t__area)))) and
+  (exists spark__branch:bool.
+  ((spark__branch = (if (o1 = true) then false else true)) and
+  (if (spark__branch = true) then (exists o2:int.
+                                  ((to_rep((rec____split_fields).rec__rectangle__t__height) = o2) and
+                                  (exists o3:int.
+                                  ((to_rep((rec____split_fields).rec__rectangle__t__width) = o3) and
+                                  (let o4 = (o3 * o2) : int in
+                                  (in_range(o4) and (in_range1(o4) and
+                                  (let o5 = rec____attr__tag : int in
+                                  (exists object__set_area__obj__fields:us_split_fields.
+                                  (((has_stored_area({ us_split_fields1 =
+                                  object__set_area__obj__fields; attr__tag =
+                                  o5 }) = true) and (o4 = get_stored_area({
+                                  us_split_fields1 =
+                                  object__set_area__obj__fields; attr__tag =
+                                  o5 }))) and
+                                  (rec____split_fields1 = (of_base({
+                                  us_split_fields1 =
+                                  object__set_area__obj__fields; attr__tag =
+                                  (to_base({ us_split_fields3 =
+                                  rec____split_fields; attr__tag1 =
+                                  rec____attr__tag })).attr__tag
+                                  })).us_split_fields3))))))))))) else (rec____split_fields1 = rec____split_fields))))))) ->
+  (let o = to_base({ us_split_fields3 = rec____split_fields1; attr__tag1 =
+  rec____attr__tag }) : us_rep in (let o1 = get_stored_area(o) : int in
+  ((get_stored_area__function_guard(o1, o) and (dynamic_invariant(o1, true,
+  false, true, true) and
+  (o1 = to_rep1(((o).us_split_fields1).rec__object__t__area)))) ->
+  (forall result__1:int. ((result__1 = o1) ->
+  ((forall rec____split_fields2:us_split_fields2.
+   has_stored_area__function_guard(has_stored_area(to_base({
+   us_split_fields3 = rec____split_fields2; attr__tag1 = rec____attr__tag
+   })), to_base({ us_split_fields3 = rec____split_fields2; attr__tag1 =
+   rec____attr__tag }))) ->
+  (has_stored_area(to_base({ us_split_fields3 = rec____split_fields1;
+  attr__tag1 = rec____attr__tag })) = true)))))))))))))

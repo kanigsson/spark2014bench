@@ -1,0 +1,400 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+type map__ref = { map__content : (int,integer) farray
+}
+
+logic slide : (int,integer) farray, int, int -> (int,integer) farray
+
+axiom slide_eq :
+  (forall a:(int,integer) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,integer) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq2(a: (int,integer) farray, a__first: int, a__last: int,
+  b: (int,integer) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)]))))))))
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+ (* File "loopstat.adb", line 1, characters 0-0 *)
+goal defqtvc :
+  (forall k:int. (dynamic_invariant(k, false, false, true, true) ->
+  (forall k1:int. ((k1 = 0) -> (let o = (k1 + 1) : int in (in_range1(o) ->
+  (forall k2:int. ((k2 = o) -> (let o1 = (k2 + 1) : int in (in_range1(o1) ->
+  (forall k3:int. ((k3 = o1) -> (let o2 = (k3 + 1) : int in (in_range1(o2) ->
+  (forall k4:int. ((k4 = o2) -> (let o3 = (k4 + 1) : int in (in_range1(o3) ->
+  (forall k5:int. ((k5 = o3) -> (let o4 = (k5 + 1) : int in (in_range1(o4) ->
+  (forall k6:int. ((k6 = o4) -> (let o5 = (k6 + 1) : int in (in_range1(o5) ->
+  (forall k7:int. ((k7 = o5) -> (let o6 = (k7 + 1) : int in (in_range1(o6) ->
+  (forall k8:int. ((k8 = o6) -> (let o7 = (k8 + 1) : int in (in_range1(o7) ->
+  (forall k9:int. ((k9 = o7) -> (let o8 = (k9 + 1) : int in (in_range1(o8) ->
+  (forall k10:int. ((k10 = o8) -> (let o9 = (k10 + 1) : int in
+  (in_range1(o9) ->
+  (forall k11:int. ((k11 = o9) -> ((k11 = 10) ->
+  (forall k12:int. ((k12 = 0) -> (let o10 = (k12 + 1) : int in
+  (in_range1(o10) ->
+  (forall k13:int. ((k13 = o10) -> (let o11 = (k13 + 1) : int in
+  (in_range1(o11) ->
+  (forall k14:int. ((k14 = o11) -> (let o12 = (k14 + 1) : int in
+  (in_range1(o12) ->
+  (forall k15:int. ((k15 = o12) -> (let o13 = (k15 + 1) : int in
+  (in_range1(o13) ->
+  (forall k16:int. ((k16 = o13) -> (let o14 = (k16 + 1) : int in
+  (in_range1(o14) ->
+  (forall k17:int. ((k17 = o14) -> (let o15 = (k17 + 1) : int in
+  (in_range1(o15) ->
+  (forall k18:int. ((k18 = o15) -> (let o16 = (k18 + 1) : int in
+  (in_range1(o16) ->
+  (forall k19:int. ((k19 = o16) -> (let o17 = (k19 + 1) : int in
+  (in_range1(o17) ->
+  (forall k20:int. ((k20 = o17) -> (let o18 = (k20 + 1) : int in
+  (in_range1(o18) ->
+  (forall k21:int. ((k21 = o18) -> (let o19 = (k21 + 1) : int in
+  (in_range1(o19) ->
+  (forall k22:int. ((k22 = o19) -> (let o20 = (k22 + 1) : int in
+  (in_range1(o20) ->
+  (forall k23:int. ((k23 = o20) -> (let o21 = (k23 + 1) : int in
+  (in_range1(o21) ->
+  (forall k24:int. ((k24 = o21) -> (let o22 = (k24 + 1) : int in
+  (in_range1(o22) ->
+  (forall k25:int. ((k25 = o22) -> (let o23 = (k25 + 1) : int in
+  (in_range1(o23) ->
+  (forall k26:int. ((k26 = o23) -> (let o24 = (k26 + 1) : int in
+  (in_range1(o24) ->
+  (forall k27:int. ((k27 = o24) -> (let o25 = (k27 + 1) : int in
+  (in_range1(o25) ->
+  (forall k28:int. ((k28 = o25) -> (let o26 = (k28 + 1) : int in
+  (in_range1(o26) ->
+  (forall k29:int. ((k29 = o26) -> (let o27 = (k29 + 1) : int in
+  (in_range1(o27) ->
+  (forall k30:int. ((k30 = o27) -> (let o28 = (k30 + 1) : int in
+  (in_range1(o28) ->
+  (forall k31:int. ((k31 = o28) -> (let o29 = (k31 + 1) : int in
+  (in_range1(o29) ->
+  (forall k32:int. ((k32 = o29) -> (let o30 = (k32 + 1) : int in
+  (in_range1(o30) ->
+  (forall k33:int. ((k33 = o30) -> (let o31 = (k33 + 1) : int in
+  (in_range1(o31) ->
+  (forall k34:int. ((k34 = o31) -> (let o32 = (k34 + 1) : int in
+  (in_range1(o32) ->
+  (forall k35:int. ((k35 = o32) -> (let o33 = (k35 + 1) : int in
+  (in_range1(o33) ->
+  (forall k36:int. ((k36 = o33) -> (let o34 = (k36 + 1) : int in
+  (in_range1(o34) ->
+  (forall k37:int. ((k37 = o34) -> (let o35 = (k37 + 1) : int in
+  (in_range1(o35) ->
+  (forall k38:int. ((k38 = o35) -> (let o36 = (k38 + 1) : int in
+  (in_range1(o36) ->
+  (forall k39:int. ((k39 = o36) -> (let o37 = (k39 + 1) : int in
+  (in_range1(o37) ->
+  (forall k40:int. ((k40 = o37) -> (let o38 = (k40 + 1) : int in
+  (in_range1(o38) ->
+  (forall k41:int. ((k41 = o38) -> (let o39 = (k41 + 1) : int in
+  (in_range1(o39) ->
+  (forall k42:int. ((k42 = o39) -> (let o40 = (k42 + 1) : int in
+  (in_range1(o40) ->
+  (forall k43:int. ((k43 = o40) -> (let o41 = (k43 + 1) : int in
+  (in_range1(o41) ->
+  (forall k44:int. ((k44 = o41) -> (let o42 = (k44 + 1) : int in
+  (in_range1(o42) ->
+  (forall k45:int. ((k45 = o42) -> (let o43 = (k45 + 1) : int in
+  (in_range1(o43) ->
+  (forall k46:int. ((k46 = o43) -> (let o44 = (k46 + 1) : int in
+  (in_range1(o44) ->
+  (forall k47:int. ((k47 = o44) -> (let o45 = (k47 + 1) : int in
+  (in_range1(o45) ->
+  (forall k48:int. ((k48 = o45) -> (let o46 = (k48 + 1) : int in
+  (in_range1(o46) ->
+  (forall k49:int. ((k49 = o46) -> (let o47 = (k49 + 1) : int in
+  (in_range1(o47) ->
+  (forall k50:int. ((k50 = o47) -> (let o48 = (k50 + 1) : int in
+  (in_range1(o48) ->
+  (forall k51:int. ((k51 = o48) -> (let o49 = (k51 + 1) : int in
+  (in_range1(o49) ->
+  (forall k52:int. ((k52 = o49) -> (let o50 = (k52 + 1) : int in
+  (in_range1(o50) ->
+  (forall k53:int. ((k53 = o50) -> (let o51 = (k53 + 1) : int in
+  (in_range1(o51) ->
+  (forall k54:int. ((k54 = o51) -> (let o52 = (k54 + 1) : int in
+  (in_range1(o52) ->
+  (forall k55:int. ((k55 = o52) -> (let o53 = (k55 + 1) : int in
+  (in_range1(o53) ->
+  (forall k56:int. ((k56 = o53) -> (let o54 = (k56 + 1) : int in
+  (in_range1(o54) ->
+  (forall k57:int. ((k57 = o54) -> (let o55 = (k57 + 1) : int in
+  (in_range1(o55) ->
+  (forall k58:int. ((k58 = o55) -> (let o56 = (k58 + 1) : int in
+  (in_range1(o56) ->
+  (forall k59:int. ((k59 = o56) -> (let o57 = (k59 + 1) : int in
+  (in_range1(o57) ->
+  (forall k60:int. ((k60 = o57) -> (let o58 = (k60 + 1) : int in
+  (in_range1(o58) ->
+  (forall k61:int. ((k61 = o58) -> (let o59 = (k61 + 1) : int in
+  (in_range1(o59) ->
+  (forall k62:int. ((k62 = o59) -> (let o60 = (k62 + 1) : int in
+  (in_range1(o60) ->
+  (forall k63:int. ((k63 = o60) -> (let o61 = (k63 + 1) : int in
+  (in_range1(o61) ->
+  (forall k64:int. ((k64 = o61) -> (let o62 = (k64 + 1) : int in
+  (in_range1(o62) ->
+  (forall k65:int. ((k65 = o62) -> (let o63 = (k65 + 1) : int in
+  (in_range1(o63) ->
+  (forall k66:int. ((k66 = o63) -> (let o64 = (k66 + 1) : int in
+  (in_range1(o64) ->
+  (forall k67:int. ((k67 = o64) -> (let o65 = (k67 + 1) : int in
+  (in_range1(o65) ->
+  (forall k68:int. ((k68 = o65) -> (let o66 = (k68 + 1) : int in
+  (in_range1(o66) ->
+  (forall k69:int. ((k69 = o66) -> (let o67 = (k69 + 1) : int in
+  (in_range1(o67) ->
+  (forall k70:int. ((k70 = o67) -> (let o68 = (k70 + 1) : int in
+  (in_range1(o68) ->
+  (forall k71:int. ((k71 = o68) -> (let o69 = (k71 + 1) : int in
+  (in_range1(o69) ->
+  (forall k72:int. ((k72 = o69) -> (let o70 = (k72 + 1) : int in
+  (in_range1(o70) ->
+  (forall k73:int. ((k73 = o70) -> (let o71 = (k73 + 1) : int in
+  (in_range1(o71) ->
+  (forall k74:int. ((k74 = o71) -> (let o72 = (k74 + 1) : int in
+  (in_range1(o72) ->
+  (forall k75:int. ((k75 = o72) -> (let o73 = (k75 + 1) : int in
+  (in_range1(o73) ->
+  (forall k76:int. ((k76 = o73) -> (let o74 = (k76 + 1) : int in
+  (in_range1(o74) ->
+  (forall k77:int. ((k77 = o74) -> (let o75 = (k77 + 1) : int in
+  (in_range1(o75) ->
+  (forall k78:int. ((k78 = o75) -> (let o76 = (k78 + 1) : int in
+  (in_range1(o76) ->
+  (forall k79:int. ((k79 = o76) -> (let o77 = (k79 + 1) : int in
+  (in_range1(o77) ->
+  (forall k80:int. ((k80 = o77) -> (let o78 = (k80 + 1) : int in
+  (in_range1(o78) ->
+  (forall k81:int. ((k81 = o78) -> (let o79 = (k81 + 1) : int in
+  (in_range1(o79) ->
+  (forall k82:int. ((k82 = o79) -> (let o80 = (k82 + 1) : int in
+  (in_range1(o80) ->
+  (forall k83:int. ((k83 = o80) -> (let o81 = (k83 + 1) : int in
+  (in_range1(o81) ->
+  (forall k84:int. ((k84 = o81) -> (let o82 = (k84 + 1) : int in
+  (in_range1(o82) ->
+  (forall k85:int. ((k85 = o82) -> (let o83 = (k85 + 1) : int in
+  (in_range1(o83) ->
+  (forall k86:int. ((k86 = o83) -> (let o84 = (k86 + 1) : int in
+  (in_range1(o84) ->
+  (forall k87:int. ((k87 = o84) -> (let o85 = (k87 + 1) : int in
+  (in_range1(o85) ->
+  (forall k88:int. ((k88 = o85) -> (let o86 = (k88 + 1) : int in
+  (in_range1(o86) ->
+  (forall k89:int. ((k89 = o86) -> (let o87 = (k89 + 1) : int in
+  (in_range1(o87) ->
+  (forall k90:int. ((k90 = o87) -> (let o88 = (k90 + 1) : int in
+  (in_range1(o88) ->
+  (forall k91:int. ((k91 = o88) -> (let o89 = (k91 + 1) : int in
+  (in_range1(o89) ->
+  (forall k92:int. ((k92 = o89) -> (let o90 = (k92 + 1) : int in
+  (in_range1(o90) ->
+  (forall k93:int. ((k93 = o90) -> (let o91 = (k93 + 1) : int in
+  (in_range1(o91) ->
+  (forall k94:int. ((k94 = o91) -> (let o92 = (k94 + 1) : int in
+  (in_range1(o92) ->
+  (forall k95:int. ((k95 = o92) -> (let o93 = (k95 + 1) : int in
+  (in_range1(o93) ->
+  (forall k96:int. ((k96 = o93) -> (let o94 = (k96 + 1) : int in
+  (in_range1(o94) ->
+  (forall k97:int. ((k97 = o94) -> (let o95 = (k97 + 1) : int in
+  (in_range1(o95) ->
+  (forall k98:int. ((k98 = o95) -> (let o96 = (k98 + 1) : int in
+  (in_range1(o96) ->
+  (forall k99:int. ((k99 = o96) -> (let o97 = (k99 + 1) : int in
+  (in_range1(o97) ->
+  (forall k100:int. ((k100 = o97) -> (let o98 = (k100 + 1) : int in
+  (in_range1(o98) ->
+  (forall k101:int. ((k101 = o98) -> (let o99 = (k101 + 1) : int in
+  (in_range1(o99) ->
+  (forall k102:int. ((k102 = o99) -> (let o100 = (k102 + 1) : int in
+  (in_range1(o100) ->
+  (forall k103:int. ((k103 = o100) -> (let o101 = (k103 + 1) : int in
+  (in_range1(o101) ->
+  (forall k104:int. ((k104 = o101) -> (let o102 = (k104 + 1) : int in
+  (in_range1(o102) ->
+  (forall k105:int. ((k105 = o102) -> (let o103 = (k105 + 1) : int in
+  (in_range1(o103) ->
+  (forall k106:int. ((k106 = o103) -> (let o104 = (k106 + 1) : int in
+  (in_range1(o104) ->
+  (forall k107:int. ((k107 = o104) -> (let o105 = (k107 + 1) : int in
+  (in_range1(o105) ->
+  (forall k108:int. ((k108 = o105) -> (let o106 = (k108 + 1) : int in
+  (in_range1(o106) ->
+  (forall k109:int. ((k109 = o106) -> (let o107 = (k109 + 1) : int in
+  (in_range1(o107) ->
+  (forall k110:int. ((k110 = o107) -> (let o108 = (k110 + 1) : int in
+  (in_range1(o108) ->
+  (forall k111:int. ((k111 = o108) -> (let o109 = (k111 + 1) : int in
+  (in_range1(o109) -> (forall k112:int. ((k112 = o109) -> (k112 = 100))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))

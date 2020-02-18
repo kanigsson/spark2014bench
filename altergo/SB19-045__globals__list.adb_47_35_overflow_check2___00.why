@@ -1,0 +1,388 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+logic value : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+type us_split_discrs = { rec__list__t_item__used : bool
+}
+
+function us_split_discrs_rec__list__t_item__used__projection(a: us_split_discrs) : bool =
+  (a).rec__list__t_item__used
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_split_fields = { rec__list__t_item__value : integer
+}
+
+function us_split_fields_rec__list__t_item__value__projection(a: us_split_fields) : integer =
+  (a).rec__list__t_item__value
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_discrs1 : us_split_discrs; us_split_fields1 :
+us_split_fields
+}
+
+function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
+  (a).us_split_discrs1
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+predicate list__t_item__value__pred(a: us_rep) =
+  (to_int(((a).us_split_discrs1).rec__list__t_item__used) = 1)
+
+function bool_eq2(a: us_rep, b: us_rep) : bool =
+  (if ((to_int(((a).us_split_discrs1).rec__list__t_item__used) = to_int(((b).us_split_discrs1).rec__list__t_item__used)) and
+  (list__t_item__value__pred(a) ->
+  (to_rep(((a).us_split_fields1).rec__list__t_item__value) = to_rep(((b).us_split_fields1).rec__list__t_item__value)))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic list__t_item__used__first__bit : int
+
+logic list__t_item__used__last__bit : int
+
+logic list__t_item__used__position : int
+
+axiom list__t_item__used__first__bit_axiom :
+  (0 <= list__t_item__used__first__bit)
+
+axiom list__t_item__used__last__bit_axiom :
+  (list__t_item__used__first__bit <  list__t_item__used__last__bit)
+
+axiom list__t_item__used__position_axiom :
+  (0 <= list__t_item__used__position)
+
+logic list__t_item__value__first__bit : int
+
+logic list__t_item__value__last__bit : int
+
+logic list__t_item__value__position : int
+
+axiom list__t_item__value__first__bit_axiom :
+  (0 <= list__t_item__value__first__bit)
+
+axiom list__t_item__value__last__bit_axiom :
+  (list__t_item__value__first__bit <  list__t_item__value__last__bit)
+
+axiom list__t_item__value__position_axiom :
+  (0 <= list__t_item__value__position)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type t_item__ref = { t_item__content : us_rep
+}
+
+function t_item__ref_t_item__content__projection(a: t_item__ref) : us_rep =
+  (a).t_item__content
+
+type map__ref = { map__content : (int,us_rep) farray
+}
+
+logic slide : (int,us_rep) farray, int, int -> (int,us_rep) farray
+
+axiom slide_eq :
+  (forall a:(int,us_rep) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,us_rep) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq3(a: (int,us_rep) farray, a__first: int, a__last: int,
+  b: (int,us_rep) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) -> (bool_eq2((a[temp___idx_154]),
+  (b[((b__first - a__first) + temp___idx_154)])) = true)))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) -> (bool_eq2((a[temp___idx_154]),
+  (b[((b__first - a__first) + temp___idx_154)])) = true))))))
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+type tt_itemsD1
+
+logic tt_itemsD1qtint : tt_itemsD1 -> int
+
+axiom tt_itemsD1qtaxiom : (forall i:tt_itemsD1. (1 <= tt_itemsD1qtint(i)))
+
+axiom tt_itemsD1qtaxiom1 : (forall i:tt_itemsD1. (tt_itemsD1qtint(i) <= 100))
+
+predicate in_range2(x: int) = ((1 <= x) and (x <= 100))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq2 : tt_itemsD1, tt_itemsD1 -> bool
+
+logic dummy2 : tt_itemsD1
+
+type tt_itemsD1__ref = { tt_itemsD1__content : tt_itemsD1
+}
+
+function tt_itemsD1__ref_tt_itemsD1__content__projection(a: tt_itemsD1__ref) : tt_itemsD1 =
+  (a).tt_itemsD1__content
+
+predicate default_initial_assumption(temp___expr_176: (int,us_rep) farray,
+  temp___skip_top_level_177: bool) =
+  (forall temp___178:int. (((1 <= temp___178) and (temp___178 <= 100)) ->
+  ((((temp___expr_176[temp___178])).us_split_discrs1).rec__list__t_item__used = of_int(0))))
+
+predicate in_range3(rec__list__t_item__used1: bool, a: us_rep) =
+  (rec__list__t_item__used1 = ((a).us_split_discrs1).rec__list__t_item__used)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic list__t_item__used__first__bit1 : int
+
+logic list__t_item__used__last__bit1 : int
+
+logic list__t_item__used__position1 : int
+
+axiom list__t_item__used__first__bit_axiom1 :
+  (0 <= list__t_item__used__first__bit1)
+
+axiom list__t_item__used__last__bit_axiom1 :
+  (list__t_item__used__first__bit1 <  list__t_item__used__last__bit1)
+
+axiom list__t_item__used__position_axiom1 :
+  (0 <= list__t_item__used__position1)
+
+logic list__t_item__value__first__bit1 : int
+
+logic list__t_item__value__last__bit1 : int
+
+logic list__t_item__value__position1 : int
+
+axiom list__t_item__value__first__bit_axiom1 :
+  (0 <= list__t_item__value__first__bit1)
+
+axiom list__t_item__value__last__bit_axiom1 :
+  (list__t_item__value__first__bit1 <  list__t_item__value__last__bit1)
+
+axiom list__t_item__value__position_axiom1 :
+  (0 <= list__t_item__value__position1)
+
+logic user_eq3 : us_rep, us_rep -> bool
+
+logic dummy3 : us_rep
+
+type t7b__ref = { t7b__content : us_rep
+}
+
+function t7b__ref_t7b__content__projection(a: t7b__ref) : us_rep =
+  (a).t7b__content
+
+predicate default_initial_assumption1(temp___expr_165: us_rep,
+  temp___skip_top_level_166: bool) =
+  (((temp___expr_165).us_split_discrs1).rec__list__t_item__used = of_int(0))
+
+ (* File "list.ads", line 7, characters 0-0 *)
+goal defqtvc :
+  (forall items:(int,us_rep) farray. forall used_items:int.
+  (dynamic_invariant(used_items, true, false, true, true) ->
+  (dynamic_invariant(value, true, false, true, true) ->
+  (forall spark__branch:bool.
+  ((spark__branch = (if (used_items = 100) then true else false)) ->
+  ((not (spark__branch = true)) ->
+  ((exists i:int. ((i = 1) and
+   ((not (andb((if (1 <= i) then true else false),
+   (if (i <= 100) then true else false)) = true)) or
+   (exists i1:int. ((andb((if true then true else false), (if ((1 <= i1) and
+   (i1 <= 100)) then true else false)) = true) and
+   (exists spark__branch1:bool.
+   ((spark__branch1 = (if ((((items[i1])).us_split_discrs1).rec__list__t_item__used = true) then false else true)) and
+   (if (spark__branch1 = true) then (exists o:integer. (to_rep(o) = value)) else (i1 = 100))))))))) ->
+  in_range1((used_items + 1)))))))))

@@ -1,0 +1,448 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type opt_index_type
+
+logic opt_index_typeqtint : opt_index_type -> int
+
+axiom opt_index_typeqtaxiom :
+  (forall i:opt_index_type. (0 <= opt_index_typeqtint(i)))
+
+axiom opt_index_typeqtaxiom1 :
+  (forall i:opt_index_type. (opt_index_typeqtint(i) <= 32))
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 32))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : opt_index_type, opt_index_type -> bool
+
+logic dummy : opt_index_type
+
+type opt_index_type__ref = { opt_index_type__content : opt_index_type
+}
+
+function opt_index_type__ref_opt_index_type__content__projection(a: opt_index_type__ref) : opt_index_type =
+  (a).opt_index_type__content
+
+function to_rep(x: opt_index_type) : int = opt_index_typeqtint(x)
+
+logic of_rep : int -> opt_index_type
+
+axiom inversion_axiom :
+  (forall x:opt_index_type [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom :
+  (forall x:opt_index_type [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type elem_type
+
+logic elem_typeqtint : elem_type -> int
+
+axiom elem_typeqtaxiom :
+  (forall i:elem_type. ((- 2147483648) <= elem_typeqtint(i)))
+
+axiom elem_typeqtaxiom1 :
+  (forall i:elem_type. (elem_typeqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : elem_type, elem_type -> bool
+
+logic dummy1 : elem_type
+
+type elem_type__ref = { elem_type__content : elem_type
+}
+
+function elem_type__ref_elem_type__content__projection(a: elem_type__ref) : elem_type =
+  (a).elem_type__content
+
+function to_rep1(x: elem_type) : int = elem_typeqtint(x)
+
+logic of_rep1 : int -> elem_type
+
+axiom inversion_axiom1 :
+  (forall x:elem_type [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:elem_type [to_rep1(x)]. in_range2(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type map__ref = { map__content : (int,elem_type) farray
+}
+
+logic slide : (int,elem_type) farray, int, int -> (int,elem_type) farray
+
+axiom slide_eq :
+  (forall a:(int,elem_type) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,elem_type) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq3(a: (int,elem_type) farray, a__first: int, a__last: int,
+  b: (int,elem_type) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_156:int. (((a__first <= temp___idx_156) and
+  (temp___idx_156 <= a__last)) ->
+  (to_rep1((a[temp___idx_156])) = to_rep1((b[((b__first - a__first) + temp___idx_156)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,elem_type) farray. forall b:(int,elem_type) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,elem_type) farray. forall b:(int,elem_type) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,elem_type) farray. forall b:(int,elem_type) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,elem_type) farray. forall b:(int,elem_type) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_156:int. (((a__first <= temp___idx_156) and
+  (temp___idx_156 <= a__last)) ->
+  (to_rep1((a[temp___idx_156])) = to_rep1((b[((b__first - a__first) + temp___idx_156)]))))))))
+
+logic dummy2 : (int,elem_type) farray
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic user_eq2 : (int,elem_type) farray, (int,elem_type) farray -> bool
+
+type us_split_fields = { rec__repro_main__int_table__t__elems :
+(int,elem_type) farray; rec__repro_main__int_table__t__last : opt_index_type
+}
+
+function us_split_fields_rec__repro_main__int_table__t__elems__projection(a: us_split_fields) : (int,elem_type) farray =
+  (a).rec__repro_main__int_table__t__elems
+
+function us_split_fields_rec__repro_main__int_table__t__last__projection(a: us_split_fields) : opt_index_type =
+  (a).rec__repro_main__int_table__t__last
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq4(a: us_rep, b: us_rep) : bool =
+  (if ((bool_eq3(((a).us_split_fields1).rec__repro_main__int_table__t__elems,
+  1, 32, ((b).us_split_fields1).rec__repro_main__int_table__t__elems, 1,
+  32) = true) and
+  (to_rep(((a).us_split_fields1).rec__repro_main__int_table__t__last) = to_rep(((b).us_split_fields1).rec__repro_main__int_table__t__last))) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic repro_main__int_table__t__elems__first__bit : int
+
+logic repro_main__int_table__t__elems__last__bit : int
+
+logic repro_main__int_table__t__elems__position : int
+
+axiom repro_main__int_table__t__elems__first__bit_axiom :
+  (0 <= repro_main__int_table__t__elems__first__bit)
+
+axiom repro_main__int_table__t__elems__last__bit_axiom :
+  (repro_main__int_table__t__elems__first__bit <  repro_main__int_table__t__elems__last__bit)
+
+axiom repro_main__int_table__t__elems__position_axiom :
+  (0 <= repro_main__int_table__t__elems__position)
+
+logic repro_main__int_table__t__last__first__bit : int
+
+logic repro_main__int_table__t__last__last__bit : int
+
+logic repro_main__int_table__t__last__position : int
+
+axiom repro_main__int_table__t__last__first__bit_axiom :
+  (0 <= repro_main__int_table__t__last__first__bit)
+
+axiom repro_main__int_table__t__last__last__bit_axiom :
+  (repro_main__int_table__t__last__first__bit <  repro_main__int_table__t__last__last__bit)
+
+axiom repro_main__int_table__t__last__position_axiom :
+  (0 <= repro_main__int_table__t__last__position)
+
+logic user_eq3 : us_rep, us_rep -> bool
+
+logic dummy3 : us_rep
+
+type t__ref = { t__content : us_rep
+}
+
+function t__ref_t__content__projection(a: t__ref) : us_rep = (a).t__content
+
+logic has_element : us_rep, int -> bool
+
+logic has_element__function_guard : bool, us_rep, int -> prop
+
+type cursor_type
+
+logic cursor_typeqtint : cursor_type -> int
+
+axiom cursor_typeqtaxiom : (forall i:cursor_type. (1 <= cursor_typeqtint(i)))
+
+axiom cursor_typeqtaxiom1 :
+  (forall i:cursor_type. (cursor_typeqtint(i) <= 33))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 33))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq4 : cursor_type, cursor_type -> bool
+
+logic dummy4 : cursor_type
+
+type cursor_type__ref = { cursor_type__content : cursor_type
+}
+
+function cursor_type__ref_cursor_type__content__projection(a: cursor_type__ref) : cursor_type =
+  (a).cursor_type__content
+
+predicate dynamic_invariant(temp___expr_206: int, temp___is_init_202: bool,
+  temp___skip_constant_203: bool, temp___do_toplevel_204: bool,
+  temp___do_typ_inv_205: bool) = (((temp___is_init_202 = true) or
+  (1 <= 33)) -> in_range3(temp___expr_206))
+
+axiom has_element__def_axiom :
+  (forall table:us_rep.
+  (forall cursor:int [has_element(table, cursor)]. ((has_element(table,
+  cursor) = true) -> (cursor <  33))))
+
+axiom has_element__def_axiom1 :
+  (forall table:us_rep.
+  (forall cursor:int [has_element(table, cursor)]. ((has_element(table,
+  cursor) = true) ->
+  (cursor <= to_rep(((table).us_split_fields1).rec__repro_main__int_table__t__last)))))
+
+axiom has_element__def_axiom2 :
+  (forall table:us_rep.
+  (forall cursor:int [has_element(table, cursor)]. (((cursor <  33) and
+  (cursor <= to_rep(((table).us_split_fields1).rec__repro_main__int_table__t__last))) ->
+  (has_element(table, cursor) = true))))
+
+logic table : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic cursor : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic index_of : int -> int
+
+logic index_of__function_guard : int, int -> prop
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq5 : natural, natural -> bool
+
+logic dummy5 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant1(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range4(temp___expr_39))
+
+axiom index_of__post_axiom :
+  (forall cursor1:int [index_of(cursor1)]. (dynamic_invariant(cursor1, true,
+  true, true, true) -> (let result = index_of(cursor1) : int in
+  (index_of__function_guard(result, cursor1) -> dynamic_invariant1(result,
+  true, false, true, true)))))
+
+axiom index_of__def_axiom :
+  (forall cursor1:int [index_of(cursor1)]. (dynamic_invariant(cursor1, true,
+  true, true, true) -> (index_of(cursor1) = cursor1)))
+
+predicate dynamic_invariant2(temp___expr_213: int, temp___is_init_209: bool,
+  temp___skip_constant_210: bool, temp___do_toplevel_211: bool,
+  temp___do_typ_inv_212: bool) = (((temp___is_init_209 = true) or
+  (0 <= 32)) -> in_range1(temp___expr_213))
+
+predicate dynamic_invariant3(temp___expr_199: int, temp___is_init_195: bool,
+  temp___skip_constant_196: bool, temp___do_toplevel_197: bool,
+  temp___do_typ_inv_198: bool) = (((temp___is_init_195 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range2(temp___expr_199))
+
+ (* File "bounded_table.ads", line 37, characters 0-0 *)
+goal defqtvc : (dynamic_invariant(cursor, true, false, true, true) ->
+  (has_element__function_guard(has_element(table, cursor), table, cursor) ->
+  ((has_element(table, cursor) = true) ->
+  (forall repro_main__int_table__next__result:int.
+  ((cursor <  repro_main__int_table__next__result) ->
+  ((forall repro_main__int_table__next__result1:int.
+   has_element__function_guard(has_element(table,
+   repro_main__int_table__next__result1), table,
+   repro_main__int_table__next__result1)) ->
+  ((has_element(table, repro_main__int_table__next__result) = true) ->
+  (index_of__function_guard(index_of(cursor), cursor) ->
+  ((forall repro_main__int_table__next__result1:int.
+   index_of__function_guard(index_of(repro_main__int_table__next__result1),
+   repro_main__int_table__next__result1)) ->
+  (index_of(cursor) <  index_of(repro_main__int_table__next__result)))))))))))

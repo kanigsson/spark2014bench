@@ -1,0 +1,439 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+logic div : int, int -> int
+
+logic mod : int, int -> int
+
+axiom Div_mod :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (x = ((y * div(x,
+  y)) + mod(x, y)))))
+
+axiom Div_bound :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= div(x, y))))
+
+axiom Div_bound1 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (div(x, y) <= x)))
+
+axiom Mod_bound :
+  (forall x:int. forall y:int. ((not (y = 0)) -> ((-abs_int(y)) <  mod(x,
+  y))))
+
+axiom Mod_bound1 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (mod(x, y) <  abs_int(y))))
+
+axiom Div_sign_pos :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= div(x, y))))
+
+axiom Div_sign_neg :
+  (forall x:int. forall y:int. (((x <= 0) and (0 <  y)) -> (div(x, y) <= 0)))
+
+axiom Mod_sign_pos :
+  (forall x:int. forall y:int. (((0 <= x) and (not (y = 0))) -> (0 <= mod(x,
+  y))))
+
+axiom Mod_sign_neg :
+  (forall x:int. forall y:int. (((x <= 0) and (not (y = 0))) -> (mod(x,
+  y) <= 0)))
+
+axiom Rounds_toward_zero :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (abs_int((div(x,
+  y) * y)) <= abs_int(x))))
+
+axiom Div_1 : (forall x:int. (div(x, 1) = x))
+
+axiom Mod_1 : (forall x:int. (mod(x, 1) = 0))
+
+axiom Div_inf :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> (div(x, y) = 0)))
+
+axiom Mod_inf :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> (mod(x, y) = x)))
+
+axiom Div_mult :
+  (forall x:int. forall y:int. forall z:int [div(((x * y) + z), x)].
+  (((0 <  x) and ((0 <= y) and (0 <= z))) -> (div(((x * y) + z),
+  x) = (y + div(z, x)))))
+
+axiom Mod_mult :
+  (forall x:int. forall y:int. forall z:int [mod(((x * y) + z), x)].
+  (((0 <  x) and ((0 <= y) and (0 <= z))) -> (mod(((x * y) + z), x) = mod(z,
+  x))))
+
+axiom Div_mod1 :
+  (forall x:int. forall y:int. ((not (y = 0)) ->
+  (x = ((y * (x / y)) + (x % y)))))
+
+axiom Mod_bound2 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> (0 <= (x % y))))
+
+axiom Mod_bound3 :
+  (forall x:int. forall y:int. ((not (y = 0)) -> ((x % y) <  abs_int(y))))
+
+axiom Div_unique :
+  (forall x:int. forall y:int. forall q:int. ((0 <  y) ->
+  ((((q * y) <= x) and (x <  ((q * y) + y))) -> ((x / y) = q))))
+
+axiom Div_bound2 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> (0 <= (x / y))))
+
+axiom Div_bound3 :
+  (forall x:int. forall y:int. (((0 <= x) and (0 <  y)) -> ((x / y) <= x)))
+
+axiom Mod_11 : (forall x:int. ((x % 1) = 0))
+
+axiom Div_11 : (forall x:int. ((x / 1) = x))
+
+axiom Div_inf1 :
+  (forall x:int. forall y:int. (((0 <= x) and (x <  y)) -> ((x / y) = 0)))
+
+axiom Div_inf_neg :
+  (forall x:int. forall y:int. (((0 <  x) and (x <= y)) ->
+  (((-x) / y) = (- 1))))
+
+axiom Mod_0 : (forall y:int. ((not (y = 0)) -> ((0 % y) = 0)))
+
+axiom Div_1_left : (forall y:int. ((1 <  y) -> ((1 / y) = 0)))
+
+axiom Div_minus1_left : (forall y:int. ((1 <  y) -> (((- 1) / y) = (- 1))))
+
+axiom Mod_1_left : (forall y:int. ((1 <  y) -> ((1 % y) = 1)))
+
+axiom Mod_minus1_left :
+  (forall y:int [((- 1) % y)]. ((1 <  y) -> (((- 1) % y) = (y - 1))))
+
+axiom Div_mult1 :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) / x)].
+  ((0 <  x) -> ((((x * y) + z) / x) = (y + (z / x)))))
+
+axiom Mod_mult1 :
+  (forall x:int. forall y:int. forall z:int [(((x * y) + z) % x)].
+  ((0 <  x) -> ((((x * y) + z) % x) = (z % x))))
+
+function mod1(x: int, y: int) : int =
+  (if (0 <  y) then (x % y) else ((x % y) + y))
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+logic mach : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic present : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic target : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic max : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic inverse : int, int -> int
+
+logic inverse__function_guard : int, int, int -> prop
+
+type scaledata
+
+logic scaledataqtint : scaledata -> int
+
+axiom scaledataqtaxiom : (forall i:scaledata. ((- 100) <= scaledataqtint(i)))
+
+axiom scaledataqtaxiom1 : (forall i:scaledata. (scaledataqtint(i) <= 100))
+
+predicate in_range2(x: int) = (((- 100) <= x) and (x <= 100))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : scaledata, scaledata -> bool
+
+logic dummy1 : scaledata
+
+type scaledata__ref = { scaledata__content : scaledata
+}
+
+function scaledata__ref_scaledata__content__projection(a: scaledata__ref) : scaledata =
+  (a).scaledata__content
+
+predicate dynamic_invariant1(temp___expr_161: int, temp___is_init_157: bool,
+  temp___skip_constant_158: bool, temp___do_toplevel_159: bool,
+  temp___do_typ_inv_160: bool) = (((temp___is_init_157 = true) or
+  ((- 100) <= 100)) -> in_range2(temp___expr_161))
+
+type percent
+
+logic percentqtint : percent -> int
+
+axiom percentqtaxiom : (forall i:percent. (0 <= percentqtint(i)))
+
+axiom percentqtaxiom1 : (forall i:percent. (percentqtint(i) <= 100))
+
+predicate in_range3(x: int) = ((0 <= x) and (x <= 100))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : percent, percent -> bool
+
+logic dummy2 : percent
+
+type percent__ref = { percent__content : percent
+}
+
+function percent__ref_percent__content__projection(a: percent__ref) : percent =
+  (a).percent__content
+
+predicate dynamic_invariant2(temp___expr_196: int, temp___is_init_192: bool,
+  temp___skip_constant_193: bool, temp___do_toplevel_194: bool,
+  temp___do_typ_inv_195: bool) = (((temp___is_init_192 = true) or
+  (0 <= 100)) -> in_range3(temp___expr_196))
+
+axiom inverse__post_axiom :
+  (forall val__:int. forall flatness:int [inverse(val__, flatness)].
+  (((dynamic_invariant1(val__, true, true, true, true) and
+  dynamic_invariant(flatness, true, true, true, true)) and (((0 <= val__) and
+  (0 <  flatness)) and (flatness <= 100))) -> (let result = inverse(val__,
+  flatness) : int in (inverse__function_guard(result, val__, flatness) ->
+  dynamic_invariant2(result, true, false, true, true)))))
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+type controlangle
+
+logic controlangleqtint : controlangle -> int
+
+axiom controlangleqtaxiom :
+  (forall i:controlangle. ((- 45) <= controlangleqtint(i)))
+
+axiom controlangleqtaxiom1 :
+  (forall i:controlangle. (controlangleqtint(i) <= 45))
+
+predicate in_range4(x: int) = (((- 45) <= x) and (x <= 45))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq3 : controlangle, controlangle -> bool
+
+logic dummy3 : controlangle
+
+type controlangle__ref = { controlangle__content : controlangle
+}
+
+function controlangle__ref_controlangle__content__projection(a: controlangle__ref) : controlangle =
+  (a).controlangle__content
+
+predicate dynamic_invariant3(temp___expr_168: int, temp___is_init_164: bool,
+  temp___skip_constant_165: bool, temp___do_toplevel_166: bool,
+  temp___do_typ_inv_167: bool) = (((temp___is_init_164 = true) or
+  ((- 45) <= 45)) -> in_range4(temp___expr_168))
+
+type machnumber
+
+logic machnumberqtint : machnumber -> int
+
+axiom machnumberqtaxiom : (forall i:machnumber. (0 <= machnumberqtint(i)))
+
+axiom machnumberqtaxiom1 : (forall i:machnumber. (machnumberqtint(i) <= 100))
+
+predicate in_range5(x: int) = ((0 <= x) and (x <= 100))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq4 : machnumber, machnumber -> bool
+
+logic dummy4 : machnumber
+
+type machnumber__ref = { machnumber__content : machnumber
+}
+
+function machnumber__ref_machnumber__content__projection(a: machnumber__ref) : machnumber =
+  (a).machnumber__content
+
+predicate dynamic_invariant4(temp___expr_175: int, temp___is_init_171: bool,
+  temp___skip_constant_172: bool, temp___do_toplevel_173: bool,
+  temp___do_typ_inv_174: bool) = (((temp___is_init_171 = true) or
+  (0 <= 100)) -> in_range5(temp___expr_175))
+
+axiom cdiv_cases :
+  (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((0 <  d) -> (div(n,
+  d) = (n / d)))))
+
+axiom cdiv_cases1 :
+  (forall n:int. forall d:int [div(n, d)]. ((n <= 0) -> ((0 <  d) -> (div(n,
+  d) = (-((-n) / d))))))
+
+axiom cdiv_cases2 :
+  (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((d <  0) -> (div(n,
+  d) = (-(n / (-d)))))))
+
+axiom cdiv_cases3 :
+  (forall n:int. forall d:int [div(n, d)]. ((n <= 0) -> ((d <  0) -> (div(n,
+  d) = ((-n) / (-d))))))
+
+axiom cmod_cases :
+  (forall n:int. forall d:int [mod(n, d)]. ((0 <= n) -> ((0 <  d) -> (mod(n,
+  d) = (n % d)))))
+
+axiom cmod_cases1 :
+  (forall n:int. forall d:int [mod(n, d)]. ((n <= 0) -> ((0 <  d) -> (mod(n,
+  d) = (-((-n) % d))))))
+
+axiom cmod_cases2 :
+  (forall n:int. forall d:int [mod(n, d)]. ((0 <= n) -> ((d <  0) -> (mod(n,
+  d) = (n % (-d))))))
+
+axiom cmod_cases3 :
+  (forall n:int. forall d:int [mod(n, d)]. ((n <= 0) -> ((d <  0) -> (mod(n,
+  d) = (-((-n) % (-d)))))))
+
+ (* File "scale.ads", line 9, characters 0-0 *)
+goal defqtvc :
+  (forall target_angle:int. forall k1:int. forall k2:int. forall gap:int.
+  (dynamic_invariant4(mach, true, false, true, true) ->
+  (dynamic_invariant1(present, true, false, true, true) ->
+  (dynamic_invariant1(target, true, false, true, true) ->
+  (dynamic_invariant3(max, true, false, true, true) -> ((0 <  max) ->
+  (dynamic_invariant3(target_angle, false, false, true, true) ->
+  (dynamic_invariant(k1, false, false, true, true) -> (dynamic_invariant(k2,
+  false, false, true, true) -> (dynamic_invariant(gap, false, false, true,
+  true) ->
+  (forall spark__branch:bool.
+  ((spark__branch = (if (present = target) then true else false)) ->
+  ((not (spark__branch = true)) ->
+  (forall k11:int. forall k21:int. (((in_range3(k11) and (0 <  k21)) and
+  (k11 <= k21)) -> (dynamic_invariant(k11, false, true, true, true) ->
+  (dynamic_invariant(k21, false, true, true, true) ->
+  in_range1((max * k11)))))))))))))))))))

@@ -1,0 +1,365 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+type slot
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 2))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq1 : slot, slot -> bool
+
+logic dummy1 : slot
+
+type slot__ref = { slot__content : slot
+}
+
+function slot__ref_slot__content__projection(a: slot__ref) : slot =
+  (a).slot__content
+
+logic to_rep : slot -> int
+
+logic of_rep : int -> slot
+
+axiom inversion_axiom : (forall x:slot [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:slot [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type map__ref = { map__content : (int,slot) farray
+}
+
+logic slide : (int,slot) farray, int, int -> (int,slot) farray
+
+axiom slide_eq :
+  (forall a:(int,slot) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,slot) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq2(a: (int,slot) farray, a__first: int, a__last: int,
+  b: (int,slot) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,slot) farray. forall b:(int,slot) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,slot) farray. forall b:(int,slot) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,slot) farray. forall b:(int,slot) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,slot) farray. forall b:(int,slot) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)]))))))))
+
+logic dummy2 : (int,slot) farray
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic user_eq2 : (int,slot) farray, (int,slot) farray -> bool
+
+type map__ref1 = { map__content1 : (int,(int,slot) farray) farray
+}
+
+logic slide1 : (int,(int,slot) farray) farray, int,
+  int -> (int,(int,slot) farray) farray
+
+axiom slide_eq1 :
+  (forall a:(int,(int,slot) farray) farray.
+  (forall first:int [slide1(a, first, first)]. (slide1(a, first, first) = a)))
+
+axiom slide_def1 :
+  (forall a:(int,(int,slot) farray) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide1(a, old_first, new_first)[i])]. ((slide1(a,
+  old_first, new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq3(a: (int,(int,slot) farray) farray, a__first: int,
+  a__last: int, b: (int,(int,slot) farray) farray, b__first: int,
+  b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_155:int. (((a__first <= temp___idx_155) and
+  (temp___idx_155 <= a__last)) -> (bool_eq2((a[temp___idx_155]), 1, 3,
+  (b[((b__first - a__first) + temp___idx_155)]), 1, 3) = true)))) then true else false)
+
+axiom bool_eq_rev4 :
+  (forall a:(int,(int,slot) farray) farray.
+  forall b:(int,(int,slot) farray) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev5 :
+  (forall a:(int,(int,slot) farray) farray.
+  forall b:(int,(int,slot) farray) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev6 :
+  (forall a:(int,(int,slot) farray) farray.
+  forall b:(int,(int,slot) farray) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev7 :
+  (forall a:(int,(int,slot) farray) farray.
+  forall b:(int,(int,slot) farray) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_155:int. (((a__first <= temp___idx_155) and
+  (temp___idx_155 <= a__last)) -> (bool_eq2((a[temp___idx_155]), 1, 3,
+  (b[((b__first - a__first) + temp___idx_155)]), 1, 3) = true))))))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_18))
+
+logic one_free_slot : int, int, (int,(int,slot) farray) farray -> int
+
+logic one_free_slot__function_guard : int, int, int,
+  (int,(int,slot) farray) farray -> prop
+
+type pos
+
+logic posqtint : pos -> int
+
+axiom posqtaxiom : (forall i:pos. (1 <= posqtint(i)))
+
+axiom posqtaxiom1 : (forall i:pos. (posqtint(i) <= 3))
+
+predicate in_range2(x: int) = ((1 <= x) and (x <= 3))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq3 : pos, pos -> bool
+
+logic dummy3 : pos
+
+type pos__ref = { pos__content : pos
+}
+
+function pos__ref_pos__content__projection(a: pos__ref) : pos =
+  (a).pos__content
+
+predicate dynamic_invariant1(temp___expr_178: int, temp___is_init_174: bool,
+  temp___skip_constant_175: bool, temp___do_toplevel_176: bool,
+  temp___do_typ_inv_177: bool) = (((temp___is_init_174 = true) or
+  (1 <= 3)) -> in_range2(temp___expr_178))
+
+axiom one_free_slot__post_axiom :
+  (forall x:int. forall y:int.
+  (forall tictactoe__my_board:(int,(int,slot) farray) farray
+  [one_free_slot(x, y, tictactoe__my_board)]. ((dynamic_invariant1(x, true,
+  true, true, true) and dynamic_invariant1(y, true, true, true, true)) ->
+  (let result = one_free_slot(x, y, tictactoe__my_board) : int in
+  (one_free_slot__function_guard(result, x, y, tictactoe__my_board) ->
+  dynamic_invariant(result, true, false, true, true))))))
+
+axiom one_free_slot__def_axiom :
+  (forall x:int. forall y:int.
+  (forall tictactoe__my_board:(int,(int,slot) farray) farray
+  [one_free_slot(x, y, tictactoe__my_board)]. ((dynamic_invariant1(x, true,
+  true, true, true) and dynamic_invariant1(y, true, true, true, true)) ->
+  (one_free_slot(x, y,
+  tictactoe__my_board) = (if (to_rep(((tictactoe__my_board[x])[y])) = 0) then 1 else 0)))))
+
+logic x : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic y : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+predicate dynamic_invariant2(temp___expr_171: int, temp___is_init_167: bool,
+  temp___skip_constant_168: bool, temp___do_toplevel_169: bool,
+  temp___do_typ_inv_170: bool) = (((temp___is_init_167 = true) or
+  (0 <= 2)) -> in_range1(temp___expr_171))
+
+ (* File "tictactoe.ads", line 15, characters 0-0 *)
+goal defqtvc :
+  (forall my_board:(int,(int,slot) farray) farray. (dynamic_invariant1(x,
+  true, false, true, true) -> (dynamic_invariant1(y, true, false, true,
+  true) ->
+  (forall o:int.
+  ((if (3 <= x) then (exists o1:int.
+                     ((if (3 <= y) then ((o1 = one_free_slot(3, 3,
+                     my_board)) and (one_free_slot__function_guard(o1, 3, 3,
+                     my_board) and (dynamic_invariant(o1, true, false, true,
+                     true) and
+                     (o1 = (if (to_rep(((my_board[3])[3])) = 0) then 1 else 0))))) else (o1 = 0)) and
+                     (exists o2:int.
+                     ((if (2 <= y) then ((o2 = one_free_slot(3, 2,
+                     my_board)) and (one_free_slot__function_guard(o2, 3, 2,
+                     my_board) and (dynamic_invariant(o2, true, false, true,
+                     true) and
+                     (o2 = (if (to_rep(((my_board[3])[2])) = 0) then 1 else 0))))) else (o2 = 0)) and
+                     (let o3 = one_free_slot(3, 1, my_board) : int in
+                     ((one_free_slot__function_guard(o3, 3, 1, my_board) and
+                     (dynamic_invariant(o3, true, false, true, true) and
+                     (o3 = (if (to_rep(((my_board[3])[1])) = 0) then 1 else 0)))) and
+                     (let o4 = (o3 + o2) : int in (in_range(o4) and (let o5 =
+                     (o4 + o1) : int in ((o = o5) and in_range(o5))))))))))) else (o = 0)) ->
+  ((2 <= x) ->
+  (forall o1:int. ((if (3 <= y) then ((o1 = one_free_slot(2, 3,
+  my_board)) and (one_free_slot__function_guard(o1, 2, 3, my_board) and
+  (dynamic_invariant(o1, true, false, true, true) and
+  (o1 = (if (to_rep(((my_board[2])[3])) = 0) then 1 else 0))))) else (o1 = 0)) ->
+  (forall o2:int. ((if (2 <= y) then ((o2 = one_free_slot(2, 2,
+  my_board)) and (one_free_slot__function_guard(o2, 2, 2, my_board) and
+  (dynamic_invariant(o2, true, false, true, true) and
+  (o2 = (if (to_rep(((my_board[2])[2])) = 0) then 1 else 0))))) else (o2 = 0)) ->
+  (let o3 = one_free_slot(2, 1, my_board) : int in
+  ((one_free_slot__function_guard(o3, 2, 1, my_board) and
+  (dynamic_invariant(o3, true, false, true, true) and
+  (o3 = (if (to_rep(((my_board[2])[1])) = 0) then 1 else 0)))) -> (let o4 =
+  (o3 + o2) : int in (in_range(o4) -> in_range((o4 + o1))))))))))))))))

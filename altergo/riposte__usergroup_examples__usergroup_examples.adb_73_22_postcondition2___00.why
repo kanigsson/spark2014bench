@@ -1,0 +1,393 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+logic is_valid : int -> bool
+
+logic is_valid__function_guard : bool, int -> prop
+
+type value_t
+
+logic value_tqtint : value_t -> int
+
+axiom value_tqtaxiom :
+  (forall i:value_t. ((- 2147483648) <= value_tqtint(i)))
+
+axiom value_tqtaxiom1 : (forall i:value_t. (value_tqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : value_t, value_t -> bool
+
+logic dummy : value_t
+
+type value_t__ref = { value_t__content : value_t
+}
+
+function value_t__ref_value_t__content__projection(a: value_t__ref) : value_t =
+  (a).value_t__content
+
+predicate dynamic_invariant(temp___expr_220: int, temp___is_init_216: bool,
+  temp___skip_constant_217: bool, temp___do_toplevel_218: bool,
+  temp___do_typ_inv_219: bool) = (((temp___is_init_216 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_220))
+
+function to_rep(x: value_t) : int = value_tqtint(x)
+
+logic of_rep : int -> value_t
+
+axiom inversion_axiom :
+  (forall x:value_t [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:value_t [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type map__ref = { map__content : (int,value_t) farray
+}
+
+logic slide : (int,value_t) farray, int, int -> (int,value_t) farray
+
+axiom slide_eq :
+  (forall a:(int,value_t) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,value_t) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq2(a: (int,value_t) farray, a__first: int, a__last: int,
+  b: (int,value_t) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_155:int. (((a__first <= temp___idx_155) and
+  (temp___idx_155 <= a__last)) ->
+  (to_rep((a[temp___idx_155])) = to_rep((b[((b__first - a__first) + temp___idx_155)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,value_t) farray. forall b:(int,value_t) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,value_t) farray. forall b:(int,value_t) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,value_t) farray. forall b:(int,value_t) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,value_t) farray. forall b:(int,value_t) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq2(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_155:int. (((a__first <= temp___idx_155) and
+  (temp___idx_155 <= a__last)) ->
+  (to_rep((a[temp___idx_155])) = to_rep((b[((b__first - a__first) + temp___idx_155)]))))))))
+
+logic va : (int,value_t) farray
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+type us_split_fields = { rec__usergroup_examples__value_cache_t__cached :
+bool; rec__usergroup_examples__value_cache_t__cache : value_t
+}
+
+function us_split_fields_rec__usergroup_examples__value_cache_t__cached__projection(a: us_split_fields) : bool =
+  (a).rec__usergroup_examples__value_cache_t__cached
+
+function us_split_fields_rec__usergroup_examples__value_cache_t__cache__projection(a: us_split_fields) : value_t =
+  (a).rec__usergroup_examples__value_cache_t__cache
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__2__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq3(a: us_rep, b: us_rep) : bool =
+  (if ((to_int(((a).us_split_fields1).rec__usergroup_examples__value_cache_t__cached) = to_int(((b).us_split_fields1).rec__usergroup_examples__value_cache_t__cached)) and
+  (to_rep(((a).us_split_fields1).rec__usergroup_examples__value_cache_t__cache) = to_rep(((b).us_split_fields1).rec__usergroup_examples__value_cache_t__cache))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic usergroup_examples__value_cache_t__cached__first__bit : int
+
+logic usergroup_examples__value_cache_t__cached__last__bit : int
+
+logic usergroup_examples__value_cache_t__cached__position : int
+
+axiom usergroup_examples__value_cache_t__cached__first__bit_axiom :
+  (0 <= usergroup_examples__value_cache_t__cached__first__bit)
+
+axiom usergroup_examples__value_cache_t__cached__last__bit_axiom :
+  (usergroup_examples__value_cache_t__cached__first__bit <  usergroup_examples__value_cache_t__cached__last__bit)
+
+axiom usergroup_examples__value_cache_t__cached__position_axiom :
+  (0 <= usergroup_examples__value_cache_t__cached__position)
+
+logic usergroup_examples__value_cache_t__cache__first__bit : int
+
+logic usergroup_examples__value_cache_t__cache__last__bit : int
+
+logic usergroup_examples__value_cache_t__cache__position : int
+
+axiom usergroup_examples__value_cache_t__cache__first__bit_axiom :
+  (0 <= usergroup_examples__value_cache_t__cache__first__bit)
+
+axiom usergroup_examples__value_cache_t__cache__last__bit_axiom :
+  (usergroup_examples__value_cache_t__cache__first__bit <  usergroup_examples__value_cache_t__cache__last__bit)
+
+axiom usergroup_examples__value_cache_t__cache__position_axiom :
+  (0 <= usergroup_examples__value_cache_t__cache__position)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type value_cache_t__ref = { value_cache_t__content : us_rep
+}
+
+function value_cache_t__ref_value_cache_t__content__projection(a: value_cache_t__ref) : us_rep =
+  (a).value_cache_t__content
+
+type map__ref1 = { map__content1 : (int,us_rep) farray
+}
+
+logic slide1 : (int,us_rep) farray, int, int -> (int,us_rep) farray
+
+axiom slide_eq1 :
+  (forall a:(int,us_rep) farray.
+  (forall first:int [slide1(a, first, first)]. (slide1(a, first, first) = a)))
+
+axiom slide_def1 :
+  (forall a:(int,us_rep) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide1(a, old_first, new_first)[i])]. ((slide1(a,
+  old_first, new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq4(a: (int,us_rep) farray, a__first: int, a__last: int,
+  b: (int,us_rep) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_156:int. (((a__first <= temp___idx_156) and
+  (temp___idx_156 <= a__last)) -> (bool_eq3((a[temp___idx_156]),
+  (b[((b__first - a__first) + temp___idx_156)])) = true)))) then true else false)
+
+axiom bool_eq_rev4 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev5 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev6 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev7 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_156:int. (((a__first <= temp___idx_156) and
+  (temp___idx_156 <= a__last)) -> (bool_eq3((a[temp___idx_156]),
+  (b[((b__first - a__first) + temp___idx_156)])) = true))))))
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic i : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+type index_t
+
+logic index_tqtint : index_t -> int
+
+axiom index_tqtaxiom : (forall i1:index_t. (1 <= index_tqtint(i1)))
+
+axiom index_tqtaxiom1 : (forall i1:index_t. (index_tqtint(i1) <= 100))
+
+predicate in_range2(x: int) = ((1 <= x) and (x <= 100))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq2 : index_t, index_t -> bool
+
+logic dummy2 : index_t
+
+type index_t__ref = { index_t__content : index_t
+}
+
+function index_t__ref_index_t__content__projection(a: index_t__ref) : index_t =
+  (a).index_t__content
+
+predicate dynamic_invariant1(temp___expr_173: int, temp___is_init_169: bool,
+  temp___skip_constant_170: bool, temp___do_toplevel_171: bool,
+  temp___do_typ_inv_172: bool) = (((temp___is_init_169 = true) or
+  (1 <= 100)) -> in_range2(temp___expr_173))
+
+ (* File "usergroup_examples.adb", line 65, characters 0-0 *)
+goal defqtvc :
+  (forall vca:(int,us_rep) farray. forall v:int. (dynamic_invariant1(i, true,
+  false, true, true) -> (dynamic_invariant(v, false, false, true, true) ->
+  ((forall x:int. is_valid__function_guard(is_valid(to_rep((va[x]))),
+   to_rep((va[x])))) ->
+  (((forall x:int. (((1 <= x) and (x <= 100)) ->
+    (is_valid(to_rep((va[x]))) = true))) and
+  (forall y:int. (((1 <= y) and (y <= 100)) ->
+  (((((vca[y])).us_split_fields1).rec__usergroup_examples__value_cache_t__cached = true) ->
+  (to_rep((((vca[y])).us_split_fields1).rec__usergroup_examples__value_cache_t__cache) = to_rep((va[y]))))))) ->
+  (forall v1:int.
+  ((exists spark__branch:bool.
+   ((spark__branch = (((vca[i])).us_split_fields1).rec__usergroup_examples__value_cache_t__cached) and
+   (if (spark__branch = true) then (exists o:int.
+                                   ((to_rep((((vca[i])).us_split_fields1).rec__usergroup_examples__value_cache_t__cache) = o) and
+                                   (v1 = o))) else (exists o:int.
+                                                   ((to_rep((va[i])) = o) and
+                                                   (exists o1:value_t.
+                                                   ((to_rep(o1) = o) and
+                                                   (exists vca1:(int,us_rep) farray.
+                                                   ((vca1 = (vca[i <- {
+                                                   us_split_fields1 = {
+                                                   rec__usergroup_examples__value_cache_t__cached =
+                                                   (((vca[i])).us_split_fields1).rec__usergroup_examples__value_cache_t__cached;
+                                                   rec__usergroup_examples__value_cache_t__cache =
+                                                   o1 } }])) and
+                                                   (exists vca2:(int,us_rep) farray.
+                                                   ((vca2 = (vca1[i <- {
+                                                   us_split_fields1 = {
+                                                   rec__usergroup_examples__value_cache_t__cached =
+                                                   of_int(1);
+                                                   rec__usergroup_examples__value_cache_t__cache =
+                                                   (((vca1[i])).us_split_fields1).rec__usergroup_examples__value_cache_t__cache
+                                                   } }])) and
+                                                   (exists o2:int.
+                                                   ((to_rep((((vca2[i])).us_split_fields1).rec__usergroup_examples__value_cache_t__cache) = o2) and
+                                                   (v1 = o2)))))))))))))) ->
+  ((forall v2:int. is_valid__function_guard(is_valid(v2), v2)) ->
+  (is_valid(v1) = true)))))))))

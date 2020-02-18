@@ -1,0 +1,940 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_39))
+
+type positive
+
+logic positiveqtint : positive -> int
+
+axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
+
+axiom positiveqtaxiom1 :
+  (forall i:positive. (positiveqtint(i) <= 2147483647))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : positive, positive -> bool
+
+logic dummy2 : positive
+
+type positive__ref = { positive__content : positive
+}
+
+function positive__ref_positive__content__projection(a: positive__ref) : positive =
+  (a).positive__content
+
+predicate dynamic_invariant1(temp___expr_46: int, temp___is_init_42: bool,
+  temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
+  temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
+  (1 <= 2147483647)) -> in_range3(temp___expr_46))
+
+type us_split_fields = { rec__test_route__point__x : integer;
+rec__test_route__point__y : integer
+}
+
+function us_split_fields_rec__test_route__point__x__projection(a: us_split_fields) : integer =
+  (a).rec__test_route__point__x
+
+function us_split_fields_rec__test_route__point__y__projection(a: us_split_fields) : integer =
+  (a).rec__test_route__point__y
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq4(a: us_rep, b: us_rep) : bool =
+  (if ((to_rep(((a).us_split_fields1).rec__test_route__point__x) = to_rep(((b).us_split_fields1).rec__test_route__point__x)) and
+  (to_rep(((a).us_split_fields1).rec__test_route__point__y) = to_rep(((b).us_split_fields1).rec__test_route__point__y))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic test_route__point__x__first__bit : int
+
+logic test_route__point__x__last__bit : int
+
+logic test_route__point__x__position : int
+
+axiom test_route__point__x__first__bit_axiom :
+  (0 <= test_route__point__x__first__bit)
+
+axiom test_route__point__x__last__bit_axiom :
+  (test_route__point__x__first__bit <  test_route__point__x__last__bit)
+
+axiom test_route__point__x__position_axiom :
+  (0 <= test_route__point__x__position)
+
+logic test_route__point__y__first__bit : int
+
+logic test_route__point__y__last__bit : int
+
+logic test_route__point__y__position : int
+
+axiom test_route__point__y__first__bit_axiom :
+  (0 <= test_route__point__y__first__bit)
+
+axiom test_route__point__y__last__bit_axiom :
+  (test_route__point__y__first__bit <  test_route__point__y__last__bit)
+
+axiom test_route__point__y__position_axiom :
+  (0 <= test_route__point__y__position)
+
+logic user_eq3 : us_rep, us_rep -> bool
+
+logic dummy3 : us_rep
+
+type point__ref = { point__content : us_rep
+}
+
+function point__ref_point__content__projection(a: point__ref) : us_rep =
+  (a).point__content
+
+type us_main_type
+
+type us_rep1 = { rec__test_route__route_acc__is_null_pointer : bool;
+rec__test_route__route_acc__pointer_address : int;
+rec__test_route__route_acc__pointer_value_abstr : us_main_type
+}
+
+function us_rep_rec__test_route__route_acc__is_null_pointer__projection(a: us_rep1) : bool =
+  (a).rec__test_route__route_acc__is_null_pointer
+
+function us_rep_rec__test_route__route_acc__pointer_address__projection(a: us_rep1) : int =
+  (a).rec__test_route__route_acc__pointer_address
+
+function us_rep_rec__test_route__route_acc__pointer_value_abstr__projection(a: us_rep1) : us_main_type =
+  (a).rec__test_route__route_acc__pointer_value_abstr
+
+type us_rep__ref = { us_rep__content : us_rep1
+}
+
+function us_rep__ref___rep__content__2__projection(a: us_rep__ref) : us_rep1 =
+  (a).us_rep__content
+
+function bool_eq5(a: us_rep1, b: us_rep1) : bool =
+  (if (((a).rec__test_route__route_acc__is_null_pointer = (b).rec__test_route__route_acc__is_null_pointer) and
+  ((not ((a).rec__test_route__route_acc__is_null_pointer = true)) ->
+  (((a).rec__test_route__route_acc__pointer_address = (b).rec__test_route__route_acc__pointer_address) and
+  ((a).rec__test_route__route_acc__pointer_value_abstr = (b).rec__test_route__route_acc__pointer_value_abstr)))) then true else false)
+
+logic dummy4 : us_rep1
+
+type t4b__ref = { t4b__content : us_rep1
+}
+
+function t4b__ref_t4b__content__projection(a: t4b__ref) : us_rep1 =
+  (a).t4b__content
+
+logic length : us_rep1 -> int
+
+logic length__function_guard : int, us_rep1 -> prop
+
+function min(x: int, y: int) : int = (if (x <= y) then x else y)
+
+function max(x: int, y: int) : int = (if (x <= y) then y else x)
+
+axiom Min_r : (forall x:int. forall y:int. ((y <= x) -> (min(x, y) = y)))
+
+axiom Max_l : (forall x:int. forall y:int. ((y <= x) -> (max(x, y) = x)))
+
+axiom Min_comm : (forall x:int. forall y:int. (min(x, y) = min(y, x)))
+
+axiom Max_comm : (forall x:int. forall y:int. (max(x, y) = max(y, x)))
+
+axiom Min_assoc :
+  (forall x:int. forall y:int. forall z:int. (min(min(x, y), z) = min(x,
+  min(y, z))))
+
+axiom Max_assoc :
+  (forall x:int. forall y:int. forall z:int. (max(max(x, y), z) = max(x,
+  max(y, z))))
+
+type us_rep2 = { rec__test_route__point_acc__is_null_pointer : bool;
+rec__test_route__point_acc__pointer_address : int;
+rec__test_route__point_acc__pointer_value : us_rep
+}
+
+function us_rep_rec__test_route__point_acc__is_null_pointer__projection(a: us_rep2) : bool =
+  (a).rec__test_route__point_acc__is_null_pointer
+
+function us_rep_rec__test_route__point_acc__pointer_address__projection(a: us_rep2) : int =
+  (a).rec__test_route__point_acc__pointer_address
+
+function us_rep_rec__test_route__point_acc__pointer_value__projection(a: us_rep2) : us_rep =
+  (a).rec__test_route__point_acc__pointer_value
+
+type us_rep__ref1 = { us_rep__content1 : us_rep2
+}
+
+function us_rep__ref___rep__content__projection(a: us_rep__ref1) : us_rep2 =
+  (a).us_rep__content1
+
+function bool_eq6(a: us_rep2, b: us_rep2) : bool =
+  (if (((a).rec__test_route__point_acc__is_null_pointer = (b).rec__test_route__point_acc__is_null_pointer) and
+  ((not ((a).rec__test_route__point_acc__is_null_pointer = true)) ->
+  (((a).rec__test_route__point_acc__pointer_address = (b).rec__test_route__point_acc__pointer_address) and
+  ((a).rec__test_route__point_acc__pointer_value = (b).rec__test_route__point_acc__pointer_value)))) then true else false)
+
+predicate rec__test_route__point_acc__pointer_value__pred(a: us_rep2) =
+  (not ((a).rec__test_route__point_acc__is_null_pointer = true))
+
+logic us_null_pointer : us_rep2
+
+axiom us_null_pointer__def_axiom :
+  ((us_null_pointer).rec__test_route__point_acc__is_null_pointer = true)
+
+logic dummy5 : us_rep2
+
+type point_acc__ref = { point_acc__content : us_rep2
+}
+
+function point_acc__ref_point_acc__content__projection(a: point_acc__ref) : us_rep2 =
+  (a).point_acc__content
+
+logic dummy6 : us_rep1
+
+type route_acc__ref = { route_acc__content : us_rep1
+}
+
+function route_acc__ref_route_acc__content__projection(a: route_acc__ref) : us_rep1 =
+  (a).route_acc__content
+
+type us_split_fields2 = { rec__test_route__route__current : us_rep2;
+rec__test_route__route__rest : us_rep1
+}
+
+function us_split_fields_rec__test_route__route__current__projection(a: us_split_fields2) : us_rep2 =
+  (a).rec__test_route__route__current
+
+function us_split_fields_rec__test_route__route__rest__projection(a: us_split_fields2) : us_rep1 =
+  (a).rec__test_route__route__rest
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep3 = { us_split_fields3 : us_split_fields2
+}
+
+function us_rep___split_fields__2__projection(a: us_rep3) : us_split_fields2 =
+  (a).us_split_fields3
+
+function bool_eq7(a: us_rep3, b: us_rep3) : bool =
+  (if ((bool_eq6(((a).us_split_fields3).rec__test_route__route__current,
+  ((b).us_split_fields3).rec__test_route__route__current) = true) and
+  (bool_eq5(((a).us_split_fields3).rec__test_route__route__rest,
+  ((b).us_split_fields3).rec__test_route__route__rest) = true)) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic test_route__route__current__first__bit : int
+
+logic test_route__route__current__last__bit : int
+
+logic test_route__route__current__position : int
+
+axiom test_route__route__current__first__bit_axiom :
+  (0 <= test_route__route__current__first__bit)
+
+axiom test_route__route__current__last__bit_axiom :
+  (test_route__route__current__first__bit <  test_route__route__current__last__bit)
+
+axiom test_route__route__current__position_axiom :
+  (0 <= test_route__route__current__position)
+
+logic test_route__route__rest__first__bit : int
+
+logic test_route__route__rest__last__bit : int
+
+logic test_route__route__rest__position : int
+
+axiom test_route__route__rest__first__bit_axiom :
+  (0 <= test_route__route__rest__first__bit)
+
+axiom test_route__route__rest__last__bit_axiom :
+  (test_route__route__rest__first__bit <  test_route__route__rest__last__bit)
+
+axiom test_route__route__rest__position_axiom :
+  (0 <= test_route__route__rest__position)
+
+logic user_eq4 : us_rep3, us_rep3 -> bool
+
+logic dummy7 : us_rep3
+
+type route__ref = { route__content : us_rep3
+}
+
+function route__ref_route__content__projection(a: route__ref) : us_rep3 =
+  (a).route__content
+
+logic us_open : us_main_type -> us_rep3
+
+logic us_close : us_rep3 -> us_main_type
+
+axiom close_open :
+  (forall x:us_main_type [us_open(x)]. (us_close(us_open(x)) = x))
+
+axiom open_close :
+  (forall x:us_rep3 [us_close(x)]. (us_open(us_close(x)) = x))
+
+function rec__test_route__route_acc__pointer_value(a: us_rep1) : us_rep3 =
+  us_open((a).rec__test_route__route_acc__pointer_value_abstr)
+
+predicate rec__test_route__route_acc__pointer_value__pred(a: us_rep1) =
+  (not ((a).rec__test_route__route_acc__is_null_pointer = true))
+
+logic us_null_pointer1 : us_rep1
+
+axiom us_null_pointer__def_axiom1 :
+  ((us_null_pointer1).rec__test_route__route_acc__is_null_pointer = true)
+
+logic temp___dynamic_invariant_222 : us_rep1, bool, bool, bool, bool -> prop
+
+predicate dynamic_invariant2(temp___expr_221: us_rep1,
+  temp___is_init_217: bool, temp___skip_constant_218: bool,
+  temp___do_toplevel_219: bool, temp___do_typ_inv_220: bool) =
+  ((not ((temp___expr_221).rec__test_route__route_acc__is_null_pointer = true)) ->
+  ((not ((((rec__test_route__route_acc__pointer_value(temp___expr_221)).us_split_fields3).rec__test_route__route__current).rec__test_route__point_acc__is_null_pointer = true)) and
+  temp___dynamic_invariant_222(((rec__test_route__route_acc__pointer_value(temp___expr_221)).us_split_fields3).rec__test_route__route__rest,
+  true, false, true, temp___do_typ_inv_220)))
+
+axiom def_axiom :
+  (forall temp___expr_227:us_rep1.
+  (forall temp___is_init_223:bool. forall temp___skip_constant_224:bool.
+  forall temp___do_toplevel_225:bool. forall temp___do_typ_inv_226:bool
+  [temp___dynamic_invariant_222(temp___expr_227, temp___is_init_223,
+  temp___skip_constant_224, temp___do_toplevel_225, temp___do_typ_inv_226)].
+  (temp___dynamic_invariant_222(temp___expr_227, temp___is_init_223,
+  temp___skip_constant_224, temp___do_toplevel_225, temp___do_typ_inv_226) ->
+  ((not ((temp___expr_227).rec__test_route__route_acc__is_null_pointer = true)) ->
+  (not ((((rec__test_route__route_acc__pointer_value(temp___expr_227)).us_split_fields3).rec__test_route__route__current).rec__test_route__point_acc__is_null_pointer = true))))))
+
+axiom def_axiom1 :
+  (forall temp___expr_227:us_rep1.
+  (forall temp___is_init_223:bool. forall temp___skip_constant_224:bool.
+  forall temp___do_toplevel_225:bool. forall temp___do_typ_inv_226:bool
+  [temp___dynamic_invariant_222(temp___expr_227, temp___is_init_223,
+  temp___skip_constant_224, temp___do_toplevel_225, temp___do_typ_inv_226)].
+  (temp___dynamic_invariant_222(temp___expr_227, temp___is_init_223,
+  temp___skip_constant_224, temp___do_toplevel_225, temp___do_typ_inv_226) ->
+  ((not ((temp___expr_227).rec__test_route__route_acc__is_null_pointer = true)) ->
+  temp___dynamic_invariant_222(((rec__test_route__route_acc__pointer_value(temp___expr_227)).us_split_fields3).rec__test_route__route__rest,
+  true, false, true, temp___do_typ_inv_226)))))
+
+axiom def_axiom2 :
+  (forall temp___expr_227:us_rep1.
+  (forall temp___is_init_223:bool. forall temp___skip_constant_224:bool.
+  forall temp___do_toplevel_225:bool. forall temp___do_typ_inv_226:bool
+  [temp___dynamic_invariant_222(temp___expr_227, temp___is_init_223,
+  temp___skip_constant_224, temp___do_toplevel_225, temp___do_typ_inv_226)].
+  (((not ((temp___expr_227).rec__test_route__route_acc__is_null_pointer = true)) ->
+  ((not ((((rec__test_route__route_acc__pointer_value(temp___expr_227)).us_split_fields3).rec__test_route__route__current).rec__test_route__point_acc__is_null_pointer = true)) and
+  temp___dynamic_invariant_222(((rec__test_route__route_acc__pointer_value(temp___expr_227)).us_split_fields3).rec__test_route__route__rest,
+  true, false, true, temp___do_typ_inv_226))) ->
+  temp___dynamic_invariant_222(temp___expr_227, temp___is_init_223,
+  temp___skip_constant_224, temp___do_toplevel_225, temp___do_typ_inv_226))))
+
+predicate default_initial_assumption(temp___expr_228: us_rep1,
+  temp___skip_top_level_229: bool) =
+  ((temp___expr_228).rec__test_route__route_acc__is_null_pointer = true)
+
+predicate dynamic_invariant3(temp___expr_234: us_rep3,
+  temp___is_init_230: bool, temp___skip_constant_231: bool,
+  temp___do_toplevel_232: bool, temp___do_typ_inv_233: bool) =
+  ((not ((((temp___expr_234).us_split_fields3).rec__test_route__route__current).rec__test_route__point_acc__is_null_pointer = true)) and
+  ((not ((((temp___expr_234).us_split_fields3).rec__test_route__route__rest).rec__test_route__route_acc__is_null_pointer = true)) ->
+  ((not ((((rec__test_route__route_acc__pointer_value(((temp___expr_234).us_split_fields3).rec__test_route__route__rest)).us_split_fields3).rec__test_route__route__current).rec__test_route__point_acc__is_null_pointer = true)) and
+  temp___dynamic_invariant_222(((rec__test_route__route_acc__pointer_value(((temp___expr_234).us_split_fields3).rec__test_route__route__rest)).us_split_fields3).rec__test_route__route__rest,
+  true, false, true, temp___do_typ_inv_233))))
+
+predicate default_initial_assumption1(temp___expr_235: us_rep3,
+  temp___skip_top_level_236: bool) =
+  (((((temp___expr_235).us_split_fields3).rec__test_route__route__current).rec__test_route__point_acc__is_null_pointer = true) and
+  ((((temp___expr_235).us_split_fields3).rec__test_route__route__rest).rec__test_route__route_acc__is_null_pointer = true))
+
+axiom length__def_axiom :
+  (forall r:us_rep1 [length(r)].
+  (((not ((r).rec__test_route__route_acc__is_null_pointer = true)) ->
+  dynamic_invariant3(rec__test_route__route_acc__pointer_value(r), true,
+  false, true, true)) -> (length(r) = (if (bool_eq5(r,
+  us_null_pointer1) = true) then 0 else (min(2147483646,
+  length(((rec__test_route__route_acc__pointer_value(r)).us_split_fields3).rec__test_route__route__rest)) + 1)))))
+
+logic dummy8 : us_rep1
+
+type t5b__ref = { t5b__content : us_rep1
+}
+
+function t5b__ref_t5b__content__projection(a: t5b__ref) : us_rep1 =
+  (a).t5b__content
+
+logic nth_x : us_rep1, int -> int
+
+logic nth_x__function_guard : int, us_rep1, int -> prop
+
+predicate dynamic_invariant4(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+axiom nth_x__def_axiom :
+  (forall r:us_rep1.
+  (forall n:int [nth_x(r, n)].
+  ((((not ((r).rec__test_route__route_acc__is_null_pointer = true)) ->
+  dynamic_invariant3(rec__test_route__route_acc__pointer_value(r), true,
+  false, true, true)) and dynamic_invariant1(n, true, true, true, true)) ->
+  (nth_x(r,
+  n) = (if (n = 1) then to_rep((((((rec__test_route__route_acc__pointer_value(r)).us_split_fields3).rec__test_route__route__current).rec__test_route__point_acc__pointer_value).us_split_fields1).rec__test_route__point__x) else nth_x(((rec__test_route__route_acc__pointer_value(r)).us_split_fields3).rec__test_route__route__rest,
+  (n - 1)))))))
+
+type us_main_type1
+
+logic us_main_eq : us_main_type1, us_main_type1 -> bool
+
+type us_rep4
+
+logic bool_eq8 : us_rep4, us_rep4 -> bool
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic user_eq5 : us_rep4, us_rep4 -> bool
+
+logic dummy9 : us_rep4
+
+type sequence__ref = { sequence__content : us_rep4
+}
+
+function sequence__ref_sequence__content__projection(a: sequence__ref) : us_rep4 =
+  (a).sequence__content
+
+logic get : us_rep4, int -> int
+
+logic get__function_guard : int, us_rep4, int -> prop
+
+logic length1 : us_rep4 -> int
+
+logic length__function_guard1 : int, us_rep4 -> prop
+
+function last(container: us_rep4) : int = (0 + length1(container))
+
+logic last__function_guard : int, us_rep4 -> prop
+
+type element_type
+
+logic element_typeqtint : element_type -> int
+
+axiom element_typeqtaxiom :
+  (forall i:element_type. ((- 2147483648) <= element_typeqtint(i)))
+
+axiom element_typeqtaxiom1 :
+  (forall i:element_type. (element_typeqtint(i) <= 2147483647))
+
+predicate in_range4(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq6 : element_type, element_type -> bool
+
+logic dummy10 : element_type
+
+type element_type__ref = { element_type__content : element_type
+}
+
+function element_type__ref_element_type__content__projection(a: element_type__ref) : element_type =
+  (a).element_type__content
+
+predicate dynamic_invariant5(temp___expr_250: int, temp___is_init_246: bool,
+  temp___skip_constant_247: bool, temp___do_toplevel_248: bool,
+  temp___do_typ_inv_249: bool) = (((temp___is_init_246 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range4(temp___expr_250))
+
+type extended_index
+
+logic extended_indexqtint : extended_index -> int
+
+axiom extended_indexqtaxiom :
+  (forall i:extended_index. (0 <= extended_indexqtint(i)))
+
+axiom extended_indexqtaxiom1 :
+  (forall i:extended_index. (extended_indexqtint(i) <= 2147483647))
+
+predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq7 : extended_index, extended_index -> bool
+
+logic dummy11 : extended_index
+
+type extended_index__ref = { extended_index__content : extended_index
+}
+
+function extended_index__ref_extended_index__content__projection(a: extended_index__ref) : extended_index =
+  (a).extended_index__content
+
+predicate dynamic_invariant6(temp___expr_257: int, temp___is_init_253: bool,
+  temp___skip_constant_254: bool, temp___do_toplevel_255: bool,
+  temp___do_typ_inv_256: bool) = (((temp___is_init_253 = true) or
+  (0 <= 2147483647)) -> in_range5(temp___expr_257))
+
+logic bool_eq11 : int, int -> bool
+
+logic bool_ne : int, int -> bool
+
+logic bool_lt : int, int -> bool
+
+logic bool_le : int, int -> bool
+
+logic bool_gt : int, int -> bool
+
+logic bool_ge : int, int -> bool
+
+axiom bool_eq_axiom :
+  (forall x:int. (forall y:int. ((bool_eq11(x, y) = true) -> (x = y))))
+
+axiom bool_eq_axiom1 :
+  (forall x:int. (forall y:int. ((x = y) -> (bool_eq11(x, y) = true))))
+
+axiom bool_ne_axiom :
+  (forall x:int. (forall y:int. ((bool_ne(x, y) = true) -> (not (x = y)))))
+
+axiom bool_ne_axiom1 :
+  (forall x:int. (forall y:int. ((not (x = y)) -> (bool_ne(x, y) = true))))
+
+axiom bool_lt_axiom :
+  (forall x:int. (forall y:int. ((bool_lt(x, y) = true) -> (x <  y))))
+
+axiom bool_lt_axiom1 :
+  (forall x:int. (forall y:int. ((x <  y) -> (bool_lt(x, y) = true))))
+
+axiom bool_int__le_axiom :
+  (forall x:int. (forall y:int. ((bool_le(x, y) = true) -> (x <= y))))
+
+axiom bool_int__le_axiom1 :
+  (forall x:int. (forall y:int. ((x <= y) -> (bool_le(x, y) = true))))
+
+axiom bool_gt_axiom :
+  (forall x:int. (forall y:int. ((bool_gt(x, y) = true) -> (y <  x))))
+
+axiom bool_gt_axiom1 :
+  (forall x:int. (forall y:int. ((y <  x) -> (bool_gt(x, y) = true))))
+
+axiom bool_ge_axiom :
+  (forall x:int. (forall y:int. ((bool_ge(x, y) = true) -> (y <= x))))
+
+axiom bool_ge_axiom1 :
+  (forall x:int. (forall y:int. ((y <= x) -> (bool_ge(x, y) = true))))
+
+function length2(x: int, y: int) : int =
+  (if (x <= y) then ((y - x) + 1) else 0)
+
+function oeq(left: us_rep4, right: us_rep4) : bool =
+  andb(bool_eq11(length1(left), length1(right)),
+  (if (forall n:int. (((1 <= n) and (n <= last(left))) -> (get(left,
+      n) = get(right, n)))) then true else false))
+
+logic oeq__function_guard : bool, us_rep4, us_rep4 -> prop
+
+axiom user_eq__def_axiom :
+  (forall a:us_rep4. forall b:us_rep4 [user_eq5(a, b)]. (user_eq5(a,
+  b) = oeq(a, b)))
+
+predicate default_initial_assumption2(temp___expr_265: us_rep4,
+  temp___skip_top_level_266: bool) =
+  ((not (temp___skip_top_level_266 = true)) ->
+  (length1(temp___expr_265) = 0))
+
+axiom get__post_axiom :
+  (forall container:us_rep4.
+  (forall position:int [get(container, position)].
+  ((dynamic_invariant6(position, true, true, true, true) and
+  ((1 <= position) and (position <= last(container)))) ->
+  dynamic_invariant5(get(container, position), true, false, true, true))))
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic user_eq8 : us_rep4, us_rep4 -> bool
+
+logic dummy12 : us_rep4
+
+type int_seq__ref = { int_seq__content : us_rep4
+}
+
+function int_seq__ref_int_seq__content__projection(a: int_seq__ref) : us_rep4 =
+  (a).int_seq__content
+
+logic dummy13 : us_rep1
+
+type t65b__ref = { t65b__content : us_rep1
+}
+
+function t65b__ref_t65b__content__projection(a: t65b__ref) : us_rep1 =
+  (a).t65b__content
+
+logic all_x : us_rep1 -> us_rep4
+
+logic all_x__function_guard : us_rep4, us_rep1 -> prop
+
+axiom user_eq__def_axiom1 :
+  (forall a:us_rep4. forall b:us_rep4 [user_eq8(a, b)]. (user_eq8(a,
+  b) = oeq(a, b)))
+
+predicate default_initial_assumption3(temp___expr_280: us_rep4,
+  temp___skip_top_level_281: bool) =
+  ((not (temp___skip_top_level_281 = true)) ->
+  (length1(temp___expr_280) = 0))
+
+axiom all_x__post_axiom :
+  (forall r:us_rep1 [all_x(r)].
+  (((not ((r).rec__test_route__route_acc__is_null_pointer = true)) ->
+  dynamic_invariant3(rec__test_route__route_acc__pointer_value(r), true,
+  false, true, true)) -> (last(all_x(r)) = length(r))))
+
+axiom all_x__post_axiom1 :
+  (forall r:us_rep1 [all_x(r)].
+  (((not ((r).rec__test_route__route_acc__is_null_pointer = true)) ->
+  dynamic_invariant3(rec__test_route__route_acc__pointer_value(r), true,
+  false, true, true)) ->
+  (forall n:int. (((1 <= n) and (n <= length(r))) -> (get(all_x(r),
+  n) = nth_x(r, n))))))
+
+logic dummy14 : us_rep1
+
+type t77b__ref = { t77b__content : us_rep1
+}
+
+function t77b__ref_t77b__content__projection(a: t77b__ref) : us_rep1 =
+  (a).t77b__content
+
+logic r : us_rep1
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic n : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic dummy15 : us_rep2
+
+type t78b__ref = { t78b__content : us_rep2
+}
+
+function t78b__ref_t78b__content__projection(a: t78b__ref) : us_rep2 =
+  (a).t78b__content
+
+logic nth_point : us_rep1, int -> us_rep2
+
+logic nth_point__function_guard : us_rep2, us_rep1, int -> prop
+
+type us_pledge_ty
+
+type us_pledge_ty__ref = { us_pledge_ty__content : us_pledge_ty
+}
+
+logic us_pledge_get : us_pledge_ty, us_rep1, us_rep2 -> bool
+
+logic test_route__nth_point__pledge : us_rep1, int -> us_pledge_ty
+
+logic l1 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+predicate dynamic_invariant7(temp___expr_214: us_rep2,
+  temp___is_init_210: bool, temp___skip_constant_211: bool,
+  temp___do_toplevel_212: bool, temp___do_typ_inv_213: bool) =
+  (not ((temp___expr_214).rec__test_route__point_acc__is_null_pointer = true))
+
+predicate default_initial_assumption4(temp___expr_215: us_rep2,
+  temp___skip_top_level_216: bool) =
+  ((temp___expr_215).rec__test_route__point_acc__is_null_pointer = true)
+
+axiom length__post_axiom :
+  (forall r1:us_rep1 [length(r1)].
+  (((not ((r1).rec__test_route__route_acc__is_null_pointer = true)) ->
+  dynamic_invariant3(rec__test_route__route_acc__pointer_value(r1), true,
+  false, true, true)) -> dynamic_invariant(length(r1), true, false, true,
+  true)))
+
+axiom nth_x__post_axiom :
+  (forall r1:us_rep1.
+  (forall n1:int [nth_x(r1, n1)].
+  (((((not ((r1).rec__test_route__route_acc__is_null_pointer = true)) ->
+  dynamic_invariant3(rec__test_route__route_acc__pointer_value(r1), true,
+  false, true, true)) and dynamic_invariant1(n1, true, true, true, true)) and
+  (n1 <= length(r1))) -> dynamic_invariant4(nth_x(r1, n1), true, false, true,
+  true))))
+
+axiom l1__def_axiom : (l1 = length(r))
+
+type count_type
+
+logic count_typeqtint : count_type -> int
+
+axiom count_typeqtaxiom : (forall i:count_type. (0 <= count_typeqtint(i)))
+
+axiom count_typeqtaxiom1 :
+  (forall i:count_type. (count_typeqtint(i) <= 2147483647))
+
+predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> int
+
+logic user_eq9 : count_type, count_type -> bool
+
+logic dummy16 : count_type
+
+type count_type__ref = { count_type__content : count_type
+}
+
+function count_type__ref_count_type__content__projection(a: count_type__ref) : count_type =
+  (a).count_type__content
+
+predicate dynamic_invariant8(temp___expr_272: int, temp___is_init_268: bool,
+  temp___skip_constant_269: bool, temp___do_toplevel_270: bool,
+  temp___do_typ_inv_271: bool) = (((temp___is_init_268 = true) or
+  (0 <= 2147483647)) -> in_range6(temp___expr_272))
+
+axiom length__post_axiom1 :
+  (forall container:us_rep4 [length1(container)].
+  ((0 + length1(container)) <= 2147483647))
+
+axiom length__post_axiom2 :
+  (forall container:us_rep4 [length1(container)].
+  dynamic_invariant8(length1(container), true, false, true, true))
+
+ (* File "test_route.adb", line 64, characters 0-0 *)
+goal defqtvc :
+  (((not ((r).rec__test_route__route_acc__is_null_pointer = true)) ->
+  dynamic_invariant3(rec__test_route__route_acc__pointer_value(r), true,
+  false, true, true)) -> (dynamic_invariant1(n, true, false, true, true) ->
+  ((n <  length(r)) -> (let o = r : us_rep1 in
+  (let test_route__nth_point__l1__assume = length(o) : int in
+  ((dynamic_invariant(test_route__nth_point__l1__assume, true, false, true,
+  true) and (test_route__nth_point__l1__assume = (if (bool_eq5(o,
+  us_null_pointer1) = true) then 0 else (min(2147483646,
+  length(((rec__test_route__route_acc__pointer_value(o)).us_split_fields3).rec__test_route__route__rest)) + 1)))) ->
+  ((test_route__nth_point__l1__assume = l1) -> (dynamic_invariant(l1, true,
+  false, true, true) ->
+  (forall spark__branch:bool.
+  ((spark__branch = (if (n = 1) then true else false)) ->
+  ((spark__branch = true) ->
+  rec__test_route__point_acc__pointer_value__pred(((rec__test_route__route_acc__pointer_value(r)).us_split_fields3).rec__test_route__route__current))))))))))))

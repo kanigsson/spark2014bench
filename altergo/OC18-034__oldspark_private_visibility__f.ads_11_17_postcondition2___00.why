@@ -1,0 +1,286 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type myp
+
+logic mypqtint : myp -> int
+
+axiom mypqtaxiom : (forall i:myp. (1 <= mypqtint(i)))
+
+axiom mypqtaxiom1 : (forall i:myp. (mypqtint(i) <= 10))
+
+predicate in_range1(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : myp, myp -> bool
+
+logic dummy : myp
+
+type myp__ref = { myp__content : myp
+}
+
+function myp__ref_myp__content__projection(a: myp__ref) : myp =
+  (a).myp__content
+
+function to_rep(x: myp) : int = mypqtint(x)
+
+logic of_rep : int -> myp
+
+axiom inversion_axiom : (forall x:myp [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:myp [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type us_split_fields = { rec__ada___bt__o__t__f1 : myp;
+rec__ada___bt__o__t__f2 : myp
+}
+
+function us_split_fields_rec__ada___bt__o__t__f1__projection(a: us_split_fields) : myp =
+  (a).rec__ada___bt__o__t__f1
+
+function us_split_fields_rec__ada___bt__o__t__f2__projection(a: us_split_fields) : myp =
+  (a).rec__ada___bt__o__t__f2
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq2(a: us_rep, b: us_rep) : bool =
+  (if ((to_rep(((a).us_split_fields1).rec__ada___bt__o__t__f1) = to_rep(((b).us_split_fields1).rec__ada___bt__o__t__f1)) and
+  (to_rep(((a).us_split_fields1).rec__ada___bt__o__t__f2) = to_rep(((b).us_split_fields1).rec__ada___bt__o__t__f2))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic ada___bt__o__t__f1__first__bit : int
+
+logic ada___bt__o__t__f1__last__bit : int
+
+logic ada___bt__o__t__f1__position : int
+
+axiom ada___bt__o__t__f1__first__bit_axiom :
+  (0 <= ada___bt__o__t__f1__first__bit)
+
+axiom ada___bt__o__t__f1__last__bit_axiom :
+  (ada___bt__o__t__f1__first__bit <  ada___bt__o__t__f1__last__bit)
+
+axiom ada___bt__o__t__f1__position_axiom :
+  (0 <= ada___bt__o__t__f1__position)
+
+logic ada___bt__o__t__f2__first__bit : int
+
+logic ada___bt__o__t__f2__last__bit : int
+
+logic ada___bt__o__t__f2__position : int
+
+axiom ada___bt__o__t__f2__first__bit_axiom :
+  (0 <= ada___bt__o__t__f2__first__bit)
+
+axiom ada___bt__o__t__f2__last__bit_axiom :
+  (ada___bt__o__t__f2__first__bit <  ada___bt__o__t__f2__last__bit)
+
+axiom ada___bt__o__t__f2__position_axiom :
+  (0 <= ada___bt__o__t__f2__position)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type t__ref = { t__content : us_rep
+}
+
+function t__ref_t__content__projection(a: t__ref) : us_rep = (a).t__content
+
+type os__ref = { os__content : us_rep
+}
+
+function os__ref_os__content__projection(a: os__ref) : us_rep =
+  (a).os__content
+
+type us_split_fields2 = { rec__f__r1__f1 : us_rep
+}
+
+function us_split_fields_rec__f__r1__f1__projection(a: us_split_fields2) : us_rep =
+  (a).rec__f__r1__f1
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_fields3 : us_split_fields2
+}
+
+function us_rep___split_fields__2__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+function bool_eq3(a: us_rep1, b: us_rep1) : bool =
+  (if (bool_eq2(((a).us_split_fields3).rec__f__r1__f1,
+  ((b).us_split_fields3).rec__f__r1__f1) = true) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic f__r1__f1__first__bit : int
+
+logic f__r1__f1__last__bit : int
+
+logic f__r1__f1__position : int
+
+axiom f__r1__f1__first__bit_axiom : (0 <= f__r1__f1__first__bit)
+
+axiom f__r1__f1__last__bit_axiom :
+  (f__r1__f1__first__bit <  f__r1__f1__last__bit)
+
+axiom f__r1__f1__position_axiom : (0 <= f__r1__f1__position)
+
+logic user_eq2 : us_rep1, us_rep1 -> bool
+
+logic dummy2 : us_rep1
+
+type r1__ref = { r1__content : us_rep1
+}
+
+function r1__ref_r1__content__projection(a: r1__ref) : us_rep1 =
+  (a).r1__content
+
+logic x : us_rep1
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic sf : us_rep -> int
+
+logic sf__function_guard : int, us_rep -> prop
+
+predicate dynamic_invariant(temp___expr_160: int, temp___is_init_156: bool,
+  temp___skip_constant_157: bool, temp___do_toplevel_158: bool,
+  temp___do_typ_inv_159: bool) = (((temp___is_init_156 = true) or
+  (1 <= 10)) -> in_range1(temp___expr_160))
+
+axiom sf__post_axiom :
+  (forall s:us_rep [sf(s)]. (let result = sf(s) : int in
+  (sf__function_guard(result, s) -> dynamic_invariant(result, true, false,
+  true, true))))
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+ (* File "f.ads", line 10, characters 0-0 *)
+goal defqtvc :
+  (forall y:int. (dynamic_invariant(y, false, false, true, true) -> (let o =
+  ((x).us_split_fields3).rec__f__r1__f1 : us_rep in (let o1 = sf(o) : int in
+  ((sf__function_guard(o1, o) and dynamic_invariant(o1, true, false, true,
+  true)) ->
+  (forall y1:int. ((y1 = o1) ->
+  (forall f__v__result:bool.
+  ((f__v__result = (if (y1 = 2) then true else false)) ->
+  ((f__v__result = true) ->
+  (sf__function_guard(sf(((x).us_split_fields3).rec__f__r1__f1),
+  ((x).us_split_fields3).rec__f__r1__f1) ->
+  (sf(((x).us_split_fields3).rec__f__r1__f1) = 2))))))))))))

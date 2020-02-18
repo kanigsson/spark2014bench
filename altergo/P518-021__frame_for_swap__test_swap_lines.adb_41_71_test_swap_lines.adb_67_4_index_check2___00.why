@@ -1,0 +1,664 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_39))
+
+function to_rep(x: natural) : int = naturalqtint(x)
+
+logic of_rep : int -> natural
+
+axiom inversion_axiom :
+  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:natural [to_rep(x)]. in_range2(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range2(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type map
+
+type map__ref = { map__content : map
+}
+
+logic get : map, int, int -> natural
+
+logic set : map, int, int, natural -> map
+
+axiom Select_eq :
+  (forall m:map.
+  (forall i:int.
+  (forall j:int.
+  (forall a:natural [set(m, i, j, a)]. (get(set(m, i, j, a), i, j) = a)))))
+
+axiom Select_neq :
+  (forall m:map.
+  (forall i:int. forall i2:int.
+  (forall j:int. forall j2:int.
+  (forall a:natural [get(set(m, i, j, a), i2, j2)| set(m, i, j, a), get(m,
+  i2, j2)]. ((not ((i = i2) and (j = j2))) -> (get(set(m, i, j, a), i2,
+  j2) = get(m, i2, j2)))))))
+
+logic slide : map, int, int, int, int -> map
+
+axiom slide_def :
+  (forall a:map.
+  (forall new_first:int. forall old_first:int.
+  (forall new_first_2:int. forall old_first_2:int.
+  (forall i:int.
+  (forall j:int [get(slide(a, old_first, new_first, old_first_2,
+  new_first_2), i, j)]. (get(slide(a, old_first, new_first, old_first_2,
+  new_first_2), i, j) = get(a, (i - (new_first - old_first)),
+  (j - (new_first_2 - old_first_2)))))))))
+
+function bool_eq3(a: map, a__first: int, a__last: int, a__first_2: int,
+  a__last_2: int, b: map, b__first: int, b__last: int, b__first_2: int,
+  b__last_2: int) : bool =
+  (if (((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (if (a__first_2 <= a__last_2) then ((b__first_2 <= b__last_2) and
+  ((a__last_2 - a__first_2) = (b__last_2 - b__first_2))) else (b__last_2 <  b__first_2))) and
+  (forall temp___idx_154:int. forall temp___idx_155:int.
+  ((((a__first <= temp___idx_154) and (temp___idx_154 <= a__last)) and
+  ((a__first_2 <= temp___idx_155) and (temp___idx_155 <= a__last_2))) ->
+  (to_rep(get(a, temp___idx_154, temp___idx_155)) = to_rep(get(b,
+  ((b__first - a__first) + temp___idx_154),
+  ((b__first_2 - a__first_2) + temp___idx_155))))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq3(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq3(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq3(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq3(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first_2 <= a__last_2) ->
+  (b__first_2 <= b__last_2)))))
+
+axiom bool_eq_rev4 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq3(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((a__first_2 <= a__last_2) ->
+  ((a__last_2 - a__first_2) = (b__last_2 - b__first_2))))))
+
+axiom bool_eq_rev5 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq3(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) -> ((not (a__first_2 <= a__last_2)) ->
+  (b__last_2 <  b__first_2)))))
+
+axiom bool_eq_rev6 :
+  (forall a:map. forall b:map.
+  (forall a__first:int. forall a__last:int. forall a__first_2:int.
+  forall a__last_2:int. forall b__first:int. forall b__last:int.
+  forall b__first_2:int. forall b__last_2:int. ((bool_eq3(b, b__first,
+  b__last, b__first_2, b__last_2, a, a__first, a__last, a__first_2,
+  a__last_2) = true) ->
+  (forall temp___idx_154:int. forall temp___idx_155:int.
+  ((((a__first <= temp___idx_154) and (temp___idx_154 <= a__last)) and
+  ((a__first_2 <= temp___idx_155) and (temp___idx_155 <= a__last_2))) ->
+  (to_rep(get(a, temp___idx_154, temp___idx_155)) = to_rep(get(b,
+  ((b__first - a__first) + temp___idx_154),
+  ((b__first_2 - a__first_2) + temp___idx_155)))))))))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic c62b : map
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic c77b : map
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+logic attr__ATTRIBUTE_ADDRESS6 : int
+
+logic c96b : map
+
+logic attr__ATTRIBUTE_ADDRESS7 : int
+
+logic attr__ATTRIBUTE_ADDRESS8 : int
+
+type tTmSP1
+
+logic tTmSP1qtint : tTmSP1 -> int
+
+axiom tTmSP1qtaxiom : (forall i:tTmSP1. (1 <= tTmSP1qtint(i)))
+
+axiom tTmSP1qtaxiom1 : (forall i:tTmSP1. (tTmSP1qtint(i) <= 10))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : tTmSP1, tTmSP1 -> bool
+
+logic dummy2 : tTmSP1
+
+type tTmSP1__ref = { tTmSP1__content : tTmSP1
+}
+
+function tTmSP1__ref_tTmSP1__content__projection(a: tTmSP1__ref) : tTmSP1 =
+  (a).tTmSP1__content
+
+type tTmSP2
+
+logic tTmSP2qtint : tTmSP2 -> int
+
+axiom tTmSP2qtaxiom : (forall i:tTmSP2. (1 <= tTmSP2qtint(i)))
+
+axiom tTmSP2qtaxiom1 : (forall i:tTmSP2. (tTmSP2qtint(i) <= 10))
+
+predicate in_range4(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq3 : tTmSP2, tTmSP2 -> bool
+
+logic dummy3 : tTmSP2
+
+type tTmSP2__ref = { tTmSP2__content : tTmSP2
+}
+
+function tTmSP2__ref_tTmSP2__content__projection(a: tTmSP2__ref) : tTmSP2 =
+  (a).tTmSP2__content
+
+type t64b
+
+logic t64bqtint : t64b -> int
+
+axiom t64bqtaxiom : (forall i:t64b. (1 <= t64bqtint(i)))
+
+axiom t64bqtaxiom1 : (forall i:t64b. (t64bqtint(i) <= 10))
+
+predicate in_range5(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq4 : t64b, t64b -> bool
+
+logic dummy4 : t64b
+
+type t64b__ref = { t64b__content : t64b
+}
+
+function t64b__ref_t64b__content__projection(a: t64b__ref) : t64b =
+  (a).t64b__content
+
+type t79b
+
+logic t79bqtint : t79b -> int
+
+axiom t79bqtaxiom : (forall i:t79b. (0 <= t79bqtint(i)))
+
+axiom t79bqtaxiom1 : (forall i:t79b. (t79bqtint(i) <= 9))
+
+predicate in_range6(x: int) = ((0 <= x) and (x <= 9))
+
+function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> int
+
+logic user_eq5 : t79b, t79b -> bool
+
+logic dummy5 : t79b
+
+type t79b__ref = { t79b__content : t79b
+}
+
+function t79b__ref_t79b__content__projection(a: t79b__ref) : t79b =
+  (a).t79b__content
+
+type t98b
+
+logic t98bqtint : t98b -> int
+
+axiom t98bqtaxiom : (forall i:t98b. (1 <= t98bqtint(i)))
+
+axiom t98bqtaxiom1 : (forall i:t98b. (t98bqtint(i) <= 10))
+
+predicate in_range7(x: int) = ((1 <= x) and (x <= 10))
+
+function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE7 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check7 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE7 : us_image -> int
+
+logic user_eq6 : t98b, t98b -> bool
+
+logic dummy6 : t98b
+
+type t98b__ref = { t98b__content : t98b
+}
+
+function t98b__ref_t98b__content__projection(a: t98b__ref) : t98b =
+  (a).t98b__content
+
+logic temp_____aggregate_def_232 : int, int, int -> map
+
+logic temp_____aggregate_def_249 : int, int, int -> map
+
+logic temp_____aggregate_def_269 : int -> map
+
+predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+logic rliteral : natural
+
+axiom rliteral_axiom : (naturalqtint(rliteral) = 2)
+
+logic rliteral1 : natural
+
+axiom rliteral_axiom1 : (naturalqtint(rliteral1) = 1)
+
+logic rliteral2 : natural
+
+axiom rliteral_axiom2 : (naturalqtint(rliteral2) = 0)
+
+axiom def_axiom :
+  (forall temp___234:int. forall temp___235:int. forall temp___236:int.
+  (((dynamic_invariant(temp___234, true, true, true, true) and
+  dynamic_invariant(temp___235, true, true, true, true)) and
+  dynamic_invariant(temp___236, true, true, true, true)) ->
+  (forall temp___237:int. forall temp___238:int. ((temp___237 = 7) ->
+  (get(temp_____aggregate_def_232(temp___234, temp___235, temp___236),
+  temp___237, temp___238) = rliteral)))))
+
+axiom def_axiom1 :
+  (forall temp___234:int. forall temp___235:int. forall temp___236:int.
+  (((dynamic_invariant(temp___234, true, true, true, true) and
+  dynamic_invariant(temp___235, true, true, true, true)) and
+  dynamic_invariant(temp___236, true, true, true, true)) ->
+  (forall temp___237:int. forall temp___238:int. ((not (temp___237 = 7)) ->
+  ((temp___237 = 5) -> (get(temp_____aggregate_def_232(temp___234,
+  temp___235, temp___236), temp___237, temp___238) = rliteral1))))))
+
+axiom def_axiom2 :
+  (forall temp___234:int. forall temp___235:int. forall temp___236:int.
+  (((dynamic_invariant(temp___234, true, true, true, true) and
+  dynamic_invariant(temp___235, true, true, true, true)) and
+  dynamic_invariant(temp___236, true, true, true, true)) ->
+  (forall temp___237:int. forall temp___238:int. ((not (temp___237 = 7)) ->
+  ((not (temp___237 = 5)) -> (get(temp_____aggregate_def_232(temp___234,
+  temp___235, temp___236), temp___237, temp___238) = rliteral2))))))
+
+axiom def_axiom3 :
+  (forall temp___251:int. forall temp___252:int. forall temp___253:int.
+  (((dynamic_invariant(temp___251, true, true, true, true) and
+  dynamic_invariant(temp___252, true, true, true, true)) and
+  dynamic_invariant(temp___253, true, true, true, true)) ->
+  (forall temp___254:int. forall temp___255:int. ((temp___254 = 7) ->
+  (get(temp_____aggregate_def_249(temp___251, temp___252, temp___253),
+  temp___254, temp___255) = rliteral)))))
+
+axiom def_axiom4 :
+  (forall temp___251:int. forall temp___252:int. forall temp___253:int.
+  (((dynamic_invariant(temp___251, true, true, true, true) and
+  dynamic_invariant(temp___252, true, true, true, true)) and
+  dynamic_invariant(temp___253, true, true, true, true)) ->
+  (forall temp___254:int. forall temp___255:int. ((not (temp___254 = 7)) ->
+  ((temp___254 = 5) -> (get(temp_____aggregate_def_249(temp___251,
+  temp___252, temp___253), temp___254, temp___255) = rliteral1))))))
+
+axiom def_axiom5 :
+  (forall temp___251:int. forall temp___252:int. forall temp___253:int.
+  (((dynamic_invariant(temp___251, true, true, true, true) and
+  dynamic_invariant(temp___252, true, true, true, true)) and
+  dynamic_invariant(temp___253, true, true, true, true)) ->
+  (forall temp___254:int. forall temp___255:int. ((not (temp___254 = 7)) ->
+  ((not (temp___254 = 5)) -> (get(temp_____aggregate_def_249(temp___251,
+  temp___252, temp___253), temp___254, temp___255) = rliteral2))))))
+
+axiom def_axiom6 :
+  (forall temp___271:int. (dynamic_invariant(temp___271, true, true, true,
+  true) ->
+  (forall temp___272:int. forall temp___273:int.
+  (get(temp_____aggregate_def_269(temp___271), temp___272,
+  temp___273) = rliteral2))))
+
+ (* File "test_swap_lines.adb", line 1, characters 0-0 *)
+goal defqtvc :
+  (forall tmp:int. forall tmp1:int.
+  (forall m:map. ((m = temp_____aggregate_def_232(1, 2, 0)) -> ((m = c62b) ->
+  (forall m1:map. ((dynamic_invariant(tmp, false, false, true, true) and
+  (exists c:int. ((c = 1) and (if (andb((if (1 <= c) then true else false),
+  (if (c <= 10) then true else false)) = true) then (exists temp___loop_entry_247:map.
+                                                    ((temp___loop_entry_247 = m) and
+                                                    (exists temp___loop_entry_248:map.
+                                                    ((temp___loop_entry_248 = m) and
+                                                    (exists m2:map.
+                                                    exists tmp2:int.
+                                                    exists c1:int.
+                                                    ((forall i:int.
+                                                     (((1 <= i) and
+                                                     (i <= (c1 - 1))) ->
+                                                     ((to_rep(get(m2, 5,
+                                                     i)) = to_rep(get(temp___loop_entry_247,
+                                                     7, i))) and
+                                                     (to_rep(get(m2, 7,
+                                                     i)) = to_rep(get(temp___loop_entry_248,
+                                                     5, i)))))) and
+                                                    ((andb((if ((in_range5(c1) and
+                                                    dynamic_invariant(tmp2,
+                                                    false, true, true,
+                                                    true)) and
+                                                    (forall temp___244:int.
+                                                    forall temp___245:int.
+                                                    ((((1 <= temp___244) and
+                                                    (temp___244 <= 10)) and
+                                                    ((1 <= temp___245) and
+                                                    (temp___245 <= 10))) ->
+                                                    ((((10 <  temp___245) or
+                                                    ((temp___245 <  1) or
+                                                    ((c1 <= temp___245) or
+                                                    (not (7 = temp___244))))) and
+                                                    ((10 <  temp___245) or
+                                                    ((temp___245 <  1) or
+                                                    ((c1 <= temp___245) or
+                                                    (not (5 = temp___244)))))) ->
+                                                    (get(m2, temp___244,
+                                                    temp___245) = get(m,
+                                                    temp___244,
+                                                    temp___245)))))) then true else false),
+                                                    (if ((1 <= c1) and
+                                                    (c1 <= 10)) then true else false)) = true) and
+                                                    (exists o:int.
+                                                    ((to_rep(get(m2, 5,
+                                                    c1)) = o) and
+                                                    (exists tmp3:int.
+                                                    ((tmp3 = o) and
+                                                    (exists o1:int.
+                                                    ((to_rep(get(m2, 7,
+                                                    c1)) = o1) and
+                                                    (exists o2:natural.
+                                                    ((to_rep(o2) = o1) and
+                                                    (exists m3:map.
+                                                    ((m3 = set(m2, 5, c1,
+                                                    o2)) and
+                                                    (exists o3:natural.
+                                                    ((to_rep(o3) = tmp3) and
+                                                    ((m1 = set(m3, 7, c1,
+                                                    o3)) and (c1 = 10))))))))))))))))))))) else (m1 = m))))) ->
+  ((forall i:int. (((1 <= i) and (i <= 10)) ->
+   (forall j:int. (((1 <= j) and (j <= 10)) ->
+   (if (i = 5) then (to_rep(get(m1, i,
+   j)) = 2) else (if (i = 7) then (to_rep(get(m1, i,
+   j)) = 1) else (to_rep(get(m1, i, j)) = 0))))))) ->
+  (forall m2:map. ((m2 = temp_____aggregate_def_249(1, 2, 0)) ->
+  ((m2 = c77b) ->
+  (forall m3:map. ((dynamic_invariant(tmp1, false, false, true, true) and
+  (exists c:int. ((c = 0) and (if (andb((if (0 <= c) then true else false),
+  (if (c <= 9) then true else false)) = true) then (exists temp___loop_entry_268:map.
+                                                   ((temp___loop_entry_268 = m2) and
+                                                   (exists temp___loop_entry_267:map.
+                                                   ((temp___loop_entry_267 = m2) and
+                                                   (exists temp___loop_entry_265:map.
+                                                   ((temp___loop_entry_265 = m2) and
+                                                   (exists temp___loop_entry_264:map.
+                                                   ((temp___loop_entry_264 = m2) and
+                                                   (exists m4:map.
+                                                   exists tmp2:int.
+                                                   exists c1:int.
+                                                   (((forall i:int.
+                                                     (((1 <= i) and
+                                                     (i <= c1)) ->
+                                                     ((to_rep(get(m4, 5,
+                                                     i)) = to_rep(get(temp___loop_entry_267,
+                                                     7, i))) and
+                                                     (to_rep(get(m4, 7,
+                                                     i)) = to_rep(get(temp___loop_entry_268,
+                                                     5, i)))))) and
+                                                   (forall i:int.
+                                                   ((((c1 + 1) <= i) and
+                                                   (i <= 10)) ->
+                                                   ((to_rep(get(m4, 5,
+                                                   i)) = to_rep(get(temp___loop_entry_264,
+                                                   5, i))) and
+                                                   (to_rep(get(m4, 7,
+                                                   i)) = to_rep(get(temp___loop_entry_265,
+                                                   7, i))))))) and
+                                                   ((andb((if ((dynamic_invariant(tmp2,
+                                                   false, true, true,
+                                                   true) and
+                                                   (forall temp___260:int.
+                                                   forall temp___261:int.
+                                                   ((((1 <= temp___260) and
+                                                   (temp___260 <= 10)) and
+                                                   ((1 <= temp___261) and
+                                                   (temp___261 <= 10))) ->
+                                                   (((not (5 = temp___260)) and
+                                                   (not (7 = temp___260))) ->
+                                                   (get(m4, temp___260,
+                                                   temp___261) = get(m2,
+                                                   temp___260,
+                                                   temp___261)))))) and
+                                                   in_range6(c1)) then true else false),
+                                                   (if ((0 <= c1) and
+                                                   (c1 <= 9)) then true else false)) = true) and
+                                                   (exists o:int.
+                                                   ((to_rep(get(m4, 5,
+                                                   (c1 + 1))) = o) and
+                                                   (exists tmp3:int.
+                                                   ((tmp3 = o) and
+                                                   (exists o1:int.
+                                                   ((to_rep(get(m4, 7,
+                                                   (c1 + 1))) = o1) and
+                                                   (exists o2:natural.
+                                                   ((to_rep(o2) = o1) and
+                                                   (exists m5:map.
+                                                   ((m5 = set(m4, 5,
+                                                   (c1 + 1), o2)) and
+                                                   (exists o3:natural.
+                                                   ((to_rep(o3) = tmp3) and
+                                                   ((m3 = set(m5, 7,
+                                                   (c1 + 1), o3)) and
+                                                   (c1 = 9))))))))))))))))))))))))) else (m3 = m2))))) ->
+  ((forall i:int. (((1 <= i) and (i <= 10)) ->
+   (forall j:int. (((1 <= j) and (j <= 10)) ->
+   (if (i = 5) then (to_rep(get(m3, i,
+   j)) = 2) else (if (i = 7) then (to_rep(get(m3, i,
+   j)) = 1) else (to_rep(get(m3, i, j)) = 0))))))) ->
+  (forall m4:map. ((m4 = temp_____aggregate_def_269(0)) -> ((m4 = c96b) ->
+  (forall i:int. ((i = 1) -> ((andb((if (1 <= i) then true else false),
+  (if (i <= 10) then true else false)) = true) ->
+  (forall temp___loop_entry_281:map. ((temp___loop_entry_281 = m4) ->
+  (forall temp___loop_entry_283:map. ((temp___loop_entry_283 = m4) ->
+  (forall usf:int. ((andb((if (1 <= usf) then true else false),
+  (if (usf <= (i - 1)) then true else false)) = true) ->
+  (forall usf1:int. ((andb((if (1 <= usf1) then true else false),
+  (if (usf1 <= (i - 1)) then true else false)) = true) ->
+  ((not (usf = usf1)) -> (((1 <= usf1) and (usf1 <= 10)) -> (1 <= usf))))))))))))))))))))))))))))))

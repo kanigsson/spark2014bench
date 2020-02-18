@@ -1,0 +1,827 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type component_type
+
+logic component_typeqtint : component_type -> int
+
+axiom component_typeqtaxiom :
+  (forall i:component_type. (0 <= component_typeqtint(i)))
+
+axiom component_typeqtaxiom1 :
+  (forall i:component_type. (component_typeqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : component_type, component_type -> bool
+
+logic dummy1 : component_type
+
+type component_type__ref = { component_type__content : component_type
+}
+
+function component_type__ref_component_type__content__projection(a: component_type__ref) : component_type =
+  (a).component_type__content
+
+type component_index_type
+
+logic component_index_typeqtint : component_index_type -> int
+
+axiom component_index_typeqtaxiom :
+  (forall i:component_index_type. (1 <= component_index_typeqtint(i)))
+
+axiom component_index_typeqtaxiom1 :
+  (forall i:component_index_type. (component_index_typeqtint(i) <= 15))
+
+predicate in_range3(x: int) = ((1 <= x) and (x <= 15))
+
+function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq2 : component_index_type, component_index_type -> bool
+
+logic dummy2 : component_index_type
+
+type component_index_type__ref = { component_index_type__content :
+component_index_type
+}
+
+function component_index_type__ref_component_index_type__content__projection(a: component_index_type__ref) : component_index_type =
+  (a).component_index_type__content
+
+function to_rep1(x: component_type) : int = component_typeqtint(x)
+
+logic of_rep1 : int -> component_type
+
+axiom inversion_axiom1 :
+  (forall x:component_type [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 :
+  (forall x:component_type [to_rep1(x)]. in_range2(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type map__ref = { map__content : (int,component_type) farray
+}
+
+logic slide : (int,component_type) farray, int,
+  int -> (int,component_type) farray
+
+axiom slide_eq :
+  (forall a:(int,component_type) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,component_type) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq4(a: (int,component_type) farray, a__first: int,
+  a__last: int, b: (int,component_type) farray, b__first: int,
+  b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep1((a[temp___idx_154])) = to_rep1((b[((b__first - a__first) + temp___idx_154)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,component_type) farray.
+  forall b:(int,component_type) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,component_type) farray.
+  forall b:(int,component_type) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,component_type) farray.
+  forall b:(int,component_type) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,component_type) farray.
+  forall b:(int,component_type) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq4(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep1((a[temp___idx_154])) = to_rep1((b[((b__first - a__first) + temp___idx_154)]))))))))
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (in_range3(low) and in_range3(high)))))
+
+type us_t = { elts : (int,component_type) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,component_type) farray = (a).elts
+
+function of_array(a: (int,component_type) farray, f: int, l: int) : us_t = {
+  elts = a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep(first((a).rt))
+
+function last1(a: us_t) : int = to_rep(last((a).rt))
+
+function length(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq5(x: us_t, y: us_t) : bool = bool_eq4((x).elts,
+  to_rep(first((x).rt)), to_rep(last((x).rt)), (y).elts,
+  to_rep(first((y).rt)), to_rep(last((y).rt)))
+
+logic user_eq3 : us_t, us_t -> bool
+
+logic dummy3 : us_t
+
+type component_array__ref = { component_array__content : us_t
+}
+
+function component_array__ref_component_array__content__projection(a: component_array__ref) : us_t =
+  (a).component_array__content
+
+logic separates : us_t
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+type root_component_type
+
+logic root_component_typeqtint : root_component_type -> int
+
+axiom root_component_typeqtaxiom :
+  (forall i:root_component_type. (0 <= root_component_typeqtint(i)))
+
+axiom root_component_typeqtaxiom1 :
+  (forall i:root_component_type. (root_component_typeqtint(i) <= 2))
+
+predicate in_range4(x: int) = ((0 <= x) and (x <= 2))
+
+function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq4 : root_component_type, root_component_type -> bool
+
+logic dummy4 : root_component_type
+
+type root_component_type__ref = { root_component_type__content :
+root_component_type
+}
+
+function root_component_type__ref_root_component_type__content__projection(a: root_component_type__ref) : root_component_type =
+  (a).root_component_type__content
+
+function to_rep2(x: root_component_type) : int = root_component_typeqtint(x)
+
+logic of_rep2 : int -> root_component_type
+
+axiom inversion_axiom2 :
+  (forall x:root_component_type [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
+
+axiom range_axiom2 :
+  (forall x:root_component_type [to_rep2(x)]. in_range4(to_rep2(x)))
+
+axiom coerce_axiom2 :
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range4(x) ->
+  (to_rep2(of_rep2(x)) = x)))
+
+type second_level_component_type
+
+logic second_level_component_typeqtint : second_level_component_type -> int
+
+axiom second_level_component_typeqtaxiom :
+  (forall i:second_level_component_type.
+  (0 <= second_level_component_typeqtint(i)))
+
+axiom second_level_component_typeqtaxiom1 :
+  (forall i:second_level_component_type.
+  (second_level_component_typeqtint(i) <= 175))
+
+predicate in_range5(x: int) = ((0 <= x) and (x <= 175))
+
+function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq5 : second_level_component_type,
+  second_level_component_type -> bool
+
+logic dummy5 : second_level_component_type
+
+type second_level_component_type__ref = {
+second_level_component_type__content : second_level_component_type
+}
+
+function second_level_component_type__ref_second_level_component_type__content__projection(a: second_level_component_type__ref) : second_level_component_type =
+  (a).second_level_component_type__content
+
+function to_rep3(x: second_level_component_type) : int =
+  second_level_component_typeqtint(x)
+
+logic of_rep3 : int -> second_level_component_type
+
+axiom inversion_axiom3 :
+  (forall x:second_level_component_type [to_rep3(x)].
+  (of_rep3(to_rep3(x)) = x))
+
+axiom range_axiom3 :
+  (forall x:second_level_component_type [to_rep3(x)]. in_range5(to_rep3(x)))
+
+axiom coerce_axiom3 :
+  (forall x:int [to_rep3(of_rep3(x))]. (in_range5(x) ->
+  (to_rep3(of_rep3(x)) = x)))
+
+logic dummy6 : (int,component_type) farray
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic component__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom component__size_axiom1 : (0 <= component__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic user_eq6 : (int,component_type) farray,
+  (int,component_type) farray -> bool
+
+type other_count_type
+
+logic other_count_typeqtint : other_count_type -> int
+
+axiom other_count_typeqtaxiom :
+  (forall i:other_count_type. (0 <= other_count_typeqtint(i)))
+
+axiom other_count_typeqtaxiom1 :
+  (forall i:other_count_type. (other_count_typeqtint(i) <= 13))
+
+predicate in_range6(x: int) = ((0 <= x) and (x <= 13))
+
+function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> int
+
+logic user_eq7 : other_count_type, other_count_type -> bool
+
+logic dummy7 : other_count_type
+
+type other_count_type__ref = { other_count_type__content : other_count_type
+}
+
+function other_count_type__ref_other_count_type__content__projection(a: other_count_type__ref) : other_count_type =
+  (a).other_count_type__content
+
+function to_rep4(x: other_count_type) : int = other_count_typeqtint(x)
+
+logic of_rep4 : int -> other_count_type
+
+axiom inversion_axiom4 :
+  (forall x:other_count_type [to_rep4(x)]. (of_rep4(to_rep4(x)) = x))
+
+axiom range_axiom4 :
+  (forall x:other_count_type [to_rep4(x)]. in_range6(to_rep4(x)))
+
+axiom coerce_axiom4 :
+  (forall x:int [to_rep4(of_rep4(x))]. (in_range6(x) ->
+  (to_rep4(of_rep4(x)) = x)))
+
+type us_split_fields = {
+rec__ada___hermes__oid__object_identifier__root_component :
+root_component_type;
+rec__ada___hermes__oid__object_identifier__second_level_component :
+second_level_component_type;
+rec__ada___hermes__oid__object_identifier__other_components :
+(int,component_type) farray;
+rec__ada___hermes__oid__object_identifier__other_component_count :
+other_count_type
+}
+
+function us_split_fields_rec__ada___hermes__oid__object_identifier__root_component__projection(a: us_split_fields) : root_component_type =
+  (a).rec__ada___hermes__oid__object_identifier__root_component
+
+function us_split_fields_rec__ada___hermes__oid__object_identifier__second_level_component__projection(a: us_split_fields) : second_level_component_type =
+  (a).rec__ada___hermes__oid__object_identifier__second_level_component
+
+function us_split_fields_rec__ada___hermes__oid__object_identifier__other_components__projection(a: us_split_fields) : (int,component_type) farray =
+  (a).rec__ada___hermes__oid__object_identifier__other_components
+
+function us_split_fields_rec__ada___hermes__oid__object_identifier__other_component_count__projection(a: us_split_fields) : other_count_type =
+  (a).rec__ada___hermes__oid__object_identifier__other_component_count
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq9(a: us_rep, b: us_rep) : bool =
+  (if (((to_rep2(((a).us_split_fields1).rec__ada___hermes__oid__object_identifier__root_component) = to_rep2(((b).us_split_fields1).rec__ada___hermes__oid__object_identifier__root_component)) and
+  (to_rep3(((a).us_split_fields1).rec__ada___hermes__oid__object_identifier__second_level_component) = to_rep3(((b).us_split_fields1).rec__ada___hermes__oid__object_identifier__second_level_component))) and
+  ((bool_eq4(((a).us_split_fields1).rec__ada___hermes__oid__object_identifier__other_components,
+  1, 13,
+  ((b).us_split_fields1).rec__ada___hermes__oid__object_identifier__other_components,
+  1, 13) = true) and
+  (to_rep4(((a).us_split_fields1).rec__ada___hermes__oid__object_identifier__other_component_count) = to_rep4(((b).us_split_fields1).rec__ada___hermes__oid__object_identifier__other_component_count)))) then true else false)
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic ada___hermes__oid__object_identifier__root_component__first__bit : int
+
+logic ada___hermes__oid__object_identifier__root_component__last__bit : int
+
+logic ada___hermes__oid__object_identifier__root_component__position : int
+
+axiom ada___hermes__oid__object_identifier__root_component__first__bit_axiom :
+  (0 <= ada___hermes__oid__object_identifier__root_component__first__bit)
+
+axiom ada___hermes__oid__object_identifier__root_component__last__bit_axiom :
+  (ada___hermes__oid__object_identifier__root_component__first__bit <  ada___hermes__oid__object_identifier__root_component__last__bit)
+
+axiom ada___hermes__oid__object_identifier__root_component__position_axiom :
+  (0 <= ada___hermes__oid__object_identifier__root_component__position)
+
+logic ada___hermes__oid__object_identifier__second_level_component__first__bit : int
+
+logic ada___hermes__oid__object_identifier__second_level_component__last__bit : int
+
+logic ada___hermes__oid__object_identifier__second_level_component__position : int
+
+axiom ada___hermes__oid__object_identifier__second_level_component__first__bit_axiom :
+  (0 <= ada___hermes__oid__object_identifier__second_level_component__first__bit)
+
+axiom ada___hermes__oid__object_identifier__second_level_component__last__bit_axiom :
+  (ada___hermes__oid__object_identifier__second_level_component__first__bit <  ada___hermes__oid__object_identifier__second_level_component__last__bit)
+
+axiom ada___hermes__oid__object_identifier__second_level_component__position_axiom :
+  (0 <= ada___hermes__oid__object_identifier__second_level_component__position)
+
+logic ada___hermes__oid__object_identifier__other_components__first__bit : int
+
+logic ada___hermes__oid__object_identifier__other_components__last__bit : int
+
+logic ada___hermes__oid__object_identifier__other_components__position : int
+
+axiom ada___hermes__oid__object_identifier__other_components__first__bit_axiom :
+  (0 <= ada___hermes__oid__object_identifier__other_components__first__bit)
+
+axiom ada___hermes__oid__object_identifier__other_components__last__bit_axiom :
+  (ada___hermes__oid__object_identifier__other_components__first__bit <  ada___hermes__oid__object_identifier__other_components__last__bit)
+
+axiom ada___hermes__oid__object_identifier__other_components__position_axiom :
+  (0 <= ada___hermes__oid__object_identifier__other_components__position)
+
+logic ada___hermes__oid__object_identifier__other_component_count__first__bit : int
+
+logic ada___hermes__oid__object_identifier__other_component_count__last__bit : int
+
+logic ada___hermes__oid__object_identifier__other_component_count__position : int
+
+axiom ada___hermes__oid__object_identifier__other_component_count__first__bit_axiom :
+  (0 <= ada___hermes__oid__object_identifier__other_component_count__first__bit)
+
+axiom ada___hermes__oid__object_identifier__other_component_count__last__bit_axiom :
+  (ada___hermes__oid__object_identifier__other_component_count__first__bit <  ada___hermes__oid__object_identifier__other_component_count__last__bit)
+
+axiom ada___hermes__oid__object_identifier__other_component_count__position_axiom :
+  (0 <= ada___hermes__oid__object_identifier__other_component_count__position)
+
+logic user_eq8 : us_rep, us_rep -> bool
+
+logic dummy8 : us_rep
+
+type object_identifier__ref = { object_identifier__content : us_rep
+}
+
+function object_identifier__ref_object_identifier__content__projection(a: object_identifier__ref) : us_rep =
+  (a).object_identifier__content
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic bad_first_level : int -> bool
+
+logic bad_first_level__function_guard : bool, int -> prop
+
+predicate dynamic_invariant(temp___expr_163: int, temp___is_init_159: bool,
+  temp___skip_constant_160: bool, temp___do_toplevel_161: bool,
+  temp___do_typ_inv_162: bool) = (((temp___is_init_159 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_163))
+
+axiom bad_first_level__def_axiom :
+  (forall root:int [bad_first_level(root)].
+  ((bad_first_level(root) = true) -> (not (root = 0))))
+
+axiom bad_first_level__def_axiom1 :
+  (forall root:int [bad_first_level(root)].
+  ((bad_first_level(root) = true) -> (not (root = 1))))
+
+axiom bad_first_level__def_axiom2 :
+  (forall root:int [bad_first_level(root)].
+  ((bad_first_level(root) = true) -> (not (root = 2))))
+
+axiom bad_first_level__def_axiom3 :
+  (forall root:int [bad_first_level(root)]. ((not (((root = 0) or
+  (root = 1)) or (root = 2))) -> (bad_first_level(root) = true)))
+
+logic bad_second_level : int, int -> bool
+
+logic bad_second_level__function_guard : bool, int, int -> prop
+
+axiom bad_second_level__def_axiom :
+  (forall root:int. forall second:int [bad_second_level(root, second)].
+  ((bad_second_level(root, second) = true) -> (not ((root = 0) and
+  (second <  40)))))
+
+axiom bad_second_level__def_axiom1 :
+  (forall root:int. forall second:int [bad_second_level(root, second)].
+  ((bad_second_level(root, second) = true) -> (not ((not (root = 0)) and
+  ((root = 1) and (second <  40))))))
+
+axiom bad_second_level__def_axiom2 :
+  (forall root:int. forall second:int [bad_second_level(root, second)].
+  ((bad_second_level(root, second) = true) -> (not ((not (root = 0)) and
+  ((not (root = 1)) and ((root = 2) and (second <= 175)))))))
+
+axiom bad_second_level__def_axiom3 :
+  (forall root:int. forall second:int [bad_second_level(root, second)].
+  ((not (if (root = 0) then (second <  40) else (if (root = 1) then (second <  40) else ((root = 2) and
+  (second <= 175))))) -> (bad_second_level(root, second) = true)))
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+predicate dynamic_invariant1(temp___expr_184: us_t, temp___is_init_180: bool,
+  temp___skip_constant_181: bool, temp___do_toplevel_182: bool,
+  temp___do_typ_inv_183: bool) = ((not (temp___skip_constant_181 = true)) ->
+  dynamic_property(1, 15, first1(temp___expr_184), last1(temp___expr_184)))
+
+type status_type
+
+predicate in_range7(x: int) = ((0 <= x) and (x <= 3))
+
+function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE7 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check7 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE7 : us_image -> int
+
+logic user_eq9 : status_type, status_type -> bool
+
+logic dummy9 : status_type
+
+type status_type__ref = { status_type__content : status_type
+}
+
+function status_type__ref_status_type__content__projection(a: status_type__ref) : status_type =
+  (a).status_type__content
+
+predicate dynamic_invariant2(temp___expr_190: int, temp___is_init_186: bool,
+  temp___skip_constant_187: bool, temp___do_toplevel_188: bool,
+  temp___do_typ_inv_189: bool) = (((temp___is_init_186 = true) or
+  (0 <= 3)) -> in_range7(temp___expr_190))
+
+type other_index_type
+
+logic other_index_typeqtint : other_index_type -> int
+
+axiom other_index_typeqtaxiom :
+  (forall i:other_index_type. (1 <= other_index_typeqtint(i)))
+
+axiom other_index_typeqtaxiom1 :
+  (forall i:other_index_type. (other_index_typeqtint(i) <= 13))
+
+predicate in_range8(x: int) = ((1 <= x) and (x <= 13))
+
+function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE8 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check8 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE8 : us_image -> int
+
+logic user_eq10 : other_index_type, other_index_type -> bool
+
+logic dummy10 : other_index_type
+
+type other_index_type__ref = { other_index_type__content : other_index_type
+}
+
+function other_index_type__ref_other_index_type__content__projection(a: other_index_type__ref) : other_index_type =
+  (a).other_index_type__content
+
+logic temp_____aggregate_def_300 : int -> (int,component_type) farray
+
+predicate dynamic_invariant3(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+logic rliteral : component_type
+
+axiom rliteral_axiom : (component_typeqtint(rliteral) = 0)
+
+axiom def_axiom :
+  (forall temp___302:int. (dynamic_invariant(temp___302, true, true, true,
+  true) ->
+  (forall temp___303:int.
+  ((temp_____aggregate_def_300(temp___302)[temp___303]) = rliteral))))
+
+predicate dynamic_invariant4(temp___expr_177: int, temp___is_init_173: bool,
+  temp___skip_constant_174: bool, temp___do_toplevel_175: bool,
+  temp___do_typ_inv_176: bool) = (((temp___is_init_173 = true) or
+  (1 <= 15)) -> in_range3(temp___expr_177))
+
+predicate dynamic_invariant5(temp___expr_197: int, temp___is_init_193: bool,
+  temp___skip_constant_194: bool, temp___do_toplevel_195: bool,
+  temp___do_typ_inv_196: bool) = (((temp___is_init_193 = true) or
+  (0 <= 2)) -> in_range4(temp___expr_197))
+
+predicate dynamic_invariant6(temp___expr_204: int, temp___is_init_200: bool,
+  temp___skip_constant_201: bool, temp___do_toplevel_202: bool,
+  temp___do_typ_inv_203: bool) = (((temp___is_init_200 = true) or
+  (0 <= 175)) -> in_range5(temp___expr_204))
+
+predicate dynamic_invariant7(temp___expr_211: int, temp___is_init_207: bool,
+  temp___skip_constant_208: bool, temp___do_toplevel_209: bool,
+  temp___do_typ_inv_210: bool) = (((temp___is_init_207 = true) or
+  (1 <= 13)) -> in_range8(temp___expr_211))
+
+predicate dynamic_invariant8(temp___expr_228: int, temp___is_init_224: bool,
+  temp___skip_constant_225: bool, temp___do_toplevel_226: bool,
+  temp___do_typ_inv_227: bool) = (((temp___is_init_224 = true) or
+  (0 <= 13)) -> in_range6(temp___expr_228))
+
+logic rliteral1 : root_component_type
+
+axiom rliteral_axiom1 : (root_component_typeqtint(rliteral1) = 0)
+
+logic rliteral2 : second_level_component_type
+
+axiom rliteral_axiom2 : (second_level_component_typeqtint(rliteral2) = 0)
+
+logic rliteral3 : other_count_type
+
+axiom rliteral_axiom3 : (other_count_typeqtint(rliteral3) = 0)
+
+ (* File "hermes-oid.ads", line 25, characters 0-0 *)
+goal defqtvc :
+  (forall status:int. (dynamic_invariant1(separates, true, false, true,
+  true) -> (dynamic_invariant2(status, false, false, true, true) ->
+  (forall result____split_fields:us_split_fields.
+  ((result____split_fields = {
+  rec__ada___hermes__oid__object_identifier__root_component = rliteral1;
+  rec__ada___hermes__oid__object_identifier__second_level_component =
+  rliteral2; rec__ada___hermes__oid__object_identifier__other_components =
+  temp_____aggregate_def_300(0);
+  rec__ada___hermes__oid__object_identifier__other_component_count =
+  rliteral3 }) ->
+  (forall o:bool.
+  ((if (length(separates) <  1) then (o = true) else (let temp___323 =
+  first1(separates) : int in (((first1(separates) <= temp___323) and
+  (temp___323 <= last1(separates))) and
+  (exists o1:int. ((to_rep1((to_array(separates)[temp___323])) = o1) and
+  ((o = bad_first_level(o1)) and (bad_first_level__function_guard(o, o1) and
+  ((o = true) <-> (not (((o1 = 0) or (o1 = 1)) or (o1 = 2))))))))))) ->
+  (forall spark__branch:bool. ((spark__branch = o) ->
+  ((not (spark__branch = true)) -> (let temp___305 = first1(separates)
+  : int in (((first1(separates) <= temp___305) and
+  (temp___305 <= last1(separates))) ->
+  (forall o1:int. ((to_rep1((to_array(separates)[temp___305])) = o1) ->
+  (in_range4(o1) ->
+  (forall o2:root_component_type. ((to_rep2(o2) = o1) ->
+  (forall result____split_fields1:us_split_fields.
+  ((result____split_fields1 = {
+  rec__ada___hermes__oid__object_identifier__root_component = o2;
+  rec__ada___hermes__oid__object_identifier__second_level_component =
+  (result____split_fields).rec__ada___hermes__oid__object_identifier__second_level_component;
+  rec__ada___hermes__oid__object_identifier__other_components =
+  (result____split_fields).rec__ada___hermes__oid__object_identifier__other_components;
+  rec__ada___hermes__oid__object_identifier__other_component_count =
+  (result____split_fields).rec__ada___hermes__oid__object_identifier__other_component_count
+  }) ->
+  (forall o3:bool.
+  ((if (length(separates) <  2) then (o3 = true) else (let o4 =
+  (first1(separates) + 1) : int in (in_range1(o4) and
+  (((first1(separates) <= o4) and (o4 <= last1(separates))) and
+  (exists o5:int. ((to_rep1((to_array(separates)[o4])) = o5) and
+  (let temp___321 = first1(separates) : int in
+  (((first1(separates) <= temp___321) and
+  (temp___321 <= last1(separates))) and
+  (exists o6:int. ((to_rep1((to_array(separates)[temp___321])) = o6) and
+  ((o3 = bad_second_level(o6, o5)) and (bad_second_level__function_guard(o3,
+  o6, o5) and ((o3 = true) <->
+  (not (if (o6 = 0) then (o5 <  40) else (if (o6 = 1) then (o5 <  40) else ((o6 = 2) and
+  (o5 <= 175)))))))))))))))))) ->
+  (forall spark__branch1:bool. ((spark__branch1 = o3) ->
+  ((not (spark__branch1 = true)) -> (let o4 = (first1(separates) + 1)
+  : int in (in_range1(o4) -> (first1(separates) <= o4)))))))))))))))))))))))))))

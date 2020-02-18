@@ -1,0 +1,401 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type character
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 255))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : character, character -> bool
+
+logic dummy : character
+
+type character__ref = { character__content : character
+}
+
+function character__ref_character__content__projection(a: character__ref) : character =
+  (a).character__content
+
+predicate dynamic_invariant(temp___expr_74: int, temp___is_init_70: bool,
+  temp___skip_constant_71: bool, temp___do_toplevel_72: bool,
+  temp___do_typ_inv_73: bool) = (((temp___is_init_70 = true) or
+  (0 <= 255)) -> in_range1(temp___expr_74))
+
+logic to_rep : character -> int
+
+logic of_rep : int -> character
+
+axiom inversion_axiom :
+  (forall x:character [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:character [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type us_main_type
+
+type us_rep = { rec__linked_list_types_types__list__is_null_pointer : bool;
+rec__linked_list_types_types__list__pointer_address : int;
+rec__linked_list_types_types__list__pointer_value_abstr : us_main_type
+}
+
+function us_rep_rec__linked_list_types_types__list__is_null_pointer__projection(a: us_rep) : bool =
+  (a).rec__linked_list_types_types__list__is_null_pointer
+
+function us_rep_rec__linked_list_types_types__list__pointer_address__projection(a: us_rep) : int =
+  (a).rec__linked_list_types_types__list__pointer_address
+
+function us_rep_rec__linked_list_types_types__list__pointer_value_abstr__projection(a: us_rep) : us_main_type =
+  (a).rec__linked_list_types_types__list__pointer_value_abstr
+
+type us_rep__ref = { us_rep__content : us_rep
+}
+
+function us_rep__ref___rep__content__projection(a: us_rep__ref) : us_rep =
+  (a).us_rep__content
+
+function bool_eq2(a: us_rep, b: us_rep) : bool =
+  (if (((a).rec__linked_list_types_types__list__is_null_pointer = (b).rec__linked_list_types_types__list__is_null_pointer) and
+  ((not ((a).rec__linked_list_types_types__list__is_null_pointer = true)) ->
+  (((a).rec__linked_list_types_types__list__pointer_address = (b).rec__linked_list_types_types__list__pointer_address) and
+  ((a).rec__linked_list_types_types__list__pointer_value_abstr = (b).rec__linked_list_types_types__list__pointer_value_abstr)))) then true else false)
+
+logic dummy1 : us_rep
+
+type list__ref = { list__content : us_rep
+}
+
+function list__ref_list__content__projection(a: list__ref) : us_rep =
+  (a).list__content
+
+type us_split_fields = { rec__linked_list_types_types__list_node__key :
+character; rec__linked_list_types_types__list_node__next : us_rep
+}
+
+function us_split_fields_rec__linked_list_types_types__list_node__key__projection(a: us_split_fields) : character =
+  (a).rec__linked_list_types_types__list_node__key
+
+function us_split_fields_rec__linked_list_types_types__list_node__next__projection(a: us_split_fields) : us_rep =
+  (a).rec__linked_list_types_types__list_node__next
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep1 = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep1) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq3(a: us_rep1, b: us_rep1) : bool =
+  (if ((to_rep(((a).us_split_fields1).rec__linked_list_types_types__list_node__key) = to_rep(((b).us_split_fields1).rec__linked_list_types_types__list_node__key)) and
+  (bool_eq2(((a).us_split_fields1).rec__linked_list_types_types__list_node__next,
+  ((b).us_split_fields1).rec__linked_list_types_types__list_node__next) = true)) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic linked_list_types_types__list_node__key__first__bit : int
+
+logic linked_list_types_types__list_node__key__last__bit : int
+
+logic linked_list_types_types__list_node__key__position : int
+
+axiom linked_list_types_types__list_node__key__first__bit_axiom :
+  (0 <= linked_list_types_types__list_node__key__first__bit)
+
+axiom linked_list_types_types__list_node__key__last__bit_axiom :
+  (linked_list_types_types__list_node__key__first__bit <  linked_list_types_types__list_node__key__last__bit)
+
+axiom linked_list_types_types__list_node__key__position_axiom :
+  (0 <= linked_list_types_types__list_node__key__position)
+
+logic linked_list_types_types__list_node__next__first__bit : int
+
+logic linked_list_types_types__list_node__next__last__bit : int
+
+logic linked_list_types_types__list_node__next__position : int
+
+axiom linked_list_types_types__list_node__next__first__bit_axiom :
+  (0 <= linked_list_types_types__list_node__next__first__bit)
+
+axiom linked_list_types_types__list_node__next__last__bit_axiom :
+  (linked_list_types_types__list_node__next__first__bit <  linked_list_types_types__list_node__next__last__bit)
+
+axiom linked_list_types_types__list_node__next__position_axiom :
+  (0 <= linked_list_types_types__list_node__next__position)
+
+logic user_eq1 : us_rep1, us_rep1 -> bool
+
+logic dummy2 : us_rep1
+
+type list_node__ref = { list_node__content : us_rep1
+}
+
+function list_node__ref_list_node__content__projection(a: list_node__ref) : us_rep1 =
+  (a).list_node__content
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic key : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+predicate default_initial_assumption(temp___expr_159: us_rep,
+  temp___skip_top_level_160: bool) =
+  ((temp___expr_159).rec__linked_list_types_types__list__is_null_pointer = true)
+
+logic us_open : us_main_type -> us_rep1
+
+logic us_close : us_rep1 -> us_main_type
+
+axiom close_open :
+  (forall x:us_main_type [us_open(x)]. (us_close(us_open(x)) = x))
+
+axiom open_close :
+  (forall x:us_rep1 [us_close(x)]. (us_open(us_close(x)) = x))
+
+function rec__linked_list_types_types__list__pointer_value(a: us_rep) : us_rep1 =
+  us_open((a).rec__linked_list_types_types__list__pointer_value_abstr)
+
+predicate rec__linked_list_types_types__list__pointer_value__pred(a: us_rep) =
+  (not ((a).rec__linked_list_types_types__list__is_null_pointer = true))
+
+logic us_null_pointer : us_rep
+
+axiom us_null_pointer__def_axiom :
+  ((us_null_pointer).rec__linked_list_types_types__list__is_null_pointer = true)
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
+predicate default_initial_assumption1(temp___expr_166: us_rep1,
+  temp___skip_top_level_167: bool) =
+  ((((temp___expr_166).us_split_fields1).rec__linked_list_types_types__list_node__next).rec__linked_list_types_types__list__is_null_pointer = true)
+
+ (* File "update_lists.ads", line 6, characters 0-0 *)
+goal defqtvc :
+  (forall rover__pointer_value:us_split_fields.
+  forall rover__pointer_address:int. forall rover__is_null_pointer:bool.
+  (dynamic_invariant(key, true, false, true, true) ->
+  (let update_lists__prev__assume = us_null_pointer : us_rep in
+  (forall prev__pointer_value:us_split_fields. (({ us_split_fields1 =
+  prev__pointer_value
+  } = rec__linked_list_types_types__list__pointer_value(update_lists__prev__assume)) ->
+  (forall prev__pointer_address:int.
+  ((prev__pointer_address = (update_lists__prev__assume).rec__linked_list_types_types__list__pointer_address) ->
+  (forall prev__is_null_pointer:bool.
+  ((prev__is_null_pointer = (update_lists__prev__assume).rec__linked_list_types_types__list__is_null_pointer) ->
+  (default_initial_assumption({
+  rec__linked_list_types_types__list__is_null_pointer =
+  rover__is_null_pointer;
+  rec__linked_list_types_types__list__pointer_address =
+  rover__pointer_address;
+  rec__linked_list_types_types__list__pointer_value_abstr = us_close({
+  us_split_fields1 = rover__pointer_value }) }, false) ->
+  (forall rover__pointer_value1:us_split_fields.
+  forall rover__pointer_address1:int. forall rover__is_null_pointer1:bool.
+  ((notb(bool_eq2({ rec__linked_list_types_types__list__is_null_pointer =
+  rover__is_null_pointer1;
+  rec__linked_list_types_types__list__pointer_address =
+  rover__pointer_address1;
+  rec__linked_list_types_types__list__pointer_value_abstr = us_close({
+  us_split_fields1 = rover__pointer_value1 }) }, us_null_pointer)) = true) ->
+  (forall prev__pointer_value1:us_split_fields.
+  forall prev__pointer_address1:int. forall prev__is_null_pointer1:bool.
+  forall rover__pointer_value2:us_split_fields.
+  forall rover__pointer_address2:int. forall rover__is_null_pointer2:bool.
+  forall next_rover__pointer_value:us_split_fields.
+  forall next_rover__pointer_address:int.
+  forall next_rover__is_null_pointer:bool.
+  ((andb((if true then true else false), (if (not (bool_eq2({
+  rec__linked_list_types_types__list__is_null_pointer =
+  rover__is_null_pointer2;
+  rec__linked_list_types_types__list__pointer_address =
+  rover__pointer_address2;
+  rec__linked_list_types_types__list__pointer_value_abstr = us_close({
+  us_split_fields1 = rover__pointer_value2 }) },
+  us_null_pointer) = true)) then true else false)) = true) ->
+  (forall o:int.
+  ((to_rep(((rec__linked_list_types_types__list__pointer_value({
+  rec__linked_list_types_types__list__is_null_pointer =
+  rover__is_null_pointer2;
+  rec__linked_list_types_types__list__pointer_address =
+  rover__pointer_address2;
+  rec__linked_list_types_types__list__pointer_value_abstr = us_close({
+  us_split_fields1 = rover__pointer_value2 })
+  })).us_split_fields1).rec__linked_list_types_types__list_node__key) = o) ->
+  (forall spark__branch:bool.
+  ((spark__branch = (if (o = key) then true else false)) ->
+  ((spark__branch = true) ->
+  (forall rover__pointer_value3:us_split_fields.
+  ((exists spark__branch1:bool. ((spark__branch1 = bool_eq2({
+   rec__linked_list_types_types__list__is_null_pointer =
+   prev__is_null_pointer1;
+   rec__linked_list_types_types__list__pointer_address =
+   prev__pointer_address1;
+   rec__linked_list_types_types__list__pointer_value_abstr = us_close({
+   us_split_fields1 = prev__pointer_value1 }) }, us_null_pointer)) and
+   (exists update_lists__assign__source__is_null:bool.
+   exists update_lists__assign__source__addr:int.
+   exists update_lists__assign__source__value:us_split_fields. ({
+   us_split_fields1 = rover__pointer_value3
+   } = rec__linked_list_types_types__list__pointer_value({
+   rec__linked_list_types_types__list__is_null_pointer =
+   rover__is_null_pointer2;
+   rec__linked_list_types_types__list__pointer_address =
+   rover__pointer_address2;
+   rec__linked_list_types_types__list__pointer_value_abstr = us_close({
+   us_split_fields1 = { rec__linked_list_types_types__list_node__key =
+   ((rec__linked_list_types_types__list__pointer_value({
+   rec__linked_list_types_types__list__is_null_pointer =
+   rover__is_null_pointer2;
+   rec__linked_list_types_types__list__pointer_address =
+   rover__pointer_address2;
+   rec__linked_list_types_types__list__pointer_value_abstr = us_close({
+   us_split_fields1 = rover__pointer_value2 })
+   })).us_split_fields1).rec__linked_list_types_types__list_node__key;
+   rec__linked_list_types_types__list_node__next = {
+   rec__linked_list_types_types__list__is_null_pointer =
+   update_lists__assign__source__is_null;
+   rec__linked_list_types_types__list__pointer_address =
+   update_lists__assign__source__addr;
+   rec__linked_list_types_types__list__pointer_value_abstr = us_close({
+   us_split_fields1 = update_lists__assign__source__value }) } } }) }))))) ->
+  (default_initial_assumption({
+  rec__linked_list_types_types__list__is_null_pointer =
+  next_rover__is_null_pointer;
+  rec__linked_list_types_types__list__pointer_address =
+  next_rover__pointer_address;
+  rec__linked_list_types_types__list__pointer_value_abstr = us_close({
+  us_split_fields1 = next_rover__pointer_value }) }, false) ->
+  (forall update_lists__assign__source__is_null:bool.
+  forall update_lists__assign__source__addr:int.
+  forall update_lists__assign__source__value:us_split_fields.
+  (forall rover__pointer_value4:us_split_fields. (({ us_split_fields1 =
+  rover__pointer_value4
+  } = rec__linked_list_types_types__list__pointer_value({
+  rec__linked_list_types_types__list__is_null_pointer =
+  rover__is_null_pointer2;
+  rec__linked_list_types_types__list__pointer_address =
+  rover__pointer_address2;
+  rec__linked_list_types_types__list__pointer_value_abstr = us_close({
+  us_split_fields1 = { rec__linked_list_types_types__list_node__key =
+  ((rec__linked_list_types_types__list__pointer_value({
+  rec__linked_list_types_types__list__is_null_pointer =
+  rover__is_null_pointer2;
+  rec__linked_list_types_types__list__pointer_address =
+  rover__pointer_address2;
+  rec__linked_list_types_types__list__pointer_value_abstr = us_close({
+  us_split_fields1 = rover__pointer_value3 })
+  })).us_split_fields1).rec__linked_list_types_types__list_node__key;
+  rec__linked_list_types_types__list_node__next = {
+  rec__linked_list_types_types__list__is_null_pointer =
+  update_lists__assign__source__is_null;
+  rec__linked_list_types_types__list__pointer_address =
+  update_lists__assign__source__addr;
+  rec__linked_list_types_types__list__pointer_value_abstr = us_close({
+  us_split_fields1 = update_lists__assign__source__value }) } } }) })) ->
+  rec__linked_list_types_types__list__pointer_value__pred({
+  rec__linked_list_types_types__list__is_null_pointer =
+  rover__is_null_pointer2;
+  rec__linked_list_types_types__list__pointer_address =
+  rover__pointer_address2;
+  rec__linked_list_types_types__list__pointer_value_abstr = us_close({
+  us_split_fields1 = rover__pointer_value4 }) }))))))))))))))))))))))))))

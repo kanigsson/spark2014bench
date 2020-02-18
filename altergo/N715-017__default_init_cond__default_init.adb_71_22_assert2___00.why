@@ -1,0 +1,707 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : natural, natural -> bool
+
+logic dummy : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+function to_rep(x: natural) : int = naturalqtint(x)
+
+logic of_rep : int -> natural
+
+axiom inversion_axiom :
+  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:natural [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range1(temp___expr_39))
+
+logic init : int -> int
+
+logic init__function_guard : int, int -> prop
+
+axiom init__post_axiom :
+  (forall x:int [init(x)]. (dynamic_invariant(x, true, true, true, true) ->
+  (let result = init(x) : int in (init__function_guard(result, x) ->
+  dynamic_invariant(result, true, false, true, true)))))
+
+type us_split_discrs = { rec__default_init__discr__b : bool
+}
+
+function us_split_discrs_rec__default_init__discr__b__projection(a: us_split_discrs) : bool =
+  (a).rec__default_init__discr__b
+
+type us_split_discrs__ref = { us_split_discrs__content : us_split_discrs
+}
+
+function us_split_discrs__ref___split_discrs__content__projection(a: us_split_discrs__ref) : us_split_discrs =
+  (a).us_split_discrs__content
+
+type us_split_fields = { rec__default_init__discr__f : natural
+}
+
+function us_split_fields_rec__default_init__discr__f__projection(a: us_split_fields) : natural =
+  (a).rec__default_init__discr__f
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__4__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_discrs1 : us_split_discrs; us_split_fields1 :
+us_split_fields
+}
+
+function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
+  (a).us_split_discrs1
+
+function us_rep___split_fields__4__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+predicate default_init__discr__f__pred(a: us_rep) =
+  (to_int(((a).us_split_discrs1).rec__default_init__discr__b) = 1)
+
+function bool_eq2(a: us_rep, b: us_rep) : bool =
+  (if ((to_int(((a).us_split_discrs1).rec__default_init__discr__b) = to_int(((b).us_split_discrs1).rec__default_init__discr__b)) and
+  (default_init__discr__f__pred(a) ->
+  (to_rep(((a).us_split_fields1).rec__default_init__discr__f) = to_rep(((b).us_split_fields1).rec__default_init__discr__f)))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic default_init__discr__b__first__bit : int
+
+logic default_init__discr__b__last__bit : int
+
+logic default_init__discr__b__position : int
+
+axiom default_init__discr__b__first__bit_axiom :
+  (0 <= default_init__discr__b__first__bit)
+
+axiom default_init__discr__b__last__bit_axiom :
+  (default_init__discr__b__first__bit <  default_init__discr__b__last__bit)
+
+axiom default_init__discr__b__position_axiom :
+  (0 <= default_init__discr__b__position)
+
+logic default_init__discr__f__first__bit : int
+
+logic default_init__discr__f__last__bit : int
+
+logic default_init__discr__f__position : int
+
+axiom default_init__discr__f__first__bit_axiom :
+  (0 <= default_init__discr__f__first__bit)
+
+axiom default_init__discr__f__last__bit_axiom :
+  (default_init__discr__f__first__bit <  default_init__discr__f__last__bit)
+
+axiom default_init__discr__f__position_axiom :
+  (0 <= default_init__discr__f__position)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type discr__ref = { discr__content : us_rep
+}
+
+function discr__ref_discr__content__projection(a: discr__ref) : us_rep =
+  (a).discr__content
+
+type us_split_discrs2 = { rec__default_init__mut_discr__b : bool
+}
+
+function us_split_discrs_rec__default_init__mut_discr__b__projection(a: us_split_discrs2) : bool =
+  (a).rec__default_init__mut_discr__b
+
+type us_split_discrs__ref1 = { us_split_discrs__content1 : us_split_discrs2
+}
+
+function us_split_discrs__ref___split_discrs__content__2__projection(a: us_split_discrs__ref1) : us_split_discrs2 =
+  (a).us_split_discrs__content1
+
+type us_split_fields2 = { rec__default_init__mut_discr__f : natural
+}
+
+function us_split_fields_rec__default_init__mut_discr__f__projection(a: us_split_fields2) : natural =
+  (a).rec__default_init__mut_discr__f
+
+type us_split_fields__ref1 = { us_split_fields__content1 : us_split_fields2
+}
+
+function us_split_fields__ref___split_fields__content__5__projection(a: us_split_fields__ref1) : us_split_fields2 =
+  (a).us_split_fields__content1
+
+type us_rep1 = { us_split_discrs3 : us_split_discrs2; us_split_fields3 :
+us_split_fields2
+}
+
+function us_rep___split_discrs__2__projection(a: us_rep1) : us_split_discrs2 =
+  (a).us_split_discrs3
+
+function us_rep___split_fields__5__projection(a: us_rep1) : us_split_fields2 =
+  (a).us_split_fields3
+
+predicate default_init__mut_discr__f__pred(a: us_rep1) =
+  (to_int(((a).us_split_discrs3).rec__default_init__mut_discr__b) = 1)
+
+function bool_eq3(a: us_rep1, b: us_rep1) : bool =
+  (if ((to_int(((a).us_split_discrs3).rec__default_init__mut_discr__b) = to_int(((b).us_split_discrs3).rec__default_init__mut_discr__b)) and
+  (default_init__mut_discr__f__pred(a) ->
+  (to_rep(((a).us_split_fields3).rec__default_init__mut_discr__f) = to_rep(((b).us_split_fields3).rec__default_init__mut_discr__f)))) then true else false)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic default_init__mut_discr__b__first__bit : int
+
+logic default_init__mut_discr__b__last__bit : int
+
+logic default_init__mut_discr__b__position : int
+
+axiom default_init__mut_discr__b__first__bit_axiom :
+  (0 <= default_init__mut_discr__b__first__bit)
+
+axiom default_init__mut_discr__b__last__bit_axiom :
+  (default_init__mut_discr__b__first__bit <  default_init__mut_discr__b__last__bit)
+
+axiom default_init__mut_discr__b__position_axiom :
+  (0 <= default_init__mut_discr__b__position)
+
+logic default_init__mut_discr__f__first__bit : int
+
+logic default_init__mut_discr__f__last__bit : int
+
+logic default_init__mut_discr__f__position : int
+
+axiom default_init__mut_discr__f__first__bit_axiom :
+  (0 <= default_init__mut_discr__f__first__bit)
+
+axiom default_init__mut_discr__f__last__bit_axiom :
+  (default_init__mut_discr__f__first__bit <  default_init__mut_discr__f__last__bit)
+
+axiom default_init__mut_discr__f__position_axiom :
+  (0 <= default_init__mut_discr__f__position)
+
+logic user_eq2 : us_rep1, us_rep1 -> bool
+
+logic dummy2 : us_rep1
+
+type mut_discr__ref = { mut_discr__content : us_rep1
+}
+
+function mut_discr__ref_mut_discr__content__projection(a: mut_discr__ref) : us_rep1 =
+  (a).mut_discr__content
+
+predicate in_range2(rec__default_init__discr__b1: bool, a: us_rep) =
+  (rec__default_init__discr__b1 = ((a).us_split_discrs1).rec__default_init__discr__b)
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic default_init__discr__b__first__bit1 : int
+
+logic default_init__discr__b__last__bit1 : int
+
+logic default_init__discr__b__position1 : int
+
+axiom default_init__discr__b__first__bit_axiom1 :
+  (0 <= default_init__discr__b__first__bit1)
+
+axiom default_init__discr__b__last__bit_axiom1 :
+  (default_init__discr__b__first__bit1 <  default_init__discr__b__last__bit1)
+
+axiom default_init__discr__b__position_axiom1 :
+  (0 <= default_init__discr__b__position1)
+
+logic default_init__discr__f__first__bit1 : int
+
+logic default_init__discr__f__last__bit1 : int
+
+logic default_init__discr__f__position1 : int
+
+axiom default_init__discr__f__first__bit_axiom1 :
+  (0 <= default_init__discr__f__first__bit1)
+
+axiom default_init__discr__f__last__bit_axiom1 :
+  (default_init__discr__f__first__bit1 <  default_init__discr__f__last__bit1)
+
+axiom default_init__discr__f__position_axiom1 :
+  (0 <= default_init__discr__f__position1)
+
+logic user_eq3 : us_rep, us_rep -> bool
+
+logic dummy3 : us_rep
+
+type td1S__ref = { td1S__content : us_rep
+}
+
+function td1S__ref_td1S__content__projection(a: td1S__ref) : us_rep =
+  (a).td1S__content
+
+logic d1__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic discr_ok : us_rep -> bool
+
+logic discr_ok__function_guard : bool, us_rep -> prop
+
+predicate dynamic_invariant1(temp___expr_301: us_rep,
+  temp___is_init_297: bool, temp___skip_constant_298: bool,
+  temp___do_toplevel_299: bool, temp___do_typ_inv_300: bool) =
+  ((not (temp___skip_constant_298 = true)) -> in_range2(of_int(1),
+  temp___expr_301))
+
+axiom temp___result_307qtdef :
+  (forall temp___306:us_rep. discr_ok__function_guard(discr_ok(temp___306),
+  temp___306))
+
+predicate default_initial_assumption(temp___expr_303: us_rep,
+  temp___skip_top_level_304: bool) =
+  (((((temp___expr_303).us_split_discrs1).rec__default_init__discr__b = of_int(1)) and
+  (default_init__discr__f__pred(temp___expr_303) ->
+  (to_rep(((temp___expr_303).us_split_fields1).rec__default_init__discr__f) = 0))) and
+  ((not (temp___skip_top_level_304 = true)) ->
+  (discr_ok(temp___expr_303) = true)))
+
+predicate in_range3(rec__default_init__discr__b1: bool, a: us_rep) =
+  (rec__default_init__discr__b1 = ((a).us_split_discrs1).rec__default_init__discr__b)
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic default_init__discr__b__first__bit2 : int
+
+logic default_init__discr__b__last__bit2 : int
+
+logic default_init__discr__b__position2 : int
+
+axiom default_init__discr__b__first__bit_axiom2 :
+  (0 <= default_init__discr__b__first__bit2)
+
+axiom default_init__discr__b__last__bit_axiom2 :
+  (default_init__discr__b__first__bit2 <  default_init__discr__b__last__bit2)
+
+axiom default_init__discr__b__position_axiom2 :
+  (0 <= default_init__discr__b__position2)
+
+logic default_init__discr__f__first__bit2 : int
+
+logic default_init__discr__f__last__bit2 : int
+
+logic default_init__discr__f__position2 : int
+
+axiom default_init__discr__f__first__bit_axiom2 :
+  (0 <= default_init__discr__f__first__bit2)
+
+axiom default_init__discr__f__last__bit_axiom2 :
+  (default_init__discr__f__first__bit2 <  default_init__discr__f__last__bit2)
+
+axiom default_init__discr__f__position_axiom2 :
+  (0 <= default_init__discr__f__position2)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type td2S__ref = { td2S__content : us_rep
+}
+
+function td2S__ref_td2S__content__projection(a: td2S__ref) : us_rep =
+  (a).td2S__content
+
+logic d2__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+predicate dynamic_invariant2(temp___expr_312: us_rep,
+  temp___is_init_308: bool, temp___skip_constant_309: bool,
+  temp___do_toplevel_310: bool, temp___do_typ_inv_311: bool) =
+  ((not (temp___skip_constant_309 = true)) -> in_range3(of_int(0),
+  temp___expr_312))
+
+axiom temp___result_318qtdef :
+  (forall temp___317:us_rep. discr_ok__function_guard(discr_ok(temp___317),
+  temp___317))
+
+predicate default_initial_assumption1(temp___expr_314: us_rep,
+  temp___skip_top_level_315: bool) =
+  (((((temp___expr_314).us_split_discrs1).rec__default_init__discr__b = of_int(0)) and
+  (default_init__discr__f__pred(temp___expr_314) ->
+  (to_rep(((temp___expr_314).us_split_fields1).rec__default_init__discr__f) = 0))) and
+  ((not (temp___skip_top_level_315 = true)) ->
+  (discr_ok(temp___expr_314) = true)))
+
+logic d3__attr__constrained : bool
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic mut_discr_ok : us_rep1 -> bool
+
+logic mut_discr_ok__function_guard : bool, us_rep1 -> prop
+
+axiom temp___result_255qtdef : init__function_guard(init(0), 0)
+
+axiom temp___result_257qtdef :
+  (forall temp___256:us_rep1.
+  mut_discr_ok__function_guard(mut_discr_ok(temp___256), temp___256))
+
+predicate default_initial_assumption2(temp___expr_252: us_rep1,
+  temp___skip_top_level_253: bool) =
+  (((((temp___expr_252).us_split_discrs3).rec__default_init__mut_discr__b = of_int(0)) and
+  (default_init__mut_discr__f__pred(temp___expr_252) ->
+  (to_rep(((temp___expr_252).us_split_fields3).rec__default_init__mut_discr__f) = init(0)))) and
+  ((not (temp___skip_top_level_253 = true)) ->
+  (mut_discr_ok(temp___expr_252) = true)))
+
+predicate in_range4(rec__default_init__mut_discr__b1: bool, a: us_rep1) =
+  (rec__default_init__mut_discr__b1 = ((a).us_split_discrs3).rec__default_init__mut_discr__b)
+
+logic value__size4 : int
+
+logic object__size4 : int
+
+logic alignment4 : int
+
+axiom value__size_axiom4 : (0 <= value__size4)
+
+axiom object__size_axiom4 : (0 <= object__size4)
+
+axiom alignment_axiom4 : (0 <= alignment4)
+
+logic default_init__mut_discr__b__first__bit1 : int
+
+logic default_init__mut_discr__b__last__bit1 : int
+
+logic default_init__mut_discr__b__position1 : int
+
+axiom default_init__mut_discr__b__first__bit_axiom1 :
+  (0 <= default_init__mut_discr__b__first__bit1)
+
+axiom default_init__mut_discr__b__last__bit_axiom1 :
+  (default_init__mut_discr__b__first__bit1 <  default_init__mut_discr__b__last__bit1)
+
+axiom default_init__mut_discr__b__position_axiom1 :
+  (0 <= default_init__mut_discr__b__position1)
+
+logic default_init__mut_discr__f__first__bit1 : int
+
+logic default_init__mut_discr__f__last__bit1 : int
+
+logic default_init__mut_discr__f__position1 : int
+
+axiom default_init__mut_discr__f__first__bit_axiom1 :
+  (0 <= default_init__mut_discr__f__first__bit1)
+
+axiom default_init__mut_discr__f__last__bit_axiom1 :
+  (default_init__mut_discr__f__first__bit1 <  default_init__mut_discr__f__last__bit1)
+
+axiom default_init__mut_discr__f__position_axiom1 :
+  (0 <= default_init__mut_discr__f__position1)
+
+logic user_eq5 : us_rep1, us_rep1 -> bool
+
+logic dummy5 : us_rep1
+
+type td4S__ref = { td4S__content : us_rep1
+}
+
+function td4S__ref_td4S__content__projection(a: td4S__ref) : us_rep1 =
+  (a).td4S__content
+
+logic d4__split_discrs : us_split_discrs2
+
+logic d4__attr__constrained : bool
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+predicate dynamic_invariant3(temp___expr_323: us_rep1,
+  temp___is_init_319: bool, temp___skip_constant_320: bool,
+  temp___do_toplevel_321: bool, temp___do_typ_inv_322: bool) =
+  ((not (temp___skip_constant_320 = true)) -> in_range4(of_int(0),
+  temp___expr_323))
+
+axiom temp___result_328qtdef : init__function_guard(init(0), 0)
+
+axiom temp___result_330qtdef :
+  (forall temp___329:us_rep1.
+  mut_discr_ok__function_guard(mut_discr_ok(temp___329), temp___329))
+
+predicate default_initial_assumption3(temp___expr_325: us_rep1,
+  temp___skip_top_level_326: bool) =
+  (((((temp___expr_325).us_split_discrs3).rec__default_init__mut_discr__b = of_int(0)) and
+  (default_init__mut_discr__f__pred(temp___expr_325) ->
+  (to_rep(((temp___expr_325).us_split_fields3).rec__default_init__mut_discr__f) = init(0)))) and
+  ((not (temp___skip_top_level_326 = true)) ->
+  (mut_discr_ok(temp___expr_325) = true)))
+
+predicate in_range5(rec__default_init__mut_discr__b1: bool, a: us_rep1) =
+  (rec__default_init__mut_discr__b1 = ((a).us_split_discrs3).rec__default_init__mut_discr__b)
+
+logic value__size5 : int
+
+logic object__size5 : int
+
+logic alignment5 : int
+
+axiom value__size_axiom5 : (0 <= value__size5)
+
+axiom object__size_axiom5 : (0 <= object__size5)
+
+axiom alignment_axiom5 : (0 <= alignment5)
+
+logic default_init__mut_discr__b__first__bit2 : int
+
+logic default_init__mut_discr__b__last__bit2 : int
+
+logic default_init__mut_discr__b__position2 : int
+
+axiom default_init__mut_discr__b__first__bit_axiom2 :
+  (0 <= default_init__mut_discr__b__first__bit2)
+
+axiom default_init__mut_discr__b__last__bit_axiom2 :
+  (default_init__mut_discr__b__first__bit2 <  default_init__mut_discr__b__last__bit2)
+
+axiom default_init__mut_discr__b__position_axiom2 :
+  (0 <= default_init__mut_discr__b__position2)
+
+logic default_init__mut_discr__f__first__bit2 : int
+
+logic default_init__mut_discr__f__last__bit2 : int
+
+logic default_init__mut_discr__f__position2 : int
+
+axiom default_init__mut_discr__f__first__bit_axiom2 :
+  (0 <= default_init__mut_discr__f__first__bit2)
+
+axiom default_init__mut_discr__f__last__bit_axiom2 :
+  (default_init__mut_discr__f__first__bit2 <  default_init__mut_discr__f__last__bit2)
+
+axiom default_init__mut_discr__f__position_axiom2 :
+  (0 <= default_init__mut_discr__f__position2)
+
+logic user_eq6 : us_rep1, us_rep1 -> bool
+
+logic dummy6 : us_rep1
+
+type td5S__ref = { td5S__content : us_rep1
+}
+
+function td5S__ref_td5S__content__projection(a: td5S__ref) : us_rep1 =
+  (a).td5S__content
+
+logic d5__split_discrs : us_split_discrs2
+
+logic d5__attr__constrained : bool
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+predicate dynamic_invariant4(temp___expr_335: us_rep1,
+  temp___is_init_331: bool, temp___skip_constant_332: bool,
+  temp___do_toplevel_333: bool, temp___do_typ_inv_334: bool) =
+  ((not (temp___skip_constant_332 = true)) -> in_range5(of_int(1),
+  temp___expr_335))
+
+axiom temp___result_340qtdef : init__function_guard(init(0), 0)
+
+axiom temp___result_342qtdef :
+  (forall temp___341:us_rep1.
+  mut_discr_ok__function_guard(mut_discr_ok(temp___341), temp___341))
+
+predicate default_initial_assumption4(temp___expr_337: us_rep1,
+  temp___skip_top_level_338: bool) =
+  (((((temp___expr_337).us_split_discrs3).rec__default_init__mut_discr__b = of_int(1)) and
+  (default_init__mut_discr__f__pred(temp___expr_337) ->
+  (to_rep(((temp___expr_337).us_split_fields3).rec__default_init__mut_discr__f) = init(0)))) and
+  ((not (temp___skip_top_level_338 = true)) ->
+  (mut_discr_ok(temp___expr_337) = true)))
+
+axiom discr_ok__def_axiom :
+  (forall x:us_rep [discr_ok(x)]. ((discr_ok(x) = true) ->
+  ((((x).us_split_discrs1).rec__default_init__discr__b = true) ->
+  (to_rep(((x).us_split_fields1).rec__default_init__discr__f) = 0))))
+
+axiom discr_ok__def_axiom1 :
+  (forall x:us_rep [discr_ok(x)].
+  (((((x).us_split_discrs1).rec__default_init__discr__b = true) ->
+  (to_rep(((x).us_split_fields1).rec__default_init__discr__f) = 0)) ->
+  (discr_ok(x) = true)))
+
+axiom mut_discr_ok__def_axiom :
+  (forall x:us_rep1 [mut_discr_ok(x)]. ((mut_discr_ok(x) = true) ->
+  (not (((x).us_split_discrs3).rec__default_init__mut_discr__b = true))))
+
+axiom mut_discr_ok__def_axiom1 :
+  (forall x:us_rep1 [mut_discr_ok(x)].
+  ((not (((x).us_split_discrs3).rec__default_init__mut_discr__b = true)) ->
+  (mut_discr_ok(x) = true)))
+
+ (* File "default_init.ads", line 46, characters 0-0 *)
+goal defqtvc :
+  (forall d1__split_fields:natural. forall d2__split_fields:natural.
+  forall d3__split_fields:natural. forall d3__split_discrs:bool.
+  forall d4__split_fields:natural. forall d5__split_fields:natural.
+  (default_initial_assumption({ us_split_discrs1 = d1__split_discrs;
+  us_split_fields1 = { rec__default_init__discr__f = d1__split_fields } },
+  false) -> (dynamic_invariant1({ us_split_discrs1 = d1__split_discrs;
+  us_split_fields1 = { rec__default_init__discr__f = d1__split_fields } },
+  false, false, true, true) -> (default_initial_assumption1({
+  us_split_discrs1 = d2__split_discrs; us_split_fields1 = {
+  rec__default_init__discr__f = d2__split_fields } }, false) ->
+  (dynamic_invariant2({ us_split_discrs1 = d2__split_discrs;
+  us_split_fields1 = { rec__default_init__discr__f = d2__split_fields } },
+  false, false, true, true) -> ((d3__attr__constrained = false) ->
+  (default_initial_assumption2({ us_split_discrs3 = {
+  rec__default_init__mut_discr__b = d3__split_discrs }; us_split_fields3 = {
+  rec__default_init__mut_discr__f = d3__split_fields } }, false) ->
+  ((d4__attr__constrained = true) -> (default_initial_assumption3({
+  us_split_discrs3 = d4__split_discrs; us_split_fields3 = {
+  rec__default_init__mut_discr__f = d4__split_fields } }, false) ->
+  (dynamic_invariant3({ us_split_discrs3 = d4__split_discrs;
+  us_split_fields3 = { rec__default_init__mut_discr__f = d4__split_fields }
+  }, false, false, true, true) -> ((d5__attr__constrained = true) ->
+  (default_initial_assumption4({ us_split_discrs3 = d5__split_discrs;
+  us_split_fields3 = { rec__default_init__mut_discr__f = d5__split_fields }
+  }, false) -> (dynamic_invariant4({ us_split_discrs3 = d5__split_discrs;
+  us_split_fields3 = { rec__default_init__mut_discr__f = d5__split_fields }
+  }, false, false, true, true) -> (to_rep(d1__split_fields) = 0))))))))))))))

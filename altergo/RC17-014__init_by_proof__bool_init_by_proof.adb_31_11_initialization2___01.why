@@ -1,0 +1,412 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+type my_bool
+
+predicate in_range(x: int) = ((0 <= x) and (x <= 1))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : my_bool, my_bool -> bool
+
+logic dummy : my_bool
+
+type my_bool__ref = { my_bool__content : my_bool
+}
+
+function my_bool__ref_my_bool__content__projection(a: my_bool__ref) : my_bool =
+  (a).my_bool__content
+
+type my_bool__init_wrapper = { rec__value : my_bool; attr__init : bool
+}
+
+function my_bool__init_wrapper_rec__value__projection(a: my_bool__init_wrapper) : my_bool =
+  (a).rec__value
+
+function my_bool__init_wrapper_attr__init__projection(a: my_bool__init_wrapper) : bool =
+  (a).attr__init
+
+logic to_rep : my_bool -> int
+
+logic of_rep : int -> my_bool
+
+axiom inversion_axiom :
+  (forall x:my_bool [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:my_bool [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type map__ref = { map__content : (int,my_bool__init_wrapper) farray
+}
+
+logic slide : (int,my_bool__init_wrapper) farray, int,
+  int -> (int,my_bool__init_wrapper) farray
+
+axiom slide_eq :
+  (forall a:(int,my_bool__init_wrapper) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,my_bool__init_wrapper) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq1(a: (int,my_bool__init_wrapper) farray, a__first: int,
+  a__last: int, b: (int,my_bool__init_wrapper) farray, b__first: int,
+  b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep(((a[temp___idx_154])).rec__value) = to_rep(((b[((b__first - a__first) + temp___idx_154)])).rec__value))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,my_bool__init_wrapper) farray.
+  forall b:(int,my_bool__init_wrapper) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq1(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,my_bool__init_wrapper) farray.
+  forall b:(int,my_bool__init_wrapper) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq1(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,my_bool__init_wrapper) farray.
+  forall b:(int,my_bool__init_wrapper) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq1(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,my_bool__init_wrapper) farray.
+  forall b:(int,my_bool__init_wrapper) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq1(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) ->
+  (to_rep(((a[temp___idx_154])).rec__value) = to_rep(((b[((b__first - a__first) + temp___idx_154)])).rec__value)))))))
+
+type color
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 2))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq1 : color, color -> bool
+
+logic dummy1 : color
+
+type color__ref = { color__content : color
+}
+
+function color__ref_color__content__projection(a: color__ref) : color =
+  (a).color__content
+
+predicate default_initial_assumption(temp___expr_197: (int,my_bool__init_wrapper) farray,
+  temp___skip_top_level_198: bool) =
+  (forall temp___199:int. (((0 <= temp___199) and (temp___199 <= 2)) ->
+  (((temp___expr_197[temp___199])).attr__init = false)))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+type color__init_wrapper = { rec__value1 : color; attr__init1 : bool
+}
+
+function color__init_wrapper_rec__value__projection(a: color__init_wrapper) : color =
+  (a).rec__value1
+
+function color__init_wrapper_attr__init__projection(a: color__init_wrapper) : bool =
+  (a).attr__init1
+
+logic to_rep1 : color -> int
+
+logic of_rep1 : int -> color
+
+axiom inversion_axiom1 :
+  (forall x:color [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 : (forall x:color [to_rep1(x)]. in_range1(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type map__ref1 = { map__content1 : (int,color__init_wrapper) farray
+}
+
+logic slide1 : (int,color__init_wrapper) farray, int,
+  int -> (int,color__init_wrapper) farray
+
+axiom slide_eq1 :
+  (forall a:(int,color__init_wrapper) farray.
+  (forall first:int [slide1(a, first, first)]. (slide1(a, first, first) = a)))
+
+axiom slide_def1 :
+  (forall a:(int,color__init_wrapper) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide1(a, old_first, new_first)[i])]. ((slide1(a,
+  old_first, new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq3(a: (int,color__init_wrapper) farray, a__first: int,
+  a__last: int, b: (int,color__init_wrapper) farray, b__first: int,
+  b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_155:int. (((a__first <= temp___idx_155) and
+  (temp___idx_155 <= a__last)) ->
+  (to_rep1(((a[temp___idx_155])).rec__value1) = to_rep1(((b[((b__first - a__first) + temp___idx_155)])).rec__value1))))) then true else false)
+
+axiom bool_eq_rev4 :
+  (forall a:(int,color__init_wrapper) farray.
+  forall b:(int,color__init_wrapper) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev5 :
+  (forall a:(int,color__init_wrapper) farray.
+  forall b:(int,color__init_wrapper) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev6 :
+  (forall a:(int,color__init_wrapper) farray.
+  forall b:(int,color__init_wrapper) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev7 :
+  (forall a:(int,color__init_wrapper) farray.
+  forall b:(int,color__init_wrapper) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_155:int. (((a__first <= temp___idx_155) and
+  (temp___idx_155 <= a__last)) ->
+  (to_rep1(((a[temp___idx_155])).rec__value1) = to_rep1(((b[((b__first - a__first) + temp___idx_155)])).rec__value1)))))))
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+function get(a: (int,my_bool__init_wrapper) farray, i: int) : my_bool =
+  ((a[i])).rec__value
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq4(x: bool, y: bool) : bool =
+  (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range2(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE2 : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> bool
+
+function to_bool(x: my_bool) : bool = of_int(to_rep(x))
+
+function of_bool(x: bool) : my_bool = of_rep(to_int(x))
+
+logic xorb1 : (int,my_bool__init_wrapper) farray, int, int,
+  (int,my_bool__init_wrapper) farray, int,
+  int -> (int,my_bool__init_wrapper) farray
+
+logic andb1 : (int,my_bool__init_wrapper) farray, int, int,
+  (int,my_bool__init_wrapper) farray, int,
+  int -> (int,my_bool__init_wrapper) farray
+
+logic orb1 : (int,my_bool__init_wrapper) farray, int, int,
+  (int,my_bool__init_wrapper) farray, int,
+  int -> (int,my_bool__init_wrapper) farray
+
+logic notb1 : (int,my_bool__init_wrapper) farray, int,
+  int -> (int,my_bool__init_wrapper) farray
+
+axiom op_def :
+  (forall a:(int,my_bool__init_wrapper) farray.
+  forall b:(int,my_bool__init_wrapper) farray.
+  (forall a_first:int. forall a_last:int. forall b_first:int.
+  forall b_last:int.
+  (forall i:int [get(orb1(a, a_first, a_last, b, b_first, b_last), i)].
+  (((a_first <= i) and (i <= a_last)) -> (get(orb1(a, a_first, a_last, b,
+  b_first, b_last), i) = of_bool(orb(to_bool(get(a, i)), to_bool(get(b,
+  ((i - a_first) + b_first))))))))))
+
+axiom op_def1 :
+  (forall a:(int,my_bool__init_wrapper) farray.
+  forall b:(int,my_bool__init_wrapper) farray.
+  (forall a_first:int. forall a_last:int. forall b_first:int.
+  forall b_last:int.
+  (forall i:int [get(andb1(a, a_first, a_last, b, b_first, b_last), i)].
+  (((a_first <= i) and (i <= a_last)) -> (get(andb1(a, a_first, a_last, b,
+  b_first, b_last), i) = of_bool(andb(to_bool(get(a, i)), to_bool(get(b,
+  ((i - a_first) + b_first))))))))))
+
+axiom op_def2 :
+  (forall a:(int,my_bool__init_wrapper) farray.
+  forall b:(int,my_bool__init_wrapper) farray.
+  (forall a_first:int. forall a_last:int. forall b_first:int.
+  forall b_last:int.
+  (forall i:int [get(xorb1(a, a_first, a_last, b, b_first, b_last), i)].
+  (((a_first <= i) and (i <= a_last)) -> (get(xorb1(a, a_first, a_last, b,
+  b_first, b_last), i) = of_bool(xorb(to_bool(get(a, i)), to_bool(get(b,
+  ((i - a_first) + b_first))))))))))
+
+axiom notb_def :
+  (forall a:(int,my_bool__init_wrapper) farray.
+  (forall a_first:int. forall a_last:int.
+  (forall i:int [get(notb1(a, a_first, a_last), i)]. (((a_first <= i) and
+  (i <= a_last)) -> (get(notb1(a, a_first, a_last),
+  i) = of_bool(notb(to_bool(get(a, i)))))))))
+
+predicate default_initial_assumption1(temp___expr_207: (int,color__init_wrapper) farray,
+  temp___skip_top_level_208: bool) =
+  (forall temp___209:int. (((0 <= temp___209) and (temp___209 <= 1)) ->
+  (((temp___expr_207[temp___209])).attr__init1 = false)))
+
+logic temp_____aggregate_def_221 : int -> (int,my_bool__init_wrapper) farray
+
+predicate dynamic_invariant(temp___expr_181: int, temp___is_init_177: bool,
+  temp___skip_constant_178: bool, temp___do_toplevel_179: bool,
+  temp___do_typ_inv_180: bool) = (((temp___is_init_177 = true) or
+  (0 <= 1)) -> in_range(temp___expr_181))
+
+predicate dynamic_invariant1(temp___expr_188: int, temp___is_init_184: bool,
+  temp___skip_constant_185: bool, temp___do_toplevel_186: bool,
+  temp___do_typ_inv_187: bool) = (((temp___is_init_184 = true) or
+  (0 <= 2)) -> in_range1(temp___expr_188))
+
+axiom def_axiom :
+  (forall temp___223:int. (dynamic_invariant(temp___223, true, true, true,
+  true) ->
+  (forall temp___224:int.
+  (to_rep(((temp_____aggregate_def_221(temp___223)[temp___224])).rec__value) = temp___223))))
+
+axiom def_axiom1 :
+  (forall temp___223:int. (dynamic_invariant(temp___223, true, true, true,
+  true) ->
+  (forall temp___224:int.
+  (((temp_____aggregate_def_221(temp___223)[temp___224])).attr__init = true))))
+
+ (* File "bool_init_by_proof.adb", line 1, characters 0-0 *)
+goal defqtvc :
+  (forall x:(int,my_bool__init_wrapper) farray.
+  forall y:(int,my_bool__init_wrapper) farray.
+  forall c:(int,color__init_wrapper) farray. (default_initial_assumption(x,
+  false) -> (default_initial_assumption(y, false) ->
+  (default_initial_assumption1(c, false) ->
+  (forall o:color. ((to_rep1(o) = 2) ->
+  (forall c1:(int,color__init_wrapper) farray. ((c1 = (c[1 <- { rec__value1 =
+  o; attr__init1 = true }])) ->
+  (forall o1:color. ((to_rep1(o1) = 0) ->
+  (forall c2:(int,color__init_wrapper) farray. ((c2 = (c1[0 <- {
+  rec__value1 = o1; attr__init1 = true }])) ->
+  ((forall temp___219:int. (((0 <= temp___219) and (temp___219 <= 1)) ->
+   (((c2[temp___219])).attr__init1 = true))) ->
+  (forall x1:(int,my_bool__init_wrapper) farray.
+  ((x1 = temp_____aggregate_def_221(1)) ->
+  (forall y1:(int,my_bool__init_wrapper) farray.
+  (((forall i:int. (((0 <= i) and (i <= 2)) -> ((not (i = 0)) ->
+    ((((y1[i])).attr__init = true) <-> (((y[i])).attr__init = true))))) and
+  (((y1[0])).attr__init = true)) ->
+  (forall y2:(int,my_bool__init_wrapper) farray.
+  (((forall i:int. (((0 <= i) and (i <= 2)) -> ((not (i = 1)) ->
+    ((((y2[i])).attr__init = true) <-> (((y1[i])).attr__init = true))))) and
+  (((y2[1])).attr__init = true)) ->
+  (forall y3:(int,my_bool__init_wrapper) farray.
+  (((forall i:int. (((0 <= i) and (i <= 2)) -> ((not (i = 2)) ->
+    ((((y3[i])).attr__init = true) <-> (((y2[i])).attr__init = true))))) and
+  (((y3[2])).attr__init = true)) ->
+  ((forall temp___230:int. (((0 <= temp___230) and (temp___230 <= 2)) ->
+   (((y3[temp___230])).attr__init = true))) ->
+  (forall temp___226:int. (((0 <= temp___226) and (temp___226 <= 2)) ->
+  (((x1[temp___226])).attr__init = true)))))))))))))))))))))))))

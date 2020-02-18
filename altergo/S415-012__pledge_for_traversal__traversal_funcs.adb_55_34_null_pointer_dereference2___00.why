@@ -1,0 +1,549 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : natural, natural -> bool
+
+logic dummy1 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_39))
+
+type us_main_type
+
+type us_rep = { rec__traversal_funcs__list_acc__is_null_pointer : bool;
+rec__traversal_funcs__list_acc__pointer_address : int;
+rec__traversal_funcs__list_acc__pointer_value_abstr : us_main_type
+}
+
+function us_rep_rec__traversal_funcs__list_acc__is_null_pointer__projection(a: us_rep) : bool =
+  (a).rec__traversal_funcs__list_acc__is_null_pointer
+
+function us_rep_rec__traversal_funcs__list_acc__pointer_address__projection(a: us_rep) : int =
+  (a).rec__traversal_funcs__list_acc__pointer_address
+
+function us_rep_rec__traversal_funcs__list_acc__pointer_value_abstr__projection(a: us_rep) : us_main_type =
+  (a).rec__traversal_funcs__list_acc__pointer_value_abstr
+
+type us_rep__ref = { us_rep__content : us_rep
+}
+
+function us_rep__ref___rep__content__projection(a: us_rep__ref) : us_rep =
+  (a).us_rep__content
+
+function bool_eq3(a: us_rep, b: us_rep) : bool =
+  (if (((a).rec__traversal_funcs__list_acc__is_null_pointer = (b).rec__traversal_funcs__list_acc__is_null_pointer) and
+  ((not ((a).rec__traversal_funcs__list_acc__is_null_pointer = true)) ->
+  (((a).rec__traversal_funcs__list_acc__pointer_address = (b).rec__traversal_funcs__list_acc__pointer_address) and
+  ((a).rec__traversal_funcs__list_acc__pointer_value_abstr = (b).rec__traversal_funcs__list_acc__pointer_value_abstr)))) then true else false)
+
+logic dummy2 : us_rep
+
+type t2b__ref = { t2b__content : us_rep
+}
+
+function t2b__ref_t2b__content__projection(a: t2b__ref) : us_rep =
+  (a).t2b__content
+
+logic length : us_rep -> int
+
+logic length__function_guard : int, us_rep -> prop
+
+function min(x: int, y: int) : int = (if (x <= y) then x else y)
+
+function max(x: int, y: int) : int = (if (x <= y) then y else x)
+
+axiom Min_r : (forall x:int. forall y:int. ((y <= x) -> (min(x, y) = y)))
+
+axiom Max_l : (forall x:int. forall y:int. ((y <= x) -> (max(x, y) = x)))
+
+axiom Min_comm : (forall x:int. forall y:int. (min(x, y) = min(y, x)))
+
+axiom Max_comm : (forall x:int. forall y:int. (max(x, y) = max(y, x)))
+
+axiom Min_assoc :
+  (forall x:int. forall y:int. forall z:int. (min(min(x, y), z) = min(x,
+  min(y, z))))
+
+axiom Max_assoc :
+  (forall x:int. forall y:int. forall z:int. (max(max(x, y), z) = max(x,
+  max(y, z))))
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+logic dummy3 : us_rep
+
+type list_acc__ref = { list_acc__content : us_rep
+}
+
+function list_acc__ref_list_acc__content__projection(a: list_acc__ref) : us_rep =
+  (a).list_acc__content
+
+type us_split_fields = { rec__traversal_funcs__list__v : integer;
+rec__traversal_funcs__list__n : us_rep
+}
+
+function us_split_fields_rec__traversal_funcs__list__v__projection(a: us_split_fields) : integer =
+  (a).rec__traversal_funcs__list__v
+
+function us_split_fields_rec__traversal_funcs__list__n__projection(a: us_split_fields) : us_rep =
+  (a).rec__traversal_funcs__list__n
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep1 = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep1) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq4(a: us_rep1, b: us_rep1) : bool =
+  (if ((to_rep(((a).us_split_fields1).rec__traversal_funcs__list__v) = to_rep(((b).us_split_fields1).rec__traversal_funcs__list__v)) and
+  (bool_eq3(((a).us_split_fields1).rec__traversal_funcs__list__n,
+  ((b).us_split_fields1).rec__traversal_funcs__list__n) = true)) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic traversal_funcs__list__v__first__bit : int
+
+logic traversal_funcs__list__v__last__bit : int
+
+logic traversal_funcs__list__v__position : int
+
+axiom traversal_funcs__list__v__first__bit_axiom :
+  (0 <= traversal_funcs__list__v__first__bit)
+
+axiom traversal_funcs__list__v__last__bit_axiom :
+  (traversal_funcs__list__v__first__bit <  traversal_funcs__list__v__last__bit)
+
+axiom traversal_funcs__list__v__position_axiom :
+  (0 <= traversal_funcs__list__v__position)
+
+logic traversal_funcs__list__n__first__bit : int
+
+logic traversal_funcs__list__n__last__bit : int
+
+logic traversal_funcs__list__n__position : int
+
+axiom traversal_funcs__list__n__first__bit_axiom :
+  (0 <= traversal_funcs__list__n__first__bit)
+
+axiom traversal_funcs__list__n__last__bit_axiom :
+  (traversal_funcs__list__n__first__bit <  traversal_funcs__list__n__last__bit)
+
+axiom traversal_funcs__list__n__position_axiom :
+  (0 <= traversal_funcs__list__n__position)
+
+logic user_eq2 : us_rep1, us_rep1 -> bool
+
+logic dummy4 : us_rep1
+
+type list__ref = { list__content : us_rep1
+}
+
+function list__ref_list__content__projection(a: list__ref) : us_rep1 =
+  (a).list__content
+
+logic us_open : us_main_type -> us_rep1
+
+logic us_close : us_rep1 -> us_main_type
+
+axiom close_open :
+  (forall x:us_main_type [us_open(x)]. (us_close(us_open(x)) = x))
+
+axiom open_close :
+  (forall x:us_rep1 [us_close(x)]. (us_open(us_close(x)) = x))
+
+function rec__traversal_funcs__list_acc__pointer_value(a: us_rep) : us_rep1 =
+  us_open((a).rec__traversal_funcs__list_acc__pointer_value_abstr)
+
+predicate rec__traversal_funcs__list_acc__pointer_value__pred(a: us_rep) =
+  (not ((a).rec__traversal_funcs__list_acc__is_null_pointer = true))
+
+logic us_null_pointer : us_rep
+
+axiom us_null_pointer__def_axiom :
+  ((us_null_pointer).rec__traversal_funcs__list_acc__is_null_pointer = true)
+
+axiom length__def_axiom :
+  (forall l:us_rep [length(l)]. (length__function_guard(length(l), l) ->
+  (forall l1:us_rep.
+  length__function_guard(length(((rec__traversal_funcs__list_acc__pointer_value(l1)).us_split_fields1).rec__traversal_funcs__list__n),
+  ((rec__traversal_funcs__list_acc__pointer_value(l1)).us_split_fields1).rec__traversal_funcs__list__n))))
+
+axiom length__def_axiom1 :
+  (forall l:us_rep [length(l)]. (length__function_guard(length(l), l) ->
+  (length(l) = (if (bool_eq3(l,
+  us_null_pointer) = true) then 0 else (min(2147483646,
+  length(((rec__traversal_funcs__list_acc__pointer_value(l)).us_split_fields1).rec__traversal_funcs__list__n)) + 1)))))
+
+logic dummy5 : us_rep
+
+type t3b__ref = { t3b__content : us_rep
+}
+
+function t3b__ref_t3b__content__projection(a: t3b__ref) : us_rep =
+  (a).t3b__content
+
+logic dummy6 : us_rep
+
+type t4b__ref = { t4b__content : us_rep
+}
+
+function t4b__ref_t4b__content__projection(a: t4b__ref) : us_rep =
+  (a).t4b__content
+
+logic next : us_rep -> us_rep
+
+logic next__function_guard : us_rep, us_rep -> prop
+
+type us_pledge_ty
+
+type us_pledge_ty__ref = { us_pledge_ty__content : us_pledge_ty
+}
+
+logic us_pledge_get : us_pledge_ty, us_rep, us_rep -> bool
+
+logic traversal_funcs__next__pledge : us_rep -> us_pledge_ty
+
+axiom next__post_axiom :
+  (forall x:us_rep. length__function_guard(length(x), x))
+
+axiom next__post_axiom1 :
+  (forall x:us_rep [next(x)]. ((length(x) <  2147483647) ->
+  (forall result:us_rep. length__function_guard(length(result), result))))
+
+axiom next__post_axiom2 :
+  (forall x:us_rep [next(x)]. ((length(x) <  2147483647) ->
+  (forall x1:us_rep. length__function_guard(length(x1), x1))))
+
+axiom next__post_axiom3 :
+  (forall x:us_rep [next(x)]. ((length(x) <  2147483647) ->
+  (forall temp___brower_210:us_rep.
+  length__function_guard(length(temp___brower_210), temp___brower_210))))
+
+axiom next__post_axiom4 :
+  (forall x:us_rep [next(x)]. ((length(x) <  2147483647) ->
+  (forall temp___borrowed_211:us_rep.
+  length__function_guard(length(temp___borrowed_211), temp___borrowed_211))))
+
+axiom next__post_axiom5 :
+  (forall x:us_rep [next(x)]. ((length(x) <  2147483647) ->
+  (forall temp___brower_210:us_rep.
+  length__function_guard(length(temp___brower_210), temp___brower_210))))
+
+axiom next__post_axiom6 :
+  (forall x:us_rep [next(x)]. ((length(x) <  2147483647) -> (let result =
+  next(x) : us_rep in (next__function_guard(result, x) -> ((bool_eq3(x,
+  us_null_pointer) = true) -> (bool_eq3(result, us_null_pointer) = true))))))
+
+axiom next__post_axiom7 :
+  (forall x:us_rep [next(x)]. ((length(x) <  2147483647) -> (let result =
+  next(x) : us_rep in (next__function_guard(result, x) ->
+  (let us_result_pledge = traversal_funcs__next__pledge(x) : us_pledge_ty in
+  ((bool_eq3(x, us_null_pointer) = true) ->
+  ((if (forall temp___borrowed_216:us_rep.
+       (forall temp___brower_215:us_rep [us_pledge_get(us_result_pledge,
+       temp___borrowed_216, temp___brower_215)].
+       (((us_pledge_get(us_result_pledge, temp___borrowed_216,
+       temp___brower_215) = true) and
+       (((x).rec__traversal_funcs__list_acc__is_null_pointer = (temp___borrowed_216).rec__traversal_funcs__list_acc__is_null_pointer) and
+       ((result).rec__traversal_funcs__list_acc__is_null_pointer = (temp___brower_215).rec__traversal_funcs__list_acc__is_null_pointer))) ->
+       (bool_eq3(temp___borrowed_216, us_null_pointer) = true)))) then true else false) = true)))))))
+
+axiom next__post_axiom8 :
+  (forall x:us_rep [next(x)]. ((length(x) <  2147483647) -> (let result =
+  next(x) : us_rep in (next__function_guard(result, x) -> ((not (bool_eq3(x,
+  us_null_pointer) = true)) -> (length(result) = (length(x) - 1)))))))
+
+axiom next__post_axiom9 :
+  (forall x:us_rep [next(x)]. ((length(x) <  2147483647) -> (let result =
+  next(x) : us_rep in (next__function_guard(result, x) ->
+  (let us_result_pledge = traversal_funcs__next__pledge(x) : us_pledge_ty in
+  ((not (bool_eq3(x, us_null_pointer) = true)) ->
+  ((if (forall temp___borrowed_211:us_rep.
+       (forall temp___brower_210:us_rep [us_pledge_get(us_result_pledge,
+       temp___borrowed_211, temp___brower_210)].
+       (((us_pledge_get(us_result_pledge, temp___borrowed_211,
+       temp___brower_210) = true) and
+       (((x).rec__traversal_funcs__list_acc__is_null_pointer = (temp___borrowed_211).rec__traversal_funcs__list_acc__is_null_pointer) and
+       ((result).rec__traversal_funcs__list_acc__is_null_pointer = (temp___brower_210).rec__traversal_funcs__list_acc__is_null_pointer))) ->
+       ((length(temp___brower_210) <  2147483647) ->
+       (length(temp___borrowed_211) = (length(temp___brower_210) + 1)))))) then true else false) = true)))))))
+
+axiom next__post_axiom10 :
+  (forall x:us_rep [next(x)]. ((length(x) <  2147483647) -> (let result =
+  next(x) : us_rep in (next__function_guard(result, x) ->
+  (us_pledge_get(traversal_funcs__next__pledge(x), x, result) = true)))))
+
+logic x__pointer_address : int
+
+logic x__is_null_pointer : bool
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic dummy7 : us_rep
+
+type t16b__ref = { t16b__content : us_rep
+}
+
+function t16b__ref_t16b__content__projection(a: t16b__ref) : us_rep =
+  (a).t16b__content
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+type us_pledge_ty1
+
+type us_pledge_ty__ref1 = { us_pledge_ty__content1 : us_pledge_ty1
+}
+
+logic us_pledge_get1 : us_pledge_ty1, us_rep, us_rep -> bool
+
+predicate default_initial_assumption(temp___expr_184: us_rep,
+  temp___skip_top_level_185: bool) =
+  ((temp___expr_184).rec__traversal_funcs__list_acc__is_null_pointer = true)
+
+predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+predicate default_initial_assumption1(temp___expr_191: us_rep1,
+  temp___skip_top_level_192: bool) =
+  ((((temp___expr_191).us_split_fields1).rec__traversal_funcs__list__n).rec__traversal_funcs__list_acc__is_null_pointer = true)
+
+axiom length__post_axiom :
+  (forall l:us_rep [length(l)]. (let result = length(l) : int in
+  (length__function_guard(result, l) -> dynamic_invariant(result, true,
+  false, true, true))))
+
+ (* File "traversal_funcs.adb", line 49, characters 0-0 *)
+goal defqtvc :
+  (forall x__pointer_value:us_split_fields.
+  (forall x__pointer_value1:us_split_fields.
+  ((x__pointer_value1 = x__pointer_value) ->
+  ((forall x__pointer_value2:us_split_fields. length__function_guard(length({
+   rec__traversal_funcs__list_acc__is_null_pointer = x__is_null_pointer;
+   rec__traversal_funcs__list_acc__pointer_address = x__pointer_address;
+   rec__traversal_funcs__list_acc__pointer_value_abstr = us_close({
+   us_split_fields1 = x__pointer_value2 }) }), {
+   rec__traversal_funcs__list_acc__is_null_pointer = x__is_null_pointer;
+   rec__traversal_funcs__list_acc__pointer_address = x__pointer_address;
+   rec__traversal_funcs__list_acc__pointer_value_abstr = us_close({
+   us_split_fields1 = x__pointer_value2 }) })) ->
+  ((forall x__pointer_value2:us_split_fields. length__function_guard(length({
+   rec__traversal_funcs__list_acc__is_null_pointer = x__is_null_pointer;
+   rec__traversal_funcs__list_acc__pointer_address = x__pointer_address;
+   rec__traversal_funcs__list_acc__pointer_value_abstr = us_close({
+   us_split_fields1 = x__pointer_value2 }) }), {
+   rec__traversal_funcs__list_acc__is_null_pointer = x__is_null_pointer;
+   rec__traversal_funcs__list_acc__pointer_address = x__pointer_address;
+   rec__traversal_funcs__list_acc__pointer_value_abstr = us_close({
+   us_split_fields1 = x__pointer_value2 }) })) ->
+  (((length({ rec__traversal_funcs__list_acc__is_null_pointer =
+  x__is_null_pointer; rec__traversal_funcs__list_acc__pointer_address =
+  x__pointer_address; rec__traversal_funcs__list_acc__pointer_value_abstr =
+  us_close({ us_split_fields1 = x__pointer_value }) }) <  2147483647) and
+  (2 <= length({ rec__traversal_funcs__list_acc__is_null_pointer =
+  x__is_null_pointer; rec__traversal_funcs__list_acc__pointer_address =
+  x__pointer_address; rec__traversal_funcs__list_acc__pointer_value_abstr =
+  us_close({ us_split_fields1 = x__pointer_value }) }))) -> (let o = {
+  rec__traversal_funcs__list_acc__is_null_pointer = x__is_null_pointer;
+  rec__traversal_funcs__list_acc__pointer_address = x__pointer_address;
+  rec__traversal_funcs__list_acc__pointer_value_abstr = us_close({
+  us_split_fields1 = x__pointer_value }) } : us_rep in (let o1 = length(o)
+  : int in
+  ((forall o2:us_rep.
+   length__function_guard(length(((rec__traversal_funcs__list_acc__pointer_value(o2)).us_split_fields1).rec__traversal_funcs__list__n),
+   ((rec__traversal_funcs__list_acc__pointer_value(o2)).us_split_fields1).rec__traversal_funcs__list__n)) ->
+  ((length__function_guard(o1, o) and (dynamic_invariant(o1, true, false,
+  true, true) and (o1 = (if (bool_eq3(o,
+  us_null_pointer) = true) then 0 else (min(2147483646,
+  length(((rec__traversal_funcs__list_acc__pointer_value(o)).us_split_fields1).rec__traversal_funcs__list__n)) + 1))))) ->
+  (forall l:int. ((l = o1) -> (dynamic_invariant(l, true, false, true,
+  true) -> (let o2 = { rec__traversal_funcs__list_acc__is_null_pointer =
+  x__is_null_pointer; rec__traversal_funcs__list_acc__pointer_address =
+  x__pointer_address; rec__traversal_funcs__list_acc__pointer_value_abstr =
+  us_close({ us_split_fields1 = x__pointer_value }) } : us_rep in (let o3 =
+  next(o2) : us_rep in
+  ((forall o4:us_rep. length__function_guard(length(o4), o4)) ->
+  ((forall o4:us_rep. length__function_guard(length(o4), o4)) ->
+  ((forall temp___brower_200:us_rep.
+   length__function_guard(length(temp___brower_200), temp___brower_200)) ->
+  ((forall temp___borrowed_201:us_rep.
+   length__function_guard(length(temp___borrowed_201), temp___borrowed_201)) ->
+  ((forall temp___brower_200:us_rep.
+   length__function_guard(length(temp___brower_200), temp___brower_200)) ->
+  ((next__function_guard(o3, o2) and (let us_result_pledge =
+  traversal_funcs__next__pledge(o2) : us_pledge_ty in ((if (bool_eq3(o2,
+  us_null_pointer) = true) then ((bool_eq3(o3, us_null_pointer) = true) and
+  (forall temp___borrowed_206:us_rep.
+  (forall temp___brower_205:us_rep [us_pledge_get(us_result_pledge,
+  temp___borrowed_206, temp___brower_205)].
+  (((us_pledge_get(us_result_pledge, temp___borrowed_206,
+  temp___brower_205) = true) and
+  ((x__is_null_pointer = (temp___borrowed_206).rec__traversal_funcs__list_acc__is_null_pointer) and
+  ((o3).rec__traversal_funcs__list_acc__is_null_pointer = (temp___brower_205).rec__traversal_funcs__list_acc__is_null_pointer))) ->
+  (bool_eq3(temp___borrowed_206, us_null_pointer) = true))))) else ((length(o3) = (length(o2) - 1)) and
+  (forall temp___borrowed_201:us_rep.
+  (forall temp___brower_200:us_rep [us_pledge_get(us_result_pledge,
+  temp___borrowed_201, temp___brower_200)].
+  (((us_pledge_get(us_result_pledge, temp___borrowed_201,
+  temp___brower_200) = true) and
+  ((x__is_null_pointer = (temp___borrowed_201).rec__traversal_funcs__list_acc__is_null_pointer) and
+  ((o3).rec__traversal_funcs__list_acc__is_null_pointer = (temp___brower_200).rec__traversal_funcs__list_acc__is_null_pointer))) ->
+  ((length(temp___brower_200) <  2147483647) ->
+  (length(temp___borrowed_201) = (length(temp___brower_200) + 1)))))))) and
+  (us_pledge_get(us_result_pledge, o2, o3) = true)))) ->
+  rec__traversal_funcs__list_acc__pointer_value__pred(o3))))))))))))))))))))))

@@ -1,0 +1,351 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type us_split_fields = { rec__inc__increasing_indicator__valid : bool;
+rec__inc__increasing_indicator__first : integer;
+rec__inc__increasing_indicator__second : integer
+}
+
+function us_split_fields_rec__inc__increasing_indicator__valid__projection(a: us_split_fields) : bool =
+  (a).rec__inc__increasing_indicator__valid
+
+function us_split_fields_rec__inc__increasing_indicator__first__projection(a: us_split_fields) : integer =
+  (a).rec__inc__increasing_indicator__first
+
+function us_split_fields_rec__inc__increasing_indicator__second__projection(a: us_split_fields) : integer =
+  (a).rec__inc__increasing_indicator__second
+
+type us_split_fields__ref = { us_split_fields__content : us_split_fields
+}
+
+function us_split_fields__ref___split_fields__content__projection(a: us_split_fields__ref) : us_split_fields =
+  (a).us_split_fields__content
+
+type us_rep = { us_split_fields1 : us_split_fields
+}
+
+function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
+  (a).us_split_fields1
+
+function bool_eq2(a: us_rep, b: us_rep) : bool =
+  (if (((to_int(((a).us_split_fields1).rec__inc__increasing_indicator__valid) = to_int(((b).us_split_fields1).rec__inc__increasing_indicator__valid)) and
+  (to_rep(((a).us_split_fields1).rec__inc__increasing_indicator__first) = to_rep(((b).us_split_fields1).rec__inc__increasing_indicator__first))) and
+  (to_rep(((a).us_split_fields1).rec__inc__increasing_indicator__second) = to_rep(((b).us_split_fields1).rec__inc__increasing_indicator__second))) then true else false)
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic inc__increasing_indicator__valid__first__bit : int
+
+logic inc__increasing_indicator__valid__last__bit : int
+
+logic inc__increasing_indicator__valid__position : int
+
+axiom inc__increasing_indicator__valid__first__bit_axiom :
+  (0 <= inc__increasing_indicator__valid__first__bit)
+
+axiom inc__increasing_indicator__valid__last__bit_axiom :
+  (inc__increasing_indicator__valid__first__bit <  inc__increasing_indicator__valid__last__bit)
+
+axiom inc__increasing_indicator__valid__position_axiom :
+  (0 <= inc__increasing_indicator__valid__position)
+
+logic inc__increasing_indicator__first__first__bit : int
+
+logic inc__increasing_indicator__first__last__bit : int
+
+logic inc__increasing_indicator__first__position : int
+
+axiom inc__increasing_indicator__first__first__bit_axiom :
+  (0 <= inc__increasing_indicator__first__first__bit)
+
+axiom inc__increasing_indicator__first__last__bit_axiom :
+  (inc__increasing_indicator__first__first__bit <  inc__increasing_indicator__first__last__bit)
+
+axiom inc__increasing_indicator__first__position_axiom :
+  (0 <= inc__increasing_indicator__first__position)
+
+logic inc__increasing_indicator__second__first__bit : int
+
+logic inc__increasing_indicator__second__last__bit : int
+
+logic inc__increasing_indicator__second__position : int
+
+axiom inc__increasing_indicator__second__first__bit_axiom :
+  (0 <= inc__increasing_indicator__second__first__bit)
+
+axiom inc__increasing_indicator__second__last__bit_axiom :
+  (inc__increasing_indicator__second__first__bit <  inc__increasing_indicator__second__last__bit)
+
+axiom inc__increasing_indicator__second__position_axiom :
+  (0 <= inc__increasing_indicator__second__position)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type increasing_indicator__ref = { increasing_indicator__content : us_rep
+}
+
+function increasing_indicator__ref_increasing_indicator__content__projection(a: increasing_indicator__ref) : us_rep =
+  (a).increasing_indicator__content
+
+logic first : us_rep -> int
+
+logic first__function_guard : int, us_rep -> prop
+
+axiom first__post_axiom :
+  (forall indicator:us_rep [first(indicator)]. (let result = first(indicator)
+  : int in (first__function_guard(result, indicator) ->
+  dynamic_invariant(result, true, false, true, true))))
+
+axiom first__def_axiom :
+  (forall indicator:us_rep [first(indicator)].
+  (first(indicator) = to_rep(((indicator).us_split_fields1).rec__inc__increasing_indicator__first)))
+
+logic second : us_rep -> int
+
+logic second__function_guard : int, us_rep -> prop
+
+axiom second__post_axiom :
+  (forall indicator:us_rep [second(indicator)]. (let result =
+  second(indicator) : int in (second__function_guard(result, indicator) ->
+  dynamic_invariant(result, true, false, true, true))))
+
+axiom second__def_axiom :
+  (forall indicator:us_rep [second(indicator)].
+  (second(indicator) = to_rep(((indicator).us_split_fields1).rec__inc__increasing_indicator__second)))
+
+logic is_valid : us_rep -> bool
+
+logic is_valid__function_guard : bool, us_rep -> prop
+
+axiom is_valid__def_axiom :
+  (forall indicator:us_rep [is_valid(indicator)].
+  ((is_valid(indicator) = true) ->
+  (((indicator).us_split_fields1).rec__inc__increasing_indicator__valid = true)))
+
+axiom is_valid__def_axiom1 :
+  (forall indicator:us_rep [is_valid(indicator)].
+  ((((indicator).us_split_fields1).rec__inc__increasing_indicator__valid = true) ->
+  (is_valid(indicator) = true)))
+
+logic is_increasing : us_rep -> bool
+
+logic is_increasing__function_guard : bool, us_rep -> prop
+
+axiom is_increasing__post_axiom :
+  (forall indicator:us_rep. is_valid__function_guard(is_valid(indicator),
+  indicator))
+
+axiom is_increasing__def_axiom :
+  (forall indicator:us_rep [is_increasing(indicator)].
+  ((is_increasing(indicator) = true) ->
+  (to_rep(((indicator).us_split_fields1).rec__inc__increasing_indicator__first) <  to_rep(((indicator).us_split_fields1).rec__inc__increasing_indicator__second))))
+
+axiom is_increasing__def_axiom1 :
+  (forall indicator:us_rep [is_increasing(indicator)].
+  ((to_rep(((indicator).us_split_fields1).rec__inc__increasing_indicator__first) <  to_rep(((indicator).us_split_fields1).rec__inc__increasing_indicator__second)) ->
+  (is_increasing(indicator) = true)))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic rliteral : integer
+
+axiom rliteral_axiom : (integerqtint(rliteral) = 0)
+
+ (* File "inc.ads", line 27, characters 0-0 *)
+goal defqtvc :
+  (forall result____split_fields:us_split_fields. forall s:int.
+  (dynamic_invariant(s, true, false, true, true) ->
+  (forall o:int.
+  ((to_rep((result____split_fields).rec__inc__increasing_indicator__first) = o) ->
+  (forall inc__read__valid:bool. forall inc__read__v:int.
+  (dynamic_invariant(inc__read__v, true, true, true, true) ->
+  (forall o1:integer. ((to_rep(o1) = inc__read__v) ->
+  (forall result____split_fields1:us_split_fields.
+  ((result____split_fields1 = { rec__inc__increasing_indicator__valid =
+  (result____split_fields).rec__inc__increasing_indicator__valid;
+  rec__inc__increasing_indicator__first = o1;
+  rec__inc__increasing_indicator__second =
+  (result____split_fields).rec__inc__increasing_indicator__second }) ->
+  (forall result____split_fields2:us_split_fields.
+  ((result____split_fields2 = { rec__inc__increasing_indicator__valid =
+  inc__read__valid; rec__inc__increasing_indicator__first =
+  (result____split_fields1).rec__inc__increasing_indicator__first;
+  rec__inc__increasing_indicator__second =
+  (result____split_fields1).rec__inc__increasing_indicator__second }) ->
+  (forall result____split_fields3:us_split_fields.
+  ((exists spark__branch:bool.
+   ((spark__branch = (result____split_fields2).rec__inc__increasing_indicator__valid) and
+   (if (spark__branch = true) then (exists o2:int.
+                                   ((to_rep((result____split_fields2).rec__inc__increasing_indicator__second) = o2) and
+                                   (exists inc__read__valid1:bool.
+                                   exists inc__read__v1:int.
+                                   (dynamic_invariant(inc__read__v1, true,
+                                   true, true, true) and
+                                   (exists o3:integer.
+                                   ((to_rep(o3) = inc__read__v1) and
+                                   (exists result____split_fields4:us_split_fields.
+                                   ((result____split_fields4 = {
+                                   rec__inc__increasing_indicator__valid =
+                                   (result____split_fields2).rec__inc__increasing_indicator__valid;
+                                   rec__inc__increasing_indicator__first =
+                                   (result____split_fields2).rec__inc__increasing_indicator__first;
+                                   rec__inc__increasing_indicator__second =
+                                   o3 }) and (result____split_fields3 = {
+                                   rec__inc__increasing_indicator__valid =
+                                   inc__read__valid1;
+                                   rec__inc__increasing_indicator__first =
+                                   (result____split_fields4).rec__inc__increasing_indicator__first;
+                                   rec__inc__increasing_indicator__second =
+                                   (result____split_fields4).rec__inc__increasing_indicator__second
+                                   }))))))))) else (result____split_fields3 = {
+   rec__inc__increasing_indicator__valid =
+   (result____split_fields2).rec__inc__increasing_indicator__valid;
+   rec__inc__increasing_indicator__first =
+   (result____split_fields2).rec__inc__increasing_indicator__first;
+   rec__inc__increasing_indicator__second = rliteral })))) ->
+  (let o2 = { us_split_fields1 = result____split_fields3 } : us_rep in
+  (let o3 = is_valid(o2) : bool in ((is_valid__function_guard(o3, o2) and
+  ((o3 = true) <->
+  ((result____split_fields3).rec__inc__increasing_indicator__valid = true))) ->
+  ((o3 = true) -> (let o4 = { us_split_fields1 = result____split_fields3 }
+  : us_rep in (let o5 = first(o4) : int in ((first__function_guard(o5,
+  o4) and (dynamic_invariant(o5, true, false, true, true) and
+  (o5 = to_rep((result____split_fields3).rec__inc__increasing_indicator__first)))) ->
+  (let o6 = { us_split_fields1 = result____split_fields3 } : us_rep in
+  (let o7 = second(o6) : int in ((second__function_guard(o7, o6) and
+  (dynamic_invariant(o7, true, false, true, true) and
+  (o7 = to_rep((result____split_fields3).rec__inc__increasing_indicator__second)))) ->
+  ((forall o8:us_rep. is_valid__function_guard(is_valid(o8), o8)) ->
+  (is_valid({ us_split_fields1 = result____split_fields3
+  }) = true))))))))))))))))))))))))))

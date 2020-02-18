@@ -1,0 +1,105 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+type value
+
+logic valueqtint : value -> int
+
+axiom valueqtaxiom : (forall i:value. ((- 2147483648) <= valueqtint(i)))
+
+axiom valueqtaxiom1 : (forall i:value. (valueqtint(i) <= 2147483647))
+
+predicate in_range(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> int
+
+logic user_eq : value, value -> bool
+
+logic dummy : value
+
+type value__ref = { value__content : value
+}
+
+function value__ref_value__content__projection(a: value__ref) : value =
+  (a).value__content
+
+predicate dynamic_invariant(temp___expr_186: int, temp___is_init_182: bool,
+  temp___skip_constant_183: bool, temp___do_toplevel_184: bool,
+  temp___do_typ_inv_185: bool) = (((temp___is_init_182 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_186))
+
+ (* File "simple_unc_arrays.ads", line 115, characters 0-0 *)
+goal defqtvc :
+  (forall v:int. forall w:int. forall tmp:int.
+  (forall v1:int. ((v1 = v) ->
+  (forall w1:int. ((w1 = w) -> (dynamic_invariant(v, true, false, true,
+  true) -> (dynamic_invariant(w, true, false, true, true) ->
+  (dynamic_invariant(tmp, false, false, true, true) ->
+  (forall tmp1:int. ((tmp1 = v) ->
+  (forall v2:int. ((v2 = w) -> (forall w2:int. ((w2 = tmp1) -> (v2 = w1)))))))))))))))
