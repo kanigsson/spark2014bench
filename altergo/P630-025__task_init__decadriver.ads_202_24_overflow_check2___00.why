@@ -194,9 +194,9 @@ type transmitter_type__ref = { transmitter_type__content : us_rep
 function transmitter_type__ref_transmitter_type__content__projection(a: transmitter_type__ref) : us_rep =
   (a).transmitter_type__content
 
-predicate default_initial_assumption(temp___expr_424: us_rep,
-  temp___skip_top_level_425: bool) =
-  (((temp___expr_424).us_split_fields1).rec__decadriver__transmitter_type__tx_idle = of_int(1))
+predicate default_initial_assumption(temp___expr_426: us_rep,
+  temp___skip_top_level_427: bool) =
+  (((temp___expr_426).us_split_fields1).rec__decadriver__transmitter_type__tx_idle = of_int(1))
 
 predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,

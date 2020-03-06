@@ -278,12 +278,12 @@ goal defqtvc :
    valid__function_guard(valid(to_rep((c3[j]))), to_rep((c3[j])))) ->
   ((forall j:int. (((1 <= j) and (j <= i1)) ->
    (valid(to_rep((c2[j]))) = true))) ->
-  ((andb((if (in_range3(i1) and
-  (forall temp___221:int. (((1 <= temp___221) and (temp___221 <= 100)) ->
-  (((100 <  temp___221) or ((temp___221 <  1) or (i1 <  temp___221))) ->
-  ((c2[temp___221]) = (c[temp___221])))))) then true else false),
-  (if ((1 <= i1) and (i1 <= 100)) then true else false)) = true) ->
-  ((not (i1 = 100)) ->
+  ((andb((if ((forall temp___223:int. (((1 <= temp___223) and
+              (temp___223 <= 100)) -> (((100 <  temp___223) or
+              ((temp___223 <  1) or (i1 <  temp___223))) ->
+              ((c2[temp___223]) = (c[temp___223]))))) and
+  in_range3(i1)) then true else false), (if ((1 <= i1) and
+  (i1 <= 100)) then true else false)) = true) -> ((not (i1 = 100)) ->
   (forall i2:int. ((i2 = (i1 + 1)) ->
   (forall c3:(int,natural) farray.
   ((exists o:int. ((to_rep((c2[i2])) = o) and

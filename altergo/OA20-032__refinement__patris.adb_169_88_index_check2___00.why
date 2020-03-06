@@ -4807,10 +4807,10 @@ goal defqtvc :
   ((spark__branch = o1) and
   (if (spark__branch = true) then ((cur_board1 = (cur_board[del_line <- empty_line])) and
   ((to_line1 = del_line) and
-  (exists o2:t. ((let temp___910 = add(complete_lines, rliteral3) : t in
+  (exists o2:t. ((let temp___919 = add(complete_lines, rliteral3) : t in
   (if ule(sub(rliteral4, complete_lines),
-  rliteral3) then (o2 = sub(temp___910,
-  rliteral4)) else (o2 = temp___910))) and ((complete_lines1 = o2) and
+  rliteral3) then (o2 = sub(temp___919,
+  rliteral4)) else (o2 = temp___919))) and ((complete_lines1 = o2) and
   (to_rep(((cur_board1[del_line])[1])) = 0)))))) else (((cur_board1 = cur_board) and
   (to_line1 = to_line)) and (complete_lines1 = complete_lines))))))) ->
   (forall usf:int. ((andb((if (1 <= usf) then true else false),

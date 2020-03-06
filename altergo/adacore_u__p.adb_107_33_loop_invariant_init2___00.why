@@ -390,9 +390,8 @@ goal defqtvc : (dynamic_invariant2(a, true, false, true, true) ->
   true, false, true, true) ->
   (forall biggest_seq:int. ((biggest_seq = 0) ->
   (dynamic_invariant1(biggest_seq, true, false, true, true) ->
-  (let temp___314 = first1(a) : int in
-  (forall i:int. ((i = temp___314) ->
-  ((andb((if (temp___314 <= i) then true else false),
+  (let temp___315 = first1(a) : int in
+  (forall i:int. ((i = temp___315) ->
+  ((andb((if (temp___315 <= i) then true else false),
   (if (i <= last1(a)) then true else false)) = true) ->
-  (in_range1((beginning + 1)) -> (in_range1((beginning + 1)) ->
-  (first1(a) <= (beginning + 1)))))))))))))))))))))))
+  (in_range1((beginning + 1)) -> (first1(a) <= (beginning + 1))))))))))))))))))))))

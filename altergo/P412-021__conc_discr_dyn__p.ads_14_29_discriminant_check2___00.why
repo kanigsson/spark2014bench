@@ -346,6 +346,9 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__p__my_rec__content,
   ((b).us_split_fields1).rec__p__my_rec__content) = true)) then true else false)
 
+predicate in_range4(rec__p__my_rec__c1: int, a: us_split_discrs) =
+  (rec__p__my_rec__c1 = to_rep((a).rec__p__my_rec__c))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -441,9 +444,6 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   (bool_eq5(((a).us_split_fields3).rec__p__my_rec__content1,
   ((b).us_split_fields3).rec__p__my_rec__content1) = true)) then true else false)
 
-predicate in_range4(rec__p__my_rec__c1: int, a: us_rep) =
-  (rec__p__my_rec__c1 = to_rep(((a).us_split_discrs1).rec__p__my_rec__c))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -533,6 +533,10 @@ function us_rep___split_discrs__4__projection(a: us_rep2) : us_split_discrs3 =
 
 function us_rep___split_fields__4__projection(a: us_rep2) : us_split_fields4 =
   (a).us_split_fields5
+
+predicate in_range5(rec__p__pp__b1: bool, rec__p__pp__c1: int,
+  a: us_split_discrs3) = ((rec__p__pp__b1 = (a).rec__p__pp__b) and
+  (rec__p__pp__c1 = to_rep((a).rec__p__pp__c)))
 
 logic value__size3 : int
 
@@ -651,9 +655,6 @@ function bool_eq8(a: us_rep3, b: us_rep3) : bool =
   (bool_eq5(((a).us_split_fields7).rec__p__my_rec__content2,
   ((b).us_split_fields7).rec__p__my_rec__content2) = true)) then true else false)
 
-predicate in_range5(rec__p__my_rec__c1: int, a: us_rep) =
-  (rec__p__my_rec__c1 = to_rep(((a).us_split_discrs1).rec__p__my_rec__c))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -748,7 +749,7 @@ predicate dynamic_invariant5(temp___expr_200: us_rep2,
   temp___do_toplevel_198: bool, temp___do_typ_inv_199: bool) =
   (let temp___202 = ((temp___expr_200).us_split_discrs4).rec__p__pp__c
   : natural in (in_range4(to_rep(temp___202),
-  to_base(((temp___expr_200).us_split_fields5).rec__p__pp__r)) and
+  (to_base(((temp___expr_200).us_split_fields5).rec__p__pp__r)).us_split_discrs1) and
   (dynamic_property(1, to_rep(temp___202),
   first1(((((temp___expr_200).us_split_fields5).rec__p__pp__r).us_split_fields3).rec__p__my_rec__content1),
   last1(((((temp___expr_200).us_split_fields5).rec__p__pp__r).us_split_fields3).rec__p__my_rec__content1)) and
@@ -789,7 +790,7 @@ goal defqtvc : (let temp___248 = ((self__).us_split_discrs4).rec__p__pp__c
   ((last1(temp___249) = to_rep(temp___248)) ->
   ((if (first1(temp___249) <= last1(temp___249)) then ((1 <= to_rep(temp___248)) and
   ((last1(temp___249) - first1(temp___249)) = (to_rep(temp___248) - 1))) else (to_rep(temp___248) <  1)) ->
-  (forall o1:int. ((to_rep(temp___248) = o1) -> in_range4(o1, to_base1({
+  (forall o1:int. ((to_rep(temp___248) = o1) -> in_range4(o1, (to_base1({
   us_split_discrs5 = { rec__p__my_rec__c = temp___248 }; us_split_fields7 = {
   rec__p__my_rec__content2 = of_array(to_array(temp___249),
-  first1(temp___249), last1(temp___249)) } })))))))))))
+  first1(temp___249), last1(temp___249)) } })).us_split_discrs1))))))))))

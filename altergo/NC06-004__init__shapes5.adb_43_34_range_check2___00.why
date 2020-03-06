@@ -1271,10 +1271,10 @@ type full_width_type__ref = { full_width_type__content : full_width_type
 function full_width_type__ref_full_width_type__content__projection(a: full_width_type__ref) : full_width_type =
   (a).full_width_type__content
 
-predicate dynamic_invariant2(temp___expr_189: t, temp___is_init_185: bool,
-  temp___skip_constant_186: bool, temp___do_toplevel_187: bool,
-  temp___do_typ_inv_188: bool) = (((temp___is_init_185 = true) or
-  le(fliteral4, fliteral5)) -> in_range4(temp___expr_189))
+predicate dynamic_invariant2(temp___expr_197: t, temp___is_init_193: bool,
+  temp___skip_constant_194: bool, temp___do_toplevel_195: bool,
+  temp___do_typ_inv_196: bool) = (((temp___is_init_193 = true) or
+  le(fliteral4, fliteral5)) -> in_range4(temp___expr_197))
 
 predicate dynamic_invariant3(temp___expr_168: t, temp___is_init_164: bool,
   temp___skip_constant_165: bool, temp___do_toplevel_166: bool,

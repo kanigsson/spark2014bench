@@ -399,6 +399,9 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range4(rec__stacks__stack__max1: int, a: us_split_discrs) =
+  (rec__stacks__stack__max1 = to_rep1((a).rec__stacks__stack__max))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -491,7 +494,7 @@ function to_int(b: bool) : int = (if (b = true) then 1 else 0)
 
 function of_int(i: int) : bool = (if (i = 0) then false else true)
 
-predicate in_range4(x: int) = ((x = 0) or (x = 1))
+predicate in_range5(x: int) = ((x = 0) or (x = 1))
 
 logic attr__ATTRIBUTE_IMAGE4 : bool -> us_image
 

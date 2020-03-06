@@ -3920,6 +3920,6 @@ goal defqtvc :
   (forall o2:int.
   ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = o2) ->
   (forall o3:cell. ((to_rep(o3) = o2) ->
-  (forall temp___850:int.
-  ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = temp___850) ->
-  (1 <= temp___850)))))))))))))))))))
+  (forall temp___859:int.
+  ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = temp___859) ->
+  (1 <= temp___859)))))))))))))))))))

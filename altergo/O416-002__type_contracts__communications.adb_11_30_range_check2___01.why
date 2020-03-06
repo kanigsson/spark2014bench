@@ -547,6 +547,10 @@ function bool_eq8(a1: us_rep1, b: us_rep1) : bool =
   (bool_eq7(((a1).us_split_fields3).rec__communications__communication__msgs,
   ((b).us_split_fields3).rec__communications__communication__msgs) = true)) then true else false)
 
+predicate in_range3(rec__communications__communication__num1: int,
+  a1: us_split_discrs) =
+  (rec__communications__communication__num1 = to_rep((a1).rec__communications__communication__num))
+
 logic value__size3 : int
 
 logic object__size3 : int
@@ -660,7 +664,7 @@ axiom tdayP1qtaxiom : (forall i:tdayP1. (1 <= tdayP1qtint(i)))
 
 axiom tdayP1qtaxiom1 : (forall i:tdayP1. (tdayP1qtint(i) <= 10))
 
-predicate in_range3(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range4(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -760,10 +764,6 @@ function bool_eq10(a1: us_rep2, b: us_rep2) : bool =
   (bool_eq7(((a1).us_split_fields5).rec__communications__communication__msgs1,
   ((b).us_split_fields5).rec__communications__communication__msgs1) = true)) then true else false)
 
-predicate in_range4(rec__communications__communication__num1: int,
-  a1: us_rep1) =
-  (rec__communications__communication__num1 = to_rep(((a1).us_split_discrs1).rec__communications__communication__num))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -823,8 +823,9 @@ logic attr__ATTRIBUTE_ADDRESS2 : int
 predicate dynamic_invariant1(temp___expr_308: us_rep2,
   temp___is_init_304: bool, temp___skip_constant_305: bool,
   temp___do_toplevel_306: bool, temp___do_typ_inv_307: bool) =
-  (((not (temp___skip_constant_305 = true)) -> in_range4(length1(a),
-  to_base(temp___expr_308))) and ((dynamic_property(1, length1(a),
+  (((not (temp___skip_constant_305 = true)) -> in_range3(length1(a),
+  (to_base(temp___expr_308)).us_split_discrs1)) and ((dynamic_property(1,
+  length1(a),
   first1(((temp___expr_308).us_split_fields5).rec__communications__communication__msgs1),
   last1(((temp___expr_308).us_split_fields5).rec__communications__communication__msgs1)) and
   ((first1(((temp___expr_308).us_split_fields5).rec__communications__communication__msgs1) = 1) and

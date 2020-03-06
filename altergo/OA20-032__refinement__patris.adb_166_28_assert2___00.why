@@ -4806,9 +4806,9 @@ goal defqtvc :
   (forall cur_board1:(int,(int,cell) farray) farray.
   ((cur_board1 = (cur_board[del_line <- empty_line])) ->
   (forall to_line1:int. ((to_line1 = del_line) ->
-  (forall o2:t. ((let temp___910 = add(complete_lines, rliteral3) : t in
+  (forall o2:t. ((let temp___919 = add(complete_lines, rliteral3) : t in
   (if ule(sub(rliteral4, complete_lines),
-  rliteral3) then (o2 = sub(temp___910,
-  rliteral4)) else (o2 = temp___910))) ->
+  rliteral3) then (o2 = sub(temp___919,
+  rliteral4)) else (o2 = temp___919))) ->
   (forall complete_lines1:t. ((complete_lines1 = o2) ->
   (to_rep(((cur_board1[del_line])[1])) = 0)))))))))))))))))))))))))))))))

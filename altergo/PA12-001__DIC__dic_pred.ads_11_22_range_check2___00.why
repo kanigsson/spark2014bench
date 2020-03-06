@@ -216,6 +216,6 @@ predicate default_initial_assumption(temp___expr_177: us_rep,
   ((to_rep(((temp___expr_177).us_split_fields1).rec__dic_pred__s__f) = c) and
   ((not (temp___skip_top_level_178 = true)) -> (0 <= c)))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__DIC-8636/src/gnatprove/dic_pred__s.mlw", line 435, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__DIC-25055/src/gnatprove/dic_pred__s.mlw", line 435, characters 5-8 *)
 goal defqtvc : (dynamic_invariant(c, true, false, true, true) ->
   ((id(0) = c) -> ((0 <= c) -> in_range1(c))))

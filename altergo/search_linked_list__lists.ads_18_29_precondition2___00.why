@@ -541,6 +541,10 @@ function bool_eq9(a: us_rep3, b: us_rep3) : bool =
   (us_main_eq2(((a).us_split_fields3).rec__lists__l__list,
   ((b).us_split_fields3).rec__lists__l__list) = true)) then true else false)
 
+predicate in_range5(rec__lists__l__list__capacity1: int,
+  a: us_split_discrs) =
+  (rec__lists__l__list__capacity1 = to_rep((a).rec__lists__l__list__capacity))
+
 logic value__size3 : int
 
 logic object__size3 : int
@@ -644,7 +648,7 @@ axiom element_typeqtaxiom4 :
 axiom element_typeqtaxiom5 :
   (forall i:element_type2. (element_typeqtint2(i) <= 2147483647))
 
-predicate in_range5(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range6(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -667,7 +671,7 @@ function element_type__ref_element_type__content__projection(a: element_type__re
 predicate dynamic_invariant3(temp___expr_231: int, temp___is_init_227: bool,
   temp___skip_constant_228: bool, temp___do_toplevel_229: bool,
   temp___do_typ_inv_230: bool) = (((temp___is_init_227 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range5(temp___expr_231))
+  ((- 2147483648) <= 2147483647)) -> in_range6(temp___expr_231))
 
 predicate default_initial_assumption3(temp___expr_252: us_rep,
   temp___skip_top_level_253: bool) =

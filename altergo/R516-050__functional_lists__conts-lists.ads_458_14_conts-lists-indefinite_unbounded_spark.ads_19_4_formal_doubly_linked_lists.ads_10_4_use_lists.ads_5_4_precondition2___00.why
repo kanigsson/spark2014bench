@@ -268,8 +268,8 @@ type list__ref = { list__content : us_rep2
 function list__ref_list__content__projection(a: list__ref) : us_rep2 =
   (a).list__content
 
-predicate default_initial_assumption(temp___expr_337: us_rep2,
-  temp___skip_top_level_338: bool) = ((temp___expr_337).attr__tag2 = us_tag2)
+predicate default_initial_assumption(temp___expr_309: us_rep2,
+  temp___skip_top_level_310: bool) = ((temp___expr_309).attr__tag2 = us_tag2)
 
 type us_main_type2
 
@@ -317,11 +317,11 @@ logic position : us_rep3
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
 
-predicate default_initial_assumption1(temp___expr_271: us_rep,
-  temp___skip_top_level_272: bool) = ((temp___expr_271).attr__tag = us_tag)
+predicate default_initial_assumption1(temp___expr_250: us_rep,
+  temp___skip_top_level_251: bool) = ((temp___expr_250).attr__tag = us_tag)
 
-predicate default_initial_assumption2(temp___expr_318: us_rep1,
-  temp___skip_top_level_319: bool) = ((temp___expr_318).attr__tag1 = us_tag1)
+predicate default_initial_assumption2(temp___expr_297: us_rep1,
+  temp___skip_top_level_298: bool) = ((temp___expr_297).attr__tag1 = us_tag1)
 
  (* File "conts-lists.ads", line 456, characters 0-0 *)
 goal defqtvc :

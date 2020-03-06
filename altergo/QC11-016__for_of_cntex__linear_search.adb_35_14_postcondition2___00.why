@@ -359,5 +359,5 @@ goal defqtvc : (dynamic_invariant(n, true, false, true, true) ->
    (in_range4(o1) and (exists i2:int. ((i2 = o1) and (not (i2 <  10))))))))))))))) and
    (linear_search__search__2__result = 0)))))) ->
   ((linear_search__search__2__result = 0) ->
-  (forall temp___439:int. ((in_range2(temp___439) and (iter_has_element(arr,
-  temp___439) = true)) -> (not (get(arr, temp___439) = n)))))))))
+  (forall temp___441:int. ((in_range2(temp___441) and (iter_has_element(arr,
+  temp___441) = true)) -> (not (get(arr, temp___441) = n)))))))))

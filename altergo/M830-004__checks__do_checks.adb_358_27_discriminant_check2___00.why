@@ -312,6 +312,10 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   (bool_eq4(((a).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr,
   ((b).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = true))) then true else false)
 
+predicate in_range3(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_split_discrs) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep((a).rec__do_checks__do_discriminant_check__r1__j))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -385,7 +389,7 @@ axiom tT65bP1qtaxiom : (forall i:tT65bP1. (1 <= tT65bP1qtint(i)))
 
 axiom tT65bP1qtaxiom1 : (forall i:tT65bP1. (tT65bP1qtint(i) <= 10))
 
-predicate in_range3(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range4(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -472,10 +476,6 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   ((b).us_split_fields3).rec__do_checks__do_discriminant_check__r1__arr1, 1,
   10) = true))) then true else false)
 
-predicate in_range4(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -531,8 +531,8 @@ function r3__ref_r3__content__projection(a: r3__ref) : us_rep1 =
 predicate dynamic_invariant1(temp___expr_572: us_rep1,
   temp___is_init_568: bool, temp___skip_constant_569: bool,
   temp___do_toplevel_570: bool, temp___do_typ_inv_571: bool) =
-  ((not (temp___skip_constant_569 = true)) -> in_range4(10,
-  to_base(temp___expr_572)))
+  ((not (temp___skip_constant_569 = true)) -> in_range3(10,
+  (to_base(temp___expr_572)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_575: us_rep1,
   temp___skip_top_level_576: bool) =
@@ -559,4 +559,4 @@ goal defqtvc :
   rec__do_checks__do_discriminant_check__r1__arr1 = y__split_fields } },
   false, false, true, true) ->
   ((to_rep(((x).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j) = 10) ->
-  in_range4(10, x)))))
+  in_range3(10, (x).us_split_discrs1)))))

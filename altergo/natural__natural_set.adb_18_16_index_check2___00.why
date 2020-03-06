@@ -497,6 +497,6 @@ goal defqtvc :
   rec__natural_set__t__len = o5; rec__natural_set__t__m =
   (s__split_fields).rec__natural_set__t__m }) ->
   (forall o6:element_t. ((to_rep1(o6) = value) ->
-  (forall temp___251:int.
-  ((to_rep((s__split_fields1).rec__natural_set__t__len) = temp___251) ->
-  (1 <= temp___251)))))))))))))))))))))))))
+  (forall temp___255:int.
+  ((to_rep((s__split_fields1).rec__natural_set__t__len) = temp___255) ->
+  (1 <= temp___255)))))))))))))))))))))))))

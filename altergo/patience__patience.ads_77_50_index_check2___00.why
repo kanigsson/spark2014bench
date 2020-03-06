@@ -758,18 +758,18 @@ goal defqtvc :
   (forall o1:int.
   ((to_rep(((s).us_split_fields1).rec__patience__state__numelts) = o1) ->
   ((andb((if (0 <= usf) then true else false),
-  (if (usf <= (o1 - 1)) then true else false)) = true) ->
+  (if (usf <= (o1 - 1)) then true else false)) = true) -> (((0 <= usf) and
+  (usf <= 99)) ->
+  (forall temp___447:int.
+  ((to_rep((((s).us_split_fields1).rec__patience__state__posstack[usf])) = temp___447) ->
   (forall o2:int.
   ((to_rep(((s).us_split_fields1).rec__patience__state__numstacks) = o2) ->
+  ((andb((if (0 <= temp___447) then true else false),
+  (if (temp___447 <= (o2 - 1)) then true else false)) = true) ->
   (((0 <= usf) and (usf <= 99)) ->
-  (forall o3:int.
-  ((to_rep((((s).us_split_fields1).rec__patience__state__posstack[usf])) = o3) ->
+  (forall temp___449:int.
+  ((to_rep((((s).us_split_fields1).rec__patience__state__posheight[usf])) = temp___449) ->
   (((0 <= usf) and (usf <= 99)) ->
-  (forall o4:int.
-  ((to_rep((((s).us_split_fields1).rec__patience__state__posstack[usf])) = o4) ->
-  ((andb((if (0 <= o4) then true else false),
-  (if (o3 <= (o2 - 1)) then true else false)) = true) -> (((0 <= usf) and
-  (usf <= 99)) ->
-  (forall temp___444:int.
-  ((to_rep((((s).us_split_fields1).rec__patience__state__posstack[usf])) = temp___444) ->
-  (0 <= temp___444))))))))))))))))))))
+  (forall temp___452:int.
+  ((to_rep((((s).us_split_fields1).rec__patience__state__posstack[usf])) = temp___452) ->
+  (0 <= temp___452))))))))))))))))))))

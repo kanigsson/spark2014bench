@@ -623,9 +623,9 @@ logic rliteral1 : t
 
 axiom rliteral_axiom1 : (tqtint(rliteral1) = 255)
 
-predicate dynamic_invariant(temp___expr_203: t, temp___is_init_199: bool,
-  temp___skip_constant_200: bool, temp___do_toplevel_201: bool,
-  temp___do_typ_inv_202: bool) = true
+predicate dynamic_invariant(temp___expr_205: t, temp___is_init_201: bool,
+  temp___skip_constant_202: bool, temp___do_toplevel_203: bool,
+  temp___do_typ_inv_204: bool) = true
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
 

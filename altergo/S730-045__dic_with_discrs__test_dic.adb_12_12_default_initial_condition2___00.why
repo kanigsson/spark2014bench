@@ -152,6 +152,10 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (if ((to_int(((a).us_split_discrs1).rec__test_dic__nested__p4__x) = to_int(((b).us_split_discrs1).rec__test_dic__nested__p4__x)) and
   (to_rep(((a).us_split_fields1).rec__test_dic__nested__p4__c) = to_rep(((b).us_split_fields1).rec__test_dic__nested__p4__c))) then true else false)
 
+predicate in_range2(rec__test_dic__nested__p4__x1: bool,
+  a: us_split_discrs) =
+  (rec__test_dic__nested__p4__x1 = (a).rec__test_dic__nested__p4__x)
+
 logic value__size : int
 
 logic object__size : int
@@ -233,7 +237,7 @@ axiom f4__def_axiom1 :
   ((to_rep(((x).us_split_fields1).rec__test_dic__nested__p4__c) = 0) ->
   (f4(x) = true)))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S730-045__dic_with_discrs-10637/src/gnatprove/test_dic__nested__p4.mlw", line 430, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S730-045__dic_with_discrs-13998/src/gnatprove/test_dic__nested__p4.mlw", line 442, characters 5-8 *)
 goal defqtvc :
   (forall usf:us_rep.
   ((to_rep(((usf).us_split_fields1).rec__test_dic__nested__p4__c) = 0) ->

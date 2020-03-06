@@ -329,10 +329,10 @@ goal defqtvc :
   (dynamic_invariant(result__, false, false, true, true) ->
   ((exists i:int. (((first1(a) <= i) and (i <= last1(a))) and
    (to_rep((to_array(a)[i])) = e))) ->
-  (let temp___298 = first1(a) : int in (let temp___299 = last1(a) : int in
-  (forall i:int. ((i = temp___298) ->
-  ((andb((if (temp___298 <= i) then true else false),
-  (if (i <= temp___299) then true else false)) = true) ->
+  (let temp___299 = first1(a) : int in (let temp___300 = last1(a) : int in
+  (forall i:int. ((i = temp___299) ->
+  ((andb((if (temp___299 <= i) then true else false),
+  (if (i <= temp___300) then true else false)) = true) ->
   (forall o:int. ((to_rep((to_array(a)[i])) = o) ->
   (forall spark__branch:bool.
   ((spark__branch = (if (o = e) then true else false)) ->
@@ -344,7 +344,7 @@ goal defqtvc :
   dynamic_property1(first1(a), last1(a), i1)) then true else false),
   (if ((first1(a) <= i1) and
   (i1 <= last1(a))) then true else false)) = true) ->
-  ((not (i1 = temp___299)) ->
+  ((not (i1 = temp___300)) ->
   (forall i2:int. ((i2 = (i1 + 1)) ->
   (forall o1:int. ((to_rep((to_array(a)[i2])) = o1) ->
   (forall spark__branch1:bool.

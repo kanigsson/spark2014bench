@@ -229,6 +229,10 @@ function bool_eq4(a: us_rep1, b: us_rep1) : bool =
   (bool_eq3(((a).us_split_fields1).rec__pledge_constraints__int_acc_option__content,
   ((b).us_split_fields1).rec__pledge_constraints__int_acc_option__content) = true))) then true else false)
 
+predicate in_range3(rec__pledge_constraints__int_acc_option__present1: bool,
+  a: us_split_discrs) =
+  (rec__pledge_constraints__int_acc_option__present1 = (a).rec__pledge_constraints__int_acc_option__present)
+
 logic value__size : int
 
 logic object__size : int
@@ -565,7 +569,7 @@ axiom t8bqtaxiom : (forall i:t8b. (1 <= t8bqtint(i)))
 
 axiom t8bqtaxiom1 : (forall i:t8b. (t8bqtint(i) <= 3))
 
-predicate in_range3(x: int) = ((1 <= x) and (x <= 3))
+predicate in_range4(x: int) = ((1 <= x) and (x <= 3))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -584,10 +588,6 @@ type t8b__ref = { t8b__content : t8b
 
 function t8b__ref_t8b__content__projection(a: t8b__ref) : t8b =
   (a).t8b__content
-
-predicate in_range4(rec__pledge_constraints__int_acc_option__present1: bool,
-  a: us_rep1) =
-  (rec__pledge_constraints__int_acc_option__present1 = ((a).us_split_discrs1).rec__pledge_constraints__int_acc_option__present)
 
 logic value__size3 : int
 
@@ -641,7 +641,7 @@ type t7b__ref = { t7b__content : us_rep1
 function t7b__ref_t7b__content__projection(a: t7b__ref) : us_rep1 =
   (a).t7b__content
 
-logic temp_____aggregate_def_238 : us_rep1 -> (int,us_rep1) farray
+logic temp_____aggregate_def_239 : us_rep1 -> (int,us_rep1) farray
 
 predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
@@ -682,9 +682,9 @@ predicate default_initial_assumption3(temp___expr_208: us_rep2,
   ((temp___expr_208).rec__pledge_constraints__int_arr_acc__is_null_pointer = true)
 
 axiom def_axiom :
-  (forall temp___240:us_rep1.
-  (forall temp___241:int.
-  ((temp_____aggregate_def_238(temp___240)[temp___241]) = temp___240)))
+  (forall temp___241:us_rep1.
+  (forall temp___242:int.
+  ((temp_____aggregate_def_239(temp___241)[temp___242]) = temp___241)))
 
 logic rliteral : integer
 
@@ -700,18 +700,18 @@ goal defqtvc :
   (1 <= last1(((x__split_fields).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)))) and
   ((((to_array(((x__split_fields).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)[1])).us_split_discrs1).rec__pledge_constraints__int_acc_option__present = true)) and
   (not (bool_eq3((((to_array(((x__split_fields).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)[1])).us_split_fields1).rec__pledge_constraints__int_acc_option__content,
-  us_null_pointer) = true))) -> (let temp___228 =
+  us_null_pointer) = true))) -> (let temp___229 =
   ((x__split_fields).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value
-  : us_t in (((first1(temp___228) <= 1) and (1 <= last1(temp___228))) ->
+  : us_t in (((first1(temp___229) <= 1) and (1 <= last1(temp___229))) ->
   (let pledge_constraints__update__y__assume =
-  (((to_array(temp___228)[1])).us_split_fields1).rec__pledge_constraints__int_acc_option__content
+  (((to_array(temp___229)[1])).us_split_fields1).rec__pledge_constraints__int_acc_option__content
   : us_rep in
   (forall usf:us_pledge_ty.
-  ((forall temp___borrowed_236:us_rep3.
-   (forall temp___brower_230:us_rep [us_pledge_get(usf, temp___borrowed_236,
-   temp___brower_230)]. ((us_pledge_get(usf, temp___borrowed_236,
-   temp___brower_230) = true) <->
-   ((((to_array((((temp___borrowed_236).us_split_fields3).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)[1])).us_split_fields1).rec__pledge_constraints__int_acc_option__content = temp___brower_230)))) ->
+  ((forall temp___borrowed_237:us_rep3.
+   (forall temp___brower_231:us_rep [us_pledge_get(usf, temp___borrowed_237,
+   temp___brower_231)]. ((us_pledge_get(usf, temp___borrowed_237,
+   temp___brower_231) = true) <->
+   ((((to_array((((temp___borrowed_237).us_split_fields3).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)[1])).us_split_fields1).rec__pledge_constraints__int_acc_option__content = temp___brower_231)))) ->
   (forall pledge_constraints__update__y__pledge:us_pledge_ty.
   ((pledge_constraints__update__y__pledge = usf) ->
   (forall y__pointer_value:integer.
@@ -724,7 +724,7 @@ goal defqtvc :
   (forall o:us_rep2.
   ((andb((if ((not ((o).rec__pledge_constraints__int_arr_acc__is_null_pointer = true)) and
   ((o).rec__pledge_constraints__int_arr_acc__pointer_address = us_next_pointer_address)) then true else false),
-  (if ((o).rec__pledge_constraints__int_arr_acc__pointer_value = of_array(temp_____aggregate_def_238({
+  (if ((o).rec__pledge_constraints__int_arr_acc__pointer_value = of_array(temp_____aggregate_def_239({
   us_split_discrs1 = { rec__pledge_constraints__int_acc_option__present =
   of_int(0) }; us_split_fields1 = {
   rec__pledge_constraints__int_acc_option__content = dummy2 } }), 1,
@@ -734,16 +734,16 @@ goal defqtvc :
   (x__split_fields).rec__pledge_constraints__two_arrays__a1;
   rec__pledge_constraints__two_arrays__a2 = o }) ->
   (forall y__pointer_value1:integer. ((y__pointer_value1 = rliteral) ->
-  (forall temp___borrowed_256:us_rep3.
-  (forall temp___brower_255:us_rep [us_pledge_get(({ us_pledge_ty__content =
+  (forall temp___borrowed_257:us_rep3.
+  (forall temp___brower_256:us_rep [us_pledge_get(({ us_pledge_ty__content =
   pledge_constraints__update__y__pledge }).us_pledge_ty__content,
-  temp___borrowed_256, temp___brower_255)].
+  temp___borrowed_257, temp___brower_256)].
   (((us_pledge_get(pledge_constraints__update__y__pledge,
-  temp___borrowed_256, temp___brower_255) = true) and
-  (((((x__split_fields1).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__is_null_pointer = (((temp___borrowed_256).us_split_fields3).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__is_null_pointer) and
-  (((first1(((x__split_fields1).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value) = first1((((temp___borrowed_256).us_split_fields3).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)) and
-  (last1(((x__split_fields1).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value) = last1((((temp___borrowed_256).us_split_fields3).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value))) and
-  (((((to_array(((x__split_fields1).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)[1])).us_split_discrs1).rec__pledge_constraints__int_acc_option__present = (((to_array((((temp___borrowed_256).us_split_fields3).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)[1])).us_split_discrs1).rec__pledge_constraints__int_acc_option__present) and
-  (((((to_array(((x__split_fields1).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)[1])).us_split_fields1).rec__pledge_constraints__int_acc_option__content).rec__pledge_constraints__int_acc__is_null_pointer = ((((to_array((((temp___borrowed_256).us_split_fields3).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)[1])).us_split_fields1).rec__pledge_constraints__int_acc_option__content).rec__pledge_constraints__int_acc__is_null_pointer)))) and
-  (y__is_null_pointer = (temp___brower_255).rec__pledge_constraints__int_acc__is_null_pointer))) ->
-  (to_rep(((((to_array((((temp___borrowed_256).us_split_fields3).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)[1])).us_split_fields1).rec__pledge_constraints__int_acc_option__content).rec__pledge_constraints__int_acc__pointer_value) = to_rep((temp___brower_255).rec__pledge_constraints__int_acc__pointer_value))))))))))))))))))))))))))))
+  temp___borrowed_257, temp___brower_256) = true) and
+  (((((x__split_fields1).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__is_null_pointer = (((temp___borrowed_257).us_split_fields3).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__is_null_pointer) and
+  (((first1(((x__split_fields1).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value) = first1((((temp___borrowed_257).us_split_fields3).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)) and
+  (last1(((x__split_fields1).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value) = last1((((temp___borrowed_257).us_split_fields3).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value))) and
+  (((((to_array(((x__split_fields1).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)[1])).us_split_discrs1).rec__pledge_constraints__int_acc_option__present = (((to_array((((temp___borrowed_257).us_split_fields3).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)[1])).us_split_discrs1).rec__pledge_constraints__int_acc_option__present) and
+  (((((to_array(((x__split_fields1).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)[1])).us_split_fields1).rec__pledge_constraints__int_acc_option__content).rec__pledge_constraints__int_acc__is_null_pointer = ((((to_array((((temp___borrowed_257).us_split_fields3).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)[1])).us_split_fields1).rec__pledge_constraints__int_acc_option__content).rec__pledge_constraints__int_acc__is_null_pointer)))) and
+  (y__is_null_pointer = (temp___brower_256).rec__pledge_constraints__int_acc__is_null_pointer))) ->
+  (to_rep(((((to_array((((temp___borrowed_257).us_split_fields3).rec__pledge_constraints__two_arrays__a1).rec__pledge_constraints__int_arr_acc__pointer_value)[1])).us_split_fields1).rec__pledge_constraints__int_acc_option__content).rec__pledge_constraints__int_acc__pointer_value) = to_rep((temp___brower_256).rec__pledge_constraints__int_acc__pointer_value))))))))))))))))))))))))))))

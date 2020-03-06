@@ -252,6 +252,10 @@ function bool_eq4(a: us_rep1, b: us_rep1) : bool =
   (us_main_eq(((a).us_split_fields3).rec__p__my_lists__list,
   ((b).us_split_fields3).rec__p__my_lists__list) = true)) then true else false)
 
+predicate in_range3(rec__p__my_lists__list__capacity1: int,
+  a: us_split_discrs) =
+  (rec__p__my_lists__list__capacity1 = to_rep((a).rec__p__my_lists__list__capacity))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -403,7 +407,7 @@ axiom element_typeqtaxiom :
 axiom element_typeqtaxiom1 :
   (forall i:element_type. (element_typeqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -426,7 +430,7 @@ function element_type__ref_element_type__content__projection(a: element_type__re
 predicate dynamic_invariant1(temp___expr_237: int, temp___is_init_233: bool,
   temp___skip_constant_234: bool, temp___do_toplevel_235: bool,
   temp___do_typ_inv_236: bool) = (((temp___is_init_233 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range3(temp___expr_237))
+  ((- 2147483648) <= 2147483647)) -> in_range4(temp___expr_237))
 
 predicate default_initial_assumption(temp___expr_258: us_rep,
   temp___skip_top_level_259: bool) =
@@ -626,7 +630,7 @@ axiom extended_indexqtaxiom :
 axiom extended_indexqtaxiom1 :
   (forall i:extended_index. (extended_indexqtint(i) <= 2147483647))
 
-predicate in_range4(x1: int) = ((0 <= x1) and (x1 <= 2147483647))
+predicate in_range5(x1: int) = ((0 <= x1) and (x1 <= 2147483647))
 
 function bool_eq9(x1: int, y: int) : bool =
   (if (x1 = y) then true else false)
@@ -650,7 +654,7 @@ function extended_index__ref_extended_index__content__projection(a: extended_ind
 predicate dynamic_invariant3(temp___expr_287: int, temp___is_init_283: bool,
   temp___skip_constant_284: bool, temp___do_toplevel_285: bool,
   temp___do_typ_inv_286: bool) = (((temp___is_init_283 = true) or
-  (0 <= 2147483647)) -> in_range4(temp___expr_287))
+  (0 <= 2147483647)) -> in_range5(temp___expr_287))
 
 axiom length__post_axiom2 :
   (forall container:us_rep2 [length2(container)].
@@ -670,7 +674,7 @@ axiom element_typeqtaxiom2 :
 axiom element_typeqtaxiom3 :
   (forall i:element_type1. (element_typeqtint1(i) <= 2147483647))
 
-predicate in_range5(x1: int) = (((- 2147483648) <= x1) and
+predicate in_range6(x1: int) = (((- 2147483648) <= x1) and
   (x1 <= 2147483647))
 
 function bool_eq10(x1: int, y: int) : bool =
@@ -695,7 +699,7 @@ function element_type__ref_element_type__content__2__projection(a: element_type_
 predicate dynamic_invariant4(temp___expr_280: int, temp___is_init_276: bool,
   temp___skip_constant_277: bool, temp___do_toplevel_278: bool,
   temp___do_typ_inv_279: bool) = (((temp___is_init_276 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range5(temp___expr_280))
+  ((- 2147483648) <= 2147483647)) -> in_range6(temp___expr_280))
 
 axiom get__post_axiom :
   (forall container:us_rep2.
@@ -729,7 +733,7 @@ axiom element_typeqtaxiom4 :
 axiom element_typeqtaxiom5 :
   (forall i:element_type2. (element_typeqtint2(i) <= 2147483647))
 
-predicate in_range6(x1: int) = ((1 <= x1) and (x1 <= 2147483647))
+predicate in_range7(x1: int) = ((1 <= x1) and (x1 <= 2147483647))
 
 function bool_eq11(x1: int, y: int) : bool =
   (if (x1 = y) then true else false)
@@ -753,7 +757,7 @@ function element_type__ref_element_type__content__3__projection(a: element_type_
 predicate dynamic_invariant5(temp___expr_309: int, temp___is_init_305: bool,
   temp___skip_constant_306: bool, temp___do_toplevel_307: bool,
   temp___do_typ_inv_308: bool) = (((temp___is_init_305 = true) or
-  (1 <= 2147483647)) -> in_range6(temp___expr_309))
+  (1 <= 2147483647)) -> in_range7(temp___expr_309))
 
 axiom get__post_axiom1 :
   (forall container:us_rep3.
@@ -849,12 +853,12 @@ goal defqtvc :
   (forall sum:int. ((sum = 0) -> (dynamic_invariant(sum, true, false, true,
   true) -> (default_initial_assumption({ us_split_fields1 = {
   rec__p__my_lists__cursor__node = c__split_fields } }, false) -> (let o = x
-  : us_rep1 in (let temp___981 = first(o) : us_rep in
-  ((if (bool_eq8(length1(o), 0) = true) then (bool_eq3(temp___981,
-  no_element) = true) else ((has_element(o, temp___981) = true) and
-  (get1(positions(o), temp___981) = 1))) ->
+  : us_rep1 in (let temp___988 = first(o) : us_rep in
+  ((if (bool_eq8(length1(o), 0) = true) then (bool_eq3(temp___988,
+  no_element) = true) else ((has_element(o, temp___988) = true) and
+  (get1(positions(o), temp___988) = 1))) ->
   (forall c__split_fields1:count_type. (({ rec__p__my_lists__cursor__node =
-  c__split_fields1 } = (temp___981).us_split_fields1) -> ((not (bool_eq3({
+  c__split_fields1 } = (temp___988).us_split_fields1) -> ((not (bool_eq3({
   us_split_fields1 = { rec__p__my_lists__cursor__node = c__split_fields1 } },
   no_element) = true)) ->
   (forall sum1:int. forall c__split_fields2:count_type.

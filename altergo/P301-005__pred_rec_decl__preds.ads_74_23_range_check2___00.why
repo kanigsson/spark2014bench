@@ -162,31 +162,31 @@ function rec_wrap_bad__ref_rec_wrap_bad__content__projection(a: rec_wrap_bad__re
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
 
-predicate dynamic_invariant(temp___expr_352: us_rep,
-  temp___is_init_348: bool, temp___skip_constant_349: bool,
-  temp___do_toplevel_350: bool, temp___do_typ_inv_351: bool) =
-  (let temp___354 =
-  to_rep(((temp___expr_352).us_split_fields1).rec__preds__rec_wrap_bad__x)
-  : int in ((((- 2147483648) <= temp___354) and (temp___354 <= (- 1))) or
-  ((1 <= temp___354) and (temp___354 <= 2147483647))))
+predicate dynamic_invariant(temp___expr_358: us_rep,
+  temp___is_init_354: bool, temp___skip_constant_355: bool,
+  temp___do_toplevel_356: bool, temp___do_typ_inv_357: bool) =
+  (let temp___360 =
+  to_rep(((temp___expr_358).us_split_fields1).rec__preds__rec_wrap_bad__x)
+  : int in ((((- 2147483648) <= temp___360) and (temp___360 <= (- 1))) or
+  ((1 <= temp___360) and (temp___360 <= 2147483647))))
 
-predicate default_initial_assumption(temp___expr_355: us_rep,
-  temp___skip_top_level_356: bool) =
-  (to_rep(((temp___expr_355).us_split_fields1).rec__preds__rec_wrap_bad__x) = 0)
+predicate default_initial_assumption(temp___expr_363: us_rep,
+  temp___skip_top_level_364: bool) =
+  (to_rep(((temp___expr_363).us_split_fields1).rec__preds__rec_wrap_bad__x) = 0)
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
 
-predicate dynamic_invariant1(temp___expr_332: int, temp___is_init_328: bool,
-  temp___skip_constant_329: bool, temp___do_toplevel_330: bool,
-  temp___do_typ_inv_331: bool) = ((((temp___is_init_328 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_332)) and
-  ((temp___do_toplevel_330 = true) ->
-  ((((- 2147483648) <= temp___expr_332) and (temp___expr_332 <= (- 1))) or
-  ((1 <= temp___expr_332) and (temp___expr_332 <= 2147483647)))))
+predicate dynamic_invariant1(temp___expr_336: int, temp___is_init_332: bool,
+  temp___skip_constant_333: bool, temp___do_toplevel_334: bool,
+  temp___do_typ_inv_335: bool) = ((((temp___is_init_332 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_336)) and
+  ((temp___do_toplevel_334 = true) ->
+  ((((- 2147483648) <= temp___expr_336) and (temp___expr_336 <= (- 1))) or
+  ((1 <= temp___expr_336) and (temp___expr_336 <= 2147483647)))))
 
-predicate dynamic_predicate(temp___336: int) =
-  ((((- 2147483648) <= temp___336) and (temp___336 <= (- 1))) or
-  ((1 <= temp___336) and (temp___336 <= 2147483647)))
+predicate dynamic_predicate(temp___340: int) =
+  ((((- 2147483648) <= temp___340) and (temp___340 <= (- 1))) or
+  ((1 <= temp___340) and (temp___340 <= 2147483647)))
 
  (* File "preds.adb", line 69, characters 0-0 *)
 goal defqtvc :

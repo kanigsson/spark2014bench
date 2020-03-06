@@ -193,6 +193,24 @@ function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
 function us_rep___split_fields__2__projection(a: us_rep) : us_split_fields =
   (a).us_split_fields1
 
+function to_rep(x: capacity_range) : int = capacity_rangeqtint(x)
+
+logic of_rep : int -> capacity_range
+
+axiom inversion_axiom :
+  (forall x:capacity_range [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom :
+  (forall x:capacity_range [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+predicate in_range2(rec__objt_types_jauge__objt_liste_jauge__vector__capacity1: int,
+  a: us_split_discrs) =
+  (rec__objt_types_jauge__objt_liste_jauge__vector__capacity1 = to_rep((a).rec__objt_types_jauge__objt_liste_jauge__vector__capacity))
+
 logic value__size : int
 
 logic object__size : int
@@ -233,20 +251,6 @@ function vector__ref_vector__content__projection(a: vector__ref) : us_rep =
 logic length1 : us_rep -> int
 
 logic length__function_guard : int, us_rep -> prop
-
-function to_rep(x: capacity_range) : int = capacity_rangeqtint(x)
-
-logic of_rep : int -> capacity_range
-
-axiom inversion_axiom :
-  (forall x:capacity_range [to_rep(x)]. (of_rep(to_rep(x)) = x))
-
-axiom range_axiom :
-  (forall x:capacity_range [to_rep(x)]. in_range1(to_rep(x)))
-
-axiom coerce_axiom :
-  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
-  (to_rep(of_rep(x)) = x)))
 
 function capacity(container: us_rep) : int =
   (if (of_int(1) = true) then to_rep(((container).us_split_discrs1).rec__objt_types_jauge__objt_liste_jauge__vector__capacity) else 4)
@@ -391,7 +395,7 @@ axiom extended_indexqtaxiom :
 axiom extended_indexqtaxiom1 :
   (forall i:extended_index. (extended_indexqtint(i) <= 5))
 
-predicate in_range2(x: int) = ((0 <= x) and (x <= 5))
+predicate in_range3(x: int) = ((0 <= x) and (x <= 5))
 
 function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -414,11 +418,11 @@ function extended_index__ref_extended_index__content__projection(a: extended_ind
 predicate dynamic_invariant1(temp___expr_231: int, temp___is_init_227: bool,
   temp___skip_constant_228: bool, temp___do_toplevel_229: bool,
   temp___do_typ_inv_230: bool) = (((temp___is_init_227 = true) or
-  (0 <= 5)) -> in_range2(temp___expr_231))
+  (0 <= 5)) -> in_range3(temp___expr_231))
 
 axiom last_index__post_axiom :
   (forall container:us_rep [last_index(container)].
-  in_range2(last_index(container)))
+  in_range3(last_index(container)))
 
 logic oeq1 : us_rep, us_rep -> bool
 
@@ -438,7 +442,7 @@ axiom index_typeqtaxiom : (forall i:index_type. (1 <= index_typeqtint(i)))
 
 axiom index_typeqtaxiom1 : (forall i:index_type. (index_typeqtint(i) <= 4))
 
-predicate in_range3(x: int) = ((1 <= x) and (x <= 4))
+predicate in_range4(x: int) = ((1 <= x) and (x <= 4))
 
 function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -461,9 +465,9 @@ function index_type__ref_index_type__content__projection(a: index_type__ref) : i
 predicate dynamic_invariant2(temp___expr_207: int, temp___is_init_203: bool,
   temp___skip_constant_204: bool, temp___do_toplevel_205: bool,
   temp___do_typ_inv_206: bool) = (((temp___is_init_203 = true) or
-  (1 <= 4)) -> in_range3(temp___expr_207))
+  (1 <= 4)) -> in_range4(temp___expr_207))
 
-axiom first_index__post_axiom : in_range3(1)
+axiom first_index__post_axiom : in_range4(1)
 
 logic container__split_discrs : us_split_discrs
 
@@ -486,7 +490,7 @@ axiom count_typeqtaxiom : (forall i:count_type. (0 <= count_typeqtint(i)))
 axiom count_typeqtaxiom1 :
   (forall i:count_type. (count_typeqtint(i) <= 2147483647))
 
-predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -509,7 +513,7 @@ function count_type__ref_count_type__content__projection(a: count_type__ref) : c
 predicate dynamic_invariant3(temp___expr_238: int, temp___is_init_234: bool,
   temp___skip_constant_235: bool, temp___do_toplevel_236: bool,
   temp___do_typ_inv_237: bool) = (((temp___is_init_234 = true) or
-  (0 <= 2147483647)) -> in_range4(temp___expr_238))
+  (0 <= 2147483647)) -> in_range5(temp___expr_238))
 
 predicate default_initial_assumption1(temp___expr_215: us_rep2,
   temp___skip_top_level_216: bool) = ((temp___expr_215).attr__tag = us_tag)
@@ -528,7 +532,7 @@ axiom extended_indexqtaxiom2 :
 axiom extended_indexqtaxiom3 :
   (forall i:extended_index1. (extended_indexqtint1(i) <= 4))
 
-predicate in_range5(x: int) = ((0 <= x) and (x <= 4))
+predicate in_range6(x: int) = ((0 <= x) and (x <= 4))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -551,14 +555,14 @@ function extended_index__ref_extended_index__content__2__projection(a: extended_
 predicate dynamic_invariant4(temp___expr_272: int, temp___is_init_268: bool,
   temp___skip_constant_269: bool, temp___do_toplevel_270: bool,
   temp___do_typ_inv_271: bool) = (((temp___is_init_268 = true) or
-  (0 <= 4)) -> in_range5(temp___expr_272))
+  (0 <= 4)) -> in_range6(temp___expr_272))
 
 axiom length__post_axiom1 :
   (forall container:us_rep1 [length2(container)].
-  in_range4(length2(container)))
+  in_range5(length2(container)))
 
 axiom last__post_axiom :
-  (forall container:us_rep1 [last(container)]. in_range5(last(container)))
+  (forall container:us_rep1 [last(container)]. in_range6(last(container)))
 
  (* File "a-cfinve.ads", line 578, characters 0-0 *)
 goal defqtvc :
@@ -567,4 +571,4 @@ goal defqtvc :
   true) -> (((1 <= index) and (index <= last_index({ us_split_discrs1 =
   container__split_discrs; us_split_fields1 = {
   rec__objt_types_jauge__objt_liste_jauge__vector = container__split_fields }
-  }))) -> in_range4((index - 1))))))
+  }))) -> in_range5((index - 1))))))

@@ -738,6 +738,24 @@ function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
 function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
   (a).us_split_fields1
 
+function to_rep1(x: capacity_range) : int = capacity_rangeqtint(x)
+
+logic of_rep1 : int -> capacity_range
+
+axiom inversion_axiom1 :
+  (forall x:capacity_range [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 :
+  (forall x:capacity_range [to_rep1(x)]. in_range1(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+predicate in_range2(rec__names__char_tables__vector__capacity1: int,
+  a: us_split_discrs) =
+  (rec__names__char_tables__vector__capacity1 = to_rep1((a).rec__names__char_tables__vector__capacity))
+
 logic value__size : int
 
 logic object__size : int
@@ -774,24 +792,6 @@ type vector__ref = { vector__content : us_rep
 
 function vector__ref_vector__content__projection(a: vector__ref) : us_rep =
   (a).vector__content
-
-function to_rep1(x: capacity_range) : int = capacity_rangeqtint(x)
-
-logic of_rep1 : int -> capacity_range
-
-axiom inversion_axiom1 :
-  (forall x:capacity_range [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
-
-axiom range_axiom1 :
-  (forall x:capacity_range [to_rep1(x)]. in_range1(to_rep1(x)))
-
-axiom coerce_axiom1 :
-  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
-  (to_rep1(of_rep1(x)) = x)))
-
-predicate in_range2(rec__names__char_tables__vector__capacity1: int,
-  a: us_rep) =
-  (rec__names__char_tables__vector__capacity1 = to_rep1(((a).us_split_discrs1).rec__names__char_tables__vector__capacity))
 
 logic value__size1 : int
 
@@ -846,17 +846,17 @@ axiom user_eq__def_axiom :
   (forall a:us_rep. forall b:us_rep [user_eq3(a, b)]. (user_eq3(a,
   b) = oeq(a, b)))
 
-predicate dynamic_invariant(temp___expr_414: us_rep,
-  temp___is_init_410: bool, temp___skip_constant_411: bool,
-  temp___do_toplevel_412: bool, temp___do_typ_inv_413: bool) =
-  ((not (temp___skip_constant_411 = true)) -> in_range2(1024,
-  temp___expr_414))
+predicate dynamic_invariant(temp___expr_415: us_rep,
+  temp___is_init_411: bool, temp___skip_constant_412: bool,
+  temp___do_toplevel_413: bool, temp___do_typ_inv_414: bool) =
+  ((not (temp___skip_constant_412 = true)) -> in_range2(1024,
+  (temp___expr_415).us_split_discrs1))
 
-predicate default_initial_assumption(temp___expr_416: us_rep,
-  temp___skip_top_level_417: bool) =
-  ((to_rep1(((temp___expr_416).us_split_discrs1).rec__names__char_tables__vector__capacity) = 1024) and
-  ((not (temp___skip_top_level_417 = true)) ->
-  (is_empty(temp___expr_416) = true)))
+predicate default_initial_assumption(temp___expr_417: us_rep,
+  temp___skip_top_level_418: bool) =
+  ((to_rep1(((temp___expr_417).us_split_discrs1).rec__names__char_tables__vector__capacity) = 1024) and
+  ((not (temp___skip_top_level_418 = true)) ->
+  (is_empty(temp___expr_417) = true)))
 
 type capacity_range1
 
@@ -927,6 +927,24 @@ function us_rep___split_discrs__2__projection(a: us_rep1) : us_split_discrs2 =
 function us_rep___split_fields__3__projection(a: us_rep1) : us_split_fields2 =
   (a).us_split_fields3
 
+function to_rep2(x: capacity_range1) : int = capacity_rangeqtint1(x)
+
+logic of_rep2 : int -> capacity_range1
+
+axiom inversion_axiom2 :
+  (forall x:capacity_range1 [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
+
+axiom range_axiom2 :
+  (forall x:capacity_range1 [to_rep2(x)]. in_range3(to_rep2(x)))
+
+axiom coerce_axiom2 :
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range3(x) ->
+  (to_rep2(of_rep2(x)) = x)))
+
+predicate in_range4(rec__names__entry_tables__vector__capacity1: int,
+  a: us_split_discrs2) =
+  (rec__names__entry_tables__vector__capacity1 = to_rep2((a).rec__names__entry_tables__vector__capacity))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -963,24 +981,6 @@ type vector__ref1 = { vector__content1 : us_rep1
 
 function vector__ref_vector__content__2__projection(a: vector__ref1) : us_rep1 =
   (a).vector__content1
-
-function to_rep2(x: capacity_range1) : int = capacity_rangeqtint1(x)
-
-logic of_rep2 : int -> capacity_range1
-
-axiom inversion_axiom2 :
-  (forall x:capacity_range1 [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
-
-axiom range_axiom2 :
-  (forall x:capacity_range1 [to_rep2(x)]. in_range3(to_rep2(x)))
-
-axiom coerce_axiom2 :
-  (forall x:int [to_rep2(of_rep2(x))]. (in_range3(x) ->
-  (to_rep2(of_rep2(x)) = x)))
-
-predicate in_range4(rec__names__entry_tables__vector__capacity1: int,
-  a: us_rep1) =
-  (rec__names__entry_tables__vector__capacity1 = to_rep2(((a).us_split_discrs3).rec__names__entry_tables__vector__capacity))
 
 logic value__size3 : int
 
@@ -1035,17 +1035,17 @@ axiom user_eq__def_axiom1 :
   (forall a:us_rep1. forall b:us_rep1 [user_eq6(a, b)]. (user_eq6(a,
   b) = oeq1(a, b)))
 
-predicate dynamic_invariant1(temp___expr_611: us_rep1,
-  temp___is_init_607: bool, temp___skip_constant_608: bool,
-  temp___do_toplevel_609: bool, temp___do_typ_inv_610: bool) =
-  ((not (temp___skip_constant_608 = true)) -> in_range4(128,
-  temp___expr_611))
+predicate dynamic_invariant1(temp___expr_613: us_rep1,
+  temp___is_init_609: bool, temp___skip_constant_610: bool,
+  temp___do_toplevel_611: bool, temp___do_typ_inv_612: bool) =
+  ((not (temp___skip_constant_610 = true)) -> in_range4(128,
+  (temp___expr_613).us_split_discrs3))
 
-predicate default_initial_assumption1(temp___expr_613: us_rep1,
-  temp___skip_top_level_614: bool) =
-  ((to_rep2(((temp___expr_613).us_split_discrs3).rec__names__entry_tables__vector__capacity) = 128) and
-  ((not (temp___skip_top_level_614 = true)) ->
-  (is_empty1(temp___expr_613) = true)))
+predicate default_initial_assumption1(temp___expr_615: us_rep1,
+  temp___skip_top_level_616: bool) =
+  ((to_rep2(((temp___expr_615).us_split_discrs3).rec__names__entry_tables__vector__capacity) = 128) and
+  ((not (temp___skip_top_level_616 = true)) ->
+  (is_empty1(temp___expr_615) = true)))
 
 logic names__hash_table__aggregate_def : int -> (t,name_id) farray
 
@@ -1093,10 +1093,10 @@ logic rliteral : name_id
 axiom rliteral_axiom : (name_idqtint(rliteral) = 0)
 
 axiom def_axiom :
-  (forall temp___640:int. (dynamic_invariant3(temp___640, true, true, true,
+  (forall temp___642:int. (dynamic_invariant3(temp___642, true, true, true,
   true) ->
-  (forall temp___641:t.
-  ((names__hash_table__aggregate_def(temp___640)[temp___641]) = rliteral))))
+  (forall temp___643:t.
+  ((names__hash_table__aggregate_def(temp___642)[temp___643]) = rliteral))))
 
 type char_table_index
 
@@ -1545,10 +1545,10 @@ axiom get__post_axiom :
   ((0 <= position) and (position <= last(container)))) ->
   dynamic_invariant8(get(container, position), true, false, true, true))))
 
-predicate dynamic_invariant9(temp___expr_458: int, temp___is_init_454: bool,
-  temp___skip_constant_455: bool, temp___do_toplevel_456: bool,
-  temp___do_typ_inv_457: bool) = (((temp___is_init_454 = true) or
-  (0 <= 2147483647)) -> in_range3(temp___expr_458))
+predicate dynamic_invariant9(temp___expr_459: int, temp___is_init_455: bool,
+  temp___skip_constant_456: bool, temp___do_toplevel_457: bool,
+  temp___do_typ_inv_458: bool) = (((temp___is_init_455 = true) or
+  (0 <= 2147483647)) -> in_range3(temp___expr_459))
 
 axiom user_eq__def_axiom4 :
   (forall a:us_rep1. forall b:us_rep1 [user_eq5(a, b)]. (user_eq5(a,
@@ -1634,10 +1634,10 @@ axiom user_eq__def_axiom5 :
   (forall a:us_rep4. forall b:us_rep4 [user_eq14(a, b)]. (user_eq14(a,
   b) = oeq3(a, b)))
 
-predicate default_initial_assumption3(temp___expr_496: us_rep4,
-  temp___skip_top_level_497: bool) =
-  ((not (temp___skip_top_level_497 = true)) ->
-  (length4(temp___expr_496) = 0))
+predicate default_initial_assumption3(temp___expr_497: us_rep4,
+  temp___skip_top_level_498: bool) =
+  ((not (temp___skip_top_level_498 = true)) ->
+  (length4(temp___expr_497) = 0))
 
 axiom model__post_axiom1 :
   (forall container:us_rep1 [model1(container)].
@@ -1689,10 +1689,10 @@ type extended_index__ref1 = { extended_index__content1 : extended_index1
 function extended_index__ref_extended_index__content__4__projection(a: extended_index__ref1) : extended_index1 =
   (a).extended_index__content1
 
-predicate dynamic_invariant10(temp___expr_488: int, temp___is_init_484: bool,
-  temp___skip_constant_485: bool, temp___do_toplevel_486: bool,
-  temp___do_typ_inv_487: bool) = (((temp___is_init_484 = true) or
-  (0 <= 2147483647)) -> in_range11(temp___expr_488))
+predicate dynamic_invariant10(temp___expr_489: int, temp___is_init_485: bool,
+  temp___skip_constant_486: bool, temp___do_toplevel_487: bool,
+  temp___do_typ_inv_488: bool) = (((temp___is_init_485 = true) or
+  (0 <= 2147483647)) -> in_range11(temp___expr_489))
 
 axiom length__post_axiom6 :
   (forall container:us_rep4 [length4(container)].

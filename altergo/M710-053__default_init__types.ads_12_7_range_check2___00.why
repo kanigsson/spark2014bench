@@ -403,6 +403,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__types__queue_type__items,
   ((b).us_split_fields1).rec__types__queue_type__items) = true))) then true else false)
 
+predicate in_range4(rec__types__queue_type__max_size1: int,
+  a: us_split_discrs) =
+  (rec__types__queue_type__max_size1 = to_rep((a).rec__types__queue_type__max_size))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -539,6 +543,10 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   (to_rep(((a).us_split_fields3).rec__types__priv_queue_type__front) = to_rep(((b).us_split_fields3).rec__types__priv_queue_type__front))) and
   (bool_eq5(((a).us_split_fields3).rec__types__priv_queue_type__items,
   ((b).us_split_fields3).rec__types__priv_queue_type__items) = true))) then true else false)
+
+predicate in_range5(rec__types__priv_queue_type__max_size1: int,
+  a: us_split_discrs2) =
+  (rec__types__priv_queue_type__max_size1 = to_rep((a).rec__types__priv_queue_type__max_size))
 
 logic value__size2 : int
 

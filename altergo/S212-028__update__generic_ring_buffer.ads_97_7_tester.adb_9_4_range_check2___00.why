@@ -408,6 +408,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items,
   ((b).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items) = true)))) then true else false)
 
+predicate in_range4(rec__tester__ring_buffer__ring_buffer_type__max_size1: int,
+  a: us_split_discrs) =
+  (rec__tester__ring_buffer__ring_buffer_type__max_size1 = to_rep1((a).rec__tester__ring_buffer__ring_buffer_type__max_size))
+
 logic value__size1 : int
 
 logic object__size1 : int

@@ -593,14 +593,14 @@ logic attr__ATTRIBUTE_VALUE : us_image -> bool
 
 logic rliteral : t
 
-axiom rliteral_axiom : (tqtint(rliteral) = 0)
+axiom rliteral_axiom : (tqtint(rliteral) = 1)
 
 logic rliteral1 : t
 
-axiom rliteral_axiom1 : (tqtint(rliteral1) = 1)
+axiom rliteral_axiom1 : (tqtint(rliteral1) = 0)
 
  (* File "unsigned.adb", line 1, characters 0-0 *)
 goal defqtvc :
-  (forall i:int. (((0 <= i) and (i <= 63)) -> ule(rliteral,
-  (if (i <  18446744073709551616) then lsl_bv(rliteral1,
-  of_int(i)) else rliteral))))
+  (forall i:int. (((0 <= i) and (i <= 63)) -> ule(rliteral1,
+  (if (i <  18446744073709551616) then lsl_bv(rliteral,
+  of_int(i)) else rliteral1))))

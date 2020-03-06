@@ -332,8 +332,9 @@ axiom all_elements_in__def_axiom1 :
 axiom all_elements_in__def_axiom2 :
   (forall a:(int,integer) farray.
   (forall max:int [all_elements_in(a, max)].
-  ((forall k:int. (((0 <= k) and (k <= 7)) -> (((-max) <= to_rep((a[k]))) and
-   (to_rep((a[k])) <= max)))) ->
+  ((forall k:int. (((0 <= k) and (k <= 7)) -> (let temp___179 =
+   to_rep((a[k])) : int in (((-max) <= temp___179) and
+   (temp___179 <= max))))) ->
   (all_elements_in(a, max) = true))))
 
 logic a : (int,integer) farray
@@ -419,11 +420,11 @@ goal defqtvc : (((all_elements_in(a, 8000000) = true) and (all_elements_in(b,
   1000000) = true)) ->
   (forall usf:int. ((andb((if (0 <= usf) then true else false),
   (if (usf <= 7) then true else false)) = true) -> ((not (mod1((usf + 1),
-  8) = 0)) -> ((mod1((usf + 1), 4) = 0) -> (let temp___196 = (usf - 3)
-  : int in (((0 <= temp___196) and (temp___196 <= 7)) ->
-  (forall o:int. ((to_rep((b[temp___196])) = o) -> (let temp___195 =
-  (usf - 2) : int in (((0 <= temp___195) and (temp___195 <= 7)) ->
-  (forall o1:int. ((to_rep((b[temp___195])) = o1) -> (let temp___194 =
-  (usf - 1) : int in (((0 <= temp___194) and (temp___194 <= 7)) ->
-  (forall o2:int. ((to_rep((b[temp___194])) = o2) ->
+  8) = 0)) -> ((mod1((usf + 1), 4) = 0) -> (let temp___208 = (usf - 3)
+  : int in (((0 <= temp___208) and (temp___208 <= 7)) ->
+  (forall o:int. ((to_rep((b[temp___208])) = o) -> (let temp___207 =
+  (usf - 2) : int in (((0 <= temp___207) and (temp___207 <= 7)) ->
+  (forall o1:int. ((to_rep((b[temp___207])) = o1) -> (let temp___206 =
+  (usf - 1) : int in (((0 <= temp___206) and (temp___206 <= 7)) ->
+  (forall o2:int. ((to_rep((b[temp___206])) = o2) ->
   (forall o3:int. ((to_rep((b[usf])) = o3) -> in_range1((o3 + o2)))))))))))))))))))))

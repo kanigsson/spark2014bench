@@ -404,6 +404,9 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range4(rec__stacks__stack__max1: int, a: us_split_discrs) =
+  (rec__stacks__stack__max1 = to_rep((a).rec__stacks__stack__max))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -535,7 +538,7 @@ axiom def_axiom2 :
   (forall temp___255:int. ((to_array(temp_____aggregate_def_250(temp___252,
   temp___253, temp___254))[temp___255]) = rliteral))))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-K505-010__stack-17358/src/gnatprove/stacks__stack.mlw", line 932, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-K505-010__stack-972/src/gnatprove/stacks__stack.mlw", line 946, characters 5-8 *)
 goal defqtvc :
   (forall usf:int. (dynamic_invariant(usf, true, true, true, true) ->
   (forall usf1:us_rep.

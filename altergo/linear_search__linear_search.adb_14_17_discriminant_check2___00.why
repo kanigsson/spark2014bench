@@ -337,6 +337,10 @@ function bool_eq5(a1: us_rep, b: us_rep) : bool =
   (linear_search__search_result__at_index__pred(a1) ->
   (to_rep1(((a1).us_split_fields1).rec__linear_search__search_result__at_index) = to_rep1(((b).us_split_fields1).rec__linear_search__search_result__at_index)))) then true else false)
 
+predicate in_range3(rec__linear_search__search_result__found1: bool,
+  a1: us_split_discrs) =
+  (rec__linear_search__search_result__found1 = (a1).rec__linear_search__search_result__found)
+
 logic value__size : int
 
 logic object__size : int
@@ -407,7 +411,7 @@ axiom tindexBqtaxiom : (forall i:tindexB. ((- 128) <= tindexBqtint(i)))
 
 axiom tindexBqtaxiom1 : (forall i:tindexB. (tindexBqtint(i) <= 127))
 
-predicate in_range3(x: int) = (((- 128) <= x) and (x <= 127))
+predicate in_range4(x: int) = (((- 128) <= x) and (x <= 127))
 
 function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -426,10 +430,6 @@ type tindexB__ref = { tindexB__content : tindexB
 
 function tindexB__ref_tindexB__content__projection(a1: tindexB__ref) : tindexB =
   (a1).tindexB__content
-
-predicate in_range4(rec__linear_search__search_result__found1: bool,
-  a1: us_rep) =
-  (rec__linear_search__search_result__found1 = ((a1).us_split_discrs1).rec__linear_search__search_result__found)
 
 logic value__size1 : int
 
@@ -482,10 +482,6 @@ type t1b__ref = { t1b__content : us_rep
 
 function t1b__ref_t1b__content__projection(a1: t1b__ref) : us_rep =
   (a1).t1b__content
-
-predicate in_range5(rec__linear_search__search_result__found1: bool,
-  a1: us_rep) =
-  (rec__linear_search__search_result__found1 = ((a1).us_split_discrs1).rec__linear_search__search_result__found)
 
 logic value__size2 : int
 
@@ -545,7 +541,7 @@ goal defqtvc :
   (dynamic_invariant1(val__, true, false, true, true) -> ((0 <= val__) ->
   (value_found_in_range__function_guard(value_found_in_range(a, val__, 2,
   10), a, val__, 2, 10) ->
-  (forall pos:int. ((pos = 1) -> (in_range3(pos) ->
+  (forall pos:int. ((pos = 1) -> (in_range4(pos) ->
   ((res__attr__constrained = false) -> (default_initial_assumption({
   us_split_discrs1 = { rec__linear_search__search_result__found =
   res__split_discrs }; us_split_fields1 = {
@@ -568,9 +564,9 @@ goal defqtvc :
   (exists j:int. (((1 <= j) and (j <= pos)) and (to_rep((o2[j])) = o1)))))))))) and
   (exists pos2:int. ((((1 <= pos2) and (pos2 <= 10)) and
   (not (value_found_in_range(a, val__, 1, pos2) = true))) and
-  (in_range3(pos2) and
+  (in_range4(pos2) and
   (exists temp___216:int. ((temp___216 = pos2) and (let o1 = (pos2 + 1)
-  : int in (in_range3(o1) and ((pos1 = o1) and ((pos1 <= 10) and
+  : int in (in_range4(o1) and ((pos1 = o1) and ((pos1 <= 10) and
   (((1 <= pos1) and (pos1 <= 10)) and
   (exists o2:int. ((to_rep((a[pos1])) = o2) and
   (exists spark__branch1:bool.

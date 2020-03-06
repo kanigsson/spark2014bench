@@ -216,6 +216,6 @@ goal defqtvc :
   (forall a2:(int,positive) farray. ((a2 = (a[j <- o1])) ->
   (forall o2:positive. ((to_rep(o2) = tmp) ->
   (forall a3:(int,positive) farray. ((a3 = (a2[k <- o2])) ->
-  (forall temp___index_2179:int. (((0 <= temp___index_2179) and
-  (temp___index_2179 <= 5)) ->
-  (to_rep((a3[temp___index_2179])) = (if (temp___index_2179 = k) then to_rep((a1[j])) else (if (temp___index_2179 = j) then to_rep((a1[k])) else to_rep((a1[temp___index_2179]))))))))))))))))))))))))))
+  (forall temp___index_2196:int. (((0 <= temp___index_2196) and
+  (temp___index_2196 <= 5)) ->
+  (to_rep((a3[temp___index_2196])) = (if (temp___index_2196 = k) then to_rep((a1[j])) else (if (temp___index_2196 = j) then to_rep((a1[k])) else to_rep((a1[temp___index_2196]))))))))))))))))))))))))))

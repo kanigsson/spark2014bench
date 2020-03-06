@@ -1671,10 +1671,9 @@ goal defqtvc :
                                                  battery_threshold))))) and
                                                  (res1 = add(s1,
                                                  rliteral3))) and
-                                                 ((andb((if (in_range2(s1) and
-                                                 dynamic_invariant2(res1,
-                                                 true, true, true,
-                                                 true)) then true else false),
+                                                 ((andb((if (dynamic_invariant2(res1,
+                                                 true, true, true, true) and
+                                                 in_range2(s1)) then true else false),
                                                  (if (ule(rliteral, s1) and
                                                  ule(s1,
                                                  rliteral1)) then true else false)) = true) and

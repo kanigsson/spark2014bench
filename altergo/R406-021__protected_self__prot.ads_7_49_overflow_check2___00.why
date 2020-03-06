@@ -127,6 +127,22 @@ function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
 function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
   (a).us_split_fields1
 
+function to_rep(x1: integer) : int = integerqtint(x1)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x1:integer [to_rep(x1)]. (of_rep(to_rep(x1)) = x1))
+
+axiom range_axiom : (forall x1:integer [to_rep(x1)]. in_range(to_rep(x1)))
+
+axiom coerce_axiom :
+  (forall x1:int [to_rep(of_rep(x1))]. (in_range(x1) ->
+  (to_rep(of_rep(x1)) = x1)))
+
+predicate in_range1(rec__prot__p__i1: int, a: us_split_discrs) =
+  (rec__prot__p__i1 = to_rep((a).rec__prot__p__i))
+
 logic value__size : int
 
 logic object__size : int

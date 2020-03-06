@@ -222,6 +222,11 @@ function bool_eq3(a: us_rep, b: us_rep) : bool =
   ((to_rep(((a).us_split_fields1).rec__counters__counter__c) = to_rep(((b).us_split_fields1).rec__counters__counter__c)) and
   (to_rep1(((a).us_split_fields1).rec__counters__counter__t) = to_rep1(((b).us_split_fields1).rec__counters__counter__t)))) then true else false)
 
+predicate in_range3(rec__counters__counter__mode1: int,
+  rec__counters__counter__ticks1: int, a: us_split_discrs) =
+  ((rec__counters__counter__mode1 = to_rep2((a).rec__counters__counter__mode)) and
+  (rec__counters__counter__ticks1 = to_rep1((a).rec__counters__counter__ticks)))
+
 logic value__size : int
 
 logic object__size : int

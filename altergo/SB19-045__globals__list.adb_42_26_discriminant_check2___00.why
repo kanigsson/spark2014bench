@@ -166,6 +166,9 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (list__t_item__value__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__list__t_item__value) = to_rep(((b).us_split_fields1).rec__list__t_item__value)))) then true else false)
 
+predicate in_range2(rec__list__t_item__used1: bool, a: us_split_discrs) =
+  (rec__list__t_item__used1 = (a).rec__list__t_item__used)
+
 logic value__size : int
 
 logic object__size : int
@@ -285,7 +288,7 @@ axiom tt_itemsD1qtaxiom : (forall i:tt_itemsD1. (1 <= tt_itemsD1qtint(i)))
 
 axiom tt_itemsD1qtaxiom1 : (forall i:tt_itemsD1. (tt_itemsD1qtint(i) <= 100))
 
-predicate in_range2(x: int) = ((1 <= x) and (x <= 100))
+predicate in_range3(x: int) = ((1 <= x) and (x <= 100))
 
 function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -309,9 +312,6 @@ predicate default_initial_assumption(temp___expr_176: (int,us_rep) farray,
   temp___skip_top_level_177: bool) =
   (forall temp___178:int. (((1 <= temp___178) and (temp___178 <= 100)) ->
   ((((temp___expr_176[temp___178])).us_split_discrs1).rec__list__t_item__used = of_int(0))))
-
-predicate in_range3(rec__list__t_item__used1: bool, a: us_rep) =
-  (rec__list__t_item__used1 = ((a).us_split_discrs1).rec__list__t_item__used)
 
 logic value__size1 : int
 

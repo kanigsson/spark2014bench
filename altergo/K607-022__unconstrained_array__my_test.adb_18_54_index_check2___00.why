@@ -541,6 +541,10 @@ function bool_eq10(a: us_rep, b: us_rep) : bool =
   (bool_eq9(((a).us_split_fields1).rec__simple_unc_arrays__table__v,
   ((b).us_split_fields1).rec__simple_unc_arrays__table__v) = true)) then true else false)
 
+predicate in_range6(rec__simple_unc_arrays__table__last1: int,
+  a: us_split_discrs) =
+  (rec__simple_unc_arrays__table__last1 = to_rep((a).rec__simple_unc_arrays__table__last))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -620,7 +624,7 @@ axiom tT9bP1qtaxiom : (forall i:tT9bP1. (1 <= tT9bP1qtint(i)))
 
 axiom tT9bP1qtaxiom1 : (forall i:tT9bP1. (tT9bP1qtint(i) <= 10))
 
-predicate in_range6(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range7(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -700,9 +704,6 @@ function bool_eq12(a: us_rep1, b: us_rep1) : bool =
   ((b).us_split_fields3).rec__simple_unc_arrays__table__v1, 1,
   10) = true)) then true else false)
 
-predicate in_range7(rec__simple_unc_arrays__table__last1: int, a: us_rep) =
-  (rec__simple_unc_arrays__table__last1 = to_rep(((a).us_split_discrs1).rec__simple_unc_arrays__table__last))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -762,8 +763,8 @@ logic attr__ATTRIBUTE_ADDRESS2 : int
 predicate dynamic_invariant1(temp___expr_212: us_rep1,
   temp___is_init_208: bool, temp___skip_constant_209: bool,
   temp___do_toplevel_210: bool, temp___do_typ_inv_211: bool) =
-  ((not (temp___skip_constant_209 = true)) -> in_range7(10,
-  to_base(temp___expr_212)))
+  ((not (temp___skip_constant_209 = true)) -> in_range6(10,
+  (to_base(temp___expr_212)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_215: us_rep1,
   temp___skip_top_level_216: bool) =
@@ -1048,9 +1049,6 @@ function bool_eq14(a: us_rep2, b: us_rep2) : bool =
   ((b).us_split_fields5).rec__simple_unc_arrays__table__v2, 1,
   10) = true)) then true else false)
 
-predicate in_range9(rec__simple_unc_arrays__table__last1: int, a: us_rep) =
-  (rec__simple_unc_arrays__table__last1 = to_rep(((a).us_split_discrs1).rec__simple_unc_arrays__table__last))
-
 logic value__size6 : int
 
 logic object__size6 : int
@@ -1111,7 +1109,7 @@ axiom tT6bP1qtaxiom : (forall i:tT6bP1. (1 <= tT6bP1qtint(i)))
 
 axiom tT6bP1qtaxiom1 : (forall i:tT6bP1. (tT6bP1qtint(i) <= 10))
 
-predicate in_range10(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range9(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq15(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1190,9 +1188,6 @@ function bool_eq16(a: us_rep3, b: us_rep3) : bool =
   (bool_eq8(((a).us_split_fields7).rec__simple_unc_arrays__table__v3, 1, 10,
   ((b).us_split_fields7).rec__simple_unc_arrays__table__v3, 1,
   10) = true)) then true else false)
-
-predicate in_range11(rec__simple_unc_arrays__table__last1: int, a: us_rep) =
-  (rec__simple_unc_arrays__table__last1 = to_rep(((a).us_split_discrs1).rec__simple_unc_arrays__table__last))
 
 logic value__size8 : int
 
@@ -1995,21 +1990,23 @@ goal defqtvc :
   us_split_fields1 = { rec__simple_unc_arrays__table__v = t2__split_fields }
   } : us_rep in (let o11 = { us_split_discrs1 = t1__split_discrs;
   us_split_fields1 = { rec__simple_unc_arrays__table__v = t1__split_fields }
-  } : us_rep in (let o12 = add(o11, o10) : us_rep in
-  ((forall o13:us_rep. forall o14:us_rep.
-   same_range__function_guard(same_range(o14, o13), o14, o13)) ->
-  ((add__function_guard(o12, o11, o10) and (dynamic_invariant(o12, true,
-  false, true, true) and ((same_range(o12, o11) = true) and
+  } : us_rep in (let temp___353 = add(o11, o10) : us_rep in
+  ((forall o12:us_rep. forall temp___3531:us_rep.
+   same_range__function_guard(same_range(temp___3531, o12), temp___3531,
+   o12)) ->
+  ((add__function_guard(temp___353, o11, o10) and
+  (dynamic_invariant(temp___353, true, false, true, true) and
+  ((same_range(temp___353, o11) = true) and
   (forall j:int. (((1 <= j) and
   (j <= to_rep((t1__split_discrs).rec__simple_unc_arrays__table__last))) ->
-  (to_rep3((to_array1(((o12).us_split_fields1).rec__simple_unc_arrays__table__v)[j])) = (to_rep3((to_array1(t1__split_fields)[j])) + to_rep3((to_array1(t2__split_fields)[j]))))))))) ->
-  (let temp___353 = of_base(o12) : us_rep1 in
+  (to_rep3((to_array1(((temp___353).us_split_fields1).rec__simple_unc_arrays__table__v)[j])) = (to_rep3((to_array1(t1__split_fields)[j])) + to_rep3((to_array1(t2__split_fields)[j]))))))))) ->
+  (let temp___354 = of_base(temp___353) : us_rep1 in
   (forall t3__split_fields1:(int,value) farray. (({
   rec__simple_unc_arrays__table__v1 = t3__split_fields1
-  } = (temp___353).us_split_fields3) ->
-  ((t3__split_discrs = (temp___353).us_split_discrs2) ->
+  } = (temp___354).us_split_fields3) ->
+  ((t3__split_discrs = (temp___354).us_split_discrs2) ->
   (forall usf:int.
-  (forall o13:int.
-  ((to_rep((t3__split_discrs).rec__simple_unc_arrays__table__last) = o13) ->
+  (forall o12:int.
+  ((to_rep((t3__split_discrs).rec__simple_unc_arrays__table__last) = o12) ->
   ((andb((if (1 <= usf) then true else false),
-  (if (usf <= o13) then true else false)) = true) -> (1 <= usf)))))))))))))))))))))))))))))))))))))))))))))))))
+  (if (usf <= o12) then true else false)) = true) -> (1 <= usf)))))))))))))))))))))))))))))))))))))))))))))))))

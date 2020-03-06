@@ -347,6 +347,9 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   ((b).us_split_fields1).rec__predicates__name__data) = true) and
   (to_rep(((a).us_split_fields1).rec__predicates__name__last) = to_rep(((b).us_split_fields1).rec__predicates__name__last)))) then true else false)
 
+predicate in_range3(rec__predicates__name__size1: int, a: us_split_discrs) =
+  (rec__predicates__name__size1 = to_rep((a).rec__predicates__name__size))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -414,21 +417,21 @@ type name__ref = { name__content : us_rep
 function name__ref_name__content__projection(a: name__ref) : us_rep =
   (a).name__content
 
-predicate dynamic_invariant1(temp___expr_195: us_rep,
-  temp___is_init_191: bool, temp___skip_constant_192: bool,
-  temp___do_toplevel_193: bool, temp___do_typ_inv_194: bool) =
-  (((temp___do_toplevel_193 = true) -> ((temp___is_init_191 = true) ->
-  (to_rep(((temp___expr_195).us_split_fields1).rec__predicates__name__last) <= to_rep(((temp___expr_195).us_split_discrs1).rec__predicates__name__size)))) and
-  (let temp___197 =
-  ((temp___expr_195).us_split_discrs1).rec__predicates__name__size
-  : positive in (dynamic_property(1, to_rep(temp___197),
-  first1(((temp___expr_195).us_split_fields1).rec__predicates__name__data),
-  last1(((temp___expr_195).us_split_fields1).rec__predicates__name__data)) and
-  ((first1(((temp___expr_195).us_split_fields1).rec__predicates__name__data) = 1) and
-  (last1(((temp___expr_195).us_split_fields1).rec__predicates__name__data) = to_rep(temp___197))))))
+predicate dynamic_invariant1(temp___expr_197: us_rep,
+  temp___is_init_193: bool, temp___skip_constant_194: bool,
+  temp___do_toplevel_195: bool, temp___do_typ_inv_196: bool) =
+  (((temp___do_toplevel_195 = true) -> ((temp___is_init_193 = true) ->
+  (to_rep(((temp___expr_197).us_split_fields1).rec__predicates__name__last) <= to_rep(((temp___expr_197).us_split_discrs1).rec__predicates__name__size)))) and
+  (let temp___199 =
+  ((temp___expr_197).us_split_discrs1).rec__predicates__name__size
+  : positive in (dynamic_property(1, to_rep(temp___199),
+  first1(((temp___expr_197).us_split_fields1).rec__predicates__name__data),
+  last1(((temp___expr_197).us_split_fields1).rec__predicates__name__data)) and
+  ((first1(((temp___expr_197).us_split_fields1).rec__predicates__name__data) = 1) and
+  (last1(((temp___expr_197).us_split_fields1).rec__predicates__name__data) = to_rep(temp___199))))))
 
-predicate dynamic_predicate(temp___199: us_rep) =
-  (to_rep(((temp___199).us_split_fields1).rec__predicates__name__last) <= to_rep(((temp___199).us_split_discrs1).rec__predicates__name__size))
+predicate dynamic_predicate(temp___201: us_rep) =
+  (to_rep(((temp___201).us_split_fields1).rec__predicates__name__last) <= to_rep(((temp___201).us_split_discrs1).rec__predicates__name__size))
 
  (* File "predicates.ads", line 1, characters 0-0 *)
 goal defqtvc :

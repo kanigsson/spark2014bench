@@ -151,6 +151,10 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (if ((to_int(((a).us_split_discrs1).rec__test_dic__nested__p3__x) = to_int(((b).us_split_discrs1).rec__test_dic__nested__p3__x)) and
   (to_rep(((a).us_split_fields1).rec__test_dic__nested__p3__c) = to_rep(((b).us_split_fields1).rec__test_dic__nested__p3__c))) then true else false)
 
+predicate in_range2(rec__test_dic__nested__p3__x1: bool,
+  a: us_split_discrs) =
+  (rec__test_dic__nested__p3__x1 = (a).rec__test_dic__nested__p3__x)
+
 logic value__size : int
 
 logic object__size : int
@@ -241,6 +245,10 @@ function bool_eq3(a: us_rep1, b: us_rep1) : bool =
   (if ((to_int(((a).us_split_discrs3).rec__test_dic__nested__p4__x) = to_int(((b).us_split_discrs3).rec__test_dic__nested__p4__x)) and
   (to_rep(((a).us_split_fields3).rec__test_dic__nested__p4__c) = to_rep(((b).us_split_fields3).rec__test_dic__nested__p4__c))) then true else false)
 
+predicate in_range3(rec__test_dic__nested__p4__x1: bool,
+  a: us_split_discrs2) =
+  (rec__test_dic__nested__p4__x1 = (a).rec__test_dic__nested__p4__x)
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -330,6 +338,10 @@ function us_rep___split_fields__5__projection(a: us_rep2) : us_split_fields4 =
 function bool_eq4(a: us_rep2, b: us_rep2) : bool =
   (if ((to_int(((a).us_split_discrs5).rec__test_dic__nested__p5__x) = to_int(((b).us_split_discrs5).rec__test_dic__nested__p5__x)) and
   (to_rep(((a).us_split_fields5).rec__test_dic__nested__p5__c) = to_rep(((b).us_split_fields5).rec__test_dic__nested__p5__c))) then true else false)
+
+predicate in_range4(rec__test_dic__nested__p5__x1: bool,
+  a: us_split_discrs4) =
+  (rec__test_dic__nested__p5__x1 = (a).rec__test_dic__nested__p5__x)
 
 logic value__size2 : int
 
@@ -471,14 +483,15 @@ logic user_eq4 : us_rep3, us_rep3 -> bool
 
 logic dummy4 : us_rep3
 
-type p1__ref = { p1__content : us_rep3
+type tx1S__ref = { tx1S__content : us_rep3
 }
 
-function p1__ref_p1__content__projection(a: p1__ref) : us_rep3 =
-  (a).p1__content
+function tx1S__ref_tx1S__content__projection(a: tx1S__ref) : us_rep3 =
+  (a).tx1S__content
 
-predicate in_range2(rec__test_dic__nested__p1__x1: bool, a: us_rep3) =
-  (rec__test_dic__nested__p1__x1 = ((a).us_split_discrs7).rec__test_dic__nested__p1__x)
+predicate in_range5(rec__test_dic__nested__p1__x1: bool,
+  a: us_split_discrs6) =
+  (rec__test_dic__nested__p1__x1 = (a).rec__test_dic__nested__p1__x)
 
 logic value__size4 : int
 
@@ -526,11 +539,11 @@ logic user_eq5 : us_rep3, us_rep3 -> bool
 
 logic dummy5 : us_rep3
 
-type tx1S__ref = { tx1S__content : us_rep3
+type p1__ref = { p1__content : us_rep3
 }
 
-function tx1S__ref_tx1S__content__projection(a: tx1S__ref) : us_rep3 =
-  (a).tx1S__content
+function p1__ref_p1__content__projection(a: p1__ref) : us_rep3 =
+  (a).p1__content
 
 logic x1__split_discrs : us_split_discrs6
 
@@ -620,14 +633,15 @@ logic user_eq6 : us_rep4, us_rep4 -> bool
 
 logic dummy6 : us_rep4
 
-type p2__ref = { p2__content : us_rep4
+type tx2S__ref = { tx2S__content : us_rep4
 }
 
-function p2__ref_p2__content__projection(a: p2__ref) : us_rep4 =
-  (a).p2__content
+function tx2S__ref_tx2S__content__projection(a: tx2S__ref) : us_rep4 =
+  (a).tx2S__content
 
-predicate in_range3(rec__test_dic__nested__p2__x1: bool, a: us_rep4) =
-  (rec__test_dic__nested__p2__x1 = ((a).us_split_discrs9).rec__test_dic__nested__p2__x)
+predicate in_range6(rec__test_dic__nested__p2__x1: bool,
+  a: us_split_discrs8) =
+  (rec__test_dic__nested__p2__x1 = (a).rec__test_dic__nested__p2__x)
 
 logic value__size6 : int
 
@@ -675,18 +689,15 @@ logic user_eq7 : us_rep4, us_rep4 -> bool
 
 logic dummy7 : us_rep4
 
-type tx2S__ref = { tx2S__content : us_rep4
+type p2__ref = { p2__content : us_rep4
 }
 
-function tx2S__ref_tx2S__content__projection(a: tx2S__ref) : us_rep4 =
-  (a).tx2S__content
+function p2__ref_p2__content__projection(a: p2__ref) : us_rep4 =
+  (a).p2__content
 
 logic x2__split_discrs : us_split_discrs8
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
-
-predicate in_range4(rec__test_dic__nested__p3__x1: bool, a: us_rep) =
-  (rec__test_dic__nested__p3__x1 = ((a).us_split_discrs1).rec__test_dic__nested__p3__x)
 
 logic value__size7 : int
 
@@ -744,9 +755,6 @@ logic x3__split_discrs : us_split_discrs
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
 
-predicate in_range5(rec__test_dic__nested__p4__x1: bool, a: us_rep1) =
-  (rec__test_dic__nested__p4__x1 = ((a).us_split_discrs3).rec__test_dic__nested__p4__x)
-
 logic value__size8 : int
 
 logic object__size8 : int
@@ -802,9 +810,6 @@ function tx4S__ref_tx4S__content__projection(a: tx4S__ref) : us_rep1 =
 logic x4__split_discrs : us_split_discrs2
 
 logic attr__ATTRIBUTE_ADDRESS3 : int
-
-predicate in_range6(rec__test_dic__nested__p5__x1: bool, a: us_rep2) =
-  (rec__test_dic__nested__p5__x1 = ((a).us_split_discrs5).rec__test_dic__nested__p5__x)
 
 logic value__size9 : int
 
@@ -886,9 +891,6 @@ axiom f4__def_axiom1 :
   ((to_rep(((x).us_split_fields3).rec__test_dic__nested__p4__c) = 0) ->
   (f4(x) = true)))
 
-predicate in_range7(rec__test_dic__nested__p5__x1: bool, a: us_rep2) =
-  (rec__test_dic__nested__p5__x1 = ((a).us_split_discrs5).rec__test_dic__nested__p5__x)
-
 logic value__size10 : int
 
 logic object__size10 : int
@@ -940,9 +942,6 @@ type t4b__ref = { t4b__content : us_rep2
 
 function t4b__ref_t4b__content__projection(a: t4b__ref) : us_rep2 =
   (a).t4b__content
-
-predicate in_range8(rec__test_dic__nested__p5__x1: bool, a: us_rep2) =
-  (rec__test_dic__nested__p5__x1 = ((a).us_split_discrs5).rec__test_dic__nested__p5__x)
 
 logic value__size11 : int
 
@@ -1018,11 +1017,12 @@ goal defqtvc :
   (((((x1__split_discrs).rec__test_dic__nested__p1__x = of_int(1)) and
   (to_rep(x1__split_fields) = 0)) and
   ((x1__split_discrs).rec__test_dic__nested__p1__x = true)) ->
-  (in_range2(of_int(1), { us_split_discrs7 = x1__split_discrs;
+  (in_range5(of_int(1), ({ us_split_discrs7 = x1__split_discrs;
   us_split_fields7 = { rec__test_dic__nested__p1__c = x1__split_fields }
-  }) -> (((((x2__split_discrs).rec__test_dic__nested__p2__x = of_int(1)) and
+  }).us_split_discrs7) ->
+  (((((x2__split_discrs).rec__test_dic__nested__p2__x = of_int(1)) and
   (to_rep(x2__split_fields) = 0)) and
   ((x2__split_discrs).rec__test_dic__nested__p2__x = true)) ->
-  (in_range3(of_int(1), { us_split_discrs9 = x2__split_discrs;
+  (in_range6(of_int(1), ({ us_split_discrs9 = x2__split_discrs;
   us_split_fields9 = { rec__test_dic__nested__p2__c = x2__split_fields }
-  }) -> in_range(1))))))
+  }).us_split_discrs9) -> in_range(1))))))

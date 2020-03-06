@@ -445,6 +445,7 @@ axiom partial_match_at__def_axiom1 :
  (* File "string_search.ads", line 33, characters 0-0 *)
 goal defqtvc : (dynamic_invariant1(needle, true, false, true, true) ->
   (dynamic_invariant1(haystack, true, false, true, true) ->
-  (((1 <= length(needle)) and (length(needle) <= length(haystack))) ->
-  (let o = length(needle) : int in (in_range1(o) -> (let o1 =
-  length(haystack) : int in (in_range1(o1) -> in_range1((o1 - o)))))))))
+  ((let temp___358 = length(needle) : int in ((1 <= temp___358) and
+  (temp___358 <= length(haystack)))) -> (let o = length(needle) : int in
+  (in_range1(o) -> (let o1 = length(haystack) : int in (in_range1(o1) ->
+  in_range1((o1 - o)))))))))

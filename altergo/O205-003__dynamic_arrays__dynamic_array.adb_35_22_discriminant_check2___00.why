@@ -266,6 +266,9 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   (dynamic_array__rec__f2__pred(a) ->
   (to_rep1(((a).us_split_fields1).rec__dynamic_array__rec__f2) = to_rep1(((b).us_split_fields1).rec__dynamic_array__rec__f2))))) then true else false)
 
+predicate in_range4(rec__dynamic_array__rec__b1: bool, a: us_split_discrs) =
+  (rec__dynamic_array__rec__b1 = (a).rec__dynamic_array__rec__b)
+
 logic value__size : int
 
 logic object__size : int
@@ -496,6 +499,10 @@ function bool_eq8(a: us_rep1, b: us_rep1) : bool =
   (bool_eq7(((a).us_split_fields3).rec__dynamic_array__holder__content,
   ((b).us_split_fields3).rec__dynamic_array__holder__content) = true)) then true else false)
 
+predicate in_range5(rec__dynamic_array__holder__d1: int,
+  a: us_split_discrs2) =
+  (rec__dynamic_array__holder__d1 = to_rep((a).rec__dynamic_array__holder__d))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -666,9 +673,6 @@ function bool_eq9(a: us_rep2, b: us_rep2) : bool =
   (bool_eq7(((a).us_split_fields5).rec__dynamic_array__holder__content1,
   ((b).us_split_fields5).rec__dynamic_array__holder__content1) = true)) then true else false)
 
-predicate in_range4(rec__dynamic_array__holder__d1: int, a: us_rep1) =
-  (rec__dynamic_array__holder__d1 = to_rep(((a).us_split_discrs3).rec__dynamic_array__holder__d))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -728,8 +732,8 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant3(temp___expr_203: us_rep2,
   temp___is_init_199: bool, temp___skip_constant_200: bool,
   temp___do_toplevel_201: bool, temp___do_typ_inv_202: bool) =
-  (((not (temp___skip_constant_200 = true)) -> in_range4(c,
-  to_base(temp___expr_203))) and ((dynamic_property1(1, c,
+  (((not (temp___skip_constant_200 = true)) -> in_range5(c,
+  (to_base(temp___expr_203)).us_split_discrs3)) and ((dynamic_property1(1, c,
   first1(((temp___expr_203).us_split_fields5).rec__dynamic_array__holder__content1),
   last2(((temp___expr_203).us_split_fields5).rec__dynamic_array__holder__content1)) and
   ((first1(((temp___expr_203).us_split_fields5).rec__dynamic_array__holder__content1) = 1) and
@@ -813,9 +817,6 @@ function bool_eq10(a: us_rep3, b: us_rep3) : bool =
   (bool_eq7(((a).us_split_fields7).rec__dynamic_array__holder__content2,
   ((b).us_split_fields7).rec__dynamic_array__holder__content2) = true)) then true else false)
 
-predicate in_range5(rec__dynamic_array__holder__d1: int, a: us_rep1) =
-  (rec__dynamic_array__holder__d1 = to_rep(((a).us_split_discrs3).rec__dynamic_array__holder__d))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -873,9 +874,6 @@ type t23b__ref = { t23b__content : us_t
 
 function t23b__ref_t23b__content__projection(a: t23b__ref) : us_t =
   (a).t23b__content
-
-predicate in_range6(rec__dynamic_array__rec__b1: bool, a: us_rep) =
-  (rec__dynamic_array__rec__b1 = ((a).us_split_discrs1).rec__dynamic_array__rec__b)
 
 logic value__size5 : int
 
@@ -964,9 +962,6 @@ type t25b__ref = { t25b__content : integer
 
 function t25b__ref_t25b__content__projection(a: t25b__ref) : integer =
   (a).t25b__content
-
-predicate in_range7(rec__dynamic_array__rec__b1: bool, a: us_rep) =
-  (rec__dynamic_array__rec__b1 = ((a).us_split_discrs1).rec__dynamic_array__rec__b)
 
 logic value__size6 : int
 
@@ -1108,8 +1103,8 @@ goal defqtvc : (dynamic_invariant(c, true, false, true, true) ->
   ((last2(temp___227) = c) ->
   ((if (first1(temp___227) <= last2(temp___227)) then ((1 <= c) and
   ((last2(temp___227) - first1(temp___227)) = (c - 1))) else (c <  1)) ->
-  (forall o1:natural. ((to_rep(o1) = c) -> in_range4(c, to_base1({
+  (forall o1:natural. ((to_rep(o1) = c) -> in_range5(c, (to_base1({
   us_split_discrs5 = { rec__dynamic_array__holder__d = o1 };
   us_split_fields7 = { rec__dynamic_array__holder__content2 =
   of_array(to_array(temp___227), first1(temp___227), last2(temp___227)) }
-  })))))))))))))
+  })).us_split_discrs3))))))))))))

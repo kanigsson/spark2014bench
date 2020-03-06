@@ -415,6 +415,10 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range5(rec__integer_stacks__stack__capacity1: int,
+  a: us_split_discrs) =
+  (rec__integer_stacks__stack__capacity1 = to_rep((a).rec__integer_stacks__stack__capacity))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -582,9 +586,6 @@ function bool_eq8(a: us_rep1, b: us_rep1) : bool =
 
 logic us_tag1 : int
 
-predicate in_range5(rec__integer_stacks__stack__capacity1: int, a: us_rep) =
-  (rec__integer_stacks__stack__capacity1 = to_rep(((a).us_split_discrs1).rec__integer_stacks__stack__capacity))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -722,9 +723,6 @@ function bool_eq9(a: us_rep2, b: us_rep2) : bool =
   (to_rep1(((a).us_split_fields5).rec__integer_stacks__stack__top2) = to_rep1(((b).us_split_fields5).rec__integer_stacks__stack__top2)))) then true else false)
 
 logic us_tag2 : int
-
-predicate in_range6(rec__integer_stacks__stack__capacity1: int, a: us_rep) =
-  (rec__integer_stacks__stack__capacity1 = to_rep(((a).us_split_discrs1).rec__integer_stacks__stack__capacity))
 
 logic value__size3 : int
 
@@ -1021,8 +1019,8 @@ predicate dynamic_invariant5(temp___expr_331: us_rep2,
   temp___is_init_327: bool, temp___skip_constant_328: bool,
   temp___do_toplevel_329: bool, temp___do_typ_inv_330: bool) =
   ((((not (temp___skip_constant_328 = true)) ->
-  in_range6(to_rep(((left).us_split_discrs1).rec__integer_stacks__stack__capacity),
-  to_base1(temp___expr_331))) and
+  in_range5(to_rep(((left).us_split_discrs1).rec__integer_stacks__stack__capacity),
+  (to_base1(temp___expr_331)).us_split_discrs1)) and
   (to_rep1(((to_base1(temp___expr_331)).us_split_fields1).rec__integer_stacks__stack__top) <= to_rep(((to_base1(temp___expr_331)).us_split_discrs1).rec__integer_stacks__stack__capacity))) and
   (dynamic_property(1,
   to_rep(((left).us_split_discrs1).rec__integer_stacks__stack__capacity),
@@ -1065,7 +1063,7 @@ predicate dynamic_invariant6(temp___expr_311: us_rep1,
   temp___do_toplevel_309: bool, temp___do_typ_inv_310: bool) =
   ((((not (temp___skip_constant_308 = true)) ->
   in_range5(to_rep(((right).us_split_discrs1).rec__integer_stacks__stack__capacity),
-  to_base(temp___expr_311))) and
+  (to_base(temp___expr_311)).us_split_discrs1)) and
   (to_rep1(((to_base(temp___expr_311)).us_split_fields1).rec__integer_stacks__stack__top) <= to_rep(((to_base(temp___expr_311)).us_split_discrs1).rec__integer_stacks__stack__capacity))) and
   (dynamic_property(1,
   to_rep(((right).us_split_discrs1).rec__integer_stacks__stack__capacity),

@@ -1196,6 +1196,10 @@ function bool_eq8(a: us_rep, b: us_rep) : bool =
   (bool_eq7(((a).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits,
   ((b).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits) = true)) then true else false)
 
+predicate in_range3(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
+  a: us_split_discrs) =
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep((a).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -1315,10 +1319,6 @@ function bool_eq9(a: us_rep1, b: us_rep1) : bool =
   (bool_eq7(((a).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1,
   ((b).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1) = true)) then true else false)
 
-predicate in_range3(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
-  a: us_rep) =
-  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep(((a).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -1380,7 +1380,7 @@ predicate dynamic_invariant1(temp___expr_859: us_rep1,
   temp___do_toplevel_857: bool, temp___do_typ_inv_858: bool) =
   (((not (temp___skip_constant_856 = true)) ->
   in_range3(((2 * to_rep(((divisor).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length)) + 1),
-  to_base(temp___expr_859))) and (dynamic_property(1,
+  (to_base(temp___expr_859)).us_split_discrs1)) and (dynamic_property(1,
   ((2 * to_rep(((divisor).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length)) + 1),
   first1(((temp___expr_859).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1),
   last1(((temp___expr_859).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1)) and
@@ -1443,10 +1443,6 @@ function bool_eq10(a: us_rep2, b: us_rep2) : bool =
   (bool_eq7(((a).us_split_fields5).rec__ada___ada___aco__math__very_longs__very_long__long_digits2,
   ((b).us_split_fields5).rec__ada___ada___aco__math__very_longs__very_long__long_digits2) = true)) then true else false)
 
-predicate in_range4(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
-  a: us_rep) =
-  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep(((a).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -1507,8 +1503,8 @@ predicate dynamic_invariant2(temp___expr_872: us_rep2,
   temp___is_init_868: bool, temp___skip_constant_869: bool,
   temp___do_toplevel_870: bool, temp___do_typ_inv_871: bool) =
   (((not (temp___skip_constant_869 = true)) ->
-  in_range4(to_rep(((divisor).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length),
-  to_base1(temp___expr_872))) and (dynamic_property(1,
+  in_range3(to_rep(((divisor).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length),
+  (to_base1(temp___expr_872)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((divisor).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length),
   first1(((temp___expr_872).us_split_fields5).rec__ada___ada___aco__math__very_longs__very_long__long_digits2),
   last1(((temp___expr_872).us_split_fields5).rec__ada___ada___aco__math__very_longs__very_long__long_digits2)) and
@@ -1632,13 +1628,13 @@ goal defqtvc :
   true, false, true, true) -> (dynamic_invariant4(q_hat, false, false, true,
   true) -> (dynamic_invariant4(temporary_digit, false, false, true, true) ->
   (dynamic_invariant4(r_hat, false, false, true, true) -> (let o = (j + n)
-  : int in (in_range2(o) -> (let temp___1599 = (o - 2) : int in
-  (((first1(u__split_fields) <= temp___1599) and
-  (temp___1599 <= last1(u__split_fields))) ->
-  (forall o1:t. ((to_rep2((to_array(u__split_fields)[temp___1599])) = o1) ->
-  (let o2 = (j + n) : int in (in_range2(o2) -> (let temp___1597 = (o2 - 1)
-  : int in (((first1(u__split_fields) <= temp___1597) and
-  (temp___1597 <= last1(u__split_fields))) ->
-  (forall o3:t. ((to_rep2((to_array(u__split_fields)[temp___1597])) = o3) ->
+  : int in (in_range2(o) -> (let temp___1602 = (o - 2) : int in
+  (((first1(u__split_fields) <= temp___1602) and
+  (temp___1602 <= last1(u__split_fields))) ->
+  (forall o1:t. ((to_rep2((to_array(u__split_fields)[temp___1602])) = o1) ->
+  (let o2 = (j + n) : int in (in_range2(o2) -> (let temp___1600 = (o2 - 1)
+  : int in (((first1(u__split_fields) <= temp___1600) and
+  (temp___1600 <= last1(u__split_fields))) ->
+  (forall o3:t. ((to_rep2((to_array(u__split_fields)[temp___1600])) = o3) ->
   (forall temporary_digit1:t1. ((temporary_digit1 = add1(mul1(rliteral5,
   toBig(o3)), toBig(o1))) -> (first1(v__split_fields) <= (n - 1))))))))))))))))))))))))))

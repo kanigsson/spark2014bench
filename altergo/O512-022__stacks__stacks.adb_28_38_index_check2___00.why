@@ -587,6 +587,9 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range6(rec__stacks__stack__max1: int, a: us_split_discrs) =
+  (rec__stacks__stack__max1 = to_rep3((a).rec__stacks__stack__max))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -731,7 +734,7 @@ axiom countqtaxiom : (forall i:count. (0 <= countqtint(i)))
 
 axiom countqtaxiom1 : (forall i:count. (countqtint(i) <= 2147483647))
 
-predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range7(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -754,7 +757,7 @@ function count__ref_count__content__projection(a: count__ref) : count =
 predicate dynamic_invariant7(temp___expr_265: int, temp___is_init_261: bool,
   temp___skip_constant_262: bool, temp___do_toplevel_263: bool,
   temp___do_typ_inv_264: bool) = (((temp___is_init_261 = true) or
-  (0 <= 2147483647)) -> in_range6(temp___expr_265))
+  (0 <= 2147483647)) -> in_range7(temp___expr_265))
 
 axiom line_length__post_axiom :
   (forall ada___ada__text_io__standard_in:us_private.

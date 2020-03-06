@@ -1171,13 +1171,14 @@ goal defqtvc :
   (forall buffer__split_fields:us_split_fields.
   (forall buffer__split_fields1:us_split_fields.
   ((buffer__split_fields1 = buffer__split_fields) -> (let o = {
-  us_split_fields1 = buffer__split_fields } : us_rep in (let o1 = first(o)
-  : int in ((first__function_guard(o1, o) and (dynamic_invariant(o1, true,
-  false, true, true) and
-  (o1 = to_rep((buffer__split_fields).rec__ordering_buffers__ordering_buffer_type__first)))) ->
-  (in_range4(o1) -> (let o2 = { us_split_fields1 = buffer__split_fields }
-  : us_rep in (let o3 = first(o2) : int in ((first__function_guard(o3,
-  o2) and (dynamic_invariant(o3, true, false, true, true) and
-  (o3 = to_rep((buffer__split_fields).rec__ordering_buffers__ordering_buffer_type__first)))) ->
-  ((forall o4:us_rep. first__function_guard(first(o4), o4)) -> (first({
-  us_split_fields1 = buffer__split_fields }) <= o3))))))))))))
+  us_split_fields1 = buffer__split_fields } : us_rep in (let temp___383 =
+  first(o) : int in ((first__function_guard(temp___383, o) and
+  (dynamic_invariant(temp___383, true, false, true, true) and
+  (temp___383 = to_rep((buffer__split_fields).rec__ordering_buffers__ordering_buffer_type__first)))) ->
+  (in_range4(temp___383) -> (let o1 = { us_split_fields1 =
+  buffer__split_fields } : us_rep in (let o2 = first(o1) : int in
+  ((first__function_guard(o2, o1) and (dynamic_invariant(o2, true, false,
+  true, true) and
+  (o2 = to_rep((buffer__split_fields).rec__ordering_buffers__ordering_buffer_type__first)))) ->
+  ((forall o3:us_rep. first__function_guard(first(o3), o3)) -> (first({
+  us_split_fields1 = buffer__split_fields }) <= o2))))))))))))

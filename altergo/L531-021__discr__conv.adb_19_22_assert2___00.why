@@ -254,6 +254,9 @@ function bool_eq4(a: us_rep, b: us_rep) : bool =
   (basic__r__c_field2__pred(a) ->
   (to_rep1(((a).us_split_fields1).rec__basic__r__c_field2) = to_rep1(((b).us_split_fields1).rec__basic__r__c_field2)))))) then true else false)
 
+predicate in_range4(rec__basic__r__x1: int, a: us_split_discrs) =
+  (rec__basic__r__x1 = to_rep2((a).rec__basic__r__x))
+
 logic value__size : int
 
 logic object__size : int
@@ -352,9 +355,6 @@ logic id__function_guard : us_rep, us_rep -> prop
 axiom id__post_axiom :
   (forall x:us_rep [id(x)]. (let result = id(x) : us_rep in
   (id__function_guard(result, x) -> (bool_eq4(result, x) = true))))
-
-predicate in_range4(rec__basic__r__x1: int, a: us_rep) =
-  (rec__basic__r__x1 = to_rep2(((a).us_split_discrs1).rec__basic__r__x))
 
 logic value__size1 : int
 
@@ -456,7 +456,8 @@ logic attr__ATTRIBUTE_ADDRESS : int
 predicate dynamic_invariant(temp___expr_189: us_rep,
   temp___is_init_185: bool, temp___skip_constant_186: bool,
   temp___do_toplevel_187: bool, temp___do_typ_inv_188: bool) =
-  ((not (temp___skip_constant_186 = true)) -> in_range4(0, temp___expr_189))
+  ((not (temp___skip_constant_186 = true)) -> in_range4(0,
+  (temp___expr_189).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_191: us_rep,
   temp___skip_top_level_192: bool) =
@@ -469,9 +470,6 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 logic z__split_discrs : us_split_discrs
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
-
-predicate in_range5(rec__basic__r__x1: int, a: us_rep) =
-  (rec__basic__r__x1 = to_rep2(((a).us_split_discrs1).rec__basic__r__x))
 
 logic value__size2 : int
 
@@ -565,9 +563,6 @@ type t4b__ref = { t4b__content : us_rep
 
 function t4b__ref_t4b__content__projection(a: t4b__ref) : us_rep =
   (a).t4b__content
-
-predicate in_range6(rec__basic__r__x1: int, a: us_rep) =
-  (rec__basic__r__x1 = to_rep2(((a).us_split_discrs1).rec__basic__r__x))
 
 logic value__size3 : int
 
@@ -683,26 +678,27 @@ axiom rliteral_axiom : (integerqtint(rliteral) = 1)
 
  (* File "conv.ads", line 3, characters 0-0 *)
 goal defqtvc :
-  (forall o:enum. ((to_rep2(o) = 0) -> (let o1 = { us_split_discrs1 = {
-  rec__basic__r__x = o }; us_split_fields1 = { rec__basic__r__base =
+  (forall o:enum. ((to_rep2(o) = 0) -> (let temp___198 = { us_split_discrs1 =
+  { rec__basic__r__x = o }; us_split_fields1 = { rec__basic__r__base =
   rliteral; rec__basic__r__a_field = rliteral; rec__basic__r__c_field1 =
   true; rec__basic__r__c_field2 = dummy1 } } : us_rep in
   (forall x__split_fields:us_split_fields.
-  ((x__split_fields = (o1).us_split_fields1) ->
-  ((x__split_discrs = (o1).us_split_discrs1) -> (dynamic_invariant({
+  ((x__split_fields = (temp___198).us_split_fields1) ->
+  ((x__split_discrs = (temp___198).us_split_discrs1) -> (dynamic_invariant({
   us_split_discrs1 = x__split_discrs; us_split_fields1 = x__split_fields },
   true, false, true, true) ->
-  (forall o2:enum. ((to_rep2(o2) = 0) ->
+  (forall o1:enum. ((to_rep2(o1) = 0) ->
   (forall y__split_fields:us_split_fields. ((y__split_fields = {
   rec__basic__r__base = rliteral; rec__basic__r__a_field = rliteral;
   rec__basic__r__c_field1 = true; rec__basic__r__c_field2 = dummy1 }) ->
-  ((y__split_discrs = { rec__basic__r__x = o2 }) -> (let o3 = {
+  ((y__split_discrs = { rec__basic__r__x = o1 }) -> (let o2 = {
   us_split_discrs1 = x__split_discrs; us_split_fields1 = x__split_fields }
-  : us_rep in (let o4 = id(o3) : us_rep in ((id__function_guard(o4, o3) and
-  (bool_eq4(o4, o3) = true)) ->
+  : us_rep in (let temp___199 = id(o2) : us_rep in
+  ((id__function_guard(temp___199, o2) and (bool_eq4(temp___199,
+  o2) = true)) ->
   (forall z__split_fields:us_split_fields.
-  ((z__split_fields = (o4).us_split_fields1) ->
-  ((z__split_discrs = (o4).us_split_discrs1) -> (dynamic_invariant({
+  ((z__split_fields = (temp___199).us_split_fields1) ->
+  ((z__split_discrs = (temp___199).us_split_discrs1) -> (dynamic_invariant({
   us_split_discrs1 = z__split_discrs; us_split_fields1 = z__split_fields },
   true, false, true, true) ->
   ((forall x__split_fields1:us_split_fields. id__function_guard(id({

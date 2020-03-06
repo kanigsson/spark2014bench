@@ -3920,32 +3920,32 @@ goal defqtvc :
   (forall o2:int.
   ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = o2) ->
   (forall o3:cell. ((to_rep(o3) = o2) ->
-  (forall temp___850:int.
-  ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = temp___850) ->
-  (((1 <= temp___850) and (temp___850 <= 10)) ->
+  (forall temp___859:int.
+  ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = temp___859) ->
+  (((1 <= temp___859) and (temp___859 <= 10)) ->
   (forall o4:int.
   ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o4) ->
-  (forall temp___851:int.
-  ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = temp___851) ->
-  (((1 <= temp___851) and (temp___851 <= 20)) ->
+  (forall temp___860:int.
+  ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = temp___860) ->
+  (((1 <= temp___860) and (temp___860 <= 20)) ->
   (forall cur_board1:(int,(int,cell) farray) farray.
-  ((cur_board1 = (cur_board[temp___851 <- ((cur_board[o4])[temp___850 <- o3])])) ->
+  ((cur_board1 = (cur_board[temp___860 <- ((cur_board[o4])[temp___859 <- o3])])) ->
   (forall o5:int.
   ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o5) ->
   (forall o6:int.
   ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = o6) ->
   (forall o7:cell. ((to_rep(o7) = o6) ->
-  (forall temp___853:int.
-  ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = temp___853) ->
-  (((1 <= temp___853) and (temp___853 <= 10)) ->
+  (forall temp___862:int.
+  ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = temp___862) ->
+  (((1 <= temp___862) and (temp___862 <= 10)) ->
   (forall o8:int.
   ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) ->
   (forall o9:int.
   ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o9) ->
-  (let temp___854 = (o9 + 1) : int in (((1 <= temp___854) and
-  (temp___854 <= 20)) ->
+  (let temp___863 = (o9 + 1) : int in (((1 <= temp___863) and
+  (temp___863 <= 20)) ->
   (forall cur_board2:(int,(int,cell) farray) farray.
-  ((cur_board2 = (cur_board1[temp___854 <- ((cur_board1[(o8 + 1)])[temp___853 <- o7])])) ->
+  ((cur_board2 = (cur_board1[temp___863 <- ((cur_board1[(o8 + 1)])[temp___862 <- o7])])) ->
   (forall o10:int.
   ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o10) ->
   (forall o11:int.

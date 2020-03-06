@@ -356,6 +356,11 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__static_discr__i_holder__content,
   ((b).us_split_fields1).rec__static_discr__i_holder__content) = true)) then true else false)
 
+predicate in_range4(rec__static_discr__i_holder__unused1: int,
+  rec__static_discr__i_holder__c1: int, a: us_split_discrs) =
+  ((rec__static_discr__i_holder__unused1 = to_rep((a).rec__static_discr__i_holder__unused)) and
+  (rec__static_discr__i_holder__c1 = to_rep((a).rec__static_discr__i_holder__c)))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -470,11 +475,6 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   (to_rep(((a).us_split_discrs2).rec__static_discr__i_holder__c) = to_rep(((b).us_split_discrs2).rec__static_discr__i_holder__c))) and
   (bool_eq5(((a).us_split_fields3).rec__static_discr__i_holder__content1,
   ((b).us_split_fields3).rec__static_discr__i_holder__content1) = true)) then true else false)
-
-predicate in_range4(rec__static_discr__i_holder__unused1: int,
-  rec__static_discr__i_holder__c1: int, a: us_rep) =
-  ((rec__static_discr__i_holder__unused1 = to_rep(((a).us_split_discrs1).rec__static_discr__i_holder__unused)) and
-  (rec__static_discr__i_holder__c1 = to_rep(((a).us_split_discrs1).rec__static_discr__i_holder__c)))
 
 logic value__size2 : int
 
@@ -592,6 +592,11 @@ function bool_eq8(a: us_rep2, b: us_rep2) : bool =
   ((b).us_split_fields5).rec__static_discr__holder__content) = true) and
   (to_rep(((a).us_split_fields5).rec__static_discr__holder__length) = to_rep(((b).us_split_fields5).rec__static_discr__holder__length)))) then true else false)
 
+predicate in_range5(rec__static_discr__holder__unused1: int,
+  rec__static_discr__holder__c1: int, a: us_split_discrs3) =
+  ((rec__static_discr__holder__unused1 = to_rep((a).rec__static_discr__holder__unused)) and
+  (rec__static_discr__holder__c1 = to_rep((a).rec__static_discr__holder__c)))
+
 logic value__size3 : int
 
 logic object__size3 : int
@@ -682,7 +687,7 @@ axiom tT8sP1qtaxiom : (forall i:tT8sP1. (1 <= tT8sP1qtint(i)))
 
 axiom tT8sP1qtaxiom1 : (forall i:tT8sP1. (tT8sP1qtint(i) <= 100))
 
-predicate in_range5(x: int) = ((1 <= x) and (x <= 100))
+predicate in_range6(x: int) = ((1 <= x) and (x <= 100))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -762,11 +767,6 @@ function bool_eq10(a: us_rep3, b: us_rep3) : bool =
   (bool_eq4(((a).us_split_fields7).rec__static_discr__i_holder__content2, 1,
   100, ((b).us_split_fields7).rec__static_discr__i_holder__content2, 1,
   100) = true)) then true else false)
-
-predicate in_range6(rec__static_discr__i_holder__unused1: int,
-  rec__static_discr__i_holder__c1: int, a: us_rep) =
-  ((rec__static_discr__i_holder__unused1 = to_rep(((a).us_split_discrs1).rec__static_discr__i_holder__unused)) and
-  (rec__static_discr__i_holder__c1 = to_rep(((a).us_split_discrs1).rec__static_discr__i_holder__c)))
 
 logic value__size5 : int
 
@@ -882,11 +882,6 @@ function bool_eq11(a: us_rep4, b: us_rep4) : bool =
   ((b).us_split_fields9).rec__static_discr__holder__content1) = true) and
   (to_rep(((a).us_split_fields9).rec__static_discr__holder__length1) = to_rep(((b).us_split_fields9).rec__static_discr__holder__length1)))) then true else false)
 
-predicate in_range7(rec__static_discr__holder__unused1: int,
-  rec__static_discr__holder__c1: int, a: us_rep2) =
-  ((rec__static_discr__holder__unused1 = to_rep(((a).us_split_discrs4).rec__static_discr__holder__unused)) and
-  (rec__static_discr__holder__c1 = to_rep(((a).us_split_discrs4).rec__static_discr__holder__c)))
-
 logic value__size6 : int
 
 logic object__size6 : int
@@ -980,9 +975,9 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant1(temp___expr_205: us_rep4,
   temp___is_init_201: bool, temp___skip_constant_202: bool,
   temp___do_toplevel_203: bool, temp___do_typ_inv_204: bool) =
-  (((not (temp___skip_constant_202 = true)) -> in_range7(100, 100,
-  to_base2(temp___expr_205))) and in_range6(100, 100,
-  to_base1(((temp___expr_205).us_split_fields9).rec__static_discr__holder__content1)))
+  (((not (temp___skip_constant_202 = true)) -> in_range5(100, 100,
+  (to_base2(temp___expr_205)).us_split_discrs4)) and in_range4(100, 100,
+  (to_base1(((temp___expr_205).us_split_fields9).rec__static_discr__holder__content1)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_211: us_rep4,
   temp___skip_top_level_212: bool) =
@@ -1021,7 +1016,7 @@ predicate dynamic_invariant4(temp___expr_195: us_rep2,
   : natural in
   (in_range4(to_rep(((temp___expr_195).us_split_discrs4).rec__static_discr__holder__unused),
   to_rep(temp___197),
-  to_base(((temp___expr_195).us_split_fields5).rec__static_discr__holder__content)) and
+  (to_base(((temp___expr_195).us_split_fields5).rec__static_discr__holder__content)).us_split_discrs1) and
   (dynamic_property(1, to_rep(temp___197),
   first1(((((temp___expr_195).us_split_fields5).rec__static_discr__holder__content).us_split_fields3).rec__static_discr__i_holder__content1),
   last1(((((temp___expr_195).us_split_fields5).rec__static_discr__holder__content).us_split_fields3).rec__static_discr__i_holder__content1)) and
@@ -1045,25 +1040,25 @@ goal defqtvc : (dynamic_invariant1(a, true, false, true, true) ->
                            ((to_rep((current__split_fields).rec__static_discr__holder__length1) = o1) and
                            (o = (if (0 <  o1) then true else false)))) else (o = false)) ->
   ((o = true) ->
-  ((exists o1:int.
+  ((exists temp___375:int.
+   ((to_rep((current__split_fields).rec__static_discr__holder__length1) = temp___375) and
+   (exists o1:int.
    ((to_rep(((a).us_split_fields9).rec__static_discr__holder__length1) = o1) and
-   (exists o2:int.
-   ((to_rep((current__split_fields).rec__static_discr__holder__length1) = o2) and
-   (exists o3:int.
-   ((to_rep((current__split_fields).rec__static_discr__holder__length1) = o3) and
-   ((not ((if (andb((if (1 <= o3) then true else false),
-   (if (o2 <= o1) then true else false)) = true) then bool_eq4(((((a).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2,
+   ((not ((if (andb((if (1 <= temp___375) then true else false),
+   (if (temp___375 <= o1) then true else false)) = true) then bool_eq4(((((a).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2,
    1, 100,
    (((current__split_fields).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2,
    1, 100) else false) = true)) or
-   (exists o4:int.
-   ((to_rep(((a).us_split_fields9).rec__static_discr__holder__length1) = o4) and
-   (exists o5:int.
-   ((to_rep((current__split_fields).rec__static_discr__holder__length1) = o5) and
-   in_range1((o5 + 1))))))))))))) ->
+   (exists o2:int.
+   ((to_rep(((a).us_split_fields9).rec__static_discr__holder__length1) = o2) and
+   (exists o3:int.
+   ((to_rep((current__split_fields).rec__static_discr__holder__length1) = o3) and
+   in_range1((o3 + 1))))))))))) ->
   (forall current__split_fields1:us_split_fields8. forall result__1:int.
-  (((((1 <= to_rep((current__split_fields1).rec__static_discr__holder__length1)) and
-  (to_rep((current__split_fields1).rec__static_discr__holder__length1) <= to_rep(((a).us_split_fields9).rec__static_discr__holder__length1))) and
+  ((((let temp___382 =
+  to_rep((current__split_fields1).rec__static_discr__holder__length1)
+  : int in ((1 <= temp___382) and
+  (temp___382 <= to_rep(((a).us_split_fields9).rec__static_discr__holder__length1)))) and
   (bool_eq4(((((a).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2,
   1, 100,
   (((current__split_fields1).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2,

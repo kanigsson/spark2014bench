@@ -437,6 +437,10 @@ function bool_eq8(a: us_rep, b: us_rep) : bool =
   ((b).us_split_fields1).rec__bounded_strings__bounded_string__text) = true) and
   (to_rep2(((a).us_split_fields1).rec__bounded_strings__bounded_string__length) = to_rep2(((b).us_split_fields1).rec__bounded_strings__bounded_string__length)))) then true else false)
 
+predicate in_range6(rec__bounded_strings__bounded_string__bound1: int,
+  a: us_split_discrs) =
+  (rec__bounded_strings__bounded_string__bound1 = to_rep1((a).rec__bounded_strings__bounded_string__bound))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -599,10 +603,6 @@ function bool_eq9(a: us_rep1, b: us_rep1) : bool =
   ((b).us_split_fields3).rec__bounded_strings__bounded_string__text1) = true) and
   (to_rep2(((a).us_split_fields3).rec__bounded_strings__bounded_string__length1) = to_rep2(((b).us_split_fields3).rec__bounded_strings__bounded_string__length1)))) then true else false)
 
-predicate in_range6(rec__bounded_strings__bounded_string__bound1: int,
-  a: us_rep) =
-  (rec__bounded_strings__bounded_string__bound1 = to_rep1(((a).us_split_discrs1).rec__bounded_strings__bounded_string__bound))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -686,7 +686,8 @@ predicate dynamic_invariant3(temp___expr_193: us_rep1,
   temp___is_init_189: bool, temp___skip_constant_190: bool,
   temp___do_toplevel_191: bool, temp___do_typ_inv_192: bool) =
   (((not (temp___skip_constant_190 = true)) -> in_range6(upper_bound,
-  to_base(temp___expr_193))) and (dynamic_property(1, upper_bound,
+  (to_base(temp___expr_193)).us_split_discrs1)) and (dynamic_property(1,
+  upper_bound,
   first1(((temp___expr_193).us_split_fields3).rec__bounded_strings__bounded_string__text1),
   last1(((temp___expr_193).us_split_fields3).rec__bounded_strings__bounded_string__text1)) and
   ((first1(((temp___expr_193).us_split_fields3).rec__bounded_strings__bounded_string__text1) = 1) and

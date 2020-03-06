@@ -453,16 +453,16 @@ goal defqtvc :
   ((forall my_stack__split_fields2:us_split_fields.
    state__function_guard(state(my_stack__split_fields2),
    my_stack__split_fields2)) ->
+  ((forall my_stack__split_fields2:us_split_fields.
+   state__function_guard(state(my_stack__split_fields2),
+   my_stack__split_fields2)) ->
+  ((forall my_stack__split_fields2:us_split_fields.
+   state__function_guard(state(my_stack__split_fields2),
+   my_stack__split_fields2)) ->
+  ((forall my_stack__split_fields2:us_split_fields.
+   state__function_guard(state(my_stack__split_fields2),
+   my_stack__split_fields2)) ->
   (let usf = state(my_stack__split_fields) : us_rep in
-  ((forall my_stack__split_fields2:us_split_fields.
-   state__function_guard(state(my_stack__split_fields2),
-   my_stack__split_fields2)) ->
-  ((forall my_stack__split_fields2:us_split_fields.
-   state__function_guard(state(my_stack__split_fields2),
-   my_stack__split_fields2)) ->
-  ((forall my_stack__split_fields2:us_split_fields.
-   state__function_guard(state(my_stack__split_fields2),
-   my_stack__split_fields2)) ->
   (dynamic_invariant(temp, false, false, true, true) ->
   (forall temp___379:int.
   ((to_rep1((my_stack__split_fields).rec__stack_functional_spec__stack_type__pointer) = temp___379) ->

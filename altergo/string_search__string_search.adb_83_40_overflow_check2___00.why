@@ -528,13 +528,13 @@ goal defqtvc :
   (forall i:int. (dynamic_invariant2(needle, true, false, true, true) ->
   (dynamic_invariant2(haystack, true, false, true, true) ->
   ((((length(needle) <  2147483647) and (length(haystack) <  2147483646)) and
-  ((1 <= length(needle)) and (length(needle) <= length(haystack)))) ->
-  (dynamic_invariant(i, false, false, true, true) -> (let o = needle
-  : us_t in
+  (let temp___412 = length(needle) : int in ((1 <= temp___412) and
+  (temp___412 <= length(haystack))))) -> (dynamic_invariant(i, false, false,
+  true, true) -> (let o = needle : us_t in
   (forall bad_shift:(int,positive) farray.
-  (((forall c:int. (((0 <= c) and (c <= 255)) ->
-    ((1 <= to_rep((bad_shift[c]))) and
-    (to_rep((bad_shift[c])) <= (length(o) + 1))))) and
+  (((forall c:int. (((0 <= c) and (c <= 255)) -> (let temp___210 =
+    to_rep((bad_shift[c])) : int in ((1 <= temp___210) and
+    (temp___210 <= (length(o) + 1)))))) and
   (forall c:int. (((0 <= c) and (c <= 255)) ->
   (if (to_rep((bad_shift[c])) = (length(o) + 1)) then (forall k:int.
                                                       (((first1(o) <= k) and
@@ -552,10 +552,10 @@ goal defqtvc :
   (forall r53b:int. ((r53b = o6) -> (dynamic_invariant1(r53b, true, false,
   true, true) -> (((r52b <= r53b) -> (((first1(haystack) <= r52b) and
   (r52b <= last1(haystack))) and ((first1(haystack) <= r53b) and
-  (r53b <= last1(haystack))))) -> (let temp___368 =
+  (r53b <= last1(haystack))))) -> (let temp___385 =
   of_array(to_array(haystack), r52b, r53b) : us_t in
   (forall spark__branch:bool. ((spark__branch = bool_eq4(to_array(needle),
-  first1(needle), last1(needle), to_array(temp___368), first1(temp___368),
-  last1(temp___368))) -> ((not (spark__branch = true)) -> (let o7 =
+  first1(needle), last1(needle), to_array(temp___385), first1(temp___385),
+  last1(temp___385))) -> ((not (spark__branch = true)) -> (let o7 =
   length(needle) : int in (in_range1(o7) -> (let o8 = length(haystack)
   : int in (in_range1(o8) -> in_range1((o8 - o7))))))))))))))))))))))))))))))))))))))))

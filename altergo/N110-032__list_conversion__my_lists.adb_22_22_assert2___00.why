@@ -140,6 +140,10 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__my_lists__my_lists__list,
   ((b).us_split_fields1).rec__my_lists__my_lists__list) = true)) then true else false)
 
+predicate in_range1(rec__my_lists__my_lists__list__capacity1: int,
+  a: us_split_discrs) =
+  (rec__my_lists__my_lists__list__capacity1 = to_rep((a).rec__my_lists__my_lists__list__capacity))
+
 logic value__size : int
 
 logic object__size : int
@@ -188,10 +192,6 @@ logic oeq__function_guard : bool, us_rep, us_rep -> prop
 axiom user_eq__def_axiom :
   (forall a:us_rep. forall b:us_rep [user_eq1(a, b)]. (user_eq1(a,
   b) = oeq(a, b)))
-
-predicate in_range1(rec__my_lists__my_lists__list__capacity1: int,
-  a: us_rep) =
-  (rec__my_lists__my_lists__list__capacity1 = to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity))
 
 logic value__size1 : int
 
@@ -242,21 +242,17 @@ axiom user_eq__def_axiom1 :
   (forall a:us_rep. forall b:us_rep [user_eq2(a, b)]. (user_eq2(a,
   b) = oeq(a, b)))
 
-predicate dynamic_invariant(temp___expr_655: us_rep,
-  temp___is_init_651: bool, temp___skip_constant_652: bool,
-  temp___do_toplevel_653: bool, temp___do_typ_inv_654: bool) =
-  ((not (temp___skip_constant_652 = true)) -> in_range1(100,
-  temp___expr_655))
+predicate dynamic_invariant(temp___expr_662: us_rep,
+  temp___is_init_658: bool, temp___skip_constant_659: bool,
+  temp___do_toplevel_660: bool, temp___do_typ_inv_661: bool) =
+  ((not (temp___skip_constant_659 = true)) -> in_range1(100,
+  (temp___expr_662).us_split_discrs1))
 
-predicate default_initial_assumption(temp___expr_657: us_rep,
-  temp___skip_top_level_658: bool) =
-  ((to_rep(((temp___expr_657).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
-  ((not (temp___skip_top_level_658 = true)) ->
-  (is_empty(temp___expr_657) = true)))
-
-predicate in_range2(rec__my_lists__my_lists__list__capacity1: int,
-  a: us_rep) =
-  (rec__my_lists__my_lists__list__capacity1 = to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity))
+predicate default_initial_assumption(temp___expr_664: us_rep,
+  temp___skip_top_level_665: bool) =
+  ((to_rep(((temp___expr_664).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
+  ((not (temp___skip_top_level_665 = true)) ->
+  (is_empty(temp___expr_664) = true)))
 
 logic value__size2 : int
 
@@ -303,21 +299,17 @@ axiom user_eq__def_axiom2 :
   (forall a:us_rep. forall b:us_rep [user_eq3(a, b)]. (user_eq3(a,
   b) = oeq(a, b)))
 
-predicate dynamic_invariant1(temp___expr_583: us_rep,
-  temp___is_init_579: bool, temp___skip_constant_580: bool,
-  temp___do_toplevel_581: bool, temp___do_typ_inv_582: bool) =
-  ((not (temp___skip_constant_580 = true)) -> in_range2(100,
-  temp___expr_583))
+predicate dynamic_invariant1(temp___expr_590: us_rep,
+  temp___is_init_586: bool, temp___skip_constant_587: bool,
+  temp___do_toplevel_588: bool, temp___do_typ_inv_589: bool) =
+  ((not (temp___skip_constant_587 = true)) -> in_range1(100,
+  (temp___expr_590).us_split_discrs1))
 
-predicate default_initial_assumption1(temp___expr_585: us_rep,
-  temp___skip_top_level_586: bool) =
-  ((to_rep(((temp___expr_585).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
-  ((not (temp___skip_top_level_586 = true)) ->
-  (is_empty(temp___expr_585) = true)))
-
-predicate in_range3(rec__my_lists__my_lists__list__capacity1: int,
-  a: us_rep) =
-  (rec__my_lists__my_lists__list__capacity1 = to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity))
+predicate default_initial_assumption1(temp___expr_592: us_rep,
+  temp___skip_top_level_593: bool) =
+  ((to_rep(((temp___expr_592).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
+  ((not (temp___skip_top_level_593 = true)) ->
+  (is_empty(temp___expr_592) = true)))
 
 logic value__size3 : int
 
@@ -364,21 +356,17 @@ axiom user_eq__def_axiom3 :
   (forall a:us_rep. forall b:us_rep [user_eq4(a, b)]. (user_eq4(a,
   b) = oeq(a, b)))
 
-predicate dynamic_invariant2(temp___expr_593: us_rep,
-  temp___is_init_589: bool, temp___skip_constant_590: bool,
-  temp___do_toplevel_591: bool, temp___do_typ_inv_592: bool) =
-  ((not (temp___skip_constant_590 = true)) -> in_range3(100,
-  temp___expr_593))
+predicate dynamic_invariant2(temp___expr_600: us_rep,
+  temp___is_init_596: bool, temp___skip_constant_597: bool,
+  temp___do_toplevel_598: bool, temp___do_typ_inv_599: bool) =
+  ((not (temp___skip_constant_597 = true)) -> in_range1(100,
+  (temp___expr_600).us_split_discrs1))
 
-predicate default_initial_assumption2(temp___expr_595: us_rep,
-  temp___skip_top_level_596: bool) =
-  ((to_rep(((temp___expr_595).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
-  ((not (temp___skip_top_level_596 = true)) ->
-  (is_empty(temp___expr_595) = true)))
-
-predicate in_range4(rec__my_lists__my_lists__list__capacity1: int,
-  a: us_rep) =
-  (rec__my_lists__my_lists__list__capacity1 = to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity))
+predicate default_initial_assumption2(temp___expr_602: us_rep,
+  temp___skip_top_level_603: bool) =
+  ((to_rep(((temp___expr_602).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
+  ((not (temp___skip_top_level_603 = true)) ->
+  (is_empty(temp___expr_602) = true)))
 
 logic value__size4 : int
 
@@ -425,21 +413,17 @@ axiom user_eq__def_axiom4 :
   (forall a:us_rep. forall b:us_rep [user_eq5(a, b)]. (user_eq5(a,
   b) = oeq(a, b)))
 
-predicate dynamic_invariant3(temp___expr_615: us_rep,
-  temp___is_init_611: bool, temp___skip_constant_612: bool,
-  temp___do_toplevel_613: bool, temp___do_typ_inv_614: bool) =
-  ((not (temp___skip_constant_612 = true)) -> in_range4(100,
-  temp___expr_615))
+predicate dynamic_invariant3(temp___expr_622: us_rep,
+  temp___is_init_618: bool, temp___skip_constant_619: bool,
+  temp___do_toplevel_620: bool, temp___do_typ_inv_621: bool) =
+  ((not (temp___skip_constant_619 = true)) -> in_range1(100,
+  (temp___expr_622).us_split_discrs1))
 
-predicate default_initial_assumption3(temp___expr_617: us_rep,
-  temp___skip_top_level_618: bool) =
-  ((to_rep(((temp___expr_617).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
-  ((not (temp___skip_top_level_618 = true)) ->
-  (is_empty(temp___expr_617) = true)))
-
-predicate in_range5(rec__my_lists__my_lists__list__capacity1: int,
-  a: us_rep) =
-  (rec__my_lists__my_lists__list__capacity1 = to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity))
+predicate default_initial_assumption3(temp___expr_624: us_rep,
+  temp___skip_top_level_625: bool) =
+  ((to_rep(((temp___expr_624).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
+  ((not (temp___skip_top_level_625 = true)) ->
+  (is_empty(temp___expr_624) = true)))
 
 logic value__size5 : int
 
@@ -486,21 +470,17 @@ axiom user_eq__def_axiom5 :
   (forall a:us_rep. forall b:us_rep [user_eq6(a, b)]. (user_eq6(a,
   b) = oeq(a, b)))
 
-predicate dynamic_invariant4(temp___expr_625: us_rep,
-  temp___is_init_621: bool, temp___skip_constant_622: bool,
-  temp___do_toplevel_623: bool, temp___do_typ_inv_624: bool) =
-  ((not (temp___skip_constant_622 = true)) -> in_range5(100,
-  temp___expr_625))
+predicate dynamic_invariant4(temp___expr_632: us_rep,
+  temp___is_init_628: bool, temp___skip_constant_629: bool,
+  temp___do_toplevel_630: bool, temp___do_typ_inv_631: bool) =
+  ((not (temp___skip_constant_629 = true)) -> in_range1(100,
+  (temp___expr_632).us_split_discrs1))
 
-predicate default_initial_assumption4(temp___expr_627: us_rep,
-  temp___skip_top_level_628: bool) =
-  ((to_rep(((temp___expr_627).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
-  ((not (temp___skip_top_level_628 = true)) ->
-  (is_empty(temp___expr_627) = true)))
-
-predicate in_range6(rec__my_lists__my_lists__list__capacity1: int,
-  a: us_rep) =
-  (rec__my_lists__my_lists__list__capacity1 = to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity))
+predicate default_initial_assumption4(temp___expr_634: us_rep,
+  temp___skip_top_level_635: bool) =
+  ((to_rep(((temp___expr_634).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
+  ((not (temp___skip_top_level_635 = true)) ->
+  (is_empty(temp___expr_634) = true)))
 
 logic value__size6 : int
 
@@ -547,21 +527,17 @@ axiom user_eq__def_axiom6 :
   (forall a:us_rep. forall b:us_rep [user_eq7(a, b)]. (user_eq7(a,
   b) = oeq(a, b)))
 
-predicate dynamic_invariant5(temp___expr_635: us_rep,
-  temp___is_init_631: bool, temp___skip_constant_632: bool,
-  temp___do_toplevel_633: bool, temp___do_typ_inv_634: bool) =
-  ((not (temp___skip_constant_632 = true)) -> in_range6(100,
-  temp___expr_635))
+predicate dynamic_invariant5(temp___expr_642: us_rep,
+  temp___is_init_638: bool, temp___skip_constant_639: bool,
+  temp___do_toplevel_640: bool, temp___do_typ_inv_641: bool) =
+  ((not (temp___skip_constant_639 = true)) -> in_range1(100,
+  (temp___expr_642).us_split_discrs1))
 
-predicate default_initial_assumption5(temp___expr_637: us_rep,
-  temp___skip_top_level_638: bool) =
-  ((to_rep(((temp___expr_637).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
-  ((not (temp___skip_top_level_638 = true)) ->
-  (is_empty(temp___expr_637) = true)))
-
-predicate in_range7(rec__my_lists__my_lists__list__capacity1: int,
-  a: us_rep) =
-  (rec__my_lists__my_lists__list__capacity1 = to_rep(((a).us_split_discrs1).rec__my_lists__my_lists__list__capacity))
+predicate default_initial_assumption5(temp___expr_644: us_rep,
+  temp___skip_top_level_645: bool) =
+  ((to_rep(((temp___expr_644).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
+  ((not (temp___skip_top_level_645 = true)) ->
+  (is_empty(temp___expr_644) = true)))
 
 logic value__size7 : int
 
@@ -604,17 +580,17 @@ logic l7__split_discrs : us_split_discrs
 
 logic attr__ATTRIBUTE_ADDRESS6 : int
 
-predicate dynamic_invariant6(temp___expr_645: us_rep,
-  temp___is_init_641: bool, temp___skip_constant_642: bool,
-  temp___do_toplevel_643: bool, temp___do_typ_inv_644: bool) =
-  ((not (temp___skip_constant_642 = true)) -> in_range7(100,
-  temp___expr_645))
+predicate dynamic_invariant6(temp___expr_652: us_rep,
+  temp___is_init_648: bool, temp___skip_constant_649: bool,
+  temp___do_toplevel_650: bool, temp___do_typ_inv_651: bool) =
+  ((not (temp___skip_constant_649 = true)) -> in_range1(100,
+  (temp___expr_652).us_split_discrs1))
 
-predicate default_initial_assumption6(temp___expr_647: us_rep,
-  temp___skip_top_level_648: bool) =
-  ((to_rep(((temp___expr_647).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
-  ((not (temp___skip_top_level_648 = true)) ->
-  (is_empty(temp___expr_647) = true)))
+predicate default_initial_assumption6(temp___expr_654: us_rep,
+  temp___skip_top_level_655: bool) =
+  ((to_rep(((temp___expr_654).us_split_discrs1).rec__my_lists__my_lists__list__capacity) = 100) and
+  ((not (temp___skip_top_level_655 = true)) ->
+  (is_empty(temp___expr_654) = true)))
 
 predicate dynamic_invariant7(temp___expr_243: int, temp___is_init_239: bool,
   temp___skip_constant_240: bool, temp___do_toplevel_241: bool,
@@ -727,7 +703,7 @@ function to_int(b: bool) : int = (if (b = true) then 1 else 0)
 
 function of_int(i: int) : bool = (if (i = 0) then false else true)
 
-predicate in_range8(x: int) = ((x = 0) or (x = 1))
+predicate in_range2(x: int) = ((x = 0) or (x = 1))
 
 logic attr__ATTRIBUTE_IMAGE1 : bool -> us_image
 
@@ -789,7 +765,7 @@ axiom extended_indexqtaxiom :
 axiom extended_indexqtaxiom1 :
   (forall i:extended_index. (extended_indexqtint(i) <= 2147483647))
 
-predicate in_range9(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -812,7 +788,7 @@ function extended_index__ref_extended_index__content__projection(a: extended_ind
 predicate dynamic_invariant8(temp___expr_286: int, temp___is_init_282: bool,
   temp___skip_constant_283: bool, temp___do_toplevel_284: bool,
   temp___do_typ_inv_285: bool) = (((temp___is_init_282 = true) or
-  (0 <= 2147483647)) -> in_range9(temp___expr_286))
+  (0 <= 2147483647)) -> in_range3(temp___expr_286))
 
 axiom length__post_axiom2 :
   (forall container:us_rep1 [length1(container)].
@@ -832,7 +808,7 @@ axiom element_typeqtaxiom :
 axiom element_typeqtaxiom1 :
   (forall i:element_type. (element_typeqtint(i) <= 100))
 
-predicate in_range10(x: int) = ((0 <= x) and (x <= 100))
+predicate in_range4(x: int) = ((0 <= x) and (x <= 100))
 
 function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -855,7 +831,7 @@ function element_type__ref_element_type__content__3__projection(a: element_type_
 predicate dynamic_invariant9(temp___expr_279: int, temp___is_init_275: bool,
   temp___skip_constant_276: bool, temp___do_toplevel_277: bool,
   temp___do_typ_inv_278: bool) = (((temp___is_init_275 = true) or
-  (0 <= 100)) -> in_range10(temp___expr_279))
+  (0 <= 100)) -> in_range4(temp___expr_279))
 
 axiom get__post_axiom :
   (forall container:us_rep1.
@@ -874,22 +850,23 @@ goal defqtvc :
   us_split_fields1 = { rec__my_lists__my_lists__list = l1__split_fields } },
   false) -> (dynamic_invariant({ us_split_discrs1 = l1__split_discrs;
   us_split_fields1 = { rec__my_lists__my_lists__list = l1__split_fields } },
-  false, false, true, true) -> (let o = { us_split_discrs1 =
+  false, false, true, true) -> (let temp___1075 = { us_split_discrs1 =
   l1__split_discrs; us_split_fields1 = { rec__my_lists__my_lists__list =
   l1__split_fields } } : us_rep in
   (forall l2__split_fields:us_main_type. (({ rec__my_lists__my_lists__list =
-  l2__split_fields } = (o).us_split_fields1) ->
-  ((l2__split_discrs = (o).us_split_discrs1) -> (dynamic_invariant1({
-  us_split_discrs1 = l2__split_discrs; us_split_fields1 = {
-  rec__my_lists__my_lists__list = l2__split_fields } }, true, false, true,
-  true) -> (default_initial_assumption2({ us_split_discrs1 =
-  l3__split_discrs; us_split_fields1 = { rec__my_lists__my_lists__list =
-  l3__split_fields } }, false) -> (dynamic_invariant2({ us_split_discrs1 =
-  l3__split_discrs; us_split_fields1 = { rec__my_lists__my_lists__list =
-  l3__split_fields } }, false, false, true, true) ->
-  (default_initial_assumption3({ us_split_discrs1 = l4__split_discrs;
-  us_split_fields1 = { rec__my_lists__my_lists__list = l4__split_fields } },
-  false) -> (dynamic_invariant3({ us_split_discrs1 = l4__split_discrs;
+  l2__split_fields } = (temp___1075).us_split_fields1) ->
+  ((l2__split_discrs = (temp___1075).us_split_discrs1) ->
+  (dynamic_invariant1({ us_split_discrs1 = l2__split_discrs;
+  us_split_fields1 = { rec__my_lists__my_lists__list = l2__split_fields } },
+  true, false, true, true) -> (default_initial_assumption2({
+  us_split_discrs1 = l3__split_discrs; us_split_fields1 = {
+  rec__my_lists__my_lists__list = l3__split_fields } }, false) ->
+  (dynamic_invariant2({ us_split_discrs1 = l3__split_discrs;
+  us_split_fields1 = { rec__my_lists__my_lists__list = l3__split_fields } },
+  false, false, true, true) -> (default_initial_assumption3({
+  us_split_discrs1 = l4__split_discrs; us_split_fields1 = {
+  rec__my_lists__my_lists__list = l4__split_fields } }, false) ->
+  (dynamic_invariant3({ us_split_discrs1 = l4__split_discrs;
   us_split_fields1 = { rec__my_lists__my_lists__list = l4__split_fields } },
   false, false, true, true) -> (default_initial_assumption4({
   us_split_discrs1 = l5__split_discrs; us_split_fields1 = {

@@ -586,9 +586,9 @@ axiom rectangle__t__compat_axiom2 :
   (get_area__specific_post(us_tag1, object__get_area__obj__fields,
   obj__attr__tag1, object__get_area__result,
   object__get_area__obj__old__fields, object__get_area__result__old) ->
-  (forall temp___rec___186:us_rep1.
-  has_stored_area__function_guard(has_stored_area(to_base(temp___rec___186)),
-  to_base(temp___rec___186))))))
+  (forall temp___rec___188:us_rep1.
+  has_stored_area__function_guard(has_stored_area(to_base(temp___rec___188)),
+  to_base(temp___rec___188))))))
 
 axiom rectangle__t__compat_axiom3 :
   (forall object__get_area__obj__fields:us_split_fields.
@@ -613,9 +613,9 @@ axiom rectangle__t__compat_axiom4 :
   (get_area__specific_post(us_tag1, object__get_area__obj__fields,
   obj__attr__tag1, object__get_area__result,
   object__get_area__obj__old__fields, object__get_area__result__old) ->
-  (forall temp___rec___186:us_rep1.
-  get_stored_area__function_guard(get_stored_area(to_base(temp___rec___186)),
-  to_base(temp___rec___186))))))
+  (forall temp___rec___188:us_rep1.
+  get_stored_area__function_guard(get_stored_area(to_base(temp___rec___188)),
+  to_base(temp___rec___188))))))
 
 axiom rectangle__t__compat_axiom5 :
   (forall object__get_area__obj__fields:us_split_fields.
@@ -689,12 +689,12 @@ axiom get_stored_area__def_axiom :
   (forall obj:us_rep [get_stored_area(obj)].
   (get_stored_area(obj) = to_rep(((obj).us_split_fields1).rec__object__t__area)))
 
-predicate default_initial_assumption1(temp___expr_203: us_rep1,
-  temp___skip_top_level_204: bool) =
-  (((temp___expr_203).attr__tag1 = us_tag1) and
-  (((to_rep(((temp___expr_203).us_split_fields3).rec__object__t__area1) = (- 1)) and
-  (to_rep(((temp___expr_203).us_split_fields3).rec__object__t__max_width1) = (- 1))) and
-  (to_rep(((temp___expr_203).us_split_fields3).rec__object__t__max_height1) = (- 1))))
+predicate default_initial_assumption1(temp___expr_205: us_rep1,
+  temp___skip_top_level_206: bool) =
+  (((temp___expr_205).attr__tag1 = us_tag1) and
+  (((to_rep(((temp___expr_205).us_split_fields3).rec__object__t__area1) = (- 1)) and
+  (to_rep(((temp___expr_205).us_split_fields3).rec__object__t__max_width1) = (- 1))) and
+  (to_rep(((temp___expr_205).us_split_fields3).rec__object__t__max_height1) = (- 1))))
 
  (* File "window.ads", line 13, characters 0-0 *)
 goal defqtvc :

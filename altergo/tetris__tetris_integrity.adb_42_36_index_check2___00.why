@@ -3766,24 +3766,24 @@ goal defqtvc :
   (forall o2:int.
   ((to_rep1((cur_piece__split_fields).rec__tetris_integrity__piece__s) = o2) ->
   (forall o3:cell. ((to_rep(o3) = o2) ->
-  (forall temp___801:int.
-  ((to_rep2((cur_piece__split_fields).rec__tetris_integrity__piece__x) = temp___801) ->
-  (((1 <= temp___801) and (temp___801 <= 10)) ->
+  (forall temp___810:int.
+  ((to_rep2((cur_piece__split_fields).rec__tetris_integrity__piece__x) = temp___810) ->
+  (((1 <= temp___810) and (temp___810 <= 10)) ->
   (forall o4:int.
   ((to_rep3((cur_piece__split_fields).rec__tetris_integrity__piece__y) = o4) ->
-  (forall temp___802:int.
-  ((to_rep3((cur_piece__split_fields).rec__tetris_integrity__piece__y) = temp___802) ->
-  (((1 <= temp___802) and (temp___802 <= 50)) ->
+  (forall temp___811:int.
+  ((to_rep3((cur_piece__split_fields).rec__tetris_integrity__piece__y) = temp___811) ->
+  (((1 <= temp___811) and (temp___811 <= 50)) ->
   (forall cur_board1:(int,(int,cell) farray) farray.
-  ((cur_board1 = (cur_board[temp___802 <- ((cur_board[o4])[temp___801 <- o3])])) ->
+  ((cur_board1 = (cur_board[temp___811 <- ((cur_board[o4])[temp___810 <- o3])])) ->
   (forall o5:int.
   ((to_rep3((cur_piece__split_fields).rec__tetris_integrity__piece__y) = o5) ->
   (forall o6:int.
   ((to_rep1((cur_piece__split_fields).rec__tetris_integrity__piece__s) = o6) ->
   (forall o7:cell. ((to_rep(o7) = o6) ->
-  (forall temp___804:int.
-  ((to_rep2((cur_piece__split_fields).rec__tetris_integrity__piece__x) = temp___804) ->
-  (((1 <= temp___804) and (temp___804 <= 10)) ->
+  (forall temp___813:int.
+  ((to_rep2((cur_piece__split_fields).rec__tetris_integrity__piece__x) = temp___813) ->
+  (((1 <= temp___813) and (temp___813 <= 10)) ->
   (forall o8:int.
   ((to_rep3((cur_piece__split_fields).rec__tetris_integrity__piece__y) = o8) ->
   (forall o9:int.

@@ -542,9 +542,9 @@ axiom search_range__post_axiom :
   (((to_rep(((result).us_split_fields1).rec__dynamic_types__search__result_type__result) = 0) and
   (forall i:int. (((from <= i) and
   (i <= to_rep1((((result).us_split_fields1).rec__dynamic_types__search__result_type__from[1])))) ->
-  (not (to_rep((to_array(a)[i])) = c))))) or
-  (((first1(a) <= to_rep(((result).us_split_fields1).rec__dynamic_types__search__result_type__result)) and
-  (to_rep(((result).us_split_fields1).rec__dynamic_types__search__result_type__result) <= last1(a))) and
+  (not (to_rep((to_array(a)[i])) = c))))) or ((let temp___207 =
+  to_rep(((result).us_split_fields1).rec__dynamic_types__search__result_type__result)
+  : int in ((first1(a) <= temp___207) and (temp___207 <= last1(a)))) and
   (to_rep((to_array(a)[to_rep(((result).us_split_fields1).rec__dynamic_types__search__result_type__result)])) = c)))))))
 
 axiom search_range__post_axiom1 :
@@ -596,9 +596,9 @@ predicate dynamic_invariant6(temp___expr_186: (int,integer) farray,
 goal defqtvc :
   (forall result__:int. forall tmp__split_fields:us_split_fields.
   (dynamic_invariant2(a, true, false, true, true) -> (dynamic_invariant(c,
-  true, false, true, true) -> ((first1(a) <= last1(a)) -> (let temp___207 =
-  first1(a) : int in (dynamic_property1(first2, last2, temp___207) ->
-  (forall from:int. ((from = temp___207) -> (dynamic_invariant3(from, true,
+  true, false, true, true) -> ((first1(a) <= last1(a)) -> (let temp___209 =
+  first1(a) : int in (dynamic_property1(first2, last2, temp___209) ->
+  (forall from:int. ((from = temp___209) -> (dynamic_invariant3(from, true,
   false, true, true) -> (dynamic_invariant(result__, false, false, true,
   true) -> (dynamic_invariant1({ us_split_fields1 = tmp__split_fields },
   false, false, true, true) ->

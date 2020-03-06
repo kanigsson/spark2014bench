@@ -368,6 +368,9 @@ function bool_eq7(a: us_rep, b: us_rep) : bool =
   (repro__item__zz__pred(a) ->
   (to_rep4(((a).us_split_fields1).rec__repro__item__zz) = to_rep4(((b).us_split_fields1).rec__repro__item__zz))))) then true else false)
 
+predicate in_range7(rec__repro__item__k1: int, a: us_split_discrs) =
+  (rec__repro__item__k1 = to_rep5((a).rec__repro__item__k))
+
 logic value__size : int
 
 logic object__size : int
@@ -605,6 +608,9 @@ function bool_eq10(a: us_rep1, b: us_rep1) : bool =
   (bool_eq9(((a).us_split_fields3).rec__repro__speed__m,
   ((b).us_split_fields3).rec__repro__speed__m) = true)) then true else false)
 
+predicate in_range8(rec__repro__speed__len1: int, a: us_split_discrs2) =
+  (rec__repro__speed__len1 = to_rep2((a).rec__repro__speed__len))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -696,6 +702,9 @@ function bool_eq11(a: us_rep2, b: us_rep2) : bool =
   (repro__ssp__s__pred(a) ->
   (bool_eq10(((a).us_split_fields5).rec__repro__ssp__s,
   ((b).us_split_fields5).rec__repro__ssp__s) = true))) then true else false)
+
+predicate in_range9(rec__repro__ssp__b1: bool, a: us_split_discrs4) =
+  (rec__repro__ssp__b1 = (a).rec__repro__ssp__b)
 
 logic value__size3 : int
 
@@ -907,6 +916,9 @@ function bool_eq14(a: us_rep3, b: us_rep3) : bool =
   (if ((to_rep(((a).us_split_discrs7).rec__repro__r__y) = to_rep(((b).us_split_discrs7).rec__repro__r__y)) and
   (bool_eq13(((a).us_split_fields7).rec__repro__r__x,
   ((b).us_split_fields7).rec__repro__r__x) = true)) then true else false)
+
+predicate in_range10(rec__repro__r__y1: int, a: us_split_discrs6) =
+  (rec__repro__r__y1 = to_rep((a).rec__repro__r__y))
 
 logic value__size5 : int
 

@@ -410,6 +410,10 @@ function bool_eq4(a: us_rep2, b: us_rep2) : bool =
   (bool_eq3(((a).us_split_fields5).rec__use_unchecked_union__myunion__record2,
   ((b).us_split_fields5).rec__use_unchecked_union__myunion__record2) = true)))) then true else false)
 
+predicate in_range1(rec__use_unchecked_union__myunion__discr1: int,
+  a: us_split_discrs) =
+  (rec__use_unchecked_union__myunion__discr1 = to_rep((a).rec__use_unchecked_union__myunion__discr))
+
 logic value__size4 : int
 
 logic object__size4 : int
@@ -501,10 +505,6 @@ logic num : int
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
 
-predicate in_range1(rec__use_unchecked_union__myunion__discr1: int,
-  a: us_rep2) =
-  (rec__use_unchecked_union__myunion__discr1 = to_rep(((a).us_split_discrs1).rec__use_unchecked_union__myunion__discr))
-
 logic value__size5 : int
 
 logic object__size5 : int
@@ -572,10 +572,6 @@ type t1b__ref = { t1b__content : us_rep2
 function t1b__ref_t1b__content__projection(a: t1b__ref) : us_rep2 =
   (a).t1b__content
 
-predicate in_range2(rec__use_unchecked_union__myunion__discr1: int,
-  a: us_rep2) =
-  (rec__use_unchecked_union__myunion__discr1 = to_rep(((a).us_split_discrs1).rec__use_unchecked_union__myunion__discr))
-
 logic value__size6 : int
 
 logic object__size6 : int
@@ -642,10 +638,6 @@ type t4b__ref = { t4b__content : us_rep2
 
 function t4b__ref_t4b__content__projection(a: t4b__ref) : us_rep2 =
   (a).t4b__content
-
-predicate in_range3(rec__use_unchecked_union__myunion__discr1: int,
-  a: us_rep2) =
-  (rec__use_unchecked_union__myunion__discr1 = to_rep(((a).us_split_discrs1).rec__use_unchecked_union__myunion__discr))
 
 logic value__size7 : int
 

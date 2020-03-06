@@ -391,8 +391,8 @@ goal defqtvc :
   4)) ->
   (forall o1:bool. ((if (valid = true) then (let o2 = (first1(s) + 4)
   : int in (in_range1(o2) and (((first1(s) <= o2) and (o2 <= last1(s))) and
-  (exists o3:int. ((to_rep((to_array(s)[o2])) = o3) and
-  (o1 = (if in_range4(o3) then true else false))))))) else (o1 = false)) ->
+  (exists temp___181:int. ((to_rep((to_array(s)[o2])) = temp___181) and
+  (o1 = (if in_range4(temp___181) then true else false))))))) else (o1 = false)) ->
   (forall spark__branch1:bool. ((spark__branch1 = o1) ->
   ((spark__branch1 = true) ->
   (forall valid1:bool. ((valid1 = of_int(1)) -> (let o2 = (first1(s) + 4)

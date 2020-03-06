@@ -193,6 +193,9 @@ function bool_eq3(a: us_rep, b: us_rep) : bool =
   (test_dic__nested__t__f__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__test_dic__nested__t__f) = to_rep(((b).us_split_fields1).rec__test_dic__nested__t__f)))) then true else false)
 
+predicate in_range3(rec__test_dic__nested__t__x1: bool, a: us_split_discrs) =
+  (rec__test_dic__nested__t__x1 = (a).rec__test_dic__nested__t__x)
+
 logic value__size : int
 
 logic object__size : int
@@ -258,7 +261,7 @@ predicate default_initial_assumption(temp___expr_160: us_rep,
   ((((temp___expr_160).us_split_discrs1).rec__test_dic__nested__t__x = true) ->
   (not (c = 0)))))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-T114-018__DIC-19502/src/gnatprove/test_dic__nested__t.mlw", line 456, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-T114-018__DIC-20969/src/gnatprove/test_dic__nested__t.mlw", line 468, characters 5-8 *)
 goal defqtvc : (dynamic_invariant(c, true, false, true, true) ->
   (forall usf:bool.
   (forall usf1:us_rep.

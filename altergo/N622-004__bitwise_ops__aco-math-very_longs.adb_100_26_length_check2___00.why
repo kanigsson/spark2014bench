@@ -981,6 +981,10 @@ function bool_eq8(a: us_rep, b: us_rep) : bool =
   (bool_eq7(((a).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits,
   ((b).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits) = true)) then true else false)
 
+predicate in_range4(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
+  a: us_split_discrs) =
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep((a).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -1083,10 +1087,6 @@ function bool_eq9(a: us_rep1, b: us_rep1) : bool =
   (bool_eq7(((a).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1,
   ((b).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1) = true)) then true else false)
 
-predicate in_range4(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
-  a: us_rep) =
-  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep(((a).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -1147,7 +1147,8 @@ predicate dynamic_invariant1(temp___expr_519: us_rep1,
   temp___is_init_515: bool, temp___skip_constant_516: bool,
   temp___do_toplevel_517: bool, temp___do_typ_inv_518: bool) =
   (((not (temp___skip_constant_516 = true)) -> in_range4(octet_length,
-  to_base(temp___expr_519))) and (dynamic_property(1, octet_length,
+  (to_base(temp___expr_519)).us_split_discrs1)) and (dynamic_property(1,
+  octet_length,
   first1(((temp___expr_519).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1),
   last1(((temp___expr_519).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1)) and
   ((first1(((temp___expr_519).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1) = 1) and

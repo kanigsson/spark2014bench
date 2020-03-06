@@ -485,6 +485,9 @@ function bool_eq9(a: us_rep, b: us_rep) : bool =
   (lexer__token__value__pred(a) ->
   (to_rep4(((a).us_split_fields1).rec__lexer__token__value) = to_rep4(((b).us_split_fields1).rec__lexer__token__value)))))) then true else false)
 
+predicate in_range7(rec__lexer__token__kind1: int, a: us_split_discrs) =
+  (rec__lexer__token__kind1 = to_rep3((a).rec__lexer__token__kind))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -647,7 +650,7 @@ predicate dynamic_invariant3(temp___expr_172: int, temp___is_init_168: bool,
 
 type valued_tokens
 
-predicate in_range7(x: int) = ((3 <= x) and (x <= 8))
+predicate in_range8(x: int) = ((3 <= x) and (x <= 8))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -670,10 +673,7 @@ function valued_tokens__ref_valued_tokens__content__projection(a: valued_tokens_
 predicate dynamic_invariant4(temp___expr_179: int, temp___is_init_175: bool,
   temp___skip_constant_176: bool, temp___do_toplevel_177: bool,
   temp___do_typ_inv_178: bool) = (((temp___is_init_175 = true) or
-  (3 <= 8)) -> in_range7(temp___expr_179))
-
-predicate in_range8(rec__lexer__token__kind1: int, a: us_rep) =
-  (rec__lexer__token__kind1 = to_rep3(((a).us_split_discrs1).rec__lexer__token__kind))
+  (3 <= 8)) -> in_range8(temp___expr_179))
 
 logic value__size2 : int
 
@@ -772,9 +772,6 @@ type t29b__ref = { t29b__content : us_rep
 function t29b__ref_t29b__content__projection(a: t29b__ref) : us_rep =
   (a).t29b__content
 
-predicate in_range9(rec__lexer__token__kind1: int, a: us_rep) =
-  (rec__lexer__token__kind1 = to_rep3(((a).us_split_discrs1).rec__lexer__token__kind))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -871,9 +868,6 @@ type t32b__ref = { t32b__content : us_rep
 
 function t32b__ref_t32b__content__projection(a: t32b__ref) : us_rep =
   (a).t32b__content
-
-predicate in_range10(rec__lexer__token__kind1: int, a: us_rep) =
-  (rec__lexer__token__kind1 = to_rep3(((a).us_split_discrs1).rec__lexer__token__kind))
 
 logic value__size4 : int
 
@@ -972,9 +966,6 @@ type t35b__ref = { t35b__content : us_rep
 function t35b__ref_t35b__content__projection(a: t35b__ref) : us_rep =
   (a).t35b__content
 
-predicate in_range11(rec__lexer__token__kind1: int, a: us_rep) =
-  (rec__lexer__token__kind1 = to_rep3(((a).us_split_discrs1).rec__lexer__token__kind))
-
 logic value__size5 : int
 
 logic object__size5 : int
@@ -1072,9 +1063,6 @@ type t38b__ref = { t38b__content : us_rep
 function t38b__ref_t38b__content__projection(a: t38b__ref) : us_rep =
   (a).t38b__content
 
-predicate in_range12(rec__lexer__token__kind1: int, a: us_rep) =
-  (rec__lexer__token__kind1 = to_rep3(((a).us_split_discrs1).rec__lexer__token__kind))
-
 logic value__size6 : int
 
 logic object__size6 : int
@@ -1171,9 +1159,6 @@ type t41b__ref = { t41b__content : us_rep
 
 function t41b__ref_t41b__content__projection(a: t41b__ref) : us_rep =
   (a).t41b__content
-
-predicate in_range13(rec__lexer__token__kind1: int, a: us_rep) =
-  (rec__lexer__token__kind1 = to_rep3(((a).us_split_discrs1).rec__lexer__token__kind))
 
 logic value__size7 : int
 

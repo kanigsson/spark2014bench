@@ -1185,6 +1185,10 @@ function bool_eq8(a: us_rep, b: us_rep) : bool =
   (bool_eq7(((a).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits,
   ((b).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits) = true)) then true else false)
 
+predicate in_range3(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
+  a: us_split_discrs) =
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep((a).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -1365,10 +1369,6 @@ function bool_eq10(a: us_rep1, b: us_rep1) : bool =
   (bool_eq7(((a).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1,
   ((b).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1) = true)) then true else false)
 
-predicate in_range3(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
-  a: us_rep) =
-  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep(((a).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -1430,7 +1430,7 @@ predicate dynamic_invariant2(temp___expr_1058: us_rep1,
   temp___do_toplevel_1056: bool, temp___do_typ_inv_1057: bool) =
   (((not (temp___skip_constant_1055 = true)) ->
   in_range3(to_rep(((l).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length),
-  to_base(temp___expr_1058))) and (dynamic_property(1,
+  (to_base(temp___expr_1058)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((l).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length),
   first1(((temp___expr_1058).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1),
   last1(((temp___expr_1058).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1)) and
@@ -1479,31 +1479,31 @@ goal defqtvc :
   rec__ada___ada___aco__math__very_longs__very_long__long_digits =
   ada___ada___aco__math__very_longs__modsubtract_and_borrow__result__fields }
   }, true, true, true, true) and dynamic_invariant1(borrow1, true, true,
-  true, true))) -> (let temp___1432 = of_base({ us_split_discrs1 =
+  true, true))) -> (let temp___1434 = of_base({ us_split_discrs1 =
   result____split_discrs; us_split_fields1 = {
   rec__ada___ada___aco__math__very_longs__very_long__long_digits =
   ada___ada___aco__math__very_longs__modsubtract_and_borrow__result__fields }
   }) : us_rep1 in
   (forall result____split_fields1:us_t. (({
   rec__ada___ada___aco__math__very_longs__very_long__long_digits1 =
-  result____split_fields1 } = (temp___1432).us_split_fields3) ->
-  ((result____split_discrs = (temp___1432).us_split_discrs2) ->
+  result____split_fields1 } = (temp___1434).us_split_fields3) ->
+  ((result____split_discrs = (temp___1434).us_split_discrs2) ->
   (forall result____split_fields2:us_t.
   ((exists spark__branch:bool.
    ((spark__branch = (if (borrow1 = rliteral2) then true else false)) and
    (if (spark__branch = true) then (let o2 = p : us_rep in (let o3 =
    to_base({ us_split_discrs2 = result____split_discrs; us_split_fields3 = {
    rec__ada___ada___aco__math__very_longs__very_long__long_digits1 =
-   result____split_fields1 } }) : us_rep in (let o4 = modadd(o3, o2)
-   : us_rep in ((modadd__function_guard(o4, o3, o2) and
-   (dynamic_invariant(o4, true, false, true, true) and
-   (to_rep(((o4).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length) = to_rep(((o3).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length)))) and
-   (exists o5:int.
-   ((to_rep(((l).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length) = o5) and
-   (let temp___1433 = of_base(o4) : us_rep1 in (({
+   result____split_fields1 } }) : us_rep in (let temp___1435 = modadd(o3, o2)
+   : us_rep in ((modadd__function_guard(temp___1435, o3, o2) and
+   (dynamic_invariant(temp___1435, true, false, true, true) and
+   (to_rep(((temp___1435).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length) = to_rep(((o3).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length)))) and
+   (exists o4:int.
+   ((to_rep(((l).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length) = o4) and
+   (let temp___1436 = of_base(temp___1435) : us_rep1 in (({
    rec__ada___ada___aco__math__very_longs__very_long__long_digits1 =
-   result____split_fields2 } = (temp___1433).us_split_fields3) and
-   (result____split_discrs = (temp___1433).us_split_discrs2))))))))) else (result____split_fields2 = result____split_fields1)))) ->
+   result____split_fields2 } = (temp___1436).us_split_fields3) and
+   (result____split_discrs = (temp___1436).us_split_discrs2))))))))) else (result____split_fields2 = result____split_fields1)))) ->
   (forall ada___ada___aco__math__very_longs__subtract_fp__result:us_rep.
   ((ada___ada___aco__math__very_longs__subtract_fp__result = to_base({
   us_split_discrs2 = result____split_discrs; us_split_fields3 = {

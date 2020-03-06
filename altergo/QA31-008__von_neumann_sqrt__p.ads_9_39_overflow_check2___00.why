@@ -377,9 +377,9 @@ goal defqtvc :
   (in_range1((lower1 * lower1)) and
   (exists lower3:int. exists upper2:int. exists middle1:int.
   ((((lower3 * lower3) <= x) and (x <  (upper2 * upper2))) and
-  (((dynamic_invariant2(upper2, false, true, true, true) and
+  (((dynamic_invariant1(lower3, false, true, true, true) and
+  dynamic_invariant2(upper2, false, true, true, true)) and
   dynamic_invariant1(middle1, false, true, true, true)) and
-  dynamic_invariant1(lower3, false, true, true, true)) and
   (((lower3 + 1) = upper2) and (lower2 = lower3))))))) ->
   (forall p__sqrt_binary__result:int. ((p__sqrt_binary__result = lower2) ->
   (in_range1(((p__sqrt_binary__result + 1) * (p__sqrt_binary__result + 1))) ->

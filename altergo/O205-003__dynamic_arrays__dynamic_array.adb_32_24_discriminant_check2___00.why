@@ -225,6 +225,9 @@ function bool_eq4(a: us_rep, b: us_rep) : bool =
   (dynamic_array__rec__f2__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__dynamic_array__rec__f2) = to_rep(((b).us_split_fields1).rec__dynamic_array__rec__f2))))) then true else false)
 
+predicate in_range3(rec__dynamic_array__rec__b1: bool, a: us_split_discrs) =
+  (rec__dynamic_array__rec__b1 = (a).rec__dynamic_array__rec__b)
+
 logic value__size : int
 
 logic object__size : int

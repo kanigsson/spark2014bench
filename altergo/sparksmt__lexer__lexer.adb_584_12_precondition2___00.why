@@ -464,6 +464,9 @@ function bool_eq8(a: us_rep, b: us_rep) : bool =
   (lexer__token__value__pred(a) ->
   (to_rep4(((a).us_split_fields1).rec__lexer__token__value) = to_rep4(((b).us_split_fields1).rec__lexer__token__value)))))) then true else false)
 
+predicate in_range6(rec__lexer__token__kind1: int, a: us_split_discrs) =
+  (rec__lexer__token__kind1 = to_rep3((a).rec__lexer__token__kind))
+
 logic value__size1 : int
 
 logic object__size1 : int

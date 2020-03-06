@@ -89,6 +89,9 @@ type us_rep = { us_split_discrs1 : us_split_discrs
 function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
   (a).us_split_discrs1
 
+predicate in_range1(rec__p__pt__d1: bool, a: us_split_discrs) =
+  (rec__p__pt__d1 = (a).rec__p__pt__d)
+
 logic value__size : int
 
 logic object__size : int
@@ -150,9 +153,6 @@ function to_base(a: us_rep1) : us_rep = { us_split_discrs1 =
 function of_base(r: us_rep) : us_rep1 = { us_split_discrs2 =
   (r).us_split_discrs1 }
 
-predicate in_range1(rec__p__pt__d1: bool, a: us_rep) =
-  (rec__p__pt__d1 = ((a).us_split_discrs1).rec__p__pt__d)
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -190,7 +190,7 @@ predicate dynamic_invariant(temp___expr_187: us_rep1,
   temp___is_init_183: bool, temp___skip_constant_184: bool,
   temp___do_toplevel_185: bool, temp___do_typ_inv_186: bool) =
   ((not (temp___skip_constant_184 = true)) -> in_range1(of_int(1),
-  to_base(temp___expr_187)))
+  (to_base(temp___expr_187)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_189: us_rep1,
   temp___skip_top_level_190: bool) =
@@ -207,9 +207,6 @@ function to_base1(a: us_rep2) : us_rep = { us_split_discrs1 =
 
 function of_base1(r: us_rep) : us_rep2 = { us_split_discrs3 =
   (r).us_split_discrs1 }
-
-predicate in_range2(rec__p__pt__d1: bool, a: us_rep) =
-  (rec__p__pt__d1 = ((a).us_split_discrs1).rec__p__pt__d)
 
 logic value__size2 : int
 
@@ -247,8 +244,8 @@ function tp2S__ref_tp2S__content__projection(a: tp2S__ref) : us_rep2 =
 predicate dynamic_invariant1(temp___expr_196: us_rep2,
   temp___is_init_192: bool, temp___skip_constant_193: bool,
   temp___do_toplevel_194: bool, temp___do_typ_inv_195: bool) =
-  ((not (temp___skip_constant_193 = true)) -> in_range2(of_int(0),
-  to_base1(temp___expr_196)))
+  ((not (temp___skip_constant_193 = true)) -> in_range1(of_int(0),
+  (to_base1(temp___expr_196)).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_198: us_rep2,
   temp___skip_top_level_199: bool) =

@@ -356,15 +356,15 @@ predicate default_initial_assumption2(temp___expr_180: us_rep,
  (* File "test_tag.adb", line 19, characters 0-0 *)
 goal defqtvc :
   (forall us_next_pointer_address:int.
-  (forall temp___alloc_214:us_rep2.
-  (((not ((temp___alloc_214).rec__test_tag__rc_acc__is_null_pointer = true)) and
-  ((temp___alloc_214).rec__test_tag__rc_acc__pointer_address = us_next_pointer_address)) ->
+  (forall temp___alloc_216:us_rep2.
+  (((not ((temp___alloc_216).rec__test_tag__rc_acc__is_null_pointer = true)) and
+  ((temp___alloc_216).rec__test_tag__rc_acc__pointer_address = us_next_pointer_address)) ->
   (forall usf:us_rep1. (default_initial_assumption(usf, false) ->
-  (((temp___alloc_214).rec__test_tag__rc_acc__pointer_value = to_base(usf)) ->
+  (((temp___alloc_216).rec__test_tag__rc_acc__pointer_value = to_base(usf)) ->
   (forall y__pointer_value:us_rep.
-  ((y__pointer_value = (temp___alloc_214).rec__test_tag__rc_acc__pointer_value) ->
+  ((y__pointer_value = (temp___alloc_216).rec__test_tag__rc_acc__pointer_value) ->
   (forall y__pointer_address:int.
-  ((y__pointer_address = (temp___alloc_214).rec__test_tag__rc_acc__pointer_address) ->
+  ((y__pointer_address = (temp___alloc_216).rec__test_tag__rc_acc__pointer_address) ->
   (forall y__is_null_pointer:bool.
-  ((y__is_null_pointer = (temp___alloc_214).rec__test_tag__rc_acc__is_null_pointer) ->
+  ((y__is_null_pointer = (temp___alloc_216).rec__test_tag__rc_acc__is_null_pointer) ->
   (notb((if ((y__pointer_value).attr__tag = us_tag1) then true else false)) = true)))))))))))))

@@ -143,6 +143,10 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__sum_elem__partitions__vector,
   ((b).us_split_fields1).rec__sum_elem__partitions__vector) = true)) then true else false)
 
+predicate in_range1(rec__sum_elem__partitions__vector__capacity1: int,
+  a: us_split_discrs) =
+  (rec__sum_elem__partitions__vector__capacity1 = to_rep((a).rec__sum_elem__partitions__vector__capacity))
+
 logic value__size : int
 
 logic object__size : int
@@ -179,10 +183,6 @@ type vector__ref = { vector__content : us_rep
 
 function vector__ref_vector__content__projection(a: vector__ref) : us_rep =
   (a).vector__content
-
-predicate in_range1(rec__sum_elem__partitions__vector__capacity1: int,
-  a: us_rep) =
-  (rec__sum_elem__partitions__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__sum_elem__partitions__vector__capacity))
 
 logic value__size1 : int
 
@@ -237,16 +237,17 @@ axiom user_eq__def_axiom :
   (forall a:us_rep. forall b:us_rep [user_eq2(a, b)]. (user_eq2(a,
   b) = oeq(a, b)))
 
-predicate dynamic_invariant(temp___expr_551: us_rep,
-  temp___is_init_547: bool, temp___skip_constant_548: bool,
-  temp___do_toplevel_549: bool, temp___do_typ_inv_550: bool) =
-  ((not (temp___skip_constant_548 = true)) -> in_range1(10, temp___expr_551))
+predicate dynamic_invariant(temp___expr_553: us_rep,
+  temp___is_init_549: bool, temp___skip_constant_550: bool,
+  temp___do_toplevel_551: bool, temp___do_typ_inv_552: bool) =
+  ((not (temp___skip_constant_550 = true)) -> in_range1(10,
+  (temp___expr_553).us_split_discrs1))
 
-predicate default_initial_assumption(temp___expr_553: us_rep,
-  temp___skip_top_level_554: bool) =
-  ((to_rep(((temp___expr_553).us_split_discrs1).rec__sum_elem__partitions__vector__capacity) = 10) and
-  ((not (temp___skip_top_level_554 = true)) ->
-  (is_empty(temp___expr_553) = true)))
+predicate default_initial_assumption(temp___expr_555: us_rep,
+  temp___skip_top_level_556: bool) =
+  ((to_rep(((temp___expr_555).us_split_discrs1).rec__sum_elem__partitions__vector__capacity) = 10) and
+  ((not (temp___skip_top_level_556 = true)) ->
+  (is_empty(temp___expr_555) = true)))
 
 type index
 

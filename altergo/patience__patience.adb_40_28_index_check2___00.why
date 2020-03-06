@@ -796,10 +796,14 @@ axiom inv__def_axiom24 :
   (to_rep(((((s).us_split_fields1).rec__patience__state__stacks[i])[j])) <  to_rep(((s).us_split_fields1).rec__patience__state__numelts))))))))) and
   (forall i:int. (((0 <= i) and
   (i <= (to_rep(((s).us_split_fields1).rec__patience__state__numelts) - 1))) ->
-  ((((0 <= to_rep((((s).us_split_fields1).rec__patience__state__posstack[i]))) and
-  (to_rep((((s).us_split_fields1).rec__patience__state__posstack[i])) <= (to_rep(((s).us_split_fields1).rec__patience__state__numstacks) - 1))) and
-  ((0 <= to_rep((((s).us_split_fields1).rec__patience__state__posheight[i]))) and
-  (to_rep((((s).us_split_fields1).rec__patience__state__posheight[i])) <= (to_rep((((s).us_split_fields1).rec__patience__state__stacksizes[to_rep((((s).us_split_fields1).rec__patience__state__posstack[i]))])) - 1)))) and
+  (((let temp___348 =
+  to_rep((((s).us_split_fields1).rec__patience__state__posstack[i])) : int in
+  ((0 <= temp___348) and
+  (temp___348 <= (to_rep(((s).us_split_fields1).rec__patience__state__numstacks) - 1)))) and
+  (let temp___350 =
+  to_rep((((s).us_split_fields1).rec__patience__state__posheight[i]))
+  : int in ((0 <= temp___350) and
+  (temp___350 <= (to_rep((((s).us_split_fields1).rec__patience__state__stacksizes[to_rep((((s).us_split_fields1).rec__patience__state__posstack[i]))])) - 1))))) and
   (to_rep(((((s).us_split_fields1).rec__patience__state__stacks[to_rep((((s).us_split_fields1).rec__patience__state__posstack[i]))])[to_rep((((s).us_split_fields1).rec__patience__state__posheight[i]))])) = i))))) and
   (forall ist:int. (((0 <= ist) and
   (ist <= (to_rep(((s).us_split_fields1).rec__patience__state__numstacks) - 1))) ->
@@ -823,8 +827,10 @@ axiom inv__def_axiom24 :
   (to_rep1((((s).us_split_fields1).rec__patience__state__values[to_rep(((((s).us_split_fields1).rec__patience__state__stacks[i])[k]))])) <= to_rep1((((s).us_split_fields1).rec__patience__state__values[to_rep(((((s).us_split_fields1).rec__patience__state__stacks[i])[j]))])))))))))) and
   (forall i:int. (((0 <= i) and
   (i <= (to_rep(((s).us_split_fields1).rec__patience__state__numelts) - 1))) ->
-  (((((- 1) <= to_rep((((s).us_split_fields1).rec__patience__state__preds[i]))) and
-  (to_rep((((s).us_split_fields1).rec__patience__state__preds[i])) <= (to_rep(((s).us_split_fields1).rec__patience__state__numelts) - 1))) and
+  (((let temp___379 =
+  to_rep((((s).us_split_fields1).rec__patience__state__preds[i])) : int in
+  (((- 1) <= temp___379) and
+  (temp___379 <= (to_rep(((s).us_split_fields1).rec__patience__state__numelts) - 1)))) and
   (to_rep((((s).us_split_fields1).rec__patience__state__preds[i])) <  i)) and
   (if (to_rep((((s).us_split_fields1).rec__patience__state__preds[i])) <  0) then (to_rep((((s).us_split_fields1).rec__patience__state__posstack[i])) = 0) else (((to_rep1((((s).us_split_fields1).rec__patience__state__values[to_rep((((s).us_split_fields1).rec__patience__state__preds[i]))])) <  to_rep1((((s).us_split_fields1).rec__patience__state__values[i]))) and
   (0 <  to_rep((((s).us_split_fields1).rec__patience__state__posstack[i])))) and
@@ -988,10 +994,10 @@ goal defqtvc :
   (forall o2:int.
   ((to_rep(((s__split_fields).rec__patience__state__stacksizes[i2])) = o2) ->
   (forall stackisize2:int. ((stackisize2 = o2) -> (((0 <= i2) and
-  (i2 <= 99)) -> (let temp___572 = (stackisize2 - 1) : int in
-  (((0 <= temp___572) and (temp___572 <= 99)) ->
+  (i2 <= 99)) -> (let temp___584 = (stackisize2 - 1) : int in
+  (((0 <= temp___584) and (temp___584 <= 99)) ->
   (forall o3:int.
-  ((to_rep((((s__split_fields).rec__patience__state__stacks[i2])[temp___572])) = o3) ->
+  ((to_rep((((s__split_fields).rec__patience__state__stacks[i2])[temp___584])) = o3) ->
   (forall topstacki2:int. ((topstacki2 = o3) -> (((0 <= topstacki2) and
   (topstacki2 <= 99)) ->
   (forall o4:int.
@@ -1015,24 +1021,24 @@ goal defqtvc :
      ((to_rep(((s__split_fields).rec__patience__state__posheight[topstacki2])) = o9) and
      (o7 = (if (0 <= o9) then true else false))))) else (o7 = false)))) and
     (if (o7 = true) then (((0 <= topstacki2) and (topstacki2 <= 99)) and
-    (exists temp___580:int.
-    ((to_rep(((s__split_fields).rec__patience__state__posstack[topstacki2])) = temp___580) and
-    (((0 <= temp___580) and (temp___580 <= 99)) and
+    (exists temp___592:int.
+    ((to_rep(((s__split_fields).rec__patience__state__posstack[topstacki2])) = temp___592) and
+    (((0 <= temp___592) and (temp___592 <= 99)) and
     (exists o8:int.
-    ((to_rep(((s__split_fields).rec__patience__state__stacksizes[temp___580])) = o8) and
+    ((to_rep(((s__split_fields).rec__patience__state__stacksizes[temp___592])) = o8) and
     (((0 <= topstacki2) and (topstacki2 <= 99)) and
     (exists o9:int.
     ((to_rep(((s__split_fields).rec__patience__state__posheight[topstacki2])) = o9) and
     (o6 = (if (o9 <  o8) then true else false))))))))))) else (o6 = false)))) and
    (if (o6 = true) then (((0 <= topstacki2) and (topstacki2 <= 99)) and
-   (exists temp___583:int.
-   ((to_rep(((s__split_fields).rec__patience__state__posstack[topstacki2])) = temp___583) and
-   (((0 <= temp___583) and (temp___583 <= 99)) and (((0 <= topstacki2) and
+   (exists temp___595:int.
+   ((to_rep(((s__split_fields).rec__patience__state__posstack[topstacki2])) = temp___595) and
+   (((0 <= temp___595) and (temp___595 <= 99)) and (((0 <= topstacki2) and
    (topstacki2 <= 99)) and
-   (exists temp___586:int.
-   ((to_rep(((s__split_fields).rec__patience__state__posheight[topstacki2])) = temp___586) and
-   (((0 <= temp___586) and (temp___586 <= 99)) and
+   (exists temp___598:int.
+   ((to_rep(((s__split_fields).rec__patience__state__posheight[topstacki2])) = temp___598) and
+   (((0 <= temp___598) and (temp___598 <= 99)) and
    (exists o7:int.
-   ((to_rep((((s__split_fields).rec__patience__state__stacks[temp___583])[temp___586])) = o7) and
+   ((to_rep((((s__split_fields).rec__patience__state__stacks[temp___595])[temp___598])) = o7) and
    (o5 = (if (o7 = topstacki2) then true else false)))))))))))) else (o5 = false)))) ->
   ((o5 = true) -> (0 <= topstacki2))))))))))))))))))))))))))))))))))))))))))))

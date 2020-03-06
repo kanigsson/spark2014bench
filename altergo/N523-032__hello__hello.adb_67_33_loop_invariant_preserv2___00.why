@@ -421,17 +421,17 @@ predicate dynamic_invariant3(temp___expr_46: int, temp___is_init_42: bool,
   temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
   (1 <= 2147483647)) -> in_range1(temp___expr_46))
 
-predicate dynamic_invariant4(temp___expr_196: us_t, temp___is_init_192: bool,
-  temp___skip_constant_193: bool, temp___do_toplevel_194: bool,
-  temp___do_typ_inv_195: bool) = ((not (temp___skip_constant_193 = true)) ->
-  (dynamic_property(first1(str), last1(str), first1(temp___expr_196),
-  last1(temp___expr_196)) and ((first1(temp___expr_196) = first1(str)) and
-  (last1(temp___expr_196) = last1(str)))))
+predicate dynamic_invariant4(temp___expr_204: us_t, temp___is_init_200: bool,
+  temp___skip_constant_201: bool, temp___do_toplevel_202: bool,
+  temp___do_typ_inv_203: bool) = ((not (temp___skip_constant_201 = true)) ->
+  (dynamic_property(first1(str), last1(str), first1(temp___expr_204),
+  last1(temp___expr_204)) and ((first1(temp___expr_204) = first1(str)) and
+  (last1(temp___expr_204) = last1(str)))))
 
-predicate default_initial_assumption(temp___expr_198: us_t,
-  temp___skip_top_level_199: bool) =
-  ((first1(temp___expr_198) = first1(str)) and
-  (last1(temp___expr_198) = last1(str)))
+predicate default_initial_assumption(temp___expr_206: us_t,
+  temp___skip_top_level_207: bool) =
+  ((first1(temp___expr_206) = first1(str)) and
+  (last1(temp___expr_206) = last1(str)))
 
  (* File "hello.adb", line 39, characters 0-0 *)
 goal defqtvc : (dynamic_invariant(str, true, false, true, true) ->
@@ -445,11 +445,11 @@ goal defqtvc : (dynamic_invariant(str, true, false, true, true) ->
   ((dynamic_property(first1(str), last1(str), to_rep1(ret__first),
   to_rep1(ret__last)) and ((to_rep1(ret__first) = first1(str)) and
   (to_rep1(ret__last) = last1(str)))) ->
-  (forall to_up:bool. ((to_up = of_int(1)) -> (let temp___224 = first1(str)
-  : int in (let temp___225 = last1(str) : int in
-  (forall idx:int. ((idx = temp___224) ->
-  ((andb((if (temp___224 <= idx) then true else false),
-  (if (idx <= temp___225) then true else false)) = true) ->
+  (forall to_up:bool. ((to_up = of_int(1)) -> (let temp___238 = first1(str)
+  : int in (let temp___239 = last1(str) : int in
+  (forall idx:int. ((idx = temp___238) ->
+  ((andb((if (temp___238 <= idx) then true else false),
+  (if (idx <= temp___239) then true else false)) = true) ->
   (forall spark__branch:bool. forall ret1:(int,character) farray.
   (((spark__branch = to_up) and
   (if (spark__branch = true) then (exists o:int.
@@ -467,10 +467,10 @@ goal defqtvc : (dynamic_invariant(str, true, false, true, true) ->
   (((to_rep1(ret__first) <= idx) and (idx <= to_rep1(ret__last))) ->
   (forall o:int. ((to_rep1(ret__last) = o) ->
   (forall o1:int. ((to_rep1(ret__first) = o1) -> (let o2 = of_array(ret1, o1,
-  o) : us_t in (let o3 = str : us_t in (let temp___inv_232 =
+  o) : us_t in (let o3 = str : us_t in (let temp___inv_248 =
   to_caml_char2(o3, o2, idx) : bool in
-  ((to_caml_char2__function_guard(temp___inv_232, o3, o2, idx) and
-  ((temp___inv_232 = true) <->
+  ((to_caml_char2__function_guard(temp___inv_248, o3, o2, idx) and
+  ((temp___inv_248 = true) <->
   (forall j:int. (((first1(o3) <= j) and (j <= idx)) ->
   (if (j = first1(o3)) then (to_rep((to_array(o2)[j])) = to_upper(to_rep((to_array(o3)[j])))) else (if ((notb(andb((if (97 <= to_rep((to_array(o3)[(j - 1)]))) then true else false),
   (if (to_rep((to_array(o3)[(j - 1)])) <= 122) then true else false))) = true) and
@@ -485,29 +485,24 @@ goal defqtvc : (dynamic_invariant(str, true, false, true, true) ->
   to_rep1(ret__last)), idx1) = true) and
   (forall j:int. (((idx1 <= j) and (j <= last1(str))) -> ((idx1 <  j) ->
   (to_rep((ret2[j])) = to_rep((to_array(str)[j]))))))) ->
-  ((andb((if ((forall temp___228:int.
-              (((to_rep1(ret__first) <= temp___228) and
-              (temp___228 <= to_rep1(ret__last))) ->
-              (((temp___225 <  temp___228) or ((temp___228 <  temp___224) or
-              (idx1 <  temp___228))) ->
-              ((ret2[temp___228]) = (ret[temp___228]))))) and
-  dynamic_property1(first1(str), last1(str), idx1)) then true else false),
+  ((andb((if (dynamic_property1(first1(str), last1(str), idx1) and
+  (forall temp___245:int. (((to_rep1(ret__first) <= temp___245) and
+  (temp___245 <= to_rep1(ret__last))) -> (((temp___239 <  temp___245) or
+  ((temp___245 <  temp___238) or (idx1 <  temp___245))) ->
+  ((ret2[temp___245]) = (ret[temp___245])))))) then true else false),
   (if ((first1(str) <= idx1) and
   (idx1 <= last1(str))) then true else false)) = true) ->
   (forall spark__branch1:bool. forall to_up1:bool.
   ((exists o4:bool.
-   ((exists o5:int. ((to_rep((to_array(str)[idx1])) = o5) and
-    (exists o6:int. ((to_rep((to_array(str)[idx1])) = o6) and
-    (if (not (andb((if (65 <= o6) then true else false),
-    (if (o5 <= 90) then true else false)) = true)) then (exists o7:int.
-                                                        ((to_rep((to_array(str)[idx1])) = o7) and
-                                                        (exists o8:int.
-                                                        ((to_rep((to_array(str)[idx1])) = o8) and
-                                                        (o4 = (if (andb((if (97 <= o8) then true else false),
-                                                        (if (o7 <= 122) then true else false)) = true) then false else true)))))) else (o4 = false)))))) and
+   ((exists temp___240:int. ((to_rep((to_array(str)[idx1])) = temp___240) and
+    (if (not (andb((if (65 <= temp___240) then true else false),
+    (if (temp___240 <= 90) then true else false)) = true)) then (exists temp___241:int.
+                                                                ((to_rep((to_array(str)[idx1])) = temp___241) and
+                                                                (o4 = (if (andb((if (97 <= temp___241) then true else false),
+                                                                (if (temp___241 <= 122) then true else false)) = true) then false else true)))) else (o4 = false)))) and
    ((spark__branch1 = o4) and
    (if (spark__branch1 = true) then (to_up1 = of_int(1)) else (to_up1 = of_int(0)))))) ->
-  ((not (idx1 = temp___225)) ->
+  ((not (idx1 = temp___239)) ->
   (forall idx2:int. ((idx2 = (idx1 + 1)) ->
   (forall ret3:(int,character) farray.
   ((exists spark__branch2:bool. ((spark__branch2 = to_up1) and
@@ -526,10 +521,10 @@ goal defqtvc : (dynamic_invariant(str, true, false, true, true) ->
   (((to_rep1(ret__first) <= idx2) and (idx2 <= to_rep1(ret__last))) ->
   (forall o4:int. ((to_rep1(ret__last) = o4) ->
   (forall o5:int. ((to_rep1(ret__first) = o5) -> (let o6 = of_array(ret3, o5,
-  o4) : us_t in (let o7 = str : us_t in (let temp___inv_2321 =
+  o4) : us_t in (let o7 = str : us_t in (let temp___inv_2481 =
   to_caml_char2(o7, o6, idx2) : bool in
-  ((to_caml_char2__function_guard(temp___inv_2321, o7, o6, idx2) and
-  ((temp___inv_2321 = true) <->
+  ((to_caml_char2__function_guard(temp___inv_2481, o7, o6, idx2) and
+  ((temp___inv_2481 = true) <->
   (forall j:int. (((first1(o7) <= j) and (j <= idx2)) ->
   (if (j = first1(o7)) then (to_rep((to_array(o6)[j])) = to_upper(to_rep((to_array(o7)[j])))) else (if ((notb(andb((if (97 <= to_rep((to_array(o7)[(j - 1)]))) then true else false),
   (if (to_rep((to_array(o7)[(j - 1)])) <= 122) then true else false))) = true) and

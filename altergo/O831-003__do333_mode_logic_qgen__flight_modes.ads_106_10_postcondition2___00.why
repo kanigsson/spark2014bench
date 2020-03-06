@@ -1010,18 +1010,18 @@ goal defqtvc :
                                           ((exists spark__branch7:bool.
                                            ((spark__branch7 = c2_lateral_nav_selected_active) and
                                            (if (spark__branch7 = true) then (let o =
-                                           lateral_nav_clear(c2_modes_on1,
-                                           c2_nav_switch_pressed,
-                                           c2_pilot_flying_transfer,
-                                           c2_selected_nav_source_changed,
-                                           c2_selected_nav_frequency_changed)
-                                           : bool in
-                                           (lateral_nav_clear__function_guard(o,
+                                           lateral_nav_clear(c2_selected_nav_frequency_changed,
                                            c2_modes_on1,
                                            c2_nav_switch_pressed,
                                            c2_pilot_flying_transfer,
-                                           c2_selected_nav_source_changed,
-                                           c2_selected_nav_frequency_changed) and
+                                           c2_selected_nav_source_changed)
+                                           : bool in
+                                           (lateral_nav_clear__function_guard(o,
+                                           c2_selected_nav_frequency_changed,
+                                           c2_modes_on1,
+                                           c2_nav_switch_pressed,
+                                           c2_pilot_flying_transfer,
+                                           c2_selected_nav_source_changed) and
                                            (exists spark__branch8:bool.
                                            ((spark__branch8 = o) and
                                            (if (spark__branch8 = true) then (
@@ -1074,18 +1074,18 @@ goal defqtvc :
                                           ((exists spark__branch8:bool.
                                            ((spark__branch8 = c2_lateral_lappr_selected_active) and
                                            (if (spark__branch8 = true) then (let o =
-                                           lateral_lappr_clear(c2_modes_on1,
-                                           c2_pilot_flying_transfer,
-                                           c2_appr_switch_pressed,
-                                           c2_selected_nav_source_changed,
-                                           c2_selected_nav_frequency_changed)
-                                           : bool in
-                                           (lateral_lappr_clear__function_guard(o,
+                                           lateral_lappr_clear(c2_selected_nav_frequency_changed,
                                            c2_modes_on1,
                                            c2_pilot_flying_transfer,
                                            c2_appr_switch_pressed,
-                                           c2_selected_nav_source_changed,
-                                           c2_selected_nav_frequency_changed) and
+                                           c2_selected_nav_source_changed)
+                                           : bool in
+                                           (lateral_lappr_clear__function_guard(o,
+                                           c2_selected_nav_frequency_changed,
+                                           c2_modes_on1,
+                                           c2_pilot_flying_transfer,
+                                           c2_appr_switch_pressed,
+                                           c2_selected_nav_source_changed) and
                                            (exists spark__branch9:bool.
                                            ((spark__branch9 = o) and
                                            (if (spark__branch9 = true) then (
@@ -1194,13 +1194,13 @@ goal defqtvc :
                                            (exists spark__branch11:bool.
                                            ((spark__branch11 = c2_lateral_roll_selected_active_active) and
                                            (if (spark__branch11 = true) then (let o =
-                                           lateral_lateral_mode_active(c2_hdg_active1,
-                                           c2_lga_active1, c2_nav_active1,
-                                           c2_lappr_active1) : bool in
-                                           (lateral_lateral_mode_active__function_guard(o,
+                                           lateral_lateral_mode_active(c2_lappr_active1,
                                            c2_hdg_active1, c2_lga_active1,
-                                           c2_nav_active1,
-                                           c2_lappr_active1) and
+                                           c2_nav_active1) : bool in
+                                           (lateral_lateral_mode_active__function_guard(o,
+                                           c2_lappr_active1, c2_hdg_active1,
+                                           c2_lga_active1,
+                                           c2_nav_active1) and
                                            ((spark__branch9 = o) and
                                            (if (spark__branch9 = true) then ((c2_roll_active1 = of_int(0)) and
                                            (c2_roll_selected1 = of_int(0))) else ((c2_roll_selected1 = c2_roll_selected) and
@@ -1210,13 +1210,13 @@ goal defqtvc :
                                            (exists spark__branch11:bool.
                                            ((spark__branch11 = c2_lateral_roll_cleared_active) and
                                            (if (spark__branch11 = true) then (let o =
-                                           lateral_lateral_mode_active(c2_hdg_active1,
-                                           c2_lga_active1, c2_nav_active1,
-                                           c2_lappr_active1) : bool in
-                                           (lateral_lateral_mode_active__function_guard(o,
+                                           lateral_lateral_mode_active(c2_lappr_active1,
                                            c2_hdg_active1, c2_lga_active1,
-                                           c2_nav_active1,
-                                           c2_lappr_active1) and
+                                           c2_nav_active1) : bool in
+                                           (lateral_lateral_mode_active__function_guard(o,
+                                           c2_lappr_active1, c2_hdg_active1,
+                                           c2_lga_active1,
+                                           c2_nav_active1) and
                                            ((spark__branch9 = (if (o = true) then false else true)) and
                                            (if (spark__branch9 = true) then ((c2_roll_selected1 = of_int(1)) and
                                            (c2_roll_active1 = of_int(1))) else ((c2_roll_selected1 = c2_roll_selected) and
@@ -1417,20 +1417,19 @@ goal defqtvc :
                                           ((exists spark__branch14:bool.
                                            ((spark__branch14 = c2_vertical_vappr_selected_active) and
                                            (if (spark__branch14 = true) then (let o =
-                                           vertical_vappr_clear(c2_modes_on1,
-                                           c2_pilot_flying_transfer,
-                                           c2_appr_switch_pressed,
-                                           c2_selected_nav_source_changed,
-                                           c2_lappr_selected1,
-                                           c2_selected_nav_frequency_changed)
-                                           : bool in
-                                           (vertical_vappr_clear__function_guard(o,
+                                           vertical_vappr_clear(c2_selected_nav_frequency_changed,
                                            c2_modes_on1,
                                            c2_pilot_flying_transfer,
                                            c2_appr_switch_pressed,
                                            c2_selected_nav_source_changed,
-                                           c2_lappr_selected1,
-                                           c2_selected_nav_frequency_changed) and
+                                           c2_lappr_selected1) : bool in
+                                           (vertical_vappr_clear__function_guard(o,
+                                           c2_selected_nav_frequency_changed,
+                                           c2_modes_on1,
+                                           c2_pilot_flying_transfer,
+                                           c2_appr_switch_pressed,
+                                           c2_selected_nav_source_changed,
+                                           c2_lappr_selected1) and
                                            (exists spark__branch15:bool.
                                            ((spark__branch15 = o) and
                                            (if (spark__branch15 = true) then (
@@ -1464,13 +1463,13 @@ goal defqtvc :
                                            (exists spark__branch17:bool.
                                            ((spark__branch17 = c2_vertical_vappr_selected_armed_active) and
                                            (if (spark__branch17 = true) then (let o1 =
-                                           vertical_vappr_capture(c2_overspeed,
-                                           c2_vappr_capture_condition_met,
-                                           c2_lappr_active1) : bool in
-                                           (vertical_vappr_capture__function_guard(o1,
+                                           vertical_vappr_capture(c2_lappr_active1,
                                            c2_overspeed,
-                                           c2_vappr_capture_condition_met,
-                                           c2_lappr_active1) and
+                                           c2_vappr_capture_condition_met)
+                                           : bool in
+                                           (vertical_vappr_capture__function_guard(o1,
+                                           c2_lappr_active1, c2_overspeed,
+                                           c2_vappr_capture_condition_met) and
                                            ((spark__branch13 = o1) and
                                            (if (spark__branch13 = true) then (c2_vappr_active1 = of_int(1)) else (c2_vappr_active1 = c2_vappr_active))))) else ((spark__branch13 = spark__branch17) and
                                            (c2_vappr_active1 = c2_vappr_active))))) and

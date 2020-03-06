@@ -291,14 +291,19 @@ logic user_eq2 : us_rep, us_rep -> bool
 
 logic dummy2 : us_rep
 
-type rec____ref = { rec____content : us_rep
+type constr_rec__ref = { constr_rec__content : us_rep
 }
 
-function rec____ref_rec____content__projection(a: rec____ref) : us_rep =
-  (a).rec____content
+function constr_rec__ref_constr_rec__content__projection(a: constr_rec__ref) : us_rep =
+  (a).constr_rec__content
 
-predicate in_range3(rec__formals_rec_split_pred__rec__d1: bool, a: us_rep) =
-  (rec__formals_rec_split_pred__rec__d1 = ((a).us_split_discrs1).rec__formals_rec_split_pred__rec__d)
+logic i1b : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate in_range3(rec__formals_rec_split_pred__rec__d1: bool,
+  a: us_split_discrs) =
+  (rec__formals_rec_split_pred__rec__d1 = (a).rec__formals_rec_split_pred__rec__d)
 
 logic value__size1 : int
 
@@ -376,21 +381,18 @@ logic user_eq3 : us_rep, us_rep -> bool
 
 logic dummy3 : us_rep
 
-type constr_rec__ref = { constr_rec__content : us_rep
+type rec____ref = { rec____content : us_rep
 }
 
-function constr_rec__ref_constr_rec__content__projection(a: constr_rec__ref) : us_rep =
-  (a).constr_rec__content
-
-logic i1b : us_rep
-
-logic attr__ATTRIBUTE_ADDRESS : int
+function rec____ref_rec____content__projection(a: rec____ref) : us_rep =
+  (a).rec____content
 
 predicate dynamic_invariant(temp___expr_187: us_rep,
   temp___is_init_183: bool, temp___skip_constant_184: bool,
   temp___do_toplevel_185: bool, temp___do_typ_inv_186: bool) =
   (((not (temp___skip_constant_184 = true)) -> in_range3(of_int(1),
-  temp___expr_187)) and ((temp___do_toplevel_185 = true) ->
+  (temp___expr_187).us_split_discrs1)) and
+  ((temp___do_toplevel_185 = true) ->
   (not (to_rep(((temp___expr_187).us_split_fields1).rec__formals_rec_split_pred__rec__h) = 0))))
 
 predicate default_initial_assumption(temp___expr_190: us_rep,

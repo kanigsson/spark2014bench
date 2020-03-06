@@ -376,6 +376,10 @@ function bool_eq6(a: us_rep1, b: us_rep1) : bool =
   (bool_eq5(((a).us_split_fields1).rec__rec_types__test2__tree_node__next,
   ((b).us_split_fields1).rec__rec_types__test2__tree_node__next) = true))) then true else false)
 
+predicate in_range3(rec__rec_types__test2__tree_node__d1: int,
+  a: us_split_discrs) =
+  (rec__rec_types__test2__tree_node__d1 = to_rep((a).rec__rec_types__test2__tree_node__d))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -462,7 +466,7 @@ function to_int(b: bool) : int = (if (b = true) then 1 else 0)
 
 function of_int(i: int) : bool = (if (i = 0) then false else true)
 
-predicate in_range3(x: int) = ((x = 0) or (x = 1))
+predicate in_range4(x: int) = ((x = 0) or (x = 1))
 
 logic attr__ATTRIBUTE_IMAGE3 : bool -> us_image
 

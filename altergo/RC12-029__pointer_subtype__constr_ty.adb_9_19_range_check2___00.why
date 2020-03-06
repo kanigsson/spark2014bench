@@ -321,6 +321,9 @@ function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
 function bool_eq6(a: us_rep, b: us_rep) : bool =
   (if (to_int(((a).us_split_discrs1).rec__constr_ty__r__x) = to_int(((b).us_split_discrs1).rec__constr_ty__r__x)) then true else false)
 
+predicate in_range4(rec__constr_ty__r__x1: bool, a: us_split_discrs) =
+  (rec__constr_ty__r__x1 = (a).rec__constr_ty__r__x)
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -431,7 +434,7 @@ axiom ta_acc_2P1qtaxiom : (forall i:ta_acc_2P1. (1 <= ta_acc_2P1qtint(i)))
 
 axiom ta_acc_2P1qtaxiom1 : (forall i:ta_acc_2P1. (ta_acc_2P1qtint(i) <= 10))
 
-predicate in_range4(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range5(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -501,7 +504,7 @@ function of_base(r: us_rep1) : us_rep2 = {
   rec__constr_ty__a_acc__pointer_value1 =
   to_array((r).rec__constr_ty__a_acc__pointer_value) }
 
-predicate in_range5(first2: int, last2: int, r: us_rep1) =
+predicate in_range6(first2: int, last2: int, r: us_rep1) =
   ((not ((r).rec__constr_ty__a_acc__is_null_pointer = true)) ->
   ((first1((r).rec__constr_ty__a_acc__pointer_value) = first2) and
   (last1((r).rec__constr_ty__a_acc__pointer_value) = last2)))
@@ -569,9 +572,6 @@ function r_acc__ref_r_acc__content__projection(a: r_acc__ref) : us_rep3 =
 predicate default_initial_assumption2(temp___expr_190: us_rep3,
   temp___skip_top_level_191: bool) =
   ((temp___expr_190).rec__constr_ty__r_acc__is_null_pointer = true)
-
-predicate in_range6(rec__constr_ty__r__x1: bool, a: us_rep) =
-  (rec__constr_ty__r__x1 = ((a).us_split_discrs1).rec__constr_ty__r__x)
 
 logic value__size2 : int
 
@@ -784,7 +784,7 @@ goal defqtvc : (dynamic_invariant(c, true, false, true, true) ->
   (dynamic_invariant1({ rec__constr_ty__a_acc__is_null_pointer =
   z__is_null_pointer; rec__constr_ty__a_acc__pointer_address =
   z__pointer_address; rec__constr_ty__a_acc__pointer_value = z__pointer_value
-  }, true, false, true, true) -> in_range5(1, 10, {
+  }, true, false, true, true) -> in_range6(1, 10, {
   rec__constr_ty__a_acc__is_null_pointer = z__is_null_pointer;
   rec__constr_ty__a_acc__pointer_address = z__pointer_address;
   rec__constr_ty__a_acc__pointer_value = z__pointer_value })))))))))))))))

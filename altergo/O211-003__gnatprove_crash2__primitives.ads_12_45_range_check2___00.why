@@ -295,62 +295,6 @@ logic user_eq3 : us_rep1, us_rep1 -> bool
 
 logic dummy3 : us_rep1
 
-type branch_type__ref = { branch_type__content : us_rep1
-}
-
-function branch_type__ref_branch_type__content__projection(a: branch_type__ref) : us_rep1 =
-  (a).branch_type__content
-
-predicate in_range3(rec__tree_logic__branch_type__m_variant1: int,
-  a: us_rep1) =
-  (rec__tree_logic__branch_type__m_variant1 = to_rep1(((a).us_split_discrs1).rec__tree_logic__branch_type__m_variant))
-
-logic value__size2 : int
-
-logic object__size2 : int
-
-logic alignment2 : int
-
-axiom value__size_axiom2 : (0 <= value__size2)
-
-axiom object__size_axiom2 : (0 <= object__size2)
-
-axiom alignment_axiom2 : (0 <= alignment2)
-
-logic tree_logic__branch_type__m_variant__first__bit1 : int
-
-logic tree_logic__branch_type__m_variant__last__bit1 : int
-
-logic tree_logic__branch_type__m_variant__position1 : int
-
-axiom tree_logic__branch_type__m_variant__first__bit_axiom1 :
-  (0 <= tree_logic__branch_type__m_variant__first__bit1)
-
-axiom tree_logic__branch_type__m_variant__last__bit_axiom1 :
-  (tree_logic__branch_type__m_variant__first__bit1 <  tree_logic__branch_type__m_variant__last__bit1)
-
-axiom tree_logic__branch_type__m_variant__position_axiom1 :
-  (0 <= tree_logic__branch_type__m_variant__position1)
-
-logic tree_logic__branch_type__m_logical_address__first__bit1 : int
-
-logic tree_logic__branch_type__m_logical_address__last__bit1 : int
-
-logic tree_logic__branch_type__m_logical_address__position1 : int
-
-axiom tree_logic__branch_type__m_logical_address__first__bit_axiom1 :
-  (0 <= tree_logic__branch_type__m_logical_address__first__bit1)
-
-axiom tree_logic__branch_type__m_logical_address__last__bit_axiom1 :
-  (tree_logic__branch_type__m_logical_address__first__bit1 <  tree_logic__branch_type__m_logical_address__last__bit1)
-
-axiom tree_logic__branch_type__m_logical_address__position_axiom1 :
-  (0 <= tree_logic__branch_type__m_logical_address__position1)
-
-logic user_eq4 : us_rep1, us_rep1 -> bool
-
-logic dummy4 : us_rep1
-
 type t1s__ref = { t1s__content : us_rep1
 }
 
@@ -402,17 +346,21 @@ function bool_eq5(a: us_rep2, b: us_rep2) : bool =
   (bool_eq1(((a).us_split_fields5).rec__primitives__primitive_type__m_read_iterator,
   ((b).us_split_fields5).rec__primitives__primitive_type__m_read_iterator) = true))) then true else false)
 
-logic value__size3 : int
+predicate in_range3(rec__primitives__primitive_type__m_io_error1: bool,
+  a: us_split_discrs2) =
+  (rec__primitives__primitive_type__m_io_error1 = (a).rec__primitives__primitive_type__m_io_error)
 
-logic object__size3 : int
+logic value__size2 : int
 
-logic alignment3 : int
+logic object__size2 : int
 
-axiom value__size_axiom3 : (0 <= value__size3)
+logic alignment2 : int
 
-axiom object__size_axiom3 : (0 <= object__size3)
+axiom value__size_axiom2 : (0 <= value__size2)
 
-axiom alignment_axiom3 : (0 <= alignment3)
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
 
 logic primitives__primitive_type__m_io_error__first__bit : int
 
@@ -459,9 +407,9 @@ axiom primitives__primitive_type__m_read_iterator__last__bit_axiom :
 axiom primitives__primitive_type__m_read_iterator__position_axiom :
   (0 <= primitives__primitive_type__m_read_iterator__position)
 
-logic user_eq5 : us_rep2, us_rep2 -> bool
+logic user_eq4 : us_rep2, us_rep2 -> bool
 
-logic dummy5 : us_rep2
+logic dummy4 : us_rep2
 
 type primitive_type__ref = { primitive_type__content : us_rep2
 }
@@ -474,10 +422,66 @@ predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
   temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
   ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
 
+predicate in_range4(rec__tree_logic__branch_type__m_variant1: int,
+  a: us_split_discrs) =
+  (rec__tree_logic__branch_type__m_variant1 = to_rep1((a).rec__tree_logic__branch_type__m_variant))
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic tree_logic__branch_type__m_variant__first__bit1 : int
+
+logic tree_logic__branch_type__m_variant__last__bit1 : int
+
+logic tree_logic__branch_type__m_variant__position1 : int
+
+axiom tree_logic__branch_type__m_variant__first__bit_axiom1 :
+  (0 <= tree_logic__branch_type__m_variant__first__bit1)
+
+axiom tree_logic__branch_type__m_variant__last__bit_axiom1 :
+  (tree_logic__branch_type__m_variant__first__bit1 <  tree_logic__branch_type__m_variant__last__bit1)
+
+axiom tree_logic__branch_type__m_variant__position_axiom1 :
+  (0 <= tree_logic__branch_type__m_variant__position1)
+
+logic tree_logic__branch_type__m_logical_address__first__bit1 : int
+
+logic tree_logic__branch_type__m_logical_address__last__bit1 : int
+
+logic tree_logic__branch_type__m_logical_address__position1 : int
+
+axiom tree_logic__branch_type__m_logical_address__first__bit_axiom1 :
+  (0 <= tree_logic__branch_type__m_logical_address__first__bit1)
+
+axiom tree_logic__branch_type__m_logical_address__last__bit_axiom1 :
+  (tree_logic__branch_type__m_logical_address__first__bit1 <  tree_logic__branch_type__m_logical_address__last__bit1)
+
+axiom tree_logic__branch_type__m_logical_address__position_axiom1 :
+  (0 <= tree_logic__branch_type__m_logical_address__position1)
+
+logic user_eq5 : us_rep1, us_rep1 -> bool
+
+logic dummy5 : us_rep1
+
+type branch_type__ref = { branch_type__content : us_rep1
+}
+
+function branch_type__ref_branch_type__content__projection(a: branch_type__ref) : us_rep1 =
+  (a).branch_type__content
+
 predicate dynamic_invariant1(temp___expr_183: us_rep2,
   temp___is_init_179: bool, temp___skip_constant_180: bool,
-  temp___do_toplevel_181: bool, temp___do_typ_inv_182: bool) = in_range3(0,
-  ((temp___expr_183).us_split_fields5).rec__primitives__primitive_type__m_read_branch)
+  temp___do_toplevel_181: bool, temp___do_typ_inv_182: bool) = in_range4(0,
+  (((temp___expr_183).us_split_fields5).rec__primitives__primitive_type__m_read_branch).us_split_discrs1)
 
 predicate default_initial_assumption(temp___expr_186: us_rep2,
   temp___skip_top_level_187: bool) =

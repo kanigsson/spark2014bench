@@ -872,16 +872,16 @@ axiom size__def_axiom :
   (forall s:us_rep [size(s)].
   (size(s) = to_rep(((s).us_split_fields1).rec__stacks__stack_root__length)))
 
-axiom temp___result_419qtdef :
-  (forall temp___418:us_rep. size__function_guard(size(temp___418),
-  temp___418))
+axiom temp___result_427qtdef :
+  (forall temp___426:us_rep. size__function_guard(size(temp___426),
+  temp___426))
 
-predicate default_initial_assumption1(temp___expr_416: us_rep,
-  temp___skip_top_level_417: bool) =
-  ((((temp___expr_416).attr__tag = us_tag1) and
-  ((((temp___expr_416).us_split_fields1).rec__stacks__stack_root__content = temp_____aggregate_def_200(0)) and
-  (to_rep(((temp___expr_416).us_split_fields1).rec__stacks__stack_root__length) = 0))) and
-  ((not (temp___skip_top_level_417 = true)) -> (size(temp___expr_416) = 0)))
+predicate default_initial_assumption1(temp___expr_424: us_rep,
+  temp___skip_top_level_425: bool) =
+  ((((temp___expr_424).attr__tag = us_tag1) and
+  ((((temp___expr_424).us_split_fields1).rec__stacks__stack_root__content = temp_____aggregate_def_200(0)) and
+  (to_rep(((temp___expr_424).us_split_fields1).rec__stacks__stack_root__length) = 0))) and
+  ((not (temp___skip_top_level_425 = true)) -> (size(temp___expr_424) = 0)))
 
 type telement_arrayD1
 
@@ -1112,18 +1112,18 @@ axiom bool_ge_axiom1 :
 function length2(x: int, y: int) : int =
   (if (x <= y) then ((y - x) + 1) else 0)
 
-axiom temp___result_602qtdef :
-  (forall temp___601:us_rep1. size__function_guard(size(to_base(temp___601)),
-  to_base(temp___601)))
+axiom temp___result_618qtdef :
+  (forall temp___617:us_rep1. size__function_guard(size(to_base(temp___617)),
+  to_base(temp___617)))
 
-predicate default_initial_assumption2(temp___expr_599: us_rep1,
-  temp___skip_top_level_600: bool) =
-  ((((temp___expr_599).attr__tag1 = us_tag2) and
-  (((to_rep3(((temp___expr_599).us_split_fields3).rec__stacks__buffer__first) = 1) and
-  (((temp___expr_599).us_split_fields3).rec__stacks__stack_root__content1 = temp_____aggregate_def_200(0))) and
-  (to_rep(((temp___expr_599).us_split_fields3).rec__stacks__stack_root__length1) = 0))) and
-  ((not (temp___skip_top_level_600 = true)) ->
-  (size(to_base(temp___expr_599)) = 0)))
+predicate default_initial_assumption2(temp___expr_615: us_rep1,
+  temp___skip_top_level_616: bool) =
+  ((((temp___expr_615).attr__tag1 = us_tag2) and
+  (((to_rep3(((temp___expr_615).us_split_fields3).rec__stacks__buffer__first) = 1) and
+  (((temp___expr_615).us_split_fields3).rec__stacks__stack_root__content1 = temp_____aggregate_def_200(0))) and
+  (to_rep(((temp___expr_615).us_split_fields3).rec__stacks__stack_root__length1) = 0))) and
+  ((not (temp___skip_top_level_616 = true)) ->
+  (size(to_base(temp___expr_615)) = 0)))
 
 logic wraps_around : us_rep1 -> bool
 
@@ -1410,10 +1410,10 @@ axiom def_axiom :
   (forall temp___203:int.
   ((temp_____aggregate_def_200(temp___202)[temp___203]) = rliteral))))
 
-predicate dynamic_invariant5(temp___expr_590: int, temp___is_init_586: bool,
-  temp___skip_constant_587: bool, temp___do_toplevel_588: bool,
-  temp___do_typ_inv_589: bool) = (((temp___is_init_586 = true) or
-  (1 <= 100)) -> in_range5(temp___expr_590))
+predicate dynamic_invariant5(temp___expr_606: int, temp___is_init_602: bool,
+  temp___skip_constant_603: bool, temp___do_toplevel_604: bool,
+  temp___do_typ_inv_605: bool) = (((temp___is_init_602 = true) or
+  (1 <= 100)) -> in_range5(temp___expr_606))
 
 axiom stacks__buffer__compat_axiom6 :
   (forall s:us_rep1 [wraps_around1(us_tag2, s)].

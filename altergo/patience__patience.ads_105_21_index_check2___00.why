@@ -761,10 +761,14 @@ goal defqtvc :
                             (to_rep(((s).us_split_fields1).rec__patience__state__numelts) = o5)) and
       (o3 = (if (forall i:int. (((0 <= i) and
                 (i <= (to_rep(((s).us_split_fields1).rec__patience__state__numelts) - 1))) ->
-                ((((0 <= to_rep((((s).us_split_fields1).rec__patience__state__posstack[i]))) and
-                (to_rep((((s).us_split_fields1).rec__patience__state__posstack[i])) <= (to_rep(((s).us_split_fields1).rec__patience__state__numstacks) - 1))) and
-                ((0 <= to_rep((((s).us_split_fields1).rec__patience__state__posheight[i]))) and
-                (to_rep((((s).us_split_fields1).rec__patience__state__posheight[i])) <= (to_rep((((s).us_split_fields1).rec__patience__state__stacksizes[to_rep((((s).us_split_fields1).rec__patience__state__posstack[i]))])) - 1)))) and
+                (((let temp___460 =
+                to_rep((((s).us_split_fields1).rec__patience__state__posstack[i]))
+                : int in ((0 <= temp___460) and
+                (temp___460 <= (to_rep(((s).us_split_fields1).rec__patience__state__numstacks) - 1)))) and
+                (let temp___462 =
+                to_rep((((s).us_split_fields1).rec__patience__state__posheight[i]))
+                : int in ((0 <= temp___462) and
+                (temp___462 <= (to_rep((((s).us_split_fields1).rec__patience__state__stacksizes[to_rep((((s).us_split_fields1).rec__patience__state__posstack[i]))])) - 1))))) and
                 (to_rep(((((s).us_split_fields1).rec__patience__state__stacks[to_rep((((s).us_split_fields1).rec__patience__state__posstack[i]))])[to_rep((((s).us_split_fields1).rec__patience__state__posheight[i]))])) = i)))) then true else false))) else (o3 = false)))) and
      (if (o3 = true) then ((exists o4:int.
                            (to_rep(((s).us_split_fields1).rec__patience__state__numstacks) = o4)) and
@@ -797,14 +801,12 @@ goal defqtvc :
   (forall o1:int.
   ((to_rep(((s).us_split_fields1).rec__patience__state__numelts) = o1) ->
   ((andb((if (0 <= usf) then true else false),
-  (if (usf <= (o1 - 1)) then true else false)) = true) ->
+  (if (usf <= (o1 - 1)) then true else false)) = true) -> (((0 <= usf) and
+  (usf <= 99)) ->
+  (forall temp___549:int.
+  ((to_rep((((s).us_split_fields1).rec__patience__state__preds[usf])) = temp___549) ->
   (forall o2:int.
   ((to_rep(((s).us_split_fields1).rec__patience__state__numelts) = o2) ->
-  (((0 <= usf) and (usf <= 99)) ->
-  (forall o3:int.
-  ((to_rep((((s).us_split_fields1).rec__patience__state__preds[usf])) = o3) ->
-  (((0 <= usf) and (usf <= 99)) ->
-  (forall o4:int.
-  ((to_rep((((s).us_split_fields1).rec__patience__state__preds[usf])) = o4) ->
-  ((andb((if ((- 1) <= o4) then true else false),
-  (if (o3 <= (o2 - 1)) then true else false)) = true) -> (0 <= usf)))))))))))))))))
+  ((andb((if ((- 1) <= temp___549) then true else false),
+  (if (temp___549 <= (o2 - 1)) then true else false)) = true) ->
+  (0 <= usf))))))))))))))

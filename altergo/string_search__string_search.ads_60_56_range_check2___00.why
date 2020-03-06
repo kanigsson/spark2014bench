@@ -528,7 +528,8 @@ goal defqtvc :
   (forall i:int. (dynamic_invariant2(needle, true, false, true, true) ->
   (dynamic_invariant2(haystack, true, false, true, true) ->
   ((((length(needle) <  2147483647) and (length(haystack) <  2147483646)) and
-  ((1 <= length(needle)) and (length(needle) <= length(haystack)))) ->
+  (let temp___412 = length(needle) : int in ((1 <= temp___412) and
+  (temp___412 <= length(haystack))))) ->
   (forall string_search__qs__result:int.
   ((forall l:int. match_at__function_guard(match_at(needle, haystack, l),
    needle, haystack, l)) ->
@@ -551,9 +552,9 @@ goal defqtvc :
   ((dynamic_invariant(i, false, false, true, true) and (let o = needle
   : us_t in
   (exists bad_shift:(int,positive) farray.
-  (((forall c:int. (((0 <= c) and (c <= 255)) ->
-    ((1 <= to_rep((bad_shift[c]))) and
-    (to_rep((bad_shift[c])) <= (length(o) + 1))))) and
+  (((forall c:int. (((0 <= c) and (c <= 255)) -> (let temp___210 =
+    to_rep((bad_shift[c])) : int in ((1 <= temp___210) and
+    (temp___210 <= (length(o) + 1)))))) and
   (forall c:int. (((0 <= c) and (c <= 255)) ->
   (if (to_rep((bad_shift[c])) = (length(o) + 1)) then (forall k:int.
                                                       (((first1(o) <= k) and
@@ -572,11 +573,11 @@ goal defqtvc :
    (exists r53b:int. ((r53b = o6) and (dynamic_invariant1(r53b, true, false,
    true, true) and (((r52b <= r53b) -> (((first1(haystack) <= r52b) and
    (r52b <= last1(haystack))) and ((first1(haystack) <= r53b) and
-   (r53b <= last1(haystack))))) and (let temp___368 =
+   (r53b <= last1(haystack))))) and (let temp___385 =
    of_array(to_array(haystack), r52b, r53b) : us_t in
    (exists spark__branch:bool. ((spark__branch = bool_eq4(to_array(needle),
-   first1(needle), last1(needle), to_array(temp___368), first1(temp___368),
-   last1(temp___368))) and
+   first1(needle), last1(needle), to_array(temp___385), first1(temp___385),
+   last1(temp___385))) and
    (if (spark__branch = true) then (i2 = i1) else (let o7 = length(needle)
    : int in (in_range1(o7) and (let o8 = length(haystack) : int in
    (in_range1(o8) and (let o9 = (o8 - o7) : int in (in_range1(o9) and
@@ -615,7 +616,7 @@ goal defqtvc :
    dynamic_invariant1(r59b1, true, true, true, true)) and
    dynamic_invariant(shift1, true, true, true, true)) and
    dynamic_invariant(r52b1, true, true, true, true)) and
-   (exists temp___390:int. ((temp___390 = i3) and (let o19 = length(needle)
+   (exists temp___407:int. ((temp___407 = i3) and (let o19 = length(needle)
    : int in (in_range1(o19) and (let o20 = (i3 + o19) : int in
    (in_range1(o20) and (((first1(haystack) <= o20) and
    (o20 <= last1(haystack))) and
@@ -633,10 +634,10 @@ goal defqtvc :
    false, true, true) and (((r52b2 <= r53b2) ->
    (((first1(haystack) <= r52b2) and (r52b2 <= last1(haystack))) and
    ((first1(haystack) <= r53b2) and (r53b2 <= last1(haystack))))) and
-   (let temp___3681 = of_array(to_array(haystack), r52b2, r53b2) : us_t in
+   (let temp___3851 = of_array(to_array(haystack), r52b2, r53b2) : us_t in
    (exists spark__branch1:bool. ((spark__branch1 = bool_eq4(to_array(needle),
-   first1(needle), last1(needle), to_array(temp___3681), first1(temp___3681),
-   last1(temp___3681))) and (spark__branch1 = true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) and
+   first1(needle), last1(needle), to_array(temp___3851), first1(temp___3851),
+   last1(temp___3851))) and (spark__branch1 = true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) and
   (string_search__qs__result = i2)))))))))))) or ((let o1 = length(needle)
   : int in (in_range1(o1) and (let o2 = length(haystack) : int in
   (in_range1(o2) and (let o3 = (o2 - o1) : int in (in_range1(o3) and
@@ -647,11 +648,11 @@ goal defqtvc :
   (exists r53b:int. ((r53b = o6) and (dynamic_invariant1(r53b, true, false,
   true, true) and (((r52b <= r53b) -> (((first1(haystack) <= r52b) and
   (r52b <= last1(haystack))) and ((first1(haystack) <= r53b) and
-  (r53b <= last1(haystack))))) and (let temp___368 =
+  (r53b <= last1(haystack))))) and (let temp___385 =
   of_array(to_array(haystack), r52b, r53b) : us_t in
   (exists spark__branch:bool. ((spark__branch = bool_eq4(to_array(needle),
-  first1(needle), last1(needle), to_array(temp___368), first1(temp___368),
-  last1(temp___368))) and ((not (spark__branch = true)) and (let o7 =
+  first1(needle), last1(needle), to_array(temp___385), first1(temp___385),
+  last1(temp___385))) and ((not (spark__branch = true)) and (let o7 =
   length(needle) : int in (in_range1(o7) and (let o8 = length(haystack)
   : int in (in_range1(o8) and (let o9 = (o8 - o7) : int in (in_range1(o9) and
   (let o10 = (o9 + 1) : int in (in_range1(o10) and ((i1 = o10) or (let o11 =
@@ -689,7 +690,7 @@ goal defqtvc :
   dynamic_invariant1(r59b1, true, true, true, true)) and
   dynamic_invariant(shift1, true, true, true, true)) and
   dynamic_invariant(r52b1, true, true, true, true)) and
-  (exists temp___390:int. ((temp___390 = i2) and (let o19 = length(needle)
+  (exists temp___407:int. ((temp___407 = i2) and (let o19 = length(needle)
   : int in (in_range1(o19) and (let o20 = (i2 + o19) : int in
   (in_range1(o20) and (((first1(haystack) <= o20) and
   (o20 <= last1(haystack))) and
@@ -707,10 +708,10 @@ goal defqtvc :
   false, true, true) and (((r52b2 <= r53b2) ->
   (((first1(haystack) <= r52b2) and (r52b2 <= last1(haystack))) and
   ((first1(haystack) <= r53b2) and (r53b2 <= last1(haystack))))) and
-  (let temp___3681 = of_array(to_array(haystack), r52b2, r53b2) : us_t in
+  (let temp___3851 = of_array(to_array(haystack), r52b2, r53b2) : us_t in
   (exists spark__branch1:bool. ((spark__branch1 = bool_eq4(to_array(needle),
-  first1(needle), last1(needle), to_array(temp___3681), first1(temp___3681),
-  last1(temp___3681))) and ((not (spark__branch1 = true)) and (let o30 =
+  first1(needle), last1(needle), to_array(temp___3851), first1(temp___3851),
+  last1(temp___3851))) and ((not (spark__branch1 = true)) and (let o30 =
   length(needle) : int in (in_range1(o30) and (let o31 = length(haystack)
   : int in (in_range1(o31) and (let o32 = (o31 - o30) : int in
   (in_range1(o32) and (let o33 = (o32 + 1) : int in (in_range1(o33) and

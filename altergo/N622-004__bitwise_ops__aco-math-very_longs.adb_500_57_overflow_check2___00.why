@@ -1196,6 +1196,10 @@ function bool_eq8(a: us_rep, b: us_rep) : bool =
   (bool_eq7(((a).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits,
   ((b).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits) = true)) then true else false)
 
+predicate in_range3(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
+  a: us_split_discrs) =
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep((a).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -1275,7 +1279,7 @@ axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
 
 axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1298,7 +1302,7 @@ function natural__ref_natural__content__projection(a: natural__ref) : natural =
 predicate dynamic_invariant1(temp___expr_39: int, temp___is_init_35: bool,
   temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
   temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
-  (0 <= 2147483647)) -> in_range3(temp___expr_39))
+  (0 <= 2147483647)) -> in_range4(temp___expr_39))
 
 logic shift_right : t1, int -> t1
 
@@ -1433,10 +1437,6 @@ function bool_eq11(a: us_rep1, b: us_rep1) : bool =
   (bool_eq7(((a).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1,
   ((b).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1) = true)) then true else false)
 
-predicate in_range4(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
-  a: us_rep) =
-  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep(((a).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -1497,8 +1497,8 @@ predicate dynamic_invariant4(temp___expr_859: us_rep1,
   temp___is_init_855: bool, temp___skip_constant_856: bool,
   temp___do_toplevel_857: bool, temp___do_typ_inv_858: bool) =
   (((not (temp___skip_constant_856 = true)) ->
-  in_range4(((2 * to_rep(((divisor).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length)) + 1),
-  to_base(temp___expr_859))) and (dynamic_property(1,
+  in_range3(((2 * to_rep(((divisor).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length)) + 1),
+  (to_base(temp___expr_859)).us_split_discrs1)) and (dynamic_property(1,
   ((2 * to_rep(((divisor).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length)) + 1),
   first1(((temp___expr_859).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1),
   last1(((temp___expr_859).us_split_fields3).rec__ada___ada___aco__math__very_longs__very_long__long_digits1)) and
@@ -1561,10 +1561,6 @@ function bool_eq12(a: us_rep2, b: us_rep2) : bool =
   (bool_eq7(((a).us_split_fields5).rec__ada___ada___aco__math__very_longs__very_long__long_digits2,
   ((b).us_split_fields5).rec__ada___ada___aco__math__very_longs__very_long__long_digits2) = true)) then true else false)
 
-predicate in_range5(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
-  a: us_rep) =
-  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep(((a).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -1625,8 +1621,8 @@ predicate dynamic_invariant5(temp___expr_872: us_rep2,
   temp___is_init_868: bool, temp___skip_constant_869: bool,
   temp___do_toplevel_870: bool, temp___do_typ_inv_871: bool) =
   (((not (temp___skip_constant_869 = true)) ->
-  in_range5(to_rep(((divisor).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length),
-  to_base1(temp___expr_872))) and (dynamic_property(1,
+  in_range3(to_rep(((divisor).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length),
+  (to_base1(temp___expr_872)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((divisor).us_split_discrs1).rec__ada___ada___aco__math__very_longs__very_long__octet_length),
   first1(((temp___expr_872).us_split_fields5).rec__ada___ada___aco__math__very_longs__very_long__long_digits2),
   last1(((temp___expr_872).us_split_fields5).rec__ada___ada___aco__math__very_longs__very_long__long_digits2)) and
@@ -1734,11 +1730,11 @@ goal defqtvc :
   (j <= last1(quotient__split_fields1))) ->
   (forall carry1:t1. ((carry1 = rliteral1) -> ((n = r132b) ->
   (dynamic_invariant7(r132b, true, false, true, true) ->
-  (forall u__split_fields1:us_t. forall carry2:t1. ((let temp___1659 = r132b
+  (forall u__split_fields1:us_t. forall carry2:t1. ((let temp___1662 = r132b
   : int in
   (exists divisor_index:int. ((divisor_index = 1) and
   (if (andb((if (1 <= divisor_index) then true else false),
-  (if (divisor_index <= temp___1659) then true else false)) = true) then 
+  (if (divisor_index <= temp___1662) then true else false)) = true) then 
   (exists u__split_fields2:us_t. exists carry3:t1. exists sum1:t1.
   exists divisor_index1:int. ((andb((if ((dynamic_invariant2(carry3, false,
   true, true, true) and dynamic_invariant2(sum1, false, true, true,
@@ -1752,25 +1748,25 @@ goal defqtvc :
   (divisor_index1 <= last1(v__split_fields))) and
   (exists o3:t.
   ((to_rep2((to_array(v__split_fields)[divisor_index1])) = o3) and (let o4 =
-  (j + divisor_index1) : int in (in_range2(o4) and (let temp___1661 =
-  (o4 - 1) : int in (((first1(u__split_fields2) <= temp___1661) and
-  (temp___1661 <= last1(u__split_fields2))) and
+  (j + divisor_index1) : int in (in_range2(o4) and (let temp___1664 =
+  (o4 - 1) : int in (((first1(u__split_fields2) <= temp___1664) and
+  (temp___1664 <= last1(u__split_fields2))) and
   (exists o5:t.
-  ((to_rep2((to_array(u__split_fields2)[temp___1661])) = o5) and
+  ((to_rep2((to_array(u__split_fields2)[temp___1664])) = o5) and
   (exists sum2:t1. ((sum2 = add1(add1(toBig(o5), toBig(o3)), carry3)) and
   (let o6 = takelsb_from16(sum2) : t in ((takelsb_from16__function_guard(o6,
   sum2) and dynamic_invariant3(o6, true, false, true, true)) and
   (exists o7:octet. ((to_rep2(o7) = o6) and (let o8 = (j + divisor_index1)
-  : int in (in_range2(o8) and (let temp___1664 = (o8 - 1) : int in
-  (((first1(u__split_fields2) <= temp___1664) and
-  (temp___1664 <= last1(u__split_fields2))) and ((u__split_fields1 = { elts =
-  (to_array(u__split_fields2)[temp___1664 <- o7]); rt = (u__split_fields2).rt
+  : int in (in_range2(o8) and (let temp___1667 = (o8 - 1) : int in
+  (((first1(u__split_fields2) <= temp___1667) and
+  (temp___1667 <= last1(u__split_fields2))) and ((u__split_fields1 = { elts =
+  (to_array(u__split_fields2)[temp___1667 <- o7]); rt = (u__split_fields2).rt
   }) and (let o9 = shift_right(sum2, 8) : t1 in
   ((shift_right__function_guard(o9, sum2, 8) and (dynamic_invariant2(o9,
   true, false, true, true) and (o9 = udiv1(sum2,
   (if (8 <  65536) then lsl_bv1(rliteral3,
   of_int1(8)) else rliteral1))))) and ((carry2 = o9) and
-  (divisor_index1 = temp___1659)))))))))))))))))))))))))) else ((u__split_fields1 = u__split_fields) and
+  (divisor_index1 = temp___1662)))))))))))))))))))))))))) else ((u__split_fields1 = u__split_fields) and
   (carry2 = carry1)))))) -> (let o3 = takelsb_from16(carry2) : t in
   ((takelsb_from16__function_guard(o3, carry2) and dynamic_invariant3(o3,
   true, false, true, true)) -> in_range2((j + n))))))))))))))))))))))))))))))))))))

@@ -147,6 +147,10 @@ function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
 function bool_eq2(a: us_rep, b: us_rep) : bool =
   (if (to_rep1(((a).us_split_discrs1).rec__test__element_type__state) = to_rep1(((b).us_split_discrs1).rec__test__element_type__state)) then true else false)
 
+predicate in_range2(rec__test__element_type__state1: int,
+  a: us_split_discrs) =
+  (rec__test__element_type__state1 = to_rep1((a).rec__test__element_type__state))
+
 logic value__size : int
 
 logic object__size : int
@@ -361,9 +365,6 @@ axiom context_field__def_axiom :
   (context_field(context) = to_rep(((context).us_split_fields1).rec__test__context_type__field)))
 
 logic attr__ATTRIBUTE_ADDRESS : int
-
-predicate in_range2(rec__test__element_type__state1: int, a: us_rep) =
-  (rec__test__element_type__state1 = to_rep1(((a).us_split_discrs1).rec__test__element_type__state))
 
 logic value__size3 : int
 

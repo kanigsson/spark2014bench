@@ -126,6 +126,9 @@ function us_rep___split_discrs__2__projection(a: us_rep) : us_split_discrs =
 function bool_eq1(a: us_rep, b: us_rep) : bool =
   (if (to_rep(((a).us_split_discrs1).rec__discr__with_default__c) = to_rep(((b).us_split_discrs1).rec__discr__with_default__c)) then true else false)
 
+predicate in_range1(rec__discr__with_default__c1: int, a: us_split_discrs) =
+  (rec__discr__with_default__c1 = to_rep((a).rec__discr__with_default__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -177,9 +180,6 @@ logic d2__attr__constrained : bool
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
 
-predicate in_range1(rec__discr__with_default__c1: int, a: us_rep) =
-  (rec__discr__with_default__c1 = to_rep(((a).us_split_discrs1).rec__discr__with_default__c))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -216,9 +216,6 @@ type t10b__ref = { t10b__content : us_rep
 
 function t10b__ref_t10b__content__projection(a: t10b__ref) : us_rep =
   (a).t10b__content
-
-predicate in_range2(rec__discr__with_default__c1: int, a: us_rep) =
-  (rec__discr__with_default__c1 = to_rep(((a).us_split_discrs1).rec__discr__with_default__c))
 
 logic value__size2 : int
 
@@ -260,14 +257,12 @@ function td2S__ref_td2S__content__projection(a: td2S__ref) : us_rep =
 predicate dynamic_invariant1(temp___expr_204: us_rep,
   temp___is_init_200: bool, temp___skip_constant_201: bool,
   temp___do_toplevel_202: bool, temp___do_typ_inv_203: bool) =
-  ((not (temp___skip_constant_201 = true)) -> in_range2(c, temp___expr_204))
+  ((not (temp___skip_constant_201 = true)) -> in_range1(c,
+  (temp___expr_204).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_206: us_rep,
   temp___skip_top_level_207: bool) =
   (to_rep(((temp___expr_206).us_split_discrs1).rec__discr__with_default__c) = c)
-
-predicate in_range3(rec__discr__with_default__c1: int, a: us_rep) =
-  (rec__discr__with_default__c1 = to_rep(((a).us_split_discrs1).rec__discr__with_default__c))
 
 logic value__size3 : int
 

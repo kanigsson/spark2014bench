@@ -399,6 +399,9 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range4(rec__stacks__stack__max1: int, a: us_split_discrs) =
+  (rec__stacks__stack__max1 = to_rep1((a).rec__stacks__stack__max))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -556,9 +559,6 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   ((b).us_split_fields3).rec__stacks__stack__data1) = true))) then true else false)
 
 logic us_tag1 : int
-
-predicate in_range4(rec__stacks__stack__max1: int, a: us_rep) =
-  (rec__stacks__stack__max1 = to_rep1(((a).us_split_discrs1).rec__stacks__stack__max))
 
 logic value__size2 : int
 
@@ -751,7 +751,7 @@ predicate dynamic_invariant5(temp___expr_272: us_rep1,
   temp___do_toplevel_270: bool, temp___do_typ_inv_271: bool) =
   (((not (temp___skip_constant_269 = true)) ->
   in_range4(to_rep1(((s).us_split_discrs1).rec__stacks__stack__max),
-  to_base(temp___expr_272))) and (dynamic_property(1,
+  (to_base(temp___expr_272)).us_split_discrs1)) and (dynamic_property(1,
   to_rep1(((s).us_split_discrs1).rec__stacks__stack__max),
   first1(((temp___expr_272).us_split_fields3).rec__stacks__stack__data1),
   last1(((temp___expr_272).us_split_fields3).rec__stacks__stack__data1)) and

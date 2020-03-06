@@ -160,13 +160,13 @@ logic dummy2 : element_type
 type element_type__ref = { element_type__content : element_type
 }
 
-function element_type__ref_element_type__content__14__projection(a: element_type__ref) : element_type =
+function element_type__ref_element_type__content__10__projection(a: element_type__ref) : element_type =
   (a).element_type__content
 
-predicate dynamic_invariant(temp___expr_678: int, temp___is_init_674: bool,
-  temp___skip_constant_675: bool, temp___do_toplevel_676: bool,
-  temp___do_typ_inv_677: bool) = (((temp___is_init_674 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range2(temp___expr_678))
+predicate dynamic_invariant(temp___expr_593: int, temp___is_init_589: bool,
+  temp___skip_constant_590: bool, temp___do_toplevel_591: bool,
+  temp___do_typ_inv_592: bool) = (((temp___is_init_589 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range2(temp___expr_593))
 
 axiom get__post_axiom :
   (forall s:us_rep. (forall n:int [get(s, n)]. in_range2(get(s, n))))

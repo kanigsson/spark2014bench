@@ -113,40 +113,32 @@ logic y : int
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
 
-logic x1 : int
-
 logic attr__ATTRIBUTE_ADDRESS2 : int
-
-logic y1 : int
 
 logic attr__ATTRIBUTE_ADDRESS3 : int
 
-logic attr__ATTRIBUTE_ADDRESS4 : int
-
-logic attr__ATTRIBUTE_ADDRESS5 : int
-
-function to_rep(x2: integer) : int = integerqtint(x2)
+function to_rep(x1: integer) : int = integerqtint(x1)
 
 logic of_rep : int -> integer
 
 axiom inversion_axiom :
-  (forall x2:integer [to_rep(x2)]. (of_rep(to_rep(x2)) = x2))
+  (forall x1:integer [to_rep(x1)]. (of_rep(to_rep(x1)) = x1))
 
-axiom range_axiom : (forall x2:integer [to_rep(x2)]. in_range1(to_rep(x2)))
+axiom range_axiom : (forall x1:integer [to_rep(x1)]. in_range1(to_rep(x1)))
 
 axiom coerce_axiom :
-  (forall x2:int [to_rep(of_rep(x2))]. (in_range1(x2) ->
-  (to_rep(of_rep(x2)) = x2)))
+  (forall x1:int [to_rep(of_rep(x1))]. (in_range1(x1) ->
+  (to_rep(of_rep(x1)) = x1)))
 
 logic first : int
 
 logic last : int
 
-predicate dynamic_property(first_int: int, last_int: int, x2: int) =
-  ((first_int <= x2) and (x2 <= last_int))
+predicate dynamic_property(first_int: int, last_int: int, x1: int) =
+  ((first_int <= x1) and (x1 <= last_int))
 
-function bool_eq2(x2: int, y2: int) : bool =
-  (if (x2 = y2) then true else false)
+function bool_eq2(x1: int, y1: int) : bool =
+  (if (x1 = y1) then true else false)
 
 logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
 
@@ -163,21 +155,26 @@ type s__ref = { s__content : integer
 
 function s__ref_s__content__projection(a: s__ref) : integer = (a).s__content
 
+logic x1 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+logic y1 : int
+
+logic attr__ATTRIBUTE_ADDRESS5 : int
+
 predicate dynamic_invariant1(temp___expr_158: int, temp___is_init_154: bool,
   temp___skip_constant_155: bool, temp___do_toplevel_156: bool,
   temp___do_typ_inv_157: bool) = (((temp___is_init_154 = true) or
   (first <= last)) -> dynamic_property(first, last, temp___expr_158))
 
-axiom first__def_axiom : (first = x)
+axiom first__def_axiom : (first = x1)
 
-axiom last__def_axiom : (last = y)
+axiom last__def_axiom : (last = y1)
 
  (* File "p.adb", line 11, characters 0-0 *)
 goal defqtvc :
   (forall tmp_s:int. (dynamic_invariant(x, true, false, true, true) ->
-  (dynamic_invariant(y, true, false, true, true) -> (dynamic_invariant(x,
-  true, false, true, true) -> (dynamic_invariant(y, true, false, true,
-  true) -> (dynamic_invariant(x1, true, false, true, true) ->
-  (dynamic_invariant(y1, true, false, true, true) ->
-  (dynamic_invariant(tmp_s, false, false, true, true) ->
-  (forall tmp_s1:int. ((tmp_s1 = x1) -> in_range1((y1 - x1))))))))))))
+  (dynamic_invariant(y, true, false, true, true) -> (dynamic_invariant(tmp_s,
+  false, false, true, true) ->
+  (forall tmp_s1:int. ((tmp_s1 = x) -> in_range1((y - x))))))))

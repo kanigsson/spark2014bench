@@ -189,6 +189,10 @@ function bool_eq3(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__amortized_queue__my_vectors__vector,
   ((b).us_split_fields1).rec__amortized_queue__my_vectors__vector) = true)) then true else false)
 
+predicate in_range3(rec__amortized_queue__my_vectors__vector__capacity1: int,
+  a: us_split_discrs) =
+  (rec__amortized_queue__my_vectors__vector__capacity1 = to_rep((a).rec__amortized_queue__my_vectors__vector__capacity))
+
 logic value__size : int
 
 logic object__size : int
@@ -312,7 +316,7 @@ axiom extended_indexqtaxiom :
 axiom extended_indexqtaxiom1 :
   (forall i:extended_index. (extended_indexqtint(i) <= 1001))
 
-predicate in_range3(x: int) = ((0 <= x) and (x <= 1001))
+predicate in_range4(x: int) = ((0 <= x) and (x <= 1001))
 
 function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -335,7 +339,7 @@ function extended_index__ref_extended_index__content__projection(a: extended_ind
 predicate dynamic_invariant1(temp___expr_241: int, temp___is_init_237: bool,
   temp___skip_constant_238: bool, temp___do_toplevel_239: bool,
   temp___do_typ_inv_240: bool) = (((temp___is_init_237 = true) or
-  (0 <= 1001)) -> in_range3(temp___expr_241))
+  (0 <= 1001)) -> in_range4(temp___expr_241))
 
 logic first_index__function_guard : int, us_rep -> prop
 
@@ -348,7 +352,7 @@ axiom index_typeqtaxiom : (forall i:index_type. (1 <= index_typeqtint(i)))
 axiom index_typeqtaxiom1 :
   (forall i:index_type. (index_typeqtint(i) <= 1000))
 
-predicate in_range4(x: int) = ((1 <= x) and (x <= 1000))
+predicate in_range5(x: int) = ((1 <= x) and (x <= 1000))
 
 function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -371,7 +375,7 @@ function index_type__ref_index_type__content__projection(a: index_type__ref) : i
 predicate dynamic_invariant2(temp___expr_227: int, temp___is_init_223: bool,
   temp___skip_constant_224: bool, temp___do_toplevel_225: bool,
   temp___do_typ_inv_226: bool) = (((temp___is_init_223 = true) or
-  (1 <= 1000)) -> in_range4(temp___expr_227))
+  (1 <= 1000)) -> in_range5(temp___expr_227))
 
 logic get : us_rep1, int -> int
 
@@ -392,7 +396,7 @@ axiom element_typeqtaxiom :
 axiom element_typeqtaxiom1 :
   (forall i:element_type. (element_typeqtint(i) <= 2147483647))
 
-predicate in_range5(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range6(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -415,7 +419,7 @@ function element_type__ref_element_type__content__projection(a: element_type__re
 predicate dynamic_invariant3(temp___expr_234: int, temp___is_init_230: bool,
   temp___skip_constant_231: bool, temp___do_toplevel_232: bool,
   temp___do_typ_inv_233: bool) = (((temp___is_init_230 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range5(temp___expr_234))
+  ((- 2147483648) <= 2147483647)) -> in_range6(temp___expr_234))
 
 logic bool_eq8 : int, int -> bool
 
@@ -487,10 +491,6 @@ logic r21b : int
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
 
-predicate in_range6(rec__amortized_queue__my_vectors__vector__capacity1: int,
-  a: us_rep) =
-  (rec__amortized_queue__my_vectors__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -540,17 +540,17 @@ axiom user_eq__def_axiom1 :
   (forall a:us_rep. forall b:us_rep [user_eq7(a, b)]. (user_eq7(a,
   b) = oeq(a, b)))
 
-predicate dynamic_invariant4(temp___expr_506: us_rep,
-  temp___is_init_502: bool, temp___skip_constant_503: bool,
-  temp___do_toplevel_504: bool, temp___do_typ_inv_505: bool) =
-  ((not (temp___skip_constant_503 = true)) -> in_range6(r21b,
-  temp___expr_506))
+predicate dynamic_invariant4(temp___expr_507: us_rep,
+  temp___is_init_503: bool, temp___skip_constant_504: bool,
+  temp___do_toplevel_505: bool, temp___do_typ_inv_506: bool) =
+  ((not (temp___skip_constant_504 = true)) -> in_range3(r21b,
+  (temp___expr_507).us_split_discrs1))
 
-predicate default_initial_assumption(temp___expr_508: us_rep,
-  temp___skip_top_level_509: bool) =
-  ((to_rep(((temp___expr_508).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = r21b) and
-  ((not (temp___skip_top_level_509 = true)) ->
-  (is_empty(temp___expr_508) = true)))
+predicate default_initial_assumption(temp___expr_509: us_rep,
+  temp___skip_top_level_510: bool) =
+  ((to_rep(((temp___expr_509).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = r21b) and
+  ((not (temp___skip_top_level_510 = true)) ->
+  (is_empty(temp___expr_509) = true)))
 
 logic r23b : int
 
@@ -868,11 +868,11 @@ goal defqtvc :
   false, true, true) and
   (amortized_queue__Oconcat__2__L_3__R24b__assume = last(model(o3)))) ->
   ((amortized_queue__Oconcat__2__L_3__R24b__assume = r24b) ->
-  (dynamic_invariant1(r24b, true, false, true, true) -> (let temp___660 =
+  (dynamic_invariant1(r24b, true, false, true, true) -> (let temp___661 =
   r23b : int in
-  (forall idx:int. ((idx = temp___660) ->
-  ((andb((if (temp___660 <= idx) then true else false),
-  (if (idx <= r24b) then true else false)) = true) -> (in_range4(idx) ->
+  (forall idx:int. ((idx = temp___661) ->
+  ((andb((if (temp___661 <= idx) then true else false),
+  (if (idx <= r24b) then true else false)) = true) -> (in_range5(idx) ->
   (let o4 = right : us_rep in (let o5 = element(o4, idx) : int in
   ((dynamic_invariant3(o5, true, false, true, true) and (o5 = get(model(o4),
   idx))) -> (let o6 = result____split_discrs : us_split_discrs in (length({

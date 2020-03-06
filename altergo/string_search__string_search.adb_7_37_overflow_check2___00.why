@@ -464,6 +464,7 @@ predicate dynamic_invariant4(temp___expr_18: int, temp___is_init_14: bool,
  (* File "string_search.ads", line 23, characters 0-0 *)
 goal defqtvc : (dynamic_invariant2(needle, true, false, true, true) ->
   (dynamic_invariant2(haystack, true, false, true, true) ->
-  (((1 <= length(needle)) and (length(needle) <= length(haystack))) ->
-  (let o = length(needle) : int in (in_range1(o) -> (let o1 =
-  length(haystack) : int in (in_range1(o1) -> in_range1((o1 - o)))))))))
+  ((let temp___341 = length(needle) : int in ((1 <= temp___341) and
+  (temp___341 <= length(haystack)))) -> (let o = length(needle) : int in
+  (in_range1(o) -> (let o1 = length(haystack) : int in (in_range1(o1) ->
+  in_range1((o1 - o)))))))))

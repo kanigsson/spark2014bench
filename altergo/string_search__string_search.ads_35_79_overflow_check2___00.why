@@ -447,7 +447,8 @@ goal defqtvc :
   (forall string_search__brute_force_slice__result:int.
   (dynamic_invariant1(needle, true, false, true, true) ->
   (dynamic_invariant1(haystack, true, false, true, true) ->
-  (((1 <= length(needle)) and (length(needle) <= length(haystack))) ->
+  ((let temp___358 = length(needle) : int in ((1 <= temp___358) and
+  (temp___358 <= length(haystack)))) ->
   (forall string_search__brute_force_slice__result1:int.
   ((forall k:int. match_at__function_guard(match_at(needle, haystack, k),
    needle, haystack, k)) ->
@@ -463,11 +464,11 @@ goal defqtvc :
   (last1(needle) - 1) : int in (in_range1(o4) and (let o5 = (i + o4) : int in
   (in_range1(o5) and (((i <= o5) -> (((first1(haystack) <= i) and
   (i <= last1(haystack))) and ((first1(haystack) <= o5) and
-  (o5 <= last1(haystack))))) and (let temp___340 =
+  (o5 <= last1(haystack))))) and (let temp___349 =
   of_array(to_array(haystack), i, o5) : us_t in
   (exists spark__branch:bool. ((spark__branch = bool_eq4(to_array(needle),
-  first1(needle), last1(needle), to_array(temp___340), first1(temp___340),
-  last1(temp___340))) and
+  first1(needle), last1(needle), to_array(temp___349), first1(temp___349),
+  last1(temp___349))) and
   (if (spark__branch = true) then (string_search__brute_force_slice__result1 = i) else 
   (exists i1:int.
   ((forall k:int. (((1 <= k) and (k <= i1)) -> (not (match_at(needle,
@@ -480,10 +481,10 @@ goal defqtvc :
   (in_range1(o6) and (let o7 = (i2 + o6) : int in (in_range1(o7) and
   (((i2 <= o7) -> (((first1(haystack) <= i2) and (i2 <= last1(haystack))) and
   ((first1(haystack) <= o7) and (o7 <= last1(haystack))))) and
-  (let temp___3401 = of_array(to_array(haystack), i2, o7) : us_t in
+  (let temp___3491 = of_array(to_array(haystack), i2, o7) : us_t in
   (exists spark__branch1:bool. ((spark__branch1 = bool_eq4(to_array(needle),
-  first1(needle), last1(needle), to_array(temp___3401), first1(temp___3401),
-  last1(temp___3401))) and ((spark__branch1 = true) and
+  first1(needle), last1(needle), to_array(temp___3491), first1(temp___3491),
+  last1(temp___3491))) and ((spark__branch1 = true) and
   (string_search__brute_force_slice__result1 = i2)))))))))))))))))))))))))))))))))))) or
   (exists string_search__brute_force_slice__result2:int. ((let o =
   length(needle) : int in (in_range1(o) and (let o1 = length(haystack)
@@ -494,11 +495,11 @@ goal defqtvc :
   (last1(needle) - 1) : int in (in_range1(o4) and (let o5 = (i + o4) : int in
   (in_range1(o5) and (((i <= o5) -> (((first1(haystack) <= i) and
   (i <= last1(haystack))) and ((first1(haystack) <= o5) and
-  (o5 <= last1(haystack))))) and (let temp___340 =
+  (o5 <= last1(haystack))))) and (let temp___349 =
   of_array(to_array(haystack), i, o5) : us_t in
   (exists spark__branch:bool. ((spark__branch = bool_eq4(to_array(needle),
-  first1(needle), last1(needle), to_array(temp___340), first1(temp___340),
-  last1(temp___340))) and ((not (spark__branch = true)) and
+  first1(needle), last1(needle), to_array(temp___349), first1(temp___349),
+  last1(temp___349))) and ((not (spark__branch = true)) and
   (exists i1:int.
   ((forall k:int. (((1 <= k) and (k <= i1)) -> (not (match_at(needle,
    haystack, k) = true)))) and

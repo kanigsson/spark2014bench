@@ -446,10 +446,9 @@ axiom is_partition__def_axiom5 :
   (forall s:us_t.
   (forall p:us_t1 [is_partition(s, p)]. ((((length1(p) <  length(s)) and
   (ascending(p) = true)) and
-  (forall i:int. (((first3(p) <= i) and (i <= last3(p))) ->
-  ((first1(s) <= to_rep((to_array1(p)[i]))) and
-  (to_rep((to_array1(p)[i])) <= last1(s)))))) -> (is_partition(s,
-  p) = true))))
+  (forall i:int. (((first3(p) <= i) and (i <= last3(p))) -> (let temp___209 =
+  to_rep((to_array1(p)[i])) : int in ((first1(s) <= temp___209) and
+  (temp___209 <= last1(s))))))) -> (is_partition(s, p) = true))))
 
 logic a : us_t
 
@@ -499,9 +498,9 @@ goal defqtvc : (dynamic_invariant1(a, true, false, true, true) ->
   p), a, p) -> (((is_partition(a, p) = true) and ((first3(p) <= i) and
   (i <= last3(p)))) -> ((not (i = first3(p))) -> (((first3(p) <= i) and
   (i <= last3(p))) ->
-  (forall o:int. ((to_rep((to_array1(p)[i])) = o) -> (let temp___324 =
-  (i - 1) : int in (((first3(p) <= temp___324) and
-  (temp___324 <= last3(p))) ->
-  (forall temp___325:int.
-  ((to_rep((to_array1(p)[temp___324])) = temp___325) ->
-  ((temp___325 <= (o - 1)) -> (first1(a) <= temp___325)))))))))))))))
+  (forall o:int. ((to_rep((to_array1(p)[i])) = o) -> (let temp___328 =
+  (i - 1) : int in (((first3(p) <= temp___328) and
+  (temp___328 <= last3(p))) ->
+  (forall temp___329:int.
+  ((to_rep((to_array1(p)[temp___328])) = temp___329) ->
+  ((temp___329 <= (o - 1)) -> (first1(a) <= temp___329)))))))))))))))

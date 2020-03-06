@@ -414,11 +414,11 @@ logic user_eq5 : us_rep, us_rep -> bool
 
 logic dummy5 : us_rep
 
-type vector__ref = { vector__content : us_rep
+type tentry_tableS__ref = { tentry_tableS__content : us_rep
 }
 
-function vector__ref_vector__content__projection(a: vector__ref) : us_rep =
-  (a).vector__content
+function tentry_tableS__ref_tentry_tableS__content__projection(a: tentry_tableS__ref) : us_rep =
+  (a).tentry_tableS__content
 
 function to_rep3(x: capacity_range) : int = capacity_rangeqtint(x)
 
@@ -435,8 +435,8 @@ axiom coerce_axiom3 :
   (to_rep3(of_rep3(x)) = x)))
 
 predicate in_range5(rec__ada___names__data__entry_tables__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___names__data__entry_tables__vector__capacity1 = to_rep3(((a).us_split_discrs1).rec__ada___names__data__entry_tables__vector__capacity))
+  a: us_split_discrs) =
+  (rec__ada___names__data__entry_tables__vector__capacity1 = to_rep3((a).rec__ada___names__data__entry_tables__vector__capacity))
 
 logic value__size2 : int
 
@@ -469,11 +469,11 @@ logic user_eq6 : us_rep, us_rep -> bool
 
 logic dummy6 : us_rep
 
-type tentry_tableS__ref = { tentry_tableS__content : us_rep
+type vector__ref = { vector__content : us_rep
 }
 
-function tentry_tableS__ref_tentry_tableS__content__projection(a: tentry_tableS__ref) : us_rep =
-  (a).tentry_tableS__content
+function vector__ref_vector__content__projection(a: vector__ref) : us_rep =
+  (a).vector__content
 
 logic entry_table__split_discrs : us_split_discrs
 
@@ -487,7 +487,7 @@ predicate dynamic_invariant1(temp___expr_224: us_rep,
   temp___is_init_220: bool, temp___skip_constant_221: bool,
   temp___do_toplevel_222: bool, temp___do_typ_inv_223: bool) =
   ((not (temp___skip_constant_221 = true)) -> in_range5(256,
-  temp___expr_224))
+  (temp___expr_224).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_226: us_rep,
   temp___skip_top_level_227: bool) =
@@ -677,11 +677,11 @@ logic user_eq10 : us_rep2, us_rep2 -> bool
 
 logic dummy10 : us_rep2
 
-type vector__ref1 = { vector__content1 : us_rep2
+type tchar_tableS__ref = { tchar_tableS__content : us_rep2
 }
 
-function vector__ref_vector__content__2__projection(a: vector__ref1) : us_rep2 =
-  (a).vector__content1
+function tchar_tableS__ref_tchar_tableS__content__projection(a: tchar_tableS__ref) : us_rep2 =
+  (a).tchar_tableS__content
 
 function to_rep4(x: capacity_range1) : int = capacity_rangeqtint1(x)
 
@@ -698,8 +698,8 @@ axiom coerce_axiom4 :
   (to_rep4(of_rep4(x)) = x)))
 
 predicate in_range8(rec__ada___names__data__char_tables__vector__capacity1: int,
-  a: us_rep2) =
-  (rec__ada___names__data__char_tables__vector__capacity1 = to_rep4(((a).us_split_discrs3).rec__ada___names__data__char_tables__vector__capacity))
+  a: us_split_discrs2) =
+  (rec__ada___names__data__char_tables__vector__capacity1 = to_rep4((a).rec__ada___names__data__char_tables__vector__capacity))
 
 logic value__size5 : int
 
@@ -732,11 +732,11 @@ logic user_eq11 : us_rep2, us_rep2 -> bool
 
 logic dummy11 : us_rep2
 
-type tchar_tableS__ref = { tchar_tableS__content : us_rep2
+type vector__ref1 = { vector__content1 : us_rep2
 }
 
-function tchar_tableS__ref_tchar_tableS__content__projection(a: tchar_tableS__ref) : us_rep2 =
-  (a).tchar_tableS__content
+function vector__ref_vector__content__2__projection(a: vector__ref1) : us_rep2 =
+  (a).vector__content1
 
 logic char_table__split_discrs : us_split_discrs2
 
@@ -750,7 +750,7 @@ predicate dynamic_invariant3(temp___expr_297: us_rep2,
   temp___is_init_293: bool, temp___skip_constant_294: bool,
   temp___do_toplevel_295: bool, temp___do_typ_inv_296: bool) =
   ((not (temp___skip_constant_294 = true)) -> in_range8(1024,
-  temp___expr_297))
+  (temp___expr_297).us_split_discrs3))
 
 predicate default_initial_assumption1(temp___expr_299: us_rep2,
   temp___skip_top_level_300: bool) =

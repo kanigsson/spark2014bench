@@ -1145,6 +1145,9 @@ function bool_eq4(a: us_rep, b: us_rep) : bool =
   eq(to_rep1(((a).us_split_fields1).rec__types__r__y),
   to_rep1(((b).us_split_fields1).rec__types__r__y))))) then true else false)
 
+predicate in_range3(rec__types__r__i1: int, a: us_split_discrs) =
+  (rec__types__r__i1 = to_rep2((a).rec__types__r__i))
+
 logic value__size : int
 
 logic object__size : int
@@ -1213,9 +1216,6 @@ predicate default_initial_assumption(temp___expr_167: us_rep,
   temp___skip_top_level_168: bool) =
   (to_rep2(((temp___expr_167).us_split_discrs1).rec__types__r__i) = 0)
 
-predicate in_range3(rec__types__r__i1: int, a: us_rep) =
-  (rec__types__r__i1 = to_rep2(((a).us_split_discrs1).rec__types__r__i))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -1276,9 +1276,6 @@ type t1b__ref = { t1b__content : us_rep
 
 function t1b__ref_t1b__content__projection(a: t1b__ref) : us_rep =
   (a).t1b__content
-
-predicate in_range4(rec__types__r__i1: int, a: us_rep) =
-  (rec__types__r__i1 = to_rep2(((a).us_split_discrs1).rec__types__r__i))
 
 logic value__size2 : int
 

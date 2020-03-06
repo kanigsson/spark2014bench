@@ -878,6 +878,10 @@ function bool_eq7(a: us_rep, b: us_rep) : bool =
   (bool_eq6(((a).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits,
   ((b).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits) = true)) then true else false)
 
+predicate in_range3(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
+  a: us_split_discrs) =
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep((a).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
+
 logic value__size1 : int
 
 logic object__size1 : int

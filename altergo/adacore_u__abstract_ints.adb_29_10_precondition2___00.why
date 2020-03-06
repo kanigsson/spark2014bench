@@ -628,10 +628,9 @@ axiom small__def_axiom3 :
   (to_rep(((arg).us_split_fields3).rec__abstract_ints__int__value1) <= 100)))
 
 axiom small__def_axiom4 :
-  (forall arg:us_rep1 [small2(arg)].
-  (((1 <= to_rep(((arg).us_split_fields3).rec__abstract_ints__int__value1)) and
-  (to_rep(((arg).us_split_fields3).rec__abstract_ints__int__value1) <= 100)) ->
-  (small2(arg) = true)))
+  (forall arg:us_rep1 [small2(arg)]. ((let temp___216 =
+  to_rep(((arg).us_split_fields3).rec__abstract_ints__int__value1) : int in
+  ((1 <= temp___216) and (temp___216 <= 100))) -> (small2(arg) = true)))
 
  (* File "abstract_ints.ads", line 15, characters 0-0 *)
 goal defqtvc :

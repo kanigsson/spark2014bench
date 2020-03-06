@@ -2183,37 +2183,37 @@ goal defqtvc : (dynamic_invariant(i, true, false, true, true) ->
   (dynamic_invariant1(powers, true, false, true, true) ->
   (forall previous:int. ((previous = 64) -> (dynamic_invariant(previous,
   true, false, true, true) ->
-  ((forall temp___291:int. (((first1(powers) <= temp___291) and
-   (temp___291 <= last1(powers))) -> (let k =
-   to_rep((to_array(powers)[temp___291])) : int in (ule(rliteral26,
-   of_int((2 ** k))) and ule(of_int((2 ** k)), rliteral27))))) ->
-  (let temp___293 = first1(powers) : int in (let temp___294 = last1(powers)
+  ((forall temp___301:int. (((first1(powers) <= temp___301) and
+   (temp___301 <= last1(powers))) -> (let temp___303 =
+   of_int((2 ** to_rep((to_array(powers)[temp___301])))) : t in
+   (ule(rliteral26, temp___303) and ule(temp___303, rliteral27))))) ->
+  (let temp___304 = first1(powers) : int in (let temp___305 = last1(powers)
   : int in
-  (forall c23b:int. ((c23b = temp___293) ->
-  ((andb((if (temp___293 <= c23b) then true else false),
-  (if (c23b <= temp___294) then true else false)) = true) ->
+  (forall c23b:int. ((c23b = temp___304) ->
+  ((andb((if (temp___304 <= c23b) then true else false),
+  (if (c23b <= temp___305) then true else false)) = true) ->
   (forall previous1:int. forall c23b1:int.
-  (((forall temp___309:int. (((first1(powers) <= temp___309) and
-    (temp___309 <= last1(powers))) -> (let k =
-    to_rep((to_array(powers)[temp___309])) : int in (ule(rliteral26,
-    of_int((2 ** k))) and ule(of_int((2 ** k)), rliteral27))))) and
-  (ule(rliteral26, of_int((2 ** to_rep((to_array(powers)[c23b1]))))) and
-  ule(of_int((2 ** to_rep((to_array(powers)[c23b1])))), rliteral27))) ->
+  (((forall temp___324:int. (((first1(powers) <= temp___324) and
+    (temp___324 <= last1(powers))) -> (let temp___326 =
+    of_int((2 ** to_rep((to_array(powers)[temp___324])))) : t in
+    (ule(rliteral26, temp___326) and ule(temp___326, rliteral27))))) and
+  (let temp___316 = of_int((2 ** to_rep((to_array(powers)[c23b1])))) : t in
+  (ule(rliteral26, temp___316) and ule(temp___316, rliteral27)))) ->
   ((andb((if (dynamic_property1(first1(powers), last1(powers), c23b1) and
   dynamic_invariant(previous1, true, true, true,
   true)) then true else false), (if ((first1(powers) <= c23b1) and
   (c23b1 <= last1(powers))) then true else false)) = true) ->
   (((first1(powers) <= c23b1) and (c23b1 <= last1(powers))) ->
-  (forall temp___296:int.
-  ((to_rep((to_array(powers)[c23b1])) = temp___296) -> (let o =
-  (2 ** temp___296) : int in (in_range2(o) -> (uint_in_range(o) ->
+  (forall temp___307:int.
+  ((to_rep((to_array(powers)[c23b1])) = temp___307) -> (let o =
+  (2 ** temp___307) : int in (in_range2(o) -> (uint_in_range(o) ->
   ((not ugt(of_int(i), of_int(o))) -> (((first1(powers) <= c23b1) and
   (c23b1 <= last1(powers))) ->
   (forall o1:int. ((to_rep((to_array(powers)[c23b1])) = o1) ->
-  (forall previous2:int. ((previous2 = o1) -> ((not (c23b1 = temp___294)) ->
+  (forall previous2:int. ((previous2 = o1) -> ((not (c23b1 = temp___305)) ->
   (forall c23b2:int. ((c23b2 = (c23b1 + 1)) ->
-  ((forall temp___309:int. (((first1(powers) <= temp___309) and
-   (temp___309 <= last1(powers))) -> (let k =
-   to_rep((to_array(powers)[temp___309])) : int in (ule(rliteral26,
-   of_int((2 ** k))) and ule(of_int((2 ** k)), rliteral27))))) ->
+  ((forall temp___324:int. (((first1(powers) <= temp___324) and
+   (temp___324 <= last1(powers))) -> (let temp___326 =
+   of_int((2 ** to_rep((to_array(powers)[temp___324])))) : t in
+   (ule(rliteral26, temp___326) and ule(temp___326, rliteral27))))) ->
   ule(rliteral26, of_int((2 ** to_rep((to_array(powers)[c23b2]))))))))))))))))))))))))))))))))))))

@@ -217,14 +217,15 @@ logic user_eq1 : us_rep, us_rep -> bool
 
 logic dummy1 : us_rep
 
-type rec____ref = { rec____content : us_rep
+type constr_rec__ref = { constr_rec__content : us_rep
 }
 
-function rec____ref_rec____content__projection(a: rec____ref) : us_rep =
-  (a).rec____content
+function constr_rec__ref_constr_rec__content__projection(a: constr_rec__ref) : us_rep =
+  (a).constr_rec__content
 
-predicate in_range2(rec__formals_rec_split__rec__d1: bool, a: us_rep) =
-  (rec__formals_rec_split__rec__d1 = ((a).us_split_discrs1).rec__formals_rec_split__rec__d)
+predicate in_range2(rec__formals_rec_split__rec__d1: bool,
+  a: us_split_discrs) =
+  (rec__formals_rec_split__rec__d1 = (a).rec__formals_rec_split__rec__d)
 
 logic value__size1 : int
 
@@ -272,25 +273,23 @@ logic user_eq2 : us_rep, us_rep -> bool
 
 logic dummy2 : us_rep
 
-type constr_rec__ref = { constr_rec__content : us_rep
+type rec____ref = { rec____content : us_rep
 }
 
-function constr_rec__ref_constr_rec__content__projection(a: constr_rec__ref) : us_rep =
-  (a).constr_rec__content
+function rec____ref_rec____content__projection(a: rec____ref) : us_rep =
+  (a).rec____content
 
 predicate dynamic_invariant(temp___expr_164: us_rep,
   temp___is_init_160: bool, temp___skip_constant_161: bool,
   temp___do_toplevel_162: bool, temp___do_typ_inv_163: bool) =
-  ((not (temp___skip_constant_161 = true)) -> in_range2(x, temp___expr_164))
+  ((not (temp___skip_constant_161 = true)) -> in_range2(x,
+  (temp___expr_164).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_166: us_rep,
   temp___skip_top_level_167: bool) =
   ((((temp___expr_166).us_split_discrs1).rec__formals_rec_split__rec__d = x) and
   (formals_rec_split__rec__f__pred(temp___expr_166) ->
   (to_rep(((temp___expr_166).us_split_fields1).rec__formals_rec_split__rec__f) = 1)))
-
-predicate in_range3(rec__formals_rec_split__rec__d1: bool, a: us_rep) =
-  (rec__formals_rec_split__rec__d1 = ((a).us_split_discrs1).rec__formals_rec_split__rec__d)
 
 logic value__size2 : int
 
@@ -347,7 +346,8 @@ function constr_rec_2__ref_constr_rec_2__content__projection(a: constr_rec_2__re
 predicate dynamic_invariant1(temp___expr_173: us_rep,
   temp___is_init_169: bool, temp___skip_constant_170: bool,
   temp___do_toplevel_171: bool, temp___do_typ_inv_172: bool) =
-  ((not (temp___skip_constant_170 = true)) -> in_range3(y, temp___expr_173))
+  ((not (temp___skip_constant_170 = true)) -> in_range2(y,
+  (temp___expr_173).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_175: us_rep,
   temp___skip_top_level_176: bool) =
@@ -394,6 +394,6 @@ goal defqtvc :
   (forall spark__branch1:bool. ((spark__branch1 = b1) ->
   ((spark__branch1 = true) ->
   (forall spark__branch2:bool. ((spark__branch2 = b2) ->
-  ((spark__branch2 = true) -> in_range2(x, { us_split_discrs1 =
+  ((spark__branch2 = true) -> in_range2(x, ({ us_split_discrs1 =
   u__split_discrs; us_split_fields1 = { rec__formals_rec_split__rec__f =
-  u__split_fields1 } }))))))))))))))))
+  u__split_fields1 } }).us_split_discrs1))))))))))))))))

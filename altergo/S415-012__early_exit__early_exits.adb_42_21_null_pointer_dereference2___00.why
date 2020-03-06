@@ -449,11 +449,11 @@ goal defqtvc :
   (let early_exits__p2__B_4__y__assume =
   (x__split_fields).rec__early_exits__two_acc__f : us_rep in
   (forall usf:us_pledge_ty.
-  ((forall temp___borrowed_251:us_rep1.
-   (forall temp___brower_249:us_rep [us_pledge_get(usf, temp___borrowed_251,
-   temp___brower_249)]. ((us_pledge_get(usf, temp___borrowed_251,
-   temp___brower_249) = true) <->
-   (((temp___borrowed_251).us_split_fields1).rec__early_exits__two_acc__f = temp___brower_249)))) ->
+  ((forall temp___borrowed_252:us_rep1.
+   (forall temp___brower_250:us_rep [us_pledge_get(usf, temp___borrowed_252,
+   temp___brower_250)]. ((us_pledge_get(usf, temp___borrowed_252,
+   temp___brower_250) = true) <->
+   (((temp___borrowed_252).us_split_fields1).rec__early_exits__two_acc__f = temp___brower_250)))) ->
   (forall early_exits__p2__B_4__y__pledge:us_pledge_ty.
   ((early_exits__p2__B_4__y__pledge = usf) ->
   (forall y__pointer_value:integer.

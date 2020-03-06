@@ -127,6 +127,10 @@ function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
 function bool_eq2(a: us_rep, b: us_rep) : bool =
   (if (to_rep(((a).us_split_discrs1).rec__main__node_variant_type__m_variant) = to_rep(((b).us_split_discrs1).rec__main__node_variant_type__m_variant)) then true else false)
 
+predicate in_range2(rec__main__node_variant_type__m_variant1: int,
+  a: us_split_discrs) =
+  (rec__main__node_variant_type__m_variant1 = to_rep((a).rec__main__node_variant_type__m_variant))
+
 logic value__size : int
 
 logic object__size : int
@@ -232,10 +236,6 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate default_initial_assumption(temp___expr_197: us_rep1,
   temp___skip_top_level_198: bool) =
   (to_rep(((((temp___expr_197).us_split_fields1).rec__main__node_type__variant_node).us_split_discrs1).rec__main__node_variant_type__m_variant) = 0)
-
-predicate in_range2(rec__main__node_variant_type__m_variant1: int,
-  a: us_rep) =
-  (rec__main__node_variant_type__m_variant1 = to_rep(((a).us_split_discrs1).rec__main__node_variant_type__m_variant))
 
 logic value__size2 : int
 

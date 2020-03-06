@@ -121,10 +121,11 @@ type int200__ref = { int200__content : int200
 function int200__ref_int200__content__projection(a: int200__ref) : int200 =
   (a).int200__content
 
-predicate dynamic_invariant1(temp___expr_995: int, temp___is_init_991: bool,
-  temp___skip_constant_992: bool, temp___do_toplevel_993: bool,
-  temp___do_typ_inv_994: bool) = (((temp___is_init_991 = true) or
-  (0 <= 200)) -> in_range1(temp___expr_995))
+predicate dynamic_invariant1(temp___expr_1009: int,
+  temp___is_init_1005: bool, temp___skip_constant_1006: bool,
+  temp___do_toplevel_1007: bool, temp___do_typ_inv_1008: bool) =
+  (((temp___is_init_1005 = true) or (0 <= 200)) ->
+  in_range1(temp___expr_1009))
 
 axiom addthree__post_axiom :
   (forall a:int. forall b:int. forall c:int [addthree(a, b, c)].
@@ -176,10 +177,10 @@ type int100__ref = { int100__content : int100
 function int100__ref_int100__content__projection(a: int100__ref) : int100 =
   (a).int100__content
 
-predicate dynamic_invariant2(temp___expr_988: int, temp___is_init_984: bool,
-  temp___skip_constant_985: bool, temp___do_toplevel_986: bool,
-  temp___do_typ_inv_987: bool) = (((temp___is_init_984 = true) or
-  (0 <= 100)) -> in_range2(temp___expr_988))
+predicate dynamic_invariant2(temp___expr_1002: int, temp___is_init_998: bool,
+  temp___skip_constant_999: bool, temp___do_toplevel_1000: bool,
+  temp___do_typ_inv_1001: bool) = (((temp___is_init_998 = true) or
+  (0 <= 100)) -> in_range2(temp___expr_1002))
 
  (* File "inst_ext_ax.ads", line 24, characters 0-0 *)
 goal defqtvc : (dynamic_invariant2(i1, true, false, true, true) ->

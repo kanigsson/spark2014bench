@@ -364,6 +364,11 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__rec__sub_arr__content,
   ((b).us_split_fields1).rec__rec__sub_arr__content) = true)) then true else false)
 
+predicate in_range4(rec__rec__sub_arr__f1: int, rec__rec__sub_arr__l1: int,
+  a: us_split_discrs) =
+  ((rec__rec__sub_arr__f1 = to_rep((a).rec__rec__sub_arr__f)) and
+  (rec__rec__sub_arr__l1 = to_rep((a).rec__rec__sub_arr__l)))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -473,11 +478,6 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   (bool_eq5(((a).us_split_fields3).rec__rec__sub_arr__content1,
   ((b).us_split_fields3).rec__rec__sub_arr__content1) = true)) then true else false)
 
-predicate in_range4(rec__rec__sub_arr__f1: int, rec__rec__sub_arr__l1: int,
-  a: us_rep) =
-  ((rec__rec__sub_arr__f1 = to_rep(((a).us_split_discrs1).rec__rec__sub_arr__f)) and
-  (rec__rec__sub_arr__l1 = to_rep(((a).us_split_discrs1).rec__rec__sub_arr__l)))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -551,7 +551,7 @@ predicate dynamic_invariant1(temp___expr_261: us_rep1,
   temp___is_init_257: bool, temp___skip_constant_258: bool,
   temp___do_toplevel_259: bool, temp___do_typ_inv_260: bool) =
   (((not (temp___skip_constant_258 = true)) -> in_range4(f, l,
-  to_base(temp___expr_261))) and (dynamic_property(f, l,
+  (to_base(temp___expr_261)).us_split_discrs1)) and (dynamic_property(f, l,
   first1(((temp___expr_261).us_split_fields3).rec__rec__sub_arr__content1),
   last1(((temp___expr_261).us_split_fields3).rec__rec__sub_arr__content1)) and
   ((first1(((temp___expr_261).us_split_fields3).rec__rec__sub_arr__content1) = f) and

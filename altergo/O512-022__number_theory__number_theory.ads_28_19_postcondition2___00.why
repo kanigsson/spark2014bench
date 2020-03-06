@@ -1332,15 +1332,15 @@ goal defqtvc :
                                                         exists i1:int.
                                                         (((old__3 = fib((i1 - 1))) and
                                                         (oldest2 = fib((i1 - 2)))) and
-                                                        ((andb((if (((dynamic_invariant(temp1,
+                                                        ((andb((if (((dynamic_invariant(oldest2,
                                                         false, true, true,
                                                         true) and
+                                                        dynamic_invariant(temp1,
+                                                        false, true, true,
+                                                        true)) and
                                                         dynamic_property(2,
                                                         n, i1)) and
                                                         dynamic_invariant1(old__3,
-                                                        false, true, true,
-                                                        true)) and
-                                                        dynamic_invariant(oldest2,
                                                         false, true, true,
                                                         true)) then true else false),
                                                         (if ((2 <= i1) and

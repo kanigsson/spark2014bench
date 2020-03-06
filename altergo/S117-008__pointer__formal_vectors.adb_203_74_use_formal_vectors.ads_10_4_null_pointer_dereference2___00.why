@@ -1020,7 +1020,7 @@ goal defqtvc :
   : int in ((dynamic_invariant4(o, true, false, true, true) and
   (o = (0 + length2(m)))) ->
   (forall usf:int. ((andb((if (1 <= usf) then true else false),
-  (if (usf <= (i - 1)) then true else false)) = true) -> (let temp___422 =
+  (if (usf <= (i - 1)) then true else false)) = true) -> (let temp___415 =
   (((v).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value
-  : us_t in (((first1(temp___422) <= usf) and (usf <= last1(temp___422))) ->
-  rec__use_formal_vectors__my_vect__element_access__pointer_value__pred((to_array(temp___422)[usf]))))))))))))))))))))
+  : us_t in (((first1(temp___415) <= usf) and (usf <= last1(temp___415))) ->
+  rec__use_formal_vectors__my_vect__element_access__pointer_value__pred((to_array(temp___415)[usf]))))))))))))))))))))

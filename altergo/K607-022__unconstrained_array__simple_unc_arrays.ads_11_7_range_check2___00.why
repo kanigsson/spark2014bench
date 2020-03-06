@@ -376,6 +376,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__simple_unc_arrays__table__v,
   ((b).us_split_fields1).rec__simple_unc_arrays__table__v) = true)) then true else false)
 
+predicate in_range4(rec__simple_unc_arrays__table__last1: int,
+  a: us_split_discrs) =
+  (rec__simple_unc_arrays__table__last1 = to_rep((a).rec__simple_unc_arrays__table__last))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -464,7 +468,7 @@ axiom countqtaxiom : (forall i:count. (0 <= countqtint(i)))
 
 axiom countqtaxiom1 : (forall i:count. (countqtint(i) <= 2147483647))
 
-predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -487,7 +491,7 @@ function count__ref_count__content__projection(a: count__ref) : count =
 predicate dynamic_invariant3(temp___expr_315: int, temp___is_init_311: bool,
   temp___skip_constant_312: bool, temp___do_toplevel_313: bool,
   temp___do_typ_inv_314: bool) = (((temp___is_init_311 = true) or
-  (0 <= 2147483647)) -> in_range4(temp___expr_315))
+  (0 <= 2147483647)) -> in_range5(temp___expr_315))
 
 axiom line_length__post_axiom :
   (forall ada___ada__text_io__standard_in:us_private.

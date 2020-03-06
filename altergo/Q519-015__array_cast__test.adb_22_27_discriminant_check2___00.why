@@ -449,57 +449,6 @@ logic user_eq4 : us_rep, us_rep -> bool
 
 logic dummy4 : us_rep
 
-type rec____ref = { rec____content : us_rep
-}
-
-function rec____ref_rec____content__projection(a: rec____ref) : us_rep =
-  (a).rec____content
-
-predicate in_range3(rec__test__rec__x1: int, a: us_rep) =
-  (rec__test__rec__x1 = to_rep(((a).us_split_discrs1).rec__test__rec__x))
-
-logic value__size3 : int
-
-logic object__size3 : int
-
-logic alignment3 : int
-
-axiom value__size_axiom3 : (0 <= value__size3)
-
-axiom object__size_axiom3 : (0 <= object__size3)
-
-axiom alignment_axiom3 : (0 <= alignment3)
-
-logic test__rec__x__first__bit1 : int
-
-logic test__rec__x__last__bit1 : int
-
-logic test__rec__x__position1 : int
-
-axiom test__rec__x__first__bit_axiom1 : (0 <= test__rec__x__first__bit1)
-
-axiom test__rec__x__last__bit_axiom1 :
-  (test__rec__x__first__bit1 <  test__rec__x__last__bit1)
-
-axiom test__rec__x__position_axiom1 : (0 <= test__rec__x__position1)
-
-logic test__rec__y__first__bit1 : int
-
-logic test__rec__y__last__bit1 : int
-
-logic test__rec__y__position1 : int
-
-axiom test__rec__y__first__bit_axiom1 : (0 <= test__rec__y__first__bit1)
-
-axiom test__rec__y__last__bit_axiom1 :
-  (test__rec__y__first__bit1 <  test__rec__y__last__bit1)
-
-axiom test__rec__y__position_axiom1 : (0 <= test__rec__y__position1)
-
-logic user_eq5 : us_rep, us_rep -> bool
-
-logic dummy5 : us_rep
-
 type rec1__ref = { rec1__content : us_rep
 }
 
@@ -561,50 +510,47 @@ axiom bool_eq_rev15 :
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
 
-predicate in_range4(rec__test__rec__x1: int, a: us_rep) =
-  (rec__test__rec__x1 = to_rep(((a).us_split_discrs1).rec__test__rec__x))
+logic value__size3 : int
 
-logic value__size4 : int
+logic object__size3 : int
 
-logic object__size4 : int
+logic alignment3 : int
 
-logic alignment4 : int
+axiom value__size_axiom3 : (0 <= value__size3)
 
-axiom value__size_axiom4 : (0 <= value__size4)
+axiom object__size_axiom3 : (0 <= object__size3)
 
-axiom object__size_axiom4 : (0 <= object__size4)
+axiom alignment_axiom3 : (0 <= alignment3)
 
-axiom alignment_axiom4 : (0 <= alignment4)
+logic test__rec__x__first__bit1 : int
 
-logic test__rec__x__first__bit2 : int
+logic test__rec__x__last__bit1 : int
 
-logic test__rec__x__last__bit2 : int
+logic test__rec__x__position1 : int
 
-logic test__rec__x__position2 : int
+axiom test__rec__x__first__bit_axiom1 : (0 <= test__rec__x__first__bit1)
 
-axiom test__rec__x__first__bit_axiom2 : (0 <= test__rec__x__first__bit2)
+axiom test__rec__x__last__bit_axiom1 :
+  (test__rec__x__first__bit1 <  test__rec__x__last__bit1)
 
-axiom test__rec__x__last__bit_axiom2 :
-  (test__rec__x__first__bit2 <  test__rec__x__last__bit2)
+axiom test__rec__x__position_axiom1 : (0 <= test__rec__x__position1)
 
-axiom test__rec__x__position_axiom2 : (0 <= test__rec__x__position2)
+logic test__rec__y__first__bit1 : int
 
-logic test__rec__y__first__bit2 : int
+logic test__rec__y__last__bit1 : int
 
-logic test__rec__y__last__bit2 : int
+logic test__rec__y__position1 : int
 
-logic test__rec__y__position2 : int
+axiom test__rec__y__first__bit_axiom1 : (0 <= test__rec__y__first__bit1)
 
-axiom test__rec__y__first__bit_axiom2 : (0 <= test__rec__y__first__bit2)
+axiom test__rec__y__last__bit_axiom1 :
+  (test__rec__y__first__bit1 <  test__rec__y__last__bit1)
 
-axiom test__rec__y__last__bit_axiom2 :
-  (test__rec__y__first__bit2 <  test__rec__y__last__bit2)
+axiom test__rec__y__position_axiom1 : (0 <= test__rec__y__position1)
 
-axiom test__rec__y__position_axiom2 : (0 <= test__rec__y__position2)
+logic user_eq5 : us_rep, us_rep -> bool
 
-logic user_eq6 : us_rep, us_rep -> bool
-
-logic dummy6 : us_rep
+logic dummy5 : us_rep
 
 type rec2__ref = { rec2__content : us_rep
 }
@@ -732,7 +678,7 @@ axiom integer_subtypeqtaxiom :
 axiom integer_subtypeqtaxiom1 :
   (forall i:integer_subtype. (integer_subtypeqtint(i) <= 2147483647))
 
-predicate in_range5(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range3(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -742,9 +688,9 @@ logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
 
 logic attr__ATTRIBUTE_VALUE3 : us_image -> int
 
-logic user_eq7 : integer_subtype, integer_subtype -> bool
+logic user_eq6 : integer_subtype, integer_subtype -> bool
 
-logic dummy7 : integer_subtype
+logic dummy6 : integer_subtype
 
 type integer_subtype__ref = { integer_subtype__content : integer_subtype
 }
@@ -760,10 +706,10 @@ axiom inversion_axiom2 :
   (forall x:integer_subtype [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
 
 axiom range_axiom2 :
-  (forall x:integer_subtype [to_rep2(x)]. in_range5(to_rep2(x)))
+  (forall x:integer_subtype [to_rep2(x)]. in_range3(to_rep2(x)))
 
 axiom coerce_axiom2 :
-  (forall x:int [to_rep2(of_rep2(x))]. (in_range5(x) ->
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range3(x) ->
   (to_rep2(of_rep2(x)) = x)))
 
 type map__ref6 = { map__content6 : (int,integer_subtype) farray
@@ -839,6 +785,57 @@ axiom cast__post_axiom :
   (forall k:int. (((0 <= k) and (k <= 2)) ->
   (to_rep2((result[k])) = to_rep((input_array[k]))))))))
 
+predicate in_range4(rec__test__rec__x1: int, a: us_split_discrs) =
+  (rec__test__rec__x1 = to_rep((a).rec__test__rec__x))
+
+logic value__size4 : int
+
+logic object__size4 : int
+
+logic alignment4 : int
+
+axiom value__size_axiom4 : (0 <= value__size4)
+
+axiom object__size_axiom4 : (0 <= object__size4)
+
+axiom alignment_axiom4 : (0 <= alignment4)
+
+logic test__rec__x__first__bit2 : int
+
+logic test__rec__x__last__bit2 : int
+
+logic test__rec__x__position2 : int
+
+axiom test__rec__x__first__bit_axiom2 : (0 <= test__rec__x__first__bit2)
+
+axiom test__rec__x__last__bit_axiom2 :
+  (test__rec__x__first__bit2 <  test__rec__x__last__bit2)
+
+axiom test__rec__x__position_axiom2 : (0 <= test__rec__x__position2)
+
+logic test__rec__y__first__bit2 : int
+
+logic test__rec__y__last__bit2 : int
+
+logic test__rec__y__position2 : int
+
+axiom test__rec__y__first__bit_axiom2 : (0 <= test__rec__y__first__bit2)
+
+axiom test__rec__y__last__bit_axiom2 :
+  (test__rec__y__first__bit2 <  test__rec__y__last__bit2)
+
+axiom test__rec__y__position_axiom2 : (0 <= test__rec__y__position2)
+
+logic user_eq7 : us_rep, us_rep -> bool
+
+logic dummy7 : us_rep
+
+type rec____ref = { rec____content : us_rep
+}
+
+function rec____ref_rec____content__projection(a: rec____ref) : us_rep =
+  (a).rec____content
+
 type tarr3D1
 
 logic tarr3D1qtint : tarr3D1 -> int
@@ -847,7 +844,7 @@ axiom tarr3D1qtaxiom : (forall i:tarr3D1. (1 <= tarr3D1qtint(i)))
 
 axiom tarr3D1qtaxiom1 : (forall i:tarr3D1. (tarr3D1qtint(i) <= 3))
 
-predicate in_range6(x: int) = ((1 <= x) and (x <= 3))
+predicate in_range5(x: int) = ((1 <= x) and (x <= 3))
 
 function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -871,7 +868,7 @@ predicate dynamic_invariant(temp___expr_265: (int,us_rep) farray,
   temp___is_init_261: bool, temp___skip_constant_262: bool,
   temp___do_toplevel_263: bool, temp___do_typ_inv_264: bool) =
   (forall temp___266:int. (((1 <= temp___266) and (temp___266 <= 3)) ->
-  in_range3(10, (temp___expr_265[temp___266]))))
+  in_range4(10, ((temp___expr_265[temp___266])).us_split_discrs1)))
 
 predicate default_initial_assumption(temp___expr_268: (int,us_rep) farray,
   temp___skip_top_level_269: bool) =
@@ -886,7 +883,7 @@ axiom tarr4D1qtaxiom : (forall i:tarr4D1. (1 <= tarr4D1qtint(i)))
 
 axiom tarr4D1qtaxiom1 : (forall i:tarr4D1. (tarr4D1qtint(i) <= 3))
 
-predicate in_range7(x: int) = ((1 <= x) and (x <= 3))
+predicate in_range6(x: int) = ((1 <= x) and (x <= 3))
 
 function bool_eq13(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -910,15 +907,12 @@ predicate dynamic_invariant1(temp___expr_278: (int,us_rep) farray,
   temp___is_init_274: bool, temp___skip_constant_275: bool,
   temp___do_toplevel_276: bool, temp___do_typ_inv_277: bool) =
   (forall temp___279:int. (((1 <= temp___279) and (temp___279 <= 3)) ->
-  in_range4(10, (temp___expr_278[temp___279]))))
+  in_range4(10, ((temp___expr_278[temp___279])).us_split_discrs1)))
 
 predicate default_initial_assumption1(temp___expr_281: (int,us_rep) farray,
   temp___skip_top_level_282: bool) =
   (forall temp___283:int. (((1 <= temp___283) and (temp___283 <= 3)) ->
   (to_rep((((temp___expr_281[temp___283])).us_split_discrs1).rec__test__rec__x) = 10)))
-
-predicate in_range8(rec__test__rec__x1: int, a: us_rep) =
-  (rec__test__rec__x1 = to_rep(((a).us_split_discrs1).rec__test__rec__x))
 
 logic value__size5 : int
 
@@ -984,7 +978,7 @@ logic convert1 : (int,us_rep) farray -> (int,us_rep) farray
 
 axiom convert__def1 :
   (forall a:(int,us_rep) farray.
-  (forall temp___334:int. ((a[temp___334]) = (convert1(a)[temp___334]))))
+  (forall temp___335:int. ((a[temp___335]) = (convert1(a)[temp___335]))))
 
 logic test__test_array__aggregate_def : int, int, int -> (int,integer) farray
 
@@ -992,8 +986,8 @@ logic convert2 : (int,integer) farray -> (int,integer_subtype) farray
 
 axiom convert__def2 :
   (forall a:(int,integer) farray.
-  (forall temp___345:int.
-  (to_rep((a[temp___345])) = to_rep2((convert2(a)[temp___345])))))
+  (forall temp___346:int.
+  (to_rep((a[temp___346])) = to_rep2((convert2(a)[temp___346])))))
 
 predicate dynamic_invariant2(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
@@ -1008,7 +1002,8 @@ predicate dynamic_invariant3(temp___expr_39: int, temp___is_init_35: bool,
 predicate dynamic_invariant4(temp___expr_245: us_rep,
   temp___is_init_241: bool, temp___skip_constant_242: bool,
   temp___do_toplevel_243: bool, temp___do_typ_inv_244: bool) =
-  ((not (temp___skip_constant_242 = true)) -> in_range3(10, temp___expr_245))
+  ((not (temp___skip_constant_242 = true)) -> in_range4(10,
+  (temp___expr_245).us_split_discrs1))
 
 predicate default_initial_assumption2(temp___expr_247: us_rep,
   temp___skip_top_level_248: bool) =
@@ -1017,7 +1012,8 @@ predicate default_initial_assumption2(temp___expr_247: us_rep,
 predicate dynamic_invariant5(temp___expr_255: us_rep,
   temp___is_init_251: bool, temp___skip_constant_252: bool,
   temp___do_toplevel_253: bool, temp___do_typ_inv_254: bool) =
-  ((not (temp___skip_constant_252 = true)) -> in_range4(10, temp___expr_255))
+  ((not (temp___skip_constant_252 = true)) -> in_range4(10,
+  (temp___expr_255).us_split_discrs1))
 
 predicate default_initial_assumption3(temp___expr_257: us_rep,
   temp___skip_top_level_258: bool) =
@@ -1057,33 +1053,33 @@ logic rliteral3 : integer
 axiom rliteral_axiom3 : (integerqtint(rliteral3) = 3)
 
 axiom def_axiom3 :
-  (forall temp___337:int. forall temp___338:int. forall temp___339:int.
-  (((dynamic_invariant2(temp___337, true, true, true, true) and
-  dynamic_invariant2(temp___338, true, true, true, true)) and
-  dynamic_invariant2(temp___339, true, true, true, true)) ->
-  ((test__test_array__aggregate_def(temp___337, temp___338,
-  temp___339)[0]) = rliteral1)))
+  (forall temp___338:int. forall temp___339:int. forall temp___340:int.
+  (((dynamic_invariant2(temp___338, true, true, true, true) and
+  dynamic_invariant2(temp___339, true, true, true, true)) and
+  dynamic_invariant2(temp___340, true, true, true, true)) ->
+  ((test__test_array__aggregate_def(temp___338, temp___339,
+  temp___340)[0]) = rliteral1)))
 
 axiom def_axiom4 :
-  (forall temp___337:int. forall temp___338:int. forall temp___339:int.
-  (((dynamic_invariant2(temp___337, true, true, true, true) and
-  dynamic_invariant2(temp___338, true, true, true, true)) and
-  dynamic_invariant2(temp___339, true, true, true, true)) ->
-  ((test__test_array__aggregate_def(temp___337, temp___338,
-  temp___339)[1]) = rliteral2)))
+  (forall temp___338:int. forall temp___339:int. forall temp___340:int.
+  (((dynamic_invariant2(temp___338, true, true, true, true) and
+  dynamic_invariant2(temp___339, true, true, true, true)) and
+  dynamic_invariant2(temp___340, true, true, true, true)) ->
+  ((test__test_array__aggregate_def(temp___338, temp___339,
+  temp___340)[1]) = rliteral2)))
 
 axiom def_axiom5 :
-  (forall temp___337:int. forall temp___338:int. forall temp___339:int.
-  (((dynamic_invariant2(temp___337, true, true, true, true) and
-  dynamic_invariant2(temp___338, true, true, true, true)) and
-  dynamic_invariant2(temp___339, true, true, true, true)) ->
-  ((test__test_array__aggregate_def(temp___337, temp___338,
-  temp___339)[2]) = rliteral3)))
+  (forall temp___338:int. forall temp___339:int. forall temp___340:int.
+  (((dynamic_invariant2(temp___338, true, true, true, true) and
+  dynamic_invariant2(temp___339, true, true, true, true)) and
+  dynamic_invariant2(temp___340, true, true, true, true)) ->
+  ((test__test_array__aggregate_def(temp___338, temp___339,
+  temp___340)[2]) = rliteral3)))
 
 predicate dynamic_invariant6(temp___expr_301: int, temp___is_init_297: bool,
   temp___skip_constant_298: bool, temp___do_toplevel_299: bool,
   temp___do_typ_inv_300: bool) = (((temp___is_init_297 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range5(temp___expr_301))
+  ((- 2147483648) <= 2147483647)) -> in_range3(temp___expr_301))
 
 logic rliteral4 : integer
 
@@ -1094,5 +1090,5 @@ goal defqtvc : (in_range1(10) -> (in_range1(10) ->
   (forall x:(int,(int,natural) farray) farray.
   ((x = test__x__aggregate_def(temp_____aggregate_def_325(1))) ->
   (forall y:(int,(int,natural) farray) farray. ((y = convert(x)) ->
-  in_range3(10, { us_split_discrs1 = { rec__test__rec__x = rliteral4 };
-  us_split_fields1 = { rec__test__rec__y = rliteral1 } })))))))
+  in_range4(10, ({ us_split_discrs1 = { rec__test__rec__x = rliteral4 };
+  us_split_fields1 = { rec__test__rec__y = rliteral1 } }).us_split_discrs1)))))))

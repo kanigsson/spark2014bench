@@ -3920,36 +3920,36 @@ goal defqtvc :
                                    (exists o2:int.
                                    ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = o2) and
                                    (exists o3:cell. ((to_rep(o3) = o2) and
-                                   (exists temp___850:int.
-                                   ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = temp___850) and
-                                   (((1 <= temp___850) and
-                                   (temp___850 <= 10)) and
+                                   (exists temp___859:int.
+                                   ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = temp___859) and
+                                   (((1 <= temp___859) and
+                                   (temp___859 <= 10)) and
                                    (exists o4:int.
                                    ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o4) and
-                                   (exists temp___851:int.
-                                   ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = temp___851) and
-                                   (((1 <= temp___851) and
-                                   (temp___851 <= 20)) and
+                                   (exists temp___860:int.
+                                   ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = temp___860) and
+                                   (((1 <= temp___860) and
+                                   (temp___860 <= 20)) and
                                    (exists cur_board2:(int,(int,cell) farray) farray.
-                                   ((cur_board2 = (cur_board[temp___851 <- ((cur_board[o4])[temp___850 <- o3])])) and
+                                   ((cur_board2 = (cur_board[temp___860 <- ((cur_board[o4])[temp___859 <- o3])])) and
                                    (exists o5:int.
                                    ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o5) and
                                    (exists o6:int.
                                    ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = o6) and
                                    (exists o7:cell. ((to_rep(o7) = o6) and
-                                   (exists temp___853:int.
-                                   ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = temp___853) and
-                                   (((1 <= temp___853) and
-                                   (temp___853 <= 10)) and
+                                   (exists temp___862:int.
+                                   ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = temp___862) and
+                                   (((1 <= temp___862) and
+                                   (temp___862 <= 10)) and
                                    (exists o8:int.
                                    ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
                                    (exists o9:int.
                                    ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o9) and
-                                   (let temp___854 = (o9 + 1) : int in
-                                   (((1 <= temp___854) and
-                                   (temp___854 <= 20)) and
+                                   (let temp___863 = (o9 + 1) : int in
+                                   (((1 <= temp___863) and
+                                   (temp___863 <= 20)) and
                                    (exists cur_board3:(int,(int,cell) farray) farray.
-                                   ((cur_board3 = (cur_board2[temp___854 <- ((cur_board2[(o8 + 1)])[temp___853 <- o7])])) and
+                                   ((cur_board3 = (cur_board2[temp___863 <- ((cur_board2[(o8 + 1)])[temp___862 <- o7])])) and
                                    (exists o10:int.
                                    ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o10) and
                                    (exists o11:int.
@@ -3957,17 +3957,17 @@ goal defqtvc :
                                    (exists o12:cell. ((to_rep(o12) = o11) and
                                    (exists o13:int.
                                    ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o13) and
-                                   (let temp___856 = (o13 + 1) : int in
-                                   (((1 <= temp___856) and
-                                   (temp___856 <= 10)) and
+                                   (let temp___865 = (o13 + 1) : int in
+                                   (((1 <= temp___865) and
+                                   (temp___865 <= 10)) and
                                    (exists o14:int.
                                    ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o14) and
-                                   (exists temp___857:int.
-                                   ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = temp___857) and
-                                   (((1 <= temp___857) and
-                                   (temp___857 <= 20)) and
+                                   (exists temp___866:int.
+                                   ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = temp___866) and
+                                   (((1 <= temp___866) and
+                                   (temp___866 <= 20)) and
                                    (exists cur_board4:(int,(int,cell) farray) farray.
-                                   ((cur_board4 = (cur_board3[temp___857 <- ((cur_board3[o14])[temp___856 <- o12])])) and
+                                   ((cur_board4 = (cur_board3[temp___866 <- ((cur_board3[o14])[temp___865 <- o12])])) and
                                    (exists o15:int.
                                    ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o15) and
                                    (exists o16:int.
@@ -3975,17 +3975,17 @@ goal defqtvc :
                                    (exists o17:cell. ((to_rep(o17) = o16) and
                                    (exists o18:int.
                                    ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o18) and
-                                   (let temp___859 = (o18 + 1) : int in
-                                   (((1 <= temp___859) and
-                                   (temp___859 <= 10)) and
+                                   (let temp___868 = (o18 + 1) : int in
+                                   (((1 <= temp___868) and
+                                   (temp___868 <= 10)) and
                                    (exists o19:int.
                                    ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o19) and
                                    (exists o20:int.
                                    ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o20) and
-                                   (let temp___860 = (o20 + 1) : int in
-                                   (((1 <= temp___860) and
-                                   (temp___860 <= 20)) and
-                                   (cur_board1 = (cur_board4[temp___860 <- ((cur_board4[(o19 + 1)])[temp___859 <- o17])])))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) else 
+                                   (let temp___869 = (o20 + 1) : int in
+                                   (((1 <= temp___869) and
+                                   (temp___869 <= 20)) and
+                                   (cur_board1 = (cur_board4[temp___869 <- ((cur_board4[(o19 + 1)])[temp___868 <- o17])])))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) else 
    (exists o1:int.
    ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = o1) and
    (exists spark__branch1:bool.
@@ -4014,17 +4014,17 @@ goal defqtvc :
                                       (exists o5:cell. ((to_rep(o5) = o4) and
                                       (exists o6:int.
                                       ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                      (let temp___870 = (o6 + x1) : int in
-                                      (((1 <= temp___870) and
-                                      (temp___870 <= 10)) and
+                                      (let temp___879 = (o6 + x1) : int in
+                                      (((1 <= temp___879) and
+                                      (temp___879 <= 10)) and
                                       (exists o7:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                       (exists o8:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                      (let temp___871 = (o8 + y) : int in
-                                      (((1 <= temp___871) and
-                                      (temp___871 <= 20)) and
-                                      (cur_board3 = (cur_board[temp___871 <- ((cur_board[(o7 + y)])[temp___870 <- o5])])))))))))))))))))) else (cur_board3 = cur_board))))) and
+                                      (let temp___880 = (o8 + y) : int in
+                                      (((1 <= temp___880) and
+                                      (temp___880 <= 20)) and
+                                      (cur_board3 = (cur_board[temp___880 <- ((cur_board[(o7 + y)])[temp___879 <- o5])])))))))))))))))))) else (cur_board3 = cur_board))))) and
     (exists x2:int. ((x2 = 1) and
     (exists spark__branch4:bool.
     exists cur_board4:(int,(int,cell) farray) farray.
@@ -4038,17 +4038,17 @@ goal defqtvc :
                                       (exists o5:cell. ((to_rep(o5) = o4) and
                                       (exists o6:int.
                                       ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                      (let temp___870 = (o6 + x2) : int in
-                                      (((1 <= temp___870) and
-                                      (temp___870 <= 10)) and
+                                      (let temp___879 = (o6 + x2) : int in
+                                      (((1 <= temp___879) and
+                                      (temp___879 <= 10)) and
                                       (exists o7:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                       (exists o8:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                      (let temp___871 = (o8 + y) : int in
-                                      (((1 <= temp___871) and
-                                      (temp___871 <= 20)) and
-                                      (cur_board4 = (cur_board3[temp___871 <- ((cur_board3[(o7 + y)])[temp___870 <- o5])])))))))))))))))))) else (cur_board4 = cur_board3))))) and
+                                      (let temp___880 = (o8 + y) : int in
+                                      (((1 <= temp___880) and
+                                      (temp___880 <= 20)) and
+                                      (cur_board4 = (cur_board3[temp___880 <- ((cur_board3[(o7 + y)])[temp___879 <- o5])])))))))))))))))))) else (cur_board4 = cur_board3))))) and
     (exists x3:int. ((x3 = 2) and
     (exists spark__branch5:bool.
     exists cur_board5:(int,(int,cell) farray) farray.
@@ -4062,17 +4062,17 @@ goal defqtvc :
                                       (exists o5:cell. ((to_rep(o5) = o4) and
                                       (exists o6:int.
                                       ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                      (let temp___870 = (o6 + x3) : int in
-                                      (((1 <= temp___870) and
-                                      (temp___870 <= 10)) and
+                                      (let temp___879 = (o6 + x3) : int in
+                                      (((1 <= temp___879) and
+                                      (temp___879 <= 10)) and
                                       (exists o7:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                       (exists o8:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                      (let temp___871 = (o8 + y) : int in
-                                      (((1 <= temp___871) and
-                                      (temp___871 <= 20)) and
-                                      (cur_board5 = (cur_board4[temp___871 <- ((cur_board4[(o7 + y)])[temp___870 <- o5])])))))))))))))))))) else (cur_board5 = cur_board4))))) and
+                                      (let temp___880 = (o8 + y) : int in
+                                      (((1 <= temp___880) and
+                                      (temp___880 <= 20)) and
+                                      (cur_board5 = (cur_board4[temp___880 <- ((cur_board4[(o7 + y)])[temp___879 <- o5])])))))))))))))))))) else (cur_board5 = cur_board4))))) and
     ((x = 3) and
     (exists o2:int.
     ((to_rep4((cur_piece__split_fields).rec__patris__piece__d) = o2) and
@@ -4084,17 +4084,17 @@ goal defqtvc :
                                      (exists o5:cell. ((to_rep(o5) = o4) and
                                      (exists o6:int.
                                      ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                     (let temp___870 = (o6 + x) : int in
-                                     (((1 <= temp___870) and
-                                     (temp___870 <= 10)) and
+                                     (let temp___879 = (o6 + x) : int in
+                                     (((1 <= temp___879) and
+                                     (temp___879 <= 10)) and
                                      (exists o7:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                      (exists o8:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                     (let temp___871 = (o8 + y) : int in
-                                     (((1 <= temp___871) and
-                                     (temp___871 <= 20)) and
-                                     (cur_board2 = (cur_board5[temp___871 <- ((cur_board5[(o7 + y)])[temp___870 <- o5])])))))))))))))))))) else (cur_board2 = cur_board5)))))))))))))))))) and
+                                     (let temp___880 = (o8 + y) : int in
+                                     (((1 <= temp___880) and
+                                     (temp___880 <= 20)) and
+                                     (cur_board2 = (cur_board5[temp___880 <- ((cur_board5[(o7 + y)])[temp___879 <- o5])])))))))))))))))))) else (cur_board2 = cur_board5)))))))))))))))))) and
    (exists y1:int. ((y1 = 1) and
    (exists spark__branch3:bool.
    exists cur_board3:(int,(int,cell) farray) farray. exists x1:int.
@@ -4111,17 +4111,17 @@ goal defqtvc :
                                       (exists o5:cell. ((to_rep(o5) = o4) and
                                       (exists o6:int.
                                       ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                      (let temp___870 = (o6 + x2) : int in
-                                      (((1 <= temp___870) and
-                                      (temp___870 <= 10)) and
+                                      (let temp___879 = (o6 + x2) : int in
+                                      (((1 <= temp___879) and
+                                      (temp___879 <= 10)) and
                                       (exists o7:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                       (exists o8:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                      (let temp___871 = (o8 + y1) : int in
-                                      (((1 <= temp___871) and
-                                      (temp___871 <= 20)) and
-                                      (cur_board4 = (cur_board2[temp___871 <- ((cur_board2[(o7 + y1)])[temp___870 <- o5])])))))))))))))))))) else (cur_board4 = cur_board2))))) and
+                                      (let temp___880 = (o8 + y1) : int in
+                                      (((1 <= temp___880) and
+                                      (temp___880 <= 20)) and
+                                      (cur_board4 = (cur_board2[temp___880 <- ((cur_board2[(o7 + y1)])[temp___879 <- o5])])))))))))))))))))) else (cur_board4 = cur_board2))))) and
     (exists x3:int. ((x3 = 1) and
     (exists spark__branch5:bool.
     exists cur_board5:(int,(int,cell) farray) farray.
@@ -4135,17 +4135,17 @@ goal defqtvc :
                                       (exists o5:cell. ((to_rep(o5) = o4) and
                                       (exists o6:int.
                                       ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                      (let temp___870 = (o6 + x3) : int in
-                                      (((1 <= temp___870) and
-                                      (temp___870 <= 10)) and
+                                      (let temp___879 = (o6 + x3) : int in
+                                      (((1 <= temp___879) and
+                                      (temp___879 <= 10)) and
                                       (exists o7:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                       (exists o8:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                      (let temp___871 = (o8 + y1) : int in
-                                      (((1 <= temp___871) and
-                                      (temp___871 <= 20)) and
-                                      (cur_board5 = (cur_board4[temp___871 <- ((cur_board4[(o7 + y1)])[temp___870 <- o5])])))))))))))))))))) else (cur_board5 = cur_board4))))) and
+                                      (let temp___880 = (o8 + y1) : int in
+                                      (((1 <= temp___880) and
+                                      (temp___880 <= 20)) and
+                                      (cur_board5 = (cur_board4[temp___880 <- ((cur_board4[(o7 + y1)])[temp___879 <- o5])])))))))))))))))))) else (cur_board5 = cur_board4))))) and
     (exists x4:int. ((x4 = 2) and
     (exists spark__branch6:bool.
     exists cur_board6:(int,(int,cell) farray) farray.
@@ -4159,17 +4159,17 @@ goal defqtvc :
                                       (exists o5:cell. ((to_rep(o5) = o4) and
                                       (exists o6:int.
                                       ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                      (let temp___870 = (o6 + x4) : int in
-                                      (((1 <= temp___870) and
-                                      (temp___870 <= 10)) and
+                                      (let temp___879 = (o6 + x4) : int in
+                                      (((1 <= temp___879) and
+                                      (temp___879 <= 10)) and
                                       (exists o7:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                       (exists o8:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                      (let temp___871 = (o8 + y1) : int in
-                                      (((1 <= temp___871) and
-                                      (temp___871 <= 20)) and
-                                      (cur_board6 = (cur_board5[temp___871 <- ((cur_board5[(o7 + y1)])[temp___870 <- o5])])))))))))))))))))) else (cur_board6 = cur_board5))))) and
+                                      (let temp___880 = (o8 + y1) : int in
+                                      (((1 <= temp___880) and
+                                      (temp___880 <= 20)) and
+                                      (cur_board6 = (cur_board5[temp___880 <- ((cur_board5[(o7 + y1)])[temp___879 <- o5])])))))))))))))))))) else (cur_board6 = cur_board5))))) and
     ((x1 = 3) and
     (exists o2:int.
     ((to_rep4((cur_piece__split_fields).rec__patris__piece__d) = o2) and
@@ -4181,17 +4181,17 @@ goal defqtvc :
                                      (exists o5:cell. ((to_rep(o5) = o4) and
                                      (exists o6:int.
                                      ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                     (let temp___870 = (o6 + x1) : int in
-                                     (((1 <= temp___870) and
-                                     (temp___870 <= 10)) and
+                                     (let temp___879 = (o6 + x1) : int in
+                                     (((1 <= temp___879) and
+                                     (temp___879 <= 10)) and
                                      (exists o7:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                      (exists o8:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                     (let temp___871 = (o8 + y1) : int in
-                                     (((1 <= temp___871) and
-                                     (temp___871 <= 20)) and
-                                     (cur_board3 = (cur_board6[temp___871 <- ((cur_board6[(o7 + y1)])[temp___870 <- o5])])))))))))))))))))) else (cur_board3 = cur_board6)))))))))))))))))) and
+                                     (let temp___880 = (o8 + y1) : int in
+                                     (((1 <= temp___880) and
+                                     (temp___880 <= 20)) and
+                                     (cur_board3 = (cur_board6[temp___880 <- ((cur_board6[(o7 + y1)])[temp___879 <- o5])])))))))))))))))))) else (cur_board3 = cur_board6)))))))))))))))))) and
    (exists y2:int. ((y2 = 2) and
    (exists spark__branch4:bool.
    exists cur_board4:(int,(int,cell) farray) farray. exists x2:int.
@@ -4208,17 +4208,17 @@ goal defqtvc :
                                       (exists o5:cell. ((to_rep(o5) = o4) and
                                       (exists o6:int.
                                       ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                      (let temp___870 = (o6 + x3) : int in
-                                      (((1 <= temp___870) and
-                                      (temp___870 <= 10)) and
+                                      (let temp___879 = (o6 + x3) : int in
+                                      (((1 <= temp___879) and
+                                      (temp___879 <= 10)) and
                                       (exists o7:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                       (exists o8:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                      (let temp___871 = (o8 + y2) : int in
-                                      (((1 <= temp___871) and
-                                      (temp___871 <= 20)) and
-                                      (cur_board5 = (cur_board3[temp___871 <- ((cur_board3[(o7 + y2)])[temp___870 <- o5])])))))))))))))))))) else (cur_board5 = cur_board3))))) and
+                                      (let temp___880 = (o8 + y2) : int in
+                                      (((1 <= temp___880) and
+                                      (temp___880 <= 20)) and
+                                      (cur_board5 = (cur_board3[temp___880 <- ((cur_board3[(o7 + y2)])[temp___879 <- o5])])))))))))))))))))) else (cur_board5 = cur_board3))))) and
     (exists x4:int. ((x4 = 1) and
     (exists spark__branch6:bool.
     exists cur_board6:(int,(int,cell) farray) farray.
@@ -4232,17 +4232,17 @@ goal defqtvc :
                                       (exists o5:cell. ((to_rep(o5) = o4) and
                                       (exists o6:int.
                                       ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                      (let temp___870 = (o6 + x4) : int in
-                                      (((1 <= temp___870) and
-                                      (temp___870 <= 10)) and
+                                      (let temp___879 = (o6 + x4) : int in
+                                      (((1 <= temp___879) and
+                                      (temp___879 <= 10)) and
                                       (exists o7:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                       (exists o8:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                      (let temp___871 = (o8 + y2) : int in
-                                      (((1 <= temp___871) and
-                                      (temp___871 <= 20)) and
-                                      (cur_board6 = (cur_board5[temp___871 <- ((cur_board5[(o7 + y2)])[temp___870 <- o5])])))))))))))))))))) else (cur_board6 = cur_board5))))) and
+                                      (let temp___880 = (o8 + y2) : int in
+                                      (((1 <= temp___880) and
+                                      (temp___880 <= 20)) and
+                                      (cur_board6 = (cur_board5[temp___880 <- ((cur_board5[(o7 + y2)])[temp___879 <- o5])])))))))))))))))))) else (cur_board6 = cur_board5))))) and
     (exists x5:int. ((x5 = 2) and
     (exists spark__branch7:bool.
     exists cur_board7:(int,(int,cell) farray) farray.
@@ -4256,17 +4256,17 @@ goal defqtvc :
                                       (exists o5:cell. ((to_rep(o5) = o4) and
                                       (exists o6:int.
                                       ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                      (let temp___870 = (o6 + x5) : int in
-                                      (((1 <= temp___870) and
-                                      (temp___870 <= 10)) and
+                                      (let temp___879 = (o6 + x5) : int in
+                                      (((1 <= temp___879) and
+                                      (temp___879 <= 10)) and
                                       (exists o7:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                       (exists o8:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                      (let temp___871 = (o8 + y2) : int in
-                                      (((1 <= temp___871) and
-                                      (temp___871 <= 20)) and
-                                      (cur_board7 = (cur_board6[temp___871 <- ((cur_board6[(o7 + y2)])[temp___870 <- o5])])))))))))))))))))) else (cur_board7 = cur_board6))))) and
+                                      (let temp___880 = (o8 + y2) : int in
+                                      (((1 <= temp___880) and
+                                      (temp___880 <= 20)) and
+                                      (cur_board7 = (cur_board6[temp___880 <- ((cur_board6[(o7 + y2)])[temp___879 <- o5])])))))))))))))))))) else (cur_board7 = cur_board6))))) and
     ((x2 = 3) and
     (exists o2:int.
     ((to_rep4((cur_piece__split_fields).rec__patris__piece__d) = o2) and
@@ -4278,17 +4278,17 @@ goal defqtvc :
                                      (exists o5:cell. ((to_rep(o5) = o4) and
                                      (exists o6:int.
                                      ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                     (let temp___870 = (o6 + x2) : int in
-                                     (((1 <= temp___870) and
-                                     (temp___870 <= 10)) and
+                                     (let temp___879 = (o6 + x2) : int in
+                                     (((1 <= temp___879) and
+                                     (temp___879 <= 10)) and
                                      (exists o7:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                      (exists o8:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                     (let temp___871 = (o8 + y2) : int in
-                                     (((1 <= temp___871) and
-                                     (temp___871 <= 20)) and
-                                     (cur_board4 = (cur_board7[temp___871 <- ((cur_board7[(o7 + y2)])[temp___870 <- o5])])))))))))))))))))) else (cur_board4 = cur_board7)))))))))))))))))) and
+                                     (let temp___880 = (o8 + y2) : int in
+                                     (((1 <= temp___880) and
+                                     (temp___880 <= 20)) and
+                                     (cur_board4 = (cur_board7[temp___880 <- ((cur_board7[(o7 + y2)])[temp___879 <- o5])])))))))))))))))))) else (cur_board4 = cur_board7)))))))))))))))))) and
    (exists y3:int. ((y3 = 3) and
    (exists x3:int. ((x3 = 0) and
    (exists spark__branch5:bool.
@@ -4303,17 +4303,17 @@ goal defqtvc :
                                      (exists o5:cell. ((to_rep(o5) = o4) and
                                      (exists o6:int.
                                      ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                     (let temp___870 = (o6 + x3) : int in
-                                     (((1 <= temp___870) and
-                                     (temp___870 <= 10)) and
+                                     (let temp___879 = (o6 + x3) : int in
+                                     (((1 <= temp___879) and
+                                     (temp___879 <= 10)) and
                                      (exists o7:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                      (exists o8:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                     (let temp___871 = (o8 + y3) : int in
-                                     (((1 <= temp___871) and
-                                     (temp___871 <= 20)) and
-                                     (cur_board5 = (cur_board4[temp___871 <- ((cur_board4[(o7 + y3)])[temp___870 <- o5])])))))))))))))))))) else (cur_board5 = cur_board4))))) and
+                                     (let temp___880 = (o8 + y3) : int in
+                                     (((1 <= temp___880) and
+                                     (temp___880 <= 20)) and
+                                     (cur_board5 = (cur_board4[temp___880 <- ((cur_board4[(o7 + y3)])[temp___879 <- o5])])))))))))))))))))) else (cur_board5 = cur_board4))))) and
    (exists x4:int. ((x4 = 1) and
    (exists spark__branch6:bool.
    exists cur_board6:(int,(int,cell) farray) farray.
@@ -4327,17 +4327,17 @@ goal defqtvc :
                                      (exists o5:cell. ((to_rep(o5) = o4) and
                                      (exists o6:int.
                                      ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                     (let temp___870 = (o6 + x4) : int in
-                                     (((1 <= temp___870) and
-                                     (temp___870 <= 10)) and
+                                     (let temp___879 = (o6 + x4) : int in
+                                     (((1 <= temp___879) and
+                                     (temp___879 <= 10)) and
                                      (exists o7:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                      (exists o8:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                     (let temp___871 = (o8 + y3) : int in
-                                     (((1 <= temp___871) and
-                                     (temp___871 <= 20)) and
-                                     (cur_board6 = (cur_board5[temp___871 <- ((cur_board5[(o7 + y3)])[temp___870 <- o5])])))))))))))))))))) else (cur_board6 = cur_board5))))) and
+                                     (let temp___880 = (o8 + y3) : int in
+                                     (((1 <= temp___880) and
+                                     (temp___880 <= 20)) and
+                                     (cur_board6 = (cur_board5[temp___880 <- ((cur_board5[(o7 + y3)])[temp___879 <- o5])])))))))))))))))))) else (cur_board6 = cur_board5))))) and
    (exists x5:int. ((x5 = 2) and
    (exists spark__branch7:bool.
    exists cur_board7:(int,(int,cell) farray) farray.
@@ -4351,17 +4351,17 @@ goal defqtvc :
                                      (exists o5:cell. ((to_rep(o5) = o4) and
                                      (exists o6:int.
                                      ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                     (let temp___870 = (o6 + x5) : int in
-                                     (((1 <= temp___870) and
-                                     (temp___870 <= 10)) and
+                                     (let temp___879 = (o6 + x5) : int in
+                                     (((1 <= temp___879) and
+                                     (temp___879 <= 10)) and
                                      (exists o7:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                      (exists o8:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                     (let temp___871 = (o8 + y3) : int in
-                                     (((1 <= temp___871) and
-                                     (temp___871 <= 20)) and
-                                     (cur_board7 = (cur_board6[temp___871 <- ((cur_board6[(o7 + y3)])[temp___870 <- o5])])))))))))))))))))) else (cur_board7 = cur_board6))))) and
+                                     (let temp___880 = (o8 + y3) : int in
+                                     (((1 <= temp___880) and
+                                     (temp___880 <= 20)) and
+                                     (cur_board7 = (cur_board6[temp___880 <- ((cur_board6[(o7 + y3)])[temp___879 <- o5])])))))))))))))))))) else (cur_board7 = cur_board6))))) and
    (exists x6:int. ((x6 = 3) and
    (exists o2:int.
    ((to_rep4((cur_piece__split_fields).rec__patris__piece__d) = o2) and
@@ -4374,17 +4374,17 @@ goal defqtvc :
                                     (exists o5:cell. ((to_rep(o5) = o4) and
                                     (exists o6:int.
                                     ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                    (let temp___870 = (o6 + x6) : int in
-                                    (((1 <= temp___870) and
-                                    (temp___870 <= 10)) and
+                                    (let temp___879 = (o6 + x6) : int in
+                                    (((1 <= temp___879) and
+                                    (temp___879 <= 10)) and
                                     (exists o7:int.
                                     ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                     (exists o8:int.
                                     ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                    (let temp___871 = (o8 + y3) : int in
-                                    (((1 <= temp___871) and
-                                    (temp___871 <= 20)) and
-                                    (cur_board1 = (cur_board7[temp___871 <- ((cur_board7[(o7 + y3)])[temp___870 <- o5])])))))))))))))))))) else (cur_board1 = cur_board7))))))))))))))))))))))))))))))))))) else (
+                                    (let temp___880 = (o8 + y3) : int in
+                                    (((1 <= temp___880) and
+                                    (temp___880 <= 20)) and
+                                    (cur_board1 = (cur_board7[temp___880 <- ((cur_board7[(o7 + y3)])[temp___879 <- o5])])))))))))))))))))) else (cur_board1 = cur_board7))))))))))))))))))))))))))))))))))) else (
    (forall yy:int. (((0 <= yy) and (yy <= 2)) ->
    (forall xx:int. (((0 <= xx) and (xx <= 2)) ->
    ((get(get1(possible_three_shapes,
@@ -4401,10 +4401,10 @@ goal defqtvc :
     exists cur_board3:(int,(int,cell) farray) farray.
     ((exists o2:int.
      ((to_rep4((cur_piece__split_fields).rec__patris__piece__d) = o2) and
-     (exists temp___891:int.
-     ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___891) and
-     (((3 <= temp___891) and (temp___891 <= 7)) and
-     ((spark__branch3 = get(get1(possible_three_shapes, temp___891, o2), y,
+     (exists temp___900:int.
+     ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___900) and
+     (((3 <= temp___900) and (temp___900 <= 7)) and
+     ((spark__branch3 = get(get1(possible_three_shapes, temp___900, o2), y,
      x1)) and
      (if (spark__branch3 = true) then (exists o3:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o3) and
@@ -4413,26 +4413,26 @@ goal defqtvc :
                                       (exists o5:cell. ((to_rep(o5) = o4) and
                                       (exists o6:int.
                                       ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                      (let temp___889 = (o6 + x1) : int in
-                                      (((1 <= temp___889) and
-                                      (temp___889 <= 10)) and
+                                      (let temp___898 = (o6 + x1) : int in
+                                      (((1 <= temp___898) and
+                                      (temp___898 <= 10)) and
                                       (exists o7:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                       (exists o8:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                      (let temp___890 = (o8 + y) : int in
-                                      (((1 <= temp___890) and
-                                      (temp___890 <= 20)) and
-                                      (cur_board3 = (cur_board[temp___890 <- ((cur_board[(o7 + y)])[temp___889 <- o5])])))))))))))))))))) else (cur_board3 = cur_board)))))))) and
+                                      (let temp___899 = (o8 + y) : int in
+                                      (((1 <= temp___899) and
+                                      (temp___899 <= 20)) and
+                                      (cur_board3 = (cur_board[temp___899 <- ((cur_board[(o7 + y)])[temp___898 <- o5])])))))))))))))))))) else (cur_board3 = cur_board)))))))) and
     (exists x2:int. ((x2 = 1) and
     (exists spark__branch4:bool.
     exists cur_board4:(int,(int,cell) farray) farray.
     ((exists o2:int.
      ((to_rep4((cur_piece__split_fields).rec__patris__piece__d) = o2) and
-     (exists temp___891:int.
-     ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___891) and
-     (((3 <= temp___891) and (temp___891 <= 7)) and
-     ((spark__branch4 = get(get1(possible_three_shapes, temp___891, o2), y,
+     (exists temp___900:int.
+     ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___900) and
+     (((3 <= temp___900) and (temp___900 <= 7)) and
+     ((spark__branch4 = get(get1(possible_three_shapes, temp___900, o2), y,
      x2)) and
      (if (spark__branch4 = true) then (exists o3:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o3) and
@@ -4441,24 +4441,24 @@ goal defqtvc :
                                       (exists o5:cell. ((to_rep(o5) = o4) and
                                       (exists o6:int.
                                       ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                      (let temp___889 = (o6 + x2) : int in
-                                      (((1 <= temp___889) and
-                                      (temp___889 <= 10)) and
+                                      (let temp___898 = (o6 + x2) : int in
+                                      (((1 <= temp___898) and
+                                      (temp___898 <= 10)) and
                                       (exists o7:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                       (exists o8:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                      (let temp___890 = (o8 + y) : int in
-                                      (((1 <= temp___890) and
-                                      (temp___890 <= 20)) and
-                                      (cur_board4 = (cur_board3[temp___890 <- ((cur_board3[(o7 + y)])[temp___889 <- o5])])))))))))))))))))) else (cur_board4 = cur_board3)))))))) and
+                                      (let temp___899 = (o8 + y) : int in
+                                      (((1 <= temp___899) and
+                                      (temp___899 <= 20)) and
+                                      (cur_board4 = (cur_board3[temp___899 <- ((cur_board3[(o7 + y)])[temp___898 <- o5])])))))))))))))))))) else (cur_board4 = cur_board3)))))))) and
     ((x = 2) and
     (exists o2:int.
     ((to_rep4((cur_piece__split_fields).rec__patris__piece__d) = o2) and
-    (exists temp___891:int.
-    ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___891) and
-    (((3 <= temp___891) and (temp___891 <= 7)) and
-    ((spark__branch2 = get(get1(possible_three_shapes, temp___891, o2), y,
+    (exists temp___900:int.
+    ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___900) and
+    (((3 <= temp___900) and (temp___900 <= 7)) and
+    ((spark__branch2 = get(get1(possible_three_shapes, temp___900, o2), y,
     x)) and
     (if (spark__branch2 = true) then (exists o3:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o3) and
@@ -4467,17 +4467,17 @@ goal defqtvc :
                                      (exists o5:cell. ((to_rep(o5) = o4) and
                                      (exists o6:int.
                                      ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                     (let temp___889 = (o6 + x) : int in
-                                     (((1 <= temp___889) and
-                                     (temp___889 <= 10)) and
+                                     (let temp___898 = (o6 + x) : int in
+                                     (((1 <= temp___898) and
+                                     (temp___898 <= 10)) and
                                      (exists o7:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                      (exists o8:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                     (let temp___890 = (o8 + y) : int in
-                                     (((1 <= temp___890) and
-                                     (temp___890 <= 20)) and
-                                     (cur_board2 = (cur_board4[temp___890 <- ((cur_board4[(o7 + y)])[temp___889 <- o5])])))))))))))))))))) else (cur_board2 = cur_board4))))))))))))))))) and
+                                     (let temp___899 = (o8 + y) : int in
+                                     (((1 <= temp___899) and
+                                     (temp___899 <= 20)) and
+                                     (cur_board2 = (cur_board4[temp___899 <- ((cur_board4[(o7 + y)])[temp___898 <- o5])])))))))))))))))))) else (cur_board2 = cur_board4))))))))))))))))) and
    (exists y1:int. ((y1 = 1) and
    (exists spark__branch3:bool.
    exists cur_board3:(int,(int,cell) farray) farray. exists x1:int.
@@ -4486,10 +4486,10 @@ goal defqtvc :
     exists cur_board4:(int,(int,cell) farray) farray.
     ((exists o2:int.
      ((to_rep4((cur_piece__split_fields).rec__patris__piece__d) = o2) and
-     (exists temp___891:int.
-     ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___891) and
-     (((3 <= temp___891) and (temp___891 <= 7)) and
-     ((spark__branch4 = get(get1(possible_three_shapes, temp___891, o2), y1,
+     (exists temp___900:int.
+     ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___900) and
+     (((3 <= temp___900) and (temp___900 <= 7)) and
+     ((spark__branch4 = get(get1(possible_three_shapes, temp___900, o2), y1,
      x2)) and
      (if (spark__branch4 = true) then (exists o3:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o3) and
@@ -4498,26 +4498,26 @@ goal defqtvc :
                                       (exists o5:cell. ((to_rep(o5) = o4) and
                                       (exists o6:int.
                                       ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                      (let temp___889 = (o6 + x2) : int in
-                                      (((1 <= temp___889) and
-                                      (temp___889 <= 10)) and
+                                      (let temp___898 = (o6 + x2) : int in
+                                      (((1 <= temp___898) and
+                                      (temp___898 <= 10)) and
                                       (exists o7:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                       (exists o8:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                      (let temp___890 = (o8 + y1) : int in
-                                      (((1 <= temp___890) and
-                                      (temp___890 <= 20)) and
-                                      (cur_board4 = (cur_board2[temp___890 <- ((cur_board2[(o7 + y1)])[temp___889 <- o5])])))))))))))))))))) else (cur_board4 = cur_board2)))))))) and
+                                      (let temp___899 = (o8 + y1) : int in
+                                      (((1 <= temp___899) and
+                                      (temp___899 <= 20)) and
+                                      (cur_board4 = (cur_board2[temp___899 <- ((cur_board2[(o7 + y1)])[temp___898 <- o5])])))))))))))))))))) else (cur_board4 = cur_board2)))))))) and
     (exists x3:int. ((x3 = 1) and
     (exists spark__branch5:bool.
     exists cur_board5:(int,(int,cell) farray) farray.
     ((exists o2:int.
      ((to_rep4((cur_piece__split_fields).rec__patris__piece__d) = o2) and
-     (exists temp___891:int.
-     ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___891) and
-     (((3 <= temp___891) and (temp___891 <= 7)) and
-     ((spark__branch5 = get(get1(possible_three_shapes, temp___891, o2), y1,
+     (exists temp___900:int.
+     ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___900) and
+     (((3 <= temp___900) and (temp___900 <= 7)) and
+     ((spark__branch5 = get(get1(possible_three_shapes, temp___900, o2), y1,
      x3)) and
      (if (spark__branch5 = true) then (exists o3:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o3) and
@@ -4526,24 +4526,24 @@ goal defqtvc :
                                       (exists o5:cell. ((to_rep(o5) = o4) and
                                       (exists o6:int.
                                       ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                      (let temp___889 = (o6 + x3) : int in
-                                      (((1 <= temp___889) and
-                                      (temp___889 <= 10)) and
+                                      (let temp___898 = (o6 + x3) : int in
+                                      (((1 <= temp___898) and
+                                      (temp___898 <= 10)) and
                                       (exists o7:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                       (exists o8:int.
                                       ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                      (let temp___890 = (o8 + y1) : int in
-                                      (((1 <= temp___890) and
-                                      (temp___890 <= 20)) and
-                                      (cur_board5 = (cur_board4[temp___890 <- ((cur_board4[(o7 + y1)])[temp___889 <- o5])])))))))))))))))))) else (cur_board5 = cur_board4)))))))) and
+                                      (let temp___899 = (o8 + y1) : int in
+                                      (((1 <= temp___899) and
+                                      (temp___899 <= 20)) and
+                                      (cur_board5 = (cur_board4[temp___899 <- ((cur_board4[(o7 + y1)])[temp___898 <- o5])])))))))))))))))))) else (cur_board5 = cur_board4)))))))) and
     ((x1 = 2) and
     (exists o2:int.
     ((to_rep4((cur_piece__split_fields).rec__patris__piece__d) = o2) and
-    (exists temp___891:int.
-    ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___891) and
-    (((3 <= temp___891) and (temp___891 <= 7)) and
-    ((spark__branch3 = get(get1(possible_three_shapes, temp___891, o2), y1,
+    (exists temp___900:int.
+    ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___900) and
+    (((3 <= temp___900) and (temp___900 <= 7)) and
+    ((spark__branch3 = get(get1(possible_three_shapes, temp___900, o2), y1,
     x1)) and
     (if (spark__branch3 = true) then (exists o3:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o3) and
@@ -4552,27 +4552,27 @@ goal defqtvc :
                                      (exists o5:cell. ((to_rep(o5) = o4) and
                                      (exists o6:int.
                                      ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                     (let temp___889 = (o6 + x1) : int in
-                                     (((1 <= temp___889) and
-                                     (temp___889 <= 10)) and
+                                     (let temp___898 = (o6 + x1) : int in
+                                     (((1 <= temp___898) and
+                                     (temp___898 <= 10)) and
                                      (exists o7:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                      (exists o8:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                     (let temp___890 = (o8 + y1) : int in
-                                     (((1 <= temp___890) and
-                                     (temp___890 <= 20)) and
-                                     (cur_board3 = (cur_board5[temp___890 <- ((cur_board5[(o7 + y1)])[temp___889 <- o5])])))))))))))))))))) else (cur_board3 = cur_board5))))))))))))))))) and
+                                     (let temp___899 = (o8 + y1) : int in
+                                     (((1 <= temp___899) and
+                                     (temp___899 <= 20)) and
+                                     (cur_board3 = (cur_board5[temp___899 <- ((cur_board5[(o7 + y1)])[temp___898 <- o5])])))))))))))))))))) else (cur_board3 = cur_board5))))))))))))))))) and
    (exists y2:int. ((y2 = 2) and
    (exists x2:int. ((x2 = 0) and
    (exists spark__branch4:bool.
    exists cur_board4:(int,(int,cell) farray) farray.
    ((exists o2:int.
     ((to_rep4((cur_piece__split_fields).rec__patris__piece__d) = o2) and
-    (exists temp___891:int.
-    ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___891) and
-    (((3 <= temp___891) and (temp___891 <= 7)) and
-    ((spark__branch4 = get(get1(possible_three_shapes, temp___891, o2), y2,
+    (exists temp___900:int.
+    ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___900) and
+    (((3 <= temp___900) and (temp___900 <= 7)) and
+    ((spark__branch4 = get(get1(possible_three_shapes, temp___900, o2), y2,
     x2)) and
     (if (spark__branch4 = true) then (exists o3:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o3) and
@@ -4581,26 +4581,26 @@ goal defqtvc :
                                      (exists o5:cell. ((to_rep(o5) = o4) and
                                      (exists o6:int.
                                      ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                     (let temp___889 = (o6 + x2) : int in
-                                     (((1 <= temp___889) and
-                                     (temp___889 <= 10)) and
+                                     (let temp___898 = (o6 + x2) : int in
+                                     (((1 <= temp___898) and
+                                     (temp___898 <= 10)) and
                                      (exists o7:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                      (exists o8:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                     (let temp___890 = (o8 + y2) : int in
-                                     (((1 <= temp___890) and
-                                     (temp___890 <= 20)) and
-                                     (cur_board4 = (cur_board3[temp___890 <- ((cur_board3[(o7 + y2)])[temp___889 <- o5])])))))))))))))))))) else (cur_board4 = cur_board3)))))))) and
+                                     (let temp___899 = (o8 + y2) : int in
+                                     (((1 <= temp___899) and
+                                     (temp___899 <= 20)) and
+                                     (cur_board4 = (cur_board3[temp___899 <- ((cur_board3[(o7 + y2)])[temp___898 <- o5])])))))))))))))))))) else (cur_board4 = cur_board3)))))))) and
    (exists x3:int. ((x3 = 1) and
    (exists spark__branch5:bool.
    exists cur_board5:(int,(int,cell) farray) farray.
    ((exists o2:int.
     ((to_rep4((cur_piece__split_fields).rec__patris__piece__d) = o2) and
-    (exists temp___891:int.
-    ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___891) and
-    (((3 <= temp___891) and (temp___891 <= 7)) and
-    ((spark__branch5 = get(get1(possible_three_shapes, temp___891, o2), y2,
+    (exists temp___900:int.
+    ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___900) and
+    (((3 <= temp___900) and (temp___900 <= 7)) and
+    ((spark__branch5 = get(get1(possible_three_shapes, temp___900, o2), y2,
     x3)) and
     (if (spark__branch5 = true) then (exists o3:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o3) and
@@ -4609,25 +4609,25 @@ goal defqtvc :
                                      (exists o5:cell. ((to_rep(o5) = o4) and
                                      (exists o6:int.
                                      ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                     (let temp___889 = (o6 + x3) : int in
-                                     (((1 <= temp___889) and
-                                     (temp___889 <= 10)) and
+                                     (let temp___898 = (o6 + x3) : int in
+                                     (((1 <= temp___898) and
+                                     (temp___898 <= 10)) and
                                      (exists o7:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                      (exists o8:int.
                                      ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                     (let temp___890 = (o8 + y2) : int in
-                                     (((1 <= temp___890) and
-                                     (temp___890 <= 20)) and
-                                     (cur_board5 = (cur_board4[temp___890 <- ((cur_board4[(o7 + y2)])[temp___889 <- o5])])))))))))))))))))) else (cur_board5 = cur_board4)))))))) and
+                                     (let temp___899 = (o8 + y2) : int in
+                                     (((1 <= temp___899) and
+                                     (temp___899 <= 20)) and
+                                     (cur_board5 = (cur_board4[temp___899 <- ((cur_board4[(o7 + y2)])[temp___898 <- o5])])))))))))))))))))) else (cur_board5 = cur_board4)))))))) and
    (exists x4:int. ((x4 = 2) and
    (exists o2:int.
    ((to_rep4((cur_piece__split_fields).rec__patris__piece__d) = o2) and
-   (exists temp___891:int.
-   ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___891) and
-   (((3 <= temp___891) and (temp___891 <= 7)) and
+   (exists temp___900:int.
+   ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___900) and
+   (((3 <= temp___900) and (temp___900 <= 7)) and
    (exists spark__branch6:bool.
-   ((spark__branch6 = get(get1(possible_three_shapes, temp___891, o2), y2,
+   ((spark__branch6 = get(get1(possible_three_shapes, temp___900, o2), y2,
    x4)) and
    (if (spark__branch6 = true) then (exists o3:int.
                                     ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o3) and
@@ -4636,15 +4636,15 @@ goal defqtvc :
                                     (exists o5:cell. ((to_rep(o5) = o4) and
                                     (exists o6:int.
                                     ((to_rep2((cur_piece__split_fields).rec__patris__piece__x) = o6) and
-                                    (let temp___889 = (o6 + x4) : int in
-                                    (((1 <= temp___889) and
-                                    (temp___889 <= 10)) and
+                                    (let temp___898 = (o6 + x4) : int in
+                                    (((1 <= temp___898) and
+                                    (temp___898 <= 10)) and
                                     (exists o7:int.
                                     ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o7) and
                                     (exists o8:int.
                                     ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o8) and
-                                    (let temp___890 = (o8 + y2) : int in
-                                    (((1 <= temp___890) and
-                                    (temp___890 <= 20)) and
-                                    (cur_board1 = (cur_board5[temp___890 <- ((cur_board5[(o7 + y2)])[temp___889 <- o5])])))))))))))))))))) else (cur_board1 = cur_board5)))))))))))))))))))))))))))))))))))))))) ->
+                                    (let temp___899 = (o8 + y2) : int in
+                                    (((1 <= temp___899) and
+                                    (temp___899 <= 20)) and
+                                    (cur_board1 = (cur_board5[temp___899 <- ((cur_board5[(o7 + y2)])[temp___898 <- o5])])))))))))))))))))) else (cur_board1 = cur_board5)))))))))))))))))))))))))))))))))))))))) ->
   (forall cur_state1:int. ((cur_state1 = 2) -> (get_state(cur_state1) = 2))))))))))

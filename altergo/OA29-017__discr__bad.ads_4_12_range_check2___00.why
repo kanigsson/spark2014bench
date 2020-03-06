@@ -241,13 +241,14 @@ logic user_eq2 : us_rep, us_rep -> bool
 
 logic dummy2 : us_rep
 
-type t__ref = { t__content : us_rep
+type tp1S__ref = { tp1S__content : us_rep
 }
 
-function t__ref_t__content__projection(a: t__ref) : us_rep = (a).t__content
+function tp1S__ref_tp1S__content__projection(a: tp1S__ref) : us_rep =
+  (a).tp1S__content
 
-predicate in_range2(rec__discr__t__c1: int, a: us_rep) =
-  (rec__discr__t__c1 = to_rep(((a).us_split_discrs1).rec__discr__t__c))
+predicate in_range2(rec__discr__t__c1: int, a: us_split_discrs) =
+  (rec__discr__t__c1 = to_rep((a).rec__discr__t__c))
 
 logic value__size1 : int
 
@@ -291,11 +292,10 @@ logic user_eq3 : us_rep, us_rep -> bool
 
 logic dummy3 : us_rep
 
-type tp1S__ref = { tp1S__content : us_rep
+type t__ref = { t__content : us_rep
 }
 
-function tp1S__ref_tp1S__content__projection(a: tp1S__ref) : us_rep =
-  (a).tp1S__content
+function t__ref_t__content__projection(a: t__ref) : us_rep = (a).t__content
 
 logic p1__split_discrs : us_split_discrs
 
@@ -305,7 +305,7 @@ predicate dynamic_invariant1(temp___expr_166: us_rep,
   temp___is_init_162: bool, temp___skip_constant_163: bool,
   temp___do_toplevel_164: bool, temp___do_typ_inv_165: bool) =
   ((not (temp___skip_constant_163 = true)) -> in_range2(r1s,
-  temp___expr_166))
+  (temp___expr_166).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_168: us_rep,
   temp___skip_top_level_169: bool) =

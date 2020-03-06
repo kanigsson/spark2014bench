@@ -455,7 +455,7 @@ goal defqtvc :
    dynamic_invariant2(r8b1, true, true, true, true)) and
    dynamic_invariant(l3, false, true, true, true)) and ((x + l3) = r5b1)) and
    ((y + l3) = r8b1)) and
-   (exists temp___205:int. ((temp___205 = l3) and (let o3 = (l3 + 1) : int in
+   (exists temp___209:int. ((temp___209 = l3) and (let o3 = (l3 + 1) : int in
    (in_range1(o3) and ((l2 = o3) and
    (exists o4:bool. ((let o5 = (x + l2) : int in (in_range1(o5) and
    (((not (o5 <= 1000)) or in_range1((y + l2))) and (if ((o5 <= 1000) and
@@ -469,7 +469,7 @@ goal defqtvc :
   (forall longest_common_prefix__lcp__result:int.
   ((longest_common_prefix__lcp__result = l2) -> (let o =
   (y + longest_common_prefix__lcp__result) : int in (in_range1(o) ->
-  (let temp___209 = (o - 1) : int in (((y <= temp___209) -> (((1 <= y) and
-  (y <= 1000)) and ((1 <= temp___209) and (temp___209 <= 1000)))) ->
+  (let temp___213 = (o - 1) : int in (((y <= temp___213) -> (((1 <= y) and
+  (y <= 1000)) and ((1 <= temp___213) and (temp___213 <= 1000)))) ->
   (let o1 = (x + longest_common_prefix__lcp__result) : int in
   (in_range1(o1) -> ((x <= (o1 - 1)) -> (1 <= x)))))))))))))))))))

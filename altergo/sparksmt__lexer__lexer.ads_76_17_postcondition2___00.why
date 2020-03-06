@@ -421,6 +421,10 @@ function bool_eq8(a: us_rep, b: us_rep) : bool =
   (file_io__read_result__c__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__file_io__read_result__c) = to_rep(((b).us_split_fields1).rec__file_io__read_result__c)))) then true else false)
 
+predicate in_range6(rec__file_io__read_result__status1: int,
+  a: us_split_discrs) =
+  (rec__file_io__read_result__status1 = to_rep2((a).rec__file_io__read_result__status))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -607,7 +611,7 @@ axiom name_idqtaxiom : (forall i:name_id. (0 <= name_idqtint(i)))
 
 axiom name_idqtaxiom1 : (forall i:name_id. (name_idqtint(i) <= 2147483647))
 
-predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range7(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -630,7 +634,7 @@ function name_id__ref_name_id__content__projection(a: name_id__ref) : name_id =
 predicate dynamic_invariant3(temp___expr_186: int, temp___is_init_182: bool,
   temp___skip_constant_183: bool, temp___do_toplevel_184: bool,
   temp___do_typ_inv_185: bool) = (((temp___is_init_182 = true) or
-  (0 <= 2147483647)) -> in_range6(temp___expr_186))
+  (0 <= 2147483647)) -> in_range7(temp___expr_186))
 
 predicate dynamic_invariant4(temp___expr_74: int, temp___is_init_70: bool,
   temp___skip_constant_71: bool, temp___do_toplevel_72: bool,

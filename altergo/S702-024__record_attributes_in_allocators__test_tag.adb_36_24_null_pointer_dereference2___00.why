@@ -407,41 +407,41 @@ predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
  (* File "test_tag.adb", line 31, characters 0-0 *)
 goal defqtvc :
   (forall us_next_pointer_address:int.
-  (forall temp___alloc_220:us_rep3.
-  (((not ((temp___alloc_220).rec__test_tag__rc_acc__is_null_pointer = true)) and
-  ((temp___alloc_220).rec__test_tag__rc_acc__pointer_address = us_next_pointer_address)) ->
+  (forall temp___alloc_226:us_rep3.
+  (((not ((temp___alloc_226).rec__test_tag__rc_acc__is_null_pointer = true)) and
+  ((temp___alloc_226).rec__test_tag__rc_acc__pointer_address = us_next_pointer_address)) ->
   (forall usf:us_rep. (default_initial_assumption(usf, false) ->
-  (((temp___alloc_220).rec__test_tag__rc_acc__pointer_value = usf) ->
+  (((temp___alloc_226).rec__test_tag__rc_acc__pointer_value = usf) ->
   (forall x__pointer_value:us_rep.
-  ((x__pointer_value = (temp___alloc_220).rec__test_tag__rc_acc__pointer_value) ->
+  ((x__pointer_value = (temp___alloc_226).rec__test_tag__rc_acc__pointer_value) ->
   (forall x__pointer_address:int.
-  ((x__pointer_address = (temp___alloc_220).rec__test_tag__rc_acc__pointer_address) ->
+  ((x__pointer_address = (temp___alloc_226).rec__test_tag__rc_acc__pointer_address) ->
   (forall x__is_null_pointer:bool.
-  ((x__is_null_pointer = (temp___alloc_220).rec__test_tag__rc_acc__is_null_pointer) ->
+  ((x__is_null_pointer = (temp___alloc_226).rec__test_tag__rc_acc__is_null_pointer) ->
   (forall us_next_pointer_address1:int.
-  (forall temp___alloc_223:us_rep3.
-  (((not ((temp___alloc_223).rec__test_tag__rc_acc__is_null_pointer = true)) and
-  ((temp___alloc_223).rec__test_tag__rc_acc__pointer_address = us_next_pointer_address1)) ->
+  (forall temp___alloc_229:us_rep3.
+  (((not ((temp___alloc_229).rec__test_tag__rc_acc__is_null_pointer = true)) and
+  ((temp___alloc_229).rec__test_tag__rc_acc__pointer_address = us_next_pointer_address1)) ->
   (forall usf1:us_rep1. (default_initial_assumption1(usf1, false) ->
-  (((temp___alloc_223).rec__test_tag__rc_acc__pointer_value = to_base(usf1)) ->
+  (((temp___alloc_229).rec__test_tag__rc_acc__pointer_value = to_base(usf1)) ->
   (forall y__pointer_value:us_rep.
-  ((y__pointer_value = (temp___alloc_223).rec__test_tag__rc_acc__pointer_value) ->
+  ((y__pointer_value = (temp___alloc_229).rec__test_tag__rc_acc__pointer_value) ->
   (forall y__pointer_address:int.
-  ((y__pointer_address = (temp___alloc_223).rec__test_tag__rc_acc__pointer_address) ->
+  ((y__pointer_address = (temp___alloc_229).rec__test_tag__rc_acc__pointer_address) ->
   (forall y__is_null_pointer:bool.
-  ((y__is_null_pointer = (temp___alloc_223).rec__test_tag__rc_acc__is_null_pointer) ->
+  ((y__is_null_pointer = (temp___alloc_229).rec__test_tag__rc_acc__is_null_pointer) ->
   (forall us_next_pointer_address2:int.
-  (forall temp___alloc_226:us_rep2.
-  (((not ((temp___alloc_226).rec__test_tag__r_acc__is_null_pointer = true)) and
-  ((temp___alloc_226).rec__test_tag__r_acc__pointer_address = us_next_pointer_address2)) ->
+  (forall temp___alloc_232:us_rep2.
+  (((not ((temp___alloc_232).rec__test_tag__r_acc__is_null_pointer = true)) and
+  ((temp___alloc_232).rec__test_tag__r_acc__pointer_address = us_next_pointer_address2)) ->
   (forall usf2:us_rep. (default_initial_assumption(usf2, false) ->
-  (((temp___alloc_226).rec__test_tag__r_acc__pointer_value = usf2) ->
+  (((temp___alloc_232).rec__test_tag__r_acc__pointer_value = usf2) ->
   (forall z__pointer_value:us_rep.
-  ((z__pointer_value = (temp___alloc_226).rec__test_tag__r_acc__pointer_value) ->
+  ((z__pointer_value = (temp___alloc_232).rec__test_tag__r_acc__pointer_value) ->
   (forall z__pointer_address:int.
-  ((z__pointer_address = (temp___alloc_226).rec__test_tag__r_acc__pointer_address) ->
+  ((z__pointer_address = (temp___alloc_232).rec__test_tag__r_acc__pointer_address) ->
   (forall z__is_null_pointer:bool.
-  ((z__is_null_pointer = (temp___alloc_226).rec__test_tag__r_acc__is_null_pointer) ->
+  ((z__is_null_pointer = (temp___alloc_232).rec__test_tag__r_acc__is_null_pointer) ->
   rec__test_tag__rc_acc__pointer_value__pred({
   rec__test_tag__rc_acc__is_null_pointer = x__is_null_pointer;
   rec__test_tag__rc_acc__pointer_address = x__pointer_address;

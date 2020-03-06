@@ -266,6 +266,9 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   (dynamic_array__rec__f2__pred(a) ->
   (to_rep1(((a).us_split_fields1).rec__dynamic_array__rec__f2) = to_rep1(((b).us_split_fields1).rec__dynamic_array__rec__f2))))) then true else false)
 
+predicate in_range4(rec__dynamic_array__rec__b1: bool, a: us_split_discrs) =
+  (rec__dynamic_array__rec__b1 = (a).rec__dynamic_array__rec__b)
+
 logic value__size : int
 
 logic object__size : int
@@ -496,6 +499,10 @@ function bool_eq8(a: us_rep1, b: us_rep1) : bool =
   (bool_eq7(((a).us_split_fields3).rec__dynamic_array__holder__content,
   ((b).us_split_fields3).rec__dynamic_array__holder__content) = true)) then true else false)
 
+predicate in_range5(rec__dynamic_array__holder__d1: int,
+  a: us_split_discrs2) =
+  (rec__dynamic_array__holder__d1 = to_rep((a).rec__dynamic_array__holder__d))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -666,9 +673,6 @@ function bool_eq9(a: us_rep2, b: us_rep2) : bool =
   (bool_eq7(((a).us_split_fields5).rec__dynamic_array__holder__content1,
   ((b).us_split_fields5).rec__dynamic_array__holder__content1) = true)) then true else false)
 
-predicate in_range4(rec__dynamic_array__holder__d1: int, a: us_rep1) =
-  (rec__dynamic_array__holder__d1 = to_rep(((a).us_split_discrs3).rec__dynamic_array__holder__d))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -728,8 +732,8 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant3(temp___expr_203: us_rep2,
   temp___is_init_199: bool, temp___skip_constant_200: bool,
   temp___do_toplevel_201: bool, temp___do_typ_inv_202: bool) =
-  (((not (temp___skip_constant_200 = true)) -> in_range4(c,
-  to_base(temp___expr_203))) and ((dynamic_property1(1, c,
+  (((not (temp___skip_constant_200 = true)) -> in_range5(c,
+  (to_base(temp___expr_203)).us_split_discrs3)) and ((dynamic_property1(1, c,
   first1(((temp___expr_203).us_split_fields5).rec__dynamic_array__holder__content1),
   last2(((temp___expr_203).us_split_fields5).rec__dynamic_array__holder__content1)) and
   ((first1(((temp___expr_203).us_split_fields5).rec__dynamic_array__holder__content1) = 1) and
@@ -813,9 +817,6 @@ function bool_eq10(a: us_rep3, b: us_rep3) : bool =
   (bool_eq7(((a).us_split_fields7).rec__dynamic_array__holder__content2,
   ((b).us_split_fields7).rec__dynamic_array__holder__content2) = true)) then true else false)
 
-predicate in_range5(rec__dynamic_array__holder__d1: int, a: us_rep1) =
-  (rec__dynamic_array__holder__d1 = to_rep(((a).us_split_discrs3).rec__dynamic_array__holder__d))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -873,9 +874,6 @@ type t23b__ref = { t23b__content : us_t
 
 function t23b__ref_t23b__content__projection(a: t23b__ref) : us_t =
   (a).t23b__content
-
-predicate in_range6(rec__dynamic_array__rec__b1: bool, a: us_rep) =
-  (rec__dynamic_array__rec__b1 = ((a).us_split_discrs1).rec__dynamic_array__rec__b)
 
 logic value__size5 : int
 
@@ -964,9 +962,6 @@ type t25b__ref = { t25b__content : integer
 
 function t25b__ref_t25b__content__projection(a: t25b__ref) : integer =
   (a).t25b__content
-
-predicate in_range7(rec__dynamic_array__rec__b1: bool, a: us_rep) =
-  (rec__dynamic_array__rec__b1 = ((a).us_split_discrs1).rec__dynamic_array__rec__b)
 
 logic value__size6 : int
 
@@ -1121,9 +1116,9 @@ goal defqtvc : (dynamic_invariant(c, true, false, true, true) ->
   } }, true, false, true, true) -> (new_holder__function_guard(new_holder(c),
   c) ->
   ((to_rep((h__split_discrs).rec__dynamic_array__holder__d) = to_rep(((new_holder(c)).us_split_discrs3).rec__dynamic_array__holder__d)) ->
-  (let temp___231 = c : int in
+  (let temp___232 = c : int in
   (forall i:int. ((i = 1) -> ((andb((if (1 <= i) then true else false),
-  (if (i <= temp___231) then true else false)) = true) ->
+  (if (i <= temp___232) then true else false)) = true) ->
   (forall h__split_fields1:us_t. forall i1:int. forall f:int.
   (new_holder__function_guard(new_holder(c), c) ->
   (new_holder__function_guard(new_holder(c), c) ->
@@ -1139,10 +1134,10 @@ goal defqtvc : (dynamic_invariant(c, true, false, true, true) ->
   us_split_discrs4 = h__split_discrs; us_split_fields5 = {
   rec__dynamic_array__holder__content1 = h__split_fields1 } }, true, true,
   true, true)) and
-  (forall temp___243:int. (((first1(h__split_fields1) <= temp___243) and
-  (temp___243 <= last2(h__split_fields1))) -> (((temp___231 <  temp___243) or
-  ((temp___243 <  1) or (i1 <= temp___243))) ->
-  ((to_array(h__split_fields1)[temp___243]) = (to_array(h__split_fields)[temp___243])))))) then true else false),
+  (forall temp___244:int. (((first1(h__split_fields1) <= temp___244) and
+  (temp___244 <= last2(h__split_fields1))) -> (((temp___232 <  temp___244) or
+  ((temp___244 <  1) or (i1 <= temp___244))) ->
+  ((to_array(h__split_fields1)[temp___244]) = (to_array(h__split_fields)[temp___244])))))) then true else false),
   (if ((1 <= i1) and (i1 <= c)) then true else false)) = true) -> (let o2 = c
   : int in (let dynamic_array__B_2__hh__assume = new_holder(o2) : us_rep1 in
   ((new_holder__function_guard(dynamic_array__B_2__hh__assume, o2) and
@@ -1150,10 +1145,10 @@ goal defqtvc : (dynamic_invariant(c, true, false, true, true) ->
   true) and
   (if (c = 0) then (to_rep(((dynamic_array__B_2__hh__assume).us_split_discrs3).rec__dynamic_array__holder__d) = 0) else (to_rep(((dynamic_array__B_2__hh__assume).us_split_discrs3).rec__dynamic_array__holder__d) = o2)))) ->
   ((dynamic_array__B_2__hh__assume = hh) -> (dynamic_invariant1(hh, true,
-  false, true, true) -> (let temp___232 =
+  false, true, true) -> (let temp___233 =
   ((hh).us_split_fields3).rec__dynamic_array__holder__content : us_t in
-  (((first1(temp___232) <= i1) and (i1 <= last2(temp___232))) ->
-  (((to_array(temp___232)[i1]) = r) -> (dynamic_invariant2(r, true, false,
+  (((first1(temp___233) <= i1) and (i1 <= last2(temp___233))) ->
+  (((to_array(temp___233)[i1]) = r) -> (dynamic_invariant2(r, true, false,
   true, true) -> (dynamic_invariant(f, false, false, true, true) ->
   (forall spark__branch:bool. forall f1:int.
   (((spark__branch = ((r).us_split_discrs1).rec__dynamic_array__rec__b) and
@@ -1168,7 +1163,7 @@ goal defqtvc : (dynamic_invariant(c, true, false, true, true) ->
   (to_array(h__split_fields1)[i1 <- { us_split_discrs1 = {
   rec__dynamic_array__rec__b = of_int(1) }; us_split_fields1 = {
   rec__dynamic_array__rec__f1 = of_rep1(f2); rec__dynamic_array__rec__f2 =
-  dummy3 } }]); rt = (h__split_fields1).rt }) -> ((not (i1 = temp___231)) ->
+  dummy3 } }]); rt = (h__split_fields1).rt }) -> ((not (i1 = temp___232)) ->
   (forall i2:int. ((i2 = (i1 + 1)) ->
   (forall j:int. (((1 <= j) and (j <= (i2 - 1))) ->
   ((((to_array(h__split_fields2)[j])).us_split_discrs1).rec__dynamic_array__rec__b = true)))))))))))))))))))))))))))))))))))))))))))))))))))

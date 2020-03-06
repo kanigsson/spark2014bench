@@ -254,6 +254,9 @@ function bool_eq4(a: us_rep, b: us_rep) : bool =
   (basic__r__c_field2__pred(a) ->
   (to_rep1(((a).us_split_fields1).rec__basic__r__c_field2) = to_rep1(((b).us_split_fields1).rec__basic__r__c_field2)))))) then true else false)
 
+predicate in_range4(rec__basic__r__x1: int, a: us_split_discrs) =
+  (rec__basic__r__x1 = to_rep2((a).rec__basic__r__x))
+
 logic value__size : int
 
 logic object__size : int
@@ -348,9 +351,6 @@ function r__ref_r__content__projection(a: r__ref) : us_rep = (a).r__content
 logic v__split_discrs : us_split_discrs
 
 logic attr__ATTRIBUTE_ADDRESS : int
-
-predicate in_range4(rec__basic__r__x1: int, a: us_rep) =
-  (rec__basic__r__x1 = to_rep2(((a).us_split_discrs1).rec__basic__r__x))
 
 logic value__size1 : int
 

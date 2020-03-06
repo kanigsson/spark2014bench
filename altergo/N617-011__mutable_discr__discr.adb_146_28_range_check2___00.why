@@ -148,6 +148,10 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__private_discr__p_with_default,
   ((b).us_split_fields1).rec__private_discr__p_with_default) = true)) then true else false)
 
+predicate in_range1(rec__private_discr__p_with_default__c1: int,
+  a: us_split_discrs) =
+  (rec__private_discr__p_with_default__c1 = to_rep((a).rec__private_discr__p_with_default__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -192,9 +196,6 @@ logic new_with_default__function_guard : us_rep, int -> prop
 predicate default_initial_assumption(temp___expr_250: us_rep,
   temp___skip_top_level_251: bool) =
   (to_rep(((temp___expr_250).us_split_discrs1).rec__private_discr__p_with_default__c) = 0)
-
-predicate in_range1(rec__private_discr__p_with_default__c1: int, a: us_rep) =
-  (rec__private_discr__p_with_default__c1 = to_rep(((a).us_split_discrs1).rec__private_discr__p_with_default__c))
 
 logic value__size1 : int
 
@@ -242,7 +243,8 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant1(temp___expr_285: us_rep,
   temp___is_init_281: bool, temp___skip_constant_282: bool,
   temp___do_toplevel_283: bool, temp___do_typ_inv_284: bool) =
-  ((not (temp___skip_constant_282 = true)) -> in_range1(c, temp___expr_285))
+  ((not (temp___skip_constant_282 = true)) -> in_range1(c,
+  (temp___expr_285).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_287: us_rep,
   temp___skip_top_level_288: bool) =

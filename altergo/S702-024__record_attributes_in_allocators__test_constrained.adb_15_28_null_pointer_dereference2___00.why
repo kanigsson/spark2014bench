@@ -151,6 +151,9 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (if ((to_int(((a).us_split_discrs1).rec__test_constrained__r__b) = to_int(((b).us_split_discrs1).rec__test_constrained__r__b)) and
   (to_rep(((a).us_split_fields1).rec__test_constrained__r__x) = to_rep(((b).us_split_fields1).rec__test_constrained__r__x))) then true else false)
 
+predicate in_range2(rec__test_constrained__r__b1: bool, a: us_split_discrs) =
+  (rec__test_constrained__r__b1 = (a).rec__test_constrained__r__b)
+
 logic value__size : int
 
 logic object__size : int

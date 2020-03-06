@@ -315,14 +315,70 @@ logic user_eq2 : us_rep, us_rep -> bool
 
 logic dummy2 : us_rep
 
-type r2__ref = { r2__content : us_rep
+type r2a__ref = { r2a__content : us_rep
 }
 
-function r2__ref_r2__content__projection(a: r2__ref) : us_rep =
-  (a).r2__content
+function r2a__ref_r2a__content__projection(a: r2a__ref) : us_rep =
+  (a).r2a__content
 
-predicate in_range3(rec__storage_place_attributes__r2__d11: int, a: us_rep) =
-  (rec__storage_place_attributes__r2__d11 = to_rep1(((a).us_split_discrs1).rec__storage_place_attributes__r2__d1))
+type map__ref = { map__content : (int,us_rep) farray
+}
+
+logic slide : (int,us_rep) farray, int, int -> (int,us_rep) farray
+
+axiom slide_eq :
+  (forall a:(int,us_rep) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,us_rep) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq5(a: (int,us_rep) farray, a__first: int, a__last: int,
+  b: (int,us_rep) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) -> (bool_eq4((a[temp___idx_154]),
+  (b[((b__first - a__first) + temp___idx_154)])) = true)))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
+  (temp___idx_154 <= a__last)) -> (bool_eq4((a[temp___idx_154]),
+  (b[((b__first - a__first) + temp___idx_154)])) = true))))))
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate in_range3(rec__storage_place_attributes__r2__d11: int,
+  a: us_split_discrs) =
+  (rec__storage_place_attributes__r2__d11 = to_rep1((a).rec__storage_place_attributes__r2__d1))
 
 logic value__size1 : int
 
@@ -385,66 +441,11 @@ logic user_eq3 : us_rep, us_rep -> bool
 
 logic dummy3 : us_rep
 
-type r2a__ref = { r2a__content : us_rep
+type r2__ref = { r2__content : us_rep
 }
 
-function r2a__ref_r2a__content__projection(a: r2a__ref) : us_rep =
-  (a).r2a__content
-
-type map__ref = { map__content : (int,us_rep) farray
-}
-
-logic slide : (int,us_rep) farray, int, int -> (int,us_rep) farray
-
-axiom slide_eq :
-  (forall a:(int,us_rep) farray.
-  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
-
-axiom slide_def :
-  (forall a:(int,us_rep) farray.
-  (forall old_first:int.
-  (forall new_first:int.
-  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
-  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
-
-function bool_eq5(a: (int,us_rep) farray, a__first: int, a__last: int,
-  b: (int,us_rep) farray, b__first: int, b__last: int) : bool =
-  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
-  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
-  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
-  (temp___idx_154 <= a__last)) -> (bool_eq4((a[temp___idx_154]),
-  (b[((b__first - a__first) + temp___idx_154)])) = true)))) then true else false)
-
-axiom bool_eq_rev :
-  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
-  (forall a__first:int. forall a__last:int. forall b__first:int.
-  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
-  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
-
-axiom bool_eq_rev1 :
-  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
-  (forall a__first:int. forall a__last:int. forall b__first:int.
-  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
-  a__last) = true) -> ((a__first <= a__last) ->
-  ((a__last - a__first) = (b__last - b__first))))))
-
-axiom bool_eq_rev2 :
-  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
-  (forall a__first:int. forall a__last:int. forall b__first:int.
-  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
-  a__last) = true) -> ((not (a__first <= a__last)) ->
-  (b__last <  b__first)))))
-
-axiom bool_eq_rev3 :
-  (forall a:(int,us_rep) farray. forall b:(int,us_rep) farray.
-  (forall a__first:int. forall a__last:int. forall b__first:int.
-  forall b__last:int. ((bool_eq5(b, b__first, b__last, a, a__first,
-  a__last) = true) ->
-  (forall temp___idx_154:int. (((a__first <= temp___idx_154) and
-  (temp___idx_154 <= a__last)) -> (bool_eq4((a[temp___idx_154]),
-  (b[((b__first - a__first) + temp___idx_154)])) = true))))))
-
-logic attr__ATTRIBUTE_ADDRESS : int
+function r2__ref_r2__content__projection(a: r2__ref) : us_rep =
+  (a).r2__content
 
 logic o2a__split_discrs : us_split_discrs
 
@@ -455,7 +456,8 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant(temp___expr_221: us_rep,
   temp___is_init_217: bool, temp___skip_constant_218: bool,
   temp___do_toplevel_219: bool, temp___do_typ_inv_220: bool) =
-  ((not (temp___skip_constant_218 = true)) -> in_range3(5, temp___expr_221))
+  ((not (temp___skip_constant_218 = true)) -> in_range3(5,
+  (temp___expr_221).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_223: us_rep,
   temp___skip_top_level_224: bool) =
@@ -476,9 +478,6 @@ logic o2aa__split_discrs : us_split_discrs
 logic o2aa__attr__constrained : bool
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
-
-predicate in_range4(rec__storage_place_attributes__r2__d11: int, a: us_rep) =
-  (rec__storage_place_attributes__r2__d11 = to_rep1(((a).us_split_discrs1).rec__storage_place_attributes__r2__d1))
 
 logic value__size2 : int
 
@@ -556,7 +555,8 @@ logic attr__ATTRIBUTE_ADDRESS3 : int
 predicate dynamic_invariant1(temp___expr_230: us_rep,
   temp___is_init_226: bool, temp___skip_constant_227: bool,
   temp___do_toplevel_228: bool, temp___do_typ_inv_229: bool) =
-  ((not (temp___skip_constant_227 = true)) -> in_range4(1, temp___expr_230))
+  ((not (temp___skip_constant_227 = true)) -> in_range3(1,
+  (temp___expr_230).us_split_discrs1))
 
 predicate default_initial_assumption2(temp___expr_232: us_rep,
   temp___skip_top_level_233: bool) =
@@ -579,7 +579,7 @@ axiom tTr2a_arrSP1qtaxiom :
 axiom tTr2a_arrSP1qtaxiom1 :
   (forall i:tTr2a_arrSP1. (tTr2a_arrSP1qtint(i) <= 3))
 
-predicate in_range5(x: int) = ((1 <= x) and (x <= 3))
+predicate in_range4(x: int) = ((1 <= x) and (x <= 3))
 
 function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -603,7 +603,7 @@ predicate dynamic_invariant2(temp___expr_246: (int,us_rep) farray,
   temp___is_init_242: bool, temp___skip_constant_243: bool,
   temp___do_toplevel_244: bool, temp___do_typ_inv_245: bool) =
   (forall temp___247:int. (((1 <= temp___247) and (temp___247 <= 3)) ->
-  in_range3(5, (temp___expr_246[temp___247]))))
+  in_range3(5, ((temp___expr_246[temp___247])).us_split_discrs1)))
 
 predicate default_initial_assumption3(temp___expr_249: (int,us_rep) farray,
   temp___skip_top_level_250: bool) =

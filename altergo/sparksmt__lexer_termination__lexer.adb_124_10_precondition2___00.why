@@ -421,6 +421,10 @@ function bool_eq8(a: us_rep, b: us_rep) : bool =
   (file_io__read_result__c__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__file_io__read_result__c) = to_rep(((b).us_split_fields1).rec__file_io__read_result__c)))) then true else false)
 
+predicate in_range6(rec__file_io__read_result__status1: int,
+  a: us_split_discrs) =
+  (rec__file_io__read_result__status1 = to_rep2((a).rec__file_io__read_result__status))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -532,10 +536,10 @@ logic index__function_guard : int, us_rep1 -> prop
 axiom index__post_axiom : (forall f:us_rep1 [index(f)]. in_range1(index(f)))
 
 logic invariant__1 : us_rep1, int, us_split_fields, us_split_discrs, int,
-  us_split_fields, us_split_discrs, us_private -> bool
+  us_private, us_split_fields, us_split_discrs -> bool
 
 logic invariant____function_guard1 : bool, us_rep1, int, us_split_fields,
-  us_split_discrs, int, us_split_fields, us_split_discrs, us_private -> prop
+  us_split_discrs, int, us_private, us_split_fields, us_split_discrs -> prop
 
 logic local_invariant : us_rep1, int, us_split_fields, us_split_discrs, int,
   us_split_fields, us_split_discrs -> bool
@@ -571,11 +575,12 @@ axiom invariant____def_axiom2 :
   forall lexer__next_read__discrs:us_split_discrs.
   (forall names__name_table:us_private [invariant__1(lexer__the_file,
   lexer__next_idx, lexer__current_read__fields, lexer__current_read__discrs,
-  lexer__current_idx, lexer__next_read__fields, lexer__next_read__discrs,
-  names__name_table)]. ((invariant__1(lexer__the_file, lexer__next_idx,
-  lexer__current_read__fields, lexer__current_read__discrs,
-  lexer__current_idx, lexer__next_read__fields, lexer__next_read__discrs,
-  names__name_table) = true) -> (invariant__(names__name_table) = true)))))))
+  lexer__current_idx, names__name_table, lexer__next_read__fields,
+  lexer__next_read__discrs)]. ((invariant__1(lexer__the_file,
+  lexer__next_idx, lexer__current_read__fields, lexer__current_read__discrs,
+  lexer__current_idx, names__name_table, lexer__next_read__fields,
+  lexer__next_read__discrs) = true) ->
+  (invariant__(names__name_table) = true)))))))
 
 axiom invariant____def_axiom3 :
   (forall lexer__the_file:us_rep1.
@@ -586,11 +591,11 @@ axiom invariant____def_axiom3 :
   forall lexer__next_read__discrs:us_split_discrs.
   (forall names__name_table:us_private [invariant__1(lexer__the_file,
   lexer__next_idx, lexer__current_read__fields, lexer__current_read__discrs,
-  lexer__current_idx, lexer__next_read__fields, lexer__next_read__discrs,
-  names__name_table)]. ((invariant__1(lexer__the_file, lexer__next_idx,
-  lexer__current_read__fields, lexer__current_read__discrs,
-  lexer__current_idx, lexer__next_read__fields, lexer__next_read__discrs,
-  names__name_table) = true) -> (local_invariant(lexer__the_file,
+  lexer__current_idx, names__name_table, lexer__next_read__fields,
+  lexer__next_read__discrs)]. ((invariant__1(lexer__the_file,
+  lexer__next_idx, lexer__current_read__fields, lexer__current_read__discrs,
+  lexer__current_idx, names__name_table, lexer__next_read__fields,
+  lexer__next_read__discrs) = true) -> (local_invariant(lexer__the_file,
   lexer__next_idx, lexer__current_read__fields, lexer__current_read__discrs,
   lexer__current_idx, lexer__next_read__fields,
   lexer__next_read__discrs) = true)))))))
@@ -604,15 +609,15 @@ axiom invariant____def_axiom4 :
   forall lexer__next_read__discrs:us_split_discrs.
   (forall names__name_table:us_private [invariant__1(lexer__the_file,
   lexer__next_idx, lexer__current_read__fields, lexer__current_read__discrs,
-  lexer__current_idx, lexer__next_read__fields, lexer__next_read__discrs,
-  names__name_table)]. (((invariant__(names__name_table) = true) and
+  lexer__current_idx, names__name_table, lexer__next_read__fields,
+  lexer__next_read__discrs)]. (((invariant__(names__name_table) = true) and
   (local_invariant(lexer__the_file, lexer__next_idx,
   lexer__current_read__fields, lexer__current_read__discrs,
   lexer__current_idx, lexer__next_read__fields,
   lexer__next_read__discrs) = true)) -> (invariant__1(lexer__the_file,
   lexer__next_idx, lexer__current_read__fields, lexer__current_read__discrs,
-  lexer__current_idx, lexer__next_read__fields, lexer__next_read__discrs,
-  names__name_table) = true)))))))
+  lexer__current_idx, names__name_table, lexer__next_read__fields,
+  lexer__next_read__discrs) = true)))))))
 
 logic filename : us_t
 
@@ -632,7 +637,7 @@ axiom name_idqtaxiom : (forall i:name_id. (0 <= name_idqtint(i)))
 
 axiom name_idqtaxiom1 : (forall i:name_id. (name_idqtint(i) <= 2147483647))
 
-predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range7(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -655,7 +660,7 @@ function name_id__ref_name_id__content__projection(a: name_id__ref) : name_id =
 predicate dynamic_invariant3(temp___expr_188: int, temp___is_init_184: bool,
   temp___skip_constant_185: bool, temp___do_toplevel_186: bool,
   temp___do_typ_inv_187: bool) = (((temp___is_init_184 = true) or
-  (0 <= 2147483647)) -> in_range6(temp___expr_188))
+  (0 <= 2147483647)) -> in_range7(temp___expr_188))
 
 predicate dynamic_invariant4(temp___expr_74: int, temp___is_init_70: bool,
   temp___skip_constant_71: bool, temp___do_toplevel_72: bool,

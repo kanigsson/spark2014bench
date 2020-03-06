@@ -146,6 +146,10 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__private_with_attributes__private_unconstrained,
   ((b).us_split_fields1).rec__private_with_attributes__private_unconstrained) = true)) then true else false)
 
+predicate in_range1(rec__private_with_attributes__private_unconstrained__c1: int,
+  a: us_split_discrs) =
+  (rec__private_with_attributes__private_unconstrained__c1 = to_rep((a).rec__private_with_attributes__private_unconstrained__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -195,10 +199,6 @@ logic u1__attr__constrained : bool
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
 
-predicate in_range1(rec__private_with_attributes__private_unconstrained__c1: int,
-  a: us_rep) =
-  (rec__private_with_attributes__private_unconstrained__c1 = to_rep(((a).us_split_discrs1).rec__private_with_attributes__private_unconstrained__c))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -245,15 +245,12 @@ logic attr__ATTRIBUTE_ADDRESS2 : int
 predicate dynamic_invariant1(temp___expr_170: us_rep,
   temp___is_init_166: bool, temp___skip_constant_167: bool,
   temp___do_toplevel_168: bool, temp___do_typ_inv_169: bool) =
-  ((not (temp___skip_constant_167 = true)) -> in_range1(0, temp___expr_170))
+  ((not (temp___skip_constant_167 = true)) -> in_range1(0,
+  (temp___expr_170).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_172: us_rep,
   temp___skip_top_level_173: bool) =
   (to_rep(((temp___expr_172).us_split_discrs1).rec__private_with_attributes__private_unconstrained__c) = 0)
-
-predicate in_range2(rec__private_with_attributes__private_unconstrained__c1: int,
-  a: us_rep) =
-  (rec__private_with_attributes__private_unconstrained__c1 = to_rep(((a).us_split_discrs1).rec__private_with_attributes__private_unconstrained__c))
 
 logic value__size2 : int
 
@@ -301,7 +298,8 @@ logic attr__ATTRIBUTE_ADDRESS3 : int
 predicate dynamic_invariant2(temp___expr_179: us_rep,
   temp___is_init_175: bool, temp___skip_constant_176: bool,
   temp___do_toplevel_177: bool, temp___do_typ_inv_178: bool) =
-  ((not (temp___skip_constant_176 = true)) -> in_range2(0, temp___expr_179))
+  ((not (temp___skip_constant_176 = true)) -> in_range1(0,
+  (temp___expr_179).us_split_discrs1))
 
 predicate default_initial_assumption2(temp___expr_181: us_rep,
   temp___skip_top_level_182: bool) =
@@ -345,20 +343,23 @@ goal defqtvc :
   (forall u1__split_fields1:us_main_type.
   ((u1__split_fields1 = u__split_fields) ->
   (forall u1__split_discrs1:natural.
-  ((u1__split_discrs1 = u__split_discrs) -> (let o = { us_split_discrs1 = {
+  ((u1__split_discrs1 = u__split_discrs) -> (let temp___254 = {
+  us_split_discrs1 = {
   rec__private_with_attributes__private_unconstrained__c = u1__split_discrs1
   }; us_split_fields1 = {
   rec__private_with_attributes__private_unconstrained = u1__split_fields1 } }
   : us_rep in
   (forall u2__split_fields1:us_main_type. (({
   rec__private_with_attributes__private_unconstrained = u2__split_fields1
-  } = (o).us_split_fields1) -> ((u2__split_discrs = (o).us_split_discrs1) ->
-  (let o1 = { us_split_discrs1 = {
+  } = (temp___254).us_split_fields1) ->
+  ((u2__split_discrs = (temp___254).us_split_discrs1) -> (let temp___256 = {
+  us_split_discrs1 = {
   rec__private_with_attributes__private_unconstrained__c = u1__split_discrs1
   }; us_split_fields1 = {
   rec__private_with_attributes__private_unconstrained = u1__split_fields1 } }
   : us_rep in
   (forall c__split_fields1:us_main_type. (({
   rec__private_with_attributes__private_unconstrained = c__split_fields1
-  } = (o1).us_split_fields1) -> ((c__split_discrs = (o1).us_split_discrs1) ->
+  } = (temp___256).us_split_fields1) ->
+  ((c__split_discrs = (temp___256).us_split_discrs1) ->
   (not (u1__attr__constrained = true))))))))))))))))))))))))))))))))))

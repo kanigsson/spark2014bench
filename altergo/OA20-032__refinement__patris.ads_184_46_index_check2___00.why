@@ -3673,6 +3673,6 @@ goal defqtvc :
   (if (usf1 <= 2) then true else false)) = true) ->
   (forall o2:int.
   ((to_rep3(((p).us_split_fields1).rec__patris__piece__d) = o2) ->
-  (forall temp___828:int.
-  ((to_rep(((p).us_split_fields1).rec__patris__piece__s) = temp___828) ->
-  (3 <= temp___828)))))))))))))))))
+  (forall temp___834:int.
+  ((to_rep(((p).us_split_fields1).rec__patris__piece__s) = temp___834) ->
+  (3 <= temp___834)))))))))))))))))

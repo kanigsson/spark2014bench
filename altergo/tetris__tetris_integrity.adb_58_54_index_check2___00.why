@@ -3773,13 +3773,13 @@ goal defqtvc :
   (forall x:int. ((x = 0) -> ((andb((if (0 <= x) then true else false),
   (if (x <= 2) then true else false)) = true) ->
   (forall cur_board1:(int,(int,cell) farray) farray. forall x1:int.
-  ((andb((if (forall temp___836:int. (((1 <= temp___836) and
-             (temp___836 <= 50)) ->
-             ((not ((to_rep3((cur_piece__split_fields).rec__tetris_integrity__piece__y) + y1) = temp___836)) ->
-             ((cur_board1[temp___836]) = (cur_board[temp___836]))))) then true else false),
+  ((andb((if (forall temp___845:int. (((1 <= temp___845) and
+             (temp___845 <= 50)) ->
+             ((not ((to_rep3((cur_piece__split_fields).rec__tetris_integrity__piece__y) + y1) = temp___845)) ->
+             ((cur_board1[temp___845]) = (cur_board[temp___845]))))) then true else false),
   (if ((0 <= x1) and (x1 <= 2)) then true else false)) = true) ->
   (forall o2:int.
   ((to_rep4((cur_piece__split_fields).rec__tetris_integrity__piece__d) = o2) ->
-  (forall temp___833:int.
-  ((to_rep1((cur_piece__split_fields).rec__tetris_integrity__piece__s) = temp___833) ->
-  (3 <= temp___833))))))))))))))))))))))))))))))
+  (forall temp___842:int.
+  ((to_rep1((cur_piece__split_fields).rec__tetris_integrity__piece__s) = temp___842) ->
+  (3 <= temp___842))))))))))))))))))))))))))))))

@@ -158,6 +158,10 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (tests__test_14__record_with_mutable_discrs__field__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__tests__test_14__record_with_mutable_discrs__field) = to_rep(((b).us_split_fields1).rec__tests__test_14__record_with_mutable_discrs__field)))) then true else false)
 
+predicate in_range2(rec__tests__test_14__record_with_mutable_discrs__present1: bool,
+  a: us_split_discrs) =
+  (rec__tests__test_14__record_with_mutable_discrs__present1 = (a).rec__tests__test_14__record_with_mutable_discrs__present)
+
 logic value__size : int
 
 logic object__size : int
@@ -274,7 +278,7 @@ axiom tTaSP1qtaxiom : (forall i:tTaSP1. (1 <= tTaSP1qtint(i)))
 
 axiom tTaSP1qtaxiom1 : (forall i:tTaSP1. (tTaSP1qtint(i) <= 1))
 
-predicate in_range2(x: int) = ((1 <= x) and (x <= 1))
+predicate in_range3(x: int) = ((1 <= x) and (x <= 1))
 
 function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -298,10 +302,6 @@ predicate default_initial_assumption(temp___expr_224: (int,us_rep) farray,
   temp___skip_top_level_225: bool) =
   (forall temp___226:int. (((1 <= temp___226) and (temp___226 <= 1)) ->
   ((((temp___expr_224[temp___226])).us_split_discrs1).rec__tests__test_14__record_with_mutable_discrs__present = of_int(0))))
-
-predicate in_range3(rec__tests__test_14__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__tests__test_14__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__tests__test_14__record_with_mutable_discrs__present)
 
 logic value__size1 : int
 
@@ -354,10 +354,6 @@ type t5b__ref = { t5b__content : us_rep
 
 function t5b__ref_t5b__content__projection(a: t5b__ref) : us_rep =
   (a).t5b__content
-
-predicate in_range4(rec__tests__test_14__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__tests__test_14__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__tests__test_14__record_with_mutable_discrs__present)
 
 logic value__size2 : int
 

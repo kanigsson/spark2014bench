@@ -180,6 +180,9 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (if ((to_rep(((a).us_split_discrs1).rec__subtype_check__r__d) = to_rep(((b).us_split_discrs1).rec__subtype_check__r__d)) and
   (to_rep(((a).us_split_fields1).rec__subtype_check__r__f) = to_rep(((b).us_split_fields1).rec__subtype_check__r__f))) then true else false)
 
+predicate in_range1(rec__subtype_check__r__d1: int, a: us_split_discrs) =
+  (rec__subtype_check__r__d1 = to_rep((a).rec__subtype_check__r__d))
+
 logic value__size : int
 
 logic object__size : int
@@ -242,7 +245,7 @@ function to_int(b: bool) : int = (if (b = true) then 1 else 0)
 
 function of_int(i: int) : bool = (if (i = 0) then false else true)
 
-predicate in_range1(x: int) = ((x = 0) or (x = 1))
+predicate in_range2(x: int) = ((x = 0) or (x = 1))
 
 logic attr__ATTRIBUTE_IMAGE2 : bool -> us_image
 
@@ -303,9 +306,6 @@ predicate default_initial_assumption(temp___expr_175: us_rep1,
   temp___skip_top_level_176: bool) =
   ((temp___expr_175).rec__subtype_check__r_acc__is_null_pointer = true)
 
-predicate in_range2(rec__subtype_check__r__d1: int, a: us_rep) =
-  (rec__subtype_check__r__d1 = to_rep(((a).us_split_discrs1).rec__subtype_check__r__d))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -361,8 +361,8 @@ function s1s__ref_s1s__content__projection(a: s1s__ref) : us_rep =
 predicate dynamic_invariant2(temp___expr_181: us_rep,
   temp___is_init_177: bool, temp___skip_constant_178: bool,
   temp___do_toplevel_179: bool, temp___do_typ_inv_180: bool) =
-  (((not (temp___skip_constant_178 = true)) -> in_range2((- 1),
-  temp___expr_181)) and dynamic_property(first, 100,
+  (((not (temp___skip_constant_178 = true)) -> in_range1((- 1),
+  (temp___expr_181).us_split_discrs1)) and dynamic_property(first, 100,
   to_rep(((temp___expr_181).us_split_discrs1).rec__subtype_check__r__d)))
 
 predicate default_initial_assumption1(temp___expr_183: us_rep,

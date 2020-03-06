@@ -98,7 +98,7 @@ logic attr__ATTRIBUTE_ADDRESS2 : int
  (* File "a~b.ads", line 4, characters 0-0 *)
 goal defqtvc :
   (forall tmp:int. forall data1:int. forall data2:int.
-  (dynamic_invariant(data1, true, false, true, true) ->
+  (dynamic_invariant(data1, false, false, true, true) ->
   (dynamic_invariant(data2, true, false, true, true) ->
   (dynamic_invariant(tmp, false, false, true, true) ->
   (forall data11:int. ((data11 = 0) -> in_range((data11 + data2))))))))

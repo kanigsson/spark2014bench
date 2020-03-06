@@ -181,6 +181,9 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (variants__t__e__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__variants__t__e) = to_rep(((b).us_split_fields1).rec__variants__t__e))))) then true else false)
 
+predicate in_range2(rec__variants__t__c1: int, a: us_split_discrs) =
+  (rec__variants__t__c1 = to_rep1((a).rec__variants__t__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -244,9 +247,6 @@ function t__ref_t__content__projection(a: t__ref) : us_rep = (a).t__content
 logic x : us_rep
 
 logic attr__ATTRIBUTE_ADDRESS : int
-
-predicate in_range2(rec__variants__t__c1: int, a: us_rep) =
-  (rec__variants__t__c1 = to_rep1(((a).us_split_discrs1).rec__variants__t__c))
 
 logic value__size1 : int
 
@@ -318,7 +318,8 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant(temp___expr_176: us_rep,
   temp___is_init_172: bool, temp___skip_constant_173: bool,
   temp___do_toplevel_174: bool, temp___do_typ_inv_175: bool) =
-  ((not (temp___skip_constant_173 = true)) -> in_range2(0, temp___expr_176))
+  ((not (temp___skip_constant_173 = true)) -> in_range2(0,
+  (temp___expr_176).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_178: us_rep,
   temp___skip_top_level_179: bool) =
@@ -327,9 +328,6 @@ predicate default_initial_assumption(temp___expr_178: us_rep,
 predicate default_initial_assumption1(temp___expr_167: us_rep,
   temp___skip_top_level_168: bool) =
   (to_rep1(((temp___expr_167).us_split_discrs1).rec__variants__t__c) = 0)
-
-predicate in_range3(rec__variants__t__c1: int, a: us_rep) =
-  (rec__variants__t__c1 = to_rep1(((a).us_split_discrs1).rec__variants__t__c))
 
 logic value__size2 : int
 
@@ -401,7 +399,8 @@ logic attr__ATTRIBUTE_ADDRESS2 : int
 predicate dynamic_invariant1(temp___expr_187: us_rep,
   temp___is_init_183: bool, temp___skip_constant_184: bool,
   temp___do_toplevel_185: bool, temp___do_typ_inv_186: bool) =
-  ((not (temp___skip_constant_184 = true)) -> in_range3(1, temp___expr_187))
+  ((not (temp___skip_constant_184 = true)) -> in_range2(1,
+  (temp___expr_187).us_split_discrs1))
 
 predicate default_initial_assumption2(temp___expr_189: us_rep,
   temp___skip_top_level_190: bool) =
@@ -426,4 +425,4 @@ goal defqtvc :
   z__split_discrs; us_split_fields1 = z__split_fields }, false, false, true,
   true) -> ((z__split_discrs = ({ us_split_discrs1 = y__split_discrs;
   us_split_fields1 = y__split_fields }).us_split_discrs1) -> in_range2(0,
-  x)))))
+  (x).us_split_discrs1)))))

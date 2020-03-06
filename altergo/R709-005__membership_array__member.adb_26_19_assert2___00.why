@@ -457,7 +457,7 @@ function t11b__ref_t11b__content__projection(a: t11b__ref) : t11b =
 
 logic member__a__aggregate_def : int -> (int,natural) farray
 
-logic temp_____aggregate_def_229 : int -> (int,natural) farray
+logic temp_____aggregate_def_231 : int -> (int,natural) farray
 
 predicate dynamic_invariant2(temp___expr_39: int, temp___is_init_35: bool,
   temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
@@ -509,10 +509,10 @@ logic rliteral1 : natural
 axiom rliteral_axiom1 : (naturalqtint(rliteral1) = 1)
 
 axiom def_axiom4 :
-  (forall temp___231:int. (dynamic_invariant2(temp___231, true, true, true,
+  (forall temp___233:int. (dynamic_invariant2(temp___233, true, true, true,
   true) ->
-  (forall temp___232:int.
-  ((temp_____aggregate_def_229(temp___231)[temp___232]) = rliteral1))))
+  (forall temp___234:int.
+  ((temp_____aggregate_def_231(temp___233)[temp___234]) = rliteral1))))
 
  (* File "member.adb", line 1, characters 0-0 *)
 goal defqtvc : (let member__a__assume = of_array(member__a__aggregate_def(0),

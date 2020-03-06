@@ -3966,18 +3966,18 @@ goal defqtvc :
   (forall x:int. ((x = 0) -> ((andb((if (0 <= x) then true else false),
   (if (x <= 2) then true else false)) = true) ->
   (forall cur_board2:(int,(int,cell) farray) farray. forall x1:int.
-  ((andb((if (forall temp___841:int. (((1 <= temp___841) and
-             (temp___841 <= 50)) ->
-             ((not ((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) + y1) = temp___841)) ->
-             ((cur_board2[temp___841]) = (cur_board1[temp___841]))))) then true else false),
+  ((andb((if (forall temp___850:int. (((1 <= temp___850) and
+             (temp___850 <= 50)) ->
+             ((not ((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) + y1) = temp___850)) ->
+             ((cur_board2[temp___850]) = (cur_board1[temp___850]))))) then true else false),
   (if ((0 <= x1) and (x1 <= 2)) then true else false)) = true) ->
   (forall o2:int.
   ((to_rep4((cur_piece__split_fields).rec__tetris_functional__piece__d) = o2) ->
-  (forall temp___838:int.
-  ((to_rep1((cur_piece__split_fields).rec__tetris_functional__piece__s) = temp___838) ->
-  (((3 <= temp___838) and (temp___838 <= 7)) ->
+  (forall temp___847:int.
+  ((to_rep1((cur_piece__split_fields).rec__tetris_functional__piece__s) = temp___847) ->
+  (((3 <= temp___847) and (temp___847 <= 7)) ->
   (forall spark__branch2:bool.
-  ((spark__branch2 = get(get1(possible_three_shapes, temp___838, o2), y1,
+  ((spark__branch2 = get(get1(possible_three_shapes, temp___847, o2), y1,
   x1)) -> ((spark__branch2 = true) ->
   (forall o3:int.
   ((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) = o3) ->
@@ -3986,8 +3986,8 @@ goal defqtvc :
   (forall o5:cell. ((to_rep(o5) = o4) ->
   (forall o6:int.
   ((to_rep2((cur_piece__split_fields).rec__tetris_functional__piece__x) = o6) ->
-  (let temp___836 = (o6 + x1) : int in (((1 <= temp___836) and
-  (temp___836 <= 10)) ->
+  (let temp___845 = (o6 + x1) : int in (((1 <= temp___845) and
+  (temp___845 <= 10)) ->
   (forall o7:int.
   ((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) = o7) ->
   (forall o8:int.

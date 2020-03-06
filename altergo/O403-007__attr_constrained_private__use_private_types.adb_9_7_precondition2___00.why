@@ -139,6 +139,10 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__private_types__simple,
   ((b).us_split_fields1).rec__private_types__simple) = true)) then true else false)
 
+predicate in_range1(rec__private_types__simple__d1: int,
+  a: us_split_discrs) =
+  (rec__private_types__simple__d1 = to_rep((a).rec__private_types__simple__d))
+
 logic value__size : int
 
 logic object__size : int

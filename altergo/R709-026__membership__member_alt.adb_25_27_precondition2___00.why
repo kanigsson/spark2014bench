@@ -151,6 +151,9 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (if ((to_int(((a).us_split_discrs1).rec__member_alt__my_rec__d) = to_int(((b).us_split_discrs1).rec__member_alt__my_rec__d)) and
   (to_rep(((a).us_split_fields1).rec__member_alt__my_rec__f) = to_rep(((b).us_split_fields1).rec__member_alt__my_rec__f))) then true else false)
 
+predicate in_range2(rec__member_alt__my_rec__d1: bool, a: us_split_discrs) =
+  (rec__member_alt__my_rec__d1 = (a).rec__member_alt__my_rec__d)
+
 logic value__size : int
 
 logic object__size : int
@@ -227,9 +230,6 @@ predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
   temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
   ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
 
-predicate in_range2(rec__member_alt__my_rec__d1: bool, a: us_rep) =
-  (rec__member_alt__my_rec__d1 = ((a).us_split_discrs1).rec__member_alt__my_rec__d)
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -286,9 +286,6 @@ axiom f__def_axiom :
   (forall x:int [f(x)]. (dynamic_invariant(x, true, true, true, true) ->
   (f(x) = { us_split_discrs1 = { rec__member_alt__my_rec__d = of_int(1) };
   us_split_fields1 = { rec__member_alt__my_rec__f = of_rep(x) } })))
-
-predicate in_range3(rec__member_alt__my_rec__d1: bool, a: us_rep) =
-  (rec__member_alt__my_rec__d1 = ((a).us_split_discrs1).rec__member_alt__my_rec__d)
 
 logic value__size2 : int
 

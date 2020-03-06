@@ -121,6 +121,23 @@ function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
 function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
   (a).us_split_fields1
 
+function to_rep(x: natural) : int = naturalqtint(x)
+
+logic of_rep : int -> natural
+
+axiom inversion_axiom :
+  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:natural [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+predicate in_range1(rec__task_types__my_task_type__c1: int,
+  a: us_split_discrs) =
+  (rec__task_types__my_task_type__c1 = to_rep((a).rec__task_types__my_task_type__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -186,22 +203,6 @@ function of_base(r: us_rep) : us_rep1 = { us_split_discrs2 =
   (r).us_split_discrs1; us_split_fields3 = { rec__task_types__my_task_type1 =
   ((r).us_split_fields1).rec__task_types__my_task_type } }
 
-function to_rep(x: natural) : int = naturalqtint(x)
-
-logic of_rep : int -> natural
-
-axiom inversion_axiom :
-  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
-
-axiom range_axiom : (forall x:natural [to_rep(x)]. in_range(to_rep(x)))
-
-axiom coerce_axiom :
-  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
-  (to_rep(of_rep(x)) = x)))
-
-predicate in_range1(rec__task_types__my_task_type__c1: int, a: us_rep) =
-  (rec__task_types__my_task_type__c1 = to_rep(((a).us_split_discrs1).rec__task_types__my_task_type__c))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -247,7 +248,7 @@ predicate dynamic_invariant(temp___expr_190: us_rep1,
   temp___is_init_186: bool, temp___skip_constant_187: bool,
   temp___do_toplevel_188: bool, temp___do_typ_inv_189: bool) =
   ((not (temp___skip_constant_187 = true)) -> in_range1(0,
-  to_base(temp___expr_190)))
+  (to_base(temp___expr_190)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_192: us_rep1,
   temp___skip_top_level_193: bool) =
@@ -282,9 +283,6 @@ function to_base1(a: us_rep2) : us_rep = { us_split_discrs1 =
 function of_base1(r: us_rep) : us_rep2 = { us_split_discrs3 =
   (r).us_split_discrs1; us_split_fields5 = { rec__task_types__my_task_type2 =
   ((r).us_split_fields1).rec__task_types__my_task_type } }
-
-predicate in_range2(rec__task_types__my_task_type__c1: int, a: us_rep) =
-  (rec__task_types__my_task_type__c1 = to_rep(((a).us_split_discrs1).rec__task_types__my_task_type__c))
 
 logic value__size2 : int
 
@@ -330,8 +328,8 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant1(temp___expr_199: us_rep2,
   temp___is_init_195: bool, temp___skip_constant_196: bool,
   temp___do_toplevel_197: bool, temp___do_typ_inv_198: bool) =
-  ((not (temp___skip_constant_196 = true)) -> in_range2(1,
-  to_base1(temp___expr_199)))
+  ((not (temp___skip_constant_196 = true)) -> in_range1(1,
+  (to_base1(temp___expr_199)).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_201: us_rep2,
   temp___skip_top_level_202: bool) =
@@ -366,7 +364,7 @@ axiom countqtaxiom : (forall i:count. (0 <= countqtint(i)))
 
 axiom countqtaxiom1 : (forall i:count. (countqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -389,7 +387,7 @@ function count__ref_count__content__projection(a: count__ref) : count =
 predicate dynamic_invariant3(temp___expr_212: int, temp___is_init_208: bool,
   temp___skip_constant_209: bool, temp___do_toplevel_210: bool,
   temp___do_typ_inv_211: bool) = (((temp___is_init_208 = true) or
-  (0 <= 2147483647)) -> in_range3(temp___expr_212))
+  (0 <= 2147483647)) -> in_range2(temp___expr_212))
 
 axiom line_length__post_axiom :
   (forall ada___ada__text_io__standard_in:us_private.

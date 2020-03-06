@@ -196,14 +196,15 @@ goal defqtvc :
                                                               ((((- 2147483648) <= j) and
                                                               (j <= i1)) ->
                                                               (to_rep((a1[j])) = to_rep((b[j]))))) and
-                                                             ((andb((if (in_range1(i1) and
-                                                             (forall temp___388:int.
-                                                             ((((- 2147483648) <= temp___388) and
-                                                             (temp___388 <= 2147483647)) ->
-                                                             (((2147483647 <  temp___388) or
-                                                             ((temp___388 <  (- 2147483648)) or
-                                                             (i1 <  temp___388))) ->
-                                                             ((a1[temp___388]) = (a[temp___388])))))) then true else false),
+                                                             ((andb((if (
+                                                             (forall temp___387:int.
+                                                             ((((- 2147483648) <= temp___387) and
+                                                             (temp___387 <= 2147483647)) ->
+                                                             (((2147483647 <  temp___387) or
+                                                             ((temp___387 <  (- 2147483648)) or
+                                                             (i1 <  temp___387))) ->
+                                                             ((a1[temp___387]) = (a[temp___387]))))) and
+                                                             in_range1(i1)) then true else false),
                                                              (if (((- 2147483648) <= i1) and
                                                              (i1 <= 2147483647)) then true else false)) = true) and
                                                              (i1 = 2147483647)))))))))) else (a1 = a)))) ->

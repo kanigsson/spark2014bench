@@ -91,10 +91,10 @@ type int100__ref = { int100__content : int100
 function int100__ref_int100__content__projection(a: int100__ref) : int100 =
   (a).int100__content
 
-predicate dynamic_invariant(temp___expr_988: int, temp___is_init_984: bool,
-  temp___skip_constant_985: bool, temp___do_toplevel_986: bool,
-  temp___do_typ_inv_987: bool) = (((temp___is_init_984 = true) or
-  (0 <= 100)) -> in_range(temp___expr_988))
+predicate dynamic_invariant(temp___expr_1002: int, temp___is_init_998: bool,
+  temp___skip_constant_999: bool, temp___do_toplevel_1000: bool,
+  temp___do_typ_inv_1001: bool) = (((temp___is_init_998 = true) or
+  (0 <= 100)) -> in_range(temp___expr_1002))
 
  (* File "inst_ext_ax.ads", line 16, characters 0-0 *)
 goal defqtvc : (dynamic_invariant(i1, true, false, true, true) ->

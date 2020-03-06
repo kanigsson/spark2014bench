@@ -505,6 +505,6 @@ goal defqtvc : (let temp___280 = formals_arr_split_pred__x__aggregate_def(1)
   ((dynamic_property((- 2147483648), 2147483647, to_rep1(u__first),
   to_rep1(u__last)) and (((to_rep1(u__first) <= 1) and
   (3 <= to_rep1(u__last))) and (not (to_rep((u[3])) = 0)))) ->
-  (forall x1:(int,natural) farray. forall o:(int,natural) farray.
-  ((o = x1) -> ((((to_rep1(x__first) <= 1) and (3 <= to_rep1(x__last))) and
-  (not (to_rep((o[3])) = 0))) -> (to_rep1(x__first) <= 1))))))))))))))))))))))))))))))
+  (dynamic_property((- 2147483648), 2147483647, to_rep1(x__first),
+  to_rep1(x__last)) -> dynamic_predicate4(of_array(x, to_rep1(x__first),
+  to_rep1(x__last))))))))))))))))))))))))))))))

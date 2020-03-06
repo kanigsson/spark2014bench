@@ -313,16 +313,16 @@ axiom has_element__def_axiom1 :
 
 axiom has_element__def_axiom2 :
   (forall c1:us_rep.
-  (forall p1:(int,natural) farray [has_element(c1, p1)].
-  (((1 <= to_rep((p1[1]))) and
-  (to_rep((p1[1])) <= to_rep(((c1).us_split_fields1).rec__composite_cursors__cont1__length))) ->
+  (forall p1:(int,natural) farray [has_element(c1, p1)]. ((let temp___209 =
+  to_rep((p1[1])) : int in ((1 <= temp___209) and
+  (temp___209 <= to_rep(((c1).us_split_fields1).rec__composite_cursors__cont1__length)))) ->
   (has_element(c1, p1) = true))))
 
 logic i17s : us_rep
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
 
-logic temp_____aggregate_def_210 : int -> (int,natural) farray
+logic temp_____aggregate_def_212 : int -> (int,natural) farray
 
 predicate dynamic_invariant1(temp___expr_39: int, temp___is_init_35: bool,
   temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
@@ -335,9 +335,9 @@ predicate dynamic_invariant2(temp___expr_18: int, temp___is_init_14: bool,
   ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_18))
 
 axiom def_axiom :
-  (forall temp___212:int. (dynamic_invariant1(temp___212, true, true, true,
+  (forall temp___214:int. (dynamic_invariant1(temp___214, true, true, true,
   true) ->
-  (to_rep((temp_____aggregate_def_210(temp___212)[1])) = temp___212)))
+  (to_rep((temp_____aggregate_def_212(temp___214)[1])) = temp___214)))
 
  (* File "composite_cursors.ads", line 20, characters 0-0 *)
 goal defqtvc : (dynamic_invariant(i17s, true, false, true, true) ->

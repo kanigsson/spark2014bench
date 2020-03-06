@@ -169,6 +169,10 @@ function us_rep___split_discrs__9__projection(a: us_rep) : us_split_discrs =
 function bool_eq2(a: us_rep, b: us_rep) : bool =
   (if (to_rep(((a).us_split_discrs1).rec__with_default__bad_nested_defaults1__empty_rec__d) = to_rep(((b).us_split_discrs1).rec__with_default__bad_nested_defaults1__empty_rec__d)) then true else false)
 
+predicate in_range2(rec__with_default__bad_nested_defaults1__empty_rec__d1: int,
+  a: us_split_discrs) =
+  (rec__with_default__bad_nested_defaults1__empty_rec__d1 = to_rep((a).rec__with_default__bad_nested_defaults1__empty_rec__d))
+
 logic value__size : int
 
 logic object__size : int

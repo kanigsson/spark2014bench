@@ -176,6 +176,10 @@ type p_simple__ref = { p_simple__content : us_rep
 function p_simple__ref_p_simple__content__projection(a: p_simple__ref) : us_rep =
   (a).p_simple__content
 
+predicate in_range1(rec__private_types__simple__d1: int,
+  a: us_split_discrs) =
+  (rec__private_types__simple__d1 = to_rep((a).rec__private_types__simple__d))
+
 logic value__size1 : int
 
 logic object__size1 : int

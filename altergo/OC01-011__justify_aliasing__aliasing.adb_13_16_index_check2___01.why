@@ -326,11 +326,4 @@ goal defqtvc :
   to_rep1(a__first), to_rep1(a__last)) -> (dynamic_invariant(i, true, false,
   true, true) -> (dynamic_invariant(j, true, false, true, true) ->
   (((to_rep1(a__first) <= j) and (j <= to_rep1(a__last))) ->
-  (forall o:int. ((to_rep((a[j])) = o) -> (((to_rep1(a__first) <= i) and
-  (i <= to_rep1(a__last))) ->
-  (forall o1:int. ((to_rep((a[i])) = o1) ->
-  (forall aliasing__swap__y:int. forall aliasing__swap__x:int.
-  ((dynamic_invariant1(aliasing__swap__x, true, true, true, true) and
-  dynamic_invariant1(aliasing__swap__y, true, true, true, true)) ->
-  (forall o2:positive. ((to_rep(o2) = aliasing__swap__x) ->
-  (to_rep1(a__first) <= i)))))))))))))))
+  (forall o:int. ((to_rep((a[j])) = o) -> (to_rep1(a__first) <= i))))))))

@@ -170,12 +170,12 @@ goal defqtvc :
   (forall r2:(int,bool) farray. forall x1:int.
   ((forall i:int. (((0 <= i) and (i <= x1)) -> (((r2[i]) = true) <->
    (i = c)))) ->
-  ((andb((if ((forall temp___366:int. (((0 <= temp___366) and
-              (temp___366 <= 255)) -> (((255 <  temp___366) or
-              ((temp___366 <  0) or (x1 <  temp___366))) ->
-              ((r2[temp___366]) = (r[temp___366]))))) and
-  in_range1(x1)) then true else false), (if ((0 <= x1) and
-  (x1 <= 255)) then true else false)) = true) -> ((not (x1 = 255)) ->
+  ((andb((if (in_range1(x1) and
+  (forall temp___371:int. (((0 <= temp___371) and (temp___371 <= 255)) ->
+  (((255 <  temp___371) or ((temp___371 <  0) or (x1 <  temp___371))) ->
+  ((r2[temp___371]) = (r[temp___371])))))) then true else false),
+  (if ((0 <= x1) and (x1 <= 255)) then true else false)) = true) ->
+  ((not (x1 = 255)) ->
   (forall x2:int. ((x2 = (x1 + 1)) ->
   (forall r3:(int,bool) farray.
   ((r3 = (r2[x2 <- (if (x2 = c) then true else false)])) ->

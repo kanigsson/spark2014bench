@@ -344,6 +344,11 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   (bool_eq4(((a).us_split_fields1).rec__static_discr__i_holder__content,
   ((b).us_split_fields1).rec__static_discr__i_holder__content) = true)) then true else false)
 
+predicate in_range3(rec__static_discr__i_holder__unused1: int,
+  rec__static_discr__i_holder__c1: int, a: us_split_discrs) =
+  ((rec__static_discr__i_holder__unused1 = to_rep((a).rec__static_discr__i_holder__unused)) and
+  (rec__static_discr__i_holder__c1 = to_rep((a).rec__static_discr__i_holder__c)))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -458,11 +463,6 @@ function bool_eq6(a: us_rep1, b: us_rep1) : bool =
   (to_rep(((a).us_split_discrs2).rec__static_discr__i_holder__c) = to_rep(((b).us_split_discrs2).rec__static_discr__i_holder__c))) and
   (bool_eq4(((a).us_split_fields3).rec__static_discr__i_holder__content1,
   ((b).us_split_fields3).rec__static_discr__i_holder__content1) = true)) then true else false)
-
-predicate in_range3(rec__static_discr__i_holder__unused1: int,
-  rec__static_discr__i_holder__c1: int, a: us_rep) =
-  ((rec__static_discr__i_holder__unused1 = to_rep(((a).us_split_discrs1).rec__static_discr__i_holder__unused)) and
-  (rec__static_discr__i_holder__c1 = to_rep(((a).us_split_discrs1).rec__static_discr__i_holder__c)))
 
 logic value__size2 : int
 
@@ -580,6 +580,11 @@ function bool_eq7(a: us_rep2, b: us_rep2) : bool =
   ((b).us_split_fields5).rec__static_discr__holder__content) = true) and
   (to_rep(((a).us_split_fields5).rec__static_discr__holder__length) = to_rep(((b).us_split_fields5).rec__static_discr__holder__length)))) then true else false)
 
+predicate in_range4(rec__static_discr__holder__unused1: int,
+  rec__static_discr__holder__c1: int, a: us_split_discrs3) =
+  ((rec__static_discr__holder__unused1 = to_rep((a).rec__static_discr__holder__unused)) and
+  (rec__static_discr__holder__c1 = to_rep((a).rec__static_discr__holder__c)))
+
 logic value__size3 : int
 
 logic object__size3 : int
@@ -688,7 +693,7 @@ predicate dynamic_invariant3(temp___expr_195: us_rep2,
   : natural in
   (in_range3(to_rep(((temp___expr_195).us_split_discrs4).rec__static_discr__holder__unused),
   to_rep(temp___197),
-  to_base(((temp___expr_195).us_split_fields5).rec__static_discr__holder__content)) and
+  (to_base(((temp___expr_195).us_split_fields5).rec__static_discr__holder__content)).us_split_discrs1) and
   (dynamic_property(1, to_rep(temp___197),
   first1(((((temp___expr_195).us_split_fields5).rec__static_discr__holder__content).us_split_fields3).rec__static_discr__i_holder__content1),
   last1(((((temp___expr_195).us_split_fields5).rec__static_discr__holder__content).us_split_fields3).rec__static_discr__i_holder__content1)) and

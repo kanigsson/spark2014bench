@@ -322,9 +322,9 @@ goal defqtvc :
   ((exists spark__branch:bool.
    ((spark__branch = (if (0 <  y) then true else false)) and
    (if (spark__branch = true) then (let o = y : int in (in_range2(o) and
-   (let o1 = x : int in ((0 <= mod1(o1, o)) and (mod1(o1,
-   o) <= (o - 1)))))) else (let o = y : int in (let o1 = x : int in
+   (let temp___225 = mod1(x, o) : int in ((0 <= temp___225) and
+   (temp___225 <= (o - 1)))))) else (let o = y : int in (let o1 = x : int in
    ((mod1((-o1), (-o)) = (-mod1(o1, o))) and (let o2 = (-y) : int in
-   (in_range2(o2) and (let o3 = (-x) : int in ((0 <= mod1(o3, o2)) and
-   (mod1(o3, o2) <= (o2 - 1)))))))))))) ->
+   (in_range2(o2) and (let temp___225 = mod1((-x), o2) : int in
+   ((0 <= temp___225) and (temp___225 <= (o2 - 1)))))))))))) ->
   (abs_int(r1) <  abs_int(y))))))))))

@@ -335,6 +335,10 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   (bool_eq4(((a).us_split_fields1).rec__record_discr__interm_result__to_search,
   ((b).us_split_fields1).rec__record_discr__interm_result__to_search) = true)) then true else false)
 
+predicate in_range3(rec__record_discr__interm_result__upto1: int,
+  a: us_split_discrs) =
+  (rec__record_discr__interm_result__upto1 = to_rep((a).rec__record_discr__interm_result__upto))
+
 logic value__size1 : int
 
 logic object__size1 : int

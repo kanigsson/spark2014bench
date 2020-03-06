@@ -339,6 +339,9 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   (bool_eq4(((a).us_split_fields1).rec__priv__priv_rec__content,
   ((b).us_split_fields1).rec__priv__priv_rec__content) = true)) then true else false)
 
+predicate in_range3(rec__priv__priv_rec__c1: int, a: us_split_discrs) =
+  (rec__priv__priv_rec__c1 = to_rep((a).rec__priv__priv_rec__c))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -434,9 +437,6 @@ function bool_eq6(a: us_rep1, b: us_rep1) : bool =
   (if ((to_rep(((a).us_split_discrs2).rec__priv__priv_rec__c) = to_rep(((b).us_split_discrs2).rec__priv__priv_rec__c)) and
   (bool_eq4(((a).us_split_fields3).rec__priv__priv_rec__content1,
   ((b).us_split_fields3).rec__priv__priv_rec__content1) = true)) then true else false)
-
-predicate in_range3(rec__priv__priv_rec__c1: int, a: us_rep) =
-  (rec__priv__priv_rec__c1 = to_rep(((a).us_split_discrs1).rec__priv__priv_rec__c))
 
 logic value__size2 : int
 
@@ -551,7 +551,7 @@ predicate dynamic_invariant1(temp___expr_174: us_rep2,
   temp___is_init_170: bool, temp___skip_constant_171: bool,
   temp___do_toplevel_172: bool, temp___do_typ_inv_173: bool) =
   (in_range3(max,
-  to_base(((temp___expr_174).us_split_fields5).rec__main__r__content)) and
+  (to_base(((temp___expr_174).us_split_fields5).rec__main__r__content)).us_split_discrs1) and
   (dynamic_property(1, max,
   first1(((((temp___expr_174).us_split_fields5).rec__main__r__content).us_split_fields3).rec__priv__priv_rec__content1),
   last1(((((temp___expr_174).us_split_fields5).rec__main__r__content).us_split_fields3).rec__priv__priv_rec__content1)) and

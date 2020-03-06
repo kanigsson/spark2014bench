@@ -150,6 +150,23 @@ function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
 function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
   (a).us_split_fields1
 
+function to_rep(x: any_priority) : int = any_priorityqtint(x)
+
+logic of_rep : int -> any_priority
+
+axiom inversion_axiom :
+  (forall x:any_priority [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:any_priority [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+predicate in_range2(rec__interrupt_priority__interrupt_needed_1__c1: int,
+  a: us_split_discrs) =
+  (rec__interrupt_priority__interrupt_needed_1__c1 = to_rep((a).rec__interrupt_priority__interrupt_needed_1__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -233,23 +250,6 @@ function of_base(r: us_rep) : us_rep1 = { us_split_discrs2 =
   rec__interrupt_priority__interrupt_needed_1__i1 =
   ((r).us_split_fields1).rec__interrupt_priority__interrupt_needed_1__i } }
 
-function to_rep(x: any_priority) : int = any_priorityqtint(x)
-
-logic of_rep : int -> any_priority
-
-axiom inversion_axiom :
-  (forall x:any_priority [to_rep(x)]. (of_rep(to_rep(x)) = x))
-
-axiom range_axiom : (forall x:any_priority [to_rep(x)]. in_range1(to_rep(x)))
-
-axiom coerce_axiom :
-  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
-  (to_rep(of_rep(x)) = x)))
-
-predicate in_range2(rec__interrupt_priority__interrupt_needed_1__c1: int,
-  a: us_rep) =
-  (rec__interrupt_priority__interrupt_needed_1__c1 = to_rep(((a).us_split_discrs1).rec__interrupt_priority__interrupt_needed_1__c))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -321,7 +321,7 @@ predicate dynamic_invariant(temp___expr_192: us_rep1,
   temp___is_init_188: bool, temp___skip_constant_189: bool,
   temp___do_toplevel_190: bool, temp___do_typ_inv_191: bool) =
   ((not (temp___skip_constant_189 = true)) -> in_range2(0,
-  to_base(temp___expr_192)))
+  (to_base(temp___expr_192)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_194: us_rep1,
   temp___skip_top_level_195: bool) =

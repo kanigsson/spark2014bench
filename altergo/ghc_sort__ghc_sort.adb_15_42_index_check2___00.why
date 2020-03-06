@@ -458,25 +458,25 @@ logic rliteral : positive
 axiom rliteral_axiom : (positiveqtint(rliteral) = 1)
 
 axiom def_axiom :
-  (forall temp___410:int. forall temp___411:int. forall temp___412:int.
-  (dynamic_invariant(temp___410, true, true, true, true) ->
-  (dynamic_property1(1, 2147483647, temp___411, temp___412) ->
-  (first3(ghc_sort__cut__cut__aggregate_def(temp___410, temp___411,
-  temp___412)) = temp___411))))
+  (forall temp___411:int. forall temp___412:int. forall temp___413:int.
+  (dynamic_invariant(temp___411, true, true, true, true) ->
+  (dynamic_property1(1, 2147483647, temp___412, temp___413) ->
+  (first3(ghc_sort__cut__cut__aggregate_def(temp___411, temp___412,
+  temp___413)) = temp___412))))
 
 axiom def_axiom1 :
-  (forall temp___410:int. forall temp___411:int. forall temp___412:int.
-  (dynamic_invariant(temp___410, true, true, true, true) ->
-  (dynamic_property1(1, 2147483647, temp___411, temp___412) ->
-  (last3(ghc_sort__cut__cut__aggregate_def(temp___410, temp___411,
-  temp___412)) = temp___412))))
+  (forall temp___411:int. forall temp___412:int. forall temp___413:int.
+  (dynamic_invariant(temp___411, true, true, true, true) ->
+  (dynamic_property1(1, 2147483647, temp___412, temp___413) ->
+  (last3(ghc_sort__cut__cut__aggregate_def(temp___411, temp___412,
+  temp___413)) = temp___413))))
 
 axiom def_axiom2 :
-  (forall temp___410:int. forall temp___411:int. forall temp___412:int.
-  (dynamic_invariant(temp___410, true, true, true, true) ->
-  (forall temp___413:int.
-  ((to_array1(ghc_sort__cut__cut__aggregate_def(temp___410, temp___411,
-  temp___412))[temp___413]) = rliteral))))
+  (forall temp___411:int. forall temp___412:int. forall temp___413:int.
+  (dynamic_invariant(temp___411, true, true, true, true) ->
+  (forall temp___414:int.
+  ((to_array1(ghc_sort__cut__cut__aggregate_def(temp___411, temp___412,
+  temp___413))[temp___414]) = rliteral))))
 
 predicate dynamic_invariant3(temp___expr_180: us_t1,
   temp___is_init_176: bool, temp___skip_constant_177: bool,
@@ -484,27 +484,27 @@ predicate dynamic_invariant3(temp___expr_180: us_t1,
   ((not (temp___skip_constant_177 = true)) -> dynamic_property1(1,
   2147483647, first3(temp___expr_180), last3(temp___expr_180)))
 
-predicate dynamic_invariant4(temp___expr_214: us_t1,
-  temp___is_init_210: bool, temp___skip_constant_211: bool,
-  temp___do_toplevel_212: bool, temp___do_typ_inv_213: bool) =
-  ((not (temp___skip_constant_211 = true)) -> (dynamic_property1(1,
-  (length(s) + 1), first3(temp___expr_214), last3(temp___expr_214)) and
-  ((first3(temp___expr_214) = 1) and
-  (last3(temp___expr_214) = (length(s) + 1)))))
+predicate dynamic_invariant4(temp___expr_215: us_t1,
+  temp___is_init_211: bool, temp___skip_constant_212: bool,
+  temp___do_toplevel_213: bool, temp___do_typ_inv_214: bool) =
+  ((not (temp___skip_constant_212 = true)) -> (dynamic_property1(1,
+  (length(s) + 1), first3(temp___expr_215), last3(temp___expr_215)) and
+  ((first3(temp___expr_215) = 1) and
+  (last3(temp___expr_215) = (length(s) + 1)))))
 
-predicate default_initial_assumption(temp___expr_216: us_t1,
-  temp___skip_top_level_217: bool) = ((first3(temp___expr_216) = 1) and
-  (last3(temp___expr_216) = (length(s) + 1)))
+predicate default_initial_assumption(temp___expr_217: us_t1,
+  temp___skip_top_level_218: bool) = ((first3(temp___expr_217) = 1) and
+  (last3(temp___expr_217) = (length(s) + 1)))
 
  (* File "ghc_sort.ads", line 6, characters 0-0 *)
 goal defqtvc : (dynamic_invariant1(s, true, false, true, true) ->
-  ((last1(s) <  2147483646) -> (let temp___414 =
+  ((last1(s) <  2147483646) -> (let temp___415 =
   ghc_sort__cut__cut__aggregate_def(1, 1, (length(s) + 1)) : us_t1 in
-  ((first3(temp___414) = 1) -> ((last3(temp___414) = (length(s) + 1)) ->
-  ((if (first3(temp___414) <= last3(temp___414)) then ((1 <= (length(s) + 1)) and
-  ((last3(temp___414) - first3(temp___414)) = ((length(s) + 1) - 1))) else ((length(s) + 1) <  1)) ->
-  (let ghc_sort__cut__cut__assume = of_array1(to_array1(temp___414),
-  first3(temp___414), last3(temp___414)) : us_t1 in
+  ((first3(temp___415) = 1) -> ((last3(temp___415) = (length(s) + 1)) ->
+  ((if (first3(temp___415) <= last3(temp___415)) then ((1 <= (length(s) + 1)) and
+  ((last3(temp___415) - first3(temp___415)) = ((length(s) + 1) - 1))) else ((length(s) + 1) <  1)) ->
+  (let ghc_sort__cut__cut__assume = of_array1(to_array1(temp___415),
+  first3(temp___415), last3(temp___415)) : us_t1 in
   (forall cut1:(int,positive) farray.
   ((cut1 = to_array1(ghc_sort__cut__cut__assume)) ->
   ((to_rep(cut__first) = first3(ghc_sort__cut__cut__assume)) ->

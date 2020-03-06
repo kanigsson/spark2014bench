@@ -420,6 +420,10 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range5(rec__integer_stacks__stack__capacity1: int,
+  a: us_split_discrs) =
+  (rec__integer_stacks__stack__capacity1 = to_rep1((a).rec__integer_stacks__stack__capacity))
+
 logic value__size1 : int
 
 logic object__size1 : int

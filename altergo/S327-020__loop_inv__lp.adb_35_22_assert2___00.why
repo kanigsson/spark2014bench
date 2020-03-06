@@ -2187,8 +2187,8 @@ goal defqtvc : (dynamic_invariant(i, true, false, true, true) ->
   (dynamic_invariant1(powers, true, false, true, true) ->
   (forall previous:int. ((previous = 64) -> (dynamic_invariant(previous,
   true, false, true, true) ->
-  (forall temp___273:int. (((first1(powers) <= temp___273) and
-  (temp___273 <= last1(powers))) -> (let k =
-  to_rep((to_array(powers)[temp___273])) : int in ule(rliteral26,
+  (forall temp___275:int. (((first1(powers) <= temp___275) and
+  (temp___275 <= last1(powers))) -> (let k =
+  to_rep((to_array(powers)[temp___275])) : int in ule(rliteral26,
   (if (k <  18446744073709551616) then lsl_bv(rliteral28,
   of_int(k)) else rliteral26)))))))))))

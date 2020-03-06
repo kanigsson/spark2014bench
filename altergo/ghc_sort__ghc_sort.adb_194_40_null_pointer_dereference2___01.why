@@ -632,6 +632,10 @@ function bool_eq10(a: us_rep1, b: us_rep1) : bool =
   (bool_eq9(((a).us_split_fields1).rec__ghc_sort__int_array_list_cell__next,
   ((b).us_split_fields1).rec__ghc_sort__int_array_list_cell__next) = true))) then true else false)
 
+predicate in_range4(rec__ghc_sort__int_array_list_cell__l1: int,
+  a: us_split_discrs) =
+  (rec__ghc_sort__int_array_list_cell__l1 = to_rep1((a).rec__ghc_sort__int_array_list_cell__l))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -764,107 +768,107 @@ logic sum_length_aux : us_rep -> int
 
 logic sum_length_aux__function_guard : int, us_rep -> prop
 
-logic temp___dynamic_invariant_303 : us_rep, bool, bool, bool, bool -> prop
+logic temp___dynamic_invariant_304 : us_rep, bool, bool, bool, bool -> prop
 
-predicate dynamic_invariant5(temp___expr_298: us_rep,
-  temp___is_init_294: bool, temp___skip_constant_295: bool,
-  temp___do_toplevel_296: bool, temp___do_typ_inv_297: bool) =
-  ((not ((temp___expr_298).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
-  (let temp___299 =
-  ((rec__ghc_sort__int_array_list__pointer_value(temp___expr_298)).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l
-  : natural in (((dynamic_property(1, to_rep1(temp___299),
-  first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_298)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value),
-  last1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_298)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value)) and
-  ((first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_298)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1) and
-  (last1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_298)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = to_rep1(temp___299)))) and
-  (first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_298)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1)) and
-  temp___dynamic_invariant_303(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_298)).us_split_fields1).rec__ghc_sort__int_array_list_cell__next,
-  true, false, true, temp___do_typ_inv_297))))
+predicate dynamic_invariant5(temp___expr_299: us_rep,
+  temp___is_init_295: bool, temp___skip_constant_296: bool,
+  temp___do_toplevel_297: bool, temp___do_typ_inv_298: bool) =
+  ((not ((temp___expr_299).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
+  (let temp___300 =
+  ((rec__ghc_sort__int_array_list__pointer_value(temp___expr_299)).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l
+  : natural in (((dynamic_property(1, to_rep1(temp___300),
+  first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_299)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value),
+  last1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_299)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value)) and
+  ((first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_299)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1) and
+  (last1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_299)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = to_rep1(temp___300)))) and
+  (first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_299)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1)) and
+  temp___dynamic_invariant_304(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_299)).us_split_fields1).rec__ghc_sort__int_array_list_cell__next,
+  true, false, true, temp___do_typ_inv_298))))
 
 axiom def_axiom :
-  (forall temp___expr_308:us_rep.
-  (forall temp___is_init_304:bool. forall temp___skip_constant_305:bool.
-  forall temp___do_toplevel_306:bool. forall temp___do_typ_inv_307:bool
-  [temp___dynamic_invariant_303(temp___expr_308, temp___is_init_304,
-  temp___skip_constant_305, temp___do_toplevel_306, temp___do_typ_inv_307)].
-  (temp___dynamic_invariant_303(temp___expr_308, temp___is_init_304,
-  temp___skip_constant_305, temp___do_toplevel_306, temp___do_typ_inv_307) ->
-  ((not ((temp___expr_308).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
+  (forall temp___expr_309:us_rep.
+  (forall temp___is_init_305:bool. forall temp___skip_constant_306:bool.
+  forall temp___do_toplevel_307:bool. forall temp___do_typ_inv_308:bool
+  [temp___dynamic_invariant_304(temp___expr_309, temp___is_init_305,
+  temp___skip_constant_306, temp___do_toplevel_307, temp___do_typ_inv_308)].
+  (temp___dynamic_invariant_304(temp___expr_309, temp___is_init_305,
+  temp___skip_constant_306, temp___do_toplevel_307, temp___do_typ_inv_308) ->
+  ((not ((temp___expr_309).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
   dynamic_property(1,
-  to_rep1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l),
-  first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value),
-  last1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value))))))
+  to_rep1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l),
+  first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value),
+  last1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value))))))
 
 axiom def_axiom1 :
-  (forall temp___expr_308:us_rep.
-  (forall temp___is_init_304:bool. forall temp___skip_constant_305:bool.
-  forall temp___do_toplevel_306:bool. forall temp___do_typ_inv_307:bool
-  [temp___dynamic_invariant_303(temp___expr_308, temp___is_init_304,
-  temp___skip_constant_305, temp___do_toplevel_306, temp___do_typ_inv_307)].
-  (temp___dynamic_invariant_303(temp___expr_308, temp___is_init_304,
-  temp___skip_constant_305, temp___do_toplevel_306, temp___do_typ_inv_307) ->
-  ((not ((temp___expr_308).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
-  (first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1)))))
+  (forall temp___expr_309:us_rep.
+  (forall temp___is_init_305:bool. forall temp___skip_constant_306:bool.
+  forall temp___do_toplevel_307:bool. forall temp___do_typ_inv_308:bool
+  [temp___dynamic_invariant_304(temp___expr_309, temp___is_init_305,
+  temp___skip_constant_306, temp___do_toplevel_307, temp___do_typ_inv_308)].
+  (temp___dynamic_invariant_304(temp___expr_309, temp___is_init_305,
+  temp___skip_constant_306, temp___do_toplevel_307, temp___do_typ_inv_308) ->
+  ((not ((temp___expr_309).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
+  (first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1)))))
 
 axiom def_axiom2 :
-  (forall temp___expr_308:us_rep.
-  (forall temp___is_init_304:bool. forall temp___skip_constant_305:bool.
-  forall temp___do_toplevel_306:bool. forall temp___do_typ_inv_307:bool
-  [temp___dynamic_invariant_303(temp___expr_308, temp___is_init_304,
-  temp___skip_constant_305, temp___do_toplevel_306, temp___do_typ_inv_307)].
-  (temp___dynamic_invariant_303(temp___expr_308, temp___is_init_304,
-  temp___skip_constant_305, temp___do_toplevel_306, temp___do_typ_inv_307) ->
-  ((not ((temp___expr_308).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
-  (last1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = to_rep1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l))))))
+  (forall temp___expr_309:us_rep.
+  (forall temp___is_init_305:bool. forall temp___skip_constant_306:bool.
+  forall temp___do_toplevel_307:bool. forall temp___do_typ_inv_308:bool
+  [temp___dynamic_invariant_304(temp___expr_309, temp___is_init_305,
+  temp___skip_constant_306, temp___do_toplevel_307, temp___do_typ_inv_308)].
+  (temp___dynamic_invariant_304(temp___expr_309, temp___is_init_305,
+  temp___skip_constant_306, temp___do_toplevel_307, temp___do_typ_inv_308) ->
+  ((not ((temp___expr_309).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
+  (last1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = to_rep1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l))))))
 
 axiom def_axiom3 :
-  (forall temp___expr_308:us_rep.
-  (forall temp___is_init_304:bool. forall temp___skip_constant_305:bool.
-  forall temp___do_toplevel_306:bool. forall temp___do_typ_inv_307:bool
-  [temp___dynamic_invariant_303(temp___expr_308, temp___is_init_304,
-  temp___skip_constant_305, temp___do_toplevel_306, temp___do_typ_inv_307)].
-  (temp___dynamic_invariant_303(temp___expr_308, temp___is_init_304,
-  temp___skip_constant_305, temp___do_toplevel_306, temp___do_typ_inv_307) ->
-  ((not ((temp___expr_308).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
-  (first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1)))))
+  (forall temp___expr_309:us_rep.
+  (forall temp___is_init_305:bool. forall temp___skip_constant_306:bool.
+  forall temp___do_toplevel_307:bool. forall temp___do_typ_inv_308:bool
+  [temp___dynamic_invariant_304(temp___expr_309, temp___is_init_305,
+  temp___skip_constant_306, temp___do_toplevel_307, temp___do_typ_inv_308)].
+  (temp___dynamic_invariant_304(temp___expr_309, temp___is_init_305,
+  temp___skip_constant_306, temp___do_toplevel_307, temp___do_typ_inv_308) ->
+  ((not ((temp___expr_309).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
+  (first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1)))))
 
 axiom def_axiom4 : true
 
 axiom def_axiom5 :
-  (forall temp___expr_308:us_rep.
-  (forall temp___is_init_304:bool. forall temp___skip_constant_305:bool.
-  forall temp___do_toplevel_306:bool. forall temp___do_typ_inv_307:bool
-  [temp___dynamic_invariant_303(temp___expr_308, temp___is_init_304,
-  temp___skip_constant_305, temp___do_toplevel_306, temp___do_typ_inv_307)].
-  (temp___dynamic_invariant_303(temp___expr_308, temp___is_init_304,
-  temp___skip_constant_305, temp___do_toplevel_306, temp___do_typ_inv_307) ->
-  ((not ((temp___expr_308).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
-  temp___dynamic_invariant_303(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_fields1).rec__ghc_sort__int_array_list_cell__next,
-  true, false, true, temp___do_typ_inv_307)))))
+  (forall temp___expr_309:us_rep.
+  (forall temp___is_init_305:bool. forall temp___skip_constant_306:bool.
+  forall temp___do_toplevel_307:bool. forall temp___do_typ_inv_308:bool
+  [temp___dynamic_invariant_304(temp___expr_309, temp___is_init_305,
+  temp___skip_constant_306, temp___do_toplevel_307, temp___do_typ_inv_308)].
+  (temp___dynamic_invariant_304(temp___expr_309, temp___is_init_305,
+  temp___skip_constant_306, temp___do_toplevel_307, temp___do_typ_inv_308) ->
+  ((not ((temp___expr_309).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
+  temp___dynamic_invariant_304(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_fields1).rec__ghc_sort__int_array_list_cell__next,
+  true, false, true, temp___do_typ_inv_308)))))
 
 axiom def_axiom6 :
-  (forall temp___expr_308:us_rep.
-  (forall temp___is_init_304:bool. forall temp___skip_constant_305:bool.
-  forall temp___do_toplevel_306:bool. forall temp___do_typ_inv_307:bool
-  [temp___dynamic_invariant_303(temp___expr_308, temp___is_init_304,
-  temp___skip_constant_305, temp___do_toplevel_306, temp___do_typ_inv_307)].
-  (((not ((temp___expr_308).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
-  (let temp___309 =
-  ((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l
-  : natural in (((dynamic_property(1, to_rep1(temp___309),
-  first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value),
-  last1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value)) and
-  ((first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1) and
-  (last1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = to_rep1(temp___309)))) and
-  (first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1)) and
-  temp___dynamic_invariant_303(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_308)).us_split_fields1).rec__ghc_sort__int_array_list_cell__next,
-  true, false, true, temp___do_typ_inv_307)))) ->
-  temp___dynamic_invariant_303(temp___expr_308, temp___is_init_304,
-  temp___skip_constant_305, temp___do_toplevel_306, temp___do_typ_inv_307))))
+  (forall temp___expr_309:us_rep.
+  (forall temp___is_init_305:bool. forall temp___skip_constant_306:bool.
+  forall temp___do_toplevel_307:bool. forall temp___do_typ_inv_308:bool
+  [temp___dynamic_invariant_304(temp___expr_309, temp___is_init_305,
+  temp___skip_constant_306, temp___do_toplevel_307, temp___do_typ_inv_308)].
+  (((not ((temp___expr_309).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
+  (let temp___310 =
+  ((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l
+  : natural in (((dynamic_property(1, to_rep1(temp___310),
+  first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value),
+  last1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value)) and
+  ((first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1) and
+  (last1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = to_rep1(temp___310)))) and
+  (first1(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1)) and
+  temp___dynamic_invariant_304(((rec__ghc_sort__int_array_list__pointer_value(temp___expr_309)).us_split_fields1).rec__ghc_sort__int_array_list_cell__next,
+  true, false, true, temp___do_typ_inv_308)))) ->
+  temp___dynamic_invariant_304(temp___expr_309, temp___is_init_305,
+  temp___skip_constant_306, temp___do_toplevel_307, temp___do_typ_inv_308))))
 
-predicate default_initial_assumption(temp___expr_313: us_rep,
-  temp___skip_top_level_314: bool) =
-  ((temp___expr_313).rec__ghc_sort__int_array_list__is_null_pointer = true)
+predicate default_initial_assumption(temp___expr_314: us_rep,
+  temp___skip_top_level_315: bool) =
+  ((temp___expr_314).rec__ghc_sort__int_array_list__is_null_pointer = true)
 
 axiom sum_length__post_axiom :
   (forall l:us_rep [sum_length(l)]. (dynamic_invariant5(l, true, true, true,
@@ -989,10 +993,6 @@ function bool_eq12(a: us_rep2, b: us_rep2) : bool =
   (bool_eq9(((a).us_split_fields3).rec__ghc_sort__int_array_list_cell__next1,
   ((b).us_split_fields3).rec__ghc_sort__int_array_list_cell__next1) = true))) then true else false)
 
-predicate in_range4(rec__ghc_sort__int_array_list_cell__l1: int,
-  a: us_rep1) =
-  (rec__ghc_sort__int_array_list_cell__l1 = to_rep1(((a).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -1060,31 +1060,31 @@ type t84b__ref = { t84b__content : us_rep2
 function t84b__ref_t84b__content__projection(a: t84b__ref) : us_rep2 =
   (a).t84b__content
 
-predicate dynamic_predicate1(temp___391: us_t) = (first1(temp___391) = 1)
+predicate dynamic_predicate1(temp___392: us_t) = (first1(temp___392) = 1)
 
-predicate dynamic_invariant6(temp___expr_321: us_rep1,
-  temp___is_init_317: bool, temp___skip_constant_318: bool,
-  temp___do_toplevel_319: bool, temp___do_typ_inv_320: bool) =
-  (let temp___322 =
-  ((temp___expr_321).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l
-  : natural in (((dynamic_property(1, to_rep1(temp___322),
-  first1(((temp___expr_321).us_split_fields1).rec__ghc_sort__int_array_list_cell__value),
-  last1(((temp___expr_321).us_split_fields1).rec__ghc_sort__int_array_list_cell__value)) and
-  ((first1(((temp___expr_321).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1) and
-  (last1(((temp___expr_321).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = to_rep1(temp___322)))) and
-  ((temp___is_init_317 = true) ->
-  (first1(((temp___expr_321).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1))) and
-  ((not ((((temp___expr_321).us_split_fields1).rec__ghc_sort__int_array_list_cell__next).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
-  (let temp___326 =
-  ((rec__ghc_sort__int_array_list__pointer_value(((temp___expr_321).us_split_fields1).rec__ghc_sort__int_array_list_cell__next)).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l
-  : natural in (((dynamic_property(1, to_rep1(temp___326),
-  first1(((rec__ghc_sort__int_array_list__pointer_value(((temp___expr_321).us_split_fields1).rec__ghc_sort__int_array_list_cell__next)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value),
-  last1(((rec__ghc_sort__int_array_list__pointer_value(((temp___expr_321).us_split_fields1).rec__ghc_sort__int_array_list_cell__next)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value)) and
-  ((first1(((rec__ghc_sort__int_array_list__pointer_value(((temp___expr_321).us_split_fields1).rec__ghc_sort__int_array_list_cell__next)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1) and
-  (last1(((rec__ghc_sort__int_array_list__pointer_value(((temp___expr_321).us_split_fields1).rec__ghc_sort__int_array_list_cell__next)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = to_rep1(temp___326)))) and
-  (first1(((rec__ghc_sort__int_array_list__pointer_value(((temp___expr_321).us_split_fields1).rec__ghc_sort__int_array_list_cell__next)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1)) and
-  temp___dynamic_invariant_303(((rec__ghc_sort__int_array_list__pointer_value(((temp___expr_321).us_split_fields1).rec__ghc_sort__int_array_list_cell__next)).us_split_fields1).rec__ghc_sort__int_array_list_cell__next,
-  true, false, true, temp___do_typ_inv_320))))))
+predicate dynamic_invariant6(temp___expr_322: us_rep1,
+  temp___is_init_318: bool, temp___skip_constant_319: bool,
+  temp___do_toplevel_320: bool, temp___do_typ_inv_321: bool) =
+  (let temp___323 =
+  ((temp___expr_322).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l
+  : natural in (((dynamic_property(1, to_rep1(temp___323),
+  first1(((temp___expr_322).us_split_fields1).rec__ghc_sort__int_array_list_cell__value),
+  last1(((temp___expr_322).us_split_fields1).rec__ghc_sort__int_array_list_cell__value)) and
+  ((first1(((temp___expr_322).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1) and
+  (last1(((temp___expr_322).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = to_rep1(temp___323)))) and
+  ((temp___is_init_318 = true) ->
+  (first1(((temp___expr_322).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1))) and
+  ((not ((((temp___expr_322).us_split_fields1).rec__ghc_sort__int_array_list_cell__next).rec__ghc_sort__int_array_list__is_null_pointer = true)) ->
+  (let temp___327 =
+  ((rec__ghc_sort__int_array_list__pointer_value(((temp___expr_322).us_split_fields1).rec__ghc_sort__int_array_list_cell__next)).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l
+  : natural in (((dynamic_property(1, to_rep1(temp___327),
+  first1(((rec__ghc_sort__int_array_list__pointer_value(((temp___expr_322).us_split_fields1).rec__ghc_sort__int_array_list_cell__next)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value),
+  last1(((rec__ghc_sort__int_array_list__pointer_value(((temp___expr_322).us_split_fields1).rec__ghc_sort__int_array_list_cell__next)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value)) and
+  ((first1(((rec__ghc_sort__int_array_list__pointer_value(((temp___expr_322).us_split_fields1).rec__ghc_sort__int_array_list_cell__next)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1) and
+  (last1(((rec__ghc_sort__int_array_list__pointer_value(((temp___expr_322).us_split_fields1).rec__ghc_sort__int_array_list_cell__next)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = to_rep1(temp___327)))) and
+  (first1(((rec__ghc_sort__int_array_list__pointer_value(((temp___expr_322).us_split_fields1).rec__ghc_sort__int_array_list_cell__next)).us_split_fields1).rec__ghc_sort__int_array_list_cell__value) = 1)) and
+  temp___dynamic_invariant_304(((rec__ghc_sort__int_array_list__pointer_value(((temp___expr_322).us_split_fields1).rec__ghc_sort__int_array_list_cell__next)).us_split_fields1).rec__ghc_sort__int_array_list_cell__next,
+  true, false, true, temp___do_typ_inv_321))))))
 
 axiom sum_length_aux__def_axiom :
   (forall l:us_rep [sum_length_aux(l)]. ((dynamic_invariant5(l, true, true,
@@ -1112,7 +1112,7 @@ axiom sum_length_aux__post_axiom :
   (sum_length_aux__function_guard(result, l) -> dynamic_invariant4(result,
   true, false, true, true)))))
 
-predicate dynamic_predicate2(temp___315: us_t) = (first1(temp___315) = 1)
+predicate dynamic_predicate2(temp___316: us_t) = (first1(temp___316) = 1)
 
  (* File "ghc_sort.ads", line 52, characters 0-0 *)
 goal defqtvc :
@@ -1123,12 +1123,12 @@ goal defqtvc :
   ((cut__function_guard(ghc_sort__sort__cuts__assume, o) and
   (dynamic_invariant2(ghc_sort__sort__cuts__assume, true, false, true,
   true) and (((((((first3(ghc_sort__sort__cuts__assume) = 1) and
-  ((1 <= last3(ghc_sort__sort__cuts__assume)) and
-  (last3(ghc_sort__sort__cuts__assume) <= (length1(o) + 1)))) and
-  (forall temp___182:int.
-  (((first3(ghc_sort__sort__cuts__assume) <= temp___182) and
-  (temp___182 <= last3(ghc_sort__sort__cuts__assume))) -> (let c =
-  to_rep2((to_array1(ghc_sort__sort__cuts__assume)[temp___182])) : int in
+  (let temp___182 = last3(ghc_sort__sort__cuts__assume) : int in
+  ((1 <= temp___182) and (temp___182 <= (length1(o) + 1))))) and
+  (forall temp___183:int.
+  (((first3(ghc_sort__sort__cuts__assume) <= temp___183) and
+  (temp___183 <= last3(ghc_sort__sort__cuts__assume))) -> (let c =
+  to_rep2((to_array1(ghc_sort__sort__cuts__assume)[temp___183])) : int in
   ((1 <= c) and (c <= (length1(o) + 1))))))) and
   (to_rep2((to_array1(ghc_sort__sort__cuts__assume)[1])) = 1)) and
   (to_rep2((to_array1(ghc_sort__sort__cuts__assume)[last3(ghc_sort__sort__cuts__assume)])) = (length1(o) + 1))) and
@@ -1218,9 +1218,9 @@ goal defqtvc :
    rec__ghc_sort__int_array_list__is_null_pointer = l__is_null_pointer;
    rec__ghc_sort__int_array_list__pointer_address = l__pointer_address;
    rec__ghc_sort__int_array_list__pointer_value_abstr =
-   us_close(l__pointer_value) } : us_rep in (let temp___inv_604 =
-   all_sorted(o3) : bool in ((all_sorted__function_guard(temp___inv_604,
-   o3) and ((temp___inv_604 = true) <-> ((not (bool_eq9(o3,
+   us_close(l__pointer_value) } : us_rep in (let temp___inv_610 =
+   all_sorted(o3) : bool in ((all_sorted__function_guard(temp___inv_610,
+   o3) and ((temp___inv_610 = true) <-> ((not (bool_eq9(o3,
    us_null_pointer) = true)) ->
    ((forall k:int. (((2 <= k) and
     (k <= to_rep1(((rec__ghc_sort__int_array_list__pointer_value(o3)).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l))) ->
@@ -1254,9 +1254,9 @@ goal defqtvc :
    (exists o5:int. ((to_rep2((cuts[o4])) = o5) and (((o5 - 1) = r80b) and
    (dynamic_invariant1(r80b, true, false, true, true) and (((r79b <= r80b) ->
    (((first1(s) <= r79b) and (r79b <= last1(s))) and ((first1(s) <= r80b) and
-   (r80b <= last1(s))))) and (let temp___590 = of_array(to_array(s), r79b,
+   (r80b <= last1(s))))) and (let temp___596 = of_array(to_array(s), r79b,
    r80b) : us_t in (let ghc_sort__sort__B_8__ss__assume =
-   of_array(to_array(temp___590), first1(temp___590), last1(temp___590))
+   of_array(to_array(temp___596), first1(temp___596), last1(temp___596))
    : us_t in
    (exists ss:(int,integer) farray.
    ((ss = to_array(ghc_sort__sort__B_8__ss__assume)) and
@@ -1279,17 +1279,17 @@ goal defqtvc :
                                     (exists o8:int.
                                     ((to_rep(ss__first) = o8) and (let o9 =
                                     of_array(ss, o8, o7) : us_t in
-                                    (let temp___593 = s_reverse(o9) : us_t in
-                                    ((s_reverse__function_guard(temp___593,
-                                    o9) and (dynamic_invariant3(temp___593,
+                                    (let temp___599 = s_reverse(o9) : us_t in
+                                    ((s_reverse__function_guard(temp___599,
+                                    o9) and (dynamic_invariant3(temp___599,
                                     true, false, true, true) and
-                                    ((length1(temp___593) = length1(o9)) and
+                                    ((length1(temp___599) = length1(o9)) and
                                     (forall l:int. (((first1(o9) <= l) and
                                     (l <= last1(o9))) ->
-                                    (to_rep((to_array(temp___593)[l])) = to_rep((to_array(o9)[((length1(o9) - l) + 1)])))))))) and
-                                    ((if (first1(temp___593) <= last1(temp___593)) then ((to_rep(ss__first) <= to_rep(ss__last)) and
-                                    ((last1(temp___593) - first1(temp___593)) = (to_rep(ss__last) - to_rep(ss__first)))) else (to_rep(ss__last) <  to_rep(ss__first))) and
-                                    (ss1 = to_array(temp___593)))))))))) else (ss1 = ss)))))) and
+                                    (to_rep((to_array(temp___599)[l])) = to_rep((to_array(o9)[((length1(o9) - l) + 1)])))))))) and
+                                    ((if (first1(temp___599) <= last1(temp___599)) then ((to_rep(ss__first) <= to_rep(ss__last)) and
+                                    ((last1(temp___599) - first1(temp___599)) = (to_rep(ss__last) - to_rep(ss__first)))) else (to_rep(ss__last) <  to_rep(ss__first))) and
+                                    (ss1 = to_array(temp___599)))))))))) else (ss1 = ss)))))) and
    ((if (to_rep(ss__first) <= to_rep(ss__last)) then ((1 <= length(to_rep(ss__first),
    to_rep(ss__last))) and
    ((to_rep(ss__last) - to_rep(ss__first)) = (length(to_rep(ss__first),
@@ -1297,28 +1297,28 @@ goal defqtvc :
    to_rep(ss__last)) <  1)) and
    (exists o6:int. ((to_rep(ss__last) = o6) and
    (exists o7:int. ((to_rep(ss__first) = o7) and
-   (exists o8:int. ((to_rep(ss__first) = o8) and (let temp___596 =
+   (exists o8:int. ((to_rep(ss__first) = o8) and (let temp___602 =
    of_array(slide(ss1, o8, 1), 1, length(o7, o6)) : us_t in
-   (dynamic_predicate1(temp___596) and
+   (dynamic_predicate1(temp___602) and
    (exists o9:int. ((to_rep(ss__last) = o9) and
    (exists o10:int. ((to_rep(ss__first) = o10) and (let o11 = length(o10, o9)
    : int in (in_range2(o11) and
    (exists o12:natural. ((to_rep1(o12) = o11) and
    (exists us_next_pointer_address:int.
-   (exists temp___597:us_rep.
-   ((andb((if ((not ((temp___597).rec__ghc_sort__int_array_list__is_null_pointer = true)) and
-   ((temp___597).rec__ghc_sort__int_array_list__pointer_address = us_next_pointer_address)) then true else false),
-   (if (rec__ghc_sort__int_array_list__pointer_value(temp___597) = to_base({
+   (exists temp___603:us_rep.
+   ((andb((if ((not ((temp___603).rec__ghc_sort__int_array_list__is_null_pointer = true)) and
+   ((temp___603).rec__ghc_sort__int_array_list__pointer_address = us_next_pointer_address)) then true else false),
+   (if (rec__ghc_sort__int_array_list__pointer_value(temp___603) = to_base({
    us_split_discrs2 = { rec__ghc_sort__int_array_list_cell__l = o12 };
    us_split_fields3 = { rec__ghc_sort__int_array_list_cell__value1 =
-   temp___596; rec__ghc_sort__int_array_list_cell__next1 = {
+   temp___602; rec__ghc_sort__int_array_list_cell__next1 = {
    rec__ghc_sort__int_array_list__is_null_pointer = l__is_null_pointer2;
    rec__ghc_sort__int_array_list__pointer_address = l__pointer_address2;
    rec__ghc_sort__int_array_list__pointer_value_abstr =
    us_close(l__pointer_value2) } } })) then true else false)) = true) and
-   ((l__pointer_value1 = rec__ghc_sort__int_array_list__pointer_value(temp___597)) and
-   ((l__pointer_address1 = (temp___597).rec__ghc_sort__int_array_list__pointer_address) and
-   ((l__is_null_pointer1 = (temp___597).rec__ghc_sort__int_array_list__is_null_pointer) and
+   ((l__pointer_value1 = rec__ghc_sort__int_array_list__pointer_value(temp___603)) and
+   ((l__pointer_address1 = (temp___603).rec__ghc_sort__int_array_list__pointer_address) and
+   ((l__is_null_pointer1 = (temp___603).rec__ghc_sort__int_array_list__is_null_pointer) and
    (c1 = o2)))))))))))))))))))))))))))))))))))))))))))))))))))) else (((l__pointer_value1 = l__pointer_value) and
    (l__pointer_address1 = l__pointer_address)) and
    (l__is_null_pointer1 = l__is_null_pointer))))))))) ->
@@ -1414,9 +1414,9 @@ goal defqtvc :
   rec__ghc_sort__int_array_list__is_null_pointer = l__is_null_pointer1;
   rec__ghc_sort__int_array_list__pointer_address = l__pointer_address1;
   rec__ghc_sort__int_array_list__pointer_value_abstr =
-  us_close(l__pointer_value1) } : us_rep in (let temp___inv_609 =
-  all_sorted(o1) : bool in ((all_sorted__function_guard(temp___inv_609,
-  o1) and ((temp___inv_609 = true) <-> ((not (bool_eq9(o1,
+  us_close(l__pointer_value1) } : us_rep in (let temp___inv_615 =
+  all_sorted(o1) : bool in ((all_sorted__function_guard(temp___inv_615,
+  o1) and ((temp___inv_615 = true) <-> ((not (bool_eq9(o1,
   us_null_pointer) = true)) ->
   ((forall k:int. (((2 <= k) and
    (k <= to_rep1(((rec__ghc_sort__int_array_list__pointer_value(o1)).us_split_discrs1).rec__ghc_sort__int_array_list_cell__l))) ->

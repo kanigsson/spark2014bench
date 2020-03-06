@@ -376,9 +376,9 @@ goal defqtvc :
   (in_range1((lower1 * lower1)) ->
   (forall lower2:int. forall upper2:int. forall middle1:int.
   ((((lower2 * lower2) <= x) and (x <  (upper2 * upper2))) ->
-  (((dynamic_invariant2(upper2, false, true, true, true) and
-  dynamic_invariant1(middle1, false, true, true, true)) and
-  dynamic_invariant1(lower2, false, true, true, true)) ->
+  (((dynamic_invariant1(lower2, false, true, true, true) and
+  dynamic_invariant2(upper2, false, true, true, true)) and
+  dynamic_invariant1(middle1, false, true, true, true)) ->
   ((not ((lower2 + 1) = upper2)) ->
   (forall middle2:int. ((middle2 = div((lower2 + upper2), 2)) ->
   in_range1((middle2 * middle2)))))))))))))))))))

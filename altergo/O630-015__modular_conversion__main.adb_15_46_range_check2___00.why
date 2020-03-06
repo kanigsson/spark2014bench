@@ -979,7 +979,4 @@ axiom range_int_axiom :
   (forall x:unsigned_32 [to_int2(x)]. uint_in_range(to_int2(x)))
 
  (* File "main.adb", line 4, characters 0-0 *)
-goal defqtvc :
-  (forall value:t. (dynamic_invariant1(value, false, false, true, true) ->
-  (forall foo__get__data:t1. (dynamic_invariant(foo__get__data, true, true,
-  true, true) -> ule1(toBig(rliteral3), foo__get__data)))))
+goal defqtvc : true

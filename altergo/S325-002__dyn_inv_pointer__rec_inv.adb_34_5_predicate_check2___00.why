@@ -193,6 +193,9 @@ function bool_eq3(a: us_rep1, b: us_rep1) : bool =
   (bool_eq2(((a).us_split_fields1).rec__rec_inv__list_d__next,
   ((b).us_split_fields1).rec__rec_inv__list_d__next) = true))) then true else false)
 
+predicate in_range2(rec__rec_inv__list_d__d1: bool, a: us_split_discrs) =
+  (rec__rec_inv__list_d__d1 = (a).rec__rec_inv__list_d__d)
+
 logic value__size : int
 
 logic object__size : int
@@ -259,9 +262,6 @@ type list_d__ref = { list_d__content : us_rep1
 
 function list_d__ref_list_d__content__projection(a: list_d__ref) : us_rep1 =
   (a).list_d__content
-
-predicate in_range2(rec__rec_inv__list_d__d1: bool, a: us_rep1) =
-  (rec__rec_inv__list_d__d1 = ((a).us_split_discrs1).rec__rec_inv__list_d__d)
 
 logic value__size1 : int
 
@@ -418,7 +418,7 @@ predicate dynamic_invariant1(temp___expr_213: us_rep1,
   temp___is_init_209: bool, temp___skip_constant_210: bool,
   temp___do_toplevel_211: bool, temp___do_typ_inv_212: bool) =
   ((((not (temp___skip_constant_210 = true)) -> in_range2(of_int(1),
-  temp___expr_213)) and
+  (temp___expr_213).us_split_discrs1)) and
   ((((temp___expr_213).us_split_discrs1).rec__rec_inv__list_d__d = true) ->
   (0 <  to_rep(((temp___expr_213).us_split_fields1).rec__rec_inv__list_d__val)))) and
   ((not ((((temp___expr_213).us_split_fields1).rec__rec_inv__list_d__next).rec__rec_inv__list_acc__is_null_pointer = true)) ->
@@ -438,9 +438,6 @@ predicate default_initial_assumption1(temp___expr_220: us_rep1,
 predicate dynamic_predicate(temp___225: us_rep1) =
   ((((temp___225).us_split_discrs1).rec__rec_inv__list_d__d = true) ->
   (0 <  to_rep(((temp___225).us_split_fields1).rec__rec_inv__list_d__val)))
-
-predicate in_range3(rec__rec_inv__list_d__d1: bool, a: us_rep1) =
-  (rec__rec_inv__list_d__d1 = ((a).us_split_discrs1).rec__rec_inv__list_d__d)
 
 logic value__size2 : int
 
@@ -512,9 +509,6 @@ function t13b__ref_t13b__content__projection(a: t13b__ref) : us_rep1 =
 predicate dynamic_predicate1(temp___228: us_rep1) =
   ((((temp___228).us_split_discrs1).rec__rec_inv__list_d__d = true) ->
   (0 <  to_rep(((temp___228).us_split_fields1).rec__rec_inv__list_d__val)))
-
-predicate in_range4(rec__rec_inv__list_d__d1: bool, a: us_rep1) =
-  (rec__rec_inv__list_d__d1 = ((a).us_split_discrs1).rec__rec_inv__list_d__d)
 
 logic value__size3 : int
 
@@ -629,15 +623,15 @@ goal defqtvc : (let temp___235 = { us_split_discrs1 = {
   ((x__split_fields = (temp___235).us_split_fields1) ->
   ((x__split_discrs = (temp___235).us_split_discrs1) -> (dynamic_invariant1({
   us_split_discrs1 = x__split_discrs; us_split_fields1 = x__split_fields },
-  true, false, true, true) -> (let temp___237 = { us_split_discrs1 = {
+  true, false, true, true) -> (let temp___238 = { us_split_discrs1 = {
   rec__rec_inv__list_d__d = of_int(0) }; us_split_fields1 = {
   rec__rec_inv__list_d__val = rliteral1; rec__rec_inv__list_d__next =
-  us_null_pointer } } : us_rep1 in (dynamic_predicate2(temp___237) ->
+  us_null_pointer } } : us_rep1 in (dynamic_predicate2(temp___238) ->
   (forall us_next_pointer_address:int.
-  (forall temp___238:us_rep.
-  ((andb((if ((not ((temp___238).rec__rec_inv__list_acc__is_null_pointer = true)) and
-  ((temp___238).rec__rec_inv__list_acc__pointer_address = us_next_pointer_address)) then true else false),
-  (if (rec__rec_inv__list_acc__pointer_value(temp___238) = temp___237) then true else false)) = true) ->
+  (forall temp___239:us_rep.
+  ((andb((if ((not ((temp___239).rec__rec_inv__list_acc__is_null_pointer = true)) and
+  ((temp___239).rec__rec_inv__list_acc__pointer_address = us_next_pointer_address)) then true else false),
+  (if (rec__rec_inv__list_acc__pointer_value(temp___239) = temp___238) then true else false)) = true) ->
   dynamic_predicate({ us_split_discrs1 = x__split_discrs; us_split_fields1 =
   { rec__rec_inv__list_d__val = (x__split_fields).rec__rec_inv__list_d__val;
-  rec__rec_inv__list_d__next = temp___238 } })))))))))))))
+  rec__rec_inv__list_d__next = temp___239 } })))))))))))))

@@ -326,20 +326,19 @@ predicate dynamic_invariant1(temp___expr_189: us_rep,
   temp___is_init_185: bool, temp___skip_constant_186: bool,
   temp___do_toplevel_187: bool, temp___do_typ_inv_188: bool) =
   ((temp___do_toplevel_187 = true) -> ((temp___is_init_185 = true) ->
-  ((in_range1(to_rep(((temp___expr_189).us_split_fields1).rec__dynamic_preds__ext_even_pair__a)) and
-  (mod1(to_rep(((temp___expr_189).us_split_fields1).rec__dynamic_preds__ext_even_pair__a),
-  2) = 0)) and
-  (in_range1(to_rep(((temp___expr_189).us_split_fields1).rec__dynamic_preds__ext_even_pair__b)) and
-  (mod1(to_rep(((temp___expr_189).us_split_fields1).rec__dynamic_preds__ext_even_pair__b),
-  2) = 0)))))
+  ((let temp___191 =
+  to_rep(((temp___expr_189).us_split_fields1).rec__dynamic_preds__ext_even_pair__a)
+  : int in (in_range1(temp___191) and (mod1(temp___191, 2) = 0))) and
+  (let temp___193 =
+  to_rep(((temp___expr_189).us_split_fields1).rec__dynamic_preds__ext_even_pair__b)
+  : int in (in_range1(temp___193) and (mod1(temp___193, 2) = 0))))))
 
-predicate dynamic_predicate(temp___199: us_rep) =
-  ((in_range1(to_rep(((temp___199).us_split_fields1).rec__dynamic_preds__ext_even_pair__a)) and
-  (mod1(to_rep(((temp___199).us_split_fields1).rec__dynamic_preds__ext_even_pair__a),
-  2) = 0)) and
-  (in_range1(to_rep(((temp___199).us_split_fields1).rec__dynamic_preds__ext_even_pair__b)) and
-  (mod1(to_rep(((temp___199).us_split_fields1).rec__dynamic_preds__ext_even_pair__b),
-  2) = 0)))
+predicate dynamic_predicate(temp___199: us_rep) = ((let temp___201 =
+  to_rep(((temp___199).us_split_fields1).rec__dynamic_preds__ext_even_pair__a)
+  : int in (in_range1(temp___201) and (mod1(temp___201, 2) = 0))) and
+  (let temp___203 =
+  to_rep(((temp___199).us_split_fields1).rec__dynamic_preds__ext_even_pair__b)
+  : int in (in_range1(temp___203) and (mod1(temp___203, 2) = 0))))
 
 logic i8s : us_rep
 

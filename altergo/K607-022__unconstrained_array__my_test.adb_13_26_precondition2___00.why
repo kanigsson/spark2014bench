@@ -541,6 +541,10 @@ function bool_eq10(a: us_rep, b: us_rep) : bool =
   (bool_eq9(((a).us_split_fields1).rec__simple_unc_arrays__table__v,
   ((b).us_split_fields1).rec__simple_unc_arrays__table__v) = true)) then true else false)
 
+predicate in_range6(rec__simple_unc_arrays__table__last1: int,
+  a: us_split_discrs) =
+  (rec__simple_unc_arrays__table__last1 = to_rep((a).rec__simple_unc_arrays__table__last))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -620,7 +624,7 @@ axiom tT9bP1qtaxiom : (forall i:tT9bP1. (1 <= tT9bP1qtint(i)))
 
 axiom tT9bP1qtaxiom1 : (forall i:tT9bP1. (tT9bP1qtint(i) <= 10))
 
-predicate in_range6(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range7(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -700,9 +704,6 @@ function bool_eq12(a: us_rep1, b: us_rep1) : bool =
   ((b).us_split_fields3).rec__simple_unc_arrays__table__v1, 1,
   10) = true)) then true else false)
 
-predicate in_range7(rec__simple_unc_arrays__table__last1: int, a: us_rep) =
-  (rec__simple_unc_arrays__table__last1 = to_rep(((a).us_split_discrs1).rec__simple_unc_arrays__table__last))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -762,8 +763,8 @@ logic attr__ATTRIBUTE_ADDRESS2 : int
 predicate dynamic_invariant1(temp___expr_212: us_rep1,
   temp___is_init_208: bool, temp___skip_constant_209: bool,
   temp___do_toplevel_210: bool, temp___do_typ_inv_211: bool) =
-  ((not (temp___skip_constant_209 = true)) -> in_range7(10,
-  to_base(temp___expr_212)))
+  ((not (temp___skip_constant_209 = true)) -> in_range6(10,
+  (to_base(temp___expr_212)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_215: us_rep1,
   temp___skip_top_level_216: bool) =
@@ -1048,9 +1049,6 @@ function bool_eq14(a: us_rep2, b: us_rep2) : bool =
   ((b).us_split_fields5).rec__simple_unc_arrays__table__v2, 1,
   10) = true)) then true else false)
 
-predicate in_range9(rec__simple_unc_arrays__table__last1: int, a: us_rep) =
-  (rec__simple_unc_arrays__table__last1 = to_rep(((a).us_split_discrs1).rec__simple_unc_arrays__table__last))
-
 logic value__size6 : int
 
 logic object__size6 : int
@@ -1111,7 +1109,7 @@ axiom tT6bP1qtaxiom : (forall i:tT6bP1. (1 <= tT6bP1qtint(i)))
 
 axiom tT6bP1qtaxiom1 : (forall i:tT6bP1. (tT6bP1qtint(i) <= 10))
 
-predicate in_range10(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range9(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq15(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1190,9 +1188,6 @@ function bool_eq16(a: us_rep3, b: us_rep3) : bool =
   (bool_eq8(((a).us_split_fields7).rec__simple_unc_arrays__table__v3, 1, 10,
   ((b).us_split_fields7).rec__simple_unc_arrays__table__v3, 1,
   10) = true)) then true else false)
-
-predicate in_range11(rec__simple_unc_arrays__table__last1: int, a: us_rep) =
-  (rec__simple_unc_arrays__table__last1 = to_rep(((a).us_split_discrs1).rec__simple_unc_arrays__table__last))
 
 logic value__size8 : int
 

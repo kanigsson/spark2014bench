@@ -870,18 +870,18 @@ axiom def_axiom1 :
 
 logic rliteral2 : t
 
-axiom rliteral_axiom2 : (tqtint(rliteral2) = 0)
+axiom rliteral_axiom2 : (tqtint(rliteral2) = 1)
 
 logic rliteral3 : t
 
-axiom rliteral_axiom3 : (tqtint(rliteral3) = 1)
+axiom rliteral_axiom3 : (tqtint(rliteral3) = 0)
 
  (* File "main.adb", line 3, characters 0-0 *)
 goal defqtvc : ((of_array(main__powers__aggregate_def(63, 65),
   (- 2147483648), (- 2147483647)) = powers) -> (dynamic_invariant(powers,
   true, false, true, true) ->
-  (forall temp___195:int. (((first1(powers) <= temp___195) and
-  (temp___195 <= last1(powers))) -> (let k =
-  to_rep((to_array(powers)[temp___195])) : int in ule(rliteral2,
-  (if (k <  18446744073709551616) then lsl_bv(rliteral3,
-  of_int(k)) else rliteral2)))))))
+  (forall temp___197:int. (((first1(powers) <= temp___197) and
+  (temp___197 <= last1(powers))) -> (let k =
+  to_rep((to_array(powers)[temp___197])) : int in ule(rliteral3,
+  (if (k <  18446744073709551616) then lsl_bv(rliteral2,
+  of_int(k)) else rliteral3)))))))

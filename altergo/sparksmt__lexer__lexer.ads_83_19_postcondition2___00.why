@@ -562,6 +562,10 @@ function bool_eq9(a: us_rep, b: us_rep) : bool =
   (file_io__read_result__c__pred(a) ->
   (to_rep1(((a).us_split_fields1).rec__file_io__read_result__c) = to_rep1(((b).us_split_fields1).rec__file_io__read_result__c)))) then true else false)
 
+predicate in_range6(rec__file_io__read_result__status1: int,
+  a: us_split_discrs) =
+  (rec__file_io__read_result__status1 = to_rep3((a).rec__file_io__read_result__status))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -702,7 +706,7 @@ axiom invariant____def_axiom4 :
 
 type token_kind
 
-predicate in_range6(x: int) = ((0 <= x) and (x <= 8))
+predicate in_range7(x: int) = ((0 <= x) and (x <= 8))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -730,10 +734,10 @@ axiom inversion_axiom4 :
   (forall x:token_kind [to_rep4(x)]. (of_rep4(to_rep4(x)) = x))
 
 axiom range_axiom4 :
-  (forall x:token_kind [to_rep4(x)]. in_range6(to_rep4(x)))
+  (forall x:token_kind [to_rep4(x)]. in_range7(to_rep4(x)))
 
 axiom coerce_axiom4 :
-  (forall x:int [to_rep4(of_rep4(x))]. (in_range6(x) ->
+  (forall x:int [to_rep4(of_rep4(x))]. (in_range7(x) ->
   (to_rep4(of_rep4(x)) = x)))
 
 type name_id
@@ -744,7 +748,7 @@ axiom name_idqtaxiom : (forall i:name_id. (0 <= name_idqtint(i)))
 
 axiom name_idqtaxiom1 : (forall i:name_id. (name_idqtint(i) <= 2147483647))
 
-predicate in_range7(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range8(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -771,10 +775,10 @@ logic of_rep5 : int -> name_id
 axiom inversion_axiom5 :
   (forall x:name_id [to_rep5(x)]. (of_rep5(to_rep5(x)) = x))
 
-axiom range_axiom5 : (forall x:name_id [to_rep5(x)]. in_range7(to_rep5(x)))
+axiom range_axiom5 : (forall x:name_id [to_rep5(x)]. in_range8(to_rep5(x)))
 
 axiom coerce_axiom5 :
-  (forall x:int [to_rep5(of_rep5(x))]. (in_range7(x) ->
+  (forall x:int [to_rep5(of_rep5(x))]. (in_range8(x) ->
   (to_rep5(of_rep5(x)) = x)))
 
 type us_split_discrs2 = { rec__lexer__token__kind : token_kind
@@ -833,6 +837,9 @@ function bool_eq12(a: us_rep1, b: us_rep1) : bool =
   ((to_rep(((a).us_split_fields3).rec__lexer__token__length) = to_rep(((b).us_split_fields3).rec__lexer__token__length)) and
   (lexer__token__value__pred(a) ->
   (to_rep5(((a).us_split_fields3).rec__lexer__token__value) = to_rep5(((b).us_split_fields3).rec__lexer__token__value)))))) then true else false)
+
+predicate in_range9(rec__lexer__token__kind1: int, a: us_split_discrs2) =
+  (rec__lexer__token__kind1 = to_rep4((a).rec__lexer__token__kind))
 
 logic value__size2 : int
 
@@ -988,7 +995,7 @@ axiom capacity_rangeqtaxiom :
 axiom capacity_rangeqtaxiom1 :
   (forall i:capacity_range. (capacity_rangeqtint(i) <= 2147483647))
 
-predicate in_range8(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range10(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq14(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1079,11 +1086,11 @@ logic user_eq12 : us_rep3, us_rep3 -> bool
 
 logic dummy12 : us_rep3
 
-type vector__ref = { vector__content : us_rep3
+type unbounded_string__ref = { unbounded_string__content : us_rep3
 }
 
-function vector__ref_vector__content__projection(a: vector__ref) : us_rep3 =
-  (a).vector__content
+function unbounded_string__ref_unbounded_string__content__projection(a: unbounded_string__ref) : us_rep3 =
+  (a).unbounded_string__content
 
 function to_rep6(x: capacity_range) : int = capacity_rangeqtint(x)
 
@@ -1093,15 +1100,15 @@ axiom inversion_axiom6 :
   (forall x:capacity_range [to_rep6(x)]. (of_rep6(to_rep6(x)) = x))
 
 axiom range_axiom6 :
-  (forall x:capacity_range [to_rep6(x)]. in_range8(to_rep6(x)))
+  (forall x:capacity_range [to_rep6(x)]. in_range10(to_rep6(x)))
 
 axiom coerce_axiom6 :
-  (forall x:int [to_rep6(of_rep6(x))]. (in_range8(x) ->
+  (forall x:int [to_rep6(of_rep6(x))]. (in_range10(x) ->
   (to_rep6(of_rep6(x)) = x)))
 
-predicate in_range9(rec__unbounded_strings__char_vectors__vector__capacity1: int,
-  a: us_rep3) =
-  (rec__unbounded_strings__char_vectors__vector__capacity1 = to_rep6(((a).us_split_discrs5).rec__unbounded_strings__char_vectors__vector__capacity))
+predicate in_range11(rec__unbounded_strings__char_vectors__vector__capacity1: int,
+  a: us_split_discrs4) =
+  (rec__unbounded_strings__char_vectors__vector__capacity1 = to_rep6((a).rec__unbounded_strings__char_vectors__vector__capacity))
 
 logic value__size5 : int
 
@@ -1134,11 +1141,11 @@ logic user_eq13 : us_rep3, us_rep3 -> bool
 
 logic dummy13 : us_rep3
 
-type unbounded_string__ref = { unbounded_string__content : us_rep3
+type vector__ref = { vector__content : us_rep3
 }
 
-function unbounded_string__ref_unbounded_string__content__projection(a: unbounded_string__ref) : us_rep3 =
-  (a).unbounded_string__content
+function vector__ref_vector__content__projection(a: vector__ref) : us_rep3 =
+  (a).vector__content
 
 logic s__split_discrs : us_split_discrs4
 
@@ -1151,7 +1158,8 @@ logic length__function_guard : int, us_rep3 -> prop
 predicate dynamic_invariant4(temp___expr_300: us_rep3,
   temp___is_init_296: bool, temp___skip_constant_297: bool,
   temp___do_toplevel_298: bool, temp___do_typ_inv_299: bool) =
-  ((not (temp___skip_constant_297 = true)) -> in_range9(32, temp___expr_300))
+  ((not (temp___skip_constant_297 = true)) -> in_range11(32,
+  (temp___expr_300).us_split_discrs5))
 
 axiom temp___result_306qtdef :
   (forall temp___305:us_rep3. length__function_guard(length2(temp___305),
@@ -1221,11 +1229,11 @@ logic attr__ATTRIBUTE_ADDRESS17 : int
 predicate dynamic_invariant5(temp___expr_172: int, temp___is_init_168: bool,
   temp___skip_constant_169: bool, temp___do_toplevel_170: bool,
   temp___do_typ_inv_171: bool) = (((temp___is_init_168 = true) or
-  (0 <= 8)) -> in_range6(temp___expr_172))
+  (0 <= 8)) -> in_range7(temp___expr_172))
 
 type valued_tokens
 
-predicate in_range10(x: int) = ((3 <= x) and (x <= 8))
+predicate in_range12(x: int) = ((3 <= x) and (x <= 8))
 
 function bool_eq15(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1248,16 +1256,16 @@ function valued_tokens__ref_valued_tokens__content__projection(a: valued_tokens_
 predicate dynamic_invariant6(temp___expr_179: int, temp___is_init_175: bool,
   temp___skip_constant_176: bool, temp___do_toplevel_177: bool,
   temp___do_typ_inv_178: bool) = (((temp___is_init_175 = true) or
-  (3 <= 8)) -> in_range10(temp___expr_179))
+  (3 <= 8)) -> in_range12(temp___expr_179))
 
 predicate dynamic_invariant7(temp___expr_186: int, temp___is_init_182: bool,
   temp___skip_constant_183: bool, temp___do_toplevel_184: bool,
   temp___do_typ_inv_185: bool) = (((temp___is_init_182 = true) or
-  (0 <= 2147483647)) -> in_range7(temp___expr_186))
+  (0 <= 2147483647)) -> in_range8(temp___expr_186))
 
 type parse_state
 
-predicate in_range11(x: int) = ((0 <= x) and (x <= 9))
+predicate in_range13(x: int) = ((0 <= x) and (x <= 9))
 
 function bool_eq16(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1280,11 +1288,11 @@ function parse_state__ref_parse_state__content__projection(a: parse_state__ref) 
 predicate dynamic_invariant8(temp___expr_371: int, temp___is_init_367: bool,
   temp___skip_constant_368: bool, temp___do_toplevel_369: bool,
   temp___do_typ_inv_370: bool) = (((temp___is_init_367 = true) or
-  (0 <= 9)) -> in_range11(temp___expr_371))
+  (0 <= 9)) -> in_range13(temp___expr_371))
 
 type terminal_states
 
-predicate in_range12(x: int) = ((0 <= x) and (x <= 9))
+predicate in_range14(x: int) = ((0 <= x) and (x <= 9))
 
 function bool_eq17(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1303,9 +1311,6 @@ type terminal_states__ref = { terminal_states__content : terminal_states
 
 function terminal_states__ref_terminal_states__content__projection(a: terminal_states__ref) : terminal_states =
   (a).terminal_states__content
-
-predicate in_range13(rec__lexer__token__kind1: int, a: us_rep1) =
-  (rec__lexer__token__kind1 = to_rep4(((a).us_split_discrs3).rec__lexer__token__kind))
 
 logic value__size6 : int
 
@@ -2056,7 +2061,7 @@ predicate dynamic_invariant9(temp___expr_18: int, temp___is_init_14: bool,
 predicate dynamic_invariant10(temp___expr_378: int, temp___is_init_374: bool,
   temp___skip_constant_375: bool, temp___do_toplevel_376: bool,
   temp___do_typ_inv_377: bool) = ((((temp___is_init_374 = true) or
-  (0 <= 9)) -> in_range12(temp___expr_378)) and
+  (0 <= 9)) -> in_range14(temp___expr_378)) and
   ((temp___do_toplevel_376 = true) -> ((temp___is_init_374 = true) ->
   (((2 <= temp___expr_378) and (temp___expr_378 <= 2)) or
   ((9 <= temp___expr_378) and (temp___expr_378 <= 9))))))
@@ -2106,7 +2111,7 @@ predicate dynamic_invariant11(temp___expr_206: int, temp___is_init_202: bool,
 predicate dynamic_invariant12(temp___expr_287: int, temp___is_init_283: bool,
   temp___skip_constant_284: bool, temp___do_toplevel_285: bool,
   temp___do_typ_inv_286: bool) = (((temp___is_init_283 = true) or
-  (0 <= 2147483647)) -> in_range8(temp___expr_287))
+  (0 <= 2147483647)) -> in_range10(temp___expr_287))
 
  (* File "lexer.ads", line 79, characters 0-0 *)
 goal defqtvc :
@@ -2635,7 +2640,7 @@ goal defqtvc :
                     exists s__split_fields3:us_main_type1. exists state3:int.
                     exists c3:int.
                     ((((((to_rep3(current_read__split_discrs3) = 0) and
-                    (notb(andb((if in_range12(state3) then true else false),
+                    (notb(andb((if in_range14(state3) then true else false),
                     (if (((2 <= state3) and (state3 <= 2)) or
                     ((9 <= state3) and
                     (state3 <= 9))) then true else false))) = true)) and

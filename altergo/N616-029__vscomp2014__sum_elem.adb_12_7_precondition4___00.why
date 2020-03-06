@@ -143,6 +143,10 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__sum_elem__partitions__vector,
   ((b).us_split_fields1).rec__sum_elem__partitions__vector) = true)) then true else false)
 
+predicate in_range1(rec__sum_elem__partitions__vector__capacity1: int,
+  a: us_split_discrs) =
+  (rec__sum_elem__partitions__vector__capacity1 = to_rep((a).rec__sum_elem__partitions__vector__capacity))
+
 logic value__size : int
 
 logic object__size : int
@@ -188,7 +192,7 @@ axiom indexqtaxiom : (forall i:index. (0 <= indexqtint(i)))
 
 axiom indexqtaxiom1 : (forall i:index. (indexqtint(i) <= 5))
 
-predicate in_range1(x: int) = ((0 <= x) and (x <= 5))
+predicate in_range2(x: int) = ((0 <= x) and (x <= 5))
 
 function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -215,10 +219,10 @@ logic of_rep1 : int -> index
 axiom inversion_axiom1 :
   (forall x:index [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
 
-axiom range_axiom1 : (forall x:index [to_rep1(x)]. in_range1(to_rep1(x)))
+axiom range_axiom1 : (forall x:index [to_rep1(x)]. in_range2(to_rep1(x)))
 
 axiom coerce_axiom1 :
-  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
   (to_rep1(of_rep1(x)) = x)))
 
 type us_split_fields2 = { rec__sum_elem__interval__first : index;
@@ -408,7 +412,7 @@ function to_int(b: bool) : int = (if (b = true) then 1 else 0)
 
 function of_int(i: int) : bool = (if (i = 0) then false else true)
 
-predicate in_range2(x: int) = ((x = 0) or (x = 1))
+predicate in_range3(x: int) = ((x = 0) or (x = 1))
 
 logic attr__ATTRIBUTE_IMAGE2 : bool -> us_image
 
@@ -497,10 +501,6 @@ function element(container: us_rep, index1: int) : us_rep1 =
 
 logic element__function_guard : us_rep1, us_rep, int -> prop
 
-predicate in_range3(rec__sum_elem__partitions__vector__capacity1: int,
-  a: us_rep) =
-  (rec__sum_elem__partitions__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__sum_elem__partitions__vector__capacity))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -550,21 +550,22 @@ axiom user_eq__def_axiom1 :
   (forall a:us_rep. forall b:us_rep [user_eq6(a, b)]. (user_eq6(a,
   b) = oeq(a, b)))
 
-predicate dynamic_invariant(temp___expr_551: us_rep,
-  temp___is_init_547: bool, temp___skip_constant_548: bool,
-  temp___do_toplevel_549: bool, temp___do_typ_inv_550: bool) =
-  ((not (temp___skip_constant_548 = true)) -> in_range3(10, temp___expr_551))
+predicate dynamic_invariant(temp___expr_553: us_rep,
+  temp___is_init_549: bool, temp___skip_constant_550: bool,
+  temp___do_toplevel_551: bool, temp___do_typ_inv_552: bool) =
+  ((not (temp___skip_constant_550 = true)) -> in_range1(10,
+  (temp___expr_553).us_split_discrs1))
 
-predicate default_initial_assumption(temp___expr_553: us_rep,
-  temp___skip_top_level_554: bool) =
-  ((to_rep(((temp___expr_553).us_split_discrs1).rec__sum_elem__partitions__vector__capacity) = 10) and
-  ((not (temp___skip_top_level_554 = true)) ->
-  (is_empty(temp___expr_553) = true)))
+predicate default_initial_assumption(temp___expr_555: us_rep,
+  temp___skip_top_level_556: bool) =
+  ((to_rep(((temp___expr_555).us_split_discrs1).rec__sum_elem__partitions__vector__capacity) = 10) and
+  ((not (temp___skip_top_level_556 = true)) ->
+  (is_empty(temp___expr_555) = true)))
 
 predicate dynamic_invariant1(temp___expr_245: int, temp___is_init_241: bool,
   temp___skip_constant_242: bool, temp___do_toplevel_243: bool,
   temp___do_typ_inv_244: bool) = (((temp___is_init_241 = true) or
-  (0 <= 5)) -> in_range1(temp___expr_245))
+  (0 <= 5)) -> in_range2(temp___expr_245))
 
 axiom user_eq__def_axiom2 :
   (forall a:us_rep. forall b:us_rep [user_eq5(a, b)]. (user_eq5(a,
@@ -795,4 +796,9 @@ goal defqtvc :
   rec__sum_elem__interval__last = rliteral } }) = true)) ->
   (forall p__split_fields1:us_main_type.
   ((p__split_fields1 = sum_elem__partitions__append__2__container__fields) ->
-  (0 <= 0))))))))
+  (let o1 = { us_split_discrs1 = p__split_discrs; us_split_fields1 = {
+  rec__sum_elem__partitions__vector = p__split_fields1 } } : us_rep in
+  (forall j:int. (((0 <= j) and (j <= last_index(o1))) ->
+  in_range2((to_rep1(((element(o1,
+  j)).us_split_fields3).rec__sum_elem__interval__first) + to_rep1(((element(o1,
+  j)).us_split_fields3).rec__sum_elem__interval__last)))))))))))))

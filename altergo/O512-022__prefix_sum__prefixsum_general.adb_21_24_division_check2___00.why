@@ -465,16 +465,17 @@ goal defqtvc :
   forall right:int.
   (forall a1:(int,integer) farray. ((a1 = a) ->
   (dynamic_invariant1(output_space, false, false, true, true) ->
-  ((forall k:int. (((0 <= k) and (k <= 7)) ->
-   (((- 268435455) <= to_rep((a[k]))) and (to_rep((a[k])) <= 268435455)))) ->
+  ((forall k:int. (((0 <= k) and (k <= 7)) -> (let temp___218 =
+   to_rep((a[k])) : int in (((- 268435455) <= temp___218) and
+   (temp___218 <= 268435455))))) ->
   (forall space:int. ((space = 1) -> (dynamic_invariant1(space, true, false,
   true, true) -> (dynamic_invariant(left, false, false, true, true) ->
   (dynamic_invariant(right, false, false, true, true) -> ((a = a_old) ->
   ((space <  8) ->
-  (forall temp___loop_entry_198:(int,integer) farray.
-  ((temp___loop_entry_198 = a) ->
-  (forall temp___loop_entry_199:(int,integer) farray.
-  ((temp___loop_entry_199 = a) ->
+  (forall temp___loop_entry_207:(int,integer) farray.
+  ((temp___loop_entry_207 = a) ->
+  (forall temp___loop_entry_208:(int,integer) farray.
+  ((temp___loop_entry_208 = a) ->
   (forall left1:int. ((left1 = (space - 1)) ->
   (forall o:bool.
   ((exists o1:bool.

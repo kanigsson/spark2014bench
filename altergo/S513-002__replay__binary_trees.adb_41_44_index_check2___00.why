@@ -603,15 +603,18 @@ axiom tree_structure__def_axiom14 :
            rec__binary_trees__cell__right = rliteral;
            rec__binary_trees__cell__parent = rliteral;
            rec__binary_trees__cell__position = of_rep1(2) } }) = true))) and
-  (forall i:int. (((1 <= i) and (i <= 100)) ->
-  ((0 <= to_rep((((((f1).us_split_fields3).rec__binary_trees__forest__c[i])).us_split_fields1).rec__binary_trees__cell__parent)) and
-  (to_rep((((((f1).us_split_fields3).rec__binary_trees__forest__c[i])).us_split_fields1).rec__binary_trees__cell__parent) <= to_rep(((f1).us_split_fields3).rec__binary_trees__forest__s)))))) and
-  (forall i:int. (((1 <= i) and (i <= 100)) ->
-  ((0 <= to_rep((((((f1).us_split_fields3).rec__binary_trees__forest__c[i])).us_split_fields1).rec__binary_trees__cell__left)) and
-  (to_rep((((((f1).us_split_fields3).rec__binary_trees__forest__c[i])).us_split_fields1).rec__binary_trees__cell__left) <= to_rep(((f1).us_split_fields3).rec__binary_trees__forest__s)))))) and
-  (forall i:int. (((1 <= i) and (i <= 100)) ->
-  ((0 <= to_rep((((((f1).us_split_fields3).rec__binary_trees__forest__c[i])).us_split_fields1).rec__binary_trees__cell__right)) and
-  (to_rep((((((f1).us_split_fields3).rec__binary_trees__forest__c[i])).us_split_fields1).rec__binary_trees__cell__right) <= to_rep(((f1).us_split_fields3).rec__binary_trees__forest__s)))))) and
+  (forall i:int. (((1 <= i) and (i <= 100)) -> (let temp___272 =
+  to_rep((((((f1).us_split_fields3).rec__binary_trees__forest__c[i])).us_split_fields1).rec__binary_trees__cell__parent)
+  : int in ((0 <= temp___272) and
+  (temp___272 <= to_rep(((f1).us_split_fields3).rec__binary_trees__forest__s))))))) and
+  (forall i:int. (((1 <= i) and (i <= 100)) -> (let temp___274 =
+  to_rep((((((f1).us_split_fields3).rec__binary_trees__forest__c[i])).us_split_fields1).rec__binary_trees__cell__left)
+  : int in ((0 <= temp___274) and
+  (temp___274 <= to_rep(((f1).us_split_fields3).rec__binary_trees__forest__s))))))) and
+  (forall i:int. (((1 <= i) and (i <= 100)) -> (let temp___276 =
+  to_rep((((((f1).us_split_fields3).rec__binary_trees__forest__c[i])).us_split_fields1).rec__binary_trees__cell__right)
+  : int in ((0 <= temp___276) and
+  (temp___276 <= to_rep(((f1).us_split_fields3).rec__binary_trees__forest__s))))))) and
   (forall i:int. (((1 <= i) and (i <= 100)) ->
   ((to_rep1((((((f1).us_split_fields3).rec__binary_trees__forest__c[i])).us_split_fields1).rec__binary_trees__cell__position) = 2) ->
   (to_rep((((((f1).us_split_fields3).rec__binary_trees__forest__c[i])).us_split_fields1).rec__binary_trees__cell__parent) = 0))))) and

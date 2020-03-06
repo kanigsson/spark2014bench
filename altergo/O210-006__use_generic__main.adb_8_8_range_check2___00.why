@@ -335,6 +335,9 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   (bool_eq4(((a).us_split_fields1).rec__main__discr_type__m_array,
   ((b).us_split_fields1).rec__main__discr_type__m_array) = true)) then true else false)
 
+predicate in_range3(rec__main__discr_type__discr1: int, a: us_split_discrs) =
+  (rec__main__discr_type__discr1 = to_rep((a).rec__main__discr_type__discr))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -395,7 +398,7 @@ axiom tT11bP1qtaxiom : (forall i:tT11bP1. (0 <= tT11bP1qtint(i)))
 
 axiom tT11bP1qtaxiom1 : (forall i:tT11bP1. (tT11bP1qtint(i) <= 15))
 
-predicate in_range3(x: int) = ((0 <= x) and (x <= 15))
+predicate in_range4(x: int) = ((0 <= x) and (x <= 15))
 
 function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -473,9 +476,6 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   ((b).us_split_fields3).rec__main__discr_type__m_array1, 0,
   15) = true)) then true else false)
 
-predicate in_range4(rec__main__discr_type__discr1: int, a: us_rep) =
-  (rec__main__discr_type__discr1 = to_rep(((a).us_split_discrs1).rec__main__discr_type__discr))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -535,8 +535,8 @@ logic attr__ATTRIBUTE_ADDRESS : int
 predicate dynamic_invariant1(temp___expr_194: us_rep1,
   temp___is_init_190: bool, temp___skip_constant_191: bool,
   temp___do_toplevel_192: bool, temp___do_typ_inv_193: bool) =
-  ((not (temp___skip_constant_191 = true)) -> in_range4(15,
-  to_base(temp___expr_194)))
+  ((not (temp___skip_constant_191 = true)) -> in_range3(15,
+  (to_base(temp___expr_194)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_197: us_rep1,
   temp___skip_top_level_198: bool) =

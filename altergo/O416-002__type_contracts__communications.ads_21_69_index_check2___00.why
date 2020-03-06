@@ -566,6 +566,10 @@ function bool_eq8(a: us_rep1, b: us_rep1) : bool =
   (bool_eq7(((a).us_split_fields3).rec__communications__communication__msgs,
   ((b).us_split_fields3).rec__communications__communication__msgs) = true)) then true else false)
 
+predicate in_range4(rec__communications__communication__num1: int,
+  a: us_split_discrs) =
+  (rec__communications__communication__num1 = to_rep((a).rec__communications__communication__num))
+
 logic value__size3 : int
 
 logic object__size3 : int
@@ -626,7 +630,7 @@ axiom tdayP1qtaxiom : (forall i:tdayP1. (1 <= tdayP1qtint(i)))
 
 axiom tdayP1qtaxiom1 : (forall i:tdayP1. (tdayP1qtint(i) <= 10))
 
-predicate in_range4(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range5(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 

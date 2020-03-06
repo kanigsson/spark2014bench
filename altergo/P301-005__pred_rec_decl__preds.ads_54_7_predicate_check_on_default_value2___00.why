@@ -403,18 +403,18 @@ predicate dynamic_invariant(temp___expr_282: us_rep,
   (forall k:int. (((1 <= k) and (k <= 10)) ->
   (not (to_rep((((temp___expr_282).us_split_fields1).rec__preds__rec_ok__a[k])) = 0))))))
 
-predicate default_initial_assumption(temp___expr_289: us_rep,
-  temp___skip_top_level_290: bool) =
-  (((to_rep(((temp___expr_289).us_split_fields1).rec__preds__rec_ok__i) = 1) and
-  (to_rep1(((temp___expr_289).us_split_fields1).rec__preds__rec_ok__x) = 1)) and
-  (forall temp___293:int. (((1 <= temp___293) and (temp___293 <= 10)) ->
-  (to_rep((((temp___expr_289).us_split_fields1).rec__preds__rec_ok__a[temp___293])) = 1))))
+predicate default_initial_assumption(temp___expr_291: us_rep,
+  temp___skip_top_level_292: bool) =
+  (((to_rep(((temp___expr_291).us_split_fields1).rec__preds__rec_ok__i) = 1) and
+  (to_rep1(((temp___expr_291).us_split_fields1).rec__preds__rec_ok__x) = 1)) and
+  (forall temp___295:int. (((1 <= temp___295) and (temp___295 <= 10)) ->
+  (to_rep((((temp___expr_291).us_split_fields1).rec__preds__rec_ok__a[temp___295])) = 1))))
 
-predicate dynamic_predicate(temp___294: us_rep) =
-  (((not (to_rep(((temp___294).us_split_fields1).rec__preds__rec_ok__i) = 0)) and
-  (not (to_rep1(((temp___294).us_split_fields1).rec__preds__rec_ok__x) = 0))) and
+predicate dynamic_predicate(temp___296: us_rep) =
+  (((not (to_rep(((temp___296).us_split_fields1).rec__preds__rec_ok__i) = 0)) and
+  (not (to_rep1(((temp___296).us_split_fields1).rec__preds__rec_ok__x) = 0))) and
   (forall k:int. (((1 <= k) and (k <= 10)) ->
-  (not (to_rep((((temp___294).us_split_fields1).rec__preds__rec_ok__a[k])) = 0)))))
+  (not (to_rep((((temp___296).us_split_fields1).rec__preds__rec_ok__a[k])) = 0)))))
 
 logic i7s : int
 
@@ -472,6 +472,6 @@ goal defqtvc :
   (dynamic_invariant2(i19s, true, false, true, true) ->
   (dynamic_invariant(i31s, true, false, true, true) -> (dynamic_invariant({
   us_split_fields1 = x__split_fields }, false, false, true, true) ->
-  (forall usf:int_ok. ((to_rep1(usf) = 1) -> (let temp___396 = to_rep1(usf)
-  : int in ((((- 2147483648) <= temp___396) and (temp___396 <= (- 1))) or
-  ((1 <= temp___396) and (temp___396 <= 2147483647))))))))))))))
+  (forall usf:int_ok. ((to_rep1(usf) = 1) -> (let temp___416 = to_rep1(usf)
+  : int in ((((- 2147483648) <= temp___416) and (temp___416 <= (- 1))) or
+  ((1 <= temp___416) and (temp___416 <= 2147483647))))))))))))))

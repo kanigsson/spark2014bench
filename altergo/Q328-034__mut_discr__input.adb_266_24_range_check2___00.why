@@ -642,7 +642,7 @@ type t38b__ref = { t38b__content : us_t
 function t38b__ref_t38b__content__projection(a: t38b__ref) : us_t =
   (a).t38b__content
 
-logic temp_____aggregate_def_249 : int, int, int -> us_t
+logic temp_____aggregate_def_251 : int, int, int -> us_t
 
 predicate dynamic_invariant5(temp___expr_46: int, temp___is_init_42: bool,
   temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
@@ -661,25 +661,25 @@ predicate dynamic_invariant7(temp___expr_190: int, temp___is_init_186: bool,
   (33 <= 126)) -> in_range7(temp___expr_190))
 
 axiom def_axiom :
-  (forall temp___251:int. forall temp___252:int. forall temp___253:int.
-  (dynamic_invariant2(temp___251, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___252, temp___253) ->
-  (first1(temp_____aggregate_def_249(temp___251, temp___252,
-  temp___253)) = temp___252))))
+  (forall temp___253:int. forall temp___254:int. forall temp___255:int.
+  (dynamic_invariant2(temp___253, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___254, temp___255) ->
+  (first1(temp_____aggregate_def_251(temp___253, temp___254,
+  temp___255)) = temp___254))))
 
 axiom def_axiom1 :
-  (forall temp___251:int. forall temp___252:int. forall temp___253:int.
-  (dynamic_invariant2(temp___251, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___252, temp___253) ->
-  (last1(temp_____aggregate_def_249(temp___251, temp___252,
-  temp___253)) = temp___253))))
+  (forall temp___253:int. forall temp___254:int. forall temp___255:int.
+  (dynamic_invariant2(temp___253, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___254, temp___255) ->
+  (last1(temp_____aggregate_def_251(temp___253, temp___254,
+  temp___255)) = temp___255))))
 
 axiom def_axiom2 :
-  (forall temp___251:int. forall temp___252:int. forall temp___253:int.
-  (dynamic_invariant2(temp___251, true, true, true, true) ->
-  (forall temp___254:int.
-  (to_rep((to_array(temp_____aggregate_def_249(temp___251, temp___252,
-  temp___253))[temp___254])) = temp___251))))
+  (forall temp___253:int. forall temp___254:int. forall temp___255:int.
+  (dynamic_invariant2(temp___253, true, true, true, true) ->
+  (forall temp___256:int.
+  (to_rep((to_array(temp_____aggregate_def_251(temp___253, temp___254,
+  temp___255))[temp___256])) = temp___253))))
 
  (* File "input.ads", line 9, characters 0-0 *)
 goal defqtvc :
@@ -729,8 +729,8 @@ goal defqtvc :
   (forall first_char2:int.
   ((exists o:bool. ((if (first_char1 <= 1024) then (((1 <= first_char1) and
    (first_char1 <= 1024)) and
-   (exists o1:int. ((to_rep((line1[first_char1])) = o1) and
-   (o = (if in_range7(o1) then true else false))))) else (o = false)) and
+   (exists temp___244:int. ((to_rep((line1[first_char1])) = temp___244) and
+   (o = (if in_range7(temp___244) then true else false))))) else (o = false)) and
    (if (o = true) then (exists first_char3:int.
                        ((andb((if dynamic_invariant3(first_char3, true, true,
                        true, true) then true else false),
@@ -741,9 +741,9 @@ goal defqtvc :
                        (exists o2:bool.
                        ((if (first_char2 <= 1024) then (((1 <= first_char2) and
                        (first_char2 <= 1024)) and
-                       (exists o3:int.
-                       ((to_rep((line1[first_char2])) = o3) and
-                       (o2 = (if in_range7(o3) then true else false))))) else (o2 = false)) and
+                       (exists temp___244:int.
+                       ((to_rep((line1[first_char2])) = temp___244) and
+                       (o2 = (if in_range7(temp___244) then true else false))))) else (o2 = false)) and
                        (not (o2 = true))))))))) else (first_char2 = first_char1)))) ->
   ((start1 = r32b) -> (dynamic_invariant1(r32b, true, false, true, true) ->
   (((first_char2 - 1) = r33b) -> (dynamic_invariant(r33b, true, false, true,

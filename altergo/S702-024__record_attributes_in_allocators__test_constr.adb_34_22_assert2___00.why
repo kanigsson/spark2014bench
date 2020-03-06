@@ -92,6 +92,9 @@ function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
 function bool_eq1(a: us_rep, b: us_rep) : bool =
   (if (to_int(((a).us_split_discrs1).rec__test_constr__r__d) = to_int(((b).us_split_discrs1).rec__test_constr__r__d)) then true else false)
 
+predicate in_range1(rec__test_constr__r__d1: bool, a: us_split_discrs) =
+  (rec__test_constr__r__d1 = (a).rec__test_constr__r__d)
+
 logic value__size : int
 
 logic object__size : int
@@ -134,9 +137,6 @@ logic create__function_guard : us_rep, unit -> prop
 predicate default_initial_assumption(temp___expr_184: us_rep,
   temp___skip_top_level_185: bool) =
   (((temp___expr_184).us_split_discrs1).rec__test_constr__r__d = of_int(0))
-
-predicate in_range1(rec__test_constr__r__d1: bool, a: us_rep) =
-  (rec__test_constr__r__d1 = ((a).us_split_discrs1).rec__test_constr__r__d)
 
 logic value__size1 : int
 

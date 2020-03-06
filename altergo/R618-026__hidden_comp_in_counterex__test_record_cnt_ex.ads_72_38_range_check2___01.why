@@ -208,21 +208,6 @@ axiom test_record_cnt_ex__nested_3__complex__b__last__bit_axiom :
 axiom test_record_cnt_ex__nested_3__complex__b__position_axiom :
   (0 <= test_record_cnt_ex__nested_3__complex__b__position)
 
-logic test_record_cnt_ex__nested_3__complex__g__first__bit : int
-
-logic test_record_cnt_ex__nested_3__complex__g__last__bit : int
-
-logic test_record_cnt_ex__nested_3__complex__g__position : int
-
-axiom test_record_cnt_ex__nested_3__complex__g__first__bit_axiom :
-  (0 <= test_record_cnt_ex__nested_3__complex__g__first__bit)
-
-axiom test_record_cnt_ex__nested_3__complex__g__last__bit_axiom :
-  (test_record_cnt_ex__nested_3__complex__g__first__bit <  test_record_cnt_ex__nested_3__complex__g__last__bit)
-
-axiom test_record_cnt_ex__nested_3__complex__g__position_axiom :
-  (0 <= test_record_cnt_ex__nested_3__complex__g__position)
-
 logic test_record_cnt_ex__nested_3__complex__f__first__bit : int
 
 logic test_record_cnt_ex__nested_3__complex__f__last__bit : int
@@ -238,21 +223,40 @@ axiom test_record_cnt_ex__nested_3__complex__f__last__bit_axiom :
 axiom test_record_cnt_ex__nested_3__complex__f__position_axiom :
   (0 <= test_record_cnt_ex__nested_3__complex__f__position)
 
+logic test_record_cnt_ex__nested_3__complex__g__first__bit : int
+
+logic test_record_cnt_ex__nested_3__complex__g__last__bit : int
+
+logic test_record_cnt_ex__nested_3__complex__g__position : int
+
+axiom test_record_cnt_ex__nested_3__complex__g__first__bit_axiom :
+  (0 <= test_record_cnt_ex__nested_3__complex__g__first__bit)
+
+axiom test_record_cnt_ex__nested_3__complex__g__last__bit_axiom :
+  (test_record_cnt_ex__nested_3__complex__g__first__bit <  test_record_cnt_ex__nested_3__complex__g__last__bit)
+
+axiom test_record_cnt_ex__nested_3__complex__g__position_axiom :
+  (0 <= test_record_cnt_ex__nested_3__complex__g__position)
+
 logic user_eq1 : us_rep, us_rep -> bool
 
 logic dummy1 : us_rep
 
-type complex__ref = { complex__content : us_rep
+type no_f__ref = { no_f__content : us_rep
 }
 
-function complex__ref_complex__content__projection(a: complex__ref) : us_rep =
-  (a).complex__content
+function no_f__ref_no_f__content__projection(a: no_f__ref) : us_rep =
+  (a).no_f__content
+
+logic x : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic y : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
 
 logic us_tag1 : int
-
-predicate in_range2(rec__test_record_cnt_ex__nested_3__complex__b1: bool,
-  a: us_rep) =
-  (rec__test_record_cnt_ex__nested_3__complex__b1 = ((a).us_split_discrs1).rec__test_record_cnt_ex__nested_3__complex__b)
 
 logic value__size1 : int
 
@@ -281,21 +285,6 @@ axiom test_record_cnt_ex__nested_3__complex__b__last__bit_axiom1 :
 axiom test_record_cnt_ex__nested_3__complex__b__position_axiom1 :
   (0 <= test_record_cnt_ex__nested_3__complex__b__position1)
 
-logic test_record_cnt_ex__nested_3__complex__f__first__bit1 : int
-
-logic test_record_cnt_ex__nested_3__complex__f__last__bit1 : int
-
-logic test_record_cnt_ex__nested_3__complex__f__position1 : int
-
-axiom test_record_cnt_ex__nested_3__complex__f__first__bit_axiom1 :
-  (0 <= test_record_cnt_ex__nested_3__complex__f__first__bit1)
-
-axiom test_record_cnt_ex__nested_3__complex__f__last__bit_axiom1 :
-  (test_record_cnt_ex__nested_3__complex__f__first__bit1 <  test_record_cnt_ex__nested_3__complex__f__last__bit1)
-
-axiom test_record_cnt_ex__nested_3__complex__f__position_axiom1 :
-  (0 <= test_record_cnt_ex__nested_3__complex__f__position1)
-
 logic test_record_cnt_ex__nested_3__complex__g__first__bit1 : int
 
 logic test_record_cnt_ex__nested_3__complex__g__last__bit1 : int
@@ -311,29 +300,44 @@ axiom test_record_cnt_ex__nested_3__complex__g__last__bit_axiom1 :
 axiom test_record_cnt_ex__nested_3__complex__g__position_axiom1 :
   (0 <= test_record_cnt_ex__nested_3__complex__g__position1)
 
+logic test_record_cnt_ex__nested_3__complex__f__first__bit1 : int
+
+logic test_record_cnt_ex__nested_3__complex__f__last__bit1 : int
+
+logic test_record_cnt_ex__nested_3__complex__f__position1 : int
+
+axiom test_record_cnt_ex__nested_3__complex__f__first__bit_axiom1 :
+  (0 <= test_record_cnt_ex__nested_3__complex__f__first__bit1)
+
+axiom test_record_cnt_ex__nested_3__complex__f__last__bit_axiom1 :
+  (test_record_cnt_ex__nested_3__complex__f__first__bit1 <  test_record_cnt_ex__nested_3__complex__f__last__bit1)
+
+axiom test_record_cnt_ex__nested_3__complex__f__position_axiom1 :
+  (0 <= test_record_cnt_ex__nested_3__complex__f__position1)
+
 logic user_eq2 : us_rep, us_rep -> bool
 
 logic dummy2 : us_rep
 
-type no_f__ref = { no_f__content : us_rep
+type f_present__ref = { f_present__content : us_rep
 }
 
-function no_f__ref_no_f__content__projection(a: no_f__ref) : us_rep =
-  (a).no_f__content
+function f_present__ref_f_present__content__projection(a: f_present__ref) : us_rep =
+  (a).f_present__content
 
-logic x : us_rep
+logic w : us_rep
 
-logic attr__ATTRIBUTE_ADDRESS : int
+logic attr__ATTRIBUTE_ADDRESS2 : int
 
-logic y : us_rep
+logic z : us_rep
 
-logic attr__ATTRIBUTE_ADDRESS1 : int
+logic attr__ATTRIBUTE_ADDRESS3 : int
 
 logic us_tag2 : int
 
-predicate in_range3(rec__test_record_cnt_ex__nested_3__complex__b1: bool,
-  a: us_rep) =
-  (rec__test_record_cnt_ex__nested_3__complex__b1 = ((a).us_split_discrs1).rec__test_record_cnt_ex__nested_3__complex__b)
+predicate in_range2(rec__test_record_cnt_ex__nested_3__complex__b1: bool,
+  a: us_split_discrs) =
+  (rec__test_record_cnt_ex__nested_3__complex__b1 = (a).rec__test_record_cnt_ex__nested_3__complex__b)
 
 logic value__size2 : int
 
@@ -396,47 +400,35 @@ logic user_eq3 : us_rep, us_rep -> bool
 
 logic dummy3 : us_rep
 
-type f_present__ref = { f_present__content : us_rep
+type complex__ref = { complex__content : us_rep
 }
 
-function f_present__ref_f_present__content__projection(a: f_present__ref) : us_rep =
-  (a).f_present__content
-
-logic w : us_rep
-
-logic attr__ATTRIBUTE_ADDRESS2 : int
-
-logic z : us_rep
-
-logic attr__ATTRIBUTE_ADDRESS3 : int
+function complex__ref_complex__content__projection(a: complex__ref) : us_rep =
+  (a).complex__content
 
 predicate dynamic_invariant1(temp___expr_211: us_rep,
   temp___is_init_207: bool, temp___skip_constant_208: bool,
   temp___do_toplevel_209: bool, temp___do_typ_inv_210: bool) =
   ((not (temp___skip_constant_208 = true)) -> in_range2(of_int(0),
-  temp___expr_211))
+  (temp___expr_211).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_213: us_rep,
   temp___skip_top_level_214: bool) =
-  (((temp___expr_213).attr__tag = us_tag1) and
+  (((temp___expr_213).attr__tag = us_tag) and
   (((temp___expr_213).us_split_discrs1).rec__test_record_cnt_ex__nested_3__complex__b = of_int(0)))
 
 predicate dynamic_invariant2(temp___expr_222: us_rep,
   temp___is_init_218: bool, temp___skip_constant_219: bool,
   temp___do_toplevel_220: bool, temp___do_typ_inv_221: bool) =
-  ((not (temp___skip_constant_219 = true)) -> in_range3(of_int(1),
-  temp___expr_222))
+  ((not (temp___skip_constant_219 = true)) -> in_range2(of_int(1),
+  (temp___expr_222).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_224: us_rep,
   temp___skip_top_level_225: bool) =
-  (((temp___expr_224).attr__tag = us_tag2) and
+  (((temp___expr_224).attr__tag = us_tag1) and
   (((temp___expr_224).us_split_discrs1).rec__test_record_cnt_ex__nested_3__complex__b = of_int(1)))
 
 logic us_tag3 : int
-
-predicate in_range4(rec__test_record_cnt_ex__nested_3__complex__b1: bool,
-  a: us_rep) =
-  (rec__test_record_cnt_ex__nested_3__complex__b1 = ((a).us_split_discrs1).rec__test_record_cnt_ex__nested_3__complex__b)
 
 logic value__size3 : int
 
@@ -507,10 +499,6 @@ function t3s__ref_t3s__content__projection(a: t3s__ref) : us_rep =
 
 logic us_tag4 : int
 
-predicate in_range5(rec__test_record_cnt_ex__nested_3__complex__b1: bool,
-  a: us_rep) =
-  (rec__test_record_cnt_ex__nested_3__complex__b1 = ((a).us_split_discrs1).rec__test_record_cnt_ex__nested_3__complex__b)
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -580,10 +568,6 @@ function t4s__ref_t4s__content__projection(a: t4s__ref) : us_rep =
 
 logic us_tag5 : int
 
-predicate in_range6(rec__test_record_cnt_ex__nested_3__complex__b1: bool,
-  a: us_rep) =
-  (rec__test_record_cnt_ex__nested_3__complex__b1 = ((a).us_split_discrs1).rec__test_record_cnt_ex__nested_3__complex__b)
-
 logic value__size5 : int
 
 logic object__size5 : int
@@ -652,10 +636,6 @@ function t5s__ref_t5s__content__projection(a: t5s__ref) : us_rep =
   (a).t5s__content
 
 logic us_tag6 : int
-
-predicate in_range7(rec__test_record_cnt_ex__nested_3__complex__b1: bool,
-  a: us_rep) =
-  (rec__test_record_cnt_ex__nested_3__complex__b1 = ((a).us_split_discrs1).rec__test_record_cnt_ex__nested_3__complex__b)
 
 logic value__size6 : int
 

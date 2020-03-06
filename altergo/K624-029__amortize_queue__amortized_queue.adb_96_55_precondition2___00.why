@@ -144,6 +144,10 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__amortized_queue__my_vectors__vector,
   ((b).us_split_fields1).rec__amortized_queue__my_vectors__vector) = true)) then true else false)
 
+predicate in_range1(rec__amortized_queue__my_vectors__vector__capacity1: int,
+  a: us_split_discrs) =
+  (rec__amortized_queue__my_vectors__vector__capacity1 = to_rep((a).rec__amortized_queue__my_vectors__vector__capacity))
+
 logic value__size : int
 
 logic object__size : int
@@ -301,7 +305,7 @@ function to_int(b: bool) : int = (if (b = true) then 1 else 0)
 
 function of_int(i: int) : bool = (if (i = 0) then false else true)
 
-predicate in_range1(x: int) = ((x = 0) or (x = 1))
+predicate in_range2(x: int) = ((x = 0) or (x = 1))
 
 logic attr__ATTRIBUTE_IMAGE1 : bool -> us_image
 
@@ -397,7 +401,7 @@ axiom element_typeqtaxiom :
 axiom element_typeqtaxiom1 :
   (forall i:element_type. (element_typeqtint(i) <= 2147483647))
 
-predicate in_range2(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range3(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -420,7 +424,7 @@ function element_type__ref_element_type__content__projection(a: element_type__re
 predicate dynamic_invariant1(temp___expr_234: int, temp___is_init_230: bool,
   temp___skip_constant_231: bool, temp___do_toplevel_232: bool,
   temp___do_typ_inv_233: bool) = (((temp___is_init_230 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range2(temp___expr_234))
+  ((- 2147483648) <= 2147483647)) -> in_range3(temp___expr_234))
 
 logic oconcat : us_rep, int -> us_rep
 
@@ -439,7 +443,7 @@ axiom val__qtaxiom : (forall i:val__. ((- 2147483648) <= val__qtint(i)))
 
 axiom val__qtaxiom1 : (forall i:val__. (val__qtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -462,7 +466,7 @@ function val____ref_val____content__projection(a: val____ref) : val__ =
 predicate dynamic_invariant2(temp___expr_220: int, temp___is_init_216: bool,
   temp___skip_constant_217: bool, temp___do_toplevel_218: bool,
   temp___do_typ_inv_219: bool) = (((temp___is_init_216 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range3(temp___expr_220))
+  ((- 2147483648) <= 2147483647)) -> in_range4(temp___expr_220))
 
 axiom oconcat__post_axiom :
   (forall left:us_rep.
@@ -486,10 +490,6 @@ axiom oconcat__post_axiom2 :
   true, true, true) and ((length(left) + 1) <= 1000)) -> (let result =
   oconcat(left, right) : us_rep in (oconcat__function_guard(result, left,
   right) -> (element(result, (last_index(left) + 1)) = right))))))
-
-predicate in_range4(rec__amortized_queue__my_vectors__vector__capacity1: int,
-  a: us_rep) =
-  (rec__amortized_queue__my_vectors__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity))
 
 logic value__size2 : int
 
@@ -612,20 +612,20 @@ logic inv : us_rep2 -> bool
 
 logic inv__function_guard : bool, us_rep2 -> prop
 
-predicate dynamic_invariant3(temp___expr_415: us_rep2,
-  temp___is_init_411: bool, temp___skip_constant_412: bool,
-  temp___do_toplevel_413: bool, temp___do_typ_inv_414: bool) =
-  (in_range4(1000,
-  ((temp___expr_415).us_split_fields3).rec__amortized_queue__queue__front) and
-  in_range4(1000,
-  ((temp___expr_415).us_split_fields3).rec__amortized_queue__queue__rear))
+predicate dynamic_invariant3(temp___expr_416: us_rep2,
+  temp___is_init_412: bool, temp___skip_constant_413: bool,
+  temp___do_toplevel_414: bool, temp___do_typ_inv_415: bool) =
+  (in_range1(1000,
+  (((temp___expr_416).us_split_fields3).rec__amortized_queue__queue__front).us_split_discrs1) and
+  in_range1(1000,
+  (((temp___expr_416).us_split_fields3).rec__amortized_queue__queue__rear).us_split_discrs1))
 
-predicate default_initial_assumption(temp___expr_418: us_rep2,
-  temp___skip_top_level_419: bool) =
-  (((to_rep(((((temp___expr_418).us_split_fields3).rec__amortized_queue__queue__front).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = 1000) and
-  (is_empty(((temp___expr_418).us_split_fields3).rec__amortized_queue__queue__front) = true)) and
-  ((to_rep(((((temp___expr_418).us_split_fields3).rec__amortized_queue__queue__rear).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = 1000) and
-  (is_empty(((temp___expr_418).us_split_fields3).rec__amortized_queue__queue__rear) = true)))
+predicate default_initial_assumption(temp___expr_419: us_rep2,
+  temp___skip_top_level_420: bool) =
+  (((to_rep(((((temp___expr_419).us_split_fields3).rec__amortized_queue__queue__front).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = 1000) and
+  (is_empty(((temp___expr_419).us_split_fields3).rec__amortized_queue__queue__front) = true)) and
+  ((to_rep(((((temp___expr_419).us_split_fields3).rec__amortized_queue__queue__rear).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = 1000) and
+  (is_empty(((temp___expr_419).us_split_fields3).rec__amortized_queue__queue__rear) = true)))
 
 axiom inv__def_axiom :
   (forall q:us_rep2 [inv(q)]. ((inv(q) = true) ->
@@ -675,17 +675,17 @@ axiom user_eq__def_axiom1 :
   (forall a:us_rep. forall b:us_rep [user_eq5(a, b)]. (user_eq5(a,
   b) = oeq(a, b)))
 
-predicate dynamic_invariant4(temp___expr_405: us_rep,
-  temp___is_init_401: bool, temp___skip_constant_402: bool,
-  temp___do_toplevel_403: bool, temp___do_typ_inv_404: bool) =
-  ((not (temp___skip_constant_402 = true)) -> in_range4(1000,
-  temp___expr_405))
+predicate dynamic_invariant4(temp___expr_406: us_rep,
+  temp___is_init_402: bool, temp___skip_constant_403: bool,
+  temp___do_toplevel_404: bool, temp___do_typ_inv_405: bool) =
+  ((not (temp___skip_constant_403 = true)) -> in_range1(1000,
+  (temp___expr_406).us_split_discrs1))
 
-predicate default_initial_assumption1(temp___expr_407: us_rep,
-  temp___skip_top_level_408: bool) =
-  ((to_rep(((temp___expr_407).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = 1000) and
-  ((not (temp___skip_top_level_408 = true)) ->
-  (is_empty(temp___expr_407) = true)))
+predicate default_initial_assumption1(temp___expr_408: us_rep,
+  temp___skip_top_level_409: bool) =
+  ((to_rep(((temp___expr_408).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = 1000) and
+  ((not (temp___skip_top_level_409 = true)) ->
+  (is_empty(temp___expr_408) = true)))
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
 
@@ -949,32 +949,33 @@ goal defqtvc : (dynamic_invariant3(q, true, false, true, true) ->
   (inv__function_guard(inv(q), q) -> (((inv(q) = true) and
   (0 <  length(((q).us_split_fields3).rec__amortized_queue__queue__front))) ->
   (let o = ((q).us_split_fields3).rec__amortized_queue__queue__rear
-  : us_rep in (let o1 = copy(o, 1000) : us_rep in (((oeq1(model(o1),
-  model(o)) = true) and
-  (if (1000 = 0) then (to_rep(((o1).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = length(o)) else (to_rep(((o1).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = 1000))) ->
-  (let o2 = ((q).us_split_fields3).rec__amortized_queue__queue__front
-  : us_rep in (let o3 = copy(o2, 1000) : us_rep in (((oeq1(model(o3),
-  model(o2)) = true) and
-  (if (1000 = 0) then (to_rep(((o3).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = length(o2)) else (to_rep(((o3).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = 1000))) ->
+  : us_rep in (let temp___699 = copy(o, 1000) : us_rep in
+  (((oeq1(model(temp___699), model(o)) = true) and
+  (if (1000 = 0) then (to_rep(((temp___699).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = length(o)) else (to_rep(((temp___699).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = 1000))) ->
+  (let o1 = ((q).us_split_fields3).rec__amortized_queue__queue__front
+  : us_rep in (let temp___698 = copy(o1, 1000) : us_rep in
+  (((oeq1(model(temp___698), model(o1)) = true) and
+  (if (1000 = 0) then (to_rep(((temp___698).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = length(o1)) else (to_rep(((temp___698).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = 1000))) ->
   (forall result____split_fields:us_split_fields2.
-  ((result____split_fields = { rec__amortized_queue__queue__front = o3;
-  rec__amortized_queue__queue__rear = o1 }) -> (dynamic_invariant3({
-  us_split_fields3 = result____split_fields }, true, false, true, true) ->
+  ((result____split_fields = { rec__amortized_queue__queue__front =
+  temp___698; rec__amortized_queue__queue__rear = temp___699 }) ->
+  (dynamic_invariant3({ us_split_fields3 = result____split_fields }, true,
+  false, true, true) ->
   (let amortized_queue__my_vectors__delete_last__container__compl =
   (result____split_fields).rec__amortized_queue__queue__front : us_rep in
-  (let o4 =
+  (let o2 =
   (amortized_queue__my_vectors__delete_last__container__compl).us_split_discrs1
   : us_split_discrs in
   (forall amortized_queue__my_vectors__delete_last__container__fields:us_main_type.
-  (((length({ us_split_discrs1 = o4; us_split_fields1 = {
+  (((length({ us_split_discrs1 = o2; us_split_fields1 = {
   rec__amortized_queue__my_vectors__vector =
   amortized_queue__my_vectors__delete_last__container__fields }
-  }) = (length({ us_split_discrs1 = o4; us_split_fields1 =
+  }) = (length({ us_split_discrs1 = o2; us_split_fields1 =
   (amortized_queue__my_vectors__delete_last__container__compl).us_split_fields1
-  }) - 1)) and (olt(model({ us_split_discrs1 = o4; us_split_fields1 = {
+  }) - 1)) and (olt(model({ us_split_discrs1 = o2; us_split_fields1 = {
   rec__amortized_queue__my_vectors__vector =
   amortized_queue__my_vectors__delete_last__container__fields } }), model({
-  us_split_discrs1 = o4; us_split_fields1 =
+  us_split_discrs1 = o2; us_split_fields1 =
   (amortized_queue__my_vectors__delete_last__container__compl).us_split_fields1
   })) = true)) ->
   (forall result____split_fields1:us_split_fields2.
@@ -984,19 +985,19 @@ goal defqtvc : (dynamic_invariant3(q, true, false, true, true) ->
   us_split_fields1 = { rec__amortized_queue__my_vectors__vector =
   amortized_queue__my_vectors__delete_last__container__fields } };
   rec__amortized_queue__queue__rear =
-  (result____split_fields).rec__amortized_queue__queue__rear }) -> (let o5 =
+  (result____split_fields).rec__amortized_queue__queue__rear }) -> (let o3 =
   (result____split_fields1).rec__amortized_queue__queue__rear : us_rep in
-  (let o6 = length(o5) : int in ((dynamic_invariant(o6, true, false, true,
-  true) and (o6 <= capacity(o5))) -> (let o7 =
+  (let o4 = length(o3) : int in ((dynamic_invariant(o4, true, false, true,
+  true) and (o4 <= capacity(o3))) -> (let o5 =
   (result____split_fields1).rec__amortized_queue__queue__front : us_rep in
-  (let o8 = length(o7) : int in ((dynamic_invariant(o8, true, false, true,
-  true) and (o8 <= capacity(o7))) ->
+  (let o6 = length(o5) : int in ((dynamic_invariant(o6, true, false, true,
+  true) and (o6 <= capacity(o5))) ->
   (forall spark__branch:bool.
-  ((spark__branch = (if (o8 <  o6) then true else false)) ->
-  ((spark__branch = true) -> (let o9 =
+  ((spark__branch = (if (o6 <  o4) then true else false)) ->
+  ((spark__branch = true) -> (let o7 =
   (result____split_fields1).rec__amortized_queue__queue__rear : us_rep in
-  (let o10 = copy(o9, 1000) : us_rep in (((oeq1(model(o10),
-  model(o9)) = true) and
-  (if (1000 = 0) then (to_rep(((o10).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = length(o9)) else (to_rep(((o10).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = 1000))) ->
+  (let temp___703 = copy(o7, 1000) : us_rep in (((oeq1(model(temp___703),
+  model(o7)) = true) and
+  (if (1000 = 0) then (to_rep(((temp___703).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = length(o7)) else (to_rep(((temp___703).us_split_discrs1).rec__amortized_queue__my_vectors__vector__capacity) = 1000))) ->
   ((1000 = 0) or
   (length((result____split_fields1).rec__amortized_queue__queue__front) <= 1000))))))))))))))))))))))))))))))))

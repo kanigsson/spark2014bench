@@ -542,6 +542,10 @@ function bool_eq9(a: us_rep3, b: us_rep3) : bool =
   (us_main_eq2(((a).us_split_fields3).rec__linked_list__mylists__list,
   ((b).us_split_fields3).rec__linked_list__mylists__list) = true)) then true else false)
 
+predicate in_range5(rec__linked_list__mylists__list__capacity1: int,
+  a: us_split_discrs) =
+  (rec__linked_list__mylists__list__capacity1 = to_rep((a).rec__linked_list__mylists__list__capacity))
+
 logic value__size3 : int
 
 logic object__size3 : int
@@ -645,7 +649,7 @@ axiom element_typeqtaxiom4 :
 axiom element_typeqtaxiom5 :
   (forall i:element_type2. (element_typeqtint2(i) <= 2147483647))
 
-predicate in_range5(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range6(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -668,7 +672,7 @@ function element_type__ref_element_type__content__projection(a: element_type__re
 predicate dynamic_invariant3(temp___expr_229: int, temp___is_init_225: bool,
   temp___skip_constant_226: bool, temp___do_toplevel_227: bool,
   temp___do_typ_inv_228: bool) = (((temp___is_init_225 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range5(temp___expr_229))
+  ((- 2147483648) <= 2147483647)) -> in_range6(temp___expr_229))
 
 predicate default_initial_assumption3(temp___expr_250: us_rep,
   temp___skip_top_level_251: bool) =
@@ -845,8 +849,8 @@ goal defqtvc : (({ us_split_fields1 = {
   (((o3 = true) <-> (has_key(positions(o2), o1) = true)) -> ((o3 = true) ->
   (let o4 = l : us_rep3 in (let o5 = positions(o4) : us_rep2 in
   (((not (has_key(o5, no_element) = true)) and
-  (forall i:us_rep. ((has_key(o5, i) = true) -> (((1 <= get1(o5, i)) and
-  (get1(o5, i) <= length3(o4))) and
+  (forall i:us_rep. ((has_key(o5, i) = true) -> ((let temp___357 = get1(o5,
+  i) : int in ((1 <= temp___357) and (temp___357 <= length3(o4)))) and
   (forall j:us_rep. ((has_key(o5, j) = true) -> ((get1(o5, i) = get1(o5,
   j)) -> (bool_eq2(i, j) = true)))))))) -> (has_key(o5, { us_split_fields1 =
   { rec__linked_list__mylists__cursor__node = cu__split_fields }

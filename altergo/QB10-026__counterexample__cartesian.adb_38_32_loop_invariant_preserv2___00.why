@@ -696,9 +696,9 @@ goal defqtvc : (dynamic_invariant2(array1, true, false, true, true) ->
    (to_rep(((result__1[((((index1 - first1(array1)) * length(array2)) + (j - first1(array2))) + 1)])[1])) = to_rep((to_array(array1)[index1]))))) and
   (forall j:int. (((first1(array2) <= j) and (j <= index2)) ->
   (to_rep(((result__1[((((index1 - first1(array1)) * length(array2)) + (j - first1(array2))) + 1)])[2])) = to_rep((to_array(array2)[j]))))))) and
-  ((andb((if (dynamic_invariant(result_index1, true, true, true, true) and
-  dynamic_property3(first1(array2), last1(array2),
-  index2)) then true else false), (if ((first1(array2) <= index2) and
+  ((andb((if (dynamic_property3(first1(array2), last1(array2), index2) and
+  dynamic_invariant(result_index1, true, true, true,
+  true)) then true else false), (if ((first1(array2) <= index2) and
   (index2 <= last1(array2))) then true else false)) = true) and
   (index2 = temp___284))))))))))))))))))))))))) else (((result__1 = result__) and
   (result_index1 = result_index)) and (index2 = index21))))))) -> (let o3 =
@@ -745,9 +745,9 @@ goal defqtvc : (dynamic_invariant2(array1, true, false, true, true) ->
    (to_rep(((result__3[((((index12 - first1(array1)) * length(array2)) + (j - first1(array2))) + 1)])[1])) = to_rep((to_array(array1)[index12]))))) and
   (forall j:int. (((first1(array2) <= j) and (j <= index22)) ->
   (to_rep(((result__3[((((index12 - first1(array1)) * length(array2)) + (j - first1(array2))) + 1)])[2])) = to_rep((to_array(array2)[j]))))))) and
-  ((andb((if (dynamic_invariant(result_index3, true, true, true, true) and
-  dynamic_property3(first1(array2), last1(array2),
-  index22)) then true else false), (if ((first1(array2) <= index22) and
+  ((andb((if (dynamic_property3(first1(array2), last1(array2), index22) and
+  dynamic_invariant(result_index3, true, true, true,
+  true)) then true else false), (if ((first1(array2) <= index22) and
   (index22 <= last1(array2))) then true else false)) = true) and
   (index22 = temp___284)))))))))))))))))))))))))) else ((result__3 = result__2) and
   (result_index3 = result_index2))))))) -> (let o6 = length(array2) : int in

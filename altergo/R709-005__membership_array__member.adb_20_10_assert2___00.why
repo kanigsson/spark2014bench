@@ -393,10 +393,10 @@ logic rliteral : natural
 axiom rliteral_axiom : (naturalqtint(rliteral) = 0)
 
 axiom def_axiom :
-  (forall temp___239:int. (dynamic_invariant(temp___239, true, true, true,
+  (forall temp___246:int. (dynamic_invariant(temp___246, true, true, true,
   true) ->
-  (forall temp___240:int.
-  ((member__bad_2__a__aggregate_def(temp___239)[temp___240]) = rliteral))))
+  (forall temp___247:int.
+  ((member__bad_2__a__aggregate_def(temp___246)[temp___247]) = rliteral))))
 
  (* File "member.adb", line 16, characters 0-0 *)
 goal defqtvc : (let member__bad_2__a__assume =
@@ -407,10 +407,9 @@ goal defqtvc : (let member__bad_2__a__assume =
   ((to_rep(a__last) = last1(member__bad_2__a__assume)) ->
   (dynamic_property(1, 2147483647, to_rep(a__first), to_rep(a__last)) ->
   (forall o:int. ((to_rep(a__last) = o) ->
-  (forall o1:int. ((to_rep(a__first) = o1) ->
-  (forall o2:int. ((to_rep(a__last) = o2) ->
-  (forall o3:int. ((to_rep(a__first) = o3) ->
+  (forall o1:int. ((to_rep(a__first) = o1) -> (let temp___249 = of_array(a,
+  o1, o) : us_t in
   (forall spark__branch:bool. ((spark__branch = andb(andb(true,
-  (if (first1(of_array(a, o3, o2)) = 1) then true else false)),
-  (if (last1(of_array(a, o1, o)) = 10) then true else false))) ->
-  (not (spark__branch = true))))))))))))))))))
+  (if (first1(temp___249) = 1) then true else false)),
+  (if (last1(temp___249) = 10) then true else false))) ->
+  (not (spark__branch = true)))))))))))))))

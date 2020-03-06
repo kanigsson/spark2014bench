@@ -169,6 +169,10 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (default_init__mut_discr__f__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__default_init__mut_discr__f) = to_rep(((b).us_split_fields1).rec__default_init__mut_discr__f)))) then true else false)
 
+predicate in_range2(rec__default_init__mut_discr__b1: bool,
+  a: us_split_discrs) =
+  (rec__default_init__mut_discr__b1 = (a).rec__default_init__mut_discr__b)
+
 logic value__size : int
 
 logic object__size : int
@@ -248,7 +252,7 @@ axiom mut_discr_ok__def_axiom1 :
   ((not (((x).us_split_discrs1).rec__default_init__mut_discr__b = true)) ->
   (mut_discr_ok(x) = true)))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-N715-017__default_init_cond-15375/src/gnatprove/default_init__mut_discr.mlw", line 441, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-N715-017__default_init_cond-15469/src/gnatprove/default_init__mut_discr.mlw", line 453, characters 5-8 *)
 goal defqtvc :
   (forall usf:us_rep. (init__function_guard(init(0), 0) ->
   ((forall usf1:us_rep. mut_discr_ok__function_guard(mut_discr_ok(usf1),

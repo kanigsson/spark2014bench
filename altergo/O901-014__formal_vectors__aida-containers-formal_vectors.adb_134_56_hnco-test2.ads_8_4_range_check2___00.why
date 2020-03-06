@@ -188,61 +188,6 @@ logic user_eq2 : us_rep, us_rep -> bool
 
 logic dummy2 : us_rep
 
-type vector__ref = { vector__content : us_rep
-}
-
-function vector__ref_vector__content__projection(a: vector__ref) : us_rep =
-  (a).vector__content
-
-function to_rep(x: capacity_range1) : int = capacity_rangeqtint1(x)
-
-logic of_rep : int -> capacity_range1
-
-axiom inversion_axiom :
-  (forall x:capacity_range1 [to_rep(x)]. (of_rep(to_rep(x)) = x))
-
-axiom range_axiom :
-  (forall x:capacity_range1 [to_rep(x)]. in_range1(to_rep(x)))
-
-axiom coerce_axiom :
-  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
-  (to_rep(of_rep(x)) = x)))
-
-predicate in_range2(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
-
-logic value__size1 : int
-
-logic object__size1 : int
-
-logic alignment1 : int
-
-axiom value__size_axiom1 : (0 <= value__size1)
-
-axiom object__size_axiom1 : (0 <= object__size1)
-
-axiom alignment_axiom1 : (0 <= alignment1)
-
-logic ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1 : int
-
-logic ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit1 : int
-
-logic ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position1 : int
-
-axiom ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit_axiom1 :
-  (0 <= ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1)
-
-axiom ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit_axiom1 :
-  (ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1 <  ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit1)
-
-axiom ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position_axiom1 :
-  (0 <= ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position1)
-
-logic user_eq3 : us_rep, us_rep -> bool
-
-logic dummy3 : us_rep
-
 type t172s__ref = { t172s__content : us_rep
 }
 
@@ -293,19 +238,37 @@ function us_rep_attr__tag__projection(a: us_rep1) : int = (a).attr__tag
 
 logic us_dispatch_eq : us_rep1, us_rep1 -> bool
 
+function to_rep(x: capacity_range) : int = capacity_rangeqtint(x)
+
+logic of_rep : int -> capacity_range
+
+axiom inversion_axiom :
+  (forall x:capacity_range [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom :
+  (forall x:capacity_range [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
 logic us_tag : int
 
-logic value__size2 : int
+predicate in_range2(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
+  a: us_split_discrs2) =
+  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep((a).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
 
-logic object__size2 : int
+logic value__size1 : int
 
-logic alignment2 : int
+logic object__size1 : int
 
-axiom value__size_axiom2 : (0 <= value__size2)
+logic alignment1 : int
 
-axiom object__size_axiom2 : (0 <= object__size2)
+axiom value__size_axiom1 : (0 <= value__size1)
 
-axiom alignment_axiom2 : (0 <= alignment2)
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
 
 logic ada___hnco__test2__v_type_owner__vector_type__capacity__first__bit : int
 
@@ -337,9 +300,9 @@ axiom ada___hnco__test2__v_type_owner__vector_type__hidden_vector__last__bit_axi
 axiom ada___hnco__test2__v_type_owner__vector_type__hidden_vector__position_axiom :
   (0 <= ada___hnco__test2__v_type_owner__vector_type__hidden_vector__position)
 
-logic user_eq4 : us_rep1, us_rep1 -> bool
+logic user_eq3 : us_rep1, us_rep1 -> bool
 
-logic dummy4 : us_rep1
+logic dummy3 : us_rep1
 
 type vector_type__ref = { vector_type__content : us_rep1
 }
@@ -347,25 +310,66 @@ type vector_type__ref = { vector_type__content : us_rep1
 function vector_type__ref_vector_type__content__projection(a: vector_type__ref) : us_rep1 =
   (a).vector_type__content
 
-function to_rep1(x: capacity_range) : int = capacity_rangeqtint(x)
+function to_rep1(x: capacity_range1) : int = capacity_rangeqtint1(x)
 
-logic of_rep1 : int -> capacity_range
+logic of_rep1 : int -> capacity_range1
 
 axiom inversion_axiom1 :
-  (forall x:capacity_range [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+  (forall x:capacity_range1 [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
 
 axiom range_axiom1 :
-  (forall x:capacity_range [to_rep1(x)]. in_range(to_rep1(x)))
+  (forall x:capacity_range1 [to_rep1(x)]. in_range1(to_rep1(x)))
 
 axiom coerce_axiom1 :
-  (forall x:int [to_rep1(of_rep1(x))]. (in_range(x) ->
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
   (to_rep1(of_rep1(x)) = x)))
+
+predicate in_range3(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
+  a: us_split_discrs) =
+  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep1((a).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1 : int
+
+logic ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit1 : int
+
+logic ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position1 : int
+
+axiom ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit_axiom1 :
+  (0 <= ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1)
+
+axiom ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit_axiom1 :
+  (ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1 <  ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit1)
+
+axiom ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position_axiom1 :
+  (0 <= ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position1)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type vector__ref = { vector__content : us_rep
+}
+
+function vector__ref_vector__content__projection(a: vector__ref) : us_rep =
+  (a).vector__content
 
 predicate dynamic_invariant(temp___expr_308: us_rep1,
   temp___is_init_304: bool, temp___skip_constant_305: bool,
   temp___do_toplevel_306: bool, temp___do_typ_inv_307: bool) =
-  in_range2(to_rep1(((temp___expr_308).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_308).us_split_fields3).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector)
+  in_range3(to_rep(((temp___expr_308).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_308).us_split_fields3).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector).us_split_discrs1)
 
 logic is_empty : us_rep1 -> bool
 
@@ -431,7 +435,7 @@ axiom element_typeqtaxiom :
 axiom element_typeqtaxiom1 :
   (forall i:element_type. (element_typeqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -454,7 +458,7 @@ function element_type__ref_element_type__content__2__projection(a: element_type_
 predicate dynamic_invariant1(temp___expr_294: int, temp___is_init_290: bool,
   temp___skip_constant_291: bool, temp___do_toplevel_292: bool,
   temp___do_typ_inv_293: bool) = (((temp___is_init_290 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range3(temp___expr_294))
+  ((- 2147483648) <= 2147483647)) -> in_range4(temp___expr_294))
 
 type count_type
 
@@ -465,7 +469,7 @@ axiom count_typeqtaxiom : (forall i:count_type. (0 <= count_typeqtint(i)))
 axiom count_typeqtaxiom1 :
   (forall i:count_type. (count_typeqtint(i) <= 2147483647))
 
-predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -488,7 +492,7 @@ function count_type__ref_count_type__content__projection(a: count_type__ref) : c
 predicate dynamic_invariant2(temp___expr_238: int, temp___is_init_234: bool,
   temp___skip_constant_235: bool, temp___do_toplevel_236: bool,
   temp___do_typ_inv_237: bool) = (((temp___is_init_234 = true) or
-  (0 <= 2147483647)) -> in_range4(temp___expr_238))
+  (0 <= 2147483647)) -> in_range5(temp___expr_238))
 
 predicate dynamic_invariant3(temp___expr_245: int, temp___is_init_241: bool,
   temp___skip_constant_242: bool, temp___do_toplevel_243: bool,
@@ -505,7 +509,7 @@ logic oeq : us_rep, us_rep -> bool
 logic oeq__function_guard : bool, us_rep, us_rep -> prop
 
 axiom user_eq__def_axiom :
-  (forall a:us_rep. forall b:us_rep [user_eq2(a, b)]. (user_eq2(a,
+  (forall a:us_rep. forall b:us_rep [user_eq4(a, b)]. (user_eq4(a,
   b) = oeq(a, b)))
 
 function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
@@ -517,7 +521,7 @@ function to_int(b: bool) : int = (if (b = true) then 1 else 0)
 
 function of_int(i: int) : bool = (if (i = 0) then false else true)
 
-predicate in_range5(x: int) = ((x = 0) or (x = 1))
+predicate in_range6(x: int) = ((x = 0) or (x = 1))
 
 logic attr__ATTRIBUTE_IMAGE4 : bool -> us_image
 
@@ -526,7 +530,7 @@ logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
 logic attr__ATTRIBUTE_VALUE4 : us_image -> bool
 
 function capacity(container1: us_rep) : int =
-  (if (of_int(1) = true) then to_rep(((container1).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) else 2147483647)
+  (if (of_int(1) = true) then to_rep1(((container1).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) else 2147483647)
 
 logic capacity__function_guard : int, us_rep -> prop
 
@@ -647,7 +651,7 @@ axiom extended_indexqtaxiom :
 axiom extended_indexqtaxiom1 :
   (forall i:extended_index. (extended_indexqtint(i) <= 2147483647))
 
-predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range7(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -670,7 +674,7 @@ function extended_index__ref_extended_index__content__2__projection(a: extended_
 predicate dynamic_invariant5(temp___expr_287: int, temp___is_init_283: bool,
   temp___skip_constant_284: bool, temp___do_toplevel_285: bool,
   temp___do_typ_inv_286: bool) = (((temp___is_init_283 = true) or
-  (0 <= 2147483647)) -> in_range6(temp___expr_287))
+  (0 <= 2147483647)) -> in_range7(temp___expr_287))
 
 axiom length__post_axiom2 :
   (forall container1:us_rep2 [length1(container1)].
@@ -690,7 +694,7 @@ axiom element_typeqtaxiom2 :
 axiom element_typeqtaxiom3 :
   (forall i:element_type1. (element_typeqtint1(i) <= 2147483647))
 
-predicate in_range7(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range8(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -713,7 +717,7 @@ function element_type__ref_element_type__content__3__projection(a: element_type_
 predicate dynamic_invariant6(temp___expr_301: int, temp___is_init_297: bool,
   temp___skip_constant_298: bool, temp___do_toplevel_299: bool,
   temp___do_typ_inv_300: bool) = (((temp___is_init_297 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range7(temp___expr_301))
+  ((- 2147483648) <= 2147483647)) -> in_range8(temp___expr_301))
 
 axiom get__post_axiom :
   (forall container1:us_rep2.
@@ -723,7 +727,7 @@ axiom get__post_axiom :
   dynamic_invariant6(get(container1, position), true, false, true, true))))
 
 axiom user_eq__def_axiom2 :
-  (forall a:us_rep. forall b:us_rep [user_eq3(a, b)]. (user_eq3(a,
+  (forall a:us_rep. forall b:us_rep [user_eq2(a, b)]. (user_eq2(a,
   b) = oeq(a, b)))
 
  (* File "aida-containers-formal_vectors.ads", line 127, characters 0-0 *)
@@ -731,5 +735,5 @@ goal defqtvc : (dynamic_invariant(container, true, false, true, true) ->
   (is_empty__function_guard(is_empty(container), container) ->
   ((not (is_empty(container) = true)) ->
   (forall o:int.
-  ((to_rep1(((container).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = o) ->
+  ((to_rep(((container).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = o) ->
   in_range1(o))))))

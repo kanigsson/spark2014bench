@@ -623,9 +623,9 @@ logic rliteral1 : t
 
 axiom rliteral_axiom1 : (tqtint(rliteral1) = 255)
 
-predicate dynamic_invariant(temp___expr_210: t, temp___is_init_206: bool,
-  temp___skip_constant_207: bool, temp___do_toplevel_208: bool,
-  temp___do_typ_inv_209: bool) = true
+predicate dynamic_invariant(temp___expr_212: t, temp___is_init_208: bool,
+  temp___skip_constant_209: bool, temp___do_toplevel_210: bool,
+  temp___do_typ_inv_211: bool) = true
 
 type target
 
@@ -649,10 +649,10 @@ type target__ref = { target__content : target
 function target__ref_target__content__2__projection(a: target__ref) : target =
   (a).target__content
 
-predicate dynamic_invariant1(temp___expr_217: int, temp___is_init_213: bool,
-  temp___skip_constant_214: bool, temp___do_toplevel_215: bool,
-  temp___do_typ_inv_216: bool) = (((temp___is_init_213 = true) or
-  (0 <= 2)) -> in_range1(temp___expr_217))
+predicate dynamic_invariant1(temp___expr_219: int, temp___is_init_215: bool,
+  temp___skip_constant_216: bool, temp___do_toplevel_217: bool,
+  temp___do_typ_inv_218: bool) = (((temp___is_init_215 = true) or
+  (0 <= 2)) -> in_range1(temp___expr_219))
 
 axiom c3__post_axiom :
   (forall s:t [c3(s)]. (dynamic_invariant(s, true, true, true, true) ->

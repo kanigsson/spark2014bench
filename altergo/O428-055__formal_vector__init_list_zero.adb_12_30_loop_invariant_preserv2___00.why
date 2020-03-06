@@ -193,6 +193,10 @@ type list_t__ref = { list_t__content : us_rep
 function list_t__ref_list_t__content__projection(a: list_t__ref) : us_rep =
   (a).list_t__content
 
+predicate in_range2(rec__loop_types__lists__list__capacity1: int,
+  a: us_split_discrs) =
+  (rec__loop_types__lists__list__capacity1 = to_rep((a).rec__loop_types__lists__list__capacity))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -375,7 +379,7 @@ axiom element_typeqtaxiom :
 axiom element_typeqtaxiom1 :
   (forall i:element_type. (element_typeqtint(i) <= 2147483647))
 
-predicate in_range2(x: int) = ((1 <= x) and (x <= 2147483647))
+predicate in_range3(x: int) = ((1 <= x) and (x <= 2147483647))
 
 function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -398,7 +402,7 @@ function element_type__ref_element_type__content__projection(a: element_type__re
 predicate dynamic_invariant(temp___expr_249: int, temp___is_init_245: bool,
   temp___skip_constant_246: bool, temp___do_toplevel_247: bool,
   temp___do_typ_inv_248: bool) = (((temp___is_init_245 = true) or
-  (1 <= 2147483647)) -> in_range2(temp___expr_249))
+  (1 <= 2147483647)) -> in_range3(temp___expr_249))
 
 predicate default_initial_assumption1(temp___expr_225: us_rep1,
   temp___skip_top_level_226: bool) =
@@ -600,7 +604,7 @@ axiom element_typeqtaxiom2 :
 axiom element_typeqtaxiom3 :
   (forall i:element_type1. (element_typeqtint1(i) <= 2147483647))
 
-predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -620,15 +624,15 @@ type element_type__ref1 = { element_type__content1 : element_type1
 function element_type__ref_element_type__content__3__projection(a: element_type__ref1) : element_type1 =
   (a).element_type__content1
 
-predicate dynamic_invariant1(temp___expr_302: int, temp___is_init_298: bool,
-  temp___skip_constant_299: bool, temp___do_toplevel_300: bool,
-  temp___do_typ_inv_301: bool) = (((temp___is_init_298 = true) or
-  (0 <= 2147483647)) -> in_range3(temp___expr_302))
+predicate dynamic_invariant1(temp___expr_304: int, temp___is_init_300: bool,
+  temp___skip_constant_301: bool, temp___do_toplevel_302: bool,
+  temp___do_typ_inv_303: bool) = (((temp___is_init_300 = true) or
+  (0 <= 2147483647)) -> in_range4(temp___expr_304))
 
-predicate default_initial_assumption3(temp___expr_310: us_rep3,
-  temp___skip_top_level_311: bool) =
-  ((not (temp___skip_top_level_311 = true)) ->
-  (length3(temp___expr_310) = 0))
+predicate default_initial_assumption3(temp___expr_312: us_rep3,
+  temp___skip_top_level_313: bool) =
+  ((not (temp___skip_top_level_313 = true)) ->
+  (length3(temp___expr_312) = 0))
 
 type extended_index
 
@@ -640,7 +644,7 @@ axiom extended_indexqtaxiom :
 axiom extended_indexqtaxiom1 :
   (forall i:extended_index. (extended_indexqtint(i) <= 2147483647))
 
-predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -660,10 +664,10 @@ type extended_index__ref = { extended_index__content : extended_index
 function extended_index__ref_extended_index__content__projection(a: extended_index__ref) : extended_index =
   (a).extended_index__content
 
-predicate dynamic_invariant2(temp___expr_324: int, temp___is_init_320: bool,
-  temp___skip_constant_321: bool, temp___do_toplevel_322: bool,
-  temp___do_typ_inv_323: bool) = (((temp___is_init_320 = true) or
-  (0 <= 2147483647)) -> in_range4(temp___expr_324))
+predicate dynamic_invariant2(temp___expr_326: int, temp___is_init_322: bool,
+  temp___skip_constant_323: bool, temp___do_toplevel_324: bool,
+  temp___do_typ_inv_325: bool) = (((temp___is_init_322 = true) or
+  (0 <= 2147483647)) -> in_range5(temp___expr_326))
 
 axiom get__post_axiom4 :
   (forall container:us_rep3.
@@ -808,8 +812,8 @@ goal defqtvc :
   l__split_discrs; us_split_fields1 = { rec__loop_types__lists__list =
   l__split_fields } } : us_rep in (let o6 = positions(o5) : us_rep2 in
   (((not (has_key(o6, no_element) = true)) and
-  (forall i:us_rep1. ((has_key(o6, i) = true) -> (((1 <= get(o6, i)) and
-  (get(o6, i) <= length1(o5))) and
+  (forall i:us_rep1. ((has_key(o6, i) = true) -> ((let temp___256 = get(o6,
+  i) : int in ((1 <= temp___256) and (temp___256 <= length1(o5)))) and
   (forall j:us_rep1. ((has_key(o6, j) = true) -> ((get(o6, i) = get(o6,
   j)) -> (bool_eq3(i, j) = true)))))))) and (let o7 = get(o6, o4) : int in
   (dynamic_invariant(o7, true, false, true, true) and ((of_int(0) = true) ->
@@ -878,8 +882,8 @@ goal defqtvc :
   l__split_discrs; us_split_fields1 = { rec__loop_types__lists__list =
   l__split_fields2 } } : us_rep in (let o12 = positions(o11) : us_rep2 in
   (((not (has_key(o12, no_element) = true)) and
-  (forall i:us_rep1. ((has_key(o12, i) = true) -> (((1 <= get(o12, i)) and
-  (get(o12, i) <= length1(o11))) and
+  (forall i:us_rep1. ((has_key(o12, i) = true) -> ((let temp___256 = get(o12,
+  i) : int in ((1 <= temp___256) and (temp___256 <= length1(o11)))) and
   (forall j:us_rep1. ((has_key(o12, j) = true) -> ((get(o12, i) = get(o12,
   j)) -> (bool_eq3(i, j) = true)))))))) and (let o13 = get(o12, o10) : int in
   (dynamic_invariant(o13, true, false, true, true) and ((of_int(0) = true) ->

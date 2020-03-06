@@ -1,0 +1,822 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type integer
+
+logic integerqtint : integer -> int
+
+axiom integerqtaxiom :
+  (forall i:integer. ((- 2147483648) <= integerqtint(i)))
+
+axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq : integer, integer -> bool
+
+logic dummy : integer
+
+type integer__ref = { integer__content : integer
+}
+
+function integer__ref_integer__content__projection(a: integer__ref) : integer =
+  (a).integer__content
+
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+type small_index
+
+logic small_indexqtint : small_index -> int
+
+axiom small_indexqtaxiom : (forall i:small_index. (1 <= small_indexqtint(i)))
+
+axiom small_indexqtaxiom1 :
+  (forall i:small_index. (small_indexqtint(i) <= 100))
+
+predicate in_range2(x: int) = ((1 <= x) and (x <= 100))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq1 : small_index, small_index -> bool
+
+logic dummy1 : small_index
+
+type small_index__ref = { small_index__content : small_index
+}
+
+function small_index__ref_small_index__content__projection(a: small_index__ref) : small_index =
+  (a).small_index__content
+
+type map__ref = { map__content : (int,integer) farray
+}
+
+logic slide : (int,integer) farray, int, int -> (int,integer) farray
+
+axiom slide_eq :
+  (forall a:(int,integer) farray.
+  (forall first:int [slide(a, first, first)]. (slide(a, first, first) = a)))
+
+axiom slide_def :
+  (forall a:(int,integer) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide(a, old_first, new_first)[i])]. ((slide(a, old_first,
+  new_first)[i]) = (a[(i - (new_first - old_first))]))))))
+
+function bool_eq3(a: (int,integer) farray, a__first: int, a__last: int,
+  b: (int,integer) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_156:int. (((a__first <= temp___idx_156) and
+  (temp___idx_156 <= a__last)) ->
+  (to_rep((a[temp___idx_156])) = to_rep((b[((b__first - a__first) + temp___idx_156)])))))) then true else false)
+
+axiom bool_eq_rev :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev1 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev2 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev3 :
+  (forall a:(int,integer) farray. forall b:(int,integer) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq3(b, b__first, b__last, a, a__first,
+  a__last) = true) ->
+  (forall temp___idx_156:int. (((a__first <= temp___idx_156) and
+  (temp___idx_156 <= a__last)) ->
+  (to_rep((a[temp___idx_156])) = to_rep((b[((b__first - a__first) + temp___idx_156)]))))))))
+
+type t
+
+logic first : t -> integer
+
+logic last : t -> integer
+
+logic mk : int, int -> t
+
+axiom mk_def :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep(first(mk(f, l))) = f))))
+
+axiom mk_def1 :
+  (forall f:int. forall l:int [mk(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep(last(mk(f, l))) = l))))
+
+predicate dynamic_property(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (in_range2(low) and in_range2(high)))))
+
+type us_t = { elts : (int,integer) farray; rt : t
+}
+
+function to_array(a: us_t) : (int,integer) farray = (a).elts
+
+function of_array(a: (int,integer) farray, f: int, l: int) : us_t = { elts =
+  a; rt = mk(f, l) }
+
+function first1(a: us_t) : int = to_rep(first((a).rt))
+
+function last1(a: us_t) : int = to_rep(last((a).rt))
+
+function length(a: us_t) : int =
+  (if (first1(a) <= last1(a)) then ((last1(a) - first1(a)) + 1) else 0)
+
+logic value__size : int
+
+logic object__size : int
+
+logic component__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom component__size_axiom : (0 <= component__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+function bool_eq4(x: us_t, y: us_t) : bool = bool_eq3((x).elts,
+  to_rep(first((x).rt)), to_rep(last((x).rt)), (y).elts,
+  to_rep(first((y).rt)), to_rep(last((y).rt)))
+
+logic user_eq2 : us_t, us_t -> bool
+
+logic dummy2 : us_t
+
+type small_array__ref = { small_array__content : us_t
+}
+
+function small_array__ref_small_array__content__projection(a: small_array__ref) : us_t =
+  (a).small_array__content
+
+type array_type__ref = { array_type__content : us_t
+}
+
+function array_type__ref_array_type__content__projection(a: array_type__ref) : us_t =
+  (a).array_type__content
+
+logic in_range3 : us_t, int, int -> bool
+
+logic in_range__function_guard : bool, us_t, int, int -> prop
+
+type natural
+
+logic naturalqtint : natural -> int
+
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
+
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
+
+predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq3 : natural, natural -> bool
+
+logic dummy3 : natural
+
+type natural__ref = { natural__content : natural
+}
+
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
+
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range4(temp___expr_39))
+
+type index_type
+
+logic index_typeqtint : index_type -> int
+
+axiom index_typeqtaxiom : (forall i:index_type. (1 <= index_typeqtint(i)))
+
+axiom index_typeqtaxiom1 : (forall i:index_type. (index_typeqtint(i) <= 100))
+
+predicate in_range5(x: int) = ((1 <= x) and (x <= 100))
+
+function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq4 : index_type, index_type -> bool
+
+logic dummy4 : index_type
+
+type index_type__ref = { index_type__content : index_type
+}
+
+function index_type__ref_index_type__content__projection(a: index_type__ref) : index_type =
+  (a).index_type__content
+
+predicate dynamic_invariant1(temp___expr_217: int, temp___is_init_213: bool,
+  temp___skip_constant_214: bool, temp___do_toplevel_215: bool,
+  temp___do_typ_inv_216: bool) = (((temp___is_init_213 = true) or
+  (1 <= 100)) -> in_range5(temp___expr_217))
+
+predicate dynamic_invariant2(temp___expr_237: us_t, temp___is_init_233: bool,
+  temp___skip_constant_234: bool, temp___do_toplevel_235: bool,
+  temp___do_typ_inv_236: bool) = ((not (temp___skip_constant_234 = true)) ->
+  dynamic_property(1, 100, first1(temp___expr_237), last1(temp___expr_237)))
+
+axiom in_range__def_axiom :
+  (forall a:us_t.
+  (forall x:int. forall i:int [in_range3(a, x, i)]. ((in_range3(a, x,
+  i) = true) -> (x <= (i - first1(a))))))
+
+axiom in_range__def_axiom1 :
+  (forall a:us_t.
+  (forall x:int. forall i:int [in_range3(a, x, i)].
+  ((x <= (i - first1(a))) -> (in_range3(a, x, i) = true))))
+
+logic in_range_last : us_t, int -> bool
+
+logic in_range_last__function_guard : bool, us_t, int -> prop
+
+axiom in_range_last__def_axiom :
+  (forall a:us_t.
+  (forall x:int [in_range_last(a, x)]. ((in_range_last(a, x) = true) ->
+  (x <= length(a)))))
+
+axiom in_range_last__def_axiom1 :
+  (forall a:us_t.
+  (forall x:int [in_range_last(a, x)]. ((x <= length(a)) -> (in_range_last(a,
+  x) = true))))
+
+logic choose : int -> bool
+
+logic choose__function_guard : bool, int -> prop
+
+axiom temp___result_160qtdef :
+  (forall e:int. choose__function_guard(choose(e), e))
+
+function add_one(e: int, x: int) : int =
+  (if (choose(e) = true) then (x + 1) else x)
+
+logic add_one__function_guard : int, int, int -> prop
+
+type array_type__ref1 = { array_type__content1 : us_t
+}
+
+function array_type__ref_array_type__content__3__projection(a: array_type__ref1) : us_t =
+  (a).array_type__content1
+
+logic a : us_t
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic init : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+type index_type1
+
+logic index_typeqtint1 : index_type1 -> int
+
+axiom index_typeqtaxiom2 : (forall i:index_type1. (1 <= index_typeqtint1(i)))
+
+axiom index_typeqtaxiom3 :
+  (forall i:index_type1. (index_typeqtint1(i) <= 100))
+
+predicate in_range6(x: int) = ((1 <= x) and (x <= 100))
+
+function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq5 : index_type1, index_type1 -> bool
+
+logic dummy5 : index_type1
+
+type index_type__ref1 = { index_type__content1 : index_type1
+}
+
+function index_type__ref_index_type__content__3__projection(a1: index_type__ref1) : index_type1 =
+  (a1).index_type__content1
+
+type element_out
+
+logic element_outqtint : element_out -> int
+
+axiom element_outqtaxiom : (forall i:element_out. (0 <= element_outqtint(i)))
+
+axiom element_outqtaxiom1 :
+  (forall i:element_out. (element_outqtint(i) <= 2147483647))
+
+predicate in_range7(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE6 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check6 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE6 : us_image -> int
+
+logic user_eq6 : element_out, element_out -> bool
+
+logic dummy6 : element_out
+
+type element_out__ref = { element_out__content : element_out
+}
+
+function element_out__ref_element_out__content__2__projection(a1: element_out__ref) : element_out =
+  (a1).element_out__content
+
+function to_rep1(x: element_out) : int = element_outqtint(x)
+
+logic of_rep1 : int -> element_out
+
+axiom inversion_axiom1 :
+  (forall x:element_out [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+
+axiom range_axiom1 :
+  (forall x:element_out [to_rep1(x)]. in_range7(to_rep1(x)))
+
+axiom coerce_axiom1 :
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range7(x) ->
+  (to_rep1(of_rep1(x)) = x)))
+
+type map__ref1 = { map__content1 : (int,element_out) farray
+}
+
+logic slide1 : (int,element_out) farray, int, int -> (int,element_out) farray
+
+axiom slide_eq1 :
+  (forall a1:(int,element_out) farray.
+  (forall first2:int [slide1(a1, first2, first2)]. (slide1(a1, first2,
+  first2) = a1)))
+
+axiom slide_def1 :
+  (forall a1:(int,element_out) farray.
+  (forall old_first:int.
+  (forall new_first:int.
+  (forall i:int [(slide1(a1, old_first, new_first)[i])]. ((slide1(a1,
+  old_first, new_first)[i]) = (a1[(i - (new_first - old_first))]))))))
+
+function bool_eq9(a1: (int,element_out) farray, a__first: int, a__last: int,
+  b: (int,element_out) farray, b__first: int, b__last: int) : bool =
+  (if ((if (a__first <= a__last) then ((b__first <= b__last) and
+  ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
+  (forall temp___idx_161:int. (((a__first <= temp___idx_161) and
+  (temp___idx_161 <= a__last)) ->
+  (to_rep1((a1[temp___idx_161])) = to_rep1((b[((b__first - a__first) + temp___idx_161)])))))) then true else false)
+
+axiom bool_eq_rev4 :
+  (forall a1:(int,element_out) farray. forall b:(int,element_out) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq9(b, b__first, b__last, a1, a__first,
+  a__last) = true) -> ((a__first <= a__last) -> (b__first <= b__last)))))
+
+axiom bool_eq_rev5 :
+  (forall a1:(int,element_out) farray. forall b:(int,element_out) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq9(b, b__first, b__last, a1, a__first,
+  a__last) = true) -> ((a__first <= a__last) ->
+  ((a__last - a__first) = (b__last - b__first))))))
+
+axiom bool_eq_rev6 :
+  (forall a1:(int,element_out) farray. forall b:(int,element_out) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq9(b, b__first, b__last, a1, a__first,
+  a__last) = true) -> ((not (a__first <= a__last)) ->
+  (b__last <  b__first)))))
+
+axiom bool_eq_rev7 :
+  (forall a1:(int,element_out) farray. forall b:(int,element_out) farray.
+  (forall a__first:int. forall a__last:int. forall b__first:int.
+  forall b__last:int. ((bool_eq9(b, b__first, b__last, a1, a__first,
+  a__last) = true) ->
+  (forall temp___idx_161:int. (((a__first <= temp___idx_161) and
+  (temp___idx_161 <= a__last)) ->
+  (to_rep1((a1[temp___idx_161])) = to_rep1((b[((b__first - a__first) + temp___idx_161)]))))))))
+
+type t1
+
+logic first2 : t1 -> integer
+
+logic last2 : t1 -> integer
+
+logic mk1 : int, int -> t1
+
+axiom mk_def2 :
+  (forall f:int. forall l:int [mk1(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep(first2(mk1(f, l))) = f))))
+
+axiom mk_def3 :
+  (forall f:int. forall l:int [mk1(f, l)]. (in_range1(f) -> (in_range1(l) ->
+  (to_rep(last2(mk1(f, l))) = l))))
+
+predicate dynamic_property1(range_first: int, range_last: int, low: int,
+  high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
+  (in_range6(low) and in_range6(high)))))
+
+type us_t1 = { elts1 : (int,element_out) farray; rt1 : t1
+}
+
+function to_array1(a1: us_t1) : (int,element_out) farray = (a1).elts1
+
+function of_array1(a1: (int,element_out) farray, f: int, l: int) : us_t1 = {
+  elts1 = a1; rt1 = mk1(f, l) }
+
+function first3(a1: us_t1) : int = to_rep(first2((a1).rt1))
+
+function last3(a1: us_t1) : int = to_rep(last2((a1).rt1))
+
+function length1(a1: us_t1) : int =
+  (if (first3(a1) <= last3(a1)) then ((last3(a1) - first3(a1)) + 1) else 0)
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic component__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom component__size_axiom1 : (0 <= component__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+function bool_eq10(x: us_t1, y: us_t1) : bool = bool_eq9((x).elts1,
+  to_rep(first2((x).rt1)), to_rep(last2((x).rt1)), (y).elts1,
+  to_rep(first2((y).rt1)), to_rep(last2((y).rt1)))
+
+logic user_eq7 : us_t1, us_t1 -> bool
+
+logic dummy7 : us_t1
+
+type acc_array__ref = { acc_array__content : us_t1
+}
+
+function acc_array__ref_acc_array__content__projection(a1: acc_array__ref) : us_t1 =
+  (a1).acc_array__content
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic r__first : integer
+
+logic r__last : integer
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+predicate dynamic_invariant3(temp___expr_295: int, temp___is_init_291: bool,
+  temp___skip_constant_292: bool, temp___do_toplevel_293: bool,
+  temp___do_typ_inv_294: bool) = (((temp___is_init_291 = true) or
+  (0 <= 2147483647)) -> in_range7(temp___expr_295))
+
+type trS__ref = { trS__content : us_t1
+}
+
+function trS__ref_trS__content__projection(a1: trS__ref) : us_t1 =
+  (a1).trS__content
+
+type t123s__ref = { t123s__content : us_t1
+}
+
+function t123s__ref_t123s__content__projection(a1: t123s__ref) : us_t1 =
+  (a1).t123s__content
+
+predicate dynamic_property2(first_int: int, last_int: int, x: int) =
+  ((first_int <= x) and (x <= last_int))
+
+function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE7 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check7 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE7 : us_image -> int
+
+logic user_eq8 : integer, integer -> bool
+
+logic dummy8 : integer
+
+type t124s__ref = { t124s__content : integer
+}
+
+function t124s__ref_t124s__content__projection(a1: t124s__ref) : integer =
+  (a1).t124s__content
+
+predicate dynamic_invariant4(temp___expr_289: us_t, temp___is_init_285: bool,
+  temp___skip_constant_286: bool, temp___do_toplevel_287: bool,
+  temp___do_typ_inv_288: bool) = ((not (temp___skip_constant_286 = true)) ->
+  dynamic_property(1, 100, first1(temp___expr_289), last1(temp___expr_289)))
+
+logic test_higher_order3__my_count__count_left__acc__fold__R121s__r__aggregate_def : int,
+  int, int -> us_t1
+
+predicate dynamic_invariant5(temp___expr_18: int, temp___is_init_14: bool,
+  temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
+  temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+predicate dynamic_invariant6(temp___expr_210: int, temp___is_init_206: bool,
+  temp___skip_constant_207: bool, temp___do_toplevel_208: bool,
+  temp___do_typ_inv_209: bool) = (((temp___is_init_206 = true) or
+  (1 <= 100)) -> in_range2(temp___expr_210))
+
+predicate dynamic_invariant7(temp___expr_308: us_t1,
+  temp___is_init_304: bool, temp___skip_constant_305: bool,
+  temp___do_toplevel_306: bool, temp___do_typ_inv_307: bool) =
+  ((not (temp___skip_constant_305 = true)) -> dynamic_property1(1, 100,
+  first3(temp___expr_308), last3(temp___expr_308)))
+
+predicate dynamic_invariant8(temp___expr_275: int, temp___is_init_271: bool,
+  temp___skip_constant_272: bool, temp___do_toplevel_273: bool,
+  temp___do_typ_inv_274: bool) = (((temp___is_init_271 = true) or
+  (1 <= 100)) -> in_range6(temp___expr_275))
+
+axiom def_axiom :
+  (forall temp___1191:int. forall temp___1192:int. forall temp___1193:int.
+  (dynamic_invariant3(temp___1191, true, true, true, true) ->
+  (dynamic_property1(1, 100, temp___1192, temp___1193) ->
+  (first3(test_higher_order3__my_count__count_left__acc__fold__R121s__r__aggregate_def(temp___1191,
+  temp___1192, temp___1193)) = temp___1192))))
+
+axiom def_axiom1 :
+  (forall temp___1191:int. forall temp___1192:int. forall temp___1193:int.
+  (dynamic_invariant3(temp___1191, true, true, true, true) ->
+  (dynamic_property1(1, 100, temp___1192, temp___1193) ->
+  (last3(test_higher_order3__my_count__count_left__acc__fold__R121s__r__aggregate_def(temp___1191,
+  temp___1192, temp___1193)) = temp___1193))))
+
+axiom def_axiom2 :
+  (forall temp___1191:int. forall temp___1192:int. forall temp___1193:int.
+  (dynamic_invariant3(temp___1191, true, true, true, true) ->
+  (forall temp___1194:int.
+  (to_rep1((to_array1(test_higher_order3__my_count__count_left__acc__fold__R121s__r__aggregate_def(temp___1191,
+  temp___1192, temp___1193))[temp___1194])) = temp___1191))))
+
+predicate dynamic_invariant9(temp___expr_336: us_t1,
+  temp___is_init_332: bool, temp___skip_constant_333: bool,
+  temp___do_toplevel_334: bool, temp___do_typ_inv_335: bool) =
+  ((not (temp___skip_constant_333 = true)) -> (dynamic_property1(first1(a),
+  last1(a), first3(temp___expr_336), last3(temp___expr_336)) and
+  ((first3(temp___expr_336) = first1(a)) and
+  (last3(temp___expr_336) = last1(a)))))
+
+predicate default_initial_assumption(temp___expr_338: us_t1,
+  temp___skip_top_level_339: bool) =
+  ((first3(temp___expr_338) = first1(a)) and
+  (last3(temp___expr_338) = last1(a)))
+
+ (* File "spark-higher_order-fold.ads", line 69, characters 0-0 *)
+goal defqtvc : (dynamic_invariant4(a, true, false, true, true) ->
+  (dynamic_invariant3(init, true, false, true, true) ->
+  (in_range__function_guard(in_range3(of_array(to_array(a), first1(a),
+  last1(a)), init, first1(a)), of_array(to_array(a), first1(a), last1(a)),
+  init, first1(a)) -> (((0 <  length(a)) and (in_range3(of_array(to_array(a),
+  first1(a), last1(a)), init, first1(a)) = true)) ->
+  (forall acc:int. ((acc = init) -> (dynamic_invariant3(acc, true, false,
+  true, true) -> (let temp___1195 =
+  test_higher_order3__my_count__count_left__acc__fold__R121s__r__aggregate_def(init,
+  first1(a), last1(a)) : us_t1 in ((first3(temp___1195) = first1(a)) ->
+  ((last3(temp___1195) = last1(a)) ->
+  ((if (first3(temp___1195) <= last3(temp___1195)) then ((first1(a) <= last1(a)) and
+  ((last3(temp___1195) - first3(temp___1195)) = (last1(a) - first1(a)))) else (last1(a) <  first1(a))) ->
+  (let test_higher_order3__my_count__count_left__acc__fold__R121s__r__assume =
+  of_array1(slide1(to_array1(temp___1195), first3(temp___1195), first1(a)),
+  first1(a), last1(a)) : us_t1 in
+  (forall r:(int,element_out) farray.
+  ((r = to_array1(test_higher_order3__my_count__count_left__acc__fold__R121s__r__assume)) ->
+  ((to_rep(r__first) = first3(test_higher_order3__my_count__count_left__acc__fold__R121s__r__assume)) ->
+  ((to_rep(r__last) = last3(test_higher_order3__my_count__count_left__acc__fold__R121s__r__assume)) ->
+  ((dynamic_property1(first1(a), last1(a), to_rep(r__first),
+  to_rep(r__last)) and ((to_rep(r__first) = first1(a)) and
+  (to_rep(r__last) = last1(a)))) ->
+  (forall r1:(int,element_out) farray.
+  ((forall acc1:int. forall i:int.
+   in_range__function_guard(in_range3(of_array(to_array(a), first1(a),
+   last1(a)), acc1, i), of_array(to_array(a), first1(a), last1(a)), acc1, i)) ->
+  ((forall o:int. choose__function_guard(choose(o), o)) ->
+  ((forall o:int. choose__function_guard(choose(o), o)) ->
+  (in_range__function_guard(in_range3(of_array(to_array(a), first1(a),
+  last1(a)), init, first1(a)), of_array(to_array(a), first1(a), last1(a)),
+  init, first1(a)) ->
+  ((forall r2:(int,element_out) farray. forall k:int.
+   in_range__function_guard(in_range3(of_array(to_array(a), first1(a),
+   last1(a)), to_rep1((r2[(k - 1)])), k), of_array(to_array(a), first1(a),
+   last1(a)), to_rep1((r2[(k - 1)])), k)) ->
+  ((forall acc1:int. forall i:int.
+   in_range__function_guard(in_range3(of_array(to_array(a), first1(a),
+   last1(a)), acc1, i), of_array(to_array(a), first1(a), last1(a)), acc1, i)) ->
+  ((forall o:int. choose__function_guard(choose(o), o)) ->
+  ((forall o:int. choose__function_guard(choose(o), o)) ->
+  (in_range__function_guard(in_range3(of_array(to_array(a), first1(a),
+  last1(a)), init, first1(a)), of_array(to_array(a), first1(a), last1(a)),
+  init, first1(a)) ->
+  ((forall r2:(int,element_out) farray. forall k:int.
+   in_range__function_guard(in_range3(of_array(to_array(a), first1(a),
+   last1(a)), to_rep1((r2[(k - 1)])), k), of_array(to_array(a), first1(a),
+   last1(a)), to_rep1((r2[(k - 1)])), k)) ->
+  ((forall acc1:int. forall i:int. forall o:us_t.
+   in_range__function_guard(in_range3(of_array(to_array(o), first1(o),
+   last1(o)), add_one(to_rep((to_array(o)[i])), acc1), (i + 1)),
+   of_array(to_array(o), first1(o), last1(o)),
+   add_one(to_rep((to_array(o)[i])), acc1), (i + 1))) ->
+  ((forall acc1:int. forall o:us_t.
+   in_range_last__function_guard(in_range_last(of_array(to_array(o),
+   first1(o), last1(o)), add_one(to_rep((to_array(o)[last1(o)])), acc1)),
+   of_array(to_array(o), first1(o), last1(o)),
+   add_one(to_rep((to_array(o)[last1(o)])), acc1))) ->
+  ((let temp___1198 = first1(a) : int in (let temp___1199 = last1(a) : int in
+  (exists i:int. ((i = temp___1198) and
+  (if (andb((if (temp___1198 <= i) then true else false),
+  (if (i <= temp___1199) then true else false)) = true) then ((in_range3(of_array(to_array(a),
+  first1(a), last1(a)), acc, i) = true) and
+  (exists o:int. ((to_rep((to_array(a)[i])) = o) and (let o1 = add_one(o,
+  acc) : int in ((dynamic_invariant(o1, true, false, true, true) and
+  (o1 = (if (choose(o) = true) then (acc + 1) else acc))) and
+  (exists o2:element_out. ((to_rep1(o2) = o1) and
+  (exists r2:(int,element_out) farray. ((r2 = (r[i <- o2])) and ((let o3 =
+  first1(a) : int in (in_range5(o3) and (let o4 = init : int in
+  (dynamic_property(1, 100, first1(a), last1(a)) and (let o5 =
+  of_array(to_array(a), first1(a), last1(a)) : us_t in (let o6 =
+  in_range3(o5, o4, o3) : bool in ((in_range__function_guard(o6, o5, o4,
+  o3) and ((o6 = true) <-> (o4 <= (o3 - first1(o5))))) and
+  ((not (o6 = true)) or (let o7 = init : int in (let temp___1215 = first1(a)
+  : int in (((first1(a) <= temp___1215) and (temp___1215 <= last1(a))) and
+  (exists o8:int. ((to_rep((to_array(a)[temp___1215])) = o8) and (let o9 =
+  add_one(o8, o7) : int in ((dynamic_invariant(o9, true, false, true,
+  true) and (o9 = (if (choose(o8) = true) then (o7 + 1) else o7))) and
+  (let temp___1214 = first1(a) : int in
+  (((to_rep(r__first) <= temp___1214) and
+  (temp___1214 <= to_rep(r__last))) and
+  (exists o10:int. (to_rep1((r2[temp___1214])) = o10))))))))))))))))))) and
+  (exists acc1:int. exists i1:int. ((((in_range3(of_array(to_array(a),
+  first1(a), last1(a)), init, first1(a)) = true) and
+  (to_rep1((r1[first1(a)])) = add_one(to_rep((to_array(a)[first1(a)])),
+  init))) and
+  ((forall k:int. (((first1(a) <= k) and (k <= i1)) -> ((first1(a) <  k) ->
+   ((in_range3(of_array(to_array(a), first1(a), last1(a)),
+   to_rep1((r1[(k - 1)])), k) = true) and
+   (to_rep1((r1[k])) = add_one(to_rep((to_array(a)[k])),
+   to_rep1((r1[(k - 1)])))))))) and
+  (if (i1 = first1(a)) then (acc1 = init) else (acc1 = to_rep1((r1[(i1 - 1)])))))) and
+  ((andb((if ((dynamic_property2(first1(a), last1(a), i1) and
+  (forall temp___1204:int. (((to_rep(r__first) <= temp___1204) and
+  (temp___1204 <= to_rep(r__last))) -> (((temp___1199 <  temp___1204) or
+  ((temp___1204 <  temp___1198) or (i1 <  temp___1204))) ->
+  ((r1[temp___1204]) = (r[temp___1204])))))) and dynamic_invariant3(acc1,
+  true, true, true, true)) then true else false), (if ((first1(a) <= i1) and
+  (i1 <= last1(a))) then true else false)) = true) and
+  ((exists spark__branch:bool.
+   ((spark__branch = (if (i1 = last1(a)) then false else true)) and
+   (if (spark__branch = true) then (in_range6(i1) and (let o3 = a : us_t in
+   (in_range3(of_array(to_array(o3), first1(o3), last1(o3)),
+   add_one(to_rep((to_array(o3)[i1])), acc1),
+   (i1 + 1)) = true))) else (let o3 = a : us_t in
+   (in_range_last(of_array(to_array(o3), first1(o3), last1(o3)),
+   add_one(to_rep((to_array(o3)[last1(o3)])), acc1)) = true))))) and
+  (exists o3:int. ((to_rep1((r1[i1])) = o3) and
+  (exists acc2:int. ((acc2 = o3) and (i1 = temp___1199))))))))))))))))))) else (r1 = r)))))) ->
+  (forall o:int. ((to_rep(r__last) = o) ->
+  (forall o1:int. ((to_rep(r__first) = o1) ->
+  (forall test_higher_order3__my_count__count_left__acc__fold__result:us_t1.
+  ((test_higher_order3__my_count__count_left__acc__fold__result = of_array1(r1,
+  o1, o)) ->
+  (forall i:int. (((first1(a) <= i) and (i <= last1(a))) ->
+  ((first1(a) <  i) ->
+  ((forall test_higher_order3__my_count__count_left__acc__fold__result1:us_t1.
+   forall i1:int. in_range__function_guard(in_range3(of_array(to_array(a),
+   first1(a), last1(a)),
+   to_rep1((to_array1(test_higher_order3__my_count__count_left__acc__fold__result1)[(i1 - 1)])),
+   i1), of_array(to_array(a), first1(a), last1(a)),
+   to_rep1((to_array1(test_higher_order3__my_count__count_left__acc__fold__result1)[(i1 - 1)])),
+   i1)) ->
+  (in_range3(of_array(to_array(a), first1(a), last1(a)),
+  to_rep1((to_array1(test_higher_order3__my_count__count_left__acc__fold__result)[(i - 1)])),
+  i) = true))))))))))))))))))))))))))))))))))))))))))

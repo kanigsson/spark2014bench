@@ -415,6 +415,10 @@ function bool_eq7(a: us_rep, b: us_rep) : bool =
   ((b).us_split_fields1).rec__bounded_strings__bounded_string__text) = true) and
   (to_rep1(((a).us_split_fields1).rec__bounded_strings__bounded_string__length) = to_rep1(((b).us_split_fields1).rec__bounded_strings__bounded_string__length)))) then true else false)
 
+predicate in_range5(rec__bounded_strings__bounded_string__bound1: int,
+  a: us_split_discrs) =
+  (rec__bounded_strings__bounded_string__bound1 = to_rep((a).rec__bounded_strings__bounded_string__bound))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -568,7 +572,7 @@ axiom def_axiom2 :
   (to_rep2((to_array(temp_____aggregate_def_199(temp___201, temp___202,
   temp___203))[temp___204])) = temp___201))))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA14-032__dic-9043/src/gnatprove/bounded_strings__bounded_string.mlw", line 1025, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA14-032__dic-25465/src/gnatprove/bounded_strings__bounded_string.mlw", line 1039, characters 5-8 *)
 goal defqtvc :
   (forall usf:int. (dynamic_invariant2(usf, true, true, true, true) ->
   (forall usf1:us_rep.

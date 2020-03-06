@@ -872,6 +872,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__area_math__ensemble__to,
   ((b).us_split_fields1).rec__area_math__ensemble__to) = true))) then true else false)
 
+predicate in_range2(rec__area_math__ensemble__max1: int,
+  a: us_split_discrs) =
+  (rec__area_math__ensemble__max1 = to_rep((a).rec__area_math__ensemble__max))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -982,7 +986,7 @@ axiom tT3bP1qtaxiom : (forall i:tT3bP1. (1 <= tT3bP1qtint(i)))
 
 axiom tT3bP1qtaxiom1 : (forall i:tT3bP1. (tT3bP1qtint(i) <= 1))
 
-predicate in_range2(x: int) = ((1 <= x) and (x <= 1))
+predicate in_range3(x: int) = ((1 <= x) and (x <= 1))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1030,7 +1034,7 @@ axiom tT4bP1qtaxiom : (forall i:tT4bP1. (1 <= tT4bP1qtint(i)))
 
 axiom tT4bP1qtaxiom1 : (forall i:tT4bP1. (tT4bP1qtint(i) <= 1))
 
-predicate in_range3(x: int) = ((1 <= x) and (x <= 1))
+predicate in_range4(x: int) = ((1 <= x) and (x <= 1))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1125,9 +1129,6 @@ function bool_eq9(a: us_rep1, b: us_rep1) : bool =
   (bool_eq4(((a).us_split_fields3).rec__area_math__ensemble__to1, 1, 1,
   ((b).us_split_fields3).rec__area_math__ensemble__to1, 1,
   1) = true))) then true else false)
-
-predicate in_range4(rec__area_math__ensemble__max1: int, a: us_rep) =
-  (rec__area_math__ensemble__max1 = to_rep(((a).us_split_discrs1).rec__area_math__ensemble__max))
 
 logic value__size4 : int
 

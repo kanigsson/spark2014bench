@@ -881,7 +881,7 @@ type t43b__ref = { t43b__content : us_t
 function t43b__ref_t43b__content__projection(a: t43b__ref) : us_t =
   (a).t43b__content
 
-logic temp_____aggregate_def_352 : int, int, int -> us_t
+logic temp_____aggregate_def_354 : int, int, int -> us_t
 
 predicate dynamic_invariant5(temp___expr_96: us_t, temp___is_init_92: bool,
   temp___skip_constant_93: bool, temp___do_toplevel_94: bool,
@@ -1026,25 +1026,25 @@ axiom find_char_in_slice__post_axiom4 :
   true, false, true, true))))
 
 axiom def_axiom :
-  (forall temp___354:int. forall temp___355:int. forall temp___356:int.
-  (dynamic_invariant3(temp___354, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___355, temp___356) ->
-  (first1(temp_____aggregate_def_352(temp___354, temp___355,
-  temp___356)) = temp___355))))
+  (forall temp___356:int. forall temp___357:int. forall temp___358:int.
+  (dynamic_invariant3(temp___356, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___357, temp___358) ->
+  (first1(temp_____aggregate_def_354(temp___356, temp___357,
+  temp___358)) = temp___357))))
 
 axiom def_axiom1 :
-  (forall temp___354:int. forall temp___355:int. forall temp___356:int.
-  (dynamic_invariant3(temp___354, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___355, temp___356) ->
-  (last1(temp_____aggregate_def_352(temp___354, temp___355,
-  temp___356)) = temp___356))))
+  (forall temp___356:int. forall temp___357:int. forall temp___358:int.
+  (dynamic_invariant3(temp___356, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___357, temp___358) ->
+  (last1(temp_____aggregate_def_354(temp___356, temp___357,
+  temp___358)) = temp___358))))
 
 axiom def_axiom2 :
-  (forall temp___354:int. forall temp___355:int. forall temp___356:int.
-  (dynamic_invariant3(temp___354, true, true, true, true) ->
-  (forall temp___357:int.
-  (to_rep((to_array(temp_____aggregate_def_352(temp___354, temp___355,
-  temp___356))[temp___357])) = temp___354))))
+  (forall temp___356:int. forall temp___357:int. forall temp___358:int.
+  (dynamic_invariant3(temp___356, true, true, true, true) ->
+  (forall temp___359:int.
+  (to_rep((to_array(temp_____aggregate_def_354(temp___356, temp___357,
+  temp___358))[temp___359])) = temp___356))))
 
 axiom cdiv_cases :
   (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((0 <  d) -> (div(n,
@@ -1090,8 +1090,8 @@ goal defqtvc :
   256) = eof_ch) -> (dynamic_invariant4(eof, true, false, true, true) ->
   ((not (end_of_file({ us_split_fields1 = file__split_fields }, cur_position,
   the_file) = true)) ->
+  (forall temp___old_379:int. ((temp___old_379 = cur_position) ->
   (forall temp___old_377:int. ((temp___old_377 = cur_position) ->
-  (forall temp___old_375:int. ((temp___old_375 = cur_position) ->
   ((cur_position = cur_position_at_start) ->
   (dynamic_invariant2(cur_position_at_start, true, false, true, true) ->
   (let o = { us_split_fields1 = file__split_fields } : us_rep in
@@ -1103,17 +1103,17 @@ goal defqtvc :
   false, false, true, true) -> (dynamic_invariant(rest, false, false, true,
   true) ->
   (forall o1:int. ((to_rep1(item__last) = o1) ->
-  (forall o2:int. ((to_rep1(item__first) = o2) -> (let temp___358 =
-  temp_____aggregate_def_352(32, o2, o1) : us_t in
-  ((first1(temp___358) = to_rep1(item__first)) ->
-  ((last1(temp___358) = to_rep1(item__last)) -> (let temp___360 =
-  of_array(to_array(temp___358), first1(temp___358), last1(temp___358))
+  (forall o2:int. ((to_rep1(item__first) = o2) -> (let temp___360 =
+  temp_____aggregate_def_354(32, o2, o1) : us_t in
+  ((first1(temp___360) = to_rep1(item__first)) ->
+  ((last1(temp___360) = to_rep1(item__last)) -> (let temp___362 =
+  of_array(to_array(temp___360), first1(temp___360), last1(temp___360))
   : us_t in
-  ((if (first1(temp___360) <= last1(temp___360)) then ((to_rep1(item__first) <= to_rep1(item__last)) and
-  ((last1(temp___360) - first1(temp___360)) = (to_rep1(item__last) - to_rep1(item__first)))) else (to_rep1(item__last) <  to_rep1(item__first))) ->
+  ((if (first1(temp___362) <= last1(temp___362)) then ((to_rep1(item__first) <= to_rep1(item__last)) and
+  ((last1(temp___362) - first1(temp___362)) = (to_rep1(item__last) - to_rep1(item__first)))) else (to_rep1(item__last) <  to_rep1(item__first))) ->
   (forall o3:int. ((to_rep1(item__first) = o3) ->
-  (forall item:(int,character) farray. ((item = slide(to_array(temp___360),
-  first1(temp___360), o3)) ->
+  (forall item:(int,character) farray. ((item = slide(to_array(temp___362),
+  first1(temp___362), o3)) ->
   (forall o4:int. ((to_rep1(item__first) = o4) -> (let o5 = (o4 - 1) : int in
   (in_range1(o5) -> (in_range2(o5) ->
   (forall last3:int. ((last3 = o5) ->
@@ -1127,10 +1127,10 @@ goal defqtvc :
   : int in (in_range1(o10) -> (let o11 = (o10 + 1) : int in
   (in_range1(o11) -> (in_range2(o11) ->
   (forall n1:int. ((n1 = o11) -> ((80 <= n1) ->
-  (forall temp___loop_entry_369:int.
-  ((temp___loop_entry_369 = cur_position) ->
   (forall temp___loop_entry_371:int.
   ((temp___loop_entry_371 = cur_position) ->
+  (forall temp___loop_entry_373:int.
+  ((temp___loop_entry_373 = cur_position) ->
   ((exists o12:int. ((to_rep1(item__first) = o12) and
    ((not (o12 <= (last3 + 1))) or
    (exists o13:int. (to_rep1(item__last) = o13))))) ->
@@ -1139,4 +1139,4 @@ goal defqtvc :
   ((andb((if (o12 <= usf) then true else false),
   (if (usf <= last3) then true else false)) = true) ->
   (forall o13:int. ((to_rep1(item__first) = o13) ->
-  (1 <= ((usf - o13) + temp___loop_entry_371)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+  (1 <= ((usf - o13) + temp___loop_entry_373)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))

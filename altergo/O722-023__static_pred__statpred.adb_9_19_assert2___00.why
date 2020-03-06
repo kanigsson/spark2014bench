@@ -158,15 +158,14 @@ predicate dynamic_predicate(temp___185: int) =
   ((2 <= temp___185) and (temp___185 <= 2147483647)))
 
  (* File "statpred.adb", line 1, characters 0-0 *)
-goal defqtvc : (id__function_guard(id(2), 2) -> (id__function_guard(id(2),
-  2) -> ((let temp___190 = id(2) : int in (in_range2(id(2)) and
-  ((((- 2147483648) <= temp___190) and (temp___190 <= (- 2))) or
-  ((2 <= temp___190) and (temp___190 <= 2147483647))))) ->
-  (id__function_guard(id((- 2)), (- 2)) -> (id__function_guard(id((- 2)),
-  (- 2)) -> ((let temp___195 = id((- 2)) : int in (in_range2(id((- 2))) and
+goal defqtvc : (id__function_guard(id(2), 2) -> ((let temp___190 = id(2)
+  : int in (in_range2(temp___190) and ((((- 2147483648) <= temp___190) and
+  (temp___190 <= (- 2))) or ((2 <= temp___190) and
+  (temp___190 <= 2147483647))))) -> (id__function_guard(id((- 2)), (- 2)) ->
+  ((let temp___195 = id((- 2)) : int in (in_range2(temp___195) and
   ((((- 2147483648) <= temp___195) and (temp___195 <= (- 2))) or
   ((2 <= temp___195) and (temp___195 <= 2147483647))))) ->
-  (id__function_guard(id(0), 0) -> (id__function_guard(id(0), 0) ->
+  (id__function_guard(id(0), 0) ->
   (notb(andb((if in_range2(id(0)) then true else false),
   (if ((((- 2147483648) <= id(0)) and (id(0) <= (- 2))) or ((2 <= id(0)) and
-  (id(0) <= 2147483647))) then true else false))) = true)))))))))
+  (id(0) <= 2147483647))) then true else false))) = true))))))

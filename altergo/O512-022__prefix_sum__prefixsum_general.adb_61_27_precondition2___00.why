@@ -465,16 +465,17 @@ goal defqtvc :
   forall right:int.
   (forall a1:(int,integer) farray. ((a1 = a) ->
   (dynamic_invariant1(output_space, false, false, true, true) ->
-  ((forall k:int. (((0 <= k) and (k <= 7)) ->
-   (((- 268435455) <= to_rep((a[k]))) and (to_rep((a[k])) <= 268435455)))) ->
+  ((forall k:int. (((0 <= k) and (k <= 7)) -> (let temp___218 =
+   to_rep((a[k])) : int in (((- 268435455) <= temp___218) and
+   (temp___218 <= 268435455))))) ->
   (forall space:int. ((space = 1) -> (dynamic_invariant1(space, true, false,
   true, true) -> (dynamic_invariant(left, false, false, true, true) ->
   (dynamic_invariant(right, false, false, true, true) -> ((a = a_old) ->
   ((space <  8) ->
-  (forall temp___loop_entry_198:(int,integer) farray.
-  ((temp___loop_entry_198 = a) ->
-  (forall temp___loop_entry_199:(int,integer) farray.
-  ((temp___loop_entry_199 = a) ->
+  (forall temp___loop_entry_207:(int,integer) farray.
+  ((temp___loop_entry_207 = a) ->
+  (forall temp___loop_entry_208:(int,integer) farray.
+  ((temp___loop_entry_208 = a) ->
   (forall left1:int. ((left1 = (space - 1)) ->
   ((exists o:bool.
    (exists o1:bool.
@@ -490,29 +491,30 @@ goal defqtvc :
      (if (o3 = true) then (o2 = (if (mod1((left1 + 1),
      space) = 0) then true else false)) else (o2 = false)))) and
     (if (o2 = true) then (o1 = (if (forall k:int. (((0 <= k) and (k <= 7)) ->
-                                   (((-(268435455 * space)) <= to_rep((a[k]))) and
-                                   (to_rep((a[k])) <= (268435455 * space))))) then true else false)) else (o1 = false)))) and
+                                   (let temp___206 = to_rep((a[k])) : int in
+                                   (((-(268435455 * space)) <= temp___206) and
+                                   (temp___206 <= (268435455 * space)))))) then true else false)) else (o1 = false)))) and
    (if (o1 = true) then (o = (if (forall k:int. (((0 <= k) and (k <= 7)) ->
                                  ((is_even(k) = true) ->
-                                 (to_rep((a[k])) = to_rep((temp___loop_entry_198[k])))))) then true else false)) else (o = false))))) ->
+                                 (to_rep((a[k])) = to_rep((temp___loop_entry_207[k])))))) then true else false)) else (o = false))))) ->
   (forall a2:(int,integer) farray. forall space1:int. forall left2:int.
   forall right1:int. (((((((((mod1(8, space1) = 0) and
   ((2 * space1) <= 8)) and (not (is_even((left2 + space1)) = true))) and
   (left2 <  space1)) and (mod1((left2 + 1), space1) = 0)) and
-  (forall k:int. (((0 <= k) and (k <= 7)) ->
-  (((-(268435455 * space1)) <= to_rep((a2[k]))) and
-  (to_rep((a2[k])) <= (268435455 * space1)))))) and
+  (forall k:int. (((0 <= k) and (k <= 7)) -> (let temp___209 =
+  to_rep((a2[k])) : int in (((-(268435455 * space1)) <= temp___209) and
+  (temp___209 <= (268435455 * space1))))))) and
   (forall k:int. (((0 <= k) and (k <= 7)) -> ((is_even(k) = true) ->
-  (to_rep((a2[k])) = to_rep((temp___loop_entry_198[k]))))))) and
+  (to_rep((a2[k])) = to_rep((temp___loop_entry_207[k]))))))) and
   (forall k:int. (((0 <= k) and (k <= 7)) -> ((mod1((k + 1), space1) = 0) ->
-  (to_rep((a2[k])) = summation(temp___loop_entry_199, ((k + 1) - space1),
+  (to_rep((a2[k])) = summation(temp___loop_entry_208, ((k + 1) - space1),
   k)))))) -> (((dynamic_invariant1(space1, true, true, true, true) and
   dynamic_invariant(left2, false, true, true, true)) and
   dynamic_invariant(right1, false, true, true, true)) ->
-  (forall temp___200:int. ((temp___200 = space1) -> (let o = (left2 + space1)
+  (forall temp___210:int. ((temp___210 = space1) -> (let o = (left2 + space1)
   : int in (in_range1(o) -> ((o <  8) ->
-  (forall temp___loop_entry_189:(int,integer) farray.
-  ((temp___loop_entry_189 = a2) ->
+  (forall temp___loop_entry_194:(int,integer) farray.
+  ((temp___loop_entry_194 = a2) ->
   (forall o1:bool.
   ((exists o2:bool.
    ((exists o3:bool.
@@ -529,12 +531,16 @@ goal defqtvc :
       space1) = 0) then true else false)) else (o4 = false)))) and
      (if (o4 = true) then (o3 = (if (forall k:int. (((0 <= k) and
                                     (k <= 7)) ->
-                                    (if (k <  left2) then (((-((268435455 * space1) * 2)) <= to_rep((a2[k]))) and
-                                    (to_rep((a2[k])) <= ((268435455 * space1) * 2))) else (((-(268435455 * space1)) <= to_rep((a2[k]))) and
-                                    (to_rep((a2[k])) <= (268435455 * space1)))))) then true else false)) else (o3 = false)))) and
+                                    (if (k <  left2) then (let temp___192 =
+                                    to_rep((a2[k])) : int in
+                                    (((-((268435455 * space1) * 2)) <= temp___192) and
+                                    (temp___192 <= ((268435455 * space1) * 2)))) else (let temp___193 =
+                                    to_rep((a2[k])) : int in
+                                    (((-(268435455 * space1)) <= temp___193) and
+                                    (temp___193 <= (268435455 * space1))))))) then true else false)) else (o3 = false)))) and
     (if (o3 = true) then (o2 = (if (forall k:int. (((0 <= k) and (k <= 7)) ->
                                    ((is_even(k) = true) ->
-                                   (to_rep((a2[k])) = to_rep((temp___loop_entry_189[k])))))) then true else false)) else (o2 = false)))) and
+                                   (to_rep((a2[k])) = to_rep((temp___loop_entry_194[k])))))) then true else false)) else (o2 = false)))) and
    (if (o2 = true) then (o1 = (if (forall k:int. (((0 <= k) and (k <= 7)) ->
                                   (if ((k <  left2) and (mod1((k + 1),
                                   (space1 * 2)) = 0)) then (to_rep((a2[k])) = summation(a_old,

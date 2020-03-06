@@ -525,10 +525,10 @@ goal defqtvc :
   true, false, true, true) -> (dynamic_invariant1(status, false, false, true,
   true) -> ((current <= upper) ->
   (forall count1:int. forall free1:int. forall current1:int.
-  forall status1:int. ((andb((if (((dynamic_invariant1(status1, false, true,
-  true, true) and dynamic_invariant2(free1, true, true, true, true)) and
-  dynamic_invariant2(count1, true, true, true, true)) and
-  dynamic_invariant(current1, true, true, true, true)) then true else false),
+  forall status1:int. ((andb((if (((dynamic_invariant(current1, true, true,
+  true, true) and dynamic_invariant1(status1, false, true, true, true)) and
+  dynamic_invariant2(free1, true, true, true, true)) and
+  dynamic_invariant2(count1, true, true, true, true)) then true else false),
   (if (current1 <= upper) then true else false)) = true) ->
   (back__function_guard(back(void), void) ->
   (forall count2:int. forall free2:int. forall status2:int.

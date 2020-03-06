@@ -114,6 +114,9 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__p1__t1,
   ((b).us_split_fields1).rec__p1__t1) = true)) then true else false)
 
+predicate in_range1(rec__p1__t1__d1: bool, a: us_split_discrs) =
+  (rec__p1__t1__d1 = (a).rec__p1__t1__d)
+
 logic value__size : int
 
 logic object__size : int
@@ -195,6 +198,9 @@ function bool_eq2(a: us_rep1, b: us_rep1) : bool =
   (if ((to_int(((a).us_split_discrs3).rec__p2__t2__d) = to_int(((b).us_split_discrs3).rec__p2__t2__d)) and
   (us_main_eq1(((a).us_split_fields3).rec__p2__t2,
   ((b).us_split_fields3).rec__p2__t2) = true)) then true else false)
+
+predicate in_range2(rec__p2__t2__d1: bool, a: us_split_discrs2) =
+  (rec__p2__t2__d1 = (a).rec__p2__t2__d)
 
 logic value__size1 : int
 

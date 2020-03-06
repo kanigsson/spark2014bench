@@ -158,10 +158,10 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
 
-logic valid_state : int, int, (int,character) farray -> bool
+logic valid_state : (int,character) farray, int, int -> bool
 
-logic valid_state__function_guard : bool, int, int,
-  (int,character) farray -> prop
+logic valid_state__function_guard : bool, (int,character) farray, int,
+  int -> prop
 
 axiom valid_state__def_axiom :
   (forall buf_read__buffer:(int,character) farray. forall index:int.
@@ -169,30 +169,30 @@ axiom valid_state__def_axiom :
   to_rep((buf_read__buffer[index]))))
 
 axiom valid_state__def_axiom1 :
-  (forall buf_read__pointer:int. forall buf_read__max_read:int.
-  (forall buf_read__buffer:(int,character) farray
-  [valid_state(buf_read__pointer, buf_read__max_read, buf_read__buffer)].
-  ((valid_state(buf_read__pointer, buf_read__max_read,
-  buf_read__buffer) = true) -> (buf_read__pointer <= buf_read__max_read))))
+  (forall buf_read__buffer:(int,character) farray.
+  (forall buf_read__pointer:int. forall buf_read__max_read:int
+  [valid_state(buf_read__buffer, buf_read__pointer, buf_read__max_read)].
+  ((valid_state(buf_read__buffer, buf_read__pointer,
+  buf_read__max_read) = true) -> (buf_read__pointer <= buf_read__max_read))))
 
 axiom valid_state__def_axiom2 :
-  (forall buf_read__pointer:int. forall buf_read__max_read:int.
-  (forall buf_read__buffer:(int,character) farray
-  [valid_state(buf_read__pointer, buf_read__max_read, buf_read__buffer)].
-  ((valid_state(buf_read__pointer, buf_read__max_read,
-  buf_read__buffer) = true) ->
+  (forall buf_read__buffer:(int,character) farray.
+  (forall buf_read__pointer:int. forall buf_read__max_read:int
+  [valid_state(buf_read__buffer, buf_read__pointer, buf_read__max_read)].
+  ((valid_state(buf_read__buffer, buf_read__pointer,
+  buf_read__max_read) = true) ->
   (forall index:int. (((1 <= index) and (index <= buf_read__max_read)) ->
   (valid(to_rep((buf_read__buffer[index]))) = true))))))
 
 axiom valid_state__def_axiom3 :
-  (forall buf_read__pointer:int. forall buf_read__max_read:int.
-  (forall buf_read__buffer:(int,character) farray
-  [valid_state(buf_read__pointer, buf_read__max_read, buf_read__buffer)].
+  (forall buf_read__buffer:(int,character) farray.
+  (forall buf_read__pointer:int. forall buf_read__max_read:int
+  [valid_state(buf_read__buffer, buf_read__pointer, buf_read__max_read)].
   (((buf_read__pointer <= buf_read__max_read) and
   (forall index:int. (((1 <= index) and (index <= buf_read__max_read)) ->
   (valid(to_rep((buf_read__buffer[index]))) = true)))) ->
-  (valid_state(buf_read__pointer, buf_read__max_read,
-  buf_read__buffer) = true))))
+  (valid_state(buf_read__buffer, buf_read__pointer,
+  buf_read__max_read) = true))))
 
 logic attr__ATTRIBUTE_ADDRESS3 : int
 
@@ -390,9 +390,9 @@ goal defqtvc :
   (dynamic_invariant(c, false, false, true, true) ->
   ((forall pointer1:int. forall max_read1:int.
    forall buffer1:(int,character) farray.
-   valid_state__function_guard(valid_state(pointer1, max_read1, buffer1),
-   pointer1, max_read1, buffer1)) ->
-  ((valid_state(pointer, max_read, buffer) = true) ->
+   valid_state__function_guard(valid_state(buffer1, pointer1, max_read1),
+   buffer1, pointer1, max_read1)) ->
+  ((valid_state(buffer, pointer, max_read) = true) ->
   (forall o:int. ((to_rep((buffer[pointer])) = o) ->
   (forall c1:int. ((c1 = o) ->
   (forall pointer1:int. forall max_read1:int.

@@ -243,14 +243,14 @@ goal defqtvc :
                                       (o = (if (o4 <= (255 - o3)) then true else false)))))) else (o = false)))))) and
    (exists spark__branch:bool. ((spark__branch = o) and
    (if (spark__branch = true) then (let o1 = b : us_rep in (let o2 = a
-   : us_rep in (let temp___442 = add_pair_a(o2, o1) : us_rep in
-   ((add_pair_a__function_guard(temp___442, o2, o1) and (bool_eq2(temp___442,
+   : us_rep in (let temp___462 = add_pair_a(o2, o1) : us_rep in
+   ((add_pair_a__function_guard(temp___462, o2, o1) and (bool_eq2(temp___462,
    { us_split_fields1 = { rec__records_prooffuncs__pair__a =
    of_rep((to_rep(((o2).us_split_fields1).rec__records_prooffuncs__pair__a) + to_rep(((o1).us_split_fields1).rec__records_prooffuncs__pair__a)));
    rec__records_prooffuncs__pair__b =
    of_rep((to_rep(((o2).us_split_fields1).rec__records_prooffuncs__pair__b) + to_rep(((o1).us_split_fields1).rec__records_prooffuncs__pair__b)))
    } }) = true)) and
-   (r__split_fields = (temp___442).us_split_fields1))))) else (r__split_fields = {
+   (r__split_fields = (temp___462).us_split_fields1))))) else (r__split_fields = {
    rec__records_prooffuncs__pair__a = rliteral;
    rec__records_prooffuncs__pair__b = rliteral })))))) ->
   (forall records__safe_add_pair_b__result:us_split_fields.

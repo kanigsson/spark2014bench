@@ -762,6 +762,11 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__find_map__index_maps__map,
   ((b).us_split_fields1).rec__find_map__index_maps__map) = true)) then true else false)
 
+predicate in_range3(rec__find_map__index_maps__map__capacity1: int,
+  rec__find_map__index_maps__map__modulus1: t, a: us_split_discrs) =
+  ((rec__find_map__index_maps__map__capacity1 = to_rep2((a).rec__find_map__index_maps__map__capacity)) and
+  (rec__find_map__index_maps__map__modulus1 = to_rep1((a).rec__find_map__index_maps__map__modulus)))
+
 logic value__size : int
 
 logic object__size : int
@@ -876,7 +881,7 @@ axiom element_typeqtaxiom :
 axiom element_typeqtaxiom1 :
   (forall i:element_type. (element_typeqtint(i) <= 100))
 
-predicate in_range3(x: int) = ((1 <= x) and (x <= 100))
+predicate in_range4(x: int) = ((1 <= x) and (x <= 100))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -899,7 +904,7 @@ function element_type__ref_element_type__content__projection(a: element_type__re
 predicate dynamic_invariant1(temp___expr_280: int, temp___is_init_276: bool,
   temp___skip_constant_277: bool, temp___do_toplevel_278: bool,
   temp___do_typ_inv_279: bool) = (((temp___is_init_276 = true) or
-  (1 <= 100)) -> in_range3(temp___expr_280))
+  (1 <= 100)) -> in_range4(temp___expr_280))
 
 type integer
 
@@ -910,7 +915,7 @@ axiom integerqtaxiom :
 
 axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
 
-predicate in_range4(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range5(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -937,10 +942,10 @@ logic of_rep3 : int -> integer
 axiom inversion_axiom3 :
   (forall x:integer [to_rep3(x)]. (of_rep3(to_rep3(x)) = x))
 
-axiom range_axiom2 : (forall x:integer [to_rep3(x)]. in_range4(to_rep3(x)))
+axiom range_axiom2 : (forall x:integer [to_rep3(x)]. in_range5(to_rep3(x)))
 
 axiom coerce_axiom3 :
-  (forall x:int [to_rep3(of_rep3(x))]. (in_range4(x) ->
+  (forall x:int [to_rep3(of_rep3(x))]. (in_range5(x) ->
   (to_rep3(of_rep3(x)) = x)))
 
 type index
@@ -951,7 +956,7 @@ axiom indexqtaxiom : (forall i:index. (1 <= indexqtint(i)))
 
 axiom indexqtaxiom1 : (forall i:index. (indexqtint(i) <= 100))
 
-predicate in_range5(x: int) = ((1 <= x) and (x <= 100))
+predicate in_range6(x: int) = ((1 <= x) and (x <= 100))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1033,16 +1038,16 @@ logic last : t1 -> integer
 logic mk : int, int -> t1
 
 axiom mk_def :
-  (forall f:int. forall l:int [mk(f, l)]. (in_range4(f) -> (in_range4(l) ->
+  (forall f:int. forall l:int [mk(f, l)]. (in_range5(f) -> (in_range5(l) ->
   (to_rep3(first(mk(f, l))) = f))))
 
 axiom mk_def1 :
-  (forall f:int. forall l:int [mk(f, l)]. (in_range4(f) -> (in_range4(l) ->
+  (forall f:int. forall l:int [mk(f, l)]. (in_range5(f) -> (in_range5(l) ->
   (to_rep3(last(mk(f, l))) = l))))
 
 predicate dynamic_property(range_first: int, range_last: int, low: int,
-  high: int) = (in_range4(low) and (in_range4(high) and ((low <= high) ->
-  (in_range5(low) and in_range5(high)))))
+  high: int) = (in_range5(low) and (in_range5(high) and ((low <= high) ->
+  (in_range6(low) and in_range6(high)))))
 
 type us_t = { elts : (int,natural) farray; rt : t1
 }
@@ -1113,11 +1118,6 @@ logic r252s : t
 
 logic attr__ATTRIBUTE_ADDRESS3 : int
 
-predicate in_range6(rec__find_map__index_maps__map__capacity1: int,
-  rec__find_map__index_maps__map__modulus1: t, a1: us_rep) =
-  ((rec__find_map__index_maps__map__capacity1 = to_rep2(((a1).us_split_discrs1).rec__find_map__index_maps__map__capacity)) and
-  (rec__find_map__index_maps__map__modulus1 = to_rep1(((a1).us_split_discrs1).rec__find_map__index_maps__map__modulus)))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -1174,18 +1174,18 @@ axiom user_eq__def_axiom :
   (forall a1:us_rep. forall b:us_rep [user_eq9(a1, b)]. (user_eq9(a1,
   b) = oeq(a1, b)))
 
-predicate dynamic_invariant2(temp___expr_630: us_rep,
-  temp___is_init_626: bool, temp___skip_constant_627: bool,
-  temp___do_toplevel_628: bool, temp___do_typ_inv_629: bool) =
-  ((not (temp___skip_constant_627 = true)) -> in_range6(100, r252s,
-  temp___expr_630))
+predicate dynamic_invariant2(temp___expr_632: us_rep,
+  temp___is_init_628: bool, temp___skip_constant_629: bool,
+  temp___do_toplevel_630: bool, temp___do_typ_inv_631: bool) =
+  ((not (temp___skip_constant_629 = true)) -> in_range3(100, r252s,
+  (temp___expr_632).us_split_discrs1))
 
-predicate default_initial_assumption(temp___expr_633: us_rep,
-  temp___skip_top_level_634: bool) =
-  (((to_rep2(((temp___expr_633).us_split_discrs1).rec__find_map__index_maps__map__capacity) = 100) and
-  (to_rep1(((temp___expr_633).us_split_discrs1).rec__find_map__index_maps__map__modulus) = r252s)) and
-  ((not (temp___skip_top_level_634 = true)) ->
-  (is_empty(temp___expr_633) = true)))
+predicate default_initial_assumption(temp___expr_635: us_rep,
+  temp___skip_top_level_636: bool) =
+  (((to_rep2(((temp___expr_635).us_split_discrs1).rec__find_map__index_maps__map__capacity) = 100) and
+  (to_rep1(((temp___expr_635).us_split_discrs1).rec__find_map__index_maps__map__modulus) = r252s)) and
+  ((not (temp___skip_top_level_636 = true)) ->
+  (is_empty(temp___expr_635) = true)))
 
 logic m : us_rep
 
@@ -1194,7 +1194,7 @@ logic attr__ATTRIBUTE_ADDRESS4 : int
 predicate dynamic_invariant3(temp___expr_253: int, temp___is_init_249: bool,
   temp___skip_constant_250: bool, temp___do_toplevel_251: bool,
   temp___do_typ_inv_252: bool) = (((temp___is_init_249 = true) or
-  (1 <= 100)) -> in_range5(temp___expr_253))
+  (1 <= 100)) -> in_range6(temp___expr_253))
 
 predicate dynamic_invariant4(temp___expr_260: us_t, temp___is_init_256: bool,
   temp___skip_constant_257: bool, temp___do_toplevel_258: bool,
@@ -1204,7 +1204,7 @@ predicate dynamic_invariant4(temp___expr_260: us_t, temp___is_init_256: bool,
 predicate dynamic_invariant5(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
   temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range4(temp___expr_18))
+  ((- 2147483648) <= 2147483647)) -> in_range5(temp___expr_18))
 
 logic equivalent_keys : int, int -> bool
 
@@ -1500,8 +1500,9 @@ goal defqtvc : (dynamic_invariant4(a, true, false, true, true) ->
   (dynamic_invariant2(m, true, false, true, true) -> (dynamic_invariant4(a,
   true, false, true, true) -> (dynamic_invariant(e, true, false, true,
   true) -> (dynamic_invariant3(last2, true, false, true, true) ->
-  (((((0 <  length(a)) and ((contains(m, e) = true) ->
-  ((first1(a) <= element(m, e)) and (element(m, e) <= last1(a))))) and
+  (((((0 <  length(a)) and ((contains(m, e) = true) -> (let temp___886 =
+  element(m, e) : int in ((first1(a) <= temp___886) and
+  (temp___886 <= last1(a)))))) and
   (forall i:int. (((first1(a) <= i) and (i <= (element(m, e) - 1))) ->
   (not (to_rep((to_array(a)[i])) = e))))) and (contains(m, e) = true)) ->
   (contains(m, e) = true)))))))))

@@ -151,6 +151,9 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (if ((to_int(((a).us_split_discrs1).rec__test_constrained__r__b) = to_int(((b).us_split_discrs1).rec__test_constrained__r__b)) and
   (to_rep(((a).us_split_fields1).rec__test_constrained__r__x) = to_rep(((b).us_split_fields1).rec__test_constrained__r__x))) then true else false)
 
+predicate in_range2(rec__test_constrained__r__b1: bool, a: us_split_discrs) =
+  (rec__test_constrained__r__b1 = (a).rec__test_constrained__r__b)
+
 logic value__size : int
 
 logic object__size : int
@@ -259,9 +262,6 @@ predicate default_initial_assumption1(temp___expr_211: us_rep1,
   temp___skip_top_level_212: bool) =
   ((temp___expr_211).rec__test_constrained__r_acc__is_null_pointer = true)
 
-predicate in_range2(rec__test_constrained__r__b1: bool, a: us_rep) =
-  (rec__test_constrained__r__b1 = ((a).us_split_discrs1).rec__test_constrained__r__b)
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -313,9 +313,6 @@ type s9b__ref = { s9b__content : us_rep
 
 function s9b__ref_s9b__content__projection(a: s9b__ref) : us_rep =
   (a).s9b__content
-
-predicate in_range3(rec__test_constrained__r__b1: bool, a: us_rep) =
-  (rec__test_constrained__r__b1 = ((a).us_split_discrs1).rec__test_constrained__r__b)
 
 logic value__size2 : int
 
@@ -378,7 +375,7 @@ predicate dynamic_invariant1(temp___expr_226: us_rep,
   temp___is_init_222: bool, temp___skip_constant_223: bool,
   temp___do_toplevel_224: bool, temp___do_typ_inv_225: bool) =
   ((not (temp___skip_constant_223 = true)) -> in_range2(r10b,
-  temp___expr_226))
+  (temp___expr_226).us_split_discrs1))
 
 predicate default_initial_assumption2(temp___expr_228: us_rep,
   temp___skip_top_level_229: bool) =

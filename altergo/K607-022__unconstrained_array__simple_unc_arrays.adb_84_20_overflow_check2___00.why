@@ -504,6 +504,10 @@ function bool_eq7(a: us_rep, b: us_rep) : bool =
   (bool_eq6(((a).us_split_fields1).rec__simple_unc_arrays__table__v,
   ((b).us_split_fields1).rec__simple_unc_arrays__table__v) = true)) then true else false)
 
+predicate in_range5(rec__simple_unc_arrays__table__last1: int,
+  a: us_split_discrs) =
+  (rec__simple_unc_arrays__table__last1 = to_rep((a).rec__simple_unc_arrays__table__last))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -662,7 +666,7 @@ axiom tvalueBqtaxiom :
 
 axiom tvalueBqtaxiom1 : (forall i:tvalueB. (tvalueBqtint(i) <= 2147483647))
 
-predicate in_range5(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range6(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -734,4 +738,4 @@ goal defqtvc : (dynamic_invariant1(a, true, false, true, true) ->
   ((a).us_split_fields1).rec__simple_unc_arrays__table__v : us_t in
   (((first1(temp___589) <= i1) and (i1 <= last1(temp___589))) ->
   (forall o:int. ((to_rep2((to_array(temp___589)[i1])) = o) ->
-  in_range5((sum1 + o)))))))))))))))))))))
+  in_range6((sum1 + o)))))))))))))))))))))

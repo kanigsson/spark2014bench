@@ -183,17 +183,17 @@ goal defqtvc :
   (forall r2:int.
   ((exists spark__branch:bool.
    ((spark__branch = (if (0 <= b) then true else false)) and
-   (if (spark__branch = true) then (let temp___209 = b : int in
+   (if (spark__branch = true) then (let temp___213 = b : int in
    (exists i:int. ((i = 1) and (if (andb((if (1 <= i) then true else false),
-   (if (i <= temp___209) then true else false)) = true) then (exists temp___loop_entry_213:int.
-                                                             ((temp___loop_entry_213 = b) and
+   (if (i <= temp___213) then true else false)) = true) then (exists temp___loop_entry_217:int.
+                                                             ((temp___loop_entry_217 = b) and
                                                              ((not (r1 = 2147483647)) and
                                                              (exists r3:int.
                                                              ((r3 = (r1 + 1)) and
                                                              (in_range1((a + i)) and
                                                              (exists i1:int.
                                                              (((r2 = (a + i1)) and
-                                                             (b = temp___loop_entry_213)) and
+                                                             (b = temp___loop_entry_217)) and
                                                              ((andb((if (dynamic_property(1,
                                                              b, i1) and
                                                              dynamic_invariant(r2,
@@ -202,19 +202,19 @@ goal defqtvc :
                                                              true)) then true else false),
                                                              (if ((1 <= i1) and
                                                              (i1 <= b)) then true else false)) = true) and
-                                                             (i1 = temp___209)))))))))) else (r2 = r1))))) else (let temp___214 =
+                                                             (i1 = temp___213)))))))))) else (r2 = r1))))) else (let temp___218 =
    b : int in
    (exists i:int. ((i = (- 1)) and
-   (if (andb((if (temp___214 <= i) then true else false),
-   (if (i <= (- 1)) then true else false)) = true) then (exists temp___loop_entry_219:int.
-                                                        ((temp___loop_entry_219 = b) and
+   (if (andb((if (temp___218 <= i) then true else false),
+   (if (i <= (- 1)) then true else false)) = true) then (exists temp___loop_entry_223:int.
+                                                        ((temp___loop_entry_223 = b) and
                                                         ((not (r1 = (- 2147483648))) and
                                                         (exists r3:int.
                                                         ((r3 = (r1 - 1)) and
                                                         (in_range1((a + i)) and
                                                         (exists i1:int.
                                                         (((r2 = (a + i1)) and
-                                                        (b = temp___loop_entry_219)) and
+                                                        (b = temp___loop_entry_223)) and
                                                         ((andb((if (dynamic_invariant(r2,
                                                         false, true, true,
                                                         true) and
@@ -223,6 +223,6 @@ goal defqtvc :
                                                         i1)) then true else false),
                                                         (if ((b <= i1) and
                                                         (i1 <= (- 1))) then true else false)) = true) and
-                                                        (i1 = temp___214)))))))))) else (r2 = r1)))))))) ->
+                                                        (i1 = temp___218)))))))))) else (r2 = r1)))))))) ->
   (forall arithmetic__plus__result:int. ((arithmetic__plus__result = r2) ->
   in_range1((a + b)))))))))))))

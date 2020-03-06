@@ -456,13 +456,13 @@ goal defqtvc :
                                                             ((andb((if (dynamic_invariant2(to_line2,
                                                             true, true, true,
                                                             true) and
-                                                            (forall temp___855:int.
-                                                            (((1 <= temp___855) and
-                                                            (temp___855 <= 50)) ->
-                                                            (((50 <  temp___855) or
-                                                            ((temp___855 <  1) or
-                                                            (del_line1 <= temp___855))) ->
-                                                            ((cur_board2[temp___855]) = (cur_board[temp___855])))))) then true else false),
+                                                            (forall temp___864:int.
+                                                            (((1 <= temp___864) and
+                                                            (temp___864 <= 50)) ->
+                                                            (((50 <  temp___864) or
+                                                            ((temp___864 <  1) or
+                                                            (del_line1 <= temp___864))) ->
+                                                            ((cur_board2[temp___864]) = (cur_board[temp___864])))))) then true else false),
                                                             (if ((1 <= del_line1) and
                                                             (del_line1 <= 50)) then true else false)) = true) and
                                                             ((let o =
@@ -490,12 +490,12 @@ goal defqtvc :
   (forall num_deleted1:int. ((num_deleted1 = 0) ->
   (forall spark__branch2:bool. ((spark__branch2 = has_complete_lines1) ->
   ((spark__branch2 = true) -> (((to_line1 - 1) = r3b) ->
-  (dynamic_invariant1(r3b, true, false, true, true) -> (let temp___858 = r3b
+  (dynamic_invariant1(r3b, true, false, true, true) -> (let temp___867 = r3b
   : int in
-  (forall from_line:int. ((from_line = temp___858) ->
+  (forall from_line:int. ((from_line = temp___867) ->
   ((andb((if (1 <= from_line) then true else false),
-  (if (from_line <= temp___858) then true else false)) = true) ->
-  (forall temp___loop_entry_866:int. ((temp___loop_entry_866 = to_line1) ->
-  (forall temp___loop_entry_865:int.
-  ((temp___loop_entry_865 = num_deleted1) ->
-  in_range1((temp___loop_entry_865 + temp___loop_entry_866)))))))))))))))))))))))))))
+  (if (from_line <= temp___867) then true else false)) = true) ->
+  (forall temp___loop_entry_875:int. ((temp___loop_entry_875 = to_line1) ->
+  (forall temp___loop_entry_874:int.
+  ((temp___loop_entry_874 = num_deleted1) ->
+  in_range1((temp___loop_entry_874 + temp___loop_entry_875)))))))))))))))))))))))))))

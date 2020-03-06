@@ -332,6 +332,10 @@ function bool_eq5(a: us_rep2, b: us_rep2) : bool =
   (us_main_eq1(((a).us_split_fields3).rec__sum_elem__partitions__vector,
   ((b).us_split_fields3).rec__sum_elem__partitions__vector) = true)) then true else false)
 
+predicate in_range3(rec__sum_elem__partitions__vector__capacity1: int,
+  a: us_split_discrs) =
+  (rec__sum_elem__partitions__vector__capacity1 = to_rep1((a).rec__sum_elem__partitions__vector__capacity))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -469,7 +473,7 @@ axiom extended_indexqtaxiom :
 axiom extended_indexqtaxiom1 :
   (forall i:extended_index. (extended_indexqtint(i) <= 10001))
 
-predicate in_range3(x: int) = (((- 1) <= x) and (x <= 10001))
+predicate in_range4(x: int) = (((- 1) <= x) and (x <= 10001))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -492,7 +496,7 @@ function extended_index__ref_extended_index__content__projection(a: extended_ind
 predicate dynamic_invariant(temp___expr_284: int, temp___is_init_280: bool,
   temp___skip_constant_281: bool, temp___do_toplevel_282: bool,
   temp___do_typ_inv_283: bool) = (((temp___is_init_280 = true) or
-  ((- 1) <= 10001)) -> in_range3(temp___expr_284))
+  ((- 1) <= 10001)) -> in_range4(temp___expr_284))
 
 logic container : us_rep2
 
@@ -521,7 +525,7 @@ axiom index_typeqtaxiom : (forall i:index_type. (0 <= index_typeqtint(i)))
 axiom index_typeqtaxiom1 :
   (forall i:index_type. (index_typeqtint(i) <= 10000))
 
-predicate in_range4(x: int) = ((0 <= x) and (x <= 10000))
+predicate in_range5(x: int) = ((0 <= x) and (x <= 10000))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -544,7 +548,7 @@ function index_type__ref_index_type__content__projection(a: index_type__ref) : i
 predicate dynamic_invariant1(temp___expr_268: int, temp___is_init_264: bool,
   temp___skip_constant_265: bool, temp___do_toplevel_266: bool,
   temp___do_typ_inv_267: bool) = (((temp___is_init_264 = true) or
-  (0 <= 10000)) -> in_range4(temp___expr_268))
+  (0 <= 10000)) -> in_range5(temp___expr_268))
 
 type extended_index1
 
@@ -556,7 +560,7 @@ axiom extended_indexqtaxiom2 :
 axiom extended_indexqtaxiom3 :
   (forall i:extended_index1. (extended_indexqtint1(i) <= 10000))
 
-predicate in_range5(x: int) = (((- 1) <= x) and (x <= 10000))
+predicate in_range6(x: int) = (((- 1) <= x) and (x <= 10000))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -590,7 +594,7 @@ axiom count_typeqtaxiom : (forall i:count_type. (0 <= count_typeqtint(i)))
 axiom count_typeqtaxiom1 :
   (forall i:count_type. (count_typeqtint(i) <= 2147483647))
 
-predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range7(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -613,7 +617,7 @@ function count_type__ref_count_type__content__projection(a: count_type__ref) : c
 predicate dynamic_invariant3(temp___expr_291: int, temp___is_init_287: bool,
   temp___skip_constant_288: bool, temp___do_toplevel_289: bool,
   temp___do_typ_inv_290: bool) = (((temp___is_init_287 = true) or
-  (0 <= 2147483647)) -> in_range6(temp___expr_291))
+  (0 <= 2147483647)) -> in_range7(temp___expr_291))
 
 predicate dynamic_invariant4(temp___expr_298: int, temp___is_init_294: bool,
   temp___skip_constant_295: bool, temp___do_toplevel_296: bool,
@@ -644,7 +648,7 @@ axiom oeq__post_axiom1 :
 predicate dynamic_invariant5(temp___expr_331: int, temp___is_init_327: bool,
   temp___skip_constant_328: bool, temp___do_toplevel_329: bool,
   temp___do_typ_inv_330: bool) = (((temp___is_init_327 = true) or
-  ((- 1) <= 10000)) -> in_range5(temp___expr_331))
+  ((- 1) <= 10000)) -> in_range6(temp___expr_331))
 
 axiom length__post_axiom2 :
   (forall container1:us_rep [length(container1)].
@@ -662,5 +666,5 @@ goal defqtvc : (dynamic_invariant1(index1, true, false, true, true) ->
   (if (index1 <= o2) then (o = index1) else (let o3 = container : us_rep2 in
   (let o4 = last_index(o3) : int in ((dynamic_invariant(o4, true, false,
   true, true) and (o4 = last(model(o3)))) and ((o = o4) and
-  in_range5(o4))))))))) -> (let o1 = container : us_rep2 in (let o2 =
+  in_range6(o4))))))))) -> (let o1 = container : us_rep2 in (let o2 =
   model(o1) : us_rep in ((length(o2) = length1(o1)) -> (o <= last(o2))))))))

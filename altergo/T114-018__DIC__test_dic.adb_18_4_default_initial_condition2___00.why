@@ -238,13 +238,14 @@ logic user_eq2 : us_rep, us_rep -> bool
 
 logic dummy2 : us_rep
 
-type t__ref = { t__content : us_rep
+type txS__ref = { txS__content : us_rep
 }
 
-function t__ref_t__content__projection(a: t__ref) : us_rep = (a).t__content
+function txS__ref_txS__content__projection(a: txS__ref) : us_rep =
+  (a).txS__content
 
-predicate in_range3(rec__test_dic__nested__t__x1: bool, a: us_rep) =
-  (rec__test_dic__nested__t__x1 = ((a).us_split_discrs1).rec__test_dic__nested__t__x)
+predicate in_range3(rec__test_dic__nested__t__x1: bool, a: us_split_discrs) =
+  (rec__test_dic__nested__t__x1 = (a).rec__test_dic__nested__t__x)
 
 logic value__size1 : int
 
@@ -292,11 +293,10 @@ logic user_eq3 : us_rep, us_rep -> bool
 
 logic dummy3 : us_rep
 
-type txS__ref = { txS__content : us_rep
+type t__ref = { t__content : us_rep
 }
 
-function txS__ref_txS__content__projection(a: txS__ref) : us_rep =
-  (a).txS__content
+function t__ref_t__content__projection(a: t__ref) : us_rep = (a).t__content
 
 logic x__split_discrs : us_split_discrs
 
@@ -316,9 +316,6 @@ predicate default_initial_assumption(temp___expr_160: us_rep,
 logic y__attr__constrained : bool
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
-
-predicate in_range4(rec__test_dic__nested__t__x1: bool, a: us_rep) =
-  (rec__test_dic__nested__t__x1 = ((a).us_split_discrs1).rec__test_dic__nested__t__x)
 
 logic value__size2 : int
 
@@ -392,9 +389,9 @@ goal defqtvc :
   us_split_fields1 = { rec__test_dic__nested__t__f = x__split_fields } }) ->
   (to_rep(x__split_fields) = c))) and
   (((x__split_discrs).rec__test_dic__nested__t__x = true) ->
-  (not (c = 0)))) -> (in_range3(of_int(0), { us_split_discrs1 =
+  (not (c = 0)))) -> (in_range3(of_int(0), ({ us_split_discrs1 =
   x__split_discrs; us_split_fields1 = { rec__test_dic__nested__t__f =
-  x__split_fields } }) ->
+  x__split_fields } }).us_split_discrs1) ->
   (forall usf:us_rep.
   ((of_int(0) = ((usf).us_split_discrs1).rec__test_dic__nested__t__x) ->
   ((((usf).us_split_discrs1).rec__test_dic__nested__t__x = true) ->

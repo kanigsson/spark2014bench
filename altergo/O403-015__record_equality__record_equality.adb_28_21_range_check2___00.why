@@ -160,6 +160,10 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range2(rec__record_equality__root__c1: int,
+  a: us_split_discrs) =
+  (rec__record_equality__root__c1 = to_rep((a).rec__record_equality__root__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -213,9 +217,6 @@ function root__ref_root__content__projection(a: root__ref) : us_rep =
   (a).root__content
 
 logic us_tag1 : int
-
-predicate in_range2(rec__record_equality__root__c1: int, a: us_rep) =
-  (rec__record_equality__root__c1 = to_rep(((a).us_split_discrs1).rec__record_equality__root__c))
 
 logic value__size1 : int
 
@@ -278,7 +279,8 @@ logic attr__ATTRIBUTE_ADDRESS : int
 predicate dynamic_invariant(temp___expr_236: us_rep,
   temp___is_init_232: bool, temp___skip_constant_233: bool,
   temp___do_toplevel_234: bool, temp___do_typ_inv_235: bool) =
-  ((not (temp___skip_constant_233 = true)) -> in_range2(0, temp___expr_236))
+  ((not (temp___skip_constant_233 = true)) -> in_range2(0,
+  (temp___expr_236).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_238: us_rep,
   temp___skip_top_level_239: bool) =
@@ -350,9 +352,6 @@ function bool_eq3(a: us_rep1, b: us_rep1) : bool =
   (to_rep(((a).us_split_fields3).rec__record_equality__root__f11) = to_rep(((b).us_split_fields3).rec__record_equality__root__f11)))) then true else false)
 
 logic us_tag2 : int
-
-predicate in_range3(rec__record_equality__root__c1: int, a: us_rep) =
-  (rec__record_equality__root__c1 = to_rep(((a).us_split_discrs1).rec__record_equality__root__c))
 
 logic value__size2 : int
 
@@ -430,8 +429,8 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant1(temp___expr_245: us_rep1,
   temp___is_init_241: bool, temp___skip_constant_242: bool,
   temp___do_toplevel_243: bool, temp___do_typ_inv_244: bool) =
-  ((not (temp___skip_constant_242 = true)) -> in_range3(0,
-  to_base(temp___expr_245)))
+  ((not (temp___skip_constant_242 = true)) -> in_range2(0,
+  (to_base(temp___expr_245)).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_247: us_rep1,
   temp___skip_top_level_248: bool) =

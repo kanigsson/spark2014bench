@@ -137,10 +137,10 @@ very_small_positive
 function very_small_positive__ref_very_small_positive__content__projection(a: very_small_positive__ref) : very_small_positive =
   (a).very_small_positive__content
 
-predicate dynamic_invariant1(temp___expr_238: int, temp___is_init_234: bool,
-  temp___skip_constant_235: bool, temp___do_toplevel_236: bool,
-  temp___do_typ_inv_237: bool) = (((temp___is_init_234 = true) or
-  (1 <= 50)) -> in_range1(temp___expr_238))
+predicate dynamic_invariant1(temp___expr_239: int, temp___is_init_235: bool,
+  temp___skip_constant_236: bool, temp___do_toplevel_237: bool,
+  temp___do_typ_inv_238: bool) = (((temp___is_init_235 = true) or
+  (1 <= 50)) -> in_range1(temp___expr_239))
 
 type very_very_small_natural
 
@@ -174,10 +174,10 @@ very_very_small_natural
 function very_very_small_natural__ref_very_very_small_natural__content__projection(a: very_very_small_natural__ref) : very_very_small_natural =
   (a).very_very_small_natural__content
 
-predicate dynamic_invariant2(temp___expr_245: int, temp___is_init_241: bool,
-  temp___skip_constant_242: bool, temp___do_toplevel_243: bool,
-  temp___do_typ_inv_244: bool) = (((temp___is_init_241 = true) or
-  (0 <= 5)) -> in_range2(temp___expr_245))
+predicate dynamic_invariant2(temp___expr_246: int, temp___is_init_242: bool,
+  temp___skip_constant_243: bool, temp___do_toplevel_244: bool,
+  temp___do_typ_inv_245: bool) = (((temp___is_init_242 = true) or
+  (0 <= 5)) -> in_range2(temp___expr_246))
 
  (* File "test_arith.adb", line 190, characters 0-0 *)
 goal defqtvc :

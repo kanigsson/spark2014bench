@@ -408,6 +408,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items,
   ((b).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items) = true)))) then true else false)
 
+predicate in_range4(rec__tester__ring_buffer__ring_buffer_type__max_size1: int,
+  a: us_split_discrs) =
+  (rec__tester__ring_buffer__ring_buffer_type__max_size1 = to_rep1((a).rec__tester__ring_buffer__ring_buffer_type__max_size))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -561,7 +565,7 @@ axiom tT14bP1qtaxiom : (forall i:tT14bP1. (1 <= tT14bP1qtint(i)))
 
 axiom tT14bP1qtaxiom1 : (forall i:tT14bP1. (tT14bP1qtint(i) <= 4))
 
-predicate in_range4(x: int) = ((1 <= x) and (x <= 4))
+predicate in_range5(x: int) = ((1 <= x) and (x <= 4))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -669,10 +673,6 @@ function bool_eq8(a: us_rep1, b: us_rep1) : bool =
   1, 4,
   ((b).us_split_fields3).rec__tester__ring_buffer__ring_buffer_type__items1,
   1, 4) = true)))) then true else false)
-
-predicate in_range5(rec__tester__ring_buffer__ring_buffer_type__max_size1: int,
-  a: us_rep) =
-  (rec__tester__ring_buffer__ring_buffer_type__max_size1 = to_rep1(((a).us_split_discrs1).rec__tester__ring_buffer__ring_buffer_type__max_size))
 
 logic value__size3 : int
 
@@ -874,15 +874,16 @@ axiom last__def_axiom :
  (* File "tester.adb", line 6, characters 0-0 *)
 goal defqtvc :
   (forall x__split_fields:us_split_fields2. (in_range1(4) ->
-  ((forall temp___252:us_rep1.
-   empty__function_guard(empty(to_base(temp___252)), to_base(temp___252))) ->
+  ((forall temp___259:us_rep1.
+   empty__function_guard(empty(to_base(temp___259)), to_base(temp___259))) ->
   ((((to_rep1((x__split_discrs).rec__tester__ring_buffer__ring_buffer_type__max_size) = 4) and
   (((to_rep((x__split_fields).rec__tester__ring_buffer__ring_buffer_type__count1) = 0) and
   (to_rep1((x__split_fields).rec__tester__ring_buffer__ring_buffer_type__head1) = 1)) and
   (to_rep1((x__split_fields).rec__tester__ring_buffer__ring_buffer_type__tail1) = to_rep1((x__split_discrs).rec__tester__ring_buffer__ring_buffer_type__max_size)))) and
   (empty(to_base({ us_split_discrs2 = x__split_discrs; us_split_fields3 =
-  x__split_fields })) = true)) -> (in_range5(4, to_base({ us_split_discrs2 =
-  x__split_discrs; us_split_fields3 = x__split_fields })) ->
+  x__split_fields })) = true)) -> (in_range4(4, (to_base({ us_split_discrs2 =
+  x__split_discrs; us_split_fields3 = x__split_fields
+  })).us_split_discrs1) ->
   ((forall x__split_fields1:us_split_fields2. forall o:us_split_discrs.
    full__function_guard(full({ us_split_discrs1 = o; us_split_fields1 =
    (to_base({ us_split_discrs2 = x__split_discrs; us_split_fields3 =

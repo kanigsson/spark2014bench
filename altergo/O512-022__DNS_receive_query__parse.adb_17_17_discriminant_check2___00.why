@@ -1337,6 +1337,10 @@ function bool_eq11(a: us_rep2, b: us_rep2) : bool =
   (bool_eq9(((a).us_split_fields5).rec__parse__parse_result_t__header,
   ((b).us_split_fields5).rec__parse__parse_result_t__header) = true))) then true else false)
 
+predicate in_range4(rec__parse__parse_result_t__return_code1: int,
+  a: us_split_discrs) =
+  (rec__parse__parse_result_t__return_code1 = to_rep4((a).rec__parse__parse_result_t__return_code))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -1433,7 +1437,7 @@ axiom network_dns_query_rangeqtaxiom1 :
   (forall i:network_dns_query_range.
   (network_dns_query_rangeqtint(i) <= 512))
 
-predicate in_range4(x: int) = ((0 <= x) and (x <= 512))
+predicate in_range5(x: int) = ((0 <= x) and (x <= 512))
 
 function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1457,7 +1461,7 @@ function network_dns_query_range__ref_network_dns_query_range__content__projecti
 predicate dynamic_invariant1(temp___expr_212: int, temp___is_init_208: bool,
   temp___skip_constant_209: bool, temp___do_toplevel_210: bool,
   temp___do_typ_inv_211: bool) = (((temp___is_init_208 = true) or
-  (0 <= 512)) -> in_range4(temp___expr_212))
+  (0 <= 512)) -> in_range5(temp___expr_212))
 
 axiom extract_unsigned_16__post_axiom :
   (forall query1:(int,us_rep) farray.
@@ -1492,7 +1496,7 @@ axiom bit_rangeqtaxiom : (forall i:bit_range. (0 <= bit_rangeqtint(i)))
 
 axiom bit_rangeqtaxiom1 : (forall i:bit_range. (bit_rangeqtint(i) <= 7))
 
-predicate in_range5(x: int) = ((0 <= x) and (x <= 7))
+predicate in_range6(x: int) = ((0 <= x) and (x <= 7))
 
 function bool_eq13(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1515,7 +1519,7 @@ function bit_range__ref_bit_range__content__projection(a: bit_range__ref) : bit_
 predicate dynamic_invariant3(temp___expr_249: int, temp___is_init_245: bool,
   temp___skip_constant_246: bool, temp___do_toplevel_247: bool,
   temp___do_typ_inv_248: bool) = (((temp___is_init_245 = true) or
-  (0 <= 7)) -> in_range5(temp___expr_249))
+  (0 <= 7)) -> in_range6(temp___expr_249))
 
 axiom extract_bits_of_octet__post_axiom :
   (forall query1:(int,us_rep) farray.
@@ -1565,10 +1569,6 @@ predicate dynamic_invariant4(temp___expr_161: int, temp___is_init_157: bool,
   temp___skip_constant_158: bool, temp___do_toplevel_159: bool,
   temp___do_typ_inv_160: bool) = (((temp___is_init_157 = true) or
   (0 <= 1)) -> in_range3(temp___expr_161))
-
-predicate in_range6(rec__parse__parse_result_t__return_code1: int,
-  a: us_rep2) =
-  (rec__parse__parse_result_t__return_code1 = to_rep4(((a).us_split_discrs1).rec__parse__parse_result_t__return_code))
 
 logic value__size3 : int
 
@@ -1622,10 +1622,6 @@ type t3b__ref = { t3b__content : us_rep2
 function t3b__ref_t3b__content__projection(a: t3b__ref) : us_rep2 =
   (a).t3b__content
 
-predicate in_range7(rec__parse__parse_result_t__return_code1: int,
-  a: us_rep2) =
-  (rec__parse__parse_result_t__return_code1 = to_rep4(((a).us_split_discrs1).rec__parse__parse_result_t__return_code))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -1677,10 +1673,6 @@ type t7b__ref = { t7b__content : us_rep2
 
 function t7b__ref_t7b__content__projection(a: t7b__ref) : us_rep2 =
   (a).t7b__content
-
-predicate in_range8(rec__parse__parse_result_t__return_code1: int,
-  a: us_rep2) =
-  (rec__parse__parse_result_t__return_code1 = to_rep4(((a).us_split_discrs1).rec__parse__parse_result_t__return_code))
 
 logic value__size5 : int
 
@@ -1734,10 +1726,6 @@ type t11b__ref = { t11b__content : us_rep2
 function t11b__ref_t11b__content__projection(a: t11b__ref) : us_rep2 =
   (a).t11b__content
 
-predicate in_range9(rec__parse__parse_result_t__return_code1: int,
-  a: us_rep2) =
-  (rec__parse__parse_result_t__return_code1 = to_rep4(((a).us_split_discrs1).rec__parse__parse_result_t__return_code))
-
 logic value__size6 : int
 
 logic object__size6 : int
@@ -1789,10 +1777,6 @@ type t15b__ref = { t15b__content : us_rep2
 
 function t15b__ref_t15b__content__projection(a: t15b__ref) : us_rep2 =
   (a).t15b__content
-
-predicate in_range10(rec__parse__parse_result_t__return_code1: int,
-  a: us_rep2) =
-  (rec__parse__parse_result_t__return_code1 = to_rep4(((a).us_split_discrs1).rec__parse__parse_result_t__return_code))
 
 logic value__size7 : int
 
@@ -1846,10 +1830,6 @@ type t19b__ref = { t19b__content : us_rep2
 function t19b__ref_t19b__content__projection(a: t19b__ref) : us_rep2 =
   (a).t19b__content
 
-predicate in_range11(rec__parse__parse_result_t__return_code1: int,
-  a: us_rep2) =
-  (rec__parse__parse_result_t__return_code1 = to_rep4(((a).us_split_discrs1).rec__parse__parse_result_t__return_code))
-
 logic value__size8 : int
 
 logic object__size8 : int
@@ -1902,10 +1882,6 @@ type t23b__ref = { t23b__content : us_rep2
 function t23b__ref_t23b__content__projection(a: t23b__ref) : us_rep2 =
   (a).t23b__content
 
-predicate in_range12(rec__parse__parse_result_t__return_code1: int,
-  a: us_rep2) =
-  (rec__parse__parse_result_t__return_code1 = to_rep4(((a).us_split_discrs1).rec__parse__parse_result_t__return_code))
-
 logic value__size9 : int
 
 logic object__size9 : int
@@ -1957,10 +1933,6 @@ type t27b__ref = { t27b__content : us_rep2
 
 function t27b__ref_t27b__content__projection(a: t27b__ref) : us_rep2 =
   (a).t27b__content
-
-predicate in_range13(rec__parse__parse_result_t__return_code1: int,
-  a: us_rep2) =
-  (rec__parse__parse_result_t__return_code1 = to_rep4(((a).us_split_discrs1).rec__parse__parse_result_t__return_code))
 
 logic value__size10 : int
 

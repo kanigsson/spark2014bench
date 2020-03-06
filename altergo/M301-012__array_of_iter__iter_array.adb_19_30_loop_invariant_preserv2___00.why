@@ -285,12 +285,12 @@ goal defqtvc :
   (forall x11:(int,natural) farray. ((x11 = (x10[j <- rliteral2])) ->
   (forall x12:(int,natural) farray. forall j1:int.
   ((forall k:int. (((1 <= k) and (k <= j1)) -> (to_rep((x12[k])) = 2))) ->
-  ((andb((if ((forall temp___202:int. (((1 <= temp___202) and
-              (temp___202 <= 10)) -> (((10 <  temp___202) or
-              ((temp___202 <  1) or (j1 <  temp___202))) ->
-              ((x12[temp___202]) = (x10[temp___202]))))) and
-  in_range3(j1)) then true else false), (if ((1 <= j1) and
-  (j1 <= 10)) then true else false)) = true) -> ((not (j1 = 10)) ->
+  ((andb((if (in_range3(j1) and
+  (forall temp___203:int. (((1 <= temp___203) and (temp___203 <= 10)) ->
+  (((10 <  temp___203) or ((temp___203 <  1) or (j1 <  temp___203))) ->
+  ((x12[temp___203]) = (x10[temp___203])))))) then true else false),
+  (if ((1 <= j1) and (j1 <= 10)) then true else false)) = true) ->
+  ((not (j1 = 10)) ->
   (forall j2:int. ((j2 = (j1 + 1)) ->
   (forall x13:(int,natural) farray. ((x13 = (x12[j2 <- rliteral2])) ->
   (forall k:int. (((1 <= k) and (k <= j2)) -> (to_rep((x13[k])) = 2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))

@@ -1308,6 +1308,9 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   (pred__r__c3__pred(a) ->
   (to_int1(((a).us_split_fields1).rec__pred__r__c3) = to_int1(((b).us_split_fields1).rec__pred__r__c3))))) then true else false)
 
+predicate in_range4(rec__pred__r__d1: int, a: us_split_discrs) =
+  (rec__pred__r__d1 = to_rep1((a).rec__pred__r__d))
+
 logic value__size : int
 
 logic object__size : int

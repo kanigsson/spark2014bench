@@ -528,13 +528,13 @@ goal defqtvc :
   (forall i:int. (dynamic_invariant2(needle, true, false, true, true) ->
   (dynamic_invariant2(haystack, true, false, true, true) ->
   ((((length(needle) <  2147483647) and (length(haystack) <  2147483646)) and
-  ((1 <= length(needle)) and (length(needle) <= length(haystack)))) ->
-  (dynamic_invariant(i, false, false, true, true) -> (let o = needle
-  : us_t in
+  (let temp___412 = length(needle) : int in ((1 <= temp___412) and
+  (temp___412 <= length(haystack))))) -> (dynamic_invariant(i, false, false,
+  true, true) -> (let o = needle : us_t in
   (forall bad_shift:(int,positive) farray.
-  (((forall c:int. (((0 <= c) and (c <= 255)) ->
-    ((1 <= to_rep((bad_shift[c]))) and
-    (to_rep((bad_shift[c])) <= (length(o) + 1))))) and
+  (((forall c:int. (((0 <= c) and (c <= 255)) -> (let temp___210 =
+    to_rep((bad_shift[c])) : int in ((1 <= temp___210) and
+    (temp___210 <= (length(o) + 1)))))) and
   (forall c:int. (((0 <= c) and (c <= 255)) ->
   (if (to_rep((bad_shift[c])) = (length(o) + 1)) then (forall k:int.
                                                       (((first1(o) <= k) and

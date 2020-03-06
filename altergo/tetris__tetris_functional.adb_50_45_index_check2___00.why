@@ -3966,10 +3966,10 @@ goal defqtvc :
   (forall x:int. ((x = 0) -> ((andb((if (0 <= x) then true else false),
   (if (x <= 3) then true else false)) = true) ->
   (forall cur_board2:(int,(int,cell) farray) farray. forall x1:int.
-  ((andb((if (forall temp___826:int. (((1 <= temp___826) and
-             (temp___826 <= 50)) ->
-             ((not ((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) + y1) = temp___826)) ->
-             ((cur_board2[temp___826]) = (cur_board1[temp___826]))))) then true else false),
+  ((andb((if (forall temp___835:int. (((1 <= temp___835) and
+             (temp___835 <= 50)) ->
+             ((not ((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) + y1) = temp___835)) ->
+             ((cur_board2[temp___835]) = (cur_board1[temp___835]))))) then true else false),
   (if ((0 <= x1) and (x1 <= 3)) then true else false)) = true) ->
   (forall o2:int.
   ((to_rep4((cur_piece__split_fields).rec__tetris_functional__piece__d) = o2) ->
@@ -3983,8 +3983,8 @@ goal defqtvc :
   (forall o5:cell. ((to_rep(o5) = o4) ->
   (forall o6:int.
   ((to_rep2((cur_piece__split_fields).rec__tetris_functional__piece__x) = o6) ->
-  (let temp___822 = (o6 + x1) : int in (((1 <= temp___822) and
-  (temp___822 <= 10)) ->
+  (let temp___831 = (o6 + x1) : int in (((1 <= temp___831) and
+  (temp___831 <= 10)) ->
   (forall o7:int.
   ((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) = o7) ->
   (forall o8:int.

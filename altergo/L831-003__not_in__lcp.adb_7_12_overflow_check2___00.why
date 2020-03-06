@@ -330,9 +330,9 @@ goal defqtvc : (dynamic_invariant2(a, true, false, true, true) ->
   true, false, true, true) -> ((((first1(a) <= x) and (x <= last1(a))) and
   ((first1(a) <= y) and (y <= last1(a)))) ->
   (forall l:int. ((l = 0) -> (dynamic_invariant1(l, true, false, true,
-  true) -> (let temp___181 = first1(a) : int in
-  (forall j:int. ((j = temp___181) ->
-  ((andb((if (temp___181 <= j) then true else false),
+  true) -> (let temp___185 = first1(a) : int in
+  (forall j:int. ((j = temp___185) ->
+  ((andb((if (temp___185 <= j) then true else false),
   (if (j <= last1(a)) then true else false)) = true) ->
   (forall l1:int. forall j1:int. ((andb((if dynamic_invariant1(l1, true,
   true, true, true) then true else false), (if ((first1(a) <= j1) and

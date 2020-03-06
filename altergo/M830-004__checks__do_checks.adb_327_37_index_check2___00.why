@@ -311,6 +311,10 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   (bool_eq4(((a).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr,
   ((b).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = true))) then true else false)
 
+predicate in_range3(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_split_discrs) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep((a).rec__do_checks__do_discriminant_check__r1__j))
+
 logic value__size1 : int
 
 logic object__size1 : int

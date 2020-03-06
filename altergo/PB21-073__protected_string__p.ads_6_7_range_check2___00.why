@@ -324,6 +324,9 @@ function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
 function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
   (a).us_split_fields1
 
+predicate in_range3(rec__p__pt__x1: int, a: us_split_discrs) =
+  (rec__p__pt__x1 = to_rep((a).rec__p__pt__x))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -400,9 +403,6 @@ function of_base(r: us_rep) : us_rep1 = { us_split_discrs2 =
   (r).us_split_discrs1; us_split_fields3 = { rec__p__pt__s1 =
   ((r).us_split_fields1).rec__p__pt__s } }
 
-predicate in_range3(rec__p__pt__x1: int, a: us_rep) =
-  (rec__p__pt__x1 = to_rep(((a).us_split_discrs1).rec__p__pt__x))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -465,7 +465,7 @@ predicate dynamic_invariant1(temp___expr_189: us_rep1,
   temp___is_init_185: bool, temp___skip_constant_186: bool,
   temp___do_toplevel_187: bool, temp___do_typ_inv_188: bool) =
   (((not (temp___skip_constant_186 = true)) -> in_range3(3,
-  to_base(temp___expr_189))) and (let temp___190 =
+  (to_base(temp___expr_189)).us_split_discrs1)) and (let temp___190 =
   ((temp___expr_189).us_split_discrs2).rec__p__pt__x : integer in
   (dynamic_property(1, to_rep(temp___190),
   first1(((temp___expr_189).us_split_fields3).rec__p__pt__s1),

@@ -1825,21 +1825,6 @@ axiom discrimrec__register_type__option__last__bit_axiom :
 axiom discrimrec__register_type__option__position_axiom :
   (0 <= discrimrec__register_type__option__position)
 
-logic discrimrec__register_type__value_64__first__bit : int
-
-logic discrimrec__register_type__value_64__last__bit : int
-
-logic discrimrec__register_type__value_64__position : int
-
-axiom discrimrec__register_type__value_64__first__bit_axiom :
-  (0 <= discrimrec__register_type__value_64__first__bit)
-
-axiom discrimrec__register_type__value_64__last__bit_axiom :
-  (discrimrec__register_type__value_64__first__bit <  discrimrec__register_type__value_64__last__bit)
-
-axiom discrimrec__register_type__value_64__position_axiom :
-  (0 <= discrimrec__register_type__value_64__position)
-
 logic discrimrec__register_type__ignore_32a__first__bit : int
 
 logic discrimrec__register_type__ignore_32a__last__bit : int
@@ -1975,19 +1960,34 @@ axiom discrimrec__register_type__value_low__last__bit_axiom :
 axiom discrimrec__register_type__value_low__position_axiom :
   (0 <= discrimrec__register_type__value_low__position)
 
+logic discrimrec__register_type__value_64__first__bit : int
+
+logic discrimrec__register_type__value_64__last__bit : int
+
+logic discrimrec__register_type__value_64__position : int
+
+axiom discrimrec__register_type__value_64__first__bit_axiom :
+  (0 <= discrimrec__register_type__value_64__first__bit)
+
+axiom discrimrec__register_type__value_64__last__bit_axiom :
+  (discrimrec__register_type__value_64__first__bit <  discrimrec__register_type__value_64__last__bit)
+
+axiom discrimrec__register_type__value_64__position_axiom :
+  (0 <= discrimrec__register_type__value_64__position)
+
 logic user_eq5 : us_rep, us_rep -> bool
 
 logic dummy5 : us_rep
 
-type register_type__ref = { register_type__content : us_rep
+type traxS__ref = { traxS__content : us_rep
 }
 
-function register_type__ref_register_type__content__projection(a: register_type__ref) : us_rep =
-  (a).register_type__content
+function traxS__ref_traxS__content__projection(a: traxS__ref) : us_rep =
+  (a).traxS__content
 
 predicate in_range1(rec__discrimrec__register_type__option1: int,
-  a: us_rep) =
-  (rec__discrimrec__register_type__option1 = to_rep4(((a).us_split_discrs1).rec__discrimrec__register_type__option))
+  a: us_split_discrs) =
+  (rec__discrimrec__register_type__option1 = to_rep4((a).rec__discrimrec__register_type__option))
 
 logic value__size1 : int
 
@@ -2015,6 +2015,21 @@ axiom discrimrec__register_type__option__last__bit_axiom1 :
 
 axiom discrimrec__register_type__option__position_axiom1 :
   (0 <= discrimrec__register_type__option__position1)
+
+logic discrimrec__register_type__value_64__first__bit1 : int
+
+logic discrimrec__register_type__value_64__last__bit1 : int
+
+logic discrimrec__register_type__value_64__position1 : int
+
+axiom discrimrec__register_type__value_64__first__bit_axiom1 :
+  (0 <= discrimrec__register_type__value_64__first__bit1)
+
+axiom discrimrec__register_type__value_64__last__bit_axiom1 :
+  (discrimrec__register_type__value_64__first__bit1 <  discrimrec__register_type__value_64__last__bit1)
+
+axiom discrimrec__register_type__value_64__position_axiom1 :
+  (0 <= discrimrec__register_type__value_64__position1)
 
 logic discrimrec__register_type__ignore_32a__first__bit1 : int
 
@@ -2151,30 +2166,15 @@ axiom discrimrec__register_type__value_low__last__bit_axiom1 :
 axiom discrimrec__register_type__value_low__position_axiom1 :
   (0 <= discrimrec__register_type__value_low__position1)
 
-logic discrimrec__register_type__value_64__first__bit1 : int
-
-logic discrimrec__register_type__value_64__last__bit1 : int
-
-logic discrimrec__register_type__value_64__position1 : int
-
-axiom discrimrec__register_type__value_64__first__bit_axiom1 :
-  (0 <= discrimrec__register_type__value_64__first__bit1)
-
-axiom discrimrec__register_type__value_64__last__bit_axiom1 :
-  (discrimrec__register_type__value_64__first__bit1 <  discrimrec__register_type__value_64__last__bit1)
-
-axiom discrimrec__register_type__value_64__position_axiom1 :
-  (0 <= discrimrec__register_type__value_64__position1)
-
 logic user_eq6 : us_rep, us_rep -> bool
 
 logic dummy6 : us_rep
 
-type traxS__ref = { traxS__content : us_rep
+type register_type__ref = { register_type__content : us_rep
 }
 
-function traxS__ref_traxS__content__projection(a: traxS__ref) : us_rep =
-  (a).traxS__content
+function register_type__ref_register_type__content__projection(a: register_type__ref) : us_rep =
+  (a).register_type__content
 
 logic rax__split_discrs : us_split_discrs
 
@@ -2185,15 +2185,12 @@ logic attr__ATTRIBUTE_ADDRESS : int
 predicate dynamic_invariant(temp___expr_213: us_rep,
   temp___is_init_209: bool, temp___skip_constant_210: bool,
   temp___do_toplevel_211: bool, temp___do_typ_inv_212: bool) =
-  ((not (temp___skip_constant_210 = true)) -> in_range1(0, temp___expr_213))
+  ((not (temp___skip_constant_210 = true)) -> in_range1(0,
+  (temp___expr_213).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_215: us_rep,
   temp___skip_top_level_216: bool) =
   (to_rep4(((temp___expr_215).us_split_discrs1).rec__discrimrec__register_type__option) = 0)
-
-predicate in_range2(rec__discrimrec__register_type__option1: int,
-  a: us_rep) =
-  (rec__discrimrec__register_type__option1 = to_rep4(((a).us_split_discrs1).rec__discrimrec__register_type__option))
 
 logic value__size2 : int
 
@@ -2381,10 +2378,6 @@ type register_bit_64__ref = { register_bit_64__content : us_rep
 
 function register_bit_64__ref_register_bit_64__content__projection(a: register_bit_64__ref) : us_rep =
   (a).register_bit_64__content
-
-predicate in_range3(rec__discrimrec__register_type__option1: int,
-  a: us_rep) =
-  (rec__discrimrec__register_type__option1 = to_rep4(((a).us_split_discrs1).rec__discrimrec__register_type__option))
 
 logic value__size3 : int
 
@@ -2593,7 +2586,8 @@ logic convert_bit_64_to_bit_32__function_guard : us_rep, us_rep -> prop
 predicate dynamic_invariant1(temp___expr_233: us_rep,
   temp___is_init_229: bool, temp___skip_constant_230: bool,
   temp___do_toplevel_231: bool, temp___do_typ_inv_232: bool) =
-  ((not (temp___skip_constant_230 = true)) -> in_range2(0, temp___expr_233))
+  ((not (temp___skip_constant_230 = true)) -> in_range1(0,
+  (temp___expr_233).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_235: us_rep,
   temp___skip_top_level_236: bool) =
@@ -2602,15 +2596,12 @@ predicate default_initial_assumption1(temp___expr_235: us_rep,
 predicate dynamic_invariant2(temp___expr_252: us_rep,
   temp___is_init_248: bool, temp___skip_constant_249: bool,
   temp___do_toplevel_250: bool, temp___do_typ_inv_251: bool) =
-  ((not (temp___skip_constant_249 = true)) -> in_range3(1, temp___expr_252))
+  ((not (temp___skip_constant_249 = true)) -> in_range1(1,
+  (temp___expr_252).us_split_discrs1))
 
 predicate default_initial_assumption2(temp___expr_254: us_rep,
   temp___skip_top_level_255: bool) =
   (to_rep4(((temp___expr_254).us_split_discrs1).rec__discrimrec__register_type__option) = 1)
-
-predicate in_range4(rec__discrimrec__register_type__option1: int,
-  a: us_rep) =
-  (rec__discrimrec__register_type__option1 = to_rep4(((a).us_split_discrs1).rec__discrimrec__register_type__option))
 
 logic value__size4 : int
 
@@ -2831,10 +2822,6 @@ axiom convert_bit_64_to_bit_32__def_axiom :
   rec__discrimrec__register_type__value_high = dummy3;
   rec__discrimrec__register_type__value_low = dummy3 } })))
 
-predicate in_range5(rec__discrimrec__register_type__option1: int,
-  a: us_rep) =
-  (rec__discrimrec__register_type__option1 = to_rep4(((a).us_split_discrs1).rec__discrimrec__register_type__option))
-
 logic value__size5 : int
 
 logic object__size5 : int
@@ -3031,15 +3018,12 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant3(temp___expr_271: us_rep,
   temp___is_init_267: bool, temp___skip_constant_268: bool,
   temp___do_toplevel_269: bool, temp___do_typ_inv_270: bool) =
-  ((not (temp___skip_constant_268 = true)) -> in_range5(1, temp___expr_271))
+  ((not (temp___skip_constant_268 = true)) -> in_range1(1,
+  (temp___expr_271).us_split_discrs1))
 
 predicate default_initial_assumption3(temp___expr_273: us_rep,
   temp___skip_top_level_274: bool) =
   (to_rep4(((temp___expr_273).us_split_discrs1).rec__discrimrec__register_type__option) = 1)
-
-predicate in_range6(rec__discrimrec__register_type__option1: int,
-  a: us_rep) =
-  (rec__discrimrec__register_type__option1 = to_rep4(((a).us_split_discrs1).rec__discrimrec__register_type__option))
 
 logic value__size6 : int
 
@@ -3227,10 +3211,6 @@ type t2b__ref = { t2b__content : us_rep
 
 function t2b__ref_t2b__content__projection(a: t2b__ref) : us_rep =
   (a).t2b__content
-
-predicate in_range7(rec__discrimrec__register_type__option1: int,
-  a: us_rep) =
-  (rec__discrimrec__register_type__option1 = to_rep4(((a).us_split_discrs1).rec__discrimrec__register_type__option))
 
 logic value__size7 : int
 
@@ -3496,7 +3476,7 @@ goal defqtvc :
   us_split_discrs1 = eax__split_discrs; us_split_fields1 = eax__split_fields
   }, false, false, true, true) ->
   (forall o:unsigned_64. ((to_rep(o) = rliteral10) ->
-  (forall o1:register_option. ((to_rep4(o1) = 0) -> (let o2 = {
+  (forall o1:register_option. ((to_rep4(o1) = 0) -> (let temp___298 = {
   us_split_discrs1 = { rec__discrimrec__register_type__option = o1 };
   us_split_fields1 = { rec__discrimrec__register_type__value_64 = o;
   rec__discrimrec__register_type__ignore_32a = dummy1;
@@ -3509,17 +3489,17 @@ goal defqtvc :
   rec__discrimrec__register_type__value_high = dummy3;
   rec__discrimrec__register_type__value_low = dummy3 } } : us_rep in
   (forall rax__split_fields1:us_split_fields.
-  ((rax__split_fields1 = (o2).us_split_fields1) ->
-  ((rax__split_discrs = (o2).us_split_discrs1) -> (let o3 = {
+  ((rax__split_fields1 = (temp___298).us_split_fields1) ->
+  ((rax__split_discrs = (temp___298).us_split_discrs1) -> (let temp___300 = {
   us_split_discrs1 = rax__split_discrs; us_split_fields1 = rax__split_fields1
-  } : us_rep in (let o4 = convert_bit_64_to_bit_32(o3) : us_rep in
-  ((convert_bit_64_to_bit_32__function_guard(o4, o3) and
-  (dynamic_invariant2(o4, true, false, true, true) and (o4 = {
+  } : us_rep in (let o2 = convert_bit_64_to_bit_32(temp___300) : us_rep in
+  ((convert_bit_64_to_bit_32__function_guard(o2, temp___300) and
+  (dynamic_invariant2(o2, true, false, true, true) and (o2 = {
   us_split_discrs1 = { rec__discrimrec__register_type__option = of_rep4(1) };
   us_split_fields1 = { rec__discrimrec__register_type__value_64 = dummy;
   rec__discrimrec__register_type__ignore_32a = of_rep1(rliteral1);
   rec__discrimrec__register_type__value_32 =
-  of_rep1(toSmall(urem1(to_rep(((o3).us_split_fields1).rec__discrimrec__register_type__value_64),
+  of_rep1(toSmall(urem1(to_rep(((temp___300).us_split_fields1).rec__discrimrec__register_type__value_64),
   rliteral2))); rec__discrimrec__register_type__ignore_32b = dummy1;
   rec__discrimrec__register_type__ignore_16a = dummy2;
   rec__discrimrec__register_type__value_16 = dummy2;
@@ -3528,22 +3508,22 @@ goal defqtvc :
   rec__discrimrec__register_type__value_high = dummy3;
   rec__discrimrec__register_type__value_low = dummy3 } }))) ->
   (forall eax__split_fields1:us_split_fields.
-  ((eax__split_fields1 = (o4).us_split_fields1) ->
-  ((eax__split_discrs = (o4).us_split_discrs1) ->
+  ((eax__split_fields1 = (o2).us_split_fields1) ->
+  ((eax__split_discrs = (o2).us_split_discrs1) ->
   (forall rax__split_fields2:us_split_fields.
-  ((exists o5:t.
-   ((to_rep1((eax__split_fields1).rec__discrimrec__register_type__value_32) = o5) and
+  ((exists o3:t.
+   ((to_rep1((eax__split_fields1).rec__discrimrec__register_type__value_32) = o3) and
    (exists spark__branch:bool.
-   ((spark__branch = (if (o5 = rliteral11) then true else false)) and
-   (if (spark__branch = true) then (exists o6:unsigned_64.
-                                   ((to_rep(o6) = rliteral12) and
-                                   (exists o7:register_option.
-                                   ((to_rep4(o7) = 0) and (let temp___300 = {
+   ((spark__branch = (if (o3 = rliteral11) then true else false)) and
+   (if (spark__branch = true) then (exists o4:unsigned_64.
+                                   ((to_rep(o4) = rliteral12) and
+                                   (exists o5:register_option.
+                                   ((to_rep4(o5) = 0) and (let temp___304 = {
                                    us_split_discrs1 = {
                                    rec__discrimrec__register_type__option =
-                                   o7 }; us_split_fields1 = {
+                                   o5 }; us_split_fields1 = {
                                    rec__discrimrec__register_type__value_64 =
-                                   o6;
+                                   o4;
                                    rec__discrimrec__register_type__ignore_32a =
                                    dummy1;
                                    rec__discrimrec__register_type__value_32 =
@@ -3562,7 +3542,7 @@ goal defqtvc :
                                    dummy3;
                                    rec__discrimrec__register_type__value_low =
                                    dummy3 } } : us_rep in
-                                   ((rax__split_fields2 = (temp___300).us_split_fields1) and
-                                   (rax__split_discrs = (temp___300).us_split_discrs1))))))) else (rax__split_fields2 = rax__split_fields1)))))) ->
+                                   ((rax__split_fields2 = (temp___304).us_split_fields1) and
+                                   (rax__split_discrs = (temp___304).us_split_discrs1))))))) else (rax__split_fields2 = rax__split_fields1)))))) ->
   discrimrec__register_type__value_64__pred({ us_split_discrs1 =
   rax__split_discrs; us_split_fields1 = rax__split_fields2 }))))))))))))))))))))))))

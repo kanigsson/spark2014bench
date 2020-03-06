@@ -462,12 +462,12 @@ logic rec____attr__tag : int
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
 
-predicate default_initial_assumption1(temp___expr_203: us_rep1,
-  temp___skip_top_level_204: bool) =
-  (((temp___expr_203).attr__tag1 = us_tag1) and
-  (((to_rep(((temp___expr_203).us_split_fields3).rec__object__t__area1) = (- 1)) and
-  (to_rep(((temp___expr_203).us_split_fields3).rec__object__t__max_width1) = (- 1))) and
-  (to_rep(((temp___expr_203).us_split_fields3).rec__object__t__max_height1) = (- 1))))
+predicate default_initial_assumption1(temp___expr_205: us_rep1,
+  temp___skip_top_level_206: bool) =
+  (((temp___expr_205).attr__tag1 = us_tag1) and
+  (((to_rep(((temp___expr_205).us_split_fields3).rec__object__t__area1) = (- 1)) and
+  (to_rep(((temp___expr_205).us_split_fields3).rec__object__t__max_width1) = (- 1))) and
+  (to_rep(((temp___expr_205).us_split_fields3).rec__object__t__max_height1) = (- 1))))
 
 logic set_width__specific_post : int, us_split_fields2, int, int,
   us_split_fields2 -> prop

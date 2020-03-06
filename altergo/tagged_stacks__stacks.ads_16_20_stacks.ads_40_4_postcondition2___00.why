@@ -503,16 +503,16 @@ logic attr__ATTRIBUTE_ADDRESS : int
 
 logic temp_____aggregate_def_200 : int -> (int,element) farray
 
-axiom temp___result_419qtdef :
-  (forall temp___418:us_rep. size__function_guard(size(temp___418),
-  temp___418))
+axiom temp___result_427qtdef :
+  (forall temp___426:us_rep. size__function_guard(size(temp___426),
+  temp___426))
 
-predicate default_initial_assumption(temp___expr_416: us_rep,
-  temp___skip_top_level_417: bool) =
-  ((((temp___expr_416).attr__tag = us_tag1) and
-  ((((temp___expr_416).us_split_fields1).rec__stacks__stack_root__content = temp_____aggregate_def_200(0)) and
-  (to_rep(((temp___expr_416).us_split_fields1).rec__stacks__stack_root__length) = 0))) and
-  ((not (temp___skip_top_level_417 = true)) -> (size(temp___expr_416) = 0)))
+predicate default_initial_assumption(temp___expr_424: us_rep,
+  temp___skip_top_level_425: bool) =
+  ((((temp___expr_424).attr__tag = us_tag1) and
+  ((((temp___expr_424).us_split_fields1).rec__stacks__stack_root__content = temp_____aggregate_def_200(0)) and
+  (to_rep(((temp___expr_424).us_split_fields1).rec__stacks__stack_root__length) = 0))) and
+  ((not (temp___skip_top_level_425 = true)) -> (size(temp___expr_424) = 0)))
 
 type telement_arrayD1
 
@@ -673,14 +673,14 @@ axiom def_axiom :
 
  (* File "stacks.ads", line 40, characters 0-0 *)
 goal defqtvc :
-  (forall temp___885:int.
-  ((to_rep(((s).us_split_fields1).rec__stacks__stack_root__length) = temp___885) ->
-  (((1 <= temp___885) -> (((1 <= 1) and (1 <= 100)) and
-  ((1 <= temp___885) and (temp___885 <= 100)))) -> (let temp___887 =
+  (forall temp___913:int.
+  ((to_rep(((s).us_split_fields1).rec__stacks__stack_root__length) = temp___913) ->
+  (((1 <= temp___913) -> (((1 <= 1) and (1 <= 100)) and
+  ((1 <= temp___913) and (temp___913 <= 100)))) -> (let temp___915 =
   of_array1(((s).us_split_fields1).rec__stacks__stack_root__content, 1,
-  temp___885) : us_t1 in (dynamic_property(1, 2147483647, first3(temp___887),
-  last3(temp___887)) ->
+  temp___913) : us_t1 in (dynamic_property(1, 2147483647, first3(temp___915),
+  last3(temp___915)) ->
   (forall stacks__get_model__2__result:us_t.
-  ((stacks__get_model__2__result = of_array(to_array1(temp___887),
-  first3(temp___887), last3(temp___887))) ->
+  ((stacks__get_model__2__result = of_array(to_array1(temp___915),
+  first3(temp___915), last3(temp___915))) ->
   in_range1(first1(stacks__get_model__2__result)))))))))

@@ -3958,6 +3958,6 @@ goal defqtvc :
   (forall o2:int.
   ((to_rep1((cur_piece__split_fields).rec__tetris_functional__piece__s) = o2) ->
   (forall o3:cell. ((to_rep(o3) = o2) ->
-  (forall temp___806:int.
-  ((to_rep2((cur_piece__split_fields).rec__tetris_functional__piece__x) = temp___806) ->
-  (1 <= temp___806))))))))))))))))))))
+  (forall temp___815:int.
+  ((to_rep2((cur_piece__split_fields).rec__tetris_functional__piece__x) = temp___815) ->
+  (1 <= temp___815))))))))))))))))))))

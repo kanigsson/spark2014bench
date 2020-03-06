@@ -745,11 +745,11 @@ goal defqtvc :
    us_split_fields1 = v__split_fields1 }), { us_split_fields1 =
    v__split_fields1 })) ->
   (((1 <= i) and (i <= length1({ us_split_fields1 = v__split_fields }))) ->
-  (let temp___595 =
+  (let temp___588 =
   (v__split_fields).rec__use_formal_vectors__my_vect__vector__content
-  : us_rep2 in (let temp___594 =
+  : us_rep2 in (let temp___587 =
   ((v__split_fields).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value
-  : us_t in (let temp___593 =
+  : us_t in (let temp___586 =
   (to_array(((v__split_fields).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i])
   : us_rep1 in (let o = {
   rec__use_formal_vectors__element_type__is_null_pointer =
@@ -761,22 +761,22 @@ goal defqtvc :
   ((forall o2:us_rep. model__function_guard(model(o2), o2)) ->
   ((copy__function_guard(o1, o, us_HEAP) and (dynamic_invariant1(o1, true,
   false, true, true) and (model(o1) = model(o)))) ->
-  (((first1(temp___594) <= i) and (i <= last1(temp___594))) ->
+  (((first1(temp___587) <= i) and (i <= last1(temp___587))) ->
   dynamic_predicate({ us_split_fields1 = {
   rec__use_formal_vectors__my_vect__vector__top =
   (v__split_fields).rec__use_formal_vectors__my_vect__vector__top;
   rec__use_formal_vectors__my_vect__vector__content = {
   rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer =
-  (temp___595).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer;
+  (temp___588).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer;
   rec__use_formal_vectors__my_vect__element_array_access__pointer_address =
-  (temp___595).rec__use_formal_vectors__my_vect__element_array_access__pointer_address;
+  (temp___588).rec__use_formal_vectors__my_vect__element_array_access__pointer_address;
   rec__use_formal_vectors__my_vect__element_array_access__pointer_value = {
   elts =
   (to_array(((v__split_fields).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[i <- {
   rec__use_formal_vectors__my_vect__element_access__is_null_pointer =
-  (temp___593).rec__use_formal_vectors__my_vect__element_access__is_null_pointer;
+  (temp___586).rec__use_formal_vectors__my_vect__element_access__is_null_pointer;
   rec__use_formal_vectors__my_vect__element_access__pointer_address =
-  (temp___593).rec__use_formal_vectors__my_vect__element_access__pointer_address;
+  (temp___586).rec__use_formal_vectors__my_vect__element_access__pointer_address;
   rec__use_formal_vectors__my_vect__element_access__pointer_value = o1 }]);
   rt =
   (((v__split_fields).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value).rt

@@ -1824,21 +1824,6 @@ axiom discrimrec__register_type__option__last__bit_axiom :
 axiom discrimrec__register_type__option__position_axiom :
   (0 <= discrimrec__register_type__option__position)
 
-logic discrimrec__register_type__value_64__first__bit : int
-
-logic discrimrec__register_type__value_64__last__bit : int
-
-logic discrimrec__register_type__value_64__position : int
-
-axiom discrimrec__register_type__value_64__first__bit_axiom :
-  (0 <= discrimrec__register_type__value_64__first__bit)
-
-axiom discrimrec__register_type__value_64__last__bit_axiom :
-  (discrimrec__register_type__value_64__first__bit <  discrimrec__register_type__value_64__last__bit)
-
-axiom discrimrec__register_type__value_64__position_axiom :
-  (0 <= discrimrec__register_type__value_64__position)
-
 logic discrimrec__register_type__ignore_32a__first__bit : int
 
 logic discrimrec__register_type__ignore_32a__last__bit : int
@@ -1974,19 +1959,34 @@ axiom discrimrec__register_type__value_low__last__bit_axiom :
 axiom discrimrec__register_type__value_low__position_axiom :
   (0 <= discrimrec__register_type__value_low__position)
 
+logic discrimrec__register_type__value_64__first__bit : int
+
+logic discrimrec__register_type__value_64__last__bit : int
+
+logic discrimrec__register_type__value_64__position : int
+
+axiom discrimrec__register_type__value_64__first__bit_axiom :
+  (0 <= discrimrec__register_type__value_64__first__bit)
+
+axiom discrimrec__register_type__value_64__last__bit_axiom :
+  (discrimrec__register_type__value_64__first__bit <  discrimrec__register_type__value_64__last__bit)
+
+axiom discrimrec__register_type__value_64__position_axiom :
+  (0 <= discrimrec__register_type__value_64__position)
+
 logic user_eq5 : us_rep, us_rep -> bool
 
 logic dummy5 : us_rep
 
-type register_type__ref = { register_type__content : us_rep
+type traxS__ref = { traxS__content : us_rep
 }
 
-function register_type__ref_register_type__content__projection(a: register_type__ref) : us_rep =
-  (a).register_type__content
+function traxS__ref_traxS__content__projection(a: traxS__ref) : us_rep =
+  (a).traxS__content
 
 predicate in_range1(rec__discrimrec__register_type__option1: int,
-  a: us_rep) =
-  (rec__discrimrec__register_type__option1 = to_rep4(((a).us_split_discrs1).rec__discrimrec__register_type__option))
+  a: us_split_discrs) =
+  (rec__discrimrec__register_type__option1 = to_rep4((a).rec__discrimrec__register_type__option))
 
 logic value__size1 : int
 
@@ -2014,6 +2014,21 @@ axiom discrimrec__register_type__option__last__bit_axiom1 :
 
 axiom discrimrec__register_type__option__position_axiom1 :
   (0 <= discrimrec__register_type__option__position1)
+
+logic discrimrec__register_type__value_64__first__bit1 : int
+
+logic discrimrec__register_type__value_64__last__bit1 : int
+
+logic discrimrec__register_type__value_64__position1 : int
+
+axiom discrimrec__register_type__value_64__first__bit_axiom1 :
+  (0 <= discrimrec__register_type__value_64__first__bit1)
+
+axiom discrimrec__register_type__value_64__last__bit_axiom1 :
+  (discrimrec__register_type__value_64__first__bit1 <  discrimrec__register_type__value_64__last__bit1)
+
+axiom discrimrec__register_type__value_64__position_axiom1 :
+  (0 <= discrimrec__register_type__value_64__position1)
 
 logic discrimrec__register_type__ignore_32a__first__bit1 : int
 
@@ -2150,30 +2165,15 @@ axiom discrimrec__register_type__value_low__last__bit_axiom1 :
 axiom discrimrec__register_type__value_low__position_axiom1 :
   (0 <= discrimrec__register_type__value_low__position1)
 
-logic discrimrec__register_type__value_64__first__bit1 : int
-
-logic discrimrec__register_type__value_64__last__bit1 : int
-
-logic discrimrec__register_type__value_64__position1 : int
-
-axiom discrimrec__register_type__value_64__first__bit_axiom1 :
-  (0 <= discrimrec__register_type__value_64__first__bit1)
-
-axiom discrimrec__register_type__value_64__last__bit_axiom1 :
-  (discrimrec__register_type__value_64__first__bit1 <  discrimrec__register_type__value_64__last__bit1)
-
-axiom discrimrec__register_type__value_64__position_axiom1 :
-  (0 <= discrimrec__register_type__value_64__position1)
-
 logic user_eq6 : us_rep, us_rep -> bool
 
 logic dummy6 : us_rep
 
-type traxS__ref = { traxS__content : us_rep
+type register_type__ref = { register_type__content : us_rep
 }
 
-function traxS__ref_traxS__content__projection(a: traxS__ref) : us_rep =
-  (a).traxS__content
+function register_type__ref_register_type__content__projection(a: register_type__ref) : us_rep =
+  (a).register_type__content
 
 logic rax__split_discrs : us_split_discrs
 
@@ -2184,7 +2184,8 @@ logic attr__ATTRIBUTE_ADDRESS : int
 predicate dynamic_invariant(temp___expr_213: us_rep,
   temp___is_init_209: bool, temp___skip_constant_210: bool,
   temp___do_toplevel_211: bool, temp___do_typ_inv_212: bool) =
-  ((not (temp___skip_constant_210 = true)) -> in_range1(0, temp___expr_213))
+  ((not (temp___skip_constant_210 = true)) -> in_range1(0,
+  (temp___expr_213).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_215: us_rep,
   temp___skip_top_level_216: bool) =

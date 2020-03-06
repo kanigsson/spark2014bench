@@ -1289,9 +1289,9 @@ goal defqtvc :
   ((forall i2:int. fib__function_guard(fib((i2 - 1)), (i2 - 1))) ->
   ((forall i2:int. fib__function_guard(fib((i2 - 2)), (i2 - 2))) ->
   (((old__2 = fib((i1 - 1))) and (oldest2 = fib((i1 - 2)))) ->
-  ((andb((if (((dynamic_invariant(temp1, false, true, true, true) and
-  dynamic_property(2, n, i1)) and dynamic_invariant1(old__2, false, true,
-  true, true)) and dynamic_invariant(oldest2, false, true, true,
+  ((andb((if (((dynamic_invariant(oldest2, false, true, true, true) and
+  dynamic_invariant(temp1, false, true, true, true)) and dynamic_property(2,
+  n, i1)) and dynamic_invariant1(old__2, false, true, true,
   true)) then true else false), (if ((2 <= i1) and
   (i1 <= n)) then true else false)) = true) ->
   (forall temp2:int. ((temp2 = oldest2) ->

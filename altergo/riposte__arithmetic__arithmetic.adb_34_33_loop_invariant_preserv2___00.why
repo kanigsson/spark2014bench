@@ -222,17 +222,17 @@ goal defqtvc :
   (forall r:int. (dynamic_invariant1(a, true, false, true, true) ->
   (dynamic_invariant1(b, true, false, true, true) -> (dynamic_invariant(r,
   false, false, true, true) ->
-  (forall r1:int. ((r1 = 0) -> (let temp___203 = b : int in
+  (forall r1:int. ((r1 = 0) -> (let temp___207 = b : int in
   (forall i:int. ((i = 1) -> ((andb((if (1 <= i) then true else false),
-  (if (i <= temp___203) then true else false)) = true) ->
-  (forall temp___loop_entry_207:int. ((temp___loop_entry_207 = b) -> (let o =
+  (if (i <= temp___207) then true else false)) = true) ->
+  (forall temp___loop_entry_211:int. ((temp___loop_entry_211 = b) -> (let o =
   (r1 + a) : int in (in_range1(o) ->
   (forall r2:int. ((r2 = o) -> (in_range1((i * a)) ->
   (forall r3:int. forall i1:int. (((r3 = (i1 * a)) and
-  (b = temp___loop_entry_207)) -> ((andb((if (dynamic_invariant(r3, false,
+  (b = temp___loop_entry_211)) -> ((andb((if (dynamic_invariant(r3, false,
   true, true, true) and dynamic_property(1, b, i1)) then true else false),
   (if ((1 <= i1) and (i1 <= b)) then true else false)) = true) ->
-  ((not (i1 = temp___203)) ->
+  ((not (i1 = temp___207)) ->
   (forall i2:int. ((i2 = (i1 + 1)) -> (let o1 = (r3 + a) : int in
   (in_range1(o1) ->
   (forall r4:int. ((r4 = o1) -> (in_range1((i2 * a)) -> (r4 = (i2 * a))))))))))))))))))))))))))))))

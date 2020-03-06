@@ -456,10 +456,10 @@ goal defqtvc :
   ((forall my_stack__split_fields2:us_split_fields.
    state__function_guard(state(my_stack__split_fields2),
    my_stack__split_fields2)) ->
+  (let usf = state(my_stack__split_fields) : us_rep in
   ((forall my_stack__split_fields2:us_split_fields.
    state__function_guard(state(my_stack__split_fields2),
    my_stack__split_fields2)) ->
-  (let usf = state(my_stack__split_fields) : us_rep in
   ((forall my_stack__split_fields2:us_split_fields.
    state__function_guard(state(my_stack__split_fields2),
    my_stack__split_fields2)) ->

@@ -425,6 +425,10 @@ function bool_eq7(a: us_rep, b: us_rep) : bool =
   (bool_eq6(((a).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items,
   ((b).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items) = true)))) then true else false)
 
+predicate in_range5(rec__tester__ring_buffer__ring_buffer_type__max_size1: int,
+  a: us_split_discrs) =
+  (rec__tester__ring_buffer__ring_buffer_type__max_size1 = to_rep1((a).rec__tester__ring_buffer__ring_buffer_type__max_size))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -534,7 +538,7 @@ axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
 
 axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
 
-predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -557,7 +561,7 @@ function natural__ref_natural__content__projection(a: natural__ref) : natural =
 predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
   temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
   temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
-  (0 <= 2147483647)) -> in_range5(temp___expr_39))
+  (0 <= 2147483647)) -> in_range6(temp___expr_39))
 
 predicate dynamic_invariant1(temp___expr_215: us_rep,
   temp___is_init_211: bool, temp___skip_constant_212: bool,
@@ -701,6 +705,6 @@ goal defqtvc :
   (((not (empty({ us_split_discrs1 = buffer__split_discrs; us_split_fields1 =
   buffer__split_fields }) = true)) and (1 <= size({ us_split_discrs1 =
   buffer__split_discrs; us_split_fields1 = buffer__split_fields }))) ->
-  (forall temp___289:int.
-  ((to_rep1((buffer__split_fields).rec__tester__ring_buffer__ring_buffer_type__head) = temp___289) ->
-  (first1((buffer__split_fields).rec__tester__ring_buffer__ring_buffer_type__items) <= temp___289)))))))))))))
+  (forall temp___296:int.
+  ((to_rep1((buffer__split_fields).rec__tester__ring_buffer__ring_buffer_type__head) = temp___296) ->
+  (first1((buffer__split_fields).rec__tester__ring_buffer__ring_buffer_type__items) <= temp___296)))))))))))))

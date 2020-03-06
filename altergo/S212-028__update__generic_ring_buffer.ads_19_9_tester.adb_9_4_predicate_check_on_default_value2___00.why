@@ -408,6 +408,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items,
   ((b).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items) = true)))) then true else false)
 
+predicate in_range4(rec__tester__ring_buffer__ring_buffer_type__max_size1: int,
+  a: us_split_discrs) =
+  (rec__tester__ring_buffer__ring_buffer_type__max_size1 = to_rep1((a).rec__tester__ring_buffer__ring_buffer_type__max_size))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -574,7 +578,7 @@ axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
 
 axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
 
-predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -597,7 +601,7 @@ function natural__ref_natural__content__projection(a: natural__ref) : natural =
 predicate dynamic_invariant3(temp___expr_39: int, temp___is_init_35: bool,
   temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
   temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
-  (0 <= 2147483647)) -> in_range4(temp___expr_39))
+  (0 <= 2147483647)) -> in_range5(temp___expr_39))
 
 predicate dynamic_invariant4(temp___expr_195: int, temp___is_init_191: bool,
   temp___skip_constant_192: bool, temp___do_toplevel_193: bool,
@@ -615,19 +619,19 @@ axiom size__def_axiom :
   true, true, true) ->
   (size(buffer) = to_rep(((buffer).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__count))))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S212-028__update-30321/src/gnatprove/tester__ring_buffer__ring_buffer_type.mlw", line 1057, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S212-028__update-22668/src/gnatprove/tester__ring_buffer__ring_buffer_type.mlw", line 1071, characters 5-8 *)
 goal defqtvc :
   (forall usf:int. (dynamic_invariant2(usf, true, true, true, true) ->
   (forall usf1:us_rep.
   ((usf = to_rep1(((usf1).us_split_discrs1).rec__tester__ring_buffer__ring_buffer_type__max_size)) ->
   (forall usf2:us_rep.
   ((forall usf3:us_rep. empty__function_guard(empty(usf3), usf3)) ->
-  ((let temp___266 =
+  ((let temp___273 =
   ((usf2).us_split_discrs1).rec__tester__ring_buffer__ring_buffer_type__max_size
   : small_positive in
   (((to_rep(((usf2).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__count) = 0) and
   (to_rep1(((usf2).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__head) = 1)) and
-  ((to_rep1(((usf2).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__tail) = to_rep1(temp___266)) and
+  ((to_rep1(((usf2).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__tail) = to_rep1(temp___273)) and
   ((first1(((usf2).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items) = 1) and
-  (last1(((usf2).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items) = to_rep1(temp___266)))))) ->
+  (last1(((usf2).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items) = to_rep1(temp___273)))))) ->
   dynamic_predicate(usf2))))))))

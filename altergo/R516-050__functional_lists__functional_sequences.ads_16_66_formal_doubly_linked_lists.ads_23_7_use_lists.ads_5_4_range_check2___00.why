@@ -132,7 +132,7 @@ function cursor__ref_cursor__content__2__projection(a: cursor__ref) : us_rep =
 type element_type__ref = { element_type__content : us_rep
 }
 
-function element_type__ref_element_type__content__13__projection(a: element_type__ref) : us_rep =
+function element_type__ref_element_type__content__9__projection(a: element_type__ref) : us_rep =
   (a).element_type__content
 
 type us_main_type1

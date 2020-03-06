@@ -1046,7 +1046,7 @@ type tTbufSP1__ref = { tTbufSP1__content : tTbufSP1
 function tTbufSP1__ref_tTbufSP1__content__projection(a: tTbufSP1__ref) : tTbufSP1 =
   (a).tTbufSP1__content
 
-logic temp_____aggregate_def_413 : int -> (int,character) farray
+logic temp_____aggregate_def_419 : int -> (int,character) farray
 
 predicate dynamic_invariant6(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
@@ -1188,10 +1188,10 @@ axiom find_char_in_string__post_axiom4 :
   true))))
 
 axiom def_axiom :
-  (forall temp___415:int. (dynamic_invariant2(temp___415, true, true, true,
+  (forall temp___421:int. (dynamic_invariant2(temp___421, true, true, true,
   true) ->
-  (forall temp___416:int.
-  (to_rep((temp_____aggregate_def_413(temp___415)[temp___416])) = temp___415))))
+  (forall temp___422:int.
+  (to_rep((temp_____aggregate_def_419(temp___421)[temp___422])) = temp___421))))
 
 axiom cdiv_cases :
   (forall n1:int. forall d:int [div(n1, d)]. ((0 <= n1) -> ((0 <  d) ->
@@ -1264,7 +1264,7 @@ goal defqtvc :
   o1) = item_at_start) -> (dynamic_invariant3(item_at_start, true, false,
   true, true) ->
   (forall buf:(int,character) farray.
-  ((buf = temp_____aggregate_def_413(32)) ->
+  ((buf = temp_____aggregate_def_419(32)) ->
   (forall spark__branch:bool.
   ((spark__branch = (if (n = 1) then true else false)) ->
   ((not (spark__branch = true)) ->

@@ -257,10 +257,10 @@ axiom has_element__def_axiom1 :
 
 axiom has_element__def_axiom2 :
   (forall c:(int,natural) farray.
-  (forall p:us_rep [has_element(c, p)].
-  (((1 <= to_rep(((p).us_split_fields1).rec__my_container__cursor__index)) and
-  (to_rep(((p).us_split_fields1).rec__my_container__cursor__index) <= 100)) ->
-  (has_element(c, p) = true))))
+  (forall p:us_rep [has_element(c, p)]. ((let temp___190 =
+  to_rep(((p).us_split_fields1).rec__my_container__cursor__index) : int in
+  ((1 <= temp___190) and (temp___190 <= 100))) -> (has_element(c,
+  p) = true))))
 
 logic element : (int,natural) farray, us_rep -> int
 
@@ -368,23 +368,23 @@ goal defqtvc :
                                                        (((1 <= j) and
                                                        (j <= i1)) ->
                                                        (valid(to_rep((c1[j]))) = true))) and
-                                                      ((andb((if ((forall temp___215:int.
-                                                                  (((1 <= temp___215) and
-                                                                  (temp___215 <= 100)) ->
-                                                                  (((100 <  temp___215) or
-                                                                  ((temp___215 <  1) or
-                                                                  (i1 <  temp___215))) ->
-                                                                  ((c1[temp___215]) = (c[temp___215]))))) and
-                                                      in_range3(i1)) then true else false),
+                                                      ((andb((if (in_range3(i1) and
+                                                      (forall temp___219:int.
+                                                      (((1 <= temp___219) and
+                                                      (temp___219 <= 100)) ->
+                                                      (((100 <  temp___219) or
+                                                      ((temp___219 <  1) or
+                                                      (i1 <  temp___219))) ->
+                                                      ((c1[temp___219]) = (c[temp___219])))))) then true else false),
                                                       (if ((1 <= i1) and
                                                       (i1 <= 100)) then true else false)) = true) and
                                                       (i1 = 100)))))) else (c1 = c)))) ->
-  (forall temp___227:us_rep.
-  ((forall c2:(int,natural) farray. forall temp___2271:us_rep.
-   has_element__function_guard(has_element(c2, temp___2271), c2,
-   temp___2271)) ->
-  ((has_element(c1, temp___227) = true) ->
-  ((forall c2:(int,natural) farray. forall temp___2271:us_rep.
-   element__function_guard(element(c2, temp___2271), c2, temp___2271)) ->
+  (forall temp___230:us_rep.
+  ((forall c2:(int,natural) farray. forall temp___2301:us_rep.
+   has_element__function_guard(has_element(c2, temp___2301), c2,
+   temp___2301)) ->
+  ((has_element(c1, temp___230) = true) ->
+  ((forall c2:(int,natural) farray. forall temp___2301:us_rep.
+   element__function_guard(element(c2, temp___2301), c2, temp___2301)) ->
   ((forall e:int. valid__function_guard(valid(e), e)) -> (valid(element(c1,
-  temp___227)) = true)))))))))))
+  temp___230)) = true)))))))))))

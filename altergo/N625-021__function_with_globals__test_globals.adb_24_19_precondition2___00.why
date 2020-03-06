@@ -268,6 +268,9 @@ function bool_eq4(a: us_rep, b: us_rep) : bool =
   (if ((to_rep(((a).us_split_discrs1).rec__test_globals__my_rec__d) = to_rep(((b).us_split_discrs1).rec__test_globals__my_rec__d)) and
   (to_rep(((a).us_split_fields1).rec__test_globals__my_rec__f) = to_rep(((b).us_split_fields1).rec__test_globals__my_rec__f))) then true else false)
 
+predicate in_range3(rec__test_globals__my_rec__d1: int, a: us_split_discrs) =
+  (rec__test_globals__my_rec__d1 = to_rep((a).rec__test_globals__my_rec__d))
+
 logic value__size : int
 
 logic object__size : int
@@ -323,9 +326,6 @@ function my_rec__ref_my_rec__content__projection(a: my_rec__ref) : us_rep =
 logic ru__split_discrs : us_split_discrs
 
 logic attr__ATTRIBUTE_ADDRESS4 : int
-
-predicate in_range3(rec__test_globals__my_rec__d1: int, a: us_rep) =
-  (rec__test_globals__my_rec__d1 = to_rep(((a).us_split_discrs1).rec__test_globals__my_rec__d))
 
 logic value__size1 : int
 
@@ -387,14 +387,11 @@ predicate dynamic_invariant1(temp___expr_192: us_rep,
   temp___is_init_188: bool, temp___skip_constant_189: bool,
   temp___do_toplevel_190: bool, temp___do_typ_inv_191: bool) =
   ((not (temp___skip_constant_189 = true)) -> in_range3(100,
-  temp___expr_192))
+  (temp___expr_192).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_194: us_rep,
   temp___skip_top_level_195: bool) =
   (to_rep(((temp___expr_194).us_split_discrs1).rec__test_globals__my_rec__d) = 100)
-
-predicate in_range4(rec__test_globals__my_rec__d1: int, a: us_rep) =
-  (rec__test_globals__my_rec__d1 = to_rep(((a).us_split_discrs1).rec__test_globals__my_rec__d))
 
 logic value__size2 : int
 
@@ -455,7 +452,8 @@ logic attr__ATTRIBUTE_ADDRESS6 : int
 predicate dynamic_invariant2(temp___expr_202: us_rep,
   temp___is_init_198: bool, temp___skip_constant_199: bool,
   temp___do_toplevel_200: bool, temp___do_typ_inv_201: bool) =
-  ((not (temp___skip_constant_199 = true)) -> in_range4(c, temp___expr_202))
+  ((not (temp___skip_constant_199 = true)) -> in_range3(c,
+  (temp___expr_202).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_204: us_rep,
   temp___skip_top_level_205: bool) =
@@ -667,9 +665,6 @@ type t8b__ref = { t8b__content : us_t
 function t8b__ref_t8b__content__projection(a: t8b__ref) : us_t =
   (a).t8b__content
 
-predicate in_range5(rec__test_globals__my_rec__d1: int, a: us_rep) =
-  (rec__test_globals__my_rec__d1 = to_rep(((a).us_split_discrs1).rec__test_globals__my_rec__d))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -722,9 +717,6 @@ type t9b__ref = { t9b__content : us_rep
 function t9b__ref_t9b__content__projection(a: t9b__ref) : us_rep =
   (a).t9b__content
 
-predicate in_range6(rec__test_globals__my_rec__d1: int, a: us_rep) =
-  (rec__test_globals__my_rec__d1 = to_rep(((a).us_split_discrs1).rec__test_globals__my_rec__d))
-
 logic value__size5 : int
 
 logic object__size5 : int
@@ -776,9 +768,6 @@ type t10b__ref = { t10b__content : us_rep
 
 function t10b__ref_t10b__content__projection(a: t10b__ref) : us_rep =
   (a).t10b__content
-
-predicate in_range7(rec__test_globals__my_rec__d1: int, a: us_rep) =
-  (rec__test_globals__my_rec__d1 = to_rep(((a).us_split_discrs1).rec__test_globals__my_rec__d))
 
 logic value__size6 : int
 
@@ -944,22 +933,23 @@ goal defqtvc : (dynamic_invariant(c, true, false, true, true) ->
   ((to_rep1(ad__first) = 1) and (to_rep1(ad__last) = c))) ->
   (forall o:natural. ((to_rep(o) = c) ->
   (forall ru__split_fields:natural. ((ru__split_fields = rliteral) ->
-  ((ru__split_discrs = { rec__test_globals__my_rec__d = o }) -> (let o1 = {
-  us_split_discrs1 = { rec__test_globals__my_rec__d = rliteral1 };
+  ((ru__split_discrs = { rec__test_globals__my_rec__d = o }) ->
+  (let temp___245 = { us_split_discrs1 = { rec__test_globals__my_rec__d =
+  rliteral1 }; us_split_fields1 = { rec__test_globals__my_rec__f = rliteral }
+  } : us_rep in
+  (forall rs__split_fields:natural. (({ rec__test_globals__my_rec__f =
+  rs__split_fields } = (temp___245).us_split_fields1) ->
+  ((rs__split_discrs = (temp___245).us_split_discrs1) ->
+  (dynamic_invariant1({ us_split_discrs1 = rs__split_discrs;
+  us_split_fields1 = { rec__test_globals__my_rec__f = rs__split_fields } },
+  true, false, true, true) ->
+  (forall o1:natural. ((to_rep(o1) = c) -> (let temp___246 = {
+  us_split_discrs1 = { rec__test_globals__my_rec__d = o1 };
   us_split_fields1 = { rec__test_globals__my_rec__f = rliteral } }
   : us_rep in
-  (forall rs__split_fields:natural. (({ rec__test_globals__my_rec__f =
-  rs__split_fields } = (o1).us_split_fields1) ->
-  ((rs__split_discrs = (o1).us_split_discrs1) -> (dynamic_invariant1({
-  us_split_discrs1 = rs__split_discrs; us_split_fields1 = {
-  rec__test_globals__my_rec__f = rs__split_fields } }, true, false, true,
-  true) ->
-  (forall o2:natural. ((to_rep(o2) = c) -> (let o3 = { us_split_discrs1 = {
-  rec__test_globals__my_rec__d = o2 }; us_split_fields1 = {
-  rec__test_globals__my_rec__f = rliteral } } : us_rep in
   (forall rd__split_fields:natural. (({ rec__test_globals__my_rec__f =
-  rd__split_fields } = (o3).us_split_fields1) ->
-  ((rd__split_discrs = (o3).us_split_discrs1) -> (dynamic_invariant2({
-  us_split_discrs1 = rd__split_discrs; us_split_fields1 = {
-  rec__test_globals__my_rec__f = rd__split_fields } }, true, false, true,
-  true) -> (to_rep1(au__first) = 1))))))))))))))))))))))))))))))))))))))))))
+  rd__split_fields } = (temp___246).us_split_fields1) ->
+  ((rd__split_discrs = (temp___246).us_split_discrs1) ->
+  (dynamic_invariant2({ us_split_discrs1 = rd__split_discrs;
+  us_split_fields1 = { rec__test_globals__my_rec__f = rd__split_fields } },
+  true, false, true, true) -> (to_rep1(au__first) = 1))))))))))))))))))))))))))))))))))))))))))

@@ -191,12 +191,11 @@ goal defqtvc :
   (forall a2:(int,integer) farray. forall i1:int.
   ((forall j:int. ((((- 2147483648) <= j) and (j <= i1)) ->
    (to_rep((a2[j])) = to_rep((b[j]))))) ->
-  ((andb((if (in_range1(i1) and
-  (forall temp___388:int. ((((- 2147483648) <= temp___388) and
-  (temp___388 <= 2147483647)) -> (((2147483647 <  temp___388) or
-  ((temp___388 <  (- 2147483648)) or (i1 <  temp___388))) ->
-  ((a2[temp___388]) = (a[temp___388])))))) then true else false),
-  (if (((- 2147483648) <= i1) and
+  ((andb((if ((forall temp___387:int. ((((- 2147483648) <= temp___387) and
+              (temp___387 <= 2147483647)) -> (((2147483647 <  temp___387) or
+              ((temp___387 <  (- 2147483648)) or (i1 <  temp___387))) ->
+              ((a2[temp___387]) = (a[temp___387]))))) and
+  in_range1(i1)) then true else false), (if (((- 2147483648) <= i1) and
   (i1 <= 2147483647)) then true else false)) = true) ->
   ((not (i1 = 2147483647)) ->
   (forall i2:int. ((i2 = (i1 + 1)) ->

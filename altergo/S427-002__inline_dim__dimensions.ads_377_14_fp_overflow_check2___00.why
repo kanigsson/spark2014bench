@@ -1230,39 +1230,27 @@ predicate dynamic_invariant(temp___expr_639: us_rep,
   ((neq(to_rep1(((temp___expr_639).us_split_fields1).rec__dimensions__line_parameter_type__a),
   fliteral2) or
   neq(to_rep1(((temp___expr_639).us_split_fields1).rec__dimensions__line_parameter_type__b),
-  fliteral2)) and (le(fliteral3, add(NearestTiesToEven,
+  fliteral2)) and (let temp___641 = add(NearestTiesToEven,
   mul(NearestTiesToEven,
   to_rep1(((temp___expr_639).us_split_fields1).rec__dimensions__line_parameter_type__a),
   to_rep1(((temp___expr_639).us_split_fields1).rec__dimensions__line_parameter_type__a)),
   mul(NearestTiesToEven,
   to_rep1(((temp___expr_639).us_split_fields1).rec__dimensions__line_parameter_type__b),
-  to_rep1(((temp___expr_639).us_split_fields1).rec__dimensions__line_parameter_type__b)))) and
-  le(add(NearestTiesToEven, mul(NearestTiesToEven,
-  to_rep1(((temp___expr_639).us_split_fields1).rec__dimensions__line_parameter_type__a),
-  to_rep1(((temp___expr_639).us_split_fields1).rec__dimensions__line_parameter_type__a)),
-  mul(NearestTiesToEven,
-  to_rep1(((temp___expr_639).us_split_fields1).rec__dimensions__line_parameter_type__b),
-  to_rep1(((temp___expr_639).us_split_fields1).rec__dimensions__line_parameter_type__b))),
-  fliteral4)))))
+  to_rep1(((temp___expr_639).us_split_fields1).rec__dimensions__line_parameter_type__b)))
+  : t in (le(fliteral3, temp___641) and le(temp___641, fliteral4))))))
 
-predicate dynamic_predicate(temp___646: us_rep) =
-  ((neq(to_rep1(((temp___646).us_split_fields1).rec__dimensions__line_parameter_type__a),
+predicate dynamic_predicate(temp___647: us_rep) =
+  ((neq(to_rep1(((temp___647).us_split_fields1).rec__dimensions__line_parameter_type__a),
   fliteral2) or
-  neq(to_rep1(((temp___646).us_split_fields1).rec__dimensions__line_parameter_type__b),
-  fliteral2)) and (le(fliteral3, add(NearestTiesToEven,
+  neq(to_rep1(((temp___647).us_split_fields1).rec__dimensions__line_parameter_type__b),
+  fliteral2)) and (let temp___649 = add(NearestTiesToEven,
   mul(NearestTiesToEven,
-  to_rep1(((temp___646).us_split_fields1).rec__dimensions__line_parameter_type__a),
-  to_rep1(((temp___646).us_split_fields1).rec__dimensions__line_parameter_type__a)),
+  to_rep1(((temp___647).us_split_fields1).rec__dimensions__line_parameter_type__a),
+  to_rep1(((temp___647).us_split_fields1).rec__dimensions__line_parameter_type__a)),
   mul(NearestTiesToEven,
-  to_rep1(((temp___646).us_split_fields1).rec__dimensions__line_parameter_type__b),
-  to_rep1(((temp___646).us_split_fields1).rec__dimensions__line_parameter_type__b)))) and
-  le(add(NearestTiesToEven, mul(NearestTiesToEven,
-  to_rep1(((temp___646).us_split_fields1).rec__dimensions__line_parameter_type__a),
-  to_rep1(((temp___646).us_split_fields1).rec__dimensions__line_parameter_type__a)),
-  mul(NearestTiesToEven,
-  to_rep1(((temp___646).us_split_fields1).rec__dimensions__line_parameter_type__b),
-  to_rep1(((temp___646).us_split_fields1).rec__dimensions__line_parameter_type__b))),
-  fliteral4)))
+  to_rep1(((temp___647).us_split_fields1).rec__dimensions__line_parameter_type__b),
+  to_rep1(((temp___647).us_split_fields1).rec__dimensions__line_parameter_type__b)))
+  : t in (le(fliteral3, temp___649) and le(temp___649, fliteral4))))
 
 predicate dynamic_invariant1(temp___expr_536: t, temp___is_init_532: bool,
   temp___skip_constant_533: bool, temp___do_toplevel_534: bool,

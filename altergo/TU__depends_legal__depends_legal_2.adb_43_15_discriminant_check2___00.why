@@ -1154,6 +1154,10 @@ function bool_eq4(a: us_rep, b: us_rep) : bool =
   eq(to_rep(((a).us_split_fields1).rec__depends_legal_2__dis_rec__z),
   to_rep(((b).us_split_fields1).rec__depends_legal_2__dis_rec__z)))))) then true else false)
 
+predicate in_range3(rec__depends_legal_2__dis_rec__d1: bool,
+  a: us_split_discrs) =
+  (rec__depends_legal_2__dis_rec__d1 = (a).rec__depends_legal_2__dis_rec__d)
+
 logic value__size : int
 
 logic object__size : int
@@ -1290,9 +1294,6 @@ logic r7b : bool
 
 logic attr__ATTRIBUTE_ADDRESS4 : int
 
-predicate in_range3(rec__depends_legal_2__dis_rec__d1: bool, a: us_rep) =
-  (rec__depends_legal_2__dis_rec__d1 = ((a).us_split_discrs1).rec__depends_legal_2__dis_rec__d)
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -1404,9 +1405,6 @@ type t5b__ref = { t5b__content : us_rep
 
 function t5b__ref_t5b__content__projection(a: t5b__ref) : us_rep =
   (a).t5b__content
-
-predicate in_range4(rec__depends_legal_2__dis_rec__d1: bool, a: us_rep) =
-  (rec__depends_legal_2__dis_rec__d1 = ((a).us_split_discrs1).rec__depends_legal_2__dis_rec__d)
 
 logic value__size2 : int
 

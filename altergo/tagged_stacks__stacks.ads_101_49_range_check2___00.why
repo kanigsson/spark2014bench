@@ -680,18 +680,18 @@ function buffer__ref_buffer__content__projection(a: buffer__ref) : us_rep1 =
 
 logic temp_____aggregate_def_200 : int -> (int,element) farray
 
-axiom temp___result_602qtdef :
-  (forall temp___601:us_rep1. size__function_guard(size(to_base(temp___601)),
-  to_base(temp___601)))
+axiom temp___result_618qtdef :
+  (forall temp___617:us_rep1. size__function_guard(size(to_base(temp___617)),
+  to_base(temp___617)))
 
-predicate default_initial_assumption(temp___expr_599: us_rep1,
-  temp___skip_top_level_600: bool) =
-  ((((temp___expr_599).attr__tag1 = us_tag1) and
-  (((to_rep3(((temp___expr_599).us_split_fields3).rec__stacks__buffer__first) = 1) and
-  (((temp___expr_599).us_split_fields3).rec__stacks__stack_root__content1 = temp_____aggregate_def_200(0))) and
-  (to_rep(((temp___expr_599).us_split_fields3).rec__stacks__stack_root__length1) = 0))) and
-  ((not (temp___skip_top_level_600 = true)) ->
-  (size(to_base(temp___expr_599)) = 0)))
+predicate default_initial_assumption(temp___expr_615: us_rep1,
+  temp___skip_top_level_616: bool) =
+  ((((temp___expr_615).attr__tag1 = us_tag1) and
+  (((to_rep3(((temp___expr_615).us_split_fields3).rec__stacks__buffer__first) = 1) and
+  (((temp___expr_615).us_split_fields3).rec__stacks__stack_root__content1 = temp_____aggregate_def_200(0))) and
+  (to_rep(((temp___expr_615).us_split_fields3).rec__stacks__stack_root__length1) = 0))) and
+  ((not (temp___skip_top_level_616 = true)) ->
+  (size(to_base(temp___expr_615)) = 0)))
 
 logic s : us_rep1
 
@@ -1021,10 +1021,10 @@ axiom def_axiom :
   (forall temp___203:int.
   ((temp_____aggregate_def_200(temp___202)[temp___203]) = rliteral))))
 
-predicate dynamic_invariant5(temp___expr_590: int, temp___is_init_586: bool,
-  temp___skip_constant_587: bool, temp___do_toplevel_588: bool,
-  temp___do_typ_inv_589: bool) = (((temp___is_init_586 = true) or
-  (1 <= 100)) -> in_range4(temp___expr_590))
+predicate dynamic_invariant5(temp___expr_606: int, temp___is_init_602: bool,
+  temp___skip_constant_603: bool, temp___do_toplevel_604: bool,
+  temp___do_typ_inv_605: bool) = (((temp___is_init_602 = true) or
+  (1 <= 100)) -> in_range4(temp___expr_606))
 
  (* File "stacks.ads", line 60, characters 0-0 *)
 goal defqtvc : (let o = s : us_rep1 in (let o1 = wraps_around(o) : bool in

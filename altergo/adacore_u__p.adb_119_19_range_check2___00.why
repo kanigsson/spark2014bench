@@ -301,15 +301,15 @@ predicate dynamic_invariant2(temp___expr_186: us_t, temp___is_init_182: bool,
 goal defqtvc :
   (forall a:(int,positive) farray. (dynamic_property(1, 2147483647,
   to_rep1(a__first), to_rep1(a__last)) ->
-  (forall temp___324:int. ((to_rep1(a__first) = temp___324) ->
-  (forall temp___325:int. ((to_rep1(a__last) = temp___325) ->
-  (forall i:int. ((i = temp___324) ->
-  ((andb((if (temp___324 <= i) then true else false),
-  (if (i <= temp___325) then true else false)) = true) ->
+  (forall temp___327:int. ((to_rep1(a__first) = temp___327) ->
+  (forall temp___328:int. ((to_rep1(a__last) = temp___328) ->
+  (forall i:int. ((i = temp___327) ->
+  ((andb((if (temp___327 <= i) then true else false),
+  (if (i <= temp___328) then true else false)) = true) ->
   (forall a1:(int,positive) farray. forall i1:int.
-  ((andb((if (forall temp___328:int. (((to_rep1(a__first) <= temp___328) and
-             (temp___328 <= to_rep1(a__last))) ->
-             (((temp___325 <  temp___328) or ((temp___328 <  temp___324) or
-             (i1 <= temp___328))) -> ((a1[temp___328]) = (a[temp___328]))))) then true else false),
+  ((andb((if (forall temp___331:int. (((to_rep1(a__first) <= temp___331) and
+             (temp___331 <= to_rep1(a__last))) ->
+             (((temp___328 <  temp___331) or ((temp___331 <  temp___327) or
+             (i1 <= temp___331))) -> ((a1[temp___331]) = (a[temp___331]))))) then true else false),
   (if ((to_rep1(a__first) <= i1) and
   (i1 <= to_rep1(a__last))) then true else false)) = true) -> in_range1(i1))))))))))))

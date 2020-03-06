@@ -256,13 +256,14 @@ logic user_eq2 : us_rep1, us_rep1 -> bool
 
 logic dummy2 : us_rep1
 
-type r__ref = { r__content : us_rep1
+type txS__ref = { txS__content : us_rep1
 }
 
-function r__ref_r__content__projection(a: r__ref) : us_rep1 = (a).r__content
+function txS__ref_txS__content__projection(a: txS__ref) : us_rep1 =
+  (a).txS__content
 
-predicate in_range2(rec__cursors__r__b1: bool, a: us_rep1) =
-  (rec__cursors__r__b1 = ((a).us_split_discrs1).rec__cursors__r__b)
+predicate in_range2(rec__cursors__r__b1: bool, a: us_split_discrs) =
+  (rec__cursors__r__b1 = (a).rec__cursors__r__b)
 
 logic value__size2 : int
 
@@ -306,27 +307,26 @@ logic user_eq3 : us_rep1, us_rep1 -> bool
 
 logic dummy3 : us_rep1
 
-type txS__ref = { txS__content : us_rep1
+type r__ref = { r__content : us_rep1
 }
 
-function txS__ref_txS__content__projection(a: txS__ref) : us_rep1 =
-  (a).txS__content
+function r__ref_r__content__projection(a: r__ref) : us_rep1 = (a).r__content
 
 logic x__split_discrs : us_split_discrs
 
 logic attr__ATTRIBUTE_ADDRESS : int
 
-predicate dynamic_invariant(temp___expr_582: us_rep1,
-  temp___is_init_578: bool, temp___skip_constant_579: bool,
-  temp___do_toplevel_580: bool, temp___do_typ_inv_581: bool) =
-  ((not (temp___skip_constant_579 = true)) -> in_range2(of_int(0),
-  temp___expr_582))
+predicate dynamic_invariant(temp___expr_589: us_rep1,
+  temp___is_init_585: bool, temp___skip_constant_586: bool,
+  temp___do_toplevel_587: bool, temp___do_typ_inv_588: bool) =
+  ((not (temp___skip_constant_586 = true)) -> in_range2(of_int(0),
+  (temp___expr_589).us_split_discrs1))
 
-predicate default_initial_assumption(temp___expr_584: us_rep1,
-  temp___skip_top_level_585: bool) =
-  ((((temp___expr_584).us_split_discrs1).rec__cursors__r__b = of_int(0)) and
-  (cursors__r__c__pred(temp___expr_584) ->
-  (to_rep(((((temp___expr_584).us_split_fields3).rec__cursors__r__c).us_split_fields1).rec__cursors__l__cursor__node) = 0)))
+predicate default_initial_assumption(temp___expr_591: us_rep1,
+  temp___skip_top_level_592: bool) =
+  ((((temp___expr_591).us_split_discrs1).rec__cursors__r__b = of_int(0)) and
+  (cursors__r__c__pred(temp___expr_591) ->
+  (to_rep(((((temp___expr_591).us_split_fields3).rec__cursors__r__c).us_split_fields1).rec__cursors__l__cursor__node) = 0)))
 
 predicate dynamic_invariant1(temp___expr_236: int, temp___is_init_232: bool,
   temp___skip_constant_233: bool, temp___do_toplevel_234: bool,

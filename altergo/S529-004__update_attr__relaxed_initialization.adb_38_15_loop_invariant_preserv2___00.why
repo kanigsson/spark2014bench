@@ -1276,6 +1276,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (relaxed_initialization__rec__z__pred(a) ->
   (to_rep3((((a).us_split_fields1).rec__relaxed_initialization__rec__z).rec__value2) = to_rep3((((b).us_split_fields1).rec__relaxed_initialization__rec__z).rec__value2))))) then true else false)
 
+predicate in_range7(rec__relaxed_initialization__rec__d1: bool,
+  a: us_split_discrs) =
+  (rec__relaxed_initialization__rec__d1 = (a).rec__relaxed_initialization__rec__d)
+
 logic value__size : int
 
 logic object__size : int
@@ -1593,14 +1597,15 @@ goal defqtvc :
   (to_array(temp___341)[temp___340]) : us_rep in
   (if (((elem).us_split_discrs1).rec__relaxed_initialization__rec__d = true) then ((((elem).us_split_fields1).rec__relaxed_initialization__rec__y).attr__init1 = true) else (((((elem).us_split_fields1).rec__relaxed_initialization__rec__z).attr__init2 = true) and
   (to_rep3((((elem).us_split_fields1).rec__relaxed_initialization__rec__z).rec__value2) = 0))))))) ->
-  ((andb((if (dynamic_property1(to_rep(obj__first), to_rep(obj__last),
-  idx1) and
-  (forall temp___326:int. (((to_rep(obj__first) <= temp___326) and
-  (temp___326 <= to_rep(obj__last))) -> (if ((temp___320 <  temp___326) or
-  ((temp___326 <  temp___319) or
-  (idx1 <  temp___326))) then ((obj2[temp___326]) = (obj[temp___326])) else (((((obj2[temp___326])).us_split_discrs1).rec__relaxed_initialization__rec__d = (((obj[temp___326])).us_split_discrs1).rec__relaxed_initialization__rec__d) and
-  ((((obj2[temp___326])).us_split_fields1).rec__relaxed_initialization__rec__x = (((obj[temp___326])).us_split_fields1).rec__relaxed_initialization__rec__x)))))) then true else false),
-  (if ((to_rep(obj__first) <= idx1) and
+  ((andb((if ((forall temp___325:int.
+              (((to_rep(obj__first) <= temp___325) and
+              (temp___325 <= to_rep(obj__last))) ->
+              (if ((temp___320 <  temp___325) or
+              ((temp___325 <  temp___319) or
+              (idx1 <  temp___325))) then ((obj2[temp___325]) = (obj[temp___325])) else (((((obj2[temp___325])).us_split_discrs1).rec__relaxed_initialization__rec__d = (((obj[temp___325])).us_split_discrs1).rec__relaxed_initialization__rec__d) and
+              ((((obj2[temp___325])).us_split_fields1).rec__relaxed_initialization__rec__x = (((obj[temp___325])).us_split_fields1).rec__relaxed_initialization__rec__x))))) and
+  dynamic_property1(to_rep(obj__first), to_rep(obj__last),
+  idx1)) then true else false), (if ((to_rep(obj__first) <= idx1) and
   (idx1 <= to_rep(obj__last))) then true else false)) = true) ->
   ((not (idx1 = temp___320)) ->
   (forall idx2:int. ((idx2 = (idx1 + 1)) ->

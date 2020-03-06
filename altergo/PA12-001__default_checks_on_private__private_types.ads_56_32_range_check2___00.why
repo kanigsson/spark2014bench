@@ -258,16 +258,17 @@ logic user_eq2 : us_rep, us_rep -> bool
 
 logic dummy2 : us_rep
 
-type t__ref = { t__content : us_rep
+type t2__ref = { t2__content : us_rep
 }
 
-function t__ref_t__content__4__projection(a: t__ref) : us_rep =
-  (a).t__content
+function t2__ref_t2__content__2__projection(a: t2__ref) : us_rep =
+  (a).t2__content
 
 logic us_tag1 : int
 
-predicate in_range3(rec__private_types__p4__t__d1: bool, a: us_rep) =
-  (rec__private_types__p4__t__d1 = ((a).us_split_discrs1).rec__private_types__p4__t__d)
+predicate in_range3(rec__private_types__p4__t__d1: bool,
+  a: us_split_discrs) =
+  (rec__private_types__p4__t__d1 = (a).rec__private_types__p4__t__d)
 
 logic value__size1 : int
 
@@ -315,11 +316,11 @@ logic user_eq3 : us_rep, us_rep -> bool
 
 logic dummy3 : us_rep
 
-type t2__ref = { t2__content : us_rep
+type t__ref = { t__content : us_rep
 }
 
-function t2__ref_t2__content__2__projection(a: t2__ref) : us_rep =
-  (a).t2__content
+function t__ref_t__content__4__projection(a: t__ref) : us_rep =
+  (a).t__content
 
 logic x__split_discrs : us_split_discrs
 
@@ -331,13 +332,13 @@ predicate dynamic_invariant1(temp___expr_221: us_rep,
   temp___is_init_217: bool, temp___skip_constant_218: bool,
   temp___do_toplevel_219: bool, temp___do_typ_inv_220: bool) =
   ((not (temp___skip_constant_218 = true)) -> in_range3(of_int(1),
-  temp___expr_221))
+  (temp___expr_221).us_split_discrs1))
 
 axiom temp___result_226qtdef : id__function_guard(id(0), 0)
 
 predicate default_initial_assumption(temp___expr_223: us_rep,
   temp___skip_top_level_224: bool) =
-  (((temp___expr_223).attr__tag = us_tag1) and
+  (((temp___expr_223).attr__tag = us_tag) and
   ((((temp___expr_223).us_split_discrs1).rec__private_types__p4__t__d = of_int(1)) and
   (private_types__p4__t__f__pred(temp___expr_223) ->
   (to_rep(((temp___expr_223).us_split_fields1).rec__private_types__p4__t__f) = id(0)))))

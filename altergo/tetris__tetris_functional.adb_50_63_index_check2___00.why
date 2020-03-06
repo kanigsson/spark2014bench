@@ -3966,10 +3966,10 @@ goal defqtvc :
   (forall x:int. ((x = 0) -> ((andb((if (0 <= x) then true else false),
   (if (x <= 3) then true else false)) = true) ->
   (forall cur_board2:(int,(int,cell) farray) farray. forall x1:int.
-  ((andb((if (forall temp___826:int. (((1 <= temp___826) and
-             (temp___826 <= 50)) ->
-             ((not ((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) + y1) = temp___826)) ->
-             ((cur_board2[temp___826]) = (cur_board1[temp___826]))))) then true else false),
+  ((andb((if (forall temp___835:int. (((1 <= temp___835) and
+             (temp___835 <= 50)) ->
+             ((not ((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) + y1) = temp___835)) ->
+             ((cur_board2[temp___835]) = (cur_board1[temp___835]))))) then true else false),
   (if ((0 <= x1) and (x1 <= 3)) then true else false)) = true) ->
   (forall o2:int.
   ((to_rep4((cur_piece__split_fields).rec__tetris_functional__piece__d) = o2) ->

@@ -672,14 +672,15 @@ goal defqtvc :
   (forall i:int. (((to_rep1(a__first) <= i) and (i <= k1)) ->
   (forall j:int. (((i <= j) and (j <= k1)) ->
   (to_rep((((a3[i])).us_split_fields1).rec__frame_condition__cell__value) <= to_rep((((a3[j])).us_split_fields1).rec__frame_condition__cell__max_left)))))))) ->
-  ((((((forall temp___294:int. (((to_rep1(a__first) <= temp___294) and
-       (temp___294 <= to_rep1(a__last))) ->
-       ((((a3[temp___294])).us_split_fields1).rec__frame_condition__cell__value = (((a[temp___294])).us_split_fields1).rec__frame_condition__cell__value))) and
+  (((((dynamic_invariant(max2, true, true, true, true) and
+  (forall temp___295:int. (((to_rep1(a__first) <= temp___295) and
+  (temp___295 <= to_rep1(a__last))) ->
+  ((((a3[temp___295])).us_split_fields1).rec__frame_condition__cell__value = (((a[temp___295])).us_split_fields1).rec__frame_condition__cell__value)))) and
   dynamic_invariant1(c167b1, true, true, true, true)) and
   dynamic_invariant1(k1, true, true, true, true)) and
-  dynamic_invariant(c168b1, true, true, true, true)) and
-  dynamic_invariant(max2, true, true, true, true)) -> ((not (k1 = last2)) ->
-  (dynamic_invariant2(c198b, true, false, true, true) ->
+  dynamic_invariant(c168b1, true, true, true, true)) ->
+  ((not (k1 = last2)) -> (dynamic_invariant2(c198b, true, false, true,
+  true) ->
   (forall spark__branch3:bool.
   ((spark__branch3 = (if true then true else false)) ->
   ((not (spark__branch3 = true)) -> in_range3((k1 - 1))))))))))))))))))))))))))))))))))))))))))))))))))))))

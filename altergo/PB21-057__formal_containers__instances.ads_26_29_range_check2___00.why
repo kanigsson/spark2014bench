@@ -174,47 +174,6 @@ logic user_eq1 : us_rep, us_rep -> bool
 
 logic dummy1 : us_rep
 
-type vector__ref = { vector__content : us_rep
-}
-
-function vector__ref_vector__content__projection(a: vector__ref) : us_rep =
-  (a).vector__content
-
-predicate in_range1(rec__instances__vectors__vector__capacity1: int,
-  a: us_rep) =
-  (rec__instances__vectors__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__instances__vectors__vector__capacity))
-
-logic value__size1 : int
-
-logic object__size1 : int
-
-logic alignment1 : int
-
-axiom value__size_axiom1 : (0 <= value__size1)
-
-axiom object__size_axiom1 : (0 <= object__size1)
-
-axiom alignment_axiom1 : (0 <= alignment1)
-
-logic instances__vectors__vector__capacity__first__bit1 : int
-
-logic instances__vectors__vector__capacity__last__bit1 : int
-
-logic instances__vectors__vector__capacity__position1 : int
-
-axiom instances__vectors__vector__capacity__first__bit_axiom1 :
-  (0 <= instances__vectors__vector__capacity__first__bit1)
-
-axiom instances__vectors__vector__capacity__last__bit_axiom1 :
-  (instances__vectors__vector__capacity__first__bit1 <  instances__vectors__vector__capacity__last__bit1)
-
-axiom instances__vectors__vector__capacity__position_axiom1 :
-  (0 <= instances__vectors__vector__capacity__position1)
-
-logic user_eq2 : us_rep, us_rep -> bool
-
-logic dummy2 : us_rep
-
 type t389s__ref = { t389s__content : us_rep
 }
 
@@ -239,17 +198,17 @@ type us_rep1 = { us_split_fields3 : us_split_fields2
 function us_rep___split_fields__4__projection(a: us_rep1) : us_split_fields2 =
   (a).us_split_fields3
 
-logic value__size2 : int
+logic value__size1 : int
 
-logic object__size2 : int
+logic object__size1 : int
 
-logic alignment2 : int
+logic alignment1 : int
 
-axiom value__size_axiom2 : (0 <= value__size2)
+axiom value__size_axiom1 : (0 <= value__size1)
 
-axiom object__size_axiom2 : (0 <= object__size2)
+axiom object__size_axiom1 : (0 <= object__size1)
 
-axiom alignment_axiom2 : (0 <= alignment2)
+axiom alignment_axiom1 : (0 <= alignment1)
 
 logic instances__dataT__vect__first__bit : int
 
@@ -266,7 +225,7 @@ axiom instances__dataT__vect__last__bit_axiom :
 axiom instances__dataT__vect__position_axiom :
   (0 <= instances__dataT__vect__position)
 
-logic user_eq3 : us_rep1, us_rep1 -> bool
+logic user_eq2 : us_rep1, us_rep1 -> bool
 
 type dataT__ref = { dataT__content : us_rep1
 }
@@ -276,19 +235,60 @@ function dataT__ref_dataT__content__projection(a: dataT__ref) : us_rep1 =
 
 logic attr__ATTRIBUTE_ADDRESS : int
 
+predicate in_range1(rec__instances__vectors__vector__capacity1: int,
+  a: us_split_discrs) =
+  (rec__instances__vectors__vector__capacity1 = to_rep((a).rec__instances__vectors__vector__capacity))
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic instances__vectors__vector__capacity__first__bit1 : int
+
+logic instances__vectors__vector__capacity__last__bit1 : int
+
+logic instances__vectors__vector__capacity__position1 : int
+
+axiom instances__vectors__vector__capacity__first__bit_axiom1 :
+  (0 <= instances__vectors__vector__capacity__first__bit1)
+
+axiom instances__vectors__vector__capacity__last__bit_axiom1 :
+  (instances__vectors__vector__capacity__first__bit1 <  instances__vectors__vector__capacity__last__bit1)
+
+axiom instances__vectors__vector__capacity__position_axiom1 :
+  (0 <= instances__vectors__vector__capacity__position1)
+
+logic user_eq3 : us_rep, us_rep -> bool
+
+logic dummy2 : us_rep
+
+type vector__ref = { vector__content : us_rep
+}
+
+function vector__ref_vector__content__projection(a: vector__ref) : us_rep =
+  (a).vector__content
+
 logic is_empty : us_rep -> bool
 
 logic is_empty__function_guard : bool, us_rep -> prop
 
-predicate dynamic_invariant(temp___expr_811: us_rep1,
-  temp___is_init_807: bool, temp___skip_constant_808: bool,
-  temp___do_toplevel_809: bool, temp___do_typ_inv_810: bool) = in_range1(10,
-  ((temp___expr_811).us_split_fields3).rec__instances__dataT__vect)
+predicate dynamic_invariant(temp___expr_819: us_rep1,
+  temp___is_init_815: bool, temp___skip_constant_816: bool,
+  temp___do_toplevel_817: bool, temp___do_typ_inv_818: bool) = in_range1(10,
+  (((temp___expr_819).us_split_fields3).rec__instances__dataT__vect).us_split_discrs1)
 
-predicate default_initial_assumption(temp___expr_813: us_rep1,
-  temp___skip_top_level_814: bool) =
-  ((to_rep(((((temp___expr_813).us_split_fields3).rec__instances__dataT__vect).us_split_discrs1).rec__instances__vectors__vector__capacity) = 10) and
-  (is_empty(((temp___expr_813).us_split_fields3).rec__instances__dataT__vect) = true))
+predicate default_initial_assumption(temp___expr_821: us_rep1,
+  temp___skip_top_level_822: bool) =
+  ((to_rep(((((temp___expr_821).us_split_fields3).rec__instances__dataT__vect).us_split_discrs1).rec__instances__vectors__vector__capacity) = 10) and
+  (is_empty(((temp___expr_821).us_split_fields3).rec__instances__dataT__vect) = true))
 
 type us_main_type1
 
@@ -414,17 +414,17 @@ predicate dynamic_invariant1(temp___expr_277: int, temp___is_init_273: bool,
   temp___do_typ_inv_276: bool) = (((temp___is_init_273 = true) or
   (0 <= 2147483647)) -> in_range3(temp___expr_277))
 
-predicate dynamic_invariant2(temp___expr_652: int, temp___is_init_648: bool,
-  temp___skip_constant_649: bool, temp___do_toplevel_650: bool,
-  temp___do_typ_inv_651: bool) = (((temp___is_init_648 = true) or
-  (0 <= 1000)) -> in_range(temp___expr_652))
+predicate dynamic_invariant2(temp___expr_659: int, temp___is_init_655: bool,
+  temp___skip_constant_656: bool, temp___do_toplevel_657: bool,
+  temp___do_typ_inv_658: bool) = (((temp___is_init_655 = true) or
+  (0 <= 1000)) -> in_range(temp___expr_659))
 
 logic oeq : us_rep, us_rep -> bool
 
 logic oeq__function_guard : bool, us_rep, us_rep -> prop
 
 axiom user_eq__def_axiom :
-  (forall a:us_rep. forall b:us_rep [user_eq1(a, b)]. (user_eq1(a,
+  (forall a:us_rep. forall b:us_rep [user_eq3(a, b)]. (user_eq3(a,
   b) = oeq(a, b)))
 
 function capacity(container: us_rep) : int =
@@ -569,10 +569,10 @@ axiom user_eq__def_axiom1 :
   (forall a:us_rep3. forall b:us_rep3 [user_eq7(a, b)]. (user_eq7(a,
   b) = oeq1(a, b)))
 
-predicate default_initial_assumption1(temp___expr_691: us_rep3,
-  temp___skip_top_level_692: bool) =
-  ((not (temp___skip_top_level_692 = true)) ->
-  (length1(temp___expr_691) = 0))
+predicate default_initial_assumption1(temp___expr_698: us_rep3,
+  temp___skip_top_level_699: bool) =
+  ((not (temp___skip_top_level_699 = true)) ->
+  (length1(temp___expr_698) = 0))
 
 axiom model__post_axiom :
   (forall container:us_rep [model(container)].
@@ -624,10 +624,10 @@ type extended_index__ref = { extended_index__content : extended_index
 function extended_index__ref_extended_index__content__3__projection(a: extended_index__ref) : extended_index =
   (a).extended_index__content
 
-predicate dynamic_invariant3(temp___expr_683: int, temp___is_init_679: bool,
-  temp___skip_constant_680: bool, temp___do_toplevel_681: bool,
-  temp___do_typ_inv_682: bool) = (((temp___is_init_679 = true) or
-  (0 <= 1000)) -> in_range5(temp___expr_683))
+predicate dynamic_invariant3(temp___expr_690: int, temp___is_init_686: bool,
+  temp___skip_constant_687: bool, temp___do_toplevel_688: bool,
+  temp___do_typ_inv_689: bool) = (((temp___is_init_686 = true) or
+  (0 <= 1000)) -> in_range5(temp___expr_690))
 
 axiom length__post_axiom2 :
   (forall container:us_rep3 [length1(container)].
@@ -667,10 +667,10 @@ type element_type__ref = { element_type__content : element_type
 function element_type__ref_element_type__content__5__projection(a: element_type__ref) : element_type =
   (a).element_type__content
 
-predicate dynamic_invariant4(temp___expr_676: int, temp___is_init_672: bool,
-  temp___skip_constant_673: bool, temp___do_toplevel_674: bool,
-  temp___do_typ_inv_675: bool) = (((temp___is_init_672 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range6(temp___expr_676))
+predicate dynamic_invariant4(temp___expr_683: int, temp___is_init_679: bool,
+  temp___skip_constant_680: bool, temp___do_toplevel_681: bool,
+  temp___do_typ_inv_682: bool) = (((temp___is_init_679 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range6(temp___expr_683))
 
 axiom get__post_axiom :
   (forall container:us_rep3.
@@ -680,7 +680,7 @@ axiom get__post_axiom :
   dynamic_invariant4(get(container, position), true, false, true, true))))
 
 axiom user_eq__def_axiom2 :
-  (forall a:us_rep. forall b:us_rep [user_eq2(a, b)]. (user_eq2(a,
+  (forall a:us_rep. forall b:us_rep [user_eq1(a, b)]. (user_eq1(a,
   b) = oeq(a, b)))
 
  (* File "instances.ads", line 8, characters 0-0 *)

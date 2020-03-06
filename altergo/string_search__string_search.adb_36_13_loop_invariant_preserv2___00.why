@@ -445,20 +445,21 @@ axiom partial_match_at__def_axiom1 :
  (* File "string_search.ads", line 33, characters 0-0 *)
 goal defqtvc : (dynamic_invariant1(needle, true, false, true, true) ->
   (dynamic_invariant1(haystack, true, false, true, true) ->
-  (((1 <= length(needle)) and (length(needle) <= length(haystack))) ->
-  (let o = length(needle) : int in (in_range1(o) -> (let o1 =
-  length(haystack) : int in (in_range1(o1) -> (let o2 = (o1 - o) : int in
-  (in_range1(o2) -> (let o3 = (o2 + 1) : int in (in_range1(o3) ->
+  ((let temp___358 = length(needle) : int in ((1 <= temp___358) and
+  (temp___358 <= length(haystack)))) -> (let o = length(needle) : int in
+  (in_range1(o) -> (let o1 = length(haystack) : int in (in_range1(o1) ->
+  (let o2 = (o1 - o) : int in (in_range1(o2) -> (let o3 = (o2 + 1) : int in
+  (in_range1(o3) ->
   (forall i:int. ((i = 1) -> ((andb((if (1 <= i) then true else false),
   (if (i <= o3) then true else false)) = true) -> (let o4 =
   (last1(needle) - 1) : int in (in_range1(o4) -> (let o5 = (i + o4) : int in
   (in_range1(o5) -> (((i <= o5) -> (((first1(haystack) <= i) and
   (i <= last1(haystack))) and ((first1(haystack) <= o5) and
-  (o5 <= last1(haystack))))) -> (let temp___340 =
+  (o5 <= last1(haystack))))) -> (let temp___349 =
   of_array(to_array(haystack), i, o5) : us_t in
   (forall spark__branch:bool. ((spark__branch = bool_eq4(to_array(needle),
-  first1(needle), last1(needle), to_array(temp___340), first1(temp___340),
-  last1(temp___340))) -> ((not (spark__branch = true)) ->
+  first1(needle), last1(needle), to_array(temp___349), first1(temp___349),
+  last1(temp___349))) -> ((not (spark__branch = true)) ->
   (forall i1:int.
   ((forall k:int. match_at__function_guard(match_at(needle, haystack, k),
    needle, haystack, k)) ->
@@ -472,10 +473,10 @@ goal defqtvc : (dynamic_invariant1(needle, true, false, true, true) ->
   (in_range1(o6) -> (let o7 = (i2 + o6) : int in (in_range1(o7) ->
   (((i2 <= o7) -> (((first1(haystack) <= i2) and (i2 <= last1(haystack))) and
   ((first1(haystack) <= o7) and (o7 <= last1(haystack))))) ->
-  (let temp___3401 = of_array(to_array(haystack), i2, o7) : us_t in
+  (let temp___3491 = of_array(to_array(haystack), i2, o7) : us_t in
   (forall spark__branch1:bool. ((spark__branch1 = bool_eq4(to_array(needle),
-  first1(needle), last1(needle), to_array(temp___3401), first1(temp___3401),
-  last1(temp___3401))) -> ((not (spark__branch1 = true)) ->
+  first1(needle), last1(needle), to_array(temp___3491), first1(temp___3491),
+  last1(temp___3491))) -> ((not (spark__branch1 = true)) ->
   (forall k:int. (((1 <= k) and (k <= i2)) ->
   ((forall k1:int. match_at__function_guard(match_at(needle, haystack, k1),
    needle, haystack, k1)) ->

@@ -349,14 +349,14 @@ logic has_element : us_rep1, us_rep -> bool
 
 logic has_element__function_guard : bool, us_rep1, us_rep -> prop
 
-predicate dynamic_invariant(temp___expr_240: us_rep1,
-  temp___is_init_236: bool, temp___skip_constant_237: bool,
-  temp___do_toplevel_238: bool, temp___do_typ_inv_239: bool) =
-  ((temp___do_toplevel_238 = true) -> ((temp___is_init_236 = true) ->
-  (to_rep(((temp___expr_240).us_split_fields3).rec__composite_cursors__cont2__length) <= 100)))
+predicate dynamic_invariant(temp___expr_242: us_rep1,
+  temp___is_init_238: bool, temp___skip_constant_239: bool,
+  temp___do_toplevel_240: bool, temp___do_typ_inv_241: bool) =
+  ((temp___do_toplevel_240 = true) -> ((temp___is_init_238 = true) ->
+  (to_rep(((temp___expr_242).us_split_fields3).rec__composite_cursors__cont2__length) <= 100)))
 
-predicate dynamic_predicate(temp___249: us_rep1) =
-  (to_rep(((temp___249).us_split_fields3).rec__composite_cursors__cont2__length) <= 100)
+predicate dynamic_predicate(temp___251: us_rep1) =
+  (to_rep(((temp___251).us_split_fields3).rec__composite_cursors__cont2__length) <= 100)
 
 axiom has_element__def_axiom :
   (forall c1:us_rep1.
@@ -370,9 +370,10 @@ axiom has_element__def_axiom1 :
 
 axiom has_element__def_axiom2 :
   (forall c1:us_rep1.
-  (forall p1:us_rep [has_element(c1, p1)].
-  (((1 <= to_rep(((p1).us_split_fields1).rec__composite_cursors__rec_cursor__content)) and
-  (to_rep(((p1).us_split_fields1).rec__composite_cursors__rec_cursor__content) <= to_rep(((c1).us_split_fields3).rec__composite_cursors__cont2__length))) ->
+  (forall p1:us_rep [has_element(c1, p1)]. ((let temp___258 =
+  to_rep(((p1).us_split_fields1).rec__composite_cursors__rec_cursor__content)
+  : int in ((1 <= temp___258) and
+  (temp___258 <= to_rep(((c1).us_split_fields3).rec__composite_cursors__cont2__length)))) ->
   (has_element(c1, p1) = true))))
 
 logic i19s : us_rep1

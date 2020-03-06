@@ -471,6 +471,6 @@ predicate default_initial_assumption2(temp___expr_530: us_rep2,
   ((to_rep(((temp___expr_530).us_split_fields5).rec__tagged_component_check__s__d4__h) = hide(43)) and
   (to_rep(((temp___expr_530).us_split_fields5).rec__tagged_component_check__s__p4__root__f2) = hide(36))))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__default_checks_on_private-8676/src/gnatprove/tagged_component_check__s__d4.mlw", line 953, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__default_checks_on_private-25155/src/gnatprove/tagged_component_check__s__d4.mlw", line 953, characters 5-8 *)
 goal defqtvc : (let o = hide(36) : int in ((hide__function_guard(o, 36) and
   dynamic_invariant(o, true, false, true, true)) -> in_range(o)))

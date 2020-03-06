@@ -1175,6 +1175,9 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range4(rec__tagged_discr__t__discr1: int, a: us_split_discrs) =
+  (rec__tagged_discr__t__discr1 = to_rep2((a).rec__tagged_discr__t__discr))
+
 logic value__size : int
 
 logic object__size : int
@@ -1450,9 +1453,6 @@ logic is_zero__function_guard1 : bool, int, us_rep1 -> prop
 
 logic us_tag2 : int
 
-predicate in_range4(rec__tagged_discr__t__discr1: int, a: us_rep) =
-  (rec__tagged_discr__t__discr1 = to_rep2(((a).us_split_discrs1).rec__tagged_discr__t__discr))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -1551,9 +1551,6 @@ function s4b__ref_s4b__content__projection(a: s4b__ref) : us_rep1 =
   (a).s4b__content
 
 logic us_tag3 : int
-
-predicate in_range5(rec__tagged_discr__t__discr1: int, a: us_rep) =
-  (rec__tagged_discr__t__discr1 = to_rep2(((a).us_split_discrs1).rec__tagged_discr__t__discr))
 
 logic value__size3 : int
 

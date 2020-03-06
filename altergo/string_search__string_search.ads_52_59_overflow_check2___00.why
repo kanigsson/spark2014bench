@@ -406,7 +406,7 @@ predicate dynamic_invariant(temp___expr_165: us_t, temp___is_init_161: bool,
 
 predicate dynamic_predicate(temp___168: us_t) = (first1(temp___168) = 1)
 
-logic temp_____aggregate_def_350 : int -> (int,positive) farray
+logic temp_____aggregate_def_361 : int -> (int,positive) farray
 
 predicate dynamic_invariant1(temp___expr_46: int, temp___is_init_42: bool,
   temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
@@ -424,22 +424,22 @@ predicate dynamic_invariant3(temp___expr_18: int, temp___is_init_14: bool,
   ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
 
 axiom def_axiom :
-  (forall temp___352:int. (dynamic_invariant1(temp___352, true, true, true,
+  (forall temp___363:int. (dynamic_invariant1(temp___363, true, true, true,
   true) ->
-  (forall temp___353:int.
-  (to_rep((temp_____aggregate_def_350(temp___352)[temp___353])) = temp___352))))
+  (forall temp___364:int.
+  (to_rep((temp_____aggregate_def_361(temp___363)[temp___364])) = temp___363))))
 
  (* File "string_search.ads", line 45, characters 0-0 *)
 goal defqtvc : (dynamic_invariant(needle, true, false, true, true) ->
   ((length(needle) <  2147483647) -> (let o = length(needle) : int in
   (in_range1(o) -> (let o1 = (o + 1) : int in (in_range1(o1) ->
   (forall bad_shift:(int,positive) farray.
-  ((bad_shift = temp_____aggregate_def_350(o1)) ->
-  (forall bad_shift1:(int,positive) farray. ((let temp___354 = first1(needle)
-  : int in (let temp___355 = last1(needle) : int in
-  (exists j:int. ((j = temp___354) and
-  (if (andb((if (temp___354 <= j) then true else false),
-  (if (j <= temp___355) then true else false)) = true) then (let o2 =
+  ((bad_shift = temp_____aggregate_def_361(o1)) ->
+  (forall bad_shift1:(int,positive) farray. ((let temp___365 = first1(needle)
+  : int in (let temp___366 = last1(needle) : int in
+  (exists j:int. ((j = temp___365) and
+  (if (andb((if (temp___365 <= j) then true else false),
+  (if (j <= temp___366) then true else false)) = true) then (let o2 =
   length(needle) : int in (in_range1(o2) and (let o3 = (o2 - j) : int in
   (in_range1(o3) and (let o4 = (o3 + 1) : int in (in_range1(o4) and
   (in_range2(o4) and
@@ -448,9 +448,9 @@ goal defqtvc : (dynamic_invariant(needle, true, false, true, true) ->
   (exists bad_shift2:(int,positive) farray.
   ((bad_shift2 = (bad_shift[o6 <- o5])) and
   (exists j1:int.
-  (((forall c:int. (((0 <= c) and (c <= 255)) ->
-    ((1 <= to_rep((bad_shift1[c]))) and
-    (to_rep((bad_shift1[c])) <= (length(needle) + 1))))) and
+  (((forall c:int. (((0 <= c) and (c <= 255)) -> (let temp___375 =
+    to_rep((bad_shift1[c])) : int in ((1 <= temp___375) and
+    (temp___375 <= (length(needle) + 1)))))) and
   (forall c:int. (((0 <= c) and (c <= 255)) ->
   (if (to_rep((bad_shift1[c])) = (length(needle) + 1)) then (forall k:int.
                                                             (((1 <= k) and
@@ -462,10 +462,10 @@ goal defqtvc : (dynamic_invariant(needle, true, false, true, true) ->
   ((andb((if dynamic_property1(first1(needle), last1(needle),
   j1) then true else false), (if ((first1(needle) <= j1) and
   (j1 <= last1(needle))) then true else false)) = true) and
-  (j1 = temp___355))))))))))))))))) else (bad_shift1 = bad_shift)))))) ->
-  ((forall c:int. (((0 <= c) and (c <= 255)) ->
-   ((1 <= to_rep((bad_shift1[c]))) and
-   (to_rep((bad_shift1[c])) <= (length(needle) + 1))))) ->
+  (j1 = temp___366))))))))))))))))) else (bad_shift1 = bad_shift)))))) ->
+  ((forall c:int. (((0 <= c) and (c <= 255)) -> (let temp___378 =
+   to_rep((bad_shift1[c])) : int in ((1 <= temp___378) and
+   (temp___378 <= (length(needle) + 1)))))) ->
   (forall usf:int. ((andb((if (0 <= usf) then true else false),
   (if (usf <= 255) then true else false)) = true) -> (let o2 = length(needle)
   : int in (in_range1(o2) -> (let o3 = (o2 + 1) : int in (in_range1(o3) ->

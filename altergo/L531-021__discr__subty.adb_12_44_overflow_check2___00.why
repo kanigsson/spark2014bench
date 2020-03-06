@@ -279,33 +279,6 @@ axiom basic__r__x__last__bit_axiom :
 
 axiom basic__r__x__position_axiom : (0 <= basic__r__x__position)
 
-logic basic__r__base__first__bit : int
-
-logic basic__r__base__last__bit : int
-
-logic basic__r__base__position : int
-
-axiom basic__r__base__first__bit_axiom : (0 <= basic__r__base__first__bit)
-
-axiom basic__r__base__last__bit_axiom :
-  (basic__r__base__first__bit <  basic__r__base__last__bit)
-
-axiom basic__r__base__position_axiom : (0 <= basic__r__base__position)
-
-logic basic__r__a_field__first__bit : int
-
-logic basic__r__a_field__last__bit : int
-
-logic basic__r__a_field__position : int
-
-axiom basic__r__a_field__first__bit_axiom :
-  (0 <= basic__r__a_field__first__bit)
-
-axiom basic__r__a_field__last__bit_axiom :
-  (basic__r__a_field__first__bit <  basic__r__a_field__last__bit)
-
-axiom basic__r__a_field__position_axiom : (0 <= basic__r__a_field__position)
-
 logic basic__r__c_field1__first__bit : int
 
 logic basic__r__c_field1__last__bit : int
@@ -336,17 +309,48 @@ axiom basic__r__c_field2__last__bit_axiom :
 axiom basic__r__c_field2__position_axiom :
   (0 <= basic__r__c_field2__position)
 
+logic basic__r__base__first__bit : int
+
+logic basic__r__base__last__bit : int
+
+logic basic__r__base__position : int
+
+axiom basic__r__base__first__bit_axiom : (0 <= basic__r__base__first__bit)
+
+axiom basic__r__base__last__bit_axiom :
+  (basic__r__base__first__bit <  basic__r__base__last__bit)
+
+axiom basic__r__base__position_axiom : (0 <= basic__r__base__position)
+
+logic basic__r__a_field__first__bit : int
+
+logic basic__r__a_field__last__bit : int
+
+logic basic__r__a_field__position : int
+
+axiom basic__r__a_field__first__bit_axiom :
+  (0 <= basic__r__a_field__first__bit)
+
+axiom basic__r__a_field__last__bit_axiom :
+  (basic__r__a_field__first__bit <  basic__r__a_field__last__bit)
+
+axiom basic__r__a_field__position_axiom : (0 <= basic__r__a_field__position)
+
 logic user_eq3 : us_rep, us_rep -> bool
 
 logic dummy3 : us_rep
 
-type r__ref = { r__content : us_rep
+type s__ref = { s__content : us_rep
 }
 
-function r__ref_r__content__projection(a: r__ref) : us_rep = (a).r__content
+function s__ref_s__content__projection(a: s__ref) : us_rep = (a).s__content
 
-predicate in_range4(rec__basic__r__x1: int, a: us_rep) =
-  (rec__basic__r__x1 = to_rep2(((a).us_split_discrs1).rec__basic__r__x))
+logic v : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate in_range4(rec__basic__r__x1: int, a: us_split_discrs) =
+  (rec__basic__r__x1 = to_rep2((a).rec__basic__r__x))
 
 logic value__size1 : int
 
@@ -372,6 +376,34 @@ axiom basic__r__x__last__bit_axiom1 :
   (basic__r__x__first__bit1 <  basic__r__x__last__bit1)
 
 axiom basic__r__x__position_axiom1 : (0 <= basic__r__x__position1)
+
+logic basic__r__base__first__bit1 : int
+
+logic basic__r__base__last__bit1 : int
+
+logic basic__r__base__position1 : int
+
+axiom basic__r__base__first__bit_axiom1 : (0 <= basic__r__base__first__bit1)
+
+axiom basic__r__base__last__bit_axiom1 :
+  (basic__r__base__first__bit1 <  basic__r__base__last__bit1)
+
+axiom basic__r__base__position_axiom1 : (0 <= basic__r__base__position1)
+
+logic basic__r__a_field__first__bit1 : int
+
+logic basic__r__a_field__last__bit1 : int
+
+logic basic__r__a_field__position1 : int
+
+axiom basic__r__a_field__first__bit_axiom1 :
+  (0 <= basic__r__a_field__first__bit1)
+
+axiom basic__r__a_field__last__bit_axiom1 :
+  (basic__r__a_field__first__bit1 <  basic__r__a_field__last__bit1)
+
+axiom basic__r__a_field__position_axiom1 :
+  (0 <= basic__r__a_field__position1)
 
 logic basic__r__c_field1__first__bit1 : int
 
@@ -403,46 +435,14 @@ axiom basic__r__c_field2__last__bit_axiom1 :
 axiom basic__r__c_field2__position_axiom1 :
   (0 <= basic__r__c_field2__position1)
 
-logic basic__r__base__first__bit1 : int
-
-logic basic__r__base__last__bit1 : int
-
-logic basic__r__base__position1 : int
-
-axiom basic__r__base__first__bit_axiom1 : (0 <= basic__r__base__first__bit1)
-
-axiom basic__r__base__last__bit_axiom1 :
-  (basic__r__base__first__bit1 <  basic__r__base__last__bit1)
-
-axiom basic__r__base__position_axiom1 : (0 <= basic__r__base__position1)
-
-logic basic__r__a_field__first__bit1 : int
-
-logic basic__r__a_field__last__bit1 : int
-
-logic basic__r__a_field__position1 : int
-
-axiom basic__r__a_field__first__bit_axiom1 :
-  (0 <= basic__r__a_field__first__bit1)
-
-axiom basic__r__a_field__last__bit_axiom1 :
-  (basic__r__a_field__first__bit1 <  basic__r__a_field__last__bit1)
-
-axiom basic__r__a_field__position_axiom1 :
-  (0 <= basic__r__a_field__position1)
-
 logic user_eq4 : us_rep, us_rep -> bool
 
 logic dummy4 : us_rep
 
-type s__ref = { s__content : us_rep
+type r__ref = { r__content : us_rep
 }
 
-function s__ref_s__content__projection(a: s__ref) : us_rep = (a).s__content
-
-logic v : us_rep
-
-logic attr__ATTRIBUTE_ADDRESS : int
+function r__ref_r__content__projection(a: r__ref) : us_rep = (a).r__content
 
 logic z__split_discrs : us_split_discrs
 
@@ -451,14 +451,12 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant(temp___expr_171: us_rep,
   temp___is_init_167: bool, temp___skip_constant_168: bool,
   temp___do_toplevel_169: bool, temp___do_typ_inv_170: bool) =
-  ((not (temp___skip_constant_168 = true)) -> in_range4(0, temp___expr_171))
+  ((not (temp___skip_constant_168 = true)) -> in_range4(0,
+  (temp___expr_171).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_173: us_rep,
   temp___skip_top_level_174: bool) =
   (to_rep2(((temp___expr_173).us_split_discrs1).rec__basic__r__x) = 0)
-
-predicate in_range5(rec__basic__r__x1: int, a: us_rep) =
-  (rec__basic__r__x1 = to_rep2(((a).us_split_discrs1).rec__basic__r__x))
 
 logic value__size2 : int
 
@@ -574,28 +572,28 @@ axiom rliteral_axiom : (integerqtint(rliteral) = 1)
 
  (* File "subty.ads", line 7, characters 0-0 *)
 goal defqtvc : (dynamic_invariant(v, true, false, true, true) ->
-  (forall o:enum. ((to_rep2(o) = 0) -> (let o1 = { us_split_discrs1 = {
-  rec__basic__r__x = o }; us_split_fields1 = { rec__basic__r__base =
+  (forall o:enum. ((to_rep2(o) = 0) -> (let temp___182 = { us_split_discrs1 =
+  { rec__basic__r__x = o }; us_split_fields1 = { rec__basic__r__base =
   rliteral; rec__basic__r__a_field = rliteral; rec__basic__r__c_field1 =
   true; rec__basic__r__c_field2 = dummy1 } } : us_rep in
   (forall z__split_fields:us_split_fields.
-  ((z__split_fields = (o1).us_split_fields1) ->
-  ((z__split_discrs = (o1).us_split_discrs1) -> (dynamic_invariant({
+  ((z__split_fields = (temp___182).us_split_fields1) ->
+  ((z__split_discrs = (temp___182).us_split_discrs1) -> (dynamic_invariant({
   us_split_discrs1 = z__split_discrs; us_split_fields1 = z__split_fields },
   true, false, true, true) ->
   ((to_rep2((z__split_discrs).rec__basic__r__x) = 0) ->
   ((to_rep((z__split_fields).rec__basic__r__base) = 1) ->
   ((to_rep((z__split_fields).rec__basic__r__a_field) = 1) ->
   ((to_rep2(((v).us_split_discrs1).rec__basic__r__x) = 0) ->
-  (forall o2:int.
-  ((to_rep(((v).us_split_fields1).rec__basic__r__a_field) = o2) -> (let o3 =
-  (o2 + 1) : int in (in_range(o3) ->
-  (forall o4:integer. ((to_rep(o4) = o3) ->
+  (forall o1:int.
+  ((to_rep(((v).us_split_fields1).rec__basic__r__a_field) = o1) -> (let o2 =
+  (o1 + 1) : int in (in_range(o2) ->
+  (forall o3:integer. ((to_rep(o3) = o2) ->
   (forall z__split_fields1:us_split_fields. ((z__split_fields1 = {
   rec__basic__r__base = (z__split_fields).rec__basic__r__base;
-  rec__basic__r__a_field = o4; rec__basic__r__c_field1 =
+  rec__basic__r__a_field = o3; rec__basic__r__c_field1 =
   (z__split_fields).rec__basic__r__c_field1; rec__basic__r__c_field2 =
   (z__split_fields).rec__basic__r__c_field2 }) ->
-  (forall o5:int.
-  ((to_rep(((v).us_split_fields1).rec__basic__r__a_field) = o5) ->
-  in_range((o5 + 1))))))))))))))))))))))))
+  (forall o4:int.
+  ((to_rep(((v).us_split_fields1).rec__basic__r__a_field) = o4) ->
+  in_range((o4 + 1))))))))))))))))))))))))

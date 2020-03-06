@@ -1196,6 +1196,10 @@ function bool_eq8(a: us_rep, b: us_rep) : bool =
   (bool_eq7(((a).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits,
   ((b).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits) = true)) then true else false)
 
+predicate in_range3(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
+  a: us_split_discrs) =
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep((a).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -1293,7 +1297,7 @@ axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
 
 axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1316,7 +1320,7 @@ function natural__ref_natural__content__projection(a: natural__ref) : natural =
 predicate dynamic_invariant1(temp___expr_39: int, temp___is_init_35: bool,
   temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
   temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
-  (0 <= 2147483647)) -> in_range3(temp___expr_39))
+  (0 <= 2147483647)) -> in_range4(temp___expr_39))
 
 logic shift_right : t1, int -> t1
 
@@ -1416,31 +1420,31 @@ type t10b__ref = { t10b__content : us_t
 function t10b__ref_t10b__content__projection(a: t10b__ref) : us_t =
   (a).t10b__content
 
-logic temp_____aggregate_def_1453 : t, int, int -> us_t
+logic temp_____aggregate_def_1456 : t, int, int -> us_t
 
 axiom def_axiom :
-  (forall temp___1455:t.
-  (forall temp___1456:int. forall temp___1457:int.
-  (dynamic_invariant3(temp___1455, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___1456, temp___1457) ->
-  (first1(temp_____aggregate_def_1453(temp___1455, temp___1456,
-  temp___1457)) = temp___1456)))))
+  (forall temp___1458:t.
+  (forall temp___1459:int. forall temp___1460:int.
+  (dynamic_invariant3(temp___1458, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___1459, temp___1460) ->
+  (first1(temp_____aggregate_def_1456(temp___1458, temp___1459,
+  temp___1460)) = temp___1459)))))
 
 axiom def_axiom1 :
-  (forall temp___1455:t.
-  (forall temp___1456:int. forall temp___1457:int.
-  (dynamic_invariant3(temp___1455, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___1456, temp___1457) ->
-  (last1(temp_____aggregate_def_1453(temp___1455, temp___1456,
-  temp___1457)) = temp___1457)))))
+  (forall temp___1458:t.
+  (forall temp___1459:int. forall temp___1460:int.
+  (dynamic_invariant3(temp___1458, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___1459, temp___1460) ->
+  (last1(temp_____aggregate_def_1456(temp___1458, temp___1459,
+  temp___1460)) = temp___1460)))))
 
 axiom def_axiom2 :
-  (forall temp___1455:t.
-  (forall temp___1456:int. forall temp___1457:int.
-  (dynamic_invariant3(temp___1455, true, true, true, true) ->
-  (forall temp___1458:int.
-  (to_rep2((to_array(temp_____aggregate_def_1453(temp___1455, temp___1456,
-  temp___1457))[temp___1458])) = temp___1455)))))
+  (forall temp___1458:t.
+  (forall temp___1459:int. forall temp___1460:int.
+  (dynamic_invariant3(temp___1458, true, true, true, true) ->
+  (forall temp___1461:int.
+  (to_rep2((to_array(temp_____aggregate_def_1456(temp___1458, temp___1459,
+  temp___1460))[temp___1461])) = temp___1458)))))
 
 predicate dynamic_invariant5(temp___expr_271: us_t, temp___is_init_267: bool,
   temp___skip_constant_268: bool, temp___do_toplevel_269: bool,
@@ -1476,49 +1480,49 @@ goal defqtvc :
   (forall ada___ada___aco__math__very_longs__modadd_and_carry__R8b__assume:int.
   ((to_rep((result____split_discrs).rec__ada___ada___aco__math__very_longs__very_long__octet_length) = ada___ada___aco__math__very_longs__modadd_and_carry__R8b__assume) ->
   ((ada___ada___aco__math__very_longs__modadd_and_carry__R8b__assume = r8b) ->
-  (dynamic_invariant4(r8b, true, false, true, true) -> (let temp___1459 =
-  temp_____aggregate_def_1453(rliteral4, 1, r8b) : us_t in
-  ((first1(temp___1459) = 1) -> ((last1(temp___1459) = r8b) ->
-  ((if (first1(temp___1459) <= last1(temp___1459)) then ((1 <= r8b) and
-  ((last1(temp___1459) - first1(temp___1459)) = (r8b - 1))) else (r8b <  1)) ->
-  (let temp___1461 = of_array(to_array(temp___1459), first1(temp___1459),
-  last1(temp___1459)) : us_t in
-  ((if (first1(temp___1461) <= last1(temp___1461)) then ((first1(result____split_fields) <= last1(result____split_fields)) and
-  ((last1(temp___1461) - first1(temp___1461)) = (last1(result____split_fields) - first1(result____split_fields)))) else (last1(result____split_fields) <  first1(result____split_fields))) ->
+  (dynamic_invariant4(r8b, true, false, true, true) -> (let temp___1462 =
+  temp_____aggregate_def_1456(rliteral4, 1, r8b) : us_t in
+  ((first1(temp___1462) = 1) -> ((last1(temp___1462) = r8b) ->
+  ((if (first1(temp___1462) <= last1(temp___1462)) then ((1 <= r8b) and
+  ((last1(temp___1462) - first1(temp___1462)) = (r8b - 1))) else (r8b <  1)) ->
+  (let temp___1464 = of_array(to_array(temp___1462), first1(temp___1462),
+  last1(temp___1462)) : us_t in
+  ((if (first1(temp___1464) <= last1(temp___1464)) then ((first1(result____split_fields) <= last1(result____split_fields)) and
+  ((last1(temp___1464) - first1(temp___1464)) = (last1(result____split_fields) - first1(result____split_fields)))) else (last1(result____split_fields) <  first1(result____split_fields))) ->
   (forall result____split_fields1:us_t.
-  ((result____split_fields1 = of_array(to_array(temp___1461),
-  first1(temp___1461), last1(temp___1461))) ->
-  (forall carry1:t1. ((carry1 = rliteral1) -> (let temp___1467 =
+  ((result____split_fields1 = of_array(to_array(temp___1464),
+  first1(temp___1464), last1(temp___1464))) ->
+  (forall carry1:t1. ((carry1 = rliteral1) -> (let temp___1470 =
   last1(((l).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits)
   : int in
   (forall i:int. ((i = 1) -> ((andb((if (1 <= i) then true else false),
-  (if (i <= temp___1467) then true else false)) = true) ->
+  (if (i <= temp___1470) then true else false)) = true) ->
   (forall result____split_fields2:us_t. forall carry2:t1. forall l_digit1:t1.
   forall r_digit1:t1. forall sum1:t1. forall i1:int.
-  ((andb((if (((((dynamic_invariant({ us_split_discrs1 =
-  result____split_discrs; us_split_fields1 = {
+  ((andb((if (((((dynamic_invariant2(sum1, false, true, true, true) and
+  dynamic_invariant({ us_split_discrs1 = result____split_discrs;
+  us_split_fields1 = {
   rec__ada___ada___aco__math__very_longs__very_long__long_digits =
-  result____split_fields2 } }, false, true, true, true) and
-  (forall temp___1475:int.
-  (((first1(result____split_fields2) <= temp___1475) and
-  (temp___1475 <= last1(result____split_fields2))) ->
-  (((temp___1467 <  temp___1475) or ((temp___1475 <  1) or
-  (i1 <= temp___1475))) ->
-  ((to_array(result____split_fields2)[temp___1475]) = (to_array(result____split_fields1)[temp___1475])))))) and
+  result____split_fields2 } }, false, true, true, true)) and
+  (forall temp___1479:int.
+  (((first1(result____split_fields2) <= temp___1479) and
+  (temp___1479 <= last1(result____split_fields2))) ->
+  (((temp___1470 <  temp___1479) or ((temp___1479 <  1) or
+  (i1 <= temp___1479))) ->
+  ((to_array(result____split_fields2)[temp___1479]) = (to_array(result____split_fields1)[temp___1479])))))) and
   dynamic_invariant2(l_digit1, false, true, true, true)) and
   dynamic_invariant2(carry2, false, true, true, true)) and
-  dynamic_invariant2(r_digit1, false, true, true, true)) and
-  dynamic_invariant2(sum1, false, true, true, true)) then true else false),
-  (if ((1 <= i1) and
+  dynamic_invariant2(r_digit1, false, true, true,
+  true)) then true else false), (if ((1 <= i1) and
   (i1 <= last1(((l).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits))) then true else false)) = true) ->
-  (let temp___1468 =
+  (let temp___1471 =
   ((l).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits
-  : us_t in (((first1(temp___1468) <= i1) and (i1 <= last1(temp___1468))) ->
-  (forall o:t. ((to_rep2((to_array(temp___1468)[i1])) = o) ->
-  (forall l_digit2:t1. ((l_digit2 = toBig(o)) -> (let temp___1469 =
+  : us_t in (((first1(temp___1471) <= i1) and (i1 <= last1(temp___1471))) ->
+  (forall o:t. ((to_rep2((to_array(temp___1471)[i1])) = o) ->
+  (forall l_digit2:t1. ((l_digit2 = toBig(o)) -> (let temp___1472 =
   ((r).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits
-  : us_t in (((first1(temp___1469) <= i1) and (i1 <= last1(temp___1469))) ->
-  (forall o1:t. ((to_rep2((to_array(temp___1469)[i1])) = o1) ->
+  : us_t in (((first1(temp___1472) <= i1) and (i1 <= last1(temp___1472))) ->
+  (forall o1:t. ((to_rep2((to_array(temp___1472)[i1])) = o1) ->
   (forall r_digit2:t1. ((r_digit2 = toBig(o1)) ->
   (forall sum2:t1. ((sum2 = add1(add1(l_digit2, r_digit2), carry2)) ->
   (let o2 = shift_right(sum2, 8) : t1 in ((shift_right__function_guard(o2,

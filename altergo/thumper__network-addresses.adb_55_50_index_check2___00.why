@@ -1410,9 +1410,9 @@ goal defqtvc :
   (forall spark__branch:bool.
   ((spark__branch = andb((if (o = 46) then true else false), seen_value1)) ->
   ((not (spark__branch = true)) ->
-  (forall o1:int. ((to_rep((to_array(text)[i1])) = o1) ->
+  (forall temp___333:int. ((to_rep((to_array(text)[i1])) = temp___333) ->
   (forall spark__branch1:bool.
-  ((spark__branch1 = (if in_range7(o1) then true else false)) ->
+  ((spark__branch1 = (if in_range7(temp___333) then true else false)) ->
   ((spark__branch1 = true) ->
   (forall temp___332:int. ((to_rep((to_array(text)[i1])) = temp___332) ->
   (48 <= temp___332)))))))))))))))))))))))))))))))))))

@@ -1003,16 +1003,16 @@ type t69b__ref = { t69b__content : us_t
 function t69b__ref_t69b__content__projection(a: t69b__ref) : us_t =
   (a).t69b__content
 
-predicate dynamic_invariant5(temp___expr_336: us_t, temp___is_init_332: bool,
-  temp___skip_constant_333: bool, temp___do_toplevel_334: bool,
-  temp___do_typ_inv_335: bool) = ((not (temp___skip_constant_333 = true)) ->
-  (dynamic_property(1, max(500, length1(s)), first1(temp___expr_336),
-  last1(temp___expr_336)) and ((first1(temp___expr_336) = 1) and
-  (last1(temp___expr_336) = max(500, length1(s))))))
+predicate dynamic_invariant5(temp___expr_338: us_t, temp___is_init_334: bool,
+  temp___skip_constant_335: bool, temp___do_toplevel_336: bool,
+  temp___do_typ_inv_337: bool) = ((not (temp___skip_constant_335 = true)) ->
+  (dynamic_property(1, max(500, length1(s)), first1(temp___expr_338),
+  last1(temp___expr_338)) and ((first1(temp___expr_338) = 1) and
+  (last1(temp___expr_338) = max(500, length1(s))))))
 
-predicate default_initial_assumption(temp___expr_338: us_t,
-  temp___skip_top_level_339: bool) = ((first1(temp___expr_338) = 1) and
-  (last1(temp___expr_338) = max(500, length1(s))))
+predicate default_initial_assumption(temp___expr_340: us_t,
+  temp___skip_top_level_341: bool) = ((first1(temp___expr_340) = 1) and
+  (last1(temp___expr_340) = max(500, length1(s))))
 
 predicate dynamic_invariant6(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
@@ -1142,15 +1142,15 @@ goal defqtvc :
   (forall textio__get_line_function__get_rest__B_1__r__assume:us_t.
   ((((1 <= r61b) -> (((to_rep1(buffer__first) <= 1) and
   (1 <= to_rep1(buffer__last))) and ((to_rep1(buffer__first) <= r61b) and
-  (r61b <= to_rep1(buffer__last))))) and (let temp___480 = of_array(buffer1,
+  (r61b <= to_rep1(buffer__last))))) and (let temp___486 = of_array(buffer1,
   1, r61b) : us_t in
-  (if (length1(s) = 0) then (textio__get_line_function__get_rest__B_1__r__assume = of_array(to_array(temp___480),
-  first1(temp___480), last1(temp___480))) else (let o3 =
-  ((first1(s) + (length(first1(s), last1(s)) + length(first1(temp___480),
-  last1(temp___480)))) - 1) : int in (in_range3(o3) and
+  (if (length1(s) = 0) then (textio__get_line_function__get_rest__B_1__r__assume = of_array(to_array(temp___486),
+  first1(temp___486), last1(temp___486))) else (let o3 =
+  ((first1(s) + (length(first1(s), last1(s)) + length(first1(temp___486),
+  last1(temp___486)))) - 1) : int in (in_range3(o3) and
   (textio__get_line_function__get_rest__B_1__r__assume = of_array(concat(to_array(s),
-  first1(s), last1(s), to_array(temp___480), first1(temp___480),
-  last1(temp___480)), first1(s), o3))))))) ->
+  first1(s), last1(s), to_array(temp___486), first1(temp___486),
+  last1(temp___486)), first1(s), o3))))))) ->
   ((textio__get_line_function__get_rest__B_1__r__assume = r) ->
   (dynamic_invariant3(r, true, false, true, true) ->
   ((first1(r) = first1(s)) -> ((last1(r) = (last1(s) + last3)) -> (let o3 =

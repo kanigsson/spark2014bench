@@ -404,6 +404,10 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range4(rec__integer_stacks__stack__capacity1: int,
+  a: us_split_discrs) =
+  (rec__integer_stacks__stack__capacity1 = to_rep1((a).rec__integer_stacks__stack__capacity))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -488,7 +492,7 @@ function to_int(b: bool) : int = (if (b = true) then 1 else 0)
 
 function of_int(i: int) : bool = (if (i = 0) then false else true)
 
-predicate in_range4(x: int) = ((x = 0) or (x = 1))
+predicate in_range5(x: int) = ((x = 0) or (x = 1))
 
 logic attr__ATTRIBUTE_IMAGE4 : bool -> us_image
 
@@ -582,9 +586,6 @@ function bool_eq8(a: us_rep1, b: us_rep1) : bool =
   (to_rep(((a).us_split_fields3).rec__integer_stacks__stack__top1) = to_rep(((b).us_split_fields3).rec__integer_stacks__stack__top1)))) then true else false)
 
 logic us_tag1 : int
-
-predicate in_range5(rec__integer_stacks__stack__capacity1: int, a: us_rep) =
-  (rec__integer_stacks__stack__capacity1 = to_rep1(((a).us_split_discrs1).rec__integer_stacks__stack__capacity))
 
 logic value__size2 : int
 
@@ -723,9 +724,6 @@ function bool_eq9(a: us_rep2, b: us_rep2) : bool =
   (to_rep(((a).us_split_fields5).rec__integer_stacks__stack__top2) = to_rep(((b).us_split_fields5).rec__integer_stacks__stack__top2)))) then true else false)
 
 logic us_tag2 : int
-
-predicate in_range6(rec__integer_stacks__stack__capacity1: int, a: us_rep) =
-  (rec__integer_stacks__stack__capacity1 = to_rep1(((a).us_split_discrs1).rec__integer_stacks__stack__capacity))
 
 logic value__size3 : int
 
@@ -900,8 +898,8 @@ predicate dynamic_invariant4(temp___expr_331: us_rep2,
   temp___is_init_327: bool, temp___skip_constant_328: bool,
   temp___do_toplevel_329: bool, temp___do_typ_inv_330: bool) =
   ((((not (temp___skip_constant_328 = true)) ->
-  in_range6(to_rep1(((left).us_split_discrs1).rec__integer_stacks__stack__capacity),
-  to_base1(temp___expr_331))) and
+  in_range4(to_rep1(((left).us_split_discrs1).rec__integer_stacks__stack__capacity),
+  (to_base1(temp___expr_331)).us_split_discrs1)) and
   (to_rep(((to_base1(temp___expr_331)).us_split_fields1).rec__integer_stacks__stack__top) <= to_rep1(((to_base1(temp___expr_331)).us_split_discrs1).rec__integer_stacks__stack__capacity))) and
   (dynamic_property(1,
   to_rep1(((left).us_split_discrs1).rec__integer_stacks__stack__capacity),
@@ -943,8 +941,8 @@ predicate dynamic_invariant5(temp___expr_311: us_rep1,
   temp___is_init_307: bool, temp___skip_constant_308: bool,
   temp___do_toplevel_309: bool, temp___do_typ_inv_310: bool) =
   ((((not (temp___skip_constant_308 = true)) ->
-  in_range5(to_rep1(((right).us_split_discrs1).rec__integer_stacks__stack__capacity),
-  to_base(temp___expr_311))) and
+  in_range4(to_rep1(((right).us_split_discrs1).rec__integer_stacks__stack__capacity),
+  (to_base(temp___expr_311)).us_split_discrs1)) and
   (to_rep(((to_base(temp___expr_311)).us_split_fields1).rec__integer_stacks__stack__top) <= to_rep1(((to_base(temp___expr_311)).us_split_discrs1).rec__integer_stacks__stack__capacity))) and
   (dynamic_property(1,
   to_rep1(((right).us_split_discrs1).rec__integer_stacks__stack__capacity),
@@ -970,7 +968,7 @@ predicate default_initial_assumption1(temp___expr_316: us_rep1,
 predicate dynamic_predicate2(temp___324: us_rep1) =
   (to_rep(((to_base(temp___324)).us_split_fields1).rec__integer_stacks__stack__top) <= to_rep1(((to_base(temp___324)).us_split_discrs1).rec__integer_stacks__stack__capacity))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-Q529-038__predicate-31044/src/gnatprove/integer_stacks__stack.mlw", line 1841, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-Q529-038__predicate-10627/src/gnatprove/integer_stacks__stack.mlw", line 1825, characters 5-8 *)
 goal defqtvc :
   (forall usf:int. (dynamic_invariant(usf, true, true, true, true) ->
   (forall usf1:us_rep.

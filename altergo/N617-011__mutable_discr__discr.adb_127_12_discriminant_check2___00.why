@@ -160,6 +160,10 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__private_discr__p_with_default,
   ((b).us_split_fields1).rec__private_discr__p_with_default) = true)) then true else false)
 
+predicate in_range2(rec__private_discr__p_with_default__c1: int,
+  a: us_split_discrs) =
+  (rec__private_discr__p_with_default__c1 = to_rep((a).rec__private_discr__p_with_default__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -219,8 +223,8 @@ goal defqtvc :
   (forall discr__p4__nested1__R26b__assume:int.
   ((to_rep(d__split_discrs) = discr__p4__nested1__R26b__assume) ->
   ((discr__p4__nested1__R26b__assume = r26b) -> (dynamic_invariant(r26b,
-  true, false, true, true) -> (let temp___409 = new_with_default(0)
-  : us_rep in ((new_with_default__function_guard(temp___409, 0) and
-  (to_rep(((temp___409).us_split_discrs1).rec__private_discr__p_with_default__c) = 0)) ->
+  true, false, true, true) -> (let temp___417 = new_with_default(0)
+  : us_rep in ((new_with_default__function_guard(temp___417, 0) and
+  (to_rep(((temp___417).us_split_discrs1).rec__private_discr__p_with_default__c) = 0)) ->
   ((d__attr__constrained = true) ->
-  (((temp___409).us_split_discrs1).rec__private_discr__p_with_default__c = d__split_discrs)))))))))
+  (((temp___417).us_split_discrs1).rec__private_discr__p_with_default__c = d__split_discrs)))))))))

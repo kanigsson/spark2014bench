@@ -386,19 +386,6 @@ axiom p_init__t__e__last__bit_axiom :
 
 axiom p_init__t__e__position_axiom : (0 <= p_init__t__e__position)
 
-logic p_init__t__x1__first__bit : int
-
-logic p_init__t__x1__last__bit : int
-
-logic p_init__t__x1__position : int
-
-axiom p_init__t__x1__first__bit_axiom : (0 <= p_init__t__x1__first__bit)
-
-axiom p_init__t__x1__last__bit_axiom :
-  (p_init__t__x1__first__bit <  p_init__t__x1__last__bit)
-
-axiom p_init__t__x1__position_axiom : (0 <= p_init__t__x1__position)
-
 logic p_init__t__x2__first__bit : int
 
 logic p_init__t__x2__last__bit : int
@@ -412,17 +399,35 @@ axiom p_init__t__x2__last__bit_axiom :
 
 axiom p_init__t__x2__position_axiom : (0 <= p_init__t__x2__position)
 
+logic p_init__t__x1__first__bit : int
+
+logic p_init__t__x1__last__bit : int
+
+logic p_init__t__x1__position : int
+
+axiom p_init__t__x1__first__bit_axiom : (0 <= p_init__t__x1__first__bit)
+
+axiom p_init__t__x1__last__bit_axiom :
+  (p_init__t__x1__first__bit <  p_init__t__x1__last__bit)
+
+axiom p_init__t__x1__position_axiom : (0 <= p_init__t__x1__position)
+
 logic user_eq5 : us_rep, us_rep -> bool
 
 logic dummy5 : us_rep
 
-type t__ref = { t__content : us_rep
+type tc1S__ref = { tc1S__content : us_rep
 }
 
-function t__ref_t__content__projection(a: t__ref) : us_rep = (a).t__content
+function tc1S__ref_tc1S__content__projection(a: tc1S__ref) : us_rep =
+  (a).tc1S__content
 
-predicate in_range4(rec__p_init__t__e1: int, a: us_rep) =
-  (rec__p_init__t__e1 = to_rep2(((a).us_split_discrs1).rec__p_init__t__e))
+logic c1 : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate in_range4(rec__p_init__t__e1: int, a: us_split_discrs) =
+  (rec__p_init__t__e1 = to_rep2((a).rec__p_init__t__e))
 
 logic value__size2 : int
 
@@ -449,19 +454,6 @@ axiom p_init__t__e__last__bit_axiom1 :
 
 axiom p_init__t__e__position_axiom1 : (0 <= p_init__t__e__position1)
 
-logic p_init__t__x2__first__bit1 : int
-
-logic p_init__t__x2__last__bit1 : int
-
-logic p_init__t__x2__position1 : int
-
-axiom p_init__t__x2__first__bit_axiom1 : (0 <= p_init__t__x2__first__bit1)
-
-axiom p_init__t__x2__last__bit_axiom1 :
-  (p_init__t__x2__first__bit1 <  p_init__t__x2__last__bit1)
-
-axiom p_init__t__x2__position_axiom1 : (0 <= p_init__t__x2__position1)
-
 logic p_init__t__x1__first__bit1 : int
 
 logic p_init__t__x1__last__bit1 : int
@@ -475,19 +467,27 @@ axiom p_init__t__x1__last__bit_axiom1 :
 
 axiom p_init__t__x1__position_axiom1 : (0 <= p_init__t__x1__position1)
 
+logic p_init__t__x2__first__bit1 : int
+
+logic p_init__t__x2__last__bit1 : int
+
+logic p_init__t__x2__position1 : int
+
+axiom p_init__t__x2__first__bit_axiom1 : (0 <= p_init__t__x2__first__bit1)
+
+axiom p_init__t__x2__last__bit_axiom1 :
+  (p_init__t__x2__first__bit1 <  p_init__t__x2__last__bit1)
+
+axiom p_init__t__x2__position_axiom1 : (0 <= p_init__t__x2__position1)
+
 logic user_eq6 : us_rep, us_rep -> bool
 
 logic dummy6 : us_rep
 
-type tc1S__ref = { tc1S__content : us_rep
+type t__ref = { t__content : us_rep
 }
 
-function tc1S__ref_tc1S__content__projection(a: tc1S__ref) : us_rep =
-  (a).tc1S__content
-
-logic c1 : us_rep
-
-logic attr__ATTRIBUTE_ADDRESS : int
+function t__ref_t__content__projection(a: t__ref) : us_rep = (a).t__content
 
 logic y1__attr__constrained : bool
 
@@ -500,9 +500,6 @@ predicate default_initial_assumption(temp___expr_172: us_rep,
 logic y2__attr__constrained : bool
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
-
-predicate in_range5(rec__p_init__t__e1: int, a: us_rep) =
-  (rec__p_init__t__e1 = to_rep2(((a).us_split_discrs1).rec__p_init__t__e))
 
 logic value__size3 : int
 
@@ -574,14 +571,12 @@ logic attr__ATTRIBUTE_ADDRESS3 : int
 predicate dynamic_invariant(temp___expr_203: us_rep,
   temp___is_init_199: bool, temp___skip_constant_200: bool,
   temp___do_toplevel_201: bool, temp___do_typ_inv_202: bool) =
-  ((not (temp___skip_constant_200 = true)) -> in_range5(0, temp___expr_203))
+  ((not (temp___skip_constant_200 = true)) -> in_range4(0,
+  (temp___expr_203).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_205: us_rep,
   temp___skip_top_level_206: bool) =
   (to_rep2(((temp___expr_205).us_split_discrs1).rec__p_init__t__e) = 0)
-
-predicate in_range6(rec__p_init__t__e1: int, a: us_rep) =
-  (rec__p_init__t__e1 = to_rep2(((a).us_split_discrs1).rec__p_init__t__e))
 
 logic value__size4 : int
 
@@ -653,7 +648,8 @@ logic attr__ATTRIBUTE_ADDRESS4 : int
 predicate dynamic_invariant1(temp___expr_214: us_rep,
   temp___is_init_210: bool, temp___skip_constant_211: bool,
   temp___do_toplevel_212: bool, temp___do_typ_inv_213: bool) =
-  ((not (temp___skip_constant_211 = true)) -> in_range6(1, temp___expr_214))
+  ((not (temp___skip_constant_211 = true)) -> in_range4(1,
+  (temp___expr_214).us_split_discrs1))
 
 predicate default_initial_assumption2(temp___expr_216: us_rep,
   temp___skip_top_level_217: bool) =
@@ -666,14 +662,12 @@ logic init__function_guard : us_rep, unit -> prop
 predicate dynamic_invariant2(temp___expr_181: us_rep,
   temp___is_init_177: bool, temp___skip_constant_178: bool,
   temp___do_toplevel_179: bool, temp___do_typ_inv_180: bool) =
-  ((not (temp___skip_constant_178 = true)) -> in_range4(0, temp___expr_181))
+  ((not (temp___skip_constant_178 = true)) -> in_range4(0,
+  (temp___expr_181).us_split_discrs1))
 
 predicate default_initial_assumption3(temp___expr_183: us_rep,
   temp___skip_top_level_184: bool) =
   (to_rep2(((temp___expr_183).us_split_discrs1).rec__p_init__t__e) = 0)
-
-predicate in_range7(rec__p_init__t__e1: int, a: us_rep) =
-  (rec__p_init__t__e1 = to_rep2(((a).us_split_discrs1).rec__p_init__t__e))
 
 logic value__size5 : int
 
@@ -736,45 +730,45 @@ type t1b__ref = { t1b__content : us_rep
 function t1b__ref_t1b__content__projection(a: t1b__ref) : us_rep =
   (a).t1b__content
 
-logic temp___String_Literal_236 : unit -> (int,character) farray
+logic temp___String_Literal_240 : unit -> (int,character) farray
 
-axiom temp___String_Literal_236__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_236(us_void_param)].
-  (to_rep((temp___String_Literal_236(us_void_param)[1])) = 89))
+axiom temp___String_Literal_240__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_240(us_void_param)].
+  (to_rep((temp___String_Literal_240(us_void_param)[1])) = 89))
 
-axiom temp___String_Literal_236__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_236(us_void_param)].
-  (to_rep((temp___String_Literal_236(us_void_param)[2])) = 50))
+axiom temp___String_Literal_240__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_240(us_void_param)].
+  (to_rep((temp___String_Literal_240(us_void_param)[2])) = 50))
 
-logic temp___String_Literal_238 : unit -> (int,character) farray
+logic temp___String_Literal_243 : unit -> (int,character) farray
 
-axiom temp___String_Literal_238__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_238(us_void_param)].
-  (to_rep((temp___String_Literal_238(us_void_param)[1])) = 90))
+axiom temp___String_Literal_243__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_243(us_void_param)].
+  (to_rep((temp___String_Literal_243(us_void_param)[1])) = 90))
 
-axiom temp___String_Literal_238__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_238(us_void_param)].
-  (to_rep((temp___String_Literal_238(us_void_param)[2])) = 50))
+axiom temp___String_Literal_243__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_243(us_void_param)].
+  (to_rep((temp___String_Literal_243(us_void_param)[2])) = 50))
 
-logic temp___String_Literal_242 : unit -> (int,character) farray
+logic temp___String_Literal_247 : unit -> (int,character) farray
 
-axiom temp___String_Literal_242__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_242(us_void_param)].
-  (to_rep((temp___String_Literal_242(us_void_param)[1])) = 89))
+axiom temp___String_Literal_247__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_247(us_void_param)].
+  (to_rep((temp___String_Literal_247(us_void_param)[1])) = 89))
 
-axiom temp___String_Literal_242__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_242(us_void_param)].
-  (to_rep((temp___String_Literal_242(us_void_param)[2])) = 49))
+axiom temp___String_Literal_247__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_247(us_void_param)].
+  (to_rep((temp___String_Literal_247(us_void_param)[2])) = 49))
 
-logic temp___String_Literal_246 : unit -> (int,character) farray
+logic temp___String_Literal_252 : unit -> (int,character) farray
 
-axiom temp___String_Literal_246__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_246(us_void_param)].
-  (to_rep((temp___String_Literal_246(us_void_param)[1])) = 90))
+axiom temp___String_Literal_252__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_252(us_void_param)].
+  (to_rep((temp___String_Literal_252(us_void_param)[1])) = 90))
 
-axiom temp___String_Literal_246__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_246(us_void_param)].
-  (to_rep((temp___String_Literal_246(us_void_param)[2])) = 49))
+axiom temp___String_Literal_252__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_252(us_void_param)].
+  (to_rep((temp___String_Literal_252(us_void_param)[2])) = 49))
 
 predicate dynamic_invariant3(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
@@ -823,7 +817,7 @@ goal defqtvc :
   us_split_fields1 = z1__split_fields }, false, false, true, true) ->
   ((z1__attr__constrained = true) -> (dynamic_invariant1({ us_split_discrs1 =
   z2__split_discrs; us_split_fields1 = z2__split_fields }, false, false,
-  true, true) -> ((z2__attr__constrained = true) -> (let temp___233 =
-  init(void) : us_rep in (init__function_guard(temp___233, void) ->
+  true, true) -> ((z2__attr__constrained = true) -> (let temp___237 =
+  init(void) : us_rep in (init__function_guard(temp___237, void) ->
   ((y2__attr__constrained = true) ->
-  (((temp___233).us_split_discrs1).rec__p_init__t__e = y2__split_discrs)))))))))))))))
+  (((temp___237).us_split_discrs1).rec__p_init__t__e = y2__split_discrs)))))))))))))))

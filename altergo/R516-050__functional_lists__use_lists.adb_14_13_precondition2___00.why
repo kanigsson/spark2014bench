@@ -283,7 +283,7 @@ function cursor__ref_cursor__content__2__projection(a: cursor__ref1) : us_rep =
 type element_type__ref = { element_type__content : us_rep
 }
 
-function element_type__ref_element_type__content__13__projection(a: element_type__ref) : us_rep =
+function element_type__ref_element_type__content__9__projection(a: element_type__ref) : us_rep =
   (a).element_type__content
 
 logic find : us_rep2, us_rep, us_type_of_heap -> int
@@ -374,13 +374,13 @@ logic dummy7 : element_type
 type element_type__ref1 = { element_type__content1 : element_type
 }
 
-function element_type__ref_element_type__content__14__projection(a: element_type__ref1) : element_type =
+function element_type__ref_element_type__content__10__projection(a: element_type__ref1) : element_type =
   (a).element_type__content1
 
-predicate dynamic_invariant2(temp___expr_678: int, temp___is_init_674: bool,
-  temp___skip_constant_675: bool, temp___do_toplevel_676: bool,
-  temp___do_typ_inv_677: bool) = (((temp___is_init_674 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range3(temp___expr_678))
+predicate dynamic_invariant2(temp___expr_593: int, temp___is_init_589: bool,
+  temp___skip_constant_590: bool, temp___do_toplevel_591: bool,
+  temp___do_typ_inv_592: bool) = (((temp___is_init_589 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range3(temp___expr_593))
 
 axiom get__post_axiom :
   (forall s:us_rep3. (forall n:int [get1(s, n)]. in_range3(get1(s, n))))
@@ -477,15 +477,15 @@ logic has_element : us_rep1, us_rep, us_type_of_heap -> bool
 logic has_element__function_guard : bool, us_rep1, us_rep,
   us_type_of_heap -> prop
 
-axiom temp___result_608qtdef :
-  (forall temp___607:us_rep1. length__function_guard(length(temp___607),
-  temp___607))
+axiom temp___result_523qtdef :
+  (forall temp___522:us_rep1. length__function_guard(length(temp___522),
+  temp___522))
 
-predicate default_initial_assumption(temp___expr_605: us_rep1,
-  temp___skip_top_level_606: bool) =
-  (((temp___expr_605).attr__tag = us_tag) and
-  ((not (temp___skip_top_level_606 = true)) ->
-  (length(temp___expr_605) = 0)))
+predicate default_initial_assumption(temp___expr_520: us_rep1,
+  temp___skip_top_level_521: bool) =
+  (((temp___expr_520).attr__tag = us_tag) and
+  ((not (temp___skip_top_level_521 = true)) ->
+  (length(temp___expr_520) = 0)))
 
 logic snoc : us_rep2, us_rep, us_type_of_heap -> us_rep2
 

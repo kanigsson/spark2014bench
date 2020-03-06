@@ -304,8 +304,8 @@ goal defqtvc :
   (forall o:int.
   ((to_rep((((x__split_fields).rec__records_prooffuncs__optional_pair__the_pair).us_split_fields1).rec__records_prooffuncs__pair__b) = o) ->
   (let o1 = { us_split_fields3 = x__split_fields } : us_rep1 in
-  (let temp___648 = update_a(o1, o) : us_rep1 in
-  ((update_a__function_guard(temp___648, o1, o) and (bool_eq3(temp___648, {
+  (let temp___672 = update_a(o1, o) : us_rep1 in
+  ((update_a__function_guard(temp___672, o1, o) and (bool_eq3(temp___672, {
   us_split_fields3 = { rec__records_prooffuncs__optional_pair__exists =
   (x__split_fields).rec__records_prooffuncs__optional_pair__exists;
   rec__records_prooffuncs__optional_pair__the_pair = { us_split_fields1 = {
@@ -314,5 +314,5 @@ goal defqtvc :
   (((x__split_fields).rec__records_prooffuncs__optional_pair__the_pair).us_split_fields1).rec__records_prooffuncs__pair__b
   } } } }) = true)) ->
   (forall x__split_fields2:us_split_fields2.
-  ((x__split_fields2 = (temp___648).us_split_fields3) ->
+  ((x__split_fields2 = (temp___672).us_split_fields3) ->
   (to_rep((((x__split_fields2).rec__records_prooffuncs__optional_pair__the_pair).us_split_fields1).rec__records_prooffuncs__pair__a) = to_rep((((x__split_fields1).rec__records_prooffuncs__optional_pair__the_pair).us_split_fields1).rec__records_prooffuncs__pair__b))))))))))))

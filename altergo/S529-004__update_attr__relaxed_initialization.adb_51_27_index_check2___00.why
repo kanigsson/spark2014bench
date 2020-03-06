@@ -1276,6 +1276,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (relaxed_initialization__rec__z__pred(a) ->
   (to_rep3((((a).us_split_fields1).rec__relaxed_initialization__rec__z).rec__value2) = to_rep3((((b).us_split_fields1).rec__relaxed_initialization__rec__z).rec__value2))))) then true else false)
 
+predicate in_range7(rec__relaxed_initialization__rec__d1: bool,
+  a: us_split_discrs) =
+  (rec__relaxed_initialization__rec__d1 = (a).rec__relaxed_initialization__rec__d)
+
 logic value__size : int
 
 logic object__size : int

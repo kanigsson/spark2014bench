@@ -457,7 +457,7 @@ function t11b__ref_t11b__content__projection(a: t11b__ref) : t11b =
 
 logic member__a__aggregate_def : int -> (int,natural) farray
 
-logic temp_____aggregate_def_229 : int -> (int,natural) farray
+logic temp_____aggregate_def_231 : int -> (int,natural) farray
 
 predicate dynamic_invariant2(temp___expr_39: int, temp___is_init_35: bool,
   temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
@@ -509,10 +509,10 @@ logic rliteral1 : natural
 axiom rliteral_axiom1 : (naturalqtint(rliteral1) = 1)
 
 axiom def_axiom4 :
-  (forall temp___231:int. (dynamic_invariant2(temp___231, true, true, true,
+  (forall temp___233:int. (dynamic_invariant2(temp___233, true, true, true,
   true) ->
-  (forall temp___232:int.
-  ((temp_____aggregate_def_229(temp___231)[temp___232]) = rliteral1))))
+  (forall temp___234:int.
+  ((temp_____aggregate_def_231(temp___233)[temp___234]) = rliteral1))))
 
  (* File "member.adb", line 1, characters 0-0 *)
 goal defqtvc : (let member__a__assume = of_array(member__a__aggregate_def(0),
@@ -521,12 +521,12 @@ goal defqtvc : (let member__a__assume = of_array(member__a__aggregate_def(0),
   ((to_rep(a__first) = first1(member__a__assume)) ->
   ((to_rep(a__last) = last1(member__a__assume)) -> (dynamic_property(1,
   2147483647, to_rep(a__first), to_rep(a__last)) ->
-  (init__function_guard(init(1), 1) -> (init__function_guard(init(1), 1) ->
-  (((first1(init(1)) = 1) and (last1(init(1)) = 10)) ->
+  (init__function_guard(init(1), 1) -> ((let temp___214 = init(1) : us_t in
+  ((first1(temp___214) = 1) and (last1(temp___214) = 10))) ->
   (init__function_guard(init(2), 2) -> (init__function_guard(init(1), 1) ->
   ((bool_eq4(to_array(init(1)), first1(init(1)), last1(init(1)),
   to_array(init(2)), first1(init(2)), last1(init(2))) = true) ->
-  (init__function_guard(init(1), 1) -> (let temp___225 = init(1) : us_t in
-  ((init__function_guard(init(2), 2) -> (bool_eq5(temp___225,
+  (init__function_guard(init(1), 1) -> (let temp___227 = init(1) : us_t in
+  ((init__function_guard(init(2), 2) -> (bool_eq5(temp___227,
   init(2)) = true)) or (init__function_guard(init(3), 3) ->
-  (bool_eq5(temp___225, init(3)) = true)))))))))))))))))
+  (bool_eq5(temp___227, init(3)) = true))))))))))))))))

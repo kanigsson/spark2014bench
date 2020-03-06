@@ -264,6 +264,10 @@ function bool_eq4(a: us_rep, b: us_rep) : bool =
   (nested_init_by_proof__rec__f3__pred(a) ->
   (to_rep((((a).us_split_fields1).rec__nested_init_by_proof__rec__f3).rec__value) = to_rep((((b).us_split_fields1).rec__nested_init_by_proof__rec__f3).rec__value))))) then true else false)
 
+predicate in_range3(rec__nested_init_by_proof__rec__d1: bool,
+  a: us_split_discrs) =
+  (rec__nested_init_by_proof__rec__d1 = (a).rec__nested_init_by_proof__rec__d)
+
 logic value__size : int
 
 logic object__size : int
@@ -541,6 +545,10 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   (bool_eq6(((a).us_split_fields3).rec__nested_init_by_proof__holder__content,
   ((b).us_split_fields3).rec__nested_init_by_proof__holder__content) = true)) then true else false)
 
+predicate in_range4(rec__nested_init_by_proof__holder__d1: int,
+  a: us_split_discrs2) =
+  (rec__nested_init_by_proof__holder__d1 = to_rep((a).rec__nested_init_by_proof__holder__d))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -601,7 +609,7 @@ axiom tT6bP1qtaxiom : (forall i:tT6bP1. (1 <= tT6bP1qtint(i)))
 
 axiom tT6bP1qtaxiom1 : (forall i:tT6bP1. (tT6bP1qtint(i) <= 15))
 
-predicate in_range3(x: int) = ((1 <= x) and (x <= 15))
+predicate in_range5(x: int) = ((1 <= x) and (x <= 15))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -682,9 +690,6 @@ function bool_eq9(a: us_rep2, b: us_rep2) : bool =
   1, 15, ((b).us_split_fields5).rec__nested_init_by_proof__holder__content1,
   1, 15) = true)) then true else false)
 
-predicate in_range4(rec__nested_init_by_proof__holder__d1: int, a: us_rep1) =
-  (rec__nested_init_by_proof__holder__d1 = to_rep(((a).us_split_discrs3).rec__nested_init_by_proof__holder__d))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -745,7 +750,7 @@ predicate dynamic_invariant2(temp___expr_245: us_rep2,
   temp___is_init_241: bool, temp___skip_constant_242: bool,
   temp___do_toplevel_243: bool, temp___do_typ_inv_244: bool) =
   ((not (temp___skip_constant_242 = true)) -> in_range4(15,
-  to_base(temp___expr_245)))
+  (to_base(temp___expr_245)).us_split_discrs3))
 
 predicate default_initial_assumption1(temp___expr_249: us_rep2,
   temp___skip_top_level_250: bool) =
@@ -760,9 +765,6 @@ predicate default_initial_assumption1(temp___expr_249: us_rep2,
   (((((((temp___expr_249).us_split_fields5).rec__nested_init_by_proof__holder__content1[temp___253])).us_split_fields1).rec__nested_init_by_proof__rec__f3).attr__init = false)))))))
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
-
-predicate in_range5(rec__nested_init_by_proof__rec__d1: bool, a: us_rep) =
-  (rec__nested_init_by_proof__rec__d1 = ((a).us_split_discrs1).rec__nested_init_by_proof__rec__d)
 
 logic value__size5 : int
 
@@ -855,8 +857,8 @@ logic attr__ATTRIBUTE_ADDRESS2 : int
 predicate dynamic_invariant3(temp___expr_262: us_rep,
   temp___is_init_258: bool, temp___skip_constant_259: bool,
   temp___do_toplevel_260: bool, temp___do_typ_inv_261: bool) =
-  ((not (temp___skip_constant_259 = true)) -> in_range5(of_int(1),
-  temp___expr_262))
+  ((not (temp___skip_constant_259 = true)) -> in_range3(of_int(1),
+  (temp___expr_262).us_split_discrs1))
 
 predicate default_initial_assumption2(temp___expr_264: us_rep,
   temp___skip_top_level_265: bool) =
@@ -867,9 +869,6 @@ predicate default_initial_assumption2(temp___expr_264: us_rep,
   (nested_init_by_proof__rec__f1__pred(temp___expr_264) ->
   ((to_rep((((temp___expr_264).us_split_fields1).rec__nested_init_by_proof__rec__f1).rec__value) = 15) and
   ((((temp___expr_264).us_split_fields1).rec__nested_init_by_proof__rec__f1).attr__init = true)))))
-
-predicate in_range6(rec__nested_init_by_proof__rec__d1: bool, a: us_rep) =
-  (rec__nested_init_by_proof__rec__d1 = ((a).us_split_discrs1).rec__nested_init_by_proof__rec__d)
 
 logic value__size6 : int
 

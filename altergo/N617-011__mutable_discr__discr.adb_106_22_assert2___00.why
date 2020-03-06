@@ -148,6 +148,10 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__private_discr__p_with_default,
   ((b).us_split_fields1).rec__private_discr__p_with_default) = true)) then true else false)
 
+predicate in_range1(rec__private_discr__p_with_default__c1: int,
+  a: us_split_discrs) =
+  (rec__private_discr__p_with_default__c1 = to_rep((a).rec__private_discr__p_with_default__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -197,9 +201,6 @@ logic d__attr__constrained : bool
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
 
-predicate in_range1(rec__private_discr__p_with_default__c1: int, a: us_rep) =
-  (rec__private_discr__p_with_default__c1 = to_rep(((a).us_split_discrs1).rec__private_discr__p_with_default__c))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -246,7 +247,8 @@ logic attr__ATTRIBUTE_ADDRESS2 : int
 predicate dynamic_invariant1(temp___expr_258: us_rep,
   temp___is_init_254: bool, temp___skip_constant_255: bool,
   temp___do_toplevel_256: bool, temp___do_typ_inv_257: bool) =
-  ((not (temp___skip_constant_255 = true)) -> in_range1(c, temp___expr_258))
+  ((not (temp___skip_constant_255 = true)) -> in_range1(c,
+  (temp___expr_258).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_260: us_rep,
   temp___skip_top_level_261: bool) =
@@ -281,20 +283,20 @@ goal defqtvc :
   rec__private_discr__p_with_default__c = d2__split_discrs };
   us_split_fields1 = { rec__private_discr__p_with_default = d2__split_fields
   } }, false) -> ((not (d__attr__constrained = true)) ->
-  ((d1__attr__constrained = true) -> (let o1 = c : int in (let temp___375 =
+  ((d1__attr__constrained = true) -> (let o1 = c : int in (let temp___379 =
   new_with_default(o1) : us_rep in
-  ((new_with_default__function_guard(temp___375, o1) and
-  (to_rep(((temp___375).us_split_discrs1).rec__private_discr__p_with_default__c) = o1)) ->
+  ((new_with_default__function_guard(temp___379, o1) and
+  (to_rep(((temp___379).us_split_discrs1).rec__private_discr__p_with_default__c) = o1)) ->
   (((d__attr__constrained = true) ->
-  (((temp___375).us_split_discrs1).rec__private_discr__p_with_default__c = d__split_discrs)) ->
+  (((temp___379).us_split_discrs1).rec__private_discr__p_with_default__c = d__split_discrs)) ->
   (forall d__split_fields1:us_main_type. (({
   rec__private_discr__p_with_default = d__split_fields1
-  } = (temp___375).us_split_fields1) ->
+  } = (temp___379).us_split_fields1) ->
   (forall d__split_discrs1:natural. (({
   rec__private_discr__p_with_default__c = d__split_discrs1
-  } = (temp___375).us_split_discrs1) -> (let temp___378 = new_with_default(0)
-  : us_rep in ((new_with_default__function_guard(temp___378, 0) and
-  (to_rep(((temp___378).us_split_discrs1).rec__private_discr__p_with_default__c) = 0)) ->
+  } = (temp___379).us_split_discrs1) -> (let temp___382 = new_with_default(0)
+  : us_rep in ((new_with_default__function_guard(temp___382, 0) and
+  (to_rep(((temp___382).us_split_discrs1).rec__private_discr__p_with_default__c) = 0)) ->
   (((d__attr__constrained = true) ->
-  (((temp___378).us_split_discrs1).rec__private_discr__p_with_default__c = d__split_discrs1)) ->
+  (((temp___382).us_split_discrs1).rec__private_discr__p_with_default__c = d__split_discrs1)) ->
   (not (d2__attr__constrained = true)))))))))))))))))))))))))))))))

@@ -543,11 +543,11 @@ axiom temp___String_Literal_164__def_axiom :
   (forall us_void_param:unit [temp___String_Literal_164(us_void_param)].
   (to_rep((temp___String_Literal_164(us_void_param)[1])) = 32))
 
-logic temp___String_Literal_215 : unit -> (int,character) farray
+logic temp___String_Literal_223 : unit -> (int,character) farray
 
-axiom temp___String_Literal_215__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_215(us_void_param)].
-  (to_rep((temp___String_Literal_215(us_void_param)[1])) = 33))
+axiom temp___String_Literal_223__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_223(us_void_param)].
+  (to_rep((temp___String_Literal_223(us_void_param)[1])) = 33))
 
 predicate dynamic_invariant2(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
@@ -730,31 +730,31 @@ goal defqtvc :
   0)) else (hello__say_hello__prefix__assume = of_array(temp___String_Literal_164(void),
   1, 1))) -> ((hello__say_hello__prefix__assume = prefix) ->
   (dynamic_invariant(prefix, true, false, true, true) ->
-  (forall temp___216:us_t.
-  ((forall o:us_t. forall temp___214:us_t.
-   to_caml_char2__function_guard(to_caml_char2(o, temp___214, last1(o)), o,
-   temp___214, last1(o))) ->
-  ((let o = who : us_t in (let temp___214 = to_camel_case(o) : us_t in
-  ((to_camel_case__function_guard(temp___214, o) and
-  (dynamic_invariant(temp___214, true, false, true, true) and
-  (((first1(temp___214) = first1(o)) and (last1(temp___214) = last1(o))) and
-  (to_caml_char2(o, temp___214, last1(o)) = true)))) and
-  (exists temp___213:us_t.
-  ((if (length1(hello) = 0) then (temp___213 = of_array(to_array(prefix),
+  (forall temp___224:us_t.
+  ((forall o:us_t. forall temp___222:us_t.
+   to_caml_char2__function_guard(to_caml_char2(o, temp___222, last1(o)), o,
+   temp___222, last1(o))) ->
+  ((let o = who : us_t in (let temp___222 = to_camel_case(o) : us_t in
+  ((to_camel_case__function_guard(temp___222, o) and
+  (dynamic_invariant(temp___222, true, false, true, true) and
+  (((first1(temp___222) = first1(o)) and (last1(temp___222) = last1(o))) and
+  (to_caml_char2(o, temp___222, last1(o)) = true)))) and
+  (exists temp___221:us_t.
+  ((if (length1(hello) = 0) then (temp___221 = of_array(to_array(prefix),
   first1(prefix), last1(prefix))) else (let o1 =
   ((first1(hello) + (length(first1(hello),
   last1(hello)) + length(first1(prefix), last1(prefix)))) - 1) : int in
-  (in_range(o1) and (temp___213 = of_array(concat(to_array(hello),
+  (in_range(o1) and (temp___221 = of_array(concat(to_array(hello),
   first1(hello), last1(hello), to_array(prefix), first1(prefix),
   last1(prefix)), first1(hello), o1))))) and
-  (if (length1(temp___213) = 0) then (temp___216 = of_array(to_array(temp___214),
-  first1(temp___214), last1(temp___214))) else (let o1 =
-  ((first1(temp___213) + (length(first1(temp___213),
-  last1(temp___213)) + length(first1(temp___214), last1(temp___214)))) - 1)
+  (if (length1(temp___221) = 0) then (temp___224 = of_array(to_array(temp___222),
+  first1(temp___222), last1(temp___222))) else (let o1 =
+  ((first1(temp___221) + (length(first1(temp___221),
+  last1(temp___221)) + length(first1(temp___222), last1(temp___222)))) - 1)
   : int in (in_range(o1) and
-  (temp___216 = of_array(concat(to_array(temp___213), first1(temp___213),
-  last1(temp___213), to_array(temp___214), first1(temp___214),
-  last1(temp___214)), first1(temp___213), o1)))))))))) ->
-  ((not (length1(temp___216) = 0)) ->
-  in_range(((first1(temp___216) + (length(first1(temp___216),
-  last1(temp___216)) + length(1, 1))) - 1)))))))))))))))))
+  (temp___224 = of_array(concat(to_array(temp___221), first1(temp___221),
+  last1(temp___221), to_array(temp___222), first1(temp___222),
+  last1(temp___222)), first1(temp___221), o1)))))))))) ->
+  ((not (length1(temp___224) = 0)) ->
+  in_range(((first1(temp___224) + (length(first1(temp___224),
+  last1(temp___224)) + length(1, 1))) - 1)))))))))))))))))

@@ -1003,6 +1003,9 @@ function bool_eq9(a: us_rep1, b: us_rep1) : bool =
   (bool_eq8(((a).us_split_fields3).rec__repro__ensemble__areas,
   ((b).us_split_fields3).rec__repro__ensemble__areas) = true)) then true else false)
 
+predicate in_range3(rec__repro__ensemble__size1: int, a: us_split_discrs) =
+  (rec__repro__ensemble__size1 = to_rep2((a).rec__repro__ensemble__size))
+
 logic value__size2 : int
 
 logic object__size2 : int

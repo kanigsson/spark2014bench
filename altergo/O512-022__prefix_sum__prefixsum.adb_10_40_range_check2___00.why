@@ -365,8 +365,9 @@ axiom all_elements_in__def_axiom1 :
 axiom all_elements_in__def_axiom2 :
   (forall a:(int,integer) farray.
   (forall max:int [all_elements_in(a, max)].
-  ((forall k:int. (((0 <= k) and (k <= 7)) -> (((-max) <= to_rep((a[k]))) and
-   (to_rep((a[k])) <= max)))) ->
+  ((forall k:int. (((0 <= k) and (k <= 7)) -> (let temp___179 =
+   to_rep((a[k])) : int in (((-max) <= temp___179) and
+   (temp___179 <= max))))) ->
   (all_elements_in(a, max) = true))))
 
 logic all_left_elements_in : (int,integer) farray, int, int -> bool
@@ -397,7 +398,8 @@ axiom all_left_elements_in__def_axiom2 :
   (forall a:(int,integer) farray.
   (forall right:int. forall max:int [all_left_elements_in(a, right, max)].
   ((forall k:int. (((0 <= k) and (k <= 7)) -> ((k <  right) ->
-   (((-max) <= to_rep((a[k]))) and (to_rep((a[k])) <= max))))) ->
+   (let temp___183 = to_rep((a[k])) : int in (((-max) <= temp___183) and
+   (temp___183 <= max)))))) ->
   (all_left_elements_in(a, right, max) = true))))
 
 logic all_right_elements_in : (int,integer) farray, int, int -> bool
@@ -423,7 +425,8 @@ axiom all_right_elements_in__def_axiom2 :
   (forall a:(int,integer) farray.
   (forall left:int. forall max:int [all_right_elements_in(a, left, max)].
   ((forall k:int. (((0 <= k) and (k <= 7)) -> ((left <  k) ->
-   (((-max) <= to_rep((a[k]))) and (to_rep((a[k])) <= max))))) ->
+   (let temp___187 = to_rep((a[k])) : int in (((-max) <= temp___187) and
+   (temp___187 <= max)))))) ->
   (all_right_elements_in(a, left, max) = true))))
 
 logic intermediate_form : (int,integer) farray, (int,integer) farray -> bool
@@ -552,33 +555,33 @@ goal defqtvc :
   (forall space:int. ((space = 1) -> (dynamic_invariant1(space, true, false,
   true, true) -> (dynamic_invariant(left, false, false, true, true) ->
   (dynamic_invariant(right, false, false, true, true) -> ((space <  8) ->
-  (forall temp___loop_entry_216:(int,integer) farray.
-  ((temp___loop_entry_216 = a) ->
-  (forall temp___loop_entry_231:(int,integer) farray.
-  ((temp___loop_entry_231 = a) ->
-  (forall temp___loop_entry_223:(int,integer) farray.
-  ((temp___loop_entry_223 = a) ->
-  (forall temp___loop_entry_222:(int,integer) farray.
-  ((temp___loop_entry_222 = a) ->
-  (forall temp___loop_entry_229:(int,integer) farray.
-  ((temp___loop_entry_229 = a) ->
-  (forall temp___loop_entry_221:(int,integer) farray.
-  ((temp___loop_entry_221 = a) ->
-  (forall temp___loop_entry_220:(int,integer) farray.
-  ((temp___loop_entry_220 = a) ->
-  (forall temp___loop_entry_227:(int,integer) farray.
-  ((temp___loop_entry_227 = a) ->
-  (forall temp___loop_entry_219:(int,integer) farray.
-  ((temp___loop_entry_219 = a) ->
+  (forall temp___loop_entry_228:(int,integer) farray.
+  ((temp___loop_entry_228 = a) ->
+  (forall temp___loop_entry_243:(int,integer) farray.
+  ((temp___loop_entry_243 = a) ->
+  (forall temp___loop_entry_235:(int,integer) farray.
+  ((temp___loop_entry_235 = a) ->
   (forall temp___loop_entry_234:(int,integer) farray.
   ((temp___loop_entry_234 = a) ->
-  (forall temp___loop_entry_225:(int,integer) farray.
-  ((temp___loop_entry_225 = a) ->
-  (forall temp___loop_entry_218:(int,integer) farray.
-  ((temp___loop_entry_218 = a) ->
-  (forall temp___loop_entry_224:(int,integer) farray.
-  ((temp___loop_entry_224 = a) ->
-  (forall temp___loop_entry_217:(int,integer) farray.
-  ((temp___loop_entry_217 = a) ->
+  (forall temp___loop_entry_241:(int,integer) farray.
+  ((temp___loop_entry_241 = a) ->
+  (forall temp___loop_entry_233:(int,integer) farray.
+  ((temp___loop_entry_233 = a) ->
   (forall temp___loop_entry_232:(int,integer) farray.
-  ((temp___loop_entry_232 = a) -> in_range3((space * 1000000)))))))))))))))))))))))))))))))))))))))))))
+  ((temp___loop_entry_232 = a) ->
+  (forall temp___loop_entry_239:(int,integer) farray.
+  ((temp___loop_entry_239 = a) ->
+  (forall temp___loop_entry_231:(int,integer) farray.
+  ((temp___loop_entry_231 = a) ->
+  (forall temp___loop_entry_246:(int,integer) farray.
+  ((temp___loop_entry_246 = a) ->
+  (forall temp___loop_entry_237:(int,integer) farray.
+  ((temp___loop_entry_237 = a) ->
+  (forall temp___loop_entry_230:(int,integer) farray.
+  ((temp___loop_entry_230 = a) ->
+  (forall temp___loop_entry_236:(int,integer) farray.
+  ((temp___loop_entry_236 = a) ->
+  (forall temp___loop_entry_229:(int,integer) farray.
+  ((temp___loop_entry_229 = a) ->
+  (forall temp___loop_entry_244:(int,integer) farray.
+  ((temp___loop_entry_244 = a) -> in_range3((space * 1000000)))))))))))))))))))))))))))))))))))))))))))

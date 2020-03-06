@@ -231,7 +231,7 @@ axiom dic2__child__compat_axiom3 :
   (is_ok__function_guard3(is_ok3(us_tag, obj), us_tag, obj) ->
   (to_int(is_ok(obj)) = to_int(is_ok3(us_tag, obj)))))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA19-039__inherited_dic-9521/src/gnatprove/dic2__child.mlw", line 401, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA19-039__inherited_dic-25845/src/gnatprove/dic2__child.mlw", line 401, characters 5-8 *)
 goal defqtvc :
   (forall usf:us_rep.
   ((forall usf1:us_rep. is_ok__function_guard(is_ok(usf1), usf1)) ->

@@ -190,6 +190,9 @@ function bool_eq3(a: us_rep, b: us_rep) : bool =
   (if ((to_int(((a).us_split_discrs1).rec__dispatch__mut_rec__d) = to_int(((b).us_split_discrs1).rec__dispatch__mut_rec__d)) and
   (to_rep(((a).us_split_fields1).rec__dispatch__mut_rec__i) = to_rep(((b).us_split_fields1).rec__dispatch__mut_rec__i))) then true else false)
 
+predicate in_range3(rec__dispatch__mut_rec__d1: bool, a: us_split_discrs) =
+  (rec__dispatch__mut_rec__d1 = (a).rec__dispatch__mut_rec__d)
+
 logic value__size : int
 
 logic object__size : int
@@ -273,7 +276,7 @@ axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
 
 axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -300,10 +303,10 @@ logic of_rep1 : int -> natural
 axiom inversion_axiom1 :
   (forall x:natural [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
 
-axiom range_axiom1 : (forall x:natural [to_rep1(x)]. in_range3(to_rep1(x)))
+axiom range_axiom1 : (forall x:natural [to_rep1(x)]. in_range4(to_rep1(x)))
 
 axiom coerce_axiom1 :
-  (forall x:int [to_rep1(of_rep1(x))]. (in_range3(x) ->
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range4(x) ->
   (to_rep1(of_rep1(x)) = x)))
 
 type map__ref = { map__content : (int,natural) farray

@@ -180,5 +180,5 @@ predicate dynamic_invariant1(temp___expr_161: int, temp___is_init_157: bool,
 
 axiom first__def_axiom : (first = one)
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-Q106-022__default_value-18616/src/gnatprove/check_default_value__p__t.mlw", line 296, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-Q106-022__default_value-493/src/gnatprove/check_default_value__p__t.mlw", line 296, characters 5-8 *)
 goal defqtvc : dynamic_property(first, 2147483647, 0)

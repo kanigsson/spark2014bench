@@ -410,6 +410,10 @@ function bool_eq4(a: us_rep2, b: us_rep2) : bool =
   (bool_eq3(((a).us_split_fields5).rec__use_unchecked_union__myunion__record2,
   ((b).us_split_fields5).rec__use_unchecked_union__myunion__record2) = true)))) then true else false)
 
+predicate in_range1(rec__use_unchecked_union__myunion__discr1: int,
+  a: us_split_discrs) =
+  (rec__use_unchecked_union__myunion__discr1 = to_rep((a).rec__use_unchecked_union__myunion__discr))
+
 logic value__size4 : int
 
 logic object__size4 : int

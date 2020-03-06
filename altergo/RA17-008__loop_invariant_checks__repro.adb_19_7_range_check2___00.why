@@ -934,6 +934,9 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   (bool_eq6(((a).us_split_fields3).rec__repro__ensemble__areas,
   ((b).us_split_fields3).rec__repro__ensemble__areas) = true)) then true else false)
 
+predicate in_range2(rec__repro__ensemble__size1: int, a: us_split_discrs) =
+  (rec__repro__ensemble__size1 = to_rep1((a).rec__repro__ensemble__size))
+
 logic value__size2 : int
 
 logic object__size2 : int

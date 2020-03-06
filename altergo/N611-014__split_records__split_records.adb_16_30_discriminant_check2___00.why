@@ -156,6 +156,10 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (split_records__record_with_mutable_discrs__field__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__split_records__record_with_mutable_discrs__field) = to_rep(((b).us_split_fields1).rec__split_records__record_with_mutable_discrs__field)))) then true else false)
 
+predicate in_range2(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_split_discrs) =
+  (rec__split_records__record_with_mutable_discrs__present1 = (a).rec__split_records__record_with_mutable_discrs__present)
+
 logic value__size : int
 
 logic object__size : int
@@ -212,10 +216,6 @@ function record_with_mutable_discrs__ref_record_with_mutable_discrs__content__pr
 predicate default_initial_assumption(temp___expr_164: us_rep,
   temp___skip_top_level_165: bool) =
   (((temp___expr_164).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present = of_int(0))
-
-predicate in_range2(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
 
 logic value__size1 : int
 
@@ -279,7 +279,7 @@ predicate dynamic_invariant(temp___expr_199: us_rep,
   temp___is_init_195: bool, temp___skip_constant_196: bool,
   temp___do_toplevel_197: bool, temp___do_typ_inv_198: bool) =
   ((not (temp___skip_constant_196 = true)) -> in_range2(of_int(0),
-  temp___expr_199))
+  (temp___expr_199).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_201: us_rep,
   temp___skip_top_level_202: bool) =
@@ -288,10 +288,6 @@ predicate default_initial_assumption1(temp___expr_201: us_rep,
 logic c2__attr__constrained : bool
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
-
-predicate in_range3(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
 
 logic value__size2 : int
 
@@ -384,6 +380,10 @@ function bool_eq3(a: us_rep1, b: us_rep1) : bool =
   (bool_eq2(((a).us_split_fields3).rec__split_records__holder__content,
   ((b).us_split_fields3).rec__split_records__holder__content) = true)) then true else false)
 
+predicate in_range3(rec__split_records__holder__present1: bool,
+  a: us_split_discrs2) =
+  (rec__split_records__holder__present1 = (a).rec__split_records__holder__present)
+
 logic value__size3 : int
 
 logic object__size3 : int
@@ -435,10 +435,6 @@ type holder__ref = { holder__content : us_rep1
 
 function holder__ref_holder__content__projection(a: holder__ref) : us_rep1 =
   (a).holder__content
-
-predicate in_range4(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
 
 logic value__size4 : int
 
@@ -529,9 +525,6 @@ function bool_eq4(a: us_rep2, b: us_rep2) : bool =
   (bool_eq2(((a).us_split_fields5).rec__split_records__holder__content1,
   ((b).us_split_fields5).rec__split_records__holder__content1) = true)) then true else false)
 
-predicate in_range5(rec__split_records__holder__present1: bool, a: us_rep1) =
-  (rec__split_records__holder__present1 = ((a).us_split_discrs3).rec__split_records__holder__present)
-
 logic value__size5 : int
 
 logic object__size5 : int
@@ -591,9 +584,9 @@ logic attr__ATTRIBUTE_ADDRESS2 : int
 predicate dynamic_invariant1(temp___expr_209: us_rep2,
   temp___is_init_205: bool, temp___skip_constant_206: bool,
   temp___do_toplevel_207: bool, temp___do_typ_inv_208: bool) =
-  (((not (temp___skip_constant_206 = true)) -> in_range5(of_int(0),
-  to_base(temp___expr_209))) and in_range4(of_int(0),
-  ((temp___expr_209).us_split_fields5).rec__split_records__holder__content1))
+  (((not (temp___skip_constant_206 = true)) -> in_range3(of_int(0),
+  (to_base(temp___expr_209)).us_split_discrs3)) and in_range2(of_int(0),
+  (((temp___expr_209).us_split_fields5).rec__split_records__holder__content1).us_split_discrs1))
 
 predicate default_initial_assumption2(temp___expr_212: us_rep2,
   temp___skip_top_level_213: bool) =
@@ -721,10 +714,6 @@ axiom bool_eq_rev3 :
 
 logic attr__ATTRIBUTE_ADDRESS4 : int
 
-predicate in_range6(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
-
 logic value__size7 : int
 
 logic object__size7 : int
@@ -781,10 +770,6 @@ logic c3 : us_rep
 
 logic attr__ATTRIBUTE_ADDRESS5 : int
 
-predicate in_range7(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
-
 logic value__size8 : int
 
 logic object__size8 : int
@@ -840,10 +825,6 @@ function t14b__ref_t14b__content__projection(a: t14b__ref) : us_rep =
 logic c4 : us_rep
 
 logic attr__ATTRIBUTE_ADDRESS6 : int
-
-predicate in_range8(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
 
 logic value__size9 : int
 
@@ -934,9 +915,6 @@ function bool_eq7(a: us_rep4, b: us_rep4) : bool =
   (bool_eq2(((a).us_split_fields9).rec__split_records__holder__content2,
   ((b).us_split_fields9).rec__split_records__holder__content2) = true)) then true else false)
 
-predicate in_range9(rec__split_records__holder__present1: bool, a: us_rep1) =
-  (rec__split_records__holder__present1 = ((a).us_split_discrs3).rec__split_records__holder__present)
-
 logic value__size10 : int
 
 logic object__size10 : int
@@ -1001,10 +979,6 @@ logic a2 : (int,us_rep) farray
 
 logic attr__ATTRIBUTE_ADDRESS9 : int
 
-predicate in_range10(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
-
 logic value__size11 : int
 
 logic object__size11 : int
@@ -1056,10 +1030,6 @@ type t4b__ref = { t4b__content : us_rep
 
 function t4b__ref_t4b__content__projection(a: t4b__ref) : us_rep =
   (a).t4b__content
-
-predicate in_range11(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
 
 logic value__size12 : int
 
@@ -1150,10 +1120,6 @@ function bool_eq8(a: us_rep5, b: us_rep5) : bool =
   (bool_eq2(((a).us_split_fields11).rec__split_records__holder__content3,
   ((b).us_split_fields11).rec__split_records__holder__content3) = true)) then true else false)
 
-predicate in_range12(rec__split_records__holder__present1: bool,
-  a: us_rep1) =
-  (rec__split_records__holder__present1 = ((a).us_split_discrs3).rec__split_records__holder__present)
-
 logic value__size13 : int
 
 logic object__size13 : int
@@ -1206,10 +1172,6 @@ type t6b__ref = { t6b__content : us_rep5
 function t6b__ref_t6b__content__projection(a: t6b__ref) : us_rep5 =
   (a).t6b__content
 
-predicate in_range13(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
-
 logic value__size14 : int
 
 logic object__size14 : int
@@ -1261,10 +1223,6 @@ type t8b__ref = { t8b__content : us_rep
 
 function t8b__ref_t8b__content__projection(a: t8b__ref) : us_rep =
   (a).t8b__content
-
-predicate in_range14(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
 
 logic value__size15 : int
 
@@ -1326,7 +1284,7 @@ axiom tTaSP1qtaxiom : (forall i:tTaSP1. (1 <= tTaSP1qtint(i)))
 
 axiom tTaSP1qtaxiom1 : (forall i:tTaSP1. (tTaSP1qtint(i) <= 1))
 
-predicate in_range15(x: int) = ((1 <= x) and (x <= 1))
+predicate in_range4(x: int) = ((1 <= x) and (x <= 1))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1350,10 +1308,6 @@ predicate default_initial_assumption4(temp___expr_225: (int,us_rep) farray,
   temp___skip_top_level_226: bool) =
   (forall temp___227:int. (((1 <= temp___227) and (temp___227 <= 1)) ->
   ((((temp___expr_225[temp___227])).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present = of_int(0))))
-
-predicate in_range16(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
 
 logic value__size16 : int
 
@@ -1410,16 +1364,12 @@ function t10b__ref_t10b__content__projection(a: t10b__ref) : us_rep =
 predicate dynamic_invariant2(temp___expr_235: us_rep,
   temp___is_init_231: bool, temp___skip_constant_232: bool,
   temp___do_toplevel_233: bool, temp___do_typ_inv_234: bool) =
-  ((not (temp___skip_constant_232 = true)) -> in_range6(of_int(0),
-  temp___expr_235))
+  ((not (temp___skip_constant_232 = true)) -> in_range2(of_int(0),
+  (temp___expr_235).us_split_discrs1))
 
 predicate default_initial_assumption5(temp___expr_237: us_rep,
   temp___skip_top_level_238: bool) =
   (((temp___expr_237).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present = of_int(0))
-
-predicate in_range17(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
 
 logic value__size17 : int
 
@@ -1476,18 +1426,14 @@ function t13b__ref_t13b__content__projection(a: t13b__ref) : us_rep =
 predicate dynamic_invariant3(temp___expr_245: us_rep4,
   temp___is_init_241: bool, temp___skip_constant_242: bool,
   temp___do_toplevel_243: bool, temp___do_typ_inv_244: bool) =
-  (((not (temp___skip_constant_242 = true)) -> in_range9(of_int(0),
-  to_base1(temp___expr_245))) and in_range8(of_int(0),
-  ((temp___expr_245).us_split_fields9).rec__split_records__holder__content2))
+  (((not (temp___skip_constant_242 = true)) -> in_range3(of_int(0),
+  (to_base1(temp___expr_245)).us_split_discrs3)) and in_range2(of_int(0),
+  (((temp___expr_245).us_split_fields9).rec__split_records__holder__content2).us_split_discrs1))
 
 predicate default_initial_assumption6(temp___expr_248: us_rep4,
   temp___skip_top_level_249: bool) =
   ((((temp___expr_248).us_split_discrs5).rec__split_records__holder__present = of_int(0)) and
   (((((temp___expr_248).us_split_fields9).rec__split_records__holder__content2).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present = of_int(0)))
-
-predicate in_range18(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
 
 logic value__size18 : int
 
@@ -1578,10 +1524,6 @@ function bool_eq10(a: us_rep6, b: us_rep6) : bool =
   (bool_eq2(((a).us_split_fields13).rec__split_records__holder__content4,
   ((b).us_split_fields13).rec__split_records__holder__content4) = true)) then true else false)
 
-predicate in_range19(rec__split_records__holder__present1: bool,
-  a: us_rep1) =
-  (rec__split_records__holder__present1 = ((a).us_split_discrs3).rec__split_records__holder__present)
-
 logic value__size19 : int
 
 logic object__size19 : int
@@ -1634,10 +1576,6 @@ type t16b__ref = { t16b__content : us_rep6
 function t16b__ref_t16b__content__projection(a: t16b__ref) : us_rep6 =
   (a).t16b__content
 
-predicate in_range20(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
-
 logic value__size20 : int
 
 logic object__size20 : int
@@ -1689,10 +1627,6 @@ type t18b__ref = { t18b__content : us_rep
 
 function t18b__ref_t18b__content__projection(a: t18b__ref) : us_rep =
   (a).t18b__content
-
-predicate in_range21(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
 
 logic value__size21 : int
 
@@ -1754,7 +1688,7 @@ axiom tTa2SP1qtaxiom : (forall i:tTa2SP1. (1 <= tTa2SP1qtint(i)))
 
 axiom tTa2SP1qtaxiom1 : (forall i:tTa2SP1. (tTa2SP1qtint(i) <= 1))
 
-predicate in_range22(x: int) = ((1 <= x) and (x <= 1))
+predicate in_range5(x: int) = ((1 <= x) and (x <= 1))
 
 function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1778,10 +1712,6 @@ predicate default_initial_assumption7(temp___expr_261: (int,us_rep) farray,
   temp___skip_top_level_262: bool) =
   (forall temp___263:int. (((1 <= temp___263) and (temp___263 <= 1)) ->
   ((((temp___expr_261[temp___263])).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present = of_int(0))))
-
-predicate in_range23(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
 
 logic value__size22 : int
 
@@ -1837,10 +1767,6 @@ function t20b__ref_t20b__content__projection(a: t20b__ref) : us_rep =
 
 logic split_records__test__a2__aggregate_def : us_rep -> (int,us_rep) farray
 
-predicate in_range24(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
-
 logic value__size23 : int
 
 logic object__size23 : int
@@ -1892,10 +1818,6 @@ type t23b__ref = { t23b__content : us_rep
 
 function t23b__ref_t23b__content__projection(a: t23b__ref) : us_rep =
   (a).t23b__content
-
-predicate in_range25(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
 
 logic value__size24 : int
 
@@ -1957,8 +1879,8 @@ predicate dynamic_invariant4(temp___expr_39: int, temp___is_init_35: bool,
   (0 <= 2147483647)) -> in_range1(temp___expr_39))
 
 axiom def_axiom :
-  (forall temp___285:us_rep.
-  ((split_records__test__a__aggregate_def(temp___285)[1]) = temp___285))
+  (forall temp___287:us_rep.
+  ((split_records__test__a__aggregate_def(temp___287)[1]) = temp___287))
 
 axiom c3__def_axiom : (c3 = { us_split_discrs1 = {
   rec__split_records__record_with_mutable_discrs__present = of_int(0) };
@@ -1996,8 +1918,8 @@ axiom def_axiom1 :
 predicate dynamic_invariant5(temp___expr_183: us_rep1,
   temp___is_init_179: bool, temp___skip_constant_180: bool,
   temp___do_toplevel_181: bool, temp___do_typ_inv_182: bool) =
-  in_range3(((temp___expr_183).us_split_discrs3).rec__split_records__holder__present,
-  ((temp___expr_183).us_split_fields3).rec__split_records__holder__content)
+  in_range2(((temp___expr_183).us_split_discrs3).rec__split_records__holder__present,
+  (((temp___expr_183).us_split_fields3).rec__split_records__holder__content).us_split_discrs1)
 
  (* File "split_records.ads", line 27, characters 0-0 *)
 goal defqtvc :
@@ -2011,10 +1933,11 @@ goal defqtvc :
   }, false, false, true, true) ->
   (forall c2__split_fields:natural. ((c2__split_fields = dummy) ->
   (forall c2__split_discrs:bool. ((c2__split_discrs = of_int(0)) ->
-  ((c2__attr__constrained = false) -> in_range5(of_int(0), to_base2({
+  ((c2__attr__constrained = false) -> in_range3(of_int(0), (to_base2({
   us_split_discrs6 = { rec__split_records__holder__present = of_int(0) };
   us_split_fields11 = { rec__split_records__holder__content3 = {
   us_split_discrs1 = {
   rec__split_records__record_with_mutable_discrs__present = of_int(0) };
   us_split_fields1 = {
-  rec__split_records__record_with_mutable_discrs__field = dummy } } } })))))))))))
+  rec__split_records__record_with_mutable_discrs__field = dummy } } }
+  })).us_split_discrs3))))))))))

@@ -225,6 +225,6 @@ goal defqtvc :
   (forall r1:int. ((r1 = 0) ->
   (forall i:int. ((i = 1) -> ((andb((if (1 <= i) then true else false),
   (if (i <= b) then true else false)) = true) ->
-  (forall temp___loop_entry_207:int. ((temp___loop_entry_207 = b) -> (let o =
+  (forall temp___loop_entry_211:int. ((temp___loop_entry_211 = b) -> (let o =
   (r1 + a) : int in (in_range1(o) ->
   (forall r2:int. ((r2 = o) -> (in_range1((i * a)) -> (r2 = (i * a))))))))))))))))))

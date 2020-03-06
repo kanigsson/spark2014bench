@@ -135,6 +135,10 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (if ((to_rep(((a).us_split_discrs1).rec__constrained_attribute__mut_rec__d) = to_rep(((b).us_split_discrs1).rec__constrained_attribute__mut_rec__d)) and
   (to_rep(((a).us_split_fields1).rec__constrained_attribute__mut_rec__f) = to_rep(((b).us_split_fields1).rec__constrained_attribute__mut_rec__f))) then true else false)
 
+predicate in_range1(rec__constrained_attribute__mut_rec__d1: int,
+  a: us_split_discrs) =
+  (rec__constrained_attribute__mut_rec__d1 = to_rep((a).rec__constrained_attribute__mut_rec__d))
+
 logic value__size : int
 
 logic object__size : int
@@ -211,10 +215,6 @@ logic a__attr__constrained : bool
 
 logic attr__ATTRIBUTE_ADDRESS : int
 
-predicate in_range1(rec__constrained_attribute__mut_rec__d1: int,
-  a: us_rep) =
-  (rec__constrained_attribute__mut_rec__d1 = to_rep(((a).us_split_discrs1).rec__constrained_attribute__mut_rec__d))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -276,16 +276,13 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant(temp___expr_170: us_rep,
   temp___is_init_166: bool, temp___skip_constant_167: bool,
   temp___do_toplevel_168: bool, temp___do_typ_inv_169: bool) =
-  ((not (temp___skip_constant_167 = true)) -> in_range1(0, temp___expr_170))
+  ((not (temp___skip_constant_167 = true)) -> in_range1(0,
+  (temp___expr_170).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_172: us_rep,
   temp___skip_top_level_173: bool) =
   ((to_rep(((temp___expr_172).us_split_discrs1).rec__constrained_attribute__mut_rec__d) = 0) and
   (to_rep(((temp___expr_172).us_split_fields1).rec__constrained_attribute__mut_rec__f) = 0))
-
-predicate in_range2(rec__constrained_attribute__mut_rec__d1: int,
-  a: us_rep) =
-  (rec__constrained_attribute__mut_rec__d1 = to_rep(((a).us_split_discrs1).rec__constrained_attribute__mut_rec__d))
 
 logic value__size2 : int
 
@@ -353,6 +350,4 @@ goal defqtvc :
   (forall a__split_fields:integer. ((a__split_fields = rliteral) ->
   (forall a__split_discrs:integer. ((a__split_discrs = rliteral) ->
   ((a__attr__constrained = false) -> (in_range(0) -> in_range1(0, {
-  us_split_discrs1 = { rec__constrained_attribute__mut_rec__d =
-  a__split_discrs }; us_split_fields1 = {
-  rec__constrained_attribute__mut_rec__f = a__split_fields } })))))))
+  rec__constrained_attribute__mut_rec__d = a__split_discrs })))))))

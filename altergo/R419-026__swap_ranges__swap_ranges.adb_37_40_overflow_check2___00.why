@@ -471,12 +471,12 @@ goal defqtvc :
   : int in (in_range1(o2) ->
   (forall j:int. ((j = 0) -> ((andb((if (0 <= j) then true else false),
   (if (j <= (o2 - 1)) then true else false)) = true) ->
-  (forall temp___loop_entry_337:(int,t) farray.
-  ((temp___loop_entry_337 = a) ->
   (forall temp___loop_entry_391:(int,t) farray.
   ((temp___loop_entry_391 = b) ->
   (forall temp___loop_entry_373:(int,t) farray.
   ((temp___loop_entry_373 = a) ->
   (forall temp___loop_entry_355:(int,t) farray.
   ((temp___loop_entry_355 = b) ->
+  (forall temp___loop_entry_337:(int,t) farray.
+  ((temp___loop_entry_337 = a) ->
   (forall o3:int. ((to_rep(a__first) = o3) -> in_range1((o3 + j))))))))))))))))))))))))))))))

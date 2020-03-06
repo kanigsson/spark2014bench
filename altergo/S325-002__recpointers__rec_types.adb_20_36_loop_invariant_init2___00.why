@@ -389,6 +389,10 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   (bool_eq6(((a).us_split_fields1).rec__rec_types__test2__tree_node__next,
   ((b).us_split_fields1).rec__rec_types__test2__tree_node__next) = true))) then true else false)
 
+predicate in_range4(rec__rec_types__test2__tree_node__d1: int,
+  a: us_split_discrs) =
+  (rec__rec_types__test2__tree_node__d1 = to_rep1((a).rec__rec_types__test2__tree_node__d))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -591,7 +595,7 @@ axiom tTaSP1qtaxiom : (forall i:tTaSP1. (1 <= tTaSP1qtint(i)))
 
 axiom tTaSP1qtaxiom1 : (forall i:tTaSP1. (tTaSP1qtint(i) <= 10))
 
-predicate in_range4(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range5(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -642,7 +646,7 @@ axiom tT8bP1qtaxiom : (forall i:tT8bP1. (1 <= tT8bP1qtint(i)))
 
 axiom tT8bP1qtaxiom1 : (forall i:tT8bP1. (tT8bP1qtint(i) <= 10))
 
-predicate in_range5(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range6(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -729,9 +733,6 @@ function bool_eq10(a: us_rep2, b: us_rep2) : bool =
   (bool_eq5(((a).us_split_fields3).rec__rec_types__test2__tree_node__next1,
   1, 10, ((b).us_split_fields3).rec__rec_types__test2__tree_node__next1, 1,
   10) = true))) then true else false)
-
-predicate in_range6(rec__rec_types__test2__tree_node__d1: int, a: us_rep1) =
-  (rec__rec_types__test2__tree_node__d1 = to_rep1(((a).us_split_discrs1).rec__rec_types__test2__tree_node__d))
 
 logic value__size3 : int
 
@@ -889,9 +890,6 @@ function bool_eq12(a: us_rep3, b: us_rep3) : bool =
   ((to_rep(((a).us_split_fields5).rec__rec_types__test2__tree_node__val2) = to_rep(((b).us_split_fields5).rec__rec_types__test2__tree_node__val2)) and
   (bool_eq6(((a).us_split_fields5).rec__rec_types__test2__tree_node__next2,
   ((b).us_split_fields5).rec__rec_types__test2__tree_node__next2) = true))) then true else false)
-
-predicate in_range8(rec__rec_types__test2__tree_node__d1: int, a: us_rep1) =
-  (rec__rec_types__test2__tree_node__d1 = to_rep1(((a).us_split_discrs1).rec__rec_types__test2__tree_node__d))
 
 logic value__size4 : int
 

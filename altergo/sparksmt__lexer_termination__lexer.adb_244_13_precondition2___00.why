@@ -303,6 +303,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (file_io__read_result__c__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__file_io__read_result__c) = to_rep(((b).us_split_fields1).rec__file_io__read_result__c)))) then true else false)
 
+predicate in_range5(rec__file_io__read_result__status1: int,
+  a: us_split_discrs) =
+  (rec__file_io__read_result__status1 = to_rep1((a).rec__file_io__read_result__status))
+
 logic value__size : int
 
 logic object__size : int

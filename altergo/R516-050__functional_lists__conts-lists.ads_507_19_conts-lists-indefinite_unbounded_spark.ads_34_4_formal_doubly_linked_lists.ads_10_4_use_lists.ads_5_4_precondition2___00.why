@@ -333,13 +333,13 @@ logic dummy4 : element_type
 type element_type__ref = { element_type__content : element_type
 }
 
-function element_type__ref_element_type__content__5__projection(a: element_type__ref) : element_type =
+function element_type__ref_element_type__content__4__projection(a: element_type__ref) : element_type =
   (a).element_type__content
 
-predicate dynamic_invariant(temp___expr_343: int, temp___is_init_339: bool,
-  temp___skip_constant_340: bool, temp___do_toplevel_341: bool,
-  temp___do_typ_inv_342: bool) = (((temp___is_init_339 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_343))
+predicate dynamic_invariant(temp___expr_315: int, temp___is_init_311: bool,
+  temp___skip_constant_312: bool, temp___do_toplevel_313: bool,
+  temp___do_typ_inv_314: bool) = (((temp___is_init_311 = true) or
+  ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_315))
 
 axiom element__post_axiom :
   (forall self:us_rep2.
@@ -378,17 +378,17 @@ logic position : us_rep3
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
 
-predicate default_initial_assumption(temp___expr_418: us_rep2,
-  temp___skip_top_level_419: bool) = ((temp___expr_418).attr__tag2 = us_tag3)
+predicate default_initial_assumption(temp___expr_390: us_rep2,
+  temp___skip_top_level_391: bool) = ((temp___expr_390).attr__tag2 = us_tag3)
 
-predicate default_initial_assumption1(temp___expr_271: us_rep,
-  temp___skip_top_level_272: bool) = ((temp___expr_271).attr__tag = us_tag)
+predicate default_initial_assumption1(temp___expr_250: us_rep,
+  temp___skip_top_level_251: bool) = ((temp___expr_250).attr__tag = us_tag)
 
-predicate default_initial_assumption2(temp___expr_318: us_rep1,
-  temp___skip_top_level_319: bool) = ((temp___expr_318).attr__tag1 = us_tag1)
+predicate default_initial_assumption2(temp___expr_297: us_rep1,
+  temp___skip_top_level_298: bool) = ((temp___expr_297).attr__tag1 = us_tag1)
 
-predicate default_initial_assumption3(temp___expr_337: us_rep2,
-  temp___skip_top_level_338: bool) = ((temp___expr_337).attr__tag2 = us_tag2)
+predicate default_initial_assumption3(temp___expr_309: us_rep2,
+  temp___skip_top_level_310: bool) = ((temp___expr_309).attr__tag2 = us_tag2)
 
  (* File "conts-lists.ads", line 505, characters 0-0 *)
 goal defqtvc : (has_element__function_guard(has_element(self, position),

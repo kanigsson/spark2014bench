@@ -221,6 +221,10 @@ function bool_eq3(a: us_rep1, b: us_rep1) : bool =
   (us_main_eq(((a).us_split_fields3).rec__for_loops_on_lists__my_lists__list,
   ((b).us_split_fields3).rec__for_loops_on_lists__my_lists__list) = true)) then true else false)
 
+predicate in_range2(rec__for_loops_on_lists__my_lists__list__capacity1: int,
+  a: us_split_discrs) =
+  (rec__for_loops_on_lists__my_lists__list__capacity1 = to_rep((a).rec__for_loops_on_lists__my_lists__list__capacity))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -335,7 +339,7 @@ axiom element_typeqtaxiom :
 axiom element_typeqtaxiom1 :
   (forall i:element_type. (element_typeqtint(i) <= 2147483647))
 
-predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -358,7 +362,7 @@ function element_type__ref_element_type__content__2__projection(a: element_type_
 predicate dynamic_invariant1(temp___expr_274: int, temp___is_init_270: bool,
   temp___skip_constant_271: bool, temp___do_toplevel_272: bool,
   temp___do_typ_inv_273: bool) = (((temp___is_init_270 = true) or
-  (0 <= 2147483647)) -> in_range2(temp___expr_274))
+  (0 <= 2147483647)) -> in_range3(temp___expr_274))
 
 type extended_index
 
@@ -370,7 +374,7 @@ axiom extended_indexqtaxiom :
 axiom extended_indexqtaxiom1 :
   (forall i:extended_index. (extended_indexqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -393,7 +397,7 @@ function extended_index__ref_extended_index__content__projection(a: extended_ind
 predicate dynamic_invariant2(temp___expr_281: int, temp___is_init_277: bool,
   temp___skip_constant_278: bool, temp___do_toplevel_279: bool,
   temp___do_typ_inv_280: bool) = (((temp___is_init_277 = true) or
-  (0 <= 2147483647)) -> in_range3(temp___expr_281))
+  (0 <= 2147483647)) -> in_range4(temp___expr_281))
 
 logic bool_eq7 : int, int -> bool
 
@@ -531,7 +535,7 @@ axiom element_typeqtaxiom2 :
 axiom element_typeqtaxiom3 :
   (forall i:element_type1. (element_typeqtint1(i) <= 2147483647))
 
-predicate in_range4(x: int) = ((1 <= x) and (x <= 2147483647))
+predicate in_range5(x: int) = ((1 <= x) and (x <= 2147483647))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -554,7 +558,7 @@ function element_type__ref_element_type__content__3__projection(a: element_type_
 predicate dynamic_invariant3(temp___expr_303: int, temp___is_init_299: bool,
   temp___skip_constant_300: bool, temp___do_toplevel_301: bool,
   temp___do_typ_inv_302: bool) = (((temp___is_init_299 = true) or
-  (1 <= 2147483647)) -> in_range4(temp___expr_303))
+  (1 <= 2147483647)) -> in_range5(temp___expr_303))
 
 logic length3 : us_rep3 -> int
 
@@ -661,7 +665,7 @@ axiom element_typeqtaxiom4 :
 axiom element_typeqtaxiom5 :
   (forall i:element_type2. (element_typeqtint2(i) <= 2147483647))
 
-predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -684,7 +688,7 @@ function element_type__ref_element_type__content__projection(a: element_type__re
 predicate dynamic_invariant4(temp___expr_231: int, temp___is_init_227: bool,
   temp___skip_constant_228: bool, temp___do_toplevel_229: bool,
   temp___do_typ_inv_230: bool) = (((temp___is_init_227 = true) or
-  (0 <= 2147483647)) -> in_range5(temp___expr_231))
+  (0 <= 2147483647)) -> in_range6(temp___expr_231))
 
 function equal_except(left: us_rep2, right: us_rep2, position: int) : bool =
   andb(bool_eq7(length1(left), length1(right)),
@@ -860,16 +864,16 @@ goal defqtvc :
   us_split_fields3 = { rec__for_loops_on_lists__my_lists__list =
   l__split_fields } } : us_rep1 in (let o4 = has_element(o3, o2) : bool in
   (((o4 = true) <-> (has_key(positions(o3), o2) = true)) -> ((o4 = true) ->
-  (forall temp___loop_entry_1026:us_rep1. ((temp___loop_entry_1026 = {
+  (forall temp___loop_entry_1033:us_rep1. ((temp___loop_entry_1033 = {
   us_split_discrs1 = l__split_discrs; us_split_fields3 = {
   rec__for_loops_on_lists__my_lists__list = l__split_fields } }) ->
-  (forall temp___loop_entry_1024:us_rep1. ((temp___loop_entry_1024 = {
+  (forall temp___loop_entry_1031:us_rep1. ((temp___loop_entry_1031 = {
   us_split_discrs1 = l__split_discrs; us_split_fields3 = {
   rec__for_loops_on_lists__my_lists__list = l__split_fields } }) ->
-  (forall temp___loop_entry_1021:us_rep1. ((temp___loop_entry_1021 = {
+  (forall temp___loop_entry_1028:us_rep1. ((temp___loop_entry_1028 = {
   us_split_discrs1 = l__split_discrs; us_split_fields3 = {
   rec__for_loops_on_lists__my_lists__list = l__split_fields } }) ->
-  (forall temp___loop_entry_1023:us_rep1. ((temp___loop_entry_1023 = {
+  (forall temp___loop_entry_1030:us_rep1. ((temp___loop_entry_1030 = {
   us_split_discrs1 = l__split_discrs; us_split_fields3 = {
   rec__for_loops_on_lists__my_lists__list = l__split_fields } }) -> (let o5 =
   { us_split_fields1 = { rec__for_loops_on_lists__my_lists__cursor__node = cu
@@ -880,9 +884,9 @@ goal defqtvc :
   get1(positions(o6), o5)))) ->
   (forall spark__branch:bool.
   ((spark__branch = (if (o7 = 0) then true else false)) ->
-  ((not (spark__branch = true)) -> (let o8 = length(temp___loop_entry_1026)
+  ((not (spark__branch = true)) -> (let o8 = length(temp___loop_entry_1033)
   : int in ((dynamic_invariant(o8, true, false, true, true) and
-  (o8 <= to_rep(((temp___loop_entry_1026).us_split_discrs1).rec__for_loops_on_lists__my_lists__list__capacity))) ->
+  (o8 <= to_rep(((temp___loop_entry_1033).us_split_discrs1).rec__for_loops_on_lists__my_lists__list__capacity))) ->
   (let o9 = length({ us_split_discrs1 = l__split_discrs; us_split_fields3 = {
   rec__for_loops_on_lists__my_lists__list = l__split_fields } }) : int in
   ((dynamic_invariant(o9, true, false, true, true) and
@@ -890,15 +894,15 @@ goal defqtvc :
   (forall l__split_fields1:us_main_type. forall cu1:count_type. (((length({
   us_split_discrs1 = l__split_discrs; us_split_fields3 = {
   rec__for_loops_on_lists__my_lists__list = l__split_fields1 }
-  }) = length(temp___loop_entry_1026)) and
+  }) = length(temp___loop_entry_1033)) and
   ((forall i:int. (((1 <= i) and (i <= (get1(positions({ us_split_discrs1 =
    l__split_discrs; us_split_fields3 = {
    rec__for_loops_on_lists__my_lists__list = l__split_fields1 } }), {
    us_split_fields1 = { rec__for_loops_on_lists__my_lists__cursor__node = cu1
-   } }) - 1))) -> ((0 <  get(model(temp___loop_entry_1023), i)) and
+   } }) - 1))) -> ((0 <  get(model(temp___loop_entry_1030), i)) and
    (get(model({ us_split_discrs1 = l__split_discrs; us_split_fields3 = {
    rec__for_loops_on_lists__my_lists__list = l__split_fields1 } }),
-   i) = (get(model(temp___loop_entry_1024), i) - 1))))) and
+   i) = (get(model(temp___loop_entry_1031), i) - 1))))) and
   ((forall i:int. (((get1(positions({ us_split_discrs1 = l__split_discrs;
    us_split_fields3 = { rec__for_loops_on_lists__my_lists__list =
    l__split_fields1 } }), { us_split_fields1 = {
@@ -907,7 +911,7 @@ goal defqtvc :
    rec__for_loops_on_lists__my_lists__list = l__split_fields1 } }))) ->
    (get(model({ us_split_discrs1 = l__split_discrs; us_split_fields3 = {
    rec__for_loops_on_lists__my_lists__list = l__split_fields1 } }),
-   i) = get(model(temp___loop_entry_1021), i)))) and
+   i) = get(model(temp___loop_entry_1028), i)))) and
   (not (element({ us_split_discrs1 = l__split_discrs; us_split_fields3 = {
   rec__for_loops_on_lists__my_lists__list = l__split_fields1 } }, {
   us_split_fields1 = { rec__for_loops_on_lists__my_lists__cursor__node = cu1
@@ -921,7 +925,7 @@ goal defqtvc :
   rec__for_loops_on_lists__my_lists__list = l__split_fields1 } } : us_rep1 in
   (let o12 = element(o11, o10) : int in ((dynamic_invariant4(o12, true,
   false, true, true) and (o12 = get(model(o11), get1(positions(o11),
-  o10)))) -> (let o13 = (o12 - 1) : int in (in_range5(o13) -> (let o14 = {
+  o10)))) -> (let o13 = (o12 - 1) : int in (in_range6(o13) -> (let o14 = {
   us_split_fields1 = { rec__for_loops_on_lists__my_lists__cursor__node = cu1
   } } : us_rep in (let o15 = l__split_discrs : us_split_discrs in
   (forall l__split_fields2:us_main_type. (((((length({ us_split_discrs1 =
@@ -974,24 +978,24 @@ goal defqtvc :
   o24)))) ->
   (forall spark__branch1:bool.
   ((spark__branch1 = (if (o26 = 0) then true else false)) ->
-  ((not (spark__branch1 = true)) -> (let o27 = length(temp___loop_entry_1026)
+  ((not (spark__branch1 = true)) -> (let o27 = length(temp___loop_entry_1033)
   : int in ((dynamic_invariant(o27, true, false, true, true) and
-  (o27 <= to_rep(((temp___loop_entry_1026).us_split_discrs1).rec__for_loops_on_lists__my_lists__list__capacity))) ->
+  (o27 <= to_rep(((temp___loop_entry_1033).us_split_discrs1).rec__for_loops_on_lists__my_lists__list__capacity))) ->
   (let o28 = length({ us_split_discrs1 = l__split_discrs; us_split_fields3 =
   { rec__for_loops_on_lists__my_lists__list = l__split_fields2 } }) : int in
   ((dynamic_invariant(o28, true, false, true, true) and
   (o28 <= to_rep((l__split_discrs).rec__for_loops_on_lists__my_lists__list__capacity))) ->
   ((length({ us_split_discrs1 = l__split_discrs; us_split_fields3 = {
   rec__for_loops_on_lists__my_lists__list = l__split_fields2 }
-  }) = length(temp___loop_entry_1026)) ->
+  }) = length(temp___loop_entry_1033)) ->
   ((forall i:int. (((1 <= i) and (i <= (get1(positions({ us_split_discrs1 =
    l__split_discrs; us_split_fields3 = {
    rec__for_loops_on_lists__my_lists__list = l__split_fields2 } }), {
    us_split_fields1 = { rec__for_loops_on_lists__my_lists__cursor__node = cu2
-   } }) - 1))) -> ((0 <  get(model(temp___loop_entry_1023), i)) and
+   } }) - 1))) -> ((0 <  get(model(temp___loop_entry_1030), i)) and
    (get(model({ us_split_discrs1 = l__split_discrs; us_split_fields3 = {
    rec__for_loops_on_lists__my_lists__list = l__split_fields2 } }),
-   i) = (get(model(temp___loop_entry_1024), i) - 1))))) ->
+   i) = (get(model(temp___loop_entry_1031), i) - 1))))) ->
   ((forall i:int. (((get1(positions({ us_split_discrs1 = l__split_discrs;
    us_split_fields3 = { rec__for_loops_on_lists__my_lists__list =
    l__split_fields2 } }), { us_split_fields1 = {
@@ -1000,7 +1004,7 @@ goal defqtvc :
    rec__for_loops_on_lists__my_lists__list = l__split_fields2 } }))) ->
    (get(model({ us_split_discrs1 = l__split_discrs; us_split_fields3 = {
    rec__for_loops_on_lists__my_lists__list = l__split_fields2 } }),
-   i) = get(model(temp___loop_entry_1021), i)))) ->
+   i) = get(model(temp___loop_entry_1028), i)))) ->
   (not (element({ us_split_discrs1 = l__split_discrs; us_split_fields3 = {
   rec__for_loops_on_lists__my_lists__list = l__split_fields2 } }, {
   us_split_fields1 = { rec__for_loops_on_lists__my_lists__cursor__node = cu2

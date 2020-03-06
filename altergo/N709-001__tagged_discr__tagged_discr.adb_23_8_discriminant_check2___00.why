@@ -1175,6 +1175,9 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range4(rec__tagged_discr__t__discr1: int, a: us_split_discrs) =
+  (rec__tagged_discr__t__discr1 = to_rep2((a).rec__tagged_discr__t__discr))
+
 logic value__size : int
 
 logic object__size : int
@@ -1450,9 +1453,6 @@ logic is_zero__function_guard1 : bool, int, us_rep1 -> prop
 
 logic us_tag2 : int
 
-predicate in_range4(rec__tagged_discr__t__discr1: int, a: us_rep) =
-  (rec__tagged_discr__t__discr1 = to_rep2(((a).us_split_discrs1).rec__tagged_discr__t__discr))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -1551,9 +1551,6 @@ function s4b__ref_s4b__content__projection(a: s4b__ref) : us_rep1 =
   (a).s4b__content
 
 logic us_tag3 : int
-
-predicate in_range5(rec__tagged_discr__t__discr1: int, a: us_rep) =
-  (rec__tagged_discr__t__discr1 = to_rep2(((a).us_split_discrs1).rec__tagged_discr__t__discr))
 
 logic value__size3 : int
 
@@ -1731,9 +1728,6 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 
 logic us_tag4 : int
 
-predicate in_range6(rec__tagged_discr__t__discr1: int, a: us_rep) =
-  (rec__tagged_discr__t__discr1 = to_rep2(((a).us_split_discrs1).rec__tagged_discr__t__discr))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -1863,5 +1857,5 @@ goal defqtvc :
   rec__tagged_discr__t__discr = o }; us_split_fields1 = {
   rec__tagged_discr__t__z = of_int(0); rec__tagged_discr__t__x = rliteral;
   rec__tagged_discr__t__y = dummy1; rec__ext__ = us_null_ext__ }; attr__tag =
-  us_tag4 } = r7b) -> (in_range6(0, r7b) ->
+  us_tag4 } = r7b) -> (in_range4(0, (r7b).us_split_discrs1) ->
   (((r7b).us_split_discrs1).rec__tagged_discr__t__discr = (v__split_discrs).rec__tagged_discr__t__discr))))))))))

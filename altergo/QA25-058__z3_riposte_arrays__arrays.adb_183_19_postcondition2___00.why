@@ -173,14 +173,14 @@ goal defqtvc :
                                                        (i <= x1)) ->
                                                        (((r1[i]) = true) <->
                                                        (i = c)))) and
-                                                      ((andb((if ((forall temp___360:int.
-                                                                  (((0 <= temp___360) and
-                                                                  (temp___360 <= 255)) ->
-                                                                  (((255 <  temp___360) or
-                                                                  ((temp___360 <  0) or
-                                                                  (x1 <  temp___360))) ->
-                                                                  ((r1[temp___360]) = (r[temp___360]))))) and
-                                                      in_range1(x1)) then true else false),
+                                                      ((andb((if (in_range1(x1) and
+                                                      (forall temp___365:int.
+                                                      (((0 <= temp___365) and
+                                                      (temp___365 <= 255)) ->
+                                                      (((255 <  temp___365) or
+                                                      ((temp___365 <  0) or
+                                                      (x1 <  temp___365))) ->
+                                                      ((r1[temp___365]) = (r[temp___365])))))) then true else false),
                                                       (if ((0 <= x1) and
                                                       (x1 <= 255)) then true else false)) = true) and
                                                       (x1 = 255)))))) else (r1 = r)))) ->

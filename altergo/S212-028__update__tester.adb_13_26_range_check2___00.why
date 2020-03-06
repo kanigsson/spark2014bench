@@ -408,6 +408,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items,
   ((b).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items) = true)))) then true else false)
 
+predicate in_range4(rec__tester__ring_buffer__ring_buffer_type__max_size1: int,
+  a: us_split_discrs) =
+  (rec__tester__ring_buffer__ring_buffer_type__max_size1 = to_rep1((a).rec__tester__ring_buffer__ring_buffer_type__max_size))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -561,7 +565,7 @@ axiom tT14bP1qtaxiom : (forall i:tT14bP1. (1 <= tT14bP1qtint(i)))
 
 axiom tT14bP1qtaxiom1 : (forall i:tT14bP1. (tT14bP1qtint(i) <= 4))
 
-predicate in_range4(x: int) = ((1 <= x) and (x <= 4))
+predicate in_range5(x: int) = ((1 <= x) and (x <= 4))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -669,10 +673,6 @@ function bool_eq8(a: us_rep1, b: us_rep1) : bool =
   1, 4,
   ((b).us_split_fields3).rec__tester__ring_buffer__ring_buffer_type__items1,
   1, 4) = true)))) then true else false)
-
-predicate in_range5(rec__tester__ring_buffer__ring_buffer_type__max_size1: int,
-  a: us_rep) =
-  (rec__tester__ring_buffer__ring_buffer_type__max_size1 = to_rep1(((a).us_split_discrs1).rec__tester__ring_buffer__ring_buffer_type__max_size))
 
 logic value__size3 : int
 

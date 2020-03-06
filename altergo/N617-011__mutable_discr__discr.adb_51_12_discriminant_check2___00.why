@@ -122,6 +122,9 @@ function us_rep___split_discrs__2__projection(a: us_rep) : us_split_discrs =
 function bool_eq1(a: us_rep, b: us_rep) : bool =
   (if (to_rep(((a).us_split_discrs1).rec__discr__with_default__c) = to_rep(((b).us_split_discrs1).rec__discr__with_default__c)) then true else false)
 
+predicate in_range1(rec__discr__with_default__c1: int, a: us_split_discrs) =
+  (rec__discr__with_default__c1 = to_rep((a).rec__discr__with_default__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -170,9 +173,6 @@ logic attr__ATTRIBUTE_ADDRESS : int
 logic r18b : int
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
-
-predicate in_range1(rec__discr__with_default__c1: int, a: us_rep) =
-  (rec__discr__with_default__c1 = to_rep(((a).us_split_discrs1).rec__discr__with_default__c))
 
 logic value__size1 : int
 

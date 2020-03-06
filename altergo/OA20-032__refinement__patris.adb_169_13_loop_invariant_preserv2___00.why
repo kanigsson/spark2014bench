@@ -4807,20 +4807,20 @@ goal defqtvc :
   ((spark__branch = o1) and
   (if (spark__branch = true) then ((cur_board1 = (cur_board[del_line <- empty_line])) and
   ((to_line1 = del_line) and
-  (exists o2:t. ((let temp___910 = add(complete_lines, rliteral3) : t in
+  (exists o2:t. ((let temp___919 = add(complete_lines, rliteral3) : t in
   (if ule(sub(rliteral4, complete_lines),
-  rliteral3) then (o2 = sub(temp___910,
-  rliteral4)) else (o2 = temp___910))) and ((complete_lines1 = o2) and
+  rliteral3) then (o2 = sub(temp___919,
+  rliteral4)) else (o2 = temp___919))) and ((complete_lines1 = o2) and
   (to_rep(((cur_board1[del_line])[1])) = 0)))))) else (((cur_board1 = cur_board) and
   (to_line1 = to_line)) and (complete_lines1 = complete_lines))))))) ->
   (forall cur_board2:(int,(int,cell) farray) farray. forall to_line2:int.
   forall complete_lines2:t. forall del_line1:int.
   ((forall y:int. (((1 <= y) and (y <= del_line1)) ->
    (not (is_complete_line((cur_board2[y])) = true)))) ->
-  ((andb((if ((((forall temp___914:int. (((1 <= temp___914) and
-                (temp___914 <= 20)) -> (((20 <  temp___914) or
-                ((temp___914 <  1) or (del_line1 <  temp___914))) ->
-                ((cur_board2[temp___914]) = (cur_board[temp___914]))))) and
+  ((andb((if ((((forall temp___923:int. (((1 <= temp___923) and
+                (temp___923 <= 20)) -> (((20 <  temp___923) or
+                ((temp___923 <  1) or (del_line1 <  temp___923))) ->
+                ((cur_board2[temp___923]) = (cur_board[temp___923]))))) and
   dynamic_invariant3(to_line2, true, true, true, true)) and
   dynamic_invariant2(complete_lines2, true, true, true, true)) and
   in_range9(del_line1)) then true else false), (if ((1 <= del_line1) and

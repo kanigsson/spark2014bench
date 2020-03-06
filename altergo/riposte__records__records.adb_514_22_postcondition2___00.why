@@ -394,10 +394,10 @@ predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
   temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
   ((- 2147483648) <= 2147483647)) -> in_range2(temp___expr_18))
 
-predicate dynamic_invariant1(temp___expr_332: int, temp___is_init_328: bool,
-  temp___skip_constant_329: bool, temp___do_toplevel_330: bool,
-  temp___do_typ_inv_331: bool) = (((temp___is_init_328 = true) or
-  (0 <= 100)) -> in_range1(temp___expr_332))
+predicate dynamic_invariant1(temp___expr_344: int, temp___is_init_340: bool,
+  temp___skip_constant_341: bool, temp___do_toplevel_342: bool,
+  temp___do_typ_inv_343: bool) = (((temp___is_init_340 = true) or
+  (0 <= 100)) -> in_range1(temp___expr_344))
 
  (* File "records.adb", line 510, characters 0-0 *)
 goal defqtvc :

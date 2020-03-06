@@ -148,6 +148,10 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__private_discr__p_no_default,
   ((b).us_split_fields1).rec__private_discr__p_no_default) = true)) then true else false)
 
+predicate in_range1(rec__private_discr__p_no_default__c1: int,
+  a: us_split_discrs) =
+  (rec__private_discr__p_no_default__c1 = to_rep((a).rec__private_discr__p_no_default__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -202,15 +206,15 @@ goal defqtvc : (dynamic_invariant(c, true, false, true, true) -> (let o = c
   rec__private_discr__p_no_default = d__split_fields
   } = (discr__p1__d__assume).us_split_fields1) ->
   ((d__split_discrs = (discr__p1__d__assume).us_split_discrs1) -> (let o1 = c
-  : int in (let temp___363 = new_no_default(o1) : us_rep in
-  ((new_no_default__function_guard(temp___363, o1) and
-  (to_rep(((temp___363).us_split_discrs1).rec__private_discr__p_no_default__c) = o1)) ->
-  ((((temp___363).us_split_discrs1).rec__private_discr__p_no_default__c = (d__split_discrs).rec__private_discr__p_no_default__c) ->
+  : int in (let temp___367 = new_no_default(o1) : us_rep in
+  ((new_no_default__function_guard(temp___367, o1) and
+  (to_rep(((temp___367).us_split_discrs1).rec__private_discr__p_no_default__c) = o1)) ->
+  ((((temp___367).us_split_discrs1).rec__private_discr__p_no_default__c = (d__split_discrs).rec__private_discr__p_no_default__c) ->
   (forall d__split_fields1:us_main_type. (({
   rec__private_discr__p_no_default = d__split_fields1
-  } = (temp___363).us_split_fields1) ->
-  ((d__split_discrs = (temp___363).us_split_discrs1) -> (let temp___366 =
-  new_no_default(0) : us_rep in ((new_no_default__function_guard(temp___366,
+  } = (temp___367).us_split_fields1) ->
+  ((d__split_discrs = (temp___367).us_split_discrs1) -> (let temp___370 =
+  new_no_default(0) : us_rep in ((new_no_default__function_guard(temp___370,
   0) and
-  (to_rep(((temp___366).us_split_discrs1).rec__private_discr__p_no_default__c) = 0)) ->
-  (((temp___366).us_split_discrs1).rec__private_discr__p_no_default__c = (d__split_discrs).rec__private_discr__p_no_default__c)))))))))))))))))
+  (to_rep(((temp___370).us_split_discrs1).rec__private_discr__p_no_default__c) = 0)) ->
+  (((temp___370).us_split_discrs1).rec__private_discr__p_no_default__c = (d__split_discrs).rec__private_discr__p_no_default__c)))))))))))))))))

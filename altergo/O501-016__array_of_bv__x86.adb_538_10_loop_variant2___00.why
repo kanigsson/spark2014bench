@@ -1812,11 +1812,11 @@ goal defqtvc :
   rliteral4) ->
   (forall rcx1:t3. forall rsi1:t3. forall rdi1:t3. forall val11:t.
   forall val21:t. ((forall rcx2:t3. ecx__function_guard(ecx(rcx2), rcx2)) ->
-  ((andb((if ((((dynamic_invariant(rcx1, true, true, true, true) and
+  ((andb((if ((((dynamic_invariant2(val21, false, true, true, true) and
+  dynamic_invariant(rcx1, true, true, true, true)) and
   dynamic_invariant(rdi1, true, true, true, true)) and
   dynamic_invariant(rsi1, true, true, true, true)) and
-  dynamic_invariant2(val11, false, true, true, true)) and
-  dynamic_invariant2(val21, false, true, true, true)) then true else false),
+  dynamic_invariant2(val11, false, true, true, true)) then true else false),
   (if ugt2(ecx(rcx1), rliteral4) then true else false)) = true) ->
   (forall temp___428:t2. ((temp___428 = ecx(rcx1)) -> (let o1 = esi(rsi1)
   : t2 in ((esi__function_guard(o1, rsi1) and (dynamic_invariant1(o1, true,

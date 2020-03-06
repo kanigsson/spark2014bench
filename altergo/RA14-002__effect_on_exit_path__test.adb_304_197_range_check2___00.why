@@ -1114,15 +1114,15 @@ os_task_id_param_t
 function os_task_id_param_t__ref_os_task_id_param_t__content__projection(a: os_task_id_param_t__ref) : os_task_id_param_t =
   (a).os_task_id_param_t__content
 
-predicate dynamic_invariant(temp___expr_232: int, temp___is_init_228: bool,
-  temp___skip_constant_229: bool, temp___do_toplevel_230: bool,
-  temp___do_typ_inv_231: bool) = (((temp___is_init_228 = true) or
-  (0 <= 4)) -> in_range5(temp___expr_232))
+predicate dynamic_invariant(temp___expr_233: int, temp___is_init_229: bool,
+  temp___skip_constant_230: bool, temp___do_toplevel_231: bool,
+  temp___do_typ_inv_232: bool) = (((temp___is_init_229 = true) or
+  (0 <= 4)) -> in_range5(temp___expr_233))
 
-predicate dynamic_invariant1(temp___expr_276: t, temp___is_init_272: bool,
-  temp___skip_constant_273: bool, temp___do_toplevel_274: bool,
-  temp___do_typ_inv_275: bool) = (((temp___is_init_272 = true) or
-  ule(rliteral, rliteral1)) -> in_range1(temp___expr_276))
+predicate dynamic_invariant1(temp___expr_277: t, temp___is_init_273: bool,
+  temp___skip_constant_274: bool, temp___do_toplevel_275: bool,
+  temp___do_typ_inv_276: bool) = (((temp___is_init_273 = true) or
+  ule(rliteral, rliteral1)) -> in_range1(temp___expr_277))
 
 axiom os_mbx_get_mbx_head__post_axiom :
   (forall task_id:int.
@@ -1175,7 +1175,7 @@ logic oadd : t, t -> t
 
 logic oadd__function_guard : t, t, t -> prop
 
-axiom temp___result_168qtdef :
+axiom temp___result_169qtdef :
   (forall task_id:int. forall test__os_task_mbx_rw:(int,us_rep1) farray.
   os_mbx_get_mbx_count__function_guard(os_mbx_get_mbx_count(task_id,
   test__os_task_mbx_rw), task_id, test__os_task_mbx_rw))
@@ -1260,13 +1260,13 @@ logic c23b : int
 
 logic attr__ATTRIBUTE_ADDRESS5 : int
 
-logic temp_____aggregate_def_493 : (t,us_rep) farray, t,
+logic temp_____aggregate_def_501 : (t,us_rep) farray, t,
   us_rep -> (t,us_rep) farray
 
-predicate dynamic_invariant2(temp___expr_297: t, temp___is_init_293: bool,
-  temp___skip_constant_294: bool, temp___do_toplevel_295: bool,
-  temp___do_typ_inv_296: bool) = (((temp___is_init_293 = true) or
-  ule(rliteral, rliteral2)) -> in_range2(temp___expr_297))
+predicate dynamic_invariant2(temp___expr_298: t, temp___is_init_294: bool,
+  temp___skip_constant_295: bool, temp___do_toplevel_296: bool,
+  temp___do_typ_inv_297: bool) = (((temp___is_init_294 = true) or
+  ule(rliteral, rliteral2)) -> in_range2(temp___expr_298))
 
 axiom oadd__post_axiom :
   (forall left:t. forall right:t [oadd(left, right)].
@@ -1307,32 +1307,32 @@ logic os_mbx_get_mbx_tail__function_guard : t, int,
   (int,us_rep1) farray -> prop
 
 axiom def_axiom :
-  (forall temp___495:(t,us_rep) farray.
-  (forall temp___496:t.
-  (forall temp___497:us_rep. (dynamic_invariant1(temp___496, true, true,
+  (forall temp___503:(t,us_rep) farray.
+  (forall temp___504:t.
+  (forall temp___505:us_rep. (dynamic_invariant1(temp___504, true, true,
   true, true) ->
-  (forall temp___498:t. ((temp___498 = temp___496) ->
-  ((temp_____aggregate_def_493(temp___495, temp___496,
-  temp___497)[temp___498]) = temp___497)))))))
+  (forall temp___506:t. ((temp___506 = temp___504) ->
+  ((temp_____aggregate_def_501(temp___503, temp___504,
+  temp___505)[temp___506]) = temp___505)))))))
 
 axiom def_axiom1 :
-  (forall temp___495:(t,us_rep) farray.
-  (forall temp___496:t.
-  (forall temp___497:us_rep. (dynamic_invariant1(temp___496, true, true,
+  (forall temp___503:(t,us_rep) farray.
+  (forall temp___504:t.
+  (forall temp___505:us_rep. (dynamic_invariant1(temp___504, true, true,
   true, true) ->
-  (forall temp___498:t. ((not (temp___498 = temp___496)) ->
-  ((temp_____aggregate_def_493(temp___495, temp___496,
-  temp___497)[temp___498]) = (temp___495[temp___498]))))))))
+  (forall temp___506:t. ((not (temp___506 = temp___504)) ->
+  ((temp_____aggregate_def_501(temp___503, temp___504,
+  temp___505)[temp___506]) = (temp___503[temp___506]))))))))
 
-predicate dynamic_invariant3(temp___expr_225: int, temp___is_init_221: bool,
-  temp___skip_constant_222: bool, temp___do_toplevel_223: bool,
-  temp___do_typ_inv_224: bool) = (((temp___is_init_221 = true) or
-  ((- 1) <= 4)) -> in_range3(temp___expr_225))
+predicate dynamic_invariant3(temp___expr_226: int, temp___is_init_222: bool,
+  temp___skip_constant_223: bool, temp___do_toplevel_224: bool,
+  temp___do_typ_inv_225: bool) = (((temp___is_init_222 = true) or
+  ((- 1) <= 4)) -> in_range3(temp___expr_226))
 
-predicate dynamic_invariant4(temp___expr_260: int, temp___is_init_256: bool,
-  temp___skip_constant_257: bool, temp___do_toplevel_258: bool,
-  temp___do_typ_inv_259: bool) = (((temp___is_init_256 = true) or
-  (0 <= 4294967295)) -> in_range4(temp___expr_260))
+predicate dynamic_invariant4(temp___expr_261: int, temp___is_init_257: bool,
+  temp___skip_constant_258: bool, temp___do_toplevel_259: bool,
+  temp___do_typ_inv_260: bool) = (((temp___is_init_257 = true) or
+  (0 <= 4294967295)) -> in_range4(temp___expr_261))
 
 axiom c20b__def_axiom : (c20b = task_id)
 
@@ -1405,13 +1405,13 @@ goal defqtvc :
   os_task_mbx_rw3) : t in ((os_mbx_get_mbx_head__function_guard(o3, o2,
   os_task_mbx_rw3) and (dynamic_invariant1(o3, true, false, true, true) and
   (o3 = to_rep((((os_task_mbx_rw3[o2])).us_split_fields3).rec__test__os_mbx_t__head)))) and
-  (let temp___654 = add(o3, rliteral5) : t in (let o4 = c23b : int in
+  (let temp___671 = add(o3, rliteral5) : t in (let o4 = c23b : int in
   (let o5 = os_mbx_get_mbx_head(o4, os_task_mbx_rw3) : t in
   ((os_mbx_get_mbx_head__function_guard(o5, o4, os_task_mbx_rw3) and
   (dynamic_invariant1(o5, true, false, true, true) and
   (o5 = to_rep((((os_task_mbx_rw3[o4])).us_split_fields3).rec__test__os_mbx_t__head)))) and
-  (if ule(sub(rliteral2, o5), rliteral5) then (o1 = sub(temp___654,
-  rliteral2)) else (o1 = temp___654))))))))) ->
+  (if ule(sub(rliteral2, o5), rliteral5) then (o1 = sub(temp___671,
+  rliteral2)) else (o1 = temp___671))))))))) ->
   (forall o2:os_mbx_index_t. ((to_rep(o2) = o1) ->
   (forall os_task_mbx_rw4:(int,us_rep1) farray.
   ((os_task_mbx_rw4 = (os_task_mbx_rw3[c23b <- { us_split_fields3 = {
@@ -1421,27 +1421,27 @@ goal defqtvc :
   (forall os_task_mbx_rw5:(int,us_rep1) farray.
   ((os_task_mbx_rw5 = os_task_mbx_rw4) ->
   (forall os_task_mbx_rw6:(int,us_rep1) farray.
-  ((forall temp___index_420:int. (((0 <= temp___index_420) and
-   (temp___index_420 <= 4)) -> (bool_eq8((os_task_mbx_rw6[temp___index_420]),
-   (if (temp___index_420 = o3) then { us_split_fields3 = {
+  ((forall temp___index_424:int. (((0 <= temp___index_424) and
+   (temp___index_424 <= 4)) -> (bool_eq8((os_task_mbx_rw6[temp___index_424]),
+   (if (temp___index_424 = o3) then { us_split_fields3 = {
    rec__test__os_mbx_t__head =
    (((os_task_mbx_rw5[o3])).us_split_fields3).rec__test__os_mbx_t__head;
    rec__test__os_mbx_t__count =
    of_rep1(sub(to_rep1((((os_task_mbx_rw5[o3])).us_split_fields3).rec__test__os_mbx_t__count),
    rliteral5)); rec__test__os_mbx_t__mbx_array =
    (((os_task_mbx_rw5[o3])).us_split_fields3).rec__test__os_mbx_t__mbx_array
-   } } else (os_task_mbx_rw5[temp___index_420]))) = true))) ->
+   } } else (os_task_mbx_rw5[temp___index_424]))) = true))) ->
   (forall o4:t. ((let o5 = task_id : int in (let o6 = os_mbx_get_mbx_head(o5,
   os_task_mbx_rw6) : t in ((os_mbx_get_mbx_head__function_guard(o6, o5,
   os_task_mbx_rw6) and (dynamic_invariant1(o6, true, false, true, true) and
   (o6 = to_rep((((os_task_mbx_rw6[o5])).us_split_fields3).rec__test__os_mbx_t__head)))) and
-  (let temp___664 = sub(o6, rliteral5) : t in (let o7 = task_id : int in
+  (let temp___681 = sub(o6, rliteral5) : t in (let o7 = task_id : int in
   (let o8 = os_mbx_get_mbx_head(o7, os_task_mbx_rw6) : t in
   ((os_mbx_get_mbx_head__function_guard(o8, o7, os_task_mbx_rw6) and
   (dynamic_invariant1(o8, true, false, true, true) and
   (o8 = to_rep((((os_task_mbx_rw6[o7])).us_split_fields3).rec__test__os_mbx_t__head)))) and
-  (if ult(o8, rliteral5) then (o4 = add(temp___664,
-  rliteral2)) else (o4 = temp___664))))))))) -> (in_range1(o4) ->
+  (if ult(o8, rliteral5) then (o4 = add(temp___681,
+  rliteral2)) else (o4 = temp___681))))))))) -> (in_range1(o4) ->
   (forall o5:t.
   ((to_rep1((((os_task_mbx_rw[task_id])).us_split_fields3).rec__test__os_mbx_t__count) = o5) ->
   (let o6 = sub(o5, rliteral5) : t in (in_range2(o6) ->
@@ -1449,9 +1449,9 @@ goal defqtvc :
   (forall o8:t.
   ((exists o9:t.
    ((to_rep((((os_task_mbx_rw[task_id])).us_split_fields3).rec__test__os_mbx_t__head) = o9) and
-   (let temp___662 = add(o9, rliteral5) : t in
+   (let temp___679 = add(o9, rliteral5) : t in
    (exists o10:t.
    ((to_rep((((os_task_mbx_rw[task_id])).us_split_fields3).rec__test__os_mbx_t__head) = o10) and
-   (if ule(sub(rliteral2, o10), rliteral5) then (o8 = sub(temp___662,
-   rliteral2)) else (o8 = temp___662))))))) ->
+   (if ule(sub(rliteral2, o10), rliteral5) then (o8 = sub(temp___679,
+   rliteral2)) else (o8 = temp___679))))))) ->
   in_range1(o8))))))))))))))))))))))))))))))))))))))))))))))))

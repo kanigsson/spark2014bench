@@ -154,6 +154,9 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (default_init__discr__f__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__default_init__discr__f) = to_rep(((b).us_split_fields1).rec__default_init__discr__f)))) then true else false)
 
+predicate in_range2(rec__default_init__discr__b1: bool, a: us_split_discrs) =
+  (rec__default_init__discr__b1 = (a).rec__default_init__discr__b)
+
 logic value__size : int
 
 logic object__size : int

@@ -151,7 +151,7 @@ axiom init__post_axiom :
   (let result = init(x) : int in (init__function_guard(result, x) ->
   dynamic_invariant1(result, true, false, true, true)))))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-N715-017__default_init_cond-15375/src/gnatprove/default_init__wrong.mlw", line 239, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-N715-017__default_init_cond-15469/src/gnatprove/default_init__wrong.mlw", line 239, characters 5-8 *)
 goal defqtvc :
   (forall usf:int.
   ((forall usf1:int. wrong_ok__function_guard(wrong_ok(usf1), usf1)) ->

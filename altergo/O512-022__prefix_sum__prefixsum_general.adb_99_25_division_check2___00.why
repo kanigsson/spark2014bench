@@ -454,7 +454,7 @@ goal defqtvc :
   dynamic_invariant1(right1, false, true, true, true)) and
   dynamic_invariant(temp1, false, true, true, true)) then true else false),
   (if (0 <  space2) then true else false)) = true) ->
-  (forall temp___218:int. ((temp___218 = space2) -> (let o1 = (space2 * 2)
+  (forall temp___232:int. ((temp___232 = space2) -> (let o1 = (space2 * 2)
   : int in (in_range1(o1) -> (let o2 = (o1 - 1) : int in (in_range1(o2) ->
   (in_range2(o2) ->
   (forall right2:int. ((right2 = o2) -> (((not (right2 <  8)) or
@@ -463,7 +463,7 @@ goal defqtvc :
   true) and dynamic_invariant1(right3, false, true, true, true)) and
   dynamic_invariant(temp2, false, true, true, true)) then true else false),
   (if (right3 <  8) then true else false)) = true) and
-  (exists temp___211:int. ((temp___211 = right3) and (let o3 =
+  (exists temp___225:int. ((temp___225 = right3) and (let o3 =
   (right3 - space2) : int in (in_range1(o3) and (in_range2(o3) and
   (exists left3:int. ((left3 = o3) and (((0 <= right3) and (right3 <= 7)) and
   (exists o4:int. ((to_rep((a2[right3])) = o4) and

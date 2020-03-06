@@ -209,61 +209,6 @@ logic user_eq2 : us_rep, us_rep -> bool
 
 logic dummy2 : us_rep
 
-type cursor__ref = { cursor__content : us_rep
-}
-
-function cursor__ref_cursor__content__projection(a: cursor__ref) : us_rep =
-  (a).cursor__content
-
-predicate in_range2(rec__with_iterable__cursor__c1: int, a: us_rep) =
-  (rec__with_iterable__cursor__c1 = to_rep(((a).us_split_discrs1).rec__with_iterable__cursor__c))
-
-logic value__size1 : int
-
-logic object__size1 : int
-
-logic alignment1 : int
-
-axiom value__size_axiom1 : (0 <= value__size1)
-
-axiom object__size_axiom1 : (0 <= object__size1)
-
-axiom alignment_axiom1 : (0 <= alignment1)
-
-logic with_iterable__cursor__c__first__bit1 : int
-
-logic with_iterable__cursor__c__last__bit1 : int
-
-logic with_iterable__cursor__c__position1 : int
-
-axiom with_iterable__cursor__c__first__bit_axiom1 :
-  (0 <= with_iterable__cursor__c__first__bit1)
-
-axiom with_iterable__cursor__c__last__bit_axiom1 :
-  (with_iterable__cursor__c__first__bit1 <  with_iterable__cursor__c__last__bit1)
-
-axiom with_iterable__cursor__c__position_axiom1 :
-  (0 <= with_iterable__cursor__c__position1)
-
-logic with_iterable__cursor__i__first__bit1 : int
-
-logic with_iterable__cursor__i__last__bit1 : int
-
-logic with_iterable__cursor__i__position1 : int
-
-axiom with_iterable__cursor__i__first__bit_axiom1 :
-  (0 <= with_iterable__cursor__i__first__bit1)
-
-axiom with_iterable__cursor__i__last__bit_axiom1 :
-  (with_iterable__cursor__i__first__bit1 <  with_iterable__cursor__i__last__bit1)
-
-axiom with_iterable__cursor__i__position_axiom1 :
-  (0 <= with_iterable__cursor__i__position1)
-
-logic user_eq3 : us_rep, us_rep -> bool
-
-logic dummy3 : us_rep
-
 type cursor_2__ref = { cursor_2__content : us_rep
 }
 
@@ -323,25 +268,25 @@ axiom bool_eq_rev3 :
   (temp___idx_154 <= a__last)) ->
   (to_rep((a[temp___idx_154])) = to_rep((b[((b__first - a__first) + temp___idx_154)]))))))))
 
-logic dummy4 : (int,natural) farray
+logic dummy3 : (int,natural) farray
 
-logic value__size2 : int
+logic value__size1 : int
 
-logic object__size2 : int
+logic object__size1 : int
 
 logic component__size : int
 
-logic alignment2 : int
+logic alignment1 : int
 
-axiom value__size_axiom2 : (0 <= value__size2)
+axiom value__size_axiom1 : (0 <= value__size1)
 
-axiom object__size_axiom2 : (0 <= object__size2)
+axiom object__size_axiom1 : (0 <= object__size1)
 
 axiom component__size_axiom : (0 <= component__size)
 
-axiom alignment_axiom2 : (0 <= alignment2)
+axiom alignment_axiom1 : (0 <= alignment1)
 
-logic user_eq4 : (int,natural) farray, (int,natural) farray -> bool
+logic user_eq3 : (int,natural) farray, (int,natural) farray -> bool
 
 type us_split_fields2 = { rec__with_iterable__container__content :
 (int,natural) farray
@@ -367,17 +312,17 @@ function bool_eq4(a: us_rep1, b: us_rep1) : bool =
   1, 100, ((b).us_split_fields3).rec__with_iterable__container__content, 1,
   100) = true) then true else false)
 
-logic value__size3 : int
+logic value__size2 : int
 
-logic object__size3 : int
+logic object__size2 : int
 
-logic alignment3 : int
+logic alignment2 : int
 
-axiom value__size_axiom3 : (0 <= value__size3)
+axiom value__size_axiom2 : (0 <= value__size2)
 
-axiom object__size_axiom3 : (0 <= object__size3)
+axiom object__size_axiom2 : (0 <= object__size2)
 
-axiom alignment_axiom3 : (0 <= alignment3)
+axiom alignment_axiom2 : (0 <= alignment2)
 
 logic with_iterable__container__content__first__bit : int
 
@@ -394,9 +339,9 @@ axiom with_iterable__container__content__last__bit_axiom :
 axiom with_iterable__container__content__position_axiom :
   (0 <= with_iterable__container__content__position)
 
-logic user_eq5 : us_rep1, us_rep1 -> bool
+logic user_eq4 : us_rep1, us_rep1 -> bool
 
-logic dummy5 : us_rep1
+logic dummy4 : us_rep1
 
 type container__ref = { container__content : us_rep1
 }
@@ -416,21 +361,80 @@ logic has_element : us_rep1, us_rep -> bool
 
 logic has_element__function_guard : bool, us_rep1, us_rep -> prop
 
-predicate dynamic_invariant(temp___expr_196: us_rep,
-  temp___is_init_192: bool, temp___skip_constant_193: bool,
-  temp___do_toplevel_194: bool, temp___do_typ_inv_195: bool) =
-  (((not (temp___skip_constant_193 = true)) -> in_range2(101,
-  temp___expr_196)) and ((temp___is_init_192 = true) ->
-  ((1 <= to_rep(((temp___expr_196).us_split_fields1).rec__with_iterable__cursor__i)) and
-  (to_rep(((temp___expr_196).us_split_fields1).rec__with_iterable__cursor__i) <= to_rep(((temp___expr_196).us_split_discrs1).rec__with_iterable__cursor__c)))))
+predicate in_range2(rec__with_iterable__cursor__c1: int,
+  a1: us_split_discrs) =
+  (rec__with_iterable__cursor__c1 = to_rep((a1).rec__with_iterable__cursor__c))
 
-predicate default_initial_assumption(temp___expr_201: us_rep,
-  temp___skip_top_level_202: bool) =
-  (to_rep(((temp___expr_201).us_split_discrs1).rec__with_iterable__cursor__c) = 101)
+logic value__size3 : int
 
-predicate dynamic_predicate(temp___205: us_rep) =
-  ((1 <= to_rep(((temp___205).us_split_fields1).rec__with_iterable__cursor__i)) and
-  (to_rep(((temp___205).us_split_fields1).rec__with_iterable__cursor__i) <= to_rep(((temp___205).us_split_discrs1).rec__with_iterable__cursor__c)))
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic with_iterable__cursor__c__first__bit1 : int
+
+logic with_iterable__cursor__c__last__bit1 : int
+
+logic with_iterable__cursor__c__position1 : int
+
+axiom with_iterable__cursor__c__first__bit_axiom1 :
+  (0 <= with_iterable__cursor__c__first__bit1)
+
+axiom with_iterable__cursor__c__last__bit_axiom1 :
+  (with_iterable__cursor__c__first__bit1 <  with_iterable__cursor__c__last__bit1)
+
+axiom with_iterable__cursor__c__position_axiom1 :
+  (0 <= with_iterable__cursor__c__position1)
+
+logic with_iterable__cursor__i__first__bit1 : int
+
+logic with_iterable__cursor__i__last__bit1 : int
+
+logic with_iterable__cursor__i__position1 : int
+
+axiom with_iterable__cursor__i__first__bit_axiom1 :
+  (0 <= with_iterable__cursor__i__first__bit1)
+
+axiom with_iterable__cursor__i__last__bit_axiom1 :
+  (with_iterable__cursor__i__first__bit1 <  with_iterable__cursor__i__last__bit1)
+
+axiom with_iterable__cursor__i__position_axiom1 :
+  (0 <= with_iterable__cursor__i__position1)
+
+logic user_eq5 : us_rep, us_rep -> bool
+
+logic dummy5 : us_rep
+
+type cursor__ref = { cursor__content : us_rep
+}
+
+function cursor__ref_cursor__content__projection(a1: cursor__ref) : us_rep =
+  (a1).cursor__content
+
+predicate dynamic_invariant(temp___expr_198: us_rep,
+  temp___is_init_194: bool, temp___skip_constant_195: bool,
+  temp___do_toplevel_196: bool, temp___do_typ_inv_197: bool) =
+  (((not (temp___skip_constant_195 = true)) -> in_range2(101,
+  (temp___expr_198).us_split_discrs1)) and ((temp___is_init_194 = true) ->
+  (let temp___201 =
+  to_rep(((temp___expr_198).us_split_fields1).rec__with_iterable__cursor__i)
+  : int in ((1 <= temp___201) and
+  (temp___201 <= to_rep(((temp___expr_198).us_split_discrs1).rec__with_iterable__cursor__c))))))
+
+predicate default_initial_assumption(temp___expr_205: us_rep,
+  temp___skip_top_level_206: bool) =
+  (to_rep(((temp___expr_205).us_split_discrs1).rec__with_iterable__cursor__c) = 101)
+
+predicate dynamic_predicate(temp___209: us_rep) = (let temp___212 =
+  to_rep(((temp___209).us_split_fields1).rec__with_iterable__cursor__i)
+  : int in ((1 <= temp___212) and
+  (temp___212 <= to_rep(((temp___209).us_split_discrs1).rec__with_iterable__cursor__c))))
 
 axiom has_element__def_axiom :
   (forall a1:us_rep1.
@@ -446,10 +450,10 @@ axiom has_element__def_axiom1 :
 
 axiom has_element__def_axiom2 :
   (forall a1:us_rep1.
-  (forall cu1:us_rep [has_element(a1, cu1)].
-  (((1 <= to_rep(((cu1).us_split_fields1).rec__with_iterable__cursor__i)) and
-  (to_rep(((cu1).us_split_fields1).rec__with_iterable__cursor__i) <= 100)) ->
-  (has_element(a1, cu1) = true))))
+  (forall cu1:us_rep [has_element(a1, cu1)]. ((let temp___229 =
+  to_rep(((cu1).us_split_fields1).rec__with_iterable__cursor__i) : int in
+  ((1 <= temp___229) and (temp___229 <= 100))) -> (has_element(a1,
+  cu1) = true))))
 
 logic i8s : us_rep
 
@@ -459,12 +463,15 @@ predicate dynamic_invariant1(temp___expr_187: us_rep,
   temp___is_init_183: bool, temp___skip_constant_184: bool,
   temp___do_toplevel_185: bool, temp___do_typ_inv_186: bool) =
   ((temp___do_toplevel_185 = true) -> ((temp___is_init_183 = true) ->
-  ((1 <= to_rep(((temp___expr_187).us_split_fields1).rec__with_iterable__cursor__i)) and
-  (to_rep(((temp___expr_187).us_split_fields1).rec__with_iterable__cursor__i) <= to_rep(((temp___expr_187).us_split_discrs1).rec__with_iterable__cursor__c)))))
+  (let temp___189 =
+  to_rep(((temp___expr_187).us_split_fields1).rec__with_iterable__cursor__i)
+  : int in ((1 <= temp___189) and
+  (temp___189 <= to_rep(((temp___expr_187).us_split_discrs1).rec__with_iterable__cursor__c))))))
 
-predicate dynamic_predicate1(temp___190: us_rep) =
-  ((1 <= to_rep(((temp___190).us_split_fields1).rec__with_iterable__cursor__i)) and
-  (to_rep(((temp___190).us_split_fields1).rec__with_iterable__cursor__i) <= to_rep(((temp___190).us_split_discrs1).rec__with_iterable__cursor__c)))
+predicate dynamic_predicate1(temp___191: us_rep) = (let temp___193 =
+  to_rep(((temp___191).us_split_fields1).rec__with_iterable__cursor__i)
+  : int in ((1 <= temp___193) and
+  (temp___193 <= to_rep(((temp___191).us_split_discrs1).rec__with_iterable__cursor__c))))
 
 predicate dynamic_invariant2(temp___expr_39: int, temp___is_init_35: bool,
   temp___skip_constant_36: bool, temp___do_toplevel_37: bool,

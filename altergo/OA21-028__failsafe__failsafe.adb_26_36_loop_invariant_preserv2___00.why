@@ -1620,8 +1620,8 @@ goal defqtvc :
   rliteral3)) then add(sub(current_time, sub(res2, rliteral3)),
   rliteral2) else sub(current_time, sub(res2, rliteral3))), s2) and ule(s2,
   rliteral1)) -> lt(to_rep((battery_level_at[s2])), battery_threshold))))) and
-  (res2 = add(s1, rliteral3))) -> ((andb((if (in_range2(s1) and
-  dynamic_invariant2(res2, true, true, true, true)) then true else false),
+  (res2 = add(s1, rliteral3))) -> ((andb((if (dynamic_invariant2(res2, true,
+  true, true, true) and in_range2(s1)) then true else false),
   (if (ule(rliteral, s1) and ule(s1,
   rliteral1)) then true else false)) = true) -> ((not (s1 = rliteral1)) ->
   (forall s2:t. ((s2 = add(s1, rliteral3)) ->

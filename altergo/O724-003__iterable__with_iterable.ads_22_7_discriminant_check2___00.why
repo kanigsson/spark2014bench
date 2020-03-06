@@ -318,14 +318,15 @@ logic user_eq3 : us_rep1, us_rep1 -> bool
 
 logic dummy3 : us_rep1
 
-type cursor__ref = { cursor__content : us_rep1
+type cursor_2__ref = { cursor_2__content : us_rep1
 }
 
-function cursor__ref_cursor__content__projection(a1: cursor__ref) : us_rep1 =
-  (a1).cursor__content
+function cursor_2__ref_cursor_2__content__projection(a1: cursor_2__ref) : us_rep1 =
+  (a1).cursor_2__content
 
-predicate in_range1(rec__with_iterable__cursor__c1: int, a1: us_rep1) =
-  (rec__with_iterable__cursor__c1 = to_rep(((a1).us_split_discrs1).rec__with_iterable__cursor__c))
+predicate in_range1(rec__with_iterable__cursor__c1: int,
+  a1: us_split_discrs) =
+  (rec__with_iterable__cursor__c1 = to_rep((a1).rec__with_iterable__cursor__c))
 
 logic value__size3 : int
 
@@ -373,30 +374,30 @@ logic user_eq4 : us_rep1, us_rep1 -> bool
 
 logic dummy4 : us_rep1
 
-type cursor_2__ref = { cursor_2__content : us_rep1
+type cursor__ref = { cursor__content : us_rep1
 }
 
-function cursor_2__ref_cursor_2__content__projection(a1: cursor_2__ref) : us_rep1 =
-  (a1).cursor_2__content
+function cursor__ref_cursor__content__projection(a1: cursor__ref) : us_rep1 =
+  (a1).cursor__content
 
-predicate dynamic_invariant(temp___expr_196: us_rep1,
-  temp___is_init_192: bool, temp___skip_constant_193: bool,
-  temp___do_toplevel_194: bool, temp___do_typ_inv_195: bool) =
-  (((not (temp___skip_constant_193 = true)) -> in_range1(101,
-  temp___expr_196)) and ((temp___is_init_192 = true) ->
-  ((1 <= to_rep(((temp___expr_196).us_split_fields3).rec__with_iterable__cursor__i)) and
-  (to_rep(((temp___expr_196).us_split_fields3).rec__with_iterable__cursor__i) <= to_rep(((temp___expr_196).us_split_discrs1).rec__with_iterable__cursor__c)))))
+predicate dynamic_invariant(temp___expr_198: us_rep1,
+  temp___is_init_194: bool, temp___skip_constant_195: bool,
+  temp___do_toplevel_196: bool, temp___do_typ_inv_197: bool) =
+  (((not (temp___skip_constant_195 = true)) -> in_range1(101,
+  (temp___expr_198).us_split_discrs1)) and ((temp___is_init_194 = true) ->
+  (let temp___201 =
+  to_rep(((temp___expr_198).us_split_fields3).rec__with_iterable__cursor__i)
+  : int in ((1 <= temp___201) and
+  (temp___201 <= to_rep(((temp___expr_198).us_split_discrs1).rec__with_iterable__cursor__c))))))
 
-predicate default_initial_assumption(temp___expr_201: us_rep1,
-  temp___skip_top_level_202: bool) =
-  (to_rep(((temp___expr_201).us_split_discrs1).rec__with_iterable__cursor__c) = 101)
+predicate default_initial_assumption(temp___expr_205: us_rep1,
+  temp___skip_top_level_206: bool) =
+  (to_rep(((temp___expr_205).us_split_discrs1).rec__with_iterable__cursor__c) = 101)
 
-predicate dynamic_predicate(temp___205: us_rep1) =
-  ((1 <= to_rep(((temp___205).us_split_fields3).rec__with_iterable__cursor__i)) and
-  (to_rep(((temp___205).us_split_fields3).rec__with_iterable__cursor__i) <= to_rep(((temp___205).us_split_discrs1).rec__with_iterable__cursor__c)))
-
-predicate in_range2(rec__with_iterable__cursor__c1: int, a1: us_rep1) =
-  (rec__with_iterable__cursor__c1 = to_rep(((a1).us_split_discrs1).rec__with_iterable__cursor__c))
+predicate dynamic_predicate(temp___209: us_rep1) = (let temp___212 =
+  to_rep(((temp___209).us_split_fields3).rec__with_iterable__cursor__i)
+  : int in ((1 <= temp___212) and
+  (temp___212 <= to_rep(((temp___209).us_split_discrs1).rec__with_iterable__cursor__c))))
 
 logic value__size4 : int
 
@@ -450,9 +451,10 @@ type t14s__ref = { t14s__content : us_rep1
 function t14s__ref_t14s__content__projection(a1: t14s__ref) : us_rep1 =
   (a1).t14s__content
 
-predicate dynamic_predicate1(temp___212: us_rep1) =
-  ((1 <= to_rep(((temp___212).us_split_fields3).rec__with_iterable__cursor__i)) and
-  (to_rep(((temp___212).us_split_fields3).rec__with_iterable__cursor__i) <= to_rep(((temp___212).us_split_discrs1).rec__with_iterable__cursor__c)))
+predicate dynamic_predicate1(temp___217: us_rep1) = (let temp___219 =
+  to_rep(((temp___217).us_split_fields3).rec__with_iterable__cursor__i)
+  : int in ((1 <= temp___219) and
+  (temp___219 <= to_rep(((temp___217).us_split_discrs1).rec__with_iterable__cursor__c))))
 
 predicate dynamic_invariant1(temp___expr_39: int, temp___is_init_35: bool,
   temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
@@ -463,12 +465,15 @@ predicate dynamic_invariant2(temp___expr_187: us_rep1,
   temp___is_init_183: bool, temp___skip_constant_184: bool,
   temp___do_toplevel_185: bool, temp___do_typ_inv_186: bool) =
   ((temp___do_toplevel_185 = true) -> ((temp___is_init_183 = true) ->
-  ((1 <= to_rep(((temp___expr_187).us_split_fields3).rec__with_iterable__cursor__i)) and
-  (to_rep(((temp___expr_187).us_split_fields3).rec__with_iterable__cursor__i) <= to_rep(((temp___expr_187).us_split_discrs1).rec__with_iterable__cursor__c)))))
+  (let temp___189 =
+  to_rep(((temp___expr_187).us_split_fields3).rec__with_iterable__cursor__i)
+  : int in ((1 <= temp___189) and
+  (temp___189 <= to_rep(((temp___expr_187).us_split_discrs1).rec__with_iterable__cursor__c))))))
 
-predicate dynamic_predicate2(temp___190: us_rep1) =
-  ((1 <= to_rep(((temp___190).us_split_fields3).rec__with_iterable__cursor__i)) and
-  (to_rep(((temp___190).us_split_fields3).rec__with_iterable__cursor__i) <= to_rep(((temp___190).us_split_discrs1).rec__with_iterable__cursor__c)))
+predicate dynamic_predicate2(temp___191: us_rep1) = (let temp___193 =
+  to_rep(((temp___191).us_split_fields3).rec__with_iterable__cursor__i)
+  : int in ((1 <= temp___193) and
+  (temp___193 <= to_rep(((temp___191).us_split_discrs1).rec__with_iterable__cursor__c))))
 
 logic rliteral : natural
 
@@ -479,7 +484,8 @@ logic rliteral1 : natural
 axiom rliteral_axiom1 : (naturalqtint(rliteral1) = 1)
 
  (* File "with_iterable.ads", line 21, characters 0-0 *)
-goal defqtvc : (let temp___253 = { us_split_discrs1 = {
+goal defqtvc : (let temp___262 = { us_split_discrs1 = {
   rec__with_iterable__cursor__c = rliteral }; us_split_fields3 = {
   rec__with_iterable__cursor__i = rliteral1 } } : us_rep1 in
-  (dynamic_predicate1(temp___253) -> in_range1(101, temp___253)))
+  (dynamic_predicate1(temp___262) -> in_range1(101,
+  (temp___262).us_split_discrs1)))

@@ -635,6 +635,9 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range7(rec__stacks__stack__max1: int, a: us_split_discrs) =
+  (rec__stacks__stack__max1 = to_rep1((a).rec__stacks__stack__max))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -768,9 +771,6 @@ function bool_eq12(a: us_rep1, b: us_rep1) : bool =
   ((b).us_split_fields3).rec__stacks__stack__data1) = true))) then true else false)
 
 logic us_tag1 : int
-
-predicate in_range7(rec__stacks__stack__max1: int, a: us_rep) =
-  (rec__stacks__stack__max1 = to_rep1(((a).us_split_discrs1).rec__stacks__stack__max))
 
 logic value__size3 : int
 
@@ -1839,9 +1839,9 @@ goal defqtvc :
   ((to_rep1((s__split_discrs).rec__stacks__stack__max) = max_cst) and
   ((first3((s__split_fields).rec__stacks__stack__data1) = 1) and
   (last3((s__split_fields).rec__stacks__stack__data1) = max_cst)))) ->
-  ((in_range7(max_cst, to_base({ us_split_discrs2 = s__split_discrs;
-  us_split_fields3 = s__split_fields; attr__tag1 = s__attr__tag })) and
-  (dynamic_property1(1, max_cst,
+  ((in_range7(max_cst, (to_base({ us_split_discrs2 = s__split_discrs;
+  us_split_fields3 = s__split_fields; attr__tag1 = s__attr__tag
+  })).us_split_discrs1) and (dynamic_property1(1, max_cst,
   first3((s__split_fields).rec__stacks__stack__data1),
   last3((s__split_fields).rec__stacks__stack__data1)) and
   ((first3((s__split_fields).rec__stacks__stack__data1) = 1) and

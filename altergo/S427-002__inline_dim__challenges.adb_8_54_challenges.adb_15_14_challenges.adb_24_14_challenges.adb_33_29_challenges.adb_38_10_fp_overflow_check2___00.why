@@ -1462,20 +1462,20 @@ predicate dynamic_invariant1(temp___expr_214: t, temp___is_init_210: bool,
   temp___do_typ_inv_213: bool) = (((temp___is_init_210 = true) or
   le(fliteral6, fliteral1)) -> in_range3(temp___expr_214))
 
-type short_length
+type area
 
 logic fliteral7 : t
 
 axiom fliteral_axiom14 : tqtisFinite(fliteral7)
 
-axiom fliteral_axiom15 : (tqtreal(fliteral7) = 50.0)
+axiom fliteral_axiom15 : (tqtreal(fliteral7) = 1000000000000.0)
 
 predicate in_range4(x: t) = (tqtisFinite(x) and (le(neg(fliteral7), x) and
   le(x, fliteral7)))
 
 function bool_eq8(x: t, y: t) : bool = (if eq(x, y) then true else false)
 
-logic user_eq7 : short_length, short_length -> bool
+logic user_eq7 : area, area -> bool
 
 logic attr__ATTRIBUTE_IMAGE4 : t -> us_image
 
@@ -1483,7 +1483,36 @@ logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
 
 logic attr__ATTRIBUTE_VALUE4 : us_image -> t
 
-logic dummy7 : short_length
+logic dummy7 : area
+
+type area__ref = { area__content : area
+}
+
+function area__ref_area__content__projection(a: area__ref) : area =
+  (a).area__content
+
+type short_length
+
+logic fliteral8 : t
+
+axiom fliteral_axiom16 : tqtisFinite(fliteral8)
+
+axiom fliteral_axiom17 : (tqtreal(fliteral8) = 50.0)
+
+predicate in_range5(x: t) = (tqtisFinite(x) and (le(neg(fliteral8), x) and
+  le(x, fliteral8)))
+
+function bool_eq9(x: t, y: t) : bool = (if eq(x, y) then true else false)
+
+logic user_eq8 : short_length, short_length -> bool
+
+logic attr__ATTRIBUTE_IMAGE5 : t -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> t
+
+logic dummy8 : short_length
 
 type short_length__ref = { short_length__content : short_length
 }
@@ -1494,12 +1523,17 @@ function short_length__ref_short_length__content__projection(a: short_length__re
 predicate dynamic_invariant2(temp___expr_251: t, temp___is_init_247: bool,
   temp___skip_constant_248: bool, temp___do_toplevel_249: bool,
   temp___do_typ_inv_250: bool) = (((temp___is_init_247 = true) or
-  le(neg(fliteral7), fliteral7)) -> in_range4(temp___expr_251))
+  le(neg(fliteral8), fliteral8)) -> in_range5(temp___expr_251))
 
 predicate dynamic_invariant3(temp___expr_196: t, temp___is_init_192: bool,
   temp___skip_constant_193: bool, temp___do_toplevel_194: bool,
   temp___do_typ_inv_195: bool) = (((temp___is_init_192 = true) or
   le(neg(fliteral2), fliteral2)) -> in_range2(temp___expr_196))
+
+predicate dynamic_invariant4(temp___expr_237: t, temp___is_init_233: bool,
+  temp___skip_constant_234: bool, temp___do_toplevel_235: bool,
+  temp___do_typ_inv_236: bool) = (((temp___is_init_233 = true) or
+  le(neg(fliteral7), fliteral7)) -> in_range4(temp___expr_237))
 
 axiom start_pose__def_axiom : (start_pose = { us_split_fields3 = {
   rec__dimensions__pose_type__pos = { us_split_fields1 = {
@@ -1514,14 +1548,14 @@ axiom c36b__def_axiom : (c36b = start_pose)
 
 axiom c37b__def_axiom : (c37b = c34b)
 
-logic fliteral8 : t
+logic fliteral9 : t
 
-axiom fliteral_axiom16 : tqtisFinite(fliteral8)
+axiom fliteral_axiom18 : tqtisFinite(fliteral9)
 
-axiom fliteral_axiom17 :
-  (tqtreal(fliteral8) = 0.59999999999999997779553950749686919152736663818359375)
+axiom fliteral_axiom19 :
+  (tqtreal(fliteral9) = 0.59999999999999997779553950749686919152736663818359375)
 
-axiom c38b__def_axiom : (c38b = fliteral8)
+axiom c38b__def_axiom : (c38b = fliteral9)
 
 axiom dx__def_axiom : (dx = sub(NearestTiesToEven,
   to_rep(((c42b).us_split_fields1).rec__dimensions__position_type__x),
@@ -1552,7 +1586,7 @@ goal defqtvc :
   o1 } }; rec__dimensions__pose_type__heading = o } } = start_pose) ->
   (forall remaining_distance:t. ((remaining_distance = fliteral6) ->
   (dynamic_invariant2(remaining_distance, true, false, true, true) ->
-  ((start_pose = c36b) -> ((c34b = c37b) -> ((fliteral8 = c38b) ->
+  ((start_pose = c36b) -> ((c34b = c37b) -> ((fliteral9 = c38b) ->
   (dynamic_invariant2(c38b, true, false, true, true) ->
   ((((c36b).us_split_fields3).rec__dimensions__pose_type__pos = c41b) ->
   ((c37b = c42b) -> (dynamic_invariant1(c43b, false, false, true, true) ->
@@ -1576,9 +1610,10 @@ goal defqtvc :
   ((to_rep(((c46b).us_split_fields5).rec__dimensions__vector_type__dy) = o11) ->
   (forall o12:t.
   ((to_rep(((c46b).us_split_fields5).rec__dimensions__vector_type__dy) = o12) ->
-  (tqtisFinite(mul(NearestTiesToEven, o12, o11)) ->
-  (forall o13:t.
-  ((to_rep(((c46b).us_split_fields5).rec__dimensions__vector_type__dx) = o13) ->
+  (let o13 = mul(NearestTiesToEven, o12, o11) : t in (tqtisFinite(o13) ->
+  (tqtisFinite(o13) ->
   (forall o14:t.
   ((to_rep(((c46b).us_split_fields5).rec__dimensions__vector_type__dx) = o14) ->
-  tqtisFinite(mul(NearestTiesToEven, o14, o13))))))))))))))))))))))))))))))))))))))))))))))))))))
+  (forall o15:t.
+  ((to_rep(((c46b).us_split_fields5).rec__dimensions__vector_type__dx) = o15) ->
+  tqtisFinite(mul(NearestTiesToEven, o15, o14))))))))))))))))))))))))))))))))))))))))))))))))))))))

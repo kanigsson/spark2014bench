@@ -412,6 +412,15 @@ function bool_eq4(a: us_rep, b: us_rep) : bool =
   (bool_eq3(((a).us_split_fields1).rec__discr__t_record__data,
   ((b).us_split_fields1).rec__discr__t_record__data) = true)) then true else false)
 
+predicate in_range2(rec__discr__t_record__row_first1: int,
+  rec__discr__t_record__row_last1: int,
+  rec__discr__t_record__col_first1: int,
+  rec__discr__t_record__col_last1: int, a: us_split_discrs) =
+  ((((rec__discr__t_record__row_first1 = to_rep1((a).rec__discr__t_record__row_first)) and
+  (rec__discr__t_record__row_last1 = to_rep1((a).rec__discr__t_record__row_last))) and
+  (rec__discr__t_record__col_first1 = to_rep1((a).rec__discr__t_record__col_first))) and
+  (rec__discr__t_record__col_last1 = to_rep1((a).rec__discr__t_record__col_last)))
+
 logic value__size1 : int
 
 logic object__size1 : int

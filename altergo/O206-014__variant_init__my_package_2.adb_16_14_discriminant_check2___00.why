@@ -201,6 +201,10 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (my_package_2__variant_type__m_b__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__my_package_2__variant_type__m_b) = to_rep(((b).us_split_fields1).rec__my_package_2__variant_type__m_b))))) then true else false)
 
+predicate in_range2(rec__my_package_2__variant_type__m_v1: int,
+  a: us_split_discrs) =
+  (rec__my_package_2__variant_type__m_v1 = to_rep1((a).rec__my_package_2__variant_type__m_v))
+
 logic value__size : int
 
 logic object__size : int

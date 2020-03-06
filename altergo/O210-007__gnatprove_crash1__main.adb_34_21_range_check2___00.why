@@ -306,6 +306,10 @@ function bool_eq4(a: us_rep, b: us_rep) : bool =
   (bool_eq3(((a).us_split_fields1).rec__main__branch_type__m_nodes,
   ((b).us_split_fields1).rec__main__branch_type__m_nodes) = true)) then true else false)
 
+predicate in_range2(rec__main__branch_type__m_height1: int,
+  a: us_split_discrs) =
+  (rec__main__branch_type__m_height1 = to_rep((a).rec__main__branch_type__m_height))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -377,7 +381,7 @@ axiom tT12bP1qtaxiom : (forall i:tT12bP1. (0 <= tT12bP1qtint(i)))
 
 axiom tT12bP1qtaxiom1 : (forall i:tT12bP1. (tT12bP1qtint(i) <= 7))
 
-predicate in_range2(x: int) = ((0 <= x) and (x <= 7))
+predicate in_range3(x: int) = ((0 <= x) and (x <= 7))
 
 function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -456,9 +460,6 @@ function bool_eq6(a: us_rep1, b: us_rep1) : bool =
   ((b).us_split_fields3).rec__main__branch_type__m_nodes1, 0,
   7) = true)) then true else false)
 
-predicate in_range3(rec__main__branch_type__m_height1: int, a: us_rep) =
-  (rec__main__branch_type__m_height1 = to_rep(((a).us_split_discrs1).rec__main__branch_type__m_height))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -518,8 +519,8 @@ logic attr__ATTRIBUTE_ADDRESS : int
 predicate dynamic_invariant2(temp___expr_204: us_rep1,
   temp___is_init_200: bool, temp___skip_constant_201: bool,
   temp___do_toplevel_202: bool, temp___do_typ_inv_203: bool) =
-  ((not (temp___skip_constant_201 = true)) -> in_range3(7,
-  to_base(temp___expr_204)))
+  ((not (temp___skip_constant_201 = true)) -> in_range2(7,
+  (to_base(temp___expr_204)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_207: us_rep1,
   temp___skip_top_level_208: bool) =

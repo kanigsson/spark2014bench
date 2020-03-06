@@ -115,6 +115,9 @@ type us_rep = { us_split_discrs1 : us_split_discrs
 function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
   (a).us_split_discrs1
 
+predicate in_range1(rec__p__pt__d1: int, a: us_split_discrs) =
+  (rec__p__pt__d1 = to_rep((a).rec__p__pt__d))
+
 logic value__size : int
 
 logic object__size : int
@@ -160,7 +163,7 @@ axiom priorityqtaxiom : (forall i:priority. (0 <= priorityqtint(i)))
 
 axiom priorityqtaxiom1 : (forall i:priority. (priorityqtint(i) <= 97))
 
-predicate in_range1(x: int) = ((0 <= x) and (x <= 97))
+predicate in_range2(x: int) = ((0 <= x) and (x <= 97))
 
 function bool_eq1(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -191,9 +194,6 @@ function to_base(a: us_rep1) : us_rep = { us_split_discrs1 =
 
 function of_base(r: us_rep) : us_rep1 = { us_split_discrs2 =
   (r).us_split_discrs1 }
-
-predicate in_range2(rec__p__pt__d1: int, a: us_rep) =
-  (rec__p__pt__d1 = to_rep(((a).us_split_discrs1).rec__p__pt__d))
 
 logic value__size1 : int
 
@@ -231,8 +231,8 @@ function tpoS__ref_tpoS__content__projection(a: tpoS__ref) : us_rep1 =
 predicate dynamic_invariant(temp___expr_187: us_rep1,
   temp___is_init_183: bool, temp___skip_constant_184: bool,
   temp___do_toplevel_185: bool, temp___do_typ_inv_186: bool) =
-  ((not (temp___skip_constant_184 = true)) -> in_range2(0,
-  to_base(temp___expr_187)))
+  ((not (temp___skip_constant_184 = true)) -> in_range1(0,
+  (to_base(temp___expr_187)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_189: us_rep1,
   temp___skip_top_level_190: bool) =
@@ -246,7 +246,7 @@ predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
 predicate dynamic_invariant2(temp___expr_167: int, temp___is_init_163: bool,
   temp___skip_constant_164: bool, temp___do_toplevel_165: bool,
   temp___do_typ_inv_166: bool) = (((temp___is_init_163 = true) or
-  (0 <= 97)) -> in_range1(temp___expr_167))
+  (0 <= 97)) -> in_range2(temp___expr_167))
 
  (* File "main.adb", line 3, characters 0-0 *)
 goal defqtvc : (dynamic_invariant({ us_split_discrs2 = po__split_discrs },

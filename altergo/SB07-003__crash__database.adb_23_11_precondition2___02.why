@@ -433,6 +433,10 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   (us_main_eq(((a).us_split_fields3).rec__database__db_pack__list,
   ((b).us_split_fields3).rec__database__db_pack__list) = true)) then true else false)
 
+predicate in_range4(rec__database__db_pack__list__capacity1: int,
+  a: us_split_discrs) =
+  (rec__database__db_pack__list__capacity1 = to_rep2((a).rec__database__db_pack__list__capacity))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -528,7 +532,7 @@ function to_int(b: bool) : int = (if (b = true) then 1 else 0)
 
 function of_int(i: int) : bool = (if (i = 0) then false else true)
 
-predicate in_range4(x: int) = ((x = 0) or (x = 1))
+predicate in_range5(x: int) = ((x = 0) or (x = 1))
 
 logic attr__ATTRIBUTE_IMAGE4 : bool -> us_image
 
@@ -846,10 +850,6 @@ axiom next__post_axiom2 :
   (get1(positions(container), next(container,
   position)) = (get1(positions(container), position) + 1))))))
 
-predicate in_range5(rec__database__db_pack__list__capacity1: int,
-  a: us_rep1) =
-  (rec__database__db_pack__list__capacity1 = to_rep2(((a).us_split_discrs1).rec__database__db_pack__list__capacity))
-
 logic value__size6 : int
 
 logic object__size6 : int
@@ -899,17 +899,17 @@ axiom user_eq__def_axiom1 :
   (forall a:us_rep1. forall b:us_rep1 [user_eq10(a, b)]. (user_eq10(a,
   b) = oeq(a, b)))
 
-predicate dynamic_invariant1(temp___expr_670: us_rep1,
-  temp___is_init_666: bool, temp___skip_constant_667: bool,
-  temp___do_toplevel_668: bool, temp___do_typ_inv_669: bool) =
-  ((not (temp___skip_constant_667 = true)) -> in_range5(1000,
-  temp___expr_670))
+predicate dynamic_invariant1(temp___expr_677: us_rep1,
+  temp___is_init_673: bool, temp___skip_constant_674: bool,
+  temp___do_toplevel_675: bool, temp___do_typ_inv_676: bool) =
+  ((not (temp___skip_constant_674 = true)) -> in_range4(1000,
+  (temp___expr_677).us_split_discrs1))
 
-predicate default_initial_assumption2(temp___expr_672: us_rep1,
-  temp___skip_top_level_673: bool) =
-  ((to_rep2(((temp___expr_672).us_split_discrs1).rec__database__db_pack__list__capacity) = 1000) and
-  ((not (temp___skip_top_level_673 = true)) ->
-  (is_empty(temp___expr_672) = true)))
+predicate default_initial_assumption2(temp___expr_679: us_rep1,
+  temp___skip_top_level_680: bool) =
+  ((to_rep2(((temp___expr_679).us_split_discrs1).rec__database__db_pack__list__capacity) = 1000) and
+  ((not (temp___skip_top_level_680 = true)) ->
+  (is_empty(temp___expr_679) = true)))
 
 logic attr__ATTRIBUTE_ADDRESS3 : int
 
@@ -1265,19 +1265,72 @@ axiom w_get__post_axiom :
 
  (* File "database.ads", line 6, characters 0-0 *)
 goal defqtvc :
-  (forall database__split_fields:us_main_type. (dynamic_invariant1({
+  (forall database__split_fields:us_main_type. forall ent:us_split_fields4.
+  (dynamic_invariant1({ us_split_discrs1 = database__split_discrs;
+  us_split_fields3 = { rec__database__db_pack__list = database__split_fields
+  } }, true, false, true, true) -> (dynamic_invariant2(email, true, false,
+  true, true) -> (let o = { us_split_discrs1 = database__split_discrs;
+  us_split_fields3 = { rec__database__db_pack__list = database__split_fields
+  } } : us_rep1 in (let o1 = first2(o) : us_rep in
+  ((if (bool_eq13(length2(o), 0) = true) then (bool_eq6(o1,
+  no_element) = true) else ((has_element(o, o1) = true) and
+  (get1(positions(o), o1) = 1))) ->
+  (forall ent1:us_split_fields4. ((let o2 = { us_split_discrs1 =
+  database__split_discrs; us_split_fields3 = { rec__database__db_pack__list =
+  database__split_fields } } : us_rep1 in (let o3 = has_element(o2, o1)
+  : bool in (((o3 = true) <-> (has_key(positions(o2), o1) = true)) and
+  (if (o3 = true) then (let o4 = { us_split_discrs1 = database__split_discrs;
+  us_split_fields3 = { rec__database__db_pack__list = database__split_fields
+  } } : us_rep1 in (let o5 = element(o4, o1) : us_rep4 in
+  ((dynamic_invariant(o5, true, false, true, true) and (bool_eq11(o5,
+  get(model(o4), get1(positions(o4), o1))) = true)) and ({ us_split_fields5 =
+  ent1 } = o5)))) else (ent1 = ent))))) -> (let o2 = { us_split_discrs1 =
+  database__split_discrs; us_split_fields3 = { rec__database__db_pack__list =
+  database__split_fields } } : us_rep1 in (let o3 = has_element(o2, o1)
+  : bool in (((o3 = true) <-> (has_key(positions(o2), o1) = true)) ->
+  ((o3 = true) ->
+  (forall ent2:us_split_fields4. forall temp___703:count_type.
+  (((has_element({ us_split_discrs1 = database__split_discrs;
+  us_split_fields3 = { rec__database__db_pack__list = database__split_fields
+  } }, { us_split_fields1 = { rec__database__db_pack__cursor__node =
+  temp___703 } }) = true) and ({ us_split_fields5 = ent2 } = element({
   us_split_discrs1 = database__split_discrs; us_split_fields3 = {
-  rec__database__db_pack__list = database__split_fields } }, true, false,
-  true, true) -> (dynamic_invariant2(email, true, false, true, true) ->
-  (let o = { us_split_discrs1 = database__split_discrs; us_split_fields3 = {
+  rec__database__db_pack__list = database__split_fields } }, {
+  us_split_fields1 = { rec__database__db_pack__cursor__node = temp___703 }
+  }))) -> (let temp___702 =
+  ((ent2).rec__database__db_entry_type__email).rec__database__email_access__pointer_value
+  : us_t in
+  (forall spark__branch:bool.
+  ((spark__branch = bool_eq2(to_array(temp___702), first1(temp___702),
+  last1(temp___702), to_array(email), first1(email), last1(email))) ->
+  ((not (spark__branch = true)) -> (let o4 = { us_split_fields1 = {
+  rec__database__db_pack__cursor__node = temp___703 } } : us_rep in (let o5 =
+  { us_split_discrs1 = database__split_discrs; us_split_fields3 = {
   rec__database__db_pack__list = database__split_fields } } : us_rep1 in
-  (let o1 = first2(o) : us_rep in ((if (bool_eq13(length2(o),
-  0) = true) then (bool_eq6(o1, no_element) = true) else ((has_element(o,
-  o1) = true) and (get1(positions(o), o1) = 1))) -> (let o2 = {
+  (let o6 = next(o5, o4) : us_rep in ((if (orb(bool_eq6(o4, no_element),
+  bool_eq13(get1(positions(o5), o4), length2(o5))) = true) then (bool_eq6(o6,
+  no_element) = true) else ((has_element(o5, o6) = true) and
+  (get1(positions(o5), o6) = (get1(positions(o5), o4) + 1)))) -> (let o7 = {
   us_split_discrs1 = database__split_discrs; us_split_fields3 = {
   rec__database__db_pack__list = database__split_fields } } : us_rep1 in
-  (let o3 = has_element(o2, o1) : bool in (((o3 = true) <->
-  (has_key(positions(o2), o1) = true)) -> ((o3 = true) -> (has_element({
-  us_split_discrs1 = database__split_discrs; us_split_fields3 = {
-  rec__database__db_pack__list = database__split_fields } },
-  o1) = true)))))))))))
+  (let o8 = has_element(o7, o6) : bool in (((o8 = true) <->
+  (has_key(positions(o7), o6) = true)) -> ((o8 = true) -> (let o9 = {
+  us_split_fields1 = { rec__database__db_pack__cursor__node = temp___703 } }
+  : us_rep in (let o10 = { us_split_discrs1 = database__split_discrs;
+  us_split_fields3 = { rec__database__db_pack__list = database__split_fields
+  } } : us_rep1 in (let o11 = next(o10, o9) : us_rep in
+  ((if (orb(bool_eq6(o9, no_element), bool_eq13(get1(positions(o10), o9),
+  length2(o10))) = true) then (bool_eq6(o11,
+  no_element) = true) else ((has_element(o10, o11) = true) and
+  (get1(positions(o10), o11) = (get1(positions(o10), o9) + 1)))) ->
+  (forall temp___7031:count_type. (({ us_split_fields1 = {
+  rec__database__db_pack__cursor__node = temp___7031 } } = o11) -> (let o12 =
+  { us_split_fields1 = { rec__database__db_pack__cursor__node = temp___7031 }
+  } : us_rep in (let o13 = { us_split_discrs1 = database__split_discrs;
+  us_split_fields3 = { rec__database__db_pack__list = database__split_fields
+  } } : us_rep1 in (let o14 = has_element(o13, o12) : bool in
+  (((o14 = true) <-> (has_key(positions(o13), o12) = true)) ->
+  ((o14 = true) -> (has_element({ us_split_discrs1 = database__split_discrs;
+  us_split_fields3 = { rec__database__db_pack__list = database__split_fields
+  } }, { us_split_fields1 = { rec__database__db_pack__cursor__node =
+  temp___7031 } }) = true))))))))))))))))))))))))))))))))))))))

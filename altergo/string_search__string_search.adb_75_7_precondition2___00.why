@@ -528,6 +528,6 @@ goal defqtvc :
   (forall i:int. (dynamic_invariant2(needle, true, false, true, true) ->
   (dynamic_invariant2(haystack, true, false, true, true) ->
   ((((length(needle) <  2147483647) and (length(haystack) <  2147483646)) and
-  ((1 <= length(needle)) and (length(needle) <= length(haystack)))) ->
-  (dynamic_invariant(i, false, false, true, true) ->
-  (length(needle) <  2147483647))))))
+  (let temp___412 = length(needle) : int in ((1 <= temp___412) and
+  (temp___412 <= length(haystack))))) -> (dynamic_invariant(i, false, false,
+  true, true) -> (length(needle) <  2147483647))))))

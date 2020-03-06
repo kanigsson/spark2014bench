@@ -279,6 +279,10 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   (with_default__bad_record3__rec_with_bad_discr__f2__pred(a) ->
   (to_rep1(((a).us_split_fields1).rec__with_default__bad_record3__rec_with_bad_discr__f2) = to_rep1(((b).us_split_fields1).rec__with_default__bad_record3__rec_with_bad_discr__f2))))) then true else false)
 
+predicate in_range4(rec__with_default__bad_record3__rec_with_bad_discr__b1: bool,
+  a: us_split_discrs) =
+  (rec__with_default__bad_record3__rec_with_bad_discr__b1 = (a).rec__with_default__bad_record3__rec_with_bad_discr__b)
+
 logic value__size : int
 
 logic object__size : int

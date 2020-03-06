@@ -121,6 +121,6 @@ goal defqtvc :
   (forall x:int. (dynamic_invariant(i7s, true, false, true, true) ->
   (dynamic_invariant(i7s, true, false, true, true) -> (dynamic_invariant(x,
   false, false, true, true) ->
-  (forall usf:int_ok. ((to_rep(usf) = 1) -> (let temp___372 = to_rep(usf)
-  : int in ((((- 2147483648) <= temp___372) and (temp___372 <= (- 1))) or
-  ((1 <= temp___372) and (temp___372 <= 2147483647))))))))))
+  (forall usf:int_ok. ((to_rep(usf) = 1) -> (let temp___380 = to_rep(usf)
+  : int in ((((- 2147483648) <= temp___380) and (temp___380 <= (- 1))) or
+  ((1 <= temp___380) and (temp___380 <= 2147483647))))))))))

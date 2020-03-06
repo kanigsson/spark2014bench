@@ -1046,7 +1046,7 @@ type tTbufSP1__ref = { tTbufSP1__content : tTbufSP1
 function tTbufSP1__ref_tTbufSP1__content__projection(a: tTbufSP1__ref) : tTbufSP1 =
   (a).tTbufSP1__content
 
-logic temp_____aggregate_def_413 : int -> (int,character) farray
+logic temp_____aggregate_def_419 : int -> (int,character) farray
 
 predicate dynamic_invariant6(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
@@ -1188,10 +1188,10 @@ axiom find_char_in_string__post_axiom4 :
   true))))
 
 axiom def_axiom :
-  (forall temp___415:int. (dynamic_invariant2(temp___415, true, true, true,
+  (forall temp___421:int. (dynamic_invariant2(temp___421, true, true, true,
   true) ->
-  (forall temp___416:int.
-  (to_rep((temp_____aggregate_def_413(temp___415)[temp___416])) = temp___415))))
+  (forall temp___422:int.
+  (to_rep((temp_____aggregate_def_419(temp___421)[temp___422])) = temp___421))))
 
 axiom cdiv_cases :
   (forall n1:int. forall d:int [div(n1, d)]. ((0 <= n1) -> ((0 <  d) ->
@@ -1265,7 +1265,7 @@ goal defqtvc :
   o1) = item_at_start) and (dynamic_invariant3(item_at_start, true, false,
   true, true) and
   (exists buf:(int,character) farray.
-  ((buf = temp_____aggregate_def_413(32)) and
+  ((buf = temp_____aggregate_def_419(32)) and
   (exists spark__branch:bool.
   ((spark__branch = (if (n = 1) then true else false)) and
   (if (spark__branch = true) then ((((rest1 = n) and (item2 = item)) and
@@ -1279,12 +1279,12 @@ goal defqtvc :
                                         (((to_rep1(o4) <= idx) and
                                         (idx <= to_rep1(o3))) ->
                                         (if (idx <  (to_rep1(o4) + n)) then (to_rep((textio__memset__b[idx])) = 10) else (to_rep((textio__memset__b[idx])) = to_rep((buf[idx])))))) and
-                                       (let temp___417 =
+                                       (let temp___423 =
                                        of_array(textio__memset__b, 1, 80)
                                        : us_t in
                                        (exists buf1:(int,character) farray.
-                                       ((buf1 = slide(to_array(temp___417),
-                                       first1(temp___417), 1)) and
+                                       ((buf1 = slide(to_array(temp___423),
+                                       first1(temp___423), 1)) and
                                        ((to_rep((buf1[n])) = 10) and
                                        (exists o5:int.
                                        ((to_rep2((file__split_fields).rec__textio__file_type__descr) = o5) and
@@ -1390,12 +1390,12 @@ goal defqtvc :
                                        (cur_position2 = cur_position3)))) and
                                        dynamic_invariant1(cur_position2,
                                        true, true, true, true)) and
-                                       (let temp___418 =
+                                       (let temp___424 =
                                        of_array(helpers__fgets__strng, 1, 80)
                                        : us_t in
                                        (exists buf2:(int,character) farray.
-                                       ((buf2 = slide(to_array(temp___418),
-                                       first1(temp___418), 1)) and
+                                       ((buf2 = slide(to_array(temp___424),
+                                       first1(temp___424), 1)) and
                                        (exists spark__branch1:bool.
                                        ((spark__branch1 = (if (success = true) then false else true)) and
                                        (if (spark__branch1 = true) then ((
@@ -1503,8 +1503,8 @@ goal defqtvc :
     (to_rep((item2[idx])) = to_rep((item[idx]))))) and
   ((cur_position2 - cur_position) = (last4 - last2))) ->
   (forall usf:int. ((andb((if ((last2 + 1) <= usf) then true else false),
-  (if (usf <= last4) then true else false)) = true) -> (let temp___428 =
-  (((usf - last2) - 1) + cur_position) : int in (((1 <= temp___428) and
-  (temp___428 <= 2147483647)) ->
-  (forall o:int. ((to_rep((the_file[temp___428])) = o) ->
+  (if (usf <= last4) then true else false)) = true) -> (let temp___434 =
+  (((usf - last2) - 1) + cur_position) : int in (((1 <= temp___434) and
+  (temp___434 <= 2147483647)) ->
+  (forall o:int. ((to_rep((the_file[temp___434])) = o) ->
   (to_rep1(item__first) <= usf)))))))))))))))))))))))))))))))

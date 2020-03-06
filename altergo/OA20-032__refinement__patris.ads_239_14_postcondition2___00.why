@@ -3965,9 +3965,9 @@ goal defqtvc :
   (if (o = 0) then in_range3((to_rep2((cur_piece__split_fields).rec__patris__piece__x) - 1)) else (if (o = 1) then in_range3((to_rep2((cur_piece__split_fields).rec__patris__piece__x) + 1)) else ((o = 2) ->
   in_range4((to_rep3((cur_piece__split_fields).rec__patris__piece__y) + 1)))))) and
   (exists spark__branch:bool. ((spark__branch = o1) and
-  ((spark__branch = true) and (let o2 = a : int in (let temp___845 = move({
+  ((spark__branch = true) and (let o2 = a : int in (let temp___854 = move({
   us_split_fields1 = cur_piece__split_fields }, o2) : us_rep in
-  ((temp___845 = (if (o2 = 0) then { us_split_fields1 = {
+  ((temp___854 = (if (o2 = 0) then { us_split_fields1 = {
   rec__patris__piece__s = (cur_piece__split_fields).rec__patris__piece__s;
   rec__patris__piece__d = (cur_piece__split_fields).rec__patris__piece__d;
   rec__patris__piece__x =
@@ -3990,7 +3990,7 @@ goal defqtvc :
   (cur_piece__split_fields).rec__patris__piece__x; rec__patris__piece__y =
   (cur_piece__split_fields).rec__patris__piece__y } })))) and
   (exists candidate__split_fields:us_split_fields.
-  ((candidate__split_fields = (temp___845).us_split_fields1) and (let o3 =
+  ((candidate__split_fields = (temp___854).us_split_fields1) and (let o3 =
   no_overlap(cur_board, { us_split_fields1 = candidate__split_fields })
   : bool in (((o3 = true) <->
   (if (to_rep1((candidate__split_fields).rec__patris__piece__s) = 2) then ((((is_empty(cur_board,
@@ -4027,9 +4027,9 @@ goal defqtvc :
   (if (o = 0) then in_range3((to_rep2((cur_piece__split_fields).rec__patris__piece__x) - 1)) else (if (o = 1) then in_range3((to_rep2((cur_piece__split_fields).rec__patris__piece__x) + 1)) else ((o = 2) ->
   in_range4((to_rep3((cur_piece__split_fields).rec__patris__piece__y) + 1)))))) and
   (exists spark__branch:bool. ((spark__branch = o1) and
-  ((not (spark__branch = true)) or (let o2 = a : int in (let temp___845 =
+  ((not (spark__branch = true)) or (let o2 = a : int in (let temp___854 =
   move({ us_split_fields1 = cur_piece__split_fields }, o2) : us_rep in
-  ((temp___845 = (if (o2 = 0) then { us_split_fields1 = {
+  ((temp___854 = (if (o2 = 0) then { us_split_fields1 = {
   rec__patris__piece__s = (cur_piece__split_fields).rec__patris__piece__s;
   rec__patris__piece__d = (cur_piece__split_fields).rec__patris__piece__d;
   rec__patris__piece__x =
@@ -4052,7 +4052,7 @@ goal defqtvc :
   (cur_piece__split_fields).rec__patris__piece__x; rec__patris__piece__y =
   (cur_piece__split_fields).rec__patris__piece__y } })))) and
   (exists candidate__split_fields:us_split_fields.
-  ((candidate__split_fields = (temp___845).us_split_fields1) and (let o3 =
+  ((candidate__split_fields = (temp___854).us_split_fields1) and (let o3 =
   no_overlap(cur_board, { us_split_fields1 = candidate__split_fields })
   : bool in (((o3 = true) <->
   (if (to_rep1((candidate__split_fields).rec__patris__piece__s) = 2) then ((((is_empty(cur_board,

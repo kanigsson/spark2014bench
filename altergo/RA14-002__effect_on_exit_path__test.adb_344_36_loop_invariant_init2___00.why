@@ -1114,15 +1114,15 @@ os_task_id_param_t
 function os_task_id_param_t__ref_os_task_id_param_t__content__projection(a: os_task_id_param_t__ref) : os_task_id_param_t =
   (a).os_task_id_param_t__content
 
-predicate dynamic_invariant(temp___expr_232: int, temp___is_init_228: bool,
-  temp___skip_constant_229: bool, temp___do_toplevel_230: bool,
-  temp___do_typ_inv_231: bool) = (((temp___is_init_228 = true) or
-  (0 <= 4)) -> in_range5(temp___expr_232))
+predicate dynamic_invariant(temp___expr_233: int, temp___is_init_229: bool,
+  temp___skip_constant_230: bool, temp___do_toplevel_231: bool,
+  temp___do_typ_inv_232: bool) = (((temp___is_init_229 = true) or
+  (0 <= 4)) -> in_range5(temp___expr_233))
 
-predicate dynamic_invariant1(temp___expr_297: t, temp___is_init_293: bool,
-  temp___skip_constant_294: bool, temp___do_toplevel_295: bool,
-  temp___do_typ_inv_296: bool) = (((temp___is_init_293 = true) or
-  ule(rliteral, rliteral2)) -> in_range2(temp___expr_297))
+predicate dynamic_invariant1(temp___expr_298: t, temp___is_init_294: bool,
+  temp___skip_constant_295: bool, temp___do_toplevel_296: bool,
+  temp___do_typ_inv_297: bool) = (((temp___is_init_294 = true) or
+  ule(rliteral, rliteral2)) -> in_range2(temp___expr_298))
 
 axiom os_mbx_get_mbx_count__post_axiom :
   (forall task_id:int.
@@ -1175,7 +1175,7 @@ logic oadd : t, t -> t
 
 logic oadd__function_guard : t, t, t -> prop
 
-axiom temp___result_168qtdef :
+axiom temp___result_169qtdef :
   (forall task_id:int. forall test__os_task_mbx_rw:(int,us_rep1) farray.
   os_mbx_get_mbx_count__function_guard(os_mbx_get_mbx_count(task_id,
   test__os_task_mbx_rw), task_id, test__os_task_mbx_rw))
@@ -1707,9 +1707,9 @@ function bool_eq14(a: (int,us_rep2) farray, a__first: int, a__last: int,
   b: (int,us_rep2) farray, b__first: int, b__last: int) : bool =
   (if ((if (a__first <= a__last) then ((b__first <= b__last) and
   ((a__last - a__first) = (b__last - b__first))) else (b__last <  b__first)) and
-  (forall temp___idx_170:int. (((a__first <= temp___idx_170) and
-  (temp___idx_170 <= a__last)) -> (bool_eq13((a[temp___idx_170]),
-  (b[((b__first - a__first) + temp___idx_170)])) = true)))) then true else false)
+  (forall temp___idx_171:int. (((a__first <= temp___idx_171) and
+  (temp___idx_171 <= a__last)) -> (bool_eq13((a[temp___idx_171]),
+  (b[((b__first - a__first) + temp___idx_171)])) = true)))) then true else false)
 
 axiom bool_eq_rev8 :
   (forall a:(int,us_rep2) farray. forall b:(int,us_rep2) farray.
@@ -1736,9 +1736,9 @@ axiom bool_eq_rev11 :
   (forall a__first:int. forall a__last:int. forall b__first:int.
   forall b__last:int. ((bool_eq14(b, b__first, b__last, a, a__first,
   a__last) = true) ->
-  (forall temp___idx_170:int. (((a__first <= temp___idx_170) and
-  (temp___idx_170 <= a__last)) -> (bool_eq13((a[temp___idx_170]),
-  (b[((b__first - a__first) + temp___idx_170)])) = true))))))
+  (forall temp___idx_171:int. (((a__first <= temp___idx_171) and
+  (temp___idx_171 <= a__last)) -> (bool_eq13((a[temp___idx_171]),
+  (b[((b__first - a__first) + temp___idx_171)])) = true))))))
 
 logic attr__ATTRIBUTE_ADDRESS3 : int
 
@@ -1886,7 +1886,7 @@ axiom os_sched_get_current_task_id__def_axiom :
   (dynamic_invariant(test__os_task_current, true, true, true, true) ->
   (os_sched_get_current_task_id(test__os_task_current) = test__os_task_current)))
 
-logic temp_____aggregate_def_493 : (t,us_rep) farray, t,
+logic temp_____aggregate_def_501 : (t,us_rep) farray, t,
   us_rep -> (t,us_rep) farray
 
 logic current : int
@@ -1929,10 +1929,10 @@ type os_status_t__ref = { os_status_t__content : os_status_t
 function os_status_t__ref_os_status_t__content__projection(a: os_status_t__ref) : os_status_t =
   (a).os_status_t__content
 
-predicate dynamic_invariant2(temp___expr_253: int, temp___is_init_249: bool,
-  temp___skip_constant_250: bool, temp___do_toplevel_251: bool,
-  temp___do_typ_inv_252: bool) = (((temp___is_init_249 = true) or
-  ((- 5) <= 0)) -> in_range6(temp___expr_253))
+predicate dynamic_invariant2(temp___expr_254: int, temp___is_init_250: bool,
+  temp___skip_constant_251: bool, temp___do_toplevel_252: bool,
+  temp___do_typ_inv_253: bool) = (((temp___is_init_250 = true) or
+  ((- 5) <= 0)) -> in_range6(temp___expr_254))
 
 type unsigned_char
 
@@ -1960,9 +1960,9 @@ logic rliteral5 : t
 
 axiom rliteral_axiom5 : (tqtint(rliteral5) = 255)
 
-predicate dynamic_invariant3(temp___expr_283: t, temp___is_init_279: bool,
-  temp___skip_constant_280: bool, temp___do_toplevel_281: bool,
-  temp___do_typ_inv_282: bool) = true
+predicate dynamic_invariant3(temp___expr_284: t, temp___is_init_280: bool,
+  temp___skip_constant_281: bool, temp___do_toplevel_282: bool,
+  temp___do_typ_inv_283: bool) = true
 
 logic to_rep5 : unsigned_char -> t
 
@@ -2005,10 +2005,10 @@ type t26b__ref = { t26b__content : unsigned_char
 function t26b__ref_t26b__content__projection(a: t26b__ref) : unsigned_char =
   (a).t26b__content
 
-predicate dynamic_invariant4(temp___expr_276: t, temp___is_init_272: bool,
-  temp___skip_constant_273: bool, temp___do_toplevel_274: bool,
-  temp___do_typ_inv_275: bool) = (((temp___is_init_272 = true) or
-  ule(rliteral, rliteral1)) -> in_range1(temp___expr_276))
+predicate dynamic_invariant4(temp___expr_277: t, temp___is_init_273: bool,
+  temp___skip_constant_274: bool, temp___do_toplevel_275: bool,
+  temp___do_typ_inv_276: bool) = (((temp___is_init_273 = true) or
+  ule(rliteral, rliteral1)) -> in_range1(temp___expr_277))
 
 axiom oadd__post_axiom :
   (forall left:t. forall right:t [oadd(left, right)].
@@ -2029,9 +2029,9 @@ logic rliteral6 : t1
 
 axiom rliteral_axiom6 : (tqtint1(rliteral6) = 4294967295)
 
-predicate dynamic_invariant5(temp___expr_197: t1, temp___is_init_193: bool,
-  temp___skip_constant_194: bool, temp___do_toplevel_195: bool,
-  temp___do_typ_inv_196: bool) = true
+predicate dynamic_invariant5(temp___expr_198: t1, temp___is_init_194: bool,
+  temp___skip_constant_195: bool, temp___do_toplevel_196: bool,
+  temp___do_typ_inv_197: bool) = true
 
 axiom os_mbx_get_waiting_mask__post_axiom :
   (forall task_id:int.
@@ -2146,32 +2146,32 @@ logic os_mbx_get_mbx_tail__function_guard : t, int,
   (int,us_rep1) farray -> prop
 
 axiom def_axiom :
-  (forall temp___495:(t,us_rep) farray.
-  (forall temp___496:t.
-  (forall temp___497:us_rep. (dynamic_invariant4(temp___496, true, true,
+  (forall temp___503:(t,us_rep) farray.
+  (forall temp___504:t.
+  (forall temp___505:us_rep. (dynamic_invariant4(temp___504, true, true,
   true, true) ->
-  (forall temp___498:t. ((temp___498 = temp___496) ->
-  ((temp_____aggregate_def_493(temp___495, temp___496,
-  temp___497)[temp___498]) = temp___497)))))))
+  (forall temp___506:t. ((temp___506 = temp___504) ->
+  ((temp_____aggregate_def_501(temp___503, temp___504,
+  temp___505)[temp___506]) = temp___505)))))))
 
 axiom def_axiom1 :
-  (forall temp___495:(t,us_rep) farray.
-  (forall temp___496:t.
-  (forall temp___497:us_rep. (dynamic_invariant4(temp___496, true, true,
+  (forall temp___503:(t,us_rep) farray.
+  (forall temp___504:t.
+  (forall temp___505:us_rep. (dynamic_invariant4(temp___504, true, true,
   true, true) ->
-  (forall temp___498:t. ((not (temp___498 = temp___496)) ->
-  ((temp_____aggregate_def_493(temp___495, temp___496,
-  temp___497)[temp___498]) = (temp___495[temp___498]))))))))
+  (forall temp___506:t. ((not (temp___506 = temp___504)) ->
+  ((temp_____aggregate_def_501(temp___503, temp___504,
+  temp___505)[temp___506]) = (temp___503[temp___506]))))))))
 
-predicate dynamic_invariant6(temp___expr_225: int, temp___is_init_221: bool,
-  temp___skip_constant_222: bool, temp___do_toplevel_223: bool,
-  temp___do_typ_inv_224: bool) = (((temp___is_init_221 = true) or
-  ((- 1) <= 4)) -> in_range3(temp___expr_225))
+predicate dynamic_invariant6(temp___expr_226: int, temp___is_init_222: bool,
+  temp___skip_constant_223: bool, temp___do_toplevel_224: bool,
+  temp___do_typ_inv_225: bool) = (((temp___is_init_222 = true) or
+  ((- 1) <= 4)) -> in_range3(temp___expr_226))
 
-predicate dynamic_invariant7(temp___expr_260: int, temp___is_init_256: bool,
-  temp___skip_constant_257: bool, temp___do_toplevel_258: bool,
-  temp___do_typ_inv_259: bool) = (((temp___is_init_256 = true) or
-  (0 <= 4294967295)) -> in_range4(temp___expr_260))
+predicate dynamic_invariant7(temp___expr_261: int, temp___is_init_257: bool,
+  temp___skip_constant_258: bool, temp___do_toplevel_259: bool,
+  temp___do_typ_inv_260: bool) = (((temp___is_init_257 = true) or
+  (0 <= 4294967295)) -> in_range4(temp___expr_261))
 
 logic rliteral7 : os_task_id_t
 

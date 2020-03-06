@@ -193,6 +193,10 @@ type list_t__ref = { list_t__content : us_rep
 function list_t__ref_list_t__content__projection(a: list_t__ref) : us_rep =
   (a).list_t__content
 
+predicate in_range2(rec__loop_types__lists__list__capacity1: int,
+  a: us_split_discrs) =
+  (rec__loop_types__lists__list__capacity1 = to_rep((a).rec__loop_types__lists__list__capacity))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -307,7 +311,7 @@ axiom element_typeqtaxiom :
 axiom element_typeqtaxiom1 :
   (forall i:element_type. (element_typeqtint(i) <= 2147483647))
 
-predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -330,7 +334,7 @@ function element_type__ref_element_type__content__2__projection(a: element_type_
 predicate dynamic_invariant1(temp___expr_222: int, temp___is_init_218: bool,
   temp___skip_constant_219: bool, temp___do_toplevel_220: bool,
   temp___do_typ_inv_221: bool) = (((temp___is_init_218 = true) or
-  (0 <= 2147483647)) -> in_range2(temp___expr_222))
+  (0 <= 2147483647)) -> in_range3(temp___expr_222))
 
 predicate default_initial_assumption(temp___expr_230: us_rep1,
   temp___skip_top_level_231: bool) =
@@ -347,7 +351,7 @@ axiom extended_indexqtaxiom :
 axiom extended_indexqtaxiom1 :
   (forall i:extended_index. (extended_indexqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -370,7 +374,7 @@ function extended_index__ref_extended_index__content__projection(a: extended_ind
 predicate dynamic_invariant2(temp___expr_251: int, temp___is_init_247: bool,
   temp___skip_constant_248: bool, temp___do_toplevel_249: bool,
   temp___do_typ_inv_250: bool) = (((temp___is_init_247 = true) or
-  (0 <= 2147483647)) -> in_range3(temp___expr_251))
+  (0 <= 2147483647)) -> in_range4(temp___expr_251))
 
 axiom get__post_axiom :
   (forall container:us_rep1.
@@ -528,7 +532,7 @@ axiom element_typeqtaxiom2 :
 axiom element_typeqtaxiom3 :
   (forall i:element_type1. (element_typeqtint1(i) <= 2147483647))
 
-predicate in_range4(x: int) = ((1 <= x) and (x <= 2147483647))
+predicate in_range5(x: int) = ((1 <= x) and (x <= 2147483647))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -551,7 +555,7 @@ function element_type__ref_element_type__content__3__projection(a: element_type_
 predicate dynamic_invariant3(temp___expr_293: int, temp___is_init_289: bool,
   temp___skip_constant_290: bool, temp___do_toplevel_291: bool,
   temp___do_typ_inv_292: bool) = (((temp___is_init_289 = true) or
-  (1 <= 2147483647)) -> in_range4(temp___expr_293))
+  (1 <= 2147483647)) -> in_range5(temp___expr_293))
 
 predicate default_initial_assumption2(temp___expr_276: us_rep2,
   temp___skip_top_level_277: bool) =
@@ -708,7 +712,7 @@ axiom element_typeqtaxiom4 :
 axiom element_typeqtaxiom5 :
   (forall i:element_type2. (element_typeqtint2(i) <= 2147483647))
 
-predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -731,7 +735,7 @@ function element_type__ref_element_type__content__projection(a: element_type__re
 predicate dynamic_invariant4(temp___expr_215: int, temp___is_init_211: bool,
   temp___skip_constant_212: bool, temp___do_toplevel_213: bool,
   temp___do_typ_inv_214: bool) = (((temp___is_init_211 = true) or
-  (0 <= 2147483647)) -> in_range5(temp___expr_215))
+  (0 <= 2147483647)) -> in_range6(temp___expr_215))
 
 function equal_except(left: us_rep1, right: us_rep1, position: int) : bool =
   andb(bool_eq9(length1(left), length1(right)),
@@ -749,7 +753,7 @@ axiom component_tqtaxiom : (forall i:component_t. (0 <= component_tqtint(i)))
 axiom component_tqtaxiom1 :
   (forall i:component_t. (component_tqtint(i) <= 2147483647))
 
-predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range7(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -772,7 +776,7 @@ function component_t__ref_component_t__content__projection(a: component_t__ref) 
 predicate dynamic_invariant5(temp___expr_206: int, temp___is_init_202: bool,
   temp___skip_constant_203: bool, temp___do_toplevel_204: bool,
   temp___do_typ_inv_205: bool) = (((temp___is_init_202 = true) or
-  (0 <= 2147483647)) -> in_range6(temp___expr_206))
+  (0 <= 2147483647)) -> in_range7(temp___expr_206))
 
 logic rliteral : count_type
 
@@ -876,10 +880,10 @@ goal defqtvc :
   l__split_discrs; us_split_fields1 = { rec__loop_types__lists__list =
   l__split_fields } } : us_rep in (let o3 = has_element(o2, o1) : bool in
   (((o3 = true) <-> (has_key(positions(o2), o1) = true)) -> ((o3 = true) ->
-  (forall temp___loop_entry_333:us_rep. ((temp___loop_entry_333 = {
+  (forall temp___loop_entry_335:us_rep. ((temp___loop_entry_335 = {
   us_split_discrs1 = l__split_discrs; us_split_fields1 = {
   rec__loop_types__lists__list = l__split_fields } }) ->
-  (forall temp___loop_entry_331:us_rep. ((temp___loop_entry_331 = {
+  (forall temp___loop_entry_333:us_rep. ((temp___loop_entry_333 = {
   us_split_discrs1 = l__split_discrs; us_split_fields1 = {
   rec__loop_types__lists__list = l__split_fields } }) -> (let o4 = length({
   us_split_discrs1 = l__split_discrs; us_split_fields1 = {
@@ -889,8 +893,8 @@ goal defqtvc :
   (let o5 = { us_split_discrs1 = l__split_discrs; us_split_fields1 = {
   rec__loop_types__lists__list = l__split_fields } } : us_rep in (let o6 =
   positions(o5) : us_rep3 in (((not (has_key(o6, no_element) = true)) and
-  (forall i:us_rep2. ((has_key(o6, i) = true) -> (((1 <= get1(o6, i)) and
-  (get1(o6, i) <= length(o5))) and
+  (forall i:us_rep2. ((has_key(o6, i) = true) -> ((let temp___300 = get1(o6,
+  i) : int in ((1 <= temp___300) and (temp___300 <= length(o5)))) and
   (forall j:us_rep2. ((has_key(o6, j) = true) -> ((get1(o6, i) = get1(o6,
   j)) -> (bool_eq6(i, j) = true)))))))) -> (has_key(o6, { us_split_fields3 =
   { rec__loop_types__lists__cursor__node = cu__split_fields }

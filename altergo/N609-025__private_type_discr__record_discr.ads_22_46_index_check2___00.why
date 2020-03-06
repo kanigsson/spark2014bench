@@ -160,6 +160,10 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__private_record__result_ty,
   ((b).us_split_fields1).rec__private_record__result_ty) = true)) then true else false)
 
+predicate in_range2(rec__private_record__result_ty__found1: bool,
+  a: us_split_discrs) =
+  (rec__private_record__result_ty__found1 = (a).rec__private_record__result_ty__found)
+
 logic value__size : int
 
 logic object__size : int
@@ -210,7 +214,7 @@ axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
 axiom positiveqtaxiom1 :
   (forall i:positive. (positiveqtint(i) <= 2147483647))
 
-predicate in_range2(x: int) = ((1 <= x) and (x <= 2147483647))
+predicate in_range3(x: int) = ((1 <= x) and (x <= 2147483647))
 
 function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -233,10 +237,10 @@ function positive__ref_positive__content__projection(a: positive__ref) : positiv
 predicate dynamic_invariant1(temp___expr_46: int, temp___is_init_42: bool,
   temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
   temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
-  (1 <= 2147483647)) -> in_range2(temp___expr_46))
+  (1 <= 2147483647)) -> in_range3(temp___expr_46))
 
 axiom get_content__post_axiom :
-  (forall r:us_rep [get_content(r)]. in_range2(get_content(r)))
+  (forall r:us_rep [get_content(r)]. in_range3(get_content(r)))
 
 type integer
 
@@ -247,7 +251,7 @@ axiom integerqtaxiom :
 
 axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -274,10 +278,10 @@ logic of_rep1 : int -> integer
 axiom inversion_axiom1 :
   (forall x:integer [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
 
-axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range3(to_rep1(x)))
+axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range4(to_rep1(x)))
 
 axiom coerce_axiom1 :
-  (forall x:int [to_rep1(of_rep1(x))]. (in_range3(x) ->
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range4(x) ->
   (to_rep1(of_rep1(x)) = x)))
 
 type map__ref = { map__content : (int,natural) farray
@@ -342,16 +346,16 @@ logic last : t -> integer
 logic mk : int, int -> t
 
 axiom mk_def :
-  (forall f:int. forall l:int [mk(f, l)]. (in_range3(f) -> (in_range3(l) ->
+  (forall f:int. forall l:int [mk(f, l)]. (in_range4(f) -> (in_range4(l) ->
   (to_rep1(first(mk(f, l))) = f))))
 
 axiom mk_def1 :
-  (forall f:int. forall l:int [mk(f, l)]. (in_range3(f) -> (in_range3(l) ->
+  (forall f:int. forall l:int [mk(f, l)]. (in_range4(f) -> (in_range4(l) ->
   (to_rep1(last(mk(f, l))) = l))))
 
 predicate dynamic_property(range_first: int, range_last: int, low: int,
-  high: int) = (in_range3(low) and (in_range3(high) and ((low <= high) ->
-  (in_range2(low) and in_range2(high)))))
+  high: int) = (in_range4(low) and (in_range4(high) and ((low <= high) ->
+  (in_range3(low) and in_range3(high)))))
 
 type us_t = { elts : (int,natural) farray; rt : t
 }
@@ -450,6 +454,10 @@ function bool_eq7(a1: us_rep1, b: us_rep1) : bool =
   (if ((to_rep(((a1).us_split_discrs3).rec__record_discr__interm_result__upto) = to_rep(((b).us_split_discrs3).rec__record_discr__interm_result__upto)) and
   (bool_eq6(((a1).us_split_fields3).rec__record_discr__interm_result__to_search,
   ((b).us_split_fields3).rec__record_discr__interm_result__to_search) = true)) then true else false)
+
+predicate in_range5(rec__record_discr__interm_result__upto1: int,
+  a1: us_split_discrs2) =
+  (rec__record_discr__interm_result__upto1 = to_rep((a1).rec__record_discr__interm_result__upto))
 
 logic value__size2 : int
 
@@ -556,10 +564,6 @@ function bool_eq8(a1: us_rep2, b: us_rep2) : bool =
   (bool_eq6(((a1).us_split_fields5).rec__record_discr__interm_result__to_search1,
   ((b).us_split_fields5).rec__record_discr__interm_result__to_search1) = true)) then true else false)
 
-predicate in_range4(rec__record_discr__interm_result__upto1: int,
-  a1: us_rep1) =
-  (rec__record_discr__interm_result__upto1 = to_rep(((a1).us_split_discrs3).rec__record_discr__interm_result__upto))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -625,8 +629,9 @@ predicate dynamic_invariant2(temp___expr_176: us_t, temp___is_init_172: bool,
 predicate dynamic_invariant3(temp___expr_281: us_rep2,
   temp___is_init_277: bool, temp___skip_constant_278: bool,
   temp___do_toplevel_279: bool, temp___do_typ_inv_280: bool) =
-  (((not (temp___skip_constant_278 = true)) -> in_range4(last1(a),
-  to_base(temp___expr_281))) and (dynamic_property(1, last1(a),
+  (((not (temp___skip_constant_278 = true)) -> in_range5(last1(a),
+  (to_base(temp___expr_281)).us_split_discrs3)) and (dynamic_property(1,
+  last1(a),
   first1(((temp___expr_281).us_split_fields5).rec__record_discr__interm_result__to_search1),
   last1(((temp___expr_281).us_split_fields5).rec__record_discr__interm_result__to_search1)) and
   ((first1(((temp___expr_281).us_split_fields5).rec__record_discr__interm_result__to_search1) = 1) and
@@ -687,10 +692,6 @@ function bool_eq9(a1: us_rep3, b: us_rep3) : bool =
   (bool_eq6(((a1).us_split_fields7).rec__record_discr__interm_result__to_search2,
   ((b).us_split_fields7).rec__record_discr__interm_result__to_search2) = true)) then true else false)
 
-predicate in_range5(rec__record_discr__interm_result__upto1: int,
-  a1: us_rep1) =
-  (rec__record_discr__interm_result__upto1 = to_rep(((a1).us_split_discrs3).rec__record_discr__interm_result__upto))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -746,7 +747,7 @@ function t20b__ref_t20b__content__projection(a1: t20b__ref) : us_rep3 =
 predicate dynamic_invariant4(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
   temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range3(temp___expr_18))
+  ((- 2147483648) <= 2147483647)) -> in_range4(temp___expr_18))
 
 axiom init__def_axiom : (init = of_base(to_base1({ us_split_discrs5 = {
   rec__record_discr__interm_result__upto = of_rep(last1(a)) };
@@ -789,7 +790,7 @@ goal defqtvc : (dynamic_invariant2(a, true, false, true, true) ->
   (forall record_discr__search__result:us_rep.
   ((record_discr__search__result = o4) ->
   ((((record_discr__search__result).us_split_discrs1).rec__private_record__result_ty__found = true) ->
-  (let temp___311 = get_content(record_discr__search__result) : int in
-  ((get_content__function_guard(temp___311, record_discr__search__result) and
-  dynamic_invariant1(temp___311, true, false, true, true)) ->
-  (first1(a) <= temp___311)))))))))))))))))))))))
+  (let temp___312 = get_content(record_discr__search__result) : int in
+  ((get_content__function_guard(temp___312, record_discr__search__result) and
+  dynamic_invariant1(temp___312, true, false, true, true)) ->
+  (first1(a) <= temp___312)))))))))))))))))))))))

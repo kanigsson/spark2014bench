@@ -2187,46 +2187,43 @@ goal defqtvc : (dynamic_invariant(i, true, false, true, true) ->
   (dynamic_invariant1(powers, true, false, true, true) ->
   (forall previous:int. ((previous = 64) -> (dynamic_invariant(previous,
   true, false, true, true) ->
-  ((forall temp___273:int. (((first1(powers) <= temp___273) and
-   (temp___273 <= last1(powers))) -> (let k =
-   to_rep((to_array(powers)[temp___273])) : int in (ule(rliteral26,
+  ((forall temp___275:int. (((first1(powers) <= temp___275) and
+   (temp___275 <= last1(powers))) -> (let k =
+   to_rep((to_array(powers)[temp___275])) : int in (let temp___276 =
    (if (k <  18446744073709551616) then lsl_bv(rliteral28,
-   of_int(k)) else rliteral26)) and
-   ule((if (k <  18446744073709551616) then lsl_bv(rliteral28,
-   of_int(k)) else rliteral26), rliteral27))))) ->
-  (let temp___274 = first1(powers) : int in (let temp___275 = last1(powers)
+   of_int(k)) else rliteral26) : t in (ule(rliteral26, temp___276) and
+   ule(temp___276, rliteral27)))))) ->
+  (let temp___277 = first1(powers) : int in (let temp___278 = last1(powers)
   : int in
-  (forall c13b:int. ((c13b = temp___274) ->
-  ((andb((if (temp___274 <= c13b) then true else false),
-  (if (c13b <= temp___275) then true else false)) = true) ->
+  (forall c13b:int. ((c13b = temp___277) ->
+  ((andb((if (temp___277 <= c13b) then true else false),
+  (if (c13b <= temp___278) then true else false)) = true) ->
   (forall previous1:int. forall c13b1:int.
-  (((forall temp___286:int. (((first1(powers) <= temp___286) and
-    (temp___286 <= last1(powers))) -> (let k =
-    to_rep((to_array(powers)[temp___286])) : int in (ule(rliteral26,
+  (((forall temp___293:int. (((first1(powers) <= temp___293) and
+    (temp___293 <= last1(powers))) -> (let k =
+    to_rep((to_array(powers)[temp___293])) : int in (let temp___294 =
     (if (k <  18446744073709551616) then lsl_bv(rliteral28,
-    of_int(k)) else rliteral26)) and
-    ule((if (k <  18446744073709551616) then lsl_bv(rliteral28,
-    of_int(k)) else rliteral26), rliteral27))))) and
-  (ule(rliteral26,
+    of_int(k)) else rliteral26) : t in (ule(rliteral26, temp___294) and
+    ule(temp___294, rliteral27)))))) and
+  (let temp___287 =
   (if (to_rep((to_array(powers)[c13b1])) <  18446744073709551616) then lsl_bv(rliteral28,
-  of_int(to_rep((to_array(powers)[c13b1])))) else rliteral26)) and
-  ule((if (to_rep((to_array(powers)[c13b1])) <  18446744073709551616) then lsl_bv(rliteral28,
-  of_int(to_rep((to_array(powers)[c13b1])))) else rliteral26),
-  rliteral27))) -> ((andb((if (dynamic_invariant(previous1, true, true, true,
-  true) and dynamic_property1(first1(powers), last1(powers),
+  of_int(to_rep((to_array(powers)[c13b1])))) else rliteral26) : t in
+  (ule(rliteral26, temp___287) and ule(temp___287, rliteral27)))) ->
+  ((andb((if (dynamic_invariant(previous1, true, true, true, true) and
+  dynamic_property1(first1(powers), last1(powers),
   c13b1)) then true else false), (if ((first1(powers) <= c13b1) and
   (c13b1 <= last1(powers))) then true else false)) = true) ->
   (((first1(powers) <= c13b1) and (c13b1 <= last1(powers))) ->
-  (forall temp___277:int.
-  ((to_rep((to_array(powers)[c13b1])) = temp___277) -> (let o =
-  (2 ** temp___277) : int in (in_range2(o) -> (uint_in_range(o) ->
+  (forall temp___280:int.
+  ((to_rep((to_array(powers)[c13b1])) = temp___280) -> (let o =
+  (2 ** temp___280) : int in (in_range2(o) -> (uint_in_range(o) ->
   ((not ugt(of_int(i), of_int(o))) -> (((first1(powers) <= c13b1) and
   (c13b1 <= last1(powers))) ->
   (forall o1:int. ((to_rep((to_array(powers)[c13b1])) = o1) ->
-  (forall previous2:int. ((previous2 = o1) -> ((not (c13b1 = temp___275)) ->
+  (forall previous2:int. ((previous2 = o1) -> ((not (c13b1 = temp___278)) ->
   (forall c13b2:int. ((c13b2 = (c13b1 + 1)) ->
-  (forall temp___286:int. (((first1(powers) <= temp___286) and
-  (temp___286 <= last1(powers))) -> (let k =
-  to_rep((to_array(powers)[temp___286])) : int in ule(rliteral26,
+  (forall temp___293:int. (((first1(powers) <= temp___293) and
+  (temp___293 <= last1(powers))) -> (let k =
+  to_rep((to_array(powers)[temp___293])) : int in ule(rliteral26,
   (if (k <  18446744073709551616) then lsl_bv(rliteral28,
   of_int(k)) else rliteral26)))))))))))))))))))))))))))))))))))

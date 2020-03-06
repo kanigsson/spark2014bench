@@ -1155,10 +1155,10 @@ goal defqtvc :
   (forall use_formal_vectors__my_vect__insert__L_3__R121s__assume:int.
   ((to_rep((v__split_fields1).rec__use_formal_vectors__my_vect__vector__top) = use_formal_vectors__my_vect__insert__L_3__R121s__assume) ->
   ((use_formal_vectors__my_vect__insert__L_3__R121s__assume = r121s) ->
-  (dynamic_invariant(r121s, true, false, true, true) -> (let temp___538 = i
+  (dynamic_invariant(r121s, true, false, true, true) -> (let temp___531 = i
   : int in
-  (forall j:int. ((j = temp___538) ->
-  ((andb((if (temp___538 <= j) then true else false),
+  (forall j:int. ((j = temp___531) ->
+  ((andb((if (temp___531 <= j) then true else false),
   (if (j <= r121s) then true else false)) = true) -> (let o3 = v_mod
   : us_rep4 in (let o4 = last2(o3) : int in ((dynamic_invariant5(o4, true,
   false, true, true) and (o4 = (0 + length2(o3)))) ->
@@ -1172,11 +1172,11 @@ goal defqtvc :
   e__pointer_address; rec__use_formal_vectors__element_type__pointer_value =
   e__pointer_value } : us_rep in (let o6 = model(o5) : int in
   ((model__function_guard(o6, o5) and (dynamic_invariant3(o6, true, false,
-  true, true) and (o6 = to_rep1(e__pointer_value)))) and (let temp___563 =
+  true, true) and (o6 = to_rep1(e__pointer_value)))) and (let temp___556 =
   ((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value
-  : us_t in (((first1(temp___563) <= i) and (i <= last1(temp___563))) and
+  : us_t in (((first1(temp___556) <= i) and (i <= last1(temp___556))) and
   (let o7 =
-  ((to_array(temp___563)[i])).rec__use_formal_vectors__my_vect__element_access__pointer_value
+  ((to_array(temp___556)[i])).rec__use_formal_vectors__my_vect__element_access__pointer_value
   : us_rep in (let o8 = model(o7) : int in ((model__function_guard(o8,
   o7) and (dynamic_invariant3(o8, true, false, true, true) and
   (o8 = to_rep1((o7).rec__use_formal_vectors__element_type__pointer_value)))) and

@@ -304,11 +304,11 @@ goal defqtvc : (dynamic_property((- 2147483648), 2147483647,
   to_rep1(a__first), to_rep1(a__last)) ->
   (forall threshold:int. ((threshold = 2147483647) ->
   (dynamic_invariant(threshold, true, false, true, true) ->
-  (forall temp___305:int. ((to_rep1(a__first) = temp___305) ->
-  (forall temp___306:int. ((to_rep1(a__last) = temp___306) ->
-  (forall i:int. ((i = temp___305) ->
-  ((andb((if (temp___305 <= i) then true else false),
-  (if (i <= temp___306) then true else false)) = true) ->
+  (forall temp___306:int. ((to_rep1(a__first) = temp___306) ->
+  (forall temp___307:int. ((to_rep1(a__last) = temp___307) ->
+  (forall i:int. ((i = temp___306) ->
+  ((andb((if (temp___306 <= i) then true else false),
+  (if (i <= temp___307) then true else false)) = true) ->
   (forall a:(int,positive) farray. forall threshold1:int. forall i1:int.
   ((andb((if dynamic_invariant(threshold1, true, true, true,
   true) then true else false), (if ((to_rep1(a__first) <= i1) and

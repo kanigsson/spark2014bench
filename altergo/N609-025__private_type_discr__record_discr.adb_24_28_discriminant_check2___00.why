@@ -114,6 +114,10 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__private_record__result_ty,
   ((b).us_split_fields1).rec__private_record__result_ty) = true)) then true else false)
 
+predicate in_range1(rec__private_record__result_ty__found1: bool,
+  a: us_split_discrs) =
+  (rec__private_record__result_ty__found1 = (a).rec__private_record__result_ty__found)
+
 logic value__size : int
 
 logic object__size : int
@@ -154,10 +158,6 @@ function result_ty__ref_result_ty__content__projection(a: result_ty__ref) : us_r
 logic r : us_rep
 
 logic attr__ATTRIBUTE_ADDRESS : int
-
-predicate in_range1(rec__private_record__result_ty__found1: bool,
-  a: us_rep) =
-  (rec__private_record__result_ty__found1 = ((a).us_split_discrs1).rec__private_record__result_ty__found)
 
 logic value__size1 : int
 
@@ -200,11 +200,11 @@ predicate dynamic_invariant(temp___expr_252: us_rep,
   temp___is_init_248: bool, temp___skip_constant_249: bool,
   temp___do_toplevel_250: bool, temp___do_typ_inv_251: bool) =
   ((not (temp___skip_constant_249 = true)) -> in_range1(of_int(0),
-  temp___expr_252))
+  (temp___expr_252).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_254: us_rep,
   temp___skip_top_level_255: bool) =
   (((temp___expr_254).us_split_discrs1).rec__private_record__result_ty__found = of_int(0))
 
  (* File "record_discr.adb", line 21, characters 0-0 *)
-goal defqtvc : in_range1(of_int(0), r)
+goal defqtvc : in_range1(of_int(0), (r).us_split_discrs1)

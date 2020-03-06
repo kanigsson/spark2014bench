@@ -406,6 +406,9 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (if ((to_rep(((a).us_split_discrs1).rec__subtype_check__r__d) = to_rep(((b).us_split_discrs1).rec__subtype_check__r__d)) and
   (to_rep(((a).us_split_fields1).rec__subtype_check__r__f) = to_rep(((b).us_split_fields1).rec__subtype_check__r__f))) then true else false)
 
+predicate in_range3(rec__subtype_check__r__d1: int, a: us_split_discrs) =
+  (rec__subtype_check__r__d1 = to_rep((a).rec__subtype_check__r__d))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -470,7 +473,7 @@ function to_int(b: bool) : int = (if (b = true) then 1 else 0)
 
 function of_int(i: int) : bool = (if (i = 0) then false else true)
 
-predicate in_range3(x: int) = ((x = 0) or (x = 1))
+predicate in_range4(x: int) = ((x = 0) or (x = 1))
 
 logic attr__ATTRIBUTE_IMAGE3 : bool -> us_image
 
@@ -599,7 +602,7 @@ axiom tsmall_nat_array_2P1qtaxiom :
 axiom tsmall_nat_array_2P1qtaxiom1 :
   (forall i:tsmall_nat_array_2P1. (tsmall_nat_array_2P1qtint(i) <= 10))
 
-predicate in_range4(x: int) = ((6 <= x) and (x <= 10))
+predicate in_range5(x: int) = ((6 <= x) and (x <= 10))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -679,7 +682,7 @@ axiom tS10bP1qtaxiom : (forall i:tS10bP1. (1 <= tS10bP1qtint(i)))
 
 axiom tS10bP1qtaxiom1 : (forall i:tS10bP1. (tS10bP1qtint(i) <= 5))
 
-predicate in_range5(x: int) = ((1 <= x) and (x <= 5))
+predicate in_range6(x: int) = ((1 <= x) and (x <= 5))
 
 function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -703,9 +706,6 @@ predicate default_initial_assumption4(temp___expr_265: (int,natural) farray,
   temp___skip_top_level_266: bool) =
   (forall temp___267:int. (((1 <= temp___267) and (temp___267 <= 5)) ->
   (to_rep1((temp___expr_265[temp___267])) = 1)))
-
-predicate in_range6(rec__subtype_check__r__d1: int, a: us_rep) =
-  (rec__subtype_check__r__d1 = to_rep(((a).us_split_discrs1).rec__subtype_check__r__d))
 
 logic value__size2 : int
 
@@ -762,7 +762,8 @@ function s12b__ref_s12b__content__projection(a: s12b__ref) : us_rep =
 predicate dynamic_invariant3(temp___expr_272: us_rep,
   temp___is_init_268: bool, temp___skip_constant_269: bool,
   temp___do_toplevel_270: bool, temp___do_typ_inv_271: bool) =
-  ((not (temp___skip_constant_269 = true)) -> in_range6(10, temp___expr_272))
+  ((not (temp___skip_constant_269 = true)) -> in_range3(10,
+  (temp___expr_272).us_split_discrs1))
 
 predicate default_initial_assumption5(temp___expr_274: us_rep,
   temp___skip_top_level_275: bool) =

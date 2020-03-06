@@ -241,6 +241,10 @@ function bool_eq4(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__private_record__result_ty,
   ((b).us_split_fields1).rec__private_record__result_ty) = true)) then true else false)
 
+predicate in_range3(rec__private_record__result_ty__found1: bool,
+  a: us_split_discrs) =
+  (rec__private_record__result_ty__found1 = (a).rec__private_record__result_ty__found)
+
 logic value__size : int
 
 logic object__size : int
@@ -299,7 +303,7 @@ axiom integerqtaxiom :
 
 axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -326,10 +330,10 @@ logic of_rep1 : int -> integer
 axiom inversion_axiom1 :
   (forall x:integer [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
 
-axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range3(to_rep1(x)))
+axiom range_axiom1 : (forall x:integer [to_rep1(x)]. in_range4(to_rep1(x)))
 
 axiom coerce_axiom1 :
-  (forall x:int [to_rep1(of_rep1(x))]. (in_range3(x) ->
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range4(x) ->
   (to_rep1(of_rep1(x)) = x)))
 
 type map__ref = { map__content : (int,natural) farray
@@ -394,15 +398,15 @@ logic last : t -> integer
 logic mk : int, int -> t
 
 axiom mk_def :
-  (forall f:int. forall l:int [mk(f, l)]. (in_range3(f) -> (in_range3(l) ->
+  (forall f:int. forall l:int [mk(f, l)]. (in_range4(f) -> (in_range4(l) ->
   (to_rep1(first(mk(f, l))) = f))))
 
 axiom mk_def1 :
-  (forall f:int. forall l:int [mk(f, l)]. (in_range3(f) -> (in_range3(l) ->
+  (forall f:int. forall l:int [mk(f, l)]. (in_range4(f) -> (in_range4(l) ->
   (to_rep1(last(mk(f, l))) = l))))
 
 predicate dynamic_property(range_first: int, range_last: int, low: int,
-  high: int) = (in_range3(low) and (in_range3(high) and ((low <= high) ->
+  high: int) = (in_range4(low) and (in_range4(high) and ((low <= high) ->
   (in_range2(low) and in_range2(high)))))
 
 type us_t = { elts : (int,natural) farray; rt : t
@@ -494,6 +498,10 @@ function bool_eq8(a: us_rep1, b: us_rep1) : bool =
   (if ((to_rep(((a).us_split_discrs3).rec__record_discr__interm_result__upto) = to_rep(((b).us_split_discrs3).rec__record_discr__interm_result__upto)) and
   (bool_eq7(((a).us_split_fields3).rec__record_discr__interm_result__to_search,
   ((b).us_split_fields3).rec__record_discr__interm_result__to_search) = true)) then true else false)
+
+predicate in_range5(rec__record_discr__interm_result__upto1: int,
+  a: us_split_discrs2) =
+  (rec__record_discr__interm_result__upto1 = to_rep((a).rec__record_discr__interm_result__upto))
 
 logic value__size2 : int
 
@@ -598,10 +606,6 @@ logic result__ : us_rep
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
 
-predicate in_range4(rec__private_record__result_ty__found1: bool,
-  a: us_rep) =
-  (rec__private_record__result_ty__found1 = ((a).us_split_discrs1).rec__private_record__result_ty__found)
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -662,8 +666,8 @@ predicate dynamic_invariant3(temp___expr_243: us_rep,
   temp___is_init_239: bool, temp___skip_constant_240: bool,
   temp___do_toplevel_241: bool, temp___do_typ_inv_242: bool) =
   ((not (temp___skip_constant_240 = true)) ->
-  in_range4(bool_ne(to_rep(((r).us_split_discrs3).rec__record_discr__interm_result__upto),
-  0), temp___expr_243))
+  in_range3(bool_ne(to_rep(((r).us_split_discrs3).rec__record_discr__interm_result__upto),
+  0), (temp___expr_243).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_245: us_rep,
   temp___skip_top_level_246: bool) =
@@ -718,10 +722,6 @@ function bool_eq9(a: us_rep2, b: us_rep2) : bool =
   (if ((to_rep(((a).us_split_discrs4).rec__record_discr__interm_result__upto) = to_rep(((b).us_split_discrs4).rec__record_discr__interm_result__upto)) and
   (bool_eq7(((a).us_split_fields5).rec__record_discr__interm_result__to_search1,
   ((b).us_split_fields5).rec__record_discr__interm_result__to_search1) = true)) then true else false)
-
-predicate in_range5(rec__record_discr__interm_result__upto1: int,
-  a: us_rep1) =
-  (rec__record_discr__interm_result__upto1 = to_rep(((a).us_split_discrs3).rec__record_discr__interm_result__upto))
 
 logic value__size4 : int
 
@@ -832,24 +832,24 @@ goal defqtvc : (dynamic_invariant2(r, true, false, true, true) ->
   (forall o6:bool.
   ((exists o7:int.
    ((to_rep(((r).us_split_discrs3).rec__record_discr__interm_result__upto) = o7) and
-   (if (o7 = 0) then (o6 = true) else (let temp___318 =
+   (if (o7 = 0) then (o6 = true) else (let temp___319 =
    ((r).us_split_fields3).rec__record_discr__interm_result__to_search
    : us_t in
-   (exists temp___319:int.
-   ((to_rep(((r).us_split_discrs3).rec__record_discr__interm_result__upto) = temp___319) and
-   (((first1(temp___318) <= temp___319) and
-   (temp___319 <= last1(temp___318))) and
-   (exists o8:int. ((to_rep((to_array(temp___318)[temp___319])) = o8) and
+   (exists temp___320:int.
+   ((to_rep(((r).us_split_discrs3).rec__record_discr__interm_result__upto) = temp___320) and
+   (((first1(temp___319) <= temp___320) and
+   (temp___320 <= last1(temp___319))) and
+   (exists o8:int. ((to_rep((to_array(temp___319)[temp___320])) = o8) and
    (o6 = (if (o8 = e) then true else false))))))))))) ->
   (forall spark__branch:bool. ((spark__branch = o6) ->
   ((not (spark__branch = true)) ->
   (forall o7:int.
   ((to_rep(((r).us_split_discrs3).rec__record_discr__interm_result__upto) = o7) ->
-  (let temp___315 = (o7 - 1) : int in (let temp___316 =
+  (let temp___316 = (o7 - 1) : int in (let temp___317 =
   ((r).us_split_fields3).rec__record_discr__interm_result__to_search
-  : us_t in (((1 <= temp___315) -> (((first1(temp___316) <= 1) and
-  (1 <= last1(temp___316))) and ((first1(temp___316) <= temp___315) and
-  (temp___315 <= last1(temp___316))))) -> (let temp___317 =
-  of_array(to_array(temp___316), 1, temp___315) : us_t in
-  ((first1(temp___317) <= last1(temp___317)) ->
+  : us_t in (((1 <= temp___316) -> (((first1(temp___317) <= 1) and
+  (1 <= last1(temp___317))) and ((first1(temp___317) <= temp___316) and
+  (temp___316 <= last1(temp___317))))) -> (let temp___318 =
+  of_array(to_array(temp___317), 1, temp___316) : us_t in
+  ((first1(temp___318) <= last1(temp___318)) ->
   (1 <= (to_rep(((r).us_split_discrs3).rec__record_discr__interm_result__upto) - 1))))))))))))))))))))))))))))))))))

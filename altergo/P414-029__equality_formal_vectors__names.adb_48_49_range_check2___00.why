@@ -405,10 +405,10 @@ type extended_index__ref = { extended_index__content : extended_index
 function extended_index__ref_extended_index__content__3__projection(a: extended_index__ref) : extended_index =
   (a).extended_index__content
 
-predicate dynamic_invariant2(temp___expr_451: int, temp___is_init_447: bool,
-  temp___skip_constant_448: bool, temp___do_toplevel_449: bool,
-  temp___do_typ_inv_450: bool) = (((temp___is_init_447 = true) or
-  (0 <= 2147483647)) -> in_range6(temp___expr_451))
+predicate dynamic_invariant2(temp___expr_452: int, temp___is_init_448: bool,
+  temp___skip_constant_449: bool, temp___do_toplevel_450: bool,
+  temp___do_typ_inv_451: bool) = (((temp___is_init_448 = true) or
+  (0 <= 2147483647)) -> in_range6(temp___expr_452))
 
 predicate dynamic_invariant3(temp___expr_46: int, temp___is_init_42: bool,
   temp___skip_constant_43: bool, temp___do_toplevel_44: bool,

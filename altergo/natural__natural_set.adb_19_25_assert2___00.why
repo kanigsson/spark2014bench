@@ -497,13 +497,13 @@ goal defqtvc :
   rec__natural_set__t__len = o5; rec__natural_set__t__m =
   (s__split_fields).rec__natural_set__t__m }) ->
   (forall o6:element_t. ((to_rep1(o6) = value) ->
-  (forall temp___251:int.
-  ((to_rep((s__split_fields1).rec__natural_set__t__len) = temp___251) ->
-  (((1 <= temp___251) and (temp___251 <= 10)) ->
+  (forall temp___255:int.
+  ((to_rep((s__split_fields1).rec__natural_set__t__len) = temp___255) ->
+  (((1 <= temp___255) and (temp___255 <= 10)) ->
   (forall s__split_fields2:us_split_fields. ((s__split_fields2 = {
   rec__natural_set__t__len = (s__split_fields1).rec__natural_set__t__len;
   rec__natural_set__t__m =
-  ((s__split_fields1).rec__natural_set__t__m[temp___251 <- o6]) }) ->
+  ((s__split_fields1).rec__natural_set__t__m[temp___255 <- o6]) }) ->
   ((forall s__split_fields3:us_split_fields.
    contains__function_guard(contains({ us_split_fields1 = s__split_fields3 },
    value), { us_split_fields1 = s__split_fields3 }, value)) ->

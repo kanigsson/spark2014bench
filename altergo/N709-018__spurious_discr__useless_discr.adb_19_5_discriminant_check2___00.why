@@ -1202,6 +1202,21 @@ axiom useless_discr__t__discr__last__bit_axiom :
 axiom useless_discr__t__discr__position_axiom :
   (0 <= useless_discr__t__discr__position)
 
+logic useless_discr__t__y__first__bit : int
+
+logic useless_discr__t__y__last__bit : int
+
+logic useless_discr__t__y__position : int
+
+axiom useless_discr__t__y__first__bit_axiom :
+  (0 <= useless_discr__t__y__first__bit)
+
+axiom useless_discr__t__y__last__bit_axiom :
+  (useless_discr__t__y__first__bit <  useless_discr__t__y__last__bit)
+
+axiom useless_discr__t__y__position_axiom :
+  (0 <= useless_discr__t__y__position)
+
 logic useless_discr__t__z__first__bit : int
 
 logic useless_discr__t__z__last__bit : int
@@ -1232,34 +1247,20 @@ axiom useless_discr__t__x__last__bit_axiom :
 axiom useless_discr__t__x__position_axiom :
   (0 <= useless_discr__t__x__position)
 
-logic useless_discr__t__y__first__bit : int
-
-logic useless_discr__t__y__last__bit : int
-
-logic useless_discr__t__y__position : int
-
-axiom useless_discr__t__y__first__bit_axiom :
-  (0 <= useless_discr__t__y__first__bit)
-
-axiom useless_discr__t__y__last__bit_axiom :
-  (useless_discr__t__y__first__bit <  useless_discr__t__y__last__bit)
-
-axiom useless_discr__t__y__position_axiom :
-  (0 <= useless_discr__t__y__position)
-
 logic user_eq3 : us_rep, us_rep -> bool
 
 logic dummy3 : us_rep
 
-type t__ref1 = { t__content1 : us_rep
+type tvS__ref = { tvS__content : us_rep
 }
 
-function t__ref_t__content__projection(a: t__ref1) : us_rep = (a).t__content1
+function tvS__ref_tvS__content__projection(a: tvS__ref) : us_rep =
+  (a).tvS__content
 
 logic us_tag1 : int
 
-predicate in_range4(rec__useless_discr__t__discr1: int, a: us_rep) =
-  (rec__useless_discr__t__discr1 = to_rep2(((a).us_split_discrs1).rec__useless_discr__t__discr))
+predicate in_range4(rec__useless_discr__t__discr1: int, a: us_split_discrs) =
+  (rec__useless_discr__t__discr1 = to_rep2((a).rec__useless_discr__t__discr))
 
 logic value__size1 : int
 
@@ -1287,21 +1288,6 @@ axiom useless_discr__t__discr__last__bit_axiom1 :
 
 axiom useless_discr__t__discr__position_axiom1 :
   (0 <= useless_discr__t__discr__position1)
-
-logic useless_discr__t__y__first__bit1 : int
-
-logic useless_discr__t__y__last__bit1 : int
-
-logic useless_discr__t__y__position1 : int
-
-axiom useless_discr__t__y__first__bit_axiom1 :
-  (0 <= useless_discr__t__y__first__bit1)
-
-axiom useless_discr__t__y__last__bit_axiom1 :
-  (useless_discr__t__y__first__bit1 <  useless_discr__t__y__last__bit1)
-
-axiom useless_discr__t__y__position_axiom1 :
-  (0 <= useless_discr__t__y__position1)
 
 logic useless_discr__t__z__first__bit1 : int
 
@@ -1333,15 +1319,29 @@ axiom useless_discr__t__x__last__bit_axiom1 :
 axiom useless_discr__t__x__position_axiom1 :
   (0 <= useless_discr__t__x__position1)
 
+logic useless_discr__t__y__first__bit1 : int
+
+logic useless_discr__t__y__last__bit1 : int
+
+logic useless_discr__t__y__position1 : int
+
+axiom useless_discr__t__y__first__bit_axiom1 :
+  (0 <= useless_discr__t__y__first__bit1)
+
+axiom useless_discr__t__y__last__bit_axiom1 :
+  (useless_discr__t__y__first__bit1 <  useless_discr__t__y__last__bit1)
+
+axiom useless_discr__t__y__position_axiom1 :
+  (0 <= useless_discr__t__y__position1)
+
 logic user_eq4 : us_rep, us_rep -> bool
 
 logic dummy4 : us_rep
 
-type tvS__ref = { tvS__content : us_rep
+type t__ref1 = { t__content1 : us_rep
 }
 
-function tvS__ref_tvS__content__projection(a: tvS__ref) : us_rep =
-  (a).tvS__content
+function t__ref_t__content__projection(a: t__ref1) : us_rep = (a).t__content1
 
 logic v__split_discrs : us_split_discrs
 
@@ -1352,11 +1352,12 @@ logic attr__ATTRIBUTE_ADDRESS : int
 predicate dynamic_invariant(temp___expr_192: us_rep,
   temp___is_init_188: bool, temp___skip_constant_189: bool,
   temp___do_toplevel_190: bool, temp___do_typ_inv_191: bool) =
-  ((not (temp___skip_constant_189 = true)) -> in_range4(0, temp___expr_192))
+  ((not (temp___skip_constant_189 = true)) -> in_range4(0,
+  (temp___expr_192).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_194: us_rep,
   temp___skip_top_level_195: bool) =
-  (((temp___expr_194).attr__tag = us_tag1) and
+  (((temp___expr_194).attr__tag = us_tag) and
   (to_rep2(((temp___expr_194).us_split_discrs1).rec__useless_discr__t__discr) = 0))
 
 predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,

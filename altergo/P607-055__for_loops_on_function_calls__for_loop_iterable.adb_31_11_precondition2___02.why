@@ -468,20 +468,10 @@ goal defqtvc :
   { us_split_fields1 = { rec__declare_iterable__container__content =
   g__split_fields2 } } : us_rep in (let o7 = has_element(o6, o5) : bool in
   ((has_element__function_guard(o7, o6, o5) and ((o7 = true) <->
-  in_range3(o5))) -> ((o7 = true) -> (let o8 = { us_split_fields1 = {
-  rec__declare_iterable__container__content = g__split_fields2 } }
-  : us_rep in (let o9 = next(o8, temp___280) : int in
-  ((next__function_guard(o9, o8, temp___280) and (dynamic_invariant(o9, true,
-  false, true, true) and
-  (o9 = (if (temp___280 = 100) then 0 else (temp___280 + 1))))) ->
-  (forall temp___2801:int. ((temp___2801 = o9) -> (let o10 = {
-  us_split_fields1 = { rec__declare_iterable__container__content =
-  g__split_fields2 } } : us_rep in (let o11 = has_element(o10, temp___2801)
-  : bool in ((has_element__function_guard(o11, o10, temp___2801) and
-  ((o11 = true) <-> in_range3(temp___2801))) -> ((o11 = true) ->
-  ((forall temp___2802:int. forall o12:us_rep.
-   has_element__function_guard(has_element(o12, temp___2802), o12,
-   temp___2802)) ->
+  in_range3(o5))) -> ((o7 = true) ->
+  ((forall temp___2801:int. forall o8:us_rep.
+   has_element__function_guard(has_element(o8, temp___2801), o8,
+   temp___2801)) ->
   (has_element({ us_split_fields1 = {
   rec__declare_iterable__container__content = g__split_fields2 } },
-  temp___2801) = true))))))))))))))))))))))))))))))))))))))))
+  temp___280) = true)))))))))))))))))))))))))))))))

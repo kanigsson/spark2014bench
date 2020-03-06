@@ -1155,10 +1155,10 @@ goal defqtvc :
   (forall use_formal_vectors__my_vect__insert__L_3__R121s__assume:int.
   ((to_rep((v__split_fields1).rec__use_formal_vectors__my_vect__vector__top) = use_formal_vectors__my_vect__insert__L_3__R121s__assume) ->
   ((use_formal_vectors__my_vect__insert__L_3__R121s__assume = r121s) ->
-  (dynamic_invariant(r121s, true, false, true, true) -> (let temp___538 = i
+  (dynamic_invariant(r121s, true, false, true, true) -> (let temp___531 = i
   : int in
-  (forall j:int. ((j = temp___538) ->
-  ((andb((if (temp___538 <= j) then true else false),
+  (forall j:int. ((j = temp___531) ->
+  ((andb((if (temp___531 <= j) then true else false),
   (if (j <= r121s) then true else false)) = true) ->
   ((not (bool_eq9((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content,
   us_null_pointer2) = true)) ->

@@ -904,6 +904,10 @@ function bool_eq7(a: us_rep, b: us_rep) : bool =
   (bool_eq6(((a).us_split_fields1).rec__foo__element_structure_type__items,
   ((b).us_split_fields1).rec__foo__element_structure_type__items) = true))) then true else false)
 
+predicate in_range3(rec__foo__element_structure_type__max_size1: int,
+  a: us_split_discrs) =
+  (rec__foo__element_structure_type__max_size1 = to_rep((a).rec__foo__element_structure_type__max_size))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -1123,7 +1127,7 @@ axiom tT9bP1qtaxiom : (forall i:tT9bP1. (1 <= tT9bP1qtint(i)))
 
 axiom tT9bP1qtaxiom1 : (forall i:tT9bP1. (tT9bP1qtint(i) <= 4))
 
-predicate in_range3(x: int) = ((1 <= x) and (x <= 4))
+predicate in_range4(x: int) = ((1 <= x) and (x <= 4))
 
 function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1212,10 +1216,6 @@ function bool_eq12(a: us_rep1, b: us_rep1) : bool =
   1, 4, ((b).us_split_fields3).rec__foo__element_structure_type__items1, 1,
   4) = true))) then true else false)
 
-predicate in_range4(rec__foo__element_structure_type__max_size1: int,
-  a: us_rep) =
-  (rec__foo__element_structure_type__max_size1 = to_rep(((a).us_split_discrs1).rec__foo__element_structure_type__max_size))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -1290,8 +1290,8 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant1(temp___expr_236: us_rep1,
   temp___is_init_232: bool, temp___skip_constant_233: bool,
   temp___do_toplevel_234: bool, temp___do_typ_inv_235: bool) =
-  ((not (temp___skip_constant_233 = true)) -> in_range4(4,
-  to_base(temp___expr_236)))
+  ((not (temp___skip_constant_233 = true)) -> in_range3(4,
+  (to_base(temp___expr_236)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_239: us_rep1,
   temp___skip_top_level_240: bool) =

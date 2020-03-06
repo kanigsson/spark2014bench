@@ -458,25 +458,25 @@ logic rliteral : positive
 axiom rliteral_axiom : (positiveqtint(rliteral) = 1)
 
 axiom def_axiom :
-  (forall temp___410:int. forall temp___411:int. forall temp___412:int.
-  (dynamic_invariant(temp___410, true, true, true, true) ->
-  (dynamic_property1(1, 2147483647, temp___411, temp___412) ->
-  (first3(ghc_sort__cut__cut__aggregate_def(temp___410, temp___411,
-  temp___412)) = temp___411))))
+  (forall temp___411:int. forall temp___412:int. forall temp___413:int.
+  (dynamic_invariant(temp___411, true, true, true, true) ->
+  (dynamic_property1(1, 2147483647, temp___412, temp___413) ->
+  (first3(ghc_sort__cut__cut__aggregate_def(temp___411, temp___412,
+  temp___413)) = temp___412))))
 
 axiom def_axiom1 :
-  (forall temp___410:int. forall temp___411:int. forall temp___412:int.
-  (dynamic_invariant(temp___410, true, true, true, true) ->
-  (dynamic_property1(1, 2147483647, temp___411, temp___412) ->
-  (last3(ghc_sort__cut__cut__aggregate_def(temp___410, temp___411,
-  temp___412)) = temp___412))))
+  (forall temp___411:int. forall temp___412:int. forall temp___413:int.
+  (dynamic_invariant(temp___411, true, true, true, true) ->
+  (dynamic_property1(1, 2147483647, temp___412, temp___413) ->
+  (last3(ghc_sort__cut__cut__aggregate_def(temp___411, temp___412,
+  temp___413)) = temp___413))))
 
 axiom def_axiom2 :
-  (forall temp___410:int. forall temp___411:int. forall temp___412:int.
-  (dynamic_invariant(temp___410, true, true, true, true) ->
-  (forall temp___413:int.
-  ((to_array1(ghc_sort__cut__cut__aggregate_def(temp___410, temp___411,
-  temp___412))[temp___413]) = rliteral))))
+  (forall temp___411:int. forall temp___412:int. forall temp___413:int.
+  (dynamic_invariant(temp___411, true, true, true, true) ->
+  (forall temp___414:int.
+  ((to_array1(ghc_sort__cut__cut__aggregate_def(temp___411, temp___412,
+  temp___413))[temp___414]) = rliteral))))
 
 predicate dynamic_invariant3(temp___expr_180: us_t1,
   temp___is_init_176: bool, temp___skip_constant_177: bool,
@@ -484,27 +484,27 @@ predicate dynamic_invariant3(temp___expr_180: us_t1,
   ((not (temp___skip_constant_177 = true)) -> dynamic_property1(1,
   2147483647, first3(temp___expr_180), last3(temp___expr_180)))
 
-predicate dynamic_invariant4(temp___expr_214: us_t1,
-  temp___is_init_210: bool, temp___skip_constant_211: bool,
-  temp___do_toplevel_212: bool, temp___do_typ_inv_213: bool) =
-  ((not (temp___skip_constant_211 = true)) -> (dynamic_property1(1,
-  (length(s) + 1), first3(temp___expr_214), last3(temp___expr_214)) and
-  ((first3(temp___expr_214) = 1) and
-  (last3(temp___expr_214) = (length(s) + 1)))))
+predicate dynamic_invariant4(temp___expr_215: us_t1,
+  temp___is_init_211: bool, temp___skip_constant_212: bool,
+  temp___do_toplevel_213: bool, temp___do_typ_inv_214: bool) =
+  ((not (temp___skip_constant_212 = true)) -> (dynamic_property1(1,
+  (length(s) + 1), first3(temp___expr_215), last3(temp___expr_215)) and
+  ((first3(temp___expr_215) = 1) and
+  (last3(temp___expr_215) = (length(s) + 1)))))
 
-predicate default_initial_assumption(temp___expr_216: us_t1,
-  temp___skip_top_level_217: bool) = ((first3(temp___expr_216) = 1) and
-  (last3(temp___expr_216) = (length(s) + 1)))
+predicate default_initial_assumption(temp___expr_217: us_t1,
+  temp___skip_top_level_218: bool) = ((first3(temp___expr_217) = 1) and
+  (last3(temp___expr_217) = (length(s) + 1)))
 
  (* File "ghc_sort.ads", line 6, characters 0-0 *)
 goal defqtvc : (dynamic_invariant1(s, true, false, true, true) ->
-  ((last1(s) <  2147483646) -> (let temp___414 =
+  ((last1(s) <  2147483646) -> (let temp___415 =
   ghc_sort__cut__cut__aggregate_def(1, 1, (length(s) + 1)) : us_t1 in
-  ((first3(temp___414) = 1) -> ((last3(temp___414) = (length(s) + 1)) ->
-  ((if (first3(temp___414) <= last3(temp___414)) then ((1 <= (length(s) + 1)) and
-  ((last3(temp___414) - first3(temp___414)) = ((length(s) + 1) - 1))) else ((length(s) + 1) <  1)) ->
-  (let ghc_sort__cut__cut__assume = of_array1(to_array1(temp___414),
-  first3(temp___414), last3(temp___414)) : us_t1 in
+  ((first3(temp___415) = 1) -> ((last3(temp___415) = (length(s) + 1)) ->
+  ((if (first3(temp___415) <= last3(temp___415)) then ((1 <= (length(s) + 1)) and
+  ((last3(temp___415) - first3(temp___415)) = ((length(s) + 1) - 1))) else ((length(s) + 1) <  1)) ->
+  (let ghc_sort__cut__cut__assume = of_array1(to_array1(temp___415),
+  first3(temp___415), last3(temp___415)) : us_t1 in
   (forall cut1:(int,positive) farray.
   ((cut1 = to_array1(ghc_sort__cut__cut__assume)) ->
   ((to_rep(cut__first) = first3(ghc_sort__cut__cut__assume)) ->
@@ -524,8 +524,8 @@ goal defqtvc : (dynamic_invariant1(s, true, false, true, true) ->
   forall y1:int. ((((first1(s) <= x1) and (x1 <= last1(s))) and
   ((x1 = (y1 - 1)) and (((1 <= top1) and (top1 <= x1)) and
   ((to_rep1((cut2[1])) = 1) and ((x1 = to_rep1((cut2[top1]))) and
-  ((forall k:int. (((1 <= k) and (k <= top1)) ->
-   ((1 <= to_rep1((cut2[k]))) and (to_rep1((cut2[k])) <= x1)))) and
+  ((forall k:int. (((1 <= k) and (k <= top1)) -> (let temp___458 =
+   to_rep1((cut2[k])) : int in ((1 <= temp___458) and (temp___458 <= x1))))) and
   ((forall k:int. (((1 <= k) and (k <= (top1 - 1))) ->
    (to_rep1((cut2[k])) <  to_rep1((cut2[(k + 1)]))))) and
   (forall k:int. (((1 <= k) and (k <= (top1 - 1))) ->
@@ -550,17 +550,17 @@ goal defqtvc : (dynamic_invariant1(s, true, false, true, true) ->
   ((exists o4:bool. ((if (andb((if (first1(s) <= y1) then true else false),
    (if (y1 <= last1(s)) then true else false)) = true) then (((first1(s) <= y1) and
    (y1 <= last1(s))) and
-   (exists o5:int. ((to_rep((to_array(s)[y1])) = o5) and (let temp___423 =
-   (y1 - 1) : int in (((first1(s) <= temp___423) and
-   (temp___423 <= last1(s))) and
-   (exists o6:int. ((to_rep((to_array(s)[temp___423])) = o6) and
+   (exists o5:int. ((to_rep((to_array(s)[y1])) = o5) and (let temp___424 =
+   (y1 - 1) : int in (((first1(s) <= temp___424) and
+   (temp___424 <= last1(s))) and
+   (exists o6:int. ((to_rep((to_array(s)[temp___424])) = o6) and
    (o4 = (if (to_int((if (o6 <  o5) then true else false)) = to_int(inc)) then true else false))))))))) else (o4 = false)) and
-   (if (o4 = true) then (exists temp___loop_entry_422:int.
-                        ((temp___loop_entry_422 = y1) and
-                        (exists temp___loop_entry_419:int.
-                        ((temp___loop_entry_419 = y1) and
-                        (exists y3:int. (((temp___loop_entry_422 <= y3) and
-                        (forall k:int. (((temp___loop_entry_419 <= k) and
+   (if (o4 = true) then (exists temp___loop_entry_423:int.
+                        ((temp___loop_entry_423 = y1) and
+                        (exists temp___loop_entry_420:int.
+                        ((temp___loop_entry_420 = y1) and
+                        (exists y3:int. (((temp___loop_entry_423 <= y3) and
+                        (forall k:int. (((temp___loop_entry_420 <= k) and
                         (k <= y3)) ->
                         ((to_rep((to_array(s)[(k - 1)])) <  to_rep((to_array(s)[k]))) <->
                         (inc = true))))) and ((andb((if dynamic_invariant(y3,
@@ -575,11 +575,11 @@ goal defqtvc : (dynamic_invariant1(s, true, false, true, true) ->
                         (if (y2 <= last1(s)) then true else false)) = true) then (((first1(s) <= y2) and
                         (y2 <= last1(s))) and
                         (exists o7:int. ((to_rep((to_array(s)[y2])) = o7) and
-                        (let temp___423 = (y2 - 1) : int in
-                        (((first1(s) <= temp___423) and
-                        (temp___423 <= last1(s))) and
+                        (let temp___424 = (y2 - 1) : int in
+                        (((first1(s) <= temp___424) and
+                        (temp___424 <= last1(s))) and
                         (exists o8:int.
-                        ((to_rep((to_array(s)[temp___423])) = o8) and
+                        ((to_rep((to_array(s)[temp___424])) = o8) and
                         (o6 = (if (to_int((if (o8 <  o7) then true else false)) = to_int(inc)) then true else false))))))))) else (o6 = false)) and
                         (not (o6 = true)))))))))))))) else (y2 = y1)))) ->
   (let o4 = (top1 + 1) : int in (in_range1(o4) ->
@@ -593,10 +593,10 @@ goal defqtvc : (dynamic_invariant1(s, true, false, true, true) ->
   (if (y3 <= last1(s)) then true else false)) = true) ->
   (forall usf:int. (((to_rep(cut__first) <= top2) and
   (top2 <= to_rep(cut__last))) ->
-  (forall o7:int. ((to_rep1((cut3[top2])) = o7) -> (let temp___424 =
-  (top2 - 1) : int in (((to_rep(cut__first) <= temp___424) and
-  (temp___424 <= to_rep(cut__last))) ->
-  (forall o8:int. ((to_rep1((cut3[temp___424])) = o8) -> (let o9 = (o8 + 1)
+  (forall o7:int. ((to_rep1((cut3[top2])) = o7) -> (let temp___425 =
+  (top2 - 1) : int in (((to_rep(cut__first) <= temp___425) and
+  (temp___425 <= to_rep(cut__last))) ->
+  (forall o8:int. ((to_rep1((cut3[temp___425])) = o8) -> (let o9 = (o8 + 1)
   : int in (in_range1(o9) -> ((andb((if (o9 <= usf) then true else false),
   (if (usf <= (o7 - 1)) then true else false)) = true) ->
   (((first1(s) <= usf) and (usf <= last1(s))) ->

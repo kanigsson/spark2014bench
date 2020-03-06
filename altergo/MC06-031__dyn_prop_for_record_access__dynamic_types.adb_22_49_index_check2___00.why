@@ -504,9 +504,9 @@ predicate dynamic_invariant1(temp___expr_162: us_t, temp___is_init_158: bool,
   dynamic_property(1, 2147483647, first1(temp___expr_162),
   last1(temp___expr_162)))
 
-logic temp_____aggregate_def_219 : int -> (int,integer) farray
+logic temp_____aggregate_def_221 : int -> (int,integer) farray
 
-logic temp_____aggregate_def_223 : int -> (int,integer) farray
+logic temp_____aggregate_def_225 : int -> (int,integer) farray
 
 predicate dynamic_invariant2(temp___expr_46: int, temp___is_init_42: bool,
   temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
@@ -571,14 +571,14 @@ predicate dynamic_invariant6(temp___expr_196: us_rep,
   to_rep1((((temp___expr_196).us_split_fields1).rec__dynamic_types__search__result_type__from[temp___197]))))))
 
 axiom def_axiom :
-  (forall temp___221:int. (dynamic_invariant4(temp___221, true, true, true,
+  (forall temp___223:int. (dynamic_invariant4(temp___223, true, true, true,
   true) ->
-  (to_rep1((temp_____aggregate_def_219(temp___221)[1])) = temp___221)))
+  (to_rep1((temp_____aggregate_def_221(temp___223)[1])) = temp___223)))
 
 axiom def_axiom1 :
-  (forall temp___225:int. (dynamic_invariant4(temp___225, true, true, true,
+  (forall temp___227:int. (dynamic_invariant4(temp___227, true, true, true,
   true) ->
-  (to_rep1((temp_____aggregate_def_223(temp___225)[1])) = temp___225)))
+  (to_rep1((temp_____aggregate_def_225(temp___227)[1])) = temp___227)))
 
 logic rliteral : natural
 
@@ -601,13 +601,13 @@ goal defqtvc : (dynamic_invariant1(a, true, false, true, true) ->
                                   o2) and
                                   (dynamic_types__search__search_range__result = {
                                   rec__dynamic_types__search__result_type__from =
-                                  temp_____aggregate_def_219(o2);
+                                  temp_____aggregate_def_221(o2);
                                   rec__dynamic_types__search__result_type__result =
                                   o1 }))))) else (let o1 =
   from : int in (dynamic_property1(first2, last2, o1) and
   (dynamic_types__search__search_range__result = {
   rec__dynamic_types__search__result_type__from =
-  temp_____aggregate_def_223(o1);
+  temp_____aggregate_def_225(o1);
   rec__dynamic_types__search__result_type__result = rliteral }))))))))) ->
   (forall o:bool.
   ((exists o1:int.
@@ -616,12 +616,10 @@ goal defqtvc : (dynamic_invariant1(a, true, false, true, true) ->
                               (i <= to_rep1(((dynamic_types__search__search_range__result).rec__dynamic_types__search__result_type__from[1])))) ->
                               (not (to_rep((to_array(a)[i])) = c)))) then true else false)) else (o = false)))) ->
   ((not (o = true)) ->
-  (forall o1:int.
-  ((to_rep((dynamic_types__search__search_range__result).rec__dynamic_types__search__result_type__result) = o1) ->
-  (forall o2:int.
-  ((to_rep((dynamic_types__search__search_range__result).rec__dynamic_types__search__result_type__result) = o2) ->
-  ((andb((if (first1(a) <= o2) then true else false),
-  (if (o1 <= last1(a)) then true else false)) = true) ->
-  (forall temp___229:int.
-  ((to_rep((dynamic_types__search__search_range__result).rec__dynamic_types__search__result_type__result) = temp___229) ->
-  (first1(a) <= temp___229)))))))))))))))))))
+  (forall temp___231:int.
+  ((to_rep((dynamic_types__search__search_range__result).rec__dynamic_types__search__result_type__result) = temp___231) ->
+  ((andb((if (first1(a) <= temp___231) then true else false),
+  (if (temp___231 <= last1(a)) then true else false)) = true) ->
+  (forall temp___232:int.
+  ((to_rep((dynamic_types__search__search_range__result).rec__dynamic_types__search__result_type__result) = temp___232) ->
+  (first1(a) <= temp___232)))))))))))))))))

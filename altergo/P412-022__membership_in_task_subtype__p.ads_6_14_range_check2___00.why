@@ -122,6 +122,22 @@ function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
 function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
   (a).us_split_fields1
 
+function to_rep(x: integer) : int = integerqtint(x)
+
+logic of_rep : int -> integer
+
+axiom inversion_axiom :
+  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:integer [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+predicate in_range1(rec__p__tt__x1: int, a: us_split_discrs) =
+  (rec__p__tt__x1 = to_rep((a).rec__p__tt__x))
+
 logic value__size : int
 
 logic object__size : int
@@ -185,22 +201,6 @@ function of_base(r: us_rep) : us_rep1 = { us_split_discrs2 =
   (r).us_split_discrs1; us_split_fields3 = { rec__p__tt1 =
   ((r).us_split_fields1).rec__p__tt } }
 
-function to_rep(x: integer) : int = integerqtint(x)
-
-logic of_rep : int -> integer
-
-axiom inversion_axiom :
-  (forall x:integer [to_rep(x)]. (of_rep(to_rep(x)) = x))
-
-axiom range_axiom : (forall x:integer [to_rep(x)]. in_range(to_rep(x)))
-
-axiom coerce_axiom :
-  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
-  (to_rep(of_rep(x)) = x)))
-
-predicate in_range1(rec__p__tt__x1: int, a: us_rep) =
-  (rec__p__tt__x1 = to_rep(((a).us_split_discrs1).rec__p__tt__x))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -238,100 +238,24 @@ logic to1__split_discrs : us_split_discrs
 
 logic attr__ATTRIBUTE_ADDRESS : int
 
-predicate dynamic_invariant(temp___expr_194: us_rep1,
-  temp___is_init_190: bool, temp___skip_constant_191: bool,
-  temp___do_toplevel_192: bool, temp___do_typ_inv_193: bool) =
-  ((not (temp___skip_constant_191 = true)) -> in_range1(1,
-  to_base(temp___expr_194)))
+predicate dynamic_invariant(temp___expr_195: us_rep1,
+  temp___is_init_191: bool, temp___skip_constant_192: bool,
+  temp___do_toplevel_193: bool, temp___do_typ_inv_194: bool) =
+  ((not (temp___skip_constant_192 = true)) -> in_range1(1,
+  (to_base(temp___expr_195)).us_split_discrs1))
 
-predicate default_initial_assumption(temp___expr_196: us_rep1,
-  temp___skip_top_level_197: bool) =
-  (to_rep(((temp___expr_196).us_split_discrs2).rec__p__tt__x) = 1)
+predicate default_initial_assumption(temp___expr_197: us_rep1,
+  temp___skip_top_level_198: bool) =
+  (to_rep(((temp___expr_197).us_split_discrs2).rec__p__tt__x) = 1)
 
 logic foo : bool
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
 
-type us_split_fields4 = { rec__p__tt2 : us_main_type
-}
-
-function us_split_fields_rec__p__tt__2__projection(a: us_split_fields4) : us_main_type =
-  (a).rec__p__tt2
-
-type us_split_fields__ref2 = { us_split_fields__content2 : us_split_fields4
-}
-
-function us_split_fields__ref___split_fields__content__2__projection(a: us_split_fields__ref2) : us_split_fields4 =
-  (a).us_split_fields__content2
-
-type us_rep2 = { us_split_discrs3 : us_split_discrs; us_split_fields5 :
-us_split_fields4
-}
-
-function us_rep___split_discrs__2__projection(a: us_rep2) : us_split_discrs =
-  (a).us_split_discrs3
-
-function us_rep___split_fields__2__projection(a: us_rep2) : us_split_fields4 =
-  (a).us_split_fields5
-
-function to_base1(a: us_rep2) : us_rep = { us_split_discrs1 =
-  (a).us_split_discrs3; us_split_fields1 = { rec__p__tt =
-  ((a).us_split_fields5).rec__p__tt2 } }
-
-function of_base1(r: us_rep) : us_rep2 = { us_split_discrs3 =
-  (r).us_split_discrs1; us_split_fields5 = { rec__p__tt2 =
-  ((r).us_split_fields1).rec__p__tt } }
-
-predicate in_range2(rec__p__tt__x1: int, a: us_rep) =
-  (rec__p__tt__x1 = to_rep(((a).us_split_discrs1).rec__p__tt__x))
-
-logic value__size2 : int
-
-logic object__size2 : int
-
-logic alignment2 : int
-
-axiom value__size_axiom2 : (0 <= value__size2)
-
-axiom object__size_axiom2 : (0 <= object__size2)
-
-axiom alignment_axiom2 : (0 <= alignment2)
-
-logic p__tt__x__first__bit2 : int
-
-logic p__tt__x__last__bit2 : int
-
-logic p__tt__x__position2 : int
-
-axiom p__tt__x__first__bit_axiom2 : (0 <= p__tt__x__first__bit2)
-
-axiom p__tt__x__last__bit_axiom2 :
-  (p__tt__x__first__bit2 <  p__tt__x__last__bit2)
-
-axiom p__tt__x__position_axiom2 : (0 <= p__tt__x__position2)
-
-logic user_eq3 : us_rep2, us_rep2 -> bool
-
-type tt1__ref = { tt1__content : us_rep2
-}
-
-function tt1__ref_tt1__content__projection(a: tt1__ref) : us_rep2 =
-  (a).tt1__content
-
 predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
   temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
   ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_18))
-
-predicate dynamic_invariant2(temp___expr_185: us_rep2,
-  temp___is_init_181: bool, temp___skip_constant_182: bool,
-  temp___do_toplevel_183: bool, temp___do_typ_inv_184: bool) =
-  ((not (temp___skip_constant_182 = true)) -> in_range2(1,
-  to_base1(temp___expr_185)))
-
-predicate default_initial_assumption1(temp___expr_187: us_rep2,
-  temp___skip_top_level_188: bool) =
-  (to_rep(((temp___expr_187).us_split_discrs3).rec__p__tt__x) = 1)
 
  (* File "p.ads", line 1, characters 0-0 *)
 goal defqtvc : true

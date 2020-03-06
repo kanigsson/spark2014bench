@@ -798,7 +798,7 @@ predicate dynamic_invariant3(temp___expr_207: int, temp___is_init_203: bool,
   temp___do_typ_inv_206: bool) = (((temp___is_init_203 = true) or
   ((- 2147483648) <= 2147483647)) -> in_range7(temp___expr_207))
 
-logic temp___String_Literal_390 : unit -> (int,character) farray
+logic temp___String_Literal_392 : unit -> (int,character) farray
 
 predicate dynamic_invariant4(temp___expr_96: us_t, temp___is_init_92: bool,
   temp___skip_constant_93: bool, temp___do_toplevel_94: bool,

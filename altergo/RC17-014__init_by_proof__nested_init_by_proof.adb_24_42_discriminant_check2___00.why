@@ -178,6 +178,10 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (nested_init_by_proof__rec__f3__pred(a) ->
   (to_rep((((a).us_split_fields1).rec__nested_init_by_proof__rec__f3).rec__value) = to_rep((((b).us_split_fields1).rec__nested_init_by_proof__rec__f3).rec__value))))) then true else false)
 
+predicate in_range2(rec__nested_init_by_proof__rec__d1: bool,
+  a: us_split_discrs) =
+  (rec__nested_init_by_proof__rec__d1 = (a).rec__nested_init_by_proof__rec__d)
+
 logic value__size : int
 
 logic object__size : int

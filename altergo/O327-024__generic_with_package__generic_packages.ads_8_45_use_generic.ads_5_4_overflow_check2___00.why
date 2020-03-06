@@ -84,21 +84,13 @@ type integer__ref = { integer__content : integer
 function integer__ref_integer__content__projection(a: integer__ref) : integer =
   (a).integer__content
 
-logic e1 : int
+type natural
 
-logic attr__ATTRIBUTE_ADDRESS : int
+logic naturalqtint : natural -> int
 
-logic e2 : int
+axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
 
-logic attr__ATTRIBUTE_ADDRESS1 : int
-
-type element
-
-logic elementqtint : element -> int
-
-axiom elementqtaxiom : (forall i:element. (0 <= elementqtint(i)))
-
-axiom elementqtaxiom1 : (forall i:element. (elementqtint(i) <= 2147483647))
+axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
 
 predicate in_range1(x: int) = ((0 <= x) and (x <= 2147483647))
 
@@ -110,20 +102,28 @@ logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
 
 logic attr__ATTRIBUTE_VALUE1 : us_image -> int
 
-logic user_eq1 : element, element -> bool
+logic user_eq1 : natural, natural -> bool
 
-logic dummy1 : element
+logic dummy1 : natural
 
-type element__ref = { element__content : element
+type natural__ref = { natural__content : natural
 }
 
-function element__ref_element__content__projection(a: element__ref) : element =
-  (a).element__content
+function natural__ref_natural__content__projection(a: natural__ref) : natural =
+  (a).natural__content
 
-predicate dynamic_invariant(temp___expr_161: int, temp___is_init_157: bool,
-  temp___skip_constant_158: bool, temp___do_toplevel_159: bool,
-  temp___do_typ_inv_160: bool) = (((temp___is_init_157 = true) or
-  (0 <= 2147483647)) -> in_range1(temp___expr_161))
+predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
+  temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
+  temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
+  (0 <= 2147483647)) -> in_range1(temp___expr_39))
+
+logic e1 : int
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic e2 : int
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
 
 predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,

@@ -642,7 +642,7 @@ type t38b__ref = { t38b__content : us_t
 function t38b__ref_t38b__content__projection(a: t38b__ref) : us_t =
   (a).t38b__content
 
-logic temp_____aggregate_def_249 : int, int, int -> us_t
+logic temp_____aggregate_def_251 : int, int, int -> us_t
 
 predicate dynamic_invariant5(temp___expr_46: int, temp___is_init_42: bool,
   temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
@@ -661,25 +661,25 @@ predicate dynamic_invariant7(temp___expr_190: int, temp___is_init_186: bool,
   (33 <= 126)) -> in_range7(temp___expr_190))
 
 axiom def_axiom :
-  (forall temp___251:int. forall temp___252:int. forall temp___253:int.
-  (dynamic_invariant2(temp___251, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___252, temp___253) ->
-  (first1(temp_____aggregate_def_249(temp___251, temp___252,
-  temp___253)) = temp___252))))
+  (forall temp___253:int. forall temp___254:int. forall temp___255:int.
+  (dynamic_invariant2(temp___253, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___254, temp___255) ->
+  (first1(temp_____aggregate_def_251(temp___253, temp___254,
+  temp___255)) = temp___254))))
 
 axiom def_axiom1 :
-  (forall temp___251:int. forall temp___252:int. forall temp___253:int.
-  (dynamic_invariant2(temp___251, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___252, temp___253) ->
-  (last1(temp_____aggregate_def_249(temp___251, temp___252,
-  temp___253)) = temp___253))))
+  (forall temp___253:int. forall temp___254:int. forall temp___255:int.
+  (dynamic_invariant2(temp___253, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___254, temp___255) ->
+  (last1(temp_____aggregate_def_251(temp___253, temp___254,
+  temp___255)) = temp___255))))
 
 axiom def_axiom2 :
-  (forall temp___251:int. forall temp___252:int. forall temp___253:int.
-  (dynamic_invariant2(temp___251, true, true, true, true) ->
-  (forall temp___254:int.
-  (to_rep((to_array(temp_____aggregate_def_249(temp___251, temp___252,
-  temp___253))[temp___254])) = temp___251))))
+  (forall temp___253:int. forall temp___254:int. forall temp___255:int.
+  (dynamic_invariant2(temp___253, true, true, true, true) ->
+  (forall temp___256:int.
+  (to_rep((to_array(temp_____aggregate_def_251(temp___253, temp___254,
+  temp___255))[temp___256])) = temp___253))))
 
  (* File "input.ads", line 9, characters 0-0 *)
 goal defqtvc :
@@ -729,8 +729,8 @@ goal defqtvc :
   (forall first_char2:int.
   ((exists o:bool. ((if (first_char1 <= 1024) then (((1 <= first_char1) and
    (first_char1 <= 1024)) and
-   (exists o1:int. ((to_rep((line1[first_char1])) = o1) and
-   (o = (if in_range7(o1) then true else false))))) else (o = false)) and
+   (exists temp___244:int. ((to_rep((line1[first_char1])) = temp___244) and
+   (o = (if in_range7(temp___244) then true else false))))) else (o = false)) and
    (if (o = true) then (exists first_char3:int.
                        ((andb((if dynamic_invariant3(first_char3, true, true,
                        true, true) then true else false),
@@ -741,37 +741,37 @@ goal defqtvc :
                        (exists o2:bool.
                        ((if (first_char2 <= 1024) then (((1 <= first_char2) and
                        (first_char2 <= 1024)) and
-                       (exists o3:int.
-                       ((to_rep((line1[first_char2])) = o3) and
-                       (o2 = (if in_range7(o3) then true else false))))) else (o2 = false)) and
+                       (exists temp___244:int.
+                       ((to_rep((line1[first_char2])) = temp___244) and
+                       (o2 = (if in_range7(temp___244) then true else false))))) else (o2 = false)) and
                        (not (o2 = true))))))))) else (first_char2 = first_char1)))) ->
   ((start1 = r32b) -> (dynamic_invariant1(r32b, true, false, true, true) ->
   (((first_char2 - 1) = r33b) -> (dynamic_invariant(r33b, true, false, true,
   true) -> (((r32b <= r33b) -> (((1 <= r32b) and (r32b <= 1024)) and
-  ((1 <= r33b) and (r33b <= 1024)))) -> (let temp___259 = of_array(line1,
+  ((1 <= r33b) and (r33b <= 1024)))) -> (let temp___261 = of_array(line1,
   r32b, r33b) : us_t in (let input__next_word__B_5__s__assume =
-  of_array(to_array(temp___259), first1(temp___259), last1(temp___259))
+  of_array(to_array(temp___261), first1(temp___261), last1(temp___261))
   : us_t in
   (forall s:(int,character) farray.
   ((s = to_array(input__next_word__B_5__s__assume)) ->
   ((to_rep1(s__first) = first1(input__next_word__B_5__s__assume)) ->
   ((to_rep1(s__last) = last1(input__next_word__B_5__s__assume)) ->
   (dynamic_property(1, 2147483647, to_rep1(s__first), to_rep1(s__last)) ->
-  (forall temp___244:int. ((to_rep1(s__first) = temp___244) ->
-  (forall temp___245:int. ((to_rep1(s__last) = temp___245) ->
-  (forall i:int. ((i = temp___244) ->
+  (forall temp___246:int. ((to_rep1(s__first) = temp___246) ->
+  (forall temp___247:int. ((to_rep1(s__last) = temp___247) ->
+  (forall i:int. ((i = temp___246) ->
   (forall s1:(int,character) farray.
-  ((if (andb((if (temp___244 <= i) then true else false),
-  (if (i <= temp___245) then true else false)) = true) then (exists s2:(int,character) farray.
+  ((if (andb((if (temp___246 <= i) then true else false),
+  (if (i <= temp___247) then true else false)) = true) then (exists s2:(int,character) farray.
                                                             exists i1:int.
                                                             ((andb((if 
-                                                            (forall temp___248:int.
-                                                            (((to_rep1(s__first) <= temp___248) and
-                                                            (temp___248 <= to_rep1(s__last))) ->
-                                                            (((temp___245 <  temp___248) or
-                                                            ((temp___248 <  temp___244) or
-                                                            (i1 <= temp___248))) ->
-                                                            ((s2[temp___248]) = (s[temp___248]))))) then true else false),
+                                                            (forall temp___250:int.
+                                                            (((to_rep1(s__first) <= temp___250) and
+                                                            (temp___250 <= to_rep1(s__last))) ->
+                                                            (((temp___247 <  temp___250) or
+                                                            ((temp___250 <  temp___246) or
+                                                            (i1 <= temp___250))) ->
+                                                            ((s2[temp___250]) = (s[temp___250]))))) then true else false),
                                                             (if ((to_rep1(s__first) <= i1) and
                                                             (i1 <= to_rep1(s__last))) then true else false)) = true) and
                                                             (((to_rep1(s__first) <= i1) and
@@ -789,37 +789,37 @@ goal defqtvc :
                                                             (((to_rep1(s__first) <= i1) and
                                                             (i1 <= to_rep1(s__last))) and
                                                             ((s1 = (s2[i1 <- o2])) and
-                                                            (i1 = temp___245)))))))))))) else (s1 = s)) ->
-  (forall temp___257:us_t.
+                                                            (i1 = temp___247)))))))))))) else (s1 = s)) ->
+  (forall temp___259:us_t.
   ((exists o:int. ((to_rep1(s__last) = o) and
    (exists o1:int. ((to_rep1(s__first) = o1) and
    (exists o2:int. ((to_rep1(v__last) = o2) and
-   (exists o3:int. ((to_rep1(v__first) = o3) and (let temp___255 =
-   temp_____aggregate_def_249(32, 1, (length(o3, o2) - length(o1, o)))
-   : us_t in ((first1(temp___255) = 1) and
-   ((last1(temp___255) = (length(to_rep1(v__first),
+   (exists o3:int. ((to_rep1(v__first) = o3) and (let temp___257 =
+   temp_____aggregate_def_251(32, 1, (length(o3, o2) - length(o1, o)))
+   : us_t in ((first1(temp___257) = 1) and
+   ((last1(temp___257) = (length(to_rep1(v__first),
    to_rep1(v__last)) - length(to_rep1(s__first), to_rep1(s__last)))) and
    (exists o4:int. ((to_rep1(s__last) = o4) and
    (exists o5:int. ((to_rep1(s__first) = o5) and (if (length(o5,
-   o4) = 0) then (temp___257 = of_array(to_array(temp___255),
-   first1(temp___255),
-   last1(temp___255))) else (exists o6:int. ((to_rep1(s__last) = o6) and
+   o4) = 0) then (temp___259 = of_array(to_array(temp___257),
+   first1(temp___257),
+   last1(temp___257))) else (exists o6:int. ((to_rep1(s__last) = o6) and
                             (exists o7:int. ((to_rep1(s__first) = o7) and
                             (exists o8:int. ((to_rep1(s__first) = o8) and
                             (let o9 = ((o8 + (length(o7,
-                            o6) + length(first1(temp___255),
-                            last1(temp___255)))) - 1) : int in
+                            o6) + length(first1(temp___257),
+                            last1(temp___257)))) - 1) : int in
                             (in_range3(o9) and
                             (exists o10:integer. ((to_rep1(o10) = o9) and
                             (exists o11:int. ((to_rep1(o10) = o11) and
                             (exists o12:int. ((to_rep1(s__first) = o12) and
                             (exists o13:int. ((to_rep1(s__last) = o13) and
                             (exists o14:int. ((to_rep1(s__first) = o14) and
-                            (temp___257 = of_array(concat(s1, o14, o13,
-                            to_array(temp___255), first1(temp___255),
-                            last1(temp___255)), o12, o11)))))))))))))))))))))))))))))))))))) ->
-  ((if (first1(temp___257) <= last1(temp___257)) then ((to_rep1(v__first) <= to_rep1(v__last)) and
-  ((last1(temp___257) - first1(temp___257)) = (to_rep1(v__last) - to_rep1(v__first)))) else (to_rep1(v__last) <  to_rep1(v__first))) ->
+                            (temp___259 = of_array(concat(s1, o14, o13,
+                            to_array(temp___257), first1(temp___257),
+                            last1(temp___257)), o12, o11)))))))))))))))))))))))))))))))))))) ->
+  ((if (first1(temp___259) <= last1(temp___259)) then ((to_rep1(v__first) <= to_rep1(v__last)) and
+  ((last1(temp___259) - first1(temp___259)) = (to_rep1(v__last) - to_rep1(v__first)))) else (to_rep1(v__last) <  to_rep1(v__first))) ->
   (forall o:int. ((to_rep1(v__first) = o) ->
   (forall o1:int. ((to_rep1(s__last) = o1) ->
   (forall o2:int. ((to_rep1(s__first) = o2) -> in_range1(length(o2, o1)))))))))))))))))))))))))))))))))))))))))))))

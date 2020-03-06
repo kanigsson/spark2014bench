@@ -409,6 +409,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items,
   ((b).us_split_fields1).rec__tester__ring_buffer__ring_buffer_type__items) = true)))) then true else false)
 
+predicate in_range4(rec__tester__ring_buffer__ring_buffer_type__max_size1: int,
+  a: us_split_discrs) =
+  (rec__tester__ring_buffer__ring_buffer_type__max_size1 = to_rep1((a).rec__tester__ring_buffer__ring_buffer_type__max_size))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -518,7 +522,7 @@ axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
 
 axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
 
-predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -541,7 +545,7 @@ function natural__ref_natural__content__projection(a: natural__ref) : natural =
 predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
   temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
   temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
-  (0 <= 2147483647)) -> in_range4(temp___expr_39))
+  (0 <= 2147483647)) -> in_range5(temp___expr_39))
 
 predicate dynamic_invariant1(temp___expr_215: us_rep,
   temp___is_init_211: bool, temp___skip_constant_212: bool,
@@ -734,14 +738,14 @@ goal defqtvc :
             rec__tester__ring_buffer__ring_buffer_type__items =
             (buffer__split_fields).rec__tester__ring_buffer__ring_buffer_type__items
             }))))))))))))))) ->
-  (let temp___310 =
+  (let temp___317 =
   (buffer__split_fields2).rec__tester__ring_buffer__ring_buffer_type__items
   : us_t in
   (forall o:element_type. ((to_rep3(o) = element) ->
-  (forall temp___311:int.
-  ((to_rep1((buffer__split_fields2).rec__tester__ring_buffer__ring_buffer_type__tail) = temp___311) ->
-  (((first1(temp___310) <= temp___311) and
-  (temp___311 <= last1(temp___310))) -> (dynamic_predicate({
+  (forall temp___318:int.
+  ((to_rep1((buffer__split_fields2).rec__tester__ring_buffer__ring_buffer_type__tail) = temp___318) ->
+  (((first1(temp___317) <= temp___318) and
+  (temp___318 <= last1(temp___317))) -> (dynamic_predicate({
   us_split_discrs1 = buffer__split_discrs; us_split_fields1 = {
   rec__tester__ring_buffer__ring_buffer_type__count =
   (buffer__split_fields2).rec__tester__ring_buffer__ring_buffer_type__count;
@@ -750,7 +754,7 @@ goal defqtvc :
   rec__tester__ring_buffer__ring_buffer_type__tail =
   (buffer__split_fields2).rec__tester__ring_buffer__ring_buffer_type__tail;
   rec__tester__ring_buffer__ring_buffer_type__items = { elts =
-  (to_array((buffer__split_fields2).rec__tester__ring_buffer__ring_buffer_type__items)[temp___311 <- o]);
+  (to_array((buffer__split_fields2).rec__tester__ring_buffer__ring_buffer_type__items)[temp___318 <- o]);
   rt =
   ((buffer__split_fields2).rec__tester__ring_buffer__ring_buffer_type__items).rt
   } } }) ->
@@ -762,7 +766,7 @@ goal defqtvc :
   rec__tester__ring_buffer__ring_buffer_type__tail =
   (buffer__split_fields2).rec__tester__ring_buffer__ring_buffer_type__tail;
   rec__tester__ring_buffer__ring_buffer_type__items = { elts =
-  (to_array((buffer__split_fields2).rec__tester__ring_buffer__ring_buffer_type__items)[temp___311 <- o]);
+  (to_array((buffer__split_fields2).rec__tester__ring_buffer__ring_buffer_type__items)[temp___318 <- o]);
   rt =
   ((buffer__split_fields2).rec__tester__ring_buffer__ring_buffer_type__items).rt
   } }) ->

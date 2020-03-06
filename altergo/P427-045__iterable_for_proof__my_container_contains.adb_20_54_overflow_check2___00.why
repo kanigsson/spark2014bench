@@ -253,10 +253,10 @@ axiom has_element__def_axiom1 :
 
 axiom has_element__def_axiom2 :
   (forall c:(int,natural) farray.
-  (forall p:us_rep [has_element(c, p)].
-  (((1 <= to_rep(((p).us_split_fields1).rec__my_container_contains__cursor__index)) and
-  (to_rep(((p).us_split_fields1).rec__my_container_contains__cursor__index) <= 100)) ->
-  (has_element(c, p) = true))))
+  (forall p:us_rep [has_element(c, p)]. ((let temp___193 =
+  to_rep(((p).us_split_fields1).rec__my_container_contains__cursor__index)
+  : int in ((1 <= temp___193) and (temp___193 <= 100))) -> (has_element(c,
+  p) = true))))
 
 logic c : (int,natural) farray
 

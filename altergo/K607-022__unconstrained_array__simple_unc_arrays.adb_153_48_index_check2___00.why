@@ -504,6 +504,10 @@ function bool_eq7(a: us_rep, b: us_rep) : bool =
   (bool_eq6(((a).us_split_fields1).rec__simple_unc_arrays__table__v,
   ((b).us_split_fields1).rec__simple_unc_arrays__table__v) = true)) then true else false)
 
+predicate in_range5(rec__simple_unc_arrays__table__last1: int,
+  a: us_split_discrs) =
+  (rec__simple_unc_arrays__table__last1 = to_rep((a).rec__simple_unc_arrays__table__last))
+
 logic value__size1 : int
 
 logic object__size1 : int

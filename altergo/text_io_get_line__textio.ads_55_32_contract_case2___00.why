@@ -961,8 +961,8 @@ goal defqtvc :
   256) = eof_ch) -> (dynamic_invariant3(eof, true, false, true, true) ->
   ((not (end_of_file(current_file(current_in__split_fields), cur_position,
   the_file) = true)) ->
-  (forall temp___old_384:int. ((temp___old_384 = cur_position) ->
-  (forall temp___old_386:int. ((temp___old_386 = cur_position) -> (let o =
+  (forall temp___old_386:int. ((temp___old_386 = cur_position) ->
+  (forall temp___old_388:int. ((temp___old_388 = cur_position) -> (let o =
   item__last : integer in (let o1 = item__first : integer in
   (forall cur_position1:int. ((cur_position1 = cur_position) ->
   (forall cur_position2:int. forall item:(int,character) farray.

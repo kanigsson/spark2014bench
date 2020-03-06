@@ -336,76 +336,6 @@ logic user_eq4 : us_rep, us_rep -> bool
 
 logic dummy4 : us_rep
 
-type blech_type__ref = { blech_type__content : us_rep
-}
-
-function blech_type__ref_blech_type__content__projection(a: blech_type__ref) : us_rep =
-  (a).blech_type__content
-
-predicate in_range5(rec__repro__blech_type__opt1: int, a: us_rep) =
-  (rec__repro__blech_type__opt1 = to_rep3(((a).us_split_discrs1).rec__repro__blech_type__opt))
-
-logic value__size1 : int
-
-logic object__size1 : int
-
-logic alignment1 : int
-
-axiom value__size_axiom1 : (0 <= value__size1)
-
-axiom object__size_axiom1 : (0 <= object__size1)
-
-axiom alignment_axiom1 : (0 <= alignment1)
-
-logic repro__blech_type__opt__first__bit1 : int
-
-logic repro__blech_type__opt__last__bit1 : int
-
-logic repro__blech_type__opt__position1 : int
-
-axiom repro__blech_type__opt__first__bit_axiom1 :
-  (0 <= repro__blech_type__opt__first__bit1)
-
-axiom repro__blech_type__opt__last__bit_axiom1 :
-  (repro__blech_type__opt__first__bit1 <  repro__blech_type__opt__last__bit1)
-
-axiom repro__blech_type__opt__position_axiom1 :
-  (0 <= repro__blech_type__opt__position1)
-
-logic repro__blech_type__x__first__bit1 : int
-
-logic repro__blech_type__x__last__bit1 : int
-
-logic repro__blech_type__x__position1 : int
-
-axiom repro__blech_type__x__first__bit_axiom1 :
-  (0 <= repro__blech_type__x__first__bit1)
-
-axiom repro__blech_type__x__last__bit_axiom1 :
-  (repro__blech_type__x__first__bit1 <  repro__blech_type__x__last__bit1)
-
-axiom repro__blech_type__x__position_axiom1 :
-  (0 <= repro__blech_type__x__position1)
-
-logic repro__blech_type__y__first__bit1 : int
-
-logic repro__blech_type__y__last__bit1 : int
-
-logic repro__blech_type__y__position1 : int
-
-axiom repro__blech_type__y__first__bit_axiom1 :
-  (0 <= repro__blech_type__y__first__bit1)
-
-axiom repro__blech_type__y__last__bit_axiom1 :
-  (repro__blech_type__y__first__bit1 <  repro__blech_type__y__last__bit1)
-
-axiom repro__blech_type__y__position_axiom1 :
-  (0 <= repro__blech_type__y__position1)
-
-logic user_eq5 : us_rep, us_rep -> bool
-
-logic dummy5 : us_rep
-
 type t1s__ref = { t1s__content : us_rep
 }
 
@@ -465,17 +395,20 @@ function bool_eq6(a: us_rep1, b: us_rep1) : bool =
   (bool_eq5(((a).us_split_fields3).rec__repro__fnord_type__blech,
   ((b).us_split_fields3).rec__repro__fnord_type__blech) = true)))) then true else false)
 
-logic value__size2 : int
+predicate in_range5(rec__repro__fnord_type__opt1: int, a: us_split_discrs2) =
+  (rec__repro__fnord_type__opt1 = to_rep((a).rec__repro__fnord_type__opt))
 
-logic object__size2 : int
+logic value__size1 : int
 
-logic alignment2 : int
+logic object__size1 : int
 
-axiom value__size_axiom2 : (0 <= value__size2)
+logic alignment1 : int
 
-axiom object__size_axiom2 : (0 <= object__size2)
+axiom value__size_axiom1 : (0 <= value__size1)
 
-axiom alignment_axiom2 : (0 <= alignment2)
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
 
 logic repro__fnord_type__opt__first__bit : int
 
@@ -522,9 +455,9 @@ axiom repro__fnord_type__blech__last__bit_axiom :
 axiom repro__fnord_type__blech__position_axiom :
   (0 <= repro__fnord_type__blech__position)
 
-logic user_eq6 : us_rep1, us_rep1 -> bool
+logic user_eq5 : us_rep1, us_rep1 -> bool
 
-logic dummy6 : us_rep1
+logic dummy5 : us_rep1
 
 type fnord_type__ref = { fnord_type__content : us_rep1
 }
@@ -547,6 +480,76 @@ predicate dynamic_invariant3(temp___expr_165: int, temp___is_init_161: bool,
   temp___do_typ_inv_164: bool) = (((temp___is_init_161 = true) or
   (1 <= 2)) -> in_range1(temp___expr_165))
 
+predicate in_range6(rec__repro__blech_type__opt1: int, a: us_split_discrs) =
+  (rec__repro__blech_type__opt1 = to_rep3((a).rec__repro__blech_type__opt))
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic repro__blech_type__opt__first__bit1 : int
+
+logic repro__blech_type__opt__last__bit1 : int
+
+logic repro__blech_type__opt__position1 : int
+
+axiom repro__blech_type__opt__first__bit_axiom1 :
+  (0 <= repro__blech_type__opt__first__bit1)
+
+axiom repro__blech_type__opt__last__bit_axiom1 :
+  (repro__blech_type__opt__first__bit1 <  repro__blech_type__opt__last__bit1)
+
+axiom repro__blech_type__opt__position_axiom1 :
+  (0 <= repro__blech_type__opt__position1)
+
+logic repro__blech_type__x__first__bit1 : int
+
+logic repro__blech_type__x__last__bit1 : int
+
+logic repro__blech_type__x__position1 : int
+
+axiom repro__blech_type__x__first__bit_axiom1 :
+  (0 <= repro__blech_type__x__first__bit1)
+
+axiom repro__blech_type__x__last__bit_axiom1 :
+  (repro__blech_type__x__first__bit1 <  repro__blech_type__x__last__bit1)
+
+axiom repro__blech_type__x__position_axiom1 :
+  (0 <= repro__blech_type__x__position1)
+
+logic repro__blech_type__y__first__bit1 : int
+
+logic repro__blech_type__y__last__bit1 : int
+
+logic repro__blech_type__y__position1 : int
+
+axiom repro__blech_type__y__first__bit_axiom1 :
+  (0 <= repro__blech_type__y__first__bit1)
+
+axiom repro__blech_type__y__last__bit_axiom1 :
+  (repro__blech_type__y__first__bit1 <  repro__blech_type__y__last__bit1)
+
+axiom repro__blech_type__y__position_axiom1 :
+  (0 <= repro__blech_type__y__position1)
+
+logic user_eq6 : us_rep, us_rep -> bool
+
+logic dummy6 : us_rep
+
+type blech_type__ref = { blech_type__content : us_rep
+}
+
+function blech_type__ref_blech_type__content__projection(a: blech_type__ref) : us_rep =
+  (a).blech_type__content
+
 predicate default_initial_assumption(temp___expr_174: us_rep,
   temp___skip_top_level_175: bool) =
   (to_rep3(((temp___expr_174).us_split_discrs1).rec__repro__blech_type__opt) = 1)
@@ -555,8 +558,8 @@ predicate dynamic_invariant4(temp___expr_183: us_rep1,
   temp___is_init_179: bool, temp___skip_constant_180: bool,
   temp___do_toplevel_181: bool, temp___do_typ_inv_182: bool) =
   (repro__fnord_type__blech__pred(temp___expr_183) ->
-  in_range5(to_rep(((temp___expr_183).us_split_discrs3).rec__repro__fnord_type__opt),
-  ((temp___expr_183).us_split_fields3).rec__repro__fnord_type__blech))
+  in_range6(to_rep(((temp___expr_183).us_split_discrs3).rec__repro__fnord_type__opt),
+  (((temp___expr_183).us_split_fields3).rec__repro__fnord_type__blech).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_186: us_rep1,
   temp___skip_top_level_187: bool) =

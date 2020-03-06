@@ -151,6 +151,10 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (if ((to_rep(((a).us_split_discrs1).rec__constrained_attribute__mut_rec__d) = to_rep(((b).us_split_discrs1).rec__constrained_attribute__mut_rec__d)) and
   (to_rep(((a).us_split_fields1).rec__constrained_attribute__mut_rec__f) = to_rep(((b).us_split_fields1).rec__constrained_attribute__mut_rec__f))) then true else false)
 
+predicate in_range2(rec__constrained_attribute__mut_rec__d1: int,
+  a: us_split_discrs) =
+  (rec__constrained_attribute__mut_rec__d1 = to_rep((a).rec__constrained_attribute__mut_rec__d))
+
 logic value__size : int
 
 logic object__size : int

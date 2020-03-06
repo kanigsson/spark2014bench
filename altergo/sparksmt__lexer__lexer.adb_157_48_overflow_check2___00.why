@@ -280,6 +280,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (file_io__read_result__c__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__file_io__read_result__c) = to_rep(((b).us_split_fields1).rec__file_io__read_result__c)))) then true else false)
 
+predicate in_range6(rec__file_io__read_result__status1: int,
+  a: us_split_discrs) =
+  (rec__file_io__read_result__status1 = to_rep1((a).rec__file_io__read_result__status))
+
 logic value__size : int
 
 logic object__size : int
@@ -432,7 +436,7 @@ axiom capacity_rangeqtaxiom :
 axiom capacity_rangeqtaxiom1 :
   (forall i:capacity_range. (capacity_rangeqtint(i) <= 2147483647))
 
-predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range7(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -523,11 +527,11 @@ logic user_eq8 : us_rep2, us_rep2 -> bool
 
 logic dummy8 : us_rep2
 
-type vector__ref = { vector__content : us_rep2
+type unbounded_string__ref = { unbounded_string__content : us_rep2
 }
 
-function vector__ref_vector__content__projection(a: vector__ref) : us_rep2 =
-  (a).vector__content
+function unbounded_string__ref_unbounded_string__content__projection(a: unbounded_string__ref) : us_rep2 =
+  (a).unbounded_string__content
 
 function to_rep2(x: capacity_range) : int = capacity_rangeqtint(x)
 
@@ -537,15 +541,15 @@ axiom inversion_axiom2 :
   (forall x:capacity_range [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
 
 axiom range_axiom2 :
-  (forall x:capacity_range [to_rep2(x)]. in_range6(to_rep2(x)))
+  (forall x:capacity_range [to_rep2(x)]. in_range7(to_rep2(x)))
 
 axiom coerce_axiom2 :
-  (forall x:int [to_rep2(of_rep2(x))]. (in_range6(x) ->
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range7(x) ->
   (to_rep2(of_rep2(x)) = x)))
 
-predicate in_range7(rec__unbounded_strings__char_vectors__vector__capacity1: int,
-  a: us_rep2) =
-  (rec__unbounded_strings__char_vectors__vector__capacity1 = to_rep2(((a).us_split_discrs3).rec__unbounded_strings__char_vectors__vector__capacity))
+predicate in_range8(rec__unbounded_strings__char_vectors__vector__capacity1: int,
+  a: us_split_discrs2) =
+  (rec__unbounded_strings__char_vectors__vector__capacity1 = to_rep2((a).rec__unbounded_strings__char_vectors__vector__capacity))
 
 logic value__size3 : int
 
@@ -578,11 +582,11 @@ logic user_eq9 : us_rep2, us_rep2 -> bool
 
 logic dummy9 : us_rep2
 
-type unbounded_string__ref = { unbounded_string__content : us_rep2
+type vector__ref = { vector__content : us_rep2
 }
 
-function unbounded_string__ref_unbounded_string__content__projection(a: unbounded_string__ref) : us_rep2 =
-  (a).unbounded_string__content
+function vector__ref_vector__content__projection(a: vector__ref) : us_rep2 =
+  (a).vector__content
 
 logic s__split_discrs : us_split_discrs2
 
@@ -595,7 +599,8 @@ logic length__function_guard : int, us_rep2 -> prop
 predicate dynamic_invariant2(temp___expr_300: us_rep2,
   temp___is_init_296: bool, temp___skip_constant_297: bool,
   temp___do_toplevel_298: bool, temp___do_typ_inv_299: bool) =
-  ((not (temp___skip_constant_297 = true)) -> in_range7(32, temp___expr_300))
+  ((not (temp___skip_constant_297 = true)) -> in_range8(32,
+  (temp___expr_300).us_split_discrs3))
 
 axiom temp___result_306qtdef :
   (forall temp___305:us_rep2. length__function_guard(length(temp___305),
@@ -630,7 +635,7 @@ predicate dynamic_invariant5(temp___expr_206: int, temp___is_init_202: bool,
 predicate dynamic_invariant6(temp___expr_287: int, temp___is_init_283: bool,
   temp___skip_constant_284: bool, temp___do_toplevel_285: bool,
   temp___do_typ_inv_286: bool) = (((temp___is_init_283 = true) or
-  (0 <= 2147483647)) -> in_range6(temp___expr_287))
+  (0 <= 2147483647)) -> in_range7(temp___expr_287))
 
  (* File "lexer.adb", line 153, characters 0-0 *)
 goal defqtvc :

@@ -2183,6 +2183,6 @@ goal defqtvc : (dynamic_invariant(i, true, false, true, true) ->
   (dynamic_invariant1(powers, true, false, true, true) ->
   (forall previous:int. ((previous = 64) -> (dynamic_invariant(previous,
   true, false, true, true) ->
-  (forall temp___291:int. (((first1(powers) <= temp___291) and
-  (temp___291 <= last1(powers))) -> ule(rliteral26,
-  of_int((2 ** to_rep((to_array(powers)[temp___291])))))))))))))
+  (forall temp___301:int. (((first1(powers) <= temp___301) and
+  (temp___301 <= last1(powers))) -> ule(rliteral26,
+  of_int((2 ** to_rep((to_array(powers)[temp___301])))))))))))))

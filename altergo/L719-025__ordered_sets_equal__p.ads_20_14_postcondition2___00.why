@@ -214,6 +214,10 @@ function bool_eq3(a: us_rep1, b: us_rep1) : bool =
   (us_main_eq(((a).us_split_fields3).rec__p__my_sets__set,
   ((b).us_split_fields3).rec__p__my_sets__set) = true)) then true else false)
 
+predicate in_range2(rec__p__my_sets__set__capacity1: int,
+  a: us_split_discrs) =
+  (rec__p__my_sets__set__capacity1 = to_rep((a).rec__p__my_sets__set__capacity))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -661,7 +665,7 @@ axiom element_typeqtaxiom :
 axiom element_typeqtaxiom1 :
   (forall i:element_type. (element_typeqtint(i) <= 100))
 
-predicate in_range2(x: int) = ((1 <= x) and (x <= 100))
+predicate in_range3(x: int) = ((1 <= x) and (x <= 100))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -684,7 +688,7 @@ function element_type__ref_element_type__content__projection(a: element_type__re
 predicate dynamic_invariant1(temp___expr_261: int, temp___is_init_257: bool,
   temp___skip_constant_258: bool, temp___do_toplevel_259: bool,
   temp___do_typ_inv_260: bool) = (((temp___is_init_257 = true) or
-  (1 <= 100)) -> in_range2(temp___expr_261))
+  (1 <= 100)) -> in_range3(temp___expr_261))
 
 logic rliteral : count_type
 
@@ -703,7 +707,7 @@ axiom positive_count_typeqtaxiom :
 axiom positive_count_typeqtaxiom1 :
   (forall i:positive_count_type. (positive_count_typeqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = ((1 <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = ((1 <= x) and (x <= 2147483647))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -727,7 +731,7 @@ function positive_count_type__ref_positive_count_type__content__projection(a: po
 predicate dynamic_invariant2(temp___expr_298: int, temp___is_init_294: bool,
   temp___skip_constant_295: bool, temp___do_toplevel_296: bool,
   temp___do_typ_inv_297: bool) = (((temp___is_init_294 = true) or
-  (1 <= 2147483647)) -> in_range3(temp___expr_298))
+  (1 <= 2147483647)) -> in_range4(temp___expr_298))
 
 type element_type1
 
@@ -739,7 +743,7 @@ axiom element_typeqtaxiom2 :
 axiom element_typeqtaxiom3 :
   (forall i:element_type1. (element_typeqtint1(i) <= 100))
 
-predicate in_range4(x: int) = ((1 <= x) and (x <= 100))
+predicate in_range5(x: int) = ((1 <= x) and (x <= 100))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -762,7 +766,7 @@ function element_type__ref_element_type__content__2__projection(a: element_type_
 predicate dynamic_invariant3(temp___expr_268: int, temp___is_init_264: bool,
   temp___skip_constant_265: bool, temp___do_toplevel_266: bool,
   temp___do_typ_inv_267: bool) = (((temp___is_init_264 = true) or
-  (1 <= 100)) -> in_range4(temp___expr_268))
+  (1 <= 100)) -> in_range5(temp___expr_268))
 
 axiom user_eq__def_axiom2 :
   (forall a:us_rep3. forall b:us_rep3 [user_eq4(a, b)]. (user_eq4(a,
@@ -829,8 +833,8 @@ axiom p_positions_shifted__post_axiom3 :
   dynamic_invariant(count, true, true, true, true)) ->
   ((p_positions_shifted(small, big, cut1, count) = true) ->
   (forall i:us_rep. ((has_key(big, i) = true) -> ((has_key(small,
-  i) = true) or (((cut1 - count) <= (get(big, i) - count)) and ((get(big,
-  i) - count) <= (cut1 - 1))))))))))
+  i) = true) or (let temp___415 = (get(big, i) - count) : int in
+  (((cut1 - count) <= temp___415) and (temp___415 <= (cut1 - 1)))))))))))
 
 axiom p_positions_shifted__post_axiom4 :
   (forall small:us_rep2. forall big:us_rep2.
@@ -842,9 +846,9 @@ axiom p_positions_shifted__post_axiom4 :
   i) <  cut1) then (get(big, i) = get(small, i)) else ((get(big,
   i) - count) = get(small, i)))))) and
   (forall i:us_rep. ((has_key(big, i) = true) -> ((has_key(small,
-  i) = true) or (((cut1 - count) <= (get(big, i) - count)) and ((get(big,
-  i) - count) <= (cut1 - 1))))))) -> (p_positions_shifted(small, big, cut1,
-  count) = true)))))
+  i) = true) or (let temp___415 = (get(big, i) - count) : int in
+  (((cut1 - count) <= temp___415) and (temp___415 <= (cut1 - 1)))))))) ->
+  (p_positions_shifted(small, big, cut1, count) = true)))))
 
 logic length4 : us_rep4 -> int
 
@@ -883,7 +887,7 @@ axiom element_typeqtaxiom4 :
 axiom element_typeqtaxiom5 :
   (forall i:element_type2. (element_typeqtint2(i) <= 100))
 
-predicate in_range5(x: int) = ((1 <= x) and (x <= 100))
+predicate in_range6(x: int) = ((1 <= x) and (x <= 100))
 
 function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -913,7 +917,7 @@ axiom extended_indexqtaxiom :
 axiom extended_indexqtaxiom1 :
   (forall i:extended_index. (extended_indexqtint(i) <= 2147483647))
 
-predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range7(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -940,19 +944,19 @@ axiom elements__post_axiom :
 axiom elements__post_axiom1 :
   (forall container:us_rep1 [elements(container)]. (let result =
   elements(container) : us_rep3 in
-  (forall temp___423:int. ((in_range6(temp___423) and
-  (iter_has_element(result, temp___423) = true)) ->
-  (contains(model(container), get1(result, temp___423)) = true)))))
+  (forall temp___425:int. ((in_range7(temp___425) and
+  (iter_has_element(result, temp___425) = true)) ->
+  (contains(model(container), get1(result, temp___425)) = true)))))
 
 axiom elements__post_axiom2 :
   (forall container:us_rep1 [elements(container)].
-  (forall item:int. ((in_range5(item) and (contains(model(container),
+  (forall item:int. ((in_range6(item) and (contains(model(container),
   item) = true)) -> (0 <  find(elements(container), item)))))
 
 axiom elements__post_axiom3 :
   (forall container:us_rep1 [elements(container)]. (let result =
   elements(container) : us_rep3 in
-  (forall item:int. ((in_range5(item) and (contains(model(container),
+  (forall item:int. ((in_range6(item) and (contains(model(container),
   item) = true)) -> (equivalent_elements(get1(result, find(result, item)),
   item) = true)))))
 
@@ -971,13 +975,13 @@ axiom elements__post_axiom5 :
 predicate dynamic_invariant4(temp___expr_305: int, temp___is_init_301: bool,
   temp___skip_constant_302: bool, temp___do_toplevel_303: bool,
   temp___do_typ_inv_304: bool) = (((temp___is_init_301 = true) or
-  (1 <= 100)) -> in_range5(temp___expr_305))
+  (1 <= 100)) -> in_range6(temp___expr_305))
 
 axiom contains__post_axiom :
   (forall container:us_rep4.
   (forall item:int [contains(container, item)]. (dynamic_invariant4(item,
   true, true, true, true) -> ((of_int(1) = true) ->
-  ((exists e1:int. ((in_range5(e1) and (contains(container, e1) = true)) and
+  ((exists e1:int. ((in_range6(e1) and (contains(container, e1) = true)) and
    (equivalent_elements(e1, item) = true))) ->
   (contains(container, item) = true))))))
 
@@ -988,12 +992,12 @@ axiom length__post_axiom2 :
 axiom ole__post_axiom :
   (forall left:us_rep4. forall right:us_rep4 [ole(left, right)]. ((ole(left,
   right) = true) ->
-  (forall item:int. ((in_range5(item) and (contains(left, item) = true)) ->
+  (forall item:int. ((in_range6(item) and (contains(left, item) = true)) ->
   (contains(right, item) = true)))))
 
 axiom ole__post_axiom1 :
   (forall left:us_rep4. forall right:us_rep4 [ole(left, right)].
-  ((forall item:int. ((in_range5(item) and (contains(left, item) = true)) ->
+  ((forall item:int. ((in_range6(item) and (contains(left, item) = true)) ->
    (contains(right, item) = true))) ->
   (ole(left, right) = true)))
 
@@ -1013,12 +1017,12 @@ axiom oeq__post_axiom8 :
 axiom is_empty__post_axiom :
   (forall container:us_rep4 [is_empty1(container)].
   ((is_empty1(container) = true) ->
-  (forall item:int. (not (in_range5(item) and (contains(container,
+  (forall item:int. (not (in_range6(item) and (contains(container,
   item) = true))))))
 
 axiom is_empty__post_axiom1 :
   (forall container:us_rep4 [is_empty1(container)].
-  ((forall item:int. (not (in_range5(item) and (contains(container,
+  ((forall item:int. (not (in_range6(item) and (contains(container,
    item) = true)))) ->
   (is_empty1(container) = true)))
 
@@ -1035,21 +1039,21 @@ axiom included_except__post_axiom :
   (forall item:int [included_except(left, right, item)].
   (dynamic_invariant4(item, true, true, true, true) ->
   ((included_except(left, right, item) = true) ->
-  (forall e1:int. ((in_range5(e1) and (contains(left, e1) = true)) ->
+  (forall e1:int. ((in_range6(e1) and (contains(left, e1) = true)) ->
   ((contains(right, e1) = true) or (equivalent_elements(e1, item) = true))))))))
 
 axiom included_except__post_axiom1 :
   (forall left:us_rep4. forall right:us_rep4.
   (forall item:int [included_except(left, right, item)].
   (dynamic_invariant4(item, true, true, true, true) ->
-  ((forall e1:int. ((in_range5(e1) and (contains(left, e1) = true)) ->
+  ((forall e1:int. ((in_range6(e1) and (contains(left, e1) = true)) ->
    ((contains(right, e1) = true) or (equivalent_elements(e1, item) = true)))) ->
   (included_except(left, right, item) = true)))))
 
 predicate dynamic_invariant5(temp___expr_341: int, temp___is_init_337: bool,
   temp___skip_constant_338: bool, temp___do_toplevel_339: bool,
   temp___do_typ_inv_340: bool) = (((temp___is_init_337 = true) or
-  (0 <= 2147483647)) -> in_range6(temp___expr_341))
+  (0 <= 2147483647)) -> in_range7(temp___expr_341))
 
 axiom length__post_axiom3 :
   (forall container:us_rep3 [length3(container)].
@@ -1069,7 +1073,7 @@ axiom element_typeqtaxiom6 :
 axiom element_typeqtaxiom7 :
   (forall i:element_type3. (element_typeqtint3(i) <= 100))
 
-predicate in_range7(x: int) = ((1 <= x) and (x <= 100))
+predicate in_range8(x: int) = ((1 <= x) and (x <= 100))
 
 function bool_eq13(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1092,7 +1096,7 @@ function element_type__ref_element_type__content__4__projection(a: element_type_
 predicate dynamic_invariant6(temp___expr_334: int, temp___is_init_330: bool,
   temp___skip_constant_331: bool, temp___do_toplevel_332: bool,
   temp___do_typ_inv_333: bool) = (((temp___is_init_330 = true) or
-  (1 <= 100)) -> in_range7(temp___expr_334))
+  (1 <= 100)) -> in_range8(temp___expr_334))
 
 axiom get__post_axiom :
   (forall container:us_rep3.
@@ -1126,7 +1130,7 @@ axiom element_typeqtaxiom8 :
 axiom element_typeqtaxiom9 :
   (forall i:element_type4. (element_typeqtint4(i) <= 2147483647))
 
-predicate in_range8(x: int) = ((1 <= x) and (x <= 2147483647))
+predicate in_range9(x: int) = ((1 <= x) and (x <= 2147483647))
 
 function bool_eq14(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1149,7 +1153,7 @@ function element_type__ref_element_type__content__5__projection(a: element_type_
 predicate dynamic_invariant7(temp___expr_364: int, temp___is_init_360: bool,
   temp___skip_constant_361: bool, temp___do_toplevel_362: bool,
   temp___do_typ_inv_363: bool) = (((temp___is_init_360 = true) or
-  (1 <= 2147483647)) -> in_range8(temp___expr_364))
+  (1 <= 2147483647)) -> in_range9(temp___expr_364))
 
 axiom get__post_axiom1 :
   (forall container:us_rep2.

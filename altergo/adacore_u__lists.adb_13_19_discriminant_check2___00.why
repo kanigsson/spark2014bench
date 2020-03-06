@@ -153,6 +153,9 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (lists__cell__next__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__lists__cell__next) = to_rep(((b).us_split_fields1).rec__lists__cell__next)))) then true else false)
 
+predicate in_range2(rec__lists__cell__is_set1: bool, a: us_split_discrs) =
+  (rec__lists__cell__is_set1 = (a).rec__lists__cell__is_set)
+
 logic value__size : int
 
 logic object__size : int
@@ -300,9 +303,6 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 logic j : int
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
-
-predicate in_range2(rec__lists__cell__is_set1: bool, a: us_rep) =
-  (rec__lists__cell__is_set1 = ((a).us_split_discrs1).rec__lists__cell__is_set)
 
 logic value__size1 : int
 

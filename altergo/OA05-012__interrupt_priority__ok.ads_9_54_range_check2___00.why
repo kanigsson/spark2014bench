@@ -150,6 +150,23 @@ function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
 function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
   (a).us_split_fields1
 
+function to_rep(x: any_priority) : int = any_priorityqtint(x)
+
+logic of_rep : int -> any_priority
+
+axiom inversion_axiom :
+  (forall x:any_priority [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:any_priority [to_rep(x)]. in_range1(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+predicate in_range2(rec__interrupt_priority__no_interrupt_needed_1__c1: int,
+  a: us_split_discrs) =
+  (rec__interrupt_priority__no_interrupt_needed_1__c1 = to_rep((a).rec__interrupt_priority__no_interrupt_needed_1__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -235,23 +252,6 @@ function of_base(r: us_rep) : us_rep1 = { us_split_discrs2 =
   ((r).us_split_fields1).rec__interrupt_priority__no_interrupt_needed_1__i }
   }
 
-function to_rep(x: any_priority) : int = any_priorityqtint(x)
-
-logic of_rep : int -> any_priority
-
-axiom inversion_axiom :
-  (forall x:any_priority [to_rep(x)]. (of_rep(to_rep(x)) = x))
-
-axiom range_axiom : (forall x:any_priority [to_rep(x)]. in_range1(to_rep(x)))
-
-axiom coerce_axiom :
-  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
-  (to_rep(of_rep(x)) = x)))
-
-predicate in_range2(rec__interrupt_priority__no_interrupt_needed_1__c1: int,
-  a: us_rep) =
-  (rec__interrupt_priority__no_interrupt_needed_1__c1 = to_rep(((a).us_split_discrs1).rec__interrupt_priority__no_interrupt_needed_1__c))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -323,7 +323,7 @@ predicate dynamic_invariant(temp___expr_185: us_rep1,
   temp___is_init_181: bool, temp___skip_constant_182: bool,
   temp___do_toplevel_183: bool, temp___do_typ_inv_184: bool) =
   ((not (temp___skip_constant_182 = true)) -> in_range2(0,
-  to_base(temp___expr_185)))
+  (to_base(temp___expr_185)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_187: us_rep1,
   temp___skip_top_level_188: bool) =
@@ -364,10 +364,6 @@ function of_base1(r: us_rep) : us_rep2 = { us_split_discrs3 =
   rec__interrupt_priority__no_interrupt_needed_1__i2 =
   ((r).us_split_fields1).rec__interrupt_priority__no_interrupt_needed_1__i }
   }
-
-predicate in_range3(rec__interrupt_priority__no_interrupt_needed_1__c1: int,
-  a: us_rep) =
-  (rec__interrupt_priority__no_interrupt_needed_1__c1 = to_rep(((a).us_split_discrs1).rec__interrupt_priority__no_interrupt_needed_1__c))
 
 logic value__size2 : int
 
@@ -426,8 +422,8 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant1(temp___expr_194: us_rep2,
   temp___is_init_190: bool, temp___skip_constant_191: bool,
   temp___do_toplevel_192: bool, temp___do_typ_inv_193: bool) =
-  ((not (temp___skip_constant_191 = true)) -> in_range3(98,
-  to_base1(temp___expr_194)))
+  ((not (temp___skip_constant_191 = true)) -> in_range2(98,
+  (to_base1(temp___expr_194)).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_196: us_rep2,
   temp___skip_top_level_197: bool) =
@@ -469,6 +465,10 @@ function us_rep___split_discrs__4__projection(a: us_rep3) : us_split_discrs4 =
 
 function us_rep___split_fields__4__projection(a: us_rep3) : us_split_fields6 =
   (a).us_split_fields7
+
+predicate in_range3(rec__interrupt_priority__no_interrupt_needed_2__c1: int,
+  a: us_split_discrs4) =
+  (rec__interrupt_priority__no_interrupt_needed_2__c1 = to_rep((a).rec__interrupt_priority__no_interrupt_needed_2__c))
 
 logic value__size3 : int
 
@@ -555,10 +555,6 @@ function of_base2(r: us_rep3) : us_rep4 = { us_split_discrs6 =
   ((r).us_split_fields7).rec__interrupt_priority__no_interrupt_needed_2__i }
   }
 
-predicate in_range4(rec__interrupt_priority__no_interrupt_needed_2__c1: int,
-  a: us_rep3) =
-  (rec__interrupt_priority__no_interrupt_needed_2__c1 = to_rep(((a).us_split_discrs5).rec__interrupt_priority__no_interrupt_needed_2__c))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -616,8 +612,8 @@ logic attr__ATTRIBUTE_ADDRESS2 : int
 predicate dynamic_invariant2(temp___expr_209: us_rep4,
   temp___is_init_205: bool, temp___skip_constant_206: bool,
   temp___do_toplevel_207: bool, temp___do_typ_inv_208: bool) =
-  ((not (temp___skip_constant_206 = true)) -> in_range4(0,
-  to_base2(temp___expr_209)))
+  ((not (temp___skip_constant_206 = true)) -> in_range3(0,
+  (to_base2(temp___expr_209)).us_split_discrs5))
 
 predicate default_initial_assumption2(temp___expr_211: us_rep4,
   temp___skip_top_level_212: bool) =
@@ -658,10 +654,6 @@ function of_base3(r: us_rep3) : us_rep5 = { us_split_discrs7 =
   rec__interrupt_priority__no_interrupt_needed_2__i2 =
   ((r).us_split_fields7).rec__interrupt_priority__no_interrupt_needed_2__i }
   }
-
-predicate in_range5(rec__interrupt_priority__no_interrupt_needed_2__c1: int,
-  a: us_rep3) =
-  (rec__interrupt_priority__no_interrupt_needed_2__c1 = to_rep(((a).us_split_discrs5).rec__interrupt_priority__no_interrupt_needed_2__c))
 
 logic value__size5 : int
 
@@ -720,8 +712,8 @@ logic attr__ATTRIBUTE_ADDRESS3 : int
 predicate dynamic_invariant3(temp___expr_218: us_rep5,
   temp___is_init_214: bool, temp___skip_constant_215: bool,
   temp___do_toplevel_216: bool, temp___do_typ_inv_217: bool) =
-  ((not (temp___skip_constant_215 = true)) -> in_range5(98,
-  to_base3(temp___expr_218)))
+  ((not (temp___skip_constant_215 = true)) -> in_range3(98,
+  (to_base3(temp___expr_218)).us_split_discrs5))
 
 predicate default_initial_assumption3(temp___expr_220: us_rep5,
   temp___skip_top_level_221: bool) =
@@ -763,6 +755,10 @@ function us_rep___split_discrs__7__projection(a: us_rep6) : us_split_discrs8 =
 
 function us_rep___split_fields__7__projection(a: us_rep6) : us_split_fields12 =
   (a).us_split_fields13
+
+predicate in_range4(rec__interrupt_priority__interrupt_needed_1__c1: int,
+  a: us_split_discrs8) =
+  (rec__interrupt_priority__interrupt_needed_1__c1 = to_rep((a).rec__interrupt_priority__interrupt_needed_1__c))
 
 logic value__size6 : int
 
@@ -847,10 +843,6 @@ function of_base4(r: us_rep6) : us_rep7 = { us_split_discrs10 =
   rec__interrupt_priority__interrupt_needed_1__i1 =
   ((r).us_split_fields13).rec__interrupt_priority__interrupt_needed_1__i } }
 
-predicate in_range6(rec__interrupt_priority__interrupt_needed_1__c1: int,
-  a: us_rep6) =
-  (rec__interrupt_priority__interrupt_needed_1__c1 = to_rep(((a).us_split_discrs9).rec__interrupt_priority__interrupt_needed_1__c))
-
 logic value__size7 : int
 
 logic object__size7 : int
@@ -908,8 +900,8 @@ logic attr__ATTRIBUTE_ADDRESS4 : int
 predicate dynamic_invariant4(temp___expr_240: us_rep7,
   temp___is_init_236: bool, temp___skip_constant_237: bool,
   temp___do_toplevel_238: bool, temp___do_typ_inv_239: bool) =
-  ((not (temp___skip_constant_237 = true)) -> in_range6(98,
-  to_base4(temp___expr_240)))
+  ((not (temp___skip_constant_237 = true)) -> in_range4(98,
+  (to_base4(temp___expr_240)).us_split_discrs9))
 
 predicate default_initial_assumption4(temp___expr_242: us_rep7,
   temp___skip_top_level_243: bool) =

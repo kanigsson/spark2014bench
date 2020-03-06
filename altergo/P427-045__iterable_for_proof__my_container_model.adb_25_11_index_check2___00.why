@@ -224,10 +224,10 @@ axiom has_element__def_axiom1 :
 
 axiom has_element__def_axiom2 :
   (forall c:(int,natural) farray.
-  (forall p:us_rep [has_element(c, p)].
-  (((1 <= to_rep(((p).us_split_fields1).rec__my_container_model__cursor__index)) and
-  (to_rep(((p).us_split_fields1).rec__my_container_model__cursor__index) <= 100)) ->
-  (has_element(c, p) = true))))
+  (forall p:us_rep [has_element(c, p)]. ((let temp___221 =
+  to_rep(((p).us_split_fields1).rec__my_container_model__cursor__index)
+  : int in ((1 <= temp___221) and (temp___221 <= 100))) -> (has_element(c,
+  p) = true))))
 
 logic c : (int,natural) farray
 
@@ -278,6 +278,6 @@ predicate dynamic_invariant1(temp___expr_169: int, temp___is_init_165: bool,
  (* File "my_container_model.ads", line 32, characters 0-0 *)
 goal defqtvc : (has_element__function_guard(has_element(c, p), c, p) ->
   ((has_element(c, p) = true) ->
-  (forall temp___250:int.
-  ((to_rep(((p).us_split_fields1).rec__my_container_model__cursor__index) = temp___250) ->
-  (1 <= temp___250)))))
+  (forall temp___253:int.
+  ((to_rep(((p).us_split_fields1).rec__my_container_model__cursor__index) = temp___253) ->
+  (1 <= temp___253)))))

@@ -1605,27 +1605,27 @@ axiom Mod_mult1 :
 function mod1(x: int, y: int) : int =
   (if (0 <  y) then (x % y) else ((x % y) + y))
 
-predicate dynamic_invariant(temp___expr_258: us_rep,
-  temp___is_init_254: bool, temp___skip_constant_255: bool,
-  temp___do_toplevel_256: bool, temp___do_typ_inv_257: bool) =
-  ((temp___do_toplevel_256 = true) ->
-  (in_range3((to_rep2(((temp___expr_258).us_split_fields1).rec__camera_types__blob_type__x) + div1(to_rep4(((temp___expr_258).us_split_fields1).rec__camera_types__blob_type__width),
+predicate dynamic_invariant(temp___expr_268: us_rep,
+  temp___is_init_264: bool, temp___skip_constant_265: bool,
+  temp___do_toplevel_266: bool, temp___do_typ_inv_267: bool) =
+  ((temp___do_toplevel_266 = true) ->
+  (in_range3((to_rep2(((temp___expr_268).us_split_fields1).rec__camera_types__blob_type__x) + div1(to_rep4(((temp___expr_268).us_split_fields1).rec__camera_types__blob_type__width),
   2))) and
-  in_range2((to_rep1(((temp___expr_258).us_split_fields1).rec__camera_types__blob_type__y) + div1(to_rep5(((temp___expr_258).us_split_fields1).rec__camera_types__blob_type__height),
+  in_range2((to_rep1(((temp___expr_268).us_split_fields1).rec__camera_types__blob_type__y) + div1(to_rep5(((temp___expr_268).us_split_fields1).rec__camera_types__blob_type__height),
   2)))))
 
-predicate default_initial_assumption(temp___expr_260: us_rep,
-  temp___skip_top_level_261: bool) =
-  (((to_rep3(((temp___expr_260).us_split_fields1).rec__camera_types__blob_type__signature) = 0) and
-  (to_rep2(((temp___expr_260).us_split_fields1).rec__camera_types__blob_type__x) = 0)) and
-  (((to_rep1(((temp___expr_260).us_split_fields1).rec__camera_types__blob_type__y) = 0) and
-  (to_rep4(((temp___expr_260).us_split_fields1).rec__camera_types__blob_type__width) = 0)) and
-  (to_rep5(((temp___expr_260).us_split_fields1).rec__camera_types__blob_type__height) = 0)))
+predicate default_initial_assumption(temp___expr_272: us_rep,
+  temp___skip_top_level_273: bool) =
+  (((to_rep3(((temp___expr_272).us_split_fields1).rec__camera_types__blob_type__signature) = 0) and
+  (to_rep2(((temp___expr_272).us_split_fields1).rec__camera_types__blob_type__x) = 0)) and
+  (((to_rep1(((temp___expr_272).us_split_fields1).rec__camera_types__blob_type__y) = 0) and
+  (to_rep4(((temp___expr_272).us_split_fields1).rec__camera_types__blob_type__width) = 0)) and
+  (to_rep5(((temp___expr_272).us_split_fields1).rec__camera_types__blob_type__height) = 0)))
 
-predicate dynamic_predicate(temp___262: us_rep) =
-  (in_range3((to_rep2(((temp___262).us_split_fields1).rec__camera_types__blob_type__x) + div1(to_rep4(((temp___262).us_split_fields1).rec__camera_types__blob_type__width),
+predicate dynamic_predicate(temp___274: us_rep) =
+  (in_range3((to_rep2(((temp___274).us_split_fields1).rec__camera_types__blob_type__x) + div1(to_rep4(((temp___274).us_split_fields1).rec__camera_types__blob_type__width),
   2))) and
-  in_range2((to_rep1(((temp___262).us_split_fields1).rec__camera_types__blob_type__y) + div1(to_rep5(((temp___262).us_split_fields1).rec__camera_types__blob_type__height),
+  in_range2((to_rep1(((temp___274).us_split_fields1).rec__camera_types__blob_type__y) + div1(to_rep5(((temp___274).us_split_fields1).rec__camera_types__blob_type__height),
   2))))
 
 logic distance_to_object : us_rep -> t
@@ -1662,10 +1662,10 @@ distance_to_object_range
 function distance_to_object_range__ref_distance_to_object_range__content__projection(a: distance_to_object_range__ref) : distance_to_object_range =
   (a).distance_to_object_range__content
 
-predicate dynamic_invariant1(temp___expr_296: t, temp___is_init_292: bool,
-  temp___skip_constant_293: bool, temp___do_toplevel_294: bool,
-  temp___do_typ_inv_295: bool) = (((temp___is_init_292 = true) or
-  le(fliteral1, fliteral)) -> in_range7(temp___expr_296))
+predicate dynamic_invariant1(temp___expr_310: t, temp___is_init_306: bool,
+  temp___skip_constant_307: bool, temp___do_toplevel_308: bool,
+  temp___do_typ_inv_309: bool) = (((temp___is_init_306 = true) or
+  le(fliteral1, fliteral)) -> in_range7(temp___expr_310))
 
 axiom distance_to_object__post_axiom :
   (forall object_blob:us_rep [distance_to_object(object_blob)].
@@ -1752,20 +1752,20 @@ tbw_image_320_typeP2
 function tbw_image_320_typeP2__ref_tbw_image_320_typeP2__content__projection(a: tbw_image_320_typeP2__ref) : tbw_image_320_typeP2 =
   (a).tbw_image_320_typeP2__content
 
-predicate dynamic_invariant2(temp___expr_181: map, temp___is_init_177: bool,
-  temp___skip_constant_178: bool, temp___do_toplevel_179: bool,
-  temp___do_typ_inv_180: bool) = ((temp___is_init_177 = true) ->
+predicate dynamic_invariant2(temp___expr_185: map, temp___is_init_181: bool,
+  temp___skip_constant_182: bool, temp___do_toplevel_183: bool,
+  temp___do_typ_inv_184: bool) = ((temp___is_init_181 = true) ->
   (((((1 <= 200) and (200 <= 800)) and ((1 <= 320) and (320 <= 1200))) and
   (0 <  199)) and (0 <  319)))
 
-predicate dynamic_predicate1(temp___192: map) = (((((1 <= 200) and
+predicate dynamic_predicate1(temp___200: map) = (((((1 <= 200) and
   (200 <= 800)) and ((1 <= 320) and (320 <= 1200))) and (0 <  199)) and
   (0 <  319))
 
-predicate dynamic_invariant3(temp___expr_209: int, temp___is_init_205: bool,
-  temp___skip_constant_206: bool, temp___do_toplevel_207: bool,
-  temp___do_typ_inv_208: bool) = (((temp___is_init_205 = true) or
-  (0 <= 199)) -> in_range2(temp___expr_209))
+predicate dynamic_invariant3(temp___expr_219: int, temp___is_init_215: bool,
+  temp___skip_constant_216: bool, temp___do_toplevel_217: bool,
+  temp___do_typ_inv_218: bool) = (((temp___is_init_215 = true) or
+  (0 <= 199)) -> in_range2(temp___expr_219))
 
 type scan_rows
 
@@ -1795,15 +1795,15 @@ type scan_rows__ref = { scan_rows__content : scan_rows
 function scan_rows__ref_scan_rows__content__projection(a: scan_rows__ref) : scan_rows =
   (a).scan_rows__content
 
-predicate dynamic_invariant4(temp___expr_216: int, temp___is_init_212: bool,
-  temp___skip_constant_213: bool, temp___do_toplevel_214: bool,
-  temp___do_typ_inv_215: bool) = (((temp___is_init_212 = true) or
-  (70 <= 140)) -> in_range10(temp___expr_216))
+predicate dynamic_invariant4(temp___expr_226: int, temp___is_init_222: bool,
+  temp___skip_constant_223: bool, temp___do_toplevel_224: bool,
+  temp___do_typ_inv_225: bool) = (((temp___is_init_222 = true) or
+  (70 <= 140)) -> in_range10(temp___expr_226))
 
-predicate dynamic_invariant5(temp___expr_223: int, temp___is_init_219: bool,
-  temp___skip_constant_220: bool, temp___do_toplevel_221: bool,
-  temp___do_typ_inv_222: bool) = (((temp___is_init_219 = true) or
-  (0 <= 319)) -> in_range3(temp___expr_223))
+predicate dynamic_invariant5(temp___expr_233: int, temp___is_init_229: bool,
+  temp___skip_constant_230: bool, temp___do_toplevel_231: bool,
+  temp___do_typ_inv_232: bool) = (((temp___is_init_229 = true) or
+  (0 <= 319)) -> in_range3(temp___expr_233))
 
 type short_length
 
@@ -1834,25 +1834,25 @@ type short_length__ref = { short_length__content : short_length
 function short_length__ref_short_length__content__projection(a: short_length__ref) : short_length =
   (a).short_length__content
 
-predicate dynamic_invariant6(temp___expr_282: t, temp___is_init_278: bool,
-  temp___skip_constant_279: bool, temp___do_toplevel_280: bool,
-  temp___do_typ_inv_281: bool) = (((temp___is_init_278 = true) or
-  le(neg(fliteral2), fliteral2)) -> in_range11(temp___expr_282))
+predicate dynamic_invariant6(temp___expr_296: t, temp___is_init_292: bool,
+  temp___skip_constant_293: bool, temp___do_toplevel_294: bool,
+  temp___do_typ_inv_295: bool) = (((temp___is_init_292 = true) or
+  le(neg(fliteral2), fliteral2)) -> in_range11(temp___expr_296))
 
-predicate dynamic_invariant7(temp___expr_237: int, temp___is_init_233: bool,
-  temp___skip_constant_234: bool, temp___do_toplevel_235: bool,
-  temp___do_typ_inv_236: bool) = (((temp___is_init_233 = true) or
-  (0 <= 7)) -> in_range4(temp___expr_237))
+predicate dynamic_invariant7(temp___expr_247: int, temp___is_init_243: bool,
+  temp___skip_constant_244: bool, temp___do_toplevel_245: bool,
+  temp___do_typ_inv_246: bool) = (((temp___is_init_243 = true) or
+  (0 <= 7)) -> in_range4(temp___expr_247))
 
-predicate dynamic_invariant8(temp___expr_244: int, temp___is_init_240: bool,
-  temp___skip_constant_241: bool, temp___do_toplevel_242: bool,
-  temp___do_typ_inv_243: bool) = (((temp___is_init_240 = true) or
-  (0 <= 320)) -> in_range5(temp___expr_244))
+predicate dynamic_invariant8(temp___expr_254: int, temp___is_init_250: bool,
+  temp___skip_constant_251: bool, temp___do_toplevel_252: bool,
+  temp___do_typ_inv_253: bool) = (((temp___is_init_250 = true) or
+  (0 <= 320)) -> in_range5(temp___expr_254))
 
-predicate dynamic_invariant9(temp___expr_251: int, temp___is_init_247: bool,
-  temp___skip_constant_248: bool, temp___do_toplevel_249: bool,
-  temp___do_typ_inv_250: bool) = (((temp___is_init_247 = true) or
-  (0 <= 200)) -> in_range6(temp___expr_251))
+predicate dynamic_invariant9(temp___expr_261: int, temp___is_init_257: bool,
+  temp___skip_constant_258: bool, temp___do_toplevel_259: bool,
+  temp___do_typ_inv_260: bool) = (((temp___is_init_257 = true) or
+  (0 <= 200)) -> in_range6(temp___expr_261))
 
 predicate dynamic_invariant10(temp___expr_164: int, temp___is_init_160: bool,
   temp___skip_constant_161: bool, temp___do_toplevel_162: bool,

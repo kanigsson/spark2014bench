@@ -143,6 +143,10 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__bounded__vect__vector,
   ((b).us_split_fields1).rec__bounded__vect__vector) = true)) then true else false)
 
+predicate in_range1(rec__bounded__vect__vector__capacity1: int,
+  a: us_split_discrs) =
+  (rec__bounded__vect__vector__capacity1 = to_rep((a).rec__bounded__vect__vector__capacity))
+
 logic value__size : int
 
 logic object__size : int
@@ -283,7 +287,7 @@ function to_int(b: bool) : int = (if (b = true) then 1 else 0)
 
 function of_int(i: int) : bool = (if (i = 0) then false else true)
 
-predicate in_range1(x: int) = ((x = 0) or (x = 1))
+predicate in_range2(x: int) = ((x = 0) or (x = 1))
 
 logic attr__ATTRIBUTE_IMAGE1 : bool -> us_image
 
@@ -321,9 +325,6 @@ logic oeq__function_guard : bool, us_rep, us_rep -> prop
 axiom user_eq__def_axiom :
   (forall a:us_rep. forall b:us_rep [user_eq1(a, b)]. (user_eq1(a,
   b) = oeq(a, b)))
-
-predicate in_range2(rec__bounded__vect__vector__capacity1: int, a: us_rep) =
-  (rec__bounded__vect__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__bounded__vect__vector__capacity))
 
 logic value__size2 : int
 
@@ -374,16 +375,17 @@ axiom user_eq__def_axiom1 :
   (forall a:us_rep. forall b:us_rep [user_eq3(a, b)]. (user_eq3(a,
   b) = oeq(a, b)))
 
-predicate dynamic_invariant(temp___expr_368: us_rep,
-  temp___is_init_364: bool, temp___skip_constant_365: bool,
-  temp___do_toplevel_366: bool, temp___do_typ_inv_367: bool) =
-  ((not (temp___skip_constant_365 = true)) -> in_range2(2, temp___expr_368))
+predicate dynamic_invariant(temp___expr_369: us_rep,
+  temp___is_init_365: bool, temp___skip_constant_366: bool,
+  temp___do_toplevel_367: bool, temp___do_typ_inv_368: bool) =
+  ((not (temp___skip_constant_366 = true)) -> in_range1(2,
+  (temp___expr_369).us_split_discrs1))
 
-predicate default_initial_assumption(temp___expr_370: us_rep,
-  temp___skip_top_level_371: bool) =
-  ((to_rep(((temp___expr_370).us_split_discrs1).rec__bounded__vect__vector__capacity) = 2) and
-  ((not (temp___skip_top_level_371 = true)) ->
-  (is_empty(temp___expr_370) = true)))
+predicate default_initial_assumption(temp___expr_371: us_rep,
+  temp___skip_top_level_372: bool) =
+  ((to_rep(((temp___expr_371).us_split_discrs1).rec__bounded__vect__vector__capacity) = 2) and
+  ((not (temp___skip_top_level_372 = true)) ->
+  (is_empty(temp___expr_371) = true)))
 
 type count_type
 

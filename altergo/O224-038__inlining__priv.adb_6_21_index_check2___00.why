@@ -351,6 +351,9 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__priv__priv_rec__content,
   ((b).us_split_fields1).rec__priv__priv_rec__content) = true)) then true else false)
 
+predicate in_range4(rec__priv__priv_rec__c1: int, a: us_split_discrs) =
+  (rec__priv__priv_rec__c1 = to_rep((a).rec__priv__priv_rec__c))
+
 logic value__size1 : int
 
 logic object__size1 : int

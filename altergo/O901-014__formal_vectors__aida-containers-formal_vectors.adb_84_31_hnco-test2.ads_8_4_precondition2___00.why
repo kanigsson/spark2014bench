@@ -188,61 +188,6 @@ logic user_eq2 : us_rep, us_rep -> bool
 
 logic dummy2 : us_rep
 
-type vector__ref = { vector__content : us_rep
-}
-
-function vector__ref_vector__content__projection(a: vector__ref) : us_rep =
-  (a).vector__content
-
-function to_rep(x: capacity_range1) : int = capacity_rangeqtint1(x)
-
-logic of_rep : int -> capacity_range1
-
-axiom inversion_axiom :
-  (forall x:capacity_range1 [to_rep(x)]. (of_rep(to_rep(x)) = x))
-
-axiom range_axiom :
-  (forall x:capacity_range1 [to_rep(x)]. in_range1(to_rep(x)))
-
-axiom coerce_axiom :
-  (forall x:int [to_rep(of_rep(x))]. (in_range1(x) ->
-  (to_rep(of_rep(x)) = x)))
-
-predicate in_range2(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
-
-logic value__size1 : int
-
-logic object__size1 : int
-
-logic alignment1 : int
-
-axiom value__size_axiom1 : (0 <= value__size1)
-
-axiom object__size_axiom1 : (0 <= object__size1)
-
-axiom alignment_axiom1 : (0 <= alignment1)
-
-logic ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1 : int
-
-logic ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit1 : int
-
-logic ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position1 : int
-
-axiom ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit_axiom1 :
-  (0 <= ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1)
-
-axiom ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit_axiom1 :
-  (ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1 <  ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit1)
-
-axiom ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position_axiom1 :
-  (0 <= ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position1)
-
-logic user_eq3 : us_rep, us_rep -> bool
-
-logic dummy3 : us_rep
-
 type t172s__ref = { t172s__content : us_rep
 }
 
@@ -293,19 +238,37 @@ function us_rep_attr__tag__projection(a: us_rep1) : int = (a).attr__tag
 
 logic us_dispatch_eq : us_rep1, us_rep1 -> bool
 
+function to_rep(x: capacity_range) : int = capacity_rangeqtint(x)
+
+logic of_rep : int -> capacity_range
+
+axiom inversion_axiom :
+  (forall x:capacity_range [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom :
+  (forall x:capacity_range [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
 logic us_tag : int
 
-logic value__size2 : int
+predicate in_range2(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
+  a: us_split_discrs2) =
+  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep((a).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
 
-logic object__size2 : int
+logic value__size1 : int
 
-logic alignment2 : int
+logic object__size1 : int
 
-axiom value__size_axiom2 : (0 <= value__size2)
+logic alignment1 : int
 
-axiom object__size_axiom2 : (0 <= object__size2)
+axiom value__size_axiom1 : (0 <= value__size1)
 
-axiom alignment_axiom2 : (0 <= alignment2)
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
 
 logic ada___hnco__test2__v_type_owner__vector_type__capacity__first__bit : int
 
@@ -337,9 +300,9 @@ axiom ada___hnco__test2__v_type_owner__vector_type__hidden_vector__last__bit_axi
 axiom ada___hnco__test2__v_type_owner__vector_type__hidden_vector__position_axiom :
   (0 <= ada___hnco__test2__v_type_owner__vector_type__hidden_vector__position)
 
-logic user_eq4 : us_rep1, us_rep1 -> bool
+logic user_eq3 : us_rep1, us_rep1 -> bool
 
-logic dummy4 : us_rep1
+logic dummy3 : us_rep1
 
 type vector_type__ref = { vector_type__content : us_rep1
 }
@@ -347,25 +310,66 @@ type vector_type__ref = { vector_type__content : us_rep1
 function vector_type__ref_vector_type__content__projection(a: vector_type__ref) : us_rep1 =
   (a).vector_type__content
 
-function to_rep1(x: capacity_range) : int = capacity_rangeqtint(x)
+function to_rep1(x: capacity_range1) : int = capacity_rangeqtint1(x)
 
-logic of_rep1 : int -> capacity_range
+logic of_rep1 : int -> capacity_range1
 
 axiom inversion_axiom1 :
-  (forall x:capacity_range [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+  (forall x:capacity_range1 [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
 
 axiom range_axiom1 :
-  (forall x:capacity_range [to_rep1(x)]. in_range(to_rep1(x)))
+  (forall x:capacity_range1 [to_rep1(x)]. in_range1(to_rep1(x)))
 
 axiom coerce_axiom1 :
-  (forall x:int [to_rep1(of_rep1(x))]. (in_range(x) ->
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range1(x) ->
   (to_rep1(of_rep1(x)) = x)))
+
+predicate in_range3(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
+  a: us_split_discrs) =
+  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep1((a).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1 : int
+
+logic ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit1 : int
+
+logic ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position1 : int
+
+axiom ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit_axiom1 :
+  (0 <= ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1)
+
+axiom ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit_axiom1 :
+  (ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1 <  ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit1)
+
+axiom ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position_axiom1 :
+  (0 <= ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position1)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type vector__ref = { vector__content : us_rep
+}
+
+function vector__ref_vector__content__projection(a: vector__ref) : us_rep =
+  (a).vector__content
 
 predicate dynamic_invariant(temp___expr_308: us_rep1,
   temp___is_init_304: bool, temp___skip_constant_305: bool,
   temp___do_toplevel_306: bool, temp___do_typ_inv_307: bool) =
-  in_range2(to_rep1(((temp___expr_308).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_308).us_split_fields3).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector)
+  in_range3(to_rep(((temp___expr_308).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_308).us_split_fields3).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector).us_split_discrs1)
 
 logic container : us_rep1
 
@@ -458,7 +462,7 @@ axiom element_typeqtaxiom :
 axiom element_typeqtaxiom1 :
   (forall i:element_type. (element_typeqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -481,7 +485,7 @@ function element_type__ref_element_type__content__2__projection(a: element_type_
 predicate dynamic_invariant1(temp___expr_294: int, temp___is_init_290: bool,
   temp___skip_constant_291: bool, temp___do_toplevel_292: bool,
   temp___do_typ_inv_293: bool) = (((temp___is_init_290 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range3(temp___expr_294))
+  ((- 2147483648) <= 2147483647)) -> in_range4(temp___expr_294))
 
 type index_type
 
@@ -492,7 +496,7 @@ axiom index_typeqtaxiom : (forall i:index_type. (1 <= index_typeqtint(i)))
 axiom index_typeqtaxiom1 :
   (forall i:index_type. (index_typeqtint(i) <= 2147483647))
 
-predicate in_range4(x: int) = ((1 <= x) and (x <= 2147483647))
+predicate in_range5(x: int) = ((1 <= x) and (x <= 2147483647))
 
 function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -515,7 +519,7 @@ function index_type__ref_index_type__content__projection(a: index_type__ref) : i
 predicate dynamic_invariant2(temp___expr_217: int, temp___is_init_213: bool,
   temp___skip_constant_214: bool, temp___do_toplevel_215: bool,
   temp___do_typ_inv_216: bool) = (((temp___is_init_213 = true) or
-  (1 <= 2147483647)) -> in_range4(temp___expr_217))
+  (1 <= 2147483647)) -> in_range5(temp___expr_217))
 
 type count_type
 
@@ -526,7 +530,7 @@ axiom count_typeqtaxiom : (forall i:count_type. (0 <= count_typeqtint(i)))
 axiom count_typeqtaxiom1 :
   (forall i:count_type. (count_typeqtint(i) <= 2147483647))
 
-predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -549,7 +553,7 @@ function count_type__ref_count_type__content__projection(a: count_type__ref) : c
 predicate dynamic_invariant3(temp___expr_238: int, temp___is_init_234: bool,
   temp___skip_constant_235: bool, temp___do_toplevel_236: bool,
   temp___do_typ_inv_237: bool) = (((temp___is_init_234 = true) or
-  (0 <= 2147483647)) -> in_range5(temp___expr_238))
+  (0 <= 2147483647)) -> in_range6(temp___expr_238))
 
 type extended_index
 
@@ -561,7 +565,7 @@ axiom extended_indexqtaxiom :
 axiom extended_indexqtaxiom1 :
   (forall i:extended_index. (extended_indexqtint(i) <= 2147483647))
 
-predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range7(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -584,7 +588,7 @@ function extended_index__ref_extended_index__content__projection(a: extended_ind
 predicate dynamic_invariant4(temp___expr_231: int, temp___is_init_227: bool,
   temp___skip_constant_228: bool, temp___do_toplevel_229: bool,
   temp___do_typ_inv_230: bool) = (((temp___is_init_227 = true) or
-  (0 <= 2147483647)) -> in_range6(temp___expr_231))
+  (0 <= 2147483647)) -> in_range7(temp___expr_231))
 
 predicate dynamic_invariant5(temp___expr_245: int, temp___is_init_241: bool,
   temp___skip_constant_242: bool, temp___do_toplevel_243: bool,
@@ -600,7 +604,7 @@ function to_int(b: bool) : int = (if (b = true) then 1 else 0)
 
 function of_int(i: int) : bool = (if (i = 0) then false else true)
 
-predicate in_range7(x: int) = ((x = 0) or (x = 1))
+predicate in_range8(x: int) = ((x = 0) or (x = 1))
 
 logic attr__ATTRIBUTE_IMAGE6 : bool -> us_image
 
@@ -615,10 +619,6 @@ logic oeq__function_guard : bool, us_rep1, us_rep1 -> prop
 logic oeq1 : int, us_rep1, us_rep1 -> bool
 
 logic oeq__function_guard1 : bool, int, us_rep1, us_rep1 -> prop
-
-predicate in_range8(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size4 : int
 
@@ -706,10 +706,6 @@ function of_base(r: us_rep1) : us_rep3 = { us_split_discrs4 =
 
 logic us_tag1 : int
 
-predicate in_range9(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size5 : int
 
 logic object__size5 : int
@@ -761,10 +757,6 @@ type tvS__ref = { tvS__content : us_rep3
 
 function tvS__ref_tvS__content__projection(a: tvS__ref) : us_rep3 =
   (a).tvS__content
-
-predicate in_range10(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size6 : int
 
@@ -852,10 +844,6 @@ function of_base1(r: us_rep1) : us_rep4 = { us_split_discrs5 =
 
 logic us_tag2 : int
 
-predicate in_range11(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size7 : int
 
 logic object__size7 : int
@@ -907,10 +895,6 @@ type t180s__ref = { t180s__content : us_rep4
 
 function t180s__ref_t180s__content__projection(a: t180s__ref) : us_rep4 =
   (a).t180s__content
-
-predicate in_range12(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size8 : int
 
@@ -998,10 +982,6 @@ function of_base2(r: us_rep1) : us_rep5 = { us_split_discrs6 =
 
 logic us_tag3 : int
 
-predicate in_range13(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size9 : int
 
 logic object__size9 : int
@@ -1053,10 +1033,6 @@ type s186s__ref = { s186s__content : us_rep5
 
 function s186s__ref_s186s__content__projection(a: s186s__ref) : us_rep5 =
   (a).s186s__content
-
-predicate in_range14(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size10 : int
 
@@ -1144,10 +1120,6 @@ function of_base3(r: us_rep1) : us_rep6 = { us_split_discrs7 =
 
 logic us_tag4 : int
 
-predicate in_range15(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size11 : int
 
 logic object__size11 : int
@@ -1199,10 +1171,6 @@ type s183s__ref = { s183s__content : us_rep6
 
 function s183s__ref_s183s__content__projection(a: s183s__ref) : us_rep6 =
   (a).s183s__content
-
-predicate in_range16(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size12 : int
 
@@ -1290,10 +1258,6 @@ function of_base4(r: us_rep1) : us_rep7 = { us_split_discrs8 =
 
 logic us_tag5 : int
 
-predicate in_range17(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size13 : int
 
 logic object__size13 : int
@@ -1345,10 +1309,6 @@ type t195s__ref = { t195s__content : us_rep7
 
 function t195s__ref_t195s__content__projection(a: t195s__ref) : us_rep7 =
   (a).t195s__content
-
-predicate in_range18(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size14 : int
 
@@ -1436,10 +1396,6 @@ function of_base5(r: us_rep1) : us_rep8 = { us_split_discrs9 =
 
 logic us_tag6 : int
 
-predicate in_range19(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size15 : int
 
 logic object__size15 : int
@@ -1491,10 +1447,6 @@ type s198s__ref = { s198s__content : us_rep8
 
 function s198s__ref_s198s__content__projection(a: s198s__ref) : us_rep8 =
   (a).s198s__content
-
-predicate in_range20(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size16 : int
 
@@ -1582,10 +1534,6 @@ function of_base6(r: us_rep1) : us_rep9 = { us_split_discrs10 =
 
 logic us_tag7 : int
 
-predicate in_range21(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size17 : int
 
 logic object__size17 : int
@@ -1637,10 +1585,6 @@ type s205s__ref = { s205s__content : us_rep9
 
 function s205s__ref_s205s__content__projection(a: s205s__ref) : us_rep9 =
   (a).s205s__content
-
-predicate in_range22(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size18 : int
 
@@ -1728,10 +1672,6 @@ function of_base7(r: us_rep1) : us_rep10 = { us_split_discrs11 =
 
 logic us_tag8 : int
 
-predicate in_range23(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size19 : int
 
 logic object__size19 : int
@@ -1783,10 +1723,6 @@ type s217s__ref = { s217s__content : us_rep10
 
 function s217s__ref_s217s__content__projection(a: s217s__ref) : us_rep10 =
   (a).s217s__content
-
-predicate in_range24(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size20 : int
 
@@ -1875,10 +1811,6 @@ function of_base8(r: us_rep1) : us_rep11 = { us_split_discrs12 =
 
 logic us_tag9 : int
 
-predicate in_range25(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size21 : int
 
 logic object__size21 : int
@@ -1930,10 +1862,6 @@ type s225s__ref = { s225s__content : us_rep11
 
 function s225s__ref_s225s__content__projection(a: s225s__ref) : us_rep11 =
   (a).s225s__content
-
-predicate in_range26(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size22 : int
 
@@ -2023,10 +1951,6 @@ function of_base9(r: us_rep1) : us_rep12 = { us_split_discrs13 =
 
 logic us_tag10 : int
 
-predicate in_range27(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size23 : int
 
 logic object__size23 : int
@@ -2078,10 +2002,6 @@ type t229s__ref = { t229s__content : us_rep12
 
 function t229s__ref_t229s__content__projection(a: t229s__ref) : us_rep12 =
   (a).t229s__content
-
-predicate in_range28(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size24 : int
 
@@ -2171,10 +2091,6 @@ function of_base10(r: us_rep1) : us_rep13 = { us_split_discrs14 =
 
 logic us_tag11 : int
 
-predicate in_range29(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size25 : int
 
 logic object__size25 : int
@@ -2226,10 +2142,6 @@ type s234s__ref = { s234s__content : us_rep13
 
 function s234s__ref_s234s__content__projection(a: s234s__ref) : us_rep13 =
   (a).s234s__content
-
-predicate in_range30(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size26 : int
 
@@ -2319,10 +2231,6 @@ function of_base11(r: us_rep1) : us_rep14 = { us_split_discrs15 =
 
 logic us_tag12 : int
 
-predicate in_range31(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size27 : int
 
 logic object__size27 : int
@@ -2374,10 +2282,6 @@ type s243s__ref = { s243s__content : us_rep14
 
 function s243s__ref_s243s__content__projection(a: s243s__ref) : us_rep14 =
   (a).s243s__content
-
-predicate in_range32(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size28 : int
 
@@ -2467,10 +2371,6 @@ function of_base12(r: us_rep1) : us_rep15 = { us_split_discrs16 =
 
 logic us_tag13 : int
 
-predicate in_range33(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size29 : int
 
 logic object__size29 : int
@@ -2522,10 +2422,6 @@ type s263s__ref = { s263s__content : us_rep15
 
 function s263s__ref_s263s__content__projection(a: s263s__ref) : us_rep15 =
   (a).s263s__content
-
-predicate in_range34(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size30 : int
 
@@ -2615,10 +2511,6 @@ function of_base13(r: us_rep1) : us_rep16 = { us_split_discrs17 =
 
 logic us_tag14 : int
 
-predicate in_range35(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size31 : int
 
 logic object__size31 : int
@@ -2670,10 +2562,6 @@ type s269s__ref = { s269s__content : us_rep16
 
 function s269s__ref_s269s__content__projection(a: s269s__ref) : us_rep16 =
   (a).s269s__content
-
-predicate in_range36(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size32 : int
 
@@ -2763,10 +2651,6 @@ function of_base14(r: us_rep1) : us_rep17 = { us_split_discrs18 =
 
 logic us_tag15 : int
 
-predicate in_range37(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size33 : int
 
 logic object__size33 : int
@@ -2818,10 +2702,6 @@ type s275s__ref = { s275s__content : us_rep17
 
 function s275s__ref_s275s__content__projection(a: s275s__ref) : us_rep17 =
   (a).s275s__content
-
-predicate in_range38(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size34 : int
 
@@ -2911,10 +2791,6 @@ function of_base15(r: us_rep1) : us_rep18 = { us_split_discrs19 =
 
 logic us_tag16 : int
 
-predicate in_range39(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size35 : int
 
 logic object__size35 : int
@@ -2966,10 +2842,6 @@ type s281s__ref = { s281s__content : us_rep18
 
 function s281s__ref_s281s__content__projection(a: s281s__ref) : us_rep18 =
   (a).s281s__content
-
-predicate in_range40(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size36 : int
 
@@ -3059,10 +2931,6 @@ function of_base16(r: us_rep1) : us_rep19 = { us_split_discrs20 =
 
 logic us_tag17 : int
 
-predicate in_range41(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size37 : int
 
 logic object__size37 : int
@@ -3114,10 +2982,6 @@ type s287s__ref = { s287s__content : us_rep19
 
 function s287s__ref_s287s__content__projection(a: s287s__ref) : us_rep19 =
   (a).s287s__content
-
-predicate in_range42(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size38 : int
 
@@ -3207,10 +3071,6 @@ function of_base17(r: us_rep1) : us_rep20 = { us_split_discrs21 =
 
 logic us_tag18 : int
 
-predicate in_range43(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size39 : int
 
 logic object__size39 : int
@@ -3262,10 +3122,6 @@ type s293s__ref = { s293s__content : us_rep20
 
 function s293s__ref_s293s__content__projection(a: s293s__ref) : us_rep20 =
   (a).s293s__content
-
-predicate in_range44(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size40 : int
 
@@ -3355,10 +3211,6 @@ function of_base18(r: us_rep1) : us_rep21 = { us_split_discrs22 =
 
 logic us_tag19 : int
 
-predicate in_range45(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
-
 logic value__size41 : int
 
 logic object__size41 : int
@@ -3410,10 +3262,6 @@ type s299s__ref = { s299s__content : us_rep21
 
 function s299s__ref_s299s__content__projection(a: s299s__ref) : us_rep21 =
   (a).s299s__content
-
-predicate in_range46(rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1: int,
-  a: us_rep) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 = to_rep(((a).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity))
 
 logic value__size42 : int
 
@@ -3502,10 +3350,6 @@ function of_base19(r: us_rep1) : us_rep22 = { us_split_discrs23 =
   attr__tag20 = (r).attr__tag }
 
 logic us_tag20 : int
-
-predicate in_range47(rec__ada___hnco__test2__v_type_owner__vector_type__capacity1: int,
-  a: us_rep1) =
-  (rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 = to_rep1(((a).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity))
 
 logic value__size43 : int
 
@@ -4399,7 +4243,7 @@ axiom extended_indexqtaxiom2 :
 axiom extended_indexqtaxiom3 :
   (forall i:extended_index1. (extended_indexqtint1(i) <= 2147483647))
 
-predicate in_range48(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range9(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -4422,7 +4266,7 @@ function extended_index__ref_extended_index__content__3__projection(a: extended_
 predicate dynamic_invariant6(temp___expr_800: int, temp___is_init_796: bool,
   temp___skip_constant_797: bool, temp___do_toplevel_798: bool,
   temp___do_typ_inv_799: bool) = (((temp___is_init_796 = true) or
-  (0 <= 2147483647)) -> in_range48(temp___expr_800))
+  (0 <= 2147483647)) -> in_range9(temp___expr_800))
 
 predicate dynamic_invariant7(temp___expr_252: int, temp___is_init_248: bool,
   temp___skip_constant_249: bool, temp___do_toplevel_250: bool,
@@ -4434,11 +4278,11 @@ logic oeq2 : us_rep, us_rep -> bool
 logic oeq__function_guard2 : bool, us_rep, us_rep -> prop
 
 axiom user_eq__def_axiom :
-  (forall a:us_rep. forall b:us_rep [user_eq2(a, b)]. (user_eq2(a,
+  (forall a:us_rep. forall b:us_rep [user_eq4(a, b)]. (user_eq4(a,
   b) = oeq2(a, b)))
 
 function capacity(container1: us_rep) : int =
-  (if (of_int(1) = true) then to_rep(((container1).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) else 2147483647)
+  (if (of_int(1) = true) then to_rep1(((container1).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) else 2147483647)
 
 logic capacity__function_guard : int, us_rep -> prop
 
@@ -4553,7 +4397,7 @@ axiom index_typeqtaxiom2 : (forall i:index_type1. (1 <= index_typeqtint1(i)))
 axiom index_typeqtaxiom3 :
   (forall i:index_type1. (index_typeqtint1(i) <= 2147483647))
 
-predicate in_range49(x: int) = ((1 <= x) and (x <= 2147483647))
+predicate in_range10(x: int) = ((1 <= x) and (x <= 2147483647))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -4576,7 +4420,7 @@ function index_type__ref_index_type__content__2__projection(a: index_type__ref1)
 predicate dynamic_invariant8(temp___expr_273: int, temp___is_init_269: bool,
   temp___skip_constant_270: bool, temp___do_toplevel_271: bool,
   temp___do_typ_inv_272: bool) = (((temp___is_init_269 = true) or
-  (1 <= 2147483647)) -> in_range49(temp___expr_273))
+  (1 <= 2147483647)) -> in_range10(temp___expr_273))
 
 type extended_index2
 
@@ -4588,7 +4432,7 @@ axiom extended_indexqtaxiom4 :
 axiom extended_indexqtaxiom5 :
   (forall i:extended_index2. (extended_indexqtint2(i) <= 2147483647))
 
-predicate in_range50(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range11(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -4611,7 +4455,7 @@ function extended_index__ref_extended_index__content__2__projection(a: extended_
 predicate dynamic_invariant9(temp___expr_287: int, temp___is_init_283: bool,
   temp___skip_constant_284: bool, temp___do_toplevel_285: bool,
   temp___do_typ_inv_286: bool) = (((temp___is_init_283 = true) or
-  (0 <= 2147483647)) -> in_range50(temp___expr_287))
+  (0 <= 2147483647)) -> in_range11(temp___expr_287))
 
 axiom length__post_axiom2 :
   (forall container1:us_rep2 [length(container1)].
@@ -4631,7 +4475,7 @@ axiom element_typeqtaxiom2 :
 axiom element_typeqtaxiom3 :
   (forall i:element_type1. (element_typeqtint1(i) <= 2147483647))
 
-predicate in_range51(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range12(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -4654,7 +4498,7 @@ function element_type__ref_element_type__content__3__projection(a: element_type_
 predicate dynamic_invariant10(temp___expr_301: int, temp___is_init_297: bool,
   temp___skip_constant_298: bool, temp___do_toplevel_299: bool,
   temp___do_typ_inv_300: bool) = (((temp___is_init_297 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range51(temp___expr_301))
+  ((- 2147483648) <= 2147483647)) -> in_range12(temp___expr_301))
 
 axiom get__post_axiom :
   (forall container1:us_rep2.
@@ -4664,7 +4508,7 @@ axiom get__post_axiom :
   dynamic_invariant10(get(container1, position), true, false, true, true))))
 
 axiom user_eq__def_axiom2 :
-  (forall a:us_rep. forall b:us_rep [user_eq3(a, b)]. (user_eq3(a,
+  (forall a:us_rep. forall b:us_rep [user_eq2(a, b)]. (user_eq2(a,
   b) = oeq2(a, b)))
 
 axiom user_eq__def_axiom3 :
@@ -4703,28 +4547,28 @@ axiom user_eq__def_axiom10 :
   (forall a:us_rep6. forall b:us_rep6 [user_eq17(a, b)]. (user_eq17(a,
   b) = oeq(to_base3(a), to_base3(b))))
 
-predicate dynamic_invariant11(temp___expr_825: us_rep6,
-  temp___is_init_821: bool, temp___skip_constant_822: bool,
-  temp___do_toplevel_823: bool, temp___do_typ_inv_824: bool) =
-  (((not (temp___skip_constant_822 = true)) ->
-  in_range15(to_rep1(((left).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base3(temp___expr_825))) and
-  in_range14(to_rep1(((left).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_825).us_split_fields11).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector4))
+predicate dynamic_invariant11(temp___expr_826: us_rep6,
+  temp___is_init_822: bool, temp___skip_constant_823: bool,
+  temp___do_toplevel_824: bool, temp___do_typ_inv_825: bool) =
+  (((not (temp___skip_constant_823 = true)) ->
+  in_range2(to_rep(((left).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base3(temp___expr_826)).us_split_discrs3)) and
+  in_range3(to_rep(((left).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_826).us_split_fields11).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector4).us_split_discrs1))
 
-axiom temp___result_835qtdef :
-  (forall temp___834:us_rep6.
-  is_empty__function_guard(is_empty(to_base3(temp___834)),
-  to_base3(temp___834)))
+axiom temp___result_836qtdef :
+  (forall temp___835:us_rep6.
+  is_empty__function_guard(is_empty(to_base3(temp___835)),
+  to_base3(temp___835)))
 
-predicate default_initial_assumption1(temp___expr_828: us_rep6,
-  temp___skip_top_level_829: bool) =
-  ((((temp___expr_828).attr__tag4 = us_tag4) and
-  ((to_rep1(((temp___expr_828).us_split_discrs7).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((left).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_828).us_split_fields11).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector4).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((left).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_828).us_split_fields11).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector4) = true)))) and
-  ((not (temp___skip_top_level_829 = true)) ->
-  (is_empty(to_base3(temp___expr_828)) = true)))
+predicate default_initial_assumption1(temp___expr_829: us_rep6,
+  temp___skip_top_level_830: bool) =
+  ((((temp___expr_829).attr__tag4 = us_tag4) and
+  ((to_rep(((temp___expr_829).us_split_discrs7).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((left).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_829).us_split_fields11).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector4).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((left).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_829).us_split_fields11).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector4) = true)))) and
+  ((not (temp___skip_top_level_830 = true)) ->
+  (is_empty(to_base3(temp___expr_829)) = true)))
 
 axiom user_eq__def_axiom11 :
   (forall a:us_rep. forall b:us_rep [user_eq16(a, b)]. (user_eq16(a,
@@ -4742,28 +4586,28 @@ axiom user_eq__def_axiom13 :
   (forall a:us_rep5. forall b:us_rep5 [user_eq15(a, b)]. (user_eq15(a,
   b) = oeq(to_base2(a), to_base2(b))))
 
-predicate dynamic_invariant12(temp___expr_809: us_rep5,
-  temp___is_init_805: bool, temp___skip_constant_806: bool,
-  temp___do_toplevel_807: bool, temp___do_typ_inv_808: bool) =
-  (((not (temp___skip_constant_806 = true)) ->
-  in_range13(to_rep1(((right).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base2(temp___expr_809))) and
-  in_range12(to_rep1(((right).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_809).us_split_fields9).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector3))
+predicate dynamic_invariant12(temp___expr_810: us_rep5,
+  temp___is_init_806: bool, temp___skip_constant_807: bool,
+  temp___do_toplevel_808: bool, temp___do_typ_inv_809: bool) =
+  (((not (temp___skip_constant_807 = true)) ->
+  in_range2(to_rep(((right).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base2(temp___expr_810)).us_split_discrs3)) and
+  in_range3(to_rep(((right).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_810).us_split_fields9).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector3).us_split_discrs1))
 
-axiom temp___result_819qtdef :
-  (forall temp___818:us_rep5.
-  is_empty__function_guard(is_empty(to_base2(temp___818)),
-  to_base2(temp___818)))
+axiom temp___result_820qtdef :
+  (forall temp___819:us_rep5.
+  is_empty__function_guard(is_empty(to_base2(temp___819)),
+  to_base2(temp___819)))
 
-predicate default_initial_assumption2(temp___expr_812: us_rep5,
-  temp___skip_top_level_813: bool) =
-  ((((temp___expr_812).attr__tag3 = us_tag3) and
-  ((to_rep1(((temp___expr_812).us_split_discrs6).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((right).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_812).us_split_fields9).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector3).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((right).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_812).us_split_fields9).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector3) = true)))) and
-  ((not (temp___skip_top_level_813 = true)) ->
-  (is_empty(to_base2(temp___expr_812)) = true)))
+predicate default_initial_assumption2(temp___expr_813: us_rep5,
+  temp___skip_top_level_814: bool) =
+  ((((temp___expr_813).attr__tag3 = us_tag3) and
+  ((to_rep(((temp___expr_813).us_split_discrs6).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((right).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_813).us_split_fields9).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector3).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((right).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_813).us_split_fields9).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector3) = true)))) and
+  ((not (temp___skip_top_level_814 = true)) ->
+  (is_empty(to_base2(temp___expr_813)) = true)))
 
 axiom user_eq__def_axiom14 :
   (forall a:us_rep. forall b:us_rep [user_eq14(a, b)]. (user_eq14(a,
@@ -4793,28 +4637,28 @@ axiom user_eq__def_axiom19 :
   (forall a:us_rep8. forall b:us_rep8 [user_eq21(a, b)]. (user_eq21(a,
   b) = oeq(to_base5(a), to_base5(b))))
 
-predicate dynamic_invariant13(temp___expr_862: us_rep8,
-  temp___is_init_858: bool, temp___skip_constant_859: bool,
-  temp___do_toplevel_860: bool, temp___do_typ_inv_861: bool) =
-  (((not (temp___skip_constant_859 = true)) ->
-  in_range19(to_rep1(((container1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base5(temp___expr_862))) and
-  in_range18(to_rep1(((container1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_862).us_split_fields15).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector6))
+predicate dynamic_invariant13(temp___expr_863: us_rep8,
+  temp___is_init_859: bool, temp___skip_constant_860: bool,
+  temp___do_toplevel_861: bool, temp___do_typ_inv_862: bool) =
+  (((not (temp___skip_constant_860 = true)) ->
+  in_range2(to_rep(((container1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base5(temp___expr_863)).us_split_discrs3)) and
+  in_range3(to_rep(((container1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_863).us_split_fields15).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector6).us_split_discrs1))
 
-axiom temp___result_872qtdef :
-  (forall temp___871:us_rep8.
-  is_empty__function_guard(is_empty(to_base5(temp___871)),
-  to_base5(temp___871)))
+axiom temp___result_873qtdef :
+  (forall temp___872:us_rep8.
+  is_empty__function_guard(is_empty(to_base5(temp___872)),
+  to_base5(temp___872)))
 
-predicate default_initial_assumption3(temp___expr_865: us_rep8,
-  temp___skip_top_level_866: bool) =
-  ((((temp___expr_865).attr__tag6 = us_tag6) and
-  ((to_rep1(((temp___expr_865).us_split_discrs9).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((container1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_865).us_split_fields15).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector6).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((container1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_865).us_split_fields15).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector6) = true)))) and
-  ((not (temp___skip_top_level_866 = true)) ->
-  (is_empty(to_base5(temp___expr_865)) = true)))
+predicate default_initial_assumption3(temp___expr_866: us_rep8,
+  temp___skip_top_level_867: bool) =
+  ((((temp___expr_866).attr__tag6 = us_tag6) and
+  ((to_rep(((temp___expr_866).us_split_discrs9).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((container1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_866).us_split_fields15).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector6).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((container1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_866).us_split_fields15).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector6) = true)))) and
+  ((not (temp___skip_top_level_867 = true)) ->
+  (is_empty(to_base5(temp___expr_866)) = true)))
 
 axiom user_eq__def_axiom20 :
   (forall a:us_rep. forall b:us_rep [user_eq20(a, b)]. (user_eq20(a,
@@ -4832,28 +4676,28 @@ axiom user_eq__def_axiom22 :
   (forall a:us_rep9. forall b:us_rep9 [user_eq23(a, b)]. (user_eq23(a,
   b) = oeq(to_base6(a), to_base6(b))))
 
-predicate dynamic_invariant14(temp___expr_888: us_rep9,
-  temp___is_init_884: bool, temp___skip_constant_885: bool,
-  temp___do_toplevel_886: bool, temp___do_typ_inv_887: bool) =
-  (((not (temp___skip_constant_885 = true)) ->
-  in_range21(to_rep1(((container2).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base6(temp___expr_888))) and
-  in_range20(to_rep1(((container2).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_888).us_split_fields17).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector7))
+predicate dynamic_invariant14(temp___expr_889: us_rep9,
+  temp___is_init_885: bool, temp___skip_constant_886: bool,
+  temp___do_toplevel_887: bool, temp___do_typ_inv_888: bool) =
+  (((not (temp___skip_constant_886 = true)) ->
+  in_range2(to_rep(((container2).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base6(temp___expr_889)).us_split_discrs3)) and
+  in_range3(to_rep(((container2).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_889).us_split_fields17).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector7).us_split_discrs1))
 
-axiom temp___result_898qtdef :
-  (forall temp___897:us_rep9.
-  is_empty__function_guard(is_empty(to_base6(temp___897)),
-  to_base6(temp___897)))
+axiom temp___result_899qtdef :
+  (forall temp___898:us_rep9.
+  is_empty__function_guard(is_empty(to_base6(temp___898)),
+  to_base6(temp___898)))
 
-predicate default_initial_assumption4(temp___expr_891: us_rep9,
-  temp___skip_top_level_892: bool) =
-  ((((temp___expr_891).attr__tag7 = us_tag7) and
-  ((to_rep1(((temp___expr_891).us_split_discrs10).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((container2).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_891).us_split_fields17).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector7).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((container2).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_891).us_split_fields17).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector7) = true)))) and
-  ((not (temp___skip_top_level_892 = true)) ->
-  (is_empty(to_base6(temp___expr_891)) = true)))
+predicate default_initial_assumption4(temp___expr_892: us_rep9,
+  temp___skip_top_level_893: bool) =
+  ((((temp___expr_892).attr__tag7 = us_tag7) and
+  ((to_rep(((temp___expr_892).us_split_discrs10).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((container2).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_892).us_split_fields17).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector7).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((container2).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_892).us_split_fields17).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector7) = true)))) and
+  ((not (temp___skip_top_level_893 = true)) ->
+  (is_empty(to_base6(temp___expr_892)) = true)))
 
 axiom user_eq__def_axiom23 :
   (forall a:us_rep. forall b:us_rep [user_eq22(a, b)]. (user_eq22(a,
@@ -4871,28 +4715,28 @@ axiom user_eq__def_axiom25 :
   (forall a:us_rep10. forall b:us_rep10 [user_eq25(a, b)]. (user_eq25(a,
   b) = oeq(to_base7(a), to_base7(b))))
 
-predicate dynamic_invariant15(temp___expr_934: us_rep10,
-  temp___is_init_930: bool, temp___skip_constant_931: bool,
-  temp___do_toplevel_932: bool, temp___do_typ_inv_933: bool) =
-  (((not (temp___skip_constant_931 = true)) ->
-  in_range23(to_rep1(((source).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base7(temp___expr_934))) and
-  in_range22(to_rep1(((source).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_934).us_split_fields19).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector8))
+predicate dynamic_invariant15(temp___expr_935: us_rep10,
+  temp___is_init_931: bool, temp___skip_constant_932: bool,
+  temp___do_toplevel_933: bool, temp___do_typ_inv_934: bool) =
+  (((not (temp___skip_constant_932 = true)) ->
+  in_range2(to_rep(((source).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base7(temp___expr_935)).us_split_discrs3)) and
+  in_range3(to_rep(((source).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_935).us_split_fields19).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector8).us_split_discrs1))
 
-axiom temp___result_944qtdef :
-  (forall temp___943:us_rep10.
-  is_empty__function_guard(is_empty(to_base7(temp___943)),
-  to_base7(temp___943)))
+axiom temp___result_945qtdef :
+  (forall temp___944:us_rep10.
+  is_empty__function_guard(is_empty(to_base7(temp___944)),
+  to_base7(temp___944)))
 
-predicate default_initial_assumption5(temp___expr_937: us_rep10,
-  temp___skip_top_level_938: bool) =
-  ((((temp___expr_937).attr__tag8 = us_tag8) and
-  ((to_rep1(((temp___expr_937).us_split_discrs11).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((source).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_937).us_split_fields19).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector8).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((source).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_937).us_split_fields19).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector8) = true)))) and
-  ((not (temp___skip_top_level_938 = true)) ->
-  (is_empty(to_base7(temp___expr_937)) = true)))
+predicate default_initial_assumption5(temp___expr_938: us_rep10,
+  temp___skip_top_level_939: bool) =
+  ((((temp___expr_938).attr__tag8 = us_tag8) and
+  ((to_rep(((temp___expr_938).us_split_discrs11).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((source).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_938).us_split_fields19).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector8).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((source).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_938).us_split_fields19).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector8) = true)))) and
+  ((not (temp___skip_top_level_939 = true)) ->
+  (is_empty(to_base7(temp___expr_938)) = true)))
 
 axiom user_eq__def_axiom26 :
   (forall a:us_rep. forall b:us_rep [user_eq24(a, b)]. (user_eq24(a,
@@ -4910,28 +4754,28 @@ axiom user_eq__def_axiom28 :
   (forall a:us_rep11. forall b:us_rep11 [user_eq27(a, b)]. (user_eq27(a,
   b) = oeq(to_base8(a), to_base8(b))))
 
-predicate dynamic_invariant16(temp___expr_970: us_rep11,
-  temp___is_init_966: bool, temp___skip_constant_967: bool,
-  temp___do_toplevel_968: bool, temp___do_typ_inv_969: bool) =
-  (((not (temp___skip_constant_967 = true)) ->
-  in_range25(to_rep1(((source1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base8(temp___expr_970))) and
-  in_range24(to_rep1(((source1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_970).us_split_fields21).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector9))
+predicate dynamic_invariant16(temp___expr_971: us_rep11,
+  temp___is_init_967: bool, temp___skip_constant_968: bool,
+  temp___do_toplevel_969: bool, temp___do_typ_inv_970: bool) =
+  (((not (temp___skip_constant_968 = true)) ->
+  in_range2(to_rep(((source1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base8(temp___expr_971)).us_split_discrs3)) and
+  in_range3(to_rep(((source1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_971).us_split_fields21).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector9).us_split_discrs1))
 
-axiom temp___result_980qtdef :
-  (forall temp___979:us_rep11.
-  is_empty__function_guard(is_empty(to_base8(temp___979)),
-  to_base8(temp___979)))
+axiom temp___result_981qtdef :
+  (forall temp___980:us_rep11.
+  is_empty__function_guard(is_empty(to_base8(temp___980)),
+  to_base8(temp___980)))
 
-predicate default_initial_assumption6(temp___expr_973: us_rep11,
-  temp___skip_top_level_974: bool) =
-  ((((temp___expr_973).attr__tag9 = us_tag9) and
-  ((to_rep1(((temp___expr_973).us_split_discrs12).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((source1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_973).us_split_fields21).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector9).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((source1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_973).us_split_fields21).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector9) = true)))) and
-  ((not (temp___skip_top_level_974 = true)) ->
-  (is_empty(to_base8(temp___expr_973)) = true)))
+predicate default_initial_assumption6(temp___expr_974: us_rep11,
+  temp___skip_top_level_975: bool) =
+  ((((temp___expr_974).attr__tag9 = us_tag9) and
+  ((to_rep(((temp___expr_974).us_split_discrs12).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((source1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_974).us_split_fields21).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector9).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((source1).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_974).us_split_fields21).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector9) = true)))) and
+  ((not (temp___skip_top_level_975 = true)) ->
+  (is_empty(to_base8(temp___expr_974)) = true)))
 
 axiom user_eq__def_axiom29 :
   (forall a:us_rep. forall b:us_rep [user_eq26(a, b)]. (user_eq26(a,
@@ -4958,28 +4802,28 @@ axiom user_eq__def_axiom34 :
   (forall a:us_rep13. forall b:us_rep13 [user_eq31(a, b)]. (user_eq31(a,
   b) = oeq(to_base10(a), to_base10(b))))
 
-predicate dynamic_invariant17(temp___expr_997: us_rep13,
-  temp___is_init_993: bool, temp___skip_constant_994: bool,
-  temp___do_toplevel_995: bool, temp___do_typ_inv_996: bool) =
-  (((not (temp___skip_constant_994 = true)) ->
-  in_range29(to_rep1(((container).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base10(temp___expr_997))) and
-  in_range28(to_rep1(((container).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_997).us_split_fields25).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector11))
+predicate dynamic_invariant17(temp___expr_998: us_rep13,
+  temp___is_init_994: bool, temp___skip_constant_995: bool,
+  temp___do_toplevel_996: bool, temp___do_typ_inv_997: bool) =
+  (((not (temp___skip_constant_995 = true)) ->
+  in_range2(to_rep(((container).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base10(temp___expr_998)).us_split_discrs3)) and
+  in_range3(to_rep(((container).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_998).us_split_fields25).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector11).us_split_discrs1))
 
-axiom temp___result_1007qtdef :
-  (forall temp___1006:us_rep13.
-  is_empty__function_guard(is_empty(to_base10(temp___1006)),
-  to_base10(temp___1006)))
+axiom temp___result_1008qtdef :
+  (forall temp___1007:us_rep13.
+  is_empty__function_guard(is_empty(to_base10(temp___1007)),
+  to_base10(temp___1007)))
 
-predicate default_initial_assumption7(temp___expr_1000: us_rep13,
-  temp___skip_top_level_1001: bool) =
-  ((((temp___expr_1000).attr__tag11 = us_tag11) and
-  ((to_rep1(((temp___expr_1000).us_split_discrs14).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((container).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_1000).us_split_fields25).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector11).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((container).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_1000).us_split_fields25).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector11) = true)))) and
-  ((not (temp___skip_top_level_1001 = true)) ->
-  (is_empty(to_base10(temp___expr_1000)) = true)))
+predicate default_initial_assumption7(temp___expr_1001: us_rep13,
+  temp___skip_top_level_1002: bool) =
+  ((((temp___expr_1001).attr__tag11 = us_tag11) and
+  ((to_rep(((temp___expr_1001).us_split_discrs14).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((container).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_1001).us_split_fields25).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector11).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((container).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_1001).us_split_fields25).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector11) = true)))) and
+  ((not (temp___skip_top_level_1002 = true)) ->
+  (is_empty(to_base10(temp___expr_1001)) = true)))
 
 axiom user_eq__def_axiom35 :
   (forall a:us_rep. forall b:us_rep [user_eq30(a, b)]. (user_eq30(a,
@@ -4998,28 +4842,28 @@ axiom user_eq__def_axiom37 :
   (forall a:us_rep14. forall b:us_rep14 [user_eq33(a, b)]. (user_eq33(a,
   b) = oeq(to_base11(a), to_base11(b))))
 
-predicate dynamic_invariant18(temp___expr_1033: us_rep14,
-  temp___is_init_1029: bool, temp___skip_constant_1030: bool,
-  temp___do_toplevel_1031: bool, temp___do_typ_inv_1032: bool) =
-  (((not (temp___skip_constant_1030 = true)) ->
-  in_range31(to_rep1(((new_item).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base11(temp___expr_1033))) and
-  in_range30(to_rep1(((new_item).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_1033).us_split_fields27).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector12))
+predicate dynamic_invariant18(temp___expr_1034: us_rep14,
+  temp___is_init_1030: bool, temp___skip_constant_1031: bool,
+  temp___do_toplevel_1032: bool, temp___do_typ_inv_1033: bool) =
+  (((not (temp___skip_constant_1031 = true)) ->
+  in_range2(to_rep(((new_item).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base11(temp___expr_1034)).us_split_discrs3)) and
+  in_range3(to_rep(((new_item).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_1034).us_split_fields27).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector12).us_split_discrs1))
 
-axiom temp___result_1043qtdef :
-  (forall temp___1042:us_rep14.
-  is_empty__function_guard(is_empty(to_base11(temp___1042)),
-  to_base11(temp___1042)))
+axiom temp___result_1044qtdef :
+  (forall temp___1043:us_rep14.
+  is_empty__function_guard(is_empty(to_base11(temp___1043)),
+  to_base11(temp___1043)))
 
-predicate default_initial_assumption8(temp___expr_1036: us_rep14,
-  temp___skip_top_level_1037: bool) =
-  ((((temp___expr_1036).attr__tag12 = us_tag12) and
-  ((to_rep1(((temp___expr_1036).us_split_discrs15).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((new_item).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_1036).us_split_fields27).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector12).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((new_item).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_1036).us_split_fields27).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector12) = true)))) and
-  ((not (temp___skip_top_level_1037 = true)) ->
-  (is_empty(to_base11(temp___expr_1036)) = true)))
+predicate default_initial_assumption8(temp___expr_1037: us_rep14,
+  temp___skip_top_level_1038: bool) =
+  ((((temp___expr_1037).attr__tag12 = us_tag12) and
+  ((to_rep(((temp___expr_1037).us_split_discrs15).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((new_item).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_1037).us_split_fields27).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector12).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((new_item).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_1037).us_split_fields27).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector12) = true)))) and
+  ((not (temp___skip_top_level_1038 = true)) ->
+  (is_empty(to_base11(temp___expr_1037)) = true)))
 
 axiom user_eq__def_axiom38 :
   (forall a:us_rep. forall b:us_rep [user_eq32(a, b)]. (user_eq32(a,
@@ -5038,28 +4882,28 @@ axiom user_eq__def_axiom40 :
   (forall a:us_rep15. forall b:us_rep15 [user_eq35(a, b)]. (user_eq35(a,
   b) = oeq(to_base12(a), to_base12(b))))
 
-predicate dynamic_invariant19(temp___expr_1109: us_rep15,
-  temp___is_init_1105: bool, temp___skip_constant_1106: bool,
-  temp___do_toplevel_1107: bool, temp___do_typ_inv_1108: bool) =
-  (((not (temp___skip_constant_1106 = true)) ->
-  in_range33(to_rep1(((container3).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base12(temp___expr_1109))) and
-  in_range32(to_rep1(((container3).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_1109).us_split_fields29).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector13))
+predicate dynamic_invariant19(temp___expr_1110: us_rep15,
+  temp___is_init_1106: bool, temp___skip_constant_1107: bool,
+  temp___do_toplevel_1108: bool, temp___do_typ_inv_1109: bool) =
+  (((not (temp___skip_constant_1107 = true)) ->
+  in_range2(to_rep(((container3).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base12(temp___expr_1110)).us_split_discrs3)) and
+  in_range3(to_rep(((container3).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_1110).us_split_fields29).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector13).us_split_discrs1))
 
-axiom temp___result_1119qtdef :
-  (forall temp___1118:us_rep15.
-  is_empty__function_guard(is_empty(to_base12(temp___1118)),
-  to_base12(temp___1118)))
+axiom temp___result_1120qtdef :
+  (forall temp___1119:us_rep15.
+  is_empty__function_guard(is_empty(to_base12(temp___1119)),
+  to_base12(temp___1119)))
 
-predicate default_initial_assumption9(temp___expr_1112: us_rep15,
-  temp___skip_top_level_1113: bool) =
-  ((((temp___expr_1112).attr__tag13 = us_tag13) and
-  ((to_rep1(((temp___expr_1112).us_split_discrs16).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((container3).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_1112).us_split_fields29).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector13).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((container3).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_1112).us_split_fields29).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector13) = true)))) and
-  ((not (temp___skip_top_level_1113 = true)) ->
-  (is_empty(to_base12(temp___expr_1112)) = true)))
+predicate default_initial_assumption9(temp___expr_1113: us_rep15,
+  temp___skip_top_level_1114: bool) =
+  ((((temp___expr_1113).attr__tag13 = us_tag13) and
+  ((to_rep(((temp___expr_1113).us_split_discrs16).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((container3).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_1113).us_split_fields29).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector13).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((container3).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_1113).us_split_fields29).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector13) = true)))) and
+  ((not (temp___skip_top_level_1114 = true)) ->
+  (is_empty(to_base12(temp___expr_1113)) = true)))
 
 axiom user_eq__def_axiom41 :
   (forall a:us_rep. forall b:us_rep [user_eq34(a, b)]. (user_eq34(a,
@@ -5078,28 +4922,28 @@ axiom user_eq__def_axiom43 :
   (forall a:us_rep16. forall b:us_rep16 [user_eq37(a, b)]. (user_eq37(a,
   b) = oeq(to_base13(a), to_base13(b))))
 
-predicate dynamic_invariant20(temp___expr_1135: us_rep16,
-  temp___is_init_1131: bool, temp___skip_constant_1132: bool,
-  temp___do_toplevel_1133: bool, temp___do_typ_inv_1134: bool) =
-  (((not (temp___skip_constant_1132 = true)) ->
-  in_range35(to_rep1(((container4).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base13(temp___expr_1135))) and
-  in_range34(to_rep1(((container4).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_1135).us_split_fields31).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector14))
+predicate dynamic_invariant20(temp___expr_1136: us_rep16,
+  temp___is_init_1132: bool, temp___skip_constant_1133: bool,
+  temp___do_toplevel_1134: bool, temp___do_typ_inv_1135: bool) =
+  (((not (temp___skip_constant_1133 = true)) ->
+  in_range2(to_rep(((container4).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base13(temp___expr_1136)).us_split_discrs3)) and
+  in_range3(to_rep(((container4).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_1136).us_split_fields31).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector14).us_split_discrs1))
 
-axiom temp___result_1145qtdef :
-  (forall temp___1144:us_rep16.
-  is_empty__function_guard(is_empty(to_base13(temp___1144)),
-  to_base13(temp___1144)))
+axiom temp___result_1146qtdef :
+  (forall temp___1145:us_rep16.
+  is_empty__function_guard(is_empty(to_base13(temp___1145)),
+  to_base13(temp___1145)))
 
-predicate default_initial_assumption10(temp___expr_1138: us_rep16,
-  temp___skip_top_level_1139: bool) =
-  ((((temp___expr_1138).attr__tag14 = us_tag14) and
-  ((to_rep1(((temp___expr_1138).us_split_discrs17).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((container4).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_1138).us_split_fields31).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector14).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((container4).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_1138).us_split_fields31).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector14) = true)))) and
-  ((not (temp___skip_top_level_1139 = true)) ->
-  (is_empty(to_base13(temp___expr_1138)) = true)))
+predicate default_initial_assumption10(temp___expr_1139: us_rep16,
+  temp___skip_top_level_1140: bool) =
+  ((((temp___expr_1139).attr__tag14 = us_tag14) and
+  ((to_rep(((temp___expr_1139).us_split_discrs17).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((container4).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_1139).us_split_fields31).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector14).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((container4).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_1139).us_split_fields31).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector14) = true)))) and
+  ((not (temp___skip_top_level_1140 = true)) ->
+  (is_empty(to_base13(temp___expr_1139)) = true)))
 
 axiom user_eq__def_axiom44 :
   (forall a:us_rep. forall b:us_rep [user_eq36(a, b)]. (user_eq36(a,
@@ -5118,28 +4962,28 @@ axiom user_eq__def_axiom46 :
   (forall a:us_rep17. forall b:us_rep17 [user_eq39(a, b)]. (user_eq39(a,
   b) = oeq(to_base14(a), to_base14(b))))
 
-predicate dynamic_invariant21(temp___expr_1161: us_rep17,
-  temp___is_init_1157: bool, temp___skip_constant_1158: bool,
-  temp___do_toplevel_1159: bool, temp___do_typ_inv_1160: bool) =
-  (((not (temp___skip_constant_1158 = true)) ->
-  in_range37(to_rep1(((container5).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base14(temp___expr_1161))) and
-  in_range36(to_rep1(((container5).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_1161).us_split_fields33).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector15))
+predicate dynamic_invariant21(temp___expr_1162: us_rep17,
+  temp___is_init_1158: bool, temp___skip_constant_1159: bool,
+  temp___do_toplevel_1160: bool, temp___do_typ_inv_1161: bool) =
+  (((not (temp___skip_constant_1159 = true)) ->
+  in_range2(to_rep(((container5).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base14(temp___expr_1162)).us_split_discrs3)) and
+  in_range3(to_rep(((container5).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_1162).us_split_fields33).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector15).us_split_discrs1))
 
-axiom temp___result_1171qtdef :
-  (forall temp___1170:us_rep17.
-  is_empty__function_guard(is_empty(to_base14(temp___1170)),
-  to_base14(temp___1170)))
+axiom temp___result_1172qtdef :
+  (forall temp___1171:us_rep17.
+  is_empty__function_guard(is_empty(to_base14(temp___1171)),
+  to_base14(temp___1171)))
 
-predicate default_initial_assumption11(temp___expr_1164: us_rep17,
-  temp___skip_top_level_1165: bool) =
-  ((((temp___expr_1164).attr__tag15 = us_tag15) and
-  ((to_rep1(((temp___expr_1164).us_split_discrs18).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((container5).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_1164).us_split_fields33).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector15).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((container5).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_1164).us_split_fields33).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector15) = true)))) and
-  ((not (temp___skip_top_level_1165 = true)) ->
-  (is_empty(to_base14(temp___expr_1164)) = true)))
+predicate default_initial_assumption11(temp___expr_1165: us_rep17,
+  temp___skip_top_level_1166: bool) =
+  ((((temp___expr_1165).attr__tag15 = us_tag15) and
+  ((to_rep(((temp___expr_1165).us_split_discrs18).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((container5).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_1165).us_split_fields33).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector15).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((container5).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_1165).us_split_fields33).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector15) = true)))) and
+  ((not (temp___skip_top_level_1166 = true)) ->
+  (is_empty(to_base14(temp___expr_1165)) = true)))
 
 axiom user_eq__def_axiom47 :
   (forall a:us_rep. forall b:us_rep [user_eq38(a, b)]. (user_eq38(a,
@@ -5158,28 +5002,28 @@ axiom user_eq__def_axiom49 :
   (forall a:us_rep18. forall b:us_rep18 [user_eq41(a, b)]. (user_eq41(a,
   b) = oeq(to_base15(a), to_base15(b))))
 
-predicate dynamic_invariant22(temp___expr_1187: us_rep18,
-  temp___is_init_1183: bool, temp___skip_constant_1184: bool,
-  temp___do_toplevel_1185: bool, temp___do_typ_inv_1186: bool) =
-  (((not (temp___skip_constant_1184 = true)) ->
-  in_range39(to_rep1(((container6).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base15(temp___expr_1187))) and
-  in_range38(to_rep1(((container6).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_1187).us_split_fields35).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector16))
+predicate dynamic_invariant22(temp___expr_1188: us_rep18,
+  temp___is_init_1184: bool, temp___skip_constant_1185: bool,
+  temp___do_toplevel_1186: bool, temp___do_typ_inv_1187: bool) =
+  (((not (temp___skip_constant_1185 = true)) ->
+  in_range2(to_rep(((container6).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base15(temp___expr_1188)).us_split_discrs3)) and
+  in_range3(to_rep(((container6).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_1188).us_split_fields35).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector16).us_split_discrs1))
 
-axiom temp___result_1197qtdef :
-  (forall temp___1196:us_rep18.
-  is_empty__function_guard(is_empty(to_base15(temp___1196)),
-  to_base15(temp___1196)))
+axiom temp___result_1198qtdef :
+  (forall temp___1197:us_rep18.
+  is_empty__function_guard(is_empty(to_base15(temp___1197)),
+  to_base15(temp___1197)))
 
-predicate default_initial_assumption12(temp___expr_1190: us_rep18,
-  temp___skip_top_level_1191: bool) =
-  ((((temp___expr_1190).attr__tag16 = us_tag16) and
-  ((to_rep1(((temp___expr_1190).us_split_discrs19).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((container6).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_1190).us_split_fields35).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector16).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((container6).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_1190).us_split_fields35).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector16) = true)))) and
-  ((not (temp___skip_top_level_1191 = true)) ->
-  (is_empty(to_base15(temp___expr_1190)) = true)))
+predicate default_initial_assumption12(temp___expr_1191: us_rep18,
+  temp___skip_top_level_1192: bool) =
+  ((((temp___expr_1191).attr__tag16 = us_tag16) and
+  ((to_rep(((temp___expr_1191).us_split_discrs19).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((container6).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_1191).us_split_fields35).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector16).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((container6).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_1191).us_split_fields35).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector16) = true)))) and
+  ((not (temp___skip_top_level_1192 = true)) ->
+  (is_empty(to_base15(temp___expr_1191)) = true)))
 
 axiom user_eq__def_axiom50 :
   (forall a:us_rep. forall b:us_rep [user_eq40(a, b)]. (user_eq40(a,
@@ -5198,28 +5042,28 @@ axiom user_eq__def_axiom52 :
   (forall a:us_rep19. forall b:us_rep19 [user_eq43(a, b)]. (user_eq43(a,
   b) = oeq(to_base16(a), to_base16(b))))
 
-predicate dynamic_invariant23(temp___expr_1213: us_rep19,
-  temp___is_init_1209: bool, temp___skip_constant_1210: bool,
-  temp___do_toplevel_1211: bool, temp___do_typ_inv_1212: bool) =
-  (((not (temp___skip_constant_1210 = true)) ->
-  in_range41(to_rep1(((container7).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base16(temp___expr_1213))) and
-  in_range40(to_rep1(((container7).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_1213).us_split_fields37).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector17))
+predicate dynamic_invariant23(temp___expr_1214: us_rep19,
+  temp___is_init_1210: bool, temp___skip_constant_1211: bool,
+  temp___do_toplevel_1212: bool, temp___do_typ_inv_1213: bool) =
+  (((not (temp___skip_constant_1211 = true)) ->
+  in_range2(to_rep(((container7).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base16(temp___expr_1214)).us_split_discrs3)) and
+  in_range3(to_rep(((container7).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_1214).us_split_fields37).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector17).us_split_discrs1))
 
-axiom temp___result_1223qtdef :
-  (forall temp___1222:us_rep19.
-  is_empty__function_guard(is_empty(to_base16(temp___1222)),
-  to_base16(temp___1222)))
+axiom temp___result_1224qtdef :
+  (forall temp___1223:us_rep19.
+  is_empty__function_guard(is_empty(to_base16(temp___1223)),
+  to_base16(temp___1223)))
 
-predicate default_initial_assumption13(temp___expr_1216: us_rep19,
-  temp___skip_top_level_1217: bool) =
-  ((((temp___expr_1216).attr__tag17 = us_tag17) and
-  ((to_rep1(((temp___expr_1216).us_split_discrs20).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((container7).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_1216).us_split_fields37).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector17).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((container7).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_1216).us_split_fields37).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector17) = true)))) and
-  ((not (temp___skip_top_level_1217 = true)) ->
-  (is_empty(to_base16(temp___expr_1216)) = true)))
+predicate default_initial_assumption13(temp___expr_1217: us_rep19,
+  temp___skip_top_level_1218: bool) =
+  ((((temp___expr_1217).attr__tag17 = us_tag17) and
+  ((to_rep(((temp___expr_1217).us_split_discrs20).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((container7).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_1217).us_split_fields37).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector17).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((container7).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_1217).us_split_fields37).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector17) = true)))) and
+  ((not (temp___skip_top_level_1218 = true)) ->
+  (is_empty(to_base16(temp___expr_1217)) = true)))
 
 axiom user_eq__def_axiom53 :
   (forall a:us_rep. forall b:us_rep [user_eq42(a, b)]. (user_eq42(a,
@@ -5238,28 +5082,28 @@ axiom user_eq__def_axiom55 :
   (forall a:us_rep20. forall b:us_rep20 [user_eq45(a, b)]. (user_eq45(a,
   b) = oeq(to_base17(a), to_base17(b))))
 
-predicate dynamic_invariant24(temp___expr_1239: us_rep20,
-  temp___is_init_1235: bool, temp___skip_constant_1236: bool,
-  temp___do_toplevel_1237: bool, temp___do_typ_inv_1238: bool) =
-  (((not (temp___skip_constant_1236 = true)) ->
-  in_range43(to_rep1(((container8).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base17(temp___expr_1239))) and
-  in_range42(to_rep1(((container8).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_1239).us_split_fields39).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector18))
+predicate dynamic_invariant24(temp___expr_1240: us_rep20,
+  temp___is_init_1236: bool, temp___skip_constant_1237: bool,
+  temp___do_toplevel_1238: bool, temp___do_typ_inv_1239: bool) =
+  (((not (temp___skip_constant_1237 = true)) ->
+  in_range2(to_rep(((container8).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base17(temp___expr_1240)).us_split_discrs3)) and
+  in_range3(to_rep(((container8).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_1240).us_split_fields39).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector18).us_split_discrs1))
 
-axiom temp___result_1249qtdef :
-  (forall temp___1248:us_rep20.
-  is_empty__function_guard(is_empty(to_base17(temp___1248)),
-  to_base17(temp___1248)))
+axiom temp___result_1250qtdef :
+  (forall temp___1249:us_rep20.
+  is_empty__function_guard(is_empty(to_base17(temp___1249)),
+  to_base17(temp___1249)))
 
-predicate default_initial_assumption14(temp___expr_1242: us_rep20,
-  temp___skip_top_level_1243: bool) =
-  ((((temp___expr_1242).attr__tag18 = us_tag18) and
-  ((to_rep1(((temp___expr_1242).us_split_discrs21).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((container8).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_1242).us_split_fields39).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector18).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((container8).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_1242).us_split_fields39).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector18) = true)))) and
-  ((not (temp___skip_top_level_1243 = true)) ->
-  (is_empty(to_base17(temp___expr_1242)) = true)))
+predicate default_initial_assumption14(temp___expr_1243: us_rep20,
+  temp___skip_top_level_1244: bool) =
+  ((((temp___expr_1243).attr__tag18 = us_tag18) and
+  ((to_rep(((temp___expr_1243).us_split_discrs21).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((container8).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_1243).us_split_fields39).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector18).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((container8).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_1243).us_split_fields39).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector18) = true)))) and
+  ((not (temp___skip_top_level_1244 = true)) ->
+  (is_empty(to_base17(temp___expr_1243)) = true)))
 
 axiom user_eq__def_axiom56 :
   (forall a:us_rep. forall b:us_rep [user_eq44(a, b)]. (user_eq44(a,
@@ -5278,28 +5122,28 @@ axiom user_eq__def_axiom58 :
   (forall a:us_rep21. forall b:us_rep21 [user_eq47(a, b)]. (user_eq47(a,
   b) = oeq(to_base18(a), to_base18(b))))
 
-predicate dynamic_invariant25(temp___expr_1265: us_rep21,
-  temp___is_init_1261: bool, temp___skip_constant_1262: bool,
-  temp___do_toplevel_1263: bool, temp___do_typ_inv_1264: bool) =
-  (((not (temp___skip_constant_1262 = true)) ->
-  in_range45(to_rep1(((container9).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base18(temp___expr_1265))) and
-  in_range44(to_rep1(((container9).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_1265).us_split_fields41).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector19))
+predicate dynamic_invariant25(temp___expr_1266: us_rep21,
+  temp___is_init_1262: bool, temp___skip_constant_1263: bool,
+  temp___do_toplevel_1264: bool, temp___do_typ_inv_1265: bool) =
+  (((not (temp___skip_constant_1263 = true)) ->
+  in_range2(to_rep(((container9).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base18(temp___expr_1266)).us_split_discrs3)) and
+  in_range3(to_rep(((container9).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_1266).us_split_fields41).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector19).us_split_discrs1))
 
-axiom temp___result_1275qtdef :
-  (forall temp___1274:us_rep21.
-  is_empty__function_guard(is_empty(to_base18(temp___1274)),
-  to_base18(temp___1274)))
+axiom temp___result_1276qtdef :
+  (forall temp___1275:us_rep21.
+  is_empty__function_guard(is_empty(to_base18(temp___1275)),
+  to_base18(temp___1275)))
 
-predicate default_initial_assumption15(temp___expr_1268: us_rep21,
-  temp___skip_top_level_1269: bool) =
-  ((((temp___expr_1268).attr__tag19 = us_tag19) and
-  ((to_rep1(((temp___expr_1268).us_split_discrs22).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((container9).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_1268).us_split_fields41).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector19).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((container9).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_1268).us_split_fields41).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector19) = true)))) and
-  ((not (temp___skip_top_level_1269 = true)) ->
-  (is_empty(to_base18(temp___expr_1268)) = true)))
+predicate default_initial_assumption15(temp___expr_1269: us_rep21,
+  temp___skip_top_level_1270: bool) =
+  ((((temp___expr_1269).attr__tag19 = us_tag19) and
+  ((to_rep(((temp___expr_1269).us_split_discrs22).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((container9).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_1269).us_split_fields41).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector19).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((container9).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_1269).us_split_fields41).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector19) = true)))) and
+  ((not (temp___skip_top_level_1270 = true)) ->
+  (is_empty(to_base18(temp___expr_1269)) = true)))
 
 axiom user_eq__def_axiom59 :
   (forall a:us_rep. forall b:us_rep [user_eq46(a, b)]. (user_eq46(a,
@@ -5318,28 +5162,28 @@ axiom user_eq__def_axiom61 :
   (forall a:us_rep22. forall b:us_rep22 [user_eq49(a, b)]. (user_eq49(a,
   b) = oeq(to_base19(a), to_base19(b))))
 
-predicate dynamic_invariant26(temp___expr_1291: us_rep22,
-  temp___is_init_1287: bool, temp___skip_constant_1288: bool,
-  temp___do_toplevel_1289: bool, temp___do_typ_inv_1290: bool) =
-  (((not (temp___skip_constant_1288 = true)) ->
-  in_range47(to_rep1(((container10).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  to_base19(temp___expr_1291))) and
-  in_range46(to_rep1(((container10).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
-  ((temp___expr_1291).us_split_fields43).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector20))
+predicate dynamic_invariant26(temp___expr_1292: us_rep22,
+  temp___is_init_1288: bool, temp___skip_constant_1289: bool,
+  temp___do_toplevel_1290: bool, temp___do_typ_inv_1291: bool) =
+  (((not (temp___skip_constant_1289 = true)) ->
+  in_range2(to_rep(((container10).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (to_base19(temp___expr_1292)).us_split_discrs3)) and
+  in_range3(to_rep(((container10).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity),
+  (((temp___expr_1292).us_split_fields43).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector20).us_split_discrs1))
 
-axiom temp___result_1301qtdef :
-  (forall temp___1300:us_rep22.
-  is_empty__function_guard(is_empty(to_base19(temp___1300)),
-  to_base19(temp___1300)))
+axiom temp___result_1302qtdef :
+  (forall temp___1301:us_rep22.
+  is_empty__function_guard(is_empty(to_base19(temp___1301)),
+  to_base19(temp___1301)))
 
-predicate default_initial_assumption16(temp___expr_1294: us_rep22,
-  temp___skip_top_level_1295: bool) =
-  ((((temp___expr_1294).attr__tag20 = us_tag20) and
-  ((to_rep1(((temp___expr_1294).us_split_discrs23).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep1(((container10).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  ((to_rep(((((temp___expr_1294).us_split_fields43).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector20).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep1(((container10).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
-  (is_empty1(((temp___expr_1294).us_split_fields43).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector20) = true)))) and
-  ((not (temp___skip_top_level_1295 = true)) ->
-  (is_empty(to_base19(temp___expr_1294)) = true)))
+predicate default_initial_assumption16(temp___expr_1295: us_rep22,
+  temp___skip_top_level_1296: bool) =
+  ((((temp___expr_1295).attr__tag20 = us_tag20) and
+  ((to_rep(((temp___expr_1295).us_split_discrs23).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = to_rep(((container10).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  ((to_rep1(((((temp___expr_1295).us_split_fields43).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector20).us_split_discrs1).rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity) = to_rep(((container10).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity)) and
+  (is_empty1(((temp___expr_1295).us_split_fields43).rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector20) = true)))) and
+  ((not (temp___skip_top_level_1296 = true)) ->
+  (is_empty(to_base19(temp___expr_1295)) = true)))
 
 axiom user_eq__def_axiom62 :
   (forall a:us_rep. forall b:us_rep [user_eq48(a, b)]. (user_eq48(a,
@@ -5353,5 +5197,5 @@ goal defqtvc : (dynamic_invariant(container, true, false, true, true) ->
   (((first_index(container) <= index) and
   (index <= last_index(container))) ->
   (forall o:int.
-  ((to_rep1(((container).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = o) ->
+  ((to_rep(((container).us_split_discrs3).rec__ada___hnco__test2__v_type_owner__vector_type__capacity) = o) ->
   (in_range1(o) -> (1 <= index)))))))))

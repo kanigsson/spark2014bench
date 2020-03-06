@@ -466,8 +466,8 @@ goal defqtvc :
   (forall i:int. ((i = 1) -> ((andb((if (1 <= i) then true else false),
   (if (i <= r2b) then true else false)) = true) -> (in_range1((i * 8)) ->
   (forall col1:int. forall i1:int. ((col1 <  (i1 * 8)) ->
-  ((andb((if (dynamic_invariant2(col1, true, true, true, true) and
-  dynamic_property(1, r2b, i1)) then true else false), (if ((1 <= i1) and
+  ((andb((if (dynamic_property(1, r2b, i1) and dynamic_invariant2(col1, true,
+  true, true, true)) then true else false), (if ((1 <= i1) and
   (i1 <= r2b)) then true else false)) = true) ->
   (forall o:int. ((to_rep((line[i1])) = o) ->
   (forall spark__branch:bool.

@@ -177,8 +177,8 @@ goal defqtvc :
    (if (i <= 62) then true else false)) = true)) or
    (((2 ** i) <= (2 ** 62)) and (((2 ** i) <= 4611686018427387904) and
    (exists i1:int.
-   ((forall k:int. (((0 <= k) and (k <= i1)) -> ((0 <= (2 ** k)) and
-    ((2 ** k) <= 9223372036854775807)))) and
+   ((forall k:int. (((0 <= k) and (k <= i1)) -> (let temp___207 = (2 ** k)
+    : int in ((0 <= temp___207) and (temp___207 <= 9223372036854775807))))) and
    ((andb((if in_range3(i1) then true else false), (if ((0 <= i1) and
    (i1 <= 62)) then true else false)) = true) and (i1 = 62))))))))) ->
   (forall i:int. (((0 <= i) and (i <= 62)) -> (0 <= (2 ** i)))))

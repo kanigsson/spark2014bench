@@ -306,6 +306,10 @@ function bool_eq4(a: us_rep, b: us_rep) : bool =
   (bool_eq3(((a).us_split_fields1).rec__main__branch_type__m_nodes,
   ((b).us_split_fields1).rec__main__branch_type__m_nodes) = true)) then true else false)
 
+predicate in_range2(rec__main__branch_type__m_height1: int,
+  a: us_split_discrs) =
+  (rec__main__branch_type__m_height1 = to_rep((a).rec__main__branch_type__m_height))
+
 logic value__size1 : int
 
 logic object__size1 : int

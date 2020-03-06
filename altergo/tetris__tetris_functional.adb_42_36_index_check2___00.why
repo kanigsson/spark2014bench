@@ -3958,24 +3958,24 @@ goal defqtvc :
   (forall o2:int.
   ((to_rep1((cur_piece__split_fields).rec__tetris_functional__piece__s) = o2) ->
   (forall o3:cell. ((to_rep(o3) = o2) ->
-  (forall temp___806:int.
-  ((to_rep2((cur_piece__split_fields).rec__tetris_functional__piece__x) = temp___806) ->
-  (((1 <= temp___806) and (temp___806 <= 10)) ->
+  (forall temp___815:int.
+  ((to_rep2((cur_piece__split_fields).rec__tetris_functional__piece__x) = temp___815) ->
+  (((1 <= temp___815) and (temp___815 <= 10)) ->
   (forall o4:int.
   ((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) = o4) ->
-  (forall temp___807:int.
-  ((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) = temp___807) ->
-  (((1 <= temp___807) and (temp___807 <= 50)) ->
+  (forall temp___816:int.
+  ((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) = temp___816) ->
+  (((1 <= temp___816) and (temp___816 <= 50)) ->
   (forall cur_board1:(int,(int,cell) farray) farray.
-  ((cur_board1 = (cur_board[temp___807 <- ((cur_board[o4])[temp___806 <- o3])])) ->
+  ((cur_board1 = (cur_board[temp___816 <- ((cur_board[o4])[temp___815 <- o3])])) ->
   (forall o5:int.
   ((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) = o5) ->
   (forall o6:int.
   ((to_rep1((cur_piece__split_fields).rec__tetris_functional__piece__s) = o6) ->
   (forall o7:cell. ((to_rep(o7) = o6) ->
-  (forall temp___809:int.
-  ((to_rep2((cur_piece__split_fields).rec__tetris_functional__piece__x) = temp___809) ->
-  (((1 <= temp___809) and (temp___809 <= 10)) ->
+  (forall temp___818:int.
+  ((to_rep2((cur_piece__split_fields).rec__tetris_functional__piece__x) = temp___818) ->
+  (((1 <= temp___818) and (temp___818 <= 10)) ->
   (forall o8:int.
   ((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) = o8) ->
   (forall o9:int.

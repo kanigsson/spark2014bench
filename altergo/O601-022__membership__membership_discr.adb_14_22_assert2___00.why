@@ -186,16 +186,17 @@ logic user_eq1 : us_rep, us_rep -> bool
 
 logic dummy1 : us_rep
 
-type root__ref = { root__content : us_rep
+type tr1S__ref = { tr1S__content : us_rep
 }
 
-function root__ref_root__content__projection(a: root__ref) : us_rep =
-  (a).root__content
+function tr1S__ref_tr1S__content__projection(a: tr1S__ref) : us_rep =
+  (a).tr1S__content
 
 logic us_tag1 : int
 
-predicate in_range2(rec__membership_discr__root__c1: int, a: us_rep) =
-  (rec__membership_discr__root__c1 = to_rep(((a).us_split_discrs1).rec__membership_discr__root__c))
+predicate in_range2(rec__membership_discr__root__c1: int,
+  a: us_split_discrs) =
+  (rec__membership_discr__root__c1 = to_rep((a).rec__membership_discr__root__c))
 
 logic value__size1 : int
 
@@ -228,11 +229,11 @@ logic user_eq2 : us_rep, us_rep -> bool
 
 logic dummy2 : us_rep
 
-type tr1S__ref = { tr1S__content : us_rep
+type root__ref = { root__content : us_rep
 }
 
-function tr1S__ref_tr1S__content__projection(a: tr1S__ref) : us_rep =
-  (a).tr1S__content
+function root__ref_root__content__projection(a: root__ref) : us_rep =
+  (a).root__content
 
 logic r1__split_discrs : us_split_discrs
 
@@ -243,17 +244,15 @@ logic attr__ATTRIBUTE_ADDRESS : int
 predicate dynamic_invariant(temp___expr_245: us_rep,
   temp___is_init_241: bool, temp___skip_constant_242: bool,
   temp___do_toplevel_243: bool, temp___do_typ_inv_244: bool) =
-  ((not (temp___skip_constant_242 = true)) -> in_range2(1, temp___expr_245))
+  ((not (temp___skip_constant_242 = true)) -> in_range2(1,
+  (temp___expr_245).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_247: us_rep,
   temp___skip_top_level_248: bool) =
-  (((temp___expr_247).attr__tag = us_tag1) and
+  (((temp___expr_247).attr__tag = us_tag) and
   (to_rep(((temp___expr_247).us_split_discrs1).rec__membership_discr__root__c) = 1))
 
 logic us_tag2 : int
-
-predicate in_range3(rec__membership_discr__root__c1: int, a: us_rep) =
-  (rec__membership_discr__root__c1 = to_rep(((a).us_split_discrs1).rec__membership_discr__root__c))
 
 logic value__size2 : int
 
@@ -300,7 +299,8 @@ predicate dynamic_invariant1(temp___expr_39: int, temp___is_init_35: bool,
 predicate dynamic_invariant2(temp___expr_194: us_rep,
   temp___is_init_190: bool, temp___skip_constant_191: bool,
   temp___do_toplevel_192: bool, temp___do_typ_inv_193: bool) =
-  ((not (temp___skip_constant_191 = true)) -> in_range3(0, temp___expr_194))
+  ((not (temp___skip_constant_191 = true)) -> in_range2(0,
+  (temp___expr_194).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_196: us_rep,
   temp___skip_top_level_197: bool) =
@@ -314,6 +314,5 @@ goal defqtvc :
   us_split_fields1 = { rec__ext__ = r1__split_fields }; attr__tag =
   r1__attr__tag }, false) -> (dynamic_invariant({ us_split_discrs1 =
   r1__split_discrs; us_split_fields1 = { rec__ext__ = r1__split_fields };
-  attr__tag = r1__attr__tag }, false, false, true, true) -> in_range3(0, {
-  us_split_discrs1 = r1__split_discrs; us_split_fields1 = { rec__ext__ =
-  r1__split_fields }; attr__tag = r1__attr__tag })))))
+  attr__tag = r1__attr__tag }, false, false, true, true) -> in_range2(0,
+  r1__split_discrs)))))

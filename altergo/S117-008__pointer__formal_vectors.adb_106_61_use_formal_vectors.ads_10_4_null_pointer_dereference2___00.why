@@ -1068,13 +1068,13 @@ goal defqtvc :
    e__split_fields2 })) ->
   ((length1({ us_split_fields1 = v__split_fields
   }) <  (2147483647 - length1({ us_split_fields1 = e__split_fields }))) ->
-  ((forall v__split_fields2:us_split_fields. length__function_guard(length1({
-   us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
-   v__split_fields2 })) ->
   ((forall e__split_fields2:us_split_fields. length__function_guard(length1({
    us_split_fields1 = e__split_fields2 }), { us_split_fields1 =
    e__split_fields2 })) ->
   ((forall v__split_fields2:us_split_fields. model__function_guard2(model2({
+   us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
+   v__split_fields2 })) ->
+  ((forall v__split_fields2:us_split_fields. length__function_guard(length1({
    us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
    v__split_fields2 })) ->
   (forall use_formal_vectors__my_vect__append__2__e_top__assume:int.
@@ -1165,7 +1165,7 @@ goal defqtvc :
   (forall usf:int. ((andb((if (i <= usf) then true else false),
   (if (usf <= e_top) then true else false)) = true) -> (in_range6(usf) ->
   (dynamic_invariant4(get(e_mod, usf), true, false, true, true) ->
-  (let temp___500 =
+  (let temp___493 =
   ((e__split_fields2).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value
-  : us_t in (((first1(temp___500) <= usf) and (usf <= last1(temp___500))) ->
-  rec__use_formal_vectors__my_vect__element_access__pointer_value__pred((to_array(temp___500)[usf]))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+  : us_t in (((first1(temp___493) <= usf) and (usf <= last1(temp___493))) ->
+  rec__use_formal_vectors__my_vect__element_access__pointer_value__pred((to_array(temp___493)[usf]))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))

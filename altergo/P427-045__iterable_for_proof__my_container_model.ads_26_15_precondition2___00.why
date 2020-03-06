@@ -316,24 +316,24 @@ goal defqtvc :
                                                        (((1 <= j) and
                                                        (j <= i1)) ->
                                                        (valid(to_rep((c1[j]))) = true))) and
-                                                      ((andb((if ((forall temp___256:int.
-                                                                  (((1 <= temp___256) and
-                                                                  (temp___256 <= 100)) ->
-                                                                  (((100 <  temp___256) or
-                                                                  ((temp___256 <  1) or
-                                                                  (i1 <  temp___256))) ->
-                                                                  ((c1[temp___256]) = (c[temp___256]))))) and
+                                                      ((andb((if ((forall temp___259:int.
+                                                                  (((1 <= temp___259) and
+                                                                  (temp___259 <= 100)) ->
+                                                                  (((100 <  temp___259) or
+                                                                  ((temp___259 <  1) or
+                                                                  (i1 <  temp___259))) ->
+                                                                  ((c1[temp___259]) = (c[temp___259]))))) and
                                                       in_range3(i1)) then true else false),
                                                       (if ((1 <= i1) and
                                                       (i1 <= 100)) then true else false)) = true) and
                                                       (i1 = 100)))))) else (c1 = c)))) ->
-  (let temp___263 = get_model(c1) : (int,natural) farray in
-  ((get_model__function_guard(temp___263, c1) and (temp___263 = c1)) ->
-  (forall usf:int. (let o = m_has_element(temp___263, usf) : bool in
-  ((m_has_element__function_guard(o, temp___263, usf) and ((o = true) <->
+  (let temp___266 = get_model(c1) : (int,natural) farray in
+  ((get_model__function_guard(temp___266, c1) and (temp___266 = c1)) ->
+  (forall usf:int. (let o = m_has_element(temp___266, usf) : bool in
+  ((m_has_element__function_guard(o, temp___266, usf) and ((o = true) <->
   ((1 <= usf) and (usf <= 100)))) ->
   ((andb((if in_range1(usf) then true else false), o) = true) ->
-  ((forall temp___2631:(int,natural) farray. forall usf1:int.
-   m_has_element__function_guard(m_has_element(temp___2631, usf1),
-   temp___2631, usf1)) ->
-  (m_has_element(temp___263, usf) = true)))))))))))))
+  ((forall temp___2661:(int,natural) farray. forall usf1:int.
+   m_has_element__function_guard(m_has_element(temp___2661, usf1),
+   temp___2661, usf1)) ->
+  (m_has_element(temp___266, usf) = true)))))))))))))

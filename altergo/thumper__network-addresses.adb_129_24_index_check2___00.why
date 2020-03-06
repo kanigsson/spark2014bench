@@ -1131,7 +1131,7 @@ predicate dynamic_invariant5(temp___expr_320: int, temp___is_init_316: bool,
   temp___do_typ_inv_319: bool) = (((temp___is_init_316 = true) or
   (1 <= 4)) -> in_range9(temp___expr_320))
 
-logic temp_____aggregate_def_342 : int -> (int,character) farray
+logic temp_____aggregate_def_343 : int -> (int,character) farray
 
 predicate dynamic_invariant6(temp___expr_74: int, temp___is_init_70: bool,
   temp___skip_constant_71: bool, temp___do_toplevel_72: bool,
@@ -1365,10 +1365,10 @@ axiom def_axiom9 :
   temp___180, temp___181, temp___182)[rliteral2])) = temp___182)))
 
 axiom def_axiom10 :
-  (forall temp___344:int. (dynamic_invariant6(temp___344, true, true, true,
+  (forall temp___345:int. (dynamic_invariant6(temp___345, true, true, true,
   true) ->
-  (forall temp___345:int.
-  (to_rep((temp_____aggregate_def_342(temp___344)[temp___345])) = temp___344))))
+  (forall temp___346:int.
+  (to_rep((temp_____aggregate_def_343(temp___345)[temp___346])) = temp___345))))
 
 predicate dynamic_invariant9(temp___expr_195: int, temp___is_init_191: bool,
   temp___skip_constant_192: bool, temp___do_toplevel_193: bool,
@@ -1399,7 +1399,7 @@ goal defqtvc :
   (dynamic_invariant4(digit_1, false, false, true, true) ->
   (dynamic_invariant4(digit_0, false, false, true, true) ->
   (forall text:(int,character) farray.
-  ((text = temp_____aggregate_def_342(32)) ->
+  ((text = temp_____aggregate_def_343(32)) ->
   (forall count1:int. ((count1 = 0) ->
   (forall i:int. ((i = 1) -> ((andb((if (1 <= i) then true else false),
   (if (i <= 4) then true else false)) = true) -> (in_range1((4 * (i - 1))) ->
@@ -1423,10 +1423,10 @@ goal defqtvc :
   (forall o2:int. ((to_rep2((digit_lookup_table[udiv(value2,
   rliteral11)])) = o2) ->
   (forall digit_22:int. ((digit_22 = o2) ->
-  (forall value3:t. ((value3 = urem(value2, rliteral11)) -> (let temp___348 =
-  udiv(value3, rliteral12) : t in ((ule(rliteral, temp___348) and
-  ule(temp___348, rliteral2)) ->
-  (forall o3:int. ((to_rep2((digit_lookup_table[temp___348])) = o3) ->
+  (forall value3:t. ((value3 = urem(value2, rliteral11)) -> (let temp___349 =
+  udiv(value3, rliteral12) : t in ((ule(rliteral, temp___349) and
+  ule(temp___349, rliteral2)) ->
+  (forall o3:int. ((to_rep2((digit_lookup_table[temp___349])) = o3) ->
   (forall digit_12:int. ((digit_12 = o3) ->
   (forall value4:t. ((value4 = urem(value3, rliteral12)) -> ((ule(rliteral,
   value4) and ule(value4, rliteral2)) ->
@@ -1442,17 +1442,17 @@ goal defqtvc :
                                      ((text3 = (text1[(index2 + 0) <- o5])) and
                                      (exists o6:character.
                                      ((to_rep(o6) = digit_12) and
-                                     (let temp___349 = (index2 + 1) : int in
-                                     (((1 <= temp___349) and
-                                     (temp___349 <= 15)) and
-                                     (exists text4:(int,character) farray.
-                                     ((text4 = (text3[temp___349 <- o6])) and
-                                     (exists o7:character.
-                                     ((to_rep(o7) = digit_02) and
-                                     (let temp___350 = (index2 + 2) : int in
+                                     (let temp___350 = (index2 + 1) : int in
                                      (((1 <= temp___350) and
                                      (temp___350 <= 15)) and
-                                     ((text2 = (text4[temp___350 <- o7])) and
+                                     (exists text4:(int,character) farray.
+                                     ((text4 = (text3[temp___350 <- o6])) and
+                                     (exists o7:character.
+                                     ((to_rep(o7) = digit_02) and
+                                     (let temp___351 = (index2 + 2) : int in
+                                     (((1 <= temp___351) and
+                                     (temp___351 <= 15)) and
+                                     ((text2 = (text4[temp___351 <- o7])) and
                                      (skip2 = 3)))))))))))))))) and
    (spark__branch = spark__branch1)) else ((spark__branch = (if (digit_12 = 48) then false else true)) and
    (if (spark__branch = true) then (exists o5:character.
@@ -1461,10 +1461,10 @@ goal defqtvc :
                                    ((text3 = (text1[(index2 + 0) <- o5])) and
                                    (exists o6:character.
                                    ((to_rep(o6) = digit_02) and
-                                   (let temp___351 = (index2 + 1) : int in
-                                   (((1 <= temp___351) and
-                                   (temp___351 <= 15)) and
-                                   ((text2 = (text3[temp___351 <- o6])) and
+                                   (let temp___352 = (index2 + 1) : int in
+                                   (((1 <= temp___352) and
+                                   (temp___352 <= 15)) and
+                                   ((text2 = (text3[temp___352 <- o6])) and
                                    (skip2 = 2)))))))))) else (exists o5:character.
                                                              ((to_rep(o5) = digit_02) and
                                                              ((text2 = (text1[(index2 + 0) <- o5])) and

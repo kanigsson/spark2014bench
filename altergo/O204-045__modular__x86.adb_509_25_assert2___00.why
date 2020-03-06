@@ -1400,10 +1400,10 @@ goal defqtvc :
   (dynamic_invariant1(val2, false, false, true, true) -> (ugt2(rcx,
   rliteral1) ->
   (forall rcx1:t2. forall rsi1:t2. forall rdi1:t2. forall val11:t.
-  forall val21:t. ((andb((if ((((dynamic_invariant(rdi1, true, true, true,
-  true) and dynamic_invariant(rsi1, true, true, true, true)) and
+  forall val21:t. ((andb((if ((((dynamic_invariant1(val21, false, true, true,
+  true) and dynamic_invariant(rdi1, true, true, true, true)) and
+  dynamic_invariant(rsi1, true, true, true, true)) and
   dynamic_invariant1(val11, false, true, true, true)) and
-  dynamic_invariant(rcx1, true, true, true, true)) and
-  dynamic_invariant1(val21, false, true, true, true)) then true else false),
+  dynamic_invariant(rcx1, true, true, true, true)) then true else false),
   (if ugt2(rcx1, rliteral1) then true else false)) = true) ->
   (not (rcx1 = rliteral1)))))))))))

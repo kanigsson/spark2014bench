@@ -3765,11 +3765,11 @@ goal defqtvc :
   (forall o2:int.
   ((to_rep1((cur_piece__split_fields).rec__tetris_integrity__piece__s) = o2) ->
   (forall o3:cell. ((to_rep(o3) = o2) ->
-  (forall temp___801:int.
-  ((to_rep2((cur_piece__split_fields).rec__tetris_integrity__piece__x) = temp___801) ->
-  (((1 <= temp___801) and (temp___801 <= 10)) ->
+  (forall temp___810:int.
+  ((to_rep2((cur_piece__split_fields).rec__tetris_integrity__piece__x) = temp___810) ->
+  (((1 <= temp___810) and (temp___810 <= 10)) ->
   (forall o4:int.
   ((to_rep3((cur_piece__split_fields).rec__tetris_integrity__piece__y) = o4) ->
-  (forall temp___802:int.
-  ((to_rep3((cur_piece__split_fields).rec__tetris_integrity__piece__y) = temp___802) ->
-  (1 <= temp___802))))))))))))))))))))))))
+  (forall temp___811:int.
+  ((to_rep3((cur_piece__split_fields).rec__tetris_integrity__piece__y) = temp___811) ->
+  (1 <= temp___811))))))))))))))))))))))))

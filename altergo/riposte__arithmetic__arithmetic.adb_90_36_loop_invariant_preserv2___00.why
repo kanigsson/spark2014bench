@@ -182,19 +182,19 @@ goal defqtvc :
   (forall r1:int. ((r1 = a) ->
   (forall spark__branch:bool.
   ((spark__branch = (if (0 <= b) then true else false)) ->
-  ((not (spark__branch = true)) -> (let temp___214 = b : int in
+  ((not (spark__branch = true)) -> (let temp___218 = b : int in
   (forall i:int. ((i = (- 1)) ->
-  ((andb((if (temp___214 <= i) then true else false),
+  ((andb((if (temp___218 <= i) then true else false),
   (if (i <= (- 1)) then true else false)) = true) ->
-  (forall temp___loop_entry_219:int. ((temp___loop_entry_219 = b) ->
+  (forall temp___loop_entry_223:int. ((temp___loop_entry_223 = b) ->
   ((not (r1 = (- 2147483648))) ->
   (forall r2:int. ((r2 = (r1 - 1)) -> (in_range1((a + i)) ->
   (forall r3:int. forall i1:int. (((r3 = (a + i1)) and
-  (b = temp___loop_entry_219)) -> ((andb((if (dynamic_invariant(r3, false,
+  (b = temp___loop_entry_223)) -> ((andb((if (dynamic_invariant(r3, false,
   true, true, true) and dynamic_property1(b, (- 1),
   i1)) then true else false), (if ((b <= i1) and
   (i1 <= (- 1))) then true else false)) = true) ->
-  ((not (i1 = temp___214)) ->
+  ((not (i1 = temp___218)) ->
   (forall i2:int. ((i2 = (i1 - 1)) -> ((not (r3 = (- 2147483648))) ->
   (forall r4:int. ((r4 = (r3 - 1)) -> (in_range1((a + i2)) ->
   (r4 = (a + i2))))))))))))))))))))))))))))))))

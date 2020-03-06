@@ -312,11 +312,11 @@ goal defqtvc :
   (let early_exits__p1__B_1__y__assume =
   (x__split_fields).rec__early_exits__two_acc__f : us_rep in
   (forall usf:us_pledge_ty.
-  ((forall temp___borrowed_219:us_rep1.
-   (forall temp___brower_217:us_rep [us_pledge_get(usf, temp___borrowed_219,
-   temp___brower_217)]. ((us_pledge_get(usf, temp___borrowed_219,
-   temp___brower_217) = true) <->
-   (((temp___borrowed_219).us_split_fields1).rec__early_exits__two_acc__f = temp___brower_217)))) ->
+  ((forall temp___borrowed_220:us_rep1.
+   (forall temp___brower_218:us_rep [us_pledge_get(usf, temp___borrowed_220,
+   temp___brower_218)]. ((us_pledge_get(usf, temp___borrowed_220,
+   temp___brower_218) = true) <->
+   (((temp___borrowed_220).us_split_fields1).rec__early_exits__two_acc__f = temp___brower_218)))) ->
   (forall early_exits__p1__B_1__y__pledge:us_pledge_ty.
   ((early_exits__p1__B_1__y__pledge = usf) ->
   (forall y__pointer_value:integer.
@@ -341,15 +341,15 @@ goal defqtvc :
                                                      (x__split_fields2).rec__early_exits__two_acc__g
                                                      : us_rep in
                                                      (exists usf1:us_pledge_ty1.
-                                                     ((forall temp___borrowed_196:us_rep1.
-                                                      (forall temp___brower_194:us_rep
+                                                     ((forall temp___borrowed_197:us_rep1.
+                                                      (forall temp___brower_195:us_rep
                                                       [us_pledge_get1(usf1,
-                                                      temp___borrowed_196,
-                                                      temp___brower_194)].
+                                                      temp___borrowed_197,
+                                                      temp___brower_195)].
                                                       ((us_pledge_get1(usf1,
-                                                      temp___borrowed_196,
-                                                      temp___brower_194) = true) <->
-                                                      (((temp___borrowed_196).us_split_fields1).rec__early_exits__two_acc__g = temp___brower_194)))) and
+                                                      temp___borrowed_197,
+                                                      temp___brower_195) = true) <->
+                                                      (((temp___borrowed_197).us_split_fields1).rec__early_exits__two_acc__g = temp___brower_195)))) and
                                                      (exists early_exits__p1__B_1__B_2__z__pledge:us_pledge_ty1.
                                                      ((early_exits__p1__B_1__B_2__z__pledge = usf1) and
                                                      (exists z__pointer_value:integer.

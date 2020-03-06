@@ -330,6 +330,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (with_default__ok_record__rec_with_bad_discr__f2__pred(a) ->
   (to_rep1(((a).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f2) = to_rep1(((b).us_split_fields1).rec__with_default__ok_record__rec_with_bad_discr__f2))))) then true else false)
 
+predicate in_range4(rec__with_default__ok_record__rec_with_bad_discr__b1: bool,
+  a: us_split_discrs) =
+  (rec__with_default__ok_record__rec_with_bad_discr__b1 = (a).rec__with_default__ok_record__rec_with_bad_discr__b)
+
 logic value__size : int
 
 logic object__size : int
@@ -426,7 +430,7 @@ axiom integerqtaxiom :
 
 axiom integerqtaxiom1 : (forall i:integer. (integerqtint(i) <= 2147483647))
 
-predicate in_range4(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range5(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -453,10 +457,10 @@ logic of_rep2 : int -> integer
 axiom inversion_axiom2 :
   (forall x:integer [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
 
-axiom range_axiom2 : (forall x:integer [to_rep2(x)]. in_range4(to_rep2(x)))
+axiom range_axiom2 : (forall x:integer [to_rep2(x)]. in_range5(to_rep2(x)))
 
 axiom coerce_axiom2 :
-  (forall x:int [to_rep2(of_rep2(x))]. (in_range4(x) ->
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range5(x) ->
   (to_rep2(of_rep2(x)) = x)))
 
 logic first1 : int
@@ -654,21 +658,6 @@ axiom with_default__ok_record__rec_with_discr__b__last__bit_axiom :
 axiom with_default__ok_record__rec_with_discr__b__position_axiom :
   (0 <= with_default__ok_record__rec_with_discr__b__position)
 
-logic with_default__ok_record__rec_with_discr__f1__first__bit : int
-
-logic with_default__ok_record__rec_with_discr__f1__last__bit : int
-
-logic with_default__ok_record__rec_with_discr__f1__position : int
-
-axiom with_default__ok_record__rec_with_discr__f1__first__bit_axiom :
-  (0 <= with_default__ok_record__rec_with_discr__f1__first__bit)
-
-axiom with_default__ok_record__rec_with_discr__f1__last__bit_axiom :
-  (with_default__ok_record__rec_with_discr__f1__first__bit <  with_default__ok_record__rec_with_discr__f1__last__bit)
-
-axiom with_default__ok_record__rec_with_discr__f1__position_axiom :
-  (0 <= with_default__ok_record__rec_with_discr__f1__position)
-
 logic with_default__ok_record__rec_with_discr__f2__first__bit : int
 
 logic with_default__ok_record__rec_with_discr__f2__last__bit : int
@@ -684,19 +673,34 @@ axiom with_default__ok_record__rec_with_discr__f2__last__bit_axiom :
 axiom with_default__ok_record__rec_with_discr__f2__position_axiom :
   (0 <= with_default__ok_record__rec_with_discr__f2__position)
 
+logic with_default__ok_record__rec_with_discr__f1__first__bit : int
+
+logic with_default__ok_record__rec_with_discr__f1__last__bit : int
+
+logic with_default__ok_record__rec_with_discr__f1__position : int
+
+axiom with_default__ok_record__rec_with_discr__f1__first__bit_axiom :
+  (0 <= with_default__ok_record__rec_with_discr__f1__first__bit)
+
+axiom with_default__ok_record__rec_with_discr__f1__last__bit_axiom :
+  (with_default__ok_record__rec_with_discr__f1__first__bit <  with_default__ok_record__rec_with_discr__f1__last__bit)
+
+axiom with_default__ok_record__rec_with_discr__f1__position_axiom :
+  (0 <= with_default__ok_record__rec_with_discr__f1__position)
+
 logic user_eq8 : us_rep2, us_rep2 -> bool
 
 logic dummy8 : us_rep2
 
-type rec_with_discr__ref = { rec_with_discr__content : us_rep2
+type tw_discS__ref = { tw_discS__content : us_rep2
 }
 
-function rec_with_discr__ref_rec_with_discr__content__2__projection(a: rec_with_discr__ref) : us_rep2 =
-  (a).rec_with_discr__content
+function tw_discS__ref_tw_discS__content__projection(a: tw_discS__ref) : us_rep2 =
+  (a).tw_discS__content
 
-predicate in_range5(rec__with_default__ok_record__rec_with_discr__b1: bool,
-  a: us_rep2) =
-  (rec__with_default__ok_record__rec_with_discr__b1 = ((a).us_split_discrs3).rec__with_default__ok_record__rec_with_discr__b)
+predicate in_range6(rec__with_default__ok_record__rec_with_discr__b1: bool,
+  a: us_split_discrs2) =
+  (rec__with_default__ok_record__rec_with_discr__b1 = (a).rec__with_default__ok_record__rec_with_discr__b)
 
 logic value__size3 : int
 
@@ -725,21 +729,6 @@ axiom with_default__ok_record__rec_with_discr__b__last__bit_axiom1 :
 axiom with_default__ok_record__rec_with_discr__b__position_axiom1 :
   (0 <= with_default__ok_record__rec_with_discr__b__position1)
 
-logic with_default__ok_record__rec_with_discr__f2__first__bit1 : int
-
-logic with_default__ok_record__rec_with_discr__f2__last__bit1 : int
-
-logic with_default__ok_record__rec_with_discr__f2__position1 : int
-
-axiom with_default__ok_record__rec_with_discr__f2__first__bit_axiom1 :
-  (0 <= with_default__ok_record__rec_with_discr__f2__first__bit1)
-
-axiom with_default__ok_record__rec_with_discr__f2__last__bit_axiom1 :
-  (with_default__ok_record__rec_with_discr__f2__first__bit1 <  with_default__ok_record__rec_with_discr__f2__last__bit1)
-
-axiom with_default__ok_record__rec_with_discr__f2__position_axiom1 :
-  (0 <= with_default__ok_record__rec_with_discr__f2__position1)
-
 logic with_default__ok_record__rec_with_discr__f1__first__bit1 : int
 
 logic with_default__ok_record__rec_with_discr__f1__last__bit1 : int
@@ -755,15 +744,30 @@ axiom with_default__ok_record__rec_with_discr__f1__last__bit_axiom1 :
 axiom with_default__ok_record__rec_with_discr__f1__position_axiom1 :
   (0 <= with_default__ok_record__rec_with_discr__f1__position1)
 
+logic with_default__ok_record__rec_with_discr__f2__first__bit1 : int
+
+logic with_default__ok_record__rec_with_discr__f2__last__bit1 : int
+
+logic with_default__ok_record__rec_with_discr__f2__position1 : int
+
+axiom with_default__ok_record__rec_with_discr__f2__first__bit_axiom1 :
+  (0 <= with_default__ok_record__rec_with_discr__f2__first__bit1)
+
+axiom with_default__ok_record__rec_with_discr__f2__last__bit_axiom1 :
+  (with_default__ok_record__rec_with_discr__f2__first__bit1 <  with_default__ok_record__rec_with_discr__f2__last__bit1)
+
+axiom with_default__ok_record__rec_with_discr__f2__position_axiom1 :
+  (0 <= with_default__ok_record__rec_with_discr__f2__position1)
+
 logic user_eq9 : us_rep2, us_rep2 -> bool
 
 logic dummy9 : us_rep2
 
-type tw_discS__ref = { tw_discS__content : us_rep2
+type rec_with_discr__ref = { rec_with_discr__content : us_rep2
 }
 
-function tw_discS__ref_tw_discS__content__projection(a: tw_discS__ref) : us_rep2 =
-  (a).tw_discS__content
+function rec_with_discr__ref_rec_with_discr__content__2__projection(a: rec_with_discr__ref) : us_rep2 =
+  (a).rec_with_discr__content
 
 logic w_disc__split_discrs : us_split_discrs2
 
@@ -772,8 +776,8 @@ logic attr__ATTRIBUTE_ADDRESS3 : int
 predicate dynamic_invariant3(temp___expr_561: us_rep2,
   temp___is_init_557: bool, temp___skip_constant_558: bool,
   temp___do_toplevel_559: bool, temp___do_typ_inv_560: bool) =
-  (((not (temp___skip_constant_558 = true)) -> in_range5(of_int(1),
-  temp___expr_561)) and
+  (((not (temp___skip_constant_558 = true)) -> in_range6(of_int(1),
+  (temp___expr_561).us_split_discrs3)) and
   (with_default__ok_record__rec_with_discr__f2__pred(temp___expr_561) ->
   (((temp___is_init_557 = true) or (first <= 2147483647)) ->
   dynamic_property(first, 2147483647,
@@ -840,6 +844,10 @@ function bool_eq11(a: us_rep3, b: us_rep3) : bool =
   (to_rep(((a).us_split_fields7).rec__with_default__ok_record__rec_with_default_discr__f1) = to_rep(((b).us_split_fields7).rec__with_default__ok_record__rec_with_default_discr__f1))) and
   (with_default__ok_record__rec_with_default_discr__f2__pred(a) ->
   (to_rep1(((a).us_split_fields7).rec__with_default__ok_record__rec_with_default_discr__f2) = to_rep1(((b).us_split_fields7).rec__with_default__ok_record__rec_with_default_discr__f2))))) then true else false)
+
+predicate in_range7(rec__with_default__ok_record__rec_with_default_discr__b1: bool,
+  a: us_split_discrs4) =
+  (rec__with_default__ok_record__rec_with_default_discr__b1 = (a).rec__with_default__ok_record__rec_with_default_discr__b)
 
 logic value__size4 : int
 
@@ -982,6 +990,10 @@ function bool_eq12(a: us_rep4, b: us_rep4) : bool =
   (with_default__ok_record__rec_with_ok_discr__f3__pred(a) ->
   (to_rep1(((a).us_split_fields9).rec__with_default__ok_record__rec_with_ok_discr__f3) = to_rep1(((b).us_split_fields9).rec__with_default__ok_record__rec_with_ok_discr__f3))))) then true else false)
 
+predicate in_range8(rec__with_default__ok_record__rec_with_ok_discr__b1: bool,
+  a: us_split_discrs6) =
+  (rec__with_default__ok_record__rec_with_ok_discr__b1 = (a).rec__with_default__ok_record__rec_with_ok_discr__b)
+
 logic value__size5 : int
 
 logic object__size5 : int
@@ -1079,7 +1091,7 @@ axiom small_naturalqtaxiom :
 axiom small_naturalqtaxiom1 :
   (forall i:small_natural. (small_naturalqtint(i) <= 100))
 
-predicate in_range6(x: int) = ((0 <= x) and (x <= 100))
+predicate in_range9(x: int) = ((0 <= x) and (x <= 100))
 
 function bool_eq13(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1107,10 +1119,10 @@ axiom inversion_axiom3 :
   (forall x:small_natural [to_rep3(x)]. (of_rep3(to_rep3(x)) = x))
 
 axiom range_axiom3 :
-  (forall x:small_natural [to_rep3(x)]. in_range6(to_rep3(x)))
+  (forall x:small_natural [to_rep3(x)]. in_range9(to_rep3(x)))
 
 axiom coerce_axiom3 :
-  (forall x:int [to_rep3(of_rep3(x))]. (in_range6(x) ->
+  (forall x:int [to_rep3(of_rep3(x))]. (in_range9(x) ->
   (to_rep3(of_rep3(x)) = x)))
 
 type tsmall_naturalB
@@ -1123,7 +1135,7 @@ axiom tsmall_naturalBqtaxiom :
 axiom tsmall_naturalBqtaxiom1 :
   (forall i:tsmall_naturalB. (tsmall_naturalBqtint(i) <= 2147483647))
 
-predicate in_range7(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range10(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq14(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1151,10 +1163,10 @@ axiom inversion_axiom4 :
   (forall x:tsmall_naturalB [to_rep4(x)]. (of_rep4(to_rep4(x)) = x))
 
 axiom range_axiom4 :
-  (forall x:tsmall_naturalB [to_rep4(x)]. in_range7(to_rep4(x)))
+  (forall x:tsmall_naturalB [to_rep4(x)]. in_range10(to_rep4(x)))
 
 axiom coerce_axiom4 :
-  (forall x:int [to_rep4(of_rep4(x))]. (in_range7(x) ->
+  (forall x:int [to_rep4(of_rep4(x))]. (in_range10(x) ->
   (to_rep4(of_rep4(x)) = x)))
 
 type small_positive
@@ -1167,7 +1179,7 @@ axiom small_positiveqtaxiom :
 axiom small_positiveqtaxiom1 :
   (forall i:small_positive. (small_positiveqtint(i) <= 100))
 
-predicate in_range8(x: int) = ((1 <= x) and (x <= 100))
+predicate in_range11(x: int) = ((1 <= x) and (x <= 100))
 
 function bool_eq15(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1256,16 +1268,16 @@ logic last : t -> tsmall_naturalB
 logic mk : int, int -> t
 
 axiom mk_def :
-  (forall f:int. forall l:int [mk(f, l)]. (in_range7(f) -> (in_range7(l) ->
+  (forall f:int. forall l:int [mk(f, l)]. (in_range10(f) -> (in_range10(l) ->
   (to_rep4(first2(mk(f, l))) = f))))
 
 axiom mk_def1 :
-  (forall f:int. forall l:int [mk(f, l)]. (in_range7(f) -> (in_range7(l) ->
+  (forall f:int. forall l:int [mk(f, l)]. (in_range10(f) -> (in_range10(l) ->
   (to_rep4(last(mk(f, l))) = l))))
 
 predicate dynamic_property2(range_first: int, range_last: int, low: int,
-  high: int) = (in_range7(low) and (in_range7(high) and ((low <= high) ->
-  (in_range8(low) and in_range8(high)))))
+  high: int) = (in_range10(low) and (in_range10(high) and ((low <= high) ->
+  (in_range11(low) and in_range11(high)))))
 
 type us_t = { elts : (int,tscalar_with_defaultB) farray; rt : t
 }
@@ -1359,6 +1371,10 @@ function bool_eq18(a: us_rep5, b: us_rep5) : bool =
   (bool_eq17(((a).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content,
   ((b).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content) = true)) then true else false)
 
+predicate in_range12(rec__with_default__ok_record__rec_empty_array__d1: int,
+  a: us_split_discrs8) =
+  (rec__with_default__ok_record__rec_empty_array__d1 = to_rep3((a).rec__with_default__ok_record__rec_empty_array__d))
+
 logic value__size7 : int
 
 logic object__size7 : int
@@ -1441,10 +1457,6 @@ predicate default_initial_assumption5(temp___expr_537: us_rep5,
   (((first3(((temp___expr_537).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content) <= temp___541) and
   (temp___541 <= last1(((temp___expr_537).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content))) ->
   (to_rep1((to_array(((temp___expr_537).us_split_fields11).rec__with_default__ok_record__rec_empty_array__content)[temp___541])) = 0)))))
-
-predicate in_range9(rec__with_default__ok_record__rec_with_bad_discr__b1: bool,
-  a: us_rep) =
-  (rec__with_default__ok_record__rec_with_bad_discr__b1 = ((a).us_split_discrs1).rec__with_default__ok_record__rec_with_bad_discr__b)
 
 logic value__size8 : int
 
@@ -1554,6 +1566,10 @@ function bool_eq19(a: us_rep6, b: us_rep6) : bool =
   (bool_eq6(((a).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content,
   ((b).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content) = true)) then true else false)
 
+predicate in_range13(rec__with_default__ok_record__rec_discr_rec__b1: bool,
+  a: us_split_discrs10) =
+  (rec__with_default__ok_record__rec_discr_rec__b1 = (a).rec__with_default__ok_record__rec_discr_rec__b)
+
 logic value__size9 : int
 
 logic object__size9 : int
@@ -1613,8 +1629,8 @@ logic attr__ATTRIBUTE_ADDRESS7 : int
 predicate dynamic_invariant7(temp___expr_547: us_rep6,
   temp___is_init_543: bool, temp___skip_constant_544: bool,
   temp___do_toplevel_545: bool, temp___do_typ_inv_546: bool) =
-  (in_range9(((temp___expr_547).us_split_discrs11).rec__with_default__ok_record__rec_discr_rec__b,
-  ((temp___expr_547).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content) and
+  (in_range4(((temp___expr_547).us_split_discrs11).rec__with_default__ok_record__rec_discr_rec__b,
+  (((temp___expr_547).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content).us_split_discrs1) and
   (with_default__ok_record__rec_with_bad_discr__f2__pred(((temp___expr_547).us_split_fields13).rec__with_default__ok_record__rec_discr_rec__content) ->
   (((temp___is_init_543 = true) or (first <= 2147483647)) ->
   dynamic_property(first, 2147483647,
@@ -1636,11 +1652,7 @@ logic attr__ATTRIBUTE_ADDRESS8 : int
 predicate dynamic_invariant8(temp___expr_514: int, temp___is_init_510: bool,
   temp___skip_constant_511: bool, temp___do_toplevel_512: bool,
   temp___do_typ_inv_513: bool) = (((temp___is_init_510 = true) or
-  (0 <= 100)) -> in_range6(temp___expr_514))
-
-predicate in_range10(rec__with_default__ok_record__rec_with_bad_discr__b1: bool,
-  a: us_rep) =
-  (rec__with_default__ok_record__rec_with_bad_discr__b1 = ((a).us_split_discrs1).rec__with_default__ok_record__rec_with_bad_discr__b)
+  (0 <= 100)) -> in_range9(temp___expr_514))
 
 logic value__size10 : int
 
@@ -1708,10 +1720,6 @@ type t24b__ref = { t24b__content : us_rep
 
 function t24b__ref_t24b__content__projection(a: t24b__ref) : us_rep =
   (a).t24b__content
-
-predicate in_range11(rec__with_default__ok_record__rec_with_bad_discr__b1: bool,
-  a: us_rep) =
-  (rec__with_default__ok_record__rec_with_bad_discr__b1 = ((a).us_split_discrs1).rec__with_default__ok_record__rec_with_bad_discr__b)
 
 logic value__size11 : int
 
@@ -1783,7 +1791,7 @@ function s25b__ref_s25b__content__projection(a: s25b__ref) : us_rep =
 predicate dynamic_invariant9(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
   temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range4(temp___expr_18))
+  ((- 2147483648) <= 2147483647)) -> in_range5(temp___expr_18))
 
 predicate dynamic_invariant10(temp___expr_447: int, temp___is_init_443: bool,
   temp___skip_constant_444: bool, temp___do_toplevel_445: bool,
@@ -1817,13 +1825,13 @@ predicate dynamic_invariant13(temp___expr_476: us_rep2,
 predicate dynamic_invariant14(temp___expr_521: int, temp___is_init_517: bool,
   temp___skip_constant_518: bool, temp___do_toplevel_519: bool,
   temp___do_typ_inv_520: bool) = (((temp___is_init_517 = true) or
-  (1 <= 100)) -> in_range8(temp___expr_521))
+  (1 <= 100)) -> in_range11(temp___expr_521))
 
 predicate dynamic_invariant15(temp___expr_572: us_rep,
   temp___is_init_568: bool, temp___skip_constant_569: bool,
   temp___do_toplevel_570: bool, temp___do_typ_inv_571: bool) =
-  (((not (temp___skip_constant_569 = true)) -> in_range11(r26b,
-  temp___expr_572)) and
+  (((not (temp___skip_constant_569 = true)) -> in_range4(r26b,
+  (temp___expr_572).us_split_discrs1)) and
   (with_default__ok_record__rec_with_bad_discr__f2__pred(temp___expr_572) ->
   (((temp___is_init_568 = true) or (first <= 2147483647)) ->
   dynamic_property(first, 2147483647,

@@ -163,6 +163,9 @@ function bool_eq2(a: us_rep1, b: us_rep1) : bool =
   (bool_eq1(((a).us_split_fields1).rec__lexer__token__name,
   ((b).us_split_fields1).rec__lexer__token__name) = true))) then true else false)
 
+predicate in_range1(rec__lexer__token__kind1: int, a: us_split_discrs) =
+  (rec__lexer__token__kind1 = to_rep((a).rec__lexer__token__kind))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -222,9 +225,6 @@ logic attr__ATTRIBUTE_ADDRESS : int
 predicate default_initial_assumption(temp___expr_195: us_rep1,
   temp___skip_top_level_196: bool) =
   (to_rep(((temp___expr_195).us_split_discrs1).rec__lexer__token__kind) = 1)
-
-predicate in_range1(rec__lexer__token__kind1: int, a: us_rep1) =
-  (rec__lexer__token__kind1 = to_rep(((a).us_split_discrs1).rec__lexer__token__kind))
 
 logic value__size2 : int
 

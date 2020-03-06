@@ -542,9 +542,9 @@ axiom search_range__post_axiom :
   (((to_rep(((result).us_split_fields1).rec__dynamic_types__search__result_type__result) = 0) and
   (forall i:int. (((from <= i) and
   (i <= to_rep1((((result).us_split_fields1).rec__dynamic_types__search__result_type__from[1])))) ->
-  (not (to_rep((to_array(a)[i])) = c))))) or
-  (((first1(a) <= to_rep(((result).us_split_fields1).rec__dynamic_types__search__result_type__result)) and
-  (to_rep(((result).us_split_fields1).rec__dynamic_types__search__result_type__result) <= last1(a))) and
+  (not (to_rep((to_array(a)[i])) = c))))) or ((let temp___207 =
+  to_rep(((result).us_split_fields1).rec__dynamic_types__search__result_type__result)
+  : int in ((first1(a) <= temp___207) and (temp___207 <= last1(a)))) and
   (to_rep((to_array(a)[to_rep(((result).us_split_fields1).rec__dynamic_types__search__result_type__result)])) = c)))))))
 
 axiom search_range__post_axiom1 :

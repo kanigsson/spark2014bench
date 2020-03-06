@@ -3932,11 +3932,11 @@ goal defqtvc :
   (forall x:int. ((x = 0) ->
   (forall o2:int.
   ((to_rep4((cur_piece__split_fields).rec__patris__piece__d) = o2) ->
-  (forall temp___891:int.
-  ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___891) ->
-  (((3 <= temp___891) and (temp___891 <= 7)) ->
+  (forall temp___900:int.
+  ((to_rep1((cur_piece__split_fields).rec__patris__piece__s) = temp___900) ->
+  (((3 <= temp___900) and (temp___900 <= 7)) ->
   (forall spark__branch2:bool.
-  ((spark__branch2 = get(get1(possible_three_shapes, temp___891, o2), y,
+  ((spark__branch2 = get(get1(possible_three_shapes, temp___900, o2), y,
   x)) -> ((spark__branch2 = true) ->
   (forall o3:int.
   ((to_rep3((cur_piece__split_fields).rec__patris__piece__y) = o3) ->

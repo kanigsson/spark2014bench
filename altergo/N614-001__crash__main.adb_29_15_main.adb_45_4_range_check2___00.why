@@ -869,65 +869,65 @@ logic main__x__aggregate_def : int, int, int -> (int,integer) farray
 
 logic main__part__aggregate_def : int -> (int,positive) farray
 
-logic temp___String_Literal_336 : unit -> (int,character) farray
+logic temp___String_Literal_338 : unit -> (int,character) farray
 
-axiom temp___String_Literal_336__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_336(us_void_param)].
-  (to_rep((temp___String_Literal_336(us_void_param)[1])) = 123))
+axiom temp___String_Literal_338__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_338(us_void_param)].
+  (to_rep((temp___String_Literal_338(us_void_param)[1])) = 123))
 
-axiom temp___String_Literal_336__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_336(us_void_param)].
-  (to_rep((temp___String_Literal_336(us_void_param)[2])) = 32))
-
-logic temp___String_Literal_339 : unit -> (int,character) farray
-
-axiom temp___String_Literal_339__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_339(us_void_param)].
-  (to_rep((temp___String_Literal_339(us_void_param)[1])) = 32))
-
-axiom temp___String_Literal_339__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_339(us_void_param)].
-  (to_rep((temp___String_Literal_339(us_void_param)[2])) = 125))
+axiom temp___String_Literal_338__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_338(us_void_param)].
+  (to_rep((temp___String_Literal_338(us_void_param)[2])) = 32))
 
 logic temp___String_Literal_341 : unit -> (int,character) farray
 
 axiom temp___String_Literal_341__def_axiom :
   (forall us_void_param:unit [temp___String_Literal_341(us_void_param)].
-  (to_rep((temp___String_Literal_341(us_void_param)[1])) = 123))
+  (to_rep((temp___String_Literal_341(us_void_param)[1])) = 32))
 
 axiom temp___String_Literal_341__def_axiom1 :
   (forall us_void_param:unit [temp___String_Literal_341(us_void_param)].
-  (to_rep((temp___String_Literal_341(us_void_param)[2])) = 32))
+  (to_rep((temp___String_Literal_341(us_void_param)[2])) = 125))
 
-logic temp___String_Literal_344 : unit -> (int,character) farray
+logic temp___String_Literal_343 : unit -> (int,character) farray
 
-axiom temp___String_Literal_344__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_344(us_void_param)].
-  (to_rep((temp___String_Literal_344(us_void_param)[1])) = 32))
+axiom temp___String_Literal_343__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_343(us_void_param)].
+  (to_rep((temp___String_Literal_343(us_void_param)[1])) = 123))
 
-axiom temp___String_Literal_344__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_344(us_void_param)].
-  (to_rep((temp___String_Literal_344(us_void_param)[2])) = 125))
+axiom temp___String_Literal_343__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_343(us_void_param)].
+  (to_rep((temp___String_Literal_343(us_void_param)[2])) = 32))
 
-logic temp___String_Literal_347 : unit -> (int,character) farray
+logic temp___String_Literal_346 : unit -> (int,character) farray
 
-axiom temp___String_Literal_347__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_347(us_void_param)].
-  (to_rep((temp___String_Literal_347(us_void_param)[1])) = 91))
+axiom temp___String_Literal_346__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_346(us_void_param)].
+  (to_rep((temp___String_Literal_346(us_void_param)[1])) = 32))
 
-axiom temp___String_Literal_347__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_347(us_void_param)].
-  (to_rep((temp___String_Literal_347(us_void_param)[2])) = 32))
+axiom temp___String_Literal_346__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_346(us_void_param)].
+  (to_rep((temp___String_Literal_346(us_void_param)[2])) = 125))
 
-logic temp___String_Literal_353 : unit -> (int,character) farray
+logic temp___String_Literal_349 : unit -> (int,character) farray
 
-axiom temp___String_Literal_353__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_353(us_void_param)].
-  (to_rep((temp___String_Literal_353(us_void_param)[1])) = 32))
+axiom temp___String_Literal_349__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_349(us_void_param)].
+  (to_rep((temp___String_Literal_349(us_void_param)[1])) = 91))
 
-axiom temp___String_Literal_353__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_353(us_void_param)].
-  (to_rep((temp___String_Literal_353(us_void_param)[2])) = 93))
+axiom temp___String_Literal_349__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_349(us_void_param)].
+  (to_rep((temp___String_Literal_349(us_void_param)[2])) = 32))
+
+logic temp___String_Literal_355 : unit -> (int,character) farray
+
+axiom temp___String_Literal_355__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_355(us_void_param)].
+  (to_rep((temp___String_Literal_355(us_void_param)[1])) = 32))
+
+axiom temp___String_Literal_355__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_355(us_void_param)].
+  (to_rep((temp___String_Literal_355(us_void_param)[2])) = 93))
 
 predicate dynamic_invariant2(temp___expr_46: int, temp___is_init_42: bool,
   temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
@@ -970,108 +970,108 @@ logic rliteral5 : integer
 axiom rliteral_axiom5 : (integerqtint(rliteral5) = 11)
 
 axiom def_axiom :
-  (forall temp___318:int. forall temp___319:int. forall temp___320:int.
-  forall temp___321:int. forall temp___322:int. forall temp___323:int.
-  (((dynamic_invariant1(temp___318, true, true, true, true) and
-  dynamic_invariant1(temp___319, true, true, true, true)) and
-  ((dynamic_invariant1(temp___320, true, true, true, true) and
+  (forall temp___320:int. forall temp___321:int. forall temp___322:int.
+  forall temp___323:int. forall temp___324:int. forall temp___325:int.
+  (((dynamic_invariant1(temp___320, true, true, true, true) and
   dynamic_invariant1(temp___321, true, true, true, true)) and
-  (dynamic_invariant1(temp___322, true, true, true, true) and
-  dynamic_invariant1(temp___323, true, true, true, true)))) ->
-  ((main__a__aggregate_def(temp___318, temp___319, temp___320, temp___321,
-  temp___322, temp___323)[1]) = rliteral)))
+  ((dynamic_invariant1(temp___322, true, true, true, true) and
+  dynamic_invariant1(temp___323, true, true, true, true)) and
+  (dynamic_invariant1(temp___324, true, true, true, true) and
+  dynamic_invariant1(temp___325, true, true, true, true)))) ->
+  ((main__a__aggregate_def(temp___320, temp___321, temp___322, temp___323,
+  temp___324, temp___325)[1]) = rliteral)))
 
 axiom def_axiom1 :
-  (forall temp___318:int. forall temp___319:int. forall temp___320:int.
-  forall temp___321:int. forall temp___322:int. forall temp___323:int.
-  (((dynamic_invariant1(temp___318, true, true, true, true) and
-  dynamic_invariant1(temp___319, true, true, true, true)) and
-  ((dynamic_invariant1(temp___320, true, true, true, true) and
+  (forall temp___320:int. forall temp___321:int. forall temp___322:int.
+  forall temp___323:int. forall temp___324:int. forall temp___325:int.
+  (((dynamic_invariant1(temp___320, true, true, true, true) and
   dynamic_invariant1(temp___321, true, true, true, true)) and
-  (dynamic_invariant1(temp___322, true, true, true, true) and
-  dynamic_invariant1(temp___323, true, true, true, true)))) ->
-  ((main__a__aggregate_def(temp___318, temp___319, temp___320, temp___321,
-  temp___322, temp___323)[2]) = rliteral1)))
+  ((dynamic_invariant1(temp___322, true, true, true, true) and
+  dynamic_invariant1(temp___323, true, true, true, true)) and
+  (dynamic_invariant1(temp___324, true, true, true, true) and
+  dynamic_invariant1(temp___325, true, true, true, true)))) ->
+  ((main__a__aggregate_def(temp___320, temp___321, temp___322, temp___323,
+  temp___324, temp___325)[2]) = rliteral1)))
 
 axiom def_axiom2 :
-  (forall temp___318:int. forall temp___319:int. forall temp___320:int.
-  forall temp___321:int. forall temp___322:int. forall temp___323:int.
-  (((dynamic_invariant1(temp___318, true, true, true, true) and
-  dynamic_invariant1(temp___319, true, true, true, true)) and
-  ((dynamic_invariant1(temp___320, true, true, true, true) and
+  (forall temp___320:int. forall temp___321:int. forall temp___322:int.
+  forall temp___323:int. forall temp___324:int. forall temp___325:int.
+  (((dynamic_invariant1(temp___320, true, true, true, true) and
   dynamic_invariant1(temp___321, true, true, true, true)) and
-  (dynamic_invariant1(temp___322, true, true, true, true) and
-  dynamic_invariant1(temp___323, true, true, true, true)))) ->
-  ((main__a__aggregate_def(temp___318, temp___319, temp___320, temp___321,
-  temp___322, temp___323)[3]) = rliteral2)))
+  ((dynamic_invariant1(temp___322, true, true, true, true) and
+  dynamic_invariant1(temp___323, true, true, true, true)) and
+  (dynamic_invariant1(temp___324, true, true, true, true) and
+  dynamic_invariant1(temp___325, true, true, true, true)))) ->
+  ((main__a__aggregate_def(temp___320, temp___321, temp___322, temp___323,
+  temp___324, temp___325)[3]) = rliteral2)))
 
 axiom def_axiom3 :
-  (forall temp___318:int. forall temp___319:int. forall temp___320:int.
-  forall temp___321:int. forall temp___322:int. forall temp___323:int.
-  (((dynamic_invariant1(temp___318, true, true, true, true) and
-  dynamic_invariant1(temp___319, true, true, true, true)) and
-  ((dynamic_invariant1(temp___320, true, true, true, true) and
+  (forall temp___320:int. forall temp___321:int. forall temp___322:int.
+  forall temp___323:int. forall temp___324:int. forall temp___325:int.
+  (((dynamic_invariant1(temp___320, true, true, true, true) and
   dynamic_invariant1(temp___321, true, true, true, true)) and
-  (dynamic_invariant1(temp___322, true, true, true, true) and
-  dynamic_invariant1(temp___323, true, true, true, true)))) ->
-  ((main__a__aggregate_def(temp___318, temp___319, temp___320, temp___321,
-  temp___322, temp___323)[4]) = rliteral3)))
+  ((dynamic_invariant1(temp___322, true, true, true, true) and
+  dynamic_invariant1(temp___323, true, true, true, true)) and
+  (dynamic_invariant1(temp___324, true, true, true, true) and
+  dynamic_invariant1(temp___325, true, true, true, true)))) ->
+  ((main__a__aggregate_def(temp___320, temp___321, temp___322, temp___323,
+  temp___324, temp___325)[4]) = rliteral3)))
 
 axiom def_axiom4 :
-  (forall temp___318:int. forall temp___319:int. forall temp___320:int.
-  forall temp___321:int. forall temp___322:int. forall temp___323:int.
-  (((dynamic_invariant1(temp___318, true, true, true, true) and
-  dynamic_invariant1(temp___319, true, true, true, true)) and
-  ((dynamic_invariant1(temp___320, true, true, true, true) and
+  (forall temp___320:int. forall temp___321:int. forall temp___322:int.
+  forall temp___323:int. forall temp___324:int. forall temp___325:int.
+  (((dynamic_invariant1(temp___320, true, true, true, true) and
   dynamic_invariant1(temp___321, true, true, true, true)) and
-  (dynamic_invariant1(temp___322, true, true, true, true) and
-  dynamic_invariant1(temp___323, true, true, true, true)))) ->
-  ((main__a__aggregate_def(temp___318, temp___319, temp___320, temp___321,
-  temp___322, temp___323)[5]) = rliteral4)))
+  ((dynamic_invariant1(temp___322, true, true, true, true) and
+  dynamic_invariant1(temp___323, true, true, true, true)) and
+  (dynamic_invariant1(temp___324, true, true, true, true) and
+  dynamic_invariant1(temp___325, true, true, true, true)))) ->
+  ((main__a__aggregate_def(temp___320, temp___321, temp___322, temp___323,
+  temp___324, temp___325)[5]) = rliteral4)))
 
 axiom def_axiom5 :
-  (forall temp___318:int. forall temp___319:int. forall temp___320:int.
-  forall temp___321:int. forall temp___322:int. forall temp___323:int.
-  (((dynamic_invariant1(temp___318, true, true, true, true) and
-  dynamic_invariant1(temp___319, true, true, true, true)) and
-  ((dynamic_invariant1(temp___320, true, true, true, true) and
+  (forall temp___320:int. forall temp___321:int. forall temp___322:int.
+  forall temp___323:int. forall temp___324:int. forall temp___325:int.
+  (((dynamic_invariant1(temp___320, true, true, true, true) and
   dynamic_invariant1(temp___321, true, true, true, true)) and
-  (dynamic_invariant1(temp___322, true, true, true, true) and
-  dynamic_invariant1(temp___323, true, true, true, true)))) ->
-  ((main__a__aggregate_def(temp___318, temp___319, temp___320, temp___321,
-  temp___322, temp___323)[6]) = rliteral5)))
+  ((dynamic_invariant1(temp___322, true, true, true, true) and
+  dynamic_invariant1(temp___323, true, true, true, true)) and
+  (dynamic_invariant1(temp___324, true, true, true, true) and
+  dynamic_invariant1(temp___325, true, true, true, true)))) ->
+  ((main__a__aggregate_def(temp___320, temp___321, temp___322, temp___323,
+  temp___324, temp___325)[6]) = rliteral5)))
 
 axiom def_axiom6 :
-  (forall temp___327:int. forall temp___328:int. forall temp___329:int.
-  (((dynamic_invariant1(temp___327, true, true, true, true) and
-  dynamic_invariant1(temp___328, true, true, true, true)) and
-  dynamic_invariant1(temp___329, true, true, true, true)) ->
-  ((main__x__aggregate_def(temp___327, temp___328,
-  temp___329)[1]) = rliteral5)))
+  (forall temp___329:int. forall temp___330:int. forall temp___331:int.
+  (((dynamic_invariant1(temp___329, true, true, true, true) and
+  dynamic_invariant1(temp___330, true, true, true, true)) and
+  dynamic_invariant1(temp___331, true, true, true, true)) ->
+  ((main__x__aggregate_def(temp___329, temp___330,
+  temp___331)[1]) = rliteral5)))
 
 axiom def_axiom7 :
-  (forall temp___327:int. forall temp___328:int. forall temp___329:int.
-  (((dynamic_invariant1(temp___327, true, true, true, true) and
-  dynamic_invariant1(temp___328, true, true, true, true)) and
-  dynamic_invariant1(temp___329, true, true, true, true)) ->
-  ((main__x__aggregate_def(temp___327, temp___328,
-  temp___329)[2]) = rliteral)))
+  (forall temp___329:int. forall temp___330:int. forall temp___331:int.
+  (((dynamic_invariant1(temp___329, true, true, true, true) and
+  dynamic_invariant1(temp___330, true, true, true, true)) and
+  dynamic_invariant1(temp___331, true, true, true, true)) ->
+  ((main__x__aggregate_def(temp___329, temp___330,
+  temp___331)[2]) = rliteral)))
 
 axiom def_axiom8 :
-  (forall temp___327:int. forall temp___328:int. forall temp___329:int.
-  (((dynamic_invariant1(temp___327, true, true, true, true) and
-  dynamic_invariant1(temp___328, true, true, true, true)) and
-  dynamic_invariant1(temp___329, true, true, true, true)) ->
-  ((main__x__aggregate_def(temp___327, temp___328,
-  temp___329)[3]) = rliteral4)))
+  (forall temp___329:int. forall temp___330:int. forall temp___331:int.
+  (((dynamic_invariant1(temp___329, true, true, true, true) and
+  dynamic_invariant1(temp___330, true, true, true, true)) and
+  dynamic_invariant1(temp___331, true, true, true, true)) ->
+  ((main__x__aggregate_def(temp___329, temp___330,
+  temp___331)[3]) = rliteral4)))
 
 logic rliteral6 : positive
 
 axiom rliteral_axiom6 : (positiveqtint(rliteral6) = 4)
 
 axiom def_axiom9 :
-  (forall temp___333:int. (dynamic_invariant2(temp___333, true, true, true,
-  true) -> ((main__part__aggregate_def(temp___333)[1]) = rliteral6)))
+  (forall temp___335:int. (dynamic_invariant2(temp___335, true, true, true,
+  true) -> ((main__part__aggregate_def(temp___335)[1]) = rliteral6)))
 
 predicate dynamic_invariant5(temp___expr_200: us_t1,
   temp___is_init_196: bool, temp___skip_constant_197: bool,
@@ -1202,10 +1202,9 @@ axiom is_partition__def_axiom5 :
   (forall s:us_t1.
   (forall p:us_t2 [is_partition(s, p)]. ((((length2(p) <  length1(s)) and
   (ascending(p) = true)) and
-  (forall i:int. (((first5(p) <= i) and (i <= last5(p))) ->
-  ((first3(s) <= to_rep2((to_array2(p)[i]))) and
-  (to_rep2((to_array2(p)[i])) <= last3(s)))))) -> (is_partition(s,
-  p) = true))))
+  (forall i:int. (((first5(p) <= i) and (i <= last5(p))) -> (let temp___257 =
+  to_rep2((to_array2(p)[i])) : int in ((first3(s) <= temp___257) and
+  (temp___257 <= last3(s))))))) -> (is_partition(s, p) = true))))
 
 axiom disjoint_or_subset__def_axiom :
   (forall a:us_t1. forall b:us_t1. disjoint__function_guard(disjoint(a, b),
@@ -1375,11 +1374,11 @@ goal defqtvc :
   forall standard_out2:us_private. forall standard_err2:us_private.
   forall current_in2:us_private. forall current_out2:us_private.
   forall current_err2:us_private.
-  ((exists temp___337:int. ((to_rep1(a__first) = temp___337) and
-   (exists temp___338:int. ((to_rep1(a__last) = temp___338) and
-   (exists c28b:int. ((c28b = temp___337) and
-   (if (andb((if (temp___337 <= c28b) then true else false),
-   (if (c28b <= temp___338) then true else false)) = true) then (exists standard_in3:us_private.
+  ((exists temp___339:int. ((to_rep1(a__first) = temp___339) and
+   (exists temp___340:int. ((to_rep1(a__last) = temp___340) and
+   (exists c28b:int. ((c28b = temp___339) and
+   (if (andb((if (temp___339 <= c28b) then true else false),
+   (if (c28b <= temp___340) then true else false)) = true) then (exists standard_in3:us_private.
                                                                 exists file_system3:us_private.
                                                                 exists standard_out3:us_private.
                                                                 exists standard_err3:us_private.
@@ -1419,7 +1418,7 @@ goal defqtvc :
                                                                 current_in2,
                                                                 current_out2,
                                                                 current_err2))) and
-                                                                (c28b1 = temp___338))))))) else (((((((standard_in2 = standard_in1) and
+                                                                (c28b1 = temp___340))))))) else (((((((standard_in2 = standard_in1) and
    (file_system2 = file_system1)) and (standard_out2 = standard_out1)) and
    (standard_err2 = standard_err1)) and (current_in2 = current_in1)) and
    (current_out2 = current_out1)) and (current_err2 = current_err1))))))))) ->
@@ -1524,10 +1523,10 @@ goal defqtvc :
   to_rep1(o1), ((to_rep1(o1) + count2) - 1))),
   last5(of_array2(part__refine__np, to_rep1(o1),
   ((to_rep1(o1) + count2) - 1)))), i), of_array1(x, o3, o2)) = true)))) and
-  dynamic_invariant(count2, true, true, true, true)) -> (let temp___340 =
+  dynamic_invariant(count2, true, true, true, true)) -> (let temp___342 =
   of_array2(part__refine__np, 1, 5) : us_t2 in
-  (forall np:(int,positive) farray. ((np = slide2(to_array2(temp___340),
-  first5(temp___340), 1)) ->
+  (forall np:(int,positive) farray. ((np = slide2(to_array2(temp___342),
+  first5(temp___342), 1)) ->
   (forall standard_in4:us_private. forall file_system4:us_private.
   forall standard_out4:us_private. forall standard_err4:us_private.
   forall current_in4:us_private. forall current_out4:us_private.
@@ -1543,11 +1542,11 @@ goal defqtvc :
   forall standard_out5:us_private. forall standard_err5:us_private.
   forall current_in5:us_private. forall current_out5:us_private.
   forall current_err5:us_private.
-  ((exists temp___342:int. ((to_rep1(a__first) = temp___342) and
-   (exists temp___343:int. ((to_rep1(a__last) = temp___343) and
-   (exists c34b:int. ((c34b = temp___342) and
-   (if (andb((if (temp___342 <= c34b) then true else false),
-   (if (c34b <= temp___343) then true else false)) = true) then (exists standard_in6:us_private.
+  ((exists temp___344:int. ((to_rep1(a__first) = temp___344) and
+   (exists temp___345:int. ((to_rep1(a__last) = temp___345) and
+   (exists c34b:int. ((c34b = temp___344) and
+   (if (andb((if (temp___344 <= c34b) then true else false),
+   (if (c34b <= temp___345) then true else false)) = true) then (exists standard_in6:us_private.
                                                                 exists file_system6:us_private.
                                                                 exists standard_out6:us_private.
                                                                 exists standard_err6:us_private.
@@ -1587,7 +1586,7 @@ goal defqtvc :
                                                                 current_in5,
                                                                 current_out5,
                                                                 current_err5))) and
-                                                                (c34b1 = temp___343))))))) else (((((((standard_in5 = standard_in4) and
+                                                                (c34b1 = temp___345))))))) else (((((((standard_in5 = standard_in4) and
    (file_system5 = file_system4)) and (standard_out5 = standard_out4)) and
    (standard_err5 = standard_err4)) and (current_in5 = current_in4)) and
    (current_out5 = current_out4)) and (current_err5 = current_err4))))))))) ->

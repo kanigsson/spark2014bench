@@ -516,20 +516,20 @@ axiom sign__def_axiom :
   (forall x:int [sign(x)]. (dynamic_invariant(x, true, true, true, true) ->
   (sign(x) = (if (x <  0) then 0 else (if (x = 0) then 1 else 2)))))
 
-predicate dynamic_invariant7(temp___expr_231: int, temp___is_init_227: bool,
-  temp___skip_constant_228: bool, temp___do_toplevel_229: bool,
-  temp___do_typ_inv_230: bool) = (((temp___is_init_227 = true) or
-  (0 <= 50)) -> in_range6(temp___expr_231))
+predicate dynamic_invariant7(temp___expr_232: int, temp___is_init_228: bool,
+  temp___skip_constant_229: bool, temp___do_toplevel_230: bool,
+  temp___do_typ_inv_231: bool) = (((temp___is_init_228 = true) or
+  (0 <= 50)) -> in_range6(temp___expr_232))
 
-predicate dynamic_invariant8(temp___expr_238: int, temp___is_init_234: bool,
-  temp___skip_constant_235: bool, temp___do_toplevel_236: bool,
-  temp___do_typ_inv_237: bool) = (((temp___is_init_234 = true) or
-  (1 <= 50)) -> in_range7(temp___expr_238))
+predicate dynamic_invariant8(temp___expr_239: int, temp___is_init_235: bool,
+  temp___skip_constant_236: bool, temp___do_toplevel_237: bool,
+  temp___do_typ_inv_238: bool) = (((temp___is_init_235 = true) or
+  (1 <= 50)) -> in_range7(temp___expr_239))
 
-predicate dynamic_invariant9(temp___expr_245: int, temp___is_init_241: bool,
-  temp___skip_constant_242: bool, temp___do_toplevel_243: bool,
-  temp___do_typ_inv_244: bool) = (((temp___is_init_241 = true) or
-  (0 <= 5)) -> in_range8(temp___expr_245))
+predicate dynamic_invariant9(temp___expr_246: int, temp___is_init_242: bool,
+  temp___skip_constant_243: bool, temp___do_toplevel_244: bool,
+  temp___do_typ_inv_245: bool) = (((temp___is_init_242 = true) or
+  (0 <= 5)) -> in_range8(temp___expr_246))
 
 axiom cdiv_cases :
   (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((0 <  d) -> (div(n,

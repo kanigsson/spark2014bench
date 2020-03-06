@@ -430,9 +430,10 @@ goal defqtvc : (dynamic_property(1, 2147483647, to_rep1(s1__first),
   (dynamic_invariant1(from2, true, false, true, true) ->
   (dynamic_invariant(n, true, false, true, true) -> (((not (n = 0)) ->
   (((((to_rep1(s1__first) <= from1) and (from1 <= to_rep1(s1__last))) and
-  ((to_rep1(s1__first) <= ((from1 + n) - 1)) and
-  (((from1 + n) - 1) <= to_rep1(s1__last)))) and ((first1(s2) <= from2) and
-  (from2 <= last1(s2)))) and ((first1(s2) <= ((from2 + n) - 1)) and
-  (((from2 + n) - 1) <= last1(s2))))) -> (((0 + (if (bool_eq(n,
-  0) = true) then 1 else 0)) + (if (bool_ne(n,
+  (let temp___415 = ((from1 + n) - 1) : int in
+  ((to_rep1(s1__first) <= temp___415) and
+  (temp___415 <= to_rep1(s1__last))))) and ((first1(s2) <= from2) and
+  (from2 <= last1(s2)))) and (let temp___416 = ((from2 + n) - 1) : int in
+  ((first1(s2) <= temp___416) and (temp___416 <= last1(s2)))))) ->
+  (((0 + (if (bool_eq(n, 0) = true) then 1 else 0)) + (if (bool_ne(n,
   0) = true) then 1 else 0)) <= 1)))))))

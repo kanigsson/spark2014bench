@@ -375,6 +375,10 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range4(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
+  a: us_split_discrs) =
+  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep((a).rec__ada___pragmarc__b_strings__b_string__max_length))
+
 logic value__size1 : int
 
 logic object__size1 : int

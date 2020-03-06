@@ -206,13 +206,13 @@ goal defqtvc :
   (forall flag:bool. forall num:int. (dynamic_invariant(num, true, false,
   true, true) ->
   ((forall flag1:bool. forall num1:int.
-   state_a__function_guard(state_a(flag1, num1), flag1, num1)) ->
-  ((forall flag1:bool. forall num1:int.
    state_d__function_guard(state_d(flag1, num1), flag1, num1)) ->
   ((forall flag1:bool. forall num1:int.
    state_c__function_guard(state_c(flag1, num1), flag1, num1)) ->
   ((forall flag1:bool. forall num1:int.
    state_b__function_guard(state_b(flag1, num1), flag1, num1)) ->
+  ((forall flag1:bool. forall num1:int.
+   state_a__function_guard(state_a(flag1, num1), flag1, num1)) ->
   (forall flag1:bool. forall num1:int. ((let o = state_a(flag, num) : bool in
   ((state_a__function_guard(o, flag, num) and ((o = true) <->
   ((flag = true) and (0 <  num)))) and

@@ -406,7 +406,7 @@ predicate dynamic_invariant(temp___expr_165: us_t, temp___is_init_161: bool,
 
 predicate dynamic_predicate(temp___168: us_t) = (first1(temp___168) = 1)
 
-logic temp_____aggregate_def_350 : int -> (int,positive) farray
+logic temp_____aggregate_def_361 : int -> (int,positive) farray
 
 predicate dynamic_invariant1(temp___expr_46: int, temp___is_init_42: bool,
   temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
@@ -424,20 +424,20 @@ predicate dynamic_invariant3(temp___expr_18: int, temp___is_init_14: bool,
   ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
 
 axiom def_axiom :
-  (forall temp___352:int. (dynamic_invariant1(temp___352, true, true, true,
+  (forall temp___363:int. (dynamic_invariant1(temp___363, true, true, true,
   true) ->
-  (forall temp___353:int.
-  (to_rep((temp_____aggregate_def_350(temp___352)[temp___353])) = temp___352))))
+  (forall temp___364:int.
+  (to_rep((temp_____aggregate_def_361(temp___363)[temp___364])) = temp___363))))
 
  (* File "string_search.ads", line 45, characters 0-0 *)
 goal defqtvc : (dynamic_invariant(needle, true, false, true, true) ->
   ((length(needle) <  2147483647) -> (let o = length(needle) : int in
   (in_range1(o) -> (let o1 = (o + 1) : int in (in_range1(o1) ->
   (forall bad_shift:(int,positive) farray.
-  ((bad_shift = temp_____aggregate_def_350(o1)) -> (let temp___354 =
+  ((bad_shift = temp_____aggregate_def_361(o1)) -> (let temp___365 =
   first1(needle) : int in
-  (forall j:int. ((j = temp___354) ->
-  ((andb((if (temp___354 <= j) then true else false),
+  (forall j:int. ((j = temp___365) ->
+  ((andb((if (temp___365 <= j) then true else false),
   (if (j <= last1(needle)) then true else false)) = true) -> (let o2 =
   length(needle) : int in (in_range1(o2) -> (let o3 = (o2 - j) : int in
   (in_range1(o3) -> (let o4 = (o3 + 1) : int in (in_range1(o4) ->
@@ -446,9 +446,9 @@ goal defqtvc : (dynamic_invariant(needle, true, false, true, true) ->
   (forall o6:int. ((to_rep1((to_array(needle)[j])) = o6) ->
   (forall bad_shift1:(int,positive) farray.
   ((bad_shift1 = (bad_shift[o6 <- o5])) ->
-  ((forall c:int. (((0 <= c) and (c <= 255)) ->
-   ((1 <= to_rep((bad_shift1[c]))) and
-   (to_rep((bad_shift1[c])) <= (length(needle) + 1))))) ->
+  ((forall c:int. (((0 <= c) and (c <= 255)) -> (let temp___375 =
+   to_rep((bad_shift1[c])) : int in ((1 <= temp___375) and
+   (temp___375 <= (length(needle) + 1)))))) ->
   (forall c:int. (((0 <= c) and (c <= 255)) ->
   ((to_rep((bad_shift1[c])) = (length(needle) + 1)) ->
   (forall k:int. (((1 <= k) and (k <= j)) ->

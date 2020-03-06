@@ -221,6 +221,10 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (extended_returns__record_t__d__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__extended_returns__record_t__d) = to_rep(((b).us_split_fields1).rec__extended_returns__record_t__d)))))) then true else false)
 
+predicate in_range2(rec__extended_returns__record_t__discr1: int,
+  a: us_split_discrs) =
+  (rec__extended_returns__record_t__discr1 = to_rep1((a).rec__extended_returns__record_t__discr))
+
 logic value__size : int
 
 logic object__size : int
@@ -317,10 +321,6 @@ type record_t__ref = { record_t__content : us_rep
 
 function record_t__ref_record_t__content__projection(a: record_t__ref) : us_rep =
   (a).record_t__content
-
-predicate in_range2(rec__extended_returns__record_t__discr1: int,
-  a: us_rep) =
-  (rec__extended_returns__record_t__discr1 = to_rep1(((a).us_split_discrs1).rec__extended_returns__record_t__discr))
 
 logic value__size1 : int
 
@@ -429,7 +429,7 @@ predicate dynamic_invariant2(temp___expr_174: us_rep,
   temp___is_init_170: bool, temp___skip_constant_171: bool,
   temp___do_toplevel_172: bool, temp___do_typ_inv_173: bool) =
   ((not (temp___skip_constant_171 = true)) -> in_range2(discr,
-  temp___expr_174))
+  (temp___expr_174).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_176: us_rep,
   temp___skip_top_level_177: bool) =

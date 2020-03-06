@@ -946,61 +946,6 @@ logic user_eq5 : us_rep, us_rep -> bool
 
 logic dummy5 : us_rep
 
-type vector__ref = { vector__content : us_rep
-}
-
-function vector__ref_vector__content__projection(a: vector__ref) : us_rep =
-  (a).vector__content
-
-function to_rep3(x: capacity_range) : int = capacity_rangeqtint(x)
-
-logic of_rep3 : int -> capacity_range
-
-axiom inversion_axiom3 :
-  (forall x:capacity_range [to_rep3(x)]. (of_rep3(to_rep3(x)) = x))
-
-axiom range_axiom3 :
-  (forall x:capacity_range [to_rep3(x)]. in_range4(to_rep3(x)))
-
-axiom coerce_axiom3 :
-  (forall x:int [to_rep3(of_rep3(x))]. (in_range4(x) ->
-  (to_rep3(of_rep3(x)) = x)))
-
-predicate in_range5(rec__names__char_tables__vector__capacity1: int,
-  a: us_rep) =
-  (rec__names__char_tables__vector__capacity1 = to_rep3(((a).us_split_discrs1).rec__names__char_tables__vector__capacity))
-
-logic value__size2 : int
-
-logic object__size2 : int
-
-logic alignment2 : int
-
-axiom value__size_axiom2 : (0 <= value__size2)
-
-axiom object__size_axiom2 : (0 <= object__size2)
-
-axiom alignment_axiom2 : (0 <= alignment2)
-
-logic names__char_tables__vector__capacity__first__bit1 : int
-
-logic names__char_tables__vector__capacity__last__bit1 : int
-
-logic names__char_tables__vector__capacity__position1 : int
-
-axiom names__char_tables__vector__capacity__first__bit_axiom1 :
-  (0 <= names__char_tables__vector__capacity__first__bit1)
-
-axiom names__char_tables__vector__capacity__last__bit_axiom1 :
-  (names__char_tables__vector__capacity__first__bit1 <  names__char_tables__vector__capacity__last__bit1)
-
-axiom names__char_tables__vector__capacity__position_axiom1 :
-  (0 <= names__char_tables__vector__capacity__position1)
-
-logic user_eq6 : us_rep, us_rep -> bool
-
-logic dummy6 : us_rep
-
 type tchar_tableS__ref = { tchar_tableS__content : us_rep
 }
 
@@ -1017,7 +962,7 @@ axiom capacity_rangeqtaxiom2 :
 axiom capacity_rangeqtaxiom3 :
   (forall i:capacity_range1. (capacity_rangeqtint1(i) <= 2147483647))
 
-predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1027,9 +972,9 @@ logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
 
 logic attr__ATTRIBUTE_VALUE5 : us_image -> int
 
-logic user_eq7 : capacity_range1, capacity_range1 -> bool
+logic user_eq6 : capacity_range1, capacity_range1 -> bool
 
-logic dummy7 : capacity_range1
+logic dummy6 : capacity_range1
 
 type capacity_range__ref1 = { capacity_range__content1 : capacity_range1
 }
@@ -1076,17 +1021,17 @@ function us_rep___split_discrs__2__projection(a: us_rep1) : us_split_discrs2 =
 function us_rep___split_fields__3__projection(a: us_rep1) : us_split_fields2 =
   (a).us_split_fields3
 
-logic value__size3 : int
+logic value__size2 : int
 
-logic object__size3 : int
+logic object__size2 : int
 
-logic alignment3 : int
+logic alignment2 : int
 
-axiom value__size_axiom3 : (0 <= value__size3)
+axiom value__size_axiom2 : (0 <= value__size2)
 
-axiom object__size_axiom3 : (0 <= object__size3)
+axiom object__size_axiom2 : (0 <= object__size2)
 
-axiom alignment_axiom3 : (0 <= alignment3)
+axiom alignment_axiom2 : (0 <= alignment2)
 
 logic names__entry_tables__vector__capacity__first__bit : int
 
@@ -1103,15 +1048,103 @@ axiom names__entry_tables__vector__capacity__last__bit_axiom :
 axiom names__entry_tables__vector__capacity__position_axiom :
   (0 <= names__entry_tables__vector__capacity__position)
 
-logic user_eq8 : us_rep1, us_rep1 -> bool
+logic user_eq7 : us_rep1, us_rep1 -> bool
 
-logic dummy8 : us_rep1
+logic dummy7 : us_rep1
 
-type vector__ref1 = { vector__content1 : us_rep1
+type tentry_tableS__ref = { tentry_tableS__content : us_rep1
 }
 
-function vector__ref_vector__content__2__projection(a: vector__ref1) : us_rep1 =
-  (a).vector__content1
+function tentry_tableS__ref_tentry_tableS__content__projection(a: tentry_tableS__ref) : us_rep1 =
+  (a).tentry_tableS__content
+
+logic to_string : int, us_split_fields2, us_split_fields -> us_t
+
+logic to_string__function_guard : us_t, int, us_split_fields2,
+  us_split_fields -> prop
+
+function to_rep3(x: capacity_range) : int = capacity_rangeqtint(x)
+
+logic of_rep3 : int -> capacity_range
+
+axiom inversion_axiom3 :
+  (forall x:capacity_range [to_rep3(x)]. (of_rep3(to_rep3(x)) = x))
+
+axiom range_axiom3 :
+  (forall x:capacity_range [to_rep3(x)]. in_range4(to_rep3(x)))
+
+axiom coerce_axiom3 :
+  (forall x:int [to_rep3(of_rep3(x))]. (in_range4(x) ->
+  (to_rep3(of_rep3(x)) = x)))
+
+predicate in_range6(rec__names__char_tables__vector__capacity1: int,
+  a: us_split_discrs) =
+  (rec__names__char_tables__vector__capacity1 = to_rep3((a).rec__names__char_tables__vector__capacity))
+
+logic value__size3 : int
+
+logic object__size3 : int
+
+logic alignment3 : int
+
+axiom value__size_axiom3 : (0 <= value__size3)
+
+axiom object__size_axiom3 : (0 <= object__size3)
+
+axiom alignment_axiom3 : (0 <= alignment3)
+
+logic names__char_tables__vector__capacity__first__bit1 : int
+
+logic names__char_tables__vector__capacity__last__bit1 : int
+
+logic names__char_tables__vector__capacity__position1 : int
+
+axiom names__char_tables__vector__capacity__first__bit_axiom1 :
+  (0 <= names__char_tables__vector__capacity__first__bit1)
+
+axiom names__char_tables__vector__capacity__last__bit_axiom1 :
+  (names__char_tables__vector__capacity__first__bit1 <  names__char_tables__vector__capacity__last__bit1)
+
+axiom names__char_tables__vector__capacity__position_axiom1 :
+  (0 <= names__char_tables__vector__capacity__position1)
+
+logic user_eq8 : us_rep, us_rep -> bool
+
+logic dummy8 : us_rep
+
+type vector__ref = { vector__content : us_rep
+}
+
+function vector__ref_vector__content__projection(a: vector__ref) : us_rep =
+  (a).vector__content
+
+logic char_table__split_discrs : us_split_discrs
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic oeq : us_rep, us_rep -> bool
+
+logic oeq__function_guard : bool, us_rep, us_rep -> prop
+
+logic is_empty : us_rep -> bool
+
+logic is_empty__function_guard : bool, us_rep -> prop
+
+axiom user_eq__def_axiom :
+  (forall a:us_rep. forall b:us_rep [user_eq5(a, b)]. (user_eq5(a,
+  b) = oeq(a, b)))
+
+predicate dynamic_invariant1(temp___expr_415: us_rep,
+  temp___is_init_411: bool, temp___skip_constant_412: bool,
+  temp___do_toplevel_413: bool, temp___do_typ_inv_414: bool) =
+  ((not (temp___skip_constant_412 = true)) -> in_range6(1024,
+  (temp___expr_415).us_split_discrs1))
+
+predicate default_initial_assumption(temp___expr_417: us_rep,
+  temp___skip_top_level_418: bool) =
+  ((to_rep3(((temp___expr_417).us_split_discrs1).rec__names__char_tables__vector__capacity) = 1024) and
+  ((not (temp___skip_top_level_418 = true)) ->
+  (is_empty(temp___expr_417) = true)))
 
 function to_rep4(x: capacity_range1) : int = capacity_rangeqtint1(x)
 
@@ -1121,15 +1154,15 @@ axiom inversion_axiom4 :
   (forall x:capacity_range1 [to_rep4(x)]. (of_rep4(to_rep4(x)) = x))
 
 axiom range_axiom4 :
-  (forall x:capacity_range1 [to_rep4(x)]. in_range6(to_rep4(x)))
+  (forall x:capacity_range1 [to_rep4(x)]. in_range5(to_rep4(x)))
 
 axiom coerce_axiom4 :
-  (forall x:int [to_rep4(of_rep4(x))]. (in_range6(x) ->
+  (forall x:int [to_rep4(of_rep4(x))]. (in_range5(x) ->
   (to_rep4(of_rep4(x)) = x)))
 
 predicate in_range7(rec__names__entry_tables__vector__capacity1: int,
-  a: us_rep1) =
-  (rec__names__entry_tables__vector__capacity1 = to_rep4(((a).us_split_discrs3).rec__names__entry_tables__vector__capacity))
+  a: us_split_discrs2) =
+  (rec__names__entry_tables__vector__capacity1 = to_rep4((a).rec__names__entry_tables__vector__capacity))
 
 logic value__size4 : int
 
@@ -1162,44 +1195,11 @@ logic user_eq9 : us_rep1, us_rep1 -> bool
 
 logic dummy9 : us_rep1
 
-type tentry_tableS__ref = { tentry_tableS__content : us_rep1
+type vector__ref1 = { vector__content1 : us_rep1
 }
 
-function tentry_tableS__ref_tentry_tableS__content__projection(a: tentry_tableS__ref) : us_rep1 =
-  (a).tentry_tableS__content
-
-logic to_string : int, us_split_fields2, us_split_fields -> us_t
-
-logic to_string__function_guard : us_t, int, us_split_fields2,
-  us_split_fields -> prop
-
-logic char_table__split_discrs : us_split_discrs
-
-logic attr__ATTRIBUTE_ADDRESS2 : int
-
-logic oeq : us_rep, us_rep -> bool
-
-logic oeq__function_guard : bool, us_rep, us_rep -> prop
-
-logic is_empty : us_rep -> bool
-
-logic is_empty__function_guard : bool, us_rep -> prop
-
-axiom user_eq__def_axiom :
-  (forall a:us_rep. forall b:us_rep [user_eq6(a, b)]. (user_eq6(a,
-  b) = oeq(a, b)))
-
-predicate dynamic_invariant1(temp___expr_414: us_rep,
-  temp___is_init_410: bool, temp___skip_constant_411: bool,
-  temp___do_toplevel_412: bool, temp___do_typ_inv_413: bool) =
-  ((not (temp___skip_constant_411 = true)) -> in_range5(1024,
-  temp___expr_414))
-
-predicate default_initial_assumption(temp___expr_416: us_rep,
-  temp___skip_top_level_417: bool) =
-  ((to_rep3(((temp___expr_416).us_split_discrs1).rec__names__char_tables__vector__capacity) = 1024) and
-  ((not (temp___skip_top_level_417 = true)) ->
-  (is_empty(temp___expr_416) = true)))
+function vector__ref_vector__content__2__projection(a: vector__ref1) : us_rep1 =
+  (a).vector__content1
 
 logic entry_table__split_discrs : us_split_discrs2
 
@@ -1214,20 +1214,20 @@ logic is_empty1 : us_rep1 -> bool
 logic is_empty__function_guard1 : bool, us_rep1 -> prop
 
 axiom user_eq__def_axiom1 :
-  (forall a:us_rep1. forall b:us_rep1 [user_eq9(a, b)]. (user_eq9(a,
+  (forall a:us_rep1. forall b:us_rep1 [user_eq7(a, b)]. (user_eq7(a,
   b) = oeq1(a, b)))
 
-predicate dynamic_invariant2(temp___expr_611: us_rep1,
-  temp___is_init_607: bool, temp___skip_constant_608: bool,
-  temp___do_toplevel_609: bool, temp___do_typ_inv_610: bool) =
-  ((not (temp___skip_constant_608 = true)) -> in_range7(128,
-  temp___expr_611))
+predicate dynamic_invariant2(temp___expr_613: us_rep1,
+  temp___is_init_609: bool, temp___skip_constant_610: bool,
+  temp___do_toplevel_611: bool, temp___do_typ_inv_612: bool) =
+  ((not (temp___skip_constant_610 = true)) -> in_range7(128,
+  (temp___expr_613).us_split_discrs3))
 
-predicate default_initial_assumption1(temp___expr_613: us_rep1,
-  temp___skip_top_level_614: bool) =
-  ((to_rep4(((temp___expr_613).us_split_discrs3).rec__names__entry_tables__vector__capacity) = 128) and
-  ((not (temp___skip_top_level_614 = true)) ->
-  (is_empty1(temp___expr_613) = true)))
+predicate default_initial_assumption1(temp___expr_615: us_rep1,
+  temp___skip_top_level_616: bool) =
+  ((to_rep4(((temp___expr_615).us_split_discrs3).rec__names__entry_tables__vector__capacity) = 128) and
+  ((not (temp___skip_top_level_616 = true)) ->
+  (is_empty1(temp___expr_615) = true)))
 
 type name_id
 
@@ -1361,7 +1361,7 @@ function capacity(container: us_rep) : int =
 logic capacity__function_guard : int, us_rep -> prop
 
 axiom user_eq__def_axiom2 :
-  (forall a:us_rep. forall b:us_rep [user_eq5(a, b)]. (user_eq5(a,
+  (forall a:us_rep. forall b:us_rep [user_eq8(a, b)]. (user_eq8(a,
   b) = oeq(a, b)))
 
 predicate dynamic_invariant4(temp___expr_372: int, temp___is_init_368: bool,
@@ -1744,10 +1744,10 @@ type extended_index__ref1 = { extended_index__content1 : extended_index1
 function extended_index__ref_extended_index__content__3__projection(a: extended_index__ref1) : extended_index1 =
   (a).extended_index__content1
 
-predicate dynamic_invariant6(temp___expr_451: int, temp___is_init_447: bool,
-  temp___skip_constant_448: bool, temp___do_toplevel_449: bool,
-  temp___do_typ_inv_450: bool) = (((temp___is_init_447 = true) or
-  (0 <= 2147483647)) -> in_range11(temp___expr_451))
+predicate dynamic_invariant6(temp___expr_452: int, temp___is_init_448: bool,
+  temp___skip_constant_449: bool, temp___do_toplevel_450: bool,
+  temp___do_typ_inv_451: bool) = (((temp___is_init_448 = true) or
+  (0 <= 2147483647)) -> in_range11(temp___expr_452))
 
 type element_type__ref1 = { element_type__content1 : us_rep3
 }
@@ -1779,7 +1779,7 @@ function equal_except(left: us_rep4, right: us_rep4, position: int) : bool =
 logic equal_except__function_guard : bool, us_rep4, us_rep4, int -> prop
 
 axiom user_eq__def_axiom3 :
-  (forall a:us_rep1. forall b:us_rep1 [user_eq8(a, b)]. (user_eq8(a,
+  (forall a:us_rep1. forall b:us_rep1 [user_eq9(a, b)]. (user_eq9(a,
   b) = oeq1(a, b)))
 
 function capacity1(container: us_rep1) : int =
@@ -2149,10 +2149,10 @@ axiom get__post_axiom :
   ((0 <= position) and (position <= last2(container)))) ->
   dynamic_invariant16(get(container, position), true, false, true, true))))
 
-predicate dynamic_invariant17(temp___expr_458: int, temp___is_init_454: bool,
-  temp___skip_constant_455: bool, temp___do_toplevel_456: bool,
-  temp___do_typ_inv_457: bool) = (((temp___is_init_454 = true) or
-  (0 <= 2147483647)) -> in_range6(temp___expr_458))
+predicate dynamic_invariant17(temp___expr_459: int, temp___is_init_455: bool,
+  temp___skip_constant_456: bool, temp___do_toplevel_457: bool,
+  temp___do_typ_inv_458: bool) = (((temp___is_init_455 = true) or
+  (0 <= 2147483647)) -> in_range5(temp___expr_459))
 
 axiom length__post_axiom4 :
   (forall container:us_rep1 [length5(container)].
@@ -2173,10 +2173,10 @@ axiom user_eq__def_axiom5 :
   (forall a:us_rep4. forall b:us_rep4 [user_eq15(a, b)]. (user_eq15(a,
   b) = oeq3(a, b)))
 
-predicate default_initial_assumption3(temp___expr_496: us_rep4,
-  temp___skip_top_level_497: bool) =
-  ((not (temp___skip_top_level_497 = true)) ->
-  (length4(temp___expr_496) = 0))
+predicate default_initial_assumption3(temp___expr_497: us_rep4,
+  temp___skip_top_level_498: bool) =
+  ((not (temp___skip_top_level_498 = true)) ->
+  (length4(temp___expr_497) = 0))
 
 axiom model__post_axiom1 :
   (forall container:us_rep1 [model1(container)].
@@ -2198,10 +2198,10 @@ axiom is_empty__post_axiom3 :
   (forall container:us_rep1 [is_empty1(container)].
   ((length5(container) = 0) -> (is_empty1(container) = true)))
 
-predicate dynamic_invariant18(temp___expr_434: int, temp___is_init_430: bool,
-  temp___skip_constant_431: bool, temp___do_toplevel_432: bool,
-  temp___do_typ_inv_433: bool) = (((temp___is_init_430 = true) or
-  (1 <= 2147483647)) -> in_range15(temp___expr_434))
+predicate dynamic_invariant18(temp___expr_435: int, temp___is_init_431: bool,
+  temp___skip_constant_432: bool, temp___do_toplevel_433: bool,
+  temp___do_typ_inv_434: bool) = (((temp___is_init_431 = true) or
+  (1 <= 2147483647)) -> in_range15(temp___expr_435))
 
 type extended_index3
 
@@ -2233,10 +2233,10 @@ type extended_index__ref3 = { extended_index__content3 : extended_index3
 function extended_index__ref_extended_index__content__4__projection(a: extended_index__ref3) : extended_index3 =
   (a).extended_index__content3
 
-predicate dynamic_invariant19(temp___expr_488: int, temp___is_init_484: bool,
-  temp___skip_constant_485: bool, temp___do_toplevel_486: bool,
-  temp___do_typ_inv_487: bool) = (((temp___is_init_484 = true) or
-  (0 <= 2147483647)) -> in_range19(temp___expr_488))
+predicate dynamic_invariant19(temp___expr_489: int, temp___is_init_485: bool,
+  temp___skip_constant_486: bool, temp___do_toplevel_487: bool,
+  temp___do_typ_inv_488: bool) = (((temp___is_init_485 = true) or
+  (0 <= 2147483647)) -> in_range19(temp___expr_489))
 
 axiom length__post_axiom6 :
   (forall container:us_rep4 [length4(container)].
@@ -2277,21 +2277,21 @@ goal defqtvc :
                                     ((dynamic_invariant3(ptr3, true, true,
                                     true, true) and dynamic_invariant3(n1,
                                     false, true, true, true)) and
-                                    (let temp___655 = to_string(ptr3, {
+                                    (let temp___657 = to_string(ptr3, {
                                     rec__names__entry_tables__vector =
                                     entry_table__split_fields }, {
                                     rec__names__char_tables__vector =
                                     char_table__split_fields }) : us_t in
-                                    ((to_string__function_guard(temp___655,
+                                    ((to_string__function_guard(temp___657,
                                     ptr3, {
                                     rec__names__entry_tables__vector =
                                     entry_table__split_fields }, {
                                     rec__names__char_tables__vector =
                                     char_table__split_fields }) and
-                                    dynamic_invariant(temp___655, true,
+                                    dynamic_invariant(temp___657, true,
                                     false, true, true)) and
-                                    ((spark__branch1 = bool_eq4(to_array(temp___655),
-                                    first1(temp___655), last1(temp___655),
+                                    ((spark__branch1 = bool_eq4(to_array(temp___657),
+                                    first1(temp___657), last1(temp___657),
                                     to_array(s), first1(s), last1(s))) and
                                     ((not (spark__branch1 = true)) and
                                     (in_range15(ptr3) and (let o3 = {
@@ -2307,11 +2307,11 @@ goal defqtvc :
                                     ((to_rep5(((o4).us_split_fields5).rec__names__name_entry__next_hash) = o5) and
                                     ((o5 = 0) and (ptr1 = ptr3)))))))))))))))) else ((spark__branch1 = spark__branch2) and
    (ptr1 = ptr))))) ->
-  (forall char_table__split_fields1:us_main_type. ((let temp___658 =
-  first1(s) : int in (let temp___659 = last1(s) : int in
-  (exists c330b:int. ((c330b = temp___658) and
-  (if (andb((if (temp___658 <= c330b) then true else false),
-  (if (c330b <= temp___659) then true else false)) = true) then (exists char_table__split_fields2:us_main_type.
+  (forall char_table__split_fields1:us_main_type. ((let temp___660 =
+  first1(s) : int in (let temp___661 = last1(s) : int in
+  (exists c330b:int. ((c330b = temp___660) and
+  (if (andb((if (temp___660 <= c330b) then true else false),
+  (if (c330b <= temp___661) then true else false)) = true) then (exists char_table__split_fields2:us_main_type.
                                                                 exists c330b1:int.
                                                                 ((andb((if dynamic_invariant1({
                                                                 us_split_discrs1 =
@@ -2382,7 +2382,7 @@ goal defqtvc :
                                                                 }
                                                                 }) + 1)) = o3)) and
                                                                 ((char_table__split_fields1 = names__char_tables__append__2__container__fields) and
-                                                                (c330b1 = temp___659))))))))) else (char_table__split_fields1 = char_table__split_fields)))))) ->
+                                                                (c330b1 = temp___661))))))))) else (char_table__split_fields1 = char_table__split_fields)))))) ->
   ((last_index({ us_split_discrs1 = char_table__split_discrs;
   us_split_fields1 = { rec__names__char_tables__vector =
   char_table__split_fields1 } }) = (length1({ us_split_discrs1 =

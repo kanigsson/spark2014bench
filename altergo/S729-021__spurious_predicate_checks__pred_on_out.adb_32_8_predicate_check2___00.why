@@ -196,18 +196,18 @@ type positive__ref = { positive__content : positive
 function positive__ref_positive__content__projection(a: positive__ref) : positive =
   (a).positive__content
 
-predicate dynamic_invariant(temp___expr_207: us_rep,
-  temp___is_init_203: bool, temp___skip_constant_204: bool,
-  temp___do_toplevel_205: bool, temp___do_typ_inv_206: bool) =
-  ((temp___do_toplevel_205 = true) ->
-  in_range1(to_rep(((temp___expr_207).us_split_fields1).rec__pred_on_out__t2__x)))
+predicate dynamic_invariant(temp___expr_209: us_rep,
+  temp___is_init_205: bool, temp___skip_constant_206: bool,
+  temp___do_toplevel_207: bool, temp___do_typ_inv_208: bool) =
+  ((temp___do_toplevel_207 = true) ->
+  in_range1(to_rep(((temp___expr_209).us_split_fields1).rec__pred_on_out__t2__x)))
 
-predicate default_initial_assumption(temp___expr_209: us_rep,
-  temp___skip_top_level_210: bool) =
-  (to_rep(((temp___expr_209).us_split_fields1).rec__pred_on_out__t2__x) = 0)
+predicate default_initial_assumption(temp___expr_212: us_rep,
+  temp___skip_top_level_213: bool) =
+  (to_rep(((temp___expr_212).us_split_fields1).rec__pred_on_out__t2__x) = 0)
 
-predicate dynamic_predicate(temp___211: us_rep) =
-  in_range1(to_rep(((temp___211).us_split_fields1).rec__pred_on_out__t2__x))
+predicate dynamic_predicate(temp___214: us_rep) =
+  in_range1(to_rep(((temp___214).us_split_fields1).rec__pred_on_out__t2__x))
 
 predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,

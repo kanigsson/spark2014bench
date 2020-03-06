@@ -1064,13 +1064,13 @@ goal defqtvc :
    e__split_fields2 })) ->
   ((length1({ us_split_fields1 = v__split_fields
   }) <  (2147483647 - length1({ us_split_fields1 = e__split_fields }))) ->
-  ((forall v__split_fields2:us_split_fields. length__function_guard(length1({
-   us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
-   v__split_fields2 })) ->
   ((forall e__split_fields2:us_split_fields. length__function_guard(length1({
    us_split_fields1 = e__split_fields2 }), { us_split_fields1 =
    e__split_fields2 })) ->
   ((forall v__split_fields2:us_split_fields. model__function_guard2(model2({
+   us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
+   v__split_fields2 })) ->
+  ((forall v__split_fields2:us_split_fields. length__function_guard(length1({
    us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
    v__split_fields2 })) ->
   (forall use_formal_vectors__my_vect__append__2__e_top__assume:int.

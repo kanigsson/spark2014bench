@@ -155,6 +155,9 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (default_init__discr__f__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__default_init__discr__f) = to_rep(((b).us_split_fields1).rec__default_init__discr__f)))) then true else false)
 
+predicate in_range2(rec__default_init__discr__b1: bool, a: us_split_discrs) =
+  (rec__default_init__discr__b1 = (a).rec__default_init__discr__b)
+
 logic value__size : int
 
 logic object__size : int
@@ -227,7 +230,7 @@ predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
   temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
   (0 <= 2147483647)) -> in_range(temp___expr_39))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-N715-017__default_init_cond-15375/src/gnatprove/default_init__discr.mlw", line 389, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-N715-017__default_init_cond-15469/src/gnatprove/default_init__discr.mlw", line 401, characters 5-8 *)
 goal defqtvc :
   (forall usf:us_rep.
   ((forall usf1:us_rep. discr_ok__function_guard(discr_ok(usf1), usf1)) ->

@@ -276,9 +276,9 @@ axiom has_element__def_axiom1 :
 
 axiom has_element__def_axiom2 :
   (forall c:us_rep.
-  (forall p:(int,natural) farray [has_element(c, p)].
-  (((1 <= to_rep((p[1]))) and
-  (to_rep((p[1])) <= to_rep(((c).us_split_fields1).rec__composite_cursors__cont1__length))) ->
+  (forall p:(int,natural) farray [has_element(c, p)]. ((let temp___209 =
+  to_rep((p[1])) : int in ((1 <= temp___209) and
+  (temp___209 <= to_rep(((c).us_split_fields1).rec__composite_cursors__cont1__length)))) ->
   (has_element(c, p) = true))))
 
 logic c : us_rep
@@ -331,5 +331,5 @@ goal defqtvc : (dynamic_invariant(i17s, true, false, true, true) ->
   (dynamic_invariant(i17s, true, false, true, true) -> (dynamic_invariant(c,
   true, false, true, true) -> (has_element__function_guard(has_element(c, p),
   c, p) -> ((has_element(c, p) = true) ->
-  (forall temp___281:int. ((to_rep((p[1])) = temp___281) ->
-  (1 <= temp___281))))))))
+  (forall temp___286:int. ((to_rep((p[1])) = temp___286) ->
+  (1 <= temp___286))))))))

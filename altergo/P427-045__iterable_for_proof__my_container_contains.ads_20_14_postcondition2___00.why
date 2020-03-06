@@ -284,14 +284,14 @@ goal defqtvc :
                                                        (((1 <= j) and
                                                        (j <= i1)) ->
                                                        (valid(to_rep((c1[j]))) = true))) and
-                                                      ((andb((if (in_range3(i1) and
-                                                      (forall temp___221:int.
-                                                      (((1 <= temp___221) and
-                                                      (temp___221 <= 100)) ->
-                                                      (((100 <  temp___221) or
-                                                      ((temp___221 <  1) or
-                                                      (i1 <  temp___221))) ->
-                                                      ((c1[temp___221]) = (c[temp___221])))))) then true else false),
+                                                      ((andb((if ((forall temp___223:int.
+                                                                  (((1 <= temp___223) and
+                                                                  (temp___223 <= 100)) ->
+                                                                  (((100 <  temp___223) or
+                                                                  ((temp___223 <  1) or
+                                                                  (i1 <  temp___223))) ->
+                                                                  ((c1[temp___223]) = (c[temp___223]))))) and
+                                                      in_range3(i1)) then true else false),
                                                       (if ((1 <= i1) and
                                                       (i1 <= 100)) then true else false)) = true) and
                                                       (i1 = 100)))))) else (c1 = c)))) ->

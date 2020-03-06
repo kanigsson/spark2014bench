@@ -159,6 +159,10 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__sum_elem__partitions__vector,
   ((b).us_split_fields1).rec__sum_elem__partitions__vector) = true)) then true else false)
 
+predicate in_range2(rec__sum_elem__partitions__vector__capacity1: int,
+  a: us_split_discrs) =
+  (rec__sum_elem__partitions__vector__capacity1 = to_rep((a).rec__sum_elem__partitions__vector__capacity))
+
 logic value__size : int
 
 logic object__size : int
@@ -234,7 +238,7 @@ axiom indexqtaxiom : (forall i:index. (0 <= indexqtint(i)))
 
 axiom indexqtaxiom1 : (forall i:index. (indexqtint(i) <= 5))
 
-predicate in_range2(x: int) = ((0 <= x) and (x <= 5))
+predicate in_range3(x: int) = ((0 <= x) and (x <= 5))
 
 function bool_eq3(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -261,10 +265,10 @@ logic of_rep1 : int -> index
 axiom inversion_axiom1 :
   (forall x:index [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
 
-axiom range_axiom1 : (forall x:index [to_rep1(x)]. in_range2(to_rep1(x)))
+axiom range_axiom1 : (forall x:index [to_rep1(x)]. in_range3(to_rep1(x)))
 
 axiom coerce_axiom1 :
-  (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
+  (forall x:int [to_rep1(of_rep1(x))]. (in_range3(x) ->
   (to_rep1(of_rep1(x)) = x)))
 
 type us_split_fields2 = { rec__sum_elem__interval__first : index;
@@ -407,7 +411,7 @@ axiom extended_indexqtaxiom :
 axiom extended_indexqtaxiom1 :
   (forall i:extended_index. (extended_indexqtint(i) <= 10001))
 
-predicate in_range3(x: int) = (((- 1) <= x) and (x <= 10001))
+predicate in_range4(x: int) = (((- 1) <= x) and (x <= 10001))
 
 function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -430,7 +434,7 @@ function extended_index__ref_extended_index__content__projection(a: extended_ind
 predicate dynamic_invariant1(temp___expr_284: int, temp___is_init_280: bool,
   temp___skip_constant_281: bool, temp___do_toplevel_282: bool,
   temp___do_typ_inv_283: bool) = (((temp___is_init_280 = true) or
-  ((- 1) <= 10001)) -> in_range3(temp___expr_284))
+  ((- 1) <= 10001)) -> in_range4(temp___expr_284))
 
 logic first_index__function_guard : int, us_rep -> prop
 
@@ -443,7 +447,7 @@ axiom index_typeqtaxiom : (forall i:index_type. (0 <= index_typeqtint(i)))
 axiom index_typeqtaxiom1 :
   (forall i:index_type. (index_typeqtint(i) <= 10000))
 
-predicate in_range4(x: int) = ((0 <= x) and (x <= 10000))
+predicate in_range5(x: int) = ((0 <= x) and (x <= 10000))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -466,7 +470,7 @@ function index_type__ref_index_type__content__projection(a: index_type__ref) : i
 predicate dynamic_invariant2(temp___expr_268: int, temp___is_init_264: bool,
   temp___skip_constant_265: bool, temp___do_toplevel_266: bool,
   temp___do_typ_inv_267: bool) = (((temp___is_init_264 = true) or
-  (0 <= 10000)) -> in_range4(temp___expr_268))
+  (0 <= 10000)) -> in_range5(temp___expr_268))
 
 type element_type__ref1 = { element_type__content1 : us_rep1
 }
@@ -538,7 +542,7 @@ axiom partition_indexqtaxiom :
 axiom partition_indexqtaxiom1 :
   (forall i:partition_index. (partition_indexqtint(i) <= 10000))
 
-predicate in_range5(x1: int) = ((0 <= x1) and (x1 <= 10000))
+predicate in_range6(x1: int) = ((0 <= x1) and (x1 <= 10000))
 
 function bool_eq8(x1: int, y: int) : bool =
   (if (x1 = y) then true else false)
@@ -562,7 +566,7 @@ function partition_index__ref_partition_index__content__projection(a: partition_
 predicate dynamic_invariant3(temp___expr_261: int, temp___is_init_257: bool,
   temp___skip_constant_258: bool, temp___do_toplevel_259: bool,
   temp___do_typ_inv_260: bool) = (((temp___is_init_257 = true) or
-  (0 <= 10000)) -> in_range5(temp___expr_261))
+  (0 <= 10000)) -> in_range6(temp___expr_261))
 
 axiom user_eq__def_axiom1 :
   (forall a:us_rep. forall b:us_rep [user_eq7(a, b)]. (user_eq7(a,
@@ -571,7 +575,7 @@ axiom user_eq__def_axiom1 :
 predicate dynamic_invariant4(temp___expr_245: int, temp___is_init_241: bool,
   temp___skip_constant_242: bool, temp___do_toplevel_243: bool,
   temp___do_typ_inv_244: bool) = (((temp___is_init_241 = true) or
-  (0 <= 5)) -> in_range2(temp___expr_245))
+  (0 <= 5)) -> in_range3(temp___expr_245))
 
 type count_type
 
@@ -582,7 +586,7 @@ axiom count_typeqtaxiom : (forall i:count_type. (0 <= count_typeqtint(i)))
 axiom count_typeqtaxiom1 :
   (forall i:count_type. (count_typeqtint(i) <= 2147483647))
 
-predicate in_range6(x1: int) = ((0 <= x1) and (x1 <= 2147483647))
+predicate in_range7(x1: int) = ((0 <= x1) and (x1 <= 2147483647))
 
 function bool_eq9(x1: int, y: int) : bool =
   (if (x1 = y) then true else false)
@@ -606,7 +610,7 @@ function count_type__ref_count_type__content__projection(a: count_type__ref) : c
 predicate dynamic_invariant5(temp___expr_291: int, temp___is_init_287: bool,
   temp___skip_constant_288: bool, temp___do_toplevel_289: bool,
   temp___do_typ_inv_290: bool) = (((temp___is_init_287 = true) or
-  (0 <= 2147483647)) -> in_range6(temp___expr_291))
+  (0 <= 2147483647)) -> in_range7(temp___expr_291))
 
 logic bool_eq10 : int, int -> bool
 
@@ -699,7 +703,7 @@ axiom extended_indexqtaxiom2 :
 axiom extended_indexqtaxiom3 :
   (forall i:extended_index1. (extended_indexqtint1(i) <= 10000))
 
-predicate in_range7(x1: int) = (((- 1) <= x1) and (x1 <= 10000))
+predicate in_range8(x1: int) = (((- 1) <= x1) and (x1 <= 10000))
 
 function bool_eq11(x1: int, y: int) : bool =
   (if (x1 = y) then true else false)
@@ -723,7 +727,7 @@ function extended_index__ref_extended_index__content__2__projection(a: extended_
 predicate dynamic_invariant6(temp___expr_331: int, temp___is_init_327: bool,
   temp___skip_constant_328: bool, temp___do_toplevel_329: bool,
   temp___do_typ_inv_330: bool) = (((temp___is_init_327 = true) or
-  ((- 1) <= 10000)) -> in_range7(temp___expr_331))
+  ((- 1) <= 10000)) -> in_range8(temp___expr_331))
 
 axiom length__post_axiom2 :
   (forall container:us_rep2 [length1(container)].
@@ -736,12 +740,12 @@ axiom length__post_axiom3 :
  (* File "sum_elem.ads", line 23, characters 0-0 *)
 goal defqtvc : (dynamic_invariant3(x, true, false, true, true) -> (let o = p
   : us_rep in (let o1 = length(o) : int in ((dynamic_invariant(o1, true,
-  false, true, true) and (o1 <= capacity(o))) -> (in_range5(o1) ->
+  false, true, true) and (o1 <= capacity(o))) -> (in_range6(o1) ->
   ((andb((if (0 <= x) then true else false),
   (if (x <= (o1 - 1)) then true else false)) = true) ->
   (forall usf:int. (let o2 = p : us_rep in (let o3 = last_index(o2) : int in
   ((dynamic_invariant1(o3, true, false, true, true) and
   (o3 = last(model(o2)))) -> ((dynamic_invariant2(0, true, false, true,
   true) and (0 = 0)) -> ((andb((if (0 <= usf) then true else false),
-  (if (usf <= o3) then true else false)) = true) -> (in_range4(usf) ->
+  (if (usf <= o3) then true else false)) = true) -> (in_range5(usf) ->
   (usf <= last_index(p)))))))))))))))

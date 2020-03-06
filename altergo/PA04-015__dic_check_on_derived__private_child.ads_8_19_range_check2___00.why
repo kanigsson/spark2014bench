@@ -139,6 +139,9 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range1(rec__private_child__root__c1: int, a: us_split_discrs) =
+  (rec__private_child__root__c1 = to_rep((a).rec__private_child__root__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -239,9 +242,6 @@ function bool_eq2(a: us_rep1, b: us_rep1) : bool =
 
 logic us_tag1 : int
 
-predicate in_range1(rec__private_child__root__c1: int, a: us_rep) =
-  (rec__private_child__root__c1 = to_rep(((a).us_split_discrs1).rec__private_child__root__c))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -335,7 +335,7 @@ predicate dynamic_invariant(temp___expr_187: us_rep1,
   temp___is_init_183: bool, temp___skip_constant_184: bool,
   temp___do_toplevel_185: bool, temp___do_typ_inv_186: bool) =
   ((not (temp___skip_constant_184 = true)) -> in_range1(10,
-  to_base(temp___expr_187)))
+  (to_base(temp___expr_187)).us_split_discrs1))
 
 axiom temp___result_193qtdef :
   (forall temp___192:us_rep1. is_valid__function_guard(is_valid(temp___192),

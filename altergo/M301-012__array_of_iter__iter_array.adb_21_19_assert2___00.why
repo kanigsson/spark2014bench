@@ -289,14 +289,14 @@ goal defqtvc :
                                                       (((1 <= k) and
                                                       (k <= j1)) ->
                                                       (to_rep((x11[k])) = 2))) and
-                                                     ((andb((if ((forall temp___202:int.
-                                                                 (((1 <= temp___202) and
-                                                                 (temp___202 <= 10)) ->
-                                                                 (((10 <  temp___202) or
-                                                                 ((temp___202 <  1) or
-                                                                 (j1 <  temp___202))) ->
-                                                                 ((x11[temp___202]) = (x10[temp___202]))))) and
-                                                     in_range3(j1)) then true else false),
+                                                     ((andb((if (in_range3(j1) and
+                                                     (forall temp___203:int.
+                                                     (((1 <= temp___203) and
+                                                     (temp___203 <= 10)) ->
+                                                     (((10 <  temp___203) or
+                                                     ((temp___203 <  1) or
+                                                     (j1 <  temp___203))) ->
+                                                     ((x11[temp___203]) = (x10[temp___203])))))) then true else false),
                                                      (if ((1 <= j1) and
                                                      (j1 <= 10)) then true else false)) = true) and
                                                      (j1 = 10)))))) else (x11 = x10)))) ->

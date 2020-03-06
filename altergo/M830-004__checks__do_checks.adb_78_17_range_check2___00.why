@@ -562,6 +562,10 @@ function bool_eq12(a: us_rep, b: us_rep) : bool =
   (do_checks__do_range_check__B_17__s__c__pred(a) ->
   (to_rep1(((a).us_split_fields1).rec__do_checks__do_range_check__B_17__s__c) = to_rep1(((b).us_split_fields1).rec__do_checks__do_range_check__B_17__s__c)))) then true else false)
 
+predicate in_range7(rec__do_checks__do_range_check__B_17__s__b1: bool,
+  a: us_split_discrs) =
+  (rec__do_checks__do_range_check__B_17__s__b1 = (a).rec__do_checks__do_range_check__B_17__s__b)
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -678,6 +682,10 @@ function bool_eq14(a: us_rep1, b: us_rep1) : bool =
   (do_checks__do_range_check__B_18__s__c__pred(a) ->
   (to_rep1(((a).us_split_fields3).rec__do_checks__do_range_check__B_18__s__c) = to_rep1(((b).us_split_fields3).rec__do_checks__do_range_check__B_18__s__c)))) then true else false)
 
+predicate in_range8(rec__do_checks__do_range_check__B_18__s__b1: bool,
+  a: us_split_discrs2) =
+  (rec__do_checks__do_range_check__B_18__s__b1 = (a).rec__do_checks__do_range_check__B_18__s__b)
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -738,7 +746,7 @@ axiom tTaSP1qtaxiom4 : (forall i:tTaSP12. (1 <= tTaSP1qtint2(i)))
 
 axiom tTaSP1qtaxiom5 : (forall i:tTaSP12. (tTaSP1qtint2(i) <= 10))
 
-predicate in_range7(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range9(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq15(x: int, y: int) : bool = (if (x = y) then true else false)
 

@@ -358,14 +358,15 @@ logic user_eq4 : us_rep, us_rep -> bool
 
 logic dummy4 : us_rep
 
-type r2__ref = { r2__content : us_rep
+type trt2S__ref = { trt2S__content : us_rep
 }
 
-function r2__ref_r2__content__projection(a: r2__ref) : us_rep =
-  (a).r2__content
+function trt2S__ref_trt2S__content__projection(a: trt2S__ref) : us_rep =
+  (a).trt2S__content
 
-predicate in_range4(rec__alignment_attribute__r2__d11: int, a: us_rep) =
-  (rec__alignment_attribute__r2__d11 = to_rep1(((a).us_split_discrs1).rec__alignment_attribute__r2__d1))
+predicate in_range4(rec__alignment_attribute__r2__d11: int,
+  a: us_split_discrs) =
+  (rec__alignment_attribute__r2__d11 = to_rep1((a).rec__alignment_attribute__r2__d1))
 
 logic value__size2 : int
 
@@ -413,11 +414,11 @@ logic user_eq5 : us_rep, us_rep -> bool
 
 logic dummy5 : us_rep
 
-type trt2S__ref = { trt2S__content : us_rep
+type r2__ref = { r2__content : us_rep
 }
 
-function trt2S__ref_trt2S__content__projection(a: trt2S__ref) : us_rep =
-  (a).trt2S__content
+function r2__ref_r2__content__projection(a: r2__ref) : us_rep =
+  (a).r2__content
 
 logic rt2__split_discrs : us_split_discrs
 
@@ -428,14 +429,12 @@ logic attr__ATTRIBUTE_ADDRESS5 : int
 predicate dynamic_invariant1(temp___expr_239: us_rep,
   temp___is_init_235: bool, temp___skip_constant_236: bool,
   temp___do_toplevel_237: bool, temp___do_typ_inv_238: bool) =
-  ((not (temp___skip_constant_236 = true)) -> in_range4(3, temp___expr_239))
+  ((not (temp___skip_constant_236 = true)) -> in_range4(3,
+  (temp___expr_239).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_241: us_rep,
   temp___skip_top_level_242: bool) =
   (to_rep1(((temp___expr_241).us_split_discrs1).rec__alignment_attribute__r2__d1) = 3)
-
-predicate in_range5(rec__alignment_attribute__r2__d11: int, a: us_rep) =
-  (rec__alignment_attribute__r2__d11 = to_rep1(((a).us_split_discrs1).rec__alignment_attribute__r2__d1))
 
 logic value__size3 : int
 
@@ -498,7 +497,8 @@ logic attr__ATTRIBUTE_ADDRESS6 : int
 predicate dynamic_invariant2(temp___expr_186: us_rep,
   temp___is_init_182: bool, temp___skip_constant_183: bool,
   temp___do_toplevel_184: bool, temp___do_typ_inv_185: bool) =
-  ((not (temp___skip_constant_183 = true)) -> in_range5(5, temp___expr_186))
+  ((not (temp___skip_constant_183 = true)) -> in_range4(5,
+  (temp___expr_186).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_188: us_rep,
   temp___skip_top_level_189: bool) =
@@ -718,7 +718,7 @@ axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
 
 axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
 
-predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range5(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -745,10 +745,10 @@ logic of_rep3 : int -> natural
 axiom inversion_axiom3 :
   (forall x:natural [to_rep3(x)]. (of_rep3(to_rep3(x)) = x))
 
-axiom range_axiom3 : (forall x:natural [to_rep3(x)]. in_range6(to_rep3(x)))
+axiom range_axiom3 : (forall x:natural [to_rep3(x)]. in_range5(to_rep3(x)))
 
 axiom coerce_axiom3 :
-  (forall x:int [to_rep3(of_rep3(x))]. (in_range6(x) ->
+  (forall x:int [to_rep3(of_rep3(x))]. (in_range5(x) ->
   (to_rep3(of_rep3(x)) = x)))
 
 type map__ref1 = { map__content1 : (int,natural) farray
@@ -815,7 +815,7 @@ axiom positiveqtaxiom : (forall i:positive. (1 <= positiveqtint(i)))
 axiom positiveqtaxiom1 :
   (forall i:positive. (positiveqtint(i) <= 2147483647))
 
-predicate in_range7(x: int) = ((1 <= x) and (x <= 2147483647))
+predicate in_range6(x: int) = ((1 <= x) and (x <= 2147483647))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -842,10 +842,10 @@ logic of_rep4 : int -> positive
 axiom inversion_axiom4 :
   (forall x:positive [to_rep4(x)]. (of_rep4(to_rep4(x)) = x))
 
-axiom range_axiom4 : (forall x:positive [to_rep4(x)]. in_range7(to_rep4(x)))
+axiom range_axiom4 : (forall x:positive [to_rep4(x)]. in_range6(to_rep4(x)))
 
 axiom coerce_axiom4 :
-  (forall x:int [to_rep4(of_rep4(x))]. (in_range7(x) ->
+  (forall x:int [to_rep4(of_rep4(x))]. (in_range6(x) ->
   (to_rep4(of_rep4(x)) = x)))
 
 type map__ref2 = { map__content2 : (int,positive) farray
@@ -926,7 +926,7 @@ axiom mk_def1 :
 
 predicate dynamic_property(range_first: int, range_last: int, low: int,
   high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
-  (in_range7(low) and in_range7(high)))))
+  (in_range6(low) and in_range6(high)))))
 
 type us_t = { elts : (int,natural) farray; rt : t
 }
@@ -998,12 +998,12 @@ logic alignment_attribute__ca__aggregate_def : int -> (int,positive) farray
 predicate dynamic_invariant4(temp___expr_39: int, temp___is_init_35: bool,
   temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
   temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
-  (0 <= 2147483647)) -> in_range6(temp___expr_39))
+  (0 <= 2147483647)) -> in_range5(temp___expr_39))
 
 predicate dynamic_invariant5(temp___expr_46: int, temp___is_init_42: bool,
   temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
   temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
-  (1 <= 2147483647)) -> in_range7(temp___expr_46))
+  (1 <= 2147483647)) -> in_range6(temp___expr_46))
 
 predicate dynamic_invariant6(temp___expr_74: int, temp___is_init_70: bool,
   temp___skip_constant_71: bool, temp___do_toplevel_72: bool,
@@ -1068,4 +1068,4 @@ goal defqtvc :
   ((ua = alignment_attribute__ua__aggregate_def(1)) ->
   (forall ca:(int,positive) farray.
   ((ca = alignment_attribute__ca__aggregate_def(2)) -> ((0 <= alignment) ->
-  ((0 <= alignment1) -> (0 <= alignment3))))))))))))))))))))))))
+  ((0 <= alignment2) -> (0 <= alignment3))))))))))))))))))))))))

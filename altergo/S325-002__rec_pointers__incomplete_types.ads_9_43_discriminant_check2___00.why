@@ -146,6 +146,10 @@ function bool_eq2(a: us_rep1, b: us_rep1) : bool =
   (bool_eq1(((a).us_split_fields1).rec__incomplete_types__p1__with_discr__y,
   ((b).us_split_fields1).rec__incomplete_types__p1__with_discr__y) = true)) then true else false)
 
+predicate in_range1(rec__incomplete_types__p1__with_discr__x1: bool,
+  a: us_split_discrs) =
+  (rec__incomplete_types__p1__with_discr__x1 = (a).rec__incomplete_types__p1__with_discr__x)
+
 logic value__size : int
 
 logic object__size : int
@@ -197,10 +201,6 @@ type with_discr__ref = { with_discr__content : us_rep1
 
 function with_discr__ref_with_discr__content__projection(a: with_discr__ref) : us_rep1 =
   (a).with_discr__content
-
-predicate in_range1(rec__incomplete_types__p1__with_discr__x1: bool,
-  a: us_rep1) =
-  (rec__incomplete_types__p1__with_discr__x1 = ((a).us_split_discrs1).rec__incomplete_types__p1__with_discr__x)
 
 logic value__size1 : int
 
@@ -284,7 +284,7 @@ predicate dynamic_invariant(temp___expr_162: us_rep,
   temp___do_toplevel_160: bool, temp___do_typ_inv_161: bool) =
   ((not ((temp___expr_162).rec__incomplete_types__p1__with_discr_ptr__is_null_pointer = true)) ->
   (in_range1(of_int(1),
-  rec__incomplete_types__p1__with_discr_ptr__pointer_value(temp___expr_162)) and
+  (rec__incomplete_types__p1__with_discr_ptr__pointer_value(temp___expr_162)).us_split_discrs1) and
   temp___dynamic_invariant_164(((rec__incomplete_types__p1__with_discr_ptr__pointer_value(temp___expr_162)).us_split_fields1).rec__incomplete_types__p1__with_discr__y,
   true, false, true, temp___do_typ_inv_161)))
 
@@ -298,7 +298,7 @@ axiom def_axiom :
   temp___skip_constant_166, temp___do_toplevel_167, temp___do_typ_inv_168) ->
   ((not ((temp___expr_169).rec__incomplete_types__p1__with_discr_ptr__is_null_pointer = true)) ->
   in_range1(of_int(1),
-  rec__incomplete_types__p1__with_discr_ptr__pointer_value(temp___expr_169))))))
+  (rec__incomplete_types__p1__with_discr_ptr__pointer_value(temp___expr_169)).us_split_discrs1)))))
 
 axiom def_axiom1 :
   (forall temp___expr_169:us_rep.
@@ -320,7 +320,7 @@ axiom def_axiom2 :
   temp___skip_constant_166, temp___do_toplevel_167, temp___do_typ_inv_168)].
   (((not ((temp___expr_169).rec__incomplete_types__p1__with_discr_ptr__is_null_pointer = true)) ->
   (in_range1(of_int(1),
-  rec__incomplete_types__p1__with_discr_ptr__pointer_value(temp___expr_169)) and
+  (rec__incomplete_types__p1__with_discr_ptr__pointer_value(temp___expr_169)).us_split_discrs1) and
   temp___dynamic_invariant_164(((rec__incomplete_types__p1__with_discr_ptr__pointer_value(temp___expr_169)).us_split_fields1).rec__incomplete_types__p1__with_discr__y,
   true, false, true, temp___do_typ_inv_168))) ->
   temp___dynamic_invariant_164(temp___expr_169, temp___is_init_165,
@@ -329,10 +329,6 @@ axiom def_axiom2 :
 predicate default_initial_assumption(temp___expr_171: us_rep,
   temp___skip_top_level_172: bool) =
   ((temp___expr_171).rec__incomplete_types__p1__with_discr_ptr__is_null_pointer = true)
-
-predicate in_range2(rec__incomplete_types__p1__with_discr__x1: bool,
-  a: us_rep1) =
-  (rec__incomplete_types__p1__with_discr__x1 = ((a).us_split_discrs1).rec__incomplete_types__p1__with_discr__x)
 
 logic value__size2 : int
 
@@ -402,7 +398,7 @@ predicate dynamic_invariant1(temp___expr_178: us_rep1,
   temp___do_toplevel_176: bool, temp___do_typ_inv_177: bool) =
   ((not ((((temp___expr_178).us_split_fields1).rec__incomplete_types__p1__with_discr__y).rec__incomplete_types__p1__with_discr_ptr__is_null_pointer = true)) ->
   (in_range1(of_int(1),
-  rec__incomplete_types__p1__with_discr_ptr__pointer_value(((temp___expr_178).us_split_fields1).rec__incomplete_types__p1__with_discr__y)) and
+  (rec__incomplete_types__p1__with_discr_ptr__pointer_value(((temp___expr_178).us_split_fields1).rec__incomplete_types__p1__with_discr__y)).us_split_discrs1) and
   temp___dynamic_invariant_164(((rec__incomplete_types__p1__with_discr_ptr__pointer_value(((temp___expr_178).us_split_fields1).rec__incomplete_types__p1__with_discr__y)).us_split_fields1).rec__incomplete_types__p1__with_discr__y,
   true, false, true, temp___do_typ_inv_177)))
 
@@ -424,6 +420,7 @@ axiom user_eq__def_axiom5 :
   b) = oeq(a, b)))
 
  (* File "incomplete_types.ads", line 2, characters 0-0 *)
-goal defqtvc : in_range1(of_int(1), { us_split_discrs1 = {
+goal defqtvc : in_range1(of_int(1), ({ us_split_discrs1 = {
   rec__incomplete_types__p1__with_discr__x = of_int(0) }; us_split_fields1 =
-  { rec__incomplete_types__p1__with_discr__y = us_null_pointer } })
+  { rec__incomplete_types__p1__with_discr__y = us_null_pointer }
+  }).us_split_discrs1)

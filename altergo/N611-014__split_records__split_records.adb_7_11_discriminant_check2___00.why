@@ -161,6 +161,10 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (split_records__record_with_mutable_discrs__field__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__split_records__record_with_mutable_discrs__field) = to_rep(((b).us_split_fields1).rec__split_records__record_with_mutable_discrs__field)))) then true else false)
 
+predicate in_range2(rec__split_records__record_with_mutable_discrs__present1: bool,
+  a: us_split_discrs) =
+  (rec__split_records__record_with_mutable_discrs__present1 = (a).rec__split_records__record_with_mutable_discrs__present)
+
 logic value__size : int
 
 logic object__size : int
@@ -229,10 +233,6 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 logic r2b : bool
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
-
-predicate in_range2(rec__split_records__record_with_mutable_discrs__present1: bool,
-  a: us_rep) =
-  (rec__split_records__record_with_mutable_discrs__present1 = ((a).us_split_discrs1).rec__split_records__record_with_mutable_discrs__present)
 
 logic value__size1 : int
 

@@ -353,9 +353,7 @@ goal defqtvc : (dynamic_invariant1(str, true, false, true, true) ->
   (j <= last1(str))) and ((first1(res) <= j) and (j <= last1(res)))) ->
   ((not (j = first1(str))) -> (let o = (j - 1) : int in (in_range1(o) ->
   (((first1(str) <= o) and (o <= last1(str))) ->
-  (forall o1:int. ((to_rep((to_array(str)[o])) = o1) -> (let o2 = (j - 1)
-  : int in (in_range1(o2) -> (((first1(str) <= o2) and (o2 <= last1(str))) ->
-  (forall o3:int. ((to_rep((to_array(str)[o2])) = o3) ->
-  ((not (andb((if (97 <= o3) then true else false),
-  (if (o1 <= 122) then true else false)) = true)) -> (let o4 = (j - 1)
-  : int in (in_range1(o4) -> (first1(str) <= o4)))))))))))))))))))
+  (forall temp___228:int. ((to_rep((to_array(str)[o])) = temp___228) ->
+  ((not (andb((if (97 <= temp___228) then true else false),
+  (if (temp___228 <= 122) then true else false)) = true)) -> (let o1 =
+  (j - 1) : int in (in_range1(o1) -> (first1(str) <= o1))))))))))))))

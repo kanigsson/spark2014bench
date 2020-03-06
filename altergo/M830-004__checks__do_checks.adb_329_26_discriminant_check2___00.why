@@ -323,6 +323,10 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   (bool_eq4(((a).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr,
   ((b).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = true))) then true else false)
 
+predicate in_range3(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_split_discrs) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep((a).rec__do_checks__do_discriminant_check__r1__j))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -388,10 +392,6 @@ predicate dynamic_invariant2(temp___expr_552: us_rep,
   ((first1(((temp___expr_552).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
   (last1(((temp___expr_552).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(temp___553))))))
 
-predicate in_range3(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -452,7 +452,7 @@ predicate dynamic_invariant3(temp___expr_585: us_rep,
   temp___is_init_581: bool, temp___skip_constant_582: bool,
   temp___do_toplevel_583: bool, temp___do_typ_inv_584: bool) =
   (((not (temp___skip_constant_582 = true)) -> in_range3(0,
-  temp___expr_585)) and (let temp___586 =
+  (temp___expr_585).us_split_discrs1)) and (let temp___586 =
   ((temp___expr_585).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j
   : integer in
   (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_585) ->
@@ -468,10 +468,6 @@ predicate default_initial_assumption(temp___expr_588: us_rep,
   (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_588) ->
   ((first1(((temp___expr_588).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = 1) and
   (last1(((temp___expr_588).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = to_rep(((temp___expr_588).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j)))))
-
-predicate in_range4(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
 
 logic value__size3 : int
 
@@ -532,8 +528,8 @@ logic attr__ATTRIBUTE_ADDRESS2 : int
 predicate dynamic_invariant4(temp___expr_598: us_rep,
   temp___is_init_594: bool, temp___skip_constant_595: bool,
   temp___do_toplevel_596: bool, temp___do_typ_inv_597: bool) =
-  (((not (temp___skip_constant_595 = true)) -> in_range4((- 1),
-  temp___expr_598)) and (let temp___599 =
+  (((not (temp___skip_constant_595 = true)) -> in_range3((- 1),
+  (temp___expr_598).us_split_discrs1)) and (let temp___599 =
   ((temp___expr_598).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j
   : integer in
   (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_598) ->
@@ -558,7 +554,7 @@ axiom tT62bP1qtaxiom : (forall i:tT62bP1. (1 <= tT62bP1qtint(i)))
 
 axiom tT62bP1qtaxiom1 : (forall i:tT62bP1. (tT62bP1qtint(i) <= 10))
 
-predicate in_range5(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range4(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -645,10 +641,6 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   ((b).us_split_fields3).rec__do_checks__do_discriminant_check__r1__arr1, 1,
   10) = true))) then true else false)
 
-predicate in_range6(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size5 : int
 
 logic object__size5 : int
@@ -708,8 +700,8 @@ logic attr__ATTRIBUTE_ADDRESS3 : int
 predicate dynamic_invariant5(temp___expr_559: us_rep1,
   temp___is_init_555: bool, temp___skip_constant_556: bool,
   temp___do_toplevel_557: bool, temp___do_typ_inv_558: bool) =
-  ((not (temp___skip_constant_556 = true)) -> in_range6(10,
-  to_base(temp___expr_559)))
+  ((not (temp___skip_constant_556 = true)) -> in_range3(10,
+  (to_base(temp___expr_559)).us_split_discrs1))
 
 predicate default_initial_assumption2(temp___expr_562: us_rep1,
   temp___skip_top_level_563: bool) =
@@ -727,7 +719,7 @@ axiom tT65bP1qtaxiom : (forall i:tT65bP1. (1 <= tT65bP1qtint(i)))
 
 axiom tT65bP1qtaxiom1 : (forall i:tT65bP1. (tT65bP1qtint(i) <= 10))
 
-predicate in_range7(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range5(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -814,10 +806,6 @@ function bool_eq9(a: us_rep2, b: us_rep2) : bool =
   ((b).us_split_fields5).rec__do_checks__do_discriminant_check__r1__arr2, 1,
   10) = true))) then true else false)
 
-predicate in_range8(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size7 : int
 
 logic object__size7 : int
@@ -873,16 +861,12 @@ function r3__ref_r3__content__projection(a: r3__ref) : us_rep2 =
 predicate dynamic_invariant6(temp___expr_572: us_rep2,
   temp___is_init_568: bool, temp___skip_constant_569: bool,
   temp___do_toplevel_570: bool, temp___do_typ_inv_571: bool) =
-  ((not (temp___skip_constant_569 = true)) -> in_range8(10,
-  to_base1(temp___expr_572)))
+  ((not (temp___skip_constant_569 = true)) -> in_range3(10,
+  (to_base1(temp___expr_572)).us_split_discrs1))
 
 predicate default_initial_assumption3(temp___expr_575: us_rep2,
   temp___skip_top_level_576: bool) =
   (to_rep(((temp___expr_575).us_split_discrs3).rec__do_checks__do_discriminant_check__r1__j) = 10)
-
-predicate in_range9(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
 
 logic value__size8 : int
 
@@ -943,8 +927,8 @@ logic attr__ATTRIBUTE_ADDRESS5 : int
 predicate dynamic_invariant7(temp___expr_624: us_rep,
   temp___is_init_620: bool, temp___skip_constant_621: bool,
   temp___do_toplevel_622: bool, temp___do_typ_inv_623: bool) =
-  (((not (temp___skip_constant_621 = true)) -> in_range9(0,
-  temp___expr_624)) and (let temp___625 =
+  (((not (temp___skip_constant_621 = true)) -> in_range3(0,
+  (temp___expr_624).us_split_discrs1)) and (let temp___625 =
   ((temp___expr_624).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j
   : integer in
   (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_624) ->
@@ -973,7 +957,7 @@ axiom tT89bP1qtaxiom : (forall i:tT89bP1. (1 <= tT89bP1qtint(i)))
 
 axiom tT89bP1qtaxiom1 : (forall i:tT89bP1. (tT89bP1qtint(i) <= 10))
 
-predicate in_range10(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range6(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1060,10 +1044,6 @@ function bool_eq11(a: us_rep3, b: us_rep3) : bool =
   ((b).us_split_fields7).rec__do_checks__do_discriminant_check__r1__arr3, 1,
   10) = true))) then true else false)
 
-predicate in_range11(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size10 : int
 
 logic object__size10 : int
@@ -1123,8 +1103,8 @@ logic attr__ATTRIBUTE_ADDRESS7 : int
 predicate dynamic_invariant8(temp___expr_650: us_rep3,
   temp___is_init_646: bool, temp___skip_constant_647: bool,
   temp___do_toplevel_648: bool, temp___do_typ_inv_649: bool) =
-  ((not (temp___skip_constant_647 = true)) -> in_range11(10,
-  to_base2(temp___expr_650)))
+  ((not (temp___skip_constant_647 = true)) -> in_range3(10,
+  (to_base2(temp___expr_650)).us_split_discrs1))
 
 predicate default_initial_assumption5(temp___expr_653: us_rep3,
   temp___skip_top_level_654: bool) =
@@ -1133,10 +1113,6 @@ predicate default_initial_assumption5(temp___expr_653: us_rep3,
 logic y__split_discrs3 : us_split_discrs
 
 logic attr__ATTRIBUTE_ADDRESS8 : int
-
-predicate in_range12(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
 
 logic value__size11 : int
 
@@ -1197,8 +1173,8 @@ logic attr__ATTRIBUTE_ADDRESS9 : int
 predicate dynamic_invariant9(temp___expr_676: us_rep,
   temp___is_init_672: bool, temp___skip_constant_673: bool,
   temp___do_toplevel_674: bool, temp___do_typ_inv_675: bool) =
-  (((not (temp___skip_constant_673 = true)) -> in_range12(0,
-  temp___expr_676)) and (let temp___677 =
+  (((not (temp___skip_constant_673 = true)) -> in_range3(0,
+  (temp___expr_676).us_split_discrs1)) and (let temp___677 =
   ((temp___expr_676).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j
   : integer in
   (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_676) ->
@@ -1227,7 +1203,7 @@ axiom tT110bP1qtaxiom : (forall i:tT110bP1. (1 <= tT110bP1qtint(i)))
 
 axiom tT110bP1qtaxiom1 : (forall i:tT110bP1. (tT110bP1qtint(i) <= 10))
 
-predicate in_range13(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range7(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1314,10 +1290,6 @@ function bool_eq13(a: us_rep4, b: us_rep4) : bool =
   ((b).us_split_fields9).rec__do_checks__do_discriminant_check__r1__arr4, 1,
   10) = true))) then true else false)
 
-predicate in_range14(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size13 : int
 
 logic object__size13 : int
@@ -1377,8 +1349,8 @@ logic attr__ATTRIBUTE_ADDRESS11 : int
 predicate dynamic_invariant10(temp___expr_689: us_rep4,
   temp___is_init_685: bool, temp___skip_constant_686: bool,
   temp___do_toplevel_687: bool, temp___do_typ_inv_688: bool) =
-  ((not (temp___skip_constant_686 = true)) -> in_range14(10,
-  to_base3(temp___expr_689)))
+  ((not (temp___skip_constant_686 = true)) -> in_range3(10,
+  (to_base3(temp___expr_689)).us_split_discrs1))
 
 predicate default_initial_assumption7(temp___expr_692: us_rep4,
   temp___skip_top_level_693: bool) =
@@ -1404,7 +1376,7 @@ axiom tT126bP1qtaxiom : (forall i:tT126bP1. (1 <= tT126bP1qtint(i)))
 
 axiom tT126bP1qtaxiom1 : (forall i:tT126bP1. (tT126bP1qtint(i) <= 10))
 
-predicate in_range15(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range8(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq14(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1491,10 +1463,6 @@ function bool_eq15(a: us_rep5, b: us_rep5) : bool =
   ((b).us_split_fields11).rec__do_checks__do_discriminant_check__r1__arr5, 1,
   10) = true))) then true else false)
 
-predicate in_range16(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size15 : int
 
 logic object__size15 : int
@@ -1554,8 +1522,8 @@ logic attr__ATTRIBUTE_ADDRESS15 : int
 predicate dynamic_invariant11(temp___expr_702: us_rep5,
   temp___is_init_698: bool, temp___skip_constant_699: bool,
   temp___do_toplevel_700: bool, temp___do_typ_inv_701: bool) =
-  ((not (temp___skip_constant_699 = true)) -> in_range16(10,
-  to_base4(temp___expr_702)))
+  ((not (temp___skip_constant_699 = true)) -> in_range3(10,
+  (to_base4(temp___expr_702)).us_split_discrs1))
 
 predicate default_initial_assumption8(temp___expr_705: us_rep5,
   temp___skip_top_level_706: bool) =
@@ -1564,10 +1532,6 @@ predicate default_initial_assumption8(temp___expr_705: us_rep5,
 logic y__split_discrs7 : us_split_discrs
 
 logic attr__ATTRIBUTE_ADDRESS16 : int
-
-predicate in_range17(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
 
 logic value__size16 : int
 
@@ -1628,8 +1592,8 @@ logic attr__ATTRIBUTE_ADDRESS17 : int
 predicate dynamic_invariant12(temp___expr_715: us_rep,
   temp___is_init_711: bool, temp___skip_constant_712: bool,
   temp___do_toplevel_713: bool, temp___do_typ_inv_714: bool) =
-  (((not (temp___skip_constant_712 = true)) -> in_range17(0,
-  temp___expr_715)) and (let temp___716 =
+  (((not (temp___skip_constant_712 = true)) -> in_range3(0,
+  (temp___expr_715).us_split_discrs1)) and (let temp___716 =
   ((temp___expr_715).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j
   : integer in
   (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_715) ->
@@ -1658,7 +1622,7 @@ axiom tT143bP1qtaxiom : (forall i:tT143bP1. (1 <= tT143bP1qtint(i)))
 
 axiom tT143bP1qtaxiom1 : (forall i:tT143bP1. (tT143bP1qtint(i) <= 10))
 
-predicate in_range18(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range9(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq16(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1745,10 +1709,6 @@ function bool_eq17(a: us_rep6, b: us_rep6) : bool =
   ((b).us_split_fields13).rec__do_checks__do_discriminant_check__r1__arr6, 1,
   10) = true))) then true else false)
 
-predicate in_range19(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size18 : int
 
 logic object__size18 : int
@@ -1808,8 +1768,8 @@ logic attr__ATTRIBUTE_ADDRESS19 : int
 predicate dynamic_invariant13(temp___expr_728: us_rep6,
   temp___is_init_724: bool, temp___skip_constant_725: bool,
   temp___do_toplevel_726: bool, temp___do_typ_inv_727: bool) =
-  ((not (temp___skip_constant_725 = true)) -> in_range19(10,
-  to_base5(temp___expr_728)))
+  ((not (temp___skip_constant_725 = true)) -> in_range3(10,
+  (to_base5(temp___expr_728)).us_split_discrs1))
 
 predicate default_initial_assumption10(temp___expr_731: us_rep6,
   temp___skip_top_level_732: bool) =
@@ -1818,10 +1778,6 @@ predicate default_initial_assumption10(temp___expr_731: us_rep6,
 logic y__split_discrs9 : us_split_discrs
 
 logic attr__ATTRIBUTE_ADDRESS20 : int
-
-predicate in_range20(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
 
 logic value__size19 : int
 
@@ -1882,8 +1838,8 @@ logic attr__ATTRIBUTE_ADDRESS21 : int
 predicate dynamic_invariant14(temp___expr_741: us_rep,
   temp___is_init_737: bool, temp___skip_constant_738: bool,
   temp___do_toplevel_739: bool, temp___do_typ_inv_740: bool) =
-  (((not (temp___skip_constant_738 = true)) -> in_range20(0,
-  temp___expr_741)) and (let temp___742 =
+  (((not (temp___skip_constant_738 = true)) -> in_range3(0,
+  (temp___expr_741).us_split_discrs1)) and (let temp___742 =
   ((temp___expr_741).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j
   : integer in
   (do_checks__do_discriminant_check__r1__arr__pred(temp___expr_741) ->
@@ -1912,7 +1868,7 @@ axiom tT159bP1qtaxiom : (forall i:tT159bP1. (1 <= tT159bP1qtint(i)))
 
 axiom tT159bP1qtaxiom1 : (forall i:tT159bP1. (tT159bP1qtint(i) <= 10))
 
-predicate in_range21(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range10(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq18(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1999,10 +1955,6 @@ function bool_eq19(a: us_rep7, b: us_rep7) : bool =
   ((b).us_split_fields15).rec__do_checks__do_discriminant_check__r1__arr7, 1,
   10) = true))) then true else false)
 
-predicate in_range22(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size21 : int
 
 logic object__size21 : int
@@ -2062,8 +2014,8 @@ logic attr__ATTRIBUTE_ADDRESS23 : int
 predicate dynamic_invariant15(temp___expr_754: us_rep7,
   temp___is_init_750: bool, temp___skip_constant_751: bool,
   temp___do_toplevel_752: bool, temp___do_typ_inv_753: bool) =
-  ((not (temp___skip_constant_751 = true)) -> in_range22(10,
-  to_base6(temp___expr_754)))
+  ((not (temp___skip_constant_751 = true)) -> in_range3(10,
+  (to_base6(temp___expr_754)).us_split_discrs1))
 
 predicate default_initial_assumption12(temp___expr_757: us_rep7,
   temp___skip_top_level_758: bool) =
@@ -2072,10 +2024,6 @@ predicate default_initial_assumption12(temp___expr_757: us_rep7,
 logic y__split_discrs11 : us_split_discrs
 
 logic attr__ATTRIBUTE_ADDRESS24 : int
-
-predicate in_range23(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
 
 logic value__size22 : int
 
@@ -2128,10 +2076,6 @@ type t67b__ref = { t67b__content : us_rep
 
 function t67b__ref_t67b__content__projection(a: t67b__ref) : us_rep =
   (a).t67b__content
-
-predicate in_range24(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
 
 logic value__size23 : int
 
@@ -2193,7 +2137,7 @@ axiom tT71bP1qtaxiom : (forall i:tT71bP1. (1 <= tT71bP1qtint(i)))
 
 axiom tT71bP1qtaxiom1 : (forall i:tT71bP1. (tT71bP1qtint(i) <= 10))
 
-predicate in_range25(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range11(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq20(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -2280,10 +2224,6 @@ function bool_eq21(a: us_rep8, b: us_rep8) : bool =
   ((b).us_split_fields17).rec__do_checks__do_discriminant_check__r1__arr8, 1,
   10) = true))) then true else false)
 
-predicate in_range26(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size25 : int
 
 logic object__size25 : int
@@ -2344,7 +2284,7 @@ axiom tT75bP1qtaxiom : (forall i:tT75bP1. (1 <= tT75bP1qtint(i)))
 
 axiom tT75bP1qtaxiom1 : (forall i:tT75bP1. (tT75bP1qtint(i) <= 10))
 
-predicate in_range27(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range12(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq22(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -2431,10 +2371,6 @@ function bool_eq23(a: us_rep9, b: us_rep9) : bool =
   ((b).us_split_fields19).rec__do_checks__do_discriminant_check__r1__arr9, 1,
   10) = true))) then true else false)
 
-predicate in_range28(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size27 : int
 
 logic object__size27 : int
@@ -2486,10 +2422,6 @@ type t74b__ref = { t74b__content : us_rep9
 
 function t74b__ref_t74b__content__projection(a: t74b__ref) : us_rep9 =
   (a).t74b__content
-
-predicate in_range29(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
 
 logic value__size28 : int
 
@@ -2551,7 +2483,7 @@ axiom tT83bP1qtaxiom : (forall i:tT83bP1. (1 <= tT83bP1qtint(i)))
 
 axiom tT83bP1qtaxiom1 : (forall i:tT83bP1. (tT83bP1qtint(i) <= 10))
 
-predicate in_range30(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range13(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq24(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -2639,10 +2571,6 @@ function bool_eq25(a: us_rep10, b: us_rep10) : bool =
   ((b).us_split_fields21).rec__do_checks__do_discriminant_check__r1__arr10,
   1, 10) = true))) then true else false)
 
-predicate in_range31(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size30 : int
 
 logic object__size30 : int
@@ -2703,7 +2631,7 @@ axiom tT91bP1qtaxiom : (forall i:tT91bP1. (1 <= tT91bP1qtint(i)))
 
 axiom tT91bP1qtaxiom1 : (forall i:tT91bP1. (tT91bP1qtint(i) <= 10))
 
-predicate in_range32(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range14(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq26(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -2791,10 +2719,6 @@ function bool_eq27(a: us_rep11, b: us_rep11) : bool =
   ((b).us_split_fields23).rec__do_checks__do_discriminant_check__r1__arr11,
   1, 10) = true))) then true else false)
 
-predicate in_range33(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size32 : int
 
 logic object__size32 : int
@@ -2855,7 +2779,7 @@ axiom tT95bP1qtaxiom : (forall i:tT95bP1. (1 <= tT95bP1qtint(i)))
 
 axiom tT95bP1qtaxiom1 : (forall i:tT95bP1. (tT95bP1qtint(i) <= 10))
 
-predicate in_range34(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range15(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq28(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -2943,10 +2867,6 @@ function bool_eq29(a: us_rep12, b: us_rep12) : bool =
   ((b).us_split_fields25).rec__do_checks__do_discriminant_check__r1__arr12,
   1, 10) = true))) then true else false)
 
-predicate in_range35(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size34 : int
 
 logic object__size34 : int
@@ -2998,10 +2918,6 @@ type t94b__ref = { t94b__content : us_rep12
 
 function t94b__ref_t94b__content__projection(a: t94b__ref) : us_rep12 =
   (a).t94b__content
-
-predicate in_range36(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
 
 logic value__size35 : int
 
@@ -3063,7 +2979,7 @@ axiom tT103bP1qtaxiom : (forall i:tT103bP1. (1 <= tT103bP1qtint(i)))
 
 axiom tT103bP1qtaxiom1 : (forall i:tT103bP1. (tT103bP1qtint(i) <= 10))
 
-predicate in_range37(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range16(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq30(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -3151,10 +3067,6 @@ function bool_eq31(a: us_rep13, b: us_rep13) : bool =
   ((b).us_split_fields27).rec__do_checks__do_discriminant_check__r1__arr13,
   1, 10) = true))) then true else false)
 
-predicate in_range38(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size37 : int
 
 logic object__size37 : int
@@ -3215,7 +3127,7 @@ axiom tT112bP1qtaxiom : (forall i:tT112bP1. (1 <= tT112bP1qtint(i)))
 
 axiom tT112bP1qtaxiom1 : (forall i:tT112bP1. (tT112bP1qtint(i) <= 10))
 
-predicate in_range39(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range17(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq32(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -3303,10 +3215,6 @@ function bool_eq33(a: us_rep14, b: us_rep14) : bool =
   ((b).us_split_fields29).rec__do_checks__do_discriminant_check__r1__arr14,
   1, 10) = true))) then true else false)
 
-predicate in_range40(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size39 : int
 
 logic object__size39 : int
@@ -3367,7 +3275,7 @@ axiom tT116bP1qtaxiom : (forall i:tT116bP1. (1 <= tT116bP1qtint(i)))
 
 axiom tT116bP1qtaxiom1 : (forall i:tT116bP1. (tT116bP1qtint(i) <= 10))
 
-predicate in_range41(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range18(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq34(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -3455,10 +3363,6 @@ function bool_eq35(a: us_rep15, b: us_rep15) : bool =
   ((b).us_split_fields31).rec__do_checks__do_discriminant_check__r1__arr15,
   1, 10) = true))) then true else false)
 
-predicate in_range42(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size41 : int
 
 logic object__size41 : int
@@ -3510,10 +3414,6 @@ type t115b__ref = { t115b__content : us_rep15
 
 function t115b__ref_t115b__content__projection(a: t115b__ref) : us_rep15 =
   (a).t115b__content
-
-predicate in_range43(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
 
 logic value__size42 : int
 
@@ -3575,7 +3475,7 @@ axiom tT122bP1qtaxiom : (forall i:tT122bP1. (1 <= tT122bP1qtint(i)))
 
 axiom tT122bP1qtaxiom1 : (forall i:tT122bP1. (tT122bP1qtint(i) <= 10))
 
-predicate in_range44(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range19(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq36(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -3663,10 +3563,6 @@ function bool_eq37(a: us_rep16, b: us_rep16) : bool =
   ((b).us_split_fields33).rec__do_checks__do_discriminant_check__r1__arr16,
   1, 10) = true))) then true else false)
 
-predicate in_range45(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size44 : int
 
 logic object__size44 : int
@@ -3727,7 +3623,7 @@ axiom tT128bP1qtaxiom : (forall i:tT128bP1. (1 <= tT128bP1qtint(i)))
 
 axiom tT128bP1qtaxiom1 : (forall i:tT128bP1. (tT128bP1qtint(i) <= 10))
 
-predicate in_range46(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range20(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq38(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -3815,10 +3711,6 @@ function bool_eq39(a: us_rep17, b: us_rep17) : bool =
   ((b).us_split_fields35).rec__do_checks__do_discriminant_check__r1__arr17,
   1, 10) = true))) then true else false)
 
-predicate in_range47(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size46 : int
 
 logic object__size46 : int
@@ -3879,7 +3771,7 @@ axiom tT132bP1qtaxiom : (forall i:tT132bP1. (1 <= tT132bP1qtint(i)))
 
 axiom tT132bP1qtaxiom1 : (forall i:tT132bP1. (tT132bP1qtint(i) <= 10))
 
-predicate in_range48(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range21(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq40(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -3967,10 +3859,6 @@ function bool_eq41(a: us_rep18, b: us_rep18) : bool =
   ((b).us_split_fields37).rec__do_checks__do_discriminant_check__r1__arr18,
   1, 10) = true))) then true else false)
 
-predicate in_range49(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size48 : int
 
 logic object__size48 : int
@@ -4022,10 +3910,6 @@ type t131b__ref = { t131b__content : us_rep18
 
 function t131b__ref_t131b__content__projection(a: t131b__ref) : us_rep18 =
   (a).t131b__content
-
-predicate in_range50(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
 
 logic value__size49 : int
 
@@ -4087,7 +3971,7 @@ axiom tT139bP1qtaxiom : (forall i:tT139bP1. (1 <= tT139bP1qtint(i)))
 
 axiom tT139bP1qtaxiom1 : (forall i:tT139bP1. (tT139bP1qtint(i) <= 10))
 
-predicate in_range51(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range22(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq42(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -4175,10 +4059,6 @@ function bool_eq43(a: us_rep19, b: us_rep19) : bool =
   ((b).us_split_fields39).rec__do_checks__do_discriminant_check__r1__arr19,
   1, 10) = true))) then true else false)
 
-predicate in_range52(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size51 : int
 
 logic object__size51 : int
@@ -4239,7 +4119,7 @@ axiom tT145bP1qtaxiom : (forall i:tT145bP1. (1 <= tT145bP1qtint(i)))
 
 axiom tT145bP1qtaxiom1 : (forall i:tT145bP1. (tT145bP1qtint(i) <= 10))
 
-predicate in_range53(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range23(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq44(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -4327,10 +4207,6 @@ function bool_eq45(a: us_rep20, b: us_rep20) : bool =
   ((b).us_split_fields41).rec__do_checks__do_discriminant_check__r1__arr20,
   1, 10) = true))) then true else false)
 
-predicate in_range54(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size53 : int
 
 logic object__size53 : int
@@ -4391,7 +4267,7 @@ axiom tT149bP1qtaxiom : (forall i:tT149bP1. (1 <= tT149bP1qtint(i)))
 
 axiom tT149bP1qtaxiom1 : (forall i:tT149bP1. (tT149bP1qtint(i) <= 10))
 
-predicate in_range55(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range24(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq46(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -4479,10 +4355,6 @@ function bool_eq47(a: us_rep21, b: us_rep21) : bool =
   ((b).us_split_fields43).rec__do_checks__do_discriminant_check__r1__arr21,
   1, 10) = true))) then true else false)
 
-predicate in_range56(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size55 : int
 
 logic object__size55 : int
@@ -4534,10 +4406,6 @@ type t148b__ref = { t148b__content : us_rep21
 
 function t148b__ref_t148b__content__projection(a: t148b__ref) : us_rep21 =
   (a).t148b__content
-
-predicate in_range57(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
 
 logic value__size56 : int
 
@@ -4599,7 +4467,7 @@ axiom tT155bP1qtaxiom : (forall i:tT155bP1. (1 <= tT155bP1qtint(i)))
 
 axiom tT155bP1qtaxiom1 : (forall i:tT155bP1. (tT155bP1qtint(i) <= 10))
 
-predicate in_range58(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range25(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq48(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -4687,10 +4555,6 @@ function bool_eq49(a: us_rep22, b: us_rep22) : bool =
   ((b).us_split_fields45).rec__do_checks__do_discriminant_check__r1__arr22,
   1, 10) = true))) then true else false)
 
-predicate in_range59(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size58 : int
 
 logic object__size58 : int
@@ -4751,7 +4615,7 @@ axiom tT161bP1qtaxiom : (forall i:tT161bP1. (1 <= tT161bP1qtint(i)))
 
 axiom tT161bP1qtaxiom1 : (forall i:tT161bP1. (tT161bP1qtint(i) <= 10))
 
-predicate in_range60(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range26(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq50(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -4839,10 +4703,6 @@ function bool_eq51(a: us_rep23, b: us_rep23) : bool =
   ((b).us_split_fields47).rec__do_checks__do_discriminant_check__r1__arr23,
   1, 10) = true))) then true else false)
 
-predicate in_range61(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size60 : int
 
 logic object__size60 : int
@@ -4903,7 +4763,7 @@ axiom tT165bP1qtaxiom : (forall i:tT165bP1. (1 <= tT165bP1qtint(i)))
 
 axiom tT165bP1qtaxiom1 : (forall i:tT165bP1. (tT165bP1qtint(i) <= 10))
 
-predicate in_range62(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range27(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq52(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -4991,10 +4851,6 @@ function bool_eq53(a: us_rep24, b: us_rep24) : bool =
   ((b).us_split_fields49).rec__do_checks__do_discriminant_check__r1__arr24,
   1, 10) = true))) then true else false)
 
-predicate in_range63(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size62 : int
 
 logic object__size62 : int
@@ -5047,124 +4903,124 @@ type t164b__ref = { t164b__content : us_rep24
 function t164b__ref_t164b__content__projection(a: t164b__ref) : us_rep24 =
   (a).t164b__content
 
-logic temp_____aggregate_def_837 : bool -> (int,bool) farray
+logic temp_____aggregate_def_839 : bool -> (int,bool) farray
 
-logic temp_____aggregate_def_841 : bool -> (int,bool) farray
-
-logic temp_____aggregate_def_846 : bool -> (int,bool) farray
+logic temp_____aggregate_def_844 : bool -> (int,bool) farray
 
 logic temp_____aggregate_def_851 : bool -> (int,bool) farray
 
-logic temp_____aggregate_def_855 : bool -> (int,bool) farray
+logic temp_____aggregate_def_857 : bool -> (int,bool) farray
 
-logic temp_____aggregate_def_860 : bool -> (int,bool) farray
+logic temp_____aggregate_def_862 : bool -> (int,bool) farray
 
-logic temp_____aggregate_def_866 : bool -> (int,bool) farray
+logic temp_____aggregate_def_869 : bool -> (int,bool) farray
 
-logic temp_____aggregate_def_870 : bool -> (int,bool) farray
-
-logic temp_____aggregate_def_875 : bool -> (int,bool) farray
+logic temp_____aggregate_def_876 : bool -> (int,bool) farray
 
 logic temp_____aggregate_def_881 : bool -> (int,bool) farray
 
-logic temp_____aggregate_def_885 : bool -> (int,bool) farray
+logic temp_____aggregate_def_888 : bool -> (int,bool) farray
 
-logic temp_____aggregate_def_891 : bool -> (int,bool) farray
-
-logic temp_____aggregate_def_897 : bool -> (int,bool) farray
+logic temp_____aggregate_def_896 : bool -> (int,bool) farray
 
 logic temp_____aggregate_def_901 : bool -> (int,bool) farray
 
-logic temp_____aggregate_def_907 : bool -> (int,bool) farray
-
-logic temp_____aggregate_def_913 : bool -> (int,bool) farray
+logic temp_____aggregate_def_909 : bool -> (int,bool) farray
 
 logic temp_____aggregate_def_917 : bool -> (int,bool) farray
 
+logic temp_____aggregate_def_922 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_930 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_937 : bool -> (int,bool) farray
+
+logic temp_____aggregate_def_942 : bool -> (int,bool) farray
+
 axiom def_axiom :
-  (forall temp___839:bool.
-  (forall temp___840:int.
-  ((temp_____aggregate_def_837(temp___839)[temp___840]) = temp___839)))
+  (forall temp___841:bool.
+  (forall temp___842:int.
+  ((temp_____aggregate_def_839(temp___841)[temp___842]) = temp___841)))
 
 axiom def_axiom1 :
-  (forall temp___843:bool.
-  (forall temp___844:int.
-  ((temp_____aggregate_def_841(temp___843)[temp___844]) = temp___843)))
+  (forall temp___846:bool.
+  (forall temp___847:int.
+  ((temp_____aggregate_def_844(temp___846)[temp___847]) = temp___846)))
 
 axiom def_axiom2 :
-  (forall temp___848:bool.
-  (forall temp___849:int.
-  ((temp_____aggregate_def_846(temp___848)[temp___849]) = temp___848)))
-
-axiom def_axiom3 :
   (forall temp___853:bool.
   (forall temp___854:int.
   ((temp_____aggregate_def_851(temp___853)[temp___854]) = temp___853)))
 
+axiom def_axiom3 :
+  (forall temp___859:bool.
+  (forall temp___860:int.
+  ((temp_____aggregate_def_857(temp___859)[temp___860]) = temp___859)))
+
 axiom def_axiom4 :
-  (forall temp___857:bool.
-  (forall temp___858:int.
-  ((temp_____aggregate_def_855(temp___857)[temp___858]) = temp___857)))
+  (forall temp___864:bool.
+  (forall temp___865:int.
+  ((temp_____aggregate_def_862(temp___864)[temp___865]) = temp___864)))
 
 axiom def_axiom5 :
-  (forall temp___862:bool.
-  (forall temp___863:int.
-  ((temp_____aggregate_def_860(temp___862)[temp___863]) = temp___862)))
+  (forall temp___871:bool.
+  (forall temp___872:int.
+  ((temp_____aggregate_def_869(temp___871)[temp___872]) = temp___871)))
 
 axiom def_axiom6 :
-  (forall temp___868:bool.
-  (forall temp___869:int.
-  ((temp_____aggregate_def_866(temp___868)[temp___869]) = temp___868)))
+  (forall temp___878:bool.
+  (forall temp___879:int.
+  ((temp_____aggregate_def_876(temp___878)[temp___879]) = temp___878)))
 
 axiom def_axiom7 :
-  (forall temp___872:bool.
-  (forall temp___873:int.
-  ((temp_____aggregate_def_870(temp___872)[temp___873]) = temp___872)))
-
-axiom def_axiom8 :
-  (forall temp___877:bool.
-  (forall temp___878:int.
-  ((temp_____aggregate_def_875(temp___877)[temp___878]) = temp___877)))
-
-axiom def_axiom9 :
   (forall temp___883:bool.
   (forall temp___884:int.
   ((temp_____aggregate_def_881(temp___883)[temp___884]) = temp___883)))
 
+axiom def_axiom8 :
+  (forall temp___890:bool.
+  (forall temp___891:int.
+  ((temp_____aggregate_def_888(temp___890)[temp___891]) = temp___890)))
+
+axiom def_axiom9 :
+  (forall temp___898:bool.
+  (forall temp___899:int.
+  ((temp_____aggregate_def_896(temp___898)[temp___899]) = temp___898)))
+
 axiom def_axiom10 :
-  (forall temp___887:bool.
-  (forall temp___888:int.
-  ((temp_____aggregate_def_885(temp___887)[temp___888]) = temp___887)))
-
-axiom def_axiom11 :
-  (forall temp___893:bool.
-  (forall temp___894:int.
-  ((temp_____aggregate_def_891(temp___893)[temp___894]) = temp___893)))
-
-axiom def_axiom12 :
-  (forall temp___899:bool.
-  (forall temp___900:int.
-  ((temp_____aggregate_def_897(temp___899)[temp___900]) = temp___899)))
-
-axiom def_axiom13 :
   (forall temp___903:bool.
   (forall temp___904:int.
   ((temp_____aggregate_def_901(temp___903)[temp___904]) = temp___903)))
 
-axiom def_axiom14 :
-  (forall temp___909:bool.
-  (forall temp___910:int.
-  ((temp_____aggregate_def_907(temp___909)[temp___910]) = temp___909)))
+axiom def_axiom11 :
+  (forall temp___911:bool.
+  (forall temp___912:int.
+  ((temp_____aggregate_def_909(temp___911)[temp___912]) = temp___911)))
 
-axiom def_axiom15 :
-  (forall temp___915:bool.
-  (forall temp___916:int.
-  ((temp_____aggregate_def_913(temp___915)[temp___916]) = temp___915)))
-
-axiom def_axiom16 :
+axiom def_axiom12 :
   (forall temp___919:bool.
   (forall temp___920:int.
   ((temp_____aggregate_def_917(temp___919)[temp___920]) = temp___919)))
+
+axiom def_axiom13 :
+  (forall temp___924:bool.
+  (forall temp___925:int.
+  ((temp_____aggregate_def_922(temp___924)[temp___925]) = temp___924)))
+
+axiom def_axiom14 :
+  (forall temp___932:bool.
+  (forall temp___933:int.
+  ((temp_____aggregate_def_930(temp___932)[temp___933]) = temp___932)))
+
+axiom def_axiom15 :
+  (forall temp___939:bool.
+  (forall temp___940:int.
+  ((temp_____aggregate_def_937(temp___939)[temp___940]) = temp___939)))
+
+axiom def_axiom16 :
+  (forall temp___944:bool.
+  (forall temp___945:int.
+  ((temp_____aggregate_def_942(temp___944)[temp___945]) = temp___944)))
 
 logic rliteral : integer
 
@@ -5182,7 +5038,7 @@ goal defqtvc :
   ((not (spark__branch = true)) ->
   (forall spark__branch1:bool.
   ((spark__branch1 = (if (branch = 1001) then true else false)) ->
-  ((spark__branch1 = true) -> in_range6(10, to_base7({ us_split_discrs9 = {
+  ((spark__branch1 = true) -> in_range3(10, (to_base7({ us_split_discrs9 = {
   rec__do_checks__do_discriminant_check__r1__j = rliteral };
   us_split_fields17 = { rec__do_checks__do_discriminant_check__r1__arr8 =
-  temp_____aggregate_def_837(of_int(1)) } })))))))))))))
+  temp_____aggregate_def_839(of_int(1)) } })).us_split_discrs1))))))))))))

@@ -420,6 +420,10 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range5(rec__integer_stacks__stack__capacity1: int,
+  a: us_split_discrs) =
+  (rec__integer_stacks__stack__capacity1 = to_rep1((a).rec__integer_stacks__stack__capacity))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -541,8 +545,8 @@ goal defqtvc : (dynamic_invariant1(left, true, false, true, true) ->
   (dynamic_invariant(r30b, true, false, true, true) ->
   (forall k:int. ((k = 1) -> ((andb((if (1 <= k) then true else false),
   (if (k <= r30b) then true else false)) = true) ->
-  (forall k1:int. (((1 <= k1) and (k1 <= r30b)) -> (let temp___386 =
+  (forall k1:int. (((1 <= k1) and (k1 <= r30b)) -> (let temp___390 =
   ((right).us_split_fields1).rec__integer_stacks__stack__values : us_t in
-  (((first1(temp___386) <= k1) and (k1 <= last1(temp___386))) ->
-  (forall o2:int. ((to_rep3((to_array(temp___386)[k1])) = o2) ->
+  (((first1(temp___390) <= k1) and (k1 <= last1(temp___390))) ->
+  (forall o2:int. ((to_rep3((to_array(temp___390)[k1])) = o2) ->
   (first1(((left).us_split_fields1).rec__integer_stacks__stack__values) <= k1)))))))))))))))))))))))

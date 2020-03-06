@@ -894,15 +894,15 @@ type name__ref = { name__content : us_rep1
 function name__ref_name__content__2__projection(a: name__ref) : us_rep1 =
   (a).name__content
 
-predicate dynamic_invariant7(temp___expr_364: us_rep1,
-  temp___is_init_360: bool, temp___skip_constant_361: bool,
-  temp___do_toplevel_362: bool, temp___do_typ_inv_363: bool) =
-  ((not ((temp___expr_364).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)) ->
-  (not (((temp___expr_364).rec__use_formal_vectors__my_vect__element_access__pointer_value).rec__use_formal_vectors__element_type__is_null_pointer = true)))
+predicate dynamic_invariant7(temp___expr_357: us_rep1,
+  temp___is_init_353: bool, temp___skip_constant_354: bool,
+  temp___do_toplevel_355: bool, temp___do_typ_inv_356: bool) =
+  ((not ((temp___expr_357).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)) ->
+  (not (((temp___expr_357).rec__use_formal_vectors__my_vect__element_access__pointer_value).rec__use_formal_vectors__element_type__is_null_pointer = true)))
 
-predicate default_initial_assumption4(temp___expr_365: us_rep1,
-  temp___skip_top_level_366: bool) =
-  ((temp___expr_365).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)
+predicate default_initial_assumption4(temp___expr_358: us_rep1,
+  temp___skip_top_level_359: bool) =
+  ((temp___expr_358).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)
 
 predicate dynamic_invariant8(temp___expr_225: us_rep1,
   temp___is_init_221: bool, temp___skip_constant_222: bool,
@@ -1103,10 +1103,10 @@ goal defqtvc :
   ((forall use_formal_vectors__my_vect__swap__to__compl:us_rep1.
    model__function_guard(model((use_formal_vectors__my_vect__swap__to__compl).rec__use_formal_vectors__my_vect__element_access__pointer_value),
    (use_formal_vectors__my_vect__swap__to__compl).rec__use_formal_vectors__my_vect__element_access__pointer_value)) ->
-  ((let temp___606 = i : int in (let temp___607 = r139s : int in
-  (exists j:int. ((j = temp___606) and
-  (if (andb((if (temp___606 <= j) then true else false),
-  (if (j <= temp___607) then true else false)) = true) then (exists v__split_fields3:us_split_fields.
+  ((let temp___599 = i : int in (let temp___600 = r139s : int in
+  (exists j:int. ((j = temp___599) and
+  (if (andb((if (temp___599 <= j) then true else false),
+  (if (j <= temp___600) then true else false)) = true) then (exists v__split_fields3:us_split_fields.
                                                             exists j1:int.
                                                             (((not (bool_eq9((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content,
                                                             us_null_pointer2) = true)) and
@@ -1131,34 +1131,35 @@ goal defqtvc :
                                                             (k <= (to_rep((v__split_fields3).rec__use_formal_vectors__my_vect__vector__top) + 1))) ->
                                                             (model(((to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[k])).rec__use_formal_vectors__my_vect__element_access__pointer_value) = get(v_mod,
                                                             k))))))))) and
-                                                            ((andb((if ((dynamic_property1(i,
-                                                            r139s, j1) and
-                                                            dynamic_invariant4({
+                                                            ((andb((if ((dynamic_invariant4({
                                                             us_split_fields1 =
                                                             v__split_fields3
                                                             }, true, true,
-                                                            true, true)) and
+                                                            true, true) and
                                                             (((v__split_fields3).rec__use_formal_vectors__my_vect__vector__top = (v__split_fields1).rec__use_formal_vectors__my_vect__vector__top) and
                                                             (((((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer = ((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer) and
                                                             (((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_address = ((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_address)) and
                                                             ((((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer = false) ->
                                                             ((first1(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value) = first1(((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)) and
-                                                            (last1(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value) = last1(((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value))))))) then true else false),
+                                                            (last1(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value) = last1(((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value))))))) and
+                                                            dynamic_property1(i,
+                                                            r139s,
+                                                            j1)) then true else false),
                                                             (if ((i <= j1) and
                                                             (j1 <= r139s)) then true else false)) = true) and
-                                                            (let temp___614 =
+                                                            (let temp___607 =
                                                             ((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                                                             : us_t in
                                                             (let o5 =
                                                             (j1 + 1) : int in
                                                             (in_range1(o5) and
-                                                            (((first1(temp___614) <= o5) and
-                                                            (o5 <= last1(temp___614))) and
-                                                            (let temp___608 =
+                                                            (((first1(temp___607) <= o5) and
+                                                            (o5 <= last1(temp___607))) and
+                                                            (let temp___601 =
                                                             ((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                                                             : us_t in
-                                                            (((first1(temp___608) <= j1) and
-                                                            (j1 <= last1(temp___608))) and
+                                                            (((first1(temp___601) <= j1) and
+                                                            (j1 <= last1(temp___601))) and
                                                             (exists use_formal_vectors__my_vect__swap__to__is_null:bool.
                                                             exists use_formal_vectors__my_vect__swap__to__addr:int.
                                                             exists use_formal_vectors__my_vect__swap__to__value:us_rep.
@@ -1183,8 +1184,8 @@ goal defqtvc :
                                                             use_formal_vectors__my_vect__swap__to__value
                                                             },
                                                             us_null_pointer1) = true))) and
-                                                            (model(use_formal_vectors__my_vect__swap__to__value) = model(((to_array(temp___608)[j1])).rec__use_formal_vectors__my_vect__element_access__pointer_value))) and
-                                                            (model(use_formal_vectors__my_vect__swap__from__value) = model(((to_array(temp___614)[o5])).rec__use_formal_vectors__my_vect__element_access__pointer_value))) and
+                                                            (model(use_formal_vectors__my_vect__swap__to__value) = model(((to_array(temp___601)[j1])).rec__use_formal_vectors__my_vect__element_access__pointer_value))) and
+                                                            (model(use_formal_vectors__my_vect__swap__from__value) = model(((to_array(temp___607)[o5])).rec__use_formal_vectors__my_vect__element_access__pointer_value))) and
                                                             (dynamic_invariant8({
                                                             rec__use_formal_vectors__my_vect__element_access__is_null_pointer =
                                                             use_formal_vectors__my_vect__swap__from__is_null;
@@ -1203,14 +1204,14 @@ goal defqtvc :
                                                             use_formal_vectors__my_vect__swap__to__value
                                                             }, true, true,
                                                             true, true))) and
-                                                            (let temp___610 =
+                                                            (let temp___603 =
                                                             (v__split_fields3).rec__use_formal_vectors__my_vect__vector__content
                                                             : us_rep2 in
-                                                            (let temp___609 =
+                                                            (let temp___602 =
                                                             ((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                                                             : us_t in
-                                                            (((first1(temp___609) <= j1) and
-                                                            (j1 <= last1(temp___609))) and
+                                                            (((first1(temp___602) <= j1) and
+                                                            (j1 <= last1(temp___602))) and
                                                             (dynamic_predicate({
                                                             us_split_fields1 =
                                                             {
@@ -1219,9 +1220,9 @@ goal defqtvc :
                                                             rec__use_formal_vectors__my_vect__vector__content =
                                                             {
                                                             rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer =
-                                                            (temp___610).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer;
+                                                            (temp___603).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer;
                                                             rec__use_formal_vectors__my_vect__element_array_access__pointer_address =
-                                                            (temp___610).rec__use_formal_vectors__my_vect__element_array_access__pointer_address;
+                                                            (temp___603).rec__use_formal_vectors__my_vect__element_array_access__pointer_address;
                                                             rec__use_formal_vectors__my_vect__element_array_access__pointer_value =
                                                             { elts =
                                                             (to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[j1 <- {
@@ -1241,9 +1242,9 @@ goal defqtvc :
                                                             rec__use_formal_vectors__my_vect__vector__content =
                                                             {
                                                             rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer =
-                                                            (temp___610).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer;
+                                                            (temp___603).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer;
                                                             rec__use_formal_vectors__my_vect__element_array_access__pointer_address =
-                                                            (temp___610).rec__use_formal_vectors__my_vect__element_array_access__pointer_address;
+                                                            (temp___603).rec__use_formal_vectors__my_vect__element_array_access__pointer_address;
                                                             rec__use_formal_vectors__my_vect__element_array_access__pointer_value =
                                                             { elts =
                                                             (to_array(((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[j1 <- {
@@ -1256,17 +1257,17 @@ goal defqtvc :
                                                             }]); rt =
                                                             (((v__split_fields3).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value).rt
                                                             } } }) and
-                                                            (let temp___618 =
+                                                            (let temp___611 =
                                                             (v__split_fields4).rec__use_formal_vectors__my_vect__vector__content
                                                             : us_rep2 in
-                                                            (let temp___616 =
+                                                            (let temp___609 =
                                                             ((v__split_fields4).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                                                             : us_t in
                                                             (let o6 =
                                                             (j1 + 1) : int in
                                                             (in_range1(o6) and
-                                                            (((first1(temp___616) <= o6) and
-                                                            (o6 <= last1(temp___616))) and
+                                                            (((first1(temp___609) <= o6) and
+                                                            (o6 <= last1(temp___609))) and
                                                             (dynamic_predicate({
                                                             us_split_fields1 =
                                                             {
@@ -1275,9 +1276,9 @@ goal defqtvc :
                                                             rec__use_formal_vectors__my_vect__vector__content =
                                                             {
                                                             rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer =
-                                                            (temp___618).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer;
+                                                            (temp___611).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer;
                                                             rec__use_formal_vectors__my_vect__element_array_access__pointer_address =
-                                                            (temp___618).rec__use_formal_vectors__my_vect__element_array_access__pointer_address;
+                                                            (temp___611).rec__use_formal_vectors__my_vect__element_array_access__pointer_address;
                                                             rec__use_formal_vectors__my_vect__element_array_access__pointer_value =
                                                             { elts =
                                                             (to_array(((v__split_fields4).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[o6 <- {
@@ -1296,9 +1297,9 @@ goal defqtvc :
                                                             rec__use_formal_vectors__my_vect__vector__content =
                                                             {
                                                             rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer =
-                                                            (temp___618).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer;
+                                                            (temp___611).rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer;
                                                             rec__use_formal_vectors__my_vect__element_array_access__pointer_address =
-                                                            (temp___618).rec__use_formal_vectors__my_vect__element_array_access__pointer_address;
+                                                            (temp___611).rec__use_formal_vectors__my_vect__element_array_access__pointer_address;
                                                             rec__use_formal_vectors__my_vect__element_array_access__pointer_value =
                                                             { elts =
                                                             (to_array(((v__split_fields4).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[o6 <- {
@@ -1311,5 +1312,5 @@ goal defqtvc :
                                                             }]); rt =
                                                             (((v__split_fields4).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value).rt
                                                             } } }) and
-                                                            (j1 = temp___607))))))))))))))))))))))))) else (v__split_fields2 = v__split_fields1)))))) ->
+                                                            (j1 = temp___600))))))))))))))))))))))))) else (v__split_fields2 = v__split_fields1)))))) ->
   rec__use_formal_vectors__my_vect__element_array_access__pointer_value__pred((v__split_fields2).rec__use_formal_vectors__my_vect__vector__content)))))))))))))))))))))))))))))))))))))))))))

@@ -4836,13 +4836,13 @@ goal defqtvc :
                                                             (if (spark__branch2 = true) then ((cur_board2 = (cur_board[del_line <- empty_line])) and
                                                             ((to_line2 = del_line) and
                                                             (exists o2:t.
-                                                            ((let temp___910 =
+                                                            ((let temp___919 =
                                                             add(complete_lines,
                                                             rliteral3) : t in
                                                             (if ule(sub(rliteral4,
                                                             complete_lines),
-                                                            rliteral3) then (o2 = sub(temp___910,
-                                                            rliteral4)) else (o2 = temp___910))) and
+                                                            rliteral3) then (o2 = sub(temp___919,
+                                                            rliteral4)) else (o2 = temp___919))) and
                                                             ((complete_lines2 = o2) and
                                                             (to_rep(((cur_board2[del_line])[1])) = 0)))))) else (((cur_board2 = cur_board) and
                                                             (to_line2 = to_line)) and
@@ -4853,13 +4853,13 @@ goal defqtvc :
                                                              (y <= del_line1)) ->
                                                              (not (is_complete_line((cur_board1[y])) = true)))) and
                                                             ((andb((if (((
-                                                            (forall temp___914:int.
-                                                            (((1 <= temp___914) and
-                                                            (temp___914 <= 20)) ->
-                                                            (((20 <  temp___914) or
-                                                            ((temp___914 <  1) or
-                                                            (del_line1 <  temp___914))) ->
-                                                            ((cur_board1[temp___914]) = (cur_board[temp___914]))))) and
+                                                            (forall temp___923:int.
+                                                            (((1 <= temp___923) and
+                                                            (temp___923 <= 20)) ->
+                                                            (((20 <  temp___923) or
+                                                            ((temp___923 <  1) or
+                                                            (del_line1 <  temp___923))) ->
+                                                            ((cur_board1[temp___923]) = (cur_board[temp___923]))))) and
                                                             dynamic_invariant3(to_line1,
                                                             true, true, true,
                                                             true)) and
@@ -4878,11 +4878,11 @@ goal defqtvc :
   ((exists spark__branch3:bool.
    ((spark__branch3 = (if (not (complete_lines1 = rliteral1)) then true else false)) and
    (if (spark__branch3 = true) then (((to_line1 - 1) = r21b) and
-   (dynamic_invariant(r21b, true, false, true, true) and (let temp___920 =
+   (dynamic_invariant(r21b, true, false, true, true) and (let temp___929 =
    r21b : int in
-   (exists from_line:int. ((from_line = temp___920) and
+   (exists from_line:int. ((from_line = temp___929) and
    (if (andb((if (1 <= from_line) then true else false),
-   (if (from_line <= temp___920) then true else false)) = true) then (((no_complete_lines(cur_board1) = true) <->
+   (if (from_line <= temp___929) then true else false)) = true) then (((no_complete_lines(cur_board1) = true) <->
    (forall y:int. (((1 <= y) and (y <= 20)) ->
    (not (is_complete_line((cur_board1[y])) = true))))) and
    (exists cur_board3:(int,(int,cell) farray) farray. exists to_line2:int.
@@ -4908,59 +4908,59 @@ goal defqtvc :
   (forall spark__branch3:bool.
   ((exists spark__branch4:bool.
    ((spark__branch4 = (if (complete_lines1 = rliteral3) then true else false)) and
-   (if (spark__branch4 = true) then ((exists o:t. ((let temp___929 =
+   (if (spark__branch4 = true) then ((exists o:t. ((let temp___938 =
                                      add(level_nbr, rliteral3) : t in
                                      (if ule(sub(rliteral4, level_nbr),
-                                     rliteral3) then (o = sub(temp___929,
-                                     rliteral4)) else (o = temp___929))) and
-                                     (exists o1:t. (let temp___929 =
+                                     rliteral3) then (o = sub(temp___938,
+                                     rliteral4)) else (o = temp___938))) and
+                                     (exists o1:t. (let temp___938 =
                                      add(level_nbr, rliteral3) : t in
                                      (if ule(sub(rliteral4, level_nbr),
-                                     rliteral3) then (o1 = sub(temp___929,
-                                     rliteral4)) else (o1 = temp___929)))))) and
+                                     rliteral3) then (o1 = sub(temp___938,
+                                     rliteral4)) else (o1 = temp___938)))))) and
    (spark__branch3 = spark__branch4)) else (exists spark__branch5:bool.
                                            ((spark__branch5 = (if (complete_lines1 = rliteral5) then true else false)) and
                                            (if (spark__branch5 = true) then (
-                                           (exists o:t. ((let temp___931 =
+                                           (exists o:t. ((let temp___940 =
                                            add(level_nbr, rliteral3) : t in
                                            (if ule(sub(rliteral4, level_nbr),
-                                           rliteral3) then (o = sub(temp___931,
-                                           rliteral4)) else (o = temp___931))) and
-                                           (exists o1:t. (let temp___931 =
+                                           rliteral3) then (o = sub(temp___940,
+                                           rliteral4)) else (o = temp___940))) and
+                                           (exists o1:t. (let temp___940 =
                                            add(level_nbr, rliteral3) : t in
                                            (if ule(sub(rliteral4, level_nbr),
-                                           rliteral3) then (o1 = sub(temp___931,
-                                           rliteral4)) else (o1 = temp___931)))))) and
+                                           rliteral3) then (o1 = sub(temp___940,
+                                           rliteral4)) else (o1 = temp___940)))))) and
                                            (spark__branch3 = spark__branch5)) else 
                                            (exists spark__branch6:bool.
                                            ((spark__branch6 = (if (complete_lines1 = rliteral6) then true else false)) and
                                            (if (spark__branch6 = true) then (
-                                           (exists o:t. ((let temp___933 =
+                                           (exists o:t. ((let temp___942 =
                                            add(level_nbr, rliteral3) : t in
                                            (if ule(sub(rliteral4, level_nbr),
-                                           rliteral3) then (o = sub(temp___933,
-                                           rliteral4)) else (o = temp___933))) and
-                                           (exists o1:t. (let temp___933 =
+                                           rliteral3) then (o = sub(temp___942,
+                                           rliteral4)) else (o = temp___942))) and
+                                           (exists o1:t. (let temp___942 =
                                            add(level_nbr, rliteral3) : t in
                                            (if ule(sub(rliteral4, level_nbr),
-                                           rliteral3) then (o1 = sub(temp___933,
-                                           rliteral4)) else (o1 = temp___933)))))) and
+                                           rliteral3) then (o1 = sub(temp___942,
+                                           rliteral4)) else (o1 = temp___942)))))) and
                                            (spark__branch3 = spark__branch6)) else ((spark__branch3 = (if (complete_lines1 = rliteral7) then true else false)) and
                                            ((not (spark__branch3 = true)) or
-                                           (exists o:t. ((let temp___935 =
+                                           (exists o:t. ((let temp___944 =
                                            add(level_nbr, rliteral3) : t in
                                            (if ule(sub(rliteral4, level_nbr),
-                                           rliteral3) then (o = sub(temp___935,
-                                           rliteral4)) else (o = temp___935))) and
-                                           (exists o1:t. (let temp___935 =
+                                           rliteral3) then (o = sub(temp___944,
+                                           rliteral4)) else (o = temp___944))) and
+                                           (exists o1:t. (let temp___944 =
                                            add(level_nbr, rliteral3) : t in
                                            (if ule(sub(rliteral4, level_nbr),
-                                           rliteral3) then (o1 = sub(temp___935,
-                                           rliteral4)) else (o1 = temp___935))))))))))))))))) ->
-  (forall o:t. ((let temp___937 = add(line_counter, complete_lines1) : t in
+                                           rliteral3) then (o1 = sub(temp___944,
+                                           rliteral4)) else (o1 = temp___944))))))))))))))))) ->
+  (forall o:t. ((let temp___946 = add(line_counter, complete_lines1) : t in
   (if ule(sub(rliteral4, line_counter),
-  complete_lines1) then (o = sub(temp___937,
-  rliteral4)) else (o = temp___937))) ->
+  complete_lines1) then (o = sub(temp___946,
+  rliteral4)) else (o = temp___946))) ->
   (forall line_counter1:t. ((line_counter1 = o) ->
   ((exists spark__branch4:bool. (spark__branch4 = (if uge(line_counter1,
    rliteral8) then (if ult(level_nbr,

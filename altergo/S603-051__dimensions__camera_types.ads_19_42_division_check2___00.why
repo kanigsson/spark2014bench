@@ -541,18 +541,18 @@ predicate dynamic_invariant(temp___expr_207: us_rep,
   in_range3((to_rep2(((temp___expr_207).us_split_fields1).rec__camera_types__blob_type__y) + div(to_rep4(((temp___expr_207).us_split_fields1).rec__camera_types__blob_type__height),
   2)))))
 
-predicate default_initial_assumption(temp___expr_209: us_rep,
-  temp___skip_top_level_210: bool) =
-  (((to_rep(((temp___expr_209).us_split_fields1).rec__camera_types__blob_type__signature) = 0) and
-  (to_rep1(((temp___expr_209).us_split_fields1).rec__camera_types__blob_type__x) = 0)) and
-  (((to_rep2(((temp___expr_209).us_split_fields1).rec__camera_types__blob_type__y) = 0) and
-  (to_rep3(((temp___expr_209).us_split_fields1).rec__camera_types__blob_type__width) = 0)) and
-  (to_rep4(((temp___expr_209).us_split_fields1).rec__camera_types__blob_type__height) = 0)))
+predicate default_initial_assumption(temp___expr_211: us_rep,
+  temp___skip_top_level_212: bool) =
+  (((to_rep(((temp___expr_211).us_split_fields1).rec__camera_types__blob_type__signature) = 0) and
+  (to_rep1(((temp___expr_211).us_split_fields1).rec__camera_types__blob_type__x) = 0)) and
+  (((to_rep2(((temp___expr_211).us_split_fields1).rec__camera_types__blob_type__y) = 0) and
+  (to_rep3(((temp___expr_211).us_split_fields1).rec__camera_types__blob_type__width) = 0)) and
+  (to_rep4(((temp___expr_211).us_split_fields1).rec__camera_types__blob_type__height) = 0)))
 
-predicate dynamic_predicate(temp___211: us_rep) =
-  (in_range2((to_rep1(((temp___211).us_split_fields1).rec__camera_types__blob_type__x) + div(to_rep3(((temp___211).us_split_fields1).rec__camera_types__blob_type__width),
+predicate dynamic_predicate(temp___213: us_rep) =
+  (in_range2((to_rep1(((temp___213).us_split_fields1).rec__camera_types__blob_type__x) + div(to_rep3(((temp___213).us_split_fields1).rec__camera_types__blob_type__width),
   2))) and
-  in_range3((to_rep2(((temp___211).us_split_fields1).rec__camera_types__blob_type__y) + div(to_rep4(((temp___211).us_split_fields1).rec__camera_types__blob_type__height),
+  in_range3((to_rep2(((temp___213).us_split_fields1).rec__camera_types__blob_type__y) + div(to_rep4(((temp___213).us_split_fields1).rec__camera_types__blob_type__height),
   2))))
 
 predicate dynamic_invariant1(temp___expr_165: int, temp___is_init_161: bool,

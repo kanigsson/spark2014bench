@@ -421,17 +421,17 @@ predicate dynamic_invariant3(temp___expr_46: int, temp___is_init_42: bool,
   temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
   (1 <= 2147483647)) -> in_range1(temp___expr_46))
 
-predicate dynamic_invariant4(temp___expr_196: us_t, temp___is_init_192: bool,
-  temp___skip_constant_193: bool, temp___do_toplevel_194: bool,
-  temp___do_typ_inv_195: bool) = ((not (temp___skip_constant_193 = true)) ->
-  (dynamic_property(first1(str), last1(str), first1(temp___expr_196),
-  last1(temp___expr_196)) and ((first1(temp___expr_196) = first1(str)) and
-  (last1(temp___expr_196) = last1(str)))))
+predicate dynamic_invariant4(temp___expr_204: us_t, temp___is_init_200: bool,
+  temp___skip_constant_201: bool, temp___do_toplevel_202: bool,
+  temp___do_typ_inv_203: bool) = ((not (temp___skip_constant_201 = true)) ->
+  (dynamic_property(first1(str), last1(str), first1(temp___expr_204),
+  last1(temp___expr_204)) and ((first1(temp___expr_204) = first1(str)) and
+  (last1(temp___expr_204) = last1(str)))))
 
-predicate default_initial_assumption(temp___expr_198: us_t,
-  temp___skip_top_level_199: bool) =
-  ((first1(temp___expr_198) = first1(str)) and
-  (last1(temp___expr_198) = last1(str)))
+predicate default_initial_assumption(temp___expr_206: us_t,
+  temp___skip_top_level_207: bool) =
+  ((first1(temp___expr_206) = first1(str)) and
+  (last1(temp___expr_206) = last1(str)))
 
  (* File "hello.adb", line 39, characters 0-0 *)
 goal defqtvc : (dynamic_invariant(str, true, false, true, true) ->
@@ -455,11 +455,11 @@ goal defqtvc : (dynamic_invariant(str, true, false, true, true) ->
    to_caml_char2__function_guard(to_caml_char2(str, of_array(ret2,
    to_rep1(ret__first), to_rep1(ret__last)), idx), str, of_array(ret2,
    to_rep1(ret__first), to_rep1(ret__last)), idx)) ->
-  ((let temp___224 = first1(str) : int in (let temp___225 = last1(str)
+  ((let temp___238 = first1(str) : int in (let temp___239 = last1(str)
   : int in
-  (exists idx:int. ((idx = temp___224) and
-  (if (andb((if (temp___224 <= idx) then true else false),
-  (if (idx <= temp___225) then true else false)) = true) then (exists spark__branch:bool.
+  (exists idx:int. ((idx = temp___238) and
+  (if (andb((if (temp___238 <= idx) then true else false),
+  (if (idx <= temp___239) then true else false)) = true) then (exists spark__branch:bool.
                                                               exists ret2:(int,character) farray.
                                                               (((spark__branch = to_up) and
                                                               (if (spark__branch = true) then 
@@ -499,14 +499,14 @@ goal defqtvc : (dynamic_invariant(str, true, false, true, true) ->
                                                               : us_t in
                                                               (let o3 = str
                                                               : us_t in
-                                                              (let temp___inv_232 =
+                                                              (let temp___inv_248 =
                                                               to_caml_char2(o3,
                                                               o2, idx)
                                                               : bool in
-                                                              ((to_caml_char2__function_guard(temp___inv_232,
+                                                              ((to_caml_char2__function_guard(temp___inv_248,
                                                               o3, o2,
                                                               idx) and
-                                                              ((temp___inv_232 = true) <->
+                                                              ((temp___inv_248 = true) <->
                                                               (forall j:int.
                                                               (((first1(o3) <= j) and
                                                               (j <= idx)) ->
@@ -525,37 +525,32 @@ goal defqtvc : (dynamic_invariant(str, true, false, true, true) ->
                                                               (j <= last1(str))) ->
                                                               ((idx1 <  j) ->
                                                               (to_rep((ret1[j])) = to_rep((to_array(str)[j]))))))) and
-                                                              ((andb((if (
-                                                              (forall temp___228:int.
-                                                              (((to_rep1(ret__first) <= temp___228) and
-                                                              (temp___228 <= to_rep1(ret__last))) ->
-                                                              (((temp___225 <  temp___228) or
-                                                              ((temp___228 <  temp___224) or
-                                                              (idx1 <  temp___228))) ->
-                                                              ((ret1[temp___228]) = (ret[temp___228]))))) and
-                                                              dynamic_property1(first1(str),
+                                                              ((andb((if (dynamic_property1(first1(str),
                                                               last1(str),
-                                                              idx1)) then true else false),
+                                                              idx1) and
+                                                              (forall temp___245:int.
+                                                              (((to_rep1(ret__first) <= temp___245) and
+                                                              (temp___245 <= to_rep1(ret__last))) ->
+                                                              (((temp___239 <  temp___245) or
+                                                              ((temp___245 <  temp___238) or
+                                                              (idx1 <  temp___245))) ->
+                                                              ((ret1[temp___245]) = (ret[temp___245])))))) then true else false),
                                                               (if ((first1(str) <= idx1) and
                                                               (idx1 <= last1(str))) then true else false)) = true) and
                                                               (exists spark__branch1:bool.
                                                               exists to_up1:bool.
                                                               ((exists o4:bool.
-                                                               ((exists o5:int.
-                                                                ((to_rep((to_array(str)[idx1])) = o5) and
-                                                                (exists o6:int.
-                                                                ((to_rep((to_array(str)[idx1])) = o6) and
-                                                                (if (not (andb((if (65 <= o6) then true else false),
-                                                                (if (o5 <= 90) then true else false)) = true)) then 
-                                                                (exists o7:int.
-                                                                ((to_rep((to_array(str)[idx1])) = o7) and
-                                                                (exists o8:int.
-                                                                ((to_rep((to_array(str)[idx1])) = o8) and
-                                                                (o4 = (if (andb((if (97 <= o8) then true else false),
-                                                                (if (o7 <= 122) then true else false)) = true) then false else true)))))) else (o4 = false)))))) and
+                                                               ((exists temp___240:int.
+                                                                ((to_rep((to_array(str)[idx1])) = temp___240) and
+                                                                (if (not (andb((if (65 <= temp___240) then true else false),
+                                                                (if (temp___240 <= 90) then true else false)) = true)) then 
+                                                                (exists temp___241:int.
+                                                                ((to_rep((to_array(str)[idx1])) = temp___241) and
+                                                                (o4 = (if (andb((if (97 <= temp___241) then true else false),
+                                                                (if (temp___241 <= 122) then true else false)) = true) then false else true)))) else (o4 = false)))) and
                                                                ((spark__branch1 = o4) and
                                                                (if (spark__branch1 = true) then (to_up1 = of_int(1)) else (to_up1 = of_int(0)))))) and
-                                                              (idx1 = temp___225)))))))))))))))))) else (ret1 = ret)))))) ->
+                                                              (idx1 = temp___239)))))))))))))))))) else (ret1 = ret)))))) ->
   (forall o:int. ((to_rep1(ret__last) = o) ->
   (forall o1:int. ((to_rep1(ret__first) = o1) ->
   (forall hello__to_camel_case__result:us_t.

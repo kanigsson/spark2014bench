@@ -550,6 +550,9 @@ function bool_eq11(a: us_rep2, b: us_rep2) : bool =
   (tokens__token__instr__pred(a) ->
   (to_rep4(((a).us_split_fields3).rec__tokens__token__instr) = to_rep4(((b).us_split_fields3).rec__tokens__token__instr))))) then true else false)
 
+predicate in_range7(rec__tokens__token__kind1: int, a: us_split_discrs) =
+  (rec__tokens__token__kind1 = to_rep2((a).rec__tokens__token__kind))
+
 logic value__size3 : int
 
 logic object__size3 : int
@@ -647,7 +650,7 @@ axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
 
 axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
 
-predicate in_range7(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range8(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -670,7 +673,7 @@ function natural__ref_natural__content__projection(a: natural__ref) : natural =
 predicate dynamic_invariant(temp___expr_39: int, temp___is_init_35: bool,
   temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
   temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
-  (0 <= 2147483647)) -> in_range7(temp___expr_39))
+  (0 <= 2147483647)) -> in_range8(temp___expr_39))
 
 logic argument_count : unit -> int
 
@@ -743,7 +746,7 @@ axiom tlastSqtaxiom : (forall i:tlastS. (0 <= tlastSqtint(i)))
 
 axiom tlastSqtaxiom1 : (forall i:tlastS. (tlastSqtint(i) <= 200))
 
-predicate in_range8(x: int) = ((0 <= x) and (x <= 200))
+predicate in_range9(x: int) = ((0 <= x) and (x <= 200))
 
 function bool_eq13(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -766,7 +769,7 @@ function tlastS__ref_tlastS__content__projection(a: tlastS__ref) : tlastS =
 predicate dynamic_invariant3(temp___expr_260: int, temp___is_init_256: bool,
   temp___skip_constant_257: bool, temp___do_toplevel_258: bool,
   temp___do_typ_inv_259: bool) = (((temp___is_init_256 = true) or
-  (0 <= 200)) -> in_range8(temp___expr_260))
+  (0 <= 200)) -> in_range9(temp___expr_260))
 
 logic temp___String_Literal_270 : unit -> (int,character) farray
 
@@ -1011,7 +1014,7 @@ type file_mode
 function pos_to_rep(x: int) : int =
   (if (x = 2) then 3 else (if (x = 1) then 2 else 0))
 
-predicate in_range9(x: int) = ((0 <= x) and (x <= 2))
+predicate in_range10(x: int) = ((0 <= x) and (x <= 2))
 
 function bool_eq14(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1034,7 +1037,7 @@ function file_mode__ref_file_mode__content__projection(a: file_mode__ref) : file
 predicate dynamic_invariant9(temp___expr_248: int, temp___is_init_244: bool,
   temp___skip_constant_245: bool, temp___do_toplevel_246: bool,
   temp___do_typ_inv_247: bool) = (((temp___is_init_244 = true) or
-  (0 <= 2)) -> in_range9(temp___expr_248))
+  (0 <= 2)) -> in_range10(temp___expr_248))
 
 type count
 
@@ -1044,7 +1047,7 @@ axiom countqtaxiom : (forall i:count. (0 <= countqtint(i)))
 
 axiom countqtaxiom1 : (forall i:count. (countqtint(i) <= 2147483647))
 
-predicate in_range10(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range11(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq15(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1067,7 +1070,7 @@ function count__ref_count__content__projection(a: count__ref) : count =
 predicate dynamic_invariant10(temp___expr_168: int, temp___is_init_164: bool,
   temp___skip_constant_165: bool, temp___do_toplevel_166: bool,
   temp___do_typ_inv_167: bool) = (((temp___is_init_164 = true) or
-  (0 <= 2147483647)) -> in_range10(temp___expr_168))
+  (0 <= 2147483647)) -> in_range11(temp___expr_168))
 
 axiom mode__post_axiom :
   (forall file:us_rep [mode(file)]. ((is_open(file) = true) ->

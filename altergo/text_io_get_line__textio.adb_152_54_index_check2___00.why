@@ -1003,16 +1003,16 @@ type t69b__ref = { t69b__content : us_t
 function t69b__ref_t69b__content__projection(a: t69b__ref) : us_t =
   (a).t69b__content
 
-predicate dynamic_invariant5(temp___expr_336: us_t, temp___is_init_332: bool,
-  temp___skip_constant_333: bool, temp___do_toplevel_334: bool,
-  temp___do_typ_inv_335: bool) = ((not (temp___skip_constant_333 = true)) ->
-  (dynamic_property(1, max(500, length1(s)), first1(temp___expr_336),
-  last1(temp___expr_336)) and ((first1(temp___expr_336) = 1) and
-  (last1(temp___expr_336) = max(500, length1(s))))))
+predicate dynamic_invariant5(temp___expr_338: us_t, temp___is_init_334: bool,
+  temp___skip_constant_335: bool, temp___do_toplevel_336: bool,
+  temp___do_typ_inv_337: bool) = ((not (temp___skip_constant_335 = true)) ->
+  (dynamic_property(1, max(500, length1(s)), first1(temp___expr_338),
+  last1(temp___expr_338)) and ((first1(temp___expr_338) = 1) and
+  (last1(temp___expr_338) = max(500, length1(s))))))
 
-predicate default_initial_assumption(temp___expr_338: us_t,
-  temp___skip_top_level_339: bool) = ((first1(temp___expr_338) = 1) and
-  (last1(temp___expr_338) = max(500, length1(s))))
+predicate default_initial_assumption(temp___expr_340: us_t,
+  temp___skip_top_level_341: bool) = ((first1(temp___expr_340) = 1) and
+  (last1(temp___expr_340) = max(500, length1(s))))
 
 predicate dynamic_invariant6(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,

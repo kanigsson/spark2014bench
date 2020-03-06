@@ -758,7 +758,4 @@ goal defqtvc :
   (forall o1:int.
   ((to_rep(((s).us_split_fields1).rec__patience__state__numelts) = o1) ->
   ((andb((if (0 <= usf) then true else false),
-  (if (usf <= (o1 - 1)) then true else false)) = true) ->
-  (forall o2:int.
-  ((to_rep(((s).us_split_fields1).rec__patience__state__numstacks) = o2) ->
-  (0 <= usf))))))))))
+  (if (usf <= (o1 - 1)) then true else false)) = true) -> (0 <= usf))))))))

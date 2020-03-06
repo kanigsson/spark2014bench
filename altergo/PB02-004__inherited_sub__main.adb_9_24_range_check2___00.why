@@ -1254,70 +1254,6 @@ logic user_eq4 : us_rep, us_rep -> bool
 
 logic dummy4 : us_rep
 
-type my_rec__ref = { my_rec__content : us_rep
-}
-
-function my_rec__ref_my_rec__content__projection(a1: my_rec__ref) : us_rep =
-  (a1).my_rec__content
-
-predicate in_range5(rec__rec__my_rec__e1: int, a1: us_rep) =
-  (rec__rec__my_rec__e1 = to_rep3(((a1).us_split_discrs1).rec__rec__my_rec__e))
-
-logic value__size1 : int
-
-logic object__size1 : int
-
-logic alignment1 : int
-
-axiom value__size_axiom1 : (0 <= value__size1)
-
-axiom object__size_axiom1 : (0 <= object__size1)
-
-axiom alignment_axiom1 : (0 <= alignment1)
-
-logic rec__my_rec__e__first__bit1 : int
-
-logic rec__my_rec__e__last__bit1 : int
-
-logic rec__my_rec__e__position1 : int
-
-axiom rec__my_rec__e__first__bit_axiom1 : (0 <= rec__my_rec__e__first__bit1)
-
-axiom rec__my_rec__e__last__bit_axiom1 :
-  (rec__my_rec__e__first__bit1 <  rec__my_rec__e__last__bit1)
-
-axiom rec__my_rec__e__position_axiom1 : (0 <= rec__my_rec__e__position1)
-
-logic rec__my_rec__x__first__bit1 : int
-
-logic rec__my_rec__x__last__bit1 : int
-
-logic rec__my_rec__x__position1 : int
-
-axiom rec__my_rec__x__first__bit_axiom1 : (0 <= rec__my_rec__x__first__bit1)
-
-axiom rec__my_rec__x__last__bit_axiom1 :
-  (rec__my_rec__x__first__bit1 <  rec__my_rec__x__last__bit1)
-
-axiom rec__my_rec__x__position_axiom1 : (0 <= rec__my_rec__x__position1)
-
-logic rec__my_rec__y__first__bit1 : int
-
-logic rec__my_rec__y__last__bit1 : int
-
-logic rec__my_rec__y__position1 : int
-
-axiom rec__my_rec__y__first__bit_axiom1 : (0 <= rec__my_rec__y__first__bit1)
-
-axiom rec__my_rec__y__last__bit_axiom1 :
-  (rec__my_rec__y__first__bit1 <  rec__my_rec__y__last__bit1)
-
-axiom rec__my_rec__y__position_axiom1 : (0 <= rec__my_rec__y__position1)
-
-logic user_eq5 : us_rep, us_rep -> bool
-
-logic dummy5 : us_rep
-
 type t1s__ref = { t1s__content : us_rep
 }
 
@@ -1363,17 +1299,20 @@ function bool_eq7(a1: us_rep1, b: us_rep1) : bool =
   (bool_eq6(((a1).us_split_fields3).rec__rec__sub_rec__plop,
   ((b).us_split_fields3).rec__rec__sub_rec__plop) = true)) then true else false)
 
-logic value__size2 : int
+predicate in_range5(rec__rec__sub_rec__z1: int, a1: us_split_discrs2) =
+  (rec__rec__sub_rec__z1 = to_rep((a1).rec__rec__sub_rec__z))
 
-logic object__size2 : int
+logic value__size1 : int
 
-logic alignment2 : int
+logic object__size1 : int
 
-axiom value__size_axiom2 : (0 <= value__size2)
+logic alignment1 : int
 
-axiom object__size_axiom2 : (0 <= object__size2)
+axiom value__size_axiom1 : (0 <= value__size1)
 
-axiom alignment_axiom2 : (0 <= alignment2)
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
 
 logic rec__sub_rec__z__first__bit : int
 
@@ -1403,9 +1342,9 @@ axiom rec__sub_rec__plop__last__bit_axiom :
 axiom rec__sub_rec__plop__position_axiom :
   (0 <= rec__sub_rec__plop__position)
 
-logic user_eq6 : us_rep1, us_rep1 -> bool
+logic user_eq5 : us_rep1, us_rep1 -> bool
 
-logic dummy6 : us_rep1
+logic dummy5 : us_rep1
 
 type sub_rec__ref = { sub_rec__content : us_rep1
 }
@@ -1413,63 +1352,60 @@ type sub_rec__ref = { sub_rec__content : us_rep1
 function sub_rec__ref_sub_rec__content__projection(a1: sub_rec__ref) : us_rep1 =
   (a1).sub_rec__content
 
-predicate in_range6(rec__rec__my_rec__e1: int, a1: us_rep) =
-  (rec__rec__my_rec__e1 = to_rep3(((a1).us_split_discrs1).rec__rec__my_rec__e))
+logic value__size2 : int
 
-logic value__size3 : int
+logic object__size2 : int
 
-logic object__size3 : int
+logic alignment2 : int
 
-logic alignment3 : int
+axiom value__size_axiom2 : (0 <= value__size2)
 
-axiom value__size_axiom3 : (0 <= value__size3)
+axiom object__size_axiom2 : (0 <= object__size2)
 
-axiom object__size_axiom3 : (0 <= object__size3)
+axiom alignment_axiom2 : (0 <= alignment2)
 
-axiom alignment_axiom3 : (0 <= alignment3)
+logic rec__my_rec__e__first__bit1 : int
 
-logic rec__my_rec__e__first__bit2 : int
+logic rec__my_rec__e__last__bit1 : int
 
-logic rec__my_rec__e__last__bit2 : int
+logic rec__my_rec__e__position1 : int
 
-logic rec__my_rec__e__position2 : int
+axiom rec__my_rec__e__first__bit_axiom1 : (0 <= rec__my_rec__e__first__bit1)
 
-axiom rec__my_rec__e__first__bit_axiom2 : (0 <= rec__my_rec__e__first__bit2)
+axiom rec__my_rec__e__last__bit_axiom1 :
+  (rec__my_rec__e__first__bit1 <  rec__my_rec__e__last__bit1)
 
-axiom rec__my_rec__e__last__bit_axiom2 :
-  (rec__my_rec__e__first__bit2 <  rec__my_rec__e__last__bit2)
+axiom rec__my_rec__e__position_axiom1 : (0 <= rec__my_rec__e__position1)
 
-axiom rec__my_rec__e__position_axiom2 : (0 <= rec__my_rec__e__position2)
+logic rec__my_rec__x__first__bit1 : int
 
-logic rec__my_rec__x__first__bit2 : int
+logic rec__my_rec__x__last__bit1 : int
 
-logic rec__my_rec__x__last__bit2 : int
+logic rec__my_rec__x__position1 : int
 
-logic rec__my_rec__x__position2 : int
+axiom rec__my_rec__x__first__bit_axiom1 : (0 <= rec__my_rec__x__first__bit1)
 
-axiom rec__my_rec__x__first__bit_axiom2 : (0 <= rec__my_rec__x__first__bit2)
+axiom rec__my_rec__x__last__bit_axiom1 :
+  (rec__my_rec__x__first__bit1 <  rec__my_rec__x__last__bit1)
 
-axiom rec__my_rec__x__last__bit_axiom2 :
-  (rec__my_rec__x__first__bit2 <  rec__my_rec__x__last__bit2)
+axiom rec__my_rec__x__position_axiom1 : (0 <= rec__my_rec__x__position1)
 
-axiom rec__my_rec__x__position_axiom2 : (0 <= rec__my_rec__x__position2)
+logic rec__my_rec__y__first__bit1 : int
 
-logic rec__my_rec__y__first__bit2 : int
+logic rec__my_rec__y__last__bit1 : int
 
-logic rec__my_rec__y__last__bit2 : int
+logic rec__my_rec__y__position1 : int
 
-logic rec__my_rec__y__position2 : int
+axiom rec__my_rec__y__first__bit_axiom1 : (0 <= rec__my_rec__y__first__bit1)
 
-axiom rec__my_rec__y__first__bit_axiom2 : (0 <= rec__my_rec__y__first__bit2)
+axiom rec__my_rec__y__last__bit_axiom1 :
+  (rec__my_rec__y__first__bit1 <  rec__my_rec__y__last__bit1)
 
-axiom rec__my_rec__y__last__bit_axiom2 :
-  (rec__my_rec__y__first__bit2 <  rec__my_rec__y__last__bit2)
+axiom rec__my_rec__y__position_axiom1 : (0 <= rec__my_rec__y__position1)
 
-axiom rec__my_rec__y__position_axiom2 : (0 <= rec__my_rec__y__position2)
+logic user_eq6 : us_rep, us_rep -> bool
 
-logic user_eq7 : us_rep, us_rep -> bool
-
-logic dummy7 : us_rep
+logic dummy6 : us_rep
 
 type t2b__ref = { t2b__content : us_rep
 }
@@ -1512,20 +1448,17 @@ function bool_eq8(a1: us_rep2, b: us_rep2) : bool =
   (bool_eq6(((a1).us_split_fields5).rec__rec__sub_rec__plop1,
   ((b).us_split_fields5).rec__rec__sub_rec__plop1) = true)) then true else false)
 
-predicate in_range7(rec__rec__sub_rec__z1: int, a1: us_rep1) =
-  (rec__rec__sub_rec__z1 = to_rep(((a1).us_split_discrs3).rec__rec__sub_rec__z))
+logic value__size3 : int
 
-logic value__size4 : int
+logic object__size3 : int
 
-logic object__size4 : int
+logic alignment3 : int
 
-logic alignment4 : int
+axiom value__size_axiom3 : (0 <= value__size3)
 
-axiom value__size_axiom4 : (0 <= value__size4)
+axiom object__size_axiom3 : (0 <= object__size3)
 
-axiom object__size_axiom4 : (0 <= object__size4)
-
-axiom alignment_axiom4 : (0 <= alignment4)
+axiom alignment_axiom3 : (0 <= alignment3)
 
 logic rec__sub_rec__z__first__bit1 : int
 
@@ -1556,9 +1489,9 @@ axiom rec__sub_rec__plop__last__bit_axiom1 :
 axiom rec__sub_rec__plop__position_axiom1 :
   (0 <= rec__sub_rec__plop__position1)
 
-logic user_eq8 : us_rep2, us_rep2 -> bool
+logic user_eq7 : us_rep2, us_rep2 -> bool
 
-logic dummy8 : us_rep2
+logic dummy7 : us_rep2
 
 type tzS__ref = { tzS__content : us_rep2
 }
@@ -1570,12 +1503,76 @@ logic z__split_discrs : us_split_discrs2
 
 logic attr__ATTRIBUTE_ADDRESS1 : int
 
+predicate in_range6(rec__rec__my_rec__e1: int, a1: us_split_discrs) =
+  (rec__rec__my_rec__e1 = to_rep3((a1).rec__rec__my_rec__e))
+
+logic value__size4 : int
+
+logic object__size4 : int
+
+logic alignment4 : int
+
+axiom value__size_axiom4 : (0 <= value__size4)
+
+axiom object__size_axiom4 : (0 <= object__size4)
+
+axiom alignment_axiom4 : (0 <= alignment4)
+
+logic rec__my_rec__e__first__bit2 : int
+
+logic rec__my_rec__e__last__bit2 : int
+
+logic rec__my_rec__e__position2 : int
+
+axiom rec__my_rec__e__first__bit_axiom2 : (0 <= rec__my_rec__e__first__bit2)
+
+axiom rec__my_rec__e__last__bit_axiom2 :
+  (rec__my_rec__e__first__bit2 <  rec__my_rec__e__last__bit2)
+
+axiom rec__my_rec__e__position_axiom2 : (0 <= rec__my_rec__e__position2)
+
+logic rec__my_rec__x__first__bit2 : int
+
+logic rec__my_rec__x__last__bit2 : int
+
+logic rec__my_rec__x__position2 : int
+
+axiom rec__my_rec__x__first__bit_axiom2 : (0 <= rec__my_rec__x__first__bit2)
+
+axiom rec__my_rec__x__last__bit_axiom2 :
+  (rec__my_rec__x__first__bit2 <  rec__my_rec__x__last__bit2)
+
+axiom rec__my_rec__x__position_axiom2 : (0 <= rec__my_rec__x__position2)
+
+logic rec__my_rec__y__first__bit2 : int
+
+logic rec__my_rec__y__last__bit2 : int
+
+logic rec__my_rec__y__position2 : int
+
+axiom rec__my_rec__y__first__bit_axiom2 : (0 <= rec__my_rec__y__first__bit2)
+
+axiom rec__my_rec__y__last__bit_axiom2 :
+  (rec__my_rec__y__first__bit2 <  rec__my_rec__y__last__bit2)
+
+axiom rec__my_rec__y__position_axiom2 : (0 <= rec__my_rec__y__position2)
+
+logic user_eq8 : us_rep, us_rep -> bool
+
+logic dummy8 : us_rep
+
+type my_rec__ref = { my_rec__content : us_rep
+}
+
+function my_rec__ref_my_rec__content__projection(a1: my_rec__ref) : us_rep =
+  (a1).my_rec__content
+
 predicate dynamic_invariant(temp___expr_212: us_rep2,
   temp___is_init_208: bool, temp___skip_constant_209: bool,
   temp___do_toplevel_210: bool, temp___do_typ_inv_211: bool) =
-  (((not (temp___skip_constant_209 = true)) -> in_range7(a,
-  to_base(temp___expr_212))) and in_range6(a,
-  ((temp___expr_212).us_split_fields5).rec__rec__sub_rec__plop1))
+  (((not (temp___skip_constant_209 = true)) -> in_range5(a,
+  (to_base(temp___expr_212)).us_split_discrs3)) and in_range6(a,
+  (((temp___expr_212).us_split_fields5).rec__rec__sub_rec__plop1).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_215: us_rep2,
   temp___skip_top_level_216: bool) =
@@ -1612,8 +1609,8 @@ predicate dynamic_invariant4(temp___expr_192: int, temp___is_init_188: bool,
 predicate dynamic_invariant5(temp___expr_205: us_rep1,
   temp___is_init_201: bool, temp___skip_constant_202: bool,
   temp___do_toplevel_203: bool, temp___do_typ_inv_204: bool) =
-  in_range5(to_rep(((temp___expr_205).us_split_discrs3).rec__rec__sub_rec__z),
-  ((temp___expr_205).us_split_fields3).rec__rec__sub_rec__plop)
+  in_range6(to_rep(((temp___expr_205).us_split_discrs3).rec__rec__sub_rec__z),
+  (((temp___expr_205).us_split_fields3).rec__rec__sub_rec__plop).us_split_discrs1)
 
  (* File "main.adb", line 5, characters 0-0 *)
 goal defqtvc : (dynamic_invariant1(a, true, false, true, true) ->

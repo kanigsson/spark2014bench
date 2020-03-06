@@ -175,6 +175,10 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (data__t_strong_data_type__min_nat32__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__data__t_strong_data_type__min_nat32) = to_rep(((b).us_split_fields1).rec__data__t_strong_data_type__min_nat32)))) then true else false)
 
+predicate in_range2(rec__data__t_strong_data_type__data_type1: int,
+  a: us_split_discrs) =
+  (rec__data__t_strong_data_type__data_type1 = to_rep1((a).rec__data__t_strong_data_type__data_type))
+
 logic value__size : int
 
 logic object__size : int

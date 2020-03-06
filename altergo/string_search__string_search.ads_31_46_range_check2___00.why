@@ -465,8 +465,8 @@ predicate dynamic_invariant4(temp___expr_18: int, temp___is_init_14: bool,
 goal defqtvc :
   (forall string_search__brute_force__result:int. (dynamic_invariant2(needle,
   true, false, true, true) -> (dynamic_invariant2(haystack, true, false,
-  true, true) -> (((1 <= length(needle)) and
-  (length(needle) <= length(haystack))) ->
+  true, true) -> ((let temp___341 = length(needle) : int in
+  ((1 <= temp___341) and (temp___341 <= length(haystack)))) ->
   (forall string_search__brute_force__result1:int.
   ((forall i:int. forall j:int.
    partial_match_at__function_guard(partial_match_at(needle, haystack, i, j),
@@ -504,11 +504,11 @@ goal defqtvc :
   (exists i:int. ((i = 1) and ((andb((if (1 <= i) then true else false),
   (if (i <= o3) then true else false)) = true) and
   (exists diff:bool. ((diff = of_int(0)) and
-  (exists diff1:bool. exists j:int. ((let temp___316 = first1(needle)
-  : int in (let temp___317 = last1(needle) : int in
-  (exists j1:int. ((j1 = temp___316) and
-  (if (andb((if (temp___316 <= j1) then true else false),
-  (if (j1 <= temp___317) then true else false)) = true) then (let o4 =
+  (exists diff1:bool. exists j:int. ((let temp___323 = first1(needle)
+  : int in (let temp___324 = last1(needle) : int in
+  (exists j1:int. ((j1 = temp___323) and
+  (if (andb((if (temp___323 <= j1) then true else false),
+  (if (j1 <= temp___324) then true else false)) = true) then (let o4 =
   (j1 + (i - 1)) : int in (in_range1(o4) and (((first1(haystack) <= o4) and
   (o4 <= last1(haystack))) and
   (exists o5:int. ((to_rep((to_array(haystack)[o4])) = o5) and
@@ -516,9 +516,9 @@ goal defqtvc :
   (exists diff2:bool. ((diff2 = (if (o6 = o5) then false else true)) and
   (if (diff2 = true) then ((diff1 = diff2) and
   (j = j1)) else (in_range2(j1) and (let o7 = haystack : us_t in (let o8 =
-  needle : us_t in (let temp___inv_323 = partial_match_at(o8, o7, i, j1)
-  : bool in ((partial_match_at__function_guard(temp___inv_323, o8, o7, i,
-  j1) and ((temp___inv_323 = true) <->
+  needle : us_t in (let temp___inv_330 = partial_match_at(o8, o7, i, j1)
+  : bool in ((partial_match_at__function_guard(temp___inv_330, o8, o7, i,
+  j1) and ((temp___inv_330 = true) <->
   (forall i1:int. (((1 <= i1) and (i1 <= j1)) ->
   (to_rep((to_array(o8)[i1])) = to_rep((to_array(o7)[(i + (i1 - 1))]))))))) and
   (exists diff3:bool. exists j2:int. (((partial_match_at(needle, haystack, i,
@@ -527,7 +527,7 @@ goal defqtvc :
   ((andb((if dynamic_property2(first1(needle), last1(needle),
   j2) then true else false), (if ((first1(needle) <= j2) and
   (j2 <= last1(needle))) then true else false)) = true) and
-  (if (j2 = temp___317) then ((diff1 = diff3) and
+  (if (j2 = temp___324) then ((diff1 = diff3) and
   (j = j2)) else ((j = (j2 + 1)) and (let o9 = (j + (i - 1)) : int in
   (in_range1(o9) and (((first1(haystack) <= o9) and
   (o9 <= last1(haystack))) and
@@ -547,21 +547,21 @@ goal defqtvc :
   ((not (i1 = o3)) and
   (exists i2:int. ((i2 = (i1 + 1)) and
   (exists diff2:bool. ((diff2 = of_int(0)) and
-  (exists diff3:bool. ((let temp___316 = first1(needle) : int in
-  (let temp___317 = last1(needle) : int in
-  (exists j1:int. ((j1 = temp___316) and
-  (if (andb((if (temp___316 <= j1) then true else false),
-  (if (j1 <= temp___317) then true else false)) = true) then (let o4 =
+  (exists diff3:bool. ((let temp___323 = first1(needle) : int in
+  (let temp___324 = last1(needle) : int in
+  (exists j1:int. ((j1 = temp___323) and
+  (if (andb((if (temp___323 <= j1) then true else false),
+  (if (j1 <= temp___324) then true else false)) = true) then (let o4 =
   (j1 + (i2 - 1)) : int in (in_range1(o4) and (((first1(haystack) <= o4) and
   (o4 <= last1(haystack))) and
   (exists o5:int. ((to_rep((to_array(haystack)[o4])) = o5) and
   (exists o6:int. ((to_rep((to_array(needle)[j1])) = o6) and
   (exists diff4:bool. ((diff4 = (if (o6 = o5) then false else true)) and
   (if (diff4 = true) then (diff3 = diff4) else (in_range2(j1) and (let o7 =
-  haystack : us_t in (let o8 = needle : us_t in (let temp___inv_323 =
+  haystack : us_t in (let o8 = needle : us_t in (let temp___inv_330 =
   partial_match_at(o8, o7, i2, j1) : bool in
-  ((partial_match_at__function_guard(temp___inv_323, o8, o7, i2, j1) and
-  ((temp___inv_323 = true) <->
+  ((partial_match_at__function_guard(temp___inv_330, o8, o7, i2, j1) and
+  ((temp___inv_330 = true) <->
   (forall i3:int. (((1 <= i3) and (i3 <= j1)) ->
   (to_rep((to_array(o8)[i3])) = to_rep((to_array(o7)[(i2 + (i3 - 1))]))))))) and
   (exists diff5:bool. exists j2:int. (((partial_match_at(needle, haystack,
@@ -570,7 +570,7 @@ goal defqtvc :
   ((andb((if dynamic_property2(first1(needle), last1(needle),
   j2) then true else false), (if ((first1(needle) <= j2) and
   (j2 <= last1(needle))) then true else false)) = true) and
-  (if (j2 = temp___317) then (diff3 = diff5) else (exists j3:int.
+  (if (j2 = temp___324) then (diff3 = diff5) else (exists j3:int.
                                                   ((j3 = (j2 + 1)) and
                                                   (let o9 = (j3 + (i2 - 1))
                                                   : int in (in_range1(o9) and
@@ -594,14 +594,14 @@ goal defqtvc :
                                                     ((diff = of_int(0)) and
                                                     (exists diff1:bool.
                                                     exists j:int.
-                                                    ((let temp___316 =
+                                                    ((let temp___323 =
                                                     first1(needle) : int in
-                                                    (let temp___317 =
+                                                    (let temp___324 =
                                                     last1(needle) : int in
                                                     (exists j1:int.
-                                                    ((j1 = temp___316) and
-                                                    (if (andb((if (temp___316 <= j1) then true else false),
-                                                    (if (j1 <= temp___317) then true else false)) = true) then (let o4 =
+                                                    ((j1 = temp___323) and
+                                                    (if (andb((if (temp___323 <= j1) then true else false),
+                                                    (if (j1 <= temp___324) then true else false)) = true) then (let o4 =
                                                     (j1 + (i - 1)) : int in
                                                     (in_range1(o4) and
                                                     (((first1(haystack) <= o4) and
@@ -617,12 +617,12 @@ goal defqtvc :
                                                     (let o7 = haystack
                                                     : us_t in (let o8 =
                                                     needle : us_t in
-                                                    (let temp___inv_323 =
+                                                    (let temp___inv_330 =
                                                     partial_match_at(o8, o7,
                                                     i, j1) : bool in
-                                                    ((partial_match_at__function_guard(temp___inv_323,
+                                                    ((partial_match_at__function_guard(temp___inv_330,
                                                     o8, o7, i, j1) and
-                                                    ((temp___inv_323 = true) <->
+                                                    ((temp___inv_330 = true) <->
                                                     (forall i1:int.
                                                     (((1 <= i1) and
                                                     (i1 <= j1)) ->
@@ -639,7 +639,7 @@ goal defqtvc :
                                                     j2) then true else false),
                                                     (if ((first1(needle) <= j2) and
                                                     (j2 <= last1(needle))) then true else false)) = true) and
-                                                    (if (j2 = temp___317) then ((diff1 = diff3) and
+                                                    (if (j2 = temp___324) then ((diff1 = diff3) and
                                                     (j = j2)) else ((j = (j2 + 1)) and
                                                     (let o9 = (j + (i - 1))
                                                     : int in

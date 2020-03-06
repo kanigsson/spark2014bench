@@ -518,6 +518,10 @@ function bool_eq8(a: us_rep, b: us_rep) : bool =
   (bool_eq6(((a).us_split_fields1).rec__bounded_dynamic_strings__sequence__content,
   ((b).us_split_fields1).rec__bounded_dynamic_strings__sequence__content) = true))) then true else false)
 
+predicate in_range5(rec__bounded_dynamic_strings__sequence__capacity1: int,
+  a: us_split_discrs) =
+  (rec__bounded_dynamic_strings__sequence__capacity1 = to_rep2((a).rec__bounded_dynamic_strings__sequence__capacity))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -592,20 +596,22 @@ logic length__function_guard : int, us_rep -> prop
 predicate dynamic_invariant(temp___expr_258: us_rep,
   temp___is_init_254: bool, temp___skip_constant_255: bool,
   temp___do_toplevel_256: bool, temp___do_typ_inv_257: bool) =
-  (((temp___do_toplevel_256 = true) ->
-  ((0 <= to_rep2(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__current_length)) and
-  (to_rep2(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__current_length) <= to_rep2(((temp___expr_258).us_split_discrs1).rec__bounded_dynamic_strings__sequence__capacity)))) and
-  (let temp___260 =
+  (((temp___do_toplevel_256 = true) -> (let temp___260 =
+  to_rep2(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__current_length)
+  : int in ((0 <= temp___260) and
+  (temp___260 <= to_rep2(((temp___expr_258).us_split_discrs1).rec__bounded_dynamic_strings__sequence__capacity))))) and
+  (let temp___261 =
   ((temp___expr_258).us_split_discrs1).rec__bounded_dynamic_strings__sequence__capacity
-  : natural_index in (dynamic_property(1, to_rep2(temp___260),
+  : natural_index in (dynamic_property(1, to_rep2(temp___261),
   first1(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__content),
   last1(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__content)) and
   ((first1(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__content) = 1) and
-  (last1(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__content) = to_rep2(temp___260))))))
+  (last1(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__content) = to_rep2(temp___261))))))
 
-predicate dynamic_predicate(temp___262: us_rep) =
-  ((0 <= to_rep2(((temp___262).us_split_fields1).rec__bounded_dynamic_strings__sequence__current_length)) and
-  (to_rep2(((temp___262).us_split_fields1).rec__bounded_dynamic_strings__sequence__current_length) <= to_rep2(((temp___262).us_split_discrs1).rec__bounded_dynamic_strings__sequence__capacity)))
+predicate dynamic_predicate(temp___263: us_rep) = (let temp___265 =
+  to_rep2(((temp___263).us_split_fields1).rec__bounded_dynamic_strings__sequence__current_length)
+  : int in ((0 <= temp___265) and
+  (temp___265 <= to_rep2(((temp___263).us_split_discrs1).rec__bounded_dynamic_strings__sequence__capacity))))
 
 predicate dynamic_invariant1(temp___expr_244: int, temp___is_init_240: bool,
   temp___skip_constant_241: bool, temp___do_toplevel_242: bool,
@@ -839,14 +845,14 @@ goal defqtvc : (dynamic_invariant(i52s, true, false, true, true) ->
   (dynamic_invariant2(right, true, false, true, true) ->
   (length__function_guard(length2(left), left) ->
   (((length2(left) + length1(right)) <= 2147483647) -> (let o = left
-  : us_rep in (let temp___1351 = value(o) : us_t in
+  : us_rep in (let temp___1407 = value(o) : us_t in
   ((forall o1:us_rep. length__function_guard(length2(o1), o1)) ->
   ((forall o1:us_rep. length__function_guard(length2(o1), o1)) ->
   ((forall o1:us_rep. length__function_guard(length2(o1), o1)) ->
   ((forall o1:us_rep. empty__function_guard(empty(o1), o1)) ->
-  ((value__function_guard(temp___1351, o) and
-  (dynamic_invariant2(temp___1351, true, false, true, true) and
-  ((temp___1351 = of_array(to_array(of_array(to_array(((o).us_split_fields1).rec__bounded_dynamic_strings__sequence__content),
+  ((value__function_guard(temp___1407, o) and
+  (dynamic_invariant2(temp___1407, true, false, true, true) and
+  ((temp___1407 = of_array(to_array(of_array(to_array(((o).us_split_fields1).rec__bounded_dynamic_strings__sequence__content),
   1,
   to_rep2(((o).us_split_fields1).rec__bounded_dynamic_strings__sequence__current_length))),
   first1(of_array(to_array(((o).us_split_fields1).rec__bounded_dynamic_strings__sequence__content),
@@ -855,9 +861,9 @@ goal defqtvc : (dynamic_invariant(i52s, true, false, true, true) ->
   last1(of_array(to_array(((o).us_split_fields1).rec__bounded_dynamic_strings__sequence__content),
   1,
   to_rep2(((o).us_split_fields1).rec__bounded_dynamic_strings__sequence__current_length))))) and
-  ((((length1(temp___1351) = length2(o)) and (first1(temp___1351) = 1)) and
-  (last1(temp___1351) = length2(o))) and ((0 <  length2(o)) <->
-  (not (empty(o) = true))))))) -> ((not (length1(temp___1351) = 0)) ->
-  in_range2(((first1(temp___1351) + (length(first1(temp___1351),
-  last1(temp___1351)) + length(first1(right),
+  ((((length1(temp___1407) = length2(o)) and (first1(temp___1407) = 1)) and
+  (last1(temp___1407) = length2(o))) and ((0 <  length2(o)) <->
+  (not (empty(o) = true))))))) -> ((not (length1(temp___1407) = 0)) ->
+  in_range2(((first1(temp___1407) + (length(first1(temp___1407),
+  last1(temp___1407)) + length(first1(right),
   last1(right)))) - 1))))))))))))))))

@@ -1276,6 +1276,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (relaxed_initialization__rec__z__pred(a) ->
   (to_rep3((((a).us_split_fields1).rec__relaxed_initialization__rec__z).rec__value2) = to_rep3((((b).us_split_fields1).rec__relaxed_initialization__rec__z).rec__value2))))) then true else false)
 
+predicate in_range7(rec__relaxed_initialization__rec__d1: bool,
+  a: us_split_discrs) =
+  (rec__relaxed_initialization__rec__d1 = (a).rec__relaxed_initialization__rec__d)
+
 logic value__size : int
 
 logic object__size : int
@@ -1420,9 +1424,6 @@ axiom bool_eq_rev3 :
   (temp___idx_154 <= a__last)) -> (bool_eq6((a[temp___idx_154]),
   (b[((b__first - a__first) + temp___idx_154)])) = true))))))
 
-predicate in_range7(rec__relaxed_initialization__rec__d1: bool, a: us_rep) =
-  (rec__relaxed_initialization__rec__d1 = ((a).us_split_discrs1).rec__relaxed_initialization__rec__d)
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -1515,7 +1516,7 @@ predicate dynamic_invariant(temp___expr_268: us_rep,
   temp___is_init_264: bool, temp___skip_constant_265: bool,
   temp___do_toplevel_266: bool, temp___do_typ_inv_267: bool) =
   ((not (temp___skip_constant_265 = true)) -> in_range7(of_int(1),
-  temp___expr_268))
+  (temp___expr_268).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_270: us_rep,
   temp___skip_top_level_271: bool) =
@@ -1525,9 +1526,6 @@ predicate default_initial_assumption1(temp___expr_270: us_rep,
   ((((temp___expr_270).us_split_fields1).rec__relaxed_initialization__rec__x).attr__init = false)) and
   (relaxed_initialization__rec__y__pred(temp___expr_270) ->
   ((((temp___expr_270).us_split_fields1).rec__relaxed_initialization__rec__y).attr__init1 = false))))
-
-predicate in_range8(rec__relaxed_initialization__rec__d1: bool, a: us_rep) =
-  (rec__relaxed_initialization__rec__d1 = ((a).us_split_discrs1).rec__relaxed_initialization__rec__d)
 
 logic value__size2 : int
 
@@ -1620,8 +1618,8 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant1(temp___expr_280: us_rep,
   temp___is_init_276: bool, temp___skip_constant_277: bool,
   temp___do_toplevel_278: bool, temp___do_typ_inv_279: bool) =
-  ((not (temp___skip_constant_277 = true)) -> in_range8(of_int(0),
-  temp___expr_280))
+  ((not (temp___skip_constant_277 = true)) -> in_range7(of_int(0),
+  (temp___expr_280).us_split_discrs1))
 
 predicate default_initial_assumption2(temp___expr_282: us_rep,
   temp___skip_top_level_283: bool) =
@@ -1711,7 +1709,7 @@ axiom t25bqtaxiom : (forall i:t25b. (1 <= t25bqtint(i)))
 
 axiom t25bqtaxiom1 : (forall i:t25b. (t25bqtint(i) <= 5))
 
-predicate in_range9(x: int) = ((1 <= x) and (x <= 5))
+predicate in_range8(x: int) = ((1 <= x) and (x <= 5))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 

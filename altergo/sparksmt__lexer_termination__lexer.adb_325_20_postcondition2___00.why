@@ -251,6 +251,9 @@ function bool_eq4(a: us_rep, b: us_rep) : bool =
   (lexer__token__value__pred(a) ->
   (to_rep2(((a).us_split_fields1).rec__lexer__token__value) = to_rep2(((b).us_split_fields1).rec__lexer__token__value)))))) then true else false)
 
+predicate in_range4(rec__lexer__token__kind1: int, a: us_split_discrs) =
+  (rec__lexer__token__kind1 = to_rep1((a).rec__lexer__token__kind))
+
 logic value__size : int
 
 logic object__size : int
@@ -376,9 +379,6 @@ predicate dynamic_invariant1(temp___expr_174: int, temp___is_init_170: bool,
   temp___do_typ_inv_173: bool) = (((temp___is_init_170 = true) or
   (0 <= 8)) -> in_range2(temp___expr_174))
 
-predicate in_range4(rec__lexer__token__kind1: int, a: us_rep) =
-  (rec__lexer__token__kind1 = to_rep1(((a).us_split_discrs1).rec__lexer__token__kind))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -475,9 +475,6 @@ type t23b__ref = { t23b__content : us_rep
 
 function t23b__ref_t23b__content__projection(a: t23b__ref) : us_rep =
   (a).t23b__content
-
-predicate in_range5(rec__lexer__token__kind1: int, a: us_rep) =
-  (rec__lexer__token__kind1 = to_rep1(((a).us_split_discrs1).rec__lexer__token__kind))
 
 logic value__size2 : int
 

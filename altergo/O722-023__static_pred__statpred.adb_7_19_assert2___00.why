@@ -158,5 +158,4 @@ predicate dynamic_predicate(temp___185: int) =
   ((2 <= temp___185) and (temp___185 <= 2147483647)))
 
  (* File "statpred.adb", line 1, characters 0-0 *)
-goal defqtvc : (id__function_guard(id(2), 2) -> (id__function_guard(id(2),
-  2) -> in_range2(id(2))))
+goal defqtvc : (id__function_guard(id(2), 2) -> in_range2(id(2)))

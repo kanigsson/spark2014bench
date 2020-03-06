@@ -241,17 +241,17 @@ predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
  (* File "test_tag.adb", line 25, characters 0-0 *)
 goal defqtvc :
   (forall us_next_pointer_address:int.
-  (forall temp___alloc_217:us_rep1.
-  (((not ((temp___alloc_217).rec__test_tag__r_acc__is_null_pointer = true)) and
-  ((temp___alloc_217).rec__test_tag__r_acc__pointer_address = us_next_pointer_address)) ->
+  (forall temp___alloc_221:us_rep1.
+  (((not ((temp___alloc_221).rec__test_tag__r_acc__is_null_pointer = true)) and
+  ((temp___alloc_221).rec__test_tag__r_acc__pointer_address = us_next_pointer_address)) ->
   (forall usf:us_rep. (default_initial_assumption(usf, false) ->
-  (((temp___alloc_217).rec__test_tag__r_acc__pointer_value = usf) ->
+  (((temp___alloc_221).rec__test_tag__r_acc__pointer_value = usf) ->
   (forall z__pointer_value:us_rep.
-  ((z__pointer_value = (temp___alloc_217).rec__test_tag__r_acc__pointer_value) ->
+  ((z__pointer_value = (temp___alloc_221).rec__test_tag__r_acc__pointer_value) ->
   (forall z__pointer_address:int.
-  ((z__pointer_address = (temp___alloc_217).rec__test_tag__r_acc__pointer_address) ->
+  ((z__pointer_address = (temp___alloc_221).rec__test_tag__r_acc__pointer_address) ->
   (forall z__is_null_pointer:bool.
-  ((z__is_null_pointer = (temp___alloc_217).rec__test_tag__r_acc__is_null_pointer) ->
+  ((z__is_null_pointer = (temp___alloc_221).rec__test_tag__r_acc__is_null_pointer) ->
   rec__test_tag__r_acc__pointer_value__pred({
   rec__test_tag__r_acc__is_null_pointer = z__is_null_pointer;
   rec__test_tag__r_acc__pointer_address = z__pointer_address;

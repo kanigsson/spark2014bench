@@ -430,6 +430,10 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   (bool_eq6(((a).us_split_fields3).rec__types_with_invariants__container__content,
   ((b).us_split_fields3).rec__types_with_invariants__container__content) = true)) then true else false)
 
+predicate in_range4(rec__types_with_invariants__container__c1: int,
+  a: us_split_discrs) =
+  (rec__types_with_invariants__container__c1 = to_rep1((a).rec__types_with_invariants__container__c))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -636,7 +640,7 @@ axiom tqtaxiom : (forall i:t2. ((- 2147483648) <= tqtint(i)))
 
 axiom tqtaxiom1 : (forall i:t2. (tqtint(i) <= 2147483647))
 
-predicate in_range4(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range5(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq10(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -658,7 +662,7 @@ function t__ref_t__content__projection(a: t__ref) : t2 = (a).t__content
 predicate dynamic_invariant3(temp___expr_197: int, temp___is_init_193: bool,
   temp___skip_constant_194: bool, temp___do_toplevel_195: bool,
   temp___do_typ_inv_196: bool) = (((temp___is_init_193 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range4(temp___expr_197))
+  ((- 2147483648) <= 2147483647)) -> in_range5(temp___expr_197))
 
 function to_rep2(x: t2) : int = tqtint(x)
 
@@ -667,10 +671,10 @@ logic of_rep2 : int -> t2
 axiom inversion_axiom2 :
   (forall x:t2 [to_rep2(x)]. (of_rep2(to_rep2(x)) = x))
 
-axiom range_axiom2 : (forall x:t2 [to_rep2(x)]. in_range4(to_rep2(x)))
+axiom range_axiom2 : (forall x:t2 [to_rep2(x)]. in_range5(to_rep2(x)))
 
 axiom coerce_axiom2 :
-  (forall x:int [to_rep2(of_rep2(x))]. (in_range4(x) ->
+  (forall x:int [to_rep2(of_rep2(x))]. (in_range5(x) ->
   (to_rep2(of_rep2(x)) = x)))
 
 type s
@@ -681,7 +685,7 @@ axiom sqtaxiom : (forall i:s. ((- 2147483648) <= sqtint(i)))
 
 axiom sqtaxiom1 : (forall i:s. (sqtint(i) <= 2147483647))
 
-predicate in_range5(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+predicate in_range6(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
 
 function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -703,7 +707,7 @@ function s__ref_s__content__projection(a: s__ref) : s = (a).s__content
 predicate dynamic_invariant4(temp___expr_204: int, temp___is_init_200: bool,
   temp___skip_constant_201: bool, temp___do_toplevel_202: bool,
   temp___do_typ_inv_203: bool) = (((temp___is_init_200 = true) or
-  ((- 2147483648) <= 2147483647)) -> in_range5(temp___expr_204))
+  ((- 2147483648) <= 2147483647)) -> in_range6(temp___expr_204))
 
 type taD1
 
@@ -713,7 +717,7 @@ axiom taD1qtaxiom : (forall i:taD1. (1 <= taD1qtint(i)))
 
 axiom taD1qtaxiom1 : (forall i:taD1. (taD1qtint(i) <= 100))
 
-predicate in_range6(x: int) = ((1 <= x) and (x <= 100))
+predicate in_range7(x: int) = ((1 <= x) and (x <= 100))
 
 function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -751,7 +755,7 @@ axiom mk_def5 :
 
 predicate dynamic_property2(range_first: int, range_last: int, low: int,
   high: int) = (in_range1(low) and (in_range1(high) and ((low <= high) ->
-  (in_range6(low) and in_range6(high)))))
+  (in_range7(low) and in_range7(high)))))
 
 type us_t2 = { elts2 : (int,integer) farray; rt2 : t3
 }
@@ -841,6 +845,10 @@ function us_rep___split_discrs__2__projection(a: us_rep2) : us_split_discrs2 =
 function bool_eq14(a: us_rep2, b: us_rep2) : bool =
   (if (to_rep2(((a).us_split_discrs3).rec__types_with_invariants__r__c) = to_rep2(((b).us_split_discrs3).rec__types_with_invariants__r__c)) then true else false)
 
+predicate in_range8(rec__types_with_invariants__r__c1: int,
+  a: us_split_discrs2) =
+  (rec__types_with_invariants__r__c1 = to_rep2((a).rec__types_with_invariants__r__c))
+
 logic value__size5 : int
 
 logic object__size5 : int
@@ -892,7 +900,7 @@ goal defqtvc :
   ((exists usf:int. (dynamic_invariant(usf, true, true, true, true) and
    (exists usf1:us_rep1.
    (to_rep1(((usf1).us_split_discrs1).rec__types_with_invariants__container__c) = usf)))) ->
-  (in_range4(0) ->
+  (in_range5(0) ->
   (forall usf:us_t1. (dynamic_invariant5(usf, true, false, true, true) ->
   ((forall temp___287:int. (((first3(usf) <= temp___287) and
    (temp___287 <= last3(usf))) ->

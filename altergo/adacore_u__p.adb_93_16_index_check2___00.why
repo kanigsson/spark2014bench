@@ -347,5 +347,5 @@ goal defqtvc :
   (dynamic_invariant(current_index, true, false, true, true) ->
   (dynamic_invariant2(a, true, false, true, true) ->
   ((((first1(a) <= current_index) and (current_index <= last1(a))) and
-  ((first1(a) <= (beginning + 1)) and ((beginning + 1) <= current_index))) ->
-  (first1(a) <= current_index)))))))))
+  (let temp___348 = (beginning + 1) : int in ((first1(a) <= temp___348) and
+  (temp___348 <= current_index)))) -> (first1(a) <= current_index)))))))))

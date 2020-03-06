@@ -1068,13 +1068,13 @@ goal defqtvc :
    e__split_fields2 })) ->
   ((length1({ us_split_fields1 = v__split_fields
   }) <  (2147483647 - length1({ us_split_fields1 = e__split_fields }))) ->
-  ((forall v__split_fields2:us_split_fields. length__function_guard(length1({
-   us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
-   v__split_fields2 })) ->
   ((forall e__split_fields2:us_split_fields. length__function_guard(length1({
    us_split_fields1 = e__split_fields2 }), { us_split_fields1 =
    e__split_fields2 })) ->
   ((forall v__split_fields2:us_split_fields. model__function_guard2(model2({
+   us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
+   v__split_fields2 })) ->
+  ((forall v__split_fields2:us_split_fields. length__function_guard(length1({
    us_split_fields1 = v__split_fields2 }), { us_split_fields1 =
    v__split_fields2 })) ->
   (forall use_formal_vectors__my_vect__append__2__e_top__assume:int.
@@ -1176,15 +1176,15 @@ goal defqtvc :
   ((to_rep((v__split_fields2).rec__use_formal_vectors__my_vect__vector__top) = o9) ->
   (let o10 = (o9 + 1) : int in (in_range1(o10) ->
   ((andb((if (o10 <= usf) then true else false),
-  (if (usf <= (o8 - 1)) then true else false)) = true) -> (let temp___483 =
+  (if (usf <= (o8 - 1)) then true else false)) = true) -> (let temp___476 =
   ((v__split_fields2).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value
-  : us_t in (((first1(temp___483) <= usf) and (usf <= last1(temp___483))) ->
-  ((notb(bool_eq6((to_array(temp___483)[usf]), us_null_pointer1)) = true) ->
+  : us_t in (((first1(temp___476) <= usf) and (usf <= last1(temp___476))) ->
+  ((notb(bool_eq6((to_array(temp___476)[usf]), us_null_pointer1)) = true) ->
   (forall o11:int.
   ((to_rep((v__split_fields2).rec__use_formal_vectors__my_vect__vector__top) = o11) ->
   (let o12 = (usf - o11) : int in (in_range1(o12) -> (in_range6(o12) ->
   (dynamic_invariant4(get(e_mod, o12), true, false, true, true) ->
-  (let temp___484 =
+  (let temp___477 =
   ((v__split_fields2).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value
-  : us_t in (((first1(temp___484) <= usf) and (usf <= last1(temp___484))) ->
-  rec__use_formal_vectors__my_vect__element_access__pointer_value__pred((to_array(temp___484)[usf]))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+  : us_t in (((first1(temp___477) <= usf) and (usf <= last1(temp___477))) ->
+  rec__use_formal_vectors__my_vect__element_access__pointer_value__pred((to_array(temp___477)[usf]))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))

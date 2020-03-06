@@ -319,6 +319,9 @@ function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
 function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
   (a).us_split_fields1
 
+predicate in_range3(rec__p__pt__x1: int, a: us_split_discrs) =
+  (rec__p__pt__x1 = to_rep((a).rec__p__pt__x))
+
 logic value__size1 : int
 
 logic object__size1 : int

@@ -172,7 +172,4 @@ goal defqtvc :
   ((spark__branch = (if (status1 = 0) then false else true)) ->
   ((not (spark__branch = true)) ->
   (forall global_a__attr__init1:bool. ((global_a__attr__init1 = true) ->
-  (forall global_a1:int. ((global_a1 = 1) ->
-  ((global_a__attr__init1 = true) ->
-  (forall aa__useaa__x:int. (dynamic_invariant(aa__useaa__x, true, true,
-  true, true) -> (global_a__attr__init1 = true))))))))))))))))
+  (forall global_a1:int. ((global_a1 = 1) -> (global_a__attr__init1 = true)))))))))))))

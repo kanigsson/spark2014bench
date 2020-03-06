@@ -470,6 +470,10 @@ function bool_eq9(a: us_rep2, b: us_rep2) : bool =
   (us_main_eq1(((a).us_split_fields3).rec__for_loops_on_lists__my_lists__list,
   ((b).us_split_fields3).rec__for_loops_on_lists__my_lists__list) = true)) then true else false)
 
+predicate in_range6(rec__for_loops_on_lists__my_lists__list__capacity1: int,
+  a: us_split_discrs) =
+  (rec__for_loops_on_lists__my_lists__list__capacity1 = to_rep((a).rec__for_loops_on_lists__my_lists__list__capacity))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -595,7 +599,7 @@ axiom element_typeqtaxiom2 :
 axiom element_typeqtaxiom3 :
   (forall i:element_type1. (element_typeqtint1(i) <= 2147483647))
 
-predicate in_range6(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range7(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq11(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -618,7 +622,7 @@ function element_type__ref_element_type__content__projection(a: element_type__re
 predicate dynamic_invariant3(temp___expr_231: int, temp___is_init_227: bool,
   temp___skip_constant_228: bool, temp___do_toplevel_229: bool,
   temp___do_typ_inv_230: bool) = (((temp___is_init_227 = true) or
-  (0 <= 2147483647)) -> in_range6(temp___expr_231))
+  (0 <= 2147483647)) -> in_range7(temp___expr_231))
 
 predicate default_initial_assumption1(temp___expr_252: us_rep,
   temp___skip_top_level_253: bool) =
@@ -798,7 +802,7 @@ axiom element_typeqtaxiom4 :
 axiom element_typeqtaxiom5 :
   (forall i:element_type2. (element_typeqtint2(i) <= 2147483647))
 
-predicate in_range7(x: int) = ((1 <= x) and (x <= 2147483647))
+predicate in_range8(x: int) = ((1 <= x) and (x <= 2147483647))
 
 function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -821,7 +825,7 @@ function element_type__ref_element_type__content__3__projection(a: element_type_
 predicate dynamic_invariant6(temp___expr_303: int, temp___is_init_299: bool,
   temp___skip_constant_300: bool, temp___do_toplevel_301: bool,
   temp___do_typ_inv_302: bool) = (((temp___is_init_299 = true) or
-  (1 <= 2147483647)) -> in_range7(temp___expr_303))
+  (1 <= 2147483647)) -> in_range8(temp___expr_303))
 
 axiom get__post_axiom1 :
   (forall container:us_rep3.
@@ -938,7 +942,7 @@ goal defqtvc :
   (let o4 = l : us_rep2 in ((has_element(o4, usf1) = true) <->
   (has_key(positions(o4), usf1) = true)))))) ->
   (forall count_02:int. forall count_11:int. forall e2:int.
-  forall temp___1045:count_type. ((((0 <  count_02) ->
+  forall temp___1052:count_type. ((((0 <  count_02) ->
   (exists cu:us_rep. ((has_element(l, cu) = true) and (element(l, cu) = 0)))) and
   ((0 <  count_11) ->
   (exists cu:us_rep. ((has_element(l, cu) = true) and (element(l, cu) = 1))))) ->
@@ -946,9 +950,9 @@ goal defqtvc :
   dynamic_invariant(count_11, true, true, true, true)) and
   dynamic_invariant3(e2, true, true, true, true)) then true else false),
   (if ((has_element(l, { us_split_fields1 = {
-  rec__for_loops_on_lists__my_lists__cursor__node = temp___1045 }
+  rec__for_loops_on_lists__my_lists__cursor__node = temp___1052 }
   }) = true) and (e2 = element(l, { us_split_fields1 = {
-  rec__for_loops_on_lists__my_lists__cursor__node = temp___1045 }
+  rec__for_loops_on_lists__my_lists__cursor__node = temp___1052 }
   }))) then true else false)) = true) ->
   (forall spark__branch1:bool.
   ((spark__branch1 = (if (e2 = 1) then true else false)) ->

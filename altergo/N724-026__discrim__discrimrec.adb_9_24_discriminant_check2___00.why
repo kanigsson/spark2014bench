@@ -1811,6 +1811,10 @@ function bool_eq9(a: us_rep, b: us_rep) : bool =
   (discrimrec__register_type__value_low__pred(a) ->
   (to_rep3(((a).us_split_fields1).rec__discrimrec__register_type__value_low) = to_rep3(((b).us_split_fields1).rec__discrimrec__register_type__value_low)))))))) then true else false)
 
+predicate in_range1(rec__discrimrec__register_type__option1: int,
+  a: us_split_discrs) =
+  (rec__discrimrec__register_type__option1 = to_rep4((a).rec__discrimrec__register_type__option))
+
 logic value__size : int
 
 logic object__size : int
@@ -1997,10 +2001,6 @@ type register_type__ref = { register_type__content : us_rep
 
 function register_type__ref_register_type__content__projection(a: register_type__ref) : us_rep =
   (a).register_type__content
-
-predicate in_range1(rec__discrimrec__register_type__option1: int,
-  a: us_rep) =
-  (rec__discrimrec__register_type__option1 = to_rep4(((a).us_split_discrs1).rec__discrimrec__register_type__option))
 
 logic value__size1 : int
 
@@ -2193,10 +2193,6 @@ logic reg : us_rep
 
 logic attr__ATTRIBUTE_ADDRESS : int
 
-predicate in_range2(rec__discrimrec__register_type__option1: int,
-  a: us_rep) =
-  (rec__discrimrec__register_type__option1 = to_rep4(((a).us_split_discrs1).rec__discrimrec__register_type__option))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -2387,15 +2383,12 @@ function register_bit_32__ref_register_bit_32__content__projection(a: register_b
 predicate dynamic_invariant(temp___expr_233: us_rep,
   temp___is_init_229: bool, temp___skip_constant_230: bool,
   temp___do_toplevel_231: bool, temp___do_typ_inv_232: bool) =
-  ((not (temp___skip_constant_230 = true)) -> in_range1(0, temp___expr_233))
+  ((not (temp___skip_constant_230 = true)) -> in_range1(0,
+  (temp___expr_233).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_235: us_rep,
   temp___skip_top_level_236: bool) =
   (to_rep4(((temp___expr_235).us_split_discrs1).rec__discrimrec__register_type__option) = 0)
-
-predicate in_range3(rec__discrimrec__register_type__option1: int,
-  a: us_rep) =
-  (rec__discrimrec__register_type__option1 = to_rep4(((a).us_split_discrs1).rec__discrimrec__register_type__option))
 
 logic value__size3 : int
 
@@ -2587,7 +2580,8 @@ function t5b__ref_t5b__content__projection(a: t5b__ref) : us_rep =
 predicate dynamic_invariant1(temp___expr_252: us_rep,
   temp___is_init_248: bool, temp___skip_constant_249: bool,
   temp___do_toplevel_250: bool, temp___do_typ_inv_251: bool) =
-  ((not (temp___skip_constant_249 = true)) -> in_range2(1, temp___expr_252))
+  ((not (temp___skip_constant_249 = true)) -> in_range1(1,
+  (temp___expr_252).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_254: us_rep,
   temp___skip_top_level_255: bool) =
@@ -2660,7 +2654,7 @@ goal defqtvc : (dynamic_invariant(reg, true, false, true, true) ->
   ((to_rep(((reg).us_split_fields1).rec__discrimrec__register_type__value_64) = o) ->
   (forall o1:unsigned_32. ((to_rep1(o1) = toSmall(urem1(o, rliteral9))) ->
   (forall o2:unsigned_32. ((to_rep1(o2) = rliteral3) ->
-  (forall o3:register_option. ((to_rep4(o3) = 1) -> in_range2(1, {
+  (forall o3:register_option. ((to_rep4(o3) = 1) -> in_range1(1, ({
   us_split_discrs1 = { rec__discrimrec__register_type__option = o3 };
   us_split_fields1 = { rec__discrimrec__register_type__value_64 = dummy;
   rec__discrimrec__register_type__ignore_32a = o2;
@@ -2671,4 +2665,4 @@ goal defqtvc : (dynamic_invariant(reg, true, false, true, true) ->
   rec__discrimrec__register_type__ignore_32c = dummy1;
   rec__discrimrec__register_type__ignore_16b = dummy2;
   rec__discrimrec__register_type__value_high = dummy3;
-  rec__discrimrec__register_type__value_low = dummy3 } }))))))))))
+  rec__discrimrec__register_type__value_low = dummy3 } }).us_split_discrs1))))))))))

@@ -471,14 +471,14 @@ goal defqtvc :
    (exists o1:int. ((to_rep(a__first) = o1) and (let o2 = length(o1, o)
    : int in (in_range1(o2) and (let temp___321 = (o2 - 1) : int in
    (exists j:int. ((j = 0) and (if (andb((if (0 <= j) then true else false),
-   (if (j <= temp___321) then true else false)) = true) then (exists temp___loop_entry_337:(int,t) farray.
-                                                             ((temp___loop_entry_337 = a) and
-                                                             (exists temp___loop_entry_391:(int,t) farray.
+   (if (j <= temp___321) then true else false)) = true) then (exists temp___loop_entry_391:(int,t) farray.
                                                              ((temp___loop_entry_391 = b) and
                                                              (exists temp___loop_entry_373:(int,t) farray.
                                                              ((temp___loop_entry_373 = a) and
                                                              (exists temp___loop_entry_355:(int,t) farray.
                                                              ((temp___loop_entry_355 = b) and
+                                                             (exists temp___loop_entry_337:(int,t) farray.
+                                                             ((temp___loop_entry_337 = a) and
                                                              (exists o3:int.
                                                              ((to_rep(a__first) = o3) and
                                                              (let o4 =

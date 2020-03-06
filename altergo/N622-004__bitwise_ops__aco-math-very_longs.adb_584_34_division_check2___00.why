@@ -923,6 +923,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits,
   ((b).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits) = true)) then true else false)
 
+predicate in_range2(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
+  a: us_split_discrs) =
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep((a).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -1029,7 +1033,7 @@ axiom bitqtaxiom : (forall i:bit. (0 <= bitqtint(i)))
 
 axiom bitqtaxiom1 : (forall i:bit. (bitqtint(i) <= 1))
 
-predicate in_range2(x: int) = ((0 <= x) and (x <= 1))
+predicate in_range3(x: int) = ((0 <= x) and (x <= 1))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1052,7 +1056,7 @@ function bit__ref_bit__content__projection(a: bit__ref) : bit =
 predicate dynamic_invariant3(temp___expr_284: int, temp___is_init_280: bool,
   temp___skip_constant_281: bool, temp___do_toplevel_282: bool,
   temp___do_typ_inv_283: bool) = (((temp___is_init_280 = true) or
-  (0 <= 1)) -> in_range2(temp___expr_284))
+  (0 <= 1)) -> in_range3(temp___expr_284))
 
 type bit_index_type
 
@@ -1064,7 +1068,7 @@ axiom bit_index_typeqtaxiom :
 axiom bit_index_typeqtaxiom1 :
   (forall i:bit_index_type. (bit_index_typeqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1087,7 +1091,7 @@ function bit_index_type__ref_bit_index_type__content__projection(a: bit_index_ty
 predicate dynamic_invariant4(temp___expr_291: int, temp___is_init_287: bool,
   temp___skip_constant_288: bool, temp___do_toplevel_289: bool,
   temp___do_typ_inv_290: bool) = (((temp___is_init_287 = true) or
-  (0 <= 2147483647)) -> in_range3(temp___expr_291))
+  (0 <= 2147483647)) -> in_range4(temp___expr_291))
 
 axiom cdiv_cases :
   (forall n:int. forall d:int [div(n, d)]. ((0 <= n) -> ((0 <  d) -> (div(n,

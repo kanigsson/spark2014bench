@@ -391,6 +391,10 @@ function bool_eq7(a: us_rep, b: us_rep) : bool =
   (bool_eq6(((a).us_split_fields1).rec__bounded_dynamic_strings__sequence__content,
   ((b).us_split_fields1).rec__bounded_dynamic_strings__sequence__content) = true))) then true else false)
 
+predicate in_range5(rec__bounded_dynamic_strings__sequence__capacity1: int,
+  a: us_split_discrs) =
+  (rec__bounded_dynamic_strings__sequence__capacity1 = to_rep((a).rec__bounded_dynamic_strings__sequence__capacity))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -465,20 +469,22 @@ logic length__function_guard : int, us_rep -> prop
 predicate dynamic_invariant(temp___expr_258: us_rep,
   temp___is_init_254: bool, temp___skip_constant_255: bool,
   temp___do_toplevel_256: bool, temp___do_typ_inv_257: bool) =
-  (((temp___do_toplevel_256 = true) ->
-  ((0 <= to_rep(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__current_length)) and
-  (to_rep(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__current_length) <= to_rep(((temp___expr_258).us_split_discrs1).rec__bounded_dynamic_strings__sequence__capacity)))) and
-  (let temp___260 =
+  (((temp___do_toplevel_256 = true) -> (let temp___260 =
+  to_rep(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__current_length)
+  : int in ((0 <= temp___260) and
+  (temp___260 <= to_rep(((temp___expr_258).us_split_discrs1).rec__bounded_dynamic_strings__sequence__capacity))))) and
+  (let temp___261 =
   ((temp___expr_258).us_split_discrs1).rec__bounded_dynamic_strings__sequence__capacity
-  : natural_index in (dynamic_property(1, to_rep(temp___260),
+  : natural_index in (dynamic_property(1, to_rep(temp___261),
   first1(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__content),
   last1(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__content)) and
   ((first1(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__content) = 1) and
-  (last1(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__content) = to_rep(temp___260))))))
+  (last1(((temp___expr_258).us_split_fields1).rec__bounded_dynamic_strings__sequence__content) = to_rep(temp___261))))))
 
-predicate dynamic_predicate(temp___262: us_rep) =
-  ((0 <= to_rep(((temp___262).us_split_fields1).rec__bounded_dynamic_strings__sequence__current_length)) and
-  (to_rep(((temp___262).us_split_fields1).rec__bounded_dynamic_strings__sequence__current_length) <= to_rep(((temp___262).us_split_discrs1).rec__bounded_dynamic_strings__sequence__capacity)))
+predicate dynamic_predicate(temp___263: us_rep) = (let temp___265 =
+  to_rep(((temp___263).us_split_fields1).rec__bounded_dynamic_strings__sequence__current_length)
+  : int in ((0 <= temp___265) and
+  (temp___265 <= to_rep(((temp___263).us_split_discrs1).rec__bounded_dynamic_strings__sequence__capacity))))
 
 predicate dynamic_invariant1(temp___expr_244: int, temp___is_init_240: bool,
   temp___skip_constant_241: bool, temp___do_toplevel_242: bool,
@@ -550,7 +556,7 @@ type t81b__ref = { t81b__content : us_t
 function t81b__ref_t81b__content__projection(a: t81b__ref) : us_t =
   (a).t81b__content
 
-logic temp_____aggregate_def_1294 : int, int, int -> us_t
+logic temp_____aggregate_def_1350 : int, int, int -> us_t
 
 predicate dynamic_invariant2(temp___expr_46: int, temp___is_init_42: bool,
   temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
@@ -574,36 +580,36 @@ predicate dynamic_invariant5(temp___expr_18: int, temp___is_init_14: bool,
   ((- 2147483648) <= 2147483647)) -> in_range2(temp___expr_18))
 
 axiom def_axiom :
-  (forall temp___1296:int. forall temp___1297:int. forall temp___1298:int.
-  (dynamic_invariant3(temp___1296, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___1297, temp___1298) ->
-  (first1(temp_____aggregate_def_1294(temp___1296, temp___1297,
-  temp___1298)) = temp___1297))))
+  (forall temp___1352:int. forall temp___1353:int. forall temp___1354:int.
+  (dynamic_invariant3(temp___1352, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___1353, temp___1354) ->
+  (first1(temp_____aggregate_def_1350(temp___1352, temp___1353,
+  temp___1354)) = temp___1353))))
 
 axiom def_axiom1 :
-  (forall temp___1296:int. forall temp___1297:int. forall temp___1298:int.
-  (dynamic_invariant3(temp___1296, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___1297, temp___1298) ->
-  (last1(temp_____aggregate_def_1294(temp___1296, temp___1297,
-  temp___1298)) = temp___1298))))
+  (forall temp___1352:int. forall temp___1353:int. forall temp___1354:int.
+  (dynamic_invariant3(temp___1352, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___1353, temp___1354) ->
+  (last1(temp_____aggregate_def_1350(temp___1352, temp___1353,
+  temp___1354)) = temp___1354))))
 
 axiom def_axiom2 :
-  (forall temp___1296:int. forall temp___1297:int. forall temp___1298:int.
-  (dynamic_invariant3(temp___1296, true, true, true, true) ->
-  (forall temp___1299:int.
-  (to_rep1((to_array(temp_____aggregate_def_1294(temp___1296, temp___1297,
-  temp___1298))[temp___1299])) = temp___1296))))
+  (forall temp___1352:int. forall temp___1353:int. forall temp___1354:int.
+  (dynamic_invariant3(temp___1352, true, true, true, true) ->
+  (forall temp___1355:int.
+  (to_rep1((to_array(temp_____aggregate_def_1350(temp___1352, temp___1353,
+  temp___1354))[temp___1355])) = temp___1352))))
 
-predicate dynamic_invariant6(temp___expr_744: us_t, temp___is_init_740: bool,
-  temp___skip_constant_741: bool, temp___do_toplevel_742: bool,
-  temp___do_typ_inv_743: bool) = ((not (temp___skip_constant_741 = true)) ->
-  (dynamic_property(1, r79b, first1(temp___expr_744),
-  last1(temp___expr_744)) and ((first1(temp___expr_744) = 1) and
-  (last1(temp___expr_744) = r79b))))
+predicate dynamic_invariant6(temp___expr_752: us_t, temp___is_init_748: bool,
+  temp___skip_constant_749: bool, temp___do_toplevel_750: bool,
+  temp___do_typ_inv_751: bool) = ((not (temp___skip_constant_749 = true)) ->
+  (dynamic_property(1, r79b, first1(temp___expr_752),
+  last1(temp___expr_752)) and ((first1(temp___expr_752) = 1) and
+  (last1(temp___expr_752) = r79b))))
 
-predicate default_initial_assumption(temp___expr_746: us_t,
-  temp___skip_top_level_747: bool) = ((first1(temp___expr_746) = 1) and
-  (last1(temp___expr_746) = r79b))
+predicate default_initial_assumption(temp___expr_754: us_t,
+  temp___skip_top_level_755: bool) = ((first1(temp___expr_754) = 1) and
+  (last1(temp___expr_754) = r79b))
 
 logic rliteral : natural_index
 
@@ -628,13 +634,13 @@ goal defqtvc :
   (forall bounded_dynamic_strings__clear__R79b__assume:int.
   ((to_rep((this__split_discrs).rec__bounded_dynamic_strings__sequence__capacity) = bounded_dynamic_strings__clear__R79b__assume) ->
   ((bounded_dynamic_strings__clear__R79b__assume = r79b) ->
-  (dynamic_invariant1(r79b, true, false, true, true) -> (let temp___1300 =
-  temp_____aggregate_def_1294(32, 1, r79b) : us_t in
-  ((first1(temp___1300) = 1) -> ((last1(temp___1300) = r79b) ->
-  ((if (first1(temp___1300) <= last1(temp___1300)) then ((1 <= r79b) and
-  ((last1(temp___1300) - first1(temp___1300)) = (r79b - 1))) else (r79b <  1)) ->
-  (let temp___1302 = of_array(to_array(temp___1300), first1(temp___1300),
-  last1(temp___1300)) : us_t in (let temp___1303 =
+  (dynamic_invariant1(r79b, true, false, true, true) -> (let temp___1356 =
+  temp_____aggregate_def_1350(32, 1, r79b) : us_t in
+  ((first1(temp___1356) = 1) -> ((last1(temp___1356) = r79b) ->
+  ((if (first1(temp___1356) <= last1(temp___1356)) then ((1 <= r79b) and
+  ((last1(temp___1356) - first1(temp___1356)) = (r79b - 1))) else (r79b <  1)) ->
+  (let temp___1358 = of_array(to_array(temp___1356), first1(temp___1356),
+  last1(temp___1356)) : us_t in (let temp___1359 =
   (this__split_fields1).rec__bounded_dynamic_strings__sequence__content
-  : us_t in ((first1(temp___1302) <= last1(temp___1302)) ->
-  (first1(temp___1303) <= last1(temp___1303))))))))))))))))))))
+  : us_t in ((first1(temp___1358) <= last1(temp___1358)) ->
+  (first1(temp___1359) <= last1(temp___1359))))))))))))))))))))

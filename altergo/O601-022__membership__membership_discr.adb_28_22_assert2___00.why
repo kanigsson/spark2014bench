@@ -155,6 +155,10 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range2(rec__membership_discr__root__c1: int,
+  a: us_split_discrs) =
+  (rec__membership_discr__root__c1 = to_rep((a).rec__membership_discr__root__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -194,9 +198,6 @@ function root__ref_root__content__projection(a: root__ref) : us_rep =
 
 logic us_tag1 : int
 
-predicate in_range2(rec__membership_discr__root__c1: int, a: us_rep) =
-  (rec__membership_discr__root__c1 = to_rep(((a).us_split_discrs1).rec__membership_discr__root__c))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -235,9 +236,6 @@ function root_01__ref_root_01__content__projection(a: root_01__ref) : us_rep =
   (a).root_01__content
 
 logic us_tag2 : int
-
-predicate in_range3(rec__membership_discr__root__c1: int, a: us_rep) =
-  (rec__membership_discr__root__c1 = to_rep(((a).us_split_discrs1).rec__membership_discr__root__c))
 
 logic value__size2 : int
 
@@ -285,7 +283,8 @@ logic attr__ATTRIBUTE_ADDRESS : int
 predicate dynamic_invariant(temp___expr_194: us_rep,
   temp___is_init_190: bool, temp___skip_constant_191: bool,
   temp___do_toplevel_192: bool, temp___do_typ_inv_193: bool) =
-  ((not (temp___skip_constant_191 = true)) -> in_range3(0, temp___expr_194))
+  ((not (temp___skip_constant_191 = true)) -> in_range2(0,
+  (temp___expr_194).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_196: us_rep,
   temp___skip_top_level_197: bool) =
@@ -300,7 +299,8 @@ predicate dynamic_invariant1(temp___expr_39: int, temp___is_init_35: bool,
 predicate dynamic_invariant2(temp___expr_185: us_rep,
   temp___is_init_181: bool, temp___skip_constant_182: bool,
   temp___do_toplevel_183: bool, temp___do_typ_inv_184: bool) =
-  ((not (temp___skip_constant_182 = true)) -> in_range2(0, temp___expr_185))
+  ((not (temp___skip_constant_182 = true)) -> in_range2(0,
+  (temp___expr_185).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_187: us_rep,
   temp___skip_top_level_188: bool) =
@@ -315,6 +315,4 @@ goal defqtvc :
   (dynamic_invariant({ us_split_discrs1 = r02__split_discrs;
   us_split_fields1 = { rec__ext__ = r02__split_fields }; attr__tag =
   r02__attr__tag }, false, false, true, true) ->
-  ((r02__attr__tag = us_tag) -> in_range2(0, { us_split_discrs1 =
-  r02__split_discrs; us_split_fields1 = { rec__ext__ = r02__split_fields };
-  attr__tag = r02__attr__tag })))))
+  ((r02__attr__tag = us_tag) -> in_range2(0, r02__split_discrs)))))

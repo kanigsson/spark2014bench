@@ -878,6 +878,10 @@ function bool_eq7(a: us_rep, b: us_rep) : bool =
   (bool_eq6(((a).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits,
   ((b).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits) = true)) then true else false)
 
+predicate in_range3(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
+  a: us_split_discrs) =
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep((a).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -949,7 +953,7 @@ axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
 
 axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -972,7 +976,7 @@ function natural__ref_natural__content__projection(a: natural__ref) : natural =
 predicate dynamic_invariant1(temp___expr_39: int, temp___is_init_35: bool,
   temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
   temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
-  (0 <= 2147483647)) -> in_range3(temp___expr_39))
+  (0 <= 2147483647)) -> in_range4(temp___expr_39))
 
 logic shift_right : t, int -> t
 
@@ -1039,7 +1043,7 @@ axiom shift_typeqtaxiom : (forall i:shift_type. (0 <= shift_typeqtint(i)))
 
 axiom shift_typeqtaxiom1 : (forall i:shift_type. (shift_typeqtint(i) <= 7))
 
-predicate in_range4(x: int) = ((0 <= x) and (x <= 7))
+predicate in_range5(x: int) = ((0 <= x) and (x <= 7))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1062,7 +1066,7 @@ function shift_type__ref_shift_type__content__projection(a: shift_type__ref) : s
 predicate dynamic_invariant3(temp___expr_852: int, temp___is_init_848: bool,
   temp___skip_constant_849: bool, temp___do_toplevel_850: bool,
   temp___do_typ_inv_851: bool) = (((temp___is_init_848 = true) or
-  (0 <= 7)) -> in_range4(temp___expr_852))
+  (0 <= 7)) -> in_range5(temp___expr_852))
 
 predicate dynamic_invariant4(temp___expr_257: int, temp___is_init_253: bool,
   temp___skip_constant_254: bool, temp___do_toplevel_255: bool,
@@ -1087,10 +1091,10 @@ goal defqtvc :
   (if (o <  256) then lsl_bv(rliteral2, of_int(o)) else rliteral))))) ->
   (forall overflow_mask1:t. ((overflow_mask1 = o1) ->
   ((last1(number__split_fields) = r128b) -> (in_range2(r128b) ->
-  (let temp___1581 = r128b : int in
-  (forall i:int. ((i = temp___1581) ->
+  (let temp___1584 = r128b : int in
+  (forall i:int. ((i = temp___1584) ->
   ((andb((if (1 <= i) then true else false),
-  (if (i <= temp___1581) then true else false)) = true) ->
+  (if (i <= temp___1584) then true else false)) = true) ->
   (forall number__split_fields1:us_t. forall old_overflow1:t.
   forall new_overflow1:t. forall i1:int.
   ((andb((if (((dynamic_invariant2(old_overflow1, true, true, true, true) and
@@ -1099,12 +1103,12 @@ goal defqtvc :
   us_split_fields1 = {
   rec__ada___ada___aco__math__very_longs__very_long__long_digits =
   number__split_fields1 } }, true, true, true, true)) and
-  (forall temp___1595:int.
-  (((first1(number__split_fields1) <= temp___1595) and
-  (temp___1595 <= last1(number__split_fields1))) ->
-  (((temp___1581 <  temp___1595) or ((temp___1595 <  1) or
-  (temp___1595 <= i1))) ->
-  ((to_array(number__split_fields1)[temp___1595]) = (to_array(number__split_fields)[temp___1595])))))) then true else false),
+  (forall temp___1598:int.
+  (((first1(number__split_fields1) <= temp___1598) and
+  (temp___1598 <= last1(number__split_fields1))) ->
+  (((temp___1584 <  temp___1598) or ((temp___1598 <  1) or
+  (temp___1598 <= i1))) ->
+  ((to_array(number__split_fields1)[temp___1598]) = (to_array(number__split_fields)[temp___1598])))))) then true else false),
   (if ((1 <= i1) and (i1 <= r128b)) then true else false)) = true) ->
   (((first1(number__split_fields1) <= i1) and
   (i1 <= last1(number__split_fields1))) ->

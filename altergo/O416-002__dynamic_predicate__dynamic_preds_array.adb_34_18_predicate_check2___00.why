@@ -305,15 +305,16 @@ predicate dynamic_invariant1(temp___expr_191: (int,integer) farray,
   temp___is_init_187: bool, temp___skip_constant_188: bool,
   temp___do_toplevel_189: bool, temp___do_typ_inv_190: bool) =
   ((temp___do_toplevel_189 = true) -> ((temp___is_init_187 = true) ->
-  ((in_range1(to_rep((temp___expr_191[1]))) and
-  (mod1(to_rep((temp___expr_191[1])), 2) = 0)) and
-  (in_range1(to_rep((temp___expr_191[2]))) and
-  (mod1(to_rep((temp___expr_191[2])), 2) = 0)))))
+  ((let temp___193 = to_rep((temp___expr_191[1])) : int in
+  (in_range1(temp___193) and (mod1(temp___193, 2) = 0))) and
+  (let temp___195 = to_rep((temp___expr_191[2])) : int in
+  (in_range1(temp___195) and (mod1(temp___195, 2) = 0))))))
 
 predicate dynamic_predicate(temp___202: (int,integer) farray) =
-  ((in_range1(to_rep((temp___202[1]))) and (mod1(to_rep((temp___202[1])),
-  2) = 0)) and (in_range1(to_rep((temp___202[2]))) and
-  (mod1(to_rep((temp___202[2])), 2) = 0)))
+  ((let temp___204 = to_rep((temp___202[1])) : int in
+  (in_range1(temp___204) and (mod1(temp___204, 2) = 0))) and
+  (let temp___206 = to_rep((temp___202[2])) : int in
+  (in_range1(temp___206) and (mod1(temp___206, 2) = 0))))
 
 predicate dynamic_invariant2(temp___expr_170: int, temp___is_init_166: bool,
   temp___skip_constant_167: bool, temp___do_toplevel_168: bool,

@@ -330,21 +330,19 @@ goal defqtvc : (dynamic_invariant2(a, true, false, true, true) ->
   true, false, true, true) -> ((((first1(a) <= x) and (x <= last1(a))) and
   ((first1(a) <= y) and (y <= last1(a)))) ->
   (forall l:int. ((l = 0) -> (dynamic_invariant1(l, true, false, true,
-  true) -> (let temp___181 = first1(a) : int in
-  (forall j:int. ((j = temp___181) ->
-  ((andb((if (temp___181 <= j) then true else false),
+  true) -> (let temp___185 = first1(a) : int in
+  (forall j:int. ((j = temp___185) ->
+  ((andb((if (temp___185 <= j) then true else false),
   (if (j <= last1(a)) then true else false)) = true) ->
   (forall l1:int. forall j1:int. ((andb((if dynamic_invariant1(l1, true,
   true, true, true) then true else false), (if ((first1(a) <= j1) and
   (j1 <= last1(a))) then true else false)) = true) ->
-  (forall o:bool. ((let o1 = (x + l1) : int in (in_range1(o1) and (let o2 =
-  (x + l1) : int in (in_range1(o2) and
-  (if (not (andb((if (first1(a) <= o2) then true else false),
-  (if (o1 <= last1(a)) then true else false)) = true)) then (o = true) else (let o3 =
-  (y + l1) : int in (in_range1(o3) and (let o4 = (y + l1) : int in
-  (in_range1(o4) and
-  (o = (if (andb((if (first1(a) <= o4) then true else false),
-  (if (o3 <= last1(a)) then true else false)) = true) then false else true))))))))))) ->
+  (forall o:bool. ((let o1 = (x + l1) : int in (in_range1(o1) and
+  (if (not (andb((if (first1(a) <= o1) then true else false),
+  (if (o1 <= last1(a)) then true else false)) = true)) then (o = true) else (let o2 =
+  (y + l1) : int in (in_range1(o2) and
+  (o = (if (andb((if (first1(a) <= o2) then true else false),
+  (if (o2 <= last1(a)) then true else false)) = true) then false else true))))))) ->
   (forall spark__branch:bool. ((spark__branch = o) ->
   ((not (spark__branch = true)) -> (let o1 = (y + l1) : int in
   (in_range1(o1) -> (((first1(a) <= o1) and (o1 <= last1(a))) ->

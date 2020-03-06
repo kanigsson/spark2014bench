@@ -878,6 +878,10 @@ function bool_eq7(a: us_rep, b: us_rep) : bool =
   (bool_eq6(((a).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits,
   ((b).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits) = true)) then true else false)
 
+predicate in_range3(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
+  a: us_split_discrs) =
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep((a).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -1012,17 +1016,17 @@ goal defqtvc : (dynamic_invariant(number, true, false, true, true) ->
   (dynamic_invariant1(digit_index, true, false, true, true) ->
   (forall i:int. ((i = 1) -> ((andb((if (1 <= i) then true else false),
   (if (i <= last1(((number).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits)) then true else false)) = true) ->
-  (forall spark__branch:bool. forall digit_index1:int. ((let temp___1509 =
+  (forall spark__branch:bool. forall digit_index1:int. ((let temp___1512 =
   ((number).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits
-  : us_t in (((first1(temp___1509) <= i) and (i <= last1(temp___1509))) and
-  (exists o:t. ((to_rep2((to_array(temp___1509)[i])) = o) and
+  : us_t in (((first1(temp___1512) <= i) and (i <= last1(temp___1512))) and
+  (exists o:t. ((to_rep2((to_array(temp___1512)[i])) = o) and
   ((spark__branch = (if (not (o = rliteral)) then true else false)) and
   (if (spark__branch = true) then (digit_index1 = i) else (digit_index1 = digit_index))))))) ->
-  (in_range2((i + 1)) -> (let temp___1517 =
+  (in_range2((i + 1)) -> (let temp___1520 =
   ((number).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits
-  : us_t in (((first1(temp___1517) <= digit_index1) and
-  (digit_index1 <= last1(temp___1517))) ->
-  (forall o:t. ((to_rep2((to_array(temp___1517)[digit_index1])) = o) ->
+  : us_t in (((first1(temp___1520) <= digit_index1) and
+  (digit_index1 <= last1(temp___1520))) ->
+  (forall o:t. ((to_rep2((to_array(temp___1520)[digit_index1])) = o) ->
   (((not (to_rep2((to_array(((number).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits)[digit_index1])) = rliteral)) or
   (exists j:int. ((((i + 1) <= j) and
   (j <= last1(((number).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits))) and

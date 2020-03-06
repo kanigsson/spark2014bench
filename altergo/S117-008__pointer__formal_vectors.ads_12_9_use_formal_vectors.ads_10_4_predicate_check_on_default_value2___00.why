@@ -608,7 +608,7 @@ predicate default_initial_assumption3(temp___expr_212: us_rep,
   temp___skip_top_level_213: bool) =
   ((temp___expr_212).rec__use_formal_vectors__element_type__is_null_pointer = true)
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S117-008__pointer-18774/src/gnatprove/use_formal_vectors__my_vect__vector.mlw", line 1180, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S117-008__pointer-12565/src/gnatprove/use_formal_vectors__my_vect__vector.mlw", line 1180, characters 5-8 *)
 goal defqtvc :
   (forall usf:us_split_fields.
   (((to_rep((usf).rec__use_formal_vectors__my_vect__vector__top) = 0) and

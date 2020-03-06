@@ -188,12 +188,12 @@ predicate dynamic_invariant(temp___expr_182: us_rep,
   ((temp___do_typ_inv_181 = true) ->
   in_range1(to_rep(((temp___expr_182).us_split_fields1).rec__test_type__t__f)))
 
-predicate default_initial_assumption(temp___expr_184: us_rep,
-  temp___skip_top_level_185: bool) =
-  (to_rep(((temp___expr_184).us_split_fields1).rec__test_type__t__f) = 0)
+predicate default_initial_assumption(temp___expr_185: us_rep,
+  temp___skip_top_level_186: bool) =
+  (to_rep(((temp___expr_185).us_split_fields1).rec__test_type__t__f) = 0)
 
-predicate type_invariant(temp___186: us_rep) =
-  in_range1(to_rep(((temp___186).us_split_fields1).rec__test_type__t__f))
+predicate type_invariant(temp___187: us_rep) =
+  in_range1(to_rep(((temp___187).us_split_fields1).rec__test_type__t__f))
 
 logic decr_int : us_rep -> us_rep
 

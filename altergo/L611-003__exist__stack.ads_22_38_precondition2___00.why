@@ -277,8 +277,9 @@ axiom valid__def_axiom2 :
 axiom valid__def_axiom3 :
   (forall t:(int,element_t) farray.
   (forall s:int [valid(t, s)].
-  (((forall i:int. (((1 <= i) and (i <= s)) -> ((0 <= to_rep((t[i]))) and
-    (to_rep((t[i])) <= 2147483647)))) and
+  (((forall i:int. (((1 <= i) and (i <= s)) -> (let temp___195 =
+    to_rep((t[i])) : int in ((0 <= temp___195) and
+    (temp___195 <= 2147483647))))) and
   (forall i:int. ((((s + 1) <= i) and (i <= 100)) ->
   (to_rep((t[i])) = (- 1))))) -> (valid(t, s) = true))))
 
@@ -359,8 +360,9 @@ goal defqtvc :
   true, false, true, true) -> (dynamic_invariant(value, true, false, true,
   true) -> (let o = valid(t, s) : bool in ((valid__function_guard(o, t,
   s) and ((o = true) <->
-  ((forall i:int. (((1 <= i) and (i <= s)) -> ((0 <= to_rep((t[i]))) and
-   (to_rep((t[i])) <= 2147483647)))) and
+  ((forall i:int. (((1 <= i) and (i <= s)) -> (let temp___192 =
+   to_rep((t[i])) : int in ((0 <= temp___192) and
+   (temp___192 <= 2147483647))))) and
   (forall i:int. ((((s + 1) <= i) and (i <= 100)) ->
   (to_rep((t[i])) = (- 1))))))) -> ((o = true) ->
   ((forall t1:(int,element_t) farray. forall s1:int.

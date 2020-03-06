@@ -4018,13 +4018,13 @@ goal defqtvc :
                                                             ((andb((if ((dynamic_invariant3(to_line1,
                                                             true, true, true,
                                                             true) and
-                                                            (forall temp___863:int.
-                                                            (((1 <= temp___863) and
-                                                            (temp___863 <= 50)) ->
-                                                            (((50 <  temp___863) or
-                                                            ((temp___863 <  1) or
-                                                            (del_line1 <  temp___863))) ->
-                                                            ((cur_board1[temp___863]) = (cur_board[temp___863])))))) and
+                                                            (forall temp___872:int.
+                                                            (((1 <= temp___872) and
+                                                            (temp___872 <= 50)) ->
+                                                            (((50 <  temp___872) or
+                                                            ((temp___872 <  1) or
+                                                            (del_line1 <  temp___872))) ->
+                                                            ((cur_board1[temp___872]) = (cur_board[temp___872])))))) and
                                                             in_range9(del_line1)) then true else false),
                                                             (if ((1 <= del_line1) and
                                                             (del_line1 <= 50)) then true else false)) = true) and
@@ -4034,20 +4034,20 @@ goal defqtvc :
   (forall num_deleted1:int. ((num_deleted1 = 0) ->
   (forall spark__branch2:bool. ((spark__branch2 = has_complete_lines1) ->
   ((spark__branch2 = true) -> (((to_line1 - 1) = r7b) ->
-  (dynamic_invariant1(r7b, true, false, true, true) -> (let temp___870 = r7b
+  (dynamic_invariant1(r7b, true, false, true, true) -> (let temp___879 = r7b
   : int in
-  (forall from_line:int. ((from_line = temp___870) ->
+  (forall from_line:int. ((from_line = temp___879) ->
   ((andb((if (1 <= from_line) then true else false),
-  (if (from_line <= temp___870) then true else false)) = true) ->
-  (forall temp___loop_entry_880:int. ((temp___loop_entry_880 = to_line1) ->
-  (forall temp___loop_entry_879:int.
-  ((temp___loop_entry_879 = num_deleted1) -> (let temp___inv_882 =
+  (if (from_line <= temp___879) then true else false)) = true) ->
+  (forall temp___loop_entry_889:int. ((temp___loop_entry_889 = to_line1) ->
+  (forall temp___loop_entry_888:int.
+  ((temp___loop_entry_888 = num_deleted1) -> (let temp___inv_891 =
   no_complete_lines(cur_board1) : bool in
   ((forall cur_board2:(int,(int,cell) farray) farray. forall y:int.
    is_complete_line__function_guard(is_complete_line((cur_board2[y])),
    (cur_board2[y]))) ->
-  ((no_complete_lines__function_guard(temp___inv_882, cur_board1) and
-  ((temp___inv_882 = true) <->
+  ((no_complete_lines__function_guard(temp___inv_891, cur_board1) and
+  ((temp___inv_891 = true) <->
   (forall y:int. (((1 <= y) and (y <= 50)) ->
   (not (is_complete_line((cur_board1[y])) = true)))))) ->
   (forall cur_board2:(int,(int,cell) farray) farray. forall num_deleted2:int.
@@ -4056,7 +4056,7 @@ goal defqtvc :
    no_complete_lines__function_guard(no_complete_lines(cur_board3),
    cur_board3)) ->
   (((no_complete_lines(cur_board2) = true) and ((from_line1 <  to_line2) and
-  ((num_deleted2 + to_line2) = (temp___loop_entry_879 + temp___loop_entry_880)))) ->
+  ((num_deleted2 + to_line2) = (temp___loop_entry_888 + temp___loop_entry_889)))) ->
   ((andb((if ((dynamic_invariant3(to_line2, true, true, true, true) and
   dynamic_invariant(num_deleted2, false, true, true, true)) and
   dynamic_property(1, r7b, from_line1)) then true else false),
@@ -4081,12 +4081,12 @@ goal defqtvc :
   (num_deleted3 = num_deleted2)) and (to_line3 = to_line2)))))))) ->
   ((not (from_line1 = 1)) ->
   (forall from_line2:int. ((from_line2 = (from_line1 - 1)) ->
-  (let temp___inv_8821 = no_complete_lines(cur_board3) : bool in
+  (let temp___inv_8911 = no_complete_lines(cur_board3) : bool in
   ((forall cur_board4:(int,(int,cell) farray) farray. forall y:int.
    is_complete_line__function_guard(is_complete_line((cur_board4[y])),
    (cur_board4[y]))) ->
-  ((no_complete_lines__function_guard(temp___inv_8821, cur_board3) and
-  ((temp___inv_8821 = true) <->
+  ((no_complete_lines__function_guard(temp___inv_8911, cur_board3) and
+  ((temp___inv_8911 = true) <->
   (forall y:int. (((1 <= y) and (y <= 50)) ->
   (not (is_complete_line((cur_board3[y])) = true)))))) ->
   ((forall cur_board4:(int,(int,cell) farray) farray.

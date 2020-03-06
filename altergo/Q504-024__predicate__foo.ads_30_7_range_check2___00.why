@@ -408,6 +408,10 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__foo__subject_state__states,
   ((b).us_split_fields1).rec__foo__subject_state__states) = true)) then true else false)
 
+predicate in_range3(rec__foo__subject_state__max_id1: int,
+  a: us_split_discrs) =
+  (rec__foo__subject_state__max_id1 = to_rep((a).rec__foo__subject_state__max_id))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -507,9 +511,6 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   (bool_eq5(((a).us_split_fields3).rec__foo__subject_state__states1,
   ((b).us_split_fields3).rec__foo__subject_state__states1) = true)) then true else false)
 
-predicate in_range3(rec__foo__subject_state__max_id1: int, a: us_rep) =
-  (rec__foo__subject_state__max_id1 = to_rep(((a).us_split_discrs1).rec__foo__subject_state__max_id))
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -570,8 +571,9 @@ predicate dynamic_invariant(temp___expr_217: us_rep1,
   temp___is_init_213: bool, temp___skip_constant_214: bool,
   temp___do_toplevel_215: bool, temp___do_typ_inv_216: bool) =
   (((not (temp___skip_constant_214 = true)) ->
-  in_range3(to_rep((cpu_lsid_last[cpu_id])), to_base(temp___expr_217))) and
-  (dynamic_property(0, to_rep((cpu_lsid_last[cpu_id])),
+  in_range3(to_rep((cpu_lsid_last[cpu_id])),
+  (to_base(temp___expr_217)).us_split_discrs1)) and (dynamic_property(0,
+  to_rep((cpu_lsid_last[cpu_id])),
   first1(((temp___expr_217).us_split_fields3).rec__foo__subject_state__states1),
   last1(((temp___expr_217).us_split_fields3).rec__foo__subject_state__states1)) and
   ((first1(((temp___expr_217).us_split_fields3).rec__foo__subject_state__states1) = 0) and

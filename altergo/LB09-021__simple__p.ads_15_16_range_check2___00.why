@@ -254,71 +254,6 @@ logic user_eq2 : us_rep, us_rep -> bool
 
 logic dummy2 : us_rep
 
-type s__ref = { s__content : us_rep
-}
-
-function s__ref_s__content__projection(a: s__ref) : us_rep = (a).s__content
-
-predicate in_range3(rec__p__s__d1: int, a: us_rep) =
-  (rec__p__s__d1 = to_rep(((a).us_split_discrs1).rec__p__s__d))
-
-logic value__size1 : int
-
-logic object__size1 : int
-
-logic alignment1 : int
-
-axiom value__size_axiom1 : (0 <= value__size1)
-
-axiom object__size_axiom1 : (0 <= object__size1)
-
-axiom alignment_axiom1 : (0 <= alignment1)
-
-logic p__s__d__first__bit1 : int
-
-logic p__s__d__last__bit1 : int
-
-logic p__s__d__position1 : int
-
-axiom p__s__d__first__bit_axiom1 : (0 <= p__s__d__first__bit1)
-
-axiom p__s__d__last__bit_axiom1 :
-  (p__s__d__first__bit1 <  p__s__d__last__bit1)
-
-axiom p__s__d__position_axiom1 : (0 <= p__s__d__position1)
-
-logic p__s__bool_field__first__bit1 : int
-
-logic p__s__bool_field__last__bit1 : int
-
-logic p__s__bool_field__position1 : int
-
-axiom p__s__bool_field__first__bit_axiom1 :
-  (0 <= p__s__bool_field__first__bit1)
-
-axiom p__s__bool_field__last__bit_axiom1 :
-  (p__s__bool_field__first__bit1 <  p__s__bool_field__last__bit1)
-
-axiom p__s__bool_field__position_axiom1 : (0 <= p__s__bool_field__position1)
-
-logic p__s__int_field__first__bit1 : int
-
-logic p__s__int_field__last__bit1 : int
-
-logic p__s__int_field__position1 : int
-
-axiom p__s__int_field__first__bit_axiom1 :
-  (0 <= p__s__int_field__first__bit1)
-
-axiom p__s__int_field__last__bit_axiom1 :
-  (p__s__int_field__first__bit1 <  p__s__int_field__last__bit1)
-
-axiom p__s__int_field__position_axiom1 : (0 <= p__s__int_field__position1)
-
-logic user_eq3 : us_rep, us_rep -> bool
-
-logic dummy3 : us_rep
-
 type t1s__ref = { t1s__content : us_rep
 }
 
@@ -364,17 +299,20 @@ function bool_eq4(a: us_rep1, b: us_rep1) : bool =
   (bool_eq3(((a).us_split_fields3).rec__p__t__field,
   ((b).us_split_fields3).rec__p__t__field) = true)) then true else false)
 
-logic value__size2 : int
+predicate in_range3(rec__p__t__z1: int, a: us_split_discrs2) =
+  (rec__p__t__z1 = to_rep((a).rec__p__t__z))
 
-logic object__size2 : int
+logic value__size1 : int
 
-logic alignment2 : int
+logic object__size1 : int
 
-axiom value__size_axiom2 : (0 <= value__size2)
+logic alignment1 : int
 
-axiom object__size_axiom2 : (0 <= object__size2)
+axiom value__size_axiom1 : (0 <= value__size1)
 
-axiom alignment_axiom2 : (0 <= alignment2)
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
 
 logic p__t__z__first__bit : int
 
@@ -401,9 +339,9 @@ axiom p__t__field__last__bit_axiom :
 
 axiom p__t__field__position_axiom : (0 <= p__t__field__position)
 
-logic user_eq4 : us_rep1, us_rep1 -> bool
+logic user_eq3 : us_rep1, us_rep1 -> bool
 
-logic dummy4 : us_rep1
+logic dummy3 : us_rep1
 
 type t__ref = { t__content : us_rep1
 }
@@ -420,11 +358,76 @@ predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
   temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
   ((- 2147483648) <= 2147483647)) -> in_range2(temp___expr_18))
 
+predicate in_range4(rec__p__s__d1: int, a: us_split_discrs) =
+  (rec__p__s__d1 = to_rep((a).rec__p__s__d))
+
+logic value__size2 : int
+
+logic object__size2 : int
+
+logic alignment2 : int
+
+axiom value__size_axiom2 : (0 <= value__size2)
+
+axiom object__size_axiom2 : (0 <= object__size2)
+
+axiom alignment_axiom2 : (0 <= alignment2)
+
+logic p__s__d__first__bit1 : int
+
+logic p__s__d__last__bit1 : int
+
+logic p__s__d__position1 : int
+
+axiom p__s__d__first__bit_axiom1 : (0 <= p__s__d__first__bit1)
+
+axiom p__s__d__last__bit_axiom1 :
+  (p__s__d__first__bit1 <  p__s__d__last__bit1)
+
+axiom p__s__d__position_axiom1 : (0 <= p__s__d__position1)
+
+logic p__s__bool_field__first__bit1 : int
+
+logic p__s__bool_field__last__bit1 : int
+
+logic p__s__bool_field__position1 : int
+
+axiom p__s__bool_field__first__bit_axiom1 :
+  (0 <= p__s__bool_field__first__bit1)
+
+axiom p__s__bool_field__last__bit_axiom1 :
+  (p__s__bool_field__first__bit1 <  p__s__bool_field__last__bit1)
+
+axiom p__s__bool_field__position_axiom1 : (0 <= p__s__bool_field__position1)
+
+logic p__s__int_field__first__bit1 : int
+
+logic p__s__int_field__last__bit1 : int
+
+logic p__s__int_field__position1 : int
+
+axiom p__s__int_field__first__bit_axiom1 :
+  (0 <= p__s__int_field__first__bit1)
+
+axiom p__s__int_field__last__bit_axiom1 :
+  (p__s__int_field__first__bit1 <  p__s__int_field__last__bit1)
+
+axiom p__s__int_field__position_axiom1 : (0 <= p__s__int_field__position1)
+
+logic user_eq4 : us_rep, us_rep -> bool
+
+logic dummy4 : us_rep
+
+type s__ref = { s__content : us_rep
+}
+
+function s__ref_s__content__projection(a: s__ref) : us_rep = (a).s__content
+
 predicate dynamic_invariant2(temp___expr_171: us_rep1,
   temp___is_init_167: bool, temp___skip_constant_168: bool,
   temp___do_toplevel_169: bool, temp___do_typ_inv_170: bool) =
-  in_range3(to_rep(((temp___expr_171).us_split_discrs3).rec__p__t__z),
-  ((temp___expr_171).us_split_fields3).rec__p__t__field)
+  in_range4(to_rep(((temp___expr_171).us_split_discrs3).rec__p__t__z),
+  (((temp___expr_171).us_split_fields3).rec__p__t__field).us_split_discrs1)
 
  (* File "p.ads", line 1, characters 0-0 *)
 goal defqtvc :

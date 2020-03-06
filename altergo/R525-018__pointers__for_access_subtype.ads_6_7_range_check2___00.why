@@ -340,13 +340,17 @@ logic user_eq3 : us_rep, us_rep -> bool
 
 logic dummy3 : us_rep
 
-type l__ref = { l__content : us_rep
+type t5s__ref = { t5s__content : us_rep
 }
 
-function l__ref_l__content__projection(a: l__ref) : us_rep = (a).l__content
+function t5s__ref_t5s__content__projection(a: t5s__ref) : us_rep =
+  (a).t5s__content
 
-predicate in_range2(rec__for_access_subtype__l__n1: int, a: us_rep) =
-  (rec__for_access_subtype__l__n1 = to_rep(((a).us_split_discrs1).rec__for_access_subtype__l__n))
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate in_range2(rec__for_access_subtype__l__n1: int,
+  a: us_split_discrs) =
+  (rec__for_access_subtype__l__n1 = to_rep((a).rec__for_access_subtype__l__n))
 
 logic value__size2 : int
 
@@ -394,13 +398,10 @@ logic user_eq4 : us_rep, us_rep -> bool
 
 logic dummy4 : us_rep
 
-type t5s__ref = { t5s__content : us_rep
+type l__ref = { l__content : us_rep
 }
 
-function t5s__ref_t5s__content__projection(a: t5s__ref) : us_rep =
-  (a).t5s__content
-
-logic attr__ATTRIBUTE_ADDRESS : int
+function l__ref_l__content__projection(a: l__ref) : us_rep = (a).l__content
 
 function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
 
@@ -514,7 +515,7 @@ function of_base(r: us_rep1) : us_rep2 = {
 predicate in_range4(rec__for_access_subtype__l__n1: int, r: us_rep1) =
   ((not ((r).rec__for_access_subtype__l_ptr__is_null_pointer = true)) ->
   in_range2(rec__for_access_subtype__l__n1,
-  (r).rec__for_access_subtype__l_ptr__pointer_value))
+  ((r).rec__for_access_subtype__l_ptr__pointer_value).us_split_discrs1))
 
 logic dummy6 : us_rep2
 
@@ -529,7 +530,7 @@ predicate dynamic_invariant1(temp___expr_181: us_rep2,
   temp___do_toplevel_179: bool, temp___do_typ_inv_180: bool) =
   ((not ((temp___expr_181).rec__for_access_subtype__l_ptr__is_null_pointer1 = true)) ->
   (in_range2(14,
-  (temp___expr_181).rec__for_access_subtype__l_ptr__pointer_value1) and
+  ((temp___expr_181).rec__for_access_subtype__l_ptr__pointer_value1).us_split_discrs1) and
   (let temp___182 =
   (((temp___expr_181).rec__for_access_subtype__l_ptr__pointer_value1).us_split_discrs1).rec__for_access_subtype__l__n
   : integer in (dynamic_property(1, to_rep(temp___182),

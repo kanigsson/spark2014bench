@@ -898,6 +898,10 @@ function bool_eq7(a: us_rep, b: us_rep) : bool =
   (bool_eq6(((a).us_split_fields1).rec__area_math__ensemble__to,
   ((b).us_split_fields1).rec__area_math__ensemble__to) = true))) then true else false)
 
+predicate in_range3(rec__area_math__ensemble__max1: int,
+  a: us_split_discrs) =
+  (rec__area_math__ensemble__max1 = to_rep((a).rec__area_math__ensemble__max))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -1116,9 +1120,6 @@ function bool_eq8(a: us_rep1, b: us_rep1) : bool =
   (bool_eq5(((a).us_split_fields3).rec__area_math__ensemble__to1, 1, 0,
   ((b).us_split_fields3).rec__area_math__ensemble__to1, 1,
   0) = true))) then true else false)
-
-predicate in_range3(rec__area_math__ensemble__max1: int, a: us_rep) =
-  (rec__area_math__ensemble__max1 = to_rep(((a).us_split_discrs1).rec__area_math__ensemble__max))
 
 logic value__size4 : int
 

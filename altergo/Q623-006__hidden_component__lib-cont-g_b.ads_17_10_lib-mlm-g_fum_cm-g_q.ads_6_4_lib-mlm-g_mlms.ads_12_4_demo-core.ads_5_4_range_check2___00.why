@@ -83,10 +83,10 @@ type t_c__ref = { t_c__content : t_c
 function t_c__ref_t_c__content__projection(a: t_c__ref) : t_c =
   (a).t_c__content
 
-predicate dynamic_invariant(temp___expr_246: int, temp___is_init_242: bool,
-  temp___skip_constant_243: bool, temp___do_toplevel_244: bool,
-  temp___do_typ_inv_245: bool) = (((temp___is_init_242 = true) or
-  (1 <= 2147483647)) -> in_range(temp___expr_246))
+predicate dynamic_invariant(temp___expr_232: int, temp___is_init_228: bool,
+  temp___skip_constant_229: bool, temp___do_toplevel_230: bool,
+  temp___do_typ_inv_231: bool) = (((temp___is_init_228 = true) or
+  (1 <= 2147483647)) -> in_range(temp___expr_232))
 
 function to_rep(x: t_c) : int = t_cqtint(x)
 
@@ -128,7 +128,7 @@ type index__ref = { index__content : index
 function index__ref_index__content__projection(a: index__ref) : index =
   (a).index__content
 
-type t_id
+type t_command_id
 
 predicate in_range2(x: int) = ((0 <= x) and (x <= 1))
 
@@ -140,34 +140,35 @@ logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
 
 logic attr__ATTRIBUTE_VALUE2 : us_image -> int
 
-logic user_eq2 : t_id, t_id -> bool
+logic user_eq2 : t_command_id, t_command_id -> bool
 
-logic dummy2 : t_id
+logic dummy2 : t_command_id
 
-type t_id__ref = { t_id__content : t_id
+type t_command_id__ref = { t_command_id__content : t_command_id
 }
 
-function t_id__ref_t_id__content__2__projection(a: t_id__ref) : t_id =
-  (a).t_id__content
+function t_command_id__ref_t_command_id__content__2__projection(a: t_command_id__ref) : t_command_id =
+  (a).t_command_id__content
 
-logic to_rep1 : t_id -> int
+logic to_rep1 : t_command_id -> int
 
-logic of_rep1 : int -> t_id
+logic of_rep1 : int -> t_command_id
 
 axiom inversion_axiom1 :
-  (forall x:t_id [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
+  (forall x:t_command_id [to_rep1(x)]. (of_rep1(to_rep1(x)) = x))
 
-axiom range_axiom1 : (forall x:t_id [to_rep1(x)]. in_range2(to_rep1(x)))
+axiom range_axiom1 :
+  (forall x:t_command_id [to_rep1(x)]. in_range2(to_rep1(x)))
 
 axiom coerce_axiom1 :
   (forall x:int [to_rep1(of_rep1(x))]. (in_range2(x) ->
   (to_rep1(of_rep1(x)) = x)))
 
 type us_split_fields = { rec__ada___demo__core__p_mlms__cm__internal__t_m__id
-: t_id
+: t_command_id
 }
 
-function us_split_fields_rec__ada___demo__core__p_mlms__cm__internal__t_m__id__projection(a: us_split_fields) : t_id =
+function us_split_fields_rec__ada___demo__core__p_mlms__cm__internal__t_m__id__projection(a: us_split_fields) : t_command_id =
   (a).rec__ada___demo__core__p_mlms__cm__internal__t_m__id
 
 type us_split_fields__ref = { us_split_fields__content : us_split_fields
@@ -444,6 +445,10 @@ logic us_dispatch_eq : us_rep1, us_rep1 -> bool
 
 logic us_tag : int
 
+predicate in_range4(rec__ada___demo__core__p_mlms__all_f__q__t__c1: int,
+  a: us_split_discrs) =
+  (rec__ada___demo__core__p_mlms__all_f__q__t__c1 = to_rep((a).rec__ada___demo__core__p_mlms__all_f__q__t__c))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -495,21 +500,21 @@ type t__ref = { t__content : us_rep1
 
 function t__ref_t__content__projection(a: t__ref) : us_rep1 = (a).t__content
 
-predicate dynamic_invariant1(temp___expr_253: int, temp___is_init_249: bool,
-  temp___skip_constant_250: bool, temp___do_toplevel_251: bool,
-  temp___do_typ_inv_252: bool) = (((temp___is_init_249 = true) or
-  (1 <= 2147483647)) -> in_range1(temp___expr_253))
+predicate dynamic_invariant1(temp___expr_239: int, temp___is_init_235: bool,
+  temp___skip_constant_236: bool, temp___do_toplevel_237: bool,
+  temp___do_typ_inv_238: bool) = (((temp___is_init_235 = true) or
+  (1 <= 2147483647)) -> in_range1(temp___expr_239))
 
-predicate dynamic_invariant2(temp___expr_266: us_rep1,
-  temp___is_init_262: bool, temp___skip_constant_263: bool,
-  temp___do_toplevel_264: bool, temp___do_typ_inv_265: bool) =
-  (let temp___267 =
-  ((temp___expr_266).us_split_discrs1).rec__ada___demo__core__p_mlms__all_f__q__t__c
-  : t_c in (dynamic_property(1, to_rep(temp___267),
-  first1(((temp___expr_266).us_split_fields3).rec__ada___demo__core__p_mlms__all_f__q__t__e),
-  last1(((temp___expr_266).us_split_fields3).rec__ada___demo__core__p_mlms__all_f__q__t__e)) and
-  ((first1(((temp___expr_266).us_split_fields3).rec__ada___demo__core__p_mlms__all_f__q__t__e) = 1) and
-  (last1(((temp___expr_266).us_split_fields3).rec__ada___demo__core__p_mlms__all_f__q__t__e) = to_rep(temp___267)))))
+predicate dynamic_invariant2(temp___expr_252: us_rep1,
+  temp___is_init_248: bool, temp___skip_constant_249: bool,
+  temp___do_toplevel_250: bool, temp___do_typ_inv_251: bool) =
+  (let temp___253 =
+  ((temp___expr_252).us_split_discrs1).rec__ada___demo__core__p_mlms__all_f__q__t__c
+  : t_c in (dynamic_property(1, to_rep(temp___253),
+  first1(((temp___expr_252).us_split_fields3).rec__ada___demo__core__p_mlms__all_f__q__t__e),
+  last1(((temp___expr_252).us_split_fields3).rec__ada___demo__core__p_mlms__all_f__q__t__e)) and
+  ((first1(((temp___expr_252).us_split_fields3).rec__ada___demo__core__p_mlms__all_f__q__t__e) = 1) and
+  (last1(((temp___expr_252).us_split_fields3).rec__ada___demo__core__p_mlms__all_f__q__t__e) = to_rep(temp___253)))))
 
  (* File "lib-mlm-g_fum_cm-g_q.ads", line 6, characters 0-0 *)
 goal defqtvc :

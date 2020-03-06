@@ -305,10 +305,10 @@ predicate dynamic_invariant(temp___expr_180: int, temp___is_init_176: bool,
   temp___do_typ_inv_179: bool) = (((temp___is_init_176 = true) or
   (0 <= 255)) -> in_range(temp___expr_180))
 
-predicate dynamic_invariant1(temp___expr_306: int, temp___is_init_302: bool,
-  temp___skip_constant_303: bool, temp___do_toplevel_304: bool,
-  temp___do_typ_inv_305: bool) = (((temp___is_init_302 = true) or
-  (0 <= 2)) -> in_range1(temp___expr_306))
+predicate dynamic_invariant1(temp___expr_318: int, temp___is_init_314: bool,
+  temp___skip_constant_315: bool, temp___do_toplevel_316: bool,
+  temp___do_typ_inv_317: bool) = (((temp___is_init_314 = true) or
+  (0 <= 2)) -> in_range1(temp___expr_318))
 
 axiom c64b__def_axiom :
   (c64b = ((p).us_split_fields3).rec__records_prooffuncs__packet__data)

@@ -537,9 +537,9 @@ goal defqtvc :
   (exists left2:int. exists right2:int. exists med1:int.
   ((((first1(a) <= left2) and (left2 <= last1(a))) and
   ((first1(a) <= right2) and (right2 <= last1(a)))) and
-  ((andb((if ((dynamic_invariant2(med1, false, true, true, true) and
-  dynamic_invariant2(left2, false, true, true, true)) and
-  dynamic_invariant2(right2, false, true, true, true)) then true else false),
+  ((andb((if ((dynamic_invariant2(right2, false, true, true, true) and
+  dynamic_invariant2(med1, false, true, true, true)) and
+  dynamic_invariant2(left2, false, true, true, true)) then true else false),
   (if (left2 <  right2) then true else false)) = true) and
   (exists temp___203:int. ((temp___203 = (right2 - left2)) and (let o7 =
   (left2 + div((right2 - left2), 2)) : int in (in_range2(o7) and
@@ -560,9 +560,9 @@ goal defqtvc :
   (exists left2:int. exists right2:int. exists med1:int.
   ((((first1(a) <= left2) and (left2 <= last1(a))) and
   ((first1(a) <= right2) and (right2 <= last1(a)))) and
-  ((andb((if ((dynamic_invariant2(med1, false, true, true, true) and
-  dynamic_invariant2(left2, false, true, true, true)) and
-  dynamic_invariant2(right2, false, true, true, true)) then true else false),
+  ((andb((if ((dynamic_invariant2(right2, false, true, true, true) and
+  dynamic_invariant2(med1, false, true, true, true)) and
+  dynamic_invariant2(left2, false, true, true, true)) then true else false),
   (if (left2 <  right2) then true else false)) = true) and
   (exists temp___203:int. ((temp___203 = (right2 - left2)) and (let o7 =
   (left2 + div((right2 - left2), 2)) : int in (in_range2(o7) and

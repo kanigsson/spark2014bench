@@ -336,6 +336,9 @@ function bool_eq6(a: us_rep1, b: us_rep1) : bool =
   (tokens__token__instr__pred(a) ->
   (to_rep3(((a).us_split_fields3).rec__tokens__token__instr) = to_rep3(((b).us_split_fields3).rec__tokens__token__instr))))) then true else false)
 
+predicate in_range5(rec__tokens__token__kind1: int, a: us_split_discrs) =
+  (rec__tokens__token__kind1 = to_rep1((a).rec__tokens__token__kind))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -439,7 +442,7 @@ axiom tlastSqtaxiom : (forall i:tlastS. (0 <= tlastSqtint(i)))
 
 axiom tlastSqtaxiom1 : (forall i:tlastS. (tlastSqtint(i) <= 200))
 
-predicate in_range5(x: int) = ((0 <= x) and (x <= 200))
+predicate in_range6(x: int) = ((0 <= x) and (x <= 200))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -462,7 +465,7 @@ function tlastS__ref_tlastS__content__projection(a: tlastS__ref) : tlastS =
 predicate dynamic_invariant(temp___expr_206: int, temp___is_init_202: bool,
   temp___skip_constant_203: bool, temp___do_toplevel_204: bool,
   temp___do_typ_inv_205: bool) = (((temp___is_init_202 = true) or
-  (0 <= 200)) -> in_range5(temp___expr_206))
+  (0 <= 200)) -> in_range6(temp___expr_206))
 
 axiom full__def_axiom :
   (forall stack__last:int [full(stack__last)]. ((full(stack__last) = true) ->

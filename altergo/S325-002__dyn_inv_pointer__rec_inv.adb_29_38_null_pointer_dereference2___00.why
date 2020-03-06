@@ -197,6 +197,9 @@ function bool_eq3(a: us_rep1, b: us_rep1) : bool =
   (bool_eq2(((a).us_split_fields1).rec__rec_inv__list_d__next,
   ((b).us_split_fields1).rec__rec_inv__list_d__next) = true))) then true else false)
 
+predicate in_range2(rec__rec_inv__list_d__d1: bool, a: us_split_discrs) =
+  (rec__rec_inv__list_d__d1 = (a).rec__rec_inv__list_d__d)
+
 logic value__size : int
 
 logic object__size : int

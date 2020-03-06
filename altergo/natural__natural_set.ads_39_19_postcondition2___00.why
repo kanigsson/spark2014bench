@@ -506,15 +506,15 @@ goal defqtvc :
                                   }) and
                                   (exists o6:element_t.
                                   ((to_rep1(o6) = value) and
-                                  (exists temp___251:int.
-                                  ((to_rep((s__split_fields2).rec__natural_set__t__len) = temp___251) and
-                                  (((1 <= temp___251) and
-                                  (temp___251 <= 10)) and
+                                  (exists temp___255:int.
+                                  ((to_rep((s__split_fields2).rec__natural_set__t__len) = temp___255) and
+                                  (((1 <= temp___255) and
+                                  (temp___255 <= 10)) and
                                   ((s__split_fields1 = {
                                   rec__natural_set__t__len =
                                   (s__split_fields2).rec__natural_set__t__len;
                                   rec__natural_set__t__m =
-                                  ((s__split_fields2).rec__natural_set__t__m[temp___251 <- o6])
+                                  ((s__split_fields2).rec__natural_set__t__m[temp___255 <- o6])
                                   }) and (contains({ us_split_fields1 =
                                   s__split_fields1 }, value) = true))))))))))))))) else (s__split_fields1 = s__split_fields)))))))) ->
   ((forall s__split_fields2:us_split_fields.

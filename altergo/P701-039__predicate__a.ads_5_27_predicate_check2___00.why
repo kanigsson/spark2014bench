@@ -189,6 +189,9 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (a__rec__b__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__a__rec__b) = to_rep(((b).us_split_fields1).rec__a__rec__b))))) then true else false)
 
+predicate in_range2(rec__a__rec__disc1: int, a: us_split_discrs) =
+  (rec__a__rec__disc1 = to_rep1((a).rec__a__rec__disc))
+
 logic value__size : int
 
 logic object__size : int
@@ -261,9 +264,9 @@ predicate dynamic_invariant(temp___expr_169: us_rep,
   to_rep1(((temp___expr_169).us_split_discrs1).rec__a__rec__disc) : int in
   ((1 <= temp___172) and (temp___172 <= 5)))
 
-predicate default_initial_assumption(temp___expr_173: us_rep,
-  temp___skip_top_level_174: bool) =
-  (to_rep1(((temp___expr_173).us_split_discrs1).rec__a__rec__disc) = 10)
+predicate default_initial_assumption(temp___expr_174: us_rep,
+  temp___skip_top_level_175: bool) =
+  (to_rep1(((temp___expr_174).us_split_discrs1).rec__a__rec__disc) = 10)
 
 predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,

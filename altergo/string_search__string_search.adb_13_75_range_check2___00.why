@@ -464,16 +464,17 @@ predicate dynamic_invariant4(temp___expr_18: int, temp___is_init_14: bool,
  (* File "string_search.ads", line 23, characters 0-0 *)
 goal defqtvc : (dynamic_invariant2(needle, true, false, true, true) ->
   (dynamic_invariant2(haystack, true, false, true, true) ->
-  (((1 <= length(needle)) and (length(needle) <= length(haystack))) ->
-  (let o = length(needle) : int in (in_range1(o) -> (let o1 =
-  length(haystack) : int in (in_range1(o1) -> (let o2 = (o1 - o) : int in
-  (in_range1(o2) -> (let o3 = (o2 + 1) : int in (in_range1(o3) ->
+  ((let temp___341 = length(needle) : int in ((1 <= temp___341) and
+  (temp___341 <= length(haystack)))) -> (let o = length(needle) : int in
+  (in_range1(o) -> (let o1 = length(haystack) : int in (in_range1(o1) ->
+  (let o2 = (o1 - o) : int in (in_range1(o2) -> (let o3 = (o2 + 1) : int in
+  (in_range1(o3) ->
   (forall i:int. ((i = 1) -> ((andb((if (1 <= i) then true else false),
   (if (i <= o3) then true else false)) = true) ->
-  (forall diff:bool. ((diff = of_int(0)) -> (let temp___316 = first1(needle)
+  (forall diff:bool. ((diff = of_int(0)) -> (let temp___323 = first1(needle)
   : int in
-  (forall j:int. ((j = temp___316) ->
-  ((andb((if (temp___316 <= j) then true else false),
+  (forall j:int. ((j = temp___323) ->
+  ((andb((if (temp___323 <= j) then true else false),
   (if (j <= last1(needle)) then true else false)) = true) -> (let o4 =
   (j + (i - 1)) : int in (in_range1(o4) -> (((first1(haystack) <= o4) and
   (o4 <= last1(haystack))) ->

@@ -1175,6 +1175,9 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range4(rec__tagged_discr__t__discr1: int, a: us_split_discrs) =
+  (rec__tagged_discr__t__discr1 = to_rep2((a).rec__tagged_discr__t__discr))
+
 logic value__size : int
 
 logic object__size : int

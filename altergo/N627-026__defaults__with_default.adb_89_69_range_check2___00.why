@@ -339,15 +339,15 @@ logic user_eq4 : us_rep, us_rep -> bool
 
 logic dummy4 : us_rep
 
-type rec_with_discr__ref = { rec_with_discr__content : us_rep
+type tbadS__ref = { tbadS__content : us_rep
 }
 
-function rec_with_discr__ref_rec_with_discr__content__projection(a: rec_with_discr__ref) : us_rep =
-  (a).rec_with_discr__content
+function tbadS__ref_tbadS__content__projection(a: tbadS__ref) : us_rep =
+  (a).tbadS__content
 
 predicate in_range4(rec__with_default__bad_record2__rec_with_discr__b1: bool,
-  a: us_rep) =
-  (rec__with_default__bad_record2__rec_with_discr__b1 = ((a).us_split_discrs1).rec__with_default__bad_record2__rec_with_discr__b)
+  a: us_split_discrs) =
+  (rec__with_default__bad_record2__rec_with_discr__b1 = (a).rec__with_default__bad_record2__rec_with_discr__b)
 
 logic value__size1 : int
 
@@ -410,11 +410,11 @@ logic user_eq5 : us_rep, us_rep -> bool
 
 logic dummy5 : us_rep
 
-type tbadS__ref = { tbadS__content : us_rep
+type rec_with_discr__ref = { rec_with_discr__content : us_rep
 }
 
-function tbadS__ref_tbadS__content__projection(a: tbadS__ref) : us_rep =
-  (a).tbadS__content
+function rec_with_discr__ref_rec_with_discr__content__projection(a: rec_with_discr__ref) : us_rep =
+  (a).rec_with_discr__content
 
 logic bad__split_discrs : us_split_discrs
 
@@ -424,7 +424,7 @@ predicate dynamic_invariant1(temp___expr_411: us_rep,
   temp___is_init_407: bool, temp___skip_constant_408: bool,
   temp___do_toplevel_409: bool, temp___do_typ_inv_410: bool) =
   (((not (temp___skip_constant_408 = true)) -> in_range4(of_int(0),
-  temp___expr_411)) and
+  (temp___expr_411).us_split_discrs1)) and
   (with_default__bad_record2__rec_with_discr__f2__pred(temp___expr_411) ->
   (((temp___is_init_407 = true) or (first <= 2147483647)) ->
   dynamic_property(first, 2147483647,

@@ -203,6 +203,9 @@ function bool_eq3(a: us_rep, b: us_rep) : bool =
   (if ((to_int(((a).us_split_discrs1).rec__test_constrained__r__b) = to_int(((b).us_split_discrs1).rec__test_constrained__r__b)) and
   (to_rep(((a).us_split_fields1).rec__test_constrained__r__x) = to_rep(((b).us_split_fields1).rec__test_constrained__r__x))) then true else false)
 
+predicate in_range2(rec__test_constrained__r__b1: bool, a: us_split_discrs) =
+  (rec__test_constrained__r__b1 = (a).rec__test_constrained__r__b)
+
 logic value__size : int
 
 logic object__size : int
@@ -330,7 +333,7 @@ axiom tr_aD1qtaxiom : (forall i:tr_aD1. (1 <= tr_aD1qtint(i)))
 
 axiom tr_aD1qtaxiom1 : (forall i:tr_aD1. (tr_aD1qtint(i) <= 10))
 
-predicate in_range2(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range3(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -402,9 +405,6 @@ predicate default_initial_assumption2(temp___expr_220: us_rep1,
   temp___skip_top_level_221: bool) =
   ((temp___expr_220).rec__test_constrained__r_a_acc__is_null_pointer = true)
 
-predicate in_range3(rec__test_constrained__r__b1: bool, a: us_rep) =
-  (rec__test_constrained__r__b1 = ((a).us_split_discrs1).rec__test_constrained__r__b)
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -456,9 +456,6 @@ type t35b__ref = { t35b__content : us_rep
 
 function t35b__ref_t35b__content__projection(a: t35b__ref) : us_rep =
   (a).t35b__content
-
-predicate in_range4(rec__test_constrained__r__b1: bool, a: us_rep) =
-  (rec__test_constrained__r__b1 = ((a).us_split_discrs1).rec__test_constrained__r__b)
 
 logic value__size2 : int
 

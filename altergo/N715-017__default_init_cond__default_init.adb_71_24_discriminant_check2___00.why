@@ -168,6 +168,9 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (default_init__discr__f__pred(a) ->
   (to_rep(((a).us_split_fields1).rec__default_init__discr__f) = to_rep(((b).us_split_fields1).rec__default_init__discr__f)))) then true else false)
 
+predicate in_range2(rec__default_init__discr__b1: bool, a: us_split_discrs) =
+  (rec__default_init__discr__b1 = (a).rec__default_init__discr__b)
+
 logic value__size : int
 
 logic object__size : int
@@ -262,6 +265,10 @@ function bool_eq3(a: us_rep1, b: us_rep1) : bool =
   (default_init__mut_discr__f__pred(a) ->
   (to_rep(((a).us_split_fields3).rec__default_init__mut_discr__f) = to_rep(((b).us_split_fields3).rec__default_init__mut_discr__f)))) then true else false)
 
+predicate in_range3(rec__default_init__mut_discr__b1: bool,
+  a: us_split_discrs2) =
+  (rec__default_init__mut_discr__b1 = (a).rec__default_init__mut_discr__b)
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -313,9 +320,6 @@ type mut_discr__ref = { mut_discr__content : us_rep1
 
 function mut_discr__ref_mut_discr__content__projection(a: mut_discr__ref) : us_rep1 =
   (a).mut_discr__content
-
-predicate in_range2(rec__default_init__discr__b1: bool, a: us_rep) =
-  (rec__default_init__discr__b1 = ((a).us_split_discrs1).rec__default_init__discr__b)
 
 logic value__size2 : int
 
@@ -381,7 +385,7 @@ predicate dynamic_invariant1(temp___expr_301: us_rep,
   temp___is_init_297: bool, temp___skip_constant_298: bool,
   temp___do_toplevel_299: bool, temp___do_typ_inv_300: bool) =
   ((not (temp___skip_constant_298 = true)) -> in_range2(of_int(1),
-  temp___expr_301))
+  (temp___expr_301).us_split_discrs1))
 
 axiom temp___result_307qtdef :
   (forall temp___306:us_rep. discr_ok__function_guard(discr_ok(temp___306),
@@ -394,9 +398,6 @@ predicate default_initial_assumption(temp___expr_303: us_rep,
   (to_rep(((temp___expr_303).us_split_fields1).rec__default_init__discr__f) = 0))) and
   ((not (temp___skip_top_level_304 = true)) ->
   (discr_ok(temp___expr_303) = true)))
-
-predicate in_range3(rec__default_init__discr__b1: bool, a: us_rep) =
-  (rec__default_init__discr__b1 = ((a).us_split_discrs1).rec__default_init__discr__b)
 
 logic value__size3 : int
 
@@ -457,8 +458,8 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 predicate dynamic_invariant2(temp___expr_312: us_rep,
   temp___is_init_308: bool, temp___skip_constant_309: bool,
   temp___do_toplevel_310: bool, temp___do_typ_inv_311: bool) =
-  ((not (temp___skip_constant_309 = true)) -> in_range3(of_int(0),
-  temp___expr_312))
+  ((not (temp___skip_constant_309 = true)) -> in_range2(of_int(0),
+  (temp___expr_312).us_split_discrs1))
 
 axiom temp___result_318qtdef :
   (forall temp___317:us_rep. discr_ok__function_guard(discr_ok(temp___317),
@@ -493,9 +494,6 @@ predicate default_initial_assumption2(temp___expr_252: us_rep1,
   (to_rep(((temp___expr_252).us_split_fields3).rec__default_init__mut_discr__f) = init(0)))) and
   ((not (temp___skip_top_level_253 = true)) ->
   (mut_discr_ok(temp___expr_252) = true)))
-
-predicate in_range4(rec__default_init__mut_discr__b1: bool, a: us_rep1) =
-  (rec__default_init__mut_discr__b1 = ((a).us_split_discrs3).rec__default_init__mut_discr__b)
 
 logic value__size4 : int
 
@@ -558,8 +556,8 @@ logic attr__ATTRIBUTE_ADDRESS3 : int
 predicate dynamic_invariant3(temp___expr_323: us_rep1,
   temp___is_init_319: bool, temp___skip_constant_320: bool,
   temp___do_toplevel_321: bool, temp___do_typ_inv_322: bool) =
-  ((not (temp___skip_constant_320 = true)) -> in_range4(of_int(0),
-  temp___expr_323))
+  ((not (temp___skip_constant_320 = true)) -> in_range3(of_int(0),
+  (temp___expr_323).us_split_discrs3))
 
 axiom temp___result_328qtdef : init__function_guard(init(0), 0)
 
@@ -574,9 +572,6 @@ predicate default_initial_assumption3(temp___expr_325: us_rep1,
   (to_rep(((temp___expr_325).us_split_fields3).rec__default_init__mut_discr__f) = init(0)))) and
   ((not (temp___skip_top_level_326 = true)) ->
   (mut_discr_ok(temp___expr_325) = true)))
-
-predicate in_range5(rec__default_init__mut_discr__b1: bool, a: us_rep1) =
-  (rec__default_init__mut_discr__b1 = ((a).us_split_discrs3).rec__default_init__mut_discr__b)
 
 logic value__size5 : int
 
@@ -639,8 +634,8 @@ logic attr__ATTRIBUTE_ADDRESS4 : int
 predicate dynamic_invariant4(temp___expr_335: us_rep1,
   temp___is_init_331: bool, temp___skip_constant_332: bool,
   temp___do_toplevel_333: bool, temp___do_typ_inv_334: bool) =
-  ((not (temp___skip_constant_332 = true)) -> in_range5(of_int(1),
-  temp___expr_335))
+  ((not (temp___skip_constant_332 = true)) -> in_range3(of_int(1),
+  (temp___expr_335).us_split_discrs3))
 
 axiom temp___result_340qtdef : init__function_guard(init(0), 0)
 

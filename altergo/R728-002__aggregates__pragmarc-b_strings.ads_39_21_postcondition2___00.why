@@ -385,6 +385,10 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range4(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
+  a: us_split_discrs) =
+  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep((a).rec__ada___pragmarc__b_strings__b_string__max_length))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -469,7 +473,7 @@ function to_int(b: bool) : int = (if (b = true) then 1 else 0)
 
 function of_int(i: int) : bool = (if (i = 0) then false else true)
 
-predicate in_range4(x: int) = ((x = 0) or (x = 1))
+predicate in_range5(x: int) = ((x = 0) or (x = 1))
 
 logic attr__ATTRIBUTE_IMAGE4 : bool -> us_image
 
@@ -543,10 +547,6 @@ function of_base(r: us_rep) : us_rep1 = { us_split_discrs2 =
   attr__tag1 = (r).attr__tag }
 
 logic us_tag1 : int
-
-predicate in_range5(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
 
 logic value__size2 : int
 
@@ -681,10 +681,6 @@ function of_base1(r: us_rep) : us_rep2 = { us_split_discrs3 =
 
 logic us_tag2 : int
 
-predicate in_range6(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -817,10 +813,6 @@ function of_base2(r: us_rep) : us_rep3 = { us_split_discrs4 =
   attr__tag3 = (r).attr__tag }
 
 logic us_tag3 : int
-
-predicate in_range7(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
 
 logic value__size4 : int
 
@@ -955,10 +947,6 @@ function of_base3(r: us_rep) : us_rep4 = { us_split_discrs5 =
 
 logic us_tag4 : int
 
-predicate in_range8(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
-
 logic value__size5 : int
 
 logic object__size5 : int
@@ -1091,10 +1079,6 @@ function of_base4(r: us_rep) : us_rep5 = { us_split_discrs6 =
   attr__tag5 = (r).attr__tag }
 
 logic us_tag5 : int
-
-predicate in_range9(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
 
 logic value__size6 : int
 
@@ -1229,10 +1213,6 @@ function of_base5(r: us_rep) : us_rep6 = { us_split_discrs7 =
 
 logic us_tag6 : int
 
-predicate in_range10(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
-
 logic value__size7 : int
 
 logic object__size7 : int
@@ -1365,10 +1345,6 @@ function of_base6(r: us_rep) : us_rep7 = { us_split_discrs8 =
   attr__tag7 = (r).attr__tag }
 
 logic us_tag7 : int
-
-predicate in_range11(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
 
 logic value__size8 : int
 
@@ -1503,10 +1479,6 @@ function of_base7(r: us_rep) : us_rep8 = { us_split_discrs9 =
 
 logic us_tag8 : int
 
-predicate in_range12(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
-
 logic value__size9 : int
 
 logic object__size9 : int
@@ -1639,10 +1611,6 @@ function of_base8(r: us_rep) : us_rep9 = { us_split_discrs10 =
   attr__tag9 = (r).attr__tag }
 
 logic us_tag9 : int
-
-predicate in_range13(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
 
 logic value__size10 : int
 
@@ -1779,10 +1747,6 @@ function of_base9(r: us_rep) : us_rep10 = { us_split_discrs11 =
 
 logic us_tag10 : int
 
-predicate in_range14(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
-
 logic value__size11 : int
 
 logic object__size11 : int
@@ -1917,10 +1881,6 @@ function of_base10(r: us_rep) : us_rep11 = { us_split_discrs12 =
   attr__tag11 = (r).attr__tag }
 
 logic us_tag11 : int
-
-predicate in_range15(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
 
 logic value__size12 : int
 
@@ -2057,10 +2017,6 @@ function of_base11(r: us_rep) : us_rep12 = { us_split_discrs13 =
 
 logic us_tag12 : int
 
-predicate in_range16(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
-
 logic value__size13 : int
 
 logic object__size13 : int
@@ -2195,10 +2151,6 @@ function of_base12(r: us_rep) : us_rep13 = { us_split_discrs14 =
   attr__tag13 = (r).attr__tag }
 
 logic us_tag13 : int
-
-predicate in_range17(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
 
 logic value__size14 : int
 
@@ -2335,10 +2287,6 @@ function of_base13(r: us_rep) : us_rep14 = { us_split_discrs15 =
 
 logic us_tag14 : int
 
-predicate in_range18(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
-
 logic value__size15 : int
 
 logic object__size15 : int
@@ -2473,10 +2421,6 @@ function of_base14(r: us_rep) : us_rep15 = { us_split_discrs16 =
   attr__tag15 = (r).attr__tag }
 
 logic us_tag15 : int
-
-predicate in_range19(rec__ada___pragmarc__b_strings__b_string__max_length1: int,
-  a: us_rep) =
-  (rec__ada___pragmarc__b_strings__b_string__max_length1 = to_rep(((a).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length))
 
 logic value__size16 : int
 
@@ -2785,7 +2729,7 @@ logic attr__ATTRIBUTE_ADDRESS9 : int
 
 type truncation
 
-predicate in_range20(x: int) = ((0 <= x) and (x <= 2))
+predicate in_range6(x: int) = ((0 <= x) and (x <= 2))
 
 function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -2808,7 +2752,7 @@ function truncation__ref_truncation__content__projection(a: truncation__ref) : t
 predicate dynamic_invariant3(temp___expr_294: int, temp___is_init_290: bool,
   temp___skip_constant_291: bool, temp___do_toplevel_292: bool,
   temp___do_typ_inv_293: bool) = (((temp___is_init_290 = true) or
-  (0 <= 2)) -> in_range20(temp___expr_294))
+  (0 <= 2)) -> in_range6(temp___expr_294))
 
 type t21b__ref = { t21b__content : us_t
 }
@@ -3089,8 +3033,8 @@ predicate dynamic_invariant7(temp___expr_473: us_rep2,
   temp___is_init_469: bool, temp___skip_constant_470: bool,
   temp___do_toplevel_471: bool, temp___do_typ_inv_472: bool) =
   (((not (temp___skip_constant_470 = true)) ->
-  in_range6(to_rep(((source).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
-  to_base1(temp___expr_473))) and (dynamic_property(1,
+  in_range4(to_rep(((source).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
+  (to_base1(temp___expr_473)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((source).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
   first1(((temp___expr_473).us_split_fields5).rec__ada___pragmarc__b_strings__b_string__value2),
   last1(((temp___expr_473).us_split_fields5).rec__ada___pragmarc__b_strings__b_string__value2)) and
@@ -3133,8 +3077,8 @@ predicate dynamic_invariant8(temp___expr_512: us_rep4,
   temp___is_init_508: bool, temp___skip_constant_509: bool,
   temp___do_toplevel_510: bool, temp___do_typ_inv_511: bool) =
   (((not (temp___skip_constant_509 = true)) ->
-  in_range8(to_rep(((source1).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
-  to_base3(temp___expr_512))) and (dynamic_property(1,
+  in_range4(to_rep(((source1).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
+  (to_base3(temp___expr_512)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((source1).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
   first1(((temp___expr_512).us_split_fields9).rec__ada___pragmarc__b_strings__b_string__value4),
   last1(((temp___expr_512).us_split_fields9).rec__ada___pragmarc__b_strings__b_string__value4)) and
@@ -3165,8 +3109,8 @@ predicate dynamic_invariant9(temp___expr_524: us_rep5,
   temp___is_init_520: bool, temp___skip_constant_521: bool,
   temp___do_toplevel_522: bool, temp___do_typ_inv_523: bool) =
   (((not (temp___skip_constant_521 = true)) ->
-  in_range9(to_rep(((from).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
-  to_base4(temp___expr_524))) and (dynamic_property(1,
+  in_range4(to_rep(((from).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
+  (to_base4(temp___expr_524)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((from).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
   first1(((temp___expr_524).us_split_fields11).rec__ada___pragmarc__b_strings__b_string__value5),
   last1(((temp___expr_524).us_split_fields11).rec__ada___pragmarc__b_strings__b_string__value5)) and
@@ -3223,8 +3167,8 @@ predicate dynamic_invariant12(temp___expr_648: us_rep7,
   temp___is_init_644: bool, temp___skip_constant_645: bool,
   temp___do_toplevel_646: bool, temp___do_typ_inv_647: bool) =
   (((not (temp___skip_constant_645 = true)) ->
-  in_range11(to_rep(((left).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
-  to_base6(temp___expr_648))) and (dynamic_property(1,
+  in_range4(to_rep(((left).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
+  (to_base6(temp___expr_648)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((left).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
   first1(((temp___expr_648).us_split_fields15).rec__ada___pragmarc__b_strings__b_string__value7),
   last1(((temp___expr_648).us_split_fields15).rec__ada___pragmarc__b_strings__b_string__value7)) and
@@ -3259,8 +3203,8 @@ predicate dynamic_invariant13(temp___expr_636: us_rep6,
   temp___is_init_632: bool, temp___skip_constant_633: bool,
   temp___do_toplevel_634: bool, temp___do_typ_inv_635: bool) =
   (((not (temp___skip_constant_633 = true)) ->
-  in_range10(to_rep(((right).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
-  to_base5(temp___expr_636))) and (dynamic_property(1,
+  in_range4(to_rep(((right).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
+  (to_base5(temp___expr_636)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((right).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
   first1(((temp___expr_636).us_split_fields13).rec__ada___pragmarc__b_strings__b_string__value6),
   last1(((temp___expr_636).us_split_fields13).rec__ada___pragmarc__b_strings__b_string__value6)) and
@@ -3295,8 +3239,8 @@ predicate dynamic_invariant14(temp___expr_692: us_rep9,
   temp___is_init_688: bool, temp___skip_constant_689: bool,
   temp___do_toplevel_690: bool, temp___do_typ_inv_691: bool) =
   (((not (temp___skip_constant_689 = true)) ->
-  in_range13(to_rep(((left1).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
-  to_base8(temp___expr_692))) and (dynamic_property(1,
+  in_range4(to_rep(((left1).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
+  (to_base8(temp___expr_692)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((left1).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
   first1(((temp___expr_692).us_split_fields19).rec__ada___pragmarc__b_strings__b_string__value9),
   last1(((temp___expr_692).us_split_fields19).rec__ada___pragmarc__b_strings__b_string__value9)) and
@@ -3331,8 +3275,8 @@ predicate dynamic_invariant15(temp___expr_680: us_rep8,
   temp___is_init_676: bool, temp___skip_constant_677: bool,
   temp___do_toplevel_678: bool, temp___do_typ_inv_679: bool) =
   (((not (temp___skip_constant_677 = true)) ->
-  in_range12(to_rep(((right1).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
-  to_base7(temp___expr_680))) and (dynamic_property(1,
+  in_range4(to_rep(((right1).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
+  (to_base7(temp___expr_680)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((right1).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
   first1(((temp___expr_680).us_split_fields17).rec__ada___pragmarc__b_strings__b_string__value8),
   last1(((temp___expr_680).us_split_fields17).rec__ada___pragmarc__b_strings__b_string__value8)) and
@@ -3368,8 +3312,8 @@ predicate dynamic_invariant16(temp___expr_736: us_rep11,
   temp___is_init_732: bool, temp___skip_constant_733: bool,
   temp___do_toplevel_734: bool, temp___do_typ_inv_735: bool) =
   (((not (temp___skip_constant_733 = true)) ->
-  in_range15(to_rep(((left2).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
-  to_base10(temp___expr_736))) and (dynamic_property(1,
+  in_range4(to_rep(((left2).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
+  (to_base10(temp___expr_736)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((left2).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
   first1(((temp___expr_736).us_split_fields23).rec__ada___pragmarc__b_strings__b_string__value11),
   last1(((temp___expr_736).us_split_fields23).rec__ada___pragmarc__b_strings__b_string__value11)) and
@@ -3404,8 +3348,8 @@ predicate dynamic_invariant17(temp___expr_724: us_rep10,
   temp___is_init_720: bool, temp___skip_constant_721: bool,
   temp___do_toplevel_722: bool, temp___do_typ_inv_723: bool) =
   (((not (temp___skip_constant_721 = true)) ->
-  in_range14(to_rep(((right2).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
-  to_base9(temp___expr_724))) and (dynamic_property(1,
+  in_range4(to_rep(((right2).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
+  (to_base9(temp___expr_724)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((right2).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
   first1(((temp___expr_724).us_split_fields21).rec__ada___pragmarc__b_strings__b_string__value10),
   last1(((temp___expr_724).us_split_fields21).rec__ada___pragmarc__b_strings__b_string__value10)) and
@@ -3441,8 +3385,8 @@ predicate dynamic_invariant18(temp___expr_760: us_rep13,
   temp___is_init_756: bool, temp___skip_constant_757: bool,
   temp___do_toplevel_758: bool, temp___do_typ_inv_759: bool) =
   (((not (temp___skip_constant_757 = true)) ->
-  in_range17(to_rep(((left3).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
-  to_base12(temp___expr_760))) and (dynamic_property(1,
+  in_range4(to_rep(((left3).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
+  (to_base12(temp___expr_760)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((left3).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
   first1(((temp___expr_760).us_split_fields27).rec__ada___pragmarc__b_strings__b_string__value13),
   last1(((temp___expr_760).us_split_fields27).rec__ada___pragmarc__b_strings__b_string__value13)) and
@@ -3478,8 +3422,8 @@ predicate dynamic_invariant19(temp___expr_748: us_rep12,
   temp___is_init_744: bool, temp___skip_constant_745: bool,
   temp___do_toplevel_746: bool, temp___do_typ_inv_747: bool) =
   (((not (temp___skip_constant_745 = true)) ->
-  in_range16(to_rep(((right3).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
-  to_base11(temp___expr_748))) and (dynamic_property(1,
+  in_range4(to_rep(((right3).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
+  (to_base11(temp___expr_748)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((right3).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
   first1(((temp___expr_748).us_split_fields25).rec__ada___pragmarc__b_strings__b_string__value12),
   last1(((temp___expr_748).us_split_fields25).rec__ada___pragmarc__b_strings__b_string__value12)) and
@@ -3515,8 +3459,8 @@ predicate dynamic_invariant20(temp___expr_804: us_rep15,
   temp___is_init_800: bool, temp___skip_constant_801: bool,
   temp___do_toplevel_802: bool, temp___do_typ_inv_803: bool) =
   (((not (temp___skip_constant_801 = true)) ->
-  in_range19(to_rep(((left4).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
-  to_base14(temp___expr_804))) and (dynamic_property(1,
+  in_range4(to_rep(((left4).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
+  (to_base14(temp___expr_804)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((left4).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
   first1(((temp___expr_804).us_split_fields31).rec__ada___pragmarc__b_strings__b_string__value15),
   last1(((temp___expr_804).us_split_fields31).rec__ada___pragmarc__b_strings__b_string__value15)) and
@@ -3552,8 +3496,8 @@ predicate dynamic_invariant21(temp___expr_792: us_rep14,
   temp___is_init_788: bool, temp___skip_constant_789: bool,
   temp___do_toplevel_790: bool, temp___do_typ_inv_791: bool) =
   (((not (temp___skip_constant_789 = true)) ->
-  in_range18(to_rep(((right4).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
-  to_base13(temp___expr_792))) and (dynamic_property(1,
+  in_range4(to_rep(((right4).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
+  (to_base13(temp___expr_792)).us_split_discrs1)) and (dynamic_property(1,
   to_rep(((right4).us_split_discrs1).rec__ada___pragmarc__b_strings__b_string__max_length),
   first1(((temp___expr_792).us_split_fields29).rec__ada___pragmarc__b_strings__b_string__value14),
   last1(((temp___expr_792).us_split_fields29).rec__ada___pragmarc__b_strings__b_string__value14)) and

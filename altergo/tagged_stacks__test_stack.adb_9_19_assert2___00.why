@@ -737,31 +737,31 @@ axiom stacks__stack_root__compat_axiom6 :
   (forall s__attr__tag1:int. forall e:int [push__specific_post(us_tag,
   stacks__push__s__fields, s__attr__tag1, e, stacks__push__s__old__fields)].
   (push__specific_post(us_tag, stacks__push__s__fields, s__attr__tag1, e,
-  stacks__push__s__old__fields) -> (let temp___old_255 = get_model({
+  stacks__push__s__old__fields) -> (let temp___old_263 = get_model({
   us_split_fields1 = stacks__push__s__old__fields; attr__tag = s__attr__tag1
   }) : us_t in (bool_eq1(to_array(get_model({ us_split_fields1 =
   stacks__push__s__fields; attr__tag = s__attr__tag1 })), first1(get_model({
   us_split_fields1 = stacks__push__s__fields; attr__tag = s__attr__tag1 })),
   last1(get_model({ us_split_fields1 = stacks__push__s__fields; attr__tag =
   s__attr__tag1 })),
-  to_array((if (length(temp___old_255) = 0) then of_array(singleton(of_rep(e),
-  1), 1, 1) else of_array(concat_singleton_right(to_array(temp___old_255),
-  first1(temp___old_255), last1(temp___old_255), of_rep(e)),
-  first1(temp___old_255),
-  ((first1(temp___old_255) + (length1(first1(temp___old_255),
-  last1(temp___old_255)) + 1)) - 1)))),
-  first1((if (length(temp___old_255) = 0) then of_array(singleton(of_rep(e),
-  1), 1, 1) else of_array(concat_singleton_right(to_array(temp___old_255),
-  first1(temp___old_255), last1(temp___old_255), of_rep(e)),
-  first1(temp___old_255),
-  ((first1(temp___old_255) + (length1(first1(temp___old_255),
-  last1(temp___old_255)) + 1)) - 1)))),
-  last1((if (length(temp___old_255) = 0) then of_array(singleton(of_rep(e),
-  1), 1, 1) else of_array(concat_singleton_right(to_array(temp___old_255),
-  first1(temp___old_255), last1(temp___old_255), of_rep(e)),
-  first1(temp___old_255),
-  ((first1(temp___old_255) + (length1(first1(temp___old_255),
-  last1(temp___old_255)) + 1)) - 1))))) = true)))))
+  to_array((if (length(temp___old_263) = 0) then of_array(singleton(of_rep(e),
+  1), 1, 1) else of_array(concat_singleton_right(to_array(temp___old_263),
+  first1(temp___old_263), last1(temp___old_263), of_rep(e)),
+  first1(temp___old_263),
+  ((first1(temp___old_263) + (length1(first1(temp___old_263),
+  last1(temp___old_263)) + 1)) - 1)))),
+  first1((if (length(temp___old_263) = 0) then of_array(singleton(of_rep(e),
+  1), 1, 1) else of_array(concat_singleton_right(to_array(temp___old_263),
+  first1(temp___old_263), last1(temp___old_263), of_rep(e)),
+  first1(temp___old_263),
+  ((first1(temp___old_263) + (length1(first1(temp___old_263),
+  last1(temp___old_263)) + 1)) - 1)))),
+  last1((if (length(temp___old_263) = 0) then of_array(singleton(of_rep(e),
+  1), 1, 1) else of_array(concat_singleton_right(to_array(temp___old_263),
+  first1(temp___old_263), last1(temp___old_263), of_rep(e)),
+  first1(temp___old_263),
+  ((first1(temp___old_263) + (length1(first1(temp___old_263),
+  last1(temp___old_263)) + 1)) - 1))))) = true)))))
 
 logic attr__ATTRIBUTE_ADDRESS3 : int
 
@@ -898,21 +898,21 @@ axiom stacks__stack_root__compat_axiom14 :
   stacks__pop__s__old__fields, stacks__pop__e__old)].
   (pop__specific_post(us_tag, stacks__pop__s__fields, s__attr__tag1,
   stacks__pop__e, stacks__pop__s__old__fields, stacks__pop__e__old) ->
-  (let temp___old_299 = get_model({ us_split_fields1 =
+  (let temp___old_307 = get_model({ us_split_fields1 =
   stacks__pop__s__old__fields; attr__tag = s__attr__tag1 }) : us_t in
-  (let temp___old_297 = get_model({ us_split_fields1 =
+  (let temp___old_305 = get_model({ us_split_fields1 =
   stacks__pop__s__old__fields; attr__tag = s__attr__tag1 }) : us_t in
-  (let temp___old_301 = get_model({ us_split_fields1 =
+  (let temp___old_309 = get_model({ us_split_fields1 =
   stacks__pop__s__old__fields; attr__tag = s__attr__tag1 }) : us_t in
   (bool_eq1(to_array(get_model({ us_split_fields1 = stacks__pop__s__fields;
   attr__tag = s__attr__tag1 })), first1(get_model({ us_split_fields1 =
   stacks__pop__s__fields; attr__tag = s__attr__tag1 })), last1(get_model({
   us_split_fields1 = stacks__pop__s__fields; attr__tag = s__attr__tag1 })),
-  to_array(of_array(to_array(temp___old_301), first1(temp___old_297),
-  (last1(temp___old_299) - 1))), first1(of_array(to_array(temp___old_301),
-  first1(temp___old_297), (last1(temp___old_299) - 1))),
-  last1(of_array(to_array(temp___old_301), first1(temp___old_297),
-  (last1(temp___old_299) - 1)))) = true)))))))
+  to_array(of_array(to_array(temp___old_309), first1(temp___old_305),
+  (last1(temp___old_307) - 1))), first1(of_array(to_array(temp___old_309),
+  first1(temp___old_305), (last1(temp___old_307) - 1))),
+  last1(of_array(to_array(temp___old_309), first1(temp___old_305),
+  (last1(temp___old_307) - 1)))) = true)))))))
 
 axiom stacks__stack_root__compat_axiom15 :
   (forall stacks__pop__s__fields:us_split_fields.
@@ -958,7 +958,7 @@ type t2b__ref = { t2b__content : t2b
 function t2b__ref_t2b__content__projection(a: t2b__ref) : t2b =
   (a).t2b__content
 
-logic temp_____aggregate_def_341 : int, int, int, int,
+logic temp_____aggregate_def_349 : int, int, int, int,
   int -> (int,element) farray
 
 predicate dynamic_invariant2(temp___expr_46: int, temp___is_init_42: bool,
@@ -992,59 +992,59 @@ logic rliteral4 : element
 axiom rliteral_axiom4 : (elementqtint(rliteral4) = 5)
 
 axiom def_axiom :
-  (forall temp___343:int. forall temp___344:int. forall temp___345:int.
-  forall temp___346:int. forall temp___347:int.
-  (((dynamic_invariant1(temp___343, true, true, true, true) and
-  dynamic_invariant1(temp___344, true, true, true, true)) and
-  ((dynamic_invariant1(temp___345, true, true, true, true) and
-  dynamic_invariant1(temp___346, true, true, true, true)) and
-  dynamic_invariant1(temp___347, true, true, true, true))) ->
-  ((temp_____aggregate_def_341(temp___343, temp___344, temp___345,
-  temp___346, temp___347)[1]) = rliteral)))
+  (forall temp___351:int. forall temp___352:int. forall temp___353:int.
+  forall temp___354:int. forall temp___355:int.
+  (((dynamic_invariant1(temp___351, true, true, true, true) and
+  dynamic_invariant1(temp___352, true, true, true, true)) and
+  ((dynamic_invariant1(temp___353, true, true, true, true) and
+  dynamic_invariant1(temp___354, true, true, true, true)) and
+  dynamic_invariant1(temp___355, true, true, true, true))) ->
+  ((temp_____aggregate_def_349(temp___351, temp___352, temp___353,
+  temp___354, temp___355)[1]) = rliteral)))
 
 axiom def_axiom1 :
-  (forall temp___343:int. forall temp___344:int. forall temp___345:int.
-  forall temp___346:int. forall temp___347:int.
-  (((dynamic_invariant1(temp___343, true, true, true, true) and
-  dynamic_invariant1(temp___344, true, true, true, true)) and
-  ((dynamic_invariant1(temp___345, true, true, true, true) and
-  dynamic_invariant1(temp___346, true, true, true, true)) and
-  dynamic_invariant1(temp___347, true, true, true, true))) ->
-  ((temp_____aggregate_def_341(temp___343, temp___344, temp___345,
-  temp___346, temp___347)[2]) = rliteral1)))
+  (forall temp___351:int. forall temp___352:int. forall temp___353:int.
+  forall temp___354:int. forall temp___355:int.
+  (((dynamic_invariant1(temp___351, true, true, true, true) and
+  dynamic_invariant1(temp___352, true, true, true, true)) and
+  ((dynamic_invariant1(temp___353, true, true, true, true) and
+  dynamic_invariant1(temp___354, true, true, true, true)) and
+  dynamic_invariant1(temp___355, true, true, true, true))) ->
+  ((temp_____aggregate_def_349(temp___351, temp___352, temp___353,
+  temp___354, temp___355)[2]) = rliteral1)))
 
 axiom def_axiom2 :
-  (forall temp___343:int. forall temp___344:int. forall temp___345:int.
-  forall temp___346:int. forall temp___347:int.
-  (((dynamic_invariant1(temp___343, true, true, true, true) and
-  dynamic_invariant1(temp___344, true, true, true, true)) and
-  ((dynamic_invariant1(temp___345, true, true, true, true) and
-  dynamic_invariant1(temp___346, true, true, true, true)) and
-  dynamic_invariant1(temp___347, true, true, true, true))) ->
-  ((temp_____aggregate_def_341(temp___343, temp___344, temp___345,
-  temp___346, temp___347)[3]) = rliteral2)))
+  (forall temp___351:int. forall temp___352:int. forall temp___353:int.
+  forall temp___354:int. forall temp___355:int.
+  (((dynamic_invariant1(temp___351, true, true, true, true) and
+  dynamic_invariant1(temp___352, true, true, true, true)) and
+  ((dynamic_invariant1(temp___353, true, true, true, true) and
+  dynamic_invariant1(temp___354, true, true, true, true)) and
+  dynamic_invariant1(temp___355, true, true, true, true))) ->
+  ((temp_____aggregate_def_349(temp___351, temp___352, temp___353,
+  temp___354, temp___355)[3]) = rliteral2)))
 
 axiom def_axiom3 :
-  (forall temp___343:int. forall temp___344:int. forall temp___345:int.
-  forall temp___346:int. forall temp___347:int.
-  (((dynamic_invariant1(temp___343, true, true, true, true) and
-  dynamic_invariant1(temp___344, true, true, true, true)) and
-  ((dynamic_invariant1(temp___345, true, true, true, true) and
-  dynamic_invariant1(temp___346, true, true, true, true)) and
-  dynamic_invariant1(temp___347, true, true, true, true))) ->
-  ((temp_____aggregate_def_341(temp___343, temp___344, temp___345,
-  temp___346, temp___347)[4]) = rliteral3)))
+  (forall temp___351:int. forall temp___352:int. forall temp___353:int.
+  forall temp___354:int. forall temp___355:int.
+  (((dynamic_invariant1(temp___351, true, true, true, true) and
+  dynamic_invariant1(temp___352, true, true, true, true)) and
+  ((dynamic_invariant1(temp___353, true, true, true, true) and
+  dynamic_invariant1(temp___354, true, true, true, true)) and
+  dynamic_invariant1(temp___355, true, true, true, true))) ->
+  ((temp_____aggregate_def_349(temp___351, temp___352, temp___353,
+  temp___354, temp___355)[4]) = rliteral3)))
 
 axiom def_axiom4 :
-  (forall temp___343:int. forall temp___344:int. forall temp___345:int.
-  forall temp___346:int. forall temp___347:int.
-  (((dynamic_invariant1(temp___343, true, true, true, true) and
-  dynamic_invariant1(temp___344, true, true, true, true)) and
-  ((dynamic_invariant1(temp___345, true, true, true, true) and
-  dynamic_invariant1(temp___346, true, true, true, true)) and
-  dynamic_invariant1(temp___347, true, true, true, true))) ->
-  ((temp_____aggregate_def_341(temp___343, temp___344, temp___345,
-  temp___346, temp___347)[5]) = rliteral4)))
+  (forall temp___351:int. forall temp___352:int. forall temp___353:int.
+  forall temp___354:int. forall temp___355:int.
+  (((dynamic_invariant1(temp___351, true, true, true, true) and
+  dynamic_invariant1(temp___352, true, true, true, true)) and
+  ((dynamic_invariant1(temp___353, true, true, true, true) and
+  dynamic_invariant1(temp___354, true, true, true, true)) and
+  dynamic_invariant1(temp___355, true, true, true, true))) ->
+  ((temp_____aggregate_def_349(temp___351, temp___352, temp___353,
+  temp___354, temp___355)[5]) = rliteral4)))
 
 predicate dynamic_invariant4(temp___expr_181: int, temp___is_init_177: bool,
   temp___skip_constant_178: bool, temp___do_toplevel_179: bool,
@@ -1356,4 +1356,4 @@ goal defqtvc :
   first1(get_model1(s__attr__tag, { us_split_fields1 = s__split_fields6;
   attr__tag = s__attr__tag })), last1(get_model1(s__attr__tag, {
   us_split_fields1 = s__split_fields6; attr__tag = s__attr__tag })),
-  temp_____aggregate_def_341(1, 2, 3, 4, 5), 1, 5) = true)))))))))))))))))))))))))))))))))))))))))))
+  temp_____aggregate_def_349(1, 2, 3, 4, 5), 1, 5) = true)))))))))))))))))))))))))))))))))))))))))))

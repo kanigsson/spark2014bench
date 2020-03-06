@@ -97,7 +97,7 @@ goal defqtvc :
   (forall par:int. forall x:int. (dynamic_invariant(par, true, false, true,
   true) -> ((0 <  par) -> (dynamic_invariant(x, false, false, true, true) ->
   (forall x1:int. ((x1 = 0) ->
-  (forall par1:int. forall x2:int. ((x2 <  par1) -> ((dynamic_invariant(x2,
-  false, true, true, true) and dynamic_invariant(par1, true, true, true,
+  (forall par1:int. forall x2:int. ((x2 <  par1) -> ((dynamic_invariant(par1,
+  true, true, true, true) and dynamic_invariant(x2, false, true, true,
   true)) ->
   (forall temp___175:int. ((temp___175 = par1) -> in_range((par1 - 1)))))))))))))

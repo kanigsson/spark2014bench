@@ -433,6 +433,10 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   (bool_eq6(((a).us_split_fields3).rec__use_types_with_invariants_auto__container_bad__content,
   ((b).us_split_fields3).rec__use_types_with_invariants_auto__container_bad__content) = true)) then true else false)
 
+predicate in_range4(rec__use_types_with_invariants_auto__container_bad__c1: int,
+  a: us_split_discrs) =
+  (rec__use_types_with_invariants_auto__container_bad__c1 = to_rep((a).rec__use_types_with_invariants_auto__container_bad__c))
+
 logic value__size2 : int
 
 logic object__size2 : int

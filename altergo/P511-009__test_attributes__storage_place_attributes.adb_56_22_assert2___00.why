@@ -202,6 +202,10 @@ function bool_eq3(a: us_rep, b: us_rep) : bool =
   (storage_place_attributes__r2__d2__pred(a) ->
   (to_int(((a).us_split_fields1).rec__storage_place_attributes__r2__d2) = to_int(((b).us_split_fields1).rec__storage_place_attributes__r2__d2))))) then true else false)
 
+predicate in_range3(rec__storage_place_attributes__r2__d11: int,
+  a: us_split_discrs) =
+  (rec__storage_place_attributes__r2__d11 = to_rep1((a).rec__storage_place_attributes__r2__d1))
+
 logic value__size : int
 
 logic object__size : int

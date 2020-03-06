@@ -878,6 +878,10 @@ function bool_eq7(a: us_rep, b: us_rep) : bool =
   (bool_eq6(((a).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits,
   ((b).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits) = true)) then true else false)
 
+predicate in_range3(rec__ada___ada___aco__math__very_longs__very_long__octet_length1: int,
+  a: us_split_discrs) =
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length1 = to_rep((a).rec__ada___ada___aco__math__very_longs__very_long__octet_length))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -973,7 +977,7 @@ axiom naturalqtaxiom : (forall i:natural. (0 <= naturalqtint(i)))
 
 axiom naturalqtaxiom1 : (forall i:natural. (naturalqtint(i) <= 2147483647))
 
-predicate in_range3(x: int) = ((0 <= x) and (x <= 2147483647))
+predicate in_range4(x: int) = ((0 <= x) and (x <= 2147483647))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -996,7 +1000,7 @@ function natural__ref_natural__content__projection(a: natural__ref) : natural =
 predicate dynamic_invariant1(temp___expr_39: int, temp___is_init_35: bool,
   temp___skip_constant_36: bool, temp___do_toplevel_37: bool,
   temp___do_typ_inv_38: bool) = (((temp___is_init_35 = true) or
-  (0 <= 2147483647)) -> in_range3(temp___expr_39))
+  (0 <= 2147483647)) -> in_range4(temp___expr_39))
 
 logic shift_right : t, int -> t
 
@@ -1048,7 +1052,7 @@ axiom shift_typeqtaxiom : (forall i:shift_type. (0 <= shift_typeqtint(i)))
 
 axiom shift_typeqtaxiom1 : (forall i:shift_type. (shift_typeqtint(i) <= 7))
 
-predicate in_range4(x: int) = ((0 <= x) and (x <= 7))
+predicate in_range5(x: int) = ((0 <= x) and (x <= 7))
 
 function bool_eq9(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -1071,7 +1075,7 @@ function shift_type__ref_shift_type__content__projection(a: shift_type__ref) : s
 predicate dynamic_invariant4(temp___expr_852: int, temp___is_init_848: bool,
   temp___skip_constant_849: bool, temp___do_toplevel_850: bool,
   temp___do_typ_inv_851: bool) = (((temp___is_init_848 = true) or
-  (0 <= 7)) -> in_range4(temp___expr_852))
+  (0 <= 7)) -> in_range5(temp___expr_852))
 
 type s121b__ref = { s121b__content : us_t
 }
@@ -1085,31 +1089,31 @@ type t124b__ref = { t124b__content : us_t
 function t124b__ref_t124b__content__projection(a: t124b__ref) : us_t =
   (a).t124b__content
 
-logic temp_____aggregate_def_1531 : t, int, int -> us_t
+logic temp_____aggregate_def_1534 : t, int, int -> us_t
 
 axiom def_axiom :
-  (forall temp___1533:t.
-  (forall temp___1534:int. forall temp___1535:int.
-  (dynamic_invariant2(temp___1533, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___1534, temp___1535) ->
-  (first1(temp_____aggregate_def_1531(temp___1533, temp___1534,
-  temp___1535)) = temp___1534)))))
+  (forall temp___1536:t.
+  (forall temp___1537:int. forall temp___1538:int.
+  (dynamic_invariant2(temp___1536, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___1537, temp___1538) ->
+  (first1(temp_____aggregate_def_1534(temp___1536, temp___1537,
+  temp___1538)) = temp___1537)))))
 
 axiom def_axiom1 :
-  (forall temp___1533:t.
-  (forall temp___1534:int. forall temp___1535:int.
-  (dynamic_invariant2(temp___1533, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___1534, temp___1535) ->
-  (last1(temp_____aggregate_def_1531(temp___1533, temp___1534,
-  temp___1535)) = temp___1535)))))
+  (forall temp___1536:t.
+  (forall temp___1537:int. forall temp___1538:int.
+  (dynamic_invariant2(temp___1536, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___1537, temp___1538) ->
+  (last1(temp_____aggregate_def_1534(temp___1536, temp___1537,
+  temp___1538)) = temp___1538)))))
 
 axiom def_axiom2 :
-  (forall temp___1533:t.
-  (forall temp___1534:int. forall temp___1535:int.
-  (dynamic_invariant2(temp___1533, true, true, true, true) ->
-  (forall temp___1536:int.
-  (to_rep2((to_array(temp_____aggregate_def_1531(temp___1533, temp___1534,
-  temp___1535))[temp___1536])) = temp___1533)))))
+  (forall temp___1536:t.
+  (forall temp___1537:int. forall temp___1538:int.
+  (dynamic_invariant2(temp___1536, true, true, true, true) ->
+  (forall temp___1539:int.
+  (to_rep2((to_array(temp_____aggregate_def_1534(temp___1536, temp___1537,
+  temp___1538))[temp___1539])) = temp___1536)))))
 
 predicate dynamic_invariant5(temp___expr_271: us_t, temp___is_init_267: bool,
   temp___skip_constant_268: bool, temp___do_toplevel_269: bool,
@@ -1145,25 +1149,25 @@ goal defqtvc :
   (forall ada___ada___aco__math__very_longs__divide__full_left_shift__R122b__assume:int.
   ((to_rep((result____split_discrs).rec__ada___ada___aco__math__very_longs__very_long__octet_length) = ada___ada___aco__math__very_longs__divide__full_left_shift__R122b__assume) ->
   ((ada___ada___aco__math__very_longs__divide__full_left_shift__R122b__assume = r122b) ->
-  (dynamic_invariant3(r122b, true, false, true, true) -> (let temp___1537 =
-  temp_____aggregate_def_1531(rliteral, 1, r122b) : us_t in
-  ((first1(temp___1537) = 1) -> ((last1(temp___1537) = r122b) ->
-  ((if (first1(temp___1537) <= last1(temp___1537)) then ((1 <= r122b) and
-  ((last1(temp___1537) - first1(temp___1537)) = (r122b - 1))) else (r122b <  1)) ->
-  (let temp___1539 = of_array(to_array(temp___1537), first1(temp___1537),
-  last1(temp___1537)) : us_t in
-  ((if (first1(temp___1539) <= last1(temp___1539)) then ((first1(result____split_fields) <= last1(result____split_fields)) and
-  ((last1(temp___1539) - first1(temp___1539)) = (last1(result____split_fields) - first1(result____split_fields)))) else (last1(result____split_fields) <  first1(result____split_fields))) ->
+  (dynamic_invariant3(r122b, true, false, true, true) -> (let temp___1540 =
+  temp_____aggregate_def_1534(rliteral, 1, r122b) : us_t in
+  ((first1(temp___1540) = 1) -> ((last1(temp___1540) = r122b) ->
+  ((if (first1(temp___1540) <= last1(temp___1540)) then ((1 <= r122b) and
+  ((last1(temp___1540) - first1(temp___1540)) = (r122b - 1))) else (r122b <  1)) ->
+  (let temp___1542 = of_array(to_array(temp___1540), first1(temp___1540),
+  last1(temp___1540)) : us_t in
+  ((if (first1(temp___1542) <= last1(temp___1542)) then ((first1(result____split_fields) <= last1(result____split_fields)) and
+  ((last1(temp___1542) - first1(temp___1542)) = (last1(result____split_fields) - first1(result____split_fields)))) else (last1(result____split_fields) <  first1(result____split_fields))) ->
   (forall result____split_fields1:us_t.
-  ((result____split_fields1 = of_array(to_array(temp___1539),
-  first1(temp___1539), last1(temp___1539))) ->
+  ((result____split_fields1 = of_array(to_array(temp___1542),
+  first1(temp___1542), last1(temp___1542))) ->
   (forall o:t. ((if ((8 - distance) <  8) then (o = lsl_bv(rliteral1,
   of_int((8 - distance)))) else (o = rliteral)) ->
-  (forall overflow_mask1:t. ((overflow_mask1 = o) -> (let temp___1545 =
+  (forall overflow_mask1:t. ((overflow_mask1 = o) -> (let temp___1548 =
   last1(((number).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits)
   : int in
   (forall i:int. ((i = 1) -> ((andb((if (1 <= i) then true else false),
-  (if (i <= temp___1545) then true else false)) = true) ->
+  (if (i <= temp___1548) then true else false)) = true) ->
   (forall result____split_fields2:us_t. forall old_overflow1:t.
   forall new_overflow1:t. forall i1:int.
   ((andb((if (((dynamic_invariant2(old_overflow1, true, true, true, true) and
@@ -1171,28 +1175,28 @@ goal defqtvc :
   us_split_fields1 = {
   rec__ada___ada___aco__math__very_longs__very_long__long_digits =
   result____split_fields2 } }, false, true, true, true)) and
-  (forall temp___1558:int.
-  (((first1(result____split_fields2) <= temp___1558) and
-  (temp___1558 <= last1(result____split_fields2))) ->
-  (((temp___1545 <  temp___1558) or ((temp___1558 <  1) or
-  (i1 <= temp___1558))) ->
-  ((to_array(result____split_fields2)[temp___1558]) = (to_array(result____split_fields1)[temp___1558])))))) and
+  (forall temp___1561:int.
+  (((first1(result____split_fields2) <= temp___1561) and
+  (temp___1561 <= last1(result____split_fields2))) ->
+  (((temp___1548 <  temp___1561) or ((temp___1561 <  1) or
+  (i1 <= temp___1561))) ->
+  ((to_array(result____split_fields2)[temp___1561]) = (to_array(result____split_fields1)[temp___1561])))))) and
   dynamic_invariant2(new_overflow1, false, true, true,
   true)) then true else false), (if ((1 <= i1) and
   (i1 <= last1(((number).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits))) then true else false)) = true) ->
-  (let o1 = (8 - distance) : int in (let temp___1546 =
+  (let o1 = (8 - distance) : int in (let temp___1549 =
   ((number).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits
-  : us_t in (((first1(temp___1546) <= i1) and (i1 <= last1(temp___1546))) ->
-  (forall o2:t. ((to_rep2((to_array(temp___1546)[i1])) = o2) -> (let o3 =
+  : us_t in (((first1(temp___1549) <= i1) and (i1 <= last1(temp___1549))) ->
+  (forall o2:t. ((to_rep2((to_array(temp___1549)[i1])) = o2) -> (let o3 =
   bw_and(o2, overflow_mask1) : t in (let o4 = shift_right(o3, o1) : t in
   ((shift_right__function_guard(o4, o3, o1) and (dynamic_invariant2(o4, true,
   false, true, true) and (o4 = udiv(o3,
   (if (o1 <  256) then lsl_bv(rliteral2, of_int(o1)) else rliteral))))) ->
   (forall new_overflow2:t. ((new_overflow2 = o4) ->
-  (forall o5:t. ((if (distance <  8) then (let temp___1547 =
+  (forall o5:t. ((if (distance <  8) then (let temp___1550 =
   ((number).us_split_fields1).rec__ada___ada___aco__math__very_longs__very_long__long_digits
-  : us_t in (((first1(temp___1547) <= i1) and (i1 <= last1(temp___1547))) and
-  (exists o6:t. ((to_rep2((to_array(temp___1547)[i1])) = o6) and
+  : us_t in (((first1(temp___1550) <= i1) and (i1 <= last1(temp___1550))) and
+  (exists o6:t. ((to_rep2((to_array(temp___1550)[i1])) = o6) and
   (o5 = lsl_bv(o6, of_int(distance))))))) else (o5 = rliteral)) ->
   (forall o6:octet. ((to_rep2(o6) = o5) ->
   (first1(result____split_fields2) <= i1)))))))))))))))))))))))))))))))))))))))))))))))

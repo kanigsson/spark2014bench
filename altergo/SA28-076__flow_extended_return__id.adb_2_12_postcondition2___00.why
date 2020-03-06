@@ -85,5 +85,5 @@ axiom y__def_axiom : (y = x)
 goal defqtvc : (((x = y) and
   (exists spark__branch:bool.
   (spark__branch = (if (to_int(x) = 1) then true else false)))) ->
-  (forall id__result:bool. ((id__result = y) -> ((id__result = true) ->
-  (x = true)))))
+  (forall identity__result:bool. ((identity__result = y) ->
+  ((identity__result = true) -> (x = true)))))

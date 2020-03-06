@@ -328,6 +328,10 @@ function bool_eq5(a1: us_rep, b: us_rep) : bool =
   (p__search_result__content__pred(a1) ->
   (to_rep(((a1).us_split_fields1).rec__p__search_result__content) = to_rep(((b).us_split_fields1).rec__p__search_result__content)))) then true else false)
 
+predicate in_range3(rec__p__search_result__found1: bool,
+  a1: us_split_discrs) =
+  (rec__p__search_result__found1 = (a1).rec__p__search_result__found)
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -404,9 +408,6 @@ predicate dynamic_invariant1(temp___expr_161: us_t, temp___is_init_157: bool,
   dynamic_property((- 2147483648), 2147483647, first1(temp___expr_161),
   last1(temp___expr_161)))
 
-predicate in_range3(rec__p__search_result__found1: bool, a1: us_rep) =
-  (rec__p__search_result__found1 = ((a1).us_split_discrs1).rec__p__search_result__found)
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -458,9 +459,6 @@ type t18b__ref = { t18b__content : us_rep
 
 function t18b__ref_t18b__content__projection(a1: t18b__ref) : us_rep =
   (a1).t18b__content
-
-predicate in_range4(rec__p__search_result__found1: bool, a1: us_rep) =
-  (rec__p__search_result__found1 = ((a1).us_split_discrs1).rec__p__search_result__found)
 
 logic value__size3 : int
 
@@ -523,10 +521,10 @@ predicate dynamic_invariant2(temp___expr_18: int, temp___is_init_14: bool,
 goal defqtvc :
   (forall result____split_discrs:bool. (dynamic_invariant1(a, true, false,
   true, true) -> (dynamic_invariant(e, true, false, true, true) ->
-  ((not (result____attr__constrained = true)) -> (let temp___286 = first1(a)
+  ((not (result____attr__constrained = true)) -> (let temp___287 = first1(a)
   : int in
-  (forall i:int. ((i = temp___286) ->
-  ((andb((if (temp___286 <= i) then true else false),
+  (forall i:int. ((i = temp___287) ->
+  ((andb((if (temp___287 <= i) then true else false),
   (if (i <= last1(a)) then true else false)) = true) ->
   (forall i1:int. ((andb((if true then true else false),
   (if ((first1(a) <= i1) and

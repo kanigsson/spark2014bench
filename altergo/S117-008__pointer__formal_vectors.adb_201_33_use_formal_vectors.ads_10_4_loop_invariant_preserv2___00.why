@@ -1014,10 +1014,10 @@ goal defqtvc :
   (forall use_formal_vectors__my_vect__model__2__L_5__R160s__assume:int.
   ((to_rep(((v).us_split_fields1).rec__use_formal_vectors__my_vect__vector__top) = use_formal_vectors__my_vect__model__2__L_5__R160s__assume) ->
   ((use_formal_vectors__my_vect__model__2__L_5__R160s__assume = r160s) ->
-  (dynamic_invariant(r160s, true, false, true, true) -> (let temp___417 =
+  (dynamic_invariant(r160s, true, false, true, true) -> (let temp___410 =
   r160s : int in
   (forall i:int. ((i = 1) -> ((andb((if (1 <= i) then true else false),
-  (if (i <= temp___417) then true else false)) = true) -> (let o = last2(m)
+  (if (i <= temp___410) then true else false)) = true) -> (let o = last2(m)
   : int in ((dynamic_invariant4(o, true, false, true, true) and
   (o = (0 + length2(m)))) ->
   (forall m1:us_rep4. forall i1:int.
@@ -1029,17 +1029,17 @@ goal defqtvc :
   j) = model(((to_array((((v).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value)[j])).rec__use_formal_vectors__my_vect__element_access__pointer_value))))) ->
   ((andb((if dynamic_property1(1, r160s, i1) then true else false),
   (if ((1 <= i1) and (i1 <= r160s)) then true else false)) = true) ->
-  (let temp___418 =
+  (let temp___411 =
   (((v).us_split_fields1).rec__use_formal_vectors__my_vect__vector__content).rec__use_formal_vectors__my_vect__element_array_access__pointer_value
-  : us_t in (((first1(temp___418) <= i1) and (i1 <= last1(temp___418))) ->
+  : us_t in (((first1(temp___411) <= i1) and (i1 <= last1(temp___411))) ->
   (let o1 =
-  ((to_array(temp___418)[i1])).rec__use_formal_vectors__my_vect__element_access__pointer_value
+  ((to_array(temp___411)[i1])).rec__use_formal_vectors__my_vect__element_access__pointer_value
   : us_rep in (let o2 = model(o1) : int in ((model__function_guard(o2,
   o1) and (dynamic_invariant2(o2, true, false, true, true) and
   (o2 = to_rep1((o1).rec__use_formal_vectors__element_type__pointer_value)))) ->
   (let o3 = add(m1, o2) : us_rep4 in ((((length2(o3) = (length2(m1) + 1)) and
   (get(o3, last2(o3)) = o2)) and (ole(m1, o3) = true)) ->
-  (forall m2:us_rep4. ((m2 = o3) -> ((not (i1 = temp___417)) ->
+  (forall m2:us_rep4. ((m2 = o3) -> ((not (i1 = temp___410)) ->
   (forall i2:int. ((i2 = (i1 + 1)) -> (let o4 = last2(m2) : int in
   ((dynamic_invariant4(o4, true, false, true, true) and
   (o4 = (0 + length2(m2)))) -> (last2(m2) = (i2 - 1)))))))))))))))))))))))))))))))))))

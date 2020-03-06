@@ -165,6 +165,10 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range2(rec__record_equality__root__c1: int,
+  a: us_split_discrs) =
+  (rec__record_equality__root__c1 = to_rep((a).rec__record_equality__root__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -516,9 +520,6 @@ function grandchild__ref_grandchild__content__projection(a: grandchild__ref) : u
 
 logic us_tag3 : int
 
-predicate in_range2(rec__record_equality__root__c1: int, a: us_rep) =
-  (rec__record_equality__root__c1 = to_rep(((a).us_split_discrs1).rec__record_equality__root__c))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -596,7 +597,7 @@ predicate dynamic_invariant1(temp___expr_254: us_rep1,
   temp___is_init_250: bool, temp___skip_constant_251: bool,
   temp___do_toplevel_252: bool, temp___do_typ_inv_253: bool) =
   ((not (temp___skip_constant_251 = true)) -> in_range2(0,
-  to_base(temp___expr_254)))
+  (to_base(temp___expr_254)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_256: us_rep1,
   temp___skip_top_level_257: bool) =
@@ -626,9 +627,6 @@ logic g_pu2__attr__tag : int
 logic attr__ATTRIBUTE_ADDRESS4 : int
 
 logic us_tag4 : int
-
-predicate in_range3(rec__record_equality__root__c1: int, a: us_rep) =
-  (rec__record_equality__root__c1 = to_rep(((a).us_split_discrs1).rec__record_equality__root__c))
 
 logic value__size4 : int
 
@@ -713,9 +711,6 @@ function t9b__ref_t9b__content__projection(a: t9b__ref) : us_rep2 =
   (a).t9b__content
 
 logic us_tag5 : int
-
-predicate in_range4(rec__record_equality__root__c1: int, a: us_rep) =
-  (rec__record_equality__root__c1 = to_rep(((a).us_split_discrs1).rec__record_equality__root__c))
 
 logic value__size5 : int
 

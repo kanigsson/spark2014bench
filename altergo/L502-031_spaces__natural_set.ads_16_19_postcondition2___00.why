@@ -386,7 +386,7 @@ axiom full__def_axiom2 :
 
 logic attr__ATTRIBUTE_ADDRESS : int
 
-logic temp_____aggregate_def_238 : int -> (int,element_t) farray
+logic temp_____aggregate_def_242 : int -> (int,element_t) farray
 
 predicate dynamic_invariant1(temp___expr_177: int, temp___is_init_173: bool,
   temp___skip_constant_174: bool, temp___do_toplevel_175: bool,
@@ -398,10 +398,10 @@ logic rliteral : element_t
 axiom rliteral_axiom : (element_tqtint(rliteral) = (- 1))
 
 axiom def_axiom :
-  (forall temp___240:int. (dynamic_invariant1(temp___240, true, true, true,
+  (forall temp___244:int. (dynamic_invariant1(temp___244, true, true, true,
   true) ->
-  (forall temp___241:int.
-  ((temp_____aggregate_def_238(temp___240)[temp___241]) = rliteral))))
+  (forall temp___245:int.
+  ((temp_____aggregate_def_242(temp___244)[temp___245]) = rliteral))))
 
 predicate dynamic_invariant2(temp___expr_163: int, temp___is_init_159: bool,
   temp___skip_constant_160: bool, temp___do_toplevel_161: bool,
@@ -416,7 +416,7 @@ axiom rliteral_axiom1 : (set_lengthqtint(rliteral1) = 0)
 goal defqtvc :
   (forall s__split_fields:us_split_fields. ((s__split_fields = {
   rec__natural_set__t__len = rliteral1; rec__natural_set__t__m =
-  temp_____aggregate_def_238((- 1)) }) ->
+  temp_____aggregate_def_242((- 1)) }) ->
   ((forall s__split_fields1:us_split_fields. valid__function_guard(valid({
    us_split_fields1 = s__split_fields1 }), { us_split_fields1 =
    s__split_fields1 })) ->

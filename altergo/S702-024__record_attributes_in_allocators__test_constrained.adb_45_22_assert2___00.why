@@ -203,6 +203,9 @@ function bool_eq3(a: us_rep, b: us_rep) : bool =
   (if ((to_int(((a).us_split_discrs1).rec__test_constrained__r__b) = to_int(((b).us_split_discrs1).rec__test_constrained__r__b)) and
   (to_rep(((a).us_split_fields1).rec__test_constrained__r__x) = to_rep(((b).us_split_fields1).rec__test_constrained__r__x))) then true else false)
 
+predicate in_range2(rec__test_constrained__r__b1: bool, a: us_split_discrs) =
+  (rec__test_constrained__r__b1 = (a).rec__test_constrained__r__b)
+
 logic value__size : int
 
 logic object__size : int
@@ -321,7 +324,7 @@ axiom tr_aD1qtaxiom : (forall i:tr_aD1. (1 <= tr_aD1qtint(i)))
 
 axiom tr_aD1qtaxiom1 : (forall i:tr_aD1. (tr_aD1qtint(i) <= 10))
 
-predicate in_range2(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range3(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -406,12 +409,12 @@ predicate default_initial_assumption2(temp___expr_182: us_rep,
  (* File "test_constrained.adb", line 42, characters 0-0 *)
 goal defqtvc :
   (forall us_next_pointer_address:int.
-  (forall temp___alloc_289:us_rep1.
-  (((not ((temp___alloc_289).rec__test_constrained__r_a_acc__is_null_pointer = true)) and
-  ((temp___alloc_289).rec__test_constrained__r_a_acc__pointer_address = us_next_pointer_address)) ->
+  (forall temp___alloc_292:us_rep1.
+  (((not ((temp___alloc_292).rec__test_constrained__r_a_acc__is_null_pointer = true)) and
+  ((temp___alloc_292).rec__test_constrained__r_a_acc__pointer_address = us_next_pointer_address)) ->
   (forall usf:(int,us_rep) farray. (default_initial_assumption(usf, false) ->
-  (((temp___alloc_289).rec__test_constrained__r_a_acc__pointer_value = usf) ->
+  (((temp___alloc_292).rec__test_constrained__r_a_acc__pointer_value = usf) ->
   (forall x__pointer_value:(int,us_rep) farray.
-  ((x__pointer_value = (temp___alloc_289).rec__test_constrained__r_a_acc__pointer_value) ->
-  ((x__pointer_address = (temp___alloc_289).rec__test_constrained__r_a_acc__pointer_address) ->
-  (not (x__is_null_pointer = (temp___alloc_289).rec__test_constrained__r_a_acc__is_null_pointer)))))))))))
+  ((x__pointer_value = (temp___alloc_292).rec__test_constrained__r_a_acc__pointer_value) ->
+  ((x__pointer_address = (temp___alloc_292).rec__test_constrained__r_a_acc__pointer_address) ->
+  (not (x__is_null_pointer = (temp___alloc_292).rec__test_constrained__r_a_acc__is_null_pointer)))))))))))

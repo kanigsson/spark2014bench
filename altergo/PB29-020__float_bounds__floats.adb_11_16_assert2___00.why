@@ -1901,112 +1901,112 @@ predicate dynamic_invariant1(temp___expr_67: t1, temp___is_init_63: bool,
   le1(neg1(fliteral3), fliteral3)) -> tqtisFinite1(temp___expr_67))
 
 axiom def_axiom :
-  (forall temp___180:t1. forall temp___181:t1. forall temp___182:t1.
-  forall temp___183:t1. (((dynamic_invariant1(temp___180, true, true, true,
-  true) and dynamic_invariant1(temp___181, true, true, true, true)) and
-  (dynamic_invariant1(temp___182, true, true, true, true) and
-  dynamic_invariant1(temp___183, true, true, true, true))) ->
-  (to_rep1((floats__test__b__aggregate_def(temp___180, temp___181,
-  temp___182, temp___183)[1])) = temp___180)))
+  (forall temp___181:t1. forall temp___182:t1. forall temp___183:t1.
+  forall temp___184:t1. (((dynamic_invariant1(temp___181, true, true, true,
+  true) and dynamic_invariant1(temp___182, true, true, true, true)) and
+  (dynamic_invariant1(temp___183, true, true, true, true) and
+  dynamic_invariant1(temp___184, true, true, true, true))) ->
+  (to_rep1((floats__test__b__aggregate_def(temp___181, temp___182,
+  temp___183, temp___184)[1])) = temp___181)))
 
 axiom def_axiom1 :
-  (forall temp___180:t1. forall temp___181:t1. forall temp___182:t1.
-  forall temp___183:t1. (((dynamic_invariant1(temp___180, true, true, true,
-  true) and dynamic_invariant1(temp___181, true, true, true, true)) and
-  (dynamic_invariant1(temp___182, true, true, true, true) and
-  dynamic_invariant1(temp___183, true, true, true, true))) ->
-  (to_rep1((floats__test__b__aggregate_def(temp___180, temp___181,
-  temp___182, temp___183)[2])) = temp___181)))
+  (forall temp___181:t1. forall temp___182:t1. forall temp___183:t1.
+  forall temp___184:t1. (((dynamic_invariant1(temp___181, true, true, true,
+  true) and dynamic_invariant1(temp___182, true, true, true, true)) and
+  (dynamic_invariant1(temp___183, true, true, true, true) and
+  dynamic_invariant1(temp___184, true, true, true, true))) ->
+  (to_rep1((floats__test__b__aggregate_def(temp___181, temp___182,
+  temp___183, temp___184)[2])) = temp___182)))
 
 axiom def_axiom2 :
-  (forall temp___180:t1. forall temp___181:t1. forall temp___182:t1.
-  forall temp___183:t1. (((dynamic_invariant1(temp___180, true, true, true,
-  true) and dynamic_invariant1(temp___181, true, true, true, true)) and
-  (dynamic_invariant1(temp___182, true, true, true, true) and
-  dynamic_invariant1(temp___183, true, true, true, true))) ->
-  (to_rep1((floats__test__b__aggregate_def(temp___180, temp___181,
-  temp___182, temp___183)[3])) = temp___182)))
+  (forall temp___181:t1. forall temp___182:t1. forall temp___183:t1.
+  forall temp___184:t1. (((dynamic_invariant1(temp___181, true, true, true,
+  true) and dynamic_invariant1(temp___182, true, true, true, true)) and
+  (dynamic_invariant1(temp___183, true, true, true, true) and
+  dynamic_invariant1(temp___184, true, true, true, true))) ->
+  (to_rep1((floats__test__b__aggregate_def(temp___181, temp___182,
+  temp___183, temp___184)[3])) = temp___183)))
 
 axiom def_axiom3 :
-  (forall temp___180:t1. forall temp___181:t1. forall temp___182:t1.
-  forall temp___183:t1. (((dynamic_invariant1(temp___180, true, true, true,
-  true) and dynamic_invariant1(temp___181, true, true, true, true)) and
-  (dynamic_invariant1(temp___182, true, true, true, true) and
-  dynamic_invariant1(temp___183, true, true, true, true))) ->
-  (to_rep1((floats__test__b__aggregate_def(temp___180, temp___181,
-  temp___182, temp___183)[4])) = temp___183)))
+  (forall temp___181:t1. forall temp___182:t1. forall temp___183:t1.
+  forall temp___184:t1. (((dynamic_invariant1(temp___181, true, true, true,
+  true) and dynamic_invariant1(temp___182, true, true, true, true)) and
+  (dynamic_invariant1(temp___183, true, true, true, true) and
+  dynamic_invariant1(temp___184, true, true, true, true))) ->
+  (to_rep1((floats__test__b__aggregate_def(temp___181, temp___182,
+  temp___183, temp___184)[4])) = temp___184)))
 
 axiom def_axiom4 :
-  (forall temp___186:t1. forall temp___187:t1. forall temp___188:t1.
-  forall temp___189:t1. (((dynamic_invariant1(temp___186, true, true, true,
-  true) and dynamic_invariant1(temp___187, true, true, true, true)) and
-  (dynamic_invariant1(temp___188, true, true, true, true) and
-  dynamic_invariant1(temp___189, true, true, true, true))) ->
-  (to_rep1((floats__test__c__aggregate_def(temp___186, temp___187,
-  temp___188, temp___189)[1])) = temp___186)))
+  (forall temp___187:t1. forall temp___188:t1. forall temp___189:t1.
+  forall temp___190:t1. (((dynamic_invariant1(temp___187, true, true, true,
+  true) and dynamic_invariant1(temp___188, true, true, true, true)) and
+  (dynamic_invariant1(temp___189, true, true, true, true) and
+  dynamic_invariant1(temp___190, true, true, true, true))) ->
+  (to_rep1((floats__test__c__aggregate_def(temp___187, temp___188,
+  temp___189, temp___190)[1])) = temp___187)))
 
 axiom def_axiom5 :
-  (forall temp___186:t1. forall temp___187:t1. forall temp___188:t1.
-  forall temp___189:t1. (((dynamic_invariant1(temp___186, true, true, true,
-  true) and dynamic_invariant1(temp___187, true, true, true, true)) and
-  (dynamic_invariant1(temp___188, true, true, true, true) and
-  dynamic_invariant1(temp___189, true, true, true, true))) ->
-  (to_rep1((floats__test__c__aggregate_def(temp___186, temp___187,
-  temp___188, temp___189)[2])) = temp___187)))
+  (forall temp___187:t1. forall temp___188:t1. forall temp___189:t1.
+  forall temp___190:t1. (((dynamic_invariant1(temp___187, true, true, true,
+  true) and dynamic_invariant1(temp___188, true, true, true, true)) and
+  (dynamic_invariant1(temp___189, true, true, true, true) and
+  dynamic_invariant1(temp___190, true, true, true, true))) ->
+  (to_rep1((floats__test__c__aggregate_def(temp___187, temp___188,
+  temp___189, temp___190)[2])) = temp___188)))
 
 axiom def_axiom6 :
-  (forall temp___186:t1. forall temp___187:t1. forall temp___188:t1.
-  forall temp___189:t1. (((dynamic_invariant1(temp___186, true, true, true,
-  true) and dynamic_invariant1(temp___187, true, true, true, true)) and
-  (dynamic_invariant1(temp___188, true, true, true, true) and
-  dynamic_invariant1(temp___189, true, true, true, true))) ->
-  (to_rep1((floats__test__c__aggregate_def(temp___186, temp___187,
-  temp___188, temp___189)[3])) = temp___188)))
+  (forall temp___187:t1. forall temp___188:t1. forall temp___189:t1.
+  forall temp___190:t1. (((dynamic_invariant1(temp___187, true, true, true,
+  true) and dynamic_invariant1(temp___188, true, true, true, true)) and
+  (dynamic_invariant1(temp___189, true, true, true, true) and
+  dynamic_invariant1(temp___190, true, true, true, true))) ->
+  (to_rep1((floats__test__c__aggregate_def(temp___187, temp___188,
+  temp___189, temp___190)[3])) = temp___189)))
 
 axiom def_axiom7 :
-  (forall temp___186:t1. forall temp___187:t1. forall temp___188:t1.
-  forall temp___189:t1. (((dynamic_invariant1(temp___186, true, true, true,
-  true) and dynamic_invariant1(temp___187, true, true, true, true)) and
-  (dynamic_invariant1(temp___188, true, true, true, true) and
-  dynamic_invariant1(temp___189, true, true, true, true))) ->
-  (to_rep1((floats__test__c__aggregate_def(temp___186, temp___187,
-  temp___188, temp___189)[4])) = temp___189)))
+  (forall temp___187:t1. forall temp___188:t1. forall temp___189:t1.
+  forall temp___190:t1. (((dynamic_invariant1(temp___187, true, true, true,
+  true) and dynamic_invariant1(temp___188, true, true, true, true)) and
+  (dynamic_invariant1(temp___189, true, true, true, true) and
+  dynamic_invariant1(temp___190, true, true, true, true))) ->
+  (to_rep1((floats__test__c__aggregate_def(temp___187, temp___188,
+  temp___189, temp___190)[4])) = temp___190)))
 
 axiom def_axiom8 :
-  (forall temp___192:t1. forall temp___193:t1. forall temp___194:t1.
-  forall temp___195:t1. (((dynamic_invariant1(temp___192, true, true, true,
-  true) and dynamic_invariant1(temp___193, true, true, true, true)) and
-  (dynamic_invariant1(temp___194, true, true, true, true) and
-  dynamic_invariant1(temp___195, true, true, true, true))) ->
-  (to_rep1((floats__test__d__aggregate_def(temp___192, temp___193,
-  temp___194, temp___195)[1])) = temp___192)))
+  (forall temp___193:t1. forall temp___194:t1. forall temp___195:t1.
+  forall temp___196:t1. (((dynamic_invariant1(temp___193, true, true, true,
+  true) and dynamic_invariant1(temp___194, true, true, true, true)) and
+  (dynamic_invariant1(temp___195, true, true, true, true) and
+  dynamic_invariant1(temp___196, true, true, true, true))) ->
+  (to_rep1((floats__test__d__aggregate_def(temp___193, temp___194,
+  temp___195, temp___196)[1])) = temp___193)))
 
 axiom def_axiom9 :
-  (forall temp___192:t1. forall temp___193:t1. forall temp___194:t1.
-  forall temp___195:t1. (((dynamic_invariant1(temp___192, true, true, true,
-  true) and dynamic_invariant1(temp___193, true, true, true, true)) and
-  (dynamic_invariant1(temp___194, true, true, true, true) and
-  dynamic_invariant1(temp___195, true, true, true, true))) ->
-  (to_rep1((floats__test__d__aggregate_def(temp___192, temp___193,
-  temp___194, temp___195)[2])) = temp___193)))
+  (forall temp___193:t1. forall temp___194:t1. forall temp___195:t1.
+  forall temp___196:t1. (((dynamic_invariant1(temp___193, true, true, true,
+  true) and dynamic_invariant1(temp___194, true, true, true, true)) and
+  (dynamic_invariant1(temp___195, true, true, true, true) and
+  dynamic_invariant1(temp___196, true, true, true, true))) ->
+  (to_rep1((floats__test__d__aggregate_def(temp___193, temp___194,
+  temp___195, temp___196)[2])) = temp___194)))
 
 axiom def_axiom10 :
-  (forall temp___192:t1. forall temp___193:t1. forall temp___194:t1.
-  forall temp___195:t1. (((dynamic_invariant1(temp___192, true, true, true,
-  true) and dynamic_invariant1(temp___193, true, true, true, true)) and
-  (dynamic_invariant1(temp___194, true, true, true, true) and
-  dynamic_invariant1(temp___195, true, true, true, true))) ->
-  (to_rep1((floats__test__d__aggregate_def(temp___192, temp___193,
-  temp___194, temp___195)[3])) = temp___194)))
+  (forall temp___193:t1. forall temp___194:t1. forall temp___195:t1.
+  forall temp___196:t1. (((dynamic_invariant1(temp___193, true, true, true,
+  true) and dynamic_invariant1(temp___194, true, true, true, true)) and
+  (dynamic_invariant1(temp___195, true, true, true, true) and
+  dynamic_invariant1(temp___196, true, true, true, true))) ->
+  (to_rep1((floats__test__d__aggregate_def(temp___193, temp___194,
+  temp___195, temp___196)[3])) = temp___195)))
 
 axiom def_axiom11 :
-  (forall temp___192:t1. forall temp___193:t1. forall temp___194:t1.
-  forall temp___195:t1. (((dynamic_invariant1(temp___192, true, true, true,
-  true) and dynamic_invariant1(temp___193, true, true, true, true)) and
-  (dynamic_invariant1(temp___194, true, true, true, true) and
-  dynamic_invariant1(temp___195, true, true, true, true))) ->
-  (to_rep1((floats__test__d__aggregate_def(temp___192, temp___193,
-  temp___194, temp___195)[4])) = temp___195)))
+  (forall temp___193:t1. forall temp___194:t1. forall temp___195:t1.
+  forall temp___196:t1. (((dynamic_invariant1(temp___193, true, true, true,
+  true) and dynamic_invariant1(temp___194, true, true, true, true)) and
+  (dynamic_invariant1(temp___195, true, true, true, true) and
+  dynamic_invariant1(temp___196, true, true, true, true))) ->
+  (to_rep1((floats__test__d__aggregate_def(temp___193, temp___194,
+  temp___195, temp___196)[4])) = temp___196)))
 
 logic fliteral4 : t1
 
@@ -2016,8 +2016,9 @@ axiom fliteral_axiom9 : (tqtreal1(fliteral4) = 0.0e-1)
 
  (* File "floats.ads", line 5, characters 0-0 *)
 goal defqtvc :
-  ((forall i:int. (((1 <= i) and (i <= 3)) -> (le(neg(fliteral),
-   to_rep((a[i]))) and le(to_rep((a[i])), fliteral)))) ->
+  ((forall i:int. (((1 <= i) and (i <= 3)) -> (let temp___250 =
+   to_rep((a[i])) : t in (le(neg(fliteral), temp___250) and le(temp___250,
+   fliteral))))) ->
   (forall b:(int,long_float) farray.
   ((b = floats__test__b__aggregate_def(fliteral4, fliteral4, fliteral4,
   fliteral4)) ->

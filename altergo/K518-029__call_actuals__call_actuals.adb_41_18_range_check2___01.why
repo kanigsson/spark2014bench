@@ -238,4 +238,38 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 logic attr__ATTRIBUTE_ADDRESS2 : int
 
  (* File "call_actuals.ads", line 13, characters 0-0 *)
-goal defqtvc : true
+goal defqtvc :
+  (forall g:int. forall a1:int. forall a2:int. (dynamic_invariant(g, true,
+  false, true, true) -> (dynamic_invariant(a1, true, false, true, true) ->
+  (dynamic_invariant(a2, true, false, true, true) ->
+  (forall a11:int. forall a21:int. (((a21 = (a11 + 1)) and
+  (dynamic_invariant(a11, true, true, true, true) and dynamic_invariant(a21,
+  true, true, true, true))) -> (in_range1(a21) -> (in_range1(a11) ->
+  (forall call_actuals__fn__y:int. forall call_actuals__fn__x:int.
+  (((call_actuals__fn__y = (call_actuals__fn__x + 1)) and
+  (dynamic_invariant1(call_actuals__fn__x, true, true, true, true) and
+  dynamic_invariant1(call_actuals__fn__y, true, true, true, true))) ->
+  (in_range(call_actuals__fn__x) ->
+  (forall a12:int. ((a12 = call_actuals__fn__x) ->
+  (in_range(call_actuals__fn__y) ->
+  (forall a22:int. ((a22 = call_actuals__fn__y) ->
+  (forall call_actuals__ft__y:int. forall call_actuals__ft__x:int.
+  (((call_actuals__ft__y = (call_actuals__ft__x + 1)) and
+  (dynamic_invariant2(call_actuals__ft__x, true, true, true, true) and
+  dynamic_invariant2(call_actuals__ft__y, true, true, true, true))) ->
+  (forall o:integer. ((to_rep(o) = call_actuals__ft__x) ->
+  (forall o1:int. ((to_rep(o) = o1) ->
+  (forall a13:int. ((a13 = o1) ->
+  (forall o2:integer. ((to_rep(o2) = call_actuals__ft__y) ->
+  (forall o3:int. ((to_rep(o2) = o3) ->
+  (forall a23:int. ((a23 = o3) ->
+  (forall call_actuals__fnt__y:int. forall call_actuals__fnt__x:int.
+  (((call_actuals__fnt__y = (call_actuals__fnt__x + 1)) and
+  (dynamic_invariant3(call_actuals__fnt__x, true, true, true, true) and
+  dynamic_invariant3(call_actuals__fnt__y, true, true, true, true))) ->
+  (forall o4:integer. ((to_rep(o4) = call_actuals__fnt__x) ->
+  (forall o5:int. ((to_rep(o4) = o5) ->
+  (forall a14:int. ((a14 = o5) ->
+  (forall o6:integer. ((to_rep(o6) = call_actuals__fnt__y) ->
+  (forall o7:int. ((to_rep(o6) = o7) ->
+  (forall a24:int. ((a24 = o7) -> in_range4(a24)))))))))))))))))))))))))))))))))))))))))))))

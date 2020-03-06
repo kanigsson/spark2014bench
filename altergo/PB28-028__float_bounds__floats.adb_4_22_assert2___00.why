@@ -1887,6 +1887,6 @@ predicate dynamic_invariant1(temp___expr_67: t1, temp___is_init_63: bool,
 
  (* File "floats.ads", line 5, characters 0-0 *)
 goal defqtvc :
-  ((forall i:int. (((1 <= i) and (i <= 3)) -> (le(neg(fliteral),
-   to_rep((a[i]))) and le(to_rep((a[i])), fliteral)))) -> le(neg(fliteral),
-  to_rep((a[1]))))
+  ((forall i:int. (((1 <= i) and (i <= 3)) -> (let temp___202 =
+   to_rep((a[i])) : t in (le(neg(fliteral), temp___202) and le(temp___202,
+   fliteral))))) -> le(neg(fliteral), to_rep((a[1]))))

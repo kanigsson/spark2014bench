@@ -139,6 +139,10 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (us_main_eq(((a).us_split_fields1).rec__private_types__simple,
   ((b).us_split_fields1).rec__private_types__simple) = true)) then true else false)
 
+predicate in_range1(rec__private_types__simple__d1: int,
+  a: us_split_discrs) =
+  (rec__private_types__simple__d1 = to_rep((a).rec__private_types__simple__d))
+
 logic value__size : int
 
 logic object__size : int
@@ -175,9 +179,6 @@ type simple__ref = { simple__content : us_rep
 
 function simple__ref_simple__content__projection(a: simple__ref) : us_rep =
   (a).simple__content
-
-predicate in_range1(rec__private_types__simple__d1: int, a: us_rep) =
-  (rec__private_types__simple__d1 = to_rep(((a).us_split_discrs1).rec__private_types__simple__d))
 
 logic value__size1 : int
 
@@ -281,7 +282,7 @@ logic attr__ATTRIBUTE_ADDRESS : int
 predicate dynamic_invariant(temp___expr_216: us_rep1,
   temp___is_init_212: bool, temp___skip_constant_213: bool,
   temp___do_toplevel_214: bool, temp___do_typ_inv_215: bool) = in_range1(0,
-  ((temp___expr_216).us_split_fields3).rec__use_private_types__d_holder_0__content)
+  (((temp___expr_216).us_split_fields3).rec__use_private_types__d_holder_0__content).us_split_discrs1)
 
 predicate default_initial_assumption(temp___expr_218: us_rep1,
   temp___skip_top_level_219: bool) =
@@ -299,7 +300,8 @@ predicate dynamic_invariant1(temp___expr_39: int, temp___is_init_35: bool,
 predicate dynamic_invariant2(temp___expr_178: us_rep,
   temp___is_init_174: bool, temp___skip_constant_175: bool,
   temp___do_toplevel_176: bool, temp___do_typ_inv_177: bool) =
-  ((not (temp___skip_constant_175 = true)) -> in_range1(0, temp___expr_178))
+  ((not (temp___skip_constant_175 = true)) -> in_range1(0,
+  (temp___expr_178).us_split_discrs1))
 
 predicate default_initial_assumption2(temp___expr_180: us_rep,
   temp___skip_top_level_181: bool) =

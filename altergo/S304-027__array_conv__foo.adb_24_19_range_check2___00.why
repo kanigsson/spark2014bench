@@ -951,6 +951,10 @@ function bool_eq8(a: us_rep, b: us_rep) : bool =
   (bool_eq7(((a).us_split_fields1).rec__foo__element_structure_type__items,
   ((b).us_split_fields1).rec__foo__element_structure_type__items) = true))) then true else false)
 
+predicate in_range3(rec__foo__element_structure_type__max_size1: int,
+  a: us_split_discrs) =
+  (rec__foo__element_structure_type__max_size1 = to_rep((a).rec__foo__element_structure_type__max_size))
+
 logic value__size1 : int
 
 logic object__size1 : int

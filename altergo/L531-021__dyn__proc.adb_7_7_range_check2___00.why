@@ -339,6 +339,9 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   (bool_eq4(((a).us_split_fields1).rec__proc__r__contents,
   ((b).us_split_fields1).rec__proc__r__contents) = true)) then true else false)
 
+predicate in_range3(rec__proc__r__length1: int, a: us_split_discrs) =
+  (rec__proc__r__length1 = to_rep((a).rec__proc__r__length))
+
 logic value__size1 : int
 
 logic object__size1 : int

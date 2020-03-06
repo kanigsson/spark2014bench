@@ -145,6 +145,11 @@ function bool_eq1(a: us_rep, b: us_rep) : bool =
   (to_rep(((a).us_split_discrs1).rec__test_2__context_type__last) = to_rep(((b).us_split_discrs1).rec__test_2__context_type__last))) and
   (to_rep(((a).us_split_fields1).rec__test_2__context_type__index) = to_rep(((b).us_split_fields1).rec__test_2__context_type__index))) then true else false)
 
+predicate in_range1(rec__test_2__context_type__first1: int,
+  rec__test_2__context_type__last1: int, a: us_split_discrs) =
+  ((rec__test_2__context_type__first1 = to_rep((a).rec__test_2__context_type__first)) and
+  (rec__test_2__context_type__last1 = to_rep((a).rec__test_2__context_type__last)))
+
 logic value__size : int
 
 logic object__size : int
@@ -233,7 +238,7 @@ predicate dynamic_predicate(temp___168: us_rep) =
   (to_rep(((temp___168).us_split_discrs1).rec__test_2__context_type__first) <= to_rep(((temp___168).us_split_fields1).rec__test_2__context_type__index))) and
   (to_rep(((temp___168).us_split_fields1).rec__test_2__context_type__index) <= to_rep(((temp___168).us_split_discrs1).rec__test_2__context_type__last)))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S730-045__dic_with_discrs-10637/src/gnatprove/test_2__context_type.mlw", line 404, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S730-045__dic_with_discrs-13998/src/gnatprove/test_2__context_type.mlw", line 418, characters 5-8 *)
 goal defqtvc :
   (forall usf:int. (dynamic_invariant(usf, true, true, true, true) ->
   (forall usf1:int. (dynamic_invariant(usf1, true, true, true, true) ->

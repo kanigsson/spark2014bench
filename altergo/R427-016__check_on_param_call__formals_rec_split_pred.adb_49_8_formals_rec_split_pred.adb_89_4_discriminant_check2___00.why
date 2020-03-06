@@ -402,14 +402,11 @@ logic user_eq2 : us_rep, us_rep -> bool
 
 logic dummy2 : us_rep
 
-type rec____ref = { rec____content : us_rep
+type constr_rec__ref = { constr_rec__content : us_rep
 }
 
-function rec____ref_rec____content__projection(a: rec____ref) : us_rep =
-  (a).rec____content
-
-predicate in_range3(rec__formals_rec_split_pred__rec__d1: bool, a: us_rep) =
-  (rec__formals_rec_split_pred__rec__d1 = ((a).us_split_discrs1).rec__formals_rec_split_pred__rec__d)
+function constr_rec__ref_constr_rec__content__projection(a: constr_rec__ref) : us_rep =
+  (a).constr_rec__content
 
 logic value__size1 : int
 
@@ -487,14 +484,15 @@ logic user_eq3 : us_rep, us_rep -> bool
 
 logic dummy3 : us_rep
 
-type constr_rec__ref = { constr_rec__content : us_rep
+type constr_rec_2__ref = { constr_rec_2__content : us_rep
 }
 
-function constr_rec__ref_constr_rec__content__projection(a: constr_rec__ref) : us_rep =
-  (a).constr_rec__content
+function constr_rec_2__ref_constr_rec_2__content__projection(a: constr_rec_2__ref) : us_rep =
+  (a).constr_rec_2__content
 
-predicate in_range4(rec__formals_rec_split_pred__rec__d1: bool, a: us_rep) =
-  (rec__formals_rec_split_pred__rec__d1 = ((a).us_split_discrs1).rec__formals_rec_split_pred__rec__d)
+predicate in_range3(rec__formals_rec_split_pred__rec__d1: bool,
+  a: us_split_discrs) =
+  (rec__formals_rec_split_pred__rec__d1 = (a).rec__formals_rec_split_pred__rec__d)
 
 logic value__size2 : int
 
@@ -572,17 +570,18 @@ logic user_eq4 : us_rep, us_rep -> bool
 
 logic dummy4 : us_rep
 
-type constr_rec_2__ref = { constr_rec_2__content : us_rep
+type rec____ref = { rec____content : us_rep
 }
 
-function constr_rec_2__ref_constr_rec_2__content__projection(a: constr_rec_2__ref) : us_rep =
-  (a).constr_rec_2__content
+function rec____ref_rec____content__projection(a: rec____ref) : us_rep =
+  (a).rec____content
 
 predicate dynamic_invariant(temp___expr_187: us_rep,
   temp___is_init_183: bool, temp___skip_constant_184: bool,
   temp___do_toplevel_185: bool, temp___do_typ_inv_186: bool) =
   (((not (temp___skip_constant_184 = true)) -> in_range3(of_int(1),
-  temp___expr_187)) and ((temp___do_toplevel_185 = true) ->
+  (temp___expr_187).us_split_discrs1)) and
+  ((temp___do_toplevel_185 = true) ->
   (not (to_rep1(((temp___expr_187).us_split_fields1).rec__formals_rec_split_pred__rec__h) = 0))))
 
 predicate default_initial_assumption(temp___expr_190: us_rep,
@@ -601,8 +600,9 @@ predicate dynamic_predicate(temp___193: us_rep) =
 predicate dynamic_invariant1(temp___expr_199: us_rep,
   temp___is_init_195: bool, temp___skip_constant_196: bool,
   temp___do_toplevel_197: bool, temp___do_typ_inv_198: bool) =
-  (((not (temp___skip_constant_196 = true)) -> in_range4(of_int(1),
-  temp___expr_199)) and ((temp___do_toplevel_197 = true) ->
+  (((not (temp___skip_constant_196 = true)) -> in_range3(of_int(1),
+  (temp___expr_199).us_split_discrs1)) and
+  ((temp___do_toplevel_197 = true) ->
   (not (to_rep1(((temp___expr_199).us_split_fields1).rec__formals_rec_split_pred__rec__h) = 0))))
 
 predicate default_initial_assumption1(temp___expr_202: us_rep,
@@ -629,9 +629,6 @@ logic attr__ATTRIBUTE_ADDRESS1 : int
 logic u__split_discrs : us_split_discrs
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
-
-predicate in_range5(rec__formals_rec_split_pred__rec__d1: bool, a: us_rep) =
-  (rec__formals_rec_split_pred__rec__d1 = ((a).us_split_discrs1).rec__formals_rec_split_pred__rec__d)
 
 logic value__size3 : int
 
@@ -715,9 +712,6 @@ type t8b__ref = { t8b__content : us_rep
 function t8b__ref_t8b__content__projection(a: t8b__ref) : us_rep =
   (a).t8b__content
 
-predicate in_range6(rec__formals_rec_split_pred__rec__d1: bool, a: us_rep) =
-  (rec__formals_rec_split_pred__rec__d1 = ((a).us_split_discrs1).rec__formals_rec_split_pred__rec__d)
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -799,9 +793,6 @@ type t9b__ref = { t9b__content : us_rep
 
 function t9b__ref_t9b__content__projection(a: t9b__ref) : us_rep =
   (a).t9b__content
-
-predicate in_range7(rec__formals_rec_split_pred__rec__d1: bool, a: us_rep) =
-  (rec__formals_rec_split_pred__rec__d1 = ((a).us_split_discrs1).rec__formals_rec_split_pred__rec__d)
 
 logic value__size5 : int
 
@@ -945,25 +936,25 @@ goal defqtvc :
   rec__formals_rec_split_pred__rec__f = rliteral;
   rec__formals_rec_split_pred__rec__g = rliteral;
   rec__formals_rec_split_pred__rec__h = rliteral1 }) -> ((x__split_discrs = {
-  rec__formals_rec_split_pred__rec__d = of_int(1) }) -> (let o = {
+  rec__formals_rec_split_pred__rec__d = of_int(1) }) -> (let temp___213 = {
   us_split_discrs1 = { rec__formals_rec_split_pred__rec__d = of_int(1) };
   us_split_fields1 = { rec__formals_rec_split_pred__rec__f = rliteral;
   rec__formals_rec_split_pred__rec__g = rliteral;
   rec__formals_rec_split_pred__rec__h = rliteral1 } } : us_rep in
-  (dynamic_predicate(o) ->
+  (dynamic_predicate(temp___213) ->
   (forall y__split_fields:us_split_fields.
-  ((y__split_fields = (o).us_split_fields1) ->
-  ((y__split_discrs = (o).us_split_discrs1) -> (dynamic_invariant({
+  ((y__split_fields = (temp___213).us_split_fields1) ->
+  ((y__split_discrs = (temp___213).us_split_discrs1) -> (dynamic_invariant({
   us_split_discrs1 = y__split_discrs; us_split_fields1 = y__split_fields },
-  true, false, true, true) -> (let o1 = { us_split_discrs1 = {
+  true, false, true, true) -> (let temp___215 = { us_split_discrs1 = {
   rec__formals_rec_split_pred__rec__d = of_int(1) }; us_split_fields1 = {
   rec__formals_rec_split_pred__rec__f = rliteral;
   rec__formals_rec_split_pred__rec__g = rliteral;
   rec__formals_rec_split_pred__rec__h = rliteral1 } } : us_rep in
-  (dynamic_predicate(o1) ->
+  (dynamic_predicate(temp___215) ->
   (forall u__split_fields:us_split_fields.
-  ((u__split_fields = (o1).us_split_fields1) ->
-  ((u__split_discrs = (o1).us_split_discrs1) -> (dynamic_invariant({
+  ((u__split_fields = (temp___215).us_split_fields1) ->
+  ((u__split_discrs = (temp___215).us_split_discrs1) -> (dynamic_invariant({
   us_split_discrs1 = u__split_discrs; us_split_fields1 = u__split_fields },
   true, false, true, true) -> (dynamic_predicate({ us_split_discrs1 =
   x__split_discrs; us_split_fields1 = x__split_fields }) ->
@@ -980,16 +971,16 @@ goal defqtvc :
   formals_rec_split_pred__p__a__fields1 }, true, true, true, true) ->
   (forall x__split_fields3:us_split_fields.
   ((x__split_fields3 = formals_rec_split_pred__p__a__fields1) ->
-  (forall x__split_fields4:us_split_fields. (let o2 = { us_split_discrs1 =
-  x__split_discrs; us_split_fields1 = x__split_fields4 } : us_rep in
-  (dynamic_predicate(o2) ->
+  (forall x__split_fields4:us_split_fields. (let temp___224 = {
+  us_split_discrs1 = x__split_discrs; us_split_fields1 = x__split_fields4 }
+  : us_rep in (dynamic_predicate(temp___224) ->
   (forall formals_rec_split_pred__p__a__fields2:us_split_fields.
-  (dynamic_invariant({ us_split_discrs1 = (o2).us_split_discrs1;
+  (dynamic_invariant({ us_split_discrs1 = (temp___224).us_split_discrs1;
   us_split_fields1 = formals_rec_split_pred__p__a__fields2 }, true, true,
   true, true) ->
   (forall x__split_fields5:us_split_fields.
   ((x__split_fields5 = formals_rec_split_pred__p__a__fields2) ->
-  ((x__split_discrs = (o2).us_split_discrs1) ->
+  ((x__split_discrs = (temp___224).us_split_discrs1) ->
   (forall y__split_fields1:us_split_fields. (dynamic_invariant({
   us_split_discrs1 = y__split_discrs; us_split_fields1 = y__split_fields1 },
   true, true, true, true) ->
@@ -1016,9 +1007,9 @@ goal defqtvc :
   us_split_discrs1 = y__split_discrs; us_split_fields1 = y__split_fields5 },
   true, true, true, true) ->
   (forall spark__branch:bool.
-  ((exists o3:int.
-   ((to_rep((y__split_fields5).rec__formals_rec_split_pred__rec__f) = o3) and
-   ((spark__branch = (if (o3 = 0) then true else false)) and
+  ((exists o:int.
+   ((to_rep((y__split_fields5).rec__formals_rec_split_pred__rec__f) = o) and
+   ((spark__branch = (if (o = 0) then true else false)) and
    ((not (spark__branch = true)) or dynamic_predicate({ us_split_discrs1 =
    y__split_discrs; us_split_fields1 = {
    rec__formals_rec_split_pred__rec__f =
@@ -1026,18 +1017,18 @@ goal defqtvc :
    rec__formals_rec_split_pred__rec__g =
    (y__split_fields5).rec__formals_rec_split_pred__rec__g;
    rec__formals_rec_split_pred__rec__h = rliteral2 } }))))) ->
-  (forall x__split_fields6:us_split_fields. (let o3 = { us_split_discrs1 =
-  x__split_discrs; us_split_fields1 = x__split_fields6 } : us_rep in
-  (dynamic_predicate(o3) ->
-  (forall o4:int.
-  ((to_rep1(((o3).us_split_fields1).rec__formals_rec_split_pred__rec__h) = o4) ->
-  (let o5 = { us_split_discrs1 = x__split_discrs; us_split_fields1 =
-  x__split_fields6 } : us_rep in (dynamic_predicate(o5) ->
-  (forall o6:int.
-  ((to_rep(((o5).us_split_fields1).rec__formals_rec_split_pred__rec__g) = o6) ->
-  (forall o7:integer. ((to_rep(o7) = div(o6, o4)) ->
+  (forall x__split_fields6:us_split_fields. (let temp___240 = {
+  us_split_discrs1 = x__split_discrs; us_split_fields1 = x__split_fields6 }
+  : us_rep in (dynamic_predicate(temp___240) ->
+  (forall o:int.
+  ((to_rep1(((temp___240).us_split_fields1).rec__formals_rec_split_pred__rec__h) = o) ->
+  (let temp___238 = { us_split_discrs1 = x__split_discrs; us_split_fields1 =
+  x__split_fields6 } : us_rep in (dynamic_predicate(temp___238) ->
+  (forall o1:int.
+  ((to_rep(((temp___238).us_split_fields1).rec__formals_rec_split_pred__rec__g) = o1) ->
+  (forall o2:integer. ((to_rep(o2) = div(o1, o)) ->
   (forall x__split_fields7:us_split_fields. ((x__split_fields7 = {
-  rec__formals_rec_split_pred__rec__f = o7;
+  rec__formals_rec_split_pred__rec__f = o2;
   rec__formals_rec_split_pred__rec__g =
   (x__split_fields6).rec__formals_rec_split_pred__rec__g;
   rec__formals_rec_split_pred__rec__h =
@@ -1045,10 +1036,10 @@ goal defqtvc :
   (forall u__split_fields3:us_split_fields. (dynamic_invariant({
   us_split_discrs1 = u__split_discrs; us_split_fields1 = u__split_fields3 },
   true, true, true, true) ->
-  ((exists o8:int.
-   ((to_rep((u__split_fields3).rec__formals_rec_split_pred__rec__f) = o8) and
+  ((exists o3:int.
+   ((to_rep((u__split_fields3).rec__formals_rec_split_pred__rec__f) = o3) and
    (exists spark__branch1:bool.
-   ((spark__branch1 = (if (o8 = 0) then true else false)) and
+   ((spark__branch1 = (if (o3 = 0) then true else false)) and
    ((not (spark__branch1 = true)) or dynamic_predicate({ us_split_discrs1 =
    u__split_discrs; us_split_fields1 = {
    rec__formals_rec_split_pred__rec__f =

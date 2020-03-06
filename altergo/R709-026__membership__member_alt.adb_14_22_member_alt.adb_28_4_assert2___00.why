@@ -151,6 +151,9 @@ function bool_eq2(a: us_rep, b: us_rep) : bool =
   (if ((to_int(((a).us_split_discrs1).rec__member_alt__my_rec__d) = to_int(((b).us_split_discrs1).rec__member_alt__my_rec__d)) and
   (to_rep(((a).us_split_fields1).rec__member_alt__my_rec__f) = to_rep(((b).us_split_fields1).rec__member_alt__my_rec__f))) then true else false)
 
+predicate in_range2(rec__member_alt__my_rec__d1: bool, a: us_split_discrs) =
+  (rec__member_alt__my_rec__d1 = (a).rec__member_alt__my_rec__d)
+
 logic value__size : int
 
 logic object__size : int
@@ -242,9 +245,6 @@ logic z__split_discrs : us_split_discrs
 
 logic attr__ATTRIBUTE_ADDRESS2 : int
 
-predicate in_range2(rec__member_alt__my_rec__d1: bool, a: us_rep) =
-  (rec__member_alt__my_rec__d1 = ((a).us_split_discrs1).rec__member_alt__my_rec__d)
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -297,9 +297,6 @@ type t19b__ref = { t19b__content : us_rep
 function t19b__ref_t19b__content__projection(a: t19b__ref) : us_rep =
   (a).t19b__content
 
-predicate in_range3(rec__member_alt__my_rec__d1: bool, a: us_rep) =
-  (rec__member_alt__my_rec__d1 = ((a).us_split_discrs1).rec__member_alt__my_rec__d)
-
 logic value__size2 : int
 
 logic object__size2 : int
@@ -351,9 +348,6 @@ type t20b__ref = { t20b__content : us_rep
 
 function t20b__ref_t20b__content__projection(a: t20b__ref) : us_rep =
   (a).t20b__content
-
-predicate in_range4(rec__member_alt__my_rec__d1: bool, a: us_rep) =
-  (rec__member_alt__my_rec__d1 = ((a).us_split_discrs1).rec__member_alt__my_rec__d)
 
 logic value__size3 : int
 

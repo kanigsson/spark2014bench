@@ -875,15 +875,15 @@ type transmitter_type__ref = { transmitter_type__content : us_rep
 function transmitter_type__ref_transmitter_type__content__projection(a: transmitter_type__ref) : us_rep =
   (a).transmitter_type__content
 
-predicate default_initial_assumption(temp___expr_424: us_rep,
-  temp___skip_top_level_425: bool) =
-  (((temp___expr_424).us_split_fields1).rec__decadriver__transmitter_type__tx_idle = of_int(1))
+predicate default_initial_assumption(temp___expr_426: us_rep,
+  temp___skip_top_level_427: bool) =
+  (((temp___expr_426).us_split_fields1).rec__decadriver__transmitter_type__tx_idle = of_int(1))
 
-predicate dynamic_invariant1(temp___expr_302: us_t, temp___is_init_298: bool,
-  temp___skip_constant_299: bool, temp___do_toplevel_300: bool,
-  temp___do_typ_inv_301: bool) = ((not (temp___skip_constant_299 = true)) ->
-  dynamic_property(0, 2147483647, first1(temp___expr_302),
-  last1(temp___expr_302)))
+predicate dynamic_invariant1(temp___expr_304: us_t, temp___is_init_300: bool,
+  temp___skip_constant_301: bool, temp___do_toplevel_302: bool,
+  temp___do_typ_inv_303: bool) = ((not (temp___skip_constant_301 = true)) ->
+  dynamic_property(0, 2147483647, first1(temp___expr_304),
+  last1(temp___expr_304)))
 
 predicate dynamic_invariant2(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
@@ -898,13 +898,13 @@ logic rliteral1 : t
 
 axiom rliteral_axiom1 : (tqtint(rliteral1) = 255)
 
-predicate dynamic_invariant3(temp___expr_295: t, temp___is_init_291: bool,
-  temp___skip_constant_292: bool, temp___do_toplevel_293: bool,
-  temp___do_typ_inv_294: bool) = true
+predicate dynamic_invariant3(temp___expr_297: t, temp___is_init_293: bool,
+  temp___skip_constant_294: bool, temp___do_toplevel_295: bool,
+  temp___do_typ_inv_296: bool) = true
 
  (* File "decadriver.ads", line 178, characters 0-0 *)
 goal defqtvc : (dynamic_invariant1(data, true, false, true, true) ->
   (dynamic_invariant(offset, true, false, true, true) ->
-  (((((1 <= length(data)) and (length(data) <= 1024)) and
-  (offset <  1024)) and ((length(data) + offset) <= 1024)) ->
-  (0 <  length(data)))))
+  ((((let temp___1045 = length(data) : int in ((1 <= temp___1045) and
+  (temp___1045 <= 1024))) and (offset <  1024)) and
+  ((length(data) + offset) <= 1024)) -> (0 <  length(data)))))

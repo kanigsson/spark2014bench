@@ -454,21 +454,17 @@ goal defqtvc :
     ((if (op = 0) then (o1 = true) else (not (o1 = true))) and
     (if (o1 = true) then (o = true) else (if (op = 3) then (o = true) else (not (o = true)))))) and
    (exists spark__branch1:bool. ((spark__branch1 = o) and
-   (if (spark__branch1 = true) then (exists o1:int.
-                                    ((to_rep(v1__split_fields) = o1) and
-                                    (exists o2:int.
-                                    ((to_rep(v1__split_fields) = o2) and
+   (if (spark__branch1 = true) then (exists temp___220:int.
+                                    ((to_rep(v1__split_fields) = temp___220) and
                                     (exists spark__branch2:bool.
-                                    ((spark__branch2 = (if (andb((if ((- 1073741823) <= o2) then true else false),
-                                    (if (o1 <= 1073741822) then true else false)) = true) then false else true)) and
+                                    ((spark__branch2 = (if (andb((if ((- 1073741823) <= temp___220) then true else false),
+                                    (if (temp___220 <= 1073741822) then true else false)) = true) then false else true)) and
                                     ((not (spark__branch2 = true)) and
-                                    (exists o3:int.
-                                    ((to_rep(v2__split_fields) = o3) and
-                                    (exists o4:int.
-                                    ((to_rep(v2__split_fields) = o4) and
-                                    ((spark__branch = (if (andb((if ((- 1073741823) <= o4) then true else false),
-                                    (if (o3 <= 1073741822) then true else false)) = true) then false else true)) and
-                                    (not (spark__branch = true)))))))))))))) else 
+                                    (exists temp___221:int.
+                                    ((to_rep(v2__split_fields) = temp___221) and
+                                    ((spark__branch = (if (andb((if ((- 1073741823) <= temp___221) then true else false),
+                                    (if (temp___221 <= 1073741822) then true else false)) = true) then false else true)) and
+                                    (not (spark__branch = true)))))))))) else 
    (exists spark__branch2:bool.
    ((spark__branch2 = (if (op = 1) then true else false)) and
    (if (spark__branch2 = true) then (exists o1:int.

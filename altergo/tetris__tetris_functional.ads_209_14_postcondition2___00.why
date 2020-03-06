@@ -4137,9 +4137,9 @@ goal defqtvc :
   in_range4((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) + 1))))))) and
   (exists spark__branch:bool. ((spark__branch = o2) and
   ((spark__branch = true) and (let o3 = a : int in (let o4 = {
-  us_split_fields1 = cur_piece__split_fields } : us_rep in (let temp___799 =
-  move(o4, o3) : us_rep in ((move__function_guard(temp___799, o4, o3) and
-  (temp___799 = (if (o3 = 0) then { us_split_fields1 = {
+  us_split_fields1 = cur_piece__split_fields } : us_rep in (let temp___808 =
+  move(o4, o3) : us_rep in ((move__function_guard(temp___808, o4, o3) and
+  (temp___808 = (if (o3 = 0) then { us_split_fields1 = {
   rec__tetris_functional__piece__s =
   (cur_piece__split_fields).rec__tetris_functional__piece__s;
   rec__tetris_functional__piece__d =
@@ -4175,7 +4175,7 @@ goal defqtvc :
   rec__tetris_functional__piece__y =
   (cur_piece__split_fields).rec__tetris_functional__piece__y } }))))) and
   (exists candidate__split_fields:us_split_fields.
-  ((candidate__split_fields = (temp___799).us_split_fields1) and (let o5 = {
+  ((candidate__split_fields = (temp___808).us_split_fields1) and (let o5 = {
   us_split_fields1 = candidate__split_fields } : us_rep in (let o6 =
   no_overlap(cur_board, o5) : bool in ((no_overlap__function_guard(o6,
   cur_board, o5) and ((o6 = true) <->
@@ -4215,9 +4215,9 @@ goal defqtvc :
   in_range4((to_rep3((cur_piece__split_fields).rec__tetris_functional__piece__y) + 1))))))) and
   (exists spark__branch:bool. ((spark__branch = o2) and
   ((not (spark__branch = true)) or (let o3 = a : int in (let o4 = {
-  us_split_fields1 = cur_piece__split_fields } : us_rep in (let temp___799 =
-  move(o4, o3) : us_rep in ((move__function_guard(temp___799, o4, o3) and
-  (temp___799 = (if (o3 = 0) then { us_split_fields1 = {
+  us_split_fields1 = cur_piece__split_fields } : us_rep in (let temp___808 =
+  move(o4, o3) : us_rep in ((move__function_guard(temp___808, o4, o3) and
+  (temp___808 = (if (o3 = 0) then { us_split_fields1 = {
   rec__tetris_functional__piece__s =
   (cur_piece__split_fields).rec__tetris_functional__piece__s;
   rec__tetris_functional__piece__d =
@@ -4253,7 +4253,7 @@ goal defqtvc :
   rec__tetris_functional__piece__y =
   (cur_piece__split_fields).rec__tetris_functional__piece__y } }))))) and
   (exists candidate__split_fields:us_split_fields.
-  ((candidate__split_fields = (temp___799).us_split_fields1) and (let o5 = {
+  ((candidate__split_fields = (temp___808).us_split_fields1) and (let o5 = {
   us_split_fields1 = candidate__split_fields } : us_rep in (let o6 =
   no_overlap(cur_board, o5) : bool in ((no_overlap__function_guard(o6,
   cur_board, o5) and ((o6 = true) <->

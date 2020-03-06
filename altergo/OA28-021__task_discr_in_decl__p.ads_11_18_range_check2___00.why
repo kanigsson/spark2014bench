@@ -285,6 +285,22 @@ function us_rep___split_discrs__projection(a: us_rep) : us_split_discrs =
 function us_rep___split_fields__projection(a: us_rep) : us_split_fields =
   (a).us_split_fields1
 
+function to_rep(x: natural) : int = naturalqtint(x)
+
+logic of_rep : int -> natural
+
+axiom inversion_axiom :
+  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
+
+axiom range_axiom : (forall x:natural [to_rep(x)]. in_range(to_rep(x)))
+
+axiom coerce_axiom :
+  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
+  (to_rep(of_rep(x)) = x)))
+
+predicate in_range2(rec__p__timer__countdown1: int, a: us_split_discrs) =
+  (rec__p__timer__countdown1 = to_rep((a).rec__p__timer__countdown))
+
 logic value__size : int
 
 logic object__size : int
@@ -350,22 +366,6 @@ function of_base(r: us_rep) : us_rep1 = { us_split_discrs2 =
   (r).us_split_discrs1; us_split_fields3 = { rec__p__timer1 =
   ((r).us_split_fields1).rec__p__timer } }
 
-function to_rep(x: natural) : int = naturalqtint(x)
-
-logic of_rep : int -> natural
-
-axiom inversion_axiom :
-  (forall x:natural [to_rep(x)]. (of_rep(to_rep(x)) = x))
-
-axiom range_axiom : (forall x:natural [to_rep(x)]. in_range(to_rep(x)))
-
-axiom coerce_axiom :
-  (forall x:int [to_rep(of_rep(x))]. (in_range(x) ->
-  (to_rep(of_rep(x)) = x)))
-
-predicate in_range2(rec__p__timer__countdown1: int, a: us_rep) =
-  (rec__p__timer__countdown1 = to_rep(((a).us_split_discrs1).rec__p__timer__countdown))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -409,7 +409,7 @@ predicate dynamic_invariant2(temp___expr_187: us_rep1,
   temp___is_init_183: bool, temp___skip_constant_184: bool,
   temp___do_toplevel_185: bool, temp___do_typ_inv_186: bool) =
   ((not (temp___skip_constant_184 = true)) -> in_range2(r1s,
-  to_base(temp___expr_187)))
+  (to_base(temp___expr_187)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_189: us_rep1,
   temp___skip_top_level_190: bool) =

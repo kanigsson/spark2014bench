@@ -306,23 +306,23 @@ type t40b__ref = { t40b__content : us_t
 function t40b__ref_t40b__content__projection(a: t40b__ref) : us_t =
   (a).t40b__content
 
-predicate dynamic_invariant2(temp___expr_252: us_t, temp___is_init_248: bool,
-  temp___skip_constant_249: bool, temp___do_toplevel_250: bool,
-  temp___do_typ_inv_251: bool) = (((not (temp___skip_constant_249 = true)) ->
-  (dynamic_property(1, (length(s1) + length(s2)), first1(temp___expr_252),
-  last1(temp___expr_252)) and ((first1(temp___expr_252) = 1) and
-  (last1(temp___expr_252) = (length(s1) + length(s2)))))) and
-  ((temp___is_init_248 = true) -> (first1(temp___expr_252) = 1)))
+predicate dynamic_invariant2(temp___expr_253: us_t, temp___is_init_249: bool,
+  temp___skip_constant_250: bool, temp___do_toplevel_251: bool,
+  temp___do_typ_inv_252: bool) = (((not (temp___skip_constant_250 = true)) ->
+  (dynamic_property(1, (length(s1) + length(s2)), first1(temp___expr_253),
+  last1(temp___expr_253)) and ((first1(temp___expr_253) = 1) and
+  (last1(temp___expr_253) = (length(s1) + length(s2)))))) and
+  ((temp___is_init_249 = true) -> (first1(temp___expr_253) = 1)))
 
-predicate default_initial_assumption(temp___expr_256: us_t,
-  temp___skip_top_level_257: bool) = ((first1(temp___expr_256) = 1) and
-  (last1(temp___expr_256) = (length(s1) + length(s2))))
+predicate default_initial_assumption(temp___expr_257: us_t,
+  temp___skip_top_level_258: bool) = ((first1(temp___expr_257) = 1) and
+  (last1(temp___expr_257) = (length(s1) + length(s2))))
 
-predicate dynamic_predicate1(temp___260: us_t) = (first1(temp___260) = 1)
+predicate dynamic_predicate1(temp___261: us_t) = (first1(temp___261) = 1)
 
-predicate dynamic_predicate2(temp___262: us_t) = (first1(temp___262) = 1)
+predicate dynamic_predicate2(temp___263: us_t) = (first1(temp___263) = 1)
 
-logic temp_____aggregate_def_489 : int, int, int -> us_t
+logic temp_____aggregate_def_495 : int, int, int -> us_t
 
 predicate dynamic_invariant3(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
@@ -334,24 +334,24 @@ logic rliteral : integer
 axiom rliteral_axiom : (integerqtint(rliteral) = 0)
 
 axiom def_axiom :
-  (forall temp___491:int. forall temp___492:int. forall temp___493:int.
-  (dynamic_invariant3(temp___491, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___492, temp___493) ->
-  (first1(temp_____aggregate_def_489(temp___491, temp___492,
-  temp___493)) = temp___492))))
+  (forall temp___497:int. forall temp___498:int. forall temp___499:int.
+  (dynamic_invariant3(temp___497, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___498, temp___499) ->
+  (first1(temp_____aggregate_def_495(temp___497, temp___498,
+  temp___499)) = temp___498))))
 
 axiom def_axiom1 :
-  (forall temp___491:int. forall temp___492:int. forall temp___493:int.
-  (dynamic_invariant3(temp___491, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___492, temp___493) ->
-  (last1(temp_____aggregate_def_489(temp___491, temp___492,
-  temp___493)) = temp___493))))
+  (forall temp___497:int. forall temp___498:int. forall temp___499:int.
+  (dynamic_invariant3(temp___497, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___498, temp___499) ->
+  (last1(temp_____aggregate_def_495(temp___497, temp___498,
+  temp___499)) = temp___499))))
 
 axiom def_axiom2 :
-  (forall temp___491:int. forall temp___492:int. forall temp___493:int.
-  (dynamic_invariant3(temp___491, true, true, true, true) ->
-  (forall temp___494:int. ((to_array(temp_____aggregate_def_489(temp___491,
-  temp___492, temp___493))[temp___494]) = rliteral))))
+  (forall temp___497:int. forall temp___498:int. forall temp___499:int.
+  (dynamic_invariant3(temp___497, true, true, true, true) ->
+  (forall temp___500:int. ((to_array(temp_____aggregate_def_495(temp___497,
+  temp___498, temp___499))[temp___500]) = rliteral))))
 
  (* File "ghc_sort.ads", line 36, characters 0-0 *)
 goal defqtvc :
@@ -371,8 +371,8 @@ goal defqtvc :
   to_rep(r__last)), false) -> ((dynamic_property(1,
   (length(s1) + length(s2)), to_rep(r__first), to_rep(r__last)) and
   ((to_rep(r__first) = 1) and
-  (to_rep(r__last) = (length(s1) + length(s2))))) -> (let temp___495 =
-  temp_____aggregate_def_489(0, 1, (length(s1) + length(s2))) : us_t in
-  ((first1(temp___495) = 1) ->
-  ((last1(temp___495) = (length(s1) + length(s2))) ->
-  dynamic_predicate2(temp___495)))))))))))))))))))
+  (to_rep(r__last) = (length(s1) + length(s2))))) -> (let temp___501 =
+  temp_____aggregate_def_495(0, 1, (length(s1) + length(s2))) : us_t in
+  ((first1(temp___501) = 1) ->
+  ((last1(temp___501) = (length(s1) + length(s2))) ->
+  dynamic_predicate2(temp___501)))))))))))))))))))

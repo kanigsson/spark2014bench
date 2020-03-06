@@ -455,7 +455,7 @@ goal defqtvc :
    dynamic_invariant2(r8b1, true, true, true, true)) and
    dynamic_invariant(l3, false, true, true, true)) and ((x + l3) = r5b1)) and
    ((y + l3) = r8b1)) and
-   (exists temp___205:int. ((temp___205 = l3) and (let o3 = (l3 + 1) : int in
+   (exists temp___209:int. ((temp___209 = l3) and (let o3 = (l3 + 1) : int in
    (in_range1(o3) and ((l2 = o3) and
    (exists o4:bool. ((let o5 = (x + l2) : int in (in_range1(o5) and
    (((not (o5 <= 1000)) or in_range1((y + l2))) and (if ((o5 <= 1000) and
@@ -469,24 +469,22 @@ goal defqtvc :
   (forall longest_common_prefix__lcp__result:int.
   ((longest_common_prefix__lcp__result = l2) -> (let o =
   (y + longest_common_prefix__lcp__result) : int in (in_range1(o) ->
-  (let temp___209 = (o - 1) : int in (((y <= temp___209) -> (((1 <= y) and
-  (y <= 1000)) and ((1 <= temp___209) and (temp___209 <= 1000)))) ->
-  (let temp___213 = of_array(a, y, temp___209) : us_t in (let o1 =
+  (let temp___213 = (o - 1) : int in (((y <= temp___213) -> (((1 <= y) and
+  (y <= 1000)) and ((1 <= temp___213) and (temp___213 <= 1000)))) ->
+  (let temp___217 = of_array(a, y, temp___213) : us_t in (let o1 =
   (x + longest_common_prefix__lcp__result) : int in (in_range1(o1) ->
-  (let temp___208 = (o1 - 1) : int in (((x <= temp___208) -> (((1 <= x) and
-  (x <= 1000)) and ((1 <= temp___208) and (temp___208 <= 1000)))) ->
-  (let temp___212 = of_array(a, x, temp___208) : us_t in
-  ((bool_eq5(to_array(temp___212), first1(temp___212), last1(temp___212),
-  to_array(temp___213), first1(temp___213), last1(temp___213)) = true) ->
+  (let temp___212 = (o1 - 1) : int in (((x <= temp___212) -> (((1 <= x) and
+  (x <= 1000)) and ((1 <= temp___212) and (temp___212 <= 1000)))) ->
+  (let temp___216 = of_array(a, x, temp___212) : us_t in
+  ((bool_eq5(to_array(temp___216), first1(temp___216), last1(temp___216),
+  to_array(temp___217), first1(temp___217), last1(temp___217)) = true) ->
   (forall o2:bool. ((let o3 = (longest_common_prefix__lcp__result + x)
-  : int in (in_range1(o3) and (let o4 =
-  (longest_common_prefix__lcp__result + x) : int in (in_range1(o4) and
-  (if (not (andb((if (1 <= o4) then true else false),
-  (if (o3 <= 1000) then true else false)) = true)) then (o2 = true) else (let o5 =
-  (longest_common_prefix__lcp__result + y) : int in (in_range1(o5) and
-  (let o6 = (longest_common_prefix__lcp__result + y) : int in
-  (in_range1(o6) and (o2 = (if (andb((if (1 <= o6) then true else false),
-  (if (o5 <= 1000) then true else false)) = true) then false else true))))))))))) ->
+  : int in (in_range1(o3) and
+  (if (not (andb((if (1 <= o3) then true else false),
+  (if (o3 <= 1000) then true else false)) = true)) then (o2 = true) else (let o4 =
+  (longest_common_prefix__lcp__result + y) : int in (in_range1(o4) and
+  (o2 = (if (andb((if (1 <= o4) then true else false),
+  (if (o4 <= 1000) then true else false)) = true) then false else true))))))) ->
   ((not (o2 = true)) -> (let o3 = (y + longest_common_prefix__lcp__result)
   : int in (in_range1(o3) -> (((1 <= o3) and (o3 <= 1000)) ->
   (forall o4:int. ((to_rep((a[o3])) = o4) ->

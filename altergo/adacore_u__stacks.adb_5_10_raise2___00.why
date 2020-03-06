@@ -326,9 +326,10 @@ axiom peek__post_axiom :
   true, true))))
 
 axiom peek__def_axiom :
-  (forall s:us_rep [peek(s)].
-  (peek(s) = (if ((1 <= to_rep1(((s).us_split_fields1).rec__stacks__stack__top)) and
-  (to_rep1(((s).us_split_fields1).rec__stacks__stack__top) <= 100)) then to_rep((((s).us_split_fields1).rec__stacks__stack__content[to_rep1(((s).us_split_fields1).rec__stacks__stack__top)])) else 0)))
+  (forall s:us_rep [peek(s)]. (peek(s) = (if (let temp___189 =
+  to_rep1(((s).us_split_fields1).rec__stacks__stack__top) : int in
+  ((1 <= temp___189) and
+  (temp___189 <= 100))) then to_rep((((s).us_split_fields1).rec__stacks__stack__content[to_rep1(((s).us_split_fields1).rec__stacks__stack__top)])) else 0)))
 
 type t5s
 

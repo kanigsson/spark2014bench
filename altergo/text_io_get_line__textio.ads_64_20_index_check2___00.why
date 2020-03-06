@@ -962,8 +962,8 @@ goal defqtvc :
   ((not (end_of_file(current_file(current_in__split_fields), cur_position,
   the_file) = true)) -> (let usf = bool_lt(to_rep1(item__last),
   to_rep1(item__first)) : bool in
-  (forall temp___old_384:int. ((temp___old_384 = cur_position) ->
-  (forall temp___old_386:int. ((temp___old_386 = cur_position) -> (let o =
+  (forall temp___old_386:int. ((temp___old_386 = cur_position) ->
+  (forall temp___old_388:int. ((temp___old_388 = cur_position) -> (let o =
   item__last : integer in (let o1 = item__first : integer in
   (forall cur_position1:int. ((cur_position1 = cur_position) ->
   (forall cur_position2:int. forall item:(int,character) farray.
@@ -988,8 +988,8 @@ goal defqtvc :
   (forall o6:int. ((to_rep1(item__first) = o6) ->
   ((andb((if (o6 <= usf1) then true else false),
   (if (usf1 <= last3) then true else false)) = true) ->
-  (forall o7:int. ((to_rep1(item__first) = o7) -> (let temp___385 =
-  ((usf1 - o7) + temp___old_384) : int in (((1 <= temp___385) and
-  (temp___385 <= 2147483647)) ->
-  (forall o8:int. ((to_rep((the_file[temp___385])) = o8) ->
+  (forall o7:int. ((to_rep1(item__first) = o7) -> (let temp___387 =
+  ((usf1 - o7) + temp___old_386) : int in (((1 <= temp___387) and
+  (temp___387 <= 2147483647)) ->
+  (forall o8:int. ((to_rep((the_file[temp___387])) = o8) ->
   (to_rep1(item__first) <= usf1))))))))))))))))))))))))))))))))))))))))

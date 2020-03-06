@@ -3997,10 +3997,10 @@ goal defqtvc :
   ((forall y:int. (((1 <= y) and (y <= del_line1)) ->
    (not (is_complete_line((cur_board2[y])) = true)))) ->
   ((andb((if ((dynamic_invariant3(to_line2, true, true, true, true) and
-  (forall temp___863:int. (((1 <= temp___863) and (temp___863 <= 50)) ->
-  (((50 <  temp___863) or ((temp___863 <  1) or
-  (del_line1 <  temp___863))) ->
-  ((cur_board2[temp___863]) = (cur_board[temp___863])))))) and
+  (forall temp___872:int. (((1 <= temp___872) and (temp___872 <= 50)) ->
+  (((50 <  temp___872) or ((temp___872 <  1) or
+  (del_line1 <  temp___872))) ->
+  ((cur_board2[temp___872]) = (cur_board[temp___872])))))) and
   in_range9(del_line1)) then true else false), (if ((1 <= del_line1) and
   (del_line1 <= 50)) then true else false)) = true) ->
   ((not (del_line1 = 50)) ->

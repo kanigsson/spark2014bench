@@ -1,0 +1,393 @@
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+type string
+
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+function andb(x: bool, y: bool) : bool = match_bool(x, y, false)
+
+function orb(x: bool, y: bool) : bool = match_bool(x, true, y)
+
+function notb(x: bool) : bool = match_bool(x, false, true)
+
+function xorb(x: bool, y: bool) : bool = match_bool(x, notb(y), y)
+
+function implb(x: bool, y: bool) : bool = match_bool(x, y, true)
+
+type us_private
+
+logic private__bool_eq : us_private, us_private -> bool
+
+logic us_null_ext__ : us_private
+
+type us_type_of_heap
+
+type us_type_of_heap__ref = { us_type_of_heap__content : us_type_of_heap
+}
+
+type us_image
+
+type int__ref = { int__content : int }
+
+type bool__ref = { bool__content : bool }
+
+type us_fixed__ref = { us_fixed__content : int }
+
+type real__ref = { real__content : real }
+
+type us_private__ref = { us_private__content : us_private
+}
+
+function int__ref___projection(a: int__ref) : int = (a).int__content
+
+function us_fixed__ref___projection(a: us_fixed__ref) : int =
+  (a).us_fixed__content
+
+function bool__ref___projection(a: bool__ref) : bool = (a).bool__content
+
+function real__ref___projection(a: real__ref) : real = (a).real__content
+
+function us_private__ref___projection(a: us_private__ref) : us_private =
+  (a).us_private__content
+
+function ite(b: bool, x: 'a, y: 'a) : 'a = match_bool(b, x, y)
+
+function bool_eq(x: bool, y: bool) : bool = (if (x = y) then true else false)
+
+function to_int(b: bool) : int = (if (b = true) then 1 else 0)
+
+function of_int(i: int) : bool = (if (i = 0) then false else true)
+
+predicate in_range(x: int) = ((x = 0) or (x = 1))
+
+logic attr__ATTRIBUTE_IMAGE : bool -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE : us_image -> bool
+
+type us_main_type
+
+logic us_main_eq : us_main_type, us_main_type -> bool
+
+type us_rep
+
+logic bool_eq1 : us_rep, us_rep -> bool
+
+logic value__size : int
+
+logic object__size : int
+
+logic alignment : int
+
+axiom value__size_axiom : (0 <= value__size)
+
+axiom object__size_axiom : (0 <= object__size)
+
+axiom alignment_axiom : (0 <= alignment)
+
+logic user_eq : us_rep, us_rep -> bool
+
+logic dummy : us_rep
+
+type sequence__ref = { sequence__content : us_rep
+}
+
+function sequence__ref_sequence__content__projection(a: sequence__ref) : us_rep =
+  (a).sequence__content
+
+logic length : us_rep -> int
+
+logic length__function_guard : int, us_rep -> prop
+
+type count_type
+
+logic count_typeqtint : count_type -> int
+
+axiom count_typeqtaxiom : (forall i:count_type. (0 <= count_typeqtint(i)))
+
+axiom count_typeqtaxiom1 :
+  (forall i:count_type. (count_typeqtint(i) <= 2147483647))
+
+predicate in_range1(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq2(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE1 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check1 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE1 : us_image -> int
+
+logic user_eq1 : count_type, count_type -> bool
+
+logic dummy1 : count_type
+
+type count_type__ref = { count_type__content : count_type
+}
+
+function count_type__ref_count_type__content__projection(a: count_type__ref) : count_type =
+  (a).count_type__content
+
+predicate dynamic_invariant(temp___expr_247: int, temp___is_init_243: bool,
+  temp___skip_constant_244: bool, temp___do_toplevel_245: bool,
+  temp___do_typ_inv_246: bool) = (((temp___is_init_243 = true) or
+  (0 <= 2147483647)) -> in_range1(temp___expr_247))
+
+logic bool_eq3 : int, int -> bool
+
+logic bool_ne : int, int -> bool
+
+logic bool_lt : int, int -> bool
+
+logic bool_le : int, int -> bool
+
+logic bool_gt : int, int -> bool
+
+logic bool_ge : int, int -> bool
+
+axiom bool_eq_axiom :
+  (forall x:int. (forall y:int. ((bool_eq3(x, y) = true) -> (x = y))))
+
+axiom bool_eq_axiom1 :
+  (forall x:int. (forall y:int. ((x = y) -> (bool_eq3(x, y) = true))))
+
+axiom bool_ne_axiom :
+  (forall x:int. (forall y:int. ((bool_ne(x, y) = true) -> (not (x = y)))))
+
+axiom bool_ne_axiom1 :
+  (forall x:int. (forall y:int. ((not (x = y)) -> (bool_ne(x, y) = true))))
+
+axiom bool_lt_axiom :
+  (forall x:int. (forall y:int. ((bool_lt(x, y) = true) -> (x <  y))))
+
+axiom bool_lt_axiom1 :
+  (forall x:int. (forall y:int. ((x <  y) -> (bool_lt(x, y) = true))))
+
+axiom bool_int__le_axiom :
+  (forall x:int. (forall y:int. ((bool_le(x, y) = true) -> (x <= y))))
+
+axiom bool_int__le_axiom1 :
+  (forall x:int. (forall y:int. ((x <= y) -> (bool_le(x, y) = true))))
+
+axiom bool_gt_axiom :
+  (forall x:int. (forall y:int. ((bool_gt(x, y) = true) -> (y <  x))))
+
+axiom bool_gt_axiom1 :
+  (forall x:int. (forall y:int. ((y <  x) -> (bool_gt(x, y) = true))))
+
+axiom bool_ge_axiom :
+  (forall x:int. (forall y:int. ((bool_ge(x, y) = true) -> (y <= x))))
+
+axiom bool_ge_axiom1 :
+  (forall x:int. (forall y:int. ((y <= x) -> (bool_ge(x, y) = true))))
+
+function length1(x: int, y: int) : int =
+  (if (x <= y) then ((y - x) + 1) else 0)
+
+function last(container: us_rep) : int = (0 + length(container))
+
+logic last__function_guard : int, us_rep -> prop
+
+logic get : us_rep, int -> int
+
+logic get__function_guard : int, us_rep, int -> prop
+
+function oeq(left: us_rep, right: us_rep) : bool =
+  andb(bool_eq3(length(left), length(right)),
+  (if (forall n:int. (((1 <= n) and (n <= last(left))) -> (get(left,
+      n) = get(right, n)))) then true else false))
+
+logic oeq__function_guard : bool, us_rep, us_rep -> prop
+
+axiom user_eq__def_axiom :
+  (forall a:us_rep. forall b:us_rep [user_eq(a, b)]. (user_eq(a, b) = oeq(a,
+  b)))
+
+predicate default_initial_assumption(temp___expr_298: us_rep,
+  temp___skip_top_level_299: bool) =
+  ((not (temp___skip_top_level_299 = true)) -> (length(temp___expr_298) = 0))
+
+axiom length__post_axiom :
+  (forall container:us_rep [length(container)].
+  ((0 + length(container)) <= 2147483647))
+
+axiom length__post_axiom1 :
+  (forall container:us_rep [length(container)].
+  dynamic_invariant(length(container), true, false, true, true))
+
+type extended_index
+
+logic extended_indexqtint : extended_index -> int
+
+axiom extended_indexqtaxiom :
+  (forall i:extended_index. (0 <= extended_indexqtint(i)))
+
+axiom extended_indexqtaxiom1 :
+  (forall i:extended_index. (extended_indexqtint(i) <= 2147483647))
+
+predicate in_range2(x: int) = ((0 <= x) and (x <= 2147483647))
+
+function bool_eq4(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE2 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check2 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE2 : us_image -> int
+
+logic user_eq2 : extended_index, extended_index -> bool
+
+logic dummy2 : extended_index
+
+type extended_index__ref = { extended_index__content : extended_index
+}
+
+function extended_index__ref_extended_index__content__projection(a: extended_index__ref) : extended_index =
+  (a).extended_index__content
+
+predicate dynamic_invariant1(temp___expr_290: int, temp___is_init_286: bool,
+  temp___skip_constant_287: bool, temp___do_toplevel_288: bool,
+  temp___do_typ_inv_289: bool) = (((temp___is_init_286 = true) or
+  (0 <= 2147483647)) -> in_range2(temp___expr_290))
+
+logic left : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+logic right : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic fst : int
+
+logic attr__ATTRIBUTE_ADDRESS2 : int
+
+logic lst : int
+
+logic attr__ATTRIBUTE_ADDRESS3 : int
+
+logic offset : int
+
+logic attr__ATTRIBUTE_ADDRESS4 : int
+
+type tcount_typeB
+
+logic tcount_typeBqtint : tcount_typeB -> int
+
+axiom tcount_typeBqtaxiom :
+  (forall i:tcount_typeB. ((- 2147483648) <= tcount_typeBqtint(i)))
+
+axiom tcount_typeBqtaxiom1 :
+  (forall i:tcount_typeB. (tcount_typeBqtint(i) <= 2147483647))
+
+predicate in_range3(x: int) = (((- 2147483648) <= x) and (x <= 2147483647))
+
+function bool_eq5(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE3 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check3 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE3 : us_image -> int
+
+logic user_eq3 : tcount_typeB, tcount_typeB -> bool
+
+logic dummy3 : tcount_typeB
+
+type tcount_typeB__ref = { tcount_typeB__content : tcount_typeB
+}
+
+function tcount_typeB__ref_tcount_typeB__content__projection(a: tcount_typeB__ref) : tcount_typeB =
+  (a).tcount_typeB__content
+
+type index_type
+
+logic index_typeqtint : index_type -> int
+
+axiom index_typeqtaxiom : (forall i:index_type. (1 <= index_typeqtint(i)))
+
+axiom index_typeqtaxiom1 :
+  (forall i:index_type. (index_typeqtint(i) <= 2147483647))
+
+predicate in_range4(x: int) = ((1 <= x) and (x <= 2147483647))
+
+function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE4 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check4 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE4 : us_image -> int
+
+logic user_eq4 : index_type, index_type -> bool
+
+logic dummy4 : index_type
+
+type index_type__ref = { index_type__content : index_type
+}
+
+function index_type__ref_index_type__content__projection(a: index_type__ref) : index_type =
+  (a).index_type__content
+
+predicate dynamic_invariant2(temp___expr_276: int, temp___is_init_272: bool,
+  temp___skip_constant_273: bool, temp___do_toplevel_274: bool,
+  temp___do_typ_inv_275: bool) = (((temp___is_init_272 = true) or
+  (1 <= 2147483647)) -> in_range4(temp___expr_276))
+
+type element_type
+
+logic element_typeqtint : element_type -> int
+
+axiom element_typeqtaxiom :
+  (forall i:element_type. (1 <= element_typeqtint(i)))
+
+axiom element_typeqtaxiom1 :
+  (forall i:element_type. (element_typeqtint(i) <= 100))
+
+predicate in_range5(x: int) = ((1 <= x) and (x <= 100))
+
+function bool_eq7(x: int, y: int) : bool = (if (x = y) then true else false)
+
+logic attr__ATTRIBUTE_IMAGE5 : int -> us_image
+
+logic attr__ATTRIBUTE_VALUE__pre_check5 : us_image -> prop
+
+logic attr__ATTRIBUTE_VALUE5 : us_image -> int
+
+logic user_eq5 : element_type, element_type -> bool
+
+logic dummy5 : element_type
+
+type element_type__ref = { element_type__content : element_type
+}
+
+function element_type__ref_element_type__content__3__projection(a: element_type__ref) : element_type =
+  (a).element_type__content
+
+predicate dynamic_invariant3(temp___expr_283: int, temp___is_init_279: bool,
+  temp___skip_constant_280: bool, temp___do_toplevel_281: bool,
+  temp___do_typ_inv_282: bool) = (((temp___is_init_279 = true) or
+  (1 <= 100)) -> in_range5(temp___expr_283))
+
+axiom get__post_axiom :
+  (forall container:us_rep.
+  (forall position:int [get(container, position)].
+  ((dynamic_invariant1(position, true, true, true, true) and
+  ((1 <= position) and (position <= last(container)))) ->
+  dynamic_invariant3(get(container, position), true, false, true, true))))
+
+ (* File "a-cofuve.ads", line 217, characters 0-0 *)
+goal defqtvc : (dynamic_invariant2(fst, true, false, true, true) ->
+  (dynamic_invariant1(lst, true, false, true, true) -> (in_range3(offset) ->
+  (forall o:bool. ((let o1 = left : us_rep in (let o2 = last(o1) : int in
+  ((dynamic_invariant1(o2, true, false, true, true) and
+  (o2 = (0 + length(o1)))) and (if (lst <= o2) then (((not (offset <  0)) or
+  in_range3(((- 2147483648) - offset))) and
+  (o = (if (offset <  0) then (if (((- 2147483648) - offset) <= 1) then true else false) else of_int(1)))) else (o = false))))) ->
+  ((o = true) -> ((fst <= lst) -> in_range3(lst))))))))

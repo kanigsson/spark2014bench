@@ -212,6 +212,10 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range3(rec__private_types__p2__t__d1: bool,
+  a: us_split_discrs) =
+  (rec__private_types__p2__t__d1 = (a).rec__private_types__p2__t__d)
+
 logic value__size : int
 
 logic object__size : int
@@ -265,9 +269,6 @@ function t__ref_t__content__2__projection(a: t__ref) : us_rep =
   (a).t__content
 
 logic us_tag1 : int
-
-predicate in_range3(rec__private_types__p2__t__d1: bool, a: us_rep) =
-  (rec__private_types__p2__t__d1 = ((a).us_split_discrs1).rec__private_types__p2__t__d)
 
 logic value__size1 : int
 
@@ -330,7 +331,7 @@ predicate dynamic_invariant2(temp___expr_175: us_rep,
   temp___is_init_171: bool, temp___skip_constant_172: bool,
   temp___do_toplevel_173: bool, temp___do_typ_inv_174: bool) =
   ((not (temp___skip_constant_172 = true)) -> in_range3(of_int(1),
-  temp___expr_175))
+  (temp___expr_175).us_split_discrs1))
 
 axiom temp___result_180qtdef : id__function_guard(id(0), 0)
 
@@ -341,7 +342,7 @@ predicate default_initial_assumption(temp___expr_177: us_rep,
   (private_types__p2__t__f__pred(temp___expr_177) ->
   (to_rep(((temp___expr_177).us_split_fields1).rec__private_types__p2__t__f) = id(0)))))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__default_checks_on_private-8676/src/gnatprove/private_types__p2__t2.mlw", line 624, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__default_checks_on_private-25155/src/gnatprove/private_types__p2__t2.mlw", line 623, characters 5-8 *)
 goal defqtvc :
   (forall usf:us_rep.
   ((of_int(1) = ((usf).us_split_discrs1).rec__private_types__p2__t__d) ->

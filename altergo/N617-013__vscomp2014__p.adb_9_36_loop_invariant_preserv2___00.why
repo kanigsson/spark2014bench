@@ -195,12 +195,12 @@ goal defqtvc :
   (forall f2:(int,index) farray. ((f2 = (f1[i <- o])) ->
   (forall f3:(int,index) farray. forall i1:int.
   ((bool_eq2(temp___loop_entry_182, 1, 10, saved, 1, 10) = true) ->
-  ((andb((if ((forall temp___179:int. (((1 <= temp___179) and
-              (temp___179 <= 10)) -> (((10 <  temp___179) or
-              ((temp___179 <  1) or (i1 <  temp___179))) ->
-              ((f3[temp___179]) = (f1[temp___179]))))) and
-  in_range1(i1)) then true else false), (if ((1 <= i1) and
-  (i1 <= 10)) then true else false)) = true) -> ((not (i1 = 10)) ->
+  ((andb((if (in_range1(i1) and
+  (forall temp___180:int. (((1 <= temp___180) and (temp___180 <= 10)) ->
+  (((10 <  temp___180) or ((temp___180 <  1) or (i1 <  temp___180))) ->
+  ((f3[temp___180]) = (f1[temp___180])))))) then true else false),
+  (if ((1 <= i1) and (i1 <= 10)) then true else false)) = true) ->
+  ((not (i1 = 10)) ->
   (forall i2:int. ((i2 = (i1 + 1)) ->
   (forall o1:index. ((to_rep(o1) = j1) -> (bool_eq2(temp___loop_entry_182, 1,
   10, saved, 1, 10) = true)))))))))))))))))))))))))

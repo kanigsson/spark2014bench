@@ -498,6 +498,10 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   (bool_eq6(((a).us_split_fields3).rec__communications__communication__msgs,
   ((b).us_split_fields3).rec__communications__communication__msgs) = true)) then true else false)
 
+predicate in_range3(rec__communications__communication__num1: int,
+  a: us_split_discrs) =
+  (rec__communications__communication__num1 = to_rep((a).rec__communications__communication__num))
+
 logic value__size3 : int
 
 logic object__size3 : int
@@ -558,7 +562,7 @@ axiom tT7bP1qtaxiom : (forall i:tT7bP1. (1 <= tT7bP1qtint(i)))
 
 axiom tT7bP1qtaxiom1 : (forall i:tT7bP1. (tT7bP1qtint(i) <= 2))
 
-predicate in_range3(x: int) = ((1 <= x) and (x <= 2))
+predicate in_range4(x: int) = ((1 <= x) and (x <= 2))
 
 function bool_eq8(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -638,10 +642,6 @@ function bool_eq9(a: us_rep2, b: us_rep2) : bool =
   (bool_eq5(((a).us_split_fields5).rec__communications__communication__msgs1,
   1, 2, ((b).us_split_fields5).rec__communications__communication__msgs1, 1,
   2) = true)) then true else false)
-
-predicate in_range4(rec__communications__communication__num1: int,
-  a: us_rep1) =
-  (rec__communications__communication__num1 = to_rep(((a).us_split_discrs1).rec__communications__communication__num))
 
 logic value__size5 : int
 

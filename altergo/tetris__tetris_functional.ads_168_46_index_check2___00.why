@@ -3678,6 +3678,6 @@ goal defqtvc :
   (if (usf1 <= 2) then true else false)) = true) ->
   (forall o2:int.
   ((to_rep3(((p).us_split_fields1).rec__tetris_functional__piece__d) = o2) ->
-  (forall temp___781:int.
-  ((to_rep(((p).us_split_fields1).rec__tetris_functional__piece__s) = temp___781) ->
-  (3 <= temp___781)))))))))))))))))
+  (forall temp___787:int.
+  ((to_rep(((p).us_split_fields1).rec__tetris_functional__piece__s) = temp___787) ->
+  (3 <= temp___787)))))))))))))))))

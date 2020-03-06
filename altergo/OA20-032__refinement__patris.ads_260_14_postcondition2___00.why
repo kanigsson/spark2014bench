@@ -1217,9 +1217,9 @@ predicate dynamic_invariant2(temp___expr_558: t, temp___is_init_554: bool,
   temp___do_typ_inv_557: bool) = (((temp___is_init_554 = true) or
   ule(rliteral, rliteral1)) -> in_range8(temp___expr_558))
 
-logic temp_____aggregate_def_944 : (int,cell) farray -> (int,(int,cell) farray) farray
+logic temp_____aggregate_def_953 : (int,cell) farray -> (int,(int,cell) farray) farray
 
-logic temp_____aggregate_def_948 : int -> (int,cell) farray
+logic temp_____aggregate_def_957 : int -> (int,cell) farray
 
 type integer
 
@@ -1256,9 +1256,9 @@ predicate dynamic_invariant3(temp___expr_18: int, temp___is_init_14: bool,
   ((- 2147483648) <= 2147483647)) -> in_range9(temp___expr_18))
 
 axiom def_axiom :
-  (forall temp___946:(int,cell) farray.
-  (forall temp___947:int.
-  ((temp_____aggregate_def_944(temp___946)[temp___947]) = temp___946)))
+  (forall temp___955:(int,cell) farray.
+  (forall temp___956:int.
+  ((temp_____aggregate_def_953(temp___955)[temp___956]) = temp___955)))
 
 predicate dynamic_invariant4(temp___expr_565: int, temp___is_init_561: bool,
   temp___skip_constant_562: bool, temp___do_toplevel_563: bool,
@@ -1266,10 +1266,10 @@ predicate dynamic_invariant4(temp___expr_565: int, temp___is_init_561: bool,
   (0 <= 7)) -> in_range2(temp___expr_565))
 
 axiom def_axiom1 :
-  (forall temp___950:int. (dynamic_invariant4(temp___950, true, true, true,
+  (forall temp___959:int. (dynamic_invariant4(temp___959, true, true, true,
   true) ->
-  (forall temp___951:int.
-  (to_rep((temp_____aggregate_def_948(temp___950)[temp___951])) = temp___950))))
+  (forall temp___960:int.
+  (to_rep((temp_____aggregate_def_957(temp___959)[temp___960])) = temp___959))))
 
 predicate dynamic_invariant5(temp___expr_572: int, temp___is_init_568: bool,
   temp___skip_constant_569: bool, temp___do_toplevel_570: bool,
@@ -4477,7 +4477,7 @@ goal defqtvc :
   (dynamic_invariant1(cur_state, false, false, true, true) ->
   (dynamic_invariant(action_request_nbr, false, false, true, true) ->
   (forall cur_board:(int,(int,cell) farray) farray.
-  ((cur_board = temp_____aggregate_def_944(temp_____aggregate_def_948(0))) ->
+  ((cur_board = temp_____aggregate_def_953(temp_____aggregate_def_957(0))) ->
   (forall o:direction. ((to_rep4(o) = 0) ->
   (forall o1:shape. ((to_rep1(o1) = 1) ->
   (forall cur_piece__split_fields:us_split_fields.

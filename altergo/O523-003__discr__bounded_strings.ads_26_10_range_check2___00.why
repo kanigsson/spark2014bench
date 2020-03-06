@@ -413,6 +413,10 @@ function bool_eq7(a: us_rep, b: us_rep) : bool =
   ((b).us_split_fields1).rec__bounded_strings__bounded_string__text) = true) and
   (to_rep1(((a).us_split_fields1).rec__bounded_strings__bounded_string__size) = to_rep1(((b).us_split_fields1).rec__bounded_strings__bounded_string__size)))) then true else false)
 
+predicate in_range5(rec__bounded_strings__bounded_string__bound1: int,
+  a: us_split_discrs) =
+  (rec__bounded_strings__bounded_string__bound1 = to_rep((a).rec__bounded_strings__bounded_string__bound))
+
 logic value__size1 : int
 
 logic object__size1 : int

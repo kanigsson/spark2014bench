@@ -322,8 +322,8 @@ goal defqtvc :
   (min2 <= last1(unsorted))) and
   (forall j:int. (((first1(unsorted) <= j) and (j <= (index1 - 1))) ->
   (to_rep((to_array(unsorted)[min2])) <= to_rep((to_array(unsorted)[j])))))) ->
-  ((andb((if (dynamic_invariant(min2, false, true, true, true) and
-  dynamic_property1(first1(unsorted), last1(unsorted),
-  index1)) then true else false), (if ((first1(unsorted) <= index1) and
+  ((andb((if (dynamic_property1(first1(unsorted), last1(unsorted),
+  index1) and dynamic_invariant(min2, false, true, true,
+  true)) then true else false), (if ((first1(unsorted) <= index1) and
   (index1 <= last1(unsorted))) then true else false)) = true) ->
   (first1(unsorted) <= min2)))))))))))))))))

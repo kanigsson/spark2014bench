@@ -399,6 +399,10 @@ logic us_dispatch_eq : us_rep, us_rep -> bool
 
 logic us_tag : int
 
+predicate in_range4(rec__integer_stacks__stack__capacity1: int,
+  a: us_split_discrs) =
+  (rec__integer_stacks__stack__capacity1 = to_rep1((a).rec__integer_stacks__stack__capacity))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -540,7 +544,7 @@ function to_int(b: bool) : int = (if (b = true) then 1 else 0)
 
 function of_int(i: int) : bool = (if (i = 0) then false else true)
 
-predicate in_range4(x: int) = ((x = 0) or (x = 1))
+predicate in_range5(x: int) = ((x = 0) or (x = 1))
 
 logic attr__ATTRIBUTE_IMAGE4 : bool -> us_image
 
@@ -626,9 +630,6 @@ function bool_eq8(a: us_rep1, b: us_rep1) : bool =
   (to_rep(((a).us_split_fields3).rec__integer_stacks__stack__top1) = to_rep(((b).us_split_fields3).rec__integer_stacks__stack__top1)))) then true else false)
 
 logic us_tag1 : int
-
-predicate in_range5(rec__integer_stacks__stack__capacity1: int, a: us_rep) =
-  (rec__integer_stacks__stack__capacity1 = to_rep1(((a).us_split_discrs1).rec__integer_stacks__stack__capacity))
 
 logic value__size2 : int
 
@@ -768,9 +769,6 @@ function bool_eq9(a: us_rep2, b: us_rep2) : bool =
 
 logic us_tag2 : int
 
-predicate in_range6(rec__integer_stacks__stack__capacity1: int, a: us_rep) =
-  (rec__integer_stacks__stack__capacity1 = to_rep1(((a).us_split_discrs1).rec__integer_stacks__stack__capacity))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -909,9 +907,6 @@ function bool_eq10(a: us_rep3, b: us_rep3) : bool =
 
 logic us_tag3 : int
 
-predicate in_range7(rec__integer_stacks__stack__capacity1: int, a: us_rep) =
-  (rec__integer_stacks__stack__capacity1 = to_rep1(((a).us_split_discrs1).rec__integer_stacks__stack__capacity))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -1049,9 +1044,6 @@ function bool_eq11(a: us_rep4, b: us_rep4) : bool =
   (to_rep(((a).us_split_fields9).rec__integer_stacks__stack__top4) = to_rep(((b).us_split_fields9).rec__integer_stacks__stack__top4)))) then true else false)
 
 logic us_tag4 : int
-
-predicate in_range8(rec__integer_stacks__stack__capacity1: int, a: us_rep) =
-  (rec__integer_stacks__stack__capacity1 = to_rep1(((a).us_split_discrs1).rec__integer_stacks__stack__capacity))
 
 logic value__size5 : int
 
@@ -1373,31 +1365,31 @@ type t12s__ref = { t12s__content : us_t
 function t12s__ref_t12s__content__projection(a: t12s__ref) : us_t =
   (a).t12s__content
 
-logic temp_____aggregate_def_348 : int, int, int -> us_t
+logic temp_____aggregate_def_352 : int, int, int -> us_t
 
 logic rliteral : element
 
 axiom rliteral_axiom : (elementqtint(rliteral) = 0)
 
 axiom def_axiom :
-  (forall temp___350:int. forall temp___351:int. forall temp___352:int.
-  (dynamic_invariant1(temp___350, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___351, temp___352) ->
-  (first1(temp_____aggregate_def_348(temp___350, temp___351,
-  temp___352)) = temp___351))))
+  (forall temp___354:int. forall temp___355:int. forall temp___356:int.
+  (dynamic_invariant1(temp___354, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___355, temp___356) ->
+  (first1(temp_____aggregate_def_352(temp___354, temp___355,
+  temp___356)) = temp___355))))
 
 axiom def_axiom1 :
-  (forall temp___350:int. forall temp___351:int. forall temp___352:int.
-  (dynamic_invariant1(temp___350, true, true, true, true) ->
-  (dynamic_property(1, 2147483647, temp___351, temp___352) ->
-  (last1(temp_____aggregate_def_348(temp___350, temp___351,
-  temp___352)) = temp___352))))
+  (forall temp___354:int. forall temp___355:int. forall temp___356:int.
+  (dynamic_invariant1(temp___354, true, true, true, true) ->
+  (dynamic_property(1, 2147483647, temp___355, temp___356) ->
+  (last1(temp_____aggregate_def_352(temp___354, temp___355,
+  temp___356)) = temp___356))))
 
 axiom def_axiom2 :
-  (forall temp___350:int. forall temp___351:int. forall temp___352:int.
-  (dynamic_invariant1(temp___350, true, true, true, true) ->
-  (forall temp___353:int. ((to_array(temp_____aggregate_def_348(temp___350,
-  temp___351, temp___352))[temp___353]) = rliteral))))
+  (forall temp___354:int. forall temp___355:int. forall temp___356:int.
+  (dynamic_invariant1(temp___354, true, true, true, true) ->
+  (forall temp___357:int. ((to_array(temp_____aggregate_def_352(temp___354,
+  temp___355, temp___356))[temp___357]) = rliteral))))
 
 axiom user_eq__def_axiom :
   (forall a:us_rep2. forall b:us_rep2. oeq__function_guard(oeq(to_base1(a),
@@ -1427,35 +1419,35 @@ axiom user_eq__def_axiom5 :
   (forall a:us_rep4. forall b:us_rep4 [user_eq9(a, b)]. (user_eq9(a,
   b) = oeq(to_base3(a), to_base3(b))))
 
-predicate dynamic_invariant6(temp___expr_362: us_rep4,
-  temp___is_init_358: bool, temp___skip_constant_359: bool,
-  temp___do_toplevel_360: bool, temp___do_typ_inv_361: bool) =
-  (((not (temp___skip_constant_359 = true)) ->
-  in_range8(to_rep1(((left).us_split_discrs1).rec__integer_stacks__stack__capacity),
-  to_base3(temp___expr_362))) and (dynamic_property(1,
+predicate dynamic_invariant6(temp___expr_366: us_rep4,
+  temp___is_init_362: bool, temp___skip_constant_363: bool,
+  temp___do_toplevel_364: bool, temp___do_typ_inv_365: bool) =
+  (((not (temp___skip_constant_363 = true)) ->
+  in_range4(to_rep1(((left).us_split_discrs1).rec__integer_stacks__stack__capacity),
+  (to_base3(temp___expr_366)).us_split_discrs1)) and (dynamic_property(1,
   to_rep1(((left).us_split_discrs1).rec__integer_stacks__stack__capacity),
-  first1(((temp___expr_362).us_split_fields9).rec__integer_stacks__stack__values4),
-  last1(((temp___expr_362).us_split_fields9).rec__integer_stacks__stack__values4)) and
-  ((first1(((temp___expr_362).us_split_fields9).rec__integer_stacks__stack__values4) = 1) and
-  (last1(((temp___expr_362).us_split_fields9).rec__integer_stacks__stack__values4) = to_rep1(((left).us_split_discrs1).rec__integer_stacks__stack__capacity)))))
+  first1(((temp___expr_366).us_split_fields9).rec__integer_stacks__stack__values4),
+  last1(((temp___expr_366).us_split_fields9).rec__integer_stacks__stack__values4)) and
+  ((first1(((temp___expr_366).us_split_fields9).rec__integer_stacks__stack__values4) = 1) and
+  (last1(((temp___expr_366).us_split_fields9).rec__integer_stacks__stack__values4) = to_rep1(((left).us_split_discrs1).rec__integer_stacks__stack__capacity)))))
 
-axiom temp___result_370qtdef :
-  (forall temp___369:us_rep4.
-  empty__function_guard(empty(to_base3(temp___369)), to_base3(temp___369)))
+axiom temp___result_374qtdef :
+  (forall temp___373:us_rep4.
+  empty__function_guard(empty(to_base3(temp___373)), to_base3(temp___373)))
 
-predicate default_initial_assumption(temp___expr_365: us_rep4,
-  temp___skip_top_level_366: bool) =
-  ((((temp___expr_365).attr__tag4 = us_tag4) and (let temp___367 =
-  ((temp___expr_365).us_split_discrs5).rec__integer_stacks__stack__capacity
+predicate default_initial_assumption(temp___expr_369: us_rep4,
+  temp___skip_top_level_370: bool) =
+  ((((temp___expr_369).attr__tag4 = us_tag4) and (let temp___371 =
+  ((temp___expr_369).us_split_discrs5).rec__integer_stacks__stack__capacity
   : positive in
-  ((to_rep1(((temp___expr_365).us_split_discrs5).rec__integer_stacks__stack__capacity) = to_rep1(((left).us_split_discrs1).rec__integer_stacks__stack__capacity)) and
-  ((((temp___expr_365).us_split_fields9).rec__integer_stacks__stack__values4 = of_array(to_array(temp_____aggregate_def_348(0,
-  1, to_rep1(temp___367))), first1(temp_____aggregate_def_348(0, 1,
-  to_rep1(temp___367))), last1(temp_____aggregate_def_348(0, 1,
-  to_rep1(temp___367))))) and
-  (to_rep(((temp___expr_365).us_split_fields9).rec__integer_stacks__stack__top4) = 0))))) and
-  ((not (temp___skip_top_level_366 = true)) ->
-  (empty(to_base3(temp___expr_365)) = true)))
+  ((to_rep1(((temp___expr_369).us_split_discrs5).rec__integer_stacks__stack__capacity) = to_rep1(((left).us_split_discrs1).rec__integer_stacks__stack__capacity)) and
+  ((((temp___expr_369).us_split_fields9).rec__integer_stacks__stack__values4 = of_array(to_array(temp_____aggregate_def_352(0,
+  1, to_rep1(temp___371))), first1(temp_____aggregate_def_352(0, 1,
+  to_rep1(temp___371))), last1(temp_____aggregate_def_352(0, 1,
+  to_rep1(temp___371))))) and
+  (to_rep(((temp___expr_369).us_split_fields9).rec__integer_stacks__stack__top4) = 0))))) and
+  ((not (temp___skip_top_level_370 = true)) ->
+  (empty(to_base3(temp___expr_369)) = true)))
 
 logic right : us_rep
 
@@ -1469,35 +1461,35 @@ axiom user_eq__def_axiom7 :
   (forall a:us_rep3. forall b:us_rep3 [user_eq8(a, b)]. (user_eq8(a,
   b) = oeq(to_base2(a), to_base2(b))))
 
-predicate dynamic_invariant7(temp___expr_342: us_rep3,
-  temp___is_init_338: bool, temp___skip_constant_339: bool,
-  temp___do_toplevel_340: bool, temp___do_typ_inv_341: bool) =
-  (((not (temp___skip_constant_339 = true)) ->
-  in_range7(to_rep1(((right).us_split_discrs1).rec__integer_stacks__stack__capacity),
-  to_base2(temp___expr_342))) and (dynamic_property(1,
+predicate dynamic_invariant7(temp___expr_346: us_rep3,
+  temp___is_init_342: bool, temp___skip_constant_343: bool,
+  temp___do_toplevel_344: bool, temp___do_typ_inv_345: bool) =
+  (((not (temp___skip_constant_343 = true)) ->
+  in_range4(to_rep1(((right).us_split_discrs1).rec__integer_stacks__stack__capacity),
+  (to_base2(temp___expr_346)).us_split_discrs1)) and (dynamic_property(1,
   to_rep1(((right).us_split_discrs1).rec__integer_stacks__stack__capacity),
-  first1(((temp___expr_342).us_split_fields7).rec__integer_stacks__stack__values3),
-  last1(((temp___expr_342).us_split_fields7).rec__integer_stacks__stack__values3)) and
-  ((first1(((temp___expr_342).us_split_fields7).rec__integer_stacks__stack__values3) = 1) and
-  (last1(((temp___expr_342).us_split_fields7).rec__integer_stacks__stack__values3) = to_rep1(((right).us_split_discrs1).rec__integer_stacks__stack__capacity)))))
+  first1(((temp___expr_346).us_split_fields7).rec__integer_stacks__stack__values3),
+  last1(((temp___expr_346).us_split_fields7).rec__integer_stacks__stack__values3)) and
+  ((first1(((temp___expr_346).us_split_fields7).rec__integer_stacks__stack__values3) = 1) and
+  (last1(((temp___expr_346).us_split_fields7).rec__integer_stacks__stack__values3) = to_rep1(((right).us_split_discrs1).rec__integer_stacks__stack__capacity)))))
 
-axiom temp___result_356qtdef :
-  (forall temp___355:us_rep3.
-  empty__function_guard(empty(to_base2(temp___355)), to_base2(temp___355)))
+axiom temp___result_360qtdef :
+  (forall temp___359:us_rep3.
+  empty__function_guard(empty(to_base2(temp___359)), to_base2(temp___359)))
 
-predicate default_initial_assumption1(temp___expr_345: us_rep3,
-  temp___skip_top_level_346: bool) =
-  ((((temp___expr_345).attr__tag3 = us_tag3) and (let temp___347 =
-  ((temp___expr_345).us_split_discrs4).rec__integer_stacks__stack__capacity
+predicate default_initial_assumption1(temp___expr_349: us_rep3,
+  temp___skip_top_level_350: bool) =
+  ((((temp___expr_349).attr__tag3 = us_tag3) and (let temp___351 =
+  ((temp___expr_349).us_split_discrs4).rec__integer_stacks__stack__capacity
   : positive in
-  ((to_rep1(((temp___expr_345).us_split_discrs4).rec__integer_stacks__stack__capacity) = to_rep1(((right).us_split_discrs1).rec__integer_stacks__stack__capacity)) and
-  ((((temp___expr_345).us_split_fields7).rec__integer_stacks__stack__values3 = of_array(to_array(temp_____aggregate_def_348(0,
-  1, to_rep1(temp___347))), first1(temp_____aggregate_def_348(0, 1,
-  to_rep1(temp___347))), last1(temp_____aggregate_def_348(0, 1,
-  to_rep1(temp___347))))) and
-  (to_rep(((temp___expr_345).us_split_fields7).rec__integer_stacks__stack__top3) = 0))))) and
-  ((not (temp___skip_top_level_346 = true)) ->
-  (empty(to_base2(temp___expr_345)) = true)))
+  ((to_rep1(((temp___expr_349).us_split_discrs4).rec__integer_stacks__stack__capacity) = to_rep1(((right).us_split_discrs1).rec__integer_stacks__stack__capacity)) and
+  ((((temp___expr_349).us_split_fields7).rec__integer_stacks__stack__values3 = of_array(to_array(temp_____aggregate_def_352(0,
+  1, to_rep1(temp___351))), first1(temp_____aggregate_def_352(0, 1,
+  to_rep1(temp___351))), last1(temp_____aggregate_def_352(0, 1,
+  to_rep1(temp___351))))) and
+  (to_rep(((temp___expr_349).us_split_fields7).rec__integer_stacks__stack__top3) = 0))))) and
+  ((not (temp___skip_top_level_350 = true)) ->
+  (empty(to_base2(temp___expr_349)) = true)))
 
  (* File "bounded_stacks.ads", line 23, characters 0-0 *)
 goal defqtvc :
@@ -1530,16 +1522,16 @@ goal defqtvc :
   rec__integer_stacks__stack__values =
   (this__split_fields).rec__integer_stacks__stack__values;
   rec__integer_stacks__stack__top = o2; rec__ext__ =
-  (this__split_fields).rec__ext__ }) -> (let temp___416 =
+  (this__split_fields).rec__ext__ }) -> (let temp___420 =
   (this__split_fields2).rec__integer_stacks__stack__values : us_t in
   (forall o3:element. ((to_rep3(o3) = item) ->
-  (forall temp___417:int.
-  ((to_rep((this__split_fields2).rec__integer_stacks__stack__top) = temp___417) ->
-  (((first1(temp___416) <= temp___417) and
-  (temp___417 <= last1(temp___416))) ->
+  (forall temp___421:int.
+  ((to_rep((this__split_fields2).rec__integer_stacks__stack__top) = temp___421) ->
+  (((first1(temp___420) <= temp___421) and
+  (temp___421 <= last1(temp___420))) ->
   (forall this__split_fields3:us_split_fields. ((this__split_fields3 = {
   rec__integer_stacks__stack__values = { elts =
-  (to_array((this__split_fields2).rec__integer_stacks__stack__values)[temp___417 <- o3]);
+  (to_array((this__split_fields2).rec__integer_stacks__stack__values)[temp___421 <- o3]);
   rt = ((this__split_fields2).rec__integer_stacks__stack__values).rt };
   rec__integer_stacks__stack__top =
   (this__split_fields2).rec__integer_stacks__stack__top; rec__ext__ =

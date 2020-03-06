@@ -348,7 +348,7 @@ axiom def_axiom :
   (forall temp___203:int.
   ((temp_____aggregate_def_200(temp___202)[temp___203]) = rliteral))))
 
- (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-tagged_stacks-13056/src/gnatprove/stacks__stack_root.mlw", line 671, characters 5-8 *)
+ (* File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-tagged_stacks-5954/src/gnatprove/stacks__stack_root.mlw", line 671, characters 5-8 *)
 goal defqtvc :
   (forall usf:us_rep.
   ((forall usf1:us_rep. size__function_guard(size(usf1), usf1)) ->

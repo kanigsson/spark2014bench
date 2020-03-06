@@ -171,14 +171,19 @@ logic user_eq1 : us_rep, us_rep -> bool
 
 logic dummy1 : us_rep
 
-type t1__ref = { t1__content : us_rep
+type my_t1__ref = { my_t1__content : us_rep
 }
 
-function t1__ref_t1__content__projection(a: t1__ref) : us_rep =
-  (a).t1__content
+function my_t1__ref_my_t1__content__projection(a: my_t1__ref) : us_rep =
+  (a).my_t1__content
 
-predicate in_range1(rec__p__private_types__t1__capacity1: int, a: us_rep) =
-  (rec__p__private_types__t1__capacity1 = to_rep(((a).us_split_discrs1).rec__p__private_types__t1__capacity))
+logic l : us_rep
+
+logic attr__ATTRIBUTE_ADDRESS : int
+
+predicate in_range1(rec__p__private_types__t1__capacity1: int,
+  a: us_split_discrs) =
+  (rec__p__private_types__t1__capacity1 = to_rep((a).rec__p__private_types__t1__capacity))
 
 logic value__size1 : int
 
@@ -211,20 +216,17 @@ logic user_eq2 : us_rep, us_rep -> bool
 
 logic dummy2 : us_rep
 
-type my_t1__ref = { my_t1__content : us_rep
+type t1__ref = { t1__content : us_rep
 }
 
-function my_t1__ref_my_t1__content__projection(a: my_t1__ref) : us_rep =
-  (a).my_t1__content
-
-logic l : us_rep
-
-logic attr__ATTRIBUTE_ADDRESS : int
+function t1__ref_t1__content__projection(a: t1__ref) : us_rep =
+  (a).t1__content
 
 predicate dynamic_invariant(temp___expr_174: us_rep,
   temp___is_init_170: bool, temp___skip_constant_171: bool,
   temp___do_toplevel_172: bool, temp___do_typ_inv_173: bool) =
-  ((not (temp___skip_constant_171 = true)) -> in_range1(10, temp___expr_174))
+  ((not (temp___skip_constant_171 = true)) -> in_range1(10,
+  (temp___expr_174).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_176: us_rep,
   temp___skip_top_level_177: bool) =

@@ -390,33 +390,33 @@ type tarr_badD1__ref = { tarr_badD1__content : tarr_badD1
 function tarr_badD1__ref_tarr_badD1__content__projection(a: tarr_badD1__ref) : tarr_badD1 =
   (a).tarr_badD1__content
 
-predicate dynamic_invariant(temp___expr_301: us_rep,
-  temp___is_init_297: bool, temp___skip_constant_298: bool,
-  temp___do_toplevel_299: bool, temp___do_typ_inv_300: bool) =
-  (((temp___do_toplevel_299 = true) ->
-  (((not (to_rep(((temp___expr_301).us_split_fields1).rec__preds__rec_bad__i) = 0)) and
-  (not (to_rep1(((temp___expr_301).us_split_fields1).rec__preds__rec_bad__x) = 0))) and
+predicate dynamic_invariant(temp___expr_303: us_rep,
+  temp___is_init_299: bool, temp___skip_constant_300: bool,
+  temp___do_toplevel_301: bool, temp___do_typ_inv_302: bool) =
+  (((temp___do_toplevel_301 = true) ->
+  (((not (to_rep(((temp___expr_303).us_split_fields1).rec__preds__rec_bad__i) = 0)) and
+  (not (to_rep1(((temp___expr_303).us_split_fields1).rec__preds__rec_bad__x) = 0))) and
   (forall k:int. (((1 <= k) and (k <= 10)) ->
-  (not (to_rep((((temp___expr_301).us_split_fields1).rec__preds__rec_bad__a[k])) = 0)))))) and
-  ((let temp___305 =
-  to_rep1(((temp___expr_301).us_split_fields1).rec__preds__rec_bad__x)
-  : int in ((((- 2147483648) <= temp___305) and (temp___305 <= (- 1))) or
-  ((1 <= temp___305) and (temp___305 <= 2147483647)))) and
+  (not (to_rep((((temp___expr_303).us_split_fields1).rec__preds__rec_bad__a[k])) = 0)))))) and
+  ((let temp___307 =
+  to_rep1(((temp___expr_303).us_split_fields1).rec__preds__rec_bad__x)
+  : int in ((((- 2147483648) <= temp___307) and (temp___307 <= (- 1))) or
+  ((1 <= temp___307) and (temp___307 <= 2147483647)))) and
   (forall k:int. (((1 <= k) and (k <= 10)) ->
-  (not (to_rep((((temp___expr_301).us_split_fields1).rec__preds__rec_bad__a[k])) = 0))))))
+  (not (to_rep((((temp___expr_303).us_split_fields1).rec__preds__rec_bad__a[k])) = 0))))))
 
-predicate default_initial_assumption(temp___expr_308: us_rep,
-  temp___skip_top_level_309: bool) =
-  (((to_rep(((temp___expr_308).us_split_fields1).rec__preds__rec_bad__i) = 0) and
-  (to_rep1(((temp___expr_308).us_split_fields1).rec__preds__rec_bad__x) = 0)) and
-  (forall temp___312:int. (((1 <= temp___312) and (temp___312 <= 10)) ->
-  (to_rep((((temp___expr_308).us_split_fields1).rec__preds__rec_bad__a[temp___312])) = 0))))
+predicate default_initial_assumption(temp___expr_312: us_rep,
+  temp___skip_top_level_313: bool) =
+  (((to_rep(((temp___expr_312).us_split_fields1).rec__preds__rec_bad__i) = 0) and
+  (to_rep1(((temp___expr_312).us_split_fields1).rec__preds__rec_bad__x) = 0)) and
+  (forall temp___316:int. (((1 <= temp___316) and (temp___316 <= 10)) ->
+  (to_rep((((temp___expr_312).us_split_fields1).rec__preds__rec_bad__a[temp___316])) = 0))))
 
-predicate dynamic_predicate(temp___313: us_rep) =
-  (((not (to_rep(((temp___313).us_split_fields1).rec__preds__rec_bad__i) = 0)) and
-  (not (to_rep1(((temp___313).us_split_fields1).rec__preds__rec_bad__x) = 0))) and
+predicate dynamic_predicate(temp___317: us_rep) =
+  (((not (to_rep(((temp___317).us_split_fields1).rec__preds__rec_bad__i) = 0)) and
+  (not (to_rep1(((temp___317).us_split_fields1).rec__preds__rec_bad__x) = 0))) and
   (forall k:int. (((1 <= k) and (k <= 10)) ->
-  (not (to_rep((((temp___313).us_split_fields1).rec__preds__rec_bad__a[k])) = 0)))))
+  (not (to_rep((((temp___317).us_split_fields1).rec__preds__rec_bad__a[k])) = 0)))))
 
 logic i9s : int
 
@@ -474,6 +474,6 @@ goal defqtvc :
   (dynamic_invariant2(i25s, true, false, true, true) ->
   (dynamic_invariant(i37s, true, false, true, true) -> (dynamic_invariant({
   us_split_fields1 = x__split_fields }, false, false, true, true) ->
-  (forall usf:int_bad. ((to_rep1(usf) = 0) -> (let temp___405 = to_rep1(usf)
-  : int in ((((- 2147483648) <= temp___405) and (temp___405 <= (- 1))) or
-  ((1 <= temp___405) and (temp___405 <= 2147483647))))))))))))))
+  (forall usf:int_bad. ((to_rep1(usf) = 0) -> (let temp___427 = to_rep1(usf)
+  : int in ((((- 2147483648) <= temp___427) and (temp___427 <= (- 1))) or
+  ((1 <= temp___427) and (temp___427 <= 2147483647))))))))))))))

@@ -1156,575 +1156,533 @@ function t48b__ref_t48b__content__projection(a: t48b__ref) : t48b =
 logic test_patience__input__aggregate_def : int, int, int, int, int, int,
   int -> (int,card) farray
 
-logic temp___String_Literal_419 : unit -> (int,character) farray
+logic temp___String_Literal_425 : unit -> (int,character) farray
 
-axiom temp___String_Literal_419__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[1])) = 84))
+axiom temp___String_Literal_425__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[1])) = 84))
 
-axiom temp___String_Literal_419__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[2])) = 101))
+axiom temp___String_Literal_425__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[2])) = 101))
 
-axiom temp___String_Literal_419__def_axiom2 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[3])) = 115))
+axiom temp___String_Literal_425__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[3])) = 115))
 
-axiom temp___String_Literal_419__def_axiom3 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[4])) = 116))
+axiom temp___String_Literal_425__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[4])) = 116))
 
-axiom temp___String_Literal_419__def_axiom4 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[5])) = 32))
+axiom temp___String_Literal_425__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[5])) = 32))
 
-axiom temp___String_Literal_419__def_axiom5 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[6])) = 111))
+axiom temp___String_Literal_425__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[6])) = 111))
 
-axiom temp___String_Literal_419__def_axiom6 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[7])) = 102))
+axiom temp___String_Literal_425__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[7])) = 102))
 
-axiom temp___String_Literal_419__def_axiom7 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[8])) = 32))
+axiom temp___String_Literal_425__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[8])) = 32))
 
-axiom temp___String_Literal_419__def_axiom8 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[9])) = 97))
+axiom temp___String_Literal_425__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[9])) = 97))
 
-axiom temp___String_Literal_419__def_axiom9 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[10])) = 32))
+axiom temp___String_Literal_425__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[10])) = 32))
 
-axiom temp___String_Literal_419__def_axiom10 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[11])) = 112))
+axiom temp___String_Literal_425__def_axiom10 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[11])) = 112))
 
-axiom temp___String_Literal_419__def_axiom11 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[12])) = 97))
+axiom temp___String_Literal_425__def_axiom11 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[12])) = 97))
 
-axiom temp___String_Literal_419__def_axiom12 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[13])) = 116))
+axiom temp___String_Literal_425__def_axiom12 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[13])) = 116))
 
-axiom temp___String_Literal_419__def_axiom13 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[14])) = 105))
+axiom temp___String_Literal_425__def_axiom13 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[14])) = 105))
 
-axiom temp___String_Literal_419__def_axiom14 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[15])) = 101))
+axiom temp___String_Literal_425__def_axiom14 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[15])) = 101))
 
-axiom temp___String_Literal_419__def_axiom15 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[16])) = 110))
+axiom temp___String_Literal_425__def_axiom15 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[16])) = 110))
 
-axiom temp___String_Literal_419__def_axiom16 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[17])) = 99))
+axiom temp___String_Literal_425__def_axiom16 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[17])) = 99))
 
-axiom temp___String_Literal_419__def_axiom17 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[18])) = 101))
+axiom temp___String_Literal_425__def_axiom17 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[18])) = 101))
 
-axiom temp___String_Literal_419__def_axiom18 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[19])) = 32))
+axiom temp___String_Literal_425__def_axiom18 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[19])) = 32))
 
-axiom temp___String_Literal_419__def_axiom19 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[20])) = 103))
+axiom temp___String_Literal_425__def_axiom19 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[20])) = 103))
 
-axiom temp___String_Literal_419__def_axiom20 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[21])) = 97))
+axiom temp___String_Literal_425__def_axiom20 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[21])) = 97))
 
-axiom temp___String_Literal_419__def_axiom21 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[22])) = 109))
+axiom temp___String_Literal_425__def_axiom21 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[22])) = 109))
 
-axiom temp___String_Literal_419__def_axiom22 :
-  (forall us_void_param:unit [temp___String_Literal_419(us_void_param)].
-  (to_rep((temp___String_Literal_419(us_void_param)[23])) = 101))
+axiom temp___String_Literal_425__def_axiom22 :
+  (forall us_void_param:unit [temp___String_Literal_425(us_void_param)].
+  (to_rep((temp___String_Literal_425(us_void_param)[23])) = 101))
 
-logic temp___String_Literal_420 : unit -> (int,character) farray
+logic temp___String_Literal_426 : unit -> (int,character) farray
 
-axiom temp___String_Literal_420__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_420(us_void_param)].
-  (to_rep((temp___String_Literal_420(us_void_param)[1])) = 45))
+axiom temp___String_Literal_426__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_426(us_void_param)].
+  (to_rep((temp___String_Literal_426(us_void_param)[1])) = 45))
 
-axiom temp___String_Literal_420__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_420(us_void_param)].
-  (to_rep((temp___String_Literal_420(us_void_param)[2])) = 45))
+axiom temp___String_Literal_426__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_426(us_void_param)].
+  (to_rep((temp___String_Literal_426(us_void_param)[2])) = 45))
 
-axiom temp___String_Literal_420__def_axiom2 :
-  (forall us_void_param:unit [temp___String_Literal_420(us_void_param)].
-  (to_rep((temp___String_Literal_420(us_void_param)[3])) = 45))
+axiom temp___String_Literal_426__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_426(us_void_param)].
+  (to_rep((temp___String_Literal_426(us_void_param)[3])) = 45))
 
-axiom temp___String_Literal_420__def_axiom3 :
-  (forall us_void_param:unit [temp___String_Literal_420(us_void_param)].
-  (to_rep((temp___String_Literal_420(us_void_param)[4])) = 45))
+axiom temp___String_Literal_426__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_426(us_void_param)].
+  (to_rep((temp___String_Literal_426(us_void_param)[4])) = 45))
 
-axiom temp___String_Literal_420__def_axiom4 :
-  (forall us_void_param:unit [temp___String_Literal_420(us_void_param)].
-  (to_rep((temp___String_Literal_420(us_void_param)[5])) = 45))
+axiom temp___String_Literal_426__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_426(us_void_param)].
+  (to_rep((temp___String_Literal_426(us_void_param)[5])) = 45))
 
-axiom temp___String_Literal_420__def_axiom5 :
-  (forall us_void_param:unit [temp___String_Literal_420(us_void_param)].
-  (to_rep((temp___String_Literal_420(us_void_param)[6])) = 45))
+axiom temp___String_Literal_426__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_426(us_void_param)].
+  (to_rep((temp___String_Literal_426(us_void_param)[6])) = 45))
 
-axiom temp___String_Literal_420__def_axiom6 :
-  (forall us_void_param:unit [temp___String_Literal_420(us_void_param)].
-  (to_rep((temp___String_Literal_420(us_void_param)[7])) = 45))
+axiom temp___String_Literal_426__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_426(us_void_param)].
+  (to_rep((temp___String_Literal_426(us_void_param)[7])) = 45))
 
-axiom temp___String_Literal_420__def_axiom7 :
-  (forall us_void_param:unit [temp___String_Literal_420(us_void_param)].
-  (to_rep((temp___String_Literal_420(us_void_param)[8])) = 45))
+axiom temp___String_Literal_426__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_426(us_void_param)].
+  (to_rep((temp___String_Literal_426(us_void_param)[8])) = 45))
 
-logic temp___String_Literal_421 : unit -> (int,character) farray
+logic temp___String_Literal_427 : unit -> (int,character) farray
 
-axiom temp___String_Literal_421__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[1])) = 67))
+axiom temp___String_Literal_427__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[1])) = 67))
 
-axiom temp___String_Literal_421__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[2])) = 97))
+axiom temp___String_Literal_427__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[2])) = 97))
 
-axiom temp___String_Literal_421__def_axiom2 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[3])) = 114))
+axiom temp___String_Literal_427__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[3])) = 114))
 
-axiom temp___String_Literal_421__def_axiom3 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[4])) = 100))
+axiom temp___String_Literal_427__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[4])) = 100))
 
-axiom temp___String_Literal_421__def_axiom4 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[5])) = 83))
+axiom temp___String_Literal_427__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[5])) = 83))
 
-axiom temp___String_Literal_421__def_axiom5 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[6])) = 116))
+axiom temp___String_Literal_427__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[6])) = 116))
 
-axiom temp___String_Literal_421__def_axiom6 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[7])) = 97))
+axiom temp___String_Literal_427__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[7])) = 97))
 
-axiom temp___String_Literal_421__def_axiom7 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[8])) = 99))
+axiom temp___String_Literal_427__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[8])) = 99))
 
-axiom temp___String_Literal_421__def_axiom8 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[9])) = 107))
+axiom temp___String_Literal_427__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[9])) = 107))
 
-axiom temp___String_Literal_421__def_axiom9 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[10])) = 32))
+axiom temp___String_Literal_427__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[10])) = 32))
 
-axiom temp___String_Literal_421__def_axiom10 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[11])) = 40))
+axiom temp___String_Literal_427__def_axiom10 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[11])) = 40))
 
-axiom temp___String_Literal_421__def_axiom11 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[12])) = 102))
+axiom temp___String_Literal_427__def_axiom11 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[12])) = 102))
 
-axiom temp___String_Literal_421__def_axiom12 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[13])) = 105))
+axiom temp___String_Literal_427__def_axiom12 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[13])) = 105))
 
-axiom temp___String_Literal_421__def_axiom13 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[14])) = 114))
+axiom temp___String_Literal_427__def_axiom13 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[14])) = 114))
 
-axiom temp___String_Literal_421__def_axiom14 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[15])) = 115))
+axiom temp___String_Literal_427__def_axiom14 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[15])) = 115))
 
-axiom temp___String_Literal_421__def_axiom15 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[16])) = 116))
+axiom temp___String_Literal_427__def_axiom15 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[16])) = 116))
 
-axiom temp___String_Literal_421__def_axiom16 :
-  (forall us_void_param:unit [temp___String_Literal_421(us_void_param)].
-  (to_rep((temp___String_Literal_421(us_void_param)[17])) = 61))
+axiom temp___String_Literal_427__def_axiom16 :
+  (forall us_void_param:unit [temp___String_Literal_427(us_void_param)].
+  (to_rep((temp___String_Literal_427(us_void_param)[17])) = 61))
 
-logic temp___String_Literal_424 : unit -> (int,character) farray
+logic temp___String_Literal_430 : unit -> (int,character) farray
 
-axiom temp___String_Literal_424__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_424(us_void_param)].
-  (to_rep((temp___String_Literal_424(us_void_param)[1])) = 41))
+axiom temp___String_Literal_430__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_430(us_void_param)].
+  (to_rep((temp___String_Literal_430(us_void_param)[1])) = 41))
 
-axiom temp___String_Literal_424__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_424(us_void_param)].
-  (to_rep((temp___String_Literal_424(us_void_param)[2])) = 32))
+axiom temp___String_Literal_430__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_430(us_void_param)].
+  (to_rep((temp___String_Literal_430(us_void_param)[2])) = 32))
 
-axiom temp___String_Literal_424__def_axiom2 :
-  (forall us_void_param:unit [temp___String_Literal_424(us_void_param)].
-  (to_rep((temp___String_Literal_424(us_void_param)[3])) = 61))
+axiom temp___String_Literal_430__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_430(us_void_param)].
+  (to_rep((temp___String_Literal_430(us_void_param)[3])) = 61))
 
-axiom temp___String_Literal_424__def_axiom3 :
-  (forall us_void_param:unit [temp___String_Literal_424(us_void_param)].
-  (to_rep((temp___String_Literal_424(us_void_param)[4])) = 32))
-
-logic temp___String_Literal_429 : unit -> (int,character) farray
-
-axiom temp___String_Literal_429__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_429(us_void_param)].
-  (to_rep((temp___String_Literal_429(us_void_param)[1])) = 32))
-
-logic temp___String_Literal_432 : unit -> (int,character) farray
-
-logic temp___String_Literal_433 : unit -> (int,character) farray
-
-axiom temp___String_Literal_433__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_433(us_void_param)].
-  (to_rep((temp___String_Literal_433(us_void_param)[1])) = 45))
-
-axiom temp___String_Literal_433__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_433(us_void_param)].
-  (to_rep((temp___String_Literal_433(us_void_param)[2])) = 45))
-
-axiom temp___String_Literal_433__def_axiom2 :
-  (forall us_void_param:unit [temp___String_Literal_433(us_void_param)].
-  (to_rep((temp___String_Literal_433(us_void_param)[3])) = 45))
-
-axiom temp___String_Literal_433__def_axiom3 :
-  (forall us_void_param:unit [temp___String_Literal_433(us_void_param)].
-  (to_rep((temp___String_Literal_433(us_void_param)[4])) = 45))
-
-axiom temp___String_Literal_433__def_axiom4 :
-  (forall us_void_param:unit [temp___String_Literal_433(us_void_param)].
-  (to_rep((temp___String_Literal_433(us_void_param)[5])) = 45))
-
-axiom temp___String_Literal_433__def_axiom5 :
-  (forall us_void_param:unit [temp___String_Literal_433(us_void_param)].
-  (to_rep((temp___String_Literal_433(us_void_param)[6])) = 45))
-
-axiom temp___String_Literal_433__def_axiom6 :
-  (forall us_void_param:unit [temp___String_Literal_433(us_void_param)].
-  (to_rep((temp___String_Literal_433(us_void_param)[7])) = 45))
-
-axiom temp___String_Literal_433__def_axiom7 :
-  (forall us_void_param:unit [temp___String_Literal_433(us_void_param)].
-  (to_rep((temp___String_Literal_433(us_void_param)[8])) = 45))
+axiom temp___String_Literal_430__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_430(us_void_param)].
+  (to_rep((temp___String_Literal_430(us_void_param)[4])) = 32))
 
 logic temp___String_Literal_435 : unit -> (int,character) farray
 
 axiom temp___String_Literal_435__def_axiom :
   (forall us_void_param:unit [temp___String_Literal_435(us_void_param)].
-  (to_rep((temp___String_Literal_435(us_void_param)[1])) = 45))
+  (to_rep((temp___String_Literal_435(us_void_param)[1])) = 32))
 
-axiom temp___String_Literal_435__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_435(us_void_param)].
-  (to_rep((temp___String_Literal_435(us_void_param)[2])) = 45))
-
-axiom temp___String_Literal_435__def_axiom2 :
-  (forall us_void_param:unit [temp___String_Literal_435(us_void_param)].
-  (to_rep((temp___String_Literal_435(us_void_param)[3])) = 45))
-
-axiom temp___String_Literal_435__def_axiom3 :
-  (forall us_void_param:unit [temp___String_Literal_435(us_void_param)].
-  (to_rep((temp___String_Literal_435(us_void_param)[4])) = 45))
-
-axiom temp___String_Literal_435__def_axiom4 :
-  (forall us_void_param:unit [temp___String_Literal_435(us_void_param)].
-  (to_rep((temp___String_Literal_435(us_void_param)[5])) = 45))
-
-axiom temp___String_Literal_435__def_axiom5 :
-  (forall us_void_param:unit [temp___String_Literal_435(us_void_param)].
-  (to_rep((temp___String_Literal_435(us_void_param)[6])) = 45))
-
-axiom temp___String_Literal_435__def_axiom6 :
-  (forall us_void_param:unit [temp___String_Literal_435(us_void_param)].
-  (to_rep((temp___String_Literal_435(us_void_param)[7])) = 45))
-
-axiom temp___String_Literal_435__def_axiom7 :
-  (forall us_void_param:unit [temp___String_Literal_435(us_void_param)].
-  (to_rep((temp___String_Literal_435(us_void_param)[8])) = 45))
-
-logic temp___String_Literal_436 : unit -> (int,character) farray
-
-axiom temp___String_Literal_436__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[1])) = 78))
-
-axiom temp___String_Literal_436__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[2])) = 117))
-
-axiom temp___String_Literal_436__def_axiom2 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[3])) = 109))
-
-axiom temp___String_Literal_436__def_axiom3 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[4])) = 98))
-
-axiom temp___String_Literal_436__def_axiom4 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[5])) = 101))
-
-axiom temp___String_Literal_436__def_axiom5 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[6])) = 114))
-
-axiom temp___String_Literal_436__def_axiom6 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[7])) = 32))
-
-axiom temp___String_Literal_436__def_axiom7 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[8])) = 111))
-
-axiom temp___String_Literal_436__def_axiom8 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[9])) = 102))
-
-axiom temp___String_Literal_436__def_axiom9 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[10])) = 32))
-
-axiom temp___String_Literal_436__def_axiom10 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[11])) = 101))
-
-axiom temp___String_Literal_436__def_axiom11 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[12])) = 108))
-
-axiom temp___String_Literal_436__def_axiom12 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[13])) = 116))
-
-axiom temp___String_Literal_436__def_axiom13 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[14])) = 115))
-
-axiom temp___String_Literal_436__def_axiom14 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[15])) = 32))
-
-axiom temp___String_Literal_436__def_axiom15 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[16])) = 61))
-
-axiom temp___String_Literal_436__def_axiom16 :
-  (forall us_void_param:unit [temp___String_Literal_436(us_void_param)].
-  (to_rep((temp___String_Literal_436(us_void_param)[17])) = 32))
+logic temp___String_Literal_438 : unit -> (int,character) farray
 
 logic temp___String_Literal_439 : unit -> (int,character) farray
 
 axiom temp___String_Literal_439__def_axiom :
   (forall us_void_param:unit [temp___String_Literal_439(us_void_param)].
-  (to_rep((temp___String_Literal_439(us_void_param)[1])) = 67))
+  (to_rep((temp___String_Literal_439(us_void_param)[1])) = 45))
 
 axiom temp___String_Literal_439__def_axiom1 :
   (forall us_void_param:unit [temp___String_Literal_439(us_void_param)].
-  (to_rep((temp___String_Literal_439(us_void_param)[2])) = 97))
+  (to_rep((temp___String_Literal_439(us_void_param)[2])) = 45))
 
 axiom temp___String_Literal_439__def_axiom2 :
   (forall us_void_param:unit [temp___String_Literal_439(us_void_param)].
-  (to_rep((temp___String_Literal_439(us_void_param)[3])) = 114))
+  (to_rep((temp___String_Literal_439(us_void_param)[3])) = 45))
 
 axiom temp___String_Literal_439__def_axiom3 :
   (forall us_void_param:unit [temp___String_Literal_439(us_void_param)].
-  (to_rep((temp___String_Literal_439(us_void_param)[4])) = 100))
+  (to_rep((temp___String_Literal_439(us_void_param)[4])) = 45))
 
 axiom temp___String_Literal_439__def_axiom4 :
   (forall us_void_param:unit [temp___String_Literal_439(us_void_param)].
-  (to_rep((temp___String_Literal_439(us_void_param)[5])) = 32))
+  (to_rep((temp___String_Literal_439(us_void_param)[5])) = 45))
 
 axiom temp___String_Literal_439__def_axiom5 :
   (forall us_void_param:unit [temp___String_Literal_439(us_void_param)].
-  (to_rep((temp___String_Literal_439(us_void_param)[6])) = 118))
+  (to_rep((temp___String_Literal_439(us_void_param)[6])) = 45))
 
 axiom temp___String_Literal_439__def_axiom6 :
   (forall us_void_param:unit [temp___String_Literal_439(us_void_param)].
-  (to_rep((temp___String_Literal_439(us_void_param)[7])) = 97))
+  (to_rep((temp___String_Literal_439(us_void_param)[7])) = 45))
 
 axiom temp___String_Literal_439__def_axiom7 :
   (forall us_void_param:unit [temp___String_Literal_439(us_void_param)].
-  (to_rep((temp___String_Literal_439(us_void_param)[8])) = 108))
+  (to_rep((temp___String_Literal_439(us_void_param)[8])) = 45))
 
-axiom temp___String_Literal_439__def_axiom8 :
-  (forall us_void_param:unit [temp___String_Literal_439(us_void_param)].
-  (to_rep((temp___String_Literal_439(us_void_param)[9])) = 117))
+logic temp___String_Literal_441 : unit -> (int,character) farray
 
-axiom temp___String_Literal_439__def_axiom9 :
-  (forall us_void_param:unit [temp___String_Literal_439(us_void_param)].
-  (to_rep((temp___String_Literal_439(us_void_param)[10])) = 101))
+axiom temp___String_Literal_441__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_441(us_void_param)].
+  (to_rep((temp___String_Literal_441(us_void_param)[1])) = 45))
 
-axiom temp___String_Literal_439__def_axiom10 :
-  (forall us_void_param:unit [temp___String_Literal_439(us_void_param)].
-  (to_rep((temp___String_Literal_439(us_void_param)[11])) = 115))
+axiom temp___String_Literal_441__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_441(us_void_param)].
+  (to_rep((temp___String_Literal_441(us_void_param)[2])) = 45))
 
-axiom temp___String_Literal_439__def_axiom11 :
-  (forall us_void_param:unit [temp___String_Literal_439(us_void_param)].
-  (to_rep((temp___String_Literal_439(us_void_param)[12])) = 32))
+axiom temp___String_Literal_441__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_441(us_void_param)].
+  (to_rep((temp___String_Literal_441(us_void_param)[3])) = 45))
 
-axiom temp___String_Literal_439__def_axiom12 :
-  (forall us_void_param:unit [temp___String_Literal_439(us_void_param)].
-  (to_rep((temp___String_Literal_439(us_void_param)[13])) = 61))
+axiom temp___String_Literal_441__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_441(us_void_param)].
+  (to_rep((temp___String_Literal_441(us_void_param)[4])) = 45))
+
+axiom temp___String_Literal_441__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_441(us_void_param)].
+  (to_rep((temp___String_Literal_441(us_void_param)[5])) = 45))
+
+axiom temp___String_Literal_441__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_441(us_void_param)].
+  (to_rep((temp___String_Literal_441(us_void_param)[6])) = 45))
+
+axiom temp___String_Literal_441__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_441(us_void_param)].
+  (to_rep((temp___String_Literal_441(us_void_param)[7])) = 45))
+
+axiom temp___String_Literal_441__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_441(us_void_param)].
+  (to_rep((temp___String_Literal_441(us_void_param)[8])) = 45))
 
 logic temp___String_Literal_442 : unit -> (int,character) farray
 
 axiom temp___String_Literal_442__def_axiom :
   (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
-  (to_rep((temp___String_Literal_442(us_void_param)[1])) = 32))
+  (to_rep((temp___String_Literal_442(us_void_param)[1])) = 78))
 
-logic temp___String_Literal_446 : unit -> (int,character) farray
+axiom temp___String_Literal_442__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[2])) = 117))
 
-logic temp___String_Literal_447 : unit -> (int,character) farray
+axiom temp___String_Literal_442__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[3])) = 109))
 
-axiom temp___String_Literal_447__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[1])) = 78))
+axiom temp___String_Literal_442__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[4])) = 98))
 
-axiom temp___String_Literal_447__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[2])) = 117))
+axiom temp___String_Literal_442__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[5])) = 101))
 
-axiom temp___String_Literal_447__def_axiom2 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[3])) = 109))
+axiom temp___String_Literal_442__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[6])) = 114))
 
-axiom temp___String_Literal_447__def_axiom3 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[4])) = 98))
+axiom temp___String_Literal_442__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[7])) = 32))
 
-axiom temp___String_Literal_447__def_axiom4 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[5])) = 101))
+axiom temp___String_Literal_442__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[8])) = 111))
 
-axiom temp___String_Literal_447__def_axiom5 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[6])) = 114))
+axiom temp___String_Literal_442__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[9])) = 102))
 
-axiom temp___String_Literal_447__def_axiom6 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[7])) = 32))
+axiom temp___String_Literal_442__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[10])) = 32))
 
-axiom temp___String_Literal_447__def_axiom7 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[8])) = 111))
+axiom temp___String_Literal_442__def_axiom10 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[11])) = 101))
 
-axiom temp___String_Literal_447__def_axiom8 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[9])) = 102))
+axiom temp___String_Literal_442__def_axiom11 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[12])) = 108))
 
-axiom temp___String_Literal_447__def_axiom9 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[10])) = 32))
+axiom temp___String_Literal_442__def_axiom12 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[13])) = 116))
 
-axiom temp___String_Literal_447__def_axiom10 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[11])) = 115))
+axiom temp___String_Literal_442__def_axiom13 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[14])) = 115))
 
-axiom temp___String_Literal_447__def_axiom11 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[12])) = 116))
+axiom temp___String_Literal_442__def_axiom14 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[15])) = 32))
 
-axiom temp___String_Literal_447__def_axiom12 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[13])) = 97))
+axiom temp___String_Literal_442__def_axiom15 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[16])) = 61))
 
-axiom temp___String_Literal_447__def_axiom13 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[14])) = 99))
+axiom temp___String_Literal_442__def_axiom16 :
+  (forall us_void_param:unit [temp___String_Literal_442(us_void_param)].
+  (to_rep((temp___String_Literal_442(us_void_param)[17])) = 32))
 
-axiom temp___String_Literal_447__def_axiom14 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[15])) = 107))
+logic temp___String_Literal_445 : unit -> (int,character) farray
 
-axiom temp___String_Literal_447__def_axiom15 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[16])) = 115))
+axiom temp___String_Literal_445__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_445(us_void_param)].
+  (to_rep((temp___String_Literal_445(us_void_param)[1])) = 67))
 
-axiom temp___String_Literal_447__def_axiom16 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[17])) = 32))
+axiom temp___String_Literal_445__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_445(us_void_param)].
+  (to_rep((temp___String_Literal_445(us_void_param)[2])) = 97))
 
-axiom temp___String_Literal_447__def_axiom17 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[18])) = 61))
+axiom temp___String_Literal_445__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_445(us_void_param)].
+  (to_rep((temp___String_Literal_445(us_void_param)[3])) = 114))
 
-axiom temp___String_Literal_447__def_axiom18 :
-  (forall us_void_param:unit [temp___String_Literal_447(us_void_param)].
-  (to_rep((temp___String_Literal_447(us_void_param)[19])) = 32))
+axiom temp___String_Literal_445__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_445(us_void_param)].
+  (to_rep((temp___String_Literal_445(us_void_param)[4])) = 100))
+
+axiom temp___String_Literal_445__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_445(us_void_param)].
+  (to_rep((temp___String_Literal_445(us_void_param)[5])) = 32))
+
+axiom temp___String_Literal_445__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_445(us_void_param)].
+  (to_rep((temp___String_Literal_445(us_void_param)[6])) = 118))
+
+axiom temp___String_Literal_445__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_445(us_void_param)].
+  (to_rep((temp___String_Literal_445(us_void_param)[7])) = 97))
+
+axiom temp___String_Literal_445__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_445(us_void_param)].
+  (to_rep((temp___String_Literal_445(us_void_param)[8])) = 108))
+
+axiom temp___String_Literal_445__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_445(us_void_param)].
+  (to_rep((temp___String_Literal_445(us_void_param)[9])) = 117))
+
+axiom temp___String_Literal_445__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_445(us_void_param)].
+  (to_rep((temp___String_Literal_445(us_void_param)[10])) = 101))
+
+axiom temp___String_Literal_445__def_axiom10 :
+  (forall us_void_param:unit [temp___String_Literal_445(us_void_param)].
+  (to_rep((temp___String_Literal_445(us_void_param)[11])) = 115))
+
+axiom temp___String_Literal_445__def_axiom11 :
+  (forall us_void_param:unit [temp___String_Literal_445(us_void_param)].
+  (to_rep((temp___String_Literal_445(us_void_param)[12])) = 32))
+
+axiom temp___String_Literal_445__def_axiom12 :
+  (forall us_void_param:unit [temp___String_Literal_445(us_void_param)].
+  (to_rep((temp___String_Literal_445(us_void_param)[13])) = 61))
+
+logic temp___String_Literal_448 : unit -> (int,character) farray
+
+axiom temp___String_Literal_448__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_448(us_void_param)].
+  (to_rep((temp___String_Literal_448(us_void_param)[1])) = 32))
+
+logic temp___String_Literal_452 : unit -> (int,character) farray
 
 logic temp___String_Literal_453 : unit -> (int,character) farray
 
 axiom temp___String_Literal_453__def_axiom :
   (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
-  (to_rep((temp___String_Literal_453(us_void_param)[1])) = 83))
+  (to_rep((temp___String_Literal_453(us_void_param)[1])) = 78))
 
 axiom temp___String_Literal_453__def_axiom1 :
   (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
-  (to_rep((temp___String_Literal_453(us_void_param)[2])) = 116))
+  (to_rep((temp___String_Literal_453(us_void_param)[2])) = 117))
 
 axiom temp___String_Literal_453__def_axiom2 :
   (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
-  (to_rep((temp___String_Literal_453(us_void_param)[3])) = 97))
+  (to_rep((temp___String_Literal_453(us_void_param)[3])) = 109))
 
 axiom temp___String_Literal_453__def_axiom3 :
   (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
-  (to_rep((temp___String_Literal_453(us_void_param)[4])) = 99))
+  (to_rep((temp___String_Literal_453(us_void_param)[4])) = 98))
 
 axiom temp___String_Literal_453__def_axiom4 :
   (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
-  (to_rep((temp___String_Literal_453(us_void_param)[5])) = 107))
+  (to_rep((temp___String_Literal_453(us_void_param)[5])) = 101))
 
 axiom temp___String_Literal_453__def_axiom5 :
   (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
-  (to_rep((temp___String_Literal_453(us_void_param)[6])) = 32))
+  (to_rep((temp___String_Literal_453(us_void_param)[6])) = 114))
 
-logic temp___String_Literal_456 : unit -> (int,character) farray
+axiom temp___String_Literal_453__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
+  (to_rep((temp___String_Literal_453(us_void_param)[7])) = 32))
 
-axiom temp___String_Literal_456__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_456(us_void_param)].
-  (to_rep((temp___String_Literal_456(us_void_param)[1])) = 32))
+axiom temp___String_Literal_453__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
+  (to_rep((temp___String_Literal_453(us_void_param)[8])) = 111))
 
-axiom temp___String_Literal_456__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_456(us_void_param)].
-  (to_rep((temp___String_Literal_456(us_void_param)[2])) = 104))
+axiom temp___String_Literal_453__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
+  (to_rep((temp___String_Literal_453(us_void_param)[9])) = 102))
 
-axiom temp___String_Literal_456__def_axiom2 :
-  (forall us_void_param:unit [temp___String_Literal_456(us_void_param)].
-  (to_rep((temp___String_Literal_456(us_void_param)[3])) = 97))
+axiom temp___String_Literal_453__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
+  (to_rep((temp___String_Literal_453(us_void_param)[10])) = 32))
 
-axiom temp___String_Literal_456__def_axiom3 :
-  (forall us_void_param:unit [temp___String_Literal_456(us_void_param)].
-  (to_rep((temp___String_Literal_456(us_void_param)[4])) = 115))
+axiom temp___String_Literal_453__def_axiom10 :
+  (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
+  (to_rep((temp___String_Literal_453(us_void_param)[11])) = 115))
 
-axiom temp___String_Literal_456__def_axiom4 :
-  (forall us_void_param:unit [temp___String_Literal_456(us_void_param)].
-  (to_rep((temp___String_Literal_456(us_void_param)[5])) = 32))
+axiom temp___String_Literal_453__def_axiom11 :
+  (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
+  (to_rep((temp___String_Literal_453(us_void_param)[12])) = 116))
 
-axiom temp___String_Literal_456__def_axiom5 :
-  (forall us_void_param:unit [temp___String_Literal_456(us_void_param)].
-  (to_rep((temp___String_Literal_456(us_void_param)[6])) = 115))
+axiom temp___String_Literal_453__def_axiom12 :
+  (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
+  (to_rep((temp___String_Literal_453(us_void_param)[13])) = 97))
 
-axiom temp___String_Literal_456__def_axiom6 :
-  (forall us_void_param:unit [temp___String_Literal_456(us_void_param)].
-  (to_rep((temp___String_Literal_456(us_void_param)[7])) = 105))
+axiom temp___String_Literal_453__def_axiom13 :
+  (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
+  (to_rep((temp___String_Literal_453(us_void_param)[14])) = 99))
 
-axiom temp___String_Literal_456__def_axiom7 :
-  (forall us_void_param:unit [temp___String_Literal_456(us_void_param)].
-  (to_rep((temp___String_Literal_456(us_void_param)[8])) = 122))
+axiom temp___String_Literal_453__def_axiom14 :
+  (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
+  (to_rep((temp___String_Literal_453(us_void_param)[15])) = 107))
 
-axiom temp___String_Literal_456__def_axiom8 :
-  (forall us_void_param:unit [temp___String_Literal_456(us_void_param)].
-  (to_rep((temp___String_Literal_456(us_void_param)[9])) = 101))
+axiom temp___String_Literal_453__def_axiom15 :
+  (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
+  (to_rep((temp___String_Literal_453(us_void_param)[16])) = 115))
 
-axiom temp___String_Literal_456__def_axiom9 :
-  (forall us_void_param:unit [temp___String_Literal_456(us_void_param)].
-  (to_rep((temp___String_Literal_456(us_void_param)[10])) = 32))
+axiom temp___String_Literal_453__def_axiom16 :
+  (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
+  (to_rep((temp___String_Literal_453(us_void_param)[17])) = 32))
+
+axiom temp___String_Literal_453__def_axiom17 :
+  (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
+  (to_rep((temp___String_Literal_453(us_void_param)[18])) = 61))
+
+axiom temp___String_Literal_453__def_axiom18 :
+  (forall us_void_param:unit [temp___String_Literal_453(us_void_param)].
+  (to_rep((temp___String_Literal_453(us_void_param)[19])) = 32))
+
+logic temp___String_Literal_459 : unit -> (int,character) farray
+
+axiom temp___String_Literal_459__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_459(us_void_param)].
+  (to_rep((temp___String_Literal_459(us_void_param)[1])) = 83))
+
+axiom temp___String_Literal_459__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_459(us_void_param)].
+  (to_rep((temp___String_Literal_459(us_void_param)[2])) = 116))
+
+axiom temp___String_Literal_459__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_459(us_void_param)].
+  (to_rep((temp___String_Literal_459(us_void_param)[3])) = 97))
+
+axiom temp___String_Literal_459__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_459(us_void_param)].
+  (to_rep((temp___String_Literal_459(us_void_param)[4])) = 99))
+
+axiom temp___String_Literal_459__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_459(us_void_param)].
+  (to_rep((temp___String_Literal_459(us_void_param)[5])) = 107))
+
+axiom temp___String_Literal_459__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_459(us_void_param)].
+  (to_rep((temp___String_Literal_459(us_void_param)[6])) = 32))
 
 logic temp___String_Literal_462 : unit -> (int,character) farray
 
@@ -1734,63 +1692,105 @@ axiom temp___String_Literal_462__def_axiom :
 
 axiom temp___String_Literal_462__def_axiom1 :
   (forall us_void_param:unit [temp___String_Literal_462(us_void_param)].
-  (to_rep((temp___String_Literal_462(us_void_param)[2])) = 58))
+  (to_rep((temp___String_Literal_462(us_void_param)[2])) = 104))
 
-logic temp___String_Literal_469 : unit -> (int,character) farray
+axiom temp___String_Literal_462__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_462(us_void_param)].
+  (to_rep((temp___String_Literal_462(us_void_param)[3])) = 97))
 
-axiom temp___String_Literal_469__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_469(us_void_param)].
-  (to_rep((temp___String_Literal_469(us_void_param)[1])) = 32))
+axiom temp___String_Literal_462__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_462(us_void_param)].
+  (to_rep((temp___String_Literal_462(us_void_param)[4])) = 115))
 
-logic temp___String_Literal_472 : unit -> (int,character) farray
+axiom temp___String_Literal_462__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_462(us_void_param)].
+  (to_rep((temp___String_Literal_462(us_void_param)[5])) = 32))
 
-axiom temp___String_Literal_472__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_472(us_void_param)].
-  (to_rep((temp___String_Literal_472(us_void_param)[1])) = 32))
+axiom temp___String_Literal_462__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_462(us_void_param)].
+  (to_rep((temp___String_Literal_462(us_void_param)[6])) = 115))
 
-axiom temp___String_Literal_472__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_472(us_void_param)].
-  (to_rep((temp___String_Literal_472(us_void_param)[2])) = 61))
+axiom temp___String_Literal_462__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_462(us_void_param)].
+  (to_rep((temp___String_Literal_462(us_void_param)[7])) = 105))
 
-axiom temp___String_Literal_472__def_axiom2 :
-  (forall us_void_param:unit [temp___String_Literal_472(us_void_param)].
-  (to_rep((temp___String_Literal_472(us_void_param)[3])) = 62))
+axiom temp___String_Literal_462__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_462(us_void_param)].
+  (to_rep((temp___String_Literal_462(us_void_param)[8])) = 122))
 
-logic temp___String_Literal_481 : unit -> (int,character) farray
+axiom temp___String_Literal_462__def_axiom8 :
+  (forall us_void_param:unit [temp___String_Literal_462(us_void_param)].
+  (to_rep((temp___String_Literal_462(us_void_param)[9])) = 101))
 
-logic temp___String_Literal_482 : unit -> (int,character) farray
+axiom temp___String_Literal_462__def_axiom9 :
+  (forall us_void_param:unit [temp___String_Literal_462(us_void_param)].
+  (to_rep((temp___String_Literal_462(us_void_param)[10])) = 32))
 
-axiom temp___String_Literal_482__def_axiom :
-  (forall us_void_param:unit [temp___String_Literal_482(us_void_param)].
-  (to_rep((temp___String_Literal_482(us_void_param)[1])) = 45))
+logic temp___String_Literal_468 : unit -> (int,character) farray
 
-axiom temp___String_Literal_482__def_axiom1 :
-  (forall us_void_param:unit [temp___String_Literal_482(us_void_param)].
-  (to_rep((temp___String_Literal_482(us_void_param)[2])) = 45))
+axiom temp___String_Literal_468__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_468(us_void_param)].
+  (to_rep((temp___String_Literal_468(us_void_param)[1])) = 32))
 
-axiom temp___String_Literal_482__def_axiom2 :
-  (forall us_void_param:unit [temp___String_Literal_482(us_void_param)].
-  (to_rep((temp___String_Literal_482(us_void_param)[3])) = 45))
+axiom temp___String_Literal_468__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_468(us_void_param)].
+  (to_rep((temp___String_Literal_468(us_void_param)[2])) = 58))
 
-axiom temp___String_Literal_482__def_axiom3 :
-  (forall us_void_param:unit [temp___String_Literal_482(us_void_param)].
-  (to_rep((temp___String_Literal_482(us_void_param)[4])) = 45))
+logic temp___String_Literal_475 : unit -> (int,character) farray
 
-axiom temp___String_Literal_482__def_axiom4 :
-  (forall us_void_param:unit [temp___String_Literal_482(us_void_param)].
-  (to_rep((temp___String_Literal_482(us_void_param)[5])) = 45))
+axiom temp___String_Literal_475__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_475(us_void_param)].
+  (to_rep((temp___String_Literal_475(us_void_param)[1])) = 32))
 
-axiom temp___String_Literal_482__def_axiom5 :
-  (forall us_void_param:unit [temp___String_Literal_482(us_void_param)].
-  (to_rep((temp___String_Literal_482(us_void_param)[6])) = 45))
+logic temp___String_Literal_478 : unit -> (int,character) farray
 
-axiom temp___String_Literal_482__def_axiom6 :
-  (forall us_void_param:unit [temp___String_Literal_482(us_void_param)].
-  (to_rep((temp___String_Literal_482(us_void_param)[7])) = 45))
+axiom temp___String_Literal_478__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_478(us_void_param)].
+  (to_rep((temp___String_Literal_478(us_void_param)[1])) = 32))
 
-axiom temp___String_Literal_482__def_axiom7 :
-  (forall us_void_param:unit [temp___String_Literal_482(us_void_param)].
-  (to_rep((temp___String_Literal_482(us_void_param)[8])) = 45))
+axiom temp___String_Literal_478__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_478(us_void_param)].
+  (to_rep((temp___String_Literal_478(us_void_param)[2])) = 61))
+
+axiom temp___String_Literal_478__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_478(us_void_param)].
+  (to_rep((temp___String_Literal_478(us_void_param)[3])) = 62))
+
+logic temp___String_Literal_487 : unit -> (int,character) farray
+
+logic temp___String_Literal_488 : unit -> (int,character) farray
+
+axiom temp___String_Literal_488__def_axiom :
+  (forall us_void_param:unit [temp___String_Literal_488(us_void_param)].
+  (to_rep((temp___String_Literal_488(us_void_param)[1])) = 45))
+
+axiom temp___String_Literal_488__def_axiom1 :
+  (forall us_void_param:unit [temp___String_Literal_488(us_void_param)].
+  (to_rep((temp___String_Literal_488(us_void_param)[2])) = 45))
+
+axiom temp___String_Literal_488__def_axiom2 :
+  (forall us_void_param:unit [temp___String_Literal_488(us_void_param)].
+  (to_rep((temp___String_Literal_488(us_void_param)[3])) = 45))
+
+axiom temp___String_Literal_488__def_axiom3 :
+  (forall us_void_param:unit [temp___String_Literal_488(us_void_param)].
+  (to_rep((temp___String_Literal_488(us_void_param)[4])) = 45))
+
+axiom temp___String_Literal_488__def_axiom4 :
+  (forall us_void_param:unit [temp___String_Literal_488(us_void_param)].
+  (to_rep((temp___String_Literal_488(us_void_param)[5])) = 45))
+
+axiom temp___String_Literal_488__def_axiom5 :
+  (forall us_void_param:unit [temp___String_Literal_488(us_void_param)].
+  (to_rep((temp___String_Literal_488(us_void_param)[6])) = 45))
+
+axiom temp___String_Literal_488__def_axiom6 :
+  (forall us_void_param:unit [temp___String_Literal_488(us_void_param)].
+  (to_rep((temp___String_Literal_488(us_void_param)[7])) = 45))
+
+axiom temp___String_Literal_488__def_axiom7 :
+  (forall us_void_param:unit [temp___String_Literal_488(us_void_param)].
+  (to_rep((temp___String_Literal_488(us_void_param)[8])) = 45))
 
 predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
@@ -1839,95 +1839,95 @@ logic rliteral4 : card
 axiom rliteral_axiom4 : (cardqtint(rliteral4) = 4)
 
 axiom def_axiom :
-  (forall temp___408:int. forall temp___409:int. forall temp___410:int.
-  forall temp___411:int. forall temp___412:int. forall temp___413:int.
-  forall temp___414:int. (((dynamic_invariant5(temp___408, true, true, true,
-  true) and dynamic_invariant5(temp___409, true, true, true, true)) and
-  (((dynamic_invariant5(temp___410, true, true, true, true) and
-  dynamic_invariant5(temp___411, true, true, true, true)) and
-  dynamic_invariant5(temp___412, true, true, true, true)) and
-  (dynamic_invariant5(temp___413, true, true, true, true) and
-  dynamic_invariant5(temp___414, true, true, true, true)))) ->
-  ((test_patience__input__aggregate_def(temp___408, temp___409, temp___410,
-  temp___411, temp___412, temp___413, temp___414)[1]) = rliteral)))
+  (forall temp___414:int. forall temp___415:int. forall temp___416:int.
+  forall temp___417:int. forall temp___418:int. forall temp___419:int.
+  forall temp___420:int. (((dynamic_invariant5(temp___414, true, true, true,
+  true) and dynamic_invariant5(temp___415, true, true, true, true)) and
+  (((dynamic_invariant5(temp___416, true, true, true, true) and
+  dynamic_invariant5(temp___417, true, true, true, true)) and
+  dynamic_invariant5(temp___418, true, true, true, true)) and
+  (dynamic_invariant5(temp___419, true, true, true, true) and
+  dynamic_invariant5(temp___420, true, true, true, true)))) ->
+  ((test_patience__input__aggregate_def(temp___414, temp___415, temp___416,
+  temp___417, temp___418, temp___419, temp___420)[1]) = rliteral)))
 
 axiom def_axiom1 :
-  (forall temp___408:int. forall temp___409:int. forall temp___410:int.
-  forall temp___411:int. forall temp___412:int. forall temp___413:int.
-  forall temp___414:int. (((dynamic_invariant5(temp___408, true, true, true,
-  true) and dynamic_invariant5(temp___409, true, true, true, true)) and
-  (((dynamic_invariant5(temp___410, true, true, true, true) and
-  dynamic_invariant5(temp___411, true, true, true, true)) and
-  dynamic_invariant5(temp___412, true, true, true, true)) and
-  (dynamic_invariant5(temp___413, true, true, true, true) and
-  dynamic_invariant5(temp___414, true, true, true, true)))) ->
-  ((test_patience__input__aggregate_def(temp___408, temp___409, temp___410,
-  temp___411, temp___412, temp___413, temp___414)[2]) = rliteral1)))
+  (forall temp___414:int. forall temp___415:int. forall temp___416:int.
+  forall temp___417:int. forall temp___418:int. forall temp___419:int.
+  forall temp___420:int. (((dynamic_invariant5(temp___414, true, true, true,
+  true) and dynamic_invariant5(temp___415, true, true, true, true)) and
+  (((dynamic_invariant5(temp___416, true, true, true, true) and
+  dynamic_invariant5(temp___417, true, true, true, true)) and
+  dynamic_invariant5(temp___418, true, true, true, true)) and
+  (dynamic_invariant5(temp___419, true, true, true, true) and
+  dynamic_invariant5(temp___420, true, true, true, true)))) ->
+  ((test_patience__input__aggregate_def(temp___414, temp___415, temp___416,
+  temp___417, temp___418, temp___419, temp___420)[2]) = rliteral1)))
 
 axiom def_axiom2 :
-  (forall temp___408:int. forall temp___409:int. forall temp___410:int.
-  forall temp___411:int. forall temp___412:int. forall temp___413:int.
-  forall temp___414:int. (((dynamic_invariant5(temp___408, true, true, true,
-  true) and dynamic_invariant5(temp___409, true, true, true, true)) and
-  (((dynamic_invariant5(temp___410, true, true, true, true) and
-  dynamic_invariant5(temp___411, true, true, true, true)) and
-  dynamic_invariant5(temp___412, true, true, true, true)) and
-  (dynamic_invariant5(temp___413, true, true, true, true) and
-  dynamic_invariant5(temp___414, true, true, true, true)))) ->
-  ((test_patience__input__aggregate_def(temp___408, temp___409, temp___410,
-  temp___411, temp___412, temp___413, temp___414)[3]) = rliteral2)))
+  (forall temp___414:int. forall temp___415:int. forall temp___416:int.
+  forall temp___417:int. forall temp___418:int. forall temp___419:int.
+  forall temp___420:int. (((dynamic_invariant5(temp___414, true, true, true,
+  true) and dynamic_invariant5(temp___415, true, true, true, true)) and
+  (((dynamic_invariant5(temp___416, true, true, true, true) and
+  dynamic_invariant5(temp___417, true, true, true, true)) and
+  dynamic_invariant5(temp___418, true, true, true, true)) and
+  (dynamic_invariant5(temp___419, true, true, true, true) and
+  dynamic_invariant5(temp___420, true, true, true, true)))) ->
+  ((test_patience__input__aggregate_def(temp___414, temp___415, temp___416,
+  temp___417, temp___418, temp___419, temp___420)[3]) = rliteral2)))
 
 axiom def_axiom3 :
-  (forall temp___408:int. forall temp___409:int. forall temp___410:int.
-  forall temp___411:int. forall temp___412:int. forall temp___413:int.
-  forall temp___414:int. (((dynamic_invariant5(temp___408, true, true, true,
-  true) and dynamic_invariant5(temp___409, true, true, true, true)) and
-  (((dynamic_invariant5(temp___410, true, true, true, true) and
-  dynamic_invariant5(temp___411, true, true, true, true)) and
-  dynamic_invariant5(temp___412, true, true, true, true)) and
-  (dynamic_invariant5(temp___413, true, true, true, true) and
-  dynamic_invariant5(temp___414, true, true, true, true)))) ->
-  ((test_patience__input__aggregate_def(temp___408, temp___409, temp___410,
-  temp___411, temp___412, temp___413, temp___414)[4]) = rliteral)))
+  (forall temp___414:int. forall temp___415:int. forall temp___416:int.
+  forall temp___417:int. forall temp___418:int. forall temp___419:int.
+  forall temp___420:int. (((dynamic_invariant5(temp___414, true, true, true,
+  true) and dynamic_invariant5(temp___415, true, true, true, true)) and
+  (((dynamic_invariant5(temp___416, true, true, true, true) and
+  dynamic_invariant5(temp___417, true, true, true, true)) and
+  dynamic_invariant5(temp___418, true, true, true, true)) and
+  (dynamic_invariant5(temp___419, true, true, true, true) and
+  dynamic_invariant5(temp___420, true, true, true, true)))) ->
+  ((test_patience__input__aggregate_def(temp___414, temp___415, temp___416,
+  temp___417, temp___418, temp___419, temp___420)[4]) = rliteral)))
 
 axiom def_axiom4 :
-  (forall temp___408:int. forall temp___409:int. forall temp___410:int.
-  forall temp___411:int. forall temp___412:int. forall temp___413:int.
-  forall temp___414:int. (((dynamic_invariant5(temp___408, true, true, true,
-  true) and dynamic_invariant5(temp___409, true, true, true, true)) and
-  (((dynamic_invariant5(temp___410, true, true, true, true) and
-  dynamic_invariant5(temp___411, true, true, true, true)) and
-  dynamic_invariant5(temp___412, true, true, true, true)) and
-  (dynamic_invariant5(temp___413, true, true, true, true) and
-  dynamic_invariant5(temp___414, true, true, true, true)))) ->
-  ((test_patience__input__aggregate_def(temp___408, temp___409, temp___410,
-  temp___411, temp___412, temp___413, temp___414)[5]) = rliteral3)))
+  (forall temp___414:int. forall temp___415:int. forall temp___416:int.
+  forall temp___417:int. forall temp___418:int. forall temp___419:int.
+  forall temp___420:int. (((dynamic_invariant5(temp___414, true, true, true,
+  true) and dynamic_invariant5(temp___415, true, true, true, true)) and
+  (((dynamic_invariant5(temp___416, true, true, true, true) and
+  dynamic_invariant5(temp___417, true, true, true, true)) and
+  dynamic_invariant5(temp___418, true, true, true, true)) and
+  (dynamic_invariant5(temp___419, true, true, true, true) and
+  dynamic_invariant5(temp___420, true, true, true, true)))) ->
+  ((test_patience__input__aggregate_def(temp___414, temp___415, temp___416,
+  temp___417, temp___418, temp___419, temp___420)[5]) = rliteral3)))
 
 axiom def_axiom5 :
-  (forall temp___408:int. forall temp___409:int. forall temp___410:int.
-  forall temp___411:int. forall temp___412:int. forall temp___413:int.
-  forall temp___414:int. (((dynamic_invariant5(temp___408, true, true, true,
-  true) and dynamic_invariant5(temp___409, true, true, true, true)) and
-  (((dynamic_invariant5(temp___410, true, true, true, true) and
-  dynamic_invariant5(temp___411, true, true, true, true)) and
-  dynamic_invariant5(temp___412, true, true, true, true)) and
-  (dynamic_invariant5(temp___413, true, true, true, true) and
-  dynamic_invariant5(temp___414, true, true, true, true)))) ->
-  ((test_patience__input__aggregate_def(temp___408, temp___409, temp___410,
-  temp___411, temp___412, temp___413, temp___414)[6]) = rliteral4)))
+  (forall temp___414:int. forall temp___415:int. forall temp___416:int.
+  forall temp___417:int. forall temp___418:int. forall temp___419:int.
+  forall temp___420:int. (((dynamic_invariant5(temp___414, true, true, true,
+  true) and dynamic_invariant5(temp___415, true, true, true, true)) and
+  (((dynamic_invariant5(temp___416, true, true, true, true) and
+  dynamic_invariant5(temp___417, true, true, true, true)) and
+  dynamic_invariant5(temp___418, true, true, true, true)) and
+  (dynamic_invariant5(temp___419, true, true, true, true) and
+  dynamic_invariant5(temp___420, true, true, true, true)))) ->
+  ((test_patience__input__aggregate_def(temp___414, temp___415, temp___416,
+  temp___417, temp___418, temp___419, temp___420)[6]) = rliteral4)))
 
 axiom def_axiom6 :
-  (forall temp___408:int. forall temp___409:int. forall temp___410:int.
-  forall temp___411:int. forall temp___412:int. forall temp___413:int.
-  forall temp___414:int. (((dynamic_invariant5(temp___408, true, true, true,
-  true) and dynamic_invariant5(temp___409, true, true, true, true)) and
-  (((dynamic_invariant5(temp___410, true, true, true, true) and
-  dynamic_invariant5(temp___411, true, true, true, true)) and
-  dynamic_invariant5(temp___412, true, true, true, true)) and
-  (dynamic_invariant5(temp___413, true, true, true, true) and
-  dynamic_invariant5(temp___414, true, true, true, true)))) ->
-  ((test_patience__input__aggregate_def(temp___408, temp___409, temp___410,
-  temp___411, temp___412, temp___413, temp___414)[7]) = rliteral2)))
+  (forall temp___414:int. forall temp___415:int. forall temp___416:int.
+  forall temp___417:int. forall temp___418:int. forall temp___419:int.
+  forall temp___420:int. (((dynamic_invariant5(temp___414, true, true, true,
+  true) and dynamic_invariant5(temp___415, true, true, true, true)) and
+  (((dynamic_invariant5(temp___416, true, true, true, true) and
+  dynamic_invariant5(temp___417, true, true, true, true)) and
+  dynamic_invariant5(temp___418, true, true, true, true)) and
+  (dynamic_invariant5(temp___419, true, true, true, true) and
+  dynamic_invariant5(temp___420, true, true, true, true)))) ->
+  ((test_patience__input__aggregate_def(temp___414, temp___415, temp___416,
+  temp___417, temp___418, temp___419, temp___420)[7]) = rliteral2)))
 
 type count
 
@@ -2178,10 +2178,14 @@ axiom inv__def_axiom24 :
   (to_rep3(((((s).us_split_fields1).rec__patience__state__stacks[i])[j])) <  to_rep3(((s).us_split_fields1).rec__patience__state__numelts))))))))) and
   (forall i:int. (((0 <= i) and
   (i <= (to_rep3(((s).us_split_fields1).rec__patience__state__numelts) - 1))) ->
-  ((((0 <= to_rep3((((s).us_split_fields1).rec__patience__state__posstack[i]))) and
-  (to_rep3((((s).us_split_fields1).rec__patience__state__posstack[i])) <= (to_rep3(((s).us_split_fields1).rec__patience__state__numstacks) - 1))) and
-  ((0 <= to_rep3((((s).us_split_fields1).rec__patience__state__posheight[i]))) and
-  (to_rep3((((s).us_split_fields1).rec__patience__state__posheight[i])) <= (to_rep3((((s).us_split_fields1).rec__patience__state__stacksizes[to_rep3((((s).us_split_fields1).rec__patience__state__posstack[i]))])) - 1)))) and
+  (((let temp___362 =
+  to_rep3((((s).us_split_fields1).rec__patience__state__posstack[i]))
+  : int in ((0 <= temp___362) and
+  (temp___362 <= (to_rep3(((s).us_split_fields1).rec__patience__state__numstacks) - 1)))) and
+  (let temp___364 =
+  to_rep3((((s).us_split_fields1).rec__patience__state__posheight[i]))
+  : int in ((0 <= temp___364) and
+  (temp___364 <= (to_rep3((((s).us_split_fields1).rec__patience__state__stacksizes[to_rep3((((s).us_split_fields1).rec__patience__state__posstack[i]))])) - 1))))) and
   (to_rep3(((((s).us_split_fields1).rec__patience__state__stacks[to_rep3((((s).us_split_fields1).rec__patience__state__posstack[i]))])[to_rep3((((s).us_split_fields1).rec__patience__state__posheight[i]))])) = i))))) and
   (forall ist:int. (((0 <= ist) and
   (ist <= (to_rep3(((s).us_split_fields1).rec__patience__state__numstacks) - 1))) ->
@@ -2205,8 +2209,10 @@ axiom inv__def_axiom24 :
   (to_rep2((((s).us_split_fields1).rec__patience__state__values[to_rep3(((((s).us_split_fields1).rec__patience__state__stacks[i])[k]))])) <= to_rep2((((s).us_split_fields1).rec__patience__state__values[to_rep3(((((s).us_split_fields1).rec__patience__state__stacks[i])[j]))])))))))))) and
   (forall i:int. (((0 <= i) and
   (i <= (to_rep3(((s).us_split_fields1).rec__patience__state__numelts) - 1))) ->
-  (((((- 1) <= to_rep3((((s).us_split_fields1).rec__patience__state__preds[i]))) and
-  (to_rep3((((s).us_split_fields1).rec__patience__state__preds[i])) <= (to_rep3(((s).us_split_fields1).rec__patience__state__numelts) - 1))) and
+  (((let temp___393 =
+  to_rep3((((s).us_split_fields1).rec__patience__state__preds[i])) : int in
+  (((- 1) <= temp___393) and
+  (temp___393 <= (to_rep3(((s).us_split_fields1).rec__patience__state__numelts) - 1)))) and
   (to_rep3((((s).us_split_fields1).rec__patience__state__preds[i])) <  i)) and
   (if (to_rep3((((s).us_split_fields1).rec__patience__state__preds[i])) <  0) then (to_rep3((((s).us_split_fields1).rec__patience__state__posstack[i])) = 0) else (((to_rep2((((s).us_split_fields1).rec__patience__state__values[to_rep3((((s).us_split_fields1).rec__patience__state__preds[i]))])) <  to_rep2((((s).us_split_fields1).rec__patience__state__values[i]))) and
   (0 <  to_rep3((((s).us_split_fields1).rec__patience__state__posstack[i])))) and
@@ -2249,15 +2255,15 @@ goal defqtvc :
   current_in1, current_out1, current_err1) = page_length(standard_in2,
   file_system2, standard_out2, standard_err2, current_in2, current_out2,
   current_err2))) ->
-  ((exists o:int. ((to_rep1(input__first) = o) and (let temp___423 =
+  ((exists o:int. ((to_rep1(input__first) = o) and (let temp___429 =
    to_string(attr__ATTRIBUTE_IMAGE1(o), 12) : us_t in (let o1 =
-   ((1 + (length(1, 17) + length(first1(temp___423),
-   last1(temp___423)))) - 1) : int in (in_range2(o1) and (let temp___425 =
-   of_array(concat(temp___String_Literal_421(void), 1, 17,
-   to_array(temp___423), first1(temp___423), last1(temp___423)), 1, o1)
-   : us_t in ((length1(temp___425) = 0) or
-   in_range2(((first1(temp___425) + (length(first1(temp___425),
-   last1(temp___425)) + length(1, 4))) - 1))))))))) ->
+   ((1 + (length(1, 17) + length(first1(temp___429),
+   last1(temp___429)))) - 1) : int in (in_range2(o1) and (let temp___431 =
+   of_array(concat(temp___String_Literal_427(void), 1, 17,
+   to_array(temp___429), first1(temp___429), last1(temp___429)), 1, o1)
+   : us_t in ((length1(temp___431) = 0) or
+   in_range2(((first1(temp___431) + (length(first1(temp___431),
+   last1(temp___431)) + length(1, 4))) - 1))))))))) ->
   (forall standard_in3:us_private. forall file_system3:us_private.
   forall standard_out3:us_private. forall standard_err3:us_private.
   forall current_in3:us_private. forall current_out3:us_private.
@@ -2273,11 +2279,11 @@ goal defqtvc :
   forall standard_out4:us_private. forall standard_err4:us_private.
   forall current_in4:us_private. forall current_out4:us_private.
   forall current_err4:us_private.
-  ((exists temp___427:int. ((to_rep1(input__first) = temp___427) and
-   (exists temp___428:int. ((to_rep1(input__last) = temp___428) and
-   (exists i:int. ((i = temp___427) and
-   (if (andb((if (temp___427 <= i) then true else false),
-   (if (i <= temp___428) then true else false)) = true) then (exists standard_in5:us_private.
+  ((exists temp___433:int. ((to_rep1(input__first) = temp___433) and
+   (exists temp___434:int. ((to_rep1(input__last) = temp___434) and
+   (exists i:int. ((i = temp___433) and
+   (if (andb((if (temp___433 <= i) then true else false),
+   (if (i <= temp___434) then true else false)) = true) then (exists standard_in5:us_private.
                                                              exists file_system5:us_private.
                                                              exists standard_out5:us_private.
                                                              exists standard_err5:us_private.
@@ -2291,12 +2297,12 @@ goal defqtvc :
                                                              (i1 <= to_rep1(input__last))) and
                                                              (exists o:int.
                                                              ((to_rep2((input[i1])) = o) and
-                                                             (let temp___431 =
+                                                             (let temp___437 =
                                                              to_string(attr__ATTRIBUTE_IMAGE4(o),
                                                              5) : us_t in
                                                              (in_range2(((1 + (length(1,
-                                                             1) + length(first1(temp___431),
-                                                             last1(temp___431)))) - 1)) and
+                                                             1) + length(first1(temp___437),
+                                                             last1(temp___437)))) - 1)) and
                                                              (((line_length(standard_in5,
                                                              file_system5,
                                                              standard_out5,
@@ -2323,7 +2329,7 @@ goal defqtvc :
                                                              current_in4,
                                                              current_out4,
                                                              current_err4))) and
-                                                             (i1 = temp___428))))))))) else (((((((standard_in4 = standard_in3) and
+                                                             (i1 = temp___434))))))))) else (((((((standard_in4 = standard_in3) and
    (file_system4 = file_system3)) and (standard_out4 = standard_out3)) and
    (standard_err4 = standard_err3)) and (current_in4 = current_in3)) and
    (current_out4 = current_out3)) and (current_err4 = current_err3))))))))) ->
@@ -2351,12 +2357,12 @@ goal defqtvc :
   current_err6))) ->
   (forall o:int. ((to_rep1(input__last) = o) ->
   (forall o1:int. ((to_rep1(input__first) = o1) -> (let o2 = of_array1(input,
-  o1, o) : us_t1 in (let temp___434 = playgame(o2) : us_rep in
-  ((forall temp___4341:us_rep. inv__function_guard(inv(temp___4341),
-   temp___4341)) ->
-  ((playgame__function_guard(temp___434, o2) and (inv(temp___434) = true)) ->
+  o1, o) : us_t1 in (let temp___440 = playgame(o2) : us_rep in
+  ((forall temp___4401:us_rep. inv__function_guard(inv(temp___4401),
+   temp___4401)) ->
+  ((playgame__function_guard(temp___440, o2) and (inv(temp___440) = true)) ->
   (forall s__split_fields:us_split_fields.
-  ((s__split_fields = (temp___434).us_split_fields1) -> (({
+  ((s__split_fields = (temp___440).us_split_fields1) -> (({
   us_split_fields1 = s__split_fields } = c60b) ->
   (forall standard_in7:us_private. forall file_system7:us_private.
   forall standard_out7:us_private. forall standard_err7:us_private.
@@ -2371,9 +2377,9 @@ goal defqtvc :
   current_err7))) ->
   (forall o3:int.
   ((to_rep3(((c60b).us_split_fields1).rec__patience__state__numelts) = o3) ->
-  (let temp___438 = to_string(attr__ATTRIBUTE_IMAGE5(o3), 12) : us_t in
-  (in_range2(((1 + (length(1, 17) + length(first1(temp___438),
-  last1(temp___438)))) - 1)) ->
+  (let temp___444 = to_string(attr__ATTRIBUTE_IMAGE5(o3), 12) : us_t in
+  (in_range2(((1 + (length(1, 17) + length(first1(temp___444),
+  last1(temp___444)))) - 1)) ->
   (forall standard_in8:us_private. forall file_system8:us_private.
   forall standard_out8:us_private. forall standard_err8:us_private.
   forall current_in8:us_private. forall current_out8:us_private.
@@ -2402,9 +2408,9 @@ goal defqtvc :
   forall current_err10:us_private.
   ((exists o4:int.
    ((to_rep3(((c60b).us_split_fields1).rec__patience__state__numelts) = o4) and
-   (let temp___441 = (o4 - 1) : int in
+   (let temp___447 = (o4 - 1) : int in
    (exists i:int. ((i = 0) and (if (andb((if (0 <= i) then true else false),
-   (if (i <= temp___441) then true else false)) = true) then (exists standard_in11:us_private.
+   (if (i <= temp___447) then true else false)) = true) then (exists standard_in11:us_private.
                                                              exists file_system11:us_private.
                                                              exists standard_out11:us_private.
                                                              exists standard_err11:us_private.
@@ -2416,12 +2422,12 @@ goal defqtvc :
                                                              (i1 <= (to_rep3(((c60b).us_split_fields1).rec__patience__state__numelts) - 1))) and
                                                              (exists o5:int.
                                                              ((to_rep2((((c60b).us_split_fields1).rec__patience__state__values[i1])) = o5) and
-                                                             (let temp___445 =
+                                                             (let temp___451 =
                                                              to_string(attr__ATTRIBUTE_IMAGE4(o5),
                                                              5) : us_t in
                                                              (in_range2(((1 + (length(1,
-                                                             1) + length(first1(temp___445),
-                                                             last1(temp___445)))) - 1)) and
+                                                             1) + length(first1(temp___451),
+                                                             last1(temp___451)))) - 1)) and
                                                              (((line_length(standard_in11,
                                                              file_system11,
                                                              standard_out11,
@@ -2448,7 +2454,7 @@ goal defqtvc :
                                                              current_in10,
                                                              current_out10,
                                                              current_err10))) and
-                                                             (i1 = temp___441)))))))) else (((((((standard_in10 = standard_in9) and
+                                                             (i1 = temp___447)))))))) else (((((((standard_in10 = standard_in9) and
    (file_system10 = file_system9)) and (standard_out10 = standard_out9)) and
    (standard_err10 = standard_err9)) and (current_in10 = current_in9)) and
    (current_out10 = current_out9)) and (current_err10 = current_err9)))))))) ->
@@ -2465,9 +2471,9 @@ goal defqtvc :
   current_err11))) ->
   (forall o4:int.
   ((to_rep3(((c60b).us_split_fields1).rec__patience__state__numstacks) = o4) ->
-  (let temp___449 = to_string(attr__ATTRIBUTE_IMAGE5(o4), 12) : us_t in
-  (in_range2(((1 + (length(1, 19) + length(first1(temp___449),
-  last1(temp___449)))) - 1)) ->
+  (let temp___455 = to_string(attr__ATTRIBUTE_IMAGE5(o4), 12) : us_t in
+  (in_range2(((1 + (length(1, 19) + length(first1(temp___455),
+  last1(temp___455)))) - 1)) ->
   (forall standard_in12:us_private. forall file_system12:us_private.
   forall standard_out12:us_private. forall standard_err12:us_private.
   forall current_in12:us_private. forall current_out12:us_private.
@@ -2489,32 +2495,32 @@ goal defqtvc :
   ((to_rep3((((c60b).us_split_fields1).rec__patience__state__stacksizes[i1])) = o6) ->
   (forall size:int. ((size = o6) -> (dynamic_invariant(size, true, false,
   true, true) -> (dynamic_invariant(idx, false, false, true, true) ->
-  (forall temp___463:us_t.
+  (forall temp___469:us_t.
   ((exists o7:int.
    ((to_rep3((((c60b).us_split_fields1).rec__patience__state__stacksizes[i1])) = o7) and
-   (let temp___461 = to_string(attr__ATTRIBUTE_IMAGE5(o7), 12) : us_t in
-   (exists temp___460:us_t. ((let temp___458 =
-   temp___String_Literal_456(void) : (int,character) farray in
-   (let temp___455 = to_string(attr__ATTRIBUTE_IMAGE5(i1), 12) : us_t in
-   (let o8 = ((1 + (length(1, 6) + length(first1(temp___455),
-   last1(temp___455)))) - 1) : int in (in_range2(o8) and (let temp___457 =
-   of_array(concat(temp___String_Literal_453(void), 1, 6,
-   to_array(temp___455), first1(temp___455), last1(temp___455)), 1, o8)
+   (let temp___467 = to_string(attr__ATTRIBUTE_IMAGE5(o7), 12) : us_t in
+   (exists temp___466:us_t. ((let temp___464 =
+   temp___String_Literal_462(void) : (int,character) farray in
+   (let temp___461 = to_string(attr__ATTRIBUTE_IMAGE5(i1), 12) : us_t in
+   (let o8 = ((1 + (length(1, 6) + length(first1(temp___461),
+   last1(temp___461)))) - 1) : int in (in_range2(o8) and (let temp___463 =
+   of_array(concat(temp___String_Literal_459(void), 1, 6,
+   to_array(temp___461), first1(temp___461), last1(temp___461)), 1, o8)
    : us_t in
-   (if (length1(temp___457) = 0) then (temp___460 = of_array(temp___458, 1,
-   10)) else (let o9 = ((first1(temp___457) + (length(first1(temp___457),
-   last1(temp___457)) + length(1, 10))) - 1) : int in (in_range2(o9) and
-   (temp___460 = of_array(concat(to_array(temp___457), first1(temp___457),
-   last1(temp___457), temp___458, 1, 10), first1(temp___457),
+   (if (length1(temp___463) = 0) then (temp___466 = of_array(temp___464, 1,
+   10)) else (let o9 = ((first1(temp___463) + (length(first1(temp___463),
+   last1(temp___463)) + length(1, 10))) - 1) : int in (in_range2(o9) and
+   (temp___466 = of_array(concat(to_array(temp___463), first1(temp___463),
+   last1(temp___463), temp___464, 1, 10), first1(temp___463),
    o9)))))))))) and
-   (if (length1(temp___460) = 0) then (temp___463 = of_array(to_array(temp___461),
-   first1(temp___461), last1(temp___461))) else (let o8 =
-   ((first1(temp___460) + (length(first1(temp___460),
-   last1(temp___460)) + length(first1(temp___461), last1(temp___461)))) - 1)
+   (if (length1(temp___466) = 0) then (temp___469 = of_array(to_array(temp___467),
+   first1(temp___467), last1(temp___467))) else (let o8 =
+   ((first1(temp___466) + (length(first1(temp___466),
+   last1(temp___466)) + length(first1(temp___467), last1(temp___467)))) - 1)
    : int in (in_range2(o8) and
-   (temp___463 = of_array(concat(to_array(temp___460), first1(temp___460),
-   last1(temp___460), to_array(temp___461), first1(temp___461),
-   last1(temp___461)), first1(temp___460), o8)))))))))) ->
-  ((not (length1(temp___463) = 0)) ->
-  in_range2(((first1(temp___463) + (length(first1(temp___463),
-  last1(temp___463)) + length(1, 2))) - 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+   (temp___469 = of_array(concat(to_array(temp___466), first1(temp___466),
+   last1(temp___466), to_array(temp___467), first1(temp___467),
+   last1(temp___467)), first1(temp___466), o8)))))))))) ->
+  ((not (length1(temp___469) = 0)) ->
+  in_range2(((first1(temp___469) + (length(first1(temp___469),
+  last1(temp___469)) + length(1, 2))) - 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))

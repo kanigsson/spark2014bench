@@ -356,8 +356,7 @@ goal defqtvc : (dynamic_invariant1(str, true, false, true, true) ->
   (if (usf <= last2) then true else false)) = true) ->
   ((not (usf = first1(str))) -> (let o = (usf - 1) : int in (in_range1(o) ->
   (((first1(str) <= o) and (o <= last1(str))) ->
-  (forall o1:int. ((to_rep((to_array(str)[o])) = o1) -> (let o2 = (usf - 1)
-  : int in (in_range1(o2) -> (((first1(str) <= o2) and (o2 <= last1(str))) ->
-  (forall o3:int. ((to_rep((to_array(str)[o2])) = o3) ->
-  ((not (andb((if (97 <= o3) then true else false),
-  (if (o1 <= 122) then true else false)) = true)) -> in_range1((usf - 1))))))))))))))))))))
+  (forall temp___232:int. ((to_rep((to_array(str)[o])) = temp___232) ->
+  ((not (andb((if (97 <= temp___232) then true else false),
+  (if (temp___232 <= 122) then true else false)) = true)) ->
+  in_range1((usf - 1)))))))))))))))

@@ -337,7 +337,7 @@ goal defqtvc :
   (forall o2:int. ((to_rep(y__last) = o2) ->
   (forall o3:int. ((to_rep(y__first) = o3) ->
   (forall o4:int. ((to_rep(x__last) = o4) ->
-  (forall o5:int. ((to_rep(x__first) = o5) -> (let temp___929 =
+  (forall o5:int. ((to_rep(x__first) = o5) -> (let temp___955 =
   of_array(andb1(x, o5, o4, y, o3, o2), o1, o) : us_t in
-  ((first1(temp___929) <= last1(temp___929)) ->
+  ((first1(temp___955) <= last1(temp___955)) ->
   (to_rep(x__first) <= to_rep(x__last)))))))))))))))))))

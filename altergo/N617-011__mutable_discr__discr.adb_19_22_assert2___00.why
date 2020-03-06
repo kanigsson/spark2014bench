@@ -126,6 +126,9 @@ function us_rep___split_discrs__2__projection(a: us_rep) : us_split_discrs =
 function bool_eq1(a: us_rep, b: us_rep) : bool =
   (if (to_rep(((a).us_split_discrs1).rec__discr__with_default__c) = to_rep(((b).us_split_discrs1).rec__discr__with_default__c)) then true else false)
 
+predicate in_range1(rec__discr__with_default__c1: int, a: us_split_discrs) =
+  (rec__discr__with_default__c1 = to_rep((a).rec__discr__with_default__c))
+
 logic value__size : int
 
 logic object__size : int
@@ -181,9 +184,6 @@ logic d2__attr__constrained : bool
 
 logic attr__ATTRIBUTE_ADDRESS3 : int
 
-predicate in_range1(rec__discr__with_default__c1: int, a: us_rep) =
-  (rec__discr__with_default__c1 = to_rep(((a).us_split_discrs1).rec__discr__with_default__c))
-
 logic value__size1 : int
 
 logic object__size1 : int
@@ -220,9 +220,6 @@ type t4b__ref = { t4b__content : us_rep
 
 function t4b__ref_t4b__content__projection(a: t4b__ref) : us_rep =
   (a).t4b__content
-
-predicate in_range2(rec__discr__with_default__c1: int, a: us_rep) =
-  (rec__discr__with_default__c1 = to_rep(((a).us_split_discrs1).rec__discr__with_default__c))
 
 logic value__size2 : int
 
@@ -264,14 +261,12 @@ function td1S__ref_td1S__content__projection(a: td1S__ref) : us_rep =
 predicate dynamic_invariant1(temp___expr_186: us_rep,
   temp___is_init_182: bool, temp___skip_constant_183: bool,
   temp___do_toplevel_184: bool, temp___do_typ_inv_185: bool) =
-  ((not (temp___skip_constant_183 = true)) -> in_range2(c, temp___expr_186))
+  ((not (temp___skip_constant_183 = true)) -> in_range1(c,
+  (temp___expr_186).us_split_discrs1))
 
 predicate default_initial_assumption1(temp___expr_188: us_rep,
   temp___skip_top_level_189: bool) =
   (to_rep(((temp___expr_188).us_split_discrs1).rec__discr__with_default__c) = c)
-
-predicate in_range3(rec__discr__with_default__c1: int, a: us_rep) =
-  (rec__discr__with_default__c1 = to_rep(((a).us_split_discrs1).rec__discr__with_default__c))
 
 logic value__size3 : int
 
@@ -310,9 +305,6 @@ type t5b__ref = { t5b__content : us_rep
 function t5b__ref_t5b__content__projection(a: t5b__ref) : us_rep =
   (a).t5b__content
 
-predicate in_range4(rec__discr__with_default__c1: int, a: us_rep) =
-  (rec__discr__with_default__c1 = to_rep(((a).us_split_discrs1).rec__discr__with_default__c))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -349,9 +341,6 @@ type t6b__ref = { t6b__content : us_rep
 
 function t6b__ref_t6b__content__projection(a: t6b__ref) : us_rep =
   (a).t6b__content
-
-predicate in_range5(rec__discr__with_default__c1: int, a: us_rep) =
-  (rec__discr__with_default__c1 = to_rep(((a).us_split_discrs1).rec__discr__with_default__c))
 
 logic value__size5 : int
 

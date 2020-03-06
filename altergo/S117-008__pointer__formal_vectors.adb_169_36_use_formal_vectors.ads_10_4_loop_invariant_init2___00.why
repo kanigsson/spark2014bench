@@ -894,15 +894,15 @@ type name__ref = { name__content : us_rep1
 function name__ref_name__content__2__projection(a: name__ref) : us_rep1 =
   (a).name__content
 
-predicate dynamic_invariant7(temp___expr_364: us_rep1,
-  temp___is_init_360: bool, temp___skip_constant_361: bool,
-  temp___do_toplevel_362: bool, temp___do_typ_inv_363: bool) =
-  ((not ((temp___expr_364).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)) ->
-  (not (((temp___expr_364).rec__use_formal_vectors__my_vect__element_access__pointer_value).rec__use_formal_vectors__element_type__is_null_pointer = true)))
+predicate dynamic_invariant7(temp___expr_357: us_rep1,
+  temp___is_init_353: bool, temp___skip_constant_354: bool,
+  temp___do_toplevel_355: bool, temp___do_typ_inv_356: bool) =
+  ((not ((temp___expr_357).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)) ->
+  (not (((temp___expr_357).rec__use_formal_vectors__my_vect__element_access__pointer_value).rec__use_formal_vectors__element_type__is_null_pointer = true)))
 
-predicate default_initial_assumption4(temp___expr_365: us_rep1,
-  temp___skip_top_level_366: bool) =
-  ((temp___expr_365).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)
+predicate default_initial_assumption4(temp___expr_358: us_rep1,
+  temp___skip_top_level_359: bool) =
+  ((temp___expr_358).rec__use_formal_vectors__my_vect__element_access__is_null_pointer = true)
 
 predicate dynamic_invariant8(temp___expr_225: us_rep1,
   temp___is_init_221: bool, temp___skip_constant_222: bool,
@@ -1071,10 +1071,10 @@ goal defqtvc :
   (forall use_formal_vectors__my_vect__delete__L_4__R139s__assume:int.
   ((to_rep((v__split_fields1).rec__use_formal_vectors__my_vect__vector__top) = use_formal_vectors__my_vect__delete__L_4__R139s__assume) ->
   ((use_formal_vectors__my_vect__delete__L_4__R139s__assume = r139s) ->
-  (dynamic_invariant(r139s, true, false, true, true) -> (let temp___606 = i
+  (dynamic_invariant(r139s, true, false, true, true) -> (let temp___599 = i
   : int in
-  (forall j:int. ((j = temp___606) ->
-  ((andb((if (temp___606 <= j) then true else false),
+  (forall j:int. ((j = temp___599) ->
+  ((andb((if (temp___599 <= j) then true else false),
   (if (j <= r139s) then true else false)) = true) ->
   ((not (bool_eq9((v__split_fields1).rec__use_formal_vectors__my_vect__vector__content,
   us_null_pointer2) = true)) ->

@@ -356,6 +356,11 @@ function bool_eq6(a: us_rep, b: us_rep) : bool =
   (bool_eq5(((a).us_split_fields1).rec__static_discr__i_holder__content,
   ((b).us_split_fields1).rec__static_discr__i_holder__content) = true)) then true else false)
 
+predicate in_range4(rec__static_discr__i_holder__unused1: int,
+  rec__static_discr__i_holder__c1: int, a: us_split_discrs) =
+  ((rec__static_discr__i_holder__unused1 = to_rep((a).rec__static_discr__i_holder__unused)) and
+  (rec__static_discr__i_holder__c1 = to_rep((a).rec__static_discr__i_holder__c)))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -470,11 +475,6 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   (to_rep(((a).us_split_discrs2).rec__static_discr__i_holder__c) = to_rep(((b).us_split_discrs2).rec__static_discr__i_holder__c))) and
   (bool_eq5(((a).us_split_fields3).rec__static_discr__i_holder__content1,
   ((b).us_split_fields3).rec__static_discr__i_holder__content1) = true)) then true else false)
-
-predicate in_range4(rec__static_discr__i_holder__unused1: int,
-  rec__static_discr__i_holder__c1: int, a: us_rep) =
-  ((rec__static_discr__i_holder__unused1 = to_rep(((a).us_split_discrs1).rec__static_discr__i_holder__unused)) and
-  (rec__static_discr__i_holder__c1 = to_rep(((a).us_split_discrs1).rec__static_discr__i_holder__c)))
 
 logic value__size2 : int
 
@@ -592,6 +592,11 @@ function bool_eq8(a: us_rep2, b: us_rep2) : bool =
   ((b).us_split_fields5).rec__static_discr__holder__content) = true) and
   (to_rep(((a).us_split_fields5).rec__static_discr__holder__length) = to_rep(((b).us_split_fields5).rec__static_discr__holder__length)))) then true else false)
 
+predicate in_range5(rec__static_discr__holder__unused1: int,
+  rec__static_discr__holder__c1: int, a: us_split_discrs3) =
+  ((rec__static_discr__holder__unused1 = to_rep((a).rec__static_discr__holder__unused)) and
+  (rec__static_discr__holder__c1 = to_rep((a).rec__static_discr__holder__c)))
+
 logic value__size3 : int
 
 logic object__size3 : int
@@ -674,48 +679,44 @@ type holder__ref = { holder__content : us_rep2
 function holder__ref_holder__content__projection(a: holder__ref) : us_rep2 =
   (a).holder__content
 
-logic a : us_t
-
-logic attr__ATTRIBUTE_ADDRESS : int
-
 logic e : int
 
-logic attr__ATTRIBUTE_ADDRESS1 : int
+logic attr__ATTRIBUTE_ADDRESS : int
 
 type t14b__ref = { t14b__content : us_t
 }
 
-function t14b__ref_t14b__content__projection(a1: t14b__ref) : us_t =
-  (a1).t14b__content
+function t14b__ref_t14b__content__projection(a: t14b__ref) : us_t =
+  (a).t14b__content
 
 type us_split_fields6 = { rec__static_discr__i_holder__content2 : us_t
 }
 
-function us_split_fields_rec__static_discr__i_holder__content__5__projection(a1: us_split_fields6) : us_t =
-  (a1).rec__static_discr__i_holder__content2
+function us_split_fields_rec__static_discr__i_holder__content__5__projection(a: us_split_fields6) : us_t =
+  (a).rec__static_discr__i_holder__content2
 
 type us_split_fields__ref3 = { us_split_fields__content3 : us_split_fields6
 }
 
-function us_split_fields__ref___split_fields__content__8__projection(a1: us_split_fields__ref3) : us_split_fields6 =
-  (a1).us_split_fields__content3
+function us_split_fields__ref___split_fields__content__8__projection(a: us_split_fields__ref3) : us_split_fields6 =
+  (a).us_split_fields__content3
 
 type us_rep3 = { us_split_discrs5 : us_split_discrs; us_split_fields7 :
 us_split_fields6
 }
 
-function us_rep___split_discrs__8__projection(a1: us_rep3) : us_split_discrs =
-  (a1).us_split_discrs5
+function us_rep___split_discrs__8__projection(a: us_rep3) : us_split_discrs =
+  (a).us_split_discrs5
 
-function us_rep___split_fields__8__projection(a1: us_rep3) : us_split_fields6 =
-  (a1).us_split_fields7
+function us_rep___split_fields__8__projection(a: us_rep3) : us_split_fields6 =
+  (a).us_split_fields7
 
-function to_base1(a1: us_rep3) : us_rep = { us_split_discrs1 =
-  (a1).us_split_discrs5; us_split_fields1 = {
+function to_base1(a: us_rep3) : us_rep = { us_split_discrs1 =
+  (a).us_split_discrs5; us_split_fields1 = {
   rec__static_discr__i_holder__content =
-  of_array(to_array(((a1).us_split_fields7).rec__static_discr__i_holder__content2),
-  first1(((a1).us_split_fields7).rec__static_discr__i_holder__content2),
-  last1(((a1).us_split_fields7).rec__static_discr__i_holder__content2)) } }
+  of_array(to_array(((a).us_split_fields7).rec__static_discr__i_holder__content2),
+  first1(((a).us_split_fields7).rec__static_discr__i_holder__content2),
+  last1(((a).us_split_fields7).rec__static_discr__i_holder__content2)) } }
 
 function of_base1(r: us_rep) : us_rep3 = { us_split_discrs5 =
   (r).us_split_discrs1; us_split_fields7 = {
@@ -724,16 +725,11 @@ function of_base1(r: us_rep) : us_rep3 = { us_split_discrs5 =
   first1(((r).us_split_fields1).rec__static_discr__i_holder__content),
   last1(((r).us_split_fields1).rec__static_discr__i_holder__content)) } }
 
-function bool_eq9(a1: us_rep3, b: us_rep3) : bool =
-  (if (((to_rep(((a1).us_split_discrs5).rec__static_discr__i_holder__unused) = to_rep(((b).us_split_discrs5).rec__static_discr__i_holder__unused)) and
-  (to_rep(((a1).us_split_discrs5).rec__static_discr__i_holder__c) = to_rep(((b).us_split_discrs5).rec__static_discr__i_holder__c))) and
-  (bool_eq5(((a1).us_split_fields7).rec__static_discr__i_holder__content2,
+function bool_eq9(a: us_rep3, b: us_rep3) : bool =
+  (if (((to_rep(((a).us_split_discrs5).rec__static_discr__i_holder__unused) = to_rep(((b).us_split_discrs5).rec__static_discr__i_holder__unused)) and
+  (to_rep(((a).us_split_discrs5).rec__static_discr__i_holder__c) = to_rep(((b).us_split_discrs5).rec__static_discr__i_holder__c))) and
+  (bool_eq5(((a).us_split_fields7).rec__static_discr__i_holder__content2,
   ((b).us_split_fields7).rec__static_discr__i_holder__content2) = true)) then true else false)
-
-predicate in_range5(rec__static_discr__i_holder__unused1: int,
-  rec__static_discr__i_holder__c1: int, a1: us_rep) =
-  ((rec__static_discr__i_holder__unused1 = to_rep(((a1).us_split_discrs1).rec__static_discr__i_holder__unused)) and
-  (rec__static_discr__i_holder__c1 = to_rep(((a1).us_split_discrs1).rec__static_discr__i_holder__c)))
 
 logic value__size4 : int
 
@@ -799,41 +795,41 @@ logic dummy7 : us_rep3
 type t13b__ref = { t13b__content : us_rep3
 }
 
-function t13b__ref_t13b__content__projection(a1: t13b__ref) : us_rep3 =
-  (a1).t13b__content
+function t13b__ref_t13b__content__projection(a: t13b__ref) : us_rep3 =
+  (a).t13b__content
 
 type us_split_fields8 = { rec__static_discr__holder__content1 : us_rep3;
 rec__static_discr__holder__length1 : natural
 }
 
-function us_split_fields_rec__static_discr__holder__content__4__projection(a1: us_split_fields8) : us_rep3 =
-  (a1).rec__static_discr__holder__content1
+function us_split_fields_rec__static_discr__holder__content__4__projection(a: us_split_fields8) : us_rep3 =
+  (a).rec__static_discr__holder__content1
 
-function us_split_fields_rec__static_discr__holder__length__4__projection(a1: us_split_fields8) : natural =
-  (a1).rec__static_discr__holder__length1
+function us_split_fields_rec__static_discr__holder__length__4__projection(a: us_split_fields8) : natural =
+  (a).rec__static_discr__holder__length1
 
 type us_split_fields__ref4 = { us_split_fields__content4 : us_split_fields8
 }
 
-function us_split_fields__ref___split_fields__content__9__projection(a1: us_split_fields__ref4) : us_split_fields8 =
-  (a1).us_split_fields__content4
+function us_split_fields__ref___split_fields__content__9__projection(a: us_split_fields__ref4) : us_split_fields8 =
+  (a).us_split_fields__content4
 
 type us_rep4 = { us_split_discrs6 : us_split_discrs3; us_split_fields9 :
 us_split_fields8
 }
 
-function us_rep___split_discrs__9__projection(a1: us_rep4) : us_split_discrs3 =
-  (a1).us_split_discrs6
+function us_rep___split_discrs__9__projection(a: us_rep4) : us_split_discrs3 =
+  (a).us_split_discrs6
 
-function us_rep___split_fields__9__projection(a1: us_rep4) : us_split_fields8 =
-  (a1).us_split_fields9
+function us_rep___split_fields__9__projection(a: us_rep4) : us_split_fields8 =
+  (a).us_split_fields9
 
-function to_base2(a1: us_rep4) : us_rep2 = { us_split_discrs4 =
-  (a1).us_split_discrs6; us_split_fields5 = {
+function to_base2(a: us_rep4) : us_rep2 = { us_split_discrs4 =
+  (a).us_split_discrs6; us_split_fields5 = {
   rec__static_discr__holder__content =
-  of_base(to_base1(((a1).us_split_fields9).rec__static_discr__holder__content1));
+  of_base(to_base1(((a).us_split_fields9).rec__static_discr__holder__content1));
   rec__static_discr__holder__length =
-  ((a1).us_split_fields9).rec__static_discr__holder__length1 } }
+  ((a).us_split_fields9).rec__static_discr__holder__length1 } }
 
 function of_base2(r: us_rep2) : us_rep4 = { us_split_discrs6 =
   (r).us_split_discrs4; us_split_fields9 = {
@@ -842,17 +838,12 @@ function of_base2(r: us_rep2) : us_rep4 = { us_split_discrs6 =
   rec__static_discr__holder__length1 =
   ((r).us_split_fields5).rec__static_discr__holder__length } }
 
-function bool_eq10(a1: us_rep4, b: us_rep4) : bool =
-  (if (((to_rep(((a1).us_split_discrs6).rec__static_discr__holder__unused) = to_rep(((b).us_split_discrs6).rec__static_discr__holder__unused)) and
-  (to_rep(((a1).us_split_discrs6).rec__static_discr__holder__c) = to_rep(((b).us_split_discrs6).rec__static_discr__holder__c))) and
-  ((bool_eq9(((a1).us_split_fields9).rec__static_discr__holder__content1,
+function bool_eq10(a: us_rep4, b: us_rep4) : bool =
+  (if (((to_rep(((a).us_split_discrs6).rec__static_discr__holder__unused) = to_rep(((b).us_split_discrs6).rec__static_discr__holder__unused)) and
+  (to_rep(((a).us_split_discrs6).rec__static_discr__holder__c) = to_rep(((b).us_split_discrs6).rec__static_discr__holder__c))) and
+  ((bool_eq9(((a).us_split_fields9).rec__static_discr__holder__content1,
   ((b).us_split_fields9).rec__static_discr__holder__content1) = true) and
-  (to_rep(((a1).us_split_fields9).rec__static_discr__holder__length1) = to_rep(((b).us_split_fields9).rec__static_discr__holder__length1)))) then true else false)
-
-predicate in_range6(rec__static_discr__holder__unused1: int,
-  rec__static_discr__holder__c1: int, a1: us_rep2) =
-  ((rec__static_discr__holder__unused1 = to_rep(((a1).us_split_discrs4).rec__static_discr__holder__unused)) and
-  (rec__static_discr__holder__c1 = to_rep(((a1).us_split_discrs4).rec__static_discr__holder__c)))
+  (to_rep(((a).us_split_fields9).rec__static_discr__holder__length1) = to_rep(((b).us_split_fields9).rec__static_discr__holder__length1)))) then true else false)
 
 logic value__size5 : int
 
@@ -933,51 +924,56 @@ logic dummy8 : us_rep4
 type my_holder__ref = { my_holder__content : us_rep4
 }
 
-function my_holder__ref_my_holder__content__projection(a1: my_holder__ref) : us_rep4 =
-  (a1).my_holder__content
+function my_holder__ref_my_holder__content__projection(a: my_holder__ref) : us_rep4 =
+  (a).my_holder__content
 
 logic current__split_discrs : us_split_discrs3
 
+logic attr__ATTRIBUTE_ADDRESS1 : int
+
+logic a : us_t
+
 logic attr__ATTRIBUTE_ADDRESS2 : int
 
-predicate dynamic_invariant1(temp___expr_257: us_rep4,
-  temp___is_init_253: bool, temp___skip_constant_254: bool,
-  temp___do_toplevel_255: bool, temp___do_typ_inv_256: bool) =
-  (((not (temp___skip_constant_254 = true)) -> in_range6(last1(a), last1(a),
-  to_base2(temp___expr_257))) and (in_range5(last1(a), last1(a),
-  to_base1(((temp___expr_257).us_split_fields9).rec__static_discr__holder__content1)) and
+predicate dynamic_invariant1(temp___expr_260: us_rep4,
+  temp___is_init_256: bool, temp___skip_constant_257: bool,
+  temp___do_toplevel_258: bool, temp___do_typ_inv_259: bool) =
+  (((not (temp___skip_constant_257 = true)) -> in_range5(last1(a), last1(a),
+  (to_base2(temp___expr_260)).us_split_discrs4)) and (in_range4(last1(a),
+  last1(a),
+  (to_base1(((temp___expr_260).us_split_fields9).rec__static_discr__holder__content1)).us_split_discrs1) and
   (dynamic_property(1, last1(a),
-  first1(((((temp___expr_257).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2),
-  last1(((((temp___expr_257).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2)) and
-  ((first1(((((temp___expr_257).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2) = 1) and
-  (last1(((((temp___expr_257).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2) = last1(a))))))
+  first1(((((temp___expr_260).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2),
+  last1(((((temp___expr_260).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2)) and
+  ((first1(((((temp___expr_260).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2) = 1) and
+  (last1(((((temp___expr_260).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2) = last1(a))))))
 
-predicate default_initial_assumption(temp___expr_263: us_rep4,
-  temp___skip_top_level_264: bool) =
-  (((to_rep(((temp___expr_263).us_split_discrs6).rec__static_discr__holder__unused) = last1(a)) and
-  (to_rep(((temp___expr_263).us_split_discrs6).rec__static_discr__holder__c) = last1(a))) and
-  (((to_rep(((((temp___expr_263).us_split_fields9).rec__static_discr__holder__content1).us_split_discrs5).rec__static_discr__i_holder__unused) = last1(a)) and
-  (to_rep(((((temp___expr_263).us_split_fields9).rec__static_discr__holder__content1).us_split_discrs5).rec__static_discr__i_holder__c) = last1(a))) and
-  ((first1(((((temp___expr_263).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2) = 1) and
-  (last1(((((temp___expr_263).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2) = last1(a)))))
+predicate default_initial_assumption(temp___expr_266: us_rep4,
+  temp___skip_top_level_267: bool) =
+  (((to_rep(((temp___expr_266).us_split_discrs6).rec__static_discr__holder__unused) = last1(a)) and
+  (to_rep(((temp___expr_266).us_split_discrs6).rec__static_discr__holder__c) = last1(a))) and
+  (((to_rep(((((temp___expr_266).us_split_fields9).rec__static_discr__holder__content1).us_split_discrs5).rec__static_discr__i_holder__unused) = last1(a)) and
+  (to_rep(((((temp___expr_266).us_split_fields9).rec__static_discr__holder__content1).us_split_discrs5).rec__static_discr__i_holder__c) = last1(a))) and
+  ((first1(((((temp___expr_266).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2) = 1) and
+  (last1(((((temp___expr_266).us_split_fields9).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2) = last1(a)))))
 
 logic attr__ATTRIBUTE_ADDRESS3 : int
 
-predicate dynamic_invariant2(temp___expr_181: us_t, temp___is_init_177: bool,
-  temp___skip_constant_178: bool, temp___do_toplevel_179: bool,
-  temp___do_typ_inv_180: bool) = ((not (temp___skip_constant_178 = true)) ->
-  dynamic_property(1, 2147483647, first1(temp___expr_181),
-  last1(temp___expr_181)))
-
-predicate dynamic_invariant3(temp___expr_46: int, temp___is_init_42: bool,
+predicate dynamic_invariant2(temp___expr_46: int, temp___is_init_42: bool,
   temp___skip_constant_43: bool, temp___do_toplevel_44: bool,
   temp___do_typ_inv_45: bool) = (((temp___is_init_42 = true) or
   (1 <= 2147483647)) -> in_range3(temp___expr_46))
 
-predicate dynamic_invariant4(temp___expr_18: int, temp___is_init_14: bool,
+predicate dynamic_invariant3(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
   temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
   ((- 2147483648) <= 2147483647)) -> in_range1(temp___expr_18))
+
+predicate dynamic_invariant4(temp___expr_181: us_t, temp___is_init_177: bool,
+  temp___skip_constant_178: bool, temp___do_toplevel_179: bool,
+  temp___do_typ_inv_180: bool) = ((not (temp___skip_constant_178 = true)) ->
+  dynamic_property(1, 2147483647, first1(temp___expr_181),
+  last1(temp___expr_181)))
 
 predicate dynamic_invariant5(temp___expr_187: us_rep,
   temp___is_init_183: bool, temp___skip_constant_184: bool,
@@ -998,7 +994,7 @@ predicate dynamic_invariant6(temp___expr_195: us_rep2,
   : natural in
   (in_range4(to_rep(((temp___expr_195).us_split_discrs4).rec__static_discr__holder__unused),
   to_rep(temp___197),
-  to_base(((temp___expr_195).us_split_fields5).rec__static_discr__holder__content)) and
+  (to_base(((temp___expr_195).us_split_fields5).rec__static_discr__holder__content)).us_split_discrs1) and
   (dynamic_property(1, to_rep(temp___197),
   first1(((((temp___expr_195).us_split_fields5).rec__static_discr__holder__content).us_split_fields3).rec__static_discr__i_holder__content1),
   last1(((((temp___expr_195).us_split_fields5).rec__static_discr__holder__content).us_split_fields3).rec__static_discr__i_holder__content1)) and
@@ -1009,23 +1005,23 @@ predicate dynamic_invariant6(temp___expr_195: us_rep2,
 goal defqtvc :
   (forall current__split_fields:us_split_fields8. forall result__:int.
   (forall current__split_fields1:us_split_fields8.
-  ((current__split_fields1 = current__split_fields) -> (dynamic_invariant2(a,
-  true, false, true, true) -> (dynamic_invariant(e, true, false, true,
-  true) -> (dynamic_invariant1({ us_split_discrs6 = current__split_discrs;
-  us_split_fields9 = current__split_fields }, true, false, true, true) ->
-  (dynamic_invariant(result__, false, false, true, true) ->
-  (dynamic_invariant2(a, true, false, true, true) -> (dynamic_invariant(e,
-  true, false, true, true) ->
-  (((1 <= to_rep((current__split_fields).rec__static_discr__holder__length1)) and
-  (to_rep((current__split_fields).rec__static_discr__holder__length1) <= to_rep((current__split_discrs).rec__static_discr__holder__c))) ->
-  (forall result__1:int. ((let temp___466 =
+  ((current__split_fields1 = current__split_fields) -> (dynamic_invariant(e,
+  true, false, true, true) -> (dynamic_invariant1({ us_split_discrs6 =
+  current__split_discrs; us_split_fields9 = current__split_fields }, true,
+  false, true, true) -> (dynamic_invariant(result__, false, false, true,
+  true) -> (dynamic_invariant(e, true, false, true, true) ->
+  ((let temp___501 =
+  to_rep((current__split_fields).rec__static_discr__holder__length1) : int in
+  ((1 <= temp___501) and
+  (temp___501 <= to_rep((current__split_discrs).rec__static_discr__holder__c)))) ->
+  (forall result__1:int. ((let temp___485 =
   (((current__split_fields).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2
   : us_t in
-  (exists temp___467:int.
-  ((to_rep((current__split_fields).rec__static_discr__holder__length1) = temp___467) and
-  (((first1(temp___466) <= temp___467) and
-  (temp___467 <= last1(temp___466))) and
-  (exists o:int. ((to_rep((to_array(temp___466)[temp___467])) = o) and
+  (exists temp___486:int.
+  ((to_rep((current__split_fields).rec__static_discr__holder__length1) = temp___486) and
+  (((first1(temp___485) <= temp___486) and
+  (temp___486 <= last1(temp___485))) and
+  (exists o:int. ((to_rep((to_array(temp___485)[temp___486])) = o) and
   (exists spark__branch:bool.
   ((spark__branch = (if (o = e) then true else false)) and
   (if (spark__branch = true) then (exists o1:int.
@@ -1044,4 +1040,4 @@ goal defqtvc :
   last1((((current__split_fields2).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2),
   to_array((((current__split_fields1).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2),
   first1((((current__split_fields1).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2),
-  last1((((current__split_fields1).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2)) = true)))))))))))))))))))))
+  last1((((current__split_fields1).rec__static_discr__holder__content1).us_split_fields7).rec__static_discr__i_holder__content2)) = true)))))))))))))))))))

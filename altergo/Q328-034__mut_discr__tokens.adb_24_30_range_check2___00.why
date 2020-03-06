@@ -575,6 +575,9 @@ function bool_eq11(a: us_rep1, b: us_rep1) : bool =
   (tokens__token__instr__pred(a) ->
   (to_rep4(((a).us_split_fields3).rec__tokens__token__instr) = to_rep4(((b).us_split_fields3).rec__tokens__token__instr))))) then true else false)
 
+predicate in_range7(rec__tokens__token__kind1: int, a: us_split_discrs) =
+  (rec__tokens__token__kind1 = to_rep2((a).rec__tokens__token__kind))
+
 logic value__size2 : int
 
 logic object__size2 : int
@@ -752,7 +755,7 @@ axiom tTword_bufferSP1qtaxiom :
 axiom tTword_bufferSP1qtaxiom1 :
   (forall i:tTword_bufferSP1. (tTword_bufferSP1qtint(i) <= 1024))
 
-predicate in_range7(x: int) = ((1 <= x) and (x <= 1024))
+predicate in_range8(x: int) = ((1 <= x) and (x <= 1024))
 
 function bool_eq12(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -777,9 +780,6 @@ type t3b__ref = { t3b__content : us_t
 
 function t3b__ref_t3b__content__projection(a: t3b__ref) : us_t =
   (a).t3b__content
-
-predicate in_range8(rec__tokens__token__kind1: int, a: us_rep1) =
-  (rec__tokens__token__kind1 = to_rep2(((a).us_split_discrs1).rec__tokens__token__kind))
 
 logic value__size3 : int
 
@@ -863,9 +863,6 @@ type t6b__ref = { t6b__content : us_rep1
 function t6b__ref_t6b__content__projection(a: t6b__ref) : us_rep1 =
   (a).t6b__content
 
-predicate in_range9(rec__tokens__token__kind1: int, a: us_rep1) =
-  (rec__tokens__token__kind1 = to_rep2(((a).us_split_discrs1).rec__tokens__token__kind))
-
 logic value__size4 : int
 
 logic object__size4 : int
@@ -947,9 +944,6 @@ type t10b__ref = { t10b__content : us_rep1
 
 function t10b__ref_t10b__content__projection(a: t10b__ref) : us_rep1 =
   (a).t10b__content
-
-predicate in_range10(rec__tokens__token__kind1: int, a: us_rep1) =
-  (rec__tokens__token__kind1 = to_rep2(((a).us_split_discrs1).rec__tokens__token__kind))
 
 logic value__size5 : int
 
@@ -1033,9 +1027,6 @@ type t14b__ref = { t14b__content : us_rep1
 function t14b__ref_t14b__content__projection(a: t14b__ref) : us_rep1 =
   (a).t14b__content
 
-predicate in_range11(rec__tokens__token__kind1: int, a: us_rep1) =
-  (rec__tokens__token__kind1 = to_rep2(((a).us_split_discrs1).rec__tokens__token__kind))
-
 logic value__size6 : int
 
 logic object__size6 : int
@@ -1117,9 +1108,6 @@ type t18b__ref = { t18b__content : us_rep1
 
 function t18b__ref_t18b__content__projection(a: t18b__ref) : us_rep1 =
   (a).t18b__content
-
-predicate in_range12(rec__tokens__token__kind1: int, a: us_rep1) =
-  (rec__tokens__token__kind1 = to_rep2(((a).us_split_discrs1).rec__tokens__token__kind))
 
 logic value__size7 : int
 

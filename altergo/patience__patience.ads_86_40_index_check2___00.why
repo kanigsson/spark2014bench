@@ -758,10 +758,14 @@ goal defqtvc :
                          (to_rep(((s).us_split_fields1).rec__patience__state__numelts) = o2)) and
    (o = (if (forall i:int. (((0 <= i) and
             (i <= (to_rep(((s).us_split_fields1).rec__patience__state__numelts) - 1))) ->
-            ((((0 <= to_rep((((s).us_split_fields1).rec__patience__state__posstack[i]))) and
-            (to_rep((((s).us_split_fields1).rec__patience__state__posstack[i])) <= (to_rep(((s).us_split_fields1).rec__patience__state__numstacks) - 1))) and
-            ((0 <= to_rep((((s).us_split_fields1).rec__patience__state__posheight[i]))) and
-            (to_rep((((s).us_split_fields1).rec__patience__state__posheight[i])) <= (to_rep((((s).us_split_fields1).rec__patience__state__stacksizes[to_rep((((s).us_split_fields1).rec__patience__state__posstack[i]))])) - 1)))) and
+            (((let temp___460 =
+            to_rep((((s).us_split_fields1).rec__patience__state__posstack[i]))
+            : int in ((0 <= temp___460) and
+            (temp___460 <= (to_rep(((s).us_split_fields1).rec__patience__state__numstacks) - 1)))) and
+            (let temp___462 =
+            to_rep((((s).us_split_fields1).rec__patience__state__posheight[i]))
+            : int in ((0 <= temp___462) and
+            (temp___462 <= (to_rep((((s).us_split_fields1).rec__patience__state__stacksizes[to_rep((((s).us_split_fields1).rec__patience__state__posstack[i]))])) - 1))))) and
             (to_rep(((((s).us_split_fields1).rec__patience__state__stacks[to_rep((((s).us_split_fields1).rec__patience__state__posstack[i]))])[to_rep((((s).us_split_fields1).rec__patience__state__posheight[i]))])) = i)))) then true else false))) else (o = false)))) ->
   ((o = true) ->
   (forall usf:int.

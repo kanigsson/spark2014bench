@@ -4820,13 +4820,13 @@ goal defqtvc :
                                                             (if (spark__branch2 = true) then ((cur_board2 = (cur_board[del_line <- empty_line])) and
                                                             ((to_line2 = del_line) and
                                                             (exists o2:t.
-                                                            ((let temp___910 =
+                                                            ((let temp___919 =
                                                             add(complete_lines,
                                                             rliteral3) : t in
                                                             (if ule(sub(rliteral4,
                                                             complete_lines),
-                                                            rliteral3) then (o2 = sub(temp___910,
-                                                            rliteral4)) else (o2 = temp___910))) and
+                                                            rliteral3) then (o2 = sub(temp___919,
+                                                            rliteral4)) else (o2 = temp___919))) and
                                                             ((complete_lines2 = o2) and
                                                             (to_rep(((cur_board2[del_line])[1])) = 0)))))) else (((cur_board2 = cur_board) and
                                                             (to_line2 = to_line)) and
@@ -4837,13 +4837,13 @@ goal defqtvc :
                                                              (y <= del_line1)) ->
                                                              (not (is_complete_line((cur_board1[y])) = true)))) and
                                                             ((andb((if (((
-                                                            (forall temp___914:int.
-                                                            (((1 <= temp___914) and
-                                                            (temp___914 <= 20)) ->
-                                                            (((20 <  temp___914) or
-                                                            ((temp___914 <  1) or
-                                                            (del_line1 <  temp___914))) ->
-                                                            ((cur_board1[temp___914]) = (cur_board[temp___914]))))) and
+                                                            (forall temp___923:int.
+                                                            (((1 <= temp___923) and
+                                                            (temp___923 <= 20)) ->
+                                                            (((20 <  temp___923) or
+                                                            ((temp___923 <  1) or
+                                                            (del_line1 <  temp___923))) ->
+                                                            ((cur_board1[temp___923]) = (cur_board[temp___923]))))) and
                                                             dynamic_invariant3(to_line1,
                                                             true, true, true,
                                                             true)) and
@@ -4860,11 +4860,11 @@ goal defqtvc :
   (forall spark__branch2:bool.
   ((spark__branch2 = (if (not (complete_lines1 = rliteral1)) then true else false)) ->
   ((spark__branch2 = true) -> (((to_line1 - 1) = r21b) ->
-  (dynamic_invariant(r21b, true, false, true, true) -> (let temp___920 = r21b
+  (dynamic_invariant(r21b, true, false, true, true) -> (let temp___929 = r21b
   : int in
-  (forall from_line:int. ((from_line = temp___920) ->
+  (forall from_line:int. ((from_line = temp___929) ->
   ((andb((if (1 <= from_line) then true else false),
-  (if (from_line <= temp___920) then true else false)) = true) ->
+  (if (from_line <= temp___929) then true else false)) = true) ->
   (((no_complete_lines(cur_board1) = true) <->
   (forall y:int. (((1 <= y) and (y <= 20)) ->
   (not (is_complete_line((cur_board1[y])) = true))))) ->

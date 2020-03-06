@@ -311,6 +311,10 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   (bool_eq4(((a).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr,
   ((b).us_split_fields1).rec__do_checks__do_discriminant_check__r1__arr) = true))) then true else false)
 
+predicate in_range3(rec__do_checks__do_discriminant_check__r1__j1: int,
+  a: us_split_discrs) =
+  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep((a).rec__do_checks__do_discriminant_check__r1__j))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -384,7 +388,7 @@ axiom tT62bP1qtaxiom : (forall i:tT62bP1. (1 <= tT62bP1qtint(i)))
 
 axiom tT62bP1qtaxiom1 : (forall i:tT62bP1. (tT62bP1qtint(i) <= 10))
 
-predicate in_range3(x: int) = ((1 <= x) and (x <= 10))
+predicate in_range4(x: int) = ((1 <= x) and (x <= 10))
 
 function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -471,10 +475,6 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   ((b).us_split_fields3).rec__do_checks__do_discriminant_check__r1__arr1, 1,
   10) = true))) then true else false)
 
-predicate in_range4(rec__do_checks__do_discriminant_check__r1__j1: int,
-  a: us_rep) =
-  (rec__do_checks__do_discriminant_check__r1__j1 = to_rep(((a).us_split_discrs1).rec__do_checks__do_discriminant_check__r1__j))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -530,8 +530,8 @@ function r2__ref_r2__content__projection(a: r2__ref) : us_rep1 =
 predicate dynamic_invariant1(temp___expr_559: us_rep1,
   temp___is_init_555: bool, temp___skip_constant_556: bool,
   temp___do_toplevel_557: bool, temp___do_typ_inv_558: bool) =
-  ((not (temp___skip_constant_556 = true)) -> in_range4(10,
-  to_base(temp___expr_559)))
+  ((not (temp___skip_constant_556 = true)) -> in_range3(10,
+  (to_base(temp___expr_559)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_562: us_rep1,
   temp___skip_top_level_563: bool) =
@@ -558,6 +558,4 @@ goal defqtvc :
   true, false, true, true) -> (dynamic_invariant1({ us_split_discrs2 =
   y__split_discrs; us_split_fields3 = {
   rec__do_checks__do_discriminant_check__r1__arr1 = y__split_fields } },
-  false, false, true, true) -> in_range4(10, { us_split_discrs1 =
-  x__split_discrs; us_split_fields1 = {
-  rec__do_checks__do_discriminant_check__r1__arr = x__split_fields } }))))
+  false, false, true, true) -> in_range3(10, x__split_discrs))))

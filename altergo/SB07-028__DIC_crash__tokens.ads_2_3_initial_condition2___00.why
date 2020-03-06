@@ -79,17 +79,39 @@ logic user_eq : us_rep, us_rep -> bool
 
 logic dummy : us_rep
 
-type cont__ref = { cont__content : us_rep
+type token_set__ref = { token_set__content : us_rep
 }
 
-function cont__ref_cont__content__projection(a: cont__ref) : us_rep =
-  (a).cont__content
+function token_set__ref_token_set__content__projection(a: token_set__ref) : us_rep =
+  (a).token_set__content
 
 logic attr__ATTRIBUTE_ADDRESS : int
 
 logic init : us_rep -> bool
 
 logic init__function_guard : bool, us_rep -> prop
+
+logic value__size1 : int
+
+logic object__size1 : int
+
+logic alignment1 : int
+
+axiom value__size_axiom1 : (0 <= value__size1)
+
+axiom object__size_axiom1 : (0 <= object__size1)
+
+axiom alignment_axiom1 : (0 <= alignment1)
+
+logic user_eq1 : us_rep, us_rep -> bool
+
+logic dummy1 : us_rep
+
+type cont__ref = { cont__content : us_rep
+}
+
+function cont__ref_cont__content__projection(a: cont__ref) : us_rep =
+  (a).cont__content
 
 logic length : us_rep -> int
 
@@ -107,13 +129,13 @@ axiom init__def_axiom2 :
   (forall tokens__x:us_rep [init(tokens__x)]. ((length(tokens__x) = 0) ->
   (init(tokens__x) = true)))
 
-axiom temp___result_164qtdef :
-  (forall temp___163:us_rep. length__function_guard(length(temp___163),
-  temp___163))
+axiom temp___result_173qtdef :
+  (forall temp___172:us_rep. length__function_guard(length(temp___172),
+  temp___172))
 
-predicate default_initial_assumption(temp___expr_161: us_rep,
-  temp___skip_top_level_162: bool) =
-  ((not (temp___skip_top_level_162 = true)) -> (length(temp___expr_161) = 0))
+predicate default_initial_assumption(temp___expr_170: us_rep,
+  temp___skip_top_level_171: bool) =
+  ((not (temp___skip_top_level_171 = true)) -> (length(temp___expr_170) = 0))
 
 type integer
 
@@ -134,9 +156,9 @@ logic attr__ATTRIBUTE_VALUE__pre_check : us_image -> prop
 
 logic attr__ATTRIBUTE_VALUE : us_image -> int
 
-logic user_eq1 : integer, integer -> bool
+logic user_eq2 : integer, integer -> bool
 
-logic dummy1 : integer
+logic dummy2 : integer
 
 type integer__ref = { integer__content : integer
 }
@@ -148,6 +170,14 @@ predicate dynamic_invariant(temp___expr_18: int, temp___is_init_14: bool,
   temp___skip_constant_15: bool, temp___do_toplevel_16: bool,
   temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
   ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_18))
+
+axiom temp___result_164qtdef :
+  (forall temp___163:us_rep. length__function_guard(length(temp___163),
+  temp___163))
+
+predicate default_initial_assumption1(temp___expr_161: us_rep,
+  temp___skip_top_level_162: bool) =
+  ((not (temp___skip_top_level_162 = true)) -> (length(temp___expr_161) = 0))
 
 axiom length__post_axiom : (forall x:us_rep [length(x)]. in_range(length(x)))
 

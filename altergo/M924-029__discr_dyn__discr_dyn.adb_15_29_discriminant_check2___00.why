@@ -320,6 +320,9 @@ function bool_eq5(a: us_rep, b: us_rep) : bool =
   ((b).us_split_fields1).rec__discr_dyn__r2__b) = true) and
   (to_int(((a).us_split_fields1).rec__discr_dyn__r2__c) = to_int(((b).us_split_fields1).rec__discr_dyn__r2__c)))) then true else false)
 
+predicate in_range3(rec__discr_dyn__r2__a1: int, a: us_split_discrs) =
+  (rec__discr_dyn__r2__a1 = to_rep((a).rec__discr_dyn__r2__a))
+
 logic value__size1 : int
 
 logic object__size1 : int
@@ -392,7 +395,7 @@ axiom tT10bP1qtaxiom : (forall i:tT10bP1. (1 <= tT10bP1qtint(i)))
 
 axiom tT10bP1qtaxiom1 : (forall i:tT10bP1. (tT10bP1qtint(i) <= 3))
 
-predicate in_range3(x: int) = ((1 <= x) and (x <= 3))
+predicate in_range4(x: int) = ((1 <= x) and (x <= 3))
 
 function bool_eq6(x: int, y: int) : bool = (if (x = y) then true else false)
 
@@ -474,9 +477,6 @@ function bool_eq7(a: us_rep1, b: us_rep1) : bool =
   ((b).us_split_fields3).rec__discr_dyn__r2__b1, 1, 3) = true) and
   (to_int(((a).us_split_fields3).rec__discr_dyn__r2__c1) = to_int(((b).us_split_fields3).rec__discr_dyn__r2__c1)))) then true else false)
 
-predicate in_range4(rec__discr_dyn__r2__a1: int, a: us_rep) =
-  (rec__discr_dyn__r2__a1 = to_rep(((a).us_split_discrs1).rec__discr_dyn__r2__a))
-
 logic value__size3 : int
 
 logic object__size3 : int
@@ -548,8 +548,8 @@ logic attr__ATTRIBUTE_ADDRESS : int
 predicate dynamic_invariant(temp___expr_202: us_rep1,
   temp___is_init_198: bool, temp___skip_constant_199: bool,
   temp___do_toplevel_200: bool, temp___do_typ_inv_201: bool) =
-  ((not (temp___skip_constant_199 = true)) -> in_range4(3,
-  to_base(temp___expr_202)))
+  ((not (temp___skip_constant_199 = true)) -> in_range3(3,
+  (to_base(temp___expr_202)).us_split_discrs1))
 
 predicate default_initial_assumption(temp___expr_205: us_rep1,
   temp___skip_top_level_206: bool) =
@@ -649,9 +649,6 @@ function bool_eq9(a: us_rep2, b: us_rep2) : bool =
   ((bool_eq3(((a).us_split_fields5).rec__discr_dyn__r2__b2, 1, 2,
   ((b).us_split_fields5).rec__discr_dyn__r2__b2, 1, 2) = true) and
   (to_int(((a).us_split_fields5).rec__discr_dyn__r2__c2) = to_int(((b).us_split_fields5).rec__discr_dyn__r2__c2)))) then true else false)
-
-predicate in_range6(rec__discr_dyn__r2__a1: int, a: us_rep) =
-  (rec__discr_dyn__r2__a1 = to_rep(((a).us_split_discrs1).rec__discr_dyn__r2__a))
 
 logic value__size5 : int
 
@@ -764,7 +761,7 @@ goal defqtvc :
   ((exists usf:int. (dynamic_invariant1(usf, true, true, true, true) and
    (exists usf1:us_rep.
    (to_rep(((usf1).us_split_discrs1).rec__discr_dyn__r2__a) = usf)))) ->
-  (in_range1(3) -> in_range4(3, to_base1({ us_split_discrs3 = {
+  (in_range1(3) -> in_range3(3, (to_base1({ us_split_discrs3 = {
   rec__discr_dyn__r2__a = rliteral2 }; us_split_fields5 = {
   rec__discr_dyn__r2__b2 = temp_____aggregate_def_215((- 1), (- 2));
-  rec__discr_dyn__r2__c2 = of_int(0) } }))))
+  rec__discr_dyn__r2__c2 = of_int(0) } })).us_split_discrs1)))

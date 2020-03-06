@@ -571,12 +571,12 @@ predicate dynamic_invariant1(temp___expr_18: int, temp___is_init_14: bool,
   temp___do_typ_inv_17: bool) = (((temp___is_init_14 = true) or
   ((- 2147483648) <= 2147483647)) -> in_range(temp___expr_18))
 
-predicate default_initial_assumption1(temp___expr_203: us_rep1,
-  temp___skip_top_level_204: bool) =
-  (((temp___expr_203).attr__tag1 = us_tag1) and
-  (((to_rep(((temp___expr_203).us_split_fields3).rec__object__t__area1) = (- 1)) and
-  (to_rep(((temp___expr_203).us_split_fields3).rec__object__t__max_width1) = (- 1))) and
-  (to_rep(((temp___expr_203).us_split_fields3).rec__object__t__max_height1) = (- 1))))
+predicate default_initial_assumption1(temp___expr_205: us_rep1,
+  temp___skip_top_level_206: bool) =
+  (((temp___expr_205).attr__tag1 = us_tag1) and
+  (((to_rep(((temp___expr_205).us_split_fields3).rec__object__t__area1) = (- 1)) and
+  (to_rep(((temp___expr_205).us_split_fields3).rec__object__t__max_width1) = (- 1))) and
+  (to_rep(((temp___expr_205).us_split_fields3).rec__object__t__max_height1) = (- 1))))
 
  (* File "window.ads", line 8, characters 0-0 *)
 goal defqtvc :
