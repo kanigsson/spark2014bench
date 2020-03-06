@@ -303,6 +303,9 @@
 (define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun in_range3 ((rec__p__pt__x1 Int)
+  (a us_split_discrs)) Bool (= rec__p__pt__x1 (to_rep (rec__p__pt__x a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

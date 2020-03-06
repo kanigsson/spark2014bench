@@ -119,6 +119,11 @@
                    (rec__discr__with_default__c (us_split_discrs1 b)))) true
                    false))
 
+(define-fun in_range1 ((rec__discr__with_default__c1 Int)
+  (a us_split_discrs)) Bool (= rec__discr__with_default__c1 (to_rep
+                                                            (rec__discr__with_default__c
+                                                            a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -165,11 +170,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
-(define-fun in_range1 ((rec__discr__with_default__c1 Int)
-  (a us_rep)) Bool (= rec__discr__with_default__c1 (to_rep
-                                                   (rec__discr__with_default__c
-                                                   (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -215,18 +215,14 @@
   (temp___do_toplevel_193 Bool)
   (temp___do_typ_inv_194 Bool)) Bool (=>
                                      (not (= temp___skip_constant_192 true))
-                                     (in_range1 c temp___expr_195)))
+                                     (in_range1 c
+                                     (us_split_discrs1 temp___expr_195))))
 
 (define-fun default_initial_assumption ((temp___expr_197 us_rep)
   (temp___skip_top_level_198 Bool)) Bool (= (to_rep
                                             (rec__discr__with_default__c
                                             (us_split_discrs1
                                             temp___expr_197))) c))
-
-(define-fun in_range2 ((rec__discr__with_default__c1 Int)
-  (a us_rep)) Bool (= rec__discr__with_default__c1 (to_rep
-                                                   (rec__discr__with_default__c
-                                                   (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -267,11 +263,6 @@
 (((t8b__refqtmk (t8b__content us_rep)))))
 (define-fun t8b__ref_t8b__content__projection ((a t8b__ref)) us_rep (t8b__content
                                                                     a))
-
-(define-fun in_range3 ((rec__discr__with_default__c1 Int)
-  (a us_rep)) Bool (= rec__discr__with_default__c1 (to_rep
-                                                   (rec__discr__with_default__c
-                                                   (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 
@@ -329,5 +320,5 @@
   (=> (default_initial_assumption (us_repqtmk d__split_discrs) false)
   (=> (dynamic_invariant1 (us_repqtmk d__split_discrs) false false true true)
   (forall ((o natural))
-  (=> (= (to_rep o) c) (in_range1 c (us_repqtmk (us_split_discrsqtmk o))))))))))))
+  (=> (= (to_rep o) c) (in_range1 c (us_split_discrsqtmk o)))))))))))
 (check-sat)

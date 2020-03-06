@@ -393,6 +393,10 @@
                                                    (us_split_fields1 b))))))))
                    true false))
 
+(define-fun in_range6 ((rec__relaxed_initialization__rec__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__relaxed_initialization__rec__d1 (rec__relaxed_initialization__rec__d
+                                                                    a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

@@ -329,81 +329,55 @@
                                                  (rec__dimensions__line_parameter_type__b
                                                  (us_split_fields1
                                                  temp___expr_639))) (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000))))
+                                     (let ((temp___641 (fp.add RNE (fp.mul RNE 
+                                     (to_rep1
+                                     (rec__dimensions__line_parameter_type__a
+                                     (us_split_fields1 temp___expr_639))) 
+                                     (to_rep1
+                                     (rec__dimensions__line_parameter_type__a
+                                     (us_split_fields1 temp___expr_639)))) (fp.mul RNE 
+                                     (to_rep1
+                                     (rec__dimensions__line_parameter_type__b
+                                     (us_split_fields1 temp___expr_639))) 
+                                     (to_rep1
+                                     (rec__dimensions__line_parameter_type__b
+                                     (us_split_fields1 temp___expr_639)))))))
                                      (and
-                                     (fp.leq (fp #b0 #b01111111110 #b1100110011001100110011001100110011001100110011001101) (fp.add RNE (fp.mul RNE 
-                                     (to_rep1
-                                     (rec__dimensions__line_parameter_type__a
-                                     (us_split_fields1 temp___expr_639))) 
-                                     (to_rep1
-                                     (rec__dimensions__line_parameter_type__a
-                                     (us_split_fields1 temp___expr_639)))) (fp.mul RNE 
-                                     (to_rep1
-                                     (rec__dimensions__line_parameter_type__b
-                                     (us_split_fields1 temp___expr_639))) 
-                                     (to_rep1
-                                     (rec__dimensions__line_parameter_type__b
-                                     (us_split_fields1 temp___expr_639))))))
-                                     (fp.leq (fp.add RNE (fp.mul RNE 
-                                     (to_rep1
-                                     (rec__dimensions__line_parameter_type__a
-                                     (us_split_fields1 temp___expr_639))) 
-                                     (to_rep1
-                                     (rec__dimensions__line_parameter_type__a
-                                     (us_split_fields1 temp___expr_639)))) (fp.mul RNE 
-                                     (to_rep1
-                                     (rec__dimensions__line_parameter_type__b
-                                     (us_split_fields1 temp___expr_639))) 
-                                     (to_rep1
-                                     (rec__dimensions__line_parameter_type__b
-                                     (us_split_fields1 temp___expr_639))))) (fp #b0 #b01111111111 #b0001100110011001100110011001100110011001100110011010)))))))
+                                     (fp.leq (fp #b0 #b01111111110 #b1100110011001100110011001100110011001100110011001101) temp___641)
+                                     (fp.leq temp___641 (fp #b0 #b01111111111 #b0001100110011001100110011001100110011001100110011010))))))))
 
-(define-fun dynamic_predicate ((temp___646 us_rep)) Bool (and
+(define-fun dynamic_predicate ((temp___647 us_rep)) Bool (and
                                                          (or
                                                          (not (fp.eq 
                                                          (to_rep1
                                                          (rec__dimensions__line_parameter_type__a
                                                          (us_split_fields1
-                                                         temp___646))) (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000)))
+                                                         temp___647))) (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000)))
                                                          (not (fp.eq 
                                                          (to_rep1
                                                          (rec__dimensions__line_parameter_type__b
                                                          (us_split_fields1
-                                                         temp___646))) (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000))))
+                                                         temp___647))) (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000))))
+                                                         (let ((temp___649 (fp.add RNE (fp.mul RNE 
+                                                         (to_rep1
+                                                         (rec__dimensions__line_parameter_type__a
+                                                         (us_split_fields1
+                                                         temp___647))) 
+                                                         (to_rep1
+                                                         (rec__dimensions__line_parameter_type__a
+                                                         (us_split_fields1
+                                                         temp___647)))) (fp.mul RNE 
+                                                         (to_rep1
+                                                         (rec__dimensions__line_parameter_type__b
+                                                         (us_split_fields1
+                                                         temp___647))) 
+                                                         (to_rep1
+                                                         (rec__dimensions__line_parameter_type__b
+                                                         (us_split_fields1
+                                                         temp___647)))))))
                                                          (and
-                                                         (fp.leq (fp #b0 #b01111111110 #b1100110011001100110011001100110011001100110011001101) (fp.add RNE (fp.mul RNE 
-                                                         (to_rep1
-                                                         (rec__dimensions__line_parameter_type__a
-                                                         (us_split_fields1
-                                                         temp___646))) 
-                                                         (to_rep1
-                                                         (rec__dimensions__line_parameter_type__a
-                                                         (us_split_fields1
-                                                         temp___646)))) (fp.mul RNE 
-                                                         (to_rep1
-                                                         (rec__dimensions__line_parameter_type__b
-                                                         (us_split_fields1
-                                                         temp___646))) 
-                                                         (to_rep1
-                                                         (rec__dimensions__line_parameter_type__b
-                                                         (us_split_fields1
-                                                         temp___646))))))
-                                                         (fp.leq (fp.add RNE (fp.mul RNE 
-                                                         (to_rep1
-                                                         (rec__dimensions__line_parameter_type__a
-                                                         (us_split_fields1
-                                                         temp___646))) 
-                                                         (to_rep1
-                                                         (rec__dimensions__line_parameter_type__a
-                                                         (us_split_fields1
-                                                         temp___646)))) (fp.mul RNE 
-                                                         (to_rep1
-                                                         (rec__dimensions__line_parameter_type__b
-                                                         (us_split_fields1
-                                                         temp___646))) 
-                                                         (to_rep1
-                                                         (rec__dimensions__line_parameter_type__b
-                                                         (us_split_fields1
-                                                         temp___646))))) (fp #b0 #b01111111111 #b0001100110011001100110011001100110011001100110011010)))))
+                                                         (fp.leq (fp #b0 #b01111111110 #b1100110011001100110011001100110011001100110011001101) temp___649)
+                                                         (fp.leq temp___649 (fp #b0 #b01111111111 #b0001100110011001100110011001100110011001100110011010))))))
 
 (define-fun dynamic_invariant1 ((temp___expr_536 Float64)
   (temp___is_init_532 Bool) (temp___skip_constant_533 Bool)

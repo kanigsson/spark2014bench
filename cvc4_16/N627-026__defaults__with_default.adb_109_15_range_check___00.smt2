@@ -273,6 +273,10 @@
                                                   (us_split_fields1 b)))))))
                    true false))
 
+(define-fun in_range4 ((rec__with_default__bad_record3__rec_with_bad_discr__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__with_default__bad_record3__rec_with_bad_discr__b1 
+  (rec__with_default__bad_record3__rec_with_bad_discr__b a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

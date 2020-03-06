@@ -616,12 +616,12 @@
   (=> (is_perm__function_guard (is_perm a b) a b)
   (=> (= (is_perm a b) true)
   (=> (< 0 (length a))
-  (let ((temp___966 (first1 a)))
-  (let ((temp___967 (last1 a)))
+  (let ((temp___970 (first1 a)))
+  (let ((temp___971 (last1 a)))
   (forall ((ia Int))
-  (=> (= ia temp___966)
+  (=> (= ia temp___970)
   (=>
-  (= (and (ite (<= temp___966 ia) true false) (ite (<= ia temp___967) true
+  (= (and (ite (<= temp___970 ia) true false) (ite (<= ia temp___971) true
                                               false)) true)
   (forall ((spark__branch Bool))
   (=> (forall ((ia1 Int)) (remove__function_guard (remove a ia1) a ia1))
@@ -662,7 +662,7 @@
   (=>
   (= (and (ite (dynamic_property1 (first1 a) (last1 a) ia1) true false) 
   (ite (and (<= (first1 a) ia1) (<= ia1 (last1 a))) true false)) true)
-  (=> (not (= ia1 temp___967))
+  (=> (not (= ia1 temp___971))
   (forall ((ia2 Int))
   (=> (= ia2 (+ ia1 1))
   (forall ((usf Int))

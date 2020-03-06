@@ -274,8 +274,8 @@
 (define-fun list__ref_list__content__projection ((a list__ref)) us_rep2 
   (list__content a))
 
-(define-fun default_initial_assumption ((temp___expr_337 us_rep2)
-  (temp___skip_top_level_338 Bool)) Bool (= (attr__tag2 temp___expr_337) 
+(define-fun default_initial_assumption ((temp___expr_309 us_rep2)
+  (temp___skip_top_level_310 Bool)) Bool (= (attr__tag2 temp___expr_309) 
   us_tag2))
 
 (declare-sort us_main_type2 0)
@@ -326,12 +326,12 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
-(define-fun default_initial_assumption1 ((temp___expr_271 us_rep)
-  (temp___skip_top_level_272 Bool)) Bool (= (attr__tag temp___expr_271) 
+(define-fun default_initial_assumption1 ((temp___expr_250 us_rep)
+  (temp___skip_top_level_251 Bool)) Bool (= (attr__tag temp___expr_250) 
   us_tag))
 
-(define-fun default_initial_assumption2 ((temp___expr_318 us_rep1)
-  (temp___skip_top_level_319 Bool)) Bool (= (attr__tag1 temp___expr_318) 
+(define-fun default_initial_assumption2 ((temp___expr_297 us_rep1)
+  (temp___skip_top_level_298 Bool)) Bool (= (attr__tag1 temp___expr_297) 
   us_tag1))
 
 (assert

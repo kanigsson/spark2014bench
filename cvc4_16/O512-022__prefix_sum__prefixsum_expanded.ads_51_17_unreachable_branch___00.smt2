@@ -359,7 +359,8 @@
   (! (= (= (all_elements_in a max) true)
      (forall ((k Int))
      (=> (and (<= 0 k) (<= k 7))
-     (and (<= (- max) (to_rep (select a k))) (<= (to_rep (select a k)) max))))) :pattern (
+     (let ((temp___179 (to_rep (select a k))))
+     (and (<= (- max) temp___179) (<= temp___179 max)))))) :pattern (
   (all_elements_in a max)) ))))
 
 (declare-fun intermediate_form ((Array Int integer)
@@ -460,6 +461,7 @@
   (= (= o1 true)
   (forall ((k Int))
   (=> (and (<= 0 k) (<= k 7))
-  (and (<= (- 1000000) (to_rep (select o k)))
-  (<= (to_rep (select o k)) 1000000))))) (not (= o1 true))))))))
+  (let ((temp___176 (to_rep (select o k))))
+  (and (<= (- 1000000) temp___176) (<= temp___176 1000000))))))
+  (not (= o1 true))))))))
 (check-sat)

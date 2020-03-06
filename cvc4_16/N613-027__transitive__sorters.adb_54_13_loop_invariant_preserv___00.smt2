@@ -321,8 +321,8 @@
   (<= (to_rep (select (to_array unsorted) min2)) (to_rep
                                                  (select (to_array unsorted) j))))))
   (=>
-  (= (and (ite (and (dynamic_invariant min2 false true true true)
-               (dynamic_property1 (first1 unsorted) (last1 unsorted) index1))
+  (= (and (ite (and (dynamic_property1 (first1 unsorted) (last1 unsorted)
+               index1) (dynamic_invariant min2 false true true true))
           true false) (ite (and (<= (first1 unsorted) index1)
                            (<= index1 (last1 unsorted)))
                       true false)) true)

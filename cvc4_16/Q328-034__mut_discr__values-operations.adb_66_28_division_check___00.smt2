@@ -436,23 +436,23 @@
   (exists ((spark__branch3 Bool))
   (and (= spark__branch3 o1)
   (ite (= spark__branch3 true)
-  (exists ((o2 Int))
-  (and (= (to_rep v1__split_fields) o2)
-  (exists ((o3 Int))
-  (and (= (to_rep v1__split_fields) o3)
+  (exists ((temp___220 Int))
+  (and (= (to_rep v1__split_fields) temp___220)
   (exists ((spark__branch4 Bool))
   (and
-  (= spark__branch4 (ite (= (and (ite (<= (- 1073741823) o3) true false) 
-                    (ite (<= o2 1073741822) true false)) true) false true))
+  (= spark__branch4 (ite (= (and (ite (<= (- 1073741823) temp___220) true
+                                 false) (ite (<= temp___220 1073741822) true
+                                        false)) true)
+                    false true))
   (and (not (= spark__branch4 true))
-  (exists ((o4 Int))
-  (and (= (to_rep v2__split_fields) o4)
-  (exists ((o5 Int))
-  (and (= (to_rep v2__split_fields) o5)
+  (exists ((temp___221 Int))
+  (and (= (to_rep v2__split_fields) temp___221)
   (and
-  (= spark__branch (ite (= (and (ite (<= (- 1073741823) o5) true false) 
-                   (ite (<= o4 1073741822) true false)) true) false true))
-  (not (= spark__branch true))))))))))))))
+  (= spark__branch (ite (= (and (ite (<= (- 1073741823) temp___221) true
+                                false) (ite (<= temp___221 1073741822) true
+                                       false)) true)
+                   false true))
+  (not (= spark__branch true))))))))))
   (exists ((spark__branch4 Bool))
   (and (= spark__branch4 (ite (= op 1) true false))
   (ite (= spark__branch4 true)

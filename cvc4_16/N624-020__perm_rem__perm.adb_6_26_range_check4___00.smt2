@@ -447,6 +447,6 @@
   (=> (= (invariant__ a) true)
   (=> (<= (first1 a) i)
   (=> (<= i (last1 a))
-  (let ((temp___848 (+ i 1)))
-  (=> (<= temp___848 (last1 a)) (<= (first1 a) temp___848)))))))))))
+  (let ((temp___852 (+ i 1)))
+  (=> (<= temp___852 (last1 a)) (<= (first1 a) temp___852)))))))))))
 (check-sat)

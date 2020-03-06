@@ -378,10 +378,10 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___239 Int))
-  (=> (dynamic_invariant temp___239 true true true true)
-  (forall ((temp___240 Int))
-  (= (select (member__bad_2__a__aggregate_def temp___239) temp___240) 
+  (forall ((temp___246 Int))
+  (=> (dynamic_invariant temp___246 true true true true)
+  (forall ((temp___247 Int))
+  (= (select (member__bad_2__a__aggregate_def temp___246) temp___247) 
   rliteral)))))
 
 (assert
@@ -399,14 +399,9 @@
   (=> (= (to_rep a__last) o)
   (forall ((o1 Int))
   (=> (= (to_rep a__first) o1)
-  (forall ((o2 Int))
-  (=> (= (to_rep a__last) o2)
-  (forall ((o3 Int))
-  (=> (= (to_rep a__first) o3)
+  (let ((temp___249 (of_array a o1 o)))
   (forall ((spark__branch Bool))
   (=>
-  (= spark__branch (and (and true (ite (= (first1 (of_array a o3 o2)) 1) true
-                                  false)) (ite (= (last1 (of_array a o1 o)) 10)
-                                          true false)))
-  (not (= spark__branch true))))))))))))))))))))
+  (= spark__branch (and (and true (ite (= (first1 temp___249) 1) true false)) 
+  (ite (= (last1 temp___249) 10) true false))) (not (= spark__branch true)))))))))))))))))
 (check-sat)

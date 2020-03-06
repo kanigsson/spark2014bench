@@ -641,6 +641,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range7 ((rec__stacks__stack__max1 Int)
+  (a us_split_discrs)) Bool (= rec__stacks__stack__max1 (to_rep1
+                                                        (rec__stacks__stack__max
+                                                        a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -792,11 +797,6 @@
                     true false))
 
 (declare-const us_tag1 Int)
-
-(define-fun in_range7 ((rec__stacks__stack__max1 Int)
-  (a us_rep)) Bool (= rec__stacks__stack__max1 (to_rep1
-                                               (rec__stacks__stack__max
-                                               (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 

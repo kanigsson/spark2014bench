@@ -87,7 +87,7 @@
  ;; File "a~b.ads", line 4, characters 0-0
   (not
   (forall ((tmp Int) (data1 Int) (data2 Int) (data11 Int))
-  (=> (dynamic_invariant data1 true false true true)
+  (=> (dynamic_invariant data1 false false true true)
   (=> (dynamic_invariant data2 true false true true)
   (=> (dynamic_invariant tmp false false true true)
   (=> (= data11 0) (in_range (+ data11 data2)))))))))

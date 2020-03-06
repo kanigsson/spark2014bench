@@ -885,16 +885,18 @@
   (=> (= previous 64)
   (=> (dynamic_invariant previous true false true true)
   (=>
-  (forall ((temp___291 Int))
-  (=> (and (<= (first1 powers) temp___291) (<= temp___291 (last1 powers)))
-  (let ((k (to_rep (select (to_array powers) temp___291))))
-  (and (bvule #x0000000000000000 ((_ int2bv 64) (power 2 k)))
-  (bvule ((_ int2bv 64) (power 2 k)) #xFFFFFFFFFFFFFFFF)))))
-  (let ((temp___293 (first1 powers)))
+  (forall ((temp___301 Int))
+  (=> (and (<= (first1 powers) temp___301) (<= temp___301 (last1 powers)))
+  (let ((temp___303 ((_ int2bv 64) (power 2
+                                   (to_rep
+                                   (select (to_array powers) temp___301))))))
+  (and (bvule #x0000000000000000 temp___303)
+  (bvule temp___303 #xFFFFFFFFFFFFFFFF)))))
+  (let ((temp___304 (first1 powers)))
   (forall ((c23b Int))
-  (=> (= c23b temp___293)
+  (=> (= c23b temp___304)
   (=>
-  (= (and (ite (<= temp___293 c23b) true false) (ite (<= c23b (last1 powers))
+  (= (and (ite (<= temp___304 c23b) true false) (ite (<= c23b (last1 powers))
                                                 true false)) true)
   (forall ((usf Int))
   (=>

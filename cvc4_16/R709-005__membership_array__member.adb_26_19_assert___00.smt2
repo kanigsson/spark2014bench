@@ -435,7 +435,7 @@
 
 (declare-fun member__a__aggregate_def (Int) (Array Int natural))
 
-(declare-fun temp_____aggregate_def_229 (Int) (Array Int natural))
+(declare-fun temp_____aggregate_def_231 (Int) (Array Int natural))
 
 (define-fun dynamic_invariant2 ((temp___expr_39 Int) (temp___is_init_35 Bool)
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
@@ -489,10 +489,10 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___231 Int))
-  (=> (dynamic_invariant2 temp___231 true true true true)
-  (forall ((temp___232 Int))
-  (= (select (temp_____aggregate_def_229 temp___231) temp___232) rliteral1)))))
+  (forall ((temp___233 Int))
+  (=> (dynamic_invariant2 temp___233 true true true true)
+  (forall ((temp___234 Int))
+  (= (select (temp_____aggregate_def_231 temp___233) temp___234) rliteral1)))))
 
 (assert
 ;; defqtvc

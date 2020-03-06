@@ -559,6 +559,11 @@
                            (us_split_fields1 b))) true)))
                    true false))
 
+(define-fun in_range3 ((rec__area_math__ensemble__max1 Int)
+  (a us_split_discrs)) Bool (= rec__area_math__ensemble__max1 (to_rep
+                                                              (rec__area_math__ensemble__max
+                                                              a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -864,11 +869,6 @@
                             (rec__area_math__ensemble__to1
                             (us_split_fields3 b)) 1 0) true)))
                     true false))
-
-(define-fun in_range3 ((rec__area_math__ensemble__max1 Int)
-  (a us_rep)) Bool (= rec__area_math__ensemble__max1 (to_rep
-                                                     (rec__area_math__ensemble__max
-                                                     (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 

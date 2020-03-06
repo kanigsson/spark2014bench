@@ -376,6 +376,10 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range4 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
+  (to_rep (rec__ada___pragmarc__b_strings__b_string__max_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -456,7 +460,7 @@
 
 (declare-fun oeq__function_guard1 (Bool Int us_rep us_rep) Bool)
 
-(define-fun in_range4 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range5 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Bool) us_image)
 
@@ -543,11 +547,6 @@
                                          (attr__tag r)))
 
 (declare-const us_tag1 Int)
-
-(define-fun in_range5 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -689,11 +688,6 @@
 
 (declare-const us_tag2 Int)
 
-(define-fun in_range6 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -833,11 +827,6 @@
                                           (attr__tag r)))
 
 (declare-const us_tag3 Int)
-
-(define-fun in_range7 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 
@@ -979,11 +968,6 @@
 
 (declare-const us_tag4 Int)
 
-(define-fun in_range8 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
-
 (declare-const value__size5 Int)
 
 (declare-const object__size5 Int)
@@ -1123,11 +1107,6 @@
                                           (attr__tag r)))
 
 (declare-const us_tag5 Int)
-
-(define-fun in_range9 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
 
 (declare-const value__size6 Int)
 
@@ -1269,11 +1248,6 @@
 
 (declare-const us_tag6 Int)
 
-(define-fun in_range10 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
-
 (declare-const value__size7 Int)
 
 (declare-const object__size7 Int)
@@ -1413,11 +1387,6 @@
                                           (attr__tag r)))
 
 (declare-const us_tag7 Int)
-
-(define-fun in_range11 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
 
 (declare-const value__size8 Int)
 
@@ -1559,11 +1528,6 @@
 
 (declare-const us_tag8 Int)
 
-(define-fun in_range12 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
-
 (declare-const value__size9 Int)
 
 (declare-const object__size9 Int)
@@ -1703,11 +1667,6 @@
                                           (attr__tag r)))
 
 (declare-const us_tag9 Int)
-
-(define-fun in_range13 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
 
 (declare-const value__size10 Int)
 
@@ -1850,11 +1809,6 @@
                                            (attr__tag r)))
 
 (declare-const us_tag10 Int)
-
-(define-fun in_range14 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
 
 (declare-const value__size11 Int)
 
@@ -1999,11 +1953,6 @@
 
 (declare-const us_tag11 Int)
 
-(define-fun in_range15 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
-
 (declare-const value__size12 Int)
 
 (declare-const object__size12 Int)
@@ -2146,11 +2095,6 @@
                                             (attr__tag r)))
 
 (declare-const us_tag12 Int)
-
-(define-fun in_range16 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
 
 (declare-const value__size13 Int)
 
@@ -2295,11 +2239,6 @@
 
 (declare-const us_tag13 Int)
 
-(define-fun in_range17 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
-
 (declare-const value__size14 Int)
 
 (declare-const object__size14 Int)
@@ -2443,11 +2382,6 @@
 
 (declare-const us_tag14 Int)
 
-(define-fun in_range18 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
-
 (declare-const value__size15 Int)
 
 (declare-const object__size15 Int)
@@ -2590,11 +2524,6 @@
                                             (attr__tag r)))
 
 (declare-const us_tag15 Int)
-
-(define-fun in_range19 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
-  (a us_rep)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
-  (to_rep
-  (rec__ada___pragmarc__b_strings__b_string__max_length (us_split_discrs1 a)))))
 
 (declare-const value__size16 Int)
 
@@ -2893,7 +2822,7 @@
 
 (declare-sort truncation 0)
 
-(define-fun in_range20 ((x Int)) Bool (and (<= 0 x) (<= x 2)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -2915,7 +2844,7 @@
   (temp___do_toplevel_292 Bool)
   (temp___do_typ_inv_293 Bool)) Bool (=>
                                      (or (= temp___is_init_290 true)
-                                     (<= 0 2)) (in_range20 temp___expr_294)))
+                                     (<= 0 2)) (in_range6 temp___expr_294)))
 
 (declare-datatypes ((t21b__ref 0))
 (((t21b__refqtmk (t21b__content us_t)))))
@@ -3179,11 +3108,12 @@
   (temp___do_typ_inv_472 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_470 true))
-                                     (in_range6
+                                     (in_range4
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
                                      (us_split_discrs1 source)))
-                                     (to_base1 temp___expr_473)))
+                                     (us_split_discrs1
+                                     (to_base1 temp___expr_473))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
@@ -3267,11 +3197,12 @@
   (temp___do_typ_inv_511 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_509 true))
-                                     (in_range8
+                                     (in_range4
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
                                      (us_split_discrs1 source1)))
-                                     (to_base3 temp___expr_512)))
+                                     (us_split_discrs1
+                                     (to_base3 temp___expr_512))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
@@ -3342,11 +3273,12 @@
   (temp___do_typ_inv_523 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_521 true))
-                                     (in_range9
+                                     (in_range4
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
                                      (us_split_discrs1 from)))
-                                     (to_base4 temp___expr_524)))
+                                     (us_split_discrs1
+                                     (to_base4 temp___expr_524))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
@@ -3451,11 +3383,12 @@
   (temp___do_typ_inv_647 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_645 true))
-                                     (in_range11
+                                     (in_range4
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
                                      (us_split_discrs1 left)))
-                                     (to_base6 temp___expr_648)))
+                                     (us_split_discrs1
+                                     (to_base6 temp___expr_648))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
@@ -3530,11 +3463,12 @@
   (temp___do_typ_inv_635 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_633 true))
-                                     (in_range10
+                                     (in_range4
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
                                      (us_split_discrs1 right)))
-                                     (to_base5 temp___expr_636)))
+                                     (us_split_discrs1
+                                     (to_base5 temp___expr_636))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
@@ -3609,11 +3543,12 @@
   (temp___do_typ_inv_691 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_689 true))
-                                     (in_range13
+                                     (in_range4
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
                                      (us_split_discrs1 left1)))
-                                     (to_base8 temp___expr_692)))
+                                     (us_split_discrs1
+                                     (to_base8 temp___expr_692))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
@@ -3688,11 +3623,12 @@
   (temp___do_typ_inv_679 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_677 true))
-                                     (in_range12
+                                     (in_range4
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
                                      (us_split_discrs1 right1)))
-                                     (to_base7 temp___expr_680)))
+                                     (us_split_discrs1
+                                     (to_base7 temp___expr_680))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
@@ -3767,11 +3703,12 @@
   (temp___do_typ_inv_735 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_733 true))
-                                     (in_range15
+                                     (in_range4
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
                                      (us_split_discrs1 left2)))
-                                     (to_base10 temp___expr_736)))
+                                     (us_split_discrs1
+                                     (to_base10 temp___expr_736))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
@@ -3846,11 +3783,12 @@
   (temp___do_typ_inv_723 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_721 true))
-                                     (in_range14
+                                     (in_range4
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
                                      (us_split_discrs1 right2)))
-                                     (to_base9 temp___expr_724)))
+                                     (us_split_discrs1
+                                     (to_base9 temp___expr_724))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
@@ -3925,11 +3863,12 @@
   (temp___do_typ_inv_759 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_757 true))
-                                     (in_range17
+                                     (in_range4
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
                                      (us_split_discrs1 left3)))
-                                     (to_base12 temp___expr_760)))
+                                     (us_split_discrs1
+                                     (to_base12 temp___expr_760))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
@@ -4004,11 +3943,12 @@
   (temp___do_typ_inv_747 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_745 true))
-                                     (in_range16
+                                     (in_range4
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
                                      (us_split_discrs1 right3)))
-                                     (to_base11 temp___expr_748)))
+                                     (us_split_discrs1
+                                     (to_base11 temp___expr_748))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
@@ -4083,11 +4023,12 @@
   (temp___do_typ_inv_803 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_801 true))
-                                     (in_range19
+                                     (in_range4
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
                                      (us_split_discrs1 left4)))
-                                     (to_base14 temp___expr_804)))
+                                     (us_split_discrs1
+                                     (to_base14 temp___expr_804))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
@@ -4162,11 +4103,12 @@
   (temp___do_typ_inv_791 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_789 true))
-                                     (in_range18
+                                     (in_range4
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length
                                      (us_split_discrs1 right4)))
-                                     (to_base13 temp___expr_792)))
+                                     (us_split_discrs1
+                                     (to_base13 temp___expr_792))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___pragmarc__b_strings__b_string__max_length

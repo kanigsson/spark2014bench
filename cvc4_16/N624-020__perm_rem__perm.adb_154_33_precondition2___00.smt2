@@ -546,16 +546,12 @@
      (and
      (and
      (and
-     (and
-     (<= (first1 a) (to_rep2
-                    (rec__perm__witnesses__ia (us_split_fields1 result))))
-     (<= (to_rep2 (rec__perm__witnesses__ia (us_split_fields1 result))) 
-     (last1 a)))
-     (and
-     (<= (first1 b) (to_rep2
-                    (rec__perm__witnesses__ib (us_split_fields1 result))))
-     (<= (to_rep2 (rec__perm__witnesses__ib (us_split_fields1 result))) 
-     (last1 b))))
+     (let ((temp___425 (to_rep2
+                       (rec__perm__witnesses__ia (us_split_fields1 result)))))
+     (and (<= (first1 a) temp___425) (<= temp___425 (last1 a))))
+     (let ((temp___426 (to_rep2
+                       (rec__perm__witnesses__ib (us_split_fields1 result)))))
+     (and (<= (first1 b) temp___426) (<= temp___426 (last1 b)))))
      (= (to_rep1
         (select (to_array a) (to_rep2
                              (rec__perm__witnesses__ia

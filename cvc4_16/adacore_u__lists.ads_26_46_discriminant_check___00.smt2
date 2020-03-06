@@ -147,6 +147,10 @@
                         (rec__lists__cell__next (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range2 ((rec__lists__cell__is_set1 Bool)
+  (a us_split_discrs)) Bool (= rec__lists__cell__is_set1 (rec__lists__cell__is_set
+                                                         a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

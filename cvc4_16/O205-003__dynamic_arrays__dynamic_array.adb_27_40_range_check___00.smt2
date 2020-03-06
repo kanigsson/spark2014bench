@@ -261,6 +261,10 @@
                         (rec__dynamic_array__rec__f2 (us_split_fields1 b)))))))
                    true false))
 
+(define-fun in_range4 ((rec__dynamic_array__rec__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__dynamic_array__rec__b1 (rec__dynamic_array__rec__b
+                                                           a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -498,6 +502,11 @@
                             (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range5 ((rec__dynamic_array__holder__d1 Int)
+  (a us_split_discrs2)) Bool (= rec__dynamic_array__holder__d1 (to_rep
+                                                               (rec__dynamic_array__holder__d
+                                                               a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -625,11 +634,6 @@
                             (us_split_fields5 b)) 1 0) true))
                     true false))
 
-(define-fun in_range4 ((rec__dynamic_array__holder__d1 Int)
-  (a us_rep1)) Bool (= rec__dynamic_array__holder__d1 (to_rep
-                                                      (rec__dynamic_array__holder__d
-                                                      (us_split_discrs3 a)))))
-
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -685,10 +689,6 @@
 (((t7b__refqtmk (t7b__content us_rep2)))))
 (define-fun t7b__ref_t7b__content__projection ((a t7b__ref)) us_rep2 
   (t7b__content a))
-
-(define-fun in_range5 ((rec__dynamic_array__rec__b1 Bool)
-  (a us_rep)) Bool (= rec__dynamic_array__rec__b1 (rec__dynamic_array__rec__b
-                                                  (us_split_discrs1 a))))
 
 (declare-const value__size5 Int)
 
@@ -818,11 +818,6 @@
                             (us_split_fields7 b))) true))
                     true false))
 
-(define-fun in_range6 ((rec__dynamic_array__holder__d1 Int)
-  (a us_rep1)) Bool (= rec__dynamic_array__holder__d1 (to_rep
-                                                      (rec__dynamic_array__holder__d
-                                                      (us_split_discrs3 a)))))
-
 (declare-const value__size6 Int)
 
 (declare-const object__size6 Int)
@@ -883,10 +878,6 @@
 (((t17b__refqtmk (t17b__content us_t)))))
 (define-fun t17b__ref_t17b__content__projection ((a t17b__ref)) us_t 
   (t17b__content a))
-
-(define-fun in_range7 ((rec__dynamic_array__rec__b1 Bool)
-  (a us_rep)) Bool (= rec__dynamic_array__rec__b1 (rec__dynamic_array__rec__b
-                                                  (us_split_discrs1 a))))
 
 (declare-const value__size7 Int)
 
@@ -960,9 +951,9 @@
 (define-fun t15b__ref_t15b__content__projection ((a t15b__ref)) us_rep 
   (t15b__content a))
 
-(declare-fun temp_____aggregate_def_262 (us_rep) (Array Int us_rep))
+(declare-fun temp_____aggregate_def_263 (us_rep) (Array Int us_rep))
 
-(declare-fun temp_____aggregate_def_266 (us_rep Int Int) us_t)
+(declare-fun temp_____aggregate_def_267 (us_rep Int Int) us_t)
 
 (define-fun dynamic_invariant1 ((temp___expr_46 Int) (temp___is_init_42 Bool)
   (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)
@@ -1122,23 +1113,23 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___264 us_rep))
-  (=> (dynamic_invariant4 temp___264 true true true true)
-  (forall ((temp___265 Int))
-  (= (select (temp_____aggregate_def_262 temp___264) temp___265) temp___264)))))
+  (forall ((temp___265 us_rep))
+  (=> (dynamic_invariant4 temp___265 true true true true)
+  (forall ((temp___266 Int))
+  (= (select (temp_____aggregate_def_263 temp___265) temp___266) temp___265)))))
 
 ;; def_axiom
   (assert
-  (forall ((temp___268 us_rep))
-  (forall ((temp___269 Int) (temp___270 Int))
-  (let ((temp___267 (temp_____aggregate_def_266 temp___268 temp___269
-                    temp___270)))
-  (=> (dynamic_invariant4 temp___268 true true true true)
+  (forall ((temp___269 us_rep))
+  (forall ((temp___270 Int) (temp___271 Int))
+  (let ((temp___268 (temp_____aggregate_def_267 temp___269 temp___270
+                    temp___271)))
+  (=> (dynamic_invariant4 temp___269 true true true true)
   (and
-  (=> (dynamic_property1 1 2147483647 temp___269 temp___270)
-  (and (= (first1 temp___267) temp___269) (= (last2 temp___267) temp___270)))
-  (forall ((temp___271 Int))
-  (= (select (to_array temp___267) temp___271) temp___268))))))))
+  (=> (dynamic_property1 1 2147483647 temp___270 temp___271)
+  (and (= (first1 temp___268) temp___270) (= (last2 temp___268) temp___271)))
+  (forall ((temp___272 Int))
+  (= (select (to_array temp___268) temp___272) temp___269))))))))
 
 (assert
 ;; defqtvc

@@ -197,6 +197,10 @@
                                                                 b)) 1 0)))))
                    true false))
 
+(define-fun in_range3 ((rec__storage_place_attributes__r2__d11 Int)
+  (a us_split_discrs)) Bool (= rec__storage_place_attributes__r2__d11 
+  (to_rep1 (rec__storage_place_attributes__r2__d1 a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

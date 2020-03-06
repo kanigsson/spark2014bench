@@ -134,6 +134,10 @@
                            (rec__bounded__vect__vector (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__bounded__vect__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__bounded__vect__vector__capacity1 
+  (to_rep (rec__bounded__vect__vector__capacity a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -222,7 +226,7 @@
 
 (define-fun length1 ((x Int) (y Int)) Int (ite (<= x y) (+ (- y x) 1) 0))
 
-(define-fun in_range1 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range2 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE1 (Bool) us_image)
 
@@ -269,12 +273,6 @@
   (assert
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq1 a b) (oeq a b)) :pattern ((user_eq1 a b)) )))
-
-(define-fun in_range2 ((rec__bounded__vect__vector__capacity1 Int)
-  (a us_rep)) Bool (= rec__bounded__vect__vector__capacity1 (to_rep
-                                                            (rec__bounded__vect__vector__capacity
-                                                            (us_split_discrs1
-                                                            a)))))
 
 (declare-const value__size2 Int)
 
@@ -329,23 +327,24 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq3 a b) (oeq a b)) :pattern ((user_eq3 a b)) )))
 
-(define-fun dynamic_invariant ((temp___expr_368 us_rep)
-  (temp___is_init_364 Bool) (temp___skip_constant_365 Bool)
-  (temp___do_toplevel_366 Bool)
-  (temp___do_typ_inv_367 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_365 true))
-                                     (in_range2 2 temp___expr_368)))
+(define-fun dynamic_invariant ((temp___expr_369 us_rep)
+  (temp___is_init_365 Bool) (temp___skip_constant_366 Bool)
+  (temp___do_toplevel_367 Bool)
+  (temp___do_typ_inv_368 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_366 true))
+                                     (in_range1 2
+                                     (us_split_discrs1 temp___expr_369))))
 
-(define-fun default_initial_assumption ((temp___expr_370 us_rep)
-  (temp___skip_top_level_371 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_371 us_rep)
+  (temp___skip_top_level_372 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__bounded__vect__vector__capacity
                                             (us_split_discrs1
-                                            temp___expr_370))) 2)
+                                            temp___expr_371))) 2)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_371 true))
-                                         (= (is_empty temp___expr_370) true))))
+                                         (= temp___skip_top_level_372 true))
+                                         (= (is_empty temp___expr_371) true))))
 
 (declare-sort count_type 0)
 

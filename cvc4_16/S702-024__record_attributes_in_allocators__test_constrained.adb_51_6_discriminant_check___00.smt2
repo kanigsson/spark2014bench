@@ -138,6 +138,10 @@
                         (rec__test_constrained__r__x (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range2 ((rec__test_constrained__r__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__test_constrained__r__b1 (rec__test_constrained__r__b
+                                                            a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -269,7 +273,7 @@
   (assert
   (forall ((i tr_aD1)) (and (<= 1 (tr_aD1qtint i)) (<= (tr_aD1qtint i) 10))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -354,10 +358,6 @@
   (temp___skip_top_level_221 Bool)) Bool (= (rec__test_constrained__r_a_acc__is_null_pointer
                                             temp___expr_220) true))
 
-(define-fun in_range3 ((rec__test_constrained__r__b1 Bool)
-  (a us_rep)) Bool (= rec__test_constrained__r__b1 (rec__test_constrained__r__b
-                                                   (us_split_discrs1 a))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -413,10 +413,6 @@
 (((t35b__refqtmk (t35b__content us_rep)))))
 (define-fun t35b__ref_t35b__content__projection ((a t35b__ref)) us_rep 
   (t35b__content a))
-
-(define-fun in_range4 ((rec__test_constrained__r__b1 Bool)
-  (a us_rep)) Bool (= rec__test_constrained__r__b1 (rec__test_constrained__r__b
-                                                   (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 

@@ -101,6 +101,29 @@
 (define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun to_rep ((x natural)) Int (naturalqtint x))
+
+(declare-fun of_rep (Int) natural)
+
+;; inversion_axiom
+  (assert
+  (forall ((x natural)) (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x natural)) (! (in_range (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                           (of_rep x))) )))
+
+(define-fun in_range1 ((rec__task_types__my_task_type__c1 Int)
+  (a us_split_discrs)) Bool (= rec__task_types__my_task_type__c1 (to_rep
+                                                                 (rec__task_types__my_task_type__c
+                                                                 a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -168,29 +191,6 @@
                                          (rec__task_types__my_task_type
                                          (us_split_fields1 r)))))
 
-(define-fun to_rep ((x natural)) Int (naturalqtint x))
-
-(declare-fun of_rep (Int) natural)
-
-;; inversion_axiom
-  (assert
-  (forall ((x natural)) (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
-
-;; range_axiom
-  (assert
-  (forall ((x natural)) (! (in_range (to_rep x)) :pattern ((to_rep x)) )))
-
-;; coerce_axiom
-  (assert
-  (forall ((x Int))
-  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
-                                                           (of_rep x))) )))
-
-(define-fun in_range1 ((rec__task_types__my_task_type__c1 Int)
-  (a us_rep)) Bool (= rec__task_types__my_task_type__c1 (to_rep
-                                                        (rec__task_types__my_task_type__c
-                                                        (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -240,7 +240,9 @@
   (temp___do_toplevel_188 Bool)
   (temp___do_typ_inv_189 Bool)) Bool (=>
                                      (not (= temp___skip_constant_187 true))
-                                     (in_range1 0 (to_base temp___expr_190))))
+                                     (in_range1 0
+                                     (us_split_discrs1
+                                     (to_base temp___expr_190)))))
 
 (define-fun default_initial_assumption ((temp___expr_192 us_rep1)
   (temp___skip_top_level_193 Bool)) Bool (= (to_rep
@@ -276,11 +278,6 @@
                                           (us_split_fieldsqtmk2
                                           (rec__task_types__my_task_type
                                           (us_split_fields1 r)))))
-
-(define-fun in_range2 ((rec__task_types__my_task_type__c1 Int)
-  (a us_rep)) Bool (= rec__task_types__my_task_type__c1 (to_rep
-                                                        (rec__task_types__my_task_type__c
-                                                        (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -331,8 +328,9 @@
   (temp___do_toplevel_197 Bool)
   (temp___do_typ_inv_198 Bool)) Bool (=>
                                      (not (= temp___skip_constant_196 true))
-                                     (in_range2 1
-                                     (to_base1 temp___expr_199))))
+                                     (in_range1 1
+                                     (us_split_discrs1
+                                     (to_base1 temp___expr_199)))))
 
 (define-fun default_initial_assumption1 ((temp___expr_201 us_rep2)
   (temp___skip_top_level_202 Bool)) Bool (= (to_rep
@@ -374,7 +372,7 @@
   (forall ((i count))
   (and (<= 0 (countqtint i)) (<= (countqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE1 (Int) us_image)
 
@@ -396,7 +394,7 @@
   (temp___do_toplevel_210 Bool)
   (temp___do_typ_inv_211 Bool)) Bool (=>
                                      (or (= temp___is_init_208 true)
-                                     (<= 0 2147483647)) (in_range3
+                                     (<= 0 2147483647)) (in_range2
                                      temp___expr_212)))
 
 ;; line_length__post_axiom

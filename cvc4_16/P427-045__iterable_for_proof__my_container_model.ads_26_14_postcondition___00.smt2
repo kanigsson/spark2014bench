@@ -306,30 +306,30 @@
   (=> (and (<= 1 j) (<= j i1)) (= (valid (to_rep (select c1 j))) true)))
   (and
   (= (and (ite (and
-               (forall ((temp___256 Int))
-               (=> (and (<= 1 temp___256) (<= temp___256 100))
+               (forall ((temp___259 Int))
+               (=> (and (<= 1 temp___259) (<= temp___259 100))
                (=>
-               (or (< 100 temp___256)
-               (or (< temp___256 1) (< i1 temp___256)))
-               (= (select c1 temp___256) (select c temp___256))))) (in_range3
+               (or (< 100 temp___259)
+               (or (< temp___259 1) (< i1 temp___259)))
+               (= (select c1 temp___259) (select c temp___259))))) (in_range3
                i1))
           true false) (ite (and (<= 1 i1) (<= i1 100)) true false)) true)
   (= i1 100)))))) (= c1 c))))
   (=>
   (forall ((c2 (Array Int natural))) (get_model__function_guard
   (get_model c2) c2))
-  (let ((temp___273 (get_model c1)))
-  (forall ((temp___272 Int))
+  (let ((temp___276 (get_model c1)))
+  (forall ((temp___275 Int))
   (=>
-  (forall ((temp___2731 (Array Int natural)) (temp___2721 Int))
-  (m_has_element__function_guard (m_has_element temp___2731 temp___2721)
-  temp___2731 temp___2721))
+  (forall ((temp___2761 (Array Int natural)) (temp___2751 Int))
+  (m_has_element__function_guard (m_has_element temp___2761 temp___2751)
+  temp___2761 temp___2751))
   (=>
-  (and (in_range1 temp___272) (= (m_has_element temp___273 temp___272) true))
+  (and (in_range1 temp___275) (= (m_has_element temp___276 temp___275) true))
   (=>
-  (forall ((temp___2731 (Array Int natural)) (temp___2721 Int))
-  (m_element__function_guard (m_element temp___2731 temp___2721) temp___2731
-  temp___2721))
+  (forall ((temp___2761 (Array Int natural)) (temp___2751 Int))
+  (m_element__function_guard (m_element temp___2761 temp___2751) temp___2761
+  temp___2751))
   (=> (forall ((e Int)) (valid__function_guard (valid e) e))
-  (= (valid (m_element temp___273 temp___272)) true))))))))))))))
+  (= (valid (m_element temp___276 temp___275)) true))))))))))))))
 (check-sat)

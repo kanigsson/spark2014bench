@@ -92,43 +92,35 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
-(declare-const x1 Int)
-
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
-
-(declare-const y1 Int)
 
 (declare-const attr__ATTRIBUTE_ADDRESS3 Int)
 
-(declare-const attr__ATTRIBUTE_ADDRESS4 Int)
-
-(declare-const attr__ATTRIBUTE_ADDRESS5 Int)
-
-(define-fun to_rep ((x2 integer)) Int (integerqtint x2))
+(define-fun to_rep ((x1 integer)) Int (integerqtint x1))
 
 (declare-fun of_rep (Int) integer)
 
 ;; inversion_axiom
   (assert
-  (forall ((x2 integer))
-  (! (= (of_rep (to_rep x2)) x2) :pattern ((to_rep x2)) )))
+  (forall ((x1 integer))
+  (! (= (of_rep (to_rep x1)) x1) :pattern ((to_rep x1)) )))
 
 ;; range_axiom
   (assert
-  (forall ((x2 integer)) (! (in_range1 (to_rep x2)) :pattern ((to_rep x2)) )))
+  (forall ((x1 integer)) (! (in_range1 (to_rep x1)) :pattern ((to_rep x1)) )))
 
 ;; coerce_axiom
   (assert
-  (forall ((x2 Int))
-  (! (=> (in_range1 x2) (= (to_rep (of_rep x2)) x2)) :pattern ((to_rep
-                                                               (of_rep x2))) )))
+  (forall ((x1 Int))
+  (! (=> (in_range1 x1) (= (to_rep (of_rep x1)) x1)) :pattern ((to_rep
+                                                               (of_rep x1))) )))
 
 (declare-const first Int)
 
 (declare-const last Int)
 
 (define-fun dynamic_property ((first_int Int) (last_int Int)
-  (x2 Int)) Bool (and (<= first_int x2) (<= x2 last_int)))
+  (x1 Int)) Bool (and (<= first_int x1) (<= x1 last_int)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -144,6 +136,14 @@
 (((s__refqtmk (s__content integer)))))
 (define-fun s__ref_s__content__projection ((a s__ref)) integer (s__content a))
 
+(declare-const x1 Int)
+
+(declare-const attr__ATTRIBUTE_ADDRESS4 Int)
+
+(declare-const y1 Int)
+
+(declare-const attr__ATTRIBUTE_ADDRESS5 Int)
+
 (define-fun dynamic_invariant1 ((temp___expr_158 Int)
   (temp___is_init_154 Bool) (temp___skip_constant_155 Bool)
   (temp___do_toplevel_156 Bool)
@@ -153,10 +153,10 @@
                                      first last temp___expr_158)))
 
 ;; first__def_axiom
-  (assert (= first x))
+  (assert (= first x1))
 
 ;; last__def_axiom
-  (assert (= last y))
+  (assert (= last y1))
 
 (assert
 ;; defqtvc
@@ -165,9 +165,5 @@
   (forall ((tmp_s Int))
   (=> (dynamic_invariant x true false true true)
   (=> (dynamic_invariant y true false true true)
-  (=> (dynamic_invariant x true false true true)
-  (=> (dynamic_invariant y true false true true)
-  (=> (dynamic_invariant x1 true false true true)
-  (=> (dynamic_invariant y1 true false true true)
-  (=> (dynamic_invariant tmp_s false false true true) (in_range1 (- y1 x1))))))))))))
+  (=> (dynamic_invariant tmp_s false false true true) (in_range1 (- y x))))))))
 (check-sat)

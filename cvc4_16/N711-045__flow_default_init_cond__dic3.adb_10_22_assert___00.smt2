@@ -142,19 +142,15 @@
   (forall ((temp___172 Int)) (to_int__function_guard1 (to_int2 temp___172)
   temp___172)))
 
-;; temp___result_173'def
-  (assert
-  (forall ((temp___172 Int)) (to_int__function_guard1 (to_int2 temp___172)
-  temp___172)))
-
 (define-fun default_initial_assumption1 ((temp___expr_170 Int)
   (temp___skip_top_level_171 Bool)) Bool (and (= temp___expr_170 5)
                                          (=>
                                          (not
                                          (= temp___skip_top_level_171 true))
-                                         (and
-                                         (<= 1 (to_int2 temp___expr_170))
-                                         (<= (to_int2 temp___expr_170) 10)))))
+                                         (let ((temp___174 (to_int2
+                                                           temp___expr_170)))
+                                         (and (<= 1 temp___174)
+                                         (<= temp___174 10))))))
 
 (declare-sort integer 0)
 

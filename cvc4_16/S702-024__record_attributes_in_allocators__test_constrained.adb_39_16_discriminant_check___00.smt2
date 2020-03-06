@@ -136,6 +136,10 @@
                         (rec__test_constrained__r__x (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range2 ((rec__test_constrained__r__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__test_constrained__r__b1 (rec__test_constrained__r__b
+                                                            a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -196,10 +200,6 @@
 (declare-const r30b Bool)
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
-
-(define-fun in_range2 ((rec__test_constrained__r__b1 Bool)
-  (a us_rep)) Bool (= rec__test_constrained__r__b1 (rec__test_constrained__r__b
-                                                   (us_split_discrs1 a))))
 
 (declare-const value__size1 Int)
 
@@ -263,7 +263,7 @@
   (temp___do_typ_inv_188 Bool)) Bool (=>
                                      (not (= temp___skip_constant_186 true))
                                      (in_range2 (distinct 0 0)
-                                     temp___expr_189)))
+                                     (us_split_discrs1 temp___expr_189))))
 
 (define-fun default_initial_assumption ((temp___expr_191 us_rep)
   (temp___skip_top_level_192 Bool)) Bool (and
@@ -326,10 +326,6 @@
   (temp___skip_top_level_212 Bool)) Bool (= (rec__test_constrained__r_acc__is_null_pointer
                                             temp___expr_211) true))
 
-(define-fun in_range3 ((rec__test_constrained__r__b1 Bool)
-  (a us_rep)) Bool (= rec__test_constrained__r__b1 (rec__test_constrained__r__b
-                                                   (us_split_discrs1 a))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -385,10 +381,6 @@
 (((s29b__refqtmk (s29b__content us_rep)))))
 (define-fun s29b__ref_s29b__content__projection ((a s29b__ref)) us_rep 
   (s29b__content a))
-
-(define-fun in_range4 ((rec__test_constrained__r__b1 Bool)
-  (a us_rep)) Bool (= rec__test_constrained__r__b1 (rec__test_constrained__r__b
-                                                   (us_split_discrs1 a))))
 
 (declare-const value__size3 Int)
 
@@ -468,7 +460,8 @@
   (temp___do_toplevel_242 Bool)
   (temp___do_typ_inv_243 Bool)) Bool (=>
                                      (not (= temp___skip_constant_241 true))
-                                     (in_range3 r30b temp___expr_244)))
+                                     (in_range2 r30b
+                                     (us_split_discrs1 temp___expr_244))))
 
 (define-fun default_initial_assumption3 ((temp___expr_246 us_rep)
   (temp___skip_top_level_247 Bool)) Bool (and
@@ -489,29 +482,30 @@
 ;; defqtvc
  ;; File "test_constrained.adb", line 36, characters 0-0
   (not
-  (forall ((temp___alloc_282 us_rep1) (usf us_rep) (y__pointer_value us_rep)
+  (forall ((temp___alloc_284 us_rep1) (usf us_rep) (y__pointer_value us_rep)
   (y__pointer_address Int) (y__is_null_pointer Bool))
   (=>
   (exists ((usf1 us_rep))
   (= (distinct 0 0) (rec__test_constrained__r__b (us_split_discrs1 usf1))))
   (=>
   (not
-  (= (rec__test_constrained__r_acc__is_null_pointer temp___alloc_282) true))
+  (= (rec__test_constrained__r_acc__is_null_pointer temp___alloc_284) true))
   (=> (default_initial_assumption usf false)
   (=> (dynamic_invariant usf true false true true)
-  (=> (= (rec__test_constrained__r_acc__pointer_value temp___alloc_282) usf)
+  (=> (= (rec__test_constrained__r_acc__pointer_value temp___alloc_284) usf)
   (=>
   (= y__pointer_value (rec__test_constrained__r_acc__pointer_value
-                      temp___alloc_282))
+                      temp___alloc_284))
   (=>
   (= y__pointer_address (rec__test_constrained__r_acc__pointer_address
-                        temp___alloc_282))
+                        temp___alloc_284))
   (=>
   (= y__is_null_pointer (rec__test_constrained__r_acc__is_null_pointer
-                        temp___alloc_282))
+                        temp___alloc_284))
   (=>
   (= (rec__test_constrained__r__b (us_split_discrs1 y__pointer_value)) 
-  r30b) (in_range3 r30b
+  r30b) (in_range2 r30b
+  (us_split_discrs1
   (us_repqtmk (us_split_discrsqtmk (distinct 1 0))
-  (us_split_fieldsqtmk rliteral)))))))))))))))
+  (us_split_fieldsqtmk rliteral))))))))))))))))
 (check-sat)

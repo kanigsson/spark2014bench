@@ -347,16 +347,16 @@
 ;; defqtvc
  ;; File "arrays.adb", line 164, characters 0-0
   (not
-  (forall ((temp___352 Int))
+  (forall ((temp___353 Int))
   (=>
   (forall ((i Int))
   (=> (and (<= 1 i) (<= i 5))
-  (and
-  (<= 97 (to_rep
-         (select (rec__arrays__string_t__elem (us_split_fields1 s)) i)))
-  (<= (to_rep (select (rec__arrays__string_t__elem (us_split_fields1 s)) i)) 122))))
+  (let ((temp___360 (to_rep
+                    (select (rec__arrays__string_t__elem
+                            (us_split_fields1 s)) i))))
+  (and (<= 97 temp___360) (<= temp___360 122)))))
   (=> (< 1 (to_rep1 (rec__arrays__string_t__len (us_split_fields1 s))))
   (=>
-  (= (to_rep1 (rec__arrays__string_t__len (us_split_fields1 s))) temp___352)
-  (<= 1 temp___352)))))))
+  (= (to_rep1 (rec__arrays__string_t__len (us_split_fields1 s))) temp___353)
+  (<= 1 temp___353)))))))
 (check-sat)

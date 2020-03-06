@@ -173,6 +173,10 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range2 ((rec__data__t_strong_data_type__data_type1 Int)
+  (a us_split_discrs)) Bool (= rec__data__t_strong_data_type__data_type1 
+  (to_rep1 (rec__data__t_strong_data_type__data_type a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

@@ -147,6 +147,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range2 ((rec__sorted_vectors__my_vectors__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__sorted_vectors__my_vectors__vector__capacity1 
+  (to_rep (rec__sorted_vectors__my_vectors__vector__capacity a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -313,7 +317,7 @@
   (forall ((i extended_index))
   (and (<= 0 (extended_indexqtint i)) (<= (extended_indexqtint i) 101))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 101)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 101)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -335,7 +339,7 @@
   (temp___do_toplevel_234 Bool)
   (temp___do_typ_inv_235 Bool)) Bool (=>
                                      (or (= temp___is_init_232 true)
-                                     (<= 0 101)) (in_range2 temp___expr_236)))
+                                     (<= 0 101)) (in_range3 temp___expr_236)))
 
 (declare-fun first_index__function_guard (Int us_rep) Bool)
 
@@ -348,7 +352,7 @@
   (forall ((i index_type))
   (and (<= 1 (index_typeqtint i)) (<= (index_typeqtint i) 100))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -370,7 +374,7 @@
   (temp___do_toplevel_220 Bool)
   (temp___do_typ_inv_221 Bool)) Bool (=>
                                      (or (= temp___is_init_218 true)
-                                     (<= 1 100)) (in_range3 temp___expr_222)))
+                                     (<= 1 100)) (in_range4 temp___expr_222)))
 
 (declare-const container__split_discrs us_split_discrs)
 
@@ -393,7 +397,7 @@
   (forall ((i count_type))
   (and (<= 0 (count_typeqtint i)) (<= (count_typeqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -415,7 +419,7 @@
   (temp___do_toplevel_241 Bool)
   (temp___do_typ_inv_242 Bool)) Bool (=>
                                      (or (= temp___is_init_239 true)
-                                     (<= 0 2147483647)) (in_range4
+                                     (<= 0 2147483647)) (in_range5
                                      temp___expr_243)))
 
 ;; oeq__post_axiom
@@ -433,7 +437,7 @@
   (forall ((i extended_index1))
   (and (<= 0 (extended_indexqtint1 i)) (<= (extended_indexqtint1 i) 100))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 100)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -455,7 +459,7 @@
   (temp___do_toplevel_279 Bool)
   (temp___do_typ_inv_280 Bool)) Bool (=>
                                      (or (= temp___is_init_277 true)
-                                     (<= 0 100)) (in_range5 temp___expr_281)))
+                                     (<= 0 100)) (in_range6 temp___expr_281)))
 
 ;; length__post_axiom
   (assert
@@ -473,7 +477,7 @@
   (forall ((i element_type))
   (and (<= 1 (element_typeqtint i)) (<= (element_typeqtint i) 100))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -495,7 +499,7 @@
   (temp___do_toplevel_272 Bool)
   (temp___do_typ_inv_273 Bool)) Bool (=>
                                      (or (= temp___is_init_270 true)
-                                     (<= 1 100)) (in_range6 temp___expr_274)))
+                                     (<= 1 100)) (in_range7 temp___expr_274)))
 
 ;; get__post_axiom
   (assert
@@ -519,5 +523,5 @@
   (<= index (last_index
             (us_repqtmk container__split_discrs
             (us_split_fieldsqtmk container__split_fields))))
-  (in_range4 (- index 1)))))))))
+  (in_range5 (- index 1)))))))))
 (check-sat)

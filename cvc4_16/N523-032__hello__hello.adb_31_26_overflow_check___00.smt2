@@ -356,15 +356,11 @@
   (let ((o (- usf 1)))
   (=> (in_range1 o)
   (=> (and (<= (first1 str) o) (<= o (last1 str)))
-  (forall ((o1 Int))
-  (=> (= (to_rep (select (to_array str) o)) o1)
-  (let ((o2 (- usf 1)))
-  (=> (in_range1 o2)
-  (=> (and (<= (first1 str) o2) (<= o2 (last1 str)))
-  (forall ((o3 Int))
-  (=> (= (to_rep (select (to_array str) o2)) o3)
+  (forall ((temp___232 Int))
+  (=> (= (to_rep (select (to_array str) o)) temp___232)
   (=>
   (not
-  (= (and (ite (<= 97 o3) true false) (ite (<= o1 122) true false)) true))
-  (in_range1 (- usf 1))))))))))))))))))))))))
+  (= (and (ite (<= 97 temp___232) true false) (ite (<= temp___232 122) true
+                                              false)) true))
+  (in_range1 (- usf 1)))))))))))))))))))
 (check-sat)

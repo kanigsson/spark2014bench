@@ -305,6 +305,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range3 ((rec__tagged_discr__t__discr1 Int)
+  (a us_split_discrs)) Bool (= rec__tagged_discr__t__discr1 (to_rep2
+                                                            (rec__tagged_discr__t__discr
+                                                            a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -629,11 +634,6 @@
 
 (declare-const us_tag2 Int)
 
-(define-fun in_range3 ((rec__tagged_discr__t__discr1 Int)
-  (a us_rep)) Bool (= rec__tagged_discr__t__discr1 (to_rep2
-                                                   (rec__tagged_discr__t__discr
-                                                   (us_split_discrs1 a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -736,11 +736,6 @@
   (s4b__content a))
 
 (declare-const us_tag3 Int)
-
-(define-fun in_range4 ((rec__tagged_discr__t__discr1 Int)
-  (a us_rep)) Bool (= rec__tagged_discr__t__discr1 (to_rep2
-                                                   (rec__tagged_discr__t__discr
-                                                   (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 
@@ -899,11 +894,6 @@
 
 (declare-const us_tag4 Int)
 
-(define-fun in_range5 ((rec__tagged_discr__t__discr1 Int)
-  (a us_rep)) Bool (= rec__tagged_discr__t__discr1 (to_rep2
-                                                   (rec__tagged_discr__t__discr
-                                                   (us_split_discrs1 a)))))
-
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -1041,7 +1031,7 @@
   (= (us_repqtmk (us_split_discrsqtmk o)
      (us_split_fieldsqtmk (distinct 0 0) rliteral dummy1 us_null_ext__)
      us_tag4) r7b)
-  (=> (in_range5 0 r7b)
+  (=> (in_range3 0 (us_split_discrs1 r7b))
   (= (rec__tagged_discr__t__discr (us_split_discrs1 r7b)) (rec__tagged_discr__t__discr
                                                           v__split_discrs))))))))))))
 (check-sat)

@@ -159,6 +159,10 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range2 ((rec__default_init__mut_discr__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__default_init__mut_discr__b1 (rec__default_init__mut_discr__b
+                                                                a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -257,7 +261,7 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-N715-017__default_init_cond-15375/src/gnatprove/default_init__mut_discr.mlw", line 441, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-N715-017__default_init_cond-15469/src/gnatprove/default_init__mut_discr.mlw", line 453, characters 5-8
   (not
   (forall ((usf us_rep))
   (=> (init__function_guard (init 0) 0)

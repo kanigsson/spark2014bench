@@ -274,6 +274,13 @@
                            (rec__main__r__c (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range2 ((rec__main__r__ld1 Int) (rec__main__r__hd1 Int)
+  (a us_split_discrs)) Bool (and
+                            (= rec__main__r__ld1 (to_rep
+                                                 (rec__main__r__ld a)))
+                            (= rec__main__r__hd1 (to_rep
+                                                 (rec__main__r__hd a)))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -422,15 +429,6 @@
                             (rec__main__r__c1 (us_split_fields3 b))) true))
                     true false))
 
-(define-fun in_range2 ((rec__main__r__ld1 Int) (rec__main__r__hd1 Int)
-  (a us_rep)) Bool (and
-                   (= rec__main__r__ld1 (to_rep
-                                        (rec__main__r__ld
-                                        (us_split_discrs1 a))))
-                   (= rec__main__r__hd1 (to_rep
-                                        (rec__main__r__hd
-                                        (us_split_discrs1 a))))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -511,7 +509,8 @@
                                      (=>
                                      (not (= temp___skip_constant_193 true))
                                      (in_range2 l h
-                                     (to_base temp___expr_196)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_196))))
                                      (and (dynamic_property l h
                                      (first1
                                      (rec__main__r__c1
@@ -569,27 +568,27 @@
   (us_repqtmk1 y__split_discrs (us_split_fieldsqtmk1 y__split_fields)) true
   false true true)
   (=> (dynamic_invariant1 x true false true true)
-  (let ((temp___245 (first1 (rec__main__r__c (us_split_fields1 x)))))
-  (let ((temp___246 (last1 (rec__main__r__c (us_split_fields1 x)))))
+  (let ((temp___246 (first1 (rec__main__r__c (us_split_fields1 x)))))
+  (let ((temp___247 (last1 (rec__main__r__c (us_split_fields1 x)))))
   (forall ((j Int))
-  (=> (= j temp___245)
+  (=> (= j temp___246)
   (=>
-  (= (and (ite (<= temp___245 j) true false) (ite (<= j temp___246) true
+  (= (and (ite (<= temp___246 j) true false) (ite (<= j temp___247) true
                                              false)) true)
   (forall ((y__split_fields1 us_t) (j1 Int))
   (=>
   (= (and (ite (and (dynamic_invariant2
                (us_repqtmk1 y__split_discrs
                (us_split_fieldsqtmk1 y__split_fields1)) true true true true)
-               (forall ((temp___253 Int))
+               (forall ((temp___254 Int))
                (=>
-               (and (<= (first1 y__split_fields1) temp___253)
-               (<= temp___253 (last1 y__split_fields1)))
+               (and (<= (first1 y__split_fields1) temp___254)
+               (<= temp___254 (last1 y__split_fields1)))
                (=>
-               (or (< temp___246 temp___253)
-               (or (< temp___253 temp___245) (<= j1 temp___253)))
-               (= (select (to_array y__split_fields1) temp___253) (select 
-               (to_array y__split_fields) temp___253))))))
+               (or (< temp___247 temp___254)
+               (or (< temp___254 temp___246) (<= j1 temp___254)))
+               (= (select (to_array y__split_fields1) temp___254) (select 
+               (to_array y__split_fields) temp___254))))))
           true false) (ite (and
                            (<= (first1
                                (rec__main__r__c (us_split_fields1 x))) j1)

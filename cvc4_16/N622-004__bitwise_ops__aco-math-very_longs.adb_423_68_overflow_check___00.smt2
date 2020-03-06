@@ -621,6 +621,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
+  (to_rep
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -769,12 +774,6 @@
                             (us_split_fields3 b))) true))
                     true false))
 
-(define-fun in_range3 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
-  (a us_rep)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
-  (to_rep
-  (rec__ada___ada___aco__math__very_longs__very_long__octet_length
-  (us_split_discrs1 a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -851,7 +850,8 @@
                                      (+ (* 2 (to_rep
                                              (rec__ada___ada___aco__math__very_longs__very_long__octet_length
                                              (us_split_discrs1 divisor)))) 1)
-                                     (to_base temp___expr_859)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_859))))
                                      (and (dynamic_property 1
                                      (+ (* 2 (to_rep
                                              (rec__ada___ada___aco__math__very_longs__very_long__octet_length
@@ -952,12 +952,6 @@
                             (us_split_fields5 b))) true))
                     true false))
 
-(define-fun in_range4 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
-  (a us_rep)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
-  (to_rep
-  (rec__ada___ada___aco__math__very_longs__very_long__octet_length
-  (us_split_discrs1 a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -1030,11 +1024,12 @@
   (temp___do_typ_inv_871 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_869 true))
-                                     (in_range4
+                                     (in_range3
                                      (to_rep
                                      (rec__ada___ada___aco__math__very_longs__very_long__octet_length
                                      (us_split_discrs1 divisor)))
-                                     (to_base1 temp___expr_872)))
+                                     (us_split_discrs1
+                                     (to_base1 temp___expr_872))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___ada___aco__math__very_longs__very_long__octet_length
@@ -1178,11 +1173,11 @@
   (=> (dynamic_invariant4 r_hat false false true true)
   (let ((o (+ j n)))
   (=> (in_range2 o)
-  (let ((temp___1599 (- o 2)))
+  (let ((temp___1602 (- o 2)))
   (=>
-  (and (<= (first1 u__split_fields) temp___1599)
-  (<= temp___1599 (last1 u__split_fields)))
+  (and (<= (first1 u__split_fields) temp___1602)
+  (<= temp___1602 (last1 u__split_fields)))
   (forall ((o1 (_ BitVec 8)))
-  (=> (= (to_rep2 (select (to_array u__split_fields) temp___1599)) o1)
+  (=> (= (to_rep2 (select (to_array u__split_fields) temp___1602)) o1)
   (in_range2 (+ j n))))))))))))))))))))
 (check-sat)

@@ -348,6 +348,16 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range4 ((rec__static_discr__i_holder__unused1 Int)
+  (rec__static_discr__i_holder__c1 Int)
+  (a us_split_discrs)) Bool (and
+                            (= rec__static_discr__i_holder__unused1 (to_rep
+                                                                    (rec__static_discr__i_holder__unused
+                                                                    a)))
+                            (= rec__static_discr__i_holder__c1 (to_rep
+                                                               (rec__static_discr__i_holder__c
+                                                               a)))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -481,17 +491,6 @@
                             (rec__static_discr__i_holder__content1
                             (us_split_fields3 b))) true))
                     true false))
-
-(define-fun in_range4 ((rec__static_discr__i_holder__unused1 Int)
-  (rec__static_discr__i_holder__c1 Int)
-  (a us_rep)) Bool (and
-                   (= rec__static_discr__i_holder__unused1 (to_rep
-                                                           (rec__static_discr__i_holder__unused
-                                                           (us_split_discrs1
-                                                           a))))
-                   (= rec__static_discr__i_holder__c1 (to_rep
-                                                      (rec__static_discr__i_holder__c
-                                                      (us_split_discrs1 a))))))
 
 (declare-const value__size2 Int)
 
@@ -628,6 +627,16 @@
                                                    (us_split_fields5 b))))))
                     true false))
 
+(define-fun in_range5 ((rec__static_discr__holder__unused1 Int)
+  (rec__static_discr__holder__c1 Int)
+  (a us_split_discrs3)) Bool (and
+                             (= rec__static_discr__holder__unused1 (to_rep
+                                                                   (rec__static_discr__holder__unused
+                                                                   a)))
+                             (= rec__static_discr__holder__c1 (to_rep
+                                                              (rec__static_discr__holder__c
+                                                              a)))))
+
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -716,46 +725,42 @@
 (define-fun holder__ref_holder__content__projection ((a holder__ref)) us_rep2 
   (holder__content a))
 
-(declare-const a us_t)
+(declare-const e Int)
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
 
-(declare-const e Int)
-
-(declare-const attr__ATTRIBUTE_ADDRESS1 Int)
-
 (declare-datatypes ((t14b__ref 0))
 (((t14b__refqtmk (t14b__content us_t)))))
-(define-fun t14b__ref_t14b__content__projection ((a1 t14b__ref)) us_t 
-  (t14b__content a1))
+(define-fun t14b__ref_t14b__content__projection ((a t14b__ref)) us_t 
+  (t14b__content a))
 
 (declare-datatypes ((us_split_fields6 0))
 (((us_split_fieldsqtmk3 (rec__static_discr__i_holder__content2 us_t)))))
-(define-fun us_split_fields_rec__static_discr__i_holder__content__5__projection ((a1 us_split_fields6)) us_t 
-  (rec__static_discr__i_holder__content2 a1))
+(define-fun us_split_fields_rec__static_discr__i_holder__content__5__projection ((a us_split_fields6)) us_t 
+  (rec__static_discr__i_holder__content2 a))
 
 (declare-datatypes ((us_split_fields__ref3 0))
 (((us_split_fields__refqtmk3 (us_split_fields__content3 us_split_fields6)))))
-(define-fun us_split_fields__ref___split_fields__content__8__projection ((a1 us_split_fields__ref3)) us_split_fields6 
-  (us_split_fields__content3 a1))
+(define-fun us_split_fields__ref___split_fields__content__8__projection ((a us_split_fields__ref3)) us_split_fields6 
+  (us_split_fields__content3 a))
 
 (declare-datatypes ((us_rep3 0))
 (((us_repqtmk3
   (us_split_discrs5 us_split_discrs)(us_split_fields7 us_split_fields6)))))
-(define-fun us_rep___split_discrs__8__projection ((a1 us_rep3)) us_split_discrs 
-  (us_split_discrs5 a1))
+(define-fun us_rep___split_discrs__8__projection ((a us_rep3)) us_split_discrs 
+  (us_split_discrs5 a))
 
-(define-fun us_rep___split_fields__8__projection ((a1 us_rep3)) us_split_fields6 
-  (us_split_fields7 a1))
+(define-fun us_rep___split_fields__8__projection ((a us_rep3)) us_split_fields6 
+  (us_split_fields7 a))
 
-(define-fun to_base1 ((a1 us_rep3)) us_rep (us_repqtmk (us_split_discrs5 a1)
-                                           (us_split_fieldsqtmk
-                                           (let ((temp___164 (rec__static_discr__i_holder__content2
-                                                             (us_split_fields7
-                                                             a1))))
-                                           (of_array (to_array temp___164)
-                                           (first1 temp___164)
-                                           (last1 temp___164))))))
+(define-fun to_base1 ((a us_rep3)) us_rep (us_repqtmk (us_split_discrs5 a)
+                                          (us_split_fieldsqtmk
+                                          (let ((temp___164 (rec__static_discr__i_holder__content2
+                                                            (us_split_fields7
+                                                            a))))
+                                          (of_array (to_array temp___164)
+                                          (first1 temp___164)
+                                          (last1 temp___164))))))
 
 (define-fun of_base1 ((r us_rep)) us_rep3 (us_repqtmk3 (us_split_discrs1 r)
                                           (us_split_fieldsqtmk3
@@ -766,36 +771,25 @@
                                           (first1 temp___163)
                                           (last1 temp___163))))))
 
-(define-fun bool_eq5 ((a1 us_rep3)
+(define-fun bool_eq5 ((a us_rep3)
   (b us_rep3)) Bool (ite (and
                          (and
                          (= (to_rep
                             (rec__static_discr__i_holder__unused
-                            (us_split_discrs5 a1))) (to_rep
-                                                    (rec__static_discr__i_holder__unused
-                                                    (us_split_discrs5 b))))
+                            (us_split_discrs5 a))) (to_rep
+                                                   (rec__static_discr__i_holder__unused
+                                                   (us_split_discrs5 b))))
                          (= (to_rep
                             (rec__static_discr__i_holder__c
-                            (us_split_discrs5 a1))) (to_rep
-                                                    (rec__static_discr__i_holder__c
-                                                    (us_split_discrs5 b)))))
+                            (us_split_discrs5 a))) (to_rep
+                                                   (rec__static_discr__i_holder__c
+                                                   (us_split_discrs5 b)))))
                          (= (bool_eq1
                             (rec__static_discr__i_holder__content2
-                            (us_split_fields7 a1))
+                            (us_split_fields7 a))
                             (rec__static_discr__i_holder__content2
                             (us_split_fields7 b))) true))
                     true false))
-
-(define-fun in_range5 ((rec__static_discr__i_holder__unused1 Int)
-  (rec__static_discr__i_holder__c1 Int)
-  (a1 us_rep)) Bool (and
-                    (= rec__static_discr__i_holder__unused1 (to_rep
-                                                            (rec__static_discr__i_holder__unused
-                                                            (us_split_discrs1
-                                                            a1))))
-                    (= rec__static_discr__i_holder__c1 (to_rep
-                                                       (rec__static_discr__i_holder__c
-                                                       (us_split_discrs1 a1))))))
 
 (declare-const value__size4 Int)
 
@@ -866,41 +860,40 @@
 
 (declare-datatypes ((t13b__ref 0))
 (((t13b__refqtmk (t13b__content us_rep3)))))
-(define-fun t13b__ref_t13b__content__projection ((a1 t13b__ref)) us_rep3 
-  (t13b__content a1))
+(define-fun t13b__ref_t13b__content__projection ((a t13b__ref)) us_rep3 
+  (t13b__content a))
 
 (declare-datatypes ((us_split_fields8 0))
 (((us_split_fieldsqtmk4
   (rec__static_discr__holder__content1 us_rep3)(rec__static_discr__holder__length1 natural)))))
-(define-fun us_split_fields_rec__static_discr__holder__content__4__projection ((a1 us_split_fields8)) us_rep3 
-  (rec__static_discr__holder__content1 a1))
+(define-fun us_split_fields_rec__static_discr__holder__content__4__projection ((a us_split_fields8)) us_rep3 
+  (rec__static_discr__holder__content1 a))
 
-(define-fun us_split_fields_rec__static_discr__holder__length__4__projection ((a1 us_split_fields8)) natural 
-  (rec__static_discr__holder__length1 a1))
+(define-fun us_split_fields_rec__static_discr__holder__length__4__projection ((a us_split_fields8)) natural 
+  (rec__static_discr__holder__length1 a))
 
 (declare-datatypes ((us_split_fields__ref4 0))
 (((us_split_fields__refqtmk4 (us_split_fields__content4 us_split_fields8)))))
-(define-fun us_split_fields__ref___split_fields__content__9__projection ((a1 us_split_fields__ref4)) us_split_fields8 
-  (us_split_fields__content4 a1))
+(define-fun us_split_fields__ref___split_fields__content__9__projection ((a us_split_fields__ref4)) us_split_fields8 
+  (us_split_fields__content4 a))
 
 (declare-datatypes ((us_rep4 0))
 (((us_repqtmk4
   (us_split_discrs6 us_split_discrs3)(us_split_fields9 us_split_fields8)))))
-(define-fun us_rep___split_discrs__9__projection ((a1 us_rep4)) us_split_discrs3 
-  (us_split_discrs6 a1))
+(define-fun us_rep___split_discrs__9__projection ((a us_rep4)) us_split_discrs3 
+  (us_split_discrs6 a))
 
-(define-fun us_rep___split_fields__9__projection ((a1 us_rep4)) us_split_fields8 
-  (us_split_fields9 a1))
+(define-fun us_rep___split_fields__9__projection ((a us_rep4)) us_split_fields8 
+  (us_split_fields9 a))
 
-(define-fun to_base2 ((a1 us_rep4)) us_rep2 (us_repqtmk2
-                                            (us_split_discrs6 a1)
-                                            (us_split_fieldsqtmk2
-                                            (of_base
-                                            (to_base1
-                                            (rec__static_discr__holder__content1
-                                            (us_split_fields9 a1))))
-                                            (rec__static_discr__holder__length1
-                                            (us_split_fields9 a1)))))
+(define-fun to_base2 ((a us_rep4)) us_rep2 (us_repqtmk2 (us_split_discrs6 a)
+                                           (us_split_fieldsqtmk2
+                                           (of_base
+                                           (to_base1
+                                           (rec__static_discr__holder__content1
+                                           (us_split_fields9 a))))
+                                           (rec__static_discr__holder__length1
+                                           (us_split_fields9 a)))))
 
 (define-fun of_base2 ((r us_rep2)) us_rep4 (us_repqtmk4 (us_split_discrs4 r)
                                            (us_split_fieldsqtmk4
@@ -911,42 +904,31 @@
                                            (rec__static_discr__holder__length
                                            (us_split_fields5 r)))))
 
-(define-fun bool_eq6 ((a1 us_rep4)
+(define-fun bool_eq6 ((a us_rep4)
   (b us_rep4)) Bool (ite (and
                          (and
                          (= (to_rep
                             (rec__static_discr__holder__unused
-                            (us_split_discrs6 a1))) (to_rep
-                                                    (rec__static_discr__holder__unused
-                                                    (us_split_discrs6 b))))
+                            (us_split_discrs6 a))) (to_rep
+                                                   (rec__static_discr__holder__unused
+                                                   (us_split_discrs6 b))))
                          (= (to_rep
                             (rec__static_discr__holder__c
-                            (us_split_discrs6 a1))) (to_rep
-                                                    (rec__static_discr__holder__c
-                                                    (us_split_discrs6 b)))))
+                            (us_split_discrs6 a))) (to_rep
+                                                   (rec__static_discr__holder__c
+                                                   (us_split_discrs6 b)))))
                          (and
                          (= (bool_eq5
                             (rec__static_discr__holder__content1
-                            (us_split_fields9 a1))
+                            (us_split_fields9 a))
                             (rec__static_discr__holder__content1
                             (us_split_fields9 b))) true)
                          (= (to_rep
                             (rec__static_discr__holder__length1
-                            (us_split_fields9 a1))) (to_rep
-                                                    (rec__static_discr__holder__length1
-                                                    (us_split_fields9 b))))))
+                            (us_split_fields9 a))) (to_rep
+                                                   (rec__static_discr__holder__length1
+                                                   (us_split_fields9 b))))))
                     true false))
-
-(define-fun in_range6 ((rec__static_discr__holder__unused1 Int)
-  (rec__static_discr__holder__c1 Int)
-  (a1 us_rep2)) Bool (and
-                     (= rec__static_discr__holder__unused1 (to_rep
-                                                           (rec__static_discr__holder__unused
-                                                           (us_split_discrs4
-                                                           a1))))
-                     (= rec__static_discr__holder__c1 (to_rep
-                                                      (rec__static_discr__holder__c
-                                                      (us_split_discrs4 a1))))))
 
 (declare-const value__size5 Int)
 
@@ -1033,60 +1015,66 @@
 
 (declare-datatypes ((my_holder__ref 0))
 (((my_holder__refqtmk (my_holder__content us_rep4)))))
-(define-fun my_holder__ref_my_holder__content__projection ((a1 my_holder__ref)) us_rep4 
-  (my_holder__content a1))
+(define-fun my_holder__ref_my_holder__content__projection ((a my_holder__ref)) us_rep4 
+  (my_holder__content a))
 
 (declare-const current__split_discrs us_split_discrs3)
 
+(declare-const attr__ATTRIBUTE_ADDRESS1 Int)
+
+(declare-const a us_t)
+
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
 
-(define-fun dynamic_invariant1 ((temp___expr_257 us_rep4)
-  (temp___is_init_253 Bool) (temp___skip_constant_254 Bool)
-  (temp___do_toplevel_255 Bool)
-  (temp___do_typ_inv_256 Bool)) Bool (and
+(define-fun dynamic_invariant1 ((temp___expr_260 us_rep4)
+  (temp___is_init_256 Bool) (temp___skip_constant_257 Bool)
+  (temp___do_toplevel_258 Bool)
+  (temp___do_typ_inv_259 Bool)) Bool (and
                                      (=>
-                                     (not (= temp___skip_constant_254 true))
-                                     (in_range6 (last1 a) (last1 a)
-                                     (to_base2 temp___expr_257)))
-                                     (and (in_range5 (last1 a) (last1 a)
+                                     (not (= temp___skip_constant_257 true))
+                                     (in_range5 (last1 a) (last1 a)
+                                     (us_split_discrs4
+                                     (to_base2 temp___expr_260))))
+                                     (and (in_range4 (last1 a) (last1 a)
+                                     (us_split_discrs1
                                      (to_base1
                                      (rec__static_discr__holder__content1
-                                     (us_split_fields9 temp___expr_257))))
+                                     (us_split_fields9 temp___expr_260)))))
                                      (and (dynamic_property 1 (last1 a)
                                      (first1
                                      (rec__static_discr__i_holder__content2
                                      (us_split_fields7
                                      (rec__static_discr__holder__content1
-                                     (us_split_fields9 temp___expr_257)))))
+                                     (us_split_fields9 temp___expr_260)))))
                                      (last1
                                      (rec__static_discr__i_holder__content2
                                      (us_split_fields7
                                      (rec__static_discr__holder__content1
-                                     (us_split_fields9 temp___expr_257))))))
+                                     (us_split_fields9 temp___expr_260))))))
                                      (and
                                      (= (first1
                                         (rec__static_discr__i_holder__content2
                                         (us_split_fields7
                                         (rec__static_discr__holder__content1
-                                        (us_split_fields9 temp___expr_257))))) 1)
+                                        (us_split_fields9 temp___expr_260))))) 1)
                                      (= (last1
                                         (rec__static_discr__i_holder__content2
                                         (us_split_fields7
                                         (rec__static_discr__holder__content1
-                                        (us_split_fields9 temp___expr_257))))) 
+                                        (us_split_fields9 temp___expr_260))))) 
                                      (last1 a)))))))
 
-(define-fun default_initial_assumption ((temp___expr_263 us_rep4)
-  (temp___skip_top_level_264 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_266 us_rep4)
+  (temp___skip_top_level_267 Bool)) Bool (and
                                          (and
                                          (= (to_rep
                                             (rec__static_discr__holder__unused
                                             (us_split_discrs6
-                                            temp___expr_263))) (last1 a))
+                                            temp___expr_266))) (last1 a))
                                          (= (to_rep
                                             (rec__static_discr__holder__c
                                             (us_split_discrs6
-                                            temp___expr_263))) (last1 a)))
+                                            temp___expr_266))) (last1 a)))
                                          (and
                                          (and
                                          (= (to_rep
@@ -1094,30 +1082,44 @@
                                             (us_split_discrs5
                                             (rec__static_discr__holder__content1
                                             (us_split_fields9
-                                            temp___expr_263))))) (last1 a))
+                                            temp___expr_266))))) (last1 a))
                                          (= (to_rep
                                             (rec__static_discr__i_holder__c
                                             (us_split_discrs5
                                             (rec__static_discr__holder__content1
                                             (us_split_fields9
-                                            temp___expr_263))))) (last1 a)))
+                                            temp___expr_266))))) (last1 a)))
                                          (and
                                          (= (first1
                                             (rec__static_discr__i_holder__content2
                                             (us_split_fields7
                                             (rec__static_discr__holder__content1
                                             (us_split_fields9
-                                            temp___expr_263))))) 1)
+                                            temp___expr_266))))) 1)
                                          (= (last1
                                             (rec__static_discr__i_holder__content2
                                             (us_split_fields7
                                             (rec__static_discr__holder__content1
                                             (us_split_fields9
-                                            temp___expr_263))))) (last1 a))))))
+                                            temp___expr_266))))) (last1 a))))))
 
 (declare-const attr__ATTRIBUTE_ADDRESS3 Int)
 
-(define-fun dynamic_invariant2 ((temp___expr_181 us_t)
+(define-fun dynamic_invariant2 ((temp___expr_46 Int) (temp___is_init_42 Bool)
+  (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)
+  (temp___do_typ_inv_45 Bool)) Bool (=>
+                                    (or (= temp___is_init_42 true)
+                                    (<= 1 2147483647)) (in_range3
+                                    temp___expr_46)))
+
+(define-fun dynamic_invariant3 ((temp___expr_18 Int) (temp___is_init_14 Bool)
+  (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)
+  (temp___do_typ_inv_17 Bool)) Bool (=>
+                                    (or (= temp___is_init_14 true)
+                                    (<= (- 2147483648) 2147483647))
+                                    (in_range1 temp___expr_18)))
+
+(define-fun dynamic_invariant4 ((temp___expr_181 us_t)
   (temp___is_init_177 Bool) (temp___skip_constant_178 Bool)
   (temp___do_toplevel_179 Bool)
   (temp___do_typ_inv_180 Bool)) Bool (=>
@@ -1125,20 +1127,6 @@
                                      (dynamic_property 1 2147483647
                                      (first1 temp___expr_181)
                                      (last1 temp___expr_181))))
-
-(define-fun dynamic_invariant3 ((temp___expr_46 Int) (temp___is_init_42 Bool)
-  (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)
-  (temp___do_typ_inv_45 Bool)) Bool (=>
-                                    (or (= temp___is_init_42 true)
-                                    (<= 1 2147483647)) (in_range3
-                                    temp___expr_46)))
-
-(define-fun dynamic_invariant4 ((temp___expr_18 Int) (temp___is_init_14 Bool)
-  (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)
-  (temp___do_typ_inv_17 Bool)) Bool (=>
-                                    (or (= temp___is_init_14 true)
-                                    (<= (- 2147483648) 2147483647))
-                                    (in_range1 temp___expr_18)))
 
 (define-fun dynamic_invariant5 ((temp___expr_187 us_rep)
   (temp___is_init_183 Bool) (temp___skip_constant_184 Bool)
@@ -1174,9 +1162,10 @@
                                      (rec__static_discr__holder__unused
                                      (us_split_discrs4 temp___expr_195)))
                                      (to_rep temp___197)
+                                     (us_split_discrs1
                                      (to_base
                                      (rec__static_discr__holder__content
-                                     (us_split_fields5 temp___expr_195))))
+                                     (us_split_fields5 temp___expr_195)))))
                                      (and (dynamic_property 1
                                      (to_rep temp___197)
                                      (first1
@@ -1208,32 +1197,32 @@
   (not
   (forall ((current__split_fields us_split_fields8) (result__ Int)
   (result__1 Int) (o Int))
-  (=> (dynamic_invariant2 a true false true true)
   (=> (dynamic_invariant e true false true true)
   (=> (dynamic_invariant1
   (us_repqtmk4 current__split_discrs current__split_fields) true false true
   true)
   (=> (dynamic_invariant result__ false false true true)
-  (=> (dynamic_invariant2 a true false true true)
   (=> (dynamic_invariant e true false true true)
   (=>
-  (<= 1 (to_rep (rec__static_discr__holder__length1 current__split_fields)))
+  (let ((temp___501 (to_rep
+                    (rec__static_discr__holder__length1
+                    current__split_fields))))
+  (and (<= 1 temp___501)
+  (<= temp___501 (to_rep
+                 (rec__static_discr__holder__c current__split_discrs)))))
   (=>
-  (<= (to_rep (rec__static_discr__holder__length1 current__split_fields)) 
-  (to_rep (rec__static_discr__holder__c current__split_discrs)))
-  (=>
-  (let ((temp___466 (rec__static_discr__i_holder__content2
+  (let ((temp___485 (rec__static_discr__i_holder__content2
                     (us_split_fields7
                     (rec__static_discr__holder__content1
                     current__split_fields)))))
-  (exists ((temp___467 Int))
+  (exists ((temp___486 Int))
   (and
-  (= (to_rep (rec__static_discr__holder__length1 current__split_fields)) temp___467)
+  (= (to_rep (rec__static_discr__holder__length1 current__split_fields)) temp___486)
   (and
-  (and (<= (first1 temp___466) temp___467)
-  (<= temp___467 (last1 temp___466)))
+  (and (<= (first1 temp___485) temp___486)
+  (<= temp___486 (last1 temp___485)))
   (exists ((o1 Int))
-  (and (= (to_rep (select (to_array temp___466) temp___467)) o1)
+  (and (= (to_rep (select (to_array temp___485) temp___486)) o1)
   (exists ((spark__branch Bool))
   (and (= spark__branch (ite (= o1 e) true false))
   (ite (= spark__branch true)
@@ -1254,17 +1243,17 @@
                             current__split_fields) o2))
   (forall ((o3 Bool))
   (=>
-  (let ((temp___474 (rec__static_discr__i_holder__content2
+  (let ((temp___493 (rec__static_discr__i_holder__content2
                     (us_split_fields7
                     (rec__static_discr__holder__content1
                     current__split_fields)))))
-  (let ((temp___473 (rec__static_discr__i_holder__content2
+  (let ((temp___492 (rec__static_discr__i_holder__content2
                     (us_split_fields7
                     (rec__static_discr__holder__content1
                     current__split_fields1)))))
-  (ite (= (bool_eq (to_array temp___473) (first1 temp___473)
-          (last1 temp___473) (to_array temp___474) (first1 temp___474)
-          (last1 temp___474)) true)
+  (ite (= (bool_eq (to_array temp___492) (first1 temp___492)
+          (last1 temp___492) (to_array temp___493) (first1 temp___493)
+          (last1 temp___493)) true)
   (exists ((o4 Int))
   (and
   (= (to_rep (rec__static_discr__holder__length1 current__split_fields)) o4)
@@ -1286,5 +1275,5 @@
   (<= (first1
       (rec__static_discr__i_holder__content2
       (us_split_fields7
-      (rec__static_discr__holder__content1 current__split_fields1)))) result__1)))))))))))))))))))))))))))))
+      (rec__static_discr__holder__content1 current__split_fields1)))) result__1))))))))))))))))))))))))))
 (check-sat)

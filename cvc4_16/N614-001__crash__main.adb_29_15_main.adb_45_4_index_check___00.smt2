@@ -793,25 +793,15 @@
 
 (declare-fun main__part__aggregate_def (Int) (Array Int positive))
 
-(declare-fun temp___String_Literal_336 (tuple0) (Array Int character))
+(declare-fun temp___String_Literal_338 (tuple0) (Array Int character))
 
-;; temp___String_Literal_336__def_axiom
+;; temp___String_Literal_338__def_axiom
   (assert
   (forall ((us_void_param tuple0))
   (! (and
-     (= (to_rep (select (temp___String_Literal_336 us_void_param) 1)) 123)
-     (= (to_rep (select (temp___String_Literal_336 us_void_param) 2)) 32)) :pattern (
-  (temp___String_Literal_336 us_void_param)) )))
-
-(declare-fun temp___String_Literal_339 (tuple0) (Array Int character))
-
-;; temp___String_Literal_339__def_axiom
-  (assert
-  (forall ((us_void_param tuple0))
-  (! (and
-     (= (to_rep (select (temp___String_Literal_339 us_void_param) 1)) 32)
-     (= (to_rep (select (temp___String_Literal_339 us_void_param) 2)) 125)) :pattern (
-  (temp___String_Literal_339 us_void_param)) )))
+     (= (to_rep (select (temp___String_Literal_338 us_void_param) 1)) 123)
+     (= (to_rep (select (temp___String_Literal_338 us_void_param) 2)) 32)) :pattern (
+  (temp___String_Literal_338 us_void_param)) )))
 
 (declare-fun temp___String_Literal_341 (tuple0) (Array Int character))
 
@@ -819,39 +809,49 @@
   (assert
   (forall ((us_void_param tuple0))
   (! (and
-     (= (to_rep (select (temp___String_Literal_341 us_void_param) 1)) 123)
-     (= (to_rep (select (temp___String_Literal_341 us_void_param) 2)) 32)) :pattern (
+     (= (to_rep (select (temp___String_Literal_341 us_void_param) 1)) 32)
+     (= (to_rep (select (temp___String_Literal_341 us_void_param) 2)) 125)) :pattern (
   (temp___String_Literal_341 us_void_param)) )))
 
-(declare-fun temp___String_Literal_344 (tuple0) (Array Int character))
+(declare-fun temp___String_Literal_343 (tuple0) (Array Int character))
 
-;; temp___String_Literal_344__def_axiom
+;; temp___String_Literal_343__def_axiom
   (assert
   (forall ((us_void_param tuple0))
   (! (and
-     (= (to_rep (select (temp___String_Literal_344 us_void_param) 1)) 32)
-     (= (to_rep (select (temp___String_Literal_344 us_void_param) 2)) 125)) :pattern (
-  (temp___String_Literal_344 us_void_param)) )))
+     (= (to_rep (select (temp___String_Literal_343 us_void_param) 1)) 123)
+     (= (to_rep (select (temp___String_Literal_343 us_void_param) 2)) 32)) :pattern (
+  (temp___String_Literal_343 us_void_param)) )))
 
-(declare-fun temp___String_Literal_347 (tuple0) (Array Int character))
+(declare-fun temp___String_Literal_346 (tuple0) (Array Int character))
 
-;; temp___String_Literal_347__def_axiom
+;; temp___String_Literal_346__def_axiom
   (assert
   (forall ((us_void_param tuple0))
   (! (and
-     (= (to_rep (select (temp___String_Literal_347 us_void_param) 1)) 91)
-     (= (to_rep (select (temp___String_Literal_347 us_void_param) 2)) 32)) :pattern (
-  (temp___String_Literal_347 us_void_param)) )))
+     (= (to_rep (select (temp___String_Literal_346 us_void_param) 1)) 32)
+     (= (to_rep (select (temp___String_Literal_346 us_void_param) 2)) 125)) :pattern (
+  (temp___String_Literal_346 us_void_param)) )))
 
-(declare-fun temp___String_Literal_353 (tuple0) (Array Int character))
+(declare-fun temp___String_Literal_349 (tuple0) (Array Int character))
 
-;; temp___String_Literal_353__def_axiom
+;; temp___String_Literal_349__def_axiom
   (assert
   (forall ((us_void_param tuple0))
   (! (and
-     (= (to_rep (select (temp___String_Literal_353 us_void_param) 1)) 32)
-     (= (to_rep (select (temp___String_Literal_353 us_void_param) 2)) 93)) :pattern (
-  (temp___String_Literal_353 us_void_param)) )))
+     (= (to_rep (select (temp___String_Literal_349 us_void_param) 1)) 91)
+     (= (to_rep (select (temp___String_Literal_349 us_void_param) 2)) 32)) :pattern (
+  (temp___String_Literal_349 us_void_param)) )))
+
+(declare-fun temp___String_Literal_355 (tuple0) (Array Int character))
+
+;; temp___String_Literal_355__def_axiom
+  (assert
+  (forall ((us_void_param tuple0))
+  (! (and
+     (= (to_rep (select (temp___String_Literal_355 us_void_param) 1)) 32)
+     (= (to_rep (select (temp___String_Literal_355 us_void_param) 2)) 93)) :pattern (
+  (temp___String_Literal_355 us_void_param)) )))
 
 (define-fun dynamic_invariant2 ((temp___expr_46 Int) (temp___is_init_42 Bool)
   (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)
@@ -907,40 +907,40 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___318 Int) (temp___319 Int) (temp___320 Int)
-  (temp___321 Int) (temp___322 Int) (temp___323 Int))
-  (let ((temp___317 (main__a__aggregate_def temp___318 temp___319 temp___320
-                    temp___321 temp___322 temp___323)))
+  (forall ((temp___320 Int) (temp___321 Int) (temp___322 Int)
+  (temp___323 Int) (temp___324 Int) (temp___325 Int))
+  (let ((temp___319 (main__a__aggregate_def temp___320 temp___321 temp___322
+                    temp___323 temp___324 temp___325)))
   (=>
-  (and
-  (and (dynamic_invariant1 temp___318 true true true true)
-  (dynamic_invariant1 temp___319 true true true true))
   (and
   (and (dynamic_invariant1 temp___320 true true true true)
   (dynamic_invariant1 temp___321 true true true true))
+  (and
   (and (dynamic_invariant1 temp___322 true true true true)
-  (dynamic_invariant1 temp___323 true true true true))))
+  (dynamic_invariant1 temp___323 true true true true))
+  (and (dynamic_invariant1 temp___324 true true true true)
+  (dynamic_invariant1 temp___325 true true true true))))
   (and
-  (and (= (select temp___317 1) rliteral)
-  (= (select temp___317 2) rliteral1))
+  (and (= (select temp___319 1) rliteral)
+  (= (select temp___319 2) rliteral1))
   (and
-  (and (= (select temp___317 3) rliteral2)
-  (= (select temp___317 4) rliteral3))
-  (and (= (select temp___317 5) rliteral4)
-  (= (select temp___317 6) rliteral5))))))))
+  (and (= (select temp___319 3) rliteral2)
+  (= (select temp___319 4) rliteral3))
+  (and (= (select temp___319 5) rliteral4)
+  (= (select temp___319 6) rliteral5))))))))
 
 ;; def_axiom
   (assert
-  (forall ((temp___327 Int) (temp___328 Int) (temp___329 Int))
-  (let ((temp___326 (main__x__aggregate_def temp___327 temp___328 temp___329)))
+  (forall ((temp___329 Int) (temp___330 Int) (temp___331 Int))
+  (let ((temp___328 (main__x__aggregate_def temp___329 temp___330 temp___331)))
   (=>
   (and
-  (and (dynamic_invariant1 temp___327 true true true true)
-  (dynamic_invariant1 temp___328 true true true true)) (dynamic_invariant1
-  temp___329 true true true true))
+  (and (dynamic_invariant1 temp___329 true true true true)
+  (dynamic_invariant1 temp___330 true true true true)) (dynamic_invariant1
+  temp___331 true true true true))
   (and
-  (and (= (select temp___326 1) rliteral5)
-  (= (select temp___326 2) rliteral)) (= (select temp___326 3) rliteral4))))))
+  (and (= (select temp___328 1) rliteral5)
+  (= (select temp___328 2) rliteral)) (= (select temp___328 3) rliteral4))))))
 
 (declare-const rliteral6 positive)
 
@@ -949,9 +949,9 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___333 Int))
-  (=> (dynamic_invariant2 temp___333 true true true true)
-  (= (select (main__part__aggregate_def temp___333) 1) rliteral6))))
+  (forall ((temp___335 Int))
+  (=> (dynamic_invariant2 temp___335 true true true true)
+  (= (select (main__part__aggregate_def temp___335) 1) rliteral6))))
 
 (define-fun dynamic_invariant5 ((temp___expr_200 us_t1)
   (temp___is_init_196 Bool) (temp___skip_constant_197 Bool)
@@ -1069,8 +1069,8 @@
      (and (and (< (length2 p) (length1 s)) (= (ascending p) true))
      (forall ((i Int))
      (=> (and (<= (first5 p) i) (<= i (last5 p)))
-     (and (<= (first3 s) (to_rep2 (select (to_array2 p) i)))
-     (<= (to_rep2 (select (to_array2 p) i)) (last3 s)))))))) :pattern (
+     (let ((temp___257 (to_rep2 (select (to_array2 p) i))))
+     (and (<= (first3 s) temp___257) (<= temp___257 (last3 s))))))))) :pattern (
   (is_partition s p)) ))))
 
 ;; disjoint_or_subset__post_axiom
@@ -1128,24 +1128,24 @@
      (and (dynamic_invariant5 a true true true true) (dynamic_invariant6 p
      true true true true)) (dynamic_invariant2 i true true true true))
      (= (get_part a p i) (ite (= i (first5 p))
-                         (let ((temp___280 (let ((temp___279 (- (to_rep2
+                         (let ((temp___282 (let ((temp___281 (- (to_rep2
                                                                 (select 
                                                                 (to_array2 p) i)) 1)))
-                                           (let ((temp___278 (first3 a)))
+                                           (let ((temp___280 (first3 a)))
                                            (of_array1 (to_array1 a)
-                                           temp___278 temp___279)))))
-                         (of_array1 (to_array1 temp___280)
-                         (first3 temp___280) (last3 temp___280)))
-                         (let ((temp___283 (let ((temp___282 (- (to_rep2
+                                           temp___280 temp___281)))))
+                         (of_array1 (to_array1 temp___282)
+                         (first3 temp___282) (last3 temp___282)))
+                         (let ((temp___285 (let ((temp___284 (- (to_rep2
                                                                 (select 
                                                                 (to_array2 p) i)) 1)))
-                                           (let ((temp___281 (to_rep2
+                                           (let ((temp___283 (to_rep2
                                                              (select 
                                                              (to_array2 p) (- i 1)))))
                                            (of_array1 (to_array1 a)
-                                           temp___281 temp___282)))))
-                         (of_array1 (to_array1 temp___283)
-                         (first3 temp___283) (last3 temp___283)))))) :pattern (
+                                           temp___283 temp___284)))))
+                         (of_array1 (to_array1 temp___285)
+                         (first3 temp___285) (last3 temp___285)))))) :pattern (
   (get_part a p i)) )))))
 
 (declare-sort count 0)
@@ -1275,13 +1275,13 @@
   (current_in2 us_private) (current_out2 us_private)
   (current_err2 us_private))
   (=>
-  (exists ((temp___337 Int))
-  (and (= (to_rep1 a__first) temp___337)
-  (exists ((temp___338 Int))
-  (and (= (to_rep1 a__last) temp___338)
+  (exists ((temp___339 Int))
+  (and (= (to_rep1 a__first) temp___339)
+  (exists ((temp___340 Int))
+  (and (= (to_rep1 a__last) temp___340)
   (exists ((c28b Int))
-  (and (= c28b temp___337)
-  (ite (= (and (ite (<= temp___337 c28b) true false) (ite (<= c28b temp___338)
+  (and (= c28b temp___339)
+  (ite (= (and (ite (<= temp___339 c28b) true false) (ite (<= c28b temp___340)
                                                      true false)) true)
   (exists ((standard_in3 us_private) (file_system3 us_private)
   (standard_out3 us_private) (standard_err3 us_private)
@@ -1303,7 +1303,7 @@
                                             file_system2 standard_out2
                                             standard_err2 current_in2
                                             current_out2 current_err2)))
-  (= c28b1 temp___338)))))))
+  (= c28b1 temp___340)))))))
   (and
   (and
   (and
@@ -1349,13 +1349,13 @@
   (count3 Int) (part__refine__np1 (Array Int positive)))
   (is_partition__function_guard
   (is_partition (of_array1 a2 (to_rep1 o10) (to_rep1 o9))
-  (let ((temp___302 (of_array2 part__refine__np1 (to_rep1 o8)
+  (let ((temp___304 (of_array2 part__refine__np1 (to_rep1 o8)
                     (- (+ (to_rep1 o8) count3) 1))))
-  (of_array2 (to_array2 temp___302) (first5 temp___302) (last5 temp___302))))
+  (of_array2 (to_array2 temp___304) (first5 temp___304) (last5 temp___304))))
   (of_array1 a2 (to_rep1 o10) (to_rep1 o9))
-  (let ((temp___302 (of_array2 part__refine__np1 (to_rep1 o8)
+  (let ((temp___304 (of_array2 part__refine__np1 (to_rep1 o8)
                     (- (+ (to_rep1 o8) count3) 1))))
-  (of_array2 (to_array2 temp___302) (first5 temp___302) (last5 temp___302)))))
+  (of_array2 (to_array2 temp___304) (first5 temp___304) (last5 temp___304)))))
   (=>
   (forall ((a2 (Array Int integer)) (o8 integer) (o9 integer)
   (a3 (Array Int integer))) (same_set__function_guard
@@ -1368,26 +1368,26 @@
   (count3 Int) (part__refine__np1 (Array Int positive)) (i Int))
   (get_part__function_guard
   (get_part (of_array1 a2 (to_rep1 o10) (to_rep1 o9))
-  (let ((temp___307 (of_array2 part__refine__np1 (to_rep1 o8)
+  (let ((temp___309 (of_array2 part__refine__np1 (to_rep1 o8)
                     (- (+ (to_rep1 o8) count3) 1))))
-  (of_array2 (to_array2 temp___307) (first5 temp___307) (last5 temp___307)))
+  (of_array2 (to_array2 temp___309) (first5 temp___309) (last5 temp___309)))
   i) (of_array1 a2 (to_rep1 o10) (to_rep1 o9))
-  (let ((temp___307 (of_array2 part__refine__np1 (to_rep1 o8)
+  (let ((temp___309 (of_array2 part__refine__np1 (to_rep1 o8)
                     (- (+ (to_rep1 o8) count3) 1))))
-  (of_array2 (to_array2 temp___307) (first5 temp___307) (last5 temp___307)))
+  (of_array2 (to_array2 temp___309) (first5 temp___309) (last5 temp___309)))
   i))
   (=>
   (forall ((o8 integer) (o9 integer) (o10 integer) (a2 (Array Int integer))
   (count3 Int) (part__refine__np1 (Array Int positive)) (i Int))
   (get_part__function_guard
   (get_part (of_array1 a2 (to_rep1 o10) (to_rep1 o9))
-  (let ((temp___307 (of_array2 part__refine__np1 (to_rep1 o8)
+  (let ((temp___309 (of_array2 part__refine__np1 (to_rep1 o8)
                     (- (+ (to_rep1 o8) count3) 1))))
-  (of_array2 (to_array2 temp___307) (first5 temp___307) (last5 temp___307)))
+  (of_array2 (to_array2 temp___309) (first5 temp___309) (last5 temp___309)))
   i) (of_array1 a2 (to_rep1 o10) (to_rep1 o9))
-  (let ((temp___307 (of_array2 part__refine__np1 (to_rep1 o8)
+  (let ((temp___309 (of_array2 part__refine__np1 (to_rep1 o8)
                     (- (+ (to_rep1 o8) count3) 1))))
-  (of_array2 (to_array2 temp___307) (first5 temp___307) (last5 temp___307)))
+  (of_array2 (to_array2 temp___309) (first5 temp___309) (last5 temp___309)))
   i))
   (=>
   (forall ((o8 integer) (o9 us_t1) (o10 integer) (o11 integer)
@@ -1396,38 +1396,38 @@
   (disjoint_or_subset__function_guard
   (disjoint_or_subset
   (get_part (of_array1 a2 (to_rep1 o11) (to_rep1 o10))
-  (let ((temp___307 (of_array2 part__refine__np1 (to_rep1 o8)
+  (let ((temp___309 (of_array2 part__refine__np1 (to_rep1 o8)
                     (- (+ (to_rep1 o8) count3) 1))))
-  (of_array2 (to_array2 temp___307) (first5 temp___307) (last5 temp___307)))
+  (of_array2 (to_array2 temp___309) (first5 temp___309) (last5 temp___309)))
   i) o9)
   (get_part (of_array1 a2 (to_rep1 o11) (to_rep1 o10))
-  (let ((temp___307 (of_array2 part__refine__np1 (to_rep1 o8)
+  (let ((temp___309 (of_array2 part__refine__np1 (to_rep1 o8)
                     (- (+ (to_rep1 o8) count3) 1))))
-  (of_array2 (to_array2 temp___307) (first5 temp___307) (last5 temp___307)))
+  (of_array2 (to_array2 temp___309) (first5 temp___309) (last5 temp___309)))
   i) o9))
   (=>
   (and
   (and
   (and
   (= (is_partition (of_array1 a1 (to_rep1 o7) (to_rep1 o6))
-     (let ((temp___302 (of_array2 part__refine__np (to_rep1 o1)
+     (let ((temp___304 (of_array2 part__refine__np (to_rep1 o1)
                        (- (+ (to_rep1 o1) count2) 1))))
-     (of_array2 (to_array2 temp___302) (first5 temp___302)
-     (last5 temp___302)))) true)
+     (of_array2 (to_array2 temp___304) (first5 temp___304)
+     (last5 temp___304)))) true)
   (= (same_set (of_array1 a (to_rep1 o7) (to_rep1 o6))
      (of_array1 a1 (to_rep1 o7) (to_rep1 o6))) true))
   (forall ((i Int))
   (=> (and (<= (to_rep1 o1) i) (<= i (- (+ (to_rep1 o1) count2) 1)))
   (= (disjoint_or_subset
      (get_part (of_array1 a1 (to_rep1 o7) (to_rep1 o6))
-     (let ((temp___307 (of_array2 part__refine__np (to_rep1 o1)
+     (let ((temp___309 (of_array2 part__refine__np (to_rep1 o1)
                        (- (+ (to_rep1 o1) count2) 1))))
-     (of_array2 (to_array2 temp___307) (first5 temp___307)
-     (last5 temp___307))) i) (of_array1 x o3 o2)) true))))
+     (of_array2 (to_array2 temp___309) (first5 temp___309)
+     (last5 temp___309))) i) (of_array1 x o3 o2)) true))))
   (dynamic_invariant count2 true true true true))
-  (let ((temp___340 (of_array2 part__refine__np 1 5)))
+  (let ((temp___342 (of_array2 part__refine__np 1 5)))
   (forall ((np (Array Int positive)))
-  (=> (= np (slide2 (to_array2 temp___340) (first5 temp___340) 1))
+  (=> (= np (slide2 (to_array2 temp___342) (first5 temp___342) 1))
   (forall ((standard_in4 us_private) (file_system4 us_private)
   (standard_out4 us_private) (standard_err4 us_private)
   (current_in4 us_private) (current_out4 us_private)
@@ -1449,13 +1449,13 @@
   (current_in5 us_private) (current_out5 us_private)
   (current_err5 us_private))
   (=>
-  (exists ((temp___342 Int))
-  (and (= (to_rep1 a__first) temp___342)
-  (exists ((temp___343 Int))
-  (and (= (to_rep1 a__last) temp___343)
+  (exists ((temp___344 Int))
+  (and (= (to_rep1 a__first) temp___344)
+  (exists ((temp___345 Int))
+  (and (= (to_rep1 a__last) temp___345)
   (exists ((c34b Int))
-  (and (= c34b temp___342)
-  (ite (= (and (ite (<= temp___342 c34b) true false) (ite (<= c34b temp___343)
+  (and (= c34b temp___344)
+  (ite (= (and (ite (<= temp___344 c34b) true false) (ite (<= c34b temp___345)
                                                      true false)) true)
   (exists ((standard_in6 us_private) (file_system6 us_private)
   (standard_out6 us_private) (standard_err6 us_private)
@@ -1477,7 +1477,7 @@
                                             file_system5 standard_out5
                                             standard_err5 current_in5
                                             current_out5 current_err5)))
-  (= c34b1 temp___343)))))))
+  (= c34b1 temp___345)))))))
   (and
   (and
   (and

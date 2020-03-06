@@ -207,6 +207,10 @@
                         (to_rep1 (rec__test__wibble__z (us_split_fields1 b))))))))
                    true false))
 
+(define-fun in_range3 ((rec__test__wibble__d1 Int)
+  (a us_split_discrs)) Bool (= rec__test__wibble__d1 (to_rep1
+                                                     (rec__test__wibble__d a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -309,11 +313,6 @@
 (declare-const r__split_discrs us_split_discrs)
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
-
-(define-fun in_range3 ((rec__test__wibble__d1 Int)
-  (a us_rep)) Bool (= rec__test__wibble__d1 (to_rep1
-                                            (rec__test__wibble__d
-                                            (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 
@@ -423,7 +422,8 @@
   (temp___do_toplevel_172 Bool)
   (temp___do_typ_inv_173 Bool)) Bool (=>
                                      (not (= temp___skip_constant_171 true))
-                                     (in_range3 2 temp___expr_174)))
+                                     (in_range3 2
+                                     (us_split_discrs1 temp___expr_174))))
 
 (define-fun default_initial_assumption ((temp___expr_176 us_rep)
   (temp___skip_top_level_177 Bool)) Bool (= (to_rep1

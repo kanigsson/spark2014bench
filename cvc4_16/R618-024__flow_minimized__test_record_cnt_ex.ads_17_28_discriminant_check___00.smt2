@@ -182,22 +182,6 @@
 ;; test_record_cnt_ex__complex__b__position_axiom
   (assert (<= 0 test_record_cnt_ex__complex__b__position))
 
-(declare-const test_record_cnt_ex__complex__g__first__bit Int)
-
-(declare-const test_record_cnt_ex__complex__g__last__bit Int)
-
-(declare-const test_record_cnt_ex__complex__g__position Int)
-
-;; test_record_cnt_ex__complex__g__first__bit_axiom
-  (assert (<= 0 test_record_cnt_ex__complex__g__first__bit))
-
-;; test_record_cnt_ex__complex__g__last__bit_axiom
-  (assert
-  (< test_record_cnt_ex__complex__g__first__bit test_record_cnt_ex__complex__g__last__bit))
-
-;; test_record_cnt_ex__complex__g__position_axiom
-  (assert (<= 0 test_record_cnt_ex__complex__g__position))
-
 (declare-const test_record_cnt_ex__complex__f__first__bit Int)
 
 (declare-const test_record_cnt_ex__complex__f__last__bit Int)
@@ -214,19 +198,38 @@
 ;; test_record_cnt_ex__complex__f__position_axiom
   (assert (<= 0 test_record_cnt_ex__complex__f__position))
 
+(declare-const test_record_cnt_ex__complex__g__first__bit Int)
+
+(declare-const test_record_cnt_ex__complex__g__last__bit Int)
+
+(declare-const test_record_cnt_ex__complex__g__position Int)
+
+;; test_record_cnt_ex__complex__g__first__bit_axiom
+  (assert (<= 0 test_record_cnt_ex__complex__g__first__bit))
+
+;; test_record_cnt_ex__complex__g__last__bit_axiom
+  (assert
+  (< test_record_cnt_ex__complex__g__first__bit test_record_cnt_ex__complex__g__last__bit))
+
+;; test_record_cnt_ex__complex__g__position_axiom
+  (assert (<= 0 test_record_cnt_ex__complex__g__position))
+
 (declare-fun user_eq1 (us_rep us_rep) Bool)
 
 (declare-const dummy1 us_rep)
 
-(declare-datatypes ((complex__ref 0))
-(((complex__refqtmk (complex__content us_rep)))))
-(define-fun complex__ref_complex__content__projection ((a complex__ref)) us_rep 
-  (complex__content a))
+(declare-datatypes ((no_f__ref 0))
+(((no_f__refqtmk (no_f__content us_rep)))))
+(define-fun no_f__ref_no_f__content__projection ((a no_f__ref)) us_rep 
+  (no_f__content a))
+
+(declare-const x us_rep)
+
+(declare-const attr__ATTRIBUTE_ADDRESS Int)
 
 (define-fun in_range2 ((rec__test_record_cnt_ex__complex__b1 Bool)
-  (a us_rep)) Bool (= rec__test_record_cnt_ex__complex__b1 (rec__test_record_cnt_ex__complex__b
-                                                           (us_split_discrs1
-                                                           a))))
+  (a us_split_discrs)) Bool (= rec__test_record_cnt_ex__complex__b1 (rec__test_record_cnt_ex__complex__b
+                                                                    a)))
 
 (declare-const value__size1 Int)
 
@@ -259,22 +262,6 @@
 ;; test_record_cnt_ex__complex__b__position_axiom
   (assert (<= 0 test_record_cnt_ex__complex__b__position1))
 
-(declare-const test_record_cnt_ex__complex__f__first__bit1 Int)
-
-(declare-const test_record_cnt_ex__complex__f__last__bit1 Int)
-
-(declare-const test_record_cnt_ex__complex__f__position1 Int)
-
-;; test_record_cnt_ex__complex__f__first__bit_axiom
-  (assert (<= 0 test_record_cnt_ex__complex__f__first__bit1))
-
-;; test_record_cnt_ex__complex__f__last__bit_axiom
-  (assert
-  (< test_record_cnt_ex__complex__f__first__bit1 test_record_cnt_ex__complex__f__last__bit1))
-
-;; test_record_cnt_ex__complex__f__position_axiom
-  (assert (<= 0 test_record_cnt_ex__complex__f__position1))
-
 (declare-const test_record_cnt_ex__complex__g__first__bit1 Int)
 
 (declare-const test_record_cnt_ex__complex__g__last__bit1 Int)
@@ -291,18 +278,30 @@
 ;; test_record_cnt_ex__complex__g__position_axiom
   (assert (<= 0 test_record_cnt_ex__complex__g__position1))
 
+(declare-const test_record_cnt_ex__complex__f__first__bit1 Int)
+
+(declare-const test_record_cnt_ex__complex__f__last__bit1 Int)
+
+(declare-const test_record_cnt_ex__complex__f__position1 Int)
+
+;; test_record_cnt_ex__complex__f__first__bit_axiom
+  (assert (<= 0 test_record_cnt_ex__complex__f__first__bit1))
+
+;; test_record_cnt_ex__complex__f__last__bit_axiom
+  (assert
+  (< test_record_cnt_ex__complex__f__first__bit1 test_record_cnt_ex__complex__f__last__bit1))
+
+;; test_record_cnt_ex__complex__f__position_axiom
+  (assert (<= 0 test_record_cnt_ex__complex__f__position1))
+
 (declare-fun user_eq2 (us_rep us_rep) Bool)
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((no_f__ref 0))
-(((no_f__refqtmk (no_f__content us_rep)))))
-(define-fun no_f__ref_no_f__content__projection ((a no_f__ref)) us_rep 
-  (no_f__content a))
-
-(declare-const x us_rep)
-
-(declare-const attr__ATTRIBUTE_ADDRESS Int)
+(declare-datatypes ((complex__ref 0))
+(((complex__refqtmk (complex__content us_rep)))))
+(define-fun complex__ref_complex__content__projection ((a complex__ref)) us_rep 
+  (complex__content a))
 
 (define-fun dynamic_invariant ((temp___expr_164 us_rep)
   (temp___is_init_160 Bool) (temp___skip_constant_161 Bool)
@@ -310,17 +309,12 @@
   (temp___do_typ_inv_163 Bool)) Bool (=>
                                      (not (= temp___skip_constant_161 true))
                                      (in_range2 (distinct 0 0)
-                                     temp___expr_164)))
+                                     (us_split_discrs1 temp___expr_164))))
 
 (define-fun default_initial_assumption ((temp___expr_166 us_rep)
   (temp___skip_top_level_167 Bool)) Bool (= (rec__test_record_cnt_ex__complex__b
                                             (us_split_discrs1
                                             temp___expr_166)) (distinct 0 0)))
-
-(define-fun in_range3 ((rec__test_record_cnt_ex__complex__b1 Bool)
-  (a us_rep)) Bool (= rec__test_record_cnt_ex__complex__b1 (rec__test_record_cnt_ex__complex__b
-                                                           (us_split_discrs1
-                                                           a))))
 
 (declare-const value__size2 Int)
 
@@ -415,6 +409,7 @@
 ;; defqtvc
  ;; File "test_record_cnt_ex.ads", line 12, characters 0-0
   (not (in_range2 (distinct 0 0)
+  (us_split_discrs1
   (us_repqtmk (us_split_discrsqtmk (distinct 0 0))
-  (us_split_fieldsqtmk rliteral dummy)))))
+  (us_split_fieldsqtmk rliteral dummy))))))
 (check-sat)

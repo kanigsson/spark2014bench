@@ -874,7 +874,7 @@
 ;; defqtvc
  ;; File "lp.ads", line 10, characters 0-0
   (not
-  (forall ((previous Int) (temp___291 Int))
+  (forall ((previous Int) (temp___301 Int))
   (=> (dynamic_invariant i true false true true)
   (=>
   (= (of_array
@@ -884,9 +884,9 @@
   (=> (dynamic_invariant1 powers true false true true)
   (=> (= previous 64)
   (=> (dynamic_invariant previous true false true true)
-  (=> (<= (first1 powers) temp___291)
-  (=> (<= temp___291 (last1 powers))
+  (=> (<= (first1 powers) temp___301)
+  (=> (<= temp___301 (last1 powers))
   (bvule #x0000000000000000 ((_ int2bv 64) (power 2
                                            (to_rep
-                                           (select (to_array powers) temp___291)))))))))))))))
+                                           (select (to_array powers) temp___301)))))))))))))))
 (check-sat)

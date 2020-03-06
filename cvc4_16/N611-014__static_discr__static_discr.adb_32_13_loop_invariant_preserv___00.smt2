@@ -348,6 +348,16 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range4 ((rec__static_discr__i_holder__unused1 Int)
+  (rec__static_discr__i_holder__c1 Int)
+  (a us_split_discrs)) Bool (and
+                            (= rec__static_discr__i_holder__unused1 (to_rep
+                                                                    (rec__static_discr__i_holder__unused
+                                                                    a)))
+                            (= rec__static_discr__i_holder__c1 (to_rep
+                                                               (rec__static_discr__i_holder__c
+                                                               a)))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -481,17 +491,6 @@
                             (rec__static_discr__i_holder__content1
                             (us_split_fields3 b))) true))
                     true false))
-
-(define-fun in_range4 ((rec__static_discr__i_holder__unused1 Int)
-  (rec__static_discr__i_holder__c1 Int)
-  (a us_rep)) Bool (and
-                   (= rec__static_discr__i_holder__unused1 (to_rep
-                                                           (rec__static_discr__i_holder__unused
-                                                           (us_split_discrs1
-                                                           a))))
-                   (= rec__static_discr__i_holder__c1 (to_rep
-                                                      (rec__static_discr__i_holder__c
-                                                      (us_split_discrs1 a))))))
 
 (declare-const value__size2 Int)
 
@@ -628,6 +627,16 @@
                                                    (us_split_fields5 b))))))
                     true false))
 
+(define-fun in_range5 ((rec__static_discr__holder__unused1 Int)
+  (rec__static_discr__holder__c1 Int)
+  (a us_split_discrs3)) Bool (and
+                             (= rec__static_discr__holder__unused1 (to_rep
+                                                                   (rec__static_discr__holder__unused
+                                                                   a)))
+                             (= rec__static_discr__holder__c1 (to_rep
+                                                              (rec__static_discr__holder__c
+                                                              a)))))
+
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -724,7 +733,7 @@
   (assert
   (forall ((i tT8sP1)) (and (<= 1 (tT8sP1qtint i)) (<= (tT8sP1qtint i) 100))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -817,17 +826,6 @@
                             (rec__static_discr__i_holder__content2
                             (us_split_fields7 b)) 1 100) true))
                     true false))
-
-(define-fun in_range6 ((rec__static_discr__i_holder__unused1 Int)
-  (rec__static_discr__i_holder__c1 Int)
-  (a us_rep)) Bool (and
-                   (= rec__static_discr__i_holder__unused1 (to_rep
-                                                           (rec__static_discr__i_holder__unused
-                                                           (us_split_discrs1
-                                                           a))))
-                   (= rec__static_discr__i_holder__c1 (to_rep
-                                                      (rec__static_discr__i_holder__c
-                                                      (us_split_discrs1 a))))))
 
 (declare-const value__size5 Int)
 
@@ -968,17 +966,6 @@
                                                    (us_split_fields9 b))))))
                     true false))
 
-(define-fun in_range7 ((rec__static_discr__holder__unused1 Int)
-  (rec__static_discr__holder__c1 Int)
-  (a us_rep2)) Bool (and
-                    (= rec__static_discr__holder__unused1 (to_rep
-                                                          (rec__static_discr__holder__unused
-                                                          (us_split_discrs4
-                                                          a))))
-                    (= rec__static_discr__holder__c1 (to_rep
-                                                     (rec__static_discr__holder__c
-                                                     (us_split_discrs4 a))))))
-
 (declare-const value__size6 Int)
 
 (declare-const object__size6 Int)
@@ -1081,12 +1068,14 @@
   (temp___do_typ_inv_204 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_202 true))
-                                     (in_range7 100 100
-                                     (to_base2 temp___expr_205))) (in_range6
+                                     (in_range5 100 100
+                                     (us_split_discrs4
+                                     (to_base2 temp___expr_205)))) (in_range4
                                      100 100
+                                     (us_split_discrs1
                                      (to_base1
                                      (rec__static_discr__holder__content1
-                                     (us_split_fields9 temp___expr_205))))))
+                                     (us_split_fields9 temp___expr_205)))))))
 
 (define-fun default_initial_assumption ((temp___expr_211 us_rep4)
   (temp___skip_top_level_212 Bool)) Bool (and
@@ -1160,9 +1149,10 @@
                                      (rec__static_discr__holder__unused
                                      (us_split_discrs4 temp___expr_195)))
                                      (to_rep temp___197)
+                                     (us_split_discrs1
                                      (to_base
                                      (rec__static_discr__holder__content
-                                     (us_split_fields5 temp___expr_195))))
+                                     (us_split_fields5 temp___expr_195)))))
                                      (and (dynamic_property 1
                                      (to_rep temp___197)
                                      (first1
@@ -1220,18 +1210,16 @@
   (= o (ite (< 0 o1) true false)))) (= o false))
   (=> (= o true)
   (=>
+  (exists ((temp___375 Int))
+  (and
+  (= (to_rep (rec__static_discr__holder__length1 current__split_fields)) temp___375)
   (exists ((o1 Int))
   (and
   (= (to_rep (rec__static_discr__holder__length1 (us_split_fields9 a))) o1)
-  (exists ((o2 Int))
-  (and
-  (= (to_rep (rec__static_discr__holder__length1 current__split_fields)) o2)
-  (exists ((o3 Int))
-  (and
-  (= (to_rep (rec__static_discr__holder__length1 current__split_fields)) o3)
   (or
   (not
-  (= (ite (= (and (ite (<= 1 o3) true false) (ite (<= o2 o1) true false)) true)
+  (= (ite (= (and (ite (<= 1 temp___375) true false) (ite (<= temp___375 o1)
+                                                     true false)) true)
      (bool_eq
      (rec__static_discr__i_holder__content2
      (us_split_fields7
@@ -1240,21 +1228,23 @@
      (us_split_fields7
      (rec__static_discr__holder__content1 current__split_fields))) 1 100)
      false) true))
-  (exists ((o4 Int))
+  (exists ((o2 Int))
   (and
-  (= (to_rep (rec__static_discr__holder__length1 (us_split_fields9 a))) o4)
-  (exists ((o5 Int))
+  (= (to_rep (rec__static_discr__holder__length1 (us_split_fields9 a))) o2)
+  (exists ((o3 Int))
   (and
-  (= (to_rep (rec__static_discr__holder__length1 current__split_fields)) o5)
-  (in_range1 (+ o5 1)))))))))))))
+  (= (to_rep (rec__static_discr__holder__length1 current__split_fields)) o3)
+  (in_range1 (+ o3 1)))))))))))
   (forall ((current__split_fields1 us_split_fields8) (result__1 Int))
   (=>
   (and
   (and
-  (and
-  (<= 1 (to_rep (rec__static_discr__holder__length1 current__split_fields1)))
-  (<= (to_rep (rec__static_discr__holder__length1 current__split_fields1)) 
-  (to_rep (rec__static_discr__holder__length1 (us_split_fields9 a)))))
+  (let ((temp___382 (to_rep
+                    (rec__static_discr__holder__length1
+                    current__split_fields1))))
+  (and (<= 1 temp___382)
+  (<= temp___382 (to_rep
+                 (rec__static_discr__holder__length1 (us_split_fields9 a))))))
   (= (bool_eq
      (rec__static_discr__i_holder__content2
      (us_split_fields7
@@ -1343,18 +1333,16 @@
   (= o1 (ite (< 0 o2) true false)))) (= o1 false))
   (=> (= o1 true)
   (=>
+  (exists ((temp___375 Int))
+  (and
+  (= (to_rep (rec__static_discr__holder__length1 current__split_fields2)) temp___375)
   (exists ((o2 Int))
   (and
   (= (to_rep (rec__static_discr__holder__length1 (us_split_fields9 a))) o2)
-  (exists ((o3 Int))
-  (and
-  (= (to_rep (rec__static_discr__holder__length1 current__split_fields2)) o3)
-  (exists ((o4 Int))
-  (and
-  (= (to_rep (rec__static_discr__holder__length1 current__split_fields2)) o4)
   (or
   (not
-  (= (ite (= (and (ite (<= 1 o4) true false) (ite (<= o3 o2) true false)) true)
+  (= (ite (= (and (ite (<= 1 temp___375) true false) (ite (<= temp___375 o2)
+                                                     true false)) true)
      (bool_eq
      (rec__static_discr__i_holder__content2
      (us_split_fields7
@@ -1363,12 +1351,12 @@
      (us_split_fields7
      (rec__static_discr__holder__content1 current__split_fields2))) 1 100)
      false) true))
-  (exists ((o5 Int))
+  (exists ((o3 Int))
   (and
-  (= (to_rep (rec__static_discr__holder__length1 (us_split_fields9 a))) o5)
-  (exists ((o6 Int))
+  (= (to_rep (rec__static_discr__holder__length1 (us_split_fields9 a))) o3)
+  (exists ((o4 Int))
   (and
-  (= (to_rep (rec__static_discr__holder__length1 current__split_fields2)) o6)
-  (in_range1 (+ o6 1)))))))))))))
+  (= (to_rep (rec__static_discr__holder__length1 current__split_fields2)) o4)
+  (in_range1 (+ o4 1)))))))))))
   (<= 1 (to_rep (rec__static_discr__holder__length1 current__split_fields2))))))))))))))))))))))))))))))))
 (check-sat)

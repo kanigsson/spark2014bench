@@ -528,8 +528,8 @@
   (fp.lt (to_rep (select battery_level_at s2)) battery_threshold)))))
   (= res1 (bvadd s1 #x01)))
   (and
-  (= (and (ite (and (in_range1 s1) (dynamic_invariant2 res1 true true true
-               true))
+  (= (and (ite (and (dynamic_invariant2 res1 true true true true) (in_range1
+               s1))
           true false) (ite (and (bvule #x00 s1) (bvule s1 #x31)) true false)) true)
   (or (= s1 #x31)
   (exists ((s2 (_ BitVec 8)))

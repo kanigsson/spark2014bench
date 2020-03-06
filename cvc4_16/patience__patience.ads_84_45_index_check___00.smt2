@@ -733,7 +733,7 @@
 ;; defqtvc
  ;; File "patience.ads", line 53, characters 0-0
   (not
-  (forall ((o Bool) (usf Int) (o1 Int) (usf1 Int) (o2 Int) (temp___467 Int))
+  (forall ((o Bool) (usf Int) (o1 Int) (usf1 Int) (o2 Int) (temp___477 Int))
   (=>
   (exists ((o3 Bool))
   (and
@@ -810,27 +810,23 @@
                      (rec__patience__state__numelts (us_split_fields1 s))) 1)))
             (and
             (and
-            (and
-            (<= 0 (to_rep
-                  (select (rec__patience__state__posstack
-                          (us_split_fields1 s)) i)))
-            (<= (to_rep
-                (select (rec__patience__state__posstack (us_split_fields1 s)) i)) (- 
-            (to_rep (rec__patience__state__numstacks (us_split_fields1 s))) 1)))
-            (and
-            (<= 0 (to_rep
-                  (select (rec__patience__state__posheight
-                          (us_split_fields1 s)) i)))
-            (<= (to_rep
-                (select (rec__patience__state__posheight
-                        (us_split_fields1 s)) i)) (- (to_rep
-                                                     (select (rec__patience__state__stacksizes
-                                                             (us_split_fields1
-                                                             s)) (to_rep
-                                                                 (select 
-                                                                 (rec__patience__state__posstack
-                                                                 (us_split_fields1
-                                                                 s)) i)))) 1))))
+            (let ((temp___460 (to_rep
+                              (select (rec__patience__state__posstack
+                                      (us_split_fields1 s)) i))))
+            (and (<= 0 temp___460)
+            (<= temp___460 (- (to_rep
+                              (rec__patience__state__numstacks
+                              (us_split_fields1 s))) 1))))
+            (let ((temp___462 (to_rep
+                              (select (rec__patience__state__posheight
+                                      (us_split_fields1 s)) i))))
+            (and (<= 0 temp___462)
+            (<= temp___462 (- (to_rep
+                              (select (rec__patience__state__stacksizes
+                                      (us_split_fields1 s)) (to_rep
+                                                            (select (rec__patience__state__posstack
+                                                                    (us_split_fields1
+                                                                    s)) i)))) 1)))))
             (= (to_rep
                (select (select (rec__patience__state__stacks
                                (us_split_fields1 s)) (to_rep
@@ -858,7 +854,7 @@
   (=> (<= usf1 99)
   (=>
   (= (to_rep
-     (select (select (rec__patience__state__stacks (us_split_fields1 s)) usf) usf1)) temp___467)
-  (=> (<= 0 temp___467)
-  (=> (<= temp___467 99) (=> (<= 0 usf) (=> (<= usf 99) (<= 0 usf1)))))))))))))))))))))
+     (select (select (rec__patience__state__stacks (us_split_fields1 s)) usf) usf1)) temp___477)
+  (=> (<= 0 temp___477)
+  (=> (<= temp___477 99) (=> (<= 0 usf) (=> (<= usf 99) (<= 0 usf1)))))))))))))))))))))
 (check-sat)

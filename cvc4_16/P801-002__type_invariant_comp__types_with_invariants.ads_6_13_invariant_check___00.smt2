@@ -427,6 +427,10 @@
                             (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range4 ((rec__types_with_invariants__container__c1 Int)
+  (a us_split_discrs)) Bool (= rec__types_with_invariants__container__c1 
+  (to_rep (rec__types_with_invariants__container__c a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)

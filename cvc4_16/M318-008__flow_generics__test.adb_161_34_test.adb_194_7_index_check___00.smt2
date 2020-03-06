@@ -576,23 +576,23 @@
   (=> (dynamic_invariant2 new_content true false true true)
   (=> (= (first1 old_inventory) (to_rep new_inventory__first))
   (=> (= (last1 old_inventory) (to_rep new_inventory__last))
-  (let ((temp___499 (first1 old_inventory)))
-  (let ((temp___500 (last1 old_inventory)))
+  (let ((temp___500 (first1 old_inventory)))
+  (let ((temp___501 (last1 old_inventory)))
   (forall ((i Int))
-  (=> (= i temp___499)
+  (=> (= i temp___500)
   (=>
-  (= (and (ite (<= temp___499 i) true false) (ite (<= i temp___500) true
+  (= (and (ite (<= temp___500 i) true false) (ite (<= i temp___501) true
                                              false)) true)
   (forall ((new_inventory1 (Array Int fruits_and_weapons)) (i1 Int))
   (=>
-  (= (and (ite (forall ((temp___503 Int))
+  (= (and (ite (forall ((temp___504 Int))
                (=>
-               (and (<= (to_rep new_inventory__first) temp___503)
-               (<= temp___503 (to_rep new_inventory__last)))
+               (and (<= (to_rep new_inventory__first) temp___504)
+               (<= temp___504 (to_rep new_inventory__last)))
                (=>
-               (or (< temp___500 temp___503)
-               (or (< temp___503 temp___499) (<= i1 temp___503)))
-               (= (select new_inventory1 temp___503) (select new_inventory temp___503)))))
+               (or (< temp___501 temp___504)
+               (or (< temp___504 temp___500) (<= i1 temp___504)))
+               (= (select new_inventory1 temp___504) (select new_inventory temp___504)))))
           true false) (ite (and (<= (first1 old_inventory) i1)
                            (<= i1 (last1 old_inventory)))
                       true false)) true)

@@ -369,6 +369,10 @@
                         (to_rep4 (rec__repro__item__zz (us_split_fields1 b)))))))
                    true false))
 
+(define-fun in_range7 ((rec__repro__item__k1 Int)
+  (a us_split_discrs)) Bool (= rec__repro__item__k1 (to_rep5
+                                                    (rec__repro__item__k a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -615,6 +619,11 @@
                             (rec__repro__speed__m (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range8 ((rec__repro__speed__len1 Int)
+  (a us_split_discrs2)) Bool (= rec__repro__speed__len1 (to_rep2
+                                                        (rec__repro__speed__len
+                                                        a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -711,6 +720,9 @@
                             (rec__repro__ssp__s (us_split_fields5 a))
                             (rec__repro__ssp__s (us_split_fields5 b))) true)))
                     true false))
+
+(define-fun in_range9 ((rec__repro__ssp__b1 Bool)
+  (a us_split_discrs4)) Bool (= rec__repro__ssp__b1 (rec__repro__ssp__b a)))
 
 (declare-const value__size3 Int)
 
@@ -923,6 +935,10 @@
                          (= (bool_eq6 (rec__repro__r__x (us_split_fields7 a))
                             (rec__repro__r__x (us_split_fields7 b))) true))
                     true false))
+
+(define-fun in_range10 ((rec__repro__r__y1 Int)
+  (a us_split_discrs6)) Bool (= rec__repro__r__y1 (to_rep
+                                                  (rec__repro__r__y a))))
 
 (declare-const value__size5 Int)
 

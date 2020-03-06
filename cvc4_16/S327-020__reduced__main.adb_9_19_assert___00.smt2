@@ -518,14 +518,14 @@
 ;; defqtvc
  ;; File "main.adb", line 3, characters 0-0
   (not
-  (forall ((temp___195 Int))
+  (forall ((temp___197 Int))
   (=>
   (= (of_array (main__powers__aggregate_def 63 65) (- 2147483648)
      (- 2147483647)) powers)
   (=> (dynamic_invariant powers true false true true)
-  (=> (<= (first1 powers) temp___195)
-  (=> (<= temp___195 (last1 powers))
-  (let ((k (to_rep (select (to_array powers) temp___195))))
+  (=> (<= (first1 powers) temp___197)
+  (=> (<= temp___197 (last1 powers))
+  (let ((k (to_rep (select (to_array powers) temp___197))))
   (bvule #x0000000000000000 (ite (< k 18446744073709551616)
                             (bvshl #x0000000000000001 ((_ int2bv 64) k))
                             #x0000000000000000))))))))))

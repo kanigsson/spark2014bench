@@ -229,6 +229,10 @@
                         (rec__definite__t__x (us_split_fields1 b)) 1 0)))))
                    true false))
 
+(define-fun in_range4 ((rec__definite__t__d1 Int)
+  (a us_split_discrs)) Bool (= rec__definite__t__d1 (to_rep1
+                                                    (rec__definite__t__d a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -336,11 +340,6 @@
   (temp___do_typ_inv_157 Bool)) Bool (=>
                                      (or (= temp___is_init_154 true)
                                      (<= 0 2)) (in_range3 temp___expr_158)))
-
-(define-fun in_range4 ((rec__definite__t__d1 Int)
-  (a us_rep)) Bool (= rec__definite__t__d1 (to_rep1
-                                           (rec__definite__t__d
-                                           (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 

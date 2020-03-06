@@ -171,10 +171,10 @@
 (define-fun transmitter_type__ref_transmitter_type__content__projection ((a transmitter_type__ref)) us_rep 
   (transmitter_type__content a))
 
-(define-fun default_initial_assumption ((temp___expr_424 us_rep)
-  (temp___skip_top_level_425 Bool)) Bool (= (rec__decadriver__transmitter_type__tx_idle
+(define-fun default_initial_assumption ((temp___expr_426 us_rep)
+  (temp___skip_top_level_427 Bool)) Bool (= (rec__decadriver__transmitter_type__tx_idle
                                             (us_split_fields1
-                                            temp___expr_424)) (distinct 1 0)))
+                                            temp___expr_426)) (distinct 1 0)))
 
 (define-fun dynamic_invariant1 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)

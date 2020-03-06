@@ -138,6 +138,10 @@
                                                   (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range2 ((rec__constrained_attribute__mut_rec__d1 Int)
+  (a us_split_discrs)) Bool (= rec__constrained_attribute__mut_rec__d1 
+  (to_rep (rec__constrained_attribute__mut_rec__d a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

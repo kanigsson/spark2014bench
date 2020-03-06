@@ -212,6 +212,11 @@
 
 (declare-const us_tag1 Int)
 
+(define-fun in_range1 ((rec__private_types__root_d__c1 Int)
+  (a us_split_discrs)) Bool (= rec__private_types__root_d__c1 (to_rep
+                                                              (rec__private_types__root_d__c
+                                                              a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -308,6 +313,11 @@
                             (rec__private_types__non_tagged
                             (us_split_fields5 b))) true))
                     true false))
+
+(define-fun in_range2 ((rec__private_types__non_tagged__c1 Int)
+  (a us_split_discrs2)) Bool (= rec__private_types__non_tagged__c1 (to_rep
+                                                                   (rec__private_types__non_tagged__c
+                                                                   a))))
 
 (declare-const value__size2 Int)
 

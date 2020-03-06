@@ -341,6 +341,10 @@
                            (rec__mutable__t__arr (us_split_fields1 b))) true)))
                    true false))
 
+(define-fun in_range3 ((rec__mutable__t__k1 Int)
+  (a us_split_discrs)) Bool (= rec__mutable__t__k1 (to_rep1
+                                                   (rec__mutable__t__k a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

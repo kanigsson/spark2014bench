@@ -1988,7 +1988,7 @@
   (forall ((cur_board (Array Int (Array Int cell)))
   (cur_piece__split_fields us_split_fields) (cur_state Int) (o Int)
   (spark__branch Bool) (o1 Int) (spark__branch1 Bool) (y Int) (x Int)
-  (o2 Int) (temp___891 Int) (spark__branch2 Bool) (o3 Int) (o4 cell)
+  (o2 Int) (temp___900 Int) (spark__branch2 Bool) (o3 Int) (o4 cell)
   (o5 Int))
   (=>
   (= (patris__possible_i_shapes__aggregate_def
@@ -2101,10 +2101,10 @@
   (=> (= x 0)
   (=> (= (to_rep4 (rec__patris__piece__d cur_piece__split_fields)) o2)
   (=>
-  (= (to_rep1 (rec__patris__piece__s cur_piece__split_fields)) temp___891)
-  (=> (<= 3 temp___891)
-  (=> (<= temp___891 7)
-  (=> (= spark__branch2 (get (get1 possible_three_shapes temp___891 o2) y x))
+  (= (to_rep1 (rec__patris__piece__s cur_piece__split_fields)) temp___900)
+  (=> (<= 3 temp___900)
+  (=> (<= temp___900 7)
+  (=> (= spark__branch2 (get (get1 possible_three_shapes temp___900 o2) y x))
   (=> (= spark__branch2 true)
   (=> (= (to_rep1 (rec__patris__piece__s cur_piece__split_fields)) o3)
   (=> (= (to_rep o4) o3)

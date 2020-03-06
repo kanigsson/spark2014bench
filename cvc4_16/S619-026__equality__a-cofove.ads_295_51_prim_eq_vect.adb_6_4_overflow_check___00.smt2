@@ -145,6 +145,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range2 ((rec__prim_eq_vect__int_vect__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__prim_eq_vect__int_vect__vector__capacity1 
+  (to_rep (rec__prim_eq_vect__int_vect__vector__capacity a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -315,7 +319,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -337,7 +341,7 @@
   (temp___do_toplevel_326 Bool)
   (temp___do_typ_inv_327 Bool)) Bool (=>
                                      (or (= temp___is_init_324 true)
-                                     (<= 0 2147483647)) (in_range2
+                                     (<= 0 2147483647)) (in_range3
                                      temp___expr_328)))
 
 (declare-const container__split_discrs us_split_discrs)
@@ -362,7 +366,7 @@
   (and (<= (- 2147483648) (tcount_typeBqtint i))
   (<= (tcount_typeBqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
@@ -389,7 +393,7 @@
   (forall ((i count_type))
   (and (<= 0 (count_typeqtint i)) (<= (count_typeqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -411,7 +415,7 @@
   (temp___do_toplevel_333 Bool)
   (temp___do_typ_inv_334 Bool)) Bool (=>
                                      (or (= temp___is_init_331 true)
-                                     (<= 0 2147483647)) (in_range4
+                                     (<= 0 2147483647)) (in_range5
                                      temp___expr_335)))
 
 ;; oeq__post_axiom
@@ -430,7 +434,7 @@
   (and (<= 0 (extended_indexqtint1 i))
   (<= (extended_indexqtint1 i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -452,7 +456,7 @@
   (temp___do_toplevel_367 Bool)
   (temp___do_typ_inv_368 Bool)) Bool (=>
                                      (or (= temp___is_init_365 true)
-                                     (<= 0 2147483647)) (in_range5
+                                     (<= 0 2147483647)) (in_range6
                                      temp___expr_369)))
 
 ;; length__post_axiom
@@ -472,7 +476,7 @@
   (and (<= (- 2147483648) (element_typeqtint i))
   (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range7 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
@@ -496,7 +500,7 @@
   (temp___do_typ_inv_361 Bool)) Bool (=>
                                      (or (= temp___is_init_358 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range6 temp___expr_362)))
+                                     (in_range7 temp___expr_362)))
 
 ;; get__post_axiom
   (assert
@@ -536,5 +540,5 @@
   (= o4 (to_rep
         (rec__prim_eq_vect__int_vect__vector__capacity
         container__split_discrs))))
-  (in_range3 (- o4 o3)))))))))))))))
+  (in_range4 (- o4 o3)))))))))))))))
 (check-sat)

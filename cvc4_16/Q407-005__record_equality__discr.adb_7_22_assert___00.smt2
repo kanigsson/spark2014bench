@@ -404,6 +404,26 @@
                            (rec__discr__t_record__data (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range2 ((rec__discr__t_record__row_first1 Int)
+  (rec__discr__t_record__row_last1 Int)
+  (rec__discr__t_record__col_first1 Int)
+  (rec__discr__t_record__col_last1 Int)
+  (a us_split_discrs)) Bool (and
+                            (and
+                            (and
+                            (= rec__discr__t_record__row_first1 (to_rep1
+                                                                (rec__discr__t_record__row_first
+                                                                a)))
+                            (= rec__discr__t_record__row_last1 (to_rep1
+                                                               (rec__discr__t_record__row_last
+                                                               a))))
+                            (= rec__discr__t_record__col_first1 (to_rep1
+                                                                (rec__discr__t_record__col_first
+                                                                a))))
+                            (= rec__discr__t_record__col_last1 (to_rep1
+                                                               (rec__discr__t_record__col_last
+                                                               a)))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

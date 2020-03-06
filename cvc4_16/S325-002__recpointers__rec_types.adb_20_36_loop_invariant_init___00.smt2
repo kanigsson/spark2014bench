@@ -384,6 +384,11 @@
                             (us_split_fields1 b))) true)))
                     true false))
 
+(define-fun in_range4 ((rec__rec_types__test2__tree_node__d1 Int)
+  (a us_split_discrs)) Bool (= rec__rec_types__test2__tree_node__d1 (to_rep1
+                                                                    (rec__rec_types__test2__tree_node__d
+                                                                    a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -618,7 +623,7 @@
   (assert
   (forall ((i tTaSP1)) (and (<= 1 (tTaSP1qtint i)) (<= (tTaSP1qtint i) 10))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -712,7 +717,7 @@
   (assert
   (forall ((i tT8bP1)) (and (<= 1 (tT8bP1qtint i)) (<= (tT8bP1qtint i) 10))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -812,12 +817,6 @@
                             (rec__rec_types__test2__tree_node__next1
                             (us_split_fields3 b)) 1 10) true)))
                     true false))
-
-(define-fun in_range6 ((rec__rec_types__test2__tree_node__d1 Int)
-  (a us_rep1)) Bool (= rec__rec_types__test2__tree_node__d1 (to_rep1
-                                                            (rec__rec_types__test2__tree_node__d
-                                                            (us_split_discrs1
-                                                            a)))))
 
 (declare-const value__size3 Int)
 
@@ -989,12 +988,6 @@
                             (rec__rec_types__test2__tree_node__next2
                             (us_split_fields5 b))) true)))
                     true false))
-
-(define-fun in_range8 ((rec__rec_types__test2__tree_node__d1 Int)
-  (a us_rep1)) Bool (= rec__rec_types__test2__tree_node__d1 (to_rep1
-                                                            (rec__rec_types__test2__tree_node__d
-                                                            (us_split_discrs1
-                                                            a)))))
 
 (declare-const value__size4 Int)
 

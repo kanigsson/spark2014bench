@@ -387,21 +387,6 @@
 ;; p_init__t__e__position_axiom
   (assert (<= 0 p_init__t__e__position))
 
-(declare-const p_init__t__x1__first__bit Int)
-
-(declare-const p_init__t__x1__last__bit Int)
-
-(declare-const p_init__t__x1__position Int)
-
-;; p_init__t__x1__first__bit_axiom
-  (assert (<= 0 p_init__t__x1__first__bit))
-
-;; p_init__t__x1__last__bit_axiom
-  (assert (< p_init__t__x1__first__bit p_init__t__x1__last__bit))
-
-;; p_init__t__x1__position_axiom
-  (assert (<= 0 p_init__t__x1__position))
-
 (declare-const p_init__t__x2__first__bit Int)
 
 (declare-const p_init__t__x2__last__bit Int)
@@ -417,18 +402,37 @@
 ;; p_init__t__x2__position_axiom
   (assert (<= 0 p_init__t__x2__position))
 
+(declare-const p_init__t__x1__first__bit Int)
+
+(declare-const p_init__t__x1__last__bit Int)
+
+(declare-const p_init__t__x1__position Int)
+
+;; p_init__t__x1__first__bit_axiom
+  (assert (<= 0 p_init__t__x1__first__bit))
+
+;; p_init__t__x1__last__bit_axiom
+  (assert (< p_init__t__x1__first__bit p_init__t__x1__last__bit))
+
+;; p_init__t__x1__position_axiom
+  (assert (<= 0 p_init__t__x1__position))
+
 (declare-fun user_eq5 (us_rep us_rep) Bool)
 
 (declare-const dummy5 us_rep)
 
-(declare-datatypes ((t__ref 0))
-(((t__refqtmk (t__content us_rep)))))
-(define-fun t__ref_t__content__projection ((a t__ref)) us_rep (t__content a))
+(declare-datatypes ((tc1S__ref 0))
+(((tc1S__refqtmk (tc1S__content us_rep)))))
+(define-fun tc1S__ref_tc1S__content__projection ((a tc1S__ref)) us_rep 
+  (tc1S__content a))
+
+(declare-const c1 us_rep)
+
+(declare-const attr__ATTRIBUTE_ADDRESS Int)
 
 (define-fun in_range4 ((rec__p_init__t__e1 Int)
-  (a us_rep)) Bool (= rec__p_init__t__e1 (to_rep2
-                                         (rec__p_init__t__e
-                                         (us_split_discrs1 a)))))
+  (a us_split_discrs)) Bool (= rec__p_init__t__e1 (to_rep2
+                                                  (rec__p_init__t__e a))))
 
 (declare-const value__size2 Int)
 
@@ -460,21 +464,6 @@
 ;; p_init__t__e__position_axiom
   (assert (<= 0 p_init__t__e__position1))
 
-(declare-const p_init__t__x2__first__bit1 Int)
-
-(declare-const p_init__t__x2__last__bit1 Int)
-
-(declare-const p_init__t__x2__position1 Int)
-
-;; p_init__t__x2__first__bit_axiom
-  (assert (<= 0 p_init__t__x2__first__bit1))
-
-;; p_init__t__x2__last__bit_axiom
-  (assert (< p_init__t__x2__first__bit1 p_init__t__x2__last__bit1))
-
-;; p_init__t__x2__position_axiom
-  (assert (<= 0 p_init__t__x2__position1))
-
 (declare-const p_init__t__x1__first__bit1 Int)
 
 (declare-const p_init__t__x1__last__bit1 Int)
@@ -490,18 +479,28 @@
 ;; p_init__t__x1__position_axiom
   (assert (<= 0 p_init__t__x1__position1))
 
+(declare-const p_init__t__x2__first__bit1 Int)
+
+(declare-const p_init__t__x2__last__bit1 Int)
+
+(declare-const p_init__t__x2__position1 Int)
+
+;; p_init__t__x2__first__bit_axiom
+  (assert (<= 0 p_init__t__x2__first__bit1))
+
+;; p_init__t__x2__last__bit_axiom
+  (assert (< p_init__t__x2__first__bit1 p_init__t__x2__last__bit1))
+
+;; p_init__t__x2__position_axiom
+  (assert (<= 0 p_init__t__x2__position1))
+
 (declare-fun user_eq6 (us_rep us_rep) Bool)
 
 (declare-const dummy6 us_rep)
 
-(declare-datatypes ((tc1S__ref 0))
-(((tc1S__refqtmk (tc1S__content us_rep)))))
-(define-fun tc1S__ref_tc1S__content__projection ((a tc1S__ref)) us_rep 
-  (tc1S__content a))
-
-(declare-const c1 us_rep)
-
-(declare-const attr__ATTRIBUTE_ADDRESS Int)
+(declare-datatypes ((t__ref 0))
+(((t__refqtmk (t__content us_rep)))))
+(define-fun t__ref_t__content__projection ((a t__ref)) us_rep (t__content a))
 
 (declare-const y1__attr__constrained Bool)
 
@@ -516,11 +515,6 @@
 (declare-const y2__attr__constrained Bool)
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
-
-(define-fun in_range5 ((rec__p_init__t__e1 Int)
-  (a us_rep)) Bool (= rec__p_init__t__e1 (to_rep2
-                                         (rec__p_init__t__e
-                                         (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 
@@ -602,18 +596,14 @@
   (temp___do_toplevel_201 Bool)
   (temp___do_typ_inv_202 Bool)) Bool (=>
                                      (not (= temp___skip_constant_200 true))
-                                     (in_range5 0 temp___expr_203)))
+                                     (in_range4 0
+                                     (us_split_discrs1 temp___expr_203))))
 
 (define-fun default_initial_assumption1 ((temp___expr_205 us_rep)
   (temp___skip_top_level_206 Bool)) Bool (= (to_rep2
                                             (rec__p_init__t__e
                                             (us_split_discrs1
                                             temp___expr_205))) 0))
-
-(define-fun in_range6 ((rec__p_init__t__e1 Int)
-  (a us_rep)) Bool (= rec__p_init__t__e1 (to_rep2
-                                         (rec__p_init__t__e
-                                         (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 
@@ -695,7 +685,8 @@
   (temp___do_toplevel_212 Bool)
   (temp___do_typ_inv_213 Bool)) Bool (=>
                                      (not (= temp___skip_constant_211 true))
-                                     (in_range6 1 temp___expr_214)))
+                                     (in_range4 1
+                                     (us_split_discrs1 temp___expr_214))))
 
 (define-fun default_initial_assumption2 ((temp___expr_216 us_rep)
   (temp___skip_top_level_217 Bool)) Bool (= (to_rep2
@@ -715,18 +706,14 @@
   (temp___do_toplevel_179 Bool)
   (temp___do_typ_inv_180 Bool)) Bool (=>
                                      (not (= temp___skip_constant_178 true))
-                                     (in_range4 0 temp___expr_181)))
+                                     (in_range4 0
+                                     (us_split_discrs1 temp___expr_181))))
 
 (define-fun default_initial_assumption3 ((temp___expr_183 us_rep)
   (temp___skip_top_level_184 Bool)) Bool (= (to_rep2
                                             (rec__p_init__t__e
                                             (us_split_discrs1
                                             temp___expr_183))) 0))
-
-(define-fun in_range7 ((rec__p_init__t__e1 Int)
-  (a us_rep)) Bool (= rec__p_init__t__e1 (to_rep2
-                                         (rec__p_init__t__e
-                                         (us_split_discrs1 a)))))
 
 (declare-const value__size5 Int)
 
@@ -797,45 +784,45 @@
 (define-fun t1b__ref_t1b__content__projection ((a t1b__ref)) us_rep (t1b__content
                                                                     a))
 
-(declare-fun temp___String_Literal_236 (tuple0) (Array Int character))
+(declare-fun temp___String_Literal_240 (tuple0) (Array Int character))
 
-;; temp___String_Literal_236__def_axiom
+;; temp___String_Literal_240__def_axiom
   (assert
   (forall ((us_void_param tuple0))
   (! (and
-     (= (to_rep (select (temp___String_Literal_236 us_void_param) 1)) 89)
-     (= (to_rep (select (temp___String_Literal_236 us_void_param) 2)) 50)) :pattern (
-  (temp___String_Literal_236 us_void_param)) )))
+     (= (to_rep (select (temp___String_Literal_240 us_void_param) 1)) 89)
+     (= (to_rep (select (temp___String_Literal_240 us_void_param) 2)) 50)) :pattern (
+  (temp___String_Literal_240 us_void_param)) )))
 
-(declare-fun temp___String_Literal_238 (tuple0) (Array Int character))
+(declare-fun temp___String_Literal_243 (tuple0) (Array Int character))
 
-;; temp___String_Literal_238__def_axiom
+;; temp___String_Literal_243__def_axiom
   (assert
   (forall ((us_void_param tuple0))
   (! (and
-     (= (to_rep (select (temp___String_Literal_238 us_void_param) 1)) 90)
-     (= (to_rep (select (temp___String_Literal_238 us_void_param) 2)) 50)) :pattern (
-  (temp___String_Literal_238 us_void_param)) )))
+     (= (to_rep (select (temp___String_Literal_243 us_void_param) 1)) 90)
+     (= (to_rep (select (temp___String_Literal_243 us_void_param) 2)) 50)) :pattern (
+  (temp___String_Literal_243 us_void_param)) )))
 
-(declare-fun temp___String_Literal_242 (tuple0) (Array Int character))
+(declare-fun temp___String_Literal_247 (tuple0) (Array Int character))
 
-;; temp___String_Literal_242__def_axiom
+;; temp___String_Literal_247__def_axiom
   (assert
   (forall ((us_void_param tuple0))
   (! (and
-     (= (to_rep (select (temp___String_Literal_242 us_void_param) 1)) 89)
-     (= (to_rep (select (temp___String_Literal_242 us_void_param) 2)) 49)) :pattern (
-  (temp___String_Literal_242 us_void_param)) )))
+     (= (to_rep (select (temp___String_Literal_247 us_void_param) 1)) 89)
+     (= (to_rep (select (temp___String_Literal_247 us_void_param) 2)) 49)) :pattern (
+  (temp___String_Literal_247 us_void_param)) )))
 
-(declare-fun temp___String_Literal_246 (tuple0) (Array Int character))
+(declare-fun temp___String_Literal_252 (tuple0) (Array Int character))
 
-;; temp___String_Literal_246__def_axiom
+;; temp___String_Literal_252__def_axiom
   (assert
   (forall ((us_void_param tuple0))
   (! (and
-     (= (to_rep (select (temp___String_Literal_246 us_void_param) 1)) 90)
-     (= (to_rep (select (temp___String_Literal_246 us_void_param) 2)) 49)) :pattern (
-  (temp___String_Literal_246 us_void_param)) )))
+     (= (to_rep (select (temp___String_Literal_252 us_void_param) 1)) 90)
+     (= (to_rep (select (temp___String_Literal_252 us_void_param) 2)) 49)) :pattern (
+  (temp___String_Literal_252 us_void_param)) )))
 
 (define-fun dynamic_invariant3 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)
@@ -903,31 +890,31 @@
   (=> (dynamic_invariant1 (us_repqtmk z2__split_discrs z2__split_fields)
   false false true true)
   (=> (= z2__attr__constrained true)
-  (let ((temp___233 (init Tuple0)))
-  (=> (init__function_guard temp___233 Tuple0)
+  (let ((temp___237 (init Tuple0)))
+  (=> (init__function_guard temp___237 Tuple0)
   (=>
   (=> (= y2__attr__constrained true)
-  (= (rec__p_init__t__e (us_split_discrs1 temp___233)) y2__split_discrs))
+  (= (rec__p_init__t__e (us_split_discrs1 temp___237)) y2__split_discrs))
   (forall ((y2__split_fields us_split_fields))
-  (=> (= y2__split_fields (us_split_fields1 temp___233))
+  (=> (= y2__split_fields (us_split_fields1 temp___237))
   (forall ((y2__split_discrs1 enum))
   (=>
-  (= (us_split_discrsqtmk y2__split_discrs1) (us_split_discrs1 temp___233))
-  (let ((o1 (init Tuple0)))
-  (=> (init__function_guard o1 Tuple0)
+  (= (us_split_discrsqtmk y2__split_discrs1) (us_split_discrs1 temp___237))
+  (let ((temp___241 (init Tuple0)))
+  (=> (init__function_guard temp___241 Tuple0)
   (forall ((z2__split_fields1 us_split_fields))
-  (=> (= z2__split_fields1 (us_split_fields1 o1))
-  (=> (= z2__split_discrs (us_split_discrs1 o1))
-  (let ((temp___239 (init Tuple0)))
-  (=> (init__function_guard temp___239 Tuple0)
+  (=> (= z2__split_fields1 (us_split_fields1 temp___241))
+  (=> (= z2__split_discrs (us_split_discrs1 temp___241))
+  (let ((temp___244 (init Tuple0)))
+  (=> (init__function_guard temp___244 Tuple0)
   (=>
   (=> (= y1__attr__constrained true)
-  (= (rec__p_init__t__e (us_split_discrs1 temp___239)) y1__split_discrs))
+  (= (rec__p_init__t__e (us_split_discrs1 temp___244)) y1__split_discrs))
   (forall ((y1__split_fields us_split_fields))
-  (=> (= y1__split_fields (us_split_fields1 temp___239))
+  (=> (= y1__split_fields (us_split_fields1 temp___244))
   (forall ((y1__split_discrs1 enum))
   (=>
-  (= (us_split_discrsqtmk y1__split_discrs1) (us_split_discrs1 temp___239))
+  (= (us_split_discrsqtmk y1__split_discrs1) (us_split_discrs1 temp___244))
   (=> (= y1__attr__constrained true)
   (= (rec__p_init__t__e (us_split_discrs1 c1)) y1__split_discrs1)))))))))))))))))))))))))))))))))
 (check-sat)

@@ -707,8 +707,9 @@
                                                                    array2)) (- j 
      (first1 array2))) 1)) 2)) (to_rep (select (to_array array2) j)))))))
   (=>
-  (= (and (ite (and (dynamic_invariant result_index2 true true true true)
-               (dynamic_property3 (first1 array2) (last1 array2) index21))
+  (= (and (ite (and (dynamic_property3 (first1 array2) (last1 array2)
+               index21) (dynamic_invariant result_index2 true true true
+               true))
           true false) (ite (and (<= (first1 array2) index21)
                            (<= index21 (last1 array2)))
                       true false)) true)

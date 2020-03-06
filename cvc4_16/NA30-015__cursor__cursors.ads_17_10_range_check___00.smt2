@@ -250,13 +250,13 @@
 
 (declare-const dummy2 us_rep1)
 
-(declare-datatypes ((r__ref 0))
-(((r__refqtmk (r__content us_rep1)))))
-(define-fun r__ref_r__content__projection ((a r__ref)) us_rep1 (r__content a))
+(declare-datatypes ((txS__ref 0))
+(((txS__refqtmk (txS__content us_rep1)))))
+(define-fun txS__ref_txS__content__projection ((a txS__ref)) us_rep1 
+  (txS__content a))
 
 (define-fun in_range2 ((rec__cursors__r__b1 Bool)
-  (a us_rep1)) Bool (= rec__cursors__r__b1 (rec__cursors__r__b
-                                           (us_split_discrs1 a))))
+  (a us_split_discrs)) Bool (= rec__cursors__r__b1 (rec__cursors__r__b a)))
 
 (declare-const value__size2 Int)
 
@@ -307,36 +307,35 @@
 
 (declare-const dummy3 us_rep1)
 
-(declare-datatypes ((txS__ref 0))
-(((txS__refqtmk (txS__content us_rep1)))))
-(define-fun txS__ref_txS__content__projection ((a txS__ref)) us_rep1 
-  (txS__content a))
+(declare-datatypes ((r__ref 0))
+(((r__refqtmk (r__content us_rep1)))))
+(define-fun r__ref_r__content__projection ((a r__ref)) us_rep1 (r__content a))
 
 (declare-const x__split_discrs us_split_discrs)
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
 
-(define-fun dynamic_invariant ((temp___expr_582 us_rep1)
-  (temp___is_init_578 Bool) (temp___skip_constant_579 Bool)
-  (temp___do_toplevel_580 Bool)
-  (temp___do_typ_inv_581 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_579 true))
+(define-fun dynamic_invariant ((temp___expr_589 us_rep1)
+  (temp___is_init_585 Bool) (temp___skip_constant_586 Bool)
+  (temp___do_toplevel_587 Bool)
+  (temp___do_typ_inv_588 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_586 true))
                                      (in_range2 (distinct 0 0)
-                                     temp___expr_582)))
+                                     (us_split_discrs1 temp___expr_589))))
 
-(define-fun default_initial_assumption ((temp___expr_584 us_rep1)
-  (temp___skip_top_level_585 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_591 us_rep1)
+  (temp___skip_top_level_592 Bool)) Bool (and
                                          (= (rec__cursors__r__b
                                             (us_split_discrs1
-                                            temp___expr_584)) (distinct 0 0))
+                                            temp___expr_591)) (distinct 0 0))
                                          (=> (cursors__r__c__pred
-                                         temp___expr_584)
+                                         temp___expr_591)
                                          (= (to_rep
                                             (rec__cursors__l__cursor__node
                                             (us_split_fields1
                                             (rec__cursors__r__c
                                             (us_split_fields3
-                                            temp___expr_584))))) 0))))
+                                            temp___expr_591))))) 0))))
 
 (define-fun dynamic_invariant1 ((temp___expr_236 Int)
   (temp___is_init_232 Bool) (temp___skip_constant_233 Bool)

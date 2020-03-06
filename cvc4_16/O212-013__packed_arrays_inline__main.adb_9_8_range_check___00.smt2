@@ -337,6 +337,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range4 ((rec__main__discr_type__discr1 Int)
+  (a us_split_discrs)) Bool (= rec__main__discr_type__discr1 (to_rep
+                                                             (rec__main__discr_type__discr
+                                                             a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -424,7 +429,7 @@
   (assert
   (forall ((i tT9bP1)) (and (<= 0 (tT9bP1qtint i)) (<= (tT9bP1qtint i) 15))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 15)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 15)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -511,11 +516,6 @@
                             (us_split_fields3 b)) 0 15) true))
                     true false))
 
-(define-fun in_range5 ((rec__main__discr_type__discr1 Int)
-  (a us_rep)) Bool (= rec__main__discr_type__discr1 (to_rep
-                                                    (rec__main__discr_type__discr
-                                                    (us_split_discrs1 a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -581,8 +581,9 @@
   (temp___do_toplevel_202 Bool)
   (temp___do_typ_inv_203 Bool)) Bool (=>
                                      (not (= temp___skip_constant_201 true))
-                                     (in_range5 15
-                                     (to_base temp___expr_204))))
+                                     (in_range4 15
+                                     (us_split_discrs1
+                                     (to_base temp___expr_204)))))
 
 (define-fun default_initial_assumption ((temp___expr_207 us_rep1)
   (temp___skip_top_level_208 Bool)) Bool (= (to_rep

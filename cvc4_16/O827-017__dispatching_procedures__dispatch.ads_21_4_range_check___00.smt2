@@ -176,6 +176,10 @@
                         (rec__dispatch__mut_rec__i (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range3 ((rec__dispatch__mut_rec__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__dispatch__mut_rec__d1 (rec__dispatch__mut_rec__d
+                                                          a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -269,7 +273,7 @@
   (forall ((i natural))
   (and (<= 0 (naturalqtint i)) (<= (naturalqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -297,12 +301,12 @@
 
 ;; range_axiom
   (assert
-  (forall ((x natural)) (! (in_range3 (to_rep1 x)) :pattern ((to_rep1 x)) )))
+  (forall ((x natural)) (! (in_range4 (to_rep1 x)) :pattern ((to_rep1 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range3 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
+  (! (=> (in_range4 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
                                                               (of_rep1 x))) )))
 
 (declare-datatypes ((map__ref 0))

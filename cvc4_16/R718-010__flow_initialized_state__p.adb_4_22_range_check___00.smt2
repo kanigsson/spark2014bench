@@ -162,14 +162,13 @@
 
 (declare-const dummy1 us_rep)
 
-(declare-datatypes ((t1__ref 0))
-(((t1__refqtmk (t1__content us_rep)))))
-(define-fun t1__ref_t1__content__projection ((a t1__ref)) us_rep (t1__content
-                                                                 a))
+(declare-datatypes ((tset1S__ref 0))
+(((tset1S__refqtmk (tset1S__content us_rep)))))
+(define-fun tset1S__ref_tset1S__content__projection ((a tset1S__ref)) us_rep 
+  (tset1S__content a))
 
 (define-fun in_range1 ((rec__q__t1__d1 Int)
-  (a us_rep)) Bool (= rec__q__t1__d1 (to_rep
-                                     (rec__q__t1__d (us_split_discrs1 a)))))
+  (a us_split_discrs)) Bool (= rec__q__t1__d1 (to_rep (rec__q__t1__d a))))
 
 (declare-const value__size1 Int)
 
@@ -205,10 +204,10 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((tset1S__ref 0))
-(((tset1S__refqtmk (tset1S__content us_rep)))))
-(define-fun tset1S__ref_tset1S__content__projection ((a tset1S__ref)) us_rep 
-  (tset1S__content a))
+(declare-datatypes ((t1__ref 0))
+(((t1__refqtmk (t1__content us_rep)))))
+(define-fun t1__ref_t1__content__projection ((a t1__ref)) us_rep (t1__content
+                                                                 a))
 
 (declare-const set1__split_discrs us_split_discrs)
 
@@ -219,7 +218,8 @@
   (temp___do_toplevel_162 Bool)
   (temp___do_typ_inv_163 Bool)) Bool (=>
                                      (not (= temp___skip_constant_161 true))
-                                     (in_range1 0 temp___expr_164)))
+                                     (in_range1 0
+                                     (us_split_discrs1 temp___expr_164))))
 
 (define-fun default_initial_assumption ((temp___expr_166 us_rep)
   (temp___skip_top_level_167 Bool)) Bool (= (to_rep

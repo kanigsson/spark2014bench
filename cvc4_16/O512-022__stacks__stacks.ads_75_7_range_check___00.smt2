@@ -411,6 +411,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range4 ((rec__stacks__stack__max1 Int)
+  (a us_split_discrs)) Bool (= rec__stacks__stack__max1 (to_rep
+                                                        (rec__stacks__stack__max
+                                                        a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -538,7 +543,7 @@
   (forall ((i count))
   (and (<= 0 (countqtint i)) (<= (countqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -560,7 +565,7 @@
   (temp___do_toplevel_263 Bool)
   (temp___do_typ_inv_264 Bool)) Bool (=>
                                      (or (= temp___is_init_261 true)
-                                     (<= 0 2147483647)) (in_range4
+                                     (<= 0 2147483647)) (in_range5
                                      temp___expr_265)))
 
 ;; line_length__post_axiom

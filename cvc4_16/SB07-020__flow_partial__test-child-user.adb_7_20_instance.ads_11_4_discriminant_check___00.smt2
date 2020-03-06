@@ -197,6 +197,10 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range3 ((rec__instance__t__elem_type__kind1 Bool)
+  (a us_split_discrs)) Bool (= rec__instance__t__elem_type__kind1 (rec__instance__t__elem_type__kind
+                                                                  a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

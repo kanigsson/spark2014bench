@@ -631,6 +631,10 @@
                             (us_split_fields5 b))) true)))
                     true false))
 
+(define-fun in_range2 ((rec__untangle__optional_thing__exists1 Bool)
+  (a us_split_discrs)) Bool (= rec__untangle__optional_thing__exists1 
+  (rec__untangle__optional_thing__exists a)))
+
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -709,7 +713,7 @@
   (forall ((i tword_arrayD1))
   (and (<= 1 (tword_arrayD1qtint i)) (<= (tword_arrayD1qtint i) 10))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 

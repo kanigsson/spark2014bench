@@ -538,6 +538,11 @@
                          (rec__tokens__token__instr (us_split_fields3 b)))))))
                     true false))
 
+(define-fun in_range7 ((rec__tokens__token__kind1 Int)
+  (a us_split_discrs)) Bool (= rec__tokens__token__kind1 (to_rep2
+                                                         (rec__tokens__token__kind
+                                                         a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -734,7 +739,7 @@
   (forall ((i tTword_bufferSP1))
   (and (<= 1 (tTword_bufferSP1qtint i)) (<= (tTword_bufferSP1qtint i) 1024))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 1024)))
+(define-fun in_range8 ((x Int)) Bool (and (<= 1 x) (<= x 1024)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
 
@@ -755,11 +760,6 @@
 (((t3b__refqtmk (t3b__content us_t)))))
 (define-fun t3b__ref_t3b__content__projection ((a t3b__ref)) us_t (t3b__content
                                                                   a))
-
-(define-fun in_range8 ((rec__tokens__token__kind1 Int)
-  (a us_rep1)) Bool (= rec__tokens__token__kind1 (to_rep2
-                                                 (rec__tokens__token__kind
-                                                 (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 
@@ -847,11 +847,6 @@
 (define-fun t6b__ref_t6b__content__projection ((a t6b__ref)) us_rep1 
   (t6b__content a))
 
-(define-fun in_range9 ((rec__tokens__token__kind1 Int)
-  (a us_rep1)) Bool (= rec__tokens__token__kind1 (to_rep2
-                                                 (rec__tokens__token__kind
-                                                 (us_split_discrs1 a)))))
-
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -937,11 +932,6 @@
 (((t10b__refqtmk (t10b__content us_rep1)))))
 (define-fun t10b__ref_t10b__content__projection ((a t10b__ref)) us_rep1 
   (t10b__content a))
-
-(define-fun in_range10 ((rec__tokens__token__kind1 Int)
-  (a us_rep1)) Bool (= rec__tokens__token__kind1 (to_rep2
-                                                 (rec__tokens__token__kind
-                                                 (us_split_discrs1 a)))))
 
 (declare-const value__size5 Int)
 
@@ -1029,11 +1019,6 @@
 (define-fun t14b__ref_t14b__content__projection ((a t14b__ref)) us_rep1 
   (t14b__content a))
 
-(define-fun in_range11 ((rec__tokens__token__kind1 Int)
-  (a us_rep1)) Bool (= rec__tokens__token__kind1 (to_rep2
-                                                 (rec__tokens__token__kind
-                                                 (us_split_discrs1 a)))))
-
 (declare-const value__size6 Int)
 
 (declare-const object__size6 Int)
@@ -1119,11 +1104,6 @@
 (((t18b__refqtmk (t18b__content us_rep1)))))
 (define-fun t18b__ref_t18b__content__projection ((a t18b__ref)) us_rep1 
   (t18b__content a))
-
-(define-fun in_range12 ((rec__tokens__token__kind1 Int)
-  (a us_rep1)) Bool (= rec__tokens__token__kind1 (to_rep2
-                                                 (rec__tokens__token__kind
-                                                 (us_split_discrs1 a)))))
 
 (declare-const value__size7 Int)
 

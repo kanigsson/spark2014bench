@@ -172,6 +172,10 @@
                         (to_rep (rec__foo__disc_t__f (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range3 ((rec__foo__disc_t__valid1 Bool)
+  (a us_split_discrs)) Bool (= rec__foo__disc_t__valid1 (rec__foo__disc_t__valid
+                                                        a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -288,10 +292,6 @@
 (declare-const attr__ATTRIBUTE_ADDRESS5 Int)
 
 (declare-const attr__ATTRIBUTE_ADDRESS6 Int)
-
-(define-fun in_range3 ((rec__foo__disc_t__valid1 Bool)
-  (a us_rep)) Bool (= rec__foo__disc_t__valid1 (rec__foo__disc_t__valid
-                                               (us_split_discrs1 a))))
 
 (declare-const value__size1 Int)
 

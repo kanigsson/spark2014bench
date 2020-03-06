@@ -136,6 +136,10 @@
                         (rec__test_constrained__r__x (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range2 ((rec__test_constrained__r__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__test_constrained__r__b1 (rec__test_constrained__r__b
+                                                            a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -258,10 +262,6 @@
   (temp___skip_top_level_212 Bool)) Bool (= (rec__test_constrained__r_acc__is_null_pointer
                                             temp___expr_211) true))
 
-(define-fun in_range2 ((rec__test_constrained__r__b1 Bool)
-  (a us_rep)) Bool (= rec__test_constrained__r__b1 (rec__test_constrained__r__b
-                                                   (us_split_discrs1 a))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -317,10 +317,6 @@
 (((s9b__refqtmk (s9b__content us_rep)))))
 (define-fun s9b__ref_s9b__content__projection ((a s9b__ref)) us_rep (s9b__content
                                                                     a))
-
-(define-fun in_range3 ((rec__test_constrained__r__b1 Bool)
-  (a us_rep)) Bool (= rec__test_constrained__r__b1 (rec__test_constrained__r__b
-                                                   (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 
@@ -390,7 +386,8 @@
   (temp___do_toplevel_224 Bool)
   (temp___do_typ_inv_225 Bool)) Bool (=>
                                      (not (= temp___skip_constant_223 true))
-                                     (in_range2 r10b temp___expr_226)))
+                                     (in_range2 r10b
+                                     (us_split_discrs1 temp___expr_226))))
 
 (define-fun default_initial_assumption2 ((temp___expr_228 us_rep)
   (temp___skip_top_level_229 Bool)) Bool (and
@@ -433,6 +430,7 @@
   (=>
   (= (rec__test_constrained__r__b (us_split_discrs1 y__pointer_value)) 
   r10b) (in_range2 r10b
+  (us_split_discrs1
   (us_repqtmk (us_split_discrsqtmk (distinct 0 0))
-  (us_split_fieldsqtmk rliteral))))))))))))))
+  (us_split_fieldsqtmk rliteral)))))))))))))))
 (check-sat)

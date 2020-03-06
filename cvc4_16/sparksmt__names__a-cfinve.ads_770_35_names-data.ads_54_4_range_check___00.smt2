@@ -164,6 +164,30 @@
 (define-fun us_rep___split_fields__projection ((a us_rep1)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun to_rep ((x capacity_range)) Int (capacity_rangeqtint x))
+
+(declare-fun of_rep (Int) capacity_range)
+
+;; inversion_axiom
+  (assert
+  (forall ((x capacity_range))
+  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x capacity_range)) (! (in_range1
+  (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range1 x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                            (of_rep x))) )))
+
+(define-fun in_range2 ((rec__ada___names__data__char_tables__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___names__data__char_tables__vector__capacity1 
+  (to_rep (rec__ada___names__data__char_tables__vector__capacity a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -272,7 +296,7 @@
   (and (<= (- 1) (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= (- 1) x) (<= x 2147483647)))
+(define-fun in_range3 ((x Int)) Bool (and (<= (- 1) x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -294,7 +318,7 @@
   (temp___do_toplevel_339 Bool)
   (temp___do_typ_inv_340 Bool)) Bool (=>
                                      (or (= temp___is_init_337 true)
-                                     (<= (- 1) 2147483647)) (in_range2
+                                     (<= (- 1) 2147483647)) (in_range3
                                      temp___expr_341)))
 
 (declare-const container us_rep1)
@@ -318,7 +342,7 @@
   (forall ((i index_type))
   (and (<= 0 (index_typeqtint i)) (<= (index_typeqtint i) 2147483646))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483646)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483646)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -340,12 +364,12 @@
   (temp___do_toplevel_325 Bool)
   (temp___do_typ_inv_326 Bool)) Bool (=>
                                      (or (= temp___is_init_323 true)
-                                     (<= 0 2147483646)) (in_range3
+                                     (<= 0 2147483646)) (in_range4
                                      temp___expr_327)))
 
 (declare-sort element_type 0)
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 255)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 255)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -367,7 +391,7 @@
   (temp___do_toplevel_332 Bool)
   (temp___do_typ_inv_333 Bool)) Bool (=>
                                      (or (= temp___is_init_330 true)
-                                     (<= 0 255)) (in_range4 temp___expr_334)))
+                                     (<= 0 255)) (in_range5 temp___expr_334)))
 
 (declare-sort extended_index1 0)
 
@@ -379,7 +403,7 @@
   (and (<= (- 1) (extended_indexqtint1 i))
   (<= (extended_indexqtint1 i) 2147483646))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= (- 1) x) (<= x 2147483646)))
+(define-fun in_range6 ((x Int)) Bool (and (<= (- 1) x) (<= x 2147483646)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -405,7 +429,7 @@
   (forall ((i count_type))
   (and (<= 0 (count_typeqtint i)) (<= (count_typeqtint i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -427,7 +451,7 @@
   (temp___do_toplevel_346 Bool)
   (temp___do_typ_inv_347 Bool)) Bool (=>
                                      (or (= temp___is_init_344 true)
-                                     (<= 0 2147483647)) (in_range6
+                                     (<= 0 2147483647)) (in_range7
                                      temp___expr_348)))
 
 (define-fun dynamic_invariant4 ((temp___expr_355 Int)
@@ -437,26 +461,6 @@
                                      (or (= temp___is_init_351 true)
                                      (<= 0 2147483647)) (in_range1
                                      temp___expr_355)))
-
-(define-fun to_rep ((x capacity_range)) Int (capacity_rangeqtint x))
-
-(declare-fun of_rep (Int) capacity_range)
-
-;; inversion_axiom
-  (assert
-  (forall ((x capacity_range))
-  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
-
-;; range_axiom
-  (assert
-  (forall ((x capacity_range)) (! (in_range1
-  (to_rep x)) :pattern ((to_rep x)) )))
-
-;; coerce_axiom
-  (assert
-  (forall ((x Int))
-  (! (=> (in_range1 x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
-                                                            (of_rep x))) )))
 
 (define-fun capacity ((container1 us_rep1)) Int (ite (= (distinct 0 0) true)
                                                 (to_rep
@@ -484,7 +488,7 @@
   (temp___do_toplevel_380 Bool)
   (temp___do_typ_inv_381 Bool)) Bool (=>
                                      (or (= temp___is_init_378 true)
-                                     (<= (- 1) 2147483646)) (in_range5
+                                     (<= (- 1) 2147483646)) (in_range6
                                      temp___expr_382)))
 
 ;; length__post_axiom
@@ -496,7 +500,7 @@
 
 (declare-sort element_type1 0)
 
-(define-fun in_range7 ((x Int)) Bool (and (<= 0 x) (<= x 255)))
+(define-fun in_range8 ((x Int)) Bool (and (<= 0 x) (<= x 255)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
 
@@ -518,7 +522,7 @@
   (temp___do_toplevel_373 Bool)
   (temp___do_typ_inv_374 Bool)) Bool (=>
                                      (or (= temp___is_init_371 true)
-                                     (<= 0 255)) (in_range7 temp___expr_375)))
+                                     (<= 0 255)) (in_range8 temp___expr_375)))
 
 ;; get__post_axiom
   (assert
@@ -545,5 +549,5 @@
   (let ((o3 (last_index o2)))
   (=>
   (and (dynamic_invariant o3 true false true true) (= o3 (last (model1 o2))))
-  (in_range5 o3))))))))))))
+  (in_range6 o3))))))))))))
 (check-sat)

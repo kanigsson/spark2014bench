@@ -1064,12 +1064,12 @@
   (exists ((spark__branch7 Bool))
   (and (= spark__branch7 c2_lateral_nav_selected_active)
   (ite (= spark__branch7 true)
-  (let ((o (lateral_nav_clear c2_modes_on1 c2_nav_switch_pressed
-           c2_pilot_flying_transfer c2_selected_nav_source_changed
-           c2_selected_nav_frequency_changed)))
-  (and (lateral_nav_clear__function_guard o c2_modes_on1
-  c2_nav_switch_pressed c2_pilot_flying_transfer
-  c2_selected_nav_source_changed c2_selected_nav_frequency_changed)
+  (let ((o (lateral_nav_clear c2_selected_nav_frequency_changed c2_modes_on1
+           c2_nav_switch_pressed c2_pilot_flying_transfer
+           c2_selected_nav_source_changed)))
+  (and (lateral_nav_clear__function_guard o c2_selected_nav_frequency_changed
+  c2_modes_on1 c2_nav_switch_pressed c2_pilot_flying_transfer
+  c2_selected_nav_source_changed)
   (exists ((spark__branch8 Bool))
   (and (= spark__branch8 o)
   (ite (= spark__branch8 true)
@@ -1121,12 +1121,12 @@
   (exists ((spark__branch8 Bool))
   (and (= spark__branch8 c2_lateral_lappr_selected_active)
   (ite (= spark__branch8 true)
-  (let ((o (lateral_lappr_clear c2_modes_on1 c2_pilot_flying_transfer
-           c2_appr_switch_pressed c2_selected_nav_source_changed
-           c2_selected_nav_frequency_changed)))
-  (and (lateral_lappr_clear__function_guard o c2_modes_on1
-  c2_pilot_flying_transfer c2_appr_switch_pressed
-  c2_selected_nav_source_changed c2_selected_nav_frequency_changed)
+  (let ((o (lateral_lappr_clear c2_selected_nav_frequency_changed
+           c2_modes_on1 c2_pilot_flying_transfer c2_appr_switch_pressed
+           c2_selected_nav_source_changed)))
+  (and (lateral_lappr_clear__function_guard o
+  c2_selected_nav_frequency_changed c2_modes_on1 c2_pilot_flying_transfer
+  c2_appr_switch_pressed c2_selected_nav_source_changed)
   (exists ((spark__branch9 Bool))
   (and (= spark__branch9 o)
   (ite (= spark__branch9 true)
@@ -1234,10 +1234,10 @@
   (exists ((spark__branch11 Bool))
   (and (= spark__branch11 c2_lateral_roll_selected_active_active)
   (ite (= spark__branch11 true)
-  (let ((o (lateral_lateral_mode_active c2_hdg_active1 c2_lga_active1
-           c2_nav_active1 c2_lappr_active1)))
-  (and (lateral_lateral_mode_active__function_guard o c2_hdg_active1
-  c2_lga_active1 c2_nav_active1 c2_lappr_active1)
+  (let ((o (lateral_lateral_mode_active c2_lappr_active1 c2_hdg_active1
+           c2_lga_active1 c2_nav_active1)))
+  (and (lateral_lateral_mode_active__function_guard o c2_lappr_active1
+  c2_hdg_active1 c2_lga_active1 c2_nav_active1)
   (and (= spark__branch9 o)
   (ite (= spark__branch9 true)
   (and (= c2_roll_active1 (distinct 0 0))
@@ -1250,10 +1250,10 @@
   (exists ((spark__branch11 Bool))
   (and (= spark__branch11 c2_lateral_roll_cleared_active)
   (ite (= spark__branch11 true)
-  (let ((o (lateral_lateral_mode_active c2_hdg_active1 c2_lga_active1
-           c2_nav_active1 c2_lappr_active1)))
-  (and (lateral_lateral_mode_active__function_guard o c2_hdg_active1
-  c2_lga_active1 c2_nav_active1 c2_lappr_active1)
+  (let ((o (lateral_lateral_mode_active c2_lappr_active1 c2_hdg_active1
+           c2_lga_active1 c2_nav_active1)))
+  (and (lateral_lateral_mode_active__function_guard o c2_lappr_active1
+  c2_hdg_active1 c2_lga_active1 c2_nav_active1)
   (and (= spark__branch9 (ite (= o true) false true))
   (ite (= spark__branch9 true)
   (and (= c2_roll_selected1 (distinct 1 0))
@@ -1432,13 +1432,12 @@
   (exists ((spark__branch14 Bool))
   (and (= spark__branch14 c2_vertical_vappr_selected_active)
   (ite (= spark__branch14 true)
-  (let ((o (vertical_vappr_clear c2_modes_on1 c2_pilot_flying_transfer
-           c2_appr_switch_pressed c2_selected_nav_source_changed
-           c2_lappr_selected1 c2_selected_nav_frequency_changed)))
-  (and (vertical_vappr_clear__function_guard o c2_modes_on1
-  c2_pilot_flying_transfer c2_appr_switch_pressed
-  c2_selected_nav_source_changed c2_lappr_selected1
-  c2_selected_nav_frequency_changed)
+  (let ((o (vertical_vappr_clear c2_selected_nav_frequency_changed
+           c2_modes_on1 c2_pilot_flying_transfer c2_appr_switch_pressed
+           c2_selected_nav_source_changed c2_lappr_selected1)))
+  (and (vertical_vappr_clear__function_guard o
+  c2_selected_nav_frequency_changed c2_modes_on1 c2_pilot_flying_transfer
+  c2_appr_switch_pressed c2_selected_nav_source_changed c2_lappr_selected1)
   (exists ((spark__branch15 Bool))
   (and (= spark__branch15 o)
   (ite (= spark__branch15 true)
@@ -1475,10 +1474,10 @@
   (exists ((spark__branch17 Bool))
   (and (= spark__branch17 c2_vertical_vappr_selected_armed_active)
   (ite (= spark__branch17 true)
-  (let ((o1 (vertical_vappr_capture c2_overspeed
-            c2_vappr_capture_condition_met c2_lappr_active1)))
-  (and (vertical_vappr_capture__function_guard o1 c2_overspeed
-  c2_vappr_capture_condition_met c2_lappr_active1)
+  (let ((o1 (vertical_vappr_capture c2_lappr_active1 c2_overspeed
+            c2_vappr_capture_condition_met)))
+  (and (vertical_vappr_capture__function_guard o1 c2_lappr_active1
+  c2_overspeed c2_vappr_capture_condition_met)
   (and (= spark__branch13 o1)
   (ite (= spark__branch13 true) (= c2_vappr_active1 (distinct 1 0))
   (= c2_vappr_active1 c2_vappr_active)))))

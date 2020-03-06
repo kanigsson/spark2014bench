@@ -428,65 +428,6 @@
 
 (declare-const dummy4 us_rep)
 
-(declare-datatypes ((rec____ref 0))
-(((rec____refqtmk (rec____content us_rep)))))
-(define-fun rec____ref_rec____content__projection ((a rec____ref)) us_rep 
-  (rec____content a))
-
-(define-fun in_range3 ((rec__test__rec__x1 Int)
-  (a us_rep)) Bool (= rec__test__rec__x1 (to_rep
-                                         (rec__test__rec__x
-                                         (us_split_discrs1 a)))))
-
-(declare-const value__size3 Int)
-
-(declare-const object__size3 Int)
-
-(declare-const alignment3 Int)
-
-;; value__size_axiom
-  (assert (<= 0 value__size3))
-
-;; object__size_axiom
-  (assert (<= 0 object__size3))
-
-;; alignment_axiom
-  (assert (<= 0 alignment3))
-
-(declare-const test__rec__x__first__bit1 Int)
-
-(declare-const test__rec__x__last__bit1 Int)
-
-(declare-const test__rec__x__position1 Int)
-
-;; test__rec__x__first__bit_axiom
-  (assert (<= 0 test__rec__x__first__bit1))
-
-;; test__rec__x__last__bit_axiom
-  (assert (< test__rec__x__first__bit1 test__rec__x__last__bit1))
-
-;; test__rec__x__position_axiom
-  (assert (<= 0 test__rec__x__position1))
-
-(declare-const test__rec__y__first__bit1 Int)
-
-(declare-const test__rec__y__last__bit1 Int)
-
-(declare-const test__rec__y__position1 Int)
-
-;; test__rec__y__first__bit_axiom
-  (assert (<= 0 test__rec__y__first__bit1))
-
-;; test__rec__y__last__bit_axiom
-  (assert (< test__rec__y__first__bit1 test__rec__y__last__bit1))
-
-;; test__rec__y__position_axiom
-  (assert (<= 0 test__rec__y__position1))
-
-(declare-fun user_eq5 (us_rep us_rep) Bool)
-
-(declare-const dummy5 us_rep)
-
 (declare-datatypes ((rec1__ref 0))
 (((rec1__refqtmk (rec1__content us_rep)))))
 (define-fun rec1__ref_rec1__content__projection ((a rec1__ref)) us_rep 
@@ -542,59 +483,54 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
 
-(define-fun in_range4 ((rec__test__rec__x1 Int)
-  (a us_rep)) Bool (= rec__test__rec__x1 (to_rep
-                                         (rec__test__rec__x
-                                         (us_split_discrs1 a)))))
+(declare-const value__size3 Int)
 
-(declare-const value__size4 Int)
+(declare-const object__size3 Int)
 
-(declare-const object__size4 Int)
-
-(declare-const alignment4 Int)
+(declare-const alignment3 Int)
 
 ;; value__size_axiom
-  (assert (<= 0 value__size4))
+  (assert (<= 0 value__size3))
 
 ;; object__size_axiom
-  (assert (<= 0 object__size4))
+  (assert (<= 0 object__size3))
 
 ;; alignment_axiom
-  (assert (<= 0 alignment4))
+  (assert (<= 0 alignment3))
 
-(declare-const test__rec__x__first__bit2 Int)
+(declare-const test__rec__x__first__bit1 Int)
 
-(declare-const test__rec__x__last__bit2 Int)
+(declare-const test__rec__x__last__bit1 Int)
 
-(declare-const test__rec__x__position2 Int)
+(declare-const test__rec__x__position1 Int)
 
 ;; test__rec__x__first__bit_axiom
-  (assert (<= 0 test__rec__x__first__bit2))
+  (assert (<= 0 test__rec__x__first__bit1))
 
 ;; test__rec__x__last__bit_axiom
-  (assert (< test__rec__x__first__bit2 test__rec__x__last__bit2))
+  (assert (< test__rec__x__first__bit1 test__rec__x__last__bit1))
 
 ;; test__rec__x__position_axiom
-  (assert (<= 0 test__rec__x__position2))
+  (assert (<= 0 test__rec__x__position1))
 
-(declare-const test__rec__y__first__bit2 Int)
+(declare-const test__rec__y__first__bit1 Int)
 
-(declare-const test__rec__y__last__bit2 Int)
+(declare-const test__rec__y__last__bit1 Int)
 
-(declare-const test__rec__y__position2 Int)
+(declare-const test__rec__y__position1 Int)
 
 ;; test__rec__y__first__bit_axiom
-  (assert (<= 0 test__rec__y__first__bit2))
+  (assert (<= 0 test__rec__y__first__bit1))
 
 ;; test__rec__y__last__bit_axiom
-  (assert (< test__rec__y__first__bit2 test__rec__y__last__bit2))
+  (assert (< test__rec__y__first__bit1 test__rec__y__last__bit1))
 
 ;; test__rec__y__position_axiom
-  (assert (<= 0 test__rec__y__position2))
+  (assert (<= 0 test__rec__y__position1))
 
-(declare-fun user_eq6 (us_rep us_rep) Bool)
+(declare-fun user_eq5 (us_rep us_rep) Bool)
 
-(declare-const dummy6 us_rep)
+(declare-const dummy5 us_rep)
 
 (declare-datatypes ((rec2__ref 0))
 (((rec2__refqtmk (rec2__content us_rep)))))
@@ -711,7 +647,7 @@
   (and (<= (- 2147483648) (integer_subtypeqtint i))
   (<= (integer_subtypeqtint i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range3 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
@@ -720,9 +656,9 @@
 
 (declare-fun attr__ATTRIBUTE_VALUE3 (us_image) Int)
 
-(declare-fun user_eq7 (integer_subtype integer_subtype) Bool)
+(declare-fun user_eq6 (integer_subtype integer_subtype) Bool)
 
-(declare-const dummy7 integer_subtype)
+(declare-const dummy6 integer_subtype)
 
 (declare-datatypes ((integer_subtype__ref 0))
 (((integer_subtype__refqtmk (integer_subtype__content integer_subtype)))))
@@ -740,13 +676,13 @@
 
 ;; range_axiom
   (assert
-  (forall ((x integer_subtype)) (! (in_range5
+  (forall ((x integer_subtype)) (! (in_range3
   (to_rep2 x)) :pattern ((to_rep2 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range5 x) (= (to_rep2 (of_rep2 x)) x)) :pattern ((to_rep2
+  (! (=> (in_range3 x) (= (to_rep2 (of_rep2 x)) x)) :pattern ((to_rep2
                                                               (of_rep2 x))) )))
 
 (declare-datatypes ((map__ref6 0))
@@ -815,6 +751,64 @@
      (= (to_rep2 (select result k)) (to_rep (select input_array k))))))) :pattern (
   (cast input_array)) )))
 
+(define-fun in_range4 ((rec__test__rec__x1 Int)
+  (a us_split_discrs)) Bool (= rec__test__rec__x1 (to_rep
+                                                  (rec__test__rec__x a))))
+
+(declare-const value__size4 Int)
+
+(declare-const object__size4 Int)
+
+(declare-const alignment4 Int)
+
+;; value__size_axiom
+  (assert (<= 0 value__size4))
+
+;; object__size_axiom
+  (assert (<= 0 object__size4))
+
+;; alignment_axiom
+  (assert (<= 0 alignment4))
+
+(declare-const test__rec__x__first__bit2 Int)
+
+(declare-const test__rec__x__last__bit2 Int)
+
+(declare-const test__rec__x__position2 Int)
+
+;; test__rec__x__first__bit_axiom
+  (assert (<= 0 test__rec__x__first__bit2))
+
+;; test__rec__x__last__bit_axiom
+  (assert (< test__rec__x__first__bit2 test__rec__x__last__bit2))
+
+;; test__rec__x__position_axiom
+  (assert (<= 0 test__rec__x__position2))
+
+(declare-const test__rec__y__first__bit2 Int)
+
+(declare-const test__rec__y__last__bit2 Int)
+
+(declare-const test__rec__y__position2 Int)
+
+;; test__rec__y__first__bit_axiom
+  (assert (<= 0 test__rec__y__first__bit2))
+
+;; test__rec__y__last__bit_axiom
+  (assert (< test__rec__y__first__bit2 test__rec__y__last__bit2))
+
+;; test__rec__y__position_axiom
+  (assert (<= 0 test__rec__y__position2))
+
+(declare-fun user_eq7 (us_rep us_rep) Bool)
+
+(declare-const dummy7 us_rep)
+
+(declare-datatypes ((rec____ref 0))
+(((rec____refqtmk (rec____content us_rep)))))
+(define-fun rec____ref_rec____content__projection ((a rec____ref)) us_rep 
+  (rec____content a))
+
 (declare-sort tarr3D1 0)
 
 (declare-fun tarr3D1qtint (tarr3D1) Int)
@@ -824,7 +818,7 @@
   (forall ((i tarr3D1))
   (and (<= 1 (tarr3D1qtint i)) (<= (tarr3D1qtint i) 3))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -847,8 +841,9 @@
   (temp___do_typ_inv_264 Bool)) Bool (forall ((temp___266 Int))
                                      (=>
                                      (and (<= 1 temp___266)
-                                     (<= temp___266 3)) (in_range3 10
-                                     (select temp___expr_265 temp___266)))))
+                                     (<= temp___266 3)) (in_range4 10
+                                     (us_split_discrs1
+                                     (select temp___expr_265 temp___266))))))
 
 (define-fun default_initial_assumption ((temp___expr_268 (Array Int us_rep))
   (temp___skip_top_level_269 Bool)) Bool (forall ((temp___270 Int))
@@ -869,7 +864,7 @@
   (forall ((i tarr4D1))
   (and (<= 1 (tarr4D1qtint i)) (<= (tarr4D1qtint i) 3))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -893,7 +888,8 @@
                                      (=>
                                      (and (<= 1 temp___279)
                                      (<= temp___279 3)) (in_range4 10
-                                     (select temp___expr_278 temp___279)))))
+                                     (us_split_discrs1
+                                     (select temp___expr_278 temp___279))))))
 
 (define-fun default_initial_assumption1 ((temp___expr_281 (Array Int us_rep))
   (temp___skip_top_level_282 Bool)) Bool (forall ((temp___283 Int))
@@ -904,11 +900,6 @@
                                             (rec__test__rec__x
                                             (us_split_discrs1
                                             (select temp___expr_281 temp___283)))) 10))))
-
-(define-fun in_range8 ((rec__test__rec__x1 Int)
-  (a us_rep)) Bool (= rec__test__rec__x1 (to_rep
-                                         (rec__test__rec__x
-                                         (us_split_discrs1 a)))))
 
 (declare-const value__size5 Int)
 
@@ -983,8 +974,8 @@
 ;; convert__def
   (assert
   (forall ((a (Array Int us_rep)))
-  (forall ((temp___334 Int))
-  (= (select a temp___334) (select (convert1 a) temp___334)))))
+  (forall ((temp___335 Int))
+  (= (select a temp___335) (select (convert1 a) temp___335)))))
 
 (declare-fun test__test_array__aggregate_def (Int Int
   Int) (Array Int integer))
@@ -994,9 +985,9 @@
 ;; convert__def
   (assert
   (forall ((a (Array Int integer)))
-  (forall ((temp___345 Int))
-  (= (to_rep (select a temp___345)) (to_rep2
-                                    (select (convert2 a) temp___345))))))
+  (forall ((temp___346 Int))
+  (= (to_rep (select a temp___346)) (to_rep2
+                                    (select (convert2 a) temp___346))))))
 
 (define-fun dynamic_invariant2 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)
@@ -1017,7 +1008,8 @@
   (temp___do_toplevel_243 Bool)
   (temp___do_typ_inv_244 Bool)) Bool (=>
                                      (not (= temp___skip_constant_242 true))
-                                     (in_range3 10 temp___expr_245)))
+                                     (in_range4 10
+                                     (us_split_discrs1 temp___expr_245))))
 
 (define-fun default_initial_assumption2 ((temp___expr_247 us_rep)
   (temp___skip_top_level_248 Bool)) Bool (= (to_rep
@@ -1030,7 +1022,8 @@
   (temp___do_toplevel_253 Bool)
   (temp___do_typ_inv_254 Bool)) Bool (=>
                                      (not (= temp___skip_constant_252 true))
-                                     (in_range4 10 temp___expr_255)))
+                                     (in_range4 10
+                                     (us_split_discrs1 temp___expr_255))))
 
 (define-fun default_initial_assumption3 ((temp___expr_257 us_rep)
   (temp___skip_top_level_258 Bool)) Bool (= (to_rep
@@ -1080,17 +1073,17 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___337 Int) (temp___338 Int) (temp___339 Int))
-  (let ((temp___336 (test__test_array__aggregate_def temp___337 temp___338
-                    temp___339)))
+  (forall ((temp___338 Int) (temp___339 Int) (temp___340 Int))
+  (let ((temp___337 (test__test_array__aggregate_def temp___338 temp___339
+                    temp___340)))
   (=>
   (and
-  (and (dynamic_invariant2 temp___337 true true true true)
-  (dynamic_invariant2 temp___338 true true true true)) (dynamic_invariant2
-  temp___339 true true true true))
+  (and (dynamic_invariant2 temp___338 true true true true)
+  (dynamic_invariant2 temp___339 true true true true)) (dynamic_invariant2
+  temp___340 true true true true))
   (and
-  (and (= (select temp___336 0) rliteral1)
-  (= (select temp___336 1) rliteral2)) (= (select temp___336 2) rliteral3))))))
+  (and (= (select temp___337 0) rliteral1)
+  (= (select temp___337 1) rliteral2)) (= (select temp___337 2) rliteral3))))))
 
 (define-fun dynamic_invariant6 ((temp___expr_301 Int)
   (temp___is_init_297 Bool) (temp___skip_constant_298 Bool)
@@ -1098,7 +1091,7 @@
   (temp___do_typ_inv_300 Bool)) Bool (=>
                                      (or (= temp___is_init_297 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range5 temp___expr_301)))
+                                     (in_range3 temp___expr_301)))
 
 (assert
 ;; defqtvc

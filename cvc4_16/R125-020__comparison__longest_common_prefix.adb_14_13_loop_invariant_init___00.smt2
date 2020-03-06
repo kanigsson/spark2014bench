@@ -397,8 +397,8 @@
   (=>
   (=> (<= x r5b)
   (and (and (<= 1 x) (<= x 1000)) (and (<= 1 r5b) (<= r5b 1000))))
-  (= (let ((temp___204 (of_array a y r8b)))
-     (let ((temp___203 (of_array a x r5b)))
-     (bool_eq (to_array temp___203) (first1 temp___203) (last1 temp___203)
-     (to_array temp___204) (first1 temp___204) (last1 temp___204)))) true))))))))))))))))))))))))))))
+  (= (let ((temp___208 (of_array a y r8b)))
+     (let ((temp___207 (of_array a x r5b)))
+     (bool_eq (to_array temp___207) (first1 temp___207) (last1 temp___207)
+     (to_array temp___208) (first1 temp___208) (last1 temp___208)))) true))))))))))))))))))))))))))))
 (check-sat)

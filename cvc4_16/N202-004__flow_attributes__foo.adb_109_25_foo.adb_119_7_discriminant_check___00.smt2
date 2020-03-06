@@ -138,6 +138,9 @@
                         (to_rep (rec__foo__dt__index (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range2 ((rec__foo__dt__found1 Bool)
+  (a us_split_discrs)) Bool (= rec__foo__dt__found1 (rec__foo__dt__found a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -204,10 +207,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
 
-(define-fun in_range2 ((rec__foo__dt__found1 Bool)
-  (a us_rep)) Bool (= rec__foo__dt__found1 (rec__foo__dt__found
-                                           (us_split_discrs1 a))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -261,10 +260,6 @@
 (((t43b__refqtmk (t43b__content us_rep)))))
 (define-fun t43b__ref_t43b__content__projection ((a t43b__ref)) us_rep 
   (t43b__content a))
-
-(define-fun in_range3 ((rec__foo__dt__found1 Bool)
-  (a us_rep)) Bool (= rec__foo__dt__found1 (rec__foo__dt__found
-                                           (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 

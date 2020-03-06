@@ -137,6 +137,10 @@
                                                   (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range2 ((rec__test_dic__nested__p3__x1 Bool)
+  (a us_split_discrs)) Bool (= rec__test_dic__nested__p3__x1 (rec__test_dic__nested__p3__x
+                                                             a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -235,6 +239,10 @@
                                                    (us_split_fields3 b)))))
                     true false))
 
+(define-fun in_range3 ((rec__test_dic__nested__p4__x1 Bool)
+  (a us_split_discrs2)) Bool (= rec__test_dic__nested__p4__x1 (rec__test_dic__nested__p4__x
+                                                              a)))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -332,6 +340,10 @@
                                                    (rec__test_dic__nested__p5__c
                                                    (us_split_fields5 b)))))
                     true false))
+
+(define-fun in_range4 ((rec__test_dic__nested__p5__x1 Bool)
+  (a us_split_discrs4)) Bool (= rec__test_dic__nested__p5__x1 (rec__test_dic__nested__p5__x
+                                                              a)))
 
 (declare-const value__size2 Int)
 
@@ -486,14 +498,14 @@
 
 (declare-const dummy4 us_rep3)
 
-(declare-datatypes ((p1__ref 0))
-(((p1__refqtmk (p1__content us_rep3)))))
-(define-fun p1__ref_p1__content__projection ((a p1__ref)) us_rep3 (p1__content
-                                                                  a))
+(declare-datatypes ((tx1S__ref 0))
+(((tx1S__refqtmk (tx1S__content us_rep3)))))
+(define-fun tx1S__ref_tx1S__content__projection ((a tx1S__ref)) us_rep3 
+  (tx1S__content a))
 
-(define-fun in_range2 ((rec__test_dic__nested__p1__x1 Bool)
-  (a us_rep3)) Bool (= rec__test_dic__nested__p1__x1 (rec__test_dic__nested__p1__x
-                                                     (us_split_discrs7 a))))
+(define-fun in_range5 ((rec__test_dic__nested__p1__x1 Bool)
+  (a us_split_discrs6)) Bool (= rec__test_dic__nested__p1__x1 (rec__test_dic__nested__p1__x
+                                                              a)))
 
 (declare-const value__size4 Int)
 
@@ -546,10 +558,10 @@
 
 (declare-const dummy5 us_rep3)
 
-(declare-datatypes ((tx1S__ref 0))
-(((tx1S__refqtmk (tx1S__content us_rep3)))))
-(define-fun tx1S__ref_tx1S__content__projection ((a tx1S__ref)) us_rep3 
-  (tx1S__content a))
+(declare-datatypes ((p1__ref 0))
+(((p1__refqtmk (p1__content us_rep3)))))
+(define-fun p1__ref_p1__content__projection ((a p1__ref)) us_rep3 (p1__content
+                                                                  a))
 
 (declare-const x1__split_discrs us_split_discrs6)
 
@@ -648,14 +660,14 @@
 
 (declare-const dummy6 us_rep4)
 
-(declare-datatypes ((p2__ref 0))
-(((p2__refqtmk (p2__content us_rep4)))))
-(define-fun p2__ref_p2__content__projection ((a p2__ref)) us_rep4 (p2__content
-                                                                  a))
+(declare-datatypes ((tx2S__ref 0))
+(((tx2S__refqtmk (tx2S__content us_rep4)))))
+(define-fun tx2S__ref_tx2S__content__projection ((a tx2S__ref)) us_rep4 
+  (tx2S__content a))
 
-(define-fun in_range3 ((rec__test_dic__nested__p2__x1 Bool)
-  (a us_rep4)) Bool (= rec__test_dic__nested__p2__x1 (rec__test_dic__nested__p2__x
-                                                     (us_split_discrs9 a))))
+(define-fun in_range6 ((rec__test_dic__nested__p2__x1 Bool)
+  (a us_split_discrs8)) Bool (= rec__test_dic__nested__p2__x1 (rec__test_dic__nested__p2__x
+                                                              a)))
 
 (declare-const value__size6 Int)
 
@@ -708,18 +720,14 @@
 
 (declare-const dummy7 us_rep4)
 
-(declare-datatypes ((tx2S__ref 0))
-(((tx2S__refqtmk (tx2S__content us_rep4)))))
-(define-fun tx2S__ref_tx2S__content__projection ((a tx2S__ref)) us_rep4 
-  (tx2S__content a))
+(declare-datatypes ((p2__ref 0))
+(((p2__refqtmk (p2__content us_rep4)))))
+(define-fun p2__ref_p2__content__projection ((a p2__ref)) us_rep4 (p2__content
+                                                                  a))
 
 (declare-const x2__split_discrs us_split_discrs8)
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
-
-(define-fun in_range4 ((rec__test_dic__nested__p3__x1 Bool)
-  (a us_rep)) Bool (= rec__test_dic__nested__p3__x1 (rec__test_dic__nested__p3__x
-                                                    (us_split_discrs1 a))))
 
 (declare-const value__size7 Int)
 
@@ -781,10 +789,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
 
-(define-fun in_range5 ((rec__test_dic__nested__p4__x1 Bool)
-  (a us_rep1)) Bool (= rec__test_dic__nested__p4__x1 (rec__test_dic__nested__p4__x
-                                                     (us_split_discrs3 a))))
-
 (declare-const value__size8 Int)
 
 (declare-const object__size8 Int)
@@ -844,10 +848,6 @@
 (declare-const x4__split_discrs us_split_discrs2)
 
 (declare-const attr__ATTRIBUTE_ADDRESS3 Int)
-
-(define-fun in_range6 ((rec__test_dic__nested__p5__x1 Bool)
-  (a us_rep2)) Bool (= rec__test_dic__nested__p5__x1 (rec__test_dic__nested__p5__x
-                                                     (us_split_discrs5 a))))
 
 (declare-const value__size9 Int)
 
@@ -935,10 +935,6 @@
      (= (to_rep (rec__test_dic__nested__p4__c (us_split_fields3 x))) 0)) :pattern (
   (f4 x)) )))
 
-(define-fun in_range7 ((rec__test_dic__nested__p5__x1 Bool)
-  (a us_rep2)) Bool (= rec__test_dic__nested__p5__x1 (rec__test_dic__nested__p5__x
-                                                     (us_split_discrs5 a))))
-
 (declare-const value__size10 Int)
 
 (declare-const object__size10 Int)
@@ -994,10 +990,6 @@
 (((t4b__refqtmk (t4b__content us_rep2)))))
 (define-fun t4b__ref_t4b__content__projection ((a t4b__ref)) us_rep2 
   (t4b__content a))
-
-(define-fun in_range8 ((rec__test_dic__nested__p5__x1 Bool)
-  (a us_rep2)) Bool (= rec__test_dic__nested__p5__x1 (rec__test_dic__nested__p5__x
-                                                     (us_split_discrs5 a))))
 
 (declare-const value__size11 Int)
 
@@ -1088,8 +1080,9 @@
   (=> (= (rec__test_dic__nested__p1__x x1__split_discrs) (distinct 1 0))
   (=> (= (to_rep x1__split_fields) 0)
   (=> (= (rec__test_dic__nested__p1__x x1__split_discrs) true)
-  (=> (in_range2 (distinct 1 0)
-  (us_repqtmk3 x1__split_discrs (us_split_fieldsqtmk3 x1__split_fields)))
+  (=> (in_range5 (distinct 1 0)
+  (us_split_discrs7
+  (us_repqtmk3 x1__split_discrs (us_split_fieldsqtmk3 x1__split_fields))))
   (=>
   (= (distinct 1 0) (rec__test_dic__nested__p2__x (us_split_discrs9 usf)))
   (= (rec__test_dic__nested__p2__x (us_split_discrs9 usf)) true)))))))))

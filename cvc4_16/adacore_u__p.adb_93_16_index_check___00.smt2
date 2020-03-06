@@ -343,6 +343,8 @@
   (=> (dynamic_invariant2 a true false true true)
   (=> (<= (first1 a) current_index)
   (=> (<= current_index (last1 a))
-  (=> (<= (first1 a) (+ beginning 1))
-  (=> (<= (+ beginning 1) current_index) (<= (first1 a) current_index))))))))))))))
+  (=>
+  (let ((temp___348 (+ beginning 1)))
+  (and (<= (first1 a) temp___348) (<= temp___348 current_index)))
+  (<= (first1 a) current_index)))))))))))))
 (check-sat)

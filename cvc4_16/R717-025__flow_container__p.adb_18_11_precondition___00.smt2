@@ -136,6 +136,11 @@
                            (rec__p__sets__set (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__p__sets__set__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__p__sets__set__capacity1 (to_rep
+                                                            (rec__p__sets__set__capacity
+                                                            a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -262,7 +267,7 @@
 
 (define-fun length1 ((x1 Int) (y Int)) Int (ite (<= x1 y) (+ (- y x1) 1) 0))
 
-(define-fun in_range1 ((x1 Int)) Bool (or (= x1 0) (= x1 1)))
+(define-fun in_range2 ((x1 Int)) Bool (or (= x1 0) (= x1 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE1 (Bool) us_image)
 
@@ -397,11 +402,6 @@
 
 (declare-fun contains__function_guard1 (Bool us_rep Int) Bool)
 
-(define-fun in_range2 ((rec__p__sets__set__capacity1 Int)
-  (a us_rep)) Bool (= rec__p__sets__set__capacity1 (to_rep
-                                                   (rec__p__sets__set__capacity
-                                                   (us_split_discrs1 a)))))
-
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -455,23 +455,24 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq5 a b) (oeq2 a b)) :pattern ((user_eq5 a b)) )))
 
-(define-fun dynamic_invariant ((temp___expr_511 us_rep)
-  (temp___is_init_507 Bool) (temp___skip_constant_508 Bool)
-  (temp___do_toplevel_509 Bool)
-  (temp___do_typ_inv_510 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_508 true))
-                                     (in_range2 200 temp___expr_511)))
+(define-fun dynamic_invariant ((temp___expr_515 us_rep)
+  (temp___is_init_511 Bool) (temp___skip_constant_512 Bool)
+  (temp___do_toplevel_513 Bool)
+  (temp___do_typ_inv_514 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_512 true))
+                                     (in_range1 200
+                                     (us_split_discrs1 temp___expr_515))))
 
-(define-fun default_initial_assumption ((temp___expr_513 us_rep)
-  (temp___skip_top_level_514 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_517 us_rep)
+  (temp___skip_top_level_518 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__p__sets__set__capacity
                                             (us_split_discrs1
-                                            temp___expr_513))) 200)
+                                            temp___expr_517))) 200)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_514 true))
-                                         (= (is_empty temp___expr_513) true))))
+                                         (= temp___skip_top_level_518 true))
+                                         (= (is_empty temp___expr_517) true))))
 
 (declare-sort t 0)
 
@@ -840,10 +841,9 @@
      (forall ((i us_rep4))
      (=> (= (has_key big i) true)
      (or (= (has_key small i) true)
-     (and (<= (- cut count) (- (get1 big i) count))
-     (<= (- (get1 big i) count) (- cut 1))))))))) :pattern ((p_positions_shifted
-                                                            small big cut
-                                                            count)) ))))
+     (let ((temp___427 (- (get1 big i) count)))
+     (and (<= (- cut count) temp___427) (<= temp___427 (- cut 1)))))))))) :pattern (
+  (p_positions_shifted small big cut count)) ))))
 
 (declare-fun length4 (us_rep1) Int)
 
@@ -937,11 +937,11 @@
      (and
      (and
      (and (= (length2 result) (length container))
-     (forall ((temp___432 Int))
+     (forall ((temp___434 Int))
      (=>
-     (and (in_range7 temp___432)
-     (= (iter_has_element result temp___432) true))
-     (= (contains (model1 container) (get result temp___432)) true))))
+     (and (in_range7 temp___434)
+     (= (iter_has_element result temp___434) true))
+     (= (contains (model1 container) (get result temp___434)) true))))
      (forall ((item Int))
      (=> (and (in_range6 item) (= (contains (model1 container) item) true))
      (and (< 0 (find result item))
@@ -960,7 +960,8 @@
      (forall ((i us_rep4))
      (=> (= (has_key result i) true)
      (and
-     (and (<= 1 (get1 result i)) (<= (get1 result i) (length container)))
+     (let ((temp___439 (get1 result i)))
+     (and (<= 1 temp___439) (<= temp___439 (length container))))
      (forall ((j us_rep4))
      (=> (= (has_key result j) true)
      (=> (= (get1 result i) (get1 result j)) (= (bool_eq4 i j) true))))))))) :pattern (

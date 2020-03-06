@@ -180,6 +180,10 @@
                         (to_rep (rec__variants__t__e (us_split_fields1 b)))))))
                    true false))
 
+(define-fun in_range2 ((rec__variants__t__c1 Int)
+  (a us_split_discrs)) Bool (= rec__variants__t__c1 (to_rep1
+                                                    (rec__variants__t__c a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -251,11 +255,6 @@
 (declare-const x us_rep)
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
-
-(define-fun in_range2 ((rec__variants__t__c1 Int)
-  (a us_rep)) Bool (= rec__variants__t__c1 (to_rep1
-                                           (rec__variants__t__c
-                                           (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 
@@ -337,7 +336,8 @@
   (temp___do_toplevel_174 Bool)
   (temp___do_typ_inv_175 Bool)) Bool (=>
                                      (not (= temp___skip_constant_173 true))
-                                     (in_range2 0 temp___expr_176)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_176))))
 
 (define-fun default_initial_assumption ((temp___expr_178 us_rep)
   (temp___skip_top_level_179 Bool)) Bool (= (to_rep1
@@ -350,11 +350,6 @@
                                             (rec__variants__t__c
                                             (us_split_discrs1
                                             temp___expr_167))) 0))
-
-(define-fun in_range3 ((rec__variants__t__c1 Int)
-  (a us_rep)) Bool (= rec__variants__t__c1 (to_rep1
-                                           (rec__variants__t__c
-                                           (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -436,7 +431,8 @@
   (temp___do_toplevel_185 Bool)
   (temp___do_typ_inv_186 Bool)) Bool (=>
                                      (not (= temp___skip_constant_184 true))
-                                     (in_range3 1 temp___expr_187)))
+                                     (in_range2 1
+                                     (us_split_discrs1 temp___expr_187))))
 
 (define-fun default_initial_assumption2 ((temp___expr_189 us_rep)
   (temp___skip_top_level_190 Bool)) Bool (= (to_rep1
@@ -467,6 +463,6 @@
   (=> (dynamic_invariant (us_repqtmk y__split_discrs y__split_fields) true
   false true true)
   (=> (dynamic_invariant1 (us_repqtmk z__split_discrs z__split_fields) false
-  false true true) (in_range3 1
-  (us_repqtmk y__split_discrs y__split_fields)))))))
+  false true true) (in_range2 1
+  (us_split_discrs1 (us_repqtmk y__split_discrs y__split_fields))))))))
 (check-sat)

@@ -528,6 +528,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
+  (to_rep
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -622,7 +627,7 @@
   (forall ((i natural))
   (and (<= 0 (naturalqtint i)) (<= (naturalqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -643,7 +648,7 @@
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
   (temp___do_typ_inv_38 Bool)) Bool (=>
                                     (or (= temp___is_init_35 true)
-                                    (<= 0 2147483647)) (in_range3
+                                    (<= 0 2147483647)) (in_range4
                                     temp___expr_39)))
 
 (declare-fun shift_right ((_ BitVec 8) Int) (_ BitVec 8))
@@ -700,7 +705,7 @@
   (forall ((i shift_type))
   (and (<= 0 (shift_typeqtint i)) (<= (shift_typeqtint i) 7))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 7)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 7)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -722,7 +727,7 @@
   (temp___do_toplevel_850 Bool)
   (temp___do_typ_inv_851 Bool)) Bool (=>
                                      (or (= temp___is_init_848 true)
-                                     (<= 0 7)) (in_range4 temp___expr_852)))
+                                     (<= 0 7)) (in_range5 temp___expr_852)))
 
 (define-fun dynamic_invariant4 ((temp___expr_257 Int)
   (temp___is_init_253 Bool) (temp___skip_constant_254 Bool)
@@ -753,11 +758,11 @@
   (=> (= overflow_mask1 o)
   (=> (= (last1 number__split_fields) r126b)
   (=> (in_range2 r126b)
-  (let ((temp___1565 r126b))
+  (let ((temp___1568 r126b))
   (forall ((i Int))
   (=> (= i 1)
   (=>
-  (= (and (ite (<= 1 i) true false) (ite (<= i temp___1565) true false)) true)
+  (= (and (ite (<= 1 i) true false) (ite (<= i temp___1568) true false)) true)
   (forall ((number__split_fields1 us_t) (old_overflow1 (_ BitVec 8))
   (new_overflow1 (_ BitVec 8)) (i1 Int))
   (=>
@@ -769,15 +774,15 @@
                (us_repqtmk number__split_discrs
                (us_split_fieldsqtmk number__split_fields1)) true true true
                true))
-               (forall ((temp___1579 Int))
+               (forall ((temp___1582 Int))
                (=>
-               (and (<= (first1 number__split_fields1) temp___1579)
-               (<= temp___1579 (last1 number__split_fields1)))
+               (and (<= (first1 number__split_fields1) temp___1582)
+               (<= temp___1582 (last1 number__split_fields1)))
                (=>
-               (or (< temp___1565 temp___1579)
-               (or (< temp___1579 1) (<= i1 temp___1579)))
-               (= (select (to_array number__split_fields1) temp___1579) (select 
-               (to_array number__split_fields) temp___1579))))))
+               (or (< temp___1568 temp___1582)
+               (or (< temp___1582 1) (<= i1 temp___1582)))
+               (= (select (to_array number__split_fields1) temp___1582) (select 
+               (to_array number__split_fields) temp___1582))))))
           true false) (ite (and (<= 1 i1) (<= i1 r126b)) true false)) true)
   (let ((o1 (- 8 distance)))
   (=>

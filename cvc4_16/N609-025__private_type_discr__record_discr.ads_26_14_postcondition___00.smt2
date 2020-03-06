@@ -175,6 +175,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__private_record__result_ty__found1 Bool)
+  (a us_split_discrs)) Bool (= rec__private_record__result_ty__found1 
+  (rec__private_record__result_ty__found a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -240,7 +244,7 @@
   (forall ((i integer))
   (and (<= (- 2147483648) (integerqtint i)) (<= (integerqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
@@ -269,12 +273,12 @@
 
 ;; range_axiom
   (assert
-  (forall ((x integer)) (! (in_range3 (to_rep1 x)) :pattern ((to_rep1 x)) )))
+  (forall ((x integer)) (! (in_range4 (to_rep1 x)) :pattern ((to_rep1 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range3 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
+  (! (=> (in_range4 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
                                                               (of_rep1 x))) )))
 
 (declare-datatypes ((map__ref 0))
@@ -336,14 +340,14 @@
 ;; mk_def
   (assert
   (forall ((f Int) (l Int))
-  (! (=> (in_range3 f)
-     (=> (in_range3 l)
+  (! (=> (in_range4 f)
+     (=> (in_range4 l)
      (and (= (to_rep1 (first (mk f l))) f) (= (to_rep1 (last (mk f l))) l)))) :pattern (
   (mk f l)) )))
 
 (define-fun dynamic_property ((range_first Int) (range_last Int) (low Int)
-  (high Int)) Bool (and (in_range3 low)
-                   (and (in_range3 high)
+  (high Int)) Bool (and (in_range4 low)
+                   (and (in_range4 high)
                    (=> (<= low high) (and (in_range2 low) (in_range2 high))))))
 
 (declare-datatypes ((us_t 0))
@@ -442,6 +446,10 @@
                             (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range5 ((rec__record_discr__interm_result__upto1 Int)
+  (a us_split_discrs2)) Bool (= rec__record_discr__interm_result__upto1 
+  (to_rep (rec__record_discr__interm_result__upto a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -534,11 +542,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
 
-(define-fun in_range4 ((rec__private_record__result_ty__found1 Bool)
-  (a us_rep)) Bool (= rec__private_record__result_ty__found1 (rec__private_record__result_ty__found
-                                                             (us_split_discrs1
-                                                             a))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -615,11 +618,11 @@
   (temp___do_toplevel_241 Bool)
   (temp___do_typ_inv_242 Bool)) Bool (=>
                                      (not (= temp___skip_constant_240 true))
-                                     (in_range4
+                                     (in_range3
                                      (not (= (to_rep
                                              (rec__record_discr__interm_result__upto
                                              (us_split_discrs3 r))) 0))
-                                     temp___expr_243)))
+                                     (us_split_discrs1 temp___expr_243))))
 
 (define-fun default_initial_assumption ((temp___expr_245 us_rep)
   (temp___skip_top_level_246 Bool)) Bool (= (rec__private_record__result_ty__found
@@ -682,12 +685,6 @@
                             (rec__record_discr__interm_result__to_search1
                             (us_split_fields5 b))) true))
                     true false))
-
-(define-fun in_range5 ((rec__record_discr__interm_result__upto1 Int)
-  (a us_rep1)) Bool (= rec__record_discr__interm_result__upto1 (to_rep
-                                                               (rec__record_discr__interm_result__upto
-                                                               (us_split_discrs3
-                                                               a)))))
 
 (declare-const value__size4 Int)
 
@@ -840,16 +837,16 @@
   (and
   (= (to_rep (rec__record_discr__interm_result__upto (us_split_discrs3 r))) o7)
   (ite (= o7 0) (= o6 true)
-  (let ((temp___318 (rec__record_discr__interm_result__to_search
+  (let ((temp___319 (rec__record_discr__interm_result__to_search
                     (us_split_fields3 r))))
-  (exists ((temp___319 Int))
+  (exists ((temp___320 Int))
   (and
-  (= (to_rep (rec__record_discr__interm_result__upto (us_split_discrs3 r))) temp___319)
+  (= (to_rep (rec__record_discr__interm_result__upto (us_split_discrs3 r))) temp___320)
   (and
-  (and (<= (first1 temp___318) temp___319)
-  (<= temp___319 (last1 temp___318)))
+  (and (<= (first1 temp___319) temp___320)
+  (<= temp___320 (last1 temp___319)))
   (exists ((o8 Int))
-  (and (= (to_rep (select (to_array temp___318) temp___319)) o8)
+  (and (= (to_rep (select (to_array temp___319) temp___320)) o8)
   (= o6 (ite (= o8 e) true false)))))))))))
   (exists ((spark__branch Bool))
   (and (= spark__branch o6)
@@ -859,21 +856,21 @@
   (exists ((o8 Int))
   (and
   (= (to_rep (rec__record_discr__interm_result__upto (us_split_discrs3 r))) o8)
-  (let ((temp___315 (- o8 1)))
-  (let ((temp___316 (rec__record_discr__interm_result__to_search
+  (let ((temp___316 (- o8 1)))
+  (let ((temp___317 (rec__record_discr__interm_result__to_search
                     (us_split_fields3 r))))
   (and
-  (=> (<= 1 temp___315)
-  (and (and (<= (first1 temp___316) 1) (<= 1 (last1 temp___316)))
-  (and (<= (first1 temp___316) temp___315)
-  (<= temp___315 (last1 temp___316)))))
-  (let ((temp___317 (of_array (to_array temp___316) 1 temp___315)))
+  (=> (<= 1 temp___316)
+  (and (and (<= (first1 temp___317) 1) (<= 1 (last1 temp___317)))
+  (and (<= (first1 temp___317) temp___316)
+  (<= temp___316 (last1 temp___317)))))
+  (let ((temp___318 (of_array (to_array temp___317) 1 temp___316)))
   (and
-  (ite (<= (first1 temp___317) (last1 temp___317))
+  (ite (<= (first1 temp___318) (last1 temp___318))
   (and
   (<= 1 (- (to_rep
            (rec__record_discr__interm_result__upto (us_split_discrs3 r))) 1))
-  (= (- (last1 temp___317) (first1 temp___317)) (- (- (to_rep
+  (= (- (last1 temp___318) (first1 temp___318)) (- (- (to_rep
                                                       (rec__record_discr__interm_result__upto
                                                       (us_split_discrs3 r))) 1) 1)))
   (< (- (to_rep
@@ -888,8 +885,8 @@
   (let ((o12 (to_base
              (us_repqtmk2 (us_split_discrsqtmk1 o11)
              (us_split_fieldsqtmk2
-             (of_array (to_array temp___317) (first1 temp___317)
-             (last1 temp___317)))))))
+             (of_array (to_array temp___318) (first1 temp___318)
+             (last1 temp___318)))))))
   (let ((o13 (search_upto o12 o7)))
   (and
   (and (search_upto__function_guard o13 o12 o7)

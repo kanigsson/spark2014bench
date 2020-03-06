@@ -298,6 +298,11 @@
                            (us_split_fields1 b)) 1 5) true)))))
                    true false))
 
+(define-fun in_range2 ((rec__test__fruit_rec__record_t__d1 Int)
+  (a us_split_discrs)) Bool (= rec__test__fruit_rec__record_t__d1 (to_rep
+                                                                  (rec__test__fruit_rec__record_t__d
+                                                                  a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

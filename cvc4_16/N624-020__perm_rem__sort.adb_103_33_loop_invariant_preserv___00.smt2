@@ -350,8 +350,8 @@
   (forall ((min1 Int) (index2 Int))
   (=> (and (<= first min1) (<= min1 last))
   (=>
-  (= (and (ite (and (dynamic_invariant min1 false true true true)
-               (dynamic_property first last index2))
+  (= (and (ite (and (dynamic_property first last index2) (dynamic_invariant
+               min1 false true true true))
           true false) (ite (and (<= first index2) (<= index2 last)) true
                       false)) true)
   (forall ((min2 Int))

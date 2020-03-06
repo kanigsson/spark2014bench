@@ -799,6 +799,10 @@
                             (us_split_fields5 b))) true)))
                     true false))
 
+(define-fun in_range4 ((rec__parse__parse_result_t__return_code1 Int)
+  (a us_split_discrs)) Bool (= rec__parse__parse_result_t__return_code1 
+  (to_rep4 (rec__parse__parse_result_t__return_code a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -892,7 +896,7 @@
   (and (<= 0 (network_dns_query_rangeqtint i))
   (<= (network_dns_query_rangeqtint i) 512))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 512)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 512)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -915,7 +919,7 @@
   (temp___do_toplevel_210 Bool)
   (temp___do_typ_inv_211 Bool)) Bool (=>
                                      (or (= temp___is_init_208 true)
-                                     (<= 0 512)) (in_range4 temp___expr_212)))
+                                     (<= 0 512)) (in_range5 temp___expr_212)))
 
 ;; extract_unsigned_16__post_axiom
   (assert
@@ -948,7 +952,7 @@
   (forall ((i bit_range))
   (and (<= 0 (bit_rangeqtint i)) (<= (bit_rangeqtint i) 7))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 7)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 7)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
 
@@ -970,7 +974,7 @@
   (temp___do_toplevel_247 Bool)
   (temp___do_typ_inv_248 Bool)) Bool (=>
                                      (or (= temp___is_init_245 true)
-                                     (<= 0 7)) (in_range5 temp___expr_249)))
+                                     (<= 0 7)) (in_range6 temp___expr_249)))
 
 ;; extract_bits_of_octet__post_axiom
   (assert
@@ -1028,12 +1032,6 @@
                                      (or (= temp___is_init_157 true)
                                      (<= 0 1)) (in_range3 temp___expr_161)))
 
-(define-fun in_range6 ((rec__parse__parse_result_t__return_code1 Int)
-  (a us_rep2)) Bool (= rec__parse__parse_result_t__return_code1 (to_rep4
-                                                                (rec__parse__parse_result_t__return_code
-                                                                (us_split_discrs1
-                                                                a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -1089,12 +1087,6 @@
 (((t3b__refqtmk (t3b__content us_rep2)))))
 (define-fun t3b__ref_t3b__content__projection ((a t3b__ref)) us_rep2 
   (t3b__content a))
-
-(define-fun in_range7 ((rec__parse__parse_result_t__return_code1 Int)
-  (a us_rep2)) Bool (= rec__parse__parse_result_t__return_code1 (to_rep4
-                                                                (rec__parse__parse_result_t__return_code
-                                                                (us_split_discrs1
-                                                                a)))))
 
 (declare-const value__size4 Int)
 
@@ -1152,12 +1144,6 @@
 (define-fun t7b__ref_t7b__content__projection ((a t7b__ref)) us_rep2 
   (t7b__content a))
 
-(define-fun in_range8 ((rec__parse__parse_result_t__return_code1 Int)
-  (a us_rep2)) Bool (= rec__parse__parse_result_t__return_code1 (to_rep4
-                                                                (rec__parse__parse_result_t__return_code
-                                                                (us_split_discrs1
-                                                                a)))))
-
 (declare-const value__size5 Int)
 
 (declare-const object__size5 Int)
@@ -1213,12 +1199,6 @@
 (((t11b__refqtmk (t11b__content us_rep2)))))
 (define-fun t11b__ref_t11b__content__projection ((a t11b__ref)) us_rep2 
   (t11b__content a))
-
-(define-fun in_range9 ((rec__parse__parse_result_t__return_code1 Int)
-  (a us_rep2)) Bool (= rec__parse__parse_result_t__return_code1 (to_rep4
-                                                                (rec__parse__parse_result_t__return_code
-                                                                (us_split_discrs1
-                                                                a)))))
 
 (declare-const value__size6 Int)
 
@@ -1276,12 +1256,6 @@
 (define-fun t15b__ref_t15b__content__projection ((a t15b__ref)) us_rep2 
   (t15b__content a))
 
-(define-fun in_range10 ((rec__parse__parse_result_t__return_code1 Int)
-  (a us_rep2)) Bool (= rec__parse__parse_result_t__return_code1 (to_rep4
-                                                                (rec__parse__parse_result_t__return_code
-                                                                (us_split_discrs1
-                                                                a)))))
-
 (declare-const value__size7 Int)
 
 (declare-const object__size7 Int)
@@ -1337,12 +1311,6 @@
 (((t19b__refqtmk (t19b__content us_rep2)))))
 (define-fun t19b__ref_t19b__content__projection ((a t19b__ref)) us_rep2 
   (t19b__content a))
-
-(define-fun in_range11 ((rec__parse__parse_result_t__return_code1 Int)
-  (a us_rep2)) Bool (= rec__parse__parse_result_t__return_code1 (to_rep4
-                                                                (rec__parse__parse_result_t__return_code
-                                                                (us_split_discrs1
-                                                                a)))))
 
 (declare-const value__size8 Int)
 
@@ -1400,12 +1368,6 @@
 (define-fun t23b__ref_t23b__content__projection ((a t23b__ref)) us_rep2 
   (t23b__content a))
 
-(define-fun in_range12 ((rec__parse__parse_result_t__return_code1 Int)
-  (a us_rep2)) Bool (= rec__parse__parse_result_t__return_code1 (to_rep4
-                                                                (rec__parse__parse_result_t__return_code
-                                                                (us_split_discrs1
-                                                                a)))))
-
 (declare-const value__size9 Int)
 
 (declare-const object__size9 Int)
@@ -1461,12 +1423,6 @@
 (((t27b__refqtmk (t27b__content us_rep2)))))
 (define-fun t27b__ref_t27b__content__projection ((a t27b__ref)) us_rep2 
   (t27b__content a))
-
-(define-fun in_range13 ((rec__parse__parse_result_t__return_code1 Int)
-  (a us_rep2)) Bool (= rec__parse__parse_result_t__return_code1 (to_rep4
-                                                                (rec__parse__parse_result_t__return_code
-                                                                (us_split_discrs1
-                                                                a)))))
 
 (declare-const value__size10 Int)
 

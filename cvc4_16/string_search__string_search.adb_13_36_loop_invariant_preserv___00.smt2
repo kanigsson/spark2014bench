@@ -445,8 +445,9 @@
   (not
   (=> (dynamic_invariant2 needle true false true true)
   (=> (dynamic_invariant2 haystack true false true true)
-  (=> (<= 1 (length needle))
-  (=> (<= (length needle) (length haystack))
+  (=>
+  (let ((temp___341 (length needle)))
+  (and (<= 1 temp___341) (<= temp___341 (length haystack))))
   (let ((o (length needle)))
   (=> (in_range1 o)
   (let ((o1 (length haystack)))
@@ -460,12 +461,12 @@
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i o3) true false)) true)
   (forall ((diff Bool))
   (=> (= diff (distinct 0 0))
-  (let ((temp___316 (first1 needle)))
-  (let ((temp___317 (last1 needle)))
+  (let ((temp___323 (first1 needle)))
+  (let ((temp___324 (last1 needle)))
   (forall ((j Int))
-  (=> (= j temp___316)
+  (=> (= j temp___323)
   (=>
-  (= (and (ite (<= temp___316 j) true false) (ite (<= j temp___317) true
+  (= (and (ite (<= temp___323 j) true false) (ite (<= j temp___324) true
                                              false)) true)
   (let ((o4 (+ j (- i 1))))
   (=> (in_range1 o4)
@@ -480,10 +481,10 @@
   (=> (in_range2 j)
   (let ((o7 haystack))
   (let ((o8 needle))
-  (let ((temp___inv_323 (partial_match_at o8 o7 i j)))
+  (let ((temp___inv_330 (partial_match_at o8 o7 i j)))
   (=>
-  (and (partial_match_at__function_guard temp___inv_323 o8 o7 i j)
-  (= (= temp___inv_323 true)
+  (and (partial_match_at__function_guard temp___inv_330 o8 o7 i j)
+  (= (= temp___inv_330 true)
   (forall ((i1 Int))
   (=> (and (<= 1 i1) (<= i1 j))
   (= (to_rep (select (to_array o8) i1)) (to_rep
@@ -502,7 +503,7 @@
   (= (and (ite (dynamic_property2 (first1 needle) (last1 needle) j1) true
           false) (ite (and (<= (first1 needle) j1) (<= j1 (last1 needle)))
                  true false)) true)
-  (=> (not (= j1 temp___317))
+  (=> (not (= j1 temp___324))
   (forall ((j2 Int))
   (=> (= j2 (+ j1 1))
   (let ((o9 (+ j2 (- i 1))))
@@ -518,10 +519,10 @@
   (=> (in_range2 j2)
   (let ((o12 haystack))
   (let ((o13 needle))
-  (let ((temp___inv_3231 (partial_match_at o13 o12 i j2)))
+  (let ((temp___inv_3301 (partial_match_at o13 o12 i j2)))
   (=>
-  (and (partial_match_at__function_guard temp___inv_3231 o13 o12 i j2)
-  (= (= temp___inv_3231 true)
+  (and (partial_match_at__function_guard temp___inv_3301 o13 o12 i j2)
+  (= (= temp___inv_3301 true)
   (forall ((i1 Int))
   (=> (and (<= 1 i1) (<= i1 j2))
   (= (to_rep (select (to_array o13) i1)) (to_rep
@@ -529,5 +530,5 @@
   (=>
   (forall ((i1 Int) (j3 Int)) (partial_match_at__function_guard
   (partial_match_at needle haystack i1 j3) needle haystack i1 j3))
-  (= (partial_match_at needle haystack i j2) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+  (= (partial_match_at needle haystack i j2) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

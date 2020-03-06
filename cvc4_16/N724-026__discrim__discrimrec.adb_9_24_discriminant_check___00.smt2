@@ -873,6 +873,10 @@
                                                   (us_split_fields1 b))))))))))
                    true false))
 
+(define-fun in_range1 ((rec__discrimrec__register_type__option1 Int)
+  (a us_split_discrs)) Bool (= rec__discrimrec__register_type__option1 
+  (to_rep4 (rec__discrimrec__register_type__option a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -1072,12 +1076,6 @@
 (((register_type__refqtmk (register_type__content us_rep)))))
 (define-fun register_type__ref_register_type__content__projection ((a register_type__ref)) us_rep 
   (register_type__content a))
-
-(define-fun in_range1 ((rec__discrimrec__register_type__option1 Int)
-  (a us_rep)) Bool (= rec__discrimrec__register_type__option1 (to_rep4
-                                                              (rec__discrimrec__register_type__option
-                                                              (us_split_discrs1
-                                                              a)))))
 
 (declare-const value__size1 Int)
 
@@ -1282,12 +1280,6 @@
 (declare-const reg us_rep)
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
-
-(define-fun in_range2 ((rec__discrimrec__register_type__option1 Int)
-  (a us_rep)) Bool (= rec__discrimrec__register_type__option1 (to_rep4
-                                                              (rec__discrimrec__register_type__option
-                                                              (us_split_discrs1
-                                                              a)))))
 
 (declare-const value__size2 Int)
 
@@ -1494,19 +1486,14 @@
   (temp___do_toplevel_231 Bool)
   (temp___do_typ_inv_232 Bool)) Bool (=>
                                      (not (= temp___skip_constant_230 true))
-                                     (in_range1 0 temp___expr_233)))
+                                     (in_range1 0
+                                     (us_split_discrs1 temp___expr_233))))
 
 (define-fun default_initial_assumption ((temp___expr_235 us_rep)
   (temp___skip_top_level_236 Bool)) Bool (= (to_rep4
                                             (rec__discrimrec__register_type__option
                                             (us_split_discrs1
                                             temp___expr_235))) 0))
-
-(define-fun in_range3 ((rec__discrimrec__register_type__option1 Int)
-  (a us_rep)) Bool (= rec__discrimrec__register_type__option1 (to_rep4
-                                                              (rec__discrimrec__register_type__option
-                                                              (us_split_discrs1
-                                                              a)))))
 
 (declare-const value__size3 Int)
 
@@ -1713,7 +1700,8 @@
   (temp___do_toplevel_250 Bool)
   (temp___do_typ_inv_251 Bool)) Bool (=>
                                      (not (= temp___skip_constant_249 true))
-                                     (in_range2 1 temp___expr_252)))
+                                     (in_range1 1
+                                     (us_split_discrs1 temp___expr_252))))
 
 (define-fun default_initial_assumption1 ((temp___expr_254 us_rep)
   (temp___skip_top_level_255 Bool)) Bool (= (to_rep4
@@ -1764,8 +1752,9 @@
   (forall ((o2 unsigned_32))
   (=> (= (to_rep1 o2) #x00000000)
   (forall ((o3 register_option))
-  (=> (= (to_rep4 o3) 1) (in_range2 1
+  (=> (= (to_rep4 o3) 1) (in_range1 1
+  (us_split_discrs1
   (us_repqtmk (us_split_discrsqtmk o3)
   (us_split_fieldsqtmk dummy o2 o1 dummy1 dummy2 dummy2 dummy1 dummy2 
-  dummy3 dummy3))))))))))))))
+  dummy3 dummy3)))))))))))))))
 (check-sat)

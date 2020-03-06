@@ -382,6 +382,10 @@
                            (us_split_fields1 b))) true)))
                    true false))
 
+(define-fun in_range5 ((rec__bounded_dynamic_strings__sequence__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__bounded_dynamic_strings__sequence__capacity1 
+  (to_rep1 (rec__bounded_dynamic_strings__sequence__capacity a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -465,21 +469,20 @@
   (temp___do_toplevel_256 Bool)
   (temp___do_typ_inv_257 Bool)) Bool (and
                                      (=> (= temp___do_toplevel_256 true)
-                                     (and
-                                     (<= 0 (to_rep1
-                                           (rec__bounded_dynamic_strings__sequence__current_length
-                                           (us_split_fields1 temp___expr_258))))
-                                     (<= (to_rep1
-                                         (rec__bounded_dynamic_strings__sequence__current_length
-                                         (us_split_fields1 temp___expr_258))) 
-                                     (to_rep1
-                                     (rec__bounded_dynamic_strings__sequence__capacity
-                                     (us_split_discrs1 temp___expr_258))))))
-                                     (let ((temp___260 (rec__bounded_dynamic_strings__sequence__capacity
+                                     (let ((temp___260 (to_rep1
+                                                       (rec__bounded_dynamic_strings__sequence__current_length
+                                                       (us_split_fields1
+                                                       temp___expr_258)))))
+                                     (and (<= 0 temp___260)
+                                     (<= temp___260 (to_rep1
+                                                    (rec__bounded_dynamic_strings__sequence__capacity
+                                                    (us_split_discrs1
+                                                    temp___expr_258)))))))
+                                     (let ((temp___261 (rec__bounded_dynamic_strings__sequence__capacity
                                                        (us_split_discrs1
                                                        temp___expr_258))))
                                      (and (dynamic_property 1
-                                     (to_rep1 temp___260)
+                                     (to_rep1 temp___261)
                                      (first1
                                      (rec__bounded_dynamic_strings__sequence__content
                                      (us_split_fields1 temp___expr_258)))
@@ -493,21 +496,20 @@
                                      (= (last1
                                         (rec__bounded_dynamic_strings__sequence__content
                                         (us_split_fields1 temp___expr_258))) 
-                                     (to_rep1 temp___260)))))))
+                                     (to_rep1 temp___261)))))))
 
-(define-fun dynamic_predicate ((temp___262 us_rep)) Bool (and
-                                                         (<= 0 (to_rep1
-                                                               (rec__bounded_dynamic_strings__sequence__current_length
-                                                               (us_split_fields1
-                                                               temp___262))))
-                                                         (<= (to_rep1
-                                                             (rec__bounded_dynamic_strings__sequence__current_length
-                                                             (us_split_fields1
-                                                             temp___262))) 
+(define-fun dynamic_predicate ((temp___263 us_rep)) Bool (let ((temp___265 
+                                                         (to_rep1
+                                                         (rec__bounded_dynamic_strings__sequence__current_length
+                                                         (us_split_fields1
+                                                         temp___263)))))
+                                                         (and
+                                                         (<= 0 temp___265)
+                                                         (<= temp___265 
                                                          (to_rep1
                                                          (rec__bounded_dynamic_strings__sequence__capacity
                                                          (us_split_discrs1
-                                                         temp___262))))))
+                                                         temp___263)))))))
 
 (declare-const fragment us_t)
 
@@ -544,21 +546,22 @@
   (forall ((fragment1 us_t))
   (! (= (= (contains within1 fragment1) true)
      (and
-     (and (<= 1 (length fragment1))
-     (<= (length fragment1) (to_rep1
-                            (rec__bounded_dynamic_strings__sequence__current_length
-                            (us_split_fields1 within1)))))
+     (let ((temp___720 (length fragment1)))
+     (and (<= 1 temp___720)
+     (<= temp___720 (to_rep1
+                    (rec__bounded_dynamic_strings__sequence__current_length
+                    (us_split_fields1 within1))))))
      (exists ((k Int))
      (and
      (and (<= 1 k)
      (<= k (+ (- (to_rep1
                  (rec__bounded_dynamic_strings__sequence__current_length
                  (us_split_fields1 within1))) (length fragment1)) 1)))
-     (= (let ((temp___717 (let ((temp___713 (- (+ k (length fragment1)) 1)))
-                          (let ((temp___714 (rec__bounded_dynamic_strings__sequence__content
+     (= (let ((temp___725 (let ((temp___721 (- (+ k (length fragment1)) 1)))
+                          (let ((temp___722 (rec__bounded_dynamic_strings__sequence__content
                                             (us_split_fields1 within1))))
-                          (of_array (to_array temp___714) k temp___713)))))
-        (bool_eq (to_array temp___717) (first1 temp___717) (last1 temp___717)
+                          (of_array (to_array temp___722) k temp___721)))))
+        (bool_eq (to_array temp___725) (first1 temp___725) (last1 temp___725)
         (to_array fragment1) (first1 fragment1) (last1 fragment1))) true))))) :pattern (
   (contains within1 fragment1)) ))))
 
@@ -622,57 +625,55 @@
 ;; defqtvc
  ;; File "bounded_dynamic_arrays.ads", line 182, characters 0-0
   (not
-  (forall ((o Int))
   (=> (dynamic_invariant i52s true false true true)
   (=> (dynamic_invariant i52s true false true true)
   (=> (dynamic_invariant1 fragment true false true true)
   (=> (dynamic_invariant within true false true true)
+  (let ((o (length fragment)))
+  (=> (in_range1 o)
+  (forall ((o1 Int))
   (=>
   (= (to_rep1
      (rec__bounded_dynamic_strings__sequence__current_length
-     (us_split_fields1 within))) o)
-  (let ((o1 (length fragment)))
-  (=> (in_range1 o1)
-  (let ((o2 (length fragment)))
-  (=> (in_range1 o2)
+     (us_split_fields1 within))) o1)
   (forall ((spark__branch Bool))
   (=>
-  (= spark__branch (and (ite (<= 1 o2) true false) (ite (<= o1 o) true false)))
+  (= spark__branch (and (ite (<= 1 o) true false) (ite (<= o o1) true false)))
   (=> (= spark__branch true)
-  (let ((o3 (length fragment)))
-  (=> (in_range1 o3)
-  (forall ((o4 Int))
+  (let ((o2 (length fragment)))
+  (=> (in_range1 o2)
+  (forall ((o3 Int))
   (=>
   (= (to_rep1
      (rec__bounded_dynamic_strings__sequence__current_length
-     (us_split_fields1 within))) o4)
+     (us_split_fields1 within))) o3)
   (forall ((k Int))
   (=> (= k 1)
   (=>
-  (= (and (ite (<= 1 k) true false) (ite (<= k (+ (- o4 o3) 1)) true false)) true)
-  (let ((o5 (length fragment)))
-  (=> (in_range1 o5)
-  (let ((temp___1731 (- (+ k o5) 1)))
-  (let ((temp___1732 (rec__bounded_dynamic_strings__sequence__content
+  (= (and (ite (<= 1 k) true false) (ite (<= k (+ (- o3 o2) 1)) true false)) true)
+  (let ((o4 (length fragment)))
+  (=> (in_range1 o4)
+  (let ((temp___1796 (- (+ k o4) 1)))
+  (let ((temp___1797 (rec__bounded_dynamic_strings__sequence__content
                      (us_split_fields1 within))))
   (=>
-  (=> (<= k temp___1731)
-  (and (and (<= (first1 temp___1732) k) (<= k (last1 temp___1732)))
-  (and (<= (first1 temp___1732) temp___1731)
-  (<= temp___1731 (last1 temp___1732)))))
-  (let ((temp___1735 (of_array (to_array temp___1732) k temp___1731)))
+  (=> (<= k temp___1796)
+  (and (and (<= (first1 temp___1797) k) (<= k (last1 temp___1797)))
+  (and (<= (first1 temp___1797) temp___1796)
+  (<= temp___1796 (last1 temp___1797)))))
+  (let ((temp___1800 (of_array (to_array temp___1797) k temp___1796)))
   (forall ((spark__branch1 Bool))
   (=>
-  (= spark__branch1 (bool_eq (to_array temp___1735) (first1 temp___1735)
-                    (last1 temp___1735) (to_array fragment) (first1 fragment)
+  (= spark__branch1 (bool_eq (to_array temp___1800) (first1 temp___1800)
+                    (last1 temp___1800) (to_array fragment) (first1 fragment)
                     (last1 fragment)))
   (=> (not (= spark__branch1 true))
   (forall ((usf Int))
   (=> (= (and (ite (<= 1 usf) true false) (ite (<= usf k) true false)) true)
-  (let ((o6 (length fragment)))
-  (=> (in_range1 o6)
-  (=> (<= usf (- (+ usf o6) 1))
+  (let ((o5 (length fragment)))
+  (=> (in_range1 o5)
+  (=> (<= usf (- (+ usf o5) 1))
   (<= (first1
       (rec__bounded_dynamic_strings__sequence__content
-      (us_split_fields1 within))) usf)))))))))))))))))))))))))))))))))))))
+      (us_split_fields1 within))) usf)))))))))))))))))))))))))))))))))))
 (check-sat)

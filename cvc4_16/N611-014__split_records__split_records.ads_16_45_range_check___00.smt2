@@ -199,72 +199,6 @@
 
 (declare-const dummy1 us_rep)
 
-(declare-datatypes ((record_with_mutable_discrs__ref 0))
-(((record_with_mutable_discrs__refqtmk
-  (record_with_mutable_discrs__content us_rep)))))
-(define-fun record_with_mutable_discrs__ref_record_with_mutable_discrs__content__projection ((a record_with_mutable_discrs__ref)) us_rep 
-  (record_with_mutable_discrs__content a))
-
-(define-fun in_range2 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
-
-(declare-const value__size1 Int)
-
-(declare-const object__size1 Int)
-
-(declare-const alignment1 Int)
-
-;; value__size_axiom
-  (assert (<= 0 value__size1))
-
-;; object__size_axiom
-  (assert (<= 0 object__size1))
-
-;; alignment_axiom
-  (assert (<= 0 alignment1))
-
-(declare-const split_records__record_with_mutable_discrs__present__first__bit1 Int)
-
-(declare-const split_records__record_with_mutable_discrs__present__last__bit1 Int)
-
-(declare-const split_records__record_with_mutable_discrs__present__position1 Int)
-
-;; split_records__record_with_mutable_discrs__present__first__bit_axiom
-  (assert
-  (<= 0 split_records__record_with_mutable_discrs__present__first__bit1))
-
-;; split_records__record_with_mutable_discrs__present__last__bit_axiom
-  (assert
-  (< split_records__record_with_mutable_discrs__present__first__bit1 
-  split_records__record_with_mutable_discrs__present__last__bit1))
-
-;; split_records__record_with_mutable_discrs__present__position_axiom
-  (assert
-  (<= 0 split_records__record_with_mutable_discrs__present__position1))
-
-(declare-const split_records__record_with_mutable_discrs__field__first__bit1 Int)
-
-(declare-const split_records__record_with_mutable_discrs__field__last__bit1 Int)
-
-(declare-const split_records__record_with_mutable_discrs__field__position1 Int)
-
-;; split_records__record_with_mutable_discrs__field__first__bit_axiom
-  (assert
-  (<= 0 split_records__record_with_mutable_discrs__field__first__bit1))
-
-;; split_records__record_with_mutable_discrs__field__last__bit_axiom
-  (assert
-  (< split_records__record_with_mutable_discrs__field__first__bit1 split_records__record_with_mutable_discrs__field__last__bit1))
-
-;; split_records__record_with_mutable_discrs__field__position_axiom
-  (assert (<= 0 split_records__record_with_mutable_discrs__field__position1))
-
-(declare-fun user_eq2 (us_rep us_rep) Bool)
-
-(declare-const dummy2 us_rep)
-
 (declare-datatypes ((t1s__ref 0))
 (((t1s__refqtmk (t1s__content us_rep)))))
 (define-fun t1s__ref_t1s__content__projection ((a t1s__ref)) us_rep (t1s__content
@@ -312,20 +246,24 @@
                             (us_split_fields3 b))) true))
                     true false))
 
-(declare-const value__size2 Int)
+(define-fun in_range2 ((rec__split_records__holder__present1 Bool)
+  (a us_split_discrs2)) Bool (= rec__split_records__holder__present1 
+  (rec__split_records__holder__present a)))
 
-(declare-const object__size2 Int)
+(declare-const value__size1 Int)
 
-(declare-const alignment2 Int)
+(declare-const object__size1 Int)
+
+(declare-const alignment1 Int)
 
 ;; value__size_axiom
-  (assert (<= 0 value__size2))
+  (assert (<= 0 value__size1))
 
 ;; object__size_axiom
-  (assert (<= 0 object__size2))
+  (assert (<= 0 object__size1))
 
 ;; alignment_axiom
-  (assert (<= 0 alignment2))
+  (assert (<= 0 alignment1))
 
 (declare-const split_records__holder__present__first__bit Int)
 
@@ -359,9 +297,9 @@
 ;; split_records__holder__content__position_axiom
   (assert (<= 0 split_records__holder__content__position))
 
-(declare-fun user_eq3 (us_rep1 us_rep1) Bool)
+(declare-fun user_eq2 (us_rep1 us_rep1) Bool)
 
-(declare-const dummy3 us_rep1)
+(declare-const dummy2 us_rep1)
 
 (declare-datatypes ((holder__ref 0))
 (((holder__refqtmk (holder__content us_rep1)))))
@@ -375,6 +313,71 @@
                                     (<= 0 2147483647)) (in_range1
                                     temp___expr_39)))
 
+(define-fun in_range3 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
+  (a us_split_discrs)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
+  (rec__split_records__record_with_mutable_discrs__present a)))
+
+(declare-const value__size2 Int)
+
+(declare-const object__size2 Int)
+
+(declare-const alignment2 Int)
+
+;; value__size_axiom
+  (assert (<= 0 value__size2))
+
+;; object__size_axiom
+  (assert (<= 0 object__size2))
+
+;; alignment_axiom
+  (assert (<= 0 alignment2))
+
+(declare-const split_records__record_with_mutable_discrs__present__first__bit1 Int)
+
+(declare-const split_records__record_with_mutable_discrs__present__last__bit1 Int)
+
+(declare-const split_records__record_with_mutable_discrs__present__position1 Int)
+
+;; split_records__record_with_mutable_discrs__present__first__bit_axiom
+  (assert
+  (<= 0 split_records__record_with_mutable_discrs__present__first__bit1))
+
+;; split_records__record_with_mutable_discrs__present__last__bit_axiom
+  (assert
+  (< split_records__record_with_mutable_discrs__present__first__bit1 
+  split_records__record_with_mutable_discrs__present__last__bit1))
+
+;; split_records__record_with_mutable_discrs__present__position_axiom
+  (assert
+  (<= 0 split_records__record_with_mutable_discrs__present__position1))
+
+(declare-const split_records__record_with_mutable_discrs__field__first__bit1 Int)
+
+(declare-const split_records__record_with_mutable_discrs__field__last__bit1 Int)
+
+(declare-const split_records__record_with_mutable_discrs__field__position1 Int)
+
+;; split_records__record_with_mutable_discrs__field__first__bit_axiom
+  (assert
+  (<= 0 split_records__record_with_mutable_discrs__field__first__bit1))
+
+;; split_records__record_with_mutable_discrs__field__last__bit_axiom
+  (assert
+  (< split_records__record_with_mutable_discrs__field__first__bit1 split_records__record_with_mutable_discrs__field__last__bit1))
+
+;; split_records__record_with_mutable_discrs__field__position_axiom
+  (assert (<= 0 split_records__record_with_mutable_discrs__field__position1))
+
+(declare-fun user_eq3 (us_rep us_rep) Bool)
+
+(declare-const dummy3 us_rep)
+
+(declare-datatypes ((record_with_mutable_discrs__ref 0))
+(((record_with_mutable_discrs__refqtmk
+  (record_with_mutable_discrs__content us_rep)))))
+(define-fun record_with_mutable_discrs__ref_record_with_mutable_discrs__content__projection ((a record_with_mutable_discrs__ref)) us_rep 
+  (record_with_mutable_discrs__content a))
+
 (define-fun default_initial_assumption ((temp___expr_164 us_rep)
   (temp___skip_top_level_165 Bool)) Bool (= (rec__split_records__record_with_mutable_discrs__present
                                             (us_split_discrs1
@@ -382,9 +385,10 @@
 
 (define-fun dynamic_invariant1 ((temp___expr_183 us_rep1)
   (temp___is_init_179 Bool) (temp___skip_constant_180 Bool)
-  (temp___do_toplevel_181 Bool) (temp___do_typ_inv_182 Bool)) Bool (in_range2
+  (temp___do_toplevel_181 Bool) (temp___do_typ_inv_182 Bool)) Bool (in_range3
   (rec__split_records__holder__present (us_split_discrs3 temp___expr_183))
-  (rec__split_records__holder__content (us_split_fields3 temp___expr_183))))
+  (us_split_discrs1
+  (rec__split_records__holder__content (us_split_fields3 temp___expr_183)))))
 
 (assert
 ;; defqtvc

@@ -148,6 +148,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range2 ((rec__private_discr__p_with_default__c1 Int)
+  (a us_split_discrs)) Bool (= rec__private_discr__p_with_default__c1 
+  (to_rep (rec__private_discr__p_with_default__c a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -214,11 +218,11 @@
   (=> (= (to_rep d__split_discrs) discr__p4__nested1__R26b__assume)
   (=> (= discr__p4__nested1__R26b__assume r26b)
   (=> (dynamic_invariant r26b true false true true)
-  (let ((temp___409 (new_with_default 0)))
+  (let ((temp___417 (new_with_default 0)))
   (=>
-  (and (new_with_default__function_guard temp___409 0)
+  (and (new_with_default__function_guard temp___417 0)
   (= (to_rep
-     (rec__private_discr__p_with_default__c (us_split_discrs1 temp___409))) 0))
+     (rec__private_discr__p_with_default__c (us_split_discrs1 temp___417))) 0))
   (=> (= d__attr__constrained true)
-  (= (rec__private_discr__p_with_default__c (us_split_discrs1 temp___409)) d__split_discrs))))))))))
+  (= (rec__private_discr__p_with_default__c (us_split_discrs1 temp___417)) d__split_discrs))))))))))
 (check-sat)

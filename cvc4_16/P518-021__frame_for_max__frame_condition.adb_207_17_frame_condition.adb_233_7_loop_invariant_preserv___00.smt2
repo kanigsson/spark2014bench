@@ -659,18 +659,18 @@
       (rec__frame_condition__cell__value (us_split_fields1 (select a2 i1)))) 
   (to_rep
   (rec__frame_condition__cell__max_left (us_split_fields1 (select a2 j)))))))))
+  (=> (dynamic_invariant max2 true true true true)
   (=>
-  (forall ((temp___294 Int))
+  (forall ((temp___295 Int))
   (=>
-  (and (<= (to_rep1 a__first) temp___294) (<= temp___294 (to_rep1 a__last)))
+  (and (<= (to_rep1 a__first) temp___295) (<= temp___295 (to_rep1 a__last)))
   (= (rec__frame_condition__cell__value
-     (us_split_fields1 (select a2 temp___294))) (rec__frame_condition__cell__value
+     (us_split_fields1 (select a2 temp___295))) (rec__frame_condition__cell__value
                                                 (us_split_fields1
-                                                (select a temp___294))))))
+                                                (select a temp___295))))))
   (=> (dynamic_invariant1 c167b1 true true true true)
   (=> (dynamic_invariant1 k1 true true true true)
   (=> (dynamic_invariant c168b1 true true true true)
-  (=> (dynamic_invariant max2 true true true true)
   (=> (not (= k1 last2))
   (=> (dynamic_invariant2 c198b true false true true)
   (=> (= spark__branch3 (ite true true false))

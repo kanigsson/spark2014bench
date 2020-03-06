@@ -91,6 +91,9 @@
                            (rec__p__r (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__p__r__discr1 Bool)
+  (a us_split_discrs)) Bool (= rec__p__r__discr1 (rec__p__r__discr a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -132,10 +135,6 @@
 (declare-const a us_rep)
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
-
-(define-fun in_range1 ((rec__p__r__discr1 Bool)
-  (a1 us_rep)) Bool (= rec__p__r__discr1 (rec__p__r__discr
-                                         (us_split_discrs1 a1))))
 
 (declare-const value__size1 Int)
 
@@ -182,7 +181,7 @@
   (temp___do_typ_inv_163 Bool)) Bool (=>
                                      (not (= temp___skip_constant_161 true))
                                      (in_range1 (distinct 0 0)
-                                     temp___expr_164)))
+                                     (us_split_discrs1 temp___expr_164))))
 
 (define-fun default_initial_assumption ((temp___expr_166 us_rep)
   (temp___skip_top_level_167 Bool)) Bool (= (rec__p__r__discr
@@ -192,5 +191,5 @@
 (assert
 ;; defqtvc
  ;; File "q.adb", line 5, characters 0-0
-  (not (in_range1 (distinct 0 0) a)))
+  (not (in_range1 (distinct 0 0) (us_split_discrs1 a))))
 (check-sat)

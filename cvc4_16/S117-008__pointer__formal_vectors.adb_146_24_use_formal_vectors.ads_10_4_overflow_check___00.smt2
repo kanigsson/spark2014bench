@@ -1502,11 +1502,11 @@
   (forall ((x__pointer_value2 us_rep)) (model__function_guard
   (model1 x__pointer_value2) x__pointer_value2))
   (=>
-  (let ((temp___538 i))
-  (let ((temp___539 r121s))
+  (let ((temp___531 i))
+  (let ((temp___532 r121s))
   (exists ((j Int))
-  (and (= j temp___538)
-  (ite (= (and (ite (<= temp___538 j) true false) (ite (<= j temp___539) true
+  (and (= j temp___531)
+  (ite (= (and (ite (<= temp___531 j) true false) (ite (<= j temp___532) true
                                                   false)) true)
   (exists ((v__split_fields3 us_split_fields) (x__pointer_value2 us_rep)
   (x__pointer_address2 Int) (x__is_null_pointer2 Bool) (j1 Int))
@@ -1585,10 +1585,8 @@
   (and
   (= (and (ite (and
                (and
-               (and (dynamic_invariant7
-               (us_repqtmk1 x__is_null_pointer2 x__pointer_address2
-               x__pointer_value2) true true true true) (dynamic_invariant4
-               (us_repqtmk3 v__split_fields3) true true true true))
+               (and (dynamic_invariant4 (us_repqtmk3 v__split_fields3) true
+               true true true)
                (and
                (= (rec__use_formal_vectors__my_vect__vector__top
                   v__split_fields3) (rec__use_formal_vectors__my_vect__vector__top
@@ -1625,33 +1623,36 @@
                                       (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                                       (rec__use_formal_vectors__my_vect__vector__content
                                       v__split_fields1)))))
-               (forall ((temp___548 Int))
+               (forall ((temp___540 Int))
                (=>
                (and
                (<= (first1
                    (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                    (rec__use_formal_vectors__my_vect__vector__content
-                   v__split_fields3))) temp___548)
-               (<= temp___548 (last1
+                   v__split_fields3))) temp___540)
+               (<= temp___540 (last1
                               (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                               (rec__use_formal_vectors__my_vect__vector__content
                               v__split_fields3)))))
                (=>
-               (or (< temp___539 temp___548)
-               (or (< temp___548 temp___538) (<= j1 temp___548)))
+               (or (< temp___532 temp___540)
+               (or (< temp___540 temp___531) (<= j1 temp___540)))
                (= (select (to_array
                           (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                           (rec__use_formal_vectors__my_vect__vector__content
-                          v__split_fields3))) temp___548) (select (to_array
+                          v__split_fields3))) temp___540) (select (to_array
                                                                   (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                                                                   (rec__use_formal_vectors__my_vect__vector__content
-                                                                  v__split_fields1))) temp___548))))))))))
-               (dynamic_property1 i r121s j1))
+                                                                  v__split_fields1))) temp___540))))))))))
+               (dynamic_invariant7
+               (us_repqtmk1 x__is_null_pointer2 x__pointer_address2
+               x__pointer_value2) true true true true)) (dynamic_property1 
+               i r121s j1))
           true false) (ite (and (<= i j1) (<= j1 r121s)) true false)) true)
-  (let ((temp___540 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
+  (let ((temp___533 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                     (rec__use_formal_vectors__my_vect__vector__content
                     v__split_fields3))))
-  (and (and (<= (first1 temp___540) j1) (<= j1 (last1 temp___540)))
+  (and (and (<= (first1 temp___533) j1) (<= j1 (last1 temp___533)))
   (exists ((use_formal_vectors__my_vect__swap__from__is_null Bool)
   (use_formal_vectors__my_vect__swap__from__addr Int)
   (use_formal_vectors__my_vect__swap__from__value us_rep))
@@ -1671,7 +1672,7 @@
      us_null_pointer1) true)))
   (= (model1 x__pointer_value1) (model1
                                 (rec__use_formal_vectors__my_vect__element_access__pointer_value
-                                (select (to_array temp___540) j1)))))
+                                (select (to_array temp___533) j1)))))
   (= (model1 use_formal_vectors__my_vect__swap__from__value) (model1
                                                              x__pointer_value2)))
   (and (dynamic_invariant7
@@ -1681,21 +1682,21 @@
   (dynamic_invariant7
   (us_repqtmk1 x__is_null_pointer1 x__pointer_address1 x__pointer_value1)
   true true true true)))
-  (let ((temp___542 (rec__use_formal_vectors__my_vect__vector__content
+  (let ((temp___535 (rec__use_formal_vectors__my_vect__vector__content
                     v__split_fields3)))
-  (let ((temp___541 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
+  (let ((temp___534 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                     (rec__use_formal_vectors__my_vect__vector__content
                     v__split_fields3))))
-  (and (and (<= (first1 temp___541) j1) (<= j1 (last1 temp___541)))
+  (and (and (<= (first1 temp___534) j1) (<= j1 (last1 temp___534)))
   (and (dynamic_predicate
   (us_repqtmk3
   (us_split_fieldsqtmk
   (rec__use_formal_vectors__my_vect__vector__top v__split_fields3)
   (us_repqtmk2
   (rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer
-  temp___542)
+  temp___535)
   (rec__use_formal_vectors__my_vect__element_array_access__pointer_address
-  temp___542)
+  temp___535)
   (us_tqtmk
   (store (to_array
          (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
@@ -1712,9 +1713,9 @@
                       v__split_fields3)
                       (us_repqtmk2
                       (rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer
-                      temp___542)
+                      temp___535)
                       (rec__use_formal_vectors__my_vect__element_array_access__pointer_address
-                      temp___542)
+                      temp___535)
                       (us_tqtmk
                       (store (to_array
                              (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
@@ -1727,7 +1728,7 @@
                       (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                       (rec__use_formal_vectors__my_vect__vector__content
                       v__split_fields3)))))))
-  (= j1 temp___539)))))))))))))
+  (= j1 temp___532)))))))))))))
   (and
   (and
   (and (= v__split_fields2 v__split_fields1)

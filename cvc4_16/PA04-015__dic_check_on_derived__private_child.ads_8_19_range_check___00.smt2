@@ -128,6 +128,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range1 ((rec__private_child__root__c1 Int)
+  (a us_split_discrs)) Bool (= rec__private_child__root__c1 (to_rep
+                                                            (rec__private_child__root__c
+                                                            a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -242,11 +247,6 @@
 
 (declare-const us_tag1 Int)
 
-(define-fun in_range1 ((rec__private_child__root__c1 Int)
-  (a us_rep)) Bool (= rec__private_child__root__c1 (to_rep
-                                                   (rec__private_child__root__c
-                                                   (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -348,7 +348,8 @@
   (temp___do_typ_inv_186 Bool)) Bool (=>
                                      (not (= temp___skip_constant_184 true))
                                      (in_range1 10
-                                     (to_base temp___expr_187))))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_187)))))
 
 ;; temp___result_193'def
   (assert

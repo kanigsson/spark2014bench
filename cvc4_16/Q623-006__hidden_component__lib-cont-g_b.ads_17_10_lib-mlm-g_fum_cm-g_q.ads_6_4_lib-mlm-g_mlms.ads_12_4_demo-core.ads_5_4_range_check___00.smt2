@@ -67,13 +67,13 @@
 (define-fun t_c__ref_t_c__content__projection ((a t_c__ref)) t_c (t_c__content
                                                                  a))
 
-(define-fun dynamic_invariant ((temp___expr_246 Int)
-  (temp___is_init_242 Bool) (temp___skip_constant_243 Bool)
-  (temp___do_toplevel_244 Bool)
-  (temp___do_typ_inv_245 Bool)) Bool (=>
-                                     (or (= temp___is_init_242 true)
+(define-fun dynamic_invariant ((temp___expr_232 Int)
+  (temp___is_init_228 Bool) (temp___skip_constant_229 Bool)
+  (temp___do_toplevel_230 Bool)
+  (temp___do_typ_inv_231 Bool)) Bool (=>
+                                     (or (= temp___is_init_228 true)
                                      (<= 1 2147483647)) (in_range
-                                     temp___expr_246)))
+                                     temp___expr_232)))
 
 (define-fun to_rep ((x t_c)) Int (t_cqtint x))
 
@@ -119,7 +119,7 @@
 (define-fun index__ref_index__content__projection ((a index__ref)) index 
   (index__content a))
 
-(declare-sort t_id 0)
+(declare-sort t_command_id 0)
 
 (define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 1)))
 
@@ -129,26 +129,28 @@
 
 (declare-fun attr__ATTRIBUTE_VALUE2 (us_image) Int)
 
-(declare-fun user_eq2 (t_id t_id) Bool)
+(declare-fun user_eq2 (t_command_id t_command_id) Bool)
 
-(declare-const dummy2 t_id)
+(declare-const dummy2 t_command_id)
 
-(declare-datatypes ((t_id__ref 0))
-(((t_id__refqtmk (t_id__content t_id)))))
-(define-fun t_id__ref_t_id__content__2__projection ((a t_id__ref)) t_id 
-  (t_id__content a))
+(declare-datatypes ((t_command_id__ref 0))
+(((t_command_id__refqtmk (t_command_id__content t_command_id)))))
+(define-fun t_command_id__ref_t_command_id__content__2__projection ((a t_command_id__ref)) t_command_id 
+  (t_command_id__content a))
 
-(declare-fun to_rep1 (t_id) Int)
+(declare-fun to_rep1 (t_command_id) Int)
 
-(declare-fun of_rep1 (Int) t_id)
+(declare-fun of_rep1 (Int) t_command_id)
 
 ;; inversion_axiom
   (assert
-  (forall ((x t_id)) (! (= (of_rep1 (to_rep1 x)) x) :pattern ((to_rep1 x)) )))
+  (forall ((x t_command_id))
+  (! (= (of_rep1 (to_rep1 x)) x) :pattern ((to_rep1 x)) )))
 
 ;; range_axiom
   (assert
-  (forall ((x t_id)) (! (in_range2 (to_rep1 x)) :pattern ((to_rep1 x)) )))
+  (forall ((x t_command_id)) (! (in_range2
+  (to_rep1 x)) :pattern ((to_rep1 x)) )))
 
 ;; coerce_axiom
   (assert
@@ -158,8 +160,8 @@
 
 (declare-datatypes ((us_split_fields 0))
 (((us_split_fieldsqtmk
-  (rec__ada___demo__core__p_mlms__cm__internal__t_m__id t_id)))))
-(define-fun us_split_fields_rec__ada___demo__core__p_mlms__cm__internal__t_m__id__projection ((a us_split_fields)) t_id 
+  (rec__ada___demo__core__p_mlms__cm__internal__t_m__id t_command_id)))))
+(define-fun us_split_fields_rec__ada___demo__core__p_mlms__cm__internal__t_m__id__projection ((a us_split_fields)) t_command_id 
   (rec__ada___demo__core__p_mlms__cm__internal__t_m__id a))
 
 (declare-datatypes ((us_split_fields__ref 0))
@@ -448,6 +450,10 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range4 ((rec__ada___demo__core__p_mlms__all_f__q__t__c1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___demo__core__p_mlms__all_f__q__t__c1 
+  (to_rep (rec__ada___demo__core__p_mlms__all_f__q__t__c a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -503,36 +509,36 @@
 (((t__refqtmk (t__content us_rep1)))))
 (define-fun t__ref_t__content__projection ((a t__ref)) us_rep1 (t__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_253 Int)
-  (temp___is_init_249 Bool) (temp___skip_constant_250 Bool)
-  (temp___do_toplevel_251 Bool)
-  (temp___do_typ_inv_252 Bool)) Bool (=>
-                                     (or (= temp___is_init_249 true)
+(define-fun dynamic_invariant1 ((temp___expr_239 Int)
+  (temp___is_init_235 Bool) (temp___skip_constant_236 Bool)
+  (temp___do_toplevel_237 Bool)
+  (temp___do_typ_inv_238 Bool)) Bool (=>
+                                     (or (= temp___is_init_235 true)
                                      (<= 1 2147483647)) (in_range1
-                                     temp___expr_253)))
+                                     temp___expr_239)))
 
-(define-fun dynamic_invariant2 ((temp___expr_266 us_rep1)
-  (temp___is_init_262 Bool) (temp___skip_constant_263 Bool)
-  (temp___do_toplevel_264 Bool)
-  (temp___do_typ_inv_265 Bool)) Bool (let ((temp___267 (rec__ada___demo__core__p_mlms__all_f__q__t__c
+(define-fun dynamic_invariant2 ((temp___expr_252 us_rep1)
+  (temp___is_init_248 Bool) (temp___skip_constant_249 Bool)
+  (temp___do_toplevel_250 Bool)
+  (temp___do_typ_inv_251 Bool)) Bool (let ((temp___253 (rec__ada___demo__core__p_mlms__all_f__q__t__c
                                                        (us_split_discrs1
-                                                       temp___expr_266))))
+                                                       temp___expr_252))))
                                      (and (dynamic_property 1
-                                     (to_rep temp___267)
+                                     (to_rep temp___253)
                                      (first1
                                      (rec__ada___demo__core__p_mlms__all_f__q__t__e
-                                     (us_split_fields3 temp___expr_266)))
+                                     (us_split_fields3 temp___expr_252)))
                                      (last1
                                      (rec__ada___demo__core__p_mlms__all_f__q__t__e
-                                     (us_split_fields3 temp___expr_266))))
+                                     (us_split_fields3 temp___expr_252))))
                                      (and
                                      (= (first1
                                         (rec__ada___demo__core__p_mlms__all_f__q__t__e
-                                        (us_split_fields3 temp___expr_266))) 1)
+                                        (us_split_fields3 temp___expr_252))) 1)
                                      (= (last1
                                         (rec__ada___demo__core__p_mlms__all_f__q__t__e
-                                        (us_split_fields3 temp___expr_266))) 
-                                     (to_rep temp___267))))))
+                                        (us_split_fields3 temp___expr_252))) 
+                                     (to_rep temp___253))))))
 
 (assert
 ;; defqtvc

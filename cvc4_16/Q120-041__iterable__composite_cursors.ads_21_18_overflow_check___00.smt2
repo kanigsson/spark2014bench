@@ -309,17 +309,17 @@
   (forall ((c1 us_rep))
   (forall ((p1 (Array Int natural)))
   (! (= (= (has_element c1 p1) true)
-     (and (<= 1 (to_rep (select p1 1)))
-     (<= (to_rep (select p1 1)) (to_rep
-                                (rec__composite_cursors__cont1__length
-                                (us_split_fields1 c1)))))) :pattern (
-  (has_element c1 p1)) ))))
+     (let ((temp___209 (to_rep (select p1 1))))
+     (and (<= 1 temp___209)
+     (<= temp___209 (to_rep
+                    (rec__composite_cursors__cont1__length
+                    (us_split_fields1 c1))))))) :pattern ((has_element c1 p1)) ))))
 
 (declare-const i17s us_rep)
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
 
-(declare-fun temp_____aggregate_def_210 (Int) (Array Int natural))
+(declare-fun temp_____aggregate_def_212 (Int) (Array Int natural))
 
 (define-fun dynamic_invariant1 ((temp___expr_39 Int) (temp___is_init_35 Bool)
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
@@ -337,9 +337,9 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___212 Int))
-  (=> (dynamic_invariant1 temp___212 true true true true)
-  (= (to_rep (select (temp_____aggregate_def_210 temp___212) 1)) temp___212))))
+  (forall ((temp___214 Int))
+  (=> (dynamic_invariant1 temp___214 true true true true)
+  (= (to_rep (select (temp_____aggregate_def_212 temp___214) 1)) temp___214))))
 
 (assert
 ;; defqtvc

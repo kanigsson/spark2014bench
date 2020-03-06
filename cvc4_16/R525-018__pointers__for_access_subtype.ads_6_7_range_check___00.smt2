@@ -336,14 +336,17 @@
 
 (declare-const dummy3 us_rep)
 
-(declare-datatypes ((l__ref 0))
-(((l__refqtmk (l__content us_rep)))))
-(define-fun l__ref_l__content__projection ((a l__ref)) us_rep (l__content a))
+(declare-datatypes ((t5s__ref 0))
+(((t5s__refqtmk (t5s__content us_rep)))))
+(define-fun t5s__ref_t5s__content__projection ((a t5s__ref)) us_rep (t5s__content
+                                                                    a))
+
+(declare-const attr__ATTRIBUTE_ADDRESS Int)
 
 (define-fun in_range2 ((rec__for_access_subtype__l__n1 Int)
-  (a us_rep)) Bool (= rec__for_access_subtype__l__n1 (to_rep
-                                                     (rec__for_access_subtype__l__n
-                                                     (us_split_discrs1 a)))))
+  (a us_split_discrs)) Bool (= rec__for_access_subtype__l__n1 (to_rep
+                                                              (rec__for_access_subtype__l__n
+                                                              a))))
 
 (declare-const value__size2 Int)
 
@@ -396,12 +399,9 @@
 
 (declare-const dummy4 us_rep)
 
-(declare-datatypes ((t5s__ref 0))
-(((t5s__refqtmk (t5s__content us_rep)))))
-(define-fun t5s__ref_t5s__content__projection ((a t5s__ref)) us_rep (t5s__content
-                                                                    a))
-
-(declare-const attr__ATTRIBUTE_ADDRESS Int)
+(declare-datatypes ((l__ref 0))
+(((l__refqtmk (l__content us_rep)))))
+(define-fun l__ref_l__content__projection ((a l__ref)) us_rep (l__content a))
 
 (define-fun in_range3 ((x Int)) Bool (or (= x 0) (= x 1)))
 
@@ -526,7 +526,8 @@
                     (not
                     (= (rec__for_access_subtype__l_ptr__is_null_pointer r) true))
                     (in_range2 rec__for_access_subtype__l__n1
-                    (rec__for_access_subtype__l_ptr__pointer_value r))))
+                    (us_split_discrs1
+                    (rec__for_access_subtype__l_ptr__pointer_value r)))))
 
 (declare-const dummy6 us_rep2)
 
@@ -543,8 +544,9 @@
                                      (= (rec__for_access_subtype__l_ptr__is_null_pointer1
                                         temp___expr_181) true))
                                      (and (in_range2 14
+                                     (us_split_discrs1
                                      (rec__for_access_subtype__l_ptr__pointer_value1
-                                     temp___expr_181))
+                                     temp___expr_181)))
                                      (let ((temp___182 (rec__for_access_subtype__l__n
                                                        (us_split_discrs1
                                                        (rec__for_access_subtype__l_ptr__pointer_value1

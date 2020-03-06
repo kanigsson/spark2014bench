@@ -76,10 +76,10 @@
                                     (<= (- 2147483648) 2147483647)) (in_range
                                     temp___expr_18)))
 
-(declare-fun sum_all (us_private us_private us_private Int) Int)
+(declare-fun sum_all (Int us_private us_private us_private) Int)
 
-(declare-fun sum_all__function_guard (Int us_private us_private us_private
-  Int) Bool)
+(declare-fun sum_all__function_guard (Int Int us_private us_private
+  us_private) Bool)
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
 
@@ -106,16 +106,16 @@
 
 ;; sum_all__post_axiom
   (assert
-  (forall ((init__b us_private) (init__c us_private) (init__d us_private))
   (forall ((init__a Int))
+  (forall ((init__b us_private) (init__c us_private) (init__d us_private))
   (! (=> (dynamic_invariant init__a true true true true)
-     (let ((result (sum_all init__b init__c init__d init__a)))
-     (=> (sum_all__function_guard result init__b init__c init__d init__a)
+     (let ((result (sum_all init__a init__b init__c init__d)))
+     (=> (sum_all__function_guard result init__a init__b init__c init__d)
      (dynamic_invariant result true false true true)))) :pattern ((sum_all
+                                                                  init__a
                                                                   init__b
                                                                   init__c
-                                                                  init__d
-                                                                  init__a)) ))))
+                                                                  init__d)) ))))
 
 (assert
 ;; defqtvc
@@ -126,8 +126,8 @@
   (=> (dynamic_invariant a true false true true)
   (=>
   (forall ((a1 Int) (b1 us_private) (c1 us_private) (d1 us_private))
-  (sum_all__function_guard (sum_all b1 c1 d1 a1) b1 c1 d1 a1))
-  (=> (= (sum_all b c d a) 0)
+  (sum_all__function_guard (sum_all a1 b1 c1 d1) a1 b1 c1 d1))
+  (=> (= (sum_all a b c d) 0)
   (=> (= x a)
   (=> (dynamic_invariant x true false true true)
   (let ((o (sum_state b c d)))

@@ -274,11 +274,11 @@
   (forall ((c us_rep))
   (forall ((p (Array Int natural)))
   (! (= (= (has_element c p) true)
-     (and (<= 1 (to_rep (select p 1)))
-     (<= (to_rep (select p 1)) (to_rep
-                               (rec__composite_cursors__cont1__length
-                               (us_split_fields1 c)))))) :pattern ((has_element
-                                                                   c p)) ))))
+     (let ((temp___209 (to_rep (select p 1))))
+     (and (<= 1 temp___209)
+     (<= temp___209 (to_rep
+                    (rec__composite_cursors__cont1__length
+                    (us_split_fields1 c))))))) :pattern ((has_element c p)) ))))
 
 (declare-const c us_rep)
 
@@ -327,11 +327,11 @@
 ;; defqtvc
  ;; File "composite_cursors.ads", line 27, characters 0-0
   (not
-  (forall ((temp___281 Int))
+  (forall ((temp___286 Int))
   (=> (dynamic_invariant i17s true false true true)
   (=> (dynamic_invariant i17s true false true true)
   (=> (dynamic_invariant c true false true true)
   (=> (has_element__function_guard (has_element c p) c p)
   (=> (= (has_element c p) true)
-  (=> (= (to_rep (select p 1)) temp___281) (<= 1 temp___281))))))))))
+  (=> (= (to_rep (select p 1)) temp___286) (<= 1 temp___286))))))))))
 (check-sat)

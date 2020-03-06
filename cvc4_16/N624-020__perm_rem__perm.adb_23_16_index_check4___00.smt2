@@ -461,11 +461,11 @@
   (and
   (= (to_rep (select (to_array a) ia)) (to_rep (select (to_array b) ib)))
   (= (is_perm (remove a ia) (remove b ib)) true))))
-  (let ((temp___945 (first1 b)))
+  (let ((temp___949 (first1 b)))
   (forall ((ib Int))
-  (=> (= ib temp___945)
+  (=> (= ib temp___949)
   (=>
-  (= (and (ite (<= temp___945 ib) true false) (ite (<= ib (last1 b)) true
+  (= (and (ite (<= temp___949 ib) true false) (ite (<= ib (last1 b)) true
                                               false)) true)
   (forall ((o Int))
   (=> (= (to_rep (select (to_array b) ib)) o) (<= (first1 a) ia))))))))))))))))))))))))

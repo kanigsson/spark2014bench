@@ -874,7 +874,7 @@
 ;; defqtvc
  ;; File "lp.ads", line 9, characters 0-0
   (not
-  (forall ((previous Int) (temp___273 Int))
+  (forall ((previous Int) (temp___275 Int))
   (=> (dynamic_invariant i true false true true)
   (=>
   (= (of_array
@@ -884,9 +884,9 @@
   (=> (dynamic_invariant1 powers true false true true)
   (=> (= previous 64)
   (=> (dynamic_invariant previous true false true true)
-  (=> (<= (first1 powers) temp___273)
-  (=> (<= temp___273 (last1 powers))
-  (let ((k (to_rep (select (to_array powers) temp___273))))
+  (=> (<= (first1 powers) temp___275)
+  (=> (<= temp___275 (last1 powers))
+  (let ((k (to_rep (select (to_array powers) temp___275))))
   (bvule #x0000000000000000 (ite (< k 18446744073709551616)
                             (bvshl #x0000000000000001 ((_ int2bv 64) k))
                             #x0000000000000000)))))))))))))

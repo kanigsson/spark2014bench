@@ -147,6 +147,10 @@
                                                   (us_split_discrs1 b))))
                    true false))
 
+(define-fun in_range2 ((rec__discr__r6__with_bad_default1__d1 Int)
+  (a us_split_discrs)) Bool (= rec__discr__r6__with_bad_default1__d1 
+  (to_rep (rec__discr__r6__with_bad_default1__d a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -237,6 +241,10 @@
                                                    (rec__discr__r6__with_bad_default2__d
                                                    (us_split_discrs3 b))))
                     true false))
+
+(define-fun in_range3 ((rec__discr__r6__with_bad_default2__d1 Int)
+  (a us_split_discrs2)) Bool (= rec__discr__r6__with_bad_default2__d1 
+  (to_rep (rec__discr__r6__with_bad_default2__d a))))
 
 (declare-const value__size1 Int)
 

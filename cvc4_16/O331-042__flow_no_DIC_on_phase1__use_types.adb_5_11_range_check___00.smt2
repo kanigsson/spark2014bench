@@ -189,16 +189,16 @@
 
 (declare-const dummy1 us_rep)
 
-(declare-datatypes ((t__ref 0))
-(((t__refqtmk (t__content us_rep)))))
-(define-fun t__ref_t__content__projection ((a t__ref)) us_rep (t__content a))
+(declare-datatypes ((txS__ref 0))
+(((txS__refqtmk (txS__content us_rep)))))
+(define-fun txS__ref_txS__content__projection ((a txS__ref)) us_rep (txS__content
+                                                                    a))
 
 (declare-const us_tag1 Int)
 
 (define-fun in_range1 ((rec__types__t__d1 Int)
-  (a us_rep)) Bool (= rec__types__t__d1 (to_rep
-                                        (rec__types__t__d
-                                        (us_split_discrs1 a)))))
+  (a us_split_discrs)) Bool (= rec__types__t__d1 (to_rep
+                                                 (rec__types__t__d a))))
 
 (declare-const value__size1 Int)
 
@@ -249,10 +249,9 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((txS__ref 0))
-(((txS__refqtmk (txS__content us_rep)))))
-(define-fun txS__ref_txS__content__projection ((a txS__ref)) us_rep (txS__content
-                                                                    a))
+(declare-datatypes ((t__ref 0))
+(((t__refqtmk (t__content us_rep)))))
+(define-fun t__ref_t__content__projection ((a t__ref)) us_rep (t__content a))
 
 (declare-const x__split_discrs us_split_discrs)
 

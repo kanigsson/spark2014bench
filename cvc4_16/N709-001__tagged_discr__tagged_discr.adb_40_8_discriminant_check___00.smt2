@@ -305,6 +305,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range3 ((rec__tagged_discr__t__discr1 Int)
+  (a us_split_discrs)) Bool (= rec__tagged_discr__t__discr1 (to_rep2
+                                                            (rec__tagged_discr__t__discr
+                                                            a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -718,11 +723,6 @@
 
 (declare-const us_tag2 Int)
 
-(define-fun in_range3 ((rec__tagged_discr__t__discr1 Int)
-  (a us_rep)) Bool (= rec__tagged_discr__t__discr1 (to_rep2
-                                                   (rec__tagged_discr__t__discr
-                                                   (us_split_discrs1 a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -857,11 +857,6 @@
   (s9b__content a))
 
 (declare-const us_tag3 Int)
-
-(define-fun in_range4 ((rec__tagged_discr__t__discr1 Int)
-  (a us_rep)) Bool (= rec__tagged_discr__t__discr1 (to_rep2
-                                                   (rec__tagged_discr__t__discr
-                                                   (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 
@@ -1052,11 +1047,6 @@
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
 (declare-const us_tag4 Int)
-
-(define-fun in_range5 ((rec__tagged_discr__t__discr1 Int)
-  (a us_rep)) Bool (= rec__tagged_discr__t__discr1 (to_rep2
-                                                   (rec__tagged_discr__t__discr
-                                                   (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 
@@ -1408,11 +1398,6 @@
 
 (declare-const us_tag6 Int)
 
-(define-fun in_range6 ((rec__tagged_discr__t__discr1 Int)
-  (a us_rep)) Bool (= rec__tagged_discr__t__discr1 (to_rep2
-                                                   (rec__tagged_discr__t__discr
-                                                   (us_split_discrs1 a)))))
-
 (declare-const value__size6 Int)
 
 (declare-const object__size6 Int)
@@ -1499,11 +1484,6 @@
                                                                     a))
 
 (declare-const us_tag7 Int)
-
-(define-fun in_range7 ((rec__tagged_discr__t__discr1 Int)
-  (a us_rep)) Bool (= rec__tagged_discr__t__discr1 (to_rep2
-                                                   (rec__tagged_discr__t__discr
-                                                   (us_split_discrs1 a)))))
 
 (declare-const value__size7 Int)
 
@@ -1592,11 +1572,6 @@
 
 (declare-const us_tag8 Int)
 
-(define-fun in_range8 ((rec__tagged_discr__t__discr1 Int)
-  (a us_rep)) Bool (= rec__tagged_discr__t__discr1 (to_rep2
-                                                   (rec__tagged_discr__t__discr
-                                                   (us_split_discrs1 a)))))
-
 (declare-const value__size8 Int)
 
 (declare-const object__size8 Int)
@@ -1683,11 +1658,6 @@
                                                                     a))
 
 (declare-const us_tag9 Int)
-
-(define-fun in_range9 ((rec__tagged_discr__t__discr1 Int)
-  (a us_rep)) Bool (= rec__tagged_discr__t__discr1 (to_rep2
-                                                   (rec__tagged_discr__t__discr
-                                                   (us_split_discrs1 a)))))
 
 (declare-const value__size9 Int)
 
@@ -1791,11 +1761,6 @@
   (s4b__content a))
 
 (declare-const us_tag10 Int)
-
-(define-fun in_range10 ((rec__tagged_discr__t__discr1 Int)
-  (a us_rep)) Bool (= rec__tagged_discr__t__discr1 (to_rep2
-                                                   (rec__tagged_discr__t__discr
-                                                   (us_split_discrs1 a)))))
 
 (declare-const value__size10 Int)
 
@@ -2089,7 +2054,7 @@
   (= (us_repqtmk (us_split_discrsqtmk o)
      (us_split_fieldsqtmk (distinct 0 0) rliteral dummy1 us_null_ext__)
      us_tag4) r12b)
-  (=> (in_range5 0 r12b)
+  (=> (in_range3 0 (us_split_discrs1 r12b))
   (=> (= (to_rep o1) (fp #b0 #b00000000 #b00000000000000000000000))
   (= (rec__tagged_discr__t__discr (us_split_discrs1 r12b)) (rec__tagged_discr__t__discr
                                                            v__split_discrs)))))))))))))

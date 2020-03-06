@@ -167,10 +167,10 @@
 
 (declare-const dummy1 us_rep)
 
-(declare-datatypes ((pr_record_t__ref 0))
-(((pr_record_t__refqtmk (pr_record_t__content us_rep)))))
-(define-fun pr_record_t__ref_pr_record_t__content__projection ((a pr_record_t__ref)) us_rep 
-  (pr_record_t__content a))
+(declare-datatypes ((pr_record_ttt__ref 0))
+(((pr_record_ttt__refqtmk (pr_record_ttt__content us_rep)))))
+(define-fun pr_record_ttt__ref_pr_record_ttt__content__projection ((a pr_record_ttt__ref)) us_rep 
+  (pr_record_ttt__content a))
 
 (declare-fun add3 (us_rep) Int)
 
@@ -183,20 +183,76 @@
                                     (<= (- 2147483648) 2147483647)) (in_range
                                     temp___expr_18)))
 
+(declare-const value__size1 Int)
+
+(declare-const object__size1 Int)
+
+(declare-const alignment1 Int)
+
+;; value__size_axiom
+  (assert (<= 0 value__size1))
+
+;; object__size_axiom
+  (assert (<= 0 object__size1))
+
+;; alignment_axiom
+  (assert (<= 0 alignment1))
+
+(declare-const dic__pr_record_t__x__first__bit1 Int)
+
+(declare-const dic__pr_record_t__x__last__bit1 Int)
+
+(declare-const dic__pr_record_t__x__position1 Int)
+
+;; dic__pr_record_t__x__first__bit_axiom
+  (assert (<= 0 dic__pr_record_t__x__first__bit1))
+
+;; dic__pr_record_t__x__last__bit_axiom
+  (assert
+  (< dic__pr_record_t__x__first__bit1 dic__pr_record_t__x__last__bit1))
+
+;; dic__pr_record_t__x__position_axiom
+  (assert (<= 0 dic__pr_record_t__x__position1))
+
+(declare-const dic__pr_record_t__y__first__bit1 Int)
+
+(declare-const dic__pr_record_t__y__last__bit1 Int)
+
+(declare-const dic__pr_record_t__y__position1 Int)
+
+;; dic__pr_record_t__y__first__bit_axiom
+  (assert (<= 0 dic__pr_record_t__y__first__bit1))
+
+;; dic__pr_record_t__y__last__bit_axiom
+  (assert
+  (< dic__pr_record_t__y__first__bit1 dic__pr_record_t__y__last__bit1))
+
+;; dic__pr_record_t__y__position_axiom
+  (assert (<= 0 dic__pr_record_t__y__position1))
+
+(declare-fun user_eq2 (us_rep us_rep) Bool)
+
+(declare-const dummy2 us_rep)
+
+(declare-datatypes ((pr_record_tt__ref 0))
+(((pr_record_tt__refqtmk (pr_record_tt__content us_rep)))))
+(define-fun pr_record_tt__ref_pr_record_tt__content__projection ((a pr_record_tt__ref)) us_rep 
+  (pr_record_tt__content a))
+
 (declare-fun add2 (us_rep) Int)
 
 (declare-fun add2__function_guard (Int us_rep) Bool)
 
-(define-fun default_initial_assumption ((temp___expr_161 us_rep)
-  (temp___skip_top_level_162 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_175 us_rep)
+  (temp___skip_top_level_176 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__dic__pr_record_t__x
                                             (us_split_fields1
-                                            temp___expr_161))) 0)
+                                            temp___expr_175))) 0)
                                          (= (to_rep
                                             (rec__dic__pr_record_t__y
                                             (us_split_fields1
-                                            temp___expr_161))) 0)))
+                                            temp___expr_175))) 0)))
 
 ;; add3__post_axiom
   (assert
@@ -212,6 +268,17 @@
      (= (add3 r) (add2 r))) :pattern ((add3 r)) )))
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
+
+(define-fun default_initial_assumption1 ((temp___expr_168 us_rep)
+  (temp___skip_top_level_169 Bool)) Bool (and
+                                         (= (to_rep
+                                            (rec__dic__pr_record_t__x
+                                            (us_split_fields1
+                                            temp___expr_168))) 0)
+                                         (= (to_rep
+                                            (rec__dic__pr_record_t__y
+                                            (us_split_fields1
+                                            temp___expr_168))) 0)))
 
 ;; add2__post_axiom
   (assert

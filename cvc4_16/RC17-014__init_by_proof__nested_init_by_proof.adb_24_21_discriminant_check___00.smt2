@@ -177,6 +177,10 @@
                                                    (us_split_fields1 b))))))))
                    true false))
 
+(define-fun in_range2 ((rec__nested_init_by_proof__rec__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__nested_init_by_proof__rec__d1 (rec__nested_init_by_proof__rec__d
+                                                                  a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

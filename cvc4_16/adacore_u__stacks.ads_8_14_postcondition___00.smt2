@@ -332,15 +332,14 @@
 ;; peek__def_axiom
   (assert
   (forall ((s us_rep))
-  (! (= (peek s) (ite (and
-                      (<= 1 (to_rep1
-                            (rec__stacks__stack__top (us_split_fields1 s))))
-                      (<= (to_rep1
-                          (rec__stacks__stack__top (us_split_fields1 s))) 100))
+  (! (= (peek s) (ite (let ((temp___189 (to_rep1
+                                        (rec__stacks__stack__top
+                                        (us_split_fields1 s)))))
+                      (and (<= 1 temp___189) (<= temp___189 100)))
                  (to_rep
-                 (let ((temp___187 (rec__stacks__stack__content
+                 (let ((temp___188 (rec__stacks__stack__content
                                    (us_split_fields1 s))))
-                 (select temp___187 (to_rep1
+                 (select temp___188 (to_rep1
                                     (rec__stacks__stack__top
                                     (us_split_fields1 s))))))
                  0)) :pattern ((peek s)) )))
@@ -401,14 +400,14 @@
                       (rec__stacks__stack__content s__split_fields)))
   (forall ((o4 natural))
   (=> (= (to_rep o4) e)
-  (forall ((temp___201 Int))
-  (=> (= (to_rep1 (rec__stacks__stack__top s__split_fields1)) temp___201)
-  (=> (and (<= 1 temp___201) (<= temp___201 100))
+  (forall ((temp___204 Int))
+  (=> (= (to_rep1 (rec__stacks__stack__top s__split_fields1)) temp___204)
+  (=> (and (<= 1 temp___204) (<= temp___204 100))
   (forall ((s__split_fields2 us_split_fields))
   (=>
   (= s__split_fields2 (us_split_fieldsqtmk
                       (rec__stacks__stack__top s__split_fields1)
-                      (store (rec__stacks__stack__content s__split_fields1) temp___201 o4)))
+                      (store (rec__stacks__stack__content s__split_fields1) temp___204 o4)))
   (=>
   (forall ((s__split_fields3 us_split_fields)) (peek__function_guard
   (peek (us_repqtmk s__split_fields3)) (us_repqtmk s__split_fields3)))

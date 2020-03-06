@@ -1864,9 +1864,9 @@
   (not
   (forall ((cur_board (Array Int (Array Int cell)))
   (cur_piece__split_fields us_split_fields) (o Int) (spark__branch Bool)
-  (o1 Int) (o2 cell) (temp___801 Int) (o3 Int) (temp___802 Int)
+  (o1 Int) (o2 cell) (temp___810 Int) (o3 Int) (temp___811 Int)
   (cur_board1 (Array Int (Array Int cell))) (o4 Int) (o5 cell)
-  (temp___804 Int) (o6 Int) (o7 Int))
+  (temp___813 Int) (o6 Int) (o7 Int))
   (=>
   (= (tetris_integrity__possible_i_shapes__aggregate_def
      (temp_____aggregate_def_165 (distinct 0 0) (distinct 0 0) (distinct 0 0)
@@ -1965,33 +1965,33 @@
   (= (to_rep1 (rec__tetris_integrity__piece__s cur_piece__split_fields)) o1)
   (=> (= (to_rep o2) o1)
   (=>
-  (= (to_rep2 (rec__tetris_integrity__piece__x cur_piece__split_fields)) temp___801)
-  (=> (<= 1 temp___801)
-  (=> (<= temp___801 10)
+  (= (to_rep2 (rec__tetris_integrity__piece__x cur_piece__split_fields)) temp___810)
+  (=> (<= 1 temp___810)
+  (=> (<= temp___810 10)
   (=>
   (= (to_rep3 (rec__tetris_integrity__piece__y cur_piece__split_fields)) o3)
   (=>
-  (= (to_rep3 (rec__tetris_integrity__piece__y cur_piece__split_fields)) temp___802)
-  (=> (<= 1 temp___802)
-  (=> (<= temp___802 50)
+  (= (to_rep3 (rec__tetris_integrity__piece__y cur_piece__split_fields)) temp___811)
+  (=> (<= 1 temp___811)
+  (=> (<= temp___811 50)
   (=>
-  (= cur_board1 (store cur_board temp___802 (store (select cur_board o3) temp___801 o2)))
+  (= cur_board1 (store cur_board temp___811 (store (select cur_board o3) temp___810 o2)))
   (=>
   (= (to_rep1 (rec__tetris_integrity__piece__s cur_piece__split_fields)) o4)
   (=> (= (to_rep o5) o4)
   (=>
-  (= (to_rep2 (rec__tetris_integrity__piece__x cur_piece__split_fields)) temp___804)
-  (=> (<= 1 temp___804)
-  (=> (<= temp___804 10)
+  (= (to_rep2 (rec__tetris_integrity__piece__x cur_piece__split_fields)) temp___813)
+  (=> (<= 1 temp___813)
+  (=> (<= temp___813 10)
   (=>
   (= (to_rep3 (rec__tetris_integrity__piece__y cur_piece__split_fields)) o6)
   (=>
   (= (to_rep3 (rec__tetris_integrity__piece__y cur_piece__split_fields)) o7)
-  (let ((temp___805 (+ o7 1)))
-  (=> (and (<= 1 temp___805) (<= temp___805 50))
+  (let ((temp___814 (+ o7 1)))
+  (=> (and (<= 1 temp___814) (<= temp___814 50))
   (forall ((cur_board2 (Array Int (Array Int cell))))
   (=>
-  (= cur_board2 (store cur_board1 temp___805 (store (select cur_board1 (+ o6 1)) temp___804 o5)))
+  (= cur_board2 (store cur_board1 temp___814 (store (select cur_board1 (+ o6 1)) temp___813 o5)))
   (forall ((o8 Int))
   (=>
   (= (to_rep3 (rec__tetris_integrity__piece__y cur_piece__split_fields)) o8)
@@ -2003,18 +2003,18 @@
   (forall ((o11 Int))
   (=>
   (= (to_rep2 (rec__tetris_integrity__piece__x cur_piece__split_fields)) o11)
-  (let ((temp___807 (+ o11 1)))
-  (=> (and (<= 1 temp___807) (<= temp___807 10))
+  (let ((temp___816 (+ o11 1)))
+  (=> (and (<= 1 temp___816) (<= temp___816 10))
   (forall ((o12 Int))
   (=>
   (= (to_rep3 (rec__tetris_integrity__piece__y cur_piece__split_fields)) o12)
-  (forall ((temp___808 Int))
+  (forall ((temp___817 Int))
   (=>
-  (= (to_rep3 (rec__tetris_integrity__piece__y cur_piece__split_fields)) temp___808)
-  (=> (and (<= 1 temp___808) (<= temp___808 50))
+  (= (to_rep3 (rec__tetris_integrity__piece__y cur_piece__split_fields)) temp___817)
+  (=> (and (<= 1 temp___817) (<= temp___817 50))
   (forall ((cur_board3 (Array Int (Array Int cell))))
   (=>
-  (= cur_board3 (store cur_board2 temp___808 (store (select cur_board2 o12) temp___807 o10)))
+  (= cur_board3 (store cur_board2 temp___817 (store (select cur_board2 o12) temp___816 o10)))
   (forall ((o13 Int))
   (=>
   (= (to_rep3 (rec__tetris_integrity__piece__y cur_piece__split_fields)) o13)

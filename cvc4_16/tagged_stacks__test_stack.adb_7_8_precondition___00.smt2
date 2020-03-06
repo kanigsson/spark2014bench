@@ -648,7 +648,7 @@
      (s__attr__tag2 Int)) (get_model__function_guard
      (get_model (us_repqtmk stacks__push__s__old__fields1 s__attr__tag2))
      (us_repqtmk stacks__push__s__old__fields1 s__attr__tag2)))
-     (let ((temp___old_255 (get_model
+     (let ((temp___old_263 (get_model
                            (us_repqtmk stacks__push__s__old__fields
                            s__attr__tag1))))
      (and
@@ -656,21 +656,21 @@
      (get_model__function_guard
      (get_model (us_repqtmk stacks__push__s__fields1 s__attr__tag2))
      (us_repqtmk stacks__push__s__fields1 s__attr__tag2)))
-     (= (let ((temp___259 (ite (= (length temp___old_255) 0)
+     (= (let ((temp___267 (ite (= (length temp___old_263) 0)
                           (of_array (singleton1 (of_rep e) 1) 1 1)
                           (of_array
-                          (concat_singleton_right (to_array temp___old_255)
-                          (first1 temp___old_255) (last1 temp___old_255)
-                          (of_rep e)) (first1 temp___old_255)
-                          (- (+ (first1 temp___old_255) (+ (length1
+                          (concat_singleton_right (to_array temp___old_263)
+                          (first1 temp___old_263) (last1 temp___old_263)
+                          (of_rep e)) (first1 temp___old_263)
+                          (- (+ (first1 temp___old_263) (+ (length1
                                                            (first1
-                                                           temp___old_255)
+                                                           temp___old_263)
                                                            (last1
-                                                           temp___old_255)) 1)) 1)))))
-        (let ((temp___258 (get_model
+                                                           temp___old_263)) 1)) 1)))))
+        (let ((temp___266 (get_model
                           (us_repqtmk stacks__push__s__fields s__attr__tag1))))
-        (bool_eq (to_array temp___258) (first1 temp___258) (last1 temp___258)
-        (to_array temp___259) (first1 temp___259) (last1 temp___259)))) true))))) :pattern ((push__specific_post
+        (bool_eq (to_array temp___266) (first1 temp___266) (last1 temp___266)
+        (to_array temp___267) (first1 temp___267) (last1 temp___267)))) true))))) :pattern ((push__specific_post
   us_tag stacks__push__s__fields s__attr__tag1 e
   stacks__push__s__old__fields)) ))))
 
@@ -741,12 +741,12 @@
      (get_model__function_guard
      (get_model (us_repqtmk stacks__pop__s__fields1 s__attr__tag2))
      (us_repqtmk stacks__pop__s__fields1 s__attr__tag2)))
-     (= (let ((temp___305 (let ((temp___300 (- (last1
+     (= (let ((temp___313 (let ((temp___308 (- (last1
                                                (get_model
                                                (us_repqtmk
                                                stacks__pop__s__old__fields
                                                s__attr__tag1))) 1)))
-                          (let ((temp___298 (first1
+                          (let ((temp___306 (first1
                                             (get_model
                                             (us_repqtmk
                                             stacks__pop__s__old__fields
@@ -755,11 +755,11 @@
                           (to_array
                           (get_model
                           (us_repqtmk stacks__pop__s__old__fields
-                          s__attr__tag1))) temp___298 temp___300)))))
-        (let ((temp___304 (get_model
+                          s__attr__tag1))) temp___306 temp___308)))))
+        (let ((temp___312 (get_model
                           (us_repqtmk stacks__pop__s__fields s__attr__tag1))))
-        (bool_eq (to_array temp___304) (first1 temp___304) (last1 temp___304)
-        (to_array temp___305) (first1 temp___305) (last1 temp___305)))) true))
+        (bool_eq (to_array temp___312) (first1 temp___312) (last1 temp___312)
+        (to_array temp___313) (first1 temp___313) (last1 temp___313)))) true))
      (=>
      (not
      (= (is_empty (us_repqtmk stacks__pop__s__old__fields s__attr__tag1)) true))
@@ -799,7 +799,7 @@
 (define-fun t2b__ref_t2b__content__projection ((a t2b__ref)) t2b (t2b__content
                                                                  a))
 
-(declare-fun temp_____aggregate_def_341 (Int Int Int Int
+(declare-fun temp_____aggregate_def_349 (Int Int Int Int
   Int) (Array Int element))
 
 (define-fun dynamic_invariant2 ((temp___expr_46 Int) (temp___is_init_42 Bool)
@@ -843,24 +843,24 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___343 Int) (temp___344 Int) (temp___345 Int)
-  (temp___346 Int) (temp___347 Int))
-  (let ((temp___342 (temp_____aggregate_def_341 temp___343 temp___344
-                    temp___345 temp___346 temp___347)))
+  (forall ((temp___351 Int) (temp___352 Int) (temp___353 Int)
+  (temp___354 Int) (temp___355 Int))
+  (let ((temp___350 (temp_____aggregate_def_349 temp___351 temp___352
+                    temp___353 temp___354 temp___355)))
   (=>
   (and
-  (and (dynamic_invariant1 temp___343 true true true true)
-  (dynamic_invariant1 temp___344 true true true true))
+  (and (dynamic_invariant1 temp___351 true true true true)
+  (dynamic_invariant1 temp___352 true true true true))
   (and
-  (and (dynamic_invariant1 temp___345 true true true true)
-  (dynamic_invariant1 temp___346 true true true true)) (dynamic_invariant1
-  temp___347 true true true true)))
+  (and (dynamic_invariant1 temp___353 true true true true)
+  (dynamic_invariant1 temp___354 true true true true)) (dynamic_invariant1
+  temp___355 true true true true)))
   (and
-  (and (= (select temp___342 1) rliteral)
-  (= (select temp___342 2) rliteral1))
+  (and (= (select temp___350 1) rliteral)
+  (= (select temp___350 2) rliteral1))
   (and
-  (and (= (select temp___342 3) rliteral2)
-  (= (select temp___342 4) rliteral3)) (= (select temp___342 5) rliteral4)))))))
+  (and (= (select temp___350 3) rliteral2)
+  (= (select temp___350 4) rliteral3)) (= (select temp___350 5) rliteral4)))))))
 
 (define-fun dynamic_invariant4 ((temp___expr_181 Int)
   (temp___is_init_177 Bool) (temp___skip_constant_178 Bool)

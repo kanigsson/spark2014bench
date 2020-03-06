@@ -437,8 +437,8 @@
   (forall ((col1 Int) (i1 Int))
   (=> (< col1 (* i1 8))
   (=>
-  (= (and (ite (and (dynamic_invariant2 col1 true true true true)
-               (dynamic_property 1 r2b i1))
+  (= (and (ite (and (dynamic_property 1 r2b i1) (dynamic_invariant2 col1 true
+               true true true))
           true false) (ite (and (<= 1 i1) (<= i1 r2b)) true false)) true)
   (forall ((o Int))
   (=> (= (to_rep (select line i1)) o)

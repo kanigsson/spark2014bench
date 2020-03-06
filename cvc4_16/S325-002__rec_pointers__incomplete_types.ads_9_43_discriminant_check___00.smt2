@@ -136,6 +136,10 @@
                             (us_split_fields1 b))) true))
                     true false))
 
+(define-fun in_range1 ((rec__incomplete_types__p1__with_discr__x1 Bool)
+  (a us_split_discrs)) Bool (= rec__incomplete_types__p1__with_discr__x1 
+  (rec__incomplete_types__p1__with_discr__x a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -191,11 +195,6 @@
 (((with_discr__refqtmk (with_discr__content us_rep1)))))
 (define-fun with_discr__ref_with_discr__content__projection ((a with_discr__ref)) us_rep1 
   (with_discr__content a))
-
-(define-fun in_range1 ((rec__incomplete_types__p1__with_discr__x1 Bool)
-  (a us_rep1)) Bool (= rec__incomplete_types__p1__with_discr__x1 (rec__incomplete_types__p1__with_discr__x
-                                                                 (us_split_discrs1
-                                                                 a))))
 
 (declare-const value__size1 Int)
 
@@ -294,8 +293,9 @@
                                      (= (rec__incomplete_types__p1__with_discr_ptr__is_null_pointer
                                         temp___expr_162) true))
                                      (and (in_range1 (distinct 1 0)
+                                     (us_split_discrs1
                                      (rec__incomplete_types__p1__with_discr_ptr__pointer_value
-                                     temp___expr_162))
+                                     temp___expr_162)))
                                      (temp___dynamic_invariant_164
                                      (rec__incomplete_types__p1__with_discr__y
                                      (us_split_fields1
@@ -315,8 +315,9 @@
      (= (rec__incomplete_types__p1__with_discr_ptr__is_null_pointer
         temp___expr_169) true))
      (and (in_range1 (distinct 1 0)
+     (us_split_discrs1
      (rec__incomplete_types__p1__with_discr_ptr__pointer_value
-     temp___expr_169)) (temp___dynamic_invariant_164
+     temp___expr_169))) (temp___dynamic_invariant_164
      (rec__incomplete_types__p1__with_discr__y
      (us_split_fields1
      (rec__incomplete_types__p1__with_discr_ptr__pointer_value
@@ -327,11 +328,6 @@
 (define-fun default_initial_assumption ((temp___expr_171 us_rep)
   (temp___skip_top_level_172 Bool)) Bool (= (rec__incomplete_types__p1__with_discr_ptr__is_null_pointer
                                             temp___expr_171) true))
-
-(define-fun in_range2 ((rec__incomplete_types__p1__with_discr__x1 Bool)
-  (a us_rep1)) Bool (= rec__incomplete_types__p1__with_discr__x1 (rec__incomplete_types__p1__with_discr__x
-                                                                 (us_split_discrs1
-                                                                 a))))
 
 (declare-const value__size2 Int)
 
@@ -409,9 +405,10 @@
                                         (rec__incomplete_types__p1__with_discr__y
                                         (us_split_fields1 temp___expr_178))) true))
                                      (and (in_range1 (distinct 1 0)
+                                     (us_split_discrs1
                                      (rec__incomplete_types__p1__with_discr_ptr__pointer_value
                                      (rec__incomplete_types__p1__with_discr__y
-                                     (us_split_fields1 temp___expr_178))))
+                                     (us_split_fields1 temp___expr_178)))))
                                      (temp___dynamic_invariant_164
                                      (rec__incomplete_types__p1__with_discr__y
                                      (us_split_fields1
@@ -446,6 +443,7 @@
 ;; defqtvc
  ;; File "incomplete_types.ads", line 2, characters 0-0
   (not (in_range1 (distinct 1 0)
+  (us_split_discrs1
   (us_repqtmk1 (us_split_discrsqtmk (distinct 0 0))
-  (us_split_fieldsqtmk us_null_pointer)))))
+  (us_split_fieldsqtmk us_null_pointer))))))
 (check-sat)

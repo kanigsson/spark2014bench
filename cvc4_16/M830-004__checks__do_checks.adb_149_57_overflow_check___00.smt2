@@ -543,6 +543,10 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range7 ((rec__do_checks__do_range_check__B_17__s__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__do_checks__do_range_check__B_17__s__b1 
+  (rec__do_checks__do_range_check__B_17__s__b a)))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -663,6 +667,10 @@
                                                    (us_split_fields3 b))))))
                     true false))
 
+(define-fun in_range8 ((rec__do_checks__do_range_check__B_18__s__b1 Bool)
+  (a us_split_discrs2)) Bool (= rec__do_checks__do_range_check__B_18__s__b1 
+  (rec__do_checks__do_range_check__B_18__s__b a)))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -728,7 +736,7 @@
   (forall ((i tTaSP12))
   (and (<= 1 (tTaSP1qtint2 i)) (<= (tTaSP1qtint2 i) 10))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range9 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE11 (Int) us_image)
 

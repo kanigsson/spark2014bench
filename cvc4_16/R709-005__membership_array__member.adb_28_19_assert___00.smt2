@@ -435,7 +435,7 @@
 
 (declare-fun member__a__aggregate_def (Int) (Array Int natural))
 
-(declare-fun temp_____aggregate_def_229 (Int) (Array Int natural))
+(declare-fun temp_____aggregate_def_231 (Int) (Array Int natural))
 
 (define-fun dynamic_invariant2 ((temp___expr_39 Int) (temp___is_init_35 Bool)
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
@@ -489,10 +489,10 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___231 Int))
-  (=> (dynamic_invariant2 temp___231 true true true true)
-  (forall ((temp___232 Int))
-  (= (select (temp_____aggregate_def_229 temp___231) temp___232) rliteral1)))))
+  (forall ((temp___233 Int))
+  (=> (dynamic_invariant2 temp___233 true true true true)
+  (forall ((temp___234 Int))
+  (= (select (temp_____aggregate_def_231 temp___233) temp___234) rliteral1)))))
 
 (assert
 ;; defqtvc
@@ -505,20 +505,21 @@
   (=> (= (to_rep a__last) (last1 member__a__assume))
   (=> (dynamic_property 1 2147483647 (to_rep a__first) (to_rep a__last))
   (=> (init__function_guard (init 1) 1)
-  (=> (init__function_guard (init 1) 1)
-  (=> (and (= (first1 (init 1)) 1) (= (last1 (init 1)) 10))
+  (=>
+  (let ((temp___214 (init 1)))
+  (and (= (first1 temp___214) 1) (= (last1 temp___214) 10)))
   (=> (init__function_guard (init 2) 2)
   (=> (init__function_guard (init 1) 1)
   (=>
-  (= (let ((temp___222 (init 2)))
-     (let ((temp___221 (init 1)))
-     (bool_eq (to_array temp___221) (first1 temp___221) (last1 temp___221)
-     (to_array temp___222) (first1 temp___222) (last1 temp___222)))) true)
+  (= (let ((temp___224 (init 2)))
+     (let ((temp___223 (init 1)))
+     (bool_eq (to_array temp___223) (first1 temp___223) (last1 temp___223)
+     (to_array temp___224) (first1 temp___224) (last1 temp___224)))) true)
   (=> (init__function_guard (init 1) 1)
-  (let ((temp___225 (init 1)))
+  (let ((temp___227 (init 1)))
   (or
   (=> (init__function_guard (init 2) 2)
-  (= (bool_eq1 temp___225 (init 2)) true))
+  (= (bool_eq1 temp___227 (init 2)) true))
   (=> (init__function_guard (init 3) 3)
-  (= (bool_eq1 temp___225 (init 3)) true)))))))))))))))))))
+  (= (bool_eq1 temp___227 (init 3)) true))))))))))))))))))
 (check-sat)

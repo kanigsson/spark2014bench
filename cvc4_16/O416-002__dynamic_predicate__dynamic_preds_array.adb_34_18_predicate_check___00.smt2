@@ -309,23 +309,21 @@
   (temp___do_typ_inv_190 Bool)) Bool (=> (= temp___do_toplevel_189 true)
                                      (=> (= temp___is_init_187 true)
                                      (and
-                                     (and (in_range1
-                                     (to_rep (select temp___expr_191 1)))
-                                     (= (mod2
-                                        (to_rep (select temp___expr_191 1))
-                                        2) 0))
-                                     (and (in_range1
-                                     (to_rep (select temp___expr_191 2)))
-                                     (= (mod2
-                                        (to_rep (select temp___expr_191 2))
-                                        2) 0))))))
+                                     (let ((temp___193 (to_rep
+                                                       (select temp___expr_191 1))))
+                                     (and (in_range1 temp___193)
+                                     (= (mod2 temp___193 2) 0)))
+                                     (let ((temp___195 (to_rep
+                                                       (select temp___expr_191 2))))
+                                     (and (in_range1 temp___195)
+                                     (= (mod2 temp___195 2) 0)))))))
 
 (define-fun dynamic_predicate ((temp___202 (Array Int integer))) Bool 
   (and
-  (and (in_range1 (to_rep (select temp___202 1)))
-  (= (mod2 (to_rep (select temp___202 1)) 2) 0))
-  (and (in_range1 (to_rep (select temp___202 2)))
-  (= (mod2 (to_rep (select temp___202 2)) 2) 0))))
+  (let ((temp___204 (to_rep (select temp___202 1))))
+  (and (in_range1 temp___204) (= (mod2 temp___204 2) 0)))
+  (let ((temp___206 (to_rep (select temp___202 2))))
+  (and (in_range1 temp___206) (= (mod2 temp___206 2) 0)))))
 
 (define-fun dynamic_invariant2 ((temp___expr_170 Int)
   (temp___is_init_166 Bool) (temp___skip_constant_167 Bool)

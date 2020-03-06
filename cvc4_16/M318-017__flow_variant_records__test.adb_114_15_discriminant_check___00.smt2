@@ -194,6 +194,10 @@
                                                   (us_split_fields1 b)))))))
                    true false))
 
+(define-fun in_range3 ((rec__test__search_result__found1 Bool)
+  (a us_split_discrs)) Bool (= rec__test__search_result__found1 (rec__test__search_result__found
+                                                                a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -283,10 +287,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
 
-(define-fun in_range3 ((rec__test__search_result__found1 Bool)
-  (a us_rep)) Bool (= rec__test__search_result__found1 (rec__test__search_result__found
-                                                       (us_split_discrs1 a))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -358,10 +358,6 @@
 (((t32b__refqtmk (t32b__content us_rep)))))
 (define-fun t32b__ref_t32b__content__projection ((a t32b__ref)) us_rep 
   (t32b__content a))
-
-(define-fun in_range4 ((rec__test__search_result__found1 Bool)
-  (a us_rep)) Bool (= rec__test__search_result__found1 (rec__test__search_result__found
-                                                       (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 

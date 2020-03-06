@@ -157,48 +157,48 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
-(define-fun dynamic_invariant ((temp___expr_352 us_rep)
-  (temp___is_init_348 Bool) (temp___skip_constant_349 Bool)
-  (temp___do_toplevel_350 Bool)
-  (temp___do_typ_inv_351 Bool)) Bool (let ((temp___354 (to_rep
+(define-fun dynamic_invariant ((temp___expr_358 us_rep)
+  (temp___is_init_354 Bool) (temp___skip_constant_355 Bool)
+  (temp___do_toplevel_356 Bool)
+  (temp___do_typ_inv_357 Bool)) Bool (let ((temp___360 (to_rep
                                                        (rec__preds__rec_wrap_bad__x
                                                        (us_split_fields1
-                                                       temp___expr_352)))))
+                                                       temp___expr_358)))))
                                      (or
-                                     (and (<= (- 2147483648) temp___354)
-                                     (<= temp___354 (- 1)))
-                                     (and (<= 1 temp___354)
-                                     (<= temp___354 2147483647)))))
+                                     (and (<= (- 2147483648) temp___360)
+                                     (<= temp___360 (- 1)))
+                                     (and (<= 1 temp___360)
+                                     (<= temp___360 2147483647)))))
 
-(define-fun default_initial_assumption ((temp___expr_355 us_rep)
-  (temp___skip_top_level_356 Bool)) Bool (= (to_rep
+(define-fun default_initial_assumption ((temp___expr_363 us_rep)
+  (temp___skip_top_level_364 Bool)) Bool (= (to_rep
                                             (rec__preds__rec_wrap_bad__x
                                             (us_split_fields1
-                                            temp___expr_355))) 0))
+                                            temp___expr_363))) 0))
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
 
-(define-fun dynamic_invariant1 ((temp___expr_332 Int)
-  (temp___is_init_328 Bool) (temp___skip_constant_329 Bool)
-  (temp___do_toplevel_330 Bool)
-  (temp___do_typ_inv_331 Bool)) Bool (and
+(define-fun dynamic_invariant1 ((temp___expr_336 Int)
+  (temp___is_init_332 Bool) (temp___skip_constant_333 Bool)
+  (temp___do_toplevel_334 Bool)
+  (temp___do_typ_inv_335 Bool)) Bool (and
                                      (=>
-                                     (or (= temp___is_init_328 true)
+                                     (or (= temp___is_init_332 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range temp___expr_332))
-                                     (=> (= temp___do_toplevel_330 true)
+                                     (in_range temp___expr_336))
+                                     (=> (= temp___do_toplevel_334 true)
                                      (or
-                                     (and (<= (- 2147483648) temp___expr_332)
-                                     (<= temp___expr_332 (- 1)))
-                                     (and (<= 1 temp___expr_332)
-                                     (<= temp___expr_332 2147483647))))))
+                                     (and (<= (- 2147483648) temp___expr_336)
+                                     (<= temp___expr_336 (- 1)))
+                                     (and (<= 1 temp___expr_336)
+                                     (<= temp___expr_336 2147483647))))))
 
-(define-fun dynamic_predicate ((temp___336 Int)) Bool (or
+(define-fun dynamic_predicate ((temp___340 Int)) Bool (or
                                                       (and
-                                                      (<= (- 2147483648) temp___336)
-                                                      (<= temp___336 (- 1)))
-                                                      (and (<= 1 temp___336)
-                                                      (<= temp___336 2147483647))))
+                                                      (<= (- 2147483648) temp___340)
+                                                      (<= temp___340 (- 1)))
+                                                      (and (<= 1 temp___340)
+                                                      (<= temp___340 2147483647))))
 
 (assert
 ;; defqtvc
@@ -210,7 +210,7 @@
   (=> (dynamic_invariant (us_repqtmk (us_split_fieldsqtmk x__split_fields))
   false false true true)
   (=> (= (to_rep usf) 0)
-  (let ((temp___427 (to_rep usf)))
-  (or (and (<= (- 2147483648) temp___427) (<= temp___427 (- 1)))
-  (and (<= 1 temp___427) (<= temp___427 2147483647)))))))))))
+  (let ((temp___453 (to_rep usf)))
+  (or (and (<= (- 2147483648) temp___453) (<= temp___453 (- 1)))
+  (and (<= 1 temp___453) (<= temp___453 2147483647)))))))))))
 (check-sat)

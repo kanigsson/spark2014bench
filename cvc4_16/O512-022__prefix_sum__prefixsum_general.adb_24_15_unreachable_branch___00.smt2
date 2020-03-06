@@ -433,8 +433,8 @@
   (=>
   (forall ((k Int))
   (=> (and (<= 0 k) (<= k 7))
-  (and (<= (- 268435455) (to_rep (select a k)))
-  (<= (to_rep (select a k)) 268435455))))
+  (let ((temp___218 (to_rep (select a k))))
+  (and (<= (- 268435455) temp___218) (<= temp___218 268435455)))))
   (=> (= a a_old)
   (=> (= space 1)
   (=> (dynamic_invariant1 space true false true true)

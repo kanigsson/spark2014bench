@@ -621,6 +621,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
+  (to_rep
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -808,12 +813,6 @@
                             (us_split_fields3 b))) true))
                     true false))
 
-(define-fun in_range3 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
-  (a us_rep)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
-  (to_rep
-  (rec__ada___ada___aco__math__very_longs__very_long__octet_length
-  (us_split_discrs1 a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -890,7 +889,8 @@
                                      (+ (* 2 (to_rep
                                              (rec__ada___ada___aco__math__very_longs__very_long__octet_length
                                              (us_split_discrs1 divisor)))) 1)
-                                     (to_base temp___expr_859)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_859))))
                                      (and (dynamic_property 1
                                      (+ (* 2 (to_rep
                                              (rec__ada___ada___aco__math__very_longs__very_long__octet_length
@@ -991,12 +991,6 @@
                             (us_split_fields5 b))) true))
                     true false))
 
-(define-fun in_range4 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
-  (a us_rep)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
-  (to_rep
-  (rec__ada___ada___aco__math__very_longs__very_long__octet_length
-  (us_split_discrs1 a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -1069,11 +1063,12 @@
   (temp___do_typ_inv_871 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_869 true))
-                                     (in_range4
+                                     (in_range3
                                      (to_rep
                                      (rec__ada___ada___aco__math__very_longs__very_long__octet_length
                                      (us_split_discrs1 divisor)))
-                                     (to_base1 temp___expr_872)))
+                                     (us_split_discrs1
+                                     (to_base1 temp___expr_872))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___ada___aco__math__very_longs__very_long__octet_length
@@ -1183,7 +1178,7 @@
   (forall ((i shift_type))
   (and (<= 0 (shift_typeqtint i)) (<= (shift_typeqtint i) 7))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 7)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 7)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -1205,7 +1200,7 @@
   (temp___do_toplevel_850 Bool)
   (temp___do_typ_inv_851 Bool)) Bool (=>
                                      (or (= temp___is_init_848 true)
-                                     (<= 0 7)) (in_range5 temp___expr_852)))
+                                     (<= 0 7)) (in_range4 temp___expr_852)))
 
 ;; get_shift_distance__post_axiom
   (assert
@@ -1353,37 +1348,37 @@
 (define-fun t141b__ref_t141b__content__projection ((a t141b__ref)) us_t 
   (t141b__content a))
 
-(declare-fun temp_____aggregate_def_1358 ((_ BitVec 8) Int Int) us_t)
+(declare-fun temp_____aggregate_def_1359 ((_ BitVec 8) Int Int) us_t)
 
-(declare-fun temp_____aggregate_def_1371 ((_ BitVec 8) Int Int) us_t)
-
-;; def_axiom
-  (assert
-  (forall ((temp___1360 (_ BitVec 8)))
-  (forall ((temp___1361 Int) (temp___1362 Int))
-  (let ((temp___1359 (temp_____aggregate_def_1358 temp___1360 temp___1361
-                     temp___1362)))
-  (=> (dynamic_invariant4 temp___1360 true true true true)
-  (and
-  (=> (dynamic_property 1 2147483647 temp___1361 temp___1362)
-  (and (= (first1 temp___1359) temp___1361)
-  (= (last1 temp___1359) temp___1362)))
-  (forall ((temp___1363 Int))
-  (= (to_rep2 (select (to_array temp___1359) temp___1363)) temp___1360))))))))
+(declare-fun temp_____aggregate_def_1372 ((_ BitVec 8) Int Int) us_t)
 
 ;; def_axiom
   (assert
-  (forall ((temp___1373 (_ BitVec 8)))
-  (forall ((temp___1374 Int) (temp___1375 Int))
-  (let ((temp___1372 (temp_____aggregate_def_1371 temp___1373 temp___1374
-                     temp___1375)))
-  (=> (dynamic_invariant4 temp___1373 true true true true)
+  (forall ((temp___1361 (_ BitVec 8)))
+  (forall ((temp___1362 Int) (temp___1363 Int))
+  (let ((temp___1360 (temp_____aggregate_def_1359 temp___1361 temp___1362
+                     temp___1363)))
+  (=> (dynamic_invariant4 temp___1361 true true true true)
   (and
-  (=> (dynamic_property 1 2147483647 temp___1374 temp___1375)
-  (and (= (first1 temp___1372) temp___1374)
-  (= (last1 temp___1372) temp___1375)))
-  (forall ((temp___1376 Int))
-  (= (to_rep2 (select (to_array temp___1372) temp___1376)) temp___1373))))))))
+  (=> (dynamic_property 1 2147483647 temp___1362 temp___1363)
+  (and (= (first1 temp___1360) temp___1362)
+  (= (last1 temp___1360) temp___1363)))
+  (forall ((temp___1364 Int))
+  (= (to_rep2 (select (to_array temp___1360) temp___1364)) temp___1361))))))))
+
+;; def_axiom
+  (assert
+  (forall ((temp___1374 (_ BitVec 8)))
+  (forall ((temp___1375 Int) (temp___1376 Int))
+  (let ((temp___1373 (temp_____aggregate_def_1372 temp___1374 temp___1375
+                     temp___1376)))
+  (=> (dynamic_invariant4 temp___1374 true true true true)
+  (and
+  (=> (dynamic_property 1 2147483647 temp___1375 temp___1376)
+  (and (= (first1 temp___1373) temp___1375)
+  (= (last1 temp___1373) temp___1376)))
+  (forall ((temp___1377 Int))
+  (= (to_rep2 (select (to_array temp___1373) temp___1377)) temp___1374))))))))
 
 (define-fun dynamic_invariant9 ((temp___expr_271 us_t)
   (temp___is_init_267 Bool) (temp___skip_constant_268 Bool)
@@ -1498,26 +1493,26 @@
      quotient__split_discrs)) ada___ada___aco__math__very_longs__divide__R135b__assume)
   (=> (= ada___ada___aco__math__very_longs__divide__R135b__assume r135b)
   (=> (dynamic_invariant3 r135b true false true true)
-  (let ((temp___1364 (temp_____aggregate_def_1358 #x00 1 r135b)))
-  (=> (= (first1 temp___1364) 1)
-  (=> (= (last1 temp___1364) r135b)
+  (let ((temp___1365 (temp_____aggregate_def_1359 #x00 1 r135b)))
+  (=> (= (first1 temp___1365) 1)
+  (=> (= (last1 temp___1365) r135b)
   (=>
-  (ite (<= (first1 temp___1364) (last1 temp___1364))
+  (ite (<= (first1 temp___1365) (last1 temp___1365))
   (and (<= 1 r135b)
-  (= (- (last1 temp___1364) (first1 temp___1364)) (- r135b 1))) (< r135b 1))
-  (let ((temp___1366 (of_array (to_array temp___1364) (first1 temp___1364)
-                     (last1 temp___1364))))
+  (= (- (last1 temp___1365) (first1 temp___1365)) (- r135b 1))) (< r135b 1))
+  (let ((temp___1367 (of_array (to_array temp___1365) (first1 temp___1365)
+                     (last1 temp___1365))))
   (=>
-  (ite (<= (first1 temp___1366) (last1 temp___1366))
+  (ite (<= (first1 temp___1367) (last1 temp___1367))
   (and (<= (first1 quotient__split_fields) (last1 quotient__split_fields))
-  (= (- (last1 temp___1366) (first1 temp___1366)) (- (last1
+  (= (- (last1 temp___1367) (first1 temp___1367)) (- (last1
                                                      quotient__split_fields) 
   (first1 quotient__split_fields))))
   (< (last1 quotient__split_fields) (first1 quotient__split_fields)))
   (forall ((quotient__split_fields1 us_t))
   (=>
-  (= quotient__split_fields1 (of_array (to_array temp___1366)
-                             (first1 temp___1366) (last1 temp___1366)))
+  (= quotient__split_fields1 (of_array (to_array temp___1367)
+                             (first1 temp___1367) (last1 temp___1367)))
   (forall ((ada___ada___aco__math__very_longs__divide__R139b__assume Int))
   (=>
   (= (to_rep
@@ -1525,26 +1520,26 @@
      remainder__split_discrs)) ada___ada___aco__math__very_longs__divide__R139b__assume)
   (=> (= ada___ada___aco__math__very_longs__divide__R139b__assume r139b)
   (=> (dynamic_invariant3 r139b true false true true)
-  (let ((temp___1377 (temp_____aggregate_def_1371 #x00 1 r139b)))
-  (=> (= (first1 temp___1377) 1)
-  (=> (= (last1 temp___1377) r139b)
+  (let ((temp___1378 (temp_____aggregate_def_1372 #x00 1 r139b)))
+  (=> (= (first1 temp___1378) 1)
+  (=> (= (last1 temp___1378) r139b)
   (=>
-  (ite (<= (first1 temp___1377) (last1 temp___1377))
+  (ite (<= (first1 temp___1378) (last1 temp___1378))
   (and (<= 1 r139b)
-  (= (- (last1 temp___1377) (first1 temp___1377)) (- r139b 1))) (< r139b 1))
-  (let ((temp___1379 (of_array (to_array temp___1377) (first1 temp___1377)
-                     (last1 temp___1377))))
+  (= (- (last1 temp___1378) (first1 temp___1378)) (- r139b 1))) (< r139b 1))
+  (let ((temp___1380 (of_array (to_array temp___1378) (first1 temp___1378)
+                     (last1 temp___1378))))
   (=>
-  (ite (<= (first1 temp___1379) (last1 temp___1379))
+  (ite (<= (first1 temp___1380) (last1 temp___1380))
   (and (<= (first1 remainder__split_fields) (last1 remainder__split_fields))
-  (= (- (last1 temp___1379) (first1 temp___1379)) (- (last1
+  (= (- (last1 temp___1380) (first1 temp___1380)) (- (last1
                                                      remainder__split_fields) 
   (first1 remainder__split_fields))))
   (< (last1 remainder__split_fields) (first1 remainder__split_fields)))
   (forall ((remainder__split_fields1 us_t))
   (=>
-  (= remainder__split_fields1 (of_array (to_array temp___1379)
-                              (first1 temp___1379) (last1 temp___1379)))
+  (= remainder__split_fields1 (of_array (to_array temp___1380)
+                              (first1 temp___1380) (last1 temp___1380)))
   (=> (forall ((o4 us_rep)) (is_zero__function_guard (is_zero o4) o4))
   (not (= (is_zero divisor) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

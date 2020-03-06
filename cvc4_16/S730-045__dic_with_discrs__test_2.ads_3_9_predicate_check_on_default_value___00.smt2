@@ -147,6 +147,16 @@
                                                   (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range1 ((rec__test_2__context_type__first1 Int)
+  (rec__test_2__context_type__last1 Int)
+  (a us_split_discrs)) Bool (and
+                            (= rec__test_2__context_type__first1 (to_rep
+                                                                 (rec__test_2__context_type__first
+                                                                 a)))
+                            (= rec__test_2__context_type__last1 (to_rep
+                                                                (rec__test_2__context_type__last
+                                                                a)))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -303,7 +313,7 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S730-045__dic_with_discrs-10637/src/gnatprove/test_2__context_type.mlw", line 404, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S730-045__dic_with_discrs-13998/src/gnatprove/test_2__context_type.mlw", line 418, characters 5-8
   (not
   (forall ((usf Int) (usf1 Int) (usf2 us_rep) (usf3 us_rep))
   (=> (dynamic_invariant usf true true true true)

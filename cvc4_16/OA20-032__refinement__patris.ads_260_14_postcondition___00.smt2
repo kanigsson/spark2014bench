@@ -873,9 +873,9 @@
                                      (bvule #x00000000 #x0001869F))
                                      (in_range8 temp___expr_558)))
 
-(declare-fun temp_____aggregate_def_944 ((Array Int cell)) (Array Int (Array Int cell)))
+(declare-fun temp_____aggregate_def_953 ((Array Int cell)) (Array Int (Array Int cell)))
 
-(declare-fun temp_____aggregate_def_948 (Int) (Array Int cell))
+(declare-fun temp_____aggregate_def_957 (Int) (Array Int cell))
 
 (declare-sort integer 0)
 
@@ -913,9 +913,9 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___946 (Array Int cell)))
-  (forall ((temp___947 Int))
-  (= (select (temp_____aggregate_def_944 temp___946) temp___947) temp___946))))
+  (forall ((temp___955 (Array Int cell)))
+  (forall ((temp___956 Int))
+  (= (select (temp_____aggregate_def_953 temp___955) temp___956) temp___955))))
 
 (define-fun dynamic_invariant4 ((temp___expr_565 Int)
   (temp___is_init_561 Bool) (temp___skip_constant_562 Bool)
@@ -926,10 +926,10 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___950 Int))
-  (=> (dynamic_invariant4 temp___950 true true true true)
-  (forall ((temp___951 Int))
-  (= (to_rep (select (temp_____aggregate_def_948 temp___950) temp___951)) temp___950)))))
+  (forall ((temp___959 Int))
+  (=> (dynamic_invariant4 temp___959 true true true true)
+  (forall ((temp___960 Int))
+  (= (to_rep (select (temp_____aggregate_def_957 temp___959) temp___960)) temp___959)))))
 
 (define-fun dynamic_invariant5 ((temp___expr_572 Int)
   (temp___is_init_568 Bool) (temp___skip_constant_569 Bool)

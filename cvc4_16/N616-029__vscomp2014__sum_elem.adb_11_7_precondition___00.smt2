@@ -136,6 +136,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__sum_elem__partitions__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__sum_elem__partitions__vector__capacity1 
+  (to_rep (rec__sum_elem__partitions__vector__capacity a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -184,7 +188,7 @@
   (assert
   (forall ((i index)) (and (<= 0 (indexqtint i)) (<= (indexqtint i) 5))))
 
-(define-fun in_range1 ((x Int)) Bool (and (<= 0 x) (<= x 5)))
+(define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 5)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE1 (Int) us_image)
 
@@ -212,12 +216,12 @@
 
 ;; range_axiom
   (assert
-  (forall ((x index)) (! (in_range1 (to_rep1 x)) :pattern ((to_rep1 x)) )))
+  (forall ((x index)) (! (in_range2 (to_rep1 x)) :pattern ((to_rep1 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range1 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
+  (! (=> (in_range2 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
                                                               (of_rep1 x))) )))
 
 (declare-datatypes ((us_split_fields2 0))
@@ -362,7 +366,7 @@
 
 (define-fun length1 ((x Int) (y Int)) Int (ite (<= x y) (+ (- y x) 1) 0))
 
-(define-fun in_range2 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range3 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Bool) us_image)
 
@@ -464,12 +468,6 @@
 
 (declare-fun element__function_guard (us_rep1 us_rep Int) Bool)
 
-(define-fun in_range3 ((rec__sum_elem__partitions__vector__capacity1 Int)
-  (a us_rep)) Bool (= rec__sum_elem__partitions__vector__capacity1 (to_rep
-                                                                   (rec__sum_elem__partitions__vector__capacity
-                                                                   (us_split_discrs1
-                                                                   a)))))
-
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -523,30 +521,31 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq6 a b) (oeq a b)) :pattern ((user_eq6 a b)) )))
 
-(define-fun dynamic_invariant ((temp___expr_551 us_rep)
-  (temp___is_init_547 Bool) (temp___skip_constant_548 Bool)
-  (temp___do_toplevel_549 Bool)
-  (temp___do_typ_inv_550 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_548 true))
-                                     (in_range3 10 temp___expr_551)))
+(define-fun dynamic_invariant ((temp___expr_553 us_rep)
+  (temp___is_init_549 Bool) (temp___skip_constant_550 Bool)
+  (temp___do_toplevel_551 Bool)
+  (temp___do_typ_inv_552 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_550 true))
+                                     (in_range1 10
+                                     (us_split_discrs1 temp___expr_553))))
 
-(define-fun default_initial_assumption ((temp___expr_553 us_rep)
-  (temp___skip_top_level_554 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_555 us_rep)
+  (temp___skip_top_level_556 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__sum_elem__partitions__vector__capacity
                                             (us_split_discrs1
-                                            temp___expr_553))) 10)
+                                            temp___expr_555))) 10)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_554 true))
-                                         (= (is_empty temp___expr_553) true))))
+                                         (= temp___skip_top_level_556 true))
+                                         (= (is_empty temp___expr_555) true))))
 
 (define-fun dynamic_invariant1 ((temp___expr_245 Int)
   (temp___is_init_241 Bool) (temp___skip_constant_242 Bool)
   (temp___do_toplevel_243 Bool)
   (temp___do_typ_inv_244 Bool)) Bool (=>
                                      (or (= temp___is_init_241 true)
-                                     (<= 0 5)) (in_range1 temp___expr_245)))
+                                     (<= 0 5)) (in_range2 temp___expr_245)))
 
 ;; user_eq__def_axiom
   (assert

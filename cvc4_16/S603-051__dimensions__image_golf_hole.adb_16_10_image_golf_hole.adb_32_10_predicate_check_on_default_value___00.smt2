@@ -747,73 +747,73 @@
 (define-fun mod2 ((x Int)
   (y Int)) Int (ite (< 0 y) (mod x y) (+ (mod x y) y)))
 
-(define-fun dynamic_invariant ((temp___expr_258 us_rep)
-  (temp___is_init_254 Bool) (temp___skip_constant_255 Bool)
-  (temp___do_toplevel_256 Bool)
-  (temp___do_typ_inv_257 Bool)) Bool (=> (= temp___do_toplevel_256 true)
+(define-fun dynamic_invariant ((temp___expr_268 us_rep)
+  (temp___is_init_264 Bool) (temp___skip_constant_265 Bool)
+  (temp___do_toplevel_266 Bool)
+  (temp___do_typ_inv_267 Bool)) Bool (=> (= temp___do_toplevel_266 true)
                                      (and (in_range2
                                      (+ (to_rep2
                                         (rec__camera_types__blob_type__x
-                                        (us_split_fields1 temp___expr_258))) 
+                                        (us_split_fields1 temp___expr_268))) 
                                      (div1
                                      (to_rep4
                                      (rec__camera_types__blob_type__width
-                                     (us_split_fields1 temp___expr_258))) 2)))
+                                     (us_split_fields1 temp___expr_268))) 2)))
                                      (in_range1
                                      (+ (to_rep1
                                         (rec__camera_types__blob_type__y
-                                        (us_split_fields1 temp___expr_258))) 
+                                        (us_split_fields1 temp___expr_268))) 
                                      (div1
                                      (to_rep5
                                      (rec__camera_types__blob_type__height
-                                     (us_split_fields1 temp___expr_258))) 2))))))
+                                     (us_split_fields1 temp___expr_268))) 2))))))
 
-(define-fun default_initial_assumption ((temp___expr_260 us_rep)
-  (temp___skip_top_level_261 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_272 us_rep)
+  (temp___skip_top_level_273 Bool)) Bool (and
                                          (and
                                          (= (to_rep3
                                             (rec__camera_types__blob_type__signature
                                             (us_split_fields1
-                                            temp___expr_260))) 0)
+                                            temp___expr_272))) 0)
                                          (= (to_rep2
                                             (rec__camera_types__blob_type__x
                                             (us_split_fields1
-                                            temp___expr_260))) 0))
+                                            temp___expr_272))) 0))
                                          (and
                                          (and
                                          (= (to_rep1
                                             (rec__camera_types__blob_type__y
                                             (us_split_fields1
-                                            temp___expr_260))) 0)
+                                            temp___expr_272))) 0)
                                          (= (to_rep4
                                             (rec__camera_types__blob_type__width
                                             (us_split_fields1
-                                            temp___expr_260))) 0))
+                                            temp___expr_272))) 0))
                                          (= (to_rep5
                                             (rec__camera_types__blob_type__height
                                             (us_split_fields1
-                                            temp___expr_260))) 0))))
+                                            temp___expr_272))) 0))))
 
-(define-fun dynamic_predicate ((temp___262 us_rep)) Bool (and (in_range2
+(define-fun dynamic_predicate ((temp___274 us_rep)) Bool (and (in_range2
                                                          (+ (to_rep2
                                                             (rec__camera_types__blob_type__x
                                                             (us_split_fields1
-                                                            temp___262))) 
+                                                            temp___274))) 
                                                          (div1
                                                          (to_rep4
                                                          (rec__camera_types__blob_type__width
                                                          (us_split_fields1
-                                                         temp___262))) 2)))
+                                                         temp___274))) 2)))
                                                          (in_range1
                                                          (+ (to_rep1
                                                             (rec__camera_types__blob_type__y
                                                             (us_split_fields1
-                                                            temp___262))) 
+                                                            temp___274))) 
                                                          (div1
                                                          (to_rep5
                                                          (rec__camera_types__blob_type__height
                                                          (us_split_fields1
-                                                         temp___262))) 2)))))
+                                                         temp___274))) 2)))))
 
 (declare-fun distance_to_object (us_rep) Float64)
 
@@ -843,13 +843,13 @@
 (define-fun distance_to_object_range__ref_distance_to_object_range__content__projection ((a distance_to_object_range__ref)) distance_to_object_range 
   (distance_to_object_range__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_296 Float64)
-  (temp___is_init_292 Bool) (temp___skip_constant_293 Bool)
-  (temp___do_toplevel_294 Bool)
-  (temp___do_typ_inv_295 Bool)) Bool (=>
-                                     (or (= temp___is_init_292 true)
+(define-fun dynamic_invariant1 ((temp___expr_310 Float64)
+  (temp___is_init_306 Bool) (temp___skip_constant_307 Bool)
+  (temp___do_toplevel_308 Bool)
+  (temp___do_typ_inv_309 Bool)) Bool (=>
+                                     (or (= temp___is_init_306 true)
                                      (fp.leq (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000) (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000)))
-                                     (in_range6 temp___expr_296)))
+                                     (in_range6 temp___expr_310)))
 
 ;; distance_to_object__post_axiom
   (assert
@@ -932,17 +932,17 @@
 (define-fun tbw_image_320_typeP2__ref_tbw_image_320_typeP2__content__projection ((a tbw_image_320_typeP2__ref)) tbw_image_320_typeP2 
   (tbw_image_320_typeP2__content a))
 
-(define-fun dynamic_invariant2 ((temp___expr_181 map1)
-  (temp___is_init_177 Bool) (temp___skip_constant_178 Bool)
-  (temp___do_toplevel_179 Bool)
-  (temp___do_typ_inv_180 Bool)) Bool (=> (= temp___is_init_177 true)
+(define-fun dynamic_invariant2 ((temp___expr_185 map1)
+  (temp___is_init_181 Bool) (temp___skip_constant_182 Bool)
+  (temp___do_toplevel_183 Bool)
+  (temp___do_typ_inv_184 Bool)) Bool (=> (= temp___is_init_181 true)
                                      (and
                                      (and
                                      (and (and (<= 1 200) (<= 200 800))
                                      (and (<= 1 320) (<= 320 1200)))
                                      (< 0 199)) (< 0 319))))
 
-(define-fun dynamic_predicate1 ((temp___192 map1)) Bool (and
+(define-fun dynamic_predicate1 ((temp___200 map1)) Bool (and
                                                         (and
                                                         (and
                                                         (and (<= 1 200)
@@ -951,12 +951,12 @@
                                                         (<= 320 1200)))
                                                         (< 0 199)) (< 0 319)))
 
-(define-fun dynamic_invariant3 ((temp___expr_209 Int)
-  (temp___is_init_205 Bool) (temp___skip_constant_206 Bool)
-  (temp___do_toplevel_207 Bool)
-  (temp___do_typ_inv_208 Bool)) Bool (=>
-                                     (or (= temp___is_init_205 true)
-                                     (<= 0 199)) (in_range1 temp___expr_209)))
+(define-fun dynamic_invariant3 ((temp___expr_219 Int)
+  (temp___is_init_215 Bool) (temp___skip_constant_216 Bool)
+  (temp___do_toplevel_217 Bool)
+  (temp___do_typ_inv_218 Bool)) Bool (=>
+                                     (or (= temp___is_init_215 true)
+                                     (<= 0 199)) (in_range1 temp___expr_219)))
 
 (declare-sort scan_rows 0)
 
@@ -984,20 +984,20 @@
 (define-fun scan_rows__ref_scan_rows__content__projection ((a scan_rows__ref)) scan_rows 
   (scan_rows__content a))
 
-(define-fun dynamic_invariant4 ((temp___expr_216 Int)
-  (temp___is_init_212 Bool) (temp___skip_constant_213 Bool)
-  (temp___do_toplevel_214 Bool)
-  (temp___do_typ_inv_215 Bool)) Bool (=>
-                                     (or (= temp___is_init_212 true)
+(define-fun dynamic_invariant4 ((temp___expr_226 Int)
+  (temp___is_init_222 Bool) (temp___skip_constant_223 Bool)
+  (temp___do_toplevel_224 Bool)
+  (temp___do_typ_inv_225 Bool)) Bool (=>
+                                     (or (= temp___is_init_222 true)
                                      (<= 70 140)) (in_range9
-                                     temp___expr_216)))
+                                     temp___expr_226)))
 
-(define-fun dynamic_invariant5 ((temp___expr_223 Int)
-  (temp___is_init_219 Bool) (temp___skip_constant_220 Bool)
-  (temp___do_toplevel_221 Bool)
-  (temp___do_typ_inv_222 Bool)) Bool (=>
-                                     (or (= temp___is_init_219 true)
-                                     (<= 0 319)) (in_range2 temp___expr_223)))
+(define-fun dynamic_invariant5 ((temp___expr_233 Int)
+  (temp___is_init_229 Bool) (temp___skip_constant_230 Bool)
+  (temp___do_toplevel_231 Bool)
+  (temp___do_typ_inv_232 Bool)) Bool (=>
+                                     (or (= temp___is_init_229 true)
+                                     (<= 0 319)) (in_range2 temp___expr_233)))
 
 (declare-sort short_length 0)
 
@@ -1021,34 +1021,34 @@
 (define-fun short_length__ref_short_length__content__projection ((a short_length__ref)) short_length 
   (short_length__content a))
 
-(define-fun dynamic_invariant6 ((temp___expr_282 Float64)
-  (temp___is_init_278 Bool) (temp___skip_constant_279 Bool)
-  (temp___do_toplevel_280 Bool)
-  (temp___do_typ_inv_281 Bool)) Bool (=>
-                                     (or (= temp___is_init_278 true)
+(define-fun dynamic_invariant6 ((temp___expr_296 Float64)
+  (temp___is_init_292 Bool) (temp___skip_constant_293 Bool)
+  (temp___do_toplevel_294 Bool)
+  (temp___do_typ_inv_295 Bool)) Bool (=>
+                                     (or (= temp___is_init_292 true)
                                      (fp.leq (fp.neg (fp #b0 #b10000000100 #b1001000000000000000000000000000000000000000000000000)) (fp #b0 #b10000000100 #b1001000000000000000000000000000000000000000000000000)))
-                                     (in_range10 temp___expr_282)))
+                                     (in_range10 temp___expr_296)))
 
-(define-fun dynamic_invariant7 ((temp___expr_237 Int)
-  (temp___is_init_233 Bool) (temp___skip_constant_234 Bool)
-  (temp___do_toplevel_235 Bool)
-  (temp___do_typ_inv_236 Bool)) Bool (=>
-                                     (or (= temp___is_init_233 true)
-                                     (<= 0 7)) (in_range3 temp___expr_237)))
+(define-fun dynamic_invariant7 ((temp___expr_247 Int)
+  (temp___is_init_243 Bool) (temp___skip_constant_244 Bool)
+  (temp___do_toplevel_245 Bool)
+  (temp___do_typ_inv_246 Bool)) Bool (=>
+                                     (or (= temp___is_init_243 true)
+                                     (<= 0 7)) (in_range3 temp___expr_247)))
 
-(define-fun dynamic_invariant8 ((temp___expr_244 Int)
-  (temp___is_init_240 Bool) (temp___skip_constant_241 Bool)
-  (temp___do_toplevel_242 Bool)
-  (temp___do_typ_inv_243 Bool)) Bool (=>
-                                     (or (= temp___is_init_240 true)
-                                     (<= 0 320)) (in_range4 temp___expr_244)))
+(define-fun dynamic_invariant8 ((temp___expr_254 Int)
+  (temp___is_init_250 Bool) (temp___skip_constant_251 Bool)
+  (temp___do_toplevel_252 Bool)
+  (temp___do_typ_inv_253 Bool)) Bool (=>
+                                     (or (= temp___is_init_250 true)
+                                     (<= 0 320)) (in_range4 temp___expr_254)))
 
-(define-fun dynamic_invariant9 ((temp___expr_251 Int)
-  (temp___is_init_247 Bool) (temp___skip_constant_248 Bool)
-  (temp___do_toplevel_249 Bool)
-  (temp___do_typ_inv_250 Bool)) Bool (=>
-                                     (or (= temp___is_init_247 true)
-                                     (<= 0 200)) (in_range5 temp___expr_251)))
+(define-fun dynamic_invariant9 ((temp___expr_261 Int)
+  (temp___is_init_257 Bool) (temp___skip_constant_258 Bool)
+  (temp___do_toplevel_259 Bool)
+  (temp___do_typ_inv_260 Bool)) Bool (=>
+                                     (or (= temp___is_init_257 true)
+                                     (<= 0 200)) (in_range5 temp___expr_261)))
 
 (define-fun dynamic_invariant10 ((temp___expr_164 Int)
   (temp___is_init_160 Bool) (temp___skip_constant_161 Bool)

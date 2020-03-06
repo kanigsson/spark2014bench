@@ -380,80 +380,6 @@
 
 (declare-const dummy4 us_rep)
 
-(declare-datatypes ((my_rec__ref 0))
-(((my_rec__refqtmk (my_rec__content us_rep)))))
-(define-fun my_rec__ref_my_rec__content__projection ((a1 my_rec__ref)) us_rep 
-  (my_rec__content a1))
-
-(define-fun in_range4 ((rec__rec__my_rec__e1 Int)
-  (a1 us_rep)) Bool (= rec__rec__my_rec__e1 (to_rep3
-                                            (rec__rec__my_rec__e
-                                            (us_split_discrs1 a1)))))
-
-(declare-const value__size1 Int)
-
-(declare-const object__size1 Int)
-
-(declare-const alignment1 Int)
-
-;; value__size_axiom
-  (assert (<= 0 value__size1))
-
-;; object__size_axiom
-  (assert (<= 0 object__size1))
-
-;; alignment_axiom
-  (assert (<= 0 alignment1))
-
-(declare-const rec__my_rec__e__first__bit1 Int)
-
-(declare-const rec__my_rec__e__last__bit1 Int)
-
-(declare-const rec__my_rec__e__position1 Int)
-
-;; rec__my_rec__e__first__bit_axiom
-  (assert (<= 0 rec__my_rec__e__first__bit1))
-
-;; rec__my_rec__e__last__bit_axiom
-  (assert (< rec__my_rec__e__first__bit1 rec__my_rec__e__last__bit1))
-
-;; rec__my_rec__e__position_axiom
-  (assert (<= 0 rec__my_rec__e__position1))
-
-(declare-const rec__my_rec__x__first__bit1 Int)
-
-(declare-const rec__my_rec__x__last__bit1 Int)
-
-(declare-const rec__my_rec__x__position1 Int)
-
-;; rec__my_rec__x__first__bit_axiom
-  (assert (<= 0 rec__my_rec__x__first__bit1))
-
-;; rec__my_rec__x__last__bit_axiom
-  (assert (< rec__my_rec__x__first__bit1 rec__my_rec__x__last__bit1))
-
-;; rec__my_rec__x__position_axiom
-  (assert (<= 0 rec__my_rec__x__position1))
-
-(declare-const rec__my_rec__y__first__bit1 Int)
-
-(declare-const rec__my_rec__y__last__bit1 Int)
-
-(declare-const rec__my_rec__y__position1 Int)
-
-;; rec__my_rec__y__first__bit_axiom
-  (assert (<= 0 rec__my_rec__y__first__bit1))
-
-;; rec__my_rec__y__last__bit_axiom
-  (assert (< rec__my_rec__y__first__bit1 rec__my_rec__y__last__bit1))
-
-;; rec__my_rec__y__position_axiom
-  (assert (<= 0 rec__my_rec__y__position1))
-
-(declare-fun user_eq5 (us_rep us_rep) Bool)
-
-(declare-const dummy5 us_rep)
-
 (declare-datatypes ((t2s__ref 0))
 (((t2s__refqtmk (t2s__content us_rep)))))
 (define-fun t2s__ref_t2s__content__projection ((a1 t2s__ref)) us_rep 
@@ -511,20 +437,25 @@
                             (rec__rec__sub_rec_ok__plop (us_split_fields3 b))) true)))
                     true false))
 
-(declare-const value__size2 Int)
+(define-fun in_range4 ((rec__rec__sub_rec_ok__z1 Int)
+  (a1 us_split_discrs2)) Bool (= rec__rec__sub_rec_ok__z1 (to_rep
+                                                          (rec__rec__sub_rec_ok__z
+                                                          a1))))
 
-(declare-const object__size2 Int)
+(declare-const value__size1 Int)
 
-(declare-const alignment2 Int)
+(declare-const object__size1 Int)
+
+(declare-const alignment1 Int)
 
 ;; value__size_axiom
-  (assert (<= 0 value__size2))
+  (assert (<= 0 value__size1))
 
 ;; object__size_axiom
-  (assert (<= 0 object__size2))
+  (assert (<= 0 object__size1))
 
 ;; alignment_axiom
-  (assert (<= 0 alignment2))
+  (assert (<= 0 alignment1))
 
 (declare-const rec__sub_rec_ok__z__first__bit Int)
 
@@ -557,83 +488,78 @@
 ;; rec__sub_rec_ok__plop__position_axiom
   (assert (<= 0 rec__sub_rec_ok__plop__position))
 
-(declare-fun user_eq6 (us_rep1 us_rep1) Bool)
+(declare-fun user_eq5 (us_rep1 us_rep1) Bool)
 
-(declare-const dummy6 us_rep1)
+(declare-const dummy5 us_rep1)
 
 (declare-datatypes ((sub_rec_ok__ref 0))
 (((sub_rec_ok__refqtmk (sub_rec_ok__content us_rep1)))))
 (define-fun sub_rec_ok__ref_sub_rec_ok__content__projection ((a1 sub_rec_ok__ref)) us_rep1 
   (sub_rec_ok__content a1))
 
-(define-fun in_range5 ((rec__rec__my_rec__e1 Int)
-  (a1 us_rep)) Bool (= rec__rec__my_rec__e1 (to_rep3
-                                            (rec__rec__my_rec__e
-                                            (us_split_discrs1 a1)))))
+(declare-const value__size2 Int)
 
-(declare-const value__size3 Int)
+(declare-const object__size2 Int)
 
-(declare-const object__size3 Int)
-
-(declare-const alignment3 Int)
+(declare-const alignment2 Int)
 
 ;; value__size_axiom
-  (assert (<= 0 value__size3))
+  (assert (<= 0 value__size2))
 
 ;; object__size_axiom
-  (assert (<= 0 object__size3))
+  (assert (<= 0 object__size2))
 
 ;; alignment_axiom
-  (assert (<= 0 alignment3))
+  (assert (<= 0 alignment2))
 
-(declare-const rec__my_rec__e__first__bit2 Int)
+(declare-const rec__my_rec__e__first__bit1 Int)
 
-(declare-const rec__my_rec__e__last__bit2 Int)
+(declare-const rec__my_rec__e__last__bit1 Int)
 
-(declare-const rec__my_rec__e__position2 Int)
+(declare-const rec__my_rec__e__position1 Int)
 
 ;; rec__my_rec__e__first__bit_axiom
-  (assert (<= 0 rec__my_rec__e__first__bit2))
+  (assert (<= 0 rec__my_rec__e__first__bit1))
 
 ;; rec__my_rec__e__last__bit_axiom
-  (assert (< rec__my_rec__e__first__bit2 rec__my_rec__e__last__bit2))
+  (assert (< rec__my_rec__e__first__bit1 rec__my_rec__e__last__bit1))
 
 ;; rec__my_rec__e__position_axiom
-  (assert (<= 0 rec__my_rec__e__position2))
+  (assert (<= 0 rec__my_rec__e__position1))
 
-(declare-const rec__my_rec__x__first__bit2 Int)
+(declare-const rec__my_rec__x__first__bit1 Int)
 
-(declare-const rec__my_rec__x__last__bit2 Int)
+(declare-const rec__my_rec__x__last__bit1 Int)
 
-(declare-const rec__my_rec__x__position2 Int)
+(declare-const rec__my_rec__x__position1 Int)
 
 ;; rec__my_rec__x__first__bit_axiom
-  (assert (<= 0 rec__my_rec__x__first__bit2))
+  (assert (<= 0 rec__my_rec__x__first__bit1))
 
 ;; rec__my_rec__x__last__bit_axiom
-  (assert (< rec__my_rec__x__first__bit2 rec__my_rec__x__last__bit2))
+  (assert (< rec__my_rec__x__first__bit1 rec__my_rec__x__last__bit1))
 
 ;; rec__my_rec__x__position_axiom
-  (assert (<= 0 rec__my_rec__x__position2))
+  (assert (<= 0 rec__my_rec__x__position1))
 
-(declare-const rec__my_rec__y__first__bit2 Int)
+(declare-const rec__my_rec__y__first__bit1 Int)
 
-(declare-const rec__my_rec__y__last__bit2 Int)
+(declare-const rec__my_rec__y__last__bit1 Int)
 
-(declare-const rec__my_rec__y__position2 Int)
+(declare-const rec__my_rec__y__position1 Int)
 
 ;; rec__my_rec__y__first__bit_axiom
-  (assert (<= 0 rec__my_rec__y__first__bit2))
+  (assert (<= 0 rec__my_rec__y__first__bit1))
 
 ;; rec__my_rec__y__last__bit_axiom
-  (assert (< rec__my_rec__y__first__bit2 rec__my_rec__y__last__bit2))
+  (assert (< rec__my_rec__y__first__bit1 rec__my_rec__y__last__bit1))
 
 ;; rec__my_rec__y__position_axiom
-  (assert (<= 0 rec__my_rec__y__position2))
+  (assert (<= 0 rec__my_rec__y__position1))
 
-(declare-fun user_eq7 (us_rep us_rep) Bool)
+(declare-fun user_eq6 (us_rep us_rep) Bool)
 
-(declare-const dummy7 us_rep)
+(declare-const dummy6 us_rep)
 
 (declare-datatypes ((t5b__ref 0))
 (((t5b__refqtmk (t5b__content us_rep)))))
@@ -693,25 +619,20 @@
                             (us_split_fields5 b))) true)))
                     true false))
 
-(define-fun in_range6 ((rec__rec__sub_rec_ok__z1 Int)
-  (a1 us_rep1)) Bool (= rec__rec__sub_rec_ok__z1 (to_rep
-                                                 (rec__rec__sub_rec_ok__z
-                                                 (us_split_discrs3 a1)))))
+(declare-const value__size3 Int)
 
-(declare-const value__size4 Int)
+(declare-const object__size3 Int)
 
-(declare-const object__size4 Int)
-
-(declare-const alignment4 Int)
+(declare-const alignment3 Int)
 
 ;; value__size_axiom
-  (assert (<= 0 value__size4))
+  (assert (<= 0 value__size3))
 
 ;; object__size_axiom
-  (assert (<= 0 object__size4))
+  (assert (<= 0 object__size3))
 
 ;; alignment_axiom
-  (assert (<= 0 alignment4))
+  (assert (<= 0 alignment3))
 
 (declare-const rec__sub_rec_ok__z__first__bit1 Int)
 
@@ -744,9 +665,9 @@
 ;; rec__sub_rec_ok__plop__position_axiom
   (assert (<= 0 rec__sub_rec_ok__plop__position1))
 
-(declare-fun user_eq8 (us_rep2 us_rep2) Bool)
+(declare-fun user_eq7 (us_rep2 us_rep2) Bool)
 
-(declare-const dummy8 us_rep2)
+(declare-const dummy7 us_rep2)
 
 (declare-datatypes ((tzS__ref 0))
 (((tzS__refqtmk (tzS__content us_rep2)))))
@@ -757,17 +678,93 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
+(define-fun in_range5 ((rec__rec__my_rec__e1 Int)
+  (a1 us_split_discrs)) Bool (= rec__rec__my_rec__e1 (to_rep3
+                                                     (rec__rec__my_rec__e a1))))
+
+(declare-const value__size4 Int)
+
+(declare-const object__size4 Int)
+
+(declare-const alignment4 Int)
+
+;; value__size_axiom
+  (assert (<= 0 value__size4))
+
+;; object__size_axiom
+  (assert (<= 0 object__size4))
+
+;; alignment_axiom
+  (assert (<= 0 alignment4))
+
+(declare-const rec__my_rec__e__first__bit2 Int)
+
+(declare-const rec__my_rec__e__last__bit2 Int)
+
+(declare-const rec__my_rec__e__position2 Int)
+
+;; rec__my_rec__e__first__bit_axiom
+  (assert (<= 0 rec__my_rec__e__first__bit2))
+
+;; rec__my_rec__e__last__bit_axiom
+  (assert (< rec__my_rec__e__first__bit2 rec__my_rec__e__last__bit2))
+
+;; rec__my_rec__e__position_axiom
+  (assert (<= 0 rec__my_rec__e__position2))
+
+(declare-const rec__my_rec__x__first__bit2 Int)
+
+(declare-const rec__my_rec__x__last__bit2 Int)
+
+(declare-const rec__my_rec__x__position2 Int)
+
+;; rec__my_rec__x__first__bit_axiom
+  (assert (<= 0 rec__my_rec__x__first__bit2))
+
+;; rec__my_rec__x__last__bit_axiom
+  (assert (< rec__my_rec__x__first__bit2 rec__my_rec__x__last__bit2))
+
+;; rec__my_rec__x__position_axiom
+  (assert (<= 0 rec__my_rec__x__position2))
+
+(declare-const rec__my_rec__y__first__bit2 Int)
+
+(declare-const rec__my_rec__y__last__bit2 Int)
+
+(declare-const rec__my_rec__y__position2 Int)
+
+;; rec__my_rec__y__first__bit_axiom
+  (assert (<= 0 rec__my_rec__y__first__bit2))
+
+;; rec__my_rec__y__last__bit_axiom
+  (assert (< rec__my_rec__y__first__bit2 rec__my_rec__y__last__bit2))
+
+;; rec__my_rec__y__position_axiom
+  (assert (<= 0 rec__my_rec__y__position2))
+
+(declare-fun user_eq8 (us_rep us_rep) Bool)
+
+(declare-const dummy8 us_rep)
+
+(declare-datatypes ((my_rec__ref 0))
+(((my_rec__refqtmk (my_rec__content us_rep)))))
+(define-fun my_rec__ref_my_rec__content__projection ((a1 my_rec__ref)) us_rep 
+  (my_rec__content a1))
+
 (define-fun dynamic_invariant ((temp___expr_233 us_rep2)
   (temp___is_init_229 Bool) (temp___skip_constant_230 Bool)
   (temp___do_toplevel_231 Bool)
   (temp___do_typ_inv_232 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_230 true))
-                                     (in_range6 a (to_base temp___expr_233)))
+                                     (in_range4 a
+                                     (us_split_discrs3
+                                     (to_base temp___expr_233))))
                                      (=> (rec__sub_rec_ok__plop__pred1
                                      temp___expr_233) (in_range5 a
+                                     (us_split_discrs1
                                      (rec__rec__sub_rec_ok__plop1
-                                     (us_split_fields5 temp___expr_233))))))
+                                     (us_split_fields5 temp___expr_233)))))))
 
 (define-fun default_initial_assumption ((temp___expr_236 us_rep2)
   (temp___skip_top_level_237 Bool)) Bool (and
@@ -817,12 +814,13 @@
   (temp___is_init_222 Bool) (temp___skip_constant_223 Bool)
   (temp___do_toplevel_224 Bool)
   (temp___do_typ_inv_225 Bool)) Bool (=> (rec__sub_rec_ok__plop__pred
-                                     temp___expr_226) (in_range4
+                                     temp___expr_226) (in_range5
                                      (to_rep
                                      (rec__rec__sub_rec_ok__z
                                      (us_split_discrs3 temp___expr_226)))
+                                     (us_split_discrs1
                                      (rec__rec__sub_rec_ok__plop
-                                     (us_split_fields3 temp___expr_226)))))
+                                     (us_split_fields3 temp___expr_226))))))
 
 (assert
 ;; defqtvc

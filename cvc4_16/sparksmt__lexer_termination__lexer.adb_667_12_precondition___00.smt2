@@ -490,6 +490,11 @@
                         (rec__lexer__token__value (us_split_fields1 b))))))))
                    true false))
 
+(define-fun in_range6 ((rec__lexer__token__kind1 Int)
+  (a us_split_discrs)) Bool (= rec__lexer__token__kind1 (to_rep3
+                                                        (rec__lexer__token__kind
+                                                        a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

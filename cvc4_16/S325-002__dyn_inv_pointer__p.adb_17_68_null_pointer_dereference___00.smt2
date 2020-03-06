@@ -190,6 +190,10 @@
                             (rec__p__B_2__list_d__next (us_split_fields1 b))) true)))
                     true false))
 
+(define-fun in_range2 ((rec__p__B_2__list_d__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__p__B_2__list_d__d1 (rec__p__B_2__list_d__d
+                                                       a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -271,7 +275,7 @@
 ;; t1b'axiom
   (assert (forall ((i t1b)) (and (<= 1 (t1bqtint i)) (<= (t1bqtint i) 10))))
 
-(define-fun in_range2 ((x1 Int)) Bool (and (<= 1 x1) (<= x1 10)))
+(define-fun in_range3 ((x1 Int)) Bool (and (<= 1 x1) (<= x1 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -423,7 +427,7 @@
   (forall ((i Int))
   (=> (dynamic_invariant1 i6b true false true true i)
   (=> (dynamic_invariant1 i6b true false true true i)
-  (=> (in_range2 i)
+  (=> (in_range3 i)
   (=> (dynamic_invariant x true false true true i)
   (=>
   (= (ite (= (not (bool_eq x us_null_pointer)) true)

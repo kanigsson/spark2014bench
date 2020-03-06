@@ -209,14 +209,14 @@
 
 (declare-const dummy1 us_rep)
 
-(declare-datatypes ((rec____ref 0))
-(((rec____refqtmk (rec____content us_rep)))))
-(define-fun rec____ref_rec____content__projection ((a rec____ref)) us_rep 
-  (rec____content a))
+(declare-datatypes ((constr_rec__ref 0))
+(((constr_rec__refqtmk (constr_rec__content us_rep)))))
+(define-fun constr_rec__ref_constr_rec__content__projection ((a constr_rec__ref)) us_rep 
+  (constr_rec__content a))
 
 (define-fun in_range2 ((rec__formals_rec_split__rec__d1 Bool)
-  (a us_rep)) Bool (= rec__formals_rec_split__rec__d1 (rec__formals_rec_split__rec__d
-                                                      (us_split_discrs1 a))))
+  (a us_split_discrs)) Bool (= rec__formals_rec_split__rec__d1 (rec__formals_rec_split__rec__d
+                                                               a)))
 
 (declare-const value__size1 Int)
 
@@ -269,17 +269,18 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((constr_rec__ref 0))
-(((constr_rec__refqtmk (constr_rec__content us_rep)))))
-(define-fun constr_rec__ref_constr_rec__content__projection ((a constr_rec__ref)) us_rep 
-  (constr_rec__content a))
+(declare-datatypes ((rec____ref 0))
+(((rec____refqtmk (rec____content us_rep)))))
+(define-fun rec____ref_rec____content__projection ((a rec____ref)) us_rep 
+  (rec____content a))
 
 (define-fun dynamic_invariant ((temp___expr_164 us_rep)
   (temp___is_init_160 Bool) (temp___skip_constant_161 Bool)
   (temp___do_toplevel_162 Bool)
   (temp___do_typ_inv_163 Bool)) Bool (=>
                                      (not (= temp___skip_constant_161 true))
-                                     (in_range2 x temp___expr_164)))
+                                     (in_range2 x
+                                     (us_split_discrs1 temp___expr_164))))
 
 (define-fun default_initial_assumption ((temp___expr_166 us_rep)
   (temp___skip_top_level_167 Bool)) Bool (and
@@ -292,10 +293,6 @@
                                             (rec__formals_rec_split__rec__f
                                             (us_split_fields1
                                             temp___expr_166))) 1))))
-
-(define-fun in_range3 ((rec__formals_rec_split__rec__d1 Bool)
-  (a us_rep)) Bool (= rec__formals_rec_split__rec__d1 (rec__formals_rec_split__rec__d
-                                                      (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 
@@ -358,7 +355,8 @@
   (temp___do_toplevel_171 Bool)
   (temp___do_typ_inv_172 Bool)) Bool (=>
                                      (not (= temp___skip_constant_170 true))
-                                     (in_range3 y temp___expr_173)))
+                                     (in_range2 y
+                                     (us_split_discrs1 temp___expr_173))))
 
 (define-fun default_initial_assumption1 ((temp___expr_175 us_rep)
   (temp___skip_top_level_176 Bool)) Bool (and

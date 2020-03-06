@@ -124,6 +124,9 @@
                         (to_rep (rec__p__t__c (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range1 ((rec__p__t__d1 Int)
+  (a us_split_discrs)) Bool (= rec__p__t__d1 (to_rep (rec__p__t__d a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -186,10 +189,6 @@
                                             (rec__p__t__d
                                             (us_split_discrs1
                                             temp___expr_164))) 0))
-
-(define-fun in_range1 ((rec__p__t__d1 Int)
-  (a us_rep)) Bool (= rec__p__t__d1 (to_rep
-                                    (rec__p__t__d (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 

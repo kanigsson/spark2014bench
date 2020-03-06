@@ -232,6 +232,16 @@
                         (rec__counters__counter__t (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range3 ((rec__counters__counter__mode1 Int)
+  (rec__counters__counter__ticks1 Int)
+  (a us_split_discrs)) Bool (and
+                            (= rec__counters__counter__mode1 (to_rep2
+                                                             (rec__counters__counter__mode
+                                                             a)))
+                            (= rec__counters__counter__ticks1 (to_rep1
+                                                              (rec__counters__counter__ticks
+                                                              a)))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

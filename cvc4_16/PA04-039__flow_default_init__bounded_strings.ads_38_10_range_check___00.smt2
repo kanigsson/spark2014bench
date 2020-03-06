@@ -420,6 +420,10 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range5 ((rec__bounded_strings__bounded_string__bound1 Int)
+  (a us_split_discrs)) Bool (= rec__bounded_strings__bounded_string__bound1 
+  (to_rep (rec__bounded_strings__bounded_string__bound a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

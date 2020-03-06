@@ -156,12 +156,10 @@
  ;; File "statpred.adb", line 1, characters 0-0
   (not
   (=> (id__function_guard (id 2) 2)
-  (=> (id__function_guard (id 2) 2)
   (=>
   (let ((temp___190 (id 2)))
-  (and (in_range2 (id 2))
+  (and (in_range2 temp___190)
   (or (and (<= (- 2147483648) temp___190) (<= temp___190 (- 2)))
   (and (<= 2 temp___190) (<= temp___190 2147483647)))))
-  (=> (id__function_guard (id (- 2)) (- 2))
-  (=> (id__function_guard (id (- 2)) (- 2)) (in_range2 (id (- 2))))))))))
+  (=> (id__function_guard (id (- 2)) (- 2)) (in_range2 (id (- 2))))))))
 (check-sat)

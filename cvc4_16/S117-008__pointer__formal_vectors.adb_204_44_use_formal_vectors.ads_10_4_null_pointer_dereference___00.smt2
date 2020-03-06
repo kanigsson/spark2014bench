@@ -1202,10 +1202,10 @@
                                                                (<= i1 
                                                                r160s))
                                                           true false)) true)
-  (let ((temp___418 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
+  (let ((temp___411 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                     (rec__use_formal_vectors__my_vect__vector__content
                     (us_split_fields1 v)))))
-  (=> (and (<= (first1 temp___418) i1) (<= i1 (last1 temp___418)))
+  (=> (and (<= (first1 temp___411) i1) (<= i1 (last1 temp___411)))
   (rec__use_formal_vectors__my_vect__element_access__pointer_value__pred
-  (select (to_array temp___418) i1)))))))))))))))))))))))
+  (select (to_array temp___411) i1)))))))))))))))))))))))
 (check-sat)

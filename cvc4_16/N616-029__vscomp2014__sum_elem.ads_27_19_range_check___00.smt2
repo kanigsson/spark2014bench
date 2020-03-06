@@ -136,6 +136,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__sum_elem__partitions__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__sum_elem__partitions__vector__capacity1 
+  (to_rep (rec__sum_elem__partitions__vector__capacity a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -175,12 +179,6 @@
 (((vector__refqtmk (vector__content us_rep)))))
 (define-fun vector__ref_vector__content__projection ((a vector__ref)) us_rep 
   (vector__content a))
-
-(define-fun in_range1 ((rec__sum_elem__partitions__vector__capacity1 Int)
-  (a us_rep)) Bool (= rec__sum_elem__partitions__vector__capacity1 (to_rep
-                                                                   (rec__sum_elem__partitions__vector__capacity
-                                                                   (us_split_discrs1
-                                                                   a)))))
 
 (declare-const value__size1 Int)
 
@@ -239,23 +237,24 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq2 a b) (oeq a b)) :pattern ((user_eq2 a b)) )))
 
-(define-fun dynamic_invariant ((temp___expr_551 us_rep)
-  (temp___is_init_547 Bool) (temp___skip_constant_548 Bool)
-  (temp___do_toplevel_549 Bool)
-  (temp___do_typ_inv_550 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_548 true))
-                                     (in_range1 10 temp___expr_551)))
+(define-fun dynamic_invariant ((temp___expr_553 us_rep)
+  (temp___is_init_549 Bool) (temp___skip_constant_550 Bool)
+  (temp___do_toplevel_551 Bool)
+  (temp___do_typ_inv_552 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_550 true))
+                                     (in_range1 10
+                                     (us_split_discrs1 temp___expr_553))))
 
-(define-fun default_initial_assumption ((temp___expr_553 us_rep)
-  (temp___skip_top_level_554 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_555 us_rep)
+  (temp___skip_top_level_556 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__sum_elem__partitions__vector__capacity
                                             (us_split_discrs1
-                                            temp___expr_553))) 10)
+                                            temp___expr_555))) 10)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_554 true))
-                                         (= (is_empty temp___expr_553) true))))
+                                         (= temp___skip_top_level_556 true))
+                                         (= (is_empty temp___expr_555) true))))
 
 (declare-sort index 0)
 

@@ -424,6 +424,10 @@
                            (us_split_fields1 b))) true))))
                    true false))
 
+(define-fun in_range4 ((rec__tester__ring_buffer__ring_buffer_type__max_size1 Int)
+  (a us_split_discrs)) Bool (= rec__tester__ring_buffer__ring_buffer_type__max_size1 
+  (to_rep1 (rec__tester__ring_buffer__ring_buffer_type__max_size a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -740,7 +744,7 @@
   (forall ((i natural))
   (and (<= 0 (naturalqtint i)) (<= (naturalqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -761,7 +765,7 @@
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
   (temp___do_typ_inv_38 Bool)) Bool (=>
                                     (or (= temp___is_init_35 true)
-                                    (<= 0 2147483647)) (in_range4
+                                    (<= 0 2147483647)) (in_range5
                                     temp___expr_39)))
 
 (define-fun dynamic_invariant4 ((temp___expr_195 Int)
@@ -790,7 +794,7 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S212-028__update-30321/src/gnatprove/tester__ring_buffer__ring_buffer_type.mlw", line 1057, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S212-028__update-22668/src/gnatprove/tester__ring_buffer__ring_buffer_type.mlw", line 1071, characters 5-8
   (not
   (forall ((usf Int) (usf1 us_rep) (usf2 us_rep))
   (=> (dynamic_invariant2 usf true true true true)
@@ -799,7 +803,7 @@
          (rec__tester__ring_buffer__ring_buffer_type__max_size
          (us_split_discrs1 usf1))))
   (=>
-  (let ((temp___266 (rec__tester__ring_buffer__ring_buffer_type__max_size
+  (let ((temp___273 (rec__tester__ring_buffer__ring_buffer_type__max_size
                     (us_split_discrs1 usf2))))
   (and
   (and
@@ -812,14 +816,14 @@
   (and
   (= (to_rep1
      (rec__tester__ring_buffer__ring_buffer_type__tail
-     (us_split_fields1 usf2))) (to_rep1 temp___266))
+     (us_split_fields1 usf2))) (to_rep1 temp___273))
   (and
   (= (first1
      (rec__tester__ring_buffer__ring_buffer_type__items
      (us_split_fields1 usf2))) 1)
   (= (last1
      (rec__tester__ring_buffer__ring_buffer_type__items
-     (us_split_fields1 usf2))) (to_rep1 temp___266))))))
+     (us_split_fields1 usf2))) (to_rep1 temp___273))))))
   (=> (forall ((usf3 us_rep)) (empty__function_guard (empty usf3) usf3))
   (dynamic_predicate usf2))))))))
 (check-sat)

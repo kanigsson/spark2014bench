@@ -527,6 +527,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__very_longs__very_long__octet_length1 
+  (to_rep (rec__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -686,11 +690,11 @@
                                     true false)) true)
   (forall ((spark__branch Bool) (digit_index1 Int))
   (=>
-  (let ((temp___1303 (rec__very_longs__very_long__long_digits
+  (let ((temp___1304 (rec__very_longs__very_long__long_digits
                      (us_split_fields1 number))))
-  (and (and (<= (first1 temp___1303) i) (<= i (last1 temp___1303)))
+  (and (and (<= (first1 temp___1304) i) (<= i (last1 temp___1304)))
   (exists ((o (_ BitVec 8)))
-  (and (= (to_rep2 (select (to_array temp___1303) i)) o)
+  (and (= (to_rep2 (select (to_array temp___1304) i)) o)
   (and (= spark__branch (ite (not (= o #x00)) true false))
   (ite (= spark__branch true) (= digit_index1 i)
   (= digit_index1 digit_index)))))))

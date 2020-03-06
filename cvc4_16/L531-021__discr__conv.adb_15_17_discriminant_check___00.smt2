@@ -257,6 +257,10 @@
                         (rec__basic__r__c_field2 (us_split_fields1 b))))))))
                    true false))
 
+(define-fun in_range4 ((rec__basic__r__x1 Int)
+  (a us_split_discrs)) Bool (= rec__basic__r__x1 (to_rep2
+                                                 (rec__basic__r__x a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -366,11 +370,6 @@
      (=> (id__function_guard result x) (= (bool_eq result x) true))) :pattern (
   (id x)) )))
 
-(define-fun in_range4 ((rec__basic__r__x1 Int)
-  (a us_rep)) Bool (= rec__basic__r__x1 (to_rep2
-                                        (rec__basic__r__x
-                                        (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -479,7 +478,8 @@
   (temp___do_toplevel_187 Bool)
   (temp___do_typ_inv_188 Bool)) Bool (=>
                                      (not (= temp___skip_constant_186 true))
-                                     (in_range4 0 temp___expr_189)))
+                                     (in_range4 0
+                                     (us_split_discrs1 temp___expr_189))))
 
 (define-fun default_initial_assumption ((temp___expr_191 us_rep)
   (temp___skip_top_level_192 Bool)) Bool (= (to_rep2
@@ -494,11 +494,6 @@
 (declare-const z__split_discrs us_split_discrs)
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
-
-(define-fun in_range5 ((rec__basic__r__x1 Int)
-  (a us_rep)) Bool (= rec__basic__r__x1 (to_rep2
-                                        (rec__basic__r__x
-                                        (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -598,11 +593,6 @@
 (((t4b__refqtmk (t4b__content us_rep)))))
 (define-fun t4b__ref_t4b__content__projection ((a t4b__ref)) us_rep (t4b__content
                                                                     a))
-
-(define-fun in_range6 ((rec__basic__r__x1 Int)
-  (a us_rep)) Bool (= rec__basic__r__x1 (to_rep2
-                                        (rec__basic__r__x
-                                        (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 
@@ -735,6 +725,7 @@
   (not
   (forall ((o enum))
   (=> (= (to_rep2 o) 0) (in_range4 0
+  (us_split_discrs1
   (us_repqtmk (us_split_discrsqtmk o)
-  (us_split_fieldsqtmk rliteral rliteral true dummy1)))))))
+  (us_split_fieldsqtmk rliteral rliteral true dummy1))))))))
 (check-sat)

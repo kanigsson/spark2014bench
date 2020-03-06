@@ -428,8 +428,9 @@
   (not
   (=> (dynamic_invariant1 needle true false true true)
   (=> (dynamic_invariant1 haystack true false true true)
-  (=> (<= 1 (length needle))
-  (=> (<= (length needle) (length haystack))
+  (=>
+  (let ((temp___358 (length needle)))
+  (and (<= 1 temp___358) (<= temp___358 (length haystack))))
   (let ((o (length needle)))
   (=> (in_range1 o)
   (let ((o1 (length haystack)))
@@ -449,16 +450,16 @@
   (=> (<= i o5)
   (and (and (<= (first1 haystack) i) (<= i (last1 haystack)))
   (and (<= (first1 haystack) o5) (<= o5 (last1 haystack)))))
-  (let ((temp___340 (of_array (to_array haystack) i o5)))
+  (let ((temp___349 (of_array (to_array haystack) i o5)))
   (forall ((spark__branch Bool))
   (=>
   (= spark__branch (bool_eq (to_array needle) (first1 needle) (last1 needle)
-                   (to_array temp___340) (first1 temp___340)
-                   (last1 temp___340)))
+                   (to_array temp___349) (first1 temp___349)
+                   (last1 temp___349)))
   (=> (not (= spark__branch true))
   (forall ((k Int))
   (=> (and (<= 1 k) (<= k i))
   (=>
   (forall ((k1 Int)) (match_at__function_guard (match_at needle haystack k1)
-  needle haystack k1)) (not (= (match_at needle haystack k) true)))))))))))))))))))))))))))))))
+  needle haystack k1)) (not (= (match_at needle haystack k) true))))))))))))))))))))))))))))))
 (check-sat)

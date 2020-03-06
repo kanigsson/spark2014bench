@@ -170,75 +170,6 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((vector__ref 0))
-(((vector__refqtmk (vector__content us_rep)))))
-(define-fun vector__ref_vector__content__projection ((a vector__ref)) us_rep 
-  (vector__content a))
-
-(define-fun to_rep ((x capacity_range1)) Int (capacity_rangeqtint1 x))
-
-(declare-fun of_rep (Int) capacity_range1)
-
-;; inversion_axiom
-  (assert
-  (forall ((x capacity_range1))
-  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
-
-;; range_axiom
-  (assert
-  (forall ((x capacity_range1)) (! (in_range1
-  (to_rep x)) :pattern ((to_rep x)) )))
-
-;; coerce_axiom
-  (assert
-  (forall ((x Int))
-  (! (=> (in_range1 x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
-                                                            (of_rep x))) )))
-
-(define-fun in_range2 ((rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 Int)
-  (a us_rep)) Bool (= rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 
-  (to_rep
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity
-  (us_split_discrs1 a)))))
-
-(declare-const value__size1 Int)
-
-(declare-const object__size1 Int)
-
-(declare-const alignment1 Int)
-
-;; value__size_axiom
-  (assert (<= 0 value__size1))
-
-;; object__size_axiom
-  (assert (<= 0 object__size1))
-
-;; alignment_axiom
-  (assert (<= 0 alignment1))
-
-(declare-const ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1 Int)
-
-(declare-const ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit1 Int)
-
-(declare-const ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position1 Int)
-
-;; ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit_axiom
-  (assert
-  (<= 0 ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1))
-
-;; ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit_axiom
-  (assert
-  (< ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1 
-  ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit1))
-
-;; ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position_axiom
-  (assert
-  (<= 0 ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position1))
-
-(declare-fun user_eq3 (us_rep us_rep) Bool)
-
-(declare-const dummy3 us_rep)
-
 (declare-datatypes ((t172s__ref 0))
 (((t172s__refqtmk (t172s__content us_rep)))))
 (define-fun t172s__ref_t172s__content__projection ((a t172s__ref)) us_rep 
@@ -282,22 +213,46 @@
 
 (declare-fun us_dispatch_eq (us_rep1 us_rep1) Bool)
 
+(define-fun to_rep ((x capacity_range)) Int (capacity_rangeqtint x))
+
+(declare-fun of_rep (Int) capacity_range)
+
+;; inversion_axiom
+  (assert
+  (forall ((x capacity_range))
+  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x capacity_range)) (! (in_range
+  (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                           (of_rep x))) )))
+
 (declare-const us_tag Int)
 
-(declare-const value__size2 Int)
+(define-fun in_range2 ((rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 Int)
+  (a us_split_discrs2)) Bool (= rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 
+  (to_rep (rec__ada___hnco__test2__v_type_owner__vector_type__capacity a))))
 
-(declare-const object__size2 Int)
+(declare-const value__size1 Int)
 
-(declare-const alignment2 Int)
+(declare-const object__size1 Int)
+
+(declare-const alignment1 Int)
 
 ;; value__size_axiom
-  (assert (<= 0 value__size2))
+  (assert (<= 0 value__size1))
 
 ;; object__size_axiom
-  (assert (<= 0 object__size2))
+  (assert (<= 0 object__size1))
 
 ;; alignment_axiom
-  (assert (<= 0 alignment2))
+  (assert (<= 0 alignment1))
 
 (declare-const ada___hnco__test2__v_type_owner__vector_type__capacity__first__bit Int)
 
@@ -337,43 +292,93 @@
   (assert
   (<= 0 ada___hnco__test2__v_type_owner__vector_type__hidden_vector__position))
 
-(declare-fun user_eq4 (us_rep1 us_rep1) Bool)
+(declare-fun user_eq3 (us_rep1 us_rep1) Bool)
 
-(declare-const dummy4 us_rep1)
+(declare-const dummy3 us_rep1)
 
 (declare-datatypes ((vector_type__ref 0))
 (((vector_type__refqtmk (vector_type__content us_rep1)))))
 (define-fun vector_type__ref_vector_type__content__projection ((a vector_type__ref)) us_rep1 
   (vector_type__content a))
 
-(define-fun to_rep1 ((x capacity_range)) Int (capacity_rangeqtint x))
+(define-fun to_rep1 ((x capacity_range1)) Int (capacity_rangeqtint1 x))
 
-(declare-fun of_rep1 (Int) capacity_range)
+(declare-fun of_rep1 (Int) capacity_range1)
 
 ;; inversion_axiom
   (assert
-  (forall ((x capacity_range))
+  (forall ((x capacity_range1))
   (! (= (of_rep1 (to_rep1 x)) x) :pattern ((to_rep1 x)) )))
 
 ;; range_axiom
   (assert
-  (forall ((x capacity_range)) (! (in_range
+  (forall ((x capacity_range1)) (! (in_range1
   (to_rep1 x)) :pattern ((to_rep1 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
-                                                             (of_rep1 x))) )))
+  (! (=> (in_range1 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
+                                                              (of_rep1 x))) )))
+
+(define-fun in_range3 ((rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 
+  (to_rep1
+  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity
+  a))))
+
+(declare-const value__size2 Int)
+
+(declare-const object__size2 Int)
+
+(declare-const alignment2 Int)
+
+;; value__size_axiom
+  (assert (<= 0 value__size2))
+
+;; object__size_axiom
+  (assert (<= 0 object__size2))
+
+;; alignment_axiom
+  (assert (<= 0 alignment2))
+
+(declare-const ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1 Int)
+
+(declare-const ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit1 Int)
+
+(declare-const ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position1 Int)
+
+;; ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit_axiom
+  (assert
+  (<= 0 ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1))
+
+;; ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit_axiom
+  (assert
+  (< ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__first__bit1 
+  ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__last__bit1))
+
+;; ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position_axiom
+  (assert
+  (<= 0 ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity__position1))
+
+(declare-fun user_eq4 (us_rep us_rep) Bool)
+
+(declare-const dummy4 us_rep)
+
+(declare-datatypes ((vector__ref 0))
+(((vector__refqtmk (vector__content us_rep)))))
+(define-fun vector__ref_vector__content__projection ((a vector__ref)) us_rep 
+  (vector__content a))
 
 (define-fun dynamic_invariant ((temp___expr_308 us_rep1)
   (temp___is_init_304 Bool) (temp___skip_constant_305 Bool)
-  (temp___do_toplevel_306 Bool) (temp___do_typ_inv_307 Bool)) Bool (in_range2
-  (to_rep1
+  (temp___do_toplevel_306 Bool) (temp___do_typ_inv_307 Bool)) Bool (in_range3
+  (to_rep
   (rec__ada___hnco__test2__v_type_owner__vector_type__capacity
   (us_split_discrs3 temp___expr_308)))
+  (us_split_discrs1
   (rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector
-  (us_split_fields3 temp___expr_308))))
+  (us_split_fields3 temp___expr_308)))))
 
 (declare-const container us_rep1)
 
@@ -390,7 +395,7 @@
 ;; user_eq__def_axiom
   (assert
   (forall ((a us_rep) (b us_rep))
-  (! (= (user_eq2 a b) (oeq a b)) :pattern ((user_eq2 a b)) )))
+  (! (= (user_eq4 a b) (oeq a b)) :pattern ((user_eq4 a b)) )))
 
 (declare-fun is_empty (us_rep) Bool)
 
@@ -411,7 +416,7 @@
   (forall ((i count_type))
   (and (<= 0 (count_typeqtint i)) (<= (count_typeqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -433,7 +438,7 @@
   (temp___do_toplevel_236 Bool)
   (temp___do_typ_inv_237 Bool)) Bool (=>
                                      (or (= temp___is_init_234 true)
-                                     (<= 0 2147483647)) (in_range3
+                                     (<= 0 2147483647)) (in_range4
                                      temp___expr_238)))
 
 (define-fun dynamic_invariant2 ((temp___expr_245 Int)
@@ -446,12 +451,13 @@
 
 (define-fun dynamic_invariant3 ((temp___expr_394 us_rep1)
   (temp___is_init_390 Bool) (temp___skip_constant_391 Bool)
-  (temp___do_toplevel_392 Bool) (temp___do_typ_inv_393 Bool)) Bool (in_range2
-  (to_rep1
+  (temp___do_toplevel_392 Bool) (temp___do_typ_inv_393 Bool)) Bool (in_range3
+  (to_rep
   (rec__ada___hnco__test2__v_type_owner__vector_type__capacity
   (us_split_discrs3 temp___expr_394)))
+  (us_split_discrs1
   (rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector
-  (us_split_fields3 temp___expr_394))))
+  (us_split_fields3 temp___expr_394)))))
 
 (define-fun dynamic_invariant4 ((temp___expr_252 Int)
   (temp___is_init_248 Bool) (temp___skip_constant_249 Bool)
@@ -461,7 +467,7 @@
                                      (<= 0 2147483647)) (in_range1
                                      temp___expr_252)))
 
-(define-fun in_range4 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range5 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Bool) us_image)
 
@@ -470,7 +476,7 @@
 (declare-fun attr__ATTRIBUTE_VALUE3 (us_image) Bool)
 
 (define-fun capacity ((container1 us_rep)) Int (ite (= (distinct 1 0) true)
-                                               (to_rep
+                                               (to_rep1
                                                (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity
                                                (us_split_discrs1 container1)))
                                                2147483647))
@@ -582,7 +588,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -604,7 +610,7 @@
   (temp___do_toplevel_285 Bool)
   (temp___do_typ_inv_286 Bool)) Bool (=>
                                      (or (= temp___is_init_283 true)
-                                     (<= 0 2147483647)) (in_range5
+                                     (<= 0 2147483647)) (in_range6
                                      temp___expr_287)))
 
 ;; length__post_axiom
@@ -624,7 +630,7 @@
   (and (<= (- 2147483648) (element_typeqtint i))
   (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range7 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
@@ -648,7 +654,7 @@
   (temp___do_typ_inv_300 Bool)) Bool (=>
                                      (or (= temp___is_init_297 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range6 temp___expr_301)))
+                                     (in_range7 temp___expr_301)))
 
 ;; get__post_axiom
   (assert
@@ -663,7 +669,7 @@
 ;; user_eq__def_axiom
   (assert
   (forall ((a us_rep) (b us_rep))
-  (! (= (user_eq3 a b) (oeq a b)) :pattern ((user_eq3 a b)) )))
+  (! (= (user_eq2 a b) (oeq a b)) :pattern ((user_eq2 a b)) )))
 
 (assert
 ;; defqtvc
@@ -672,7 +678,7 @@
   (forall ((o Int))
   (=> (dynamic_invariant container true false true true)
   (=>
-  (= (to_rep1
+  (= (to_rep
      (rec__ada___hnco__test2__v_type_owner__vector_type__capacity
      (us_split_discrs3 container))) o)
   (in_range1 o))))))

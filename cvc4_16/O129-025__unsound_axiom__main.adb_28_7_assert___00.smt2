@@ -111,6 +111,10 @@
                                                   (us_split_discrs1 b))))
                    true false))
 
+(define-fun in_range2 ((rec__main__node_variant_type__m_variant1 Int)
+  (a us_split_discrs)) Bool (= rec__main__node_variant_type__m_variant1 
+  (to_rep (rec__main__node_variant_type__m_variant a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -227,12 +231,6 @@
                                             (rec__main__node_type__variant_node
                                             (us_split_fields1
                                             temp___expr_197))))) 0))
-
-(define-fun in_range2 ((rec__main__node_variant_type__m_variant1 Int)
-  (a us_rep)) Bool (= rec__main__node_variant_type__m_variant1 (to_rep
-                                                               (rec__main__node_variant_type__m_variant
-                                                               (us_split_discrs1
-                                                               a)))))
 
 (declare-const value__size2 Int)
 

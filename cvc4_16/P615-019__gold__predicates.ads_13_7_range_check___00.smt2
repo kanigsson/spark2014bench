@@ -350,6 +350,11 @@
                         (rec__predicates__name__last (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range3 ((rec__predicates__name__size1 Int)
+  (a us_split_discrs)) Bool (= rec__predicates__name__size1 (to_rep
+                                                            (rec__predicates__name__size
+                                                            a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -422,43 +427,43 @@
 (define-fun name__ref_name__content__projection ((a name__ref)) us_rep 
   (name__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_195 us_rep)
-  (temp___is_init_191 Bool) (temp___skip_constant_192 Bool)
-  (temp___do_toplevel_193 Bool)
-  (temp___do_typ_inv_194 Bool)) Bool (and
-                                     (=> (= temp___do_toplevel_193 true)
-                                     (=> (= temp___is_init_191 true)
+(define-fun dynamic_invariant1 ((temp___expr_197 us_rep)
+  (temp___is_init_193 Bool) (temp___skip_constant_194 Bool)
+  (temp___do_toplevel_195 Bool)
+  (temp___do_typ_inv_196 Bool)) Bool (and
+                                     (=> (= temp___do_toplevel_195 true)
+                                     (=> (= temp___is_init_193 true)
                                      (<= (to_rep
                                          (rec__predicates__name__last
-                                         (us_split_fields1 temp___expr_195))) 
+                                         (us_split_fields1 temp___expr_197))) 
                                      (to_rep
                                      (rec__predicates__name__size
-                                     (us_split_discrs1 temp___expr_195))))))
-                                     (let ((temp___197 (rec__predicates__name__size
+                                     (us_split_discrs1 temp___expr_197))))))
+                                     (let ((temp___199 (rec__predicates__name__size
                                                        (us_split_discrs1
-                                                       temp___expr_195))))
+                                                       temp___expr_197))))
                                      (and (dynamic_property 1
-                                     (to_rep temp___197)
+                                     (to_rep temp___199)
                                      (first1
                                      (rec__predicates__name__data
-                                     (us_split_fields1 temp___expr_195)))
+                                     (us_split_fields1 temp___expr_197)))
                                      (last1
                                      (rec__predicates__name__data
-                                     (us_split_fields1 temp___expr_195))))
+                                     (us_split_fields1 temp___expr_197))))
                                      (and
                                      (= (first1
                                         (rec__predicates__name__data
-                                        (us_split_fields1 temp___expr_195))) 1)
+                                        (us_split_fields1 temp___expr_197))) 1)
                                      (= (last1
                                         (rec__predicates__name__data
-                                        (us_split_fields1 temp___expr_195))) 
-                                     (to_rep temp___197)))))))
+                                        (us_split_fields1 temp___expr_197))) 
+                                     (to_rep temp___199)))))))
 
-(define-fun dynamic_predicate ((temp___199 us_rep)) Bool (<= (to_rep
+(define-fun dynamic_predicate ((temp___201 us_rep)) Bool (<= (to_rep
                                                              (rec__predicates__name__last
                                                              (us_split_fields1
-                                                             temp___199))) 
-  (to_rep (rec__predicates__name__size (us_split_discrs1 temp___199)))))
+                                                             temp___201))) 
+  (to_rep (rec__predicates__name__size (us_split_discrs1 temp___201)))))
 
 (assert
 ;; defqtvc

@@ -142,6 +142,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__private_with_attributes__private_unconstrained__c1 Int)
+  (a us_split_discrs)) Bool (= rec__private_with_attributes__private_unconstrained__c1 
+  (to_rep (rec__private_with_attributes__private_unconstrained__c a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -197,12 +201,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
-(define-fun in_range1 ((rec__private_with_attributes__private_unconstrained__c1 Int)
-  (a us_rep)) Bool (= rec__private_with_attributes__private_unconstrained__c1 
-  (to_rep
-  (rec__private_with_attributes__private_unconstrained__c
-  (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -256,19 +254,14 @@
   (temp___do_toplevel_168 Bool)
   (temp___do_typ_inv_169 Bool)) Bool (=>
                                      (not (= temp___skip_constant_167 true))
-                                     (in_range1 0 temp___expr_170)))
+                                     (in_range1 0
+                                     (us_split_discrs1 temp___expr_170))))
 
 (define-fun default_initial_assumption1 ((temp___expr_172 us_rep)
   (temp___skip_top_level_173 Bool)) Bool (= (to_rep
                                             (rec__private_with_attributes__private_unconstrained__c
                                             (us_split_discrs1
                                             temp___expr_172))) 0))
-
-(define-fun in_range2 ((rec__private_with_attributes__private_unconstrained__c1 Int)
-  (a us_rep)) Bool (= rec__private_with_attributes__private_unconstrained__c1 
-  (to_rep
-  (rec__private_with_attributes__private_unconstrained__c
-  (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -323,7 +316,8 @@
   (temp___do_toplevel_177 Bool)
   (temp___do_typ_inv_178 Bool)) Bool (=>
                                      (not (= temp___skip_constant_176 true))
-                                     (in_range2 0 temp___expr_179)))
+                                     (in_range1 0
+                                     (us_split_discrs1 temp___expr_179))))
 
 (define-fun default_initial_assumption2 ((temp___expr_181 us_rep)
   (temp___skip_top_level_182 Bool)) Bool (= (to_rep
@@ -374,16 +368,18 @@
   (=>
   (=> (= u1__attr__constrained true) (= u__split_discrs u1__split_discrs))
   (=> (= u1__split_discrs1 u__split_discrs)
-  (let ((o (us_repqtmk (us_split_discrsqtmk u1__split_discrs1)
-           (us_split_fieldsqtmk u1__split_fields1))))
+  (let ((temp___254 (us_repqtmk (us_split_discrsqtmk u1__split_discrs1)
+                    (us_split_fieldsqtmk u1__split_fields1))))
   (forall ((u2__split_fields1 us_main_type))
-  (=> (= (us_split_fieldsqtmk u2__split_fields1) (us_split_fields1 o))
-  (=> (= u2__split_discrs (us_split_discrs1 o))
-  (let ((o1 (us_repqtmk (us_split_discrsqtmk u1__split_discrs1)
-            (us_split_fieldsqtmk u1__split_fields1))))
+  (=>
+  (= (us_split_fieldsqtmk u2__split_fields1) (us_split_fields1 temp___254))
+  (=> (= u2__split_discrs (us_split_discrs1 temp___254))
+  (let ((temp___256 (us_repqtmk (us_split_discrsqtmk u1__split_discrs1)
+                    (us_split_fieldsqtmk u1__split_fields1))))
   (forall ((c__split_fields1 us_main_type))
-  (=> (= (us_split_fieldsqtmk c__split_fields1) (us_split_fields1 o1))
-  (=> (= c__split_discrs (us_split_discrs1 o1))
+  (=>
+  (= (us_split_fieldsqtmk c__split_fields1) (us_split_fields1 temp___256))
+  (=> (= c__split_discrs (us_split_discrs1 temp___256))
   (=> (not (= u1__attr__constrained true))
   (=> (= u2__attr__constrained true) (= c__attr__constrained true))))))))))))))))))))))))))))))))))
 (check-sat)

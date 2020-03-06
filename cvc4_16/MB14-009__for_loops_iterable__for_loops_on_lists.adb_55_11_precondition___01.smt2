@@ -429,6 +429,10 @@
                             (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range6 ((rec__for_loops_on_lists__my_lists__list__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__for_loops_on_lists__my_lists__list__capacity1 
+  (to_rep (rec__for_loops_on_lists__my_lists__list__capacity a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -561,7 +565,7 @@
   (forall ((i element_type1))
   (and (<= 0 (element_typeqtint1 i)) (<= (element_typeqtint1 i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -583,7 +587,7 @@
   (temp___do_toplevel_229 Bool)
   (temp___do_typ_inv_230 Bool)) Bool (=>
                                      (or (= temp___is_init_227 true)
-                                     (<= 0 2147483647)) (in_range6
+                                     (<= 0 2147483647)) (in_range7
                                      temp___expr_231)))
 
 (define-fun default_initial_assumption1 ((temp___expr_252 us_rep)
@@ -711,7 +715,8 @@
      (forall ((i us_rep))
      (=> (= (has_key result i) true)
      (and
-     (and (<= 1 (get1 result i)) (<= (get1 result i) (length2 container)))
+     (let ((temp___363 (get1 result i)))
+     (and (<= 1 temp___363) (<= temp___363 (length2 container))))
      (forall ((j us_rep))
      (=> (= (has_key result j) true)
      (=> (= (get1 result i) (get1 result j)) (= (bool_eq i j) true))))))))) :pattern (
@@ -757,7 +762,7 @@
   (forall ((i element_type2))
   (and (<= 1 (element_typeqtint2 i)) (<= (element_typeqtint2 i) 2147483647))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
+(define-fun in_range8 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
 
@@ -779,7 +784,7 @@
   (temp___do_toplevel_301 Bool)
   (temp___do_typ_inv_302 Bool)) Bool (=>
                                      (or (= temp___is_init_299 true)
-                                     (<= 1 2147483647)) (in_range7
+                                     (<= 1 2147483647)) (in_range8
                                      temp___expr_303)))
 
 ;; get__post_axiom
@@ -891,7 +896,7 @@
   (let ((usf1 (us_repqtmk (us_split_fieldsqtmk usf))))
   (let ((o4 l))
   (= (= (has_element o4 usf1) true) (= (has_key (positions o4) usf1) true))))))
-  (forall ((count_02 Int) (count_11 Int) (e2 Int) (temp___1045 count_type))
+  (forall ((count_02 Int) (count_11 Int) (e2 Int) (temp___1052 count_type))
   (=>
   (and
   (=> (< 0 count_02)
@@ -907,10 +912,10 @@
                (dynamic_invariant3 e2 true true true true))
           true false) (ite (and
                            (= (has_element l
-                              (us_repqtmk (us_split_fieldsqtmk temp___1045))) true)
+                              (us_repqtmk (us_split_fieldsqtmk temp___1052))) true)
                            (= e2 (element l
                                  (us_repqtmk
-                                 (us_split_fieldsqtmk temp___1045)))))
+                                 (us_split_fieldsqtmk temp___1052)))))
                       true false)) true)
   (forall ((spark__branch1 Bool) (count_12 Int))
   (=>
@@ -918,7 +923,7 @@
   (ite (= spark__branch1 true)
   (let ((o4 (+ count_11 1))) (and (in_range1 o4) (= count_12 o4)))
   (= count_12 count_11)))
-  (let ((o4 (us_repqtmk (us_split_fieldsqtmk temp___1045))))
+  (let ((o4 (us_repqtmk (us_split_fieldsqtmk temp___1052))))
   (let ((o5 l))
   (let ((o6 (next o5 o4)))
   (=>
@@ -931,7 +936,7 @@
   (let ((o8 (has_element o7 o6)))
   (=> (= (= o8 true) (= (has_key (positions o7) o6) true))
   (=> (= o8 true)
-  (let ((o9 (us_repqtmk (us_split_fieldsqtmk temp___1045))))
+  (let ((o9 (us_repqtmk (us_split_fieldsqtmk temp___1052))))
   (let ((o10 l))
   (let ((o11 (next o10 o9)))
   (=>
@@ -940,12 +945,12 @@
   (= (bool_eq o11 no_element) true)
   (and (= (has_element o10 o11) true)
   (= (get1 (positions o10) o11) (+ (get1 (positions o10) o9) 1))))
-  (forall ((temp___10451 count_type))
-  (=> (= (us_repqtmk (us_split_fieldsqtmk temp___10451)) o11)
-  (let ((o12 (us_repqtmk (us_split_fieldsqtmk temp___10451))))
+  (forall ((temp___10521 count_type))
+  (=> (= (us_repqtmk (us_split_fieldsqtmk temp___10521)) o11)
+  (let ((o12 (us_repqtmk (us_split_fieldsqtmk temp___10521))))
   (let ((o13 l))
   (let ((o14 (has_element o13 o12)))
   (=> (= (= o14 true) (= (has_key (positions o13) o12) true))
   (=> (= o14 true)
-  (= (has_element l (us_repqtmk (us_split_fieldsqtmk temp___10451))) true))))))))))))))))))))))))))))))))))))))))))))
+  (= (has_element l (us_repqtmk (us_split_fieldsqtmk temp___10521))) true))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

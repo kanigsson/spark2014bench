@@ -137,6 +137,10 @@
                                                   (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range2 ((rec__test_dic__nested__p5__x1 Bool)
+  (a us_split_discrs)) Bool (= rec__test_dic__nested__p5__x1 (rec__test_dic__nested__p5__x
+                                                             a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -197,10 +201,6 @@
 
 (declare-fun id__function_guard (us_rep us_rep) Bool)
 
-(define-fun in_range2 ((rec__test_dic__nested__p5__x1 Bool)
-  (a us_rep)) Bool (= rec__test_dic__nested__p5__x1 (rec__test_dic__nested__p5__x
-                                                    (us_split_discrs1 a))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -256,10 +256,6 @@
 (((t4b__refqtmk (t4b__content us_rep)))))
 (define-fun t4b__ref_t4b__content__projection ((a t4b__ref)) us_rep (t4b__content
                                                                     a))
-
-(define-fun in_range3 ((rec__test_dic__nested__p5__x1 Bool)
-  (a us_rep)) Bool (= rec__test_dic__nested__p5__x1 (rec__test_dic__nested__p5__x
-                                                    (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 
@@ -344,7 +340,7 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S730-045__dic_with_discrs-10637/src/gnatprove/test_dic__nested__p5.mlw", line 629, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S730-045__dic_with_discrs-13998/src/gnatprove/test_dic__nested__p5.mlw", line 615, characters 5-8
   (not
   (forall ((usf us_rep))
   (=> (= (to_rep (rec__test_dic__nested__p5__c (us_split_fields1 usf))) 0)

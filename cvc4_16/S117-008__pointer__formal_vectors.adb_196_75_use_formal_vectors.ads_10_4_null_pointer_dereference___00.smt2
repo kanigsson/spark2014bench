@@ -1196,10 +1196,10 @@
           (rec__use_formal_vectors__my_vect__vector__content
           (us_split_fields1 v)))) j))))
   (=>
-  (let ((temp___417 r160s))
+  (let ((temp___410 r160s))
   (exists ((i Int))
   (and (= i 1)
-  (ite (= (and (ite (<= 1 i) true false) (ite (<= i temp___417) true false)) true)
+  (ite (= (and (ite (<= 1 i) true false) (ite (<= i temp___410) true false)) true)
   (let ((o1 (last2 m)))
   (and
   (and (dynamic_invariant4 o1 true false true true) (= o1 (+ 0 (length2 m))))
@@ -1219,12 +1219,12 @@
                                                                (<= i1 
                                                                r160s))
                                                           true false)) true)
-  (let ((temp___418 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
+  (let ((temp___411 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                     (rec__use_formal_vectors__my_vect__vector__content
                     (us_split_fields1 v)))))
-  (and (and (<= (first1 temp___418) i1) (<= i1 (last1 temp___418)))
+  (and (and (<= (first1 temp___411) i1) (<= i1 (last1 temp___411)))
   (let ((o2 (rec__use_formal_vectors__my_vect__element_access__pointer_value
-            (select (to_array temp___418) i1))))
+            (select (to_array temp___411) i1))))
   (let ((o3 (model1 o2)))
   (and
   (and (model__function_guard o3 o2)
@@ -1233,7 +1233,7 @@
   (let ((o4 (add m2 o3)))
   (and
   (and (and (= (length2 o4) (+ (length2 m2) 1)) (= (get o4 (last2 o4)) o3))
-  (= (ole m2 o4) true)) (and (= m1 o4) (= i1 temp___417))))))))))))))
+  (= (ole m2 o4) true)) (and (= m1 o4) (= i1 temp___410))))))))))))))
   (= m1 m)))))
   (=> (= use_formal_vectors__my_vect__model__2__result m1)
   (=>

@@ -418,6 +418,11 @@
                            (us_split_fields1 b))) true)))
                    true false))
 
+(define-fun in_range4 ((rec__types__queue_type__max_size1 Int)
+  (a us_split_discrs)) Bool (= rec__types__queue_type__max_size1 (to_rep
+                                                                 (rec__types__queue_type__max_size
+                                                                 a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -572,6 +577,10 @@
                             (rec__types__priv_queue_type__items
                             (us_split_fields3 b))) true)))
                     true false))
+
+(define-fun in_range5 ((rec__types__priv_queue_type__max_size1 Int)
+  (a us_split_discrs2)) Bool (= rec__types__priv_queue_type__max_size1 
+  (to_rep (rec__types__priv_queue_type__max_size a))))
 
 (declare-const value__size2 Int)
 

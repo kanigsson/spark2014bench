@@ -103,6 +103,10 @@
                                                   (us_split_discrs1 b))))
                    true false))
 
+(define-fun in_range1 ((rec__main__node_variant_type__m_variant1 Int)
+  (a us_split_discrs)) Bool (= rec__main__node_variant_type__m_variant1 
+  (to_rep (rec__main__node_variant_type__m_variant a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -220,7 +224,7 @@
   (and (<= 0 (subtree_height_typeqtint i))
   (<= (subtree_height_typeqtint i) 14))))
 
-(define-fun in_range1 ((x Int)) Bool (and (<= 0 x) (<= x 14)))
+(define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 14)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE1 (Int) us_image)
 
@@ -250,13 +254,13 @@
 
 ;; range_axiom
   (assert
-  (forall ((x subtree_height_type)) (! (in_range1
+  (forall ((x subtree_height_type)) (! (in_range2
   (to_rep1 x)) :pattern ((to_rep1 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range1 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
+  (! (=> (in_range2 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
                                                               (of_rep1 x))) )))
 
 (declare-datatypes ((us_split_discrs2 0))
@@ -300,6 +304,11 @@
                             (rec__main__branch_type__n (us_split_fields3 a))
                             (rec__main__branch_type__n (us_split_fields3 b))) true))
                     true false))
+
+(define-fun in_range3 ((rec__main__branch_type__m_height1 Int)
+  (a us_split_discrs2)) Bool (= rec__main__branch_type__m_height1 (to_rep1
+                                                                  (rec__main__branch_type__m_height
+                                                                  a))))
 
 (declare-const value__size2 Int)
 
@@ -356,11 +365,6 @@
 (((branch_type__refqtmk (branch_type__content us_rep2)))))
 (define-fun branch_type__ref_branch_type__content__projection ((a branch_type__ref)) us_rep2 
   (branch_type__content a))
-
-(define-fun in_range2 ((rec__main__branch_type__m_height1 Int)
-  (a us_rep2)) Bool (= rec__main__branch_type__m_height1 (to_rep1
-                                                         (rec__main__branch_type__m_height
-                                                         (us_split_discrs3 a)))))
 
 (declare-const value__size3 Int)
 
@@ -427,7 +431,8 @@
   (temp___do_toplevel_224 Bool)
   (temp___do_typ_inv_225 Bool)) Bool (=>
                                      (not (= temp___skip_constant_223 true))
-                                     (in_range2 7 temp___expr_226)))
+                                     (in_range3 7
+                                     (us_split_discrs3 temp___expr_226))))
 
 (define-fun default_initial_assumption ((temp___expr_229 us_rep2)
   (temp___skip_top_level_230 Bool)) Bool (and
@@ -451,12 +456,6 @@
                                             (rec__main__node_type__variant_node
                                             (us_split_fields1
                                             temp___expr_211))))) 0))
-
-(define-fun in_range3 ((rec__main__node_variant_type__m_variant1 Int)
-  (a us_rep)) Bool (= rec__main__node_variant_type__m_variant1 (to_rep
-                                                               (rec__main__node_variant_type__m_variant
-                                                               (us_split_discrs1
-                                                               a)))))
 
 (declare-const value__size4 Int)
 
@@ -503,7 +502,7 @@
   (temp___do_toplevel_184 Bool)
   (temp___do_typ_inv_185 Bool)) Bool (=>
                                      (or (= temp___is_init_182 true)
-                                     (<= 0 14)) (in_range1 temp___expr_186)))
+                                     (<= 0 14)) (in_range2 temp___expr_186)))
 
 (define-fun dynamic_invariant2 ((temp___expr_193 Int)
   (temp___is_init_189 Bool) (temp___skip_constant_190 Bool)
@@ -532,5 +531,5 @@
   (=> (= (to_rep o) 0)
   (=>
   (= (us_repqtmk1 (us_split_fieldsqtmk (us_repqtmk (us_split_discrsqtmk o)))) 
-  null_node) (in_range1 7))))))
+  null_node) (in_range2 7))))))
 (check-sat)

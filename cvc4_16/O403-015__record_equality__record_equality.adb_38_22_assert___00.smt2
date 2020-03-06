@@ -154,6 +154,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range2 ((rec__record_equality__root__c1 Int)
+  (a us_split_discrs)) Bool (= rec__record_equality__root__c1 (to_rep
+                                                              (rec__record_equality__root__c
+                                                              a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -562,11 +567,6 @@
 
 (declare-const us_tag3 Int)
 
-(define-fun in_range2 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -650,7 +650,9 @@
   (temp___do_toplevel_252 Bool)
   (temp___do_typ_inv_253 Bool)) Bool (=>
                                      (not (= temp___skip_constant_251 true))
-                                     (in_range2 0 (to_base temp___expr_254))))
+                                     (in_range2 0
+                                     (us_split_discrs1
+                                     (to_base temp___expr_254)))))
 
 (define-fun default_initial_assumption ((temp___expr_256 us_rep1)
   (temp___skip_top_level_257 Bool)) Bool (and
@@ -692,11 +694,6 @@
 (declare-const attr__ATTRIBUTE_ADDRESS4 Int)
 
 (declare-const us_tag4 Int)
-
-(define-fun in_range3 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 
@@ -787,11 +784,6 @@
   (t9b__content a))
 
 (declare-const us_tag5 Int)
-
-(define-fun in_range4 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
 
 (declare-const value__size5 Int)
 
@@ -931,12 +923,12 @@
                          c_pu1__split_fields) us_null_ext__))
   (=> (= g_pu2__split_discrs c_pu1__split_discrs)
   (=> (= g_pu2__attr__tag us_tag2)
-  (= (let ((temp___364 (to_base1
+  (= (let ((temp___365 (to_base1
                        (us_repqtmk2 g_pu2__split_discrs g_pu2__split_fields
                        g_pu2__attr__tag))))
-     (let ((temp___363 (to_base1
+     (let ((temp___364 (to_base1
                        (us_repqtmk2 g_pu1__split_discrs g_pu1__split_fields
                        g_pu1__attr__tag))))
-     (and (ite (= (attr__tag temp___363) (attr__tag temp___364)) true false) 
-     (us_dispatch_eq temp___363 temp___364)))) true)))))))))))))))))))
+     (and (ite (= (attr__tag temp___364) (attr__tag temp___365)) true false) 
+     (us_dispatch_eq temp___364 temp___365)))) true)))))))))))))))))))
 (check-sat)

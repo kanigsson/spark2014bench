@@ -411,14 +411,14 @@
 
 (declare-const dummy5 us_rep)
 
-(declare-datatypes ((r1__ref 0))
-(((r1__refqtmk (r1__content us_rep)))))
-(define-fun r1__ref_r1__content__projection ((a r1__ref)) us_rep (r1__content
-                                                                 a))
+(declare-datatypes ((tv1S__ref 0))
+(((tv1S__refqtmk (tv1S__content us_rep)))))
+(define-fun tv1S__ref_tv1S__content__projection ((a tv1S__ref)) us_rep 
+  (tv1S__content a))
 
 (define-fun in_range4 ((rec__size_attr__r1__a1 Bool)
-  (a us_rep)) Bool (= rec__size_attr__r1__a1 (rec__size_attr__r1__a
-                                             (us_split_discrs1 a))))
+  (a us_split_discrs)) Bool (= rec__size_attr__r1__a1 (rec__size_attr__r1__a
+                                                      a)))
 
 (declare-const value__size3 Int)
 
@@ -469,10 +469,10 @@
 
 (declare-const dummy6 us_rep)
 
-(declare-datatypes ((tv1S__ref 0))
-(((tv1S__refqtmk (tv1S__content us_rep)))))
-(define-fun tv1S__ref_tv1S__content__projection ((a tv1S__ref)) us_rep 
-  (tv1S__content a))
+(declare-datatypes ((r1__ref 0))
+(((r1__refqtmk (r1__content us_rep)))))
+(define-fun r1__ref_r1__content__projection ((a r1__ref)) us_rep (r1__content
+                                                                 a))
 
 (declare-const v1__split_discrs us_split_discrs)
 
@@ -486,7 +486,7 @@
   (temp___do_typ_inv_339 Bool)) Bool (=>
                                      (not (= temp___skip_constant_337 true))
                                      (in_range4 (distinct 0 0)
-                                     temp___expr_340)))
+                                     (us_split_discrs1 temp___expr_340))))
 
 (define-fun default_initial_assumption ((temp___expr_342 us_rep)
   (temp___skip_top_level_343 Bool)) Bool (= (rec__size_attr__r1__a
@@ -501,10 +501,6 @@
 (declare-const v2__attr__constrained Bool)
 
 (declare-const attr__ATTRIBUTE_ADDRESS6 Int)
-
-(define-fun in_range5 ((rec__size_attr__r1__a1 Bool)
-  (a us_rep)) Bool (= rec__size_attr__r1__a1 (rec__size_attr__r1__a
-                                             (us_split_discrs1 a))))
 
 (declare-const value__size4 Int)
 
@@ -571,8 +567,8 @@
   (temp___do_toplevel_211 Bool)
   (temp___do_typ_inv_212 Bool)) Bool (=>
                                      (not (= temp___skip_constant_210 true))
-                                     (in_range5 (distinct 0 0)
-                                     temp___expr_213)))
+                                     (in_range4 (distinct 0 0)
+                                     (us_split_discrs1 temp___expr_213))))
 
 (define-fun default_initial_assumption2 ((temp___expr_215 us_rep)
   (temp___skip_top_level_216 Bool)) Bool (= (rec__size_attr__r1__a
@@ -860,7 +856,7 @@
   (forall ((i natural))
   (and (<= 0 (naturalqtint i)) (<= (naturalqtint i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -888,12 +884,12 @@
 
 ;; range_axiom
   (assert
-  (forall ((x natural)) (! (in_range6 (to_rep2 x)) :pattern ((to_rep2 x)) )))
+  (forall ((x natural)) (! (in_range5 (to_rep2 x)) :pattern ((to_rep2 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range6 x) (= (to_rep2 (of_rep2 x)) x)) :pattern ((to_rep2
+  (! (=> (in_range5 x) (= (to_rep2 (of_rep2 x)) x)) :pattern ((to_rep2
                                                               (of_rep2 x))) )))
 
 (declare-datatypes ((map__ref1 0))
@@ -1335,7 +1331,7 @@
   (assert
   (forall ((i my_int)) (and (<= 1 (my_intqtint i)) (<= (my_intqtint i) 10))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -1357,7 +1353,7 @@
   (temp___do_toplevel_187 Bool)
   (temp___do_typ_inv_188 Bool)) Bool (=>
                                      (or (= temp___is_init_185 true)
-                                     (<= 1 10)) (in_range7 temp___expr_189)))
+                                     (<= 1 10)) (in_range6 temp___expr_189)))
 
 (declare-const dummy13 (Array Int natural))
 
@@ -2086,7 +2082,7 @@
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
   (temp___do_typ_inv_38 Bool)) Bool (=>
                                     (or (= temp___is_init_35 true)
-                                    (<= 0 2147483647)) (in_range6
+                                    (<= 0 2147483647)) (in_range5
                                     temp___expr_39)))
 
 (define-fun dynamic_invariant5 ((temp___expr_46 Int) (temp___is_init_42 Bool)
@@ -2275,7 +2271,7 @@
   (=> (= ua3 (size_attr__ua3__aggregate_def 1))
   (=> (= ua4 (size_attr__ua4__aggregate_def 1))
   (=> (<= 0 value__size1)
-  (=> (<= 0 value__size2)
+  (=> (<= 0 value__size3)
   (=> (<= 0 value__size4)
   (=> (<= 0 value__size5)
   (=> (<= 0 value__size6)
@@ -2300,5 +2296,5 @@
   (=> (<= 0 object__size8)
   (=> (<= 0 object__size20)
   (=> (<= 0 object__size1)
-  (=> (<= 0 object__size3) (=> (<= 0 object__size2) (<= 0 object__size4))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+  (=> (<= 0 object__size2) (=> (<= 0 object__size3) (<= 0 object__size4))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

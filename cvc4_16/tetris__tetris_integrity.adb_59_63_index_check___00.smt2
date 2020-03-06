@@ -1866,7 +1866,7 @@
   (spark__branch Bool) (o1 Int) (spark__branch1 Bool) (y Int)
   (cur_board (Array Int (Array Int cell))) (y1 Int) (x Int)
   (cur_board1 (Array Int (Array Int cell))) (x1 Int) (o2 Int)
-  (temp___833 Int) (spark__branch2 Bool) (o3 Int) (o4 cell) (o5 Int))
+  (temp___842 Int) (spark__branch2 Bool) (o3 Int) (o4 cell) (o5 Int))
   (=>
   (= (tetris_integrity__possible_i_shapes__aggregate_def
      (temp_____aggregate_def_165 (distinct 0 0) (distinct 0 0) (distinct 0 0)
@@ -1972,23 +1972,23 @@
   (=> (= x 0)
   (=> (= (and (ite (<= 0 x) true false) (ite (<= x 2) true false)) true)
   (=>
-  (= (and (ite (forall ((temp___836 Int))
-               (=> (and (<= 1 temp___836) (<= temp___836 50))
+  (= (and (ite (forall ((temp___845 Int))
+               (=> (and (<= 1 temp___845) (<= temp___845 50))
                (=>
                (not
                (= (+ (to_rep3
                      (rec__tetris_integrity__piece__y
-                     cur_piece__split_fields)) y1) temp___836))
-               (= (select cur_board1 temp___836) (select cur_board temp___836)))))
+                     cur_piece__split_fields)) y1) temp___845))
+               (= (select cur_board1 temp___845) (select cur_board temp___845)))))
           true false) (ite (and (<= 0 x1) (<= x1 2)) true false)) true)
   (=>
   (= (to_rep4 (rec__tetris_integrity__piece__d cur_piece__split_fields)) o2)
   (=>
-  (= (to_rep1 (rec__tetris_integrity__piece__s cur_piece__split_fields)) temp___833)
-  (=> (<= 3 temp___833)
-  (=> (<= temp___833 7)
+  (= (to_rep1 (rec__tetris_integrity__piece__s cur_piece__split_fields)) temp___842)
+  (=> (<= 3 temp___842)
+  (=> (<= temp___842 7)
   (=>
-  (= spark__branch2 (get (get1 possible_three_shapes temp___833 o2) y1 x1))
+  (= spark__branch2 (get (get1 possible_three_shapes temp___842 o2) y1 x1))
   (=> (= spark__branch2 true)
   (=>
   (= (to_rep1 (rec__tetris_integrity__piece__s cur_piece__split_fields)) o3)

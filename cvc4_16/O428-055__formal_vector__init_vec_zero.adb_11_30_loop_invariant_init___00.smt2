@@ -184,6 +184,10 @@
 (define-fun vec_t__ref_vec_t__content__projection ((a vec_t__ref)) us_rep 
   (vec_t__content a))
 
+(define-fun in_range2 ((rec__loop_types__vectors__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__loop_types__vectors__vector__capacity1 
+  (to_rep (rec__loop_types__vectors__vector__capacity a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -239,7 +243,7 @@
   (forall ((i index_type))
   (and (<= 1 (index_typeqtint i)) (<= (index_typeqtint i) 1000))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 1 x) (<= x 1000)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 1000)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -261,7 +265,7 @@
   (temp___do_toplevel_205 Bool)
   (temp___do_typ_inv_206 Bool)) Bool (=>
                                      (or (= temp___is_init_203 true)
-                                     (<= 1 1000)) (in_range2
+                                     (<= 1 1000)) (in_range3
                                      temp___expr_207)))
 
 (declare-sort us_main_type1 0)
@@ -321,7 +325,7 @@
   (forall ((i extended_index))
   (and (<= 0 (extended_indexqtint i)) (<= (extended_indexqtint i) 1001))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 1001)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 1001)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -343,7 +347,7 @@
   (temp___do_toplevel_214 Bool)
   (temp___do_typ_inv_215 Bool)) Bool (=>
                                      (or (= temp___is_init_212 true)
-                                     (<= 0 1001)) (in_range3
+                                     (<= 0 1001)) (in_range4
                                      temp___expr_216)))
 
 (declare-fun get (us_rep1 Int) Int)
@@ -364,7 +368,7 @@
   (forall ((i element_type))
   (and (<= 0 (element_typeqtint i)) (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -386,7 +390,7 @@
   (temp___do_toplevel_254 Bool)
   (temp___do_typ_inv_255 Bool)) Bool (=>
                                      (or (= temp___is_init_252 true)
-                                     (<= 0 2147483647)) (in_range4
+                                     (<= 0 2147483647)) (in_range5
                                      temp___expr_256)))
 
 (declare-const r4b Int)
@@ -434,7 +438,7 @@
   (forall ((i integer))
   (and (<= (- 2147483648) (integerqtint i)) (<= (integerqtint i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range6 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
@@ -463,12 +467,12 @@
 
 ;; range_axiom
   (assert
-  (forall ((x integer)) (! (in_range5 (to_rep1 x)) :pattern ((to_rep1 x)) )))
+  (forall ((x integer)) (! (in_range6 (to_rep1 x)) :pattern ((to_rep1 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range5 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
+  (! (=> (in_range6 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
                                                               (of_rep1 x))) )))
 
 (define-fun dynamic_property ((first_int Int) (last_int Int)
@@ -494,7 +498,7 @@
   (temp___do_typ_inv_17 Bool)) Bool (=>
                                     (or (= temp___is_init_14 true)
                                     (<= (- 2147483648) 2147483647))
-                                    (in_range5 temp___expr_18)))
+                                    (in_range6 temp___expr_18)))
 
 (declare-sort count_type 0)
 
@@ -505,7 +509,7 @@
   (forall ((i count_type))
   (and (<= 0 (count_typeqtint i)) (<= (count_typeqtint i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
 
@@ -527,7 +531,7 @@
   (temp___do_toplevel_172 Bool)
   (temp___do_typ_inv_173 Bool)) Bool (=>
                                      (or (= temp___is_init_170 true)
-                                     (<= 0 2147483647)) (in_range6
+                                     (<= 0 2147483647)) (in_range7
                                      temp___expr_174)))
 
 (define-fun dynamic_invariant5 ((temp___expr_181 Int)
@@ -572,7 +576,7 @@
   (forall ((i extended_index1))
   (and (<= 0 (extended_indexqtint1 i)) (<= (extended_indexqtint1 i) 1000))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= 0 x) (<= x 1000)))
+(define-fun in_range8 ((x Int)) Bool (and (<= 0 x) (<= x 1000)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE8 (Int) us_image)
 
@@ -594,7 +598,7 @@
   (temp___do_toplevel_221 Bool)
   (temp___do_typ_inv_222 Bool)) Bool (=>
                                      (or (= temp___is_init_219 true)
-                                     (<= 0 1000)) (in_range7
+                                     (<= 0 1000)) (in_range8
                                      temp___expr_223)))
 
 ;; length__post_axiom
@@ -613,7 +617,7 @@
   (forall ((i element_type1))
   (and (<= 0 (element_typeqtint1 i)) (<= (element_typeqtint1 i) 2147483647))))
 
-(define-fun in_range8 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range9 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE9 (Int) us_image)
 
@@ -635,7 +639,7 @@
   (temp___do_toplevel_261 Bool)
   (temp___do_typ_inv_262 Bool)) Bool (=>
                                      (or (= temp___is_init_259 true)
-                                     (<= 0 2147483647)) (in_range8
+                                     (<= 0 2147483647)) (in_range9
                                      temp___expr_263)))
 
 ;; get__post_axiom
@@ -668,7 +672,7 @@
   (=> (= j temp___276)
   (=>
   (= (and (ite (<= temp___276 j) true false) (ite (<= j r5b) true false)) true)
-  (=> (in_range2 j)
+  (=> (in_range3 j)
   (let ((o1 v__split_discrs))
   (forall
   ((loop_types__vectors__replace_element__container__fields us_main_type))

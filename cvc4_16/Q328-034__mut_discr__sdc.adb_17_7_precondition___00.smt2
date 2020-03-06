@@ -563,6 +563,11 @@
                          (rec__tokens__token__instr (us_split_fields3 b)))))))
                     true false))
 
+(define-fun in_range7 ((rec__tokens__token__kind1 Int)
+  (a us_split_discrs)) Bool (= rec__tokens__token__kind1 (to_rep2
+                                                         (rec__tokens__token__kind
+                                                         a))))
+
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -667,7 +672,7 @@
   (forall ((i natural))
   (and (<= 0 (naturalqtint i)) (<= (naturalqtint i) 2147483647))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range8 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
 
@@ -688,7 +693,7 @@
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
   (temp___do_typ_inv_38 Bool)) Bool (=>
                                     (or (= temp___is_init_35 true)
-                                    (<= 0 2147483647)) (in_range7
+                                    (<= 0 2147483647)) (in_range8
                                     temp___expr_39)))
 
 (declare-fun argument_count (tuple0) Int)
@@ -774,7 +779,7 @@
   (assert
   (forall ((i tlastS)) (and (<= 0 (tlastSqtint i)) (<= (tlastSqtint i) 200))))
 
-(define-fun in_range8 ((x Int)) Bool (and (<= 0 x) (<= x 200)))
+(define-fun in_range9 ((x Int)) Bool (and (<= 0 x) (<= x 200)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE8 (Int) us_image)
 
@@ -796,7 +801,7 @@
   (temp___do_toplevel_258 Bool)
   (temp___do_typ_inv_259 Bool)) Bool (=>
                                      (or (= temp___is_init_256 true)
-                                     (<= 0 200)) (in_range8 temp___expr_260)))
+                                     (<= 0 200)) (in_range9 temp___expr_260)))
 
 (declare-fun temp___String_Literal_270 (tuple0) (Array Int character))
 
@@ -969,7 +974,7 @@
 
 (define-fun pos_to_rep ((x Int)) Int (ite (= x 2) 3 (ite (= x 1) 2 0)))
 
-(define-fun in_range9 ((x Int)) Bool (and (<= 0 x) (<= x 2)))
+(define-fun in_range10 ((x Int)) Bool (and (<= 0 x) (<= x 2)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE9 (Int) us_image)
 
@@ -991,7 +996,7 @@
   (temp___do_toplevel_246 Bool)
   (temp___do_typ_inv_247 Bool)) Bool (=>
                                      (or (= temp___is_init_244 true)
-                                     (<= 0 2)) (in_range9 temp___expr_248)))
+                                     (<= 0 2)) (in_range10 temp___expr_248)))
 
 (declare-sort count 0)
 
@@ -1002,7 +1007,7 @@
   (forall ((i count))
   (and (<= 0 (countqtint i)) (<= (countqtint i) 2147483647))))
 
-(define-fun in_range10 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range11 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE10 (Int) us_image)
 
@@ -1024,7 +1029,7 @@
   (temp___do_toplevel_166 Bool)
   (temp___do_typ_inv_167 Bool)) Bool (=>
                                      (or (= temp___is_init_164 true)
-                                     (<= 0 2147483647)) (in_range10
+                                     (<= 0 2147483647)) (in_range11
                                      temp___expr_168)))
 
 ;; mode__post_axiom

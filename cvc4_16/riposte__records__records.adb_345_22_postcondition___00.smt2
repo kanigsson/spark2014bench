@@ -296,10 +296,10 @@
         (let ((q_ (us_split_fields3 x)))
         (us_split_fieldsqtmk1
         (rec__records_prooffuncs__optional_pair__exists q_)
-        (let ((temp___269 (rec__records_prooffuncs__optional_pair__the_pair
+        (let ((temp___281 (rec__records_prooffuncs__optional_pair__the_pair
                           (us_split_fields3 x))))
         (us_repqtmk
-        (let ((q_1 (us_split_fields1 temp___269)))
+        (let ((q_1 (us_split_fields1 temp___281)))
         (us_split_fieldsqtmk (of_rep n)
         (rec__records_prooffuncs__pair__b q_1))))))))) true)))) :pattern (
   (update_a x n)) ))))
@@ -319,10 +319,10 @@
      (us_split_fields1
      (rec__records_prooffuncs__optional_pair__the_pair x__split_fields)))) o)
   (let ((o1 (us_repqtmk1 x__split_fields)))
-  (let ((temp___648 (update_a o1 o)))
+  (let ((temp___672 (update_a o1 o)))
   (=>
-  (and (update_a__function_guard temp___648 o1 o)
-  (= (bool_eq1 temp___648
+  (and (update_a__function_guard temp___672 o1 o)
+  (= (bool_eq1 temp___672
      (us_repqtmk1
      (us_split_fieldsqtmk1
      (rec__records_prooffuncs__optional_pair__exists x__split_fields)
@@ -332,7 +332,7 @@
      (us_split_fields1
      (rec__records_prooffuncs__optional_pair__the_pair x__split_fields)))))))) true))
   (forall ((x__split_fields2 us_split_fields2))
-  (=> (= x__split_fields2 (us_split_fields3 temp___648))
+  (=> (= x__split_fields2 (us_split_fields3 temp___672))
   (= (to_rep
      (rec__records_prooffuncs__pair__a
      (us_split_fields1

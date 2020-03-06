@@ -204,6 +204,10 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range3 ((rec__private_types__p2__t__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__private_types__p2__t__d1 (rec__private_types__p2__t__d
+                                                             a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -261,10 +265,6 @@
                                                                  a))
 
 (declare-const us_tag1 Int)
-
-(define-fun in_range3 ((rec__private_types__p2__t__d1 Bool)
-  (a us_rep)) Bool (= rec__private_types__p2__t__d1 (rec__private_types__p2__t__d
-                                                    (us_split_discrs1 a))))
 
 (declare-const value__size1 Int)
 
@@ -335,7 +335,7 @@
   (temp___do_typ_inv_174 Bool)) Bool (=>
                                      (not (= temp___skip_constant_172 true))
                                      (in_range3 (distinct 1 0)
-                                     temp___expr_175)))
+                                     (us_split_discrs1 temp___expr_175))))
 
 ;; temp___result_180'def
   (assert (id__function_guard (id 0) 0))
@@ -357,7 +357,7 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__default_checks_on_private-8676/src/gnatprove/private_types__p2__t2.mlw", line 624, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__default_checks_on_private-25155/src/gnatprove/private_types__p2__t2.mlw", line 623, characters 5-8
   (not
   (forall ((usf us_rep))
   (=>

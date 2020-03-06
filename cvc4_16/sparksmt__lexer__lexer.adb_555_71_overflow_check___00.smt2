@@ -507,6 +507,11 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range6 ((rec__file_io__read_result__status1 Int)
+  (a us_split_discrs)) Bool (= rec__file_io__read_result__status1 (to_rep3
+                                                                  (rec__file_io__read_result__status
+                                                                  a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -632,7 +637,7 @@
 
 (declare-sort token_kind 0)
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 8)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 0 x) (<= x 8)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -660,13 +665,13 @@
 
 ;; range_axiom
   (assert
-  (forall ((x token_kind)) (! (in_range6
+  (forall ((x token_kind)) (! (in_range7
   (to_rep4 x)) :pattern ((to_rep4 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range6 x) (= (to_rep4 (of_rep4 x)) x)) :pattern ((to_rep4
+  (! (=> (in_range7 x) (= (to_rep4 (of_rep4 x)) x)) :pattern ((to_rep4
                                                               (of_rep4 x))) )))
 
 (declare-sort name_id 0)
@@ -678,7 +683,7 @@
   (forall ((i name_id))
   (and (<= 0 (name_idqtint i)) (<= (name_idqtint i) 2147483647))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range8 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
 
@@ -706,12 +711,12 @@
 
 ;; range_axiom
   (assert
-  (forall ((x name_id)) (! (in_range7 (to_rep5 x)) :pattern ((to_rep5 x)) )))
+  (forall ((x name_id)) (! (in_range8 (to_rep5 x)) :pattern ((to_rep5 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range7 x) (= (to_rep5 (of_rep5 x)) x)) :pattern ((to_rep5
+  (! (=> (in_range8 x) (= (to_rep5 (of_rep5 x)) x)) :pattern ((to_rep5
                                                               (of_rep5 x))) )))
 
 (declare-datatypes ((us_split_discrs2 0))
@@ -790,6 +795,11 @@
                          (to_rep5
                          (rec__lexer__token__value (us_split_fields3 b))))))))
                     true false))
+
+(define-fun in_range9 ((rec__lexer__token__kind1 Int)
+  (a us_split_discrs2)) Bool (= rec__lexer__token__kind1 (to_rep4
+                                                         (rec__lexer__token__kind
+                                                         a))))
 
 (declare-const value__size2 Int)
 
@@ -953,7 +963,7 @@
   (and (<= 0 (capacity_rangeqtint i))
   (<= (capacity_rangeqtint i) 2147483647))))
 
-(define-fun in_range8 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range10 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE8 (Int) us_image)
 
@@ -1041,10 +1051,10 @@
 
 (declare-const dummy12 us_rep3)
 
-(declare-datatypes ((vector__ref 0))
-(((vector__refqtmk (vector__content us_rep3)))))
-(define-fun vector__ref_vector__content__projection ((a vector__ref)) us_rep3 
-  (vector__content a))
+(declare-datatypes ((unbounded_string__ref 0))
+(((unbounded_string__refqtmk (unbounded_string__content us_rep3)))))
+(define-fun unbounded_string__ref_unbounded_string__content__projection ((a unbounded_string__ref)) us_rep3 
+  (unbounded_string__content a))
 
 (define-fun to_rep6 ((x capacity_range)) Int (capacity_rangeqtint x))
 
@@ -1057,20 +1067,18 @@
 
 ;; range_axiom
   (assert
-  (forall ((x capacity_range)) (! (in_range8
+  (forall ((x capacity_range)) (! (in_range10
   (to_rep6 x)) :pattern ((to_rep6 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range8 x) (= (to_rep6 (of_rep6 x)) x)) :pattern ((to_rep6
-                                                              (of_rep6 x))) )))
+  (! (=> (in_range10 x) (= (to_rep6 (of_rep6 x)) x)) :pattern ((to_rep6
+                                                               (of_rep6 x))) )))
 
-(define-fun in_range9 ((rec__unbounded_strings__char_vectors__vector__capacity1 Int)
-  (a us_rep3)) Bool (= rec__unbounded_strings__char_vectors__vector__capacity1 
-  (to_rep6
-  (rec__unbounded_strings__char_vectors__vector__capacity
-  (us_split_discrs5 a)))))
+(define-fun in_range11 ((rec__unbounded_strings__char_vectors__vector__capacity1 Int)
+  (a us_split_discrs4)) Bool (= rec__unbounded_strings__char_vectors__vector__capacity1 
+  (to_rep6 (rec__unbounded_strings__char_vectors__vector__capacity a))))
 
 (declare-const value__size5 Int)
 
@@ -1109,10 +1117,10 @@
 
 (declare-const dummy13 us_rep3)
 
-(declare-datatypes ((unbounded_string__ref 0))
-(((unbounded_string__refqtmk (unbounded_string__content us_rep3)))))
-(define-fun unbounded_string__ref_unbounded_string__content__projection ((a unbounded_string__ref)) us_rep3 
-  (unbounded_string__content a))
+(declare-datatypes ((vector__ref 0))
+(((vector__refqtmk (vector__content us_rep3)))))
+(define-fun vector__ref_vector__content__projection ((a vector__ref)) us_rep3 
+  (vector__content a))
 
 (declare-const s__split_discrs us_split_discrs4)
 
@@ -1127,7 +1135,8 @@
   (temp___do_toplevel_298 Bool)
   (temp___do_typ_inv_299 Bool)) Bool (=>
                                      (not (= temp___skip_constant_297 true))
-                                     (in_range9 32 temp___expr_300)))
+                                     (in_range11 32
+                                     (us_split_discrs5 temp___expr_300))))
 
 ;; temp___result_306'def
   (assert
@@ -1199,11 +1208,11 @@
   (temp___do_toplevel_170 Bool)
   (temp___do_typ_inv_171 Bool)) Bool (=>
                                      (or (= temp___is_init_168 true)
-                                     (<= 0 8)) (in_range6 temp___expr_172)))
+                                     (<= 0 8)) (in_range7 temp___expr_172)))
 
 (declare-sort valued_tokens 0)
 
-(define-fun in_range10 ((x Int)) Bool (and (<= 3 x) (<= x 8)))
+(define-fun in_range12 ((x Int)) Bool (and (<= 3 x) (<= x 8)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE9 (Int) us_image)
 
@@ -1225,19 +1234,19 @@
   (temp___do_toplevel_177 Bool)
   (temp___do_typ_inv_178 Bool)) Bool (=>
                                      (or (= temp___is_init_175 true)
-                                     (<= 3 8)) (in_range10 temp___expr_179)))
+                                     (<= 3 8)) (in_range12 temp___expr_179)))
 
 (define-fun dynamic_invariant7 ((temp___expr_186 Int)
   (temp___is_init_182 Bool) (temp___skip_constant_183 Bool)
   (temp___do_toplevel_184 Bool)
   (temp___do_typ_inv_185 Bool)) Bool (=>
                                      (or (= temp___is_init_182 true)
-                                     (<= 0 2147483647)) (in_range7
+                                     (<= 0 2147483647)) (in_range8
                                      temp___expr_186)))
 
 (declare-sort parse_state 0)
 
-(define-fun in_range11 ((x Int)) Bool (and (<= 0 x) (<= x 9)))
+(define-fun in_range13 ((x Int)) Bool (and (<= 0 x) (<= x 9)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE10 (Int) us_image)
 
@@ -1259,11 +1268,11 @@
   (temp___do_toplevel_369 Bool)
   (temp___do_typ_inv_370 Bool)) Bool (=>
                                      (or (= temp___is_init_367 true)
-                                     (<= 0 9)) (in_range11 temp___expr_371)))
+                                     (<= 0 9)) (in_range13 temp___expr_371)))
 
 (declare-sort terminal_states 0)
 
-(define-fun in_range12 ((x Int)) Bool (and (<= 0 x) (<= x 9)))
+(define-fun in_range14 ((x Int)) Bool (and (<= 0 x) (<= x 9)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE11 (Int) us_image)
 
@@ -1279,11 +1288,6 @@
 (((terminal_states__refqtmk (terminal_states__content terminal_states)))))
 (define-fun terminal_states__ref_terminal_states__content__projection ((a terminal_states__ref)) terminal_states 
   (terminal_states__content a))
-
-(define-fun in_range13 ((rec__lexer__token__kind1 Int)
-  (a us_rep1)) Bool (= rec__lexer__token__kind1 (to_rep4
-                                                (rec__lexer__token__kind
-                                                (us_split_discrs3 a)))))
 
 (declare-const value__size6 Int)
 
@@ -1761,7 +1765,7 @@
   (temp___do_typ_inv_377 Bool)) Bool (and
                                      (=>
                                      (or (= temp___is_init_374 true)
-                                     (<= 0 9)) (in_range12 temp___expr_378))
+                                     (<= 0 9)) (in_range14 temp___expr_378))
                                      (=> (= temp___do_toplevel_376 true)
                                      (=> (= temp___is_init_374 true)
                                      (or
@@ -1811,7 +1815,7 @@
   (temp___do_toplevel_285 Bool)
   (temp___do_typ_inv_286 Bool)) Bool (=>
                                      (or (= temp___is_init_283 true)
-                                     (<= 0 2147483647)) (in_range8
+                                     (<= 0 2147483647)) (in_range10
                                      temp___expr_287)))
 
 (assert
@@ -2161,7 +2165,7 @@
   (and
   (and
   (and (= (to_rep3 current_read__split_discrs3) 0)
-  (= (not (and (ite (in_range12 state3) true false) (ite (or
+  (= (not (and (ite (in_range14 state3) true false) (ite (or
                                                          (and (<= 2 state3)
                                                          (<= state3 2))
                                                          (and (<= 9 state3)

@@ -375,6 +375,10 @@
                            (us_split_fields1 b))) true)))
                    true false))
 
+(define-fun in_range4 ((rec__bounded_dynamic_strings__sequence__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__bounded_dynamic_strings__sequence__capacity1 
+  (to_rep (rec__bounded_dynamic_strings__sequence__capacity a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -453,21 +457,20 @@
   (temp___do_toplevel_256 Bool)
   (temp___do_typ_inv_257 Bool)) Bool (and
                                      (=> (= temp___do_toplevel_256 true)
-                                     (and
-                                     (<= 0 (to_rep
-                                           (rec__bounded_dynamic_strings__sequence__current_length
-                                           (us_split_fields1 temp___expr_258))))
-                                     (<= (to_rep
-                                         (rec__bounded_dynamic_strings__sequence__current_length
-                                         (us_split_fields1 temp___expr_258))) 
-                                     (to_rep
-                                     (rec__bounded_dynamic_strings__sequence__capacity
-                                     (us_split_discrs1 temp___expr_258))))))
-                                     (let ((temp___260 (rec__bounded_dynamic_strings__sequence__capacity
+                                     (let ((temp___260 (to_rep
+                                                       (rec__bounded_dynamic_strings__sequence__current_length
+                                                       (us_split_fields1
+                                                       temp___expr_258)))))
+                                     (and (<= 0 temp___260)
+                                     (<= temp___260 (to_rep
+                                                    (rec__bounded_dynamic_strings__sequence__capacity
+                                                    (us_split_discrs1
+                                                    temp___expr_258)))))))
+                                     (let ((temp___261 (rec__bounded_dynamic_strings__sequence__capacity
                                                        (us_split_discrs1
                                                        temp___expr_258))))
                                      (and (dynamic_property 1
-                                     (to_rep temp___260)
+                                     (to_rep temp___261)
                                      (first1
                                      (rec__bounded_dynamic_strings__sequence__content
                                      (us_split_fields1 temp___expr_258)))
@@ -481,21 +484,20 @@
                                      (= (last1
                                         (rec__bounded_dynamic_strings__sequence__content
                                         (us_split_fields1 temp___expr_258))) 
-                                     (to_rep temp___260)))))))
+                                     (to_rep temp___261)))))))
 
-(define-fun dynamic_predicate ((temp___262 us_rep)) Bool (and
-                                                         (<= 0 (to_rep
-                                                               (rec__bounded_dynamic_strings__sequence__current_length
-                                                               (us_split_fields1
-                                                               temp___262))))
-                                                         (<= (to_rep
-                                                             (rec__bounded_dynamic_strings__sequence__current_length
-                                                             (us_split_fields1
-                                                             temp___262))) 
+(define-fun dynamic_predicate ((temp___263 us_rep)) Bool (let ((temp___265 
+                                                         (to_rep
+                                                         (rec__bounded_dynamic_strings__sequence__current_length
+                                                         (us_split_fields1
+                                                         temp___263)))))
+                                                         (and
+                                                         (<= 0 temp___265)
+                                                         (<= temp___265 
                                                          (to_rep
                                                          (rec__bounded_dynamic_strings__sequence__capacity
                                                          (us_split_discrs1
-                                                         temp___262))))))
+                                                         temp___263)))))))
 
 (define-fun dynamic_invariant1 ((temp___expr_244 Int)
   (temp___is_init_240 Bool) (temp___skip_constant_241 Bool)
@@ -510,7 +512,7 @@
 (define-fun t51s__ref_t51s__content__projection ((a t51s__ref)) us_t 
   (t51s__content a))
 
-(declare-fun temp_____aggregate_def_763 (Int Int Int) us_t)
+(declare-fun temp_____aggregate_def_773 (Int Int Int) us_t)
 
 (define-fun dynamic_invariant2 ((temp___expr_46 Int) (temp___is_init_42 Bool)
   (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)
@@ -543,19 +545,19 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___765 Int) (temp___766 Int) (temp___767 Int))
-  (let ((temp___764 (temp_____aggregate_def_763 temp___765 temp___766
-                    temp___767)))
-  (=> (dynamic_invariant3 temp___765 true true true true)
+  (forall ((temp___775 Int) (temp___776 Int) (temp___777 Int))
+  (let ((temp___774 (temp_____aggregate_def_773 temp___775 temp___776
+                    temp___777)))
+  (=> (dynamic_invariant3 temp___775 true true true true)
   (and
-  (=> (dynamic_property 1 2147483647 temp___766 temp___767)
-  (and (= (first1 temp___764) temp___766) (= (last1 temp___764) temp___767)))
-  (forall ((temp___768 Int))
-  (= (to_rep1 (select (to_array temp___764) temp___768)) temp___765)))))))
+  (=> (dynamic_property 1 2147483647 temp___776 temp___777)
+  (and (= (first1 temp___774) temp___776) (= (last1 temp___774) temp___777)))
+  (forall ((temp___778 Int))
+  (= (to_rep1 (select (to_array temp___774) temp___778)) temp___775)))))))
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-Q930-002__itp-10808/src/objs/gnatprove/bounded_dynamic_strings__sequence.mlw", line 895, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-Q930-002__itp-19718/src/objs/gnatprove/bounded_dynamic_strings__sequence.mlw", line 913, characters 5-8
   (not
   (forall ((usf Int) (usf1 us_rep))
   (=> (dynamic_invariant1 usf true true true true)
@@ -563,8 +565,8 @@
   (= usf (to_rep
          (rec__bounded_dynamic_strings__sequence__capacity
          (us_split_discrs1 usf1))))
-  (let ((temp___1176 (temp_____aggregate_def_763 32 1 usf)))
-  (=> (= (first1 temp___1176) 1)
-  (=> (= (last1 temp___1176) usf)
-  (=> (<= (first1 temp___1176) (last1 temp___1176)) (<= 1 usf))))))))))
+  (let ((temp___1232 (temp_____aggregate_def_773 32 1 usf)))
+  (=> (= (first1 temp___1232) 1)
+  (=> (= (last1 temp___1232) usf)
+  (=> (<= (first1 temp___1232) (last1 temp___1232)) (<= 1 usf))))))))))
 (check-sat)

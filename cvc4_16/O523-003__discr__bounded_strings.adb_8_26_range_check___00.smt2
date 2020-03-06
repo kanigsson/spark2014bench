@@ -428,6 +428,10 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range5 ((rec__bounded_strings__bounded_string__bound1 Int)
+  (a us_split_discrs)) Bool (= rec__bounded_strings__bounded_string__bound1 
+  (to_rep2 (rec__bounded_strings__bounded_string__bound a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -629,12 +633,6 @@
                                                    (us_split_fields3 b))))))
                     true false))
 
-(define-fun in_range5 ((rec__bounded_strings__bounded_string__bound1 Int)
-  (a us_rep)) Bool (= rec__bounded_strings__bounded_string__bound1 (to_rep2
-                                                                   (rec__bounded_strings__bounded_string__bound
-                                                                   (us_split_discrs1
-                                                                   a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -718,7 +716,8 @@
                                      (=>
                                      (not (= temp___skip_constant_202 true))
                                      (in_range5 upper_bound
-                                     (to_base temp___expr_205)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_205))))
                                      (and (dynamic_property 1 upper_bound
                                      (first1
                                      (rec__bounded_strings__bounded_string__text1

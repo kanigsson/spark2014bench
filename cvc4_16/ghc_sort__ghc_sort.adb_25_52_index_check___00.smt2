@@ -449,15 +449,15 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___410 Int) (temp___411 Int) (temp___412 Int))
-  (let ((temp___409 (ghc_sort__cut__cut__aggregate_def temp___410 temp___411
-                    temp___412)))
-  (=> (dynamic_invariant temp___410 true true true true)
+  (forall ((temp___411 Int) (temp___412 Int) (temp___413 Int))
+  (let ((temp___410 (ghc_sort__cut__cut__aggregate_def temp___411 temp___412
+                    temp___413)))
+  (=> (dynamic_invariant temp___411 true true true true)
   (and
-  (=> (dynamic_property1 1 2147483647 temp___411 temp___412)
-  (and (= (first3 temp___409) temp___411) (= (last3 temp___409) temp___412)))
-  (forall ((temp___413 Int))
-  (= (select (to_array1 temp___409) temp___413) rliteral)))))))
+  (=> (dynamic_property1 1 2147483647 temp___412 temp___413)
+  (and (= (first3 temp___410) temp___412) (= (last3 temp___410) temp___413)))
+  (forall ((temp___414 Int))
+  (= (select (to_array1 temp___410) temp___414) rliteral)))))))
 
 (define-fun dynamic_invariant3 ((temp___expr_180 us_t1)
   (temp___is_init_176 Bool) (temp___skip_constant_177 Bool)
@@ -468,21 +468,21 @@
                                      (first3 temp___expr_180)
                                      (last3 temp___expr_180))))
 
-(define-fun dynamic_invariant4 ((temp___expr_214 us_t1)
-  (temp___is_init_210 Bool) (temp___skip_constant_211 Bool)
-  (temp___do_toplevel_212 Bool)
-  (temp___do_typ_inv_213 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_211 true))
+(define-fun dynamic_invariant4 ((temp___expr_215 us_t1)
+  (temp___is_init_211 Bool) (temp___skip_constant_212 Bool)
+  (temp___do_toplevel_213 Bool)
+  (temp___do_typ_inv_214 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_212 true))
                                      (and (dynamic_property1 1
                                      (+ (length s) 1)
-                                     (first3 temp___expr_214)
-                                     (last3 temp___expr_214))
-                                     (and (= (first3 temp___expr_214) 1)
-                                     (= (last3 temp___expr_214) (+ (length s) 1))))))
+                                     (first3 temp___expr_215)
+                                     (last3 temp___expr_215))
+                                     (and (= (first3 temp___expr_215) 1)
+                                     (= (last3 temp___expr_215) (+ (length s) 1))))))
 
-(define-fun default_initial_assumption ((temp___expr_216 us_t1)
-  (temp___skip_top_level_217 Bool)) Bool (and (= (first3 temp___expr_216) 1)
-                                         (= (last3 temp___expr_216) (+ 
+(define-fun default_initial_assumption ((temp___expr_217 us_t1)
+  (temp___skip_top_level_218 Bool)) Bool (and (= (first3 temp___expr_217) 1)
+                                         (= (last3 temp___expr_217) (+ 
                                          (length s) 1))))
 
 (assert
@@ -491,16 +491,16 @@
   (not
   (=> (dynamic_invariant1 s true false true true)
   (=> (< (last1 s) 2147483646)
-  (let ((temp___414 (ghc_sort__cut__cut__aggregate_def 1 1 (+ (length s) 1))))
-  (=> (= (first3 temp___414) 1)
-  (=> (= (last3 temp___414) (+ (length s) 1))
+  (let ((temp___415 (ghc_sort__cut__cut__aggregate_def 1 1 (+ (length s) 1))))
+  (=> (= (first3 temp___415) 1)
+  (=> (= (last3 temp___415) (+ (length s) 1))
   (=>
-  (ite (<= (first3 temp___414) (last3 temp___414))
+  (ite (<= (first3 temp___415) (last3 temp___415))
   (and (<= 1 (+ (length s) 1))
-  (= (- (last3 temp___414) (first3 temp___414)) (- (+ (length s) 1) 1)))
+  (= (- (last3 temp___415) (first3 temp___415)) (- (+ (length s) 1) 1)))
   (< (+ (length s) 1) 1))
-  (let ((ghc_sort__cut__cut__assume (of_array1 (to_array1 temp___414)
-                                    (first3 temp___414) (last3 temp___414))))
+  (let ((ghc_sort__cut__cut__assume (of_array1 (to_array1 temp___415)
+                                    (first3 temp___415) (last3 temp___415))))
   (forall ((cut (Array Int positive)))
   (=> (= cut (to_array1 ghc_sort__cut__cut__assume))
   (=> (= (to_rep cut__first) (first3 ghc_sort__cut__cut__assume))
@@ -557,18 +557,18 @@
   (and (and (<= (to_rep cut__first) o5) (<= o5 (to_rep cut__last)))
   (exists ((o6 Int))
   (and (= (to_rep1 (select cut o5)) o6)
-  (let ((temp___445 (- o6 1)))
-  (and (and (<= (first1 s) temp___445) (<= temp___445 (last1 s)))
+  (let ((temp___446 (- o6 1)))
+  (and (and (<= (first1 s) temp___446) (<= temp___446 (last1 s)))
   (exists ((o7 Int))
-  (and (= (to_rep (select (to_array s) temp___445)) o7)
+  (and (= (to_rep (select (to_array s) temp___446)) o7)
   (let ((o8 (+ usf 1)))
   (and (in_range1 o8)
   (and (and (<= (to_rep cut__first) o8) (<= o8 (to_rep cut__last)))
-  (exists ((temp___443 Int))
-  (and (= (to_rep1 (select cut o8)) temp___443)
-  (and (and (<= (first1 s) temp___443) (<= temp___443 (last1 s)))
+  (exists ((temp___444 Int))
+  (and (= (to_rep1 (select cut o8)) temp___444)
+  (and (and (<= (first1 s) temp___444) (<= temp___444 (last1 s)))
   (exists ((o9 Int))
-  (and (= (to_rep (select (to_array s) temp___443)) o9)
+  (and (= (to_rep (select (to_array s) temp___444)) o9)
   (= o4 (ite (<= o9 o7) true false))))))))))))))))))) (= o4 false)))
   (=> (not (= o4 true))
   (let ((o5 (+ usf 1))) (=> (in_range1 o5) (<= (to_rep cut__first) o5)))))))))))))))))))))))))))))))))))))))))))

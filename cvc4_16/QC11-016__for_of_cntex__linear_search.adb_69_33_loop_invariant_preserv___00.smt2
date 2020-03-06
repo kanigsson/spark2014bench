@@ -359,6 +359,11 @@
      (dynamic_invariant2 (get container position) true false true true)) :pattern (
   (get container position)) ))))
 
+(define-fun in_range5 ((rec__lists__list__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__lists__list__capacity1 (to_rep
+                                                           (rec__lists__list__capacity
+                                                           a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -555,7 +560,7 @@
   (forall ((i element_type1))
   (and (<= 1 (element_typeqtint1 i)) (<= (element_typeqtint1 i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -577,7 +582,7 @@
   (temp___do_toplevel_376 Bool)
   (temp___do_typ_inv_377 Bool)) Bool (=>
                                      (or (= temp___is_init_374 true)
-                                     (<= 1 2147483647)) (in_range5
+                                     (<= 1 2147483647)) (in_range6
                                      temp___expr_378)))
 
 (define-fun default_initial_assumption2 ((temp___expr_361 us_rep2)
@@ -615,7 +620,8 @@
      (forall ((i us_rep2))
      (=> (= (has_key result i) true)
      (and
-     (and (<= 1 (get1 result i)) (<= (get1 result i) (length1 container)))
+     (let ((temp___389 (get1 result i)))
+     (and (<= 1 temp___389) (<= temp___389 (length1 container))))
      (forall ((j us_rep2))
      (=> (= (has_key result j) true)
      (=> (= (get1 result i) (get1 result j)) (= (bool_eq2 i j) true))))))))) :pattern (
@@ -662,7 +668,7 @@
   (and (<= (- 2147483648) (element_typeqtint2 i))
   (<= (element_typeqtint2 i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range7 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
@@ -686,7 +692,7 @@
   (temp___do_typ_inv_335 Bool)) Bool (=>
                                      (or (= temp___is_init_332 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range6 temp___expr_336)))
+                                     (in_range7 temp___expr_336)))
 
 (declare-const attr__ATTRIBUTE_ADDRESS3 Int)
 
@@ -702,7 +708,7 @@
   (and (<= (- 2147483648) (tcount_typeBqtint i))
   (<= (tcount_typeBqtint i) 2147483647))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range8 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
@@ -849,7 +855,7 @@
   (=> (= spark__branch (ite (= o5 n) true false))
   (=> (not (= spark__branch true))
   (let ((o6 (+ i1 1)))
-  (=> (in_range7 o6)
+  (=> (in_range8 o6)
   (forall ((i2 Int))
   (=> (= i2 o6)
   (let ((o7 arr))

@@ -377,6 +377,10 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range5 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
+  (to_rep (rec__ada___pragmarc__b_strings__b_string__max_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -522,7 +526,7 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-R728-002__aggregates-9295/src/gnatprove/ada___pragmarc__b_strings__b_string.mlw", line 895, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-R728-002__aggregates-11070/src/gnatprove/ada___pragmarc__b_strings__b_string.mlw", line 909, characters 5-8
   (not
   (forall ((usf Int) (usf1 us_rep))
   (=> (dynamic_invariant usf true true true true)

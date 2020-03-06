@@ -424,6 +424,10 @@
                            (us_split_fields1 b))) true))))
                    true false))
 
+(define-fun in_range4 ((rec__tester__ring_buffer__ring_buffer_type__max_size1 Int)
+  (a us_split_discrs)) Bool (= rec__tester__ring_buffer__ring_buffer_type__max_size1 
+  (to_rep1 (rec__tester__ring_buffer__ring_buffer_type__max_size a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -721,7 +725,7 @@
   (forall ((i tT14bP1))
   (and (<= 1 (tT14bP1qtint i)) (<= (tT14bP1qtint i) 4))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 4)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 4)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -848,11 +852,6 @@
                             (rec__tester__ring_buffer__ring_buffer_type__items1
                             (us_split_fields3 b)) 1 4) true))))
                     true false))
-
-(define-fun in_range5 ((rec__tester__ring_buffer__ring_buffer_type__max_size1 Int)
-  (a us_rep)) Bool (= rec__tester__ring_buffer__ring_buffer_type__max_size1 
-  (to_rep1
-  (rec__tester__ring_buffer__ring_buffer_type__max_size (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 
@@ -1094,8 +1093,8 @@
   (forall ((x__split_fields us_split_fields2))
   (=> (in_range1 4)
   (=>
-  (forall ((temp___252 us_rep1)) (empty__function_guard
-  (empty (to_base temp___252)) (to_base temp___252)))
+  (forall ((temp___259 us_rep1)) (empty__function_guard
+  (empty (to_base temp___259)) (to_base temp___259)))
   (=>
   (and
   (and
@@ -1112,7 +1111,8 @@
   (to_rep1
   (rec__tester__ring_buffer__ring_buffer_type__max_size x__split_discrs)))))
   (= (empty (to_base (us_repqtmk1 x__split_discrs x__split_fields))) true))
-  (=> (in_range5 4 (to_base (us_repqtmk1 x__split_discrs x__split_fields)))
+  (=> (in_range4 4
+  (us_split_discrs1 (to_base (us_repqtmk1 x__split_discrs x__split_fields))))
   (=>
   (forall ((x__split_fields1 us_split_fields2) (o us_split_discrs))
   (full__function_guard

@@ -575,6 +575,10 @@
                            (us_split_fields1 b))) true)))
                    true false))
 
+(define-fun in_range3 ((rec__foo__element_structure_type__max_size1 Int)
+  (a us_split_discrs)) Bool (= rec__foo__element_structure_type__max_size1 
+  (to_rep (rec__foo__element_structure_type__max_size a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -748,7 +752,7 @@
   (assert
   (forall ((i tT9bP1)) (and (<= 1 (tT9bP1qtint i)) (<= (tT9bP1qtint i) 4))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 4)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 4)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -849,12 +853,6 @@
                             (us_split_fields3 b)) 1 4) true)))
                     true false))
 
-(define-fun in_range4 ((rec__foo__element_structure_type__max_size1 Int)
-  (a us_rep)) Bool (= rec__foo__element_structure_type__max_size1 (to_rep
-                                                                  (rec__foo__element_structure_type__max_size
-                                                                  (us_split_discrs1
-                                                                  a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -936,7 +934,9 @@
   (temp___do_toplevel_234 Bool)
   (temp___do_typ_inv_235 Bool)) Bool (=>
                                      (not (= temp___skip_constant_233 true))
-                                     (in_range4 4 (to_base temp___expr_236))))
+                                     (in_range3 4
+                                     (us_split_discrs1
+                                     (to_base temp___expr_236)))))
 
 (define-fun default_initial_assumption ((temp___expr_239 us_rep1)
   (temp___skip_top_level_240 Bool)) Bool (and

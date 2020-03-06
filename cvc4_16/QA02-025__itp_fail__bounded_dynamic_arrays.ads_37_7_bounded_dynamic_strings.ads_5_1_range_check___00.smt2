@@ -386,6 +386,10 @@
                            (us_split_fields1 b))) true)))
                    true false))
 
+(define-fun in_range4 ((rec__bounded_dynamic_strings__sequence__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__bounded_dynamic_strings__sequence__capacity1 
+  (to_rep1 (rec__bounded_dynamic_strings__sequence__capacity a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -461,7 +465,7 @@
 
 (declare-sort component 0)
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 255)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 255)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -483,7 +487,7 @@
   (temp___do_toplevel_162 Bool)
   (temp___do_typ_inv_163 Bool)) Bool (=>
                                      (or (= temp___is_init_160 true)
-                                     (<= 0 255)) (in_range4 temp___expr_164)))
+                                     (<= 0 255)) (in_range5 temp___expr_164)))
 
 (declare-sort list_index 0)
 
@@ -494,7 +498,7 @@
   (forall ((i list_index))
   (and (<= 1 (list_indexqtint i)) (<= (list_indexqtint i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -516,7 +520,7 @@
   (temp___do_toplevel_169 Bool)
   (temp___do_typ_inv_170 Bool)) Bool (=>
                                      (or (= temp___is_init_167 true)
-                                     (<= 1 2147483647)) (in_range5
+                                     (<= 1 2147483647)) (in_range6
                                      temp___expr_171)))
 
 (declare-fun bounded_dynamic_strings__null_list__aggregate_def (Int) (Array Int character))
@@ -562,21 +566,20 @@
   (temp___do_toplevel_206 Bool)
   (temp___do_typ_inv_207 Bool)) Bool (and
                                      (=> (= temp___do_toplevel_206 true)
-                                     (and
-                                     (<= 0 (to_rep1
-                                           (rec__bounded_dynamic_strings__sequence__current_length
-                                           (us_split_fields1 temp___expr_208))))
-                                     (<= (to_rep1
-                                         (rec__bounded_dynamic_strings__sequence__current_length
-                                         (us_split_fields1 temp___expr_208))) 
-                                     (to_rep1
-                                     (rec__bounded_dynamic_strings__sequence__capacity
-                                     (us_split_discrs1 temp___expr_208))))))
-                                     (let ((temp___210 (rec__bounded_dynamic_strings__sequence__capacity
+                                     (let ((temp___210 (to_rep1
+                                                       (rec__bounded_dynamic_strings__sequence__current_length
+                                                       (us_split_fields1
+                                                       temp___expr_208)))))
+                                     (and (<= 0 temp___210)
+                                     (<= temp___210 (to_rep1
+                                                    (rec__bounded_dynamic_strings__sequence__capacity
+                                                    (us_split_discrs1
+                                                    temp___expr_208)))))))
+                                     (let ((temp___211 (rec__bounded_dynamic_strings__sequence__capacity
                                                        (us_split_discrs1
                                                        temp___expr_208))))
                                      (and (dynamic_property 1
-                                     (to_rep1 temp___210)
+                                     (to_rep1 temp___211)
                                      (first1
                                      (rec__bounded_dynamic_strings__sequence__content
                                      (us_split_fields1 temp___expr_208)))
@@ -590,21 +593,20 @@
                                      (= (last1
                                         (rec__bounded_dynamic_strings__sequence__content
                                         (us_split_fields1 temp___expr_208))) 
-                                     (to_rep1 temp___210)))))))
+                                     (to_rep1 temp___211)))))))
 
-(define-fun dynamic_predicate ((temp___212 us_rep)) Bool (and
-                                                         (<= 0 (to_rep1
-                                                               (rec__bounded_dynamic_strings__sequence__current_length
-                                                               (us_split_fields1
-                                                               temp___212))))
-                                                         (<= (to_rep1
-                                                             (rec__bounded_dynamic_strings__sequence__current_length
-                                                             (us_split_fields1
-                                                             temp___212))) 
+(define-fun dynamic_predicate ((temp___213 us_rep)) Bool (let ((temp___215 
+                                                         (to_rep1
+                                                         (rec__bounded_dynamic_strings__sequence__current_length
+                                                         (us_split_fields1
+                                                         temp___213)))))
+                                                         (and
+                                                         (<= 0 temp___215)
+                                                         (<= temp___215 
                                                          (to_rep1
                                                          (rec__bounded_dynamic_strings__sequence__capacity
                                                          (us_split_discrs1
-                                                         temp___212))))))
+                                                         temp___213)))))))
 
 ;; default_value__def_axiom
   (assert (= default_value 32))

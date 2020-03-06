@@ -70,6 +70,10 @@
                    (rec__test_constr__r__d (us_split_discrs1 b)) 1 0)) true
                    false))
 
+(define-fun in_range1 ((rec__test_constr__r__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__test_constr__r__d1 (rec__test_constr__r__d
+                                                       a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

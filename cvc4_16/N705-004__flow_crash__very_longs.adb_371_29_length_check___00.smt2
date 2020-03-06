@@ -527,6 +527,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__very_longs__very_long__octet_length1 
+  (to_rep (rec__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -615,7 +619,7 @@
   (forall ((i natural))
   (and (<= 0 (naturalqtint i)) (<= (naturalqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -636,7 +640,7 @@
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
   (temp___do_typ_inv_38 Bool)) Bool (=>
                                     (or (= temp___is_init_35 true)
-                                    (<= 0 2147483647)) (in_range3
+                                    (<= 0 2147483647)) (in_range4
                                     temp___expr_39)))
 
 (declare-fun shift_right ((_ BitVec 8) Int) (_ BitVec 8))
@@ -705,7 +709,7 @@
   (forall ((i shift_type))
   (and (<= 0 (shift_typeqtint i)) (<= (shift_typeqtint i) 7))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 7)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 7)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -727,7 +731,7 @@
   (temp___do_toplevel_776 Bool)
   (temp___do_typ_inv_777 Bool)) Bool (=>
                                      (or (= temp___is_init_774 true)
-                                     (<= 0 7)) (in_range4 temp___expr_778)))
+                                     (<= 0 7)) (in_range5 temp___expr_778)))
 
 (declare-datatypes ((s123b__ref 0))
 (((s123b__refqtmk (s123b__content us_t)))))
@@ -739,21 +743,21 @@
 (define-fun t126b__ref_t126b__content__projection ((a t126b__ref)) us_t 
   (t126b__content a))
 
-(declare-fun temp_____aggregate_def_1325 ((_ BitVec 8) Int Int) us_t)
+(declare-fun temp_____aggregate_def_1326 ((_ BitVec 8) Int Int) us_t)
 
 ;; def_axiom
   (assert
-  (forall ((temp___1327 (_ BitVec 8)))
-  (forall ((temp___1328 Int) (temp___1329 Int))
-  (let ((temp___1326 (temp_____aggregate_def_1325 temp___1327 temp___1328
-                     temp___1329)))
-  (=> (dynamic_invariant2 temp___1327 true true true true)
+  (forall ((temp___1328 (_ BitVec 8)))
+  (forall ((temp___1329 Int) (temp___1330 Int))
+  (let ((temp___1327 (temp_____aggregate_def_1326 temp___1328 temp___1329
+                     temp___1330)))
+  (=> (dynamic_invariant2 temp___1328 true true true true)
   (and
-  (=> (dynamic_property 1 2147483647 temp___1328 temp___1329)
-  (and (= (first1 temp___1326) temp___1328)
-  (= (last1 temp___1326) temp___1329)))
-  (forall ((temp___1330 Int))
-  (= (to_rep2 (select (to_array temp___1326) temp___1330)) temp___1327))))))))
+  (=> (dynamic_property 1 2147483647 temp___1329 temp___1330)
+  (and (= (first1 temp___1327) temp___1329)
+  (= (last1 temp___1327) temp___1330)))
+  (forall ((temp___1331 Int))
+  (= (to_rep2 (select (to_array temp___1327) temp___1331)) temp___1328))))))))
 
 (define-fun dynamic_invariant5 ((temp___expr_253 us_t)
   (temp___is_init_249 Bool) (temp___skip_constant_250 Bool)
@@ -805,15 +809,15 @@
      (rec__very_longs__very_long__octet_length result____split_discrs)) very_longs__divide__full_left_shift__R124b__assume)
   (=> (= very_longs__divide__full_left_shift__R124b__assume r124b)
   (=> (dynamic_invariant3 r124b true false true true)
-  (let ((temp___1331 (temp_____aggregate_def_1325 #x00 1 r124b)))
-  (=> (= (first1 temp___1331) 1)
-  (=> (= (last1 temp___1331) r124b)
+  (let ((temp___1332 (temp_____aggregate_def_1326 #x00 1 r124b)))
+  (=> (= (first1 temp___1332) 1)
+  (=> (= (last1 temp___1332) r124b)
   (=>
-  (ite (<= (first1 temp___1331) (last1 temp___1331))
+  (ite (<= (first1 temp___1332) (last1 temp___1332))
   (and (<= 1 r124b)
-  (= (- (last1 temp___1331) (first1 temp___1331)) (- r124b 1))) (< r124b 1))
-  (let ((temp___1333 (of_array (to_array temp___1331) (first1 temp___1331)
-                     (last1 temp___1331))))
-  (=> (<= (first1 temp___1333) (last1 temp___1333))
+  (= (- (last1 temp___1332) (first1 temp___1332)) (- r124b 1))) (< r124b 1))
+  (let ((temp___1334 (of_array (to_array temp___1332) (first1 temp___1332)
+                     (last1 temp___1332))))
+  (=> (<= (first1 temp___1334) (last1 temp___1334))
   (<= (first1 result____split_fields) (last1 result____split_fields))))))))))))))))))))))
 (check-sat)

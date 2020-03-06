@@ -333,12 +333,12 @@
                                      (or (= temp___is_init_176 true)
                                      (<= 0 255)) (in_range1 temp___expr_180)))
 
-(define-fun dynamic_invariant1 ((temp___expr_306 Int)
-  (temp___is_init_302 Bool) (temp___skip_constant_303 Bool)
-  (temp___do_toplevel_304 Bool)
-  (temp___do_typ_inv_305 Bool)) Bool (=>
-                                     (or (= temp___is_init_302 true)
-                                     (<= 0 2)) (in_range2 temp___expr_306)))
+(define-fun dynamic_invariant1 ((temp___expr_318 Int)
+  (temp___is_init_314 Bool) (temp___skip_constant_315 Bool)
+  (temp___do_toplevel_316 Bool)
+  (temp___do_typ_inv_317 Bool)) Bool (=>
+                                     (or (= temp___is_init_314 true)
+                                     (<= 0 2)) (in_range2 temp___expr_318)))
 
 (assert
 ;; defqtvc

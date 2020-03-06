@@ -144,6 +144,30 @@
 (define-fun us_rep___split_fields__2__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun to_rep1 ((x any_priority)) Int (any_priorityqtint x))
+
+(declare-fun of_rep1 (Int) any_priority)
+
+;; inversion_axiom
+  (assert
+  (forall ((x any_priority))
+  (! (= (of_rep1 (to_rep1 x)) x) :pattern ((to_rep1 x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x any_priority)) (! (in_range1
+  (to_rep1 x)) :pattern ((to_rep1 x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range1 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
+                                                              (of_rep1 x))) )))
+
+(define-fun in_range2 ((rec__interrupt_priority__interrupt_needed_1__c1 Int)
+  (a us_split_discrs)) Bool (= rec__interrupt_priority__interrupt_needed_1__c1 
+  (to_rep1 (rec__interrupt_priority__interrupt_needed_1__c a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

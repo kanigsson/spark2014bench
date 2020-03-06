@@ -620,6 +620,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__very_longs__very_long__octet_length1 
+  (to_rep (rec__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -761,12 +765,6 @@
                             (us_split_fields3 b))) true))
                     true false))
 
-(define-fun in_range3 ((rec__very_longs__very_long__octet_length1 Int)
-  (a us_rep)) Bool (= rec__very_longs__very_long__octet_length1 (to_rep
-                                                                (rec__very_longs__very_long__octet_length
-                                                                (us_split_discrs1
-                                                                a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -837,7 +835,8 @@
                                      (+ (* 2 (to_rep
                                              (rec__very_longs__very_long__octet_length
                                              (us_split_discrs1 divisor)))) 1)
-                                     (to_base temp___expr_785)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_785))))
                                      (and (dynamic_property 1
                                      (+ (* 2 (to_rep
                                              (rec__very_longs__very_long__octet_length
@@ -937,12 +936,6 @@
                             (us_split_fields5 b))) true))
                     true false))
 
-(define-fun in_range4 ((rec__very_longs__very_long__octet_length1 Int)
-  (a us_rep)) Bool (= rec__very_longs__very_long__octet_length1 (to_rep
-                                                                (rec__very_longs__very_long__octet_length
-                                                                (us_split_discrs1
-                                                                a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -1009,11 +1002,12 @@
   (temp___do_typ_inv_797 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_795 true))
-                                     (in_range4
+                                     (in_range3
                                      (to_rep
                                      (rec__very_longs__very_long__octet_length
                                      (us_split_discrs1 divisor)))
-                                     (to_base1 temp___expr_798)))
+                                     (us_split_discrs1
+                                     (to_base1 temp___expr_798))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__very_longs__very_long__octet_length
@@ -1157,37 +1151,37 @@
   (=> (dynamic_invariant4 r_hat false false true true)
   (let ((o (+ j n)))
   (=> (in_range2 o)
-  (let ((temp___1393 (- o 2)))
+  (let ((temp___1394 (- o 2)))
   (=>
-  (and (<= (first1 u__split_fields) temp___1393)
-  (<= temp___1393 (last1 u__split_fields)))
+  (and (<= (first1 u__split_fields) temp___1394)
+  (<= temp___1394 (last1 u__split_fields)))
   (forall ((o1 (_ BitVec 8)))
-  (=> (= (to_rep2 (select (to_array u__split_fields) temp___1393)) o1)
+  (=> (= (to_rep2 (select (to_array u__split_fields) temp___1394)) o1)
   (let ((o2 (+ j n)))
   (=> (in_range2 o2)
-  (let ((temp___1391 (- o2 1)))
+  (let ((temp___1392 (- o2 1)))
   (=>
-  (and (<= (first1 u__split_fields) temp___1391)
-  (<= temp___1391 (last1 u__split_fields)))
+  (and (<= (first1 u__split_fields) temp___1392)
+  (<= temp___1392 (last1 u__split_fields)))
   (forall ((o3 (_ BitVec 8)))
-  (=> (= (to_rep2 (select (to_array u__split_fields) temp___1391)) o3)
+  (=> (= (to_rep2 (select (to_array u__split_fields) temp___1392)) o3)
   (forall ((temporary_digit1 (_ BitVec 16)))
   (=>
   (= temporary_digit1 (bvadd (bvmul #x0100 ((_ zero_extend 8) o3)) ((_ zero_extend 8) o1)))
-  (let ((temp___1395 (- n 1)))
+  (let ((temp___1396 (- n 1)))
   (=>
-  (and (<= (first1 v__split_fields) temp___1395)
-  (<= temp___1395 (last1 v__split_fields)))
+  (and (<= (first1 v__split_fields) temp___1396)
+  (<= temp___1396 (last1 v__split_fields)))
   (forall ((o4 (_ BitVec 8)))
-  (=> (= (to_rep2 (select (to_array v__split_fields) temp___1395)) o4)
+  (=> (= (to_rep2 (select (to_array v__split_fields) temp___1396)) o4)
   (forall ((q_hat1 (_ BitVec 16)))
   (=> (= q_hat1 (bvudiv temporary_digit1 ((_ zero_extend 8) o4)))
-  (let ((temp___1397 (- n 1)))
+  (let ((temp___1398 (- n 1)))
   (=>
-  (and (<= (first1 v__split_fields) temp___1397)
-  (<= temp___1397 (last1 v__split_fields)))
+  (and (<= (first1 v__split_fields) temp___1398)
+  (<= temp___1398 (last1 v__split_fields)))
   (forall ((o5 (_ BitVec 8)))
-  (=> (= (to_rep2 (select (to_array v__split_fields) temp___1397)) o5)
+  (=> (= (to_rep2 (select (to_array v__split_fields) temp___1398)) o5)
   (forall ((r_hat1 (_ BitVec 16)))
   (=> (= r_hat1 (bvurem temporary_digit1 ((_ zero_extend 8) o5)))
   (forall ((spark__branch Bool) (q_hat2 (_ BitVec 16))
@@ -1195,29 +1189,29 @@
   (=>
   (let ((o6 (+ j n)))
   (and (in_range2 o6)
-  (let ((temp___1403 (- o6 3)))
+  (let ((temp___1404 (- o6 3)))
   (and
-  (and (<= (first1 u__split_fields) temp___1403)
-  (<= temp___1403 (last1 u__split_fields)))
+  (and (<= (first1 u__split_fields) temp___1404)
+  (<= temp___1404 (last1 u__split_fields)))
   (exists ((o7 (_ BitVec 8)))
-  (and (= (to_rep2 (select (to_array u__split_fields) temp___1403)) o7)
-  (let ((temp___1401 (- n 2)))
+  (and (= (to_rep2 (select (to_array u__split_fields) temp___1404)) o7)
+  (let ((temp___1402 (- n 2)))
   (and
-  (and (<= (first1 v__split_fields) temp___1401)
-  (<= temp___1401 (last1 v__split_fields)))
+  (and (<= (first1 v__split_fields) temp___1402)
+  (<= temp___1402 (last1 v__split_fields)))
   (exists ((o8 (_ BitVec 8)))
-  (and (= (to_rep2 (select (to_array v__split_fields) temp___1401)) o8)
+  (and (= (to_rep2 (select (to_array v__split_fields) temp___1402)) o8)
   (and
   (= spark__branch (or (ite (= q_hat1 #x0100) true false) (ite (bvugt (bvmul q_hat1 ((_ zero_extend 8) o8)) (bvadd (bvmul #x0100 r_hat1) ((_ zero_extend 8) o7)))
                                                           true false)))
   (ite (= spark__branch true)
   (and (= q_hat2 (bvsub q_hat1 #x0001))
-  (let ((temp___1399 (- n 1)))
+  (let ((temp___1400 (- n 1)))
   (and
-  (and (<= (first1 v__split_fields) temp___1399)
-  (<= temp___1399 (last1 v__split_fields)))
+  (and (<= (first1 v__split_fields) temp___1400)
+  (<= temp___1400 (last1 v__split_fields)))
   (exists ((o9 (_ BitVec 8)))
-  (and (= (to_rep2 (select (to_array v__split_fields) temp___1399)) o9)
+  (and (= (to_rep2 (select (to_array v__split_fields) temp___1400)) o9)
   (= r_hat2 (bvadd r_hat1 ((_ zero_extend 8) o9))))))))
   (and (= q_hat2 q_hat1) (= r_hat2 r_hat1))))))))))))))
   (forall ((spark__branch1 Bool))
@@ -1225,11 +1219,11 @@
   (=> (= spark__branch1 true)
   (let ((o6 (+ j n)))
   (=> (in_range2 o6)
-  (let ((temp___1407 (- o6 3)))
+  (let ((temp___1408 (- o6 3)))
   (=>
-  (and (<= (first1 u__split_fields) temp___1407)
-  (<= temp___1407 (last1 u__split_fields)))
+  (and (<= (first1 u__split_fields) temp___1408)
+  (<= temp___1408 (last1 u__split_fields)))
   (forall ((o7 (_ BitVec 8)))
-  (=> (= (to_rep2 (select (to_array u__split_fields) temp___1407)) o7)
+  (=> (= (to_rep2 (select (to_array u__split_fields) temp___1408)) o7)
   (<= (first1 v__split_fields) (- n 2)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

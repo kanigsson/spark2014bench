@@ -618,24 +618,24 @@
 
 (declare-datatypes ((modular__ref 0))
 (((modular__refqtmk (modular__content modular)))))
-(define-fun modular__ref_modular__content__8__projection ((a modular__ref)) modular 
+(define-fun modular__ref_modular__content__4__projection ((a modular__ref)) modular 
   (modular__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_520 (_ BitVec 64))
-  (temp___is_init_516 Bool) (temp___skip_constant_517 Bool)
-  (temp___do_toplevel_518 Bool) (temp___do_typ_inv_519 Bool)) Bool true)
+(define-fun dynamic_invariant1 ((temp___expr_492 (_ BitVec 64))
+  (temp___is_init_488 Bool) (temp___skip_constant_489 Bool)
+  (temp___do_toplevel_490 Bool) (temp___do_typ_inv_491 Bool)) Bool true)
 
 (define-fun dynamic_invariant2 ((temp___expr_347 (_ BitVec 8))
   (temp___is_init_343 Bool) (temp___skip_constant_344 Bool)
   (temp___do_toplevel_345 Bool) (temp___do_typ_inv_346 Bool)) Bool true)
 
-(define-fun dynamic_invariant3 ((temp___expr_382 (_ BitVec 16))
+(define-fun dynamic_invariant3 ((temp___expr_375 (_ BitVec 16))
+  (temp___is_init_371 Bool) (temp___skip_constant_372 Bool)
+  (temp___do_toplevel_373 Bool) (temp___do_typ_inv_374 Bool)) Bool true)
+
+(define-fun dynamic_invariant4 ((temp___expr_382 (_ BitVec 32))
   (temp___is_init_378 Bool) (temp___skip_constant_379 Bool)
   (temp___do_toplevel_380 Bool) (temp___do_typ_inv_381 Bool)) Bool true)
-
-(define-fun dynamic_invariant4 ((temp___expr_389 (_ BitVec 32))
-  (temp___is_init_385 Bool) (temp___skip_constant_386 Bool)
-  (temp___do_toplevel_387 Bool) (temp___do_typ_inv_388 Bool)) Bool true)
 
 (assert
 ;; defqtvc

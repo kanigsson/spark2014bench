@@ -287,9 +287,10 @@
                (and (<= (to_rep a__first) temp___178)
                (<= temp___178 (to_rep a__last)))
                (=>
-               (and (not (= 0 temp___178))
+               (and
                (or (< temp___174 temp___178)
-               (or (< temp___178 temp___173) (<= i1 temp___178))))
+               (or (< temp___178 temp___173) (<= i1 temp___178)))
+               (not (= 0 temp___178)))
                (= (select a1 temp___178) (select a temp___178)))))
           true false) (ite (and (<= (to_rep a__first) i1)
                            (<= i1 (to_rep a__last)))

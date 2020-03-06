@@ -341,10 +341,10 @@
   (forall ((c us_rep))
   (forall ((p us_rep1))
   (! (= (= (has_element c p) true)
-     (and
-     (<= 1 (to_rep (rec__container__cursor__index (us_split_fields3 p))))
-     (<= (to_rep (rec__container__cursor__index (us_split_fields3 p))) 200))) :pattern (
-  (has_element c p)) ))))
+     (let ((temp___209 (to_rep
+                       (rec__container__cursor__index (us_split_fields3 p)))))
+     (and (<= 1 temp___209) (<= temp___209 200)))) :pattern ((has_element c
+                                                             p)) ))))
 
 (declare-const c us_rep)
 

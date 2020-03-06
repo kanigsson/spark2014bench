@@ -621,6 +621,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
+  (to_rep
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -790,21 +795,21 @@
 (define-fun t21b__ref_t21b__content__projection ((a t21b__ref)) us_t 
   (t21b__content a))
 
-(declare-fun temp_____aggregate_def_1480 ((_ BitVec 8) Int Int) us_t)
+(declare-fun temp_____aggregate_def_1483 ((_ BitVec 8) Int Int) us_t)
 
 ;; def_axiom
   (assert
-  (forall ((temp___1482 (_ BitVec 8)))
-  (forall ((temp___1483 Int) (temp___1484 Int))
-  (let ((temp___1481 (temp_____aggregate_def_1480 temp___1482 temp___1483
-                     temp___1484)))
-  (=> (dynamic_invariant1 temp___1482 true true true true)
+  (forall ((temp___1485 (_ BitVec 8)))
+  (forall ((temp___1486 Int) (temp___1487 Int))
+  (let ((temp___1484 (temp_____aggregate_def_1483 temp___1485 temp___1486
+                     temp___1487)))
+  (=> (dynamic_invariant1 temp___1485 true true true true)
   (and
-  (=> (dynamic_property 1 2147483647 temp___1483 temp___1484)
-  (and (= (first1 temp___1481) temp___1483)
-  (= (last1 temp___1481) temp___1484)))
-  (forall ((temp___1485 Int))
-  (= (to_rep2 (select (to_array temp___1481) temp___1485)) temp___1482))))))))
+  (=> (dynamic_property 1 2147483647 temp___1486 temp___1487)
+  (and (= (first1 temp___1484) temp___1486)
+  (= (last1 temp___1484) temp___1487)))
+  (forall ((temp___1488 Int))
+  (= (to_rep2 (select (to_array temp___1484) temp___1488)) temp___1485))))))))
 
 (define-fun dynamic_invariant4 ((temp___expr_271 us_t)
   (temp___is_init_267 Bool) (temp___skip_constant_268 Bool)
@@ -860,15 +865,15 @@
   (= ada___ada___aco__math__very_longs__modsubtract_and_borrow__R19b__assume 
   r19b)
   (=> (dynamic_invariant3 r19b true false true true)
-  (let ((temp___1486 (temp_____aggregate_def_1480 #x00 1 r19b)))
-  (=> (= (first1 temp___1486) 1)
-  (=> (= (last1 temp___1486) r19b)
+  (let ((temp___1489 (temp_____aggregate_def_1483 #x00 1 r19b)))
+  (=> (= (first1 temp___1489) 1)
+  (=> (= (last1 temp___1489) r19b)
   (=>
-  (ite (<= (first1 temp___1486) (last1 temp___1486))
+  (ite (<= (first1 temp___1489) (last1 temp___1489))
   (and (<= 1 r19b)
-  (= (- (last1 temp___1486) (first1 temp___1486)) (- r19b 1))) (< r19b 1))
-  (let ((temp___1488 (of_array (to_array temp___1486) (first1 temp___1486)
-                     (last1 temp___1486))))
-  (=> (<= (first1 temp___1488) (last1 temp___1488))
+  (= (- (last1 temp___1489) (first1 temp___1489)) (- r19b 1))) (< r19b 1))
+  (let ((temp___1491 (of_array (to_array temp___1489) (first1 temp___1489)
+                     (last1 temp___1489))))
+  (=> (<= (first1 temp___1491) (last1 temp___1491))
   (<= (first1 result____split_fields) (last1 result____split_fields))))))))))))))))))))))
 (check-sat)

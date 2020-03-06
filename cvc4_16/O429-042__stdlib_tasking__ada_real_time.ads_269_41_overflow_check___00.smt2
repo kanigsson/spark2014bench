@@ -366,13 +366,13 @@
 (define-fun seconds_count__ref_seconds_count__content__projection ((a seconds_count__ref)) seconds_count 
   (seconds_count__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_302 Int)
-  (temp___is_init_298 Bool) (temp___skip_constant_299 Bool)
-  (temp___do_toplevel_300 Bool)
-  (temp___do_typ_inv_301 Bool)) Bool (=>
-                                     (or (= temp___is_init_298 true)
+(define-fun dynamic_invariant1 ((temp___expr_303 Int)
+  (temp___is_init_299 Bool) (temp___skip_constant_300 Bool)
+  (temp___do_toplevel_301 Bool)
+  (temp___do_typ_inv_302 Bool)) Bool (=>
+                                     (or (= temp___is_init_299 true)
                                      (<= (- 9223372036854775808) 9223372036854775807))
-                                     (in_range2 temp___expr_302)))
+                                     (in_range2 temp___expr_303)))
 
 ;; result_sc__def_axiom
   (assert
@@ -445,20 +445,13 @@
   (let ((o1 (* 3 (- 9223372036))))
   (=> (in_range3 o1)
   (=> (= (and (ite (<= o1 sc) true false) (ite (<= sc o) true false)) true)
-  (=> (in_range3 (+ 9223372036 1))
   (let ((o2 ts))
   (let ((o3 sc))
-  (let ((o4 (result_sc o3 o2)))
-  (=> (forall ((o5 us_rep1)) (ts_sc__function_guard (ts_sc o5) o5))
+  (let ((temp___426 (result_sc o3 o2)))
+  (=> (forall ((o4 us_rep1)) (ts_sc__function_guard (ts_sc o4) o4))
   (=>
-  (and (result_sc__function_guard o4 o3 o2)
-  (and (dynamic_invariant1 o4 true false true true) (= o4 (+ o3 (ts_sc o2)))))
-  (let ((o5 ts))
-  (let ((o6 sc))
-  (let ((o7 (result_sc o6 o5)))
-  (=> (forall ((o8 us_rep1)) (ts_sc__function_guard (ts_sc o8) o8))
-  (=>
-  (and (result_sc__function_guard o7 o6 o5)
-  (and (dynamic_invariant1 o7 true false true true) (= o7 (+ o6 (ts_sc o5)))))
-  (in_range3 (- (- 9223372036) 1))))))))))))))))))))))
+  (and (result_sc__function_guard temp___426 o3 o2)
+  (and (dynamic_invariant1 temp___426 true false true true)
+  (= temp___426 (+ o3 (ts_sc o2)))))
+  (=> (in_range3 (+ 9223372036 1)) (in_range3 (- (- 9223372036) 1)))))))))))))))))
 (check-sat)

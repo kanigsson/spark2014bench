@@ -430,6 +430,10 @@
                             (us_split_fields5 b))) true))))
                     true false))
 
+(define-fun in_range1 ((rec__use_unchecked_union__myunion__discr1 Int)
+  (a us_split_discrs)) Bool (= rec__use_unchecked_union__myunion__discr1 
+  (to_rep (rec__use_unchecked_union__myunion__discr a))))
+
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -555,12 +559,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
-(define-fun in_range1 ((rec__use_unchecked_union__myunion__discr1 Int)
-  (a us_rep2)) Bool (= rec__use_unchecked_union__myunion__discr1 (to_rep
-                                                                 (rec__use_unchecked_union__myunion__discr
-                                                                 (us_split_discrs1
-                                                                 a)))))
-
 (declare-const value__size5 Int)
 
 (declare-const object__size5 Int)
@@ -633,12 +631,6 @@
 (define-fun t1b__ref_t1b__content__projection ((a t1b__ref)) us_rep2 
   (t1b__content a))
 
-(define-fun in_range2 ((rec__use_unchecked_union__myunion__discr1 Int)
-  (a us_rep2)) Bool (= rec__use_unchecked_union__myunion__discr1 (to_rep
-                                                                 (rec__use_unchecked_union__myunion__discr
-                                                                 (us_split_discrs1
-                                                                 a)))))
-
 (declare-const value__size6 Int)
 
 (declare-const object__size6 Int)
@@ -710,12 +702,6 @@
 (((t4b__refqtmk (t4b__content us_rep2)))))
 (define-fun t4b__ref_t4b__content__projection ((a t4b__ref)) us_rep2 
   (t4b__content a))
-
-(define-fun in_range3 ((rec__use_unchecked_union__myunion__discr1 Int)
-  (a us_rep2)) Bool (= rec__use_unchecked_union__myunion__discr1 (to_rep
-                                                                 (rec__use_unchecked_union__myunion__discr
-                                                                 (us_split_discrs1
-                                                                 a)))))
 
 (declare-const value__size7 Int)
 

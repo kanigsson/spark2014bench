@@ -147,6 +147,16 @@
                                                   (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range1 ((rec__test__context_type__first1 Int)
+  (rec__test__context_type__last1 Int)
+  (a us_split_discrs)) Bool (and
+                            (= rec__test__context_type__first1 (to_rep
+                                                               (rec__test__context_type__first
+                                                               a)))
+                            (= rec__test__context_type__last1 (to_rep
+                                                              (rec__test__context_type__last
+                                                              a)))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -291,6 +301,6 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S801-023__false_DIC-10988/src/gnatprove/test__context_type.mlw", line 404, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S801-023__false_DIC-14333/src/gnatprove/test__context_type.mlw", line 418, characters 5-8
   (not true))
 (check-sat)

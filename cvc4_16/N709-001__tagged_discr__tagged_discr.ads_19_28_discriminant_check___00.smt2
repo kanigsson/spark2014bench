@@ -305,6 +305,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range3 ((rec__tagged_discr__t__discr1 Int)
+  (a us_split_discrs)) Bool (= rec__tagged_discr__t__discr1 (to_rep2
+                                                            (rec__tagged_discr__t__discr
+                                                            a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

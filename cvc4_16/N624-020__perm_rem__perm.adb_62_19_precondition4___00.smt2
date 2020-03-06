@@ -616,11 +616,11 @@
   (=> (is_perm__function_guard (is_perm a b) a b)
   (=> (= (is_perm a b) true)
   (=> (< 0 (length a))
-  (let ((temp___966 (first1 a)))
+  (let ((temp___970 (first1 a)))
   (forall ((ia Int))
-  (=> (= ia temp___966)
+  (=> (= ia temp___970)
   (=>
-  (= (and (ite (<= temp___966 ia) true false) (ite (<= ia (last1 a)) true
+  (= (and (ite (<= temp___970 ia) true false) (ite (<= ia (last1 a)) true
                                               false)) true)
   (forall ((spark__branch Bool))
   (=> (forall ((ia1 Int)) (remove__function_guard (remove a ia1) a ia1))

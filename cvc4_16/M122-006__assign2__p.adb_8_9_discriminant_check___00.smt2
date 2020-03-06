@@ -262,6 +262,10 @@
                         (to_rep1 (rec__types__r__y (us_split_fields1 b)))))))
                    true false))
 
+(define-fun in_range2 ((rec__types__r__i1 Int)
+  (a us_split_discrs)) Bool (= rec__types__r__i1 (to_rep2
+                                                 (rec__types__r__i a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -340,11 +344,6 @@
                                             (us_split_discrs1
                                             temp___expr_167))) 0))
 
-(define-fun in_range2 ((rec__types__r__i1 Int)
-  (a us_rep)) Bool (= rec__types__r__i1 (to_rep2
-                                        (rec__types__r__i
-                                        (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -413,11 +412,6 @@
 (((t1b__refqtmk (t1b__content us_rep)))))
 (define-fun t1b__ref_t1b__content__projection ((a t1b__ref)) us_rep (t1b__content
                                                                     a))
-
-(define-fun in_range3 ((rec__types__r__i1 Int)
-  (a us_rep)) Bool (= rec__types__r__i1 (to_rep2
-                                        (rec__types__r__i
-                                        (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 

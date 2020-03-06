@@ -211,7 +211,8 @@
   (and
   (forall ((k Int))
   (=> (and (<= 0 k) (<= k i1))
-  (and (<= 0 (power 2 k)) (<= (power 2 k) 9223372036854775807))))
+  (let ((temp___207 (power 2 k)))
+  (and (<= 0 temp___207) (<= temp___207 9223372036854775807)))))
   (and
   (= (and (ite (in_range3 i1) true false) (ite (and (<= 0 i1) (<= i1 62))
                                           true false)) true)

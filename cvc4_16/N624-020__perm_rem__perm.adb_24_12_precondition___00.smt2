@@ -461,12 +461,12 @@
   (and
   (= (to_rep (select (to_array a) ia)) (to_rep (select (to_array b) ib)))
   (= (is_perm (remove a ia) (remove b ib)) true))))
-  (let ((temp___945 (first1 b)))
-  (let ((temp___946 (last1 b)))
+  (let ((temp___949 (first1 b)))
+  (let ((temp___950 (last1 b)))
   (forall ((ib Int))
-  (=> (= ib temp___945)
+  (=> (= ib temp___949)
   (=>
-  (= (and (ite (<= temp___945 ib) true false) (ite (<= ib temp___946) true
+  (= (and (ite (<= temp___949 ib) true false) (ite (<= ib temp___950) true
                                               false)) true)
   (forall ((o Int))
   (=> (= (to_rep (select (to_array b) ib)) o)
@@ -567,7 +567,7 @@
   (=>
   (= (and (ite (dynamic_property1 (first1 b) (last1 b) ib1) true false) 
   (ite (and (<= (first1 b) ib1) (<= ib1 (last1 b))) true false)) true)
-  (=> (not (= ib1 temp___946))
+  (=> (not (= ib1 temp___950))
   (forall ((ib2 Int))
   (=> (= ib2 (+ ib1 1))
   (forall ((o3 Int))

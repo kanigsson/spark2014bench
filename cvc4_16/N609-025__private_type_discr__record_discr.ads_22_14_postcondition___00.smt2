@@ -147,6 +147,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range2 ((rec__private_record__result_ty__found1 Bool)
+  (a us_split_discrs)) Bool (= rec__private_record__result_ty__found1 
+  (rec__private_record__result_ty__found a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -200,7 +204,7 @@
   (forall ((i positive))
   (and (<= 1 (positiveqtint i)) (<= (positiveqtint i) 2147483647))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -221,12 +225,12 @@
   (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)
   (temp___do_typ_inv_45 Bool)) Bool (=>
                                     (or (= temp___is_init_42 true)
-                                    (<= 1 2147483647)) (in_range2
+                                    (<= 1 2147483647)) (in_range3
                                     temp___expr_46)))
 
 ;; get_content__post_axiom
   (assert
-  (forall ((r us_rep)) (! (in_range2
+  (forall ((r us_rep)) (! (in_range3
   (get_content r)) :pattern ((get_content r)) )))
 
 (declare-sort integer 0)
@@ -238,7 +242,7 @@
   (forall ((i integer))
   (and (<= (- 2147483648) (integerqtint i)) (<= (integerqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
@@ -267,12 +271,12 @@
 
 ;; range_axiom
   (assert
-  (forall ((x integer)) (! (in_range3 (to_rep1 x)) :pattern ((to_rep1 x)) )))
+  (forall ((x integer)) (! (in_range4 (to_rep1 x)) :pattern ((to_rep1 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range3 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
+  (! (=> (in_range4 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
                                                               (of_rep1 x))) )))
 
 (declare-datatypes ((map__ref 0))
@@ -334,15 +338,15 @@
 ;; mk_def
   (assert
   (forall ((f Int) (l Int))
-  (! (=> (in_range3 f)
-     (=> (in_range3 l)
+  (! (=> (in_range4 f)
+     (=> (in_range4 l)
      (and (= (to_rep1 (first (mk f l))) f) (= (to_rep1 (last (mk f l))) l)))) :pattern (
   (mk f l)) )))
 
 (define-fun dynamic_property ((range_first Int) (range_last Int) (low Int)
-  (high Int)) Bool (and (in_range3 low)
-                   (and (in_range3 high)
-                   (=> (<= low high) (and (in_range2 low) (in_range2 high))))))
+  (high Int)) Bool (and (in_range4 low)
+                   (and (in_range4 high)
+                   (=> (<= low high) (and (in_range3 low) (in_range3 high))))))
 
 (declare-datatypes ((us_t 0))
 (((us_tqtmk (elts (Array Int natural))(rt t)))))
@@ -447,6 +451,10 @@
                             (rec__record_discr__interm_result__to_search
                             (us_split_fields3 b))) true))
                     true false))
+
+(define-fun in_range5 ((rec__record_discr__interm_result__upto1 Int)
+  (a1 us_split_discrs2)) Bool (= rec__record_discr__interm_result__upto1 
+  (to_rep (rec__record_discr__interm_result__upto a1))))
 
 (declare-const value__size2 Int)
 
@@ -564,12 +572,6 @@
                             (us_split_fields5 b))) true))
                     true false))
 
-(define-fun in_range4 ((rec__record_discr__interm_result__upto1 Int)
-  (a1 us_rep1)) Bool (= rec__record_discr__interm_result__upto1 (to_rep
-                                                                (rec__record_discr__interm_result__upto
-                                                                (us_split_discrs3
-                                                                a1)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -645,8 +647,9 @@
   (temp___do_typ_inv_280 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_278 true))
-                                     (in_range4 (last1 a)
-                                     (to_base temp___expr_281)))
+                                     (in_range5 (last1 a)
+                                     (us_split_discrs3
+                                     (to_base temp___expr_281))))
                                      (and (dynamic_property 1 (last1 a)
                                      (first1
                                      (rec__record_discr__interm_result__to_search1
@@ -736,12 +739,6 @@
                             (us_split_fields7 b))) true))
                     true false))
 
-(define-fun in_range5 ((rec__record_discr__interm_result__upto1 Int)
-  (a1 us_rep1)) Bool (= rec__record_discr__interm_result__upto1 (to_rep
-                                                                (rec__record_discr__interm_result__upto
-                                                                (us_split_discrs3
-                                                                a1)))))
-
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -803,7 +800,7 @@
   (temp___do_typ_inv_17 Bool)) Bool (=>
                                     (or (= temp___is_init_14 true)
                                     (<= (- 2147483648) 2147483647))
-                                    (in_range3 temp___expr_18)))
+                                    (in_range4 temp___expr_18)))
 
 ;; init__def_axiom
   (assert

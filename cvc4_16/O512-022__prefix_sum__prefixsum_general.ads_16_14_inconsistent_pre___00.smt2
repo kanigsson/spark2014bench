@@ -432,6 +432,6 @@
   (not
   (forall ((k Int))
   (=> (and (<= 0 k) (<= k 7))
-  (and (<= (- 268435455) (to_rep (select a k)))
-  (<= (to_rep (select a k)) 268435455)))))))))
+  (let ((temp___214 (to_rep (select a k))))
+  (and (<= (- 268435455) temp___214) (<= temp___214 268435455))))))))))
 (check-sat)

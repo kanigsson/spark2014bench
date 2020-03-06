@@ -459,13 +459,13 @@
   (! (= (to_rep (select (temp___String_Literal_164 us_void_param) 1)) 32) :pattern (
   (temp___String_Literal_164 us_void_param)) )))
 
-(declare-fun temp___String_Literal_215 (tuple0) (Array Int character))
+(declare-fun temp___String_Literal_223 (tuple0) (Array Int character))
 
-;; temp___String_Literal_215__def_axiom
+;; temp___String_Literal_223__def_axiom
   (assert
   (forall ((us_void_param tuple0))
-  (! (= (to_rep (select (temp___String_Literal_215 us_void_param) 1)) 33) :pattern (
-  (temp___String_Literal_215 us_void_param)) )))
+  (! (= (to_rep (select (temp___String_Literal_223 us_void_param) 1)) 33) :pattern (
+  (temp___String_Literal_223 us_void_param)) )))
 
 (define-fun dynamic_invariant2 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)
@@ -517,14 +517,12 @@
      (= (to_rep (select (to_array res) j)) (to_upper
                                            (to_rep (select (to_array str) j))))
      (ite (and
-          (= (not (and (ite (<= 97 (to_rep (select (to_array str) (- j 1))))
-                       true false) (ite (<= (to_rep
-                                            (select (to_array str) (- j 1))) 122)
-                                   true false))) true)
-          (= (not (and (ite (<= 65 (to_rep (select (to_array str) (- j 1))))
-                       true false) (ite (<= (to_rep
-                                            (select (to_array str) (- j 1))) 90)
-                                   true false))) true))
+          (= (not (let ((temp___186 (to_rep (select (to_array str) (- j 1)))))
+                  (and (ite (<= 97 temp___186) true false) (ite (<= temp___186 122)
+                                                           true false)))) true)
+          (= (not (let ((temp___187 (to_rep (select (to_array str) (- j 1)))))
+                  (and (ite (<= 65 temp___187) true false) (ite (<= temp___187 90)
+                                                           true false)))) true))
      (= (to_rep (select (to_array res) j)) (to_upper
                                            (to_rep (select (to_array str) j))))
      (= (to_rep (select (to_array res) j)) (to_lower
@@ -652,16 +650,16 @@
   (=> (= hello__say_hello__prefix__assume prefix)
   (=> (dynamic_invariant prefix true false true true)
   (let ((o who))
-  (let ((temp___214 (to_camel_case o)))
+  (let ((temp___222 (to_camel_case o)))
   (=>
-  (forall ((o1 us_t) (temp___2141 us_t)) (to_caml_char2__function_guard
-  (to_caml_char2 o1 temp___2141 (last1 o1)) o1 temp___2141 (last1 o1)))
+  (forall ((o1 us_t) (temp___2221 us_t)) (to_caml_char2__function_guard
+  (to_caml_char2 o1 temp___2221 (last1 o1)) o1 temp___2221 (last1 o1)))
   (=>
-  (and (to_camel_case__function_guard temp___214 o)
-  (and (dynamic_invariant temp___214 true false true true)
+  (and (to_camel_case__function_guard temp___222 o)
+  (and (dynamic_invariant temp___222 true false true true)
   (and
-  (and (= (first1 temp___214) (first1 o)) (= (last1 temp___214) (last1 o)))
-  (= (to_caml_char2 o temp___214 (last1 o)) true))))
+  (and (= (first1 temp___222) (first1 o)) (= (last1 temp___222) (last1 o)))
+  (= (to_caml_char2 o temp___222 (last1 o)) true))))
   (=> (not (= (length1 hello) 0)) (in_range
   (- (+ (first1 hello) (+ (length (first1 hello) (last1 hello)) (length
                                                                 (first1

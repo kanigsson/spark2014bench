@@ -366,13 +366,13 @@
 (define-fun seconds_count__ref_seconds_count__content__projection ((a seconds_count__ref)) seconds_count 
   (seconds_count__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_302 Int)
-  (temp___is_init_298 Bool) (temp___skip_constant_299 Bool)
-  (temp___do_toplevel_300 Bool)
-  (temp___do_typ_inv_301 Bool)) Bool (=>
-                                     (or (= temp___is_init_298 true)
+(define-fun dynamic_invariant1 ((temp___expr_303 Int)
+  (temp___is_init_299 Bool) (temp___skip_constant_300 Bool)
+  (temp___do_toplevel_301 Bool)
+  (temp___do_typ_inv_302 Bool)) Bool (=>
+                                     (or (= temp___is_init_299 true)
                                      (<= (- 9223372036854775808) 9223372036854775807))
-                                     (in_range2 temp___expr_302)))
+                                     (in_range2 temp___expr_303)))
 
 ;; result_sc__def_axiom
   (assert

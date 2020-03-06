@@ -167,6 +167,10 @@
                                                   (us_split_discrs1 b))))
                    true false))
 
+(define-fun in_range2 ((rec__with_default__bad_nested_defaults1__empty_rec__d1 Int)
+  (a us_split_discrs)) Bool (= rec__with_default__bad_nested_defaults1__empty_rec__d1 
+  (to_rep (rec__with_default__bad_nested_defaults1__empty_rec__d a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

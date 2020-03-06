@@ -403,6 +403,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range4 ((rec__stacks__stack__max1 Int)
+  (a us_split_discrs)) Bool (= rec__stacks__stack__max1 (to_rep1
+                                                        (rec__stacks__stack__max
+                                                        a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -488,7 +493,7 @@
 
 (declare-fun is_full__function_guard1 (Bool Int us_rep) Bool)
 
-(define-fun in_range4 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range5 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Bool) us_image)
 
@@ -601,11 +606,6 @@
                     true false))
 
 (declare-const us_tag1 Int)
-
-(define-fun in_range5 ((rec__stacks__stack__max1 Int)
-  (a us_rep)) Bool (= rec__stacks__stack__max1 (to_rep1
-                                               (rec__stacks__stack__max
-                                               (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -794,11 +794,12 @@
   (temp___do_typ_inv_271 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_269 true))
-                                     (in_range5
+                                     (in_range4
                                      (to_rep1
                                      (rec__stacks__stack__max
                                      (us_split_discrs1 s)))
-                                     (to_base temp___expr_272)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_272))))
                                      (and (dynamic_property 1
                                      (to_rep1
                                      (rec__stacks__stack__max

@@ -273,6 +273,10 @@
                                                   (us_split_fields1 b)))))))
                    true false))
 
+(define-fun in_range4 ((rec__with_default__ok_record__rec_with_bad_discr__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__with_default__ok_record__rec_with_bad_discr__b1 
+  (rec__with_default__ok_record__rec_with_bad_discr__b a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -393,7 +397,7 @@
   (forall ((i integer))
   (and (<= (- 2147483648) (integerqtint i)) (<= (integerqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
@@ -422,12 +426,12 @@
 
 ;; range_axiom
   (assert
-  (forall ((x integer)) (! (in_range4 (to_rep2 x)) :pattern ((to_rep2 x)) )))
+  (forall ((x integer)) (! (in_range5 (to_rep2 x)) :pattern ((to_rep2 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range4 x) (= (to_rep2 (of_rep2 x)) x)) :pattern ((to_rep2
+  (! (=> (in_range5 x) (= (to_rep2 (of_rep2 x)) x)) :pattern ((to_rep2
                                                               (of_rep2 x))) )))
 
 (declare-const first1 Int)
@@ -659,22 +663,6 @@
 ;; with_default__ok_record__rec_with_discr__b__position_axiom
   (assert (<= 0 with_default__ok_record__rec_with_discr__b__position))
 
-(declare-const with_default__ok_record__rec_with_discr__f1__first__bit Int)
-
-(declare-const with_default__ok_record__rec_with_discr__f1__last__bit Int)
-
-(declare-const with_default__ok_record__rec_with_discr__f1__position Int)
-
-;; with_default__ok_record__rec_with_discr__f1__first__bit_axiom
-  (assert (<= 0 with_default__ok_record__rec_with_discr__f1__first__bit))
-
-;; with_default__ok_record__rec_with_discr__f1__last__bit_axiom
-  (assert
-  (< with_default__ok_record__rec_with_discr__f1__first__bit with_default__ok_record__rec_with_discr__f1__last__bit))
-
-;; with_default__ok_record__rec_with_discr__f1__position_axiom
-  (assert (<= 0 with_default__ok_record__rec_with_discr__f1__position))
-
 (declare-const with_default__ok_record__rec_with_discr__f2__first__bit Int)
 
 (declare-const with_default__ok_record__rec_with_discr__f2__last__bit Int)
@@ -691,18 +679,34 @@
 ;; with_default__ok_record__rec_with_discr__f2__position_axiom
   (assert (<= 0 with_default__ok_record__rec_with_discr__f2__position))
 
+(declare-const with_default__ok_record__rec_with_discr__f1__first__bit Int)
+
+(declare-const with_default__ok_record__rec_with_discr__f1__last__bit Int)
+
+(declare-const with_default__ok_record__rec_with_discr__f1__position Int)
+
+;; with_default__ok_record__rec_with_discr__f1__first__bit_axiom
+  (assert (<= 0 with_default__ok_record__rec_with_discr__f1__first__bit))
+
+;; with_default__ok_record__rec_with_discr__f1__last__bit_axiom
+  (assert
+  (< with_default__ok_record__rec_with_discr__f1__first__bit with_default__ok_record__rec_with_discr__f1__last__bit))
+
+;; with_default__ok_record__rec_with_discr__f1__position_axiom
+  (assert (<= 0 with_default__ok_record__rec_with_discr__f1__position))
+
 (declare-fun user_eq8 (us_rep2 us_rep2) Bool)
 
 (declare-const dummy8 us_rep2)
 
-(declare-datatypes ((rec_with_discr__ref 0))
-(((rec_with_discr__refqtmk (rec_with_discr__content us_rep2)))))
-(define-fun rec_with_discr__ref_rec_with_discr__content__2__projection ((a rec_with_discr__ref)) us_rep2 
-  (rec_with_discr__content a))
+(declare-datatypes ((tw_discS__ref 0))
+(((tw_discS__refqtmk (tw_discS__content us_rep2)))))
+(define-fun tw_discS__ref_tw_discS__content__projection ((a tw_discS__ref)) us_rep2 
+  (tw_discS__content a))
 
-(define-fun in_range5 ((rec__with_default__ok_record__rec_with_discr__b1 Bool)
-  (a us_rep2)) Bool (= rec__with_default__ok_record__rec_with_discr__b1 
-  (rec__with_default__ok_record__rec_with_discr__b (us_split_discrs3 a))))
+(define-fun in_range6 ((rec__with_default__ok_record__rec_with_discr__b1 Bool)
+  (a us_split_discrs2)) Bool (= rec__with_default__ok_record__rec_with_discr__b1 
+  (rec__with_default__ok_record__rec_with_discr__b a)))
 
 (declare-const value__size3 Int)
 
@@ -735,22 +739,6 @@
 ;; with_default__ok_record__rec_with_discr__b__position_axiom
   (assert (<= 0 with_default__ok_record__rec_with_discr__b__position1))
 
-(declare-const with_default__ok_record__rec_with_discr__f2__first__bit1 Int)
-
-(declare-const with_default__ok_record__rec_with_discr__f2__last__bit1 Int)
-
-(declare-const with_default__ok_record__rec_with_discr__f2__position1 Int)
-
-;; with_default__ok_record__rec_with_discr__f2__first__bit_axiom
-  (assert (<= 0 with_default__ok_record__rec_with_discr__f2__first__bit1))
-
-;; with_default__ok_record__rec_with_discr__f2__last__bit_axiom
-  (assert
-  (< with_default__ok_record__rec_with_discr__f2__first__bit1 with_default__ok_record__rec_with_discr__f2__last__bit1))
-
-;; with_default__ok_record__rec_with_discr__f2__position_axiom
-  (assert (<= 0 with_default__ok_record__rec_with_discr__f2__position1))
-
 (declare-const with_default__ok_record__rec_with_discr__f1__first__bit1 Int)
 
 (declare-const with_default__ok_record__rec_with_discr__f1__last__bit1 Int)
@@ -767,14 +755,30 @@
 ;; with_default__ok_record__rec_with_discr__f1__position_axiom
   (assert (<= 0 with_default__ok_record__rec_with_discr__f1__position1))
 
+(declare-const with_default__ok_record__rec_with_discr__f2__first__bit1 Int)
+
+(declare-const with_default__ok_record__rec_with_discr__f2__last__bit1 Int)
+
+(declare-const with_default__ok_record__rec_with_discr__f2__position1 Int)
+
+;; with_default__ok_record__rec_with_discr__f2__first__bit_axiom
+  (assert (<= 0 with_default__ok_record__rec_with_discr__f2__first__bit1))
+
+;; with_default__ok_record__rec_with_discr__f2__last__bit_axiom
+  (assert
+  (< with_default__ok_record__rec_with_discr__f2__first__bit1 with_default__ok_record__rec_with_discr__f2__last__bit1))
+
+;; with_default__ok_record__rec_with_discr__f2__position_axiom
+  (assert (<= 0 with_default__ok_record__rec_with_discr__f2__position1))
+
 (declare-fun user_eq9 (us_rep2 us_rep2) Bool)
 
 (declare-const dummy9 us_rep2)
 
-(declare-datatypes ((tw_discS__ref 0))
-(((tw_discS__refqtmk (tw_discS__content us_rep2)))))
-(define-fun tw_discS__ref_tw_discS__content__projection ((a tw_discS__ref)) us_rep2 
-  (tw_discS__content a))
+(declare-datatypes ((rec_with_discr__ref 0))
+(((rec_with_discr__refqtmk (rec_with_discr__content us_rep2)))))
+(define-fun rec_with_discr__ref_rec_with_discr__content__2__projection ((a rec_with_discr__ref)) us_rep2 
+  (rec_with_discr__content a))
 
 (declare-const w_disc__split_discrs us_split_discrs2)
 
@@ -786,8 +790,8 @@
   (temp___do_typ_inv_560 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_558 true))
-                                     (in_range5 (distinct 1 0)
-                                     temp___expr_561))
+                                     (in_range6 (distinct 1 0)
+                                     (us_split_discrs3 temp___expr_561)))
                                      (=>
                                      (with_default__ok_record__rec_with_discr__f2__pred
                                      temp___expr_561)
@@ -886,6 +890,10 @@
                                                    (rec__with_default__ok_record__rec_with_default_discr__f2
                                                    (us_split_fields7 b)))))))
                     true false))
+
+(define-fun in_range7 ((rec__with_default__ok_record__rec_with_default_discr__b1 Bool)
+  (a us_split_discrs4)) Bool (= rec__with_default__ok_record__rec_with_default_discr__b1 
+  (rec__with_default__ok_record__rec_with_default_discr__b a)))
 
 (declare-const value__size4 Int)
 
@@ -1071,6 +1079,10 @@
                                                    (us_split_fields9 b)))))))
                     true false))
 
+(define-fun in_range8 ((rec__with_default__ok_record__rec_with_ok_discr__b1 Bool)
+  (a us_split_discrs6)) Bool (= rec__with_default__ok_record__rec_with_ok_discr__b1 
+  (rec__with_default__ok_record__rec_with_ok_discr__b a)))
+
 (declare-const value__size5 Int)
 
 (declare-const object__size5 Int)
@@ -1191,7 +1203,7 @@
   (forall ((i small_natural))
   (and (<= 0 (small_naturalqtint i)) (<= (small_naturalqtint i) 100))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 100)))
+(define-fun in_range9 ((x Int)) Bool (and (<= 0 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
 
@@ -1219,13 +1231,13 @@
 
 ;; range_axiom
   (assert
-  (forall ((x small_natural)) (! (in_range6
+  (forall ((x small_natural)) (! (in_range9
   (to_rep3 x)) :pattern ((to_rep3 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range6 x) (= (to_rep3 (of_rep3 x)) x)) :pattern ((to_rep3
+  (! (=> (in_range9 x) (= (to_rep3 (of_rep3 x)) x)) :pattern ((to_rep3
                                                               (of_rep3 x))) )))
 
 (declare-sort tsmall_naturalB 0)
@@ -1238,8 +1250,8 @@
   (and (<= (- 2147483648) (tsmall_naturalBqtint i))
   (<= (tsmall_naturalBqtint i) 2147483647))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= (- 2147483648) x)
-                                     (<= x 2147483647)))
+(define-fun in_range10 ((x Int)) Bool (and (<= (- 2147483648) x)
+                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE8 (Int) us_image)
 
@@ -1267,14 +1279,14 @@
 
 ;; range_axiom
   (assert
-  (forall ((x tsmall_naturalB)) (! (in_range7
+  (forall ((x tsmall_naturalB)) (! (in_range10
   (to_rep4 x)) :pattern ((to_rep4 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range7 x) (= (to_rep4 (of_rep4 x)) x)) :pattern ((to_rep4
-                                                              (of_rep4 x))) )))
+  (! (=> (in_range10 x) (= (to_rep4 (of_rep4 x)) x)) :pattern ((to_rep4
+                                                               (of_rep4 x))) )))
 
 (declare-sort small_positive 0)
 
@@ -1285,7 +1297,7 @@
   (forall ((i small_positive))
   (and (<= 1 (small_positiveqtint i)) (<= (small_positiveqtint i) 100))))
 
-(define-fun in_range8 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
+(define-fun in_range11 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE9 (Int) us_image)
 
@@ -1363,15 +1375,16 @@
 ;; mk_def
   (assert
   (forall ((f Int) (l Int))
-  (! (=> (in_range7 f)
-     (=> (in_range7 l)
+  (! (=> (in_range10 f)
+     (=> (in_range10 l)
      (and (= (to_rep4 (first2 (mk f l))) f) (= (to_rep4 (last (mk f l))) l)))) :pattern (
   (mk f l)) )))
 
 (define-fun dynamic_property2 ((range_first Int) (range_last Int) (low Int)
-  (high Int)) Bool (and (in_range7 low)
-                   (and (in_range7 high)
-                   (=> (<= low high) (and (in_range8 low) (in_range8 high))))))
+  (high Int)) Bool (and (in_range10 low)
+                   (and (in_range10 high)
+                   (=> (<= low high)
+                   (and (in_range11 low) (in_range11 high))))))
 
 (declare-datatypes ((us_t 0))
 (((us_tqtmk (elts (Array Int tscalar_with_defaultB))(rt t)))))
@@ -1470,6 +1483,10 @@
                             (rec__with_default__ok_record__rec_empty_array__content
                             (us_split_fields11 b))) true))
                     true false))
+
+(define-fun in_range12 ((rec__with_default__ok_record__rec_empty_array__d1 Int)
+  (a us_split_discrs8)) Bool (= rec__with_default__ok_record__rec_empty_array__d1 
+  (to_rep3 (rec__with_default__ok_record__rec_empty_array__d a))))
 
 (declare-const value__size7 Int)
 
@@ -1611,10 +1628,6 @@
                                                     (us_split_fields11
                                                     temp___expr_537))) temp___541)) 0))))))
 
-(define-fun in_range9 ((rec__with_default__ok_record__rec_with_bad_discr__b1 Bool)
-  (a us_rep)) Bool (= rec__with_default__ok_record__rec_with_bad_discr__b1 
-  (rec__with_default__ok_record__rec_with_bad_discr__b (us_split_discrs1 a))))
-
 (declare-const value__size8 Int)
 
 (declare-const object__size8 Int)
@@ -1733,6 +1746,10 @@
                             (us_split_fields13 b))) true))
                     true false))
 
+(define-fun in_range13 ((rec__with_default__ok_record__rec_discr_rec__b1 Bool)
+  (a us_split_discrs10)) Bool (= rec__with_default__ok_record__rec_discr_rec__b1 
+  (rec__with_default__ok_record__rec_discr_rec__b a)))
+
 (declare-const value__size9 Int)
 
 (declare-const object__size9 Int)
@@ -1796,11 +1813,12 @@
 (define-fun dynamic_invariant7 ((temp___expr_547 us_rep6)
   (temp___is_init_543 Bool) (temp___skip_constant_544 Bool)
   (temp___do_toplevel_545 Bool)
-  (temp___do_typ_inv_546 Bool)) Bool (and (in_range9
+  (temp___do_typ_inv_546 Bool)) Bool (and (in_range4
                                      (rec__with_default__ok_record__rec_discr_rec__b
                                      (us_split_discrs11 temp___expr_547))
+                                     (us_split_discrs1
                                      (rec__with_default__ok_record__rec_discr_rec__content
-                                     (us_split_fields13 temp___expr_547)))
+                                     (us_split_fields13 temp___expr_547))))
                                      (=>
                                      (with_default__ok_record__rec_with_bad_discr__f2__pred
                                      (rec__with_default__ok_record__rec_discr_rec__content
@@ -1859,11 +1877,7 @@
   (temp___do_toplevel_512 Bool)
   (temp___do_typ_inv_513 Bool)) Bool (=>
                                      (or (= temp___is_init_510 true)
-                                     (<= 0 100)) (in_range6 temp___expr_514)))
-
-(define-fun in_range10 ((rec__with_default__ok_record__rec_with_bad_discr__b1 Bool)
-  (a us_rep)) Bool (= rec__with_default__ok_record__rec_with_bad_discr__b1 
-  (rec__with_default__ok_record__rec_with_bad_discr__b (us_split_discrs1 a))))
+                                     (<= 0 100)) (in_range9 temp___expr_514)))
 
 (declare-const value__size10 Int)
 
@@ -1938,10 +1952,6 @@
 (((t24b__refqtmk (t24b__content us_rep)))))
 (define-fun t24b__ref_t24b__content__projection ((a t24b__ref)) us_rep 
   (t24b__content a))
-
-(define-fun in_range11 ((rec__with_default__ok_record__rec_with_bad_discr__b1 Bool)
-  (a us_rep)) Bool (= rec__with_default__ok_record__rec_with_bad_discr__b1 
-  (rec__with_default__ok_record__rec_with_bad_discr__b (us_split_discrs1 a))))
 
 (declare-const value__size11 Int)
 
@@ -2022,7 +2032,7 @@
   (temp___do_typ_inv_17 Bool)) Bool (=>
                                     (or (= temp___is_init_14 true)
                                     (<= (- 2147483648) 2147483647))
-                                    (in_range4 temp___expr_18)))
+                                    (in_range5 temp___expr_18)))
 
 (define-fun dynamic_invariant10 ((temp___expr_447 Int)
   (temp___is_init_443 Bool) (temp___skip_constant_444 Bool)
@@ -2074,7 +2084,8 @@
   (temp___do_toplevel_519 Bool)
   (temp___do_typ_inv_520 Bool)) Bool (=>
                                      (or (= temp___is_init_517 true)
-                                     (<= 1 100)) (in_range8 temp___expr_521)))
+                                     (<= 1 100)) (in_range11
+                                     temp___expr_521)))
 
 (define-fun dynamic_invariant15 ((temp___expr_572 us_rep)
   (temp___is_init_568 Bool) (temp___skip_constant_569 Bool)
@@ -2082,7 +2093,8 @@
   (temp___do_typ_inv_571 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_569 true))
-                                     (in_range11 r26b temp___expr_572))
+                                     (in_range4 r26b
+                                     (us_split_discrs1 temp___expr_572)))
                                      (=>
                                      (with_default__ok_record__rec_with_bad_discr__f2__pred
                                      temp___expr_572)

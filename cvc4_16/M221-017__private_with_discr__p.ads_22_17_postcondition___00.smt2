@@ -167,16 +167,19 @@
 
 (declare-const dummy1 us_rep)
 
-(declare-datatypes ((t1__ref 0))
-(((t1__refqtmk (t1__content us_rep)))))
-(define-fun t1__ref_t1__content__projection ((a t1__ref)) us_rep (t1__content
-                                                                 a))
+(declare-datatypes ((my_t1__ref 0))
+(((my_t1__refqtmk (my_t1__content us_rep)))))
+(define-fun my_t1__ref_my_t1__content__projection ((a my_t1__ref)) us_rep 
+  (my_t1__content a))
+
+(declare-const l us_rep)
+
+(declare-const attr__ATTRIBUTE_ADDRESS Int)
 
 (define-fun in_range1 ((rec__p__private_types__t1__capacity1 Int)
-  (a us_rep)) Bool (= rec__p__private_types__t1__capacity1 (to_rep
-                                                           (rec__p__private_types__t1__capacity
-                                                           (us_split_discrs1
-                                                           a)))))
+  (a us_split_discrs)) Bool (= rec__p__private_types__t1__capacity1 (to_rep
+                                                                    (rec__p__private_types__t1__capacity
+                                                                    a))))
 
 (declare-const value__size1 Int)
 
@@ -213,21 +216,18 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((my_t1__ref 0))
-(((my_t1__refqtmk (my_t1__content us_rep)))))
-(define-fun my_t1__ref_my_t1__content__projection ((a my_t1__ref)) us_rep 
-  (my_t1__content a))
-
-(declare-const l us_rep)
-
-(declare-const attr__ATTRIBUTE_ADDRESS Int)
+(declare-datatypes ((t1__ref 0))
+(((t1__refqtmk (t1__content us_rep)))))
+(define-fun t1__ref_t1__content__projection ((a t1__ref)) us_rep (t1__content
+                                                                 a))
 
 (define-fun dynamic_invariant ((temp___expr_174 us_rep)
   (temp___is_init_170 Bool) (temp___skip_constant_171 Bool)
   (temp___do_toplevel_172 Bool)
   (temp___do_typ_inv_173 Bool)) Bool (=>
                                      (not (= temp___skip_constant_171 true))
-                                     (in_range1 10 temp___expr_174)))
+                                     (in_range1 10
+                                     (us_split_discrs1 temp___expr_174))))
 
 (define-fun default_initial_assumption ((temp___expr_176 us_rep)
   (temp___skip_top_level_177 Bool)) Bool (= (to_rep

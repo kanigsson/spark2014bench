@@ -318,8 +318,8 @@
   (<= (to_rep (select arr k2)) (to_rep (select arr x))))))
   (and (<= l k2) (<= k2 u)))
   (and
-  (= (and (ite (and (dynamic_property (+ l 1) u i1) (dynamic_invariant k2
-               false true true true))
+  (= (and (ite (and (dynamic_invariant k2 false true true true)
+               (dynamic_property (+ l 1) u i1))
           true false) (ite (and (<= (+ l 1) i1) (<= i1 u)) true false)) true)
   (= i1 temp___226)))))))))) (= k2 k1)))))) (= k2 k1))))
   (=> (= t3q5__sort__find_smallest__result k2)

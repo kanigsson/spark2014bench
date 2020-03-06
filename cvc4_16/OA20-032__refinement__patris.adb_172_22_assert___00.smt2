@@ -2379,9 +2379,9 @@
   (and (= to_line2 del_line)
   (exists ((o2 (_ BitVec 32)))
   (and
-  (let ((temp___910 (bvadd complete_lines #x00000001)))
+  (let ((temp___919 (bvadd complete_lines #x00000001)))
   (ite (bvule (bvsub #x000186A0 complete_lines) #x00000001)
-  (= o2 (bvsub temp___910 #x000186A0)) (= o2 temp___910)))
+  (= o2 (bvsub temp___919 #x000186A0)) (= o2 temp___919)))
   (and (= complete_lines2 o2)
   (= (to_rep (select (select cur_board2 del_line) 1)) 0))))))
   (and (and (= cur_board2 cur_board) (= to_line2 to_line))
@@ -2395,12 +2395,12 @@
   (= (and (ite (and
                (and
                (and
-               (forall ((temp___914 Int))
-               (=> (and (<= 1 temp___914) (<= temp___914 20))
+               (forall ((temp___923 Int))
+               (=> (and (<= 1 temp___923) (<= temp___923 20))
                (=>
-               (or (< 20 temp___914)
-               (or (< temp___914 1) (< del_line1 temp___914)))
-               (= (select cur_board1 temp___914) (select cur_board temp___914)))))
+               (or (< 20 temp___923)
+               (or (< temp___923 1) (< del_line1 temp___923)))
+               (= (select cur_board1 temp___923) (select cur_board temp___923)))))
                (dynamic_invariant3 to_line1 true true true true))
                (dynamic_invariant2 complete_lines1 true true true true))
                (in_range9 del_line1))

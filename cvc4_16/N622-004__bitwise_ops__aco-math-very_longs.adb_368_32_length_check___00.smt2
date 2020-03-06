@@ -528,6 +528,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
+  (to_rep
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -646,7 +651,7 @@
   (forall ((i natural))
   (and (<= 0 (naturalqtint i)) (<= (naturalqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -667,7 +672,7 @@
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
   (temp___do_typ_inv_38 Bool)) Bool (=>
                                     (or (= temp___is_init_35 true)
-                                    (<= 0 2147483647)) (in_range3
+                                    (<= 0 2147483647)) (in_range4
                                     temp___expr_39)))
 
 (declare-fun shift_right ((_ BitVec 8) Int) (_ BitVec 8))
@@ -712,7 +717,7 @@
   (forall ((i shift_type))
   (and (<= 0 (shift_typeqtint i)) (<= (shift_typeqtint i) 7))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 7)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 7)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -734,7 +739,7 @@
   (temp___do_toplevel_850 Bool)
   (temp___do_typ_inv_851 Bool)) Bool (=>
                                      (or (= temp___is_init_848 true)
-                                     (<= 0 7)) (in_range4 temp___expr_852)))
+                                     (<= 0 7)) (in_range5 temp___expr_852)))
 
 (declare-datatypes ((s121b__ref 0))
 (((s121b__refqtmk (s121b__content us_t)))))
@@ -746,21 +751,21 @@
 (define-fun t124b__ref_t124b__content__projection ((a t124b__ref)) us_t 
   (t124b__content a))
 
-(declare-fun temp_____aggregate_def_1531 ((_ BitVec 8) Int Int) us_t)
+(declare-fun temp_____aggregate_def_1534 ((_ BitVec 8) Int Int) us_t)
 
 ;; def_axiom
   (assert
-  (forall ((temp___1533 (_ BitVec 8)))
-  (forall ((temp___1534 Int) (temp___1535 Int))
-  (let ((temp___1532 (temp_____aggregate_def_1531 temp___1533 temp___1534
-                     temp___1535)))
-  (=> (dynamic_invariant2 temp___1533 true true true true)
+  (forall ((temp___1536 (_ BitVec 8)))
+  (forall ((temp___1537 Int) (temp___1538 Int))
+  (let ((temp___1535 (temp_____aggregate_def_1534 temp___1536 temp___1537
+                     temp___1538)))
+  (=> (dynamic_invariant2 temp___1536 true true true true)
   (and
-  (=> (dynamic_property 1 2147483647 temp___1534 temp___1535)
-  (and (= (first1 temp___1532) temp___1534)
-  (= (last1 temp___1532) temp___1535)))
-  (forall ((temp___1536 Int))
-  (= (to_rep2 (select (to_array temp___1532) temp___1536)) temp___1533))))))))
+  (=> (dynamic_property 1 2147483647 temp___1537 temp___1538)
+  (and (= (first1 temp___1535) temp___1537)
+  (= (last1 temp___1535) temp___1538)))
+  (forall ((temp___1539 Int))
+  (= (to_rep2 (select (to_array temp___1535) temp___1539)) temp___1536))))))))
 
 (define-fun dynamic_invariant5 ((temp___expr_271 us_t)
   (temp___is_init_267 Bool) (temp___skip_constant_268 Bool)
@@ -816,8 +821,8 @@
   (= ada___ada___aco__math__very_longs__divide__full_left_shift__R122b__assume 
   r122b)
   (=> (dynamic_invariant3 r122b true false true true)
-  (let ((temp___1537 (temp_____aggregate_def_1531 #x00 1 r122b)))
-  (=> (= (first1 temp___1537) 1)
-  (=> (= (last1 temp___1537) r122b)
-  (=> (<= (first1 temp___1537) (last1 temp___1537)) (<= 1 r122b)))))))))))))))))))
+  (let ((temp___1540 (temp_____aggregate_def_1534 #x00 1 r122b)))
+  (=> (= (first1 temp___1540) 1)
+  (=> (= (last1 temp___1540) r122b)
+  (=> (<= (first1 temp___1540) (last1 temp___1540)) (<= 1 r122b)))))))))))))))))))
 (check-sat)

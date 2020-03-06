@@ -402,10 +402,10 @@
 
 (declare-const dummy5 us_rep)
 
-(declare-datatypes ((vector__ref 0))
-(((vector__refqtmk (vector__content us_rep)))))
-(define-fun vector__ref_vector__content__projection ((a vector__ref)) us_rep 
-  (vector__content a))
+(declare-datatypes ((tentry_tableS__ref 0))
+(((tentry_tableS__refqtmk (tentry_tableS__content us_rep)))))
+(define-fun tentry_tableS__ref_tentry_tableS__content__projection ((a tentry_tableS__ref)) us_rep 
+  (tentry_tableS__content a))
 
 (define-fun to_rep3 ((x capacity_range)) Int (capacity_rangeqtint x))
 
@@ -428,10 +428,8 @@
                                                               (of_rep3 x))) )))
 
 (define-fun in_range5 ((rec__ada___names__data__entry_tables__vector__capacity1 Int)
-  (a us_rep)) Bool (= rec__ada___names__data__entry_tables__vector__capacity1 
-  (to_rep3
-  (rec__ada___names__data__entry_tables__vector__capacity
-  (us_split_discrs1 a)))))
+  (a us_split_discrs)) Bool (= rec__ada___names__data__entry_tables__vector__capacity1 
+  (to_rep3 (rec__ada___names__data__entry_tables__vector__capacity a))))
 
 (declare-const value__size2 Int)
 
@@ -470,10 +468,10 @@
 
 (declare-const dummy6 us_rep)
 
-(declare-datatypes ((tentry_tableS__ref 0))
-(((tentry_tableS__refqtmk (tentry_tableS__content us_rep)))))
-(define-fun tentry_tableS__ref_tentry_tableS__content__projection ((a tentry_tableS__ref)) us_rep 
-  (tentry_tableS__content a))
+(declare-datatypes ((vector__ref 0))
+(((vector__refqtmk (vector__content us_rep)))))
+(define-fun vector__ref_vector__content__projection ((a vector__ref)) us_rep 
+  (vector__content a))
 
 (declare-const entry_table__split_discrs us_split_discrs)
 
@@ -488,7 +486,8 @@
   (temp___do_toplevel_222 Bool)
   (temp___do_typ_inv_223 Bool)) Bool (=>
                                      (not (= temp___skip_constant_221 true))
-                                     (in_range5 256 temp___expr_224)))
+                                     (in_range5 256
+                                     (us_split_discrs1 temp___expr_224))))
 
 (define-fun default_initial_assumption ((temp___expr_226 us_rep)
   (temp___skip_top_level_227 Bool)) Bool (and
@@ -682,10 +681,10 @@
 
 (declare-const dummy10 us_rep2)
 
-(declare-datatypes ((vector__ref1 0))
-(((vector__refqtmk1 (vector__content1 us_rep2)))))
-(define-fun vector__ref_vector__content__2__projection ((a vector__ref1)) us_rep2 
-  (vector__content1 a))
+(declare-datatypes ((tchar_tableS__ref 0))
+(((tchar_tableS__refqtmk (tchar_tableS__content us_rep2)))))
+(define-fun tchar_tableS__ref_tchar_tableS__content__projection ((a tchar_tableS__ref)) us_rep2 
+  (tchar_tableS__content a))
 
 (define-fun to_rep4 ((x capacity_range1)) Int (capacity_rangeqtint1 x))
 
@@ -708,10 +707,8 @@
                                                               (of_rep4 x))) )))
 
 (define-fun in_range8 ((rec__ada___names__data__char_tables__vector__capacity1 Int)
-  (a us_rep2)) Bool (= rec__ada___names__data__char_tables__vector__capacity1 
-  (to_rep4
-  (rec__ada___names__data__char_tables__vector__capacity
-  (us_split_discrs3 a)))))
+  (a us_split_discrs2)) Bool (= rec__ada___names__data__char_tables__vector__capacity1 
+  (to_rep4 (rec__ada___names__data__char_tables__vector__capacity a))))
 
 (declare-const value__size5 Int)
 
@@ -749,10 +746,10 @@
 
 (declare-const dummy11 us_rep2)
 
-(declare-datatypes ((tchar_tableS__ref 0))
-(((tchar_tableS__refqtmk (tchar_tableS__content us_rep2)))))
-(define-fun tchar_tableS__ref_tchar_tableS__content__projection ((a tchar_tableS__ref)) us_rep2 
-  (tchar_tableS__content a))
+(declare-datatypes ((vector__ref1 0))
+(((vector__refqtmk1 (vector__content1 us_rep2)))))
+(define-fun vector__ref_vector__content__2__projection ((a vector__ref1)) us_rep2 
+  (vector__content1 a))
 
 (declare-const char_table__split_discrs us_split_discrs2)
 
@@ -767,7 +764,8 @@
   (temp___do_toplevel_295 Bool)
   (temp___do_typ_inv_296 Bool)) Bool (=>
                                      (not (= temp___skip_constant_294 true))
-                                     (in_range8 1024 temp___expr_297)))
+                                     (in_range8 1024
+                                     (us_split_discrs3 temp___expr_297))))
 
 (define-fun default_initial_assumption1 ((temp___expr_299 us_rep2)
   (temp___skip_top_level_300 Bool)) Bool (and

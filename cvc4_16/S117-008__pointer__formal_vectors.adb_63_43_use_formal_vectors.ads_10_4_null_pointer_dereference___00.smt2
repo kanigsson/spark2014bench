@@ -273,21 +273,21 @@
 (define-fun name__ref_name__content__2__projection ((a name__ref)) us_rep1 
   (name__content a))
 
-(define-fun dynamic_invariant2 ((temp___expr_364 us_rep1)
-  (temp___is_init_360 Bool) (temp___skip_constant_361 Bool)
-  (temp___do_toplevel_362 Bool)
-  (temp___do_typ_inv_363 Bool)) Bool (=>
+(define-fun dynamic_invariant2 ((temp___expr_357 us_rep1)
+  (temp___is_init_353 Bool) (temp___skip_constant_354 Bool)
+  (temp___do_toplevel_355 Bool)
+  (temp___do_typ_inv_356 Bool)) Bool (=>
                                      (not
                                      (= (rec__use_formal_vectors__my_vect__element_access__is_null_pointer
-                                        temp___expr_364) true))
+                                        temp___expr_357) true))
                                      (not
                                      (= (rec__use_formal_vectors__element_type__is_null_pointer
                                         (rec__use_formal_vectors__my_vect__element_access__pointer_value
-                                        temp___expr_364)) true))))
+                                        temp___expr_357)) true))))
 
-(define-fun default_initial_assumption1 ((temp___expr_365 us_rep1)
-  (temp___skip_top_level_366 Bool)) Bool (= (rec__use_formal_vectors__my_vect__element_access__is_null_pointer
-                                            temp___expr_365) true))
+(define-fun default_initial_assumption1 ((temp___expr_358 us_rep1)
+  (temp___skip_top_level_359 Bool)) Bool (= (rec__use_formal_vectors__my_vect__element_access__is_null_pointer
+                                            temp___expr_358) true))
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
 
@@ -362,11 +362,12 @@
   (=> (dynamic_invariant2
   (us_repqtmk1 to____is_null_pointer1 to____pointer_address1
   use_formal_vectors__my_vect__free__2__x__value) true true true true)
+  (=> (= to____is_null_pointer1 true)
   (=>
   (= (not (bool_eq1
           (us_repqtmk1 to____is_null_pointer2 to____pointer_address2
           to____pointer_value1) us_null_pointer1)) true)
   (rec__use_formal_vectors__my_vect__element_access__pointer_value__pred
   (us_repqtmk1 to____is_null_pointer2 to____pointer_address2
-  to____pointer_value1)))))))))))))
+  to____pointer_value1))))))))))))))
 (check-sat)

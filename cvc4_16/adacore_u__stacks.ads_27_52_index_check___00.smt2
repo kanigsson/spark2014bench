@@ -345,10 +345,11 @@
 ;; defqtvc
  ;; File "stacks.ads", line 10, characters 0-0
   (not
-  (forall ((o Int) (o1 Int) (temp___196 Int))
-  (=> (= (to_rep1 (rec__stacks__stack__top (us_split_fields1 s))) o)
-  (=> (= (to_rep1 (rec__stacks__stack__top (us_split_fields1 s))) o1)
-  (=> (= (and (ite (<= 1 o1) true false) (ite (<= o 100) true false)) true)
-  (=> (= (to_rep1 (rec__stacks__stack__top (us_split_fields1 s))) temp___196)
-  (<= 1 temp___196))))))))
+  (forall ((temp___199 Int) (temp___198 Int))
+  (=> (= (to_rep1 (rec__stacks__stack__top (us_split_fields1 s))) temp___199)
+  (=>
+  (= (and (ite (<= 1 temp___199) true false) (ite (<= temp___199 100) true
+                                             false)) true)
+  (=> (= (to_rep1 (rec__stacks__stack__top (us_split_fields1 s))) temp___198)
+  (<= 1 temp___198)))))))
 (check-sat)

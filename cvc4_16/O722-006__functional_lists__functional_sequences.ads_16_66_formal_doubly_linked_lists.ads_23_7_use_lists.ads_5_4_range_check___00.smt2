@@ -110,7 +110,7 @@
 
 (declare-datatypes ((element_type__ref 0))
 (((element_type__refqtmk (element_type__content us_rep)))))
-(define-fun element_type__ref_element_type__content__13__projection ((a element_type__ref)) us_rep 
+(define-fun element_type__ref_element_type__content__9__projection ((a element_type__ref)) us_rep 
   (element_type__content a))
 
 (declare-sort us_main_type1 0)

@@ -427,6 +427,10 @@
                             (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range4 ((rec__types_with_invariants__container__c1 Int)
+  (a us_split_discrs)) Bool (= rec__types_with_invariants__container__c1 
+  (to_rep1 (rec__types_with_invariants__container__c a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -661,7 +665,7 @@
   (forall ((i t2))
   (and (<= (- 2147483648) (tqtint i)) (<= (tqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
@@ -684,7 +688,7 @@
   (temp___do_typ_inv_196 Bool)) Bool (=>
                                      (or (= temp___is_init_193 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range4 temp___expr_197)))
+                                     (in_range5 temp___expr_197)))
 
 (define-fun to_rep2 ((x t2)) Int (tqtint x))
 
@@ -696,12 +700,12 @@
 
 ;; range_axiom
   (assert
-  (forall ((x t2)) (! (in_range4 (to_rep2 x)) :pattern ((to_rep2 x)) )))
+  (forall ((x t2)) (! (in_range5 (to_rep2 x)) :pattern ((to_rep2 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range4 x) (= (to_rep2 (of_rep2 x)) x)) :pattern ((to_rep2
+  (! (=> (in_range5 x) (= (to_rep2 (of_rep2 x)) x)) :pattern ((to_rep2
                                                               (of_rep2 x))) )))
 
 (declare-sort s 0)
@@ -713,7 +717,7 @@
   (forall ((i s))
   (and (<= (- 2147483648) (sqtint i)) (<= (sqtint i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range6 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
@@ -736,7 +740,7 @@
   (temp___do_typ_inv_203 Bool)) Bool (=>
                                      (or (= temp___is_init_200 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range5 temp___expr_204)))
+                                     (in_range6 temp___expr_204)))
 
 (declare-sort taD1 0)
 
@@ -746,7 +750,7 @@
   (assert
   (forall ((i taD1)) (and (<= 1 (taD1qtint i)) (<= (taD1qtint i) 100))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -782,7 +786,7 @@
 (define-fun dynamic_property2 ((range_first Int) (range_last Int) (low Int)
   (high Int)) Bool (and (in_range1 low)
                    (and (in_range1 high)
-                   (=> (<= low high) (and (in_range6 low) (in_range6 high))))))
+                   (=> (<= low high) (and (in_range7 low) (in_range7 high))))))
 
 (declare-datatypes ((us_t2 0))
 (((us_tqtmk2 (elts2 (Array Int integer))(rt2 t3)))))
@@ -905,6 +909,11 @@
                                                    (us_split_discrs3 b))))
                     true false))
 
+(define-fun in_range8 ((rec__types_with_invariants__r__c1 Int)
+  (a us_split_discrs2)) Bool (= rec__types_with_invariants__r__c1 (to_rep2
+                                                                  (rec__types_with_invariants__r__c
+                                                                  a))))
+
 (declare-const value__size5 Int)
 
 (declare-const object__size5 Int)
@@ -969,7 +978,7 @@
   (exists ((usf2 us_rep1))
   (= (to_rep1
      (rec__types_with_invariants__container__c (us_split_discrs1 usf2))) usf1))))
-  (=> (in_range4 0)
+  (=> (in_range5 0)
   (=> (dynamic_invariant5 usf true false true true)
   (<= (first3 usf) (first3 usf))))))))
 (check-sat)

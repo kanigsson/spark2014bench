@@ -494,9 +494,9 @@
                                      (first1 temp___expr_162)
                                      (last1 temp___expr_162))))
 
-(declare-fun temp_____aggregate_def_219 (Int) (Array Int integer))
+(declare-fun temp_____aggregate_def_221 (Int) (Array Int integer))
 
-(declare-fun temp_____aggregate_def_223 (Int) (Array Int integer))
+(declare-fun temp_____aggregate_def_225 (Int) (Array Int integer))
 
 (define-fun dynamic_invariant2 ((temp___expr_46 Int) (temp___is_init_42 Bool)
   (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)
@@ -584,15 +584,15 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___221 Int))
-  (=> (dynamic_invariant4 temp___221 true true true true)
-  (= (to_rep1 (select (temp_____aggregate_def_219 temp___221) 1)) temp___221))))
+  (forall ((temp___223 Int))
+  (=> (dynamic_invariant4 temp___223 true true true true)
+  (= (to_rep1 (select (temp_____aggregate_def_221 temp___223) 1)) temp___223))))
 
 ;; def_axiom
   (assert
-  (forall ((temp___225 Int))
-  (=> (dynamic_invariant4 temp___225 true true true true)
-  (= (to_rep1 (select (temp_____aggregate_def_223 temp___225) 1)) temp___225))))
+  (forall ((temp___227 Int))
+  (=> (dynamic_invariant4 temp___227 true true true true)
+  (= (to_rep1 (select (temp_____aggregate_def_225 temp___227) 1)) temp___227))))
 
 (declare-const rliteral natural)
 
@@ -624,12 +624,12 @@
   (let ((o2 from))
   (and (dynamic_property1 first2 last2 o2)
   (= dynamic_types__search__search_range__result (us_split_fieldsqtmk
-                                                 (temp_____aggregate_def_219
+                                                 (temp_____aggregate_def_221
                                                  o2) o1))))))
   (let ((o1 from))
   (and (dynamic_property1 first2 last2 o1)
   (= dynamic_types__search__search_range__result (us_split_fieldsqtmk
-                                                 (temp_____aggregate_def_223
+                                                 (temp_____aggregate_def_225
                                                  o1) rliteral)))))))))
   (or
   (and
@@ -644,13 +644,10 @@
                 dynamic_types__search__search_range__result) 1))))
   (not (= (to_rep (select (to_array a) i)) c)))))
   (and
-  (and
-  (<= (first1 a) (to_rep
-                 (rec__dynamic_types__search__result_type__result
-                 dynamic_types__search__search_range__result)))
-  (<= (to_rep
-      (rec__dynamic_types__search__result_type__result
-      dynamic_types__search__search_range__result)) (last1 a)))
+  (let ((temp___234 (to_rep
+                    (rec__dynamic_types__search__result_type__result
+                    dynamic_types__search__search_range__result))))
+  (and (<= (first1 a) temp___234) (<= temp___234 (last1 a))))
   (= (to_rep
      (select (to_array a) (to_rep
                           (rec__dynamic_types__search__result_type__result

@@ -275,6 +275,10 @@
                                                    (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range3 ((rec__linear_search__search_result__found1 Bool)
+  (a1 us_split_discrs)) Bool (= rec__linear_search__search_result__found1 
+  (rec__linear_search__search_result__found a1)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -351,7 +355,7 @@
   (forall ((i tindexB))
   (and (<= (- 128) (tindexBqtint i)) (<= (tindexBqtint i) 127))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= (- 128) x) (<= x 127)))
+(define-fun in_range4 ((x Int)) Bool (and (<= (- 128) x) (<= x 127)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -367,11 +371,6 @@
 (((tindexB__refqtmk (tindexB__content tindexB)))))
 (define-fun tindexB__ref_tindexB__content__projection ((a1 tindexB__ref)) tindexB 
   (tindexB__content a1))
-
-(define-fun in_range4 ((rec__linear_search__search_result__found1 Bool)
-  (a1 us_rep)) Bool (= rec__linear_search__search_result__found1 (rec__linear_search__search_result__found
-                                                                 (us_split_discrs1
-                                                                 a1))))
 
 (declare-const value__size1 Int)
 
@@ -428,11 +427,6 @@
 (((t1b__refqtmk (t1b__content us_rep)))))
 (define-fun t1b__ref_t1b__content__projection ((a1 t1b__ref)) us_rep 
   (t1b__content a1))
-
-(define-fun in_range5 ((rec__linear_search__search_result__found1 Bool)
-  (a1 us_rep)) Bool (= rec__linear_search__search_result__found1 (rec__linear_search__search_result__found
-                                                                 (us_split_discrs1
-                                                                 a1))))
 
 (declare-const value__size2 Int)
 
@@ -501,7 +495,7 @@
   (value_found_in_range a val__ 2 10) a val__ 2 10)
   (forall ((pos Int))
   (=> (= pos 1)
-  (=> (in_range3 pos)
+  (=> (in_range4 pos)
   (=> (= res__attr__constrained false)
   (=> (default_initial_assumption
   (us_repqtmk (us_split_discrsqtmk res__split_discrs)
@@ -532,11 +526,11 @@
   (=>
   (and (and (<= 1 pos1) (<= pos1 10))
   (not (= (value_found_in_range a val__ 1 pos1) true)))
-  (=> (in_range3 pos1)
+  (=> (in_range4 pos1)
   (forall ((temp___216 Int))
   (=> (= temp___216 pos1)
   (let ((o1 (+ pos1 1)))
-  (=> (in_range3 o1)
+  (=> (in_range4 o1)
   (forall ((pos2 Int))
   (=> (= pos2 o1)
   (=> (<= pos2 10)

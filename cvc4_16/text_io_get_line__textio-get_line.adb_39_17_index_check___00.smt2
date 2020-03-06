@@ -999,7 +999,7 @@
 (define-fun tTbufSP1__ref_tTbufSP1__content__projection ((a tTbufSP1__ref)) tTbufSP1 
   (tTbufSP1__content a))
 
-(declare-fun temp_____aggregate_def_413 (Int) (Array Int character))
+(declare-fun temp_____aggregate_def_419 (Int) (Array Int character))
 
 (define-fun dynamic_invariant6 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)
@@ -1131,10 +1131,10 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___415 Int))
-  (=> (dynamic_invariant2 temp___415 true true true true)
-  (forall ((temp___416 Int))
-  (= (to_rep (select (temp_____aggregate_def_413 temp___415) temp___416)) temp___415)))))
+  (forall ((temp___421 Int))
+  (=> (dynamic_invariant2 temp___421 true true true true)
+  (forall ((temp___422 Int))
+  (= (to_rep (select (temp_____aggregate_def_419 temp___421) temp___422)) temp___421)))))
 
 (assert
 ;; defqtvc
@@ -1186,7 +1186,7 @@
   (and (= (of_array item o2 o1) item_at_start)
   (and (dynamic_invariant3 item_at_start true false true true)
   (exists ((buf (Array Int character)))
-  (and (= buf (temp_____aggregate_def_413 32))
+  (and (= buf (temp_____aggregate_def_419 32))
   (exists ((spark__branch Bool))
   (and (= spark__branch (ite (= n 1) true false))
   (ite (= spark__branch true)
@@ -1203,9 +1203,9 @@
   (ite (< idx (+ (to_rep1 o4) n))
   (= (to_rep (select textio__memset__b idx)) 10)
   (= (to_rep (select textio__memset__b idx)) (to_rep (select buf idx))))))
-  (let ((temp___417 (of_array textio__memset__b 1 80)))
+  (let ((temp___423 (of_array textio__memset__b 1 80)))
   (exists ((buf1 (Array Int character)))
-  (and (= buf1 (slide (to_array temp___417) (first1 temp___417) 1))
+  (and (= buf1 (slide (to_array temp___423) (first1 temp___423) 1))
   (and (= (to_rep (select buf1 n)) 10)
   (exists ((o5 Int))
   (and (= (to_rep2 (rec__textio__file_type__descr file__split_fields)) o5)
@@ -1308,9 +1308,9 @@
   (and (= (fpeek1 o5 cur_position2 the_file1) eof)
   (= cur_position1 cur_position2)))) (dynamic_invariant1 cur_position1 true
   true true true))
-  (let ((temp___418 (of_array helpers__fgets__strng 1 80)))
+  (let ((temp___424 (of_array helpers__fgets__strng 1 80)))
   (exists ((buf2 (Array Int character)))
-  (and (= buf2 (slide (to_array temp___418) (first1 temp___418) 1))
+  (and (= buf2 (slide (to_array temp___424) (first1 temp___424) 1))
   (exists ((spark__branch1 Bool))
   (and (= spark__branch1 (ite (= success true) false true))
   (ite (= spark__branch1 true)
@@ -1417,9 +1417,9 @@
   (=>
   (= (and (ite (<= (+ last2 1) usf) true false) (ite (<= usf last3) true
                                                 false)) true)
-  (let ((temp___428 (+ (- (- usf last2) 1) cur_position)))
-  (=> (and (<= 1 temp___428) (<= temp___428 2147483647))
+  (let ((temp___434 (+ (- (- usf last2) 1) cur_position)))
+  (=> (and (<= 1 temp___434) (<= temp___434 2147483647))
   (forall ((o Int))
-  (=> (= (to_rep (select the_file temp___428)) o)
+  (=> (= (to_rep (select the_file temp___434)) o)
   (<= (to_rep1 item__first) usf))))))))))))))))))))))))))))
 (check-sat)

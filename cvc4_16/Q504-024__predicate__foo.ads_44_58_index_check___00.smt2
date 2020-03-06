@@ -348,6 +348,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__foo__subject_state__max_id1 Int)
+  (a us_split_discrs)) Bool (= rec__foo__subject_state__max_id1 (to_rep1
+                                                                (rec__foo__subject_state__max_id
+                                                                a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -459,11 +464,6 @@
                             (rec__foo__subject_state__states1
                             (us_split_fields3 b))) true))
                     true false))
-
-(define-fun in_range3 ((rec__foo__subject_state__max_id1 Int)
-  (a us_rep)) Bool (= rec__foo__subject_state__max_id1 (to_rep1
-                                                       (rec__foo__subject_state__max_id
-                                                       (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -586,7 +586,8 @@
                                      (not (= temp___skip_constant_214 true))
                                      (in_range3
                                      (to_rep1 (select cpu_lsid_last cpu_id))
-                                     (to_base temp___expr_217)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_217))))
                                      (and (dynamic_property 0
                                      (to_rep1 (select cpu_lsid_last cpu_id))
                                      (first1

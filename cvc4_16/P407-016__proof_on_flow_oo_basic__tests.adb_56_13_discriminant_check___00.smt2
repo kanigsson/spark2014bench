@@ -147,6 +147,10 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range2 ((rec__tests__test_14__record_with_mutable_discrs__present1 Bool)
+  (a us_split_discrs)) Bool (= rec__tests__test_14__record_with_mutable_discrs__present1 
+  (rec__tests__test_14__record_with_mutable_discrs__present a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -266,7 +270,7 @@
   (assert
   (forall ((i tTaSP1)) (and (<= 1 (tTaSP1qtint i)) (<= (tTaSP1qtint i) 1))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 1 x) (<= x 1)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -291,11 +295,6 @@
                                          (= (rec__tests__test_14__record_with_mutable_discrs__present
                                             (us_split_discrs1
                                             (select temp___expr_224 temp___226))) (distinct 0 0)))))
-
-(define-fun in_range3 ((rec__tests__test_14__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__tests__test_14__record_with_mutable_discrs__present1 
-  (rec__tests__test_14__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size1 Int)
 
@@ -357,11 +356,6 @@
 (((t5b__refqtmk (t5b__content us_rep)))))
 (define-fun t5b__ref_t5b__content__projection ((a t5b__ref)) us_rep (t5b__content
                                                                     a))
-
-(define-fun in_range4 ((rec__tests__test_14__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__tests__test_14__record_with_mutable_discrs__present1 
-  (rec__tests__test_14__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 

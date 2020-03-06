@@ -137,6 +137,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__amortized_queue__my_vectors__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__amortized_queue__my_vectors__vector__capacity1 
+  (to_rep (rec__amortized_queue__my_vectors__vector__capacity a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -244,7 +248,7 @@
 
 (define-fun length1 ((x Int) (y Int)) Int (ite (<= x y) (+ (- y x) 1) 0))
 
-(define-fun in_range1 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range2 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE1 (Bool) us_image)
 
@@ -349,7 +353,7 @@
   (and (<= (- 2147483648) (element_typeqtint i))
   (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range3 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
@@ -373,7 +377,7 @@
   (temp___do_typ_inv_233 Bool)) Bool (=>
                                      (or (= temp___is_init_230 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range2 temp___expr_234)))
+                                     (in_range3 temp___expr_234)))
 
 (declare-fun oconcat (us_rep Int) us_rep)
 
@@ -393,7 +397,7 @@
   (forall ((i val__))
   (and (<= (- 2147483648) (val__qtint i)) (<= (val__qtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
@@ -417,7 +421,7 @@
   (temp___do_typ_inv_219 Bool)) Bool (=>
                                      (or (= temp___is_init_216 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range3 temp___expr_220)))
+                                     (in_range4 temp___expr_220)))
 
 ;; oconcat__post_axiom
   (assert
@@ -435,11 +439,6 @@
      (= (element result i) (element left i)))))
      (= (element result (+ (last_index left) 1)) right))))) :pattern (
   (oconcat left right)) ))))
-
-(define-fun in_range4 ((rec__amortized_queue__my_vectors__vector__capacity1 Int)
-  (a us_rep)) Bool (= rec__amortized_queue__my_vectors__vector__capacity1 
-  (to_rep
-  (rec__amortized_queue__my_vectors__vector__capacity (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -574,40 +573,42 @@
 
 (declare-fun inv__function_guard (Bool us_rep2) Bool)
 
-(define-fun dynamic_invariant3 ((temp___expr_415 us_rep2)
-  (temp___is_init_411 Bool) (temp___skip_constant_412 Bool)
-  (temp___do_toplevel_413 Bool)
-  (temp___do_typ_inv_414 Bool)) Bool (and (in_range4 1000
+(define-fun dynamic_invariant3 ((temp___expr_416 us_rep2)
+  (temp___is_init_412 Bool) (temp___skip_constant_413 Bool)
+  (temp___do_toplevel_414 Bool)
+  (temp___do_typ_inv_415 Bool)) Bool (and (in_range1 1000
+                                     (us_split_discrs1
                                      (rec__amortized_queue__queue__front
-                                     (us_split_fields3 temp___expr_415)))
-                                     (in_range4 1000
+                                     (us_split_fields3 temp___expr_416))))
+                                     (in_range1 1000
+                                     (us_split_discrs1
                                      (rec__amortized_queue__queue__rear
-                                     (us_split_fields3 temp___expr_415)))))
+                                     (us_split_fields3 temp___expr_416))))))
 
-(define-fun default_initial_assumption ((temp___expr_418 us_rep2)
-  (temp___skip_top_level_419 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_419 us_rep2)
+  (temp___skip_top_level_420 Bool)) Bool (and
                                          (and
                                          (= (to_rep
                                             (rec__amortized_queue__my_vectors__vector__capacity
                                             (us_split_discrs1
                                             (rec__amortized_queue__queue__front
                                             (us_split_fields3
-                                            temp___expr_418))))) 1000)
+                                            temp___expr_419))))) 1000)
                                          (= (is_empty
                                             (rec__amortized_queue__queue__front
                                             (us_split_fields3
-                                            temp___expr_418))) true))
+                                            temp___expr_419))) true))
                                          (and
                                          (= (to_rep
                                             (rec__amortized_queue__my_vectors__vector__capacity
                                             (us_split_discrs1
                                             (rec__amortized_queue__queue__rear
                                             (us_split_fields3
-                                            temp___expr_418))))) 1000)
+                                            temp___expr_419))))) 1000)
                                          (= (is_empty
                                             (rec__amortized_queue__queue__rear
                                             (us_split_fields3
-                                            temp___expr_418))) true))))
+                                            temp___expr_419))) true))))
 
 ;; inv__post_axiom
   (assert true)
@@ -667,23 +668,24 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq5 a b) (oeq a b)) :pattern ((user_eq5 a b)) )))
 
-(define-fun dynamic_invariant4 ((temp___expr_405 us_rep)
-  (temp___is_init_401 Bool) (temp___skip_constant_402 Bool)
-  (temp___do_toplevel_403 Bool)
-  (temp___do_typ_inv_404 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_402 true))
-                                     (in_range4 1000 temp___expr_405)))
+(define-fun dynamic_invariant4 ((temp___expr_406 us_rep)
+  (temp___is_init_402 Bool) (temp___skip_constant_403 Bool)
+  (temp___do_toplevel_404 Bool)
+  (temp___do_typ_inv_405 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_403 true))
+                                     (in_range1 1000
+                                     (us_split_discrs1 temp___expr_406))))
 
-(define-fun default_initial_assumption1 ((temp___expr_407 us_rep)
-  (temp___skip_top_level_408 Bool)) Bool (and
+(define-fun default_initial_assumption1 ((temp___expr_408 us_rep)
+  (temp___skip_top_level_409 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__amortized_queue__my_vectors__vector__capacity
                                             (us_split_discrs1
-                                            temp___expr_407))) 1000)
+                                            temp___expr_408))) 1000)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_408 true))
-                                         (= (is_empty temp___expr_407) true))))
+                                         (= temp___skip_top_level_409 true))
+                                         (= (is_empty temp___expr_408) true))))
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
@@ -947,54 +949,54 @@
   (=>
   (< 0 (length (rec__amortized_queue__queue__front (us_split_fields3 q))))
   (let ((o (rec__amortized_queue__queue__rear (us_split_fields3 q))))
-  (let ((o1 (copy o 1000)))
+  (let ((temp___699 (copy o 1000)))
   (=>
-  (and (= (oeq1 (model1 o1) (model1 o)) true)
+  (and (= (oeq1 (model1 temp___699) (model1 o)) true)
   (ite (= 1000 0)
   (= (to_rep
      (rec__amortized_queue__my_vectors__vector__capacity
-     (us_split_discrs1 o1))) (length o))
+     (us_split_discrs1 temp___699))) (length o))
   (= (to_rep
      (rec__amortized_queue__my_vectors__vector__capacity
-     (us_split_discrs1 o1))) 1000)))
-  (let ((o2 (rec__amortized_queue__queue__front (us_split_fields3 q))))
-  (let ((o3 (copy o2 1000)))
+     (us_split_discrs1 temp___699))) 1000)))
+  (let ((o1 (rec__amortized_queue__queue__front (us_split_fields3 q))))
+  (let ((temp___698 (copy o1 1000)))
   (=>
-  (and (= (oeq1 (model1 o3) (model1 o2)) true)
+  (and (= (oeq1 (model1 temp___698) (model1 o1)) true)
   (ite (= 1000 0)
   (= (to_rep
      (rec__amortized_queue__my_vectors__vector__capacity
-     (us_split_discrs1 o3))) (length o2))
+     (us_split_discrs1 temp___698))) (length o1))
   (= (to_rep
      (rec__amortized_queue__my_vectors__vector__capacity
-     (us_split_discrs1 o3))) 1000)))
+     (us_split_discrs1 temp___698))) 1000)))
   (forall ((result____split_fields us_split_fields2))
-  (=> (= result____split_fields (us_split_fieldsqtmk1 o3 o1))
+  (=> (= result____split_fields (us_split_fieldsqtmk1 temp___698 temp___699))
   (=> (dynamic_invariant3 (us_repqtmk1 result____split_fields) true false
   true true)
   (let ((amortized_queue__my_vectors__delete_last__container__compl (rec__amortized_queue__queue__front
                                                                     result____split_fields)))
-  (let ((o4 (us_split_discrs1
+  (let ((o2 (us_split_discrs1
             amortized_queue__my_vectors__delete_last__container__compl)))
   (forall
   ((amortized_queue__my_vectors__delete_last__container__fields us_main_type))
   (=>
   (and
   (= (length
-     (us_repqtmk o4
+     (us_repqtmk o2
      (us_split_fieldsqtmk
      amortized_queue__my_vectors__delete_last__container__fields))) (- 
   (length
-  (us_repqtmk o4
+  (us_repqtmk o2
   (us_split_fields1
   amortized_queue__my_vectors__delete_last__container__compl))) 1))
   (= (olt
      (model1
-     (us_repqtmk o4
+     (us_repqtmk o2
      (us_split_fieldsqtmk
      amortized_queue__my_vectors__delete_last__container__fields)))
      (model1
-     (us_repqtmk o4
+     (us_repqtmk o2
      (us_split_fields1
      amortized_queue__my_vectors__delete_last__container__compl)))) true))
   (forall ((result____split_fields1 us_split_fields2))
@@ -1009,45 +1011,45 @@
                              result____split_fields)))
   (forall ((result____split_fields2 us_split_fields2))
   (=>
-  (let ((o5 (rec__amortized_queue__queue__rear result____split_fields1)))
+  (let ((o3 (rec__amortized_queue__queue__rear result____split_fields1)))
+  (let ((o4 (length o3)))
+  (and
+  (and (dynamic_invariant o4 true false true true) (<= o4 (capacity o3)))
+  (let ((o5 (rec__amortized_queue__queue__front result____split_fields1)))
   (let ((o6 (length o5)))
   (and
   (and (dynamic_invariant o6 true false true true) (<= o6 (capacity o5)))
-  (let ((o7 (rec__amortized_queue__queue__front result____split_fields1)))
-  (let ((o8 (length o7)))
-  (and
-  (and (dynamic_invariant o8 true false true true) (<= o8 (capacity o7)))
   (exists ((spark__branch Bool))
-  (and (= spark__branch (ite (< o8 o6) true false))
+  (and (= spark__branch (ite (< o6 o4) true false))
   (ite (= spark__branch true)
   (let ((amortized_queue__reverse_insert__rear__compl (rec__amortized_queue__queue__rear
                                                       result____split_fields1)))
   (let ((amortized_queue__reverse_insert__front__compl (rec__amortized_queue__queue__front
                                                        result____split_fields1)))
-  (let ((o9 (rec__amortized_queue__queue__rear result____split_fields1)))
-  (let ((o10 (copy o9 1000)))
+  (let ((o7 (rec__amortized_queue__queue__rear result____split_fields1)))
+  (let ((temp___703 (copy o7 1000)))
   (and
-  (and (= (oeq1 (model1 o10) (model1 o9)) true)
+  (and (= (oeq1 (model1 temp___703) (model1 o7)) true)
   (ite (= 1000 0)
   (= (to_rep
      (rec__amortized_queue__my_vectors__vector__capacity
-     (us_split_discrs1 o10))) (length o9))
+     (us_split_discrs1 temp___703))) (length o7))
   (= (to_rep
      (rec__amortized_queue__my_vectors__vector__capacity
-     (us_split_discrs1 o10))) 1000)))
-  (let ((o11 (rec__amortized_queue__queue__front result____split_fields1)))
-  (let ((o12 (copy o11 1000)))
+     (us_split_discrs1 temp___703))) 1000)))
+  (let ((o8 (rec__amortized_queue__queue__front result____split_fields1)))
+  (let ((temp___702 (copy o8 1000)))
   (and
-  (and (= (oeq1 (model1 o12) (model1 o11)) true)
+  (and (= (oeq1 (model1 temp___702) (model1 o8)) true)
   (ite (= 1000 0)
   (= (to_rep
      (rec__amortized_queue__my_vectors__vector__capacity
-     (us_split_discrs1 o12))) (length o11))
+     (us_split_discrs1 temp___702))) (length o8))
   (= (to_rep
      (rec__amortized_queue__my_vectors__vector__capacity
-     (us_split_discrs1 o12))) 1000)))
-  (let ((o13 (us_split_discrs1 amortized_queue__reverse_insert__rear__compl)))
-  (let ((o14 (us_split_discrs1 amortized_queue__reverse_insert__front__compl)))
+     (us_split_discrs1 temp___702))) 1000)))
+  (let ((o9 (us_split_discrs1 amortized_queue__reverse_insert__rear__compl)))
+  (let ((o10 (us_split_discrs1 amortized_queue__reverse_insert__front__compl)))
   (exists ((amortized_queue__reverse_insert__rear__fields us_main_type)
   (amortized_queue__reverse_insert__front__fields us_main_type))
   (and
@@ -1056,33 +1058,34 @@
   (and
   (and
   (= (length
-     (us_repqtmk o14
+     (us_repqtmk o10
      (us_split_fieldsqtmk amortized_queue__reverse_insert__front__fields))) (+ 
-  (length o12) (length o10)))
+  (length temp___702) (length temp___703)))
   (= (length
-     (us_repqtmk o13
+     (us_repqtmk o9
      (us_split_fieldsqtmk amortized_queue__reverse_insert__rear__fields))) 0))
   (forall ((i Int))
-  (=> (and (<= 1 i) (<= i (last_index o12)))
+  (=> (and (<= 1 i) (<= i (last_index temp___702)))
   (= (element
-     (us_repqtmk o14
+     (us_repqtmk o10
      (us_split_fieldsqtmk amortized_queue__reverse_insert__front__fields)) i) 
-  (element o12 i)))))
+  (element temp___702 i)))))
   (forall ((i Int))
-  (=> (and (<= 1 i) (<= i (last_index o10)))
+  (=> (and (<= 1 i) (<= i (last_index temp___703)))
   (= (element
-     (us_repqtmk o14
+     (us_repqtmk o10
      (us_split_fieldsqtmk amortized_queue__reverse_insert__front__fields))
      (- (+ (last_index
-           (us_repqtmk o14
+           (us_repqtmk o10
            (us_split_fieldsqtmk
            amortized_queue__reverse_insert__front__fields))) 1) i)) (element
-                                                                    o10 i)))))
+                                                                    temp___703
+                                                                    i)))))
   (and (dynamic_invariant4
-  (us_repqtmk o14
+  (us_repqtmk o10
   (us_split_fieldsqtmk amortized_queue__reverse_insert__front__fields)) true
   true true true) (dynamic_invariant4
-  (us_repqtmk o13
+  (us_repqtmk o9
   (us_split_fieldsqtmk amortized_queue__reverse_insert__rear__fields)) true
   true true true)))
   (exists ((result____split_fields3 us_split_fields2))
@@ -1106,11 +1109,11 @@
   (= result____split_fields2 result____split_fields1))))))))))
   (forall ((amortized_queue__tail__result us_split_fields2))
   (=> (= amortized_queue__tail__result result____split_fields2)
-  (let ((o5 (us_repqtmk1 amortized_queue__tail__result)))
-  (let ((o6 (inv o5)))
+  (let ((o3 (us_repqtmk1 amortized_queue__tail__result)))
+  (let ((o4 (inv o3)))
   (=>
-  (and (inv__function_guard o6 o5)
-  (= (= o6 true)
+  (and (inv__function_guard o4 o3)
+  (= (= o4 true)
   (and
   (and
   (<= (length
@@ -1131,17 +1134,17 @@
   (rec__amortized_queue__my_vectors__vector__capacity
   (us_split_discrs1
   (rec__amortized_queue__queue__rear amortized_queue__tail__result))))))))
-  (=> (= o6 true)
-  (let ((o7 q))
-  (let ((o8 (model2 o7)))
+  (=> (= o4 true)
+  (let ((o5 q))
+  (let ((o6 (model2 o5)))
   (=>
-  (forall ((o9 us_rep2) (o10 us_rep)) (is_model__function_guard
-  (is_model o9 o10) o9 o10))
-  (=> (and (model__function_guard1 o8 o7) (= (is_model o7 o8) true))
-  (let ((o9 (last_element o8)))
+  (forall ((o7 us_rep2) (o8 us_rep)) (is_model__function_guard
+  (is_model o7 o8) o7 o8))
+  (=> (and (model__function_guard1 o6 o5) (= (is_model o5 o6) true))
+  (let ((o7 (last_element o6)))
   (=>
-  (and (dynamic_invariant1 o9 true false true true)
-  (= o9 (get (model1 o8) (last_index o8))))
-  (=> (forall ((o10 us_rep2)) (inv__function_guard (inv o10) o10))
+  (and (dynamic_invariant1 o7 true false true true)
+  (= o7 (get (model1 o6) (last_index o6))))
+  (=> (forall ((o8 us_rep2)) (inv__function_guard (inv o8) o8))
   (= (inv (us_repqtmk1 amortized_queue__tail__result)) true)))))))))))))))))))))))))))))))))))))
 (check-sat)

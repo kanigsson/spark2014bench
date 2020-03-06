@@ -356,6 +356,11 @@
                         (rec__subtype_check__r__f (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range3 ((rec__subtype_check__r__d1 Int)
+  (a us_split_discrs)) Bool (= rec__subtype_check__r__d1 (to_rep
+                                                         (rec__subtype_check__r__d
+                                                         a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -413,7 +418,7 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS4 Int)
 
-(define-fun in_range3 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range4 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Bool) us_image)
 
@@ -580,7 +585,7 @@
   (and (<= 6 (tsmall_nat_array_2P1qtint i))
   (<= (tsmall_nat_array_2P1qtint i) 10))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 6 x) (<= x 10)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 6 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -666,7 +671,7 @@
   (forall ((i tS10bP1))
   (and (<= 1 (tS10bP1qtint i)) (<= (tS10bP1qtint i) 5))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 5)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 5)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -690,11 +695,6 @@
                                          (<= temp___267 5))
                                          (= (to_rep1
                                             (select temp___expr_265 temp___267)) 1))))
-
-(define-fun in_range6 ((rec__subtype_check__r__d1 Int)
-  (a us_rep)) Bool (= rec__subtype_check__r__d1 (to_rep
-                                                (rec__subtype_check__r__d
-                                                (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -757,7 +757,8 @@
   (temp___do_toplevel_270 Bool)
   (temp___do_typ_inv_271 Bool)) Bool (=>
                                      (not (= temp___skip_constant_269 true))
-                                     (in_range6 10 temp___expr_272)))
+                                     (in_range3 10
+                                     (us_split_discrs1 temp___expr_272))))
 
 (define-fun default_initial_assumption5 ((temp___expr_274 us_rep)
   (temp___skip_top_level_275 Bool)) Bool (and

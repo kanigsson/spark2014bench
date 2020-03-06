@@ -403,6 +403,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range4 ((rec__stacks__stack__max1 Int)
+  (a us_split_discrs)) Bool (= rec__stacks__stack__max1 (to_rep1
+                                                        (rec__stacks__stack__max
+                                                        a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -541,7 +546,7 @@
      (= (size s) (to_rep (rec__stacks__stack__top (us_split_fields1 s))))) :pattern (
   (size s)) )))
 
-(define-fun in_range4 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range5 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Bool) us_image)
 

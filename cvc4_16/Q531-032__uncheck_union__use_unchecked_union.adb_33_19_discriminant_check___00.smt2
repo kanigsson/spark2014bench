@@ -430,6 +430,10 @@
                             (us_split_fields5 b))) true))))
                     true false))
 
+(define-fun in_range1 ((rec__use_unchecked_union__myunion__discr1 Int)
+  (a us_split_discrs)) Bool (= rec__use_unchecked_union__myunion__discr1 
+  (to_rep (rec__use_unchecked_union__myunion__discr a))))
+
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)

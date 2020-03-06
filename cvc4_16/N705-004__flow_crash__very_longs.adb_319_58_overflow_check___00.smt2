@@ -620,6 +620,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__very_longs__very_long__octet_length1 
+  (to_rep (rec__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -800,12 +804,6 @@
                             (us_split_fields3 b))) true))
                     true false))
 
-(define-fun in_range3 ((rec__very_longs__very_long__octet_length1 Int)
-  (a us_rep)) Bool (= rec__very_longs__very_long__octet_length1 (to_rep
-                                                                (rec__very_longs__very_long__octet_length
-                                                                (us_split_discrs1
-                                                                a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -876,7 +874,8 @@
                                      (+ (* 2 (to_rep
                                              (rec__very_longs__very_long__octet_length
                                              (us_split_discrs1 divisor)))) 1)
-                                     (to_base temp___expr_785)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_785))))
                                      (and (dynamic_property 1
                                      (+ (* 2 (to_rep
                                              (rec__very_longs__very_long__octet_length
@@ -976,12 +975,6 @@
                             (us_split_fields5 b))) true))
                     true false))
 
-(define-fun in_range4 ((rec__very_longs__very_long__octet_length1 Int)
-  (a us_rep)) Bool (= rec__very_longs__very_long__octet_length1 (to_rep
-                                                                (rec__very_longs__very_long__octet_length
-                                                                (us_split_discrs1
-                                                                a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -1048,11 +1041,12 @@
   (temp___do_typ_inv_797 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_795 true))
-                                     (in_range4
+                                     (in_range3
                                      (to_rep
                                      (rec__very_longs__very_long__octet_length
                                      (us_split_discrs1 divisor)))
-                                     (to_base1 temp___expr_798)))
+                                     (us_split_discrs1
+                                     (to_base1 temp___expr_798))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__very_longs__very_long__octet_length
@@ -1162,7 +1156,7 @@
   (forall ((i shift_type))
   (and (<= 0 (shift_typeqtint i)) (<= (shift_typeqtint i) 7))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 7)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 7)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -1184,7 +1178,7 @@
   (temp___do_toplevel_776 Bool)
   (temp___do_typ_inv_777 Bool)) Bool (=>
                                      (or (= temp___is_init_774 true)
-                                     (<= 0 7)) (in_range5 temp___expr_778)))
+                                     (<= 0 7)) (in_range4 temp___expr_778)))
 
 ;; get_shift_distance__post_axiom
   (assert
@@ -1332,37 +1326,37 @@
 (define-fun t143b__ref_t143b__content__projection ((a t143b__ref)) us_t 
   (t143b__content a))
 
-(declare-fun temp_____aggregate_def_1180 ((_ BitVec 8) Int Int) us_t)
+(declare-fun temp_____aggregate_def_1181 ((_ BitVec 8) Int Int) us_t)
 
-(declare-fun temp_____aggregate_def_1193 ((_ BitVec 8) Int Int) us_t)
-
-;; def_axiom
-  (assert
-  (forall ((temp___1182 (_ BitVec 8)))
-  (forall ((temp___1183 Int) (temp___1184 Int))
-  (let ((temp___1181 (temp_____aggregate_def_1180 temp___1182 temp___1183
-                     temp___1184)))
-  (=> (dynamic_invariant4 temp___1182 true true true true)
-  (and
-  (=> (dynamic_property 1 2147483647 temp___1183 temp___1184)
-  (and (= (first1 temp___1181) temp___1183)
-  (= (last1 temp___1181) temp___1184)))
-  (forall ((temp___1185 Int))
-  (= (to_rep2 (select (to_array temp___1181) temp___1185)) temp___1182))))))))
+(declare-fun temp_____aggregate_def_1194 ((_ BitVec 8) Int Int) us_t)
 
 ;; def_axiom
   (assert
-  (forall ((temp___1195 (_ BitVec 8)))
-  (forall ((temp___1196 Int) (temp___1197 Int))
-  (let ((temp___1194 (temp_____aggregate_def_1193 temp___1195 temp___1196
-                     temp___1197)))
-  (=> (dynamic_invariant4 temp___1195 true true true true)
+  (forall ((temp___1183 (_ BitVec 8)))
+  (forall ((temp___1184 Int) (temp___1185 Int))
+  (let ((temp___1182 (temp_____aggregate_def_1181 temp___1183 temp___1184
+                     temp___1185)))
+  (=> (dynamic_invariant4 temp___1183 true true true true)
   (and
-  (=> (dynamic_property 1 2147483647 temp___1196 temp___1197)
-  (and (= (first1 temp___1194) temp___1196)
-  (= (last1 temp___1194) temp___1197)))
-  (forall ((temp___1198 Int))
-  (= (to_rep2 (select (to_array temp___1194) temp___1198)) temp___1195))))))))
+  (=> (dynamic_property 1 2147483647 temp___1184 temp___1185)
+  (and (= (first1 temp___1182) temp___1184)
+  (= (last1 temp___1182) temp___1185)))
+  (forall ((temp___1186 Int))
+  (= (to_rep2 (select (to_array temp___1182) temp___1186)) temp___1183))))))))
+
+;; def_axiom
+  (assert
+  (forall ((temp___1196 (_ BitVec 8)))
+  (forall ((temp___1197 Int) (temp___1198 Int))
+  (let ((temp___1195 (temp_____aggregate_def_1194 temp___1196 temp___1197
+                     temp___1198)))
+  (=> (dynamic_invariant4 temp___1196 true true true true)
+  (and
+  (=> (dynamic_property 1 2147483647 temp___1197 temp___1198)
+  (and (= (first1 temp___1195) temp___1197)
+  (= (last1 temp___1195) temp___1198)))
+  (forall ((temp___1199 Int))
+  (= (to_rep2 (select (to_array temp___1195) temp___1199)) temp___1196))))))))
 
 (define-fun dynamic_invariant9 ((temp___expr_253 us_t)
   (temp___is_init_249 Bool) (temp___skip_constant_250 Bool)

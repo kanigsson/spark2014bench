@@ -155,21 +155,21 @@
   (forall ((flag Bool) (num Int))
   (=> (dynamic_invariant num true false true true)
   (=>
-  (forall ((flag1 Bool) (num1 Int)) (state_a__function_guard
-  (state_a flag1 num1) flag1 num1))
-  (let ((usf (state_a flag num)))
-  (=>
   (forall ((flag1 Bool) (num1 Int)) (state_d__function_guard
   (state_d flag1 num1) flag1 num1))
-  (let ((usf1 (state_d flag num)))
+  (let ((usf (state_d flag num)))
   (=>
   (forall ((flag1 Bool) (num1 Int)) (state_c__function_guard
   (state_c flag1 num1) flag1 num1))
-  (let ((usf2 (state_c flag num)))
+  (let ((usf1 (state_c flag num)))
   (=>
   (forall ((flag1 Bool) (num1 Int)) (state_b__function_guard
   (state_b flag1 num1) flag1 num1))
-  (let ((usf3 (state_b flag num)))
+  (let ((usf2 (state_b flag num)))
+  (=>
+  (forall ((flag1 Bool) (num1 Int)) (state_a__function_guard
+  (state_a flag1 num1) flag1 num1))
+  (let ((usf3 (state_a flag num)))
   (forall ((flag1 Bool) (num1 Int))
   (=>
   (let ((o (state_a flag num)))
@@ -210,7 +210,7 @@
   (=>
   (forall ((flag2 Bool) (num2 Int)) (state_a__function_guard
   (state_a flag2 num2) flag2 num2))
-  (=> (=> (= usf true) (= (state_a flag1 num1) true))
+  (=> (=> (= usf3 true) (= (state_a flag1 num1) true))
   (=>
   (forall ((flag2 Bool) (num2 Int)) (state_a__function_guard
   (state_a flag2 num2) flag2 num2))
@@ -218,12 +218,12 @@
   (forall ((flag2 Bool) (num2 Int)) (state_b__function_guard
   (state_b flag2 num2) flag2 num2))
   (=>
-  (=> (= usf3 true)
+  (=> (= usf2 true)
   (or (= (state_a flag1 num1) true) (= (state_b flag1 num1) true)))
   (=>
   (forall ((flag2 Bool) (num2 Int)) (state_b__function_guard
   (state_b flag2 num2) flag2 num2))
-  (=> (=> (= usf2 true) (= (state_b flag1 num1) true))
+  (=> (=> (= usf1 true) (= (state_b flag1 num1) true))
   (=>
   (forall ((flag2 Bool) (num2 Int)) (state_c__function_guard
   (state_c flag2 num2) flag2 num2))
@@ -231,7 +231,7 @@
   (forall ((flag2 Bool) (num2 Int)) (state_d__function_guard
   (state_d flag2 num2) flag2 num2))
   (=>
-  (=> (= usf1 true)
+  (=> (= usf true)
   (or (= (state_c flag1 num1) true) (= (state_d flag1 num1) true)))
-  (= (or (or (or usf usf3) usf2) usf1) true)))))))))))))))))))))))))
+  (= (or (or (or usf3 usf2) usf1) usf) true)))))))))))))))))))))))))
 (check-sat)

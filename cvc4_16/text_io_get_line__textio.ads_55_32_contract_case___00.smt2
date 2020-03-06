@@ -954,10 +954,10 @@
   (not
   (= (end_of_file (current_file current_in__split_fields) cur_position
      the_file) true))
-  (forall ((temp___old_384 Int))
-  (=> (= temp___old_384 cur_position)
   (forall ((temp___old_386 Int))
   (=> (= temp___old_386 cur_position)
+  (forall ((temp___old_388 Int))
+  (=> (= temp___old_388 cur_position)
   (let ((o item__last))
   (let ((o1 item__first))
   (forall ((cur_position1 Int))

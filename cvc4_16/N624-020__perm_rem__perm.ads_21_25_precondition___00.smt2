@@ -647,29 +647,29 @@
   (=> (and (<= o13 k) (<= k (- (last1 o14) 1)))
   (= (to_rep (select (to_array o14) (+ k 1))) (to_rep
                                               (select (to_array o15) k))))))))
-  (let ((temp___867 (remove o15 o12)))
+  (let ((temp___871 (remove o15 o12)))
   (=>
-  (forall ((temp___8671 us_t)) (invariant____function_guard
-  (invariant__ temp___8671) temp___8671))
+  (forall ((temp___8711 us_t)) (invariant____function_guard
+  (invariant__ temp___8711) temp___8711))
   (=>
-  (and (remove__function_guard temp___867 o15 o12)
-  (and (dynamic_invariant temp___867 true false true true)
+  (and (remove__function_guard temp___871 o15 o12)
+  (and (dynamic_invariant temp___871 true false true true)
   (and
   (and
   (and
-  (and (= (invariant__ temp___867) true)
-  (= (last1 temp___867) (- (last1 o15) 1)))
+  (and (= (invariant__ temp___871) true)
+  (= (last1 temp___871) (- (last1 o15) 1)))
   (forall ((k Int))
   (=> (and (<= 1 k) (<= k (- o12 1)))
   (= (to_rep (select (to_array o15) k)) (to_rep
-                                        (select (to_array temp___867) k))))))
+                                        (select (to_array temp___871) k))))))
   (forall ((k Int))
   (=> (and (<= (+ o12 1) k) (<= k (last1 o15)))
   (= (to_rep (select (to_array o15) k)) (to_rep
-                                        (select (to_array temp___867) (- k 1)))))))
+                                        (select (to_array temp___871) (- k 1)))))))
   (forall ((k Int))
   (=> (and (<= o12 k) (<= k (- (last1 o15) 1)))
   (= (to_rep (select (to_array o15) (+ k 1))) (to_rep
-                                              (select (to_array temp___867) k))))))))
+                                              (select (to_array temp___871) k))))))))
   (=> (in_range3 (- i2 1)) (<= i1 (last1 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

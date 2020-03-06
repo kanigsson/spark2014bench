@@ -1176,12 +1176,12 @@
   (forall ((usf Int))
   (=>
   (= (and (ite (<= 1 usf) true false) (ite (<= usf (- i 1)) true false)) true)
-  (let ((temp___422 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
+  (let ((temp___415 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                     (rec__use_formal_vectors__my_vect__vector__content
                     (us_split_fields1 v)))))
-  (=> (and (<= (first1 temp___422) usf) (<= usf (last1 temp___422)))
+  (=> (and (<= (first1 temp___415) usf) (<= usf (last1 temp___415)))
   (let ((o1 (rec__use_formal_vectors__my_vect__element_access__pointer_value
-            (select (to_array temp___422) usf))))
+            (select (to_array temp___415) usf))))
   (let ((o2 (model1 o1)))
   (=>
   (and (model__function_guard o2 o1)

@@ -336,14 +336,12 @@
      (= (to_rep (select (to_array res) j)) (to_upper
                                            (to_rep (select (to_array str) j))))
      (ite (and
-          (= (not (and (ite (<= 97 (to_rep (select (to_array str) (- j 1))))
-                       true false) (ite (<= (to_rep
-                                            (select (to_array str) (- j 1))) 122)
-                                   true false))) true)
-          (= (not (and (ite (<= 65 (to_rep (select (to_array str) (- j 1))))
-                       true false) (ite (<= (to_rep
-                                            (select (to_array str) (- j 1))) 90)
-                                   true false))) true))
+          (= (not (let ((temp___186 (to_rep (select (to_array str) (- j 1)))))
+                  (and (ite (<= 97 temp___186) true false) (ite (<= temp___186 122)
+                                                           true false)))) true)
+          (= (not (let ((temp___187 (to_rep (select (to_array str) (- j 1)))))
+                  (and (ite (<= 65 temp___187) true false) (ite (<= temp___187 90)
+                                                           true false)))) true))
      (= (to_rep (select (to_array res) j)) (to_upper
                                            (to_rep (select (to_array str) j))))
      (= (to_rep (select (to_array res) j)) (to_lower
@@ -394,23 +392,23 @@
                                     (<= 1 2147483647)) (in_range1
                                     temp___expr_46)))
 
-(define-fun dynamic_invariant4 ((temp___expr_196 us_t)
-  (temp___is_init_192 Bool) (temp___skip_constant_193 Bool)
-  (temp___do_toplevel_194 Bool)
-  (temp___do_typ_inv_195 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_193 true))
+(define-fun dynamic_invariant4 ((temp___expr_204 us_t)
+  (temp___is_init_200 Bool) (temp___skip_constant_201 Bool)
+  (temp___do_toplevel_202 Bool)
+  (temp___do_typ_inv_203 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_201 true))
                                      (and (dynamic_property (first1 str)
-                                     (last1 str) (first1 temp___expr_196)
-                                     (last1 temp___expr_196))
+                                     (last1 str) (first1 temp___expr_204)
+                                     (last1 temp___expr_204))
                                      (and
-                                     (= (first1 temp___expr_196) (first1 str))
-                                     (= (last1 temp___expr_196) (last1 str))))))
+                                     (= (first1 temp___expr_204) (first1 str))
+                                     (= (last1 temp___expr_204) (last1 str))))))
 
-(define-fun default_initial_assumption ((temp___expr_198 us_t)
-  (temp___skip_top_level_199 Bool)) Bool (and
-                                         (= (first1 temp___expr_198) 
+(define-fun default_initial_assumption ((temp___expr_206 us_t)
+  (temp___skip_top_level_207 Bool)) Bool (and
+                                         (= (first1 temp___expr_206) 
                                          (first1 str))
-                                         (= (last1 temp___expr_198) (last1
+                                         (= (last1 temp___expr_206) (last1
                                                                     str))))
 
 (assert
@@ -436,12 +434,12 @@
   (= (to_rep1 ret__last) (last1 str))))
   (forall ((to_up Bool))
   (=> (= to_up (distinct 1 0))
-  (let ((temp___224 (first1 str)))
-  (let ((temp___225 (last1 str)))
+  (let ((temp___238 (first1 str)))
+  (let ((temp___239 (last1 str)))
   (forall ((idx Int))
-  (=> (= idx temp___224)
+  (=> (= idx temp___238)
   (=>
-  (= (and (ite (<= temp___224 idx) true false) (ite (<= idx temp___225) true
+  (= (and (ite (<= temp___238 idx) true false) (ite (<= idx temp___239) true
                                                false)) true)
   (forall ((spark__branch Bool) (ret1 (Array Int character)))
   (=>
@@ -467,22 +465,22 @@
   (=> (= (to_rep1 ret__first) o1)
   (let ((o2 (of_array ret1 o1 o)))
   (let ((o3 str))
-  (let ((temp___inv_232 (to_caml_char2 o3 o2 idx)))
+  (let ((temp___inv_248 (to_caml_char2 o3 o2 idx)))
   (=>
-  (and (to_caml_char2__function_guard temp___inv_232 o3 o2 idx)
-  (= (= temp___inv_232 true)
+  (and (to_caml_char2__function_guard temp___inv_248 o3 o2 idx)
+  (= (= temp___inv_248 true)
   (forall ((j Int))
   (=> (and (<= (first1 o3) j) (<= j idx))
   (ite (= j (first1 o3))
   (= (to_rep (select (to_array o2) j)) (to_upper
                                        (to_rep (select (to_array o3) j))))
   (ite (and
-       (= (not (and (ite (<= 97 (to_rep (select (to_array o3) (- j 1)))) true
-                    false) (ite (<= (to_rep (select (to_array o3) (- j 1))) 122)
-                           true false))) true)
-       (= (not (and (ite (<= 65 (to_rep (select (to_array o3) (- j 1)))) true
-                    false) (ite (<= (to_rep (select (to_array o3) (- j 1))) 90)
-                           true false))) true))
+       (= (not (let ((temp___184 (to_rep (select (to_array o3) (- j 1)))))
+               (and (ite (<= 97 temp___184) true false) (ite (<= temp___184 122)
+                                                        true false)))) true)
+       (= (not (let ((temp___185 (to_rep (select (to_array o3) (- j 1)))))
+               (and (ite (<= 65 temp___185) true false) (ite (<= temp___185 90)
+                                                        true false)))) true))
   (= (to_rep (select (to_array o2) j)) (to_upper
                                        (to_rep (select (to_array o3) j))))
   (= (to_rep (select (to_array o2) j)) (to_lower
@@ -502,39 +500,36 @@
   (=> (< idx1 j)
   (= (to_rep (select ret2 j)) (to_rep (select (to_array str) j)))))))
   (=>
-  (= (and (ite (and
-               (forall ((temp___228 Int))
+  (= (and (ite (and (dynamic_property1 (first1 str) (last1 str) idx1)
+               (forall ((temp___245 Int))
                (=>
-               (and (<= (to_rep1 ret__first) temp___228)
-               (<= temp___228 (to_rep1 ret__last)))
+               (and (<= (to_rep1 ret__first) temp___245)
+               (<= temp___245 (to_rep1 ret__last)))
                (=>
-               (or (< temp___225 temp___228)
-               (or (< temp___228 temp___224) (< idx1 temp___228)))
-               (= (select ret2 temp___228) (select ret temp___228)))))
-               (dynamic_property1 (first1 str) (last1 str) idx1))
+               (or (< temp___239 temp___245)
+               (or (< temp___245 temp___238) (< idx1 temp___245)))
+               (= (select ret2 temp___245) (select ret temp___245))))))
           true false) (ite (and (<= (first1 str) idx1) (<= idx1 (last1 str)))
                       true false)) true)
   (forall ((spark__branch1 Bool) (to_up1 Bool))
   (=>
   (exists ((o4 Bool))
   (and
-  (exists ((o5 Int))
-  (and (= (to_rep (select (to_array str) idx1)) o5)
-  (exists ((o6 Int))
-  (and (= (to_rep (select (to_array str) idx1)) o6)
+  (exists ((temp___240 Int))
+  (and (= (to_rep (select (to_array str) idx1)) temp___240)
   (ite (not
-       (= (and (ite (<= 65 o6) true false) (ite (<= o5 90) true false)) true))
-  (exists ((o7 Int))
-  (and (= (to_rep (select (to_array str) idx1)) o7)
-  (exists ((o8 Int))
-  (and (= (to_rep (select (to_array str) idx1)) o8)
-  (= o4 (ite (= (and (ite (<= 97 o8) true false) (ite (<= o7 122) true false)) true)
-        false true))))))
-  (= o4 false))))))
+       (= (and (ite (<= 65 temp___240) true false) (ite (<= temp___240 90)
+                                                   true false)) true))
+  (exists ((temp___241 Int))
+  (and (= (to_rep (select (to_array str) idx1)) temp___241)
+  (= o4 (ite (= (and (ite (<= 97 temp___241) true false) (ite (<= temp___241 122)
+                                                         true false)) true)
+        false true))))
+  (= o4 false))))
   (and (= spark__branch1 o4)
   (ite (= spark__branch1 true) (= to_up1 (distinct 1 0))
   (= to_up1 (distinct 0 0))))))
-  (=> (not (= idx1 temp___225))
+  (=> (not (= idx1 temp___239))
   (forall ((idx2 Int))
   (=> (= idx2 (+ idx1 1))
   (forall ((ret3 (Array Int character)))
@@ -562,22 +557,22 @@
   (=> (= (to_rep1 ret__first) o5)
   (let ((o6 (of_array ret3 o5 o4)))
   (let ((o7 str))
-  (let ((temp___inv_2321 (to_caml_char2 o7 o6 idx2)))
+  (let ((temp___inv_2481 (to_caml_char2 o7 o6 idx2)))
   (=>
-  (and (to_caml_char2__function_guard temp___inv_2321 o7 o6 idx2)
-  (= (= temp___inv_2321 true)
+  (and (to_caml_char2__function_guard temp___inv_2481 o7 o6 idx2)
+  (= (= temp___inv_2481 true)
   (forall ((j Int))
   (=> (and (<= (first1 o7) j) (<= j idx2))
   (ite (= j (first1 o7))
   (= (to_rep (select (to_array o6) j)) (to_upper
                                        (to_rep (select (to_array o7) j))))
   (ite (and
-       (= (not (and (ite (<= 97 (to_rep (select (to_array o7) (- j 1)))) true
-                    false) (ite (<= (to_rep (select (to_array o7) (- j 1))) 122)
-                           true false))) true)
-       (= (not (and (ite (<= 65 (to_rep (select (to_array o7) (- j 1)))) true
-                    false) (ite (<= (to_rep (select (to_array o7) (- j 1))) 90)
-                           true false))) true))
+       (= (not (let ((temp___184 (to_rep (select (to_array o7) (- j 1)))))
+               (and (ite (<= 97 temp___184) true false) (ite (<= temp___184 122)
+                                                        true false)))) true)
+       (= (not (let ((temp___185 (to_rep (select (to_array o7) (- j 1)))))
+               (and (ite (<= 65 temp___185) true false) (ite (<= temp___185 90)
+                                                        true false)))) true))
   (= (to_rep (select (to_array o6) j)) (to_upper
                                        (to_rep (select (to_array o7) j))))
   (= (to_rep (select (to_array o6) j)) (to_lower

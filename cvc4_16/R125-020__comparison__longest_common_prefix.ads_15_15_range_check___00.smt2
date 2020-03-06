@@ -401,10 +401,10 @@
   (and (and (<= 1 x) (<= x 1000)) (and (<= 1 r5b) (<= r5b 1000))))
   (exists ((l3 Int) (r5b1 Int) (r8b1 Int))
   (and
-  (= (let ((temp___204 (of_array a y r8b1)))
-     (let ((temp___203 (of_array a x r5b1)))
-     (bool_eq (to_array temp___203) (first1 temp___203) (last1 temp___203)
-     (to_array temp___204) (first1 temp___204) (last1 temp___204)))) true)
+  (= (let ((temp___208 (of_array a y r8b1)))
+     (let ((temp___207 (of_array a x r5b1)))
+     (bool_eq (to_array temp___207) (first1 temp___207) (last1 temp___207)
+     (to_array temp___208) (first1 temp___208) (last1 temp___208)))) true)
   (and
   (and
   (and
@@ -412,8 +412,8 @@
   (and (dynamic_invariant2 r5b1 true true true true) (dynamic_invariant2 r8b1
   true true true true)) (dynamic_invariant l3 false true true true))
   (= (+ x l3) r5b1)) (= (+ y l3) r8b1))
-  (exists ((temp___205 Int))
-  (and (= temp___205 l3)
+  (exists ((temp___209 Int))
+  (and (= temp___209 l3)
   (let ((o3 (+ l3 1)))
   (and (in_range1 o3)
   (and (= l2 o3)
@@ -438,11 +438,11 @@
   (=> (= longest_common_prefix__lcp__result l2)
   (let ((o (+ y longest_common_prefix__lcp__result)))
   (=> (in_range1 o)
-  (let ((temp___209 (- o 1)))
+  (let ((temp___213 (- o 1)))
   (=>
-  (=> (<= y temp___209)
+  (=> (<= y temp___213)
   (and (and (<= 1 y) (<= y 1000))
-  (and (<= 1 temp___209) (<= temp___209 1000))))
+  (and (<= 1 temp___213) (<= temp___213 1000))))
   (let ((o1 (+ x longest_common_prefix__lcp__result)))
   (=> (in_range1 o1) (=> (<= x (- o1 1)) (<= 1 x))))))))))))))))))))))))
 (check-sat)

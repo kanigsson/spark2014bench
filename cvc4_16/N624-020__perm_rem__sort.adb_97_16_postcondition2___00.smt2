@@ -352,8 +352,8 @@
   (exists ((min3 Int) (index2 Int))
   (and (and (<= first min3) (<= min3 last))
   (and
-  (= (and (ite (and (dynamic_invariant min3 false true true true)
-               (dynamic_property first last index2))
+  (= (and (ite (and (dynamic_property first last index2) (dynamic_invariant
+               min3 false true true true))
           true false) (ite (and (<= first index2) (<= index2 last)) true
                       false)) true)
   (and

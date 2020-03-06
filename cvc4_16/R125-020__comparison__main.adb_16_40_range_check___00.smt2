@@ -310,18 +310,20 @@
      (and
      (and
      (and
-     (= (let ((temp___207 (let ((temp___203 (- (+ y result) 1)))
-                          (of_array longest_common_prefix__a y temp___203))))
-        (let ((temp___206 (let ((temp___202 (- (+ x result) 1)))
-                          (of_array longest_common_prefix__a x temp___202))))
-        (bool_eq (to_array temp___206) (first1 temp___206) (last1 temp___206)
-        (to_array temp___207) (first1 temp___207) (last1 temp___207)))) true)
+     (= (let ((temp___209 (let ((temp___205 (- (+ y result) 1)))
+                          (of_array longest_common_prefix__a y temp___205))))
+        (let ((temp___208 (let ((temp___204 (- (+ x result) 1)))
+                          (of_array longest_common_prefix__a x temp___204))))
+        (bool_eq (to_array temp___208) (first1 temp___208) (last1 temp___208)
+        (to_array temp___209) (first1 temp___209) (last1 temp___209)))) true)
      (or
      (or
-     (= (not (and (ite (<= 1 (+ result x)) true false) (ite (<= (+ result x) 1000)
-                                                       true false))) true)
-     (= (not (and (ite (<= 1 (+ result y)) true false) (ite (<= (+ result y) 1000)
-                                                       true false))) true))
+     (= (not (let ((temp___210 (+ result x)))
+             (and (ite (<= 1 temp___210) true false) (ite (<= temp___210 1000)
+                                                     true false)))) true)
+     (= (not (let ((temp___211 (+ result y)))
+             (and (ite (<= 1 temp___211) true false) (ite (<= temp___211 1000)
+                                                     true false)))) true))
      (not
      (= (to_rep (select longest_common_prefix__a (+ x result))) (to_rep
                                                                 (select longest_common_prefix__a (+ y result)))))))
@@ -406,7 +408,7 @@
 (define-fun t5b__ref_t5b__content__projection ((a t5b__ref)) t5b (t5b__content
                                                                  a))
 
-(declare-fun temp_____aggregate_def_209 (Int Int Int Int Int Int Int Int Int
+(declare-fun temp_____aggregate_def_213 (Int Int Int Int Int Int Int Int Int
   Int Int) (Array Int integer))
 
 (define-fun dynamic_invariant2 ((temp___expr_18 Int) (temp___is_init_14 Bool)
@@ -448,41 +450,41 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___211 Int) (temp___212 Int) (temp___213 Int)
-  (temp___214 Int) (temp___215 Int) (temp___216 Int) (temp___217 Int)
-  (temp___218 Int) (temp___219 Int) (temp___220 Int) (temp___221 Int))
-  (let ((temp___210 (temp_____aggregate_def_209 temp___211 temp___212
-                    temp___213 temp___214 temp___215 temp___216 temp___217
-                    temp___218 temp___219 temp___220 temp___221)))
+  (forall ((temp___215 Int) (temp___216 Int) (temp___217 Int)
+  (temp___218 Int) (temp___219 Int) (temp___220 Int) (temp___221 Int)
+  (temp___222 Int) (temp___223 Int) (temp___224 Int) (temp___225 Int))
+  (let ((temp___214 (temp_____aggregate_def_213 temp___215 temp___216
+                    temp___217 temp___218 temp___219 temp___220 temp___221
+                    temp___222 temp___223 temp___224 temp___225)))
   (=>
   (and
-  (and (dynamic_invariant2 temp___211 true true true true)
-  (dynamic_invariant2 temp___212 true true true true))
+  (and (dynamic_invariant2 temp___215 true true true true)
+  (dynamic_invariant2 temp___216 true true true true))
   (and
   (and
   (and
-  (and (dynamic_invariant2 temp___213 true true true true)
-  (dynamic_invariant2 temp___214 true true true true)) (dynamic_invariant2
-  temp___215 true true true true))
-  (and (dynamic_invariant2 temp___216 true true true true)
-  (dynamic_invariant2 temp___217 true true true true)))
-  (and
-  (and (dynamic_invariant2 temp___218 true true true true)
-  (dynamic_invariant2 temp___219 true true true true))
+  (and (dynamic_invariant2 temp___217 true true true true)
+  (dynamic_invariant2 temp___218 true true true true)) (dynamic_invariant2
+  temp___219 true true true true))
   (and (dynamic_invariant2 temp___220 true true true true)
-  (dynamic_invariant2 temp___221 true true true true)))))
-  (forall ((temp___222 Int))
-  (ite (= temp___222 1) (= (select temp___210 temp___222) rliteral)
-  (ite (= temp___222 2) (= (select temp___210 temp___222) rliteral1)
-  (ite (= temp___222 3) (= (select temp___210 temp___222) rliteral2)
-  (ite (= temp___222 4) (= (select temp___210 temp___222) rliteral3)
-  (ite (= temp___222 5) (= (select temp___210 temp___222) rliteral4)
-  (ite (= temp___222 6) (= (select temp___210 temp___222) rliteral)
-  (ite (= temp___222 7) (= (select temp___210 temp___222) rliteral1)
-  (ite (= temp___222 8) (= (select temp___210 temp___222) rliteral2)
-  (ite (= temp___222 9) (= (select temp___210 temp___222) rliteral3)
-  (ite (= temp___222 10) (= (select temp___210 temp___222) rliteral4)
-  (= (select temp___210 temp___222) rliteral5))))))))))))))))
+  (dynamic_invariant2 temp___221 true true true true)))
+  (and
+  (and (dynamic_invariant2 temp___222 true true true true)
+  (dynamic_invariant2 temp___223 true true true true))
+  (and (dynamic_invariant2 temp___224 true true true true)
+  (dynamic_invariant2 temp___225 true true true true)))))
+  (forall ((temp___226 Int))
+  (ite (= temp___226 1) (= (select temp___214 temp___226) rliteral)
+  (ite (= temp___226 2) (= (select temp___214 temp___226) rliteral1)
+  (ite (= temp___226 3) (= (select temp___214 temp___226) rliteral2)
+  (ite (= temp___226 4) (= (select temp___214 temp___226) rliteral3)
+  (ite (= temp___226 5) (= (select temp___214 temp___226) rliteral4)
+  (ite (= temp___226 6) (= (select temp___214 temp___226) rliteral)
+  (ite (= temp___226 7) (= (select temp___214 temp___226) rliteral1)
+  (ite (= temp___226 8) (= (select temp___214 temp___226) rliteral2)
+  (ite (= temp___226 9) (= (select temp___214 temp___226) rliteral3)
+  (ite (= temp___226 10) (= (select temp___214 temp___226) rliteral4)
+  (= (select temp___214 temp___226) rliteral5))))))))))))))))
 
 (assert
 ;; defqtvc

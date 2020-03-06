@@ -125,11 +125,11 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq a b) (oeq a b)) :pattern ((user_eq a b)) )))
 
-(define-fun default_initial_assumption ((temp___expr_303 us_rep)
-  (temp___skip_top_level_304 Bool)) Bool (=>
+(define-fun default_initial_assumption ((temp___expr_309 us_rep)
+  (temp___skip_top_level_310 Bool)) Bool (=>
                                          (not
-                                         (= temp___skip_top_level_304 true))
-                                         (= (is_empty temp___expr_303) true)))
+                                         (= temp___skip_top_level_310 true))
+                                         (= (is_empty temp___expr_309) true)))
 
 ;; length__post_axiom
   (assert
@@ -241,12 +241,12 @@
 (define-fun element_type__ref_element_type__content__projection ((a element_type__ref)) element_type 
   (element_type__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_295 Int)
-  (temp___is_init_291 Bool) (temp___skip_constant_292 Bool)
-  (temp___do_toplevel_293 Bool)
-  (temp___do_typ_inv_294 Bool)) Bool (=>
-                                     (or (= temp___is_init_291 true)
-                                     (<= 1 100)) (in_range3 temp___expr_295)))
+(define-fun dynamic_invariant1 ((temp___expr_301 Int)
+  (temp___is_init_297 Bool) (temp___skip_constant_298 Bool)
+  (temp___do_toplevel_299 Bool)
+  (temp___do_typ_inv_300 Bool)) Bool (=>
+                                     (or (= temp___is_init_297 true)
+                                     (<= 1 100)) (in_range3 temp___expr_301)))
 
 ;; contains__post_axiom
   (assert

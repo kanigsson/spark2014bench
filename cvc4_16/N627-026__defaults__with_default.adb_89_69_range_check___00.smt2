@@ -338,14 +338,14 @@
 
 (declare-const dummy4 us_rep)
 
-(declare-datatypes ((rec_with_discr__ref 0))
-(((rec_with_discr__refqtmk (rec_with_discr__content us_rep)))))
-(define-fun rec_with_discr__ref_rec_with_discr__content__projection ((a rec_with_discr__ref)) us_rep 
-  (rec_with_discr__content a))
+(declare-datatypes ((tbadS__ref 0))
+(((tbadS__refqtmk (tbadS__content us_rep)))))
+(define-fun tbadS__ref_tbadS__content__projection ((a tbadS__ref)) us_rep 
+  (tbadS__content a))
 
 (define-fun in_range4 ((rec__with_default__bad_record2__rec_with_discr__b1 Bool)
-  (a us_rep)) Bool (= rec__with_default__bad_record2__rec_with_discr__b1 
-  (rec__with_default__bad_record2__rec_with_discr__b (us_split_discrs1 a))))
+  (a us_split_discrs)) Bool (= rec__with_default__bad_record2__rec_with_discr__b1 
+  (rec__with_default__bad_record2__rec_with_discr__b a)))
 
 (declare-const value__size1 Int)
 
@@ -414,10 +414,10 @@
 
 (declare-const dummy5 us_rep)
 
-(declare-datatypes ((tbadS__ref 0))
-(((tbadS__refqtmk (tbadS__content us_rep)))))
-(define-fun tbadS__ref_tbadS__content__projection ((a tbadS__ref)) us_rep 
-  (tbadS__content a))
+(declare-datatypes ((rec_with_discr__ref 0))
+(((rec_with_discr__refqtmk (rec_with_discr__content us_rep)))))
+(define-fun rec_with_discr__ref_rec_with_discr__content__projection ((a rec_with_discr__ref)) us_rep 
+  (rec_with_discr__content a))
 
 (declare-const bad__split_discrs us_split_discrs)
 
@@ -430,7 +430,7 @@
                                      (=>
                                      (not (= temp___skip_constant_408 true))
                                      (in_range4 (distinct 0 0)
-                                     temp___expr_411))
+                                     (us_split_discrs1 temp___expr_411)))
                                      (=>
                                      (with_default__bad_record2__rec_with_discr__f2__pred
                                      temp___expr_411)

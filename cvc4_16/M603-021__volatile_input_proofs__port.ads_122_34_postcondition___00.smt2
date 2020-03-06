@@ -249,9 +249,9 @@
 (define-fun source__ref_source__content__3__projection ((a source__ref)) source 
   (source__content a))
 
-(define-fun dynamic_invariant ((temp___expr_210 (_ BitVec 8))
-  (temp___is_init_206 Bool) (temp___skip_constant_207 Bool)
-  (temp___do_toplevel_208 Bool) (temp___do_typ_inv_209 Bool)) Bool true)
+(define-fun dynamic_invariant ((temp___expr_212 (_ BitVec 8))
+  (temp___is_init_208 Bool) (temp___skip_constant_209 Bool)
+  (temp___do_toplevel_210 Bool) (temp___do_typ_inv_211 Bool)) Bool true)
 
 (declare-sort target 0)
 
@@ -272,12 +272,12 @@
 (define-fun target__ref_target__content__2__projection ((a target__ref)) target 
   (target__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_217 Int)
-  (temp___is_init_213 Bool) (temp___skip_constant_214 Bool)
-  (temp___do_toplevel_215 Bool)
-  (temp___do_typ_inv_216 Bool)) Bool (=>
-                                     (or (= temp___is_init_213 true)
-                                     (<= 0 2)) (in_range1 temp___expr_217)))
+(define-fun dynamic_invariant1 ((temp___expr_219 Int)
+  (temp___is_init_215 Bool) (temp___skip_constant_216 Bool)
+  (temp___do_toplevel_217 Bool)
+  (temp___do_typ_inv_218 Bool)) Bool (=>
+                                     (or (= temp___is_init_215 true)
+                                     (<= 0 2)) (in_range1 temp___expr_219)))
 
 ;; c3__post_axiom
   (assert

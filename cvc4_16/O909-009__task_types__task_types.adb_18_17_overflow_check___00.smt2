@@ -161,6 +161,11 @@
 (define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun in_range3 ((rec__task_types__my_task_type__c1 Int)
+  (a us_split_discrs)) Bool (= rec__task_types__my_task_type__c1 (to_rep
+                                                                 (rec__task_types__my_task_type__c
+                                                                 a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

@@ -352,7 +352,8 @@
   (! (= (= (all_elements_in a max) true)
      (forall ((k Int))
      (=> (and (<= 0 k) (<= k 7))
-     (and (<= (- max) (to_rep (select a k))) (<= (to_rep (select a k)) max))))) :pattern (
+     (let ((temp___179 (to_rep (select a k))))
+     (and (<= (- max) temp___179) (<= temp___179 max)))))) :pattern (
   (all_elements_in a max)) ))))
 
 (declare-fun all_left_elements_in ((Array Int integer) Int Int) Bool)
@@ -378,7 +379,8 @@
      (forall ((k Int))
      (=> (and (<= 0 k) (<= k 7))
      (=> (< k right)
-     (and (<= (- max) (to_rep (select a k))) (<= (to_rep (select a k)) max)))))) :pattern (
+     (let ((temp___183 (to_rep (select a k))))
+     (and (<= (- max) temp___183) (<= temp___183 max))))))) :pattern (
   (all_left_elements_in a right max)) ))))
 
 (declare-fun all_right_elements_in ((Array Int integer) Int Int) Bool)
@@ -397,7 +399,8 @@
      (forall ((k Int))
      (=> (and (<= 0 k) (<= k 7))
      (=> (< left k)
-     (and (<= (- max) (to_rep (select a k))) (<= (to_rep (select a k)) max)))))) :pattern (
+     (let ((temp___187 (to_rep (select a k))))
+     (and (<= (- max) temp___187) (<= temp___187 max))))))) :pattern (
   (all_right_elements_in a left max)) ))))
 
 (declare-fun intermediate_form ((Array Int integer)
@@ -477,8 +480,8 @@
  ;; File "prefixsum.ads", line 36, characters 0-0
   (not
   (forall ((a (Array Int integer)) (output_space Int) (left Int) (right Int)
-  (space Int) (temp___loop_entry_229 (Array Int integer))
-  (temp___loop_entry_227 (Array Int integer)) (o Bool) (usf Int) (o1 Bool)
+  (space Int) (temp___loop_entry_241 (Array Int integer))
+  (temp___loop_entry_239 (Array Int integer)) (o Bool) (usf Int) (o1 Bool)
   (o2 Bool))
   (=> (dynamic_invariant1 output_space false false true true)
   (=> (= (all_elements_in a 1000000) true)
@@ -487,8 +490,8 @@
   (=> (dynamic_invariant left false false true true)
   (=> (dynamic_invariant right false false true true)
   (=> (< space 8)
-  (=> (= temp___loop_entry_229 a)
-  (=> (= temp___loop_entry_227 a)
+  (=> (= temp___loop_entry_241 a)
+  (=> (= temp___loop_entry_239 a)
   (=>
   (let ((o3 (* space 1000000)))
   (and (in_range3 o3)
@@ -497,7 +500,8 @@
   (= (= o4 true)
   (forall ((k Int))
   (=> (and (<= 0 k) (<= k 7))
-  (and (<= (- o3) (to_rep (select a k))) (<= (to_rep (select a k)) o3)))))
+  (let ((temp___176 (to_rep (select a k))))
+  (and (<= (- o3) temp___176) (<= temp___176 o3))))))
   (ite (= o4 true)
   (= o (or (or (ite (= space 1) true false) (ite (= space 2) true false)) 
   (ite (= space 4) true false))) (= o false))))))
@@ -511,13 +515,13 @@
   (ite (= (mod2 (+ usf 1) 4) 0) (= o2 (ite (<= 4 space) true false))
   (= o2 false))
   (=> (= o2 true)
-  (let ((temp___230 (- usf 3)))
-  (=> (and (<= 0 temp___230) (<= temp___230 7))
+  (let ((temp___242 (- usf 3)))
+  (=> (and (<= 0 temp___242) (<= temp___242 7))
   (forall ((o3 Int))
-  (=> (= (to_rep (select temp___loop_entry_229 temp___230)) o3)
-  (let ((temp___228 (- usf 2)))
-  (=> (and (<= 0 temp___228) (<= temp___228 7))
+  (=> (= (to_rep (select temp___loop_entry_241 temp___242)) o3)
+  (let ((temp___240 (- usf 2)))
+  (=> (and (<= 0 temp___240) (<= temp___240 7))
   (forall ((o4 Int))
-  (=> (= (to_rep (select temp___loop_entry_227 temp___228)) o4)
+  (=> (= (to_rep (select temp___loop_entry_239 temp___240)) o4)
   (<= 0 (- usf 1)))))))))))))))))))))))))))))
 (check-sat)

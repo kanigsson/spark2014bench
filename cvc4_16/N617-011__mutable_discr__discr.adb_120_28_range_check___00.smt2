@@ -144,6 +144,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__private_discr__p_with_default__c1 Int)
+  (a us_split_discrs)) Bool (= rec__private_discr__p_with_default__c1 
+  (to_rep (rec__private_discr__p_with_default__c a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -198,12 +202,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
-(define-fun in_range1 ((rec__private_discr__p_with_default__c1 Int)
-  (a us_rep)) Bool (= rec__private_discr__p_with_default__c1 (to_rep
-                                                             (rec__private_discr__p_with_default__c
-                                                             (us_split_discrs1
-                                                             a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -255,7 +253,8 @@
   (temp___do_toplevel_274 Bool)
   (temp___do_typ_inv_275 Bool)) Bool (=>
                                      (not (= temp___skip_constant_273 true))
-                                     (in_range1 c temp___expr_276)))
+                                     (in_range1 c
+                                     (us_split_discrs1 temp___expr_276))))
 
 (define-fun default_initial_assumption1 ((temp___expr_278 us_rep)
   (temp___skip_top_level_279 Bool)) Bool (= (to_rep

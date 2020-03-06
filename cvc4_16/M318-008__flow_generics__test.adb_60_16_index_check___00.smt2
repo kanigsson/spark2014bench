@@ -433,14 +433,14 @@
   (=> (= (length a) (length b))
   (=> (dynamic_property 1 2147483647 (first1 b) (last1 b))
   (=> (dynamic_property 1 2147483647 (first1 a) (last1 a))
-  (forall ((temp___461 Int))
-  (=> (= (to_rep c__first) temp___461)
+  (forall ((temp___462 Int))
+  (=> (= (to_rep c__first) temp___462)
   (forall ((o Int))
   (=> (= (to_rep c__last) o)
   (forall ((i Int))
-  (=> (= i temp___461)
+  (=> (= i temp___462)
   (=>
-  (= (and (ite (<= temp___461 i) true false) (ite (<= i (div1 o 2)) true
+  (= (and (ite (<= temp___462 i) true false) (ite (<= i (div1 o 2)) true
                                              false)) true)
   (forall ((c (Array Int integer)) (i1 Int) (temp Int))
   (=>

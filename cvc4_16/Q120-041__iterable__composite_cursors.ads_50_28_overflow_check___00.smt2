@@ -349,19 +349,19 @@
 
 (declare-fun has_element__function_guard (Bool us_rep1 us_rep) Bool)
 
-(define-fun dynamic_invariant ((temp___expr_240 us_rep1)
-  (temp___is_init_236 Bool) (temp___skip_constant_237 Bool)
-  (temp___do_toplevel_238 Bool)
-  (temp___do_typ_inv_239 Bool)) Bool (=> (= temp___do_toplevel_238 true)
-                                     (=> (= temp___is_init_236 true)
+(define-fun dynamic_invariant ((temp___expr_242 us_rep1)
+  (temp___is_init_238 Bool) (temp___skip_constant_239 Bool)
+  (temp___do_toplevel_240 Bool)
+  (temp___do_typ_inv_241 Bool)) Bool (=> (= temp___do_toplevel_240 true)
+                                     (=> (= temp___is_init_238 true)
                                      (<= (to_rep
                                          (rec__composite_cursors__cont2__length
-                                         (us_split_fields3 temp___expr_240))) 100))))
+                                         (us_split_fields3 temp___expr_242))) 100))))
 
-(define-fun dynamic_predicate ((temp___249 us_rep1)) Bool (<= (to_rep
+(define-fun dynamic_predicate ((temp___251 us_rep1)) Bool (<= (to_rep
                                                               (rec__composite_cursors__cont2__length
                                                               (us_split_fields3
-                                                              temp___249))) 100))
+                                                              temp___251))) 100))
 
 ;; has_element__post_axiom
   (assert true)
@@ -371,14 +371,13 @@
   (forall ((c1 us_rep1))
   (forall ((p1 us_rep))
   (! (= (= (has_element c1 p1) true)
-     (and
-     (<= 1 (to_rep
-           (rec__composite_cursors__rec_cursor__content
-           (us_split_fields1 p1))))
-     (<= (to_rep
-         (rec__composite_cursors__rec_cursor__content (us_split_fields1 p1))) 
-     (to_rep (rec__composite_cursors__cont2__length (us_split_fields3 c1)))))) :pattern (
-  (has_element c1 p1)) ))))
+     (let ((temp___258 (to_rep
+                       (rec__composite_cursors__rec_cursor__content
+                       (us_split_fields1 p1)))))
+     (and (<= 1 temp___258)
+     (<= temp___258 (to_rep
+                    (rec__composite_cursors__cont2__length
+                    (us_split_fields3 c1))))))) :pattern ((has_element c1 p1)) ))))
 
 (declare-const i19s us_rep1)
 

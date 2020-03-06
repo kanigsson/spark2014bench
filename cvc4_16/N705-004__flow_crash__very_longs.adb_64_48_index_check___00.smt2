@@ -620,6 +620,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__very_longs__very_long__octet_length1 
+  (to_rep (rec__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -708,7 +712,7 @@
   (forall ((i natural))
   (and (<= 0 (naturalqtint i)) (<= (naturalqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -729,7 +733,7 @@
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
   (temp___do_typ_inv_38 Bool)) Bool (=>
                                     (or (= temp___is_init_35 true)
-                                    (<= 0 2147483647)) (in_range3
+                                    (<= 0 2147483647)) (in_range4
                                     temp___expr_39)))
 
 (declare-fun shift_right ((_ BitVec 16) Int) (_ BitVec 16))
@@ -832,21 +836,21 @@
 (define-fun t12b__ref_t12b__content__projection ((a t12b__ref)) us_t 
   (t12b__content a))
 
-(declare-fun temp_____aggregate_def_1247 ((_ BitVec 8) Int Int) us_t)
+(declare-fun temp_____aggregate_def_1248 ((_ BitVec 8) Int Int) us_t)
 
 ;; def_axiom
   (assert
-  (forall ((temp___1249 (_ BitVec 8)))
-  (forall ((temp___1250 Int) (temp___1251 Int))
-  (let ((temp___1248 (temp_____aggregate_def_1247 temp___1249 temp___1250
-                     temp___1251)))
-  (=> (dynamic_invariant3 temp___1249 true true true true)
+  (forall ((temp___1250 (_ BitVec 8)))
+  (forall ((temp___1251 Int) (temp___1252 Int))
+  (let ((temp___1249 (temp_____aggregate_def_1248 temp___1250 temp___1251
+                     temp___1252)))
+  (=> (dynamic_invariant3 temp___1250 true true true true)
   (and
-  (=> (dynamic_property 1 2147483647 temp___1250 temp___1251)
-  (and (= (first1 temp___1248) temp___1250)
-  (= (last1 temp___1248) temp___1251)))
-  (forall ((temp___1252 Int))
-  (= (to_rep2 (select (to_array temp___1248) temp___1252)) temp___1249))))))))
+  (=> (dynamic_property 1 2147483647 temp___1251 temp___1252)
+  (and (= (first1 temp___1249) temp___1251)
+  (= (last1 temp___1249) temp___1252)))
+  (forall ((temp___1253 Int))
+  (= (to_rep2 (select (to_array temp___1249) temp___1253)) temp___1250))))))))
 
 (define-fun dynamic_invariant5 ((temp___expr_253 us_t)
   (temp___is_init_249 Bool) (temp___skip_constant_250 Bool)
@@ -896,35 +900,35 @@
      (rec__very_longs__very_long__octet_length result____split_discrs)) very_longs__modadd_and_carry__R10b__assume)
   (=> (= very_longs__modadd_and_carry__R10b__assume r10b)
   (=> (dynamic_invariant4 r10b true false true true)
-  (let ((temp___1253 (temp_____aggregate_def_1247 #x00 1 r10b)))
-  (=> (= (first1 temp___1253) 1)
-  (=> (= (last1 temp___1253) r10b)
+  (let ((temp___1254 (temp_____aggregate_def_1248 #x00 1 r10b)))
+  (=> (= (first1 temp___1254) 1)
+  (=> (= (last1 temp___1254) r10b)
   (=>
-  (ite (<= (first1 temp___1253) (last1 temp___1253))
+  (ite (<= (first1 temp___1254) (last1 temp___1254))
   (and (<= 1 r10b)
-  (= (- (last1 temp___1253) (first1 temp___1253)) (- r10b 1))) (< r10b 1))
-  (let ((temp___1255 (of_array (to_array temp___1253) (first1 temp___1253)
-                     (last1 temp___1253))))
+  (= (- (last1 temp___1254) (first1 temp___1254)) (- r10b 1))) (< r10b 1))
+  (let ((temp___1256 (of_array (to_array temp___1254) (first1 temp___1254)
+                     (last1 temp___1254))))
   (=>
-  (ite (<= (first1 temp___1255) (last1 temp___1255))
+  (ite (<= (first1 temp___1256) (last1 temp___1256))
   (and (<= (first1 result____split_fields) (last1 result____split_fields))
-  (= (- (last1 temp___1255) (first1 temp___1255)) (- (last1
+  (= (- (last1 temp___1256) (first1 temp___1256)) (- (last1
                                                      result____split_fields) 
   (first1 result____split_fields))))
   (< (last1 result____split_fields) (first1 result____split_fields)))
   (forall ((result____split_fields1 us_t))
   (=>
-  (= result____split_fields1 (of_array (to_array temp___1255)
-                             (first1 temp___1255) (last1 temp___1255)))
+  (= result____split_fields1 (of_array (to_array temp___1256)
+                             (first1 temp___1256) (last1 temp___1256)))
   (forall ((carry1 (_ BitVec 16)))
   (=> (= carry1 #x0000)
-  (let ((temp___1261 (last1
+  (let ((temp___1262 (last1
                      (rec__very_longs__very_long__long_digits
                      (us_split_fields1 l)))))
   (forall ((i Int))
   (=> (= i 1)
   (=>
-  (= (and (ite (<= 1 i) true false) (ite (<= i temp___1261) true false)) true)
+  (= (and (ite (<= 1 i) true false) (ite (<= i temp___1262) true false)) true)
   (forall ((result____split_fields2 us_t) (carry2 (_ BitVec 16))
   (l_digit1 (_ BitVec 16)) (r_digit1 (_ BitVec 16)) (sum1 (_ BitVec 16))
   (i1 Int))
@@ -933,23 +937,23 @@
                (and
                (and
                (and
-               (and (dynamic_invariant2 r_digit1 false true true true)
+               (and (dynamic_invariant2 carry2 false true true true)
+               (dynamic_invariant2 r_digit1 false true true true))
                (dynamic_invariant2 sum1 false true true true))
                (dynamic_invariant
                (us_repqtmk result____split_discrs
                (us_split_fieldsqtmk result____split_fields2)) false true true
                true))
-               (forall ((temp___1271 Int))
+               (forall ((temp___1273 Int))
                (=>
-               (and (<= (first1 result____split_fields2) temp___1271)
-               (<= temp___1271 (last1 result____split_fields2)))
+               (and (<= (first1 result____split_fields2) temp___1273)
+               (<= temp___1273 (last1 result____split_fields2)))
                (=>
-               (or (< temp___1261 temp___1271)
-               (or (< temp___1271 1) (<= i1 temp___1271)))
-               (= (select (to_array result____split_fields2) temp___1271) (select 
-               (to_array result____split_fields1) temp___1271))))))
+               (or (< temp___1262 temp___1273)
+               (or (< temp___1273 1) (<= i1 temp___1273)))
+               (= (select (to_array result____split_fields2) temp___1273) (select 
+               (to_array result____split_fields1) temp___1273))))))
                (dynamic_invariant2 l_digit1 false true true true))
-               (dynamic_invariant2 carry2 false true true true))
           true false) (ite (and (<= 1 i1)
                            (<= i1 (last1
                                   (rec__very_longs__very_long__long_digits

@@ -376,6 +376,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range4 ((rec__simple_unc_arrays__table__last1 Int)
+  (a us_split_discrs)) Bool (= rec__simple_unc_arrays__table__last1 (to_rep
+                                                                    (rec__simple_unc_arrays__table__last
+                                                                    a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -483,7 +488,7 @@
   (forall ((i count))
   (and (<= 0 (countqtint i)) (<= (countqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -505,7 +510,7 @@
   (temp___do_toplevel_313 Bool)
   (temp___do_typ_inv_314 Bool)) Bool (=>
                                      (or (= temp___is_init_311 true)
-                                     (<= 0 2147483647)) (in_range4
+                                     (<= 0 2147483647)) (in_range5
                                      temp___expr_315)))
 
 ;; line_length__post_axiom

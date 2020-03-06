@@ -368,10 +368,10 @@
   (forall ((c us_rep))
   (forall ((p us_rep1))
   (! (= (= (has_element c p) true)
-     (and
-     (<= 1 (to_rep1 (rec__container__cursor__index (us_split_fields3 p))))
-     (<= (to_rep1 (rec__container__cursor__index (us_split_fields3 p))) 200))) :pattern (
-  (has_element c p)) ))))
+     (let ((temp___209 (to_rep1
+                       (rec__container__cursor__index (us_split_fields3 p)))))
+     (and (<= 1 temp___209) (<= temp___209 200)))) :pattern ((has_element c
+                                                             p)) ))))
 
 (declare-fun next (us_rep us_rep1) us_rep1)
 
@@ -457,9 +457,9 @@
   (forall ((c us_rep))
   (forall ((p us_rep1))
   (! (= (element c p) (to_rep
-                      (let ((temp___217 (rec__container__container__a
+                      (let ((temp___219 (rec__container__container__a
                                         (us_split_fields1 c))))
-                      (select temp___217 (to_rep1
+                      (select temp___219 (to_rep1
                                          (rec__container__cursor__index
                                          (us_split_fields3 p))))))) :pattern (
   (element c p)) ))))
@@ -509,7 +509,7 @@
                                      (or (= temp___is_init_161 true)
                                      (<= 1 200)) (in_range4 temp___expr_165)))
 
-(declare-fun temp_____aggregate_def_286 (Int) (Array Int positive))
+(declare-fun temp_____aggregate_def_289 (Int) (Array Int positive))
 
 (define-fun dynamic_invariant2 ((temp___expr_39 Int) (temp___is_init_35 Bool)
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
@@ -532,10 +532,10 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___288 Int))
-  (=> (dynamic_invariant3 temp___288 true true true true)
-  (forall ((temp___289 Int))
-  (= (select (temp_____aggregate_def_286 temp___288) temp___289) rliteral2)))))
+  (forall ((temp___291 Int))
+  (=> (dynamic_invariant3 temp___291 true true true true)
+  (forall ((temp___292 Int))
+  (= (select (temp_____aggregate_def_289 temp___291) temp___292) rliteral2)))))
 
 (assert
 ;; defqtvc
@@ -544,7 +544,7 @@
   (forall ((e Int) (int__ Int) (cont__split_fields (Array Int positive)))
   (=> (= int__ 2)
   (=> (dynamic_invariant1 int__ true false true true)
-  (=> (= cont__split_fields (temp_____aggregate_def_286 4))
+  (=> (= cont__split_fields (temp_____aggregate_def_289 4))
   (=> (= (us_repqtmk (us_split_fieldsqtmk cont__split_fields)) c12b)
   (let ((o c12b))
   (let ((o1 (first o)))
@@ -558,8 +558,9 @@
   (and
   (and (has_element__function_guard o3 o2 o1)
   (= (= o3 true)
-  (and (<= 1 (to_rep1 (rec__container__cursor__index (us_split_fields3 o1))))
-  (<= (to_rep1 (rec__container__cursor__index (us_split_fields3 o1))) 200))))
+  (let ((temp___206 (to_rep1
+                    (rec__container__cursor__index (us_split_fields3 o1)))))
+  (and (<= 1 temp___206) (<= temp___206 200)))))
   (ite (= o3 true)
   (let ((o4 c12b))
   (let ((o5 (element o4 o1)))
@@ -575,22 +576,23 @@
   (=>
   (and (has_element__function_guard o3 o2 o1)
   (= (= o3 true)
-  (and (<= 1 (to_rep1 (rec__container__cursor__index (us_split_fields3 o1))))
-  (<= (to_rep1 (rec__container__cursor__index (us_split_fields3 o1))) 200))))
+  (let ((temp___206 (to_rep1
+                    (rec__container__cursor__index (us_split_fields3 o1)))))
+  (and (<= 1 temp___206) (<= temp___206 200)))))
   (=> (= o3 true)
-  (forall ((int__1 Int) (e2 Int) (temp___296 natural))
+  (forall ((int__1 Int) (e2 Int) (temp___299 natural))
   (=>
-  (forall ((temp___2961 natural)) (has_element__function_guard
-  (has_element c12b (us_repqtmk1 (us_split_fieldsqtmk1 temp___2961))) 
-  c12b (us_repqtmk1 (us_split_fieldsqtmk1 temp___2961))))
+  (forall ((temp___2991 natural)) (has_element__function_guard
+  (has_element c12b (us_repqtmk1 (us_split_fieldsqtmk1 temp___2991))) 
+  c12b (us_repqtmk1 (us_split_fieldsqtmk1 temp___2991))))
   (=>
-  (forall ((temp___2961 natural)) (element__function_guard
-  (element c12b (us_repqtmk1 (us_split_fieldsqtmk1 temp___2961))) c12b
-  (us_repqtmk1 (us_split_fieldsqtmk1 temp___2961))))
+  (forall ((temp___2991 natural)) (element__function_guard
+  (element c12b (us_repqtmk1 (us_split_fieldsqtmk1 temp___2991))) c12b
+  (us_repqtmk1 (us_split_fieldsqtmk1 temp___2991))))
   (=>
   (= (and (ite (dynamic_invariant1 int__1 true true true true) true false) 
   (ite (and
-       (= (has_element c12b (us_repqtmk1 (us_split_fieldsqtmk1 temp___296))) true)
-       (= e2 (element c12b (us_repqtmk1 (us_split_fieldsqtmk1 temp___296)))))
+       (= (has_element c12b (us_repqtmk1 (us_split_fieldsqtmk1 temp___299))) true)
+       (= e2 (element c12b (us_repqtmk1 (us_split_fieldsqtmk1 temp___299)))))
   true false)) true) (in_range4 (+ int__1 1))))))))))))))))))))))
 (check-sat)

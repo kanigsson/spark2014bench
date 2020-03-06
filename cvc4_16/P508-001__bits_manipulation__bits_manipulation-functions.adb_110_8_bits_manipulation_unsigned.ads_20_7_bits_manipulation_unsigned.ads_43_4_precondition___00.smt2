@@ -549,12 +549,12 @@
 
 (declare-datatypes ((modular__ref 0))
 (((modular__refqtmk (modular__content modular)))))
-(define-fun modular__ref_modular__content__4__projection ((a modular__ref)) modular 
+(define-fun modular__ref_modular__content__2__projection ((a modular__ref)) modular 
   (modular__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_428 (_ BitVec 16))
-  (temp___is_init_424 Bool) (temp___skip_constant_425 Bool)
-  (temp___do_toplevel_426 Bool) (temp___do_typ_inv_427 Bool)) Bool true)
+(define-fun dynamic_invariant1 ((temp___expr_414 (_ BitVec 16))
+  (temp___is_init_410 Bool) (temp___skip_constant_411 Bool)
+  (temp___do_toplevel_412 Bool) (temp___do_typ_inv_413 Bool)) Bool true)
 
 ;; shift_right__post_axiom
   (assert
@@ -615,12 +615,12 @@
 (define-fun bit_position__ref_bit_position__content__3__projection ((a bit_position__ref)) bit_position 
   (bit_position__content a))
 
-(define-fun dynamic_invariant2 ((temp___expr_435 Int)
-  (temp___is_init_431 Bool) (temp___skip_constant_432 Bool)
-  (temp___do_toplevel_433 Bool)
-  (temp___do_typ_inv_434 Bool)) Bool (=>
-                                     (or (= temp___is_init_431 true)
-                                     (<= 0 15)) (in_range1 temp___expr_435)))
+(define-fun dynamic_invariant2 ((temp___expr_421 Int)
+  (temp___is_init_417 Bool) (temp___skip_constant_418 Bool)
+  (temp___do_toplevel_419 Bool)
+  (temp___do_typ_inv_420 Bool)) Bool (=>
+                                     (or (= temp___is_init_417 true)
+                                     (<= 0 15)) (in_range1 temp___expr_421)))
 
 ;; msb_index_fast_inline_always__post_axiom
   (assert

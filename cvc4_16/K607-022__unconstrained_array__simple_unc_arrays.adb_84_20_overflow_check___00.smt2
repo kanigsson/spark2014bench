@@ -512,6 +512,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range5 ((rec__simple_unc_arrays__table__last1 Int)
+  (a us_split_discrs)) Bool (= rec__simple_unc_arrays__table__last1 (to_rep
+                                                                    (rec__simple_unc_arrays__table__last
+                                                                    a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -706,7 +711,7 @@
   (forall ((i tvalueB))
   (and (<= (- 2147483648) (tvalueBqtint i)) (<= (tvalueBqtint i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range6 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
@@ -751,6 +756,6 @@
   (let ((temp___589 (rec__simple_unc_arrays__table__v (us_split_fields1 a))))
   (=> (and (<= (first1 temp___589) i1) (<= i1 (last1 temp___589)))
   (forall ((o Int))
-  (=> (= (to_rep2 (select (to_array temp___589) i1)) o) (in_range5
+  (=> (= (to_rep2 (select (to_array temp___589) i1)) o) (in_range6
   (+ sum1 o))))))))))))))))))))
 (check-sat)

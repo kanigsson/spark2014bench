@@ -324,13 +324,13 @@
   (and (and (<= (first1 a) i) (<= i (last1 a)))
   (= (to_rep (select (to_array a) i)) e)))
   (not
-  (let ((temp___298 (first1 a)))
-  (let ((temp___299 (last1 a)))
+  (let ((temp___299 (first1 a)))
+  (let ((temp___300 (last1 a)))
   (exists ((i Int))
-  (and (= i temp___298)
+  (and (= i temp___299)
   (or
   (not
-  (= (and (ite (<= temp___298 i) true false) (ite (<= i temp___299) true
+  (= (and (ite (<= temp___299 i) true false) (ite (<= i temp___300) true
                                              false)) true))
   (exists ((o Int))
   (and (= (to_rep (select (to_array a) i)) o)
@@ -347,5 +347,5 @@
                (dynamic_property1 (first1 a) (last1 a) i1))
           true false) (ite (and (<= (first1 a) i1) (<= i1 (last1 a))) true
                       false)) true)
-  (= i1 temp___299))))))))))))))))))))))
+  (= i1 temp___300))))))))))))))))))))))
 (check-sat)

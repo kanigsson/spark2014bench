@@ -134,6 +134,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__my_lists__my_lists__list__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__my_lists__my_lists__list__capacity1 
+  (to_rep (rec__my_lists__my_lists__list__capacity a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -186,12 +190,6 @@
   (assert
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq1 a b) (oeq a b)) :pattern ((user_eq1 a b)) )))
-
-(define-fun in_range1 ((rec__my_lists__my_lists__list__capacity1 Int)
-  (a us_rep)) Bool (= rec__my_lists__my_lists__list__capacity1 (to_rep
-                                                               (rec__my_lists__my_lists__list__capacity
-                                                               (us_split_discrs1
-                                                               a)))))
 
 (declare-const value__size1 Int)
 
@@ -246,29 +244,24 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq2 a b) (oeq a b)) :pattern ((user_eq2 a b)) )))
 
-(define-fun dynamic_invariant ((temp___expr_655 us_rep)
-  (temp___is_init_651 Bool) (temp___skip_constant_652 Bool)
-  (temp___do_toplevel_653 Bool)
-  (temp___do_typ_inv_654 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_652 true))
-                                     (in_range1 100 temp___expr_655)))
+(define-fun dynamic_invariant ((temp___expr_662 us_rep)
+  (temp___is_init_658 Bool) (temp___skip_constant_659 Bool)
+  (temp___do_toplevel_660 Bool)
+  (temp___do_typ_inv_661 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_659 true))
+                                     (in_range1 100
+                                     (us_split_discrs1 temp___expr_662))))
 
-(define-fun default_initial_assumption ((temp___expr_657 us_rep)
-  (temp___skip_top_level_658 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_664 us_rep)
+  (temp___skip_top_level_665 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__my_lists__my_lists__list__capacity
                                             (us_split_discrs1
-                                            temp___expr_657))) 100)
+                                            temp___expr_664))) 100)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_658 true))
-                                         (= (is_empty temp___expr_657) true))))
-
-(define-fun in_range2 ((rec__my_lists__my_lists__list__capacity1 Int)
-  (a us_rep)) Bool (= rec__my_lists__my_lists__list__capacity1 (to_rep
-                                                               (rec__my_lists__my_lists__list__capacity
-                                                               (us_split_discrs1
-                                                               a)))))
+                                         (= temp___skip_top_level_665 true))
+                                         (= (is_empty temp___expr_664) true))))
 
 (declare-const value__size2 Int)
 
@@ -319,29 +312,24 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq3 a b) (oeq a b)) :pattern ((user_eq3 a b)) )))
 
-(define-fun dynamic_invariant1 ((temp___expr_583 us_rep)
-  (temp___is_init_579 Bool) (temp___skip_constant_580 Bool)
-  (temp___do_toplevel_581 Bool)
-  (temp___do_typ_inv_582 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_580 true))
-                                     (in_range2 100 temp___expr_583)))
+(define-fun dynamic_invariant1 ((temp___expr_590 us_rep)
+  (temp___is_init_586 Bool) (temp___skip_constant_587 Bool)
+  (temp___do_toplevel_588 Bool)
+  (temp___do_typ_inv_589 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_587 true))
+                                     (in_range1 100
+                                     (us_split_discrs1 temp___expr_590))))
 
-(define-fun default_initial_assumption1 ((temp___expr_585 us_rep)
-  (temp___skip_top_level_586 Bool)) Bool (and
+(define-fun default_initial_assumption1 ((temp___expr_592 us_rep)
+  (temp___skip_top_level_593 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__my_lists__my_lists__list__capacity
                                             (us_split_discrs1
-                                            temp___expr_585))) 100)
+                                            temp___expr_592))) 100)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_586 true))
-                                         (= (is_empty temp___expr_585) true))))
-
-(define-fun in_range3 ((rec__my_lists__my_lists__list__capacity1 Int)
-  (a us_rep)) Bool (= rec__my_lists__my_lists__list__capacity1 (to_rep
-                                                               (rec__my_lists__my_lists__list__capacity
-                                                               (us_split_discrs1
-                                                               a)))))
+                                         (= temp___skip_top_level_593 true))
+                                         (= (is_empty temp___expr_592) true))))
 
 (declare-const value__size3 Int)
 
@@ -392,29 +380,24 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq4 a b) (oeq a b)) :pattern ((user_eq4 a b)) )))
 
-(define-fun dynamic_invariant2 ((temp___expr_593 us_rep)
-  (temp___is_init_589 Bool) (temp___skip_constant_590 Bool)
-  (temp___do_toplevel_591 Bool)
-  (temp___do_typ_inv_592 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_590 true))
-                                     (in_range3 100 temp___expr_593)))
+(define-fun dynamic_invariant2 ((temp___expr_600 us_rep)
+  (temp___is_init_596 Bool) (temp___skip_constant_597 Bool)
+  (temp___do_toplevel_598 Bool)
+  (temp___do_typ_inv_599 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_597 true))
+                                     (in_range1 100
+                                     (us_split_discrs1 temp___expr_600))))
 
-(define-fun default_initial_assumption2 ((temp___expr_595 us_rep)
-  (temp___skip_top_level_596 Bool)) Bool (and
+(define-fun default_initial_assumption2 ((temp___expr_602 us_rep)
+  (temp___skip_top_level_603 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__my_lists__my_lists__list__capacity
                                             (us_split_discrs1
-                                            temp___expr_595))) 100)
+                                            temp___expr_602))) 100)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_596 true))
-                                         (= (is_empty temp___expr_595) true))))
-
-(define-fun in_range4 ((rec__my_lists__my_lists__list__capacity1 Int)
-  (a us_rep)) Bool (= rec__my_lists__my_lists__list__capacity1 (to_rep
-                                                               (rec__my_lists__my_lists__list__capacity
-                                                               (us_split_discrs1
-                                                               a)))))
+                                         (= temp___skip_top_level_603 true))
+                                         (= (is_empty temp___expr_602) true))))
 
 (declare-const value__size4 Int)
 
@@ -465,29 +448,24 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq5 a b) (oeq a b)) :pattern ((user_eq5 a b)) )))
 
-(define-fun dynamic_invariant3 ((temp___expr_615 us_rep)
-  (temp___is_init_611 Bool) (temp___skip_constant_612 Bool)
-  (temp___do_toplevel_613 Bool)
-  (temp___do_typ_inv_614 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_612 true))
-                                     (in_range4 100 temp___expr_615)))
+(define-fun dynamic_invariant3 ((temp___expr_622 us_rep)
+  (temp___is_init_618 Bool) (temp___skip_constant_619 Bool)
+  (temp___do_toplevel_620 Bool)
+  (temp___do_typ_inv_621 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_619 true))
+                                     (in_range1 100
+                                     (us_split_discrs1 temp___expr_622))))
 
-(define-fun default_initial_assumption3 ((temp___expr_617 us_rep)
-  (temp___skip_top_level_618 Bool)) Bool (and
+(define-fun default_initial_assumption3 ((temp___expr_624 us_rep)
+  (temp___skip_top_level_625 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__my_lists__my_lists__list__capacity
                                             (us_split_discrs1
-                                            temp___expr_617))) 100)
+                                            temp___expr_624))) 100)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_618 true))
-                                         (= (is_empty temp___expr_617) true))))
-
-(define-fun in_range5 ((rec__my_lists__my_lists__list__capacity1 Int)
-  (a us_rep)) Bool (= rec__my_lists__my_lists__list__capacity1 (to_rep
-                                                               (rec__my_lists__my_lists__list__capacity
-                                                               (us_split_discrs1
-                                                               a)))))
+                                         (= temp___skip_top_level_625 true))
+                                         (= (is_empty temp___expr_624) true))))
 
 (declare-const value__size5 Int)
 
@@ -538,29 +516,24 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq6 a b) (oeq a b)) :pattern ((user_eq6 a b)) )))
 
-(define-fun dynamic_invariant4 ((temp___expr_625 us_rep)
-  (temp___is_init_621 Bool) (temp___skip_constant_622 Bool)
-  (temp___do_toplevel_623 Bool)
-  (temp___do_typ_inv_624 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_622 true))
-                                     (in_range5 100 temp___expr_625)))
+(define-fun dynamic_invariant4 ((temp___expr_632 us_rep)
+  (temp___is_init_628 Bool) (temp___skip_constant_629 Bool)
+  (temp___do_toplevel_630 Bool)
+  (temp___do_typ_inv_631 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_629 true))
+                                     (in_range1 100
+                                     (us_split_discrs1 temp___expr_632))))
 
-(define-fun default_initial_assumption4 ((temp___expr_627 us_rep)
-  (temp___skip_top_level_628 Bool)) Bool (and
+(define-fun default_initial_assumption4 ((temp___expr_634 us_rep)
+  (temp___skip_top_level_635 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__my_lists__my_lists__list__capacity
                                             (us_split_discrs1
-                                            temp___expr_627))) 100)
+                                            temp___expr_634))) 100)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_628 true))
-                                         (= (is_empty temp___expr_627) true))))
-
-(define-fun in_range6 ((rec__my_lists__my_lists__list__capacity1 Int)
-  (a us_rep)) Bool (= rec__my_lists__my_lists__list__capacity1 (to_rep
-                                                               (rec__my_lists__my_lists__list__capacity
-                                                               (us_split_discrs1
-                                                               a)))))
+                                         (= temp___skip_top_level_635 true))
+                                         (= (is_empty temp___expr_634) true))))
 
 (declare-const value__size6 Int)
 
@@ -611,29 +584,24 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq7 a b) (oeq a b)) :pattern ((user_eq7 a b)) )))
 
-(define-fun dynamic_invariant5 ((temp___expr_635 us_rep)
-  (temp___is_init_631 Bool) (temp___skip_constant_632 Bool)
-  (temp___do_toplevel_633 Bool)
-  (temp___do_typ_inv_634 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_632 true))
-                                     (in_range6 100 temp___expr_635)))
+(define-fun dynamic_invariant5 ((temp___expr_642 us_rep)
+  (temp___is_init_638 Bool) (temp___skip_constant_639 Bool)
+  (temp___do_toplevel_640 Bool)
+  (temp___do_typ_inv_641 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_639 true))
+                                     (in_range1 100
+                                     (us_split_discrs1 temp___expr_642))))
 
-(define-fun default_initial_assumption5 ((temp___expr_637 us_rep)
-  (temp___skip_top_level_638 Bool)) Bool (and
+(define-fun default_initial_assumption5 ((temp___expr_644 us_rep)
+  (temp___skip_top_level_645 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__my_lists__my_lists__list__capacity
                                             (us_split_discrs1
-                                            temp___expr_637))) 100)
+                                            temp___expr_644))) 100)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_638 true))
-                                         (= (is_empty temp___expr_637) true))))
-
-(define-fun in_range7 ((rec__my_lists__my_lists__list__capacity1 Int)
-  (a us_rep)) Bool (= rec__my_lists__my_lists__list__capacity1 (to_rep
-                                                               (rec__my_lists__my_lists__list__capacity
-                                                               (us_split_discrs1
-                                                               a)))))
+                                         (= temp___skip_top_level_645 true))
+                                         (= (is_empty temp___expr_644) true))))
 
 (declare-const value__size7 Int)
 
@@ -679,23 +647,24 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS6 Int)
 
-(define-fun dynamic_invariant6 ((temp___expr_645 us_rep)
-  (temp___is_init_641 Bool) (temp___skip_constant_642 Bool)
-  (temp___do_toplevel_643 Bool)
-  (temp___do_typ_inv_644 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_642 true))
-                                     (in_range7 100 temp___expr_645)))
+(define-fun dynamic_invariant6 ((temp___expr_652 us_rep)
+  (temp___is_init_648 Bool) (temp___skip_constant_649 Bool)
+  (temp___do_toplevel_650 Bool)
+  (temp___do_typ_inv_651 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_649 true))
+                                     (in_range1 100
+                                     (us_split_discrs1 temp___expr_652))))
 
-(define-fun default_initial_assumption6 ((temp___expr_647 us_rep)
-  (temp___skip_top_level_648 Bool)) Bool (and
+(define-fun default_initial_assumption6 ((temp___expr_654 us_rep)
+  (temp___skip_top_level_655 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__my_lists__my_lists__list__capacity
                                             (us_split_discrs1
-                                            temp___expr_647))) 100)
+                                            temp___expr_654))) 100)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_648 true))
-                                         (= (is_empty temp___expr_647) true))))
+                                         (= temp___skip_top_level_655 true))
+                                         (= (is_empty temp___expr_654) true))))
 
 (define-fun dynamic_invariant7 ((temp___expr_243 Int)
   (temp___is_init_239 Bool) (temp___skip_constant_240 Bool)
@@ -758,7 +727,7 @@
 
 (define-fun length2 ((x Int) (y Int)) Int (ite (<= x y) (+ (- y x) 1) 0))
 
-(define-fun in_range8 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range2 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE1 (Bool) us_image)
 
@@ -828,7 +797,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range9 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -850,7 +819,7 @@
   (temp___do_toplevel_284 Bool)
   (temp___do_typ_inv_285 Bool)) Bool (=>
                                      (or (= temp___is_init_282 true)
-                                     (<= 0 2147483647)) (in_range9
+                                     (<= 0 2147483647)) (in_range3
                                      temp___expr_286)))
 
 ;; length__post_axiom
@@ -869,7 +838,7 @@
   (forall ((i element_type))
   (and (<= 0 (element_typeqtint i)) (<= (element_typeqtint i) 100))))
 
-(define-fun in_range10 ((x Int)) Bool (and (<= 0 x) (<= x 100)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -891,8 +860,7 @@
   (temp___do_toplevel_277 Bool)
   (temp___do_typ_inv_278 Bool)) Bool (=>
                                      (or (= temp___is_init_275 true)
-                                     (<= 0 100)) (in_range10
-                                     temp___expr_279)))
+                                     (<= 0 100)) (in_range4 temp___expr_279)))
 
 ;; get__post_axiom
   (assert
@@ -917,11 +885,12 @@
   (=> (dynamic_invariant
   (us_repqtmk l1__split_discrs (us_split_fieldsqtmk l1__split_fields)) false
   false true true)
-  (let ((o (us_repqtmk l1__split_discrs
-           (us_split_fieldsqtmk l1__split_fields))))
+  (let ((temp___1075 (us_repqtmk l1__split_discrs
+                     (us_split_fieldsqtmk l1__split_fields))))
   (forall ((l2__split_fields us_main_type))
-  (=> (= (us_split_fieldsqtmk l2__split_fields) (us_split_fields1 o))
-  (=> (= l2__split_discrs (us_split_discrs1 o))
+  (=>
+  (= (us_split_fieldsqtmk l2__split_fields) (us_split_fields1 temp___1075))
+  (=> (= l2__split_discrs (us_split_discrs1 temp___1075))
   (=> (dynamic_invariant1
   (us_repqtmk l2__split_discrs (us_split_fieldsqtmk l2__split_fields)) true
   false true true)

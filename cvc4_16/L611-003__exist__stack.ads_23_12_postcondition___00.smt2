@@ -253,7 +253,8 @@
      (and
      (forall ((i Int))
      (=> (and (<= 1 i) (<= i s))
-     (and (<= 0 (to_rep (select t i))) (<= (to_rep (select t i)) 2147483647))))
+     (let ((temp___195 (to_rep (select t i))))
+     (and (<= 0 temp___195) (<= temp___195 2147483647)))))
      (forall ((i Int))
      (=> (and (<= (+ s 1) i) (<= i 100)) (= (to_rep (select t i)) (- 1)))))) :pattern (
   (valid t s)) ))))
@@ -350,10 +351,10 @@
   (=> (dynamic_invariant1 n true false true true)
   (forall ((o element_t))
   (=> (= (to_rep o) value)
-  (let ((temp___216 (+ n 1)))
-  (=> (and (<= 1 temp___216) (<= temp___216 100))
+  (let ((temp___220 (+ n 1)))
+  (=> (and (<= 1 temp___220) (<= temp___220 100))
   (forall ((t1 (Array Int element_t)))
-  (=> (= t1 (store t temp___216 o))
+  (=> (= t1 (store t temp___220 o))
   (let ((o1 (size t1)))
   (=>
   (forall ((t2 (Array Int element_t)) (o2 Int)) (valid__function_guard

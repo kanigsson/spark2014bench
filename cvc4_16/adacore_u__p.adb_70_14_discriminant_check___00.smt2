@@ -318,6 +318,10 @@
                                                    (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range3 ((rec__p__search_result__found1 Bool)
+  (a1 us_split_discrs)) Bool (= rec__p__search_result__found1 (rec__p__search_result__found
+                                                              a1)))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -402,10 +406,6 @@
                                      2147483647 (first1 temp___expr_161)
                                      (last1 temp___expr_161))))
 
-(define-fun in_range3 ((rec__p__search_result__found1 Bool)
-  (a1 us_rep)) Bool (= rec__p__search_result__found1 (rec__p__search_result__found
-                                                     (us_split_discrs1 a1))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -461,10 +461,6 @@
 (((t18b__refqtmk (t18b__content us_rep)))))
 (define-fun t18b__ref_t18b__content__projection ((a1 t18b__ref)) us_rep 
   (t18b__content a1))
-
-(define-fun in_range4 ((rec__p__search_result__found1 Bool)
-  (a1 us_rep)) Bool (= rec__p__search_result__found1 (rec__p__search_result__found
-                                                     (us_split_discrs1 a1))))
 
 (declare-const value__size3 Int)
 
@@ -538,13 +534,13 @@
   (=> (dynamic_invariant e true false true true)
   (=> (not (= result____attr__constrained true))
   (=>
-  (let ((temp___286 (first1 a)))
-  (let ((temp___287 (last1 a)))
+  (let ((temp___287 (first1 a)))
+  (let ((temp___288 (last1 a)))
   (exists ((i Int))
-  (and (= i temp___286)
+  (and (= i temp___287)
   (or
   (not
-  (= (and (ite (<= temp___286 i) true false) (ite (<= i temp___287) true
+  (= (and (ite (<= temp___287 i) true false) (ite (<= i temp___288) true
                                              false)) true))
   (exists ((i1 Int))
   (and
@@ -555,7 +551,7 @@
   (and (= (to_rep1 (select (to_array a) i1)) o)
   (exists ((spark__branch Bool))
   (and (= spark__branch (ite (= o e) true false))
-  (and (not (= spark__branch true)) (= i1 temp___287)))))))))))))
+  (and (not (= spark__branch true)) (= i1 temp___288)))))))))))))
   (=> (= result____split_discrs r21b)
   (=> (= result____attr__constrained true)
   (= (distinct 0 0) result____split_discrs))))))))))

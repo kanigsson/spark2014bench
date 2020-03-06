@@ -332,15 +332,14 @@
 ;; peek__def_axiom
   (assert
   (forall ((s us_rep))
-  (! (= (peek s) (ite (and
-                      (<= 1 (to_rep1
-                            (rec__stacks__stack__top (us_split_fields1 s))))
-                      (<= (to_rep1
-                          (rec__stacks__stack__top (us_split_fields1 s))) 100))
+  (! (= (peek s) (ite (let ((temp___189 (to_rep1
+                                        (rec__stacks__stack__top
+                                        (us_split_fields1 s)))))
+                      (and (<= 1 temp___189) (<= temp___189 100)))
                  (to_rep
-                 (let ((temp___187 (rec__stacks__stack__content
+                 (let ((temp___188 (rec__stacks__stack__content
                                    (us_split_fields1 s))))
-                 (select temp___187 (to_rep1
+                 (select temp___188 (to_rep1
                                     (rec__stacks__stack__top
                                     (us_split_fields1 s))))))
                  0)) :pattern ((peek s)) )))
@@ -401,7 +400,7 @@
                       (rec__stacks__stack__content s__split_fields)))
   (forall ((o4 natural))
   (=> (= (to_rep o4) e)
-  (forall ((temp___201 Int))
-  (=> (= (to_rep1 (rec__stacks__stack__top s__split_fields1)) temp___201)
-  (<= 1 temp___201)))))))))))))))))))))
+  (forall ((temp___204 Int))
+  (=> (= (to_rep1 (rec__stacks__stack__top s__split_fields1)) temp___204)
+  (<= 1 temp___204)))))))))))))))))))))
 (check-sat)

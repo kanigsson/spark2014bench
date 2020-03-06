@@ -189,6 +189,10 @@
                         (to_rep (rec__a__rec__b (us_split_fields1 b)))))))
                    true false))
 
+(define-fun in_range2 ((rec__a__rec__disc1 Int)
+  (a us_split_discrs)) Bool (= rec__a__rec__disc1 (to_rep1
+                                                  (rec__a__rec__disc a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -272,11 +276,11 @@
                                      (and (<= 1 temp___172)
                                      (<= temp___172 5))))
 
-(define-fun default_initial_assumption ((temp___expr_173 us_rep)
-  (temp___skip_top_level_174 Bool)) Bool (= (to_rep1
+(define-fun default_initial_assumption ((temp___expr_174 us_rep)
+  (temp___skip_top_level_175 Bool)) Bool (= (to_rep1
                                             (rec__a__rec__disc
                                             (us_split_discrs1
-                                            temp___expr_173))) 10))
+                                            temp___expr_174))) 10))
 
 (define-fun dynamic_invariant1 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)

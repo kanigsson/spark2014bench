@@ -156,28 +156,25 @@
  ;; File "statpred.adb", line 1, characters 0-0
   (not
   (=> (id__function_guard (id 2) 2)
-  (=> (id__function_guard (id 2) 2)
   (=>
   (let ((temp___190 (id 2)))
-  (and (in_range2 (id 2))
+  (and (in_range2 temp___190)
   (or (and (<= (- 2147483648) temp___190) (<= temp___190 (- 2)))
   (and (<= 2 temp___190) (<= temp___190 2147483647)))))
   (=> (id__function_guard (id (- 2)) (- 2))
-  (=> (id__function_guard (id (- 2)) (- 2))
   (=>
   (let ((temp___195 (id (- 2))))
-  (and (in_range2 (id (- 2)))
+  (and (in_range2 temp___195)
   (or (and (<= (- 2147483648) temp___195) (<= temp___195 (- 2)))
   (and (<= 2 temp___195) (<= temp___195 2147483647)))))
   (=> (id__function_guard (id 0) 0)
-  (=> (id__function_guard (id 0) 0)
   (= (not (let ((temp___200 (id 0)))
-          (and (ite (in_range2 (id 0)) true false) (ite (or
-                                                        (and
-                                                        (<= (- 2147483648) temp___200)
-                                                        (<= temp___200 (- 2)))
-                                                        (and
-                                                        (<= 2 temp___200)
-                                                        (<= temp___200 2147483647)))
-                                                   true false)))) true)))))))))))
+          (and (ite (in_range2 temp___200) true false) (ite (or
+                                                            (and
+                                                            (<= (- 2147483648) temp___200)
+                                                            (<= temp___200 (- 2)))
+                                                            (and
+                                                            (<= 2 temp___200)
+                                                            (<= temp___200 2147483647)))
+                                                       true false)))) true))))))))
 (check-sat)

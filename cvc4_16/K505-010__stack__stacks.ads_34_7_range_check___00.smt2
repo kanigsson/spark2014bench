@@ -502,6 +502,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range5 ((rec__stacks__stack__max1 Int)
+  (a us_split_discrs)) Bool (= rec__stacks__stack__max1 (to_rep
+                                                        (rec__stacks__stack__max
+                                                        a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

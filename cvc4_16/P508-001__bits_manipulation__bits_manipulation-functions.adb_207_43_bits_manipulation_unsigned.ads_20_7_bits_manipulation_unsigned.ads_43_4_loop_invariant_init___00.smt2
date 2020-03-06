@@ -267,12 +267,12 @@
 
 (declare-datatypes ((modular__ref 0))
 (((modular__refqtmk (modular__content modular)))))
-(define-fun modular__ref_modular__content__4__projection ((a modular__ref)) modular 
+(define-fun modular__ref_modular__content__2__projection ((a modular__ref)) modular 
   (modular__content a))
 
-(define-fun dynamic_invariant ((temp___expr_428 (_ BitVec 16))
-  (temp___is_init_424 Bool) (temp___skip_constant_425 Bool)
-  (temp___do_toplevel_426 Bool) (temp___do_typ_inv_427 Bool)) Bool true)
+(define-fun dynamic_invariant ((temp___expr_414 (_ BitVec 16))
+  (temp___is_init_410 Bool) (temp___skip_constant_411 Bool)
+  (temp___do_toplevel_412 Bool) (temp___do_typ_inv_413 Bool)) Bool true)
 
 (declare-sort mask_size 0)
 
@@ -300,12 +300,12 @@
 (define-fun mask_size__ref_mask_size__content__3__projection ((a mask_size__ref)) mask_size 
   (mask_size__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_442 Int)
-  (temp___is_init_438 Bool) (temp___skip_constant_439 Bool)
-  (temp___do_toplevel_440 Bool)
-  (temp___do_typ_inv_441 Bool)) Bool (=>
-                                     (or (= temp___is_init_438 true)
-                                     (<= 1 16)) (in_range1 temp___expr_442)))
+(define-fun dynamic_invariant1 ((temp___expr_428 Int)
+  (temp___is_init_424 Bool) (temp___skip_constant_425 Bool)
+  (temp___do_toplevel_426 Bool)
+  (temp___do_typ_inv_427 Bool)) Bool (=>
+                                     (or (= temp___is_init_424 true)
+                                     (<= 1 16)) (in_range1 temp___expr_428)))
 
 (declare-sort integer 0)
 
@@ -391,24 +391,24 @@
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i amount) true false)) true)
   (forall ((o (_ BitVec 16)))
   (=>
-  (let ((temp___599 (- i 1)))
-  (ite (< temp___599 65536) (= o (bvshl #x0001 ((_ int2bv 16) temp___599)))
+  (let ((temp___575 (- i 1)))
+  (ite (< temp___575 65536) (= o (bvshl #x0001 ((_ int2bv 16) temp___575)))
   (= o #x0000)))
   (forall ((result__1 (_ BitVec 16)))
   (=> (= result__1 (bvadd result__ o))
   (forall ((o1 (_ BitVec 16)))
   (=>
-  (let ((temp___604 (- i 1)))
-  (ite (< temp___604 65536) (= o1 (bvshl #x0001 ((_ int2bv 16) temp___604)))
+  (let ((temp___580 (- i 1)))
+  (ite (< temp___580 65536) (= o1 (bvshl #x0001 ((_ int2bv 16) temp___580)))
   (= o1 #x0000)))
   (forall ((o2 (_ BitVec 16)))
   (=>
-  (let ((temp___603 (- i 1)))
-  (ite (< temp___603 65536) (= o2 (bvshl #x0001 ((_ int2bv 16) temp___603)))
+  (let ((temp___579 (- i 1)))
+  (ite (< temp___579 65536) (= o2 (bvshl #x0001 ((_ int2bv 16) temp___579)))
   (= o2 #x0000)))
-  (= (bvand result__1 (let ((temp___605 (- i 1)))
-                      (ite (< temp___605 65536)
-                      (bvshl #x0001 ((_ int2bv 16) temp___605)) #x0000))) 
-  (let ((temp___606 (- i 1)))
-  (ite (< temp___606 65536) (bvshl #x0001 ((_ int2bv 16) temp___606)) #x0000)))))))))))))))))))))
+  (= (bvand result__1 (let ((temp___581 (- i 1)))
+                      (ite (< temp___581 65536)
+                      (bvshl #x0001 ((_ int2bv 16) temp___581)) #x0000))) 
+  (let ((temp___582 (- i 1)))
+  (ite (< temp___582 65536) (bvshl #x0001 ((_ int2bv 16) temp___582)) #x0000)))))))))))))))))))))
 (check-sat)

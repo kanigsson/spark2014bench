@@ -411,6 +411,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range4 ((rec__stacks__stack__max1 Int)
+  (a us_split_discrs)) Bool (= rec__stacks__stack__max1 (to_rep
+                                                        (rec__stacks__stack__max
+                                                        a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -560,7 +565,7 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-K505-010__stack-17358/src/gnatprove/stacks__stack.mlw", line 932, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-K505-010__stack-972/src/gnatprove/stacks__stack.mlw", line 946, characters 5-8
   (not
   (forall ((usf Int) (usf1 us_rep))
   (=> (dynamic_invariant usf true true true true)

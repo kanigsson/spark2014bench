@@ -441,7 +441,7 @@
 ;; defqtvc
  ;; File "perm.ads", line 9, characters 0-0
   (not
-  (forall ((temp___852 us_t))
+  (forall ((temp___856 us_t))
   (=> (dynamic_invariant a true false true true)
   (=> (dynamic_invariant1 i true false true true)
   (=> (invariant____function_guard (invariant__ a) a)
@@ -449,33 +449,33 @@
   (=> (<= (first1 a) i)
   (=> (<= i (last1 a))
   (=>
-  (let ((temp___849 (last1 a)))
-  (let ((temp___848 (+ i 1)))
+  (let ((temp___853 (last1 a)))
+  (let ((temp___852 (+ i 1)))
   (and
-  (=> (<= temp___848 temp___849)
-  (and (and (<= (first1 a) temp___848) (<= temp___848 (last1 a)))
-  (and (<= (first1 a) temp___849) (<= temp___849 (last1 a)))))
-  (let ((temp___851 (of_array (to_array a) temp___848 temp___849)))
-  (let ((temp___847 (- i 1)))
+  (=> (<= temp___852 temp___853)
+  (and (and (<= (first1 a) temp___852) (<= temp___852 (last1 a)))
+  (and (<= (first1 a) temp___853) (<= temp___853 (last1 a)))))
+  (let ((temp___855 (of_array (to_array a) temp___852 temp___853)))
+  (let ((temp___851 (- i 1)))
   (and
-  (=> (<= 1 temp___847)
+  (=> (<= 1 temp___851)
   (and (and (<= (first1 a) 1) (<= 1 (last1 a)))
-  (and (<= (first1 a) temp___847) (<= temp___847 (last1 a)))))
-  (let ((temp___850 (of_array (to_array a) 1 temp___847)))
-  (ite (= (length1 temp___850) 0)
-  (= temp___852 (of_array (to_array temp___851) (first1 temp___851)
-                (last1 temp___851)))
-  (let ((o (- (+ (first1 temp___850) (+ (length (first1 temp___850)
-                                        (last1 temp___850)) (length
+  (and (<= (first1 a) temp___851) (<= temp___851 (last1 a)))))
+  (let ((temp___854 (of_array (to_array a) 1 temp___851)))
+  (ite (= (length1 temp___854) 0)
+  (= temp___856 (of_array (to_array temp___855) (first1 temp___855)
+                (last1 temp___855)))
+  (let ((o (- (+ (first1 temp___854) (+ (length (first1 temp___854)
+                                        (last1 temp___854)) (length
                                                             (first1
-                                                            temp___851)
+                                                            temp___855)
                                                             (last1
-                                                            temp___851)))) 1)))
+                                                            temp___855)))) 1)))
   (and (in_range3 o)
-  (= temp___852 (of_array
-                (concat1 (to_array temp___850) (first1 temp___850)
-                (last1 temp___850) (to_array temp___851) (first1 temp___851)
-                (last1 temp___851)) (first1 temp___850) o))))))))))))
-  (=> (<= (first1 temp___852) (last1 temp___852))
-  (= (- (last1 temp___852) (first1 temp___852)) (- (- (last1 a) 1) 1)))))))))))))
+  (= temp___856 (of_array
+                (concat1 (to_array temp___854) (first1 temp___854)
+                (last1 temp___854) (to_array temp___855) (first1 temp___855)
+                (last1 temp___855)) (first1 temp___854) o))))))))))))
+  (=> (<= (first1 temp___856) (last1 temp___856))
+  (= (- (last1 temp___856) (first1 temp___856)) (- (- (last1 a) 1) 1)))))))))))))
 (check-sat)

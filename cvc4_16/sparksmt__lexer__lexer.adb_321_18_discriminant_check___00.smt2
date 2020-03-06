@@ -506,6 +506,11 @@
                         (rec__lexer__token__value (us_split_fields1 b))))))))
                    true false))
 
+(define-fun in_range7 ((rec__lexer__token__kind1 Int)
+  (a us_split_discrs)) Bool (= rec__lexer__token__kind1 (to_rep3
+                                                        (rec__lexer__token__kind
+                                                        a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -679,7 +684,7 @@
 
 (declare-sort valued_tokens 0)
 
-(define-fun in_range7 ((x Int)) Bool (and (<= 3 x) (<= x 8)))
+(define-fun in_range8 ((x Int)) Bool (and (<= 3 x) (<= x 8)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
 
@@ -701,12 +706,7 @@
   (temp___do_toplevel_177 Bool)
   (temp___do_typ_inv_178 Bool)) Bool (=>
                                      (or (= temp___is_init_175 true)
-                                     (<= 3 8)) (in_range7 temp___expr_179)))
-
-(define-fun in_range8 ((rec__lexer__token__kind1 Int)
-  (a us_rep)) Bool (= rec__lexer__token__kind1 (to_rep3
-                                               (rec__lexer__token__kind
-                                               (us_split_discrs1 a)))))
+                                     (<= 3 8)) (in_range8 temp___expr_179)))
 
 (declare-const value__size2 Int)
 
@@ -809,11 +809,6 @@
 (define-fun t29b__ref_t29b__content__projection ((a t29b__ref)) us_rep 
   (t29b__content a))
 
-(define-fun in_range9 ((rec__lexer__token__kind1 Int)
-  (a us_rep)) Bool (= rec__lexer__token__kind1 (to_rep3
-                                               (rec__lexer__token__kind
-                                               (us_split_discrs1 a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -914,11 +909,6 @@
 (((t32b__refqtmk (t32b__content us_rep)))))
 (define-fun t32b__ref_t32b__content__projection ((a t32b__ref)) us_rep 
   (t32b__content a))
-
-(define-fun in_range10 ((rec__lexer__token__kind1 Int)
-  (a us_rep)) Bool (= rec__lexer__token__kind1 (to_rep3
-                                               (rec__lexer__token__kind
-                                               (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 
@@ -1021,11 +1011,6 @@
 (define-fun t35b__ref_t35b__content__projection ((a t35b__ref)) us_rep 
   (t35b__content a))
 
-(define-fun in_range11 ((rec__lexer__token__kind1 Int)
-  (a us_rep)) Bool (= rec__lexer__token__kind1 (to_rep3
-                                               (rec__lexer__token__kind
-                                               (us_split_discrs1 a)))))
-
 (declare-const value__size5 Int)
 
 (declare-const object__size5 Int)
@@ -1127,11 +1112,6 @@
 (define-fun t38b__ref_t38b__content__projection ((a t38b__ref)) us_rep 
   (t38b__content a))
 
-(define-fun in_range12 ((rec__lexer__token__kind1 Int)
-  (a us_rep)) Bool (= rec__lexer__token__kind1 (to_rep3
-                                               (rec__lexer__token__kind
-                                               (us_split_discrs1 a)))))
-
 (declare-const value__size6 Int)
 
 (declare-const object__size6 Int)
@@ -1232,11 +1212,6 @@
 (((t41b__refqtmk (t41b__content us_rep)))))
 (define-fun t41b__ref_t41b__content__projection ((a t41b__ref)) us_rep 
   (t41b__content a))
-
-(define-fun in_range13 ((rec__lexer__token__kind1 Int)
-  (a us_rep)) Bool (= rec__lexer__token__kind1 (to_rep3
-                                               (rec__lexer__token__kind
-                                               (us_split_discrs1 a)))))
 
 (declare-const value__size7 Int)
 

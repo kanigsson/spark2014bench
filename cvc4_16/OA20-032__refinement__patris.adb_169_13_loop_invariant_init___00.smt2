@@ -2376,9 +2376,9 @@
   (and (= to_line1 del_line)
   (exists ((o2 (_ BitVec 32)))
   (and
-  (let ((temp___910 (bvadd complete_lines #x00000001)))
+  (let ((temp___919 (bvadd complete_lines #x00000001)))
   (ite (bvule (bvsub #x000186A0 complete_lines) #x00000001)
-  (= o2 (bvsub temp___910 #x000186A0)) (= o2 temp___910)))
+  (= o2 (bvsub temp___919 #x000186A0)) (= o2 temp___919)))
   (and (= complete_lines1 o2)
   (= (to_rep (select (select cur_board1 del_line) 1)) 0))))))
   (and (and (= cur_board1 cur_board) (= to_line1 to_line))

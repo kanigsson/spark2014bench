@@ -553,10 +553,10 @@
   (assert
   (forall ((arg us_rep1))
   (! (= (= (small arg) true)
-     (and
-     (<= 1 (to_rep (rec__abstract_ints__int__value1 (us_split_fields3 arg))))
-     (<= (to_rep (rec__abstract_ints__int__value1 (us_split_fields3 arg))) 100))) :pattern (
-  (small arg)) )))
+     (let ((temp___216 (to_rep
+                       (rec__abstract_ints__int__value1
+                       (us_split_fields3 arg)))))
+     (and (<= 1 temp___216) (<= temp___216 100)))) :pattern ((small arg)) )))
 
 (assert
 ;; defqtvc

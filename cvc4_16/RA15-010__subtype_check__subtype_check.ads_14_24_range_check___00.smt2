@@ -177,6 +177,11 @@
                         (rec__subtype_check__r__f (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range1 ((rec__subtype_check__r__d1 Int)
+  (a us_split_discrs)) Bool (= rec__subtype_check__r__d1 (to_rep
+                                                         (rec__subtype_check__r__d
+                                                         a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -232,7 +237,7 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
-(define-fun in_range1 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range2 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Bool) us_image)
 
@@ -305,11 +310,6 @@
   (temp___skip_top_level_176 Bool)) Bool (= (rec__subtype_check__r_acc__is_null_pointer
                                             temp___expr_175) true))
 
-(define-fun in_range2 ((rec__subtype_check__r__d1 Int)
-  (a us_rep)) Bool (= rec__subtype_check__r__d1 (to_rep
-                                                (rec__subtype_check__r__d
-                                                (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -372,7 +372,8 @@
   (temp___do_typ_inv_180 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_178 true))
-                                     (in_range2 (- 1) temp___expr_181))
+                                     (in_range1 (- 1)
+                                     (us_split_discrs1 temp___expr_181)))
                                      (dynamic_property first 100
                                      (to_rep
                                      (rec__subtype_check__r__d

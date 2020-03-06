@@ -269,6 +269,11 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range6 ((rec__file_io__read_result__status1 Int)
+  (a us_split_discrs)) Bool (= rec__file_io__read_result__status1 (to_rep1
+                                                                  (rec__file_io__read_result__status
+                                                                  a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -415,7 +420,7 @@
   (and (<= 0 (capacity_rangeqtint i))
   (<= (capacity_rangeqtint i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -503,10 +508,10 @@
 
 (declare-const dummy8 us_rep2)
 
-(declare-datatypes ((vector__ref 0))
-(((vector__refqtmk (vector__content us_rep2)))))
-(define-fun vector__ref_vector__content__projection ((a vector__ref)) us_rep2 
-  (vector__content a))
+(declare-datatypes ((unbounded_string__ref 0))
+(((unbounded_string__refqtmk (unbounded_string__content us_rep2)))))
+(define-fun unbounded_string__ref_unbounded_string__content__projection ((a unbounded_string__ref)) us_rep2 
+  (unbounded_string__content a))
 
 (define-fun to_rep2 ((x capacity_range)) Int (capacity_rangeqtint x))
 
@@ -519,20 +524,18 @@
 
 ;; range_axiom
   (assert
-  (forall ((x capacity_range)) (! (in_range6
+  (forall ((x capacity_range)) (! (in_range7
   (to_rep2 x)) :pattern ((to_rep2 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range6 x) (= (to_rep2 (of_rep2 x)) x)) :pattern ((to_rep2
+  (! (=> (in_range7 x) (= (to_rep2 (of_rep2 x)) x)) :pattern ((to_rep2
                                                               (of_rep2 x))) )))
 
-(define-fun in_range7 ((rec__unbounded_strings__char_vectors__vector__capacity1 Int)
-  (a us_rep2)) Bool (= rec__unbounded_strings__char_vectors__vector__capacity1 
-  (to_rep2
-  (rec__unbounded_strings__char_vectors__vector__capacity
-  (us_split_discrs3 a)))))
+(define-fun in_range8 ((rec__unbounded_strings__char_vectors__vector__capacity1 Int)
+  (a us_split_discrs2)) Bool (= rec__unbounded_strings__char_vectors__vector__capacity1 
+  (to_rep2 (rec__unbounded_strings__char_vectors__vector__capacity a))))
 
 (declare-const value__size3 Int)
 
@@ -571,10 +574,10 @@
 
 (declare-const dummy9 us_rep2)
 
-(declare-datatypes ((unbounded_string__ref 0))
-(((unbounded_string__refqtmk (unbounded_string__content us_rep2)))))
-(define-fun unbounded_string__ref_unbounded_string__content__projection ((a unbounded_string__ref)) us_rep2 
-  (unbounded_string__content a))
+(declare-datatypes ((vector__ref 0))
+(((vector__refqtmk (vector__content us_rep2)))))
+(define-fun vector__ref_vector__content__projection ((a vector__ref)) us_rep2 
+  (vector__content a))
 
 (declare-const s__split_discrs us_split_discrs2)
 
@@ -589,7 +592,8 @@
   (temp___do_toplevel_298 Bool)
   (temp___do_typ_inv_299 Bool)) Bool (=>
                                      (not (= temp___skip_constant_297 true))
-                                     (in_range7 32 temp___expr_300)))
+                                     (in_range8 32
+                                     (us_split_discrs3 temp___expr_300))))
 
 ;; temp___result_306'def
   (assert
@@ -640,7 +644,7 @@
   (temp___do_toplevel_285 Bool)
   (temp___do_typ_inv_286 Bool)) Bool (=>
                                      (or (= temp___is_init_283 true)
-                                     (<= 0 2147483647)) (in_range6
+                                     (<= 0 2147483647)) (in_range7
                                      temp___expr_287)))
 
 (assert

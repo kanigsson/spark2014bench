@@ -207,67 +207,6 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((cursor__ref 0))
-(((cursor__refqtmk (cursor__content us_rep)))))
-(define-fun cursor__ref_cursor__content__projection ((a cursor__ref)) us_rep 
-  (cursor__content a))
-
-(define-fun in_range2 ((rec__with_iterable__cursor__c1 Int)
-  (a us_rep)) Bool (= rec__with_iterable__cursor__c1 (to_rep
-                                                     (rec__with_iterable__cursor__c
-                                                     (us_split_discrs1 a)))))
-
-(declare-const value__size1 Int)
-
-(declare-const object__size1 Int)
-
-(declare-const alignment1 Int)
-
-;; value__size_axiom
-  (assert (<= 0 value__size1))
-
-;; object__size_axiom
-  (assert (<= 0 object__size1))
-
-;; alignment_axiom
-  (assert (<= 0 alignment1))
-
-(declare-const with_iterable__cursor__c__first__bit1 Int)
-
-(declare-const with_iterable__cursor__c__last__bit1 Int)
-
-(declare-const with_iterable__cursor__c__position1 Int)
-
-;; with_iterable__cursor__c__first__bit_axiom
-  (assert (<= 0 with_iterable__cursor__c__first__bit1))
-
-;; with_iterable__cursor__c__last__bit_axiom
-  (assert
-  (< with_iterable__cursor__c__first__bit1 with_iterable__cursor__c__last__bit1))
-
-;; with_iterable__cursor__c__position_axiom
-  (assert (<= 0 with_iterable__cursor__c__position1))
-
-(declare-const with_iterable__cursor__i__first__bit1 Int)
-
-(declare-const with_iterable__cursor__i__last__bit1 Int)
-
-(declare-const with_iterable__cursor__i__position1 Int)
-
-;; with_iterable__cursor__i__first__bit_axiom
-  (assert (<= 0 with_iterable__cursor__i__first__bit1))
-
-;; with_iterable__cursor__i__last__bit_axiom
-  (assert
-  (< with_iterable__cursor__i__first__bit1 with_iterable__cursor__i__last__bit1))
-
-;; with_iterable__cursor__i__position_axiom
-  (assert (<= 0 with_iterable__cursor__i__position1))
-
-(declare-fun user_eq3 (us_rep us_rep) Bool)
-
-(declare-const dummy3 us_rep)
-
 (declare-datatypes ((cursor_2__ref 0))
 (((cursor_2__refqtmk (cursor_2__content us_rep)))))
 (define-fun cursor_2__ref_cursor_2__content__projection ((a cursor_2__ref)) us_rep 
@@ -321,29 +260,29 @@
   (= (to_rep (select a temp___idx_154)) (to_rep
                                         (select b (+ (- b__first a__first) temp___idx_154)))))))))))
 
-(declare-const dummy4 (Array Int natural))
+(declare-const dummy3 (Array Int natural))
 
-(declare-const value__size2 Int)
+(declare-const value__size1 Int)
 
-(declare-const object__size2 Int)
+(declare-const object__size1 Int)
 
 (declare-const component__size Int)
 
-(declare-const alignment2 Int)
+(declare-const alignment1 Int)
 
 ;; value__size_axiom
-  (assert (<= 0 value__size2))
+  (assert (<= 0 value__size1))
 
 ;; object__size_axiom
-  (assert (<= 0 object__size2))
+  (assert (<= 0 object__size1))
 
 ;; component__size_axiom
   (assert (<= 0 component__size))
 
 ;; alignment_axiom
-  (assert (<= 0 alignment2))
+  (assert (<= 0 alignment1))
 
-(declare-fun user_eq4 ((Array Int natural) (Array Int natural)) Bool)
+(declare-fun user_eq3 ((Array Int natural) (Array Int natural)) Bool)
 
 (declare-datatypes ((us_split_fields2 0))
 (((us_split_fieldsqtmk1
@@ -369,20 +308,20 @@
                             (us_split_fields3 b)) 1 100) true)
                     true false))
 
-(declare-const value__size3 Int)
+(declare-const value__size2 Int)
 
-(declare-const object__size3 Int)
+(declare-const object__size2 Int)
 
-(declare-const alignment3 Int)
+(declare-const alignment2 Int)
 
 ;; value__size_axiom
-  (assert (<= 0 value__size3))
+  (assert (<= 0 value__size2))
 
 ;; object__size_axiom
-  (assert (<= 0 object__size3))
+  (assert (<= 0 object__size2))
 
 ;; alignment_axiom
-  (assert (<= 0 alignment3))
+  (assert (<= 0 alignment2))
 
 (declare-const with_iterable__container__content__first__bit Int)
 
@@ -400,9 +339,9 @@
 ;; with_iterable__container__content__position_axiom
   (assert (<= 0 with_iterable__container__content__position))
 
-(declare-fun user_eq5 (us_rep1 us_rep1) Bool)
+(declare-fun user_eq4 (us_rep1 us_rep1) Bool)
 
-(declare-const dummy5 us_rep1)
+(declare-const dummy4 us_rep1)
 
 (declare-datatypes ((container__ref 0))
 (((container__refqtmk (container__content us_rep1)))))
@@ -421,44 +360,104 @@
 
 (declare-fun has_element__function_guard (Bool us_rep1 us_rep) Bool)
 
-(define-fun dynamic_invariant ((temp___expr_196 us_rep)
-  (temp___is_init_192 Bool) (temp___skip_constant_193 Bool)
-  (temp___do_toplevel_194 Bool)
-  (temp___do_typ_inv_195 Bool)) Bool (and
-                                     (=>
-                                     (not (= temp___skip_constant_193 true))
-                                     (in_range2 101 temp___expr_196))
-                                     (=> (= temp___is_init_192 true)
-                                     (and
-                                     (<= 1 (to_rep
-                                           (rec__with_iterable__cursor__i
-                                           (us_split_fields1 temp___expr_196))))
-                                     (<= (to_rep
-                                         (rec__with_iterable__cursor__i
-                                         (us_split_fields1 temp___expr_196))) 
-                                     (to_rep
-                                     (rec__with_iterable__cursor__c
-                                     (us_split_discrs1 temp___expr_196))))))))
+(define-fun in_range2 ((rec__with_iterable__cursor__c1 Int)
+  (a1 us_split_discrs)) Bool (= rec__with_iterable__cursor__c1 (to_rep
+                                                               (rec__with_iterable__cursor__c
+                                                               a1))))
 
-(define-fun default_initial_assumption ((temp___expr_201 us_rep)
-  (temp___skip_top_level_202 Bool)) Bool (= (to_rep
+(declare-const value__size3 Int)
+
+(declare-const object__size3 Int)
+
+(declare-const alignment3 Int)
+
+;; value__size_axiom
+  (assert (<= 0 value__size3))
+
+;; object__size_axiom
+  (assert (<= 0 object__size3))
+
+;; alignment_axiom
+  (assert (<= 0 alignment3))
+
+(declare-const with_iterable__cursor__c__first__bit1 Int)
+
+(declare-const with_iterable__cursor__c__last__bit1 Int)
+
+(declare-const with_iterable__cursor__c__position1 Int)
+
+;; with_iterable__cursor__c__first__bit_axiom
+  (assert (<= 0 with_iterable__cursor__c__first__bit1))
+
+;; with_iterable__cursor__c__last__bit_axiom
+  (assert
+  (< with_iterable__cursor__c__first__bit1 with_iterable__cursor__c__last__bit1))
+
+;; with_iterable__cursor__c__position_axiom
+  (assert (<= 0 with_iterable__cursor__c__position1))
+
+(declare-const with_iterable__cursor__i__first__bit1 Int)
+
+(declare-const with_iterable__cursor__i__last__bit1 Int)
+
+(declare-const with_iterable__cursor__i__position1 Int)
+
+;; with_iterable__cursor__i__first__bit_axiom
+  (assert (<= 0 with_iterable__cursor__i__first__bit1))
+
+;; with_iterable__cursor__i__last__bit_axiom
+  (assert
+  (< with_iterable__cursor__i__first__bit1 with_iterable__cursor__i__last__bit1))
+
+;; with_iterable__cursor__i__position_axiom
+  (assert (<= 0 with_iterable__cursor__i__position1))
+
+(declare-fun user_eq5 (us_rep us_rep) Bool)
+
+(declare-const dummy5 us_rep)
+
+(declare-datatypes ((cursor__ref 0))
+(((cursor__refqtmk (cursor__content us_rep)))))
+(define-fun cursor__ref_cursor__content__projection ((a1 cursor__ref)) us_rep 
+  (cursor__content a1))
+
+(define-fun dynamic_invariant ((temp___expr_198 us_rep)
+  (temp___is_init_194 Bool) (temp___skip_constant_195 Bool)
+  (temp___do_toplevel_196 Bool)
+  (temp___do_typ_inv_197 Bool)) Bool (and
+                                     (=>
+                                     (not (= temp___skip_constant_195 true))
+                                     (in_range2 101
+                                     (us_split_discrs1 temp___expr_198)))
+                                     (=> (= temp___is_init_194 true)
+                                     (let ((temp___201 (to_rep
+                                                       (rec__with_iterable__cursor__i
+                                                       (us_split_fields1
+                                                       temp___expr_198)))))
+                                     (and (<= 1 temp___201)
+                                     (<= temp___201 (to_rep
+                                                    (rec__with_iterable__cursor__c
+                                                    (us_split_discrs1
+                                                    temp___expr_198)))))))))
+
+(define-fun default_initial_assumption ((temp___expr_205 us_rep)
+  (temp___skip_top_level_206 Bool)) Bool (= (to_rep
                                             (rec__with_iterable__cursor__c
                                             (us_split_discrs1
-                                            temp___expr_201))) 101))
+                                            temp___expr_205))) 101))
 
-(define-fun dynamic_predicate ((temp___205 us_rep)) Bool (and
-                                                         (<= 1 (to_rep
-                                                               (rec__with_iterable__cursor__i
-                                                               (us_split_fields1
-                                                               temp___205))))
-                                                         (<= (to_rep
-                                                             (rec__with_iterable__cursor__i
-                                                             (us_split_fields1
-                                                             temp___205))) 
+(define-fun dynamic_predicate ((temp___209 us_rep)) Bool (let ((temp___212 
+                                                         (to_rep
+                                                         (rec__with_iterable__cursor__i
+                                                         (us_split_fields1
+                                                         temp___209)))))
+                                                         (and
+                                                         (<= 1 temp___212)
+                                                         (<= temp___212 
                                                          (to_rep
                                                          (rec__with_iterable__cursor__c
                                                          (us_split_discrs1
-                                                         temp___205))))))
+                                                         temp___209)))))))
 
 ;; has_element__post_axiom
   (assert true)
@@ -468,10 +467,10 @@
   (forall ((a1 us_rep1))
   (forall ((cu1 us_rep))
   (! (= (= (has_element a1 cu1) true)
-     (and
-     (<= 1 (to_rep (rec__with_iterable__cursor__i (us_split_fields1 cu1))))
-     (<= (to_rep (rec__with_iterable__cursor__i (us_split_fields1 cu1))) 100))) :pattern (
-  (has_element a1 cu1)) ))))
+     (let ((temp___229 (to_rep
+                       (rec__with_iterable__cursor__i (us_split_fields1 cu1)))))
+     (and (<= 1 temp___229) (<= temp___229 100)))) :pattern ((has_element a1
+                                                             cu1)) ))))
 
 (declare-const i8s us_rep)
 
@@ -482,30 +481,28 @@
   (temp___do_toplevel_185 Bool)
   (temp___do_typ_inv_186 Bool)) Bool (=> (= temp___do_toplevel_185 true)
                                      (=> (= temp___is_init_183 true)
-                                     (and
-                                     (<= 1 (to_rep
-                                           (rec__with_iterable__cursor__i
-                                           (us_split_fields1 temp___expr_187))))
-                                     (<= (to_rep
-                                         (rec__with_iterable__cursor__i
-                                         (us_split_fields1 temp___expr_187))) 
-                                     (to_rep
-                                     (rec__with_iterable__cursor__c
-                                     (us_split_discrs1 temp___expr_187))))))))
+                                     (let ((temp___189 (to_rep
+                                                       (rec__with_iterable__cursor__i
+                                                       (us_split_fields1
+                                                       temp___expr_187)))))
+                                     (and (<= 1 temp___189)
+                                     (<= temp___189 (to_rep
+                                                    (rec__with_iterable__cursor__c
+                                                    (us_split_discrs1
+                                                    temp___expr_187)))))))))
 
-(define-fun dynamic_predicate1 ((temp___190 us_rep)) Bool (and
-                                                          (<= 1 (to_rep
-                                                                (rec__with_iterable__cursor__i
-                                                                (us_split_fields1
-                                                                temp___190))))
-                                                          (<= (to_rep
-                                                              (rec__with_iterable__cursor__i
-                                                              (us_split_fields1
-                                                              temp___190))) 
+(define-fun dynamic_predicate1 ((temp___191 us_rep)) Bool (let ((temp___193 
+                                                          (to_rep
+                                                          (rec__with_iterable__cursor__i
+                                                          (us_split_fields1
+                                                          temp___191)))))
+                                                          (and
+                                                          (<= 1 temp___193)
+                                                          (<= temp___193 
                                                           (to_rep
                                                           (rec__with_iterable__cursor__c
                                                           (us_split_discrs1
-                                                          temp___190))))))
+                                                          temp___191)))))))
 
 (define-fun dynamic_invariant2 ((temp___expr_39 Int) (temp___is_init_35 Bool)
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)

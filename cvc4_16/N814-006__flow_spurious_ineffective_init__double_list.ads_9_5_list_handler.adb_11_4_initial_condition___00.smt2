@@ -449,8 +449,8 @@
   (=> (dynamic_invariant1 count false false true true)
   (=> (dynamic_invariant1 free false false true true)
   (=> (= count1 0)
-  (=> (dynamic_invariant1 count1 true true true true)
   (=> (dynamic_invariant1 free1 true true true true)
+  (=> (dynamic_invariant1 count1 true true true true)
   (let ((o (size count1)))
   (=>
   (and (size__function_guard o count1)

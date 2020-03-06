@@ -689,16 +689,12 @@
      (and
      (and
      (and
-     (and
-     (<= (first1 a) (to_rep2
-                    (rec__perm__witnesses__ia (us_split_fields1 result))))
-     (<= (to_rep2 (rec__perm__witnesses__ia (us_split_fields1 result))) 
-     (last1 a)))
-     (and
-     (<= (first1 b) (to_rep2
-                    (rec__perm__witnesses__ib (us_split_fields1 result))))
-     (<= (to_rep2 (rec__perm__witnesses__ib (us_split_fields1 result))) 
-     (last1 b))))
+     (let ((temp___425 (to_rep2
+                       (rec__perm__witnesses__ia (us_split_fields1 result)))))
+     (and (<= (first1 a) temp___425) (<= temp___425 (last1 a))))
+     (let ((temp___426 (to_rep2
+                       (rec__perm__witnesses__ib (us_split_fields1 result)))))
+     (and (<= (first1 b) temp___426) (<= temp___426 (last1 b)))))
      (= (to_rep
         (select (to_array a) (to_rep2
                              (rec__perm__witnesses__ia
@@ -964,20 +960,14 @@
   (and
   (and
   (and
-  (and
-  (<= (first1 o1) (to_rep2
-                  (rec__perm__witnesses__ia
-                  (us_split_fields1 perm__extended_perm__B_6__w__assume))))
-  (<= (to_rep2
-      (rec__perm__witnesses__ia
-      (us_split_fields1 perm__extended_perm__B_6__w__assume))) (last1 o1)))
-  (and
-  (<= (first1 o) (to_rep2
-                 (rec__perm__witnesses__ib
-                 (us_split_fields1 perm__extended_perm__B_6__w__assume))))
-  (<= (to_rep2
-      (rec__perm__witnesses__ib
-      (us_split_fields1 perm__extended_perm__B_6__w__assume))) (last1 o))))
+  (let ((temp___417 (to_rep2
+                    (rec__perm__witnesses__ia
+                    (us_split_fields1 perm__extended_perm__B_6__w__assume)))))
+  (and (<= (first1 o1) temp___417) (<= temp___417 (last1 o1))))
+  (let ((temp___418 (to_rep2
+                    (rec__perm__witnesses__ib
+                    (us_split_fields1 perm__extended_perm__B_6__w__assume)))))
+  (and (<= (first1 o) temp___418) (<= temp___418 (last1 o)))))
   (= (to_rep
      (select (to_array o1) (to_rep2
                            (rec__perm__witnesses__ia
@@ -1101,11 +1091,11 @@
   (=> (= ih o8)
   (=> (dynamic_invariant2 ih true false true true)
   (=> (= (distinct ih 0) true)
-  (let ((temp___1034 (first1 a)))
+  (let ((temp___1042 (first1 a)))
   (forall ((ia Int))
-  (=> (= ia temp___1034)
+  (=> (= ia temp___1042)
   (=>
-  (= (and (ite (<= temp___1034 ia) true false) (ite (<= ia (last1 a)) true
+  (= (and (ite (<= temp___1042 ia) true false) (ite (<= ia (last1 a)) true
                                                false)) true)
   (=> (dynamic_invariant1 ib false false true true)
   (forall ((o9 Int))

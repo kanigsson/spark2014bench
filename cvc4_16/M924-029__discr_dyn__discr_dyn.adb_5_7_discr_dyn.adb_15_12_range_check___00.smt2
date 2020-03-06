@@ -306,6 +306,11 @@
                         (rec__discr_dyn__r2__c (us_split_fields1 b)) 1 0))))
                    true false))
 
+(define-fun in_range3 ((rec__discr_dyn__r2__a1 Int)
+  (a us_split_discrs)) Bool (= rec__discr_dyn__r2__a1 (to_rep
+                                                      (rec__discr_dyn__r2__a
+                                                      a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -384,7 +389,7 @@
   (forall ((i tT10bP1))
   (and (<= 1 (tT10bP1qtint i)) (<= (tT10bP1qtint i) 3))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -482,11 +487,6 @@
                                                                  b)) 1 0))))
                     true false))
 
-(define-fun in_range4 ((rec__discr_dyn__r2__a1 Int)
-  (a us_rep)) Bool (= rec__discr_dyn__r2__a1 (to_rep
-                                             (rec__discr_dyn__r2__a
-                                             (us_split_discrs1 a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -565,7 +565,9 @@
   (temp___do_toplevel_200 Bool)
   (temp___do_typ_inv_201 Bool)) Bool (=>
                                      (not (= temp___skip_constant_199 true))
-                                     (in_range4 3 (to_base temp___expr_202))))
+                                     (in_range3 3
+                                     (us_split_discrs1
+                                     (to_base temp___expr_202)))))
 
 (define-fun default_initial_assumption ((temp___expr_205 us_rep1)
   (temp___skip_top_level_206 Bool)) Bool (= (to_rep
@@ -686,11 +688,6 @@
                                                                  (us_split_fields5
                                                                  b)) 1 0))))
                     true false))
-
-(define-fun in_range6 ((rec__discr_dyn__r2__a1 Int)
-  (a us_rep)) Bool (= rec__discr_dyn__r2__a1 (to_rep
-                                             (rec__discr_dyn__r2__a
-                                             (us_split_discrs1 a)))))
 
 (declare-const value__size5 Int)
 

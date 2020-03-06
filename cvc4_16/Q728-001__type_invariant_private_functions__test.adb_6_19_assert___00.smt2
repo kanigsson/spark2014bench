@@ -183,14 +183,14 @@
                                      (rec__test_type__t__f
                                      (us_split_fields1 temp___expr_182))))))
 
-(define-fun default_initial_assumption ((temp___expr_184 us_rep)
-  (temp___skip_top_level_185 Bool)) Bool (= (to_rep
+(define-fun default_initial_assumption ((temp___expr_185 us_rep)
+  (temp___skip_top_level_186 Bool)) Bool (= (to_rep
                                             (rec__test_type__t__f
                                             (us_split_fields1
-                                            temp___expr_184))) 0))
+                                            temp___expr_185))) 0))
 
-(define-fun type_invariant ((temp___186 us_rep)) Bool (in_range1
-  (to_rep (rec__test_type__t__f (us_split_fields1 temp___186)))))
+(define-fun type_invariant ((temp___187 us_rep)) Bool (in_range1
+  (to_rep (rec__test_type__t__f (us_split_fields1 temp___187)))))
 
 (declare-fun decr_int (us_rep) us_rep)
 

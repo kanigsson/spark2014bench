@@ -771,6 +771,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range6 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
+  (to_rep2
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)

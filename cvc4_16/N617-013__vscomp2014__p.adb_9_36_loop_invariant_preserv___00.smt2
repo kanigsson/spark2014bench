@@ -177,13 +177,12 @@
   (=> (= (to_rep o1) j1)
   (=> (= (bool_eq temp___loop_entry_182 1 10 saved 1 10) true)
   (=>
-  (= (and (ite (and
-               (forall ((temp___179 Int))
-               (=> (and (<= 1 temp___179) (<= temp___179 10))
+  (= (and (ite (and (in_range1 i1)
+               (forall ((temp___180 Int))
+               (=> (and (<= 1 temp___180) (<= temp___180 10))
                (=>
-               (or (< 10 temp___179) (or (< temp___179 1) (< i1 temp___179)))
-               (= (select f2 temp___179) (select f1 temp___179)))))
-               (in_range1 i1))
+               (or (< 10 temp___180) (or (< temp___180 1) (< i1 temp___180)))
+               (= (select f2 temp___180) (select f1 temp___180))))))
           true false) (ite (and (<= 1 i1) (<= i1 10)) true false)) true)
   (=> (not (= i1 10))
   (= (bool_eq temp___loop_entry_182 1 10 saved 1 10) true))))))))))))))))

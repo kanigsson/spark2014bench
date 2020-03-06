@@ -428,18 +428,18 @@
   (forall ((c us_rep))
   (forall ((p (Array Int natural)))
   (! (= (= (has_element c p) true)
-     (and (<= 1 (to_rep (select p 1)))
-     (<= (to_rep (select p 1)) (to_rep
-                               (rec__composite_cursors__cont1__length
-                               (us_split_fields1 c)))))) :pattern ((has_element
-                                                                   c p)) ))))
+     (let ((temp___245 (to_rep (select p 1))))
+     (and (<= 1 temp___245)
+     (<= temp___245 (to_rep
+                    (rec__composite_cursors__cont1__length
+                    (us_split_fields1 c))))))) :pattern ((has_element c p)) ))))
 
 (declare-fun next (us_rep (Array Int natural)) (Array Int natural))
 
 (declare-fun next__function_guard ((Array Int natural) us_rep
   (Array Int natural)) Bool)
 
-(declare-fun temp_____aggregate_def_246 (Int) (Array Int natural))
+(declare-fun temp_____aggregate_def_248 (Int) (Array Int natural))
 
 ;; next__post_axiom
   (assert
@@ -451,7 +451,7 @@
   (forall ((c us_rep))
   (forall ((p (Array Int natural)))
   (! (=> (dynamic_invariant c true true true true)
-     (= (next c p) (temp_____aggregate_def_246 (+ (to_rep (select p 1)) 1)))) :pattern (
+     (= (next c p) (temp_____aggregate_def_248 (+ (to_rep (select p 1)) 1)))) :pattern (
   (next c p)) ))))
 
 (declare-fun element (us_rep (Array Int natural)) Int)
@@ -485,9 +485,9 @@
   (forall ((p (Array Int natural)))
   (! (=> (dynamic_invariant c true true true true)
      (= (element c p) (to_rep
-                      (let ((temp___263 (rec__composite_cursors__cont1__content
+                      (let ((temp___265 (rec__composite_cursors__cont1__content
                                         (us_split_fields1 c))))
-                      (select temp___263 (to_rep (select p 1))))))) :pattern (
+                      (select temp___265 (to_rep (select p 1))))))) :pattern (
   (element c p)) ))))
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
@@ -587,13 +587,13 @@
   (forall ((c us_rep1))
   (forall ((p us_rep2))
   (! (= (= (has_element1 c p) true)
-     (and
-     (<= 1 (to_rep
-           (rec__composite_cursors__rec_cursor__content (us_split_fields5 p))))
-     (<= (to_rep
-         (rec__composite_cursors__rec_cursor__content (us_split_fields5 p))) 
-     (to_rep (rec__composite_cursors__cont2__length (us_split_fields3 c)))))) :pattern (
-  (has_element1 c p)) ))))
+     (let ((temp___279 (to_rep
+                       (rec__composite_cursors__rec_cursor__content
+                       (us_split_fields5 p)))))
+     (and (<= 1 temp___279)
+     (<= temp___279 (to_rep
+                    (rec__composite_cursors__cont2__length
+                    (us_split_fields3 c))))))) :pattern ((has_element1 c p)) ))))
 
 (declare-fun next1 (us_rep1 us_rep2) us_rep2)
 
@@ -640,18 +640,18 @@
   (forall ((p us_rep2))
   (! (=> (dynamic_invariant1 c true true true true)
      (= (element1 c p) (to_rep
-                       (let ((temp___285 (rec__composite_cursors__cont2__content
+                       (let ((temp___289 (rec__composite_cursors__cont2__content
                                          (us_split_fields3 c))))
-                       (select temp___285 (to_rep
+                       (select temp___289 (to_rep
                                           (rec__composite_cursors__rec_cursor__content
                                           (us_split_fields5 p)))))))) :pattern (
   (element1 c p)) ))))
 
 (declare-const attr__ATTRIBUTE_ADDRESS3 Int)
 
-(declare-fun temp_____aggregate_def_290 (Int Int) (Array Int natural))
+(declare-fun temp_____aggregate_def_294 (Int Int) (Array Int natural))
 
-(declare-fun temp_____aggregate_def_296 (Int Int) (Array Int natural))
+(declare-fun temp_____aggregate_def_300 (Int Int) (Array Int natural))
 
 ;; def_axiom
   (assert
@@ -661,9 +661,9 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___248 Int))
-  (=> (dynamic_invariant2 temp___248 true true true true)
-  (= (to_rep (select (temp_____aggregate_def_246 temp___248) 1)) temp___248))))
+  (forall ((temp___250 Int))
+  (=> (dynamic_invariant2 temp___250 true true true true)
+  (= (to_rep (select (temp_____aggregate_def_248 temp___250) 1)) temp___250))))
 
 (declare-const rliteral1 natural)
 
@@ -672,27 +672,27 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___292 Int) (temp___293 Int))
-  (let ((temp___291 (temp_____aggregate_def_290 temp___292 temp___293)))
+  (forall ((temp___296 Int) (temp___297 Int))
+  (let ((temp___295 (temp_____aggregate_def_294 temp___296 temp___297)))
   (=>
-  (and (dynamic_invariant2 temp___292 true true true true)
-  (dynamic_invariant2 temp___293 true true true true))
-  (forall ((temp___294 Int))
-  (ite (and (<= 1 temp___294) (<= temp___294 10))
-  (= (select temp___291 temp___294) rliteral)
-  (= (select temp___291 temp___294) rliteral1)))))))
+  (and (dynamic_invariant2 temp___296 true true true true)
+  (dynamic_invariant2 temp___297 true true true true))
+  (forall ((temp___298 Int))
+  (ite (and (<= 1 temp___298) (<= temp___298 10))
+  (= (select temp___295 temp___298) rliteral)
+  (= (select temp___295 temp___298) rliteral1)))))))
 
 ;; def_axiom
   (assert
-  (forall ((temp___298 Int) (temp___299 Int))
-  (let ((temp___297 (temp_____aggregate_def_296 temp___298 temp___299)))
+  (forall ((temp___302 Int) (temp___303 Int))
+  (let ((temp___301 (temp_____aggregate_def_300 temp___302 temp___303)))
   (=>
-  (and (dynamic_invariant2 temp___298 true true true true)
-  (dynamic_invariant2 temp___299 true true true true))
-  (forall ((temp___300 Int))
-  (ite (and (<= 1 temp___300) (<= temp___300 10))
-  (= (select temp___297 temp___300) rliteral)
-  (= (select temp___297 temp___300) rliteral1)))))))
+  (and (dynamic_invariant2 temp___302 true true true true)
+  (dynamic_invariant2 temp___303 true true true true))
+  (forall ((temp___304 Int))
+  (ite (and (<= 1 temp___304) (<= temp___304 10))
+  (= (select temp___301 temp___304) rliteral)
+  (= (select temp___301 temp___304) rliteral1)))))))
 
 (declare-const rliteral2 natural)
 
@@ -706,31 +706,31 @@
   (forall ((e Int))
   (=> (dynamic_predicate
   (us_repqtmk
-  (us_split_fieldsqtmk (temp_____aggregate_def_290 1 0) rliteral2)))
+  (us_split_fieldsqtmk (temp_____aggregate_def_294 1 0) rliteral2)))
   (forall ((c1__split_fields us_split_fields))
   (=>
-  (= c1__split_fields (us_split_fieldsqtmk (temp_____aggregate_def_290 1 0)
+  (= c1__split_fields (us_split_fieldsqtmk (temp_____aggregate_def_294 1 0)
                       rliteral2))
   (=> (dynamic_invariant (us_repqtmk c1__split_fields) true false true true)
   (=> (dynamic_predicate1
   (us_repqtmk1
-  (us_split_fieldsqtmk1 (temp_____aggregate_def_296 1 0) rliteral2)))
+  (us_split_fieldsqtmk1 (temp_____aggregate_def_300 1 0) rliteral2)))
   (forall ((c2__split_fields us_split_fields2))
   (=>
-  (= c2__split_fields (us_split_fieldsqtmk1 (temp_____aggregate_def_296 1 0)
+  (= c2__split_fields (us_split_fieldsqtmk1 (temp_____aggregate_def_300 1 0)
                       rliteral2))
   (=> (dynamic_invariant1 (us_repqtmk1 c2__split_fields) true false true
   true)
   (=>
   (forall ((c1__split_fields1 us_split_fields)
-  (temp___304 (Array Int natural))) (has_element__function_guard
-  (has_element (us_repqtmk c1__split_fields1) temp___304)
-  (us_repqtmk c1__split_fields1) temp___304))
+  (temp___308 (Array Int natural))) (has_element__function_guard
+  (has_element (us_repqtmk c1__split_fields1) temp___308)
+  (us_repqtmk c1__split_fields1) temp___308))
   (=>
   (forall ((c1__split_fields1 us_split_fields)
-  (temp___304 (Array Int natural))) (element__function_guard
-  (element (us_repqtmk c1__split_fields1) temp___304)
-  (us_repqtmk c1__split_fields1) temp___304))
+  (temp___308 (Array Int natural))) (element__function_guard
+  (element (us_repqtmk c1__split_fields1) temp___308)
+  (us_repqtmk c1__split_fields1) temp___308))
   (=>
   (let ((o (us_repqtmk c1__split_fields)))
   (let ((o1 (first o)))
@@ -743,10 +743,10 @@
   (and
   (and (has_element__function_guard o3 o2 o1)
   (= (= o3 true)
-  (and (<= 1 (to_rep (select o1 1)))
-  (<= (to_rep (select o1 1)) (to_rep
-                             (rec__composite_cursors__cont1__length
-                             c1__split_fields))))))
+  (let ((temp___240 (to_rep (select o1 1))))
+  (and (<= 1 temp___240)
+  (<= temp___240 (to_rep
+                 (rec__composite_cursors__cont1__length c1__split_fields)))))))
   (ite (= o3 true)
   (let ((o4 (us_repqtmk c1__split_fields)))
   (let ((o5 (element o4 o1)))
@@ -762,30 +762,30 @@
   (and
   (and (has_element__function_guard o3 o2 o1)
   (= (= o3 true)
-  (and (<= 1 (to_rep (select o1 1)))
-  (<= (to_rep (select o1 1)) (to_rep
-                             (rec__composite_cursors__cont1__length
-                             c1__split_fields))))))
+  (let ((temp___240 (to_rep (select o1 1))))
+  (and (<= 1 temp___240)
+  (<= temp___240 (to_rep
+                 (rec__composite_cursors__cont1__length c1__split_fields)))))))
   (or (not (= o3 true))
-  (exists ((e2 Int) (temp___304 (Array Int natural)))
+  (exists ((e2 Int) (temp___308 (Array Int natural)))
   (and
-  (and (= (has_element (us_repqtmk c1__split_fields) temp___304) true)
-  (= e2 (element (us_repqtmk c1__split_fields) temp___304)))
+  (and (= (has_element (us_repqtmk c1__split_fields) temp___308) true)
+  (= e2 (element (us_repqtmk c1__split_fields) temp___308)))
   (and (= e2 1)
   (let ((o4 (us_repqtmk c1__split_fields)))
-  (let ((o5 (next o4 temp___304)))
+  (let ((o5 (next o4 temp___308)))
   (and
-  (and (next__function_guard o5 o4 temp___304)
-  (= o5 (temp_____aggregate_def_246 (+ (to_rep (select temp___304 1)) 1))))
+  (and (next__function_guard o5 o4 temp___308)
+  (= o5 (temp_____aggregate_def_248 (+ (to_rep (select temp___308 1)) 1))))
   (let ((o6 (us_repqtmk c1__split_fields)))
   (let ((o7 (has_element o6 o5)))
   (and
   (and (has_element__function_guard o7 o6 o5)
   (= (= o7 true)
-  (and (<= 1 (to_rep (select o5 1)))
-  (<= (to_rep (select o5 1)) (to_rep
-                             (rec__composite_cursors__cont1__length
-                             c1__split_fields))))))
+  (let ((temp___240 (to_rep (select o5 1))))
+  (and (<= 1 temp___240)
+  (<= temp___240 (to_rep
+                 (rec__composite_cursors__cont1__length c1__split_fields)))))))
   (not (= o7 true))))))))))))))))))))
   (let ((o (us_repqtmk1 c2__split_fields)))
   (let ((o1 (first1 o)))
@@ -797,12 +797,12 @@
   (=>
   (and (has_element__function_guard1 o3 o2 o1)
   (= (= o3 true)
-  (and
-  (<= 1 (to_rep
-        (rec__composite_cursors__rec_cursor__content (us_split_fields5 o1))))
-  (<= (to_rep
-      (rec__composite_cursors__rec_cursor__content (us_split_fields5 o1))) 
-  (to_rep (rec__composite_cursors__cont2__length c2__split_fields))))))
+  (let ((temp___276 (to_rep
+                    (rec__composite_cursors__rec_cursor__content
+                    (us_split_fields5 o1)))))
+  (and (<= 1 temp___276)
+  (<= temp___276 (to_rep
+                 (rec__composite_cursors__cont2__length c2__split_fields)))))))
   (=> (= o3 true)
   (=>
   (forall ((o4 us_rep2) (o5 us_rep1)) (has_element__function_guard1

@@ -984,22 +984,22 @@
 (define-fun t69b__ref_t69b__content__projection ((a t69b__ref)) us_t 
   (t69b__content a))
 
-(define-fun dynamic_invariant5 ((temp___expr_336 us_t)
-  (temp___is_init_332 Bool) (temp___skip_constant_333 Bool)
-  (temp___do_toplevel_334 Bool)
-  (temp___do_typ_inv_335 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_333 true))
+(define-fun dynamic_invariant5 ((temp___expr_338 us_t)
+  (temp___is_init_334 Bool) (temp___skip_constant_335 Bool)
+  (temp___do_toplevel_336 Bool)
+  (temp___do_typ_inv_337 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_335 true))
                                      (and (dynamic_property 1
                                      (max 500 (length1 s))
-                                     (first1 temp___expr_336)
-                                     (last1 temp___expr_336))
-                                     (and (= (first1 temp___expr_336) 1)
-                                     (= (last1 temp___expr_336) (max 500
+                                     (first1 temp___expr_338)
+                                     (last1 temp___expr_338))
+                                     (and (= (first1 temp___expr_338) 1)
+                                     (= (last1 temp___expr_338) (max 500
                                                                 (length1 s)))))))
 
-(define-fun default_initial_assumption ((temp___expr_338 us_t)
-  (temp___skip_top_level_339 Bool)) Bool (and (= (first1 temp___expr_338) 1)
-                                         (= (last1 temp___expr_338) (max 500
+(define-fun default_initial_assumption ((temp___expr_340 us_t)
+  (temp___skip_top_level_341 Bool)) Bool (and (= (first1 temp___expr_340) 1)
+                                         (= (last1 temp___expr_340) (max 500
                                                                     (length1
                                                                     s)))))
 

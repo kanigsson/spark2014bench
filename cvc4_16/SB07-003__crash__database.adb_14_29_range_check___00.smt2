@@ -134,6 +134,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__database__db_pack__list__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__database__db_pack__list__capacity1 
+  (to_rep (rec__database__db_pack__list__capacity a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -173,12 +177,6 @@
 (((list__refqtmk (list__content us_rep)))))
 (define-fun list__ref_list__content__projection ((a list__ref)) us_rep 
   (list__content a))
-
-(define-fun in_range1 ((rec__database__db_pack__list__capacity1 Int)
-  (a us_rep)) Bool (= rec__database__db_pack__list__capacity1 (to_rep
-                                                              (rec__database__db_pack__list__capacity
-                                                              (us_split_discrs1
-                                                              a)))))
 
 (declare-const value__size1 Int)
 
@@ -237,23 +235,24 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq2 a b) (oeq a b)) :pattern ((user_eq2 a b)) )))
 
-(define-fun dynamic_invariant ((temp___expr_670 us_rep)
-  (temp___is_init_666 Bool) (temp___skip_constant_667 Bool)
-  (temp___do_toplevel_668 Bool)
-  (temp___do_typ_inv_669 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_667 true))
-                                     (in_range1 1000 temp___expr_670)))
+(define-fun dynamic_invariant ((temp___expr_677 us_rep)
+  (temp___is_init_673 Bool) (temp___skip_constant_674 Bool)
+  (temp___do_toplevel_675 Bool)
+  (temp___do_typ_inv_676 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_674 true))
+                                     (in_range1 1000
+                                     (us_split_discrs1 temp___expr_677))))
 
-(define-fun default_initial_assumption ((temp___expr_672 us_rep)
-  (temp___skip_top_level_673 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_679 us_rep)
+  (temp___skip_top_level_680 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__database__db_pack__list__capacity
                                             (us_split_discrs1
-                                            temp___expr_672))) 1000)
+                                            temp___expr_679))) 1000)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_673 true))
-                                         (= (is_empty temp___expr_672) true))))
+                                         (= temp___skip_top_level_680 true))
+                                         (= (is_empty temp___expr_679) true))))
 
 (declare-sort integer 0)
 

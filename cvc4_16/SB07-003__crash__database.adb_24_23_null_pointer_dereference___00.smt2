@@ -434,6 +434,10 @@
                             (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range4 ((rec__database__db_pack__list__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__database__db_pack__list__capacity1 
+  (to_rep2 (rec__database__db_pack__list__capacity a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -524,7 +528,7 @@
 
 (declare-fun has_element__function_guard (Bool us_rep1 us_rep) Bool)
 
-(define-fun in_range4 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range5 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Bool) us_image)
 
@@ -810,12 +814,6 @@
                                                position) 1)))))) :pattern (
   (next container position)) ))))
 
-(define-fun in_range5 ((rec__database__db_pack__list__capacity1 Int)
-  (a us_rep1)) Bool (= rec__database__db_pack__list__capacity1 (to_rep2
-                                                               (rec__database__db_pack__list__capacity
-                                                               (us_split_discrs1
-                                                               a)))))
-
 (declare-const value__size6 Int)
 
 (declare-const object__size6 Int)
@@ -869,23 +867,24 @@
   (forall ((a us_rep1) (b us_rep1))
   (! (= (user_eq10 a b) (oeq a b)) :pattern ((user_eq10 a b)) )))
 
-(define-fun dynamic_invariant1 ((temp___expr_670 us_rep1)
-  (temp___is_init_666 Bool) (temp___skip_constant_667 Bool)
-  (temp___do_toplevel_668 Bool)
-  (temp___do_typ_inv_669 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_667 true))
-                                     (in_range5 1000 temp___expr_670)))
+(define-fun dynamic_invariant1 ((temp___expr_677 us_rep1)
+  (temp___is_init_673 Bool) (temp___skip_constant_674 Bool)
+  (temp___do_toplevel_675 Bool)
+  (temp___do_typ_inv_676 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_674 true))
+                                     (in_range4 1000
+                                     (us_split_discrs1 temp___expr_677))))
 
-(define-fun default_initial_assumption2 ((temp___expr_672 us_rep1)
-  (temp___skip_top_level_673 Bool)) Bool (and
+(define-fun default_initial_assumption2 ((temp___expr_679 us_rep1)
+  (temp___skip_top_level_680 Bool)) Bool (and
                                          (= (to_rep2
                                             (rec__database__db_pack__list__capacity
                                             (us_split_discrs1
-                                            temp___expr_672))) 1000)
+                                            temp___expr_679))) 1000)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_673 true))
-                                         (= (is_empty temp___expr_672) true))))
+                                         (= temp___skip_top_level_680 true))
+                                         (= (is_empty temp___expr_679) true))))
 
 (declare-const attr__ATTRIBUTE_ADDRESS3 Int)
 
@@ -1063,7 +1062,8 @@
      (forall ((i us_rep))
      (=> (= (has_key result i) true)
      (and
-     (and (<= 1 (get1 result i)) (<= (get1 result i) (length2 container)))
+     (let ((temp___506 (get1 result i)))
+     (and (<= 1 temp___506) (<= temp___506 (length2 container))))
      (forall ((j us_rep))
      (=> (= (has_key result j) true)
      (=> (= (get1 result i) (get1 result j)) (= (bool_eq2 i j) true))))))))) :pattern (
@@ -1311,17 +1311,17 @@
   (let ((o3 (has_element o2 o1)))
   (=> (= (= o3 true) (= (has_key (positions o2) o1) true))
   (=> (= o3 true)
-  (forall ((ent2 us_split_fields4) (temp___696 count_type))
+  (forall ((ent2 us_split_fields4) (temp___703 count_type))
   (=>
   (and
   (= (has_element
      (us_repqtmk1 database__split_discrs
      (us_split_fieldsqtmk1 database__split_fields))
-     (us_repqtmk (us_split_fieldsqtmk temp___696))) true)
+     (us_repqtmk (us_split_fieldsqtmk temp___703))) true)
   (= (us_repqtmk3 ent2) (element
                         (us_repqtmk1 database__split_discrs
                         (us_split_fieldsqtmk1 database__split_fields))
-                        (us_repqtmk (us_split_fieldsqtmk temp___696)))))
+                        (us_repqtmk (us_split_fieldsqtmk temp___703)))))
   (rec__database__email_access__pointer_value__pred
   (rec__database__db_entry_type__email ent2))))))))))))))))))
 (check-sat)

@@ -144,6 +144,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__private_discr__p_with_default__c1 Int)
+  (a us_split_discrs)) Bool (= rec__private_discr__p_with_default__c1 
+  (to_rep (rec__private_discr__p_with_default__c a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -193,12 +197,6 @@
                                             (rec__private_discr__p_with_default__c
                                             (us_split_discrs1
                                             temp___expr_250))) 0))
-
-(define-fun in_range1 ((rec__private_discr__p_with_default__c1 Int)
-  (a us_rep)) Bool (= rec__private_discr__p_with_default__c1 (to_rep
-                                                             (rec__private_discr__p_with_default__c
-                                                             (us_split_discrs1
-                                                             a)))))
 
 (declare-const value__size1 Int)
 
@@ -251,7 +249,8 @@
   (temp___do_toplevel_283 Bool)
   (temp___do_typ_inv_284 Bool)) Bool (=>
                                      (not (= temp___skip_constant_282 true))
-                                     (in_range1 c temp___expr_285)))
+                                     (in_range1 c
+                                     (us_split_discrs1 temp___expr_285))))
 
 (define-fun default_initial_assumption1 ((temp___expr_287 us_rep)
   (temp___skip_top_level_288 Bool)) Bool (= (to_rep
@@ -344,24 +343,26 @@
   (=> (dynamic_invariant c true false true true)
   (=> (in_range c)
   (let ((o c))
-  (let ((o1 (new_with_default o)))
+  (let ((temp___398 (new_with_default o)))
   (=>
-  (and (new_with_default__function_guard o1 o)
-  (= (to_rep (rec__private_discr__p_with_default__c (us_split_discrs1 o1))) o))
+  (and (new_with_default__function_guard temp___398 o)
+  (= (to_rep
+     (rec__private_discr__p_with_default__c (us_split_discrs1 temp___398))) o))
   (forall ((d1__split_fields us_main_type))
-  (=> (= (us_split_fieldsqtmk d1__split_fields) (us_split_fields1 o1))
-  (=> (= d1__split_discrs (us_split_discrs1 o1))
+  (=>
+  (= (us_split_fieldsqtmk d1__split_fields) (us_split_fields1 temp___398))
+  (=> (= d1__split_discrs (us_split_discrs1 temp___398))
   (=> (= d1__attr__constrained true)
   (=> (dynamic_invariant1
   (us_repqtmk d1__split_discrs (us_split_fieldsqtmk d1__split_fields)) true
   false true true)
-  (let ((o2 c))
-  (let ((discr__p5__d2__assume (new_with_default o2)))
+  (let ((o1 c))
+  (let ((discr__p5__d2__assume (new_with_default o1)))
   (=>
-  (and (new_with_default__function_guard discr__p5__d2__assume o2)
+  (and (new_with_default__function_guard discr__p5__d2__assume o1)
   (= (to_rep
      (rec__private_discr__p_with_default__c
-     (us_split_discrs1 discr__p5__d2__assume))) o2))
+     (us_split_discrs1 discr__p5__d2__assume))) o1))
   (forall ((d2__split_fields us_main_type))
   (=>
   (= (us_split_fieldsqtmk d2__split_fields) (us_split_fields1

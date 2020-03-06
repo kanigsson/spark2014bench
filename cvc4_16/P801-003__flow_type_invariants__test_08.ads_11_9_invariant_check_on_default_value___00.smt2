@@ -96,24 +96,24 @@
                                                             (of_rep x))) )))
 
 (declare-datatypes ((us_split_fields 0))
-(((us_split_fieldsqtmk (rec__test_08__t1__n integer)))))
-(define-fun us_split_fields_rec__test_08__t1__n__projection ((a us_split_fields)) integer 
-  (rec__test_08__t1__n a))
+(((us_split_fieldsqtmk (rec__test_08__t2__n integer)))))
+(define-fun us_split_fields_rec__test_08__t2__n__projection ((a us_split_fields)) integer 
+  (rec__test_08__t2__n a))
 
 (declare-datatypes ((us_split_fields__ref 0))
 (((us_split_fields__refqtmk (us_split_fields__content us_split_fields)))))
-(define-fun us_split_fields__ref___split_fields__content__projection ((a us_split_fields__ref)) us_split_fields 
+(define-fun us_split_fields__ref___split_fields__content__2__projection ((a us_split_fields__ref)) us_split_fields 
   (us_split_fields__content a))
 
 (declare-datatypes ((us_rep 0))
 (((us_repqtmk (us_split_fields1 us_split_fields)))))
-(define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
+(define-fun us_rep___split_fields__2__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
 (define-fun bool_eq ((a us_rep)
   (b us_rep)) Bool (ite (= (to_rep
-                           (rec__test_08__t1__n (us_split_fields1 a))) 
-                   (to_rep (rec__test_08__t1__n (us_split_fields1 b)))) true
+                           (rec__test_08__t2__n (us_split_fields1 a))) 
+                   (to_rep (rec__test_08__t2__n (us_split_fields1 b)))) true
                    false))
 
 (declare-const value__size Int)
@@ -131,28 +131,28 @@
 ;; alignment_axiom
   (assert (<= 0 alignment))
 
-(declare-const test_08__t1__n__first__bit Int)
+(declare-const test_08__t2__n__first__bit Int)
 
-(declare-const test_08__t1__n__last__bit Int)
+(declare-const test_08__t2__n__last__bit Int)
 
-(declare-const test_08__t1__n__position Int)
+(declare-const test_08__t2__n__position Int)
 
-;; test_08__t1__n__first__bit_axiom
-  (assert (<= 0 test_08__t1__n__first__bit))
+;; test_08__t2__n__first__bit_axiom
+  (assert (<= 0 test_08__t2__n__first__bit))
 
-;; test_08__t1__n__last__bit_axiom
-  (assert (< test_08__t1__n__first__bit test_08__t1__n__last__bit))
+;; test_08__t2__n__last__bit_axiom
+  (assert (< test_08__t2__n__first__bit test_08__t2__n__last__bit))
 
-;; test_08__t1__n__position_axiom
-  (assert (<= 0 test_08__t1__n__position))
+;; test_08__t2__n__position_axiom
+  (assert (<= 0 test_08__t2__n__position))
 
 (declare-fun user_eq1 (us_rep us_rep) Bool)
 
 (declare-const dummy1 us_rep)
 
-(declare-datatypes ((t1__ref 0))
-(((t1__refqtmk (t1__content us_rep)))))
-(define-fun t1__ref_t1__content__projection ((a t1__ref)) us_rep (t1__content
+(declare-datatypes ((t2__ref 0))
+(((t2__refqtmk (t2__content us_rep)))))
+(define-fun t2__ref_t2__content__projection ((a t2__ref)) us_rep (t2__content
                                                                  a))
 
 (define-fun dynamic_invariant ((temp___expr_18 Int) (temp___is_init_14 Bool)
@@ -162,37 +162,37 @@
                                     (<= (- 2147483648) 2147483647))
                                     (in_range1 temp___expr_18)))
 
-(declare-fun is_positive_good (Int) Bool)
+(declare-fun is_positive_bad (Int) Bool)
 
-(declare-fun is_positive_good__function_guard (Bool Int) Bool)
+(declare-fun is_positive_bad__function_guard (Bool Int) Bool)
 
-;; is_positive_good__post_axiom
+;; is_positive_bad__post_axiom
   (assert
   (forall ((n Int))
   (! (=> (dynamic_invariant n true true true true)
-     (let ((result (is_positive_good n)))
-     (=> (is_positive_good__function_guard result n)
-     (= (= result true) (<= 1 n))))) :pattern ((is_positive_good n)) )))
+     (let ((result (is_positive_bad n)))
+     (=> (is_positive_bad__function_guard result n)
+     (= (= result true) (<= 1 n))))) :pattern ((is_positive_bad n)) )))
 
 (declare-datatypes ((us_split_fields2 0))
-(((us_split_fieldsqtmk1 (rec__test_08__t3__n integer)))))
-(define-fun us_split_fields_rec__test_08__t3__n__projection ((a us_split_fields2)) integer 
-  (rec__test_08__t3__n a))
+(((us_split_fieldsqtmk1 (rec__test_08__t1__n integer)))))
+(define-fun us_split_fields_rec__test_08__t1__n__projection ((a us_split_fields2)) integer 
+  (rec__test_08__t1__n a))
 
 (declare-datatypes ((us_split_fields__ref1 0))
 (((us_split_fields__refqtmk1 (us_split_fields__content1 us_split_fields2)))))
-(define-fun us_split_fields__ref___split_fields__content__3__projection ((a us_split_fields__ref1)) us_split_fields2 
+(define-fun us_split_fields__ref___split_fields__content__projection ((a us_split_fields__ref1)) us_split_fields2 
   (us_split_fields__content1 a))
 
 (declare-datatypes ((us_rep1 0))
 (((us_repqtmk1 (us_split_fields3 us_split_fields2)))))
-(define-fun us_rep___split_fields__3__projection ((a us_rep1)) us_split_fields2 
+(define-fun us_rep___split_fields__projection ((a us_rep1)) us_split_fields2 
   (us_split_fields3 a))
 
 (define-fun bool_eq1 ((a us_rep1)
   (b us_rep1)) Bool (ite (= (to_rep
-                            (rec__test_08__t3__n (us_split_fields3 a))) 
-                    (to_rep (rec__test_08__t3__n (us_split_fields3 b)))) true
+                            (rec__test_08__t1__n (us_split_fields3 a))) 
+                    (to_rep (rec__test_08__t1__n (us_split_fields3 b)))) true
                     false))
 
 (declare-const value__size1 Int)
@@ -210,61 +210,61 @@
 ;; alignment_axiom
   (assert (<= 0 alignment1))
 
-(declare-const test_08__t3__n__first__bit Int)
+(declare-const test_08__t1__n__first__bit Int)
 
-(declare-const test_08__t3__n__last__bit Int)
+(declare-const test_08__t1__n__last__bit Int)
 
-(declare-const test_08__t3__n__position Int)
+(declare-const test_08__t1__n__position Int)
 
-;; test_08__t3__n__first__bit_axiom
-  (assert (<= 0 test_08__t3__n__first__bit))
+;; test_08__t1__n__first__bit_axiom
+  (assert (<= 0 test_08__t1__n__first__bit))
 
-;; test_08__t3__n__last__bit_axiom
-  (assert (< test_08__t3__n__first__bit test_08__t3__n__last__bit))
+;; test_08__t1__n__last__bit_axiom
+  (assert (< test_08__t1__n__first__bit test_08__t1__n__last__bit))
 
-;; test_08__t3__n__position_axiom
-  (assert (<= 0 test_08__t3__n__position))
+;; test_08__t1__n__position_axiom
+  (assert (<= 0 test_08__t1__n__position))
 
 (declare-fun user_eq2 (us_rep1 us_rep1) Bool)
 
 (declare-const dummy2 us_rep1)
 
-(declare-datatypes ((t3__ref 0))
-(((t3__refqtmk (t3__content us_rep1)))))
-(define-fun t3__ref_t3__content__projection ((a t3__ref)) us_rep1 (t3__content
+(declare-datatypes ((t1__ref 0))
+(((t1__refqtmk (t1__content us_rep1)))))
+(define-fun t1__ref_t1__content__projection ((a t1__ref)) us_rep1 (t1__content
                                                                   a))
 
-(declare-fun is_positive_ugly (Int) Bool)
+(declare-fun is_positive_good (Int) Bool)
 
-(declare-fun is_positive_ugly__function_guard (Bool Int) Bool)
+(declare-fun is_positive_good__function_guard (Bool Int) Bool)
 
-;; is_positive_ugly__post_axiom
+;; is_positive_good__post_axiom
   (assert
   (forall ((n Int))
   (! (=> (dynamic_invariant n true true true true)
-     (let ((result (is_positive_ugly n)))
-     (=> (is_positive_ugly__function_guard result n)
-     (= (= result true) (<= 1 n))))) :pattern ((is_positive_ugly n)) )))
+     (let ((result (is_positive_good n)))
+     (=> (is_positive_good__function_guard result n)
+     (= (= result true) (<= 1 n))))) :pattern ((is_positive_good n)) )))
 
 (declare-datatypes ((us_split_fields4 0))
-(((us_split_fieldsqtmk2 (rec__test_08__t2__n integer)))))
-(define-fun us_split_fields_rec__test_08__t2__n__projection ((a us_split_fields4)) integer 
-  (rec__test_08__t2__n a))
+(((us_split_fieldsqtmk2 (rec__test_08__t3__n integer)))))
+(define-fun us_split_fields_rec__test_08__t3__n__projection ((a us_split_fields4)) integer 
+  (rec__test_08__t3__n a))
 
 (declare-datatypes ((us_split_fields__ref2 0))
 (((us_split_fields__refqtmk2 (us_split_fields__content2 us_split_fields4)))))
-(define-fun us_split_fields__ref___split_fields__content__2__projection ((a us_split_fields__ref2)) us_split_fields4 
+(define-fun us_split_fields__ref___split_fields__content__3__projection ((a us_split_fields__ref2)) us_split_fields4 
   (us_split_fields__content2 a))
 
 (declare-datatypes ((us_rep2 0))
 (((us_repqtmk2 (us_split_fields5 us_split_fields4)))))
-(define-fun us_rep___split_fields__2__projection ((a us_rep2)) us_split_fields4 
+(define-fun us_rep___split_fields__3__projection ((a us_rep2)) us_split_fields4 
   (us_split_fields5 a))
 
 (define-fun bool_eq2 ((a us_rep2)
   (b us_rep2)) Bool (ite (= (to_rep
-                            (rec__test_08__t2__n (us_split_fields5 a))) 
-                    (to_rep (rec__test_08__t2__n (us_split_fields5 b)))) true
+                            (rec__test_08__t3__n (us_split_fields5 a))) 
+                    (to_rep (rec__test_08__t3__n (us_split_fields5 b)))) true
                     false))
 
 (declare-const value__size2 Int)
@@ -282,112 +282,112 @@
 ;; alignment_axiom
   (assert (<= 0 alignment2))
 
-(declare-const test_08__t2__n__first__bit Int)
+(declare-const test_08__t3__n__first__bit Int)
 
-(declare-const test_08__t2__n__last__bit Int)
+(declare-const test_08__t3__n__last__bit Int)
 
-(declare-const test_08__t2__n__position Int)
+(declare-const test_08__t3__n__position Int)
 
-;; test_08__t2__n__first__bit_axiom
-  (assert (<= 0 test_08__t2__n__first__bit))
+;; test_08__t3__n__first__bit_axiom
+  (assert (<= 0 test_08__t3__n__first__bit))
 
-;; test_08__t2__n__last__bit_axiom
-  (assert (< test_08__t2__n__first__bit test_08__t2__n__last__bit))
+;; test_08__t3__n__last__bit_axiom
+  (assert (< test_08__t3__n__first__bit test_08__t3__n__last__bit))
 
-;; test_08__t2__n__position_axiom
-  (assert (<= 0 test_08__t2__n__position))
+;; test_08__t3__n__position_axiom
+  (assert (<= 0 test_08__t3__n__position))
 
 (declare-fun user_eq3 (us_rep2 us_rep2) Bool)
 
 (declare-const dummy3 us_rep2)
 
-(declare-datatypes ((t2__ref 0))
-(((t2__refqtmk (t2__content us_rep2)))))
-(define-fun t2__ref_t2__content__projection ((a t2__ref)) us_rep2 (t2__content
+(declare-datatypes ((t3__ref 0))
+(((t3__refqtmk (t3__content us_rep2)))))
+(define-fun t3__ref_t3__content__projection ((a t3__ref)) us_rep2 (t3__content
                                                                   a))
 
-(declare-fun is_positive_bad (Int) Bool)
+(declare-fun is_positive_ugly (Int) Bool)
 
-(declare-fun is_positive_bad__function_guard (Bool Int) Bool)
+(declare-fun is_positive_ugly__function_guard (Bool Int) Bool)
 
-;; is_positive_bad__post_axiom
+;; is_positive_ugly__post_axiom
   (assert
   (forall ((n Int))
   (! (=> (dynamic_invariant n true true true true)
-     (let ((result (is_positive_bad n)))
-     (=> (is_positive_bad__function_guard result n)
-     (= (= result true) (<= 1 n))))) :pattern ((is_positive_bad n)) )))
+     (let ((result (is_positive_ugly n)))
+     (=> (is_positive_ugly__function_guard result n)
+     (= (= result true) (<= 1 n))))) :pattern ((is_positive_ugly n)) )))
 
-(define-fun default_initial_assumption ((temp___expr_162 us_rep)
+(define-fun default_initial_assumption ((temp___expr_162 us_rep1)
   (temp___skip_top_level_163 Bool)) Bool (= (to_rep
                                             (rec__test_08__t1__n
-                                            (us_split_fields1
+                                            (us_split_fields3
                                             temp___expr_162))) 42))
 
 ;; temp___result_166'def
   (assert
-  (forall ((temp___165 us_rep)) (is_positive_good__function_guard
+  (forall ((temp___165 us_rep1)) (is_positive_good__function_guard
   (is_positive_good
-  (to_rep (rec__test_08__t1__n (us_split_fields1 temp___165))))
-  (to_rep (rec__test_08__t1__n (us_split_fields1 temp___165))))))
+  (to_rep (rec__test_08__t1__n (us_split_fields3 temp___165))))
+  (to_rep (rec__test_08__t1__n (us_split_fields3 temp___165))))))
 
-(define-fun type_invariant ((temp___164 us_rep)) Bool (or
-                                                      (= (is_positive_good
-                                                         (to_rep
-                                                         (rec__test_08__t1__n
-                                                         (us_split_fields1
-                                                         temp___164)))) true)
-                                                      (= (to_rep
-                                                         (rec__test_08__t1__n
-                                                         (us_split_fields1
-                                                         temp___164))) (- 5))))
+(define-fun type_invariant ((temp___164 us_rep1)) Bool (or
+                                                       (= (is_positive_good
+                                                          (to_rep
+                                                          (rec__test_08__t1__n
+                                                          (us_split_fields3
+                                                          temp___164)))) true)
+                                                       (= (to_rep
+                                                          (rec__test_08__t1__n
+                                                          (us_split_fields3
+                                                          temp___164))) (- 5))))
 
-(define-fun default_initial_assumption1 ((temp___expr_172 us_rep2)
+(define-fun default_initial_assumption1 ((temp___expr_172 us_rep)
   (temp___skip_top_level_173 Bool)) Bool (= (to_rep
                                             (rec__test_08__t2__n
-                                            (us_split_fields5
+                                            (us_split_fields1
                                             temp___expr_172))) 42))
 
 ;; temp___result_176'def
   (assert
-  (forall ((temp___175 us_rep2)) (is_positive_bad__function_guard
+  (forall ((temp___175 us_rep)) (is_positive_bad__function_guard
   (is_positive_bad
-  (to_rep (rec__test_08__t2__n (us_split_fields5 temp___175))))
-  (to_rep (rec__test_08__t2__n (us_split_fields5 temp___175))))))
+  (to_rep (rec__test_08__t2__n (us_split_fields1 temp___175))))
+  (to_rep (rec__test_08__t2__n (us_split_fields1 temp___175))))))
 
-(define-fun type_invariant1 ((temp___174 us_rep2)) Bool (or
-                                                        (= (is_positive_bad
-                                                           (to_rep
-                                                           (rec__test_08__t2__n
-                                                           (us_split_fields5
-                                                           temp___174)))) true)
-                                                        (= (to_rep
-                                                           (rec__test_08__t2__n
-                                                           (us_split_fields5
-                                                           temp___174))) (- 5))))
+(define-fun type_invariant1 ((temp___174 us_rep)) Bool (or
+                                                       (= (is_positive_bad
+                                                          (to_rep
+                                                          (rec__test_08__t2__n
+                                                          (us_split_fields1
+                                                          temp___174)))) true)
+                                                       (= (to_rep
+                                                          (rec__test_08__t2__n
+                                                          (us_split_fields1
+                                                          temp___174))) (- 5))))
 
-(define-fun default_initial_assumption2 ((temp___expr_182 us_rep1)
+(define-fun default_initial_assumption2 ((temp___expr_182 us_rep2)
   (temp___skip_top_level_183 Bool)) Bool (= (to_rep
                                             (rec__test_08__t3__n
-                                            (us_split_fields3
+                                            (us_split_fields5
                                             temp___expr_182))) 42))
 
 ;; temp___result_186'def
   (assert
-  (forall ((temp___185 us_rep1)) (is_positive_ugly__function_guard
+  (forall ((temp___185 us_rep2)) (is_positive_ugly__function_guard
   (is_positive_ugly
-  (to_rep (rec__test_08__t3__n (us_split_fields3 temp___185))))
-  (to_rep (rec__test_08__t3__n (us_split_fields3 temp___185))))))
+  (to_rep (rec__test_08__t3__n (us_split_fields5 temp___185))))
+  (to_rep (rec__test_08__t3__n (us_split_fields5 temp___185))))))
 
-(define-fun type_invariant2 ((temp___184 us_rep1)) Bool (or
+(define-fun type_invariant2 ((temp___184 us_rep2)) Bool (or
                                                         (= (is_positive_ugly
                                                            (to_rep
                                                            (rec__test_08__t3__n
-                                                           (us_split_fields3
+                                                           (us_split_fields5
                                                            temp___184)))) true)
                                                         (= (to_rep
                                                            (rec__test_08__t3__n
-                                                           (us_split_fields3
+                                                           (us_split_fields5
                                                            temp___184))) (- 5))))
 
 (assert
@@ -396,5 +396,5 @@
   (not
   (forall ((usf integer))
   (=> (= (to_rep usf) 42) (type_invariant
-  (us_repqtmk (us_split_fieldsqtmk usf)))))))
+  (us_repqtmk1 (us_split_fieldsqtmk1 usf)))))))
 (check-sat)

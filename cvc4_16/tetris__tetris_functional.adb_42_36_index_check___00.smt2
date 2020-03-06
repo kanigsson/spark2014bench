@@ -2006,8 +2006,8 @@
   (not
   (forall ((cur_board (Array Int (Array Int cell)))
   (cur_piece__split_fields us_split_fields) (cur_state Int) (o Int)
-  (spark__branch Bool) (o1 Int) (o2 cell) (temp___806 Int) (temp___807 Int)
-  (o3 Int) (o4 cell) (temp___809 Int) (o5 Int))
+  (spark__branch Bool) (o1 Int) (o2 cell) (temp___815 Int) (temp___816 Int)
+  (o3 Int) (o4 cell) (temp___818 Int) (o5 Int))
   (=>
   (= (tetris_functional__possible_i_shapes__aggregate_def
      (temp_____aggregate_def_165 (distinct 0 0) (distinct 0 0) (distinct 0 0)
@@ -2110,20 +2110,20 @@
   (= (to_rep1 (rec__tetris_functional__piece__s cur_piece__split_fields)) o1)
   (=> (= (to_rep o2) o1)
   (=>
-  (= (to_rep2 (rec__tetris_functional__piece__x cur_piece__split_fields)) temp___806)
-  (=> (<= 1 temp___806)
-  (=> (<= temp___806 10)
+  (= (to_rep2 (rec__tetris_functional__piece__x cur_piece__split_fields)) temp___815)
+  (=> (<= 1 temp___815)
+  (=> (<= temp___815 10)
   (=>
-  (= (to_rep3 (rec__tetris_functional__piece__y cur_piece__split_fields)) temp___807)
-  (=> (<= 1 temp___807)
-  (=> (<= temp___807 50)
+  (= (to_rep3 (rec__tetris_functional__piece__y cur_piece__split_fields)) temp___816)
+  (=> (<= 1 temp___816)
+  (=> (<= temp___816 50)
   (=>
   (= (to_rep1 (rec__tetris_functional__piece__s cur_piece__split_fields)) o3)
   (=> (= (to_rep o4) o3)
   (=>
-  (= (to_rep2 (rec__tetris_functional__piece__x cur_piece__split_fields)) temp___809)
-  (=> (<= 1 temp___809)
-  (=> (<= temp___809 10)
+  (= (to_rep2 (rec__tetris_functional__piece__x cur_piece__split_fields)) temp___818)
+  (=> (<= 1 temp___818)
+  (=> (<= temp___818 10)
   (=>
   (= (to_rep3 (rec__tetris_functional__piece__y cur_piece__split_fields)) o5)
   (<= 1 (+ o5 1))))))))))))))))))))))))))))

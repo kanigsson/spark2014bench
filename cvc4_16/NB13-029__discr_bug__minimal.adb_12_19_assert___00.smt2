@@ -143,6 +143,10 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range2 ((rec__minimal__record_with_mutable_discrs__present1 Bool)
+  (a us_split_discrs)) Bool (= rec__minimal__record_with_mutable_discrs__present1 
+  (rec__minimal__record_with_mutable_discrs__present a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -208,10 +212,6 @@
   (temp___skip_top_level_182 Bool)) Bool (= (rec__minimal__record_with_mutable_discrs__present
                                             (us_split_discrs1
                                             temp___expr_181)) (distinct 0 0)))
-
-(define-fun in_range2 ((rec__minimal__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__minimal__record_with_mutable_discrs__present1 
-  (rec__minimal__record_with_mutable_discrs__present (us_split_discrs1 a))))
 
 (declare-const value__size1 Int)
 

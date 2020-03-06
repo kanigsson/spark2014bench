@@ -362,6 +362,10 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range4 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
+  (to_rep (rec__ada___pragmarc__b_strings__b_string__max_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

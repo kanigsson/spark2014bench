@@ -819,29 +819,24 @@
                       (rec__patience__state__numelts (us_split_fields1 s))) 1)))
              (and
              (and
-             (and
-             (<= 0 (to_rep
-                   (select (rec__patience__state__posstack
-                           (us_split_fields1 s)) i)))
-             (<= (to_rep
-                 (select (rec__patience__state__posstack
-                         (us_split_fields1 s)) i)) (- (to_rep
-                                                      (rec__patience__state__numstacks
-                                                      (us_split_fields1 s))) 1)))
-             (and
-             (<= 0 (to_rep
-                   (select (rec__patience__state__posheight
-                           (us_split_fields1 s)) i)))
-             (<= (to_rep
-                 (select (rec__patience__state__posheight
-                         (us_split_fields1 s)) i)) (- (to_rep
-                                                      (select (rec__patience__state__stacksizes
-                                                              (us_split_fields1
-                                                              s)) (to_rep
-                                                                  (select 
-                                                                  (rec__patience__state__posstack
-                                                                  (us_split_fields1
-                                                                  s)) i)))) 1))))
+             (let ((temp___460 (to_rep
+                               (select (rec__patience__state__posstack
+                                       (us_split_fields1 s)) i))))
+             (and (<= 0 temp___460)
+             (<= temp___460 (- (to_rep
+                               (rec__patience__state__numstacks
+                               (us_split_fields1 s))) 1))))
+             (let ((temp___462 (to_rep
+                               (select (rec__patience__state__posheight
+                                       (us_split_fields1 s)) i))))
+             (and (<= 0 temp___462)
+             (<= temp___462 (- (to_rep
+                               (select (rec__patience__state__stacksizes
+                                       (us_split_fields1 s)) (to_rep
+                                                             (select 
+                                                             (rec__patience__state__posstack
+                                                             (us_split_fields1
+                                                             s)) i)))) 1)))))
              (= (to_rep
                 (select (select (rec__patience__state__stacks
                                 (us_split_fields1 s)) (to_rep
@@ -954,23 +949,20 @@
   (=> (= (to_rep (rec__patience__state__numelts (us_split_fields1 s))) o1)
   (=>
   (= (and (ite (<= 0 usf) true false) (ite (<= usf (- o1 1)) true false)) true)
+  (=> (<= 0 usf)
+  (=> (<= usf 99)
   (=>
+  (exists ((temp___549 Int))
+  (and
+  (= (to_rep (select (rec__patience__state__preds (us_split_fields1 s)) usf)) temp___549)
   (exists ((o3 Int))
   (and (= (to_rep (rec__patience__state__numelts (us_split_fields1 s))) o3)
+  (ite (= (and (ite (<= (- 1) temp___549) true false) (ite (<= temp___549 (- o3 1))
+                                                      true false)) true)
   (and (and (<= 0 usf) (<= usf 99))
   (exists ((o4 Int))
   (and
   (= (to_rep (select (rec__patience__state__preds (us_split_fields1 s)) usf)) o4)
-  (and (and (<= 0 usf) (<= usf 99))
-  (exists ((o5 Int))
-  (and
-  (= (to_rep (select (rec__patience__state__preds (us_split_fields1 s)) usf)) o5)
-  (ite (= (and (ite (<= (- 1) o5) true false) (ite (<= o4 (- o3 1)) true
-                                              false)) true)
-  (and (and (<= 0 usf) (<= usf 99))
-  (exists ((o6 Int))
-  (and
-  (= (to_rep (select (rec__patience__state__preds (us_split_fields1 s)) usf)) o6)
-  (= o2 (ite (< o6 usf) true false))))) (= o2 false))))))))))
-  (=> (= o2 true) (<= 0 usf))))))))))
+  (= o2 (ite (< o4 usf) true false))))) (= o2 false))))))
+  (=> (= o2 true) (<= 0 usf))))))))))))
 (check-sat)

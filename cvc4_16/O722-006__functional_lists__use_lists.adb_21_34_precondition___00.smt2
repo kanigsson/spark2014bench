@@ -265,7 +265,7 @@
 
 (declare-datatypes ((element_type__ref 0))
 (((element_type__refqtmk (element_type__content us_rep)))))
-(define-fun element_type__ref_element_type__content__13__projection ((a element_type__ref)) us_rep 
+(define-fun element_type__ref_element_type__content__9__projection ((a element_type__ref)) us_rep 
   (element_type__content a))
 
 (declare-fun find (us_rep2 us_rep us_type_of_heap) Int)
@@ -359,16 +359,16 @@
 
 (declare-datatypes ((element_type__ref1 0))
 (((element_type__refqtmk1 (element_type__content1 element_type)))))
-(define-fun element_type__ref_element_type__content__14__projection ((a element_type__ref1)) element_type 
+(define-fun element_type__ref_element_type__content__10__projection ((a element_type__ref1)) element_type 
   (element_type__content1 a))
 
-(define-fun dynamic_invariant2 ((temp___expr_678 Int)
-  (temp___is_init_674 Bool) (temp___skip_constant_675 Bool)
-  (temp___do_toplevel_676 Bool)
-  (temp___do_typ_inv_677 Bool)) Bool (=>
-                                     (or (= temp___is_init_674 true)
+(define-fun dynamic_invariant2 ((temp___expr_593 Int)
+  (temp___is_init_589 Bool) (temp___skip_constant_590 Bool)
+  (temp___do_toplevel_591 Bool)
+  (temp___do_typ_inv_592 Bool)) Bool (=>
+                                     (or (= temp___is_init_589 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range3 temp___expr_678)))
+                                     (in_range3 temp___expr_593)))
 
 ;; get__post_axiom
   (assert
@@ -468,19 +468,19 @@
 (declare-fun has_element__function_guard (Bool us_rep1 us_rep
   us_type_of_heap) Bool)
 
-;; temp___result_608'def
+;; temp___result_523'def
   (assert
-  (forall ((temp___607 us_rep1)) (length__function_guard (length temp___607)
-  temp___607)))
+  (forall ((temp___522 us_rep1)) (length__function_guard (length temp___522)
+  temp___522)))
 
-(define-fun default_initial_assumption ((temp___expr_605 us_rep1)
-  (temp___skip_top_level_606 Bool)) Bool (and
-                                         (= (attr__tag temp___expr_605) 
+(define-fun default_initial_assumption ((temp___expr_520 us_rep1)
+  (temp___skip_top_level_521 Bool)) Bool (and
+                                         (= (attr__tag temp___expr_520) 
                                          us_tag)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_606 true))
-                                         (= (length temp___expr_605) 0))))
+                                         (= temp___skip_top_level_521 true))
+                                         (= (length temp___expr_520) 0))))
 
 (declare-fun snoc (us_rep2 us_rep us_type_of_heap) us_rep2)
 

@@ -251,12 +251,12 @@
 
 (declare-datatypes ((modular__ref 0))
 (((modular__refqtmk (modular__content modular)))))
-(define-fun modular__ref_modular__content__8__projection ((a modular__ref)) modular 
+(define-fun modular__ref_modular__content__4__projection ((a modular__ref)) modular 
   (modular__content a))
 
-(define-fun dynamic_invariant ((temp___expr_520 (_ BitVec 64))
-  (temp___is_init_516 Bool) (temp___skip_constant_517 Bool)
-  (temp___do_toplevel_518 Bool) (temp___do_typ_inv_519 Bool)) Bool true)
+(define-fun dynamic_invariant ((temp___expr_492 (_ BitVec 64))
+  (temp___is_init_488 Bool) (temp___skip_constant_489 Bool)
+  (temp___do_toplevel_490 Bool) (temp___do_typ_inv_491 Bool)) Bool true)
 
 (declare-sort mask_size 0)
 
@@ -284,12 +284,12 @@
 (define-fun mask_size__ref_mask_size__content__7__projection ((a mask_size__ref)) mask_size 
   (mask_size__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_534 Int)
-  (temp___is_init_530 Bool) (temp___skip_constant_531 Bool)
-  (temp___do_toplevel_532 Bool)
-  (temp___do_typ_inv_533 Bool)) Bool (=>
-                                     (or (= temp___is_init_530 true)
-                                     (<= 1 64)) (in_range1 temp___expr_534)))
+(define-fun dynamic_invariant1 ((temp___expr_506 Int)
+  (temp___is_init_502 Bool) (temp___skip_constant_503 Bool)
+  (temp___do_toplevel_504 Bool)
+  (temp___do_typ_inv_505 Bool)) Bool (=>
+                                     (or (= temp___is_init_502 true)
+                                     (<= 1 64)) (in_range1 temp___expr_506)))
 
 ;; make_mask__post_axiom
   (assert

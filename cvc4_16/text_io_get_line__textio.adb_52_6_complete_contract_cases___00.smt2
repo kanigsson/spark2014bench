@@ -377,9 +377,11 @@
   (and
   (and
   (and (and (<= (to_rep1 s1__first) from1) (<= from1 (to_rep1 s1__last)))
-  (and (<= (to_rep1 s1__first) (- (+ from1 n) 1))
-  (<= (- (+ from1 n) 1) (to_rep1 s1__last))))
+  (let ((temp___415 (- (+ from1 n) 1)))
+  (and (<= (to_rep1 s1__first) temp___415)
+  (<= temp___415 (to_rep1 s1__last)))))
   (and (<= (first1 s2) from2) (<= from2 (last1 s2))))
-  (and (<= (first1 s2) (- (+ from2 n) 1)) (<= (- (+ from2 n) 1) (last1 s2)))))
+  (let ((temp___416 (- (+ from2 n) 1)))
+  (and (<= (first1 s2) temp___416) (<= temp___416 (last1 s2))))))
   (<= 1 (+ (+ 0 (ite (= (= n 0) true) 1 0)) (ite (= (not (= n 0)) true) 1 0)))))))))))
 (check-sat)

@@ -195,7 +195,7 @@
   (forall ((a (Array Int positive)) (a1 (Array Int positive))
   (partition_refinement__swap__tmp__assume Int) (o Int) (o1 positive)
   (a2 (Array Int positive)) (o2 positive) (a3 (Array Int positive))
-  (temp___index_2179 Int))
+  (temp___index_2196 Int))
   (=> (= a1 a)
   (=> (dynamic_invariant1 j true false true true)
   (=> (dynamic_invariant1 k true false true true)
@@ -207,12 +207,12 @@
   (=> (= a2 (store a j o1))
   (=> (= (to_rep o2) tmp)
   (=> (= a3 (store a2 k o2))
-  (=> (<= 0 temp___index_2179)
-  (=> (<= temp___index_2179 5)
-  (= (to_rep (select a3 temp___index_2179)) (ite (= temp___index_2179 
+  (=> (<= 0 temp___index_2196)
+  (=> (<= temp___index_2196 5)
+  (= (to_rep (select a3 temp___index_2196)) (ite (= temp___index_2196 
                                             k) (to_rep (select a1 j))
-                                            (ite (= temp___index_2179 
+                                            (ite (= temp___index_2196 
                                             j) (to_rep (select a1 k))
                                             (to_rep
-                                            (select a1 temp___index_2179)))))))))))))))))))))
+                                            (select a1 temp___index_2196)))))))))))))))))))))
 (check-sat)

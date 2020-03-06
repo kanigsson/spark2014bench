@@ -227,6 +227,11 @@
                         (rec__var__decision__right (us_split_fields1 b))))))))
                    true false))
 
+(define-fun in_range3 ((rec__var__decision__kind1 Int)
+  (a us_split_discrs)) Bool (= rec__var__decision__kind1 (to_rep1
+                                                         (rec__var__decision__kind
+                                                         a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -380,7 +385,7 @@
 
 (declare-sort tristate 0)
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -408,12 +413,12 @@
 
 ;; range_axiom
   (assert
-  (forall ((x tristate)) (! (in_range3 (to_rep2 x)) :pattern ((to_rep2 x)) )))
+  (forall ((x tristate)) (! (in_range4 (to_rep2 x)) :pattern ((to_rep2 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range3 x) (= (to_rep2 (of_rep2 x)) x)) :pattern ((to_rep2
+  (! (=> (in_range4 x) (= (to_rep2 (of_rep2 x)) x)) :pattern ((to_rep2
                                                               (of_rep2 x))) )))
 
 (declare-datatypes ((map__ref1 0))
@@ -480,13 +485,13 @@
   (temp___do_toplevel_189 Bool)
   (temp___do_typ_inv_190 Bool)) Bool (=>
                                      (or (= temp___is_init_187 true)
-                                     (<= 0 2)) (in_range3 temp___expr_191)))
+                                     (<= 0 2)) (in_range4 temp___expr_191)))
 
 ;; decision_eval__post_axiom
   (assert
   (forall ((root_id1 Int))
   (forall ((var_test__decision_table (Array Int us_rep)))
-  (forall ((var_test__condition_values (Array Int tristate))) (! (in_range3
+  (forall ((var_test__condition_values (Array Int tristate))) (! (in_range4
   (decision_eval root_id1 var_test__decision_table
   var_test__condition_values)) :pattern ((decision_eval root_id1
                                          var_test__decision_table

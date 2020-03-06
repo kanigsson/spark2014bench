@@ -546,16 +546,12 @@
      (and
      (and
      (and
-     (and
-     (<= (first1 a) (to_rep2
-                    (rec__perm__witnesses__ia (us_split_fields1 result))))
-     (<= (to_rep2 (rec__perm__witnesses__ia (us_split_fields1 result))) 
-     (last1 a)))
-     (and
-     (<= (first1 b) (to_rep2
-                    (rec__perm__witnesses__ib (us_split_fields1 result))))
-     (<= (to_rep2 (rec__perm__witnesses__ib (us_split_fields1 result))) 
-     (last1 b))))
+     (let ((temp___425 (to_rep2
+                       (rec__perm__witnesses__ia (us_split_fields1 result)))))
+     (and (<= (first1 a) temp___425) (<= temp___425 (last1 a))))
+     (let ((temp___426 (to_rep2
+                       (rec__perm__witnesses__ib (us_split_fields1 result)))))
+     (and (<= (first1 b) temp___426) (<= temp___426 (last1 b)))))
      (= (to_rep
         (select (to_array a) (to_rep2
                              (rec__perm__witnesses__ia
@@ -768,25 +764,16 @@
   (and
   (and
   (and
-  (and
-  (<= (first1 o1) (to_rep2
-                  (rec__perm__witnesses__ia
-                  (us_split_fields1
-                  perm__perm_symmetric__induction_hypothesis__B_4__w__assume))))
-  (<= (to_rep2
-      (rec__perm__witnesses__ia
-      (us_split_fields1
-      perm__perm_symmetric__induction_hypothesis__B_4__w__assume))) (last1
-                                                                    o1)))
-  (and
-  (<= (first1 o) (to_rep2
-                 (rec__perm__witnesses__ib
-                 (us_split_fields1
-                 perm__perm_symmetric__induction_hypothesis__B_4__w__assume))))
-  (<= (to_rep2
-      (rec__perm__witnesses__ib
-      (us_split_fields1
-      perm__perm_symmetric__induction_hypothesis__B_4__w__assume))) (last1 o))))
+  (let ((temp___417 (to_rep2
+                    (rec__perm__witnesses__ia
+                    (us_split_fields1
+                    perm__perm_symmetric__induction_hypothesis__B_4__w__assume)))))
+  (and (<= (first1 o1) temp___417) (<= temp___417 (last1 o1))))
+  (let ((temp___418 (to_rep2
+                    (rec__perm__witnesses__ib
+                    (us_split_fields1
+                    perm__perm_symmetric__induction_hypothesis__B_4__w__assume)))))
+  (and (<= (first1 o) temp___418) (<= temp___418 (last1 o)))))
   (= (to_rep
      (select (to_array o1) (to_rep2
                            (rec__perm__witnesses__ia
@@ -871,14 +858,14 @@
   ih)
   (=> (dynamic_invariant2 ih true false true true)
   (=> (= (distinct ih 0) true)
-  (forall ((temp___999 Int))
+  (forall ((temp___1007 Int))
   (=>
-  (= (to_rep2 (rec__perm__witnesses__ia (us_split_fields1 w))) temp___999)
-  (=> (and (<= (first1 a) temp___999) (<= temp___999 (last1 a)))
+  (= (to_rep2 (rec__perm__witnesses__ia (us_split_fields1 w))) temp___1007)
+  (=> (and (<= (first1 a) temp___1007) (<= temp___1007 (last1 a)))
   (forall ((o8 Int))
-  (=> (= (to_rep (select (to_array a) temp___999)) o8)
-  (forall ((temp___998 Int))
+  (=> (= (to_rep (select (to_array a) temp___1007)) o8)
+  (forall ((temp___1006 Int))
   (=>
-  (= (to_rep2 (rec__perm__witnesses__ib (us_split_fields1 w))) temp___998)
-  (<= (first1 b) temp___998)))))))))))))))))))))))))))))))))))))))))))))))))
+  (= (to_rep2 (rec__perm__witnesses__ib (us_split_fields1 w))) temp___1006)
+  (<= (first1 b) temp___1006)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

@@ -707,8 +707,8 @@
                                                                    array2)) (- j 
      (first1 array2))) 1)) 2)) (to_rep (select (to_array array2) j)))))))
   (and
-  (= (and (ite (and (dynamic_invariant result_index1 true true true true)
-               (dynamic_property3 (first1 array2) (last1 array2) index2))
+  (= (and (ite (and (dynamic_property3 (first1 array2) (last1 array2) index2)
+               (dynamic_invariant result_index1 true true true true))
           true false) (ite (and (<= (first1 array2) index2)
                            (<= index2 (last1 array2)))
                       true false)) true)
@@ -804,8 +804,9 @@
                                                                     array2)) (- j 
      (first1 array2))) 1)) 2)) (to_rep (select (to_array array2) j)))))))
   (and
-  (= (and (ite (and (dynamic_invariant result_index3 true true true true)
-               (dynamic_property3 (first1 array2) (last1 array2) index22))
+  (= (and (ite (and (dynamic_property3 (first1 array2) (last1 array2)
+               index22) (dynamic_invariant result_index3 true true true
+               true))
           true false) (ite (and (<= (first1 array2) index22)
                            (<= index22 (last1 array2)))
                       true false)) true)

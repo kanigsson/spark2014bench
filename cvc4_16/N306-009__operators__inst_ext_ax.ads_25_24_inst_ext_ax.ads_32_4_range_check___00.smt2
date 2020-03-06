@@ -105,12 +105,13 @@
 (define-fun int200__ref_int200__content__projection ((a int200__ref)) int200 
   (int200__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_995 Int)
-  (temp___is_init_991 Bool) (temp___skip_constant_992 Bool)
-  (temp___do_toplevel_993 Bool)
-  (temp___do_typ_inv_994 Bool)) Bool (=>
-                                     (or (= temp___is_init_991 true)
-                                     (<= 0 200)) (in_range1 temp___expr_995)))
+(define-fun dynamic_invariant1 ((temp___expr_1009 Int)
+  (temp___is_init_1005 Bool) (temp___skip_constant_1006 Bool)
+  (temp___do_toplevel_1007 Bool)
+  (temp___do_typ_inv_1008 Bool)) Bool (=>
+                                      (or (= temp___is_init_1005 true)
+                                      (<= 0 200)) (in_range1
+                                      temp___expr_1009)))
 
 ;; addthree__post_axiom
   (assert
@@ -165,12 +166,13 @@
 (define-fun int100__ref_int100__content__projection ((a int100__ref)) int100 
   (int100__content a))
 
-(define-fun dynamic_invariant2 ((temp___expr_988 Int)
-  (temp___is_init_984 Bool) (temp___skip_constant_985 Bool)
-  (temp___do_toplevel_986 Bool)
-  (temp___do_typ_inv_987 Bool)) Bool (=>
-                                     (or (= temp___is_init_984 true)
-                                     (<= 0 100)) (in_range2 temp___expr_988)))
+(define-fun dynamic_invariant2 ((temp___expr_1002 Int)
+  (temp___is_init_998 Bool) (temp___skip_constant_999 Bool)
+  (temp___do_toplevel_1000 Bool)
+  (temp___do_typ_inv_1001 Bool)) Bool (=>
+                                      (or (= temp___is_init_998 true)
+                                      (<= 0 100)) (in_range2
+                                      temp___expr_1002)))
 
 (assert
 ;; defqtvc

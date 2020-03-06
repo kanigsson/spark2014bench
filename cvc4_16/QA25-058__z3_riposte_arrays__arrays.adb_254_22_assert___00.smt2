@@ -207,7 +207,7 @@
 (define-fun small_index_t__ref_small_index_t__content__projection ((a small_index_t__ref)) small_index_t 
   (small_index_t__content a))
 
-(declare-fun temp_____aggregate_def_369 (Int) (Array Int unsigned_byte))
+(declare-fun temp_____aggregate_def_373 (Int) (Array Int unsigned_byte))
 
 (define-fun dynamic_invariant1 ((temp___expr_174 Int)
   (temp___is_init_170 Bool) (temp___skip_constant_171 Bool)
@@ -231,17 +231,17 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___371 Int))
-  (=> (dynamic_invariant1 temp___371 true true true true)
-  (forall ((temp___372 Int))
-  (= (select (temp_____aggregate_def_369 temp___371) temp___372) rliteral)))))
+  (forall ((temp___375 Int))
+  (=> (dynamic_invariant1 temp___375 true true true true)
+  (forall ((temp___376 Int))
+  (= (select (temp_____aggregate_def_373 temp___375) temp___376) rliteral)))))
 
 (assert
 ;; defqtvc
  ;; File "arrays.adb", line 248, characters 0-0
   (not
   (forall ((a (Array Int unsigned_byte)))
-  (=> (= a (temp_____aggregate_def_369 0))
+  (=> (= a (temp_____aggregate_def_373 0))
   (=> (random_array__function_guard (random_array 5) 5)
   (= (bool_eq a 1 1000 (random_array 5) 1 1000) true))))))
 (check-sat)

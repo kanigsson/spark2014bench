@@ -534,9 +534,9 @@
   (and (<= (first1 a) right2) (<= right2 (last1 a))))
   (=>
   (= (and (ite (and
-               (and (dynamic_invariant2 med1 false true true true)
+               (and (dynamic_invariant2 right2 false true true true)
+               (dynamic_invariant2 med1 false true true true))
                (dynamic_invariant2 left2 false true true true))
-               (dynamic_invariant2 right2 false true true true))
           true false) (ite (< left2 right2) true false)) true)
   (forall ((temp___203 Int))
   (=> (= temp___203 (- right2 left2)) (in_range2

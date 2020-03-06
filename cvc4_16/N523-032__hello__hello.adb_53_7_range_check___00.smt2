@@ -336,14 +336,12 @@
      (= (to_rep (select (to_array res) j)) (to_upper
                                            (to_rep (select (to_array str) j))))
      (ite (and
-          (= (not (and (ite (<= 97 (to_rep (select (to_array str) (- j 1))))
-                       true false) (ite (<= (to_rep
-                                            (select (to_array str) (- j 1))) 122)
-                                   true false))) true)
-          (= (not (and (ite (<= 65 (to_rep (select (to_array str) (- j 1))))
-                       true false) (ite (<= (to_rep
-                                            (select (to_array str) (- j 1))) 90)
-                                   true false))) true))
+          (= (not (let ((temp___186 (to_rep (select (to_array str) (- j 1)))))
+                  (and (ite (<= 97 temp___186) true false) (ite (<= temp___186 122)
+                                                           true false)))) true)
+          (= (not (let ((temp___187 (to_rep (select (to_array str) (- j 1)))))
+                  (and (ite (<= 65 temp___187) true false) (ite (<= temp___187 90)
+                                                           true false)))) true))
      (= (to_rep (select (to_array res) j)) (to_upper
                                            (to_rep (select (to_array str) j))))
      (= (to_rep (select (to_array res) j)) (to_lower
@@ -394,23 +392,23 @@
                                     (<= 1 2147483647)) (in_range1
                                     temp___expr_46)))
 
-(define-fun dynamic_invariant4 ((temp___expr_196 us_t)
-  (temp___is_init_192 Bool) (temp___skip_constant_193 Bool)
-  (temp___do_toplevel_194 Bool)
-  (temp___do_typ_inv_195 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_193 true))
+(define-fun dynamic_invariant4 ((temp___expr_204 us_t)
+  (temp___is_init_200 Bool) (temp___skip_constant_201 Bool)
+  (temp___do_toplevel_202 Bool)
+  (temp___do_typ_inv_203 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_201 true))
                                      (and (dynamic_property (first1 str)
-                                     (last1 str) (first1 temp___expr_196)
-                                     (last1 temp___expr_196))
+                                     (last1 str) (first1 temp___expr_204)
+                                     (last1 temp___expr_204))
                                      (and
-                                     (= (first1 temp___expr_196) (first1 str))
-                                     (= (last1 temp___expr_196) (last1 str))))))
+                                     (= (first1 temp___expr_204) (first1 str))
+                                     (= (last1 temp___expr_204) (last1 str))))))
 
-(define-fun default_initial_assumption ((temp___expr_198 us_t)
-  (temp___skip_top_level_199 Bool)) Bool (and
-                                         (= (first1 temp___expr_198) 
+(define-fun default_initial_assumption ((temp___expr_206 us_t)
+  (temp___skip_top_level_207 Bool)) Bool (and
+                                         (= (first1 temp___expr_206) 
                                          (first1 str))
-                                         (= (last1 temp___expr_198) (last1
+                                         (= (last1 temp___expr_206) (last1
                                                                     str))))
 
 (assert

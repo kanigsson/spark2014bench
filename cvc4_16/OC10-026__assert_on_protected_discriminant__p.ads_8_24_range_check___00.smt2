@@ -147,6 +147,27 @@
 (define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun to_rep ((x integer)) Int (integerqtint x))
+
+(declare-fun of_rep (Int) integer)
+
+;; inversion_axiom
+  (assert
+  (forall ((x integer)) (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x integer)) (! (in_range (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                           (of_rep x))) )))
+
+(define-fun in_range2 ((rec__p__pt__j1 Int)
+  (a us_split_discrs)) Bool (= rec__p__pt__j1 (to_rep (rec__p__pt__j a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

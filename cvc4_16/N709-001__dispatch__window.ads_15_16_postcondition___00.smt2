@@ -600,20 +600,20 @@
   (! (=> (get_area__specific_post us_tag1 object__get_area__obj__fields
      obj__attr__tag1 object__get_area__result
      object__get_area__obj__old__fields object__get_area__result__old)
-     (let ((temp___rec___186 (of_base
+     (let ((temp___rec___188 (of_base
                              (us_repqtmk object__get_area__obj__fields
                              obj__attr__tag1))))
      (and
      (and
-     (forall ((temp___rec___1861 us_rep1)) (has_stored_area__function_guard
-     (has_stored_area (to_base temp___rec___1861))
-     (to_base temp___rec___1861)))
-     (= (has_stored_area (to_base temp___rec___186)) true))
+     (forall ((temp___rec___1881 us_rep1)) (has_stored_area__function_guard
+     (has_stored_area (to_base temp___rec___1881))
+     (to_base temp___rec___1881)))
+     (= (has_stored_area (to_base temp___rec___188)) true))
      (and
-     (forall ((temp___rec___1861 us_rep1)) (get_stored_area__function_guard
-     (get_stored_area (to_base temp___rec___1861))
-     (to_base temp___rec___1861)))
-     (= object__get_area__result (get_stored_area (to_base temp___rec___186))))))) :pattern ((get_area__specific_post
+     (forall ((temp___rec___1881 us_rep1)) (get_stored_area__function_guard
+     (get_stored_area (to_base temp___rec___1881))
+     (to_base temp___rec___1881)))
+     (= object__get_area__result (get_stored_area (to_base temp___rec___188))))))) :pattern ((get_area__specific_post
   us_tag1 object__get_area__obj__fields obj__attr__tag1
   object__get_area__result object__get_area__obj__old__fields
   object__get_area__result__old)) ))))
@@ -681,24 +681,24 @@
                               (rec__object__t__area (us_split_fields1 obj)))) :pattern (
   (get_stored_area obj)) )))
 
-(define-fun default_initial_assumption1 ((temp___expr_203 us_rep1)
-  (temp___skip_top_level_204 Bool)) Bool (and
-                                         (= (attr__tag1 temp___expr_203) 
+(define-fun default_initial_assumption1 ((temp___expr_205 us_rep1)
+  (temp___skip_top_level_206 Bool)) Bool (and
+                                         (= (attr__tag1 temp___expr_205) 
                                          us_tag1)
                                          (and
                                          (and
                                          (= (to_rep
                                             (rec__object__t__area1
                                             (us_split_fields3
-                                            temp___expr_203))) (- 1))
+                                            temp___expr_205))) (- 1))
                                          (= (to_rep
                                             (rec__object__t__max_width1
                                             (us_split_fields3
-                                            temp___expr_203))) (- 1)))
+                                            temp___expr_205))) (- 1)))
                                          (= (to_rep
                                             (rec__object__t__max_height1
                                             (us_split_fields3
-                                            temp___expr_203))) (- 1)))))
+                                            temp___expr_205))) (- 1)))))
 
 (assert
 ;; defqtvc

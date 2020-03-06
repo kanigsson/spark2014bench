@@ -391,7 +391,7 @@
 
 (define-fun dynamic_predicate ((temp___168 us_t)) Bool (= (first1 temp___168) 1))
 
-(declare-fun temp_____aggregate_def_350 (Int) (Array Int positive))
+(declare-fun temp_____aggregate_def_361 (Int) (Array Int positive))
 
 (define-fun dynamic_invariant1 ((temp___expr_46 Int) (temp___is_init_42 Bool)
   (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)
@@ -415,10 +415,10 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___352 Int))
-  (=> (dynamic_invariant1 temp___352 true true true true)
-  (forall ((temp___353 Int))
-  (= (to_rep (select (temp_____aggregate_def_350 temp___352) temp___353)) temp___352)))))
+  (forall ((temp___363 Int))
+  (=> (dynamic_invariant1 temp___363 true true true true)
+  (forall ((temp___364 Int))
+  (= (to_rep (select (temp_____aggregate_def_361 temp___363) temp___364)) temp___363)))))
 
 (assert
 ;; defqtvc
@@ -431,14 +431,14 @@
   (let ((o1 (+ o 1)))
   (=> (in_range1 o1)
   (forall ((bad_shift (Array Int positive)))
-  (=> (= bad_shift (temp_____aggregate_def_350 o1))
+  (=> (= bad_shift (temp_____aggregate_def_361 o1))
   (forall ((bad_shift1 (Array Int positive)))
   (=>
-  (let ((temp___354 (first1 needle)))
-  (let ((temp___355 (last1 needle)))
+  (let ((temp___365 (first1 needle)))
+  (let ((temp___366 (last1 needle)))
   (exists ((j Int))
-  (and (= j temp___354)
-  (ite (= (and (ite (<= temp___354 j) true false) (ite (<= j temp___355) true
+  (and (= j temp___365)
+  (ite (= (and (ite (<= temp___365 j) true false) (ite (<= j temp___366) true
                                                   false)) true)
   (let ((o2 (length needle)))
   (and (in_range1 o2)
@@ -458,8 +458,8 @@
   (and
   (forall ((c Int))
   (=> (and (<= 0 c) (<= c 255))
-  (and (<= 1 (to_rep (select bad_shift1 c)))
-  (<= (to_rep (select bad_shift1 c)) (+ (length needle) 1)))))
+  (let ((temp___375 (to_rep (select bad_shift1 c))))
+  (and (<= 1 temp___375) (<= temp___375 (+ (length needle) 1))))))
   (forall ((c Int))
   (=> (and (<= 0 c) (<= c 255))
   (ite (= (to_rep (select bad_shift1 c)) (+ (length needle) 1))
@@ -478,12 +478,12 @@
   (= (and (ite (dynamic_property1 (first1 needle) (last1 needle) j1) true
           false) (ite (and (<= (first1 needle) j1) (<= j1 (last1 needle)))
                  true false)) true)
-  (= j1 temp___355))))))))))))))))) (= bad_shift1 bad_shift))))))
+  (= j1 temp___366))))))))))))))))) (= bad_shift1 bad_shift))))))
   (=>
   (forall ((c Int))
   (=> (and (<= 0 c) (<= c 255))
-  (and (<= 1 (to_rep (select bad_shift1 c)))
-  (<= (to_rep (select bad_shift1 c)) (+ (length needle) 1)))))
+  (let ((temp___378 (to_rep (select bad_shift1 c))))
+  (and (<= 1 temp___378) (<= temp___378 (+ (length needle) 1))))))
   (forall ((usf Int))
   (=>
   (= (and (ite (<= 0 usf) true false) (ite (<= usf 255) true false)) true)

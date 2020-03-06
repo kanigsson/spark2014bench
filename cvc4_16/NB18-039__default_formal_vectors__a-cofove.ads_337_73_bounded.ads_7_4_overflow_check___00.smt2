@@ -169,6 +169,10 @@
                            (rec__bounded__vect__vector (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__bounded__vect__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__bounded__vect__vector__capacity1 
+  (to_rep (rec__bounded__vect__vector__capacity a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -339,7 +343,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -361,7 +365,7 @@
   (temp___do_toplevel_216 Bool)
   (temp___do_typ_inv_217 Bool)) Bool (=>
                                      (or (= temp___is_init_214 true)
-                                     (<= 0 2147483647)) (in_range3
+                                     (<= 0 2147483647)) (in_range4
                                      temp___expr_218)))
 
 (declare-const container__split_discrs us_split_discrs)
@@ -386,7 +390,7 @@
   (and (<= (- 2147483648) (element_typeqtint i))
   (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
@@ -410,7 +414,7 @@
   (temp___do_typ_inv_210 Bool)) Bool (=>
                                      (or (= temp___is_init_207 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range4 temp___expr_211)))
+                                     (in_range5 temp___expr_211)))
 
 (define-fun dynamic_invariant3 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)
@@ -428,7 +432,7 @@
   (forall ((i count_type))
   (and (<= 0 (count_typeqtint i)) (<= (count_typeqtint i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -450,7 +454,7 @@
   (temp___do_toplevel_223 Bool)
   (temp___do_typ_inv_224 Bool)) Bool (=>
                                      (or (= temp___is_init_221 true)
-                                     (<= 0 2147483647)) (in_range5
+                                     (<= 0 2147483647)) (in_range6
                                      temp___expr_225)))
 
 ;; oeq__post_axiom
@@ -469,7 +473,7 @@
   (and (<= 0 (extended_indexqtint1 i))
   (<= (extended_indexqtint1 i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -491,7 +495,7 @@
   (temp___do_toplevel_261 Bool)
   (temp___do_typ_inv_262 Bool)) Bool (=>
                                      (or (= temp___is_init_259 true)
-                                     (<= 0 2147483647)) (in_range6
+                                     (<= 0 2147483647)) (in_range7
                                      temp___expr_263)))
 
 ;; length__post_axiom
@@ -511,7 +515,7 @@
   (and (<= (- 2147483648) (element_typeqtint1 i))
   (<= (element_typeqtint1 i) 2147483647))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range8 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
@@ -535,7 +539,7 @@
   (temp___do_typ_inv_255 Bool)) Bool (=>
                                      (or (= temp___is_init_252 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range7 temp___expr_256)))
+                                     (in_range8 temp___expr_256)))
 
 ;; get__post_axiom
   (assert

@@ -338,6 +338,21 @@
 ;; useless_discr__t__discr__position_axiom
   (assert (<= 0 useless_discr__t__discr__position))
 
+(declare-const useless_discr__t__y__first__bit Int)
+
+(declare-const useless_discr__t__y__last__bit Int)
+
+(declare-const useless_discr__t__y__position Int)
+
+;; useless_discr__t__y__first__bit_axiom
+  (assert (<= 0 useless_discr__t__y__first__bit))
+
+;; useless_discr__t__y__last__bit_axiom
+  (assert (< useless_discr__t__y__first__bit useless_discr__t__y__last__bit))
+
+;; useless_discr__t__y__position_axiom
+  (assert (<= 0 useless_discr__t__y__position))
+
 (declare-const useless_discr__t__z__first__bit Int)
 
 (declare-const useless_discr__t__z__last__bit Int)
@@ -368,36 +383,21 @@
 ;; useless_discr__t__x__position_axiom
   (assert (<= 0 useless_discr__t__x__position))
 
-(declare-const useless_discr__t__y__first__bit Int)
-
-(declare-const useless_discr__t__y__last__bit Int)
-
-(declare-const useless_discr__t__y__position Int)
-
-;; useless_discr__t__y__first__bit_axiom
-  (assert (<= 0 useless_discr__t__y__first__bit))
-
-;; useless_discr__t__y__last__bit_axiom
-  (assert (< useless_discr__t__y__first__bit useless_discr__t__y__last__bit))
-
-;; useless_discr__t__y__position_axiom
-  (assert (<= 0 useless_discr__t__y__position))
-
 (declare-fun user_eq3 (us_rep us_rep) Bool)
 
 (declare-const dummy3 us_rep)
 
-(declare-datatypes ((t__ref1 0))
-(((t__refqtmk1 (t__content1 us_rep)))))
-(define-fun t__ref_t__content__projection ((a t__ref1)) us_rep (t__content1
-                                                               a))
+(declare-datatypes ((tvS__ref 0))
+(((tvS__refqtmk (tvS__content us_rep)))))
+(define-fun tvS__ref_tvS__content__projection ((a tvS__ref)) us_rep (tvS__content
+                                                                    a))
 
 (declare-const us_tag1 Int)
 
 (define-fun in_range3 ((rec__useless_discr__t__discr1 Int)
-  (a us_rep)) Bool (= rec__useless_discr__t__discr1 (to_rep2
-                                                    (rec__useless_discr__t__discr
-                                                    (us_split_discrs1 a)))))
+  (a us_split_discrs)) Bool (= rec__useless_discr__t__discr1 (to_rep2
+                                                             (rec__useless_discr__t__discr
+                                                             a))))
 
 (declare-const value__size1 Int)
 
@@ -429,22 +429,6 @@
 
 ;; useless_discr__t__discr__position_axiom
   (assert (<= 0 useless_discr__t__discr__position1))
-
-(declare-const useless_discr__t__y__first__bit1 Int)
-
-(declare-const useless_discr__t__y__last__bit1 Int)
-
-(declare-const useless_discr__t__y__position1 Int)
-
-;; useless_discr__t__y__first__bit_axiom
-  (assert (<= 0 useless_discr__t__y__first__bit1))
-
-;; useless_discr__t__y__last__bit_axiom
-  (assert
-  (< useless_discr__t__y__first__bit1 useless_discr__t__y__last__bit1))
-
-;; useless_discr__t__y__position_axiom
-  (assert (<= 0 useless_discr__t__y__position1))
 
 (declare-const useless_discr__t__z__first__bit1 Int)
 
@@ -478,14 +462,30 @@
 ;; useless_discr__t__x__position_axiom
   (assert (<= 0 useless_discr__t__x__position1))
 
+(declare-const useless_discr__t__y__first__bit1 Int)
+
+(declare-const useless_discr__t__y__last__bit1 Int)
+
+(declare-const useless_discr__t__y__position1 Int)
+
+;; useless_discr__t__y__first__bit_axiom
+  (assert (<= 0 useless_discr__t__y__first__bit1))
+
+;; useless_discr__t__y__last__bit_axiom
+  (assert
+  (< useless_discr__t__y__first__bit1 useless_discr__t__y__last__bit1))
+
+;; useless_discr__t__y__position_axiom
+  (assert (<= 0 useless_discr__t__y__position1))
+
 (declare-fun user_eq4 (us_rep us_rep) Bool)
 
 (declare-const dummy4 us_rep)
 
-(declare-datatypes ((tvS__ref 0))
-(((tvS__refqtmk (tvS__content us_rep)))))
-(define-fun tvS__ref_tvS__content__projection ((a tvS__ref)) us_rep (tvS__content
-                                                                    a))
+(declare-datatypes ((t__ref1 0))
+(((t__refqtmk1 (t__content1 us_rep)))))
+(define-fun t__ref_t__content__projection ((a t__ref1)) us_rep (t__content1
+                                                               a))
 
 (declare-const v__split_discrs us_split_discrs)
 
@@ -498,12 +498,13 @@
   (temp___do_toplevel_190 Bool)
   (temp___do_typ_inv_191 Bool)) Bool (=>
                                      (not (= temp___skip_constant_189 true))
-                                     (in_range3 0 temp___expr_192)))
+                                     (in_range3 0
+                                     (us_split_discrs1 temp___expr_192))))
 
 (define-fun default_initial_assumption ((temp___expr_194 us_rep)
   (temp___skip_top_level_195 Bool)) Bool (and
                                          (= (attr__tag temp___expr_194) 
-                                         us_tag1)
+                                         us_tag)
                                          (= (to_rep2
                                             (rec__useless_discr__t__discr
                                             (us_split_discrs1

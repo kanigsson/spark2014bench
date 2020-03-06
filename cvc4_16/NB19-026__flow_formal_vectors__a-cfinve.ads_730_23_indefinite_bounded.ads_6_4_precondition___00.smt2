@@ -165,6 +165,30 @@
 (define-fun us_rep___split_fields__projection ((a us_rep1)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun to_rep ((x capacity_range)) Int (capacity_rangeqtint x))
+
+(declare-fun of_rep (Int) capacity_range)
+
+;; inversion_axiom
+  (assert
+  (forall ((x capacity_range))
+  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x capacity_range)) (! (in_range1
+  (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range1 x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                            (of_rep x))) )))
+
+(define-fun in_range2 ((rec__indefinite_bounded__vect__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__indefinite_bounded__vect__vector__capacity1 
+  (to_rep (rec__indefinite_bounded__vect__vector__capacity a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -271,7 +295,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -293,7 +317,7 @@
   (temp___do_toplevel_217 Bool)
   (temp___do_typ_inv_218 Bool)) Bool (=>
                                      (or (= temp___is_init_215 true)
-                                     (<= 0 2147483647)) (in_range2
+                                     (<= 0 2147483647)) (in_range3
                                      temp___expr_219)))
 
 (declare-const container us_rep1)
@@ -317,7 +341,7 @@
   (forall ((i index_type))
   (and (<= 1 (index_typeqtint i)) (<= (index_typeqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -339,7 +363,7 @@
   (temp___do_toplevel_203 Bool)
   (temp___do_typ_inv_204 Bool)) Bool (=>
                                      (or (= temp___is_init_201 true)
-                                     (<= 1 2147483647)) (in_range3
+                                     (<= 1 2147483647)) (in_range4
                                      temp___expr_205)))
 
 (declare-sort element_type 0)
@@ -352,7 +376,7 @@
   (and (<= (- 2147483648) (element_typeqtint i))
   (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
@@ -376,7 +400,7 @@
   (temp___do_typ_inv_211 Bool)) Bool (=>
                                      (or (= temp___is_init_208 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range4 temp___expr_212)))
+                                     (in_range5 temp___expr_212)))
 
 (declare-sort count_type 0)
 
@@ -387,7 +411,7 @@
   (forall ((i count_type))
   (and (<= 0 (count_typeqtint i)) (<= (count_typeqtint i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -409,7 +433,7 @@
   (temp___do_toplevel_224 Bool)
   (temp___do_typ_inv_225 Bool)) Bool (=>
                                      (or (= temp___is_init_222 true)
-                                     (<= 0 2147483647)) (in_range5
+                                     (<= 0 2147483647)) (in_range6
                                      temp___expr_226)))
 
 (define-fun dynamic_invariant4 ((temp___expr_233 Int)
@@ -419,26 +443,6 @@
                                      (or (= temp___is_init_229 true)
                                      (<= 0 2147483647)) (in_range1
                                      temp___expr_233)))
-
-(define-fun to_rep ((x capacity_range)) Int (capacity_rangeqtint x))
-
-(declare-fun of_rep (Int) capacity_range)
-
-;; inversion_axiom
-  (assert
-  (forall ((x capacity_range))
-  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
-
-;; range_axiom
-  (assert
-  (forall ((x capacity_range)) (! (in_range1
-  (to_rep x)) :pattern ((to_rep x)) )))
-
-;; coerce_axiom
-  (assert
-  (forall ((x Int))
-  (! (=> (in_range1 x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
-                                                            (of_rep x))) )))
 
 (define-fun capacity ((container1 us_rep1)) Int (ite (= (distinct 1 0) true)
                                                 (to_rep
@@ -471,7 +475,7 @@
   (and (<= 0 (extended_indexqtint1 i))
   (<= (extended_indexqtint1 i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -493,7 +497,7 @@
   (temp___do_toplevel_262 Bool)
   (temp___do_typ_inv_263 Bool)) Bool (=>
                                      (or (= temp___is_init_260 true)
-                                     (<= 0 2147483647)) (in_range6
+                                     (<= 0 2147483647)) (in_range7
                                      temp___expr_264)))
 
 ;; length__post_axiom
@@ -513,7 +517,7 @@
   (and (<= (- 2147483648) (element_typeqtint1 i))
   (<= (element_typeqtint1 i) 2147483647))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range8 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
@@ -537,7 +541,7 @@
   (temp___do_typ_inv_256 Bool)) Bool (=>
                                      (or (= temp___is_init_253 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range7 temp___expr_257)))
+                                     (in_range8 temp___expr_257)))
 
 ;; get__post_axiom
   (assert

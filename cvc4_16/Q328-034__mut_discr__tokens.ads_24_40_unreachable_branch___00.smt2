@@ -347,6 +347,11 @@
                          (rec__tokens__token__instr (us_split_fields3 b)))))))
                     true false))
 
+(define-fun in_range5 ((rec__tokens__token__kind1 Int)
+  (a us_split_discrs)) Bool (= rec__tokens__token__kind1 (to_rep1
+                                                         (rec__tokens__token__kind
+                                                         a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -456,7 +461,7 @@
   (assert
   (forall ((i tlastS)) (and (<= 0 (tlastSqtint i)) (<= (tlastSqtint i) 200))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 200)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 200)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -478,7 +483,7 @@
   (temp___do_toplevel_204 Bool)
   (temp___do_typ_inv_205 Bool)) Bool (=>
                                      (or (= temp___is_init_202 true)
-                                     (<= 0 200)) (in_range5 temp___expr_206)))
+                                     (<= 0 200)) (in_range6 temp___expr_206)))
 
 ;; full__post_axiom
   (assert true)

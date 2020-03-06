@@ -1311,9 +1311,9 @@
   (= (oeq (model3 (us_repqtmk3 v__split_fields1))
      (model3 (us_repqtmk3 v__split_fields))) true)
   (=> (dynamic_invariant2 (us_repqtmk3 v__split_fields1) true true true true)
-  (let ((temp___440 (rec__use_formal_vectors__my_vect__vector__content
+  (let ((temp___433 (rec__use_formal_vectors__my_vect__vector__content
                     v__split_fields1)))
-  (let ((temp___438 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
+  (let ((temp___431 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                     (rec__use_formal_vectors__my_vect__vector__content
                     v__split_fields1))))
   (let ((o (us_repqtmk e__is_null_pointer e__pointer_address
@@ -1343,16 +1343,16 @@
      (rec__use_formal_vectors__my_vect__vector__top v__split_fields1)) o3)
   (let ((o4 (+ o3 1)))
   (=> (in_range o4)
-  (=> (and (<= (first1 temp___438) o4) (<= o4 (last1 temp___438)))
+  (=> (and (<= (first1 temp___431) o4) (<= o4 (last1 temp___431)))
   (dynamic_predicate
   (us_repqtmk3
   (us_split_fieldsqtmk
   (rec__use_formal_vectors__my_vect__vector__top v__split_fields1)
   (us_repqtmk2
   (rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer
-  temp___440)
+  temp___433)
   (rec__use_formal_vectors__my_vect__element_array_access__pointer_address
-  temp___440)
+  temp___433)
   (us_tqtmk
   (store (to_array
          (rec__use_formal_vectors__my_vect__element_array_access__pointer_value

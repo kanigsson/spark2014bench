@@ -572,7 +572,7 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-Q105-001__hidden_comp_default_check-18296/src/gnatprove/tagged_component_check__s__d1.mlw", line 1006, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-Q105-001__hidden_comp_default_check-32587/src/gnatprove/tagged_component_check__s__d1.mlw", line 1006, characters 5-8
   (not
   (let ((o (hide 40)))
   (=>

@@ -319,6 +319,10 @@
                            (rec__p__my_rec__a (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__p__my_rec__len1 Int)
+  (a us_split_discrs)) Bool (= rec__p__my_rec__len1 (to_rep
+                                                    (rec__p__my_rec__len a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -408,7 +412,7 @@
   (assert
   (forall ((i tT6bP1)) (and (<= 1 (tT6bP1qtint i)) (<= (tT6bP1qtint i) 5))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 5)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 5)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -490,11 +494,6 @@
                             (rec__p__my_rec__a1 (us_split_fields3 a)) 1 5
                             (rec__p__my_rec__a1 (us_split_fields3 b)) 1 5) true))
                     true false))
-
-(define-fun in_range4 ((rec__p__my_rec__len1 Int)
-  (a us_rep)) Bool (= rec__p__my_rec__len1 (to_rep
-                                           (rec__p__my_rec__len
-                                           (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 

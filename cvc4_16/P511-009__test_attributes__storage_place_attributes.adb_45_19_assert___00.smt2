@@ -266,16 +266,64 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((r2__ref 0))
-(((r2__refqtmk (r2__content us_rep)))))
-(define-fun r2__ref_r2__content__projection ((a r2__ref)) us_rep (r2__content
-                                                                 a))
+(declare-datatypes ((r2a__ref 0))
+(((r2a__refqtmk (r2a__content us_rep)))))
+(define-fun r2a__ref_r2a__content__projection ((a r2a__ref)) us_rep (r2a__content
+                                                                    a))
+
+(declare-datatypes ((map__ref 0))
+(((map__refqtmk (map__content (Array Int us_rep))))))
+(declare-fun slide ((Array Int us_rep) Int Int) (Array Int us_rep))
+
+;; slide_eq
+  (assert
+  (forall ((a (Array Int us_rep)))
+  (forall ((first Int))
+  (! (= (slide a first first) a) :pattern ((slide a first first)) ))))
+
+;; slide_def
+  (assert
+  (forall ((a (Array Int us_rep)))
+  (forall ((old_first Int))
+  (forall ((new_first Int))
+  (forall ((i Int))
+  (! (= (select (slide a old_first new_first) i) (select a (- i (- new_first old_first)))) :pattern ((select 
+  (slide a old_first new_first) i)) ))))))
+
+(define-fun bool_eq1 ((a (Array Int us_rep)) (a__first Int) (a__last Int)
+  (b (Array Int us_rep)) (b__first Int)
+  (b__last Int)) Bool (ite (and
+                           (ite (<= a__first a__last)
+                           (and (<= b__first b__last)
+                           (= (- a__last a__first) (- b__last b__first)))
+                           (< b__last b__first))
+                           (forall ((temp___idx_154 Int))
+                           (=>
+                           (and (<= a__first temp___idx_154)
+                           (<= temp___idx_154 a__last))
+                           (= (bool_eq (select a temp___idx_154)
+                              (select b (+ (- b__first a__first) temp___idx_154))) true))))
+                      true false))
+
+;; bool_eq_rev
+  (assert
+  (forall ((a (Array Int us_rep)) (b (Array Int us_rep)))
+  (forall ((a__first Int) (a__last Int) (b__first Int) (b__last Int))
+  (=> (= (bool_eq1 b b__first b__last a a__first a__last) true)
+  (and
+  (ite (<= a__first a__last)
+  (and (<= b__first b__last) (= (- a__last a__first) (- b__last b__first)))
+  (< b__last b__first))
+  (forall ((temp___idx_154 Int))
+  (=> (and (<= a__first temp___idx_154) (<= temp___idx_154 a__last))
+  (= (bool_eq (select a temp___idx_154)
+     (select b (+ (- b__first a__first) temp___idx_154))) true))))))))
+
+(declare-const attr__ATTRIBUTE_ADDRESS Int)
 
 (define-fun in_range3 ((rec__storage_place_attributes__r2__d11 Int)
-  (a us_rep)) Bool (= rec__storage_place_attributes__r2__d11 (to_rep1
-                                                             (rec__storage_place_attributes__r2__d1
-                                                             (us_split_discrs1
-                                                             a)))))
+  (a us_split_discrs)) Bool (= rec__storage_place_attributes__r2__d11 
+  (to_rep1 (rec__storage_place_attributes__r2__d1 a))))
 
 (declare-const value__size1 Int)
 
@@ -344,60 +392,10 @@
 
 (declare-const dummy3 us_rep)
 
-(declare-datatypes ((r2a__ref 0))
-(((r2a__refqtmk (r2a__content us_rep)))))
-(define-fun r2a__ref_r2a__content__projection ((a r2a__ref)) us_rep (r2a__content
-                                                                    a))
-
-(declare-datatypes ((map__ref 0))
-(((map__refqtmk (map__content (Array Int us_rep))))))
-(declare-fun slide ((Array Int us_rep) Int Int) (Array Int us_rep))
-
-;; slide_eq
-  (assert
-  (forall ((a (Array Int us_rep)))
-  (forall ((first Int))
-  (! (= (slide a first first) a) :pattern ((slide a first first)) ))))
-
-;; slide_def
-  (assert
-  (forall ((a (Array Int us_rep)))
-  (forall ((old_first Int))
-  (forall ((new_first Int))
-  (forall ((i Int))
-  (! (= (select (slide a old_first new_first) i) (select a (- i (- new_first old_first)))) :pattern ((select 
-  (slide a old_first new_first) i)) ))))))
-
-(define-fun bool_eq1 ((a (Array Int us_rep)) (a__first Int) (a__last Int)
-  (b (Array Int us_rep)) (b__first Int)
-  (b__last Int)) Bool (ite (and
-                           (ite (<= a__first a__last)
-                           (and (<= b__first b__last)
-                           (= (- a__last a__first) (- b__last b__first)))
-                           (< b__last b__first))
-                           (forall ((temp___idx_154 Int))
-                           (=>
-                           (and (<= a__first temp___idx_154)
-                           (<= temp___idx_154 a__last))
-                           (= (bool_eq (select a temp___idx_154)
-                              (select b (+ (- b__first a__first) temp___idx_154))) true))))
-                      true false))
-
-;; bool_eq_rev
-  (assert
-  (forall ((a (Array Int us_rep)) (b (Array Int us_rep)))
-  (forall ((a__first Int) (a__last Int) (b__first Int) (b__last Int))
-  (=> (= (bool_eq1 b b__first b__last a a__first a__last) true)
-  (and
-  (ite (<= a__first a__last)
-  (and (<= b__first b__last) (= (- a__last a__first) (- b__last b__first)))
-  (< b__last b__first))
-  (forall ((temp___idx_154 Int))
-  (=> (and (<= a__first temp___idx_154) (<= temp___idx_154 a__last))
-  (= (bool_eq (select a temp___idx_154)
-     (select b (+ (- b__first a__first) temp___idx_154))) true))))))))
-
-(declare-const attr__ATTRIBUTE_ADDRESS Int)
+(declare-datatypes ((r2__ref 0))
+(((r2__refqtmk (r2__content us_rep)))))
+(define-fun r2__ref_r2__content__projection ((a r2__ref)) us_rep (r2__content
+                                                                 a))
 
 (declare-const o2a__split_discrs us_split_discrs)
 
@@ -410,7 +408,8 @@
   (temp___do_toplevel_219 Bool)
   (temp___do_typ_inv_220 Bool)) Bool (=>
                                      (not (= temp___skip_constant_218 true))
-                                     (in_range3 5 temp___expr_221)))
+                                     (in_range3 5
+                                     (us_split_discrs1 temp___expr_221))))
 
 (define-fun default_initial_assumption ((temp___expr_223 us_rep)
   (temp___skip_top_level_224 Bool)) Bool (and
@@ -453,12 +452,6 @@
 (declare-const o2aa__attr__constrained Bool)
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
-
-(define-fun in_range4 ((rec__storage_place_attributes__r2__d11 Int)
-  (a us_rep)) Bool (= rec__storage_place_attributes__r2__d11 (to_rep1
-                                                             (rec__storage_place_attributes__r2__d1
-                                                             (us_split_discrs1
-                                                             a)))))
 
 (declare-const value__size2 Int)
 
@@ -543,7 +536,8 @@
   (temp___do_toplevel_228 Bool)
   (temp___do_typ_inv_229 Bool)) Bool (=>
                                      (not (= temp___skip_constant_227 true))
-                                     (in_range4 1 temp___expr_230)))
+                                     (in_range3 1
+                                     (us_split_discrs1 temp___expr_230))))
 
 (define-fun default_initial_assumption2 ((temp___expr_232 us_rep)
   (temp___skip_top_level_233 Bool)) Bool (and
@@ -576,7 +570,7 @@
   (forall ((i tTr2a_arrSP1))
   (and (<= 1 (tTr2a_arrSP1qtint i)) (<= (tTr2a_arrSP1qtint i) 3))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -600,7 +594,8 @@
                                      (=>
                                      (and (<= 1 temp___247)
                                      (<= temp___247 3)) (in_range3 5
-                                     (select temp___expr_246 temp___247)))))
+                                     (us_split_discrs1
+                                     (select temp___expr_246 temp___247))))))
 
 (define-fun default_initial_assumption3 ((temp___expr_249 (Array Int us_rep))
   (temp___skip_top_level_250 Bool)) Bool (forall ((temp___251 Int))
@@ -666,9 +661,9 @@
   (=> (dynamic_invariant1 (us_repqtmk o2b__split_discrs o2b__split_fields)
   false false true true)
   (=>
-  (= storage_place_attributes__r2__d3__first__bit1 storage_place_attributes__r2__d3__first__bit2)
+  (= storage_place_attributes__r2__d3__first__bit storage_place_attributes__r2__d3__first__bit2)
   (=> (= o2__attr__constrained false)
   (=> (default_initial_assumption1
   (us_repqtmk (us_split_discrsqtmk o2__split_discrs) o2__split_fields) false)
-  (= storage_place_attributes__r2__d3__first__bit storage_place_attributes__r2__d3__first__bit1)))))))))))))))))))))
+  (= storage_place_attributes__r2__d3__first__bit1 storage_place_attributes__r2__d3__first__bit)))))))))))))))))))))
 (check-sat)

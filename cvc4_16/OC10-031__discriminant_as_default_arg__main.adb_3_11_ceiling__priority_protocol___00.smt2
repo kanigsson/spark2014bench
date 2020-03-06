@@ -102,6 +102,9 @@
 (define-fun us_rep___split_discrs__projection ((a us_rep)) us_split_discrs 
   (us_split_discrs1 a))
 
+(define-fun in_range1 ((rec__p__pt__d1 Int)
+  (a us_split_discrs)) Bool (= rec__p__pt__d1 (to_rep (rec__p__pt__d a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -152,7 +155,7 @@
   (forall ((i priority))
   (and (<= 0 (priorityqtint i)) (<= (priorityqtint i) 97))))
 
-(define-fun in_range1 ((x Int)) Bool (and (<= 0 x) (<= x 97)))
+(define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 97)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE1 (Int) us_image)
 
@@ -177,10 +180,6 @@
 (define-fun to_base ((a us_rep1)) us_rep (us_repqtmk (us_split_discrs2 a)))
 
 (define-fun of_base ((r us_rep)) us_rep1 (us_repqtmk1 (us_split_discrs1 r)))
-
-(define-fun in_range2 ((rec__p__pt__d1 Int)
-  (a us_rep)) Bool (= rec__p__pt__d1 (to_rep
-                                     (rec__p__pt__d (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 
@@ -224,7 +223,9 @@
   (temp___do_toplevel_185 Bool)
   (temp___do_typ_inv_186 Bool)) Bool (=>
                                      (not (= temp___skip_constant_184 true))
-                                     (in_range2 0 (to_base temp___expr_187))))
+                                     (in_range1 0
+                                     (us_split_discrs1
+                                     (to_base temp___expr_187)))))
 
 (define-fun default_initial_assumption ((temp___expr_189 us_rep1)
   (temp___skip_top_level_190 Bool)) Bool (= (to_rep
@@ -244,7 +245,7 @@
   (temp___do_toplevel_165 Bool)
   (temp___do_typ_inv_166 Bool)) Bool (=>
                                      (or (= temp___is_init_163 true)
-                                     (<= 0 97)) (in_range1 temp___expr_167)))
+                                     (<= 0 97)) (in_range2 temp___expr_167)))
 
 (assert
 ;; defqtvc

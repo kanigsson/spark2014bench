@@ -340,6 +340,11 @@
                            (us_split_fields1 b))) true)))
                    true false))
 
+(define-fun in_range3 ((rec__containers__container__c1 Int)
+  (a us_split_discrs)) Bool (= rec__containers__container__c1 (to_rep
+                                                              (rec__containers__container__c
+                                                              a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -457,7 +462,7 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__DIC-8636/src/gnatprove/containers__container.mlw", line 696, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__DIC-25055/src/gnatprove/containers__container.mlw", line 710, characters 5-8
   (not
   (forall ((usf us_rep))
   (=> (dynamic_invariant1 usf true false true true)

@@ -347,6 +347,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range4 ((rec__test_iterable__t_list__c1 Int)
+  (a us_split_discrs)) Bool (= rec__test_iterable__t_list__c1 (to_rep
+                                                              (rec__test_iterable__t_list__c
+                                                              a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

@@ -295,68 +295,6 @@
 
 (declare-const dummy3 us_rep1)
 
-(declare-datatypes ((branch_type__ref 0))
-(((branch_type__refqtmk (branch_type__content us_rep1)))))
-(define-fun branch_type__ref_branch_type__content__projection ((a branch_type__ref)) us_rep1 
-  (branch_type__content a))
-
-(define-fun in_range3 ((rec__tree_logic__branch_type__m_variant1 Int)
-  (a us_rep1)) Bool (= rec__tree_logic__branch_type__m_variant1 (to_rep1
-                                                                (rec__tree_logic__branch_type__m_variant
-                                                                (us_split_discrs1
-                                                                a)))))
-
-(declare-const value__size2 Int)
-
-(declare-const object__size2 Int)
-
-(declare-const alignment2 Int)
-
-;; value__size_axiom
-  (assert (<= 0 value__size2))
-
-;; object__size_axiom
-  (assert (<= 0 object__size2))
-
-;; alignment_axiom
-  (assert (<= 0 alignment2))
-
-(declare-const tree_logic__branch_type__m_variant__first__bit1 Int)
-
-(declare-const tree_logic__branch_type__m_variant__last__bit1 Int)
-
-(declare-const tree_logic__branch_type__m_variant__position1 Int)
-
-;; tree_logic__branch_type__m_variant__first__bit_axiom
-  (assert (<= 0 tree_logic__branch_type__m_variant__first__bit1))
-
-;; tree_logic__branch_type__m_variant__last__bit_axiom
-  (assert
-  (< tree_logic__branch_type__m_variant__first__bit1 tree_logic__branch_type__m_variant__last__bit1))
-
-;; tree_logic__branch_type__m_variant__position_axiom
-  (assert (<= 0 tree_logic__branch_type__m_variant__position1))
-
-(declare-const tree_logic__branch_type__m_logical_address__first__bit1 Int)
-
-(declare-const tree_logic__branch_type__m_logical_address__last__bit1 Int)
-
-(declare-const tree_logic__branch_type__m_logical_address__position1 Int)
-
-;; tree_logic__branch_type__m_logical_address__first__bit_axiom
-  (assert (<= 0 tree_logic__branch_type__m_logical_address__first__bit1))
-
-;; tree_logic__branch_type__m_logical_address__last__bit_axiom
-  (assert
-  (< tree_logic__branch_type__m_logical_address__first__bit1 tree_logic__branch_type__m_logical_address__last__bit1))
-
-;; tree_logic__branch_type__m_logical_address__position_axiom
-  (assert (<= 0 tree_logic__branch_type__m_logical_address__position1))
-
-(declare-fun user_eq4 (us_rep1 us_rep1) Bool)
-
-(declare-const dummy4 us_rep1)
-
 (declare-datatypes ((t1s__ref 0))
 (((t1s__refqtmk (t1s__content us_rep1)))))
 (define-fun t1s__ref_t1s__content__projection ((a t1s__ref)) us_rep1 
@@ -414,20 +352,24 @@
                             (us_split_fields5 b))) true)))
                     true false))
 
-(declare-const value__size3 Int)
+(define-fun in_range3 ((rec__primitives__primitive_type__m_io_error1 Bool)
+  (a us_split_discrs2)) Bool (= rec__primitives__primitive_type__m_io_error1 
+  (rec__primitives__primitive_type__m_io_error a)))
 
-(declare-const object__size3 Int)
+(declare-const value__size2 Int)
 
-(declare-const alignment3 Int)
+(declare-const object__size2 Int)
+
+(declare-const alignment2 Int)
 
 ;; value__size_axiom
-  (assert (<= 0 value__size3))
+  (assert (<= 0 value__size2))
 
 ;; object__size_axiom
-  (assert (<= 0 object__size3))
+  (assert (<= 0 object__size2))
 
 ;; alignment_axiom
-  (assert (<= 0 alignment3))
+  (assert (<= 0 alignment2))
 
 (declare-const primitives__primitive_type__m_io_error__first__bit Int)
 
@@ -477,9 +419,9 @@
 ;; primitives__primitive_type__m_read_iterator__position_axiom
   (assert (<= 0 primitives__primitive_type__m_read_iterator__position))
 
-(declare-fun user_eq5 (us_rep2 us_rep2) Bool)
+(declare-fun user_eq4 (us_rep2 us_rep2) Bool)
 
-(declare-const dummy5 us_rep2)
+(declare-const dummy4 us_rep2)
 
 (declare-datatypes ((primitive_type__ref 0))
 (((primitive_type__refqtmk (primitive_type__content us_rep2)))))
@@ -493,12 +435,73 @@
                                     (<= (- 2147483648) 2147483647))
                                     (in_range1 temp___expr_18)))
 
+(define-fun in_range4 ((rec__tree_logic__branch_type__m_variant1 Int)
+  (a us_split_discrs)) Bool (= rec__tree_logic__branch_type__m_variant1 
+  (to_rep1 (rec__tree_logic__branch_type__m_variant a))))
+
+(declare-const value__size3 Int)
+
+(declare-const object__size3 Int)
+
+(declare-const alignment3 Int)
+
+;; value__size_axiom
+  (assert (<= 0 value__size3))
+
+;; object__size_axiom
+  (assert (<= 0 object__size3))
+
+;; alignment_axiom
+  (assert (<= 0 alignment3))
+
+(declare-const tree_logic__branch_type__m_variant__first__bit1 Int)
+
+(declare-const tree_logic__branch_type__m_variant__last__bit1 Int)
+
+(declare-const tree_logic__branch_type__m_variant__position1 Int)
+
+;; tree_logic__branch_type__m_variant__first__bit_axiom
+  (assert (<= 0 tree_logic__branch_type__m_variant__first__bit1))
+
+;; tree_logic__branch_type__m_variant__last__bit_axiom
+  (assert
+  (< tree_logic__branch_type__m_variant__first__bit1 tree_logic__branch_type__m_variant__last__bit1))
+
+;; tree_logic__branch_type__m_variant__position_axiom
+  (assert (<= 0 tree_logic__branch_type__m_variant__position1))
+
+(declare-const tree_logic__branch_type__m_logical_address__first__bit1 Int)
+
+(declare-const tree_logic__branch_type__m_logical_address__last__bit1 Int)
+
+(declare-const tree_logic__branch_type__m_logical_address__position1 Int)
+
+;; tree_logic__branch_type__m_logical_address__first__bit_axiom
+  (assert (<= 0 tree_logic__branch_type__m_logical_address__first__bit1))
+
+;; tree_logic__branch_type__m_logical_address__last__bit_axiom
+  (assert
+  (< tree_logic__branch_type__m_logical_address__first__bit1 tree_logic__branch_type__m_logical_address__last__bit1))
+
+;; tree_logic__branch_type__m_logical_address__position_axiom
+  (assert (<= 0 tree_logic__branch_type__m_logical_address__position1))
+
+(declare-fun user_eq5 (us_rep1 us_rep1) Bool)
+
+(declare-const dummy5 us_rep1)
+
+(declare-datatypes ((branch_type__ref 0))
+(((branch_type__refqtmk (branch_type__content us_rep1)))))
+(define-fun branch_type__ref_branch_type__content__projection ((a branch_type__ref)) us_rep1 
+  (branch_type__content a))
+
 (define-fun dynamic_invariant1 ((temp___expr_183 us_rep2)
   (temp___is_init_179 Bool) (temp___skip_constant_180 Bool)
-  (temp___do_toplevel_181 Bool) (temp___do_typ_inv_182 Bool)) Bool (in_range3
+  (temp___do_toplevel_181 Bool) (temp___do_typ_inv_182 Bool)) Bool (in_range4
   0
+  (us_split_discrs1
   (rec__primitives__primitive_type__m_read_branch
-  (us_split_fields5 temp___expr_183))))
+  (us_split_fields5 temp___expr_183)))))
 
 (define-fun default_initial_assumption ((temp___expr_186 us_rep2)
   (temp___skip_top_level_187 Bool)) Bool (and

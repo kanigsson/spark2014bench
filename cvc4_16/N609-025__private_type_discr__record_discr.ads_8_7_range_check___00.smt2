@@ -330,6 +330,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__record_discr__interm_result__upto1 Int)
+  (a us_split_discrs)) Bool (= rec__record_discr__interm_result__upto1 
+  (to_rep (rec__record_discr__interm_result__upto a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

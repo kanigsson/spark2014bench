@@ -106,6 +106,9 @@
   (b us_rep)) Bool (ite (= (to_rep (rec__p__t__x (us_split_discrs1 a))) 
                    (to_rep (rec__p__t__x (us_split_discrs1 b)))) true false))
 
+(define-fun in_range1 ((rec__p__t__x1 Int)
+  (a us_split_discrs)) Bool (= rec__p__t__x1 (to_rep (rec__p__t__x a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -160,10 +163,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
-(define-fun in_range1 ((rec__p__t__x1 Int)
-  (a us_rep)) Bool (= rec__p__t__x1 (to_rep
-                                    (rec__p__t__x (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -208,17 +207,14 @@
   (temp___do_toplevel_186 Bool)
   (temp___do_typ_inv_187 Bool)) Bool (=>
                                      (not (= temp___skip_constant_185 true))
-                                     (in_range1 2 temp___expr_188)))
+                                     (in_range1 2
+                                     (us_split_discrs1 temp___expr_188))))
 
 (define-fun default_initial_assumption1 ((temp___expr_190 us_rep)
   (temp___skip_top_level_191 Bool)) Bool (= (to_rep
                                             (rec__p__t__x
                                             (us_split_discrs1
                                             temp___expr_190))) 2))
-
-(define-fun in_range2 ((rec__p__t__x1 Int)
-  (a us_rep)) Bool (= rec__p__t__x1 (to_rep
-                                    (rec__p__t__x (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -259,10 +255,6 @@
 (define-fun t1b__ref_t1b__content__projection ((a t1b__ref)) us_rep (t1b__content
                                                                     a))
 
-(define-fun in_range3 ((rec__p__t__x1 Int)
-  (a us_rep)) Bool (= rec__p__t__x1 (to_rep
-                                    (rec__p__t__x (us_split_discrs1 a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -301,10 +293,6 @@
 (((t7b__refqtmk (t7b__content us_rep)))))
 (define-fun t7b__ref_t7b__content__projection ((a t7b__ref)) us_rep (t7b__content
                                                                     a))
-
-(define-fun in_range4 ((rec__p__t__x1 Int)
-  (a us_rep)) Bool (= rec__p__t__x1 (to_rep
-                                    (rec__p__t__x (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 
@@ -365,5 +353,5 @@
   (=> (= x__attr__constrained false)
   (=> (default_initial_assumption
   (us_repqtmk (us_split_discrsqtmk x__split_discrs)) false)
-  (=> (in_range 2) (in_range1 2 (us_repqtmk (us_split_discrsqtmk rliteral)))))))))
+  (=> (in_range 2) (in_range1 2 (us_split_discrsqtmk rliteral))))))))
 (check-sat)

@@ -137,16 +137,16 @@
 
 (declare-datatypes ((element_type__ref 0))
 (((element_type__refqtmk (element_type__content element_type)))))
-(define-fun element_type__ref_element_type__content__14__projection ((a element_type__ref)) element_type 
+(define-fun element_type__ref_element_type__content__10__projection ((a element_type__ref)) element_type 
   (element_type__content a))
 
-(define-fun dynamic_invariant ((temp___expr_678 Int)
-  (temp___is_init_674 Bool) (temp___skip_constant_675 Bool)
-  (temp___do_toplevel_676 Bool)
-  (temp___do_typ_inv_677 Bool)) Bool (=>
-                                     (or (= temp___is_init_674 true)
+(define-fun dynamic_invariant ((temp___expr_593 Int)
+  (temp___is_init_589 Bool) (temp___skip_constant_590 Bool)
+  (temp___do_toplevel_591 Bool)
+  (temp___do_typ_inv_592 Bool)) Bool (=>
+                                     (or (= temp___is_init_589 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range2 temp___expr_678)))
+                                     (in_range2 temp___expr_593)))
 
 ;; get__post_axiom
   (assert

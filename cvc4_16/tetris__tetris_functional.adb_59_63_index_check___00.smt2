@@ -2009,7 +2009,7 @@
   (spark__branch Bool) (o1 Int) (spark__branch1 Bool) (y Int)
   (cur_board1 (Array Int (Array Int cell))) (y1 Int) (x Int)
   (cur_board2 (Array Int (Array Int cell))) (x1 Int) (o2 Int)
-  (temp___838 Int) (spark__branch2 Bool) (o3 Int) (o4 cell) (o5 Int))
+  (temp___847 Int) (spark__branch2 Bool) (o3 Int) (o4 cell) (o5 Int))
   (=>
   (= (tetris_functional__possible_i_shapes__aggregate_def
      (temp_____aggregate_def_165 (distinct 0 0) (distinct 0 0) (distinct 0 0)
@@ -2119,23 +2119,23 @@
   (=> (= x 0)
   (=> (= (and (ite (<= 0 x) true false) (ite (<= x 2) true false)) true)
   (=>
-  (= (and (ite (forall ((temp___841 Int))
-               (=> (and (<= 1 temp___841) (<= temp___841 50))
+  (= (and (ite (forall ((temp___850 Int))
+               (=> (and (<= 1 temp___850) (<= temp___850 50))
                (=>
                (not
                (= (+ (to_rep3
                      (rec__tetris_functional__piece__y
-                     cur_piece__split_fields)) y1) temp___841))
-               (= (select cur_board2 temp___841) (select cur_board1 temp___841)))))
+                     cur_piece__split_fields)) y1) temp___850))
+               (= (select cur_board2 temp___850) (select cur_board1 temp___850)))))
           true false) (ite (and (<= 0 x1) (<= x1 2)) true false)) true)
   (=>
   (= (to_rep4 (rec__tetris_functional__piece__d cur_piece__split_fields)) o2)
   (=>
-  (= (to_rep1 (rec__tetris_functional__piece__s cur_piece__split_fields)) temp___838)
-  (=> (<= 3 temp___838)
-  (=> (<= temp___838 7)
+  (= (to_rep1 (rec__tetris_functional__piece__s cur_piece__split_fields)) temp___847)
+  (=> (<= 3 temp___847)
+  (=> (<= temp___847 7)
   (=>
-  (= spark__branch2 (get (get1 possible_three_shapes temp___838 o2) y1 x1))
+  (= spark__branch2 (get (get1 possible_three_shapes temp___847 o2) y1 x1))
   (=> (= spark__branch2 true)
   (=>
   (= (to_rep1 (rec__tetris_functional__piece__s cur_piece__split_fields)) o3)

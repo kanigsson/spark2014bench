@@ -320,6 +320,10 @@
                            (rec__p__my_rec__content (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__p__my_rec__c1 Int)
+  (a us_split_discrs)) Bool (= rec__p__my_rec__c1 (to_rep
+                                                  (rec__p__my_rec__c a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -425,11 +429,6 @@
                             (rec__p__my_rec__content1 (us_split_fields3 b))) true))
                     true false))
 
-(define-fun in_range3 ((rec__p__my_rec__c1 Int)
-  (a us_rep)) Bool (= rec__p__my_rec__c1 (to_rep
-                                         (rec__p__my_rec__c
-                                         (us_split_discrs1 a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -518,6 +517,10 @@
 
 (define-fun us_rep___split_fields__4__projection ((a us_rep2)) us_split_fields4 
   (us_split_fields5 a))
+
+(define-fun in_range4 ((rec__p__pp__b1 Bool) (rec__p__pp__c1 Int)
+  (a us_split_discrs3)) Bool (and (= rec__p__pp__b1 (rec__p__pp__b a))
+                             (= rec__p__pp__c1 (to_rep (rec__p__pp__c a)))))
 
 (declare-const value__size3 Int)
 
@@ -608,9 +611,10 @@
                                                        (us_split_discrs4
                                                        temp___expr_200))))
                                      (and (in_range3 (to_rep temp___202)
+                                     (us_split_discrs1
                                      (to_base
                                      (rec__p__pp__r
-                                     (us_split_fields5 temp___expr_200))))
+                                     (us_split_fields5 temp___expr_200)))))
                                      (and (dynamic_property 1
                                      (to_rep temp___202)
                                      (first1
@@ -645,7 +649,7 @@
   (forall ((i ttB))
   (and (<= (- 2147483648) (ttBqtint i)) (<= (ttBqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
@@ -673,12 +677,12 @@
 
 ;; range_axiom
   (assert
-  (forall ((x ttB)) (! (in_range4 (to_rep2 x)) :pattern ((to_rep2 x)) )))
+  (forall ((x ttB)) (! (in_range5 (to_rep2 x)) :pattern ((to_rep2 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range4 x) (= (to_rep2 (of_rep2 x)) x)) :pattern ((to_rep2
+  (! (=> (in_range5 x) (= (to_rep2 (of_rep2 x)) x)) :pattern ((to_rep2
                                                               (of_rep2 x))) )))
 
 (declare-fun last2 (us_rep2) Int)

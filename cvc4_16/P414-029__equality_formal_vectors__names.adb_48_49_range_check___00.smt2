@@ -407,13 +407,13 @@
 (define-fun extended_index__ref_extended_index__content__3__projection ((a extended_index__ref)) extended_index 
   (extended_index__content a))
 
-(define-fun dynamic_invariant2 ((temp___expr_451 Int)
-  (temp___is_init_447 Bool) (temp___skip_constant_448 Bool)
-  (temp___do_toplevel_449 Bool)
-  (temp___do_typ_inv_450 Bool)) Bool (=>
-                                     (or (= temp___is_init_447 true)
+(define-fun dynamic_invariant2 ((temp___expr_452 Int)
+  (temp___is_init_448 Bool) (temp___skip_constant_449 Bool)
+  (temp___do_toplevel_450 Bool)
+  (temp___do_typ_inv_451 Bool)) Bool (=>
+                                     (or (= temp___is_init_448 true)
                                      (<= 0 2147483647)) (in_range6
-                                     temp___expr_451)))
+                                     temp___expr_452)))
 
 (define-fun dynamic_invariant3 ((temp___expr_46 Int) (temp___is_init_42 Bool)
   (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)

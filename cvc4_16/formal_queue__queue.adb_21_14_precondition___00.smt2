@@ -132,6 +132,11 @@
                            (rec__queue__mylists__list (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__queue__mylists__list__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__queue__mylists__list__capacity1 (to_rep
+                                                                    (rec__queue__mylists__list__capacity
+                                                                    a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -262,7 +267,7 @@
   (and (<= (- 2147483648) (element_typeqtint i))
   (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range1 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range2 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE1 (Int) us_image)
@@ -286,7 +291,7 @@
   (temp___do_typ_inv_237 Bool)) Bool (=>
                                      (or (= temp___is_init_234 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range1 temp___expr_238)))
+                                     (in_range2 temp___expr_238)))
 
 ;; last_element__post_axiom
   (assert
@@ -307,7 +312,7 @@
 
 (define-fun length2 ((x Int) (y Int)) Int (ite (<= x y) (+ (- y x) 1) 0))
 
-(define-fun in_range2 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range3 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Bool) us_image)
 
@@ -373,7 +378,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -395,7 +400,7 @@
   (temp___do_toplevel_286 Bool)
   (temp___do_typ_inv_287 Bool)) Bool (=>
                                      (or (= temp___is_init_284 true)
-                                     (<= 0 2147483647)) (in_range3
+                                     (<= 0 2147483647)) (in_range4
                                      temp___expr_288)))
 
 ;; length__post_axiom
@@ -415,7 +420,7 @@
   (and (<= (- 2147483648) (element_typeqtint1 i))
   (<= (element_typeqtint1 i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
@@ -439,7 +444,7 @@
   (temp___do_typ_inv_280 Bool)) Bool (=>
                                      (or (= temp___is_init_277 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range4 temp___expr_281)))
+                                     (in_range5 temp___expr_281)))
 
 ;; get__post_axiom
   (assert

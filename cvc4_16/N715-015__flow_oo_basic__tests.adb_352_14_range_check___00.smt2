@@ -143,6 +143,10 @@
                         (rec__tests__test_16__t__x (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range2 ((rec__tests__test_16__t__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__tests__test_16__t__d1 (rec__tests__test_16__t__d
+                                                          a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -217,10 +221,6 @@
      (= (rec__tests__test_16__t__d (us_split_discrs1 x)) true)) :pattern (
   (f x)) )))
 
-(define-fun in_range2 ((rec__tests__test_16__t__d1 Bool)
-  (a us_rep)) Bool (= rec__tests__test_16__t__d1 (rec__tests__test_16__t__d
-                                                 (us_split_discrs1 a))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -289,7 +289,7 @@
   (temp___do_typ_inv_333 Bool)) Bool (=>
                                      (not (= temp___skip_constant_331 true))
                                      (in_range2 (distinct 0 0)
-                                     temp___expr_334)))
+                                     (us_split_discrs1 temp___expr_334))))
 
 (define-fun default_initial_assumption1 ((temp___expr_336 us_rep)
   (temp___skip_top_level_337 Bool)) Bool (= (rec__tests__test_16__t__d
@@ -299,10 +299,6 @@
 (declare-const b__attr__constrained Bool)
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
-
-(define-fun in_range3 ((rec__tests__test_16__t__d1 Bool)
-  (a us_rep)) Bool (= rec__tests__test_16__t__d1 (rec__tests__test_16__t__d
-                                                 (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 

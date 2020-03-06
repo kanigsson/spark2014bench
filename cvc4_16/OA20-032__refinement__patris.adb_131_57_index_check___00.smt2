@@ -1988,7 +1988,7 @@
   (forall ((cur_board (Array Int (Array Int cell)))
   (cur_piece__split_fields us_split_fields) (cur_state Int) (o Int)
   (spark__branch Bool) (o1 Int) (spark__branch1 Bool) (usf Int) (usf1 Int)
-  (temp___879 Int))
+  (temp___888 Int))
   (=>
   (= (patris__possible_i_shapes__aggregate_def
      (temp_____aggregate_def_169 (distinct 0 0) (distinct 0 0) (distinct 0 0)
@@ -2087,6 +2087,6 @@
   (=>
   (= (and (ite (<= 0 usf1) true false) (ite (<= usf1 2) true false)) true)
   (=>
-  (= (to_rep1 (rec__patris__piece__s cur_piece__split_fields)) temp___879)
-  (<= 3 temp___879))))))))))))))))))
+  (= (to_rep1 (rec__patris__piece__s cur_piece__split_fields)) temp___888)
+  (<= 3 temp___888))))))))))))))))))
 (check-sat)

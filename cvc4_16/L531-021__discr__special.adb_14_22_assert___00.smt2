@@ -257,6 +257,10 @@
                         (rec__basic__r__c_field2 (us_split_fields1 b))))))))
                    true false))
 
+(define-fun in_range4 ((rec__basic__r__x1 Int)
+  (a us_split_discrs)) Bool (= rec__basic__r__x1 (to_rep2
+                                                 (rec__basic__r__x a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -358,11 +362,6 @@
 (declare-const v__split_discrs us_split_discrs)
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
-
-(define-fun in_range4 ((rec__basic__r__x1 Int)
-  (a us_rep)) Bool (= rec__basic__r__x1 (to_rep2
-                                        (rec__basic__r__x
-                                        (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 

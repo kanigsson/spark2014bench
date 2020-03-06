@@ -305,6 +305,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__main__branch_type__m_height1 Int)
+  (a us_split_discrs)) Bool (= rec__main__branch_type__m_height1 (to_rep
+                                                                 (rec__main__branch_type__m_height
+                                                                 a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -370,7 +375,7 @@
   (forall ((i tT11bP1))
   (and (<= 0 (tT11bP1qtint i)) (<= (tT11bP1qtint i) 7))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 7)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 7)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -458,11 +463,6 @@
                             (us_split_fields3 b)) 0 7) true))
                     true false))
 
-(define-fun in_range4 ((rec__main__branch_type__m_height1 Int)
-  (a us_rep)) Bool (= rec__main__branch_type__m_height1 (to_rep
-                                                        (rec__main__branch_type__m_height
-                                                        (us_split_discrs1 a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -528,7 +528,9 @@
   (temp___do_toplevel_192 Bool)
   (temp___do_typ_inv_193 Bool)) Bool (=>
                                      (not (= temp___skip_constant_191 true))
-                                     (in_range4 7 (to_base temp___expr_194))))
+                                     (in_range3 7
+                                     (us_split_discrs1
+                                     (to_base temp___expr_194)))))
 
 (define-fun default_initial_assumption ((temp___expr_197 us_rep1)
   (temp___skip_top_level_198 Bool)) Bool (= (to_rep

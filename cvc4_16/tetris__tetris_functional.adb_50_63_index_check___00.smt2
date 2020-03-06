@@ -2119,14 +2119,14 @@
   (=> (= x 0)
   (=> (= (and (ite (<= 0 x) true false) (ite (<= x 3) true false)) true)
   (=>
-  (= (and (ite (forall ((temp___826 Int))
-               (=> (and (<= 1 temp___826) (<= temp___826 50))
+  (= (and (ite (forall ((temp___835 Int))
+               (=> (and (<= 1 temp___835) (<= temp___835 50))
                (=>
                (not
                (= (+ (to_rep3
                      (rec__tetris_functional__piece__y
-                     cur_piece__split_fields)) y1) temp___826))
-               (= (select cur_board2 temp___826) (select cur_board1 temp___826)))))
+                     cur_piece__split_fields)) y1) temp___835))
+               (= (select cur_board2 temp___835) (select cur_board1 temp___835)))))
           true false) (ite (and (<= 0 x1) (<= x1 3)) true false)) true)
   (=>
   (= (to_rep4 (rec__tetris_functional__piece__d cur_piece__split_fields)) o2)

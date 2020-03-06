@@ -521,19 +521,19 @@
 (define-fun transmitter_type__ref_transmitter_type__content__projection ((a transmitter_type__ref)) us_rep 
   (transmitter_type__content a))
 
-(define-fun default_initial_assumption ((temp___expr_424 us_rep)
-  (temp___skip_top_level_425 Bool)) Bool (= (rec__decadriver__transmitter_type__tx_idle
+(define-fun default_initial_assumption ((temp___expr_426 us_rep)
+  (temp___skip_top_level_427 Bool)) Bool (= (rec__decadriver__transmitter_type__tx_idle
                                             (us_split_fields1
-                                            temp___expr_424)) (distinct 1 0)))
+                                            temp___expr_426)) (distinct 1 0)))
 
-(define-fun dynamic_invariant1 ((temp___expr_302 us_t)
-  (temp___is_init_298 Bool) (temp___skip_constant_299 Bool)
-  (temp___do_toplevel_300 Bool)
-  (temp___do_typ_inv_301 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_299 true))
+(define-fun dynamic_invariant1 ((temp___expr_304 us_t)
+  (temp___is_init_300 Bool) (temp___skip_constant_301 Bool)
+  (temp___do_toplevel_302 Bool)
+  (temp___do_typ_inv_303 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_301 true))
                                      (dynamic_property 0 2147483647
-                                     (first1 temp___expr_302)
-                                     (last1 temp___expr_302))))
+                                     (first1 temp___expr_304)
+                                     (last1 temp___expr_304))))
 
 (define-fun dynamic_invariant2 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)
@@ -542,9 +542,9 @@
                                     (<= (- 2147483648) 2147483647))
                                     (in_range1 temp___expr_18)))
 
-(define-fun dynamic_invariant3 ((temp___expr_295 (_ BitVec 8))
-  (temp___is_init_291 Bool) (temp___skip_constant_292 Bool)
-  (temp___do_toplevel_293 Bool) (temp___do_typ_inv_294 Bool)) Bool true)
+(define-fun dynamic_invariant3 ((temp___expr_297 (_ BitVec 8))
+  (temp___is_init_293 Bool) (temp___skip_constant_294 Bool)
+  (temp___do_toplevel_295 Bool) (temp___do_typ_inv_296 Bool)) Bool true)
 
 (assert
 ;; defqtvc
@@ -552,8 +552,10 @@
   (not
   (=> (dynamic_invariant1 data true false true true)
   (=> (dynamic_invariant offset true false true true)
+  (let ((temp___1044 (length data)))
   (=>
-  (= (and (ite (<= 1 (length data)) true false) (ite (<= (length data) 1024)
-                                                true false)) true)
-  (=> (< offset 1024) (in_range1 (length data))))))))
+  (and
+  (= (and (ite (<= 1 temp___1044) true false) (ite (<= temp___1044 1024) true
+                                              false)) true)
+  (< offset 1024)) (in_range1 (length data))))))))
 (check-sat)

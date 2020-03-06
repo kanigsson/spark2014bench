@@ -904,22 +904,6 @@
 ;; discrimrec__register_type__option__position_axiom
   (assert (<= 0 discrimrec__register_type__option__position))
 
-(declare-const discrimrec__register_type__value_64__first__bit Int)
-
-(declare-const discrimrec__register_type__value_64__last__bit Int)
-
-(declare-const discrimrec__register_type__value_64__position Int)
-
-;; discrimrec__register_type__value_64__first__bit_axiom
-  (assert (<= 0 discrimrec__register_type__value_64__first__bit))
-
-;; discrimrec__register_type__value_64__last__bit_axiom
-  (assert
-  (< discrimrec__register_type__value_64__first__bit discrimrec__register_type__value_64__last__bit))
-
-;; discrimrec__register_type__value_64__position_axiom
-  (assert (<= 0 discrimrec__register_type__value_64__position))
-
 (declare-const discrimrec__register_type__ignore_32a__first__bit Int)
 
 (declare-const discrimrec__register_type__ignore_32a__last__bit Int)
@@ -1064,20 +1048,34 @@
 ;; discrimrec__register_type__value_low__position_axiom
   (assert (<= 0 discrimrec__register_type__value_low__position))
 
+(declare-const discrimrec__register_type__value_64__first__bit Int)
+
+(declare-const discrimrec__register_type__value_64__last__bit Int)
+
+(declare-const discrimrec__register_type__value_64__position Int)
+
+;; discrimrec__register_type__value_64__first__bit_axiom
+  (assert (<= 0 discrimrec__register_type__value_64__first__bit))
+
+;; discrimrec__register_type__value_64__last__bit_axiom
+  (assert
+  (< discrimrec__register_type__value_64__first__bit discrimrec__register_type__value_64__last__bit))
+
+;; discrimrec__register_type__value_64__position_axiom
+  (assert (<= 0 discrimrec__register_type__value_64__position))
+
 (declare-fun user_eq5 (us_rep us_rep) Bool)
 
 (declare-const dummy5 us_rep)
 
-(declare-datatypes ((register_type__ref 0))
-(((register_type__refqtmk (register_type__content us_rep)))))
-(define-fun register_type__ref_register_type__content__projection ((a register_type__ref)) us_rep 
-  (register_type__content a))
+(declare-datatypes ((traxS__ref 0))
+(((traxS__refqtmk (traxS__content us_rep)))))
+(define-fun traxS__ref_traxS__content__projection ((a traxS__ref)) us_rep 
+  (traxS__content a))
 
 (define-fun in_range1 ((rec__discrimrec__register_type__option1 Int)
-  (a us_rep)) Bool (= rec__discrimrec__register_type__option1 (to_rep4
-                                                              (rec__discrimrec__register_type__option
-                                                              (us_split_discrs1
-                                                              a)))))
+  (a us_split_discrs)) Bool (= rec__discrimrec__register_type__option1 
+  (to_rep4 (rec__discrimrec__register_type__option a))))
 
 (declare-const value__size1 Int)
 
@@ -1109,6 +1107,22 @@
 
 ;; discrimrec__register_type__option__position_axiom
   (assert (<= 0 discrimrec__register_type__option__position1))
+
+(declare-const discrimrec__register_type__value_64__first__bit1 Int)
+
+(declare-const discrimrec__register_type__value_64__last__bit1 Int)
+
+(declare-const discrimrec__register_type__value_64__position1 Int)
+
+;; discrimrec__register_type__value_64__first__bit_axiom
+  (assert (<= 0 discrimrec__register_type__value_64__first__bit1))
+
+;; discrimrec__register_type__value_64__last__bit_axiom
+  (assert
+  (< discrimrec__register_type__value_64__first__bit1 discrimrec__register_type__value_64__last__bit1))
+
+;; discrimrec__register_type__value_64__position_axiom
+  (assert (<= 0 discrimrec__register_type__value_64__position1))
 
 (declare-const discrimrec__register_type__ignore_32a__first__bit1 Int)
 
@@ -1254,30 +1268,14 @@
 ;; discrimrec__register_type__value_low__position_axiom
   (assert (<= 0 discrimrec__register_type__value_low__position1))
 
-(declare-const discrimrec__register_type__value_64__first__bit1 Int)
-
-(declare-const discrimrec__register_type__value_64__last__bit1 Int)
-
-(declare-const discrimrec__register_type__value_64__position1 Int)
-
-;; discrimrec__register_type__value_64__first__bit_axiom
-  (assert (<= 0 discrimrec__register_type__value_64__first__bit1))
-
-;; discrimrec__register_type__value_64__last__bit_axiom
-  (assert
-  (< discrimrec__register_type__value_64__first__bit1 discrimrec__register_type__value_64__last__bit1))
-
-;; discrimrec__register_type__value_64__position_axiom
-  (assert (<= 0 discrimrec__register_type__value_64__position1))
-
 (declare-fun user_eq6 (us_rep us_rep) Bool)
 
 (declare-const dummy6 us_rep)
 
-(declare-datatypes ((traxS__ref 0))
-(((traxS__refqtmk (traxS__content us_rep)))))
-(define-fun traxS__ref_traxS__content__projection ((a traxS__ref)) us_rep 
-  (traxS__content a))
+(declare-datatypes ((register_type__ref 0))
+(((register_type__refqtmk (register_type__content us_rep)))))
+(define-fun register_type__ref_register_type__content__projection ((a register_type__ref)) us_rep 
+  (register_type__content a))
 
 (declare-const rax__split_discrs us_split_discrs)
 
@@ -1290,7 +1288,8 @@
   (temp___do_toplevel_211 Bool)
   (temp___do_typ_inv_212 Bool)) Bool (=>
                                      (not (= temp___skip_constant_210 true))
-                                     (in_range1 0 temp___expr_213)))
+                                     (in_range1 0
+                                     (us_split_discrs1 temp___expr_213))))
 
 (define-fun default_initial_assumption ((temp___expr_215 us_rep)
   (temp___skip_top_level_216 Bool)) Bool (= (to_rep4

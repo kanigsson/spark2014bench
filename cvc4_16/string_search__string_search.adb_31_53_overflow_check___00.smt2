@@ -428,8 +428,9 @@
   (not
   (=> (dynamic_invariant1 needle true false true true)
   (=> (dynamic_invariant1 haystack true false true true)
-  (=> (<= 1 (length needle))
-  (=> (<= (length needle) (length haystack))
+  (=>
+  (let ((temp___358 (length needle)))
+  (and (<= 1 temp___358) (<= temp___358 (length haystack))))
   (let ((o (length needle)))
   (=> (in_range1 o)
   (let ((o1 (length haystack)))
@@ -441,5 +442,5 @@
   (forall ((i Int))
   (=> (= i 1)
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i o3) true false)) true)
-  (in_range1 (- (last1 needle) 1)))))))))))))))))))
+  (in_range1 (- (last1 needle) 1))))))))))))))))))
 (check-sat)

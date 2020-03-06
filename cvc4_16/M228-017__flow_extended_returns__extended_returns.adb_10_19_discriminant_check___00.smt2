@@ -237,6 +237,10 @@
                                                   (us_split_fields1 b))))))))
                    true false))
 
+(define-fun in_range2 ((rec__extended_returns__record_t__discr1 Int)
+  (a us_split_discrs)) Bool (= rec__extended_returns__record_t__discr1 
+  (to_rep1 (rec__extended_returns__record_t__discr a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -340,12 +344,6 @@
 (((record_t__refqtmk (record_t__content us_rep)))))
 (define-fun record_t__ref_record_t__content__projection ((a record_t__ref)) us_rep 
   (record_t__content a))
-
-(define-fun in_range2 ((rec__extended_returns__record_t__discr1 Int)
-  (a us_rep)) Bool (= rec__extended_returns__record_t__discr1 (to_rep1
-                                                              (rec__extended_returns__record_t__discr
-                                                              (us_split_discrs1
-                                                              a)))))
 
 (declare-const value__size1 Int)
 
@@ -462,7 +460,8 @@
   (temp___do_toplevel_174 Bool)
   (temp___do_typ_inv_175 Bool)) Bool (=>
                                      (not (= temp___skip_constant_173 true))
-                                     (in_range2 discr temp___expr_176)))
+                                     (in_range2 discr
+                                     (us_split_discrs1 temp___expr_176))))
 
 (define-fun default_initial_assumption ((temp___expr_178 us_rep)
   (temp___skip_top_level_179 Bool)) Bool (= (to_rep1

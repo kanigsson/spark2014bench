@@ -158,6 +158,11 @@
                             (rec__lexer__token__name (us_split_fields1 b))) true)))
                     true false))
 
+(define-fun in_range1 ((rec__lexer__token__kind1 Int)
+  (a us_split_discrs)) Bool (= rec__lexer__token__kind1 (to_rep
+                                                        (rec__lexer__token__kind
+                                                        a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -221,11 +226,6 @@
                                             (rec__lexer__token__kind
                                             (us_split_discrs1
                                             temp___expr_195))) 1))
-
-(define-fun in_range1 ((rec__lexer__token__kind1 Int)
-  (a us_rep1)) Bool (= rec__lexer__token__kind1 (to_rep
-                                                (rec__lexer__token__kind
-                                                (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 

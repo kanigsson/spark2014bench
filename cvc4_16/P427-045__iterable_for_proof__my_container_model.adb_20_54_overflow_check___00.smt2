@@ -237,12 +237,11 @@
   (forall ((c (Array Int natural)))
   (forall ((p us_rep))
   (! (= (= (has_element c p) true)
-     (and
-     (<= 1 (to_rep
-           (rec__my_container_model__cursor__index (us_split_fields1 p))))
-     (<= (to_rep
-         (rec__my_container_model__cursor__index (us_split_fields1 p))) 100))) :pattern (
-  (has_element c p)) ))))
+     (let ((temp___221 (to_rep
+                       (rec__my_container_model__cursor__index
+                       (us_split_fields1 p)))))
+     (and (<= 1 temp___221) (<= temp___221 100)))) :pattern ((has_element c
+                                                             p)) ))))
 
 (declare-const c (Array Int natural))
 

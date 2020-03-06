@@ -142,14 +142,13 @@
   (forall ((i1 Int))
   (=> (and (<= 0 i1) (<= i1 x1)) (= (= (select r1 i1) true) (= i1 c))))
   (=>
-  (= (and (ite (and
-               (forall ((temp___366 Int))
-               (=> (and (<= 0 temp___366) (<= temp___366 255))
+  (= (and (ite (and (in_range1 x1)
+               (forall ((temp___371 Int))
+               (=> (and (<= 0 temp___371) (<= temp___371 255))
                (=>
-               (or (< 255 temp___366)
-               (or (< temp___366 0) (< x1 temp___366)))
-               (= (select r1 temp___366) (select r temp___366))))) (in_range1
-               x1))
+               (or (< 255 temp___371)
+               (or (< temp___371 0) (< x1 temp___371)))
+               (= (select r1 temp___371) (select r temp___371))))))
           true false) (ite (and (<= 0 x1) (<= x1 255)) true false)) true)
   (=> (not (= x1 255))
   (=> (= x2 (+ x1 1))

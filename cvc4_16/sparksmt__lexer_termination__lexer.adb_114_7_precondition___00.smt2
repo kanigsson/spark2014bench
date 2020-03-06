@@ -421,6 +421,11 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range6 ((rec__file_io__read_result__status1 Int)
+  (a us_split_discrs)) Bool (= rec__file_io__read_result__status1 (to_rep2
+                                                                  (rec__file_io__read_result__status
+                                                                  a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -542,10 +547,10 @@
   (forall ((f us_rep1)) (! (in_range1 (index f)) :pattern ((index f)) )))
 
 (declare-fun invariant__1 (us_rep1 Int us_split_fields us_split_discrs Int
-  us_split_fields us_split_discrs us_private) Bool)
+  us_private us_split_fields us_split_discrs) Bool)
 
 (declare-fun invariant____function_guard1 (Bool us_rep1 Int us_split_fields
-  us_split_discrs Int us_split_fields us_split_discrs us_private) Bool)
+  us_split_discrs Int us_private us_split_fields us_split_discrs) Bool)
 
 (declare-fun local_invariant (us_rep1 Int us_split_fields us_split_discrs Int
   us_split_fields us_split_discrs) Bool)
@@ -581,15 +586,15 @@
      (=
      (= (invariant__1 lexer__the_file lexer__next_idx
         lexer__current_read__fields lexer__current_read__discrs
-        lexer__current_idx lexer__next_read__fields lexer__next_read__discrs
-        names__name_table) true)
+        lexer__current_idx names__name_table lexer__next_read__fields
+        lexer__next_read__discrs) true)
      (and (= (invariant__ names__name_table) true)
      (= (local_invariant lexer__the_file lexer__next_idx
         lexer__current_read__fields lexer__current_read__discrs
         lexer__current_idx lexer__next_read__fields lexer__next_read__discrs) true))))) :pattern (
   (invariant__1 lexer__the_file lexer__next_idx lexer__current_read__fields
-  lexer__current_read__discrs lexer__current_idx lexer__next_read__fields
-  lexer__next_read__discrs names__name_table)) )))))))
+  lexer__current_read__discrs lexer__current_idx names__name_table
+  lexer__next_read__fields lexer__next_read__discrs)) )))))))
 
 (declare-const filename us_t)
 
@@ -610,7 +615,7 @@
   (forall ((i name_id))
   (and (<= 0 (name_idqtint i)) (<= (name_idqtint i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -632,7 +637,7 @@
   (temp___do_toplevel_186 Bool)
   (temp___do_typ_inv_187 Bool)) Bool (=>
                                      (or (= temp___is_init_184 true)
-                                     (<= 0 2147483647)) (in_range6
+                                     (<= 0 2147483647)) (in_range7
                                      temp___expr_188)))
 
 (define-fun dynamic_invariant4 ((temp___expr_74 Int) (temp___is_init_70 Bool)

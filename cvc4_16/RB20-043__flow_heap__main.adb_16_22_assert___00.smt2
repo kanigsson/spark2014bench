@@ -134,10 +134,11 @@
   (=>
   (= y__is_null_pointer (rec__main__t__is_null_pointer main__a__y__assume))
   (=> (= y__pointer_value true)
-  (=> (= y__is_null_pointer2 y__is_null_pointer1)
   (=> (= y__pointer_address2 y__pointer_address1)
   (=> (= y__pointer_value1 main__free__x__value)
+  (=> (= y__is_null_pointer1 true)
+  (=> (= y__is_null_pointer2 y__is_null_pointer1)
   (= (bool_eq
      (us_repqtmk y__is_null_pointer2 y__pointer_address2 y__pointer_value1)
-     us_null_pointer) true))))))))))))
+     us_null_pointer) true)))))))))))))
 (check-sat)

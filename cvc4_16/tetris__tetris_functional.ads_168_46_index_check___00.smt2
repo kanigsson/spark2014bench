@@ -1783,7 +1783,7 @@
 ;; defqtvc
  ;; File "tetris_functional.ads", line 157, characters 0-0
   (not
-  (forall ((o Int) (o1 Int) (usf Int) (usf1 Int) (temp___781 Int))
+  (forall ((o Int) (o1 Int) (usf Int) (usf1 Int) (temp___787 Int))
   (=>
   (= (tetris_functional__possible_i_shapes__aggregate_def
      (temp_____aggregate_def_165 (distinct 0 0) (distinct 0 0) (distinct 0 0)
@@ -1876,6 +1876,6 @@
   (=>
   (= (and (ite (<= 0 usf1) true false) (ite (<= usf1 2) true false)) true)
   (=>
-  (= (to_rep (rec__tetris_functional__piece__s (us_split_fields1 p))) temp___781)
-  (<= 3 temp___781)))))))))))))
+  (= (to_rep (rec__tetris_functional__piece__s (us_split_fields1 p))) temp___787)
+  (<= 3 temp___787)))))))))))))
 (check-sat)

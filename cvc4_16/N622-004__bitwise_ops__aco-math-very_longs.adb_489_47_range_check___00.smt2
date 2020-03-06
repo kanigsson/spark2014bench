@@ -621,6 +621,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
+  (to_rep
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -723,7 +728,7 @@
   (forall ((i natural))
   (and (<= 0 (naturalqtint i)) (<= (naturalqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -744,7 +749,7 @@
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
   (temp___do_typ_inv_38 Bool)) Bool (=>
                                     (or (= temp___is_init_35 true)
-                                    (<= 0 2147483647)) (in_range3
+                                    (<= 0 2147483647)) (in_range4
                                     temp___expr_39)))
 
 (declare-fun shift_right ((_ BitVec 16) Int) (_ BitVec 16))
@@ -867,12 +872,6 @@
                             (us_split_fields3 b))) true))
                     true false))
 
-(define-fun in_range4 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
-  (a us_rep)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
-  (to_rep
-  (rec__ada___ada___aco__math__very_longs__very_long__octet_length
-  (us_split_discrs1 a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -945,11 +944,12 @@
   (temp___do_typ_inv_858 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_856 true))
-                                     (in_range4
+                                     (in_range3
                                      (+ (* 2 (to_rep
                                              (rec__ada___ada___aco__math__very_longs__very_long__octet_length
                                              (us_split_discrs1 divisor)))) 1)
-                                     (to_base temp___expr_859)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_859))))
                                      (and (dynamic_property 1
                                      (+ (* 2 (to_rep
                                              (rec__ada___ada___aco__math__very_longs__very_long__octet_length
@@ -1050,12 +1050,6 @@
                             (us_split_fields5 b))) true))
                     true false))
 
-(define-fun in_range5 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
-  (a us_rep)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
-  (to_rep
-  (rec__ada___ada___aco__math__very_longs__very_long__octet_length
-  (us_split_discrs1 a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -1128,11 +1122,12 @@
   (temp___do_typ_inv_871 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_869 true))
-                                     (in_range5
+                                     (in_range3
                                      (to_rep
                                      (rec__ada___ada___aco__math__very_longs__very_long__octet_length
                                      (us_split_discrs1 divisor)))
-                                     (to_base1 temp___expr_872)))
+                                     (us_split_discrs1
+                                     (to_base1 temp___expr_872))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__ada___ada___aco__math__very_longs__very_long__octet_length

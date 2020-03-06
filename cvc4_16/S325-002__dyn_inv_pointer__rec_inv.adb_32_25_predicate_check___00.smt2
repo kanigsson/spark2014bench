@@ -184,6 +184,10 @@
                             (rec__rec_inv__list_d__next (us_split_fields1 b))) true)))
                     true false))
 
+(define-fun in_range2 ((rec__rec_inv__list_d__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__rec_inv__list_d__d1 (rec__rec_inv__list_d__d
+                                                        a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -254,10 +258,6 @@
 (((list_d__refqtmk (list_d__content us_rep1)))))
 (define-fun list_d__ref_list_d__content__projection ((a list_d__ref)) us_rep1 
   (list_d__content a))
-
-(define-fun in_range2 ((rec__rec_inv__list_d__d1 Bool)
-  (a us_rep1)) Bool (= rec__rec_inv__list_d__d1 (rec__rec_inv__list_d__d
-                                                (us_split_discrs1 a))))
 
 (declare-const value__size1 Int)
 
@@ -418,7 +418,7 @@
                                      (=>
                                      (not (= temp___skip_constant_210 true))
                                      (in_range2 (distinct 1 0)
-                                     temp___expr_213))
+                                     (us_split_discrs1 temp___expr_213)))
                                      (=>
                                      (= (rec__rec_inv__list_d__d
                                         (us_split_discrs1 temp___expr_213)) true)
@@ -467,10 +467,6 @@
                                                                (rec__rec_inv__list_d__val
                                                                (us_split_fields1
                                                                temp___225))))))
-
-(define-fun in_range3 ((rec__rec_inv__list_d__d1 Bool)
-  (a us_rep1)) Bool (= rec__rec_inv__list_d__d1 (rec__rec_inv__list_d__d
-                                                (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 
@@ -551,10 +547,6 @@
                                                                 (rec__rec_inv__list_d__val
                                                                 (us_split_fields1
                                                                 temp___228))))))
-
-(define-fun in_range4 ((rec__rec_inv__list_d__d1 Bool)
-  (a us_rep1)) Bool (= rec__rec_inv__list_d__d1 (rec__rec_inv__list_d__d
-                                                (us_split_discrs1 a))))
 
 (declare-const value__size3 Int)
 

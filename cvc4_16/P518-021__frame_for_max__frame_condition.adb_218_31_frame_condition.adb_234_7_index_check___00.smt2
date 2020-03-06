@@ -676,17 +676,16 @@
   (and
   (and
   (and
-  (and
-  (forall ((temp___294 Int))
+  (and (dynamic_invariant max4 true true true true)
+  (forall ((temp___295 Int))
   (=>
-  (and (<= (to_rep1 a__first) temp___294) (<= temp___294 (to_rep1 a__last)))
+  (and (<= (to_rep1 a__first) temp___295) (<= temp___295 (to_rep1 a__last)))
   (= (rec__frame_condition__cell__value
-     (us_split_fields1 (select a1 temp___294))) (rec__frame_condition__cell__value
+     (us_split_fields1 (select a1 temp___295))) (rec__frame_condition__cell__value
                                                 (us_split_fields1
-                                                (select a temp___294))))))
+                                                (select a temp___295)))))))
   (dynamic_invariant1 c167b1 true true true true)) (dynamic_invariant1 k2
   true true true true)) (dynamic_invariant c168b1 true true true true))
-  (dynamic_invariant max4 true true true true))
   (and (= k2 last2) (= spark__branch1 spark__branch6))))))))))))))))))))))))))))))))))))
   (=> (dynamic_invariant2 c201b true false true true)
   (=> (dynamic_invariant2 not_kind1 true false true true)

@@ -592,6 +592,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range2 ((rec__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__very_longs__very_long__octet_length1 
+  (to_rep (rec__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -708,7 +712,7 @@
 ;; bit'axiom
   (assert (forall ((i bit)) (and (<= 0 (bitqtint i)) (<= (bitqtint i) 1))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 1)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -730,7 +734,7 @@
   (temp___do_toplevel_264 Bool)
   (temp___do_typ_inv_265 Bool)) Bool (=>
                                      (or (= temp___is_init_262 true)
-                                     (<= 0 1)) (in_range2 temp___expr_266)))
+                                     (<= 0 1)) (in_range3 temp___expr_266)))
 
 (declare-sort bit_index_type 0)
 
@@ -742,7 +746,7 @@
   (and (<= 0 (bit_index_typeqtint i))
   (<= (bit_index_typeqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -764,7 +768,7 @@
   (temp___do_toplevel_271 Bool)
   (temp___do_typ_inv_272 Bool)) Bool (=>
                                      (or (= temp___is_init_269 true)
-                                     (<= 0 2147483647)) (in_range3
+                                     (<= 0 2147483647)) (in_range4
                                      temp___expr_273)))
 
 (assert

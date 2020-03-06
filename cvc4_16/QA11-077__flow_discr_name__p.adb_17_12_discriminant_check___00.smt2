@@ -124,6 +124,9 @@
                         (to_rep (rec__p__t__c (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range1 ((rec__p__t__d1 Int)
+  (a us_split_discrs)) Bool (= rec__p__t__d1 (to_rep (rec__p__t__d a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -176,10 +179,6 @@
 (declare-datatypes ((t__ref 0))
 (((t__refqtmk (t__content us_rep)))))
 (define-fun t__ref_t__content__projection ((a t__ref)) us_rep (t__content a))
-
-(define-fun in_range1 ((rec__p__t__d1 Int)
-  (a us_rep)) Bool (= rec__p__t__d1 (to_rep
-                                    (rec__p__t__d (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 
@@ -246,17 +245,14 @@
   (temp___do_toplevel_170 Bool)
   (temp___do_typ_inv_171 Bool)) Bool (=>
                                      (not (= temp___skip_constant_169 true))
-                                     (in_range1 1 temp___expr_172)))
+                                     (in_range1 1
+                                     (us_split_discrs1 temp___expr_172))))
 
 (define-fun default_initial_assumption ((temp___expr_174 us_rep)
   (temp___skip_top_level_175 Bool)) Bool (= (to_rep
                                             (rec__p__t__d
                                             (us_split_discrs1
                                             temp___expr_174))) 1))
-
-(define-fun in_range2 ((rec__p__t__d1 Int)
-  (a us_rep)) Bool (= rec__p__t__d1 (to_rep
-                                    (rec__p__t__d (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -344,5 +340,6 @@
   (us_repqtmk y__split_discrs (us_split_fieldsqtmk y__split_fields)) false
   false true true)
   (=> (= y__attr__constrained true) (in_range1 1
-  (us_repqtmk (us_split_discrsqtmk rliteral) (us_split_fieldsqtmk rliteral1))))))))
+  (us_split_discrs1
+  (us_repqtmk (us_split_discrsqtmk rliteral) (us_split_fieldsqtmk rliteral1)))))))))
 (check-sat)

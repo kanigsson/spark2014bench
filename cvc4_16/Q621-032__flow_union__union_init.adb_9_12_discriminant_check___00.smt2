@@ -385,6 +385,11 @@
                                                    (us_split_fields3 b)))))))
                     true false))
 
+(define-fun in_range2 ((rec__union_init__union_test__discr1 Int)
+  (a us_split_discrs)) Bool (= rec__union_init__union_test__discr1 (to_rep
+                                                                   (rec__union_init__union_test__discr
+                                                                   a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -521,12 +526,6 @@
 (declare-const r2b Int)
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
-
-(define-fun in_range2 ((rec__union_init__union_test__discr1 Int)
-  (a us_rep1)) Bool (= rec__union_init__union_test__discr1 (to_rep
-                                                           (rec__union_init__union_test__discr
-                                                           (us_split_discrs1
-                                                           a)))))
 
 (declare-const value__size3 Int)
 

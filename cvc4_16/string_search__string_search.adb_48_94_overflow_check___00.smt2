@@ -391,7 +391,7 @@
 
 (define-fun dynamic_predicate ((temp___168 us_t)) Bool (= (first1 temp___168) 1))
 
-(declare-fun temp_____aggregate_def_350 (Int) (Array Int positive))
+(declare-fun temp_____aggregate_def_361 (Int) (Array Int positive))
 
 (define-fun dynamic_invariant1 ((temp___expr_46 Int) (temp___is_init_42 Bool)
   (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)
@@ -415,10 +415,10 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___352 Int))
-  (=> (dynamic_invariant1 temp___352 true true true true)
-  (forall ((temp___353 Int))
-  (= (to_rep (select (temp_____aggregate_def_350 temp___352) temp___353)) temp___352)))))
+  (forall ((temp___363 Int))
+  (=> (dynamic_invariant1 temp___363 true true true true)
+  (forall ((temp___364 Int))
+  (= (to_rep (select (temp_____aggregate_def_361 temp___363) temp___364)) temp___363)))))
 
 (assert
 ;; defqtvc
@@ -431,12 +431,12 @@
   (let ((o1 (+ o 1)))
   (=> (in_range1 o1)
   (forall ((bad_shift (Array Int positive)))
-  (=> (= bad_shift (temp_____aggregate_def_350 o1))
-  (let ((temp___354 (first1 needle)))
+  (=> (= bad_shift (temp_____aggregate_def_361 o1))
+  (let ((temp___365 (first1 needle)))
   (forall ((j Int))
-  (=> (= j temp___354)
+  (=> (= j temp___365)
   (=>
-  (= (and (ite (<= temp___354 j) true false) (ite (<= j (last1 needle)) true
+  (= (and (ite (<= temp___365 j) true false) (ite (<= j (last1 needle)) true
                                              false)) true)
   (let ((o2 (length needle)))
   (=> (in_range1 o2)
@@ -454,5 +454,7 @@
   (forall ((usf Int))
   (=>
   (= (and (ite (<= 0 usf) true false) (ite (<= usf 255) true false)) true)
-  (let ((o7 (length needle))) (=> (in_range1 o7) (in_range1 (+ o7 1)))))))))))))))))))))))))))))))))
+  (forall ((temp___373 Int))
+  (=> (= (to_rep (select bad_shift1 usf)) temp___373)
+  (let ((o7 (length needle))) (=> (in_range1 o7) (in_range1 (+ o7 1)))))))))))))))))))))))))))))))))))
 (check-sat)

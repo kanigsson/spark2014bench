@@ -378,6 +378,10 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range5 ((rec__ada___pragmarc__b_strings__b_string__max_length1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___pragmarc__b_strings__b_string__max_length1 
+  (to_rep (rec__ada___pragmarc__b_strings__b_string__max_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -489,7 +493,7 @@
 
 (declare-sort truncation 0)
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -511,7 +515,7 @@
   (temp___do_toplevel_292 Bool)
   (temp___do_typ_inv_293 Bool)) Bool (=>
                                      (or (= temp___is_init_290 true)
-                                     (<= 0 2)) (in_range5 temp___expr_294)))
+                                     (<= 0 2)) (in_range6 temp___expr_294)))
 
 (define-fun dynamic_invariant3 ((temp___expr_39 Int) (temp___is_init_35 Bool)
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)

@@ -375,29 +375,29 @@
 
 (declare-fun temp_____aggregate_def_200 (Int) (Array Int element))
 
-;; temp___result_419'def
+;; temp___result_427'def
   (assert
-  (forall ((temp___418 us_rep)) (size__function_guard (size temp___418)
-  temp___418)))
+  (forall ((temp___426 us_rep)) (size__function_guard (size temp___426)
+  temp___426)))
 
-(define-fun default_initial_assumption ((temp___expr_416 us_rep)
-  (temp___skip_top_level_417 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_424 us_rep)
+  (temp___skip_top_level_425 Bool)) Bool (and
                                          (and
-                                         (= (attr__tag temp___expr_416) 
+                                         (= (attr__tag temp___expr_424) 
                                          us_tag1)
                                          (and
                                          (= (rec__stacks__stack_root__content
                                             (us_split_fields1
-                                            temp___expr_416)) (temp_____aggregate_def_200
+                                            temp___expr_424)) (temp_____aggregate_def_200
                                                               0))
                                          (= (to_rep
                                             (rec__stacks__stack_root__length
                                             (us_split_fields1
-                                            temp___expr_416))) 0)))
+                                            temp___expr_424))) 0)))
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_417 true))
-                                         (= (size temp___expr_416) 0))))
+                                         (= temp___skip_top_level_425 true))
+                                         (= (size temp___expr_424) 0))))
 
 (define-fun dynamic_invariant ((temp___expr_172 Int)
   (temp___is_init_168 Bool) (temp___skip_constant_169 Bool)

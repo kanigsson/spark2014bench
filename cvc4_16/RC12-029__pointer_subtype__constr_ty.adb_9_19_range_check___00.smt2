@@ -298,6 +298,9 @@
                    (rec__constr_ty__r__x (us_split_discrs1 b)) 1 0)) true
                    false))
 
+(define-fun in_range4 ((rec__constr_ty__r__x1 Bool)
+  (a us_split_discrs)) Bool (= rec__constr_ty__r__x1 (rec__constr_ty__r__x a)))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -423,7 +426,7 @@
   (forall ((i ta_acc_2P1))
   (and (<= 1 (ta_acc_2P1qtint i)) (<= (ta_acc_2P1qtint i) 10))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -498,7 +501,7 @@
                                                             r)))
                                           (to_array temp___155))))
 
-(define-fun in_range5 ((first2 Int) (last2 Int)
+(define-fun in_range6 ((first2 Int) (last2 Int)
   (r us_rep1)) Bool (=>
                     (not (= (rec__constr_ty__a_acc__is_null_pointer r) true))
                     (and
@@ -570,10 +573,6 @@
 (define-fun default_initial_assumption2 ((temp___expr_190 us_rep3)
   (temp___skip_top_level_191 Bool)) Bool (= (rec__constr_ty__r_acc__is_null_pointer
                                             temp___expr_190) true))
-
-(define-fun in_range6 ((rec__constr_ty__r__x1 Bool)
-  (a us_rep)) Bool (= rec__constr_ty__r__x1 (rec__constr_ty__r__x
-                                            (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 
@@ -819,6 +818,6 @@
                         constr_ty__z__assume))
   (=> (dynamic_invariant1
   (us_repqtmk1 z__is_null_pointer z__pointer_address z__pointer_value) true
-  false true true) (in_range5 1 10
+  false true true) (in_range6 1 10
   (us_repqtmk1 z__is_null_pointer z__pointer_address z__pointer_value))))))))))))))))))
 (check-sat)

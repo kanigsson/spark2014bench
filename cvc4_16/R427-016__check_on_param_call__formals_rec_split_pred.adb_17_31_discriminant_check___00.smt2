@@ -296,15 +296,18 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((rec____ref 0))
-(((rec____refqtmk (rec____content us_rep)))))
-(define-fun rec____ref_rec____content__projection ((a rec____ref)) us_rep 
-  (rec____content a))
+(declare-datatypes ((constr_rec_2__ref 0))
+(((constr_rec_2__refqtmk (constr_rec_2__content us_rep)))))
+(define-fun constr_rec_2__ref_constr_rec_2__content__projection ((a constr_rec_2__ref)) us_rep 
+  (constr_rec_2__content a))
+
+(declare-const i3b us_rep)
+
+(declare-const attr__ATTRIBUTE_ADDRESS Int)
 
 (define-fun in_range3 ((rec__formals_rec_split_pred__rec__d1 Bool)
-  (a us_rep)) Bool (= rec__formals_rec_split_pred__rec__d1 (rec__formals_rec_split_pred__rec__d
-                                                           (us_split_discrs1
-                                                           a))))
+  (a us_split_discrs)) Bool (= rec__formals_rec_split_pred__rec__d1 (rec__formals_rec_split_pred__rec__d
+                                                                    a)))
 
 (declare-const value__size1 Int)
 
@@ -389,14 +392,10 @@
 
 (declare-const dummy3 us_rep)
 
-(declare-datatypes ((constr_rec_2__ref 0))
-(((constr_rec_2__refqtmk (constr_rec_2__content us_rep)))))
-(define-fun constr_rec_2__ref_constr_rec_2__content__projection ((a constr_rec_2__ref)) us_rep 
-  (constr_rec_2__content a))
-
-(declare-const i3b us_rep)
-
-(declare-const attr__ATTRIBUTE_ADDRESS Int)
+(declare-datatypes ((rec____ref 0))
+(((rec____refqtmk (rec____content us_rep)))))
+(define-fun rec____ref_rec____content__projection ((a rec____ref)) us_rep 
+  (rec____content a))
 
 (define-fun dynamic_invariant ((temp___expr_199 us_rep)
   (temp___is_init_195 Bool) (temp___skip_constant_196 Bool)
@@ -405,7 +404,7 @@
                                      (=>
                                      (not (= temp___skip_constant_196 true))
                                      (in_range3 (distinct 1 0)
-                                     temp___expr_199))
+                                     (us_split_discrs1 temp___expr_199)))
                                      (=> (= temp___do_toplevel_197 true)
                                      (not
                                      (= (to_rep

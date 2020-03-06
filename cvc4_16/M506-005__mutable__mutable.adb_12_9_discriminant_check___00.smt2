@@ -341,6 +341,10 @@
                            (rec__mutable__t__arr (us_split_fields1 b))) true)))
                    true false))
 
+(define-fun in_range3 ((rec__mutable__t__k1 Int)
+  (a us_split_discrs)) Bool (= rec__mutable__t__k1 (to_rep1
+                                                   (rec__mutable__t__k a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -474,7 +478,7 @@
   (assert
   (forall ((i tT7bP1)) (and (<= 1 (tT7bP1qtint i)) (<= (tT7bP1qtint i) 5))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 5)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 5)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -569,11 +573,6 @@
                             (rec__mutable__t__arr1 (us_split_fields3 a)) 1 5
                             (rec__mutable__t__arr1 (us_split_fields3 b)) 1 5) true)))
                     true false))
-
-(define-fun in_range4 ((rec__mutable__t__k1 Int)
-  (a us_rep)) Bool (= rec__mutable__t__k1 (to_rep1
-                                          (rec__mutable__t__k
-                                          (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 

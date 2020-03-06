@@ -294,6 +294,10 @@
                            (us_split_fields1 b))) true)))
                    true false))
 
+(define-fun in_range3 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
+  (a us_split_discrs)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 
+  (to_rep (rec__do_checks__do_discriminant_check__r1__j a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -385,7 +389,7 @@
   (forall ((i tT62bP1))
   (and (<= 1 (tT62bP1qtint i)) (<= (tT62bP1qtint i) 10))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -482,12 +486,6 @@
                             (us_split_fields3 b)) 1 10) true)))
                     true false))
 
-(define-fun in_range4 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -549,8 +547,9 @@
   (temp___do_toplevel_557 Bool)
   (temp___do_typ_inv_558 Bool)) Bool (=>
                                      (not (= temp___skip_constant_556 true))
-                                     (in_range4 10
-                                     (to_base temp___expr_559))))
+                                     (in_range3 10
+                                     (us_split_discrs1
+                                     (to_base temp___expr_559)))))
 
 (define-fun default_initial_assumption ((temp___expr_562 us_rep1)
   (temp___skip_top_level_563 Bool)) Bool (= (to_rep
@@ -581,5 +580,5 @@
   (=> (dynamic_invariant x true false true true)
   (=> (dynamic_invariant1
   (us_repqtmk1 y__split_discrs (us_split_fieldsqtmk1 y__split_fields)) false
-  false true true) (in_range4 10 x))))))
+  false true true) (in_range3 10 (us_split_discrs1 x)))))))
 (check-sat)

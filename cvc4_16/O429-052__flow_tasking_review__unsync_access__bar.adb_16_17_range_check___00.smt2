@@ -85,6 +85,9 @@
 (define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun in_range1 ((rec__bar__t1__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__bar__t1__b1 (rec__bar__t1__b a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -149,9 +152,6 @@
                                          (us_split_fieldsqtmk1
                                          (rec__bar__t1 (us_split_fields1 r)))))
 
-(define-fun in_range1 ((rec__bar__t1__b1 Bool)
-  (a us_rep)) Bool (= rec__bar__t1__b1 (rec__bar__t1__b (us_split_discrs1 a))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -199,7 +199,8 @@
   (temp___do_typ_inv_184 Bool)) Bool (=>
                                      (not (= temp___skip_constant_182 true))
                                      (in_range1 (distinct 0 0)
-                                     (to_base temp___expr_185))))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_185)))))
 
 (define-fun default_initial_assumption ((temp___expr_187 us_rep1)
   (temp___skip_top_level_188 Bool)) Bool (= (rec__bar__t1__b
@@ -233,9 +234,6 @@
 (define-fun of_base1 ((r us_rep)) us_rep2 (us_repqtmk2 (us_split_discrs1 r)
                                           (us_split_fieldsqtmk2
                                           (rec__bar__t1 (us_split_fields1 r)))))
-
-(define-fun in_range2 ((rec__bar__t1__b1 Bool)
-  (a us_rep)) Bool (= rec__bar__t1__b1 (rec__bar__t1__b (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 
@@ -283,8 +281,9 @@
   (temp___do_toplevel_192 Bool)
   (temp___do_typ_inv_193 Bool)) Bool (=>
                                      (not (= temp___skip_constant_191 true))
-                                     (in_range2 (distinct 1 0)
-                                     (to_base1 temp___expr_194))))
+                                     (in_range1 (distinct 1 0)
+                                     (us_split_discrs1
+                                     (to_base1 temp___expr_194)))))
 
 (define-fun default_initial_assumption1 ((temp___expr_196 us_rep2)
   (temp___skip_top_level_197 Bool)) Bool (= (rec__bar__t1__b

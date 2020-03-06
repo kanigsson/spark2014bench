@@ -494,9 +494,9 @@
                                      (first1 temp___expr_162)
                                      (last1 temp___expr_162))))
 
-(declare-fun temp_____aggregate_def_219 (Int) (Array Int integer))
+(declare-fun temp_____aggregate_def_221 (Int) (Array Int integer))
 
-(declare-fun temp_____aggregate_def_223 (Int) (Array Int integer))
+(declare-fun temp_____aggregate_def_225 (Int) (Array Int integer))
 
 (define-fun dynamic_invariant2 ((temp___expr_46 Int) (temp___is_init_42 Bool)
   (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)
@@ -584,15 +584,15 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___221 Int))
-  (=> (dynamic_invariant4 temp___221 true true true true)
-  (= (to_rep1 (select (temp_____aggregate_def_219 temp___221) 1)) temp___221))))
+  (forall ((temp___223 Int))
+  (=> (dynamic_invariant4 temp___223 true true true true)
+  (= (to_rep1 (select (temp_____aggregate_def_221 temp___223) 1)) temp___223))))
 
 ;; def_axiom
   (assert
-  (forall ((temp___225 Int))
-  (=> (dynamic_invariant4 temp___225 true true true true)
-  (= (to_rep1 (select (temp_____aggregate_def_223 temp___225) 1)) temp___225))))
+  (forall ((temp___227 Int))
+  (=> (dynamic_invariant4 temp___227 true true true true)
+  (= (to_rep1 (select (temp_____aggregate_def_225 temp___227) 1)) temp___227))))
 
 (declare-const rliteral natural)
 
@@ -604,7 +604,7 @@
  ;; File "dynamic_types.adb", line 13, characters 0-0
   (not
   (forall ((dynamic_types__search__search_range__result us_split_fields)
-  (o Bool) (o1 Int) (o2 Int) (temp___229 Int))
+  (o Bool) (temp___231 Int) (temp___232 Int))
   (=> (dynamic_invariant1 a true false true true)
   (=> (dynamic_invariant c true false true true)
   (=> (dynamic_invariant from true false true true)
@@ -615,30 +615,30 @@
   (=> (<= (first1 a) from)
   (=> (<= from (last1 a))
   (=>
-  (exists ((o3 Int))
-  (and (= (to_rep (select (to_array a) from)) o3)
+  (exists ((o1 Int))
+  (and (= (to_rep (select (to_array a) from)) o1)
   (exists ((spark__branch Bool))
-  (and (= spark__branch (ite (= o3 c) true false))
+  (and (= spark__branch (ite (= o1 c) true false))
   (ite (= spark__branch true)
-  (exists ((o4 natural))
-  (and (= (to_rep o4) from)
-  (let ((o5 from))
-  (and (dynamic_property1 first2 last2 o5)
+  (exists ((o2 natural))
+  (and (= (to_rep o2) from)
+  (let ((o3 from))
+  (and (dynamic_property1 first2 last2 o3)
   (= dynamic_types__search__search_range__result (us_split_fieldsqtmk
-                                                 (temp_____aggregate_def_219
-                                                 o5) o4))))))
-  (let ((o4 from))
-  (and (dynamic_property1 first2 last2 o4)
+                                                 (temp_____aggregate_def_221
+                                                 o3) o2))))))
+  (let ((o2 from))
+  (and (dynamic_property1 first2 last2 o2)
   (= dynamic_types__search__search_range__result (us_split_fieldsqtmk
-                                                 (temp_____aggregate_def_223
-                                                 o4) rliteral)))))))))
+                                                 (temp_____aggregate_def_225
+                                                 o2) rliteral)))))))))
   (=>
-  (exists ((o3 Int))
+  (exists ((o1 Int))
   (and
   (= (to_rep
      (rec__dynamic_types__search__result_type__result
-     dynamic_types__search__search_range__result)) o3)
-  (ite (= o3 0)
+     dynamic_types__search__search_range__result)) o1)
+  (ite (= o1 0)
   (= o (ite (forall ((i Int))
             (=>
             (and (<= from i)
@@ -652,17 +652,13 @@
   (=>
   (= (to_rep
      (rec__dynamic_types__search__result_type__result
-     dynamic_types__search__search_range__result)) o1)
+     dynamic_types__search__search_range__result)) temp___231)
+  (=>
+  (= (and (ite (<= (first1 a) temp___231) true false) (ite (<= temp___231 
+                                                      (last1 a)) true false)) true)
   (=>
   (= (to_rep
      (rec__dynamic_types__search__result_type__result
-     dynamic_types__search__search_range__result)) o2)
-  (=>
-  (= (and (ite (<= (first1 a) o2) true false) (ite (<= o1 (last1 a)) true
-                                              false)) true)
-  (=>
-  (= (to_rep
-     (rec__dynamic_types__search__result_type__result
-     dynamic_types__search__search_range__result)) temp___229)
-  (<= (first1 a) temp___229))))))))))))))))))))
+     dynamic_types__search__search_range__result)) temp___232)
+  (<= (first1 a) temp___232)))))))))))))))))))
 (check-sat)

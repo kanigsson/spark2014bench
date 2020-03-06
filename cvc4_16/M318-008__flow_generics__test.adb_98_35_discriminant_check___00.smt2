@@ -298,6 +298,11 @@
                            (us_split_fields1 b)) 1 5) true)))))
                    true false))
 
+(define-fun in_range2 ((rec__test__fruit_rec__record_t__d1 Int)
+  (a us_split_discrs)) Bool (= rec__test__fruit_rec__record_t__d1 (to_rep
+                                                                  (rec__test__fruit_rec__record_t__d
+                                                                  a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -407,11 +412,6 @@
                                             (rec__test__fruit_rec__record_t__d
                                             (us_split_discrs1
                                             temp___expr_293))) 0))
-
-(define-fun in_range2 ((rec__test__fruit_rec__record_t__d1 Int)
-  (a us_rep)) Bool (= rec__test__fruit_rec__record_t__d1 (to_rep
-                                                         (rec__test__fruit_rec__record_t__d
-                                                         (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -528,7 +528,8 @@
   (temp___do_toplevel_320 Bool)
   (temp___do_typ_inv_321 Bool)) Bool (=>
                                      (not (= temp___skip_constant_319 true))
-                                     (in_range2 0 temp___expr_322)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_322))))
 
 (define-fun default_initial_assumption1 ((temp___expr_325 us_rep)
   (temp___skip_top_level_326 Bool)) Bool (= (to_rep
@@ -539,11 +540,6 @@
 (declare-const mixed_basket__attr__constrained Bool)
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
-
-(define-fun in_range3 ((rec__test__fruit_rec__record_t__d1 Int)
-  (a us_rep)) Bool (= rec__test__fruit_rec__record_t__d1 (to_rep
-                                                         (rec__test__fruit_rec__record_t__d
-                                                         (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 
@@ -648,11 +644,6 @@
 (((t17b__refqtmk (t17b__content us_rep)))))
 (define-fun t17b__ref_t17b__content__projection ((a t17b__ref)) us_rep 
   (t17b__content a))
-
-(define-fun in_range4 ((rec__test__fruit_rec__record_t__d1 Int)
-  (a us_rep)) Bool (= rec__test__fruit_rec__record_t__d1 (to_rep
-                                                         (rec__test__fruit_rec__record_t__d
-                                                         (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 
@@ -761,7 +752,7 @@
 (declare-fun temp_____aggregate_def_434 (Int Int Int Int
   Int) (Array Int item_t))
 
-(declare-fun temp_____aggregate_def_442 (Int Int Int Int
+(declare-fun temp_____aggregate_def_443 (Int Int Int Int
   Int) (Array Int item_t))
 
 (define-fun dynamic_invariant1 ((temp___expr_39 Int) (temp___is_init_35 Bool)
@@ -802,25 +793,25 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___444 Int) (temp___445 Int) (temp___446 Int)
-  (temp___447 Int) (temp___448 Int))
-  (let ((temp___443 (temp_____aggregate_def_442 temp___444 temp___445
-                    temp___446 temp___447 temp___448)))
+  (forall ((temp___445 Int) (temp___446 Int) (temp___447 Int)
+  (temp___448 Int) (temp___449 Int))
+  (let ((temp___444 (temp_____aggregate_def_443 temp___445 temp___446
+                    temp___447 temp___448 temp___449)))
   (=>
   (and
-  (and (dynamic_invariant2 temp___444 true true true true)
-  (dynamic_invariant2 temp___445 true true true true))
+  (and (dynamic_invariant2 temp___445 true true true true)
+  (dynamic_invariant2 temp___446 true true true true))
   (and
-  (and (dynamic_invariant2 temp___446 true true true true)
-  (dynamic_invariant2 temp___447 true true true true)) (dynamic_invariant2
-  temp___448 true true true true)))
+  (and (dynamic_invariant2 temp___447 true true true true)
+  (dynamic_invariant2 temp___448 true true true true)) (dynamic_invariant2
+  temp___449 true true true true)))
   (and
-  (and (= (to_rep1 (select temp___443 1)) temp___444)
-  (= (to_rep1 (select temp___443 2)) temp___445))
+  (and (= (to_rep1 (select temp___444 1)) temp___445)
+  (= (to_rep1 (select temp___444 2)) temp___446))
   (and
-  (and (= (to_rep1 (select temp___443 3)) temp___446)
-  (= (to_rep1 (select temp___443 4)) temp___447))
-  (= (to_rep1 (select temp___443 5)) temp___448)))))))
+  (and (= (to_rep1 (select temp___444 3)) temp___447)
+  (= (to_rep1 (select temp___444 4)) temp___448))
+  (= (to_rep1 (select temp___444 5)) temp___449)))))))
 
 (declare-const rliteral natural)
 
@@ -832,7 +823,8 @@
  ;; File "test.ads", line 1, characters 0-0
   (not
   (=> (in_range 0) (in_range2 0
+  (us_split_discrs1
   (us_repqtmk (us_split_discrsqtmk rliteral)
   (us_split_fieldsqtmk dummy1 dummy1 dummy1
-  (temp_____aggregate_def_434 1 1 1 1 1)))))))
+  (temp_____aggregate_def_434 1 1 1 1 1))))))))
 (check-sat)

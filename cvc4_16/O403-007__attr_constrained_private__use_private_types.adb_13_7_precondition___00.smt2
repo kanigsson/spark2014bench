@@ -171,6 +171,11 @@
 (define-fun p_simple__ref_p_simple__content__projection ((a p_simple__ref)) us_rep 
   (p_simple__content a))
 
+(define-fun in_range1 ((rec__private_types__simple__d1 Int)
+  (a us_split_discrs)) Bool (= rec__private_types__simple__d1 (to_rep
+                                                              (rec__private_types__simple__d
+                                                              a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

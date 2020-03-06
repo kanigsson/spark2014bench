@@ -262,10 +262,10 @@
   (ite (= spark__branch true)
   (let ((o1 b))
   (let ((o2 a))
-  (let ((temp___434 (add_pair_a o2 o1)))
+  (let ((temp___450 (add_pair_a o2 o1)))
   (and
-  (and (add_pair_a__function_guard temp___434 o2 o1)
-  (= (bool_eq temp___434
+  (and (add_pair_a__function_guard temp___450 o2 o1)
+  (= (bool_eq temp___450
      (us_repqtmk
      (us_split_fieldsqtmk
      (of_rep
@@ -274,7 +274,7 @@
      (of_rep
      (+ (to_rep (rec__records_prooffuncs__pair__b (us_split_fields1 o2))) 
      (to_rep (rec__records_prooffuncs__pair__b (us_split_fields1 o1)))))))) true))
-  (= r__split_fields (us_split_fields1 temp___434))))))
+  (= r__split_fields (us_split_fields1 temp___450))))))
   (= r__split_fields (us_split_fieldsqtmk rliteral rliteral)))))))
   (=> (= records__safe_add_pair_a__result r__split_fields)
   (=> (in_range1

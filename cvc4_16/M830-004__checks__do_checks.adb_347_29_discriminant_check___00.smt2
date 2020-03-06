@@ -310,6 +310,10 @@
                            (us_split_fields1 b))) true)))
                    true false))
 
+(define-fun in_range3 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
+  (a us_split_discrs)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 
+  (to_rep (rec__do_checks__do_discriminant_check__r1__j a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -392,12 +396,6 @@
                                         (us_split_fields1 temp___expr_552))) 
                                      (to_rep temp___553)))))))
 
-(define-fun in_range3 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -464,7 +462,8 @@
   (temp___do_typ_inv_584 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_582 true))
-                                     (in_range3 0 temp___expr_585))
+                                     (in_range3 0
+                                     (us_split_discrs1 temp___expr_585)))
                                      (let ((temp___586 (rec__do_checks__do_discriminant_check__r1__j
                                                        (us_split_discrs1
                                                        temp___expr_585))))
@@ -509,12 +508,6 @@
                                                                (rec__do_checks__do_discriminant_check__r1__j
                                                                (us_split_discrs1
                                                                temp___expr_588))))))))
-
-(define-fun in_range4 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
 
 (declare-const value__size3 Int)
 
@@ -582,7 +575,8 @@
   (temp___do_typ_inv_597 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_595 true))
-                                     (in_range4 (- 1) temp___expr_598))
+                                     (in_range3 (- 1)
+                                     (us_split_discrs1 temp___expr_598)))
                                      (let ((temp___599 (rec__do_checks__do_discriminant_check__r1__j
                                                        (us_split_discrs1
                                                        temp___expr_598))))
@@ -637,7 +631,7 @@
   (forall ((i tT62bP1))
   (and (<= 1 (tT62bP1qtint i)) (<= (tT62bP1qtint i) 10))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -734,12 +728,6 @@
                             (us_split_fields3 b)) 1 10) true)))
                     true false))
 
-(define-fun in_range6 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size5 Int)
 
 (declare-const object__size5 Int)
@@ -805,8 +793,9 @@
   (temp___do_toplevel_557 Bool)
   (temp___do_typ_inv_558 Bool)) Bool (=>
                                      (not (= temp___skip_constant_556 true))
-                                     (in_range6 10
-                                     (to_base temp___expr_559))))
+                                     (in_range3 10
+                                     (us_split_discrs1
+                                     (to_base temp___expr_559)))))
 
 (define-fun default_initial_assumption2 ((temp___expr_562 us_rep1)
   (temp___skip_top_level_563 Bool)) Bool (= (to_rep
@@ -827,7 +816,7 @@
   (forall ((i tT65bP1))
   (and (<= 1 (tT65bP1qtint i)) (<= (tT65bP1qtint i) 10))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -924,12 +913,6 @@
                             (us_split_fields5 b)) 1 10) true)))
                     true false))
 
-(define-fun in_range8 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size7 Int)
 
 (declare-const object__size7 Int)
@@ -991,20 +974,15 @@
   (temp___do_toplevel_570 Bool)
   (temp___do_typ_inv_571 Bool)) Bool (=>
                                      (not (= temp___skip_constant_569 true))
-                                     (in_range8 10
-                                     (to_base1 temp___expr_572))))
+                                     (in_range3 10
+                                     (us_split_discrs1
+                                     (to_base1 temp___expr_572)))))
 
 (define-fun default_initial_assumption3 ((temp___expr_575 us_rep2)
   (temp___skip_top_level_576 Bool)) Bool (= (to_rep
                                             (rec__do_checks__do_discriminant_check__r1__j
                                             (us_split_discrs3
                                             temp___expr_575))) 10))
-
-(define-fun in_range9 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
 
 (declare-const value__size8 Int)
 
@@ -1072,7 +1050,8 @@
   (temp___do_typ_inv_623 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_621 true))
-                                     (in_range9 0 temp___expr_624))
+                                     (in_range3 0
+                                     (us_split_discrs1 temp___expr_624)))
                                      (let ((temp___625 (rec__do_checks__do_discriminant_check__r1__j
                                                        (us_split_discrs1
                                                        temp___expr_624))))
@@ -1131,7 +1110,7 @@
   (forall ((i tT89bP1))
   (and (<= 1 (tT89bP1qtint i)) (<= (tT89bP1qtint i) 10))))
 
-(define-fun in_range10 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -1228,12 +1207,6 @@
                             (us_split_fields7 b)) 1 10) true)))
                     true false))
 
-(define-fun in_range11 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size10 Int)
 
 (declare-const object__size10 Int)
@@ -1299,8 +1272,9 @@
   (temp___do_toplevel_648 Bool)
   (temp___do_typ_inv_649 Bool)) Bool (=>
                                      (not (= temp___skip_constant_647 true))
-                                     (in_range11 10
-                                     (to_base2 temp___expr_650))))
+                                     (in_range3 10
+                                     (us_split_discrs1
+                                     (to_base2 temp___expr_650)))))
 
 (define-fun default_initial_assumption5 ((temp___expr_653 us_rep3)
   (temp___skip_top_level_654 Bool)) Bool (= (to_rep
@@ -1311,12 +1285,6 @@
 (declare-const y__split_discrs3 us_split_discrs)
 
 (declare-const attr__ATTRIBUTE_ADDRESS8 Int)
-
-(define-fun in_range12 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
 
 (declare-const value__size11 Int)
 
@@ -1384,7 +1352,8 @@
   (temp___do_typ_inv_675 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_673 true))
-                                     (in_range12 0 temp___expr_676))
+                                     (in_range3 0
+                                     (us_split_discrs1 temp___expr_676)))
                                      (let ((temp___677 (rec__do_checks__do_discriminant_check__r1__j
                                                        (us_split_discrs1
                                                        temp___expr_676))))
@@ -1443,7 +1412,7 @@
   (forall ((i tT110bP1))
   (and (<= 1 (tT110bP1qtint i)) (<= (tT110bP1qtint i) 10))))
 
-(define-fun in_range13 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -1540,12 +1509,6 @@
                             (us_split_fields9 b)) 1 10) true)))
                     true false))
 
-(define-fun in_range14 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size13 Int)
 
 (declare-const object__size13 Int)
@@ -1611,8 +1574,9 @@
   (temp___do_toplevel_687 Bool)
   (temp___do_typ_inv_688 Bool)) Bool (=>
                                      (not (= temp___skip_constant_686 true))
-                                     (in_range14 10
-                                     (to_base3 temp___expr_689))))
+                                     (in_range3 10
+                                     (us_split_discrs1
+                                     (to_base3 temp___expr_689)))))
 
 (define-fun default_initial_assumption7 ((temp___expr_692 us_rep4)
   (temp___skip_top_level_693 Bool)) Bool (= (to_rep
@@ -1641,7 +1605,7 @@
   (forall ((i tT126bP1))
   (and (<= 1 (tT126bP1qtint i)) (<= (tT126bP1qtint i) 10))))
 
-(define-fun in_range15 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range8 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
 
@@ -1738,12 +1702,6 @@
                             (us_split_fields11 b)) 1 10) true)))
                     true false))
 
-(define-fun in_range16 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size15 Int)
 
 (declare-const object__size15 Int)
@@ -1809,8 +1767,9 @@
   (temp___do_toplevel_700 Bool)
   (temp___do_typ_inv_701 Bool)) Bool (=>
                                      (not (= temp___skip_constant_699 true))
-                                     (in_range16 10
-                                     (to_base4 temp___expr_702))))
+                                     (in_range3 10
+                                     (us_split_discrs1
+                                     (to_base4 temp___expr_702)))))
 
 (define-fun default_initial_assumption8 ((temp___expr_705 us_rep5)
   (temp___skip_top_level_706 Bool)) Bool (= (to_rep
@@ -1821,12 +1780,6 @@
 (declare-const y__split_discrs7 us_split_discrs)
 
 (declare-const attr__ATTRIBUTE_ADDRESS16 Int)
-
-(define-fun in_range17 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
 
 (declare-const value__size16 Int)
 
@@ -1894,7 +1847,8 @@
   (temp___do_typ_inv_714 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_712 true))
-                                     (in_range17 0 temp___expr_715))
+                                     (in_range3 0
+                                     (us_split_discrs1 temp___expr_715)))
                                      (let ((temp___716 (rec__do_checks__do_discriminant_check__r1__j
                                                        (us_split_discrs1
                                                        temp___expr_715))))
@@ -1953,7 +1907,7 @@
   (forall ((i tT143bP1))
   (and (<= 1 (tT143bP1qtint i)) (<= (tT143bP1qtint i) 10))))
 
-(define-fun in_range18 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range9 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE8 (Int) us_image)
 
@@ -2050,12 +2004,6 @@
                             (us_split_fields13 b)) 1 10) true)))
                     true false))
 
-(define-fun in_range19 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size18 Int)
 
 (declare-const object__size18 Int)
@@ -2121,8 +2069,9 @@
   (temp___do_toplevel_726 Bool)
   (temp___do_typ_inv_727 Bool)) Bool (=>
                                      (not (= temp___skip_constant_725 true))
-                                     (in_range19 10
-                                     (to_base5 temp___expr_728))))
+                                     (in_range3 10
+                                     (us_split_discrs1
+                                     (to_base5 temp___expr_728)))))
 
 (define-fun default_initial_assumption10 ((temp___expr_731 us_rep6)
   (temp___skip_top_level_732 Bool)) Bool (= (to_rep
@@ -2133,12 +2082,6 @@
 (declare-const y__split_discrs9 us_split_discrs)
 
 (declare-const attr__ATTRIBUTE_ADDRESS20 Int)
-
-(define-fun in_range20 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
 
 (declare-const value__size19 Int)
 
@@ -2206,7 +2149,8 @@
   (temp___do_typ_inv_740 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_738 true))
-                                     (in_range20 0 temp___expr_741))
+                                     (in_range3 0
+                                     (us_split_discrs1 temp___expr_741)))
                                      (let ((temp___742 (rec__do_checks__do_discriminant_check__r1__j
                                                        (us_split_discrs1
                                                        temp___expr_741))))
@@ -2265,7 +2209,7 @@
   (forall ((i tT159bP1))
   (and (<= 1 (tT159bP1qtint i)) (<= (tT159bP1qtint i) 10))))
 
-(define-fun in_range21 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range10 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE9 (Int) us_image)
 
@@ -2362,12 +2306,6 @@
                             (us_split_fields15 b)) 1 10) true)))
                     true false))
 
-(define-fun in_range22 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size21 Int)
 
 (declare-const object__size21 Int)
@@ -2433,8 +2371,9 @@
   (temp___do_toplevel_752 Bool)
   (temp___do_typ_inv_753 Bool)) Bool (=>
                                      (not (= temp___skip_constant_751 true))
-                                     (in_range22 10
-                                     (to_base6 temp___expr_754))))
+                                     (in_range3 10
+                                     (us_split_discrs1
+                                     (to_base6 temp___expr_754)))))
 
 (define-fun default_initial_assumption12 ((temp___expr_757 us_rep7)
   (temp___skip_top_level_758 Bool)) Bool (= (to_rep
@@ -2445,12 +2384,6 @@
 (declare-const y__split_discrs11 us_split_discrs)
 
 (declare-const attr__ATTRIBUTE_ADDRESS24 Int)
-
-(define-fun in_range23 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
 
 (declare-const value__size22 Int)
 
@@ -2507,12 +2440,6 @@
 (((t67b__refqtmk (t67b__content us_rep)))))
 (define-fun t67b__ref_t67b__content__projection ((a t67b__ref)) us_rep 
   (t67b__content a))
-
-(define-fun in_range24 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
 
 (declare-const value__size23 Int)
 
@@ -2579,7 +2506,7 @@
   (forall ((i tT71bP1))
   (and (<= 1 (tT71bP1qtint i)) (<= (tT71bP1qtint i) 10))))
 
-(define-fun in_range25 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range11 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE10 (Int) us_image)
 
@@ -2676,12 +2603,6 @@
                             (us_split_fields17 b)) 1 10) true)))
                     true false))
 
-(define-fun in_range26 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size25 Int)
 
 (declare-const object__size25 Int)
@@ -2747,7 +2668,7 @@
   (forall ((i tT75bP1))
   (and (<= 1 (tT75bP1qtint i)) (<= (tT75bP1qtint i) 10))))
 
-(define-fun in_range27 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range12 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE11 (Int) us_image)
 
@@ -2844,12 +2765,6 @@
                             (us_split_fields19 b)) 1 10) true)))
                     true false))
 
-(define-fun in_range28 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size27 Int)
 
 (declare-const object__size27 Int)
@@ -2905,12 +2820,6 @@
 (((t74b__refqtmk (t74b__content us_rep9)))))
 (define-fun t74b__ref_t74b__content__projection ((a t74b__ref)) us_rep9 
   (t74b__content a))
-
-(define-fun in_range29 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
 
 (declare-const value__size28 Int)
 
@@ -2977,7 +2886,7 @@
   (forall ((i tT83bP1))
   (and (<= 1 (tT83bP1qtint i)) (<= (tT83bP1qtint i) 10))))
 
-(define-fun in_range30 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range13 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE12 (Int) us_image)
 
@@ -3075,12 +2984,6 @@
                              (us_split_fields21 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range31 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size30 Int)
 
 (declare-const object__size30 Int)
@@ -3146,7 +3049,7 @@
   (forall ((i tT91bP1))
   (and (<= 1 (tT91bP1qtint i)) (<= (tT91bP1qtint i) 10))))
 
-(define-fun in_range32 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range14 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE13 (Int) us_image)
 
@@ -3245,12 +3148,6 @@
                              (us_split_fields23 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range33 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size32 Int)
 
 (declare-const object__size32 Int)
@@ -3316,7 +3213,7 @@
   (forall ((i tT95bP1))
   (and (<= 1 (tT95bP1qtint i)) (<= (tT95bP1qtint i) 10))))
 
-(define-fun in_range34 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range15 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE14 (Int) us_image)
 
@@ -3415,12 +3312,6 @@
                              (us_split_fields25 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range35 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size34 Int)
 
 (declare-const object__size34 Int)
@@ -3476,12 +3367,6 @@
 (((t94b__refqtmk (t94b__content us_rep12)))))
 (define-fun t94b__ref_t94b__content__projection ((a t94b__ref)) us_rep12 
   (t94b__content a))
-
-(define-fun in_range36 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
 
 (declare-const value__size35 Int)
 
@@ -3548,7 +3433,7 @@
   (forall ((i tT103bP1))
   (and (<= 1 (tT103bP1qtint i)) (<= (tT103bP1qtint i) 10))))
 
-(define-fun in_range37 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range16 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE15 (Int) us_image)
 
@@ -3647,12 +3532,6 @@
                              (us_split_fields27 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range38 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size37 Int)
 
 (declare-const object__size37 Int)
@@ -3718,7 +3597,7 @@
   (forall ((i tT112bP1))
   (and (<= 1 (tT112bP1qtint i)) (<= (tT112bP1qtint i) 10))))
 
-(define-fun in_range39 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range17 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE16 (Int) us_image)
 
@@ -3817,12 +3696,6 @@
                              (us_split_fields29 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range40 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size39 Int)
 
 (declare-const object__size39 Int)
@@ -3888,7 +3761,7 @@
   (forall ((i tT116bP1))
   (and (<= 1 (tT116bP1qtint i)) (<= (tT116bP1qtint i) 10))))
 
-(define-fun in_range41 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range18 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE17 (Int) us_image)
 
@@ -3987,12 +3860,6 @@
                              (us_split_fields31 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range42 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size41 Int)
 
 (declare-const object__size41 Int)
@@ -4048,12 +3915,6 @@
 (((t115b__refqtmk (t115b__content us_rep15)))))
 (define-fun t115b__ref_t115b__content__projection ((a t115b__ref)) us_rep15 
   (t115b__content a))
-
-(define-fun in_range43 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
 
 (declare-const value__size42 Int)
 
@@ -4120,7 +3981,7 @@
   (forall ((i tT122bP1))
   (and (<= 1 (tT122bP1qtint i)) (<= (tT122bP1qtint i) 10))))
 
-(define-fun in_range44 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range19 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE18 (Int) us_image)
 
@@ -4219,12 +4080,6 @@
                              (us_split_fields33 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range45 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size44 Int)
 
 (declare-const object__size44 Int)
@@ -4290,7 +4145,7 @@
   (forall ((i tT128bP1))
   (and (<= 1 (tT128bP1qtint i)) (<= (tT128bP1qtint i) 10))))
 
-(define-fun in_range46 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range20 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE19 (Int) us_image)
 
@@ -4389,12 +4244,6 @@
                              (us_split_fields35 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range47 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size46 Int)
 
 (declare-const object__size46 Int)
@@ -4460,7 +4309,7 @@
   (forall ((i tT132bP1))
   (and (<= 1 (tT132bP1qtint i)) (<= (tT132bP1qtint i) 10))))
 
-(define-fun in_range48 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range21 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE20 (Int) us_image)
 
@@ -4559,12 +4408,6 @@
                              (us_split_fields37 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range49 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size48 Int)
 
 (declare-const object__size48 Int)
@@ -4620,12 +4463,6 @@
 (((t131b__refqtmk (t131b__content us_rep18)))))
 (define-fun t131b__ref_t131b__content__projection ((a t131b__ref)) us_rep18 
   (t131b__content a))
-
-(define-fun in_range50 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
 
 (declare-const value__size49 Int)
 
@@ -4692,7 +4529,7 @@
   (forall ((i tT139bP1))
   (and (<= 1 (tT139bP1qtint i)) (<= (tT139bP1qtint i) 10))))
 
-(define-fun in_range51 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range22 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE21 (Int) us_image)
 
@@ -4791,12 +4628,6 @@
                              (us_split_fields39 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range52 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size51 Int)
 
 (declare-const object__size51 Int)
@@ -4862,7 +4693,7 @@
   (forall ((i tT145bP1))
   (and (<= 1 (tT145bP1qtint i)) (<= (tT145bP1qtint i) 10))))
 
-(define-fun in_range53 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range23 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE22 (Int) us_image)
 
@@ -4961,12 +4792,6 @@
                              (us_split_fields41 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range54 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size53 Int)
 
 (declare-const object__size53 Int)
@@ -5032,7 +4857,7 @@
   (forall ((i tT149bP1))
   (and (<= 1 (tT149bP1qtint i)) (<= (tT149bP1qtint i) 10))))
 
-(define-fun in_range55 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range24 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE23 (Int) us_image)
 
@@ -5131,12 +4956,6 @@
                              (us_split_fields43 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range56 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size55 Int)
 
 (declare-const object__size55 Int)
@@ -5192,12 +5011,6 @@
 (((t148b__refqtmk (t148b__content us_rep21)))))
 (define-fun t148b__ref_t148b__content__projection ((a t148b__ref)) us_rep21 
   (t148b__content a))
-
-(define-fun in_range57 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
 
 (declare-const value__size56 Int)
 
@@ -5264,7 +5077,7 @@
   (forall ((i tT155bP1))
   (and (<= 1 (tT155bP1qtint i)) (<= (tT155bP1qtint i) 10))))
 
-(define-fun in_range58 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range25 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE24 (Int) us_image)
 
@@ -5363,12 +5176,6 @@
                              (us_split_fields45 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range59 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size58 Int)
 
 (declare-const object__size58 Int)
@@ -5434,7 +5241,7 @@
   (forall ((i tT161bP1))
   (and (<= 1 (tT161bP1qtint i)) (<= (tT161bP1qtint i) 10))))
 
-(define-fun in_range60 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range26 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE25 (Int) us_image)
 
@@ -5533,12 +5340,6 @@
                              (us_split_fields47 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range61 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size60 Int)
 
 (declare-const object__size60 Int)
@@ -5604,7 +5405,7 @@
   (forall ((i tT165bP1))
   (and (<= 1 (tT165bP1qtint i)) (<= (tT165bP1qtint i) 10))))
 
-(define-fun in_range62 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range27 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE26 (Int) us_image)
 
@@ -5703,12 +5504,6 @@
                              (us_split_fields49 b)) 1 10) true)))
                      true false))
 
-(define-fun in_range63 ((rec__do_checks__do_discriminant_check__r1__j1 Int)
-  (a us_rep)) Bool (= rec__do_checks__do_discriminant_check__r1__j1 (to_rep
-                                                                    (rec__do_checks__do_discriminant_check__r1__j
-                                                                    (us_split_discrs1
-                                                                    a)))))
-
 (declare-const value__size62 Int)
 
 (declare-const object__size62 Int)
@@ -5765,57 +5560,51 @@
 (define-fun t164b__ref_t164b__content__projection ((a t164b__ref)) us_rep24 
   (t164b__content a))
 
-(declare-fun temp_____aggregate_def_837 (Bool) (Array Int Bool))
+(declare-fun temp_____aggregate_def_839 (Bool) (Array Int Bool))
 
-(declare-fun temp_____aggregate_def_841 (Bool) (Array Int Bool))
-
-(declare-fun temp_____aggregate_def_846 (Bool) (Array Int Bool))
+(declare-fun temp_____aggregate_def_844 (Bool) (Array Int Bool))
 
 (declare-fun temp_____aggregate_def_851 (Bool) (Array Int Bool))
 
-(declare-fun temp_____aggregate_def_855 (Bool) (Array Int Bool))
+(declare-fun temp_____aggregate_def_857 (Bool) (Array Int Bool))
 
-(declare-fun temp_____aggregate_def_860 (Bool) (Array Int Bool))
+(declare-fun temp_____aggregate_def_862 (Bool) (Array Int Bool))
 
-(declare-fun temp_____aggregate_def_866 (Bool) (Array Int Bool))
+(declare-fun temp_____aggregate_def_869 (Bool) (Array Int Bool))
 
-(declare-fun temp_____aggregate_def_870 (Bool) (Array Int Bool))
-
-(declare-fun temp_____aggregate_def_875 (Bool) (Array Int Bool))
+(declare-fun temp_____aggregate_def_876 (Bool) (Array Int Bool))
 
 (declare-fun temp_____aggregate_def_881 (Bool) (Array Int Bool))
 
-(declare-fun temp_____aggregate_def_885 (Bool) (Array Int Bool))
+(declare-fun temp_____aggregate_def_888 (Bool) (Array Int Bool))
 
-(declare-fun temp_____aggregate_def_891 (Bool) (Array Int Bool))
-
-(declare-fun temp_____aggregate_def_897 (Bool) (Array Int Bool))
+(declare-fun temp_____aggregate_def_896 (Bool) (Array Int Bool))
 
 (declare-fun temp_____aggregate_def_901 (Bool) (Array Int Bool))
 
-(declare-fun temp_____aggregate_def_907 (Bool) (Array Int Bool))
-
-(declare-fun temp_____aggregate_def_913 (Bool) (Array Int Bool))
+(declare-fun temp_____aggregate_def_909 (Bool) (Array Int Bool))
 
 (declare-fun temp_____aggregate_def_917 (Bool) (Array Int Bool))
 
-;; def_axiom
-  (assert
-  (forall ((temp___839 Bool))
-  (forall ((temp___840 Int))
-  (= (select (temp_____aggregate_def_837 temp___839) temp___840) temp___839))))
+(declare-fun temp_____aggregate_def_922 (Bool) (Array Int Bool))
+
+(declare-fun temp_____aggregate_def_930 (Bool) (Array Int Bool))
+
+(declare-fun temp_____aggregate_def_937 (Bool) (Array Int Bool))
+
+(declare-fun temp_____aggregate_def_942 (Bool) (Array Int Bool))
 
 ;; def_axiom
   (assert
-  (forall ((temp___843 Bool))
-  (forall ((temp___844 Int))
-  (= (select (temp_____aggregate_def_841 temp___843) temp___844) temp___843))))
+  (forall ((temp___841 Bool))
+  (forall ((temp___842 Int))
+  (= (select (temp_____aggregate_def_839 temp___841) temp___842) temp___841))))
 
 ;; def_axiom
   (assert
-  (forall ((temp___848 Bool))
-  (forall ((temp___849 Int))
-  (= (select (temp_____aggregate_def_846 temp___848) temp___849) temp___848))))
+  (forall ((temp___846 Bool))
+  (forall ((temp___847 Int))
+  (= (select (temp_____aggregate_def_844 temp___846) temp___847) temp___846))))
 
 ;; def_axiom
   (assert
@@ -5825,33 +5614,27 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___857 Bool))
-  (forall ((temp___858 Int))
-  (= (select (temp_____aggregate_def_855 temp___857) temp___858) temp___857))))
+  (forall ((temp___859 Bool))
+  (forall ((temp___860 Int))
+  (= (select (temp_____aggregate_def_857 temp___859) temp___860) temp___859))))
 
 ;; def_axiom
   (assert
-  (forall ((temp___862 Bool))
-  (forall ((temp___863 Int))
-  (= (select (temp_____aggregate_def_860 temp___862) temp___863) temp___862))))
+  (forall ((temp___864 Bool))
+  (forall ((temp___865 Int))
+  (= (select (temp_____aggregate_def_862 temp___864) temp___865) temp___864))))
 
 ;; def_axiom
   (assert
-  (forall ((temp___868 Bool))
-  (forall ((temp___869 Int))
-  (= (select (temp_____aggregate_def_866 temp___868) temp___869) temp___868))))
+  (forall ((temp___871 Bool))
+  (forall ((temp___872 Int))
+  (= (select (temp_____aggregate_def_869 temp___871) temp___872) temp___871))))
 
 ;; def_axiom
   (assert
-  (forall ((temp___872 Bool))
-  (forall ((temp___873 Int))
-  (= (select (temp_____aggregate_def_870 temp___872) temp___873) temp___872))))
-
-;; def_axiom
-  (assert
-  (forall ((temp___877 Bool))
-  (forall ((temp___878 Int))
-  (= (select (temp_____aggregate_def_875 temp___877) temp___878) temp___877))))
+  (forall ((temp___878 Bool))
+  (forall ((temp___879 Int))
+  (= (select (temp_____aggregate_def_876 temp___878) temp___879) temp___878))))
 
 ;; def_axiom
   (assert
@@ -5861,21 +5644,15 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___887 Bool))
-  (forall ((temp___888 Int))
-  (= (select (temp_____aggregate_def_885 temp___887) temp___888) temp___887))))
+  (forall ((temp___890 Bool))
+  (forall ((temp___891 Int))
+  (= (select (temp_____aggregate_def_888 temp___890) temp___891) temp___890))))
 
 ;; def_axiom
   (assert
-  (forall ((temp___893 Bool))
-  (forall ((temp___894 Int))
-  (= (select (temp_____aggregate_def_891 temp___893) temp___894) temp___893))))
-
-;; def_axiom
-  (assert
-  (forall ((temp___899 Bool))
-  (forall ((temp___900 Int))
-  (= (select (temp_____aggregate_def_897 temp___899) temp___900) temp___899))))
+  (forall ((temp___898 Bool))
+  (forall ((temp___899 Int))
+  (= (select (temp_____aggregate_def_896 temp___898) temp___899) temp___898))))
 
 ;; def_axiom
   (assert
@@ -5885,21 +5662,39 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___909 Bool))
-  (forall ((temp___910 Int))
-  (= (select (temp_____aggregate_def_907 temp___909) temp___910) temp___909))))
-
-;; def_axiom
-  (assert
-  (forall ((temp___915 Bool))
-  (forall ((temp___916 Int))
-  (= (select (temp_____aggregate_def_913 temp___915) temp___916) temp___915))))
+  (forall ((temp___911 Bool))
+  (forall ((temp___912 Int))
+  (= (select (temp_____aggregate_def_909 temp___911) temp___912) temp___911))))
 
 ;; def_axiom
   (assert
   (forall ((temp___919 Bool))
   (forall ((temp___920 Int))
   (= (select (temp_____aggregate_def_917 temp___919) temp___920) temp___919))))
+
+;; def_axiom
+  (assert
+  (forall ((temp___924 Bool))
+  (forall ((temp___925 Int))
+  (= (select (temp_____aggregate_def_922 temp___924) temp___925) temp___924))))
+
+;; def_axiom
+  (assert
+  (forall ((temp___932 Bool))
+  (forall ((temp___933 Int))
+  (= (select (temp_____aggregate_def_930 temp___932) temp___933) temp___932))))
+
+;; def_axiom
+  (assert
+  (forall ((temp___939 Bool))
+  (forall ((temp___940 Int))
+  (= (select (temp_____aggregate_def_937 temp___939) temp___940) temp___939))))
+
+;; def_axiom
+  (assert
+  (forall ((temp___944 Bool))
+  (forall ((temp___945 Int))
+  (= (select (temp_____aggregate_def_942 temp___944) temp___945) temp___944))))
 
 (declare-const rliteral integer)
 
@@ -5931,6 +5726,7 @@
   (=> (not (= spark__branch2 true))
   (=> (= spark__branch3 (ite (= branch 1004) true false))
   (=> (= spark__branch3 true)
-  (=> (in_range1 0) (in_range9 0
-  (us_repqtmk (us_split_discrsqtmk rliteral) (us_split_fieldsqtmk dummy2)))))))))))))))))))
+  (=> (in_range1 0) (in_range3 0
+  (us_split_discrs1
+  (us_repqtmk (us_split_discrsqtmk rliteral) (us_split_fieldsqtmk dummy2))))))))))))))))))))
 (check-sat)

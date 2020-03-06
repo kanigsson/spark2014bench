@@ -536,10 +536,10 @@
   (=>
   (= (and (ite (and
                (and
-               (and (dynamic_invariant1 status1 false true true true)
+               (and (dynamic_invariant current1 true true true true)
+               (dynamic_invariant1 status1 false true true true))
                (dynamic_invariant2 free1 true true true true))
                (dynamic_invariant2 count1 true true true true))
-               (dynamic_invariant current1 true true true true))
           true false) (ite (<= current1 upper) true false)) true)
   (=> (back__function_guard (back Tuple0) Tuple0)
   (forall ((count2 Int) (free2 Int) (status2 Int))

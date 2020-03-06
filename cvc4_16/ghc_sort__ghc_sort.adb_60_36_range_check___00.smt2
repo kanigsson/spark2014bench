@@ -290,35 +290,35 @@
 (define-fun t40b__ref_t40b__content__projection ((a t40b__ref)) us_t 
   (t40b__content a))
 
-(define-fun dynamic_invariant2 ((temp___expr_252 us_t)
-  (temp___is_init_248 Bool) (temp___skip_constant_249 Bool)
-  (temp___do_toplevel_250 Bool)
-  (temp___do_typ_inv_251 Bool)) Bool (and
+(define-fun dynamic_invariant2 ((temp___expr_253 us_t)
+  (temp___is_init_249 Bool) (temp___skip_constant_250 Bool)
+  (temp___do_toplevel_251 Bool)
+  (temp___do_typ_inv_252 Bool)) Bool (and
                                      (=>
-                                     (not (= temp___skip_constant_249 true))
+                                     (not (= temp___skip_constant_250 true))
                                      (and (dynamic_property 1
                                      (+ (length s1) (length s2))
-                                     (first1 temp___expr_252)
-                                     (last1 temp___expr_252))
-                                     (and (= (first1 temp___expr_252) 1)
-                                     (= (last1 temp___expr_252) (+ (length
+                                     (first1 temp___expr_253)
+                                     (last1 temp___expr_253))
+                                     (and (= (first1 temp___expr_253) 1)
+                                     (= (last1 temp___expr_253) (+ (length
                                                                    s1) 
                                      (length s2))))))
-                                     (=> (= temp___is_init_248 true)
-                                     (= (first1 temp___expr_252) 1))))
+                                     (=> (= temp___is_init_249 true)
+                                     (= (first1 temp___expr_253) 1))))
 
-(define-fun default_initial_assumption ((temp___expr_256 us_t)
-  (temp___skip_top_level_257 Bool)) Bool (and (= (first1 temp___expr_256) 1)
-                                         (= (last1 temp___expr_256) (+ 
+(define-fun default_initial_assumption ((temp___expr_257 us_t)
+  (temp___skip_top_level_258 Bool)) Bool (and (= (first1 temp___expr_257) 1)
+                                         (= (last1 temp___expr_257) (+ 
                                          (length s1) (length s2)))))
 
-(define-fun dynamic_predicate1 ((temp___260 us_t)) Bool (= (first1
-                                                           temp___260) 1))
+(define-fun dynamic_predicate1 ((temp___261 us_t)) Bool (= (first1
+                                                           temp___261) 1))
 
-(define-fun dynamic_predicate2 ((temp___262 us_t)) Bool (= (first1
-                                                           temp___262) 1))
+(define-fun dynamic_predicate2 ((temp___263 us_t)) Bool (= (first1
+                                                           temp___263) 1))
 
-(declare-fun temp_____aggregate_def_489 (Int Int Int) us_t)
+(declare-fun temp_____aggregate_def_495 (Int Int Int) us_t)
 
 (define-fun dynamic_invariant3 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)
@@ -334,15 +334,15 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___491 Int) (temp___492 Int) (temp___493 Int))
-  (let ((temp___490 (temp_____aggregate_def_489 temp___491 temp___492
-                    temp___493)))
-  (=> (dynamic_invariant3 temp___491 true true true true)
+  (forall ((temp___497 Int) (temp___498 Int) (temp___499 Int))
+  (let ((temp___496 (temp_____aggregate_def_495 temp___497 temp___498
+                    temp___499)))
+  (=> (dynamic_invariant3 temp___497 true true true true)
   (and
-  (=> (dynamic_property 1 2147483647 temp___492 temp___493)
-  (and (= (first1 temp___490) temp___492) (= (last1 temp___490) temp___493)))
-  (forall ((temp___494 Int))
-  (= (select (to_array temp___490) temp___494) rliteral)))))))
+  (=> (dynamic_property 1 2147483647 temp___498 temp___499)
+  (and (= (first1 temp___496) temp___498) (= (last1 temp___496) temp___499)))
+  (forall ((temp___500 Int))
+  (= (select (to_array temp___496) temp___500) rliteral)))))))
 
 (assert
 ;; defqtvc

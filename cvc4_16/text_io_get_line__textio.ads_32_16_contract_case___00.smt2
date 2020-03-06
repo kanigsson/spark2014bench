@@ -869,7 +869,7 @@
 (define-fun t43b__ref_t43b__content__projection ((a t43b__ref)) us_t 
   (t43b__content a))
 
-(declare-fun temp_____aggregate_def_352 (Int Int Int) us_t)
+(declare-fun temp_____aggregate_def_354 (Int Int Int) us_t)
 
 (define-fun dynamic_invariant5 ((temp___expr_96 us_t)
   (temp___is_init_92 Bool) (temp___skip_constant_93 Bool)
@@ -1007,15 +1007,15 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___354 Int) (temp___355 Int) (temp___356 Int))
-  (let ((temp___353 (temp_____aggregate_def_352 temp___354 temp___355
-                    temp___356)))
-  (=> (dynamic_invariant3 temp___354 true true true true)
+  (forall ((temp___356 Int) (temp___357 Int) (temp___358 Int))
+  (let ((temp___355 (temp_____aggregate_def_354 temp___356 temp___357
+                    temp___358)))
+  (=> (dynamic_invariant3 temp___356 true true true true)
   (and
-  (=> (dynamic_property 1 2147483647 temp___355 temp___356)
-  (and (= (first1 temp___353) temp___355) (= (last1 temp___353) temp___356)))
-  (forall ((temp___357 Int))
-  (= (to_rep (select (to_array temp___353) temp___357)) temp___354)))))))
+  (=> (dynamic_property 1 2147483647 temp___357 temp___358)
+  (and (= (first1 temp___355) temp___357) (= (last1 temp___355) temp___358)))
+  (forall ((temp___359 Int))
+  (= (to_rep (select (to_array temp___355) temp___359)) temp___356)))))))
 
 (assert
 ;; defqtvc
@@ -1035,10 +1035,10 @@
   (not
   (= (end_of_file (us_repqtmk file__split_fields) cur_position the_file) true))
   (let ((usf (< (to_rep1 item__last) (to_rep1 item__first))))
+  (forall ((temp___old_379 Int))
+  (=> (= temp___old_379 cur_position)
   (forall ((temp___old_377 Int))
   (=> (= temp___old_377 cur_position)
-  (forall ((temp___old_375 Int))
-  (=> (= temp___old_375 cur_position)
   (forall ((item (Array Int character)) (last3 Int) (cur_position1 Int))
   (=>
   (and (= cur_position cur_position_at_start)
@@ -1057,20 +1057,20 @@
   (and (= (to_rep1 item__last) o1)
   (exists ((o2 Int))
   (and (= (to_rep1 item__first) o2)
-  (let ((temp___358 (temp_____aggregate_def_352 32 o2 o1)))
-  (and (= (first1 temp___358) (to_rep1 item__first))
-  (and (= (last1 temp___358) (to_rep1 item__last))
-  (let ((temp___360 (of_array (to_array temp___358) (first1 temp___358)
-                    (last1 temp___358))))
+  (let ((temp___360 (temp_____aggregate_def_354 32 o2 o1)))
+  (and (= (first1 temp___360) (to_rep1 item__first))
+  (and (= (last1 temp___360) (to_rep1 item__last))
+  (let ((temp___362 (of_array (to_array temp___360) (first1 temp___360)
+                    (last1 temp___360))))
   (and
-  (ite (<= (first1 temp___360) (last1 temp___360))
+  (ite (<= (first1 temp___362) (last1 temp___362))
   (and (<= (to_rep1 item__first) (to_rep1 item__last))
-  (= (- (last1 temp___360) (first1 temp___360)) (- (to_rep1 item__last) 
+  (= (- (last1 temp___362) (first1 temp___362)) (- (to_rep1 item__last) 
   (to_rep1 item__first)))) (< (to_rep1 item__last) (to_rep1 item__first)))
   (exists ((o3 Int))
   (and (= (to_rep1 item__first) o3)
   (exists ((item1 (Array Int character)))
-  (and (= item1 (slide (to_array temp___360) (first1 temp___360) o3))
+  (and (= item1 (slide (to_array temp___362) (first1 temp___362) o3))
   (exists ((o4 Int))
   (and (= (to_rep1 item__first) o4)
   (let ((o5 (- o4 1)))
@@ -1101,10 +1101,10 @@
   (cur_position2 Int) (n2 Int) (rest1 Int))
   (and
   (ite (<= 80 n1)
-  (exists ((temp___loop_entry_369 Int))
-  (and (= temp___loop_entry_369 cur_position)
   (exists ((temp___loop_entry_371 Int))
   (and (= temp___loop_entry_371 cur_position)
+  (exists ((temp___loop_entry_373 Int))
+  (and (= temp___loop_entry_373 cur_position)
   (and
   (exists ((o12 Int))
   (and (= (to_rep1 item__first) o12)
@@ -1121,8 +1121,8 @@
   (=> (and (<= (to_rep1 item__first) idx) (<= idx last6))
   (= (to_rep (select item3 idx)) (to_rep
                                  (select the_file (+ (- idx (to_rep1
-                                                            item__first)) temp___loop_entry_371))))))
-  (= cur_position3 (+ (- (+ temp___loop_entry_369 last6) (to_rep1
+                                                            item__first)) temp___loop_entry_373))))))
+  (= cur_position3 (+ (- (+ temp___loop_entry_371 last6) (to_rep1
                                                          item__first)) 1))))
   (and
   (= (and (ite (and

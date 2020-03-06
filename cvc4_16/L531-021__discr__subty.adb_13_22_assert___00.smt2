@@ -287,36 +287,6 @@
 ;; basic__r__x__position_axiom
   (assert (<= 0 basic__r__x__position))
 
-(declare-const basic__r__base__first__bit Int)
-
-(declare-const basic__r__base__last__bit Int)
-
-(declare-const basic__r__base__position Int)
-
-;; basic__r__base__first__bit_axiom
-  (assert (<= 0 basic__r__base__first__bit))
-
-;; basic__r__base__last__bit_axiom
-  (assert (< basic__r__base__first__bit basic__r__base__last__bit))
-
-;; basic__r__base__position_axiom
-  (assert (<= 0 basic__r__base__position))
-
-(declare-const basic__r__a_field__first__bit Int)
-
-(declare-const basic__r__a_field__last__bit Int)
-
-(declare-const basic__r__a_field__position Int)
-
-;; basic__r__a_field__first__bit_axiom
-  (assert (<= 0 basic__r__a_field__first__bit))
-
-;; basic__r__a_field__last__bit_axiom
-  (assert (< basic__r__a_field__first__bit basic__r__a_field__last__bit))
-
-;; basic__r__a_field__position_axiom
-  (assert (<= 0 basic__r__a_field__position))
-
 (declare-const basic__r__c_field1__first__bit Int)
 
 (declare-const basic__r__c_field1__last__bit Int)
@@ -347,18 +317,51 @@
 ;; basic__r__c_field2__position_axiom
   (assert (<= 0 basic__r__c_field2__position))
 
+(declare-const basic__r__base__first__bit Int)
+
+(declare-const basic__r__base__last__bit Int)
+
+(declare-const basic__r__base__position Int)
+
+;; basic__r__base__first__bit_axiom
+  (assert (<= 0 basic__r__base__first__bit))
+
+;; basic__r__base__last__bit_axiom
+  (assert (< basic__r__base__first__bit basic__r__base__last__bit))
+
+;; basic__r__base__position_axiom
+  (assert (<= 0 basic__r__base__position))
+
+(declare-const basic__r__a_field__first__bit Int)
+
+(declare-const basic__r__a_field__last__bit Int)
+
+(declare-const basic__r__a_field__position Int)
+
+;; basic__r__a_field__first__bit_axiom
+  (assert (<= 0 basic__r__a_field__first__bit))
+
+;; basic__r__a_field__last__bit_axiom
+  (assert (< basic__r__a_field__first__bit basic__r__a_field__last__bit))
+
+;; basic__r__a_field__position_axiom
+  (assert (<= 0 basic__r__a_field__position))
+
 (declare-fun user_eq3 (us_rep us_rep) Bool)
 
 (declare-const dummy3 us_rep)
 
-(declare-datatypes ((r__ref 0))
-(((r__refqtmk (r__content us_rep)))))
-(define-fun r__ref_r__content__projection ((a r__ref)) us_rep (r__content a))
+(declare-datatypes ((s__ref 0))
+(((s__refqtmk (s__content us_rep)))))
+(define-fun s__ref_s__content__projection ((a s__ref)) us_rep (s__content a))
+
+(declare-const v us_rep)
+
+(declare-const attr__ATTRIBUTE_ADDRESS Int)
 
 (define-fun in_range4 ((rec__basic__r__x1 Int)
-  (a us_rep)) Bool (= rec__basic__r__x1 (to_rep2
-                                        (rec__basic__r__x
-                                        (us_split_discrs1 a)))))
+  (a us_split_discrs)) Bool (= rec__basic__r__x1 (to_rep2
+                                                 (rec__basic__r__x a))))
 
 (declare-const value__size1 Int)
 
@@ -390,36 +393,6 @@
 ;; basic__r__x__position_axiom
   (assert (<= 0 basic__r__x__position1))
 
-(declare-const basic__r__c_field1__first__bit1 Int)
-
-(declare-const basic__r__c_field1__last__bit1 Int)
-
-(declare-const basic__r__c_field1__position1 Int)
-
-;; basic__r__c_field1__first__bit_axiom
-  (assert (<= 0 basic__r__c_field1__first__bit1))
-
-;; basic__r__c_field1__last__bit_axiom
-  (assert (< basic__r__c_field1__first__bit1 basic__r__c_field1__last__bit1))
-
-;; basic__r__c_field1__position_axiom
-  (assert (<= 0 basic__r__c_field1__position1))
-
-(declare-const basic__r__c_field2__first__bit1 Int)
-
-(declare-const basic__r__c_field2__last__bit1 Int)
-
-(declare-const basic__r__c_field2__position1 Int)
-
-;; basic__r__c_field2__first__bit_axiom
-  (assert (<= 0 basic__r__c_field2__first__bit1))
-
-;; basic__r__c_field2__last__bit_axiom
-  (assert (< basic__r__c_field2__first__bit1 basic__r__c_field2__last__bit1))
-
-;; basic__r__c_field2__position_axiom
-  (assert (<= 0 basic__r__c_field2__position1))
-
 (declare-const basic__r__base__first__bit1 Int)
 
 (declare-const basic__r__base__last__bit1 Int)
@@ -450,17 +423,43 @@
 ;; basic__r__a_field__position_axiom
   (assert (<= 0 basic__r__a_field__position1))
 
+(declare-const basic__r__c_field1__first__bit1 Int)
+
+(declare-const basic__r__c_field1__last__bit1 Int)
+
+(declare-const basic__r__c_field1__position1 Int)
+
+;; basic__r__c_field1__first__bit_axiom
+  (assert (<= 0 basic__r__c_field1__first__bit1))
+
+;; basic__r__c_field1__last__bit_axiom
+  (assert (< basic__r__c_field1__first__bit1 basic__r__c_field1__last__bit1))
+
+;; basic__r__c_field1__position_axiom
+  (assert (<= 0 basic__r__c_field1__position1))
+
+(declare-const basic__r__c_field2__first__bit1 Int)
+
+(declare-const basic__r__c_field2__last__bit1 Int)
+
+(declare-const basic__r__c_field2__position1 Int)
+
+;; basic__r__c_field2__first__bit_axiom
+  (assert (<= 0 basic__r__c_field2__first__bit1))
+
+;; basic__r__c_field2__last__bit_axiom
+  (assert (< basic__r__c_field2__first__bit1 basic__r__c_field2__last__bit1))
+
+;; basic__r__c_field2__position_axiom
+  (assert (<= 0 basic__r__c_field2__position1))
+
 (declare-fun user_eq4 (us_rep us_rep) Bool)
 
 (declare-const dummy4 us_rep)
 
-(declare-datatypes ((s__ref 0))
-(((s__refqtmk (s__content us_rep)))))
-(define-fun s__ref_s__content__projection ((a s__ref)) us_rep (s__content a))
-
-(declare-const v us_rep)
-
-(declare-const attr__ATTRIBUTE_ADDRESS Int)
+(declare-datatypes ((r__ref 0))
+(((r__refqtmk (r__content us_rep)))))
+(define-fun r__ref_r__content__projection ((a r__ref)) us_rep (r__content a))
 
 (declare-const z__split_discrs us_split_discrs)
 
@@ -471,18 +470,14 @@
   (temp___do_toplevel_169 Bool)
   (temp___do_typ_inv_170 Bool)) Bool (=>
                                      (not (= temp___skip_constant_168 true))
-                                     (in_range4 0 temp___expr_171)))
+                                     (in_range4 0
+                                     (us_split_discrs1 temp___expr_171))))
 
 (define-fun default_initial_assumption ((temp___expr_173 us_rep)
   (temp___skip_top_level_174 Bool)) Bool (= (to_rep2
                                             (rec__basic__r__x
                                             (us_split_discrs1
                                             temp___expr_173))) 0))
-
-(define-fun in_range5 ((rec__basic__r__x1 Int)
-  (a us_rep)) Bool (= rec__basic__r__x1 (to_rep2
-                                        (rec__basic__r__x
-                                        (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -616,27 +611,27 @@
   (forall ((o enum))
   (=> (dynamic_invariant v true false true true)
   (=> (= (to_rep2 o) 0)
-  (let ((o1 (us_repqtmk (us_split_discrsqtmk o)
-            (us_split_fieldsqtmk rliteral rliteral true dummy1))))
+  (let ((temp___182 (us_repqtmk (us_split_discrsqtmk o)
+                    (us_split_fieldsqtmk rliteral rliteral true dummy1))))
   (forall ((z__split_fields us_split_fields))
-  (=> (= z__split_fields (us_split_fields1 o1))
-  (=> (= z__split_discrs (us_split_discrs1 o1))
+  (=> (= z__split_fields (us_split_fields1 temp___182))
+  (=> (= z__split_discrs (us_split_discrs1 temp___182))
   (=> (dynamic_invariant (us_repqtmk z__split_discrs z__split_fields) true
   false true true)
   (=> (= (to_rep2 (rec__basic__r__x z__split_discrs)) 0)
   (=> (= (to_rep (rec__basic__r__base z__split_fields)) 1)
   (=> (= (to_rep (rec__basic__r__a_field z__split_fields)) 1)
   (=> (= (to_rep2 (rec__basic__r__x (us_split_discrs1 v))) 0)
-  (forall ((o2 Int))
-  (=> (= (to_rep (rec__basic__r__a_field (us_split_fields1 v))) o2)
-  (let ((o3 (+ o2 1)))
-  (=> (in_range o3)
-  (forall ((o4 integer))
-  (=> (= (to_rep o4) o3)
+  (forall ((o1 Int))
+  (=> (= (to_rep (rec__basic__r__a_field (us_split_fields1 v))) o1)
+  (let ((o2 (+ o1 1)))
+  (=> (in_range o2)
+  (forall ((o3 integer))
+  (=> (= (to_rep o3) o2)
   (forall ((z__split_fields1 us_split_fields))
   (=>
   (= z__split_fields1 (us_split_fieldsqtmk
-                      (rec__basic__r__base z__split_fields) o4
+                      (rec__basic__r__base z__split_fields) o3
                       (rec__basic__r__c_field1 z__split_fields)
                       (rec__basic__r__c_field2 z__split_fields)))
   (=>

@@ -237,19 +237,19 @@
 ;; defqtvc
  ;; File "test_tag.adb", line 25, characters 0-0
   (not
-  (forall ((temp___alloc_217 us_rep1) (usf us_rep) (z__pointer_value us_rep)
+  (forall ((temp___alloc_221 us_rep1) (usf us_rep) (z__pointer_value us_rep)
   (z__pointer_address Int) (z__is_null_pointer Bool))
-  (=> (not (= (rec__test_tag__r_acc__is_null_pointer temp___alloc_217) true))
+  (=> (not (= (rec__test_tag__r_acc__is_null_pointer temp___alloc_221) true))
   (=> (default_initial_assumption usf false)
-  (=> (= (rec__test_tag__r_acc__pointer_value temp___alloc_217) usf)
+  (=> (= (rec__test_tag__r_acc__pointer_value temp___alloc_221) usf)
   (=>
-  (= z__pointer_value (rec__test_tag__r_acc__pointer_value temp___alloc_217))
+  (= z__pointer_value (rec__test_tag__r_acc__pointer_value temp___alloc_221))
   (=>
   (= z__pointer_address (rec__test_tag__r_acc__pointer_address
-                        temp___alloc_217))
+                        temp___alloc_221))
   (=>
   (= z__is_null_pointer (rec__test_tag__r_acc__is_null_pointer
-                        temp___alloc_217))
+                        temp___alloc_221))
   (rec__test_tag__r_acc__pointer_value__pred
   (us_repqtmk1 z__is_null_pointer z__pointer_address z__pointer_value)))))))))))
 (check-sat)

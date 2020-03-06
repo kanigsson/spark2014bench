@@ -733,39 +733,38 @@
 ;; defqtvc
  ;; File "patience.ads", line 53, characters 0-0
   (not
-  (forall ((o Bool) (usf Int) (o1 Int) (o2 Int) (o3 Int) (o4 Int)
-  (temp___444 Int))
+  (forall ((o Bool) (usf Int) (o1 Int) (temp___447 Int) (o2 Int)
+  (temp___452 Int))
   (=>
+  (exists ((o3 Bool))
+  (and
+  (exists ((o4 Bool))
+  (and
   (exists ((o5 Bool))
   (and
-  (exists ((o6 Bool))
-  (and
-  (exists ((o7 Bool))
-  (and
-  (exists ((o8 Int))
-  (and (= (to_rep (rec__patience__state__numstacks (us_split_fields1 s))) o8)
-  (ite (<= 0 o8)
-  (exists ((o9 Int))
-  (and (= (to_rep (rec__patience__state__numelts (us_split_fields1 s))) o9)
-  (exists ((o10 Int))
-  (and
-  (= (to_rep (rec__patience__state__numstacks (us_split_fields1 s))) o10)
-  (= o7 (ite (<= o10 o9) true false)))))) (= o7 false))))
-  (ite (= o7 true)
-  (exists ((o8 Int))
-  (and (= (to_rep (rec__patience__state__numelts (us_split_fields1 s))) o8)
-  (= o6 (ite (<= o8 100) true false)))) (= o6 false))))
-  (ite (= o6 true)
+  (exists ((o6 Int))
+  (and (= (to_rep (rec__patience__state__numstacks (us_split_fields1 s))) o6)
+  (ite (<= 0 o6)
   (exists ((o7 Int))
   (and (= (to_rep (rec__patience__state__numelts (us_split_fields1 s))) o7)
-  (ite (= o7 0) (= o5 true)
   (exists ((o8 Int))
   (and (= (to_rep (rec__patience__state__numstacks (us_split_fields1 s))) o8)
-  (= o5 (ite (< 0 o8) true false))))))) (= o5 false))))
+  (= o5 (ite (<= o8 o7) true false)))))) (= o5 false))))
   (ite (= o5 true)
-  (and
   (exists ((o6 Int))
-  (= (to_rep (rec__patience__state__numstacks (us_split_fields1 s))) o6))
+  (and (= (to_rep (rec__patience__state__numelts (us_split_fields1 s))) o6)
+  (= o4 (ite (<= o6 100) true false)))) (= o4 false))))
+  (ite (= o4 true)
+  (exists ((o5 Int))
+  (and (= (to_rep (rec__patience__state__numelts (us_split_fields1 s))) o5)
+  (ite (= o5 0) (= o3 true)
+  (exists ((o6 Int))
+  (and (= (to_rep (rec__patience__state__numstacks (us_split_fields1 s))) o6)
+  (= o3 (ite (< 0 o6) true false))))))) (= o3 false))))
+  (ite (= o3 true)
+  (and
+  (exists ((o4 Int))
+  (= (to_rep (rec__patience__state__numstacks (us_split_fields1 s))) o4))
   (= o (ite (forall ((i Int))
             (=>
             (and (<= 0 i)
@@ -803,23 +802,21 @@
   (=> (= (to_rep (rec__patience__state__numelts (us_split_fields1 s))) o1)
   (=>
   (= (and (ite (<= 0 usf) true false) (ite (<= usf (- o1 1)) true false)) true)
+  (=> (<= 0 usf)
+  (=> (<= usf 99)
+  (=>
+  (= (to_rep
+     (select (rec__patience__state__posstack (us_split_fields1 s)) usf)) temp___447)
   (=> (= (to_rep (rec__patience__state__numstacks (us_split_fields1 s))) o2)
+  (=>
+  (= (and (ite (<= 0 temp___447) true false) (ite (<= temp___447 (- o2 1))
+                                             true false)) true)
+  (=> (<= 0 usf)
+  (=> (<= usf 99)
   (=> (<= 0 usf)
   (=> (<= usf 99)
   (=>
   (= (to_rep
-     (select (rec__patience__state__posstack (us_split_fields1 s)) usf)) o3)
-  (=> (<= 0 usf)
-  (=> (<= usf 99)
-  (=>
-  (= (to_rep
-     (select (rec__patience__state__posstack (us_split_fields1 s)) usf)) o4)
-  (=>
-  (= (and (ite (<= 0 o4) true false) (ite (<= o3 (- o2 1)) true false)) true)
-  (=> (<= 0 usf)
-  (=> (<= usf 99)
-  (=>
-  (= (to_rep
-     (select (rec__patience__state__posstack (us_split_fields1 s)) usf)) temp___444)
-  (<= 0 temp___444)))))))))))))))))))
+     (select (rec__patience__state__posstack (us_split_fields1 s)) usf)) temp___452)
+  (<= 0 temp___452))))))))))))))))))
 (check-sat)

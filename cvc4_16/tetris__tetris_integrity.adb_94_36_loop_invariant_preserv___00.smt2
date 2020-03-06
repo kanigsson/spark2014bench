@@ -444,12 +444,12 @@
   (has_complete_lines2 Bool) (del_line1 Int))
   (and
   (= (and (ite (and (dynamic_invariant2 to_line2 true true true true)
-               (forall ((temp___855 Int))
-               (=> (and (<= 1 temp___855) (<= temp___855 50))
+               (forall ((temp___864 Int))
+               (=> (and (<= 1 temp___864) (<= temp___864 50))
                (=>
-               (or (< 50 temp___855)
-               (or (< temp___855 1) (<= del_line1 temp___855)))
-               (= (select cur_board2 temp___855) (select cur_board temp___855))))))
+               (or (< 50 temp___864)
+               (or (< temp___864 1) (<= del_line1 temp___864)))
+               (= (select cur_board2 temp___864) (select cur_board temp___864))))))
           true false) (ite (and (<= 1 del_line1) (<= del_line1 50)) true
                       false)) true)
   (and
@@ -474,21 +474,21 @@
   (=> (= spark__branch2 true)
   (=> (= (- to_line1 1) r3b)
   (=> (dynamic_invariant1 r3b true false true true)
-  (let ((temp___858 r3b))
+  (let ((temp___867 r3b))
   (forall ((from_line Int))
-  (=> (= from_line temp___858)
+  (=> (= from_line temp___867)
   (=>
-  (= (and (ite (<= 1 from_line) true false) (ite (<= from_line temp___858)
+  (= (and (ite (<= 1 from_line) true false) (ite (<= from_line temp___867)
                                             true false)) true)
-  (forall ((temp___loop_entry_866 Int))
-  (=> (= temp___loop_entry_866 to_line1)
-  (forall ((temp___loop_entry_865 Int))
-  (=> (= temp___loop_entry_865 num_deleted1)
+  (forall ((temp___loop_entry_875 Int))
+  (=> (= temp___loop_entry_875 to_line1)
+  (forall ((temp___loop_entry_874 Int))
+  (=> (= temp___loop_entry_874 num_deleted1)
   (forall ((cur_board2 (Array Int (Array Int cell))) (num_deleted2 Int)
   (to_line2 Int) (from_line1 Int))
   (=>
   (and (< from_line1 to_line2)
-  (= (+ num_deleted2 to_line2) (+ temp___loop_entry_865 temp___loop_entry_866)))
+  (= (+ num_deleted2 to_line2) (+ temp___loop_entry_874 temp___loop_entry_875)))
   (=>
   (= (and (ite (and
                (and (dynamic_invariant2 to_line2 true true true true)
@@ -520,5 +520,5 @@
   (forall ((from_line2 Int))
   (=> (= from_line2 (- from_line1 1))
   (=> (< from_line2 to_line3)
-  (= (+ num_deleted3 to_line3) (+ temp___loop_entry_865 temp___loop_entry_866)))))))))))))))))))))))))))))))))
+  (= (+ num_deleted3 to_line3) (+ temp___loop_entry_874 temp___loop_entry_875)))))))))))))))))))))))))))))))))
 (check-sat)

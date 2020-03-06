@@ -424,15 +424,10 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((rec____ref 0))
-(((rec____refqtmk (rec____content us_rep)))))
-(define-fun rec____ref_rec____content__projection ((a rec____ref)) us_rep 
-  (rec____content a))
-
-(define-fun in_range3 ((rec__formals_rec_split_pred__rec__d1 Bool)
-  (a us_rep)) Bool (= rec__formals_rec_split_pred__rec__d1 (rec__formals_rec_split_pred__rec__d
-                                                           (us_split_discrs1
-                                                           a))))
+(declare-datatypes ((constr_rec__ref 0))
+(((constr_rec__refqtmk (constr_rec__content us_rep)))))
+(define-fun constr_rec__ref_constr_rec__content__projection ((a constr_rec__ref)) us_rep 
+  (constr_rec__content a))
 
 (declare-const value__size1 Int)
 
@@ -517,15 +512,14 @@
 
 (declare-const dummy3 us_rep)
 
-(declare-datatypes ((constr_rec__ref 0))
-(((constr_rec__refqtmk (constr_rec__content us_rep)))))
-(define-fun constr_rec__ref_constr_rec__content__projection ((a constr_rec__ref)) us_rep 
-  (constr_rec__content a))
+(declare-datatypes ((constr_rec_2__ref 0))
+(((constr_rec_2__refqtmk (constr_rec_2__content us_rep)))))
+(define-fun constr_rec_2__ref_constr_rec_2__content__projection ((a constr_rec_2__ref)) us_rep 
+  (constr_rec_2__content a))
 
-(define-fun in_range4 ((rec__formals_rec_split_pred__rec__d1 Bool)
-  (a us_rep)) Bool (= rec__formals_rec_split_pred__rec__d1 (rec__formals_rec_split_pred__rec__d
-                                                           (us_split_discrs1
-                                                           a))))
+(define-fun in_range3 ((rec__formals_rec_split_pred__rec__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__formals_rec_split_pred__rec__d1 (rec__formals_rec_split_pred__rec__d
+                                                                    a)))
 
 (declare-const value__size2 Int)
 
@@ -610,10 +604,10 @@
 
 (declare-const dummy4 us_rep)
 
-(declare-datatypes ((constr_rec_2__ref 0))
-(((constr_rec_2__refqtmk (constr_rec_2__content us_rep)))))
-(define-fun constr_rec_2__ref_constr_rec_2__content__projection ((a constr_rec_2__ref)) us_rep 
-  (constr_rec_2__content a))
+(declare-datatypes ((rec____ref 0))
+(((rec____refqtmk (rec____content us_rep)))))
+(define-fun rec____ref_rec____content__projection ((a rec____ref)) us_rep 
+  (rec____content a))
 
 (define-fun dynamic_invariant ((temp___expr_187 us_rep)
   (temp___is_init_183 Bool) (temp___skip_constant_184 Bool)
@@ -622,7 +616,7 @@
                                      (=>
                                      (not (= temp___skip_constant_184 true))
                                      (in_range3 (distinct 1 0)
-                                     temp___expr_187))
+                                     (us_split_discrs1 temp___expr_187)))
                                      (=> (= temp___do_toplevel_185 true)
                                      (not
                                      (= (to_rep1
@@ -670,8 +664,8 @@
   (temp___do_typ_inv_198 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_196 true))
-                                     (in_range4 (distinct 1 0)
-                                     temp___expr_199))
+                                     (in_range3 (distinct 1 0)
+                                     (us_split_discrs1 temp___expr_199)))
                                      (=> (= temp___do_toplevel_197 true)
                                      (not
                                      (= (to_rep1
@@ -724,11 +718,6 @@
 (declare-const u__split_discrs us_split_discrs)
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
-
-(define-fun in_range5 ((rec__formals_rec_split_pred__rec__d1 Bool)
-  (a us_rep)) Bool (= rec__formals_rec_split_pred__rec__d1 (rec__formals_rec_split_pred__rec__d
-                                                           (us_split_discrs1
-                                                           a))))
 
 (declare-const value__size3 Int)
 
@@ -818,11 +807,6 @@
 (define-fun t8b__ref_t8b__content__projection ((a t8b__ref)) us_rep (t8b__content
                                                                     a))
 
-(define-fun in_range6 ((rec__formals_rec_split_pred__rec__d1 Bool)
-  (a us_rep)) Bool (= rec__formals_rec_split_pred__rec__d1 (rec__formals_rec_split_pred__rec__d
-                                                           (us_split_discrs1
-                                                           a))))
-
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -910,11 +894,6 @@
 (((t9b__refqtmk (t9b__content us_rep)))))
 (define-fun t9b__ref_t9b__content__projection ((a t9b__ref)) us_rep (t9b__content
                                                                     a))
-
-(define-fun in_range7 ((rec__formals_rec_split_pred__rec__d1 Bool)
-  (a us_rep)) Bool (= rec__formals_rec_split_pred__rec__d1 (rec__formals_rec_split_pred__rec__d
-                                                           (us_split_discrs1
-                                                           a))))
 
 (declare-const value__size5 Int)
 
@@ -1035,20 +1014,20 @@
   (forall ((x__split_fields us_split_fields))
   (=> (= x__split_fields (us_split_fieldsqtmk rliteral rliteral rliteral1))
   (=> (= x__split_discrs (us_split_discrsqtmk (distinct 1 0)))
-  (let ((o (us_repqtmk (us_split_discrsqtmk (distinct 1 0))
-           (us_split_fieldsqtmk rliteral rliteral rliteral1))))
-  (=> (dynamic_predicate o)
+  (let ((temp___213 (us_repqtmk (us_split_discrsqtmk (distinct 1 0))
+                    (us_split_fieldsqtmk rliteral rliteral rliteral1))))
+  (=> (dynamic_predicate temp___213)
   (forall ((y__split_fields us_split_fields))
-  (=> (= y__split_fields (us_split_fields1 o))
-  (=> (= y__split_discrs (us_split_discrs1 o))
+  (=> (= y__split_fields (us_split_fields1 temp___213))
+  (=> (= y__split_discrs (us_split_discrs1 temp___213))
   (=> (dynamic_invariant (us_repqtmk y__split_discrs y__split_fields) true
   false true true)
-  (let ((o1 (us_repqtmk (us_split_discrsqtmk (distinct 1 0))
-            (us_split_fieldsqtmk rliteral rliteral rliteral1))))
-  (=> (dynamic_predicate o1)
+  (let ((temp___215 (us_repqtmk (us_split_discrsqtmk (distinct 1 0))
+                    (us_split_fieldsqtmk rliteral rliteral rliteral1))))
+  (=> (dynamic_predicate temp___215)
   (forall ((u__split_fields us_split_fields))
-  (=> (= u__split_fields (us_split_fields1 o1))
-  (=> (= u__split_discrs (us_split_discrs1 o1))
+  (=> (= u__split_fields (us_split_fields1 temp___215))
+  (=> (= u__split_discrs (us_split_discrs1 temp___215))
   (=> (dynamic_invariant (us_repqtmk u__split_discrs u__split_fields) true
   false true true)
   (=> (dynamic_predicate (us_repqtmk x__split_discrs x__split_fields))
@@ -1057,7 +1036,6 @@
   (us_repqtmk x__split_discrs formals_rec_split_pred__p__a__fields) true true
   true true)
   (forall ((x__split_fields1 us_split_fields))
-  (=> (= x__split_fields1 formals_rec_split_pred__p__a__fields)
-  (forall ((x__split_fields2 us_split_fields)) (in_range3 (distinct 1 0)
-  (us_repqtmk x__split_discrs x__split_fields2)))))))))))))))))))))))))
+  (=> (= x__split_fields1 formals_rec_split_pred__p__a__fields) (in_range3
+  (distinct 1 0) x__split_discrs)))))))))))))))))))))))
 (check-sat)

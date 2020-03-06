@@ -502,13 +502,13 @@
   (forall ((kb Int)) (is_perm__function_guard
   (is_perm (remove a ia) (remove b kb)) (remove a ia) (remove b kb)))
   (not
-  (let ((temp___945 (first1 b)))
-  (let ((temp___946 (last1 b)))
+  (let ((temp___949 (first1 b)))
+  (let ((temp___950 (last1 b)))
   (exists ((ib Int))
-  (and (= ib temp___945)
+  (and (= ib temp___949)
   (or
   (not
-  (= (and (ite (<= temp___945 ib) true false) (ite (<= ib temp___946) true
+  (= (and (ite (<= temp___949 ib) true false) (ite (<= ib temp___950) true
                                               false)) true))
   (exists ((o Int))
   (and (= (to_rep (select (to_array b) ib)) o)
@@ -585,5 +585,5 @@
   (and
   (= (and (ite (dynamic_property1 (first1 b) (last1 b) ib1) true false) 
   (ite (and (<= (first1 b) ib1) (<= ib1 (last1 b))) true false)) true)
-  (= ib1 temp___946))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+  (= ib1 temp___950))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

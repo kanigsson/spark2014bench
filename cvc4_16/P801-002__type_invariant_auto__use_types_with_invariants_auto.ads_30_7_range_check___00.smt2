@@ -428,6 +428,10 @@
                             (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range4 ((rec__use_types_with_invariants_auto__container__c1 Int)
+  (a us_split_discrs)) Bool (= rec__use_types_with_invariants_auto__container__c1 
+  (to_rep (rec__use_types_with_invariants_auto__container__c a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -741,6 +745,10 @@
                             (rec__use_types_with_invariants_auto__container_bad__content
                             (us_split_fields7 b))) true))
                     true false))
+
+(define-fun in_range5 ((rec__use_types_with_invariants_auto__container_bad__c1 Int)
+  (a us_split_discrs2)) Bool (= rec__use_types_with_invariants_auto__container_bad__c1 
+  (to_rep (rec__use_types_with_invariants_auto__container_bad__c a))))
 
 (declare-const value__size5 Int)
 

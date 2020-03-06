@@ -167,13 +167,10 @@
 
 (declare-const dummy1 us_rep)
 
-(declare-datatypes ((t__ref 0))
-(((t__refqtmk (t__content us_rep)))))
-(define-fun t__ref_t__content__projection ((a t__ref)) us_rep (t__content a))
-
-(define-fun in_range2 ((rec__f__t__d1 Int)
-  (a us_rep)) Bool (= rec__f__t__d1 (to_rep
-                                    (rec__f__t__d (us_split_discrs1 a)))))
+(declare-datatypes ((t2b__ref 0))
+(((t2b__refqtmk (t2b__content us_rep)))))
+(define-fun t2b__ref_t2b__content__projection ((a t2b__ref)) us_rep (t2b__content
+                                                                    a))
 
 (declare-const value__size1 Int)
 
@@ -209,49 +206,6 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((t2b__ref 0))
-(((t2b__refqtmk (t2b__content us_rep)))))
-(define-fun t2b__ref_t2b__content__projection ((a t2b__ref)) us_rep (t2b__content
-                                                                    a))
-
-(define-fun in_range3 ((rec__f__t__d1 Int)
-  (a us_rep)) Bool (= rec__f__t__d1 (to_rep
-                                    (rec__f__t__d (us_split_discrs1 a)))))
-
-(declare-const value__size2 Int)
-
-(declare-const object__size2 Int)
-
-(declare-const alignment2 Int)
-
-;; value__size_axiom
-  (assert (<= 0 value__size2))
-
-;; object__size_axiom
-  (assert (<= 0 object__size2))
-
-;; alignment_axiom
-  (assert (<= 0 alignment2))
-
-(declare-const f__t__d__first__bit2 Int)
-
-(declare-const f__t__d__last__bit2 Int)
-
-(declare-const f__t__d__position2 Int)
-
-;; f__t__d__first__bit_axiom
-  (assert (<= 0 f__t__d__first__bit2))
-
-;; f__t__d__last__bit_axiom
-  (assert (< f__t__d__first__bit2 f__t__d__last__bit2))
-
-;; f__t__d__position_axiom
-  (assert (<= 0 f__t__d__position2))
-
-(declare-fun user_eq3 (us_rep us_rep) Bool)
-
-(declare-const dummy3 us_rep)
-
 (declare-datatypes ((t3b__ref 0))
 (((t3b__refqtmk (t3b__content us_rep)))))
 (define-fun t3b__ref_t3b__content__projection ((a t3b__ref)) us_rep (t3b__content
@@ -283,20 +237,20 @@
                             (rec__f__r__c2 (us_split_fields1 b))) true))
                     true false))
 
-(declare-const value__size3 Int)
+(declare-const value__size2 Int)
 
-(declare-const object__size3 Int)
+(declare-const object__size2 Int)
 
-(declare-const alignment3 Int)
+(declare-const alignment2 Int)
 
 ;; value__size_axiom
-  (assert (<= 0 value__size3))
+  (assert (<= 0 value__size2))
 
 ;; object__size_axiom
-  (assert (<= 0 object__size3))
+  (assert (<= 0 object__size2))
 
 ;; alignment_axiom
-  (assert (<= 0 alignment3))
+  (assert (<= 0 alignment2))
 
 (declare-const f__r__c1__first__bit Int)
 
@@ -328,9 +282,9 @@
 ;; f__r__c2__position_axiom
   (assert (<= 0 f__r__c2__position))
 
-(declare-fun user_eq4 (us_rep1 us_rep1) Bool)
+(declare-fun user_eq3 (us_rep1 us_rep1) Bool)
 
-(declare-const dummy4 us_rep1)
+(declare-const dummy3 us_rep1)
 
 (declare-datatypes ((r__ref 0))
 (((r__refqtmk (r__content us_rep1)))))
@@ -338,15 +292,58 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS4 Int)
 
+(define-fun in_range2 ((rec__f__t__d1 Int)
+  (a us_split_discrs)) Bool (= rec__f__t__d1 (to_rep (rec__f__t__d a))))
+
+(declare-const value__size3 Int)
+
+(declare-const object__size3 Int)
+
+(declare-const alignment3 Int)
+
+;; value__size_axiom
+  (assert (<= 0 value__size3))
+
+;; object__size_axiom
+  (assert (<= 0 object__size3))
+
+;; alignment_axiom
+  (assert (<= 0 alignment3))
+
+(declare-const f__t__d__first__bit2 Int)
+
+(declare-const f__t__d__last__bit2 Int)
+
+(declare-const f__t__d__position2 Int)
+
+;; f__t__d__first__bit_axiom
+  (assert (<= 0 f__t__d__first__bit2))
+
+;; f__t__d__last__bit_axiom
+  (assert (< f__t__d__first__bit2 f__t__d__last__bit2))
+
+;; f__t__d__position_axiom
+  (assert (<= 0 f__t__d__position2))
+
+(declare-fun user_eq4 (us_rep us_rep) Bool)
+
+(declare-const dummy4 us_rep)
+
+(declare-datatypes ((t__ref 0))
+(((t__refqtmk (t__content us_rep)))))
+(define-fun t__ref_t__content__projection ((a t__ref)) us_rep (t__content a))
+
 (define-fun dynamic_invariant1 ((temp___expr_164 us_rep1)
   (temp___is_init_160 Bool) (temp___skip_constant_161 Bool)
   (temp___do_toplevel_162 Bool)
   (temp___do_typ_inv_163 Bool)) Bool (and (in_range2 x1
+                                     (us_split_discrs1
                                      (rec__f__r__c1
-                                     (us_split_fields1 temp___expr_164)))
-                                     (in_range3 x2
+                                     (us_split_fields1 temp___expr_164))))
+                                     (in_range2 x2
+                                     (us_split_discrs1
                                      (rec__f__r__c2
-                                     (us_split_fields1 temp___expr_164)))))
+                                     (us_split_fields1 temp___expr_164))))))
 
 (define-fun default_initial_assumption ((temp___expr_167 us_rep1)
   (temp___skip_top_level_168 Bool)) Bool (and

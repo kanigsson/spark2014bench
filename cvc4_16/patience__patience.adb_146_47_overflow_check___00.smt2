@@ -662,33 +662,33 @@
      (and
      (and
      (<= 1 (to_rep
-           (let ((temp___337 (rec__patience__state__stacksizes
+           (let ((temp___340 (rec__patience__state__stacksizes
                              (us_split_fields1 s))))
-           (select temp___337 i))))
+           (select temp___340 i))))
      (<= (to_rep
-         (let ((temp___338 (rec__patience__state__stacksizes
+         (let ((temp___341 (rec__patience__state__stacksizes
                            (us_split_fields1 s))))
-         (select temp___338 i))) (to_rep
+         (select temp___341 i))) (to_rep
                                  (rec__patience__state__numelts
                                  (us_split_fields1 s)))))
      (forall ((j Int))
      (=>
      (and (<= 0 j)
      (<= j (- (to_rep
-              (let ((temp___339 (rec__patience__state__stacksizes
+              (let ((temp___342 (rec__patience__state__stacksizes
                                 (us_split_fields1 s))))
-              (select temp___339 i))) 1)))
+              (select temp___342 i))) 1)))
      (and
      (<= 0 (to_rep
-           (let ((temp___341 (let ((temp___340 (rec__patience__state__stacks
+           (let ((temp___344 (let ((temp___343 (rec__patience__state__stacks
                                                (us_split_fields1 s))))
-                             (select temp___340 i))))
-           (select temp___341 j))))
+                             (select temp___343 i))))
+           (select temp___344 j))))
      (< (to_rep
-        (let ((temp___343 (let ((temp___342 (rec__patience__state__stacks
+        (let ((temp___346 (let ((temp___345 (rec__patience__state__stacks
                                             (us_split_fields1 s))))
-                          (select temp___342 i))))
-        (select temp___343 j))) (to_rep
+                          (select temp___345 i))))
+        (select temp___346 j))) (to_rep
                                 (rec__patience__state__numelts
                                 (us_split_fields1 s)))))))))))
      (forall ((i Int))
@@ -697,45 +697,38 @@
      (<= i (- (to_rep (rec__patience__state__numelts (us_split_fields1 s))) 1)))
      (and
      (and
-     (and
-     (<= 0 (to_rep
-           (let ((temp___344 (rec__patience__state__posstack
-                             (us_split_fields1 s))))
-           (select temp___344 i))))
-     (<= (to_rep
-         (let ((temp___344 (rec__patience__state__posstack
-                           (us_split_fields1 s))))
-         (select temp___344 i))) (- (to_rep
-                                    (rec__patience__state__numstacks
-                                    (us_split_fields1 s))) 1)))
-     (and
-     (<= 0 (to_rep
-           (let ((temp___345 (rec__patience__state__posheight
-                             (us_split_fields1 s))))
-           (select temp___345 i))))
-     (<= (to_rep
-         (let ((temp___345 (rec__patience__state__posheight
-                           (us_split_fields1 s))))
-         (select temp___345 i))) (- (to_rep
-                                    (let ((temp___346 (rec__patience__state__stacksizes
-                                                      (us_split_fields1 s))))
-                                    (select temp___346 (to_rep
-                                                       (let ((temp___347 
-                                                       (rec__patience__state__posstack
-                                                       (us_split_fields1 s))))
-                                                       (select temp___347 i)))))) 1))))
+     (let ((temp___348 (to_rep
+                       (let ((temp___347 (rec__patience__state__posstack
+                                         (us_split_fields1 s))))
+                       (select temp___347 i)))))
+     (and (<= 0 temp___348)
+     (<= temp___348 (- (to_rep
+                       (rec__patience__state__numstacks (us_split_fields1 s))) 1))))
+     (let ((temp___350 (to_rep
+                       (let ((temp___349 (rec__patience__state__posheight
+                                         (us_split_fields1 s))))
+                       (select temp___349 i)))))
+     (and (<= 0 temp___350)
+     (<= temp___350 (- (to_rep
+                       (let ((temp___351 (rec__patience__state__stacksizes
+                                         (us_split_fields1 s))))
+                       (select temp___351 (to_rep
+                                          (let ((temp___352 (rec__patience__state__posstack
+                                                            (us_split_fields1
+                                                            s))))
+                                          (select temp___352 i)))))) 1)))))
      (= (to_rep
-        (let ((temp___350 (let ((temp___348 (rec__patience__state__stacks
+        (let ((temp___355 (let ((temp___353 (rec__patience__state__stacks
                                             (us_split_fields1 s))))
-                          (select temp___348 (to_rep
-                                             (let ((temp___349 (rec__patience__state__posstack
+                          (select temp___353 (to_rep
+                                             (let ((temp___354 (rec__patience__state__posstack
                                                                (us_split_fields1
                                                                s))))
-                                             (select temp___349 i)))))))
-        (select temp___350 (to_rep
-                           (let ((temp___351 (rec__patience__state__posheight
+                                             (select temp___354 i)))))))
+        (select temp___355 (to_rep
+                           (let ((temp___356 (rec__patience__state__posheight
                                              (us_split_fields1 s))))
-                           (select temp___351 i)))))) i)))))
+                           (select temp___356 i)))))) i)))))
      (forall ((ist Int))
      (=>
      (and (<= 0 ist)
@@ -745,28 +738,28 @@
      (=>
      (and (<= 0 ip)
      (<= ip (- (to_rep
-               (let ((temp___352 (rec__patience__state__stacksizes
+               (let ((temp___357 (rec__patience__state__stacksizes
                                  (us_split_fields1 s))))
-               (select temp___352 ist))) 1)))
+               (select temp___357 ist))) 1)))
      (and
      (= ist (to_rep
-            (let ((temp___353 (rec__patience__state__posstack
+            (let ((temp___358 (rec__patience__state__posstack
                               (us_split_fields1 s))))
-            (select temp___353 (to_rep
-                               (let ((temp___355 (let ((temp___354 (rec__patience__state__stacks
+            (select temp___358 (to_rep
+                               (let ((temp___360 (let ((temp___359 (rec__patience__state__stacks
                                                                    (us_split_fields1
                                                                    s))))
-                                                 (select temp___354 ist))))
-                               (select temp___355 ip)))))))
+                                                 (select temp___359 ist))))
+                               (select temp___360 ip)))))))
      (= ip (to_rep
-           (let ((temp___356 (rec__patience__state__posheight
+           (let ((temp___361 (rec__patience__state__posheight
                              (us_split_fields1 s))))
-           (select temp___356 (to_rep
-                              (let ((temp___358 (let ((temp___357 (rec__patience__state__stacks
+           (select temp___361 (to_rep
+                              (let ((temp___363 (let ((temp___362 (rec__patience__state__stacks
                                                                   (us_split_fields1
                                                                   s))))
-                                                (select temp___357 ist))))
-                              (select temp___358 ip)))))))))))))
+                                                (select temp___362 ist))))
+                              (select temp___363 ip)))))))))))))
      (forall ((i Int))
      (=>
      (and (<= 0 i)
@@ -775,118 +768,115 @@
      (=>
      (and (<= 0 j)
      (<= j (- (to_rep
-              (let ((temp___359 (rec__patience__state__stacksizes
+              (let ((temp___364 (rec__patience__state__stacksizes
                                 (us_split_fields1 s))))
-              (select temp___359 i))) 2)))
+              (select temp___364 i))) 2)))
      (forall ((k Int))
      (=>
      (and (<= (+ j 1) k)
      (<= k (- (to_rep
-              (let ((temp___360 (rec__patience__state__stacksizes
-                                (us_split_fields1 s))))
-              (select temp___360 i))) 1)))
-     (< (to_rep
-        (let ((temp___362 (let ((temp___361 (rec__patience__state__stacks
-                                            (us_split_fields1 s))))
-                          (select temp___361 i))))
-        (select temp___362 j))) (to_rep
-                                (let ((temp___364 (let ((temp___363 (rec__patience__state__stacks
-                                                                    (us_split_fields1
-                                                                    s))))
-                                                  (select temp___363 i))))
-                                (select temp___364 k)))))))))))
-     (forall ((i Int))
-     (=>
-     (and (<= 0 i)
-     (<= i (- (to_rep (rec__patience__state__numstacks (us_split_fields1 s))) 1)))
-     (forall ((j Int))
-     (=>
-     (and (<= 0 j)
-     (<= j (- (to_rep
               (let ((temp___365 (rec__patience__state__stacksizes
                                 (us_split_fields1 s))))
-              (select temp___365 i))) 2)))
+              (select temp___365 i))) 1)))
+     (< (to_rep
+        (let ((temp___367 (let ((temp___366 (rec__patience__state__stacks
+                                            (us_split_fields1 s))))
+                          (select temp___366 i))))
+        (select temp___367 j))) (to_rep
+                                (let ((temp___369 (let ((temp___368 (rec__patience__state__stacks
+                                                                    (us_split_fields1
+                                                                    s))))
+                                                  (select temp___368 i))))
+                                (select temp___369 k)))))))))))
+     (forall ((i Int))
+     (=>
+     (and (<= 0 i)
+     (<= i (- (to_rep (rec__patience__state__numstacks (us_split_fields1 s))) 1)))
+     (forall ((j Int))
+     (=>
+     (and (<= 0 j)
+     (<= j (- (to_rep
+              (let ((temp___370 (rec__patience__state__stacksizes
+                                (us_split_fields1 s))))
+              (select temp___370 i))) 2)))
      (forall ((k Int))
      (=>
      (and (<= (+ j 1) k)
      (<= k (- (to_rep
-              (let ((temp___366 (rec__patience__state__stacksizes
+              (let ((temp___371 (rec__patience__state__stacksizes
                                 (us_split_fields1 s))))
-              (select temp___366 i))) 1)))
+              (select temp___371 i))) 1)))
      (<= (to_rep1
-         (let ((temp___370 (rec__patience__state__values
+         (let ((temp___375 (rec__patience__state__values
                            (us_split_fields1 s))))
-         (select temp___370 (to_rep
-                            (let ((temp___372 (let ((temp___371 (rec__patience__state__stacks
+         (select temp___375 (to_rep
+                            (let ((temp___377 (let ((temp___376 (rec__patience__state__stacks
                                                                 (us_split_fields1
                                                                 s))))
-                                              (select temp___371 i))))
-                            (select temp___372 k)))))) (to_rep1
-                                                       (let ((temp___367 
+                                              (select temp___376 i))))
+                            (select temp___377 k)))))) (to_rep1
+                                                       (let ((temp___372 
                                                        (rec__patience__state__values
                                                        (us_split_fields1 s))))
-                                                       (select temp___367 
+                                                       (select temp___372 
                                                        (to_rep
-                                                       (let ((temp___369 
-                                                       (let ((temp___368 
+                                                       (let ((temp___374 
+                                                       (let ((temp___373 
                                                        (rec__patience__state__stacks
                                                        (us_split_fields1 s))))
-                                                       (select temp___368 i))))
-                                                       (select temp___369 j))))))))))))))
+                                                       (select temp___373 i))))
+                                                       (select temp___374 j))))))))))))))
      (forall ((i Int))
      (=>
      (and (<= 0 i)
      (<= i (- (to_rep (rec__patience__state__numelts (us_split_fields1 s))) 1)))
      (and
      (and
-     (and
-     (<= (- 1) (to_rep
-               (let ((temp___373 (rec__patience__state__preds
-                                 (us_split_fields1 s))))
-               (select temp___373 i))))
-     (<= (to_rep
-         (let ((temp___373 (rec__patience__state__preds (us_split_fields1 s))))
-         (select temp___373 i))) (- (to_rep
-                                    (rec__patience__state__numelts
-                                    (us_split_fields1 s))) 1)))
+     (let ((temp___379 (to_rep
+                       (let ((temp___378 (rec__patience__state__preds
+                                         (us_split_fields1 s))))
+                       (select temp___378 i)))))
+     (and (<= (- 1) temp___379)
+     (<= temp___379 (- (to_rep
+                       (rec__patience__state__numelts (us_split_fields1 s))) 1))))
      (< (to_rep
-        (let ((temp___374 (rec__patience__state__preds (us_split_fields1 s))))
-        (select temp___374 i))) i))
+        (let ((temp___380 (rec__patience__state__preds (us_split_fields1 s))))
+        (select temp___380 i))) i))
      (ite (< (to_rep
-             (let ((temp___383 (rec__patience__state__preds
+             (let ((temp___389 (rec__patience__state__preds
                                (us_split_fields1 s))))
-             (select temp___383 i))) 0)
+             (select temp___389 i))) 0)
      (= (to_rep
-        (let ((temp___375 (rec__patience__state__posstack
+        (let ((temp___381 (rec__patience__state__posstack
                           (us_split_fields1 s))))
-        (select temp___375 i))) 0)
+        (select temp___381 i))) 0)
      (and
      (and
      (< (to_rep1
-        (let ((temp___376 (rec__patience__state__values (us_split_fields1 s))))
-        (select temp___376 (to_rep
-                           (let ((temp___377 (rec__patience__state__preds
+        (let ((temp___382 (rec__patience__state__values (us_split_fields1 s))))
+        (select temp___382 (to_rep
+                           (let ((temp___383 (rec__patience__state__preds
                                              (us_split_fields1 s))))
-                           (select temp___377 i)))))) (to_rep1
-                                                      (let ((temp___378 
+                           (select temp___383 i)))))) (to_rep1
+                                                      (let ((temp___384 
                                                       (rec__patience__state__values
                                                       (us_split_fields1 s))))
-                                                      (select temp___378 i))))
+                                                      (select temp___384 i))))
      (< 0 (to_rep
-          (let ((temp___379 (rec__patience__state__posstack
+          (let ((temp___385 (rec__patience__state__posstack
                             (us_split_fields1 s))))
-          (select temp___379 i)))))
+          (select temp___385 i)))))
      (= (to_rep
-        (let ((temp___380 (rec__patience__state__posstack
+        (let ((temp___386 (rec__patience__state__posstack
                           (us_split_fields1 s))))
-        (select temp___380 (to_rep
-                           (let ((temp___381 (rec__patience__state__preds
+        (select temp___386 (to_rep
+                           (let ((temp___387 (rec__patience__state__preds
                                              (us_split_fields1 s))))
-                           (select temp___381 i)))))) (- (to_rep
-                                                         (let ((temp___382 
+                           (select temp___387 i)))))) (- (to_rep
+                                                         (let ((temp___388 
                                                          (rec__patience__state__posstack
                                                          (us_split_fields1 s))))
-                                                         (select temp___382 i))) 1))))))))) :pattern (
+                                                         (select temp___388 i))) 1))))))))) :pattern (
   (inv s)) )))
 
 (declare-sort positive 0)
@@ -1170,11 +1160,11 @@
   (=> (dynamic_invariant cards true false true true)
   (=> (<= (length cards) 100)
   (=> (= s__split_fields (us_split_fields1 null_state))
-  (let ((temp___867 (first1 cards)))
+  (let ((temp___888 (first1 cards)))
   (forall ((i Int))
-  (=> (= i temp___867)
+  (=> (= i temp___888)
   (=>
-  (= (and (ite (<= temp___867 i) true false) (ite (<= i (last1 cards)) true
+  (= (and (ite (<= temp___888 i) true false) (ite (<= i (last1 cards)) true
                                              false)) true)
   (in_range1 (- i (first1 cards))))))))))))))
 (check-sat)

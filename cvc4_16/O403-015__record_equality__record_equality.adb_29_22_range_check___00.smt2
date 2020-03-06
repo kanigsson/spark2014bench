@@ -147,6 +147,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range2 ((rec__record_equality__root__c1 Int)
+  (a us_split_discrs)) Bool (= rec__record_equality__root__c1 (to_rep
+                                                              (rec__record_equality__root__c
+                                                              a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -204,11 +209,6 @@
   (root__content a))
 
 (declare-const us_tag1 Int)
-
-(define-fun in_range2 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 
@@ -277,7 +277,8 @@
   (temp___do_toplevel_234 Bool)
   (temp___do_typ_inv_235 Bool)) Bool (=>
                                      (not (= temp___skip_constant_233 true))
-                                     (in_range2 0 temp___expr_236)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_236))))
 
 (define-fun default_initial_assumption ((temp___expr_238 us_rep)
   (temp___skip_top_level_239 Bool)) Bool (and
@@ -376,11 +377,6 @@
 
 (declare-const us_tag2 Int)
 
-(define-fun in_range3 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -464,7 +460,9 @@
   (temp___do_toplevel_243 Bool)
   (temp___do_typ_inv_244 Bool)) Bool (=>
                                      (not (= temp___skip_constant_242 true))
-                                     (in_range3 0 (to_base temp___expr_245))))
+                                     (in_range2 0
+                                     (us_split_discrs1
+                                     (to_base temp___expr_245)))))
 
 (define-fun default_initial_assumption1 ((temp___expr_247 us_rep1)
   (temp___skip_top_level_248 Bool)) Bool (and

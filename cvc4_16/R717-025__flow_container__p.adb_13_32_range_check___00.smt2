@@ -131,6 +131,11 @@
                            (rec__p__sets__set (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__p__sets__set__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__p__sets__set__capacity1 (to_rep
+                                                            (rec__p__sets__set__capacity
+                                                            a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -170,11 +175,6 @@
 (((set__refqtmk (set__content us_rep)))))
 (define-fun set__ref_set__content__projection ((a set__ref)) us_rep (set__content
                                                                     a))
-
-(define-fun in_range1 ((rec__p__sets__set__capacity1 Int)
-  (a us_rep)) Bool (= rec__p__sets__set__capacity1 (to_rep
-                                                   (rec__p__sets__set__capacity
-                                                   (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 
@@ -233,23 +233,24 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq2 a b) (oeq a b)) :pattern ((user_eq2 a b)) )))
 
-(define-fun dynamic_invariant ((temp___expr_511 us_rep)
-  (temp___is_init_507 Bool) (temp___skip_constant_508 Bool)
-  (temp___do_toplevel_509 Bool)
-  (temp___do_typ_inv_510 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_508 true))
-                                     (in_range1 200 temp___expr_511)))
+(define-fun dynamic_invariant ((temp___expr_515 us_rep)
+  (temp___is_init_511 Bool) (temp___skip_constant_512 Bool)
+  (temp___do_toplevel_513 Bool)
+  (temp___do_typ_inv_514 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_512 true))
+                                     (in_range1 200
+                                     (us_split_discrs1 temp___expr_515))))
 
-(define-fun default_initial_assumption ((temp___expr_513 us_rep)
-  (temp___skip_top_level_514 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_517 us_rep)
+  (temp___skip_top_level_518 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__p__sets__set__capacity
                                             (us_split_discrs1
-                                            temp___expr_513))) 200)
+                                            temp___expr_517))) 200)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_514 true))
-                                         (= (is_empty temp___expr_513) true))))
+                                         (= temp___skip_top_level_518 true))
+                                         (= (is_empty temp___expr_517) true))))
 
 (declare-fun less_than (Int Int) Bool)
 
@@ -660,11 +661,11 @@
      (and
      (and
      (and (= (length1 result) (length container))
-     (forall ((temp___432 Int))
+     (forall ((temp___434 Int))
      (=>
-     (and (in_range6 temp___432)
-     (= (iter_has_element result temp___432) true))
-     (= (contains (model1 container) (get result temp___432)) true))))
+     (and (in_range6 temp___434)
+     (= (iter_has_element result temp___434) true))
+     (= (contains (model1 container) (get result temp___434)) true))))
      (forall ((item Int))
      (=> (and (in_range5 item) (= (contains (model1 container) item) true))
      (and (< 0 (find result item))

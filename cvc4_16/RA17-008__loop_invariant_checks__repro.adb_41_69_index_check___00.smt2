@@ -611,6 +611,11 @@
                             (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range3 ((rec__repro__ensemble__size1 Int)
+  (a us_split_discrs)) Bool (= rec__repro__ensemble__size1 (to_rep2
+                                                           (rec__repro__ensemble__size
+                                                           a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)

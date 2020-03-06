@@ -146,6 +146,10 @@
 (define-fun us_rep___split_fields__3__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun in_range2 ((rec__interrupt_priority__no_interrupt_needed_2__c1 Int)
+  (a us_split_discrs)) Bool (= rec__interrupt_priority__no_interrupt_needed_2__c1 
+  (to_rep (rec__interrupt_priority__no_interrupt_needed_2__c a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

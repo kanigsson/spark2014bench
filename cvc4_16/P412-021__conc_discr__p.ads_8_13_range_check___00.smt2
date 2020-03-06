@@ -109,6 +109,9 @@
 (define-fun us_rep___split_discrs__projection ((a us_rep)) us_split_discrs 
   (us_split_discrs1 a))
 
+(define-fun in_range1 ((rec__p__pt__x1 Int)
+  (a us_split_discrs)) Bool (= rec__p__pt__x1 (to_rep (rec__p__pt__x a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -183,6 +186,9 @@
 (define-fun us_rep___split_fields__projection ((a us_rep1)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun in_range2 ((rec__p__tt__x1 Int)
+  (a us_split_discrs2)) Bool (= rec__p__tt__x1 (to_rep (rec__p__tt__x a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -247,10 +253,6 @@
                                           (us_split_fieldsqtmk1
                                           (rec__p__tt (us_split_fields1 r)))))
 
-(define-fun in_range1 ((rec__p__tt__x1 Int)
-  (a us_rep1)) Bool (= rec__p__tt__x1 (to_rep
-                                      (rec__p__tt__x (us_split_discrs3 a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -297,7 +299,9 @@
   (temp___do_toplevel_198 Bool)
   (temp___do_typ_inv_199 Bool)) Bool (=>
                                      (not (= temp___skip_constant_197 true))
-                                     (in_range1 0 (to_base temp___expr_200))))
+                                     (in_range2 0
+                                     (us_split_discrs3
+                                     (to_base temp___expr_200)))))
 
 (define-fun default_initial_assumption ((temp___expr_202 us_rep2)
   (temp___skip_top_level_203 Bool)) Bool (= (to_rep
@@ -321,10 +325,6 @@
 (define-fun to_base1 ((a us_rep3)) us_rep (us_repqtmk (us_split_discrs5 a)))
 
 (define-fun of_base1 ((r us_rep)) us_rep3 (us_repqtmk3 (us_split_discrs1 r)))
-
-(define-fun in_range2 ((rec__p__pt__x1 Int)
-  (a us_rep)) Bool (= rec__p__pt__x1 (to_rep
-                                     (rec__p__pt__x (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 
@@ -368,8 +368,9 @@
   (temp___do_toplevel_189 Bool)
   (temp___do_typ_inv_190 Bool)) Bool (=>
                                      (not (= temp___skip_constant_188 true))
-                                     (in_range2 0
-                                     (to_base1 temp___expr_191))))
+                                     (in_range1 0
+                                     (us_split_discrs1
+                                     (to_base1 temp___expr_191)))))
 
 (define-fun default_initial_assumption1 ((temp___expr_193 us_rep3)
   (temp___skip_top_level_194 Bool)) Bool (= (to_rep

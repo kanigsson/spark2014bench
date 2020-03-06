@@ -328,11 +328,11 @@
   (and (= l 0)
   (and (dynamic_invariant1 l true false true true)
   (or
-  (let ((temp___181 (first1 a)))
+  (let ((temp___185 (first1 a)))
   (exists ((j Int))
-  (and (= j temp___181)
+  (and (= j temp___185)
   (and
-  (= (and (ite (<= temp___181 j) true false) (ite (<= j (last1 a)) true
+  (= (and (ite (<= temp___185 j) true false) (ite (<= j (last1 a)) true
                                              false)) true)
   (exists ((l1 Int) (j1 Int))
   (and
@@ -342,20 +342,16 @@
   (and
   (let ((o2 (+ x l1)))
   (and (in_range1 o2)
-  (let ((o3 (+ x l1)))
-  (and (in_range1 o3)
   (ite (not
-       (= (and (ite (<= (first1 a) o3) true false) (ite (<= o2 (last1 a))
+       (= (and (ite (<= (first1 a) o2) true false) (ite (<= o2 (last1 a))
                                                    true false)) true))
   (= o1 true)
-  (let ((o4 (+ y l1)))
-  (and (in_range1 o4)
-  (let ((o5 (+ y l1)))
-  (and (in_range1 o5)
-  (= o1 (ite (= (and (ite (<= (first1 a) o5) true false) (ite (<= o4 
+  (let ((o3 (+ y l1)))
+  (and (in_range1 o3)
+  (= o1 (ite (= (and (ite (<= (first1 a) o3) true false) (ite (<= o3 
                                                          (last1 a)) true
                                                          false)) true)
-        false true)))))))))))
+        false true)))))))
   (exists ((spark__branch Bool))
   (and (= spark__branch o1)
   (ite (= spark__branch true) (= lcp__result l1)
@@ -374,11 +370,11 @@
   (and (= spark__branch1 true) (= lcp__result l1)))))))))))))))))))))))))
   (exists ((l1 Int))
   (and
-  (let ((temp___181 (first1 a)))
-  (let ((temp___182 (last1 a)))
+  (let ((temp___185 (first1 a)))
+  (let ((temp___186 (last1 a)))
   (exists ((j Int))
-  (and (= j temp___181)
-  (ite (= (and (ite (<= temp___181 j) true false) (ite (<= j temp___182) true
+  (and (= j temp___185)
+  (ite (= (and (ite (<= temp___185 j) true false) (ite (<= j temp___186) true
                                                   false)) true)
   (exists ((l2 Int) (j1 Int))
   (and
@@ -388,20 +384,16 @@
   (and
   (let ((o2 (+ x l2)))
   (and (in_range1 o2)
-  (let ((o3 (+ x l2)))
-  (and (in_range1 o3)
   (ite (not
-       (= (and (ite (<= (first1 a) o3) true false) (ite (<= o2 (last1 a))
+       (= (and (ite (<= (first1 a) o2) true false) (ite (<= o2 (last1 a))
                                                    true false)) true))
   (= o1 true)
-  (let ((o4 (+ y l2)))
-  (and (in_range1 o4)
-  (let ((o5 (+ y l2)))
-  (and (in_range1 o5)
-  (= o1 (ite (= (and (ite (<= (first1 a) o5) true false) (ite (<= o4 
+  (let ((o3 (+ y l2)))
+  (and (in_range1 o3)
+  (= o1 (ite (= (and (ite (<= (first1 a) o3) true false) (ite (<= o3 
                                                          (last1 a)) true
                                                          false)) true)
-        false true)))))))))))
+        false true)))))))
   (exists ((spark__branch Bool))
   (and (= spark__branch o1)
   (and (not (= spark__branch true))
@@ -419,7 +411,7 @@
   (and (= spark__branch1 (ite (= o5 o3) false true))
   (and (not (= spark__branch1 true))
   (let ((o6 (+ l2 1)))
-  (and (in_range1 o6) (and (= l1 o6) (= j1 temp___182))))))))))))))))))))))))
+  (and (in_range1 o6) (and (= l1 o6) (= j1 temp___186))))))))))))))))))))))))
   (= l1 l)))))) (= lcp__result l1)))))))
   (=>
   (forall ((k Int))
@@ -429,19 +421,15 @@
   (=>
   (let ((o1 (+ x lcp__result)))
   (and (in_range1 o1)
-  (let ((o2 (+ x lcp__result)))
-  (and (in_range1 o2)
   (ite (not
-       (= (and (ite (<= (first1 a) o2) true false) (ite (<= o1 (last1 a))
+       (= (and (ite (<= (first1 a) o1) true false) (ite (<= o1 (last1 a))
                                                    true false)) true))
   (= o true)
-  (let ((o3 (+ y lcp__result)))
-  (and (in_range1 o3)
-  (let ((o4 (+ y lcp__result)))
-  (and (in_range1 o4)
-  (= o (ite (= (and (ite (<= (first1 a) o4) true false) (ite (<= o3 (last1 a))
+  (let ((o2 (+ y lcp__result)))
+  (and (in_range1 o2)
+  (= o (ite (= (and (ite (<= (first1 a) o2) true false) (ite (<= o2 (last1 a))
                                                         true false)) true)
-       false true)))))))))))
+       false true)))))))
   (=> (not (= o true))
   (let ((o1 (+ y lcp__result)))
   (=> (in_range1 o1)

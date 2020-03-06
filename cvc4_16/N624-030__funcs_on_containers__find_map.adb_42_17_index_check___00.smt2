@@ -422,6 +422,16 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__find_map__index_maps__map__capacity1 Int)
+  (rec__find_map__index_maps__map__modulus1 (_ BitVec 32))
+  (a us_split_discrs)) Bool (and
+                            (= rec__find_map__index_maps__map__capacity1 
+                            (to_rep2
+                            (rec__find_map__index_maps__map__capacity a)))
+                            (= rec__find_map__index_maps__map__modulus1 
+                            (to_rep1
+                            (rec__find_map__index_maps__map__modulus a)))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -541,7 +551,7 @@
   (forall ((i element_type))
   (and (<= 1 (element_typeqtint i)) (<= (element_typeqtint i) 100))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -563,7 +573,7 @@
   (temp___do_toplevel_278 Bool)
   (temp___do_typ_inv_279 Bool)) Bool (=>
                                      (or (= temp___is_init_276 true)
-                                     (<= 1 100)) (in_range3 temp___expr_280)))
+                                     (<= 1 100)) (in_range4 temp___expr_280)))
 
 (declare-sort integer 0)
 
@@ -574,7 +584,7 @@
   (forall ((i integer))
   (and (<= (- 2147483648) (integerqtint i)) (<= (integerqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
@@ -603,12 +613,12 @@
 
 ;; range_axiom
   (assert
-  (forall ((x integer)) (! (in_range4 (to_rep3 x)) :pattern ((to_rep3 x)) )))
+  (forall ((x integer)) (! (in_range5 (to_rep3 x)) :pattern ((to_rep3 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range4 x) (= (to_rep3 (of_rep3 x)) x)) :pattern ((to_rep3
+  (! (=> (in_range5 x) (= (to_rep3 (of_rep3 x)) x)) :pattern ((to_rep3
                                                               (of_rep3 x))) )))
 
 (declare-sort index 0)
@@ -619,7 +629,7 @@
   (assert
   (forall ((i index)) (and (<= 1 (indexqtint i)) (<= (indexqtint i) 100))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -695,15 +705,15 @@
 ;; mk_def
   (assert
   (forall ((f Int) (l Int))
-  (! (=> (in_range4 f)
-     (=> (in_range4 l)
+  (! (=> (in_range5 f)
+     (=> (in_range5 l)
      (and (= (to_rep3 (first (mk f l))) f) (= (to_rep3 (last (mk f l))) l)))) :pattern (
   (mk f l)) )))
 
 (define-fun dynamic_property ((range_first Int) (range_last Int) (low Int)
-  (high Int)) Bool (and (in_range4 low)
-                   (and (in_range4 high)
-                   (=> (<= low high) (and (in_range5 low) (in_range5 high))))))
+  (high Int)) Bool (and (in_range5 low)
+                   (and (in_range5 high)
+                   (=> (<= low high) (and (in_range6 low) (in_range6 high))))))
 
 (declare-datatypes ((us_t 0))
 (((us_tqtmk (elts (Array Int natural))(rt t)))))
@@ -777,18 +787,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS3 Int)
 
-(define-fun in_range6 ((rec__find_map__index_maps__map__capacity1 Int)
-  (rec__find_map__index_maps__map__modulus1 (_ BitVec 32))
-  (a1 us_rep)) Bool (and
-                    (= rec__find_map__index_maps__map__capacity1 (to_rep2
-                                                                 (rec__find_map__index_maps__map__capacity
-                                                                 (us_split_discrs1
-                                                                 a1))))
-                    (= rec__find_map__index_maps__map__modulus1 (to_rep1
-                                                                (rec__find_map__index_maps__map__modulus
-                                                                (us_split_discrs1
-                                                                a1))))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -850,28 +848,29 @@
   (forall ((a1 us_rep) (b us_rep))
   (! (= (user_eq9 a1 b) (oeq a1 b)) :pattern ((user_eq9 a1 b)) )))
 
-(define-fun dynamic_invariant2 ((temp___expr_630 us_rep)
-  (temp___is_init_626 Bool) (temp___skip_constant_627 Bool)
-  (temp___do_toplevel_628 Bool)
-  (temp___do_typ_inv_629 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_627 true))
-                                     (in_range6 100 r252s temp___expr_630)))
+(define-fun dynamic_invariant2 ((temp___expr_632 us_rep)
+  (temp___is_init_628 Bool) (temp___skip_constant_629 Bool)
+  (temp___do_toplevel_630 Bool)
+  (temp___do_typ_inv_631 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_629 true))
+                                     (in_range3 100 r252s
+                                     (us_split_discrs1 temp___expr_632))))
 
-(define-fun default_initial_assumption ((temp___expr_633 us_rep)
-  (temp___skip_top_level_634 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_635 us_rep)
+  (temp___skip_top_level_636 Bool)) Bool (and
                                          (and
                                          (= (to_rep2
                                             (rec__find_map__index_maps__map__capacity
                                             (us_split_discrs1
-                                            temp___expr_633))) 100)
+                                            temp___expr_635))) 100)
                                          (= (to_rep1
                                             (rec__find_map__index_maps__map__modulus
                                             (us_split_discrs1
-                                            temp___expr_633))) r252s))
+                                            temp___expr_635))) r252s))
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_634 true))
-                                         (= (is_empty temp___expr_633) true))))
+                                         (= temp___skip_top_level_636 true))
+                                         (= (is_empty temp___expr_635) true))))
 
 (declare-const m us_rep)
 
@@ -882,7 +881,7 @@
   (temp___do_toplevel_251 Bool)
   (temp___do_typ_inv_252 Bool)) Bool (=>
                                      (or (= temp___is_init_249 true)
-                                     (<= 1 100)) (in_range5 temp___expr_253)))
+                                     (<= 1 100)) (in_range6 temp___expr_253)))
 
 (define-fun dynamic_invariant4 ((temp___expr_260 us_t)
   (temp___is_init_256 Bool) (temp___skip_constant_257 Bool)
@@ -898,7 +897,7 @@
   (temp___do_typ_inv_17 Bool)) Bool (=>
                                     (or (= temp___is_init_14 true)
                                     (<= (- 2147483648) 2147483647))
-                                    (in_range4 temp___expr_18)))
+                                    (in_range5 temp___expr_18)))
 
 (declare-fun equivalent_keys (Int Int) Bool)
 
@@ -1186,18 +1185,13 @@
   (ite (= o3 true)
   (let ((o4 e))
   (let ((o5 m))
-  (let ((o6 (element o5 o4)))
+  (let ((temp___885 (element o5 o4)))
   (and
-  (and (dynamic_invariant1 o6 true false true true)
-  (= o6 (get (model1 o5) o4)))
-  (let ((o7 e))
-  (let ((o8 m))
-  (let ((o9 (element o8 o7)))
-  (and
-  (and (dynamic_invariant1 o9 true false true true)
-  (= o9 (get (model1 o8) o7)))
-  (= o (and (ite (<= (first1 a) o9) true false) (ite (<= o6 (last1 a)) true
-                                                false)))))))))))
+  (and (dynamic_invariant1 temp___885 true false true true)
+  (= temp___885 (get (model1 o5) o4)))
+  (= o (and (ite (<= (first1 a) temp___885) true false) (ite (<= temp___885 
+                                                        (last1 a)) true
+                                                        false)))))))
   (= o (distinct 1 0))))))) (= o false))
   (=> (= o true)
   (let ((o1 e))

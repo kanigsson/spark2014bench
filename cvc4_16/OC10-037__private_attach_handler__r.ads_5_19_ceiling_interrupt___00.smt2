@@ -109,6 +109,32 @@
 (define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun to_rep ((x integer)) Int (integerqtint x))
+
+(declare-fun of_rep (Int) integer)
+
+;; inversion_axiom
+  (assert
+  (forall ((x integer)) (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x integer)) (! (in_range (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                           (of_rep x))) )))
+
+(define-fun in_range1 ((rec__r__pt__x1 Int) (rec__r__pt__y1 Int)
+  (rec__r__pt__z1 Int)
+  (a us_split_discrs)) Bool (and
+                            (and
+                            (= rec__r__pt__x1 (to_rep (rec__r__pt__x a)))
+                            (= rec__r__pt__y1 (to_rep (rec__r__pt__y a))))
+                            (= rec__r__pt__z1 (to_rep (rec__r__pt__z a)))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -186,7 +212,7 @@
   (and (<= 98 (interrupt_priorityqtint i))
   (<= (interrupt_priorityqtint i) 98))))
 
-(define-fun in_range1 ((x Int)) Bool (and (<= 98 x) (<= x 98)))
+(define-fun in_range2 ((x Int)) Bool (and (<= 98 x) (<= x 98)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE1 (Int) us_image)
 
@@ -216,7 +242,7 @@
   (temp___do_toplevel_170 Bool)
   (temp___do_typ_inv_171 Bool)) Bool (=>
                                      (or (= temp___is_init_168 true)
-                                     (<= 98 98)) (in_range1 temp___expr_172)))
+                                     (<= 98 98)) (in_range2 temp___expr_172)))
 
 (declare-const self__ us_rep)
 

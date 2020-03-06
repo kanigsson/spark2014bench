@@ -2143,12 +2143,12 @@
   (=>
   (= (and (ite (and
                (and (dynamic_invariant3 to_line2 true true true true)
-               (forall ((temp___863 Int))
-               (=> (and (<= 1 temp___863) (<= temp___863 50))
+               (forall ((temp___872 Int))
+               (=> (and (<= 1 temp___872) (<= temp___872 50))
                (=>
-               (or (< 50 temp___863)
-               (or (< temp___863 1) (< del_line1 temp___863)))
-               (= (select cur_board2 temp___863) (select cur_board temp___863))))))
+               (or (< 50 temp___872)
+               (or (< temp___872 1) (< del_line1 temp___872)))
+               (= (select cur_board2 temp___872) (select cur_board temp___872))))))
                (in_range9 del_line1))
           true false) (ite (and (<= 1 del_line1) (<= del_line1 50)) true
                       false)) true)

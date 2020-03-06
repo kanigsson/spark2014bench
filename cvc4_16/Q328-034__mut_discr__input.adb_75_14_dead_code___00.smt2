@@ -430,18 +430,18 @@
   (=> (dynamic_invariant2 col true false true true)
   (=> (= (- first_char 1) r2b)
   (=> (dynamic_invariant r2b true false true true)
-  (let ((temp___271 r2b))
+  (let ((temp___273 r2b))
   (forall ((i Int))
   (=> (= i 1)
   (forall ((col1 Int))
   (not
-  (ite (= (and (ite (<= 1 i) true false) (ite (<= i temp___271) true false)) true)
+  (ite (= (and (ite (<= 1 i) true false) (ite (<= i temp___273) true false)) true)
   (and (in_range1 (* i 8))
   (exists ((col2 Int) (i1 Int))
   (and (< col2 (* i1 8))
   (and
-  (= (and (ite (and (dynamic_invariant2 col2 true true true true)
-               (dynamic_property 1 r2b i1))
+  (= (and (ite (and (dynamic_property 1 r2b i1) (dynamic_invariant2 col2 true
+               true true true))
           true false) (ite (and (<= 1 i1) (<= i1 r2b)) true false)) true)
   (and
   (exists ((o Int))
@@ -451,5 +451,5 @@
   (ite (= spark__branch true)
   (let ((o1 (+ col2 1))) (and (in_range4 o1) (= col1 o1)))
   (let ((o1 (- (+ col2 8) (mod2 col2 8)))) (and (in_range4 o1) (= col1 o1))))))))
-  (= i1 temp___271)))))) (= col1 col)))))))))))))))
+  (= i1 temp___273)))))) (= col1 col)))))))))))))))
 (check-sat)

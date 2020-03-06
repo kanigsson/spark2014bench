@@ -341,7 +341,7 @@
   (=> (and (<= (* lower2 lower2) x) (< x (* upper2 upper2)))
   (=>
   (and
-  (and (dynamic_invariant2 upper2 false true true true) (dynamic_invariant1
-  middle1 false true true true)) (dynamic_invariant1 lower2 false true true
+  (and (dynamic_invariant1 lower2 false true true true) (dynamic_invariant2
+  upper2 false true true true)) (dynamic_invariant1 middle1 false true true
   true)) (=> (not (= (+ lower2 1) upper2)) (not (= 2 0)))))))))))))))))
 (check-sat)

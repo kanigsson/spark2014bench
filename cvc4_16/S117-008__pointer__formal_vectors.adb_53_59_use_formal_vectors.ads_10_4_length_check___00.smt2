@@ -957,83 +957,83 @@
 (define-fun t93s__ref_t93s__content__projection ((a t93s__ref)) us_t 
   (t93s__content a))
 
-(define-fun dynamic_invariant4 ((temp___expr_378 us_t)
-  (temp___is_init_374 Bool) (temp___skip_constant_375 Bool)
-  (temp___do_toplevel_376 Bool)
-  (temp___do_typ_inv_377 Bool)) Bool (and
+(define-fun dynamic_invariant4 ((temp___expr_371 us_t)
+  (temp___is_init_367 Bool) (temp___skip_constant_368 Bool)
+  (temp___do_toplevel_369 Bool)
+  (temp___do_typ_inv_370 Bool)) Bool (and
                                      (=>
-                                     (not (= temp___skip_constant_375 true))
+                                     (not (= temp___skip_constant_368 true))
                                      (and (dynamic_property 1 ns
-                                     (first1 temp___expr_378)
-                                     (last1 temp___expr_378))
-                                     (and (= (first1 temp___expr_378) 1)
-                                     (= (last1 temp___expr_378) ns))))
-                                     (forall ((temp___379 Int))
+                                     (first1 temp___expr_371)
+                                     (last1 temp___expr_371))
+                                     (and (= (first1 temp___expr_371) 1)
+                                     (= (last1 temp___expr_371) ns))))
+                                     (forall ((temp___372 Int))
                                      (=>
                                      (and
-                                     (<= (first1 temp___expr_378) temp___379)
-                                     (<= temp___379 (last1 temp___expr_378)))
+                                     (<= (first1 temp___expr_371) temp___372)
+                                     (<= temp___372 (last1 temp___expr_371)))
                                      (=>
                                      (not
                                      (= (rec__use_formal_vectors__my_vect__element_access__is_null_pointer
-                                        (select (to_array temp___expr_378) temp___379)) true))
+                                        (select (to_array temp___expr_371) temp___372)) true))
                                      (not
                                      (= (rec__use_formal_vectors__element_type__is_null_pointer
                                         (rec__use_formal_vectors__my_vect__element_access__pointer_value
-                                        (select (to_array temp___expr_378) temp___379))) true)))))))
+                                        (select (to_array temp___expr_371) temp___372))) true)))))))
 
-(define-fun default_initial_assumption3 ((temp___expr_380 us_t)
-  (temp___skip_top_level_381 Bool)) Bool (and
-                                         (and (= (first1 temp___expr_380) 1)
-                                         (= (last1 temp___expr_380) ns))
-                                         (forall ((temp___382 Int))
+(define-fun default_initial_assumption3 ((temp___expr_373 us_t)
+  (temp___skip_top_level_374 Bool)) Bool (and
+                                         (and (= (first1 temp___expr_373) 1)
+                                         (= (last1 temp___expr_373) ns))
+                                         (forall ((temp___375 Int))
                                          (=>
                                          (and
-                                         (<= (first1 temp___expr_380) temp___382)
-                                         (<= temp___382 (last1
-                                                        temp___expr_380)))
+                                         (<= (first1 temp___expr_373) temp___375)
+                                         (<= temp___375 (last1
+                                                        temp___expr_373)))
                                          (= (rec__use_formal_vectors__my_vect__element_access__is_null_pointer
                                             (select (to_array
-                                                    temp___expr_380) temp___382)) true)))))
+                                                    temp___expr_373) temp___375)) true)))))
 
-(define-fun dynamic_invariant5 ((temp___expr_388 us_t)
-  (temp___is_init_384 Bool) (temp___skip_constant_385 Bool)
-  (temp___do_toplevel_386 Bool)
-  (temp___do_typ_inv_387 Bool)) Bool (and
+(define-fun dynamic_invariant5 ((temp___expr_381 us_t)
+  (temp___is_init_377 Bool) (temp___skip_constant_378 Bool)
+  (temp___do_toplevel_379 Bool)
+  (temp___do_typ_inv_380 Bool)) Bool (and
                                      (=>
-                                     (not (= temp___skip_constant_385 true))
+                                     (not (= temp___skip_constant_378 true))
                                      (and (dynamic_property 1 ns
-                                     (first1 temp___expr_388)
-                                     (last1 temp___expr_388))
-                                     (and (= (first1 temp___expr_388) 1)
-                                     (= (last1 temp___expr_388) ns))))
-                                     (forall ((temp___389 Int))
+                                     (first1 temp___expr_381)
+                                     (last1 temp___expr_381))
+                                     (and (= (first1 temp___expr_381) 1)
+                                     (= (last1 temp___expr_381) ns))))
+                                     (forall ((temp___382 Int))
                                      (=>
                                      (and
-                                     (<= (first1 temp___expr_388) temp___389)
-                                     (<= temp___389 (last1 temp___expr_388)))
+                                     (<= (first1 temp___expr_381) temp___382)
+                                     (<= temp___382 (last1 temp___expr_381)))
                                      (=>
                                      (not
                                      (= (rec__use_formal_vectors__my_vect__element_access__is_null_pointer
-                                        (select (to_array temp___expr_388) temp___389)) true))
+                                        (select (to_array temp___expr_381) temp___382)) true))
                                      (not
                                      (= (rec__use_formal_vectors__element_type__is_null_pointer
                                         (rec__use_formal_vectors__my_vect__element_access__pointer_value
-                                        (select (to_array temp___expr_388) temp___389))) true)))))))
+                                        (select (to_array temp___expr_381) temp___382))) true)))))))
 
-(define-fun default_initial_assumption4 ((temp___expr_390 us_t)
-  (temp___skip_top_level_391 Bool)) Bool (and
-                                         (and (= (first1 temp___expr_390) 1)
-                                         (= (last1 temp___expr_390) ns))
-                                         (forall ((temp___392 Int))
+(define-fun default_initial_assumption4 ((temp___expr_383 us_t)
+  (temp___skip_top_level_384 Bool)) Bool (and
+                                         (and (= (first1 temp___expr_383) 1)
+                                         (= (last1 temp___expr_383) ns))
+                                         (forall ((temp___385 Int))
                                          (=>
                                          (and
-                                         (<= (first1 temp___expr_390) temp___392)
-                                         (<= temp___392 (last1
-                                                        temp___expr_390)))
+                                         (<= (first1 temp___expr_383) temp___385)
+                                         (<= temp___385 (last1
+                                                        temp___expr_383)))
                                          (= (rec__use_formal_vectors__my_vect__element_access__is_null_pointer
                                             (select (to_array
-                                                    temp___expr_390) temp___392)) true)))))
+                                                    temp___expr_383) temp___385)) true)))))
 
 (define-fun dynamic_invariant6 ((temp___expr_46 Int) (temp___is_init_42 Bool)
   (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)
@@ -1356,33 +1356,33 @@
   (=> (= spark__branch1 (ite (<= s o1) true false))
   (=> (not (= spark__branch1 true))
   (forall ((us_next_pointer_address Int))
-  (forall ((temp___alloc_681 us_rep2))
+  (forall ((temp___alloc_675 us_rep2))
   (=>
   (and
   (not
   (= (rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer
-     temp___alloc_681) true))
+     temp___alloc_675) true))
   (= (rec__use_formal_vectors__my_vect__element_array_access__pointer_address
-     temp___alloc_681) us_next_pointer_address))
+     temp___alloc_675) us_next_pointer_address))
   (forall ((usf us_t))
   (=>
   (and (default_initial_assumption4 usf false) (dynamic_invariant5 usf true
   false true true))
   (=>
   (= (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
-     temp___alloc_681) (of_array (to_array usf) (first1 usf) (last1 usf)))
+     temp___alloc_675) (of_array (to_array usf) (first1 usf) (last1 usf)))
   (forall ((new_content__pointer_value us_t))
   (=>
   (= new_content__pointer_value (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
-                                temp___alloc_681))
+                                temp___alloc_675))
   (forall ((new_content__pointer_address Int))
   (=>
   (= new_content__pointer_address (rec__use_formal_vectors__my_vect__element_array_access__pointer_address
-                                  temp___alloc_681))
+                                  temp___alloc_675))
   (forall ((new_content__is_null_pointer Bool))
   (=>
   (= new_content__is_null_pointer (rec__use_formal_vectors__my_vect__element_array_access__is_null_pointer
-                                  temp___alloc_681))
+                                  temp___alloc_675))
   (=> (dynamic_invariant3
   (us_repqtmk2 new_content__is_null_pointer new_content__pointer_address
   new_content__pointer_value) true false true true)
@@ -1422,7 +1422,7 @@
   (= (- (last1 old_content__pointer_value) (first1
                                            old_content__pointer_value)) (- 
   r91s 1))) (< r91s 1))
-  (let ((temp___668 (of_array
+  (let ((temp___662 (of_array
                     (slide (to_array old_content__pointer_value)
                     (first1 old_content__pointer_value) 1) 1 r91s)))
   (=>
@@ -1432,7 +1432,7 @@
   (<= 1 (last1 new_content__pointer_value)))
   (and (<= (first1 new_content__pointer_value) r91s)
   (<= r91s (last1 new_content__pointer_value)))))
-  (let ((temp___671 (of_array (to_array new_content__pointer_value) 1 r91s)))
-  (=> (<= (first1 temp___668) (last1 temp___668))
-  (<= (first1 temp___671) (last1 temp___671)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+  (let ((temp___665 (of_array (to_array new_content__pointer_value) 1 r91s)))
+  (=> (<= (first1 temp___662) (last1 temp___662))
+  (<= (first1 temp___665) (last1 temp___665)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

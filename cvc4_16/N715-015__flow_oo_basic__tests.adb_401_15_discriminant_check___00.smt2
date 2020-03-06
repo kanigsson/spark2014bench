@@ -148,6 +148,10 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range2 ((rec__foo__misc_private_t__valid1 Bool)
+  (a us_split_discrs)) Bool (= rec__foo__misc_private_t__valid1 (rec__foo__misc_private_t__valid
+                                                                a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -213,10 +217,6 @@
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
-
-(define-fun in_range2 ((rec__foo__misc_private_t__valid1 Bool)
-  (a1 us_rep)) Bool (= rec__foo__misc_private_t__valid1 (rec__foo__misc_private_t__valid
-                                                        (us_split_discrs1 a1))))
 
 (declare-const value__size1 Int)
 
@@ -284,7 +284,7 @@
   (temp___do_typ_inv_373 Bool)) Bool (=>
                                      (not (= temp___skip_constant_371 true))
                                      (in_range2 (distinct 0 0)
-                                     temp___expr_374)))
+                                     (us_split_discrs1 temp___expr_374))))
 
 (define-fun default_initial_assumption ((temp___expr_376 us_rep)
   (temp___skip_top_level_377 Bool)) Bool (= (rec__foo__misc_private_t__valid
@@ -302,5 +302,5 @@
   (us_repqtmk x__split_discrs (us_split_fieldsqtmk x__split_fields)) false)
   (=> (dynamic_invariant1
   (us_repqtmk x__split_discrs (us_split_fieldsqtmk x__split_fields)) false
-  false true true) (in_range2 (distinct 0 0) a))))))))
+  false true true) (in_range2 (distinct 0 0) (us_split_discrs1 a)))))))))
 (check-sat)

@@ -226,22 +226,6 @@
 ;; foo__value__kind__position_axiom
   (assert (<= 0 foo__value__kind__position))
 
-(declare-const foo__value__bool_field__first__bit Int)
-
-(declare-const foo__value__bool_field__last__bit Int)
-
-(declare-const foo__value__bool_field__position Int)
-
-;; foo__value__bool_field__first__bit_axiom
-  (assert (<= 0 foo__value__bool_field__first__bit))
-
-;; foo__value__bool_field__last__bit_axiom
-  (assert
-  (< foo__value__bool_field__first__bit foo__value__bool_field__last__bit))
-
-;; foo__value__bool_field__position_axiom
-  (assert (<= 0 foo__value__bool_field__position))
-
 (declare-const foo__value__int_field__first__bit Int)
 
 (declare-const foo__value__int_field__last__bit Int)
@@ -258,19 +242,30 @@
 ;; foo__value__int_field__position_axiom
   (assert (<= 0 foo__value__int_field__position))
 
+(declare-const foo__value__bool_field__first__bit Int)
+
+(declare-const foo__value__bool_field__last__bit Int)
+
+(declare-const foo__value__bool_field__position Int)
+
+;; foo__value__bool_field__first__bit_axiom
+  (assert (<= 0 foo__value__bool_field__first__bit))
+
+;; foo__value__bool_field__last__bit_axiom
+  (assert
+  (< foo__value__bool_field__first__bit foo__value__bool_field__last__bit))
+
+;; foo__value__bool_field__position_axiom
+  (assert (<= 0 foo__value__bool_field__position))
+
 (declare-fun user_eq2 (us_rep us_rep) Bool)
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((value__ref 0))
-(((value__refqtmk (value__content us_rep)))))
-(define-fun value__ref_value__content__projection ((a value__ref)) us_rep 
-  (value__content a))
-
-(define-fun in_range3 ((rec__foo__value__kind1 Int)
-  (a us_rep)) Bool (= rec__foo__value__kind1 (to_rep1
-                                             (rec__foo__value__kind
-                                             (us_split_discrs1 a)))))
+(declare-datatypes ((t1b__ref 0))
+(((t1b__refqtmk (t1b__content us_rep)))))
+(define-fun t1b__ref_t1b__content__projection ((a t1b__ref)) us_rep (t1b__content
+                                                                    a))
 
 (declare-const value__size1 Int)
 
@@ -302,22 +297,6 @@
 ;; foo__value__kind__position_axiom
   (assert (<= 0 foo__value__kind__position1))
 
-(declare-const foo__value__int_field__first__bit1 Int)
-
-(declare-const foo__value__int_field__last__bit1 Int)
-
-(declare-const foo__value__int_field__position1 Int)
-
-;; foo__value__int_field__first__bit_axiom
-  (assert (<= 0 foo__value__int_field__first__bit1))
-
-;; foo__value__int_field__last__bit_axiom
-  (assert
-  (< foo__value__int_field__first__bit1 foo__value__int_field__last__bit1))
-
-;; foo__value__int_field__position_axiom
-  (assert (<= 0 foo__value__int_field__position1))
-
 (declare-const foo__value__bool_field__first__bit1 Int)
 
 (declare-const foo__value__bool_field__last__bit1 Int)
@@ -334,19 +313,30 @@
 ;; foo__value__bool_field__position_axiom
   (assert (<= 0 foo__value__bool_field__position1))
 
+(declare-const foo__value__int_field__first__bit1 Int)
+
+(declare-const foo__value__int_field__last__bit1 Int)
+
+(declare-const foo__value__int_field__position1 Int)
+
+;; foo__value__int_field__first__bit_axiom
+  (assert (<= 0 foo__value__int_field__first__bit1))
+
+;; foo__value__int_field__last__bit_axiom
+  (assert
+  (< foo__value__int_field__first__bit1 foo__value__int_field__last__bit1))
+
+;; foo__value__int_field__position_axiom
+  (assert (<= 0 foo__value__int_field__position1))
+
 (declare-fun user_eq3 (us_rep us_rep) Bool)
 
 (declare-const dummy3 us_rep)
 
-(declare-datatypes ((t1b__ref 0))
-(((t1b__refqtmk (t1b__content us_rep)))))
-(define-fun t1b__ref_t1b__content__projection ((a t1b__ref)) us_rep (t1b__content
+(declare-datatypes ((t2b__ref 0))
+(((t2b__refqtmk (t2b__content us_rep)))))
+(define-fun t2b__ref_t2b__content__projection ((a t2b__ref)) us_rep (t2b__content
                                                                     a))
-
-(define-fun in_range4 ((rec__foo__value__kind1 Int)
-  (a us_rep)) Bool (= rec__foo__value__kind1 (to_rep1
-                                             (rec__foo__value__kind
-                                             (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -414,15 +404,46 @@
 
 (declare-const dummy4 us_rep)
 
-(declare-datatypes ((t2b__ref 0))
-(((t2b__refqtmk (t2b__content us_rep)))))
-(define-fun t2b__ref_t2b__content__projection ((a t2b__ref)) us_rep (t2b__content
+(declare-datatypes ((t3b__ref 0))
+(((t3b__refqtmk (t3b__content us_rep)))))
+(define-fun t3b__ref_t3b__content__projection ((a t3b__ref)) us_rep (t3b__content
                                                                     a))
 
-(define-fun in_range5 ((rec__foo__value__kind1 Int)
-  (a us_rep)) Bool (= rec__foo__value__kind1 (to_rep1
-                                             (rec__foo__value__kind
-                                             (us_split_discrs1 a)))))
+(declare-datatypes ((us_split_fields2 0))
+(((us_split_fieldsqtmk1
+  (rec__foo__record_a__x us_rep)(rec__foo__record_a__y us_rep)(rec__foo__record_a__z us_rep)))))
+(define-fun us_split_fields_rec__foo__record_a__x__projection ((a us_split_fields2)) us_rep 
+  (rec__foo__record_a__x a))
+
+(define-fun us_split_fields_rec__foo__record_a__y__projection ((a us_split_fields2)) us_rep 
+  (rec__foo__record_a__y a))
+
+(define-fun us_split_fields_rec__foo__record_a__z__projection ((a us_split_fields2)) us_rep 
+  (rec__foo__record_a__z a))
+
+(declare-datatypes ((us_split_fields__ref1 0))
+(((us_split_fields__refqtmk1 (us_split_fields__content1 us_split_fields2)))))
+(define-fun us_split_fields__ref___split_fields__content__2__projection ((a us_split_fields__ref1)) us_split_fields2 
+  (us_split_fields__content1 a))
+
+(declare-datatypes ((us_rep1 0))
+(((us_repqtmk1 (us_split_fields3 us_split_fields2)))))
+(define-fun us_rep___split_fields__2__projection ((a us_rep1)) us_split_fields2 
+  (us_split_fields3 a))
+
+(define-fun bool_eq1 ((a us_rep1)
+  (b us_rep1)) Bool (ite (and
+                         (and
+                         (= (bool_eq
+                            (rec__foo__record_a__x (us_split_fields3 a))
+                            (rec__foo__record_a__x (us_split_fields3 b))) true)
+                         (= (bool_eq
+                            (rec__foo__record_a__y (us_split_fields3 a))
+                            (rec__foo__record_a__y (us_split_fields3 b))) true))
+                         (= (bool_eq
+                            (rec__foo__record_a__z (us_split_fields3 a))
+                            (rec__foo__record_a__z (us_split_fields3 b))) true))
+                    true false))
 
 (declare-const value__size3 Int)
 
@@ -438,6 +459,82 @@
 
 ;; alignment_axiom
   (assert (<= 0 alignment3))
+
+(declare-const foo__record_a__x__first__bit Int)
+
+(declare-const foo__record_a__x__last__bit Int)
+
+(declare-const foo__record_a__x__position Int)
+
+;; foo__record_a__x__first__bit_axiom
+  (assert (<= 0 foo__record_a__x__first__bit))
+
+;; foo__record_a__x__last__bit_axiom
+  (assert (< foo__record_a__x__first__bit foo__record_a__x__last__bit))
+
+;; foo__record_a__x__position_axiom
+  (assert (<= 0 foo__record_a__x__position))
+
+(declare-const foo__record_a__y__first__bit Int)
+
+(declare-const foo__record_a__y__last__bit Int)
+
+(declare-const foo__record_a__y__position Int)
+
+;; foo__record_a__y__first__bit_axiom
+  (assert (<= 0 foo__record_a__y__first__bit))
+
+;; foo__record_a__y__last__bit_axiom
+  (assert (< foo__record_a__y__first__bit foo__record_a__y__last__bit))
+
+;; foo__record_a__y__position_axiom
+  (assert (<= 0 foo__record_a__y__position))
+
+(declare-const foo__record_a__z__first__bit Int)
+
+(declare-const foo__record_a__z__last__bit Int)
+
+(declare-const foo__record_a__z__position Int)
+
+;; foo__record_a__z__first__bit_axiom
+  (assert (<= 0 foo__record_a__z__first__bit))
+
+;; foo__record_a__z__last__bit_axiom
+  (assert (< foo__record_a__z__first__bit foo__record_a__z__last__bit))
+
+;; foo__record_a__z__position_axiom
+  (assert (<= 0 foo__record_a__z__position))
+
+(declare-fun user_eq5 (us_rep1 us_rep1) Bool)
+
+(declare-const dummy5 us_rep1)
+
+(declare-datatypes ((record_a__ref 0))
+(((record_a__refqtmk (record_a__content us_rep1)))))
+(define-fun record_a__ref_record_a__content__projection ((a record_a__ref)) us_rep1 
+  (record_a__content a))
+
+(declare-const attr__ATTRIBUTE_ADDRESS Int)
+
+(define-fun in_range3 ((rec__foo__value__kind1 Int)
+  (a us_split_discrs)) Bool (= rec__foo__value__kind1 (to_rep1
+                                                      (rec__foo__value__kind
+                                                      a))))
+
+(declare-const value__size4 Int)
+
+(declare-const object__size4 Int)
+
+(declare-const alignment4 Int)
+
+;; value__size_axiom
+  (assert (<= 0 value__size4))
+
+;; object__size_axiom
+  (assert (<= 0 object__size4))
+
+;; alignment_axiom
+  (assert (<= 0 alignment4))
 
 (declare-const foo__value__kind__first__bit3 Int)
 
@@ -486,135 +583,31 @@
 ;; foo__value__int_field__position_axiom
   (assert (<= 0 foo__value__int_field__position3))
 
-(declare-fun user_eq5 (us_rep us_rep) Bool)
+(declare-fun user_eq6 (us_rep us_rep) Bool)
 
-(declare-const dummy5 us_rep)
+(declare-const dummy6 us_rep)
 
-(declare-datatypes ((t3b__ref 0))
-(((t3b__refqtmk (t3b__content us_rep)))))
-(define-fun t3b__ref_t3b__content__projection ((a t3b__ref)) us_rep (t3b__content
-                                                                    a))
-
-(declare-datatypes ((us_split_fields2 0))
-(((us_split_fieldsqtmk1
-  (rec__foo__record_a__x us_rep)(rec__foo__record_a__y us_rep)(rec__foo__record_a__z us_rep)))))
-(define-fun us_split_fields_rec__foo__record_a__x__projection ((a us_split_fields2)) us_rep 
-  (rec__foo__record_a__x a))
-
-(define-fun us_split_fields_rec__foo__record_a__y__projection ((a us_split_fields2)) us_rep 
-  (rec__foo__record_a__y a))
-
-(define-fun us_split_fields_rec__foo__record_a__z__projection ((a us_split_fields2)) us_rep 
-  (rec__foo__record_a__z a))
-
-(declare-datatypes ((us_split_fields__ref1 0))
-(((us_split_fields__refqtmk1 (us_split_fields__content1 us_split_fields2)))))
-(define-fun us_split_fields__ref___split_fields__content__2__projection ((a us_split_fields__ref1)) us_split_fields2 
-  (us_split_fields__content1 a))
-
-(declare-datatypes ((us_rep1 0))
-(((us_repqtmk1 (us_split_fields3 us_split_fields2)))))
-(define-fun us_rep___split_fields__2__projection ((a us_rep1)) us_split_fields2 
-  (us_split_fields3 a))
-
-(define-fun bool_eq1 ((a us_rep1)
-  (b us_rep1)) Bool (ite (and
-                         (and
-                         (= (bool_eq
-                            (rec__foo__record_a__x (us_split_fields3 a))
-                            (rec__foo__record_a__x (us_split_fields3 b))) true)
-                         (= (bool_eq
-                            (rec__foo__record_a__y (us_split_fields3 a))
-                            (rec__foo__record_a__y (us_split_fields3 b))) true))
-                         (= (bool_eq
-                            (rec__foo__record_a__z (us_split_fields3 a))
-                            (rec__foo__record_a__z (us_split_fields3 b))) true))
-                    true false))
-
-(declare-const value__size4 Int)
-
-(declare-const object__size4 Int)
-
-(declare-const alignment4 Int)
-
-;; value__size_axiom
-  (assert (<= 0 value__size4))
-
-;; object__size_axiom
-  (assert (<= 0 object__size4))
-
-;; alignment_axiom
-  (assert (<= 0 alignment4))
-
-(declare-const foo__record_a__x__first__bit Int)
-
-(declare-const foo__record_a__x__last__bit Int)
-
-(declare-const foo__record_a__x__position Int)
-
-;; foo__record_a__x__first__bit_axiom
-  (assert (<= 0 foo__record_a__x__first__bit))
-
-;; foo__record_a__x__last__bit_axiom
-  (assert (< foo__record_a__x__first__bit foo__record_a__x__last__bit))
-
-;; foo__record_a__x__position_axiom
-  (assert (<= 0 foo__record_a__x__position))
-
-(declare-const foo__record_a__y__first__bit Int)
-
-(declare-const foo__record_a__y__last__bit Int)
-
-(declare-const foo__record_a__y__position Int)
-
-;; foo__record_a__y__first__bit_axiom
-  (assert (<= 0 foo__record_a__y__first__bit))
-
-;; foo__record_a__y__last__bit_axiom
-  (assert (< foo__record_a__y__first__bit foo__record_a__y__last__bit))
-
-;; foo__record_a__y__position_axiom
-  (assert (<= 0 foo__record_a__y__position))
-
-(declare-const foo__record_a__z__first__bit Int)
-
-(declare-const foo__record_a__z__last__bit Int)
-
-(declare-const foo__record_a__z__position Int)
-
-;; foo__record_a__z__first__bit_axiom
-  (assert (<= 0 foo__record_a__z__first__bit))
-
-;; foo__record_a__z__last__bit_axiom
-  (assert (< foo__record_a__z__first__bit foo__record_a__z__last__bit))
-
-;; foo__record_a__z__position_axiom
-  (assert (<= 0 foo__record_a__z__position))
-
-(declare-fun user_eq6 (us_rep1 us_rep1) Bool)
-
-(declare-const dummy6 us_rep1)
-
-(declare-datatypes ((record_a__ref 0))
-(((record_a__refqtmk (record_a__content us_rep1)))))
-(define-fun record_a__ref_record_a__content__projection ((a record_a__ref)) us_rep1 
-  (record_a__content a))
-
-(declare-const attr__ATTRIBUTE_ADDRESS Int)
+(declare-datatypes ((value__ref 0))
+(((value__refqtmk (value__content us_rep)))))
+(define-fun value__ref_value__content__projection ((a value__ref)) us_rep 
+  (value__content a))
 
 (define-fun dynamic_invariant ((temp___expr_176 us_rep1)
   (temp___is_init_172 Bool) (temp___skip_constant_173 Bool)
   (temp___do_toplevel_174 Bool)
   (temp___do_typ_inv_175 Bool)) Bool (and
                                      (and (in_range3 1
+                                     (us_split_discrs1
                                      (rec__foo__record_a__x
-                                     (us_split_fields3 temp___expr_176)))
-                                     (in_range4 2
-                                     (rec__foo__record_a__y
                                      (us_split_fields3 temp___expr_176))))
-                                     (in_range5 0
-                                     (rec__foo__record_a__z
+                                     (in_range3 2
+                                     (us_split_discrs1
+                                     (rec__foo__record_a__y
                                      (us_split_fields3 temp___expr_176)))))
+                                     (in_range3 0
+                                     (us_split_discrs1
+                                     (rec__foo__record_a__z
+                                     (us_split_fields3 temp___expr_176))))))
 
 (define-fun default_initial_assumption ((temp___expr_180 us_rep1)
   (temp___skip_top_level_181 Bool)) Bool (and

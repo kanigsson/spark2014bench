@@ -449,10 +449,11 @@
 ;; defqtvc
  ;; File "failsafe.ads", line 22, characters 0-0
   (not
-  (forall ((current_time (_ BitVec 8)) (usf (_ BitVec 8)))
+  (forall ((current_time (_ BitVec 8)))
   (=> (dynamic_invariant battery_threshold true false true true)
   (=> (= (fp #b0 #b01111100 #b10011001100110011001101) battery_threshold)
   (=> (dynamic_invariant1 current_time true false true true)
+  (forall ((usf (_ BitVec 8)))
   (not
-  (= (and (ite (bvule #x00 usf) true false) (ite (bvule usf #x31) true false)) true))))))))
+  (= (and (ite (bvule #x00 usf) true false) (ite (bvule usf #x31) true false)) true)))))))))
 (check-sat)

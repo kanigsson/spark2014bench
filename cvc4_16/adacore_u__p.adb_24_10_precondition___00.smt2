@@ -295,17 +295,17 @@
 ;; defqtvc
  ;; File "p.ads", line 28, characters 0-0
   (not
-  (forall ((threshold Int) (temp___305 Int) (temp___306 Int) (i Int)
+  (forall ((threshold Int) (temp___306 Int) (temp___307 Int) (i Int)
   (a (Array Int positive)) (threshold1 Int) (i1 Int))
   (=> (dynamic_property (- 2147483648) 2147483647 (to_rep1 a__first)
   (to_rep1 a__last))
   (=> (= threshold 2147483647)
   (=> (dynamic_invariant threshold true false true true)
-  (=> (= (to_rep1 a__first) temp___305)
-  (=> (= (to_rep1 a__last) temp___306)
-  (=> (= i temp___305)
+  (=> (= (to_rep1 a__first) temp___306)
+  (=> (= (to_rep1 a__last) temp___307)
+  (=> (= i temp___306)
   (=>
-  (= (and (ite (<= temp___305 i) true false) (ite (<= i temp___306) true
+  (= (and (ite (<= temp___306 i) true false) (ite (<= i temp___307) true
                                              false)) true)
   (=>
   (= (and (ite (dynamic_invariant threshold1 true true true true) true false) 

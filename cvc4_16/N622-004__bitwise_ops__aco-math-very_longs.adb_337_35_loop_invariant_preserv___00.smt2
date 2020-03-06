@@ -528,6 +528,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
+  (to_rep
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -684,31 +689,31 @@
   (=> (not (= (is_zero number) true))
   (=> (= digit_index 1)
   (=> (dynamic_invariant1 digit_index true false true true)
-  (let ((temp___1508 (last1
+  (let ((temp___1511 (last1
                      (rec__ada___ada___aco__math__very_longs__very_long__long_digits
                      (us_split_fields1 number)))))
   (forall ((i Int))
   (=> (= i 1)
   (=>
-  (= (and (ite (<= 1 i) true false) (ite (<= i temp___1508) true false)) true)
+  (= (and (ite (<= 1 i) true false) (ite (<= i temp___1511) true false)) true)
   (forall ((spark__branch Bool) (digit_index1 Int))
   (=>
-  (let ((temp___1509 (rec__ada___ada___aco__math__very_longs__very_long__long_digits
+  (let ((temp___1512 (rec__ada___ada___aco__math__very_longs__very_long__long_digits
                      (us_split_fields1 number))))
-  (and (and (<= (first1 temp___1509) i) (<= i (last1 temp___1509)))
+  (and (and (<= (first1 temp___1512) i) (<= i (last1 temp___1512)))
   (exists ((o (_ BitVec 8)))
-  (and (= (to_rep2 (select (to_array temp___1509) i)) o)
+  (and (= (to_rep2 (select (to_array temp___1512) i)) o)
   (and (= spark__branch (ite (not (= o #x00)) true false))
   (ite (= spark__branch true) (= digit_index1 i)
   (= digit_index1 digit_index)))))))
   (=> (in_range2 (+ i 1))
-  (let ((temp___1517 (rec__ada___ada___aco__math__very_longs__very_long__long_digits
+  (let ((temp___1520 (rec__ada___ada___aco__math__very_longs__very_long__long_digits
                      (us_split_fields1 number))))
   (=>
-  (and (<= (first1 temp___1517) digit_index1)
-  (<= digit_index1 (last1 temp___1517)))
+  (and (<= (first1 temp___1520) digit_index1)
+  (<= digit_index1 (last1 temp___1520)))
   (forall ((o (_ BitVec 8)))
-  (=> (= (to_rep2 (select (to_array temp___1517) digit_index1)) o)
+  (=> (= (to_rep2 (select (to_array temp___1520) digit_index1)) o)
   (forall ((digit_index2 Int) (i1 Int))
   (=>
   (and
@@ -747,28 +752,28 @@
                                   (rec__ada___ada___aco__math__very_longs__very_long__long_digits
                                   (us_split_fields1 number)))))
                       true false)) true)
-  (=> (not (= i1 temp___1508))
+  (=> (not (= i1 temp___1511))
   (forall ((i2 Int))
   (=> (= i2 (+ i1 1))
   (forall ((digit_index3 Int))
   (=>
-  (let ((temp___1509 (rec__ada___ada___aco__math__very_longs__very_long__long_digits
+  (let ((temp___1512 (rec__ada___ada___aco__math__very_longs__very_long__long_digits
                      (us_split_fields1 number))))
-  (and (and (<= (first1 temp___1509) i2) (<= i2 (last1 temp___1509)))
+  (and (and (<= (first1 temp___1512) i2) (<= i2 (last1 temp___1512)))
   (exists ((o1 (_ BitVec 8)))
-  (and (= (to_rep2 (select (to_array temp___1509) i2)) o1)
+  (and (= (to_rep2 (select (to_array temp___1512) i2)) o1)
   (exists ((spark__branch1 Bool))
   (and (= spark__branch1 (ite (not (= o1 #x00)) true false))
   (ite (= spark__branch1 true) (= digit_index3 i2)
   (= digit_index3 digit_index2))))))))
   (=> (in_range2 (+ i2 1))
-  (let ((temp___15171 (rec__ada___ada___aco__math__very_longs__very_long__long_digits
+  (let ((temp___15201 (rec__ada___ada___aco__math__very_longs__very_long__long_digits
                       (us_split_fields1 number))))
   (=>
-  (and (<= (first1 temp___15171) digit_index3)
-  (<= digit_index3 (last1 temp___15171)))
+  (and (<= (first1 temp___15201) digit_index3)
+  (<= digit_index3 (last1 temp___15201)))
   (forall ((o1 (_ BitVec 8)))
-  (=> (= (to_rep2 (select (to_array temp___15171) digit_index3)) o1)
+  (=> (= (to_rep2 (select (to_array temp___15201) digit_index3)) o1)
   (=>
   (or
   (not

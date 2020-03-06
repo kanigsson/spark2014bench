@@ -750,11 +750,11 @@
   (= (and (ite (and
                (and
                (and
-               (and (dynamic_invariant rcx1 true true true true)
+               (and (dynamic_invariant2 val21 false true true true)
+               (dynamic_invariant rcx1 true true true true))
                (dynamic_invariant rdi1 true true true true))
                (dynamic_invariant rsi1 true true true true))
                (dynamic_invariant2 val11 false true true true))
-               (dynamic_invariant2 val21 false true true true))
           true false) (ite (bvugt (ecx rcx1) #x00000000) true false)) true)
   (forall ((temp___428 (_ BitVec 32)))
   (=> (= temp___428 (ecx rcx1))

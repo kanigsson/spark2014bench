@@ -828,22 +828,22 @@
   (not
   (forall ((buffer__split_fields us_split_fields))
   (let ((o (us_repqtmk buffer__split_fields)))
-  (let ((o1 (first o)))
+  (let ((temp___383 (first o)))
   (=>
-  (and (first__function_guard o1 o)
-  (and (dynamic_invariant o1 true false true true)
-  (= o1 (to_rep
+  (and (first__function_guard temp___383 o)
+  (and (dynamic_invariant temp___383 true false true true)
+  (= temp___383 (to_rep
+                (rec__ordering_buffers__ordering_buffer_type__first
+                buffer__split_fields)))))
+  (=> (in_range4 temp___383)
+  (let ((o1 (us_repqtmk buffer__split_fields)))
+  (let ((o2 (first o1)))
+  (=>
+  (and (first__function_guard o2 o1)
+  (and (dynamic_invariant o2 true false true true)
+  (= o2 (to_rep
         (rec__ordering_buffers__ordering_buffer_type__first
         buffer__split_fields)))))
-  (=> (in_range4 o1)
-  (let ((o2 (us_repqtmk buffer__split_fields)))
-  (let ((o3 (first o2)))
-  (=>
-  (and (first__function_guard o3 o2)
-  (and (dynamic_invariant o3 true false true true)
-  (= o3 (to_rep
-        (rec__ordering_buffers__ordering_buffer_type__first
-        buffer__split_fields)))))
-  (=> (forall ((o4 us_rep)) (first__function_guard (first o4) o4))
-  (<= (first (us_repqtmk buffer__split_fields)) o3))))))))))))
+  (=> (forall ((o3 us_rep)) (first__function_guard (first o3) o3))
+  (<= (first (us_repqtmk buffer__split_fields)) o2))))))))))))
 (check-sat)

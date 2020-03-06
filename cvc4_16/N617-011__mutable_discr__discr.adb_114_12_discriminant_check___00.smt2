@@ -144,6 +144,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__private_discr__p_with_default__c1 Int)
+  (a us_split_discrs)) Bool (= rec__private_discr__p_with_default__c1 
+  (to_rep (rec__private_discr__p_with_default__c a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -193,12 +197,6 @@
                                             (rec__private_discr__p_with_default__c
                                             (us_split_discrs1
                                             temp___expr_250))) 0))
-
-(define-fun in_range1 ((rec__private_discr__p_with_default__c1 Int)
-  (a us_rep)) Bool (= rec__private_discr__p_with_default__c1 (to_rep
-                                                             (rec__private_discr__p_with_default__c
-                                                             (us_split_discrs1
-                                                             a)))))
 
 (declare-const value__size1 Int)
 
@@ -251,7 +249,8 @@
   (temp___do_toplevel_265 Bool)
   (temp___do_typ_inv_266 Bool)) Bool (=>
                                      (not (= temp___skip_constant_264 true))
-                                     (in_range1 c temp___expr_267)))
+                                     (in_range1 c
+                                     (us_split_discrs1 temp___expr_267))))
 
 (define-fun default_initial_assumption1 ((temp___expr_269 us_rep)
   (temp___skip_top_level_270 Bool)) Bool (= (to_rep
@@ -273,9 +272,10 @@
   (us_repqtmk d__split_discrs (us_split_fieldsqtmk d__split_fields)) false
   false true true)
   (let ((o c))
-  (let ((o1 (new_with_default o)))
+  (let ((temp___391 (new_with_default o)))
   (=>
-  (and (new_with_default__function_guard o1 o)
-  (= (to_rep (rec__private_discr__p_with_default__c (us_split_discrs1 o1))) o))
-  (in_range1 c o1))))))))))))
+  (and (new_with_default__function_guard temp___391 o)
+  (= (to_rep
+     (rec__private_discr__p_with_default__c (us_split_discrs1 temp___391))) o))
+  (in_range1 c (us_split_discrs1 temp___391)))))))))))))
 (check-sat)

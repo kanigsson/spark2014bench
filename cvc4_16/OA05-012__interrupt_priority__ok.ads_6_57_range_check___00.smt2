@@ -126,6 +126,30 @@
 (define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun to_rep ((x any_priority)) Int (any_priorityqtint x))
+
+(declare-fun of_rep (Int) any_priority)
+
+;; inversion_axiom
+  (assert
+  (forall ((x any_priority))
+  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x any_priority)) (! (in_range1
+  (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range1 x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                            (of_rep x))) )))
+
+(define-fun in_range2 ((rec__interrupt_priority__no_interrupt_needed_1__c1 Int)
+  (a us_split_discrs)) Bool (= rec__interrupt_priority__no_interrupt_needed_1__c1 
+  (to_rep (rec__interrupt_priority__no_interrupt_needed_1__c a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -210,31 +234,6 @@
                                          (rec__interrupt_priority__no_interrupt_needed_1__i
                                          (us_split_fields1 r)))))
 
-(define-fun to_rep ((x any_priority)) Int (any_priorityqtint x))
-
-(declare-fun of_rep (Int) any_priority)
-
-;; inversion_axiom
-  (assert
-  (forall ((x any_priority))
-  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
-
-;; range_axiom
-  (assert
-  (forall ((x any_priority)) (! (in_range1
-  (to_rep x)) :pattern ((to_rep x)) )))
-
-;; coerce_axiom
-  (assert
-  (forall ((x Int))
-  (! (=> (in_range1 x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
-                                                            (of_rep x))) )))
-
-(define-fun in_range2 ((rec__interrupt_priority__no_interrupt_needed_1__c1 Int)
-  (a us_rep)) Bool (= rec__interrupt_priority__no_interrupt_needed_1__c1 
-  (to_rep
-  (rec__interrupt_priority__no_interrupt_needed_1__c (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -317,7 +316,9 @@
   (temp___do_toplevel_183 Bool)
   (temp___do_typ_inv_184 Bool)) Bool (=>
                                      (not (= temp___skip_constant_182 true))
-                                     (in_range2 0 (to_base temp___expr_185))))
+                                     (in_range2 0
+                                     (us_split_discrs1
+                                     (to_base temp___expr_185)))))
 
 (define-fun default_initial_assumption ((temp___expr_187 us_rep1)
   (temp___skip_top_level_188 Bool)) Bool (and
@@ -359,11 +360,6 @@
                                           (us_split_fieldsqtmk2
                                           (rec__interrupt_priority__no_interrupt_needed_1__i
                                           (us_split_fields1 r)))))
-
-(define-fun in_range3 ((rec__interrupt_priority__no_interrupt_needed_1__c1 Int)
-  (a us_rep)) Bool (= rec__interrupt_priority__no_interrupt_needed_1__c1 
-  (to_rep
-  (rec__interrupt_priority__no_interrupt_needed_1__c (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -428,8 +424,9 @@
   (temp___do_toplevel_192 Bool)
   (temp___do_typ_inv_193 Bool)) Bool (=>
                                      (not (= temp___skip_constant_191 true))
-                                     (in_range3 98
-                                     (to_base1 temp___expr_194))))
+                                     (in_range2 98
+                                     (us_split_discrs1
+                                     (to_base1 temp___expr_194)))))
 
 (define-fun default_initial_assumption1 ((temp___expr_196 us_rep2)
   (temp___skip_top_level_197 Bool)) Bool (and
@@ -472,6 +469,10 @@
 
 (define-fun us_rep___split_fields__4__projection ((a us_rep3)) us_split_fields6 
   (us_split_fields7 a))
+
+(define-fun in_range3 ((rec__interrupt_priority__no_interrupt_needed_2__c1 Int)
+  (a us_split_discrs4)) Bool (= rec__interrupt_priority__no_interrupt_needed_2__c1 
+  (to_rep (rec__interrupt_priority__no_interrupt_needed_2__c a))))
 
 (declare-const value__size3 Int)
 
@@ -557,11 +558,6 @@
                                            (rec__interrupt_priority__no_interrupt_needed_2__i
                                            (us_split_fields7 r)))))
 
-(define-fun in_range4 ((rec__interrupt_priority__no_interrupt_needed_2__c1 Int)
-  (a us_rep3)) Bool (= rec__interrupt_priority__no_interrupt_needed_2__c1 
-  (to_rep
-  (rec__interrupt_priority__no_interrupt_needed_2__c (us_split_discrs5 a)))))
-
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -625,8 +621,9 @@
   (temp___do_toplevel_207 Bool)
   (temp___do_typ_inv_208 Bool)) Bool (=>
                                      (not (= temp___skip_constant_206 true))
-                                     (in_range4 0
-                                     (to_base2 temp___expr_209))))
+                                     (in_range3 0
+                                     (us_split_discrs5
+                                     (to_base2 temp___expr_209)))))
 
 (define-fun default_initial_assumption2 ((temp___expr_211 us_rep4)
   (temp___skip_top_level_212 Bool)) Bool (and
@@ -668,11 +665,6 @@
                                            (us_split_fieldsqtmk5
                                            (rec__interrupt_priority__no_interrupt_needed_2__i
                                            (us_split_fields7 r)))))
-
-(define-fun in_range5 ((rec__interrupt_priority__no_interrupt_needed_2__c1 Int)
-  (a us_rep3)) Bool (= rec__interrupt_priority__no_interrupt_needed_2__c1 
-  (to_rep
-  (rec__interrupt_priority__no_interrupt_needed_2__c (us_split_discrs5 a)))))
 
 (declare-const value__size5 Int)
 
@@ -737,8 +729,9 @@
   (temp___do_toplevel_216 Bool)
   (temp___do_typ_inv_217 Bool)) Bool (=>
                                      (not (= temp___skip_constant_215 true))
-                                     (in_range5 98
-                                     (to_base3 temp___expr_218))))
+                                     (in_range3 98
+                                     (us_split_discrs5
+                                     (to_base3 temp___expr_218)))))
 
 (define-fun default_initial_assumption3 ((temp___expr_220 us_rep5)
   (temp___skip_top_level_221 Bool)) Bool (and
@@ -781,6 +774,10 @@
 
 (define-fun us_rep___split_fields__7__projection ((a us_rep6)) us_split_fields12 
   (us_split_fields13 a))
+
+(define-fun in_range4 ((rec__interrupt_priority__interrupt_needed_1__c1 Int)
+  (a us_split_discrs8)) Bool (= rec__interrupt_priority__interrupt_needed_1__c1 
+  (to_rep (rec__interrupt_priority__interrupt_needed_1__c a))))
 
 (declare-const value__size6 Int)
 
@@ -866,11 +863,6 @@
                                            (rec__interrupt_priority__interrupt_needed_1__i
                                            (us_split_fields13 r)))))
 
-(define-fun in_range6 ((rec__interrupt_priority__interrupt_needed_1__c1 Int)
-  (a us_rep6)) Bool (= rec__interrupt_priority__interrupt_needed_1__c1 
-  (to_rep
-  (rec__interrupt_priority__interrupt_needed_1__c (us_split_discrs9 a)))))
-
 (declare-const value__size7 Int)
 
 (declare-const object__size7 Int)
@@ -934,8 +926,9 @@
   (temp___do_toplevel_238 Bool)
   (temp___do_typ_inv_239 Bool)) Bool (=>
                                      (not (= temp___skip_constant_237 true))
-                                     (in_range6 98
-                                     (to_base4 temp___expr_240))))
+                                     (in_range4 98
+                                     (us_split_discrs9
+                                     (to_base4 temp___expr_240)))))
 
 (define-fun default_initial_assumption4 ((temp___expr_242 us_rep7)
   (temp___skip_top_level_243 Bool)) Bool (and

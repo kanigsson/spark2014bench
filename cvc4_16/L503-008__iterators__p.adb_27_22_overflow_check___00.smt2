@@ -241,6 +241,11 @@
                             (rec__p__my_lists__list (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range3 ((rec__p__my_lists__list__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__p__my_lists__list__capacity1 (to_rep
+                                                                 (rec__p__my_lists__list__capacity
+                                                                 a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -400,7 +405,7 @@
   (and (<= (- 2147483648) (element_typeqtint i))
   (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
@@ -424,7 +429,7 @@
   (temp___do_typ_inv_236 Bool)) Bool (=>
                                      (or (= temp___is_init_233 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range3 temp___expr_237)))
+                                     (in_range4 temp___expr_237)))
 
 (define-fun default_initial_assumption ((temp___expr_258 us_rep)
   (temp___skip_top_level_259 Bool)) Bool (= (to_rep
@@ -564,7 +569,8 @@
      (forall ((i us_rep))
      (=> (= (has_key result i) true)
      (and
-     (and (<= 1 (get1 result i)) (<= (get1 result i) (length1 container)))
+     (let ((temp___369 (get1 result i)))
+     (and (<= 1 temp___369) (<= temp___369 (length1 container))))
      (forall ((j us_rep))
      (=> (= (has_key result j) true)
      (=> (= (get1 result i) (get1 result j)) (= (bool_eq i j) true))))))))) :pattern (
@@ -586,7 +592,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range4 ((x1 Int)) Bool (and (<= 0 x1) (<= x1 2147483647)))
+(define-fun in_range5 ((x1 Int)) Bool (and (<= 0 x1) (<= x1 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -608,7 +614,7 @@
   (temp___do_toplevel_285 Bool)
   (temp___do_typ_inv_286 Bool)) Bool (=>
                                      (or (= temp___is_init_283 true)
-                                     (<= 0 2147483647)) (in_range4
+                                     (<= 0 2147483647)) (in_range5
                                      temp___expr_287)))
 
 ;; length__post_axiom
@@ -628,7 +634,7 @@
   (and (<= (- 2147483648) (element_typeqtint1 i))
   (<= (element_typeqtint1 i) 2147483647))))
 
-(define-fun in_range5 ((x1 Int)) Bool (and (<= (- 2147483648) x1)
+(define-fun in_range6 ((x1 Int)) Bool (and (<= (- 2147483648) x1)
                                       (<= x1 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
@@ -652,7 +658,7 @@
   (temp___do_typ_inv_279 Bool)) Bool (=>
                                      (or (= temp___is_init_276 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range5 temp___expr_280)))
+                                     (in_range6 temp___expr_280)))
 
 ;; get__post_axiom
   (assert
@@ -691,7 +697,7 @@
   (forall ((i element_type2))
   (and (<= 1 (element_typeqtint2 i)) (<= (element_typeqtint2 i) 2147483647))))
 
-(define-fun in_range6 ((x1 Int)) Bool (and (<= 1 x1) (<= x1 2147483647)))
+(define-fun in_range7 ((x1 Int)) Bool (and (<= 1 x1) (<= x1 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -713,7 +719,7 @@
   (temp___do_toplevel_307 Bool)
   (temp___do_typ_inv_308 Bool)) Bool (=>
                                      (or (= temp___is_init_305 true)
-                                     (<= 1 2147483647)) (in_range6
+                                     (<= 1 2147483647)) (in_range7
                                      temp___expr_309)))
 
 ;; get__post_axiom
@@ -795,14 +801,14 @@
   (=> (default_initial_assumption
   (us_repqtmk (us_split_fieldsqtmk c__split_fields)) false)
   (let ((o x))
-  (let ((temp___981 (first o)))
+  (let ((temp___988 (first o)))
   (=>
-  (ite (= (= (length1 o) 0) true) (= (bool_eq temp___981 no_element) true)
-  (and (= (has_element o temp___981) true)
-  (= (get1 (positions o) temp___981) 1)))
+  (ite (= (= (length1 o) 0) true) (= (bool_eq temp___988 no_element) true)
+  (and (= (has_element o temp___988) true)
+  (= (get1 (positions o) temp___988) 1)))
   (forall ((c__split_fields1 count_type))
   (=>
-  (= (us_split_fieldsqtmk c__split_fields1) (us_split_fields1 temp___981))
+  (= (us_split_fieldsqtmk c__split_fields1) (us_split_fields1 temp___988))
   (=>
   (not
   (= (bool_eq (us_repqtmk (us_split_fieldsqtmk c__split_fields1)) no_element) true))

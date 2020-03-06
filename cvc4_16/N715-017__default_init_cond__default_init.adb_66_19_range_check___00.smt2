@@ -159,6 +159,10 @@
                         (rec__default_init__discr__f (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range2 ((rec__default_init__discr__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__default_init__discr__b1 (rec__default_init__discr__b
+                                                            a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -261,6 +265,10 @@
                                                    (us_split_fields3 b))))))
                     true false))
 
+(define-fun in_range3 ((rec__default_init__mut_discr__b1 Bool)
+  (a us_split_discrs2)) Bool (= rec__default_init__mut_discr__b1 (rec__default_init__mut_discr__b
+                                                                 a)))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -316,10 +324,6 @@
 (((mut_discr__refqtmk (mut_discr__content us_rep1)))))
 (define-fun mut_discr__ref_mut_discr__content__projection ((a mut_discr__ref)) us_rep1 
   (mut_discr__content a))
-
-(define-fun in_range2 ((rec__default_init__discr__b1 Bool)
-  (a us_rep)) Bool (= rec__default_init__discr__b1 (rec__default_init__discr__b
-                                                   (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 
@@ -391,7 +395,7 @@
   (temp___do_typ_inv_300 Bool)) Bool (=>
                                      (not (= temp___skip_constant_298 true))
                                      (in_range2 (distinct 1 0)
-                                     temp___expr_301)))
+                                     (us_split_discrs1 temp___expr_301))))
 
 ;; temp___result_307'def
   (assert
@@ -414,10 +418,6 @@
                                          (not
                                          (= temp___skip_top_level_304 true))
                                          (= (discr_ok temp___expr_303) true))))
-
-(define-fun in_range3 ((rec__default_init__discr__b1 Bool)
-  (a us_rep)) Bool (= rec__default_init__discr__b1 (rec__default_init__discr__b
-                                                   (us_split_discrs1 a))))
 
 (declare-const value__size3 Int)
 
@@ -484,8 +484,8 @@
   (temp___do_toplevel_310 Bool)
   (temp___do_typ_inv_311 Bool)) Bool (=>
                                      (not (= temp___skip_constant_309 true))
-                                     (in_range3 (distinct 0 0)
-                                     temp___expr_312)))
+                                     (in_range2 (distinct 0 0)
+                                     (us_split_discrs1 temp___expr_312))))
 
 ;; temp___result_318'def
   (assert
@@ -542,10 +542,6 @@
                                          (not
                                          (= temp___skip_top_level_253 true))
                                          (= (mut_discr_ok temp___expr_252) true))))
-
-(define-fun in_range4 ((rec__default_init__mut_discr__b1 Bool)
-  (a us_rep1)) Bool (= rec__default_init__mut_discr__b1 (rec__default_init__mut_discr__b
-                                                        (us_split_discrs3 a))))
 
 (declare-const value__size4 Int)
 
@@ -614,8 +610,8 @@
   (temp___do_toplevel_321 Bool)
   (temp___do_typ_inv_322 Bool)) Bool (=>
                                      (not (= temp___skip_constant_320 true))
-                                     (in_range4 (distinct 0 0)
-                                     temp___expr_323)))
+                                     (in_range3 (distinct 0 0)
+                                     (us_split_discrs3 temp___expr_323))))
 
 ;; temp___result_328'def
   (assert (init__function_guard (init 0) 0))
@@ -642,10 +638,6 @@
                                          (not
                                          (= temp___skip_top_level_326 true))
                                          (= (mut_discr_ok temp___expr_325) true))))
-
-(define-fun in_range5 ((rec__default_init__mut_discr__b1 Bool)
-  (a us_rep1)) Bool (= rec__default_init__mut_discr__b1 (rec__default_init__mut_discr__b
-                                                        (us_split_discrs3 a))))
 
 (declare-const value__size5 Int)
 
@@ -714,8 +706,8 @@
   (temp___do_toplevel_333 Bool)
   (temp___do_typ_inv_334 Bool)) Bool (=>
                                      (not (= temp___skip_constant_332 true))
-                                     (in_range5 (distinct 1 0)
-                                     temp___expr_335)))
+                                     (in_range3 (distinct 1 0)
+                                     (us_split_discrs3 temp___expr_335))))
 
 ;; temp___result_340'def
   (assert (init__function_guard (init 0) 0))

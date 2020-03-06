@@ -293,24 +293,24 @@
 ;; defqtvc
  ;; File "p.ads", line 35, characters 0-0
   (not
-  (forall ((a (Array Int positive)) (temp___324 Int) (temp___325 Int) (i Int)
+  (forall ((a (Array Int positive)) (temp___327 Int) (temp___328 Int) (i Int)
   (a1 (Array Int positive)) (i1 Int))
   (=> (dynamic_property 1 2147483647 (to_rep1 a__first) (to_rep1 a__last))
-  (=> (= (to_rep1 a__first) temp___324)
-  (=> (= (to_rep1 a__last) temp___325)
-  (=> (= i temp___324)
+  (=> (= (to_rep1 a__first) temp___327)
+  (=> (= (to_rep1 a__last) temp___328)
+  (=> (= i temp___327)
   (=>
-  (= (and (ite (<= temp___324 i) true false) (ite (<= i temp___325) true
+  (= (and (ite (<= temp___327 i) true false) (ite (<= i temp___328) true
                                              false)) true)
   (=>
-  (= (and (ite (forall ((temp___328 Int))
+  (= (and (ite (forall ((temp___331 Int))
                (=>
-               (and (<= (to_rep1 a__first) temp___328)
-               (<= temp___328 (to_rep1 a__last)))
+               (and (<= (to_rep1 a__first) temp___331)
+               (<= temp___331 (to_rep1 a__last)))
                (=>
-               (or (< temp___325 temp___328)
-               (or (< temp___328 temp___324) (<= i1 temp___328)))
-               (= (select a1 temp___328) (select a temp___328)))))
+               (or (< temp___328 temp___331)
+               (or (< temp___331 temp___327) (<= i1 temp___331)))
+               (= (select a1 temp___331) (select a temp___331)))))
           true false) (ite (and (<= (to_rep1 a__first) i1)
                            (<= i1 (to_rep1 a__last)))
                       true false)) true)

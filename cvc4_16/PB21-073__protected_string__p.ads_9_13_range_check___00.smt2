@@ -310,6 +310,9 @@
 (define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun in_range3 ((rec__p__pt__x1 Int)
+  (a us_split_discrs)) Bool (= rec__p__pt__x1 (to_rep (rec__p__pt__x a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -390,10 +393,6 @@
                                          (us_split_fieldsqtmk1
                                          (rec__p__pt__s (us_split_fields1 r)))))
 
-(define-fun in_range3 ((rec__p__pt__x1 Int)
-  (a us_rep)) Bool (= rec__p__pt__x1 (to_rep
-                                     (rec__p__pt__x (us_split_discrs1 a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -463,7 +462,9 @@
   (temp___do_typ_inv_188 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_186 true))
-                                     (in_range3 3 (to_base temp___expr_189)))
+                                     (in_range3 3
+                                     (us_split_discrs1
+                                     (to_base temp___expr_189))))
                                      (let ((temp___190 (rec__p__pt__x
                                                        (us_split_discrs2
                                                        temp___expr_189))))

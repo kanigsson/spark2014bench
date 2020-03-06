@@ -69,22 +69,14 @@
 (define-fun integer__ref_integer__content__projection ((a integer__ref)) integer 
   (integer__content a))
 
-(declare-const e1 Int)
+(declare-sort natural 0)
 
-(declare-const attr__ATTRIBUTE_ADDRESS Int)
+(declare-fun naturalqtint (natural) Int)
 
-(declare-const e2 Int)
-
-(declare-const attr__ATTRIBUTE_ADDRESS1 Int)
-
-(declare-sort element 0)
-
-(declare-fun elementqtint (element) Int)
-
-;; element'axiom
+;; natural'axiom
   (assert
-  (forall ((i element))
-  (and (<= 0 (elementqtint i)) (<= (elementqtint i) 2147483647))))
+  (forall ((i natural))
+  (and (<= 0 (naturalqtint i)) (<= (naturalqtint i) 2147483647))))
 
 (define-fun in_range1 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
@@ -94,22 +86,29 @@
 
 (declare-fun attr__ATTRIBUTE_VALUE1 (us_image) Int)
 
-(declare-fun user_eq1 (element element) Bool)
+(declare-fun user_eq1 (natural natural) Bool)
 
-(declare-const dummy1 element)
+(declare-const dummy1 natural)
 
-(declare-datatypes ((element__ref 0))
-(((element__refqtmk (element__content element)))))
-(define-fun element__ref_element__content__projection ((a element__ref)) element 
-  (element__content a))
+(declare-datatypes ((natural__ref 0))
+(((natural__refqtmk (natural__content natural)))))
+(define-fun natural__ref_natural__content__projection ((a natural__ref)) natural 
+  (natural__content a))
 
-(define-fun dynamic_invariant ((temp___expr_161 Int)
-  (temp___is_init_157 Bool) (temp___skip_constant_158 Bool)
-  (temp___do_toplevel_159 Bool)
-  (temp___do_typ_inv_160 Bool)) Bool (=>
-                                     (or (= temp___is_init_157 true)
-                                     (<= 0 2147483647)) (in_range1
-                                     temp___expr_161)))
+(define-fun dynamic_invariant ((temp___expr_39 Int) (temp___is_init_35 Bool)
+  (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
+  (temp___do_typ_inv_38 Bool)) Bool (=>
+                                    (or (= temp___is_init_35 true)
+                                    (<= 0 2147483647)) (in_range1
+                                    temp___expr_39)))
+
+(declare-const e1 Int)
+
+(declare-const attr__ATTRIBUTE_ADDRESS Int)
+
+(declare-const e2 Int)
+
+(declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
 (define-fun dynamic_invariant1 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)

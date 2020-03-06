@@ -126,6 +126,30 @@
 (define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun to_rep ((x any_priority)) Int (any_priorityqtint x))
+
+(declare-fun of_rep (Int) any_priority)
+
+;; inversion_axiom
+  (assert
+  (forall ((x any_priority))
+  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x any_priority)) (! (in_range1
+  (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range1 x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                            (of_rep x))) )))
+
+(define-fun in_range2 ((rec__interrupt_priority__interrupt_needed_1__c1 Int)
+  (a us_split_discrs)) Bool (= rec__interrupt_priority__interrupt_needed_1__c1 
+  (to_rep (rec__interrupt_priority__interrupt_needed_1__c a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -210,31 +234,6 @@
                                          (rec__interrupt_priority__interrupt_needed_1__i
                                          (us_split_fields1 r)))))
 
-(define-fun to_rep ((x any_priority)) Int (any_priorityqtint x))
-
-(declare-fun of_rep (Int) any_priority)
-
-;; inversion_axiom
-  (assert
-  (forall ((x any_priority))
-  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
-
-;; range_axiom
-  (assert
-  (forall ((x any_priority)) (! (in_range1
-  (to_rep x)) :pattern ((to_rep x)) )))
-
-;; coerce_axiom
-  (assert
-  (forall ((x Int))
-  (! (=> (in_range1 x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
-                                                            (of_rep x))) )))
-
-(define-fun in_range2 ((rec__interrupt_priority__interrupt_needed_1__c1 Int)
-  (a us_rep)) Bool (= rec__interrupt_priority__interrupt_needed_1__c1 
-  (to_rep
-  (rec__interrupt_priority__interrupt_needed_1__c (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -317,7 +316,9 @@
   (temp___do_toplevel_190 Bool)
   (temp___do_typ_inv_191 Bool)) Bool (=>
                                      (not (= temp___skip_constant_189 true))
-                                     (in_range2 0 (to_base temp___expr_192))))
+                                     (in_range2 0
+                                     (us_split_discrs1
+                                     (to_base temp___expr_192)))))
 
 (define-fun default_initial_assumption ((temp___expr_194 us_rep1)
   (temp___skip_top_level_195 Bool)) Bool (and

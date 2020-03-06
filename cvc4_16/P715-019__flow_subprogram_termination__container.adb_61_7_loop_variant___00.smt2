@@ -402,10 +402,10 @@
   (forall ((c us_rep))
   (forall ((p us_rep1))
   (! (= (= (has_element c p) true)
-     (and
-     (<= 1 (to_rep1 (rec__container__cursor__index (us_split_fields3 p))))
-     (<= (to_rep1 (rec__container__cursor__index (us_split_fields3 p))) 200))) :pattern (
-  (has_element c p)) ))))
+     (let ((temp___209 (to_rep1
+                       (rec__container__cursor__index (us_split_fields3 p)))))
+     (and (<= 1 temp___209) (<= temp___209 200)))) :pattern ((has_element c
+                                                             p)) ))))
 
 (declare-fun next (us_rep us_rep1) us_rep1)
 
@@ -457,9 +457,9 @@
   (forall ((c us_rep))
   (forall ((p us_rep1))
   (! (= (element c p) (to_rep
-                      (let ((temp___217 (rec__container__container__a
+                      (let ((temp___219 (rec__container__container__a
                                         (us_split_fields1 c))))
-                      (select temp___217 (to_rep1
+                      (select temp___219 (to_rep1
                                          (rec__container__cursor__index
                                          (us_split_fields3 p))))))) :pattern (
   (element c p)) ))))
@@ -587,10 +587,10 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___268 Int))
-  (=> (dynamic_invariant4 temp___268 true true true true)
-  (forall ((temp___269 Int))
-  (= (select (container__arr__aggregate_def temp___268) temp___269) rliteral2)))))
+  (forall ((temp___270 Int))
+  (=> (dynamic_invariant4 temp___270 true true true true)
+  (forall ((temp___271 Int))
+  (= (select (container__arr__aggregate_def temp___270) temp___271) rliteral2)))))
 
 (declare-sort count 0)
 
@@ -618,13 +618,13 @@
 (define-fun count__ref_count__content__projection ((a count__ref)) count 
   (count__content a))
 
-(define-fun dynamic_invariant5 ((temp___expr_222 Int)
-  (temp___is_init_218 Bool) (temp___skip_constant_219 Bool)
-  (temp___do_toplevel_220 Bool)
-  (temp___do_typ_inv_221 Bool)) Bool (=>
-                                     (or (= temp___is_init_218 true)
+(define-fun dynamic_invariant5 ((temp___expr_224 Int)
+  (temp___is_init_220 Bool) (temp___skip_constant_221 Bool)
+  (temp___do_toplevel_222 Bool)
+  (temp___do_typ_inv_223 Bool)) Bool (=>
+                                     (or (= temp___is_init_220 true)
                                      (<= 0 2147483647)) (in_range6
-                                     temp___expr_222)))
+                                     temp___expr_224)))
 
 ;; line_length__post_axiom
   (assert
@@ -718,10 +718,10 @@
   (= (and (ite (and (dynamic_invariant1 r1 true true true true)
                (dynamic_invariant2 i1 true true true true))
           true false) (ite (< i1 10) true false)) true)
-  (forall ((temp___231 Int))
-  (=> (= temp___231 i1)
-  (forall ((temp___230 Int))
-  (=> (= temp___230 r1)
+  (forall ((temp___233 Int))
+  (=> (= temp___233 i1)
+  (forall ((temp___232 Int))
+  (=> (= temp___232 r1)
   (let ((o1 (- r1 i1)))
   (=> (in_range4 o1)
   (forall ((r2 Int))
@@ -731,5 +731,5 @@
   (forall ((i2 Int))
   (=> (= i2 o2)
   (=> (< i2 10)
-  (or (< temp___231 i2) (and (= i2 temp___231) (< r2 temp___230))))))))))))))))))))))))))))))))))))))
+  (or (< temp___233 i2) (and (= i2 temp___233) (< r2 temp___232))))))))))))))))))))))))))))))))))))))
 (check-sat)

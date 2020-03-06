@@ -393,6 +393,10 @@
                                                    (us_split_fields1 b))))))))
                    true false))
 
+(define-fun in_range6 ((rec__relaxed_initialization__rec__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__relaxed_initialization__rec__d1 (rec__relaxed_initialization__rec__d
+                                                                    a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -555,11 +559,6 @@
   (= (bool_eq (select a temp___idx_154)
      (select b (+ (- b__first a__first) temp___idx_154))) true))))))))
 
-(define-fun in_range6 ((rec__relaxed_initialization__rec__d1 Bool)
-  (a us_rep)) Bool (= rec__relaxed_initialization__rec__d1 (rec__relaxed_initialization__rec__d
-                                                           (us_split_discrs1
-                                                           a))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -660,7 +659,7 @@
   (temp___do_typ_inv_267 Bool)) Bool (=>
                                      (not (= temp___skip_constant_265 true))
                                      (in_range6 (distinct 1 0)
-                                     temp___expr_268)))
+                                     (us_split_discrs1 temp___expr_268))))
 
 (define-fun default_initial_assumption1 ((temp___expr_270 us_rep)
   (temp___skip_top_level_271 Bool)) Bool (and
@@ -687,11 +686,6 @@
                                             (rec__relaxed_initialization__rec__y
                                             (us_split_fields1
                                             temp___expr_270))) false)))))
-
-(define-fun in_range7 ((rec__relaxed_initialization__rec__d1 Bool)
-  (a us_rep)) Bool (= rec__relaxed_initialization__rec__d1 (rec__relaxed_initialization__rec__d
-                                                           (us_split_discrs1
-                                                           a))))
 
 (declare-const value__size2 Int)
 
@@ -792,8 +786,8 @@
   (temp___do_toplevel_278 Bool)
   (temp___do_typ_inv_279 Bool)) Bool (=>
                                      (not (= temp___skip_constant_277 true))
-                                     (in_range7 (distinct 0 0)
-                                     temp___expr_280)))
+                                     (in_range6 (distinct 0 0)
+                                     (us_split_discrs1 temp___expr_280))))
 
 (define-fun default_initial_assumption2 ((temp___expr_282 us_rep)
   (temp___skip_top_level_283 Bool)) Bool (and
@@ -904,7 +898,7 @@
   (assert
   (forall ((i t25b)) (and (<= 1 (t25bqtint i)) (<= (t25bqtint i) 5))))
 
-(define-fun in_range8 ((x Int)) Bool (and (<= 1 x) (<= x 5)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 5)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 

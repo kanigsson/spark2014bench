@@ -590,52 +590,52 @@
                                      (rec__camera_types__blob_type__height
                                      (us_split_fields1 temp___expr_207))) 2))))))
 
-(define-fun default_initial_assumption ((temp___expr_209 us_rep)
-  (temp___skip_top_level_210 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_211 us_rep)
+  (temp___skip_top_level_212 Bool)) Bool (and
                                          (and
                                          (= (to_rep
                                             (rec__camera_types__blob_type__signature
                                             (us_split_fields1
-                                            temp___expr_209))) 0)
+                                            temp___expr_211))) 0)
                                          (= (to_rep1
                                             (rec__camera_types__blob_type__x
                                             (us_split_fields1
-                                            temp___expr_209))) 0))
+                                            temp___expr_211))) 0))
                                          (and
                                          (and
                                          (= (to_rep2
                                             (rec__camera_types__blob_type__y
                                             (us_split_fields1
-                                            temp___expr_209))) 0)
+                                            temp___expr_211))) 0)
                                          (= (to_rep3
                                             (rec__camera_types__blob_type__width
                                             (us_split_fields1
-                                            temp___expr_209))) 0))
+                                            temp___expr_211))) 0))
                                          (= (to_rep4
                                             (rec__camera_types__blob_type__height
                                             (us_split_fields1
-                                            temp___expr_209))) 0))))
+                                            temp___expr_211))) 0))))
 
-(define-fun dynamic_predicate ((temp___211 us_rep)) Bool (and (in_range2
+(define-fun dynamic_predicate ((temp___213 us_rep)) Bool (and (in_range2
                                                          (+ (to_rep1
                                                             (rec__camera_types__blob_type__x
                                                             (us_split_fields1
-                                                            temp___211))) 
+                                                            temp___213))) 
                                                          (div1
                                                          (to_rep3
                                                          (rec__camera_types__blob_type__width
                                                          (us_split_fields1
-                                                         temp___211))) 2)))
+                                                         temp___213))) 2)))
                                                          (in_range3
                                                          (+ (to_rep2
                                                             (rec__camera_types__blob_type__y
                                                             (us_split_fields1
-                                                            temp___211))) 
+                                                            temp___213))) 
                                                          (div1
                                                          (to_rep4
                                                          (rec__camera_types__blob_type__height
                                                          (us_split_fields1
-                                                         temp___211))) 2)))))
+                                                         temp___213))) 2)))))
 
 (define-fun dynamic_invariant1 ((temp___expr_165 Int)
   (temp___is_init_161 Bool) (temp___skip_constant_162 Bool)

@@ -255,16 +255,16 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((t__ref 0))
-(((t__refqtmk (t__content us_rep)))))
-(define-fun t__ref_t__content__4__projection ((a t__ref)) us_rep (t__content
-                                                                 a))
+(declare-datatypes ((t2__ref 0))
+(((t2__refqtmk (t2__content us_rep)))))
+(define-fun t2__ref_t2__content__2__projection ((a t2__ref)) us_rep (t2__content
+                                                                    a))
 
 (declare-const us_tag1 Int)
 
 (define-fun in_range3 ((rec__private_types__p4__t__d1 Bool)
-  (a us_rep)) Bool (= rec__private_types__p4__t__d1 (rec__private_types__p4__t__d
-                                                    (us_split_discrs1 a))))
+  (a us_split_discrs)) Bool (= rec__private_types__p4__t__d1 (rec__private_types__p4__t__d
+                                                             a)))
 
 (declare-const value__size1 Int)
 
@@ -317,10 +317,10 @@
 
 (declare-const dummy3 us_rep)
 
-(declare-datatypes ((t2__ref 0))
-(((t2__refqtmk (t2__content us_rep)))))
-(define-fun t2__ref_t2__content__2__projection ((a t2__ref)) us_rep (t2__content
-                                                                    a))
+(declare-datatypes ((t__ref 0))
+(((t__refqtmk (t__content us_rep)))))
+(define-fun t__ref_t__content__4__projection ((a t__ref)) us_rep (t__content
+                                                                 a))
 
 (declare-const x__split_discrs us_split_discrs)
 
@@ -334,7 +334,7 @@
   (temp___do_typ_inv_220 Bool)) Bool (=>
                                      (not (= temp___skip_constant_218 true))
                                      (in_range3 (distinct 1 0)
-                                     temp___expr_221)))
+                                     (us_split_discrs1 temp___expr_221))))
 
 ;; temp___result_226'def
   (assert (id__function_guard (id 0) 0))
@@ -342,7 +342,7 @@
 (define-fun default_initial_assumption ((temp___expr_223 us_rep)
   (temp___skip_top_level_224 Bool)) Bool (and
                                          (= (attr__tag temp___expr_223) 
-                                         us_tag1)
+                                         us_tag)
                                          (and
                                          (= (rec__private_types__p4__t__d
                                             (us_split_discrs1

@@ -552,6 +552,10 @@
                             (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range4 ((rec__communications__communication__num1 Int)
+  (a us_split_discrs)) Bool (= rec__communications__communication__num1 
+  (to_rep (rec__communications__communication__num a))))
+
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -616,7 +620,7 @@
   (assert
   (forall ((i tdayP1)) (and (<= 1 (tdayP1qtint i)) (<= (tdayP1qtint i) 10))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 

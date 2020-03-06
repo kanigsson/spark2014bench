@@ -136,6 +136,10 @@
                         (rec__member_alt__my_rec__f (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range2 ((rec__member_alt__my_rec__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__member_alt__my_rec__d1 (rec__member_alt__my_rec__d
+                                                           a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -226,10 +230,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
 
-(define-fun in_range2 ((rec__member_alt__my_rec__d1 Bool)
-  (a us_rep)) Bool (= rec__member_alt__my_rec__d1 (rec__member_alt__my_rec__d
-                                                  (us_split_discrs1 a))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -286,10 +286,6 @@
 (define-fun t19b__ref_t19b__content__projection ((a t19b__ref)) us_rep 
   (t19b__content a))
 
-(define-fun in_range3 ((rec__member_alt__my_rec__d1 Bool)
-  (a us_rep)) Bool (= rec__member_alt__my_rec__d1 (rec__member_alt__my_rec__d
-                                                  (us_split_discrs1 a))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -345,10 +341,6 @@
 (((t20b__refqtmk (t20b__content us_rep)))))
 (define-fun t20b__ref_t20b__content__projection ((a t20b__ref)) us_rep 
   (t20b__content a))
-
-(define-fun in_range4 ((rec__member_alt__my_rec__d1 Bool)
-  (a us_rep)) Bool (= rec__member_alt__my_rec__d1 (rec__member_alt__my_rec__d
-                                                  (us_split_discrs1 a))))
 
 (declare-const value__size3 Int)
 

@@ -374,6 +374,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range5 ((rec__test_bounds__my_t__x1 Int)
+  (a us_split_discrs)) Bool (= rec__test_bounds__my_t__x1 (to_rep
+                                                          (rec__test_bounds__my_t__x
+                                                          a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -496,7 +501,7 @@
   (forall ((i tT20bP1))
   (and (<= 1 (tT20bP1qtint i)) (<= (tT20bP1qtint i) 10))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -582,11 +587,6 @@
                             (rec__test_bounds__my_t__content1
                             (us_split_fields3 b)) 1 10) true))
                     true false))
-
-(define-fun in_range6 ((rec__test_bounds__my_t__x1 Int)
-  (a us_rep)) Bool (= rec__test_bounds__my_t__x1 (to_rep
-                                                 (rec__test_bounds__my_t__x
-                                                 (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 

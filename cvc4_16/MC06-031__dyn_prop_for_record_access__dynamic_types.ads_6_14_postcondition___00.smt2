@@ -545,18 +545,15 @@
      (=>
      (and (<= from i)
      (<= i (to_rep1
-           (let ((temp___205 (rec__dynamic_types__search__result_type__from
+           (let ((temp___206 (rec__dynamic_types__search__result_type__from
                              (us_split_fields1 result))))
-           (select temp___205 1)))))
+           (select temp___206 1)))))
      (not (= (to_rep (select (to_array a) i)) c)))))
      (and
-     (and
-     (<= (first1 a) (to_rep
-                    (rec__dynamic_types__search__result_type__result
-                    (us_split_fields1 result))))
-     (<= (to_rep
-         (rec__dynamic_types__search__result_type__result
-         (us_split_fields1 result))) (last1 a)))
+     (let ((temp___207 (to_rep
+                       (rec__dynamic_types__search__result_type__result
+                       (us_split_fields1 result)))))
+     (and (<= (first1 a) temp___207) (<= temp___207 (last1 a))))
      (= (to_rep
         (select (to_array a) (to_rep
                              (rec__dynamic_types__search__result_type__result
@@ -631,10 +628,10 @@
   (=> (dynamic_invariant c true false true true)
   (=> (<= (first1 a) (last1 a))
   (=>
-  (let ((temp___207 (first1 a)))
-  (and (dynamic_property1 first2 last2 temp___207)
+  (let ((temp___209 (first1 a)))
+  (and (dynamic_property1 first2 last2 temp___209)
   (exists ((from Int))
-  (and (= from temp___207)
+  (and (= from temp___209)
   (and (dynamic_invariant3 from true false true true)
   (and (dynamic_invariant result__ false false true true)
   (and (dynamic_invariant1 (us_repqtmk tmp__split_fields) false false true
@@ -651,36 +648,33 @@
   result__1 false true true true)) (dynamic_invariant1
   (us_repqtmk tmp__split_fields1) false true true true))
   (and (in_range2 from1)
-  (let ((temp___210 (search_range from1)))
+  (let ((temp___212 (search_range from1)))
   (and
-  (and (search_range__function_guard temp___210 from1)
-  (and (dynamic_invariant1 temp___210 true false true true)
+  (and (search_range__function_guard temp___212 from1)
+  (and (dynamic_invariant1 temp___212 true false true true)
   (or
   (and
   (= (to_rep
      (rec__dynamic_types__search__result_type__result
-     (us_split_fields1 temp___210))) 0)
+     (us_split_fields1 temp___212))) 0)
   (forall ((i Int))
   (=>
   (and (<= from1 i)
   (<= i (to_rep1
         (select (rec__dynamic_types__search__result_type__from
-                (us_split_fields1 temp___210)) 1))))
+                (us_split_fields1 temp___212)) 1))))
   (not (= (to_rep (select (to_array a) i)) c)))))
   (and
-  (and
-  (<= (first1 a) (to_rep
-                 (rec__dynamic_types__search__result_type__result
-                 (us_split_fields1 temp___210))))
-  (<= (to_rep
-      (rec__dynamic_types__search__result_type__result
-      (us_split_fields1 temp___210))) (last1 a)))
+  (let ((temp___205 (to_rep
+                    (rec__dynamic_types__search__result_type__result
+                    (us_split_fields1 temp___212)))))
+  (and (<= (first1 a) temp___205) (<= temp___205 (last1 a))))
   (= (to_rep
      (select (to_array a) (to_rep
                           (rec__dynamic_types__search__result_type__result
-                          (us_split_fields1 temp___210))))) c)))))
+                          (us_split_fields1 temp___212))))) c)))))
   (exists ((tmp__split_fields2 us_split_fields))
-  (and (= tmp__split_fields2 (us_split_fields1 temp___210))
+  (and (= tmp__split_fields2 (us_split_fields1 temp___212))
   (exists ((o Int))
   (and
   (= (to_rep

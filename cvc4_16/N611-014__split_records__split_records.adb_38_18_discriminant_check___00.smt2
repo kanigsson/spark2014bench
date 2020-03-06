@@ -145,6 +145,10 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range2 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
+  (a us_split_discrs)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
+  (rec__split_records__record_with_mutable_discrs__present a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -209,11 +213,6 @@
   (temp___skip_top_level_165 Bool)) Bool (= (rec__split_records__record_with_mutable_discrs__present
                                             (us_split_discrs1
                                             temp___expr_164)) (distinct 0 0)))
-
-(define-fun in_range2 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size1 Int)
 
@@ -287,7 +286,7 @@
   (temp___do_typ_inv_198 Bool)) Bool (=>
                                      (not (= temp___skip_constant_196 true))
                                      (in_range2 (distinct 0 0)
-                                     temp___expr_199)))
+                                     (us_split_discrs1 temp___expr_199))))
 
 (define-fun default_initial_assumption1 ((temp___expr_201 us_rep)
   (temp___skip_top_level_202 Bool)) Bool (= (rec__split_records__record_with_mutable_discrs__present
@@ -297,11 +296,6 @@
 (declare-const c2__attr__constrained Bool)
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
-
-(define-fun in_range3 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 
@@ -405,6 +399,10 @@
                             (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range3 ((rec__split_records__holder__present1 Bool)
+  (a us_split_discrs2)) Bool (= rec__split_records__holder__present1 
+  (rec__split_records__holder__present a)))
+
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -460,11 +458,6 @@
 (((holder__refqtmk (holder__content us_rep1)))))
 (define-fun holder__ref_holder__content__projection ((a holder__ref)) us_rep1 
   (holder__content a))
-
-(define-fun in_range4 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size4 Int)
 
@@ -568,11 +561,6 @@
                             (us_split_fields5 b))) true))
                     true false))
 
-(define-fun in_range5 ((rec__split_records__holder__present1 Bool)
-  (a us_rep1)) Bool (= rec__split_records__holder__present1 (rec__split_records__holder__present
-                                                            (us_split_discrs3
-                                                            a))))
-
 (declare-const value__size5 Int)
 
 (declare-const object__size5 Int)
@@ -639,11 +627,13 @@
   (temp___do_typ_inv_208 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_206 true))
-                                     (in_range5 (distinct 0 0)
-                                     (to_base temp___expr_209))) (in_range4
+                                     (in_range3 (distinct 0 0)
+                                     (us_split_discrs3
+                                     (to_base temp___expr_209)))) (in_range2
                                      (distinct 0 0)
+                                     (us_split_discrs1
                                      (rec__split_records__holder__content1
-                                     (us_split_fields5 temp___expr_209)))))
+                                     (us_split_fields5 temp___expr_209))))))
 
 (define-fun default_initial_assumption2 ((temp___expr_212 us_rep2)
   (temp___skip_top_level_213 Bool)) Bool (and
@@ -778,11 +768,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS4 Int)
 
-(define-fun in_range6 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
-
 (declare-const value__size7 Int)
 
 (declare-const object__size7 Int)
@@ -847,11 +832,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS5 Int)
 
-(define-fun in_range7 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
-
 (declare-const value__size8 Int)
 
 (declare-const object__size8 Int)
@@ -915,11 +895,6 @@
 (declare-const c4 us_rep)
 
 (declare-const attr__ATTRIBUTE_ADDRESS6 Int)
-
-(define-fun in_range8 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size9 Int)
 
@@ -1023,11 +998,6 @@
                             (us_split_fields9 b))) true))
                     true false))
 
-(define-fun in_range9 ((rec__split_records__holder__present1 Bool)
-  (a us_rep1)) Bool (= rec__split_records__holder__present1 (rec__split_records__holder__present
-                                                            (us_split_discrs3
-                                                            a))))
-
 (declare-const value__size10 Int)
 
 (declare-const object__size10 Int)
@@ -1096,11 +1066,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS9 Int)
 
-(define-fun in_range10 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
-
 (declare-const value__size11 Int)
 
 (declare-const object__size11 Int)
@@ -1160,11 +1125,6 @@
 (((t4b__refqtmk (t4b__content us_rep)))))
 (define-fun t4b__ref_t4b__content__projection ((a t4b__ref)) us_rep (t4b__content
                                                                     a))
-
-(define-fun in_range11 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size12 Int)
 
@@ -1268,11 +1228,6 @@
                             (us_split_fields11 b))) true))
                     true false))
 
-(define-fun in_range12 ((rec__split_records__holder__present1 Bool)
-  (a us_rep1)) Bool (= rec__split_records__holder__present1 (rec__split_records__holder__present
-                                                            (us_split_discrs3
-                                                            a))))
-
 (declare-const value__size13 Int)
 
 (declare-const object__size13 Int)
@@ -1328,11 +1283,6 @@
 (((t6b__refqtmk (t6b__content us_rep5)))))
 (define-fun t6b__ref_t6b__content__projection ((a t6b__ref)) us_rep5 
   (t6b__content a))
-
-(define-fun in_range13 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size14 Int)
 
@@ -1393,11 +1343,6 @@
 (((t8b__refqtmk (t8b__content us_rep)))))
 (define-fun t8b__ref_t8b__content__projection ((a t8b__ref)) us_rep (t8b__content
                                                                     a))
-
-(define-fun in_range14 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size15 Int)
 
@@ -1468,7 +1413,7 @@
   (assert
   (forall ((i tTaSP1)) (and (<= 1 (tTaSP1qtint i)) (<= (tTaSP1qtint i) 1))))
 
-(define-fun in_range15 ((x Int)) Bool (and (<= 1 x) (<= x 1)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -1493,11 +1438,6 @@
                                          (= (rec__split_records__record_with_mutable_discrs__present
                                             (us_split_discrs1
                                             (select temp___expr_225 temp___227))) (distinct 0 0)))))
-
-(define-fun in_range16 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size16 Int)
 
@@ -1565,18 +1505,13 @@
   (temp___do_toplevel_233 Bool)
   (temp___do_typ_inv_234 Bool)) Bool (=>
                                      (not (= temp___skip_constant_232 true))
-                                     (in_range6 (distinct 0 0)
-                                     temp___expr_235)))
+                                     (in_range2 (distinct 0 0)
+                                     (us_split_discrs1 temp___expr_235))))
 
 (define-fun default_initial_assumption5 ((temp___expr_237 us_rep)
   (temp___skip_top_level_238 Bool)) Bool (= (rec__split_records__record_with_mutable_discrs__present
                                             (us_split_discrs1
                                             temp___expr_237)) (distinct 0 0)))
-
-(define-fun in_range17 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size17 Int)
 
@@ -1645,11 +1580,13 @@
   (temp___do_typ_inv_244 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_242 true))
-                                     (in_range9 (distinct 0 0)
-                                     (to_base1 temp___expr_245))) (in_range8
+                                     (in_range3 (distinct 0 0)
+                                     (us_split_discrs3
+                                     (to_base1 temp___expr_245)))) (in_range2
                                      (distinct 0 0)
+                                     (us_split_discrs1
                                      (rec__split_records__holder__content2
-                                     (us_split_fields9 temp___expr_245)))))
+                                     (us_split_fields9 temp___expr_245))))))
 
 (define-fun default_initial_assumption6 ((temp___expr_248 us_rep4)
   (temp___skip_top_level_249 Bool)) Bool (and
@@ -1661,11 +1598,6 @@
                                             (rec__split_records__holder__content2
                                             (us_split_fields9
                                             temp___expr_248)))) (distinct 0 0))))
-
-(define-fun in_range18 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size18 Int)
 
@@ -1770,11 +1702,6 @@
                             (us_split_fields13 b))) true))
                     true false))
 
-(define-fun in_range19 ((rec__split_records__holder__present1 Bool)
-  (a us_rep1)) Bool (= rec__split_records__holder__present1 (rec__split_records__holder__present
-                                                            (us_split_discrs3
-                                                            a))))
-
 (declare-const value__size19 Int)
 
 (declare-const object__size19 Int)
@@ -1830,11 +1757,6 @@
 (((t16b__refqtmk (t16b__content us_rep6)))))
 (define-fun t16b__ref_t16b__content__projection ((a t16b__ref)) us_rep6 
   (t16b__content a))
-
-(define-fun in_range20 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size20 Int)
 
@@ -1896,11 +1818,6 @@
 (((t18b__refqtmk (t18b__content us_rep)))))
 (define-fun t18b__ref_t18b__content__projection ((a t18b__ref)) us_rep 
   (t18b__content a))
-
-(define-fun in_range21 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size21 Int)
 
@@ -1972,7 +1889,7 @@
   (forall ((i tTa2SP1))
   (and (<= 1 (tTa2SP1qtint i)) (<= (tTa2SP1qtint i) 1))))
 
-(define-fun in_range22 ((x Int)) Bool (and (<= 1 x) (<= x 1)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -1997,11 +1914,6 @@
                                          (= (rec__split_records__record_with_mutable_discrs__present
                                             (us_split_discrs1
                                             (select temp___expr_261 temp___263))) (distinct 0 0)))))
-
-(define-fun in_range23 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size22 Int)
 
@@ -2066,11 +1978,6 @@
 
 (declare-fun split_records__test__a2__aggregate_def (us_rep) (Array Int us_rep))
 
-(define-fun in_range24 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
-
 (declare-const value__size23 Int)
 
 (declare-const object__size23 Int)
@@ -2131,11 +2038,6 @@
 (((t23b__refqtmk (t23b__content us_rep)))))
 (define-fun t23b__ref_t23b__content__projection ((a t23b__ref)) us_rep 
   (t23b__content a))
-
-(define-fun in_range25 ((rec__split_records__record_with_mutable_discrs__present1 Bool)
-  (a us_rep)) Bool (= rec__split_records__record_with_mutable_discrs__present1 
-  (rec__split_records__record_with_mutable_discrs__present
-  (us_split_discrs1 a))))
 
 (declare-const value__size24 Int)
 
@@ -2209,8 +2111,8 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___285 us_rep))
-  (= (select (split_records__test__a__aggregate_def temp___285) 1) temp___285)))
+  (forall ((temp___287 us_rep))
+  (= (select (split_records__test__a__aggregate_def temp___287) 1) temp___287)))
 
 ;; c3__def_axiom
   (assert
@@ -2251,9 +2153,10 @@
 
 (define-fun dynamic_invariant5 ((temp___expr_183 us_rep1)
   (temp___is_init_179 Bool) (temp___skip_constant_180 Bool)
-  (temp___do_toplevel_181 Bool) (temp___do_typ_inv_182 Bool)) Bool (in_range3
+  (temp___do_toplevel_181 Bool) (temp___do_typ_inv_182 Bool)) Bool (in_range2
   (rec__split_records__holder__present (us_split_discrs3 temp___expr_183))
-  (rec__split_records__holder__content (us_split_fields3 temp___expr_183))))
+  (us_split_discrs1
+  (rec__split_records__holder__content (us_split_fields3 temp___expr_183)))))
 
 (assert
 ;; defqtvc

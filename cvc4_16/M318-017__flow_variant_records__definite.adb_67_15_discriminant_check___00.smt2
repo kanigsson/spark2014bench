@@ -195,6 +195,10 @@
                         (rec__definite__t__x (us_split_fields1 b)) 1 0)))))
                    true false))
 
+(define-fun in_range3 ((rec__definite__t__d1 Int)
+  (a us_split_discrs)) Bool (= rec__definite__t__d1 (to_rep1
+                                                    (rec__definite__t__d a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -307,11 +311,6 @@
                                      (or (= temp___is_init_154 true)
                                      (<= 0 2)) (in_range2 temp___expr_158)))
 
-(define-fun in_range3 ((rec__definite__t__d1 Int)
-  (a us_rep)) Bool (= rec__definite__t__d1 (to_rep1
-                                           (rec__definite__t__d
-                                           (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -396,11 +395,6 @@
 (define-fun t8b__ref_t8b__content__projection ((a t8b__ref)) us_rep (t8b__content
                                                                     a))
 
-(define-fun in_range4 ((rec__definite__t__d1 Int)
-  (a us_rep)) Bool (= rec__definite__t__d1 (to_rep1
-                                           (rec__definite__t__d
-                                           (us_split_discrs1 a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -484,11 +478,6 @@
 (((t11b__refqtmk (t11b__content us_rep)))))
 (define-fun t11b__ref_t11b__content__projection ((a t11b__ref)) us_rep 
   (t11b__content a))
-
-(define-fun in_range5 ((rec__definite__t__d1 Int)
-  (a us_rep)) Bool (= rec__definite__t__d1 (to_rep1
-                                           (rec__definite__t__d
-                                           (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 

@@ -620,6 +620,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
+  (to_rep
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -824,12 +829,6 @@
                             (us_split_fields3 b))) true))
                     true false))
 
-(define-fun in_range3 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
-  (a us_rep)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
-  (to_rep
-  (rec__ada___ada___aco__math__very_longs__very_long__octet_length
-  (us_split_discrs1 a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -907,7 +906,8 @@
                                       (to_rep
                                       (rec__ada___ada___aco__math__very_longs__very_long__octet_length
                                       (us_split_discrs1 l)))
-                                      (to_base temp___expr_1058)))
+                                      (us_split_discrs1
+                                      (to_base temp___expr_1058))))
                                       (and (dynamic_property 1
                                       (to_rep
                                       (rec__ada___ada___aco__math__very_longs__very_long__octet_length
@@ -1008,15 +1008,15 @@
   (us_split_fieldsqtmk
   ada___ada___aco__math__very_longs__modsubtract_and_borrow__result__fields))
   true true true true) (dynamic_invariant1 borrow1 true true true true)))
-  (let ((temp___1432 (of_base
+  (let ((temp___1434 (of_base
                      (us_repqtmk result____split_discrs
                      (us_split_fieldsqtmk
                      ada___ada___aco__math__very_longs__modsubtract_and_borrow__result__fields)))))
   (forall ((result____split_fields1 us_t))
   (=>
   (= (us_split_fieldsqtmk1 result____split_fields1) (us_split_fields3
-                                                    temp___1432))
-  (=> (= result____split_discrs (us_split_discrs2 temp___1432))
+                                                    temp___1434))
+  (=> (= result____split_discrs (us_split_discrs2 temp___1434))
   (forall ((spark__branch Bool))
   (=> (= spark__branch (ite (= borrow1 #x0001) true false))
   (=> (= spark__branch true)

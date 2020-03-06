@@ -885,31 +885,34 @@
   (=> (= previous 64)
   (=> (dynamic_invariant previous true false true true)
   (=>
-  (forall ((temp___291 Int))
-  (=> (and (<= (first1 powers) temp___291) (<= temp___291 (last1 powers)))
-  (let ((k (to_rep (select (to_array powers) temp___291))))
-  (and (bvule #x0000000000000000 ((_ int2bv 64) (power 2 k)))
-  (bvule ((_ int2bv 64) (power 2 k)) #xFFFFFFFFFFFFFFFF)))))
-  (let ((temp___293 (first1 powers)))
-  (let ((temp___294 (last1 powers)))
+  (forall ((temp___301 Int))
+  (=> (and (<= (first1 powers) temp___301) (<= temp___301 (last1 powers)))
+  (let ((temp___303 ((_ int2bv 64) (power 2
+                                   (to_rep
+                                   (select (to_array powers) temp___301))))))
+  (and (bvule #x0000000000000000 temp___303)
+  (bvule temp___303 #xFFFFFFFFFFFFFFFF)))))
+  (let ((temp___304 (first1 powers)))
+  (let ((temp___305 (last1 powers)))
   (forall ((c23b Int))
-  (=> (= c23b temp___293)
+  (=> (= c23b temp___304)
   (=>
-  (= (and (ite (<= temp___293 c23b) true false) (ite (<= c23b temp___294)
+  (= (and (ite (<= temp___304 c23b) true false) (ite (<= c23b temp___305)
                                                 true false)) true)
   (forall ((previous1 Int) (c23b1 Int))
   (=>
   (and
-  (forall ((temp___309 Int))
-  (=> (and (<= (first1 powers) temp___309) (<= temp___309 (last1 powers)))
-  (let ((k (to_rep (select (to_array powers) temp___309))))
-  (and (bvule #x0000000000000000 ((_ int2bv 64) (power 2 k)))
-  (bvule ((_ int2bv 64) (power 2 k)) #xFFFFFFFFFFFFFFFF)))))
-  (and
-  (bvule #x0000000000000000 ((_ int2bv 64) (power 2
-                                           (to_rep
-                                           (select (to_array powers) c23b1)))))
-  (bvule ((_ int2bv 64) (power 2 (to_rep (select (to_array powers) c23b1)))) #xFFFFFFFFFFFFFFFF)))
+  (forall ((temp___324 Int))
+  (=> (and (<= (first1 powers) temp___324) (<= temp___324 (last1 powers)))
+  (let ((temp___326 ((_ int2bv 64) (power 2
+                                   (to_rep
+                                   (select (to_array powers) temp___324))))))
+  (and (bvule #x0000000000000000 temp___326)
+  (bvule temp___326 #xFFFFFFFFFFFFFFFF)))))
+  (let ((temp___316 ((_ int2bv 64) (power 2
+                                   (to_rep (select (to_array powers) c23b1))))))
+  (and (bvule #x0000000000000000 temp___316)
+  (bvule temp___316 #xFFFFFFFFFFFFFFFF))))
   (=>
   (= (and (ite (and (dynamic_property1 (first1 powers) (last1 powers) c23b1)
                (dynamic_invariant previous1 true true true true))
@@ -917,9 +920,9 @@
                            (<= c23b1 (last1 powers)))
                       true false)) true)
   (=> (and (<= (first1 powers) c23b1) (<= c23b1 (last1 powers)))
-  (forall ((temp___296 Int))
-  (=> (= (to_rep (select (to_array powers) c23b1)) temp___296)
-  (let ((o (power 2 temp___296)))
+  (forall ((temp___307 Int))
+  (=> (= (to_rep (select (to_array powers) c23b1)) temp___307)
+  (let ((o (power 2 temp___307)))
   (=> (in_range2 o)
   (=> (uint_in_range o)
   (=> (not (bvugt ((_ int2bv 64) i) ((_ int2bv 64) o)))
@@ -928,15 +931,17 @@
   (=> (= (to_rep (select (to_array powers) c23b1)) o1)
   (forall ((previous2 Int))
   (=> (= previous2 o1)
-  (=> (not (= c23b1 temp___294))
+  (=> (not (= c23b1 temp___305))
   (forall ((c23b2 Int))
   (=> (= c23b2 (+ c23b1 1))
   (=>
-  (forall ((temp___309 Int))
-  (=> (and (<= (first1 powers) temp___309) (<= temp___309 (last1 powers)))
-  (let ((k (to_rep (select (to_array powers) temp___309))))
-  (and (bvule #x0000000000000000 ((_ int2bv 64) (power 2 k)))
-  (bvule ((_ int2bv 64) (power 2 k)) #xFFFFFFFFFFFFFFFF)))))
+  (forall ((temp___324 Int))
+  (=> (and (<= (first1 powers) temp___324) (<= temp___324 (last1 powers)))
+  (let ((temp___326 ((_ int2bv 64) (power 2
+                                   (to_rep
+                                   (select (to_array powers) temp___324))))))
+  (and (bvule #x0000000000000000 temp___326)
+  (bvule temp___326 #xFFFFFFFFFFFFFFFF)))))
   (bvule #x0000000000000000 ((_ int2bv 64) (power 2
                                            (to_rep
                                            (select (to_array powers) c23b2))))))))))))))))))))))))))))))))))))))

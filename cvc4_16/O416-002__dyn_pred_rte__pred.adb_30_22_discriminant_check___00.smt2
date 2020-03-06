@@ -443,6 +443,9 @@
                         (rec__pred__r__c3 (us_split_fields1 b)) 1 0)))))
                    true false))
 
+(define-fun in_range3 ((rec__pred__r__d1 Int)
+  (a us_split_discrs)) Bool (= rec__pred__r__d1 (to_rep1 (rec__pred__r__d a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

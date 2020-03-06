@@ -287,36 +287,6 @@
 ;; basic__r__x__position_axiom
   (assert (<= 0 basic__r__x__position))
 
-(declare-const basic__r__base__first__bit Int)
-
-(declare-const basic__r__base__last__bit Int)
-
-(declare-const basic__r__base__position Int)
-
-;; basic__r__base__first__bit_axiom
-  (assert (<= 0 basic__r__base__first__bit))
-
-;; basic__r__base__last__bit_axiom
-  (assert (< basic__r__base__first__bit basic__r__base__last__bit))
-
-;; basic__r__base__position_axiom
-  (assert (<= 0 basic__r__base__position))
-
-(declare-const basic__r__a_field__first__bit Int)
-
-(declare-const basic__r__a_field__last__bit Int)
-
-(declare-const basic__r__a_field__position Int)
-
-;; basic__r__a_field__first__bit_axiom
-  (assert (<= 0 basic__r__a_field__first__bit))
-
-;; basic__r__a_field__last__bit_axiom
-  (assert (< basic__r__a_field__first__bit basic__r__a_field__last__bit))
-
-;; basic__r__a_field__position_axiom
-  (assert (<= 0 basic__r__a_field__position))
-
 (declare-const basic__r__c_field1__first__bit Int)
 
 (declare-const basic__r__c_field1__last__bit Int)
@@ -347,18 +317,48 @@
 ;; basic__r__c_field2__position_axiom
   (assert (<= 0 basic__r__c_field2__position))
 
+(declare-const basic__r__base__first__bit Int)
+
+(declare-const basic__r__base__last__bit Int)
+
+(declare-const basic__r__base__position Int)
+
+;; basic__r__base__first__bit_axiom
+  (assert (<= 0 basic__r__base__first__bit))
+
+;; basic__r__base__last__bit_axiom
+  (assert (< basic__r__base__first__bit basic__r__base__last__bit))
+
+;; basic__r__base__position_axiom
+  (assert (<= 0 basic__r__base__position))
+
+(declare-const basic__r__a_field__first__bit Int)
+
+(declare-const basic__r__a_field__last__bit Int)
+
+(declare-const basic__r__a_field__position Int)
+
+;; basic__r__a_field__first__bit_axiom
+  (assert (<= 0 basic__r__a_field__first__bit))
+
+;; basic__r__a_field__last__bit_axiom
+  (assert (< basic__r__a_field__first__bit basic__r__a_field__last__bit))
+
+;; basic__r__a_field__position_axiom
+  (assert (<= 0 basic__r__a_field__position))
+
 (declare-fun user_eq3 (us_rep us_rep) Bool)
 
 (declare-const dummy3 us_rep)
 
-(declare-datatypes ((r__ref 0))
-(((r__refqtmk (r__content us_rep)))))
-(define-fun r__ref_r__content__projection ((a r__ref)) us_rep (r__content a))
+(declare-datatypes ((sp__ref 0))
+(((sp__refqtmk (sp__content us_rep)))))
+(define-fun sp__ref_sp__content__projection ((a sp__ref)) us_rep (sp__content
+                                                                 a))
 
 (define-fun in_range4 ((rec__basic__r__x1 Int)
-  (a us_rep)) Bool (= rec__basic__r__x1 (to_rep2
-                                        (rec__basic__r__x
-                                        (us_split_discrs1 a)))))
+  (a us_split_discrs)) Bool (= rec__basic__r__x1 (to_rep2
+                                                 (rec__basic__r__x a))))
 
 (declare-const value__size1 Int)
 
@@ -390,36 +390,6 @@
 ;; basic__r__x__position_axiom
   (assert (<= 0 basic__r__x__position1))
 
-(declare-const basic__r__c_field1__first__bit1 Int)
-
-(declare-const basic__r__c_field1__last__bit1 Int)
-
-(declare-const basic__r__c_field1__position1 Int)
-
-;; basic__r__c_field1__first__bit_axiom
-  (assert (<= 0 basic__r__c_field1__first__bit1))
-
-;; basic__r__c_field1__last__bit_axiom
-  (assert (< basic__r__c_field1__first__bit1 basic__r__c_field1__last__bit1))
-
-;; basic__r__c_field1__position_axiom
-  (assert (<= 0 basic__r__c_field1__position1))
-
-(declare-const basic__r__c_field2__first__bit1 Int)
-
-(declare-const basic__r__c_field2__last__bit1 Int)
-
-(declare-const basic__r__c_field2__position1 Int)
-
-;; basic__r__c_field2__first__bit_axiom
-  (assert (<= 0 basic__r__c_field2__first__bit1))
-
-;; basic__r__c_field2__last__bit_axiom
-  (assert (< basic__r__c_field2__first__bit1 basic__r__c_field2__last__bit1))
-
-;; basic__r__c_field2__position_axiom
-  (assert (<= 0 basic__r__c_field2__position1))
-
 (declare-const basic__r__base__first__bit1 Int)
 
 (declare-const basic__r__base__last__bit1 Int)
@@ -450,14 +420,43 @@
 ;; basic__r__a_field__position_axiom
   (assert (<= 0 basic__r__a_field__position1))
 
+(declare-const basic__r__c_field1__first__bit1 Int)
+
+(declare-const basic__r__c_field1__last__bit1 Int)
+
+(declare-const basic__r__c_field1__position1 Int)
+
+;; basic__r__c_field1__first__bit_axiom
+  (assert (<= 0 basic__r__c_field1__first__bit1))
+
+;; basic__r__c_field1__last__bit_axiom
+  (assert (< basic__r__c_field1__first__bit1 basic__r__c_field1__last__bit1))
+
+;; basic__r__c_field1__position_axiom
+  (assert (<= 0 basic__r__c_field1__position1))
+
+(declare-const basic__r__c_field2__first__bit1 Int)
+
+(declare-const basic__r__c_field2__last__bit1 Int)
+
+(declare-const basic__r__c_field2__position1 Int)
+
+;; basic__r__c_field2__first__bit_axiom
+  (assert (<= 0 basic__r__c_field2__first__bit1))
+
+;; basic__r__c_field2__last__bit_axiom
+  (assert (< basic__r__c_field2__first__bit1 basic__r__c_field2__last__bit1))
+
+;; basic__r__c_field2__position_axiom
+  (assert (<= 0 basic__r__c_field2__position1))
+
 (declare-fun user_eq4 (us_rep us_rep) Bool)
 
 (declare-const dummy4 us_rep)
 
-(declare-datatypes ((sp__ref 0))
-(((sp__refqtmk (sp__content us_rep)))))
-(define-fun sp__ref_sp__content__projection ((a sp__ref)) us_rep (sp__content
-                                                                 a))
+(declare-datatypes ((r__ref 0))
+(((r__refqtmk (r__content us_rep)))))
+(define-fun r__ref_r__content__projection ((a r__ref)) us_rep (r__content a))
 
 (declare-const v__split_discrs us_split_discrs)
 
@@ -468,7 +467,8 @@
   (temp___do_toplevel_169 Bool)
   (temp___do_typ_inv_170 Bool)) Bool (=>
                                      (not (= temp___skip_constant_168 true))
-                                     (in_range4 0 temp___expr_171)))
+                                     (in_range4 0
+                                     (us_split_discrs1 temp___expr_171))))
 
 (define-fun default_initial_assumption ((temp___expr_173 us_rep)
   (temp___skip_top_level_174 Bool)) Bool (= (to_rep2

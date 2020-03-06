@@ -131,6 +131,11 @@
                            (rec__private_types__simple (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__private_types__simple__d1 Int)
+  (a us_split_discrs)) Bool (= rec__private_types__simple__d1 (to_rep
+                                                              (rec__private_types__simple__d
+                                                              a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -170,11 +175,6 @@
 (((simple__refqtmk (simple__content us_rep)))))
 (define-fun simple__ref_simple__content__projection ((a simple__ref)) us_rep 
   (simple__content a))
-
-(define-fun in_range1 ((rec__private_types__simple__d1 Int)
-  (a us_rep)) Bool (= rec__private_types__simple__d1 (to_rep
-                                                     (rec__private_types__simple__d
-                                                     (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 
@@ -285,8 +285,9 @@
   (temp___is_init_212 Bool) (temp___skip_constant_213 Bool)
   (temp___do_toplevel_214 Bool) (temp___do_typ_inv_215 Bool)) Bool (in_range1
   0
+  (us_split_discrs1
   (rec__use_private_types__d_holder_0__content
-  (us_split_fields3 temp___expr_216))))
+  (us_split_fields3 temp___expr_216)))))
 
 (define-fun default_initial_assumption ((temp___expr_218 us_rep1)
   (temp___skip_top_level_219 Bool)) Bool (= (to_rep
@@ -314,7 +315,8 @@
   (temp___do_toplevel_176 Bool)
   (temp___do_typ_inv_177 Bool)) Bool (=>
                                      (not (= temp___skip_constant_175 true))
-                                     (in_range1 0 temp___expr_178)))
+                                     (in_range1 0
+                                     (us_split_discrs1 temp___expr_178))))
 
 (define-fun default_initial_assumption2 ((temp___expr_180 us_rep)
   (temp___skip_top_level_181 Bool)) Bool (= (to_rep

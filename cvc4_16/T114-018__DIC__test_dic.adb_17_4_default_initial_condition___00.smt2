@@ -229,13 +229,14 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((t__ref 0))
-(((t__refqtmk (t__content us_rep)))))
-(define-fun t__ref_t__content__projection ((a t__ref)) us_rep (t__content a))
+(declare-datatypes ((txS__ref 0))
+(((txS__refqtmk (txS__content us_rep)))))
+(define-fun txS__ref_txS__content__projection ((a txS__ref)) us_rep (txS__content
+                                                                    a))
 
 (define-fun in_range3 ((rec__test_dic__nested__t__x1 Bool)
-  (a us_rep)) Bool (= rec__test_dic__nested__t__x1 (rec__test_dic__nested__t__x
-                                                   (us_split_discrs1 a))))
+  (a us_split_discrs)) Bool (= rec__test_dic__nested__t__x1 (rec__test_dic__nested__t__x
+                                                            a)))
 
 (declare-const value__size1 Int)
 
@@ -288,10 +289,9 @@
 
 (declare-const dummy3 us_rep)
 
-(declare-datatypes ((txS__ref 0))
-(((txS__refqtmk (txS__content us_rep)))))
-(define-fun txS__ref_txS__content__projection ((a txS__ref)) us_rep (txS__content
-                                                                    a))
+(declare-datatypes ((t__ref 0))
+(((t__refqtmk (t__content us_rep)))))
+(define-fun t__ref_t__content__projection ((a t__ref)) us_rep (t__content a))
 
 (declare-const x__split_discrs us_split_discrs)
 
@@ -323,10 +323,6 @@
 (declare-const y__attr__constrained Bool)
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
-
-(define-fun in_range4 ((rec__test_dic__nested__t__x1 Bool)
-  (a us_rep)) Bool (= rec__test_dic__nested__t__x1 (rec__test_dic__nested__t__x
-                                                   (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 

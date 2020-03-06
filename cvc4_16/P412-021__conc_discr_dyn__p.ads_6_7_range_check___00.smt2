@@ -333,6 +333,10 @@
                            (rec__p__my_rec__content (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range4 ((rec__p__my_rec__c1 Int)
+  (a us_split_discrs)) Bool (= rec__p__my_rec__c1 (to_rep
+                                                  (rec__p__my_rec__c a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -438,11 +442,6 @@
                             (rec__p__my_rec__content1 (us_split_fields3 b))) true))
                     true false))
 
-(define-fun in_range4 ((rec__p__my_rec__c1 Int)
-  (a us_rep)) Bool (= rec__p__my_rec__c1 (to_rep
-                                         (rec__p__my_rec__c
-                                         (us_split_discrs1 a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -531,6 +530,10 @@
 
 (define-fun us_rep___split_fields__4__projection ((a us_rep2)) us_split_fields4 
   (us_split_fields5 a))
+
+(define-fun in_range5 ((rec__p__pp__b1 Bool) (rec__p__pp__c1 Int)
+  (a us_split_discrs3)) Bool (and (= rec__p__pp__b1 (rec__p__pp__b a))
+                             (= rec__p__pp__c1 (to_rep (rec__p__pp__c a)))))
 
 (declare-const value__size3 Int)
 
@@ -625,9 +628,10 @@
                                                        (us_split_discrs4
                                                        temp___expr_200))))
                                      (and (in_range4 (to_rep temp___202)
+                                     (us_split_discrs1
                                      (to_base
                                      (rec__p__pp__r
-                                     (us_split_fields5 temp___expr_200))))
+                                     (us_split_fields5 temp___expr_200)))))
                                      (and (dynamic_property 1
                                      (to_rep temp___202)
                                      (first1
@@ -699,12 +703,6 @@
                                            (us_split_fields5 r))
                                            (rec__p__pp__r
                                            (us_split_fields5 r)))))
-
-(define-fun in_range5 ((rec__p__pp__b1 Bool) (rec__p__pp__c1 Int)
-  (a us_rep2)) Bool (and
-                    (= rec__p__pp__b1 (rec__p__pp__b (us_split_discrs4 a)))
-                    (= rec__p__pp__c1 (to_rep
-                                      (rec__p__pp__c (us_split_discrs4 a))))))
 
 (declare-const value__size4 Int)
 
@@ -843,11 +841,6 @@
                             (rec__p__my_rec__content2 (us_split_fields9 b))) true))
                     true false))
 
-(define-fun in_range6 ((rec__p__my_rec__c1 Int)
-  (a us_rep)) Bool (= rec__p__my_rec__c1 (to_rep
-                                         (rec__p__my_rec__c
-                                         (us_split_discrs1 a)))))
-
 (declare-const value__size5 Int)
 
 (declare-const object__size5 Int)
@@ -916,14 +909,16 @@
                                      (=>
                                      (not (= temp___skip_constant_213 true))
                                      (in_range5 (distinct 1 0) 10
-                                     (to_base1 temp___expr_216)))
+                                     (us_split_discrs4
+                                     (to_base1 temp___expr_216))))
                                      (let ((temp___218 (rec__p__pp__c
                                                        (us_split_discrs5
                                                        temp___expr_216))))
                                      (and (in_range4 (to_rep temp___218)
+                                     (us_split_discrs1
                                      (to_base
                                      (rec__p__pp__r1
-                                     (us_split_fields7 temp___expr_216))))
+                                     (us_split_fields7 temp___expr_216)))))
                                      (and (dynamic_property 1
                                      (to_rep temp___218)
                                      (first1

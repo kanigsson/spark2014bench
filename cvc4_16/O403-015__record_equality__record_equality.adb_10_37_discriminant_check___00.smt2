@@ -205,17 +205,17 @@
 
 (declare-const dummy1 us_rep)
 
-(declare-datatypes ((root__ref 0))
-(((root__refqtmk (root__content us_rep)))))
-(define-fun root__ref_root__content__projection ((a root__ref)) us_rep 
-  (root__content a))
+(declare-datatypes ((tr_pu1S__ref 0))
+(((tr_pu1S__refqtmk (tr_pu1S__content us_rep)))))
+(define-fun tr_pu1S__ref_tr_pu1S__content__projection ((a tr_pu1S__ref)) us_rep 
+  (tr_pu1S__content a))
 
 (declare-const us_tag1 Int)
 
 (define-fun in_range2 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
+  (a us_split_discrs)) Bool (= rec__record_equality__root__c1 (to_rep
+                                                              (rec__record_equality__root__c
+                                                              a))))
 
 (declare-const value__size1 Int)
 
@@ -268,10 +268,10 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((tr_pu1S__ref 0))
-(((tr_pu1S__refqtmk (tr_pu1S__content us_rep)))))
-(define-fun tr_pu1S__ref_tr_pu1S__content__projection ((a tr_pu1S__ref)) us_rep 
-  (tr_pu1S__content a))
+(declare-datatypes ((root__ref 0))
+(((root__refqtmk (root__content us_rep)))))
+(define-fun root__ref_root__content__projection ((a root__ref)) us_rep 
+  (root__content a))
 
 (declare-const r_pu1__split_discrs us_split_discrs)
 
@@ -284,12 +284,13 @@
   (temp___do_toplevel_192 Bool)
   (temp___do_typ_inv_193 Bool)) Bool (=>
                                      (not (= temp___skip_constant_191 true))
-                                     (in_range2 0 temp___expr_194)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_194))))
 
 (define-fun default_initial_assumption ((temp___expr_196 us_rep)
   (temp___skip_top_level_197 Bool)) Bool (and
                                          (= (attr__tag temp___expr_196) 
-                                         us_tag1)
+                                         us_tag)
                                          (and
                                          (= (to_rep
                                             (rec__record_equality__root__c
@@ -301,11 +302,6 @@
                                             temp___expr_196))) 0))))
 
 (declare-const us_tag2 Int)
-
-(define-fun in_range3 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -374,7 +370,8 @@
   (temp___do_toplevel_174 Bool)
   (temp___do_typ_inv_175 Bool)) Bool (=>
                                      (not (= temp___skip_constant_173 true))
-                                     (in_range3 0 temp___expr_176)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_176))))
 
 (define-fun default_initial_assumption1 ((temp___expr_178 us_rep)
   (temp___skip_top_level_179 Bool)) Bool (and
@@ -473,11 +470,6 @@
 
 (declare-const us_tag3 Int)
 
-(define-fun in_range4 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -561,7 +553,9 @@
   (temp___do_toplevel_201 Bool)
   (temp___do_typ_inv_202 Bool)) Bool (=>
                                      (not (= temp___skip_constant_200 true))
-                                     (in_range4 0 (to_base temp___expr_203))))
+                                     (in_range2 0
+                                     (us_split_discrs1
+                                     (to_base temp___expr_203)))))
 
 (define-fun default_initial_assumption2 ((temp___expr_205 us_rep1)
   (temp___skip_top_level_206 Bool)) Bool (and
@@ -583,11 +577,6 @@
                                             temp___expr_205))) 0)))))
 
 (declare-const us_tag4 Int)
-
-(define-fun in_range5 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 
@@ -672,7 +661,9 @@
   (temp___do_toplevel_183 Bool)
   (temp___do_typ_inv_184 Bool)) Bool (=>
                                      (not (= temp___skip_constant_182 true))
-                                     (in_range5 0 (to_base temp___expr_185))))
+                                     (in_range2 0
+                                     (us_split_discrs1
+                                     (to_base temp___expr_185)))))
 
 (define-fun default_initial_assumption3 ((temp___expr_187 us_rep1)
   (temp___skip_top_level_188 Bool)) Bool (and
@@ -988,11 +979,6 @@
 
 (declare-const us_tag7 Int)
 
-(define-fun in_range6 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
-
 (declare-const value__size7 Int)
 
 (declare-const object__size7 Int)
@@ -1070,11 +1056,6 @@
 (declare-const attr__ATTRIBUTE_ADDRESS9 Int)
 
 (declare-const us_tag8 Int)
-
-(define-fun in_range7 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
 
 (declare-const value__size8 Int)
 
@@ -1165,11 +1146,6 @@
   (t1b__content a))
 
 (declare-const us_tag9 Int)
-
-(define-fun in_range8 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
 
 (declare-const value__size9 Int)
 
@@ -1264,7 +1240,9 @@
   (temp___do_toplevel_210 Bool)
   (temp___do_typ_inv_211 Bool)) Bool (=>
                                      (not (= temp___skip_constant_209 true))
-                                     (in_range6 0 (to_base temp___expr_212))))
+                                     (in_range2 0
+                                     (us_split_discrs1
+                                     (to_base temp___expr_212)))))
 
 (define-fun default_initial_assumption4 ((temp___expr_214 us_rep1)
   (temp___skip_top_level_215 Bool)) Bool (and
@@ -1368,9 +1346,10 @@
      (us_split_discrs2 record_equality__test_eq_ok__c_gp1__assume)
      (us_split_fields3 record_equality__test_eq_ok__c_gp1__assume) us_tag5) 
   c_gp1)
-  (=> (in_range1 0) (in_range6 0
+  (=> (in_range1 0) (in_range2 0
+  (us_split_discrs1
   (to_base
   (of_base
   (to_base1
-  (us_repqtmk2 g_pu2__split_discrs g_pu2__split_fields g_pu2__attr__tag)))))))))))))))))))))))))))))))))
+  (us_repqtmk2 g_pu2__split_discrs g_pu2__split_fields g_pu2__attr__tag))))))))))))))))))))))))))))))))))
 (check-sat)

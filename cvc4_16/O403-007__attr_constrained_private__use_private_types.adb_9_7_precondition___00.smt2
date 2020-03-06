@@ -131,6 +131,11 @@
                            (rec__private_types__simple (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__private_types__simple__d1 Int)
+  (a us_split_discrs)) Bool (= rec__private_types__simple__d1 (to_rep
+                                                              (rec__private_types__simple__d
+                                                              a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

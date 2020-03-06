@@ -222,6 +222,10 @@
                             (us_split_fields1 b))) true)))
                     true false))
 
+(define-fun in_range3 ((rec__pledge_constraints__int_acc_option__present1 Bool)
+  (a us_split_discrs)) Bool (= rec__pledge_constraints__int_acc_option__present1 
+  (rec__pledge_constraints__int_acc_option__present a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -603,7 +607,7 @@
 ;; t8b'axiom
   (assert (forall ((i t8b)) (and (<= 1 (t8bqtint i)) (<= (t8bqtint i) 3))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -619,10 +623,6 @@
 (((t8b__refqtmk (t8b__content t8b)))))
 (define-fun t8b__ref_t8b__content__projection ((a t8b__ref)) t8b (t8b__content
                                                                  a))
-
-(define-fun in_range4 ((rec__pledge_constraints__int_acc_option__present1 Bool)
-  (a us_rep1)) Bool (= rec__pledge_constraints__int_acc_option__present1 
-  (rec__pledge_constraints__int_acc_option__present (us_split_discrs1 a))))
 
 (declare-const value__size3 Int)
 
@@ -680,7 +680,7 @@
 (define-fun t7b__ref_t7b__content__projection ((a t7b__ref)) us_rep1 
   (t7b__content a))
 
-(declare-fun temp_____aggregate_def_238 (us_rep1) (Array Int us_rep1))
+(declare-fun temp_____aggregate_def_239 (us_rep1) (Array Int us_rep1))
 
 (define-fun dynamic_invariant1 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)
@@ -743,9 +743,9 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___240 us_rep1))
-  (forall ((temp___241 Int))
-  (= (select (temp_____aggregate_def_238 temp___240) temp___241) temp___240))))
+  (forall ((temp___241 us_rep1))
+  (forall ((temp___242 Int))
+  (= (select (temp_____aggregate_def_239 temp___241) temp___242) temp___241))))
 
 (declare-const rliteral integer)
 
@@ -785,24 +785,24 @@
              (rec__pledge_constraints__int_arr_acc__pointer_value
              (rec__pledge_constraints__two_arrays__a1 x__split_fields))) 1)))
      us_null_pointer) true))
-  (let ((temp___228 (rec__pledge_constraints__int_arr_acc__pointer_value
+  (let ((temp___229 (rec__pledge_constraints__int_arr_acc__pointer_value
                     (rec__pledge_constraints__two_arrays__a1 x__split_fields))))
-  (=> (and (<= (first1 temp___228) 1) (<= 1 (last1 temp___228)))
+  (=> (and (<= (first1 temp___229) 1) (<= 1 (last1 temp___229)))
   (let ((pledge_constraints__update__y__assume (rec__pledge_constraints__int_acc_option__content
                                                (us_split_fields1
-                                               (select (to_array temp___228) 1)))))
+                                               (select (to_array temp___229) 1)))))
   (forall ((usf us_pledge_ty))
   (=>
-  (forall ((temp___borrowed_236 us_rep3))
-  (forall ((temp___brower_230 us_rep))
-  (! (= (= (us_pledge_get usf temp___borrowed_236 temp___brower_230) true)
+  (forall ((temp___borrowed_237 us_rep3))
+  (forall ((temp___brower_231 us_rep))
+  (! (= (= (us_pledge_get usf temp___borrowed_237 temp___brower_231) true)
      (= (rec__pledge_constraints__int_acc_option__content
         (us_split_fields1
         (select (to_array
                 (rec__pledge_constraints__int_arr_acc__pointer_value
                 (rec__pledge_constraints__two_arrays__a1
-                (us_split_fields3 temp___borrowed_236)))) 1))) temp___brower_230)) :pattern (
-  (us_pledge_get usf temp___borrowed_236 temp___brower_230)) )))
+                (us_split_fields3 temp___borrowed_237)))) 1))) temp___brower_231)) :pattern (
+  (us_pledge_get usf temp___borrowed_237 temp___brower_231)) )))
   (forall ((pledge_constraints__update__y__pledge us_pledge_ty))
   (let ((pledge_constraints__update__y__pledge1 (us_pledge_ty__refqtmk
                                                 pledge_constraints__update__y__pledge)))
@@ -828,7 +828,7 @@
                (= (rec__pledge_constraints__int_arr_acc__pointer_address o) us_next_pointer_address))
           true false) (ite (= (rec__pledge_constraints__int_arr_acc__pointer_value
                               o) (of_array
-                                 (temp_____aggregate_def_238
+                                 (temp_____aggregate_def_239
                                  (us_repqtmk1
                                  (us_split_discrsqtmk (distinct 0 0))
                                  (us_split_fieldsqtmk dummy2))) 1 3))
@@ -841,19 +841,19 @@
   (forall ((y__pointer_value1 integer))
   (=> (= y__pointer_value1 rliteral)
   (=>
-  (forall ((temp___borrowed_256 us_rep3))
-  (forall ((temp___brower_255 us_rep))
+  (forall ((temp___borrowed_257 us_rep3))
+  (forall ((temp___brower_256 us_rep))
   (! (=>
      (and
      (= (us_pledge_get pledge_constraints__update__y__pledge
-        temp___borrowed_256 temp___brower_255) true)
+        temp___borrowed_257 temp___brower_256) true)
      (and
      (and
      (= (rec__pledge_constraints__int_arr_acc__is_null_pointer
         (rec__pledge_constraints__two_arrays__a1 x__split_fields1)) (rec__pledge_constraints__int_arr_acc__is_null_pointer
                                                                     (rec__pledge_constraints__two_arrays__a1
                                                                     (us_split_fields3
-                                                                    temp___borrowed_256))))
+                                                                    temp___borrowed_257))))
      (and
      (and
      (= (first1
@@ -862,14 +862,14 @@
      (first1
      (rec__pledge_constraints__int_arr_acc__pointer_value
      (rec__pledge_constraints__two_arrays__a1
-     (us_split_fields3 temp___borrowed_256)))))
+     (us_split_fields3 temp___borrowed_257)))))
      (= (last1
         (rec__pledge_constraints__int_arr_acc__pointer_value
         (rec__pledge_constraints__two_arrays__a1 x__split_fields1))) 
      (last1
      (rec__pledge_constraints__int_arr_acc__pointer_value
      (rec__pledge_constraints__two_arrays__a1
-     (us_split_fields3 temp___borrowed_256))))))
+     (us_split_fields3 temp___borrowed_257))))))
      (and
      (= (rec__pledge_constraints__int_acc_option__present
         (us_split_discrs1
@@ -881,7 +881,7 @@
      (select (to_array
              (rec__pledge_constraints__int_arr_acc__pointer_value
              (rec__pledge_constraints__two_arrays__a1
-             (us_split_fields3 temp___borrowed_256)))) 1))))
+             (us_split_fields3 temp___borrowed_257)))) 1))))
      (= (rec__pledge_constraints__int_acc__is_null_pointer
         (rec__pledge_constraints__int_acc_option__content
         (us_split_fields1
@@ -894,9 +894,9 @@
      (select (to_array
              (rec__pledge_constraints__int_arr_acc__pointer_value
              (rec__pledge_constraints__two_arrays__a1
-             (us_split_fields3 temp___borrowed_256)))) 1))))))))
+             (us_split_fields3 temp___borrowed_257)))) 1))))))))
      (= y__is_null_pointer (rec__pledge_constraints__int_acc__is_null_pointer
-                           temp___brower_255))))
+                           temp___brower_256))))
      (= (to_rep
         (rec__pledge_constraints__int_acc__pointer_value
         (rec__pledge_constraints__int_acc_option__content
@@ -904,26 +904,26 @@
         (select (to_array
                 (rec__pledge_constraints__int_arr_acc__pointer_value
                 (rec__pledge_constraints__two_arrays__a1
-                (us_split_fields3 temp___borrowed_256)))) 1))))) (to_rep
+                (us_split_fields3 temp___borrowed_257)))) 1))))) (to_rep
                                                                  (rec__pledge_constraints__int_acc__pointer_value
-                                                                 temp___brower_255)))) :pattern (
+                                                                 temp___brower_256)))) :pattern (
   (us_pledge_get
   (us_pledge_ty__content pledge_constraints__update__y__pledge1)
-  temp___borrowed_256 temp___brower_255)) )))
+  temp___borrowed_257 temp___brower_256)) )))
   (=>
-  (forall ((temp___borrowed_272 us_rep3))
-  (forall ((temp___brower_271 us_rep))
+  (forall ((temp___borrowed_273 us_rep3))
+  (forall ((temp___brower_272 us_rep))
   (! (=>
      (and
      (= (us_pledge_get pledge_constraints__update__y__pledge
-        temp___borrowed_272 temp___brower_271) true)
+        temp___borrowed_273 temp___brower_272) true)
      (and
      (and
      (= (rec__pledge_constraints__int_arr_acc__is_null_pointer
         (rec__pledge_constraints__two_arrays__a1 x__split_fields1)) (rec__pledge_constraints__int_arr_acc__is_null_pointer
                                                                     (rec__pledge_constraints__two_arrays__a1
                                                                     (us_split_fields3
-                                                                    temp___borrowed_272))))
+                                                                    temp___borrowed_273))))
      (and
      (and
      (= (first1
@@ -932,14 +932,14 @@
      (first1
      (rec__pledge_constraints__int_arr_acc__pointer_value
      (rec__pledge_constraints__two_arrays__a1
-     (us_split_fields3 temp___borrowed_272)))))
+     (us_split_fields3 temp___borrowed_273)))))
      (= (last1
         (rec__pledge_constraints__int_arr_acc__pointer_value
         (rec__pledge_constraints__two_arrays__a1 x__split_fields1))) 
      (last1
      (rec__pledge_constraints__int_arr_acc__pointer_value
      (rec__pledge_constraints__two_arrays__a1
-     (us_split_fields3 temp___borrowed_272))))))
+     (us_split_fields3 temp___borrowed_273))))))
      (and
      (= (rec__pledge_constraints__int_acc_option__present
         (us_split_discrs1
@@ -951,7 +951,7 @@
      (select (to_array
              (rec__pledge_constraints__int_arr_acc__pointer_value
              (rec__pledge_constraints__two_arrays__a1
-             (us_split_fields3 temp___borrowed_272)))) 1))))
+             (us_split_fields3 temp___borrowed_273)))) 1))))
      (= (rec__pledge_constraints__int_acc__is_null_pointer
         (rec__pledge_constraints__int_acc_option__content
         (us_split_fields1
@@ -964,19 +964,19 @@
      (select (to_array
              (rec__pledge_constraints__int_arr_acc__pointer_value
              (rec__pledge_constraints__two_arrays__a1
-             (us_split_fields3 temp___borrowed_272)))) 1))))))))
+             (us_split_fields3 temp___borrowed_273)))) 1))))))))
      (= y__is_null_pointer (rec__pledge_constraints__int_acc__is_null_pointer
-                           temp___brower_271))))
+                           temp___brower_272))))
      (not
      (= (rec__pledge_constraints__int_acc_option__present
         (us_split_discrs1
         (select (to_array
                 (rec__pledge_constraints__int_arr_acc__pointer_value
                 (rec__pledge_constraints__two_arrays__a2
-                (us_split_fields3 temp___borrowed_272)))) 1))) true))) :pattern (
+                (us_split_fields3 temp___borrowed_273)))) 1))) true))) :pattern (
   (us_pledge_get
   (us_pledge_ty__content pledge_constraints__update__y__pledge1)
-  temp___borrowed_272 temp___brower_271)) )))
+  temp___borrowed_273 temp___brower_272)) )))
   (forall ((usf1 us_split_fields2))
   (=>
   (and

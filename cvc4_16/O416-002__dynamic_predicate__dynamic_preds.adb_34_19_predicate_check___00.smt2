@@ -346,46 +346,38 @@
   (temp___do_typ_inv_188 Bool)) Bool (=> (= temp___do_toplevel_187 true)
                                      (=> (= temp___is_init_185 true)
                                      (and
-                                     (and (in_range1
-                                     (to_rep
-                                     (rec__dynamic_preds__ext_even_pair__a
-                                     (us_split_fields1 temp___expr_189))))
-                                     (= (mod2
-                                        (to_rep
-                                        (rec__dynamic_preds__ext_even_pair__a
-                                        (us_split_fields1 temp___expr_189)))
-                                        2) 0))
-                                     (and (in_range1
-                                     (to_rep
-                                     (rec__dynamic_preds__ext_even_pair__b
-                                     (us_split_fields1 temp___expr_189))))
-                                     (= (mod2
-                                        (to_rep
-                                        (rec__dynamic_preds__ext_even_pair__b
-                                        (us_split_fields1 temp___expr_189)))
-                                        2) 0))))))
+                                     (let ((temp___191 (to_rep
+                                                       (rec__dynamic_preds__ext_even_pair__a
+                                                       (us_split_fields1
+                                                       temp___expr_189)))))
+                                     (and (in_range1 temp___191)
+                                     (= (mod2 temp___191 2) 0)))
+                                     (let ((temp___193 (to_rep
+                                                       (rec__dynamic_preds__ext_even_pair__b
+                                                       (us_split_fields1
+                                                       temp___expr_189)))))
+                                     (and (in_range1 temp___193)
+                                     (= (mod2 temp___193 2) 0)))))))
 
 (define-fun dynamic_predicate ((temp___199 us_rep)) Bool (and
-                                                         (and (in_range1
+                                                         (let ((temp___201 
                                                          (to_rep
                                                          (rec__dynamic_preds__ext_even_pair__a
                                                          (us_split_fields1
-                                                         temp___199))))
-                                                         (= (mod2
-                                                            (to_rep
-                                                            (rec__dynamic_preds__ext_even_pair__a
-                                                            (us_split_fields1
-                                                            temp___199))) 2) 0))
+                                                         temp___199)))))
                                                          (and (in_range1
+                                                         temp___201)
+                                                         (= (mod2 temp___201
+                                                            2) 0)))
+                                                         (let ((temp___203 
                                                          (to_rep
                                                          (rec__dynamic_preds__ext_even_pair__b
                                                          (us_split_fields1
-                                                         temp___199))))
-                                                         (= (mod2
-                                                            (to_rep
-                                                            (rec__dynamic_preds__ext_even_pair__b
-                                                            (us_split_fields1
-                                                            temp___199))) 2) 0))))
+                                                         temp___199)))))
+                                                         (and (in_range1
+                                                         temp___203)
+                                                         (= (mod2 temp___203
+                                                            2) 0)))))
 
 (declare-const i8s us_rep)
 

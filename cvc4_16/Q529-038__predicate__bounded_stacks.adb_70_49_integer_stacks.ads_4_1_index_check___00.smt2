@@ -422,6 +422,10 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range5 ((rec__integer_stacks__stack__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__integer_stacks__stack__capacity1 
+  (to_rep1 (rec__integer_stacks__stack__capacity a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

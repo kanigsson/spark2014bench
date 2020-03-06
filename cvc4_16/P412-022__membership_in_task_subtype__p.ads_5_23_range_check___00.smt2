@@ -102,6 +102,27 @@
 (define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun to_rep ((x integer)) Int (integerqtint x))
+
+(declare-fun of_rep (Int) integer)
+
+;; inversion_axiom
+  (assert
+  (forall ((x integer)) (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x integer)) (! (in_range (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                           (of_rep x))) )))
+
+(define-fun in_range1 ((rec__p__tt__x1 Int)
+  (a us_split_discrs)) Bool (= rec__p__tt__x1 (to_rep (rec__p__tt__x a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -166,28 +187,6 @@
                                          (us_split_fieldsqtmk1
                                          (rec__p__tt (us_split_fields1 r)))))
 
-(define-fun to_rep ((x integer)) Int (integerqtint x))
-
-(declare-fun of_rep (Int) integer)
-
-;; inversion_axiom
-  (assert
-  (forall ((x integer)) (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
-
-;; range_axiom
-  (assert
-  (forall ((x integer)) (! (in_range (to_rep x)) :pattern ((to_rep x)) )))
-
-;; coerce_axiom
-  (assert
-  (forall ((x Int))
-  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
-                                                           (of_rep x))) )))
-
-(define-fun in_range1 ((rec__p__tt__x1 Int)
-  (a us_rep)) Bool (= rec__p__tt__x1 (to_rep
-                                     (rec__p__tt__x (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -229,90 +228,24 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
 
-(define-fun dynamic_invariant ((temp___expr_194 us_rep1)
-  (temp___is_init_190 Bool) (temp___skip_constant_191 Bool)
-  (temp___do_toplevel_192 Bool)
-  (temp___do_typ_inv_193 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_191 true))
-                                     (in_range1 1 (to_base temp___expr_194))))
+(define-fun dynamic_invariant ((temp___expr_195 us_rep1)
+  (temp___is_init_191 Bool) (temp___skip_constant_192 Bool)
+  (temp___do_toplevel_193 Bool)
+  (temp___do_typ_inv_194 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_192 true))
+                                     (in_range1 1
+                                     (us_split_discrs1
+                                     (to_base temp___expr_195)))))
 
-(define-fun default_initial_assumption ((temp___expr_196 us_rep1)
-  (temp___skip_top_level_197 Bool)) Bool (= (to_rep
+(define-fun default_initial_assumption ((temp___expr_197 us_rep1)
+  (temp___skip_top_level_198 Bool)) Bool (= (to_rep
                                             (rec__p__tt__x
                                             (us_split_discrs2
-                                            temp___expr_196))) 1))
+                                            temp___expr_197))) 1))
 
 (declare-const foo Bool)
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
-
-(declare-datatypes ((us_split_fields4 0))
-(((us_split_fieldsqtmk2 (rec__p__tt2 us_main_type)))))
-(define-fun us_split_fields_rec__p__tt__2__projection ((a us_split_fields4)) us_main_type 
-  (rec__p__tt2 a))
-
-(declare-datatypes ((us_split_fields__ref2 0))
-(((us_split_fields__refqtmk2 (us_split_fields__content2 us_split_fields4)))))
-(define-fun us_split_fields__ref___split_fields__content__2__projection ((a us_split_fields__ref2)) us_split_fields4 
-  (us_split_fields__content2 a))
-
-(declare-datatypes ((us_rep2 0))
-(((us_repqtmk2
-  (us_split_discrs3 us_split_discrs)(us_split_fields5 us_split_fields4)))))
-(define-fun us_rep___split_discrs__2__projection ((a us_rep2)) us_split_discrs 
-  (us_split_discrs3 a))
-
-(define-fun us_rep___split_fields__2__projection ((a us_rep2)) us_split_fields4 
-  (us_split_fields5 a))
-
-(define-fun to_base1 ((a us_rep2)) us_rep (us_repqtmk (us_split_discrs3 a)
-                                          (us_split_fieldsqtmk
-                                          (rec__p__tt2 (us_split_fields5 a)))))
-
-(define-fun of_base1 ((r us_rep)) us_rep2 (us_repqtmk2 (us_split_discrs1 r)
-                                          (us_split_fieldsqtmk2
-                                          (rec__p__tt (us_split_fields1 r)))))
-
-(define-fun in_range2 ((rec__p__tt__x1 Int)
-  (a us_rep)) Bool (= rec__p__tt__x1 (to_rep
-                                     (rec__p__tt__x (us_split_discrs1 a)))))
-
-(declare-const value__size2 Int)
-
-(declare-const object__size2 Int)
-
-(declare-const alignment2 Int)
-
-;; value__size_axiom
-  (assert (<= 0 value__size2))
-
-;; object__size_axiom
-  (assert (<= 0 object__size2))
-
-;; alignment_axiom
-  (assert (<= 0 alignment2))
-
-(declare-const p__tt__x__first__bit2 Int)
-
-(declare-const p__tt__x__last__bit2 Int)
-
-(declare-const p__tt__x__position2 Int)
-
-;; p__tt__x__first__bit_axiom
-  (assert (<= 0 p__tt__x__first__bit2))
-
-;; p__tt__x__last__bit_axiom
-  (assert (< p__tt__x__first__bit2 p__tt__x__last__bit2))
-
-;; p__tt__x__position_axiom
-  (assert (<= 0 p__tt__x__position2))
-
-(declare-fun user_eq3 (us_rep2 us_rep2) Bool)
-
-(declare-datatypes ((tt1__ref 0))
-(((tt1__refqtmk (tt1__content us_rep2)))))
-(define-fun tt1__ref_tt1__content__projection ((a tt1__ref)) us_rep2 
-  (tt1__content a))
 
 (define-fun dynamic_invariant1 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)
@@ -320,20 +253,6 @@
                                     (or (= temp___is_init_14 true)
                                     (<= (- 2147483648) 2147483647)) (in_range
                                     temp___expr_18)))
-
-(define-fun dynamic_invariant2 ((temp___expr_185 us_rep2)
-  (temp___is_init_181 Bool) (temp___skip_constant_182 Bool)
-  (temp___do_toplevel_183 Bool)
-  (temp___do_typ_inv_184 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_182 true))
-                                     (in_range2 1
-                                     (to_base1 temp___expr_185))))
-
-(define-fun default_initial_assumption1 ((temp___expr_187 us_rep2)
-  (temp___skip_top_level_188 Bool)) Bool (= (to_rep
-                                            (rec__p__tt__x
-                                            (us_split_discrs3
-                                            temp___expr_187))) 1))
 
 (assert
 ;; defqtvc

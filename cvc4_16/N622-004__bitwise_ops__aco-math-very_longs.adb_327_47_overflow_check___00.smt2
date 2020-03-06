@@ -528,6 +528,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__ada___ada___aco__math__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___ada___aco__math__very_longs__very_long__octet_length1 
+  (to_rep
+  (rec__ada___ada___aco__math__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -686,30 +691,30 @@
   (=> (= digit_index 1)
   (=> (dynamic_invariant1 digit_index true false true true)
   (=>
-  (let ((temp___1508 (last1
+  (let ((temp___1511 (last1
                      (rec__ada___ada___aco__math__very_longs__very_long__long_digits
                      (us_split_fields1 number)))))
   (exists ((i Int))
   (and (= i 1)
-  (ite (= (and (ite (<= 1 i) true false) (ite (<= i temp___1508) true false)) true)
+  (ite (= (and (ite (<= 1 i) true false) (ite (<= i temp___1511) true false)) true)
   (exists ((spark__branch Bool) (digit_index2 Int))
   (and
-  (let ((temp___1509 (rec__ada___ada___aco__math__very_longs__very_long__long_digits
+  (let ((temp___1512 (rec__ada___ada___aco__math__very_longs__very_long__long_digits
                      (us_split_fields1 number))))
-  (and (and (<= (first1 temp___1509) i) (<= i (last1 temp___1509)))
+  (and (and (<= (first1 temp___1512) i) (<= i (last1 temp___1512)))
   (exists ((o (_ BitVec 8)))
-  (and (= (to_rep2 (select (to_array temp___1509) i)) o)
+  (and (= (to_rep2 (select (to_array temp___1512) i)) o)
   (and (= spark__branch (ite (not (= o #x00)) true false))
   (ite (= spark__branch true) (= digit_index2 i)
   (= digit_index2 digit_index)))))))
   (and (in_range2 (+ i 1))
-  (let ((temp___1517 (rec__ada___ada___aco__math__very_longs__very_long__long_digits
+  (let ((temp___1520 (rec__ada___ada___aco__math__very_longs__very_long__long_digits
                      (us_split_fields1 number))))
   (and
-  (and (<= (first1 temp___1517) digit_index2)
-  (<= digit_index2 (last1 temp___1517)))
+  (and (<= (first1 temp___1520) digit_index2)
+  (<= digit_index2 (last1 temp___1520)))
   (exists ((o (_ BitVec 8)))
-  (and (= (to_rep2 (select (to_array temp___1517) digit_index2)) o)
+  (and (= (to_rep2 (select (to_array temp___1520) digit_index2)) o)
   (exists ((i1 Int))
   (and
   (and
@@ -748,7 +753,7 @@
                                   (rec__ada___ada___aco__math__very_longs__very_long__long_digits
                                   (us_split_fields1 number)))))
                       true false)) true)
-  (= i1 temp___1508))))))))))) (= digit_index1 digit_index)))))
+  (= i1 temp___1511))))))))))) (= digit_index1 digit_index)))))
   (=>
   (= ada___ada___aco__math__very_longs__divide__get_msd__result digit_index1)
   (in_range2

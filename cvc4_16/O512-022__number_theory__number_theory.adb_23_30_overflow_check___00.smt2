@@ -402,10 +402,10 @@
   (=>
   (= (and (ite (and
                (and
-               (and (dynamic_invariant temp1 false true true true)
+               (and (dynamic_invariant oldest1 false true true true)
+               (dynamic_invariant temp1 false true true true))
                (dynamic_property 2 n i1)) (dynamic_invariant1 old__1 false
-               true true true)) (dynamic_invariant oldest1 false true true
-               true))
+               true true true))
           true false) (ite (and (<= 2 i1) (<= i1 n)) true false)) true)
   (forall ((temp2 Int))
   (=> (= temp2 oldest1)

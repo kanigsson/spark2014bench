@@ -347,83 +347,6 @@
 
 (declare-const dummy4 us_rep)
 
-(declare-datatypes ((blech_type__ref 0))
-(((blech_type__refqtmk (blech_type__content us_rep)))))
-(define-fun blech_type__ref_blech_type__content__projection ((a blech_type__ref)) us_rep 
-  (blech_type__content a))
-
-(define-fun in_range5 ((rec__repro__blech_type__opt1 Int)
-  (a us_rep)) Bool (= rec__repro__blech_type__opt1 (to_rep3
-                                                   (rec__repro__blech_type__opt
-                                                   (us_split_discrs1 a)))))
-
-(declare-const value__size1 Int)
-
-(declare-const object__size1 Int)
-
-(declare-const alignment1 Int)
-
-;; value__size_axiom
-  (assert (<= 0 value__size1))
-
-;; object__size_axiom
-  (assert (<= 0 object__size1))
-
-;; alignment_axiom
-  (assert (<= 0 alignment1))
-
-(declare-const repro__blech_type__opt__first__bit1 Int)
-
-(declare-const repro__blech_type__opt__last__bit1 Int)
-
-(declare-const repro__blech_type__opt__position1 Int)
-
-;; repro__blech_type__opt__first__bit_axiom
-  (assert (<= 0 repro__blech_type__opt__first__bit1))
-
-;; repro__blech_type__opt__last__bit_axiom
-  (assert
-  (< repro__blech_type__opt__first__bit1 repro__blech_type__opt__last__bit1))
-
-;; repro__blech_type__opt__position_axiom
-  (assert (<= 0 repro__blech_type__opt__position1))
-
-(declare-const repro__blech_type__x__first__bit1 Int)
-
-(declare-const repro__blech_type__x__last__bit1 Int)
-
-(declare-const repro__blech_type__x__position1 Int)
-
-;; repro__blech_type__x__first__bit_axiom
-  (assert (<= 0 repro__blech_type__x__first__bit1))
-
-;; repro__blech_type__x__last__bit_axiom
-  (assert
-  (< repro__blech_type__x__first__bit1 repro__blech_type__x__last__bit1))
-
-;; repro__blech_type__x__position_axiom
-  (assert (<= 0 repro__blech_type__x__position1))
-
-(declare-const repro__blech_type__y__first__bit1 Int)
-
-(declare-const repro__blech_type__y__last__bit1 Int)
-
-(declare-const repro__blech_type__y__position1 Int)
-
-;; repro__blech_type__y__first__bit_axiom
-  (assert (<= 0 repro__blech_type__y__first__bit1))
-
-;; repro__blech_type__y__last__bit_axiom
-  (assert
-  (< repro__blech_type__y__first__bit1 repro__blech_type__y__last__bit1))
-
-;; repro__blech_type__y__position_axiom
-  (assert (<= 0 repro__blech_type__y__position1))
-
-(declare-fun user_eq5 (us_rep us_rep) Bool)
-
-(declare-const dummy5 us_rep)
-
 (declare-datatypes ((t1s__ref 0))
 (((t1s__refqtmk (t1s__content us_rep)))))
 (define-fun t1s__ref_t1s__content__projection ((a t1s__ref)) us_rep (t1s__content
@@ -498,20 +421,25 @@
                             (us_split_fields3 b))) true))))
                     true false))
 
-(declare-const value__size2 Int)
+(define-fun in_range5 ((rec__repro__fnord_type__opt1 Int)
+  (a us_split_discrs2)) Bool (= rec__repro__fnord_type__opt1 (to_rep
+                                                             (rec__repro__fnord_type__opt
+                                                             a))))
 
-(declare-const object__size2 Int)
+(declare-const value__size1 Int)
 
-(declare-const alignment2 Int)
+(declare-const object__size1 Int)
+
+(declare-const alignment1 Int)
 
 ;; value__size_axiom
-  (assert (<= 0 value__size2))
+  (assert (<= 0 value__size1))
 
 ;; object__size_axiom
-  (assert (<= 0 object__size2))
+  (assert (<= 0 object__size1))
 
 ;; alignment_axiom
-  (assert (<= 0 alignment2))
+  (assert (<= 0 alignment1))
 
 (declare-const repro__fnord_type__opt__first__bit Int)
 
@@ -561,9 +489,9 @@
 ;; repro__fnord_type__blech__position_axiom
   (assert (<= 0 repro__fnord_type__blech__position))
 
-(declare-fun user_eq6 (us_rep1 us_rep1) Bool)
+(declare-fun user_eq5 (us_rep1 us_rep1) Bool)
 
-(declare-const dummy6 us_rep1)
+(declare-const dummy5 us_rep1)
 
 (declare-datatypes ((fnord_type__ref 0))
 (((fnord_type__refqtmk (fnord_type__content us_rep1)))))
@@ -590,6 +518,83 @@
                                      (or (= temp___is_init_161 true)
                                      (<= 1 2)) (in_range1 temp___expr_165)))
 
+(define-fun in_range6 ((rec__repro__blech_type__opt1 Int)
+  (a us_split_discrs)) Bool (= rec__repro__blech_type__opt1 (to_rep3
+                                                            (rec__repro__blech_type__opt
+                                                            a))))
+
+(declare-const value__size2 Int)
+
+(declare-const object__size2 Int)
+
+(declare-const alignment2 Int)
+
+;; value__size_axiom
+  (assert (<= 0 value__size2))
+
+;; object__size_axiom
+  (assert (<= 0 object__size2))
+
+;; alignment_axiom
+  (assert (<= 0 alignment2))
+
+(declare-const repro__blech_type__opt__first__bit1 Int)
+
+(declare-const repro__blech_type__opt__last__bit1 Int)
+
+(declare-const repro__blech_type__opt__position1 Int)
+
+;; repro__blech_type__opt__first__bit_axiom
+  (assert (<= 0 repro__blech_type__opt__first__bit1))
+
+;; repro__blech_type__opt__last__bit_axiom
+  (assert
+  (< repro__blech_type__opt__first__bit1 repro__blech_type__opt__last__bit1))
+
+;; repro__blech_type__opt__position_axiom
+  (assert (<= 0 repro__blech_type__opt__position1))
+
+(declare-const repro__blech_type__x__first__bit1 Int)
+
+(declare-const repro__blech_type__x__last__bit1 Int)
+
+(declare-const repro__blech_type__x__position1 Int)
+
+;; repro__blech_type__x__first__bit_axiom
+  (assert (<= 0 repro__blech_type__x__first__bit1))
+
+;; repro__blech_type__x__last__bit_axiom
+  (assert
+  (< repro__blech_type__x__first__bit1 repro__blech_type__x__last__bit1))
+
+;; repro__blech_type__x__position_axiom
+  (assert (<= 0 repro__blech_type__x__position1))
+
+(declare-const repro__blech_type__y__first__bit1 Int)
+
+(declare-const repro__blech_type__y__last__bit1 Int)
+
+(declare-const repro__blech_type__y__position1 Int)
+
+;; repro__blech_type__y__first__bit_axiom
+  (assert (<= 0 repro__blech_type__y__first__bit1))
+
+;; repro__blech_type__y__last__bit_axiom
+  (assert
+  (< repro__blech_type__y__first__bit1 repro__blech_type__y__last__bit1))
+
+;; repro__blech_type__y__position_axiom
+  (assert (<= 0 repro__blech_type__y__position1))
+
+(declare-fun user_eq6 (us_rep us_rep) Bool)
+
+(declare-const dummy6 us_rep)
+
+(declare-datatypes ((blech_type__ref 0))
+(((blech_type__refqtmk (blech_type__content us_rep)))))
+(define-fun blech_type__ref_blech_type__content__projection ((a blech_type__ref)) us_rep 
+  (blech_type__content a))
+
 (define-fun default_initial_assumption ((temp___expr_174 us_rep)
   (temp___skip_top_level_175 Bool)) Bool (= (to_rep3
                                             (rec__repro__blech_type__opt
@@ -600,12 +605,13 @@
   (temp___is_init_179 Bool) (temp___skip_constant_180 Bool)
   (temp___do_toplevel_181 Bool)
   (temp___do_typ_inv_182 Bool)) Bool (=> (repro__fnord_type__blech__pred
-                                     temp___expr_183) (in_range5
+                                     temp___expr_183) (in_range6
                                      (to_rep
                                      (rec__repro__fnord_type__opt
                                      (us_split_discrs3 temp___expr_183)))
+                                     (us_split_discrs1
                                      (rec__repro__fnord_type__blech
-                                     (us_split_fields3 temp___expr_183)))))
+                                     (us_split_fields3 temp___expr_183))))))
 
 (define-fun default_initial_assumption1 ((temp___expr_186 us_rep1)
   (temp___skip_top_level_187 Bool)) Bool (and

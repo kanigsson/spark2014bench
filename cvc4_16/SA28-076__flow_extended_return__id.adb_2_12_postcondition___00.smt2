@@ -65,10 +65,10 @@
 ;; defqtvc
  ;; File "id.adb", line 1, characters 0-0
   (not
-  (forall ((id__result Bool))
+  (forall ((identity__result Bool))
   (=> (= x y)
   (=>
   (exists ((spark__branch Bool))
   (= spark__branch (ite (= (ite x 1 0) 1) true false)))
-  (=> (= id__result y) (=> (= id__result true) (= x true))))))))
+  (=> (= identity__result y) (=> (= identity__result true) (= x true))))))))
 (check-sat)

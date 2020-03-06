@@ -179,6 +179,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__prim_eq_vect__int_vect__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__prim_eq_vect__int_vect__vector__capacity1 
+  (to_rep (rec__prim_eq_vect__int_vect__vector__capacity a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -483,7 +487,7 @@
   (forall ((i count_type))
   (and (<= 0 (count_typeqtint i)) (<= (count_typeqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -511,13 +515,13 @@
 
 ;; range_axiom
   (assert
-  (forall ((x count_type)) (! (in_range3
+  (forall ((x count_type)) (! (in_range4
   (to_rep1 x)) :pattern ((to_rep1 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range3 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
+  (! (=> (in_range4 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
                                                               (of_rep1 x))) )))
 
 (declare-sort hash_type 0)
@@ -619,6 +623,18 @@
                             (rec__prim_eq_vect__int_vect_map__map
                             (us_split_fields3 b))) true))
                     true false))
+
+(define-fun in_range5 ((rec__prim_eq_vect__int_vect_map__map__capacity1 Int)
+  (rec__prim_eq_vect__int_vect_map__map__modulus1 (_ BitVec 32))
+  (a us_split_discrs2)) Bool (and
+                             (= rec__prim_eq_vect__int_vect_map__map__capacity1 
+                             (to_rep1
+                             (rec__prim_eq_vect__int_vect_map__map__capacity
+                             a)))
+                             (= rec__prim_eq_vect__int_vect_map__map__modulus1 
+                             (to_rep2
+                             (rec__prim_eq_vect__int_vect_map__map__modulus
+                             a)))))
 
 (declare-const value__size2 Int)
 
@@ -731,11 +747,6 @@
   (! (= (= (oeq2 left right) true)
      (= (oeq3 (model2 left) (model2 right)) true)) :pattern ((oeq2 left
                                                              right)) )))
-
-(define-fun in_range4 ((rec__prim_eq_vect__int_vect__vector__capacity1 Int)
-  (a us_rep)) Bool (= rec__prim_eq_vect__int_vect__vector__capacity1 
-  (to_rep
-  (rec__prim_eq_vect__int_vect__vector__capacity (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 
@@ -898,40 +909,42 @@
 
 (declare-fun is_empty__function_guard (Bool us_rep) Bool)
 
-(define-fun dynamic_invariant1 ((temp___expr_423 us_rep4)
-  (temp___is_init_419 Bool) (temp___skip_constant_420 Bool)
-  (temp___do_toplevel_421 Bool)
-  (temp___do_typ_inv_422 Bool)) Bool (and (in_range4 200
+(define-fun dynamic_invariant1 ((temp___expr_424 us_rep4)
+  (temp___is_init_420 Bool) (temp___skip_constant_421 Bool)
+  (temp___do_toplevel_422 Bool)
+  (temp___do_typ_inv_423 Bool)) Bool (and (in_range3 200
+                                     (us_split_discrs1
                                      (rec__prim_eq_vect__two_vects__f
-                                     (us_split_fields5 temp___expr_423)))
-                                     (in_range4 200
+                                     (us_split_fields5 temp___expr_424))))
+                                     (in_range3 200
+                                     (us_split_discrs1
                                      (rec__prim_eq_vect__two_vects__g
-                                     (us_split_fields5 temp___expr_423)))))
+                                     (us_split_fields5 temp___expr_424))))))
 
-(define-fun default_initial_assumption ((temp___expr_426 us_rep4)
-  (temp___skip_top_level_427 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_427 us_rep4)
+  (temp___skip_top_level_428 Bool)) Bool (and
                                          (and
                                          (= (to_rep
                                             (rec__prim_eq_vect__int_vect__vector__capacity
                                             (us_split_discrs1
                                             (rec__prim_eq_vect__two_vects__f
                                             (us_split_fields5
-                                            temp___expr_426))))) 200)
+                                            temp___expr_427))))) 200)
                                          (= (is_empty
                                             (rec__prim_eq_vect__two_vects__f
                                             (us_split_fields5
-                                            temp___expr_426))) true))
+                                            temp___expr_427))) true))
                                          (and
                                          (= (to_rep
                                             (rec__prim_eq_vect__int_vect__vector__capacity
                                             (us_split_discrs1
                                             (rec__prim_eq_vect__two_vects__g
                                             (us_split_fields5
-                                            temp___expr_426))))) 200)
+                                            temp___expr_427))))) 200)
                                          (= (is_empty
                                             (rec__prim_eq_vect__two_vects__g
                                             (us_split_fields5
-                                            temp___expr_426))) true))))
+                                            temp___expr_427))) true))))
 
 (declare-const x us_rep2)
 
@@ -950,69 +963,72 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq8 a b) (oeq a b)) :pattern ((user_eq8 a b)) )))
 
-(define-fun dynamic_invariant2 ((temp___expr_384 us_rep)
-  (temp___is_init_380 Bool) (temp___skip_constant_381 Bool)
-  (temp___do_toplevel_382 Bool)
-  (temp___do_typ_inv_383 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_381 true))
-                                     (in_range4 200 temp___expr_384)))
+(define-fun dynamic_invariant2 ((temp___expr_385 us_rep)
+  (temp___is_init_381 Bool) (temp___skip_constant_382 Bool)
+  (temp___do_toplevel_383 Bool)
+  (temp___do_typ_inv_384 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_382 true))
+                                     (in_range3 200
+                                     (us_split_discrs1 temp___expr_385))))
 
-(define-fun default_initial_assumption1 ((temp___expr_386 us_rep)
-  (temp___skip_top_level_387 Bool)) Bool (and
+(define-fun default_initial_assumption1 ((temp___expr_387 us_rep)
+  (temp___skip_top_level_388 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__prim_eq_vect__int_vect__vector__capacity
                                             (us_split_discrs1
-                                            temp___expr_386))) 200)
+                                            temp___expr_387))) 200)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_387 true))
-                                         (= (is_empty temp___expr_386) true))))
+                                         (= temp___skip_top_level_388 true))
+                                         (= (is_empty temp___expr_387) true))))
 
-(define-fun dynamic_invariant3 ((temp___expr_394 us_rep4)
-  (temp___is_init_390 Bool) (temp___skip_constant_391 Bool)
-  (temp___do_toplevel_392 Bool)
-  (temp___do_typ_inv_393 Bool)) Bool (and (in_range4 200
+(define-fun dynamic_invariant3 ((temp___expr_395 us_rep4)
+  (temp___is_init_391 Bool) (temp___skip_constant_392 Bool)
+  (temp___do_toplevel_393 Bool)
+  (temp___do_typ_inv_394 Bool)) Bool (and (in_range3 200
+                                     (us_split_discrs1
                                      (rec__prim_eq_vect__two_vects__f
-                                     (us_split_fields5 temp___expr_394)))
-                                     (in_range4 200
+                                     (us_split_fields5 temp___expr_395))))
+                                     (in_range3 200
+                                     (us_split_discrs1
                                      (rec__prim_eq_vect__two_vects__g
-                                     (us_split_fields5 temp___expr_394)))))
+                                     (us_split_fields5 temp___expr_395))))))
 
-(define-fun default_initial_assumption2 ((temp___expr_397 us_rep4)
-  (temp___skip_top_level_398 Bool)) Bool (and
+(define-fun default_initial_assumption2 ((temp___expr_398 us_rep4)
+  (temp___skip_top_level_399 Bool)) Bool (and
                                          (and
                                          (= (to_rep
                                             (rec__prim_eq_vect__int_vect__vector__capacity
                                             (us_split_discrs1
                                             (rec__prim_eq_vect__two_vects__f
                                             (us_split_fields5
-                                            temp___expr_397))))) 200)
+                                            temp___expr_398))))) 200)
                                          (= (is_empty
                                             (rec__prim_eq_vect__two_vects__f
                                             (us_split_fields5
-                                            temp___expr_397))) true))
+                                            temp___expr_398))) true))
                                          (and
                                          (= (to_rep
                                             (rec__prim_eq_vect__int_vect__vector__capacity
                                             (us_split_discrs1
                                             (rec__prim_eq_vect__two_vects__g
                                             (us_split_fields5
-                                            temp___expr_397))))) 200)
+                                            temp___expr_398))))) 200)
                                          (= (is_empty
                                             (rec__prim_eq_vect__two_vects__g
                                             (us_split_fields5
-                                            temp___expr_397))) true))))
+                                            temp___expr_398))) true))))
 
-(define-fun dynamic_invariant4 ((temp___expr_409 (_ BitVec 32))
-  (temp___is_init_405 Bool) (temp___skip_constant_406 Bool)
-  (temp___do_toplevel_407 Bool) (temp___do_typ_inv_408 Bool)) Bool true)
+(define-fun dynamic_invariant4 ((temp___expr_410 (_ BitVec 32))
+  (temp___is_init_406 Bool) (temp___skip_constant_407 Bool)
+  (temp___do_toplevel_408 Bool) (temp___do_typ_inv_409 Bool)) Bool true)
 
 (define-fun dynamic_invariant5 ((temp___expr_335 Int)
   (temp___is_init_331 Bool) (temp___skip_constant_332 Bool)
   (temp___do_toplevel_333 Bool)
   (temp___do_typ_inv_334 Bool)) Bool (=>
                                      (or (= temp___is_init_331 true)
-                                     (<= 0 2147483647)) (in_range3
+                                     (<= 0 2147483647)) (in_range4
                                      temp___expr_335)))
 
 (define-fun dynamic_invariant6 ((temp___expr_342 Int)
@@ -1073,7 +1089,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range5 ((x1 Int)) Bool (and (<= 0 x1) (<= x1 2147483647)))
+(define-fun in_range6 ((x1 Int)) Bool (and (<= 0 x1) (<= x1 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -1095,7 +1111,7 @@
   (temp___do_toplevel_367 Bool)
   (temp___do_typ_inv_368 Bool)) Bool (=>
                                      (or (= temp___is_init_365 true)
-                                     (<= 0 2147483647)) (in_range5
+                                     (<= 0 2147483647)) (in_range6
                                      temp___expr_369)))
 
 ;; length__post_axiom
@@ -1115,7 +1131,7 @@
   (and (<= (- 2147483648) (element_typeqtint i))
   (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range6 ((x1 Int)) Bool (and (<= (- 2147483648) x1)
+(define-fun in_range7 ((x1 Int)) Bool (and (<= (- 2147483648) x1)
                                       (<= x1 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
@@ -1139,7 +1155,7 @@
   (temp___do_typ_inv_361 Bool)) Bool (=>
                                      (or (= temp___is_init_358 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range6 temp___expr_362)))
+                                     (in_range7 temp___expr_362)))
 
 ;; get__post_axiom
   (assert
@@ -1164,13 +1180,13 @@
   (forall ((a us_rep3) (b us_rep3))
   (! (= (user_eq7 a b) (oeq3 a b)) :pattern ((user_eq7 a b)) )))
 
-(define-fun default_initial_assumption4 ((temp___expr_483 us_rep3)
-  (temp___skip_top_level_484 Bool)) Bool (=>
+(define-fun default_initial_assumption4 ((temp___expr_484 us_rep3)
+  (temp___skip_top_level_485 Bool)) Bool (=>
                                          (not
-                                         (= temp___skip_top_level_484 true))
+                                         (= temp___skip_top_level_485 true))
                                          (and
-                                         (= (is_empty1 temp___expr_483) true)
-                                         (= (length3 temp___expr_483) 0))))
+                                         (= (is_empty1 temp___expr_484) true)
+                                         (= (length3 temp___expr_484) 0))))
 
 ;; model__post_axiom
   (assert true)
@@ -1185,7 +1201,7 @@
   (and (<= (- 2147483648) (key_typeqtint i))
   (<= (key_typeqtint i) 2147483647))))
 
-(define-fun in_range7 ((x1 Int)) Bool (and (<= (- 2147483648) x1)
+(define-fun in_range8 ((x1 Int)) Bool (and (<= (- 2147483648) x1)
                                       (<= x1 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
@@ -1203,13 +1219,13 @@
 (define-fun key_type__ref_key_type__content__2__projection ((a key_type__ref)) key_type 
   (key_type__content a))
 
-(define-fun dynamic_invariant9 ((temp___expr_460 Int)
-  (temp___is_init_456 Bool) (temp___skip_constant_457 Bool)
-  (temp___do_toplevel_458 Bool)
-  (temp___do_typ_inv_459 Bool)) Bool (=>
-                                     (or (= temp___is_init_456 true)
+(define-fun dynamic_invariant9 ((temp___expr_461 Int)
+  (temp___is_init_457 Bool) (temp___skip_constant_458 Bool)
+  (temp___do_toplevel_459 Bool)
+  (temp___do_typ_inv_460 Bool)) Bool (=>
+                                     (or (= temp___is_init_457 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range7 temp___expr_460)))
+                                     (in_range8 temp___expr_461)))
 
 ;; has_key__post_axiom
   (assert
@@ -1219,7 +1235,7 @@
      (=> (= (distinct 1 0) true)
      (=>
      (exists ((k Int))
-     (and (and (in_range7 k) (= (has_key container k) true)) (= k key)))
+     (and (and (in_range8 k) (= (has_key container k) true)) (= k key)))
      (= (has_key container key) true)))) :pattern ((has_key container key)) ))))
 
 (declare-fun witness (us_rep3 Int) Int)
@@ -1230,40 +1246,42 @@
 
 (declare-fun w_get__function_guard (us_rep4 us_rep3 Int) Bool)
 
-(define-fun dynamic_invariant10 ((temp___expr_467 us_rep4)
-  (temp___is_init_463 Bool) (temp___skip_constant_464 Bool)
-  (temp___do_toplevel_465 Bool)
-  (temp___do_typ_inv_466 Bool)) Bool (and (in_range4 200
+(define-fun dynamic_invariant10 ((temp___expr_468 us_rep4)
+  (temp___is_init_464 Bool) (temp___skip_constant_465 Bool)
+  (temp___do_toplevel_466 Bool)
+  (temp___do_typ_inv_467 Bool)) Bool (and (in_range3 200
+                                     (us_split_discrs1
                                      (rec__prim_eq_vect__two_vects__f
-                                     (us_split_fields5 temp___expr_467)))
-                                     (in_range4 200
+                                     (us_split_fields5 temp___expr_468))))
+                                     (in_range3 200
+                                     (us_split_discrs1
                                      (rec__prim_eq_vect__two_vects__g
-                                     (us_split_fields5 temp___expr_467)))))
+                                     (us_split_fields5 temp___expr_468))))))
 
-(define-fun default_initial_assumption5 ((temp___expr_470 us_rep4)
-  (temp___skip_top_level_471 Bool)) Bool (and
+(define-fun default_initial_assumption5 ((temp___expr_471 us_rep4)
+  (temp___skip_top_level_472 Bool)) Bool (and
                                          (and
                                          (= (to_rep
                                             (rec__prim_eq_vect__int_vect__vector__capacity
                                             (us_split_discrs1
                                             (rec__prim_eq_vect__two_vects__f
                                             (us_split_fields5
-                                            temp___expr_470))))) 200)
+                                            temp___expr_471))))) 200)
                                          (= (is_empty
                                             (rec__prim_eq_vect__two_vects__f
                                             (us_split_fields5
-                                            temp___expr_470))) true))
+                                            temp___expr_471))) true))
                                          (and
                                          (= (to_rep
                                             (rec__prim_eq_vect__int_vect__vector__capacity
                                             (us_split_discrs1
                                             (rec__prim_eq_vect__two_vects__g
                                             (us_split_fields5
-                                            temp___expr_470))))) 200)
+                                            temp___expr_471))))) 200)
                                          (= (is_empty
                                             (rec__prim_eq_vect__two_vects__g
                                             (us_split_fields5
-                                            temp___expr_470))) true))))
+                                            temp___expr_471))) true))))
 
 ;; get__post_axiom
   (assert
@@ -1278,7 +1296,7 @@
      (and
      (= (bool_eq4 result (w_get container (witness container key))) true)
      (forall ((k Int))
-     (=> (and (in_range7 k) (= (has_key container k) true))
+     (=> (and (in_range8 k) (= (has_key container k) true))
      (= (= k key) (= (witness container key) (witness container k)))))))
      (dynamic_invariant10 result true false true true)))) :pattern ((get1
                                                                     container
@@ -1295,11 +1313,11 @@
   (! (= (= (oeq3 left right) true)
      (and
      (forall ((key Int))
-     (=> (and (in_range7 key) (= (has_key left key) true))
+     (=> (and (in_range8 key) (= (has_key left key) true))
      (and (= (has_key right key) true)
      (= (bool_eq4 (get1 right key) (get1 left key)) true))))
      (forall ((key Int))
-     (=> (and (in_range7 key) (= (has_key right key) true))
+     (=> (and (in_range8 key) (= (has_key right key) true))
      (= (has_key left key) true))))) :pattern ((oeq3 left right)) )))
 
 ;; is_empty__post_axiom
@@ -1307,7 +1325,7 @@
   (forall ((container us_rep3))
   (! (= (= (is_empty1 container) true)
      (forall ((key Int))
-     (not (and (in_range7 key) (= (has_key container key) true))))) :pattern (
+     (not (and (in_range8 key) (= (has_key container key) true))))) :pattern (
   (is_empty1 container)) )))
 
 (declare-fun has_witness (us_rep3 Int) Bool)

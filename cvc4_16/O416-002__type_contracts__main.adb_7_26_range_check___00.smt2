@@ -504,6 +504,10 @@
                             (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range3 ((rec__communications__communication__num1 Int)
+  (a us_split_discrs)) Bool (= rec__communications__communication__num1 
+  (to_rep (rec__communications__communication__num a))))
+
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -568,7 +572,7 @@
   (assert
   (forall ((i tT7bP1)) (and (<= 1 (tT7bP1qtint i)) (<= (tT7bP1qtint i) 2))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 2)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 2)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -655,12 +659,6 @@
                             (rec__communications__communication__msgs1
                             (us_split_fields5 b)) 1 2) true))
                     true false))
-
-(define-fun in_range4 ((rec__communications__communication__num1 Int)
-  (a us_rep1)) Bool (= rec__communications__communication__num1 (to_rep
-                                                                (rec__communications__communication__num
-                                                                (us_split_discrs1
-                                                                a)))))
 
 (declare-const value__size5 Int)
 

@@ -348,57 +348,57 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___180 Float64) (temp___181 Float64) (temp___182 Float64)
-  (temp___183 Float64))
-  (let ((temp___179 (floats__test__b__aggregate_def temp___180 temp___181
-                    temp___182 temp___183)))
+  (forall ((temp___181 Float64) (temp___182 Float64) (temp___183 Float64)
+  (temp___184 Float64))
+  (let ((temp___180 (floats__test__b__aggregate_def temp___181 temp___182
+                    temp___183 temp___184)))
   (=>
   (and
-  (and (dynamic_invariant1 temp___180 true true true true)
-  (dynamic_invariant1 temp___181 true true true true))
-  (and (dynamic_invariant1 temp___182 true true true true)
-  (dynamic_invariant1 temp___183 true true true true)))
+  (and (dynamic_invariant1 temp___181 true true true true)
+  (dynamic_invariant1 temp___182 true true true true))
+  (and (dynamic_invariant1 temp___183 true true true true)
+  (dynamic_invariant1 temp___184 true true true true)))
   (and
-  (and (= (to_rep1 (select temp___179 1)) temp___180)
-  (= (to_rep1 (select temp___179 2)) temp___181))
-  (and (= (to_rep1 (select temp___179 3)) temp___182)
-  (= (to_rep1 (select temp___179 4)) temp___183)))))))
+  (and (= (to_rep1 (select temp___180 1)) temp___181)
+  (= (to_rep1 (select temp___180 2)) temp___182))
+  (and (= (to_rep1 (select temp___180 3)) temp___183)
+  (= (to_rep1 (select temp___180 4)) temp___184)))))))
 
 ;; def_axiom
   (assert
-  (forall ((temp___186 Float64) (temp___187 Float64) (temp___188 Float64)
-  (temp___189 Float64))
-  (let ((temp___185 (floats__test__c__aggregate_def temp___186 temp___187
-                    temp___188 temp___189)))
+  (forall ((temp___187 Float64) (temp___188 Float64) (temp___189 Float64)
+  (temp___190 Float64))
+  (let ((temp___186 (floats__test__c__aggregate_def temp___187 temp___188
+                    temp___189 temp___190)))
   (=>
   (and
-  (and (dynamic_invariant1 temp___186 true true true true)
-  (dynamic_invariant1 temp___187 true true true true))
-  (and (dynamic_invariant1 temp___188 true true true true)
-  (dynamic_invariant1 temp___189 true true true true)))
+  (and (dynamic_invariant1 temp___187 true true true true)
+  (dynamic_invariant1 temp___188 true true true true))
+  (and (dynamic_invariant1 temp___189 true true true true)
+  (dynamic_invariant1 temp___190 true true true true)))
   (and
-  (and (= (to_rep1 (select temp___185 1)) temp___186)
-  (= (to_rep1 (select temp___185 2)) temp___187))
-  (and (= (to_rep1 (select temp___185 3)) temp___188)
-  (= (to_rep1 (select temp___185 4)) temp___189)))))))
+  (and (= (to_rep1 (select temp___186 1)) temp___187)
+  (= (to_rep1 (select temp___186 2)) temp___188))
+  (and (= (to_rep1 (select temp___186 3)) temp___189)
+  (= (to_rep1 (select temp___186 4)) temp___190)))))))
 
 ;; def_axiom
   (assert
-  (forall ((temp___192 Float64) (temp___193 Float64) (temp___194 Float64)
-  (temp___195 Float64))
-  (let ((temp___191 (floats__test__d__aggregate_def temp___192 temp___193
-                    temp___194 temp___195)))
+  (forall ((temp___193 Float64) (temp___194 Float64) (temp___195 Float64)
+  (temp___196 Float64))
+  (let ((temp___192 (floats__test__d__aggregate_def temp___193 temp___194
+                    temp___195 temp___196)))
   (=>
   (and
-  (and (dynamic_invariant1 temp___192 true true true true)
-  (dynamic_invariant1 temp___193 true true true true))
-  (and (dynamic_invariant1 temp___194 true true true true)
-  (dynamic_invariant1 temp___195 true true true true)))
+  (and (dynamic_invariant1 temp___193 true true true true)
+  (dynamic_invariant1 temp___194 true true true true))
+  (and (dynamic_invariant1 temp___195 true true true true)
+  (dynamic_invariant1 temp___196 true true true true)))
   (and
-  (and (= (to_rep1 (select temp___191 1)) temp___192)
-  (= (to_rep1 (select temp___191 2)) temp___193))
-  (and (= (to_rep1 (select temp___191 3)) temp___194)
-  (= (to_rep1 (select temp___191 4)) temp___195)))))))
+  (and (= (to_rep1 (select temp___192 1)) temp___193)
+  (= (to_rep1 (select temp___192 2)) temp___194))
+  (and (= (to_rep1 (select temp___192 3)) temp___195)
+  (= (to_rep1 (select temp___192 4)) temp___196)))))))
 
 (assert
 ;; defqtvc
@@ -409,11 +409,10 @@
   (=>
   (forall ((i Int))
   (=> (and (<= 1 i) (<= i 3))
+  (let ((temp___250 (to_rep (select a i))))
   (and
-  (fp.leq (fp.neg (fp #b0 #b01111111 #b00000000000000000000000)) (to_rep
-                                                                 (select 
-                                                                 a i)))
-  (fp.leq (to_rep (select a i)) (fp #b0 #b01111111 #b00000000000000000000000)))))
+  (fp.leq (fp.neg (fp #b0 #b01111111 #b00000000000000000000000)) temp___250)
+  (fp.leq temp___250 (fp #b0 #b01111111 #b00000000000000000000000))))))
   (=>
   (= b (floats__test__b__aggregate_def
        (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000)

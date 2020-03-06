@@ -1987,7 +1987,7 @@
   (not
   (forall ((cur_board (Array Int (Array Int cell)))
   (cur_piece__split_fields us_split_fields) (cur_state Int) (o Int)
-  (spark__branch Bool) (o1 Int) (o2 cell) (temp___850 Int) (temp___851 Int))
+  (spark__branch Bool) (o1 Int) (o2 cell) (temp___859 Int) (temp___860 Int))
   (=>
   (= (patris__possible_i_shapes__aggregate_def
      (temp_____aggregate_def_169 (distinct 0 0) (distinct 0 0) (distinct 0 0)
@@ -2082,10 +2082,10 @@
   (=> (= (to_rep1 (rec__patris__piece__s cur_piece__split_fields)) o1)
   (=> (= (to_rep o2) o1)
   (=>
-  (= (to_rep2 (rec__patris__piece__x cur_piece__split_fields)) temp___850)
-  (=> (<= 1 temp___850)
-  (=> (<= temp___850 10)
+  (= (to_rep2 (rec__patris__piece__x cur_piece__split_fields)) temp___859)
+  (=> (<= 1 temp___859)
+  (=> (<= temp___859 10)
   (=>
-  (= (to_rep3 (rec__patris__piece__y cur_piece__split_fields)) temp___851)
-  (<= 1 temp___851))))))))))))))))))
+  (= (to_rep3 (rec__patris__piece__y cur_piece__split_fields)) temp___860)
+  (<= 1 temp___860))))))))))))))))))
 (check-sat)

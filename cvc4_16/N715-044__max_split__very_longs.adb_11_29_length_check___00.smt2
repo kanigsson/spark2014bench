@@ -641,6 +641,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range4 ((rec__very_longs__very_long__digit_length1 Int)
+  (a us_split_discrs)) Bool (= rec__very_longs__very_long__digit_length1 
+  (to_rep (rec__very_longs__very_long__digit_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -753,12 +757,6 @@
                             (us_split_fields3 b))) true))
                     true false))
 
-(define-fun in_range4 ((rec__very_longs__very_long__digit_length1 Int)
-  (a us_rep)) Bool (= rec__very_longs__very_long__digit_length1 (to_rep
-                                                                (rec__very_longs__very_long__digit_length
-                                                                (us_split_discrs1
-                                                                a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -826,7 +824,8 @@
                                      (=>
                                      (not (= temp___skip_constant_204 true))
                                      (in_range4 digit_length
-                                     (to_base temp___expr_207)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_207))))
                                      (and (dynamic_property 1 digit_length
                                      (first1
                                      (rec__very_longs__very_long__long_digits1

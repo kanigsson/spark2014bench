@@ -620,24 +620,24 @@
                                     (<= (- 2147483648) 2147483647)) (in_range
                                     temp___expr_18)))
 
-(define-fun default_initial_assumption1 ((temp___expr_203 us_rep1)
-  (temp___skip_top_level_204 Bool)) Bool (and
-                                         (= (attr__tag1 temp___expr_203) 
+(define-fun default_initial_assumption1 ((temp___expr_205 us_rep1)
+  (temp___skip_top_level_206 Bool)) Bool (and
+                                         (= (attr__tag1 temp___expr_205) 
                                          us_tag1)
                                          (and
                                          (and
                                          (= (to_rep
                                             (rec__object__t__area1
                                             (us_split_fields3
-                                            temp___expr_203))) (- 1))
+                                            temp___expr_205))) (- 1))
                                          (= (to_rep
                                             (rec__object__t__max_width1
                                             (us_split_fields3
-                                            temp___expr_203))) (- 1)))
+                                            temp___expr_205))) (- 1)))
                                          (= (to_rep
                                             (rec__object__t__max_height1
                                             (us_split_fields3
-                                            temp___expr_203))) (- 1)))))
+                                            temp___expr_205))) (- 1)))))
 
 (assert
 ;; defqtvc

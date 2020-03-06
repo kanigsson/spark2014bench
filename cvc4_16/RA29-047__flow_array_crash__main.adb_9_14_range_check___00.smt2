@@ -266,6 +266,13 @@
                            (rec__main__r__c (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__main__r__ld1 Int) (rec__main__r__hd1 Int)
+  (a us_split_discrs)) Bool (and
+                            (= rec__main__r__ld1 (to_rep
+                                                 (rec__main__r__ld a)))
+                            (= rec__main__r__hd1 (to_rep
+                                                 (rec__main__r__hd a)))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -387,15 +394,6 @@
                             (rec__main__r__c1 (us_split_fields3 b))) true))
                     true false))
 
-(define-fun in_range1 ((rec__main__r__ld1 Int) (rec__main__r__hd1 Int)
-  (a us_rep)) Bool (and
-                   (= rec__main__r__ld1 (to_rep
-                                        (rec__main__r__ld
-                                        (us_split_discrs1 a))))
-                   (= rec__main__r__hd1 (to_rep
-                                        (rec__main__r__hd
-                                        (us_split_discrs1 a))))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -476,7 +474,8 @@
                                      (=>
                                      (not (= temp___skip_constant_178 true))
                                      (in_range1 l h
-                                     (to_base temp___expr_181)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_181))))
                                      (and (dynamic_property l h
                                      (first1
                                      (rec__main__r__c1
@@ -568,15 +567,6 @@
                             (rec__main__r__c2 (us_split_fields5 b))) true))
                     true false))
 
-(define-fun in_range2 ((rec__main__r__ld1 Int) (rec__main__r__hd1 Int)
-  (a us_rep)) Bool (and
-                   (= rec__main__r__ld1 (to_rep
-                                        (rec__main__r__ld
-                                        (us_split_discrs1 a))))
-                   (= rec__main__r__hd1 (to_rep
-                                        (rec__main__r__hd
-                                        (us_split_discrs1 a))))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -656,8 +646,9 @@
   (temp___do_typ_inv_195 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_193 true))
-                                     (in_range2 l h
-                                     (to_base1 temp___expr_196)))
+                                     (in_range1 l h
+                                     (us_split_discrs1
+                                     (to_base1 temp___expr_196))))
                                      (and (dynamic_property l h
                                      (first1
                                      (rec__main__r__c2
@@ -748,15 +739,6 @@
                          (= (bool_eq1 (rec__main__r__c3 (us_split_fields7 a))
                             (rec__main__r__c3 (us_split_fields7 b))) true))
                     true false))
-
-(define-fun in_range3 ((rec__main__r__ld1 Int) (rec__main__r__hd1 Int)
-  (a us_rep)) Bool (and
-                   (= rec__main__r__ld1 (to_rep
-                                        (rec__main__r__ld
-                                        (us_split_discrs1 a))))
-                   (= rec__main__r__hd1 (to_rep
-                                        (rec__main__r__hd
-                                        (us_split_discrs1 a))))))
 
 (declare-const value__size4 Int)
 

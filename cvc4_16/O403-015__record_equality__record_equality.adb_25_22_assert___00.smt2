@@ -146,6 +146,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range1 ((rec__record_equality__root__c1 Int)
+  (a us_split_discrs)) Bool (= rec__record_equality__root__c1 (to_rep
+                                                              (rec__record_equality__root__c
+                                                              a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -554,11 +559,6 @@
 
 (declare-const us_tag3 Int)
 
-(define-fun in_range1 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -642,7 +642,9 @@
   (temp___do_toplevel_225 Bool)
   (temp___do_typ_inv_226 Bool)) Bool (=>
                                      (not (= temp___skip_constant_224 true))
-                                     (in_range1 0 (to_base temp___expr_227))))
+                                     (in_range1 0
+                                     (us_split_discrs1
+                                     (to_base temp___expr_227)))))
 
 (define-fun default_initial_assumption ((temp___expr_229 us_rep1)
   (temp___skip_top_level_230 Bool)) Bool (and
@@ -684,11 +686,6 @@
 (declare-const attr__ATTRIBUTE_ADDRESS4 Int)
 
 (declare-const us_tag4 Int)
-
-(define-fun in_range2 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 
@@ -779,11 +776,6 @@
   (t5b__content a))
 
 (declare-const us_tag5 Int)
-
-(define-fun in_range3 ((rec__record_equality__root__c1 Int)
-  (a us_rep)) Bool (= rec__record_equality__root__c1 (to_rep
-                                                     (rec__record_equality__root__c
-                                                     (us_split_discrs1 a)))))
 
 (declare-const value__size5 Int)
 

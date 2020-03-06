@@ -145,6 +145,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range2 ((rec__amortized_queue__my_vectors__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__amortized_queue__my_vectors__vector__capacity1 
+  (to_rep (rec__amortized_queue__my_vectors__vector__capacity a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -276,7 +280,7 @@
   (forall ((i extended_index))
   (and (<= 0 (extended_indexqtint i)) (<= (extended_indexqtint i) 1001))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 1001)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 1001)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -298,7 +302,7 @@
   (temp___do_toplevel_239 Bool)
   (temp___do_typ_inv_240 Bool)) Bool (=>
                                      (or (= temp___is_init_237 true)
-                                     (<= 0 1001)) (in_range2
+                                     (<= 0 1001)) (in_range3
                                      temp___expr_241)))
 
 (declare-fun first_index__function_guard (Int us_rep) Bool)
@@ -312,7 +316,7 @@
   (forall ((i index_type))
   (and (<= 1 (index_typeqtint i)) (<= (index_typeqtint i) 1000))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 1000)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 1000)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -334,7 +338,7 @@
   (temp___do_toplevel_225 Bool)
   (temp___do_typ_inv_226 Bool)) Bool (=>
                                      (or (= temp___is_init_223 true)
-                                     (<= 1 1000)) (in_range3
+                                     (<= 1 1000)) (in_range4
                                      temp___expr_227)))
 
 (declare-fun get (us_rep1 Int) Int)
@@ -356,7 +360,7 @@
   (and (<= (- 2147483648) (element_typeqtint i))
   (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
@@ -380,7 +384,7 @@
   (temp___do_typ_inv_233 Bool)) Bool (=>
                                      (or (= temp___is_init_230 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range4 temp___expr_234)))
+                                     (in_range5 temp___expr_234)))
 
 (define-fun length2 ((x Int) (y Int)) Int (ite (<= x y) (+ (- y x) 1) 0))
 
@@ -410,11 +414,6 @@
 (declare-const r31b Int)
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
-
-(define-fun in_range5 ((rec__amortized_queue__my_vectors__vector__capacity1 Int)
-  (a us_rep)) Bool (= rec__amortized_queue__my_vectors__vector__capacity1 
-  (to_rep
-  (rec__amortized_queue__my_vectors__vector__capacity (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -469,23 +468,24 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq6 a b) (oeq a b)) :pattern ((user_eq6 a b)) )))
 
-(define-fun dynamic_invariant4 ((temp___expr_516 us_rep)
-  (temp___is_init_512 Bool) (temp___skip_constant_513 Bool)
-  (temp___do_toplevel_514 Bool)
-  (temp___do_typ_inv_515 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_513 true))
-                                     (in_range5 r31b temp___expr_516)))
+(define-fun dynamic_invariant4 ((temp___expr_517 us_rep)
+  (temp___is_init_513 Bool) (temp___skip_constant_514 Bool)
+  (temp___do_toplevel_515 Bool)
+  (temp___do_typ_inv_516 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_514 true))
+                                     (in_range2 r31b
+                                     (us_split_discrs1 temp___expr_517))))
 
-(define-fun default_initial_assumption ((temp___expr_518 us_rep)
-  (temp___skip_top_level_519 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_519 us_rep)
+  (temp___skip_top_level_520 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__amortized_queue__my_vectors__vector__capacity
                                             (us_split_discrs1
-                                            temp___expr_518))) r31b)
+                                            temp___expr_519))) r31b)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_519 true))
-                                         (= (is_empty temp___expr_518) true))))
+                                         (= temp___skip_top_level_520 true))
+                                         (= (is_empty temp___expr_519) true))))
 
 (declare-const r33b Int)
 
@@ -843,13 +843,13 @@
   (=> (dynamic_invariant1 r34b true false true true)
   (forall ((result____split_fields1 us_main_type))
   (=>
-  (let ((temp___673 r33b))
-  (let ((temp___674 r34b))
+  (let ((temp___674 r33b))
+  (let ((temp___675 r34b))
   (exists ((idx Int))
-  (and (= idx temp___673)
-  (ite (= (and (ite (<= temp___673 idx) true false) (ite (<= idx temp___674)
+  (and (= idx temp___674)
+  (ite (= (and (ite (<= temp___674 idx) true false) (ite (<= idx temp___675)
                                                     true false)) true)
-  (and (in_range3 idx)
+  (and (in_range4 idx)
   (let ((o3 left))
   (let ((o4 (element o3 idx)))
   (and
@@ -904,7 +904,7 @@
                (us_split_fieldsqtmk result____split_fields1)) false true true
                true))
           true false) (ite (and (<= r33b idx1) (<= idx1 r34b)) true false)) true)
-  (= idx1 temp___674))))))))))))))))
+  (= idx1 temp___675))))))))))))))))
   (= result____split_fields1 result____split_fields))))))
   (let ((o3 result____split_discrs))
   (forall
@@ -954,10 +954,10 @@
   (and (dynamic_invariant1 o8 true false true true)
   (= o8 (last (model1 o7))))
   (=> (= (and (ite (<= 1 usf) true false) (ite (<= usf o8) true false)) true)
-  (=> (in_range3 usf)
+  (=> (in_range4 usf)
   (let ((o9 left))
   (let ((o10 (element o9 usf)))
   (=>
   (and (dynamic_invariant3 o10 true false true true)
-  (= o10 (get (model1 o9) usf))) (=> (in_range3 usf) (<= 1 usf)))))))))))))))))))))))))))))))))))))))))))))))
+  (= o10 (get (model1 o9) usf))) (=> (in_range4 usf) (<= 1 usf)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

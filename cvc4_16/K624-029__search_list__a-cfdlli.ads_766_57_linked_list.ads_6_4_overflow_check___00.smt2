@@ -135,6 +135,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__linked_list__mylists__list__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__linked_list__mylists__list__capacity1 
+  (to_rep (rec__linked_list__mylists__list__capacity a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -281,7 +285,7 @@
 
 (define-fun length2 ((x Int) (y Int)) Int (ite (<= x y) (+ (- y x) 1) 0))
 
-(define-fun in_range1 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range2 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE1 (Bool) us_image)
 
@@ -452,7 +456,8 @@
      (forall ((i us_rep3))
      (=> (= (has_key result i) true)
      (and
-     (and (<= 1 (get1 result i)) (<= (get1 result i) (length container)))
+     (let ((temp___361 (get1 result i)))
+     (and (<= 1 temp___361) (<= temp___361 (length container))))
      (forall ((j us_rep3))
      (=> (= (has_key result j) true)
      (=> (= (get1 result i) (get1 result j)) (= (bool_eq3 i j) true))))))))) :pattern (
@@ -480,7 +485,7 @@
   (and (<= (- 2147483648) (element_typeqtint i))
   (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range3 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
@@ -504,7 +509,7 @@
   (temp___do_typ_inv_228 Bool)) Bool (=>
                                      (or (= temp___is_init_225 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range2 temp___expr_229)))
+                                     (in_range3 temp___expr_229)))
 
 (declare-sort tcount_typeB 0)
 
@@ -516,7 +521,7 @@
   (and (<= (- 2147483648) (tcount_typeBqtint i))
   (<= (tcount_typeBqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
@@ -564,7 +569,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -586,7 +591,7 @@
   (temp___do_toplevel_277 Bool)
   (temp___do_typ_inv_278 Bool)) Bool (=>
                                      (or (= temp___is_init_275 true)
-                                     (<= 0 2147483647)) (in_range4
+                                     (<= 0 2147483647)) (in_range5
                                      temp___expr_279)))
 
 ;; length__post_axiom
@@ -606,7 +611,7 @@
   (and (<= (- 2147483648) (element_typeqtint1 i))
   (<= (element_typeqtint1 i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range6 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
@@ -630,7 +635,7 @@
   (temp___do_typ_inv_271 Bool)) Bool (=>
                                      (or (= temp___is_init_268 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range5 temp___expr_272)))
+                                     (in_range6 temp___expr_272)))
 
 ;; get__post_axiom
   (assert
@@ -669,7 +674,7 @@
   (forall ((i element_type2))
   (and (<= 1 (element_typeqtint2 i)) (<= (element_typeqtint2 i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -691,7 +696,7 @@
   (temp___do_toplevel_299 Bool)
   (temp___do_typ_inv_300 Bool)) Bool (=>
                                      (or (= temp___is_init_297 true)
-                                     (<= 1 2147483647)) (in_range6
+                                     (<= 1 2147483647)) (in_range7
                                      temp___expr_301)))
 
 ;; get__post_axiom
@@ -772,5 +777,5 @@
   (=>
   (= (to_rep
      (rec__linked_list__mylists__list__capacity container__split_discrs)) o)
-  (in_range3 (- o count))))))))
+  (in_range4 (- o count))))))))
 (check-sat)

@@ -155,6 +155,28 @@
 (define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun to_rep ((x positive)) Int (positiveqtint x))
+
+(declare-fun of_rep (Int) positive)
+
+;; inversion_axiom
+  (assert
+  (forall ((x positive))
+  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x positive)) (! (in_range1 (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range1 x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                            (of_rep x))) )))
+
+(define-fun in_range2 ((rec__p__tt__x1 Int)
+  (a us_split_discrs)) Bool (= rec__p__tt__x1 (to_rep (rec__p__tt__x a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -219,29 +241,6 @@
                                          (us_split_fieldsqtmk1
                                          (rec__p__tt (us_split_fields1 r)))))
 
-(define-fun to_rep ((x positive)) Int (positiveqtint x))
-
-(declare-fun of_rep (Int) positive)
-
-;; inversion_axiom
-  (assert
-  (forall ((x positive))
-  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
-
-;; range_axiom
-  (assert
-  (forall ((x positive)) (! (in_range1 (to_rep x)) :pattern ((to_rep x)) )))
-
-;; coerce_axiom
-  (assert
-  (forall ((x Int))
-  (! (=> (in_range1 x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
-                                                            (of_rep x))) )))
-
-(define-fun in_range2 ((rec__p__tt__x1 Int)
-  (a us_rep)) Bool (= rec__p__tt__x1 (to_rep
-                                     (rec__p__tt__x (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -289,7 +288,8 @@
   (temp___do_typ_inv_186 Bool)) Bool (=>
                                      (not (= temp___skip_constant_184 true))
                                      (in_range2 r2b
-                                     (to_base temp___expr_187))))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_187)))))
 
 (define-fun default_initial_assumption ((temp___expr_189 us_rep1)
   (temp___skip_top_level_190 Bool)) Bool (= (to_rep

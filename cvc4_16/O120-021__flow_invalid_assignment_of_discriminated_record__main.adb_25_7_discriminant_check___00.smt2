@@ -185,6 +185,11 @@
                                                   (us_split_fields1 b)))))))
                    true false))
 
+(define-fun in_range2 ((rec__main__variant_type__discr1 Int)
+  (a us_split_discrs)) Bool (= rec__main__variant_type__discr1 (to_rep1
+                                                               (rec__main__variant_type__discr
+                                                               a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -266,11 +271,6 @@
                                             (rec__main__variant_type__discr
                                             (us_split_discrs1
                                             temp___expr_188))) 0))
-
-(define-fun in_range2 ((rec__main__variant_type__discr1 Int)
-  (a us_rep)) Bool (= rec__main__variant_type__discr1 (to_rep1
-                                                      (rec__main__variant_type__discr
-                                                      (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 
@@ -355,18 +355,14 @@
   (temp___do_toplevel_195 Bool)
   (temp___do_typ_inv_196 Bool)) Bool (=>
                                      (not (= temp___skip_constant_194 true))
-                                     (in_range2 0 temp___expr_197)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_197))))
 
 (define-fun default_initial_assumption1 ((temp___expr_199 us_rep)
   (temp___skip_top_level_200 Bool)) Bool (= (to_rep1
                                             (rec__main__variant_type__discr
                                             (us_split_discrs1
                                             temp___expr_199))) 0))
-
-(define-fun in_range3 ((rec__main__variant_type__discr1 Int)
-  (a us_rep)) Bool (= rec__main__variant_type__discr1 (to_rep1
-                                                      (rec__main__variant_type__discr
-                                                      (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -451,18 +447,14 @@
   (temp___do_toplevel_206 Bool)
   (temp___do_typ_inv_207 Bool)) Bool (=>
                                      (not (= temp___skip_constant_205 true))
-                                     (in_range3 1 temp___expr_208)))
+                                     (in_range2 1
+                                     (us_split_discrs1 temp___expr_208))))
 
 (define-fun default_initial_assumption2 ((temp___expr_210 us_rep)
   (temp___skip_top_level_211 Bool)) Bool (= (to_rep1
                                             (rec__main__variant_type__discr
                                             (us_split_discrs1
                                             temp___expr_210))) 1))
-
-(define-fun in_range4 ((rec__main__variant_type__discr1 Int)
-  (a us_rep)) Bool (= rec__main__variant_type__discr1 (to_rep1
-                                                      (rec__main__variant_type__discr
-                                                      (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 
@@ -535,11 +527,6 @@
 (((t1b__refqtmk (t1b__content us_rep)))))
 (define-fun t1b__ref_t1b__content__projection ((a t1b__ref)) us_rep (t1b__content
                                                                     a))
-
-(define-fun in_range5 ((rec__main__variant_type__discr1 Int)
-  (a us_rep)) Bool (= rec__main__variant_type__discr1 (to_rep1
-                                                      (rec__main__variant_type__discr
-                                                      (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 
@@ -643,22 +630,22 @@
   (us_repqtmk (us_split_discrsqtmk u0__split_discrs) u0__split_fields) false)
   (=> (in_range1 0)
   (=> (= (to_rep1 o) 0)
-  (let ((o1 (us_repqtmk (us_split_discrsqtmk o)
-            (us_split_fieldsqtmk rliteral dummy))))
+  (let ((temp___221 (us_repqtmk (us_split_discrsqtmk o)
+                    (us_split_fieldsqtmk rliteral dummy))))
   (forall ((u1__split_fields us_split_fields))
-  (=> (= u1__split_fields (us_split_fields1 o1))
-  (=> (= u1__split_discrs (us_split_discrs1 o1))
+  (=> (= u1__split_fields (us_split_fields1 temp___221))
+  (=> (= u1__split_discrs (us_split_discrs1 temp___221))
   (=> (= u1__attr__constrained true)
   (=> (dynamic_invariant (us_repqtmk u1__split_discrs u1__split_fields) true
   false true true)
   (=> (in_range1 1)
-  (forall ((o2 discriminant_type))
-  (=> (= (to_rep1 o2) 1)
-  (let ((o3 (us_repqtmk (us_split_discrsqtmk o2)
-            (us_split_fieldsqtmk rliteral rliteral))))
+  (forall ((o1 discriminant_type))
+  (=> (= (to_rep1 o1) 1)
+  (let ((temp___223 (us_repqtmk (us_split_discrsqtmk o1)
+                    (us_split_fieldsqtmk rliteral rliteral))))
   (forall ((u2__split_fields us_split_fields))
-  (=> (= u2__split_fields (us_split_fields1 o3))
-  (=> (= u2__split_discrs (us_split_discrs1 o3))
+  (=> (= u2__split_fields (us_split_fields1 temp___223))
+  (=> (= u2__split_discrs (us_split_discrs1 temp___223))
   (=> (= u2__attr__constrained true)
   (=> (dynamic_invariant1 (us_repqtmk u2__split_discrs u2__split_fields) true
   false true true)

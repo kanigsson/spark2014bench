@@ -352,15 +352,15 @@
 
 (declare-const dummy4 us_rep)
 
-(declare-datatypes ((r2__ref 0))
-(((r2__refqtmk (r2__content us_rep)))))
-(define-fun r2__ref_r2__content__projection ((a r2__ref)) us_rep (r2__content
-                                                                 a))
+(declare-datatypes ((trt2S__ref 0))
+(((trt2S__refqtmk (trt2S__content us_rep)))))
+(define-fun trt2S__ref_trt2S__content__projection ((a trt2S__ref)) us_rep 
+  (trt2S__content a))
 
 (define-fun in_range4 ((rec__alignment_attribute__r2__d11 Int)
-  (a us_rep)) Bool (= rec__alignment_attribute__r2__d11 (to_rep1
-                                                        (rec__alignment_attribute__r2__d1
-                                                        (us_split_discrs1 a)))))
+  (a us_split_discrs)) Bool (= rec__alignment_attribute__r2__d11 (to_rep1
+                                                                 (rec__alignment_attribute__r2__d1
+                                                                 a))))
 
 (declare-const value__size2 Int)
 
@@ -413,10 +413,10 @@
 
 (declare-const dummy5 us_rep)
 
-(declare-datatypes ((trt2S__ref 0))
-(((trt2S__refqtmk (trt2S__content us_rep)))))
-(define-fun trt2S__ref_trt2S__content__projection ((a trt2S__ref)) us_rep 
-  (trt2S__content a))
+(declare-datatypes ((r2__ref 0))
+(((r2__refqtmk (r2__content us_rep)))))
+(define-fun r2__ref_r2__content__projection ((a r2__ref)) us_rep (r2__content
+                                                                 a))
 
 (declare-const rt2__split_discrs us_split_discrs)
 
@@ -429,18 +429,14 @@
   (temp___do_toplevel_237 Bool)
   (temp___do_typ_inv_238 Bool)) Bool (=>
                                      (not (= temp___skip_constant_236 true))
-                                     (in_range4 3 temp___expr_239)))
+                                     (in_range4 3
+                                     (us_split_discrs1 temp___expr_239))))
 
 (define-fun default_initial_assumption ((temp___expr_241 us_rep)
   (temp___skip_top_level_242 Bool)) Bool (= (to_rep1
                                             (rec__alignment_attribute__r2__d1
                                             (us_split_discrs1
                                             temp___expr_241))) 3))
-
-(define-fun in_range5 ((rec__alignment_attribute__r2__d11 Int)
-  (a us_rep)) Bool (= rec__alignment_attribute__r2__d11 (to_rep1
-                                                        (rec__alignment_attribute__r2__d1
-                                                        (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 
@@ -509,7 +505,8 @@
   (temp___do_toplevel_184 Bool)
   (temp___do_typ_inv_185 Bool)) Bool (=>
                                      (not (= temp___skip_constant_183 true))
-                                     (in_range5 5 temp___expr_186)))
+                                     (in_range4 5
+                                     (us_split_discrs1 temp___expr_186))))
 
 (define-fun default_initial_assumption1 ((temp___expr_188 us_rep)
   (temp___skip_top_level_189 Bool)) Bool (= (to_rep1
@@ -763,7 +760,7 @@
   (forall ((i natural))
   (and (<= 0 (naturalqtint i)) (<= (naturalqtint i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -791,12 +788,12 @@
 
 ;; range_axiom
   (assert
-  (forall ((x natural)) (! (in_range6 (to_rep3 x)) :pattern ((to_rep3 x)) )))
+  (forall ((x natural)) (! (in_range5 (to_rep3 x)) :pattern ((to_rep3 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range6 x) (= (to_rep3 (of_rep3 x)) x)) :pattern ((to_rep3
+  (! (=> (in_range5 x) (= (to_rep3 (of_rep3 x)) x)) :pattern ((to_rep3
                                                               (of_rep3 x))) )))
 
 (declare-datatypes ((map__ref1 0))
@@ -858,7 +855,7 @@
   (forall ((i positive))
   (and (<= 1 (positiveqtint i)) (<= (positiveqtint i) 2147483647))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -886,12 +883,12 @@
 
 ;; range_axiom
   (assert
-  (forall ((x positive)) (! (in_range7 (to_rep4 x)) :pattern ((to_rep4 x)) )))
+  (forall ((x positive)) (! (in_range6 (to_rep4 x)) :pattern ((to_rep4 x)) )))
 
 ;; coerce_axiom
   (assert
   (forall ((x Int))
-  (! (=> (in_range7 x) (= (to_rep4 (of_rep4 x)) x)) :pattern ((to_rep4
+  (! (=> (in_range6 x) (= (to_rep4 (of_rep4 x)) x)) :pattern ((to_rep4
                                                               (of_rep4 x))) )))
 
 (declare-datatypes ((map__ref2 0))
@@ -970,7 +967,7 @@
 (define-fun dynamic_property ((range_first Int) (range_last Int) (low Int)
   (high Int)) Bool (and (in_range1 low)
                    (and (in_range1 high)
-                   (=> (<= low high) (and (in_range7 low) (in_range7 high))))))
+                   (=> (<= low high) (and (in_range6 low) (in_range6 high))))))
 
 (declare-datatypes ((us_t 0))
 (((us_tqtmk (elts (Array Int natural))(rt t)))))
@@ -1042,14 +1039,14 @@
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
   (temp___do_typ_inv_38 Bool)) Bool (=>
                                     (or (= temp___is_init_35 true)
-                                    (<= 0 2147483647)) (in_range6
+                                    (<= 0 2147483647)) (in_range5
                                     temp___expr_39)))
 
 (define-fun dynamic_invariant5 ((temp___expr_46 Int) (temp___is_init_42 Bool)
   (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)
   (temp___do_typ_inv_45 Bool)) Bool (=>
                                     (or (= temp___is_init_42 true)
-                                    (<= 1 2147483647)) (in_range7
+                                    (<= 1 2147483647)) (in_range6
                                     temp___expr_46)))
 
 (define-fun dynamic_invariant6 ((temp___expr_74 Int) (temp___is_init_70 Bool)
@@ -1137,7 +1134,7 @@
   (=> (= ua (alignment_attribute__ua__aggregate_def 1))
   (=> (= ca (alignment_attribute__ca__aggregate_def 2))
   (=> (<= 0 alignment)
-  (=> (<= 0 alignment1)
+  (=> (<= 0 alignment2)
   (=> (<= 0 alignment3)
   (=> (<= 0 alignment4) (=> (<= 0 alignment5) (<= 0 1)))))))))))))))))))))))))
 (check-sat)

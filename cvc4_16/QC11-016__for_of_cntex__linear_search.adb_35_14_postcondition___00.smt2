@@ -320,7 +320,7 @@
 ;; defqtvc
  ;; File "linear_search.adb", line 33, characters 0-0
   (not
-  (forall ((linear_search__search__2__result Int) (temp___439 Int))
+  (forall ((linear_search__search__2__result Int) (temp___441 Int))
   (=> (dynamic_invariant n true false true true)
   (=> (= (last arr) 10)
   (=>
@@ -359,7 +359,7 @@
   (and (in_range4 o1) (exists ((i2 Int)) (and (= i2 o1) (not (< i2 10)))))))))))))))
   (= linear_search__search__2__result 0))))))
   (=> (= linear_search__search__2__result 0)
-  (=> (in_range2 temp___439)
-  (=> (= (iter_has_element arr temp___439) true)
-  (not (= (get arr temp___439) n)))))))))))
+  (=> (in_range2 temp___441)
+  (=> (= (iter_has_element arr temp___441) true)
+  (not (= (get arr temp___441) n)))))))))))
 (check-sat)

@@ -140,6 +140,10 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range1 ((rec__types__t__d1 Int)
+  (a us_split_discrs)) Bool (= rec__types__t__d1 (to_rep
+                                                 (rec__types__t__d a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -205,7 +209,7 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-O331-042__flow_no_DIC_on_phase1-15561/src/gnatprove/types__t.mlw", line 404, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-O331-042__flow_no_DIC_on_phase1-18657/src/gnatprove/types__t.mlw", line 418, characters 5-8
   (not
   (forall ((usf us_rep))
   (=> (= (attr__tag usf) us_tag)

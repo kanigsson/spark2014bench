@@ -338,6 +338,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range4 ((rec__record_discr__interm_result__upto1 Int)
+  (a us_split_discrs)) Bool (= rec__record_discr__interm_result__upto1 
+  (to_rep (rec__record_discr__interm_result__upto a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -402,7 +406,7 @@
   (assert
   (forall ((i tT5sP1)) (and (<= 1 (tT5sP1qtint i)) (<= (tT5sP1qtint i) 3))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -489,12 +493,6 @@
                             (rec__record_discr__interm_result__to_search1
                             (us_split_fields3 b)) 1 3) true))
                     true false))
-
-(define-fun in_range5 ((rec__record_discr__interm_result__upto1 Int)
-  (a us_rep)) Bool (= rec__record_discr__interm_result__upto1 (to_rep
-                                                              (rec__record_discr__interm_result__upto
-                                                              (us_split_discrs1
-                                                              a)))))
 
 (declare-const value__size3 Int)
 
@@ -606,6 +604,10 @@
                             (us_split_fields5 b))) true))
                     true false))
 
+(define-fun in_range6 ((rec__private_record__result_ty__found1 Bool)
+  (a us_split_discrs3)) Bool (= rec__private_record__result_ty__found1 
+  (rec__private_record__result_ty__found a)))
+
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -687,7 +689,9 @@
   (temp___do_toplevel_187 Bool)
   (temp___do_typ_inv_188 Bool)) Bool (=>
                                      (not (= temp___skip_constant_186 true))
-                                     (in_range5 3 (to_base temp___expr_189))))
+                                     (in_range4 3
+                                     (us_split_discrs1
+                                     (to_base temp___expr_189)))))
 
 (define-fun default_initial_assumption ((temp___expr_192 us_rep1)
   (temp___skip_top_level_193 Bool)) Bool (= (to_rep

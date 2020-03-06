@@ -1254,14 +1254,14 @@
                                                            (us_repqtmk3
                                                            e__split_fields))))
   (=>
-  (forall ((v__split_fields1 us_split_fields)) (length__function_guard
-  (length1 (us_repqtmk3 v__split_fields1)) (us_repqtmk3 v__split_fields1)))
-  (=>
   (forall ((e__split_fields1 us_split_fields)) (length__function_guard
   (length1 (us_repqtmk3 e__split_fields1)) (us_repqtmk3 e__split_fields1)))
   (=>
   (forall ((v__split_fields1 us_split_fields)) (model__function_guard2
   (model3 (us_repqtmk3 v__split_fields1)) (us_repqtmk3 v__split_fields1)))
+  (=>
+  (forall ((v__split_fields1 us_split_fields)) (length__function_guard
+  (length1 (us_repqtmk3 v__split_fields1)) (us_repqtmk3 v__split_fields1)))
   (forall ((use_formal_vectors__my_vect__append__2__e_top__assume Int))
   (=>
   (= (to_rep (rec__use_formal_vectors__my_vect__vector__top e__split_fields)) use_formal_vectors__my_vect__append__2__e_top__assume)
@@ -1400,11 +1400,11 @@
   (= e__split_fields1 (us_split_fieldsqtmk rliteral
                       (rec__use_formal_vectors__my_vect__vector__content
                       e__split_fields)))
-  (let ((temp___462 e_top))
+  (let ((temp___455 e_top))
   (forall ((i Int))
   (=> (= i 1)
   (=>
-  (= (and (ite (<= 1 i) true false) (ite (<= i temp___462) true false)) true)
+  (= (and (ite (<= 1 i) true false) (ite (<= i temp___455) true false)) true)
   (forall ((v__split_fields2 us_split_fields)
   (e__split_fields2 us_split_fields) (i1 Int))
   (=>
@@ -1528,8 +1528,8 @@
   (= (and (ite (and
                (and
                (and
-               (and (dynamic_property1 1 e_top i1) (dynamic_invariant3
-               (us_repqtmk3 v__split_fields2) true true true true))
+               (and (dynamic_invariant3 (us_repqtmk3 v__split_fields2) true
+               true true true)
                (and
                (= (rec__use_formal_vectors__my_vect__vector__top
                   v__split_fields2) (rec__use_formal_vectors__my_vect__vector__top
@@ -1565,8 +1565,8 @@
                                       (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                                       (rec__use_formal_vectors__my_vect__vector__content
                                       v__split_fields1)))))))))
-               (dynamic_invariant3 (us_repqtmk3 e__split_fields2) true true
-               true true))
+               (dynamic_property1 1 e_top i1)) (dynamic_invariant3
+               (us_repqtmk3 e__split_fields2) true true true true))
                (and
                (= (rec__use_formal_vectors__my_vect__vector__top
                   e__split_fields2) (rec__use_formal_vectors__my_vect__vector__top
@@ -1603,29 +1603,29 @@
                                       (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                                       (rec__use_formal_vectors__my_vect__vector__content
                                       e__split_fields1)))))
-               (forall ((temp___481 Int))
+               (forall ((temp___474 Int))
                (=>
                (and
                (<= (first1
                    (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                    (rec__use_formal_vectors__my_vect__vector__content
-                   e__split_fields2))) temp___481)
-               (<= temp___481 (last1
+                   e__split_fields2))) temp___474)
+               (<= temp___474 (last1
                               (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                               (rec__use_formal_vectors__my_vect__vector__content
                               e__split_fields2)))))
                (=>
-               (or (< temp___462 temp___481)
-               (or (< temp___481 1) (<= i1 temp___481)))
+               (or (< temp___455 temp___474)
+               (or (< temp___474 1) (<= i1 temp___474)))
                (= (select (to_array
                           (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                           (rec__use_formal_vectors__my_vect__vector__content
-                          e__split_fields2))) temp___481) (select (to_array
+                          e__split_fields2))) temp___474) (select (to_array
                                                                   (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                                                                   (rec__use_formal_vectors__my_vect__vector__content
-                                                                  e__split_fields1))) temp___481))))))))))
+                                                                  e__split_fields1))) temp___474))))))))))
           true false) (ite (and (<= 1 i1) (<= i1 e_top)) true false)) true)
-  (let ((temp___469 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
+  (let ((temp___462 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                     (rec__use_formal_vectors__my_vect__vector__content
                     v__split_fields2))))
   (forall ((o6 Int))
@@ -1634,7 +1634,7 @@
      (rec__use_formal_vectors__my_vect__vector__top v__split_fields2)) o6)
   (let ((o7 (+ o6 i1)))
   (=> (in_range1 o7)
-  (=> (and (<= (first1 temp___469) o7) (<= o7 (last1 temp___469)))
+  (=> (and (<= (first1 temp___462) o7) (<= o7 (last1 temp___462)))
   (<= (first1
       (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
       (rec__use_formal_vectors__my_vect__vector__content e__split_fields2))) i1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))

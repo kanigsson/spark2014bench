@@ -513,8 +513,9 @@
   (=> (dynamic_invariant2 haystack true false true true)
   (=> (< (length needle) 2147483647)
   (=> (< (length haystack) 2147483646)
-  (=> (<= 1 (length needle))
-  (=> (<= (length needle) (length haystack))
+  (=>
+  (let ((temp___412 (length needle)))
+  (and (<= 1 temp___412) (<= temp___412 (length haystack))))
   (=> (dynamic_invariant i false false true true)
-  (< (length needle) 2147483647)))))))))))
+  (< (length needle) 2147483647))))))))))
 (check-sat)

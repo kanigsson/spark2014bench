@@ -1774,7 +1774,7 @@
 ;; defqtvc
  ;; File "patris.ads", line 173, characters 0-0
   (not
-  (forall ((o Int) (o1 Int) (usf Int) (usf1 Int) (temp___828 Int))
+  (forall ((o Int) (o1 Int) (usf Int) (usf1 Int) (temp___834 Int))
   (=>
   (= (patris__possible_i_shapes__aggregate_def
      (temp_____aggregate_def_169 (distinct 0 0) (distinct 0 0) (distinct 0 0)
@@ -1866,6 +1866,6 @@
   (=> (= (and (ite (<= 0 usf) true false) (ite (<= usf 2) true false)) true)
   (=>
   (= (and (ite (<= 0 usf1) true false) (ite (<= usf1 2) true false)) true)
-  (=> (= (to_rep (rec__patris__piece__s (us_split_fields1 p))) temp___828)
-  (<= 3 temp___828)))))))))))))
+  (=> (= (to_rep (rec__patris__piece__s (us_split_fields1 p))) temp___834)
+  (<= 3 temp___834)))))))))))))
 (check-sat)

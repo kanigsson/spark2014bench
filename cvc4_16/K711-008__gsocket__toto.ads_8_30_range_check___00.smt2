@@ -145,51 +145,6 @@
 
 (declare-const dummy1 us_rep)
 
-(declare-datatypes ((inet_addr_type__ref 0))
-(((inet_addr_type__refqtmk (inet_addr_type__content us_rep)))))
-(define-fun inet_addr_type__ref_inet_addr_type__content__projection ((a inet_addr_type__ref)) us_rep 
-  (inet_addr_type__content a))
-
-(define-fun in_range1 ((rec__toto__inet_addr_type__family1 Int)
-  (a us_rep)) Bool (= rec__toto__inet_addr_type__family1 (to_rep
-                                                         (rec__toto__inet_addr_type__family
-                                                         (us_split_discrs1 a)))))
-
-(declare-const value__size1 Int)
-
-(declare-const object__size1 Int)
-
-(declare-const alignment1 Int)
-
-;; value__size_axiom
-  (assert (<= 0 value__size1))
-
-;; object__size_axiom
-  (assert (<= 0 object__size1))
-
-;; alignment_axiom
-  (assert (<= 0 alignment1))
-
-(declare-const toto__inet_addr_type__family__first__bit1 Int)
-
-(declare-const toto__inet_addr_type__family__last__bit1 Int)
-
-(declare-const toto__inet_addr_type__family__position1 Int)
-
-;; toto__inet_addr_type__family__first__bit_axiom
-  (assert (<= 0 toto__inet_addr_type__family__first__bit1))
-
-;; toto__inet_addr_type__family__last__bit_axiom
-  (assert
-  (< toto__inet_addr_type__family__first__bit1 toto__inet_addr_type__family__last__bit1))
-
-;; toto__inet_addr_type__family__position_axiom
-  (assert (<= 0 toto__inet_addr_type__family__position1))
-
-(declare-fun user_eq2 (us_rep us_rep) Bool)
-
-(declare-const dummy2 us_rep)
-
 (declare-datatypes ((t1s__ref 0))
 (((t1s__refqtmk (t1s__content us_rep)))))
 (define-fun t1s__ref_t1s__content__projection ((a t1s__ref)) us_rep (t1s__content
@@ -238,20 +193,25 @@
                             (us_split_fields1 b))) true))
                     true false))
 
-(declare-const value__size2 Int)
+(define-fun in_range1 ((rec__toto__sock_addr_type__family1 Int)
+  (a us_split_discrs2)) Bool (= rec__toto__sock_addr_type__family1 (to_rep
+                                                                   (rec__toto__sock_addr_type__family
+                                                                   a))))
 
-(declare-const object__size2 Int)
+(declare-const value__size1 Int)
 
-(declare-const alignment2 Int)
+(declare-const object__size1 Int)
+
+(declare-const alignment1 Int)
 
 ;; value__size_axiom
-  (assert (<= 0 value__size2))
+  (assert (<= 0 value__size1))
 
 ;; object__size_axiom
-  (assert (<= 0 object__size2))
+  (assert (<= 0 object__size1))
 
 ;; alignment_axiom
-  (assert (<= 0 alignment2))
+  (assert (<= 0 alignment1))
 
 (declare-const toto__sock_addr_type__family__first__bit Int)
 
@@ -285,21 +245,67 @@
 ;; toto__sock_addr_type__addr__position_axiom
   (assert (<= 0 toto__sock_addr_type__addr__position))
 
-(declare-fun user_eq3 (us_rep1 us_rep1) Bool)
+(declare-fun user_eq2 (us_rep1 us_rep1) Bool)
 
-(declare-const dummy3 us_rep1)
+(declare-const dummy2 us_rep1)
 
 (declare-datatypes ((sock_addr_type__ref 0))
 (((sock_addr_type__refqtmk (sock_addr_type__content us_rep1)))))
 (define-fun sock_addr_type__ref_sock_addr_type__content__projection ((a sock_addr_type__ref)) us_rep1 
   (sock_addr_type__content a))
 
+(define-fun in_range2 ((rec__toto__inet_addr_type__family1 Int)
+  (a us_split_discrs)) Bool (= rec__toto__inet_addr_type__family1 (to_rep
+                                                                  (rec__toto__inet_addr_type__family
+                                                                  a))))
+
+(declare-const value__size2 Int)
+
+(declare-const object__size2 Int)
+
+(declare-const alignment2 Int)
+
+;; value__size_axiom
+  (assert (<= 0 value__size2))
+
+;; object__size_axiom
+  (assert (<= 0 object__size2))
+
+;; alignment_axiom
+  (assert (<= 0 alignment2))
+
+(declare-const toto__inet_addr_type__family__first__bit1 Int)
+
+(declare-const toto__inet_addr_type__family__last__bit1 Int)
+
+(declare-const toto__inet_addr_type__family__position1 Int)
+
+;; toto__inet_addr_type__family__first__bit_axiom
+  (assert (<= 0 toto__inet_addr_type__family__first__bit1))
+
+;; toto__inet_addr_type__family__last__bit_axiom
+  (assert
+  (< toto__inet_addr_type__family__first__bit1 toto__inet_addr_type__family__last__bit1))
+
+;; toto__inet_addr_type__family__position_axiom
+  (assert (<= 0 toto__inet_addr_type__family__position1))
+
+(declare-fun user_eq3 (us_rep us_rep) Bool)
+
+(declare-const dummy3 us_rep)
+
+(declare-datatypes ((inet_addr_type__ref 0))
+(((inet_addr_type__refqtmk (inet_addr_type__content us_rep)))))
+(define-fun inet_addr_type__ref_inet_addr_type__content__projection ((a inet_addr_type__ref)) us_rep 
+  (inet_addr_type__content a))
+
 (define-fun dynamic_invariant1 ((temp___expr_174 us_rep1)
   (temp___is_init_170 Bool) (temp___skip_constant_171 Bool)
-  (temp___do_toplevel_172 Bool) (temp___do_typ_inv_173 Bool)) Bool (in_range1
+  (temp___do_toplevel_172 Bool) (temp___do_typ_inv_173 Bool)) Bool (in_range2
   (to_rep
   (rec__toto__sock_addr_type__family (us_split_discrs3 temp___expr_174)))
-  (rec__toto__sock_addr_type__addr (us_split_fields1 temp___expr_174))))
+  (us_split_discrs1
+  (rec__toto__sock_addr_type__addr (us_split_fields1 temp___expr_174)))))
 
 (define-fun default_initial_assumption ((temp___expr_177 us_rep1)
   (temp___skip_top_level_178 Bool)) Bool (and

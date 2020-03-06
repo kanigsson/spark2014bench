@@ -88,17 +88,17 @@
 
 ;; f_6__post_axiom
   (assert
-  (forall ((a__g Int) (a__h Int) (ada___a__priv__i Int))
+  (forall ((ada___a__priv__i Int) (a__g Int) (a__h Int))
   (! (=>
      (and
-     (and (dynamic_invariant a__g true true true true) (dynamic_invariant
-     a__h true true true true)) (dynamic_invariant ada___a__priv__i true true
-     true true))
-     (let ((result (f_6 a__g a__h ada___a__priv__i)))
-     (=> (f_6__function_guard result a__g a__h ada___a__priv__i)
-     (dynamic_invariant result true false true true)))) :pattern ((f_6 a__g
-                                                                  a__h
-                                                                  ada___a__priv__i)) )))
+     (and (dynamic_invariant ada___a__priv__i true true true true)
+     (dynamic_invariant a__g true true true true)) (dynamic_invariant a__h
+     true true true true))
+     (let ((result (f_6 ada___a__priv__i a__g a__h)))
+     (=> (f_6__function_guard result ada___a__priv__i a__g a__h)
+     (dynamic_invariant result true false true true)))) :pattern ((f_6
+                                                                  ada___a__priv__i
+                                                                  a__g a__h)) )))
 
 (assert
 ;; defqtvc
@@ -108,8 +108,8 @@
   (=> (dynamic_invariant h true false true true)
   (=> (dynamic_invariant g true false true true)
   (=> (dynamic_invariant i true false true true)
-  (let ((o (f_6 g h i)))
+  (let ((o (f_6 i g h)))
   (=>
-  (and (f_6__function_guard o g h i) (dynamic_invariant o true false true
+  (and (f_6__function_guard o i g h) (dynamic_invariant o true false true
   true)) (in_range (+ h o))))))))))
 (check-sat)

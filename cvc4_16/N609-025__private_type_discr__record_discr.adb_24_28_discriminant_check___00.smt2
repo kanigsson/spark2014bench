@@ -96,6 +96,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__private_record__result_ty__found1 Bool)
+  (a us_split_discrs)) Bool (= rec__private_record__result_ty__found1 
+  (rec__private_record__result_ty__found a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -139,11 +143,6 @@
 (declare-const r us_rep)
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
-
-(define-fun in_range1 ((rec__private_record__result_ty__found1 Bool)
-  (a us_rep)) Bool (= rec__private_record__result_ty__found1 (rec__private_record__result_ty__found
-                                                             (us_split_discrs1
-                                                             a))))
 
 (declare-const value__size1 Int)
 
@@ -191,7 +190,7 @@
   (temp___do_typ_inv_251 Bool)) Bool (=>
                                      (not (= temp___skip_constant_249 true))
                                      (in_range1 (distinct 0 0)
-                                     temp___expr_252)))
+                                     (us_split_discrs1 temp___expr_252))))
 
 (define-fun default_initial_assumption ((temp___expr_254 us_rep)
   (temp___skip_top_level_255 Bool)) Bool (= (rec__private_record__result_ty__found
@@ -201,5 +200,5 @@
 (assert
 ;; defqtvc
  ;; File "record_discr.adb", line 21, characters 0-0
-  (not (in_range1 (distinct 0 0) r)))
+  (not (in_range1 (distinct 0 0) (us_split_discrs1 r))))
 (check-sat)

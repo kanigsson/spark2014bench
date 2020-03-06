@@ -343,8 +343,8 @@
   (and (and (<= (* lower3 lower3) x) (< x (* upper2 upper2)))
   (and
   (and
-  (and (dynamic_invariant2 upper2 false true true true) (dynamic_invariant1
-  middle1 false true true true)) (dynamic_invariant1 lower3 false true true
+  (and (dynamic_invariant1 lower3 false true true true) (dynamic_invariant2
+  upper2 false true true true)) (dynamic_invariant1 middle1 false true true
   true)) (and (= (+ lower3 1) upper2) (= lower2 lower3)))))))
   (=> (= p__sqrt_binary__result lower2)
   (=> (in_range1

@@ -138,6 +138,10 @@
                         (rec__test_constrained__r__x (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range2 ((rec__test_constrained__r__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__test_constrained__r__b1 (rec__test_constrained__r__b
+                                                            a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -255,7 +259,7 @@
   (assert
   (forall ((i tr_aD1)) (and (<= 1 (tr_aD1qtint i)) (<= (tr_aD1qtint i) 10))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -361,23 +365,23 @@
 ;; defqtvc
  ;; File "test_constrained.adb", line 42, characters 0-0
   (not
-  (forall ((temp___alloc_289 us_rep1) (usf (Array Int us_rep))
+  (forall ((temp___alloc_292 us_rep1) (usf (Array Int us_rep))
   (x__pointer_value (Array Int us_rep)))
   (=>
   (not
-  (= (rec__test_constrained__r_a_acc__is_null_pointer temp___alloc_289) true))
+  (= (rec__test_constrained__r_a_acc__is_null_pointer temp___alloc_292) true))
   (=> (default_initial_assumption usf false)
   (=>
-  (= (rec__test_constrained__r_a_acc__pointer_value temp___alloc_289) usf)
+  (= (rec__test_constrained__r_a_acc__pointer_value temp___alloc_292) usf)
   (=>
   (= x__pointer_value (rec__test_constrained__r_a_acc__pointer_value
-                      temp___alloc_289))
+                      temp___alloc_292))
   (=>
   (= x__pointer_address (rec__test_constrained__r_a_acc__pointer_address
-                        temp___alloc_289))
+                        temp___alloc_292))
   (=>
   (= x__is_null_pointer (rec__test_constrained__r_a_acc__is_null_pointer
-                        temp___alloc_289))
+                        temp___alloc_292))
   (rec__test_constrained__r_a_acc__pointer_value__pred
   (us_repqtmk1 x__is_null_pointer x__pointer_address x__pointer_value)))))))))))
 (check-sat)

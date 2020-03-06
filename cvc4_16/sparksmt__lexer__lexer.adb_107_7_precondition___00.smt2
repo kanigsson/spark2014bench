@@ -421,6 +421,11 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range6 ((rec__file_io__read_result__status1 Int)
+  (a us_split_discrs)) Bool (= rec__file_io__read_result__status1 (to_rep2
+                                                                  (rec__file_io__read_result__status
+                                                                  a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -595,7 +600,7 @@
   (forall ((i name_id))
   (and (<= 0 (name_idqtint i)) (<= (name_idqtint i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -617,7 +622,7 @@
   (temp___do_toplevel_184 Bool)
   (temp___do_typ_inv_185 Bool)) Bool (=>
                                      (or (= temp___is_init_182 true)
-                                     (<= 0 2147483647)) (in_range6
+                                     (<= 0 2147483647)) (in_range7
                                      temp___expr_186)))
 
 (define-fun dynamic_invariant4 ((temp___expr_74 Int) (temp___is_init_70 Bool)

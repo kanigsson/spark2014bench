@@ -142,6 +142,11 @@
                                                   (us_split_discrs1 b))))
                    true false))
 
+(define-fun in_range2 ((rec__test__element_type__state1 Int)
+  (a us_split_discrs)) Bool (= rec__test__element_type__state1 (to_rep1
+                                                               (rec__test__element_type__state
+                                                               a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -382,11 +387,6 @@
   (context_field context)) )))
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
-
-(define-fun in_range2 ((rec__test__element_type__state1 Int)
-  (a us_rep)) Bool (= rec__test__element_type__state1 (to_rep1
-                                                      (rec__test__element_type__state
-                                                      (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 

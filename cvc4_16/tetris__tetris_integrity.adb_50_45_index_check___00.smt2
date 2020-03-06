@@ -1972,14 +1972,14 @@
   (=> (= x 0)
   (=> (= (and (ite (<= 0 x) true false) (ite (<= x 3) true false)) true)
   (=>
-  (= (and (ite (forall ((temp___821 Int))
-               (=> (and (<= 1 temp___821) (<= temp___821 50))
+  (= (and (ite (forall ((temp___830 Int))
+               (=> (and (<= 1 temp___830) (<= temp___830 50))
                (=>
                (not
                (= (+ (to_rep3
                      (rec__tetris_integrity__piece__y
-                     cur_piece__split_fields)) y1) temp___821))
-               (= (select cur_board1 temp___821) (select cur_board temp___821)))))
+                     cur_piece__split_fields)) y1) temp___830))
+               (= (select cur_board1 temp___830) (select cur_board temp___830)))))
           true false) (ite (and (<= 0 x1) (<= x1 3)) true false)) true)
   (=>
   (= (to_rep4 (rec__tetris_integrity__piece__d cur_piece__split_fields)) o2)
@@ -1990,8 +1990,8 @@
   (=> (= (to_rep o4) o3)
   (=>
   (= (to_rep2 (rec__tetris_integrity__piece__x cur_piece__split_fields)) o5)
-  (let ((temp___817 (+ o5 x1)))
-  (=> (and (<= 1 temp___817) (<= temp___817 10))
+  (let ((temp___826 (+ o5 x1)))
+  (=> (and (<= 1 temp___826) (<= temp___826 10))
   (forall ((o6 Int))
   (=>
   (= (to_rep3 (rec__tetris_integrity__piece__y cur_piece__split_fields)) o6)

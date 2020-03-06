@@ -245,14 +245,14 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((t__ref 0))
-(((t__refqtmk (t__content us_rep)))))
-(define-fun t__ref_t__content__3__projection ((a t__ref)) us_rep (t__content
-                                                                 a))
+(declare-datatypes ((txS__ref 0))
+(((txS__refqtmk (txS__content us_rep)))))
+(define-fun txS__ref_txS__content__2__projection ((a txS__ref)) us_rep 
+  (txS__content a))
 
 (define-fun in_range3 ((rec__private_types__p3__t__d1 Bool)
-  (a us_rep)) Bool (= rec__private_types__p3__t__d1 (rec__private_types__p3__t__d
-                                                    (us_split_discrs1 a))))
+  (a us_split_discrs)) Bool (= rec__private_types__p3__t__d1 (rec__private_types__p3__t__d
+                                                             a)))
 
 (declare-const value__size1 Int)
 
@@ -305,10 +305,10 @@
 
 (declare-const dummy3 us_rep)
 
-(declare-datatypes ((txS__ref 0))
-(((txS__refqtmk (txS__content us_rep)))))
-(define-fun txS__ref_txS__content__2__projection ((a txS__ref)) us_rep 
-  (txS__content a))
+(declare-datatypes ((t__ref 0))
+(((t__refqtmk (t__content us_rep)))))
+(define-fun t__ref_t__content__3__projection ((a t__ref)) us_rep (t__content
+                                                                 a))
 
 (declare-const x__split_discrs us_split_discrs)
 
@@ -322,7 +322,7 @@
   (temp___do_typ_inv_204 Bool)) Bool (=>
                                      (not (= temp___skip_constant_202 true))
                                      (in_range3 (distinct 1 0)
-                                     temp___expr_205)))
+                                     (us_split_discrs1 temp___expr_205))))
 
 ;; temp___result_210'def
   (assert (id__function_guard (id 0) 0))

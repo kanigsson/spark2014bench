@@ -222,6 +222,10 @@
                             (us_split_fields1 b))) true)))
                     true false))
 
+(define-fun in_range3 ((rec__pledge_constraints__int_acc_option__present1 Bool)
+  (a us_split_discrs)) Bool (= rec__pledge_constraints__int_acc_option__present1 
+  (rec__pledge_constraints__int_acc_option__present a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -603,7 +607,7 @@
 ;; t8b'axiom
   (assert (forall ((i t8b)) (and (<= 1 (t8bqtint i)) (<= (t8bqtint i) 3))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -619,10 +623,6 @@
 (((t8b__refqtmk (t8b__content t8b)))))
 (define-fun t8b__ref_t8b__content__projection ((a t8b__ref)) t8b (t8b__content
                                                                  a))
-
-(define-fun in_range4 ((rec__pledge_constraints__int_acc_option__present1 Bool)
-  (a us_rep1)) Bool (= rec__pledge_constraints__int_acc_option__present1 
-  (rec__pledge_constraints__int_acc_option__present (us_split_discrs1 a))))
 
 (declare-const value__size3 Int)
 
@@ -680,7 +680,7 @@
 (define-fun t7b__ref_t7b__content__projection ((a t7b__ref)) us_rep1 
   (t7b__content a))
 
-(declare-fun temp_____aggregate_def_238 (us_rep1) (Array Int us_rep1))
+(declare-fun temp_____aggregate_def_239 (us_rep1) (Array Int us_rep1))
 
 (define-fun dynamic_invariant1 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)
@@ -743,9 +743,9 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___240 us_rep1))
-  (forall ((temp___241 Int))
-  (= (select (temp_____aggregate_def_238 temp___240) temp___241) temp___240))))
+  (forall ((temp___241 us_rep1))
+  (forall ((temp___242 Int))
+  (= (select (temp_____aggregate_def_239 temp___241) temp___242) temp___241))))
 
 (assert
 ;; defqtvc

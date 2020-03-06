@@ -511,26 +511,26 @@
   (! (=> (dynamic_invariant x true true true true)
      (= (sign x) (ite (< x 0) 0 (ite (= x 0) 1 2)))) :pattern ((sign x)) )))
 
-(define-fun dynamic_invariant7 ((temp___expr_231 Int)
-  (temp___is_init_227 Bool) (temp___skip_constant_228 Bool)
-  (temp___do_toplevel_229 Bool)
-  (temp___do_typ_inv_230 Bool)) Bool (=>
-                                     (or (= temp___is_init_227 true)
-                                     (<= 0 50)) (in_range6 temp___expr_231)))
+(define-fun dynamic_invariant7 ((temp___expr_232 Int)
+  (temp___is_init_228 Bool) (temp___skip_constant_229 Bool)
+  (temp___do_toplevel_230 Bool)
+  (temp___do_typ_inv_231 Bool)) Bool (=>
+                                     (or (= temp___is_init_228 true)
+                                     (<= 0 50)) (in_range6 temp___expr_232)))
 
-(define-fun dynamic_invariant8 ((temp___expr_238 Int)
-  (temp___is_init_234 Bool) (temp___skip_constant_235 Bool)
-  (temp___do_toplevel_236 Bool)
-  (temp___do_typ_inv_237 Bool)) Bool (=>
-                                     (or (= temp___is_init_234 true)
-                                     (<= 1 50)) (in_range7 temp___expr_238)))
+(define-fun dynamic_invariant8 ((temp___expr_239 Int)
+  (temp___is_init_235 Bool) (temp___skip_constant_236 Bool)
+  (temp___do_toplevel_237 Bool)
+  (temp___do_typ_inv_238 Bool)) Bool (=>
+                                     (or (= temp___is_init_235 true)
+                                     (<= 1 50)) (in_range7 temp___expr_239)))
 
-(define-fun dynamic_invariant9 ((temp___expr_245 Int)
-  (temp___is_init_241 Bool) (temp___skip_constant_242 Bool)
-  (temp___do_toplevel_243 Bool)
-  (temp___do_typ_inv_244 Bool)) Bool (=>
-                                     (or (= temp___is_init_241 true)
-                                     (<= 0 5)) (in_range8 temp___expr_245)))
+(define-fun dynamic_invariant9 ((temp___expr_246 Int)
+  (temp___is_init_242 Bool) (temp___skip_constant_243 Bool)
+  (temp___do_toplevel_244 Bool)
+  (temp___do_typ_inv_245 Bool)) Bool (=>
+                                     (or (= temp___is_init_242 true)
+                                     (<= 0 5)) (in_range8 temp___expr_246)))
 
 (assert
 ;; defqtvc

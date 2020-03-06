@@ -257,6 +257,10 @@
                         (rec__dynamic_array__rec__f2 (us_split_fields1 b)))))))
                    true false))
 
+(define-fun in_range4 ((rec__dynamic_array__rec__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__dynamic_array__rec__b1 (rec__dynamic_array__rec__b
+                                                           a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -493,6 +497,11 @@
                             (rec__dynamic_array__holder__content
                             (us_split_fields3 b))) true))
                     true false))
+
+(define-fun in_range5 ((rec__dynamic_array__holder__d1 Int)
+  (a us_split_discrs2)) Bool (= rec__dynamic_array__holder__d1 (to_rep
+                                                               (rec__dynamic_array__holder__d
+                                                               a))))
 
 (declare-const value__size2 Int)
 
@@ -752,11 +761,6 @@
                             (us_split_fields5 b))) true))
                     true false))
 
-(define-fun in_range4 ((rec__dynamic_array__holder__d1 Int)
-  (a us_rep1)) Bool (= rec__dynamic_array__holder__d1 (to_rep
-                                                      (rec__dynamic_array__holder__d
-                                                      (us_split_discrs3 a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -823,7 +827,9 @@
   (temp___do_typ_inv_202 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_200 true))
-                                     (in_range4 c (to_base temp___expr_203)))
+                                     (in_range5 c
+                                     (us_split_discrs3
+                                     (to_base temp___expr_203))))
                                      (and
                                      (and (dynamic_property1 1 c
                                      (first1
@@ -987,11 +993,6 @@
                             (us_split_fields7 b))) true))
                     true false))
 
-(define-fun in_range5 ((rec__dynamic_array__holder__d1 Int)
-  (a us_rep1)) Bool (= rec__dynamic_array__holder__d1 (to_rep
-                                                      (rec__dynamic_array__holder__d
-                                                      (us_split_discrs3 a)))))
-
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -1052,10 +1053,6 @@
 (((t23b__refqtmk (t23b__content us_t)))))
 (define-fun t23b__ref_t23b__content__projection ((a t23b__ref)) us_t 
   (t23b__content a))
-
-(define-fun in_range6 ((rec__dynamic_array__rec__b1 Bool)
-  (a us_rep)) Bool (= rec__dynamic_array__rec__b1 (rec__dynamic_array__rec__b
-                                                  (us_split_discrs1 a))))
 
 (declare-const value__size5 Int)
 
@@ -1146,10 +1143,6 @@
 (((t25b__refqtmk (t25b__content integer)))))
 (define-fun t25b__ref_t25b__content__projection ((a t25b__ref)) integer 
   (t25b__content a))
-
-(define-fun in_range7 ((rec__dynamic_array__rec__b1 Bool)
-  (a us_rep)) Bool (= rec__dynamic_array__rec__b1 (rec__dynamic_array__rec__b
-                                                  (us_split_discrs1 a))))
 
 (declare-const value__size6 Int)
 
@@ -1347,11 +1340,11 @@
                                                               (rec__dynamic_array__holder__d
                                                               (us_split_discrs3
                                                               (new_holder c)))))
-  (let ((temp___231 c))
+  (let ((temp___232 c))
   (forall ((i Int))
   (=> (= i 1)
   (=>
-  (= (and (ite (<= 1 i) true false) (ite (<= i temp___231) true false)) true)
+  (= (and (ite (<= 1 i) true false) (ite (<= i temp___232) true false)) true)
   (forall ((h__split_fields1 us_t) (i1 Int))
   (=> (new_holder__function_guard (new_holder c) c)
   (=> (new_holder__function_guard (new_holder c) c)
@@ -1390,15 +1383,15 @@
                (and (dynamic_property2 1 c i1) (dynamic_invariant3
                (us_repqtmk2 h__split_discrs
                (us_split_fieldsqtmk2 h__split_fields1)) true true true true))
-               (forall ((temp___243 Int))
+               (forall ((temp___244 Int))
                (=>
-               (and (<= (first1 h__split_fields1) temp___243)
-               (<= temp___243 (last2 h__split_fields1)))
+               (and (<= (first1 h__split_fields1) temp___244)
+               (<= temp___244 (last2 h__split_fields1)))
                (=>
-               (or (< temp___231 temp___243)
-               (or (< temp___243 1) (<= i1 temp___243)))
-               (= (select (to_array h__split_fields1) temp___243) (select 
-               (to_array h__split_fields) temp___243))))))
+               (or (< temp___232 temp___244)
+               (or (< temp___244 1) (<= i1 temp___244)))
+               (= (select (to_array h__split_fields1) temp___244) (select 
+               (to_array h__split_fields) temp___244))))))
           true false) (ite (and (<= 1 i1) (<= i1 c)) true false)) true)
   (let ((o2 c))
   (let ((dynamic_array__B_2__hh__assume (new_holder o2)))

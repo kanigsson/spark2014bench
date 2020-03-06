@@ -1609,7 +1609,7 @@
 ;; defqtvc
  ;; File "tetris_integrity.ads", line 157, characters 0-0
   (not
-  (forall ((o Int) (o1 Int) (usf Int) (usf1 Int) (temp___782 Int))
+  (forall ((o Int) (o1 Int) (usf Int) (usf1 Int) (temp___788 Int))
   (=>
   (= (tetris_integrity__possible_i_shapes__aggregate_def
      (temp_____aggregate_def_165 (distinct 0 0) (distinct 0 0) (distinct 0 0)
@@ -1702,6 +1702,6 @@
   (=>
   (= (and (ite (<= 0 usf1) true false) (ite (<= usf1 2) true false)) true)
   (=>
-  (= (to_rep (rec__tetris_integrity__piece__s (us_split_fields1 p))) temp___782)
-  (<= 3 temp___782)))))))))))))
+  (= (to_rep (rec__tetris_integrity__piece__s (us_split_fields1 p))) temp___788)
+  (<= 3 temp___788)))))))))))))
 (check-sat)

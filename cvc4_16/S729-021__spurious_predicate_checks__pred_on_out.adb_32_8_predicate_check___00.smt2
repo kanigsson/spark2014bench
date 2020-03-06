@@ -184,23 +184,23 @@
 (define-fun positive__ref_positive__content__projection ((a positive__ref)) positive 
   (positive__content a))
 
-(define-fun dynamic_invariant ((temp___expr_207 us_rep)
-  (temp___is_init_203 Bool) (temp___skip_constant_204 Bool)
-  (temp___do_toplevel_205 Bool)
-  (temp___do_typ_inv_206 Bool)) Bool (=> (= temp___do_toplevel_205 true)
+(define-fun dynamic_invariant ((temp___expr_209 us_rep)
+  (temp___is_init_205 Bool) (temp___skip_constant_206 Bool)
+  (temp___do_toplevel_207 Bool)
+  (temp___do_typ_inv_208 Bool)) Bool (=> (= temp___do_toplevel_207 true)
                                      (in_range1
                                      (to_rep
                                      (rec__pred_on_out__t2__x
-                                     (us_split_fields1 temp___expr_207))))))
+                                     (us_split_fields1 temp___expr_209))))))
 
-(define-fun default_initial_assumption ((temp___expr_209 us_rep)
-  (temp___skip_top_level_210 Bool)) Bool (= (to_rep
+(define-fun default_initial_assumption ((temp___expr_212 us_rep)
+  (temp___skip_top_level_213 Bool)) Bool (= (to_rep
                                             (rec__pred_on_out__t2__x
                                             (us_split_fields1
-                                            temp___expr_209))) 0))
+                                            temp___expr_212))) 0))
 
-(define-fun dynamic_predicate ((temp___211 us_rep)) Bool (in_range1
-  (to_rep (rec__pred_on_out__t2__x (us_split_fields1 temp___211)))))
+(define-fun dynamic_predicate ((temp___214 us_rep)) Bool (in_range1
+  (to_rep (rec__pred_on_out__t2__x (us_split_fields1 temp___214)))))
 
 (define-fun dynamic_invariant1 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)

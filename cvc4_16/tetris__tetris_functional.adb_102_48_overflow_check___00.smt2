@@ -2150,12 +2150,12 @@
   (and
   (= (and (ite (and
                (and (dynamic_invariant3 to_line1 true true true true)
-               (forall ((temp___863 Int))
-               (=> (and (<= 1 temp___863) (<= temp___863 50))
+               (forall ((temp___872 Int))
+               (=> (and (<= 1 temp___872) (<= temp___872 50))
                (=>
-               (or (< 50 temp___863)
-               (or (< temp___863 1) (< del_line1 temp___863)))
-               (= (select cur_board1 temp___863) (select cur_board temp___863))))))
+               (or (< 50 temp___872)
+               (or (< temp___872 1) (< del_line1 temp___872)))
+               (= (select cur_board1 temp___872) (select cur_board temp___872))))))
                (in_range9 del_line1))
           true false) (ite (and (<= 1 del_line1) (<= del_line1 50)) true
                       false)) true)
@@ -2168,27 +2168,27 @@
   (=> (= spark__branch2 true)
   (=> (= (- to_line1 1) r7b)
   (=> (dynamic_invariant1 r7b true false true true)
-  (let ((temp___870 r7b))
+  (let ((temp___879 r7b))
   (forall ((from_line Int))
-  (=> (= from_line temp___870)
+  (=> (= from_line temp___879)
   (=>
-  (= (and (ite (<= 1 from_line) true false) (ite (<= from_line temp___870)
+  (= (and (ite (<= 1 from_line) true false) (ite (<= from_line temp___879)
                                             true false)) true)
-  (forall ((temp___loop_entry_880 Int))
-  (=> (= temp___loop_entry_880 to_line1)
-  (forall ((temp___loop_entry_879 Int))
-  (=> (= temp___loop_entry_879 num_deleted1)
-  (let ((temp___inv_882 (no_complete_lines cur_board1)))
+  (forall ((temp___loop_entry_889 Int))
+  (=> (= temp___loop_entry_889 to_line1)
+  (forall ((temp___loop_entry_888 Int))
+  (=> (= temp___loop_entry_888 num_deleted1)
+  (let ((temp___inv_891 (no_complete_lines cur_board1)))
   (=>
   (forall ((cur_board2 (Array Int (Array Int cell))) (y Int))
   (is_complete_line__function_guard (is_complete_line (select cur_board2 y))
   (select cur_board2 y)))
   (=>
-  (and (no_complete_lines__function_guard temp___inv_882 cur_board1)
-  (= (= temp___inv_882 true)
+  (and (no_complete_lines__function_guard temp___inv_891 cur_board1)
+  (= (= temp___inv_891 true)
   (forall ((y Int))
   (=> (and (<= 1 y) (<= y 50))
   (not (= (is_complete_line (select cur_board1 y)) true))))))
-  (=> (in_range1 (+ temp___loop_entry_879 temp___loop_entry_880)) (in_range1
+  (=> (in_range1 (+ temp___loop_entry_888 temp___loop_entry_889)) (in_range1
   (+ num_deleted1 to_line1))))))))))))))))))))))))))))))))))
 (check-sat)

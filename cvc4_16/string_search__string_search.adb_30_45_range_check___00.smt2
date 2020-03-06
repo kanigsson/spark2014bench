@@ -428,6 +428,8 @@
   (not
   (=> (dynamic_invariant1 needle true false true true)
   (=> (dynamic_invariant1 haystack true false true true)
-  (=> (<= 1 (length needle))
-  (=> (<= (length needle) (length haystack)) (in_range1 (length needle))))))))
+  (=>
+  (let ((temp___358 (length needle)))
+  (and (<= 1 temp___358) (<= temp___358 (length haystack)))) (in_range1
+  (length needle)))))))
 (check-sat)

@@ -389,17 +389,18 @@
   (forall ((biggest_seq Int))
   (=> (= biggest_seq 0)
   (=> (dynamic_invariant1 biggest_seq true false true true)
-  (let ((temp___314 (first1 a)))
+  (let ((temp___315 (first1 a)))
   (forall ((i Int))
-  (=> (= i temp___314)
+  (=> (= i temp___315)
   (=>
-  (= (and (ite (<= temp___314 i) true false) (ite (<= i (last1 a)) true
+  (= (and (ite (<= temp___315 i) true false) (ite (<= i (last1 a)) true
                                              false)) true)
-  (=> (in_range1 (+ beginning 1))
   (=> (in_range1 (+ beginning 1))
   (forall ((max2 Int) (size_of_seq1 Int) (beginning1 Int) (biggest_seq1 Int)
   (i1 Int))
-  (=> (and (<= (first1 a) (+ beginning1 1)) (<= (+ beginning1 1) i1))
+  (=>
+  (let ((temp___325 (+ beginning1 1)))
+  (and (<= (first1 a) temp___325) (<= temp___325 i1)))
   (=>
   (= (and (ite (and
                (and
@@ -411,5 +412,5 @@
                (dynamic_invariant1 max2 true true true true))
           true false) (ite (and (<= (first1 a) i1) (<= i1 (last1 a))) true
                       false)) true)
-  (<= (first1 a) i1))))))))))))))))))))))))))
+  (<= (first1 a) i1)))))))))))))))))))))))))
 (check-sat)

@@ -489,29 +489,29 @@
   (=> (= (distinct perm__remove_eq__result 0) true)
   (let ((o4 i))
   (let ((o5 b))
-  (let ((temp___883 (remove o5 o4)))
+  (let ((temp___887 (remove o5 o4)))
   (=>
-  (forall ((temp___8831 us_t)) (invariant____function_guard
-  (invariant__ temp___8831) temp___8831))
+  (forall ((temp___8871 us_t)) (invariant____function_guard
+  (invariant__ temp___8871) temp___8871))
   (=>
-  (and (remove__function_guard temp___883 o5 o4)
-  (and (dynamic_invariant temp___883 true false true true)
+  (and (remove__function_guard temp___887 o5 o4)
+  (and (dynamic_invariant temp___887 true false true true)
   (and
   (and
   (and
-  (and (= (invariant__ temp___883) true)
-  (= (last1 temp___883) (- (last1 o5) 1)))
+  (and (= (invariant__ temp___887) true)
+  (= (last1 temp___887) (- (last1 o5) 1)))
   (forall ((k Int))
   (=> (and (<= 1 k) (<= k (- o4 1)))
   (= (to_rep (select (to_array o5) k)) (to_rep
-                                       (select (to_array temp___883) k))))))
+                                       (select (to_array temp___887) k))))))
   (forall ((k Int))
   (=> (and (<= (+ o4 1) k) (<= k (last1 o5)))
   (= (to_rep (select (to_array o5) k)) (to_rep
-                                       (select (to_array temp___883) (- k 1)))))))
+                                       (select (to_array temp___887) (- k 1)))))))
   (forall ((k Int))
   (=> (and (<= o4 k) (<= k (- (last1 o5) 1)))
   (= (to_rep (select (to_array o5) (+ k 1))) (to_rep
-                                             (select (to_array temp___883) k))))))))
+                                             (select (to_array temp___887) k))))))))
   (<= (first1 a) i)))))))))))))))))))))))))))))))))))))
 (check-sat)

@@ -417,10 +417,10 @@
   (and
   (= (and (ite (and
                (and
-               (and (dynamic_invariant temp1 false true true true)
+               (and (dynamic_invariant oldest2 false true true true)
+               (dynamic_invariant temp1 false true true true))
                (dynamic_property 2 n i1)) (dynamic_invariant1 old__3 false
-               true true true)) (dynamic_invariant oldest2 false true true
-               true))
+               true true true))
           true false) (ite (and (<= 2 i1) (<= i1 n)) true false)) true)
   (exists ((temp2 Int))
   (and (= temp2 oldest2)

@@ -420,6 +420,10 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range5 ((rec__bounded_strings__bounded_string__bound1 Int)
+  (a us_split_discrs)) Bool (= rec__bounded_strings__bounded_string__bound1 
+  (to_rep (rec__bounded_strings__bounded_string__bound a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -602,7 +606,7 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA14-032__dic-9043/src/gnatprove/bounded_strings__bounded_string.mlw", line 1025, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA14-032__dic-25465/src/gnatprove/bounded_strings__bounded_string.mlw", line 1039, characters 5-8
   (not
   (forall ((usf us_rep))
   (=> (dynamic_invariant usf true false true true)

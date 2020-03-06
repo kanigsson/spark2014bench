@@ -182,6 +182,10 @@
 (define-fun list_t__ref_list_t__content__projection ((a list_t__ref)) us_rep 
   (list_t__content a))
 
+(define-fun in_range2 ((rec__loop_types__lists__list__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__loop_types__lists__list__capacity1 
+  (to_rep (rec__loop_types__lists__list__capacity a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -306,7 +310,7 @@
   (forall ((i element_type))
   (and (<= 0 (element_typeqtint i)) (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -328,7 +332,7 @@
   (temp___do_toplevel_220 Bool)
   (temp___do_typ_inv_221 Bool)) Bool (=>
                                      (or (= temp___is_init_218 true)
-                                     (<= 0 2147483647)) (in_range2
+                                     (<= 0 2147483647)) (in_range3
                                      temp___expr_222)))
 
 (define-fun default_initial_assumption ((temp___expr_230 us_rep1)
@@ -347,7 +351,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -369,7 +373,7 @@
   (temp___do_toplevel_249 Bool)
   (temp___do_typ_inv_250 Bool)) Bool (=>
                                      (or (= temp___is_init_247 true)
-                                     (<= 0 2147483647)) (in_range3
+                                     (<= 0 2147483647)) (in_range4
                                      temp___expr_251)))
 
 ;; get__post_axiom
@@ -542,7 +546,7 @@
   (forall ((i element_type1))
   (and (<= 1 (element_typeqtint1 i)) (<= (element_typeqtint1 i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -564,7 +568,7 @@
   (temp___do_toplevel_291 Bool)
   (temp___do_typ_inv_292 Bool)) Bool (=>
                                      (or (= temp___is_init_289 true)
-                                     (<= 1 2147483647)) (in_range4
+                                     (<= 1 2147483647)) (in_range5
                                      temp___expr_293)))
 
 (define-fun default_initial_assumption2 ((temp___expr_276 us_rep2)
@@ -606,7 +610,8 @@
      (forall ((i us_rep2))
      (=> (= (has_key result i) true)
      (and
-     (and (<= 1 (get1 result i)) (<= (get1 result i) (length container)))
+     (let ((temp___304 (get1 result i)))
+     (and (<= 1 temp___304) (<= temp___304 (length container))))
      (forall ((j us_rep2))
      (=> (= (has_key result j) true)
      (=> (= (get1 result i) (get1 result j)) (= (bool_eq2 i j) true))))))))) :pattern (
@@ -654,7 +659,7 @@
   (forall ((i element_type2))
   (and (<= 0 (element_typeqtint2 i)) (<= (element_typeqtint2 i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -676,7 +681,7 @@
   (temp___do_toplevel_213 Bool)
   (temp___do_typ_inv_214 Bool)) Bool (=>
                                      (or (= temp___is_init_211 true)
-                                     (<= 0 2147483647)) (in_range5
+                                     (<= 0 2147483647)) (in_range6
                                      temp___expr_215)))
 
 (define-fun equal_except ((left us_rep1) (right us_rep1)
@@ -709,7 +714,7 @@
   (forall ((i component_t))
   (and (<= 0 (component_tqtint i)) (<= (component_tqtint i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -731,7 +736,7 @@
   (temp___do_toplevel_204 Bool)
   (temp___do_typ_inv_205 Bool)) Bool (=>
                                      (or (= temp___is_init_202 true)
-                                     (<= 0 2147483647)) (in_range6
+                                     (<= 0 2147483647)) (in_range7
                                      temp___expr_206)))
 
 (declare-const rliteral count_type)
@@ -833,13 +838,13 @@
   (let ((o3 (has_element o2 o1)))
   (=> (= (= o3 true) (= (has_key (positions o2) o1) true))
   (=> (= o3 true)
+  (forall ((temp___loop_entry_335 us_rep))
+  (=>
+  (= temp___loop_entry_335 (us_repqtmk l__split_discrs
+                           (us_split_fieldsqtmk l__split_fields)))
   (forall ((temp___loop_entry_333 us_rep))
   (=>
   (= temp___loop_entry_333 (us_repqtmk l__split_discrs
-                           (us_split_fieldsqtmk l__split_fields)))
-  (forall ((temp___loop_entry_331 us_rep))
-  (=>
-  (= temp___loop_entry_331 (us_repqtmk l__split_discrs
                            (us_split_fieldsqtmk l__split_fields)))
   (let ((o4 (length
             (us_repqtmk l__split_discrs
@@ -856,7 +861,9 @@
   (and (not (= (has_key o7 no_element) true))
   (forall ((i us_rep2))
   (=> (= (has_key o7 i) true)
-  (and (and (<= 1 (get1 o7 i)) (<= (get1 o7 i) (length o6)))
+  (and
+  (let ((temp___300 (get1 o7 i)))
+  (and (<= 1 temp___300) (<= temp___300 (length o6))))
   (forall ((j us_rep2))
   (=> (= (has_key o7 j) true)
   (=> (= (get1 o7 i) (get1 o7 j)) (= (bool_eq2 i j) true))))))))
@@ -882,7 +889,9 @@
   (and (not (= (has_key o8 no_element) true))
   (forall ((i us_rep2))
   (=> (= (has_key o8 i) true)
-  (and (and (<= 1 (get1 o8 i)) (<= (get1 o8 i) (length o7)))
+  (and
+  (let ((temp___300 (get1 o8 i)))
+  (and (<= 1 temp___300) (<= temp___300 (length o7))))
   (forall ((j us_rep2))
   (=> (= (has_key o8 j) true)
   (=> (= (get1 o8 i) (get1 o8 j)) (= (bool_eq2 i j) true))))))))
@@ -896,11 +905,11 @@
   (= (= (bool_eq2 k o6) true) (= (witness o8 o6) (witness o8 k))))))))
   (=>
   (= (and (ite (<= o9 usf) true false) (ite (<= usf o5) true false)) true)
-  (=> (in_range3 usf)
-  (let ((o10 (model1 temp___loop_entry_331)))
-  (=> (= (length1 o10) (length temp___loop_entry_331))
+  (=> (in_range4 usf)
+  (let ((o10 (model1 temp___loop_entry_333)))
+  (=> (= (length1 o10) (length temp___loop_entry_333))
   (=> (dynamic_invariant1 (get o10 usf) true false true true)
-  (=> (in_range3 usf)
+  (=> (in_range4 usf)
   (let ((o11 (us_repqtmk l__split_discrs
              (us_split_fieldsqtmk l__split_fields))))
   (=> (= (length1 (model1 o11)) (length o11)) (<= 1 usf)))))))))))))))))))))))))))))))))))))))

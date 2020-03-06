@@ -338,18 +338,16 @@
   (=>
   (forall ((i Int))
   (=> (and (<= 1 i) (<= i 3))
+  (let ((temp___202 (to_rep (select a i))))
   (and
-  (fp.leq (fp.neg (fp #b0 #b01111111 #b00000000000000000000000)) (to_rep
-                                                                 (select 
-                                                                 a i)))
-  (fp.leq (to_rep (select a i)) (fp #b0 #b01111111 #b00000000000000000000000)))))
+  (fp.leq (fp.neg (fp #b0 #b01111111 #b00000000000000000000000)) temp___202)
+  (fp.leq temp___202 (fp #b0 #b01111111 #b00000000000000000000000))))))
   (=>
+  (let ((temp___181 (to_rep (select a 1))))
+  (and
+  (fp.leq (fp.neg (fp #b0 #b01111111 #b00000000000000000000000)) temp___181)
+  (fp.leq temp___181 (fp #b0 #b01111111 #b00000000000000000000000))))
   (fp.leq (fp.neg (fp #b0 #b01111111 #b00000000000000000000000)) (to_rep
                                                                  (select 
-                                                                 a 1)))
-  (=>
-  (fp.leq (to_rep (select a 1)) (fp #b0 #b01111111 #b00000000000000000000000))
-  (fp.leq (fp.neg (fp #b0 #b01111111 #b00000000000000000000000)) (to_rep
-                                                                 (select 
-                                                                 a 2))))))))
+                                                                 a 2)))))))
 (check-sat)

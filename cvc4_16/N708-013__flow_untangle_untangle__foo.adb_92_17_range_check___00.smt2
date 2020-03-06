@@ -132,6 +132,9 @@
                         (to_rep (rec__foo__q__n (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range2 ((rec__foo__q__found1 Bool)
+  (a us_split_discrs)) Bool (= rec__foo__q__found1 (rec__foo__q__found a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -194,10 +197,6 @@
 (declare-const tmp_1 Bool)
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
-
-(define-fun in_range2 ((rec__foo__q__found1 Bool)
-  (a us_rep)) Bool (= rec__foo__q__found1 (rec__foo__q__found
-                                          (us_split_discrs1 a))))
 
 (declare-const value__size1 Int)
 
@@ -262,7 +261,8 @@
   (temp___do_toplevel_210 Bool)
   (temp___do_typ_inv_211 Bool)) Bool (=>
                                      (not (= temp___skip_constant_209 true))
-                                     (in_range2 tmp_1 temp___expr_212)))
+                                     (in_range2 tmp_1
+                                     (us_split_discrs1 temp___expr_212))))
 
 (define-fun default_initial_assumption ((temp___expr_214 us_rep)
   (temp___skip_top_level_215 Bool)) Bool (= (rec__foo__q__found

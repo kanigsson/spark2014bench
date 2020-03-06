@@ -293,23 +293,23 @@
   (=> (= (first1 a) (to_rep c__first))
   (=> (= (last1 a) (to_rep c__last))
   (=> (= (length a) (length b))
-  (let ((temp___454 (first1 a)))
-  (let ((temp___455 (last1 a)))
+  (let ((temp___455 (first1 a)))
+  (let ((temp___456 (last1 a)))
   (forall ((i Int))
-  (=> (= i temp___454)
+  (=> (= i temp___455)
   (=>
-  (= (and (ite (<= temp___454 i) true false) (ite (<= i temp___455) true
+  (= (and (ite (<= temp___455 i) true false) (ite (<= i temp___456) true
                                              false)) true)
   (forall ((c1 (Array Int integer)) (i1 Int))
   (=>
-  (= (and (ite (forall ((temp___459 Int))
+  (= (and (ite (forall ((temp___460 Int))
                (=>
-               (and (<= (to_rep c__first) temp___459)
-               (<= temp___459 (to_rep c__last)))
+               (and (<= (to_rep c__first) temp___460)
+               (<= temp___460 (to_rep c__last)))
                (=>
-               (or (< temp___455 temp___459)
-               (or (< temp___459 temp___454) (<= i1 temp___459)))
-               (= (select c1 temp___459) (select c temp___459)))))
+               (or (< temp___456 temp___460)
+               (or (< temp___460 temp___455) (<= i1 temp___460)))
+               (= (select c1 temp___460) (select c temp___460)))))
           true false) (ite (and (<= (first1 a) i1) (<= i1 (last1 a))) true
                       false)) true)
   (let ((o (+ i1 (first1 b))))

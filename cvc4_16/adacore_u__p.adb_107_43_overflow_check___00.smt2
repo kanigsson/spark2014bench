@@ -389,11 +389,11 @@
   (forall ((biggest_seq Int))
   (=> (= biggest_seq 0)
   (=> (dynamic_invariant1 biggest_seq true false true true)
-  (let ((temp___314 (first1 a)))
+  (let ((temp___315 (first1 a)))
   (forall ((i Int))
-  (=> (= i temp___314)
+  (=> (= i temp___315)
   (=>
-  (= (and (ite (<= temp___314 i) true false) (ite (<= i (last1 a)) true
+  (= (and (ite (<= temp___315 i) true false) (ite (<= i (last1 a)) true
                                              false)) true)
   (in_range1 (+ beginning 1))))))))))))))))))))))
 (check-sat)

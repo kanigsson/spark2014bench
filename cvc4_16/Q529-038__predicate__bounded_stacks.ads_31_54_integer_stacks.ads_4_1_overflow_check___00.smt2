@@ -416,6 +416,10 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range5 ((rec__integer_stacks__stack__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__integer_stacks__stack__capacity1 
+  (to_rep (rec__integer_stacks__stack__capacity a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -628,12 +632,6 @@
 
 (declare-const us_tag1 Int)
 
-(define-fun in_range5 ((rec__integer_stacks__stack__capacity1 Int)
-  (a us_rep)) Bool (= rec__integer_stacks__stack__capacity1 (to_rep
-                                                            (rec__integer_stacks__stack__capacity
-                                                            (us_split_discrs1
-                                                            a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -792,12 +790,6 @@
                     true false))
 
 (declare-const us_tag2 Int)
-
-(define-fun in_range6 ((rec__integer_stacks__stack__capacity1 Int)
-  (a us_rep)) Bool (= rec__integer_stacks__stack__capacity1 (to_rep
-                                                            (rec__integer_stacks__stack__capacity
-                                                            (us_split_discrs1
-                                                            a)))))
 
 (declare-const value__size3 Int)
 
@@ -1117,11 +1109,12 @@
                                      (and
                                      (=>
                                      (not (= temp___skip_constant_328 true))
-                                     (in_range6
+                                     (in_range5
                                      (to_rep
                                      (rec__integer_stacks__stack__capacity
                                      (us_split_discrs1 left)))
-                                     (to_base1 temp___expr_331)))
+                                     (us_split_discrs1
+                                     (to_base1 temp___expr_331))))
                                      (<= (to_rep1
                                          (rec__integer_stacks__stack__top
                                          (us_split_fields1
@@ -1225,7 +1218,8 @@
                                      (to_rep
                                      (rec__integer_stacks__stack__capacity
                                      (us_split_discrs1 right)))
-                                     (to_base temp___expr_311)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_311))))
                                      (<= (to_rep1
                                          (rec__integer_stacks__stack__top
                                          (us_split_fields1

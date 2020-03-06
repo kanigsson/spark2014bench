@@ -306,6 +306,11 @@
                            (us_split_fields1 b)) 1 5) true)))))
                    true false))
 
+(define-fun in_range3 ((rec__test__fruit_rec__record_t__d1 Int)
+  (a us_split_discrs)) Bool (= rec__test__fruit_rec__record_t__d1 (to_rep
+                                                                  (rec__test__fruit_rec__record_t__d
+                                                                  a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -415,11 +420,6 @@
                                             (rec__test__fruit_rec__record_t__d
                                             (us_split_discrs1
                                             temp___expr_293))) 0))
-
-(define-fun in_range3 ((rec__test__fruit_rec__record_t__d1 Int)
-  (a us_rep)) Bool (= rec__test__fruit_rec__record_t__d1 (to_rep
-                                                         (rec__test__fruit_rec__record_t__d
-                                                         (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -536,7 +536,8 @@
   (temp___do_toplevel_320 Bool)
   (temp___do_typ_inv_321 Bool)) Bool (=>
                                      (not (= temp___skip_constant_319 true))
-                                     (in_range3 0 temp___expr_322)))
+                                     (in_range3 0
+                                     (us_split_discrs1 temp___expr_322))))
 
 (define-fun default_initial_assumption1 ((temp___expr_325 us_rep)
   (temp___skip_top_level_326 Bool)) Bool (= (to_rep

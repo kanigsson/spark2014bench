@@ -424,6 +424,10 @@
                            (us_split_fields1 b))) true))))
                    true false))
 
+(define-fun in_range4 ((rec__tester__ring_buffer__ring_buffer_type__max_size1 Int)
+  (a us_split_discrs)) Bool (= rec__tester__ring_buffer__ring_buffer_type__max_size1 
+  (to_rep1 (rec__tester__ring_buffer__ring_buffer_type__max_size a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -541,7 +545,7 @@
   (forall ((i natural))
   (and (<= 0 (naturalqtint i)) (<= (naturalqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -562,7 +566,7 @@
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
   (temp___do_typ_inv_38 Bool)) Bool (=>
                                     (or (= temp___is_init_35 true)
-                                    (<= 0 2147483647)) (in_range4
+                                    (<= 0 2147483647)) (in_range5
                                     temp___expr_39)))
 
 (define-fun dynamic_invariant1 ((temp___expr_215 us_rep)
@@ -927,17 +931,17 @@
                            buffer__split_fields) o4
                            (rec__tester__ring_buffer__ring_buffer_type__items
                            buffer__split_fields)))))))))))))))))
-  (let ((temp___310 (rec__tester__ring_buffer__ring_buffer_type__items
+  (let ((temp___317 (rec__tester__ring_buffer__ring_buffer_type__items
                     buffer__split_fields1)))
   (forall ((o element_type))
   (=> (= (to_rep3 o) element)
-  (forall ((temp___311 Int))
+  (forall ((temp___318 Int))
   (=>
   (= (to_rep1
-     (rec__tester__ring_buffer__ring_buffer_type__tail buffer__split_fields1)) temp___311)
+     (rec__tester__ring_buffer__ring_buffer_type__tail buffer__split_fields1)) temp___318)
   (=>
-  (and (<= (first1 temp___310) temp___311)
-  (<= temp___311 (last1 temp___310)))
+  (and (<= (first1 temp___317) temp___318)
+  (<= temp___318 (last1 temp___317)))
   (=> (dynamic_predicate
   (us_repqtmk buffer__split_discrs
   (us_split_fieldsqtmk
@@ -947,7 +951,7 @@
   (us_tqtmk
   (store (to_array
          (rec__tester__ring_buffer__ring_buffer_type__items
-         buffer__split_fields1)) temp___311 o)
+         buffer__split_fields1)) temp___318 o)
   (rt
   (rec__tester__ring_buffer__ring_buffer_type__items buffer__split_fields1))))))
   (forall ((buffer__split_fields2 us_split_fields))
@@ -962,7 +966,7 @@
                            (us_tqtmk
                            (store (to_array
                                   (rec__tester__ring_buffer__ring_buffer_type__items
-                                  buffer__split_fields1)) temp___311 o)
+                                  buffer__split_fields1)) temp___318 o)
                            (rt
                            (rec__tester__ring_buffer__ring_buffer_type__items
                            buffer__split_fields1)))))

@@ -178,6 +178,10 @@
                         (rec__test_dic__nested__t__f (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range3 ((rec__test_dic__nested__t__x1 Bool)
+  (a us_split_discrs)) Bool (= rec__test_dic__nested__t__x1 (rec__test_dic__nested__t__x
+                                                            a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -263,7 +267,7 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-T114-018__DIC-19502/src/gnatprove/test_dic__nested__t.mlw", line 456, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-T114-018__DIC-20969/src/gnatprove/test_dic__nested__t.mlw", line 468, characters 5-8
   (not
   (forall ((usf us_rep))
   (=> (dynamic_invariant c true false true true)

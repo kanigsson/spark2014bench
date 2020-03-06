@@ -315,19 +315,19 @@
 
 (declare-fun has_element__function_guard (Bool us_rep us_rep1) Bool)
 
-(define-fun dynamic_invariant ((temp___expr_240 us_rep)
-  (temp___is_init_236 Bool) (temp___skip_constant_237 Bool)
-  (temp___do_toplevel_238 Bool)
-  (temp___do_typ_inv_239 Bool)) Bool (=> (= temp___do_toplevel_238 true)
-                                     (=> (= temp___is_init_236 true)
+(define-fun dynamic_invariant ((temp___expr_242 us_rep)
+  (temp___is_init_238 Bool) (temp___skip_constant_239 Bool)
+  (temp___do_toplevel_240 Bool)
+  (temp___do_typ_inv_241 Bool)) Bool (=> (= temp___do_toplevel_240 true)
+                                     (=> (= temp___is_init_238 true)
                                      (<= (to_rep
                                          (rec__composite_cursors__cont2__length
-                                         (us_split_fields1 temp___expr_240))) 100))))
+                                         (us_split_fields1 temp___expr_242))) 100))))
 
-(define-fun dynamic_predicate ((temp___249 us_rep)) Bool (<= (to_rep
+(define-fun dynamic_predicate ((temp___251 us_rep)) Bool (<= (to_rep
                                                              (rec__composite_cursors__cont2__length
                                                              (us_split_fields1
-                                                             temp___249))) 100))
+                                                             temp___251))) 100))
 
 ;; has_element__post_axiom
   (assert true)
@@ -337,13 +337,13 @@
   (forall ((c us_rep))
   (forall ((p us_rep1))
   (! (= (= (has_element c p) true)
-     (and
-     (<= 1 (to_rep
-           (rec__composite_cursors__rec_cursor__content (us_split_fields3 p))))
-     (<= (to_rep
-         (rec__composite_cursors__rec_cursor__content (us_split_fields3 p))) 
-     (to_rep (rec__composite_cursors__cont2__length (us_split_fields1 c)))))) :pattern (
-  (has_element c p)) ))))
+     (let ((temp___258 (to_rep
+                       (rec__composite_cursors__rec_cursor__content
+                       (us_split_fields3 p)))))
+     (and (<= 1 temp___258)
+     (<= temp___258 (to_rep
+                    (rec__composite_cursors__cont2__length
+                    (us_split_fields1 c))))))) :pattern ((has_element c p)) ))))
 
 (declare-const c us_rep)
 
@@ -393,7 +393,7 @@
 ;; defqtvc
  ;; File "composite_cursors.ads", line 56, characters 0-0
   (not
-  (forall ((temp___290 Int))
+  (forall ((temp___296 Int))
   (=> (dynamic_invariant i19s true false true true)
   (=> (dynamic_invariant i19s true false true true)
   (=> (dynamic_invariant c true false true true)
@@ -401,6 +401,6 @@
   (=> (= (has_element c p) true)
   (=>
   (= (to_rep
-     (rec__composite_cursors__rec_cursor__content (us_split_fields3 p))) temp___290)
-  (<= 1 temp___290))))))))))
+     (rec__composite_cursors__rec_cursor__content (us_split_fields3 p))) temp___296)
+  (<= 1 temp___296))))))))))
 (check-sat)

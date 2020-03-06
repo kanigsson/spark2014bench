@@ -343,90 +343,90 @@
 (define-fun tarr_badD1__ref_tarr_badD1__content__projection ((a tarr_badD1__ref)) tarr_badD1 
   (tarr_badD1__content a))
 
-(define-fun dynamic_invariant ((temp___expr_301 us_rep)
-  (temp___is_init_297 Bool) (temp___skip_constant_298 Bool)
-  (temp___do_toplevel_299 Bool)
-  (temp___do_typ_inv_300 Bool)) Bool (and
-                                     (=> (= temp___do_toplevel_299 true)
+(define-fun dynamic_invariant ((temp___expr_303 us_rep)
+  (temp___is_init_299 Bool) (temp___skip_constant_300 Bool)
+  (temp___do_toplevel_301 Bool)
+  (temp___do_typ_inv_302 Bool)) Bool (and
+                                     (=> (= temp___do_toplevel_301 true)
                                      (and
                                      (and
                                      (not
                                      (= (to_rep
                                         (rec__preds__rec_bad__i
-                                        (us_split_fields1 temp___expr_301))) 0))
+                                        (us_split_fields1 temp___expr_303))) 0))
                                      (not
                                      (= (to_rep1
                                         (rec__preds__rec_bad__x
-                                        (us_split_fields1 temp___expr_301))) 0)))
+                                        (us_split_fields1 temp___expr_303))) 0)))
                                      (forall ((k Int))
                                      (=> (and (<= 1 k) (<= k 10))
                                      (not
                                      (= (to_rep
-                                        (let ((temp___303 (rec__preds__rec_bad__a
+                                        (let ((temp___305 (rec__preds__rec_bad__a
                                                           (us_split_fields1
-                                                          temp___expr_301))))
-                                        (select temp___303 k))) 0))))))
+                                                          temp___expr_303))))
+                                        (select temp___305 k))) 0))))))
                                      (and
-                                     (let ((temp___305 (to_rep1
+                                     (let ((temp___307 (to_rep1
                                                        (rec__preds__rec_bad__x
                                                        (us_split_fields1
-                                                       temp___expr_301)))))
+                                                       temp___expr_303)))))
                                      (or
-                                     (and (<= (- 2147483648) temp___305)
-                                     (<= temp___305 (- 1)))
-                                     (and (<= 1 temp___305)
-                                     (<= temp___305 2147483647))))
+                                     (and (<= (- 2147483648) temp___307)
+                                     (<= temp___307 (- 1)))
+                                     (and (<= 1 temp___307)
+                                     (<= temp___307 2147483647))))
                                      (forall ((k Int))
                                      (=> (and (<= 1 k) (<= k 10))
                                      (not
                                      (= (to_rep
                                         (select (rec__preds__rec_bad__a
                                                 (us_split_fields1
-                                                temp___expr_301)) k)) 0)))))))
+                                                temp___expr_303)) k)) 0)))))))
 
-(define-fun default_initial_assumption ((temp___expr_308 us_rep)
-  (temp___skip_top_level_309 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_312 us_rep)
+  (temp___skip_top_level_313 Bool)) Bool (and
                                          (and
                                          (= (to_rep
                                             (rec__preds__rec_bad__i
                                             (us_split_fields1
-                                            temp___expr_308))) 0)
+                                            temp___expr_312))) 0)
                                          (= (to_rep1
                                             (rec__preds__rec_bad__x
                                             (us_split_fields1
-                                            temp___expr_308))) 0))
-                                         (forall ((temp___312 Int))
+                                            temp___expr_312))) 0))
+                                         (forall ((temp___316 Int))
                                          (=>
-                                         (and (<= 1 temp___312)
-                                         (<= temp___312 10))
+                                         (and (<= 1 temp___316)
+                                         (<= temp___316 10))
                                          (= (to_rep
                                             (select (rec__preds__rec_bad__a
                                                     (us_split_fields1
-                                                    temp___expr_308)) temp___312)) 0)))))
+                                                    temp___expr_312)) temp___316)) 0)))))
 
-(define-fun dynamic_predicate ((temp___313 us_rep)) Bool (and
+(define-fun dynamic_predicate ((temp___317 us_rep)) Bool (and
                                                          (and
                                                          (not
                                                          (= (to_rep
                                                             (rec__preds__rec_bad__i
                                                             (us_split_fields1
-                                                            temp___313))) 0))
+                                                            temp___317))) 0))
                                                          (not
                                                          (= (to_rep1
                                                             (rec__preds__rec_bad__x
                                                             (us_split_fields1
-                                                            temp___313))) 0)))
+                                                            temp___317))) 0)))
                                                          (forall ((k Int))
                                                          (=>
                                                          (and (<= 1 k)
                                                          (<= k 10))
                                                          (not
                                                          (= (to_rep
-                                                            (let ((temp___315 
+                                                            (let ((temp___319 
                                                             (rec__preds__rec_bad__a
                                                             (us_split_fields1
-                                                            temp___313))))
-                                                            (select temp___315 k))) 0))))))
+                                                            temp___317))))
+                                                            (select temp___319 k))) 0))))))
 
 (declare-const i9s Int)
 

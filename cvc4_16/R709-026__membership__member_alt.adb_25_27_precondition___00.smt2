@@ -136,6 +136,10 @@
                         (rec__member_alt__my_rec__f (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range2 ((rec__member_alt__my_rec__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__member_alt__my_rec__d1 (rec__member_alt__my_rec__d
+                                                           a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -218,10 +222,6 @@
                                     (<= (- 2147483648) 2147483647))
                                     (in_range1 temp___expr_18)))
 
-(define-fun in_range2 ((rec__member_alt__my_rec__d1 Bool)
-  (a us_rep)) Bool (= rec__member_alt__my_rec__d1 (rec__member_alt__my_rec__d
-                                                  (us_split_discrs1 a))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -287,10 +287,6 @@
   (! (=> (dynamic_invariant x true true true true)
      (= (f x) (us_repqtmk (us_split_discrsqtmk (distinct 1 0))
               (us_split_fieldsqtmk (of_rep x))))) :pattern ((f x)) )))
-
-(define-fun in_range3 ((rec__member_alt__my_rec__d1 Bool)
-  (a us_rep)) Bool (= rec__member_alt__my_rec__d1 (rec__member_alt__my_rec__d
-                                                  (us_split_discrs1 a))))
 
 (declare-const value__size2 Int)
 

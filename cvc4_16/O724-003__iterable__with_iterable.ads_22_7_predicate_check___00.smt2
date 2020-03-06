@@ -320,15 +320,15 @@
 
 (declare-const dummy3 us_rep1)
 
-(declare-datatypes ((cursor__ref 0))
-(((cursor__refqtmk (cursor__content us_rep1)))))
-(define-fun cursor__ref_cursor__content__projection ((a1 cursor__ref)) us_rep1 
-  (cursor__content a1))
+(declare-datatypes ((cursor_2__ref 0))
+(((cursor_2__refqtmk (cursor_2__content us_rep1)))))
+(define-fun cursor_2__ref_cursor_2__content__projection ((a1 cursor_2__ref)) us_rep1 
+  (cursor_2__content a1))
 
 (define-fun in_range1 ((rec__with_iterable__cursor__c1 Int)
-  (a1 us_rep1)) Bool (= rec__with_iterable__cursor__c1 (to_rep
-                                                       (rec__with_iterable__cursor__c
-                                                       (us_split_discrs1 a1)))))
+  (a1 us_split_discrs)) Bool (= rec__with_iterable__cursor__c1 (to_rep
+                                                               (rec__with_iterable__cursor__c
+                                                               a1))))
 
 (declare-const value__size3 Int)
 
@@ -381,54 +381,48 @@
 
 (declare-const dummy4 us_rep1)
 
-(declare-datatypes ((cursor_2__ref 0))
-(((cursor_2__refqtmk (cursor_2__content us_rep1)))))
-(define-fun cursor_2__ref_cursor_2__content__projection ((a1 cursor_2__ref)) us_rep1 
-  (cursor_2__content a1))
+(declare-datatypes ((cursor__ref 0))
+(((cursor__refqtmk (cursor__content us_rep1)))))
+(define-fun cursor__ref_cursor__content__projection ((a1 cursor__ref)) us_rep1 
+  (cursor__content a1))
 
-(define-fun dynamic_invariant ((temp___expr_196 us_rep1)
-  (temp___is_init_192 Bool) (temp___skip_constant_193 Bool)
-  (temp___do_toplevel_194 Bool)
-  (temp___do_typ_inv_195 Bool)) Bool (and
+(define-fun dynamic_invariant ((temp___expr_198 us_rep1)
+  (temp___is_init_194 Bool) (temp___skip_constant_195 Bool)
+  (temp___do_toplevel_196 Bool)
+  (temp___do_typ_inv_197 Bool)) Bool (and
                                      (=>
-                                     (not (= temp___skip_constant_193 true))
-                                     (in_range1 101 temp___expr_196))
-                                     (=> (= temp___is_init_192 true)
-                                     (and
-                                     (<= 1 (to_rep
-                                           (rec__with_iterable__cursor__i
-                                           (us_split_fields3 temp___expr_196))))
-                                     (<= (to_rep
-                                         (rec__with_iterable__cursor__i
-                                         (us_split_fields3 temp___expr_196))) 
-                                     (to_rep
-                                     (rec__with_iterable__cursor__c
-                                     (us_split_discrs1 temp___expr_196))))))))
+                                     (not (= temp___skip_constant_195 true))
+                                     (in_range1 101
+                                     (us_split_discrs1 temp___expr_198)))
+                                     (=> (= temp___is_init_194 true)
+                                     (let ((temp___201 (to_rep
+                                                       (rec__with_iterable__cursor__i
+                                                       (us_split_fields3
+                                                       temp___expr_198)))))
+                                     (and (<= 1 temp___201)
+                                     (<= temp___201 (to_rep
+                                                    (rec__with_iterable__cursor__c
+                                                    (us_split_discrs1
+                                                    temp___expr_198)))))))))
 
-(define-fun default_initial_assumption ((temp___expr_201 us_rep1)
-  (temp___skip_top_level_202 Bool)) Bool (= (to_rep
+(define-fun default_initial_assumption ((temp___expr_205 us_rep1)
+  (temp___skip_top_level_206 Bool)) Bool (= (to_rep
                                             (rec__with_iterable__cursor__c
                                             (us_split_discrs1
-                                            temp___expr_201))) 101))
+                                            temp___expr_205))) 101))
 
-(define-fun dynamic_predicate ((temp___205 us_rep1)) Bool (and
-                                                          (<= 1 (to_rep
-                                                                (rec__with_iterable__cursor__i
-                                                                (us_split_fields3
-                                                                temp___205))))
-                                                          (<= (to_rep
-                                                              (rec__with_iterable__cursor__i
-                                                              (us_split_fields3
-                                                              temp___205))) 
+(define-fun dynamic_predicate ((temp___209 us_rep1)) Bool (let ((temp___212 
+                                                          (to_rep
+                                                          (rec__with_iterable__cursor__i
+                                                          (us_split_fields3
+                                                          temp___209)))))
+                                                          (and
+                                                          (<= 1 temp___212)
+                                                          (<= temp___212 
                                                           (to_rep
                                                           (rec__with_iterable__cursor__c
                                                           (us_split_discrs1
-                                                          temp___205))))))
-
-(define-fun in_range2 ((rec__with_iterable__cursor__c1 Int)
-  (a1 us_rep1)) Bool (= rec__with_iterable__cursor__c1 (to_rep
-                                                       (rec__with_iterable__cursor__c
-                                                       (us_split_discrs1 a1)))))
+                                                          temp___209)))))))
 
 (declare-const value__size4 Int)
 
@@ -486,19 +480,18 @@
 (define-fun t14s__ref_t14s__content__projection ((a1 t14s__ref)) us_rep1 
   (t14s__content a1))
 
-(define-fun dynamic_predicate1 ((temp___212 us_rep1)) Bool (and
-                                                           (<= 1 (to_rep
-                                                                 (rec__with_iterable__cursor__i
-                                                                 (us_split_fields3
-                                                                 temp___212))))
-                                                           (<= (to_rep
-                                                               (rec__with_iterable__cursor__i
-                                                               (us_split_fields3
-                                                               temp___212))) 
+(define-fun dynamic_predicate1 ((temp___217 us_rep1)) Bool (let ((temp___219 
+                                                           (to_rep
+                                                           (rec__with_iterable__cursor__i
+                                                           (us_split_fields3
+                                                           temp___217)))))
+                                                           (and
+                                                           (<= 1 temp___219)
+                                                           (<= temp___219 
                                                            (to_rep
                                                            (rec__with_iterable__cursor__c
                                                            (us_split_discrs1
-                                                           temp___212))))))
+                                                           temp___217)))))))
 
 (define-fun dynamic_invariant1 ((temp___expr_39 Int) (temp___is_init_35 Bool)
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
@@ -512,30 +505,28 @@
   (temp___do_toplevel_185 Bool)
   (temp___do_typ_inv_186 Bool)) Bool (=> (= temp___do_toplevel_185 true)
                                      (=> (= temp___is_init_183 true)
-                                     (and
-                                     (<= 1 (to_rep
-                                           (rec__with_iterable__cursor__i
-                                           (us_split_fields3 temp___expr_187))))
-                                     (<= (to_rep
-                                         (rec__with_iterable__cursor__i
-                                         (us_split_fields3 temp___expr_187))) 
-                                     (to_rep
-                                     (rec__with_iterable__cursor__c
-                                     (us_split_discrs1 temp___expr_187))))))))
+                                     (let ((temp___189 (to_rep
+                                                       (rec__with_iterable__cursor__i
+                                                       (us_split_fields3
+                                                       temp___expr_187)))))
+                                     (and (<= 1 temp___189)
+                                     (<= temp___189 (to_rep
+                                                    (rec__with_iterable__cursor__c
+                                                    (us_split_discrs1
+                                                    temp___expr_187)))))))))
 
-(define-fun dynamic_predicate2 ((temp___190 us_rep1)) Bool (and
-                                                           (<= 1 (to_rep
-                                                                 (rec__with_iterable__cursor__i
-                                                                 (us_split_fields3
-                                                                 temp___190))))
-                                                           (<= (to_rep
-                                                               (rec__with_iterable__cursor__i
-                                                               (us_split_fields3
-                                                               temp___190))) 
+(define-fun dynamic_predicate2 ((temp___191 us_rep1)) Bool (let ((temp___193 
+                                                           (to_rep
+                                                           (rec__with_iterable__cursor__i
+                                                           (us_split_fields3
+                                                           temp___191)))))
+                                                           (and
+                                                           (<= 1 temp___193)
+                                                           (<= temp___193 
                                                            (to_rep
                                                            (rec__with_iterable__cursor__c
                                                            (us_split_discrs1
-                                                           temp___190))))))
+                                                           temp___191)))))))
 
 (declare-const rliteral natural)
 

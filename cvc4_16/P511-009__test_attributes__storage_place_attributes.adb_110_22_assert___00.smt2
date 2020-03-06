@@ -264,16 +264,18 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((r2__ref 0))
-(((r2__refqtmk (r2__content us_rep)))))
-(define-fun r2__ref_r2__content__projection ((a r2__ref)) us_rep (r2__content
-                                                                 a))
+(declare-datatypes ((sr2__ref 0))
+(((sr2__refqtmk (sr2__content us_rep)))))
+(define-fun sr2__ref_sr2__content__projection ((a sr2__ref)) us_rep (sr2__content
+                                                                    a))
+
+(declare-const x us_rep)
+
+(declare-const attr__ATTRIBUTE_ADDRESS Int)
 
 (define-fun in_range3 ((rec__storage_place_attributes__r2__d11 Int)
-  (a us_rep)) Bool (= rec__storage_place_attributes__r2__d11 (to_rep1
-                                                             (rec__storage_place_attributes__r2__d1
-                                                             (us_split_discrs1
-                                                             a)))))
+  (a us_split_discrs)) Bool (= rec__storage_place_attributes__r2__d11 
+  (to_rep1 (rec__storage_place_attributes__r2__d1 a))))
 
 (declare-const value__size1 Int)
 
@@ -342,21 +344,18 @@
 
 (declare-const dummy3 us_rep)
 
-(declare-datatypes ((sr2__ref 0))
-(((sr2__refqtmk (sr2__content us_rep)))))
-(define-fun sr2__ref_sr2__content__projection ((a sr2__ref)) us_rep (sr2__content
-                                                                    a))
-
-(declare-const x us_rep)
-
-(declare-const attr__ATTRIBUTE_ADDRESS Int)
+(declare-datatypes ((r2__ref 0))
+(((r2__refqtmk (r2__content us_rep)))))
+(define-fun r2__ref_r2__content__projection ((a r2__ref)) us_rep (r2__content
+                                                                 a))
 
 (define-fun dynamic_invariant ((temp___expr_204 us_rep)
   (temp___is_init_200 Bool) (temp___skip_constant_201 Bool)
   (temp___do_toplevel_202 Bool)
   (temp___do_typ_inv_203 Bool)) Bool (=>
                                      (not (= temp___skip_constant_201 true))
-                                     (in_range3 5 temp___expr_204)))
+                                     (in_range3 5
+                                     (us_split_discrs1 temp___expr_204))))
 
 (define-fun default_initial_assumption ((temp___expr_206 us_rep)
   (temp___skip_top_level_207 Bool)) Bool (and
@@ -413,5 +412,5 @@
  ;; File "storage_place_attributes.adb", line 108, characters 0-0
   (not
   (=> (dynamic_invariant x true false true true)
-  (<= 0 storage_place_attributes__r2__d1__first__bit1))))
+  (<= 0 storage_place_attributes__r2__d1__first__bit))))
 (check-sat)

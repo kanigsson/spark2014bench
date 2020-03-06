@@ -137,6 +137,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range2 ((rec__membership_discr__root__c1 Int)
+  (a us_split_discrs)) Bool (= rec__membership_discr__root__c1 (to_rep
+                                                               (rec__membership_discr__root__c
+                                                               a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -179,11 +184,6 @@
 
 (declare-const us_tag1 Int)
 
-(define-fun in_range2 ((rec__membership_discr__root__c1 Int)
-  (a us_rep)) Bool (= rec__membership_discr__root__c1 (to_rep
-                                                      (rec__membership_discr__root__c
-                                                      (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -225,11 +225,6 @@
   (root_01__content a))
 
 (declare-const us_tag2 Int)
-
-(define-fun in_range3 ((rec__membership_discr__root__c1 Int)
-  (a us_rep)) Bool (= rec__membership_discr__root__c1 (to_rep
-                                                      (rec__membership_discr__root__c
-                                                      (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -282,7 +277,8 @@
   (temp___do_toplevel_192 Bool)
   (temp___do_typ_inv_193 Bool)) Bool (=>
                                      (not (= temp___skip_constant_191 true))
-                                     (in_range3 0 temp___expr_194)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_194))))
 
 (define-fun default_initial_assumption ((temp___expr_196 us_rep)
   (temp___skip_top_level_197 Bool)) Bool (and
@@ -305,7 +301,8 @@
   (temp___do_toplevel_183 Bool)
   (temp___do_typ_inv_184 Bool)) Bool (=>
                                      (not (= temp___skip_constant_182 true))
-                                     (in_range2 0 temp___expr_185)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_185))))
 
 (define-fun default_initial_assumption1 ((temp___expr_187 us_rep)
   (temp___skip_top_level_188 Bool)) Bool (and

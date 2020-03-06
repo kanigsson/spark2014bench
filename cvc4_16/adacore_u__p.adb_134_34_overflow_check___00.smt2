@@ -307,20 +307,20 @@
 (define-fun taS__ref_taS__content__projection ((a taS__ref)) us_t (taS__content
                                                                   a))
 
-(define-fun dynamic_invariant1 ((temp___expr_272 us_t)
-  (temp___is_init_268 Bool) (temp___skip_constant_269 Bool)
-  (temp___do_toplevel_270 Bool)
-  (temp___do_typ_inv_271 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_269 true))
+(define-fun dynamic_invariant1 ((temp___expr_273 us_t)
+  (temp___is_init_269 Bool) (temp___skip_constant_270 Bool)
+  (temp___do_toplevel_271 Bool)
+  (temp___do_typ_inv_272 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_270 true))
                                      (and (dynamic_property 1 n
-                                     (first1 temp___expr_272)
-                                     (last1 temp___expr_272))
-                                     (and (= (first1 temp___expr_272) 1)
-                                     (= (last1 temp___expr_272) n)))))
+                                     (first1 temp___expr_273)
+                                     (last1 temp___expr_273))
+                                     (and (= (first1 temp___expr_273) 1)
+                                     (= (last1 temp___expr_273) n)))))
 
-(define-fun default_initial_assumption ((temp___expr_274 us_t)
-  (temp___skip_top_level_275 Bool)) Bool (and (= (first1 temp___expr_274) 1)
-                                         (= (last1 temp___expr_274) n)))
+(define-fun default_initial_assumption ((temp___expr_275 us_t)
+  (temp___skip_top_level_276 Bool)) Bool (and (= (first1 temp___expr_275) 1)
+                                         (= (last1 temp___expr_275) n)))
 
 (define-fun dynamic_invariant2 ((temp___expr_46 Int) (temp___is_init_42 Bool)
   (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)

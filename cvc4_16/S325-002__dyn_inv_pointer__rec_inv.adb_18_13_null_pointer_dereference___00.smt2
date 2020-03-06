@@ -188,6 +188,10 @@
                             (rec__rec_inv__list_d__next (us_split_fields1 b))) true)))
                     true false))
 
+(define-fun in_range2 ((rec__rec_inv__list_d__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__rec_inv__list_d__d1 (rec__rec_inv__list_d__d
+                                                        a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

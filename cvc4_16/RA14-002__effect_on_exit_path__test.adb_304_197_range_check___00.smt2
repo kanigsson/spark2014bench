@@ -774,20 +774,20 @@
 (define-fun os_task_id_param_t__ref_os_task_id_param_t__content__projection ((a os_task_id_param_t__ref)) os_task_id_param_t 
   (os_task_id_param_t__content a))
 
-(define-fun dynamic_invariant ((temp___expr_232 Int)
-  (temp___is_init_228 Bool) (temp___skip_constant_229 Bool)
-  (temp___do_toplevel_230 Bool)
-  (temp___do_typ_inv_231 Bool)) Bool (=>
-                                     (or (= temp___is_init_228 true)
-                                     (<= 0 4)) (in_range5 temp___expr_232)))
+(define-fun dynamic_invariant ((temp___expr_233 Int)
+  (temp___is_init_229 Bool) (temp___skip_constant_230 Bool)
+  (temp___do_toplevel_231 Bool)
+  (temp___do_typ_inv_232 Bool)) Bool (=>
+                                     (or (= temp___is_init_229 true)
+                                     (<= 0 4)) (in_range5 temp___expr_233)))
 
-(define-fun dynamic_invariant1 ((temp___expr_276 (_ BitVec 8))
-  (temp___is_init_272 Bool) (temp___skip_constant_273 Bool)
-  (temp___do_toplevel_274 Bool)
-  (temp___do_typ_inv_275 Bool)) Bool (=>
-                                     (or (= temp___is_init_272 true)
+(define-fun dynamic_invariant1 ((temp___expr_277 (_ BitVec 8))
+  (temp___is_init_273 Bool) (temp___skip_constant_274 Bool)
+  (temp___do_toplevel_275 Bool)
+  (temp___do_typ_inv_276 Bool)) Bool (=>
+                                     (or (= temp___is_init_273 true)
                                      (bvule #x00 #x02)) (in_range1
-                                     temp___expr_276)))
+                                     temp___expr_277)))
 
 ;; os_mbx_get_mbx_head__post_axiom
   (assert
@@ -843,7 +843,7 @@
 (declare-fun oadd__function_guard ((_ BitVec 8) (_ BitVec 8)
   (_ BitVec 8)) Bool)
 
-;; temp___result_168'def
+;; temp___result_169'def
   (assert
   (forall ((task_id Int) (test__os_task_mbx_rw (Array Int us_rep1)))
   (os_mbx_get_mbx_count__function_guard
@@ -967,16 +967,16 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS5 Int)
 
-(declare-fun temp_____aggregate_def_493 ((Array (_ BitVec 8) us_rep)
+(declare-fun temp_____aggregate_def_501 ((Array (_ BitVec 8) us_rep)
   (_ BitVec 8) us_rep) (Array (_ BitVec 8) us_rep))
 
-(define-fun dynamic_invariant2 ((temp___expr_297 (_ BitVec 8))
-  (temp___is_init_293 Bool) (temp___skip_constant_294 Bool)
-  (temp___do_toplevel_295 Bool)
-  (temp___do_typ_inv_296 Bool)) Bool (=>
-                                     (or (= temp___is_init_293 true)
+(define-fun dynamic_invariant2 ((temp___expr_298 (_ BitVec 8))
+  (temp___is_init_294 Bool) (temp___skip_constant_295 Bool)
+  (temp___do_toplevel_296 Bool)
+  (temp___do_typ_inv_297 Bool)) Bool (=>
+                                     (or (= temp___is_init_294 true)
                                      (bvule #x00 #x03)) (in_range2
-                                     temp___expr_297)))
+                                     temp___expr_298)))
 
 ;; oadd__post_axiom
   (assert
@@ -994,9 +994,9 @@
   (! (=>
      (and (dynamic_invariant1 left true true true true) (dynamic_invariant2
      right true true true true))
-     (= (oadd left right) (let ((temp___340 (bvadd left (bvurem right ((_ int2bv 8) 256)))))
+     (= (oadd left right) (let ((temp___341 (bvadd left (bvurem right ((_ int2bv 8) 256)))))
                           (ite (bvule (bvsub #x03 left) (bvurem right ((_ int2bv 8) 256)))
-                          (bvsub temp___340 #x03) temp___340)))) :pattern (
+                          (bvsub temp___341 #x03) temp___341)))) :pattern (
   (oadd left right)) )))
 
 ;; os_mbx_get_mbx_count__post_axiom
@@ -1027,32 +1027,32 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___495 (Array (_ BitVec 8) us_rep)))
-  (forall ((temp___496 (_ BitVec 8)))
-  (forall ((temp___497 us_rep))
-  (let ((temp___494 (temp_____aggregate_def_493 temp___495 temp___496
-                    temp___497)))
-  (=> (dynamic_invariant1 temp___496 true true true true)
-  (forall ((temp___498 (_ BitVec 8)))
-  (ite (= temp___498 temp___496)
-  (= (select temp___494 temp___498) temp___497)
-  (= (select temp___494 temp___498) (select temp___495 temp___498))))))))))
+  (forall ((temp___503 (Array (_ BitVec 8) us_rep)))
+  (forall ((temp___504 (_ BitVec 8)))
+  (forall ((temp___505 us_rep))
+  (let ((temp___502 (temp_____aggregate_def_501 temp___503 temp___504
+                    temp___505)))
+  (=> (dynamic_invariant1 temp___504 true true true true)
+  (forall ((temp___506 (_ BitVec 8)))
+  (ite (= temp___506 temp___504)
+  (= (select temp___502 temp___506) temp___505)
+  (= (select temp___502 temp___506) (select temp___503 temp___506))))))))))
 
-(define-fun dynamic_invariant3 ((temp___expr_225 Int)
-  (temp___is_init_221 Bool) (temp___skip_constant_222 Bool)
-  (temp___do_toplevel_223 Bool)
-  (temp___do_typ_inv_224 Bool)) Bool (=>
-                                     (or (= temp___is_init_221 true)
+(define-fun dynamic_invariant3 ((temp___expr_226 Int)
+  (temp___is_init_222 Bool) (temp___skip_constant_223 Bool)
+  (temp___do_toplevel_224 Bool)
+  (temp___do_typ_inv_225 Bool)) Bool (=>
+                                     (or (= temp___is_init_222 true)
                                      (<= (- 1) 4)) (in_range3
-                                     temp___expr_225)))
+                                     temp___expr_226)))
 
-(define-fun dynamic_invariant4 ((temp___expr_260 Int)
-  (temp___is_init_256 Bool) (temp___skip_constant_257 Bool)
-  (temp___do_toplevel_258 Bool)
-  (temp___do_typ_inv_259 Bool)) Bool (=>
-                                     (or (= temp___is_init_256 true)
+(define-fun dynamic_invariant4 ((temp___expr_261 Int)
+  (temp___is_init_257 Bool) (temp___skip_constant_258 Bool)
+  (temp___do_toplevel_259 Bool)
+  (temp___do_typ_inv_260 Bool)) Bool (=>
+                                     (or (= temp___is_init_257 true)
                                      (<= 0 4294967295)) (in_range4
-                                     temp___expr_260)))
+                                     temp___expr_261)))
 
 ;; c20b__def_axiom
   (assert (= c20b task_id))
@@ -1165,7 +1165,7 @@
   (= o3 (to_rep
         (rec__test__os_mbx_t__head
         (us_split_fields3 (select os_task_mbx_rw2 o2)))))))
-  (let ((temp___654 (bvadd o3 #x01)))
+  (let ((temp___671 (bvadd o3 #x01)))
   (let ((o4 c23b))
   (let ((o5 (os_mbx_get_mbx_head o4 os_task_mbx_rw2)))
   (and
@@ -1174,8 +1174,8 @@
   (= o5 (to_rep
         (rec__test__os_mbx_t__head
         (us_split_fields3 (select os_task_mbx_rw2 o4)))))))
-  (ite (bvule (bvsub #x03 o5) #x01) (= o1 (bvsub temp___654 #x03))
-  (= o1 temp___654)))))))))
+  (ite (bvule (bvsub #x03 o5) #x01) (= o1 (bvsub temp___671 #x03))
+  (= o1 temp___671)))))))))
   (forall ((o2 os_mbx_index_t))
   (=> (= (to_rep o2) o1)
   (forall ((os_task_mbx_rw3 (Array Int us_rep1)))
@@ -1191,10 +1191,10 @@
   (=> (= os_task_mbx_rw4 os_task_mbx_rw3)
   (forall ((os_task_mbx_rw5 (Array Int us_rep1)))
   (=>
-  (forall ((temp___index_420 Int))
-  (=> (and (<= 0 temp___index_420) (<= temp___index_420 4))
-  (= (bool_eq2 (select os_task_mbx_rw5 temp___index_420)
-     (ite (= temp___index_420 o3)
+  (forall ((temp___index_424 Int))
+  (=> (and (<= 0 temp___index_424) (<= temp___index_424 4))
+  (= (bool_eq2 (select os_task_mbx_rw5 temp___index_424)
+     (ite (= temp___index_424 o3)
      (us_repqtmk1
      (let ((q_3 (us_split_fields3 (select os_task_mbx_rw4 o3))))
      (us_split_fieldsqtmk1 (rec__test__os_mbx_t__head q_3)
@@ -1203,7 +1203,7 @@
             (rec__test__os_mbx_t__count
             (us_split_fields3 (select os_task_mbx_rw4 o3)))) #x01))
      (rec__test__os_mbx_t__mbx_array q_3))))
-     (select os_task_mbx_rw4 temp___index_420))) true)))
+     (select os_task_mbx_rw4 temp___index_424))) true)))
   (forall ((o4 (_ BitVec 8)))
   (=>
   (let ((o5 task_id))
@@ -1214,7 +1214,7 @@
   (= o6 (to_rep
         (rec__test__os_mbx_t__head
         (us_split_fields3 (select os_task_mbx_rw5 o5)))))))
-  (let ((temp___664 (bvsub o6 #x01)))
+  (let ((temp___681 (bvsub o6 #x01)))
   (let ((o7 task_id))
   (let ((o8 (os_mbx_get_mbx_head o7 os_task_mbx_rw5)))
   (and
@@ -1223,7 +1223,7 @@
   (= o8 (to_rep
         (rec__test__os_mbx_t__head
         (us_split_fields3 (select os_task_mbx_rw5 o7)))))))
-  (ite (bvult o8 #x01) (= o4 (bvadd temp___664 #x03)) (= o4 temp___664)))))))))
+  (ite (bvult o8 #x01) (= o4 (bvadd temp___681 #x03)) (= o4 temp___681)))))))))
   (=> (in_range1 o4)
   (forall ((o5 (_ BitVec 8)))
   (=>
@@ -1241,12 +1241,12 @@
   (= (to_rep
      (rec__test__os_mbx_t__head
      (us_split_fields3 (select os_task_mbx_rw task_id)))) o9)
-  (let ((temp___662 (bvadd o9 #x01)))
+  (let ((temp___679 (bvadd o9 #x01)))
   (exists ((o10 (_ BitVec 8)))
   (and
   (= (to_rep
      (rec__test__os_mbx_t__head
      (us_split_fields3 (select os_task_mbx_rw task_id)))) o10)
-  (ite (bvule (bvsub #x03 o10) #x01) (= o8 (bvsub temp___662 #x03))
-  (= o8 temp___662))))))) (in_range1 o8)))))))))))))))))))))))))))))))))))))))))))))))))
+  (ite (bvule (bvsub #x03 o10) #x01) (= o8 (bvsub temp___679 #x03))
+  (= o8 temp___679))))))) (in_range1 o8)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

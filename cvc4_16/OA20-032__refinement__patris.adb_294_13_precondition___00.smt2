@@ -1294,13 +1294,13 @@
 (define-fun int____ref_int____content__projection ((a int____ref)) int__ 
   (int____content a))
 
-(define-fun dynamic_invariant3 ((temp___expr_792 Int)
-  (temp___is_init_788 Bool) (temp___skip_constant_789 Bool)
-  (temp___do_toplevel_790 Bool)
-  (temp___do_typ_inv_791 Bool)) Bool (=>
-                                     (or (= temp___is_init_788 true)
+(define-fun dynamic_invariant3 ((temp___expr_798 Int)
+  (temp___is_init_794 Bool) (temp___skip_constant_795 Bool)
+  (temp___do_toplevel_796 Bool)
+  (temp___do_typ_inv_797 Bool)) Bool (=>
+                                     (or (= temp___is_init_794 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range9 temp___expr_792)))
+                                     (in_range9 temp___expr_798)))
 
 ;; rand__post_axiom
   (assert

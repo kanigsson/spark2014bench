@@ -1010,21 +1010,21 @@
 (define-fun name__ref_name__content__2__projection ((a name__ref)) us_rep1 
   (name__content a))
 
-(define-fun dynamic_invariant7 ((temp___expr_364 us_rep1)
-  (temp___is_init_360 Bool) (temp___skip_constant_361 Bool)
-  (temp___do_toplevel_362 Bool)
-  (temp___do_typ_inv_363 Bool)) Bool (=>
+(define-fun dynamic_invariant7 ((temp___expr_357 us_rep1)
+  (temp___is_init_353 Bool) (temp___skip_constant_354 Bool)
+  (temp___do_toplevel_355 Bool)
+  (temp___do_typ_inv_356 Bool)) Bool (=>
                                      (not
                                      (= (rec__use_formal_vectors__my_vect__element_access__is_null_pointer
-                                        temp___expr_364) true))
+                                        temp___expr_357) true))
                                      (not
                                      (= (rec__use_formal_vectors__element_type__is_null_pointer
                                         (rec__use_formal_vectors__my_vect__element_access__pointer_value
-                                        temp___expr_364)) true))))
+                                        temp___expr_357)) true))))
 
-(define-fun default_initial_assumption4 ((temp___expr_365 us_rep1)
-  (temp___skip_top_level_366 Bool)) Bool (= (rec__use_formal_vectors__my_vect__element_access__is_null_pointer
-                                            temp___expr_365) true))
+(define-fun default_initial_assumption4 ((temp___expr_358 us_rep1)
+  (temp___skip_top_level_359 Bool)) Bool (= (rec__use_formal_vectors__my_vect__element_access__is_null_pointer
+                                            temp___expr_358) true))
 
 (define-fun dynamic_invariant8 ((temp___expr_225 us_rep1)
   (temp___is_init_221 Bool) (temp___skip_constant_222 Bool)
@@ -1270,11 +1270,11 @@
      (rec__use_formal_vectors__my_vect__vector__top v__split_fields1)) use_formal_vectors__my_vect__delete__L_4__R139s__assume)
   (=> (= use_formal_vectors__my_vect__delete__L_4__R139s__assume r139s)
   (=> (dynamic_invariant r139s true false true true)
-  (let ((temp___606 i))
+  (let ((temp___599 i))
   (forall ((j Int))
-  (=> (= j temp___606)
+  (=> (= j temp___599)
   (=>
-  (= (and (ite (<= temp___606 j) true false) (ite (<= j r139s) true false)) true)
+  (= (and (ite (<= temp___599 j) true false) (ite (<= j r139s) true false)) true)
   (let ((o5 v_mod))
   (let ((o6 (last2 o5)))
   (=>
@@ -1294,10 +1294,10 @@
   (=>
   (= (and (ite (<= 1 usf) true false) (ite (<= usf (- i 1)) true false)) true)
   (=> (dynamic_invariant6 (get v_mod usf) true false true true)
-  (let ((temp___638 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
+  (let ((temp___631 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                     (rec__use_formal_vectors__my_vect__vector__content
                     v__split_fields1))))
-  (=> (and (<= (first1 temp___638) usf) (<= usf (last1 temp___638)))
+  (=> (and (<= (first1 temp___631) usf) (<= usf (last1 temp___631)))
   (rec__use_formal_vectors__my_vect__element_access__pointer_value__pred
-  (select (to_array temp___638) usf)))))))))))))))))))))))))))))))))))))))))))))))))
+  (select (to_array temp___631) usf)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

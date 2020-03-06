@@ -352,7 +352,8 @@
   (! (= (= (all_elements_in a max) true)
      (forall ((k Int))
      (=> (and (<= 0 k) (<= k 7))
-     (and (<= (- max) (to_rep (select a k))) (<= (to_rep (select a k)) max))))) :pattern (
+     (let ((temp___179 (to_rep (select a k))))
+     (and (<= (- max) temp___179) (<= temp___179 max)))))) :pattern (
   (all_elements_in a max)) ))))
 
 (declare-fun all_left_elements_in ((Array Int integer) Int Int) Bool)
@@ -378,7 +379,8 @@
      (forall ((k Int))
      (=> (and (<= 0 k) (<= k 7))
      (=> (< k right)
-     (and (<= (- max) (to_rep (select a k))) (<= (to_rep (select a k)) max)))))) :pattern (
+     (let ((temp___183 (to_rep (select a k))))
+     (and (<= (- max) temp___183) (<= temp___183 max))))))) :pattern (
   (all_left_elements_in a right max)) ))))
 
 (declare-fun all_right_elements_in ((Array Int integer) Int Int) Bool)
@@ -397,7 +399,8 @@
      (forall ((k Int))
      (=> (and (<= 0 k) (<= k 7))
      (=> (< left k)
-     (and (<= (- max) (to_rep (select a k))) (<= (to_rep (select a k)) max)))))) :pattern (
+     (let ((temp___187 (to_rep (select a k))))
+     (and (<= (- max) temp___187) (<= temp___187 max))))))) :pattern (
   (all_right_elements_in a left max)) ))))
 
 (declare-fun intermediate_form ((Array Int integer)
@@ -493,7 +496,8 @@
   (= (= o2 true)
   (forall ((k Int))
   (=> (and (<= 0 k) (<= k 7))
-  (and (<= (- o1) (to_rep (select a k))) (<= (to_rep (select a k)) o1)))))
+  (let ((temp___176 (to_rep (select a k))))
+  (and (<= (- o1) temp___176) (<= temp___176 o1))))))
   (ite (= o2 true)
   (= o (or (or (ite (= space 1) true false) (ite (= space 2) true false)) 
   (ite (= space 4) true false))) (= o false))))))

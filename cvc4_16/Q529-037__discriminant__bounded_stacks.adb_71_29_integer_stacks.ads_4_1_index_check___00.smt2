@@ -422,6 +422,10 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range5 ((rec__integer_stacks__stack__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__integer_stacks__stack__capacity1 
+  (to_rep1 (rec__integer_stacks__stack__capacity a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -572,10 +576,10 @@
   (=> (= (and (ite (<= 1 k) true false) (ite (<= k r30b) true false)) true)
   (=> (<= 1 k1)
   (=> (<= k1 r30b)
-  (let ((temp___386 (rec__integer_stacks__stack__values
+  (let ((temp___390 (rec__integer_stacks__stack__values
                     (us_split_fields1 right))))
-  (=> (and (<= (first1 temp___386) k1) (<= k1 (last1 temp___386)))
+  (=> (and (<= (first1 temp___390) k1) (<= k1 (last1 temp___390)))
   (forall ((o2 Int))
-  (=> (= (to_rep3 (select (to_array temp___386) k1)) o2)
+  (=> (= (to_rep3 (select (to_array temp___390) k1)) o2)
   (<= (first1 (rec__integer_stacks__stack__values (us_split_fields1 left))) k1)))))))))))))))))))))
 (check-sat)

@@ -550,12 +550,12 @@
 
 (declare-datatypes ((modular__ref 0))
 (((modular__refqtmk (modular__content modular)))))
-(define-fun modular__ref_modular__content__6__projection ((a modular__ref)) modular 
+(define-fun modular__ref_modular__content__3__projection ((a modular__ref)) modular 
   (modular__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_474 (_ BitVec 32))
-  (temp___is_init_470 Bool) (temp___skip_constant_471 Bool)
-  (temp___do_toplevel_472 Bool) (temp___do_typ_inv_473 Bool)) Bool true)
+(define-fun dynamic_invariant1 ((temp___expr_453 (_ BitVec 32))
+  (temp___is_init_449 Bool) (temp___skip_constant_450 Bool)
+  (temp___do_toplevel_451 Bool) (temp___do_typ_inv_452 Bool)) Bool true)
 
 ;; shift_right__post_axiom
   (assert
@@ -650,12 +650,12 @@
 (define-fun mask_size__ref_mask_size__content__5__projection ((a mask_size__ref)) mask_size 
   (mask_size__content a))
 
-(define-fun dynamic_invariant2 ((temp___expr_488 Int)
-  (temp___is_init_484 Bool) (temp___skip_constant_485 Bool)
-  (temp___do_toplevel_486 Bool)
-  (temp___do_typ_inv_487 Bool)) Bool (=>
-                                     (or (= temp___is_init_484 true)
-                                     (<= 1 32)) (in_range1 temp___expr_488)))
+(define-fun dynamic_invariant2 ((temp___expr_467 Int)
+  (temp___is_init_463 Bool) (temp___skip_constant_464 Bool)
+  (temp___do_toplevel_465 Bool)
+  (temp___do_typ_inv_466 Bool)) Bool (=>
+                                     (or (= temp___is_init_463 true)
+                                     (<= 1 32)) (in_range1 temp___expr_467)))
 
 ;; make_mask__post_axiom
   (assert
@@ -703,12 +703,12 @@
 (define-fun bit_position__ref_bit_position__content__5__projection ((a bit_position__ref)) bit_position 
   (bit_position__content a))
 
-(define-fun dynamic_invariant3 ((temp___expr_481 Int)
-  (temp___is_init_477 Bool) (temp___skip_constant_478 Bool)
-  (temp___do_toplevel_479 Bool)
-  (temp___do_typ_inv_480 Bool)) Bool (=>
-                                     (or (= temp___is_init_477 true)
-                                     (<= 0 31)) (in_range2 temp___expr_481)))
+(define-fun dynamic_invariant3 ((temp___expr_460 Int)
+  (temp___is_init_456 Bool) (temp___skip_constant_457 Bool)
+  (temp___do_toplevel_458 Bool)
+  (temp___do_typ_inv_459 Bool)) Bool (=>
+                                     (or (= temp___is_init_456 true)
+                                     (<= 0 31)) (in_range2 temp___expr_460)))
 
 ;; extract_bits_inline_always__post_axiom
   (assert

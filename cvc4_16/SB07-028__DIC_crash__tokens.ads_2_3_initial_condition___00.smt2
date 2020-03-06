@@ -69,16 +69,40 @@
 
 (declare-const dummy us_rep)
 
-(declare-datatypes ((cont__ref 0))
-(((cont__refqtmk (cont__content us_rep)))))
-(define-fun cont__ref_cont__content__projection ((a cont__ref)) us_rep 
-  (cont__content a))
+(declare-datatypes ((token_set__ref 0))
+(((token_set__refqtmk (token_set__content us_rep)))))
+(define-fun token_set__ref_token_set__content__projection ((a token_set__ref)) us_rep 
+  (token_set__content a))
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
 
 (declare-fun init (us_rep) Bool)
 
 (declare-fun init__function_guard (Bool us_rep) Bool)
+
+(declare-const value__size1 Int)
+
+(declare-const object__size1 Int)
+
+(declare-const alignment1 Int)
+
+;; value__size_axiom
+  (assert (<= 0 value__size1))
+
+;; object__size_axiom
+  (assert (<= 0 object__size1))
+
+;; alignment_axiom
+  (assert (<= 0 alignment1))
+
+(declare-fun user_eq1 (us_rep us_rep) Bool)
+
+(declare-const dummy1 us_rep)
+
+(declare-datatypes ((cont__ref 0))
+(((cont__refqtmk (cont__content us_rep)))))
+(define-fun cont__ref_cont__content__projection ((a cont__ref)) us_rep 
+  (cont__content a))
 
 (declare-fun length (us_rep) Int)
 
@@ -93,16 +117,16 @@
      (= (= (init tokens__x) true) (= (length tokens__x) 0))) :pattern (
   (init tokens__x)) )))
 
-;; temp___result_164'def
+;; temp___result_173'def
   (assert
-  (forall ((temp___163 us_rep)) (length__function_guard (length temp___163)
-  temp___163)))
+  (forall ((temp___172 us_rep)) (length__function_guard (length temp___172)
+  temp___172)))
 
-(define-fun default_initial_assumption ((temp___expr_161 us_rep)
-  (temp___skip_top_level_162 Bool)) Bool (=>
+(define-fun default_initial_assumption ((temp___expr_170 us_rep)
+  (temp___skip_top_level_171 Bool)) Bool (=>
                                          (not
-                                         (= temp___skip_top_level_162 true))
-                                         (= (length temp___expr_161) 0)))
+                                         (= temp___skip_top_level_171 true))
+                                         (= (length temp___expr_170) 0)))
 
 (declare-sort integer 0)
 
@@ -122,9 +146,9 @@
 
 (declare-fun attr__ATTRIBUTE_VALUE (us_image) Int)
 
-(declare-fun user_eq1 (integer integer) Bool)
+(declare-fun user_eq2 (integer integer) Bool)
 
-(declare-const dummy1 integer)
+(declare-const dummy2 integer)
 
 (declare-datatypes ((integer__ref 0))
 (((integer__refqtmk (integer__content integer)))))
@@ -137,6 +161,17 @@
                                     (or (= temp___is_init_14 true)
                                     (<= (- 2147483648) 2147483647)) (in_range
                                     temp___expr_18)))
+
+;; temp___result_164'def
+  (assert
+  (forall ((temp___163 us_rep)) (length__function_guard (length temp___163)
+  temp___163)))
+
+(define-fun default_initial_assumption1 ((temp___expr_161 us_rep)
+  (temp___skip_top_level_162 Bool)) Bool (=>
+                                         (not
+                                         (= temp___skip_top_level_162 true))
+                                         (= (length temp___expr_161) 0)))
 
 ;; length__post_axiom
   (assert

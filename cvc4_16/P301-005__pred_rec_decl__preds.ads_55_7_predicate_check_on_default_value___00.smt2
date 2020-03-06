@@ -382,49 +382,49 @@
                                                 (us_split_fields1
                                                 temp___expr_282)) k)) 0)))))))
 
-(define-fun default_initial_assumption ((temp___expr_289 us_rep)
-  (temp___skip_top_level_290 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_291 us_rep)
+  (temp___skip_top_level_292 Bool)) Bool (and
                                          (and
                                          (= (to_rep
                                             (rec__preds__rec_ok__i
                                             (us_split_fields1
-                                            temp___expr_289))) 1)
+                                            temp___expr_291))) 1)
                                          (= (to_rep1
                                             (rec__preds__rec_ok__x
                                             (us_split_fields1
-                                            temp___expr_289))) 1))
-                                         (forall ((temp___293 Int))
+                                            temp___expr_291))) 1))
+                                         (forall ((temp___295 Int))
                                          (=>
-                                         (and (<= 1 temp___293)
-                                         (<= temp___293 10))
+                                         (and (<= 1 temp___295)
+                                         (<= temp___295 10))
                                          (= (to_rep
                                             (select (rec__preds__rec_ok__a
                                                     (us_split_fields1
-                                                    temp___expr_289)) temp___293)) 1)))))
+                                                    temp___expr_291)) temp___295)) 1)))))
 
-(define-fun dynamic_predicate ((temp___294 us_rep)) Bool (and
+(define-fun dynamic_predicate ((temp___296 us_rep)) Bool (and
                                                          (and
                                                          (not
                                                          (= (to_rep
                                                             (rec__preds__rec_ok__i
                                                             (us_split_fields1
-                                                            temp___294))) 0))
+                                                            temp___296))) 0))
                                                          (not
                                                          (= (to_rep1
                                                             (rec__preds__rec_ok__x
                                                             (us_split_fields1
-                                                            temp___294))) 0)))
+                                                            temp___296))) 0)))
                                                          (forall ((k Int))
                                                          (=>
                                                          (and (<= 1 k)
                                                          (<= k 10))
                                                          (not
                                                          (= (to_rep
-                                                            (let ((temp___296 
+                                                            (let ((temp___298 
                                                             (rec__preds__rec_ok__a
                                                             (us_split_fields1
-                                                            temp___294))))
-                                                            (select temp___296 k))) 0))))))
+                                                            temp___296))))
+                                                            (select temp___298 k))) 0))))))
 
 (declare-const i7s Int)
 

@@ -357,7 +357,7 @@
 
 (declare-datatypes ((reference_type__ref1 0))
 (((reference_type__refqtmk1 (reference_type__content1 reference_type)))))
-(define-fun reference_type__ref_reference_type__content__3__projection ((a reference_type__ref1)) reference_type 
+(define-fun reference_type__ref_reference_type__content__2__projection ((a reference_type__ref1)) reference_type 
   (reference_type__content1 a))
 
 (declare-sort us_main_type3 0)
@@ -396,13 +396,13 @@
 
 (declare-fun get_reference__function_guard (reference_type us_rep4) Bool)
 
-(define-fun default_initial_assumption ((temp___expr_337 us_rep2)
-  (temp___skip_top_level_338 Bool)) Bool (= (attr__tag2 temp___expr_337) 
+(define-fun default_initial_assumption ((temp___expr_309 us_rep2)
+  (temp___skip_top_level_310 Bool)) Bool (= (attr__tag2 temp___expr_309) 
   us_tag2))
 
 (declare-datatypes ((stored_element_type__ref 0))
 (((stored_element_type__refqtmk (stored_element_type__content us_rep4)))))
-(define-fun stored_element_type__ref_stored_element_type__content__2__projection ((a stored_element_type__ref)) us_rep4 
+(define-fun stored_element_type__ref_stored_element_type__content__projection ((a stored_element_type__ref)) us_rep4 
   (stored_element_type__content a))
 
 (declare-fun stored_element (us_rep2 us_rep3) us_rep4)
@@ -489,15 +489,15 @@
 
 (declare-datatypes ((reference_type__ref2 0))
 (((reference_type__refqtmk2 (reference_type__content2 reference_type)))))
-(define-fun reference_type__ref_reference_type__content__4__projection ((a reference_type__ref2)) reference_type 
+(define-fun reference_type__ref_reference_type__content__3__projection ((a reference_type__ref2)) reference_type 
   (reference_type__content2 a))
 
-(define-fun default_initial_assumption1 ((temp___expr_418 us_rep2)
-  (temp___skip_top_level_419 Bool)) Bool (= (attr__tag2 temp___expr_418) 
+(define-fun default_initial_assumption1 ((temp___expr_390 us_rep2)
+  (temp___skip_top_level_391 Bool)) Bool (= (attr__tag2 temp___expr_390) 
   us_tag3))
 
-(define-fun default_initial_assumption2 ((temp___expr_271 us_rep)
-  (temp___skip_top_level_272 Bool)) Bool (= (attr__tag temp___expr_271) 
+(define-fun default_initial_assumption2 ((temp___expr_250 us_rep)
+  (temp___skip_top_level_251 Bool)) Bool (= (attr__tag temp___expr_250) 
   us_tag))
 
 ;; get_reference__post_axiom
@@ -508,8 +508,8 @@
   (forall ((e us_rep4))
   (! (= (get_reference e) dummy4) :pattern ((get_reference e)) )))
 
-(define-fun default_initial_assumption3 ((temp___expr_318 us_rep1)
-  (temp___skip_top_level_319 Bool)) Bool (= (attr__tag1 temp___expr_318) 
+(define-fun default_initial_assumption3 ((temp___expr_297 us_rep1)
+  (temp___skip_top_level_298 Bool)) Bool (= (attr__tag1 temp___expr_297) 
   us_tag1))
 
 (assert

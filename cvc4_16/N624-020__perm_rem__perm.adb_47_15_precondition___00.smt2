@@ -616,12 +616,12 @@
   (=> (is_perm__function_guard (is_perm a b) a b)
   (=> (= (is_perm a b) true)
   (=> (< 0 (length a))
-  (let ((temp___966 (first1 a)))
-  (let ((temp___967 (last1 a)))
+  (let ((temp___970 (first1 a)))
+  (let ((temp___971 (last1 a)))
   (forall ((ia Int))
-  (=> (= ia temp___966)
+  (=> (= ia temp___970)
   (=>
-  (= (and (ite (<= temp___966 ia) true false) (ite (<= ia temp___967) true
+  (= (and (ite (<= temp___970 ia) true false) (ite (<= ia temp___971) true
                                               false)) true)
   (forall ((ia1 Int))
   (=> (forall ((ia2 Int)) (remove__function_guard (remove a ia2) a ia2))
@@ -671,7 +671,7 @@
   (and
   (= (and (ite (dynamic_property1 (first1 a) (last1 a) ia2) true false) 
   (ite (and (<= (first1 a) ia2) (<= ia2 (last1 a))) true false)) true)
-  (and (not (= ia2 temp___967))
+  (and (not (= ia2 temp___971))
   (and (= ia1 (+ ia2 1))
   (exists ((spark__branch1 Bool))
   (and
@@ -720,36 +720,32 @@
   (=>
   (exists ((o6 Bool))
   (and
-  (exists ((o7 Int))
+  (exists ((temp___987 Int))
   (and
-  (= (to_rep2 (rec__perm__witnesses__ia perm__get_witnesses__result)) o7)
-  (exists ((o8 Int))
+  (= (to_rep2 (rec__perm__witnesses__ia perm__get_witnesses__result)) temp___987)
+  (ite (= (and (ite (<= (first1 a) temp___987) true false) (ite (<= temp___987 
+                                                           (last1 a)) true
+                                                           false)) true)
+  (exists ((temp___988 Int))
   (and
-  (= (to_rep2 (rec__perm__witnesses__ia perm__get_witnesses__result)) o8)
-  (ite (= (and (ite (<= (first1 a) o8) true false) (ite (<= o7 (last1 a))
-                                                   true false)) true)
-  (exists ((o9 Int))
-  (and
-  (= (to_rep2 (rec__perm__witnesses__ib perm__get_witnesses__result)) o9)
-  (exists ((o10 Int))
-  (and
-  (= (to_rep2 (rec__perm__witnesses__ib perm__get_witnesses__result)) o10)
-  (= o6 (and (ite (<= (first1 b) o10) true false) (ite (<= o9 (last1 b)) true
-                                                  false)))))))
-  (= o6 false))))))
+  (= (to_rep2 (rec__perm__witnesses__ib perm__get_witnesses__result)) temp___988)
+  (= o6 (and (ite (<= (first1 b) temp___988) true false) (ite (<= temp___988 
+                                                         (last1 b)) true
+                                                         false)))))
+  (= o6 false))))
   (ite (= o6 true)
-  (exists ((temp___984 Int))
+  (exists ((temp___990 Int))
   (and
-  (= (to_rep2 (rec__perm__witnesses__ib perm__get_witnesses__result)) temp___984)
-  (and (and (<= (first1 b) temp___984) (<= temp___984 (last1 b)))
+  (= (to_rep2 (rec__perm__witnesses__ib perm__get_witnesses__result)) temp___990)
+  (and (and (<= (first1 b) temp___990) (<= temp___990 (last1 b)))
   (exists ((o7 Int))
-  (and (= (to_rep (select (to_array b) temp___984)) o7)
-  (exists ((temp___983 Int))
+  (and (= (to_rep (select (to_array b) temp___990)) o7)
+  (exists ((temp___989 Int))
   (and
-  (= (to_rep2 (rec__perm__witnesses__ia perm__get_witnesses__result)) temp___983)
-  (and (and (<= (first1 a) temp___983) (<= temp___983 (last1 a)))
+  (= (to_rep2 (rec__perm__witnesses__ia perm__get_witnesses__result)) temp___989)
+  (and (and (<= (first1 a) temp___989) (<= temp___989 (last1 a)))
   (exists ((o8 Int))
-  (and (= (to_rep (select (to_array a) temp___983)) o8)
+  (and (= (to_rep (select (to_array a) temp___989)) o8)
   (= o5 (ite (= o8 o7) true false)))))))))))) (= o5 false))))
   (=> (= o5 true)
   (forall ((o6 Int))

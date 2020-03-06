@@ -648,7 +648,7 @@
      (s__attr__tag2 Int)) (get_model__function_guard
      (get_model (us_repqtmk stacks__push__s__old__fields1 s__attr__tag2))
      (us_repqtmk stacks__push__s__old__fields1 s__attr__tag2)))
-     (let ((temp___old_255 (get_model
+     (let ((temp___old_263 (get_model
                            (us_repqtmk stacks__push__s__old__fields
                            s__attr__tag1))))
      (and
@@ -656,21 +656,21 @@
      (get_model__function_guard
      (get_model (us_repqtmk stacks__push__s__fields1 s__attr__tag2))
      (us_repqtmk stacks__push__s__fields1 s__attr__tag2)))
-     (= (let ((temp___259 (ite (= (length temp___old_255) 0)
+     (= (let ((temp___267 (ite (= (length temp___old_263) 0)
                           (of_array (singleton1 (of_rep e) 1) 1 1)
                           (of_array
-                          (concat_singleton_right (to_array temp___old_255)
-                          (first1 temp___old_255) (last1 temp___old_255)
-                          (of_rep e)) (first1 temp___old_255)
-                          (- (+ (first1 temp___old_255) (+ (length1
+                          (concat_singleton_right (to_array temp___old_263)
+                          (first1 temp___old_263) (last1 temp___old_263)
+                          (of_rep e)) (first1 temp___old_263)
+                          (- (+ (first1 temp___old_263) (+ (length1
                                                            (first1
-                                                           temp___old_255)
+                                                           temp___old_263)
                                                            (last1
-                                                           temp___old_255)) 1)) 1)))))
-        (let ((temp___258 (get_model
+                                                           temp___old_263)) 1)) 1)))))
+        (let ((temp___266 (get_model
                           (us_repqtmk stacks__push__s__fields s__attr__tag1))))
-        (bool_eq (to_array temp___258) (first1 temp___258) (last1 temp___258)
-        (to_array temp___259) (first1 temp___259) (last1 temp___259)))) true))))) :pattern ((push__specific_post
+        (bool_eq (to_array temp___266) (first1 temp___266) (last1 temp___266)
+        (to_array temp___267) (first1 temp___267) (last1 temp___267)))) true))))) :pattern ((push__specific_post
   us_tag stacks__push__s__fields s__attr__tag1 e
   stacks__push__s__old__fields)) ))))
 
@@ -741,12 +741,12 @@
      (get_model__function_guard
      (get_model (us_repqtmk stacks__pop__s__fields1 s__attr__tag2))
      (us_repqtmk stacks__pop__s__fields1 s__attr__tag2)))
-     (= (let ((temp___305 (let ((temp___300 (- (last1
+     (= (let ((temp___313 (let ((temp___308 (- (last1
                                                (get_model
                                                (us_repqtmk
                                                stacks__pop__s__old__fields
                                                s__attr__tag1))) 1)))
-                          (let ((temp___298 (first1
+                          (let ((temp___306 (first1
                                             (get_model
                                             (us_repqtmk
                                             stacks__pop__s__old__fields
@@ -755,11 +755,11 @@
                           (to_array
                           (get_model
                           (us_repqtmk stacks__pop__s__old__fields
-                          s__attr__tag1))) temp___298 temp___300)))))
-        (let ((temp___304 (get_model
+                          s__attr__tag1))) temp___306 temp___308)))))
+        (let ((temp___312 (get_model
                           (us_repqtmk stacks__pop__s__fields s__attr__tag1))))
-        (bool_eq (to_array temp___304) (first1 temp___304) (last1 temp___304)
-        (to_array temp___305) (first1 temp___305) (last1 temp___305)))) true))
+        (bool_eq (to_array temp___312) (first1 temp___312) (last1 temp___312)
+        (to_array temp___313) (first1 temp___313) (last1 temp___313)))) true))
      (=>
      (not
      (= (is_empty (us_repqtmk stacks__pop__s__old__fields s__attr__tag1)) true))
@@ -799,7 +799,7 @@
 (define-fun t2b__ref_t2b__content__projection ((a t2b__ref)) t2b (t2b__content
                                                                  a))
 
-(declare-fun temp_____aggregate_def_341 (Int Int Int Int
+(declare-fun temp_____aggregate_def_349 (Int Int Int Int
   Int) (Array Int element))
 
 (define-fun dynamic_invariant2 ((temp___expr_46 Int) (temp___is_init_42 Bool)
@@ -843,24 +843,24 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___343 Int) (temp___344 Int) (temp___345 Int)
-  (temp___346 Int) (temp___347 Int))
-  (let ((temp___342 (temp_____aggregate_def_341 temp___343 temp___344
-                    temp___345 temp___346 temp___347)))
+  (forall ((temp___351 Int) (temp___352 Int) (temp___353 Int)
+  (temp___354 Int) (temp___355 Int))
+  (let ((temp___350 (temp_____aggregate_def_349 temp___351 temp___352
+                    temp___353 temp___354 temp___355)))
   (=>
   (and
-  (and (dynamic_invariant1 temp___343 true true true true)
-  (dynamic_invariant1 temp___344 true true true true))
+  (and (dynamic_invariant1 temp___351 true true true true)
+  (dynamic_invariant1 temp___352 true true true true))
   (and
-  (and (dynamic_invariant1 temp___345 true true true true)
-  (dynamic_invariant1 temp___346 true true true true)) (dynamic_invariant1
-  temp___347 true true true true)))
+  (and (dynamic_invariant1 temp___353 true true true true)
+  (dynamic_invariant1 temp___354 true true true true)) (dynamic_invariant1
+  temp___355 true true true true)))
   (and
-  (and (= (select temp___342 1) rliteral)
-  (= (select temp___342 2) rliteral1))
+  (and (= (select temp___350 1) rliteral)
+  (= (select temp___350 2) rliteral1))
   (and
-  (and (= (select temp___342 3) rliteral2)
-  (= (select temp___342 4) rliteral3)) (= (select temp___342 5) rliteral4)))))))
+  (and (= (select temp___350 3) rliteral2)
+  (= (select temp___350 4) rliteral3)) (= (select temp___350 5) rliteral4)))))))
 
 (define-fun dynamic_invariant4 ((temp___expr_181 Int)
   (temp___is_init_177 Bool) (temp___skip_constant_178 Bool)
@@ -935,20 +935,20 @@
   (us_repqtmk s__split_fields3 o2)))
   (=>
   (and
-  (= (let ((temp___243 (let ((temp___239 (get_model1 o1
+  (= (let ((temp___251 (let ((temp___247 (get_model1 o1
                                          (us_repqtmk s__split_fields1 o1))))
-                       (ite (= (length temp___239) 0)
+                       (ite (= (length temp___247) 0)
                        (of_array (singleton1 (of_rep i) 1) 1 1)
                        (of_array
-                       (concat_singleton_right (to_array temp___239)
-                       (first1 temp___239) (last1 temp___239) (of_rep i))
-                       (first1 temp___239)
-                       (- (+ (first1 temp___239) (+ (length1
-                                                    (first1 temp___239)
-                                                    (last1 temp___239)) 1)) 1))))))
-     (let ((temp___242 (get_model1 o1 (us_repqtmk s__split_fields2 o1))))
-     (bool_eq (to_array temp___242) (first1 temp___242) (last1 temp___242)
-     (to_array temp___243) (first1 temp___243) (last1 temp___243)))) true)
+                       (concat_singleton_right (to_array temp___247)
+                       (first1 temp___247) (last1 temp___247) (of_rep i))
+                       (first1 temp___247)
+                       (- (+ (first1 temp___247) (+ (length1
+                                                    (first1 temp___247)
+                                                    (last1 temp___247)) 1)) 1))))))
+     (let ((temp___250 (get_model1 o1 (us_repqtmk s__split_fields2 o1))))
+     (bool_eq (to_array temp___250) (first1 temp___250) (last1 temp___250)
+     (to_array temp___251) (first1 temp___251) (last1 temp___251)))) true)
   (push__specific_post o1 s__split_fields2 o1 i s__split_fields1))
   (forall ((i1 Int))
   (=> (= i1 2)
@@ -966,20 +966,20 @@
   (us_repqtmk s__split_fields4 o3)))
   (=>
   (and
-  (= (let ((temp___243 (let ((temp___239 (get_model1 o2
+  (= (let ((temp___251 (let ((temp___247 (get_model1 o2
                                          (us_repqtmk s__split_fields2 o2))))
-                       (ite (= (length temp___239) 0)
+                       (ite (= (length temp___247) 0)
                        (of_array (singleton1 (of_rep i1) 1) 1 1)
                        (of_array
-                       (concat_singleton_right (to_array temp___239)
-                       (first1 temp___239) (last1 temp___239) (of_rep i1))
-                       (first1 temp___239)
-                       (- (+ (first1 temp___239) (+ (length1
-                                                    (first1 temp___239)
-                                                    (last1 temp___239)) 1)) 1))))))
-     (let ((temp___242 (get_model1 o2 (us_repqtmk s__split_fields3 o2))))
-     (bool_eq (to_array temp___242) (first1 temp___242) (last1 temp___242)
-     (to_array temp___243) (first1 temp___243) (last1 temp___243)))) true)
+                       (concat_singleton_right (to_array temp___247)
+                       (first1 temp___247) (last1 temp___247) (of_rep i1))
+                       (first1 temp___247)
+                       (- (+ (first1 temp___247) (+ (length1
+                                                    (first1 temp___247)
+                                                    (last1 temp___247)) 1)) 1))))))
+     (let ((temp___250 (get_model1 o2 (us_repqtmk s__split_fields3 o2))))
+     (bool_eq (to_array temp___250) (first1 temp___250) (last1 temp___250)
+     (to_array temp___251) (first1 temp___251) (last1 temp___251)))) true)
   (push__specific_post o2 s__split_fields3 o2 i1 s__split_fields2))
   (forall ((i2 Int))
   (=> (= i2 3)
@@ -997,20 +997,20 @@
   (us_repqtmk s__split_fields5 o4)))
   (=>
   (and
-  (= (let ((temp___243 (let ((temp___239 (get_model1 o3
+  (= (let ((temp___251 (let ((temp___247 (get_model1 o3
                                          (us_repqtmk s__split_fields3 o3))))
-                       (ite (= (length temp___239) 0)
+                       (ite (= (length temp___247) 0)
                        (of_array (singleton1 (of_rep i2) 1) 1 1)
                        (of_array
-                       (concat_singleton_right (to_array temp___239)
-                       (first1 temp___239) (last1 temp___239) (of_rep i2))
-                       (first1 temp___239)
-                       (- (+ (first1 temp___239) (+ (length1
-                                                    (first1 temp___239)
-                                                    (last1 temp___239)) 1)) 1))))))
-     (let ((temp___242 (get_model1 o3 (us_repqtmk s__split_fields4 o3))))
-     (bool_eq (to_array temp___242) (first1 temp___242) (last1 temp___242)
-     (to_array temp___243) (first1 temp___243) (last1 temp___243)))) true)
+                       (concat_singleton_right (to_array temp___247)
+                       (first1 temp___247) (last1 temp___247) (of_rep i2))
+                       (first1 temp___247)
+                       (- (+ (first1 temp___247) (+ (length1
+                                                    (first1 temp___247)
+                                                    (last1 temp___247)) 1)) 1))))))
+     (let ((temp___250 (get_model1 o3 (us_repqtmk s__split_fields4 o3))))
+     (bool_eq (to_array temp___250) (first1 temp___250) (last1 temp___250)
+     (to_array temp___251) (first1 temp___251) (last1 temp___251)))) true)
   (push__specific_post o3 s__split_fields4 o3 i2 s__split_fields3))
   (forall ((i3 Int))
   (=> (= i3 4)
@@ -1028,20 +1028,20 @@
   (us_repqtmk s__split_fields6 o5)))
   (=>
   (and
-  (= (let ((temp___243 (let ((temp___239 (get_model1 o4
+  (= (let ((temp___251 (let ((temp___247 (get_model1 o4
                                          (us_repqtmk s__split_fields4 o4))))
-                       (ite (= (length temp___239) 0)
+                       (ite (= (length temp___247) 0)
                        (of_array (singleton1 (of_rep i3) 1) 1 1)
                        (of_array
-                       (concat_singleton_right (to_array temp___239)
-                       (first1 temp___239) (last1 temp___239) (of_rep i3))
-                       (first1 temp___239)
-                       (- (+ (first1 temp___239) (+ (length1
-                                                    (first1 temp___239)
-                                                    (last1 temp___239)) 1)) 1))))))
-     (let ((temp___242 (get_model1 o4 (us_repqtmk s__split_fields5 o4))))
-     (bool_eq (to_array temp___242) (first1 temp___242) (last1 temp___242)
-     (to_array temp___243) (first1 temp___243) (last1 temp___243)))) true)
+                       (concat_singleton_right (to_array temp___247)
+                       (first1 temp___247) (last1 temp___247) (of_rep i3))
+                       (first1 temp___247)
+                       (- (+ (first1 temp___247) (+ (length1
+                                                    (first1 temp___247)
+                                                    (last1 temp___247)) 1)) 1))))))
+     (let ((temp___250 (get_model1 o4 (us_repqtmk s__split_fields5 o4))))
+     (bool_eq (to_array temp___250) (first1 temp___250) (last1 temp___250)
+     (to_array temp___251) (first1 temp___251) (last1 temp___251)))) true)
   (push__specific_post o4 s__split_fields5 o4 i3 s__split_fields4))
   (forall ((i4 Int))
   (=> (= i4 5)
@@ -1059,30 +1059,30 @@
   (us_repqtmk s__split_fields7 o6)))
   (=>
   (and
-  (= (let ((temp___243 (let ((temp___239 (get_model1 o5
+  (= (let ((temp___251 (let ((temp___247 (get_model1 o5
                                          (us_repqtmk s__split_fields5 o5))))
-                       (ite (= (length temp___239) 0)
+                       (ite (= (length temp___247) 0)
                        (of_array (singleton1 (of_rep i4) 1) 1 1)
                        (of_array
-                       (concat_singleton_right (to_array temp___239)
-                       (first1 temp___239) (last1 temp___239) (of_rep i4))
-                       (first1 temp___239)
-                       (- (+ (first1 temp___239) (+ (length1
-                                                    (first1 temp___239)
-                                                    (last1 temp___239)) 1)) 1))))))
-     (let ((temp___242 (get_model1 o5 (us_repqtmk s__split_fields6 o5))))
-     (bool_eq (to_array temp___242) (first1 temp___242) (last1 temp___242)
-     (to_array temp___243) (first1 temp___243) (last1 temp___243)))) true)
+                       (concat_singleton_right (to_array temp___247)
+                       (first1 temp___247) (last1 temp___247) (of_rep i4))
+                       (first1 temp___247)
+                       (- (+ (first1 temp___247) (+ (length1
+                                                    (first1 temp___247)
+                                                    (last1 temp___247)) 1)) 1))))))
+     (let ((temp___250 (get_model1 o5 (us_repqtmk s__split_fields6 o5))))
+     (bool_eq (to_array temp___250) (first1 temp___250) (last1 temp___250)
+     (to_array temp___251) (first1 temp___251) (last1 temp___251)))) true)
   (push__specific_post o5 s__split_fields6 o5 i4 s__split_fields5))
   (=>
   (forall ((s__split_fields7 us_split_fields)) (get_model__function_guard1
   (get_model1 s__attr__tag (us_repqtmk s__split_fields7 s__attr__tag))
   s__attr__tag (us_repqtmk s__split_fields7 s__attr__tag)))
   (=>
-  (= (let ((temp___356 (get_model1 s__attr__tag
+  (= (let ((temp___364 (get_model1 s__attr__tag
                        (us_repqtmk s__split_fields6 s__attr__tag))))
-     (bool_eq (to_array temp___356) (first1 temp___356) (last1 temp___356)
-     (temp_____aggregate_def_341 1 2 3 4 5) 1 5)) true)
+     (bool_eq (to_array temp___364) (first1 temp___364) (last1 temp___364)
+     (temp_____aggregate_def_349 1 2 3 4 5) 1 5)) true)
   (forall ((i5 Int))
   (=> (= i5 5)
   (let ((o6 s__attr__tag))
@@ -1125,16 +1125,16 @@
   (and
   (and
   (and
-  (= (let ((temp___273 (of_array
+  (= (let ((temp___281 (of_array
                        (to_array
                        (get_model1 o6 (us_repqtmk s__split_fields6 o6)))
                        (first1
                        (get_model1 o6 (us_repqtmk s__split_fields6 o6)))
                        (- (last1
                           (get_model1 o6 (us_repqtmk s__split_fields6 o6))) 1))))
-     (let ((temp___272 (get_model1 o6 (us_repqtmk s__split_fields7 o6))))
-     (bool_eq (to_array temp___272) (first1 temp___272) (last1 temp___272)
-     (to_array temp___273) (first1 temp___273) (last1 temp___273)))) true)
+     (let ((temp___280 (get_model1 o6 (us_repqtmk s__split_fields7 o6))))
+     (bool_eq (to_array temp___280) (first1 temp___280) (last1 temp___280)
+     (to_array temp___281) (first1 temp___281) (last1 temp___281)))) true)
   (=> (not (= (is_empty (us_repqtmk s__split_fields6 o6)) true))
   (= e1 (to_rep
         (select (to_array (get_model1 o6 (us_repqtmk s__split_fields6 o6))) 
@@ -1184,16 +1184,16 @@
   (and
   (and
   (and
-  (= (let ((temp___273 (of_array
+  (= (let ((temp___281 (of_array
                        (to_array
                        (get_model1 o7 (us_repqtmk s__split_fields7 o7)))
                        (first1
                        (get_model1 o7 (us_repqtmk s__split_fields7 o7)))
                        (- (last1
                           (get_model1 o7 (us_repqtmk s__split_fields7 o7))) 1))))
-     (let ((temp___272 (get_model1 o7 (us_repqtmk s__split_fields8 o7))))
-     (bool_eq (to_array temp___272) (first1 temp___272) (last1 temp___272)
-     (to_array temp___273) (first1 temp___273) (last1 temp___273)))) true)
+     (let ((temp___280 (get_model1 o7 (us_repqtmk s__split_fields8 o7))))
+     (bool_eq (to_array temp___280) (first1 temp___280) (last1 temp___280)
+     (to_array temp___281) (first1 temp___281) (last1 temp___281)))) true)
   (=> (not (= (is_empty (us_repqtmk s__split_fields7 o7)) true))
   (= e2 (to_rep
         (select (to_array (get_model1 o7 (us_repqtmk s__split_fields7 o7))) 
@@ -1243,16 +1243,16 @@
   (and
   (and
   (and
-  (= (let ((temp___273 (of_array
+  (= (let ((temp___281 (of_array
                        (to_array
                        (get_model1 o8 (us_repqtmk s__split_fields8 o8)))
                        (first1
                        (get_model1 o8 (us_repqtmk s__split_fields8 o8)))
                        (- (last1
                           (get_model1 o8 (us_repqtmk s__split_fields8 o8))) 1))))
-     (let ((temp___272 (get_model1 o8 (us_repqtmk s__split_fields9 o8))))
-     (bool_eq (to_array temp___272) (first1 temp___272) (last1 temp___272)
-     (to_array temp___273) (first1 temp___273) (last1 temp___273)))) true)
+     (let ((temp___280 (get_model1 o8 (us_repqtmk s__split_fields9 o8))))
+     (bool_eq (to_array temp___280) (first1 temp___280) (last1 temp___280)
+     (to_array temp___281) (first1 temp___281) (last1 temp___281)))) true)
   (=> (not (= (is_empty (us_repqtmk s__split_fields8 o8)) true))
   (= e3 (to_rep
         (select (to_array (get_model1 o8 (us_repqtmk s__split_fields8 o8))) 
@@ -1302,16 +1302,16 @@
   (and
   (and
   (and
-  (= (let ((temp___273 (of_array
+  (= (let ((temp___281 (of_array
                        (to_array
                        (get_model1 o9 (us_repqtmk s__split_fields9 o9)))
                        (first1
                        (get_model1 o9 (us_repqtmk s__split_fields9 o9)))
                        (- (last1
                           (get_model1 o9 (us_repqtmk s__split_fields9 o9))) 1))))
-     (let ((temp___272 (get_model1 o9 (us_repqtmk s__split_fields10 o9))))
-     (bool_eq (to_array temp___272) (first1 temp___272) (last1 temp___272)
-     (to_array temp___273) (first1 temp___273) (last1 temp___273)))) true)
+     (let ((temp___280 (get_model1 o9 (us_repqtmk s__split_fields10 o9))))
+     (bool_eq (to_array temp___280) (first1 temp___280) (last1 temp___280)
+     (to_array temp___281) (first1 temp___281) (last1 temp___281)))) true)
   (=> (not (= (is_empty (us_repqtmk s__split_fields9 o9)) true))
   (= e4 (to_rep
         (select (to_array (get_model1 o9 (us_repqtmk s__split_fields9 o9))) 
@@ -1361,16 +1361,16 @@
   (and
   (and
   (and
-  (= (let ((temp___273 (of_array
+  (= (let ((temp___281 (of_array
                        (to_array
                        (get_model1 o10 (us_repqtmk s__split_fields10 o10)))
                        (first1
                        (get_model1 o10 (us_repqtmk s__split_fields10 o10)))
                        (- (last1
                           (get_model1 o10 (us_repqtmk s__split_fields10 o10))) 1))))
-     (let ((temp___272 (get_model1 o10 (us_repqtmk s__split_fields11 o10))))
-     (bool_eq (to_array temp___272) (first1 temp___272) (last1 temp___272)
-     (to_array temp___273) (first1 temp___273) (last1 temp___273)))) true)
+     (let ((temp___280 (get_model1 o10 (us_repqtmk s__split_fields11 o10))))
+     (bool_eq (to_array temp___280) (first1 temp___280) (last1 temp___280)
+     (to_array temp___281) (first1 temp___281) (last1 temp___281)))) true)
   (=> (not (= (is_empty (us_repqtmk s__split_fields10 o10)) true))
   (= e5 (to_rep
         (select (to_array

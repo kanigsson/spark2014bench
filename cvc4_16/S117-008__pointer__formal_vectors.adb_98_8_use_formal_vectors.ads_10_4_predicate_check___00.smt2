@@ -1254,14 +1254,14 @@
                                                            (us_repqtmk3
                                                            e__split_fields))))
   (=>
-  (forall ((v__split_fields1 us_split_fields)) (length__function_guard
-  (length1 (us_repqtmk3 v__split_fields1)) (us_repqtmk3 v__split_fields1)))
-  (=>
   (forall ((e__split_fields1 us_split_fields)) (length__function_guard
   (length1 (us_repqtmk3 e__split_fields1)) (us_repqtmk3 e__split_fields1)))
   (=>
   (forall ((v__split_fields1 us_split_fields)) (model__function_guard2
   (model3 (us_repqtmk3 v__split_fields1)) (us_repqtmk3 v__split_fields1)))
+  (=>
+  (forall ((v__split_fields1 us_split_fields)) (length__function_guard
+  (length1 (us_repqtmk3 v__split_fields1)) (us_repqtmk3 v__split_fields1)))
   (forall ((use_formal_vectors__my_vect__append__2__e_top__assume Int))
   (=>
   (= (to_rep (rec__use_formal_vectors__my_vect__vector__top e__split_fields)) use_formal_vectors__my_vect__append__2__e_top__assume)

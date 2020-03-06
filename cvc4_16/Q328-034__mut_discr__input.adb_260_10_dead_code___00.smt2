@@ -561,7 +561,7 @@
 (define-fun t38b__ref_t38b__content__projection ((a t38b__ref)) us_t 
   (t38b__content a))
 
-(declare-fun temp_____aggregate_def_249 (Int Int Int) us_t)
+(declare-fun temp_____aggregate_def_251 (Int Int Int) us_t)
 
 (define-fun dynamic_invariant5 ((temp___expr_46 Int) (temp___is_init_42 Bool)
   (temp___skip_constant_43 Bool) (temp___do_toplevel_44 Bool)
@@ -589,15 +589,15 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___251 Int) (temp___252 Int) (temp___253 Int))
-  (let ((temp___250 (temp_____aggregate_def_249 temp___251 temp___252
-                    temp___253)))
-  (=> (dynamic_invariant2 temp___251 true true true true)
+  (forall ((temp___253 Int) (temp___254 Int) (temp___255 Int))
+  (let ((temp___252 (temp_____aggregate_def_251 temp___253 temp___254
+                    temp___255)))
+  (=> (dynamic_invariant2 temp___253 true true true true)
   (and
-  (=> (dynamic_property 1 2147483647 temp___252 temp___253)
-  (and (= (first1 temp___250) temp___252) (= (last1 temp___250) temp___253)))
-  (forall ((temp___254 Int))
-  (= (to_rep (select (to_array temp___250) temp___254)) temp___251)))))))
+  (=> (dynamic_property 1 2147483647 temp___254 temp___255)
+  (and (= (first1 temp___252) temp___254) (= (last1 temp___252) temp___255)))
+  (forall ((temp___256 Int))
+  (= (to_rep (select (to_array temp___252) temp___256)) temp___253)))))))
 
 (assert
 ;; defqtvc
@@ -645,7 +645,8 @@
   (=>
   (ite (<= first_char1 1024)
   (and (and (<= 1 first_char1) (<= first_char1 1024))
-  (exists ((o1 Int))
-  (and (= (to_rep (select line1 first_char1)) o1)
-  (= o (ite (in_range7 o1) true false))))) (= o false)) (not (= o true)))))))))))))))
+  (exists ((temp___244 Int))
+  (and (= (to_rep (select line1 first_char1)) temp___244)
+  (= o (ite (in_range7 temp___244) true false))))) (= o false))
+  (not (= o true)))))))))))))))
 (check-sat)

@@ -466,14 +466,14 @@
   (=>
   (forall ((my_stack__split_fields1 us_split_fields)) (state__function_guard
   (state my_stack__split_fields1) my_stack__split_fields1))
-  (=>
-  (forall ((my_stack__split_fields1 us_split_fields)) (state__function_guard
-  (state my_stack__split_fields1) my_stack__split_fields1))
   (let ((usf (state my_stack__split_fields)))
   (=>
   (forall ((my_stack__split_fields1 us_split_fields)) (state__function_guard
   (state my_stack__split_fields1) my_stack__split_fields1))
   (let ((usf1 (state my_stack__split_fields)))
+  (=>
+  (forall ((my_stack__split_fields1 us_split_fields)) (state__function_guard
+  (state my_stack__split_fields1) my_stack__split_fields1))
   (=> (dynamic_invariant temp false false true true)
   (forall ((temp___379 Int))
   (=>

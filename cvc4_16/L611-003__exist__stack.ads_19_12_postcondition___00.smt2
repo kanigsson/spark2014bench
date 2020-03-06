@@ -190,7 +190,8 @@
      (and
      (forall ((i Int))
      (=> (and (<= 1 i) (<= i s))
-     (and (<= 0 (to_rep (select t i))) (<= (to_rep (select t i)) 2147483647))))
+     (let ((temp___195 (to_rep (select t i))))
+     (and (<= 0 temp___195) (<= temp___195 2147483647)))))
      (forall ((i Int))
      (=> (and (<= (+ s 1) i) (<= i 100)) (= (to_rep (select t i)) (- 1)))))) :pattern (
   (valid t s)) ))))

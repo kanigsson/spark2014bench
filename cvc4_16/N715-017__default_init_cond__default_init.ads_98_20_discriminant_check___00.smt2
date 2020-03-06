@@ -140,6 +140,10 @@
                         (rec__default_init__discr__f (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range2 ((rec__default_init__discr__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__default_init__discr__b1 (rec__default_init__discr__b
+                                                            a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

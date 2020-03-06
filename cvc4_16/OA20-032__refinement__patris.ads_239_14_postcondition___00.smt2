@@ -2121,9 +2121,9 @@
   (and (= spark__branch o1)
   (and (= spark__branch true)
   (let ((o2 a))
-  (let ((temp___845 (move (us_repqtmk cur_piece__split_fields) o2)))
+  (let ((temp___854 (move (us_repqtmk cur_piece__split_fields) o2)))
   (and
-  (= temp___845 (ite (= o2 0)
+  (= temp___854 (ite (= o2 0)
                 (us_repqtmk
                 (us_split_fieldsqtmk
                 (rec__patris__piece__s cur_piece__split_fields)
@@ -2156,7 +2156,7 @@
                 (rec__patris__piece__x cur_piece__split_fields)
                 (rec__patris__piece__y cur_piece__split_fields)))))))
   (exists ((candidate__split_fields us_split_fields))
-  (and (= candidate__split_fields (us_split_fields1 temp___845))
+  (and (= candidate__split_fields (us_split_fields1 temp___854))
   (let ((o3 (no_overlap cur_board (us_repqtmk candidate__split_fields))))
   (and
   (= (= o3 true)
@@ -2221,9 +2221,9 @@
   (and (= spark__branch o1)
   (or (not (= spark__branch true))
   (let ((o2 a))
-  (let ((temp___845 (move (us_repqtmk cur_piece__split_fields) o2)))
+  (let ((temp___854 (move (us_repqtmk cur_piece__split_fields) o2)))
   (and
-  (= temp___845 (ite (= o2 0)
+  (= temp___854 (ite (= o2 0)
                 (us_repqtmk
                 (us_split_fieldsqtmk
                 (rec__patris__piece__s cur_piece__split_fields)
@@ -2256,7 +2256,7 @@
                 (rec__patris__piece__x cur_piece__split_fields)
                 (rec__patris__piece__y cur_piece__split_fields)))))))
   (exists ((candidate__split_fields us_split_fields))
-  (and (= candidate__split_fields (us_split_fields1 temp___845))
+  (and (= candidate__split_fields (us_split_fields1 temp___854))
   (let ((o3 (no_overlap cur_board (us_repqtmk candidate__split_fields))))
   (and
   (= (= o3 true)

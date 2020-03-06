@@ -2287,10 +2287,10 @@
   (and (= spark__branch true)
   (let ((o3 a))
   (let ((o4 (us_repqtmk cur_piece__split_fields)))
-  (let ((temp___799 (move o4 o3)))
+  (let ((temp___808 (move o4 o3)))
   (and
-  (and (move__function_guard temp___799 o4 o3)
-  (= temp___799 (ite (= o3 0)
+  (and (move__function_guard temp___808 o4 o3)
+  (= temp___808 (ite (= o3 0)
                 (us_repqtmk
                 (us_split_fieldsqtmk
                 (rec__tetris_functional__piece__s cur_piece__split_fields)
@@ -2328,7 +2328,7 @@
                 (rec__tetris_functional__piece__x cur_piece__split_fields)
                 (rec__tetris_functional__piece__y cur_piece__split_fields))))))))
   (exists ((candidate__split_fields us_split_fields))
-  (and (= candidate__split_fields (us_split_fields1 temp___799))
+  (and (= candidate__split_fields (us_split_fields1 temp___808))
   (let ((o5 (us_repqtmk candidate__split_fields)))
   (let ((o6 (no_overlap cur_board o5)))
   (and
@@ -2401,10 +2401,10 @@
   (or (not (= spark__branch true))
   (let ((o3 a))
   (let ((o4 (us_repqtmk cur_piece__split_fields)))
-  (let ((temp___799 (move o4 o3)))
+  (let ((temp___808 (move o4 o3)))
   (and
-  (and (move__function_guard temp___799 o4 o3)
-  (= temp___799 (ite (= o3 0)
+  (and (move__function_guard temp___808 o4 o3)
+  (= temp___808 (ite (= o3 0)
                 (us_repqtmk
                 (us_split_fieldsqtmk
                 (rec__tetris_functional__piece__s cur_piece__split_fields)
@@ -2442,7 +2442,7 @@
                 (rec__tetris_functional__piece__x cur_piece__split_fields)
                 (rec__tetris_functional__piece__y cur_piece__split_fields))))))))
   (exists ((candidate__split_fields us_split_fields))
-  (and (= candidate__split_fields (us_split_fields1 temp___799))
+  (and (= candidate__split_fields (us_split_fields1 temp___808))
   (let ((o5 (us_repqtmk candidate__split_fields)))
   (let ((o6 (no_overlap cur_board o5)))
   (and

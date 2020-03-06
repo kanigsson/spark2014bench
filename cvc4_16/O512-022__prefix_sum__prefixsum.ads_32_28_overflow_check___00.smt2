@@ -319,7 +319,8 @@
   (! (= (= (all_elements_in a max) true)
      (forall ((k Int))
      (=> (and (<= 0 k) (<= k 7))
-     (and (<= (- max) (to_rep (select a k))) (<= (to_rep (select a k)) max))))) :pattern (
+     (let ((temp___179 (to_rep (select a k))))
+     (and (<= (- max) temp___179) (<= temp___179 max)))))) :pattern (
   (all_elements_in a max)) ))))
 
 (declare-const a (Array Int integer))
@@ -380,10 +381,10 @@
   (=> (not (= (mod2 (+ usf 1) 8) 0))
   (=> (not (= (mod2 (+ usf 1) 4) 0))
   (=> (= (mod2 (+ usf 1) 2) 0)
-  (let ((temp___197 (- usf 1)))
-  (=> (and (<= 0 temp___197) (<= temp___197 7))
+  (let ((temp___209 (- usf 1)))
+  (=> (and (<= 0 temp___209) (<= temp___209 7))
   (forall ((o Int))
-  (=> (= (to_rep (select b temp___197)) o)
+  (=> (= (to_rep (select b temp___209)) o)
   (forall ((o1 Int))
   (=> (= (to_rep (select b usf)) o1) (in_range1 (+ o1 o)))))))))))))))))
 (check-sat)

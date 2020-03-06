@@ -238,10 +238,11 @@
   (forall ((c (Array Int natural)))
   (forall ((p us_rep))
   (! (= (= (has_element c p) true)
-     (and
-     (<= 1 (to_rep (rec__my_container__cursor__index (us_split_fields1 p))))
-     (<= (to_rep (rec__my_container__cursor__index (us_split_fields1 p))) 100))) :pattern (
-  (has_element c p)) ))))
+     (let ((temp___190 (to_rep
+                       (rec__my_container__cursor__index
+                       (us_split_fields1 p)))))
+     (and (<= 1 temp___190) (<= temp___190 100)))) :pattern ((has_element c
+                                                             p)) ))))
 
 (declare-fun element ((Array Int natural) us_rep) Int)
 
@@ -359,21 +360,22 @@
   (forall ((j Int))
   (=> (and (<= 1 j) (<= j i1)) (= (valid (to_rep (select c1 j))) true)))
   (and
-  (= (and (ite (and
-               (forall ((temp___215 Int))
-               (=> (and (<= 1 temp___215) (<= temp___215 100))
+  (= (and (ite (and (in_range3 i1)
+               (forall ((temp___219 Int))
+               (=> (and (<= 1 temp___219) (<= temp___219 100))
                (=>
-               (or (< 100 temp___215)
-               (or (< temp___215 1) (< i1 temp___215)))
-               (= (select c1 temp___215) (select c temp___215))))) (in_range3
-               i1))
+               (or (< 100 temp___219)
+               (or (< temp___219 1) (< i1 temp___219)))
+               (= (select c1 temp___219) (select c temp___219))))))
           true false) (ite (and (<= 1 i1) (<= i1 100)) true false)) true)
   (= i1 100)))))) (= c1 c))))
   (let ((usf1 (us_repqtmk (us_split_fieldsqtmk usf))))
   (let ((o (has_element c1 usf1)))
   (=>
   (and (has_element__function_guard o c1 usf1)
-  (= (= o true) (and (<= 1 (to_rep usf)) (<= (to_rep usf) 100))))
+  (= (= o true)
+  (let ((temp___187 (to_rep usf)))
+  (and (<= 1 temp___187) (<= temp___187 100)))))
   (=> (= (and (ite true true false) o) true)
   (=>
   (forall ((c2 (Array Int natural)) (usf2 us_rep))

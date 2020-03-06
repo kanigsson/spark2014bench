@@ -430,8 +430,9 @@
   (string_search__brute_force_slice__result1 Int))
   (=> (dynamic_invariant1 needle true false true true)
   (=> (dynamic_invariant1 haystack true false true true)
-  (=> (<= 1 (length needle))
-  (=> (<= (length needle) (length haystack))
+  (=>
+  (let ((temp___358 (length needle)))
+  (and (<= 1 temp___358) (<= temp___358 (length haystack))))
   (=>
   (forall ((k Int)) (match_at__function_guard (match_at needle haystack k)
   needle haystack k))
@@ -462,12 +463,12 @@
   (=> (<= i o5)
   (and (and (<= (first1 haystack) i) (<= i (last1 haystack)))
   (and (<= (first1 haystack) o5) (<= o5 (last1 haystack)))))
-  (let ((temp___340 (of_array (to_array haystack) i o5)))
+  (let ((temp___349 (of_array (to_array haystack) i o5)))
   (exists ((spark__branch Bool))
   (and
   (= spark__branch (bool_eq (to_array needle) (first1 needle) (last1 needle)
-                   (to_array temp___340) (first1 temp___340)
-                   (last1 temp___340)))
+                   (to_array temp___349) (first1 temp___349)
+                   (last1 temp___349)))
   (ite (= spark__branch true) (= string_search__brute_force_slice__result1 i)
   (exists ((i1 Int))
   (and
@@ -489,12 +490,12 @@
   (=> (<= i2 o7)
   (and (and (<= (first1 haystack) i2) (<= i2 (last1 haystack)))
   (and (<= (first1 haystack) o7) (<= o7 (last1 haystack)))))
-  (let ((temp___3401 (of_array (to_array haystack) i2 o7)))
+  (let ((temp___3491 (of_array (to_array haystack) i2 o7)))
   (exists ((spark__branch1 Bool))
   (and
   (= spark__branch1 (bool_eq (to_array needle) (first1 needle) (last1 needle)
-                    (to_array temp___3401) (first1 temp___3401)
-                    (last1 temp___3401)))
+                    (to_array temp___3491) (first1 temp___3491)
+                    (last1 temp___3491)))
   (and (= spark__branch1 true)
   (= string_search__brute_force_slice__result1 i2))))))))))))))))))))))))))))))))))))
   (exists ((string_search__brute_force_slice__result2 Int))
@@ -518,12 +519,12 @@
   (=> (<= i o5)
   (and (and (<= (first1 haystack) i) (<= i (last1 haystack)))
   (and (<= (first1 haystack) o5) (<= o5 (last1 haystack)))))
-  (let ((temp___340 (of_array (to_array haystack) i o5)))
+  (let ((temp___349 (of_array (to_array haystack) i o5)))
   (exists ((spark__branch Bool))
   (and
   (= spark__branch (bool_eq (to_array needle) (first1 needle) (last1 needle)
-                   (to_array temp___340) (first1 temp___340)
-                   (last1 temp___340)))
+                   (to_array temp___349) (first1 temp___349)
+                   (last1 temp___349)))
   (and (not (= spark__branch true))
   (exists ((i1 Int))
   (and
@@ -548,5 +549,5 @@
   (= (and (ite (<= 0 string_search__brute_force_slice__result1) true false) 
   (ite (<= string_search__brute_force_slice__result1 o3) true false)) true)
   (=> (< 0 string_search__brute_force_slice__result1) (in_range2
-  string_search__brute_force_slice__result1))))))))))))))))))))))
+  string_search__brute_force_slice__result1)))))))))))))))))))))
 (check-sat)

@@ -154,6 +154,10 @@
                         (rec__list__t_item__value (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range2 ((rec__list__t_item__used1 Bool)
+  (a us_split_discrs)) Bool (= rec__list__t_item__used1 (rec__list__t_item__used
+                                                        a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -271,7 +275,7 @@
   (forall ((i tt_itemsD1))
   (and (<= 1 (tt_itemsD1qtint i)) (<= (tt_itemsD1qtint i) 100))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -296,10 +300,6 @@
                                          (= (rec__list__t_item__used
                                             (us_split_discrs1
                                             (select temp___expr_176 temp___178))) (distinct 0 0)))))
-
-(define-fun in_range3 ((rec__list__t_item__used1 Bool)
-  (a us_rep)) Bool (= rec__list__t_item__used1 (rec__list__t_item__used
-                                               (us_split_discrs1 a))))
 
 (declare-const value__size1 Int)
 

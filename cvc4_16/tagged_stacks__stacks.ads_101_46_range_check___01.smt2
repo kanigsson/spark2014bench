@@ -658,34 +658,34 @@
 
 (declare-fun temp_____aggregate_def_200 (Int) (Array Int element))
 
-;; temp___result_602'def
+;; temp___result_618'def
   (assert
-  (forall ((temp___601 us_rep1)) (size__function_guard
-  (size (to_base temp___601)) (to_base temp___601))))
+  (forall ((temp___617 us_rep1)) (size__function_guard
+  (size (to_base temp___617)) (to_base temp___617))))
 
-(define-fun default_initial_assumption ((temp___expr_599 us_rep1)
-  (temp___skip_top_level_600 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_615 us_rep1)
+  (temp___skip_top_level_616 Bool)) Bool (and
                                          (and
-                                         (= (attr__tag1 temp___expr_599) 
+                                         (= (attr__tag1 temp___expr_615) 
                                          us_tag1)
                                          (and
                                          (and
                                          (= (to_rep3
                                             (rec__stacks__buffer__first
                                             (us_split_fields3
-                                            temp___expr_599))) 1)
+                                            temp___expr_615))) 1)
                                          (= (rec__stacks__stack_root__content1
                                             (us_split_fields3
-                                            temp___expr_599)) (temp_____aggregate_def_200
+                                            temp___expr_615)) (temp_____aggregate_def_200
                                                               0)))
                                          (= (to_rep
                                             (rec__stacks__stack_root__length1
                                             (us_split_fields3
-                                            temp___expr_599))) 0)))
+                                            temp___expr_615))) 0)))
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_600 true))
-                                         (= (size (to_base temp___expr_599)) 0))))
+                                         (= temp___skip_top_level_616 true))
+                                         (= (size (to_base temp___expr_615)) 0))))
 
 (declare-const s us_rep1)
 
@@ -1044,12 +1044,12 @@
   (forall ((temp___203 Int))
   (= (select (temp_____aggregate_def_200 temp___202) temp___203) rliteral)))))
 
-(define-fun dynamic_invariant5 ((temp___expr_590 Int)
-  (temp___is_init_586 Bool) (temp___skip_constant_587 Bool)
-  (temp___do_toplevel_588 Bool)
-  (temp___do_typ_inv_589 Bool)) Bool (=>
-                                     (or (= temp___is_init_586 true)
-                                     (<= 1 100)) (in_range4 temp___expr_590)))
+(define-fun dynamic_invariant5 ((temp___expr_606 Int)
+  (temp___is_init_602 Bool) (temp___skip_constant_603 Bool)
+  (temp___do_toplevel_604 Bool)
+  (temp___do_typ_inv_605 Bool)) Bool (=>
+                                     (or (= temp___is_init_602 true)
+                                     (<= 1 100)) (in_range4 temp___expr_606)))
 
 (assert
 ;; defqtvc
@@ -1083,35 +1083,36 @@
                                                                  (rec__stacks__stack_root__length1
                                                                  (us_split_fields3
                                                                  o2)))) 1) 100)))))
-  (forall ((temp___985 us_t1))
+  (forall ((temp___1017 us_t1))
   (=>
   (and
   (=> (<= 1 stacks__get_model__3__R71s)
   (and (and (<= 1 1) (<= 1 100))
   (and (<= 1 stacks__get_model__3__R71s) (<= stacks__get_model__3__R71s 100))))
-  (let ((temp___984 (of_array1
-                    (rec__stacks__stack_root__content1 (us_split_fields3 s))
-                    1 stacks__get_model__3__R71s)))
-  (exists ((temp___978 Int))
+  (let ((temp___1016 (of_array1
+                     (rec__stacks__stack_root__content1 (us_split_fields3 s))
+                     1 stacks__get_model__3__R71s)))
+  (exists ((temp___1010 Int))
   (and
-  (= (to_rep3 (rec__stacks__buffer__first (us_split_fields3 s))) temp___978)
+  (= (to_rep3 (rec__stacks__buffer__first (us_split_fields3 s))) temp___1010)
   (and
-  (=> (<= temp___978 100)
-  (and (and (<= 1 temp___978) (<= temp___978 100))
+  (=> (<= temp___1010 100)
+  (and (and (<= 1 temp___1010) (<= temp___1010 100))
   (and (<= 1 100) (<= 100 100))))
-  (let ((temp___983 (of_array1
-                    (rec__stacks__stack_root__content1 (us_split_fields3 s))
-                    temp___978 100)))
-  (ite (= (length2 temp___983) 0)
-  (= temp___985 (of_array1 (to_array1 temp___984) (first3 temp___984)
-                (last5 temp___984)))
-  (let ((o3 (- (+ 1 (+ (length (first3 temp___983) (last5 temp___983)) 
-  (length (first3 temp___984) (last5 temp___984)))) 1)))
+  (let ((temp___1015 (of_array1
+                     (rec__stacks__stack_root__content1 (us_split_fields3 s))
+                     temp___1010 100)))
+  (ite (= (length2 temp___1015) 0)
+  (= temp___1017 (of_array1 (to_array1 temp___1016) (first3 temp___1016)
+                 (last5 temp___1016)))
+  (let ((o3 (- (+ 1 (+ (length (first3 temp___1015) (last5 temp___1015)) 
+  (length (first3 temp___1016) (last5 temp___1016)))) 1)))
   (and (in_range6 o3)
-  (= temp___985 (of_array1
-                (slide
-                (concat1 (to_array1 temp___983) (first3 temp___983)
-                (last5 temp___983) (to_array1 temp___984) (first3 temp___984)
-                (last5 temp___984)) (first3 temp___983) 1) 1 o3)))))))))))
-  (dynamic_property 1 2147483647 (first3 temp___985) (last5 temp___985))))))))))))))
+  (= temp___1017 (of_array1
+                 (slide
+                 (concat1 (to_array1 temp___1015) (first3 temp___1015)
+                 (last5 temp___1015) (to_array1 temp___1016)
+                 (first3 temp___1016) (last5 temp___1016))
+                 (first3 temp___1015) 1) 1 o3)))))))))))
+  (dynamic_property 1 2147483647 (first3 temp___1017) (last5 temp___1017))))))))))))))
 (check-sat)

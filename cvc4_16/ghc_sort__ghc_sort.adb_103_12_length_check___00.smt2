@@ -328,34 +328,34 @@
 (define-fun t56b__ref_t56b__content__projection ((a t56b__ref)) integer 
   (t56b__content a))
 
-(define-fun dynamic_invariant2 ((temp___expr_282 us_t)
-  (temp___is_init_278 Bool) (temp___skip_constant_279 Bool)
-  (temp___do_toplevel_280 Bool)
-  (temp___do_typ_inv_281 Bool)) Bool (and
+(define-fun dynamic_invariant2 ((temp___expr_283 us_t)
+  (temp___is_init_279 Bool) (temp___skip_constant_280 Bool)
+  (temp___do_toplevel_281 Bool)
+  (temp___do_typ_inv_282 Bool)) Bool (and
                                      (=>
-                                     (not (= temp___skip_constant_279 true))
+                                     (not (= temp___skip_constant_280 true))
                                      (and (dynamic_property (first1 s)
-                                     (last1 s) (first1 temp___expr_282)
-                                     (last1 temp___expr_282))
+                                     (last1 s) (first1 temp___expr_283)
+                                     (last1 temp___expr_283))
                                      (and
-                                     (= (first1 temp___expr_282) (first1 s))
-                                     (= (last1 temp___expr_282) (last1 s)))))
-                                     (=> (= temp___is_init_278 true)
-                                     (= (first1 temp___expr_282) 1))))
+                                     (= (first1 temp___expr_283) (first1 s))
+                                     (= (last1 temp___expr_283) (last1 s)))))
+                                     (=> (= temp___is_init_279 true)
+                                     (= (first1 temp___expr_283) 1))))
 
-(define-fun default_initial_assumption ((temp___expr_286 us_t)
-  (temp___skip_top_level_287 Bool)) Bool (and
-                                         (= (first1 temp___expr_286) 
+(define-fun default_initial_assumption ((temp___expr_287 us_t)
+  (temp___skip_top_level_288 Bool)) Bool (and
+                                         (= (first1 temp___expr_287) 
                                          (first1 s))
-                                         (= (last1 temp___expr_286) (last1 s))))
+                                         (= (last1 temp___expr_287) (last1 s))))
 
-(define-fun dynamic_predicate1 ((temp___290 us_t)) Bool (= (first1
-                                                           temp___290) 1))
+(define-fun dynamic_predicate1 ((temp___291 us_t)) Bool (= (first1
+                                                           temp___291) 1))
 
-(define-fun dynamic_predicate2 ((temp___292 us_t)) Bool (= (first1
-                                                           temp___292) 1))
+(define-fun dynamic_predicate2 ((temp___293 us_t)) Bool (= (first1
+                                                           temp___293) 1))
 
-(declare-fun temp_____aggregate_def_557 (Int Int Int) us_t)
+(declare-fun temp_____aggregate_def_563 (Int Int Int) us_t)
 
 (define-fun dynamic_invariant3 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)
@@ -378,15 +378,15 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___559 Int) (temp___560 Int) (temp___561 Int))
-  (let ((temp___558 (temp_____aggregate_def_557 temp___559 temp___560
-                    temp___561)))
-  (=> (dynamic_invariant3 temp___559 true true true true)
+  (forall ((temp___565 Int) (temp___566 Int) (temp___567 Int))
+  (let ((temp___564 (temp_____aggregate_def_563 temp___565 temp___566
+                    temp___567)))
+  (=> (dynamic_invariant3 temp___565 true true true true)
   (and
-  (=> (dynamic_property 1 2147483647 temp___560 temp___561)
-  (and (= (first1 temp___558) temp___560) (= (last1 temp___558) temp___561)))
-  (forall ((temp___562 Int))
-  (= (select (to_array temp___558) temp___562) rliteral)))))))
+  (=> (dynamic_property 1 2147483647 temp___566 temp___567)
+  (and (= (first1 temp___564) temp___566) (= (last1 temp___564) temp___567)))
+  (forall ((temp___568 Int))
+  (= (select (to_array temp___564) temp___568) rliteral)))))))
 
 (assert
 ;; defqtvc
@@ -403,9 +403,9 @@
   (and (= (to_rep r__first) (first1 s)) (= (to_rep r__last) (last1 s))))
   (=> (= j 0)
   (=> (dynamic_invariant j true false true true)
-  (let ((temp___563 (temp_____aggregate_def_557 0 (first1 s) (last1 s))))
-  (=> (= (first1 temp___563) (first1 s))
-  (=> (= (last1 temp___563) (last1 s))
-  (=> (dynamic_predicate2 temp___563)
-  (=> (<= (first1 temp___563) (last1 temp___563)) (<= (first1 s) (last1 s))))))))))))))))
+  (let ((temp___569 (temp_____aggregate_def_563 0 (first1 s) (last1 s))))
+  (=> (= (first1 temp___569) (first1 s))
+  (=> (= (last1 temp___569) (last1 s))
+  (=> (dynamic_predicate2 temp___569)
+  (=> (<= (first1 temp___569) (last1 temp___569)) (<= (first1 s) (last1 s))))))))))))))))
 (check-sat)

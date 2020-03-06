@@ -984,22 +984,22 @@
 (define-fun t69b__ref_t69b__content__projection ((a t69b__ref)) us_t 
   (t69b__content a))
 
-(define-fun dynamic_invariant5 ((temp___expr_336 us_t)
-  (temp___is_init_332 Bool) (temp___skip_constant_333 Bool)
-  (temp___do_toplevel_334 Bool)
-  (temp___do_typ_inv_335 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_333 true))
+(define-fun dynamic_invariant5 ((temp___expr_338 us_t)
+  (temp___is_init_334 Bool) (temp___skip_constant_335 Bool)
+  (temp___do_toplevel_336 Bool)
+  (temp___do_typ_inv_337 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_335 true))
                                      (and (dynamic_property 1
                                      (max 500 (length1 s))
-                                     (first1 temp___expr_336)
-                                     (last1 temp___expr_336))
-                                     (and (= (first1 temp___expr_336) 1)
-                                     (= (last1 temp___expr_336) (max 500
+                                     (first1 temp___expr_338)
+                                     (last1 temp___expr_338))
+                                     (and (= (first1 temp___expr_338) 1)
+                                     (= (last1 temp___expr_338) (max 500
                                                                 (length1 s)))))))
 
-(define-fun default_initial_assumption ((temp___expr_338 us_t)
-  (temp___skip_top_level_339 Bool)) Bool (and (= (first1 temp___expr_338) 1)
-                                         (= (last1 temp___expr_338) (max 500
+(define-fun default_initial_assumption ((temp___expr_340 us_t)
+  (temp___skip_top_level_341 Bool)) Bool (and (= (first1 temp___expr_340) 1)
+                                         (= (last1 temp___expr_340) (max 500
                                                                     (length1
                                                                     s)))))
 
@@ -1155,27 +1155,27 @@
   (=> (<= 1 r61b)
   (and (and (<= (to_rep1 buffer__first) 1) (<= 1 (to_rep1 buffer__last)))
   (and (<= (to_rep1 buffer__first) r61b) (<= r61b (to_rep1 buffer__last)))))
-  (let ((temp___480 (of_array buffer1 1 r61b)))
+  (let ((temp___486 (of_array buffer1 1 r61b)))
   (ite (= (length1 s) 0)
   (= textio__get_line_function__get_rest__B_1__r__assume (of_array
                                                          (to_array
-                                                         temp___480)
-                                                         (first1 temp___480)
-                                                         (last1 temp___480)))
+                                                         temp___486)
+                                                         (first1 temp___486)
+                                                         (last1 temp___486)))
   (let ((o3 (- (+ (first1 s) (+ (length (first1 s) (last1 s)) (length
                                                               (first1
-                                                              temp___480)
+                                                              temp___486)
                                                               (last1
-                                                              temp___480)))) 1)))
+                                                              temp___486)))) 1)))
   (and (in_range3 o3)
   (= textio__get_line_function__get_rest__B_1__r__assume (of_array
                                                          (concat1
                                                          (to_array s)
                                                          (first1 s) (last1 s)
                                                          (to_array
-                                                         temp___480)
-                                                         (first1 temp___480)
-                                                         (last1 temp___480))
+                                                         temp___486)
+                                                         (first1 temp___486)
+                                                         (last1 temp___486))
                                                          (first1 s) o3)))))))
   (=> (= textio__get_line_function__get_rest__B_1__r__assume r)
   (=> (dynamic_invariant3 r true false true true)
@@ -1207,13 +1207,13 @@
   (=>
   (ite (<= (first1 r) (last1 r))
   (and (<= 1 r67b) (= (- (last1 r) (first1 r)) (- r67b 1))) (< r67b 1))
-  (let ((temp___474 (of_array (slide (to_array r) (first1 r) 1) 1 r67b)))
+  (let ((temp___480 (of_array (slide (to_array r) (first1 r) 1) 1 r67b)))
   (=>
   (=> (<= 1 r67b)
   (and (and (<= (to_rep1 result____first) 1) (<= 1 (to_rep1 result____last)))
   (and (<= (to_rep1 result____first) r67b)
   (<= r67b (to_rep1 result____last)))))
-  (let ((temp___476 (of_array result__ 1 r67b)))
-  (=> (<= (first1 temp___474) (last1 temp___474))
-  (<= (first1 temp___476) (last1 temp___476))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+  (let ((temp___482 (of_array result__ 1 r67b)))
+  (=> (<= (first1 temp___480) (last1 temp___480))
+  (<= (first1 temp___482) (last1 temp___482))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

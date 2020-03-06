@@ -432,6 +432,10 @@
                            (us_split_fields1 b))) true))))
                    true false))
 
+(define-fun in_range5 ((rec__tester__ring_buffer__ring_buffer_type__max_size1 Int)
+  (a us_split_discrs)) Bool (= rec__tester__ring_buffer__ring_buffer_type__max_size1 
+  (to_rep1 (rec__tester__ring_buffer__ring_buffer_type__max_size a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -549,7 +553,7 @@
   (forall ((i natural))
   (and (<= 0 (naturalqtint i)) (<= (naturalqtint i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -570,7 +574,7 @@
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
   (temp___do_typ_inv_38 Bool)) Bool (=>
                                     (or (= temp___is_init_35 true)
-                                    (<= 0 2147483647)) (in_range5
+                                    (<= 0 2147483647)) (in_range6
                                     temp___expr_39)))
 
 (define-fun dynamic_invariant1 ((temp___expr_215 us_rep)
@@ -881,11 +885,11 @@
   (size (us_repqtmk buffer__split_discrs buffer__split_fields1))
   (us_repqtmk buffer__split_discrs buffer__split_fields1)))
   (=> (<= 1 (size (us_repqtmk buffer__split_discrs buffer__split_fields)))
-  (forall ((temp___289 Int))
+  (forall ((temp___296 Int))
   (=>
   (= (to_rep1
-     (rec__tester__ring_buffer__ring_buffer_type__head buffer__split_fields)) temp___289)
+     (rec__tester__ring_buffer__ring_buffer_type__head buffer__split_fields)) temp___296)
   (<= (first1
       (rec__tester__ring_buffer__ring_buffer_type__items
-      buffer__split_fields)) temp___289))))))))))))))
+      buffer__split_fields)) temp___296))))))))))))))
 (check-sat)

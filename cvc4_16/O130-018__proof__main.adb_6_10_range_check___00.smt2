@@ -304,6 +304,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range2 ((rec__main__branch_type__m_height1 Int)
+  (a us_split_discrs)) Bool (= rec__main__branch_type__m_height1 (to_rep
+                                                                 (rec__main__branch_type__m_height
+                                                                 a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

@@ -376,13 +376,13 @@
 (define-fun full_width_type__ref_full_width_type__content__projection ((a full_width_type__ref)) full_width_type 
   (full_width_type__content a))
 
-(define-fun dynamic_invariant2 ((temp___expr_189 Float64)
-  (temp___is_init_185 Bool) (temp___skip_constant_186 Bool)
-  (temp___do_toplevel_187 Bool)
-  (temp___do_typ_inv_188 Bool)) Bool (=>
-                                     (or (= temp___is_init_185 true)
+(define-fun dynamic_invariant2 ((temp___expr_197 Float64)
+  (temp___is_init_193 Bool) (temp___skip_constant_194 Bool)
+  (temp___do_toplevel_195 Bool)
+  (temp___do_typ_inv_196 Bool)) Bool (=>
+                                     (or (= temp___is_init_193 true)
                                      (fp.leq (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000) (fp #b0 #b10000000110 #b1001000000000000000000000000000000000000000000000000)))
-                                     (in_range3 temp___expr_189)))
+                                     (in_range3 temp___expr_197)))
 
 (define-fun dynamic_invariant3 ((temp___expr_168 Float64)
   (temp___is_init_164 Bool) (temp___skip_constant_165 Bool)

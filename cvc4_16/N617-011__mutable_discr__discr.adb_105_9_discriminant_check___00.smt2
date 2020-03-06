@@ -144,6 +144,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__private_discr__p_with_default__c1 Int)
+  (a us_split_discrs)) Bool (= rec__private_discr__p_with_default__c1 
+  (to_rep (rec__private_discr__p_with_default__c a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -198,12 +202,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
-(define-fun in_range1 ((rec__private_discr__p_with_default__c1 Int)
-  (a us_rep)) Bool (= rec__private_discr__p_with_default__c1 (to_rep
-                                                             (rec__private_discr__p_with_default__c
-                                                             (us_split_discrs1
-                                                             a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -255,7 +253,8 @@
   (temp___do_toplevel_256 Bool)
   (temp___do_typ_inv_257 Bool)) Bool (=>
                                      (not (= temp___skip_constant_255 true))
-                                     (in_range1 c temp___expr_258)))
+                                     (in_range1 c
+                                     (us_split_discrs1 temp___expr_258))))
 
 (define-fun default_initial_assumption1 ((temp___expr_260 us_rep)
   (temp___skip_top_level_261 Bool)) Bool (= (to_rep
@@ -304,25 +303,25 @@
   (=> (not (= d__attr__constrained true))
   (=> (= d1__attr__constrained true)
   (let ((o1 c))
-  (let ((temp___375 (new_with_default o1)))
+  (let ((temp___379 (new_with_default o1)))
   (=>
-  (and (new_with_default__function_guard temp___375 o1)
+  (and (new_with_default__function_guard temp___379 o1)
   (= (to_rep
-     (rec__private_discr__p_with_default__c (us_split_discrs1 temp___375))) o1))
+     (rec__private_discr__p_with_default__c (us_split_discrs1 temp___379))) o1))
   (=>
   (=> (= d__attr__constrained true)
-  (= (rec__private_discr__p_with_default__c (us_split_discrs1 temp___375)) d__split_discrs))
+  (= (rec__private_discr__p_with_default__c (us_split_discrs1 temp___379)) d__split_discrs))
   (forall ((d__split_fields1 us_main_type))
   (=>
-  (= (us_split_fieldsqtmk d__split_fields1) (us_split_fields1 temp___375))
+  (= (us_split_fieldsqtmk d__split_fields1) (us_split_fields1 temp___379))
   (forall ((d__split_discrs1 natural))
   (=>
-  (= (us_split_discrsqtmk d__split_discrs1) (us_split_discrs1 temp___375))
-  (let ((temp___378 (new_with_default 0)))
+  (= (us_split_discrsqtmk d__split_discrs1) (us_split_discrs1 temp___379))
+  (let ((temp___382 (new_with_default 0)))
   (=>
-  (and (new_with_default__function_guard temp___378 0)
+  (and (new_with_default__function_guard temp___382 0)
   (= (to_rep
-     (rec__private_discr__p_with_default__c (us_split_discrs1 temp___378))) 0))
+     (rec__private_discr__p_with_default__c (us_split_discrs1 temp___382))) 0))
   (=> (= d__attr__constrained true)
-  (= (rec__private_discr__p_with_default__c (us_split_discrs1 temp___378)) d__split_discrs1))))))))))))))))))))))))))))))))
+  (= (rec__private_discr__p_with_default__c (us_split_discrs1 temp___382)) d__split_discrs1))))))))))))))))))))))))))))))))
 (check-sat)

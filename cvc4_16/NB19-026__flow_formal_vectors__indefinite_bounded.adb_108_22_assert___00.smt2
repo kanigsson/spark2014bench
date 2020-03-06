@@ -103,6 +103,30 @@
 (define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun to_rep ((x capacity_range)) Int (capacity_rangeqtint x))
+
+(declare-fun of_rep (Int) capacity_range)
+
+;; inversion_axiom
+  (assert
+  (forall ((x capacity_range))
+  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x capacity_range)) (! (in_range
+  (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                           (of_rep x))) )))
+
+(define-fun in_range1 ((rec__indefinite_bounded__vect__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__indefinite_bounded__vect__vector__capacity1 
+  (to_rep (rec__indefinite_bounded__vect__vector__capacity a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -143,33 +167,13 @@
 (define-fun vector__ref_vector__content__projection ((a vector__ref)) us_rep 
   (vector__content a))
 
-(define-fun in_range1 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range2 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE1 (Bool) us_image)
 
 (declare-fun attr__ATTRIBUTE_VALUE__pre_check1 (us_image) Bool)
 
 (declare-fun attr__ATTRIBUTE_VALUE1 (us_image) Bool)
-
-(define-fun to_rep ((x capacity_range)) Int (capacity_rangeqtint x))
-
-(declare-fun of_rep (Int) capacity_range)
-
-;; inversion_axiom
-  (assert
-  (forall ((x capacity_range))
-  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
-
-;; range_axiom
-  (assert
-  (forall ((x capacity_range)) (! (in_range
-  (to_rep x)) :pattern ((to_rep x)) )))
-
-;; coerce_axiom
-  (assert
-  (forall ((x Int))
-  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
-                                                           (of_rep x))) )))
 
 (define-fun capacity ((container us_rep)) Int (ite (= (distinct 1 0) true)
                                               (to_rep
@@ -302,7 +306,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -324,7 +328,7 @@
   (temp___do_toplevel_217 Bool)
   (temp___do_typ_inv_218 Bool)) Bool (=>
                                      (or (= temp___is_init_215 true)
-                                     (<= 0 2147483647)) (in_range2
+                                     (<= 0 2147483647)) (in_range3
                                      temp___expr_219)))
 
 (declare-fun is_empty (us_rep) Bool)
@@ -371,7 +375,7 @@
   (forall ((i index_type))
   (and (<= 1 (index_typeqtint i)) (<= (index_typeqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -393,7 +397,7 @@
   (temp___do_toplevel_203 Bool)
   (temp___do_typ_inv_204 Bool)) Bool (=>
                                      (or (= temp___is_init_201 true)
-                                     (<= 1 2147483647)) (in_range3
+                                     (<= 1 2147483647)) (in_range4
                                      temp___expr_205)))
 
 (define-fun element ((container us_rep)
@@ -411,7 +415,7 @@
   (and (<= (- 2147483648) (element_typeqtint i))
   (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
@@ -435,7 +439,7 @@
   (temp___do_typ_inv_211 Bool)) Bool (=>
                                      (or (= temp___is_init_208 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range4 temp___expr_212)))
+                                     (in_range5 temp___expr_212)))
 
 (define-fun equal_except ((left us_rep1) (right us_rep1)
   (position Int)) Bool (and (= (length2 left) (length2 right)) (ite (forall
@@ -699,11 +703,6 @@
 (declare-fun m_elements_included__function_guard (Bool us_rep1 Int Int
   us_rep1 Int Int) Bool)
 
-(define-fun in_range5 ((rec__indefinite_bounded__vect__vector__capacity1 Int)
-  (a us_rep)) Bool (= rec__indefinite_bounded__vect__vector__capacity1 
-  (to_rep
-  (rec__indefinite_bounded__vect__vector__capacity (us_split_discrs1 a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -753,23 +752,24 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq6 a b) (oeq a b)) :pattern ((user_eq6 a b)) )))
 
-(define-fun dynamic_invariant4 ((temp___expr_365 us_rep)
-  (temp___is_init_361 Bool) (temp___skip_constant_362 Bool)
-  (temp___do_toplevel_363 Bool)
-  (temp___do_typ_inv_364 Bool)) Bool (=>
-                                     (not (= temp___skip_constant_362 true))
-                                     (in_range5 5 temp___expr_365)))
+(define-fun dynamic_invariant4 ((temp___expr_366 us_rep)
+  (temp___is_init_362 Bool) (temp___skip_constant_363 Bool)
+  (temp___do_toplevel_364 Bool)
+  (temp___do_typ_inv_365 Bool)) Bool (=>
+                                     (not (= temp___skip_constant_363 true))
+                                     (in_range1 5
+                                     (us_split_discrs1 temp___expr_366))))
 
-(define-fun default_initial_assumption ((temp___expr_367 us_rep)
-  (temp___skip_top_level_368 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_368 us_rep)
+  (temp___skip_top_level_369 Bool)) Bool (and
                                          (= (to_rep
                                             (rec__indefinite_bounded__vect__vector__capacity
                                             (us_split_discrs1
-                                            temp___expr_367))) 5)
+                                            temp___expr_368))) 5)
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_368 true))
-                                         (= (is_empty temp___expr_367) true))))
+                                         (= temp___skip_top_level_369 true))
+                                         (= (is_empty temp___expr_368) true))))
 
 (declare-const w__split_discrs us_split_discrs)
 

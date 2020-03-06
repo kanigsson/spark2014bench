@@ -210,10 +210,11 @@
   (forall ((c (Array Int natural)))
   (forall ((p us_rep))
   (! (= (= (has_element c p) true)
-     (and
-     (<= 1 (to_rep (rec__my_container__cursor__index (us_split_fields1 p))))
-     (<= (to_rep (rec__my_container__cursor__index (us_split_fields1 p))) 100))) :pattern (
-  (has_element c p)) ))))
+     (let ((temp___190 (to_rep
+                       (rec__my_container__cursor__index
+                       (us_split_fields1 p)))))
+     (and (<= 1 temp___190) (<= temp___190 100)))) :pattern ((has_element c
+                                                             p)) ))))
 
 (declare-const c (Array Int natural))
 
@@ -267,10 +268,10 @@
 ;; defqtvc
  ;; File "my_container.ads", line 22, characters 0-0
   (not
-  (forall ((temp___209 Int))
+  (forall ((temp___212 Int))
   (=> (has_element__function_guard (has_element c p) c p)
   (=> (= (has_element c p) true)
   (=>
-  (= (to_rep (rec__my_container__cursor__index (us_split_fields1 p))) temp___209)
-  (<= 1 temp___209)))))))
+  (= (to_rep (rec__my_container__cursor__index (us_split_fields1 p))) temp___212)
+  (<= 1 temp___212)))))))
 (check-sat)

@@ -368,6 +368,10 @@
                            (rec__proc__r__contents (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__proc__r__length1 Int)
+  (a us_split_discrs)) Bool (= rec__proc__r__length1 (to_rep2
+                                                     (rec__proc__r__length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -500,11 +504,6 @@
                             (rec__proc__r__contents1 (us_split_fields3 a))
                             (rec__proc__r__contents1 (us_split_fields3 b))) true))
                     true false))
-
-(define-fun in_range3 ((rec__proc__r__length1 Int)
-  (a us_rep)) Bool (= rec__proc__r__length1 (to_rep2
-                                            (rec__proc__r__length
-                                            (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 

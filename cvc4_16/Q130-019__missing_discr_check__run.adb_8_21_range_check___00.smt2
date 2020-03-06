@@ -203,21 +203,6 @@
 ;; p_init__t__e__position_axiom
   (assert (<= 0 p_init__t__e__position))
 
-(declare-const p_init__t__x1__first__bit Int)
-
-(declare-const p_init__t__x1__last__bit Int)
-
-(declare-const p_init__t__x1__position Int)
-
-;; p_init__t__x1__first__bit_axiom
-  (assert (<= 0 p_init__t__x1__first__bit))
-
-;; p_init__t__x1__last__bit_axiom
-  (assert (< p_init__t__x1__first__bit p_init__t__x1__last__bit))
-
-;; p_init__t__x1__position_axiom
-  (assert (<= 0 p_init__t__x1__position))
-
 (declare-const p_init__t__x2__first__bit Int)
 
 (declare-const p_init__t__x2__last__bit Int)
@@ -233,18 +218,33 @@
 ;; p_init__t__x2__position_axiom
   (assert (<= 0 p_init__t__x2__position))
 
+(declare-const p_init__t__x1__first__bit Int)
+
+(declare-const p_init__t__x1__last__bit Int)
+
+(declare-const p_init__t__x1__position Int)
+
+;; p_init__t__x1__first__bit_axiom
+  (assert (<= 0 p_init__t__x1__first__bit))
+
+;; p_init__t__x1__last__bit_axiom
+  (assert (< p_init__t__x1__first__bit p_init__t__x1__last__bit))
+
+;; p_init__t__x1__position_axiom
+  (assert (<= 0 p_init__t__x1__position))
+
 (declare-fun user_eq2 (us_rep us_rep) Bool)
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((t__ref 0))
-(((t__refqtmk (t__content us_rep)))))
-(define-fun t__ref_t__content__projection ((a t__ref)) us_rep (t__content a))
+(declare-datatypes ((tc1S__ref 0))
+(((tc1S__refqtmk (tc1S__content us_rep)))))
+(define-fun tc1S__ref_tc1S__content__projection ((a tc1S__ref)) us_rep 
+  (tc1S__content a))
 
-(define-fun in_range2 ((rec__p_init__t__e1 Int)
-  (a us_rep)) Bool (= rec__p_init__t__e1 (to_rep1
-                                         (rec__p_init__t__e
-                                         (us_split_discrs1 a)))))
+(declare-const c1 us_rep)
+
+(declare-const attr__ATTRIBUTE_ADDRESS Int)
 
 (declare-const value__size1 Int)
 
@@ -276,21 +276,6 @@
 ;; p_init__t__e__position_axiom
   (assert (<= 0 p_init__t__e__position1))
 
-(declare-const p_init__t__x2__first__bit1 Int)
-
-(declare-const p_init__t__x2__last__bit1 Int)
-
-(declare-const p_init__t__x2__position1 Int)
-
-;; p_init__t__x2__first__bit_axiom
-  (assert (<= 0 p_init__t__x2__first__bit1))
-
-;; p_init__t__x2__last__bit_axiom
-  (assert (< p_init__t__x2__first__bit1 p_init__t__x2__last__bit1))
-
-;; p_init__t__x2__position_axiom
-  (assert (<= 0 p_init__t__x2__position1))
-
 (declare-const p_init__t__x1__first__bit1 Int)
 
 (declare-const p_init__t__x1__last__bit1 Int)
@@ -306,23 +291,37 @@
 ;; p_init__t__x1__position_axiom
   (assert (<= 0 p_init__t__x1__position1))
 
+(declare-const p_init__t__x2__first__bit1 Int)
+
+(declare-const p_init__t__x2__last__bit1 Int)
+
+(declare-const p_init__t__x2__position1 Int)
+
+;; p_init__t__x2__first__bit_axiom
+  (assert (<= 0 p_init__t__x2__first__bit1))
+
+;; p_init__t__x2__last__bit_axiom
+  (assert (< p_init__t__x2__first__bit1 p_init__t__x2__last__bit1))
+
+;; p_init__t__x2__position_axiom
+  (assert (<= 0 p_init__t__x2__position1))
+
 (declare-fun user_eq3 (us_rep us_rep) Bool)
 
 (declare-const dummy3 us_rep)
 
-(declare-datatypes ((tc1S__ref 0))
-(((tc1S__refqtmk (tc1S__content us_rep)))))
-(define-fun tc1S__ref_tc1S__content__projection ((a tc1S__ref)) us_rep 
-  (tc1S__content a))
+(declare-datatypes ((tc2S__ref 0))
+(((tc2S__refqtmk (tc2S__content us_rep)))))
+(define-fun tc2S__ref_tc2S__content__projection ((a tc2S__ref)) us_rep 
+  (tc2S__content a))
 
-(declare-const c1 us_rep)
+(declare-const c2 us_rep)
 
-(declare-const attr__ATTRIBUTE_ADDRESS Int)
+(declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
-(define-fun in_range3 ((rec__p_init__t__e1 Int)
-  (a us_rep)) Bool (= rec__p_init__t__e1 (to_rep1
-                                         (rec__p_init__t__e
-                                         (us_split_discrs1 a)))))
+(define-fun in_range2 ((rec__p_init__t__e1 Int)
+  (a us_split_discrs)) Bool (= rec__p_init__t__e1 (to_rep1
+                                                  (rec__p_init__t__e a))))
 
 (declare-const value__size2 Int)
 
@@ -388,14 +387,9 @@
 
 (declare-const dummy4 us_rep)
 
-(declare-datatypes ((tc2S__ref 0))
-(((tc2S__refqtmk (tc2S__content us_rep)))))
-(define-fun tc2S__ref_tc2S__content__projection ((a tc2S__ref)) us_rep 
-  (tc2S__content a))
-
-(declare-const c2 us_rep)
-
-(declare-const attr__ATTRIBUTE_ADDRESS1 Int)
+(declare-datatypes ((t__ref 0))
+(((t__refqtmk (t__content us_rep)))))
+(define-fun t__ref_t__content__projection ((a t__ref)) us_rep (t__content a))
 
 (declare-const y1__attr__constrained Bool)
 
@@ -410,11 +404,6 @@
 (declare-const y2__attr__constrained Bool)
 
 (declare-const attr__ATTRIBUTE_ADDRESS3 Int)
-
-(define-fun in_range4 ((rec__p_init__t__e1 Int)
-  (a us_rep)) Bool (= rec__p_init__t__e1 (to_rep1
-                                         (rec__p_init__t__e
-                                         (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 
@@ -496,18 +485,14 @@
   (temp___do_toplevel_201 Bool)
   (temp___do_typ_inv_202 Bool)) Bool (=>
                                      (not (= temp___skip_constant_200 true))
-                                     (in_range4 0 temp___expr_203)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_203))))
 
 (define-fun default_initial_assumption1 ((temp___expr_205 us_rep)
   (temp___skip_top_level_206 Bool)) Bool (= (to_rep1
                                             (rec__p_init__t__e
                                             (us_split_discrs1
                                             temp___expr_205))) 0))
-
-(define-fun in_range5 ((rec__p_init__t__e1 Int)
-  (a us_rep)) Bool (= rec__p_init__t__e1 (to_rep1
-                                         (rec__p_init__t__e
-                                         (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 
@@ -589,7 +574,8 @@
   (temp___do_toplevel_212 Bool)
   (temp___do_typ_inv_213 Bool)) Bool (=>
                                      (not (= temp___skip_constant_211 true))
-                                     (in_range5 1 temp___expr_214)))
+                                     (in_range2 1
+                                     (us_split_discrs1 temp___expr_214))))
 
 (define-fun default_initial_assumption2 ((temp___expr_216 us_rep)
   (temp___skip_top_level_217 Bool)) Bool (= (to_rep1
@@ -602,18 +588,14 @@
   (temp___do_toplevel_179 Bool)
   (temp___do_typ_inv_180 Bool)) Bool (=>
                                      (not (= temp___skip_constant_178 true))
-                                     (in_range2 0 temp___expr_181)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_181))))
 
 (define-fun default_initial_assumption3 ((temp___expr_183 us_rep)
   (temp___skip_top_level_184 Bool)) Bool (= (to_rep1
                                             (rec__p_init__t__e
                                             (us_split_discrs1
                                             temp___expr_183))) 0))
-
-(define-fun in_range6 ((rec__p_init__t__e1 Int)
-  (a us_rep)) Bool (= rec__p_init__t__e1 (to_rep1
-                                         (rec__p_init__t__e
-                                         (us_split_discrs1 a)))))
 
 (declare-const value__size5 Int)
 
@@ -689,18 +671,14 @@
   (temp___do_toplevel_190 Bool)
   (temp___do_typ_inv_191 Bool)) Bool (=>
                                      (not (= temp___skip_constant_189 true))
-                                     (in_range3 1 temp___expr_192)))
+                                     (in_range2 1
+                                     (us_split_discrs1 temp___expr_192))))
 
 (define-fun default_initial_assumption4 ((temp___expr_194 us_rep)
   (temp___skip_top_level_195 Bool)) Bool (= (to_rep1
                                             (rec__p_init__t__e
                                             (us_split_discrs1
                                             temp___expr_194))) 1))
-
-(define-fun in_range7 ((rec__p_init__t__e1 Int)
-  (a us_rep)) Bool (= rec__p_init__t__e1 (to_rep1
-                                         (rec__p_init__t__e
-                                         (us_split_discrs1 a)))))
 
 (declare-const value__size6 Int)
 

@@ -79,39 +79,6 @@
                                     (<= 0 2147483647)) (in_range
                                     temp___expr_39)))
 
-(declare-sort mask_size 0)
-
-(declare-fun mask_sizeqtint (mask_size) Int)
-
-;; mask_size'axiom
-  (assert
-  (forall ((i mask_size))
-  (and (<= 1 (mask_sizeqtint i)) (<= (mask_sizeqtint i) 32))))
-
-(define-fun in_range1 ((x Int)) Bool (and (<= 1 x) (<= x 32)))
-
-(declare-fun attr__ATTRIBUTE_IMAGE1 (Int) us_image)
-
-(declare-fun attr__ATTRIBUTE_VALUE__pre_check1 (us_image) Bool)
-
-(declare-fun attr__ATTRIBUTE_VALUE1 (us_image) Int)
-
-(declare-fun user_eq1 (mask_size mask_size) Bool)
-
-(declare-const dummy1 mask_size)
-
-(declare-datatypes ((mask_size__ref 0))
-(((mask_size__refqtmk (mask_size__content mask_size)))))
-(define-fun mask_size__ref_mask_size__content__5__projection ((a mask_size__ref)) mask_size 
-  (mask_size__content a))
-
-(define-fun dynamic_invariant1 ((temp___expr_488 Int)
-  (temp___is_init_484 Bool) (temp___skip_constant_485 Bool)
-  (temp___do_toplevel_486 Bool)
-  (temp___do_typ_inv_487 Bool)) Bool (=>
-                                     (or (= temp___is_init_484 true)
-                                     (<= 1 32)) (in_range1 temp___expr_488)))
-
 (declare-fun nth ((_ BitVec 32) Int) Bool)
 
 (declare-fun lsr ((_ BitVec 32) Int) (_ BitVec 32))
@@ -291,24 +258,57 @@
 
 (declare-const attr__ATTRIBUTE_MODULUS (_ BitVec 32))
 
-(declare-fun attr__ATTRIBUTE_IMAGE2 ((_ BitVec 32)) us_image)
+(declare-fun attr__ATTRIBUTE_IMAGE1 ((_ BitVec 32)) us_image)
 
-(declare-fun attr__ATTRIBUTE_VALUE__pre_check2 (us_image) Bool)
+(declare-fun attr__ATTRIBUTE_VALUE__pre_check1 (us_image) Bool)
 
-(declare-fun attr__ATTRIBUTE_VALUE2 (us_image) (_ BitVec 32))
+(declare-fun attr__ATTRIBUTE_VALUE1 (us_image) (_ BitVec 32))
 
-(declare-fun user_eq2 (modular modular) Bool)
+(declare-fun user_eq1 (modular modular) Bool)
 
-(declare-const dummy2 modular)
+(declare-const dummy1 modular)
 
 (declare-datatypes ((modular__ref 0))
 (((modular__refqtmk (modular__content modular)))))
-(define-fun modular__ref_modular__content__6__projection ((a modular__ref)) modular 
+(define-fun modular__ref_modular__content__3__projection ((a modular__ref)) modular 
   (modular__content a))
 
-(define-fun dynamic_invariant2 ((temp___expr_474 (_ BitVec 32))
-  (temp___is_init_470 Bool) (temp___skip_constant_471 Bool)
-  (temp___do_toplevel_472 Bool) (temp___do_typ_inv_473 Bool)) Bool true)
+(define-fun dynamic_invariant1 ((temp___expr_453 (_ BitVec 32))
+  (temp___is_init_449 Bool) (temp___skip_constant_450 Bool)
+  (temp___do_toplevel_451 Bool) (temp___do_typ_inv_452 Bool)) Bool true)
+
+(declare-sort mask_size 0)
+
+(declare-fun mask_sizeqtint (mask_size) Int)
+
+;; mask_size'axiom
+  (assert
+  (forall ((i mask_size))
+  (and (<= 1 (mask_sizeqtint i)) (<= (mask_sizeqtint i) 32))))
+
+(define-fun in_range1 ((x Int)) Bool (and (<= 1 x) (<= x 32)))
+
+(declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
+
+(declare-fun attr__ATTRIBUTE_VALUE__pre_check2 (us_image) Bool)
+
+(declare-fun attr__ATTRIBUTE_VALUE2 (us_image) Int)
+
+(declare-fun user_eq2 (mask_size mask_size) Bool)
+
+(declare-const dummy2 mask_size)
+
+(declare-datatypes ((mask_size__ref 0))
+(((mask_size__refqtmk (mask_size__content mask_size)))))
+(define-fun mask_size__ref_mask_size__content__5__projection ((a mask_size__ref)) mask_size 
+  (mask_size__content a))
+
+(define-fun dynamic_invariant2 ((temp___expr_467 Int)
+  (temp___is_init_463 Bool) (temp___skip_constant_464 Bool)
+  (temp___do_toplevel_465 Bool)
+  (temp___do_typ_inv_466 Bool)) Bool (=>
+                                     (or (= temp___is_init_463 true)
+                                     (<= 1 32)) (in_range1 temp___expr_467)))
 
 (declare-fun nth1 ((_ BitVec 8) Int) Bool)
 
@@ -599,8 +599,8 @@
   (forall ((v (_ BitVec 32)))
   (forall ((amount Int))
   (! (=>
-     (and (dynamic_invariant2 v true true true true) (dynamic_invariant
-     amount true true true true)) (dynamic_invariant2 (shift_right v amount)
+     (and (dynamic_invariant1 v true true true true) (dynamic_invariant
+     amount true true true true)) (dynamic_invariant1 (shift_right v amount)
      true false true true)) :pattern ((shift_right v amount)) ))))
 
 ;; shift_right__def_axiom
@@ -608,7 +608,7 @@
   (forall ((v (_ BitVec 32)))
   (forall ((amount Int))
   (! (=>
-     (and (dynamic_invariant2 v true true true true) (dynamic_invariant
+     (and (dynamic_invariant1 v true true true true) (dynamic_invariant
      amount true true true true))
      (= (shift_right v amount) (ite (and (<= 1 32) (<= 32 8))
                                ((_ zero_extend 24) (ite (< amount 8)
@@ -630,14 +630,14 @@
 ;; make_mask__post_axiom
   (assert
   (forall ((num_bits Int))
-  (! (=> (dynamic_invariant1 num_bits true true true true)
-     (dynamic_invariant2 (make_mask num_bits) true false true true)) :pattern (
+  (! (=> (dynamic_invariant2 num_bits true true true true)
+     (dynamic_invariant1 (make_mask num_bits) true false true true)) :pattern (
   (make_mask num_bits)) )))
 
 ;; make_mask__def_axiom
   (assert
   (forall ((num_bits Int))
-  (! (=> (dynamic_invariant1 num_bits true true true true)
+  (! (=> (dynamic_invariant2 num_bits true true true true)
      (= (make_mask num_bits) (shift_right #xFFFFFFFF (- 32 num_bits)))) :pattern (
   (make_mask num_bits)) )))
 

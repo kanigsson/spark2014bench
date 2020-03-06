@@ -75,12 +75,13 @@
 (define-fun int100__ref_int100__content__projection ((a int100__ref)) int100 
   (int100__content a))
 
-(define-fun dynamic_invariant ((temp___expr_988 Int)
-  (temp___is_init_984 Bool) (temp___skip_constant_985 Bool)
-  (temp___do_toplevel_986 Bool)
-  (temp___do_typ_inv_987 Bool)) Bool (=>
-                                     (or (= temp___is_init_984 true)
-                                     (<= 0 100)) (in_range temp___expr_988)))
+(define-fun dynamic_invariant ((temp___expr_1002 Int)
+  (temp___is_init_998 Bool) (temp___skip_constant_999 Bool)
+  (temp___do_toplevel_1000 Bool)
+  (temp___do_typ_inv_1001 Bool)) Bool (=>
+                                      (or (= temp___is_init_998 true)
+                                      (<= 0 100)) (in_range
+                                      temp___expr_1002)))
 
 (assert
 ;; defqtvc

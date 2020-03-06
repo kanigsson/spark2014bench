@@ -269,6 +269,29 @@
                                     (<= 0 2147483647)) (in_range
                                     temp___expr_39)))
 
+(declare-sort modular 0)
+
+(declare-const attr__ATTRIBUTE_MODULUS (_ BitVec 16))
+
+(declare-fun attr__ATTRIBUTE_IMAGE1 ((_ BitVec 16)) us_image)
+
+(declare-fun attr__ATTRIBUTE_VALUE__pre_check1 (us_image) Bool)
+
+(declare-fun attr__ATTRIBUTE_VALUE1 (us_image) (_ BitVec 16))
+
+(declare-fun user_eq1 (modular modular) Bool)
+
+(declare-const dummy1 modular)
+
+(declare-datatypes ((modular__ref 0))
+(((modular__refqtmk (modular__content modular)))))
+(define-fun modular__ref_modular__content__2__projection ((a modular__ref)) modular 
+  (modular__content a))
+
+(define-fun dynamic_invariant1 ((temp___expr_414 (_ BitVec 16))
+  (temp___is_init_410 Bool) (temp___skip_constant_411 Bool)
+  (temp___do_toplevel_412 Bool) (temp___do_typ_inv_413 Bool)) Bool true)
+
 (declare-sort mask_size 0)
 
 (declare-fun mask_sizeqtint (mask_size) Int)
@@ -280,50 +303,27 @@
 
 (define-fun in_range1 ((x Int)) Bool (and (<= 1 x) (<= x 16)))
 
-(declare-fun attr__ATTRIBUTE_IMAGE1 (Int) us_image)
+(declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
-(declare-fun attr__ATTRIBUTE_VALUE__pre_check1 (us_image) Bool)
+(declare-fun attr__ATTRIBUTE_VALUE__pre_check2 (us_image) Bool)
 
-(declare-fun attr__ATTRIBUTE_VALUE1 (us_image) Int)
+(declare-fun attr__ATTRIBUTE_VALUE2 (us_image) Int)
 
-(declare-fun user_eq1 (mask_size mask_size) Bool)
+(declare-fun user_eq2 (mask_size mask_size) Bool)
 
-(declare-const dummy1 mask_size)
+(declare-const dummy2 mask_size)
 
 (declare-datatypes ((mask_size__ref 0))
 (((mask_size__refqtmk (mask_size__content mask_size)))))
 (define-fun mask_size__ref_mask_size__content__3__projection ((a mask_size__ref)) mask_size 
   (mask_size__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_442 Int)
-  (temp___is_init_438 Bool) (temp___skip_constant_439 Bool)
-  (temp___do_toplevel_440 Bool)
-  (temp___do_typ_inv_441 Bool)) Bool (=>
-                                     (or (= temp___is_init_438 true)
-                                     (<= 1 16)) (in_range1 temp___expr_442)))
-
-(declare-sort modular 0)
-
-(declare-const attr__ATTRIBUTE_MODULUS (_ BitVec 16))
-
-(declare-fun attr__ATTRIBUTE_IMAGE2 ((_ BitVec 16)) us_image)
-
-(declare-fun attr__ATTRIBUTE_VALUE__pre_check2 (us_image) Bool)
-
-(declare-fun attr__ATTRIBUTE_VALUE2 (us_image) (_ BitVec 16))
-
-(declare-fun user_eq2 (modular modular) Bool)
-
-(declare-const dummy2 modular)
-
-(declare-datatypes ((modular__ref 0))
-(((modular__refqtmk (modular__content modular)))))
-(define-fun modular__ref_modular__content__4__projection ((a modular__ref)) modular 
-  (modular__content a))
-
-(define-fun dynamic_invariant2 ((temp___expr_428 (_ BitVec 16))
+(define-fun dynamic_invariant2 ((temp___expr_428 Int)
   (temp___is_init_424 Bool) (temp___skip_constant_425 Bool)
-  (temp___do_toplevel_426 Bool) (temp___do_typ_inv_427 Bool)) Bool true)
+  (temp___do_toplevel_426 Bool)
+  (temp___do_typ_inv_427 Bool)) Bool (=>
+                                     (or (= temp___is_init_424 true)
+                                     (<= 1 16)) (in_range1 temp___expr_428)))
 
 (declare-fun nth1 ((_ BitVec 8) Int) Bool)
 
@@ -615,8 +615,8 @@
   (forall ((v (_ BitVec 16)))
   (forall ((amount Int))
   (! (=>
-     (and (dynamic_invariant2 v true true true true) (dynamic_invariant
-     amount true true true true)) (dynamic_invariant2 (shift_right v amount)
+     (and (dynamic_invariant1 v true true true true) (dynamic_invariant
+     amount true true true true)) (dynamic_invariant1 (shift_right v amount)
      true false true true)) :pattern ((shift_right v amount)) ))))
 
 ;; shift_right__def_axiom
@@ -624,7 +624,7 @@
   (forall ((v (_ BitVec 16)))
   (forall ((amount Int))
   (! (=>
-     (and (dynamic_invariant2 v true true true true) (dynamic_invariant
+     (and (dynamic_invariant1 v true true true true) (dynamic_invariant
      amount true true true true))
      (= (shift_right v amount) (ite (and (<= 1 16) (<= 16 8))
                                ((_ zero_extend 8) (ite (< amount 8)
@@ -641,14 +641,14 @@
 ;; make_mask__post_axiom
   (assert
   (forall ((num_bits Int))
-  (! (=> (dynamic_invariant1 num_bits true true true true)
-     (dynamic_invariant2 (make_mask num_bits) true false true true)) :pattern (
+  (! (=> (dynamic_invariant2 num_bits true true true true)
+     (dynamic_invariant1 (make_mask num_bits) true false true true)) :pattern (
   (make_mask num_bits)) )))
 
 ;; make_mask__def_axiom
   (assert
   (forall ((num_bits Int))
-  (! (=> (dynamic_invariant1 num_bits true true true true)
+  (! (=> (dynamic_invariant2 num_bits true true true true)
      (= (make_mask num_bits) (shift_right #xFFFF (- 16 num_bits)))) :pattern (
   (make_mask num_bits)) )))
 

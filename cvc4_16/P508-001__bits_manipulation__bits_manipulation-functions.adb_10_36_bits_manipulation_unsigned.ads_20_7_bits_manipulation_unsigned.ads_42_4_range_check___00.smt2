@@ -561,12 +561,12 @@
 
 (declare-datatypes ((modular__ref 0))
 (((modular__refqtmk (modular__content modular)))))
-(define-fun modular__ref_modular__content__2__projection ((a modular__ref)) modular 
+(define-fun modular__ref_modular__content__projection ((a modular__ref)) modular 
   (modular__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_361 (_ BitVec 8))
-  (temp___is_init_357 Bool) (temp___skip_constant_358 Bool)
-  (temp___do_toplevel_359 Bool) (temp___do_typ_inv_360 Bool)) Bool true)
+(define-fun dynamic_invariant1 ((temp___expr_354 (_ BitVec 8))
+  (temp___is_init_350 Bool) (temp___skip_constant_351 Bool)
+  (temp___do_toplevel_352 Bool) (temp___do_typ_inv_353 Bool)) Bool true)
 
 (assert
 ;; defqtvc

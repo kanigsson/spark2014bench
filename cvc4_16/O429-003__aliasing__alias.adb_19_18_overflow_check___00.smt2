@@ -132,6 +132,9 @@
                         (to_rep (rec__alias__r__f (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range2 ((rec__alias__r__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__alias__r__d1 (rec__alias__r__d a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

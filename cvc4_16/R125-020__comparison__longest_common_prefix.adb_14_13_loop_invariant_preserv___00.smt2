@@ -399,10 +399,10 @@
   (and (and (<= 1 x) (<= x 1000)) (and (<= 1 r5b) (<= r5b 1000))))
   (forall ((l2 Int) (r5b1 Int) (r8b1 Int))
   (=>
-  (= (let ((temp___204 (of_array a y r8b1)))
-     (let ((temp___203 (of_array a x r5b1)))
-     (bool_eq (to_array temp___203) (first1 temp___203) (last1 temp___203)
-     (to_array temp___204) (first1 temp___204) (last1 temp___204)))) true)
+  (= (let ((temp___208 (of_array a y r8b1)))
+     (let ((temp___207 (of_array a x r5b1)))
+     (bool_eq (to_array temp___207) (first1 temp___207) (last1 temp___207)
+     (to_array temp___208) (first1 temp___208) (last1 temp___208)))) true)
   (=>
   (and
   (and
@@ -410,8 +410,8 @@
   (and (dynamic_invariant2 r5b1 true true true true) (dynamic_invariant2 r8b1
   true true true true)) (dynamic_invariant l2 false true true true))
   (= (+ x l2) r5b1)) (= (+ y l2) r8b1))
-  (forall ((temp___205 Int))
-  (=> (= temp___205 l2)
+  (forall ((temp___209 Int))
+  (=> (= temp___209 l2)
   (let ((o3 (+ l2 1)))
   (=> (in_range1 o3)
   (forall ((l3 Int))
@@ -450,8 +450,8 @@
   (=>
   (=> (<= x r5b2)
   (and (and (<= 1 x) (<= x 1000)) (and (<= 1 r5b2) (<= r5b2 1000))))
-  (= (let ((temp___204 (of_array a y r8b2)))
-     (let ((temp___203 (of_array a x r5b2)))
-     (bool_eq (to_array temp___203) (first1 temp___203) (last1 temp___203)
-     (to_array temp___204) (first1 temp___204) (last1 temp___204)))) true))))))))))))))))))))))))))))))))))))))))))))))))))))
+  (= (let ((temp___208 (of_array a y r8b2)))
+     (let ((temp___207 (of_array a x r5b2)))
+     (bool_eq (to_array temp___207) (first1 temp___207) (last1 temp___207)
+     (to_array temp___208) (first1 temp___208) (last1 temp___208)))) true))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

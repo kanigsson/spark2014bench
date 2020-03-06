@@ -115,6 +115,11 @@
                    (rec__discr__with_default__c (us_split_discrs1 b)))) true
                    false))
 
+(define-fun in_range1 ((rec__discr__with_default__c1 Int)
+  (a us_split_discrs)) Bool (= rec__discr__with_default__c1 (to_rep
+                                                            (rec__discr__with_default__c
+                                                            a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -168,11 +173,6 @@
 (declare-const r18b Int)
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
-
-(define-fun in_range1 ((rec__discr__with_default__c1 Int)
-  (a us_rep)) Bool (= rec__discr__with_default__c1 (to_rep
-                                                   (rec__discr__with_default__c
-                                                   (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 

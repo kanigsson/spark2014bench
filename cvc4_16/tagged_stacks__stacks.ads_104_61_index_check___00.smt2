@@ -660,34 +660,34 @@
 
 (declare-fun temp_____aggregate_def_200 (Int) (Array Int element))
 
-;; temp___result_602'def
+;; temp___result_618'def
   (assert
-  (forall ((temp___601 us_rep1)) (size__function_guard
-  (size (to_base temp___601)) (to_base temp___601))))
+  (forall ((temp___617 us_rep1)) (size__function_guard
+  (size (to_base temp___617)) (to_base temp___617))))
 
-(define-fun default_initial_assumption ((temp___expr_599 us_rep1)
-  (temp___skip_top_level_600 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_615 us_rep1)
+  (temp___skip_top_level_616 Bool)) Bool (and
                                          (and
-                                         (= (attr__tag1 temp___expr_599) 
+                                         (= (attr__tag1 temp___expr_615) 
                                          us_tag1)
                                          (and
                                          (and
                                          (= (to_rep3
                                             (rec__stacks__buffer__first
                                             (us_split_fields3
-                                            temp___expr_599))) 1)
+                                            temp___expr_615))) 1)
                                          (= (rec__stacks__stack_root__content1
                                             (us_split_fields3
-                                            temp___expr_599)) (temp_____aggregate_def_200
+                                            temp___expr_615)) (temp_____aggregate_def_200
                                                               0)))
                                          (= (to_rep
                                             (rec__stacks__stack_root__length1
                                             (us_split_fields3
-                                            temp___expr_599))) 0)))
+                                            temp___expr_615))) 0)))
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_600 true))
-                                         (= (size (to_base temp___expr_599)) 0))))
+                                         (= temp___skip_top_level_616 true))
+                                         (= (size (to_base temp___expr_615)) 0))))
 
 (declare-fun wraps_around (us_rep1) Bool)
 
@@ -1064,61 +1064,61 @@
      (and (forall ((s2 us_rep1)) (last__function_guard (last2 s2) s2))
      (= (get_model s1) (ite (= (wraps_around s1) true)
                        (let ((stacks__get_model__3__R71s (last2 s1)))
-                       (let ((temp___643 (let ((temp___642 (let ((temp___639 1))
-                                                           (let ((temp___640 
+                       (let ((temp___667 (let ((temp___666 (let ((temp___663 1))
+                                                           (let ((temp___664 
                                                            (rec__stacks__stack_root__content1
                                                            (us_split_fields3
                                                            s1))))
                                                            (of_array1
-                                                           temp___640
-                                                           temp___639
+                                                           temp___664
+                                                           temp___663
                                                            stacks__get_model__3__R71s)))))
-                                         (let ((temp___641 (let ((temp___637 100))
-                                                           (let ((temp___636 
+                                         (let ((temp___665 (let ((temp___661 100))
+                                                           (let ((temp___660 
                                                            (to_rep3
                                                            (rec__stacks__buffer__first
                                                            (us_split_fields3
                                                            s1)))))
-                                                           (let ((temp___638 
+                                                           (let ((temp___662 
                                                            (rec__stacks__stack_root__content1
                                                            (us_split_fields3
                                                            s1))))
                                                            (of_array1
-                                                           temp___638
-                                                           temp___636
-                                                           temp___637))))))
-                                         (ite (= (length2 temp___641) 0)
-                                         (of_array1 (to_array1 temp___642)
-                                         (first3 temp___642)
-                                         (last5 temp___642))
+                                                           temp___662
+                                                           temp___660
+                                                           temp___661))))))
+                                         (ite (= (length2 temp___665) 0)
+                                         (of_array1 (to_array1 temp___666)
+                                         (first3 temp___666)
+                                         (last5 temp___666))
                                          (of_array1
                                          (slide
-                                         (concat1 (to_array1 temp___641)
-                                         (first3 temp___641)
-                                         (last5 temp___641)
-                                         (to_array1 temp___642)
-                                         (first3 temp___642)
-                                         (last5 temp___642))
-                                         (first3 temp___641) 1) 1
+                                         (concat1 (to_array1 temp___665)
+                                         (first3 temp___665)
+                                         (last5 temp___665)
+                                         (to_array1 temp___666)
+                                         (first3 temp___666)
+                                         (last5 temp___666))
+                                         (first3 temp___665) 1) 1
                                          (- (+ 1 (+ (length1
-                                                    (first3 temp___641)
-                                                    (last5 temp___641)) 
-                                         (length1 (first3 temp___642)
-                                         (last5 temp___642)))) 1)))))))
-                       (of_array (to_array1 temp___643) (first3 temp___643)
-                       (last5 temp___643))))
+                                                    (first3 temp___665)
+                                                    (last5 temp___665)) 
+                                         (length1 (first3 temp___666)
+                                         (last5 temp___666)))) 1)))))))
+                       (of_array (to_array1 temp___667) (first3 temp___667)
+                       (last5 temp___667))))
                        (let ((stacks__get_model__3__R74s (last2 s1)))
-                       (let ((temp___647 (let ((temp___645 (to_rep3
+                       (let ((temp___671 (let ((temp___669 (to_rep3
                                                            (rec__stacks__buffer__first
                                                            (us_split_fields3
                                                            s1)))))
-                                         (let ((temp___646 (rec__stacks__stack_root__content1
+                                         (let ((temp___670 (rec__stacks__stack_root__content1
                                                            (us_split_fields3
                                                            s1))))
-                                         (of_array1 temp___646 temp___645
+                                         (of_array1 temp___670 temp___669
                                          stacks__get_model__3__R74s)))))
-                       (of_array (to_array1 temp___647) (first3 temp___647)
-                       (last5 temp___647))))))))) :pattern ((get_model s1)) )))
+                       (of_array (to_array1 temp___671) (first3 temp___671)
+                       (last5 temp___671))))))))) :pattern ((get_model s1)) )))
 
 (declare-const rliteral element)
 
@@ -1132,12 +1132,12 @@
   (forall ((temp___203 Int))
   (= (select (temp_____aggregate_def_200 temp___202) temp___203) rliteral)))))
 
-(define-fun dynamic_invariant5 ((temp___expr_590 Int)
-  (temp___is_init_586 Bool) (temp___skip_constant_587 Bool)
-  (temp___do_toplevel_588 Bool)
-  (temp___do_typ_inv_589 Bool)) Bool (=>
-                                     (or (= temp___is_init_586 true)
-                                     (<= 1 100)) (in_range4 temp___expr_590)))
+(define-fun dynamic_invariant5 ((temp___expr_606 Int)
+  (temp___is_init_602 Bool) (temp___skip_constant_603 Bool)
+  (temp___do_toplevel_604 Bool)
+  (temp___do_typ_inv_605 Bool)) Bool (=>
+                                     (or (= temp___is_init_602 true)
+                                     (<= 1 100)) (in_range4 temp___expr_606)))
 
 (define-fun in_range6 ((x Int)) Bool (or (= x 0) (= x 1)))
 
@@ -1180,13 +1180,13 @@
   (=> (is_empty__function_guard (is_empty (to_base s)) (to_base s))
   (=> (not (= (is_empty (to_base s)) true))
   (let ((o s))
-  (let ((temp___1035 (last2 o)))
+  (let ((temp___1071 (last2 o)))
   (=>
   (forall ((o1 us_rep1)) (wraps_around__function_guard (wraps_around o1) o1))
   (=>
-  (and (last__function_guard temp___1035 o)
-  (and (dynamic_invariant temp___1035 true false true true)
-  (= temp___1035 (ite (not (= (wraps_around o) true))
+  (and (last__function_guard temp___1071 o)
+  (and (dynamic_invariant temp___1071 true false true true)
+  (= temp___1071 (ite (not (= (wraps_around o) true))
                  (- (+ (to_rep3
                        (rec__stacks__buffer__first (us_split_fields3 o))) 
                  (to_rep
@@ -1195,5 +1195,5 @@
                           (rec__stacks__buffer__first (us_split_fields3 o))) 
                  (to_rep
                  (rec__stacks__stack_root__length1 (us_split_fields3 o)))) 1) 100)))))
-  (<= 1 temp___1035)))))))))
+  (<= 1 temp___1071)))))))))
 (check-sat)

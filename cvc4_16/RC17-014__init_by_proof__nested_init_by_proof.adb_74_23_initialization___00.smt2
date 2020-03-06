@@ -213,6 +213,10 @@
                                                    (us_split_fields1 b))))))))
                    true false))
 
+(define-fun in_range3 ((rec__nested_init_by_proof__rec__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__nested_init_by_proof__rec__d1 (rec__nested_init_by_proof__rec__d
+                                                                  a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -529,6 +533,10 @@
                             (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range4 ((rec__nested_init_by_proof__holder__d1 Int)
+  (a us_split_discrs2)) Bool (= rec__nested_init_by_proof__holder__d1 
+  (to_rep (rec__nested_init_by_proof__holder__d a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -593,7 +601,7 @@
   (assert
   (forall ((i tT6bP1)) (and (<= 1 (tT6bP1qtint i)) (<= (tT6bP1qtint i) 15))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 15)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 15)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -681,12 +689,6 @@
                             (us_split_fields5 b)) 1 15) true))
                     true false))
 
-(define-fun in_range4 ((rec__nested_init_by_proof__holder__d1 Int)
-  (a us_rep1)) Bool (= rec__nested_init_by_proof__holder__d1 (to_rep
-                                                             (rec__nested_init_by_proof__holder__d
-                                                             (us_split_discrs3
-                                                             a)))))
-
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -753,7 +755,8 @@
   (temp___do_typ_inv_244 Bool)) Bool (=>
                                      (not (= temp___skip_constant_242 true))
                                      (in_range4 15
-                                     (to_base temp___expr_245))))
+                                     (us_split_discrs3
+                                     (to_base temp___expr_245)))))
 
 (define-fun default_initial_assumption1 ((temp___expr_249 us_rep2)
   (temp___skip_top_level_250 Bool)) Bool (and
@@ -811,10 +814,6 @@
                                                     temp___expr_249)) temp___253)))) false))))))))
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
-
-(define-fun in_range5 ((rec__nested_init_by_proof__rec__d1 Bool)
-  (a us_rep)) Bool (= rec__nested_init_by_proof__rec__d1 (rec__nested_init_by_proof__rec__d
-                                                         (us_split_discrs1 a))))
 
 (declare-const value__size5 Int)
 
@@ -915,8 +914,8 @@
   (temp___do_toplevel_260 Bool)
   (temp___do_typ_inv_261 Bool)) Bool (=>
                                      (not (= temp___skip_constant_259 true))
-                                     (in_range5 (distinct 1 0)
-                                     temp___expr_262)))
+                                     (in_range3 (distinct 1 0)
+                                     (us_split_discrs1 temp___expr_262))))
 
 (define-fun default_initial_assumption2 ((temp___expr_264 us_rep)
   (temp___skip_top_level_265 Bool)) Bool (and
@@ -949,10 +948,6 @@
                                             (rec__nested_init_by_proof__rec__f1
                                             (us_split_fields1
                                             temp___expr_264))) true))))))
-
-(define-fun in_range6 ((rec__nested_init_by_proof__rec__d1 Bool)
-  (a us_rep)) Bool (= rec__nested_init_by_proof__rec__d1 (rec__nested_init_by_proof__rec__d
-                                                         (us_split_discrs1 a))))
 
 (declare-const value__size6 Int)
 

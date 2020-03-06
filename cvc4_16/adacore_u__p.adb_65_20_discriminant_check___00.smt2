@@ -318,6 +318,10 @@
                                                    (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range3 ((rec__p__search_result__found1 Bool)
+  (a1 us_split_discrs)) Bool (= rec__p__search_result__found1 (rec__p__search_result__found
+                                                              a1)))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -402,10 +406,6 @@
                                      2147483647 (first1 temp___expr_161)
                                      (last1 temp___expr_161))))
 
-(define-fun in_range3 ((rec__p__search_result__found1 Bool)
-  (a1 us_rep)) Bool (= rec__p__search_result__found1 (rec__p__search_result__found
-                                                     (us_split_discrs1 a1))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -461,10 +461,6 @@
 (((t18b__refqtmk (t18b__content us_rep)))))
 (define-fun t18b__ref_t18b__content__projection ((a1 t18b__ref)) us_rep 
   (t18b__content a1))
-
-(define-fun in_range4 ((rec__p__search_result__found1 Bool)
-  (a1 us_rep)) Bool (= rec__p__search_result__found1 (rec__p__search_result__found
-                                                     (us_split_discrs1 a1))))
 
 (declare-const value__size3 Int)
 
@@ -537,11 +533,11 @@
   (=> (dynamic_invariant1 a true false true true)
   (=> (dynamic_invariant e true false true true)
   (=> (not (= result____attr__constrained true))
-  (let ((temp___286 (first1 a)))
+  (let ((temp___287 (first1 a)))
   (forall ((i Int))
-  (=> (= i temp___286)
+  (=> (= i temp___287)
   (=>
-  (= (and (ite (<= temp___286 i) true false) (ite (<= i (last1 a)) true
+  (= (and (ite (<= temp___287 i) true false) (ite (<= i (last1 a)) true
                                              false)) true)
   (forall ((i1 Int))
   (=>

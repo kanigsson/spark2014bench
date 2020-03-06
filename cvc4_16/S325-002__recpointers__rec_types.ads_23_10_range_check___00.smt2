@@ -381,6 +381,11 @@
                             (us_split_fields1 b))) true)))
                     true false))
 
+(define-fun in_range3 ((rec__rec_types__test2__tree_node__d1 Int)
+  (a us_split_discrs)) Bool (= rec__rec_types__test2__tree_node__d1 (to_rep
+                                                                    (rec__rec_types__test2__tree_node__d
+                                                                    a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -467,7 +472,7 @@
                                     (<= 1 2147483647)) (in_range1
                                     temp___expr_46)))
 
-(define-fun in_range3 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range4 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Bool) us_image)
 

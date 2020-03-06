@@ -88,6 +88,6 @@
   (=> (< 0 par1)
   (=> (dynamic_invariant x false false true true)
   (=> (< x1 par2)
-  (=> (dynamic_invariant x1 false true true true)
-  (=> (dynamic_invariant par2 true true true true) (in_range (- par2 1)))))))))))
+  (=> (dynamic_invariant par2 true true true true)
+  (=> (dynamic_invariant x1 false true true true) (in_range (- par2 1)))))))))))
 (check-sat)

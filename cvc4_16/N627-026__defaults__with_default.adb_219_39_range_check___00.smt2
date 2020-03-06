@@ -169,6 +169,10 @@
                                                   (us_split_discrs1 b))))
                    true false))
 
+(define-fun in_range2 ((rec__with_default__bad_nested_defaults2__empty_rec__d1 Int)
+  (a us_split_discrs)) Bool (= rec__with_default__bad_nested_defaults2__empty_rec__d1 
+  (to_rep (rec__with_default__bad_nested_defaults2__empty_rec__d a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -381,7 +385,7 @@
   (assert
   (forall ((i t29b)) (and (<= 1 (t29bqtint i)) (<= (t29bqtint i) 100))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 

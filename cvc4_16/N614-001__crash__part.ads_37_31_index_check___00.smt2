@@ -420,8 +420,8 @@
      (and (and (< (length1 p) (length s)) (= (ascending p) true))
      (forall ((i Int))
      (=> (and (<= (first3 p) i) (<= i (last3 p)))
-     (and (<= (first1 s) (to_rep (select (to_array1 p) i)))
-     (<= (to_rep (select (to_array1 p) i)) (last1 s)))))))) :pattern (
+     (let ((temp___209 (to_rep (select (to_array1 p) i))))
+     (and (<= (first1 s) temp___209) (<= temp___209 (last1 s))))))))) :pattern (
   (is_partition s p)) ))))
 
 (declare-const a us_t)

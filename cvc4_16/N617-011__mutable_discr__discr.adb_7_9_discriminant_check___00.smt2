@@ -118,6 +118,11 @@
                    (to_rep (rec__discr__no_default__c (us_split_discrs1 b))))
                    true false))
 
+(define-fun in_range1 ((rec__discr__no_default__c1 Int)
+  (a us_split_discrs)) Bool (= rec__discr__no_default__c1 (to_rep
+                                                          (rec__discr__no_default__c
+                                                          a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -162,11 +167,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
-(define-fun in_range1 ((rec__discr__no_default__c1 Int)
-  (a us_rep)) Bool (= rec__discr__no_default__c1 (to_rep
-                                                 (rec__discr__no_default__c
-                                                 (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -207,11 +207,6 @@
 (define-fun t1b__ref_t1b__content__projection ((a t1b__ref)) us_rep (t1b__content
                                                                     a))
 
-(define-fun in_range2 ((rec__discr__no_default__c1 Int)
-  (a us_rep)) Bool (= rec__discr__no_default__c1 (to_rep
-                                                 (rec__discr__no_default__c
-                                                 (us_split_discrs1 a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -251,11 +246,6 @@
 (((t2b__refqtmk (t2b__content us_rep)))))
 (define-fun t2b__ref_t2b__content__projection ((a t2b__ref)) us_rep (t2b__content
                                                                     a))
-
-(define-fun in_range3 ((rec__discr__no_default__c1 Int)
-  (a us_rep)) Bool (= rec__discr__no_default__c1 (to_rep
-                                                 (rec__discr__no_default__c
-                                                 (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 

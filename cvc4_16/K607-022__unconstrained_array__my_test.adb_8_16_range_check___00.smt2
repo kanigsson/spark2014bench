@@ -533,6 +533,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range6 ((rec__simple_unc_arrays__table__last1 Int)
+  (a us_split_discrs)) Bool (= rec__simple_unc_arrays__table__last1 (to_rep
+                                                                    (rec__simple_unc_arrays__table__last
+                                                                    a))))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -628,7 +633,7 @@
   (assert
   (forall ((i tT9bP1)) (and (<= 1 (tT9bP1qtint i)) (<= (tT9bP1qtint i) 10))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -716,12 +721,6 @@
                             (us_split_fields3 b)) 1 10) true))
                     true false))
 
-(define-fun in_range7 ((rec__simple_unc_arrays__table__last1 Int)
-  (a us_rep)) Bool (= rec__simple_unc_arrays__table__last1 (to_rep
-                                                           (rec__simple_unc_arrays__table__last
-                                                           (us_split_discrs1
-                                                           a)))))
-
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -787,8 +786,9 @@
   (temp___do_toplevel_210 Bool)
   (temp___do_typ_inv_211 Bool)) Bool (=>
                                      (not (= temp___skip_constant_209 true))
-                                     (in_range7 10
-                                     (to_base temp___expr_212))))
+                                     (in_range6 10
+                                     (us_split_discrs1
+                                     (to_base temp___expr_212)))))
 
 (define-fun default_initial_assumption ((temp___expr_215 us_rep1)
   (temp___skip_top_level_216 Bool)) Bool (= (to_rep
@@ -1085,12 +1085,6 @@
                             (us_split_fields5 b)) 1 10) true))
                     true false))
 
-(define-fun in_range9 ((rec__simple_unc_arrays__table__last1 Int)
-  (a us_rep)) Bool (= rec__simple_unc_arrays__table__last1 (to_rep
-                                                           (rec__simple_unc_arrays__table__last
-                                                           (us_split_discrs1
-                                                           a)))))
-
 (declare-const value__size6 Int)
 
 (declare-const object__size6 Int)
@@ -1155,7 +1149,7 @@
   (assert
   (forall ((i tT6bP1)) (and (<= 1 (tT6bP1qtint i)) (<= (tT6bP1qtint i) 10))))
 
-(define-fun in_range10 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
+(define-fun in_range9 ((x Int)) Bool (and (<= 1 x) (<= x 10)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE8 (Int) us_image)
 
@@ -1242,12 +1236,6 @@
                             (rec__simple_unc_arrays__table__v3
                             (us_split_fields7 b)) 1 10) true))
                     true false))
-
-(define-fun in_range11 ((rec__simple_unc_arrays__table__last1 Int)
-  (a us_rep)) Bool (= rec__simple_unc_arrays__table__last1 (to_rep
-                                                           (rec__simple_unc_arrays__table__last
-                                                           (us_split_discrs1
-                                                           a)))))
 
 (declare-const value__size8 Int)
 

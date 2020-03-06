@@ -283,13 +283,12 @@
   (forall ((k Int))
   (=> (and (<= 1 k) (<= k j1)) (= (to_rep (select x11 k)) 2)))
   (and
-  (= (and (ite (and
-               (forall ((temp___202 Int))
-               (=> (and (<= 1 temp___202) (<= temp___202 10))
+  (= (and (ite (and (in_range3 j1)
+               (forall ((temp___203 Int))
+               (=> (and (<= 1 temp___203) (<= temp___203 10))
                (=>
-               (or (< 10 temp___202) (or (< temp___202 1) (< j1 temp___202)))
-               (= (select x11 temp___202) (select x10 temp___202)))))
-               (in_range3 j1))
+               (or (< 10 temp___203) (or (< temp___203 1) (< j1 temp___203)))
+               (= (select x11 temp___203) (select x10 temp___203))))))
           true false) (ite (and (<= 1 j1) (<= j1 10)) true false)) true)
   (= j1 10)))))) (= x11 x10))))
   (=> (<= 1 temp___207)

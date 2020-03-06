@@ -146,6 +146,9 @@
                         (rec__q__t__c (us_split_fields1 b)) 1 0)))))
                    true false))
 
+(define-fun in_range2 ((rec__q__t__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__q__t__b1 (rec__q__t__b a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

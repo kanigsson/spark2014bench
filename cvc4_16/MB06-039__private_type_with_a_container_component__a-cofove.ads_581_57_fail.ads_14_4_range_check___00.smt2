@@ -144,6 +144,10 @@
                            (rec__fail__my_lists__vector (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range2 ((rec__fail__my_lists__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__fail__my_lists__vector__capacity1 
+  (to_rep (rec__fail__my_lists__vector__capacity a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -310,7 +314,7 @@
   (forall ((i extended_index))
   (and (<= 0 (extended_indexqtint i)) (<= (extended_indexqtint i) 4))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 4)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 4)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -332,7 +336,7 @@
   (temp___do_toplevel_293 Bool)
   (temp___do_typ_inv_294 Bool)) Bool (=>
                                      (or (= temp___is_init_291 true)
-                                     (<= 0 4)) (in_range2 temp___expr_295)))
+                                     (<= 0 4)) (in_range3 temp___expr_295)))
 
 (declare-fun first_index__function_guard (Int us_rep) Bool)
 
@@ -345,7 +349,7 @@
   (forall ((i index_type))
   (and (<= 1 (index_typeqtint i)) (<= (index_typeqtint i) 3))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 3)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -367,7 +371,7 @@
   (temp___do_toplevel_247 Bool)
   (temp___do_typ_inv_248 Bool)) Bool (=>
                                      (or (= temp___is_init_245 true)
-                                     (<= 1 3)) (in_range3 temp___expr_249)))
+                                     (<= 1 3)) (in_range4 temp___expr_249)))
 
 (declare-const container__split_discrs us_split_discrs)
 
@@ -390,7 +394,7 @@
   (forall ((i count_type))
   (and (<= 0 (count_typeqtint i)) (<= (count_typeqtint i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -412,7 +416,7 @@
   (temp___do_toplevel_202 Bool)
   (temp___do_typ_inv_203 Bool)) Bool (=>
                                      (or (= temp___is_init_200 true)
-                                     (<= 0 2147483647)) (in_range4
+                                     (<= 0 2147483647)) (in_range5
                                      temp___expr_204)))
 
 ;; oeq__post_axiom
@@ -430,7 +434,7 @@
   (forall ((i extended_index1))
   (and (<= 0 (extended_indexqtint1 i)) (<= (extended_indexqtint1 i) 3))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 3)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 3)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -452,7 +456,7 @@
   (temp___do_toplevel_261 Bool)
   (temp___do_typ_inv_262 Bool)) Bool (=>
                                      (or (= temp___is_init_259 true)
-                                     (<= 0 3)) (in_range5 temp___expr_263)))
+                                     (<= 0 3)) (in_range6 temp___expr_263)))
 
 ;; length__post_axiom
   (assert
@@ -471,7 +475,7 @@
   (and (<= (- 2147483648) (element_typeqtint i))
   (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range7 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
@@ -495,7 +499,7 @@
   (temp___do_typ_inv_276 Bool)) Bool (=>
                                      (or (= temp___is_init_273 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range6 temp___expr_277)))
+                                     (in_range7 temp___expr_277)))
 
 ;; get__post_axiom
   (assert
@@ -519,5 +523,5 @@
   (<= index (last_index
             (us_repqtmk container__split_discrs
             (us_split_fieldsqtmk container__split_fields))))
-  (in_range4 (- index 1)))))))))
+  (in_range5 (- index 1)))))))))
 (check-sat)

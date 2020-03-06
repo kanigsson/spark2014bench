@@ -124,6 +124,27 @@
 (define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun to_rep ((x integer)) Int (integerqtint x))
+
+(declare-fun of_rep (Int) integer)
+
+;; inversion_axiom
+  (assert
+  (forall ((x integer)) (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x integer)) (! (in_range (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                           (of_rep x))) )))
+
+(define-fun in_range2 ((rec__p__pt__j1 Int)
+  (a us_split_discrs)) Bool (= rec__p__pt__j1 (to_rep (rec__p__pt__j a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -203,28 +224,6 @@
 (define-fun of_base ((r us_rep)) us_rep1 (us_repqtmk1 (us_split_discrs1 r)
                                          (us_split_fieldsqtmk1
                                          (rec__p__pt__x (us_split_fields1 r)))))
-
-(define-fun to_rep ((x integer)) Int (integerqtint x))
-
-(declare-fun of_rep (Int) integer)
-
-;; inversion_axiom
-  (assert
-  (forall ((x integer)) (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
-
-;; range_axiom
-  (assert
-  (forall ((x integer)) (! (in_range (to_rep x)) :pattern ((to_rep x)) )))
-
-;; coerce_axiom
-  (assert
-  (forall ((x Int))
-  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
-                                                           (of_rep x))) )))
-
-(define-fun in_range2 ((rec__p__pt__j1 Int)
-  (a us_rep)) Bool (= rec__p__pt__j1 (to_rep
-                                     (rec__p__pt__j (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 
@@ -311,7 +310,8 @@
   (temp___do_typ_inv_185 Bool)) Bool (=>
                                      (not (= temp___skip_constant_183 true))
                                      (in_range2 (- 1)
-                                     (to_base temp___expr_186))))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_186)))))
 
 ;; temp___result_191'def
   (assert (zero__function_guard (zero Tuple0) Tuple0))

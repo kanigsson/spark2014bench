@@ -257,13 +257,13 @@
                (and
                (and
                (and
-               (and (dynamic_invariant w1 false true true true)
+               (and (dynamic_invariant r1 false true true true)
+               (dynamic_invariant w1 false true true true))
                (dynamic_invariant x1 false true true true))
                (dynamic_invariant y1 false true true true))
                (dynamic_invariant c1 false true true true))
                (dynamic_invariant d2 false true true true))
                (dynamic_invariant q1 false true true true))
-               (dynamic_invariant r1 false true true true))
           true false) (ite (not (= d2 1)) true false)) true)
   (not (= d2 0)))))))))))))))))
 (check-sat)

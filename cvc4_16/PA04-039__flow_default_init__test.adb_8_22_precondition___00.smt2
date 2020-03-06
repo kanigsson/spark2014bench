@@ -420,6 +420,10 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range5 ((rec__bounded_strings__bounded_string__bound1 Int)
+  (a us_split_discrs)) Bool (= rec__bounded_strings__bounded_string__bound1 
+  (to_rep (rec__bounded_strings__bounded_string__bound a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -500,7 +504,7 @@
   (assert
   (forall ((i tT2sP1)) (and (<= 1 (tT2sP1qtint i)) (<= (tT2sP1qtint i) 60))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 60)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 60)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -600,12 +604,6 @@
                                                    (rec__bounded_strings__bounded_string__length1
                                                    (us_split_fields3 b))))))
                     true false))
-
-(define-fun in_range6 ((rec__bounded_strings__bounded_string__bound1 Int)
-  (a us_rep)) Bool (= rec__bounded_strings__bounded_string__bound1 (to_rep
-                                                                   (rec__bounded_strings__bounded_string__bound
-                                                                   (us_split_discrs1
-                                                                   a)))))
 
 (declare-const value__size3 Int)
 
@@ -757,11 +755,12 @@
 
 (define-fun dynamic_invariant ((temp___expr_181 us_rep2)
   (temp___is_init_177 Bool) (temp___skip_constant_178 Bool)
-  (temp___do_toplevel_179 Bool) (temp___do_typ_inv_180 Bool)) Bool (in_range6
+  (temp___do_toplevel_179 Bool) (temp___do_typ_inv_180 Bool)) Bool (in_range5
   60
+  (us_split_discrs1
   (to_base
   (rec__test__tlv_record__filestore_message
-  (us_split_fields5 temp___expr_181)))))
+  (us_split_fields5 temp___expr_181))))))
 
 ;; temp___result_196'def
   (assert

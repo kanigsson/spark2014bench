@@ -750,7 +750,7 @@
                                      (or (= temp___is_init_316 true)
                                      (<= 1 4)) (in_range9 temp___expr_320)))
 
-(declare-fun temp_____aggregate_def_342 (Int) (Array Int character))
+(declare-fun temp_____aggregate_def_343 (Int) (Array Int character))
 
 (define-fun dynamic_invariant6 ((temp___expr_74 Int) (temp___is_init_70 Bool)
   (temp___skip_constant_71 Bool) (temp___do_toplevel_72 Bool)
@@ -818,10 +818,10 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___344 Int))
-  (=> (dynamic_invariant6 temp___344 true true true true)
   (forall ((temp___345 Int))
-  (= (to_rep (select (temp_____aggregate_def_342 temp___344) temp___345)) temp___344)))))
+  (=> (dynamic_invariant6 temp___345 true true true true)
+  (forall ((temp___346 Int))
+  (= (to_rep (select (temp_____aggregate_def_343 temp___345) temp___346)) temp___345)))))
 
 (define-fun dynamic_invariant9 ((temp___expr_195 Int)
   (temp___is_init_191 Bool) (temp___skip_constant_192 Bool)
@@ -848,7 +848,7 @@
   (=> (dynamic_invariant4 digit_2 false false true true)
   (=> (dynamic_invariant4 digit_1 false false true true)
   (=> (dynamic_invariant4 digit_0 false false true true)
-  (=> (= text (temp_____aggregate_def_342 32))
+  (=> (= text (temp_____aggregate_def_343 32))
   (=> (= i 1)
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i 4) true false)) true)
   (=> (in_range1 (* 4 (- i 1)))

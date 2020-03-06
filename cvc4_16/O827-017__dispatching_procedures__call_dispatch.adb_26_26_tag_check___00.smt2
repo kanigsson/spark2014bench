@@ -528,6 +528,10 @@
                          (rec__dispatch__mut_rec__i (us_split_fields3 b)))))
                     true false))
 
+(define-fun in_range4 ((rec__dispatch__mut_rec__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__dispatch__mut_rec__d1 (rec__dispatch__mut_rec__d
+                                                          a)))
+
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -748,12 +752,12 @@
 (declare-fun p__specific_post (Int us_rep us_split_fields Int us_split_fields
   Int Int Int Int us_t (Array Int natural) integer integer
   (Array Int natural) integer integer us_rep1 us_split_fields2
-  us_split_discrs Bool us_split_fields2 us_split_discrs Bool Int
-  (Array Int natural) us_private us_split_fields2 us_split_discrs Int
-  us_split_fields2 us_split_discrs (Array Int natural) us_split_fields2
-  us_split_discrs (Array Int natural) us_split_fields us_split_fields Int Int
+  us_split_discrs Bool us_split_fields2 us_split_discrs Bool Int us_private
+  (Array Int natural) us_split_fields2 us_split_discrs Int us_split_fields2
+  us_split_discrs (Array Int natural) us_split_fields2 us_split_discrs
+  (Array Int natural) us_split_fields us_split_fields Int Int
   (Array Int natural) (Array Int natural) us_split_fields2 us_split_discrs
-  us_split_fields2 us_split_discrs Int (Array Int natural) us_private
+  us_split_fields2 us_split_discrs Int us_private (Array Int natural)
   us_split_fields2 us_split_discrs Int us_split_fields2 us_split_discrs
   (Array Int natural) us_split_fields2 us_split_discrs
   (Array Int natural)) Bool)
@@ -808,7 +812,7 @@
      dispatch__p__y3 z1 dispatch__p__z2 z2__first1 z2__last1 dispatch__p__z3
      z3__first1 z3__last1 w1 dispatch__p__w2__fields dispatch__p__w2__discrs
      w2__attr__constrained1 dispatch__p__w3__fields dispatch__p__w3__discrs
-     w3__attr__constrained1 dispatch__c1 dispatch__a3 dispatch__c2
+     w3__attr__constrained1 dispatch__c1 dispatch__c2 dispatch__a3
      dispatch__r1__fields dispatch__r1__discrs dispatch__c3
      dispatch__r2__fields dispatch__r2__discrs dispatch__a1
      dispatch__r3__fields dispatch__r3__discrs dispatch__a2
@@ -816,8 +820,8 @@
      dispatch__p__y2__old dispatch__p__y3__old dispatch__p__z2__old
      dispatch__p__z3__old dispatch__p__w2__old__fields
      dispatch__p__w2__old__discrs dispatch__p__w3__old__fields
-     dispatch__p__w3__old__discrs dispatch__c1__old dispatch__a3__old
-     dispatch__c2__old dispatch__r1__old__fields dispatch__r1__old__discrs
+     dispatch__p__w3__old__discrs dispatch__c1__old dispatch__c2__old
+     dispatch__a3__old dispatch__r1__old__fields dispatch__r1__old__discrs
      dispatch__c3__old dispatch__r2__old__fields dispatch__r2__old__discrs
      dispatch__a1__old dispatch__r3__old__fields dispatch__r3__old__discrs
      dispatch__a2__old)
@@ -861,15 +865,15 @@
   z2__first1 z2__last1 dispatch__p__z3 z3__first1 z3__last1 w1
   dispatch__p__w2__fields dispatch__p__w2__discrs w2__attr__constrained1
   dispatch__p__w3__fields dispatch__p__w3__discrs w3__attr__constrained1
-  dispatch__c1 dispatch__a3 dispatch__c2 dispatch__r1__fields
+  dispatch__c1 dispatch__c2 dispatch__a3 dispatch__r1__fields
   dispatch__r1__discrs dispatch__c3 dispatch__r2__fields dispatch__r2__discrs
   dispatch__a1 dispatch__r3__fields dispatch__r3__discrs dispatch__a2
   dispatch__p__x2__old__fields dispatch__p__x3__old__fields
   dispatch__p__y2__old dispatch__p__y3__old dispatch__p__z2__old
   dispatch__p__z3__old dispatch__p__w2__old__fields
   dispatch__p__w2__old__discrs dispatch__p__w3__old__fields
-  dispatch__p__w3__old__discrs dispatch__c1__old dispatch__a3__old
-  dispatch__c2__old dispatch__r1__old__fields dispatch__r1__old__discrs
+  dispatch__p__w3__old__discrs dispatch__c1__old dispatch__c2__old
+  dispatch__a3__old dispatch__r1__old__fields dispatch__r1__old__discrs
   dispatch__c3__old dispatch__r2__old__fields dispatch__r2__old__discrs
   dispatch__a1__old dispatch__r3__old__fields dispatch__r3__old__discrs
   dispatch__a2__old)) )))))))))))))
@@ -924,7 +928,7 @@
      dispatch__p__y3 z1 dispatch__p__z2 z2__first1 z2__last1 dispatch__p__z3
      z3__first1 z3__last1 w1 dispatch__p__w2__fields dispatch__p__w2__discrs
      w2__attr__constrained1 dispatch__p__w3__fields dispatch__p__w3__discrs
-     w3__attr__constrained1 dispatch__c1 dispatch__a3 dispatch__c2
+     w3__attr__constrained1 dispatch__c1 dispatch__c2 dispatch__a3
      dispatch__r1__fields dispatch__r1__discrs dispatch__c3
      dispatch__r2__fields dispatch__r2__discrs dispatch__a1
      dispatch__r3__fields dispatch__r3__discrs dispatch__a2
@@ -932,8 +936,8 @@
      dispatch__p__y2__old dispatch__p__y3__old dispatch__p__z2__old
      dispatch__p__z3__old dispatch__p__w2__old__fields
      dispatch__p__w2__old__discrs dispatch__p__w3__old__fields
-     dispatch__p__w3__old__discrs dispatch__c1__old dispatch__a3__old
-     dispatch__c2__old dispatch__r1__old__fields dispatch__r1__old__discrs
+     dispatch__p__w3__old__discrs dispatch__c1__old dispatch__c2__old
+     dispatch__a3__old dispatch__r1__old__fields dispatch__r1__old__discrs
      dispatch__c3__old dispatch__r2__old__fields dispatch__r2__old__discrs
      dispatch__a1__old dispatch__r3__old__fields dispatch__r3__old__discrs
      dispatch__a2__old)
@@ -978,15 +982,15 @@
   z2__first1 z2__last1 dispatch__p__z3 z3__first1 z3__last1 w1
   dispatch__p__w2__fields dispatch__p__w2__discrs w2__attr__constrained1
   dispatch__p__w3__fields dispatch__p__w3__discrs w3__attr__constrained1
-  dispatch__c1 dispatch__a3 dispatch__c2 dispatch__r1__fields
+  dispatch__c1 dispatch__c2 dispatch__a3 dispatch__r1__fields
   dispatch__r1__discrs dispatch__c3 dispatch__r2__fields dispatch__r2__discrs
   dispatch__a1 dispatch__r3__fields dispatch__r3__discrs dispatch__a2
   dispatch__p__x2__old__fields dispatch__p__x3__old__fields
   dispatch__p__y2__old dispatch__p__y3__old dispatch__p__z2__old
   dispatch__p__z3__old dispatch__p__w2__old__fields
   dispatch__p__w2__old__discrs dispatch__p__w3__old__fields
-  dispatch__p__w3__old__discrs dispatch__c1__old dispatch__a3__old
-  dispatch__c2__old dispatch__r1__old__fields dispatch__r1__old__discrs
+  dispatch__p__w3__old__discrs dispatch__c1__old dispatch__c2__old
+  dispatch__a3__old dispatch__r1__old__fields dispatch__r1__old__discrs
   dispatch__c3__old dispatch__r2__old__fields dispatch__r2__old__discrs
   dispatch__a1__old dispatch__r3__old__fields dispatch__r3__old__discrs
   dispatch__a2__old)) )))))))))))))
@@ -1294,7 +1298,7 @@
   (us_split_fieldsqtmk1 w2__split_fields1)
   (us_split_discrsqtmk w2__split_discrs1) w2__attr__constrained
   (us_split_fieldsqtmk1 w3__split_fields1)
-  (us_split_discrsqtmk w3__split_discrs1) w3__attr__constrained c1 a32 c21
+  (us_split_discrsqtmk w3__split_discrs1) w3__attr__constrained c1 c21 a32
   (us_split_fieldsqtmk1 r1__split_fields)
   (us_split_discrsqtmk r1__split_discrs) c32
   (us_split_fieldsqtmk1 r2__split_fields2)
@@ -1304,7 +1308,7 @@
   x3__split_fields y2 y3 z2 z3 (us_split_fieldsqtmk1 w2__split_fields)
   (us_split_discrsqtmk w2__split_discrs)
   (us_split_fieldsqtmk1 w3__split_fields)
-  (us_split_discrsqtmk w3__split_discrs) c11 a31 c2
+  (us_split_discrsqtmk w3__split_discrs) c11 c2 a31
   (us_split_fieldsqtmk1 r1__split_fields1)
   (us_split_discrsqtmk r1__split_discrs1) c31
   (us_split_fieldsqtmk1 r2__split_fields1)
@@ -1364,7 +1368,7 @@
   (us_split_fieldsqtmk1 w2__split_fields2)
   (us_split_discrsqtmk w2__split_discrs2) w2__attr__constrained
   (us_split_fieldsqtmk1 w3__split_fields2)
-  (us_split_discrsqtmk w3__split_discrs2) w3__attr__constrained c1 a34 c22
+  (us_split_discrsqtmk w3__split_discrs2) w3__attr__constrained c1 c22 a34
   (us_split_fieldsqtmk1 r1__split_fields)
   (us_split_discrsqtmk r1__split_discrs) c34
   (us_split_fieldsqtmk1 r2__split_fields4)
@@ -1374,7 +1378,7 @@
   v3__split_fields y21 y31 z21 z31 (us_split_fieldsqtmk1 w2__split_fields1)
   (us_split_discrsqtmk w2__split_discrs1)
   (us_split_fieldsqtmk1 w3__split_fields1)
-  (us_split_discrsqtmk w3__split_discrs1) c12 a33 c21
+  (us_split_discrsqtmk w3__split_discrs1) c12 c21 a33
   (us_split_fieldsqtmk1 r1__split_fields2)
   (us_split_discrsqtmk r1__split_discrs2) c33
   (us_split_fieldsqtmk1 r2__split_fields3)

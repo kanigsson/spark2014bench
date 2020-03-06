@@ -175,12 +175,12 @@
 (define-fun very_small_natural__ref_very_small_natural__content__projection ((a very_small_natural__ref)) very_small_natural 
   (very_small_natural__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_231 Int)
-  (temp___is_init_227 Bool) (temp___skip_constant_228 Bool)
-  (temp___do_toplevel_229 Bool)
-  (temp___do_typ_inv_230 Bool)) Bool (=>
-                                     (or (= temp___is_init_227 true)
-                                     (<= 0 50)) (in_range1 temp___expr_231)))
+(define-fun dynamic_invariant1 ((temp___expr_232 Int)
+  (temp___is_init_228 Bool) (temp___skip_constant_229 Bool)
+  (temp___do_toplevel_230 Bool)
+  (temp___do_typ_inv_231 Bool)) Bool (=>
+                                     (or (= temp___is_init_228 true)
+                                     (<= 0 50)) (in_range1 temp___expr_232)))
 
 (declare-sort very_very_small_natural 0)
 
@@ -210,12 +210,12 @@
 (define-fun very_very_small_natural__ref_very_very_small_natural__content__projection ((a very_very_small_natural__ref)) very_very_small_natural 
   (very_very_small_natural__content a))
 
-(define-fun dynamic_invariant2 ((temp___expr_245 Int)
-  (temp___is_init_241 Bool) (temp___skip_constant_242 Bool)
-  (temp___do_toplevel_243 Bool)
-  (temp___do_typ_inv_244 Bool)) Bool (=>
-                                     (or (= temp___is_init_241 true)
-                                     (<= 0 5)) (in_range2 temp___expr_245)))
+(define-fun dynamic_invariant2 ((temp___expr_246 Int)
+  (temp___is_init_242 Bool) (temp___skip_constant_243 Bool)
+  (temp___do_toplevel_244 Bool)
+  (temp___do_typ_inv_245 Bool)) Bool (=>
+                                     (or (= temp___is_init_242 true)
+                                     (<= 0 5)) (in_range2 temp___expr_246)))
 
 (assert
 ;; defqtvc

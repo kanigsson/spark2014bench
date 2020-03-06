@@ -410,8 +410,8 @@
   (not
   (forall ((last Int) (result__ Int) (last1 Int) (last2 Int)
   (v2__split_fields integer) (last3 Int) (last4 Int)
-  (v1__split_fields integer) (o Bool) (spark__branch Bool) (o1 Int) (o2 Int)
-  (spark__branch1 Bool) (o3 Int) (o4 Int) (spark__branch2 Bool))
+  (v1__split_fields integer) (o Bool) (spark__branch Bool) (temp___220 Int)
+  (spark__branch1 Bool) (temp___221 Int) (spark__branch2 Bool))
   (=> (dynamic_invariant2 op true false true true)
   (=> (dynamic_invariant1 last true false true true)
   (=> (forall ((last5 Int)) (size__function_guard (size last5) last5))
@@ -428,21 +428,23 @@
   (=> (= (size last4) (- (size last3) 1))
   (=> (dynamic_invariant1 last4 true true true true)
   (=>
-  (exists ((o5 Bool))
-  (and (ite (= op 0) (= o5 true) (not (= o5 true)))
-  (ite (= o5 true) (= o true) (ite (= op 3) (= o true) (not (= o true))))))
+  (exists ((o1 Bool))
+  (and (ite (= op 0) (= o1 true) (not (= o1 true)))
+  (ite (= o1 true) (= o true) (ite (= op 3) (= o true) (not (= o true))))))
   (=> (= spark__branch o)
   (=> (= spark__branch true)
-  (=> (= (to_rep v1__split_fields) o1)
-  (=> (= (to_rep v1__split_fields) o2)
+  (=> (= (to_rep v1__split_fields) temp___220)
   (=>
-  (= spark__branch1 (ite (= (and (ite (<= (- 1073741823) o2) true false) 
-                    (ite (<= o1 1073741822) true false)) true) false true))
+  (= spark__branch1 (ite (= (and (ite (<= (- 1073741823) temp___220) true
+                                 false) (ite (<= temp___220 1073741822) true
+                                        false)) true)
+                    false true))
   (=> (not (= spark__branch1 true))
-  (=> (= (to_rep v2__split_fields) o3)
-  (=> (= (to_rep v2__split_fields) o4)
+  (=> (= (to_rep v2__split_fields) temp___221)
   (=>
-  (= spark__branch2 (ite (= (and (ite (<= (- 1073741823) o4) true false) 
-                    (ite (<= o3 1073741822) true false)) true) false true))
-  (not (= spark__branch2 true))))))))))))))))))))))))))))))
+  (= spark__branch2 (ite (= (and (ite (<= (- 1073741823) temp___221) true
+                                 false) (ite (<= temp___221 1073741822) true
+                                        false)) true)
+                    false true))
+  (not (= spark__branch2 true))))))))))))))))))))))))))))
 (check-sat)

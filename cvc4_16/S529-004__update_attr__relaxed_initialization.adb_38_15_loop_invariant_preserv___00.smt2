@@ -393,6 +393,10 @@
                                                    (us_split_fields1 b))))))))
                    true false))
 
+(define-fun in_range6 ((rec__relaxed_initialization__rec__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__relaxed_initialization__rec__d1 (rec__relaxed_initialization__rec__d
+                                                                    a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -765,24 +769,25 @@
      (rec__value2
      (rec__relaxed_initialization__rec__z (us_split_fields1 elem)))) 0)))))))
   (=>
-  (= (and (ite (and (dynamic_property1 (to_rep obj__first) (to_rep obj__last)
-               idx1)
-               (forall ((temp___326 Int))
+  (= (and (ite (and
+               (forall ((temp___325 Int))
                (=>
-               (and (<= (to_rep obj__first) temp___326)
-               (<= temp___326 (to_rep obj__last)))
-               (ite (or (< temp___320 temp___326)
-                    (or (< temp___326 temp___319) (< idx1 temp___326)))
-               (= (select obj2 temp___326) (select obj temp___326))
+               (and (<= (to_rep obj__first) temp___325)
+               (<= temp___325 (to_rep obj__last)))
+               (ite (or (< temp___320 temp___325)
+                    (or (< temp___325 temp___319) (< idx1 temp___325)))
+               (= (select obj2 temp___325) (select obj temp___325))
                (and
                (= (rec__relaxed_initialization__rec__d
-                  (us_split_discrs1 (select obj2 temp___326))) (rec__relaxed_initialization__rec__d
+                  (us_split_discrs1 (select obj2 temp___325))) (rec__relaxed_initialization__rec__d
                                                                (us_split_discrs1
-                                                               (select obj temp___326))))
+                                                               (select obj temp___325))))
                (= (rec__relaxed_initialization__rec__x
-                  (us_split_fields1 (select obj2 temp___326))) (rec__relaxed_initialization__rec__x
+                  (us_split_fields1 (select obj2 temp___325))) (rec__relaxed_initialization__rec__x
                                                                (us_split_fields1
-                                                               (select obj temp___326)))))))))
+                                                               (select obj temp___325))))))))
+               (dynamic_property1 (to_rep obj__first) (to_rep obj__last)
+               idx1))
           true false) (ite (and (<= (to_rep obj__first) idx1)
                            (<= idx1 (to_rep obj__last)))
                       true false)) true)

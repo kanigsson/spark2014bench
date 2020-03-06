@@ -207,6 +207,11 @@
                             (rec__p__my_lists__list (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range2 ((rec__p__my_lists__list__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__p__my_lists__list__capacity1 (to_rep
+                                                                 (rec__p__my_lists__list__capacity
+                                                                 a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -461,7 +466,8 @@
      (forall ((i us_rep))
      (=> (= (has_key result i) true)
      (and
-     (and (<= 1 (get1 result i)) (<= (get1 result i) (length container)))
+     (let ((temp___367 (get1 result i)))
+     (and (<= 1 temp___367) (<= temp___367 (length container))))
      (forall ((j us_rep))
      (=> (= (has_key result j) true)
      (=> (= (get1 result i) (get1 result j)) (= (bool_eq i j) true))))))))) :pattern (
@@ -589,7 +595,7 @@
   (and (<= 1 (positive_count_typeqtint i))
   (<= (positive_count_typeqtint i) 2147483647))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -612,7 +618,7 @@
   (temp___do_toplevel_262 Bool)
   (temp___do_typ_inv_263 Bool)) Bool (=>
                                      (or (= temp___is_init_260 true)
-                                     (<= 1 2147483647)) (in_range2
+                                     (<= 1 2147483647)) (in_range3
                                      temp___expr_264)))
 
 (declare-fun keys_included (us_rep3 us_rep3) Bool)
@@ -636,10 +642,9 @@
      (forall ((i us_rep))
      (=> (= (has_key big i) true)
      (or (= (has_key small i) true)
-     (and (<= (- cut count) (- (get1 big i) count))
-     (<= (- (get1 big i) count) (- cut 1))))))))) :pattern ((p_positions_shifted
-                                                            small big cut
-                                                            count)) ))))
+     (let ((temp___358 (- (get1 big i) count)))
+     (and (<= (- cut count) temp___358) (<= temp___358 (- cut 1)))))))))) :pattern (
+  (p_positions_shifted small big cut count)) ))))
 
 ;; oeq__post_axiom
   (assert
@@ -657,7 +662,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -679,7 +684,7 @@
   (temp___do_toplevel_283 Bool)
   (temp___do_typ_inv_284 Bool)) Bool (=>
                                      (or (= temp___is_init_281 true)
-                                     (<= 0 2147483647)) (in_range3
+                                     (<= 0 2147483647)) (in_range4
                                      temp___expr_285)))
 
 ;; length__post_axiom
@@ -698,7 +703,7 @@
   (forall ((i element_type))
   (and (<= 1 (element_typeqtint i)) (<= (element_typeqtint i) 100))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -720,7 +725,7 @@
   (temp___do_toplevel_276 Bool)
   (temp___do_typ_inv_277 Bool)) Bool (=>
                                      (or (= temp___is_init_274 true)
-                                     (<= 1 100)) (in_range4 temp___expr_278)))
+                                     (<= 1 100)) (in_range5 temp___expr_278)))
 
 ;; get__post_axiom
   (assert
@@ -759,7 +764,7 @@
   (forall ((i element_type1))
   (and (<= 1 (element_typeqtint1 i)) (<= (element_typeqtint1 i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -781,7 +786,7 @@
   (temp___do_toplevel_305 Bool)
   (temp___do_typ_inv_306 Bool)) Bool (=>
                                      (or (= temp___is_init_303 true)
-                                     (<= 1 2147483647)) (in_range5
+                                     (<= 1 2147483647)) (in_range6
                                      temp___expr_307)))
 
 ;; get__post_axiom
@@ -934,27 +939,27 @@
      (get1
      (positions (us_repqtmk1 o1 (us_split_fieldsqtmk1 l__split_fields))) o)
      1) true))))
-  (forall ((temp___990 count_type))
-  (let ((temp___9901 (us_repqtmk (us_split_fieldsqtmk temp___990))))
+  (forall ((temp___997 count_type))
+  (let ((temp___9971 (us_repqtmk (us_split_fieldsqtmk temp___997))))
   (=>
   (ite (= (bool_eq (us_repqtmk (us_split_fieldsqtmk cu__split_fields))
           no_element) true)
   (let ((o2 (us_repqtmk1 l__split_discrs
             (us_split_fieldsqtmk1 l__split_fields1))))
-  (and (= temp___9901 (last1 o2))
-  (ite (= (= (length o2) 0) true) (= (bool_eq temp___9901 no_element) true)
-  (and (= (has_element o2 temp___9901) true)
-  (= (get1 (positions o2) temp___9901) (length o2))))))
+  (and (= temp___9971 (last1 o2))
+  (ite (= (= (length o2) 0) true) (= (bool_eq temp___9971 no_element) true)
+  (and (= (has_element o2 temp___9971) true)
+  (= (get1 (positions o2) temp___9971) (length o2))))))
   (let ((o2 (us_repqtmk (us_split_fieldsqtmk cu__split_fields))))
   (let ((o3 (us_repqtmk1 l__split_discrs
             (us_split_fieldsqtmk1 l__split_fields1))))
-  (and (= temp___9901 (previous o3 o2))
+  (and (= temp___9971 (previous o3 o2))
   (ite (= (or (bool_eq o2 no_element) (= (get1 (positions o3) o2) 1)) true)
-  (= (bool_eq temp___9901 no_element) true)
-  (and (= (has_element o3 temp___9901) true)
-  (= (get1 (positions o3) temp___9901) (- (get1 (positions o3) o2) 1))))))))
+  (= (bool_eq temp___9971 no_element) true)
+  (and (= (has_element o3 temp___9971) true)
+  (= (get1 (positions o3) temp___9971) (- (get1 (positions o3) o2) 1))))))))
   (forall ((cu__split_fields1 count_type))
-  (=> (= cu__split_fields1 temp___990)
+  (=> (= cu__split_fields1 temp___997)
   (let ((o2 l__split_discrs))
   (forall ((l__split_fields2 us_main_type) (cu__split_fields2 count_type))
   (=>

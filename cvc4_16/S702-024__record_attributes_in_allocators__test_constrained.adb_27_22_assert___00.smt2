@@ -136,6 +136,10 @@
                         (rec__test_constrained__r__x (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range2 ((rec__test_constrained__r__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__test_constrained__r__b1 (rec__test_constrained__r__b
+                                                            a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -243,10 +247,6 @@
 (define-fun default_initial_assumption ((temp___expr_211 us_rep1)
   (temp___skip_top_level_212 Bool)) Bool (= (rec__test_constrained__r_acc__is_null_pointer
                                             temp___expr_211) true))
-
-(define-fun in_range2 ((rec__test_constrained__r__b1 Bool)
-  (a us_rep)) Bool (= rec__test_constrained__r__b1 (rec__test_constrained__r__b
-                                                   (us_split_discrs1 a))))
 
 (declare-const value__size1 Int)
 

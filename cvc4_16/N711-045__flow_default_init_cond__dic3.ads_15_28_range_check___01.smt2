@@ -129,19 +129,15 @@
   (forall ((temp___172 Int)) (to_int__function_guard (to_int1 temp___172)
   temp___172)))
 
-;; temp___result_173'def
-  (assert
-  (forall ((temp___172 Int)) (to_int__function_guard (to_int1 temp___172)
-  temp___172)))
-
 (define-fun default_initial_assumption ((temp___expr_170 Int)
   (temp___skip_top_level_171 Bool)) Bool (and (= temp___expr_170 5)
                                          (=>
                                          (not
                                          (= temp___skip_top_level_171 true))
-                                         (and
-                                         (<= 1 (to_int1 temp___expr_170))
-                                         (<= (to_int1 temp___expr_170) 10)))))
+                                         (let ((temp___174 (to_int1
+                                                           temp___expr_170)))
+                                         (and (<= 1 temp___174)
+                                         (<= temp___174 10))))))
 
 ;; to_int__post_axiom
   (assert
@@ -159,6 +155,6 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-N711-045__flow_default_init_cond-8233/src/gnatprove/dic3__derived_t.mlw", line 203, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-N711-045__flow_default_init_cond-3906/src/gnatprove/dic3__derived_t.mlw", line 204, characters 5-8
   (not (in_range2 5)))
 (check-sat)

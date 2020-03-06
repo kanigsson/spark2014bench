@@ -137,6 +137,11 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range2 ((rec__membership_discr__root__c1 Int)
+  (a us_split_discrs)) Bool (= rec__membership_discr__root__c1 (to_rep
+                                                               (rec__membership_discr__root__c
+                                                               a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -179,11 +184,6 @@
 
 (declare-const us_tag1 Int)
 
-(define-fun in_range2 ((rec__membership_discr__root__c1 Int)
-  (a us_rep)) Bool (= rec__membership_discr__root__c1 (to_rep
-                                                      (rec__membership_discr__root__c
-                                                      (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -225,11 +225,6 @@
   (root_02__content a))
 
 (declare-const us_tag2 Int)
-
-(define-fun in_range3 ((rec__membership_discr__root__c1 Int)
-  (a us_rep)) Bool (= rec__membership_discr__root__c1 (to_rep
-                                                      (rec__membership_discr__root__c
-                                                      (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -282,7 +277,8 @@
   (temp___do_toplevel_258 Bool)
   (temp___do_typ_inv_259 Bool)) Bool (=>
                                      (not (= temp___skip_constant_257 true))
-                                     (in_range3 0 temp___expr_260)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_260))))
 
 (define-fun default_initial_assumption ((temp___expr_262 us_rep)
   (temp___skip_top_level_263 Bool)) Bool (and
@@ -294,11 +290,6 @@
                                             temp___expr_262))) 0)))
 
 (declare-const us_tag3 Int)
-
-(define-fun in_range4 ((rec__membership_discr__root__c1 Int)
-  (a us_rep)) Bool (= rec__membership_discr__root__c1 (to_rep
-                                                      (rec__membership_discr__root__c
-                                                      (us_split_discrs1 a)))))
 
 (declare-const value__size3 Int)
 
@@ -351,7 +342,8 @@
   (temp___do_toplevel_267 Bool)
   (temp___do_typ_inv_268 Bool)) Bool (=>
                                      (not (= temp___skip_constant_266 true))
-                                     (in_range4 0 temp___expr_269)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_269))))
 
 (define-fun default_initial_assumption1 ((temp___expr_271 us_rep)
   (temp___skip_top_level_272 Bool)) Bool (and
@@ -363,11 +355,6 @@
                                             temp___expr_271))) 0)))
 
 (declare-const us_tag4 Int)
-
-(define-fun in_range5 ((rec__membership_discr__root__c1 Int)
-  (a us_rep)) Bool (= rec__membership_discr__root__c1 (to_rep
-                                                      (rec__membership_discr__root__c
-                                                      (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 
@@ -420,7 +407,8 @@
   (temp___do_toplevel_207 Bool)
   (temp___do_typ_inv_208 Bool)) Bool (=>
                                      (not (= temp___skip_constant_206 true))
-                                     (in_range5 0 temp___expr_209)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_209))))
 
 (define-fun default_initial_assumption2 ((temp___expr_211 us_rep)
   (temp___skip_top_level_212 Bool)) Bool (and
@@ -432,11 +420,6 @@
                                             temp___expr_211))) 0)))
 
 (declare-const us_tag5 Int)
-
-(define-fun in_range6 ((rec__membership_discr__root__c1 Int)
-  (a us_rep)) Bool (= rec__membership_discr__root__c1 (to_rep
-                                                      (rec__membership_discr__root__c
-                                                      (us_split_discrs1 a)))))
 
 (declare-const value__size5 Int)
 
@@ -489,7 +472,8 @@
   (temp___do_toplevel_216 Bool)
   (temp___do_typ_inv_217 Bool)) Bool (=>
                                      (not (= temp___skip_constant_215 true))
-                                     (in_range6 0 temp___expr_218)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_218))))
 
 (define-fun default_initial_assumption3 ((temp___expr_220 us_rep)
   (temp___skip_top_level_221 Bool)) Bool (and
@@ -501,11 +485,6 @@
                                             temp___expr_220))) 0)))
 
 (declare-const us_tag6 Int)
-
-(define-fun in_range7 ((rec__membership_discr__root__c1 Int)
-  (a us_rep)) Bool (= rec__membership_discr__root__c1 (to_rep
-                                                      (rec__membership_discr__root__c
-                                                      (us_split_discrs1 a)))))
 
 (declare-const value__size6 Int)
 
@@ -558,7 +537,8 @@
   (temp___do_toplevel_225 Bool)
   (temp___do_typ_inv_226 Bool)) Bool (=>
                                      (not (= temp___skip_constant_224 true))
-                                     (in_range7 0 temp___expr_227)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_227))))
 
 (define-fun default_initial_assumption4 ((temp___expr_229 us_rep)
   (temp___skip_top_level_230 Bool)) Bool (and
@@ -613,11 +593,6 @@
 
 (declare-const us_tag8 Int)
 
-(define-fun in_range8 ((rec__membership_discr__root__c1 Int)
-  (a us_rep)) Bool (= rec__membership_discr__root__c1 (to_rep
-                                                      (rec__membership_discr__root__c
-                                                      (us_split_discrs1 a)))))
-
 (declare-const value__size8 Int)
 
 (declare-const object__size8 Int)
@@ -670,7 +645,8 @@
   (temp___do_toplevel_192 Bool)
   (temp___do_typ_inv_193 Bool)) Bool (=>
                                      (not (= temp___skip_constant_191 true))
-                                     (in_range2 0 temp___expr_194)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_194))))
 
 (define-fun default_initial_assumption5 ((temp___expr_196 us_rep)
   (temp___skip_top_level_197 Bool)) Bool (and
@@ -686,7 +662,8 @@
   (temp___do_toplevel_234 Bool)
   (temp___do_typ_inv_235 Bool)) Bool (=>
                                      (not (= temp___skip_constant_233 true))
-                                     (in_range8 0 temp___expr_236)))
+                                     (in_range2 0
+                                     (us_split_discrs1 temp___expr_236))))
 
 (define-fun default_initial_assumption6 ((temp___expr_238 us_rep)
   (temp___skip_top_level_239 Bool)) Bool (and
@@ -742,7 +719,5 @@
   (=> (dynamic_invariant4
   (us_repqtmk c03__split_discrs (us_split_fieldsqtmk c03__split_fields)
   c03__attr__tag) false false true true)
-  (=> (= r00__attr__tag us_tag) (in_range2 0
-  (us_repqtmk r00__split_discrs (us_split_fieldsqtmk r00__split_fields)
-  r00__attr__tag))))))))))))))))))))))))
+  (=> (= r00__attr__tag us_tag) (in_range2 0 r00__split_discrs)))))))))))))))))))))))
 (check-sat)

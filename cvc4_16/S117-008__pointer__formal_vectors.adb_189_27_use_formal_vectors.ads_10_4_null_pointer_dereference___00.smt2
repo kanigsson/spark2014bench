@@ -1172,10 +1172,10 @@
   (=> (<= 1 i)
   (=> (length__function_guard (length1 v) v)
   (=> (<= i (length1 v))
-  (let ((temp___434 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
+  (let ((temp___427 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                     (rec__use_formal_vectors__my_vect__vector__content
                     (us_split_fields1 v)))))
-  (=> (and (<= (first1 temp___434) i) (<= i (last1 temp___434)))
+  (=> (and (<= (first1 temp___427) i) (<= i (last1 temp___427)))
   (rec__use_formal_vectors__my_vect__element_access__pointer_value__pred
-  (select (to_array temp___434) i)))))))))))))
+  (select (to_array temp___427) i)))))))))))))
 (check-sat)

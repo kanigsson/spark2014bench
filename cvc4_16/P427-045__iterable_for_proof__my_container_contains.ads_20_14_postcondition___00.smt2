@@ -268,13 +268,14 @@
   (forall ((j Int))
   (=> (and (<= 1 j) (<= j i1)) (= (valid (to_rep (select c1 j))) true)))
   (and
-  (= (and (ite (and (in_range3 i1)
-               (forall ((temp___221 Int))
-               (=> (and (<= 1 temp___221) (<= temp___221 100))
+  (= (and (ite (and
+               (forall ((temp___223 Int))
+               (=> (and (<= 1 temp___223) (<= temp___223 100))
                (=>
-               (or (< 100 temp___221)
-               (or (< temp___221 1) (< i1 temp___221)))
-               (= (select c1 temp___221) (select c temp___221))))))
+               (or (< 100 temp___223)
+               (or (< temp___223 1) (< i1 temp___223)))
+               (= (select c1 temp___223) (select c temp___223))))) (in_range3
+               i1))
           true false) (ite (and (<= 1 i1) (<= i1 100)) true false)) true)
   (= i1 100)))))) (= c1 c))))
   (=> (in_range1 e)

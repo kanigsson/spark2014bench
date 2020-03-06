@@ -390,6 +390,14 @@
                            (rec__test__matrix__mat (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range2 ((rec__test__matrix__c1 Int)
+  (rec__test__matrix__r1 Int)
+  (a us_split_discrs)) Bool (and
+                            (= rec__test__matrix__c1 (to_rep
+                                                     (rec__test__matrix__c a)))
+                            (= rec__test__matrix__r1 (to_rep
+                                                     (rec__test__matrix__r a)))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

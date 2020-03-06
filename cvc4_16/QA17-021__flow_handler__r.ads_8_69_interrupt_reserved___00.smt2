@@ -83,6 +83,29 @@
 (define-fun us_rep___split_discrs__projection ((a us_rep)) us_split_discrs 
   (us_split_discrs1 a))
 
+(define-fun to_rep ((x interrupt_id)) Int (interrupt_idqtint x))
+
+(declare-fun of_rep (Int) interrupt_id)
+
+;; inversion_axiom
+  (assert
+  (forall ((x interrupt_id))
+  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x interrupt_id)) (! (in_range
+  (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                           (of_rep x))) )))
+
+(define-fun in_range1 ((rec__r__pt__irq1 Int)
+  (a us_split_discrs)) Bool (= rec__r__pt__irq1 (to_rep (rec__r__pt__irq a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -119,26 +142,6 @@
 (((pt__refqtmk (pt__content us_rep)))))
 (define-fun pt__ref_pt__content__projection ((a pt__ref)) us_rep (pt__content
                                                                  a))
-
-(define-fun to_rep ((x interrupt_id)) Int (interrupt_idqtint x))
-
-(declare-fun of_rep (Int) interrupt_id)
-
-;; inversion_axiom
-  (assert
-  (forall ((x interrupt_id))
-  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
-
-;; range_axiom
-  (assert
-  (forall ((x interrupt_id)) (! (in_range
-  (to_rep x)) :pattern ((to_rep x)) )))
-
-;; coerce_axiom
-  (assert
-  (forall ((x Int))
-  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
-                                                           (of_rep x))) )))
 
 (define-fun dynamic_invariant ((temp___expr_179 Int)
   (temp___is_init_175 Bool) (temp___skip_constant_176 Bool)

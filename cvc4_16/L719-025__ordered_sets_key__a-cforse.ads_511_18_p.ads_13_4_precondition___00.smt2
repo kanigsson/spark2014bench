@@ -132,6 +132,11 @@
                            (rec__p__my_sets__set (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__p__my_sets__set__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__p__my_sets__set__capacity1 (to_rep
+                                                               (rec__p__my_sets__set__capacity
+                                                               a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -336,7 +341,7 @@
 
 (declare-fun elements__function_guard (us_rep2 us_rep) Bool)
 
-(define-fun in_range1 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range2 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE1 (Bool) us_image)
 
@@ -439,7 +444,7 @@
   (forall ((i element_type))
   (and (<= 1 (element_typeqtint i)) (<= (element_typeqtint i) 100))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -466,7 +471,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -518,13 +523,13 @@
      (and
      (and
      (and (= (length2 result) (length container))
-     (forall ((temp___456 Int))
+     (forall ((temp___458 Int))
      (=>
-     (and (in_range3 temp___456)
-     (= (iter_has_element result temp___456) true))
-     (= (contains (model1 container) (get result temp___456)) true))))
+     (and (in_range4 temp___458)
+     (= (iter_has_element result temp___458) true))
+     (= (contains (model1 container) (get result temp___458)) true))))
      (forall ((item Int))
-     (=> (and (in_range2 item) (= (contains (model1 container) item) true))
+     (=> (and (in_range3 item) (= (contains (model1 container) item) true))
      (and (< 0 (find result item))
      (= (equivalent_elements (get result (find result item)) item) true)))))
      (forall ((i Int))
@@ -650,7 +655,8 @@
      (forall ((i us_rep4))
      (=> (= (has_key result i) true)
      (and
-     (and (<= 1 (get1 result i)) (<= (get1 result i) (length container)))
+     (let ((temp___465 (get1 result i)))
+     (and (<= 1 temp___465) (<= temp___465 (length container))))
      (forall ((j us_rep4))
      (=> (= (has_key result j) true)
      (=> (= (get1 result i) (get1 result j)) (= (bool_eq4 i j) true))))))))) :pattern (
@@ -676,7 +682,7 @@
   (forall ((i element_type1))
   (and (<= 1 (element_typeqtint1 i)) (<= (element_typeqtint1 i) 100))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -698,7 +704,7 @@
   (temp___do_toplevel_291 Bool)
   (temp___do_typ_inv_292 Bool)) Bool (=>
                                      (or (= temp___is_init_289 true)
-                                     (<= 1 100)) (in_range4 temp___expr_293)))
+                                     (<= 1 100)) (in_range5 temp___expr_293)))
 
 (declare-const container__split_discrs us_split_discrs)
 
@@ -721,7 +727,7 @@
   (forall ((i element_type2))
   (and (<= 1 (element_typeqtint2 i)) (<= (element_typeqtint2 i) 100))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -743,7 +749,7 @@
   (temp___do_toplevel_284 Bool)
   (temp___do_typ_inv_285 Bool)) Bool (=>
                                      (or (= temp___is_init_282 true)
-                                     (<= 1 100)) (in_range5 temp___expr_286)))
+                                     (<= 1 100)) (in_range6 temp___expr_286)))
 
 ;; my_inf__post_axiom
   (assert true)
@@ -800,7 +806,7 @@
   (temp___do_toplevel_332 Bool)
   (temp___do_typ_inv_333 Bool)) Bool (=>
                                      (or (= temp___is_init_330 true)
-                                     (<= 1 100)) (in_range2 temp___expr_334)))
+                                     (<= 1 100)) (in_range3 temp___expr_334)))
 
 ;; contains__post_axiom
   (assert
@@ -810,7 +816,7 @@
      (=> (= (distinct 1 0) true)
      (=>
      (exists ((e Int))
-     (and (and (in_range2 e) (= (contains container e) true))
+     (and (and (in_range3 e) (= (contains container e) true))
      (= (equivalent_elements e item) true)))
      (= (contains container item) true)))) :pattern ((contains container
                                                      item)) ))))
@@ -829,7 +835,7 @@
   (forall ((left us_rep1) (right us_rep1))
   (! (= (= (ole left right) true)
      (forall ((item Int))
-     (=> (and (in_range2 item) (= (contains left item) true))
+     (=> (and (in_range3 item) (= (contains left item) true))
      (= (contains right item) true)))) :pattern ((ole left right)) )))
 
 ;; oeq__post_axiom
@@ -846,7 +852,7 @@
      (and
      (= (= result true)
      (forall ((item Int))
-     (not (and (in_range2 item) (= (contains container item) true)))))
+     (not (and (in_range3 item) (= (contains container item) true)))))
      (= (= result true) (= (length1 container) 0)))) :pattern ((is_empty
                                                                container)) )))
 
@@ -855,7 +861,7 @@
   (temp___do_toplevel_368 Bool)
   (temp___do_typ_inv_369 Bool)) Bool (=>
                                      (or (= temp___is_init_366 true)
-                                     (<= 0 2147483647)) (in_range3
+                                     (<= 0 2147483647)) (in_range4
                                      temp___expr_370)))
 
 ;; length__post_axiom
@@ -874,7 +880,7 @@
   (forall ((i element_type3))
   (and (<= 1 (element_typeqtint3 i)) (<= (element_typeqtint3 i) 100))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
+(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 100)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE6 (Int) us_image)
 
@@ -896,7 +902,7 @@
   (temp___do_toplevel_361 Bool)
   (temp___do_typ_inv_362 Bool)) Bool (=>
                                      (or (= temp___is_init_359 true)
-                                     (<= 1 100)) (in_range6 temp___expr_363)))
+                                     (<= 1 100)) (in_range7 temp___expr_363)))
 
 ;; get__post_axiom
   (assert
@@ -935,7 +941,7 @@
   (forall ((i element_type4))
   (and (<= 1 (element_typeqtint4 i)) (<= (element_typeqtint4 i) 2147483647))))
 
-(define-fun in_range7 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
+(define-fun in_range8 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE7 (Int) us_image)
 
@@ -957,7 +963,7 @@
   (temp___do_toplevel_395 Bool)
   (temp___do_typ_inv_396 Bool)) Bool (=>
                                      (or (= temp___is_init_393 true)
-                                     (<= 1 2147483647)) (in_range7
+                                     (<= 1 2147483647)) (in_range8
                                      temp___expr_397)))
 
 ;; get__post_axiom

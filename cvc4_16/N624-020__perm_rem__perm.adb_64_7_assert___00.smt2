@@ -645,13 +645,13 @@
   (forall ((ka Int) (kb Int)) (is_perm__function_guard
   (is_perm (remove a ka) (remove b kb)) (remove a ka) (remove b kb)))
   (not
-  (let ((temp___966 (first1 a)))
-  (let ((temp___967 (last1 a)))
+  (let ((temp___970 (first1 a)))
+  (let ((temp___971 (last1 a)))
   (exists ((ia Int))
-  (and (= ia temp___966)
+  (and (= ia temp___970)
   (or
   (not
-  (= (and (ite (<= temp___966 ia) true false) (ite (<= ia temp___967) true
+  (= (and (ite (<= temp___970 ia) true false) (ite (<= ia temp___971) true
                                               false)) true))
   (exists ((spark__branch Bool))
   (and
@@ -678,5 +678,5 @@
   (and
   (= (and (ite (dynamic_property1 (first1 a) (last1 a) ia1) true false) 
   (ite (and (<= (first1 a) ia1) (<= ia1 (last1 a))) true false)) true)
-  (= ia1 temp___967))))))))))))))))))))))))))))))))))))))))))))
+  (= ia1 temp___971))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

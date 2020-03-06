@@ -262,6 +262,11 @@
                         (rec__lexer__token__value (us_split_fields1 b))))))))
                    true false))
 
+(define-fun in_range4 ((rec__lexer__token__kind1 Int)
+  (a us_split_discrs)) Bool (= rec__lexer__token__kind1 (to_rep1
+                                                        (rec__lexer__token__kind
+                                                        a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -395,11 +400,6 @@
                                      (or (= temp___is_init_170 true)
                                      (<= 0 8)) (in_range2 temp___expr_174)))
 
-(define-fun in_range4 ((rec__lexer__token__kind1 Int)
-  (a us_rep)) Bool (= rec__lexer__token__kind1 (to_rep1
-                                               (rec__lexer__token__kind
-                                               (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -500,11 +500,6 @@
 (((t23b__refqtmk (t23b__content us_rep)))))
 (define-fun t23b__ref_t23b__content__projection ((a t23b__ref)) us_rep 
   (t23b__content a))
-
-(define-fun in_range5 ((rec__lexer__token__kind1 Int)
-  (a us_rep)) Bool (= rec__lexer__token__kind1 (to_rep1
-                                               (rec__lexer__token__kind
-                                               (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 

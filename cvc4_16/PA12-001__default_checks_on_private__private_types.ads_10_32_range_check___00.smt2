@@ -194,6 +194,10 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range3 ((rec__private_types__p1__t__d1 Bool)
+  (a us_split_discrs)) Bool (= rec__private_types__p1__t__d1 (rec__private_types__p1__t__d
+                                                             a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -273,7 +277,7 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__default_checks_on_private-8676/src/gnatprove/private_types__p1__t.mlw", line 465, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__default_checks_on_private-25155/src/gnatprove/private_types__p1__t.mlw", line 477, characters 5-8
   (not
   (forall ((usf us_rep))
   (=> (private_types__p1__t__f__pred usf)

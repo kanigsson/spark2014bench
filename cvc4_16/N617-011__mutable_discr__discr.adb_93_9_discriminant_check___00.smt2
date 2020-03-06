@@ -144,6 +144,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range1 ((rec__private_discr__p_no_default__c1 Int)
+  (a us_split_discrs)) Bool (= rec__private_discr__p_no_default__c1 (to_rep
+                                                                    (rec__private_discr__p_no_default__c
+                                                                    a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -210,23 +215,23 @@
                                            discr__p1__d__assume))
   (=> (= d__split_discrs (us_split_discrs1 discr__p1__d__assume))
   (let ((o1 c))
-  (let ((temp___363 (new_no_default o1)))
+  (let ((temp___367 (new_no_default o1)))
   (=>
-  (and (new_no_default__function_guard temp___363 o1)
+  (and (new_no_default__function_guard temp___367 o1)
   (= (to_rep
-     (rec__private_discr__p_no_default__c (us_split_discrs1 temp___363))) o1))
+     (rec__private_discr__p_no_default__c (us_split_discrs1 temp___367))) o1))
   (=>
-  (= (rec__private_discr__p_no_default__c (us_split_discrs1 temp___363)) 
+  (= (rec__private_discr__p_no_default__c (us_split_discrs1 temp___367)) 
   (rec__private_discr__p_no_default__c d__split_discrs))
   (forall ((d__split_fields1 us_main_type))
   (=>
-  (= (us_split_fieldsqtmk d__split_fields1) (us_split_fields1 temp___363))
-  (=> (= d__split_discrs (us_split_discrs1 temp___363))
-  (let ((temp___366 (new_no_default 0)))
+  (= (us_split_fieldsqtmk d__split_fields1) (us_split_fields1 temp___367))
+  (=> (= d__split_discrs (us_split_discrs1 temp___367))
+  (let ((temp___370 (new_no_default 0)))
   (=>
-  (and (new_no_default__function_guard temp___366 0)
+  (and (new_no_default__function_guard temp___370 0)
   (= (to_rep
-     (rec__private_discr__p_no_default__c (us_split_discrs1 temp___366))) 0))
-  (= (rec__private_discr__p_no_default__c (us_split_discrs1 temp___366)) 
+     (rec__private_discr__p_no_default__c (us_split_discrs1 temp___370))) 0))
+  (= (rec__private_discr__p_no_default__c (us_split_discrs1 temp___370)) 
   (rec__private_discr__p_no_default__c d__split_discrs))))))))))))))))))))
 (check-sat)

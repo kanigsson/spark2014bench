@@ -105,6 +105,32 @@
 (define-fun us_rep___split_fields__projection ((a us_rep)) us_split_fields 
   (us_split_fields1 a))
 
+(define-fun to_rep ((x capacity_range)) Int (capacity_rangeqtint x))
+
+(declare-fun of_rep (Int) capacity_range)
+
+;; inversion_axiom
+  (assert
+  (forall ((x capacity_range))
+  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x capacity_range)) (! (in_range
+  (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                           (of_rep x))) )))
+
+(define-fun in_range1 ((rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 
+  (to_rep
+  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity
+  a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -158,7 +184,7 @@
   (and (<= 0 (capacity_rangeqtint1 i))
   (<= (capacity_rangeqtint1 i) 2147483647))))
 
-(define-fun in_range1 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE1 (Int) us_image)
 
@@ -174,32 +200,6 @@
 (((capacity_range__refqtmk1 (capacity_range__content1 capacity_range1)))))
 (define-fun capacity_range__ref_capacity_range__content__projection ((a capacity_range__ref1)) capacity_range1 
   (capacity_range__content1 a))
-
-(define-fun to_rep ((x capacity_range)) Int (capacity_rangeqtint x))
-
-(declare-fun of_rep (Int) capacity_range)
-
-;; inversion_axiom
-  (assert
-  (forall ((x capacity_range))
-  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
-
-;; range_axiom
-  (assert
-  (forall ((x capacity_range)) (! (in_range
-  (to_rep x)) :pattern ((to_rep x)) )))
-
-;; coerce_axiom
-  (assert
-  (forall ((x Int))
-  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
-                                                           (of_rep x))) )))
-
-(define-fun in_range2 ((rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 Int)
-  (a us_rep)) Bool (= rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity1 
-  (to_rep
-  (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity
-  (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 
@@ -282,7 +282,31 @@
 
 (declare-fun us_dispatch_eq (us_rep1 us_rep1) Bool)
 
+(define-fun to_rep1 ((x capacity_range1)) Int (capacity_rangeqtint1 x))
+
+(declare-fun of_rep1 (Int) capacity_range1)
+
+;; inversion_axiom
+  (assert
+  (forall ((x capacity_range1))
+  (! (= (of_rep1 (to_rep1 x)) x) :pattern ((to_rep1 x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x capacity_range1)) (! (in_range2
+  (to_rep1 x)) :pattern ((to_rep1 x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range2 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
+                                                              (of_rep1 x))) )))
+
 (declare-const us_tag Int)
+
+(define-fun in_range3 ((rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 Int)
+  (a us_split_discrs2)) Bool (= rec__ada___hnco__test2__v_type_owner__vector_type__capacity1 
+  (to_rep1 (rec__ada___hnco__test2__v_type_owner__vector_type__capacity a))))
 
 (declare-const value__size2 Int)
 
@@ -346,34 +370,15 @@
 (define-fun vector_type__ref_vector_type__content__projection ((a vector_type__ref)) us_rep1 
   (vector_type__content a))
 
-(define-fun to_rep1 ((x capacity_range1)) Int (capacity_rangeqtint1 x))
-
-(declare-fun of_rep1 (Int) capacity_range1)
-
-;; inversion_axiom
-  (assert
-  (forall ((x capacity_range1))
-  (! (= (of_rep1 (to_rep1 x)) x) :pattern ((to_rep1 x)) )))
-
-;; range_axiom
-  (assert
-  (forall ((x capacity_range1)) (! (in_range1
-  (to_rep1 x)) :pattern ((to_rep1 x)) )))
-
-;; coerce_axiom
-  (assert
-  (forall ((x Int))
-  (! (=> (in_range1 x) (= (to_rep1 (of_rep1 x)) x)) :pattern ((to_rep1
-                                                              (of_rep1 x))) )))
-
 (define-fun dynamic_invariant ((temp___expr_308 us_rep1)
   (temp___is_init_304 Bool) (temp___skip_constant_305 Bool)
-  (temp___do_toplevel_306 Bool) (temp___do_typ_inv_307 Bool)) Bool (in_range2
+  (temp___do_toplevel_306 Bool) (temp___do_typ_inv_307 Bool)) Bool (in_range1
   (to_rep1
   (rec__ada___hnco__test2__v_type_owner__vector_type__capacity
   (us_split_discrs3 temp___expr_308)))
+  (us_split_discrs1
   (rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector
-  (us_split_fields3 temp___expr_308))))
+  (us_split_fields3 temp___expr_308)))))
 
 (declare-fun is_empty (us_rep1) Bool)
 
@@ -391,7 +396,7 @@
   (temp___do_toplevel_243 Bool)
   (temp___do_typ_inv_244 Bool)) Bool (=>
                                      (or (= temp___is_init_241 true)
-                                     (<= 0 2147483647)) (in_range1
+                                     (<= 0 2147483647)) (in_range2
                                      temp___expr_245)))
 
 (declare-sort count_type 0)
@@ -403,7 +408,7 @@
   (forall ((i count_type))
   (and (<= 0 (count_typeqtint i)) (<= (count_typeqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -425,7 +430,7 @@
   (temp___do_toplevel_236 Bool)
   (temp___do_typ_inv_237 Bool)) Bool (=>
                                      (or (= temp___is_init_234 true)
-                                     (<= 0 2147483647)) (in_range3
+                                     (<= 0 2147483647)) (in_range4
                                      temp___expr_238)))
 
 (define-fun dynamic_invariant3 ((temp___expr_252 Int)
@@ -445,7 +450,7 @@
   (forall ((a us_rep) (b us_rep))
   (! (= (user_eq1 a b) (oeq a b)) :pattern ((user_eq1 a b)) )))
 
-(define-fun in_range4 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range5 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Bool) us_image)
 
@@ -576,7 +581,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -598,7 +603,7 @@
   (temp___do_toplevel_285 Bool)
   (temp___do_typ_inv_286 Bool)) Bool (=>
                                      (or (= temp___is_init_283 true)
-                                     (<= 0 2147483647)) (in_range5
+                                     (<= 0 2147483647)) (in_range6
                                      temp___expr_287)))
 
 ;; length__post_axiom
@@ -618,7 +623,7 @@
   (and (<= (- 2147483648) (element_typeqtint i))
   (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range6 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range7 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
@@ -642,7 +647,7 @@
   (temp___do_typ_inv_300 Bool)) Bool (=>
                                      (or (= temp___is_init_297 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range6 temp___expr_301)))
+                                     (in_range7 temp___expr_301)))
 
 ;; get__post_axiom
   (assert
@@ -661,7 +666,7 @@
 
 (assert
 ;; defqtvc
- ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-O901-014__formal_vectors-13128/src/gnatprove/ada___hnco__test2__v_type_owner__vector_type.mlw", line 1511, characters 5-8
+ ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-O901-014__formal_vectors-11035/src/gnatprove/ada___hnco__test2__v_type_owner__vector_type.mlw", line 1524, characters 5-8
   (not
   (forall ((usf us_rep1))
   (=> (dynamic_invariant usf true false true true)

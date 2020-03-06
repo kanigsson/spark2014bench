@@ -169,16 +169,14 @@
 
 (declare-const dummy1 us_rep)
 
-(declare-datatypes ((vector__ref 0))
-(((vector__refqtmk (vector__content us_rep)))))
-(define-fun vector__ref_vector__content__projection ((a vector__ref)) us_rep 
-  (vector__content a))
+(declare-datatypes ((list__ref 0))
+(((list__refqtmk (list__content us_rep)))))
+(define-fun list__ref_list__content__projection ((a list__ref)) us_rep 
+  (list__content a))
 
 (define-fun in_range1 ((rec__list__my_lists__vector__capacity1 Int)
-  (a us_rep)) Bool (= rec__list__my_lists__vector__capacity1 (to_rep
-                                                             (rec__list__my_lists__vector__capacity
-                                                             (us_split_discrs1
-                                                             a)))))
+  (a us_split_discrs)) Bool (= rec__list__my_lists__vector__capacity1 
+  (to_rep (rec__list__my_lists__vector__capacity a))))
 
 (declare-const value__size1 Int)
 
@@ -215,10 +213,10 @@
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((list__ref 0))
-(((list__refqtmk (list__content us_rep)))))
-(define-fun list__ref_list__content__projection ((a list__ref)) us_rep 
-  (list__content a))
+(declare-datatypes ((vector__ref 0))
+(((vector__refqtmk (vector__content us_rep)))))
+(define-fun vector__ref_vector__content__projection ((a vector__ref)) us_rep 
+  (vector__content a))
 
 (declare-const l__split_discrs us_split_discrs)
 
@@ -233,7 +231,8 @@
   (temp___do_toplevel_214 Bool)
   (temp___do_typ_inv_215 Bool)) Bool (=>
                                      (not (= temp___skip_constant_213 true))
-                                     (in_range1 100 temp___expr_216)))
+                                     (in_range1 100
+                                     (us_split_discrs1 temp___expr_216))))
 
 (define-fun default_initial_assumption ((temp___expr_218 us_rep)
   (temp___skip_top_level_219 Bool)) Bool (and

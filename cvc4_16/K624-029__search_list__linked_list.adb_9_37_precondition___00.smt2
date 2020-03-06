@@ -501,6 +501,10 @@
                             (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range5 ((rec__linked_list__mylists__list__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__linked_list__mylists__list__capacity1 
+  (to_rep (rec__linked_list__mylists__list__capacity a))))
+
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -576,7 +580,8 @@
      (forall ((i us_rep))
      (=> (= (has_key result i) true)
      (and
-     (and (<= 1 (get1 result i)) (<= (get1 result i) (length3 container)))
+     (let ((temp___361 (get1 result i)))
+     (and (<= 1 temp___361) (<= temp___361 (length3 container))))
      (forall ((j us_rep))
      (=> (= (has_key result j) true)
      (=> (= (get1 result i) (get1 result j)) (= (bool_eq i j) true))))))))) :pattern (
@@ -603,7 +608,7 @@
   (and (<= (- 2147483648) (element_typeqtint2 i))
   (<= (element_typeqtint2 i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= (- 2147483648) x)
+(define-fun in_range6 ((x Int)) Bool (and (<= (- 2147483648) x)
                                      (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
@@ -627,7 +632,7 @@
   (temp___do_typ_inv_228 Bool)) Bool (=>
                                      (or (= temp___is_init_225 true)
                                      (<= (- 2147483648) 2147483647))
-                                     (in_range5 temp___expr_229)))
+                                     (in_range6 temp___expr_229)))
 
 (define-fun default_initial_assumption3 ((temp___expr_250 us_rep)
   (temp___skip_top_level_251 Bool)) Bool (= (to_rep
@@ -805,7 +810,9 @@
   (and (not (= (has_key o5 no_element) true))
   (forall ((i us_rep))
   (=> (= (has_key o5 i) true)
-  (and (and (<= 1 (get1 o5 i)) (<= (get1 o5 i) (length3 o4)))
+  (and
+  (let ((temp___357 (get1 o5 i)))
+  (and (<= 1 temp___357) (<= temp___357 (length3 o4))))
   (forall ((j us_rep))
   (=> (= (has_key o5 j) true)
   (=> (= (get1 o5 i) (get1 o5 j)) (= (bool_eq i j) true))))))))

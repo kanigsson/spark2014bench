@@ -261,6 +261,11 @@
                                                   (us_split_fields1 b))))))
                    true false))
 
+(define-fun in_range5 ((rec__file_io__read_result__status1 Int)
+  (a us_split_discrs)) Bool (= rec__file_io__read_result__status1 (to_rep1
+                                                                  (rec__file_io__read_result__status
+                                                                  a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)

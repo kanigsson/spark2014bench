@@ -445,8 +445,9 @@
   (not
   (=> (dynamic_invariant2 needle true false true true)
   (=> (dynamic_invariant2 haystack true false true true)
-  (=> (<= 1 (length needle))
-  (=> (<= (length needle) (length haystack))
+  (=>
+  (let ((temp___341 (length needle)))
+  (and (<= 1 temp___341) (<= temp___341 (length haystack))))
   (let ((o (length needle)))
   (=> (in_range1 o)
   (let ((o1 (length haystack)))
@@ -460,11 +461,11 @@
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i o3) true false)) true)
   (forall ((diff Bool))
   (=> (= diff (distinct 0 0))
-  (let ((temp___316 (first1 needle)))
+  (let ((temp___323 (first1 needle)))
   (forall ((j Int))
-  (=> (= j temp___316)
+  (=> (= j temp___323)
   (=>
-  (= (and (ite (<= temp___316 j) true false) (ite (<= j (last1 needle)) true
+  (= (and (ite (<= temp___323 j) true false) (ite (<= j (last1 needle)) true
                                              false)) true)
   (let ((o4 (+ j (- i 1))))
   (=> (in_range1 o4)
@@ -479,10 +480,10 @@
   (=> (in_range2 j)
   (let ((o7 haystack))
   (let ((o8 needle))
-  (let ((temp___inv_323 (partial_match_at o8 o7 i j)))
+  (let ((temp___inv_330 (partial_match_at o8 o7 i j)))
   (=>
-  (and (partial_match_at__function_guard temp___inv_323 o8 o7 i j)
-  (= (= temp___inv_323 true)
+  (and (partial_match_at__function_guard temp___inv_330 o8 o7 i j)
+  (= (= temp___inv_330 true)
   (forall ((i1 Int))
   (=> (and (<= 1 i1) (<= i1 j))
   (= (to_rep (select (to_array o8) i1)) (to_rep
@@ -492,5 +493,5 @@
   (=> (and (<= (first1 haystack) o9) (<= o9 (last1 haystack)))
   (forall ((o10 Int))
   (=> (= (to_rep (select (to_array haystack) o9)) o10)
-  (<= (first1 needle) j))))))))))))))))))))))))))))))))))))))))))))
+  (<= (first1 needle) j)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

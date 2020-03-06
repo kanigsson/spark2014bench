@@ -459,13 +459,13 @@
   (! (= (to_rep (select (temp___String_Literal_164 us_void_param) 1)) 32) :pattern (
   (temp___String_Literal_164 us_void_param)) )))
 
-(declare-fun temp___String_Literal_215 (tuple0) (Array Int character))
+(declare-fun temp___String_Literal_223 (tuple0) (Array Int character))
 
-;; temp___String_Literal_215__def_axiom
+;; temp___String_Literal_223__def_axiom
   (assert
   (forall ((us_void_param tuple0))
-  (! (= (to_rep (select (temp___String_Literal_215 us_void_param) 1)) 33) :pattern (
-  (temp___String_Literal_215 us_void_param)) )))
+  (! (= (to_rep (select (temp___String_Literal_223 us_void_param) 1)) 33) :pattern (
+  (temp___String_Literal_223 us_void_param)) )))
 
 (define-fun dynamic_invariant2 ((temp___expr_18 Int) (temp___is_init_14 Bool)
   (temp___skip_constant_15 Bool) (temp___do_toplevel_16 Bool)
@@ -517,14 +517,12 @@
      (= (to_rep (select (to_array res) j)) (to_upper
                                            (to_rep (select (to_array str) j))))
      (ite (and
-          (= (not (and (ite (<= 97 (to_rep (select (to_array str) (- j 1))))
-                       true false) (ite (<= (to_rep
-                                            (select (to_array str) (- j 1))) 122)
-                                   true false))) true)
-          (= (not (and (ite (<= 65 (to_rep (select (to_array str) (- j 1))))
-                       true false) (ite (<= (to_rep
-                                            (select (to_array str) (- j 1))) 90)
-                                   true false))) true))
+          (= (not (let ((temp___186 (to_rep (select (to_array str) (- j 1)))))
+                  (and (ite (<= 97 temp___186) true false) (ite (<= temp___186 122)
+                                                           true false)))) true)
+          (= (not (let ((temp___187 (to_rep (select (to_array str) (- j 1)))))
+                  (and (ite (<= 65 temp___187) true false) (ite (<= temp___187 90)
+                                                           true false)))) true))
      (= (to_rep (select (to_array res) j)) (to_upper
                                            (to_rep (select (to_array str) j))))
      (= (to_rep (select (to_array res) j)) (to_lower
@@ -632,7 +630,7 @@
  ;; File "hello.ads", line 10, characters 0-0
   (not
   (forall ((g_lang_level Int) (hello__say_hello__hello__assume us_t)
-  (hello__say_hello__prefix__assume us_t) (temp___216 us_t))
+  (hello__say_hello__prefix__assume us_t) (temp___224 us_t))
   (=> (dynamic_invariant1 g_lang_level true false true true)
   (=> (dynamic_invariant who true false true true)
   (=>
@@ -652,43 +650,43 @@
   (=> (= hello__say_hello__prefix__assume prefix)
   (=> (dynamic_invariant prefix true false true true)
   (=>
-  (forall ((o us_t) (temp___214 us_t)) (to_caml_char2__function_guard
-  (to_caml_char2 o temp___214 (last1 o)) o temp___214 (last1 o)))
+  (forall ((o us_t) (temp___222 us_t)) (to_caml_char2__function_guard
+  (to_caml_char2 o temp___222 (last1 o)) o temp___222 (last1 o)))
   (=>
   (let ((o who))
-  (let ((temp___214 (to_camel_case o)))
+  (let ((temp___222 (to_camel_case o)))
   (and
-  (and (to_camel_case__function_guard temp___214 o)
-  (and (dynamic_invariant temp___214 true false true true)
+  (and (to_camel_case__function_guard temp___222 o)
+  (and (dynamic_invariant temp___222 true false true true)
   (and
-  (and (= (first1 temp___214) (first1 o)) (= (last1 temp___214) (last1 o)))
-  (= (to_caml_char2 o temp___214 (last1 o)) true))))
-  (exists ((temp___213 us_t))
+  (and (= (first1 temp___222) (first1 o)) (= (last1 temp___222) (last1 o)))
+  (= (to_caml_char2 o temp___222 (last1 o)) true))))
+  (exists ((temp___221 us_t))
   (and
   (ite (= (length1 hello) 0)
-  (= temp___213 (of_array (to_array prefix) (first1 prefix) (last1 prefix)))
+  (= temp___221 (of_array (to_array prefix) (first1 prefix) (last1 prefix)))
   (let ((o1 (- (+ (first1 hello) (+ (length (first1 hello) (last1 hello)) 
   (length (first1 prefix) (last1 prefix)))) 1)))
   (and (in_range o1)
-  (= temp___213 (of_array
+  (= temp___221 (of_array
                 (concat1 (to_array hello) (first1 hello) (last1 hello)
                 (to_array prefix) (first1 prefix) (last1 prefix))
                 (first1 hello) o1)))))
-  (ite (= (length1 temp___213) 0)
-  (= temp___216 (of_array (to_array temp___214) (first1 temp___214)
-                (last1 temp___214)))
-  (let ((o1 (- (+ (first1 temp___213) (+ (length (first1 temp___213)
-                                         (last1 temp___213)) (length
+  (ite (= (length1 temp___221) 0)
+  (= temp___224 (of_array (to_array temp___222) (first1 temp___222)
+                (last1 temp___222)))
+  (let ((o1 (- (+ (first1 temp___221) (+ (length (first1 temp___221)
+                                         (last1 temp___221)) (length
                                                              (first1
-                                                             temp___214)
+                                                             temp___222)
                                                              (last1
-                                                             temp___214)))) 1)))
+                                                             temp___222)))) 1)))
   (and (in_range o1)
-  (= temp___216 (of_array
-                (concat1 (to_array temp___213) (first1 temp___213)
-                (last1 temp___213) (to_array temp___214) (first1 temp___214)
-                (last1 temp___214)) (first1 temp___213) o1))))))))))
-  (=> (not (= (length1 temp___216) 0)) (in_range
-  (- (+ (first1 temp___216) (+ (length (first1 temp___216)
-                               (last1 temp___216)) (length 1 1))) 1))))))))))))))))
+  (= temp___224 (of_array
+                (concat1 (to_array temp___221) (first1 temp___221)
+                (last1 temp___221) (to_array temp___222) (first1 temp___222)
+                (last1 temp___222)) (first1 temp___221) o1))))))))))
+  (=> (not (= (length1 temp___224) 0)) (in_range
+  (- (+ (first1 temp___224) (+ (length (first1 temp___224)
+                               (last1 temp___224)) (length 1 1))) 1))))))))))))))))
 (check-sat)

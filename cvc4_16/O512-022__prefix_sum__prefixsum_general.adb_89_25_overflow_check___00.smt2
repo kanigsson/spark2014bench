@@ -427,6 +427,6 @@
                (dynamic_invariant1 right1 false true true true))
                (dynamic_invariant temp1 false true true true))
           true false) (ite (< 0 space2) true false)) true)
-  (forall ((temp___218 Int))
-  (=> (= temp___218 space2) (in_range1 (* space2 2)))))))))))))))))))))))
+  (forall ((temp___232 Int))
+  (=> (= temp___232 space2) (in_range1 (* space2 2)))))))))))))))))))))))
 (check-sat)

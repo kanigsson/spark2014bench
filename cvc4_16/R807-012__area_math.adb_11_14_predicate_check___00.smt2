@@ -540,6 +540,11 @@
                            (us_split_fields1 b))) true)))
                    true false))
 
+(define-fun in_range2 ((rec__area_math__ensemble__max1 Int)
+  (a us_split_discrs)) Bool (= rec__area_math__ensemble__max1 (to_rep
+                                                              (rec__area_math__ensemble__max
+                                                              a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -648,7 +653,7 @@
   (assert
   (forall ((i tT3bP1)) (and (<= 1 (tT3bP1qtint i)) (<= (tT3bP1qtint i) 1))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 1 x) (<= x 1)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -698,7 +703,7 @@
   (assert
   (forall ((i tT4bP1)) (and (<= 1 (tT4bP1qtint i)) (<= (tT4bP1qtint i) 1))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 1 x) (<= x 1)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -815,11 +820,6 @@
                             (rec__area_math__ensemble__to1
                             (us_split_fields3 b)) 1 1) true)))
                     true false))
-
-(define-fun in_range4 ((rec__area_math__ensemble__max1 Int)
-  (a us_rep)) Bool (= rec__area_math__ensemble__max1 (to_rep
-                                                     (rec__area_math__ensemble__max
-                                                     (us_split_discrs1 a)))))
 
 (declare-const value__size4 Int)
 

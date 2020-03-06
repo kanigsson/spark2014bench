@@ -84,6 +84,31 @@
 (define-fun us_rep___split_discrs__projection ((a us_rep)) us_split_discrs 
   (us_split_discrs1 a))
 
+(define-fun to_rep ((x barrier_limit)) Int (barrier_limitqtint x))
+
+(declare-fun of_rep (Int) barrier_limit)
+
+;; inversion_axiom
+  (assert
+  (forall ((x barrier_limit))
+  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
+
+;; range_axiom
+  (assert
+  (forall ((x barrier_limit)) (! (in_range
+  (to_rep x)) :pattern ((to_rep x)) )))
+
+;; coerce_axiom
+  (assert
+  (forall ((x Int))
+  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
+                                                           (of_rep x))) )))
+
+(define-fun in_range1 ((rec__synchronous_barriers__synchronous_barrier__release_threshold1 Int)
+  (a us_split_discrs)) Bool (= rec__synchronous_barriers__synchronous_barrier__release_threshold1 
+  (to_rep
+  (rec__synchronous_barriers__synchronous_barrier__release_threshold a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -129,26 +154,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
 
-(define-fun to_rep ((x barrier_limit)) Int (barrier_limitqtint x))
-
-(declare-fun of_rep (Int) barrier_limit)
-
-;; inversion_axiom
-  (assert
-  (forall ((x barrier_limit))
-  (! (= (of_rep (to_rep x)) x) :pattern ((to_rep x)) )))
-
-;; range_axiom
-  (assert
-  (forall ((x barrier_limit)) (! (in_range
-  (to_rep x)) :pattern ((to_rep x)) )))
-
-;; coerce_axiom
-  (assert
-  (forall ((x Int))
-  (! (=> (in_range x) (= (to_rep (of_rep x)) x)) :pattern ((to_rep
-                                                           (of_rep x))) )))
-
 (declare-datatypes ((us_rep1 0))
 (((us_repqtmk1 (us_split_discrs2 us_split_discrs)))))
 (define-fun us_rep___split_discrs__2__projection ((a us_rep1)) us_split_discrs 
@@ -157,12 +162,6 @@
 (define-fun to_base ((a us_rep1)) us_rep (us_repqtmk (us_split_discrs2 a)))
 
 (define-fun of_base ((r us_rep)) us_rep1 (us_repqtmk1 (us_split_discrs1 r)))
-
-(define-fun in_range1 ((rec__synchronous_barriers__synchronous_barrier__release_threshold1 Int)
-  (a us_rep)) Bool (= rec__synchronous_barriers__synchronous_barrier__release_threshold1 
-  (to_rep
-  (rec__synchronous_barriers__synchronous_barrier__release_threshold
-  (us_split_discrs1 a)))))
 
 (declare-const value__size1 Int)
 

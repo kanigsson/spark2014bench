@@ -212,6 +212,10 @@
                             (us_split_fields3 b))) true))
                     true false))
 
+(define-fun in_range2 ((rec__for_loops_on_lists__my_lists__list__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__for_loops_on_lists__my_lists__list__capacity1 
+  (to_rep (rec__for_loops_on_lists__my_lists__list__capacity a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -337,7 +341,7 @@
   (forall ((i element_type))
   (and (<= 0 (element_typeqtint i)) (<= (element_typeqtint i) 2147483647))))
 
-(define-fun in_range2 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE2 (Int) us_image)
 
@@ -359,7 +363,7 @@
   (temp___do_toplevel_272 Bool)
   (temp___do_typ_inv_273 Bool)) Bool (=>
                                      (or (= temp___is_init_270 true)
-                                     (<= 0 2147483647)) (in_range2
+                                     (<= 0 2147483647)) (in_range3
                                      temp___expr_274)))
 
 (declare-sort extended_index 0)
@@ -372,7 +376,7 @@
   (and (<= 0 (extended_indexqtint i))
   (<= (extended_indexqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE3 (Int) us_image)
 
@@ -394,7 +398,7 @@
   (temp___do_toplevel_279 Bool)
   (temp___do_typ_inv_280 Bool)) Bool (=>
                                      (or (= temp___is_init_277 true)
-                                     (<= 0 2147483647)) (in_range3
+                                     (<= 0 2147483647)) (in_range4
                                      temp___expr_281)))
 
 (define-fun length2 ((x Int) (y Int)) Int (ite (<= x y) (+ (- y x) 1) 0))
@@ -497,7 +501,7 @@
   (forall ((i element_type1))
   (and (<= 1 (element_typeqtint1 i)) (<= (element_typeqtint1 i) 2147483647))))
 
-(define-fun in_range4 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
+(define-fun in_range5 ((x Int)) Bool (and (<= 1 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -519,7 +523,7 @@
   (temp___do_toplevel_301 Bool)
   (temp___do_typ_inv_302 Bool)) Bool (=>
                                      (or (= temp___is_init_299 true)
-                                     (<= 1 2147483647)) (in_range4
+                                     (<= 1 2147483647)) (in_range5
                                      temp___expr_303)))
 
 (declare-fun length3 (us_rep3) Int)
@@ -592,7 +596,8 @@
      (forall ((i us_rep))
      (=> (= (has_key result i) true)
      (and
-     (and (<= 1 (get1 result i)) (<= (get1 result i) (length container)))
+     (let ((temp___363 (get1 result i)))
+     (and (<= 1 temp___363) (<= temp___363 (length container))))
      (forall ((j us_rep))
      (=> (= (has_key result j) true)
      (=> (= (get1 result i) (get1 result j)) (= (bool_eq i j) true))))))))) :pattern (
@@ -618,7 +623,7 @@
   (forall ((i element_type2))
   (and (<= 0 (element_typeqtint2 i)) (<= (element_typeqtint2 i) 2147483647))))
 
-(define-fun in_range5 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range6 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE5 (Int) us_image)
 
@@ -640,7 +645,7 @@
   (temp___do_toplevel_229 Bool)
   (temp___do_typ_inv_230 Bool)) Bool (=>
                                      (or (= temp___is_init_227 true)
-                                     (<= 0 2147483647)) (in_range5
+                                     (<= 0 2147483647)) (in_range6
                                      temp___expr_231)))
 
 (define-fun equal_except ((left us_rep2) (right us_rep2)
@@ -819,21 +824,21 @@
   (and (= o4 true)
   (exists ((cu1 count_type))
   (and
-  (exists ((temp___loop_entry_1026 us_rep1))
+  (exists ((temp___loop_entry_1033 us_rep1))
   (and
-  (= temp___loop_entry_1026 (us_repqtmk1 l__split_discrs
+  (= temp___loop_entry_1033 (us_repqtmk1 l__split_discrs
                             (us_split_fieldsqtmk1 l__split_fields)))
-  (exists ((temp___loop_entry_1024 us_rep1))
+  (exists ((temp___loop_entry_1031 us_rep1))
   (and
-  (= temp___loop_entry_1024 (us_repqtmk1 l__split_discrs
+  (= temp___loop_entry_1031 (us_repqtmk1 l__split_discrs
                             (us_split_fieldsqtmk1 l__split_fields)))
-  (exists ((temp___loop_entry_1021 us_rep1))
+  (exists ((temp___loop_entry_1028 us_rep1))
   (and
-  (= temp___loop_entry_1021 (us_repqtmk1 l__split_discrs
+  (= temp___loop_entry_1028 (us_repqtmk1 l__split_discrs
                             (us_split_fieldsqtmk1 l__split_fields)))
-  (exists ((temp___loop_entry_1023 us_rep1))
+  (exists ((temp___loop_entry_1030 us_rep1))
   (and
-  (= temp___loop_entry_1023 (us_repqtmk1 l__split_discrs
+  (= temp___loop_entry_1030 (us_repqtmk1 l__split_discrs
                             (us_split_fieldsqtmk1 l__split_fields)))
   (let ((o5 (us_repqtmk (us_split_fieldsqtmk cu))))
   (let ((o6 (us_repqtmk1 l__split_discrs
@@ -846,12 +851,12 @@
   (and (= spark__branch (ite (= o7 0) true false))
   (ite (= spark__branch true)
   (and (= l__split_fields1 l__split_fields) (= cu1 cu))
-  (let ((o8 (length temp___loop_entry_1026)))
+  (let ((o8 (length temp___loop_entry_1033)))
   (and
   (and (dynamic_invariant o8 true false true true)
   (<= o8 (to_rep
          (rec__for_loops_on_lists__my_lists__list__capacity
-         (us_split_discrs1 temp___loop_entry_1026)))))
+         (us_split_discrs1 temp___loop_entry_1033)))))
   (let ((o9 (length
             (us_repqtmk1 l__split_discrs
             (us_split_fieldsqtmk1 l__split_fields)))))
@@ -864,7 +869,7 @@
   (and
   (= (length
      (us_repqtmk1 l__split_discrs (us_split_fieldsqtmk1 l__split_fields2))) 
-  (length temp___loop_entry_1026))
+  (length temp___loop_entry_1033))
   (and
   (forall ((i Int))
   (=>
@@ -874,11 +879,11 @@
            (us_repqtmk1 l__split_discrs
            (us_split_fieldsqtmk1 l__split_fields2)))
            (us_repqtmk (us_split_fieldsqtmk cu2))) 1)))
-  (and (< 0 (get (model1 temp___loop_entry_1023) i))
+  (and (< 0 (get (model1 temp___loop_entry_1030) i))
   (= (get
      (model1
      (us_repqtmk1 l__split_discrs (us_split_fieldsqtmk1 l__split_fields2)))
-     i) (- (get (model1 temp___loop_entry_1024) i) 1)))))
+     i) (- (get (model1 temp___loop_entry_1031) i) 1)))))
   (and
   (forall ((i Int))
   (=>
@@ -892,7 +897,7 @@
   (= (get
      (model1
      (us_repqtmk1 l__split_discrs (us_split_fieldsqtmk1 l__split_fields2)))
-     i) (get (model1 temp___loop_entry_1021) i))))
+     i) (get (model1 temp___loop_entry_1028) i))))
   (not
   (= (element
      (us_repqtmk1 l__split_discrs (us_split_fieldsqtmk1 l__split_fields2))
@@ -910,7 +915,7 @@
   (and (dynamic_invariant4 o12 true false true true)
   (= o12 (get (model1 o11) (get1 (positions o11) o10))))
   (let ((o13 (- o12 1)))
-  (and (in_range5 o13)
+  (and (in_range6 o13)
   (let ((o14 (us_repqtmk (us_split_fieldsqtmk cu2))))
   (let ((o15 l__split_discrs))
   (and
@@ -981,21 +986,21 @@
   (let ((o4 (has_element o3 o2)))
   (and (= (= o4 true) (= (has_key (positions o3) o2) true))
   (ite (= o4 true)
-  (exists ((temp___loop_entry_1026 us_rep1))
+  (exists ((temp___loop_entry_1033 us_rep1))
   (and
-  (= temp___loop_entry_1026 (us_repqtmk1 l__split_discrs
+  (= temp___loop_entry_1033 (us_repqtmk1 l__split_discrs
                             (us_split_fieldsqtmk1 l__split_fields)))
-  (exists ((temp___loop_entry_1024 us_rep1))
+  (exists ((temp___loop_entry_1031 us_rep1))
   (and
-  (= temp___loop_entry_1024 (us_repqtmk1 l__split_discrs
+  (= temp___loop_entry_1031 (us_repqtmk1 l__split_discrs
                             (us_split_fieldsqtmk1 l__split_fields)))
-  (exists ((temp___loop_entry_1021 us_rep1))
+  (exists ((temp___loop_entry_1028 us_rep1))
   (and
-  (= temp___loop_entry_1021 (us_repqtmk1 l__split_discrs
+  (= temp___loop_entry_1028 (us_repqtmk1 l__split_discrs
                             (us_split_fieldsqtmk1 l__split_fields)))
-  (exists ((temp___loop_entry_1023 us_rep1))
+  (exists ((temp___loop_entry_1030 us_rep1))
   (and
-  (= temp___loop_entry_1023 (us_repqtmk1 l__split_discrs
+  (= temp___loop_entry_1030 (us_repqtmk1 l__split_discrs
                             (us_split_fieldsqtmk1 l__split_fields)))
   (let ((o5 (us_repqtmk (us_split_fieldsqtmk cu))))
   (let ((o6 (us_repqtmk1 l__split_discrs
@@ -1007,12 +1012,12 @@
   (exists ((spark__branch Bool))
   (and (= spark__branch (ite (= o7 0) true false))
   (and (not (= spark__branch true))
-  (let ((o8 (length temp___loop_entry_1026)))
+  (let ((o8 (length temp___loop_entry_1033)))
   (and
   (and (dynamic_invariant o8 true false true true)
   (<= o8 (to_rep
          (rec__for_loops_on_lists__my_lists__list__capacity
-         (us_split_discrs1 temp___loop_entry_1026)))))
+         (us_split_discrs1 temp___loop_entry_1033)))))
   (let ((o9 (length
             (us_repqtmk1 l__split_discrs
             (us_split_fieldsqtmk1 l__split_fields)))))
@@ -1025,7 +1030,7 @@
   (and
   (= (length
      (us_repqtmk1 l__split_discrs (us_split_fieldsqtmk1 l__split_fields2))) 
-  (length temp___loop_entry_1026))
+  (length temp___loop_entry_1033))
   (and
   (forall ((i Int))
   (=>
@@ -1035,11 +1040,11 @@
            (us_repqtmk1 l__split_discrs
            (us_split_fieldsqtmk1 l__split_fields2)))
            (us_repqtmk (us_split_fieldsqtmk cu1))) 1)))
-  (and (< 0 (get (model1 temp___loop_entry_1023) i))
+  (and (< 0 (get (model1 temp___loop_entry_1030) i))
   (= (get
      (model1
      (us_repqtmk1 l__split_discrs (us_split_fieldsqtmk1 l__split_fields2)))
-     i) (- (get (model1 temp___loop_entry_1024) i) 1)))))
+     i) (- (get (model1 temp___loop_entry_1031) i) 1)))))
   (and
   (forall ((i Int))
   (=>
@@ -1053,7 +1058,7 @@
   (= (get
      (model1
      (us_repqtmk1 l__split_discrs (us_split_fieldsqtmk1 l__split_fields2)))
-     i) (get (model1 temp___loop_entry_1021) i))))
+     i) (get (model1 temp___loop_entry_1028) i))))
   (not
   (= (element
      (us_repqtmk1 l__split_discrs (us_split_fieldsqtmk1 l__split_fields2))
@@ -1071,7 +1076,7 @@
   (and (dynamic_invariant4 o12 true false true true)
   (= o12 (get (model1 o11) (get1 (positions o11) o10))))
   (let ((o13 (- o12 1)))
-  (and (in_range5 o13)
+  (and (in_range6 o13)
   (let ((o14 (us_repqtmk (us_split_fieldsqtmk cu1))))
   (let ((o15 l__split_discrs))
   (and
@@ -1148,7 +1153,9 @@
   (and (not (= (has_key o6 no_element) true))
   (forall ((i us_rep))
   (=> (= (has_key o6 i) true)
-  (and (and (<= 1 (get1 o6 i)) (<= (get1 o6 i) (length o5)))
+  (and
+  (let ((temp___359 (get1 o6 i)))
+  (and (<= 1 temp___359) (<= temp___359 (length o5))))
   (forall ((j us_rep))
   (=> (= (has_key o6 j) true)
   (=> (= (get1 o6 i) (get1 o6 j)) (= (bool_eq i j) true))))))))

@@ -180,15 +180,16 @@
   (=> (and (<= (- 2147483648) j) (<= j i1))
   (= (to_rep (select a1 j)) (to_rep (select b j)))))
   (and
-  (= (and (ite (and (in_range1 i1)
-               (forall ((temp___388 Int))
+  (= (and (ite (and
+               (forall ((temp___387 Int))
                (=>
-               (and (<= (- 2147483648) temp___388)
-               (<= temp___388 2147483647))
+               (and (<= (- 2147483648) temp___387)
+               (<= temp___387 2147483647))
                (=>
-               (or (< 2147483647 temp___388)
-               (or (< temp___388 (- 2147483648)) (< i1 temp___388)))
-               (= (select a1 temp___388) (select a temp___388))))))
+               (or (< 2147483647 temp___387)
+               (or (< temp___387 (- 2147483648)) (< i1 temp___387)))
+               (= (select a1 temp___387) (select a temp___387))))) (in_range1
+               i1))
           true false) (ite (and (<= (- 2147483648) i1) (<= i1 2147483647))
                       true false)) true)
   (= i1 2147483647)))))))))) (= a1 a))))

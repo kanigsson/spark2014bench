@@ -155,6 +155,16 @@
                                                   (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range2 ((rec__test__context_type__first1 Int)
+  (rec__test__context_type__last1 Int)
+  (a us_split_discrs)) Bool (and
+                            (= rec__test__context_type__first1 (to_rep
+                                                               (rec__test__context_type__first
+                                                               a)))
+                            (= rec__test__context_type__last1 (to_rep
+                                                              (rec__test__context_type__last
+                                                              a)))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -320,16 +330,6 @@
 (declare-const r3b Int)
 
 (declare-const attr__ATTRIBUTE_ADDRESS5 Int)
-
-(define-fun in_range2 ((rec__test__context_type__first1 Int)
-  (rec__test__context_type__last1 Int)
-  (a us_rep)) Bool (and
-                   (= rec__test__context_type__first1 (to_rep
-                                                      (rec__test__context_type__first
-                                                      (us_split_discrs1 a))))
-                   (= rec__test__context_type__last1 (to_rep
-                                                     (rec__test__context_type__last
-                                                     (us_split_discrs1 a))))))
 
 (declare-const value__size1 Int)
 

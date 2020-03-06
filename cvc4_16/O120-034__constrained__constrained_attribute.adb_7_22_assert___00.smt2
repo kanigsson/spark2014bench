@@ -130,6 +130,10 @@
                                                   (us_split_fields1 b)))))
                    true false))
 
+(define-fun in_range1 ((rec__constrained_attribute__mut_rec__d1 Int)
+  (a us_split_discrs)) Bool (= rec__constrained_attribute__mut_rec__d1 
+  (to_rep (rec__constrained_attribute__mut_rec__d a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -217,12 +221,6 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS Int)
 
-(define-fun in_range1 ((rec__constrained_attribute__mut_rec__d1 Int)
-  (a us_rep)) Bool (= rec__constrained_attribute__mut_rec__d1 (to_rep
-                                                              (rec__constrained_attribute__mut_rec__d
-                                                              (us_split_discrs1
-                                                              a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -290,7 +288,8 @@
   (temp___do_toplevel_168 Bool)
   (temp___do_typ_inv_169 Bool)) Bool (=>
                                      (not (= temp___skip_constant_167 true))
-                                     (in_range1 0 temp___expr_170)))
+                                     (in_range1 0
+                                     (us_split_discrs1 temp___expr_170))))
 
 (define-fun default_initial_assumption1 ((temp___expr_172 us_rep)
   (temp___skip_top_level_173 Bool)) Bool (and
@@ -302,12 +301,6 @@
                                             (rec__constrained_attribute__mut_rec__f
                                             (us_split_fields1
                                             temp___expr_172))) 0)))
-
-(define-fun in_range2 ((rec__constrained_attribute__mut_rec__d1 Int)
-  (a us_rep)) Bool (= rec__constrained_attribute__mut_rec__d1 (to_rep
-                                                              (rec__constrained_attribute__mut_rec__d
-                                                              (us_split_discrs1
-                                                              a)))))
 
 (declare-const value__size2 Int)
 
@@ -386,11 +379,18 @@
   (=> (= a__split_discrs rliteral)
   (=> (= a__attr__constrained false)
   (=> (in_range 0)
-  (let ((o (us_repqtmk (us_split_discrsqtmk a__split_discrs)
-           (us_split_fieldsqtmk a__split_fields))))
+  (let ((constrained_attribute__test__b__assume (us_repqtmk
+                                                (us_split_discrsqtmk
+                                                a__split_discrs)
+                                                (us_split_fieldsqtmk
+                                                a__split_fields))))
   (forall ((b__split_fields integer))
-  (=> (= (us_split_fieldsqtmk b__split_fields) (us_split_fields1 o))
-  (=> (= b__split_discrs (us_split_discrs1 o))
+  (=>
+  (= (us_split_fieldsqtmk b__split_fields) (us_split_fields1
+                                           constrained_attribute__test__b__assume))
+  (=>
+  (= b__split_discrs (us_split_discrs1
+                     constrained_attribute__test__b__assume))
   (=> (= b__attr__constrained true)
   (=> (dynamic_invariant
   (us_repqtmk b__split_discrs (us_split_fieldsqtmk b__split_fields)) true

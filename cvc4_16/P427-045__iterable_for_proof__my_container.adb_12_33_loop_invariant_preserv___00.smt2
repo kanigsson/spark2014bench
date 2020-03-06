@@ -238,10 +238,11 @@
   (forall ((c (Array Int natural)))
   (forall ((p us_rep))
   (! (= (= (has_element c p) true)
-     (and
-     (<= 1 (to_rep (rec__my_container__cursor__index (us_split_fields1 p))))
-     (<= (to_rep (rec__my_container__cursor__index (us_split_fields1 p))) 100))) :pattern (
-  (has_element c p)) ))))
+     (let ((temp___190 (to_rep
+                       (rec__my_container__cursor__index
+                       (us_split_fields1 p)))))
+     (and (<= 1 temp___190) (<= temp___190 100)))) :pattern ((has_element c
+                                                             p)) ))))
 
 (declare-fun element ((Array Int natural) us_rep) Int)
 
@@ -354,14 +355,13 @@
   (forall ((j1 Int))
   (=> (and (<= 1 j1) (<= j1 i1)) (= (valid (to_rep (select c2 j1))) true)))
   (=>
-  (= (and (ite (and
-               (forall ((temp___215 Int))
-               (=> (and (<= 1 temp___215) (<= temp___215 100))
+  (= (and (ite (and (in_range3 i1)
+               (forall ((temp___219 Int))
+               (=> (and (<= 1 temp___219) (<= temp___219 100))
                (=>
-               (or (< 100 temp___215)
-               (or (< temp___215 1) (< i1 temp___215)))
-               (= (select c2 temp___215) (select c temp___215))))) (in_range3
-               i1))
+               (or (< 100 temp___219)
+               (or (< temp___219 1) (< i1 temp___219)))
+               (= (select c2 temp___219) (select c temp___219))))))
           true false) (ite (and (<= 1 i1) (<= i1 100)) true false)) true)
   (=> (not (= i1 100))
   (=> (= i2 (+ i1 1))

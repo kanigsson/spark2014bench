@@ -350,6 +350,14 @@
                            (rec__rec__sub_arr__content (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range4 ((rec__rec__sub_arr__f1 Int)
+  (rec__rec__sub_arr__l1 Int)
+  (a us_split_discrs)) Bool (and
+                            (= rec__rec__sub_arr__f1 (to_rep
+                                                     (rec__rec__sub_arr__f a)))
+                            (= rec__rec__sub_arr__l1 (to_rep
+                                                     (rec__rec__sub_arr__l a)))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -478,16 +486,6 @@
                             (us_split_fields3 b))) true))
                     true false))
 
-(define-fun in_range4 ((rec__rec__sub_arr__f1 Int)
-  (rec__rec__sub_arr__l1 Int)
-  (a us_rep)) Bool (and
-                   (= rec__rec__sub_arr__f1 (to_rep
-                                            (rec__rec__sub_arr__f
-                                            (us_split_discrs1 a))))
-                   (= rec__rec__sub_arr__l1 (to_rep
-                                            (rec__rec__sub_arr__l
-                                            (us_split_discrs1 a))))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -569,7 +567,8 @@
                                      (=>
                                      (not (= temp___skip_constant_258 true))
                                      (in_range4 f l
-                                     (to_base temp___expr_261)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_261))))
                                      (and (dynamic_property f l
                                      (first1
                                      (rec__rec__sub_arr__content1

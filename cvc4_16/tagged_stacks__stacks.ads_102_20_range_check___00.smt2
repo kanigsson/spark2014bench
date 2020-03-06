@@ -658,34 +658,34 @@
 
 (declare-fun temp_____aggregate_def_200 (Int) (Array Int element))
 
-;; temp___result_602'def
+;; temp___result_618'def
   (assert
-  (forall ((temp___601 us_rep1)) (size__function_guard
-  (size (to_base temp___601)) (to_base temp___601))))
+  (forall ((temp___617 us_rep1)) (size__function_guard
+  (size (to_base temp___617)) (to_base temp___617))))
 
-(define-fun default_initial_assumption ((temp___expr_599 us_rep1)
-  (temp___skip_top_level_600 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_615 us_rep1)
+  (temp___skip_top_level_616 Bool)) Bool (and
                                          (and
-                                         (= (attr__tag1 temp___expr_599) 
+                                         (= (attr__tag1 temp___expr_615) 
                                          us_tag1)
                                          (and
                                          (and
                                          (= (to_rep3
                                             (rec__stacks__buffer__first
                                             (us_split_fields3
-                                            temp___expr_599))) 1)
+                                            temp___expr_615))) 1)
                                          (= (rec__stacks__stack_root__content1
                                             (us_split_fields3
-                                            temp___expr_599)) (temp_____aggregate_def_200
+                                            temp___expr_615)) (temp_____aggregate_def_200
                                                               0)))
                                          (= (to_rep
                                             (rec__stacks__stack_root__length1
                                             (us_split_fields3
-                                            temp___expr_599))) 0)))
+                                            temp___expr_615))) 0)))
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_600 true))
-                                         (= (size (to_base temp___expr_599)) 0))))
+                                         (= temp___skip_top_level_616 true))
+                                         (= (size (to_base temp___expr_615)) 0))))
 
 (declare-const s us_rep1)
 
@@ -1044,12 +1044,12 @@
   (forall ((temp___203 Int))
   (= (select (temp_____aggregate_def_200 temp___202) temp___203) rliteral)))))
 
-(define-fun dynamic_invariant5 ((temp___expr_590 Int)
-  (temp___is_init_586 Bool) (temp___skip_constant_587 Bool)
-  (temp___do_toplevel_588 Bool)
-  (temp___do_typ_inv_589 Bool)) Bool (=>
-                                     (or (= temp___is_init_586 true)
-                                     (<= 1 100)) (in_range4 temp___expr_590)))
+(define-fun dynamic_invariant5 ((temp___expr_606 Int)
+  (temp___is_init_602 Bool) (temp___skip_constant_603 Bool)
+  (temp___do_toplevel_604 Bool)
+  (temp___do_typ_inv_605 Bool)) Bool (=>
+                                     (or (= temp___is_init_602 true)
+                                     (<= 1 100)) (in_range4 temp___expr_606)))
 
 (assert
 ;; defqtvc
@@ -1083,8 +1083,8 @@
                                                                  (rec__stacks__stack_root__length1
                                                                  (us_split_fields3
                                                                  o2)))) 1) 100)))))
-  (forall ((temp___986 Int))
+  (forall ((temp___1018 Int))
   (=>
-  (= (to_rep3 (rec__stacks__buffer__first (us_split_fields3 s))) temp___986)
-  (=> (<= temp___986 stacks__get_model__3__R74s) (<= 1 temp___986))))))))))))))
+  (= (to_rep3 (rec__stacks__buffer__first (us_split_fields3 s))) temp___1018)
+  (=> (<= temp___1018 stacks__get_model__3__R74s) (<= 1 temp___1018))))))))))))))
 (check-sat)

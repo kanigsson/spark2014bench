@@ -196,22 +196,6 @@
 ;; test_record_cnt_ex__complex__b__position_axiom
   (assert (<= 0 test_record_cnt_ex__complex__b__position))
 
-(declare-const test_record_cnt_ex__complex__g__first__bit Int)
-
-(declare-const test_record_cnt_ex__complex__g__last__bit Int)
-
-(declare-const test_record_cnt_ex__complex__g__position Int)
-
-;; test_record_cnt_ex__complex__g__first__bit_axiom
-  (assert (<= 0 test_record_cnt_ex__complex__g__first__bit))
-
-;; test_record_cnt_ex__complex__g__last__bit_axiom
-  (assert
-  (< test_record_cnt_ex__complex__g__first__bit test_record_cnt_ex__complex__g__last__bit))
-
-;; test_record_cnt_ex__complex__g__position_axiom
-  (assert (<= 0 test_record_cnt_ex__complex__g__position))
-
 (declare-const test_record_cnt_ex__complex__f__first__bit Int)
 
 (declare-const test_record_cnt_ex__complex__f__last__bit Int)
@@ -228,19 +212,38 @@
 ;; test_record_cnt_ex__complex__f__position_axiom
   (assert (<= 0 test_record_cnt_ex__complex__f__position))
 
+(declare-const test_record_cnt_ex__complex__g__first__bit Int)
+
+(declare-const test_record_cnt_ex__complex__g__last__bit Int)
+
+(declare-const test_record_cnt_ex__complex__g__position Int)
+
+;; test_record_cnt_ex__complex__g__first__bit_axiom
+  (assert (<= 0 test_record_cnt_ex__complex__g__first__bit))
+
+;; test_record_cnt_ex__complex__g__last__bit_axiom
+  (assert
+  (< test_record_cnt_ex__complex__g__first__bit test_record_cnt_ex__complex__g__last__bit))
+
+;; test_record_cnt_ex__complex__g__position_axiom
+  (assert (<= 0 test_record_cnt_ex__complex__g__position))
+
 (declare-fun user_eq1 (us_rep us_rep) Bool)
 
 (declare-const dummy1 us_rep)
 
-(declare-datatypes ((complex__ref 0))
-(((complex__refqtmk (complex__content us_rep)))))
-(define-fun complex__ref_complex__content__projection ((a complex__ref)) us_rep 
-  (complex__content a))
+(declare-datatypes ((no_f__ref 0))
+(((no_f__refqtmk (no_f__content us_rep)))))
+(define-fun no_f__ref_no_f__content__projection ((a no_f__ref)) us_rep 
+  (no_f__content a))
 
-(define-fun in_range2 ((rec__test_record_cnt_ex__complex__b1 Bool)
-  (a us_rep)) Bool (= rec__test_record_cnt_ex__complex__b1 (rec__test_record_cnt_ex__complex__b
-                                                           (us_split_discrs1
-                                                           a))))
+(declare-const x us_rep)
+
+(declare-const attr__ATTRIBUTE_ADDRESS Int)
+
+(declare-const y us_rep)
+
+(declare-const attr__ATTRIBUTE_ADDRESS1 Int)
 
 (declare-const value__size1 Int)
 
@@ -273,22 +276,6 @@
 ;; test_record_cnt_ex__complex__b__position_axiom
   (assert (<= 0 test_record_cnt_ex__complex__b__position1))
 
-(declare-const test_record_cnt_ex__complex__f__first__bit1 Int)
-
-(declare-const test_record_cnt_ex__complex__f__last__bit1 Int)
-
-(declare-const test_record_cnt_ex__complex__f__position1 Int)
-
-;; test_record_cnt_ex__complex__f__first__bit_axiom
-  (assert (<= 0 test_record_cnt_ex__complex__f__first__bit1))
-
-;; test_record_cnt_ex__complex__f__last__bit_axiom
-  (assert
-  (< test_record_cnt_ex__complex__f__first__bit1 test_record_cnt_ex__complex__f__last__bit1))
-
-;; test_record_cnt_ex__complex__f__position_axiom
-  (assert (<= 0 test_record_cnt_ex__complex__f__position1))
-
 (declare-const test_record_cnt_ex__complex__g__first__bit1 Int)
 
 (declare-const test_record_cnt_ex__complex__g__last__bit1 Int)
@@ -305,27 +292,42 @@
 ;; test_record_cnt_ex__complex__g__position_axiom
   (assert (<= 0 test_record_cnt_ex__complex__g__position1))
 
+(declare-const test_record_cnt_ex__complex__f__first__bit1 Int)
+
+(declare-const test_record_cnt_ex__complex__f__last__bit1 Int)
+
+(declare-const test_record_cnt_ex__complex__f__position1 Int)
+
+;; test_record_cnt_ex__complex__f__first__bit_axiom
+  (assert (<= 0 test_record_cnt_ex__complex__f__first__bit1))
+
+;; test_record_cnt_ex__complex__f__last__bit_axiom
+  (assert
+  (< test_record_cnt_ex__complex__f__first__bit1 test_record_cnt_ex__complex__f__last__bit1))
+
+;; test_record_cnt_ex__complex__f__position_axiom
+  (assert (<= 0 test_record_cnt_ex__complex__f__position1))
+
 (declare-fun user_eq2 (us_rep us_rep) Bool)
 
 (declare-const dummy2 us_rep)
 
-(declare-datatypes ((no_f__ref 0))
-(((no_f__refqtmk (no_f__content us_rep)))))
-(define-fun no_f__ref_no_f__content__projection ((a no_f__ref)) us_rep 
-  (no_f__content a))
+(declare-datatypes ((f_present__ref 0))
+(((f_present__refqtmk (f_present__content us_rep)))))
+(define-fun f_present__ref_f_present__content__projection ((a f_present__ref)) us_rep 
+  (f_present__content a))
 
-(declare-const x us_rep)
+(declare-const w us_rep)
 
-(declare-const attr__ATTRIBUTE_ADDRESS Int)
+(declare-const attr__ATTRIBUTE_ADDRESS2 Int)
 
-(declare-const y us_rep)
+(declare-const z us_rep)
 
-(declare-const attr__ATTRIBUTE_ADDRESS1 Int)
+(declare-const attr__ATTRIBUTE_ADDRESS3 Int)
 
-(define-fun in_range3 ((rec__test_record_cnt_ex__complex__b1 Bool)
-  (a us_rep)) Bool (= rec__test_record_cnt_ex__complex__b1 (rec__test_record_cnt_ex__complex__b
-                                                           (us_split_discrs1
-                                                           a))))
+(define-fun in_range2 ((rec__test_record_cnt_ex__complex__b1 Bool)
+  (a us_split_discrs)) Bool (= rec__test_record_cnt_ex__complex__b1 (rec__test_record_cnt_ex__complex__b
+                                                                    a)))
 
 (declare-const value__size2 Int)
 
@@ -394,18 +396,10 @@
 
 (declare-const dummy3 us_rep)
 
-(declare-datatypes ((f_present__ref 0))
-(((f_present__refqtmk (f_present__content us_rep)))))
-(define-fun f_present__ref_f_present__content__projection ((a f_present__ref)) us_rep 
-  (f_present__content a))
-
-(declare-const w us_rep)
-
-(declare-const attr__ATTRIBUTE_ADDRESS2 Int)
-
-(declare-const z us_rep)
-
-(declare-const attr__ATTRIBUTE_ADDRESS3 Int)
+(declare-datatypes ((complex__ref 0))
+(((complex__refqtmk (complex__content us_rep)))))
+(define-fun complex__ref_complex__content__projection ((a complex__ref)) us_rep 
+  (complex__content a))
 
 (define-fun dynamic_invariant1 ((temp___expr_167 us_rep)
   (temp___is_init_163 Bool) (temp___skip_constant_164 Bool)
@@ -413,7 +407,7 @@
   (temp___do_typ_inv_166 Bool)) Bool (=>
                                      (not (= temp___skip_constant_164 true))
                                      (in_range2 (distinct 0 0)
-                                     temp___expr_167)))
+                                     (us_split_discrs1 temp___expr_167))))
 
 (define-fun default_initial_assumption ((temp___expr_169 us_rep)
   (temp___skip_top_level_170 Bool)) Bool (= (rec__test_record_cnt_ex__complex__b
@@ -425,18 +419,13 @@
   (temp___do_toplevel_176 Bool)
   (temp___do_typ_inv_177 Bool)) Bool (=>
                                      (not (= temp___skip_constant_175 true))
-                                     (in_range3 (distinct 1 0)
-                                     temp___expr_178)))
+                                     (in_range2 (distinct 1 0)
+                                     (us_split_discrs1 temp___expr_178))))
 
 (define-fun default_initial_assumption1 ((temp___expr_180 us_rep)
   (temp___skip_top_level_181 Bool)) Bool (= (rec__test_record_cnt_ex__complex__b
                                             (us_split_discrs1
                                             temp___expr_180)) (distinct 1 0)))
-
-(define-fun in_range4 ((rec__test_record_cnt_ex__complex__b1 Bool)
-  (a us_rep)) Bool (= rec__test_record_cnt_ex__complex__b1 (rec__test_record_cnt_ex__complex__b
-                                                           (us_split_discrs1
-                                                           a))))
 
 (declare-const value__size3 Int)
 
@@ -510,11 +499,6 @@
 (define-fun t2s__ref_t2s__content__projection ((a t2s__ref)) us_rep (t2s__content
                                                                     a))
 
-(define-fun in_range5 ((rec__test_record_cnt_ex__complex__b1 Bool)
-  (a us_rep)) Bool (= rec__test_record_cnt_ex__complex__b1 (rec__test_record_cnt_ex__complex__b
-                                                           (us_split_discrs1
-                                                           a))))
-
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -587,11 +571,6 @@
 (define-fun t3s__ref_t3s__content__projection ((a t3s__ref)) us_rep (t3s__content
                                                                     a))
 
-(define-fun in_range6 ((rec__test_record_cnt_ex__complex__b1 Bool)
-  (a us_rep)) Bool (= rec__test_record_cnt_ex__complex__b1 (rec__test_record_cnt_ex__complex__b
-                                                           (us_split_discrs1
-                                                           a))))
-
 (declare-const value__size5 Int)
 
 (declare-const object__size5 Int)
@@ -663,11 +642,6 @@
 (((t4s__refqtmk (t4s__content us_rep)))))
 (define-fun t4s__ref_t4s__content__projection ((a t4s__ref)) us_rep (t4s__content
                                                                     a))
-
-(define-fun in_range7 ((rec__test_record_cnt_ex__complex__b1 Bool)
-  (a us_rep)) Bool (= rec__test_record_cnt_ex__complex__b1 (rec__test_record_cnt_ex__complex__b
-                                                           (us_split_discrs1
-                                                           a))))
 
 (declare-const value__size6 Int)
 
@@ -786,6 +760,7 @@
   (and (id__function_guard o 5) (dynamic_invariant o true false true true))
   (forall ((o1 integer))
   (=> (= (to_rep o1) o) (in_range2 (distinct 0 0)
+  (us_split_discrs1
   (us_repqtmk (us_split_discrsqtmk (distinct 0 0))
-  (us_split_fieldsqtmk o1 dummy)))))))))))
+  (us_split_fieldsqtmk o1 dummy))))))))))))
 (check-sat)

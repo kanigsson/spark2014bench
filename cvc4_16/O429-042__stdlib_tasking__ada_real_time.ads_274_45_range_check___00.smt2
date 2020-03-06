@@ -366,13 +366,13 @@
 (define-fun seconds_count__ref_seconds_count__content__projection ((a seconds_count__ref)) seconds_count 
   (seconds_count__content a))
 
-(define-fun dynamic_invariant1 ((temp___expr_302 Int)
-  (temp___is_init_298 Bool) (temp___skip_constant_299 Bool)
-  (temp___do_toplevel_300 Bool)
-  (temp___do_typ_inv_301 Bool)) Bool (=>
-                                     (or (= temp___is_init_298 true)
+(define-fun dynamic_invariant1 ((temp___expr_303 Int)
+  (temp___is_init_299 Bool) (temp___skip_constant_300 Bool)
+  (temp___do_toplevel_301 Bool)
+  (temp___do_typ_inv_302 Bool)) Bool (=>
+                                     (or (= temp___is_init_299 true)
                                      (<= (- 9223372036854775808) 9223372036854775807))
-                                     (in_range2 temp___expr_302)))
+                                     (in_range2 temp___expr_303)))
 
 ;; result_sc__def_axiom
   (assert
@@ -446,27 +446,22 @@
   (=> (in_range3 o1)
   (let ((o2 (and (ite (<= o1 sc) true false) (ite (<= sc o) true false))))
   (=> (forall ((o3 us_rep1)) (ts_sc__function_guard (ts_sc o3) o3))
-  (=> (forall ((o3 us_rep1)) (ts_sc__function_guard (ts_sc o3) o3))
   (=>
   (or (not (= o2 true))
-  (and (in_range3 (+ 9223372036 1))
   (let ((o3 ts))
   (let ((o4 sc))
-  (let ((o5 (result_sc o4 o3)))
+  (let ((temp___426 (result_sc o4 o3)))
   (and
-  (and (result_sc__function_guard o5 o4 o3)
-  (and (dynamic_invariant1 o5 true false true true) (= o5 (+ o4 (ts_sc o3)))))
-  (let ((o6 ts))
-  (let ((o7 sc))
-  (let ((o8 (result_sc o7 o6)))
-  (and
-  (and (result_sc__function_guard o8 o7 o6)
-  (and (dynamic_invariant1 o8 true false true true) (= o8 (+ o7 (ts_sc o6)))))
-  (in_range3 (- (- 9223372036) 1))))))))))))
+  (and (result_sc__function_guard temp___426 o4 o3)
+  (and (dynamic_invariant1 temp___426 true false true true)
+  (= temp___426 (+ o4 (ts_sc o3)))))
+  (and (in_range3 (+ 9223372036 1)) (in_range3 (- (- 9223372036) 1))))))))
   (=>
   (= (ite (= o2 true)
-     (and (ite (<= (- (- 9223372036) 1) (result_sc sc ts)) true false) 
-     (ite (<= (result_sc sc ts) (+ 9223372036 1)) true false)) false) true)
+     (let ((temp___426 (result_sc sc ts)))
+     (and (ite (<= (- (- 9223372036) 1) temp___426) true false) (ite (<= temp___426 (+ 9223372036 1))
+                                                                true false)))
+     false) true)
   (let ((o3 ts))
   (let ((o4 sc))
   (let ((o5 (result_sc o4 o3)))
@@ -492,5 +487,5 @@
   (and (result_sc__function_guard o10 o9 o8)
   (and (dynamic_invariant1 o10 true false true true)
   (= o10 (+ o9 (ts_sc o8)))))
-  (let ((o11 (+ o10 10))) (=> (in_range3 o11) (in_range1 (of_int o11)))))))))))))))))))))))))))))))))
+  (let ((o11 (+ o10 10))) (=> (in_range3 o11) (in_range1 (of_int o11))))))))))))))))))))))))))))))))
 (check-sat)

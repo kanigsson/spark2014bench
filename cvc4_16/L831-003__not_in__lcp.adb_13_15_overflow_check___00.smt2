@@ -325,11 +325,11 @@
   (=> (<= y (last1 a))
   (=> (= l 0)
   (=> (dynamic_invariant1 l true false true true)
-  (let ((temp___181 (first1 a)))
+  (let ((temp___185 (first1 a)))
   (forall ((j Int))
-  (=> (= j temp___181)
+  (=> (= j temp___185)
   (=>
-  (= (and (ite (<= temp___181 j) true false) (ite (<= j (last1 a)) true
+  (= (and (ite (<= temp___185 j) true false) (ite (<= j (last1 a)) true
                                              false)) true)
   (forall ((l1 Int) (j1 Int))
   (=>
@@ -339,19 +339,15 @@
   (=>
   (let ((o1 (+ x l1)))
   (and (in_range1 o1)
-  (let ((o2 (+ x l1)))
-  (and (in_range1 o2)
   (ite (not
-       (= (and (ite (<= (first1 a) o2) true false) (ite (<= o1 (last1 a))
+       (= (and (ite (<= (first1 a) o1) true false) (ite (<= o1 (last1 a))
                                                    true false)) true))
   (= o true)
-  (let ((o3 (+ y l1)))
-  (and (in_range1 o3)
-  (let ((o4 (+ y l1)))
-  (and (in_range1 o4)
-  (= o (ite (= (and (ite (<= (first1 a) o4) true false) (ite (<= o3 (last1 a))
+  (let ((o2 (+ y l1)))
+  (and (in_range1 o2)
+  (= o (ite (= (and (ite (<= (first1 a) o2) true false) (ite (<= o2 (last1 a))
                                                         true false)) true)
-       false true)))))))))))
+       false true)))))))
   (forall ((spark__branch Bool))
   (=> (= spark__branch o)
   (=> (not (= spark__branch true))

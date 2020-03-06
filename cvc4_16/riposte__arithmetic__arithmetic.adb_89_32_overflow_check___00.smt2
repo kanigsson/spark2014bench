@@ -167,6 +167,6 @@
   (forall ((i Int))
   (=> (= i (- 1))
   (=> (= (and (ite (<= b i) true false) (ite (<= i (- 1)) true false)) true)
-  (forall ((temp___loop_entry_219 Int))
-  (=> (= temp___loop_entry_219 b) (not (= r1 (- 2147483648))))))))))))))))))
+  (forall ((temp___loop_entry_223 Int))
+  (=> (= temp___loop_entry_223 b) (not (= r1 (- 2147483648))))))))))))))))))
 (check-sat)

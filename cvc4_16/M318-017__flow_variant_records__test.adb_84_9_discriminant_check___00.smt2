@@ -194,6 +194,10 @@
                                                   (us_split_fields1 b)))))))
                    true false))
 
+(define-fun in_range3 ((rec__test__search_result__found1 Bool)
+  (a us_split_discrs)) Bool (= rec__test__search_result__found1 (rec__test__search_result__found
+                                                                a)))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -278,10 +282,6 @@
 (declare-const r24b Bool)
 
 (declare-const attr__ATTRIBUTE_ADDRESS1 Int)
-
-(define-fun in_range3 ((rec__test__search_result__found1 Bool)
-  (a us_rep)) Bool (= rec__test__search_result__found1 (rec__test__search_result__found
-                                                       (us_split_discrs1 a))))
 
 (declare-const value__size1 Int)
 

@@ -384,6 +384,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range5 ((rec__simple_unc_arrays__table__last1 Int)
+  (a us_split_discrs)) Bool (= rec__simple_unc_arrays__table__last1 (to_rep
+                                                                    (rec__simple_unc_arrays__table__last
+                                                                    a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -542,12 +547,6 @@
                              (us_split_fields3 b1))) true))
                      true false))
 
-(define-fun in_range5 ((rec__simple_unc_arrays__table__last1 Int)
-  (a1 us_rep)) Bool (= rec__simple_unc_arrays__table__last1 (to_rep
-                                                            (rec__simple_unc_arrays__table__last
-                                                            (us_split_discrs1
-                                                            a1)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -618,7 +617,8 @@
                                      (to_rep
                                      (rec__simple_unc_arrays__table__last
                                      (us_split_discrs1 a)))
-                                     (to_base temp___expr_348)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_348))))
                                      (and (dynamic_property 1
                                      (to_rep
                                      (rec__simple_unc_arrays__table__last

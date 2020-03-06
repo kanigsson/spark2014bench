@@ -376,21 +376,21 @@
 ;; defqtvc
  ;; File "test_tag.adb", line 19, characters 0-0
   (not
-  (forall ((temp___alloc_214 us_rep2) (usf us_rep1) (y__pointer_value us_rep)
+  (forall ((temp___alloc_216 us_rep2) (usf us_rep1) (y__pointer_value us_rep)
   (y__pointer_address Int) (y__is_null_pointer Bool))
   (=>
-  (not (= (rec__test_tag__rc_acc__is_null_pointer temp___alloc_214) true))
+  (not (= (rec__test_tag__rc_acc__is_null_pointer temp___alloc_216) true))
   (=> (default_initial_assumption usf false)
   (=>
-  (= (rec__test_tag__rc_acc__pointer_value temp___alloc_214) (to_base usf))
+  (= (rec__test_tag__rc_acc__pointer_value temp___alloc_216) (to_base usf))
   (=>
-  (= y__pointer_value (rec__test_tag__rc_acc__pointer_value temp___alloc_214))
+  (= y__pointer_value (rec__test_tag__rc_acc__pointer_value temp___alloc_216))
   (=>
   (= y__pointer_address (rec__test_tag__rc_acc__pointer_address
-                        temp___alloc_214))
+                        temp___alloc_216))
   (=>
   (= y__is_null_pointer (rec__test_tag__rc_acc__is_null_pointer
-                        temp___alloc_214))
+                        temp___alloc_216))
   (rec__test_tag__rc_acc__pointer_value__pred
   (us_repqtmk2 y__is_null_pointer y__pointer_address y__pointer_value)))))))))))
 (check-sat)

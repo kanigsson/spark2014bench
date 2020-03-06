@@ -333,6 +333,11 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__priv__priv_rec__c1 Int)
+  (a us_split_discrs)) Bool (= rec__priv__priv_rec__c1 (to_rep
+                                                       (rec__priv__priv_rec__c
+                                                       a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -442,11 +447,6 @@
                             (rec__priv__priv_rec__content1
                             (us_split_fields3 b))) true))
                     true false))
-
-(define-fun in_range3 ((rec__priv__priv_rec__c1 Int)
-  (a us_rep)) Bool (= rec__priv__priv_rec__c1 (to_rep
-                                              (rec__priv__priv_rec__c
-                                              (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 
@@ -566,9 +566,10 @@
   (temp___is_init_170 Bool) (temp___skip_constant_171 Bool)
   (temp___do_toplevel_172 Bool)
   (temp___do_typ_inv_173 Bool)) Bool (and (in_range3 max
+                                     (us_split_discrs1
                                      (to_base
                                      (rec__main__r__content
-                                     (us_split_fields5 temp___expr_174))))
+                                     (us_split_fields5 temp___expr_174)))))
                                      (and (dynamic_property 1 max
                                      (first1
                                      (rec__priv__priv_rec__content1

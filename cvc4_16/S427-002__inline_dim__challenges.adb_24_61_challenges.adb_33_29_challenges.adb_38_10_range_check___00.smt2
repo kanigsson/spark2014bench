@@ -571,14 +571,14 @@
                                      (fp.leq (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000) (fp #b0 #b10000010010 #b1110100001001000000000000000000000000000000000000000)))
                                      (in_range2 temp___expr_214)))
 
-(declare-sort short_length 0)
+(declare-sort area 0)
 
 (define-fun in_range3 ((x Float64)) Bool (and (fp.isFinite64 x)
                                          (and
-                                         (fp.leq (fp.neg (fp #b0 #b10000000100 #b1001000000000000000000000000000000000000000000000000)) x)
-                                         (fp.leq x (fp #b0 #b10000000100 #b1001000000000000000000000000000000000000000000000000)))))
+                                         (fp.leq (fp.neg (fp #b0 #b10000100110 #b1101000110101001010010100010000000000000000000000000)) x)
+                                         (fp.leq x (fp #b0 #b10000100110 #b1101000110101001010010100010000000000000000000000000)))))
 
-(declare-fun user_eq7 (short_length short_length) Bool)
+(declare-fun user_eq7 (area area) Bool)
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Float64) us_image)
 
@@ -586,7 +586,29 @@
 
 (declare-fun attr__ATTRIBUTE_VALUE4 (us_image) Float64)
 
-(declare-const dummy7 short_length)
+(declare-const dummy7 area)
+
+(declare-datatypes ((area__ref 0))
+(((area__refqtmk (area__content area)))))
+(define-fun area__ref_area__content__projection ((a area__ref)) area 
+  (area__content a))
+
+(declare-sort short_length 0)
+
+(define-fun in_range4 ((x Float64)) Bool (and (fp.isFinite64 x)
+                                         (and
+                                         (fp.leq (fp.neg (fp #b0 #b10000000100 #b1001000000000000000000000000000000000000000000000000)) x)
+                                         (fp.leq x (fp #b0 #b10000000100 #b1001000000000000000000000000000000000000000000000000)))))
+
+(declare-fun user_eq8 (short_length short_length) Bool)
+
+(declare-fun attr__ATTRIBUTE_IMAGE5 (Float64) us_image)
+
+(declare-fun attr__ATTRIBUTE_VALUE__pre_check5 (us_image) Bool)
+
+(declare-fun attr__ATTRIBUTE_VALUE5 (us_image) Float64)
+
+(declare-const dummy8 short_length)
 
 (declare-datatypes ((short_length__ref 0))
 (((short_length__refqtmk (short_length__content short_length)))))
@@ -599,7 +621,7 @@
   (temp___do_typ_inv_250 Bool)) Bool (=>
                                      (or (= temp___is_init_247 true)
                                      (fp.leq (fp.neg (fp #b0 #b10000000100 #b1001000000000000000000000000000000000000000000000000)) (fp #b0 #b10000000100 #b1001000000000000000000000000000000000000000000000000)))
-                                     (in_range3 temp___expr_251)))
+                                     (in_range4 temp___expr_251)))
 
 (define-fun dynamic_invariant3 ((temp___expr_196 Float64)
   (temp___is_init_192 Bool) (temp___skip_constant_193 Bool)
@@ -608,6 +630,14 @@
                                      (or (= temp___is_init_192 true)
                                      (fp.leq (fp.neg (fp #b0 #b10000000000 #b1001001000011111101101010100010001000010110100011000)) (fp #b0 #b10000000000 #b1001001000011111101101010100010001000010110100011000)))
                                      (in_range1 temp___expr_196)))
+
+(define-fun dynamic_invariant4 ((temp___expr_237 Float64)
+  (temp___is_init_233 Bool) (temp___skip_constant_234 Bool)
+  (temp___do_toplevel_235 Bool)
+  (temp___do_typ_inv_236 Bool)) Bool (=>
+                                     (or (= temp___is_init_233 true)
+                                     (fp.leq (fp.neg (fp #b0 #b10000100110 #b1101000110101001010010100010000000000000000000000000)) (fp #b0 #b10000100110 #b1101000110101001010010100010000000000000000000000000)))
+                                     (in_range3 temp___expr_237)))
 
 ;; start_pose__def_axiom
   (assert
@@ -722,6 +752,7 @@
   (= (to_rep (rec__dimensions__vector_type__dy (us_split_fields5 c46b))) o12)
   (let ((o13 (fp.mul RNE o12 o11)))
   (=> (fp.isFinite64 o13)
+  (=> (fp.isFinite64 o13)
   (forall ((o14 Float64))
   (=>
   (= (to_rep (rec__dimensions__vector_type__dx (us_split_fields5 c46b))) o14)
@@ -729,6 +760,7 @@
   (=>
   (= (to_rep (rec__dimensions__vector_type__dx (us_split_fields5 c46b))) o15)
   (let ((o16 (fp.mul RNE o15 o14)))
+  (=> (fp.isFinite64 o16)
   (=> (fp.isFinite64 o16)
   (let ((o17 (fp.add RNE o16 o13)))
   (let ((o18 (sqrt2 o17)))
@@ -751,5 +783,5 @@
   (forall ((c47b1 Float64))
   (=> (= c47b1 o18)
   (forall ((c43b1 Float64))
-  (=> (= c43b1 c47b1) (in_range3 (fp.sub RNE c43b1 c38b)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+  (=> (= c43b1 c47b1) (in_range4 (fp.sub RNE c43b1 c38b)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

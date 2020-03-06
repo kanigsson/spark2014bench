@@ -317,8 +317,8 @@
   (<= (to_rep (select arr k3)) (to_rep (select arr x))))))
   (and (<= l k3) (<= k3 u)))
   (=>
-  (= (and (ite (and (dynamic_property (+ l 1) u i1) (dynamic_invariant k3
-               false true true true))
+  (= (and (ite (and (dynamic_invariant k3 false true true true)
+               (dynamic_property (+ l 1) u i1))
           true false) (ite (and (<= (+ l 1) i1) (<= i1 u)) true false)) true)
   (=> (not (= i1 temp___226))
   (forall ((i2 Int))

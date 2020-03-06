@@ -450,6 +450,10 @@
                            (us_split_fields1 b))) true))))
                    true false))
 
+(define-fun in_range5 ((rec__tester__ring_buffer__ring_buffer_type__max_size1 Int)
+  (a us_split_discrs)) Bool (= rec__tester__ring_buffer__ring_buffer_type__max_size1 
+  (to_rep1 (rec__tester__ring_buffer__ring_buffer_type__max_size a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)

@@ -155,9 +155,6 @@
   (forall ((flag Bool) (num Int))
   (=> (dynamic_invariant num true false true true)
   (=>
-  (forall ((flag1 Bool) (num1 Int)) (state_a__function_guard
-  (state_a flag1 num1) flag1 num1))
-  (=>
   (forall ((flag1 Bool) (num1 Int)) (state_d__function_guard
   (state_d flag1 num1) flag1 num1))
   (=>
@@ -166,6 +163,9 @@
   (=>
   (forall ((flag1 Bool) (num1 Int)) (state_b__function_guard
   (state_b flag1 num1) flag1 num1))
+  (=>
+  (forall ((flag1 Bool) (num1 Int)) (state_a__function_guard
+  (state_a flag1 num1) flag1 num1))
   (<= (+ (+ (+ (+ 0 (ite (= (state_a flag num) true) 1 0)) (ite (= (state_b
                                                                    flag num) true)
                                                            1 0)) (ite (= 

@@ -620,6 +620,10 @@
                            (us_split_fields1 b))) true))
                    true false))
 
+(define-fun in_range3 ((rec__very_longs__very_long__octet_length1 Int)
+  (a us_split_discrs)) Bool (= rec__very_longs__very_long__octet_length1 
+  (to_rep (rec__very_longs__very_long__octet_length a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -716,7 +720,7 @@
   (forall ((i natural))
   (and (<= 0 (naturalqtint i)) (<= (naturalqtint i) 2147483647))))
 
-(define-fun in_range3 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
+(define-fun in_range4 ((x Int)) Bool (and (<= 0 x) (<= x 2147483647)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Int) us_image)
 
@@ -737,7 +741,7 @@
   (temp___skip_constant_36 Bool) (temp___do_toplevel_37 Bool)
   (temp___do_typ_inv_38 Bool)) Bool (=>
                                     (or (= temp___is_init_35 true)
-                                    (<= 0 2147483647)) (in_range3
+                                    (<= 0 2147483647)) (in_range4
                                     temp___expr_39)))
 
 (declare-fun shift_right ((_ BitVec 16) Int) (_ BitVec 16))
@@ -852,12 +856,6 @@
                             (us_split_fields3 b))) true))
                     true false))
 
-(define-fun in_range4 ((rec__very_longs__very_long__octet_length1 Int)
-  (a us_rep)) Bool (= rec__very_longs__very_long__octet_length1 (to_rep
-                                                                (rec__very_longs__very_long__octet_length
-                                                                (us_split_discrs1
-                                                                a)))))
-
 (declare-const value__size2 Int)
 
 (declare-const object__size2 Int)
@@ -924,14 +922,15 @@
   (temp___do_typ_inv_724 Bool)) Bool (and
                                      (=>
                                      (not (= temp___skip_constant_722 true))
-                                     (in_range4
+                                     (in_range3
                                      (+ (to_rep
                                         (rec__very_longs__very_long__octet_length
                                         (us_split_discrs1 l))) (to_rep
                                                                (rec__very_longs__very_long__octet_length
                                                                (us_split_discrs1
                                                                r))))
-                                     (to_base temp___expr_725)))
+                                     (us_split_discrs1
+                                     (to_base temp___expr_725))))
                                      (and (dynamic_property 1
                                      (+ (to_rep
                                         (rec__very_longs__very_long__octet_length
@@ -1006,21 +1005,21 @@
 (define-fun t92b__ref_t92b__content__projection ((a t92b__ref)) us_t 
   (t92b__content a))
 
-(declare-fun temp_____aggregate_def_1122 ((_ BitVec 8) Int Int) us_t)
+(declare-fun temp_____aggregate_def_1123 ((_ BitVec 8) Int Int) us_t)
 
 ;; def_axiom
   (assert
-  (forall ((temp___1124 (_ BitVec 8)))
-  (forall ((temp___1125 Int) (temp___1126 Int))
-  (let ((temp___1123 (temp_____aggregate_def_1122 temp___1124 temp___1125
-                     temp___1126)))
-  (=> (dynamic_invariant3 temp___1124 true true true true)
+  (forall ((temp___1125 (_ BitVec 8)))
+  (forall ((temp___1126 Int) (temp___1127 Int))
+  (let ((temp___1124 (temp_____aggregate_def_1123 temp___1125 temp___1126
+                     temp___1127)))
+  (=> (dynamic_invariant3 temp___1125 true true true true)
   (and
-  (=> (dynamic_property 1 2147483647 temp___1125 temp___1126)
-  (and (= (first1 temp___1123) temp___1125)
-  (= (last1 temp___1123) temp___1126)))
-  (forall ((temp___1127 Int))
-  (= (to_rep2 (select (to_array temp___1123) temp___1127)) temp___1124))))))))
+  (=> (dynamic_property 1 2147483647 temp___1126 temp___1127)
+  (and (= (first1 temp___1124) temp___1126)
+  (= (last1 temp___1124) temp___1127)))
+  (forall ((temp___1128 Int))
+  (= (to_rep2 (select (to_array temp___1124) temp___1128)) temp___1125))))))))
 
 (define-fun dynamic_invariant5 ((temp___expr_239 Int)
   (temp___is_init_235 Bool) (temp___skip_constant_236 Bool)
@@ -1072,38 +1071,38 @@
   (forall ((o4 Int))
   (=>
   (= (to_rep (rec__very_longs__very_long__octet_length (us_split_discrs1 l))) o4)
-  (let ((temp___1128 (temp_____aggregate_def_1122 #x00 1 (+ o4 o3))))
-  (=> (= (first1 temp___1128) 1)
+  (let ((temp___1129 (temp_____aggregate_def_1123 #x00 1 (+ o4 o3))))
+  (=> (= (first1 temp___1129) 1)
   (=>
-  (= (last1 temp___1128) (+ (to_rep
+  (= (last1 temp___1129) (+ (to_rep
                             (rec__very_longs__very_long__octet_length
                             (us_split_discrs1 l))) (to_rep
                                                    (rec__very_longs__very_long__octet_length
                                                    (us_split_discrs1 r)))))
   (=>
-  (ite (<= (first1 temp___1128) (last1 temp___1128))
+  (ite (<= (first1 temp___1129) (last1 temp___1129))
   (and
   (<= 1 (+ (to_rep
            (rec__very_longs__very_long__octet_length (us_split_discrs1 l))) 
   (to_rep (rec__very_longs__very_long__octet_length (us_split_discrs1 r)))))
-  (= (- (last1 temp___1128) (first1 temp___1128)) (- (+ (to_rep
+  (= (- (last1 temp___1129) (first1 temp___1129)) (- (+ (to_rep
                                                         (rec__very_longs__very_long__octet_length
                                                         (us_split_discrs1 l))) 
   (to_rep (rec__very_longs__very_long__octet_length (us_split_discrs1 r)))) 1)))
   (< (+ (to_rep
         (rec__very_longs__very_long__octet_length (us_split_discrs1 l))) 
   (to_rep (rec__very_longs__very_long__octet_length (us_split_discrs1 r)))) 1))
-  (let ((temp___1130 (of_array (to_array temp___1128) (first1 temp___1128)
-                     (last1 temp___1128))))
+  (let ((temp___1131 (of_array (to_array temp___1129) (first1 temp___1129)
+                     (last1 temp___1129))))
   (=>
-  (ite (<= (first1 temp___1130) (last1 temp___1130))
+  (ite (<= (first1 temp___1131) (last1 temp___1131))
   (and (<= (first1 result____split_fields) (last1 result____split_fields))
-  (= (- (last1 temp___1130) (first1 temp___1130)) (- (last1
+  (= (- (last1 temp___1131) (first1 temp___1131)) (- (last1
                                                      result____split_fields) 
   (first1 result____split_fields))))
   (< (last1 result____split_fields) (first1 result____split_fields)))
   (forall ((result____split_fields1 us_t))
-  (=> (= result____split_fields1 temp___1130)
+  (=> (= result____split_fields1 temp___1131)
   (forall ((j Int))
   (=> (= j 1)
   (=>
@@ -1119,14 +1118,14 @@
                (and
                (and
                (and
-               (and (dynamic_invariant2 t_digit1 false true true true)
+               (and (dynamic_invariant2 r_digit1 false true true true)
+               (dynamic_invariant2 t_digit1 false true true true))
                (dynamic_invariant2 temp1 false true true true))
                (dynamic_invariant4
                (us_repqtmk1 result____split_discrs
                (us_split_fieldsqtmk1 result____split_fields2)) false true
                true true)) (dynamic_invariant2 carry1 false true true true))
                (dynamic_invariant2 l_digit1 false true true true))
-               (dynamic_invariant2 r_digit1 false true true true))
           true false) (ite (and (<= 1 j1)
                            (<= j1 (last1
                                   (rec__very_longs__very_long__long_digits
@@ -1149,14 +1148,14 @@
                (and
                (and
                (and
-               (and (dynamic_invariant2 t_digit2 false true true true)
+               (and (dynamic_invariant2 r_digit2 false true true true)
+               (dynamic_invariant2 t_digit2 false true true true))
                (dynamic_invariant2 temp2 false true true true))
                (dynamic_invariant4
                (us_repqtmk1 result____split_discrs
                (us_split_fieldsqtmk1 result____split_fields3)) false true
                true true)) (dynamic_invariant2 carry3 false true true true))
                (dynamic_invariant2 l_digit2 false true true true))
-               (dynamic_invariant2 r_digit2 false true true true))
           true false) (ite (and (<= 1 i1)
                            (<= i1 (last1
                                   (rec__very_longs__very_long__long_digits

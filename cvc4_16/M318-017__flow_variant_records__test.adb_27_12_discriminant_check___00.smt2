@@ -219,6 +219,10 @@
                         (to_rep1 (rec__test__wibble__z (us_split_fields1 b))))))))
                    true false))
 
+(define-fun in_range3 ((rec__test__wibble__d1 Int)
+  (a us_split_discrs)) Bool (= rec__test__wibble__d1 (to_rep1
+                                                     (rec__test__wibble__d a))))
+
 (declare-const value__size Int)
 
 (declare-const object__size Int)
@@ -337,11 +341,6 @@
                                      (or (= temp___is_init_157 true)
                                      (<= 0 2)) (in_range2 temp___expr_161)))
 
-(define-fun in_range3 ((rec__test__wibble__d1 Int)
-  (a us_rep)) Bool (= rec__test__wibble__d1 (to_rep1
-                                            (rec__test__wibble__d
-                                            (us_split_discrs1 a)))))
-
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -440,11 +439,6 @@
 (((t7b__refqtmk (t7b__content us_rep)))))
 (define-fun t7b__ref_t7b__content__projection ((a t7b__ref)) us_rep (t7b__content
                                                                     a))
-
-(define-fun in_range4 ((rec__test__wibble__d1 Int)
-  (a us_rep)) Bool (= rec__test__wibble__d1 (to_rep1
-                                            (rec__test__wibble__d
-                                            (us_split_discrs1 a)))))
 
 (declare-const value__size2 Int)
 

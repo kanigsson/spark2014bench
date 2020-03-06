@@ -904,22 +904,6 @@
 ;; discrimrec__register_type__option__position_axiom
   (assert (<= 0 discrimrec__register_type__option__position))
 
-(declare-const discrimrec__register_type__value_64__first__bit Int)
-
-(declare-const discrimrec__register_type__value_64__last__bit Int)
-
-(declare-const discrimrec__register_type__value_64__position Int)
-
-;; discrimrec__register_type__value_64__first__bit_axiom
-  (assert (<= 0 discrimrec__register_type__value_64__first__bit))
-
-;; discrimrec__register_type__value_64__last__bit_axiom
-  (assert
-  (< discrimrec__register_type__value_64__first__bit discrimrec__register_type__value_64__last__bit))
-
-;; discrimrec__register_type__value_64__position_axiom
-  (assert (<= 0 discrimrec__register_type__value_64__position))
-
 (declare-const discrimrec__register_type__ignore_32a__first__bit Int)
 
 (declare-const discrimrec__register_type__ignore_32a__last__bit Int)
@@ -1064,20 +1048,34 @@
 ;; discrimrec__register_type__value_low__position_axiom
   (assert (<= 0 discrimrec__register_type__value_low__position))
 
+(declare-const discrimrec__register_type__value_64__first__bit Int)
+
+(declare-const discrimrec__register_type__value_64__last__bit Int)
+
+(declare-const discrimrec__register_type__value_64__position Int)
+
+;; discrimrec__register_type__value_64__first__bit_axiom
+  (assert (<= 0 discrimrec__register_type__value_64__first__bit))
+
+;; discrimrec__register_type__value_64__last__bit_axiom
+  (assert
+  (< discrimrec__register_type__value_64__first__bit discrimrec__register_type__value_64__last__bit))
+
+;; discrimrec__register_type__value_64__position_axiom
+  (assert (<= 0 discrimrec__register_type__value_64__position))
+
 (declare-fun user_eq5 (us_rep us_rep) Bool)
 
 (declare-const dummy5 us_rep)
 
-(declare-datatypes ((register_type__ref 0))
-(((register_type__refqtmk (register_type__content us_rep)))))
-(define-fun register_type__ref_register_type__content__projection ((a register_type__ref)) us_rep 
-  (register_type__content a))
+(declare-datatypes ((traxS__ref 0))
+(((traxS__refqtmk (traxS__content us_rep)))))
+(define-fun traxS__ref_traxS__content__projection ((a traxS__ref)) us_rep 
+  (traxS__content a))
 
 (define-fun in_range1 ((rec__discrimrec__register_type__option1 Int)
-  (a us_rep)) Bool (= rec__discrimrec__register_type__option1 (to_rep4
-                                                              (rec__discrimrec__register_type__option
-                                                              (us_split_discrs1
-                                                              a)))))
+  (a us_split_discrs)) Bool (= rec__discrimrec__register_type__option1 
+  (to_rep4 (rec__discrimrec__register_type__option a))))
 
 (declare-const value__size1 Int)
 
@@ -1109,6 +1107,22 @@
 
 ;; discrimrec__register_type__option__position_axiom
   (assert (<= 0 discrimrec__register_type__option__position1))
+
+(declare-const discrimrec__register_type__value_64__first__bit1 Int)
+
+(declare-const discrimrec__register_type__value_64__last__bit1 Int)
+
+(declare-const discrimrec__register_type__value_64__position1 Int)
+
+;; discrimrec__register_type__value_64__first__bit_axiom
+  (assert (<= 0 discrimrec__register_type__value_64__first__bit1))
+
+;; discrimrec__register_type__value_64__last__bit_axiom
+  (assert
+  (< discrimrec__register_type__value_64__first__bit1 discrimrec__register_type__value_64__last__bit1))
+
+;; discrimrec__register_type__value_64__position_axiom
+  (assert (<= 0 discrimrec__register_type__value_64__position1))
 
 (declare-const discrimrec__register_type__ignore_32a__first__bit1 Int)
 
@@ -1254,30 +1268,14 @@
 ;; discrimrec__register_type__value_low__position_axiom
   (assert (<= 0 discrimrec__register_type__value_low__position1))
 
-(declare-const discrimrec__register_type__value_64__first__bit1 Int)
-
-(declare-const discrimrec__register_type__value_64__last__bit1 Int)
-
-(declare-const discrimrec__register_type__value_64__position1 Int)
-
-;; discrimrec__register_type__value_64__first__bit_axiom
-  (assert (<= 0 discrimrec__register_type__value_64__first__bit1))
-
-;; discrimrec__register_type__value_64__last__bit_axiom
-  (assert
-  (< discrimrec__register_type__value_64__first__bit1 discrimrec__register_type__value_64__last__bit1))
-
-;; discrimrec__register_type__value_64__position_axiom
-  (assert (<= 0 discrimrec__register_type__value_64__position1))
-
 (declare-fun user_eq6 (us_rep us_rep) Bool)
 
 (declare-const dummy6 us_rep)
 
-(declare-datatypes ((traxS__ref 0))
-(((traxS__refqtmk (traxS__content us_rep)))))
-(define-fun traxS__ref_traxS__content__projection ((a traxS__ref)) us_rep 
-  (traxS__content a))
+(declare-datatypes ((register_type__ref 0))
+(((register_type__refqtmk (register_type__content us_rep)))))
+(define-fun register_type__ref_register_type__content__projection ((a register_type__ref)) us_rep 
+  (register_type__content a))
 
 (declare-const rax__split_discrs us_split_discrs)
 
@@ -1290,19 +1288,14 @@
   (temp___do_toplevel_211 Bool)
   (temp___do_typ_inv_212 Bool)) Bool (=>
                                      (not (= temp___skip_constant_210 true))
-                                     (in_range1 0 temp___expr_213)))
+                                     (in_range1 0
+                                     (us_split_discrs1 temp___expr_213))))
 
 (define-fun default_initial_assumption ((temp___expr_215 us_rep)
   (temp___skip_top_level_216 Bool)) Bool (= (to_rep4
                                             (rec__discrimrec__register_type__option
                                             (us_split_discrs1
                                             temp___expr_215))) 0))
-
-(define-fun in_range2 ((rec__discrimrec__register_type__option1 Int)
-  (a us_rep)) Bool (= rec__discrimrec__register_type__option1 (to_rep4
-                                                              (rec__discrimrec__register_type__option
-                                                              (us_split_discrs1
-                                                              a)))))
 
 (declare-const value__size2 Int)
 
@@ -1503,12 +1496,6 @@
 (((register_bit_64__refqtmk (register_bit_64__content us_rep)))))
 (define-fun register_bit_64__ref_register_bit_64__content__projection ((a register_bit_64__ref)) us_rep 
   (register_bit_64__content a))
-
-(define-fun in_range3 ((rec__discrimrec__register_type__option1 Int)
-  (a us_rep)) Bool (= rec__discrimrec__register_type__option1 (to_rep4
-                                                              (rec__discrimrec__register_type__option
-                                                              (us_split_discrs1
-                                                              a)))))
 
 (declare-const value__size3 Int)
 
@@ -1719,7 +1706,8 @@
   (temp___do_toplevel_231 Bool)
   (temp___do_typ_inv_232 Bool)) Bool (=>
                                      (not (= temp___skip_constant_230 true))
-                                     (in_range2 0 temp___expr_233)))
+                                     (in_range1 0
+                                     (us_split_discrs1 temp___expr_233))))
 
 (define-fun default_initial_assumption1 ((temp___expr_235 us_rep)
   (temp___skip_top_level_236 Bool)) Bool (= (to_rep4
@@ -1732,19 +1720,14 @@
   (temp___do_toplevel_250 Bool)
   (temp___do_typ_inv_251 Bool)) Bool (=>
                                      (not (= temp___skip_constant_249 true))
-                                     (in_range3 1 temp___expr_252)))
+                                     (in_range1 1
+                                     (us_split_discrs1 temp___expr_252))))
 
 (define-fun default_initial_assumption2 ((temp___expr_254 us_rep)
   (temp___skip_top_level_255 Bool)) Bool (= (to_rep4
                                             (rec__discrimrec__register_type__option
                                             (us_split_discrs1
                                             temp___expr_254))) 1))
-
-(define-fun in_range4 ((rec__discrimrec__register_type__option1 Int)
-  (a us_rep)) Bool (= rec__discrimrec__register_type__option1 (to_rep4
-                                                              (rec__discrimrec__register_type__option
-                                                              (us_split_discrs1
-                                                              a)))))
 
 (declare-const value__size4 Int)
 
@@ -1972,12 +1955,6 @@
                                        dummy3 dummy3)))) :pattern ((convert_bit_64_to_bit_32
                                                                    reg)) )))
 
-(define-fun in_range5 ((rec__discrimrec__register_type__option1 Int)
-  (a us_rep)) Bool (= rec__discrimrec__register_type__option1 (to_rep4
-                                                              (rec__discrimrec__register_type__option
-                                                              (us_split_discrs1
-                                                              a)))))
-
 (declare-const value__size5 Int)
 
 (declare-const object__size5 Int)
@@ -2189,19 +2166,14 @@
   (temp___do_toplevel_269 Bool)
   (temp___do_typ_inv_270 Bool)) Bool (=>
                                      (not (= temp___skip_constant_268 true))
-                                     (in_range5 1 temp___expr_271)))
+                                     (in_range1 1
+                                     (us_split_discrs1 temp___expr_271))))
 
 (define-fun default_initial_assumption3 ((temp___expr_273 us_rep)
   (temp___skip_top_level_274 Bool)) Bool (= (to_rep4
                                             (rec__discrimrec__register_type__option
                                             (us_split_discrs1
                                             temp___expr_273))) 1))
-
-(define-fun in_range6 ((rec__discrimrec__register_type__option1 Int)
-  (a us_rep)) Bool (= rec__discrimrec__register_type__option1 (to_rep4
-                                                              (rec__discrimrec__register_type__option
-                                                              (us_split_discrs1
-                                                              a)))))
 
 (declare-const value__size6 Int)
 
@@ -2402,12 +2374,6 @@
 (((t2b__refqtmk (t2b__content us_rep)))))
 (define-fun t2b__ref_t2b__content__projection ((a t2b__ref)) us_rep (t2b__content
                                                                     a))
-
-(define-fun in_range7 ((rec__discrimrec__register_type__option1 Int)
-  (a us_rep)) Bool (= rec__discrimrec__register_type__option1 (to_rep4
-                                                              (rec__discrimrec__register_type__option
-                                                              (us_split_discrs1
-                                                              a)))))
 
 (declare-const value__size7 Int)
 
@@ -2655,11 +2621,11 @@
   false false true true)
   (=> (= (to_rep o) #x0000000000000010)
   (=> (= (to_rep4 o1) 0)
-  (let ((o2 (us_repqtmk (us_split_discrsqtmk o1)
-            (us_split_fieldsqtmk o dummy1 dummy1 dummy1 dummy2 dummy2 
-            dummy1 dummy2 dummy3 dummy3))))
+  (let ((temp___298 (us_repqtmk (us_split_discrsqtmk o1)
+                    (us_split_fieldsqtmk o dummy1 dummy1 dummy1 dummy2 
+                    dummy2 dummy1 dummy2 dummy3 dummy3))))
   (forall ((rax__split_fields1 us_split_fields))
-  (=> (= rax__split_fields1 (us_split_fields1 o2))
-  (=> (= rax__split_discrs (us_split_discrs1 o2)) (in_range2 0
-  (us_repqtmk rax__split_discrs rax__split_fields1)))))))))))))))))
+  (=> (= rax__split_fields1 (us_split_fields1 temp___298))
+  (=> (= rax__split_discrs (us_split_discrs1 temp___298)) (in_range1 0
+  (us_split_discrs1 (us_repqtmk rax__split_discrs rax__split_fields1))))))))))))))))))
 (check-sat)

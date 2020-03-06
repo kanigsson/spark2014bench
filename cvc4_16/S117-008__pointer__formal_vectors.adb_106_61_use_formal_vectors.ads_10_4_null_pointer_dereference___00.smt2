@@ -1254,14 +1254,14 @@
                                                            (us_repqtmk3
                                                            e__split_fields))))
   (=>
-  (forall ((v__split_fields1 us_split_fields)) (length__function_guard
-  (length1 (us_repqtmk3 v__split_fields1)) (us_repqtmk3 v__split_fields1)))
-  (=>
   (forall ((e__split_fields1 us_split_fields)) (length__function_guard
   (length1 (us_repqtmk3 e__split_fields1)) (us_repqtmk3 e__split_fields1)))
   (=>
   (forall ((v__split_fields1 us_split_fields)) (model__function_guard2
   (model3 (us_repqtmk3 v__split_fields1)) (us_repqtmk3 v__split_fields1)))
+  (=>
+  (forall ((v__split_fields1 us_split_fields)) (length__function_guard
+  (length1 (us_repqtmk3 v__split_fields1)) (us_repqtmk3 v__split_fields1)))
   (forall ((use_formal_vectors__my_vect__append__2__e_top__assume Int))
   (=>
   (= (to_rep (rec__use_formal_vectors__my_vect__vector__top e__split_fields)) use_formal_vectors__my_vect__append__2__e_top__assume)
@@ -1412,10 +1412,10 @@
   (= (and (ite (<= i usf) true false) (ite (<= usf e_top) true false)) true)
   (=> (in_range6 usf)
   (=> (dynamic_invariant4 (get e_mod usf) true false true true)
-  (let ((temp___500 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
+  (let ((temp___493 (rec__use_formal_vectors__my_vect__element_array_access__pointer_value
                     (rec__use_formal_vectors__my_vect__vector__content
                     e__split_fields1))))
-  (=> (and (<= (first1 temp___500) usf) (<= usf (last1 temp___500)))
+  (=> (and (<= (first1 temp___493) usf) (<= usf (last1 temp___493)))
   (rec__use_formal_vectors__my_vect__element_access__pointer_value__pred
-  (select (to_array temp___500) usf))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+  (select (to_array temp___493) usf))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)

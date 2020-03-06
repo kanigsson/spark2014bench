@@ -420,8 +420,8 @@
      (and (and (< (length1 p) (length s)) (= (ascending p) true))
      (forall ((i Int))
      (=> (and (<= (first3 p) i) (<= i (last3 p)))
-     (and (<= (first1 s) (to_rep (select (to_array1 p) i)))
-     (<= (to_rep (select (to_array1 p) i)) (last1 s)))))))) :pattern (
+     (let ((temp___209 (to_rep (select (to_array1 p) i))))
+     (and (<= (first1 s) temp___209) (<= temp___209 (last1 s))))))))) :pattern (
   (is_partition s p)) ))))
 
 (declare-const a us_t)
@@ -483,9 +483,9 @@
   (=> (<= (first3 p) i)
   (=> (<= i (last3 p))
   (=> (= (to_rep (select (to_array1 p) i)) o)
-  (let ((temp___324 (- i 1)))
-  (=> (and (<= (first3 p) temp___324) (<= temp___324 (last3 p)))
-  (forall ((temp___325 Int))
-  (=> (= (to_rep (select (to_array1 p) temp___324)) temp___325)
-  (=> (<= temp___325 (- o 1)) (<= (first1 a) temp___325))))))))))))))))))))
+  (let ((temp___328 (- i 1)))
+  (=> (and (<= (first3 p) temp___328) (<= temp___328 (last3 p)))
+  (forall ((temp___329 Int))
+  (=> (= (to_rep (select (to_array1 p) temp___328)) temp___329)
+  (=> (<= temp___329 (- o 1)) (<= (first1 a) temp___329))))))))))))))))))))
 (check-sat)

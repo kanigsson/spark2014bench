@@ -407,6 +407,10 @@
 
 (declare-const us_tag Int)
 
+(define-fun in_range4 ((rec__integer_stacks__stack__capacity1 Int)
+  (a us_split_discrs)) Bool (= rec__integer_stacks__stack__capacity1 
+  (to_rep1 (rec__integer_stacks__stack__capacity a))))
+
 (declare-const value__size1 Int)
 
 (declare-const object__size1 Int)
@@ -565,7 +569,7 @@
                                     (<= (- 2147483648) 2147483647)) (in_range
                                     temp___expr_18)))
 
-(define-fun in_range4 ((x Int)) Bool (or (= x 0) (= x 1)))
+(define-fun in_range5 ((x Int)) Bool (or (= x 0) (= x 1)))
 
 (declare-fun attr__ATTRIBUTE_IMAGE4 (Bool) us_image)
 
@@ -667,12 +671,6 @@
                     true false))
 
 (declare-const us_tag1 Int)
-
-(define-fun in_range5 ((rec__integer_stacks__stack__capacity1 Int)
-  (a us_rep)) Bool (= rec__integer_stacks__stack__capacity1 (to_rep1
-                                                            (rec__integer_stacks__stack__capacity
-                                                            (us_split_discrs1
-                                                            a)))))
 
 (declare-const value__size2 Int)
 
@@ -833,12 +831,6 @@
 
 (declare-const us_tag2 Int)
 
-(define-fun in_range6 ((rec__integer_stacks__stack__capacity1 Int)
-  (a us_rep)) Bool (= rec__integer_stacks__stack__capacity1 (to_rep1
-                                                            (rec__integer_stacks__stack__capacity
-                                                            (us_split_discrs1
-                                                            a)))))
-
 (declare-const value__size3 Int)
 
 (declare-const object__size3 Int)
@@ -998,12 +990,6 @@
 
 (declare-const us_tag3 Int)
 
-(define-fun in_range7 ((rec__integer_stacks__stack__capacity1 Int)
-  (a us_rep)) Bool (= rec__integer_stacks__stack__capacity1 (to_rep1
-                                                            (rec__integer_stacks__stack__capacity
-                                                            (us_split_discrs1
-                                                            a)))))
-
 (declare-const value__size4 Int)
 
 (declare-const object__size4 Int)
@@ -1162,12 +1148,6 @@
                     true false))
 
 (declare-const us_tag4 Int)
-
-(define-fun in_range8 ((rec__integer_stacks__stack__capacity1 Int)
-  (a us_rep)) Bool (= rec__integer_stacks__stack__capacity1 (to_rep1
-                                                            (rec__integer_stacks__stack__capacity
-                                                            (us_split_discrs1
-                                                            a)))))
 
 (declare-const value__size5 Int)
 
@@ -1493,7 +1473,7 @@
 (define-fun t12s__ref_t12s__content__projection ((a t12s__ref)) us_t 
   (t12s__content a))
 
-(declare-fun temp_____aggregate_def_348 (Int Int Int) us_t)
+(declare-fun temp_____aggregate_def_352 (Int Int Int) us_t)
 
 (declare-const rliteral element)
 
@@ -1502,15 +1482,15 @@
 
 ;; def_axiom
   (assert
-  (forall ((temp___350 Int) (temp___351 Int) (temp___352 Int))
-  (let ((temp___349 (temp_____aggregate_def_348 temp___350 temp___351
-                    temp___352)))
-  (=> (dynamic_invariant1 temp___350 true true true true)
+  (forall ((temp___354 Int) (temp___355 Int) (temp___356 Int))
+  (let ((temp___353 (temp_____aggregate_def_352 temp___354 temp___355
+                    temp___356)))
+  (=> (dynamic_invariant1 temp___354 true true true true)
   (and
-  (=> (dynamic_property 1 2147483647 temp___351 temp___352)
-  (and (= (first1 temp___349) temp___351) (= (last1 temp___349) temp___352)))
-  (forall ((temp___353 Int))
-  (= (select (to_array temp___349) temp___353) rliteral)))))))
+  (=> (dynamic_property 1 2147483647 temp___355 temp___356)
+  (and (= (first1 temp___353) temp___355) (= (last1 temp___353) temp___356)))
+  (forall ((temp___357 Int))
+  (= (select (to_array temp___353) temp___357) rliteral)))))))
 
 ;; user_eq__def_axiom
   (assert
@@ -1543,82 +1523,83 @@
      (= (user_eq9 a b) (oeq (to_base3 a) (to_base3 b)))) :pattern ((user_eq9
                                                                    a b)) )))
 
-(define-fun dynamic_invariant6 ((temp___expr_362 us_rep4)
-  (temp___is_init_358 Bool) (temp___skip_constant_359 Bool)
-  (temp___do_toplevel_360 Bool)
-  (temp___do_typ_inv_361 Bool)) Bool (and
+(define-fun dynamic_invariant6 ((temp___expr_366 us_rep4)
+  (temp___is_init_362 Bool) (temp___skip_constant_363 Bool)
+  (temp___do_toplevel_364 Bool)
+  (temp___do_typ_inv_365 Bool)) Bool (and
                                      (=>
-                                     (not (= temp___skip_constant_359 true))
-                                     (in_range8
+                                     (not (= temp___skip_constant_363 true))
+                                     (in_range4
                                      (to_rep1
                                      (rec__integer_stacks__stack__capacity
                                      (us_split_discrs1 left)))
-                                     (to_base3 temp___expr_362)))
+                                     (us_split_discrs1
+                                     (to_base3 temp___expr_366))))
                                      (and (dynamic_property 1
                                      (to_rep1
                                      (rec__integer_stacks__stack__capacity
                                      (us_split_discrs1 left)))
                                      (first1
                                      (rec__integer_stacks__stack__values4
-                                     (us_split_fields9 temp___expr_362)))
+                                     (us_split_fields9 temp___expr_366)))
                                      (last1
                                      (rec__integer_stacks__stack__values4
-                                     (us_split_fields9 temp___expr_362))))
+                                     (us_split_fields9 temp___expr_366))))
                                      (and
                                      (= (first1
                                         (rec__integer_stacks__stack__values4
-                                        (us_split_fields9 temp___expr_362))) 1)
+                                        (us_split_fields9 temp___expr_366))) 1)
                                      (= (last1
                                         (rec__integer_stacks__stack__values4
-                                        (us_split_fields9 temp___expr_362))) 
+                                        (us_split_fields9 temp___expr_366))) 
                                      (to_rep1
                                      (rec__integer_stacks__stack__capacity
                                      (us_split_discrs1 left))))))))
 
-;; temp___result_370'def
+;; temp___result_374'def
   (assert
-  (forall ((temp___369 us_rep4)) (empty__function_guard
-  (empty (to_base3 temp___369)) (to_base3 temp___369))))
+  (forall ((temp___373 us_rep4)) (empty__function_guard
+  (empty (to_base3 temp___373)) (to_base3 temp___373))))
 
-(define-fun default_initial_assumption ((temp___expr_365 us_rep4)
-  (temp___skip_top_level_366 Bool)) Bool (and
+(define-fun default_initial_assumption ((temp___expr_369 us_rep4)
+  (temp___skip_top_level_370 Bool)) Bool (and
                                          (and
-                                         (= (attr__tag4 temp___expr_365) 
+                                         (= (attr__tag4 temp___expr_369) 
                                          us_tag4)
                                          (and
                                          (= (to_rep1
                                             (rec__integer_stacks__stack__capacity
                                             (us_split_discrs5
-                                            temp___expr_365))) (to_rep1
+                                            temp___expr_369))) (to_rep1
                                                                (rec__integer_stacks__stack__capacity
                                                                (us_split_discrs1
                                                                left))))
                                          (and
                                          (= (rec__integer_stacks__stack__values4
                                             (us_split_fields9
-                                            temp___expr_365)) (let ((temp___368 
-                                                              (temp_____aggregate_def_348
+                                            temp___expr_369)) (let ((temp___372 
+                                                              (temp_____aggregate_def_352
                                                               0 1
                                                               (to_rep1
                                                               (rec__integer_stacks__stack__capacity
                                                               (us_split_discrs5
-                                                              temp___expr_365))))))
+                                                              temp___expr_369))))))
                                                               (of_array
                                                               (to_array
-                                                              temp___368)
+                                                              temp___372)
                                                               (first1
-                                                              temp___368)
+                                                              temp___372)
                                                               (last1
-                                                              temp___368))))
+                                                              temp___372))))
                                          (= (to_rep
                                             (rec__integer_stacks__stack__top4
                                             (us_split_fields9
-                                            temp___expr_365))) 0))))
+                                            temp___expr_369))) 0))))
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_366 true))
+                                         (= temp___skip_top_level_370 true))
                                          (= (empty
-                                            (to_base3 temp___expr_365)) true))))
+                                            (to_base3 temp___expr_369)) true))))
 
 (declare-const right us_rep)
 
@@ -1633,82 +1614,83 @@
      (= (user_eq8 a b) (oeq (to_base2 a) (to_base2 b)))) :pattern ((user_eq8
                                                                    a b)) )))
 
-(define-fun dynamic_invariant7 ((temp___expr_342 us_rep3)
-  (temp___is_init_338 Bool) (temp___skip_constant_339 Bool)
-  (temp___do_toplevel_340 Bool)
-  (temp___do_typ_inv_341 Bool)) Bool (and
+(define-fun dynamic_invariant7 ((temp___expr_346 us_rep3)
+  (temp___is_init_342 Bool) (temp___skip_constant_343 Bool)
+  (temp___do_toplevel_344 Bool)
+  (temp___do_typ_inv_345 Bool)) Bool (and
                                      (=>
-                                     (not (= temp___skip_constant_339 true))
-                                     (in_range7
+                                     (not (= temp___skip_constant_343 true))
+                                     (in_range4
                                      (to_rep1
                                      (rec__integer_stacks__stack__capacity
                                      (us_split_discrs1 right)))
-                                     (to_base2 temp___expr_342)))
+                                     (us_split_discrs1
+                                     (to_base2 temp___expr_346))))
                                      (and (dynamic_property 1
                                      (to_rep1
                                      (rec__integer_stacks__stack__capacity
                                      (us_split_discrs1 right)))
                                      (first1
                                      (rec__integer_stacks__stack__values3
-                                     (us_split_fields7 temp___expr_342)))
+                                     (us_split_fields7 temp___expr_346)))
                                      (last1
                                      (rec__integer_stacks__stack__values3
-                                     (us_split_fields7 temp___expr_342))))
+                                     (us_split_fields7 temp___expr_346))))
                                      (and
                                      (= (first1
                                         (rec__integer_stacks__stack__values3
-                                        (us_split_fields7 temp___expr_342))) 1)
+                                        (us_split_fields7 temp___expr_346))) 1)
                                      (= (last1
                                         (rec__integer_stacks__stack__values3
-                                        (us_split_fields7 temp___expr_342))) 
+                                        (us_split_fields7 temp___expr_346))) 
                                      (to_rep1
                                      (rec__integer_stacks__stack__capacity
                                      (us_split_discrs1 right))))))))
 
-;; temp___result_356'def
+;; temp___result_360'def
   (assert
-  (forall ((temp___355 us_rep3)) (empty__function_guard
-  (empty (to_base2 temp___355)) (to_base2 temp___355))))
+  (forall ((temp___359 us_rep3)) (empty__function_guard
+  (empty (to_base2 temp___359)) (to_base2 temp___359))))
 
-(define-fun default_initial_assumption1 ((temp___expr_345 us_rep3)
-  (temp___skip_top_level_346 Bool)) Bool (and
+(define-fun default_initial_assumption1 ((temp___expr_349 us_rep3)
+  (temp___skip_top_level_350 Bool)) Bool (and
                                          (and
-                                         (= (attr__tag3 temp___expr_345) 
+                                         (= (attr__tag3 temp___expr_349) 
                                          us_tag3)
                                          (and
                                          (= (to_rep1
                                             (rec__integer_stacks__stack__capacity
                                             (us_split_discrs4
-                                            temp___expr_345))) (to_rep1
+                                            temp___expr_349))) (to_rep1
                                                                (rec__integer_stacks__stack__capacity
                                                                (us_split_discrs1
                                                                right))))
                                          (and
                                          (= (rec__integer_stacks__stack__values3
                                             (us_split_fields7
-                                            temp___expr_345)) (let ((temp___354 
-                                                              (temp_____aggregate_def_348
+                                            temp___expr_349)) (let ((temp___358 
+                                                              (temp_____aggregate_def_352
                                                               0 1
                                                               (to_rep1
                                                               (rec__integer_stacks__stack__capacity
                                                               (us_split_discrs4
-                                                              temp___expr_345))))))
+                                                              temp___expr_349))))))
                                                               (of_array
                                                               (to_array
-                                                              temp___354)
+                                                              temp___358)
                                                               (first1
-                                                              temp___354)
+                                                              temp___358)
                                                               (last1
-                                                              temp___354))))
+                                                              temp___358))))
                                          (= (to_rep
                                             (rec__integer_stacks__stack__top3
                                             (us_split_fields7
-                                            temp___expr_345))) 0))))
+                                            temp___expr_349))) 0))))
                                          (=>
                                          (not
-                                         (= temp___skip_top_level_346 true))
+                                         (= temp___skip_top_level_350 true))
                                          (= (empty
-                                            (to_base2 temp___expr_345)) true))))
+                                            (to_base2 temp___expr_349)) true))))
 
 (assert
 ;; defqtvc
@@ -1747,22 +1729,22 @@
                          (rec__integer_stacks__stack__values
                          this__split_fields) o2
                          (rec__ext__ this__split_fields)))
-  (let ((temp___416 (rec__integer_stacks__stack__values this__split_fields1)))
+  (let ((temp___420 (rec__integer_stacks__stack__values this__split_fields1)))
   (forall ((o3 element))
   (=> (= (to_rep3 o3) item)
-  (forall ((temp___417 Int))
+  (forall ((temp___421 Int))
   (=>
-  (= (to_rep (rec__integer_stacks__stack__top this__split_fields1)) temp___417)
+  (= (to_rep (rec__integer_stacks__stack__top this__split_fields1)) temp___421)
   (=>
-  (and (<= (first1 temp___416) temp___417)
-  (<= temp___417 (last1 temp___416)))
+  (and (<= (first1 temp___420) temp___421)
+  (<= temp___421 (last1 temp___420)))
   (forall ((this__split_fields2 us_split_fields))
   (=>
   (= this__split_fields2 (us_split_fieldsqtmk
                          (us_tqtmk
                          (store (to_array
                                 (rec__integer_stacks__stack__values
-                                this__split_fields1)) temp___417 o3)
+                                this__split_fields1)) temp___421 o3)
                          (rt
                          (rec__integer_stacks__stack__values
                          this__split_fields1)))

@@ -144,26 +144,26 @@
 
 (declare-const attr__ATTRIBUTE_ADDRESS2 Int)
 
-(declare-fun valid_state (Int Int (Array Int character)) Bool)
+(declare-fun valid_state ((Array Int character) Int Int) Bool)
 
-(declare-fun valid_state__function_guard (Bool Int Int
-  (Array Int character)) Bool)
+(declare-fun valid_state__function_guard (Bool (Array Int character) Int
+  Int) Bool)
 
 ;; valid_state__def_axiom
   (assert
-  (forall ((buf_read__pointer Int) (buf_read__max_read Int))
   (forall ((buf_read__buffer (Array Int character)))
+  (forall ((buf_read__pointer Int) (buf_read__max_read Int))
   (! (and
      (forall ((buf_read__buffer1 (Array Int character)) (index Int))
      (valid__function_guard (valid (to_rep (select buf_read__buffer1 index)))
      (to_rep (select buf_read__buffer1 index))))
      (=
-     (= (valid_state buf_read__pointer buf_read__max_read buf_read__buffer) true)
+     (= (valid_state buf_read__buffer buf_read__pointer buf_read__max_read) true)
      (and (<= buf_read__pointer buf_read__max_read)
      (forall ((index Int))
      (=> (and (<= 1 index) (<= index buf_read__max_read))
      (= (valid (to_rep (select buf_read__buffer index))) true)))))) :pattern (
-  (valid_state buf_read__pointer buf_read__max_read buf_read__buffer)) ))))
+  (valid_state buf_read__buffer buf_read__pointer buf_read__max_read)) ))))
 
 (declare-const attr__ATTRIBUTE_ADDRESS3 Int)
 
@@ -374,9 +374,9 @@
   (=> (dynamic_invariant c false false true true)
   (=>
   (forall ((pointer1 Int) (max_read1 Int) (buffer1 (Array Int character)))
-  (valid_state__function_guard (valid_state pointer1 max_read1 buffer1)
-  pointer1 max_read1 buffer1))
-  (=> (= (valid_state pointer max_read buffer) true)
+  (valid_state__function_guard (valid_state buffer1 pointer1 max_read1)
+  buffer1 pointer1 max_read1))
+  (=> (= (valid_state buffer pointer max_read) true)
   (=> (= spark__branch (ite (= pointer max_read) true false))
   (=> (not (= spark__branch true)) (in_range3 (+ pointer 1))))))))))))
 (check-sat)
