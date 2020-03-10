@@ -1314,3 +1314,4 @@ Target solver: CVC4
   (let ((o14 (- result_index3 start_index2)))
   (=> (in_range1 o14) (in_range1 (+ o14 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

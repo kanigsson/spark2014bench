@@ -391,3 +391,4 @@ Target solver: CVC4
   (=> (in_range1 (bvsub x y))
   (=> (in_range1 (bvmul x y)) (not (= y #x00000000))))))))))))))))
 (check-sat)
+(exit)

@@ -958,3 +958,4 @@ Target solver: CVC4
   (=> (and (< 0 (- i index)) (< (- i index) 16))
   (not (= ((_ int2bv 8) (mod2 i 256)) ((_ int2bv 8) (mod2 index 256))))))))))))))))))))))))))
 (check-sat)
+(exit)

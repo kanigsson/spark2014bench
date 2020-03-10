@@ -652,3 +652,4 @@ Target solver: CVC4
   (let ((o (- first_char2 1))) (and (in_range5 o) (= first_char1 o)))
   (= first_char1 1)))))) (=> (<= first_char1 1024) (<= 1 first_char1))))))))))))))
 (check-sat)
+(exit)

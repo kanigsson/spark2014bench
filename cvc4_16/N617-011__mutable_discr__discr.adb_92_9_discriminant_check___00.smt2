@@ -232,3 +232,4 @@ Target solver: CVC4
   (= (rec__private_discr__p_no_default__c (us_split_discrs1 temp___367)) 
   (rec__private_discr__p_no_default__c d__split_discrs))))))))))))))
 (check-sat)
+(exit)

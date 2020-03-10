@@ -488,3 +488,4 @@ Target solver: CVC4
   (forall ((o6 Int))
   (=> (= (to_rep (select (to_array a) o5)) o6) (in_range1 (+ x lcp__result))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

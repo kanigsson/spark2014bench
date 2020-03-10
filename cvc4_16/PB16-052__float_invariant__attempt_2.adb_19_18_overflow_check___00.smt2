@@ -166,3 +166,4 @@ Target solver: CVC4
  ;; File "attempt_2.adb", line 18, characters 0-0
   (not (=> (dynamic_invariant n true false true true) (in_range (* n n)))))
 (check-sat)
+(exit)

@@ -367,3 +367,4 @@ Target solver: CVC4
   (=> (and (<= (first1 value) j1) (<= j1 (last1 value)))
   (<= 97 (to_rep (select (to_array value) j1))))))))))))))
 (check-sat)
+(exit)

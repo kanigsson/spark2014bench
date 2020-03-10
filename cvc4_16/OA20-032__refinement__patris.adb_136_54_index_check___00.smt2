@@ -2108,3 +2108,4 @@ Target solver: CVC4
   (= (to_rep1 (rec__patris__piece__s cur_piece__split_fields)) temp___900)
   (<= 3 temp___900)))))))))))))))))
 (check-sat)
+(exit)

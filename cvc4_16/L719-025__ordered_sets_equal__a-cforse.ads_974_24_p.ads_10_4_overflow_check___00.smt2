@@ -1124,3 +1124,4 @@ Target solver: CVC4
   (<= o7 (to_rep (rec__p__my_sets__set__capacity (us_split_discrs1 o6)))))
   (in_range5 (- o7 o5)))))))))))))))))))
 (check-sat)
+(exit)

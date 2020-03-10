@@ -404,3 +404,4 @@ Target solver: CVC4
   (= (to_rep result____last) (last1 input))))
   (forall ((o Int)) (=> (= (to_rep result____first) o) (in_range1 (- o 1)))))))))))))))))
 (check-sat)
+(exit)

@@ -464,3 +464,4 @@ Target solver: CVC4
   (=> (dynamic_invariant m true false true true)
   (=> (< 0 (length m)) (bvule (first1 m) (first1 m))))))
 (check-sat)
+(exit)

@@ -899,3 +899,4 @@ Target solver: CVC4
   (=> (= (to_rep (get temp___loop_entry_242 outer inner)) o)
   (= (to_rep (get temp___loop_entry_242 outer inner)) 0))))))))))))))))))))))
 (check-sat)
+(exit)

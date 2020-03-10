@@ -889,3 +889,4 @@ Target solver: CVC4
   (forall ((o19 us_t)) (invariant____function_guard (invariant__ o19) o19))
   (= (invariant__ (of_array values2 1 100)) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

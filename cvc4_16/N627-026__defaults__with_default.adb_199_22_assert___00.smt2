@@ -2221,3 +2221,4 @@ Target solver: CVC4
      w_d_di__split_fields)) 0)
   (not (= w_o_di__split_discrs true))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

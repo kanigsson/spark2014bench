@@ -389,3 +389,4 @@ Target solver: CVC4
   (=> (= last_char r6b)
   (=> (dynamic_invariant r6b true false true true) (=> (<= 1 r6b) (<= 1 1))))))))
 (check-sat)
+(exit)

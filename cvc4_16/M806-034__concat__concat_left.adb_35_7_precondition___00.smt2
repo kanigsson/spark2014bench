@@ -463,3 +463,4 @@ Target solver: CVC4
   (let ((o (of_array x 1 10)))
   (or (< (last1 o) 2147483647) (< (- 2147483648) (first1 o)))))))
 (check-sat)
+(exit)

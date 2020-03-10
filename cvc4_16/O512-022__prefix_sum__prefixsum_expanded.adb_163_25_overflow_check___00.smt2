@@ -590,3 +590,4 @@ Target solver: CVC4
   (forall ((temp___292 Int))
   (=> (= temp___292 space2) (in_range1 (* space2 2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

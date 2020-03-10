@@ -200,3 +200,4 @@ Target solver: CVC4
   (=> (= x__pointer_value1 o2)
   (= (to_rep x__pointer_value1) (to_rep y__pointer_value1)))))))))))))))
 (check-sat)
+(exit)

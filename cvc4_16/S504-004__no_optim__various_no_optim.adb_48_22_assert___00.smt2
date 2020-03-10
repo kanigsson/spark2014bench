@@ -312,3 +312,4 @@ Target solver: CVC4
   (=> (= counter2 (bvadd counter1 #x00000001))
   (=> (= counter3 (bvadd counter2 #x00000001)) (= counter3 #x0000005D)))))))))))))))
 (check-sat)
+(exit)

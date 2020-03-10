@@ -1679,3 +1679,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true))
   (let ((o n)) (=> (in_range13 o) (<= 1 o)))))))))))))
 (check-sat)
+(exit)

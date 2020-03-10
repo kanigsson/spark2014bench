@@ -1670,3 +1670,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk7
   (of_array (slide (to_array a) (first1 a) 1) 1 (last1 a)))))) o1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -203,3 +203,4 @@ Target solver: CVC4
   (us_repqtmk (us_split_fieldsqtmk g1__split_fields1))))
   (= (glob_ok (us_repqtmk (us_split_fieldsqtmk g1__split_fields))) true)))))))
 (check-sat)
+(exit)

@@ -343,3 +343,4 @@ Target solver: CVC4
   (=> (= (last1 a) (last1 b))
   (=> (<= (first1 a) (last1 a)) (<= (- 2147483648) (first1 a)))))))))
 (check-sat)
+(exit)

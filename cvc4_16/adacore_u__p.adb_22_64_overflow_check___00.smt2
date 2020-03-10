@@ -255,3 +255,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 size1) true false) (ite (<= size1 10) true false)) true)
   (in_range1 (* 2 size1)))))))))))))))))))))))))
 (check-sat)
+(exit)

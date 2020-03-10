@@ -1580,3 +1580,4 @@ Target solver: CVC4
   (=> (dynamic_invariant6 (form target1) true false true true)
   (= (is_open target1) true))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

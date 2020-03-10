@@ -1570,3 +1570,4 @@ Target solver: CVC4
   (= (has_element
      (us_repqtmk l__split_discrs (us_split_fieldsqtmk l__split_fields)) usf1) true)))))))))))))))))))))
 (check-sat)
+(exit)

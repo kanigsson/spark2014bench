@@ -1254,3 +1254,4 @@ Target solver: CVC4
   (ite (and (<= (first2 a) i1) (<= i1 (last2 a))) true false)) true)
   (=> (in_range7 i1) (<= i1 (last2 a))))))))))))))))))))
 (check-sat)
+(exit)

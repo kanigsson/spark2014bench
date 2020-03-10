@@ -207,3 +207,4 @@ Target solver: CVC4
   (=> (= main__with_spoon_feeding__result o)
   (not (= id main__with_spoon_feeding__result))))))))))))
 (check-sat)
+(exit)

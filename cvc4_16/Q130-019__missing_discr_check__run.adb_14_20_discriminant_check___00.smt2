@@ -828,3 +828,4 @@ Target solver: CVC4
   (=> (= y2__attr__constrained false)
   (=> (in_range1 0) (in_range2 0 (us_split_discrs1 c1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

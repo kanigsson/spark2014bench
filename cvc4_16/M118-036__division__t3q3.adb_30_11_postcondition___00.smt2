@@ -286,3 +286,4 @@ Target solver: CVC4
   (=> (in_range1 o2)
   (=> (in_range2 o2) (forall ((l1 Int)) (=> (= l1 o2) (= k1 (div1 i j)))))))))))))))))))))
 (check-sat)
+(exit)

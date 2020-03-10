@@ -625,3 +625,4 @@ Target solver: CVC4
   (= (is_digit (to_rep (select (to_array name) i))) true))
   (= (to_rep (select (to_array name) i)) 45)))))))))))))
 (check-sat)
+(exit)

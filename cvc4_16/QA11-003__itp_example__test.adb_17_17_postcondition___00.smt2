@@ -321,3 +321,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array a) 1)) o)
   (=> (= test__test_2__result o) (= test__test_2__result 97)))))))))
 (check-sat)
+(exit)

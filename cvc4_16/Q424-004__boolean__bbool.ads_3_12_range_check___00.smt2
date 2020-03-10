@@ -105,3 +105,4 @@ Target solver: CVC4
   (=> (= bbool__b_LAST__assume b_LAST)
   (=> (<= (ite b_FIRST 1 0) (ite b_LAST 1 0)) (<= 0 (ite b_FIRST 1 0)))))))))))))
 (check-sat)
+(exit)

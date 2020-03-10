@@ -135,3 +135,4 @@ Target solver: CVC4
   (and (dynamic_invariant x1 true true true true) (type_invariant x1))
   (dynamic_invariant x1 true true true true))))))) (type_invariant x1)))))))
 (check-sat)
+(exit)

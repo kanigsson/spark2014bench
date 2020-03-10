@@ -237,3 +237,4 @@ Target solver: CVC4
   (= (and (ite (<= 2 i) true false) (ite (<= i (div1 x 2)) true false)) true)
   (=> (<= 2 i1) (=> (<= i1 (div1 x 2)) (not (= i1 0))))))))))
 (check-sat)
+(exit)

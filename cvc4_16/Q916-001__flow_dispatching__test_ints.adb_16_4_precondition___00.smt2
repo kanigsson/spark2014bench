@@ -990,3 +990,4 @@ Target solver: CVC4
      (rec__ints__int__value (us_split_fields1 ints__bump__arg__compl))) (- 
   (to_rep1 (rec__ints__int__max (us_split_fields1 ints__bump__arg__compl))) 10)))))))))))))
 (check-sat)
+(exit)

@@ -658,3 +658,4 @@ Target solver: CVC4
   (=> (in_range6 (+ j 1))
   (=> (and (<= (first_2 a) j) (<= j (last_2 a))) (<= i (last2 a)))))))))))))))))
 (check-sat)
+(exit)

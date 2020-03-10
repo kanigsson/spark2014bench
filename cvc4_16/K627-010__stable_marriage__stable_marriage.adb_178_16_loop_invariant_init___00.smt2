@@ -535,3 +535,4 @@ Target solver: CVC4
   (invert_1 (select r2 prev1)) (select r2 prev1)))
   (= (bool_eq1 (select result__ prev) 1 64 (invert_1 (select r2 prev)) 1 64) true))))))))))))
 (check-sat)
+(exit)

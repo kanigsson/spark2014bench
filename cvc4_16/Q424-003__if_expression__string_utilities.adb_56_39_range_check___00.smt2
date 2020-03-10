@@ -1138,3 +1138,4 @@ Target solver: CVC4
   (=> (dynamic_invariant4 x1 true false true true) (dynamic_property3 
   first3 last4 last4)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

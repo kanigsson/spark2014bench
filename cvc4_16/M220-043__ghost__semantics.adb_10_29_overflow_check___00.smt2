@@ -149,3 +149,4 @@ Target solver: CVC4
   (and (ghost_func__function_guard o Tuple0) (dynamic_invariant o true false
   true true)) (in_range1 (+ formal o))))))))))))
 (check-sat)
+(exit)

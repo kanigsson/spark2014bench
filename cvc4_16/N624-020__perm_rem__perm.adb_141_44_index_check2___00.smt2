@@ -491,3 +491,4 @@ Target solver: CVC4
   (=> (not (< usf i))
   (let ((o4 (+ usf 1))) (=> (in_range1 o4) (<= (first1 a) o4)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

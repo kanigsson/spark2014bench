@@ -938,3 +938,4 @@ Target solver: CVC4
                                                                     init)) 
                                                             (last1 a)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

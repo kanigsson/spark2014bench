@@ -235,3 +235,4 @@ Target solver: CVC4
   (and (dynamic_invariant o1 true false true true) (= o1 outstanding)))
   (in_range (- 2147483647 o1)))))))))))))
 (check-sat)
+(exit)

@@ -958,3 +958,4 @@ Target solver: CVC4
   (us_repqtmk2 z__is_null_pointer z__pointer_address z__pointer_value) true
   false true true) (= (first1 x__pointer_value) 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -319,3 +319,4 @@ Target solver: CVC4
   (forall ((global Int))
   (=> (dynamic_invariant1 global false false true true) (= (mod2 22 2) 0)))))
 (check-sat)
+(exit)

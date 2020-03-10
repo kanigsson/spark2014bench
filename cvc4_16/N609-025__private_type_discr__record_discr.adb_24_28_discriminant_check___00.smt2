@@ -211,3 +211,4 @@ Target solver: CVC4
  ;; File "record_discr.adb", line 21, characters 0-0
   (not (in_range1 (distinct 0 0) (us_split_discrs1 r))))
 (check-sat)
+(exit)

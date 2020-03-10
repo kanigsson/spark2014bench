@@ -1162,3 +1162,4 @@ Target solver: CVC4
      ctx__split_fields)) o6)
   (not (= 8 0))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -500,3 +500,4 @@ Target solver: CVC4
   (exists ((o index_type)) (and (= (to_rep1 o) (+ index1 1)) (= index1 127))))))))
   (= count1 0)))))))))
 (check-sat)
+(exit)

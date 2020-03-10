@@ -796,3 +796,4 @@ Target solver: CVC4
   (= (- (last1 a__split_fields1) (first1 a__split_fields1)) (- r63b 1)))
   (< r63b 1)) (in_range3 right3)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

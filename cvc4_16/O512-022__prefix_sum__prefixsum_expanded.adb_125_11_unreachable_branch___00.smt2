@@ -511,3 +511,4 @@ Target solver: CVC4
   (and (= (to_rep (select saved_a 2)) o4) (= o1 (ite (= o4 o3) true false))))))
   (= o1 false)))) (not (= o1 true))))))))))))))))))))))))))
 (check-sat)
+(exit)

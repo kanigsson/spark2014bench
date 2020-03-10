@@ -442,3 +442,4 @@ Target solver: CVC4
   (and (<= 1 temp___358) (<= temp___358 (length haystack)))) (in_range1
   (length needle)))))))
 (check-sat)
+(exit)

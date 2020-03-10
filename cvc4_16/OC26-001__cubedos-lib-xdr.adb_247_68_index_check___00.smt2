@@ -963,3 +963,4 @@ Target solver: CVC4
                                 true false)) true)
   (<= (first3 data) i1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

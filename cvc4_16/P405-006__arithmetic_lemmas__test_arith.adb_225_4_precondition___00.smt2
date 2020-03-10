@@ -594,3 +594,4 @@ Target solver: CVC4
   (let ((o1 (+ x5 34)))
   (=> (in_range o1) (=> (in_range4 o1) (=> (in_range4 x5) (< x5 o1))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

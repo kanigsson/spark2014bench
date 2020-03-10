@@ -1572,3 +1572,4 @@ Target solver: CVC4
   (to_rep (get (to_array a) i2 l1))))
   (not (= (choose (to_rep (get (to_array a) i1 l))) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

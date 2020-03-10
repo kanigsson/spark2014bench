@@ -625,3 +625,4 @@ Target solver: CVC4
      (rec__predicate_ints__int__min (us_split_fields1 (to_base arg1)))) 
   (to_rep (rec__predicate_ints__int__min (us_split_fields1 (to_base arg2)))))))))
 (check-sat)
+(exit)

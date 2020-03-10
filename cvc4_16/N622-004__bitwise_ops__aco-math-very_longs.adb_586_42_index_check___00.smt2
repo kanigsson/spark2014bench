@@ -811,3 +811,4 @@ Target solver: CVC4
       (rec__ada___ada___aco__math__very_longs__very_long__long_digits
       (us_split_fields1 number))) digit_number1))))))))))))))
 (check-sat)
+(exit)

@@ -849,3 +849,4 @@ Target solver: CVC4
   (=> (<= (first1 initializer) (last1 initializer))
   (<= 1 (length initializer)))))))))))))))))))))
 (check-sat)
+(exit)

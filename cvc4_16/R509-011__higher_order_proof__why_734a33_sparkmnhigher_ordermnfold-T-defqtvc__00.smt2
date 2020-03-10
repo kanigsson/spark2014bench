@@ -595,3 +595,4 @@ Target solver: CVC4
   (<= (first4
       (of_array (to_array a) (first4 a) (last4 a) (first_2 a) (last_2 a))) o))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -233,3 +233,4 @@ Target solver: CVC4
   (=> (= x (div1 1 z))
   (=> (dynamic_invariant x true false true true) (not (= x 0)))))))))
 (check-sat)
+(exit)

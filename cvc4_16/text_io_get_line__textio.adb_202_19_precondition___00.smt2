@@ -1214,3 +1214,4 @@ Target solver: CVC4
   (not
   (= (end_of_file (us_repqtmk file__split_fields1) cur_position2 the_file) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

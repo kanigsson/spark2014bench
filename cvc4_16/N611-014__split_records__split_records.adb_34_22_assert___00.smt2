@@ -2253,3 +2253,4 @@ Target solver: CVC4
   (=> (=> (= c2__split_discrs1 true) (= (to_rep c2__split_fields1) 0))
   (not (= c2__split_discrs1 true))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

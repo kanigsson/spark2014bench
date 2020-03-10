@@ -439,3 +439,4 @@ Target solver: CVC4
   (=> (length__function_guard (length x) x)
   (= (length anonymous_access__copy__result) (length x))))))))))
 (check-sat)
+(exit)

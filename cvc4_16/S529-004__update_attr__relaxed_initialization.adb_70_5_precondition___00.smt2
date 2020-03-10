@@ -1042,3 +1042,4 @@ Target solver: CVC4
      (rec__relaxed_initialization__rec__y
      (us_split_fields1 (select obj1 idx)))) true))))))))))))))))))))))
 (check-sat)
+(exit)

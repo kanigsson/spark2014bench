@@ -525,3 +525,4 @@ Target solver: CVC4
   (=> (= (to_rep (select d 1)) (to_rep (select x 6)))
   (=> (= (to_rep (select d 6)) (to_rep (select x 1))) (=> (<= 1 5) (<= 1 1)))))))))))))))
 (check-sat)
+(exit)

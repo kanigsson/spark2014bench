@@ -1121,3 +1121,4 @@ Target solver: CVC4
   (let ((o3 (+ string_index2 1)))
   (=> (in_range1 o3) (<= (first1 number) o3))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

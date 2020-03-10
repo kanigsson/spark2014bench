@@ -1325,3 +1325,4 @@ Target solver: CVC4
   (= (length1 o1) (min 20 (length o)))) (in_range4 20
   (us_split_discrs1 (to_base o1))))))))
 (check-sat)
+(exit)

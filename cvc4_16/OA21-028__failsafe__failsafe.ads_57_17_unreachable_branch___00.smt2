@@ -741,3 +741,4 @@ Target solver: CVC4
   (= counter1 (time_below_threshold battery_level_at1 current_time1))))
   (not (= o2 true)))))))))))))))))))))))))))
 (check-sat)
+(exit)

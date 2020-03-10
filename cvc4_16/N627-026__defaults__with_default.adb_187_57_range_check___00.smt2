@@ -2155,3 +2155,4 @@ Target solver: CVC4
      (us_split_discrs11 usf1)) usf)))
   (dynamic_property first 2147483647 c))))))
 (check-sat)
+(exit)

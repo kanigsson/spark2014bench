@@ -849,3 +849,4 @@ Target solver: CVC4
      (select (rec__random__generator__state g__split_fields) temp___249)) o2)
   (<= 0 (- i 1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

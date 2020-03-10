@@ -1267,3 +1267,4 @@ Target solver: CVC4
   (=> (= (to_rep2 o) ((_ extract 7 0) q_hat))
   (<= (first1 quotient__split_fields) j))))))))))))))))
 (check-sat)
+(exit)

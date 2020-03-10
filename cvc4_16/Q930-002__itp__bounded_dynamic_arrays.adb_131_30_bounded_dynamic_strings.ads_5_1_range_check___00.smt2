@@ -707,3 +707,4 @@ Target solver: CVC4
   (= (- (last1 source) (first1 source)) (- (length source) 1)))
   (< (length source) 1)) (in_range1 (length source))))))))))))))))))))))
 (check-sat)
+(exit)

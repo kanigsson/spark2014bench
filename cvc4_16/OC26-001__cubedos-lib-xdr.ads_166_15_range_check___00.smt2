@@ -955,3 +955,4 @@ Target solver: CVC4
   (= o (ite (= (mod1 (length o3 o2) 4) 0) true false)))))) (= o false))))
   (=> (= o true) (in_range1 (length1 value)))))))))))
 (check-sat)
+(exit)

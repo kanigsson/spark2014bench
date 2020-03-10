@@ -535,3 +535,4 @@ Target solver: CVC4
   (=> (= o true)
   (forall ((o1 Int)) (=> (= (to_rep h_v2__last) o1) (not (= 2 0))))))))))))
 (check-sat)
+(exit)

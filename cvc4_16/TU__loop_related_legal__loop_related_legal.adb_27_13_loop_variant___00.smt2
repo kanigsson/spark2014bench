@@ -108,3 +108,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x1 false false true true)
   (forall ((x2 Int)) (=> (= x2 0) (< par3 temp___175)))))))))))))))))))
 (check-sat)
+(exit)

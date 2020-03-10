@@ -998,3 +998,4 @@ Target solver: CVC4
   (forall ((o9 Int))
   (=> (= (to_rep1 value__first) o9) (in_range4 (length o9 o8))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -356,3 +356,4 @@ Target solver: CVC4
   (= (to_rep
      (rec__private_types__simple__d (us_split_discrs1 s__split_fields1))) 0))))))))))
 (check-sat)
+(exit)

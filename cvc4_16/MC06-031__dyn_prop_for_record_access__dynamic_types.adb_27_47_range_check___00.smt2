@@ -622,3 +622,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (=> (= (to_rep o1) from) (dynamic_property1 first2 last2 from)))))))))))))))))
 (check-sat)
+(exit)

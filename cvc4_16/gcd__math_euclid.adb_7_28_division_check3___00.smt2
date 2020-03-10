@@ -250,3 +250,4 @@ Target solver: CVC4
   (=> (divides__function_guard (divides b a) b a)
   (=> (not (= (divides b a) true)) (not (= b 0)))))))))))))
 (check-sat)
+(exit)

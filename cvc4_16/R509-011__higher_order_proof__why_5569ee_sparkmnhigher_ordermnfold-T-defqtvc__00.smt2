@@ -619,3 +619,4 @@ Target solver: CVC4
      x i (last_2 a)) true)
   (in_range6 (first_2 a)))))))))))))
 (check-sat)
+(exit)

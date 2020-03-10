@@ -625,3 +625,4 @@ Target solver: CVC4
                                                       false true)) true))
   (=> (bvugt rcx2 #x0000000000000000) (bvult rcx2 temp___440))))))))))))))))))))))))))
 (check-sat)
+(exit)

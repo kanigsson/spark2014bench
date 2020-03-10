@@ -2800,3 +2800,4 @@ Target solver: CVC4
   (=> (dynamic_invariant4 z1 true false true true)
   (=> (= (bool_eq6 x1 y1) true) (= (bool_eq7 z1 w1) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

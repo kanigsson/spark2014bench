@@ -249,3 +249,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 end_pos true false true true)
   (not (<= start_pos end_pos))))))
 (check-sat)
+(exit)

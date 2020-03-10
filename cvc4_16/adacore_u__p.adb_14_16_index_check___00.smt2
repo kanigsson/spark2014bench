@@ -321,3 +321,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (=> (= (to_rep o1) threshold) (<= (to_rep1 a__first) i)))))))))))))))
 (check-sat)
+(exit)

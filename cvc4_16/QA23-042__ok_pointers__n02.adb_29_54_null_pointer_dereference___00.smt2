@@ -977,3 +977,4 @@ Target solver: CVC4
   (rec__n02__data__ai__pointer_value__pred
   (rec__n02__data__mystruct__b x__pointer_value1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -320,3 +320,4 @@ Target solver: CVC4
      (rec__pointers__t_ptr__pointer_value pointers__swap__x__compl))
      us_null_pointer) true))))))))))))))))
 (check-sat)
+(exit)

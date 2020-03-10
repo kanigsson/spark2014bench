@@ -650,3 +650,4 @@ Target solver: CVC4
   (forall ((temp___loop_entry_305 (Array Int natural)))
   (=> (= temp___loop_entry_305 values) (<= current 100))))))))))))))))))))
 (check-sat)
+(exit)

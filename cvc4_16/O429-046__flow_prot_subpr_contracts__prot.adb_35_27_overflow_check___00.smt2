@@ -99,3 +99,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (<= hidden2 0) true false))
   (=> (= spark__branch true) (in_range (+ hidden 1)))))))))
 (check-sat)
+(exit)

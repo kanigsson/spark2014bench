@@ -229,3 +229,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__prot__p_int__d (us_split_discrs1 self__))) o)
   (in_range (+ x o))))))))))
 (check-sat)
+(exit)

@@ -403,3 +403,4 @@ Target solver: CVC4
   (=> (forall ((y1 Int)) (divides__function_guard (divides y1 b) y1 b))
   (= (divides y b) true))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

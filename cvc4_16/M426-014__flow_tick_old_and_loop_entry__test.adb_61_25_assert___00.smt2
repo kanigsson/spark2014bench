@@ -97,3 +97,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x false false true true)
   (=> (= temp___loop_entry_193 x) (= temp___loop_entry_193 0))))))
 (check-sat)
+(exit)

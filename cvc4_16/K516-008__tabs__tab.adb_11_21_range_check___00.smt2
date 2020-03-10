@@ -240,3 +240,4 @@ Target solver: CVC4
   (=> (forall ((i1 Int)) (prev__function_guard (prev i1) i1))
   (=> (<= 1 (prev i)) (<= 1 1)))))))))))))
 (check-sat)
+(exit)

@@ -381,3 +381,4 @@ Target solver: CVC4
   (= spark__branch (ite (= x #x00) true false)))
   (bvult (bvmul ((_ zero_extend 8) x) ((_ zero_extend 8) y)) #x0011))))))))))))
 (check-sat)
+(exit)

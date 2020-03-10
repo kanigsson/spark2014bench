@@ -1142,3 +1142,4 @@ Target solver: CVC4
   (us_repqtmk1 amortized_queue__enqueue__result1)))
   (= (inv (us_repqtmk1 amortized_queue__enqueue__result)) true))))))))))))))))))))))))))))
 (check-sat)
+(exit)

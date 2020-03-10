@@ -178,3 +178,4 @@ Target solver: CVC4
   (=> (fp.lt (fp #b0 #b00000000 #b00000000000000000000000) ka)
   (=> (fp.isFinite32 (fp.mul RNE kv kv)) (not (fp.isZero ka)))))))))))
 (check-sat)
+(exit)

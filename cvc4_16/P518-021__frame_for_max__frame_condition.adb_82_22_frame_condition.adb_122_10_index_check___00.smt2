@@ -553,3 +553,4 @@ Target solver: CVC4
   (=> (= max 0)
   (=> (dynamic_invariant max true false true true) (<= (to_rep1 a__first) k))))))))))))))))))))
 (check-sat)
+(exit)

@@ -513,3 +513,4 @@ Target solver: CVC4
   (ite (= space 4) true false))) (= o false)))))))
   (= (all_elements_in a (* space 1000000)) true))))))))))))
 (check-sat)
+(exit)

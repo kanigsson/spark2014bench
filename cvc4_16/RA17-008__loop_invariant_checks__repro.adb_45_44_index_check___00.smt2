@@ -980,3 +980,4 @@ Target solver: CVC4
      (us_split_fields1 (select (to_array temp___288) o12)))) o13)
   (<= (to_rep result_arr__first) result_pos1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

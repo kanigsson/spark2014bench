@@ -1450,3 +1450,4 @@ Target solver: CVC4
   (=> (= o3 true)
   (=> (and (<= (first_2 a2) l) (<= l (last_2 a2))) (<= (first2 a2) k))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

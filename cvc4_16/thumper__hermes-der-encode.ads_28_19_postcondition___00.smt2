@@ -734,3 +734,4 @@ Target solver: CVC4
   (= ada___ada___hermes__der__encode__put_boolean_value__result boolean_octet_array)
   (= (length1 ada___ada___hermes__der__encode__put_boolean_value__result) 3)))))))))))
 (check-sat)
+(exit)

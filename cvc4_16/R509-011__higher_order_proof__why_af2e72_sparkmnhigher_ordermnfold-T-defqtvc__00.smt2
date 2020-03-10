@@ -1274,3 +1274,4 @@ Target solver: CVC4
      (to_rep1 (select (to_array1 temp___678) (last1 o3)))) true))))
   (<= (first3 temp___678) k2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

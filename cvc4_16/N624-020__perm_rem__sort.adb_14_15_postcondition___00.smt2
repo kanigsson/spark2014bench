@@ -1543,3 +1543,4 @@ Target solver: CVC4
   (of_array values4 1 100) (of_array values5 1 100)))
   (= (is_perm (of_array values1 1 100) (of_array values3 1 100)) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

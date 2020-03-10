@@ -1615,3 +1615,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 diff) true false) (ite (<= diff r5b) true false)) true)
   (<= (first3 (rec__repro__r__x (us_split_fields7 arg))) ids1))))))))))))))))))
 (check-sat)
+(exit)

@@ -1131,3 +1131,4 @@ Target solver: CVC4
       (rec__partition_refinement__interval__first p_prime__split_fields)) j2)
   (<= j2 i2)) (= (to_rep3 (select f3 j2)) p_prime_index2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

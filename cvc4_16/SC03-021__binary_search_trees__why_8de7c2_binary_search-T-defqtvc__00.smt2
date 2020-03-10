@@ -1537,3 +1537,4 @@ Target solver: CVC4
                                                               temp___borrowed_334
                                                               temp___brower_333)) )))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

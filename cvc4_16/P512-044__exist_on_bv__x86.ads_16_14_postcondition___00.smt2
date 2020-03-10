@@ -292,3 +292,4 @@ Target solver: CVC4
   (and (and (bvule #x0000000000000000 n) (bvule n range_size))
   (= var (bvadd bottom n))))))))))))
 (check-sat)
+(exit)

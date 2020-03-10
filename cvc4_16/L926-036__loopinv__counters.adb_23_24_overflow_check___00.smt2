@@ -399,3 +399,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__counters__counter__c c__split_fields1)) o7) (in_range
   (+ o7 1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

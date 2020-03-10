@@ -120,3 +120,4 @@ Target solver: CVC4
   (let ((o1 (+ o 1)))
   (=> (in_range1 o1) (forall ((res1 Int)) (=> (= res1 o1) (<= (- 99) res1)))))))))))))))))
 (check-sat)
+(exit)

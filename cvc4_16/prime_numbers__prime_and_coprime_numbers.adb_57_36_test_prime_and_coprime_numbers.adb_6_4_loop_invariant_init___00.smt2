@@ -403,3 +403,4 @@ Target solver: CVC4
   (forall ((b1 Int))
   (=> (= b1 o1) (=> (and (< 0 a1) (< 0 b1)) (not (and (= a1 1) (= b1 1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

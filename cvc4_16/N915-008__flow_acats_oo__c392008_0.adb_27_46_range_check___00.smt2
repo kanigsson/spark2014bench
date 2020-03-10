@@ -196,3 +196,4 @@ Target solver: CVC4
   (= (to_rep (rec__c392008_0__account__current_balance a__split_fields)) o)
   (in_range (- o 500))))))
 (check-sat)
+(exit)

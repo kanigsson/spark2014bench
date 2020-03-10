@@ -348,3 +348,4 @@ Target solver: CVC4
   (= (to_rep (rec__toto__sock_addr_type__family (us_split_discrs3 usf1))) usf)
   (in_range usf))))))
 (check-sat)
+(exit)

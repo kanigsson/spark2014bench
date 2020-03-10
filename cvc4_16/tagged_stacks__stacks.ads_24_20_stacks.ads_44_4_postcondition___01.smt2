@@ -674,3 +674,4 @@ Target solver: CVC4
   (to_base (us_repqtmk1 s__split_fields3 s__attr__tag))))
   (= (is_empty (to_base (us_repqtmk1 s__split_fields2 s__attr__tag))) true)))))))
 (check-sat)
+(exit)

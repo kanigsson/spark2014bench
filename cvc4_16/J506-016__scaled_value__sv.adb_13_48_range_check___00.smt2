@@ -394,3 +394,4 @@ Target solver: CVC4
   (=> (bvule value capacity) (in_range2
   (bvudiv (bvmul value capacity) requested_capacity)))))))))
 (check-sat)
+(exit)

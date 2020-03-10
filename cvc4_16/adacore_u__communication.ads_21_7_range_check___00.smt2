@@ -167,3 +167,4 @@ Target solver: CVC4
   (=> (= v_ext max)
   (=> (dynamic_invariant1 max true false true true) (=> (<= 1 max) (<= 1 1)))))))))
 (check-sat)
+(exit)

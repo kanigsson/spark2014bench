@@ -3233,3 +3233,4 @@ Target solver: CVC4
      (select (rec__pupils__pupildata__pupilentries p__split_fields3) i)
      (select (rec__pupils__pupildata__pupilentries p__split_fields1) i)) true)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

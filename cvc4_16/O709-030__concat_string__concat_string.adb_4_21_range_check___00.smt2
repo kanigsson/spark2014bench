@@ -446,3 +446,4 @@ Target solver: CVC4
   (=> (not (= (length1 s) 0)) (in_range1
   (- (+ (first1 s) (+ (length (first1 s) (last1 s)) (length 1 1))) 1))))))
 (check-sat)
+(exit)

@@ -452,3 +452,4 @@ Target solver: CVC4
      (of_array b (to_rep b__first) (to_rep b__last)) a_first
      (+ a_first length11) (to_rep b__first) i1 j1) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

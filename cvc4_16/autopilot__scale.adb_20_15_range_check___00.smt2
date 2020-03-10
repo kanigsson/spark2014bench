@@ -320,3 +320,4 @@ Target solver: CVC4
   (=> (in_range1 o2)
   (forall ((calc1 Int)) (=> (= calc1 o2) (in_range3 calc1)))))))))))))))))))
 (check-sat)
+(exit)

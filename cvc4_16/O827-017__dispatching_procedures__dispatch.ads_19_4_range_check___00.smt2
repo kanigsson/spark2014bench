@@ -550,3 +550,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c3 false false true true)
   (=> (<= 1 b_max) (<= 1 1))))))))))))
 (check-sat)
+(exit)

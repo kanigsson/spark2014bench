@@ -594,3 +594,4 @@ Target solver: CVC4
   (=> (forall ((usf4 us_rep)) (length__function_guard (length usf4) usf4))
   (<= usf3 (length usf2))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

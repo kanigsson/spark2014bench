@@ -391,3 +391,4 @@ Target solver: CVC4
   (=> (= c__split_discrs (us_split_discrs1 temp___256))
   (not (= u1__attr__constrained true)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

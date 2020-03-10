@@ -329,3 +329,4 @@ Target solver: CVC4
                                                          false))) true))
   (let ((o4 (* a b))) (=> (in_range1 o4) (in_range1 (abs1 o4))))))))))))))))))))))))))
 (check-sat)
+(exit)

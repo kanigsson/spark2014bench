@@ -485,3 +485,4 @@ Target solver: CVC4
   (=> (dynamic_invariant a true false true true)
   (=> (dynamic_invariant b true false true true) (< 0 (+ a b))))))
 (check-sat)
+(exit)

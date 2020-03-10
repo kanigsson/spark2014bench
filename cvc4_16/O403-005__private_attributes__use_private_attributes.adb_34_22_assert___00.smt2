@@ -1070,3 +1070,4 @@ Target solver: CVC4
                                                            fc__split_fields
                                                            fc__attr__tag))) true))))))))))))))))))))))))
 (check-sat)
+(exit)

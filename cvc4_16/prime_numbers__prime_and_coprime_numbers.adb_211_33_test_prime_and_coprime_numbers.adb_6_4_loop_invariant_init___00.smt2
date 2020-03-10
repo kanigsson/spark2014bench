@@ -553,3 +553,4 @@ Target solver: CVC4
   (= (and (ite (<= 2 index_2) true false) (ite (<= index_2 r82b) true false)) true)
   (<= 2 index_2)))))))))))))))
 (check-sat)
+(exit)

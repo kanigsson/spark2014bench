@@ -500,3 +500,4 @@ Target solver: CVC4
      (rec__stack_functional_spec__stack_type__pointer my_stack__split_fields)) o1)
   (<= 1 (- o1 1)))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -187,3 +187,4 @@ Target solver: CVC4
   (=> (fp.isFinite32 o2)
   (fp.leq (fp #b0 #b00000000 #b00000000000000000000000) o2))))))))))))))))))
 (check-sat)
+(exit)

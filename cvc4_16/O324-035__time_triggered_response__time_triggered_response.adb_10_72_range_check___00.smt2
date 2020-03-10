@@ -227,3 +227,4 @@ Target solver: CVC4
   (=> (dynamic_invariant time_idle true false true true)
   (=> (not (= time_idle 0)) (in_range2 (min 50 (- time_idle 1))))))))
 (check-sat)
+(exit)

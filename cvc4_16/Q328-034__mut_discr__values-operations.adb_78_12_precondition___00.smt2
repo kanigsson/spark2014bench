@@ -503,3 +503,4 @@ Target solver: CVC4
   (=> (forall ((last5 Int)) (full__function_guard (full last5) last5))
   (not (= (full last4) true))))))))))))))))))))))))
 (check-sat)
+(exit)

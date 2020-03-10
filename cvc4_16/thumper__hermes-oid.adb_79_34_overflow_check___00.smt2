@@ -891,3 +891,4 @@ Target solver: CVC4
   (forall ((o19 Int))
   (=> (= (to_rep result____first) o19) (in_range1 (+ o19 2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

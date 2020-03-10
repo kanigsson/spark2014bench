@@ -1186,3 +1186,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 o4 true false true true)
   (=> (< 0 o4) (=> (= (length1 (model1 usf)) (length usf)) (<= 1 usf1))))))))))))))))))))))
 (check-sat)
+(exit)

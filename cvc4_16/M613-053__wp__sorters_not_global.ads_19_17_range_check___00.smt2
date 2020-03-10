@@ -300,3 +300,4 @@ Target solver: CVC4
   (= current1 temp___186))))))))))) (= values1 values)))))
   (=> (<= 1 (- limit 1)) (<= 1 1))))))))
 (check-sat)
+(exit)

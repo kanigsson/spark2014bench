@@ -231,3 +231,4 @@ Target solver: CVC4
   (=> (dynamic_invariant log_in1 true true true true)
   (forall ((o1 integer)) (=> (= (to_rep o1) log_in1) (<= 1 log_size1))))))))))))))
 (check-sat)
+(exit)

@@ -918,3 +918,4 @@ Target solver: CVC4
   (=> (= text2 (store text1 (+ index2 0) o5))
   (forall ((o6 character)) (=> (= (to_rep o6) digit_12) (<= 1 (+ index2 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

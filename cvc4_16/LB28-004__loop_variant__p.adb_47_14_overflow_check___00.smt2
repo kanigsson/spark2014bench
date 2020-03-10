@@ -379,3 +379,4 @@ Target solver: CVC4
   (=> (<= (to_rep tab__first) j7)
   (=> (<= j7 (to_rep tab__last)) (in_range1 (+ j7 1))))))))))))))))))))))))
 (check-sat)
+(exit)

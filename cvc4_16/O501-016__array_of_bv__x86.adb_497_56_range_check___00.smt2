@@ -798,3 +798,4 @@ Target solver: CVC4
   (=> (dynamic_invariant val__ true false true true)
   (bvule ((_ zero_extend 56) #x00) (bvand val__ #x00000000000000FF))))))
 (check-sat)
+(exit)

@@ -973,3 +973,4 @@ Target solver: CVC4
   (=> (<= 1 j)
   (=> (<= j 70) (= (to_rep (select (select candidates2 i) j)) 32)))))))))))))))))))))))))
 (check-sat)
+(exit)

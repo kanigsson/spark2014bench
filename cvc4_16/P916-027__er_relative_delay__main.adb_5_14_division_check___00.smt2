@@ -313,3 +313,4 @@ Target solver: CVC4
   (and (zero__function_guard o Tuple0)
   (and (dynamic_invariant1 o true false true true) (= o 0))) (not (= o 0)))))))))
 (check-sat)
+(exit)

@@ -444,3 +444,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (rec__tasking__mailboxT__count self__)) o1) (in_range2
   (- o1 1))))))))))
 (check-sat)
+(exit)

@@ -791,3 +791,4 @@ Target solver: CVC4
                       true false)) true)
   (let ((o (+ j1 1))) (=> (in_range7 o) (<= 1 o))))))))))))))))
 (check-sat)
+(exit)

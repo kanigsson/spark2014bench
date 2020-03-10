@@ -269,3 +269,4 @@ Target solver: CVC4
  ;; File "interrupt_priority.ads", line 12, characters 0-0
   (not (forall ((temp___208 Bool)) (= temp___208 false))))
 (check-sat)
+(exit)

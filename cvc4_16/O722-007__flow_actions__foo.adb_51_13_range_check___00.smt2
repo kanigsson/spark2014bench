@@ -390,3 +390,4 @@ Target solver: CVC4
   (=> (= spark__branch o)
   (=> (not (= spark__branch true)) (=> (<= pos 5) (<= 1 pos)))))))))))
 (check-sat)
+(exit)

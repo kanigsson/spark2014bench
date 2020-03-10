@@ -420,3 +420,4 @@ Target solver: CVC4
   (and (= (to_rep1 z__first) (- x 1)) (= (to_rep1 z__last) (+ x 1))))
   (=> (<= (- x 1) (+ x 1)) (<= 1 (- x 1)))))))))))
 (check-sat)
+(exit)

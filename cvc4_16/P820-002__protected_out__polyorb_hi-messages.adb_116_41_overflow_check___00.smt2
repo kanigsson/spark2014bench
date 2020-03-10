@@ -961,3 +961,4 @@ Target solver: CVC4
   (=> (= (to_rep2 item__first) o12)
   (let ((o13 (+ o12 read_elts))) (=> (in_range2 o13) (in_range2 (- o13 1)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -302,3 +302,4 @@ Target solver: CVC4
   (=> (not (= a #x0000000000000000))
   (=> (bvule b #x000000007FFFFFFF) (in_range (bv2nat b)))))))))
 (check-sat)
+(exit)

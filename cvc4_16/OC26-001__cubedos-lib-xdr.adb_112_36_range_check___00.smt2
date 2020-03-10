@@ -777,3 +777,4 @@ Target solver: CVC4
   (let ((o1 (length1 value)))
   (=> (in_range1 o1) (in_range3 (+ position o1)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

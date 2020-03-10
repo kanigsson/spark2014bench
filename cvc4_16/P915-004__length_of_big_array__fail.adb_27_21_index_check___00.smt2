@@ -802,3 +802,4 @@ Target solver: CVC4
   (=> (bvule #x0000000000000000 (last3 c))
   (bvule (first3 c) #xFFFFFFFFFFFFFFFF)))))))))
 (check-sat)
+(exit)

@@ -292,3 +292,4 @@ Target solver: CVC4
   (rec__f__r1__f1 (us_split_fields3 x)))
   (= (sf (rec__f__r1__f1 (us_split_fields3 x))) 2))))))))))))))
 (check-sat)
+(exit)

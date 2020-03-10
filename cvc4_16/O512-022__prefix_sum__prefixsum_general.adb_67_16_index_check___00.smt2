@@ -661,3 +661,4 @@ Target solver: CVC4
   (=> (in_range1 o4)
   (forall ((o5 integer)) (=> (= (to_rep o5) o4) (<= 0 right3))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -496,3 +496,4 @@ Target solver: CVC4
   (=> (= (last2 temp___176) high1)
   (=> (<= (first2 temp___176) (last2 temp___176)) (<= low1 high1)))))))))))
 (check-sat)
+(exit)

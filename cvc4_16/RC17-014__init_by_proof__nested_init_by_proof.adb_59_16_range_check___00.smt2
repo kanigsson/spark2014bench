@@ -1151,3 +1151,4 @@ Target solver: CVC4
   (= (to_rep (rec__nested_init_by_proof__holder__d (us_split_discrs3 usf1))) usf))))
   (in_range2 15))))
 (check-sat)
+(exit)

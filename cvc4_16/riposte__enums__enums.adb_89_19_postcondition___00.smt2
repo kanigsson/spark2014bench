@@ -134,3 +134,4 @@ Target solver: CVC4
   (=> (= enums__is_subenum__result r)
   (=> (= enums__is_subenum__result true) (in_range2 a))))))))
 (check-sat)
+(exit)

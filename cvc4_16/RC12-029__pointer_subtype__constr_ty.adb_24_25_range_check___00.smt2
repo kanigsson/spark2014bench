@@ -910,3 +910,4 @@ Target solver: CVC4
   false true true) (in_range7 1 i1
   (us_repqtmk1 m__is_null_pointer m__pointer_address m__pointer_value))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

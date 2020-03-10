@@ -954,3 +954,4 @@ Target solver: CVC4
   (=> (= distance_km_out11 o10)
   (fp.isFinite64 (fp.div RNE ((_ to_fp_unsigned 11 53) RNE to_uint16_result_1_out11) ms_in_hour_out11))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

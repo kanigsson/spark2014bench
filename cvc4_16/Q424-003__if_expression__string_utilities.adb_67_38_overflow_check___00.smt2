@@ -1165,3 +1165,4 @@ Target solver: CVC4
         (to_rep2 (get lengths1 o7 x21)) 0))))
   (in_range1 (- x21 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1235,3 +1235,4 @@ Target solver: CVC4
                                             current_out3 current_err3))))))
   (<= 1 1))))))))))))))))))))))))
 (check-sat)
+(exit)

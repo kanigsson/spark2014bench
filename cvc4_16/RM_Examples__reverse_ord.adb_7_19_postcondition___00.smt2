@@ -269,3 +269,4 @@ Target solver: CVC4
   (=> (<= j 10)
   (= (to_rep (select a2 j)) (to_rep (select a1 (+ (- 10 j) 1))))))))))))
 (check-sat)
+(exit)

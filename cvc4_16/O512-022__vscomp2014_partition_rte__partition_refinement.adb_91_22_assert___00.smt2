@@ -2258,3 +2258,4 @@ Target solver: CVC4
                                             (select a temp___index_1428)))))))
   (= (bool_eq8 a1 0 5 a_update 0 5) true))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

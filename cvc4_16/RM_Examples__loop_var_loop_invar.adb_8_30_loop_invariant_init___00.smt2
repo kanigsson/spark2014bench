@@ -164,3 +164,4 @@ Target solver: CVC4
   (let ((o (* 10 i)))
   (=> (in_range1 o) (=> (in_range1 (- 100 o)) (<= (- 100 (* 10 i)) r))))))))))))
 (check-sat)
+(exit)

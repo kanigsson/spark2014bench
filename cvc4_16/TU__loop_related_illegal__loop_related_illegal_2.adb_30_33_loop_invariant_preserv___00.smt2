@@ -145,3 +145,4 @@ Target solver: CVC4
   (=> (not (< 2000 x2))
   (=> (in_range (- 2147483647 par1)) (<= x2 (- 2147483647 par1))))))))))))))))))))
 (check-sat)
+(exit)

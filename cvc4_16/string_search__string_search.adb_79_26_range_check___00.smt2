@@ -551,3 +551,4 @@ Target solver: CVC4
   (=> (= i1 1)
   (=> (in_range1 (length needle)) (in_range1 (length haystack)))))))))))))))))
 (check-sat)
+(exit)

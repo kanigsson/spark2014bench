@@ -407,3 +407,4 @@ Target solver: CVC4
   (=> (= (rec__split_records__holder__present (us_split_discrs3 usf1)) usf)
   (in_range (ite usf 1 0))))))
 (check-sat)
+(exit)

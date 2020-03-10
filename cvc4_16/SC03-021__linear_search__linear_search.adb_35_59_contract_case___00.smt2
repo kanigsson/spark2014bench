@@ -809,3 +809,4 @@ Target solver: CVC4
   (=> (and (<= 1 i) (<= i (length l))) (not (= (nth l i) v))))
   (= linear_search__linear_search__result 0)))))))))
 (check-sat)
+(exit)

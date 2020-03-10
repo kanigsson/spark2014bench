@@ -611,3 +611,4 @@ Target solver: CVC4
            (us_split_fields3 (rec__test_route__route_acc__pointer_value o))))) 1))))
   (let ((o2 (+ (min 2147483646 o1) 1))) (=> (in_range o2) (in_range1 o2))))))))))
 (check-sat)
+(exit)

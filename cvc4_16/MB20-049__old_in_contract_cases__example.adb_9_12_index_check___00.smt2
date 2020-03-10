@@ -247,3 +247,4 @@ Target solver: CVC4
   (forall ((o Int))
   (=> (= (to_rep (select a j)) o) (forall ((v2 Int)) (=> (= v2 o) (<= 1 j))))))))))))))))))
 (check-sat)
+(exit)

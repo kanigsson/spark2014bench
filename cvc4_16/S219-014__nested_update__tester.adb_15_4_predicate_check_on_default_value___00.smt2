@@ -1684,3 +1684,4 @@ Target solver: CVC4
        (us_split_discrs2 usf))))
   (=> (default_initial_assumption usf1 false) (dynamic_predicate1 usf1)))))))
 (check-sat)
+(exit)

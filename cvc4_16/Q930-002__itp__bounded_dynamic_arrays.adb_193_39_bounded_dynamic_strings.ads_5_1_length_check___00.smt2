@@ -749,3 +749,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 r142b true false true true)
   (=> (<= (first1 by__) (last1 by__)) (<= start last2)))))))))))))))))))))
 (check-sat)
+(exit)

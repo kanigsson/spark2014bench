@@ -880,3 +880,4 @@ Target solver: CVC4
   (=> (<= (+ (first1 separates) 2) (last1 separates))
   (<= 1 (+ (first1 separates) 2))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

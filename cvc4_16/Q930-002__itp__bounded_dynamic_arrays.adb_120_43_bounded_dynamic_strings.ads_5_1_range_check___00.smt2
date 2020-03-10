@@ -793,3 +793,4 @@ Target solver: CVC4
       (rec__bounded_dynamic_strings__sequence__content
       (us_split_fields1 source))) 1))))))))))))))))
 (check-sat)
+(exit)

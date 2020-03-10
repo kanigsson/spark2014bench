@@ -1345,3 +1345,4 @@ Target solver: CVC4
           (- (+ cur_position_at_start n) 2) the_file) cur_position_at_start)))
   (in_range1 (+ k 2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

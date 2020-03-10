@@ -548,3 +548,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= i usf) true false) (ite (<= usf o3) true false)) true)
   (<= (first1 perm__remove__result) usf)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

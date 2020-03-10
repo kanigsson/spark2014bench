@@ -550,3 +550,4 @@ Target solver: CVC4
   (forall ((o3 Int))
   (=> (= (to_rep b__first) o3) (<= (+ a_first o) (+ (to_rep a__last) 1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

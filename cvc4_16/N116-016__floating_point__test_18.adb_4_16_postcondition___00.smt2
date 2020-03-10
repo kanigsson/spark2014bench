@@ -154,3 +154,4 @@ Target solver: CVC4
   (=> (fp.isFinite32 o1)
   (forall ((z1 Float32)) (=> (= z1 o1) (fp.leq x z1))))))))))))))))
 (check-sat)
+(exit)

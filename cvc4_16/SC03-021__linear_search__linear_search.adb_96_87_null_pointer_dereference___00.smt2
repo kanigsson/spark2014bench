@@ -1414,3 +1414,4 @@ Target solver: CVC4
   (=> (dynamic_invariant5 o3 true false true true)
   (=> (= o3 v) (rec__linear_search__int_acc__pointer_value__pred usf))))))))))))))))))))))))
 (check-sat)
+(exit)

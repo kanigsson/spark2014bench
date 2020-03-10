@@ -324,3 +324,4 @@ Target solver: CVC4
   (= (to_rep (select a5 j)) (+ (to_rep (select a5 (- j 1))) (to_rep
                                                             (select a5 (- j 2))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

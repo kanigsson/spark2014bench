@@ -195,3 +195,4 @@ Target solver: CVC4
   (and (dynamic_invariant o2 true false true true) (= o2 (to_rep o))))
   (not (= o2 0)))))))))
 (check-sat)
+(exit)

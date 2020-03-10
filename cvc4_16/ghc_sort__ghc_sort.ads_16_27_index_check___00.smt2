@@ -730,3 +730,4 @@ Target solver: CVC4
         true false))
   (= o2 false)))) (=> (= o2 true) (<= (first3 ghc_sort__cut__result) 1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -813,3 +813,4 @@ Target solver: CVC4
   (=> (exists ((o4 Int)) (= (to_rep1 (select (to_array1 temp___807) i)) o4))
   (dynamic_property first last i)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -332,3 +332,4 @@ Target solver: CVC4
   (=> (<= (to_rep1 a__first) i)
   (=> (<= i (to_rep1 a__last)) (<= (to_rep1 a__first) i))))))))))
 (check-sat)
+(exit)

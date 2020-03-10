@@ -1191,3 +1191,4 @@ Target solver: CVC4
   (= o false))
   (=> (= o true) (=> (in_range7 (last_2 a)) (in_range6 (last2 a))))))))))))
 (check-sat)
+(exit)

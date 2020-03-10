@@ -699,3 +699,4 @@ Target solver: CVC4
   (forall ((a1 Bool) (b1 Bool)) (r_1__function_guard (r_1 seta a1 b1) 
   seta a1 b1)) (= (r_1 seta a b) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

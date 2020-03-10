@@ -355,3 +355,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 (get s2 o4) true false true true)
   (=> (in_range4 usf) (<= 1 usf))))))))))))))))))))
 (check-sat)
+(exit)

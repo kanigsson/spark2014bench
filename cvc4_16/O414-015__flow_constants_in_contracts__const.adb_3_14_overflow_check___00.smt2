@@ -194,3 +194,4 @@ Target solver: CVC4
   (=> (= (identity (identity c1)) e)
   (let ((o (+ a b))) (=> (in_range o) (in_range (+ o c)))))))))))))))))))
 (check-sat)
+(exit)

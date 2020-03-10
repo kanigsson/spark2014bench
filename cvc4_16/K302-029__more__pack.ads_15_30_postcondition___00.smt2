@@ -174,3 +174,4 @@ Target solver: CVC4
   (=> (exists ((spark__branch Bool)) (= spark__branch x))
   (= (to_rep y__pointer_value) 0)))))
 (check-sat)
+(exit)

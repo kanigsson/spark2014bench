@@ -1134,3 +1134,4 @@ Target solver: CVC4
           (us_split_fields3 (rec__test_route__route_acc__pointer_value usf1))))) 1)))))
   (rec__test_route__point_acc__pointer_value__pred usf))))))))))))
 (check-sat)
+(exit)

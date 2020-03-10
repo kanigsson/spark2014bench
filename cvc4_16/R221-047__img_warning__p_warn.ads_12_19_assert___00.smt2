@@ -441,3 +441,4 @@ Target solver: CVC4
   (=> (= (first1 (to_string (attr__ATTRIBUTE_IMAGE x2) 12)) 1)
   (<= (length (to_string (attr__ATTRIBUTE_IMAGE x2) 12)) 21)))))))))))
 (check-sat)
+(exit)

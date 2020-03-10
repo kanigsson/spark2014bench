@@ -507,3 +507,4 @@ Target solver: CVC4
   (=> (dynamic_invariant m_v1 false false true true)
   (forall ((o Int)) (=> (= (to_rep h_v1__last) o) (not (= 2 0))))))))))))
 (check-sat)
+(exit)

@@ -1216,3 +1216,4 @@ Target solver: CVC4
   (= (oeq (us_repqtmk w__split_discrs (us_split_fieldsqtmk w__split_fields2))
      (empty_vector Tuple0)) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

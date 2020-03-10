@@ -389,3 +389,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 0 usf) true false) (ite (<= usf 7) true false)) true)
   (=> (not (= (mod2 (+ usf 1) 8) 0)) (not (= (mod2 (+ usf 1) 4) 0)))))))))
 (check-sat)
+(exit)

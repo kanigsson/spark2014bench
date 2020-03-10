@@ -1645,3 +1645,4 @@ Target solver: CVC4
   (and (<= 1 (last1 a)) (= (- (last1 a) (first1 a)) (- (last1 a) 1)))
   (< (last1 a) 1)) (in_range2 (last1 a)))))))))))))))
 (check-sat)
+(exit)

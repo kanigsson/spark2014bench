@@ -261,3 +261,4 @@ Target solver: CVC4
   (=> (ite (= (mod1 length 4) 0) (= o 0) (= o (- 4 (mod1 length 4))))
   (let ((o1 (+ length o))) (=> (in_range o1) (in_range1 o1))))))))
 (check-sat)
+(exit)

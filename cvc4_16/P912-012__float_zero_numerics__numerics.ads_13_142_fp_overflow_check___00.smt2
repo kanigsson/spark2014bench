@@ -168,3 +168,4 @@ Target solver: CVC4
   (=> (= numerics__Osubtract__result o)
   (fp.isFinite32 (fp.sub RNE left right))))))))))
 (check-sat)
+(exit)

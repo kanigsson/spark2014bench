@@ -153,3 +153,4 @@ Target solver: CVC4
  ;; File "pred_comp.adb", line 1, characters 0-0
   (not (forall ((usf ct)) (dynamic_predicate usf))))
 (check-sat)
+(exit)

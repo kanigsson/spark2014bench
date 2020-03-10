@@ -882,3 +882,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 i1) (<= i1 4)) true false)) true)
   (in_range1 (+ 1 count1))))))))))))))))))))))
 (check-sat)
+(exit)

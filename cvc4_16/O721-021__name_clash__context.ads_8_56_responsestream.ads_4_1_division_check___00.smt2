@@ -222,3 +222,4 @@ Target solver: CVC4
  ;; File "context.ads", line 8, characters 0-0
   (not (=> (dynamic_invariant bar true false true true) (not (= 100 0)))))
 (check-sat)
+(exit)

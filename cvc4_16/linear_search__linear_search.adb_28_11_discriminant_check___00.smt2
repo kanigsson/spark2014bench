@@ -547,3 +547,4 @@ Target solver: CVC4
   (exists ((pos2 Int)) (and (= pos2 o1) (not (<= pos2 10)))))))))))))))))))
   (=> (= res__attr__constrained true) (= (distinct 0 0) res__split_discrs))))))))))))))))
 (check-sat)
+(exit)

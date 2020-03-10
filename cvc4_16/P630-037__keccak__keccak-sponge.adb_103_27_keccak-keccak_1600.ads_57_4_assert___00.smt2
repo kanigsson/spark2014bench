@@ -1725,3 +1725,4 @@ Target solver: CVC4
   (=> (= (+ offset1 remaining_bytes1) initial_data_len)
   (= remaining_bytes1 (div1 (+ remaining_bits1 7) 8)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

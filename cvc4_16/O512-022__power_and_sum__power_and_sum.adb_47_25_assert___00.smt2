@@ -217,3 +217,4 @@ Target solver: CVC4
   (and (= j3 j2) (= innersum3 innersum2)))
   (=> (= j3 (+ i1 1)) (= (* 2 innersum3) (* i1 (+ i1 1)))))))))))))))))))))))
 (check-sat)
+(exit)

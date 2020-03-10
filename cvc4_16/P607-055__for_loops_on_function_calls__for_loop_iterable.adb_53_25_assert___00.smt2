@@ -260,3 +260,4 @@ Target solver: CVC4
   (=> (= (for_loop_iterable__p5__L_5__R68b__aggregate_def o1) r68b)
   (= (to_rep (select r68b c25b1)) 1))))))))))))
 (check-sat)
+(exit)

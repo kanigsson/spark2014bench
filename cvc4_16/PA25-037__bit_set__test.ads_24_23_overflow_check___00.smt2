@@ -692,3 +692,4 @@ Target solver: CVC4
   (let ((o5 (bv2nat (bvudiv i #x0000000000000020))))
   (=> (in_range2 o5) (in_range1 (+ a_first o5)))))))))))))))))))))))))
 (check-sat)
+(exit)

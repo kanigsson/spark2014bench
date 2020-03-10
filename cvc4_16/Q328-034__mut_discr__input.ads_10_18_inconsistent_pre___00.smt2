@@ -620,3 +620,4 @@ Target solver: CVC4
   (=> (dynamic_invariant size false false true true)
   (not (<= 1024 (length (to_rep1 v__first) (to_rep1 v__last))))))))))))
 (check-sat)
+(exit)

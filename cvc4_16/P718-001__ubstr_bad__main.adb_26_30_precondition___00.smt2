@@ -593,3 +593,4 @@ Target solver: CVC4
   (=> (= n1 o1)
   (<= (length (of_array (temp___String_Literal_232 Tuple0) 1 3)) 2147483647)))))))))))
 (check-sat)
+(exit)

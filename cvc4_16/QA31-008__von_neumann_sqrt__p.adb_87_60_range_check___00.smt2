@@ -415,3 +415,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 bits true false true true) (in_range1
   (bv2nat bits)))))))))))))))))))))))))
 (check-sat)
+(exit)

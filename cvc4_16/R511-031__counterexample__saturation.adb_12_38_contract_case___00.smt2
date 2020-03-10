@@ -394,3 +394,4 @@ Target solver: CVC4
   (rec__saturation__saturable_value__upper_bound val____split_fields))) true)
   (= (bool_eq (us_repqtmk val____split_fields1) (us_repqtmk temp___old_180)) true)))))))))))))))))))
 (check-sat)
+(exit)

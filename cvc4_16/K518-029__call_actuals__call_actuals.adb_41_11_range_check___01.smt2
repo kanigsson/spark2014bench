@@ -238,3 +238,4 @@ Target solver: CVC4
  ;; File "call_actuals.ads", line 13, characters 0-0
   (not true))
 (check-sat)
+(exit)

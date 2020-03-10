@@ -1622,3 +1622,4 @@ Target solver: CVC4
   (= (is_consistent
      (to_base (us_repqtmk1 result____split_discrs result____split_fields4))) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

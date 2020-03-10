@@ -332,3 +332,4 @@ Target solver: CVC4
  ;; File "c393012.adb", line 10, characters 0-0
   (not (rec__c393012__tix__pointer_value__pred (select i 1))))
 (check-sat)
+(exit)

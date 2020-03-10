@@ -1352,3 +1352,4 @@ Target solver: CVC4
   (=> (not (= static_discr__search_max__result 0))
   (<= 1 static_discr__search_max__result))))))))))))))))))))))
 (check-sat)
+(exit)

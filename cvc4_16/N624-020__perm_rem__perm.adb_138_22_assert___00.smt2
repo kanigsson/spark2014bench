@@ -484,3 +484,4 @@ Target solver: CVC4
   (=> (and (<= (first1 a) j) (<= j (last1 a)))
   (= (to_rep (select (to_array a) j)) (to_rep (select (to_array b) j)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

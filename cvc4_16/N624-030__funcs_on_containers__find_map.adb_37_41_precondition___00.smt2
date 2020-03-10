@@ -1201,3 +1201,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 o2 true false true true)
   (= o2 (get (model1 o1) o))) (=> (<= o2 last2) (= (contains m e) true)))))))))))))))))))
 (check-sat)
+(exit)

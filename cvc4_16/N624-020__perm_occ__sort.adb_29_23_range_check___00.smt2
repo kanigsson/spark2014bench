@@ -636,3 +636,4 @@ Target solver: CVC4
   (=> (= o true)
   (=> (<= (first1 init) y) (=> (<= y (last1 init)) (in_range4 x)))))))))))))))
 (check-sat)
+(exit)

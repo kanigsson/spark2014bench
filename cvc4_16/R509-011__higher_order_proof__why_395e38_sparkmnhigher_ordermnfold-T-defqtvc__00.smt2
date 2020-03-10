@@ -823,3 +823,4 @@ Target solver: CVC4
   (let ((o (- i (first1 a))))
   (=> (in_range1 o) (=> (in_range2 o) (in_range1 (+ o 1))))))))))))
 (check-sat)
+(exit)

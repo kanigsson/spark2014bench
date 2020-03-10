@@ -222,3 +222,4 @@ Target solver: CVC4
   (and (dynamic_invariant o1 true false true true)
   (= o1 (fp.roundToIntegral RTN o)))) (in_range2 o1)))))))
 (check-sat)
+(exit)

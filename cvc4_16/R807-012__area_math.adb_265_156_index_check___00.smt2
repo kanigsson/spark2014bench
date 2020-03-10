@@ -1563,3 +1563,4 @@ Target solver: CVC4
   (=> (not (= i 0))
   (<= (first1 (rec__area_math__ensemble__to (us_split_fields1 e))) i))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

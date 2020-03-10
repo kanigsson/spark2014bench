@@ -441,3 +441,4 @@ Target solver: CVC4
   (=> (= d__split_discrs1 o1)
   (=> (= d__attr__constrained true) (= rliteral d__split_discrs1)))))))))))))))))))))))
 (check-sat)
+(exit)

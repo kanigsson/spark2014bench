@@ -255,3 +255,4 @@ Target solver: CVC4
   (and (= y1 test_dynamic_property__dyn_param__x) (<= y1 c))))))))))
   (dynamic_property 0 last x2))))))))))))))))))))))
 (check-sat)
+(exit)

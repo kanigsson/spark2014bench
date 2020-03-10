@@ -341,3 +341,4 @@ Target solver: CVC4
               (rec__pointers__t_ptr__pointer_address
               pointers__swap__x__compl1) pointers__swap__x__value1))))))))))))))))))))))))))
 (check-sat)
+(exit)

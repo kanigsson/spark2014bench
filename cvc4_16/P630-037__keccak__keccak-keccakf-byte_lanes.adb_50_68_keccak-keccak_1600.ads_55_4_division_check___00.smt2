@@ -962,3 +962,4 @@ Target solver: CVC4
   (=> (<= 64 remaining_bits)
   (=> (in_range1 (+ remaining_bits 7)) (not (= 8 0)))))))))))))))))))))))))))
 (check-sat)
+(exit)

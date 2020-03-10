@@ -1155,3 +1155,4 @@ Target solver: CVC4
   (=> (in_range__function_guard (in_range3 a (+ k 1) (first_2 a)) a (+ 
   k 1) (first_2 a)) (= (in_range3 a (+ k 1) (first_2 a)) true)))))))))))))))))))))))
 (check-sat)
+(exit)

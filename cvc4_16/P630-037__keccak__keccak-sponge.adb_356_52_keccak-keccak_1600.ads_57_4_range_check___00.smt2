@@ -1631,3 +1631,4 @@ Target solver: CVC4
      ctx__split_fields2)) o10)
   (in_range2 (- o10 o9))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

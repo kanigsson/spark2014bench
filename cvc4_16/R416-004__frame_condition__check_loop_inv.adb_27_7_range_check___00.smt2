@@ -1321,3 +1321,4 @@ Target solver: CVC4
   (and (<= i1 i1) (= (- (last1 temp___335) (first1 temp___335)) (- i1 i1)))
   (< i1 i1)) (=> (<= 31 40) (<= (to_rep a__first) 31)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

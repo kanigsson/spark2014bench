@@ -531,3 +531,4 @@ Target solver: CVC4
                           true false)) true)
   (exists ((temp___255 Int)) (and (= temp___255 i1) (= i1 o3))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

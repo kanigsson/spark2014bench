@@ -823,3 +823,4 @@ Target solver: CVC4
   (= (and (ite (<= (+ o 1) usf) true false) (ite (<= usf 100) true false)) true)
   (=> (= (to_rep1 o1) 2) (<= 1 usf)))))))
 (check-sat)
+(exit)

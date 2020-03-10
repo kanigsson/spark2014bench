@@ -185,3 +185,4 @@ Target solver: CVC4
   (let ((o2 (fp.div RNE o1 smoothing_factor)))
   (=> (fp.isFinite64 o2) (fp.isFinite64 (fp.add RNE prior_value o2)))))))))))))))))))))))))))
 (check-sat)
+(exit)

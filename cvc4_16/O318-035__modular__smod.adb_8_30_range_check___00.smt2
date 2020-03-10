@@ -370,3 +370,4 @@ Target solver: CVC4
   (=> (dynamic_invariant y true false true true)
   (=> (= x 0) (=> (= y 255) (uint_in_range x)))))))
 (check-sat)
+(exit)

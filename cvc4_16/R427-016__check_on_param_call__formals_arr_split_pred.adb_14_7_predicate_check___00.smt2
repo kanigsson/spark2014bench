@@ -480,3 +480,4 @@ Target solver: CVC4
   (=> (and (<= (to_rep1 a__first) 1) (<= 1 (to_rep1 a__last)))
   (<= (to_rep1 a__first) 1)))))))))))))))))))
 (check-sat)
+(exit)

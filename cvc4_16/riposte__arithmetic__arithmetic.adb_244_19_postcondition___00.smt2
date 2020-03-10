@@ -257,3 +257,4 @@ Target solver: CVC4
   (=> (= arithmetic__test_rem_b__result (mod1 a b))
   (= arithmetic__test_rem_b__result (+ (- (* (div1 a b) b)) a)))))))))
 (check-sat)
+(exit)

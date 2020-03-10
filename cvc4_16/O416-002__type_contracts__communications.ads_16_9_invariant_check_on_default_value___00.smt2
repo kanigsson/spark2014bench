@@ -782,3 +782,4 @@ Target solver: CVC4
   (to_rep (rec__communications__communication__num (us_split_discrs1 usf)))))
   (type_invariant usf)))))))
 (check-sat)
+(exit)

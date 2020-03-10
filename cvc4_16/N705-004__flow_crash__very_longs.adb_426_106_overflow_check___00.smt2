@@ -1159,3 +1159,4 @@ Target solver: CVC4
   (=> (dynamic_invariant4 temporary_digit false false true true)
   (=> (dynamic_invariant4 r_hat false false true true) (in_range2 (+ j n))))))))))))))
 (check-sat)
+(exit)

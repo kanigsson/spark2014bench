@@ -628,3 +628,4 @@ Target solver: CVC4
   (=> (and (<= (+ index_21 1) v) (<= v index_34))
   (not (= (mod2 v index_21) 0))))))) (<= index_21 index_34))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

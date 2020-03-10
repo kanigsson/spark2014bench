@@ -946,3 +946,4 @@ Target solver: CVC4
   (= o4 (+ o3 (ite (= (mod1 o3 4) 0) 0 (- 4 (mod1 o3 4))))))) (in_range1
   (- (last3 data) (- o4 1))))))))))))))))))
 (check-sat)
+(exit)

@@ -371,3 +371,4 @@ Target solver: CVC4
   (and (in_range1 o1) (and (in_range2 o1) (= beginning1 current_index)))))))))
   (in_range1 (- (first1 a) 1)))))))))))))))))
 (check-sat)
+(exit)

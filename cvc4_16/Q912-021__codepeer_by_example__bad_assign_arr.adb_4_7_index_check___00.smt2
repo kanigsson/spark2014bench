@@ -187,3 +187,4 @@ Target solver: CVC4
  ;; File "bad_assign_arr.adb", line 2, characters 0-0
   (not (=> (dynamic_invariant y true false true true) (<= 1 y))))
 (check-sat)
+(exit)

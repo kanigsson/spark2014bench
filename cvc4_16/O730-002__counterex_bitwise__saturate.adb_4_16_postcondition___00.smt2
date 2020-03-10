@@ -268,3 +268,4 @@ Target solver: CVC4
   (=> (= saturate__result (bvand val__ #x0FFF))
   (bvult saturate__result #x0100)))))))
 (check-sat)
+(exit)

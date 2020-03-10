@@ -891,3 +891,4 @@ Target solver: CVC4
   (and (<= (first1 buffer) o) (<= o (last1 buffer)))))
   (=> (in_range1 (+ (first1 buffer) 11)) (in_range1 (+ (first1 buffer) 6))))))))))))))))
 (check-sat)
+(exit)

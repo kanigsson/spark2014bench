@@ -133,3 +133,4 @@ Target solver: CVC4
   (=> (= pack__query_x1_bis__result (rec__pack__t1__x (us_split_fields1 x1)))
   (= pack__query_x1_bis__result true))))))
 (check-sat)
+(exit)

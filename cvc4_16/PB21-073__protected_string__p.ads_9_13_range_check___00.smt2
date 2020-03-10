@@ -584,3 +584,4 @@ Target solver: CVC4
   (exists ((usf1 us_rep))
   (= (to_rep (rec__p__pt__x (us_split_discrs1 usf1))) usf)))) (in_range 3))))
 (check-sat)
+(exit)

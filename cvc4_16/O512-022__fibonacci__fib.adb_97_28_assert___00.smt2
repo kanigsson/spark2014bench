@@ -371,3 +371,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (= (* p11 (power (* b11 b11) (div1 k12 2))) (power a1 n1))))))))))))))))))))))))))
 (check-sat)
+(exit)

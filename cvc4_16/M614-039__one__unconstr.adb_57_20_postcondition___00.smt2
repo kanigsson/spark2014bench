@@ -394,3 +394,4 @@ Target solver: CVC4
   (=> (= unconstr__unconstr_return__result (of_array s o1 o))
   (= (first1 unconstr__unconstr_return__result) 1))))))))))))))))))))
 (check-sat)
+(exit)

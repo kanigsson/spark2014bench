@@ -258,3 +258,4 @@ Target solver: CVC4
   (ite (= spark__branch2 true) (= current1 0) (= current1 current)))))))))))))))))))))
   (=> (not (= (select du_available 1) true)) (not (= current1 1))))))))))
 (check-sat)
+(exit)

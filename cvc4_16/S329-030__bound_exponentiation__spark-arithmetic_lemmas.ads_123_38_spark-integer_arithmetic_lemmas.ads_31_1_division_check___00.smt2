@@ -306,3 +306,4 @@ Target solver: CVC4
   (=> (dynamic_invariant res true false true true)
   (=> (<= scale_num scale_denom) (not (= scale_denom 0)))))))))
 (check-sat)
+(exit)

@@ -496,3 +496,4 @@ Target solver: CVC4
   (us_repqtmk1 context__split_fields3)))
   (= (context_field (us_repqtmk1 context__split_fields2)) 1)))))))))))))))
 (check-sat)
+(exit)

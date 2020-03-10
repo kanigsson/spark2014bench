@@ -167,3 +167,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true) (in_range1
   (fp.roundToIntegral RTN (fp.div RNE x (fp #b0 #b10000111 #b01101000000000000000000)))))))
 (check-sat)
+(exit)

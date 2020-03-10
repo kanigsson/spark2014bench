@@ -105,3 +105,4 @@ Target solver: CVC4
   (=> (= substract__sub__result o)
   (= substract__sub__result (- first second))))))))))
 (check-sat)
+(exit)

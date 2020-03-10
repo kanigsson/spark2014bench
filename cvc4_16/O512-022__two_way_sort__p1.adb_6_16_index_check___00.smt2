@@ -313,3 +313,4 @@ Target solver: CVC4
   (and (= (to_rep a__last) o) (exists ((o1 Int)) (= (to_rep a__first) o1))))
   (<= (to_rep a__first) j)))))))))))))))))))))
 (check-sat)
+(exit)

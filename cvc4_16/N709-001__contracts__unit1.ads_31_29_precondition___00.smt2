@@ -239,3 +239,4 @@ Target solver: CVC4
   (=> (forall ((usf us_rep)) (is_max__function_guard (is_max usf) usf))
   (not (= (is_max (us_repqtmk x__split_fields x__attr__tag)) true))))))
 (check-sat)
+(exit)

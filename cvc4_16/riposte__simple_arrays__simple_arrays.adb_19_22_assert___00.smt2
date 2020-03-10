@@ -177,3 +177,4 @@ Target solver: CVC4
   (=> (<= (- 2147483648) i)
   (=> (<= i 2147483647) (= (to_rep (select a i)) (to_rep (select b i)))))))))
 (check-sat)
+(exit)

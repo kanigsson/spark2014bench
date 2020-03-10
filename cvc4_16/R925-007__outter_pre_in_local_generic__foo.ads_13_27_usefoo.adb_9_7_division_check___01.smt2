@@ -523,3 +523,4 @@ Target solver: CVC4
   (forall ((o7 Int))
   (=> (= (to_rep b__first) o7) (=> (in_range1 (length o7 o6)) (not (= 2 0)))))))))))))))))))))))))))
 (check-sat)
+(exit)

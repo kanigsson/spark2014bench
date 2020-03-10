@@ -534,3 +534,4 @@ Target solver: CVC4
   (=> (not (= spark__branch1 true))
   (forall ((o1 natural)) (=> (= (to_rep o1) v) (<= (to_rep1 b__first) i))))))))))))))))))))))))))))
 (check-sat)
+(exit)

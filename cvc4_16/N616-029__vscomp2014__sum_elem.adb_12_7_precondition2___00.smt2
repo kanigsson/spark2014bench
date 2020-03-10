@@ -808,3 +808,4 @@ Target solver: CVC4
            (us_repqtmk p__split_discrs
            (us_split_fieldsqtmk p__split_fields1))) 1)))))))))))
 (check-sat)
+(exit)

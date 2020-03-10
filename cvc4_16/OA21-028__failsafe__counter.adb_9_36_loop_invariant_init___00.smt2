@@ -366,3 +366,4 @@ Target solver: CVC4
   (=> (bvule (bvsub #x0A res) i)
   (=> (bvule i #x0A) (= (select inputs i) true))))))))))
 (check-sat)
+(exit)

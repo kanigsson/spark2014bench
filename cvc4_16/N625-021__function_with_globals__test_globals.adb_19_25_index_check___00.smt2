@@ -603,3 +603,4 @@ Target solver: CVC4
   (=> (= (to_rep1 au__first) 1)
   (=> (= (to_rep1 au__last) c) (=> (< 0 c) (<= (to_rep1 au__first) 1)))))))))))))
 (check-sat)
+(exit)

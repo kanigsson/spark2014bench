@@ -376,3 +376,4 @@ Target solver: CVC4
   (let ((o13 (fp.add RNE position_x o12)))
   (=> (fp.isFinite32 o13) (fp.isFinite32 (fp.sub RNE o13 target_x)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

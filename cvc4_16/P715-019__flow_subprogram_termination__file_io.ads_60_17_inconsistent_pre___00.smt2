@@ -348,3 +348,4 @@ Target solver: CVC4
  ;; File "file_io.ads", line 58, characters 0-0
   (not (= r__attr__constrained true)))
 (check-sat)
+(exit)

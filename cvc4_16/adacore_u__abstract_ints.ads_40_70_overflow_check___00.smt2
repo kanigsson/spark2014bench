@@ -242,3 +242,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__abstract_ints__int__max (us_split_fields1 arg))) o)
   (in_range (- o 10))))))
 (check-sat)
+(exit)

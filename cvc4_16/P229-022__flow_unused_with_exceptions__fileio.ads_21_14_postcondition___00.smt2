@@ -505,3 +505,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true))
   (= ch1 (to_rep (select the_file cur_position1))))))))))))))))))
 (check-sat)
+(exit)

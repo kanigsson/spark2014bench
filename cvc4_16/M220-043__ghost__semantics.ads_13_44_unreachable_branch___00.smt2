@@ -172,3 +172,4 @@ Target solver: CVC4
   (and (= temp___172 (+ formal1 (ghost_func Tuple0))) (= i1 2)))))))))))))
   (= formal1 formal)))) (not (= (= formal 0) true))))))))))))))))
 (check-sat)
+(exit)

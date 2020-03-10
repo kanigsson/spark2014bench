@@ -145,3 +145,4 @@ Target solver: CVC4
   (=> (dynamic_invariant v true false true true)
   (or (and (<= 1 v) (<= v 9)) (and (<= 21 v) (<= v 2147483647))))))))
 (check-sat)
+(exit)

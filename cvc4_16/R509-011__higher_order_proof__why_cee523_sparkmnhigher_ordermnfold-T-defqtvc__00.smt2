@@ -868,3 +868,4 @@ Target solver: CVC4
      (select (to_array1
              test_higher_order2__my_fold_left_i__acc__fold__result) (last2 a)))) true))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

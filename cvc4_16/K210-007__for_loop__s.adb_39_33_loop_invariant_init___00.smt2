@@ -241,3 +241,4 @@ Target solver: CVC4
   (=> (<= j index)
   (= (to_rep (select dest1 j)) (to_rep (select temp___loop_entry_206 j))))))))))))))
 (check-sat)
+(exit)

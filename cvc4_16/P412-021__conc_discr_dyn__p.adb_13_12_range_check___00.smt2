@@ -1085,3 +1085,4 @@ Target solver: CVC4
   (= (to_rep (rec__p__pp__c (us_split_discrs4 usf2))) usf)) (in_range1 usf))))))
   (=> (in_range1 10) (in_range 1))))))
 (check-sat)
+(exit)

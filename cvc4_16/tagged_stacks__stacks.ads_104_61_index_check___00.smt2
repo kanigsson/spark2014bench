@@ -1206,3 +1206,4 @@ Target solver: CVC4
                  (rec__stacks__stack_root__length1 (us_split_fields3 o)))) 1) 100)))))
   (<= 1 temp___1071)))))))))
 (check-sat)
+(exit)

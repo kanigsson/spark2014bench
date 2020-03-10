@@ -485,3 +485,4 @@ Target solver: CVC4
                                           true false)) true)
   (in_range4 (+ (- usf first) 1))))))))))))))
 (check-sat)
+(exit)

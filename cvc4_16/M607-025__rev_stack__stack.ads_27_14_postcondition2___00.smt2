@@ -586,3 +586,4 @@ Target solver: CVC4
   (= stack__top__result (to_rep
                         (select (to_array (to__ s)) (last1 (to__ s)))))))))))))))))
 (check-sat)
+(exit)

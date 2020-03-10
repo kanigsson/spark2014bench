@@ -860,3 +860,4 @@ Target solver: CVC4
   (=> (func_head__function_guard (func_head (to_model r)) (to_model r))
   (= ring_buf__head__result (func_head (to_model r))))))))))))))
 (check-sat)
+(exit)

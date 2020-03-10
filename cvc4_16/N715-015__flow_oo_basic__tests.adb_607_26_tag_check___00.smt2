@@ -613,3 +613,4 @@ Target solver: CVC4
   (= e__attr__tag (attr__tag1 (rec__tests__pair__a (us_split_fields7 c))))
   (= f__attr__tag a__attr__tag))))
 (check-sat)
+(exit)

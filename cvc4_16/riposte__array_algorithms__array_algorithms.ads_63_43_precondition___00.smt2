@@ -469,3 +469,4 @@ Target solver: CVC4
   (and (< i location2) (= (to_rep1 (select (to_array o1) i)) o))))))
   (<= (first1 a) (last1 a))))))))))))))))
 (check-sat)
+(exit)

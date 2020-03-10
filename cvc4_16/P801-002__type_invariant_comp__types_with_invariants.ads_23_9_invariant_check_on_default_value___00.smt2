@@ -986,3 +986,4 @@ Target solver: CVC4
   (= (to_rep1 (rec__types_with_invariants__my_integer__val usf)) 0))
   (type_invariant (us_repqtmk usf))))))
 (check-sat)
+(exit)

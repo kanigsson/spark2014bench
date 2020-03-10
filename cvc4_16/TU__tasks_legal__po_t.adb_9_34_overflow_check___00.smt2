@@ -188,3 +188,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__po_t__the_protected_int self__)) o1) (in_range
   (+ o1 10))))))))
 (check-sat)
+(exit)

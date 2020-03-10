@@ -2438,3 +2438,4 @@ Target solver: CVC4
   (not (= (is_complete_line (select cur_board1 y)) true)))))
   (=> (= (no_complete_lines cur_board1) true) (< from_line to_line1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

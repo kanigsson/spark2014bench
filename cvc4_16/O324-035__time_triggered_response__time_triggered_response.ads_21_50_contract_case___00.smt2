@@ -277,3 +277,4 @@ Target solver: CVC4
   (= status (distinct 0 0)))))
   (=> (= (always_set_until_now 9 idle_history) true) (= status true)))))))))))
 (check-sat)
+(exit)

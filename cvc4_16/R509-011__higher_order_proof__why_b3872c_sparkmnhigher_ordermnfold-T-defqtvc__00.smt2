@@ -1204,3 +1204,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array1 temp___1255) k2)) o1)
   (=> (in_range1 (+ o1 c)) (dynamic_property 1 100 (first1 a1) (last1 a1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

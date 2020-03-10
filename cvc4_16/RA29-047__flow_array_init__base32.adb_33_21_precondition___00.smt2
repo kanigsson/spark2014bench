@@ -911,3 +911,4 @@ Target solver: CVC4
   (=> (< (length1 s) 429496729)
   (=> (<= 8 (length1 s)) (< (length1 s) 429496729))))))))
 (check-sat)
+(exit)

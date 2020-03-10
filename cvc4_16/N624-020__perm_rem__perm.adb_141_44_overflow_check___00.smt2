@@ -490,3 +490,4 @@ Target solver: CVC4
                                                 false)) true)
   (=> (not (< usf i)) (in_range1 (+ usf 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

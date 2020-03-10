@@ -466,3 +466,4 @@ Target solver: CVC4
   (=> (= my_s11 (p__B22b__my_s1__aggregate_def 1 2 3))
   (=> (= my_s21 (slide my_s11 1 2)) (not (= (to_rep (select my_s21 2)) 1))))))))))
 (check-sat)
+(exit)

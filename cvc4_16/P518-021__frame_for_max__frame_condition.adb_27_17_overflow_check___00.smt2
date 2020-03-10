@@ -530,3 +530,4 @@ Target solver: CVC4
   (forall ((o6 Int))
   (=> (= (to_rep1 a__last) o6) (=> (not (= k2 o6)) (in_range1 (+ k2 1)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

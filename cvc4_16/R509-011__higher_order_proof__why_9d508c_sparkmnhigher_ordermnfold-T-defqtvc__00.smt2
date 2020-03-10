@@ -1346,3 +1346,4 @@ Target solver: CVC4
   (=> (sum_cst__function_guard (sum_cst (last2 a) (last_2 a)) (last2 a)
   (last_2 a)) (= (sum_cst (last2 a) (last_2 a)) true)))))))))))))))))))))))))
 (check-sat)
+(exit)

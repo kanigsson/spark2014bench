@@ -100,3 +100,4 @@ Target solver: CVC4
   (=> (= subprograms__f3__result val__)
   (=> (= (>= val__ 0) true) (= subprograms__f3__result 1)))))))
 (check-sat)
+(exit)

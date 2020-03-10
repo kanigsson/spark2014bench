@@ -5719,3 +5719,4 @@ Target solver: CVC4
      (rec__do_checks__do_discriminant_check__r1__j (us_split_discrs1 usf1))) usf))))
   (in_range1 10))))))
 (check-sat)
+(exit)

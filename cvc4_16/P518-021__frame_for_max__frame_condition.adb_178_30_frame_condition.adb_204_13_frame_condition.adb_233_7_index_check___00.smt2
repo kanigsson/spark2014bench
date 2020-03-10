@@ -628,3 +628,4 @@ Target solver: CVC4
   (=> (= spark__branch2 (ite true true false))
   (=> (= spark__branch2 true) (<= (to_rep1 a__first) c167b))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

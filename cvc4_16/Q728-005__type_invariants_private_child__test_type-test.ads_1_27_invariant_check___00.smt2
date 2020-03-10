@@ -258,3 +258,4 @@ Target solver: CVC4
   (=> (= (bool_eq x (us_repqtmk (us_split_fieldsqtmk y__split_fields))) true)
   (type_invariant (us_repqtmk (us_split_fieldsqtmk y__split_fields)))))))))))))
 (check-sat)
+(exit)

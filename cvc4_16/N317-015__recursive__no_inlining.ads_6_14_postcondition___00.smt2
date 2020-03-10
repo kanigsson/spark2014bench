@@ -74,3 +74,4 @@ Target solver: CVC4
   (=> (recurse__function_guard o1 o)
   (forall ((res Bool)) (=> (= res o1) (= res true))))))))
 (check-sat)
+(exit)

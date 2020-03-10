@@ -773,3 +773,4 @@ Target solver: CVC4
   (and (<= (to_rep data__first) temp___5223)
   (<= temp___5223 (to_rep data__last))) (in_range2 (+ position 3))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

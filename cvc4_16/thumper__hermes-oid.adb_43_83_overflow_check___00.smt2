@@ -840,3 +840,4 @@ Target solver: CVC4
                              result____split_fields)))
   (=> (not (< (length separates) 2)) (in_range1 (+ (first1 separates) 1)))))))))))))))))))))
 (check-sat)
+(exit)

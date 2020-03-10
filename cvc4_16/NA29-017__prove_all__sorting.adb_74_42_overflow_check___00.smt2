@@ -568,3 +568,4 @@ Target solver: CVC4
   (and (= (to_rep a__last) o6) (exists ((o7 Int)) (= (to_rep a__first) o7))))
   (in_range1 (+ length11 length2))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

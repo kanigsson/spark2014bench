@@ -647,3 +647,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 i1) (<= i1 octet_count)) true false)) true)
   (in_range1 (+ starting (- i1 1)))))))))))))))))))))))
 (check-sat)
+(exit)

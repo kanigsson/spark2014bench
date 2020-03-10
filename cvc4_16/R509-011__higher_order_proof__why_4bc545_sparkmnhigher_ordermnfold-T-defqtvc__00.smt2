@@ -698,3 +698,4 @@ Target solver: CVC4
   (=> (= (ind_prop (of_array (to_array a) (first2 a) (last2 a)) acc i) true)
   (dynamic_property first last i)))))))))))))))))))))))))))
 (check-sat)
+(exit)

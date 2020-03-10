@@ -230,3 +230,4 @@ Target solver: CVC4
   (forall ((c2 Int))
   (=> (= c2 o) (=> (< 1 c2) (=> (not (= (mod2 10 c2) 0)) (< 1 c2))))))))))))))))
 (check-sat)
+(exit)

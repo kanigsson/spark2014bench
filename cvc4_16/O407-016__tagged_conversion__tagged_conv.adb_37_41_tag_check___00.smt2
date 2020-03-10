@@ -168,3 +168,4 @@ Target solver: CVC4
  ;; File "tagged_conv.adb", line 36, characters 0-0
   (not (=> (= r rc) (us_compatible_tags (attr__tag rc) us_tag))))
 (check-sat)
+(exit)

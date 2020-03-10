@@ -204,3 +204,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 c12b) true false) (ite (<= c12b 100) true false)) true)
   (=> (<= 1 c12b1) (=> (<= c12b1 100) (= (to_rep (select r7b c12b1)) 1)))))))))))
 (check-sat)
+(exit)

@@ -1084,3 +1084,4 @@ Target solver: CVC4
   (forall ((valid Bool))
   (=> (= valid (distinct 1 0)) (in_range4 (last3 result____split_fields1)))))))))))))))))))))))))
 (check-sat)
+(exit)

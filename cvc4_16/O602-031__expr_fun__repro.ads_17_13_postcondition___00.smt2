@@ -89,3 +89,4 @@ Target solver: CVC4
   (contrainte1 sortie11 sortie21) sortie11 sortie21))
   (= (contrainte1 sortie1 sortie2) true)))))))
 (check-sat)
+(exit)

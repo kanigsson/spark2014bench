@@ -306,3 +306,4 @@ Target solver: CVC4
   (ite (< amount 8) (= o (bvlshr value ((_ int2bv 8) amount))) (= o #x00))
   (in_range1 (bvand o #x01)))))))))
 (check-sat)
+(exit)

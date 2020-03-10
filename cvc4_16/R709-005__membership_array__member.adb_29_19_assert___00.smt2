@@ -536,3 +536,4 @@ Target solver: CVC4
   (or (and (= (first1 temp___237) 1) (= (last1 temp___237) 10))
   (= (bool_eq1 temp___237 (of_array (temp_____aggregate_def_231 1) 1 10)) true)))))))))))))))))))))
 (check-sat)
+(exit)

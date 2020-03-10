@@ -615,3 +615,4 @@ Target solver: CVC4
   (=> (= spark__branch1 (ite (= (bvand o1 #x80) #x00) true false))
   (=> (= spark__branch1 true) (<= (first1 message) start))))))))))))))))))))))
 (check-sat)
+(exit)

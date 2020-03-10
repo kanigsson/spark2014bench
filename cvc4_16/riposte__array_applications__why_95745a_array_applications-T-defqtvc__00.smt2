@@ -297,3 +297,4 @@ Target solver: CVC4
   (=> (= (to_rep (select a3 temp___178)) o7)
   (=> (in_range1 (+ o7 o6)) (<= usf 30)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1238,3 +1238,4 @@ Target solver: CVC4
                                                 false)))
   (= o false)) (=> (= o true) (=> (< (first_2 a) j) (in_range7 (- j 1))))))))))))
 (check-sat)
+(exit)

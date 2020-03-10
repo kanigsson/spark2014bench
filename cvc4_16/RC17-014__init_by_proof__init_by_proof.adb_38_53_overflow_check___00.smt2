@@ -585,3 +585,4 @@ Target solver: CVC4
                                            false)) true)
   (in_range1 (* loop_var 4)))))))))))))))))))))))))
 (check-sat)
+(exit)

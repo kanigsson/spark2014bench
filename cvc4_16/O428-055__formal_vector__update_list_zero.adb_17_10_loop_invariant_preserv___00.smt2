@@ -1011,3 +1011,4 @@ Target solver: CVC4
      (us_repqtmk l__split_discrs (us_split_fieldsqtmk l__split_fields2))) i) 
   (ite (<= (get usf1 i) threshold) 0 (get (model1 temp___loop_entry_335) i)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

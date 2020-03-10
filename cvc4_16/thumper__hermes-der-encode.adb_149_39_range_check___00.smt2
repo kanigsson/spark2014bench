@@ -654,3 +654,4 @@ Target solver: CVC4
   (dynamic_invariant temp___403 true false true true)) (in_range
   (- (+ 0 (+ 1 1)) 1))))))
 (check-sat)
+(exit)

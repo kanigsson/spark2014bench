@@ -627,3 +627,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array needle) o20)) o21)
   (let ((o22 (length needle))) (=> (in_range1 o22) (in_range1 (+ i1 o22)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -363,3 +363,4 @@ Target solver: CVC4
   (=> (dynamic_invariant offset true false true true) (in_range2
   (mod2 offset 31)))))
 (check-sat)
+(exit)

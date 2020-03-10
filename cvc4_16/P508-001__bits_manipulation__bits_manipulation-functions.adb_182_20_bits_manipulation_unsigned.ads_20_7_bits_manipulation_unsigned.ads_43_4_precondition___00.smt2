@@ -718,3 +718,4 @@ Target solver: CVC4
                           (bvshl #x0001 ((_ int2bv 16) size)) #x0000))))
   (= (lemma1 Tuple0) true)))))
 (check-sat)
+(exit)

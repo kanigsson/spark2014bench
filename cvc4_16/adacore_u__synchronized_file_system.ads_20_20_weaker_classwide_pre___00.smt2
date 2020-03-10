@@ -722,3 +722,4 @@ Target solver: CVC4
   (us_repqtmk1 f__split_fields1 f__attr__tag)))
   (= (is_open (us_repqtmk1 f__split_fields f__attr__tag)) true))))))))))
 (check-sat)
+(exit)

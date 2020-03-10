@@ -201,3 +201,4 @@ Target solver: CVC4
   (forall ((y Int))
   (=> (= y o) (=> (dynamic_invariant y true false true true) (= y 3))))))))))
 (check-sat)
+(exit)

@@ -1292,3 +1292,4 @@ Target solver: CVC4
   (=> (in_range1 o17)
   (forall ((result_index4 Int)) (=> (= result_index4 o17) (not (= 128 0))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

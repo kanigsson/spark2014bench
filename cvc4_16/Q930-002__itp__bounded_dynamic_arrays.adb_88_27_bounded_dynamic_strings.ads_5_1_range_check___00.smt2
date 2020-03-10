@@ -810,3 +810,4 @@ Target solver: CVC4
                                                              (last1
                                                              temp___1430)))) 1))))))))))))))))))
 (check-sat)
+(exit)

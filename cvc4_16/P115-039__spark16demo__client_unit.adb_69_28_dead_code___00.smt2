@@ -134,3 +134,4 @@ Target solver: CVC4
   true)) (= item_done1 item_done)))
   (=> (= spark__branch1 item_done1) (not (= spark__branch1 true)))))))))))))))))
 (check-sat)
+(exit)

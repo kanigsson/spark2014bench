@@ -870,3 +870,4 @@ Target solver: CVC4
   (forall ((as__ (Array Int natural)))
   (=> (= as__ (test_globals__as__aggregate_def 0)) (=> (<= 1 c) (<= 0 1))))))))))))))))))
 (check-sat)
+(exit)

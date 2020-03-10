@@ -207,3 +207,4 @@ Target solver: CVC4
   (=> (= foo__test_02__tmp_b__assume tmp_b)
   (=> (dynamic_invariant tmp_b true false true true) (in_range last)))))))))))
 (check-sat)
+(exit)

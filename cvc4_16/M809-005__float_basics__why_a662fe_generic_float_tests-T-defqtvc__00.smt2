@@ -177,3 +177,4 @@ Target solver: CVC4
   (fp.leq (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000) 
   y) (fp.isFinite64 (fp.sub RNE x y))))))))
 (check-sat)
+(exit)

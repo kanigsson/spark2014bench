@@ -268,3 +268,4 @@ Target solver: CVC4
   (forall ((usf1 us_rep)) (is_valid__function_guard (is_valid usf1) usf1))
   (dynamic_predicate (us_repqtmk (us_split_fieldsqtmk usf)))))))
 (check-sat)
+(exit)

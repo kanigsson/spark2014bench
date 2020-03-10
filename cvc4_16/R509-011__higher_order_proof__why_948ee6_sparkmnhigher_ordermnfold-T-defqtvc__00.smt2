@@ -960,3 +960,4 @@ Target solver: CVC4
      (select (to_array1
              (fold (of_array (to_array a) (first1 a) (last1 a)) 0)) i2)) 0))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

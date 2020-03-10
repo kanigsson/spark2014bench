@@ -388,3 +388,4 @@ Target solver: CVC4
   (and (and (<= (first1 v) temp___194) (<= temp___194 (last1 v)))
   (= result__1 (to_rep (select (to_array v) temp___194))))))))))))))
 (check-sat)
+(exit)

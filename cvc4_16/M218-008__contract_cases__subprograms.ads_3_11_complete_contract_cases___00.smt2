@@ -98,3 +98,4 @@ Target solver: CVC4
   (=> (dynamic_invariant val__ true false true true)
   (<= 1 (+ 0 (ite (= (= val__ 0) true) 1 0))))))
 (check-sat)
+(exit)

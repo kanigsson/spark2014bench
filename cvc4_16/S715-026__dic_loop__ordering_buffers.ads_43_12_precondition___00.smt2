@@ -867,3 +867,4 @@ Target solver: CVC4
   (=> (forall ((o4 us_rep)) (first__function_guard (first o4) o4))
   (<= (first (us_repqtmk buffer__split_fields)) index)))))))))))))))
 (check-sat)
+(exit)

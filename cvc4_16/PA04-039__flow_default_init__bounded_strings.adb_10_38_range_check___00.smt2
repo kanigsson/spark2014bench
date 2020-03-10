@@ -626,3 +626,4 @@ Target solver: CVC4
      (rec__bounded_strings__bounded_string__length target__split_fields1)) o2)
   (in_range2 (+ o2 1))))))))))))))))))))
 (check-sat)
+(exit)

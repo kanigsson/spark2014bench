@@ -1319,3 +1319,4 @@ Target solver: CVC4
   (forall ((o16 Int))
   (=> (= (to_rep result____first) o16) (in_range1 (+ o16 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -104,3 +104,4 @@ Target solver: CVC4
   (forall ((arithmetic__multiply_a__result Int))
   (=> (= arithmetic__multiply_a__result o) (in_range (* a b))))))))))
 (check-sat)
+(exit)

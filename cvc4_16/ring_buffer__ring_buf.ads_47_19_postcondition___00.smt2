@@ -580,3 +580,4 @@ Target solver: CVC4
   (= (to_rep2 (rec__ring_buf__ring_buffer__length r__split_fields3)) (+ 
   (to_rep2 (rec__ring_buf__ring_buffer__length r__split_fields1)) 1))))))))))))))))))))
 (check-sat)
+(exit)

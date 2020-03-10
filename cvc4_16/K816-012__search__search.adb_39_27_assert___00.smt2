@@ -369,3 +369,4 @@ Target solver: CVC4
   (forall ((found5 Int))
   (=> (= found5 o1) (=> (and (= found21 true) (= index22 i1)) (<= found5 2))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

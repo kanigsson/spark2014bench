@@ -361,3 +361,4 @@ Target solver: CVC4
                                                        false)) true))
   (in_range1 (- index2 1))) (<= (first1 unsorted) min3))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -179,3 +179,4 @@ Target solver: CVC4
   (forall ((other_side1 Int))
   (=> (= other_side1 o1) (not (= (select du_available side) true))))))))))))
 (check-sat)
+(exit)

@@ -580,3 +580,4 @@ Target solver: CVC4
   (=> (= (to_rep (get temp___loop_entry_283 usf usf)) o)
   (=> (in_range1 (+ o 1)) (=> (and (<= 1 usf) (<= usf 10)) (<= 1 usf)))))))))))))))))))))))))))
 (check-sat)
+(exit)

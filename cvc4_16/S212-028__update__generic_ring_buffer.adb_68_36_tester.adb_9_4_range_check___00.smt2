@@ -986,3 +986,4 @@ Target solver: CVC4
      buffer__split_fields2)) o1)
   (in_range1 (+ o1 1))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -645,3 +645,4 @@ Target solver: CVC4
   (forall ((o3 Int))
   (=> (= (to_rep1 (rec__pred__r__d (us_split_discrs1 i13b))) o3) (= o3 2))))))))))))))
 (check-sat)
+(exit)

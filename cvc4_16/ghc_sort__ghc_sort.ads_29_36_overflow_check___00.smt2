@@ -790,3 +790,4 @@ Target solver: CVC4
   (let ((o4 (length s)))
   (=> (in_range1 o4) (=> (in_range1 (+ o4 1)) (in_range1 (+ usf 1))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

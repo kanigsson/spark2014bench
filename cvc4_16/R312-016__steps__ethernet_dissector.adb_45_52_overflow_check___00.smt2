@@ -990,3 +990,4 @@ Target solver: CVC4
   (and (= spark__branch1 spark__branch3) (= offset1 offset))))))))))))))
   (in_range1 (+ (first1 buffer) 12)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

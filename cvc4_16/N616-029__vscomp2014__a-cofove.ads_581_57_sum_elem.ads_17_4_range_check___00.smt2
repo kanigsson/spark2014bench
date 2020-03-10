@@ -645,3 +645,4 @@ Target solver: CVC4
              (us_split_fieldsqtmk container__split_fields))))
   (in_range6 (- index1 0)))))))))
 (check-sat)
+(exit)

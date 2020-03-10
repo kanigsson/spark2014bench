@@ -443,3 +443,4 @@ Target solver: CVC4
   (= (bool_eq a (to_rep a__first) (to_rep a__last) temp___loop_entry_325
      (to_rep a__first) (to_rep a__last)) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

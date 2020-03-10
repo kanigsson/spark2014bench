@@ -318,3 +318,4 @@ Target solver: CVC4
   (and (= tab1 tab) (= j2 j1)))
   (=> (= j3 a) (=> (= k1 0) (in_range1 (+ j3 k1)))))))))))))))
 (check-sat)
+(exit)

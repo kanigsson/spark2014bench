@@ -136,3 +136,4 @@ Target solver: CVC4
        (distinct 1 0) (distinct 1 0) (distinct 0 0)))
   (= (select m 97) true)))))
 (check-sat)
+(exit)

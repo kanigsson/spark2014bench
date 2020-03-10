@@ -190,3 +190,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (forall ((totalsum2 Int)) (=> (= totalsum2 o) (in_range1 (+ i1 1))))))))))))))))))
 (check-sat)
+(exit)

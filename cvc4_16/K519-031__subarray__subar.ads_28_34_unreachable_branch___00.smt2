@@ -409,3 +409,4 @@ Target solver: CVC4
  ;; File "subar.ads", line 27, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (not (< 1 x)))))
 (check-sat)
+(exit)

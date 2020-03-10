@@ -614,3 +614,4 @@ Target solver: CVC4
       (rec__frame_condition__cell__value (us_split_fields1 (select a1 i)))) 
   (get_max_right j a1)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

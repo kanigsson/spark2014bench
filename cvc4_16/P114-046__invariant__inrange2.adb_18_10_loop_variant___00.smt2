@@ -310,3 +310,4 @@ Target solver: CVC4
   (=> (not (= spark__branch1 true))
   (=> (= i2 (bvadd i1 #x0000000000000001)) (bvugt i2 temp___174)))))))))))))))))))))))
 (check-sat)
+(exit)

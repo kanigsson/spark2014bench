@@ -999,3 +999,4 @@ Target solver: CVC4
   (=> (= spark__branch true) (rec__test_route__route_acc__pointer_value__pred
   r))))))))))))))
 (check-sat)
+(exit)

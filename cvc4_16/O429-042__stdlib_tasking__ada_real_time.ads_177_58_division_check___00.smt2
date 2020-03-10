@@ -492,3 +492,4 @@ Target solver: CVC4
   (let ((o5 (fxp_div o4 1)))
   (=> (in_range3 o5) (=> (in_range4 o5) (not (= left 0)))))))))))))))))))
 (check-sat)
+(exit)

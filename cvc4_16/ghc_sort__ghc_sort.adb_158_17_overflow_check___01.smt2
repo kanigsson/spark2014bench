@@ -1065,3 +1065,4 @@ Target solver: CVC4
      (us_close l__pointer_value)))))) o1)
   (in_range (+ o1 o)))))))))))))))))
 (check-sat)
+(exit)

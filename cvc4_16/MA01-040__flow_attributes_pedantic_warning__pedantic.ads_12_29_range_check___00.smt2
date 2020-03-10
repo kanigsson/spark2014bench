@@ -223,3 +223,4 @@ Target solver: CVC4
   (forall ((v__split_fields integer))
   (=> (= v__split_fields rliteral) (in_range1 alignment)))))
 (check-sat)
+(exit)

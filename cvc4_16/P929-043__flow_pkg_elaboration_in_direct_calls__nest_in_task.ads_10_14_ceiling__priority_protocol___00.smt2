@@ -233,3 +233,4 @@ Target solver: CVC4
  ;; File "nest_in_task.ads", line 10, characters 0-0
   (not (<= 97 97)))
 (check-sat)
+(exit)

@@ -529,3 +529,4 @@ Target solver: CVC4
   (extended_returns__record_t__d__pred
   (us_repqtmk result____split_discrs result____split_fields2)))))))))))))))))))))))))
 (check-sat)
+(exit)

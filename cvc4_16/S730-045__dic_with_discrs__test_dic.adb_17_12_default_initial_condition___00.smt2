@@ -357,3 +357,4 @@ Target solver: CVC4
   (=> (forall ((usf1 us_rep)) (id__function_guard (id usf1) usf1))
   (= (rec__test_dic__nested__p5__x (us_split_discrs1 (id usf))) true)))))))
 (check-sat)
+(exit)

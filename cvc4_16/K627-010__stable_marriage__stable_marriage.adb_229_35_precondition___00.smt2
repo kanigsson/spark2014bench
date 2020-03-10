@@ -971,3 +971,4 @@ Target solver: CVC4
   (is_permutation_1 o6) o6))
   (= (is_permutation_1 (select ranking_2 o3)) true)))))))))))))))))))))))
 (check-sat)
+(exit)

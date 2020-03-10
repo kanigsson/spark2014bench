@@ -225,3 +225,4 @@ Target solver: CVC4
   (priv_with_glob_ok__function_guard (priv_with_glob_ok p31 glob1) p31
   glob1)) (= (priv_with_glob_ok p3 glob) true))))))))))))
 (check-sat)
+(exit)

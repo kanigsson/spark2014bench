@@ -184,3 +184,4 @@ Target solver: CVC4
   (=> (= (bool_eq (from_integer (to_integer e)) e) true)
   (< (- 2147483648) i))))))))
 (check-sat)
+(exit)

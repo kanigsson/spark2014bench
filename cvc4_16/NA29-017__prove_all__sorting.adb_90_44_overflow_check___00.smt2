@@ -368,3 +368,4 @@ Target solver: CVC4
   (=> (in_range2 o)
   (=> (in_range1 (+ i1 j1)) (in_range1 (+ a_first length11)))))))))))))))))))))))))))
 (check-sat)
+(exit)

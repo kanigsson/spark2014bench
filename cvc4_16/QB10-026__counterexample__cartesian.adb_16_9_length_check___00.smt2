@@ -633,3 +633,4 @@ Target solver: CVC4
   (=> (= (last3 temp___278) result_length)
   (=> (<= (first3 temp___278) (last3 temp___278)) (<= 1 result_length))))))))))))))))))))
 (check-sat)
+(exit)

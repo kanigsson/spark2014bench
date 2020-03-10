@@ -420,3 +420,4 @@ Target solver: CVC4
                                              false)) true))
   (< 1 c3)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

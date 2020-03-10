@@ -1541,3 +1541,4 @@ Target solver: CVC4
   (=> (dynamic_invariant remaining_bits true false true true)
   (let ((o (+ bit_length 7))) (=> (in_range1 o) (in_range2 (div1 o 8))))))))))))))))))))))))
 (check-sat)
+(exit)

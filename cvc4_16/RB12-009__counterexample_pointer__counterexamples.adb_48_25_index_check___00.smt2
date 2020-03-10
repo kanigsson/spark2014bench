@@ -748,3 +748,4 @@ Target solver: CVC4
   (us_repqtmk1 a__is_null_pointer a__pointer_address a__pointer_value) true
   false true true) (<= (first3 a__pointer_value) 1))))))))))))))))
 (check-sat)
+(exit)

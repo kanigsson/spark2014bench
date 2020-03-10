@@ -245,3 +245,4 @@ Target solver: CVC4
  ;; File "timer.ads", line 18, characters 0-0
   (not true))
 (check-sat)
+(exit)

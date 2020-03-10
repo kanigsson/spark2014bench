@@ -258,3 +258,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 j) true false) (ite (<= j 10) true false)) true)
   (= v2 (to_rep (select a j)))))))))))))))
 (check-sat)
+(exit)

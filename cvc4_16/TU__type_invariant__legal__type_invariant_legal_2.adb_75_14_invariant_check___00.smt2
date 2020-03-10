@@ -201,3 +201,4 @@ Target solver: CVC4
   (let ((o (- x 1)))
   (=> (in_range2 o) (forall ((x1 Int)) (=> (= x1 o) (type_invariant x1))))))))))
 (check-sat)
+(exit)

@@ -113,3 +113,4 @@ Target solver: CVC4
   (and (fibonacci__function_guard o1 o) (dynamic_invariant o1 true false true
   true)) (in_range (- n 1))))))))))))
 (check-sat)
+(exit)

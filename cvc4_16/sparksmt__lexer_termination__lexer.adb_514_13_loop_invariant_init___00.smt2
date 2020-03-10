@@ -2258,3 +2258,4 @@ Target solver: CVC4
   (=> (= (to_rep3 current_read__split_discrs1) o4)
   (= (to_rep3 current_read__split_discrs1) 0)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

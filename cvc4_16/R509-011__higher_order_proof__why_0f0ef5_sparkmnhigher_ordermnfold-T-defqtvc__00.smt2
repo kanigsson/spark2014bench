@@ -1078,3 +1078,4 @@ Target solver: CVC4
   (=> (= (value (to_rep (get (to_array a) i j))) c)
   (=> (sum_cst__function_guard (sum_cst i j) i j) (= (sum_cst i j) true)))))))))))))))))))
 (check-sat)
+(exit)

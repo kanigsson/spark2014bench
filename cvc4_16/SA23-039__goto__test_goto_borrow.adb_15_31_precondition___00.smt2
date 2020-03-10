@@ -465,3 +465,4 @@ Target solver: CVC4
         (rec__test_goto_borrow__list_cell__next
         (us_split_fields1 (rec__test_goto_borrow__list__pointer_value l))))))))))))))
 (check-sat)
+(exit)

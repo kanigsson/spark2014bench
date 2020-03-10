@@ -366,3 +366,4 @@ Target solver: CVC4
   (=> (not (= (bool_eq1 i5s temp___220) true)) (dynamic_property 1 2147483647
   1 4))))))))
 (check-sat)
+(exit)

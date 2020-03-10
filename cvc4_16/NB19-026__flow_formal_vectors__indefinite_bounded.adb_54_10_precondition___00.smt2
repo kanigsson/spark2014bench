@@ -1209,3 +1209,4 @@ Target solver: CVC4
                   (rec__indefinite_bounded__vect__vector__capacity
                   w__split_discrs)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

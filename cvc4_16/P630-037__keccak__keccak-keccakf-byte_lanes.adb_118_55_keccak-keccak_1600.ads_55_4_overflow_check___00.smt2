@@ -1020,3 +1020,4 @@ Target solver: CVC4
   (forall ((lane2 (_ BitVec 64)))
   (=> (= lane2 o8) (forall ((i Int)) (=> (= i 0) (in_range1 (* i 8)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

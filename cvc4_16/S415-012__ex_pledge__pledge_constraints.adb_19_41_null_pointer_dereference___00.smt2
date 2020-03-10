@@ -768,3 +768,4 @@ Target solver: CVC4
   (rec__pledge_constraints__int_arr_acc__pointer_value__pred
   (rec__pledge_constraints__two_arrays__a1 x__split_fields)))))))
 (check-sat)
+(exit)

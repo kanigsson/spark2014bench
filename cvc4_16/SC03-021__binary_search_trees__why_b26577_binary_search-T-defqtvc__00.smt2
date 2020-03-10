@@ -1449,3 +1449,4 @@ Target solver: CVC4
                                                                    (us_repqtmk1
                                                                    x__pointer_value))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -798,3 +798,4 @@ Target solver: CVC4
   (and (<= (* (- 100) (- i (first1 o))) r) (<= r (* 100 (- i (first1 o)))))))
   (=> (= o1 true) (dynamic_property 1 100 (first1 a) (last1 a)))))))))))))))))))))
 (check-sat)
+(exit)

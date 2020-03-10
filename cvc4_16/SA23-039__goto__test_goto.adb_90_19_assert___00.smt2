@@ -1613,3 +1613,4 @@ Target solver: CVC4
   (exists ((spark__branch2 Bool)) (= spark__branch2 o)))))))
   (=> (forall ((x2 Int)) (b__function_guard (b x2) x2)) (= (b x1) true))))))))
 (check-sat)
+(exit)

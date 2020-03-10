@@ -582,3 +582,4 @@ Target solver: CVC4
  ;; File "x86.ads", line 95, characters 0-0
   (not true))
 (check-sat)
+(exit)

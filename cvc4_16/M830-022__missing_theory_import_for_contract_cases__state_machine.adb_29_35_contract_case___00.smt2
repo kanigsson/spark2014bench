@@ -244,3 +244,4 @@ Target solver: CVC4
   (or (= (state_c flag1 num1) true) (= (state_d flag1 num1) true)))
   (= (or (or (or usf3 usf2) usf1) usf) true)))))))))))))))))))))))))
 (check-sat)
+(exit)

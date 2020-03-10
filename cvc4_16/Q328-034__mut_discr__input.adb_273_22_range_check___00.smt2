@@ -733,3 +733,4 @@ Target solver: CVC4
                                                          (to_rep1 s__last))))
   (<= 1 1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

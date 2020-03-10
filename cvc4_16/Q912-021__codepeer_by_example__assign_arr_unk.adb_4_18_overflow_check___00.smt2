@@ -247,3 +247,4 @@ Target solver: CVC4
   (to_rep x__last))
   (=> (dynamic_invariant y true false true true) (in_range (+ y 1))))))
 (check-sat)
+(exit)

@@ -240,3 +240,4 @@ Target solver: CVC4
   (=> (= x5 (store x4 5 o9))
   (let ((o10 (+ 6 one))) (=> (in_range1 o10) (in_range2 o10)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

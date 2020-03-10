@@ -308,3 +308,4 @@ Target solver: CVC4
   (=> (bvule scale_num scale_denom)
   (=> (not (= scale_num #x00000000)) (not (= scale_num #x00000000))))))))))
 (check-sat)
+(exit)

@@ -864,3 +864,4 @@ Target solver: CVC4
                                                 false)) true)
   (=> (not (= usf i)) (<= usf (last1 a2))))))))))))
 (check-sat)
+(exit)

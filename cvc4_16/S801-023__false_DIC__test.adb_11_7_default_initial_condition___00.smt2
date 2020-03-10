@@ -330,3 +330,4 @@ Target solver: CVC4
   (= 2147483647 (to_rep
                 (rec__test__context_type__last (us_split_discrs1 usf)))))))))
 (check-sat)
+(exit)

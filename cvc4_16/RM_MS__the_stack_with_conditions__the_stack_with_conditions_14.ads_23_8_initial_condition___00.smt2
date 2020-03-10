@@ -240,3 +240,4 @@ Target solver: CVC4
   (forall ((pointer2 Int)) (is_empty__function_guard (is_empty pointer2)
   pointer2)) (= (is_empty pointer1) true)))))))))
 (check-sat)
+(exit)

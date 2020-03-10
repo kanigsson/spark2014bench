@@ -734,3 +734,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true)) (relaxed_initialization__rec__z__pred
   (select obj idx))))))))))))
 (check-sat)
+(exit)

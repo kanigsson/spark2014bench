@@ -2662,3 +2662,4 @@ Target solver: CVC4
  ;; File "psu_monitoring.ads", line 74, characters 0-0
   (not (=> (= (milliseconds 100) task_period) (<= 0 0))))
 (check-sat)
+(exit)

@@ -517,3 +517,4 @@ Target solver: CVC4
   (<= 0 (last1 perm__remove__result)))))
   (=> (= o2 true) (in_range1 (- (last1 a) 1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

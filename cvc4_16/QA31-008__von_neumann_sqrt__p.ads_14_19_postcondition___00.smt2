@@ -475,3 +475,4 @@ Target solver: CVC4
   (=> (= p__sqrt_von_neumann__result o)
   (<= (* p__sqrt_von_neumann__result p__sqrt_von_neumann__result) x))))))))))))))))))))
 (check-sat)
+(exit)

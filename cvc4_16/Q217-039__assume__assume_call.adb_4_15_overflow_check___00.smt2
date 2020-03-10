@@ -94,3 +94,4 @@ Target solver: CVC4
  ;; File "assume_call.ads", line 3, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (in_range (+ x 1)))))
 (check-sat)
+(exit)

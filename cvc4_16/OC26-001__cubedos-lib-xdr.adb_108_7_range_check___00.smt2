@@ -747,3 +747,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (=> (<= position (- (+ position o) 1)) (<= (to_rep data__first) position)))))))))))))))))))))
 (check-sat)
+(exit)

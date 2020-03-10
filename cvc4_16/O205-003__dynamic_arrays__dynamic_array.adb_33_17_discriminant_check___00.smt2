@@ -357,3 +357,4 @@ Target solver: CVC4
   (=> (not (= (rec__dynamic_array__rec__b (us_split_discrs1 r)) true))
   (dynamic_array__rec__f2__pred r)))))))
 (check-sat)
+(exit)

@@ -216,3 +216,4 @@ Target solver: CVC4
   (let ((o1 (+ j4 1))) (and (in_range1 o1) (and (= j3 o1) (not (<= j3 i1)))))))))))
   (and (= j3 j2) (= innersum3 innersum2))) (= j3 (+ i1 1)))))))))))))))))))))
 (check-sat)
+(exit)

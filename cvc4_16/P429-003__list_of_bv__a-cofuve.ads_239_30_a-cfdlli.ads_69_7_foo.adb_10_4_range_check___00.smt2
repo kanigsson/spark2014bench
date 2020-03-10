@@ -515,3 +515,4 @@ Target solver: CVC4
        (distinct 1 0))))
   (= o false))))) (=> (= o true) (=> (<= fst lst) (in_range3 lst))))))))))
 (check-sat)
+(exit)

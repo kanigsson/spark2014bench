@@ -151,3 +151,4 @@ Target solver: CVC4
   (=> (dynamic_invariant m false false true true)
   (=> (= m1 (fp.min x y)) (fp.leq m1 x))))))))
 (check-sat)
+(exit)

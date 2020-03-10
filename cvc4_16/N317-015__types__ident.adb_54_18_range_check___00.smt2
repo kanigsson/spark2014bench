@@ -247,3 +247,4 @@ Target solver: CVC4
   (forall ((y2 Int))
   (=> (= y2 ident__incr_private__y) (=> (= y2 9) (in_range1 x)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

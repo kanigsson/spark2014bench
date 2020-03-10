@@ -874,3 +874,4 @@ Target solver: CVC4
   (= (< 0 (length1 o4)) (not (= (empty o4) true)))))))
   (=> (<= start (- (+ start o3) 1)) (<= (first1 temp___1739) start))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

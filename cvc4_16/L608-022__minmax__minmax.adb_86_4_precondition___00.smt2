@@ -228,3 +228,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 mint1 true true true true)
   (=> (dynamic_invariant1 maxt1 true true true true) (< aa cc))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

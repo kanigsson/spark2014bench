@@ -113,3 +113,4 @@ Target solver: CVC4
   (=> (item_count__function_guard (item_count Tuple0) Tuple0)
   (< 0 (item_count Tuple0))))))
 (check-sat)
+(exit)

@@ -539,3 +539,4 @@ Target solver: CVC4
   (let ((o18 (- usf1 o17)))
   (=> (in_range1 o18) (in_range1 (+ o18 (first1 new_val)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

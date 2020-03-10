@@ -237,3 +237,4 @@ Target solver: CVC4
   (not (dynamic_predicate
   (us_repqtmk (us_split_fieldsqtmk rliteral rliteral1)))))
 (check-sat)
+(exit)

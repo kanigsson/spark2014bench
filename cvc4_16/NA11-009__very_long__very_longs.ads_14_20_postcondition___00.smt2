@@ -1027,3 +1027,4 @@ Target solver: CVC4
      (rec__very_longs__very_long__length
      (us_split_discrs1 very_longs__make_from_natural__result))) length)))))))))))))))))))))))))))
 (check-sat)
+(exit)

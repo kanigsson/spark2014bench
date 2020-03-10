@@ -417,3 +417,4 @@ Target solver: CVC4
   (=> (has_element__function_guard (has_element c p) c p)
   (not (= (has_element c p) true)))))
 (check-sat)
+(exit)

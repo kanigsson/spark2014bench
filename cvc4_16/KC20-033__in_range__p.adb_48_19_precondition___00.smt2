@@ -320,3 +320,4 @@ Target solver: CVC4
  ;; File "p.adb", line 1, characters 0-0
   (not (<= 1 5)))
 (check-sat)
+(exit)

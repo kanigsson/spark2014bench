@@ -267,3 +267,4 @@ Target solver: CVC4
  ;; File "rack.ads", line 11, characters 0-0
   (not (=> (dynamic_invariant arg true false true true) (<= 97 97))))
 (check-sat)
+(exit)

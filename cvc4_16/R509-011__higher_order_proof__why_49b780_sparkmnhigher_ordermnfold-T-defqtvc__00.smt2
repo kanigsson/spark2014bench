@@ -1056,3 +1056,4 @@ Target solver: CVC4
                                               false)) true)
   (=> (not (= i (first2 a))) (<= (to_rep r__first_2) (last_2 a))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

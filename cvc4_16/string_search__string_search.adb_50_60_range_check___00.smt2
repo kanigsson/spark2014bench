@@ -465,3 +465,4 @@ Target solver: CVC4
   (= (and (ite (<= 0 usf) true false) (ite (<= usf 255) true false)) true)
   (in_range1 (length needle)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

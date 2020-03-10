@@ -575,3 +575,4 @@ Target solver: CVC4
   (=> (bvult failsafe__model__time_below_threshold__result #x32) (in_range1
   failsafe__model__time_below_threshold__result)))))))))))))))))))))
 (check-sat)
+(exit)

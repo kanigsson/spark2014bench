@@ -733,3 +733,4 @@ Target solver: CVC4
                    (us_split_discrs1 (select obj idx))))
   (=> (= spark__branch true) (in_range4 ((_ to_fp 8 24) RNE (to_real idx)))))))))))))
 (check-sat)
+(exit)

@@ -591,3 +591,4 @@ Target solver: CVC4
   (=> (= temp___292 space2)
   (let ((o1 (* space2 2))) (=> (in_range1 o1) (in_range1 (- o1 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

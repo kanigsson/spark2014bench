@@ -374,3 +374,4 @@ Target solver: CVC4
   (forall ((a5 (Array Int natural)))
   (=> (= a5 (store a4 i2 o9)) (=> (<= 2 i2) (<= 0 2)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

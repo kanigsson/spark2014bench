@@ -530,3 +530,4 @@ Target solver: CVC4
   (= (bool_eq a1 (to_rep a__first) (to_rep a__last) b1 (to_rep b__first)
      (to_rep b__last)) true))))))))))
 (check-sat)
+(exit)

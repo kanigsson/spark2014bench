@@ -524,3 +524,4 @@ Target solver: CVC4
   (=> (= d (slide (to_array temp___224) (first1 temp___224) 1))
   (= (to_rep (select d 1)) (to_rep (select x 6))))))))))))))
 (check-sat)
+(exit)

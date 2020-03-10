@@ -175,3 +175,4 @@ Target solver: CVC4
   test_main__my_sets__empty__result1 elt1))
   (not (= (mem test_main__my_sets__empty__result elt) true)))))))))
 (check-sat)
+(exit)

@@ -632,3 +632,4 @@ Target solver: CVC4
   (=> (dynamic_invariant7 floor_climb_rate1 false true true true)
   (not (= 12 0)))))))))))))))))))))))))))
 (check-sat)
+(exit)

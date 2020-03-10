@@ -676,3 +676,4 @@ Target solver: CVC4
                                                                 (last1
                                                                 prefix)))) 1))))))))))))))))))
 (check-sat)
+(exit)

@@ -550,3 +550,4 @@ Target solver: CVC4
   (=> (in_range1 o17)
   (=> (< o17 o16) (=> (in_range1 (* usf l1)) (in_range1 (- length2 i2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

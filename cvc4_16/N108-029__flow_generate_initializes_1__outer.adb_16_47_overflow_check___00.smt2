@@ -98,3 +98,4 @@ Target solver: CVC4
   (=> (dynamic_invariant hidden true false true true) (in_range
   (+ visible hidden)))))))
 (check-sat)
+(exit)

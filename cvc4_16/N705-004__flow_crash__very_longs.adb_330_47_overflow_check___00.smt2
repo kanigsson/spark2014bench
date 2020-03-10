@@ -757,3 +757,4 @@ Target solver: CVC4
   (=> (= very_longs__divide__get_msd__result digit_index1) (in_range2
   (+ very_longs__divide__get_msd__result 1))))))))))))
 (check-sat)
+(exit)

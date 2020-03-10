@@ -958,3 +958,4 @@ Target solver: CVC4
   (<= o4 (* 100 (- usf (first1 o5)))))))
   (=> (= o6 true) (in_range1 (- usf 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

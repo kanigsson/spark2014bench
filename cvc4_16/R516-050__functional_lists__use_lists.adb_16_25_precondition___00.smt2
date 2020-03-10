@@ -879,3 +879,4 @@ Target solver: CVC4
   (get_cursor_model o12 us_HEAP5) cu2 us_HEAP5))
   (<= 0 (find (get_cursor_model l1 us_HEAP4) cu1 us_HEAP4))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

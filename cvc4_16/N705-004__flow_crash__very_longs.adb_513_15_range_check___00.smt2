@@ -1542,3 +1542,4 @@ Target solver: CVC4
   (forall ((n1 Int))
   (=> (= n1 o6) (dynamic_property2 first2 last3 (- 48 n1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

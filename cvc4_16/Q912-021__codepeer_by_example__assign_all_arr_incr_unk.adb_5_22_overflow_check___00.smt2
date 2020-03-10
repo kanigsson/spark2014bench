@@ -273,3 +273,4 @@ Target solver: CVC4
                       true false)) true)
   (=> (= (to_rep (select x1 j1)) o) (in_range1 (+ o j1))))))))))))
 (check-sat)
+(exit)

@@ -375,3 +375,4 @@ Target solver: CVC4
   (= o2 (bvand (ite (< o 8) (bvlshr o1 ((_ int2bv 8) o)) #x00) #x0F))))
   (<= amount 4)))))))))))
 (check-sat)
+(exit)

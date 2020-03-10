@@ -310,3 +310,4 @@ Target solver: CVC4
           true false) (ite (and (<= (+ k1 1) i1) (<= i1 0)) true false)) true)
   (in_range1 (- i1 k1))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -288,3 +288,4 @@ Target solver: CVC4
   (= (and (ite (dynamic_invariant temp2 false true true true) true false) 
   (ite (< temp2 x) true false)) true) (not (= temp2 0)))))))))))))
 (check-sat)
+(exit)

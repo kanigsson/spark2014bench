@@ -818,3 +818,4 @@ Target solver: CVC4
   (=> (in_range1 o3)
   (=> (< o2 (- (+ start o3) 1)) (in_range1 (length by__)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

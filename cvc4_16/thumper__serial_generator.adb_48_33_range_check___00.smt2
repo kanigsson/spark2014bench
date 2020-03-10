@@ -574,3 +574,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 seconds1 true true true true)
   (=> (uint_in_range (to_int2 seconds1)) (uint_in_range (- year1 1901))))))))))))))))))
 (check-sat)
+(exit)

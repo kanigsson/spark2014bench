@@ -231,3 +231,4 @@ Target solver: CVC4
   (=> (= b_top1 o)
   (forall ((o1 element)) (=> (= (to_rep o1) e) (<= 1 b_top1))))))))))))
 (check-sat)
+(exit)

@@ -1033,3 +1033,4 @@ Target solver: CVC4
         buffer__split_fields)))))
   (in_range (+ o6 1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

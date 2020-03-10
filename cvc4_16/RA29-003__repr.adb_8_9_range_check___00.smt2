@@ -671,3 +671,4 @@ Target solver: CVC4
   (=> (bvule (to_rep1 a__first) (to_rep1 a__last))
   (bvuge (to_rep1 a__first) #x0000000000000000)))))))))))))))))))
 (check-sat)
+(exit)

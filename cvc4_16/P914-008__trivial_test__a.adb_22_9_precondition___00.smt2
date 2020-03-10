@@ -399,3 +399,4 @@ Target solver: CVC4
   (fp.lt (to_rep (select (to_array o) (- i 1))) (to_rep
                                                 (select (to_array o) i)))))))))))))
 (check-sat)
+(exit)

@@ -119,3 +119,4 @@ Target solver: CVC4
   (=> (forall ((foo1 Int)) (some_func__function_guard (some_func foo1) foo1))
   (<= (some_func foo) x1)))))))))
 (check-sat)
+(exit)

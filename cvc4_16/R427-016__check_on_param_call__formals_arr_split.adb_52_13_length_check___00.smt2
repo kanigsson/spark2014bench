@@ -562,3 +562,4 @@ Target solver: CVC4
                                               formals_arr_split__p__a__compl))
   (<= 0 x)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

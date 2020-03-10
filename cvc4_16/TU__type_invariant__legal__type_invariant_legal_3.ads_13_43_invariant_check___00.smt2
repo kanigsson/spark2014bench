@@ -121,3 +121,4 @@ Target solver: CVC4
  ;; File "type_invariant_legal_3.ads", line 13, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (type_invariant x))))
 (check-sat)
+(exit)

@@ -650,3 +650,4 @@ Target solver: CVC4
         (to_rep payload_as_bytes__last)))
   (<= 1 1))))))))))))
 (check-sat)
+(exit)

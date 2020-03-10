@@ -1208,3 +1208,4 @@ Target solver: CVC4
   (= (+ offset1 remaining_bytes1) (length (to_rep data__first)
                                   (to_rep data__last)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

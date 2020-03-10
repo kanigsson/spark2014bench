@@ -1034,3 +1034,4 @@ Target solver: CVC4
              (fold (of_array (to_array a) (first1 a) (last1 a)) 0)) i2)) (+ (* 
   c (- i2 (first1 a))) c))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

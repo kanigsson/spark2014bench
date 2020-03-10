@@ -192,3 +192,4 @@ Target solver: CVC4
   (=> (dynamic_invariant i true false true true)
   (= (to_rep (select a i)) 69))))
 (check-sat)
+(exit)

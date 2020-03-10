@@ -261,3 +261,4 @@ Target solver: CVC4
   (= o (ite (= current1 2) false true)) (= o (distinct 1 0)))
   (= (select du_available 1) true)))))))))
 (check-sat)
+(exit)

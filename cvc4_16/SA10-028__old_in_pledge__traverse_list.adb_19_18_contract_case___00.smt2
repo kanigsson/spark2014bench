@@ -469,3 +469,4 @@ Target solver: CVC4
   (us_pledge_get (us_pledge_ty__content us_result_pledge1)
   temp___borrowed_260 temp___brower_259)) )))))))))))
 (check-sat)
+(exit)

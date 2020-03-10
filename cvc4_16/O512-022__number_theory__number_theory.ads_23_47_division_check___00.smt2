@@ -338,3 +338,4 @@ Target solver: CVC4
   (=> (fp.isFinite32 (power (fp #b0 #b01111111 #b10011110001110111100111) n))
   (not (fp.isZero (fp #b0 #b10000000 #b00011110001101010100000))))))))))))))
 (check-sat)
+(exit)

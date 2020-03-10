@@ -821,3 +821,4 @@ Target solver: CVC4
   (= tuition2 (+ tuition1 (fxp_div_int tuition1 2))) (= tuition2 tuition1))
   (<= tuition2 3840000))))))))))))))))
 (check-sat)
+(exit)

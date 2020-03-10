@@ -261,3 +261,4 @@ Target solver: CVC4
   (and (= v2 (to_rep (select a j))) (= (to_rep (select a1 j)) 0)))
   (=> (not (= usf true)) (= (bool_eq a1 1 10 temp___old_181 1 10) true)))))))))))))))
 (check-sat)
+(exit)

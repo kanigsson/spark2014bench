@@ -317,3 +317,4 @@ Target solver: CVC4
   (ite (= mode 1) (= (has_true number_list 0 value) true)
   (= (has_true number_list 0 100000) true))) (<= 0 value)))))))))))
 (check-sat)
+(exit)

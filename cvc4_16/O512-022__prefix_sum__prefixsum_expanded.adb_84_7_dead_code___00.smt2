@@ -881,3 +881,4 @@ Target solver: CVC4
   (and (in_range3 o) (and (= space1 o) (not (< space1 8)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
   (and (= a1 a) (= space1 space))))))))))))))
 (check-sat)
+(exit)

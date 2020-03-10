@@ -194,3 +194,4 @@ Target solver: CVC4
   (fp.leq (fp #b0 #b00000000 #b00000000000000000000000) ((_ to_fp 8 24) RNE (to_real 
   i))))))
 (check-sat)
+(exit)

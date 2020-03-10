@@ -651,3 +651,4 @@ Target solver: CVC4
   (ite (= tag1 2) false true)))
   (=> (not (= spark__branch true)) (in_range1 (- (last1 message) 1)))))))))))))))))))))))))
 (check-sat)
+(exit)

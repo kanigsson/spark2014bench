@@ -1035,3 +1035,4 @@ Target solver: CVC4
   (let ((o15 (+ (first1 buffer) 13)))
   (=> (in_range1 o15) (in_range1 (+ o15 offset1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

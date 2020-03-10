@@ -311,3 +311,4 @@ Target solver: CVC4
   (=> (in_range1 (+ loop_tutorial__isqrt__result 1)) (in_range1
   (+ loop_tutorial__isqrt__result 1))))))))))))))))
 (check-sat)
+(exit)

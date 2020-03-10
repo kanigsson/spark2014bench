@@ -650,3 +650,4 @@ Target solver: CVC4
   (=> (= cut2 (store cut1 top2 o5))
   (forall ((x2 Int)) (=> (= x2 y2) (in_range1 (+ x2 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

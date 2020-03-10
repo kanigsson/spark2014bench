@@ -902,3 +902,4 @@ Target solver: CVC4
              test_higher_order2__my_sum__sum_left__acc__fold__result) 
      (last1 a)))) true))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -328,3 +328,4 @@ Target solver: CVC4
   (= i1 temp___156))))))))))) (= tmp1 tmp)))))
   (let ((o (+ n 1))) (=> (in_range1 o) (in_range1 (* n o))))))))))))
 (check-sat)
+(exit)

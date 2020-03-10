@@ -188,3 +188,4 @@ Target solver: CVC4
  ;; File "tag_check.ads", line 12, characters 0-0
   (not (= x__attr__tag (attr__tag y))))
 (check-sat)
+(exit)

@@ -671,3 +671,4 @@ Target solver: CVC4
         (us_split_fields1 o6))))))
   (in_range1 (length bounded_dynamic_strings__value__result))))))))))))))))))))))))))))
 (check-sat)
+(exit)

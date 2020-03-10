@@ -151,3 +151,4 @@ Target solver: CVC4
      (us_repqtmk y__is_null_pointer2 y__pointer_address2 y__pointer_value1)
      us_null_pointer) true)))))))))))))
 (check-sat)
+(exit)

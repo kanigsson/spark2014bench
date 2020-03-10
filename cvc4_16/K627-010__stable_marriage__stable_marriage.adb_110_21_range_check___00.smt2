@@ -307,3 +307,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 g2) true false) (ite (<= g2 64) true false)) true)
   (=> (<= 1 (- g2 1)) (<= 1 1))))))))))))
 (check-sat)
+(exit)

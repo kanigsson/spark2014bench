@@ -911,3 +911,4 @@ Target solver: CVC4
   (to_rep1 value__last))
   (=> (dynamic_invariant2 last4 false false true true) (not (= 4 0)))))))))
 (check-sat)
+(exit)

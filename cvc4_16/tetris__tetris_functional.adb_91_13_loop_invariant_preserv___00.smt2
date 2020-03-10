@@ -2185,3 +2185,4 @@ Target solver: CVC4
   (select cur_board4 y1)))
   (not (= (is_complete_line (select cur_board3 y)) true))))))))))))))))))))))))))
 (check-sat)
+(exit)

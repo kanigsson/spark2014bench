@@ -1208,3 +1208,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 usf3) true false) (ite (<= usf3 o5) true false)) true)
   (=> (not (= usf3 n)) (<= 1 usf3)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

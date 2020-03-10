@@ -947,3 +947,4 @@ Target solver: CVC4
   (and (<= (first (us_repqtmk buffer__split_fields1)) i)
   (<= i (last (us_repqtmk buffer__split_fields1)))) (< (- 16) (- i index)))))))))))))))))))))
 (check-sat)
+(exit)

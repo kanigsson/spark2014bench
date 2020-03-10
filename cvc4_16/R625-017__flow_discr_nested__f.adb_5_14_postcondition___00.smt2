@@ -401,3 +401,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__f__t__d b2__split_discrs)) o1)
   (forall ((y21 Int)) (=> (= y21 o1) (= y11 x1))))))))))))))))))))))
 (check-sat)
+(exit)

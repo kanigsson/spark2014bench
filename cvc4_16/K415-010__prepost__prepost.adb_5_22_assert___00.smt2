@@ -118,3 +118,4 @@ Target solver: CVC4
   (=> (is_zero__function_guard (is_zero z) z)
   (=> (= (is_zero z) true) (= z 0)))))))
 (check-sat)
+(exit)

@@ -116,3 +116,4 @@ Target solver: CVC4
   (forall ((state2 us_private)) (get__function_guard (get state2) state2))
   (= old__ (get state1)))))))))))
 (check-sat)
+(exit)

@@ -1190,3 +1190,4 @@ Target solver: CVC4
   (forall ((o8 Int))
   (=> (= (to_rep1 frame__first) o8) (in_range1 (length o8 o7))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

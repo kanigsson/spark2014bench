@@ -1191,3 +1191,4 @@ Target solver: CVC4
   (- (+ (first1 temp___255) (+ (length (first1 temp___255)
                                (last1 temp___255)) (length 1 13))) 1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

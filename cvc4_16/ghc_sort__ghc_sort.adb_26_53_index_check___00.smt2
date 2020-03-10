@@ -597,3 +597,4 @@ Target solver: CVC4
   (<= (to_rep (select (to_array s) l)) (to_rep (select (to_array s) (- l 1))))))
   (let ((o5 (+ usf 1))) (=> (in_range1 o5) (<= (to_rep cut__first) o5)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

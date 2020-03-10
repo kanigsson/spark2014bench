@@ -695,3 +695,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 not_kind1 true false true true)
   (=> (= 1 0) (=> (= (to_rep1 a__first) o2) (in_range3 o2))))))))))))))))
 (check-sat)
+(exit)

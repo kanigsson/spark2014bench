@@ -271,3 +271,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk o2
   (rec__pragma_predicate__tuple_type__y tuple__split_fields))))))))))))))))
 (check-sat)
+(exit)

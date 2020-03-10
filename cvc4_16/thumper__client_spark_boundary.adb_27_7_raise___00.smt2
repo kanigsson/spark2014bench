@@ -329,3 +329,4 @@ Target solver: CVC4
   (=> (dynamic_invariant document_file_name true false true true)
   (not (dynamic_invariant timestamp_file_name true false true true)))))
 (check-sat)
+(exit)

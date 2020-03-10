@@ -614,3 +614,4 @@ Target solver: CVC4
   (=> (dynamic_property 1 2147483647 (first1 usf) (last1 usf))
   (dynamic_predicate (of_array (to_array usf) (first1 usf) (last1 usf))))))))))))
 (check-sat)
+(exit)

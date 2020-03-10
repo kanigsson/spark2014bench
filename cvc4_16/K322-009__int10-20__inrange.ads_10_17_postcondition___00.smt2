@@ -190,3 +190,4 @@ Target solver: CVC4
   (forall ((inrange__add__result Int))
   (=> (= inrange__add__result o3) (<= inrange__add__result 40)))))))))))))
 (check-sat)
+(exit)

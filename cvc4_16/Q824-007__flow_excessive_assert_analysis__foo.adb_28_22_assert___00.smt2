@@ -518,3 +518,4 @@ Target solver: CVC4
      (rec__foo__level_2__c2 red__split_fields)
      (rec__foo__level_2__c3 red__split_fields)) true)))))))
 (check-sat)
+(exit)

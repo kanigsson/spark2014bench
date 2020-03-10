@@ -1969,3 +1969,4 @@ Target solver: CVC4
  ;; File "decadriver.ads", line 242, characters 0-0
   (not (forall ((temp___1068 Bool)) (= temp___1068 false))))
 (check-sat)
+(exit)

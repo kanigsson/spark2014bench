@@ -621,3 +621,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= o c) true false))
   (=> (not (= spark__branch true)) (dynamic_property1 first2 last2 from))))))))))))))))
 (check-sat)
+(exit)

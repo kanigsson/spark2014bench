@@ -429,3 +429,4 @@ Target solver: CVC4
   (in_range1
   (+ test_prime_and_coprime_numbers__p__nearest_number__result 1))))))))))))))))))
 (check-sat)
+(exit)

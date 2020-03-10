@@ -193,3 +193,4 @@ Target solver: CVC4
   (get_e (us_repqtmk (us_split_fieldsqtmk (of_rep 0))))
   (us_repqtmk (us_split_fieldsqtmk (of_rep 0))))))))
 (check-sat)
+(exit)

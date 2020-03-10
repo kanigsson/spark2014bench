@@ -374,3 +374,4 @@ Target solver: CVC4
   (=> (< j i)
   (= (to_rep (select complex_arrays__create_step_array__result j)) (- 23)))))))))))))
 (check-sat)
+(exit)

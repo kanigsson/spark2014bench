@@ -120,3 +120,4 @@ Target solver: CVC4
   (=> (and (h_true__function_guard o Tuple0) (= o true))
   (forall ((z Bool)) (=> (= z o) (= z true)))))))
 (check-sat)
+(exit)

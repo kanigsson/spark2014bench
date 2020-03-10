@@ -285,3 +285,4 @@ Target solver: CVC4
   (=> (in_range o14)
   (forall ((tmp24 Int)) (=> (= tmp24 o14) (in_range (- x y))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -784,3 +784,4 @@ Target solver: CVC4
   (=> (= spark__branch1 (ite (< max_sum1 current_sum2) true false))
   (=> (= spark__branch1 true) (in_range2 current_sum2)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

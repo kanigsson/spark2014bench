@@ -1702,3 +1702,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (get1 (to_array1 temp___1512) k temp___1513)) o8)
   (in_range1 (- o8 o6)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

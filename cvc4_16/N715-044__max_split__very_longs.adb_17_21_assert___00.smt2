@@ -1019,3 +1019,4 @@ Target solver: CVC4
      (rec__very_longs__very_long__digit_length result____split_discrs)) 
   digit_length))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -825,3 +825,4 @@ Target solver: CVC4
   (us_pledge_get (us_pledge_ty__content list_ex_pledge__all_zero__t__pledge4)
   temp___borrowed_213 temp___brower_212)) ))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -924,3 +924,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk container__split_fields))) o7) true false true true)
   (=> (in_range6 usf1) (<= 1 usf1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

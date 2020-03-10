@@ -85,3 +85,4 @@ Target solver: CVC4
   (=> (= logic__equivalence_test_3__result true)
   (=> (= (= a true) (= b true)) (= c true)))))))
 (check-sat)
+(exit)

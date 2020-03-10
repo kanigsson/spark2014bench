@@ -457,3 +457,4 @@ Target solver: CVC4
   (=> (= my_s1 (pack__a1__my_s1__aggregate_def o))
   (=> (= (pack__a1__my_a__aggregate_def 42) my_a) (=> (<= 1 4) (<= 1 1))))))))
 (check-sat)
+(exit)

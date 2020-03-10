@@ -1357,3 +1357,4 @@ Target solver: CVC4
                                                                     (rec__p__my_maps__map__capacity
                                                                     o3)))))))))))))))))
 (check-sat)
+(exit)

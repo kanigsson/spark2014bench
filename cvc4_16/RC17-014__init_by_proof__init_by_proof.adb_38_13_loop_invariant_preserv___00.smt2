@@ -700,3 +700,4 @@ Target solver: CVC4
   (<= temp___323 (last1 temp___322)))
   (= (attr__init (select (to_array temp___322) temp___323)) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

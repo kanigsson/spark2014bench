@@ -137,3 +137,4 @@ Target solver: CVC4
   (=> (= test_if__test__result c2)
   (let ((o2 (* a 500))) (=> (in_range1 o2) (in_range1 (+ o2 500)))))))))))))))))))))))))
 (check-sat)
+(exit)

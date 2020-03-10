@@ -372,3 +372,4 @@ Target solver: CVC4
   (forall ((modular__add_byte_c__result (_ BitVec 8)))
   (=> (= modular__add_byte_c__result ((_ int2bv 8) o)) (in_range (+ a b))))))))))
 (check-sat)
+(exit)

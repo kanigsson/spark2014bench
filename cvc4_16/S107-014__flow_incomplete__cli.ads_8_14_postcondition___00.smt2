@@ -88,3 +88,4 @@ Target solver: CVC4
   (forall ((dummy1 us_private)) (has_piece__function_guard (has_piece dummy1)
   dummy1)) (= (has_piece dummy) true)))))))
 (check-sat)
+(exit)

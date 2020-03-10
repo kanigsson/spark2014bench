@@ -797,3 +797,4 @@ Target solver: CVC4
   (default_initial_assumption1 (rec__binary_trees__forest__c usf) false))
   (type_invariant (us_repqtmk1 usf))))))
 (check-sat)
+(exit)

@@ -322,3 +322,4 @@ Target solver: CVC4
   (and (<= (abs1 a) a__ppcm__result) (<= a__ppcm__result (abs1 (* a b)))))
   (and (<= (abs1 b) a__ppcm__result) (<= a__ppcm__result (abs1 (* a b)))))))))))))))))))))))))
 (check-sat)
+(exit)

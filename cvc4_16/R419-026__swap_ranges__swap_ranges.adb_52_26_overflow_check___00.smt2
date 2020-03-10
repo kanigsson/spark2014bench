@@ -514,3 +514,4 @@ Target solver: CVC4
   (=> (= (to_rep b__last) temp___357)
   (forall ((o26 Int)) (=> (= (to_rep b__first) o26) (in_range1 (+ o26 j)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

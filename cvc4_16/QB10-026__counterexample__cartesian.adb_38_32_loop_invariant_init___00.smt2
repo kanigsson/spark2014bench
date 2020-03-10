@@ -733,3 +733,4 @@ Target solver: CVC4
   (=> (in_range1 (* o5 o3))
   (= result_index1 (* (+ (- index1 (first1 array1)) 1) (length array2))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

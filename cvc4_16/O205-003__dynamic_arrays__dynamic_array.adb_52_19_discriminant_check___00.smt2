@@ -1427,3 +1427,4 @@ Target solver: CVC4
   (=> (= spark__branch (rec__dynamic_array__rec__b (us_split_discrs1 r)))
   (=> (not (= spark__branch true)) (dynamic_array__rec__f2__pred r))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

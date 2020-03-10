@@ -1070,3 +1070,4 @@ Target solver: CVC4
      (select (rec__test__os_mbx_t__mbx_array
              (us_split_fields3 (select os_task_mbx_rw task_id))) index)))) (- 1)))))))))))))))))))
 (check-sat)
+(exit)

@@ -128,3 +128,4 @@ Target solver: CVC4
           true false) (ite (<= divisor remainder2) true false)) true)
   (in_range1 (+ quotient1 1)))))))))))))))))
 (check-sat)
+(exit)

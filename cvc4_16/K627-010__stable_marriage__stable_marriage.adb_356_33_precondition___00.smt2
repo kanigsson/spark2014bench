@@ -1501,3 +1501,4 @@ Target solver: CVC4
   (is_permutation_1 o15) o15))
   (= (is_permutation_1 (select ranking_2 o12)) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

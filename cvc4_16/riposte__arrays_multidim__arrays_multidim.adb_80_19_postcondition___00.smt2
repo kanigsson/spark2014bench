@@ -444,3 +444,4 @@ Target solver: CVC4
                                                         true false)) 
   (ite (= o1 o) true false))) (= arrays_multidim__tuple_test__result true)))))))))))
 (check-sat)
+(exit)

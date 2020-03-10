@@ -721,3 +721,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 j) true false) (ite (<= j r23b) true false)) true)
   (in_range1 (+ (- c first) j)))))))))))))))))))))
 (check-sat)
+(exit)

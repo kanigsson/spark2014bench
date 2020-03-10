@@ -113,3 +113,4 @@ Target solver: CVC4
                                                   1 0)) (ite (= (> formal 0) true)
                                                         1 0)) 1)))))))
 (check-sat)
+(exit)

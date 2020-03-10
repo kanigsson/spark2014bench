@@ -339,3 +339,4 @@ Target solver: CVC4
                       true false)) true)
   (<= (first1 unsorted) min2)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -747,3 +747,4 @@ Target solver: CVC4
                                              (select (to_array temp___324) k))))))))
   (let ((o6 y)) (=> (in_range4 o6) (<= o6 (last1 (of_array interm 1 100))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

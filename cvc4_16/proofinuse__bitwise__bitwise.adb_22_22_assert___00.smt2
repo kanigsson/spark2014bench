@@ -267,3 +267,4 @@ Target solver: CVC4
   (=> (= res2 (bvlshr res1 ((_ int2bv 32) 2)))
   (= res2 (bvudiv x #x00000008))))))))))
 (check-sat)
+(exit)

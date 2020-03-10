@@ -442,3 +442,4 @@ Target solver: CVC4
                   (- value test_prime_and_coprime_numbers__p__nearest_number__result))) 1)) v)
   (<= v value)) (not (= (select number_list v) true))))))))))))))))))))
 (check-sat)
+(exit)

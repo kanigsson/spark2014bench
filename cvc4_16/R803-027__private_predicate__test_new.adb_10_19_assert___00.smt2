@@ -1400,3 +1400,4 @@ Target solver: CVC4
   (=> (< 15 (to_rep (rec__pred_vis__root__g23 (us_split_fields7 y))))
   (< (to_rep (rec__pred_vis__root__f13 (us_split_fields7 y))) 100)))))))))))))))))))))
 (check-sat)
+(exit)

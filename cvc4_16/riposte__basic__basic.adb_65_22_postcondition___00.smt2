@@ -116,3 +116,4 @@ Target solver: CVC4
   (let ((o (+ x2 3)))
   (=> (in_range1 o) (forall ((x3 Int)) (=> (= x3 o) (= x3 (+ x1 5))))))))))))))))))
 (check-sat)
+(exit)

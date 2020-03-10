@@ -612,3 +612,4 @@ Target solver: CVC4
   (=> (<= binary_search__search__result (last1 a))
   (= (to_rep (select (to_array a) binary_search__search__result)) i))))))))))))))
 (check-sat)
+(exit)

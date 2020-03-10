@@ -144,3 +144,4 @@ Target solver: CVC4
   (<= (+ (+ 0 (ite (= (< num_out 10) true) 1 0)) (ite (= (> num_out 10) true)
                                                  1 0)) 1))))))
 (check-sat)
+(exit)

@@ -1397,3 +1397,4 @@ Target solver: CVC4
   (=> (and (<= (first_21 temp___1456) j) (<= j (last_21 temp___1456)))
   (<= i1 (last5 temp___1456))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

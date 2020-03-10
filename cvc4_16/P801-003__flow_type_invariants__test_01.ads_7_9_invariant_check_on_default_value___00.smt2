@@ -165,3 +165,4 @@ Target solver: CVC4
   (= (rec__test_01__t__b usf) (distinct 1 0))) (type_invariant
   (us_repqtmk usf))))))
 (check-sat)
+(exit)

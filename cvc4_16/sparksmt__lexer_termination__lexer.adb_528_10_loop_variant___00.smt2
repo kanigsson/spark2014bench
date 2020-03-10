@@ -2647,3 +2647,4 @@ Target solver: CVC4
   (=> (exists ((o6 Int)) (= (to_rep1 current_read__split_fields4) o6))
   (< temp___555 current_idx5)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

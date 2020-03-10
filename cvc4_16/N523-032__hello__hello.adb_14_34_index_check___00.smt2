@@ -359,3 +359,4 @@ Target solver: CVC4
   (=> (<= (first1 res) j)
   (=> (<= j (last1 res)) (=> (= j (first1 str)) (<= (first1 str) j)))))))))))
 (check-sat)
+(exit)

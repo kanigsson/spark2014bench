@@ -370,3 +370,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= (mod1 k12 2) 0) true false))
   (=> (not (= spark__branch true)) (in_range2 (- k12 1))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -211,3 +211,4 @@ Target solver: CVC4
   (exists ((x Int))
   (and (and (<= 1 x) (<= x 9)) (= x (to_rep (select table9 x)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

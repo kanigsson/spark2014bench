@@ -308,3 +308,4 @@ Target solver: CVC4
   (=> (dynamic_invariant res_g false false true true)
   (=> (= num1 x) (bvule num1 #xFFFF)))))))))))))
 (check-sat)
+(exit)

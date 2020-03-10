@@ -131,3 +131,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c false false true true)
   (forall ((c1 Int)) (=> (= c1 (min a b)) (=> (= (< a b) true) (= c1 b))))))))))
 (check-sat)
+(exit)

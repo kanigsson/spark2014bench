@@ -367,3 +367,4 @@ Target solver: CVC4
   (= j 9)))))))))))))) (and (= r2 r1) (= j j1))))) (in_range1
   (* (+ i 1) 10))))))))))
 (check-sat)
+(exit)

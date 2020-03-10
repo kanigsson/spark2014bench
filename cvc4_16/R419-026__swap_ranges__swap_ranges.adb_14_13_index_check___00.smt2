@@ -469,3 +469,4 @@ Target solver: CVC4
   (=> (= a1 (store a k1 o9))
   (forall ((o10 t)) (=> (= (to_rep1 o10) temp1) (<= (to_rep b__first) l1))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

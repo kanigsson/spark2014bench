@@ -1034,3 +1034,4 @@ Target solver: CVC4
   (let ((o3 (- i1 1)))
   (=> (in_range1 o3) (=> (and (<= 0 o3) (<= o3 99)) (in_range1 (- i1 1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

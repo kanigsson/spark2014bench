@@ -370,3 +370,4 @@ Target solver: CVC4
   (= (to_rep (select (to_array a_begins) i2)) 0))) (= j1 2))))))))))))))))
   (= i1 2))))))))))))
 (check-sat)
+(exit)

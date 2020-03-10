@@ -235,3 +235,4 @@ Target solver: CVC4
   (and (dyn_return__function_guard o1 30) (dynamic_invariant2 o1 true false
   true true)) (forall ((x1 Int)) (=> (= x1 o1) (<= x1 c)))))))))))))))
 (check-sat)
+(exit)

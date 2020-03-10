@@ -1179,3 +1179,4 @@ Target solver: CVC4
   (let ((o11 (- x21 1)))
   (=> (in_range1 o11) (dynamic_property3 first3 last4 o11))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -106,3 +106,4 @@ Target solver: CVC4
   (forall ((test__test_4__result Int))
   (=> (= test__test_4__result b1) (= test__test_4__result 5)))))))))))))
 (check-sat)
+(exit)

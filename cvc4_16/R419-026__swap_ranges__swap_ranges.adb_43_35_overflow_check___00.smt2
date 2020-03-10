@@ -461,3 +461,4 @@ Target solver: CVC4
   (=> (= b1 (store b o14 o12))
   (forall ((o15 Int)) (=> (= (to_rep a__first) o15) (in_range1 (+ o15 j))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

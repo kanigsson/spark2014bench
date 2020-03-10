@@ -287,3 +287,4 @@ Target solver: CVC4
   (=> (= a2 (store a1 i (store (select a1 i) j o3)))
   (= (to_rep (select (select a2 i) j)) (to_rep (select (select a2 j) i))))))))))))))
 (check-sat)
+(exit)

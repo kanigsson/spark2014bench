@@ -437,3 +437,4 @@ Target solver: CVC4
   (=> (<= (first1 a) (last1 a))
   (=> (<= 2 (- (last1 a) (first1 a))) (in_range1 (- last3 1)))))))
 (check-sat)
+(exit)

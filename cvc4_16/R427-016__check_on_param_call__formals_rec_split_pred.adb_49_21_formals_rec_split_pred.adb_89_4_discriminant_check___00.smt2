@@ -1147,3 +1147,4 @@ Target solver: CVC4
   (=> (dynamic_predicate1 temp___250) (formals_rec_split_pred__rec__h__pred
   temp___250))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

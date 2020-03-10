@@ -321,3 +321,4 @@ Target solver: CVC4
                                              false)) true)))))))))))
   (= c1 c)) (= (mod2 a c1) 0))))))))))))))))))))
 (check-sat)
+(exit)

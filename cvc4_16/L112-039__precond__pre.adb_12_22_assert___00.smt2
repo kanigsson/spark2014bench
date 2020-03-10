@@ -106,3 +106,4 @@ Target solver: CVC4
   (=> (forall ((x Int)) (=> (and (<= 1 x) (<= x 10)) (= (pred x) true)))
   (=> (pred__function_guard (pred z) z) (= (pred z) true)))))))
 (check-sat)
+(exit)

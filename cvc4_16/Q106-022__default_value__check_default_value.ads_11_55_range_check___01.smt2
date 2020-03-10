@@ -192,3 +192,4 @@ Target solver: CVC4
   (=> (dynamic_property first 2147483647 0) (dynamic_property first
   2147483647 0))))
 (check-sat)
+(exit)

@@ -360,3 +360,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 s1 true false true true)
   (=> (dynamic_invariant1 s2 true false true true) (in_range1 (length s2))))))
 (check-sat)
+(exit)

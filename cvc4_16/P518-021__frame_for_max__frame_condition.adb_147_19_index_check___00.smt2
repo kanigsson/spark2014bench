@@ -461,3 +461,4 @@ Target solver: CVC4
   (=> (<= (first1 old_a) usf)
   (=> (<= usf (last1 old_a)) (<= (to_rep1 a__first) usf)))))))))))))
 (check-sat)
+(exit)

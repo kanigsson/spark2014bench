@@ -273,3 +273,4 @@ Target solver: CVC4
   (=> (= spark__branch6 true)
   (=> (g3__function_guard (g3 Tuple0) Tuple0) (= (g3 Tuple0) 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

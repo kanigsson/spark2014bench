@@ -333,3 +333,4 @@ Target solver: CVC4
   (=> (in_range2 o)
   (=> (= o y) (=> (dynamic_invariant1 y true false true true) (not (= 2 0))))))))))))
 (check-sat)
+(exit)

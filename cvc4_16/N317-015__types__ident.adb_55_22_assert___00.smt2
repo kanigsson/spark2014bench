@@ -255,3 +255,4 @@ Target solver: CVC4
   (forall ((o3 Int))
   (=> (= (to_rep o2) o3) (forall ((y3 Int)) (=> (= y3 o3) (= y3 9))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -2200,3 +2200,4 @@ Target solver: CVC4
      current_err47 file_system47 current_in47 current_out47) 0)))
   (= (is_open target1) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

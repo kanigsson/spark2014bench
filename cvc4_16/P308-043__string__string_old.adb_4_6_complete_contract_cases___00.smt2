@@ -333,3 +333,4 @@ Target solver: CVC4
   (=> (dynamic_property 1 2147483647 (to_rep1 s__first) (to_rep1 s__last))
   (<= 1 (+ 0 (ite (= (distinct 1 0) true) 1 0))))))
 (check-sat)
+(exit)

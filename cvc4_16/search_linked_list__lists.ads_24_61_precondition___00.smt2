@@ -798,3 +798,4 @@ Target solver: CVC4
   (=> (= (get o8 i) (get o8 j)) (= (bool_eq i j) true))))))))
   (= (has_key o8 (us_repqtmk (us_split_fieldsqtmk lists__search2__result))) true))))))))))))))))))))))
 (check-sat)
+(exit)

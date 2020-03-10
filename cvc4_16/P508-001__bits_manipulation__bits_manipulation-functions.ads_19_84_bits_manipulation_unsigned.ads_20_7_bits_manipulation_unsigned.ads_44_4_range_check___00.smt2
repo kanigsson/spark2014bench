@@ -924,3 +924,4 @@ Target solver: CVC4
   (= bits_manipulation_unsigned__unsigned_32__functions__extract_bits__result (bvand o4 o1))
   (in_range1 (+ (- to__ from) 1)))))))))))))))))))))
 (check-sat)
+(exit)

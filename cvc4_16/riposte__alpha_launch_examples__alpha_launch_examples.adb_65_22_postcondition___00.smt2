@@ -274,3 +274,4 @@ Target solver: CVC4
   (=> (= a1 (bvxor a b))
   (=> (= b2 (bvxor a1 b)) (=> (= a2 (bvxor a1 b2)) (= a2 b1))))))))))
 (check-sat)
+(exit)

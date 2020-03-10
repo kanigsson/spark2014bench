@@ -417,3 +417,4 @@ Target solver: CVC4
   (=> (= spark__branch3 true) (in_range3
   (fp.sub RNE y (fp.neg (fp #b0 #b10000000101 #b1001000000000000000000000000000000000000000000000000)))))))))))))))))))))
 (check-sat)
+(exit)

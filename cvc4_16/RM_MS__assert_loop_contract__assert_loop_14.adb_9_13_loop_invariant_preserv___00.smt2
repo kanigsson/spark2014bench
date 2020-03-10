@@ -227,3 +227,4 @@ Target solver: CVC4
   (=> (= (and (ite (= o2 x) false true) (ite (< i2 10) true false)) true)
   (< i2 10)))))))))))))))))))
 (check-sat)
+(exit)

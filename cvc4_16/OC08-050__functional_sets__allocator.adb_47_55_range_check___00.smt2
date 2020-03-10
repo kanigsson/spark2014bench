@@ -658,3 +658,4 @@ Target solver: CVC4
   (and (mem__function_guard o2 alloc1 usf) (=> (= usf 0) (not (= o2 true))))
   (in_range2 usf))))))))))))))))))))))))
 (check-sat)
+(exit)

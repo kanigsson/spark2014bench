@@ -1729,3 +1729,4 @@ Target solver: CVC4
                    false))
   (=> (not (= spark__branch true)) (=> (<= 6 last5) (=> (<= 1 5) (<= 1 1)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

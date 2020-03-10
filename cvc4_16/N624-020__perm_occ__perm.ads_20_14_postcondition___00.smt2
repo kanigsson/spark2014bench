@@ -455,3 +455,4 @@ Target solver: CVC4
   (forall ((perm__occ__result Int))
   (=> (= perm__occ__result o2) (<= perm__occ__result (length a))))))))))))))))))
 (check-sat)
+(exit)

@@ -489,3 +489,4 @@ Target solver: CVC4
   (let ((o5 (+ k9 1)))
   (=> (in_range1 o5) (forall ((k10 Int)) (=> (= k10 o5) (< temp___218 k10)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

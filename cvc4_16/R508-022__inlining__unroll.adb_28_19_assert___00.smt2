@@ -95,3 +95,4 @@ Target solver: CVC4
   (=> (= value1 4)
   (=> (dynamic_invariant value1 true true true true) (= value1 4)))))))
 (check-sat)
+(exit)

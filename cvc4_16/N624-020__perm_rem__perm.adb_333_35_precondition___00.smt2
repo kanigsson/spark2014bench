@@ -834,3 +834,4 @@ Target solver: CVC4
   (=> (= perm__remove_perm__bb__assume bb)
   (=> (dynamic_invariant bb true false true true) (<= ib2 (last1 b)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

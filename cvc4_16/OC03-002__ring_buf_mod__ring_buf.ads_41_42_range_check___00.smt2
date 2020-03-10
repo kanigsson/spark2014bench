@@ -779,3 +779,4 @@ Target solver: CVC4
                                         (bv2nat (last1 temp___302))) 
   (length (bv2nat (first1 temp___303)) (bv2nat (last1 temp___303))))) 1)))))))))))))))))))
 (check-sat)
+(exit)

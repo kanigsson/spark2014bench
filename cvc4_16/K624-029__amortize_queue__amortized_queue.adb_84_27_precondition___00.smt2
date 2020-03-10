@@ -893,3 +893,4 @@ Target solver: CVC4
  ;; File "amortized_queue.ads", line 61, characters 0-0
   (not true))
 (check-sat)
+(exit)

@@ -183,3 +183,4 @@ Target solver: CVC4
   (=> (= arr (temp_____aggregate_def_177 1))
   (=> (<= 1 i) (=> (<= i 10) (= (to_rep (select arr i)) 1)))))))
 (check-sat)
+(exit)

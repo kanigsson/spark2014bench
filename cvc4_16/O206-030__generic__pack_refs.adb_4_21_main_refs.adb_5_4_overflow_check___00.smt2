@@ -110,3 +110,4 @@ Target solver: CVC4
   (=> (dynamic_invariant formal true false true true)
   (=> (< 0 external) (in_range1 (+ formal external))))))))
 (check-sat)
+(exit)

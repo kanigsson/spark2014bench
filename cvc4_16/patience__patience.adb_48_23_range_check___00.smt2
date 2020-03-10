@@ -1155,3 +1155,4 @@ Target solver: CVC4
                       (rec__patience__state__preds s__split_fields1)))
   (in_range2 pred2)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

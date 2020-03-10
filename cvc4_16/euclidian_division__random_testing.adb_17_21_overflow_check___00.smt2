@@ -119,3 +119,4 @@ Target solver: CVC4
   (=> (< n1 100)
   (=> (dynamic_invariant n1 true true true false) (in_range1 (+ n1 1)))))))))))))))
 (check-sat)
+(exit)

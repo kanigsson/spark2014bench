@@ -403,3 +403,4 @@ Target solver: CVC4
   (forall ((valid1 Bool))
   (=> (= valid1 (distinct 1 0)) (in_range1 (+ (first1 s) 4)))))))))))))))))))))))
 (check-sat)
+(exit)

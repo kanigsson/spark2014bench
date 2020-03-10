@@ -464,3 +464,4 @@ Target solver: CVC4
   (forall ((i2 Int))
   (=> (= i2 (+ i1 1)) (=> (in_range1 (* i2 8)) (< col2 (* i2 8))))))))))))))))))))))))
 (check-sat)
+(exit)

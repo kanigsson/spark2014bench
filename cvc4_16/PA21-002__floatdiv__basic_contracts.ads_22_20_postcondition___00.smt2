@@ -201,3 +201,4 @@ Target solver: CVC4
   (=> (= basic_contracts__average_orig__result res1)
   (fp.leq (fp #b0 #b00000000 #b00000000000000000000000) basic_contracts__average_orig__result))))))))))))))))))
 (check-sat)
+(exit)

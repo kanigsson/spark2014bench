@@ -386,3 +386,4 @@ Target solver: CVC4
   (forall ((o3 Int))
   (=> (= (to_rep1 to____first) o3) (in_range1 (- usf o3)))))))))))))))))))))
 (check-sat)
+(exit)

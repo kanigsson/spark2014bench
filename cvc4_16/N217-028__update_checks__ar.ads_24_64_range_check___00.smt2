@@ -256,3 +256,4 @@ Target solver: CVC4
   (and (in_range2 o4) (= a1 (temp_____aggregate_def_225 a o4 i o3 o2 o1 o))))))))))))
   (= a1 a)))) (in_range1 (+ e 1)))))))))
 (check-sat)
+(exit)

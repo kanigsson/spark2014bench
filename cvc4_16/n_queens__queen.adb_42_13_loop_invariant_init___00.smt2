@@ -248,3 +248,4 @@ Target solver: CVC4
   (= o (ite (= o3 true) false true))))) (= o (distinct 1 0)))))
   (not (= done__ true)))))))))))))
 (check-sat)
+(exit)

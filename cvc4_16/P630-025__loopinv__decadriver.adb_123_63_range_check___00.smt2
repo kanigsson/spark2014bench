@@ -1841,3 +1841,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__decadriver__receiver_type__rx_count self__)) o5)
   (in_range_int o5)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

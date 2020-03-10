@@ -350,3 +350,4 @@ Target solver: CVC4
   (=> (and (<= 1 o1) (<= o1 100))
   (forall ((o2 Int)) (=> (= (to_rep (select table1 o1)) o2) (<= 1 usf)))))))))))))))))))))
 (check-sat)
+(exit)

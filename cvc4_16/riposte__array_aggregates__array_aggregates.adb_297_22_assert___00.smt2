@@ -180,3 +180,4 @@ Target solver: CVC4
   (=> (= x (temp_____aggregate_def_624 0 2 1))
   (= (to_rep (select x 1000)) 1)))))
 (check-sat)
+(exit)

@@ -221,3 +221,4 @@ Target solver: CVC4
                                                     (rec__foo__point__y
                                                     p__split_fields1)))))))))))
 (check-sat)
+(exit)

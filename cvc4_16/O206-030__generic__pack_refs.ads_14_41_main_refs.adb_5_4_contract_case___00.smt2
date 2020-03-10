@@ -115,3 +115,4 @@ Target solver: CVC4
   (=> (= main_refs__func_inst__result o)
   (=> (= (= formal 0) true) (< 0 main_refs__func_inst__result))))))))))))
 (check-sat)
+(exit)

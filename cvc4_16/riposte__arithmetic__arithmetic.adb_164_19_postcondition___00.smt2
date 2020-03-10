@@ -148,3 +148,4 @@ Target solver: CVC4
   (=> (= arithmetic__abs_test_a__result r1)
   (= arithmetic__abs_test_a__result (abs1 n)))))))))
 (check-sat)
+(exit)

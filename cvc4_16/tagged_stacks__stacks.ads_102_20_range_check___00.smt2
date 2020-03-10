@@ -1097,3 +1097,4 @@ Target solver: CVC4
   (= (to_rep3 (rec__stacks__buffer__first (us_split_fields3 s))) temp___1018)
   (=> (<= temp___1018 stacks__get_model__3__R74s) (<= 1 temp___1018))))))))))))))
 (check-sat)
+(exit)

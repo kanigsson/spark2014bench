@@ -701,3 +701,4 @@ Target solver: CVC4
   (forall ((o7 Int))
   (=> (= (to_rep1 values__last) o7) (in_range1 (+ usf 1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

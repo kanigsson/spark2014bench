@@ -809,3 +809,4 @@ Target solver: CVC4
   (=> (= (in_range3 a k) true)
   (=> (< k (last1 a)) (=> (in_range6 (+ k 1)) (<= (first1 a) i)))))))))))))))
 (check-sat)
+(exit)

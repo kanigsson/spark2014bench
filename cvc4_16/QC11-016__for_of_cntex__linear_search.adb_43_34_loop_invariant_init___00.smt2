@@ -336,3 +336,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 i true false true true)
   (=> (< i 10) (=> (<= 1 j) (=> (<= j (- i 1)) (not (= (get arr j) n))))))))))))
 (check-sat)
+(exit)

@@ -366,3 +366,4 @@ Target solver: CVC4
   (= (to_rep (select (to_array x) j)) 0))) (= arrays__sum__result 0))
   (<= (length1 x) arrays__sum__result)))))))))))))
 (check-sat)
+(exit)

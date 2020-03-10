@@ -995,3 +995,4 @@ Target solver: CVC4
   (=> (= (to_rep data__first) o7)
   (=> (in_range1 (length o7 o6)) (in_range1 (+ offset remaining_bytes)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

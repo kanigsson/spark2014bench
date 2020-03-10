@@ -861,3 +861,4 @@ Target solver: CVC4
   (exists ((o13 Int)) (= (to_rep1 (select r3 temp___508)) o13))))))))))))))))))
   (=> (not (= i2 (last2 a))) (in_range1 (+ i2 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

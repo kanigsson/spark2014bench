@@ -506,3 +506,4 @@ Target solver: CVC4
   (= (to_rep (select (to_array needle) j)) (to_rep
                                            (select (to_array haystack) (+ j (- i 1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

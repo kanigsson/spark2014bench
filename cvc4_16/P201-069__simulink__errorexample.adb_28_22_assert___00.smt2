@@ -600,3 +600,4 @@ Target solver: CVC4
   (=> (dynamic_invariant abs_out1 false false true true)
   (not (= requested_force #x00000000))))))))))
 (check-sat)
+(exit)

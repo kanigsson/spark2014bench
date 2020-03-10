@@ -228,3 +228,4 @@ Target solver: CVC4
   (=> (dynamic_invariant result__ false false true true)
   (=> (<= first last) (<= first1 first)))))))))
 (check-sat)
+(exit)

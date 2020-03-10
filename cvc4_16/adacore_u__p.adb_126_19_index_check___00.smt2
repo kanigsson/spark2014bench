@@ -327,3 +327,4 @@ Target solver: CVC4
   (=> (= p__swap__tmp__assume tmp)
   (=> (dynamic_invariant tmp true false true true) (<= (to_rep1 a__first) y)))))))))))))))))
 (check-sat)
+(exit)

@@ -733,3 +733,4 @@ Target solver: CVC4
   (forall ((data1 (Array Int octet)))
   (=> (= data1 (store data temp___522 o)) (not (= #x00000100 #x00000000))))))))))))))))))))))))
 (check-sat)
+(exit)

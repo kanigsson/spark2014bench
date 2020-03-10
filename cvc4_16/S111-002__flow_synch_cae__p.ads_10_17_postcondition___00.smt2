@@ -193,3 +193,4 @@ Target solver: CVC4
   (=> (= (to_rep o2) tmp)
   (= (to_rep a__split_fields1) (to_rep b__split_fields1)))))))))))))
 (check-sat)
+(exit)

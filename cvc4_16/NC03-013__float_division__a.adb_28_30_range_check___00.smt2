@@ -638,3 +638,4 @@ Target solver: CVC4
   (=> (fp.leq (fp #b0 #b00000000 #b00000000000000000000000) h1) (in_range1
   h1))))))))))))))))))
 (check-sat)
+(exit)

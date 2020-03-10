@@ -301,3 +301,4 @@ Target solver: CVC4
   (=> (forall ((n1 Int)) (pre_rte_ok__function_guard (pre_rte_ok n1) n1))
   (= (pre_rte_ok n) true)))))))
 (check-sat)
+(exit)

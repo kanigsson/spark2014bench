@@ -2210,3 +2210,4 @@ Target solver: CVC4
        (us_split_fieldsqtmk dummy))))
   (in_range 0)))))))))))))))))))
 (check-sat)
+(exit)

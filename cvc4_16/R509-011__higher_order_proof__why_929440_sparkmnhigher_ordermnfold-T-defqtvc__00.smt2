@@ -812,3 +812,4 @@ Target solver: CVC4
   (=> (and (<= (to_rep r__first) o7) (<= o7 (to_rep r__last)))
   (forall ((o8 Int)) (=> (= (to_rep1 (select r1 o7)) o8) (<= usf (last1 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

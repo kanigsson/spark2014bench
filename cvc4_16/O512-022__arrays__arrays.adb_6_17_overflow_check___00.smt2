@@ -353,3 +353,4 @@ Target solver: CVC4
   (forall ((o Int))
   (=> (= (to_rep (select (to_array x) j1)) o) (in_range1 (+ s1 o))))))))))))))))
 (check-sat)
+(exit)

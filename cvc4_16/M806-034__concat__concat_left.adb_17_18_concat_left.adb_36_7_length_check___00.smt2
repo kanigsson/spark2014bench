@@ -469,3 +469,4 @@ Target solver: CVC4
                     (- 2147483648) o)))
   (=> (<= (first1 temp___212) (last1 temp___212)) (<= 1 10)))))))))))
 (check-sat)
+(exit)

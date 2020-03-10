@@ -368,3 +368,4 @@ Target solver: CVC4
   (= (to_rep (rec__types_with_invariants__my_integer__val t__split_fields)) 
   (to_rep (rec__types_with_invariants__my_integer__val (us_split_fields1 e)))))))))
 (check-sat)
+(exit)

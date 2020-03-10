@@ -616,3 +616,4 @@ Target solver: CVC4
                                                  true false)) true)
   (=> (< usf i1) (<= usf (last1 a))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

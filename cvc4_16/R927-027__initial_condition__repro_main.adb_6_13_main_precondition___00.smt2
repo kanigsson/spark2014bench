@@ -71,3 +71,4 @@ Target solver: CVC4
   (forall ((a1 us_private) (b1 us_private)) (invariant____function_guard
   (invariant__ a1 b1) a1 b1)) (= (invariant__ a b) true)))))))
 (check-sat)
+(exit)

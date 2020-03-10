@@ -846,3 +846,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array separates) o3)) o4)
   (<= (first1 separates) (first1 separates))))))))))))))))))))))))))
 (check-sat)
+(exit)

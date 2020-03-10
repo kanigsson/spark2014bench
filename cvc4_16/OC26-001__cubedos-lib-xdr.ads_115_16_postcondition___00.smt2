@@ -808,3 +808,4 @@ Target solver: CVC4
   (and (= last3 (+ position 7)) (dynamic_invariant last3 true true true
   true)) (= last3 (+ position 7)))))))))))))))))))
 (check-sat)
+(exit)

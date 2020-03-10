@@ -159,3 +159,4 @@ Target solver: CVC4
   (=> (dynamic_invariant index true false true true) (in_range1
   (* (- index 1) 8)))))
 (check-sat)
+(exit)

@@ -1676,3 +1676,4 @@ Target solver: CVC4
      (us_repqtmk res__split_discrs (us_split_fieldsqtmk res__split_fields3))
      j) (element l (+ (- (last_index l) j) 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

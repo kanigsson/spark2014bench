@@ -117,3 +117,4 @@ Target solver: CVC4
   (=> (forall ((usf t)) (trivial__function_guard (trivial usf) usf))
   (=> (<= 1 j) (=> (<= j 3) (< 0 j)))))))
 (check-sat)
+(exit)

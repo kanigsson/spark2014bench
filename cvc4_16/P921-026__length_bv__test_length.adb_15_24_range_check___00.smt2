@@ -606,3 +606,4 @@ Target solver: CVC4
   (= o (bvadd (bvsub ((_ zero_extend 48) o4) ((_ zero_extend 48) o3)) #x0000000000000001))))))
   (= o #x0000000000000000)))))) (bvule ((_ zero_extend 48) #x0000) o))))))))))))
 (check-sat)
+(exit)

@@ -815,3 +815,4 @@ Target solver: CVC4
   (= (concurrency_example_fixed__all_ones__aggregate_def (- 2147483648)) 
   all_ones) (not (= deadline o)))))))
 (check-sat)
+(exit)

@@ -358,3 +358,4 @@ Target solver: CVC4
   (=> (forall ((a1 Int) (b1 Int)) (olt__function_guard (olt a1 b1) a1 b1))
   (= (olt a b) true)))))))))))))))))
 (check-sat)
+(exit)

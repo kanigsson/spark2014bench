@@ -579,3 +579,4 @@ Target solver: CVC4
   (forall ((index_12 Int))
   (=> (= index_12 index_21) (in_range1 (* 2 index_12))))))))))))))))))))))))))
 (check-sat)
+(exit)

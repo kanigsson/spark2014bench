@@ -645,3 +645,4 @@ Target solver: CVC4
   (=> (= (to_rep (select values y)) o4)
   (=> (= (to_rep o5) o4) (<= (to_rep1 values__first) x))))))))))))))))))))))))))))
 (check-sat)
+(exit)

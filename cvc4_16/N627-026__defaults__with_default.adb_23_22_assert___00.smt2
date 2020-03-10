@@ -312,3 +312,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 no_def true false true true)
   (=> (dynamic_invariant3 no_ini false false true true) (= ok_def 0)))))))))))))
 (check-sat)
+(exit)

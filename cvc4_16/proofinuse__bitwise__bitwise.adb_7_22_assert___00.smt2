@@ -381,3 +381,4 @@ Target solver: CVC4
   (= res1 ((_ extract 7 0) (bvand (bvor (bvand x #xFFFFFF00) #x00000001) #x000000FF)))
   (= res1 #x01))))))))
 (check-sat)
+(exit)

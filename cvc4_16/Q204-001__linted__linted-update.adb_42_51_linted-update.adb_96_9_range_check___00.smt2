@@ -1501,3 +1501,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 c230b true false true true)
   (bvule ((_ zero_extend 24) #x00) (bvand c230b #x000000FF)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

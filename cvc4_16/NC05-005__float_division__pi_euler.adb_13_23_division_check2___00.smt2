@@ -231,3 +231,4 @@ Target solver: CVC4
   (fp.leq (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000) ((_ to_fp 11 53) RNE (to_real index1)))
   (not (fp.isZero ((_ to_fp 11 53) RNE (to_real index1)))))))))))))))
 (check-sat)
+(exit)

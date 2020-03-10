@@ -253,3 +253,4 @@ Target solver: CVC4
   (=> (and (<= 1 usf) (<= usf 10))
   (forall ((o3 Int)) (=> (= (to_rep (select b usf)) o3) (<= 1 usf1))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -209,3 +209,4 @@ Target solver: CVC4
           true false) (ite (<= j3 i1) true false)) true)
   (in_range1 (+ innersum2 j3))))))))))))))))))))))
 (check-sat)
+(exit)

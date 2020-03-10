@@ -189,3 +189,4 @@ Target solver: CVC4
   (and (in_range o) (and (dynamic_property 0 last o) (= x1 o)))) (= x1 x))))
   (< 0 x1))))))))
 (check-sat)
+(exit)

@@ -176,3 +176,4 @@ Target solver: CVC4
   (=> (fp.isFinite32 o)
   (fp.isFinite32 (fp.sub RNE o (fp #b0 #b10000001 #b01000000000000000000000))))))))))))))
 (check-sat)
+(exit)

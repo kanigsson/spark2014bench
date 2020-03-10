@@ -464,3 +464,4 @@ Target solver: CVC4
   (= temp___426 (+ o3 (ts_sc o2)))))
   (=> (in_range3 (+ 9223372036 1)) (in_range3 (- (- 9223372036) 1)))))))))))))))))
 (check-sat)
+(exit)

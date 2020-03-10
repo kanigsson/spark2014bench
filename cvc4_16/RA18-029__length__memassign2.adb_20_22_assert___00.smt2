@@ -570,3 +570,4 @@ Target solver: CVC4
   (=> (bvule dest (bvadd dest #x0000000000000001))
   (bvule src (bvadd src #x0000000000000001)))))))))
 (check-sat)
+(exit)

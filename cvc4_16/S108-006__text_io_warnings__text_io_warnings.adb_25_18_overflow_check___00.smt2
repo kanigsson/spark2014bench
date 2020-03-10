@@ -1286,3 +1286,4 @@ Target solver: CVC4
   (=> (= int_get1 text_io_warnings__int_io__get__item) (in_range1
   (+ sum int_get1)))))))))))))))))))))))
 (check-sat)
+(exit)

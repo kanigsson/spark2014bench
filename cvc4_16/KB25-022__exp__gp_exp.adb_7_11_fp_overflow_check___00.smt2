@@ -271,3 +271,4 @@ Target solver: CVC4
   (=> (in_range (power 2 o))
   (=> (in_range (* x x)) (fp.isFinite32 (fp.mul RNE y y)))))))))))))
 (check-sat)
+(exit)

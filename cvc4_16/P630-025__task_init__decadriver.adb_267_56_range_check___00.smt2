@@ -3589,3 +3589,4 @@ Target solver: CVC4
   (=> (= spark__branch2 load_tx_power_levels)
   (=> (= spark__branch2 true) (=> (= i 0) (in_range_int5 (+ 16 i)))))))))))))))))))
 (check-sat)
+(exit)

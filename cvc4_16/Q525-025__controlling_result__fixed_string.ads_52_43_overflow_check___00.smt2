@@ -547,3 +547,4 @@ Target solver: CVC4
   (forall ((o17 Int))
   (=> (= (to_rep1 change__first) o17) (in_range1 (- usf1 o17))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

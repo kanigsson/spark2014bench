@@ -1455,3 +1455,4 @@ Target solver: CVC4
                                        (get (to_array a) k (first_2 a)))
                                        (to_rep1 (get1 r2 (- k 1) (last_2 a)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

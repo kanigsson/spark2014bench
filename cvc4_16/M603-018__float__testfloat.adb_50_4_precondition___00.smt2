@@ -249,3 +249,4 @@ Target solver: CVC4
   (=> (and (fp.leq x z) (fp.leq z y))
   (=> (and (fp.leq x t) (fp.leq t y)) (fp.leq x t)))))))))))))))))))))))))))
 (check-sat)
+(exit)

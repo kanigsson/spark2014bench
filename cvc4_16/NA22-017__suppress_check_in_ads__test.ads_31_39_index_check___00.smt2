@@ -612,3 +612,4 @@ Target solver: CVC4
   (=> (<= (first1 right) usf)
   (=> (<= usf (last1 right)) (<= (first1 left) usf)))))))))))))))))
 (check-sat)
+(exit)

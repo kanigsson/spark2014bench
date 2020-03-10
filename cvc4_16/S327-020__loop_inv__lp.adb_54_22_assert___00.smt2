@@ -899,3 +899,4 @@ Target solver: CVC4
                                            (to_rep
                                            (select (to_array powers) temp___301)))))))))))))))
 (check-sat)
+(exit)

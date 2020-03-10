@@ -261,3 +261,4 @@ Target solver: CVC4
   (let ((o (* 2 x)))
   (=> (in_range2 o) (=> (in_range2 (- o 1)) (not (= 2 0))))))))
 (check-sat)
+(exit)

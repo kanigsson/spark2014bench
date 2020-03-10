@@ -140,3 +140,4 @@ Target solver: CVC4
   (=> (not (fp.eq float_ref (fp #b0 #b00000000 #b00000000000000000000000)))
   (fp.isFinite32 (fp.sub RNE float_tested float_ref)))))))
 (check-sat)
+(exit)

@@ -213,3 +213,4 @@ Target solver: CVC4
   (forall ((x1 map1))
   (=> (= x1 (set x 1 2 o2)) (<= (to_rep (get x1 1 2)) 20))))))))))))
 (check-sat)
+(exit)

@@ -4364,3 +4364,4 @@ Target solver: CVC4
   (let ((temp___920 (first1 from)))
   (=> (<= temp___920 r54b) (<= (first1 from) temp___920))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

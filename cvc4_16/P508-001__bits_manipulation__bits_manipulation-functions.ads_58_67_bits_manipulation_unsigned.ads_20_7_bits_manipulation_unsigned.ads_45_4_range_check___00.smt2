@@ -622,3 +622,4 @@ Target solver: CVC4
   (= (and (ite (<= usf1 usf2) true false) (ite (<= usf2 63) true false)) true)
   (in_range1 usf2)))))))))
 (check-sat)
+(exit)

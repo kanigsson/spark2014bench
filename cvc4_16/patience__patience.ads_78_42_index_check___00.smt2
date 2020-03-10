@@ -840,3 +840,4 @@ Target solver: CVC4
                                                 true false))))))))))))
   (= o2 false)))))) (=> (= o2 true) (<= 0 usf))))))))))))
 (check-sat)
+(exit)

@@ -250,3 +250,4 @@ Target solver: CVC4
   (let ((o6 (+ o5 o4))) (and (= o o6) (in_range1 o6))))))))))))
   (not (= start_pos end_pos)))))))))
 (check-sat)
+(exit)

@@ -979,3 +979,4 @@ Target solver: CVC4
   (forall ((temp___loop_entry_207 Int))
   (=> (= temp___loop_entry_207 counter4) (< 0 temp___loop_entry_207)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

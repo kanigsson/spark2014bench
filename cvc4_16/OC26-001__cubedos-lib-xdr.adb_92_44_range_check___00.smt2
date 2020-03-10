@@ -728,3 +728,4 @@ Target solver: CVC4
   (=> (= temporary_21 (bvurem temporary_1 #x0000000000000100))
   (bvule ((_ zero_extend 56) #x00) temporary_21)))))))))))))))))
 (check-sat)
+(exit)

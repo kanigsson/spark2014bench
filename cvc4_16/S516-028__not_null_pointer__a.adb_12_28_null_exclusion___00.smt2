@@ -196,3 +196,4 @@ Target solver: CVC4
                       true false)) true)
   (rec__a__int_ptr__pointer_value__pred o)))))
 (check-sat)
+(exit)

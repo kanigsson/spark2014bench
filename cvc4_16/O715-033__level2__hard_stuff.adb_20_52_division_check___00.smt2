@@ -182,3 +182,4 @@ Target solver: CVC4
   (= (and (ite (<= 0 usf) true false) (ite (<= usf 100000) true false)) true)
   (not (fp.isZero (fp #b0 #b10001111 #b10000110101000000000000))))))))))))))
 (check-sat)
+(exit)

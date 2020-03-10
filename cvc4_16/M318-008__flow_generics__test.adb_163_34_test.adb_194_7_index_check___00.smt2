@@ -621,3 +621,4 @@ Target solver: CVC4
   (forall ((o4 fruits_and_weapons))
   (=> (= (to_rep2 o4) o3) (<= (to_rep new_inventory__first) i1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

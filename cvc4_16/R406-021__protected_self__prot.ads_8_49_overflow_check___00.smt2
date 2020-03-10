@@ -194,3 +194,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__prot__p__i (us_split_discrs1 self__))) o) (in_range
   (* 2 o))))))
 (check-sat)
+(exit)

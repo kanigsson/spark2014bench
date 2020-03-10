@@ -153,3 +153,4 @@ Target solver: CVC4
   (and (= stash2 stash) (= pocket2 pocket)))))
   (= (+ stash2 pocket2) (+ stash1 pocket1))))))))))))
 (check-sat)
+(exit)

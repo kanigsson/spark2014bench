@@ -565,3 +565,4 @@ Target solver: CVC4
   (=> (<= size (length (to_rep buf__first) (to_rep buf__last)))
   (not (= 4 0)))))))
 (check-sat)
+(exit)

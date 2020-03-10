@@ -705,3 +705,4 @@ Target solver: CVC4
   (=> (= my_container__split_fields arr)
   (=> (= position__split_fields rliteral1) (not (< 0 x))))))))))))))))
 (check-sat)
+(exit)

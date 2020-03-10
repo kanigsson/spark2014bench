@@ -1193,3 +1193,4 @@ Target solver: CVC4
            #x00))
   (in_range (+ in_data_bit_length 7)))))))))))))))))
 (check-sat)
+(exit)

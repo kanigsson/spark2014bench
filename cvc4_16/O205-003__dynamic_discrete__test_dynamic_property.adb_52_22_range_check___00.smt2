@@ -260,3 +260,4 @@ Target solver: CVC4
   test_dynamic_property__nested__dyn_param__x true true true true))
   (dynamic_property1 1 last1 test_dynamic_property__nested__dyn_param__x)))))))))))))))))))))))))
 (check-sat)
+(exit)

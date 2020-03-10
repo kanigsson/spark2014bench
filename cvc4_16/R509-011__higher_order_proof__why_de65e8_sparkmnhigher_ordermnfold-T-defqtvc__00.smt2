@@ -848,3 +848,4 @@ Target solver: CVC4
   (= test_higher_order__my_fold_right__acc__fold__result (of_array1 r1 o1 o))
   (= (first5 test_higher_order__my_fold_right__acc__fold__result) (first2 a))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

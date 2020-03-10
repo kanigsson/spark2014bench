@@ -927,3 +927,4 @@ Target solver: CVC4
   (=> (= y1__attr__constrained true)
   (= (rec__p_init__t__e (us_split_discrs1 c1)) y1__split_discrs1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

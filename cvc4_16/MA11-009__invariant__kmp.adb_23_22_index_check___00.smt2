@@ -398,3 +398,4 @@ Target solver: CVC4
   (=> (in_range1 o6)
   (forall ((i2 Int)) (=> (= i2 o6) (<= (to_rep next__first) i2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

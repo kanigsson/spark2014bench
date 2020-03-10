@@ -832,3 +832,4 @@ Target solver: CVC4
   (<= (first1 x) (indexqtint
                  (rec__sums__slice_bounds__lo result____split_fields2)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

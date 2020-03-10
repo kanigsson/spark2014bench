@@ -659,3 +659,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x false false true true)
   (not (fp.isZero (fp #b0 #b10001010 #b10011001100110011001101))))))))))
 (check-sat)
+(exit)

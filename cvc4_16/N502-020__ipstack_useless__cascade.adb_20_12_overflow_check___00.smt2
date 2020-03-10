@@ -124,3 +124,4 @@ Target solver: CVC4
   (=> (in_range o1)
   (forall ((t31 Int)) (=> (= t31 o1) (in_range (* 2 t31))))))))))))))))))))))
 (check-sat)
+(exit)

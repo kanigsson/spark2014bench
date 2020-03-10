@@ -386,3 +386,4 @@ Target solver: CVC4
   (forall ((o4 Int))
   (=> (= (to_rep (select (to_array c) usf)) o4) (<= (first1 s) courant1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

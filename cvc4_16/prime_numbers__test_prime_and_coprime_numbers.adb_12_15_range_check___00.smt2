@@ -492,3 +492,4 @@ Target solver: CVC4
   (=> (and (<= 555 v) (<= v (min 100000 (- (+ 555 (abs1 (- 555 o))) 1))))
   (not (= (is_prime v) true)))))))))))) (in_range o))))))))))))))))))
 (check-sat)
+(exit)

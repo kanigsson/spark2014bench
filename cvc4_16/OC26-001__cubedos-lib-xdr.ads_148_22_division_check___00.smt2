@@ -735,3 +735,4 @@ Target solver: CVC4
   (= o (ite (< 0 (length o2 o1)) true false)))))) (= o false))
   (=> (= o true) (not (= 4 0)))))))))))
 (check-sat)
+(exit)

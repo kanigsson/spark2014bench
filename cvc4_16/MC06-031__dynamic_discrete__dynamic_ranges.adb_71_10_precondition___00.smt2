@@ -310,3 +310,4 @@ Target solver: CVC4
                                              false)) true)
   (=> (in_range2 i) (<= (to_rep a__first) i))))))))))
 (check-sat)
+(exit)

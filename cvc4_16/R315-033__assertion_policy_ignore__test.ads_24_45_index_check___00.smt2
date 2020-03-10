@@ -624,3 +624,4 @@ Target solver: CVC4
                                           true false)) true)
   (<= (first1 src) (- (+ src_first usf) index)))))))))))))))))))
 (check-sat)
+(exit)

@@ -1410,3 +1410,4 @@ Target solver: CVC4
                                    (rec__static_discr__holder__length
                                    (us_split_fields5 a)))))))))))))))))))))
 (check-sat)
+(exit)

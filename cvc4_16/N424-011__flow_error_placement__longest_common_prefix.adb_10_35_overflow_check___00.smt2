@@ -276,3 +276,4 @@ Target solver: CVC4
   (=> (or (not (<= o 1000)) (in_range1 (+ y l)))
   (=> (and (<= o 1000) (<= (+ y l) 1000)) (in_range1 (+ y l))))))))))))
 (check-sat)
+(exit)

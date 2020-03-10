@@ -243,3 +243,4 @@ Target solver: CVC4
   (=> (= spark__branch o)
   (=> (= spark__branch true) (in_range (+ total_pay outstanding))))))))))))))))))
 (check-sat)
+(exit)

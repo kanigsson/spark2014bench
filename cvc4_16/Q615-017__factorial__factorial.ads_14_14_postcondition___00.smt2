@@ -214,3 +214,4 @@ Target solver: CVC4
   (=> (mathematical_factorial__function_guard (mathematical_factorial x) 
   x) (= factorial__fact__result (mathematical_factorial x)))))))))))))))))
 (check-sat)
+(exit)

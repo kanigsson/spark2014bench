@@ -192,3 +192,4 @@ Target solver: CVC4
   (= k1 i1)))))))) (= count3 count2))))
   (=> (not (= i1 5)) (=> (= i2 (+ i1 1)) (= count3 (- i2 1)))))))))))))))
 (check-sat)
+(exit)

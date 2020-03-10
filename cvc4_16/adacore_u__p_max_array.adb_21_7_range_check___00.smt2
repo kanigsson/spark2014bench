@@ -414,3 +414,4 @@ Target solver: CVC4
   (=> (= (length a) (length b))
   (=> (<= (first1 a) (last1 a)) (<= 1 (first1 a))))))))
 (check-sat)
+(exit)

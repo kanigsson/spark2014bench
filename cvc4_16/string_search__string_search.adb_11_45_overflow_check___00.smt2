@@ -478,3 +478,4 @@ Target solver: CVC4
                                              false)) true)
   (in_range1 (+ j (- i 1)))))))))))))))))))))))))
 (check-sat)
+(exit)

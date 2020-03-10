@@ -235,3 +235,4 @@ Target solver: CVC4
   (=> (<= x 1024)
   (let ((o (* x (* x x)))) (=> (in_range1 o) (in_range1 (- o x)))))))))
 (check-sat)
+(exit)

@@ -116,3 +116,4 @@ Target solver: CVC4
   (= simple_extended_return__simple_extended_r1__result y)))))))
   (= simple_extended_return__simple_extended_r1__result 1)))))
 (check-sat)
+(exit)

@@ -540,3 +540,4 @@ Target solver: CVC4
   (forall ((o1 (_ BitVec 16)))
   (=> (= (to_rep a__first) o1) (in_range1 (length (bv2nat o1) (bv2nat o))))))))))))))))
 (check-sat)
+(exit)

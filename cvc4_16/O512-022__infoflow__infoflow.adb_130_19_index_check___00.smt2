@@ -558,3 +558,4 @@ Target solver: CVC4
   (forall ((o4 content))
   (=> (= (to_rep1 o4) o3) (<= (to_rep h_v2__first) q_v21))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

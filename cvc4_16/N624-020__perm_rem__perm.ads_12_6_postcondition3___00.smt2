@@ -511,3 +511,4 @@ Target solver: CVC4
   (=> (= perm__remove__result (of_array result__ o1 o))
   (= (last1 perm__remove__result) (- (last1 a) 1)))))))))))))))))))))))))
 (check-sat)
+(exit)

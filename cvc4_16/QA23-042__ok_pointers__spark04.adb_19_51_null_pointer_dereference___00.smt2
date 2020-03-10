@@ -847,3 +847,4 @@ Target solver: CVC4
   (rec__spark04__data__ai__pointer_value__pred
   (us_repqtmk ay__is_null_pointer ay__pointer_address ay__pointer_value)))))))))))
 (check-sat)
+(exit)

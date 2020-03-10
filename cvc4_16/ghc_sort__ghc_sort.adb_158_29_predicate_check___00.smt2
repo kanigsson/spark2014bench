@@ -1123,3 +1123,4 @@ Target solver: CVC4
   (< r71b 1)) (dynamic_predicate1
   (of_array (slide (to_array temp___629) (first1 temp___629) 1) 1 r71b))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

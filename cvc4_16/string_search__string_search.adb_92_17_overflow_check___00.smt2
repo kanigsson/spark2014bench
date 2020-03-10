@@ -679,3 +679,4 @@ Target solver: CVC4
   (forall ((o22 Int))
   (=> (= (to_rep (select bad_shift o21)) o22) (in_range1 (+ i2 o22)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

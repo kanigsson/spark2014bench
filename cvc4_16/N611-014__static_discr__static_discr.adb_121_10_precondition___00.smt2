@@ -1315,3 +1315,4 @@ Target solver: CVC4
   (to_rep (rec__static_discr__holder__unused (us_split_discrs4 a))))
   (<= 1 (to_rep (rec__static_discr__holder__length current__split_fields1))))))))))))))))))))))))
 (check-sat)
+(exit)

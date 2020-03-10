@@ -674,3 +674,4 @@ Target solver: CVC4
   (= o (ite (= o2 o1) true false)))))))) (= o false))
   (=> (= o true) (<= (first1 b) perm__get_witness__result)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

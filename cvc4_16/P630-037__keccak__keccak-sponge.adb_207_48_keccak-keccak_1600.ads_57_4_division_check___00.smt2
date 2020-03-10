@@ -1557,3 +1557,4 @@ Target solver: CVC4
   (=> (= (- message_last1 1) r88s)
   (=> (dynamic_invariant2 r88s true false true true) (not (= 8 0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

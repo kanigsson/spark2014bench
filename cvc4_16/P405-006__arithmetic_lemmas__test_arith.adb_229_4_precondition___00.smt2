@@ -608,3 +608,4 @@ Target solver: CVC4
   (=> (in_range o2)
   (=> (in_range5 o2) (=> (in_range4 y6) (=> (in_range4 x6) (<= y6 o2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

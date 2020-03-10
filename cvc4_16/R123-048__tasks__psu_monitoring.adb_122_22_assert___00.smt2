@@ -2268,3 +2268,4 @@ Target solver: CVC4
   (= psu_monitoring__monitor_signal__all_config_is_set__assume all_config_is_set)
   (= all_config_is_set true))))))))))
 (check-sat)
+(exit)

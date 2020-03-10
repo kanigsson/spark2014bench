@@ -477,3 +477,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__tetris_flow__piece__x (us_split_fields1 p))) o)
   (in_range1 (+ o 1)))))))))
 (check-sat)
+(exit)

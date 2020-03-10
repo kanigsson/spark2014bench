@@ -691,3 +691,4 @@ Target solver: CVC4
   (=> (= (to_rep1 interm__first) o11)
   (<= (first1 (of_array interm o11 o10)) o9))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

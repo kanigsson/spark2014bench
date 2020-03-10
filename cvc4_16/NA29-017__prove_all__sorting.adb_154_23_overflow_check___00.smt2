@@ -641,3 +641,4 @@ Target solver: CVC4
   (= (and (ite (<= 0 usf) true false) (ite (<= usf 2147483647) true false)) true)
   (let ((o16 (* usf l1))) (=> (in_range1 o16) (in_range1 (* o16 2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

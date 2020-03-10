@@ -681,3 +681,4 @@ Target solver: CVC4
   (=> (<= o2 o1)
   (<= (first1 (rec__test__bytes_ptr__pointer_value buffer)) o2))))))))))))
 (check-sat)
+(exit)

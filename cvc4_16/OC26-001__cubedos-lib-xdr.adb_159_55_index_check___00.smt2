@@ -714,3 +714,4 @@ Target solver: CVC4
   (=> (<= position (last1 data))
   (=> (<= (+ position 3) (last1 data)) (<= (first1 data) position)))))))))))))
 (check-sat)
+(exit)

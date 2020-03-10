@@ -1134,3 +1134,4 @@ Target solver: CVC4
   (=> (= (to_rep4 o4) (bvadd (bvmul #x10 h_digit2) l_digit2))
   (<= (first3 result____split_fields2) index2))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

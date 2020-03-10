@@ -224,3 +224,4 @@ Target solver: CVC4
   (and (atan2__function_guard o2 o1 o) (dynamic_invariant1 o2 true false true
   true)) (fp.isFinite32 ((_ to_fp 8 24) RNE o2))))))))))
 (check-sat)
+(exit)

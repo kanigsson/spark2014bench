@@ -264,3 +264,4 @@ Target solver: CVC4
                                            (to_rep
                                            (select a1 temp___index_224))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -146,3 +146,4 @@ Target solver: CVC4
   (and (sum_of__function_guard o1 o) (dynamic_invariant o1 true false true
   true)) (in_range (+ o1 val__))))))))))))
 (check-sat)
+(exit)

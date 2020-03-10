@@ -490,3 +490,4 @@ Target solver: CVC4
                             context__split_fields1)))
   (= (to_rep (rec__test__context_type__field context__split_fields2)) 1)))))))))))))
 (check-sat)
+(exit)

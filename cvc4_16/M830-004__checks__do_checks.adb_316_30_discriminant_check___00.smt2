@@ -5730,3 +5730,4 @@ Target solver: CVC4
   (us_split_discrs1
   (us_repqtmk (us_split_discrsqtmk rliteral) (us_split_fieldsqtmk dummy2))))))))))))))
 (check-sat)
+(exit)

@@ -938,3 +938,4 @@ Target solver: CVC4
      (select (rec__binary_trees__forest__c (us_split_fields3 f)) usf)))) temp___367)
   (<= 1 temp___367))))))))))
 (check-sat)
+(exit)

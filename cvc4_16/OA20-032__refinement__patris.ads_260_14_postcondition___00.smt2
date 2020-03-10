@@ -2272,3 +2272,4 @@ Target solver: CVC4
   (=> (= (to_rep4 o2) 0)
   (=> (= (to_rep1 o3) 1) (=> (= cur_state1 3) (= (get_state cur_state1) 3))))))))))))))
 (check-sat)
+(exit)

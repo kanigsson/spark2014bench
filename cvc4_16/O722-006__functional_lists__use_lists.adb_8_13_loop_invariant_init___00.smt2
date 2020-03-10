@@ -728,3 +728,4 @@ Target solver: CVC4
                                                        l2__split_fields1
                                                        l2__attr__tag)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

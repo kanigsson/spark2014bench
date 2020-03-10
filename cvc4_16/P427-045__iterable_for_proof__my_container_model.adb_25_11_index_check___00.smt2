@@ -284,3 +284,4 @@ Target solver: CVC4
   (= (to_rep (rec__my_container_model__cursor__index (us_split_fields1 p))) temp___253)
   (<= 1 temp___253)))))))
 (check-sat)
+(exit)

@@ -148,3 +148,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 0 x) true false) (ite (<= x 255) true false)) true)
   (=> (<= 0 x) (<= 0 0))))))))
 (check-sat)
+(exit)

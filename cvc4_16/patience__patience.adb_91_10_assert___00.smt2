@@ -1374,3 +1374,4 @@ Target solver: CVC4
   (<= 0 (to_rep
         (select (rec__patience__state__posstack s__split_fields4) i3))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -675,3 +675,4 @@ Target solver: CVC4
       (rec__ada___hnco__test2__v_type_owner__vector_type__capacity
       (us_split_discrs3 container))) ada___hnco__test2__v_type_owner__capacity__result)))))))
 (check-sat)
+(exit)

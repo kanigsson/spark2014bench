@@ -2165,3 +2165,4 @@ Target solver: CVC4
   no_def__split_fields) true false true true) (dynamic_property1 first1
   2147483647 c))))))))))))))
 (check-sat)
+(exit)

@@ -365,3 +365,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk (rec__messages__message__received m__split_fields)
   (rec__messages__message__sent m__split_fields))))))))))
 (check-sat)
+(exit)

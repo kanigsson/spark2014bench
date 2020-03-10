@@ -307,3 +307,4 @@ Target solver: CVC4
   (= spark__branch (and (ite (<= 1 n) true false) (ite (<= n 3) true false)))
   (=> (= spark__branch true) (= (to_rep (select r n)) 0))))))))
 (check-sat)
+(exit)

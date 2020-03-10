@@ -285,3 +285,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 v true false true true)
   (= (to_rep (select (select a i) j)) v))))))
 (check-sat)
+(exit)

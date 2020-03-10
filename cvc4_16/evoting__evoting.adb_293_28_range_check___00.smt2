@@ -1152,3 +1152,4 @@ Target solver: CVC4
   (= total1 total)))))
   (=> (= (to_rep2 (select counters 0)) o) (in_range8 (- total1 o)))))))))))))))
 (check-sat)
+(exit)

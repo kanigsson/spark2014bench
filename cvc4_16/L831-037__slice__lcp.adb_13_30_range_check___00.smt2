@@ -402,3 +402,4 @@ Target solver: CVC4
   (and (<= (first1 a) r9b) (<= r9b (last1 a)))))
   (=> (<= x r6b) (<= (first1 a) x)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -686,3 +686,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 r19b true false true true) (in_range
   (+ (first1 in_string) (- len 1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -144,3 +144,4 @@ Target solver: CVC4
  ;; File "storage_place_attributes.adb", line 49, characters 0-0
   (not (<= 0 storage_place_attributes__r1__f1__first__bit)))
 (check-sat)
+(exit)

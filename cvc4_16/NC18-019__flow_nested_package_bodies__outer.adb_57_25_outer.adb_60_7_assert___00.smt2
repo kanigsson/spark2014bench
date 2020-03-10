@@ -95,3 +95,4 @@ Target solver: CVC4
   (=> (dynamic_invariant unused false false true true)
   (=> (= unused1 123) (not (= unused1 456)))))))
 (check-sat)
+(exit)

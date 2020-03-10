@@ -809,3 +809,4 @@ Target solver: CVC4
   (us_pledge_ty__content test_goto_borrow__truncate_after_v__B_1__d__pledge4)
   temp___borrowed_245 temp___brower_244)) )))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

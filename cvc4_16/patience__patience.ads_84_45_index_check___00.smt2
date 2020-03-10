@@ -867,3 +867,4 @@ Target solver: CVC4
   (=> (<= 0 temp___477)
   (=> (<= temp___477 99) (=> (<= 0 usf) (=> (<= usf 99) (<= 0 usf1)))))))))))))))))))))
 (check-sat)
+(exit)

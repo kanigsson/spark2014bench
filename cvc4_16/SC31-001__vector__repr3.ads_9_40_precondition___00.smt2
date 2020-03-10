@@ -1320,3 +1320,4 @@ Target solver: CVC4
   (not
   (not (< 20 (length (of_array (temp___String_Literal_327 Tuple0) 1 0))))))
 (check-sat)
+(exit)

@@ -448,3 +448,4 @@ Target solver: CVC4
   (=> (= (not (= (to_rep (select a x)) (to_rep (select a y)))) true)
   (= longest_common_prefix__lcp__result 0))))))))))))))))))
 (check-sat)
+(exit)

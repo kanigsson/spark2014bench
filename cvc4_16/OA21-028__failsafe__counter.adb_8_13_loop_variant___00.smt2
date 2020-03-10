@@ -384,3 +384,4 @@ Target solver: CVC4
   (= o2 (select inputs temp___203)))) (= o2 false))
   (=> (= o2 true) (bvugt res2 temp___202))))))))))))))))))
 (check-sat)
+(exit)

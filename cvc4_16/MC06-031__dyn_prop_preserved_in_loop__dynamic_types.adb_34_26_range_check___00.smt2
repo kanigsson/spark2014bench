@@ -414,3 +414,4 @@ Target solver: CVC4
   (let ((o (+ from2 1)))
   (=> (in_range1 o) (dynamic_property1 first2 last2 o)))))))))))))))))))))))))))
 (check-sat)
+(exit)

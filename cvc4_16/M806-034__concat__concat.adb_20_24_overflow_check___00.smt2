@@ -322,3 +322,4 @@ Target solver: CVC4
   (= o (ite (<= (first1 b) (last1 b)) true false)) (= o false))
   (=> (= o true) (in_range (- (last1 b) (first1 b))))))))))
 (check-sat)
+(exit)

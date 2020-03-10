@@ -477,3 +477,4 @@ Target solver: CVC4
   (= (bvadd ((_ zero_extend 24) (to_rep (select xsi4 0))) (bvmul ((_ zero_extend 24) 
   (to_rep (select xsi4 1))) #x00000100)) (bvurem val__ #x00010000))))))))))))))))))))))
 (check-sat)
+(exit)

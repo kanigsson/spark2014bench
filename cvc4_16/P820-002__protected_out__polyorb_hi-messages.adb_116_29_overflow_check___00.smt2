@@ -960,3 +960,4 @@ Target solver: CVC4
   (forall ((o12 Int))
   (=> (= (to_rep2 item__first) o12) (in_range2 (+ o12 read_elts)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

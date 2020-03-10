@@ -708,3 +708,4 @@ Target solver: CVC4
   (forall ((r1 (Array Int element_out)))
   (=> (= r1 (store r i o2)) (dynamic_property first last (first2 a)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

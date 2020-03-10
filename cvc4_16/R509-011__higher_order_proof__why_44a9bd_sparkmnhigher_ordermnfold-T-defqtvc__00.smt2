@@ -1322,3 +1322,4 @@ Target solver: CVC4
   (=> (not (<= 0 o3))
   (=> (and (<= (first_2 a) j) (<= j (last_2 a))) (<= i (last2 a))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

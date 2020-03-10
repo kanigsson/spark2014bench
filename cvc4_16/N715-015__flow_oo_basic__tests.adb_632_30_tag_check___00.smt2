@@ -305,3 +305,4 @@ Target solver: CVC4
  ;; File "tests.adb", line 627, characters 0-0
   (not (= w2__attr__tag (attr__tag1 w1))))
 (check-sat)
+(exit)

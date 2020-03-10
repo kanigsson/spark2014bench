@@ -326,3 +326,4 @@ Target solver: CVC4
   (let ((o num))
   (=> (<= (fxp_div_int o denom2) (fxp_div_int o denom1)) (not (= denom2 0)))))))))))
 (check-sat)
+(exit)

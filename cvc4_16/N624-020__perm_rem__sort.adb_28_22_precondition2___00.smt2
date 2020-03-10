@@ -729,3 +729,4 @@ Target solver: CVC4
                                              (select (to_array temp___314) k))))))))
   (let ((o4 x)) (=> (in_range4 o4) (<= (first1 (of_array init 1 100)) o4))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

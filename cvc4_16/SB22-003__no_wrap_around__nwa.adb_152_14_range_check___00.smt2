@@ -373,3 +373,4 @@ Target solver: CVC4
   (=> (dynamic_invariant z false false true true)
   (=> (in_range (bvmul x y)) (in_range (bvudiv x y)))))))))
 (check-sat)
+(exit)

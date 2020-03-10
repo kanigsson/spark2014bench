@@ -1137,3 +1137,4 @@ Target solver: CVC4
                                                                    a1))) 
   (value (to_rep (select (to_array a2) i))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

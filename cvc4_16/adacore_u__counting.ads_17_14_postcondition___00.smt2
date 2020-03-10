@@ -163,3 +163,4 @@ Target solver: CVC4
   (get_red_count red_counter3) red_counter3))
   (= (get_red_count red_counter2) (+ (get_red_count red_counter1) 1)))))))))))))))
 (check-sat)
+(exit)

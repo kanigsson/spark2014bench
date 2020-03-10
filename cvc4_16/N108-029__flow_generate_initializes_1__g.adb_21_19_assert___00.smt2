@@ -114,3 +114,4 @@ Target solver: CVC4
   (=> (forall ((tmp1 Int)) (foo__function_guard (foo tmp1) tmp1))
   (= (foo tmp) 10))))))
 (check-sat)
+(exit)

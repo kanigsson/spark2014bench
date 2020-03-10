@@ -1711,3 +1711,4 @@ Target solver: CVC4
      ctx__split_fields2)) o19)
   (in_range1 (+ o19 bytes_to_squeeze1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

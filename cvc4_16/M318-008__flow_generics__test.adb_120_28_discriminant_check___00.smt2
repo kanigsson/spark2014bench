@@ -594,3 +594,4 @@ Target solver: CVC4
   (us_repqtmk (us_split_discrsqtmk mixed_basket__split_discrs)
   mixed_basket__split_fields)))))))))))
 (check-sat)
+(exit)

@@ -173,3 +173,4 @@ Target solver: CVC4
   (=> (fp.eq left (fp #b0 #b00000000 #b00000000000000000000000))
   (fp.lt (fp #b0 #b00000000 #b00000000000000000000000) right))))))
 (check-sat)
+(exit)

@@ -66,3 +66,4 @@ Target solver: CVC4
   (=> (forall ((x1 us_private)) (read__function_guard (read x1) x1))
   (= (read x) true)))))
 (check-sat)
+(exit)

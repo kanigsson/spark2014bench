@@ -867,3 +867,4 @@ Target solver: CVC4
   (=> (= 1 off_c2)
   (=> (dynamic_invariant off_c2 true false true true) (< off_c1 10000)))))))))))
 (check-sat)
+(exit)

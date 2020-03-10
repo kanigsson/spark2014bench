@@ -785,3 +785,4 @@ Target solver: CVC4
   (=> (not (= (bool_eq x us_null_pointer1) true))
   (rec__local_borrow_array__list_acc__pointer_value__pred x)))))
 (check-sat)
+(exit)

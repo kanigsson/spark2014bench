@@ -692,3 +692,4 @@ Target solver: CVC4
         (- o6 1)))))
   (in_range2 usf))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

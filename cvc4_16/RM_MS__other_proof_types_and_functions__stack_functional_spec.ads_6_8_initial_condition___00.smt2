@@ -468,3 +468,4 @@ Target solver: CVC4
   (is_empty__function_guard (is_empty my_stack__split_fields1)
   my_stack__split_fields1)) (= (is_empty my_stack__split_fields) true))))))))))))
 (check-sat)
+(exit)

@@ -200,3 +200,4 @@ Target solver: CVC4
   (=> (= pack__equal__result (bool_eq a 1 10 b 1 10))
   (=> (= pack__equal__result true) (= (bool_eq a 1 10 b 1 10) true))))))
 (check-sat)
+(exit)

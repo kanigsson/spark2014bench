@@ -570,3 +570,4 @@ Target solver: CVC4
   (=> (= (to_rep b__first) o21) (dynamic_property1 o21
   (- (+ o20 (div1 (length o19 o18) 2)) 1) pos))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -553,3 +553,4 @@ Target solver: CVC4
          (slow_lcs_length (tail o10) o9)))))))
   (in_range2 (max o11 o7))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

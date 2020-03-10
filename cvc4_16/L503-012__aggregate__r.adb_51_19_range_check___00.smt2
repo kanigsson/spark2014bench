@@ -395,3 +395,4 @@ Target solver: CVC4
   (=> (<= 2 n)
   (=> (<= n 6) (=> (= (to_rep (select (select a n) n)) o) (in_range3 o))))))))))))
 (check-sat)
+(exit)

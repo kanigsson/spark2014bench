@@ -563,3 +563,4 @@ Target solver: CVC4
   (forall ((o5 content))
   (=> (= (to_rep1 o5) t_v12) (in_range1 (+ q_v11 m_v11))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

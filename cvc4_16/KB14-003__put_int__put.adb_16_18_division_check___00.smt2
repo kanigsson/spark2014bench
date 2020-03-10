@@ -620,3 +620,4 @@ Target solver: CVC4
   (=> (dynamic_invariant int__1 false true true true)
   (=> (dynamic_invariant1 first3 true true true true) (not (= 10 0))))))))))))))
 (check-sat)
+(exit)

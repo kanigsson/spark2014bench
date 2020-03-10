@@ -410,3 +410,4 @@ Target solver: CVC4
   (forall ((remainder1 Int))
   (=> (= remainder1 (mod1 v_m_hi1 d)) (in_range1 (* result_hi1 4294967296))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

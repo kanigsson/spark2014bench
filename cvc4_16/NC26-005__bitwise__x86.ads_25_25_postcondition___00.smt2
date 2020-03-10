@@ -491,3 +491,4 @@ Target solver: CVC4
   (readmem8__function_guard (readmem8 addr memory2) addr memory2))
   (= (readmem8 addr memory1) val__)))))))))
 (check-sat)
+(exit)

@@ -1180,3 +1180,4 @@ Target solver: CVC4
   (=> (<= in_data_bit_length o1)
   (=> (in_range (+ in_data_bit_length 7)) (in_range (length1 in_data)))))))))))))))
 (check-sat)
+(exit)

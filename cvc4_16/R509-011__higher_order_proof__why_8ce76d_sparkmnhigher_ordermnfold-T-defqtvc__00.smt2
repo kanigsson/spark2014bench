@@ -764,3 +764,4 @@ Target solver: CVC4
   (=> (dynamic_invariant6 init true false true true)
   (=> (not (= (length a) 0)) (in_range5 (first1 a)))))))
 (check-sat)
+(exit)

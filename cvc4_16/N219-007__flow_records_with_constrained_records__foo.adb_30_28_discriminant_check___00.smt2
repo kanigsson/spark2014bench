@@ -668,3 +668,4 @@ Target solver: CVC4
   (=> (dynamic_invariant (us_repqtmk1 v__split_fields) true false true true)
   (foo__value__int_field__pred (rec__foo__record_a__y v__split_fields))))))
 (check-sat)
+(exit)

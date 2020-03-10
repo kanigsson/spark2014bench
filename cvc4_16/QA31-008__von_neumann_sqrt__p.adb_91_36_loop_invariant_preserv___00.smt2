@@ -498,3 +498,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 left_ux2 true false true true)
   (bvule #x0000000000000001 i3)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

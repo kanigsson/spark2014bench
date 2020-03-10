@@ -168,3 +168,4 @@ Target solver: CVC4
   (=> (and (<= 0 i) (<= i 255)) (= (to_rep (select m i)) i)))
   (=> (= (to_rep (select m c)) o) (=> (= c1 o) (= c1 0))))))))
 (check-sat)
+(exit)

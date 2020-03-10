@@ -690,3 +690,4 @@ Target solver: CVC4
   (forall ((o13 Int))
   (=> (= (to_rep1 values__first) o13) (<= (first1 init) x))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

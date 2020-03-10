@@ -400,3 +400,4 @@ Target solver: CVC4
   (forall ((conv__id__result us_rep))
   (=> (= conv__id__result x) (= (bool_eq conv__id__result x) true)))))
 (check-sat)
+(exit)

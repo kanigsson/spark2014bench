@@ -596,3 +596,4 @@ Target solver: CVC4
   (= (to_rep (rec__do_checks__do_discriminant_check__r1__j x__split_discrs)) 10)
   (in_range3 10 x__split_discrs)))))))
 (check-sat)
+(exit)

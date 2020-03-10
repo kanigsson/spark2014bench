@@ -240,3 +240,4 @@ Target solver: CVC4
   (= o (fp.roundToIntegral RTN v11))))
   (forall ((v21 Float32)) (=> (= v21 o) (fp.leq v21 v11))))))))))))))
 (check-sat)
+(exit)

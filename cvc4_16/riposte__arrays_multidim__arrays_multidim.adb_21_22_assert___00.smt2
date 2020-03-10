@@ -385,3 +385,4 @@ Target solver: CVC4
  ;; File "arrays_multidim.adb", line 17, characters 0-0
   (not (< 1 (to_rep (get x #x05 #x05)))))
 (check-sat)
+(exit)

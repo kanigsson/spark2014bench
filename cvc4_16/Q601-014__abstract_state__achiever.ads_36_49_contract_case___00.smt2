@@ -652,3 +652,4 @@ Target solver: CVC4
   (= (prf_do_something st 0 (get_internal_state my_internal_state)
      (get_internal_state my_internal_state)) true))))))))))))))))))))
 (check-sat)
+(exit)

@@ -444,3 +444,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 i1) (<= i1 10)) true false)) true)
   (= i1 10)))))))))))) (= sum1 sum)))) (=> (= gap1 10) (not (= gap1 0)))))))))))))))
 (check-sat)
+(exit)

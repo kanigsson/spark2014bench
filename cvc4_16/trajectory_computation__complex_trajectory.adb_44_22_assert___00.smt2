@@ -919,3 +919,4 @@ Target solver: CVC4
   (= average1 (fp.div RNE o1 (fp #b0 #b10000000000 #b0000000000000000000000000000000000000000000000000000)))
   (fp.leq (low_bound (+ n 1)) old_speed))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1099,3 +1099,4 @@ Target solver: CVC4
   (and (<= (first1 number) string_index1) (<= string_index1 (last1 number)))
   (<= 1 index1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

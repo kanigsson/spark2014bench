@@ -565,3 +565,4 @@ Target solver: CVC4
   (not (= (found_none (to_rep1 (select o i))) true)))) (dynamic_property1 1
   2147483647 (to_rep final_crate__first) (to_rep final_crate__last))))))))))))
 (check-sat)
+(exit)

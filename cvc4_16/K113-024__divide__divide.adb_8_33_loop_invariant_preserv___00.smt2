@@ -146,3 +146,4 @@ Target solver: CVC4
   (let ((o4 (* q3 n))) (and (in_range1 o4) (in_range1 (+ o4 r3)))))
   (<= q3 (- m r3))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

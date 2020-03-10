@@ -700,3 +700,4 @@ Target solver: CVC4
   (= (and (ite (<= first usf) true false) (ite (<= usf o2) true false)) true)
   (in_range5 (+ (- usf first) 1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

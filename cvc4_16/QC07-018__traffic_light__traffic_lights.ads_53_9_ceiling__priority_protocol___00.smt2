@@ -540,3 +540,4 @@ Target solver: CVC4
   (=> (dynamic_invariant (us_repqtmk1 traffic_light__split_fields) true false
   true true) (<= 97 97)))))
 (check-sat)
+(exit)

@@ -771,3 +771,4 @@ Target solver: CVC4
   (= (select usf temp___552) (select data temp___552))))
   (forall ((data1 (Array Int octet))) (=> (= data1 usf) (not (= 4 0))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

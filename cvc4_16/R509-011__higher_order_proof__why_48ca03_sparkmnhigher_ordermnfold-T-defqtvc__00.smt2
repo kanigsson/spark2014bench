@@ -1328,3 +1328,4 @@ Target solver: CVC4
                                                            true false)) 1 0))
   true false)) (=> (= j (last_2 a)) (< 0 (length_2 a)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -315,3 +315,4 @@ Target solver: CVC4
   (let ((o (+ flatness val__)))
   (=> (in_range1 o) (=> (in_range1 (* 100 flatness)) (not (= o 0)))))))))))))))
 (check-sat)
+(exit)

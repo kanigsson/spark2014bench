@@ -748,3 +748,4 @@ Target solver: CVC4
   (= o4 temp___276))) (= o2 (ite (= current_time1 o4) true false))))
   (= o2 false)))) (not (= o2 true))))))))))))))))))))))))))
 (check-sat)
+(exit)

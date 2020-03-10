@@ -558,3 +558,4 @@ Target solver: CVC4
        (to_rep y__last)))
   (= (bool_eq x 1 5 z 1 5) true))))))))))))))))))))))
 (check-sat)
+(exit)

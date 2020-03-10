@@ -321,3 +321,4 @@ Target solver: CVC4
   (=> (= t1 (p__t__aggregate_def 0))
   (=> (= t1 c9b) (dynamic_property 1 2147483647 (- 10) 1000))))))
 (check-sat)
+(exit)

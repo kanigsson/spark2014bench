@@ -1642,3 +1642,4 @@ Target solver: CVC4
   (= o9 (get (model1 list__reverse_list__result) o8)))
   (=> (in_range5 usf) (<= 1 usf)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

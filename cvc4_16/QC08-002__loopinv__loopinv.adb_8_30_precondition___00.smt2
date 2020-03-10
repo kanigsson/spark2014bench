@@ -108,3 +108,4 @@ Target solver: CVC4
   (let ((o (+ j 1)))
   (=> (in_range o) (forall ((j1 Int)) (=> (= j1 o) (<= j1 10)))))))))))
 (check-sat)
+(exit)

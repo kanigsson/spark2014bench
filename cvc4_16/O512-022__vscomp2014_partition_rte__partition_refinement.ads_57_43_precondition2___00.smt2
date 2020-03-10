@@ -2862,3 +2862,4 @@ Target solver: CVC4
      (rec__partition_refinement__interval__last (us_split_fields11 o3))) o4)
   (forall ((o5 Int)) (=> (= (to_rep5 (select f usf)) o5) (<= 0 o5))))))))))))))))
 (check-sat)
+(exit)

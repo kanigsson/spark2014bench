@@ -408,3 +408,4 @@ Target solver: CVC4
   (=> (dynamic_invariant fnp1t65 true false true true)
   (=> (<= (+ (* n 65) 1) (* (+ n 1) 65)) (in_range2 (* (+ n 1) 65)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

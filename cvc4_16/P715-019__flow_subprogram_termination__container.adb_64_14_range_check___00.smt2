@@ -734,3 +734,4 @@ Target solver: CVC4
   (let ((o1 (- r1 i1)))
   (=> (in_range4 o1) (forall ((r2 Int)) (=> (= r2 o1) (in_range5 (+ i1 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

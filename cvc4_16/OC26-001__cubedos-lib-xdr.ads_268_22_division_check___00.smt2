@@ -699,3 +699,4 @@ Target solver: CVC4
   (and (dynamic_invariant o3 true false true true)
   (= o3 (+ o2 (ite (= (mod1 o2 4) 0) 0 (- 4 (mod1 o2 4))))))) (not (= 4 0)))))))))))))))
 (check-sat)
+(exit)

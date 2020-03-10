@@ -1011,3 +1011,4 @@ Target solver: CVC4
   (rt
   (rec__bounded_dynamic_strings__sequence__content1 result____split_fields1))))))))))))))))))))))
 (check-sat)
+(exit)

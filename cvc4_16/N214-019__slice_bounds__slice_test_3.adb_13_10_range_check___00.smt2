@@ -343,3 +343,4 @@ Target solver: CVC4
   (and (<= i j) (= (- (last1 temp___174) (first1 temp___174)) (- j i)))
   (< j i)) (=> (<= i j) (<= 1 i))))))))))))))
 (check-sat)
+(exit)

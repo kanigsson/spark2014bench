@@ -818,3 +818,4 @@ Target solver: CVC4
   (=> (<= (first1 temp___1501) (last1 temp___1501))
   (<= (first1 temp___1505) (last1 temp___1505)))))))))))))))))))))))))))
 (check-sat)
+(exit)

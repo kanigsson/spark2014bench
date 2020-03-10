@@ -613,3 +613,4 @@ Target solver: CVC4
   (=> (and (<= 1 k) (<= k (- i2 1)))
   (= (to_rep (get m6 k k)) (+ (to_rep (get temp___loop_entry_283 k k)) 1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

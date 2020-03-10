@@ -406,3 +406,4 @@ Target solver: CVC4
   (=> (<= size_a (length a))
   (=> (<= size_b (length b)) (in_range1 (- size_a size_b))))))))))
 (check-sat)
+(exit)

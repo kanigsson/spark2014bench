@@ -1332,3 +1332,4 @@ Target solver: CVC4
   (=> (= (count_length i) true)
   (= test_higher_order3__my_count_2__count_length__count_length__result true))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

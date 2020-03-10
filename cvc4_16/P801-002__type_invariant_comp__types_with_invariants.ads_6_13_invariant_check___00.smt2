@@ -584,3 +584,4 @@ Target solver: CVC4
                                                              temp___293) 
   i)) (type_invariant (us_repqtmk types_with_invariants__get__result))))))))))))
 (check-sat)
+(exit)

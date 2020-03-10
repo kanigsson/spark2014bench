@@ -240,3 +240,4 @@ Target solver: CVC4
   (and (dynamic_invariant o true false true true) (= o (- i 1))))
   (<= temp___loop_entry_187 cur))))))))))))
 (check-sat)
+(exit)

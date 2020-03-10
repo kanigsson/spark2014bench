@@ -560,3 +560,4 @@ Target solver: CVC4
   (= (and (ite (<= (- low 1) usf) true false) (ite (<= usf o1) true false)) true)
   (<= (first1 a__split_fields) usf)))))))))))))
 (check-sat)
+(exit)

@@ -557,3 +557,4 @@ Target solver: CVC4
   (=> (dynamic_invariant g true false true true)
   (=> (<= g (+ g 2)) (<= 1 g))))))))
 (check-sat)
+(exit)

@@ -172,3 +172,4 @@ Target solver: CVC4
   (=> (= (to_rep (select y j)) o)
   (=> (= (to_rep (select x j)) o1) (in_range (+ o1 o))))))))
 (check-sat)
+(exit)

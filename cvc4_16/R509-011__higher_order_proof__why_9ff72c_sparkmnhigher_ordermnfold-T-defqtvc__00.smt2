@@ -1495,3 +1495,4 @@ Target solver: CVC4
                                            (to_rep (get (to_array o1) i j))))))))))
   (=> (in_range10 (first_2 a2)) (=> (in_range9 k) (<= (first2 a2) i)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -329,3 +329,4 @@ Target solver: CVC4
   (let ((o (+ n 1)))
   (=> (in_range1 o) (=> (in_range1 (* n o)) (not (= 2 0)))))))))))))
 (check-sat)
+(exit)

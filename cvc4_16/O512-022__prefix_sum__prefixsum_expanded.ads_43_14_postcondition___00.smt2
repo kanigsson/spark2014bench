@@ -904,3 +904,4 @@ Target solver: CVC4
   (=> (= (to_rep (select a1 6)) (to_rep (select saved_a 6)))
   (= (all_elements_in a1 8000000) true))))))))))))))))))))
 (check-sat)
+(exit)

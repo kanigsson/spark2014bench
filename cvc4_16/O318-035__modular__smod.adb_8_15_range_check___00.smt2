@@ -373,3 +373,4 @@ Target solver: CVC4
   (=> (bvule ((_ int2bv 8) x) ((_ int2bv 8) y))
   (bvuge ((_ int2bv 8) x) #x00))))))))
 (check-sat)
+(exit)

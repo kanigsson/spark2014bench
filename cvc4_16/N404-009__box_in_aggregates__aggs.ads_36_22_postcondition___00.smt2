@@ -207,3 +207,4 @@ Target solver: CVC4
   (forall ((x (Array Int t2)))
   (=> (= x (temp_____aggregate_def_232 11)) (= (to_rep (select x 2)) 11)))))
 (check-sat)
+(exit)

@@ -960,3 +960,4 @@ Target solver: CVC4
              test_higher_order3__my_count__count_left__acc__fold__result) o7)) o8)
   (<= usf (last1 a)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

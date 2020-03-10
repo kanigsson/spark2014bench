@@ -715,3 +715,4 @@ Target solver: CVC4
   (=> (= i 0)
   (let ((o (power 256 i))) (=> (in_range2 o) (uint_in_range1 o)))))))))))
 (check-sat)
+(exit)

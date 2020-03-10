@@ -294,3 +294,4 @@ Target solver: CVC4
   (=> (forall ((last1 Int)) (empty__function_guard (empty last1) last1))
   (= (empty last) true))))))
 (check-sat)
+(exit)

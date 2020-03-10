@@ -1026,3 +1026,4 @@ Target solver: CVC4
  ;; File "formals_rec_split_pred.adb", line 1, characters 0-0
   (not true))
 (check-sat)
+(exit)

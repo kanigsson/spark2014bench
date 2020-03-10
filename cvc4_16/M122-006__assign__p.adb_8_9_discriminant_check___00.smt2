@@ -523,3 +523,4 @@ Target solver: CVC4
   (=> (= (to_rep o1) (fp #b0 #b10000000 #b00000000000000000000000))
   (=> (= (to_rep2 o2) 1) (= o2 (rec__types__r__i x__split_discrs))))))))))
 (check-sat)
+(exit)

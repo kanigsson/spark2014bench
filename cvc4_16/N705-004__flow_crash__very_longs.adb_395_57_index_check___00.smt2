@@ -820,3 +820,4 @@ Target solver: CVC4
                            (rt number__split_fields1)))
   (<= (first1 number__split_fields2) i1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

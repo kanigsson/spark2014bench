@@ -590,3 +590,4 @@ Target solver: CVC4
   (<= temp___351 (last1 temp___350)))
   (= (attr__init (select (to_array temp___350) temp___351)) true)))))))))))))))))))))))))
 (check-sat)
+(exit)

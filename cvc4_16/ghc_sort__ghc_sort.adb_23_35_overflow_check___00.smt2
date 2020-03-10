@@ -569,3 +569,4 @@ Target solver: CVC4
   (forall ((o6 Int))
   (=> (= (to_rep (select (to_array s) temp___446)) o6) (in_range1 (+ usf 1))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

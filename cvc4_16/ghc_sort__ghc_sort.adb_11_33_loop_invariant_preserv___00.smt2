@@ -682,3 +682,4 @@ Target solver: CVC4
                                               false)) true)
   (<= (first1 s) x2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

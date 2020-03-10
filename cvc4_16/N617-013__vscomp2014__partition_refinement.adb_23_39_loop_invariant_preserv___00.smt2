@@ -1143,3 +1143,4 @@ Target solver: CVC4
   (=> (and (<= (+ i2 1) j2) (<= j2 5))
   (= (to_rep3 (select f3 j2)) (to_rep3 (select temp___loop_entry_692 j2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

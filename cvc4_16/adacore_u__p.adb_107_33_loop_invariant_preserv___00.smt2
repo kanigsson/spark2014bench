@@ -441,3 +441,4 @@ Target solver: CVC4
   (=> (= i2 (+ i1 1))
   (=> (in_range1 (+ beginning2 1)) (<= (first1 a) (+ beginning2 1)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -509,3 +509,4 @@ Target solver: CVC4
              (not (= (to_rep (select a j)) val__))))
         1 0)) 1))))))
 (check-sat)
+(exit)

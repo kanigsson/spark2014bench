@@ -634,3 +634,4 @@ Target solver: CVC4
      (rec__predicate_ints__approx_int__precision (us_split_fields3 arg1))) o3)
   (in_range1 (max o3 o2)))))))))))))
 (check-sat)
+(exit)

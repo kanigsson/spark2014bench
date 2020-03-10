@@ -876,3 +876,4 @@ Target solver: CVC4
                                               (select (to_array a) y)))) true)
   (= lcp__result 0)))))))))))))))))))
 (check-sat)
+(exit)

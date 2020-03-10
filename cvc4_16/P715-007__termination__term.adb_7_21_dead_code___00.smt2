@@ -104,3 +104,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (=> (= spark__branch (ite (= x 0) true false)) (= spark__branch true))))))
 (check-sat)
+(exit)

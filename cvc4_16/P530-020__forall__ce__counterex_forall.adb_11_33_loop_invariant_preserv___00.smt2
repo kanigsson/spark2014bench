@@ -200,3 +200,4 @@ Target solver: CVC4
   (=> (= r2 (store r1 x2 (ite (= x2 c) true false)))
   (=> (<= 1 i) (=> (<= i x2) (=> (= (select r2 i) true) (= i (+ c 1))))))))))))))))
 (check-sat)
+(exit)

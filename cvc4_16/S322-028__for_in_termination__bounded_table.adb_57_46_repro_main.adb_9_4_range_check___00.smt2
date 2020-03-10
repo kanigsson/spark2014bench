@@ -704,3 +704,4 @@ Target solver: CVC4
   (= (to_rep (rec__repro_main__int_table__t__last table__split_fields)) o)
   (in_range2 (+ o 1))))))))))
 (check-sat)
+(exit)

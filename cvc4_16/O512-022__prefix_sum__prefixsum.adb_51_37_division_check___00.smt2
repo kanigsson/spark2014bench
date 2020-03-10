@@ -616,3 +616,4 @@ Target solver: CVC4
                                       false)) true)
   (not (= (* 2 space1) 0))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

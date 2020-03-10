@@ -706,3 +706,4 @@ Target solver: CVC4
   (=> (= (to_rep o2) (fp #b0 #b00000000 #b00000000000000000000000))
   (=> (= par1__attr__constrained true) (= (distinct 0 0) par1__split_discrs))))))))))))
 (check-sat)
+(exit)

@@ -498,3 +498,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array1 p) temp___328)) temp___329)
   (=> (<= temp___329 (- o 1)) (<= (first1 a) temp___329))))))))))))))))))))
 (check-sat)
+(exit)

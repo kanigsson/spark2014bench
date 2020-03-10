@@ -106,3 +106,4 @@ Target solver: CVC4
   (=> (dynamic_invariant val__ true false true true)
   (not (and (<= (- 1) val__) (<= val__ 1))))))
 (check-sat)
+(exit)

@@ -1299,3 +1299,4 @@ Target solver: CVC4
                                      unmatched_g1_set__split_fields) o3))
   (< (to_rep3 (select proposals_made g11)) 64))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -757,3 +757,4 @@ Target solver: CVC4
   (and (dynamic_invariant temp___231 true false true true) (= temp___231 o1)))
   (<= 1 temp___231)))))))))
 (check-sat)
+(exit)

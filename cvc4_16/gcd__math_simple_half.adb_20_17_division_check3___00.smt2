@@ -359,3 +359,4 @@ Target solver: CVC4
                                                           true false)))
   (=> (not (= spark__branch true)) (not (= 2 0))))))))))))))
 (check-sat)
+(exit)

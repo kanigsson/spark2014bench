@@ -1116,3 +1116,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__p__my_sets__set__capacity target__split_discrs)) o5)
   (in_range5 (- o5 o4)))))))))))))))
 (check-sat)
+(exit)

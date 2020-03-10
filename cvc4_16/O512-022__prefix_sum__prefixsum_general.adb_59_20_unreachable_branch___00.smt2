@@ -577,3 +577,4 @@ Target solver: CVC4
   (= (and (ite (<= left2 usf) true false) (ite (= (mod2 (+ usf 1) space1) 0)
                                           true false)) true)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

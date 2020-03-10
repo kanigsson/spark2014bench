@@ -297,3 +297,4 @@ Target solver: CVC4
   (and (= a11 (store a12 i1 o1)) (= i1 temp___244)))))))))) (= a11 a1)))))
   (in_range1 (+ k1 1)))))))))))))))
 (check-sat)
+(exit)

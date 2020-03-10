@@ -504,3 +504,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select h1 q1)) o1)
   (forall ((t3 Int)) (=> (= t3 o1) (in_range1 (+ q1 m1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

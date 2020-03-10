@@ -1545,3 +1545,4 @@ Target solver: CVC4
   (=> (dynamic_property first last usf)
   (<= (first_21 test_higher_order1__my_fold_2__acc__fold__result) (last_2 a)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

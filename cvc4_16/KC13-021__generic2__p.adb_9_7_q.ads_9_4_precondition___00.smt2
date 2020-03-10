@@ -386,3 +386,4 @@ Target solver: CVC4
   (=> (in_range o2)
   (forall ((tmp2 Int)) (=> (= tmp2 o2) (< tmp2 2147483647))))))))))))))))
 (check-sat)
+(exit)

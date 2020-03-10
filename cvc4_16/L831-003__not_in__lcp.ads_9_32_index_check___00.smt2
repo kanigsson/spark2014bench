@@ -447,3 +447,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array a) o1)) o2)
   (let ((o3 (+ x lcp__result))) (=> (in_range1 o3) (<= (first1 a) o3))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -486,3 +486,4 @@ Target solver: CVC4
   (=> (and (bvule #x01 res1) (bvule res1 #x32)) (in_range1
   (bvsub res1 #x01))))))))))))))))))))))))))
 (check-sat)
+(exit)

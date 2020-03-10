@@ -1408,3 +1408,4 @@ Target solver: CVC4
   (= o8 (to_rep1 (rec__use_formal_vectors__element_type__pointer_value o7)))))
   (=> (= o8 o6) (in_range1 (- j 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

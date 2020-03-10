@@ -114,3 +114,4 @@ Target solver: CVC4
  ;; File "cursor_location.adb", line 15, characters 0-0
   (not (= (select du_available 1) true)))
 (check-sat)
+(exit)

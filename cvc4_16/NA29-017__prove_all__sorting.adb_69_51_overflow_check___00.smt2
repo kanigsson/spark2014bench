@@ -357,3 +357,4 @@ Target solver: CVC4
   (=> (sorted__function_guard (sorted o9 o6 o5) o9 o6 o5) (in_range1
   (+ length11 length2)))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -142,3 +142,4 @@ Target solver: CVC4
   (let ((o1 (fp.mul RNE (fp.roundToIntegral RTZ o) right)))
   (=> (fp.isFinite64 o1) (fp.isFinite64 (fp.sub RNE left o1))))))))))
 (check-sat)
+(exit)

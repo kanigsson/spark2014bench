@@ -450,3 +450,4 @@ Target solver: CVC4
   (=> (and (<= (first1 b) j2) (<= j2 (last1 b)))
   (= j2 (+ (- i2 (first1 a)) (first1 b)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

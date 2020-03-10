@@ -461,3 +461,4 @@ Target solver: CVC4
   (forall ((k8 Int))
   (=> (= k8 o2) (=> (in_range1 (+ a k8)) (in_range1 (- j14 1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

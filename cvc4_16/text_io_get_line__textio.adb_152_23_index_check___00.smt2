@@ -1137,3 +1137,4 @@ Target solver: CVC4
   (forall ((o1 Int))
   (=> (= (to_rep (select the_file temp___492)) o1) (<= (first1 s) usf)))))))))))))))))))
 (check-sat)
+(exit)

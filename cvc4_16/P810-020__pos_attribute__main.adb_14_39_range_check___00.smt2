@@ -866,3 +866,4 @@ Target solver: CVC4
   (=> (dynamic_invariant off_c1 true false true true) (in_range
   main__some_record__c2__position)))))))))
 (check-sat)
+(exit)

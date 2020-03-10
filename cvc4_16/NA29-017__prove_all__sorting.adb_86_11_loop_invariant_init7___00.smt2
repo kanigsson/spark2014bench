@@ -448,3 +448,4 @@ Target solver: CVC4
   (= (sorted (of_array b (to_rep b__first) (to_rep b__last))
      (to_rep b__first) (+ i1 j1)) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

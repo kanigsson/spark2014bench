@@ -601,3 +601,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 i1) (<= i1 10)) true false)) true)
   (=> (= (to_rep (get m5 i1 i1)) o) (in_range1 (+ o 1)))))))))))))))))))))))))
 (check-sat)
+(exit)

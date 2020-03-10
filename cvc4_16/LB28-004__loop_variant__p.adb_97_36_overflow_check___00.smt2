@@ -493,3 +493,4 @@ Target solver: CVC4
   (=> (in_range1 o2)
   (forall ((k10 Int)) (=> (= k10 o2) (in_range1 (+ a k10)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

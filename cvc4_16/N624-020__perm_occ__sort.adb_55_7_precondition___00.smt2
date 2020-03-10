@@ -701,3 +701,4 @@ Target solver: CVC4
      (of_array values2 (to_rep1 values__first) (to_rep1 values__last))) true)
   (<= (to_rep1 values__first) x))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

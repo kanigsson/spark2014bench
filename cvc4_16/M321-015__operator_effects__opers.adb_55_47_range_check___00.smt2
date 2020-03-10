@@ -659,3 +659,4 @@ Target solver: CVC4
   (=> (forall ((a5 Int)) (fixed_true1__function_guard (fixed_true1 a5) a5))
   (=> (not (= (fixed_true1 a4) true)) (in_range13 a4)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

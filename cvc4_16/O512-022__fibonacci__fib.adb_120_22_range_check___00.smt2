@@ -404,3 +404,4 @@ Target solver: CVC4
   (=> (= (* (* p21 b21) (power b21 (- k22 1))) (power a2 n2))
   (=> (<= 1 k22) (in_range2 (- k22 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

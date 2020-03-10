@@ -97,3 +97,4 @@ Target solver: CVC4
  ;; File "use_incomplete_type_auto.ads", line 2, characters 0-0
   (not (=> (ok__function_guard (ok w1) w1) (= (ok w1) true))))
 (check-sat)
+(exit)

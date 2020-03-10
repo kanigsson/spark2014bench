@@ -590,3 +590,4 @@ Target solver: CVC4
   (= (to_rep (rec__test__fruit_rec__record_t__d apple_basket__split_discrs)) 
   (to_rep mixed_basket__split_discrs))))))))
 (check-sat)
+(exit)

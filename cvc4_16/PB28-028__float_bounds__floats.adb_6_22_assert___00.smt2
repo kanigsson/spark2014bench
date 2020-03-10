@@ -365,3 +365,4 @@ Target solver: CVC4
                                                                  (select 
                                                                  a 3))))))))
 (check-sat)
+(exit)

@@ -1108,3 +1108,4 @@ Target solver: CVC4
   (length
   (of_array (to_array temp___628) (first1 temp___628) (last1 temp___628))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

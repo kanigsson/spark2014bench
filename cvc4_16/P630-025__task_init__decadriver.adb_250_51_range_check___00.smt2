@@ -3437,3 +3437,4 @@ Target solver: CVC4
   (=> (dynamic_invariant word1 true true true true)
   (bvule ((_ zero_extend 16) #x0000) (bvand word1 #x0000FFFF)))))))))))))
 (check-sat)
+(exit)

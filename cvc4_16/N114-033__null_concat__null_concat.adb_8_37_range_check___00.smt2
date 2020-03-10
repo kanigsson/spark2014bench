@@ -444,3 +444,4 @@ Target solver: CVC4
   (=> (not (= (length1 a1) 0)) (in_range1
   (- (+ (first1 a1) (+ (length (first1 a1) (last1 a1)) 1)) 1)))))))))))))
 (check-sat)
+(exit)

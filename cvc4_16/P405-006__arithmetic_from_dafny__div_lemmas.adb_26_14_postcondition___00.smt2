@@ -230,3 +230,4 @@ Target solver: CVC4
   (let ((o (div1 d d)))
   (=> (in_range o) (forall ((res1 Int)) (=> (= res1 o) (= res1 1)))))))))))
 (check-sat)
+(exit)

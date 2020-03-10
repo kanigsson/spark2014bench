@@ -1272,3 +1272,4 @@ Target solver: CVC4
   (= o4 (to_rep1 (rec__use_formal_vectors__element_type__pointer_value o3)))))
   (<= 1 usf))))))))))))))))))))))))))))
 (check-sat)
+(exit)

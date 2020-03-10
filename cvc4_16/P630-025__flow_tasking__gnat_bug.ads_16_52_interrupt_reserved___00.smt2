@@ -82,3 +82,4 @@ Target solver: CVC4
  ;; File "gnat_bug.ads", line 10, characters 0-0
   (not (forall ((temp___191 Bool)) (= temp___191 false))))
 (check-sat)
+(exit)

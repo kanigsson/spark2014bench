@@ -514,3 +514,4 @@ Target solver: CVC4
   (= (to_rep (select (to_array a) k)) (to_rep
                                       (select (to_array perm__remove__result) (- k 1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -353,3 +353,4 @@ Target solver: CVC4
   (=> (= alias__add__result (+ o1 x))
   (< 0 (to_rep (rec__alias__my_rec__modulus (us_split_fields1 r))))))))))))
 (check-sat)
+(exit)

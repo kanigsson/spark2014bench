@@ -111,3 +111,4 @@ Target solver: CVC4
   (let ((o (- x))) (and (in_range o) (= absolute_value__result o))))))
   (in_range (abs1 x)))))))
 (check-sat)
+(exit)

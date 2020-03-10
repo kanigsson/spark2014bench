@@ -99,3 +99,4 @@ Target solver: CVC4
   (=> (not (= z__attr__init true))
   (=> (dynamic_invariant o false true true true) (= z__attr__init true)))))))))
 (check-sat)
+(exit)

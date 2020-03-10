@@ -634,3 +634,4 @@ Target solver: CVC4
   (and (ten1__function_guard o2 a2) (dynamic_invariant3 o2 true false true
   true)) (forall ((a3 Int)) (=> (= a3 o2) (in_range13 a3))))))))))))))))))
 (check-sat)
+(exit)

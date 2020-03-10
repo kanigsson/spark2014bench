@@ -605,3 +605,4 @@ Target solver: CVC4
   (=> (and (<= 1 temp___284) (<= temp___284 100))
   (= (attr__init (select buf2 temp___284)) true))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

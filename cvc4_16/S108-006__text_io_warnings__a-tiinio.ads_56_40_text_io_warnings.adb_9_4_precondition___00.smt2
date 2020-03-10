@@ -215,3 +215,4 @@ Target solver: CVC4
  ;; File "a-tiinio.ads", line 51, characters 0-0
   (not true))
 (check-sat)
+(exit)

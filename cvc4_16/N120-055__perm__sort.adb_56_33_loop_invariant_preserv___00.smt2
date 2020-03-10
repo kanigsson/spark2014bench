@@ -515,3 +515,4 @@ Target solver: CVC4
      (to_rep values__last))
      (of_array values3 (to_rep values__first) (to_rep values__last))) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

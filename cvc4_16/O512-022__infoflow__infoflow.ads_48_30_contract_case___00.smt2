@@ -258,3 +258,4 @@ Target solver: CVC4
   (=> (and (<= 1 k) (<= k 10))
   (= (to_rep (select cache_v11 k)) (to_rep (select cache_v21 k)))))))))))))
 (check-sat)
+(exit)

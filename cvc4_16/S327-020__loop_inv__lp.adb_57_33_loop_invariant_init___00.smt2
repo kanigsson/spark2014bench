@@ -919,3 +919,4 @@ Target solver: CVC4
                                            (to_rep
                                            (select (to_array powers) c23b)))))))))))))))))))
 (check-sat)
+(exit)

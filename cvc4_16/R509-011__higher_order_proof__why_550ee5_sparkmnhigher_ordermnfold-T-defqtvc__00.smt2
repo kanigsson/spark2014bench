@@ -1234,3 +1234,4 @@ Target solver: CVC4
                                               false)) true)
   (=> (not (= i (first2 a))) (in_range1 (- i 1))))))))))))))
 (check-sat)
+(exit)

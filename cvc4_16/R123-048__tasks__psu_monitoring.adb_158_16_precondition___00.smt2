@@ -2321,3 +2321,4 @@ Target solver: CVC4
               (us_split_fields1
               (rec__psu_monitoring__monitor_t__config monitor__split_fields1)))) (fp #b0 #b00000000 #b00000000000000000000000))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

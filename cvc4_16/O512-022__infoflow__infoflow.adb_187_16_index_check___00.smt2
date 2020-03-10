@@ -433,3 +433,4 @@ Target solver: CVC4
   (forall ((o3 integer))
   (=> (= (to_rep o3) o2) (<= (to_rep a_v1__first) i_v11)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

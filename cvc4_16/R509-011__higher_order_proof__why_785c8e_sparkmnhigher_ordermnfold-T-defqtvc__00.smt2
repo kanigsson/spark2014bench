@@ -1270,3 +1270,4 @@ Target solver: CVC4
                                               false)) true)
   (=> (in_range6 j) (in_range5 i1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -830,3 +830,4 @@ Target solver: CVC4
   false true true) (in_range6 1 10
   (us_repqtmk1 z__is_null_pointer z__pointer_address z__pointer_value))))))))))))))))))
 (check-sat)
+(exit)

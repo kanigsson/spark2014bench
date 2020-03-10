@@ -504,3 +504,4 @@ Target solver: CVC4
   (and (and (<= 1 6) (<= 6 1000)) (and (<= 1 10) (<= 10 1000))))
   (=> (<= 1 5) (<= 1 1)))))
 (check-sat)
+(exit)

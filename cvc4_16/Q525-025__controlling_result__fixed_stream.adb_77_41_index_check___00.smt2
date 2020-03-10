@@ -1105,3 +1105,4 @@ Target solver: CVC4
   (let ((o8 (+ o7 i1)))
   (=> (in_range5 o8) (<= (to_rep3 out_stream__first) o8))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

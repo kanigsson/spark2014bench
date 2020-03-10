@@ -576,3 +576,4 @@ Target solver: CVC4
   (ite (< 0 (length a)) (= o (ite (< 0 (length_2 a)) true false))
   (= o false)) (=> (= o true) (in_range5 (last_2 a)))))))))
 (check-sat)
+(exit)

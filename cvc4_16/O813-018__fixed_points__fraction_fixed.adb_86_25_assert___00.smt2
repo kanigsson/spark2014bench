@@ -294,3 +294,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (<= 0 x) true false))
   (=> (not (= spark__branch true)) (=> (< x 0) (< (* x 2) x))))))))))
 (check-sat)
+(exit)

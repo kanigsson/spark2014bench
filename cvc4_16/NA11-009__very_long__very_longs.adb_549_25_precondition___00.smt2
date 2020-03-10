@@ -1565,3 +1565,4 @@ Target solver: CVC4
   (forall ((o4 (_ BitVec 8)))
   (=> (= (to_rep2 (select (to_array temp___1196) n1)) o4) (not (= o4 #x00))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

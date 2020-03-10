@@ -1352,3 +1352,4 @@ Target solver: CVC4
   (= (to_rep (select o16 idx)) (to_rep (select item idx)))))))) (in_range1
   (+ (- last2 1) n)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

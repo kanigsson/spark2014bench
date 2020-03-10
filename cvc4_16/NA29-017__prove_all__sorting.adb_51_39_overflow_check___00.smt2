@@ -400,3 +400,4 @@ Target solver: CVC4
                                             false)) true)
   (let ((o9 (+ a_first usf))) (=> (in_range1 o9) (in_range1 (- o9 b_first))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

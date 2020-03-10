@@ -119,3 +119,4 @@ Target solver: CVC4
   (ite (and (<= 1 i1) (<= i1 r18b)) true false)) true) (in_range1
   (+ pos1 1))))))))))))
 (check-sat)
+(exit)

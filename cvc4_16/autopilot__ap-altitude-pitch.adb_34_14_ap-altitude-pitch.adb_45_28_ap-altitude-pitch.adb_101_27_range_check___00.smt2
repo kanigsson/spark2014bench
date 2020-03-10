@@ -644,3 +644,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (= result__3 (- 1000)) (= result__3 result__2))))))
   (in_range8 result__3)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

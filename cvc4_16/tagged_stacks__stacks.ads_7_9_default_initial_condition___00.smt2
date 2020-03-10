@@ -397,3 +397,4 @@ Target solver: CVC4
   (=> (forall ((usf1 us_rep)) (size__function_guard (size usf1) usf1))
   (= (size usf) 0)))))))))
 (check-sat)
+(exit)

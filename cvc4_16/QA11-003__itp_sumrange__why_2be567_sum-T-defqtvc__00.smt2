@@ -356,3 +356,4 @@ Target solver: CVC4
   (=> (in_range1 (* k2 2000))
   (=> (in_range1 (abs1 s2)) (<= (abs1 s2) (* k2 2000)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

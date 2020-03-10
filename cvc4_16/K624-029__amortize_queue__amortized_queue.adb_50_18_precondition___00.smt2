@@ -902,3 +902,4 @@ Target solver: CVC4
   (and (dynamic_invariant3 o9 true false true true)
   (= o9 (get (model1 o8) usf))) (=> (in_range4 usf) (<= 1 usf)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

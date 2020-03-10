@@ -665,3 +665,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true) (uint_in_range1
   (length1 b))))))))))))))
 (check-sat)
+(exit)

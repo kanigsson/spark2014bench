@@ -237,3 +237,4 @@ Target solver: CVC4
   (= found1 found)))))))))))) (and (= found1 found) (= index2 index1)))
   (or (not (= found1 true)) (= (to_rep (select table index2)) value))))))))))
 (check-sat)
+(exit)

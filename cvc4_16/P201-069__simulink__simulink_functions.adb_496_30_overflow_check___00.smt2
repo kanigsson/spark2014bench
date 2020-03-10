@@ -257,3 +257,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= right 0) true false))
   (=> (not (= spark__branch true)) (in_range (div1 left right)))))))))
 (check-sat)
+(exit)

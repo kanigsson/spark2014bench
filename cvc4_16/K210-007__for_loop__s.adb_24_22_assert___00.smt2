@@ -166,3 +166,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 index1) (<= index1 10)) true false)) true)
   (and (= t1 index1) (= index1 10))))) (= t1 t)))) (= t1 10)))))))
 (check-sat)
+(exit)

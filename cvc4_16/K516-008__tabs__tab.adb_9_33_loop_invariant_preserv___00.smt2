@@ -278,3 +278,4 @@ Target solver: CVC4
   (and (dynamic_invariant o1 true false true true) (= o1 (- i2 1))))
   (<= temp___loop_entry_187 cur2))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -268,3 +268,4 @@ Target solver: CVC4
   (ext_equal__function_guard (ext_equal a4 (union1 a3 b)) a4 (union1 a3 b)))
   (= (ext_equal a2 (union1 a1 b)) true)))))))))
 (check-sat)
+(exit)

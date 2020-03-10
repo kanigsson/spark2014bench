@@ -1155,3 +1155,4 @@ Target solver: CVC4
   (=> (= (div1 (+ (- (last1 number) string_index3) 1) 2) (+ (- index3 1) 1))
   (<= (first1 number) string_index3))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

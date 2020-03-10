@@ -562,3 +562,4 @@ Target solver: CVC4
   (= (or (or (or (ite (= usf 1) true false) (ite (= usf 3) true false)) 
   (ite (= usf 5) true false)) (ite (= usf 7) true false)) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

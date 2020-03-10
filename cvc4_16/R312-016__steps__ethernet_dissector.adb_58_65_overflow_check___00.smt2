@@ -1061,3 +1061,4 @@ Target solver: CVC4
   (let ((o21 (length buffer)))
   (=> (in_range1 o21) (in_range1 (+ (first1 buffer) o21)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

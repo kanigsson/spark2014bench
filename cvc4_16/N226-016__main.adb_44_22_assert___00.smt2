@@ -202,3 +202,4 @@ Target solver: CVC4
   (=> (= (to_rep (select map1 1)) 0)
   (=> (<= 0 id1) (=> (<= id1 1) (not (= (to_rep (select map1 id1)) id1)))))))))))
 (check-sat)
+(exit)

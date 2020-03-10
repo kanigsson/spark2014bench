@@ -1191,3 +1191,4 @@ Target solver: CVC4
   (=> (and (< 0 (length a)) (< 0 (length_2 a)))
   (= (sum_cst (last2 a) (last_2 a)) true)) (in_range1 (length_2 a))))))))))
 (check-sat)
+(exit)

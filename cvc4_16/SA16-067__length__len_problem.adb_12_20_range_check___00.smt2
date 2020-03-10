@@ -609,3 +609,4 @@ Target solver: CVC4
   (forall ((o1 Int))
   (=> (= (to_rep s__first) o1) (uint_in_range (length o1 o))))))))))))))))))))))
 (check-sat)
+(exit)

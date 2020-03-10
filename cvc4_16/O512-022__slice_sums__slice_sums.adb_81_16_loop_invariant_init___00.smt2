@@ -749,3 +749,4 @@ Target solver: CVC4
       (slice_boundsqtmk
       (us_split_fieldsqtmk (of_rep2 lo_index) (of_rep3 hi_index)))) max_sum))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

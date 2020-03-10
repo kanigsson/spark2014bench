@@ -750,3 +750,4 @@ Target solver: CVC4
   (=> (exists ((o2 Int)) (= (to_rep (select (to_array b) ib)) o2))
   (<= ia (last1 a))))))))))))))))))))
 (check-sat)
+(exit)

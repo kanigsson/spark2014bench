@@ -134,3 +134,4 @@ Target solver: CVC4
   (= o1 (ite (<= o 1) 1 (* o (mathematical_factorial (- o 1))))))) (in_range1
   (* x o1)))))))))))))
 (check-sat)
+(exit)

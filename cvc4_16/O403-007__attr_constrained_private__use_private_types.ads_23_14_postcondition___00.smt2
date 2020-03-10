@@ -354,3 +354,4 @@ Target solver: CVC4
   (us_repqtmk1 (us_split_fieldsqtmk1 s__split_fields1))))
   (= (d_zero (us_repqtmk1 (us_split_fieldsqtmk1 s__split_fields))) true)))))))
 (check-sat)
+(exit)

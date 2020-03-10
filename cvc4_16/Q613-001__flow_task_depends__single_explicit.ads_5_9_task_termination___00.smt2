@@ -470,3 +470,4 @@ Target solver: CVC4
  ;; File "single_explicit.ads", line 5, characters 0-0
   (not true))
 (check-sat)
+(exit)

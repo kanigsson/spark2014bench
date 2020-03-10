@@ -106,3 +106,4 @@ Target solver: CVC4
  ;; File "contradictions.ads", line 20, characters 0-0
   (not (=> (dynamic_invariant i18s true false false true) (not (< i18s 0)))))
 (check-sat)
+(exit)

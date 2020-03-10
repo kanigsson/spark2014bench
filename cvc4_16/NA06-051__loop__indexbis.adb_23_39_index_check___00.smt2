@@ -396,3 +396,4 @@ Target solver: CVC4
   (=> (dynamic_invariant possible1 true true true true)
   (<= (first1 c) possible1))))))))))))))))))))))))))
 (check-sat)
+(exit)

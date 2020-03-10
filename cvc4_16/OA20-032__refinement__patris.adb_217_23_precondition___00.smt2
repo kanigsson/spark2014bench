@@ -2128,3 +2128,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (= (move_is_possible (us_repqtmk cur_piece__split_fields) a) true))))))))))))))
 (check-sat)
+(exit)

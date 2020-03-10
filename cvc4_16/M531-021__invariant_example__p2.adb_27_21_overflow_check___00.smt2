@@ -392,3 +392,4 @@ Target solver: CVC4
   (=> (= halfway2 (div1 (+ lower2 upper2) 2)) (in_range1
   (* halfway2 halfway2)))))))))))))))))))
 (check-sat)
+(exit)

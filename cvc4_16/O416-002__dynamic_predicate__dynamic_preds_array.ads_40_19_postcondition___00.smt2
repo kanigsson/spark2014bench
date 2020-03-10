@@ -355,3 +355,4 @@ Target solver: CVC4
   (=> (= (to_rep o1) 2)
   (=> (= x2 (store x1 2 o1)) (= (to_rep (select x2 1)) 0)))))))))))))
 (check-sat)
+(exit)

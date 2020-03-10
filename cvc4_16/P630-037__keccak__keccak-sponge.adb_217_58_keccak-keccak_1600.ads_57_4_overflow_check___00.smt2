@@ -1621,3 +1621,4 @@ Target solver: CVC4
   (=> (< 0 (+ (mod2 bit_length 8) suffix_len)) (in_range1
   (+ (mod2 bit_length 8) suffix_len)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

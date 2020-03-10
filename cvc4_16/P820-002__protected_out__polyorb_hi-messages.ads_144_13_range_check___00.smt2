@@ -852,3 +852,4 @@ Target solver: CVC4
      (us_split_fields1 m))) temp___523)
   (=> (<= temp___523 temp___524) (<= 1 temp___523)))))))))))))
 (check-sat)
+(exit)

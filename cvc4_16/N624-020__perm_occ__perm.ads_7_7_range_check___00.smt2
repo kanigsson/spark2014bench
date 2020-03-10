@@ -333,3 +333,4 @@ Target solver: CVC4
   (let ((temp___271 (first1 a)))
   (=> (<= temp___271 o) (<= (first1 a) temp___271)))))))))
 (check-sat)
+(exit)

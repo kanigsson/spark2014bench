@@ -645,3 +645,4 @@ Target solver: CVC4
   (and (= (to_rep1 c__first) d) (= (to_rep1 c__last) 8)))
   (= (to_rep1 c__first) 1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -968,3 +968,4 @@ Target solver: CVC4
   (=> (= (last1 temp___1283) temp___1282)
   (=> (<= (first1 temp___1283) (last1 temp___1283)) (<= 1 capacity))))))))))))))
 (check-sat)
+(exit)

@@ -146,3 +146,4 @@ Target solver: CVC4
   (=> (fp.isFinite64 o)
   (fp.isFinite64 (fp.mul RNE (fp.roundToIntegral RTN o) right)))))))))))
 (check-sat)
+(exit)

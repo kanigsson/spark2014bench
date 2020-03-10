@@ -1225,3 +1225,4 @@ Target solver: CVC4
   (=> (<= cur_position1 10000)
   (=> (in_range3 n2) (=> (< 1 n2) (<= (to_rep1 item__first) (+ last4 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

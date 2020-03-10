@@ -154,3 +154,4 @@ Target solver: CVC4
   (=> (= x1 o)
   (fp.leq (fp.neg (fp #b0 #b10000000 #b00000000000000000000000)) x1)))))))))))
 (check-sat)
+(exit)

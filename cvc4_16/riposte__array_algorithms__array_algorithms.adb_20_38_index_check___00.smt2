@@ -388,3 +388,4 @@ Target solver: CVC4
   (forall ((o2 Int))
   (=> (= (to_rep1 (select (to_array b) usf)) o2) (<= (first1 a) usf))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1600,3 +1600,4 @@ Target solver: CVC4
   (=> (or (= (length a) 0) (= (length_2 a) 0))
   (= test_higher_order1__my_fold_2__fold__result init)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

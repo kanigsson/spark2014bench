@@ -357,3 +357,4 @@ Target solver: CVC4
   (=> (= res #x00)
   (=> (dynamic_invariant res true false true true) (not (bvult res #x0A)))))))
 (check-sat)
+(exit)

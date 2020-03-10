@@ -108,3 +108,4 @@ Target solver: CVC4
   (forall ((p__nested__f__result Int))
   (=> (= p__nested__f__result 0) (<= 0 p__nested__f__result)))))
 (check-sat)
+(exit)

@@ -177,3 +177,4 @@ Target solver: CVC4
               not5_out1 false))
   (= and_out1 true)))))))))))))))))))))))))
 (check-sat)
+(exit)

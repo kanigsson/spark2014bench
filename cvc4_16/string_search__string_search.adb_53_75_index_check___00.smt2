@@ -482,3 +482,4 @@ Target solver: CVC4
   (let ((o12 (+ (- o11 o10) 1)))
   (=> (in_range1 o12) (<= (first1 needle) o12))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

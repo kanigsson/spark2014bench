@@ -142,3 +142,4 @@ Target solver: CVC4
   (forall ((spark__branch Bool))
   (=> (= spark__branch (ite (<= 0 o) true false)) (= spark__branch true))))))))
 (check-sat)
+(exit)

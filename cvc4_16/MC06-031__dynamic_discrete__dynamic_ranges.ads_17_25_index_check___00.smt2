@@ -360,3 +360,4 @@ Target solver: CVC4
   (ite (<= dynamic_ranges__search__result1 (last1 a)) true false)) true)
   (<= (first1 a) dynamic_ranges__search__result1)))))))))
 (check-sat)
+(exit)

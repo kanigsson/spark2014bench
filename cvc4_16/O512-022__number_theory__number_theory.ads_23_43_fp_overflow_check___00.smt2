@@ -337,3 +337,4 @@ Target solver: CVC4
   (not (fp.eq (fp #b0 #b01111111 #b10011110001110111100111) ((_ to_fp 8 24) #x00000000))))
   (fp.isFinite32 (power (fp #b0 #b01111111 #b10011110001110111100111) n))))))))))))
 (check-sat)
+(exit)

@@ -233,3 +233,4 @@ Target solver: CVC4
   (= (bool_eq simple__foo__result 1 5
      (temp_____aggregate_def_173 10 (+ init_val 1)) 1 5) true))))))))))))
 (check-sat)
+(exit)

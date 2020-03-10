@@ -565,3 +565,4 @@ Target solver: CVC4
   (let ((o6 (+ q_v11 m_v11)))
   (=> (in_range1 o6) (<= (to_rep h_v1__first) o6)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

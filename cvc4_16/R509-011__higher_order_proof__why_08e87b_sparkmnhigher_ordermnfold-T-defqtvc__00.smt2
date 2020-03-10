@@ -1099,3 +1099,4 @@ Target solver: CVC4
   (value (to_rep (select (to_array o1) i))))))))))
   (=> (< k i) (dynamic_property 1 100 (first1 a2) (last1 a2)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -655,3 +655,4 @@ Target solver: CVC4
  ;; File "aco-math-very_longs.ads", line 36, characters 0-0
   (not true))
 (check-sat)
+(exit)

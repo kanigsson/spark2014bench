@@ -336,3 +336,4 @@ Target solver: CVC4
   (= (to_rep (rec__dynamic_preds_rte__small_pair__a (us_split_fields1 x))) o1)
   (in_range (+ o1 o))))))))))))
 (check-sat)
+(exit)

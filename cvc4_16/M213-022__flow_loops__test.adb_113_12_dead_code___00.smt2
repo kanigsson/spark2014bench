@@ -107,3 +107,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 great_justice) true false) (ite (<= great_justice 0)
                                                 true false)) true)))))))
 (check-sat)
+(exit)

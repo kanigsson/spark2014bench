@@ -111,3 +111,4 @@ Target solver: CVC4
   (let ((o (- counter1 1))) (and (in_range1 o) (= counter2 o)))
   (= counter2 counter1)))) (<= 0 counter2))))))))))
 (check-sat)
+(exit)

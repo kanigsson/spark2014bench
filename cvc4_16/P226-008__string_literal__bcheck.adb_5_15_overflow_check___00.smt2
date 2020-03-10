@@ -360,3 +360,4 @@ Target solver: CVC4
   (=> (= p r1b)
   (=> (dynamic_invariant r1b true false true true) (in_range (+ p 4)))))))))
 (check-sat)
+(exit)

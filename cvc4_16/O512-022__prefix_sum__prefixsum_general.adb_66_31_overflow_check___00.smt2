@@ -648,3 +648,4 @@ Target solver: CVC4
   (forall ((temp___198 Int))
   (=> (= temp___198 left3) (in_range1 (+ left3 space1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

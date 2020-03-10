@@ -532,3 +532,4 @@ Target solver: CVC4
   (=> (not (<= usf (div1 o3 2)))
   (=> (= (to_rep h__last) o4) (<= (to_rep h__first) (- usf (div1 o4 2))))))))))))))))))))))
 (check-sat)
+(exit)

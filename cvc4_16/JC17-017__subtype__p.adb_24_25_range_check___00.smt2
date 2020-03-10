@@ -184,3 +184,4 @@ Target solver: CVC4
   (let ((o2 (+ tmp_s2 1)))
   (=> (in_range1 o2) (dynamic_property first last o2)))))))))))))))))))))
 (check-sat)
+(exit)

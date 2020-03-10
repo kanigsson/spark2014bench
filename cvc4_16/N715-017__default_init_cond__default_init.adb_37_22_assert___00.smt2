@@ -166,3 +166,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 w false false true true)
   (=> (init__function_guard (init 0) 0) (= w (init 0))))))))
 (check-sat)
+(exit)

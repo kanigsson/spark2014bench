@@ -434,3 +434,4 @@ Target solver: CVC4
   (=> (= test_rec__sum__result o)
   (<= test_rec__sum__result (* 100 (length m))))))))))
 (check-sat)
+(exit)

@@ -882,3 +882,4 @@ Target solver: CVC4
                                                                   0)) 
                                                                   k))))))))))))))))))))))))))))
 (check-sat)
+(exit)

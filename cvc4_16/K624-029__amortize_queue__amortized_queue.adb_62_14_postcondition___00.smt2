@@ -883,3 +883,4 @@ Target solver: CVC4
      (us_split_fieldsqtmk front__split_fields1))) (+ (length ofront) 
   (length orear))))))))))))))))))))))))
 (check-sat)
+(exit)

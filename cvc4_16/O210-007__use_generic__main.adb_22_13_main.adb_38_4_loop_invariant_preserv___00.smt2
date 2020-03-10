@@ -651,3 +651,4 @@ Target solver: CVC4
   (or (not (= spark__branch true)) (and (<= 0 i1) (<= i1 7)))))
   (=> (not (= i1 7)) (=> (= i2 (+ i1 1)) (<= 0 i2))))))))))))))
 (check-sat)
+(exit)

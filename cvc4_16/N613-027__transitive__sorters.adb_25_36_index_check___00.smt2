@@ -360,3 +360,4 @@ Target solver: CVC4
   (=> (= (to_rep (select values2 x)) o14)
   (=> (= o14 o13) (<= (to_rep values__first) x))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

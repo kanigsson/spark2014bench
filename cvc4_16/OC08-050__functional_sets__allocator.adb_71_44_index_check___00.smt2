@@ -636,3 +636,4 @@ Target solver: CVC4
   (forall ((data (Array Int status))) (model__function_guard (model1 data)
   data)) (=> (not (= res 0)) (<= 1 res)))))))))))
 (check-sat)
+(exit)

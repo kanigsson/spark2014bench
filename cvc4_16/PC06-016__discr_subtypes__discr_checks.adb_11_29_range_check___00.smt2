@@ -155,3 +155,4 @@ Target solver: CVC4
   (=> (= discr_checks__check_derived_rec__R2b__assume r2b)
   (=> (dynamic_invariant r2b true false true true) (in_range1 r2b)))))))
 (check-sat)
+(exit)

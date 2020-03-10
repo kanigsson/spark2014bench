@@ -348,3 +348,4 @@ Target solver: CVC4
   (forall ((remainder1 Int))
   (=> (= remainder1 o7) (in_range1 (* result_hi1 4294967296))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

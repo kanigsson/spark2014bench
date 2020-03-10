@@ -1860,3 +1860,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__instr__graphic_gauge__size (us_split_fields7 x))) o1)
   (in_range (* o1 o)))))))
 (check-sat)
+(exit)

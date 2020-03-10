@@ -118,3 +118,4 @@ Target solver: CVC4
   (get_black_count black_counter2) black_counter2))
   (= (get_black_count black_counter1) 0)))))))
 (check-sat)
+(exit)

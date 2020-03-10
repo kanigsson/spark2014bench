@@ -656,3 +656,4 @@ Target solver: CVC4
   (forall ((space3 Int))
   (=> (= space3 (div1 space2 2)) (=> (< 0 space3) (< space3 temp___288))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

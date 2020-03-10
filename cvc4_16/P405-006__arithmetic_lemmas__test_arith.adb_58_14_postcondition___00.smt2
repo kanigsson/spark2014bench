@@ -321,3 +321,4 @@ Target solver: CVC4
   (=> (and (<= (abs1 r1) (abs1 o1)) (ite (<= 0 o1) (<= 0 r1) (<= r1 0)))
   (<= 0 r1)))))))))))))))
 (check-sat)
+(exit)

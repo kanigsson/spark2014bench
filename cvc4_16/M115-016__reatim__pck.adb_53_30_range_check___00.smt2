@@ -349,3 +349,4 @@ Target solver: CVC4
   (=> (= remainder1 o7)
   (let ((o8 (* result_hi1 4294967296))) (=> (in_range1 o8) (in_range2 o8)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1352,3 +1352,4 @@ Target solver: CVC4
   (= (find_index
      (us_repqtmk v__split_discrs (us_split_fieldsqtmk v__split_fields9)) 4 1) 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

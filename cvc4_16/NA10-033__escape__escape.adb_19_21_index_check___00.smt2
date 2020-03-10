@@ -450,3 +450,4 @@ Target solver: CVC4
   (forall ((o3 character))
   (=> (= (to_rep o3) o2) (<= (to_rep1 result____first) ti1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

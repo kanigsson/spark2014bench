@@ -559,3 +559,4 @@ Target solver: CVC4
   (=> (in_range1 (+ length_stop length1))
   (let ((o (+ length_stop 1))) (=> (in_range1 o) (<= (first1 message) o)))))))))))))))))))
 (check-sat)
+(exit)

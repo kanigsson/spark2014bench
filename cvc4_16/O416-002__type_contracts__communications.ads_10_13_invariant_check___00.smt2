@@ -1009,3 +1009,4 @@ Target solver: CVC4
                                     coms__split_fields1))))
   (type_invariant communications__create__result)))))))))))))))))))
 (check-sat)
+(exit)

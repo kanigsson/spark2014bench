@@ -149,3 +149,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 my_arr false false true true) (dynamic_property 1
   last 1))))))
 (check-sat)
+(exit)

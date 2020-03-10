@@ -447,3 +447,4 @@ Target solver: CVC4
   (=> (dynamic_invariant current_pos2 true true true true)
   (not (= next_read__attr__constrained true))))))))))))))))))
 (check-sat)
+(exit)

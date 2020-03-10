@@ -1812,3 +1812,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 r75s true false true true)
   (=> (<= r74s r75s) (<= (first1 data) r74s))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

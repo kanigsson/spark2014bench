@@ -455,3 +455,4 @@ Target solver: CVC4
   (let ((o1 (+ x longest_common_prefix__lcp__result)))
   (=> (in_range1 o1) (=> (<= x (- o1 1)) (<= 1 x))))))))))))))))))))))))
 (check-sat)
+(exit)

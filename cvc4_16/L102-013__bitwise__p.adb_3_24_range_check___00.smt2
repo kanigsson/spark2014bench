@@ -371,3 +371,4 @@ Target solver: CVC4
   (=> (dynamic_invariant havok_y true false true true) (uint_in_range
   (mod2 havok_x 256))))))
 (check-sat)
+(exit)

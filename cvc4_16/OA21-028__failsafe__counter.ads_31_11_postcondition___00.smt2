@@ -420,3 +420,4 @@ Target solver: CVC4
   (=> (bvule k #x09)
   (=> (= (select inputs3 k) true) (= (select inputs1 (bvadd k #x01)) true)))))))))))
 (check-sat)
+(exit)

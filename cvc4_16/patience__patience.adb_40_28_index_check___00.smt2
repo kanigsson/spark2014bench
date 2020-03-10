@@ -1145,3 +1145,4 @@ Target solver: CVC4
   (= o5 (ite (= o7 topstacki2) true false)))))))))))) (= o5 false))))
   (=> (= o5 true) (<= 0 topstacki2)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

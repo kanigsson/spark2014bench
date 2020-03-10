@@ -350,3 +350,4 @@ Target solver: CVC4
   (= (to_rep1
      (select stable_marriage__invert_1__result (to_rep (select r1 rank)))) rank)))))))))))))))
 (check-sat)
+(exit)

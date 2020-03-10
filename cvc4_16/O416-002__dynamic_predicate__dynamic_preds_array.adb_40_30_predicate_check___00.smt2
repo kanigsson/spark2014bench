@@ -401,3 +401,4 @@ Target solver: CVC4
   (=> (dynamic_invariant b true false true true)
   (let ((o b)) (=> (in_range1 o) (= (mod2 o 2) 0)))))))))))
 (check-sat)
+(exit)

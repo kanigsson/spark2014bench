@@ -254,3 +254,4 @@ Target solver: CVC4
           true false) (ite (and (<= 2 i1) (<= i1 n)) true false)) true)
   (forall ((t2 Int)) (=> (= t2 a1) (in_range1 (+ a1 b1))))))))))))))))))
 (check-sat)
+(exit)

@@ -401,3 +401,4 @@ Target solver: CVC4
   (=> (<= (length s1) 255)
   (=> (<= (length s2) 255) (=> (<= 1 (+ (length s1) (length s2))) (<= 1 1))))))))
 (check-sat)
+(exit)

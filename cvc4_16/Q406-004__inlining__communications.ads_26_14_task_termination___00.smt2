@@ -646,3 +646,4 @@ Target solver: CVC4
  ;; File "communications.ads", line 26, characters 0-0
   (not true))
 (check-sat)
+(exit)

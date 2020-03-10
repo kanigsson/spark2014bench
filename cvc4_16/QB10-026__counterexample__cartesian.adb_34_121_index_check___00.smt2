@@ -702,3 +702,4 @@ Target solver: CVC4
                                                     false)) true)
   (<= (first1 array2) usf)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

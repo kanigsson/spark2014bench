@@ -147,3 +147,4 @@ Target solver: CVC4
   (=> (= arrays__contains_a__result (select s c))
   (=> (= arrays__contains_a__result true) (= (select s c) true)))))))
 (check-sat)
+(exit)

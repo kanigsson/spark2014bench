@@ -675,3 +675,4 @@ Target solver: CVC4
   (and (get_stored_area__function_guard1 o6 o5 o4) (dynamic_invariant o6 true
   false true true)) (in_range (- total_area o6)))))))))))))))))))))
 (check-sat)
+(exit)

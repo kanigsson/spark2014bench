@@ -1112,3 +1112,4 @@ Target solver: CVC4
      (rec__psu_monitoring__monitor_t__config (us_split_fields3 monitor))))) o3)
   (in_range4 (fp.mul RNE o3 o2)))))))))))))))))
 (check-sat)
+(exit)

@@ -632,3 +632,4 @@ Target solver: CVC4
   (=> (exists ((o13 Int)) (= (to_rep (select (to_array a) o12)) o13))
   (<= usf (last1 a21))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

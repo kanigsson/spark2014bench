@@ -441,3 +441,4 @@ Target solver: CVC4
   (us_repqtmk log__split_fields2 o2)))
   (< (log_size1 o1 (us_repqtmk log__split_fields1 o1)) 10000))))))))))
 (check-sat)
+(exit)

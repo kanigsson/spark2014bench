@@ -755,3 +755,4 @@ Target solver: CVC4
   the_file1))
   (=> (= (index the_file) 0) (not (= current_read__attr__constrained true))))))))))))))))))))))
 (check-sat)
+(exit)

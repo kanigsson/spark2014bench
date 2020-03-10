@@ -490,3 +490,4 @@ Target solver: CVC4
   false false true true)
   (=> (default_initial_assumption1 usf false) (dynamic_predicate usf))))))))
 (check-sat)
+(exit)

@@ -164,3 +164,4 @@ Target solver: CVC4
   (=> (= a2 (store a 0 o2))
   (=> (= a3 (store a2 1 o3)) (not (= (bool_eq a3 0 2 a1 0 2) true))))))))))))))
 (check-sat)
+(exit)

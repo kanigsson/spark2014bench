@@ -337,3 +337,4 @@ Target solver: CVC4
   (=> (and (<= 1 o) (<= o 1000))
   (forall ((o1 Int)) (=> (= (to_rep (select a o)) o1) (in_range1 (+ usf x)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -709,3 +709,4 @@ Target solver: CVC4
   (forall ((current_lo1 Int))
   (=> (= current_lo1 o2) (=> (<= (first1 x) (last1 x)) (<= 1 (first1 x))))))))))))))))))))))))
 (check-sat)
+(exit)

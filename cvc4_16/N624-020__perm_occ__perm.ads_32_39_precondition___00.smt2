@@ -513,3 +513,4 @@ Target solver: CVC4
                                              false)) true)
   (<= (first1 a) i)))))))))
 (check-sat)
+(exit)

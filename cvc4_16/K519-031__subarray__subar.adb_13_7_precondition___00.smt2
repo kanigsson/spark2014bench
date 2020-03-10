@@ -165,3 +165,4 @@ Target solver: CVC4
   (forall ((ab (Array Int one_twenty)) (ab1 (Array Int one_twenty)))
   (=> (= ab1 (store ab 1 rliteral)) (= (to_rep (select ab1 1)) 1)))))
 (check-sat)
+(exit)

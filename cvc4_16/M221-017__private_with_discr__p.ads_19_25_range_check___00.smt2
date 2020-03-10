@@ -90,3 +90,4 @@ Target solver: CVC4
  ;; File "p.ads", line 1, characters 0-0
   (not (in_range 10)))
 (check-sat)
+(exit)

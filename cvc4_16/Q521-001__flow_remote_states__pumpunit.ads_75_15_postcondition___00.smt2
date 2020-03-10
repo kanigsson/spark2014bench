@@ -504,3 +504,4 @@ Target solver: CVC4
   (forall ((cur_state2 Int)) (is_ready__function_guard (is_ready cur_state2)
   cur_state2)) (= (is_ready cur_state1) true)))))))))))))
 (check-sat)
+(exit)

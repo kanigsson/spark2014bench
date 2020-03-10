@@ -565,3 +565,4 @@ Target solver: CVC4
   (=> (<= test2__check_array__R11s 0)
   (<= (first1 buffer) test2__check_array__R11s)))))))))))
 (check-sat)
+(exit)

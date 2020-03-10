@@ -870,3 +870,4 @@ Target solver: CVC4
         (slice_boundsqtmk
         (us_split_fieldsqtmk (of_rep2 current_lo3) (of_rep3 hi_index))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

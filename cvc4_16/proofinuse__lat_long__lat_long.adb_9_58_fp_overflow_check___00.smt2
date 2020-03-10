@@ -571,3 +571,4 @@ Target solver: CVC4
      (rec__lat_long__coordinates__long (us_split_fields1 destination))) o3)
   (fp.isFinite32 (fp.div RNE (fp.mul RNE (fp.sub RNE o3 o2) r) o1))))))))))))))))))
 (check-sat)
+(exit)

@@ -338,3 +338,4 @@ Target solver: CVC4
   (=> (dynamic_invariant current_increment false false true true)
   (<= (first1 arr) index)))))))))))
 (check-sat)
+(exit)

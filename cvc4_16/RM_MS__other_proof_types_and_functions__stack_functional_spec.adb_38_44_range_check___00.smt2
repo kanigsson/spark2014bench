@@ -529,3 +529,4 @@ Target solver: CVC4
      (rec__stack_functional_spec__stack_type__pointer my_stack__split_fields)) o)
   (in_range2 (+ o 1)))))))))))))
 (check-sat)
+(exit)

@@ -1168,3 +1168,4 @@ Target solver: CVC4
   (= o10 (ite (= (choose o9) true) (+ o8 1) o8)))
   (<= (to_rep r__first_2) usf1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

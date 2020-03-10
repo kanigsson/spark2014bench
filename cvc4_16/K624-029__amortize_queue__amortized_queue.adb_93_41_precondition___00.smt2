@@ -960,3 +960,4 @@ Target solver: CVC4
   (or (= 1000 0)
   (<= (length (rec__amortized_queue__queue__rear (us_split_fields3 q))) 1000))))))))
 (check-sat)
+(exit)

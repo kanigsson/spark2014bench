@@ -245,3 +245,4 @@ Target solver: CVC4
   (forall ((usf1 us_rep)) (discr_ok__function_guard (discr_ok usf1) usf1))
   (= (discr_ok usf) true)))))))
 (check-sat)
+(exit)

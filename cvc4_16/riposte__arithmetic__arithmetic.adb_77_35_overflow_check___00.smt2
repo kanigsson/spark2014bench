@@ -211,3 +211,4 @@ Target solver: CVC4
           true false) (ite (and (<= b i1) (<= i1 (- 1))) true false)) true)
   (= i1 temp___218)))))))))) (= r2 r1)))))))) (in_range1 (+ a b)))))))))))
 (check-sat)
+(exit)

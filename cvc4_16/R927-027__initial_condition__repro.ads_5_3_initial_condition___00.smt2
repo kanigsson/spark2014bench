@@ -120,3 +120,4 @@ Target solver: CVC4
   (forall ((a1 Int) (b1 Int)) (invariant____function_guard
   (invariant__ b1 a1) b1 a1)) (= (invariant__ b a) true)))))))))))
 (check-sat)
+(exit)

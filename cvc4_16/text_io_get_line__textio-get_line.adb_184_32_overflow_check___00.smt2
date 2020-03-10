@@ -1097,3 +1097,4 @@ Target solver: CVC4
   (=> (= (to_rep1 item__last) o9)
   (let ((o10 (- o9 o8))) (=> (in_range1 o10) (in_range1 (+ o10 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

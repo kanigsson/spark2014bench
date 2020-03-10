@@ -1284,3 +1284,4 @@ Target solver: CVC4
                       true false)) true)
   (= (to_rep (rec__static_discr__holder__unused current__split_discrs)) 100)))))))))))))))))))))
 (check-sat)
+(exit)

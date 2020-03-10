@@ -688,3 +688,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= tc_flag 3) true false))
   (= spark__branch true))))))
 (check-sat)
+(exit)

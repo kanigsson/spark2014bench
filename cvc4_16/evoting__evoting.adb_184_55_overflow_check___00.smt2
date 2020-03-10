@@ -1007,3 +1007,4 @@ Target solver: CVC4
                                          current_out1 current_err1))
   (in_range1 (* last_candidate 20)))))))))))))))
 (check-sat)
+(exit)

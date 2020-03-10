@@ -479,3 +479,4 @@ Target solver: CVC4
   (let ((o3 (+ y longest_common_prefix__lcp__result)))
   (=> (in_range1 o3) (<= 1 o3)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

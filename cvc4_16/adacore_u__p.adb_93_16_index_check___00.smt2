@@ -357,3 +357,4 @@ Target solver: CVC4
   (and (<= (first1 a) temp___348) (<= temp___348 current_index)))
   (<= (first1 a) current_index)))))))))))))
 (check-sat)
+(exit)

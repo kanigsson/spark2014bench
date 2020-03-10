@@ -197,3 +197,4 @@ Target solver: CVC4
   (=> (= (to_rep (select x j)) o1)
   (=> (= (to_rep o2) o1) (=> (<= 1 k) (=> (<= k 10) (in_range (+ k 1)))))))))))))))
 (check-sat)
+(exit)

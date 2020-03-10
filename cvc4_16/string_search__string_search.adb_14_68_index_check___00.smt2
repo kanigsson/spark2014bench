@@ -499,3 +499,4 @@ Target solver: CVC4
                                         (select (to_array o7) (+ i (- i1 1)))))))))
   (let ((o9 (+ j (- i 1)))) (=> (in_range1 o9) (<= (first1 haystack) o9))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -994,3 +994,4 @@ Target solver: CVC4
   (=> (and (<= (first3 usf) temp___287) (<= temp___287 (last3 usf)))
   (= (to_rep (select (to_array1 usf) temp___287)) 1))) (type_invariant3 usf))))))))
 (check-sat)
+(exit)

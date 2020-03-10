@@ -490,3 +490,4 @@ Target solver: CVC4
   (=> (= saved_a a1)
   (= (to_rep (select saved_a 0)) (to_rep (select ghost__ 0)))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1217,3 +1217,4 @@ Target solver: CVC4
   (=> (not (= j (first_2 a)))
   (let ((o (- j 1))) (=> (in_range1 o) (<= o (to_rep r__last_2))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

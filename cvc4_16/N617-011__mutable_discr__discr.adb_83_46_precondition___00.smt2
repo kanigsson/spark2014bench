@@ -325,3 +325,4 @@ Target solver: CVC4
   (=> (default_initial_assumption
   (us_repqtmk (us_split_discrsqtmk d1__split_discrs)) false) (< 0 c)))))))
 (check-sat)
+(exit)

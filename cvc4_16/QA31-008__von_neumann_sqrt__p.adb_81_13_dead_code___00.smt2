@@ -405,3 +405,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (bvuge ux1 b1) true false))
   (not (= spark__branch true)))))))))))))))))))
 (check-sat)
+(exit)

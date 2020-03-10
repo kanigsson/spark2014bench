@@ -193,3 +193,4 @@ Target solver: CVC4
   (=> (dynamic_invariant e true false true true)
   (=> (= (identity (identity c1)) e) (in_range (+ a b)))))))))))))))))
 (check-sat)
+(exit)

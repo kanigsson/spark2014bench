@@ -283,3 +283,4 @@ Target solver: CVC4
   (let ((o6 (+ o5 o4))) (and (= o o6) (in_range o6)))))))))))) (in_range
   (* (- j i) 3000)))))))))
 (check-sat)
+(exit)

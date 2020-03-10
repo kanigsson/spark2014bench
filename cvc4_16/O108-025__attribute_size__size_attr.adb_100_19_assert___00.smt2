@@ -2281,3 +2281,4 @@ Target solver: CVC4
   (=> (= ua4 (size_attr__ua4__aggregate_def 1))
   (=> (<= 0 value__size1) (<= 0 value__size3)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

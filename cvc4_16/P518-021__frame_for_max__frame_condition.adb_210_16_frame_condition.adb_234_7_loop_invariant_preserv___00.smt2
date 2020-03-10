@@ -575,3 +575,4 @@ Target solver: CVC4
  ;; File "frame_condition.ads", line 24, characters 0-0
   (not true))
 (check-sat)
+(exit)

@@ -193,3 +193,4 @@ Target solver: CVC4
   (=> (in_range1 o1)
   (forall ((count5 Int)) (=> (= count5 o1) (= count5 k2)))))))))))))))))))))))))))
 (check-sat)
+(exit)

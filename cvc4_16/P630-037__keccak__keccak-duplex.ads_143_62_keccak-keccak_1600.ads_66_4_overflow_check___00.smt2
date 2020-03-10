@@ -1102,3 +1102,4 @@ Target solver: CVC4
         ctx__split_fields)))))
   (=> (<= out_data_bit_length o1) (in_range (+ out_data_bit_length 7)))))))))))
 (check-sat)
+(exit)

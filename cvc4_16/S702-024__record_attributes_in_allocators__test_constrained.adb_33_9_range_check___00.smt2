@@ -503,3 +503,4 @@ Target solver: CVC4
   (= (rec__test_constrained__r__b (us_split_discrs1 y__pointer_value)) 
   r23b) (in_range (ite r23b 1 0))))))))))
 (check-sat)
+(exit)

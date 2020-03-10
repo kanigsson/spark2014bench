@@ -185,3 +185,4 @@ Target solver: CVC4
   (=> (forall ((usf1 us_rep)) (is_ok__function_guard (is_ok usf1) usf1))
   (= (is_ok usf) true))))))))
 (check-sat)
+(exit)

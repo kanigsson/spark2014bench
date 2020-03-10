@@ -263,3 +263,4 @@ Target solver: CVC4
   (=> (ite (= (select sel from) true) (= o1 1) (= o1 0))
   (let ((o2 (+ o1 o))) (=> (in_range o2) (in_range2 o2))))))))))
 (check-sat)
+(exit)

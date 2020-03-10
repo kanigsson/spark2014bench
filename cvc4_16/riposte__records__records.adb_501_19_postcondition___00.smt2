@@ -306,3 +306,4 @@ Target solver: CVC4
   (rec__records_prooffuncs__optional_pair__exists (us_split_fields3 r)))
   (= records__field_suppression_on_computation_is_insufficient__result true))))))
 (check-sat)
+(exit)

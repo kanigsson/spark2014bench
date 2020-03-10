@@ -562,3 +562,4 @@ Target solver: CVC4
   (and (<= (to_rep z__first) 5) (<= 5 (to_rep z__last)))))
   (=> (<= 1 5) (<= (to_rep x__first) 1))))))))))))))))))))))))
 (check-sat)
+(exit)

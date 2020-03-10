@@ -449,3 +449,4 @@ Target solver: CVC4
   (=> (= l1 o4)
   (forall ((o5 Int)) (=> (= (to_rep a__first) o5) (in_range1 (+ o5 j)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

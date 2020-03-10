@@ -1396,3 +1396,4 @@ Target solver: CVC4
   (= (is_preferred_1 g11 (to_rep (select result__ g21))
      (select ranking_2 g21)) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

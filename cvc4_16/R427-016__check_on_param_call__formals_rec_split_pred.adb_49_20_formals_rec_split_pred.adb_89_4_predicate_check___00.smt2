@@ -1145,3 +1145,4 @@ Target solver: CVC4
   (forall ((x__split_fields8 us_split_fields)) (dynamic_predicate1
   (us_repqtmk x__split_discrs x__split_fields8)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

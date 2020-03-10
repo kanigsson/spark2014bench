@@ -862,3 +862,4 @@ Target solver: CVC4
   (=> (default_initial_assumption (us_repqtmk foo__split_fields) false)
   (in_range 0)))))
 (check-sat)
+(exit)

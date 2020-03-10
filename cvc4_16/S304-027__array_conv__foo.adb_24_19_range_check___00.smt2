@@ -733,3 +733,4 @@ Target solver: CVC4
   (=> (= (to_rep1 value__last) o)
   (=> (= (to_rep1 value__first) o1) (in_range (length o1 o)))))))))
 (check-sat)
+(exit)

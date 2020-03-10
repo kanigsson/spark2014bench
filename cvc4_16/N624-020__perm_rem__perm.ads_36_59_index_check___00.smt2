@@ -438,3 +438,4 @@ Target solver: CVC4
                                                 false)) true)
   (<= usf1 (last1 b)))))))))))))))
 (check-sat)
+(exit)

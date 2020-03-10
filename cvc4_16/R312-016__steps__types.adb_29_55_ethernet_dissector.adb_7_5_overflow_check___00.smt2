@@ -725,3 +725,4 @@ Target solver: CVC4
   (let ((o (power 256 i)))
   (=> (in_range2 o) (=> (in_range_int o) (in_range1 (- (last1 buffer) i)))))))))))))
 (check-sat)
+(exit)

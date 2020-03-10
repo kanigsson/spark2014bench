@@ -432,3 +432,4 @@ Target solver: CVC4
   (=> (and (<= 0 usf) (<= usf 20))
   (=> (= (select winners2 usf) true) (<= 0 usf)))))))))))))))))))))
 (check-sat)
+(exit)

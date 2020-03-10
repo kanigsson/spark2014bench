@@ -263,3 +263,4 @@ Target solver: CVC4
   (+ (to_rep (rec__records_prooffuncs__pair__a (us_split_fields1 a))) 
   (to_rep (rec__records_prooffuncs__pair__a (us_split_fields1 b)))))))))))
 (check-sat)
+(exit)

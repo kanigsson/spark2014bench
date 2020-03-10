@@ -523,3 +523,4 @@ Target solver: CVC4
   (=> (= o true)
   (=> (not (= space 1)) (=> (not (= space 2)) (not (= space 4)))))))))))))))))
 (check-sat)
+(exit)

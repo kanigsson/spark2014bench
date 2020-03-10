@@ -857,3 +857,4 @@ Target solver: CVC4
   (let ((o17 (- o16 usf)))
   (=> (in_range1 o17) (=> (in_range6 o17) (<= 1 o17))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -513,3 +513,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (bvult (first1 buf) (last1 buf)) true false))
   (=> (= spark__branch true) (bvult (last1 buf) #xFFFFFFFF))))))))
 (check-sat)
+(exit)

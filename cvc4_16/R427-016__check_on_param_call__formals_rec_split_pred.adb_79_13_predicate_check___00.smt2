@@ -1080,3 +1080,4 @@ Target solver: CVC4
      (rec__formals_rec_split_pred__rec__h
      formals_rec_split_pred__p2__a__fields1)) 0)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

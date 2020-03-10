@@ -274,3 +274,4 @@ Target solver: CVC4
   (=> (in_range2 y8)
   (let ((o1 (+ x8 34))) (=> (in_range o1) (in_range2 o1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

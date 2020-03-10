@@ -866,3 +866,4 @@ Target solver: CVC4
   (=> (dynamic_invariant initializer true false true true) (in_range2
   upper_bound)))))
 (check-sat)
+(exit)

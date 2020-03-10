@@ -6019,3 +6019,4 @@ Target solver: CVC4
   (= (contains
      (to_base (us_repqtmk2 v__split_discrs v__split_fields2 v__attr__tag)) 2) true)))))))))))))))))))))
 (check-sat)
+(exit)

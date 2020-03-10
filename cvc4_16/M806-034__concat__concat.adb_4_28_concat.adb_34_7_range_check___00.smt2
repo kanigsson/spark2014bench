@@ -514,3 +514,4 @@ Target solver: CVC4
   (=> (<= 6 10) (and (and (<= 1 6) (<= 6 10)) (and (<= 1 10) (<= 10 10))))
   (in_range (- (+ 6 (+ (length 6 10) (length 1 5))) 1))))))
 (check-sat)
+(exit)

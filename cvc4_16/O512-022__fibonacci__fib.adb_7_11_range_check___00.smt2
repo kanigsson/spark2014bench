@@ -240,3 +240,4 @@ Target solver: CVC4
   (=> (dynamic_invariant b false false true true)
   (=> (dynamic_invariant t false false true true) (=> (<= 2 n) (<= 0 2))))))))))
 (check-sat)
+(exit)

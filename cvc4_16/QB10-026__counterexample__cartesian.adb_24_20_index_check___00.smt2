@@ -680,3 +680,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array array1) index1)) o5)
   (<= (to_rep result____first) result_index1)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -277,3 +277,4 @@ Target solver: CVC4
   (=> (fp.leq d (fp #b0 #b10000101 #b10010000000000000000000))
   (dynamic_property1 (fp #b0 #b00000000 #b00000000000000000000000) last1 x)))))))))))
 (check-sat)
+(exit)

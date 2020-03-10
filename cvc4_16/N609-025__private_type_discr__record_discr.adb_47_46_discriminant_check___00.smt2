@@ -865,3 +865,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk3
   (of_array (slide (to_array a) (first1 a) 1) 1 (last1 a)))))))))))))))))))
 (check-sat)
+(exit)

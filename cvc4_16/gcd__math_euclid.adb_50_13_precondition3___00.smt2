@@ -314,3 +314,4 @@ Target solver: CVC4
   (forall ((o5 Int) (o6 Int)) (divides__function_guard (divides o5 o6) o5
   o6)) (not (= (divides b a) true))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -445,3 +445,4 @@ Target solver: CVC4
      (rec__flight_manager__engine_values__x_speed result____split_fields2)) o1)
   (in_range1 (* o1 c4b))))))))))))))))))))))
 (check-sat)
+(exit)

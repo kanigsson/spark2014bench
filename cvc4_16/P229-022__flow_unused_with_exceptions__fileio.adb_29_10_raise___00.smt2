@@ -502,3 +502,4 @@ Target solver: CVC4
   true)) (= o (ite (= o2 0) false true)))))) (= o false))
   (=> (= spark__branch o) (not (= spark__branch true)))))))))))))))
 (check-sat)
+(exit)

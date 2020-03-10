@@ -277,3 +277,4 @@ Target solver: CVC4
   (=> (= sorters_not_global__index_of_minimum__result min2)
   (<= starting_at sorters_not_global__index_of_minimum__result)))))))))))
 (check-sat)
+(exit)

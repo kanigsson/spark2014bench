@@ -310,3 +310,4 @@ Target solver: CVC4
   (let ((o1 (- y)))
   (=> (in_range2 o1) (=> (= (mod2 (* x o1) o1) 0) (not (= y 0)))))))))))))))))))
 (check-sat)
+(exit)

@@ -993,3 +993,4 @@ Target solver: CVC4
                    false true))
   (not (= spark__branch true)))))))))
 (check-sat)
+(exit)

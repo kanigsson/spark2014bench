@@ -385,3 +385,4 @@ Target solver: CVC4
   (forall ((j1 Int))
   (=> (and (<= (+ k 1) j1) (<= j1 (to_rep a__last))) (= (select a1 j1) true))))))))))))))
 (check-sat)
+(exit)

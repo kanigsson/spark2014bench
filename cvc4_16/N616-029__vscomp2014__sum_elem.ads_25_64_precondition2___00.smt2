@@ -743,3 +743,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__sum_elem__interval__last (us_split_fields3 o5))) o6)
   (=> (in_range5 usf) (<= 0 usf))))))))))))))))))))))
 (check-sat)
+(exit)

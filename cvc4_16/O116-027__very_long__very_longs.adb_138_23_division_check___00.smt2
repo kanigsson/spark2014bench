@@ -1016,3 +1016,4 @@ Target solver: CVC4
                              (rt result____split_fields2)))
   (not (= 256 0)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

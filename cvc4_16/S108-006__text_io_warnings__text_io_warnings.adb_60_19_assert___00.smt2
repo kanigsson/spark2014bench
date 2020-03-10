@@ -1718,3 +1718,4 @@ Target solver: CVC4
   (= (page_length standard_in22 standard_out22 standard_err22 current_err22
      file_system22 current_in22 current_out22) 80))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

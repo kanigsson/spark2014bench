@@ -601,3 +601,4 @@ Target solver: CVC4
   (forall ((o6 Int))
   (=> (= (to_rep1 (select cut o5)) o6) (<= (first1 s) (- o6 1)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

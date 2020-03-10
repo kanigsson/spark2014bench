@@ -237,3 +237,4 @@ Target solver: CVC4
   (=> (blah__function_guard (blah (slide x 5 1)) (slide x 5 1))
   (= (blah (slide x 5 1)) true)))))
 (check-sat)
+(exit)

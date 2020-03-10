@@ -242,3 +242,4 @@ Target solver: CVC4
   (=> (= simple_arrays__array_axiom_transitivity_worse__result o)
   (= simple_arrays__array_axiom_transitivity_worse__result 42)))))))))
 (check-sat)
+(exit)

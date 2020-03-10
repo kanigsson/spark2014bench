@@ -1094,3 +1094,4 @@ Target solver: CVC4
   (=> (dynamic_invariant catstring6 true false true true)
   (<= (first1 vstring) 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

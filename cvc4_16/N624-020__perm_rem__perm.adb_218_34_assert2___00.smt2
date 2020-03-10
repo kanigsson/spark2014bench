@@ -1150,3 +1150,4 @@ Target solver: CVC4
      (to_array temp___242) (first1 temp___242) (last1 temp___242)))) true))))
   (forall ((ih1 Int)) (=> (= ih1 o13) (= (distinct ih1 0) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

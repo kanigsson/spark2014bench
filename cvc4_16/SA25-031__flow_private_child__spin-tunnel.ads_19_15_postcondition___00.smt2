@@ -266,3 +266,4 @@ Target solver: CVC4
   (forall ((internal_var1 Int)) (is_valid__function_guard
   (is_valid internal_var1) internal_var1)) (= (is_valid internal_var) true))))))))))))))
 (check-sat)
+(exit)

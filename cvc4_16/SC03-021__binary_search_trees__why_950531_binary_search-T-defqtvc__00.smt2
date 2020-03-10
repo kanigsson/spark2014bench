@@ -407,3 +407,4 @@ Target solver: CVC4
   (=> (in_range (- 2147483647 o1))
   (rec__binary_search__tree_acc__pointer_value__pred t))))))))
 (check-sat)
+(exit)

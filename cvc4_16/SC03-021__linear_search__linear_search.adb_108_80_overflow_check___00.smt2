@@ -999,3 +999,4 @@ Target solver: CVC4
   (let ((o5 (- 2147483647 i)))
   (=> (in_range1 o5) (in_range1 (+ (min o5 o4) i)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

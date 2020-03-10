@@ -548,3 +548,4 @@ Target solver: CVC4
   (= string_search__brute_force_slice__result1 0))))
   (<= 0 string_search__brute_force_slice__result1)))))))))))
 (check-sat)
+(exit)

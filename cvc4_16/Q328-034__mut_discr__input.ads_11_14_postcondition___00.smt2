@@ -787,3 +787,4 @@ Target solver: CVC4
   (=> (in_range1 o3)
   (forall ((size1 Int)) (=> (= size1 o3) (<= size1 1024))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

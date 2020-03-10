@@ -1809,3 +1809,4 @@ Target solver: CVC4
   (=> (dynamic_invariant message_imprint true false true true) (in_range1
   (length1 message_imprint))))))))
 (check-sat)
+(exit)

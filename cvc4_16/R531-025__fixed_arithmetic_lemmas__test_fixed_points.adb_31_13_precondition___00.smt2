@@ -327,3 +327,4 @@ Target solver: CVC4
   (=> (<= 0 val1)
   (=> (<= val1 (- (fxp_div_int 2147483647 val2) 1)) (<= 0 val1)))))))
 (check-sat)
+(exit)

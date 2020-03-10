@@ -206,3 +206,4 @@ Target solver: CVC4
   (let ((o1 (to_int (fp.to_real (fp.roundToIntegral RNA (fp.roundToIntegral RTN o))))))
   (=> (in_range1 o1) (in_range (* o1 right)))))))))))))
 (check-sat)
+(exit)

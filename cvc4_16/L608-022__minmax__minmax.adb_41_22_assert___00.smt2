@@ -162,3 +162,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 y true false true true)
   (=> (< x y) (=> (= min2 (min x y)) (= min2 x))))))))))
 (check-sat)
+(exit)

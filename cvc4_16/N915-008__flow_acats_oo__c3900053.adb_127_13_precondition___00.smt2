@@ -2675,3 +2675,4 @@ Target solver: CVC4
                                                                  false true)) 
   (ite (= o 0) false true))) (not (= spark__branch1 true)))))))))))))
 (check-sat)
+(exit)

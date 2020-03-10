@@ -97,3 +97,4 @@ Target solver: CVC4
   (=> (dynamic_invariant pr_var true false true true)
   (=> (dynamic_invariant gn true false true true) (in_range (+ gn pr_var)))))))
 (check-sat)
+(exit)

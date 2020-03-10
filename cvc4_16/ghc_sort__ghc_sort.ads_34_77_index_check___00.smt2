@@ -869,3 +869,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array1 ghc_sort__cut__result) o9)) o10)
   (<= (first1 s) (- o10 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

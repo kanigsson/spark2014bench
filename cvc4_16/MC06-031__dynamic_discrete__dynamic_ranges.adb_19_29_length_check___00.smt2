@@ -341,3 +341,4 @@ Target solver: CVC4
   (=> (= (first1 a2) 1)
   (=> (= (last1 a2) 100) (=> (<= (first1 a2) (last1 a2)) (<= 1 100))))))))))))
 (check-sat)
+(exit)

@@ -130,3 +130,4 @@ Target solver: CVC4
   (forall ((k1 Int))
   (=> (= k1 o1) (forall ((q1 Int)) (=> (= q1 k1) (in_range1 (- j))))))))))))))))))))))))
 (check-sat)
+(exit)

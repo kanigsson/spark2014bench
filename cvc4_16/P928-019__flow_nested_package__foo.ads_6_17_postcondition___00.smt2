@@ -113,3 +113,4 @@ Target solver: CVC4
   (=> (dynamic_invariant w true false true true)
   (=> (= y1 tmp) (= y1 secret))))))))))))
 (check-sat)
+(exit)

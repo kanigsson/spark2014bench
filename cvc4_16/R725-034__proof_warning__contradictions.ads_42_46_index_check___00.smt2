@@ -299,3 +299,4 @@ Target solver: CVC4
   (forall ((o4 Int))
   (=> (= (to_rep (select v usf)) o4) (<= (to_rep v__first) usf))))))))))))))))))))))))
 (check-sat)
+(exit)

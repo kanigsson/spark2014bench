@@ -267,3 +267,4 @@ Target solver: CVC4
   (=> (in_range o8)
   (forall ((tmp13 Int)) (=> (= tmp13 (mod2 o8 z)) (in_range (div1 x y))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

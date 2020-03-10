@@ -1821,3 +1821,4 @@ Target solver: CVC4
                                                current_in28 current_out28))
   (= (is_open target1) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

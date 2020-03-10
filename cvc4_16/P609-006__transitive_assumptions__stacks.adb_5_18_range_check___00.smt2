@@ -273,3 +273,4 @@ Target solver: CVC4
   (is_full top1 data1) top1 data1))
   (=> (not (= (is_full top data) true)) (in_range2 (+ top 1)))))))))
 (check-sat)
+(exit)

@@ -1138,3 +1138,4 @@ Target solver: CVC4
   (=> (in_range1 (* 100 o6))
   (=> (and (<= (first_2 a) j) (<= j (last_2 a))) (<= i (last2 a))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -366,3 +366,4 @@ Target solver: CVC4
   (=> (not (= u1__attr__constrained true))
   (=> (= u2__attr__constrained true) (= c__attr__constrained true)))))))))))))))))
 (check-sat)
+(exit)

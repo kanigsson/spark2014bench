@@ -1023,3 +1023,4 @@ Target solver: CVC4
                                                             (rec__ints__int__max
                                                             ic__split_fields2)) 10))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

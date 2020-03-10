@@ -1121,3 +1121,4 @@ Target solver: CVC4
   (= (to_rep1 (get1 r k l)) (add_one (to_rep (get (to_array a) k l))
                             (to_rep1 (get1 r k (- l 1)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

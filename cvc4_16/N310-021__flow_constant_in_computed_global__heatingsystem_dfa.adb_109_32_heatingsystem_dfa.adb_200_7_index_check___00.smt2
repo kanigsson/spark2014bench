@@ -672,3 +672,4 @@ Target solver: CVC4
   (=> (= spark__branch1 (ite (= switchposition1 1) true false))
   (=> (not (= spark__branch1 true)) (<= 2 switchposition1)))))))))))))))))
 (check-sat)
+(exit)

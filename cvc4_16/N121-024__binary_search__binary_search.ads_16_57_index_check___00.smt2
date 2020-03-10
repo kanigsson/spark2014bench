@@ -613,3 +613,4 @@ Target solver: CVC4
   (ite (<= binary_search__search__result (last1 a)) true false)) true)
   (<= (first1 a) binary_search__search__result)))))))))))))
 (check-sat)
+(exit)

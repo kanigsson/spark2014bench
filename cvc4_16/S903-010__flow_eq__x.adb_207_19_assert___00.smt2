@@ -354,3 +354,4 @@ Target solver: CVC4
   (=> (forall ((a1 Int) (b1 Int)) (oeq__function_guard (oeq a1 b1) a1 b1))
   (= (oeq a b) true)))))))))))))
 (check-sat)
+(exit)

@@ -570,3 +570,4 @@ Target solver: CVC4
   (= d__is_null_pointer (rec__test_goto_borrow__list__is_null_pointer usf1))))
   (in_range1 (- 2147483647 i1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

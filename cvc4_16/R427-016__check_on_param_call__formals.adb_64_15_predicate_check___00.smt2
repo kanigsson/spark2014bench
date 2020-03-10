@@ -254,3 +254,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (or (and (<= (- 10) o) (<= o (- 1))) (and (<= 1 o) (<= o 10)))))))))))
 (check-sat)
+(exit)

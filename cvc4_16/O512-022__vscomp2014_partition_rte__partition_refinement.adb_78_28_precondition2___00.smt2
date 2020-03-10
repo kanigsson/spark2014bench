@@ -2212,3 +2212,4 @@ Target solver: CVC4
   (=> (dynamic_invariant4 i true false true true)
   (forall ((o2 Int)) (=> (= (to_rep5 (select f i)) o2) (<= 0 o2))))))))))))))))))
 (check-sat)
+(exit)

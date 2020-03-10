@@ -991,3 +991,4 @@ Target solver: CVC4
   (let ((o4 (+ (first1 data) offset1)))
   (=> (in_range1 o4) (in_range1 (+ o4 i))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

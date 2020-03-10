@@ -1311,3 +1311,4 @@ Target solver: CVC4
       (of_array (to_array temp___1195) (first1 temp___1195)
       (last1 temp___1195))) 268435455)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -300,3 +300,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__p__t__d hack__split_discrs)) o)
   (forall ((result__1 Int)) (=> (= result__1 o) (= result__1 value)))))))))))))
 (check-sat)
+(exit)

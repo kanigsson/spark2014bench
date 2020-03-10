@@ -1125,3 +1125,4 @@ Target solver: CVC4
   (forall ((idx1 Int))
   (=> (= idx1 o) (forall ((o1 card1)) (=> (= (to_rep1 o1) c) (<= 0 idx1)))))))))))))))))))))))))
 (check-sat)
+(exit)

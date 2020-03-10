@@ -436,3 +436,4 @@ Target solver: CVC4
   (and (= found1 found) (= location2 location1)))))))
   (=> (= found1 true) (in_range2 (- location2 1))))))))))))))
 (check-sat)
+(exit)

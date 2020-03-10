@@ -624,3 +624,4 @@ Target solver: CVC4
   (and (<= i11 2) (= (- (last1 temp___255) (first1 temp___255)) (- 2 i11)))
   (< 2 i11)) (=> (<= i11 2) (<= 1 i11)))))))))))))))))))))))
 (check-sat)
+(exit)

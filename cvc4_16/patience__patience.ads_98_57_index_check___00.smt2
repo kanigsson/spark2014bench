@@ -945,3 +945,4 @@ Target solver: CVC4
      (select (select (rec__patience__state__stacks (us_split_fields1 s)) usf) usf2)) temp___524)
   (<= 0 temp___524))))))))))))))))))))))
 (check-sat)
+(exit)

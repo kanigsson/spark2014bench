@@ -514,3 +514,4 @@ Target solver: CVC4
   (not
   (=> (dynamic_invariant s true false true true) (uint_in_range (length s)))))
 (check-sat)
+(exit)

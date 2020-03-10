@@ -555,3 +555,4 @@ Target solver: CVC4
   (=> (dynamic_invariant y true false true true) (dynamic_predicate5
   (formals__u__aggregate_def 1))))))))))))
 (check-sat)
+(exit)

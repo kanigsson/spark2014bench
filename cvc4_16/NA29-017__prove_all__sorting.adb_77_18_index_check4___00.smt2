@@ -582,3 +582,4 @@ Target solver: CVC4
   (=> (exists ((o10 Int)) (= (to_rep (select a usf)) o10))
   (<= usf (to_rep a__last))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

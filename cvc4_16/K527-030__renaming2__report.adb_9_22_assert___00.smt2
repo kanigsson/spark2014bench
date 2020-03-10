@@ -81,3 +81,4 @@ Target solver: CVC4
   (=> (and (opposite__function_guard o1 o) (= (= o1 true) (not (= o true))))
   (forall ((x Bool)) (=> (= x o1) (= x true))))))))
 (check-sat)
+(exit)

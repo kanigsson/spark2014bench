@@ -1431,3 +1431,4 @@ Target solver: CVC4
   (= (and (ite (<= first2 usf) true false) (ite (<= usf o2) true false)) true)
   (let ((o3 (- last3 usf))) (=> (in_range1 o3) (in_range1 (+ o3 first2))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

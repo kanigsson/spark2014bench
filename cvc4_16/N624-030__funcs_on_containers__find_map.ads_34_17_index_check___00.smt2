@@ -2086,3 +2086,4 @@ Target solver: CVC4
   (= temp___879 (get (model1 find_map__find_all__result) usf)))
   (<= (first1 a) temp___879))))))))))))))))))))))))))))
 (check-sat)
+(exit)

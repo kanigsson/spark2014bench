@@ -295,3 +295,4 @@ Target solver: CVC4
   (=> (= a_vector1 (store a_vector a_pointer1 o1))
   (= a_pointer1 (+ a_pointer 1))))))))))))))))))
 (check-sat)
+(exit)

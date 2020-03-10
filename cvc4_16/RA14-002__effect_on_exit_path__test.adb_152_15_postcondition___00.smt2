@@ -905,3 +905,4 @@ Target solver: CVC4
      (rec__test__os_mbx_t__mbx_array q_1))))
      (select os_task_mbx_rw1 temp___index_626))) true))))))))))))))))))))
 (check-sat)
+(exit)

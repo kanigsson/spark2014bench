@@ -1201,3 +1201,4 @@ Target solver: CVC4
   (=> (= (to_rep o9) idx1)
   (=> (and (<= 0 stackisize2) (<= stackisize2 99)) (<= 0 i2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -996,3 +996,4 @@ Target solver: CVC4
      (rec__bounded_dynamic_strings__sequence__capacity
      (us_split_discrs1 bounded_dynamic_strings__null_sequence__result))) 0))))))))))))))))))
 (check-sat)
+(exit)

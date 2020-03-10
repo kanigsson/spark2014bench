@@ -99,3 +99,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (=> (= test_annotate__f_3__result 0) (= test_annotate__f_3__result x))))))
 (check-sat)
+(exit)

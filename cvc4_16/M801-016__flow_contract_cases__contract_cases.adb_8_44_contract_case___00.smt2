@@ -147,3 +147,4 @@ Target solver: CVC4
   (forall ((num_out1 Int))
   (=> (= num_out1 o) (=> (= (< num_out 10) true) (< num_out1 100))))))))))))
 (check-sat)
+(exit)

@@ -141,3 +141,4 @@ Target solver: CVC4
                                           false)) true)
   (=> (not (= j1 5)) (<= 1 u))))))))))))))
 (check-sat)
+(exit)

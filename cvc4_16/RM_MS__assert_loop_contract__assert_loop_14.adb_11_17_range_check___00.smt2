@@ -220,3 +220,4 @@ Target solver: CVC4
   (ite (and (not (= (to_rep (select a i1)) x)) (< i1 10)) true false)) true)
   (in_range2 (+ i1 1)))))))))))))
 (check-sat)
+(exit)

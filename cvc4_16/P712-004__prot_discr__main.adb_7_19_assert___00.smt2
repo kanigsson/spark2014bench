@@ -262,3 +262,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 (us_repqtmk2 p2__split_discrs) true true true true)
   (=> (= (rec__p__pt__d p2__split_discrs) d2) (not (= d1 d2))))))))))
 (check-sat)
+(exit)

@@ -137,3 +137,4 @@ Target solver: CVC4
   (and (= (cur_state state3) 0) (dynamic_invariant state3 true true true
   true)) (= item2_done1 item2_done))) (not (= spark__branch1 true)))))))))))))))))
 (check-sat)
+(exit)

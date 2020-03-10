@@ -744,3 +744,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 2 i) true false) (ite (<= i 7) true false)) true)
   (= (make_mask i) (bvsub (ite (< i 256) (bvshl #x01 ((_ int2bv 8) i)) #x00) #x01)))))))))
 (check-sat)
+(exit)

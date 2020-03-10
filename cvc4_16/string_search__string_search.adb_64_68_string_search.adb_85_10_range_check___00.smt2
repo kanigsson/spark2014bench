@@ -588,3 +588,4 @@ Target solver: CVC4
   (let ((o10 (+ o9 1)))
   (=> (in_range1 o10) (=> (not (= i1 o10)) (in_range1 (length needle)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -378,3 +378,4 @@ Target solver: CVC4
                                                        (last1 c)) true false)))
   (= o3 false))))) (<= (first1 s) courant1)))))))))))))))))))))))
 (check-sat)
+(exit)

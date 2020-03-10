@@ -290,3 +290,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 2 i) true false) (ite (<= i r4b) true false)) true)
   (forall ((i1 Int)) (=> (and (<= 2 i1) (<= i1 r4b)) (not (= i1 0)))))))))))))))))))))))))
 (check-sat)
+(exit)

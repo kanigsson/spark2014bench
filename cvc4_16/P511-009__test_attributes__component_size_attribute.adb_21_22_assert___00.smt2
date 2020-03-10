@@ -468,3 +468,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 a2 true false true true)
   (=> (<= 0 component__size1) (= component__size1 32))))))))))))))))))))))
 (check-sat)
+(exit)

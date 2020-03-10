@@ -572,3 +572,4 @@ Target solver: CVC4
   (= (and (ite (<= o7 usf) true false) (ite (<= usf o6) true false)) true)
   (in_range1 (+ a_first length11)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

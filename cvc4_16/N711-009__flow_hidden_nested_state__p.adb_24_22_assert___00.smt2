@@ -138,3 +138,4 @@ Target solver: CVC4
   (forall ((gn1 Int) (pr_var1 Int)) (foo__function_guard (foo gn1 pr_var1)
   gn1 pr_var1)) (= g (+ 0 (foo gn pr_var))))))))))))
 (check-sat)
+(exit)

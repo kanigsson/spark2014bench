@@ -440,3 +440,4 @@ Target solver: CVC4
   (=> (<= (to_rep1 content__first) top)
   (=> (<= top (to_rep1 content__last)) (dynamic_property 0 last (- top 1)))))))))))))
 (check-sat)
+(exit)

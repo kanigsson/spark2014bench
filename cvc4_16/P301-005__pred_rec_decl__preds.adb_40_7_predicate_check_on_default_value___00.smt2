@@ -218,3 +218,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x false false true true)
   (=> (default_initial_assumption usf false) (dynamic_predicate usf))))))))
 (check-sat)
+(exit)

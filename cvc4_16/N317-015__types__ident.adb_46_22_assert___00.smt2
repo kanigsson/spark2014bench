@@ -228,3 +228,4 @@ Target solver: CVC4
   (and (id_private__function_guard o1 x) (dynamic_invariant o1 true false
   true true)) (forall ((res2 Int)) (=> (= res2 o1) (= res2 x)))))))))))))))))
 (check-sat)
+(exit)

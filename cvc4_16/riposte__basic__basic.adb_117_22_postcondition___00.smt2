@@ -105,3 +105,4 @@ Target solver: CVC4
   (=> (= basic__equality_rewrite_loop_test__result x)
   (= basic__equality_rewrite_loop_test__result y)))))))))
 (check-sat)
+(exit)

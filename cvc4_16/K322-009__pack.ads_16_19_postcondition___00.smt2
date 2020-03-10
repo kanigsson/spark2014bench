@@ -69,3 +69,4 @@ Target solver: CVC4
   (=> (= x1 x)
   (=> (= x2 (ite (= x true) false true)) (=> (= x2 true) (= x1 true)))))))
 (check-sat)
+(exit)

@@ -335,3 +335,4 @@ Target solver: CVC4
   (=> (= (to_rep (select z (to_rep z__first))) x)
   (= (length (to_rep z__first) (to_rep z__last)) (+ (length1 y) 1)))))))))))))))))))
 (check-sat)
+(exit)

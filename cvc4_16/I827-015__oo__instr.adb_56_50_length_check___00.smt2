@@ -1891,3 +1891,4 @@ Target solver: CVC4
   (<= (+ lg 1) (to_rep
                (rec__instr__graphic_gauge__size (us_split_fields7 x)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1107,3 +1107,4 @@ Target solver: CVC4
   (us_repqtmk x3__split_discrs (us_split_fieldsqtmk x3__split_fields))))
   (in_range 1))))))))))))))))
 (check-sat)
+(exit)

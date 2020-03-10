@@ -4391,3 +4391,4 @@ Target solver: CVC4
   (= (oeq (us_repqtmk to____split_discrs to____split_fields1 to____attr__tag)
      from) true)))))))))))
 (check-sat)
+(exit)

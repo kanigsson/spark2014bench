@@ -111,3 +111,4 @@ Target solver: CVC4
   (let ((o (* 2 par1)))
   (=> (in_range1 o) (forall ((par21 Int)) (=> (= par21 o) (<= 10 par21))))))))))))
 (check-sat)
+(exit)

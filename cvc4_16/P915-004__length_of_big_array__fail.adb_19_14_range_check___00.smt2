@@ -820,3 +820,4 @@ Target solver: CVC4
                    false))
   (=> (not (= spark__branch true)) (uint_in_range (length1 c)))))))))))))
 (check-sat)
+(exit)

@@ -2217,3 +2217,4 @@ Target solver: CVC4
      (us_split_fieldsqtmk dummy)) c4)
   (=> (in_range2 (distinct 0 0) (us_split_discrs1 c4)) (in_range 0)))))))))))))))))))))))
 (check-sat)
+(exit)

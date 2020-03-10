@@ -2080,3 +2080,4 @@ Target solver: CVC4
      (rec__ada___names__data__name_entry__next_hash (us_split_fields5 o7))) o8)
   (=> (not (= o8 0)) (=> (in_range12 ptr2) (<= 1 ptr2)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

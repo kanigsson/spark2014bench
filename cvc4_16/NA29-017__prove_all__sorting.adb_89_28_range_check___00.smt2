@@ -395,3 +395,4 @@ Target solver: CVC4
   (=> (in_range1 (+ a_first i1))
   (forall ((o12 Int)) (=> (= (to_rep b__first) o12) (in_range2 o12))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

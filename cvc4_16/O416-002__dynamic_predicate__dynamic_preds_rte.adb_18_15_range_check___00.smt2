@@ -254,3 +254,4 @@ Target solver: CVC4
   (=> (= (to_rep o1) o)
   (forall ((x1 (Array Int small))) (=> (= x1 (store x 1 o1)) (in_range1 y)))))))))))))))
 (check-sat)
+(exit)

@@ -1983,3 +1983,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r14b true false true true)
   (=> (bvule r14b #x000000000000003F) (bvuge r14b #x0000000000000000)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1143,3 +1143,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 word true false true true)
   (=> (in_range1 (+ remaining_bits1 7)) (not (= 8 0))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

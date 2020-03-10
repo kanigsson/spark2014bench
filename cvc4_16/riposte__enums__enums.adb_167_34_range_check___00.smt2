@@ -127,3 +127,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (< a 5) true false))
   (=> (= spark__branch true) (not (= a 8)))))))))
 (check-sat)
+(exit)

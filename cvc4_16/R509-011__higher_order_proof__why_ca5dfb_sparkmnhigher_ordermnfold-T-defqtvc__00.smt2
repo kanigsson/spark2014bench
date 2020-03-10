@@ -936,3 +936,4 @@ Target solver: CVC4
      (select (to_array1 test_higher_order__my_fold_right__acc__fold__result) temp___520)) o3)
   (< 0 (length (of_array (to_array a) (first2 a) (last2 a)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

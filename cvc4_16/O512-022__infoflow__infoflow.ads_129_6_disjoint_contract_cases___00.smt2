@@ -407,3 +407,4 @@ Target solver: CVC4
                                                                 i k_1))))) true)
                     1 0)) 1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

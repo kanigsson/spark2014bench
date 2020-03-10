@@ -629,3 +629,4 @@ Target solver: CVC4
   (forall ((div2 Int))
   (=> (and (<= 2 div2) (<= div2 (- index_22 1))) (not (= (mod2 v div2) 0))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

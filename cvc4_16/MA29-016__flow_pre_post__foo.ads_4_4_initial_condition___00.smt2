@@ -201,3 +201,4 @@ Target solver: CVC4
   (=> (and (f1__function_guard o4 c1) (= (= o4 true) (< 0 c1)))
   (=> (forall ((c2 Int)) (f1__function_guard (f1 c2) c2)) (= (f1 c1) true)))))))))))))))))))))
 (check-sat)
+(exit)

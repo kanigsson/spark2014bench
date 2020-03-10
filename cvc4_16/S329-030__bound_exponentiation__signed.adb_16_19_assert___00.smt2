@@ -227,3 +227,4 @@ Target solver: CVC4
                                           true false)) true)
   (= i2 62))))))))) (=> (<= 0 i) (=> (<= i 62) (<= 0 (power 2 i))))))))
 (check-sat)
+(exit)

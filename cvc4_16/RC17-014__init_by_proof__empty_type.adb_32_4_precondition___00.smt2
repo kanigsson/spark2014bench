@@ -389,3 +389,4 @@ Target solver: CVC4
                       (my_nat__init_wrapperqtmk rliteral true)))
   (= (attr__init1 (rec__empty_type__rec__g x__split_fields1)) true))))))))))
 (check-sat)
+(exit)

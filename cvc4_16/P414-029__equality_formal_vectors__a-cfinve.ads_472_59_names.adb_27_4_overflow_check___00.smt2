@@ -543,3 +543,4 @@ Target solver: CVC4
        2147483647)))
   (in_range5 (- o count)))))))))
 (check-sat)
+(exit)

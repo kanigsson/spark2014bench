@@ -294,3 +294,4 @@ Target solver: CVC4
                       (temp_____aggregate_def_183 0)))
   (= (to_rep (rec__partial_init__t__x v__split_fields1)) 0))))))
 (check-sat)
+(exit)

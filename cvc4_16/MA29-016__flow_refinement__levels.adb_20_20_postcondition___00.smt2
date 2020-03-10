@@ -189,3 +189,4 @@ Target solver: CVC4
   (= a1 (+ (+ (read_partial_0 x0) (read_partial_1 x1)) (read_partial_1_inner
                                                        x2 y2)))))))))))))))))))
 (check-sat)
+(exit)

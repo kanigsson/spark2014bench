@@ -238,3 +238,4 @@ Target solver: CVC4
   (not
   (= (and (ite (<= 2 i) true false) (ite (<= i (div1 n 2)) true false)) true)))))))
 (check-sat)
+(exit)

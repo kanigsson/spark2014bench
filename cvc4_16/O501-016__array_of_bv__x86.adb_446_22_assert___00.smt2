@@ -720,3 +720,4 @@ Target solver: CVC4
                                                       #x0000)) (readmem16
                                                                addr memory)))))))))
 (check-sat)
+(exit)

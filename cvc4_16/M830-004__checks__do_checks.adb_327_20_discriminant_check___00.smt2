@@ -422,3 +422,4 @@ Target solver: CVC4
   (do_checks__do_discriminant_check__r1__arr__pred
   (us_repqtmk x__split_discrs (us_split_fieldsqtmk x__split_fields))))))))))
 (check-sat)
+(exit)

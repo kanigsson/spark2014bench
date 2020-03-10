@@ -263,3 +263,4 @@ Target solver: CVC4
           true false) (ite (and (<= 2 i1) (<= i1 n2)) true false)) true)
   (let ((o2 (* i1 p21))) (=> (in_range1 o2) (in_range2 o2))))))))))))))))))))))))))
 (check-sat)
+(exit)

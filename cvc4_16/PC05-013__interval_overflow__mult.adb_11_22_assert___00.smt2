@@ -178,3 +178,4 @@ Target solver: CVC4
   (fp.leq ((_ to_fp 8 24) RNE (to_real (+ (* n 65) 1))) ((_ to_fp 8 24) RNE (to_real (* (+ 
   n 1) 65))))))))
 (check-sat)
+(exit)

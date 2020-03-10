@@ -1518,3 +1518,4 @@ Target solver: CVC4
         ctx__split_fields)))))
   (=> (and (= o1 0) (<= bit_length 2147483640)) (in_range1 (length data)))))))))))
 (check-sat)
+(exit)

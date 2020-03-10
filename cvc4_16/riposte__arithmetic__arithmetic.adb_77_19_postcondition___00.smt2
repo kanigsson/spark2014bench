@@ -212,3 +212,4 @@ Target solver: CVC4
   (= i1 temp___218)))))))))) (= r2 r1))))))))
   (=> (= arithmetic__plus__result r2) (= arithmetic__plus__result (+ a b))))))))))))
 (check-sat)
+(exit)

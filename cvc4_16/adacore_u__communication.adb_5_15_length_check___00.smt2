@@ -1097,3 +1097,4 @@ Target solver: CVC4
   (=> (= (to_rep o) port)
   (=> (<= (first1 address) (last1 address)) (<= 1 15))))))))
 (check-sat)
+(exit)

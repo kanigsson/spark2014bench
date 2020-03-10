@@ -702,3 +702,4 @@ Target solver: CVC4
   (exists ((spark__branch4 Bool)) (= spark__branch4 changetoslowmode)))))))))))
   (=> (= (to_rep o1) timer2) (<= 2 switchposition1)))))))))))))))))))))))
 (check-sat)
+(exit)

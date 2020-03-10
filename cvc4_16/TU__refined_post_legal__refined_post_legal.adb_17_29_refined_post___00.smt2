@@ -137,3 +137,4 @@ Target solver: CVC4
   (=> (= refined_post_legal__func__result o)
   (= refined_post_legal__func__result (+ par1 x)))))))))))
 (check-sat)
+(exit)

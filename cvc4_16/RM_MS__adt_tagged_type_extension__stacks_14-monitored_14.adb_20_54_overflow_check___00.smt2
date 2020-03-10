@@ -641,3 +641,4 @@ Target solver: CVC4
      s__split_fields2)) o2)
   (in_range (+ o2 1))))))))))))))))))))
 (check-sat)
+(exit)

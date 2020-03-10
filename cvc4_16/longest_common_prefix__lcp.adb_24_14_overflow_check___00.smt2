@@ -373,3 +373,4 @@ Target solver: CVC4
   true false)) true)
   (forall ((temp___188 Int)) (=> (= temp___188 l2) (in_range1 (+ l2 1)))))))))))))))))))))))
 (check-sat)
+(exit)

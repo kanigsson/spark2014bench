@@ -716,3 +716,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (= digit_index1 i)
   (= digit_index1 digit_index))))))) (in_range2 (+ i 1)))))))))))))))
 (check-sat)
+(exit)

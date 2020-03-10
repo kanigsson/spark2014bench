@@ -116,3 +116,4 @@ Target solver: CVC4
   (forall ((a (Array Int Bool)) (x (Array Int Bool)) (a1 (Array Int Bool)))
   (=> (= x a) (=> (= a1 (store a 5 (distinct 0 0))) (= (select a1 5) true))))))
 (check-sat)
+(exit)

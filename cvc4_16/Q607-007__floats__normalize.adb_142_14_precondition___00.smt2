@@ -219,3 +219,4 @@ Target solver: CVC4
   (fp.leq (fp.neg (fp #b0 #b11111110 #b11111111111111111101110)) (fp.div RNE 
   x (fp #b0 #b10000111 #b01101000000000000000000))))))
 (check-sat)
+(exit)

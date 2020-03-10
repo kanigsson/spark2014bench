@@ -1068,3 +1068,4 @@ Target solver: CVC4
      (rec__psu_monitoring__monitor_t__config (us_split_fields3 monitor))))) o2)
   (not (fp.isZero o2)))))))))))))))
 (check-sat)
+(exit)

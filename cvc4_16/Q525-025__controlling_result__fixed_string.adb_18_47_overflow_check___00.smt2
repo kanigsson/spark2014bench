@@ -470,3 +470,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 r5b true false true true) (in_range1
   (+ (first1 new_val) (- len 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -239,3 +239,4 @@ Target solver: CVC4
   (=> (in_range1 (+ e 1))
   (=> (in_range2 (+ j 1)) (=> (in_range1 (- e 1)) (in_range2 (+ j 2))))))))))
 (check-sat)
+(exit)

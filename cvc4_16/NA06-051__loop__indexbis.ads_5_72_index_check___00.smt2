@@ -468,3 +468,4 @@ Target solver: CVC4
                                                 false)) true)
   (=> (<= (first1 c) usf1) (=> (<= usf1 (last1 c)) (<= (first1 s) usf))))))))))))
 (check-sat)
+(exit)

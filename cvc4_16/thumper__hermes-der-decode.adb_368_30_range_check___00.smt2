@@ -570,3 +570,4 @@ Target solver: CVC4
   (=> (= spark__branch1 (ite (< o1 length_stop1) true false))
   (=> (= spark__branch1 true) (in_range2 (last1 message))))))))))))))))))))))))))))
 (check-sat)
+(exit)

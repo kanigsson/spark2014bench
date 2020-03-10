@@ -737,3 +737,4 @@ Target solver: CVC4
   (=> (not (= (to_rep (select the_file cur_position1)) 10))
   (= ch1 (to_rep (select the_file cur_position1))))))))))))))))))))))
 (check-sat)
+(exit)

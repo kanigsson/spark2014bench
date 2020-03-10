@@ -1095,3 +1095,4 @@ Target solver: CVC4
   (and (<= (- 2147483548) acc) (<= acc 2147483547)))))
   (=> (< (first2 a) i) (=> (in_range5 (first_2 a)) (in_range4 (first2 a)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

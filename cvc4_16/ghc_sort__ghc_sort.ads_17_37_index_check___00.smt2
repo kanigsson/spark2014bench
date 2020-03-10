@@ -744,3 +744,4 @@ Target solver: CVC4
   (=> (in_range1 (+ o3 1))
   (<= (first3 ghc_sort__cut__result) (last3 ghc_sort__cut__result))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -547,3 +547,4 @@ Target solver: CVC4
         (rec__p__my_vectors__vector__capacity container__split_discrs))))
   (in_range4 (- o4 o3)))))))))))))))
 (check-sat)
+(exit)

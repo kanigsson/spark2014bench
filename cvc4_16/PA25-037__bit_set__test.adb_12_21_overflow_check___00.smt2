@@ -676,3 +676,4 @@ Target solver: CVC4
   (let ((o1 (bv2nat (bvudiv i #x0000000000000020))))
   (=> (in_range2 o1) (in_range1 (+ a_first o1))))))))))))))
 (check-sat)
+(exit)

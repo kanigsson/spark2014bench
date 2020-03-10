@@ -484,3 +484,4 @@ Target solver: CVC4
   (=> (= (attr__tag x__pointer_value) us_tag)
   (= (attr__tag y__pointer_value) us_tag1)))))))))))))))))))))))
 (check-sat)
+(exit)

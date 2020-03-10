@@ -813,3 +813,4 @@ Target solver: CVC4
   (=> (= (first3 c) #x0000000000000000)
   (=> (= (last3 c) #xFFFFFFFFFFFFFFFF) (uint_in_range (length1 c))))))))
 (check-sat)
+(exit)

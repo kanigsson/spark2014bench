@@ -278,3 +278,4 @@ Target solver: CVC4
   (<= (abs1 o3) (* (- o o1) 3000))))
   (forall ((o4 Int)) (=> (= (to_rep (select a i)) o4) (in_range (+ o4 o3))))))))))))))))
 (check-sat)
+(exit)

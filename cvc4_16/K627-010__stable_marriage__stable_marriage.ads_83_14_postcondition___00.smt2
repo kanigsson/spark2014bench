@@ -346,3 +346,4 @@ Target solver: CVC4
   (<= (to_rep1 (select (invert_2 r2) g2_a)) (to_rep1
                                             (select (invert_2 r2) g2_b)))))))))))))))))))))))
 (check-sat)
+(exit)

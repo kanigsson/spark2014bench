@@ -987,3 +987,4 @@ Target solver: CVC4
      (rec__types_with_invariants__container__c (us_split_discrs1 usf1))) usf)
   (=> (<= 1 usf) (<= 1 1)))))))
 (check-sat)
+(exit)

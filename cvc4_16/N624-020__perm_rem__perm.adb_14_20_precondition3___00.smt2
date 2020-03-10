@@ -502,3 +502,4 @@ Target solver: CVC4
   (=> (forall ((o5 us_t)) (invariant____function_guard (invariant__ o5) o5))
   (= (invariant__ a) true))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1496,3 +1496,4 @@ Target solver: CVC4
   (let ((o2 (first_2 a2)))
   (=> (in_range10 o2) (=> (in_range9 k) (<= (first_2 a2) o2))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

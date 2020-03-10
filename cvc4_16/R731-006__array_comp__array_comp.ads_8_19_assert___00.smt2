@@ -495,3 +495,4 @@ Target solver: CVC4
   (=> (dynamic_property 1 2147483647 (to_rep yy__first) (to_rep yy__last))
   (< (compare yy 1 2 xx (to_rep xx__first) (to_rep xx__last)) 0)))))))))))))))
 (check-sat)
+(exit)

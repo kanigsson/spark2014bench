@@ -382,3 +382,4 @@ Target solver: CVC4
   (and (qf1__function_guard o 2) (dynamic_invariant o true false true true))
   (in_range (+ tmp1 o)))))))))))
 (check-sat)
+(exit)

@@ -315,3 +315,4 @@ Target solver: CVC4
  ;; File "unconstr.adb", line 15, characters 0-0
   (not (dynamic_property (- 2147483648) 2147483647 0 10)))
 (check-sat)
+(exit)

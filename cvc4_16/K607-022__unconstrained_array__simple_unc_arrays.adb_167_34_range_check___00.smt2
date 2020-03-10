@@ -842,3 +842,4 @@ Target solver: CVC4
   (=> (in_range1 o5)
   (forall ((left4 Int)) (=> (= left4 o5) (in_range2 (- right3 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1237,3 +1237,4 @@ Target solver: CVC4
   false true true))
   (forall ((o10 octet)) (=> (= (to_rep2 o10) o9) (in_range2 (+ i1 j1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

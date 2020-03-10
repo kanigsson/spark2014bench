@@ -395,3 +395,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array haystack) o)) o1)
   (<= (first1 needle) usf))))))))))))))))
 (check-sat)
+(exit)

@@ -274,3 +274,4 @@ Target solver: CVC4
   (=> (= r11 (mod2 x y))
   (forall ((r21 Int)) (=> (= r21 (mod2 (- x) (- y))) (not (= y 0))))))))))))))
 (check-sat)
+(exit)

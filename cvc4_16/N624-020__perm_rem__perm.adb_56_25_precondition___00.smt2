@@ -695,3 +695,4 @@ Target solver: CVC4
                     true false))
   (= spark__branch1 true))))))))))) (=> (in_range3 ia1) (<= ia1 (last1 a))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

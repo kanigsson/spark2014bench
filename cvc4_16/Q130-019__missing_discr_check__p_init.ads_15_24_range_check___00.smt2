@@ -82,3 +82,4 @@ Target solver: CVC4
  ;; File "p_init.ads", line 1, characters 0-0
   (not (=> (in_range 0) (in_range 1))))
 (check-sat)
+(exit)

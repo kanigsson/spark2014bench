@@ -459,3 +459,4 @@ Target solver: CVC4
   (=> (in_range1 o3)
   (=> (in_range2 o3) (forall ((left3 Int)) (=> (= left3 o3) (<= 0 right3)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

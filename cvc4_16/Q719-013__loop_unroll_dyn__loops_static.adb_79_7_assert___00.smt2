@@ -376,3 +376,4 @@ Target solver: CVC4
   (exists ((spark__branch Bool)) (= spark__branch (ite (= o 0) false true))))))
   (= j1 temp___353))))))))) (= i1 2))))))))))))))))))))))
 (check-sat)
+(exit)

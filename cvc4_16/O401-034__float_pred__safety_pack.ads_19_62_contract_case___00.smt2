@@ -215,3 +215,4 @@ Target solver: CVC4
   (=> (= (fp.lt value (fp.neg threshold)) true)
   (fp.eq safety_pack__dead_band__result (fp.add RNE value threshold))))))))))))))))
 (check-sat)
+(exit)

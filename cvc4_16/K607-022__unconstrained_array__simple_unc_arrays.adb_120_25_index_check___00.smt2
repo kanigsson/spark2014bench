@@ -596,3 +596,4 @@ Target solver: CVC4
   (let ((o2 (+ i1 1)))
   (=> (in_range1 o2) (<= (first1 res__split_fields2) o2))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

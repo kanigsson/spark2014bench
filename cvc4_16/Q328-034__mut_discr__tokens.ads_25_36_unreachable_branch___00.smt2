@@ -564,3 +564,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__tokens__token__kind (us_split_discrs1 t))) o2)
   (not (= o2 1)))))))))))))
 (check-sat)
+(exit)

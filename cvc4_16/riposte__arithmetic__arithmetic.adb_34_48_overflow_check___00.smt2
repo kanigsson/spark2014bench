@@ -220,3 +220,4 @@ Target solver: CVC4
   (let ((o (+ r1 a)))
   (=> (in_range1 o) (forall ((r2 Int)) (=> (= r2 o) (in_range1 (* i a))))))))))))))))))
 (check-sat)
+(exit)

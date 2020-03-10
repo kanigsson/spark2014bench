@@ -362,3 +362,4 @@ Target solver: CVC4
   (=> (forall ((a1 Int) (b1 Int)) (ogt__function_guard (ogt a1 b1) a1 b1))
   (= (ogt a b) true)))))))))))))))))))))
 (check-sat)
+(exit)

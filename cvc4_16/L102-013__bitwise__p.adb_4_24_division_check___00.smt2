@@ -375,3 +375,4 @@ Target solver: CVC4
   (=> (= x ((_ int2bv 8) o))
   (=> (dynamic_invariant1 x true false true true) (not (= 256 0)))))))))))
 (check-sat)
+(exit)

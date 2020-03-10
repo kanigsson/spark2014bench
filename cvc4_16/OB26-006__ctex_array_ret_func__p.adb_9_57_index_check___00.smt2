@@ -334,3 +334,4 @@ Target solver: CVC4
   (=> (<= 1 r5b) (and (and (<= 1 1) (<= 1 10)) (and (<= 1 r5b) (<= r5b 10))))
   (<= (first1 (of_array tc_items 1 r5b)) 1))))))))
 (check-sat)
+(exit)

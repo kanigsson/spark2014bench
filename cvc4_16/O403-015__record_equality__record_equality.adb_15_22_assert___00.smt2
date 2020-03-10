@@ -1390,3 +1390,4 @@ Target solver: CVC4
      (us_repqtmk2 g_pu2__split_discrs g_pu2__split_fields g_pu2__attr__tag)))) true)
   (= (bool_eq1 c_gp1 c_gp2) true)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

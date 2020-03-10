@@ -163,3 +163,4 @@ Target solver: CVC4
                                                        true false)))
   (=> (= spark__branch true) (<= 2 x))))))))))
 (check-sat)
+(exit)

@@ -124,3 +124,4 @@ Target solver: CVC4
   (=> (ogt__function_guard o5 o4 o3)
   (forall ((x Bool)) (=> (= x o5) (= x true))))))))))))))))
 (check-sat)
+(exit)

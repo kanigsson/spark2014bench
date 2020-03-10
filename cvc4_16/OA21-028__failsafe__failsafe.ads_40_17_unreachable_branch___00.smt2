@@ -589,3 +589,4 @@ Target solver: CVC4
   (let ((o1 (bvsub failsafe__model__time_below_threshold__result #x01)))
   (=> (in_range1 o1) (not (bvuge current_time o1))))))))))))))))))))))))))
 (check-sat)
+(exit)

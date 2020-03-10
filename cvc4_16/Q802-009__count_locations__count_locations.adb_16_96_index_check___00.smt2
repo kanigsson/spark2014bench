@@ -418,3 +418,4 @@ Target solver: CVC4
   (=> (and (<= 1 usf) (<= usf 100))
   (=> (= (select sel usf) true) (<= 1 usf))))))))))))))))))))))
 (check-sat)
+(exit)

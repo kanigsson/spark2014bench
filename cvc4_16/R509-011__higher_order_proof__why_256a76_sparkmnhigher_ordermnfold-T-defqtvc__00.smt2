@@ -883,3 +883,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array a2) i)) o2)
   (=> (choose__function_guard (choose o2) o2) (<= i (last1 a1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

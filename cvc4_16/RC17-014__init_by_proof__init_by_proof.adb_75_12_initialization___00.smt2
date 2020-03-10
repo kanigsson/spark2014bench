@@ -581,3 +581,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= error true) false true))
   (=> (= spark__branch true) (= (attr__init (select buf1 10)) true))))))))))))))))
 (check-sat)
+(exit)

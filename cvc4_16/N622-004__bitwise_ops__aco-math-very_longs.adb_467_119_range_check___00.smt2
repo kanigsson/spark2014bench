@@ -1315,3 +1315,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (to_array u__split_fields1) temp___1627)) o3)
   (bvule ((_ zero_extend 8) #x00) (bvand (bvsub (bvsub ((_ zero_extend 8) o3) temporary_digit2) current_borrow1) #x00FF))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

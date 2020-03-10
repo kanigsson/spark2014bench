@@ -63,3 +63,4 @@ Target solver: CVC4
  ;; File "p.adb", line 3, characters 0-0
   (not (=> (f__function_guard (f Tuple0) Tuple0) (= (f Tuple0) true))))
 (check-sat)
+(exit)

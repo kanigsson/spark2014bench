@@ -309,3 +309,4 @@ Target solver: CVC4
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-N122-049__default_initial_condition-31581/src/gnatprove/q__t5.mlw", line 560, characters 5-8
   (not (in_range1 1)))
 (check-sat)
+(exit)

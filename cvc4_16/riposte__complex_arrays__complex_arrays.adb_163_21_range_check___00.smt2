@@ -350,3 +350,4 @@ Target solver: CVC4
   (forall ((tmp2 (Array Int value)))
   (=> (= tmp2 (store tmp1 j rliteral2)) (=> (<= 0 j) (<= 0 0))))))))))))))
 (check-sat)
+(exit)

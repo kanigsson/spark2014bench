@@ -1349,3 +1349,4 @@ Target solver: CVC4
           true false) (ite (< left_index3 right_index3) true false)) true)
   (<= (to_rep result____first) left_index3))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

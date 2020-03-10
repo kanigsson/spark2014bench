@@ -284,3 +284,4 @@ Target solver: CVC4
   (=> (= sum__sum__result o)
   (=> (in_range (* (- j i) 3000)) (in_range (abs1 sum__sum__result)))))))))))
 (check-sat)
+(exit)

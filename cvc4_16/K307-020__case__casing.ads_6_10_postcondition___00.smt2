@@ -146,3 +146,4 @@ Target solver: CVC4
   (= casing__f__result (ite (= x 0) 0
                        (ite (= x 1) 1 (ite (or (= x 2) (= x 3)) 2 3)))))))))))
 (check-sat)
+(exit)

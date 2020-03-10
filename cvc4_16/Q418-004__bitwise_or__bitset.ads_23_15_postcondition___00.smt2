@@ -345,3 +345,4 @@ Target solver: CVC4
   bitset__bit_set__result1 pos))
   (= (bit_test bitset__bit_set__result pos) true))))))))))))
 (check-sat)
+(exit)

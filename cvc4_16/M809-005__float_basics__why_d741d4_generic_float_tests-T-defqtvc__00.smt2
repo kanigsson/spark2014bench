@@ -227,3 +227,4 @@ Target solver: CVC4
   (=> (= a2 (store a1 5 o1))
   (=> (= (to_rep (select a2 8)) o2) (=> (= y1 o2) (fp.eq x y1)))))))))))))
 (check-sat)
+(exit)

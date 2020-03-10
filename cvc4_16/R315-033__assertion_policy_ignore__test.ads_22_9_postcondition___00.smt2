@@ -623,3 +623,4 @@ Target solver: CVC4
                                 (select (to_array src) (- (+ src_first i) 
                                 index)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -100,3 +100,4 @@ Target solver: CVC4
   (forall ((basic_contracts__increment__result Int))
   (=> (= basic_contracts__increment__result o) (in_range (+ item 1))))))))))
 (check-sat)
+(exit)

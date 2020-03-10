@@ -390,3 +390,4 @@ Target solver: CVC4
   (=> (dynamic_invariant pos true false true true)
   (=> (<= pos 5) (<= 1 pos)))))))))
 (check-sat)
+(exit)

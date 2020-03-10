@@ -277,3 +277,4 @@ Target solver: CVC4
  ;; File "typeinv.ads", line 4, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (in_range1 x))))
 (check-sat)
+(exit)

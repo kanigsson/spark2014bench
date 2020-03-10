@@ -882,3 +882,4 @@ Target solver: CVC4
   (= g__split_fields2 g__split_fields1))))
   (=> (not (= j (last1 initiator))) (in_range1 (+ j 1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

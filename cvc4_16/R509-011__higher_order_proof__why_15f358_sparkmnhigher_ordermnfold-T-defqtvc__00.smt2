@@ -945,3 +945,4 @@ Target solver: CVC4
                                              false)) true)
   (=> (in_range8 k) (<= k (last1 a1)))))))))))))))))
 (check-sat)
+(exit)

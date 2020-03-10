@@ -504,3 +504,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__natural_set__t__len s__split_fields)) o3) (in_range2
   (+ o3 1)))))))))))))))))))
 (check-sat)
+(exit)

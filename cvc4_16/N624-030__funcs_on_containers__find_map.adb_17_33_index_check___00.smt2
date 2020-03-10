@@ -1990,3 +1990,4 @@ Target solver: CVC4
   (=> (= (= o4 true) (= (has_key (model1 o3) o2) true))
   (=> (= o4 true) (<= (first1 a) usf))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

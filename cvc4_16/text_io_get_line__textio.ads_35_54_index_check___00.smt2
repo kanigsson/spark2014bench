@@ -1391,3 +1391,4 @@ Target solver: CVC4
   (forall ((o4 Int))
   (=> (= (to_rep1 item__first) o4) (<= 1 (+ (- usf1 o4) temp___old_377))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -475,3 +475,4 @@ Target solver: CVC4
   (let ((o5 (+ x lcp__result)))
   (=> (in_range1 o5) (=> (not (= o5 o4)) (in_range1 (+ (last1 a) 1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

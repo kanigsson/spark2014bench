@@ -383,3 +383,4 @@ Target solver: CVC4
   (= o (ite (= o5 o3) true false)))))))))))) (= o false))))
   (=> (= o true) (in_range1 (+ x l1))))))))))))))))))
 (check-sat)
+(exit)

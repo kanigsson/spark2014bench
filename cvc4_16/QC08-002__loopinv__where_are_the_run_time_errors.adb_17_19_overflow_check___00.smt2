@@ -271,3 +271,4 @@ Target solver: CVC4
   (let ((o3 (+ y2 1)))
   (=> (in_range o3) (forall ((y3 Int)) (=> (= y3 o3) (in_range (- x2 y3))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -433,3 +433,4 @@ Target solver: CVC4
   (= o1 (bvudiv o (ite (< 8 65536) (bvshl #x0001 ((_ int2bv 16) 8)) #x0000)))))
   (bvule ((_ zero_extend 8) #x00) o1)))))))
 (check-sat)
+(exit)

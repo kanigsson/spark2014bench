@@ -970,3 +970,4 @@ Target solver: CVC4
   (=> (<= (first3 temp___581) (last3 temp___581))
   (<= (to_rep1 temporary_array__first) (to_rep1 temporary_array__last)))))))))))))))))))))))))
 (check-sat)
+(exit)

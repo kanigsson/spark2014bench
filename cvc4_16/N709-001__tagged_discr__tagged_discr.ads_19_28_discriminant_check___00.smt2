@@ -442,3 +442,4 @@ Target solver: CVC4
   (=> (= (or (ite (= o1 0) true false) (ite (= o 2) true false)) true)
   (tagged_discr__t__x__pred v))))))))
 (check-sat)
+(exit)

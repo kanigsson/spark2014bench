@@ -187,3 +187,4 @@ Target solver: CVC4
   (=> (= t11 o)
   (=> (= (to_rep (select x1 2)) o1) (=> (= t21 o1) (= t11 t21))))))))))))
 (check-sat)
+(exit)

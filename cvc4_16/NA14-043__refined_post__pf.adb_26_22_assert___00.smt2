@@ -291,3 +291,4 @@ Target solver: CVC4
   (=> (= b1 (prf_public1 a))
   (=> (prf_hidden__function_guard1 (prf_hidden1 a) a) (= b1 (prf_hidden1 a))))))))))))
 (check-sat)
+(exit)

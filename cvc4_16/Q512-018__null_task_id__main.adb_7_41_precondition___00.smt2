@@ -103,3 +103,4 @@ Target solver: CVC4
  ;; File "main.adb", line 3, characters 0-0
   (not (not (= (oeq null_task_id null_task_id) true))))
 (check-sat)
+(exit)

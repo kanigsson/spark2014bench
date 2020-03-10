@@ -307,3 +307,4 @@ Target solver: CVC4
   (let ((o (* x y)))
   (=> (in_range o) (forall ((r1 Int)) (=> (= r1 o) (<= r1 z))))))))))))))
 (check-sat)
+(exit)

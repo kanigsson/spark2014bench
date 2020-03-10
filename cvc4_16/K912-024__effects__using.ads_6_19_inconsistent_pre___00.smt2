@@ -147,3 +147,4 @@ Target solver: CVC4
   (not
   (and (= (x_is_positive x) true) (= (greater_than_x (get_x x) x) true)))))))))))
 (check-sat)
+(exit)

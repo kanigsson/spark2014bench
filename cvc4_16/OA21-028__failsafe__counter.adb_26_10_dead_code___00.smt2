@@ -413,3 +413,4 @@ Target solver: CVC4
   (and (= inputs1 (store inputs2 i1 (select inputs2 (bvadd i1 #x01))))
   (= i1 #x09))))))))) (= inputs1 inputs)))))))
 (check-sat)
+(exit)

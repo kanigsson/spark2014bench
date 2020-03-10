@@ -678,3 +678,4 @@ Target solver: CVC4
   (=> (bvule (first1 temp___221) (last1 temp___221))
   (bvule (to_rep1 a__first) (to_rep1 a__last)))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -455,3 +455,4 @@ Target solver: CVC4
         (+ (occ_def (remove_last o3) o1) 1) (occ_def (remove_last o3) o1))))
   (<= o4 (length o3))))) (in_range3 (+ o4 1))))))))))))))))))))))))
 (check-sat)
+(exit)

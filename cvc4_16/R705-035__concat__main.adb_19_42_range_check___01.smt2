@@ -495,3 +495,4 @@ Target solver: CVC4
   (let ((temp___243 (of_array1 b 1 count))) (dynamic_property (- 2147483648)
   2147483647 (first3 temp___243) (last3 temp___243)))))))))
 (check-sat)
+(exit)

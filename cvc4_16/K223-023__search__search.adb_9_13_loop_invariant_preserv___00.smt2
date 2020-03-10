@@ -289,3 +289,4 @@ Target solver: CVC4
   (forall ((j Int))
   (=> (and (<= 1 j) (<= j (- pos2 1))) (not (= (to_rep (select t j)) v)))))))))))))))))))))))))
 (check-sat)
+(exit)

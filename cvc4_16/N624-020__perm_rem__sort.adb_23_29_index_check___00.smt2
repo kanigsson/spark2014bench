@@ -690,3 +690,4 @@ Target solver: CVC4
   (=> (dynamic_invariant temp false false true true)
   (=> (dynamic_invariant4 hr false false true true) (<= x 100))))))))))))))
 (check-sat)
+(exit)

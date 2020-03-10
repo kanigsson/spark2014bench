@@ -916,3 +916,4 @@ Target solver: CVC4
   (and (= (has_element l cu) true) (= (element l cu) 0)))
   (= (has_element l (us_repqtmk (us_split_fieldsqtmk lists__search__result))) true))))))))
 (check-sat)
+(exit)

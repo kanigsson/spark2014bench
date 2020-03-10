@@ -438,3 +438,4 @@ Target solver: CVC4
   (let ((o (length s1)))
   (=> (in_range1 o) (=> (<= 1 o) (<= (to_rep1 s__first) 1)))))))))))))))))))))))))
 (check-sat)
+(exit)

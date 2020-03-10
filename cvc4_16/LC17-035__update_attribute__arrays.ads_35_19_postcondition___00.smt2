@@ -242,3 +242,4 @@ Target solver: CVC4
   (= (bool_eq arrays__f2__result 1 8
      (temp_____aggregate_def_201 arr_in 1 i 7) 1 8) true))))))
 (check-sat)
+(exit)

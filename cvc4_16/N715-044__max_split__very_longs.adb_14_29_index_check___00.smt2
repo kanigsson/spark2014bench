@@ -1007,3 +1007,4 @@ Target solver: CVC4
   (=> (= (to_rep2 o1) ((_ int2bv 8) o))
   (<= (first1 result____split_fields2) index1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

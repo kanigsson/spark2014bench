@@ -971,3 +971,4 @@ Target solver: CVC4
   (=> (= (last1 result____split_fields2) r23b)
   (=> (in_range2 r23b) (<= 1 i1))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

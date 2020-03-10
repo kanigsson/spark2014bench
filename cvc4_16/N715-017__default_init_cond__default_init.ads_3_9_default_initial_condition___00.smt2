@@ -203,3 +203,4 @@ Target solver: CVC4
   (=> (forall ((usf1 us_rep)) (rec_ok__function_guard (rec_ok usf1) usf1))
   (= (rec_ok (us_repqtmk (us_split_fieldsqtmk usf))) true)))))))
 (check-sat)
+(exit)

@@ -416,3 +416,4 @@ Target solver: CVC4
   (=> (dynamic_invariant interval true false true true)
   (=> (= speed_up true) (not (= 3 0)))))))))))))
 (check-sat)
+(exit)

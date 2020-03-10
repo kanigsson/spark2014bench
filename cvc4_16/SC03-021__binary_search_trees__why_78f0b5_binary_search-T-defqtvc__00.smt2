@@ -1493,3 +1493,4 @@ Target solver: CVC4
                (us_close (us_repqtmk1 x__pointer_value)))) o7)))
   (=> (in_range1 o8) (in_range4 o8))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

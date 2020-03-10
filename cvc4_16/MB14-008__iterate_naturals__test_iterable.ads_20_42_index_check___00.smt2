@@ -492,3 +492,4 @@ Target solver: CVC4
   (=> (= (and (ite (in_range1 usf) true false) o1) true)
   (<= (first1 (rec__test_iterable__t_list__content (us_split_fields1 cont))) usf)))))))))
 (check-sat)
+(exit)

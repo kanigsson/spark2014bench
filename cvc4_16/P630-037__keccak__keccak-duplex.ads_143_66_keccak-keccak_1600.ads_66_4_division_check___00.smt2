@@ -1103,3 +1103,4 @@ Target solver: CVC4
   (=> (<= out_data_bit_length o1)
   (=> (in_range (+ out_data_bit_length 7)) (not (= 8 0))))))))))))
 (check-sat)
+(exit)

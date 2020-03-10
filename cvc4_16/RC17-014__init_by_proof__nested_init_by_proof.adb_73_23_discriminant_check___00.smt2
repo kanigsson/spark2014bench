@@ -1351,3 +1351,4 @@ Target solver: CVC4
      (rec__nested_init_by_proof__rec__f3 (us_split_fields1 temp___355))) true))))
   (nested_init_by_proof__rec__f1__pred (select x__split_fields6 10)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

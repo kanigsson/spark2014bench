@@ -529,3 +529,4 @@ Target solver: CVC4
   (forall ((from_line2 Int))
   (=> (= from_line2 (- from_line1 1)) (< from_line2 to_line3)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

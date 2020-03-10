@@ -668,3 +668,4 @@ Target solver: CVC4
                                                    true false)) true)
   (in_range1 (- (last1 a) a_first))))))))
 (check-sat)
+(exit)

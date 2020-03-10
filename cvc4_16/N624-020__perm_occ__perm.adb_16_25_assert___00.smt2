@@ -478,3 +478,4 @@ Target solver: CVC4
   (=> (not (= spark__branch1 true))
   (not (= (to_rep (select (to_array b) (last1 b))) e))))))))))))))))))
 (check-sat)
+(exit)

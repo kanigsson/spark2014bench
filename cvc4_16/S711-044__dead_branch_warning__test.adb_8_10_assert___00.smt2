@@ -220,3 +220,4 @@ Target solver: CVC4
   (= o5 (to_rep c__split_fields)))) (= o1 (ite (= o5 1) true false)))))
   (= o1 false))))) (=> (= spark__branch o1) (not (= spark__branch true)))))))))))))
 (check-sat)
+(exit)

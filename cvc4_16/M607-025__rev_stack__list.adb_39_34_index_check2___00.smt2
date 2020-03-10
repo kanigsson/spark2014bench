@@ -1429,3 +1429,4 @@ Target solver: CVC4
   (and (= (first1 temp___624) 1) (<= 0 (last2 temp___624)))))
   (<= (first1 temp___624) usf))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

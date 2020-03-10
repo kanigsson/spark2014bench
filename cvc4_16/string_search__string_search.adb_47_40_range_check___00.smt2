@@ -449,3 +449,4 @@ Target solver: CVC4
                                              false)) true)
   (in_range1 (length needle))))))))))))))))
 (check-sat)
+(exit)

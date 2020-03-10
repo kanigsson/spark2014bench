@@ -448,3 +448,4 @@ Target solver: CVC4
   (=> (= (to_rep (select a usf)) o6)
   (=> (< o5 o6) (<= (to_rep1 a__first) usf)))))))))))))))))))))))))
 (check-sat)
+(exit)

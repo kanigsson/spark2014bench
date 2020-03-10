@@ -171,3 +171,4 @@ Target solver: CVC4
   (not
   (= (and (ite (<= 20 i1) true false) (ite (<= i1 r13b) true false)) true)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -701,3 +701,4 @@ Target solver: CVC4
                     (us_split_fieldsqtmk rliteral us_null_pointer))))
   (=> (dynamic_predicate1 temp___235) (dynamic_predicate temp___235)))))
 (check-sat)
+(exit)

@@ -828,3 +828,4 @@ Target solver: CVC4
   (let ((o12 (+ o11 1)))
   (=> (in_range1 o12) (<= (to_rep result____first) o12)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -280,3 +280,4 @@ Target solver: CVC4
   (=> (bvule #x0000000000000000 range_size)
   (bvuge #x0000000000000000 #x0000000000000000)))))))
 (check-sat)
+(exit)

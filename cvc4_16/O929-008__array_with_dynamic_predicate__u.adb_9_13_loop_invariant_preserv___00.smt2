@@ -566,3 +566,4 @@ Target solver: CVC4
   (=> (<= j (to_rep sq__last))
   (= (to_rep1 (select sq2 j)) (to_rep1 (select temp___loop_entry_202 j)))))))))))))))))))))))))
 (check-sat)
+(exit)

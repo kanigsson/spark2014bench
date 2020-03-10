@@ -354,3 +354,4 @@ Target solver: CVC4
                                           true false)) true)
   (=> (not (= j1 10)) (=> (= j2 (+ j1 1)) (=> (< 1 j2) (= prop5 true)))))))))))))))))
 (check-sat)
+(exit)

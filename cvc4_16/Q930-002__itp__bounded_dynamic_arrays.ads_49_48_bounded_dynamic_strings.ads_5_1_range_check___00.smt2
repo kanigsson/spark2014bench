@@ -706,3 +706,4 @@ Target solver: CVC4
   (=> (= bounded_dynamic_strings__instance__3__result o2) (in_range1
   (length content)))))))))))))))
 (check-sat)
+(exit)

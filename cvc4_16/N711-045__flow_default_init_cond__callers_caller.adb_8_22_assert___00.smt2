@@ -307,3 +307,4 @@ Target solver: CVC4
   (add3 (us_repqtmk r__split_fields1)) (us_repqtmk r__split_fields1)))
   (= (add3 (us_repqtmk r__split_fields)) 0))))))
 (check-sat)
+(exit)

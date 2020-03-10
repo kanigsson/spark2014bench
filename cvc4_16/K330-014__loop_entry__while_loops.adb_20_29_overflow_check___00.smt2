@@ -809,3 +809,4 @@ Target solver: CVC4
   (=> (dynamic_invariant counter1 true true true true) (in_range1
   (+ counter1 1))))))))))))))))))
 (check-sat)
+(exit)

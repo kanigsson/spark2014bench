@@ -838,3 +838,4 @@ Target solver: CVC4
                                             current_out4 current_err4)))
   (< 0 usf)))))))))))))))))))))))))))
 (check-sat)
+(exit)

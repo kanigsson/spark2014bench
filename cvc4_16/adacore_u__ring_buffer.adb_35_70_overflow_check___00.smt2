@@ -689,3 +689,4 @@ Target solver: CVC4
   (= (and (ite (<= temp___289 j) true false) (ite (<= j c) true false)) true)
   (in_range1 (- j first))))))))))))))))))
 (check-sat)
+(exit)

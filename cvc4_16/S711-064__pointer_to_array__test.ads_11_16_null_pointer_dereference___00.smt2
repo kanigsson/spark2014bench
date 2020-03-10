@@ -654,3 +654,4 @@ Target solver: CVC4
   (=> (<= (first1 (rec__test__bytes_ptr__pointer_value buffer)) 1073741823)
   (rec__test__bytes_ptr__pointer_value__pred buffer)))))
 (check-sat)
+(exit)

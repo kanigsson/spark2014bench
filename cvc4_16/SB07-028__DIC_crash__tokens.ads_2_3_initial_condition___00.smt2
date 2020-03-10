@@ -199,3 +199,4 @@ Target solver: CVC4
   (=> (forall ((x1 us_rep)) (init__function_guard (init x1) x1))
   (= (init x) true)))))))))
 (check-sat)
+(exit)

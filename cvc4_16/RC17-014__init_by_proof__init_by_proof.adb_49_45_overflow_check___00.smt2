@@ -619,3 +619,4 @@ Target solver: CVC4
   (= buf1 buf))))))))))
   (=> (= (to_rep buf__first) o) (in_range1 (+ o (- size 1))))))))))))
 (check-sat)
+(exit)

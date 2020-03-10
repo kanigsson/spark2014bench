@@ -365,3 +365,4 @@ Target solver: CVC4
   (=> (= po_t__B_1__y__assume y)
   (=> (dynamic_invariant y true false true true) (= x y)))))))))))))))))
 (check-sat)
+(exit)

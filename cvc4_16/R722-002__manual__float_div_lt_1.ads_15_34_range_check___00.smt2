@@ -366,3 +366,4 @@ Target solver: CVC4
                                          false)) true)
   (in_range3 (of_int dividend))))))))
 (check-sat)
+(exit)

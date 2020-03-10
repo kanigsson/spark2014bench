@@ -152,3 +152,4 @@ Target solver: CVC4
   (let ((o2 (fp.sub RNE z (fp #b0 #b10000000001 #b0000000000000000000000000000000000000000000000000000))))
   (=> (fp.isFinite64 o2) (fp.isFinite64 (fp.div RNE y o2)))))))))))))))))
 (check-sat)
+(exit)

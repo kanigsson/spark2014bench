@@ -335,3 +335,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk context__split_fields)) false false true true)
   (not (= context__attr__constrained true))))))))
 (check-sat)
+(exit)

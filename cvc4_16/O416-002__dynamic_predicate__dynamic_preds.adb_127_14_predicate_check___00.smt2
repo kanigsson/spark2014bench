@@ -403,3 +403,4 @@ Target solver: CVC4
   (=> (dynamic_invariant a true false true true)
   (=> (dynamic_invariant b true false true true) (= (mod2 a 2) 0)))))))))
 (check-sat)
+(exit)

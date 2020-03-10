@@ -662,3 +662,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 k) true false) (ite (<= k (+ (- o3 o2) 1)) true false)) true)
   (in_range1 (length fragment))))))))))))))))))))))
 (check-sat)
+(exit)

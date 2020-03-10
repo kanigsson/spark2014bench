@@ -580,3 +580,4 @@ Target solver: CVC4
   (= o (ite (<= 14 (length buffer)) true false)) (= o false))
   (=> (= o true) (in_range (+ (first1 buffer) 13))))))))
 (check-sat)
+(exit)

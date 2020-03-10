@@ -771,3 +771,4 @@ Target solver: CVC4
   (= (attr__init2 (rec__relaxed_initialization__rec__z q_1)) true)))
   (<= (to_rep obj__first) usf)))))))))))))))))))))))))
 (check-sat)
+(exit)

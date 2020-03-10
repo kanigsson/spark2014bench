@@ -887,3 +887,4 @@ Target solver: CVC4
   (forall ((o12 Int))
   (=> (= (to_rep1 (select r3 o11)) o12) (dynamic_property first last usf)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

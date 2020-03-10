@@ -2113,3 +2113,4 @@ Target solver: CVC4
                                      local_ctx__split_fields6) #x0000000000000002 o7)))
   (bvule ((_ zero_extend 56) #x00) (bvand (bvlshr c18b ((_ int2bv 64) 24)) #x00000000000000FF))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

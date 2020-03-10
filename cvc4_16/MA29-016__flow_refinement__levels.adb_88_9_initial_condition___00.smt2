@@ -120,3 +120,4 @@ Target solver: CVC4
   (forall ((x21 Int)) (read_partial_2__function_guard (read_partial_2 x21)
   x21)) (= (read_partial_2 x2) 0)))))))))))
 (check-sat)
+(exit)

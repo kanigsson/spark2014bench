@@ -1094,3 +1094,4 @@ Target solver: CVC4
   (let ((o2 (- (last1 number) string_index1)))
   (=> (in_range1 o2) (=> (in_range1 (+ o2 1)) (not (= 2 0))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

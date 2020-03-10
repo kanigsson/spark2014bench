@@ -770,3 +770,4 @@ Target solver: CVC4
        (< pivot_value1 (to_rep2 (select (to_array a__split_fields1) right3))))
   true false)) true) (in_range2 (- right3 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

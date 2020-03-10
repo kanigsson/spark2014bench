@@ -937,3 +937,4 @@ Target solver: CVC4
   true))) (in_range5
   ada___ada___hermes__der__decode__get_integer_value__stop)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

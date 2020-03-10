@@ -700,3 +700,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (let ((o (+ first2 last2))) (=> (in_range1 o) (in_range1 (+ o 1)))))))))))))))))
 (check-sat)
+(exit)

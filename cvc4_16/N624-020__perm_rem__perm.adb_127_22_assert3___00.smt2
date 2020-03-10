@@ -625,3 +625,4 @@ Target solver: CVC4
   (=> (< i i1)
   (= (to_rep (select (to_array a21) i)) (to_rep (select (to_array a) i))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

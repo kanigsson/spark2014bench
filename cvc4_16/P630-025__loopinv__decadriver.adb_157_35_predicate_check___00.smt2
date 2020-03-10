@@ -1077,3 +1077,4 @@ Target solver: CVC4
   (rec__decadriver__rx_frame_type__frame q_1) o6
   (rec__decadriver__rx_frame_type__overrun q_1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

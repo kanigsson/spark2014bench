@@ -492,3 +492,4 @@ Target solver: CVC4
   (and (= n11 (bvsub var1_range_size n)) (= n21 #x0000000000000000)))))))
   (bvule #x0000000000000000 n11))))))))))))))))))))))))))))
 (check-sat)
+(exit)

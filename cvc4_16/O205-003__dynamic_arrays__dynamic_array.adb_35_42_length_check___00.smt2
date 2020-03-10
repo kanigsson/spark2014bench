@@ -1325,3 +1325,4 @@ Target solver: CVC4
   (=> (= (last2 temp___227) c)
   (=> (<= (first1 temp___227) (last2 temp___227)) (<= 1 c))))))))))))
 (check-sat)
+(exit)

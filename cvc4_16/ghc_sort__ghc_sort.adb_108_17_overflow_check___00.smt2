@@ -466,3 +466,4 @@ Target solver: CVC4
                       false)) true)
   (in_range1 (+ j1 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

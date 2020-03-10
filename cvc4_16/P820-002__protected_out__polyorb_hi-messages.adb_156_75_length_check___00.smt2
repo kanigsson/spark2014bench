@@ -840,3 +840,4 @@ Target solver: CVC4
   (=> (= o5 r24b)
   (=> (in_range2 r24b) (=> (<= (first1 item) (last1 item)) (<= r23b r24b)))))))))))))))))))))))))))
 (check-sat)
+(exit)

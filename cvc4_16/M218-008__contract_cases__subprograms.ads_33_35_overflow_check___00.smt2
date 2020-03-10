@@ -97,3 +97,4 @@ Target solver: CVC4
   (=> (dynamic_invariant val__ true false true true)
   (=> (not (= val__ 2147483647)) (in_range (+ val__ 1)))))))
 (check-sat)
+(exit)

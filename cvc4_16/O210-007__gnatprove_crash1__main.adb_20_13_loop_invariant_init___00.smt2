@@ -545,3 +545,4 @@ Target solver: CVC4
                            (us_split_fieldsqtmk branch__split_fields1)))
   (<= 0 i)))))))))))))))))))))))
 (check-sat)
+(exit)

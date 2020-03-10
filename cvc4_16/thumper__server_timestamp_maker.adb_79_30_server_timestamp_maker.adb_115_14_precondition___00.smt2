@@ -918,3 +918,4 @@ Target solver: CVC4
   (<= (first1
       (of_array (rec__messages__message__data (us_split_fields1 c13b)) 1 512)) (+ length_stop1 1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

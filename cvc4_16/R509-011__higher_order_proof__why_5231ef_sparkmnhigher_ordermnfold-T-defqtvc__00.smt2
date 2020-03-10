@@ -1312,3 +1312,4 @@ Target solver: CVC4
   (=> (= o1 true)
   (=> (<= (first_2 a) j) (=> (<= j (last_2 a)) (<= i (last2 a)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -256,3 +256,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (< (div1 o 2) l1) true false))
   (=> (not (= spark__branch true)) (=> (in_range1 (+ a b)) (not (= 2 0))))))))))))))))))))
 (check-sat)
+(exit)

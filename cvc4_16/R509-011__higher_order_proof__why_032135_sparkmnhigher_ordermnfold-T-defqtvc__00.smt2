@@ -1269,3 +1269,4 @@ Target solver: CVC4
   (let ((o (- i 1)))
   (=> (in_range1 o) (=> (in_range7 o) (< 0 (length_2 a))))))))))))))))
 (check-sat)
+(exit)

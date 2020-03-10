@@ -776,3 +776,4 @@ Target solver: CVC4
   (=> (not (= (length a) 0))
   (=> (in_range4 (first1 a)) (dynamic_property 1 100 (first1 a) (last1 a))))))))
 (check-sat)
+(exit)

@@ -963,3 +963,4 @@ Target solver: CVC4
   (<= o6 (capacity amortized_queue__Oconcat__2__result)))
   (=> (= o6 (+ 1 o5)) (<= 1 1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1072,3 +1072,4 @@ Target solver: CVC4
   (and (<= (to_rep r__first_2) temp___1414)
   (<= temp___1414 (to_rep r__last_2))) (in_range1 (- i 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

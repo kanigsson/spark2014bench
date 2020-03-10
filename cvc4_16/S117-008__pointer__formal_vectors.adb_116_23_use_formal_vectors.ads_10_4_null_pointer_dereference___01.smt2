@@ -1637,3 +1637,4 @@ Target solver: CVC4
   (rec__use_formal_vectors__my_vect__element_array_access__pointer_value__pred
   (rec__use_formal_vectors__my_vect__vector__content v__split_fields2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

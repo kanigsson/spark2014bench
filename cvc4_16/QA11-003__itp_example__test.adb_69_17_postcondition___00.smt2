@@ -209,3 +209,4 @@ Target solver: CVC4
   (=> (= (to_rep (get mat 1 2)) o)
   (=> (= test__test_7__result o) (= test__test_7__result 1))))))
 (check-sat)
+(exit)

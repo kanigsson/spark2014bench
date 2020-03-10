@@ -1028,3 +1028,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__patience__state__numstacks s__split_fields)) o1)
   (<= 0 i1))))))))))))))))))))))
 (check-sat)
+(exit)

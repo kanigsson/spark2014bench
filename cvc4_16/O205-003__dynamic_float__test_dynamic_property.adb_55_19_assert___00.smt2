@@ -318,3 +318,4 @@ Target solver: CVC4
   (forall ((x2 Float32))
   (=> (dynamic_invariant2 x2 true true true true) (fp.leq x2 c))))))))))))))))))))))))))
 (check-sat)
+(exit)

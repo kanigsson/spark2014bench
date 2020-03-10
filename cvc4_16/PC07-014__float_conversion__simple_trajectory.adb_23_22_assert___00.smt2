@@ -341,3 +341,4 @@ Target solver: CVC4
   (=> (= (in_bounds (low_bound n)) true)
   (fp.leq new_speed1 (fp.add RNE old_speed (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -882,3 +882,4 @@ Target solver: CVC4
              test_higher_order3__my_count__count_left__acc__fold__result) 
      (first1 a))) (add_one (to_rep (select (to_array a) (first1 a))) init))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

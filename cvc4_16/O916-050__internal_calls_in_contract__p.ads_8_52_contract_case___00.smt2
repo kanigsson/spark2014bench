@@ -104,3 +104,4 @@ Target solver: CVC4
   (forall ((self__1 pt)) (internal__function_guard (internal self__1)
   self__1)) (= (internal self__) true))))))
 (check-sat)
+(exit)

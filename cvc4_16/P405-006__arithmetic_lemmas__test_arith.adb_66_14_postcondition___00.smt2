@@ -157,3 +157,4 @@ Target solver: CVC4
   (let ((o3 (+ o2 o1)))
   (=> (in_range o3) (forall ((r21 Int)) (=> (= r21 o3) (= r11 r21)))))))))))))))))))))
 (check-sat)
+(exit)

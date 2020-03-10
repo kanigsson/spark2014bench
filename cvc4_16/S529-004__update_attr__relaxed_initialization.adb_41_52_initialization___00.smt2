@@ -773,3 +773,4 @@ Target solver: CVC4
   (= (attr__init2
      (rec__relaxed_initialization__rec__z (us_split_fields1 elem))) true))))))))))))))))))
 (check-sat)
+(exit)

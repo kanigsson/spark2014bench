@@ -327,3 +327,4 @@ Target solver: CVC4
   (=> (<= (+ b_first length1) (+ (to_rep b__last) 1))
   (=> (<= 0 (- length1 1)) (<= 0 0)))))))))))))
 (check-sat)
+(exit)

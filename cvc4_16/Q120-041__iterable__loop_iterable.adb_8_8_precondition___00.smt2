@@ -800,3 +800,4 @@ Target solver: CVC4
   (has_element__function_guard (has_element o8 temp___3081) o8 temp___3081))
   (= (has_element (us_repqtmk c1__split_fields) temp___308) true))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

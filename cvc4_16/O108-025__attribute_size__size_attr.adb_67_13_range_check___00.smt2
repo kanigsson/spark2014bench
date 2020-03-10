@@ -2240,3 +2240,4 @@ Target solver: CVC4
   (=> (= mi 1)
   (=> (dynamic_invariant3 mi true false true true) (in_range 0)))))))))
 (check-sat)
+(exit)

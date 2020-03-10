@@ -330,3 +330,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (let ((o (fxp_div x x))) (=> (in_range1 o) (in_range2 o))))))))
 (check-sat)
+(exit)

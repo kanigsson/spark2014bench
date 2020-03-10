@@ -1188,3 +1188,4 @@ Target solver: CVC4
   (=> (= (to_rep (get (to_array a) temp___1708 temp___1709)) o6)
   (< init 2147483647))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

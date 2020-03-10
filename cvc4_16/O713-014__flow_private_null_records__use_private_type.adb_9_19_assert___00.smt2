@@ -407,3 +407,4 @@ Target solver: CVC4
   (= pr_nt__split_discrs (us_split_discrs3 use_private_type__pr_nt__assume))
   (=> (= pr__attr__tag us_tag) (= pr_d__attr__tag us_tag1)))))))))))))))))
 (check-sat)
+(exit)

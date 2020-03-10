@@ -128,3 +128,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (let ((o a)) (=> (not (= o 8)) (in_range2 (+ o 1)))))))))))
 (check-sat)
+(exit)

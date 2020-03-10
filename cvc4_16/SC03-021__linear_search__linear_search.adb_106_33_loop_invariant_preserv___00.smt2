@@ -1153,3 +1153,4 @@ Target solver: CVC4
      (us_close (us_repqtmk2 x__pointer_value2))) (- k i2)) (nth l k))))
   (forall ((k Int)) (=> (and (<= 1 k) (<= k i2)) (not (= (nth l k) v)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

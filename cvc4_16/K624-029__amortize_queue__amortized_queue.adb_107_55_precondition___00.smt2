@@ -1059,3 +1059,4 @@ Target solver: CVC4
   (or (= 1000 0)
   (<= (length (rec__amortized_queue__queue__front result____split_fields1)) 1000))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

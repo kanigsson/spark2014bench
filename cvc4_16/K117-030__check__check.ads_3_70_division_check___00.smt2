@@ -232,3 +232,4 @@ Target solver: CVC4
   (ite (and (not (= x 0)) (< 0 (div1 1 x))) (= o (ite (= y 0) false true))
   (= o false)) (=> (= o true) (not (= y 0)))))))))
 (check-sat)
+(exit)

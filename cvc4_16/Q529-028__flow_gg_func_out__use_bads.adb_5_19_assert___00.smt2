@@ -100,3 +100,4 @@ Target solver: CVC4
   (=> (forall ((g2 Int)) (bad__function_guard (bad g2) g2))
   (= (bad g1) true))))))
 (check-sat)
+(exit)

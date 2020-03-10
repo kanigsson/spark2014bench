@@ -278,3 +278,4 @@ Target solver: CVC4
   (= o (ite (= b true) (to_rep (select y usf1)) (to_rep (select y usf1))))))
   (<= 1 usf)))))))))
 (check-sat)
+(exit)

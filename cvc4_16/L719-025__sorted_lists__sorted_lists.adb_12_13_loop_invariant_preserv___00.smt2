@@ -1173,3 +1173,4 @@ Target solver: CVC4
      (us_split_fieldsqtmk1 container__split_fields))
      (us_repqtmk (us_split_fieldsqtmk current__split_fields2)))) new_item))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

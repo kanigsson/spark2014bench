@@ -1094,3 +1094,4 @@ Target solver: CVC4
                                                                  o2)))) 1) 100)))))
   (=> (<= 1 stacks__get_model__3__R71s) (<= 1 1))))))))))))
 (check-sat)
+(exit)

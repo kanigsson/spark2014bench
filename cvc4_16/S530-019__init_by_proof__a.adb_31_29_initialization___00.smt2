@@ -187,3 +187,4 @@ Target solver: CVC4
   (=> (= (global_a_initalized global_a__attr__init global_a) true)
   (= global_a__attr__init true))))))))
 (check-sat)
+(exit)

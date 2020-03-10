@@ -755,3 +755,4 @@ Target solver: CVC4
      (rec__vectors__vector__last_index (us_split_fields3 container))) o2)
   (in_range2 o2))))))))))))
 (check-sat)
+(exit)

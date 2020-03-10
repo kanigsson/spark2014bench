@@ -493,3 +493,4 @@ Target solver: CVC4
   (forall ((o4 Int))
   (=> (= (to_rep (select (to_array a) usf)) o4) (<= (first1 aa) usf))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

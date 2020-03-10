@@ -1410,3 +1410,4 @@ Target solver: CVC4
   (length1 (us_repqtmk3 v__split_fields4)) (us_repqtmk3 v__split_fields4)))
   (in_range (+ (length1 (us_repqtmk3 v__split_fields)) 1))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

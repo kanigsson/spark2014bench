@@ -644,3 +644,4 @@ Target solver: CVC4
   (=> (not (= (or (or usf usf2) usf1) true))
   (not (= (rec__types__option__exists search_ter_p__search__result) true))))))))))))))))))))))))))
 (check-sat)
+(exit)

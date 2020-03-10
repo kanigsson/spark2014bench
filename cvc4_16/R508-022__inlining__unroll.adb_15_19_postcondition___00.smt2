@@ -248,3 +248,4 @@ Target solver: CVC4
   (let ((o5 (+ res7 1))) (and (in_range o5) (and (= res2 o5) (= x5 ch))))))))))))))))))))))))))))))))))))))))))
   (= res2 ch))))))))
 (check-sat)
+(exit)

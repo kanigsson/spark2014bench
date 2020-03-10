@@ -737,3 +737,4 @@ Target solver: CVC4
                   this__split_discrs)))))
   (let ((o (length by__))) (=> (in_range1 o) (in_range6 (- (+ start o) 1)))))))))))))
 (check-sat)
+(exit)

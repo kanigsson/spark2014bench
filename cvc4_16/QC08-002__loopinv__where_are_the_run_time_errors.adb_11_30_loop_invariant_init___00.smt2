@@ -256,3 +256,4 @@ Target solver: CVC4
   (=> (in_range (+ temp___loop_entry_159 o4))
   (= y2 (+ temp___loop_entry_159 (* 3 (- x2 2)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

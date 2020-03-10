@@ -583,3 +583,4 @@ Target solver: CVC4
   (forall ((index_32 Int))
   (=> (= index_32 o2) (=> (<= index_32 100000) (<= 0 index_32))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

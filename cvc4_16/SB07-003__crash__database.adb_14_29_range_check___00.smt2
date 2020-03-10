@@ -916,3 +916,4 @@ Target solver: CVC4
  ;; File "database.ads", line 1, characters 0-0
   (not (in_range 1000)))
 (check-sat)
+(exit)

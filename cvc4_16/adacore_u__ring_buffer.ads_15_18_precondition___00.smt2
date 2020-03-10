@@ -339,3 +339,4 @@ Target solver: CVC4
   (and (dynamic_invariant2 o4 true false true true) (= o4 (+ 0 (length o3))))
   (<= 1 o4)))))))))))))
 (check-sat)
+(exit)

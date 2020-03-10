@@ -626,3 +626,4 @@ Target solver: CVC4
      (select (to_array temp___610) simple_unc_arrays__search__result)) o1)
   (=> (= o1 v) (in_range1 (- simple_unc_arrays__search__result 1))))))))))))))))))
 (check-sat)
+(exit)

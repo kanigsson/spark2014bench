@@ -782,3 +782,4 @@ Target solver: CVC4
                                              (select (to_array o10) k))))))))
   (<= o4 (last1 o10)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

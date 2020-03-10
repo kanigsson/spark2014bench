@@ -231,3 +231,4 @@ Target solver: CVC4
   (=> (in_range3 totalsum1)
   (=> (= result__1 totalsum1) (= (* 6 result__1) (* (* n (+ n 1)) (+ n 2))))))))))))))))))))
 (check-sat)
+(exit)

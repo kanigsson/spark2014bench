@@ -498,3 +498,4 @@ Target solver: CVC4
   (= (and (ite (dynamic_invariant x2 true true true true) true false) 
   (ite (= (last1 (of_array s 1 x2)) x2) true false)) true) (= x2 1)))))))))))))))
 (check-sat)
+(exit)

@@ -865,3 +865,4 @@ Target solver: CVC4
   (<= 1 (- (to_rep
            (rec__record_discr__interm_result__upto (us_split_discrs3 r))) 1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

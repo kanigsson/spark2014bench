@@ -364,3 +364,4 @@ Target solver: CVC4
   (=> (in_range1 (+ length11 length2))
   (forall ((o12 Int)) (=> (= (to_rep a__last) o12) (in_range1 (+ o12 1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

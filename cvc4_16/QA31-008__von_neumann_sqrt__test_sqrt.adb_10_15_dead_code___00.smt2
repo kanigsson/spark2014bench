@@ -487,3 +487,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 o true false true true)
   (and (<= (* o o) n1) (< n1 (* (+ o 1) (+ o 1)))))) (= n1 2147483647))))))))))))
 (check-sat)
+(exit)

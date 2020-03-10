@@ -336,3 +336,4 @@ Target solver: CVC4
   (fp.lt ((_ to_fp 8 24) RNE (to_real number_theory__fib__result)) (fp.add RNE (fp.div RNE 
   (power (fp #b0 #b01111111 #b10011110001110111100111) n) (fp #b0 #b10000000 #b00011110001101010100000)) (fp #b0 #b01111111 #b00000000000000000000000)))))))))))))
 (check-sat)
+(exit)

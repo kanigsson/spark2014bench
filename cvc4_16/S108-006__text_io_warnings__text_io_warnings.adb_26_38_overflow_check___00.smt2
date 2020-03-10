@@ -1289,3 +1289,4 @@ Target solver: CVC4
   (forall ((sum1 Int))
   (=> (= sum1 o) (=> (in_range1 (* j 20)) (in_range1 (* j (- 20)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

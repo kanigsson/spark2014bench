@@ -989,3 +989,4 @@ Target solver: CVC4
   (= (oeq (us_repqtmk v__split_discrs (us_split_fieldsqtmk v__split_fields1))
      (empty_vector Tuple0)) true))))))))))))
 (check-sat)
+(exit)

@@ -999,3 +999,4 @@ Target solver: CVC4
   (= (length
      (us_repqtmk l__split_discrs (us_split_fieldsqtmk l__split_fields2))) usf)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

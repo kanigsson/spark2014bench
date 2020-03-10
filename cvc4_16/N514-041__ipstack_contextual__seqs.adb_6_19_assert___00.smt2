@@ -114,3 +114,4 @@ Target solver: CVC4
   (forall ((x1 Int) (y1 Int)) (seq_le__function_guard (seq_le x1 y1) x1 y1))
   (= (seq_le x y) true)))))))))
 (check-sat)
+(exit)

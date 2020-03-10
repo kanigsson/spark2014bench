@@ -828,3 +828,4 @@ Target solver: CVC4
      stream__split_fields1)) o2)
   (=> (= (+ o2 1) r23b) (=> (in_range2 r23b) (in_range2 (length item)))))))))))))))))))
 (check-sat)
+(exit)

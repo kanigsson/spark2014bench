@@ -344,3 +344,4 @@ Target solver: CVC4
                                                  true false)) true)
   (let ((o (- index (first1 arr)))) (=> (in_range1 o) (in_range1 (+ o 1)))))))))))))))
 (check-sat)
+(exit)

@@ -162,3 +162,4 @@ Target solver: CVC4
  ;; File "assign_arr.ads", line 3, characters 0-0
   (not (=> (dynamic_invariant y true false true true) (in_range (+ y 1)))))
 (check-sat)
+(exit)

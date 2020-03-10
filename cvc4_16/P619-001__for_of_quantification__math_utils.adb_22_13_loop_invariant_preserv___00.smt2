@@ -402,3 +402,4 @@ Target solver: CVC4
   (=> (and (<= (first1 v) k) (<= k i2))
   (<= (to_rep (select (to_array v) k)) result__3))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

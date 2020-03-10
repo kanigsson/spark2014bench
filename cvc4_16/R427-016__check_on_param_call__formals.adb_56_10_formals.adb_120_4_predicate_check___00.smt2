@@ -705,3 +705,4 @@ Target solver: CVC4
   (=> (= spark__branch1 (ite (= o8 0) true false))
   (=> (= spark__branch1 true) (dynamic_predicate1 (store u3 3 rliteral1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

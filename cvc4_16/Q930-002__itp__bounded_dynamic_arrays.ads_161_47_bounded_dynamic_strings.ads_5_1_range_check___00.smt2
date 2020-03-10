@@ -848,3 +848,4 @@ Target solver: CVC4
         this__split_fields2)))))
   (= o2 (ite (= o7 o5) true false)))))))))))) (in_range1 (length by__)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

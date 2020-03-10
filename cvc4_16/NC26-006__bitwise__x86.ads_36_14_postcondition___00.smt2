@@ -719,3 +719,4 @@ Target solver: CVC4
                                                          memory)) (bvshl ((_ zero_extend 16) 
   (readmem16 (bvadd addr #x0000000000000002) memory)) ((_ int2bv 32) 16))))))))))))))))))
 (check-sat)
+(exit)

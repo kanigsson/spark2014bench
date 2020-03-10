@@ -538,3 +538,4 @@ Target solver: CVC4
   (=> (perm_symmetric__function_guard (perm_symmetric a b) a b)
   (= (distinct (perm_symmetric a b) 0) true))))))))))))))))
 (check-sat)
+(exit)

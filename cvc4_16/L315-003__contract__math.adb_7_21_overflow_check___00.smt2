@@ -123,3 +123,4 @@ Target solver: CVC4
   (ite (<= (* (+ res1 1) (+ res1 1)) x) true false)) true) (in_range1
   (+ res1 1))))))))))))))))))
 (check-sat)
+(exit)

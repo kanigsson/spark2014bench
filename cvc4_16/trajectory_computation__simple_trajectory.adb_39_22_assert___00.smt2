@@ -901,3 +901,4 @@ Target solver: CVC4
   (fp.leq new_speed1 (fp.mul RNE ((_ to_fp 11 53) RNE (to_real (+ n 1))) 
   bound)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

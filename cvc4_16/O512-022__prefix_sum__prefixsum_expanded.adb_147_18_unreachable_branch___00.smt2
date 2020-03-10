@@ -564,3 +564,4 @@ Target solver: CVC4
   (forall ((o4 Int))
   (=> (= (to_rep (select a1 7)) o4) (not (= o4 (+ o3 o2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

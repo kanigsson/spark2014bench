@@ -659,3 +659,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 17 64) true false) (ite (<= 64 32) true false)) true)
   (bvule ((_ zero_extend 32) #x00000000) v))))))))
 (check-sat)
+(exit)

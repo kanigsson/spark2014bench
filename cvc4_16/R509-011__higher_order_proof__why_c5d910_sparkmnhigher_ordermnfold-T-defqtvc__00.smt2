@@ -1244,3 +1244,4 @@ Target solver: CVC4
   (to_rep (get (to_array a) k1 l1))))
   (= (value (to_rep (get (to_array a) k l))) c)))))))))))))))))))
 (check-sat)
+(exit)

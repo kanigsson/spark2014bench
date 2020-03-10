@@ -300,3 +300,4 @@ Target solver: CVC4
   (and (<= 1 a__pgcd__result) (<= a__pgcd__result (abs1 a))))
   (and (<= 1 a__pgcd__result) (<= a__pgcd__result (abs1 b)))))))))))))))))))))
 (check-sat)
+(exit)

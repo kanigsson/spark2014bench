@@ -754,3 +754,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 2 usf) true false) (ite (<= usf o) true false)) true)
   (rec__ghc_sort__int_array_list__pointer_value__pred l)))))))))
 (check-sat)
+(exit)

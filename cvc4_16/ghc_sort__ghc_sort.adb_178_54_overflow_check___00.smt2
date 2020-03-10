@@ -1372,3 +1372,4 @@ Target solver: CVC4
   (=> (= ghc_sort__sort__B_8__R79b__assume r79b)
   (=> (dynamic_invariant r79b true false true true) (in_range1 (+ c1 1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

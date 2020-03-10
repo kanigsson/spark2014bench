@@ -272,3 +272,4 @@ Target solver: CVC4
   (=> (in_range o)
   (=> (in_range2 o) (=> (in_range2 y8) (in_range (+ x8 34)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

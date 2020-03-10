@@ -106,3 +106,4 @@ Target solver: CVC4
   (=> (= v1 (- 1))
   (=> (ite (< 0 v1) (= o (distinct 0 0)) (= o false)) (= o true)))))))))
 (check-sat)
+(exit)

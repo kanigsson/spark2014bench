@@ -573,3 +573,4 @@ Target solver: CVC4
   (us_repqtmk2 binary_search_trees__insert__insert_node__starting_at__value)))
   (rec__binary_search_trees__binary_search_tree__size tree__split_fields)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -2037,3 +2037,4 @@ Target solver: CVC4
   (= (to_rep2 (rec__tetris_integrity__piece__x cur_piece__split_fields)) o16)
   (<= 1 (+ o16 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

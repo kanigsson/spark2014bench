@@ -927,3 +927,4 @@ Target solver: CVC4
         (- usf 1)))))
   (<= 1 usf)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -499,3 +499,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__value1 (rec__empty_type__rec__g x__split_fields))) o)
   (not (= 5 0))))))))))))
 (check-sat)
+(exit)

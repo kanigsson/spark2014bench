@@ -238,3 +238,4 @@ Target solver: CVC4
   (forall ((x Int))
   (=> (dynamic_invariant x true false true true) (not (= 2 0))))))
 (check-sat)
+(exit)

@@ -670,3 +670,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r2b true false true true)
   (=> (= test__attr__constrained true) (= rliteral1 test__split_discrs))))))))
 (check-sat)
+(exit)

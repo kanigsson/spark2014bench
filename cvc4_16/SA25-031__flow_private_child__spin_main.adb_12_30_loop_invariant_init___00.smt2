@@ -147,3 +147,4 @@ Target solver: CVC4
   (= (state_invariant (us_repqtmk (us_split_fieldsqtmk state__split_fields))
      internal_var) true)))))))
 (check-sat)
+(exit)

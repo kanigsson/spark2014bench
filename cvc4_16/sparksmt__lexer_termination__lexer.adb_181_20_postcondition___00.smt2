@@ -834,3 +834,4 @@ Target solver: CVC4
      (us_split_fieldsqtmk next_read__split_fields2)
      (us_split_discrsqtmk next_read__split_discrs2)) true))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -377,3 +377,4 @@ Target solver: CVC4
   (forall ((t2 (Array Int element_t)) (s2 Int)) (valid__function_guard
   (valid t2 s2) t2 s2)) (= (valid t1 s1) true)))))))))))))))))))))))))))
 (check-sat)
+(exit)

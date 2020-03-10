@@ -138,3 +138,4 @@ Target solver: CVC4
   (=> (fp.leq (fp #b0 #b00000000 #b00000000000000000000000) x)
   (=> (= y1 (fp.roundToIntegral RTN x)) (fp.leq y1 x))))))))
 (check-sat)
+(exit)

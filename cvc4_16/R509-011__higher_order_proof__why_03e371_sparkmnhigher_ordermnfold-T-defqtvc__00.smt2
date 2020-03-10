@@ -968,3 +968,4 @@ Target solver: CVC4
   (= o10 (ite (= (choose o9) true) (+ o8 1) o8)))
   (<= usf (last3 test_higher_order3__my_count__count_left__acc__fold__result)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

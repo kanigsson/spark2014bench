@@ -1015,3 +1015,4 @@ Target solver: CVC4
   (dynamic_invariant2 last5 true true true true)) (in_range4
   (length1 value))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -149,3 +149,4 @@ Target solver: CVC4
   (=> (forall ((x01 Int)) (wibble_0__function_guard (wibble_0 x01) x01))
   (< (read_partial_0 x0) (wibble_0 x0)))))))))))))
 (check-sat)
+(exit)

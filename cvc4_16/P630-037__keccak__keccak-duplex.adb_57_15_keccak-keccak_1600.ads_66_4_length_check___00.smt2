@@ -1211,3 +1211,4 @@ Target solver: CVC4
   (let ((temp___1182 (of_array (to_array in_data) temp___1180 o2)))
   (=> (<= (first1 temp___1182) (last1 temp___1182)) (<= 0 (- num_bytes 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

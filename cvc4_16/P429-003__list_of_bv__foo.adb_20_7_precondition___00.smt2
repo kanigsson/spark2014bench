@@ -1039,3 +1039,4 @@ Target solver: CVC4
                                                                    (rec__foo__lists__list__capacity
                                                                    o)))))))))))
 (check-sat)
+(exit)

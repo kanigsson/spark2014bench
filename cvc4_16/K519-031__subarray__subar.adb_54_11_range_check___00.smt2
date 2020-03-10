@@ -168,3 +168,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r13b true false true true)
   (=> (<= 20 r13b) (<= 11 20)))))))))))))))))))
 (check-sat)
+(exit)

@@ -1290,3 +1290,4 @@ Target solver: CVC4
   (to__ (us_repqtmk1 s__split_fields4)) (us_repqtmk1 s__split_fields4)))
   (= (last3 (to__ (us_repqtmk1 s__split_fields3))) (+ (- i2 first) 1)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

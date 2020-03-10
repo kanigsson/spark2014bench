@@ -392,3 +392,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 size_of_seq true false true true) (in_range1
   (- (first1 a) 1))))))))))
 (check-sat)
+(exit)

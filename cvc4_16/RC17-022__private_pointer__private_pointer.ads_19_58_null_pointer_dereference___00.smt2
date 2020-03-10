@@ -191,3 +191,4 @@ Target solver: CVC4
   (=> (not (= (is_null x) true))
   (rec__private_pointer__mode_on__t__pointer_value__pred x)))))
 (check-sat)
+(exit)

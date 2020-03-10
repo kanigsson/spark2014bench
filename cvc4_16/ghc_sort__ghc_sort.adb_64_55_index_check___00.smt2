@@ -419,3 +419,4 @@ Target solver: CVC4
   (=> (exists ((o1 Int)) (= (to_rep (select (to_array s1) j1)) o1))
   (<= (to_rep r__first) (- j 1)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -236,3 +236,4 @@ Target solver: CVC4
   (=> (fp.isFinite64 o)
   (forall ((pi3 Float64)) (=> (= pi3 o) (in_range1 (+ index1 1)))))))))))))))))))
 (check-sat)
+(exit)

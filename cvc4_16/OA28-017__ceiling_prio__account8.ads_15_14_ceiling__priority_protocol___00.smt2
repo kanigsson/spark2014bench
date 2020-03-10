@@ -200,3 +200,4 @@ Target solver: CVC4
  ;; File "account8.ads", line 15, characters 0-0
   (not (<= 5 4)))
 (check-sat)
+(exit)

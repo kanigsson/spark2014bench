@@ -2201,3 +2201,4 @@ Target solver: CVC4
   (=> (in_range1 (+ temp___loop_entry_888 temp___loop_entry_889)) (in_range1
   (+ num_deleted1 to_line1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

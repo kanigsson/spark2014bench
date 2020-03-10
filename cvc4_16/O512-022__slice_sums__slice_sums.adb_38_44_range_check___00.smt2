@@ -789,3 +789,4 @@ Target solver: CVC4
   (forall ((o extended_index))
   (=> (= (extended_indexqtint o) hi1) (in_range3 lo1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

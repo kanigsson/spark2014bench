@@ -577,3 +577,4 @@ Target solver: CVC4
   (= o false))
   (=> (= o true) (=> (in_range5 (last_2 a)) (in_range4 (last2 a))))))))))
 (check-sat)
+(exit)

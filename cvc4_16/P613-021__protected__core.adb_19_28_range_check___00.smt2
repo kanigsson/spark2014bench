@@ -807,3 +807,4 @@ Target solver: CVC4
   (=> (= (to_rep3 (rec__core__mailboxT__count self__3)) o8) (in_range3
   (+ o8 1))))))))))))))))))))
 (check-sat)
+(exit)

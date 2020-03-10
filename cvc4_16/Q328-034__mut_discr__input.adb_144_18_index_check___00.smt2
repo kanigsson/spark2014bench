@@ -365,3 +365,4 @@ Target solver: CVC4
   (not (= o1 true)))))))) (and (= line1 line) (= first_char1 first_char)))))
   (<= 1 first_char1)))))))))))
 (check-sat)
+(exit)

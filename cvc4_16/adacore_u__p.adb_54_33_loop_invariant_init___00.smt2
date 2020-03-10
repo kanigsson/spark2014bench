@@ -347,3 +347,4 @@ Target solver: CVC4
   (=> (and (<= (first1 a) k) (<= k i))
   (not (= (to_rep (select (to_array a) k)) e))))))))))))))))))))
 (check-sat)
+(exit)

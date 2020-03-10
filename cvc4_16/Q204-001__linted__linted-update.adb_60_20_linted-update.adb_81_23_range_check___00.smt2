@@ -1898,3 +1898,4 @@ Target solver: CVC4
   (=> (= spark__branch1 (ite (bvule x3 #x7FFFFFFF) true false))
   (=> (= spark__branch1 true) (in_range (bv2nat x3))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

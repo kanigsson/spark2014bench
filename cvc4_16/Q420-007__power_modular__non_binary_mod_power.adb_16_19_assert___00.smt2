@@ -529,3 +529,4 @@ Target solver: CVC4
   (=> (in_range o3)
   (forall ((z1 Int)) (=> (= z1 (mod2 o3 5)) (= z1 (bv2nat y1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

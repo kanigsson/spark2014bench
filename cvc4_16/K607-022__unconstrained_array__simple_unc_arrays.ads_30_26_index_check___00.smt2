@@ -649,3 +649,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (to_array a__split_fields) o3)) o4)
   (<= (first1 a__split_fields1) usf)))))))))))))))))))
 (check-sat)
+(exit)

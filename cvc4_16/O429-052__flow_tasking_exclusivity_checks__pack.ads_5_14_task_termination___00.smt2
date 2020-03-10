@@ -472,3 +472,4 @@ Target solver: CVC4
                                          standard_err1 current_in1
                                          current_out1 current_err1)))))))
 (check-sat)
+(exit)

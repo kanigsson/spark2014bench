@@ -398,3 +398,4 @@ Target solver: CVC4
   (=> (= (of_array a o1 o) a_old)
   (=> (dynamic_invariant1 a_old true false true true) (not (= 2 0)))))))))))))
 (check-sat)
+(exit)

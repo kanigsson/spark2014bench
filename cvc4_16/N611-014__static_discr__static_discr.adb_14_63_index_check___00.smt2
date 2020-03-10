@@ -1262,3 +1262,4 @@ Target solver: CVC4
                                              false)) true)
   (<= 1 result__1))))))))))))))))))))))))))
 (check-sat)
+(exit)

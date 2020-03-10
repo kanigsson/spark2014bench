@@ -619,3 +619,4 @@ Target solver: CVC4
   (=> (< (length array1) 255)
   (=> (< (length array2) 255) (in_range1 (length array2))))))))
 (check-sat)
+(exit)

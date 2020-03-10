@@ -864,3 +864,4 @@ Target solver: CVC4
   (to_rep1
   (select (to_array1 test_higher_order__my_fold_right__acc__fold__result) (+ i 1)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

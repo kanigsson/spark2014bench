@@ -194,3 +194,4 @@ Target solver: CVC4
   (=> (type_invariant x)
   (=> (dynamic_invariant tmp false false true true) (type_invariant x)))))))
 (check-sat)
+(exit)

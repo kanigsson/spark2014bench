@@ -240,3 +240,4 @@ Target solver: CVC4
   (=> (= j2 (+ j1 1))
   (=> (in_range2 (power n j2)) (= result__2 (power n j2))))))))))))))))))))
 (check-sat)
+(exit)

@@ -614,3 +614,4 @@ Target solver: CVC4
   (num_free_slots__function_guard (num_free_slots my_board3) my_board3))
   (= (num_free_slots my_board2) (- (num_free_slots my_board1) 1))))))))))))))))
 (check-sat)
+(exit)

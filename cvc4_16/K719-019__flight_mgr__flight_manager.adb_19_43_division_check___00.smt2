@@ -151,3 +151,4 @@ Target solver: CVC4
   (=> (fp.isFinite32 (fp.mul RNE f distance_to_target))
   (not (fp.isZero (fp #b0 #b10000010 #b01000000000000000000000)))))))))))
 (check-sat)
+(exit)

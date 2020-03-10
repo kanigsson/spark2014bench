@@ -325,3 +325,4 @@ Target solver: CVC4
   (=> (forall ((r2 Int)) (sign__function_guard (sign r2) r2))
   (=> (sign__function_guard (sign y) y) (= (sign r1) (sign y))))))))))))))
 (check-sat)
+(exit)

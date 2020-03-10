@@ -566,3 +566,4 @@ Target solver: CVC4
   (let ((o13 (fp.mul RNE o12 (fp.abs o11))))
   (=> (fp.isFinite32 o13) (fp.isFinite32 (fp.div RNE o13 o10)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -500,3 +500,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= c459b 0) false true))
   (not (= spark__branch true)))))))))))
 (check-sat)
+(exit)

@@ -229,3 +229,4 @@ Target solver: CVC4
   (=> (not (= d 0))
   (forall ((res1 Int)) (=> (= res1 (div1 0 d)) (= res1 0)))))))))
 (check-sat)
+(exit)

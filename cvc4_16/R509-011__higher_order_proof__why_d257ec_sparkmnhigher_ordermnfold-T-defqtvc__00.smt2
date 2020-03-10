@@ -1474,3 +1474,4 @@ Target solver: CVC4
   (and (<= (to_rep r__first_2) temp___1417)
   (<= temp___1417 (to_rep r__last_2))) (<= usf (to_rep r__last))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -880,3 +880,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (rec__ring_buf__ring_buffer__length r__split_fields)) o1)
   (uint_in_range o1))))))))))))
 (check-sat)
+(exit)

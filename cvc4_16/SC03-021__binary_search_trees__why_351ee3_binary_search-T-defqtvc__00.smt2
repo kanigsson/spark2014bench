@@ -466,3 +466,4 @@ Target solver: CVC4
   (=> (not (= (bool_eq t us_null_pointer) true))
   (rec__binary_search__tree_acc__pointer_value__pred t))))
 (check-sat)
+(exit)

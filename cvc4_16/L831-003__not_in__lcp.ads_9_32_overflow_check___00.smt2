@@ -446,3 +446,4 @@ Target solver: CVC4
   (forall ((o2 Int))
   (=> (= (to_rep (select (to_array a) o1)) o2) (in_range1 (+ x lcp__result)))))))))))))))))))))
 (check-sat)
+(exit)

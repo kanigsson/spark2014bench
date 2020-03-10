@@ -307,3 +307,4 @@ Target solver: CVC4
   (=> (and (in_range item) (= (contains container item) true))
   (= (my_equal_02 item new_item) true))))))))))
 (check-sat)
+(exit)

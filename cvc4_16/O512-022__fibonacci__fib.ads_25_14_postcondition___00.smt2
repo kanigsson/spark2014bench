@@ -270,3 +270,4 @@ Target solver: CVC4
   (and (in_range2 o2) (and (= p22 o2) (= i1 temp___216)))))))))))
   (= p22 p21))))) (= p12 p22))))))))))))))))))
 (check-sat)
+(exit)

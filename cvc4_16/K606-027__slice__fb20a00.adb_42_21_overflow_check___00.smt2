@@ -526,3 +526,4 @@ Target solver: CVC4
           (to_rep1 new_sub__last))) true)))
   true false)) true) (in_range1 (+ pos1 1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

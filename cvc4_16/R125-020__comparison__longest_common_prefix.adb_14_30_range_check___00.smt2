@@ -401,3 +401,4 @@ Target solver: CVC4
   (=> (= r8b o2)
   (=> (dynamic_invariant2 r8b true false true true) (=> (<= y r8b) (<= 1 y)))))))))))))))))))))))))))
 (check-sat)
+(exit)

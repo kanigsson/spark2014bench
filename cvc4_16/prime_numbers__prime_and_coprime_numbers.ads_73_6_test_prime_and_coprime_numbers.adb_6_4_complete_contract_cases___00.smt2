@@ -325,3 +325,4 @@ Target solver: CVC4
   (ite (= (and (= (ite (select number_list value) 1 0) (ite (distinct 0 0) 1 0)) (= 
   mode 2)) true) 1 0)))))))))))))
 (check-sat)
+(exit)

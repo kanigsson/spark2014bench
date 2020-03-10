@@ -385,3 +385,4 @@ Target solver: CVC4
   (invariant__ (+ n 1) new_speed2) (+ n 1) new_speed2))
   (= (invariant__ (+ n 1) new_speed1) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

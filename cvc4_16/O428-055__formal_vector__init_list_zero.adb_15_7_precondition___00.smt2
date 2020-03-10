@@ -870,3 +870,4 @@ Target solver: CVC4
   (= (bool_eq1 (us_repqtmk1 (us_split_fieldsqtmk1 cu__split_fields1))
      no_element) true)))))))))))))))))))))))))
 (check-sat)
+(exit)

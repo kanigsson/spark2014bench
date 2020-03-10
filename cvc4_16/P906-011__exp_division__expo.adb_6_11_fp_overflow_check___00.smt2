@@ -145,3 +145,4 @@ Target solver: CVC4
   (not (fp.eq (fp.mul RNE x (fp.mul RNE x x)) ((_ to_fp 8 24) #x00000000)))
   (fp.isFinite32 (fp.div RNE (fp #b0 #b01111111 #b00000000000000000000000) (fp.mul RNE x (fp.mul RNE x x)))))))))))
 (check-sat)
+(exit)

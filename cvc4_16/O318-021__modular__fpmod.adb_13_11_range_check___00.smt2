@@ -400,3 +400,4 @@ Target solver: CVC4
   (=> (uint_in_range (to_int2 x1))
   (forall ((x2 Int)) (=> (= x2 (- 12)) (uint_in_range (to_int2 x2)))))))))))
 (check-sat)
+(exit)

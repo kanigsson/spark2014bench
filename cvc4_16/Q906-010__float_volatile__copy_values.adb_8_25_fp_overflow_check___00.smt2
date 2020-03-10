@@ -164,3 +164,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (fp.isFinite32 (fp.sub RNE motor (fp #b0 #b01111111 #b00000000000000000000000)))))))))))))
 (check-sat)
+(exit)

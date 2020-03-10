@@ -219,3 +219,4 @@ Target solver: CVC4
   (=> (= abs_out11 (fp.abs o1))
   (fp.leq abs_out11 (fp #b0 #b01111111000 #b0100011110101110000101000111101011100001010001111011)))))))))))))))))
 (check-sat)
+(exit)

@@ -106,3 +106,4 @@ Target solver: CVC4
   (<= 1 (+ (+ 0 (ite (= (< x threshold) true) 1 0)) (ite (= (>= x threshold) true)
                                                     1 0)))))))))))))
 (check-sat)
+(exit)

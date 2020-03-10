@@ -896,3 +896,4 @@ Target solver: CVC4
   (=> (= sum_out11 o5) (in_range1
   (- to_int32_left_2_out11 to_int32_right_2_out11)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1462,3 +1462,4 @@ Target solver: CVC4
   (=> (= (to_rep (select the_file (- (+ cur_position usf) 1))) o4)
   (<= (+ last2 usf) (to_rep1 item__last)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

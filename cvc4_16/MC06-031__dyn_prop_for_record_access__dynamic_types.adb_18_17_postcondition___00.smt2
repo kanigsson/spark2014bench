@@ -663,3 +663,4 @@ Target solver: CVC4
                           dynamic_types__search__search_range__result)))) 
   c))))))))))))))))
 (check-sat)
+(exit)

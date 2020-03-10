@@ -120,3 +120,4 @@ Target solver: CVC4
   (=> (= enums__enum_lt_5__result r)
   (=> (= enums__enum_lt_5__result true) (< a 5))))))))
 (check-sat)
+(exit)

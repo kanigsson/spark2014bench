@@ -627,3 +627,4 @@ Target solver: CVC4
   (=> (not (= (test1 x0) true))
   (=> (test1__function_guard (test1 x1) x1) (= (test1 x1) true))))))))
 (check-sat)
+(exit)

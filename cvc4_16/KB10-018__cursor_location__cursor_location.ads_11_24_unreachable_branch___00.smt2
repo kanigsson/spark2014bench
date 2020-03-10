@@ -86,3 +86,4 @@ Target solver: CVC4
  ;; File "cursor_location.ads", line 8, characters 0-0
   (not (=> (dynamic_invariant side true false true true) (= side 1))))
 (check-sat)
+(exit)

@@ -177,3 +177,4 @@ Target solver: CVC4
   (=> (dynamic_invariant tmp_s false false true true)
   (=> (<= 1 (- y x)) (<= first 1))))))))
 (check-sat)
+(exit)

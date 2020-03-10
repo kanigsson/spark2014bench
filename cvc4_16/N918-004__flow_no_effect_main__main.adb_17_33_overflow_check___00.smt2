@@ -166,3 +166,4 @@ Target solver: CVC4
   (=> (in_range1 o1)
   (=> (in_range1 (+ o1 o)) (in_range1 (* long_side long_side))))))))))))))
 (check-sat)
+(exit)

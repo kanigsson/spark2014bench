@@ -761,3 +761,4 @@ Target solver: CVC4
   (+ (length
      (us_repqtmk1 s__split_discrs (us_split_fieldsqtmk1 s__split_fields))) 1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

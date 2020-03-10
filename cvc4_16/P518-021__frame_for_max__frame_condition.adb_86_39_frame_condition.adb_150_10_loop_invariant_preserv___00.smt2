@@ -700,3 +700,4 @@ Target solver: CVC4
   (forall ((o6 Int))
   (=> (= (to_rep1 a__first) o6) (<= (to_rep1 a__first) k2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

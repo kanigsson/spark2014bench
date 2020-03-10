@@ -286,3 +286,4 @@ Target solver: CVC4
   (=> (= temp___160 bn1)
   (=> (= bn2 (mod1 ao2 bn1)) (=> (not (= bn2 0)) (< bn2 temp___160))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -962,3 +962,4 @@ Target solver: CVC4
                                                       (first2 a) (last2 a))
                                                       init)) i2))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

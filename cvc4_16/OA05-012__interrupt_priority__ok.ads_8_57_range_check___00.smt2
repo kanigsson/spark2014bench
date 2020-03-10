@@ -992,3 +992,4 @@ Target solver: CVC4
   (us_repqtmk4 p3__split_discrs (us_split_fieldsqtmk4 p3__split_fields))
   false false true true) (in_range1 98)))))))))))))
 (check-sat)
+(exit)

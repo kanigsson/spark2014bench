@@ -1267,3 +1267,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__area_math__ensemble__max (us_split_discrs1 e))) o2)
   (in_range1 (- 2147483647 o2))))))))))))
 (check-sat)
+(exit)

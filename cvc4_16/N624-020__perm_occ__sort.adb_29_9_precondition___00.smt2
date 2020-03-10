@@ -640,3 +640,4 @@ Target solver: CVC4
   (=> (in_range4 o1)
   (<= (first1 (of_array (to_array init) (first1 init) (last1 init))) o1)))))))))))))))))
 (check-sat)
+(exit)

@@ -505,3 +505,4 @@ Target solver: CVC4
  ;; File "ints.adb", line 32, characters 0-0
   (not true))
 (check-sat)
+(exit)

@@ -460,3 +460,4 @@ Target solver: CVC4
   (forall ((xdi1 (Array Int unsigned_8)))
   (=> (= xdi1 (store xdi 0 o)) (not (= #x00000100 #x00000000))))))))))
 (check-sat)
+(exit)

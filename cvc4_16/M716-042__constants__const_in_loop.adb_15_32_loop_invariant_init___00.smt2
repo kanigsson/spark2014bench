@@ -206,3 +206,4 @@ Target solver: CVC4
   (=> (ite (= spark__branch true) (= v11 (last x)) (= v11 v1))
   (=> (= v21 (last x)) (=> (= v11 v21) (= v11 (last x))))))))))))))))))
 (check-sat)
+(exit)

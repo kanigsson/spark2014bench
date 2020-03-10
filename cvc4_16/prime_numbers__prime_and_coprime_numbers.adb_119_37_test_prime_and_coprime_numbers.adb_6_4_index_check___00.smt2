@@ -337,3 +337,4 @@ Target solver: CVC4
   (=> (= right_is_out (ite (< 100000 right1) true false))
   (=> (not (= right_is_out true)) (<= 0 right1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

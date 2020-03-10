@@ -497,3 +497,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 o10 true false true true)
   (= o10 (+ o9 (ts_sc o8))))) (in_range3 (- o10 10))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

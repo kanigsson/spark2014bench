@@ -319,3 +319,4 @@ Target solver: CVC4
   (and (not (= (contains container item) true))
   (< (length container) 2147483647))))))
 (check-sat)
+(exit)

@@ -247,3 +247,4 @@ Target solver: CVC4
   (=> (= test_08_util__is_positive_bad__result (ite (<= 1 n) true false))
   (=> (= test_08_util__is_positive_bad__result true) (<= 1 n)))))))))
 (check-sat)
+(exit)

@@ -374,3 +374,4 @@ Target solver: CVC4
   (and (= (to_rep1 res__first) (first1 a)) (= (to_rep1 res__last) (last1 a))))
   (=> (<= (to_rep1 r__first) (to_rep1 r__last)) (<= (first1 a) (last1 a)))))))))))))))))))))))))
 (check-sat)
+(exit)

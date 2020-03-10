@@ -653,3 +653,4 @@ Target solver: CVC4
   (=> (dynamic_invariant buffer true false true true)
   (rec__test__bytes_ptr__pointer_value__pred buffer))))
 (check-sat)
+(exit)

@@ -516,3 +516,4 @@ Target solver: CVC4
   (forall ((o2 Int))
   (=> (= (to_rep b__first) o2) (<= (first1 (of_array b1 o2 o1)) o)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

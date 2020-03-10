@@ -173,3 +173,4 @@ Target solver: CVC4
   (and (and (<= 0 (ite b 1 0)) (<= (ite b 1 0) 1))
   (< 0 (to_rep (select a (ite b 1 0))))))))
 (check-sat)
+(exit)

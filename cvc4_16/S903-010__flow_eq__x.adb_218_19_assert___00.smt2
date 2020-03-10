@@ -376,3 +376,4 @@ Target solver: CVC4
   (=> (forall ((a1 Int) (b1 Int)) (orem__function_guard (orem a1 b1) a1 b1))
   (= (orem a b) 0)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

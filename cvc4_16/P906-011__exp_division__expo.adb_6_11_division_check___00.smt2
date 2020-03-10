@@ -143,3 +143,4 @@ Target solver: CVC4
   (=> (fp.leq x (fp #b0 #b10000000 #b10000000000000000000000))
   (not (fp.eq (fp.mul RNE x (fp.mul RNE x x)) ((_ to_fp 8 24) #x00000000)))))))))
 (check-sat)
+(exit)

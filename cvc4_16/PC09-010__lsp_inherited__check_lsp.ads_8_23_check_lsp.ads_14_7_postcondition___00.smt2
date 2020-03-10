@@ -329,3 +329,4 @@ Target solver: CVC4
                                                (rec__check_lsp__p_overridden__root__f1
                                                (us_split_fields3 x)))))))))
 (check-sat)
+(exit)

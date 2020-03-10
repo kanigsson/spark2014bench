@@ -1092,3 +1092,4 @@ Target solver: CVC4
   (forall ((string_index1 Int))
   (=> (= string_index1 o1) (in_range1 (- (last1 number) string_index1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

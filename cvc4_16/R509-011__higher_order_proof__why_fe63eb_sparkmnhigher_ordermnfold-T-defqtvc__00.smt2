@@ -1333,3 +1333,4 @@ Target solver: CVC4
   (=> (count_length__function_guard (count_length i) i)
   (= (count_length i) true))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

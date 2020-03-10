@@ -1215,3 +1215,4 @@ Target solver: CVC4
   (=> (= (to_rep5 o10) ((_ int2bv 8) o9))
   (<= (to_rep result____first) result_index1))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -301,3 +301,4 @@ Target solver: CVC4
   (=> (<= (first1 temp___232) (last1 temp___232))
   (<= (to_rep a__first) (to_rep a__last)))))))))))))
 (check-sat)
+(exit)

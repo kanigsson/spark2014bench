@@ -617,3 +617,4 @@ Target solver: CVC4
   (=> (in_range4 o5)
   (forall ((int__4 Int)) (=> (= int__4 o5) (< temp___296 int__4))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

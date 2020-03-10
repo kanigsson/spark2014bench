@@ -573,3 +573,4 @@ Target solver: CVC4
   (let ((o8 (+ a_first length11)))
   (=> (in_range1 o8) (in_range1 (+ o8 length2)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

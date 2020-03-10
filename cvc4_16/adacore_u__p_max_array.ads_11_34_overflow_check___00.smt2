@@ -501,3 +501,4 @@ Target solver: CVC4
                                                false)) true)
   (in_range1 (- usf (first1 a)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

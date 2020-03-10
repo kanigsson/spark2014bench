@@ -490,3 +490,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 usf) true false) (ite (<= usf 20) true false)) true)
   (<= (first1 r1) usf))))))))))))
 (check-sat)
+(exit)

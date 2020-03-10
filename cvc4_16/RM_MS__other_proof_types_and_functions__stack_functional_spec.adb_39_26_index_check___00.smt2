@@ -545,3 +545,4 @@ Target solver: CVC4
      my_stack__split_fields1)) temp___311)
   (<= 1 temp___311))))))))))))))))))))))
 (check-sat)
+(exit)

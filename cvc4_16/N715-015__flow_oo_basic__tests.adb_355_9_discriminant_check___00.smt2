@@ -393,3 +393,4 @@ Target solver: CVC4
   (=> (= b__attr__constrained true)
   (= (rec__tests__test_16__t__d a__split_discrs) b__split_discrs)))))))))))))
 (check-sat)
+(exit)

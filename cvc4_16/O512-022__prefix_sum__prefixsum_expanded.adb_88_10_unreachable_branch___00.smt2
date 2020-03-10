@@ -892,3 +892,4 @@ Target solver: CVC4
   (=> (= (to_rep (select a1 7)) o8)
   (not (= o8 (+ (+ (+ (+ (+ (+ (+ o7 o6) o5) o4) o3) o2) o1) o)))))))))))))))))))))))
 (check-sat)
+(exit)

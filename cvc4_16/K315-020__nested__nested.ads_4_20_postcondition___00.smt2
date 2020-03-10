@@ -195,3 +195,4 @@ Target solver: CVC4
   (= x1 x3)))) (= i1 10))))))))) (= x1 x))))
   (=> (= nested__search__result x1) (<= 44 nested__search__result))))))))
 (check-sat)
+(exit)

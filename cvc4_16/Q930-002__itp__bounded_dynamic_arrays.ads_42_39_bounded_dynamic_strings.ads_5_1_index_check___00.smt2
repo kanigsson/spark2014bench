@@ -1083,3 +1083,4 @@ Target solver: CVC4
   (not (= (empty bounded_dynamic_strings__instance__2__result) true)))))))
   (<= (first1 temp___1327) 1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

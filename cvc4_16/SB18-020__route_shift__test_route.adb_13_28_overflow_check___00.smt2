@@ -282,3 +282,4 @@ Target solver: CVC4
   (in_range1 (+ (to_rep (rec__test_route__point__x p__pointer_value)) 
   s)))))))))))))))))
 (check-sat)
+(exit)

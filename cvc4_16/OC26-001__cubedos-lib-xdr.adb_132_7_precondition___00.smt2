@@ -1005,3 +1005,4 @@ Target solver: CVC4
   (forall ((o1 Int))
   (=> (= (to_rep1 temporary_array__first) o1) (= (mod1 position 4) 0))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

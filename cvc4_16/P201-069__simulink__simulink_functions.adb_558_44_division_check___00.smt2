@@ -138,3 +138,4 @@ Target solver: CVC4
   (=> (dynamic_invariant left true false true true)
   (=> (dynamic_invariant right true false true true) (not (fp.isZero right))))))
 (check-sat)
+(exit)

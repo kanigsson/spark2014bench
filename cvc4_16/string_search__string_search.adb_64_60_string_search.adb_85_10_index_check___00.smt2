@@ -592,3 +592,4 @@ Target solver: CVC4
   (=> (in_range1 o11)
   (let ((o12 (+ i1 o11))) (=> (in_range1 o12) (<= (first1 haystack) o12))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

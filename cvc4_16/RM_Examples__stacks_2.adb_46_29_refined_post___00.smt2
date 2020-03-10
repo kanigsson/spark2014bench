@@ -117,3 +117,4 @@ Target solver: CVC4
   (forall ((a_pointer1 Int))
   (=> (= a_pointer1 o) (= a_pointer1 (- a_pointer 1))))))))))
 (check-sat)
+(exit)

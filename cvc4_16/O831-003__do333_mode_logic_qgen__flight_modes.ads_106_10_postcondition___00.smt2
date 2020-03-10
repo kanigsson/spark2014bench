@@ -1706,3 +1706,4 @@ Target solver: CVC4
   (or (or (or (= roll_active true) (= hdg_active true)) (= nav_active true))
   (= lappr_active true)) (= lga_active true)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

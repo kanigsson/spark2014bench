@@ -253,3 +253,4 @@ Target solver: CVC4
   (and (in_range1 o1) (exists ((i2 Int)) (and (= i2 o1) (not (< i2 n)))))))))))))
   (= result__2 result__1)) (= (power x n) result__2)))))))))))
 (check-sat)
+(exit)

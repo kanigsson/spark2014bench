@@ -497,3 +497,4 @@ Target solver: CVC4
   (bvule n (bvadd var1_range_size var2_range_size)))
   (not (= var1 (bvadd (bvsub var2 var1_range_size) n))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -624,3 +624,4 @@ Target solver: CVC4
   (let ((o10 (+ usf 1)))
   (=> (in_range1 o10) (<= (to_rep values__first) o10))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

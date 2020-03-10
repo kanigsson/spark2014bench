@@ -878,3 +878,4 @@ Target solver: CVC4
                                             (select (to_array a) (+ y k))))))
   (=> (in_range1 (+ (last1 a) 1)) (in_range1 (+ x lcp__result)))))))))))))))))))))
 (check-sat)
+(exit)

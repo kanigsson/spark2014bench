@@ -499,3 +499,4 @@ Target solver: CVC4
   (=> (= (move_is_possible p a) true)
   (=> (not (= a 0)) (=> (not (= a 1)) (=> (not (= a 2)) (in_range4 a)))))))))
 (check-sat)
+(exit)

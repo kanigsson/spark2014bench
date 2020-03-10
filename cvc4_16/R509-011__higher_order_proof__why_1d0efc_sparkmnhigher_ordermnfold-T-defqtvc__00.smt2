@@ -1285,3 +1285,4 @@ Target solver: CVC4
   (forall ((i2 Int) (j1 Int)) (sum_cst__function_guard (sum_cst i2 (- j1 1))
   i2 (- j1 1))) (= (sum_cst i1 (- j 1)) true)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

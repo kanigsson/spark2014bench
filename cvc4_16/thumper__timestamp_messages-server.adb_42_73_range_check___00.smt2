@@ -1928,3 +1928,4 @@ Target solver: CVC4
   (=> (dynamic_invariant tst_info true false true true) (in_range1
   (length1 tst_info))))))))))))))
 (check-sat)
+(exit)

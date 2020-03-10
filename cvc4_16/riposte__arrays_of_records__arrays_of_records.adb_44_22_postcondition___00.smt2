@@ -334,3 +334,4 @@ Target solver: CVC4
      (rec__arrays_of_records__basic_record__first_value
      (us_split_fields1 (select a1 i)))) 23))))))))
 (check-sat)
+(exit)

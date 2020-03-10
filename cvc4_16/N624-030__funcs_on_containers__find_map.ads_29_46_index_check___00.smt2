@@ -2078,3 +2078,4 @@ Target solver: CVC4
   (= (= o2 true) (= (has_key (model1 find_map__find_all__result) o1) true))
   (=> (= o2 true) (<= (first1 a) usf))))))))))))))))))))))))))
 (check-sat)
+(exit)

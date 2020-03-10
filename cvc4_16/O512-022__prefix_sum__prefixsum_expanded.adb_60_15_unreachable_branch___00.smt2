@@ -781,3 +781,4 @@ Target solver: CVC4
   (=> (= left2 (- space1 1))
   (=> (< left2 8) (not (= (mod2 (+ left2 1) space1) 0)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

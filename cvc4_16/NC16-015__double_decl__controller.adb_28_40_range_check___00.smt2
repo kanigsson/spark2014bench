@@ -434,3 +434,4 @@ Target solver: CVC4
   (=> (= spark__branch1 o)
   (=> (= spark__branch1 true) (in_range4 (+ piece_count 1)))))))))))))
 (check-sat)
+(exit)

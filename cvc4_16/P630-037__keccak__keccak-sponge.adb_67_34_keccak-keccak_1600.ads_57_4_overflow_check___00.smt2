@@ -1572,3 +1572,4 @@ Target solver: CVC4
   (=> (= spark__branch true) (in_range1
   (+ (first1 data) (- initial_data_len 1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

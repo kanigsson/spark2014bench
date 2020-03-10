@@ -966,3 +966,4 @@ Target solver: CVC4
   (=> (= perm__perm_transitive__induction_hypothesis__B_9__ic__assume 
   ic) (=> (dynamic_invariant1 ic true false true true) (<= (first1 c) ic)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

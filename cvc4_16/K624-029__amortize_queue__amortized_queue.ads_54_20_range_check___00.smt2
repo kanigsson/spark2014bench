@@ -855,3 +855,4 @@ Target solver: CVC4
   (<= 1 (length (rec__amortized_queue__queue__rear (us_split_fields3 q))))
   (<= 1 1))))))))))))))))
 (check-sat)
+(exit)

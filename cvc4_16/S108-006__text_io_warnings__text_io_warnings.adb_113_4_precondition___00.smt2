@@ -2352,3 +2352,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 ch5 true true true true)
   (= (is_open target2) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

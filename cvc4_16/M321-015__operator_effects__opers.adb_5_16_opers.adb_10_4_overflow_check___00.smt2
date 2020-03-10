@@ -128,3 +128,4 @@ Target solver: CVC4
  ;; File "opers.adb", line 10, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (in_range (+ x x)))))
 (check-sat)
+(exit)

@@ -143,3 +143,4 @@ Target solver: CVC4
   (=> (dynamic_invariant u false false true true)
   (fp.isFinite32 (fp.div RNE x y))))))))
 (check-sat)
+(exit)

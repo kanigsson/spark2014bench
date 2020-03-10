@@ -379,3 +379,4 @@ Target solver: CVC4
   (and (c__function_guard o tmp1) (dynamic_invariant1 o true false true
   true)) (=> (in_range2 o) (forall ((x1 Int)) (=> (= x1 o) (in_range2 x1))))))))))))))
 (check-sat)
+(exit)

@@ -116,3 +116,4 @@ Target solver: CVC4
   (=> (<= 1 i)
   (=> (<= i 10) (=> (= (select x i) true) (not (= (select x1 i) true)))))))))
 (check-sat)
+(exit)

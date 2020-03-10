@@ -94,3 +94,4 @@ Target solver: CVC4
   (forall ((o us_rep) (t1 us_rep) (o1 us_rep) (t2 us_rep))
   (=> (= t1 o) (=> (= t2 o1) (= (bool_eq t1 t2) true))))))
 (check-sat)
+(exit)

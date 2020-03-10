@@ -171,3 +171,4 @@ Target solver: CVC4
   (=> (dynamic_invariant asl_long_tmp false false true true)
   (fp.isFinite32 (fp.sub RNE (fp #b0 #b01111111 #b00000000000000000000000) asl_alpha)))))))))))))))
 (check-sat)
+(exit)

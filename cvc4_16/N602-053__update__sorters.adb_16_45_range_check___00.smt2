@@ -378,3 +378,4 @@ Target solver: CVC4
   (=> (= values1 (slide (to_array temp___221) (first1 temp___221) o10))
   (in_range2 y))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

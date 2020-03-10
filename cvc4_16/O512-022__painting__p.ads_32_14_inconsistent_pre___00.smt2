@@ -445,3 +445,4 @@ Target solver: CVC4
   (us_repqtmk1 p__split_fields1) d))
   (not (= (some_plain_is_dot (us_repqtmk1 p__split_fields) d) true))))))
 (check-sat)
+(exit)

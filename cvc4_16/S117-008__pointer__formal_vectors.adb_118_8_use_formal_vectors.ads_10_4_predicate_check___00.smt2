@@ -1846,3 +1846,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk o8
   (rec__use_formal_vectors__my_vect__vector__content v__split_fields2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

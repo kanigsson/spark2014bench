@@ -403,3 +403,4 @@ Target solver: CVC4
   (=> (<= (* 2 h1) (to_rep a__last))
   (=> (= (to_rep a__first) o3) (in_range1 (+ o3 h1)))))))))))))))))
 (check-sat)
+(exit)

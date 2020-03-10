@@ -160,3 +160,4 @@ Target solver: CVC4
   (forall ((numerics__Odivide__result Float32))
   (=> (= numerics__Odivide__result o) (not (fp.isZero right)))))))))))
 (check-sat)
+(exit)

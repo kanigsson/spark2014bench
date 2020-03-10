@@ -451,3 +451,4 @@ Target solver: CVC4
   (=> (= main__R16b__assume r16b)
   (= (to_rep (rec__main__rec__comp (us_split_fields1 (select arr_obj 1)))) 9012)))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -730,3 +730,4 @@ Target solver: CVC4
   (=> (= (to_rep1 o) ((_ extract 7 0) temporary_21))
   (<= (to_rep data__first) (+ position (- 8 i)))))))))))))))))))))
 (check-sat)
+(exit)

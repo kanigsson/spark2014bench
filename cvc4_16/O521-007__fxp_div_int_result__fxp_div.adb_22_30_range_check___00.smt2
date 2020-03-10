@@ -404,3 +404,4 @@ Target solver: CVC4
   (=> (< time_span_zero left)
   (let ((o (fxp_div left 1))) (=> (in_range2 o) (in_range3 o)))))))))))
 (check-sat)
+(exit)

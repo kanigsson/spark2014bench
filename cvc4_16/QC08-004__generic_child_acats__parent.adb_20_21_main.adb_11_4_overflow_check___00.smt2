@@ -284,3 +284,4 @@ Target solver: CVC4
   (=> (= result____split_fields (us_split_fields1 zero)) (in_range2
   (abs1 factor))))))))
 (check-sat)
+(exit)

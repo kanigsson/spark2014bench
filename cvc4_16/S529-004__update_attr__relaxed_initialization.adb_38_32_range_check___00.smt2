@@ -756,3 +756,4 @@ Target solver: CVC4
   (=> (= (to_rep obj__first) temp___329)
   (=> (<= temp___329 idx) (<= (to_rep obj__first) temp___329)))))))))))))
 (check-sat)
+(exit)

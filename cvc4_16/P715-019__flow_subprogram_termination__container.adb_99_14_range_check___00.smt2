@@ -959,3 +959,4 @@ Target solver: CVC4
   (=> (= o3 true)
   (forall ((b4 Bool)) (=> (= b4 (distinct 1 0)) (in_range4 (- r1 1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

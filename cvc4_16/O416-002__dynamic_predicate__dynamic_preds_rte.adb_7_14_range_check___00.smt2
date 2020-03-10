@@ -344,3 +344,4 @@ Target solver: CVC4
                       (rec__dynamic_preds_rte__small_pair__b x__split_fields)))
   (in_range2 y)))))))))))))))))
 (check-sat)
+(exit)

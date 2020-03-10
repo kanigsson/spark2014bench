@@ -405,3 +405,4 @@ Target solver: CVC4
   (and (and (<= 1 y) (<= y 1000)) (and (<= 1 r8b) (<= r8b 1000))))
   (=> (<= x r5b) (<= 1 x))))))))))))))))))))))))))))
 (check-sat)
+(exit)

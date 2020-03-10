@@ -1204,3 +1204,4 @@ Target solver: CVC4
   (= o (distinct 1 0))))))) (= o false))
   (=> (= o true) (= (contains m e) true)))))))))))))
 (check-sat)
+(exit)

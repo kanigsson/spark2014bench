@@ -259,3 +259,4 @@ Target solver: CVC4
   (ite (and (<= (to_rep a__first) it1) (<= it1 (to_rep a__last))) true false)) true)
   (in_range1 (+ r1 it1)))))))))))))))))))))
 (check-sat)
+(exit)

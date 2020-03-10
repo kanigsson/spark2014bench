@@ -384,3 +384,4 @@ Target solver: CVC4
   (=> (ite (<= 0 v) (= o 1) (= o (- 1)))
   (=> (in_range1 (* o (div1 d 2))) (in_range1 (* v_lo m))))))))))))))))))))
 (check-sat)
+(exit)

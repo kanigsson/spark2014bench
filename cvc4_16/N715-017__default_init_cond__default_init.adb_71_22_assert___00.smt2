@@ -801,3 +801,4 @@ Target solver: CVC4
   (us_repqtmk1 d5__split_discrs (us_split_fieldsqtmk1 d5__split_fields))
   false false true true) (= (to_rep d1__split_fields) 0))))))))))))))))
 (check-sat)
+(exit)

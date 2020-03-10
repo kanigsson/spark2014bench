@@ -976,3 +976,4 @@ Target solver: CVC4
      (rec__very_longs__very_long__octet_length result____split_discrs)) o)
   (in_range5 (* 2 o))))))))
 (check-sat)
+(exit)

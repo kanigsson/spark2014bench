@@ -242,3 +242,4 @@ Target solver: CVC4
   (forall ((swap_add_max_14__divide__result Int))
   (=> (= swap_add_max_14__divide__result o) (not (= y 0))))))))))))
 (check-sat)
+(exit)

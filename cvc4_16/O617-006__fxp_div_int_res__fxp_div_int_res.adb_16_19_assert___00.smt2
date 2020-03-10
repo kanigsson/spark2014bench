@@ -326,3 +326,4 @@ Target solver: CVC4
   (forall ((d12 Int) (d22 Int)) (div__function_guard (div1 d12 d22) d12 d22))
   (= (div1 d11 d21) 2))))))))))))))))
 (check-sat)
+(exit)

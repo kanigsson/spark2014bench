@@ -103,3 +103,4 @@ Target solver: CVC4
   (=> (= enums__enum_equals_broken_b__result (ite (<= a b) true false))
   (=> (= enums__enum_equals_broken_b__result true) (= a b))))))))
 (check-sat)
+(exit)

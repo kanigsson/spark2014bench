@@ -4228,3 +4228,4 @@ Target solver: CVC4
      (rec__ada___pragmarc__b_strings__b_string__len (us_split_fields1 from))) o5)
   (in_range (- o5 o4))))))))))))))))))))))))))
 (check-sat)
+(exit)

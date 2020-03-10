@@ -842,3 +842,4 @@ Target solver: CVC4
   (forall ((o1 (_ BitVec 32)))
   (=> (= (to_rep1 (select (to_array initiator) j)) o1) (<= 0 (- i 1))))))))))))))))))))))))
 (check-sat)
+(exit)

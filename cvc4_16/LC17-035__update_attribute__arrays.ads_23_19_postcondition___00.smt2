@@ -216,3 +216,4 @@ Target solver: CVC4
   (=> (<= j 8)
   (=> (not (= i j)) (= (to_rep (select a2 j)) (to_rep (select a1 j))))))))))))))
 (check-sat)
+(exit)

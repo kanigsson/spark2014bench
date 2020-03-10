@@ -426,3 +426,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array a) temp___276)) o)
   (=> (not (= o e)) (< 0 (length a))))))))))))
 (check-sat)
+(exit)

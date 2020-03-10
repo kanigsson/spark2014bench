@@ -471,3 +471,4 @@ Target solver: CVC4
   (=> (not (= n 1))
   (=> (in_range1 (- n 1)) (rec__list_ex_pledge__list__pointer_value__pred l))))))))
 (check-sat)
+(exit)

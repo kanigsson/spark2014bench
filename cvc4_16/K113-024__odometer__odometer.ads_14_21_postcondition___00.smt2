@@ -107,3 +107,4 @@ Target solver: CVC4
   (=> (in_range o1)
   (forall ((total1 Int)) (=> (= total1 o1) (= trip2 (+ trip1 1))))))))))))))))))
 (check-sat)
+(exit)

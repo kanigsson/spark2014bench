@@ -1910,3 +1910,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 x2 false false true true)
   (=> (dynamic_invariant y2 false false true true) (=> (<= 9 12) (<= 1 9)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

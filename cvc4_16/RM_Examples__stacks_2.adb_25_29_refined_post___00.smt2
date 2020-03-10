@@ -103,3 +103,4 @@ Target solver: CVC4
   (=> (= stacks_2__is_full__result (ite (= a_pointer 100) true false))
   (=> (= stacks_2__is_full__result true) (= a_pointer 100)))))))
 (check-sat)
+(exit)

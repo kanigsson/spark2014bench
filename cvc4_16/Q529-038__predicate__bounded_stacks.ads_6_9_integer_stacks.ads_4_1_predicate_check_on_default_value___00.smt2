@@ -1199,3 +1199,4 @@ Target solver: CVC4
   (=> (forall ((usf3 us_rep)) (empty__function_guard (empty usf3) usf3))
   (dynamic_predicate usf2))))))))))
 (check-sat)
+(exit)

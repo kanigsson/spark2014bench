@@ -283,3 +283,4 @@ Target solver: CVC4
  ;; File "use_types.adb", line 2, characters 0-0
   (not (in_range 3)))
 (check-sat)
+(exit)

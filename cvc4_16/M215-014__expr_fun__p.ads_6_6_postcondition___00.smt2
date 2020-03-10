@@ -106,3 +106,4 @@ Target solver: CVC4
   (=> (= p__no_change__result (distinct 1 0))
   (=> (= p__no_change__result true) (= current_mode current_mode1))))))))
 (check-sat)
+(exit)

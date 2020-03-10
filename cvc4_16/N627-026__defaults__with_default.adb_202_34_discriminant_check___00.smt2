@@ -2228,3 +2228,4 @@ Target solver: CVC4
   (=> (= wrap__split_discrs r26b)
   (with_default__ok_record__rec_with_bad_discr__f1__pred wrap__split_fields)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

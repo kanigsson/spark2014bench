@@ -850,3 +850,4 @@ Target solver: CVC4
   (=> (exists ((o4 Int)) (= (to_rep1 (select (to_array1 temp___662) i)) o4))
   (<= (first1 a) i))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

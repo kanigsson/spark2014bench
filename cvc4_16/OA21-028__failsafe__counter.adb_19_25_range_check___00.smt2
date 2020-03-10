@@ -387,3 +387,4 @@ Target solver: CVC4
   (= (and (ite (bvule #x01 i) true false) (ite (bvule i #x09) true false)) true)
   (=> (bvule #x01 (bvsub i #x01)) (bvuge #x01 #x00)))))))
 (check-sat)
+(exit)

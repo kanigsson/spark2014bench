@@ -108,3 +108,4 @@ Target solver: CVC4
   (forall ((alpha_launch_examples__example_1__result Int))
   (=> (= alpha_launch_examples__example_1__result o) (in_range (abs1 x)))))))))
 (check-sat)
+(exit)

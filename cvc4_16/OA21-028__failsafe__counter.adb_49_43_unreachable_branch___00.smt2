@@ -432,3 +432,4 @@ Target solver: CVC4
   (or (= a #x0A) (not (= (select inputs2 (bvsub #x0A a)) true))))
   (not (= input true))))))))))))))))))
 (check-sat)
+(exit)

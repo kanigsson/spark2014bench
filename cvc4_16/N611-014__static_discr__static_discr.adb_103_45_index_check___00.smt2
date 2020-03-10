@@ -1040,3 +1040,4 @@ Target solver: CVC4
       (of_base1
       (to_base (rec__static_discr__holder__content current__split_fields)))))) temp___510)))))))))))))))))))
 (check-sat)
+(exit)

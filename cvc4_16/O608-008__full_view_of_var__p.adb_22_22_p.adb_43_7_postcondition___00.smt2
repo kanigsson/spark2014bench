@@ -67,3 +67,4 @@ Target solver: CVC4
   (=> (= p__dummy__B17b__h_false__result (distinct 0 0))
   (not (= p__dummy__B17b__h_false__result true))))))
 (check-sat)
+(exit)

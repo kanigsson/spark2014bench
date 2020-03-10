@@ -253,3 +253,4 @@ Target solver: CVC4
   (us_repqtmk (us_split_fieldsqtmk to3__split_fields)) false)
   (=> (dynamic_invariant to21 true true true true) (type_invariant to1)))))))))))))
 (check-sat)
+(exit)

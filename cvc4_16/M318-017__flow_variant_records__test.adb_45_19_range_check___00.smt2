@@ -463,3 +463,4 @@ Target solver: CVC4
  ;; File "test.adb", line 43, characters 0-0
   (not (in_range2 2)))
 (check-sat)
+(exit)

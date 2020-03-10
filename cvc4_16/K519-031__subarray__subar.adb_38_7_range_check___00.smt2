@@ -411,3 +411,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (=> (< 1 x) (=> (< x 10) (=> (<= (- x 1) (+ x 1)) (<= 1 (- x 1))))))))
 (check-sat)
+(exit)

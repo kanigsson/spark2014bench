@@ -1006,3 +1006,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 x1 false false true true)
   (=> (dynamic_invariant y1 false false true true) (=> (<= 5 8) (<= 1 5)))))))))))))))))))))))))
 (check-sat)
+(exit)

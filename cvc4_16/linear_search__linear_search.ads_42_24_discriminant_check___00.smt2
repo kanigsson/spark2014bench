@@ -614,3 +614,4 @@ Target solver: CVC4
   (linear_search__search_result__at_index__pred
   linear_search__search__result)))))))))))))
 (check-sat)
+(exit)

@@ -590,3 +590,4 @@ Target solver: CVC4
         container__split_discrs))))
   (in_range5 (- o2 count))))))))))))))
 (check-sat)
+(exit)

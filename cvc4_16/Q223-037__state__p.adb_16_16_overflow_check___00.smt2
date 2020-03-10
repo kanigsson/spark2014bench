@@ -250,3 +250,4 @@ Target solver: CVC4
   (get_p_state p_state1) p_state1))
   (=> (< 0 (get_p_state p_state)) (in_range (div1 x p_state)))))))))
 (check-sat)
+(exit)

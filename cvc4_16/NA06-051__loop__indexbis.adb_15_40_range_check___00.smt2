@@ -355,3 +355,4 @@ Target solver: CVC4
   (=> (dynamic_invariant courant1 true true true true) (in_range2
   (first1 c))))))))))))))))))
 (check-sat)
+(exit)

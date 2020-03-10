@@ -573,3 +573,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 tag_value false false true true) (in_range3
   (bvand value #x1F)))))))))))
 (check-sat)
+(exit)

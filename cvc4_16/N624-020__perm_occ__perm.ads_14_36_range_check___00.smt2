@@ -485,3 +485,4 @@ Target solver: CVC4
        (+ (occ_def (remove_last o4) o2) 1) (occ_def (remove_last o4) o2))))
   (<= o (length o4)))))))))))))))) (in_range (length a))))))))))))))))))))
 (check-sat)
+(exit)

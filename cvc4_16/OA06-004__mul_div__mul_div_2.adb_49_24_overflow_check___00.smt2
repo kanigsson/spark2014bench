@@ -420,3 +420,4 @@ Target solver: CVC4
   (forall ((result_lo1 Int))
   (=> (= result_lo1 (div1 o8 d)) (in_range1 (+ result_hi2 result_lo1))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

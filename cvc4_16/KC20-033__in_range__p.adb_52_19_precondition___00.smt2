@@ -349,3 +349,4 @@ Target solver: CVC4
   (=> (dynamic_invariant4 m true false true true)
   (fp.leq (fp.neg (fp #b0 #b01111110 #b11111111011111001110111)) (fp.neg (fp #b0 #b01111011 #b11001010110000001000010)))))))))))))))))))))))))
 (check-sat)
+(exit)

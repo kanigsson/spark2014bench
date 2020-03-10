@@ -630,3 +630,4 @@ Target solver: CVC4
   (=> (= spark__branch1 true) (var__decision__operand__pred
   (us_repqtmk (us_split_discrsqtmk d__split_discrs) d__split_fields))))))))))))))))))))))))
 (check-sat)
+(exit)

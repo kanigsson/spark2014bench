@@ -1102,3 +1102,4 @@ Target solver: CVC4
      (us_split_fields1 message))) o)
   (in_range (+ o 4))))))))))))
 (check-sat)
+(exit)

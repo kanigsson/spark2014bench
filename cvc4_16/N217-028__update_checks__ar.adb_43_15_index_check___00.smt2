@@ -212,3 +212,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (forall ((o1 et1)) (=> (= (to_rep o1) o) (<= 1 (+ i 1)))))))))))))
 (check-sat)
+(exit)

@@ -1061,3 +1061,4 @@ Target solver: CVC4
   (= (to_rep (rec__fixed_stream__object__width (us_split_fields1 this))) o)
   (let ((o1 (length in_string))) (=> (in_range1 o1) (in_range2 (min o1 o)))))))))
 (check-sat)
+(exit)

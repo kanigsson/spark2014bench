@@ -1168,3 +1168,4 @@ Target solver: CVC4
                                                     (first1 temp___486)
                                                     (last1 temp___486)))) 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

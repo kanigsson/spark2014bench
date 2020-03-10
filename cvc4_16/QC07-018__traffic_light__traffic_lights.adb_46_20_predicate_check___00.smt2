@@ -669,3 +669,4 @@ Target solver: CVC4
   (= ls__split_fields1 ls__split_fields))))))))))))) (dynamic_predicate
   (us_repqtmk ls__split_fields1)))))))))))
 (check-sat)
+(exit)

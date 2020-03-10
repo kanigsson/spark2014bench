@@ -165,3 +165,4 @@ Target solver: CVC4
   (forall ((a (Array Int integer)) (a1 (Array Int integer)))
   (=> (= a1 (store a 0 rliteral)) (= (to_rep (select a1 0)) 69)))))
 (check-sat)
+(exit)

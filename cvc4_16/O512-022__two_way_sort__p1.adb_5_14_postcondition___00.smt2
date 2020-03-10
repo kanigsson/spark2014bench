@@ -314,3 +314,4 @@ Target solver: CVC4
   (=> (= a3 (store a2 j t))
   (=> (= (select a3 i) true) (= (select a1 j) true))))))))))))))))))))))))
 (check-sat)
+(exit)

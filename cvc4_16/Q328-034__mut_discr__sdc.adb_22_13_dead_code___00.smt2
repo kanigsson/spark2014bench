@@ -1120,3 +1120,4 @@ Target solver: CVC4
   (and (dynamic_invariant2 (argument 1) true false true true)
   (exists ((file1 us_rep)) (and (= (is_open file1) true) (= (mode file1) 0)))))))))))))))))
 (check-sat)
+(exit)

@@ -2160,3 +2160,4 @@ Target solver: CVC4
   (=> (= (bool_eq3 (element o3 ptr1) (get (model1 o3) ptr1)) true)
   (forall ((o4 name_id)) (=> (= (to_rep5 o4) n2) (in_range12 ptr1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

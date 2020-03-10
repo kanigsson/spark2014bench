@@ -207,3 +207,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (= (to_rep (rec__const__r__d (us_split_fields1 c))) 10000))))))
 (check-sat)
+(exit)

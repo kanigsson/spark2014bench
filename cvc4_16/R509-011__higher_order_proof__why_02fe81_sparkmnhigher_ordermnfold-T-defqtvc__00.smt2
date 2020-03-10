@@ -1445,3 +1445,4 @@ Target solver: CVC4
   (=> (= l2 (+ l1 1))
   (=> (in_range8 l2) (=> (in_range7 k1) (= (first2 a1) (first2 a2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

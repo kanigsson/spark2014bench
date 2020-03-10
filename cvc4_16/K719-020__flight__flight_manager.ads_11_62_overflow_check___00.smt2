@@ -508,3 +508,4 @@ Target solver: CVC4
   (let ((o7 (+ position_x o6)))
   (=> (in_range1 o7) (in_range1 (- o7 target_x))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

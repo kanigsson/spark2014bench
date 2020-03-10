@@ -166,3 +166,4 @@ Target solver: CVC4
   (=> (not (= (get_data n) (get_data (get_next n))))
   (not (= user_of_types_and_subtypes_legal__same_as_next__result true)))))))))))))))))))
 (check-sat)
+(exit)

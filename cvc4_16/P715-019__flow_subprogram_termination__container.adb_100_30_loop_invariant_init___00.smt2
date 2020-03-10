@@ -962,3 +962,4 @@ Target solver: CVC4
   (let ((o4 (- r1 1)))
   (=> (in_range4 o4) (forall ((r2 Int)) (=> (= r2 o4) (= b4 true))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

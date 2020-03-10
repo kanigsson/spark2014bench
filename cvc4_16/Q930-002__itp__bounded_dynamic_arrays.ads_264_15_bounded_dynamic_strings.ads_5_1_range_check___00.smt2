@@ -578,3 +578,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 fragment true false true true) (in_range1
   (length fragment))))))))
 (check-sat)
+(exit)

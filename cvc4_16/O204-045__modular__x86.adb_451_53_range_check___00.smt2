@@ -493,3 +493,4 @@ Target solver: CVC4
   (=> (= memory5 (store memory4 (bvadd addr #x0000000000000004) o4))
   (bvule ((_ zero_extend 56) #x00) (bvurem (bvudiv val__ #x0000010000000000) #x0000000000000100)))))))))))))))))))))))))))
 (check-sat)
+(exit)

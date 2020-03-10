@@ -771,3 +771,4 @@ Target solver: CVC4
   (us_pledge_ty__refqtmk list_ex_pledge__all_zero__t__pledge3))
   temp___borrowed_233 temp___brower_232)) ))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

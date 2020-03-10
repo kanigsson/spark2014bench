@@ -213,3 +213,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 0 i) true false) (ite (<= i 62) true false)) true)
   (=> (<= (power 2 i) (power 2 62)) (in_range1 (power 2 i))))))))
 (check-sat)
+(exit)

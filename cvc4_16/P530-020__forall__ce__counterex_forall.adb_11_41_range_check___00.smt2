@@ -181,3 +181,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 x) true false) (ite (<= x 100) true false)) true)
   (=> (<= 1 x) (<= (- 2147483648) 1))))))))
 (check-sat)
+(exit)

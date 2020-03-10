@@ -361,3 +361,4 @@ Target solver: CVC4
   (=> (<= 0 i)
   (=> (<= i 100) (= (to_rep (select a12 i)) (to_rep (select a22 i)))))))))))))))))
 (check-sat)
+(exit)

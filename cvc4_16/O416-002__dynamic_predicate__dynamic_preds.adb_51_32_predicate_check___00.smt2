@@ -427,3 +427,4 @@ Target solver: CVC4
   (= (to_rep (rec__dynamic_preds__even_pair__b (us_split_fields1 o))) 0))))
   (dynamic_predicate o)))))))))))
 (check-sat)
+(exit)

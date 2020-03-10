@@ -894,3 +894,4 @@ Target solver: CVC4
   (= (to_rep (rec__main__r__hd (us_split_discrs1 usf2))) usf))))))) (in_range
   h))))))
 (check-sat)
+(exit)

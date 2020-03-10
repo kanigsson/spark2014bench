@@ -625,3 +625,4 @@ Target solver: CVC4
   (forall ((int__2 Int))
   (=> (= int__2 (div1 o1 10)) (in_range1 (- first3 1)))))))))))))))))))
 (check-sat)
+(exit)

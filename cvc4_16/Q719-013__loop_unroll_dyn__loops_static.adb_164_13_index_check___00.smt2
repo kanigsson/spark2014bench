@@ -319,3 +319,4 @@ Target solver: CVC4
   (to_rep1 r__last))
   (forall ((i Int)) (=> (= i 1) (<= (to_rep1 r__first) i))))))))))))
 (check-sat)
+(exit)

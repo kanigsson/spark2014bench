@@ -164,3 +164,4 @@ Target solver: CVC4
   (= spark__branch (and (ite (<= 3 i) true false) (ite (<= i 5) true false)))
   (=> (= spark__branch true) (let ((o i)) (=> (in_range2 o) (in_range3 o))))))))))
 (check-sat)
+(exit)

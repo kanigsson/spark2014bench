@@ -340,3 +340,4 @@ Target solver: CVC4
   (forall ((temp___211 Int))
   (=> (= (to_rep x__first) temp___211) (<= (to_rep x__first) temp___211)))))))))))))))))))
 (check-sat)
+(exit)

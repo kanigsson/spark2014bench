@@ -246,3 +246,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 ident__incr_private__y true true true true)
   (forall ((y2 Int)) (=> (= y2 ident__incr_private__y) (= y2 9))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

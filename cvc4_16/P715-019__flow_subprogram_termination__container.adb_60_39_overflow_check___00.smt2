@@ -719,3 +719,4 @@ Target solver: CVC4
   (not (< 0 x1)))))) (and (= x1 x) (= b1 b)))
   (=> (< i 10) (let ((o (* 10 i))) (=> (in_range1 o) (in_range1 (- 100 o))))))))))))))))))))
 (check-sat)
+(exit)

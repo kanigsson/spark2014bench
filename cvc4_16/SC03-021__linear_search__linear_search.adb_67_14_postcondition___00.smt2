@@ -942,3 +942,4 @@ Target solver: CVC4
   (=> (= linear_search__all_data__result a1)
   (= (last linear_search__all_data__result) (length r))))))))))))))))
 (check-sat)
+(exit)

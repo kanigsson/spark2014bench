@@ -738,3 +738,4 @@ Target solver: CVC4
                                                    (us_repqtmk
                                                    table__split_fields1)) 1))))))))))))))))))))))))))
 (check-sat)
+(exit)

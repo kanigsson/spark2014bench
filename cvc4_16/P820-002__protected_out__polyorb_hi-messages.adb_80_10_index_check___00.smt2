@@ -1194,3 +1194,4 @@ Target solver: CVC4
   (forall ((o9 stream_element))
   (=> (= (to_rep o9) o8) (<= (to_rep2 r__first) 4))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

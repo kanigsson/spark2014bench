@@ -165,3 +165,4 @@ Target solver: CVC4
  ;; File "alarm.adb", line 23, characters 0-0
   (not (<= 97 97)))
 (check-sat)
+(exit)

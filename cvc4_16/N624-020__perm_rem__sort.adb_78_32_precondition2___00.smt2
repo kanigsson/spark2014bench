@@ -825,3 +825,4 @@ Target solver: CVC4
                                               (select (to_array o12) k))))))))
   (<= (first1 o12) o9))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

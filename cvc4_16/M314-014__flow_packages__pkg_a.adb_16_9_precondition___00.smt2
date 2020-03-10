@@ -137,3 +137,4 @@ Target solver: CVC4
   (=> (= c 12)
   (=> (dynamic_invariant c true false true true) (<= (- 100) x))))))))))))))
 (check-sat)
+(exit)

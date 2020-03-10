@@ -541,3 +541,4 @@ Target solver: CVC4
   (=> (and (<= (to_rep r__first) j5) (<= j5 (to_rep r__last)))
   (= (to_rep r__first) 1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

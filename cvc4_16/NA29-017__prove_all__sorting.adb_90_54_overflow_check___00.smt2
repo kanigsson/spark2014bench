@@ -369,3 +369,4 @@ Target solver: CVC4
   (=> (in_range1 (+ i1 j1))
   (let ((o1 (+ a_first length11))) (=> (in_range1 o1) (in_range1 (+ o1 j1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

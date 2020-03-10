@@ -310,3 +310,4 @@ Target solver: CVC4
   (= (us_repqtmk1 (us_split_fieldsqtmk (us_repqtmk (us_split_discrsqtmk o)))) 
   null_node))))))
 (check-sat)
+(exit)

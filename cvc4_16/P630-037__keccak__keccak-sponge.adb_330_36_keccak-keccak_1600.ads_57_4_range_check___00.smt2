@@ -1438,3 +1438,4 @@ Target solver: CVC4
   (forall ((o1 Int))
   (=> (= (to_rep digest__first) o1) (in_range2 (length o1 o)))))))))
 (check-sat)
+(exit)

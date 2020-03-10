@@ -257,3 +257,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 j) true false) (ite (<= j 2147483647) true false)) true)
   (let ((o arg2)) (=> (= (div1 (* j o) o) j) (not (= (* arg2 j) arg1))))))))))))
 (check-sat)
+(exit)

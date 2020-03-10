@@ -491,3 +491,4 @@ Target solver: CVC4
   (=> (<= i 20)
   (not (= (distinct (to_rep1 (select (to_array r1) i)) 0) true))))))))))))))
 (check-sat)
+(exit)

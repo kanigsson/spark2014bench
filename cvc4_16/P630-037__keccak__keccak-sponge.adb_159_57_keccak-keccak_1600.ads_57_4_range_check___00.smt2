@@ -1505,3 +1505,4 @@ Target solver: CVC4
                   suffix))
   (let ((o (+ bit_length 7))) (=> (in_range1 o) (in_range2 (div1 o 8)))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -300,3 +300,4 @@ Target solver: CVC4
   (=> (dynamic_invariant e false false true true)
   (=> (<= 0 last) (<= first 0))))))))))
 (check-sat)
+(exit)

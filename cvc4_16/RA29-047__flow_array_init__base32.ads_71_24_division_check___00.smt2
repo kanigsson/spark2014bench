@@ -900,3 +900,4 @@ Target solver: CVC4
   (=> (dynamic_invariant s true false true true)
   (=> (in_range1 (length1 s)) (not (= 5 0))))))
 (check-sat)
+(exit)

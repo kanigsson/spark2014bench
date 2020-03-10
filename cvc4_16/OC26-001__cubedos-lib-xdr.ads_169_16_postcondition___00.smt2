@@ -1017,3 +1017,4 @@ Target solver: CVC4
   (length_with_padding (length1 value)) (length1 value))
   (= last5 (+ position (- (length_with_padding (length1 value)) 1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

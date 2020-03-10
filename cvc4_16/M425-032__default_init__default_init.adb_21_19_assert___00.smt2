@@ -320,3 +320,4 @@ Target solver: CVC4
   (=> (= (to_rep x2__split_fields) 100)
   (=> (<= 1 j) (=> (<= j 10) (= (to_rep (select x3 j)) 100)))))))))))))
 (check-sat)
+(exit)

@@ -112,3 +112,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (forall ((j2 Int)) (=> (= j2 o) (not (= (distinct 1 0) true)))))))))))))
 (check-sat)
+(exit)

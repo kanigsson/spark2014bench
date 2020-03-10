@@ -285,3 +285,4 @@ Target solver: CVC4
        true false))
   (=> (= b true) (=> (<= (first1 a) j) (=> (<= j (last1 a)) (< (- j 1) j)))))))))
 (check-sat)
+(exit)

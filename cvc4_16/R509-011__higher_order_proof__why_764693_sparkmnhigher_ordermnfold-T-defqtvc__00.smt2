@@ -751,3 +751,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select r1 o7)) o8)
   (=> (dynamic_property first last usf) (<= usf (last2 a)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

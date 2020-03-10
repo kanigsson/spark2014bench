@@ -308,3 +308,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 found true false true true)
   (=> (<= (first1 table) (last1 table)) (<= (- 2147483648) (first1 table)))))))))))))
 (check-sat)
+(exit)

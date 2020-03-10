@@ -607,3 +607,4 @@ Target solver: CVC4
   (=> (dynamic_invariant index_33 false true true true) (in_range1
   (+ index_33 index_12))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -978,3 +978,4 @@ Target solver: CVC4
      (us_split_discrs1 temp___719))) 1000)))
   (in_range1 1000 (us_split_discrs1 temp___719))))))))))))
 (check-sat)
+(exit)

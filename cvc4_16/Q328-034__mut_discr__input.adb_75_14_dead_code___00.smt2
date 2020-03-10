@@ -462,3 +462,4 @@ Target solver: CVC4
   (let ((o1 (- (+ col2 8) (mod2 col2 8)))) (and (in_range4 o1) (= col1 o1))))))))
   (= i1 temp___273)))))) (= col1 col)))))))))))))))
 (check-sat)
+(exit)

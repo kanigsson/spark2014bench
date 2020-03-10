@@ -623,3 +623,4 @@ Target solver: CVC4
   (=> (not (= (to_rep1 (select (to_array message) start)) #x00))
   (<= (first1 message) start)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

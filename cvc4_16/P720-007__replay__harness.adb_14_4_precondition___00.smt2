@@ -502,3 +502,4 @@ Target solver: CVC4
   (is_full (us_repqtmk r__split_fields4)) (us_repqtmk r__split_fields4)))
   (not (= (is_full (us_repqtmk r__split_fields3)) true)))))))))))))))))))
 (check-sat)
+(exit)

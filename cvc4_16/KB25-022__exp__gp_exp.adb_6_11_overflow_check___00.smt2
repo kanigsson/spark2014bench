@@ -269,3 +269,4 @@ Target solver: CVC4
   (let ((o x))
   (=> (in_range1 o) (=> (in_range (power 2 o)) (in_range (* x x))))))))))))
 (check-sat)
+(exit)

@@ -379,3 +379,4 @@ Target solver: CVC4
   (is_nat32 data__create_type__result1) data__create_type__result1))
   (= (is_nat32 data__create_type__result) true)))))))))
 (check-sat)
+(exit)

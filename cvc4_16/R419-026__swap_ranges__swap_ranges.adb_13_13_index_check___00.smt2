@@ -464,3 +464,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select b l1)) o8)
   (forall ((o9 t)) (=> (= (to_rep1 o9) o8) (<= (to_rep a__first) k1)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

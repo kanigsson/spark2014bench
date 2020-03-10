@@ -683,3 +683,4 @@ Target solver: CVC4
   (= (and (ite (<= temp___276 j) true false) (ite (<= j r5b) true false)) true)
   (=> (in_range3 j) (<= 1 j)))))))))))))))))
 (check-sat)
+(exit)

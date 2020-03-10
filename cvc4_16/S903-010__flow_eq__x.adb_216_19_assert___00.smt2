@@ -372,3 +372,4 @@ Target solver: CVC4
   (=> (forall ((c1 Int)) (onot__function_guard (onot c1) c1))
   (= (onot c) true)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

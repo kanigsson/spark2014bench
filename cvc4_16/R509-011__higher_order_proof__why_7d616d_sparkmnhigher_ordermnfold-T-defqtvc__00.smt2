@@ -1298,3 +1298,4 @@ Target solver: CVC4
   (=> (choose__function_guard o3 o2)
   (=> (not (= (ite o3 1 0) (ite o1 1 0))) (<= (first_2 a1) j)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -113,3 +113,4 @@ Target solver: CVC4
   (=> (forall ((x2 Int)) (is_valid__function_guard (is_valid x2) x2))
   (= (is_valid x1) true))))))))))
 (check-sat)
+(exit)

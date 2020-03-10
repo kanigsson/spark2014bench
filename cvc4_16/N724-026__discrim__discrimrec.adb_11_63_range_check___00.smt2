@@ -1758,3 +1758,4 @@ Target solver: CVC4
      (rec__discrimrec__register_type__value_64 (us_split_fields1 reg))) o)
   (bvule ((_ zero_extend 32) #x00000000) (bvurem o #x0000000100000000)))))))
 (check-sat)
+(exit)

@@ -743,3 +743,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk1 states__split_fields)) true false true true)
   (<= (first1 states__split_fields) 5))))))
 (check-sat)
+(exit)

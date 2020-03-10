@@ -828,3 +828,4 @@ Target solver: CVC4
   (=> (in_range2 linear_search__linear_search__result)
   (<= linear_search__linear_search__result (length l))))))))))))))))
 (check-sat)
+(exit)

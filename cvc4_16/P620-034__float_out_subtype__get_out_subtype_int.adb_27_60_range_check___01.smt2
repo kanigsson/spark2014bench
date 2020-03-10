@@ -190,3 +190,4 @@ Target solver: CVC4
   (in_range1
   get_out_subtype_int__controller_get_desired_rate__pitch_rate_desired)))))))))))))))))))
 (check-sat)
+(exit)

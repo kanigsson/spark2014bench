@@ -461,3 +461,4 @@ Target solver: CVC4
   (=> (in_range1 (- n 1)) (rec__test_goto_borrow__list__pointer_value__pred
   l))))))))
 (check-sat)
+(exit)

@@ -427,3 +427,4 @@ Target solver: CVC4
   mode 1)) true)
   (< test_prime_and_coprime_numbers__p__nearest_number__result value))))))))))))))))
 (check-sat)
+(exit)

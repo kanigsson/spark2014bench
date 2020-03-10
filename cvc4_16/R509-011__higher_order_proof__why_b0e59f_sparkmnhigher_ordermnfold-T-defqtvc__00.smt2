@@ -1305,3 +1305,4 @@ Target solver: CVC4
                                                (to_rep
                                                (get (to_array a2) k l))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

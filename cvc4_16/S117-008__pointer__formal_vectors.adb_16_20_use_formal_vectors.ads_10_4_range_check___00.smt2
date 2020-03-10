@@ -131,3 +131,4 @@ Target solver: CVC4
   (=> (not (< 715827882 size))
   (let ((o (* size 3))) (=> (in_range o) (in_range1 o))))))))
 (check-sat)
+(exit)

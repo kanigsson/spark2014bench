@@ -269,3 +269,4 @@ Target solver: CVC4
   (=> (dynamic_invariant res2 false false true true)
   (forall ((res11 Int)) (=> (= res11 (mod2 x m)) (not (= m 0)))))))))))
 (check-sat)
+(exit)

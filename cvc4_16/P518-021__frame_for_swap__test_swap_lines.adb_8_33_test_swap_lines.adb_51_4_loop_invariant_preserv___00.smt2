@@ -498,3 +498,4 @@ Target solver: CVC4
   (=> (<= i (- c2 1))
   (= (to_rep (get m3 5 i)) (to_rep (get temp___loop_entry_247 7 i))))))))))))))))))))))))))
 (check-sat)
+(exit)

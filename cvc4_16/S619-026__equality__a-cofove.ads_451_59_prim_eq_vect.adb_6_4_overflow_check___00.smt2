@@ -574,3 +574,4 @@ Target solver: CVC4
        container__split_discrs))))
   (in_range5 (- o count)))))))))
 (check-sat)
+(exit)

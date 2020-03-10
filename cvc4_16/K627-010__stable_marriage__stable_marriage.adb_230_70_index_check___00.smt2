@@ -962,3 +962,4 @@ Target solver: CVC4
   (=> (<= usf1 64)
   (=> (= (to_rep2 (select (select ranking_1 usf) usf1)) o3) (<= 1 usf1)))))))))))))))))
 (check-sat)
+(exit)

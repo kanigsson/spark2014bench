@@ -483,3 +483,4 @@ Target solver: CVC4
   (=> (in_range2 o2)
   (forall ((res1 (_ BitVec 8))) (=> (= res1 o2) (bvule #x01 res1))))))))))))))))))))))))
 (check-sat)
+(exit)

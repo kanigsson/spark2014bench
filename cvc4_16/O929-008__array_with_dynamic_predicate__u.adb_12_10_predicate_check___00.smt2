@@ -558,3 +558,4 @@ Target solver: CVC4
   (=> (<= (to_rep sq__first) i1)
   (=> (<= i1 (to_rep sq__last)) (= (to_rep sq__first) 0))))))))))))))))
 (check-sat)
+(exit)

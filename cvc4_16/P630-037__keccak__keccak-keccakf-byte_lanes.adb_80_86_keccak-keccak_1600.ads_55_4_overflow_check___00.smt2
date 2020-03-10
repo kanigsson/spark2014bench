@@ -1158,3 +1158,4 @@ Target solver: CVC4
   (= (and (ite (dynamic_invariant2 word1 true true true true) true false) 
   (ite (and (<= 0 i1) (<= i1 r47s)) true false)) true) (in_range1 (* i1 8)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1486,3 +1486,4 @@ Target solver: CVC4
   (rec__list_allocator__m__t__available model__split_fields3) j1)) (in_range7
   (get (rec__list_allocator__m__t__available model__split_fields2) j))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

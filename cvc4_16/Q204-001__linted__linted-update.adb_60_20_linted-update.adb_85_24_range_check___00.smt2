@@ -2015,3 +2015,4 @@ Target solver: CVC4
   (=> (= spark__branch5 (ite (bvule x11 #x7FFFFFFF) true false))
   (=> (= spark__branch5 true) (in_range (bv2nat x11))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

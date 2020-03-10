@@ -493,3 +493,4 @@ Target solver: CVC4
   (=> (= current_read__attr__constrained true)
   (= next_read__split_discrs current_read__split_discrs)))))))))))))
 (check-sat)
+(exit)

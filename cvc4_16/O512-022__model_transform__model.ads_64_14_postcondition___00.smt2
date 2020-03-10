@@ -579,3 +579,4 @@ Target solver: CVC4
   (= (bool_eq1 (owned_state (us_repqtmk2 self__split_fields1)) 0 100 
      val__ 0 100) true))))))
 (check-sat)
+(exit)

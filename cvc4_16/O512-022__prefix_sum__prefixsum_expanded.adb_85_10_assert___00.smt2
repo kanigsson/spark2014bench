@@ -887,3 +887,4 @@ Target solver: CVC4
                                                             (select saved_a 6))) 
   (to_rep (select saved_a 7)))))))))))))))
 (check-sat)
+(exit)

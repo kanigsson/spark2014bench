@@ -78,3 +78,4 @@ Target solver: CVC4
   (=> (=> (=> (= a true) (= b true)) (= c true))
   (=> (= a true) (=> (= b true) (= c true))))))
 (check-sat)
+(exit)

@@ -848,3 +848,4 @@ Target solver: CVC4
   (readmem32__function_guard (readmem32 addr memory9) addr memory9))
   (= (readmem32 addr memory8) val__)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

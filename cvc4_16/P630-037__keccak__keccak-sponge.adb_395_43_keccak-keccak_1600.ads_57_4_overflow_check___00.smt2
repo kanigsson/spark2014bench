@@ -1940,3 +1940,4 @@ Target solver: CVC4
      ctx__split_fields4)) o17)
   (in_range1 (+ offset2 o17)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

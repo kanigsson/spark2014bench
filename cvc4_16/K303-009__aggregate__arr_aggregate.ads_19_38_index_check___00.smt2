@@ -283,3 +283,4 @@ Target solver: CVC4
   (=> (not (= b 1))
   (=> (not (= b 2)) (=> (not (= b 3)) (=> (= b 4) (<= 1 one))))))))))))
 (check-sat)
+(exit)

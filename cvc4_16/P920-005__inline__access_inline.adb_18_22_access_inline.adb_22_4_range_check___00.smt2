@@ -283,3 +283,4 @@ Target solver: CVC4
   (=> (= (to_rep (select angle 3)) o1)
   (let ((o2 (fp.sub RNE o1 o))) (=> (fp.isFinite32 o2) (in_range1 o2)))))))))))))
 (check-sat)
+(exit)

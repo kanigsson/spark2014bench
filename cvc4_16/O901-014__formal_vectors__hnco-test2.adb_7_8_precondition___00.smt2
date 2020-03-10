@@ -5994,3 +5994,4 @@ Target solver: CVC4
                     (rec__ada___hnco__test2__v_type_owner__vector_type__capacity
                     o)))))))))))
 (check-sat)
+(exit)

@@ -941,3 +941,4 @@ Target solver: CVC4
   (=> (dynamic_invariant bit_len true false true true) (in_range1
   (length data))))))
 (check-sat)
+(exit)

@@ -811,3 +811,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 usf) true false) (ite (<= usf (- o7 1)) true false)) true)
   (let ((o8 l)) (=> (= (length (model1 o8)) (length3 o8)) (<= 1 usf))))))))))))))))))))))))
 (check-sat)
+(exit)

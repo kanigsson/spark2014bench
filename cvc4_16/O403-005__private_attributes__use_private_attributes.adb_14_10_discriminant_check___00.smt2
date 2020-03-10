@@ -374,3 +374,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r2b true false true true)
   (=> (= u1__attr__constrained true) (= u__split_discrs u1__split_discrs))))))))))))))))))))))
 (check-sat)
+(exit)

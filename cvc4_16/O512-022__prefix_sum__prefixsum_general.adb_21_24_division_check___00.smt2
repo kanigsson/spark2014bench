@@ -466,3 +466,4 @@ Target solver: CVC4
   (ite (= o1 true) (= o (ite (< left1 space) true false)) (= o false))))
   (=> (= o true) (not (= space 0))))))))))))))))
 (check-sat)
+(exit)

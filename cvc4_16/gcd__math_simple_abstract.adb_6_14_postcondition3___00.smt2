@@ -228,3 +228,4 @@ Target solver: CVC4
   (=> (dynamic_invariant arg2 true false true true)
   (= (div1 (* arg1 arg2) arg2) arg1)))))
 (check-sat)
+(exit)

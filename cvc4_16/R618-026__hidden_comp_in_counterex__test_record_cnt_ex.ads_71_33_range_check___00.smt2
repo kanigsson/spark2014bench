@@ -2748,3 +2748,4 @@ Target solver: CVC4
      (us_repqtmk4 y_2__split_fields y_2__attr__tag)) true)
   (in_range 0))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

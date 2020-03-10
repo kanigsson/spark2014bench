@@ -928,3 +928,4 @@ Target solver: CVC4
              test_higher_order2__my_fold_left_i__acc__fold__result) o7)) o8)
   (dynamic_property first last usf))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

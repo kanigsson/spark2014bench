@@ -1591,3 +1591,4 @@ Target solver: CVC4
            ctx__split_fields)) 8))
   (< o7 1600)))) (let ((o8 (- o7 o5))) (=> (in_range1 o8) (in_range2 o8))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

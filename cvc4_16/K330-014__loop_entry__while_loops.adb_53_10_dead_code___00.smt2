@@ -944,3 +944,4 @@ Target solver: CVC4
   (= current_in5 current_in4)) (= current_out5 current_out4))
   (= current_err5 current_err4))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

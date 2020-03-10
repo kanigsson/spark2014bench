@@ -286,3 +286,4 @@ Target solver: CVC4
   (element trace2 (previous trace2 c1)) trace2 (previous trace2 c1)))
   (= (element trace1 c) (+ (element trace1 (previous trace1 c)) 1)))))))))))))))))))
 (check-sat)
+(exit)

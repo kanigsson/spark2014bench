@@ -325,3 +325,4 @@ Target solver: CVC4
                     true false))
   (=> (not (= spark__branch7 true)) (< x 5))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -923,3 +923,4 @@ Target solver: CVC4
   (=> (and (dynamic_invariant o8 true false true true) (<= o8 (capacity o7)))
   (<= 1 1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

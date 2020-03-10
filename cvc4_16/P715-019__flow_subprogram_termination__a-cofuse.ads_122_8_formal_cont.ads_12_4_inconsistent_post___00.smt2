@@ -228,3 +228,4 @@ Target solver: CVC4
   (=> (and (in_range e) (= (contains left e) true))
   (or (= (contains right e) true) (= (my_equal_01 e item) true)))))))))))
 (check-sat)
+(exit)

@@ -609,3 +609,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 16) true false) (ite (<= 16 8) true false)) true)
   (=> (< amount 8) (bvule ((_ zero_extend 8) #x00) v)))))))
 (check-sat)
+(exit)

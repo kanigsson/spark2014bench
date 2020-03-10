@@ -246,3 +246,4 @@ Target solver: CVC4
   (=> (= (divides x a) true)
   (=> (= (divides x b) true) (=> (not (= (divides b a) true)) (not (= b 0))))))))))
 (check-sat)
+(exit)

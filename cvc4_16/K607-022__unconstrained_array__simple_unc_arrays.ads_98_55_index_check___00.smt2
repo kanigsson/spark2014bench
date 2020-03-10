@@ -532,3 +532,4 @@ Target solver: CVC4
   (=> (<= (first1 a__split_fields1) usf1)
   (=> (<= usf1 (last1 a__split_fields1)) (<= (first1 a__split_fields) usf)))))))))))))))))
 (check-sat)
+(exit)

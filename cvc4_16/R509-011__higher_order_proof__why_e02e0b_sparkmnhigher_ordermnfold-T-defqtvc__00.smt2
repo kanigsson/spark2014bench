@@ -1175,3 +1175,4 @@ Target solver: CVC4
   (ite (< (first2 a) i1) (= o true) (= o (ite (< (first_2 a) j) true false)))
   (=> (= o true) (in_range5 (first_2 a)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

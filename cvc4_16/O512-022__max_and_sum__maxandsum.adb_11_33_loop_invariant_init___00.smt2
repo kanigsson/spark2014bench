@@ -301,3 +301,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i 100) true false)) true)
   (<= sum1 (* (- i 1) max1)))))))))))
 (check-sat)
+(exit)

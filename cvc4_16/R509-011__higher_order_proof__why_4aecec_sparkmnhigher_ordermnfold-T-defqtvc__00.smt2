@@ -1656,3 +1656,4 @@ Target solver: CVC4
   (= (to_rep1 (get1 (to_array1 temp___1464) i2 temp___1465)) o5))
   (<= (first_2 a) (last_2 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -720,3 +720,4 @@ Target solver: CVC4
         true false))
   (= o1 false))))) (= (mod2 8 space2) 0)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

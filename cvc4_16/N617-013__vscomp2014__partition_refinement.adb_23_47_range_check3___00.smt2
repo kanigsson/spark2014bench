@@ -1088,3 +1088,4 @@ Target solver: CVC4
      (rec__partition_refinement__interval__first p_prime__split_fields)) o12))
   (=> (<= (+ i 1) 5) (<= 5 5))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

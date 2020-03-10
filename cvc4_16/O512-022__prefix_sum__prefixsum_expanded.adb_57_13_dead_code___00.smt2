@@ -780,3 +780,4 @@ Target solver: CVC4
           true false) (ite (< space1 8) true false)) true)
   (=> (= left2 (- space1 1)) (not (< left2 8))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

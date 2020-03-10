@@ -240,3 +240,4 @@ Target solver: CVC4
   (=> (not (= loopframe__get__result 0))
   (= (select a loopframe__get__result) true)))))))))
 (check-sat)
+(exit)

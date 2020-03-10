@@ -862,3 +862,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__foo__widget_t__x1 z__split_fields)) o5) (in_range1
   o5))))))))))))))))))))))))))
 (check-sat)
+(exit)

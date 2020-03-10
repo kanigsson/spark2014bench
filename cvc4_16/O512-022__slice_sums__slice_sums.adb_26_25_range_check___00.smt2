@@ -751,3 +751,4 @@ Target solver: CVC4
                                               false)) true)
   (=> (in_range1 (- hi 1)) (=> (<= (first1 x) (- lo1 1)) (<= 1 (first1 x)))))))))))))))))))))))
 (check-sat)
+(exit)

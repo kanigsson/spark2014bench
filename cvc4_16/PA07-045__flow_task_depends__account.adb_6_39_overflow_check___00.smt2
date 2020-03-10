@@ -129,3 +129,4 @@ Target solver: CVC4
   (=> (dynamic_invariant num_accounts1 true true true true) (in_range
   (+ num_accounts1 1)))))))
 (check-sat)
+(exit)

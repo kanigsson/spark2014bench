@@ -510,3 +510,4 @@ Target solver: CVC4
  ;; File "pack.ads", line 5, characters 0-0
   (not (=> (<= 1 4) (<= 1 1))))
 (check-sat)
+(exit)

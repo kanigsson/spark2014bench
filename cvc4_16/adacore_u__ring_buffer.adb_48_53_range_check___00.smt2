@@ -733,3 +733,4 @@ Target solver: CVC4
                                           true false)) true)
   (in_range5 (+ (- usf first) 1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -80,3 +80,4 @@ Target solver: CVC4
   (=> (= x2 (or (ite (= x true) false true) z))
   (=> (= x2 true) (<= (ite x1 1 0) (ite y1 1 0))))))))))
 (check-sat)
+(exit)

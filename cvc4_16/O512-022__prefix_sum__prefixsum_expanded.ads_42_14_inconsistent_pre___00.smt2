@@ -501,3 +501,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 output_space false false true true)
   (not (= (all_elements_in a 1000000) true))))))
 (check-sat)
+(exit)

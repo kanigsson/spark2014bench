@@ -428,3 +428,4 @@ Target solver: CVC4
   (< 0 (length1
        (of_array (elts temp___193) (first1 temp___193) (last1 temp___193))))))))))))))))))))))))))
 (check-sat)
+(exit)

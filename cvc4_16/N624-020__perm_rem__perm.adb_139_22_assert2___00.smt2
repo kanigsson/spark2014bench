@@ -489,3 +489,4 @@ Target solver: CVC4
   (=> (not (< j i))
   (= (to_rep (select (to_array aa) j)) (to_rep (select (to_array a) (+ j 1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

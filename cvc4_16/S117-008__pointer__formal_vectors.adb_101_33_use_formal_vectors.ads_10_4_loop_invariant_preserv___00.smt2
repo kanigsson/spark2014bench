@@ -1800,3 +1800,4 @@ Target solver: CVC4
      (rec__use_formal_vectors__my_vect__vector__content e__split_fields3)
      us_null_pointer2) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -446,3 +446,4 @@ Target solver: CVC4
   (=> (= (to_rep c__first) temp___462)
   (forall ((o Int)) (=> (= (to_rep c__last) o) (not (= 2 0))))))))))))))))
 (check-sat)
+(exit)

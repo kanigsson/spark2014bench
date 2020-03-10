@@ -228,3 +228,4 @@ Target solver: CVC4
                            (select (temp_____aggregate_def_643 a i 42) 
                            i)))))))))
 (check-sat)
+(exit)

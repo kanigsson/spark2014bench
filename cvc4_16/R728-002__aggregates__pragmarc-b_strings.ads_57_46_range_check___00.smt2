@@ -545,3 +545,4 @@ Target solver: CVC4
          (us_split_discrs1 usf1))))
   (=> (<= 1 usf) (<= 1 1)))))))
 (check-sat)
+(exit)

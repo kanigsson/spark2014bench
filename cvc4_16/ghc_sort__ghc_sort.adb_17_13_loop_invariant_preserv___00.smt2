@@ -688,3 +688,4 @@ Target solver: CVC4
   (forall ((k Int))
   (=> (and (<= 1 k) (<= k top2)) (<= 1 (to_rep1 (select cut2 k)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

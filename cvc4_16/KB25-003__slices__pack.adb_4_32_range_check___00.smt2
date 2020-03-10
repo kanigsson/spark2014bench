@@ -614,3 +614,4 @@ Target solver: CVC4
   (forall ((glob (Array Int character)))
   (=> (= glob (temp___String_Literal_393 Tuple0)) (=> (<= 1 4) (<= 1 1))))))
 (check-sat)
+(exit)

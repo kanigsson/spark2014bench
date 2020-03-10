@@ -512,3 +512,4 @@ Target solver: CVC4
   (and (<= (to_rep o_m__first) o4) (<= o4 (to_rep o_m__last))))) (in_range1
   (- i 1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

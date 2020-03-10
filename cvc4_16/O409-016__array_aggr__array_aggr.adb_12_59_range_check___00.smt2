@@ -534,3 +534,4 @@ Target solver: CVC4
        0 1 3 1))
   (=> (<= 0 1) (<= first 0)))))))))
 (check-sat)
+(exit)

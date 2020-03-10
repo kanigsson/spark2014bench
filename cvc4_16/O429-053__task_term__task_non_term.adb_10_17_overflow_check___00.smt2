@@ -118,3 +118,4 @@ Target solver: CVC4
           true false) (ite (< f1 1000) true false)) true)
   (in_range1 (+ a1 f1))))))))))))
 (check-sat)
+(exit)

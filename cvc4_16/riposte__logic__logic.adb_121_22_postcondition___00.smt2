@@ -113,3 +113,4 @@ Target solver: CVC4
   (=> (= (< 0 a) (= (ok a) true))
   (=> (ok__function_guard (ok a) a) (=> (= (ok a) true) (< 0 a))))))))
 (check-sat)
+(exit)

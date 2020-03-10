@@ -513,3 +513,4 @@ Target solver: CVC4
   (forall ((o3 Int))
   (=> (= (to_rep (select (to_array b) usf1)) o3) (<= usf (last1 a))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

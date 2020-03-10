@@ -802,3 +802,4 @@ Target solver: CVC4
   (let ((o8 (+ usf 1)))
   (=> (in_range1 o8) (<= (first3 ghc_sort__cut__result) o8))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

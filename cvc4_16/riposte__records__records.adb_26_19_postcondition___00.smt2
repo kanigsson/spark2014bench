@@ -218,3 +218,4 @@ Target solver: CVC4
   (=> (= records__init_c__result r__split_fields)
   (= (bool_eq (us_repqtmk records__init_c__result) null_pair) true)))))))
 (check-sat)
+(exit)

@@ -342,3 +342,4 @@ Target solver: CVC4
   (to_rep (rec__test_2__context_type__last (us_split_discrs1 usf3))))
   (dynamic_predicate usf3)))))))))))
 (check-sat)
+(exit)

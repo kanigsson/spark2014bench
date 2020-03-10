@@ -344,3 +344,4 @@ Target solver: CVC4
   (=> (<= j i)
   (= (to_rep (select queen__copy_until__result j)) (to_rep (select b j)))))))))))))
 (check-sat)
+(exit)

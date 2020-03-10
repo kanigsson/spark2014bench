@@ -267,3 +267,4 @@ Target solver: CVC4
   (=> (= (to_rep o3) call_actuals__fnt__y)
   (=> (= (to_rep o3) o4) (=> (= a22 o4) (in_range4 a22)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

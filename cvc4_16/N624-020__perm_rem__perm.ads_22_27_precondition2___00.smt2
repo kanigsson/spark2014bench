@@ -634,3 +634,4 @@ Target solver: CVC4
   (=> (= perm__remove_swap__result 1)
   (=> (= (distinct perm__remove_swap__result 0) true) (<= (first1 a) i2)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

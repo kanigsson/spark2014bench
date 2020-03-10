@@ -380,3 +380,4 @@ Target solver: CVC4
   (=> (< (* 2 1) 100000) (dynamic_predicate2
   (temp_____aggregate_def_260 1 2))))))))))))
 (check-sat)
+(exit)

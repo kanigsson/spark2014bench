@@ -340,3 +340,4 @@ Target solver: CVC4
   (= (equivalent (us_repqtmk (us_split_fieldsqtmk a__split_fields1))
      (us_repqtmk (us_split_fieldsqtmk b__split_fields1))) true)))))))))))))))))))
 (check-sat)
+(exit)

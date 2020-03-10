@@ -298,3 +298,4 @@ Target solver: CVC4
   (=> (<= i (to_rep a__last))
   (=> (= a1 (store a i rliteral)) (= (to_rep (select a1 i)) 0)))))))))))
 (check-sat)
+(exit)

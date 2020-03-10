@@ -410,3 +410,4 @@ Target solver: CVC4
   (not (and (= (divides x a) true) (= (divides x b) true))))))
   (=> (dynamic_invariant c2 true true true true) (in_range1 (- c2 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

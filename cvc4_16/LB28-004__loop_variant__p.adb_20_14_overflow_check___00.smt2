@@ -321,3 +321,4 @@ Target solver: CVC4
   (let ((o (+ j3 k1)))
   (=> (in_range1 o) (=> (<= o b) (in_range1 (+ j3 k1))))))))))))))))))
 (check-sat)
+(exit)

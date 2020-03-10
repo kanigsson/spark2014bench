@@ -585,3 +585,4 @@ Target solver: CVC4
                                       true false)) true)
   (=> (= (mod2 (+ usf 1) (* 2 space2)) 0) (<= 0 (- usf space2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

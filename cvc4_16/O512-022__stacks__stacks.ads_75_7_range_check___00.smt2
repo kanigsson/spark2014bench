@@ -630,3 +630,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__stacks__stack__max (us_split_discrs1 usf1))) usf)
   (=> (<= 1 usf) (<= (- 2147483648) 1)))))))
 (check-sat)
+(exit)

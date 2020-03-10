@@ -1922,3 +1922,4 @@ Target solver: CVC4
                                                current_in34 current_out34))
   (= (is_open source4) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

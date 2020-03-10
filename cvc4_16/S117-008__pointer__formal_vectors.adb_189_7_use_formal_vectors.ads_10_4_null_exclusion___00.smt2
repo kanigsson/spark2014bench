@@ -1197,3 +1197,4 @@ Target solver: CVC4
   (= (model1 o1) (model1 o))))
   (rec__use_formal_vectors__element_type__pointer_value__pred o1))))))))))))))))))
 (check-sat)
+(exit)

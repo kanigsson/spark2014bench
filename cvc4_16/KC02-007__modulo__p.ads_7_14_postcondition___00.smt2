@@ -269,3 +269,4 @@ Target solver: CVC4
   (=> (dynamic_invariant y true false true true)
   (=> (= p__f__result (bv2nat y)) (= p__f__result 17)))))))))
 (check-sat)
+(exit)

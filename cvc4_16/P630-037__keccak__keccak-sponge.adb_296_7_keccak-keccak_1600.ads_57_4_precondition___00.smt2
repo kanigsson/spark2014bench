@@ -1609,3 +1609,4 @@ Target solver: CVC4
                  ada___keccak__padding__pad101_multi_blocks__first_block__compl))
   (= (length1 (to_rep o3) (to_rep o2)) (length1 (to_rep o8) (to_rep o7)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

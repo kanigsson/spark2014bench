@@ -612,3 +612,4 @@ Target solver: CVC4
   (<= 1 (to_rep (rec__fixed_string__object__width (us_split_fields1 this))))
   (<= 1 1))))
 (check-sat)
+(exit)

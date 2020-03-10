@@ -218,3 +218,4 @@ Target solver: CVC4
      (rec__dispatch__root__f (us_split_fields1 dispatch__incr6__result))) (+ 
   (to_rep (rec__dispatch__root__f (us_split_fields1 x))) 1))) (= usf true))))))))
 (check-sat)
+(exit)

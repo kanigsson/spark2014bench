@@ -358,3 +358,4 @@ Target solver: CVC4
   (let ((o (of_array x 1 1000)))
   (= (bool_eq x 1 1000 (to_array o) (first1 o) (last1 o)) true))))))
 (check-sat)
+(exit)

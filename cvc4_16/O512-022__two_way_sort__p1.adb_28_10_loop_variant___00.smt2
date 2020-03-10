@@ -370,3 +370,4 @@ Target solver: CVC4
   (and (= i3 o5) (let ((o6 (- j2 1))) (and (in_range2 o6) (= j3 o6))))))))))))))))
   (=> (<= i3 j3) (< (- j3 i3) temp___198)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

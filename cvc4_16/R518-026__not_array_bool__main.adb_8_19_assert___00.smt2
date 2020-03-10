@@ -197,3 +197,4 @@ Target solver: CVC4
   (=> (= x (main__x__aggregate_def (distinct 1 0)))
   (=> (= y (notb x 1 10)) (not (= (select y 1) true)))))))
 (check-sat)
+(exit)

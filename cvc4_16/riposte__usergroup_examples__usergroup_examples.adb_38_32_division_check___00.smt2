@@ -437,3 +437,4 @@ Target solver: CVC4
   (forall ((current Int))
   (=> (dynamic_invariant current true false true true) (not (= 100 0))))))
 (check-sat)
+(exit)

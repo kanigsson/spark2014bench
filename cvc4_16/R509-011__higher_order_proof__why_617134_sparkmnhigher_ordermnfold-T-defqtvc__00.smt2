@@ -1154,3 +1154,4 @@ Target solver: CVC4
   (=> (< k (last2 a))
   (=> (in_range8 (first_2 a)) (=> (in_range7 (+ k 1)) (<= j (last_2 a)))))))))))))))))))))))))
 (check-sat)
+(exit)

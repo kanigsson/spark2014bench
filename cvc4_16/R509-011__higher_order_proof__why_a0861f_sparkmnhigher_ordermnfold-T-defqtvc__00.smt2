@@ -770,3 +770,4 @@ Target solver: CVC4
   (forall ((o7 Int))
   (=> (= (to_rep (select (to_array a) temp___1215)) o7) (< init 2147483647))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

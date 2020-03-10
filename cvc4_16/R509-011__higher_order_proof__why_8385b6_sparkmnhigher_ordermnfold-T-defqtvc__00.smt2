@@ -665,3 +665,4 @@ Target solver: CVC4
      (of_array (to_array a) (first2 a) (last2 a) (first_2 a) (last_2 a))
      (add_one (to_rep (get (to_array a) i j)) x) i (+ j 1)) true)))))))))))))))
 (check-sat)
+(exit)

@@ -179,3 +179,4 @@ Target solver: CVC4
   (forall ((temp___loop_entry_217 Int))
   (=> (= temp___loop_entry_217 b) (not (= r1 2147483647)))))))))))))))))
 (check-sat)
+(exit)

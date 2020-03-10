@@ -257,3 +257,4 @@ Target solver: CVC4
   (forall ((i1 Int)) (factorial__function_guard (factorial (- i1 1))
   (- i1 1))) (= p21 (factorial (- i 1))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -403,3 +403,4 @@ Target solver: CVC4
      (us_close (us_repqtmk1 n__pointer_value))))))) 2)
   (= (to_rep (rec__a__list__val l__split_fields)) 1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

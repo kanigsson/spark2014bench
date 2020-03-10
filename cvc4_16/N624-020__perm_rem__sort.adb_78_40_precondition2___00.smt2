@@ -801,3 +801,4 @@ Target solver: CVC4
   (=> (in_range4 (- y 1))
   (let ((o9 x)) (=> (in_range4 o9) (<= (first1 (of_array init 1 100)) o9)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

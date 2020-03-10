@@ -287,3 +287,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= (mod2 a c) 0) false true))
   (=> (= spark__branch true) (not (= (mod2 a c) 0))))))))))))))))
 (check-sat)
+(exit)

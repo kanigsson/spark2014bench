@@ -1475,3 +1475,4 @@ Target solver: CVC4
                                                       o))
   (= (first9 test_higher_order1__my_fold_2__acc__fold__result) (first4 a)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

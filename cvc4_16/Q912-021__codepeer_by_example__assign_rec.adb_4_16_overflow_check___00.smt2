@@ -283,3 +283,4 @@ Target solver: CVC4
  ;; File "assign_rec.ads", line 9, characters 0-0
   (not (=> (dynamic_invariant y true false true true) (in_range (+ y 1)))))
 (check-sat)
+(exit)

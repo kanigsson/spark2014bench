@@ -295,3 +295,4 @@ Target solver: CVC4
   (=> (= tmp15 (mod2 o17 z))
   (let ((o18 (- tmp24 tmp15))) (=> (in_range o18) (in_range (+ o18 x))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

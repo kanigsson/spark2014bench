@@ -287,3 +287,4 @@ Target solver: CVC4
   (and (= w2 o2) (exists ((d3 Int)) (and (= d3 r) (and (= y2 w2) (= d3 1))))))))))))))))
   (= y2 y1)))))))))))))))))
 (check-sat)
+(exit)

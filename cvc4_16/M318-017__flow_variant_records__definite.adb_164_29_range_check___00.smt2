@@ -451,3 +451,4 @@ Target solver: CVC4
   (=> (= definite__test_04__R48b__assume r48b)
   (=> (dynamic_invariant1 r48b true false true true) (in_range1 i))))))))
 (check-sat)
+(exit)

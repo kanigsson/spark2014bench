@@ -299,3 +299,4 @@ Target solver: CVC4
   (forall ((o10 Int))
   (=> (= (to_rep (select memory from)) o10) (in_range1 (+ o10 size1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

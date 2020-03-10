@@ -366,3 +366,4 @@ Target solver: CVC4
   (=> (dynamic_invariant z false false true true)
   (bvult (bvmul ((_ zero_extend 64) x) ((_ zero_extend 64) y)) #x00000000000000010000000000000000)))))))
 (check-sat)
+(exit)

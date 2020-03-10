@@ -956,3 +956,4 @@ Target solver: CVC4
                                          result____split_fields2)))
   (= (length amortized_queue__Oconcat__2__result) (+ 1 (length right)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

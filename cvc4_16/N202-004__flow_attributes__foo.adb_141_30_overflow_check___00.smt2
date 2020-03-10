@@ -800,3 +800,4 @@ Target solver: CVC4
   (=> (= (to_rep1 data__first) o8)
   (let ((o9 (+ o8 i1))) (=> (in_range1 o9) (in_range1 (- o9 1)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

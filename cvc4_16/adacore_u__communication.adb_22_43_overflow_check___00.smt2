@@ -618,3 +618,4 @@ Target solver: CVC4
      (rec__communication__ring_buffer__buffer__first b__split_fields)) o6)
   (let ((o7 (+ o6 o5))) (=> (in_range o7) (in_range (- o7 max))))))))))))))))))))))))))
 (check-sat)
+(exit)

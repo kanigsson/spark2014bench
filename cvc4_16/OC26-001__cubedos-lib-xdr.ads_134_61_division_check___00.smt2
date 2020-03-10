@@ -259,3 +259,4 @@ Target solver: CVC4
   (=> (dynamic_invariant length true false true true)
   (=> (not (= (mod1 length 4) 0)) (not (= 4 0))))))
 (check-sat)
+(exit)

@@ -273,3 +273,4 @@ Target solver: CVC4
   (=> (not (= (* arg2 j2) arg1))
   (forall ((k Int)) (=> (and (<= 1 k) (<= k j2)) (not (= (* arg2 k) arg1))))))))))))))))))))))))
 (check-sat)
+(exit)

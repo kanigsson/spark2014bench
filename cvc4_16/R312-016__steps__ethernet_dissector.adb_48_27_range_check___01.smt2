@@ -1040,3 +1040,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 r26b true false true true)
   (=> (<= r25b r26b) (<= (first1 buffer) r25b)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

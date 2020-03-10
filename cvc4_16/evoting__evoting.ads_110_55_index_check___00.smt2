@@ -543,3 +543,4 @@ Target solver: CVC4
   (= o (ite (< o1 o2) true false))))))) (= o (distinct 1 0)))
   (=> (= o true) (<= 0 usf1)))))))))))))))))))
 (check-sat)
+(exit)

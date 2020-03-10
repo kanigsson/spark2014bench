@@ -500,3 +500,4 @@ Target solver: CVC4
   (= (to_rep1 (rec__adt_stack__stack__stack_top (us_split_fields1 t))) temp___237)
   (=> (<= 1 temp___237) (<= 1 1))))))
 (check-sat)
+(exit)

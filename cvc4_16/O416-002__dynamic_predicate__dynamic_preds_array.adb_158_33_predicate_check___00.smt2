@@ -380,3 +380,4 @@ Target solver: CVC4
   false true true))
   (forall ((x1 (Array Int even))) (=> (= x1 o) (dynamic_predicate x1))))))))))))
 (check-sat)
+(exit)

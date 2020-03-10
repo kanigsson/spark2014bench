@@ -394,3 +394,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__alias__my_rec__content (us_split_fields1 r))) o1)
   (in_range1 (mod2 o1 o))))))))
 (check-sat)
+(exit)

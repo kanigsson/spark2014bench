@@ -670,3 +670,4 @@ Target solver: CVC4
   (< (to_rep1 previous__last) (to_rep1 previous__first)))
   (=> (in_range3 current) (<= (to_rep1 values__first) current)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -443,3 +443,4 @@ Target solver: CVC4
                       (rec__ext__1 x__split_fields1)))
   (= (to_rep (rec__unit1__t1__c11 x__split_fields2)) 0))))))))))
 (check-sat)
+(exit)

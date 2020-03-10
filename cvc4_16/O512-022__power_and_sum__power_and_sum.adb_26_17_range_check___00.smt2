@@ -196,3 +196,4 @@ Target solver: CVC4
   (= totalsum1 totalsum))
   (=> (= (* 2 totalsum1) (* n (+ n 1))) (in_range3 totalsum1))))))))))))
 (check-sat)
+(exit)

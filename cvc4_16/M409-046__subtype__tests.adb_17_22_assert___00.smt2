@@ -116,3 +116,4 @@ Target solver: CVC4
   (=> (dynamic_invariant i5s true false true true)
   (=> (dynamic_invariant v true false true true) (not (= v 15))))))))
 (check-sat)
+(exit)

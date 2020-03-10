@@ -740,3 +740,4 @@ Target solver: CVC4
   (= bounded_dynamic_strings__location__3__result1 0))))))))
   (<= 0 bounded_dynamic_strings__location__3__result1)))))))))
 (check-sat)
+(exit)

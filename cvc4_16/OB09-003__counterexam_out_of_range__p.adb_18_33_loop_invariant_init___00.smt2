@@ -94,3 +94,4 @@ Target solver: CVC4
   (=> (= counter 5)
   (=> (dynamic_invariant counter true false true true) (<= 0 counter))))))
 (check-sat)
+(exit)

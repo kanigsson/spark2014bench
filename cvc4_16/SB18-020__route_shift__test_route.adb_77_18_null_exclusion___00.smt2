@@ -1000,3 +1000,4 @@ Target solver: CVC4
   (rec__test_route__route__current
   (us_split_fields3 (rec__test_route__route_acc__pointer_value r)))))))))))))))))
 (check-sat)
+(exit)

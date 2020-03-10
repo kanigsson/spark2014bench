@@ -1018,3 +1018,4 @@ Target solver: CVC4
         (- o6 1)))))
   (in_range3 usf3)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

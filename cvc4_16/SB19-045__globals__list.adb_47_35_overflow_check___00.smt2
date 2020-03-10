@@ -395,3 +395,4 @@ Target solver: CVC4
   (ite (= spark__branch1 true) (exists ((o integer)) (= (to_rep o) value))
   (= i1 100))))))))) (in_range1 (+ used_items 1))))))))))
 (check-sat)
+(exit)

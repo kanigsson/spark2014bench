@@ -844,3 +844,4 @@ Target solver: CVC4
   (=> (= (= (has_element o2 o1) true) (= (has_key (positions o2) o1) true))
   (= (has_element arr (us_repqtmk1 (us_split_fieldsqtmk1 c__split_fields))) true))))))))))))))))))
 (check-sat)
+(exit)

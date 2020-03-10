@@ -1181,3 +1181,4 @@ Target solver: CVC4
   string_utilities__longest_common_subsequence__result1 s1))
   (= (is_subsequence string_utilities__longest_common_subsequence__result s1) true))))))))))))))
 (check-sat)
+(exit)

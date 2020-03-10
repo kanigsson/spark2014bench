@@ -863,3 +863,4 @@ Target solver: CVC4
   (let ((o9 (+ usf 1)))
   (=> (in_range1 o9) (<= (first3 ghc_sort__cut__result) o9)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

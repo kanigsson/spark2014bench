@@ -703,3 +703,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 r124b true false true true)
   (=> (<= (first1 source) (last1 source)) (<= 1 (length source))))))))))))))))))))))
 (check-sat)
+(exit)

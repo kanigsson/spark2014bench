@@ -407,3 +407,4 @@ Target solver: CVC4
   (=> (forall ((rsp2 (_ BitVec 64))) (esp__function_guard (esp rsp2) rsp2))
   (= (esp rsp1) val__))))))))
 (check-sat)
+(exit)

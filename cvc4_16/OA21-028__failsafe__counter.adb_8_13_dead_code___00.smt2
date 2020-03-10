@@ -362,3 +362,4 @@ Target solver: CVC4
   (and (and (bvule #x01 temp___203) (bvule temp___203 #x0A))
   (= o (select inputs temp___203)))) (= o false)) (not (= o true))))))))
 (check-sat)
+(exit)

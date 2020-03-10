@@ -151,3 +151,4 @@ Target solver: CVC4
   (=> (= r1 o1)
   (fp.eq r1 (fp.div RNE y (fp.sub RNE z (fp #b0 #b10000000001 #b0000000000000000000000000000000000000000000000000000)))))))))))))))))
 (check-sat)
+(exit)

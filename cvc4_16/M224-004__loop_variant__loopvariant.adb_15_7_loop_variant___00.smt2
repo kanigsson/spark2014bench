@@ -127,3 +127,4 @@ Target solver: CVC4
   (and (= j4 3) (let ((o (+ i3 1))) (and (in_range1 o) (= i4 o)))))))
   (or (< temp___178 i4) (and (= i4 temp___178) (< j4 temp___177)))))))))))))))))))
 (check-sat)
+(exit)

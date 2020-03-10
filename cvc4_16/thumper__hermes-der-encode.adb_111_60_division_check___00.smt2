@@ -780,3 +780,4 @@ Target solver: CVC4
   (=> (= result__3 (store result__2 4 o4))
   (forall ((value3 Int)) (=> (= value3 (div1 value2 256)) (not (= 256 0)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

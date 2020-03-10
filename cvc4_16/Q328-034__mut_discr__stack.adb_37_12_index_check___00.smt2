@@ -638,3 +638,4 @@ Target solver: CVC4
   (let ((o1 (+ last2 1)))
   (=> (in_range3 o1) (forall ((last3 Int)) (=> (= last3 o1) (<= 1 last3)))))))))))))))))
 (check-sat)
+(exit)

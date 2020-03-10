@@ -638,3 +638,4 @@ Target solver: CVC4
   (=> (= (to_rep1 b1__first) o1)
   (bvule (to_rep1 b2__first) (bvadd (bvsub i1 o1) o)))))))))))))))
 (check-sat)
+(exit)

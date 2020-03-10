@@ -100,3 +100,4 @@ Target solver: CVC4
   (forall ((useless_annot__posit__result Int))
   (=> (= useless_annot__posit__result o) (< x useless_annot__posit__result)))))))))
 (check-sat)
+(exit)

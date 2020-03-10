@@ -161,3 +161,4 @@ Target solver: CVC4
   (=> (fp.eq x (fp #b0 #b01111111 #b00000000000000000000000))
   (=> (fp.eq z nextup_one) (=> (fp.lt x y) (not (fp.lt y z))))))))))))
 (check-sat)
+(exit)

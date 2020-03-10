@@ -581,3 +581,4 @@ Target solver: CVC4
   (let ((o4 (* 256 result__1)))
   (=> (in_range1 o4) (in_range1 (+ o4 (bv2nat o3)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

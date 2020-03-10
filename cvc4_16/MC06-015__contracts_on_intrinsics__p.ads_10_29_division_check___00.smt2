@@ -321,3 +321,4 @@ Target solver: CVC4
                  #x00000000)))))
   (forall ((a1 (_ BitVec 32))) (=> (= a1 o) (not (= #x00000004 #x00000000))))))))))
 (check-sat)
+(exit)

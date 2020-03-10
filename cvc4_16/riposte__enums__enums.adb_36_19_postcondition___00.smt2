@@ -129,3 +129,4 @@ Target solver: CVC4
   (=> (= enums__enum_equals_subtype__result (ite (= a b) true false))
   (=> (= enums__enum_equals_subtype__result true) (= a b))))))))
 (check-sat)
+(exit)

@@ -491,3 +491,4 @@ Target solver: CVC4
   (=> (dynamic_invariant discr true false true true)
   (=> (dynamic_invariant1 init_val true false true true) (in_range1 discr)))))
 (check-sat)
+(exit)

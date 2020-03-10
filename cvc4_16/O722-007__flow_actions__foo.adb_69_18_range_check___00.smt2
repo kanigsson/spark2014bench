@@ -397,3 +397,4 @@ Target solver: CVC4
      new_sub 1 5) true)
   (=> (<= z 5) (<= 1 z))))))))))))))))
 (check-sat)
+(exit)

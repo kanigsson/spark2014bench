@@ -819,3 +819,4 @@ Target solver: CVC4
   (=> (= (get o12 i) (get o12 j)) (= (bool_eq i j) true))))))))
   (= (has_key o12 usf1) true))))))))))))))))))))))))))))
 (check-sat)
+(exit)

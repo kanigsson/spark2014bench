@@ -727,3 +727,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 position true false true true)
   (=> (dynamic_invariant2 last2 false false true true) (not (= 4 0)))))))))
 (check-sat)
+(exit)

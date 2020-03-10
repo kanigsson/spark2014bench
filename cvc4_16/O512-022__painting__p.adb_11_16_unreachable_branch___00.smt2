@@ -402,3 +402,4 @@ Target solver: CVC4
   (not
   (= (and (ite (<= 0 usf) true false) (ite (<= usf (- c 1)) true false)) true)))))))))))
 (check-sat)
+(exit)

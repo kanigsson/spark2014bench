@@ -681,3 +681,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 usf) true false) (ite (<= usf k) true false)) true)
   (in_range1 (length fragment)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

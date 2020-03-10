@@ -1177,3 +1177,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (to_array u__split_fields) temp___1357)) o1)
   (let ((o2 (+ j n))) (=> (in_range2 o2) (<= (first1 u__split_fields) o2)))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -735,3 +735,4 @@ Target solver: CVC4
   (=> (forall ((o5 us_rep)) (is_empty__function_guard (is_empty o5) o5))
   (not (= (is_empty (us_repqtmk s__split_discrs s__split_fields2)) true))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

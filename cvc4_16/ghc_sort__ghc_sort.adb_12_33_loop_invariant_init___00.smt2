@@ -537,3 +537,4 @@ Target solver: CVC4
                                              false)) true)
   (=> (and (<= (first1 s) x) (<= x (last1 s))) (= x (- y 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

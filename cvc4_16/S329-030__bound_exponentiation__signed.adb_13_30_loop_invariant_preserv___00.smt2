@@ -227,3 +227,4 @@ Target solver: CVC4
   (=> (<= (power 2 i2) 4611686018427387904)
   (=> (<= 0 k) (=> (<= k i2) (<= 0 (power 2 k)))))))))))))))))
 (check-sat)
+(exit)

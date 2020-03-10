@@ -635,3 +635,4 @@ Target solver: CVC4
   (=> (dynamic_invariant4 identifier_status false false true true)
   (<= (first1 message) start))))))))))))))
 (check-sat)
+(exit)

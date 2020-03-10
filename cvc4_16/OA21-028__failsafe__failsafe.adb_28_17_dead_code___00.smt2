@@ -555,3 +555,4 @@ Target solver: CVC4
   (not (= spark__branch1 true)))))))))))))))))))) (= res1 res))))))))
   (= res1 res)))))))))))))))
 (check-sat)
+(exit)

@@ -919,3 +919,4 @@ Target solver: CVC4
   (= (length1 (model1 temp___loop_entry_333)) (length temp___loop_entry_333))
   (<= 1 usf))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

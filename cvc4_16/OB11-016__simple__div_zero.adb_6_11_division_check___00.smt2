@@ -222,3 +222,4 @@ Target solver: CVC4
   (forall ((c Int))
   (=> (= c 0) (=> (dynamic_invariant c true false true true) (not (= c 0)))))))
 (check-sat)
+(exit)

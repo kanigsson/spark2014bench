@@ -540,3 +540,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__with_iterable__cursor__i (us_split_fields1 cu))) o)
   (let ((o1 (+ o 1))) (=> (in_range o1) (in_range1 o1))))))))))))
 (check-sat)
+(exit)

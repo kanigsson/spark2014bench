@@ -372,3 +372,4 @@ Target solver: CVC4
   (=> (= (used index last_allocated) true) (instance__t__elem_type__pos__pred
   (select elems index))))))))))))
 (check-sat)
+(exit)

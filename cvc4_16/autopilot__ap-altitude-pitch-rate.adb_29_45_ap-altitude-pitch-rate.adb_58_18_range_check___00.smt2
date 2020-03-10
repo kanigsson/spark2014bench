@@ -446,3 +446,4 @@ Target solver: CVC4
   (=> (= gap1 10)
   (let ((o (div1 sum1 gap1))) (=> (in_range1 o) (in_range2 o))))))))))))))))
 (check-sat)
+(exit)

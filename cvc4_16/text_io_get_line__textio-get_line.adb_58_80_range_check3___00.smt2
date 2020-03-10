@@ -1453,3 +1453,4 @@ Target solver: CVC4
   (not (= (to_rep (select the_file idx)) eof_ch)))))
   (=> (not (= o3 true)) (in_range3 (- (+ cur_position n) 2))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

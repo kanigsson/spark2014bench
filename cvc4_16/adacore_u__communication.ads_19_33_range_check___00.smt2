@@ -164,3 +164,4 @@ Target solver: CVC4
   (forall ((v_ext Int))
   (=> (dynamic_invariant v_ext true false true true) (in_range1 v_ext)))))
 (check-sat)
+(exit)

@@ -433,3 +433,4 @@ Target solver: CVC4
   (=> (= sum1 o1)
   (=> (in_range1 (* i (- 10))) (=> (in_range1 (* i 20)) (<= sum1 (* i 20))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -939,3 +939,4 @@ Target solver: CVC4
   (<= (first1
       (rec__record_discr__interm_result__to_search (us_split_fields3 r))) temp___323)))))))))))))))))
 (check-sat)
+(exit)

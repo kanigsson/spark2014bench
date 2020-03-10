@@ -390,3 +390,4 @@ Target solver: CVC4
   (and (= (to_rep (select temp___300 1)) 0)
   (= (to_rep (select temp___300 2)) 0)))) (dynamic_predicate1 temp___300)))))))))))
 (check-sat)
+(exit)

@@ -461,3 +461,4 @@ Target solver: CVC4
   (=> (= (valid_prime_data is_prime1) true)
   (=> (dynamic_invariant result__ false false true true) (<= 0 555)))))))
 (check-sat)
+(exit)

@@ -350,3 +350,4 @@ Target solver: CVC4
   (=> (and (dynamic_invariant o3 true false true true) (<= (+ 0 o3) 42))
   (= (length s3) k2)))))))))))))))))))))))))
 (check-sat)
+(exit)

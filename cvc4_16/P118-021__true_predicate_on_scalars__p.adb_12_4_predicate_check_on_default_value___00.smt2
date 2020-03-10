@@ -294,3 +294,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 b false false true true)
   (=> (dynamic_invariant2 j false false true true) (dynamic_predicate3 usf))))))
 (check-sat)
+(exit)

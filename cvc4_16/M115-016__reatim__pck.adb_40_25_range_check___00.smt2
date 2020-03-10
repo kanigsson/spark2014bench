@@ -336,3 +336,4 @@ Target solver: CVC4
   (forall ((v_lo2 Int))
   (=> (= v_lo2 (mod1 v_lo1 4294967296)) (in_range2 (div1 v_hi2 d))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

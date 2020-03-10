@@ -867,3 +867,4 @@ Target solver: CVC4
                                             current_out4 current_err4)))
   (in_range1 (+ counter2 1))))))))))))))))))))))
 (check-sat)
+(exit)

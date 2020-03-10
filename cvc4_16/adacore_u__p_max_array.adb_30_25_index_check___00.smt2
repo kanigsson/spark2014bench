@@ -465,3 +465,4 @@ Target solver: CVC4
   (=> (exists ((o6 Int)) (= (to_rep (select (to_array a) usf)) o6))
   (<= (to_rep1 r__first) usf)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

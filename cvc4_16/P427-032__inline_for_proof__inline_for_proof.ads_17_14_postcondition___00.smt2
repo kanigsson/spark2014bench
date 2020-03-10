@@ -212,3 +212,4 @@ Target solver: CVC4
   (exists ((j Int))
   (and (and (<= 1 j) (<= j 100)) (= (get x i y b) (get y j y b))))))))))
 (check-sat)
+(exit)

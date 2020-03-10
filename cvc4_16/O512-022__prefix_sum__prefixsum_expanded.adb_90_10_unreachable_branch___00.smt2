@@ -913,3 +913,4 @@ Target solver: CVC4
   (= o (ite (= o14 (+ (+ (+ o13 o12) o11) o10)) true false))))))))))))
   (= o false)))))))))))))))))))) (not (= o true))))))))))))))
 (check-sat)
+(exit)

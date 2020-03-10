@@ -536,3 +536,4 @@ Target solver: CVC4
   (=> (= b1 (store b 2 (temp_____aggregate_def_216 0)))
   (= (bool_eq (select b1 1) 1 2 (select o_b 1) 1 2) true)))))))))))))
 (check-sat)
+(exit)

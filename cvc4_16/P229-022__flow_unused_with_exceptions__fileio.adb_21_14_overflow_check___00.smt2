@@ -111,3 +111,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true))
   (=> (in_range1 (+ x 1)) (in_range1 (+ y 1)))))))))))
 (check-sat)
+(exit)

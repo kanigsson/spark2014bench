@@ -406,3 +406,4 @@ Target solver: CVC4
   (= o4 false))))
   (=> (= o4 true) (=> (<= current (to_rep values__last)) (<= 1 current)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

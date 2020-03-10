@@ -1252,3 +1252,4 @@ Target solver: CVC4
   (is_permutation_1__function_guard (is_permutation_1 (select o g21))
   (select o g21))) (= (is_permutation_1 (select ranking_2 g2)) true))))))))
 (check-sat)
+(exit)

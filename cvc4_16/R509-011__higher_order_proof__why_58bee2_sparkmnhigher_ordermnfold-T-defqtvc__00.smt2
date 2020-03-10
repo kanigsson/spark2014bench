@@ -871,3 +871,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select r3 o7)) o8)
   (<= usf (last2 (of_array (to_array a) (first2 a) (last2 a)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

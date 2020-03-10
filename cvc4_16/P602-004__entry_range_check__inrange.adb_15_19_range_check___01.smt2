@@ -158,3 +158,4 @@ Target solver: CVC4
   (=> (dynamic_invariant inrange__pt__add_out__i true true true true)
   (in_range1 inrange__pt__add_out__i)))))))))))
 (check-sat)
+(exit)

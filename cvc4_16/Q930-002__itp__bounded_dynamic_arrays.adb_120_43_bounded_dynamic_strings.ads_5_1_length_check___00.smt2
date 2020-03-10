@@ -798,3 +798,4 @@ Target solver: CVC4
   (let ((temp___1500 (of_array (to_array temp___1499) 1 temp___1498)))
   (=> (<= (first1 temp___1500) (last1 temp___1500)) (<= 1 last2)))))))))))))))))))
 (check-sat)
+(exit)

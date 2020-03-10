@@ -1380,3 +1380,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 o2 true false true true)
   (= (bool_eq4 o2 (get1 (model2 o1) o)) true)) (= (contains x id) true))))))))))
 (check-sat)
+(exit)

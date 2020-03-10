@@ -616,3 +616,4 @@ Target solver: CVC4
   (=> (= (to_rep (select content first)) o1)
   (forall ((e1 Int)) (=> (= e1 o1) (in_range4 (- length2 1)))))))))))))))))))
 (check-sat)
+(exit)

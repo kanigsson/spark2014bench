@@ -369,3 +369,4 @@ Target solver: CVC4
   (=> (dynamic_invariant b true false true true) (uint_in_range
   (mod2 (+ (mod2 a 256) (mod2 b 256)) 256))))))
 (check-sat)
+(exit)

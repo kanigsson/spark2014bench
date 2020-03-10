@@ -864,3 +864,4 @@ Target solver: CVC4
   temp___589)))))) (= o2 false))))
   (=> (= o2 true) (<= (first2 a) (last2 a)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

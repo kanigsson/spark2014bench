@@ -220,3 +220,4 @@ Target solver: CVC4
   (=> (= (to_rep (select y i)) o)
   (=> (= (to_rep (select x i)) o1) (in_range2 (+ o1 o)))))))))
 (check-sat)
+(exit)

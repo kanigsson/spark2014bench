@@ -369,3 +369,4 @@ Target solver: CVC4
                    (last1 word)))
   (not (= spark__branch true))))))))))
 (check-sat)
+(exit)

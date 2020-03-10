@@ -221,3 +221,4 @@ Target solver: CVC4
   (= imax1 imax2)))))) (= i1 10))))))) (= imax1 imax))))
   (=> (= max__max__result imax1) (<= (to_rep (select t 1)) max__max__result)))))))))
 (check-sat)
+(exit)

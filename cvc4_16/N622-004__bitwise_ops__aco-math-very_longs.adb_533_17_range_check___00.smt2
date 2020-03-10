@@ -1664,3 +1664,4 @@ Target solver: CVC4
   (us_repqtmk1 u__split_discrs (us_split_fieldsqtmk1 u__split_fields4)) true
   true true true)) (=> (not (= j2 1)) (in_range1 (- j2 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

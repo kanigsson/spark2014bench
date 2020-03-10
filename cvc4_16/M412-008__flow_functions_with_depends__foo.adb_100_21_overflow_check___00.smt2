@@ -120,3 +120,4 @@ Target solver: CVC4
   (=> (dynamic_invariant tmp true false true true)
   (=> (dynamic_invariant tmp1 true true true true) (in_range (+ tmp1 1))))))))))
 (check-sat)
+(exit)

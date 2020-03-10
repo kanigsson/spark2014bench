@@ -292,3 +292,4 @@ Target solver: CVC4
   (=> (= (= y true) (= (f1 3) true))
   (=> (f2__function_guard (f2 3) 3) (= (f2 3) true))))))))))))))
 (check-sat)
+(exit)

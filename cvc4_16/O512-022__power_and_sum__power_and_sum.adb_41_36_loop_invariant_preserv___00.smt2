@@ -216,3 +216,4 @@ Target solver: CVC4
   (forall ((j4 Int))
   (=> (= j4 o1) (=> (<= j4 i1) (= (* 2 innersum3) (* j4 (- j4 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

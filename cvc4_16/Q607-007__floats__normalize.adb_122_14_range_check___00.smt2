@@ -235,3 +235,4 @@ Target solver: CVC4
   (fp.leq (fp.sub RNE v11 (fp #b0 #b01111111 #b00000000000000000000000)) o)))))
   (forall ((v21 Float32)) (=> (= v21 o) (in_range2 v21))))))))))))
 (check-sat)
+(exit)

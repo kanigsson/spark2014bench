@@ -390,3 +390,4 @@ Target solver: CVC4
            (last1 temp___177) (temp___String_Literal_174 Tuple0) 1 4))
   (=> (= valid true) (in_range1 (+ (first1 s) 4)))))))))))))))))
 (check-sat)
+(exit)

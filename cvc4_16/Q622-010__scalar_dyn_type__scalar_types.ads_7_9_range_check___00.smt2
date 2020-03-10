@@ -201,3 +201,4 @@ Target solver: CVC4
   (=> (dynamic_invariant dyn_ty_LAST true false true true)
   (=> (<= 1 100) (<= 1 1))))))))
 (check-sat)
+(exit)

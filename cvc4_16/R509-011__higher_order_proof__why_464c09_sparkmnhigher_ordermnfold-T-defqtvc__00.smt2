@@ -1400,3 +1400,4 @@ Target solver: CVC4
   (=> (< (first2 a) i2)
   (let ((o (- i2 1))) (=> (in_range1 o) (in_range7 o))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -101,3 +101,4 @@ Target solver: CVC4
   (=> (dynamic_invariant nested_var2 true false true true) (in_range
   (+ nested_var nested_var2))))))))
 (check-sat)
+(exit)

@@ -386,3 +386,4 @@ Target solver: CVC4
   (get_length (us_repqtmk x__split_fields1)) (us_repqtmk x__split_fields1)))
   (<= 0 (get_length (us_repqtmk x__split_fields))))))))
 (check-sat)
+(exit)

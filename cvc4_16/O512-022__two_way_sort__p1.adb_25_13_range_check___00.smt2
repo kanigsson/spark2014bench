@@ -293,3 +293,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true))
   (=> (= (to_rep a__first) o2) (in_range2 o2))))))))))))
 (check-sat)
+(exit)

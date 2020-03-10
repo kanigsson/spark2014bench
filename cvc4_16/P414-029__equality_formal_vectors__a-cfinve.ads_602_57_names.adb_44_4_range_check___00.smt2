@@ -797,3 +797,4 @@ Target solver: CVC4
             (us_split_fieldsqtmk container__split_fields))))
   (in_range9 (- index 1)))))))))
 (check-sat)
+(exit)

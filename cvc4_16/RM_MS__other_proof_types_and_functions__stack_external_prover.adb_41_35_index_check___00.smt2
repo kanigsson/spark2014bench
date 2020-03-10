@@ -439,3 +439,4 @@ Target solver: CVC4
      (rec__stack_external_prover__stack_type__pointer my_stack__split_fields)) temp___273)
   (<= 1 temp___273))))))))
 (check-sat)
+(exit)

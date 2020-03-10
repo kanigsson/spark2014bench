@@ -363,3 +363,4 @@ Target solver: CVC4
   (=> (= left_is_out (ite (< left1 0) true false))
   (=> (not (= left_is_out true)) (<= 0 left1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

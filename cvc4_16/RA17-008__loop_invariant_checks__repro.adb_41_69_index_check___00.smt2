@@ -945,3 +945,4 @@ Target solver: CVC4
   (=> (in_range1 o7)
   (<= (first1 (rec__repro__ensemble__areas (us_split_fields3 e))) o7)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

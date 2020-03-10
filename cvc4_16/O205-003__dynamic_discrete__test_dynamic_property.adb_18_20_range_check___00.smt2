@@ -185,3 +185,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (let ((o (+ x 1))) (=> (in_range o) (dynamic_property 0 last o)))))))))))
 (check-sat)
+(exit)

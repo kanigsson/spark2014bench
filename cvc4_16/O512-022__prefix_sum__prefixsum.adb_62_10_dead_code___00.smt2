@@ -665,3 +665,4 @@ Target solver: CVC4
   (exists ((left4 Int)) (and (= left4 o6) (not (< left4 8)))))))))))))))))))))))))))))))))))))
   (= a2 a1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

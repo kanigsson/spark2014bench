@@ -205,3 +205,4 @@ Target solver: CVC4
   (forall ((x1 us_rep) (c1 Int)) (init__function_guard (init x1 c1) x1 c1))
   (= (init x c) true)))))))))))
 (check-sat)
+(exit)

@@ -485,3 +485,4 @@ Target solver: CVC4
   (=> (dynamic_invariant a true false true true)
   (=> (<= (first1 a) (last1 a)) (=> (<= 0 (last1 a)) (<= first2 0))))))
 (check-sat)
+(exit)

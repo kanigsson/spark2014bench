@@ -920,3 +920,4 @@ Target solver: CVC4
                                                         true false)) true)
   (<= n1 (length r))))))))))))))))))))
 (check-sat)
+(exit)

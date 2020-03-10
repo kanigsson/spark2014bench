@@ -817,3 +817,4 @@ Target solver: CVC4
                  (last1 temp___1430)) (first1 left) o1))))))))
   (dynamic_property 1 2147483647 (first1 temp___1431) (last1 temp___1431))))))))))))))))
 (check-sat)
+(exit)

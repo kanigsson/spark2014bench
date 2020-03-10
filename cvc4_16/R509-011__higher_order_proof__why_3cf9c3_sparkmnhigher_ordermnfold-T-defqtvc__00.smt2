@@ -768,3 +768,4 @@ Target solver: CVC4
   (=> (in_range1 o2)
   (=> (in_range1 (* 100 o2)) (in_range1 (- k (first1 a)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

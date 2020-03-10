@@ -188,3 +188,4 @@ Target solver: CVC4
   (and (fibonacci__function_guard o i1) (dynamic_invariant o true false true
   true)) (=> (= a11 o) (in_range2 (- i1 1)))))))))))))))))))))))))
 (check-sat)
+(exit)

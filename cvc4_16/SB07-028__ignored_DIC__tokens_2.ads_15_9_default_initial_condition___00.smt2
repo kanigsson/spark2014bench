@@ -182,3 +182,4 @@ Target solver: CVC4
   (forall ((usf1 us_rep)) (t_length__function_guard (t_length usf1) usf1))
   (= (+ (t_length usf) c) 7))))))
 (check-sat)
+(exit)

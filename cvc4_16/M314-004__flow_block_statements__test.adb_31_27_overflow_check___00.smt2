@@ -252,3 +252,4 @@ Target solver: CVC4
   (=> (in_range o)
   (forall ((temp11 Int)) (=> (= temp11 o) (in_range (div1 x y))))))))))))))))))
 (check-sat)
+(exit)

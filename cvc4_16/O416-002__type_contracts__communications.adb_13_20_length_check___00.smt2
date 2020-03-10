@@ -988,3 +988,4 @@ Target solver: CVC4
   (us_repqtmk2 coms__split_discrs (us_split_fieldsqtmk2 coms__split_fields))
   false false true true) (=> (<= (first1 a) (last1 a)) (<= 1 (length1 a))))))))))))))
 (check-sat)
+(exit)

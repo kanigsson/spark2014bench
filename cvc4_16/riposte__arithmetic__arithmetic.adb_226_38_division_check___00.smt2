@@ -230,3 +230,4 @@ Target solver: CVC4
   (not
   (=> (dynamic_invariant n true false true true) (=> (< n 0) (not (= 10 0))))))
 (check-sat)
+(exit)

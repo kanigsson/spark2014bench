@@ -382,3 +382,4 @@ Target solver: CVC4
   (=> (in_range1 (length_2 a))
   (let ((o3 (length a))) (=> (in_range1 o3) (in_range1 (* (- 100) o3))))))))))))))))
 (check-sat)
+(exit)

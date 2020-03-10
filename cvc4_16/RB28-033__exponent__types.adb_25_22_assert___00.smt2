@@ -360,3 +360,4 @@ Target solver: CVC4
   (=> (in_range o)
   (=> (= (ite (= (mod2 o 8) 0) true false) fraction) (< 0 (power 2 offset)))))))))
 (check-sat)
+(exit)

@@ -407,3 +407,4 @@ Target solver: CVC4
   (=> (forall ((rdi2 (_ BitVec 64))) (edi__function_guard (edi rdi2) rdi2))
   (= (edi rdi1) val__))))))))
 (check-sat)
+(exit)

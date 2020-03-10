@@ -247,3 +247,4 @@ Target solver: CVC4
   (and (dynamic_invariant o true false true true) (= o (- 2147483648))))
   (not (= right 0))))))))
 (check-sat)
+(exit)

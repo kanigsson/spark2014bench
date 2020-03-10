@@ -776,3 +776,4 @@ Target solver: CVC4
   (=> (forall ((o us_rep)) (empty__function_guard (empty o) o))
   (not (= (empty a) true)))))))))))))))
 (check-sat)
+(exit)

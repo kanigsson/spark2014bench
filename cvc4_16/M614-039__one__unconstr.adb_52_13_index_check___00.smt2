@@ -408,3 +408,4 @@ Target solver: CVC4
                       true false)) true)
   (forall ((o character)) (=> (= (to_rep o) 32) (<= (to_rep1 s__first) i1)))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -264,3 +264,4 @@ Target solver: CVC4
   (= o (ite (<= o3 o2) true (ite (<= (abs1 an) (abs1 b)) true false))))))))
   (= o false)))) (=> (= o true) (in_range1 (abs1 a)))))))))))))))))
 (check-sat)
+(exit)

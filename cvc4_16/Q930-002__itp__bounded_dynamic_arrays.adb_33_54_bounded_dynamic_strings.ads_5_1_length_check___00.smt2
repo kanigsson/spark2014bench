@@ -985,3 +985,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 r88b true false true true)
   (=> (<= (first1 content) (last1 content)) (<= 1 r88b))))))))))))))))))))))
 (check-sat)
+(exit)

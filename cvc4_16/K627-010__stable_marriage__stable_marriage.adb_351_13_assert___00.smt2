@@ -1483,3 +1483,4 @@ Target solver: CVC4
   (= (select unmatched_g2_set1 (to_rep2
                                (select (select ranking_1 g1_id) rank2))) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

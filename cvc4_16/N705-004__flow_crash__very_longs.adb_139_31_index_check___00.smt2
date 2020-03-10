@@ -1038,3 +1038,4 @@ Target solver: CVC4
   (dynamic_invariant4 index2 false true true true)) (dynamic_invariant
   string_index2 false true true true)) (<= (first1 number) string_index2))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

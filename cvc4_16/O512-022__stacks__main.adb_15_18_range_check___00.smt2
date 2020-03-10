@@ -1640,3 +1640,4 @@ Target solver: CVC4
                                             current_out3 current_err3))
   (=> (dynamic_invariant2 max_cst true false true true) (in_range3 max_cst))))))))))))))))
 (check-sat)
+(exit)

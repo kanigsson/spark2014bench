@@ -311,3 +311,4 @@ Target solver: CVC4
   (=> (dynamic_invariant delta_y true false true true) (in_range1
   (* min_distance min_distance))))))))))))))))))))))))))))
 (check-sat)
+(exit)

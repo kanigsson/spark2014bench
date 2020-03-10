@@ -1572,3 +1572,4 @@ Target solver: CVC4
                                                               (last2 a)
                                                               (last_2 a)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

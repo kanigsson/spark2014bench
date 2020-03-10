@@ -247,3 +247,4 @@ Target solver: CVC4
   (=> (= (to_rep (select a j)) o)
   (=> (= tmp o) (=> (dynamic_invariant tmp true false true true) (<= 1 k)))))))))))))))
 (check-sat)
+(exit)

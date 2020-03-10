@@ -1533,3 +1533,4 @@ Target solver: CVC4
   (= (to_rep (select memory10 (bvadd rsp1 #x0000000000000007))) (to_rep
                                                                 (select memory1 (bvadd rsp1 #x0000000000000007))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

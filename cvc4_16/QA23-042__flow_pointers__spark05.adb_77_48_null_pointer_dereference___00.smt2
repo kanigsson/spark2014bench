@@ -1668,3 +1668,4 @@ Target solver: CVC4
   (=> (= gety2 o5) (rec__spark05__data__ai__pointer_value__pred
   (us_repqtmk ay__is_null_pointer ay__pointer_address ay__pointer_value1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

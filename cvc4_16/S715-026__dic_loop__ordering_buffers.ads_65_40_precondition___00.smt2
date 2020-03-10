@@ -917,3 +917,4 @@ Target solver: CVC4
   (=> (forall ((usf1 us_rep)) (first__function_guard (first usf1) usf1))
   (<= (first (us_repqtmk buffer__split_fields)) usf)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

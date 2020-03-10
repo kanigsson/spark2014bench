@@ -2029,3 +2029,4 @@ Target solver: CVC4
      (rec__skein__skein_512_context__h local_ctx__split_fields2)))) o3)
   (not (= #x0000000000000008 #x0000000000000000))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

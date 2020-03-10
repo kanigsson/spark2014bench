@@ -178,3 +178,4 @@ Target solver: CVC4
   (=> (= spark__branch1 (ite (< speed 100) true false))
   (=> (= spark__branch1 true) (in_range1 (+ speed 1))))))))))))))
 (check-sat)
+(exit)

@@ -1725,3 +1725,4 @@ Target solver: CVC4
   (=> (= (+ offset1 remaining_bytes1) initial_data_len)
   (=> (in_range1 (+ remaining_bits1 7)) (not (= 8 0))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

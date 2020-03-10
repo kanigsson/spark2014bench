@@ -325,3 +325,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__dic_and_predicate_checks__r__g usf)) 0)
   (dynamic_predicate (us_repqtmk usf)))))))
 (check-sat)
+(exit)

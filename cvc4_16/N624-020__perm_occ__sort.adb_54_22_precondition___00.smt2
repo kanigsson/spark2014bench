@@ -700,3 +700,4 @@ Target solver: CVC4
   (=> (= (to_rep1 interm__first) o17)
   (<= (first1 (of_array interm1 o17 o16)) o15)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

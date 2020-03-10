@@ -1300,3 +1300,4 @@ Target solver: CVC4
      (rec__use_formal_vectors__my_vect__vector__top v__split_fields1)) o7)
   (in_range1 (+ o7 1)))) (in_range1 (- j 1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

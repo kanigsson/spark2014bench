@@ -413,3 +413,4 @@ Target solver: CVC4
   (=> (< 0 (length (to_rep a__first) (to_rep a__last))) (dynamic_property2 0
   last2 (to_rep a__first) (to_rep a__last))))))
 (check-sat)
+(exit)

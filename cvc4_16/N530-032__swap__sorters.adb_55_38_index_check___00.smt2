@@ -367,3 +367,4 @@ Target solver: CVC4
   (=> (= (to_rep (select values usf)) o5)
   (<= (to_rep values__first) smallest2)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

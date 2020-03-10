@@ -1955,3 +1955,4 @@ Target solver: CVC4
   (= (rate_of (us_repqtmk ctx__split_fields5)) initial_bit_rate)) (in_range7
   remaining_bits2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

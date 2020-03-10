@@ -481,3 +481,4 @@ Target solver: CVC4
   (= (and (ite (<= o12 usf1) true false) (ite (<= usf1 j) true false)) true)
   (<= (first1 needle) usf1)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

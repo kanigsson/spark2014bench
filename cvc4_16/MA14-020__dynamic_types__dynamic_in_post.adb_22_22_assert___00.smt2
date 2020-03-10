@@ -441,3 +441,4 @@ Target solver: CVC4
   (forall ((b Int))
   (=> (= b o3) (=> (dynamic_invariant b true false true true) (= a b))))))))))))))))))
 (check-sat)
+(exit)

@@ -334,3 +334,4 @@ Target solver: CVC4
   (=> (dynamic_invariant u true false true true)
   (=> (<= l u) (<= (- 2147483648) l))))))
 (check-sat)
+(exit)

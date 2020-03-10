@@ -297,3 +297,4 @@ Target solver: CVC4
   (=> (= p2__always_true__result (distinct 1 0))
   (= p2__always_true__result true)))))
 (check-sat)
+(exit)

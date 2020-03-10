@@ -407,3 +407,4 @@ Target solver: CVC4
  ;; File "test_dic.adb", line 1, characters 0-0
   (not (=> (dynamic_invariant c true false true true) (in_range 0))))
 (check-sat)
+(exit)

@@ -1197,3 +1197,4 @@ Target solver: CVC4
   (=> (= (to_rep5 (rec__decadriver__receiver_type__queue_head self__)) o9)
   (=> (<= 1 r9b) (<= 0 1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

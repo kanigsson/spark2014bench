@@ -598,3 +598,4 @@ Target solver: CVC4
       (select (to_array
               (rec__simple_unc_arrays__table__v (us_split_fields1 a))) j)) res2)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

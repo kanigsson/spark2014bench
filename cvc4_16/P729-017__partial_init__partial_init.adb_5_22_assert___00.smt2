@@ -274,3 +274,4 @@ Target solver: CVC4
   (forall ((v__split_fields us_split_fields))
   (= (to_rep (rec__partial_init__t__x v__split_fields)) 0))))
 (check-sat)
+(exit)

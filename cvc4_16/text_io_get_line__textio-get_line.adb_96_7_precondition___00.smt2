@@ -1202,3 +1202,4 @@ Target solver: CVC4
   (forall ((o4 integer))
   (=> (= (to_rep1 o4) 1) (<= n (length1 (to_rep1 o4) (to_rep1 o3))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -370,3 +370,4 @@ Target solver: CVC4
   (=> (<= (- (+ (first1 s) n) 1) (last1 s))
   (let ((o (- (first1 s) 1))) (=> (in_range1 o) (in_range1 (+ o n))))))))))
 (check-sat)
+(exit)

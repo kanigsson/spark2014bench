@@ -287,3 +287,4 @@ Target solver: CVC4
   (= t__msub__result (bvurem (bvsub #xE6 y) #xE6)))
   (=> (= (and (= x #x02) (= y #x04)) true) (= t__msub__result #xE4)))))))))))))
 (check-sat)
+(exit)

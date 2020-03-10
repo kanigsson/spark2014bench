@@ -409,3 +409,4 @@ Target solver: CVC4
   (=> (= x__split_fields1 dynamic_preds__update_even_pair__x__fields)
   (dynamic_predicate (us_repqtmk x__split_fields1))))))))))))
 (check-sat)
+(exit)

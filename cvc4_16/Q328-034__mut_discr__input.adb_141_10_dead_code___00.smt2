@@ -341,3 +341,4 @@ Target solver: CVC4
   (let ((o (end_line 1 first_char last_char)))
   (=> (end_line__function_guard o 1 first_char last_char) (not (= o true))))))))))))
 (check-sat)
+(exit)

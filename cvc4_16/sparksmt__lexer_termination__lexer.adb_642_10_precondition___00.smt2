@@ -3049,3 +3049,4 @@ Target solver: CVC4
   (forall ((o3 Int))
   (=> (= (to_rep2 str__first) o3) (not (= t__attr__constrained true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

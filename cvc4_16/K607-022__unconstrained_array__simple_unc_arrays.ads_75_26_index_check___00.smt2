@@ -618,3 +618,4 @@ Target solver: CVC4
   (=> (not (= o true))
   (<= (first1 (rec__simple_unc_arrays__table__v (us_split_fields1 a))) simple_unc_arrays__search__result))))))))))))
 (check-sat)
+(exit)

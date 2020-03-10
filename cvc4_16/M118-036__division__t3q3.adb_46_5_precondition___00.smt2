@@ -252,3 +252,4 @@ Target solver: CVC4
   (=> (= x1 (+ p1 r1))
   (=> (dynamic_invariant x1 true true true true) (not (= q1 0))))))))))))))))))))
 (check-sat)
+(exit)

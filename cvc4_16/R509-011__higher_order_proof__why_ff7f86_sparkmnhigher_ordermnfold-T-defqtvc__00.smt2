@@ -781,3 +781,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (=> (dynamic_property2 first3 last3 i1) (<= (first2 a) i1))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

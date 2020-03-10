@@ -628,3 +628,4 @@ Target solver: CVC4
   (fp.isFinite32 (fp.div RNE (fp #b0 #b10010101 #b11000000110001000110000) ((_ to_fp_unsigned 8 24) RNE 
   x))))))))))))
 (check-sat)
+(exit)

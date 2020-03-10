@@ -501,3 +501,4 @@ Target solver: CVC4
                                              (select (to_array o4) k))))))))
   (<= (first1 a) ia)))))))))))))))))))))
 (check-sat)
+(exit)

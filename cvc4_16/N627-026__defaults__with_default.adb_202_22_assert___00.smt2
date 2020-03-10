@@ -2230,3 +2230,4 @@ Target solver: CVC4
      (rec__with_default__ok_record__rec_with_bad_discr__f1
      (us_split_fields1 wrap__split_fields))) 0)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

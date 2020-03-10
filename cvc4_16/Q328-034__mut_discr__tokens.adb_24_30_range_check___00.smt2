@@ -1231,3 +1231,4 @@ Target solver: CVC4
   (=> (= word_size2 r1b)
   (=> (dynamic_invariant r1b true false true true) (=> (<= 1 r1b) (<= 1 1))))))))))))))))
 (check-sat)
+(exit)

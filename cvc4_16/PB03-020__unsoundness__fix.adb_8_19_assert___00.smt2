@@ -278,3 +278,4 @@ Target solver: CVC4
   (=> (= z (fxp_div x y))
   (=> (dynamic_invariant z true false true true) (= z 6)))))))))))
 (check-sat)
+(exit)

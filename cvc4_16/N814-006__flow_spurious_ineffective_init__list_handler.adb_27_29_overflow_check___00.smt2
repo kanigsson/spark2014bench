@@ -562,3 +562,4 @@ Target solver: CVC4
   (= (or (ite (= status2 0) false true) (ite (= current1 upper) true false)) true))
   (in_range1 (+ current1 1))))))))))))))))))
 (check-sat)
+(exit)

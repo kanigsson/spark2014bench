@@ -900,3 +900,4 @@ Target solver: CVC4
   (= (iter_has_element temp___355 temp___354) true))
   (= (get1 temp___355 temp___354) 0))))))))))))))
 (check-sat)
+(exit)

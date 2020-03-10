@@ -680,3 +680,4 @@ Target solver: CVC4
   (forall ((interm1 (Array Int natural)))
   (=> (= interm1 (to_array temp___329)) (in_range2 temp1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

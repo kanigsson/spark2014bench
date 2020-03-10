@@ -274,3 +274,4 @@ Target solver: CVC4
   (=> (<= 1 temp___198)
   (=> (<= temp___198 10) (= (to_rep (select x10 temp___198)) 1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

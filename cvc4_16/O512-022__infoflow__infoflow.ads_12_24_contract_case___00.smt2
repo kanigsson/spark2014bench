@@ -181,3 +181,4 @@ Target solver: CVC4
   (= (and (and (= in_1_dat_v1 in_1_dat_v2) (and in_1_rdy_v1 (not out_0_rdy_v1))) (and in_1_rdy_v2 (not out_0_rdy_v2))) true)
   (= out_0_dat_v11 out_0_dat_v21)))))))))))))))))
 (check-sat)
+(exit)

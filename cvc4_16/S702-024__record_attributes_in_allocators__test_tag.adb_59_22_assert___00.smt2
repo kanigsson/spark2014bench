@@ -421,3 +421,4 @@ Target solver: CVC4
                         test_tag__test_init_3__z__assume))
   (= (not (ite (= (attr__tag z__pointer_value) us_tag) true false)) true)))))))))
 (check-sat)
+(exit)

@@ -492,3 +492,4 @@ Target solver: CVC4
   (=> (= arrays__count_even__result c1)
   (=> (= (= (length1 x) 0) true) (= arrays__count_even__result 0))))))))))))
 (check-sat)
+(exit)

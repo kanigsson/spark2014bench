@@ -263,3 +263,4 @@ Target solver: CVC4
  ;; File "spark04.ads", line 11, characters 0-0
   (not (rec__spark04__data__ai__pointer_value__pred y)))
 (check-sat)
+(exit)

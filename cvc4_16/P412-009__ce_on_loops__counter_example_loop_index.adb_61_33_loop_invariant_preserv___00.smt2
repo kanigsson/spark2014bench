@@ -180,3 +180,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 i1) (<= i1 100)) true false)) true)
   (=> (= j2 i1) (=> (not (= i1 100)) (<= j2 50)))))))))))))))
 (check-sat)
+(exit)

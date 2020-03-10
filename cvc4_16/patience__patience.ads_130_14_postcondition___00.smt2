@@ -1219,3 +1219,4 @@ Target solver: CVC4
   (us_repqtmk patience__playgame__result1)))
   (= (inv (us_repqtmk patience__playgame__result)) true))))))))))))))
 (check-sat)
+(exit)

@@ -599,3 +599,4 @@ Target solver: CVC4
      (temp_____aggregate_def_263 (temp_____aggregate_def_277 1000) 5 #x07 1
      v1 x y z v2) 1 10 #x00 #x07 0 2) true)))))))))))))))
 (check-sat)
+(exit)

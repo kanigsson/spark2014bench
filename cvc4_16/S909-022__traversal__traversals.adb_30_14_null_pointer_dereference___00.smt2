@@ -595,3 +595,4 @@ Target solver: CVC4
   (=> (not (= (bool_eq l us_null_pointer1) true))
   (rec__traversals__list2_acc__pointer_value__pred l))))
 (check-sat)
+(exit)

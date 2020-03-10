@@ -432,3 +432,4 @@ Target solver: CVC4
   (let ((temp___374 (of_array (to_array s1) temp___372 temp___373)))
   (=> (<= (first1 temp___374) (last1 temp___374)) (<= 1 (length s1)))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -487,3 +487,4 @@ Target solver: CVC4
   (ite (<= dynamic_ranges__search_0__result (last1 a)) true false)) true)
   (<= (first1 a) dynamic_ranges__search_0__result)))))))))))
 (check-sat)
+(exit)

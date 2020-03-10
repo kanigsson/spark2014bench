@@ -6012,3 +6012,4 @@ Target solver: CVC4
      (us_split_discrs3 container))) o)
   (=> (in_range1 o) (<= 1 index))))))))))))
 (check-sat)
+(exit)

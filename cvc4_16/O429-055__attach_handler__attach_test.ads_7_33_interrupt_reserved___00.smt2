@@ -169,3 +169,4 @@ Target solver: CVC4
  ;; File "attach_test.ads", line 3, characters 0-0
   (not (forall ((temp___193 Bool)) (= temp___193 false))))
 (check-sat)
+(exit)

@@ -906,3 +906,4 @@ Target solver: CVC4
   (forall ((o9 component_type))
   (=> (= (to_rep1 o9) o8) (in_range1 (- i1 (first1 separates))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

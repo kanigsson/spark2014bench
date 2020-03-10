@@ -253,3 +253,4 @@ Target solver: CVC4
   (forall ((o19 Int))
   (=> (= (to_rep (select b 3)) o19) (in_range (+ o19 o18))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -721,3 +721,4 @@ Target solver: CVC4
   (= o1 (to_rep2 (rec__pump__pump_record__price cur_pump__split_fields)))))
   (in_range (- 2147483647 o1))))))))))))
 (check-sat)
+(exit)

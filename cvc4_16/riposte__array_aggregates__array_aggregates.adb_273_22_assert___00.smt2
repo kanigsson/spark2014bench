@@ -410,3 +410,4 @@ Target solver: CVC4
   (= (to_rep
      (rec__array_aggregates__string_t__len (us_split_fields1 (select x 3)))) 3)))))
 (check-sat)
+(exit)

@@ -250,3 +250,4 @@ Target solver: CVC4
   (=> (dynamic_invariant (us_repqtmk1 p1__split_discrs) false false true
   true) (in_range 0)))))
 (check-sat)
+(exit)

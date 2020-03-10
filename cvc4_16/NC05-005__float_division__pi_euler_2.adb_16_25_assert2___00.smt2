@@ -269,3 +269,4 @@ Target solver: CVC4
                       true false)) true)
   (fp.leq (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000) index_float1))))))))))))
 (check-sat)
+(exit)

@@ -1427,3 +1427,4 @@ Target solver: CVC4
   (=> (= (to_rep result____first) o19)
   (<= (to_rep result____first) result_index3)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

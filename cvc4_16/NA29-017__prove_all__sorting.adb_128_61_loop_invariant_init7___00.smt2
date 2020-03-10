@@ -496,3 +496,4 @@ Target solver: CVC4
   (let ((o7 (of_array temp___loop_entry_281 o6 o5)))
   (=> (perm__function_guard (perm o7 o4 o1 o) o7 o4 o1 o) (<= 1 l1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

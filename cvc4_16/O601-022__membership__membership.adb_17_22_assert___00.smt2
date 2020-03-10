@@ -153,3 +153,4 @@ Target solver: CVC4
   (us_repqtmk (us_split_fieldsqtmk b__split_fields) b__attr__tag) false)
   (= b__attr__tag us_tag1)))))
 (check-sat)
+(exit)

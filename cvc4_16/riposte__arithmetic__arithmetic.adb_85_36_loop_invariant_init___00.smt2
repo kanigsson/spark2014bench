@@ -182,3 +182,4 @@ Target solver: CVC4
   (forall ((r2 Int))
   (=> (= r2 (+ r1 1)) (=> (in_range1 (+ a i)) (= r2 (+ a i)))))))))))))))))))))
 (check-sat)
+(exit)

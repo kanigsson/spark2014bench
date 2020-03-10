@@ -527,3 +527,4 @@ Target solver: CVC4
      (us_repqtmk r_pu1__split_discrs r_pu1__split_fields r_pu1__attr__tag)
      temp___351))) true))))))))))
 (check-sat)
+(exit)

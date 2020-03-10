@@ -2029,3 +2029,4 @@ Target solver: CVC4
   (forall ((o22 Int))
   (=> (= (to_rep1 total_string__first) o22) (in_range (length o22 o21)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

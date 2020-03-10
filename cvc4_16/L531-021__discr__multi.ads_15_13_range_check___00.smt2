@@ -517,3 +517,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__multi__both__x (us_split_discrs1 usf1))) usf)
   (=> (multi__both__stock__pred usf1) (=> (<= 1 usf) (<= 0 1))))))))
 (check-sat)
+(exit)

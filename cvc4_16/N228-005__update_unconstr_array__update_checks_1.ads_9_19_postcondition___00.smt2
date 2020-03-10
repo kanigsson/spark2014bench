@@ -401,3 +401,4 @@ Target solver: CVC4
   (to_rep
   (select (to_array (of_array a1 (to_rep1 a__first) (to_rep1 a__last))) temp___index_342)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

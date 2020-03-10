@@ -2041,3 +2041,4 @@ Target solver: CVC4
      (rec__ada___names__data__name_entry__table_index (us_split_fields5 e))) o2)
   (in_range13 (+ o2 (- i 1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

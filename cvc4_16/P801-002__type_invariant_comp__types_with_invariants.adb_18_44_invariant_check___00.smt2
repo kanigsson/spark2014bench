@@ -387,3 +387,4 @@ Target solver: CVC4
   (= temp___319 (us_repqtmk (us_split_fieldsqtmk (>= o 0) (of_rep (abs1 o))))))
   (type_invariant temp___319))))))))))))))
 (check-sat)
+(exit)

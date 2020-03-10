@@ -692,3 +692,4 @@ Target solver: CVC4
   (=> (and (<= current2 j) (<= j (to_rep values__last)))
   (<= (to_rep (select values3 current2)) (to_rep (select values3 j))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

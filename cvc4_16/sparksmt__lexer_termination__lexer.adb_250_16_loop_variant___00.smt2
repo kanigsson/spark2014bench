@@ -685,3 +685,4 @@ Target solver: CVC4
   (and (= next_idx5 temp___669)
   (< (ite (= (to_rep1 next_read__split_discrs5) 0) 1 0) temp___668)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

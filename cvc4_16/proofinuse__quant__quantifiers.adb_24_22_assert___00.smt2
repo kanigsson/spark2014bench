@@ -224,3 +224,4 @@ Target solver: CVC4
   (forall ((j Int))
   (=> (and (<= 1 j) (<= j 10)) (= (property (to_rep (select x j)) j) true)))))))))
 (check-sat)
+(exit)

@@ -316,3 +316,4 @@ Target solver: CVC4
   (and (and (<= (length b) (length a)) (< (last1 a) 2147483647))
   (<= last2 (- (+ (last1 a) 1) (length b))))))))))
 (check-sat)
+(exit)

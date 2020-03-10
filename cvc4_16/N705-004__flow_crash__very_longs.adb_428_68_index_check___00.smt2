@@ -1187,3 +1187,4 @@ Target solver: CVC4
   (=> (= q_hat1 (bvudiv temporary_digit1 ((_ zero_extend 8) o4)))
   (<= (first1 v__split_fields) (- n 1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

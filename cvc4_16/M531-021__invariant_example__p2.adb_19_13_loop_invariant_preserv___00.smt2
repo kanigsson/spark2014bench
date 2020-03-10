@@ -401,3 +401,4 @@ Target solver: CVC4
   (=> (in_range2 (* upper3 upper3))
   (=> (in_range1 (* lower3 lower3)) (<= (* lower3 lower3) n))))))))))))))))))))))
 (check-sat)
+(exit)

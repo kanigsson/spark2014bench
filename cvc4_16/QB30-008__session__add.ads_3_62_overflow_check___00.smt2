@@ -102,3 +102,4 @@ Target solver: CVC4
   (let ((o (+ x y)))
   (=> (in_range o) (=> (<= (- 2147483648) o) (in_range (+ x y)))))))))
 (check-sat)
+(exit)

@@ -405,3 +405,4 @@ Target solver: CVC4
   (=> (< (length s) 2147483647)
   (=> (<= (first1 s) (last1 s)) (<= 1 (first1 s)))))))
 (check-sat)
+(exit)

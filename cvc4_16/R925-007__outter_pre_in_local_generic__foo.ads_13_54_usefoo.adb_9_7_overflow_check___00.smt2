@@ -570,3 +570,4 @@ Target solver: CVC4
   (forall ((o21 Int))
   (=> (= (to_rep b__first) o21) (in_range1 (+ o21 (div1 o20 2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

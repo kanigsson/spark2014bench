@@ -368,3 +368,4 @@ Target solver: CVC4
                                                         true false)) true)
   (bvule #x01 usf)))))))))
 (check-sat)
+(exit)

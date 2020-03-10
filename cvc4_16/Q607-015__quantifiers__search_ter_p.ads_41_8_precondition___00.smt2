@@ -456,3 +456,4 @@ Target solver: CVC4
  ;; File "search_ter_p.ads", line 32, characters 0-0
   (not true))
 (check-sat)
+(exit)

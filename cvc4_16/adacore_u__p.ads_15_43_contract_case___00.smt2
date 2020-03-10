@@ -137,3 +137,4 @@ Target solver: CVC4
   (= (and (ite (<= (- 199) x) true false) (ite (<= x (- 1)) true false)) true)
   (<= x1 temp___old_173)))))))))))))
 (check-sat)
+(exit)

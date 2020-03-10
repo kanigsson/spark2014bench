@@ -1391,3 +1391,4 @@ Target solver: CVC4
   (=> (dynamic_invariant5 o3 true false true true)
   (=> (not (= o3 v)) (<= 1 usf2)))))))))))))))))))))))
 (check-sat)
+(exit)

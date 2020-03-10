@@ -271,3 +271,4 @@ Target solver: CVC4
   (=> (= (us_repqtmk mixed__id__result) r)
   (= (bool_eq r (us_repqtmk mixed__id__result)) true)))))
 (check-sat)
+(exit)

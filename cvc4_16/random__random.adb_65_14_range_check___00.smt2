@@ -831,3 +831,4 @@ Target solver: CVC4
   (=> (= g__split_fields (us_split_fields1 random__reset__2__R3b__g__assume))
   (=> (<= 1 (max 624 (length initiator))) (<= (- 9223372036854775808) 1))))))))))))))))
 (check-sat)
+(exit)

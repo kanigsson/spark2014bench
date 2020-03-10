@@ -234,3 +234,4 @@ Target solver: CVC4
   (=> (= alpha_launch_examples__example_7__result r1)
   (not (= alpha_launch_examples__example_7__result 0)))))))))
 (check-sat)
+(exit)

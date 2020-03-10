@@ -346,3 +346,4 @@ Target solver: CVC4
   (=> (<= k (last use_vectors__create__result))
   (= (get use_vectors__create__result k) k)))))))))
 (check-sat)
+(exit)

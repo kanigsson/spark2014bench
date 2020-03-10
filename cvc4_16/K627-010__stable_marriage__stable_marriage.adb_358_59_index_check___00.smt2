@@ -1489,3 +1489,4 @@ Target solver: CVC4
   (=> (= (to_rep (select result__1 o10)) o11)
   (=> (not (= o11 usf)) (<= 1 usf1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

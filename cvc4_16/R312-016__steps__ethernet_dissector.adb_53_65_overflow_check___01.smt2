@@ -1069,3 +1069,4 @@ Target solver: CVC4
   (and (convert_to_two_octets__function_guard o23 o22) (dynamic_invariant3
   o23 true false true true)) (in_range1 (+ (first1 buffer) (bv2nat o23))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

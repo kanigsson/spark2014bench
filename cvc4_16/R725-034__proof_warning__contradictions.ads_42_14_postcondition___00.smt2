@@ -294,3 +294,4 @@ Target solver: CVC4
   (forall ((i Int))
   (=> (and (<= 1 i) (<= i (to_rep v__last))) (= (to_rep (select v i)) 0)))))))))))))))))))
 (check-sat)
+(exit)

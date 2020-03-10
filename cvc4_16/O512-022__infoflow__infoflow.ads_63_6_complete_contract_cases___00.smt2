@@ -224,3 +224,4 @@ Target solver: CVC4
                                                       j))) true)
              1 0))))))
 (check-sat)
+(exit)

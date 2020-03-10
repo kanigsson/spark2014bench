@@ -283,3 +283,4 @@ Target solver: CVC4
           true false) (ite (not (= bn1 0)) true false)) true)
   (not (= bn1 0)))))))))))))))))))))
 (check-sat)
+(exit)

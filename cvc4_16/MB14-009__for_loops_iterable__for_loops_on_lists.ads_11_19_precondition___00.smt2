@@ -936,3 +936,4 @@ Target solver: CVC4
      (us_repqtmk
      (us_split_fieldsqtmk for_loops_on_lists__search_0_for_in__result1))) true)))))))))))
 (check-sat)
+(exit)

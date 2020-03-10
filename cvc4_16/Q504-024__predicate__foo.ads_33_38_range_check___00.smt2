@@ -740,3 +740,4 @@ Target solver: CVC4
   (= (to_rep (rec__foo__subject_state__max_id (us_split_discrs1 usf1))) usf))))
   (=> (= (to_rep (select cpu_lsid_last cpu_id)) o) (in_range o))))))))
 (check-sat)
+(exit)

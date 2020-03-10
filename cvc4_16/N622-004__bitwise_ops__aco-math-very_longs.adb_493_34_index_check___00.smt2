@@ -1280,3 +1280,4 @@ Target solver: CVC4
   (=> (= (to_rep2 o2) (bvsub o1 #x01))
   (<= (first1 quotient__split_fields1) j)))))))))))))))))))))))))
 (check-sat)
+(exit)

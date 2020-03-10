@@ -116,3 +116,4 @@ Target solver: CVC4
   (forall ((x1 us_private)) (proxy__function_guard (proxy (distinct 0 0) x1)
   (distinct 0 0) x1)) (= (proxy (distinct 0 0) x) 0)))))
 (check-sat)
+(exit)

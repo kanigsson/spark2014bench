@@ -730,3 +730,4 @@ Target solver: CVC4
                                              (select (to_array o3) k))))))))
   (in_range3 usf))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

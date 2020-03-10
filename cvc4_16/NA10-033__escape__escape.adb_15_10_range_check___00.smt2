@@ -426,3 +426,4 @@ Target solver: CVC4
   (=> (= o1 len)
   (=> (dynamic_invariant len true false true true) (=> (<= 1 len) (<= 1 1))))))))))))))))
 (check-sat)
+(exit)

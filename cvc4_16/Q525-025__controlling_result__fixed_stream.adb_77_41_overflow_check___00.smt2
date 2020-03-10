@@ -1103,3 +1103,4 @@ Target solver: CVC4
   (forall ((o7 Int))
   (=> (= (to_rep3 out_stream__first) o7) (in_range5 (+ o7 i1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

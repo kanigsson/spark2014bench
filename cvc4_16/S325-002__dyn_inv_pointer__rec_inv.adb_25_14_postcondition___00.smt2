@@ -428,3 +428,4 @@ Target solver: CVC4
   (forall ((rec_inv__h__result Int))
   (=> (= rec_inv__h__result o) (< 0 rec_inv__h__result))))))))))))
 (check-sat)
+(exit)

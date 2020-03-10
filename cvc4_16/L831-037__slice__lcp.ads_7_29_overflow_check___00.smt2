@@ -459,3 +459,4 @@ Target solver: CVC4
   (and (<= (first1 a) o1) (<= o1 (last1 a)))))
   (let ((o2 (+ x lcp__result))) (=> (in_range1 o2) (in_range1 (- o2 1))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -90,3 +90,4 @@ Target solver: CVC4
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-M503-001__typinv-2751/src/gnatprove/inside_out__t.mlw", line 80, characters 5-8
   (not (in_range 42)))
 (check-sat)
+(exit)

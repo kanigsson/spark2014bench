@@ -651,3 +651,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 in_string true false true true) (in_range
   (length in_string)))))
 (check-sat)
+(exit)

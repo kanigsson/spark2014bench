@@ -142,3 +142,4 @@ Target solver: CVC4
   (and (= o1 o) (= o1 (ite (= o 0) 0 (+ (id (- o 1)) 1)))))) (in_range
   (+ o1 1)))))))))))
 (check-sat)
+(exit)

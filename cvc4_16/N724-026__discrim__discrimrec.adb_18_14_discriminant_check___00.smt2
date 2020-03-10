@@ -2654,3 +2654,4 @@ Target solver: CVC4
   (discrimrec__register_type__value_32__pred
   (us_repqtmk eax__split_discrs eax__split_fields1)))))))))))))))))))))))
 (check-sat)
+(exit)

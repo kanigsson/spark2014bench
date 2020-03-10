@@ -610,3 +610,4 @@ Target solver: CVC4
   (and (magic__function_guard o3 o2) (dynamic_invariant5 o3 true false true
   true)) (not (= o3 0))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

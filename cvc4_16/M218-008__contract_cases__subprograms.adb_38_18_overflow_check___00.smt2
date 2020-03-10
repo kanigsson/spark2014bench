@@ -101,3 +101,4 @@ Target solver: CVC4
   (forall ((temp___old_173 Int))
   (=> (= temp___old_173 val__) (in_range (+ val__ 1)))))))))))
 (check-sat)
+(exit)

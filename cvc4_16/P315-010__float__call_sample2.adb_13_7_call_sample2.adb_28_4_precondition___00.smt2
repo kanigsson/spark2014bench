@@ -291,3 +291,4 @@ Target solver: CVC4
   (=> (= time2 (fp #b0 #b00000101 #b11110000000000000000001))
   (=> (dynamic_invariant time2 true false true true) (< 0 nb_of_pp1))))))))))))))))))))))
 (check-sat)
+(exit)

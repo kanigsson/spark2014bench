@@ -1207,3 +1207,4 @@ Target solver: CVC4
   (and (dynamic_invariant o8 true false true true) (= o8 (+ (value o7) o6)))
   (<= (first_2 a) (to_rep r__last_2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -280,3 +280,4 @@ Target solver: CVC4
   (forall ((x1 Int)) (incr_body_body__function_guard (incr_body_body x1) x1))
   (= (incr_body_body x) (+ x 1))))))))))))))))))))))))
 (check-sat)
+(exit)

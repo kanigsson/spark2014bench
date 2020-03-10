@@ -820,3 +820,4 @@ Target solver: CVC4
       (rec__use_formal_vectors__my_vect__vector__content
       (us_split_fields1 i72s)))) usf)))))))))))
 (check-sat)
+(exit)

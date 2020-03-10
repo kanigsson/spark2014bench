@@ -824,3 +824,4 @@ Target solver: CVC4
   simple_unc_arrays__add__result1 a))
   (= (same_range simple_unc_arrays__add__result a) true))))))))))))))))))
 (check-sat)
+(exit)

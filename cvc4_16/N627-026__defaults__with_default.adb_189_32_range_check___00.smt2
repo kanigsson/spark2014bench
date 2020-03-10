@@ -2168,3 +2168,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 (us_repqtmk1 simple__split_fields) false false true
   true) (in_range 1)))))))))))))))))
 (check-sat)
+(exit)

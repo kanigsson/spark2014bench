@@ -302,3 +302,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 factor true false true true)
   (=> (bvult val1 val2) (not (= factor #x00000000))))))))
 (check-sat)
+(exit)

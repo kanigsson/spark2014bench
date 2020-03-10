@@ -361,3 +361,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 s2 true false true true)
   (let ((o (length s2))) (=> (in_range1 o) (in_range1 (- 2147483647 o))))))))
 (check-sat)
+(exit)

@@ -564,3 +564,4 @@ Target solver: CVC4
   (= (sorted (of_array a1 (to_rep a__first) (to_rep a__last)) a_first
      length2) true))))))))))))))))))))
 (check-sat)
+(exit)

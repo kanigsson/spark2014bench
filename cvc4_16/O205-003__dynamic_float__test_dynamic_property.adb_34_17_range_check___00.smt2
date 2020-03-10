@@ -252,3 +252,4 @@ Target solver: CVC4
   (=> (= spark__branch true) (dynamic_property
   (fp #b0 #b01111111 #b00000000000000000000000) last c)))))))))))
 (check-sat)
+(exit)

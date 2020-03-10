@@ -184,3 +184,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (rec__use_formal_vectors__element_type__pointer_value__pred x))))
 (check-sat)
+(exit)

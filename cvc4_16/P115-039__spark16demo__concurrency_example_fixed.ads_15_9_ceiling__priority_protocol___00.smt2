@@ -814,3 +814,4 @@ Target solver: CVC4
   (= (concurrency_example_fixed__all_ones__aggregate_def (- 2147483648)) 
   all_ones) (<= 97 97)))))
 (check-sat)
+(exit)

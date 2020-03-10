@@ -114,3 +114,4 @@ Target solver: CVC4
   (=> (<= (- 10) x)
   (=> (<= x (- 1)) (=> (<= 1 y) (=> (<= y 10) (in_range1 (* x y))))))))))))
 (check-sat)
+(exit)

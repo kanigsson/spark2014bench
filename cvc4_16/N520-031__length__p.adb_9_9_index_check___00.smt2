@@ -306,3 +306,4 @@ Target solver: CVC4
   (=> (= (to_rep (select v j)) o)
   (=> (= (to_rep o1) o) (<= (to_rep v__first) i))))))))))))))))))
 (check-sat)
+(exit)

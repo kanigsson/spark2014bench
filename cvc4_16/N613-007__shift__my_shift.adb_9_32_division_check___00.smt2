@@ -266,3 +266,4 @@ Target solver: CVC4
   (=> (= z1 (bvlshr z ((_ int2bv 32) 1)))
   (=> (= z1 (bvudiv z_old #x00000002)) (not (= #x00000008 #x00000000))))))))))
 (check-sat)
+(exit)

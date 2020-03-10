@@ -798,3 +798,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 id true false true true)
   (<= (first1 states__split_fields) id)))))))))
 (check-sat)
+(exit)

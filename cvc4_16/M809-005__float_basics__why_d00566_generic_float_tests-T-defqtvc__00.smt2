@@ -161,3 +161,4 @@ Target solver: CVC4
   (fp.lt (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000) 
   a) (not (fp.isZero a))))))
 (check-sat)
+(exit)

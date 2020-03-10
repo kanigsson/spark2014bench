@@ -257,3 +257,4 @@ Target solver: CVC4
   (=> (= finger1 o)
   (forall ((o1 character)) (=> (= (to_rep o1) a_tag) (<= 1 finger1))))))))))))
 (check-sat)
+(exit)

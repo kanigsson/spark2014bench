@@ -435,3 +435,4 @@ Target solver: CVC4
                       true false)) true)
   (let ((o1 (- i_v21 k_2))) (=> (in_range1 o1) (<= (first1 c_v2) o1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

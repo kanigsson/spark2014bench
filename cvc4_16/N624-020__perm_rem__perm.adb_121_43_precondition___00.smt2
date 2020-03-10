@@ -557,3 +557,4 @@ Target solver: CVC4
   (=> (= perm__remove_swap__a12__assume a12)
   (=> (dynamic_invariant a12 true false true true) (<= i2 (last1 a))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

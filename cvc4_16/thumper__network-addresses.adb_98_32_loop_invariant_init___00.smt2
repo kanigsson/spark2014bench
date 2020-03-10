@@ -863,3 +863,4 @@ Target solver: CVC4
   (=> (in_range1 (* 4 (- i 1)))
   (=> (in_range1 (* 2 (- i 1))) (<= (* 2 (- i 1)) count1))))))))))))))))))
 (check-sat)
+(exit)

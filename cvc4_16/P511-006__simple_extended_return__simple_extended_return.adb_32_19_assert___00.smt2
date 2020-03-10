@@ -115,3 +115,4 @@ Target solver: CVC4
   (=> (and (simple_extended_r2__function_guard o 4) (= o true))
   (forall ((c Bool)) (=> (= c o) (= c true)))))))
 (check-sat)
+(exit)

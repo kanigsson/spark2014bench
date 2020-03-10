@@ -294,3 +294,4 @@ Target solver: CVC4
   (=> (not (= a (- 2147483648)))
   (=> (not (= b (- 2147483648))) (in_range2 (* a b))))))))
 (check-sat)
+(exit)

@@ -604,3 +604,4 @@ Target solver: CVC4
   (forall ((anon_type__increment__result Int))
   (=> (= anon_type__increment__result var_out1) (in_range (+ var_in 1)))))))))))))))))))
 (check-sat)
+(exit)

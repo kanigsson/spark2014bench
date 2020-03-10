@@ -771,3 +771,4 @@ Target solver: CVC4
   (=> (not (= position1 1))
   (let ((o2 (- position1 1))) (=> (in_range6 o2) (<= 1 o2)))))))))))))))))))
 (check-sat)
+(exit)

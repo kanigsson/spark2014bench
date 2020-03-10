@@ -370,3 +370,4 @@ Target solver: CVC4
   (=> (and (<= (to_rep1 a__first) j1) (<= j1 i1))
   (= (to_rep (select a2 j1)) 0))))))))))))))))))))
 (check-sat)
+(exit)

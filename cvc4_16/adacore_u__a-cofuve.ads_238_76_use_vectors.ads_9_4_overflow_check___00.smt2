@@ -358,3 +358,4 @@ Target solver: CVC4
   (=> (and (dynamic_invariant o2 true false true true) (<= (+ 0 o2) 42))
   (let ((o3 (+ 0 o2))) (=> (in_range4 o3) (in_range4 (- o3 o1)))))))))))))))))
 (check-sat)
+(exit)

@@ -584,3 +584,4 @@ Target solver: CVC4
   (let ((temp___405 (first1 s)))
   (=> (<= temp___405 (- o 1)) (<= (first1 s) temp___405))))))))))))))
 (check-sat)
+(exit)

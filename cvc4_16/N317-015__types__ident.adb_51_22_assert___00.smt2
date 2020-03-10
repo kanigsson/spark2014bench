@@ -240,3 +240,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 ident__incr_public__y true true true true)
   (forall ((y1 Int)) (=> (= y1 ident__incr_public__y) (= y1 9))))))))))))))))))))))))))))
 (check-sat)
+(exit)

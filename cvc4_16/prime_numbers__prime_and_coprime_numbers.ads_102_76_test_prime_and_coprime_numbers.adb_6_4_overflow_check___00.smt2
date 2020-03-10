@@ -451,3 +451,4 @@ Target solver: CVC4
   (let ((o (- value test_prime_and_coprime_numbers__p__nearest_number__result)))
   (=> (in_range1 o) (in_range1 (abs1 o))))))))))))))))))))))
 (check-sat)
+(exit)

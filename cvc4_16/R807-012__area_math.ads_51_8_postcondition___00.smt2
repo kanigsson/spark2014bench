@@ -1660,3 +1660,4 @@ Target solver: CVC4
   (is_consistent area_math__Onot__result1) area_math__Onot__result1))
   (= (is_consistent area_math__Onot__result) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -548,3 +548,4 @@ Target solver: CVC4
                               (first3 temp___267) (last3 temp___267)))
   (= (first1 stack__model__to__result) 1))))))))))
 (check-sat)
+(exit)

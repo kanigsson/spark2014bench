@@ -252,3 +252,4 @@ Target solver: CVC4
   (ite (and (<= a l1) (<= l1 b)) true false)) true)
   (=> (in_range1 (+ a b)) (not (= 2 0)))))))))))))))
 (check-sat)
+(exit)

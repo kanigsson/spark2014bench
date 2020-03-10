@@ -1093,3 +1093,4 @@ Target solver: CVC4
   (=> (in_range2 o11)
   (= string_index3 (+ (* 2 (- (last3 result____split_fields3) index3)) 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

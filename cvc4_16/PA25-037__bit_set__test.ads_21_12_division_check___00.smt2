@@ -670,3 +670,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (=> (uint_in_range1 o) (not (= #x0000000000000020 #x0000000000000000)))))))))))
 (check-sat)
+(exit)

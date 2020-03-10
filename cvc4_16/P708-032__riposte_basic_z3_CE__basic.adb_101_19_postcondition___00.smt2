@@ -133,3 +133,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (= r1 a) (= r1 b))))
   (=> (= basic__int_max_a__result r1) (= basic__int_max_a__result (max a b))))))))))
 (check-sat)
+(exit)

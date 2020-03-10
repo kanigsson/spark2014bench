@@ -1661,3 +1661,4 @@ Target solver: CVC4
          ctx__split_fields2)))
   (< o15 1600)))) (=> (in_range1 (+ bit_length suffix_len)) (not (= 8 0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

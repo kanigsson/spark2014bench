@@ -959,3 +959,4 @@ Target solver: CVC4
   (<= o5 (to_rep (rec__int_list__my_lists__list__capacity l__split_discrs))))
   (in_range5 (+ o5 1)))))))))))))))))))
 (check-sat)
+(exit)

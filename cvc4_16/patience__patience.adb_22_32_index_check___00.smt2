@@ -1033,3 +1033,4 @@ Target solver: CVC4
   (= (and (ite (<= 0 pred1) true false) (ite (<= pred1 (- o2 1)) true false)) true)
   (let ((o3 (- i1 1))) (=> (in_range1 o3) (<= 0 o3))))))))))))))))))))))))))))
 (check-sat)
+(exit)

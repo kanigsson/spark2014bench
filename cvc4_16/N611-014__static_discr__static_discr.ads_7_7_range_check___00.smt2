@@ -817,3 +817,4 @@ Target solver: CVC4
   (= (to_rep (rec__static_discr__i_holder__c (us_split_discrs1 usf2))) usf)
   (=> (<= 1 usf) (<= 1 1))))))))))
 (check-sat)
+(exit)

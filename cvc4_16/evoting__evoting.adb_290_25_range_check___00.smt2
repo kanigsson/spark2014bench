@@ -1147,3 +1147,4 @@ Target solver: CVC4
   (forall ((o1 Int))
   (=> (= (to_rep2 (select counters i1)) o1) (in_range8 (+ total1 o1))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -691,3 +691,4 @@ Target solver: CVC4
   (= o7 (ite (<= o10 o9) true false))))))))))))))) (= o7 false)))
   (=> (not (= o7 true)) (<= (to_rep cut__first) top2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

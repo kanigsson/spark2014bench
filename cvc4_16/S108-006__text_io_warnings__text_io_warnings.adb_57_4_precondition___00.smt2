@@ -1684,3 +1684,4 @@ Target solver: CVC4
      file_system20 current_in20 current_out20) 40)
   (= (is_open target1) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

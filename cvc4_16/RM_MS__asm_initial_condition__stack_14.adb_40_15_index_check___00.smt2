@@ -249,3 +249,4 @@ Target solver: CVC4
   (forall ((pointer1 Int)) (is_empty__function_guard (is_empty pointer1)
   pointer1)) (=> (not (= (is_empty pointer) true)) (<= 1 pointer))))))))
 (check-sat)
+(exit)

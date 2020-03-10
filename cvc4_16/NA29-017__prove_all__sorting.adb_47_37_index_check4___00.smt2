@@ -358,3 +358,4 @@ Target solver: CVC4
                                                                   true false)) true)
   (let ((o (+ a_first i1))) (=> (in_range1 o) (<= o (last1 a)))))))))))))))))))))))))))
 (check-sat)
+(exit)

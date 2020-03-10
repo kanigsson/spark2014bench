@@ -555,3 +555,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 0 usf) true false) (ite (<= usf 7) true false)) true)
   (= space1 4))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

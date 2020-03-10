@@ -793,3 +793,4 @@ Target solver: CVC4
   (= bits_manipulation_unsigned__unsigned_32__functions__extract_bits_inline_always__result result__1)
   (in_range1 (+ (- to__ from) 1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

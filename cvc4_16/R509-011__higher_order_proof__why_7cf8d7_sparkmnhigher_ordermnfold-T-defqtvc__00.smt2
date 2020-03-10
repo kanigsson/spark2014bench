@@ -716,3 +716,4 @@ Target solver: CVC4
   (=> (= o5 true)
   (=> (dynamic_property first last (first2 a)) (<= (first2 a) (first2 a)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -943,3 +943,4 @@ Target solver: CVC4
   (=> (= (to_rep2 o1) old_overflow1)
   (<= (first1 result____split_fields2) (last1 result____split_fields2))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

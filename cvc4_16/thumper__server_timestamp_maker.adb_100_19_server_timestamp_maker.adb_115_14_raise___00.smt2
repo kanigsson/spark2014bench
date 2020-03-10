@@ -959,3 +959,4 @@ Target solver: CVC4
   (=> (= spark__branch6 (ite (= imprint_status 0) false true))
   (= spark__branch6 true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

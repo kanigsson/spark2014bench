@@ -1628,3 +1628,4 @@ Target solver: CVC4
   (= o5 (ite (= o6 0) false true)))) (= o5 false))
   (=> (= o5 true) (in_range1 (+ i 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

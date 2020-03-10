@@ -654,3 +654,4 @@ Target solver: CVC4
   (=> (dynamic_property first last temp___598)
   (<= temp___598 (last2 (of_array (to_array a) (first2 a) (last2 a)))))))))))
 (check-sat)
+(exit)

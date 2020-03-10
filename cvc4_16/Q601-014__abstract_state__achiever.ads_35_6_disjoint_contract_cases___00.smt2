@@ -631,3 +631,4 @@ Target solver: CVC4
                             (us_repqtmk state_item__split_fields)))) true)
                     1 0)) 1))))))))))))))
 (check-sat)
+(exit)

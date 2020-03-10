@@ -383,3 +383,4 @@ Target solver: CVC4
   (=> (forall ((o7 us_rep)) (is_valid__function_guard (is_valid o7) o7))
   (= (is_valid (us_repqtmk result____split_fields3)) true)))))))))))))))))))))
 (check-sat)
+(exit)

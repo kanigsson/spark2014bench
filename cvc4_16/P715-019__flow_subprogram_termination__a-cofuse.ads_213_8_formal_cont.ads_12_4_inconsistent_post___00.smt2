@@ -230,3 +230,4 @@ Target solver: CVC4
   (= (ole container formal_cont__new_set_01__add__result) true))
   (= (included_except formal_cont__new_set_01__add__result container item) true)))))))))
 (check-sat)
+(exit)

@@ -1403,3 +1403,4 @@ Target solver: CVC4
   (forall ((hash_table (Array (_ BitVec 32) name_id)))
   (=> (= hash_table (names__hash_table__aggregate_def 0)) (in_range1 1024)))))
 (check-sat)
+(exit)

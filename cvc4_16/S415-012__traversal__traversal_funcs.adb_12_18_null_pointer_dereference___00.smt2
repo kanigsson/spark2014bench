@@ -328,3 +328,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (rec__traversal_funcs__list_acc__pointer_value__pred x))))))
 (check-sat)
+(exit)

@@ -578,3 +578,4 @@ Target solver: CVC4
             (us_split_fieldsqtmk container__split_fields))))
   (let ((o (- index 0))) (=> (in_range5 o) (in_range7 o))))))))))
 (check-sat)
+(exit)

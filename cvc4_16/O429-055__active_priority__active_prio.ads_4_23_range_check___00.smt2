@@ -263,3 +263,4 @@ Target solver: CVC4
  ;; File "active_prio.ads", line 3, characters 0-0
   (not (<= 0 5)))
 (check-sat)
+(exit)

@@ -398,3 +398,4 @@ Target solver: CVC4
   (alignment_of_var var1) var1))
   (= (alignment_of_var var) #x0000000000000001)))))))
 (check-sat)
+(exit)

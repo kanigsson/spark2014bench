@@ -185,3 +185,4 @@ Target solver: CVC4
   (forall ((x (Array Int unsigned_byte)))
   (=> (= x (temp_____aggregate_def_668 2 0)) (= (to_rep (select x 2)) 3)))))
 (check-sat)
+(exit)

@@ -333,3 +333,4 @@ Target solver: CVC4
   (=> (<= i (- longest_common_prefix__lcp2__result 1))
   (= (to_rep (select a (+ i x))) (to_rep (select a (+ i y)))))))))))))))))))
 (check-sat)
+(exit)

@@ -146,3 +146,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (forall ((stash1 Int)) (=> (= stash1 (- stash s)) (in_range (+ pocket s)))))))))))))
 (check-sat)
+(exit)

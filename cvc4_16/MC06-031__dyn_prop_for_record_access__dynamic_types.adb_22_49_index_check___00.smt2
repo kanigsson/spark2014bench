@@ -671,3 +671,4 @@ Target solver: CVC4
      dynamic_types__search__search_range__result)) temp___232)
   (<= (first1 a) temp___232)))))))))))))))))))
 (check-sat)
+(exit)

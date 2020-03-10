@@ -587,3 +587,4 @@ Target solver: CVC4
   (and (dynamic_invariant2 o4 true false true true)
   (=> (= o2 left2) (= o4 (to_rep (select o3 o2))))) (<= 0 left2)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

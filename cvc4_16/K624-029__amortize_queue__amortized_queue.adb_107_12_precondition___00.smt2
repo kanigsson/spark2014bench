@@ -1080,3 +1080,4 @@ Target solver: CVC4
   (us_split_discrs1 amortized_queue__reverse_insert__front__compl)
   (us_split_fields1 amortized_queue__reverse_insert__front__compl))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

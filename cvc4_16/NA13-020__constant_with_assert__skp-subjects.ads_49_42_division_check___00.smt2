@@ -2552,3 +2552,4 @@ Target solver: CVC4
   (= (bvurem ada___skp__subjects__get_pml4_address__result #x0000000000001000) #x0000000000000000)
   (not (= #x0000000000001000 #x0000000000000000)))))))
 (check-sat)
+(exit)

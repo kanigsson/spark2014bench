@@ -440,3 +440,4 @@ Target solver: CVC4
   (forall ((o Int))
   (=> (= (to_rep (select (to_array w) temp___194)) o) (in_range3 o))))))))
 (check-sat)
+(exit)

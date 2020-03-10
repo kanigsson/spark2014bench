@@ -526,3 +526,4 @@ Target solver: CVC4
   (=> (dynamic_invariant one true false true true)
   (=> (<= one 1) (=> (<= one 2147483647) (<= 0 one))))))
 (check-sat)
+(exit)

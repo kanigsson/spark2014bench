@@ -1026,3 +1026,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 result__1 true true true true)
   (=> (not (= delayed true)) (= result__1 0)))))))))
 (check-sat)
+(exit)

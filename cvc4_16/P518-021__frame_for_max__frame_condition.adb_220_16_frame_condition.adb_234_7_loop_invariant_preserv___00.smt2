@@ -885,3 +885,4 @@ Target solver: CVC4
   (rec__frame_condition__cell__max_left
   (us_split_fields1 (select temp___loop_entry_315 i))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

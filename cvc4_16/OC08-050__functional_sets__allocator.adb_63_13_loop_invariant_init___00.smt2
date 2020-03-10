@@ -656,3 +656,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true))
   (= (bool_eq data 1 3 temp___loop_entry_415 1 3) true)))))))))))))))))))))
 (check-sat)
+(exit)

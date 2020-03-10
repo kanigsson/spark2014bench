@@ -398,3 +398,4 @@ Target solver: CVC4
      new_sub 1 5) true))
   (=> (<= y 5) (<= 1 y))))))))))))))))
 (check-sat)
+(exit)

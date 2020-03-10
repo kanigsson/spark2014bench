@@ -120,3 +120,4 @@ Target solver: CVC4
   (=> (= spark__branch1 (ite (<= period (- timenow1 advtimer)) true false))
   (=> (= spark__branch1 true) (in_range1 (+ advtimer period))))))))))))
 (check-sat)
+(exit)

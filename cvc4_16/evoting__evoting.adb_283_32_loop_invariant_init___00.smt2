@@ -1135,3 +1135,4 @@ Target solver: CVC4
   (= o (ite (<= o1 total) true false)))) (= o (distinct 1 0)))
   (=> (< 0 i) (<= (to_rep2 (select counters 0)) total)))))))))))))))))))
 (check-sat)
+(exit)

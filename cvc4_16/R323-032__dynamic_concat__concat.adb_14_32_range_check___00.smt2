@@ -627,3 +627,4 @@ Target solver: CVC4
   (and (<= (to_rep1 a__first) 7) (<= 7 (to_rep1 a__last)))))
   (dynamic_property first 8 (- (+ first (+ (length 4 7) (length 5 8))) 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

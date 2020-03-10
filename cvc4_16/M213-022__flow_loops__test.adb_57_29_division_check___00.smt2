@@ -277,3 +277,4 @@ Target solver: CVC4
   (let ((o (div1 c1 d2)))
   (=> (in_range1 o) (forall ((q2 Int)) (=> (= q2 o) (not (= d2 0)))))))))))))))))))))
 (check-sat)
+(exit)

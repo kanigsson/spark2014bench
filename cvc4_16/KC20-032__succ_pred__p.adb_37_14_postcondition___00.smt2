@@ -112,3 +112,4 @@ Target solver: CVC4
   (forall ((p__ident__4__result Int))
   (=> (= p__ident__4__result (- (+ m 1) 1)) (= p__ident__4__result m)))))))
 (check-sat)
+(exit)

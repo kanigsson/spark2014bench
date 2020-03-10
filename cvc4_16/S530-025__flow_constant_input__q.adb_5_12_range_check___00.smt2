@@ -132,3 +132,4 @@ Target solver: CVC4
   (=> (dynamic_invariant t_LAST true false true true)
   (=> (<= 1 t_LAST) (<= (- 2147483648) 1)))))))))))))
 (check-sat)
+(exit)

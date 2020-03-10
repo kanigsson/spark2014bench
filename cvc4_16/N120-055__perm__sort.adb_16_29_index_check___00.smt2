@@ -351,3 +351,4 @@ Target solver: CVC4
   (=> (dynamic_invariant temp false false true true)
   (<= (to_rep1 values__first) x)))))))))))))
 (check-sat)
+(exit)

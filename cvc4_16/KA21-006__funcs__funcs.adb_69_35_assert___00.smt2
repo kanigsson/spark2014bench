@@ -306,3 +306,4 @@ Target solver: CVC4
   (=> (= y2 o2)
   (=> (= y2 true) (=> (f3__function_guard (f3 3) 3) (= (f3 3) true)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

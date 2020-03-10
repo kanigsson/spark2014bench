@@ -266,3 +266,4 @@ Target solver: CVC4
                 t1_var__attr__tag)))
   (us_compatible_tags (attr__tag temp___229) us_tag1)))))))))
 (check-sat)
+(exit)

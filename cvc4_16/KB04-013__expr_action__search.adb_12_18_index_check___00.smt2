@@ -263,3 +263,4 @@ Target solver: CVC4
        true false))
   (= o false)) (=> (not (= o true)) (<= 1 pos)))))))))))
 (check-sat)
+(exit)

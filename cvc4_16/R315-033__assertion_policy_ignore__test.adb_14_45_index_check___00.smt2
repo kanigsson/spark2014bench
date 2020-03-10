@@ -587,3 +587,4 @@ Target solver: CVC4
   (=> (= temp___loop_entry_210 dest)
   (let ((o (+ src_first i))) (=> (in_range1 o) (<= (first1 src) o))))))))))))))))))))
 (check-sat)
+(exit)

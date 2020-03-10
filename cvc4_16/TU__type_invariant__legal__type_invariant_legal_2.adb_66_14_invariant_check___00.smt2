@@ -207,3 +207,4 @@ Target solver: CVC4
   (forall ((x2 Int))
   (=> (dynamic_invariant1 x2 true true true true) (type_invariant x2))))))))))))))))))
 (check-sat)
+(exit)

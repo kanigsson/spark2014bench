@@ -313,3 +313,4 @@ Target solver: CVC4
   (let ((o1 (+ loop_tutorial__isqrt__result 1)))
   (=> (in_range1 o1) (in_range1 (* o1 o)))))))))))))))))))
 (check-sat)
+(exit)

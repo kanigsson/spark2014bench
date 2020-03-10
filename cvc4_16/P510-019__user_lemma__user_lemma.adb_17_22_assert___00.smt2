@@ -243,3 +243,4 @@ Target solver: CVC4
   (=> (= (is_prime 10) true)
   (=> (is_prime__function_guard (is_prime 10) 10) (= (is_prime 10) true))))))))))))))
 (check-sat)
+(exit)

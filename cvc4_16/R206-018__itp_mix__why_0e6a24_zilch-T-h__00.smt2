@@ -263,3 +263,4 @@ Target solver: CVC4
 ;; h
   (not (= (mod a b) (+ (* x (* (div b x) (- (div a b)))) a))))
 (check-sat)
+(exit)

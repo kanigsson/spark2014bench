@@ -468,3 +468,4 @@ Target solver: CVC4
   (let ((temp___212 (of_array (concat_singleton_right x 1 9 o1) 1 o)))
   (=> (<= (first1 temp___212) (last1 temp___212)) (<= 1 10)))))))))))
 (check-sat)
+(exit)

@@ -151,3 +151,4 @@ Target solver: CVC4
   (attr__tag funcs__id__result1) funcs__id__result1))
   (= (valid1 (attr__tag funcs__id__result) funcs__id__result) true))))))
 (check-sat)
+(exit)

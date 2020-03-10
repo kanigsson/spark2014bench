@@ -103,3 +103,4 @@ Target solver: CVC4
              true lga_active_out1))
   (= or_out1 true))))))))))
 (check-sat)
+(exit)

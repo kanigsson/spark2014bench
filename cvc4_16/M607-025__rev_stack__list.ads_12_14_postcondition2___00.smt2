@@ -1547,3 +1547,4 @@ Target solver: CVC4
   (= (element l i) (element list__reverse_list__result
                    (+ (- (last_index l) i) 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

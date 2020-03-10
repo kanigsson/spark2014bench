@@ -951,3 +951,4 @@ Target solver: CVC4
   (and (let ((o5 (+ i1 1))) (and (in_range4 o5) (= i2 o5)))
   (= g__split_fields3 g__split_fields2)))) (< 0 i2))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

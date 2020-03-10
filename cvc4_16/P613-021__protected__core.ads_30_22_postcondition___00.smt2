@@ -829,3 +829,4 @@ Target solver: CVC4
   (item_count (us_repqtmk1 self__2)) (us_repqtmk1 self__2)))
   (< 0 (item_count (us_repqtmk1 self__1)))))))))
 (check-sat)
+(exit)

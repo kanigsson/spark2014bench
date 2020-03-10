@@ -505,3 +505,4 @@ Target solver: CVC4
   (forall ((p_top1 Int)) (is_empty2__function_guard (is_empty2 p_top1)
   p_top1)) (not (= (is_empty2 p_top) true))))))))))))))))))))))))))))
 (check-sat)
+(exit)

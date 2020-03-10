@@ -575,3 +575,4 @@ Target solver: CVC4
   (= left3 left2))))))))
   (=> (< left3 right3) (< (- right3 left3) temp___203))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

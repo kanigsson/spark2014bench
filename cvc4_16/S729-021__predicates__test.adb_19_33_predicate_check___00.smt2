@@ -284,3 +284,4 @@ Target solver: CVC4
   (dynamic_predicate1
   (us_repqtmk (us_split_fieldsqtmk context__split_fields1)))))))))))))))
 (check-sat)
+(exit)

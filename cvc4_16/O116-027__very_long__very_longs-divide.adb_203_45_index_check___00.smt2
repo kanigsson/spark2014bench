@@ -1300,3 +1300,4 @@ Target solver: CVC4
   (let ((o8 (+ j divisor_index1)))
   (=> (in_range2 o8) (<= (first1 u__split_fields1) (- o8 1))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

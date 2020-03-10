@@ -592,3 +592,4 @@ Target solver: CVC4
   (bvule ((_ zero_extend 56) #x00) (bvlshr ((_ zero_extend 56) v) ((_ int2bv 64) 
   amount))))))))))
 (check-sat)
+(exit)

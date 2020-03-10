@@ -329,3 +329,4 @@ Target solver: CVC4
   (=> (= p__R2b__assume r2b)
   (=> (dynamic_invariant r2b true false true true) (in_range1 r2b)))))))
 (check-sat)
+(exit)

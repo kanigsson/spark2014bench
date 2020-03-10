@@ -649,3 +649,4 @@ Target solver: CVC4
   (=> (=> (= usf true) (= (is_prepend model2 temp___old_328 e1) true))
   (=> (not (= usf true)) (= (oeq model2 temp___old_330) true)))))))))))))))))))))))
 (check-sat)
+(exit)

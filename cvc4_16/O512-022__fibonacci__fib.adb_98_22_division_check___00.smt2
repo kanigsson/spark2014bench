@@ -372,3 +372,4 @@ Target solver: CVC4
   (=> (= (* p11 (power (* b11 b11) (div1 k12 2))) (power a1 n1))
   (not (= 2 0)))))))))))))))))))))))))))
 (check-sat)
+(exit)

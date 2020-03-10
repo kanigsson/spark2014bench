@@ -831,3 +831,4 @@ Target solver: CVC4
   (= (< 0 (length2 o)) (not (= (empty o) true))))))) (in_range1
   (- (+ 1 (+ 1 (length (first1 temp___1475) (last1 temp___1475)))) 1)))))))))))))))))
 (check-sat)
+(exit)

@@ -228,3 +228,4 @@ Target solver: CVC4
   (fp.leq (fp.sub RNE o (fp #b0 #b01111111 #b00000000000000000000000)) o1)))))
   (in_range2 o1)))))))
 (check-sat)
+(exit)

@@ -124,3 +124,4 @@ Target solver: CVC4
   (=> (forall ((flag1 Bool)) (f1__function_guard (f1 flag1) flag1))
   (= (f1 flag) true))))))))))
 (check-sat)
+(exit)

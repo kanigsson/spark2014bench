@@ -432,3 +432,4 @@ Target solver: CVC4
   (=> (and (<= 1 x) (<= x low2))
   (<= (to_rep (select table3 x)) (to_rep (select table3 (+ x 1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

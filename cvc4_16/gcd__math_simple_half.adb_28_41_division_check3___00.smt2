@@ -396,3 +396,4 @@ Target solver: CVC4
   (ite (and (<= r4b j1) (<= j1 (- (min a b) 1))) true false)) true)
   (= j1 temp___162))))))))))))) (=> (< 1 c1) (not (= c1 0))))))))))))))))))))))))))
 (check-sat)
+(exit)

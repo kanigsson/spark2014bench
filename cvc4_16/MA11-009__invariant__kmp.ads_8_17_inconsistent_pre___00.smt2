@@ -319,3 +319,4 @@ Target solver: CVC4
   (not
   (=> (dynamic_invariant1 p true false true true) (not (<= 1 (length p))))))
 (check-sat)
+(exit)

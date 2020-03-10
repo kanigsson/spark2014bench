@@ -401,3 +401,4 @@ Target solver: CVC4
  ;; File "discr.ads", line 16, characters 0-0
   (not true))
 (check-sat)
+(exit)

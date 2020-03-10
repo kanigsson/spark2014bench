@@ -872,3 +872,4 @@ Target solver: CVC4
   (=> (model__function_guard1 (model2 q) q)
   (= (last_element (model2 q)) amortized_queue__front__result)))))))))))))
 (check-sat)
+(exit)

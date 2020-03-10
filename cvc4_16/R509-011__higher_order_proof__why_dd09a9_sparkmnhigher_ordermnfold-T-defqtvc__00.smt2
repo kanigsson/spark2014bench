@@ -769,3 +769,4 @@ Target solver: CVC4
   (=> (in_range1 (* 100 o2))
   (let ((o3 (- k (first1 a)))) (=> (in_range1 o3) (in_range1 (+ o3 1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

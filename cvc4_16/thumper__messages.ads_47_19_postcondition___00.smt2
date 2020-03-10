@@ -903,3 +903,4 @@ Target solver: CVC4
      (rec__messages__network_message__size messages__to_network__result)) 
   (to_rep (rec__messages__message__size (us_split_fields3 high_level)))))))))))))
 (check-sat)
+(exit)

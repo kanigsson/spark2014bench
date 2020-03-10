@@ -1880,3 +1880,4 @@ Target solver: CVC4
                    ada___dw1000__register_driver__read_register__data__compl))
   (< 0 (length1 (to_rep1 o11) (to_rep1 o10))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

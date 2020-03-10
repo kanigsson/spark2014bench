@@ -299,3 +299,4 @@ Target solver: CVC4
   (=> (dynamic_invariant res false false true true)
   (=> (< x m) (not (= m 0)))))))))
 (check-sat)
+(exit)

@@ -605,3 +605,4 @@ Target solver: CVC4
      (of_array (to_array a) (first2 a) (last2 a) (first_2 a) (last_2 a))
      (add_value (to_rep (get (to_array a) (last2 a) (last_2 a))) x)) true))))))))))
 (check-sat)
+(exit)

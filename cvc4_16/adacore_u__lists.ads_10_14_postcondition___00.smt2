@@ -376,3 +376,4 @@ Target solver: CVC4
   (forall ((memory12 (Array Int us_rep))) (goes_to2__function_guard
   (goes_to2 i j memory12) i j memory12)) (= (goes_to2 i j memory11) true))))))))))
 (check-sat)
+(exit)

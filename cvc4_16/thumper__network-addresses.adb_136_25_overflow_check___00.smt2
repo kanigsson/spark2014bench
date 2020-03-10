@@ -958,3 +958,4 @@ Target solver: CVC4
   (= skip3 skip2))))
   (=> (ite (< i1 4) (<= skip3 4) (<= skip3 3)) (in_range1 (+ count1 skip3)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

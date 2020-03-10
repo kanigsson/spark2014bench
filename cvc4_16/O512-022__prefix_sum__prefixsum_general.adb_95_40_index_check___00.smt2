@@ -465,3 +465,4 @@ Target solver: CVC4
   (=> (= (to_rep (select a2 right3)) o4)
   (forall ((temp3 Int)) (=> (= temp3 o4) (<= 0 right3))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

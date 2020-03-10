@@ -198,3 +198,4 @@ Target solver: CVC4
   (or (not (= compare_to_zero_out1 true))
   (fp.eq abs_new_delta_out11 (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

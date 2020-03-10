@@ -246,3 +246,4 @@ Target solver: CVC4
           true false) (ite (< i1 n) true false)) true)
   (in_range1 (* result__1 x)))))))))))))))
 (check-sat)
+(exit)

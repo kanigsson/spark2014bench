@@ -152,3 +152,4 @@ Target solver: CVC4
   (forall ((x3 Int))
   (=> (= x3 o1) (=> (in_range1 (+ tmp1 j2)) (= x3 (+ tmp1 j2))))))))))))))))))))))))))
 (check-sat)
+(exit)

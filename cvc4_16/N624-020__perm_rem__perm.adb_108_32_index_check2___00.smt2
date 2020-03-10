@@ -878,3 +878,4 @@ Target solver: CVC4
   (= (to_rep2 (rec__perm__witnesses__ib (us_split_fields1 w))) temp___1006)
   (<= (first1 b) temp___1006)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

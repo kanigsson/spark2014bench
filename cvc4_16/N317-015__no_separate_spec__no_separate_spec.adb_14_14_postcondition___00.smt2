@@ -68,3 +68,4 @@ Target solver: CVC4
  ;; File "no_separate_spec.adb", line 13, characters 0-0
   (not (forall ((b Bool)) (or (= b true) (not (= b true))))))
 (check-sat)
+(exit)

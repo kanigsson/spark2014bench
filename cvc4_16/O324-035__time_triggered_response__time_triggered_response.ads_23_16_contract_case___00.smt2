@@ -279,3 +279,4 @@ Target solver: CVC4
   (=> (=> (= usf true) (= status true))
   (=> (not (= usf true)) (not (= status true))))))))))))))
 (check-sat)
+(exit)

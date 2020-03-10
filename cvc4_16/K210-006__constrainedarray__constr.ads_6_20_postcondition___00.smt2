@@ -260,3 +260,4 @@ Target solver: CVC4
   (forall ((x10 (Array Int integer)))
   (=> (= x10 (store x9 i9 o29)) (= (to_rep (select x10 1)) 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

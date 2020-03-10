@@ -313,3 +313,4 @@ Target solver: CVC4
  ;; File "borrow.adb", line 9, characters 0-0
   (not (rec__borrow__list_acc__pointer_value__pred x)))
 (check-sat)
+(exit)

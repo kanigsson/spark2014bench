@@ -353,3 +353,4 @@ Target solver: CVC4
   (=> (perm__function_guard o12 o11 o8)
   (=> (= o12 true) (<= (to_rep values__first) y)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

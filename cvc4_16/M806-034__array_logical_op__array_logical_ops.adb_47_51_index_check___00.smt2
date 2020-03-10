@@ -465,3 +465,4 @@ Target solver: CVC4
                                                 false)) true)
   (<= (first1 r4) usf))))))))))))
 (check-sat)
+(exit)

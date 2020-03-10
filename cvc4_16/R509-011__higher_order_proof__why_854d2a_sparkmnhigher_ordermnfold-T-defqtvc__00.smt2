@@ -919,3 +919,4 @@ Target solver: CVC4
   (<= (first3 test_higher_order2__my_sum__sum_left__acc__fold__result) 
   (first1 a)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

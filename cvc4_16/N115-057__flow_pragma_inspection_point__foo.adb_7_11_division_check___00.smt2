@@ -225,3 +225,4 @@ Target solver: CVC4
   (let ((o (+ x1 1)))
   (=> (in_range o) (forall ((x2 Int)) (=> (= x2 o) (not (= 2 0)))))))))))
 (check-sat)
+(exit)

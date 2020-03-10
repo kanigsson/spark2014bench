@@ -128,3 +128,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (let ((o (+ x 1))) (and (in_range o) (= x2 o)))
   (= x2 x)))) (= x2 (min (+ x1 1) threshold))))))))))
 (check-sat)
+(exit)

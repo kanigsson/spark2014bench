@@ -797,3 +797,4 @@ Target solver: CVC4
   (= bits_manipulation_unsigned__unsigned_8__functions__extract_bits_not_inline__result (bvand o8 o5))
   (in_range1 (+ (- to__ from) 1))))))))))))))))))))))))
 (check-sat)
+(exit)

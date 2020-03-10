@@ -1061,3 +1061,4 @@ Target solver: CVC4
   (= (to_rep (select (rec__patience__state__stacksizes s__split_fields) i2)) o2)
   (forall ((stackisize2 Int)) (=> (= stackisize2 o2) (<= 0 i2))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

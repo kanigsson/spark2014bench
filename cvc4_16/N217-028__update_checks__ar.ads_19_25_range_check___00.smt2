@@ -251,3 +251,4 @@ Target solver: CVC4
   (=> (= a1 (temp_____aggregate_def_209 a o4 i o3 o2 o1 o))
   (=> (in_range2 (+ j 2)) (in_range2 (- i 1)))))))))))))))))))))
 (check-sat)
+(exit)

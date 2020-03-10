@@ -306,3 +306,4 @@ Target solver: CVC4
   (not (bvult loop_counter1 #x0000000A))))) (= loop_counter1 loop_counter))
   (= loop_counter1 #x0000000A)))))))))
 (check-sat)
+(exit)

@@ -132,3 +132,4 @@ Target solver: CVC4
   false true true))
   (let ((o2 (+ c2b o1))) (=> (in_range o2) (in_range (+ o2 o))))))))))))))))
 (check-sat)
+(exit)

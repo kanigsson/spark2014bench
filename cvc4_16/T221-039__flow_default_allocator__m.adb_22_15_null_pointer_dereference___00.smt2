@@ -254,3 +254,4 @@ Target solver: CVC4
   (us_repqtmk1 x__is_null_pointer x__pointer_address
   (us_repqtmk (us_split_fieldsqtmk x__pointer_value)))))))))))))))))))
 (check-sat)
+(exit)

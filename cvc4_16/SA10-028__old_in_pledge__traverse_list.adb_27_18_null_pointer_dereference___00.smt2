@@ -393,3 +393,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true))
   (rec__traverse_list__list_acc__pointer_value__pred l))))))
 (check-sat)
+(exit)

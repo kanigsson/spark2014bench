@@ -660,3 +660,4 @@ Target solver: CVC4
   (=> (= (to_rep1 a__first) o1) (uint_in_range1
   (length (bv2nat o1) (bv2nat o))))))))))
 (check-sat)
+(exit)

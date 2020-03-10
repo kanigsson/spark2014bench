@@ -275,3 +275,4 @@ Target solver: CVC4
   (= (to_rep (select o5 j)) (to_rep (select b2 j))))))
   (not (= done__1 true))))))))))))))))))))))))))))
 (check-sat)
+(exit)

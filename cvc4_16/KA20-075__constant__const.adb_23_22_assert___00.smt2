@@ -441,3 +441,4 @@ Target solver: CVC4
   (=> (= (to_rep (select d2 2)) 1)
   (= (to_rep (rec__const__te__x (us_split_fields1 e))) 1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

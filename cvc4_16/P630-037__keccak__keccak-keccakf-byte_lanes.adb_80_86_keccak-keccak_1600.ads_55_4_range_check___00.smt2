@@ -1159,3 +1159,4 @@ Target solver: CVC4
   (ite (and (<= 0 i1) (<= i1 r47s)) true false)) true)
   (let ((o4 (* i1 8))) (=> (in_range1 o4) (in_range2 o4))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

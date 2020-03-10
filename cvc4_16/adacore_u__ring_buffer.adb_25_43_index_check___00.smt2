@@ -555,3 +555,4 @@ Target solver: CVC4
                                       true false)) true)
   (let ((o1 (+ (- usf 1) first))) (=> (in_range1 o1) (<= 1 o1))))))))))))
 (check-sat)
+(exit)

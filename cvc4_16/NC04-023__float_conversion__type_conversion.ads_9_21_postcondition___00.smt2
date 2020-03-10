@@ -190,3 +190,4 @@ Target solver: CVC4
   x))
   (fp.leq (fp.neg (fp #b0 #b10001111110 #b1111111111111111111111100000000000000000000000000000)) type_conversion__float_to_long_float__result))))))))
 (check-sat)
+(exit)

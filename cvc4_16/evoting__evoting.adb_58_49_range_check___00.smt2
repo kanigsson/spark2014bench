@@ -890,3 +890,4 @@ Target solver: CVC4
           false true) (ite (< current_candidate 20) true false)) true)
   (in_range7 (+ current_candidate 1)))))))))))))))))))
 (check-sat)
+(exit)

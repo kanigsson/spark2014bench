@@ -835,3 +835,4 @@ Target solver: CVC4
         2147483647)))))
   (rec__ghc_sort__int_array_list__pointer_value__pred l))))))))))))))))))))
 (check-sat)
+(exit)

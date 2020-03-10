@@ -839,3 +839,4 @@ Target solver: CVC4
   (=> (= (m_contains t i) true)
   (= (contains binary_search__all_v__result i) true)))))))))))
 (check-sat)
+(exit)

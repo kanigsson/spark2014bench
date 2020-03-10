@@ -195,3 +195,4 @@ Target solver: CVC4
   (=> (in_range1 o1)
   (forall ((res21 Int)) (=> (= res21 o1) (=> (<= y z) (<= res11 res21))))))))))))))))))
 (check-sat)
+(exit)

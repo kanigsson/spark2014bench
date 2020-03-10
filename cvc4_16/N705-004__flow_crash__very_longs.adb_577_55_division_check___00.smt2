@@ -795,3 +795,4 @@ Target solver: CVC4
   (=> (dynamic_invariant4 bit_position false false true true)
   (=> (dynamic_invariant2 digit false false true true) (not (= 8 0)))))))))))
 (check-sat)
+(exit)

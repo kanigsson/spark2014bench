@@ -1642,3 +1642,4 @@ Target solver: CVC4
   (forall ((o12 Int))
   (=> (= (to_rep digest__first) o12) (in_range1 (+ o12 offset)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

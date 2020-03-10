@@ -877,3 +877,4 @@ Target solver: CVC4
   (= x__is_null_pointer (rec__alloc__pe__is_null_pointer temp___alloc_281))
   (in_range 0)))))))))))
 (check-sat)
+(exit)

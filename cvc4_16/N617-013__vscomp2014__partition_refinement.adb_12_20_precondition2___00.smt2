@@ -1000,3 +1000,4 @@ Target solver: CVC4
           false) (ite (and (<= 0 j1) (<= j1 r1b)) true false)) true)
   (<= 0 j1)))))))))))))))
 (check-sat)
+(exit)

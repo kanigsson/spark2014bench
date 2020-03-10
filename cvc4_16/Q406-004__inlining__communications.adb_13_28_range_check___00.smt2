@@ -637,3 +637,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (rec__communications__mailboxT__count self__2)) o5)
   (in_range2 (+ o5 1))))))))))))))))
 (check-sat)
+(exit)

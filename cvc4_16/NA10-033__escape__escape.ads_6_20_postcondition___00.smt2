@@ -480,3 +480,4 @@ Target solver: CVC4
   (=> (= escape__backslash_escape__result (of_array result__1 o3 o2))
   (<= (length s) (length escape__backslash_escape__result)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

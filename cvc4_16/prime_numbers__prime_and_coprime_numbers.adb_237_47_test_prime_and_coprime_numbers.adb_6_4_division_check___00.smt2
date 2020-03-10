@@ -588,3 +588,4 @@ Target solver: CVC4
   (=> (= is_prime2 (store is_prime1 index_32 (distinct 0 0)))
   (not (= index_21 0))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

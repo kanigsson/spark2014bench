@@ -921,3 +921,4 @@ Target solver: CVC4
   (and (f__function_guard o10 o9 o8) (dynamic_invariant o10 true false true
   true)) (<= usf (last5 test_higher_order__my_fold_left__acc__fold__result))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1201,3 +1201,4 @@ Target solver: CVC4
   (to_rep (rec__p__my_sets__set__capacity o4)))
   (= (contains1 (us_repqtmk1 o4 (us_split_fieldsqtmk1 l__split_fields1)) e) true)))))))))))))))))
 (check-sat)
+(exit)

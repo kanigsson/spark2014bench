@@ -134,3 +134,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i 10) true false)) true)
   (=> (= x1 0) (= x1 temp___loop_entry_184)))))))))
 (check-sat)
+(exit)

@@ -599,3 +599,4 @@ Target solver: CVC4
   (=> (= buf2 (slide (to_array temp___278) (first1 temp___278) 1))
   (dynamic_property1 1 2147483647 1 100))))))))))))))))))))))))))
 (check-sat)
+(exit)

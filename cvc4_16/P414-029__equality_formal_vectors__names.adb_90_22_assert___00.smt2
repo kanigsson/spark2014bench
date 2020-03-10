@@ -2093,3 +2093,4 @@ Target solver: CVC4
       (us_repqtmk char_table__split_discrs
       (us_split_fieldsqtmk char_table__split_fields1))) 2147483646)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

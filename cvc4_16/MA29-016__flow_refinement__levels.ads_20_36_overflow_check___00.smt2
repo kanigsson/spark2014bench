@@ -119,3 +119,4 @@ Target solver: CVC4
   (and (read_partial_0__function_guard o1 x0) (dynamic_invariant o1 true
   false true true)) (in_range (+ o1 1))))))))))))
 (check-sat)
+(exit)

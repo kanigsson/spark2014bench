@@ -592,3 +592,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (forall ((value1 Int)) (=> (= value1 o) (<= min1 value1))))))))))))))
 (check-sat)
+(exit)

@@ -294,3 +294,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (forall ((temp3 Int)) (=> (= temp3 o) (=> (< temp3 x) (<= 2 temp3)))))))))))))))))))
 (check-sat)
+(exit)

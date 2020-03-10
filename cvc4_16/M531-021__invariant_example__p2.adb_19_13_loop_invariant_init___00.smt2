@@ -381,3 +381,4 @@ Target solver: CVC4
   (=> (in_range2 (* upper1 upper1))
   (=> (in_range1 (* lower1 lower1)) (<= (* lower1 lower1) n))))))))))))
 (check-sat)
+(exit)

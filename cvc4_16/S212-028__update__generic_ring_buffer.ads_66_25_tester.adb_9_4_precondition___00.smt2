@@ -970,3 +970,4 @@ Target solver: CVC4
   (not
   (= (empty (us_repqtmk buffer__split_discrs buffer__split_fields)) true))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

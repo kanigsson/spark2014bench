@@ -448,3 +448,4 @@ Target solver: CVC4
   (valid (us_repqtmk s__split_fields1)) (us_repqtmk s__split_fields1)))
   (= (valid (us_repqtmk s__split_fields)) true))))))
 (check-sat)
+(exit)

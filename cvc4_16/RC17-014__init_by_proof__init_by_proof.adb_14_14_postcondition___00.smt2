@@ -413,3 +413,4 @@ Target solver: CVC4
   (and (<= (to_rep a__first) temp___298) (<= temp___298 (to_rep a__last)))
   (= (attr__init (select a temp___298)) true))))))))))))))))
 (check-sat)
+(exit)

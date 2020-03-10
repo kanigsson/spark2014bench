@@ -114,3 +114,4 @@ Target solver: CVC4
   (forall ((x3 Int))
   (=> (= x3 10) (=> (not (<= y2 x3)) (< temp___loop_entry_157 y2)))))))))))))))))))))
 (check-sat)
+(exit)

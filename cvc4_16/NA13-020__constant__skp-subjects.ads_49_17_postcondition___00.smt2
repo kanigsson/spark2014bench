@@ -2547,3 +2547,4 @@ Target solver: CVC4
  ;; File "skp-subjects.ads", line 44, characters 0-0
   (not true))
 (check-sat)
+(exit)

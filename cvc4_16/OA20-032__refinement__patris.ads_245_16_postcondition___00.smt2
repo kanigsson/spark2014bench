@@ -2906,3 +2906,4 @@ Target solver: CVC4
   (= cur_board1 cur_board5))))))))))))))))))))))))))))))))))))))))
   (=> (= cur_state1 2) (= (get_state cur_state1) 2)))))))))))
 (check-sat)
+(exit)

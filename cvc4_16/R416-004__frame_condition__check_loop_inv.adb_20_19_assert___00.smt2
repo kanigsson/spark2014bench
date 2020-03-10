@@ -1296,3 +1296,4 @@ Target solver: CVC4
   (and (= a2 usf) (= i1 30)))))) (= a2 a1))))
   (= (bool_eq a2 1 10 (temp_____aggregate_def_262 0) 1 10) true)))))))))))))))))))))))
 (check-sat)
+(exit)

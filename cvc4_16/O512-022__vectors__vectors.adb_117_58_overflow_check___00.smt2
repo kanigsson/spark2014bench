@@ -791,3 +791,4 @@ Target solver: CVC4
                       true false)) true)
   (in_range7 (+ j1 1)))))))))))))))
 (check-sat)
+(exit)

@@ -349,3 +349,4 @@ Target solver: CVC4
   (=> (= spark__branch2 (select a1 j2))
   (=> (not (= spark__branch2 true)) (<= (to_rep a__first) i2))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -336,3 +336,4 @@ Target solver: CVC4
  ;; File "a-cofuse.ads", line 267, characters 0-0
   (not (not (= (iter_has_element container key) true))))
 (check-sat)
+(exit)

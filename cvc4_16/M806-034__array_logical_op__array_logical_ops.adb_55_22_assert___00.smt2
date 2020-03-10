@@ -424,3 +424,4 @@ Target solver: CVC4
   (= (of_array (notb (to_array y) (first1 y) (last1 y)) (first1 y) (last1 y)) 
   r5) (=> (dynamic_invariant r5 true false true true) (= (first1 r5) 1)))))))
 (check-sat)
+(exit)

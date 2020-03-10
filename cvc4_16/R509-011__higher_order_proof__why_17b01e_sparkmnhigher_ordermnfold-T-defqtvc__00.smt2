@@ -1471,3 +1471,4 @@ Target solver: CVC4
   (and (dynamic_invariant o13 true false true true)
   (= o13 (+ (value o12) o11))) (<= (first_2 a) (to_rep r__last_2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -932,3 +932,4 @@ Target solver: CVC4
   (=> (= spark__branch2 true)
   (=> (in_range1 (+ (first1 buffer) 15)) (in_range1 (+ (first1 buffer) 12))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

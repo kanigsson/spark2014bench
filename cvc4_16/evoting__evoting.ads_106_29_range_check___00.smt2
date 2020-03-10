@@ -529,3 +529,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 0 usf) true false) (ite (<= usf 20) true false)) true)
   (=> (<= 1 last_candidate) (<= 0 1)))))))))))))))
 (check-sat)
+(exit)

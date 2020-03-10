@@ -489,3 +489,4 @@ Target solver: CVC4
   (forall ((right4 Int))
   (=> (= right4 o11) (=> (< right4 8) (< temp___225 right4))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

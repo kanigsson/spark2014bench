@@ -311,3 +311,4 @@ Target solver: CVC4
   (=> (= v (main__v__aggregate_def 0))
   (=> (= (to_rep o) 100) (=> (= (to_rep o1) 1) (<= (to_rep o1) 5)))))))
 (check-sat)
+(exit)

@@ -282,3 +282,4 @@ Target solver: CVC4
   (=> (dynamic_invariant val__ true false true true)
   (= val__ (bvor (bvand al_test #x00) val__)))))))
 (check-sat)
+(exit)

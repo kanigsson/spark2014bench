@@ -1373,3 +1373,4 @@ Target solver: CVC4
   (=> (= (< (to_rep1 item__last) (to_rep1 item__first)) true)
   (= last3 (- (to_rep1 item__first) 1)))))))))))))))))))
 (check-sat)
+(exit)

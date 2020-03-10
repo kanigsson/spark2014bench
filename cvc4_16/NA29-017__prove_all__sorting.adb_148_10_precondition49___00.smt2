@@ -605,3 +605,4 @@ Target solver: CVC4
   (of_array a3 (to_rep o23) (to_rep o22)) o21 l2))
   (= (sorted (of_array a2 (to_rep a__first) (to_rep a__last)) o20 l1) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -124,3 +124,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x1 true true true true)
   (=> (forall ((x2 Int)) (get__function_guard (get x2) x2)) (= (get x1) 0)))))))))
 (check-sat)
+(exit)

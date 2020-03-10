@@ -1437,3 +1437,4 @@ Target solver: CVC4
   (us_repqtmk s__split_fields1 s__attr__tag))) (in_range1
   (- (last1 (get_model (us_repqtmk s__split_fields s__attr__tag))) 1)))))))))))))))))
 (check-sat)
+(exit)

@@ -284,3 +284,4 @@ Target solver: CVC4
   (=> (<= x 9)
   (not (= (to_rep (select table1 x)) (to_rep (select temp_table9 x)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

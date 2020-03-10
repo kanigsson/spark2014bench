@@ -436,3 +436,4 @@ Target solver: CVC4
   (and (boolean_to_integer_8__function_guard o6 o5) (dynamic_invariant o6
   true false true true)) (in_range3 (- o6 o4))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -902,3 +902,4 @@ Target solver: CVC4
                       true false)) true)
   (<= (first1 separates) i1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

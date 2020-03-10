@@ -152,3 +152,4 @@ Target solver: CVC4
   (=> (< (get_red_count red_counter) 2147483647) (in_range
   (+ red_counter 1))))))))
 (check-sat)
+(exit)

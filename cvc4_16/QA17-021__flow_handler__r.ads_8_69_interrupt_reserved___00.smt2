@@ -171,3 +171,4 @@ Target solver: CVC4
   (= (to_rep (rec__r__pt__irq (us_split_discrs1 self__))) o))
   (= temp___273 false)))))
 (check-sat)
+(exit)

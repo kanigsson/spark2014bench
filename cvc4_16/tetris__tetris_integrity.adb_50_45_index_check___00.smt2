@@ -2009,3 +2009,4 @@ Target solver: CVC4
   (= (to_rep3 (rec__tetris_integrity__piece__y cur_piece__split_fields)) o7)
   (<= 1 (+ o7 y1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1474,3 +1474,4 @@ Target solver: CVC4
   (forall ((o10 Int))
   (=> (= (to_rep (select result__1 usf)) o10) (<= 1 usf1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

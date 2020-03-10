@@ -666,3 +666,4 @@ Target solver: CVC4
   (=> (<= (first5 temp___757) (last5 temp___757))
   (= (- (last5 temp___757) (first5 temp___757)) (- (last2 a) (first2 a)))))))))))))))))
 (check-sat)
+(exit)

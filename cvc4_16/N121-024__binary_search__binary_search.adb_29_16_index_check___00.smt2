@@ -554,3 +554,4 @@ Target solver: CVC4
   (=> (in_range3 o7)
   (forall ((med2 Int)) (=> (= med2 o7) (<= (first1 a) med2)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -273,3 +273,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 0 i) true false) (ite (<= i 20) true false)) true)
   (in_range1 (* 10000 i)))))))))
 (check-sat)
+(exit)

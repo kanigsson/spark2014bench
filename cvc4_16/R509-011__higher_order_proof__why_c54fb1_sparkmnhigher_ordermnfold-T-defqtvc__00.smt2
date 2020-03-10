@@ -900,3 +900,4 @@ Target solver: CVC4
   (=> (not (= i1 temp___1300))
   (forall ((i2 Int)) (=> (= i2 (+ i1 1)) (in_range1 (- i2 (first1 a)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

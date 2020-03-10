@@ -938,3 +938,4 @@ Target solver: CVC4
   (= o7 (last (model1 o6))))
   (let ((o8 (- (+ o7 1) usf))) (=> (in_range6 o8) (<= 1 o8)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

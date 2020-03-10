@@ -882,3 +882,4 @@ Target solver: CVC4
   (=> (= (is_open file1) true)
   (=> (= (mode file1) 0) (= (is_open file1) true)))))))))))))))))
 (check-sat)
+(exit)

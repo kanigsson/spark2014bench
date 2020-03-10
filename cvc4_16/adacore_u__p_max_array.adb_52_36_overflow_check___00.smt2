@@ -400,3 +400,4 @@ Target solver: CVC4
   (=> (not (< o7 o8))
   (forall ((o9 Int)) (=> (= (to_rep1 a__first) o9) (in_range1 (- usf o9))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

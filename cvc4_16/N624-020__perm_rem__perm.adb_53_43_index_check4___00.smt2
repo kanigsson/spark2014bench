@@ -639,3 +639,4 @@ Target solver: CVC4
   (forall ((o Int))
   (=> (= (to_rep (select (to_array b) usf)) o) (<= (first1 a) ia)))))))))))))))))))))
 (check-sat)
+(exit)

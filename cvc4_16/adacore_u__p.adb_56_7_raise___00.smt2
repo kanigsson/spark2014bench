@@ -358,3 +358,4 @@ Target solver: CVC4
                       false)) true)
   (= i1 temp___300))))))))))))))))))))))
 (check-sat)
+(exit)

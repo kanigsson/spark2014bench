@@ -344,3 +344,4 @@ Target solver: CVC4
   (=> (= (has_element c p) true)
   (=> (= (to_rep (select p 1)) temp___286) (<= 1 temp___286))))))))))
 (check-sat)
+(exit)

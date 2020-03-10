@@ -468,3 +468,4 @@ Target solver: CVC4
   (=> (dynamic_invariant val__ true false true true)
   (bvule ((_ zero_extend 56) #x00) (bvurem val__ #x0000000000000100))))))
 (check-sat)
+(exit)

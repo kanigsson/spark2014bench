@@ -1669,3 +1669,4 @@ Target solver: CVC4
      ctx__split_fields1)) o11)
   (in_range1 (+ o11 bit_length)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

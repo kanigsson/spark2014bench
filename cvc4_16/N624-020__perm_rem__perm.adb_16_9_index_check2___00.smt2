@@ -662,3 +662,4 @@ Target solver: CVC4
   (=> (<= (first1 b) perm__get_witness__result)
   (=> (<= perm__get_witness__result (last1 b)) (<= (first1 a) ia))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

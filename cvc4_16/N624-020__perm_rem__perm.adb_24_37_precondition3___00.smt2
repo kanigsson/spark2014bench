@@ -483,3 +483,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array a) ia)) o1)
   (=> (= o1 o) (=> (in_range3 ib) (<= (first1 b) ib)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

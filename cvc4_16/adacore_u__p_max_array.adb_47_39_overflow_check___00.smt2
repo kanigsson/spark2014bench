@@ -374,3 +374,4 @@ Target solver: CVC4
                                              false)) true)
   (=> (= (to_rep1 a__first) o) (in_range1 (- i o)))))))))))))))
 (check-sat)
+(exit)

@@ -804,3 +804,4 @@ Target solver: CVC4
   (=> (= result____split_fields2 current_slice__split_fields) (in_range2
   current_sum3))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

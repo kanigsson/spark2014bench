@@ -587,3 +587,4 @@ Target solver: CVC4
   (= o (ite (fp.leq battery_threshold o2) true false)))))) (= o false))
   (not (= o true)))))))))))))))))))))))
 (check-sat)
+(exit)

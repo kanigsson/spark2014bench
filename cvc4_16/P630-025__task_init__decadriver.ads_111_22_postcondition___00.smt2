@@ -993,3 +993,4 @@ Target solver: CVC4
   (=> (= decadriver__receiver_type__pending_frames_count__result o)
   (<= decadriver__receiver_type__pending_frames_count__result 2)))))))
 (check-sat)
+(exit)

@@ -199,3 +199,4 @@ Target solver: CVC4
   x) (fp.leq x (fp #b0 #b10000101 #b00101100000000000000000)))
   (fp.leq (fp #b0 #b01111011 #b10011001100110011001101) lat_long__cos__result))))))))))
 (check-sat)
+(exit)

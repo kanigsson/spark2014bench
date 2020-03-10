@@ -312,3 +312,4 @@ Target solver: CVC4
   (=> (not (= scale_num #x0000000000000000))
   (not (= scale_num #x0000000000000000))))))))))
 (check-sat)
+(exit)

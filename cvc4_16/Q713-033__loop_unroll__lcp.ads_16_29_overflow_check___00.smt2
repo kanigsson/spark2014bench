@@ -883,3 +883,4 @@ Target solver: CVC4
   (=> (not (= o1 o))
   (=> (in_range1 (+ (last1 a) 1)) (in_range1 (+ y lcp__result))))))))))))))))))))))))))
 (check-sat)
+(exit)

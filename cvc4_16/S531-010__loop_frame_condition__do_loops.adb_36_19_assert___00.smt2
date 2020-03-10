@@ -1210,3 +1210,4 @@ Target solver: CVC4
   true true true true))
   (=> (= (first1 a__pointer_value1) 1) (= (last1 a__pointer_value1) 100)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

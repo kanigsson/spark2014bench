@@ -1529,3 +1529,4 @@ Target solver: CVC4
   (forall ((rsp3 (_ BitVec 64)))
   (=> (= rsp3 (bvadd rsp2 #x0000000000000008)) (= rbp3 rbp1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

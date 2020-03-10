@@ -970,3 +970,4 @@ Target solver: CVC4
   (us_split_fields1
   (select (rec__do_loops__r_array_record__f3 d__split_fields4) i1))))))))))))))))))))))
 (check-sat)
+(exit)

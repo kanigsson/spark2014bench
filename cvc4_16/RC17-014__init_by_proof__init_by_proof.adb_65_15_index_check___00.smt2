@@ -480,3 +480,4 @@ Target solver: CVC4
   (forall ((o3 integer))
   (=> (= (to_rep o3) (+ (div1 o2 2) 5)) (<= (to_rep buf__first) i1)))))))))))))))))))))
 (check-sat)
+(exit)

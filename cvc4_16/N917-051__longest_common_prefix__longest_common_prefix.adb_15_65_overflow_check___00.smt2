@@ -301,3 +301,4 @@ Target solver: CVC4
   (forall ((o2 Int))
   (=> (= (to_rep (select a o1)) o2) (in_range1 (+ x usf)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -640,3 +640,4 @@ Target solver: CVC4
   (and (prop__function_guard o1 o) (= (= o1 true) (not (= (mod2 10 o) 0))))
   (not (= o1 true)))))))))
 (check-sat)
+(exit)

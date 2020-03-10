@@ -1297,3 +1297,4 @@ Target solver: CVC4
   (let ((o5 (+ j divisor_index1)))
   (=> (in_range2 o5) (<= (first1 u__split_fields1) (- o5 1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

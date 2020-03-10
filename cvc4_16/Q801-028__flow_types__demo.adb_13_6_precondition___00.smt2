@@ -103,3 +103,4 @@ Target solver: CVC4
   true)) (= demo_counter2 demo_counter1))))
   (<= (- 2147483648) demo_counter2))))))))
 (check-sat)
+(exit)

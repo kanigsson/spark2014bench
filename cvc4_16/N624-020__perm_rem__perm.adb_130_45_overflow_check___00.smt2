@@ -626,3 +626,4 @@ Target solver: CVC4
                                                  true false)) true)
   (=> (not (< usf i1)) (=> (not (< usf (- i2 1))) (in_range1 (+ usf 2))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

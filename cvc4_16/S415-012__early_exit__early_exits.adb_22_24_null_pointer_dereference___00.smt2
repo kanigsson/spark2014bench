@@ -395,3 +395,4 @@ Target solver: CVC4
   (=> (= spark__branch true) (rec__early_exits__int_acc__pointer_value__pred
   (us_repqtmk y__is_null_pointer y__pointer_address y__pointer_value1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

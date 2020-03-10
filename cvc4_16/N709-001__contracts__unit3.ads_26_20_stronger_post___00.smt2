@@ -640,3 +640,4 @@ Target solver: CVC4
                                                         (rec__unit1__t1__c12
                                                         x__split_fields)) 1)))))))))
 (check-sat)
+(exit)

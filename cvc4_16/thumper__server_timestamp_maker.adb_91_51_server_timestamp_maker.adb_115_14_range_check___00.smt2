@@ -952,3 +952,4 @@ Target solver: CVC4
   (=> (not (= spark__branch5 true))
   (=> (= c13b c17b) (in_range5 (+ version_stop1 1))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

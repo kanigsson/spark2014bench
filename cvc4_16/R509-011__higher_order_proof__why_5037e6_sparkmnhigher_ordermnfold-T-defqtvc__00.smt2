@@ -1210,3 +1210,4 @@ Target solver: CVC4
   (< 0 (length
        (of_array (to_array a) (first2 a) (last2 a) (first_2 a) (last_2 a)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

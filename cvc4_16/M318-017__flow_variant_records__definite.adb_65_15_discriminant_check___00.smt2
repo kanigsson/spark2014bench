@@ -594,3 +594,4 @@ Target solver: CVC4
   (=> (= (to_rep1 o1) 0)
   (=> (= x__attr__constrained true) (= o1 x__split_discrs))))))))))))
 (check-sat)
+(exit)

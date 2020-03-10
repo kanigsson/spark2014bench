@@ -205,3 +205,4 @@ Target solver: CVC4
   (=> (<= (- 2147483648) j)
   (=> (<= j i2) (= (to_rep (select a2 j)) (to_rep (select b j)))))))))))))))))))
 (check-sat)
+(exit)

@@ -488,3 +488,4 @@ Target solver: CVC4
   (forall ((j Int))
   (=> (and (<= 1 j) (<= j i2)) (= (to_rep (select content3 j)) e)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

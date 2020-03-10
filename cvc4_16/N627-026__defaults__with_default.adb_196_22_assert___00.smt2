@@ -2212,3 +2212,4 @@ Target solver: CVC4
      (rec__with_default__ok_record__simple_rec__f2 simple__split_fields)) 
   c))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -781,3 +781,4 @@ Target solver: CVC4
                                              (select (to_array o7) k))))))))
   (<= (first1 o7) o4)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

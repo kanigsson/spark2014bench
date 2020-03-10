@@ -346,3 +346,4 @@ Target solver: CVC4
  ;; File "with_default.ads", line 16, characters 0-0
   (not (=> (dynamic_invariant c true false true true) (in_range1 0))))
 (check-sat)
+(exit)

@@ -799,3 +799,4 @@ Target solver: CVC4
                                              (select (to_array o8) k))))))))
   (in_range4 y))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1959,3 +1959,4 @@ Target solver: CVC4
   (let ((o19 (bv2nat (bvnot x7))))
   (=> (in_range o19) (in_range1 (- (- o19) 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

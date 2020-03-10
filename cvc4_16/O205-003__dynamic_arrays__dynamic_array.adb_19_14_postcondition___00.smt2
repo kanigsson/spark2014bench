@@ -1192,3 +1192,4 @@ Target solver: CVC4
      (rec__dynamic_array__holder__d
      (us_split_discrs3 dynamic_array__new_holder__result))) 0)))))))))
 (check-sat)
+(exit)

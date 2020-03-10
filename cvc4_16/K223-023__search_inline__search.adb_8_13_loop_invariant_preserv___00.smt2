@@ -253,3 +253,4 @@ Target solver: CVC4
   (=> (= i2 (+ i1 1))
   (=> (<= 1 j) (=> (<= j (- i2 1)) (not (= (to_rep (select t j)) v)))))))))))))))))))
 (check-sat)
+(exit)

@@ -465,3 +465,4 @@ Target solver: CVC4
   (= (to_rep1 (rec__stack__stack_type__pointer my_stack__split_fields)) temp___285)
   (<= 1 temp___285))))))))
 (check-sat)
+(exit)

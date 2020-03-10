@@ -103,3 +103,4 @@ Target solver: CVC4
   (=> (dynamic_invariant value true false true true)
   (=> (dynamic_invariant id true false true true) (= id 5)))))))
 (check-sat)
+(exit)

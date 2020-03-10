@@ -831,3 +831,4 @@ Target solver: CVC4
   (let ((o16 y))
   (=> (in_range4 o16) (<= o16 (last1 (of_array interm 1 100))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

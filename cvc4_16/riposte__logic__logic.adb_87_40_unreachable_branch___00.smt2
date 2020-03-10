@@ -72,3 +72,4 @@ Target solver: CVC4
  ;; File "logic.adb", line 83, characters 0-0
   (not (= a true)))
 (check-sat)
+(exit)

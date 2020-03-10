@@ -770,3 +770,4 @@ Target solver: CVC4
   (=> (forall ((rcx2 (_ BitVec 64))) (ecx__function_guard (ecx rcx2) rcx2))
   (not (= (ecx rcx1) #x00000000)))))))))))))))))
 (check-sat)
+(exit)

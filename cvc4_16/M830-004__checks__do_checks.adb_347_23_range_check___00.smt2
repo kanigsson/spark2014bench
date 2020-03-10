@@ -5731,3 +5731,4 @@ Target solver: CVC4
   (=> (= spark__branch3 (ite (= branch 1004) true false))
   (=> (= spark__branch3 true) (in_range1 0))))))))))))))))
 (check-sat)
+(exit)

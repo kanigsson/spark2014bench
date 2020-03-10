@@ -219,3 +219,4 @@ Target solver: CVC4
   (and (and (<= 1 n) (<= n i)) (= (to_rep (select a n)) m)))) (= m max))))
   (=> (<= 1 (- i 1)) (<= 1 1))))))))
 (check-sat)
+(exit)

@@ -537,3 +537,4 @@ Target solver: CVC4
   (=> (and (dynamic_invariant o true false true true) (<= (+ 0 o) 100))
   (in_range6 o))))))))
 (check-sat)
+(exit)

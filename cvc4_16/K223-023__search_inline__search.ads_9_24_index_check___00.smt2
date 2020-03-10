@@ -263,3 +263,4 @@ Target solver: CVC4
        true false))
   (= o (distinct 1 0))) (=> (= o true) (<= 1 search__search__result)))))))))))
 (check-sat)
+(exit)

@@ -324,3 +324,4 @@ Target solver: CVC4
   (= (to_rep (rec__frame__rec__c1 (us_split_fields1 (select a2 j)))) 
   (to_rep (rec__frame__rec__c2 (us_split_fields1 (select a1 j))))))))))))
 (check-sat)
+(exit)

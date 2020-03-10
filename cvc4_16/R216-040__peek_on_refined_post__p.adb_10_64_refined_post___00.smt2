@@ -112,3 +112,4 @@ Target solver: CVC4
   (forall ((p__nested__f__result Int))
   (=> (= p__nested__f__result o) (= p__nested__f__result 0)))))))
 (check-sat)
+(exit)

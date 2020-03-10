@@ -227,3 +227,4 @@ Target solver: CVC4
   (=> (= i2 o1)
   (=> (<= i2 n) (= (* 6 totalsum2) (* (* (- i2 1) i2) (+ i2 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

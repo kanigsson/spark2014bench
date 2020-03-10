@@ -468,3 +468,4 @@ Target solver: CVC4
   (=> (<= (first1 temp___383) (last1 temp___383))
   (<= (+ (length s1) 1) (to_rep1 s__last))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

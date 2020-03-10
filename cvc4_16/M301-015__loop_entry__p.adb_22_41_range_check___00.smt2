@@ -655,3 +655,4 @@ Target solver: CVC4
                       (store (get (select x3 i31) i211 i221) i1 rliteral1))))
   (let ((temp___261 (+ i31 1))) (=> (<= temp___261 3) (<= 1 temp___261))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

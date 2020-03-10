@@ -823,3 +823,4 @@ Target solver: CVC4
   (- (+ (first1 temp___259) (+ (length (first1 temp___259)
                                (last1 temp___259)) (length 1 2))) 1)))))))))
 (check-sat)
+(exit)

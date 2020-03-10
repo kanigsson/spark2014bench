@@ -598,3 +598,4 @@ Target solver: CVC4
   (= ten_characters (anon_type__increment__ten_characters__aggregate_def 32))
   (in_range (+ var_in (+ var_out 1)))))))))))))
 (check-sat)
+(exit)

@@ -138,3 +138,4 @@ Target solver: CVC4
   (get_highest_reading high_reading2) high_reading2))
   (< (- 1) (get_highest_reading high_reading1)))))))))))
 (check-sat)
+(exit)

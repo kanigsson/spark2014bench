@@ -550,3 +550,4 @@ Target solver: CVC4
         (us_split_fields1 usf))))))
   (<= 1 o4))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

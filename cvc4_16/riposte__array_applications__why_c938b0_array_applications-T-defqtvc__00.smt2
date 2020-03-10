@@ -327,3 +327,4 @@ Target solver: CVC4
   (forall ((o12 Int))
   (=> (= (to_rep (select a5 temp___187)) o12) (<= 0 (- usf 1)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

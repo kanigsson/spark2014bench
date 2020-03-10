@@ -274,3 +274,4 @@ Target solver: CVC4
   (=> (= y3 o3)
   (let ((o4 (- x2 y3))) (=> (in_range o4) (in_range (div1 x2 o4))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

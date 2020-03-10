@@ -106,3 +106,4 @@ Target solver: CVC4
   (=> (= spark__branch1 (ite (<= 5 l) true false))
   (=> (= spark__branch1 true) (in_range (+ room1 20))))))))))))
 (check-sat)
+(exit)

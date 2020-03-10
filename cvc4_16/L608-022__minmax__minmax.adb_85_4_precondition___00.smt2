@@ -226,3 +226,4 @@ Target solver: CVC4
   (=> (dynamic_invariant min2 true true true true)
   (=> (dynamic_invariant max2 true true true true) (< v w))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -401,3 +401,4 @@ Target solver: CVC4
   (=> (= (to_rep a__last) o2)
   (=> (= h1 (div1 o2 2)) (<= (* 2 h1) (to_rep a__last)))))))))))))))
 (check-sat)
+(exit)

@@ -514,3 +514,4 @@ Target solver: CVC4
   (forall ((usf (Array Int integer)))
   (=> (default_initial_assumption1 usf false) (dynamic_predicate2 usf)))))))))))))
 (check-sat)
+(exit)

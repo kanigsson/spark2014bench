@@ -1717,3 +1717,4 @@ Target solver: CVC4
   (= (to_rep5 (rec__names__name_entry__table_index (us_split_fields3 e))) o2)
   (let ((o3 (+ o2 (- i1 1)))) (=> (in_range11 o3) (in_range12 o3)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

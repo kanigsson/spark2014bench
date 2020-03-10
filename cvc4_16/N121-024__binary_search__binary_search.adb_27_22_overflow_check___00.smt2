@@ -551,3 +551,4 @@ Target solver: CVC4
   (=> (= temp___203 (- right2 left2)) (in_range2
   (+ left2 (div1 (- right2 left2) 2))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

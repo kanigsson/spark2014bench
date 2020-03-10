@@ -2232,3 +2232,4 @@ Target solver: CVC4
   (=> (= cur_board4 (store cur_board3 from_line1 empty_line)) (in_range9
   (- to_line2 1)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

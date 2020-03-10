@@ -251,3 +251,4 @@ Target solver: CVC4
   (let ((o (* x y)))
   (=> (in_range o) (forall ((temp11 Int)) (=> (= temp11 o) (not (= y 0))))))))))))))))))
 (check-sat)
+(exit)

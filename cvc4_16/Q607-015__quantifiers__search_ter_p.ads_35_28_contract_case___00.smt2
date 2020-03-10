@@ -606,3 +606,4 @@ Target solver: CVC4
   (=> (= (= (length1 b) 0) true)
   (not (= (rec__types__option__exists search_ter_p__search__result) true))))))))))))))))))
 (check-sat)
+(exit)

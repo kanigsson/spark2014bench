@@ -1328,3 +1328,4 @@ Target solver: CVC4
   (=> (= spark__branch5 (ite (< last5 o12) true false))
   (not (= spark__branch5 true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -441,3 +441,4 @@ Target solver: CVC4
   (=> (not (= (is_full top) true))
   (let ((o (+ top 1))) (=> (in_range1 o) (dynamic_property 0 last o))))))))))))
 (check-sat)
+(exit)

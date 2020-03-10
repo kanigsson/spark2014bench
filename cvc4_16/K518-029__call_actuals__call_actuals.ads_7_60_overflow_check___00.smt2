@@ -103,3 +103,4 @@ Target solver: CVC4
   (let ((o (+ g 1)))
   (=> (in_range o) (forall ((y1 Int)) (=> (= y1 o) (in_range (+ x1 1)))))))))))))
 (check-sat)
+(exit)

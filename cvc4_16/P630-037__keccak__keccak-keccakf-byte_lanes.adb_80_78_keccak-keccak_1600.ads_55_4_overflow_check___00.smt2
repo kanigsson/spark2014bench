@@ -1163,3 +1163,4 @@ Target solver: CVC4
   (let ((o5 (+ (first1 data) offset1)))
   (=> (in_range1 o5) (in_range1 (+ o5 i1))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

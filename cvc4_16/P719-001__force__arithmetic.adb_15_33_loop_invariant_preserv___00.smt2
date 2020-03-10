@@ -282,3 +282,4 @@ Target solver: CVC4
                                           false)) true))
   (= r3 i2))))))))))))))))))
 (check-sat)
+(exit)

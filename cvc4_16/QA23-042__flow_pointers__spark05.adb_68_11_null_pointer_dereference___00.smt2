@@ -1649,3 +1649,4 @@ Target solver: CVC4
   (us_repqtmk4 aam__is_null_pointer1 aam__pointer_address1
   (us_repqtmk3 (us_split_fieldsqtmk1 aam__pointer_value1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

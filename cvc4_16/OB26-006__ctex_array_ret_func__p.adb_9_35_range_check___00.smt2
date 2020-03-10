@@ -331,3 +331,4 @@ Target solver: CVC4
   (=> (= tc_last r5b)
   (=> (dynamic_invariant1 r5b true false true true) (=> (<= 1 r5b) (<= 1 1))))))))
 (check-sat)
+(exit)

@@ -147,3 +147,4 @@ Target solver: CVC4
   (forall ((a1 Int) (b1 Int) (c1 Int) (d1 Int)) (sum_all__function_guard
   (sum_all b1 a1 c1 d1) b1 a1 c1 d1)) (= (sum_all b a c d) 0)))))))))))))))
 (check-sat)
+(exit)

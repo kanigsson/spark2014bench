@@ -199,3 +199,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (= (rec__pack__t1__x (us_split_fields1 x1)) true)))))))
 (check-sat)
+(exit)

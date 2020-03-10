@@ -1212,3 +1212,4 @@ Target solver: CVC4
   (forall ((buf1 (Array Int character)))
   (=> (= buf1 (slide (to_array temp___423) (first1 temp___423) 1)) (<= 1 n)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

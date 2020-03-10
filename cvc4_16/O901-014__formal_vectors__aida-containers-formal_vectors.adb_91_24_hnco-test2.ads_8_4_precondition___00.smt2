@@ -6066,3 +6066,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 r241s true false true true)
   (=> (in_range r241s) (<= 1 index)))))))))))))))
 (check-sat)
+(exit)

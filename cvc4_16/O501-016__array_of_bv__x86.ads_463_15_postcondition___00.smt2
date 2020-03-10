@@ -918,3 +918,4 @@ Target solver: CVC4
   (readmem64__function_guard (readmem64 addr memory17) addr memory17))
   (= (readmem64 addr memory16) val__)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

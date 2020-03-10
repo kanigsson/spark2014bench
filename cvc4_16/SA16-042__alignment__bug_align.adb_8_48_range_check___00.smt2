@@ -372,3 +372,4 @@ Target solver: CVC4
   (forall ((var (_ BitVec 8)))
   (=> (dynamic_invariant var true false true true) (uint_in_range1 16)))))
 (check-sat)
+(exit)

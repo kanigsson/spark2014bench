@@ -101,3 +101,4 @@ Target solver: CVC4
   (and (= spark__branch (ite (<= hidden2 0) true false))
   (or (not (= spark__branch true)) (in_range (+ hidden 1)))))))))))
 (check-sat)
+(exit)

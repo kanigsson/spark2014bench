@@ -527,3 +527,4 @@ Target solver: CVC4
   (=> (not (< (first1 new_val) 0)) (in_range1
   (- 2147483647 (first1 new_val)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -700,3 +700,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 init true false true true)
   (=> (< 0 (length a)) (in_range5 (first1 a)))))))
 (check-sat)
+(exit)

@@ -94,3 +94,4 @@ Target solver: CVC4
  ;; File "assume_and_assert_and_cut_illegal.adb", line 2, characters 0-0
   (not true))
 (check-sat)
+(exit)

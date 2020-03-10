@@ -523,3 +523,4 @@ Target solver: CVC4
   (=> (and (bvule #x0000000000000000 j) (bvule j n22))
   (not (= (bvadd var1 n11) (bvadd var2 j)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

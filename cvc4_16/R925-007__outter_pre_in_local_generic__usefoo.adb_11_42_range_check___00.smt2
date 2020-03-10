@@ -521,3 +521,4 @@ Target solver: CVC4
   (let ((o4 (+ o3 (div1 o2 2))))
   (=> (in_range o4) (let ((o5 (- o4 1))) (=> (in_range o5) (in_range1 o5)))))))))))))))))))
 (check-sat)
+(exit)

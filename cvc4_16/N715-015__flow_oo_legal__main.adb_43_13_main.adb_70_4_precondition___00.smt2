@@ -1626,3 +1626,4 @@ Target solver: CVC4
   (= (has_training (us_repqtmk1 rambo__split_fields rambo__attr__tag)
      skill_of_the_day) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

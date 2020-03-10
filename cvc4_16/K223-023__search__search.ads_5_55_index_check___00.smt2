@@ -220,3 +220,4 @@ Target solver: CVC4
   (= (and (ite (<= low usf) true false) (ite (<= usf up) true false)) true)
   (<= 1 usf))))))))
 (check-sat)
+(exit)

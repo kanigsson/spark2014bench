@@ -499,3 +499,4 @@ Target solver: CVC4
   (fp.leq (fp.add RNE (fp.neg (fp #b0 #b11111110 #b11111111111111111111111)) o3) 
   (to_rep (rec__test_pack__pid_obj__desired x__split_fields))))))))))))))))
 (check-sat)
+(exit)

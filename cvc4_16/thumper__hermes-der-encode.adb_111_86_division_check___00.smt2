@@ -787,3 +787,4 @@ Target solver: CVC4
   (forall ((result__4 (Array Int octet)))
   (=> (= result__4 (store result__3 3 o6)) (not (= 256 0)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

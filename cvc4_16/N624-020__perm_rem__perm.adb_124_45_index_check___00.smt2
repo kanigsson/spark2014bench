@@ -619,3 +619,4 @@ Target solver: CVC4
   (=> (exists ((o12 Int)) (= (to_rep (select (to_array a) usf)) o12))
   (<= usf (last1 a12))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

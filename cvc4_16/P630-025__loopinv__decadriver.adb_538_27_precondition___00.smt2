@@ -4183,3 +4183,4 @@ Target solver: CVC4
   (=> (dynamic_invariant (us_repqtmk1 receiver__split_fields4) true true true
   true) (not (= 5 0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

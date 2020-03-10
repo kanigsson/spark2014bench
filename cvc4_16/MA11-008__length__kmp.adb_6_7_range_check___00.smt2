@@ -293,3 +293,4 @@ Target solver: CVC4
   (=> (<= 1 (length p))
   (=> (<= (first1 p) (last1 p)) (<= (- 2147483648) (first1 p)))))))
 (check-sat)
+(exit)

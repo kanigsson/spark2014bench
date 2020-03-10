@@ -254,3 +254,4 @@ Target solver: CVC4
   (forall ((a1 (Array Int integer)))
   (=> (= a1 (temp_____aggregate_def_208 a 4 x o z)) (in_range1 n)))))))))))))
 (check-sat)
+(exit)

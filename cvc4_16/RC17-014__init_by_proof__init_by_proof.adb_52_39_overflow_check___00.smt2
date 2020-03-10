@@ -564,3 +564,4 @@ Target solver: CVC4
   (= (attr__init (select (to_array temp___366) temp___367)) true))))
   (=> (= (to_rep buf__first) o) (in_range1 (+ o (- size 1)))))))))))
 (check-sat)
+(exit)

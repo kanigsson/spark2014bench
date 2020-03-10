@@ -468,3 +468,4 @@ Target solver: CVC4
   (=> (= (bool_eq my_s2 1 3 glob 1 3) true)
   (not (= (bool_eq my_s2 1 3 glob 1 3) true)))))))))))
 (check-sat)
+(exit)

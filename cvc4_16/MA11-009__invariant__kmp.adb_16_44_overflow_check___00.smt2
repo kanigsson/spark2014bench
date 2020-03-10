@@ -365,3 +365,4 @@ Target solver: CVC4
   (=> (= r9b j1)
   (=> (dynamic_invariant r9b true false true true) (in_range1 (- j1 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

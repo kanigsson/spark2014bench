@@ -1578,3 +1578,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 no_name true false true true)
   (=> (= hash_table (names__hash_table__aggregate_def 0)) (in_range2 1024))))))
 (check-sat)
+(exit)

@@ -843,3 +843,4 @@ Target solver: CVC4
   (let ((o (+ left3 space1)))
   (=> (in_range1 o) (forall ((right3 Int)) (=> (= right3 o) (<= 0 right3)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

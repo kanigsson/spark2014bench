@@ -286,3 +286,4 @@ Target solver: CVC4
   (= (to_rep (rec__package_1__record_t__a (us_split_fields1 record_const))) o2)
   (fp.isFinite32 (fp.add RNE scalar_const o2)))))))))))))))))
 (check-sat)
+(exit)

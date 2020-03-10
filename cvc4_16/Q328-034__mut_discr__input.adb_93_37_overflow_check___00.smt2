@@ -204,3 +204,4 @@ Target solver: CVC4
   (=> (dynamic_invariant n true false true true) (in_range
   (+ first_char (- n 1)))))))))
 (check-sat)
+(exit)

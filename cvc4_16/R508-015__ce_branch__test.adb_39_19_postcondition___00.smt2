@@ -105,3 +105,4 @@ Target solver: CVC4
   (=> (= b1 o)
   (=> (= test__test_if_2__result b1) (= test__test_if_2__result 1))))))))))
 (check-sat)
+(exit)

@@ -699,3 +699,4 @@ Target solver: CVC4
   this__split_fields1)
   (of_array (to_array temp___1358) (first1 temp___1358) (last1 temp___1358)))))))))))))))))))))))))
 (check-sat)
+(exit)

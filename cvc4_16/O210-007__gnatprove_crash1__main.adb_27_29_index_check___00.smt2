@@ -574,3 +574,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 r11b true false true true)
   (=> (and (<= 0 i1) (<= i1 r11b)) (<= (first1 branch__split_fields2) i1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

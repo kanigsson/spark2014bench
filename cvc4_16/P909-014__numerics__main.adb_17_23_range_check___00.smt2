@@ -752,3 +752,4 @@ Target solver: CVC4
   (in_range1
   (- (+ 1 (+ (length 1 6) (length (first1 temp___206) (last1 temp___206)))) 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

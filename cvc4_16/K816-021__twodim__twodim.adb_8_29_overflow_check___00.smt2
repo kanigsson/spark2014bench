@@ -415,3 +415,4 @@ Target solver: CVC4
   (forall ((o Int))
   (=> (= (to_rep (get m i temp___206)) o) (in_range (+ o 1)))))))))))
 (check-sat)
+(exit)

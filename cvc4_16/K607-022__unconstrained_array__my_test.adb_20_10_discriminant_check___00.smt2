@@ -1820,3 +1820,4 @@ Target solver: CVC4
                                                                temp___358))) k))))))))))
   (in_range6 10 (us_split_discrs1 temp___358))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

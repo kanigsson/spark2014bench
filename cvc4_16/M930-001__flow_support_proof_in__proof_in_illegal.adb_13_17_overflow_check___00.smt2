@@ -139,3 +139,4 @@ Target solver: CVC4
   (=> (dynamic_invariant temp false false true true) (in_range
   (+ x body_var)))))))))
 (check-sat)
+(exit)

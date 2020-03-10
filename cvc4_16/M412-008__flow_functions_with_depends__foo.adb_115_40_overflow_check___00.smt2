@@ -139,3 +139,4 @@ Target solver: CVC4
   (=> (and (wobble__function_guard o3 o2 o1) (= (= o3 true) (= o2 0)))
   (=> (not (= o3 true)) (in_range (+ a 1)))))))))))))))
 (check-sat)
+(exit)

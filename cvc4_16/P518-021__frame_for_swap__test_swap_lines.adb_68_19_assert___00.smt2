@@ -614,3 +614,4 @@ Target solver: CVC4
   (=> (<= i 10)
   (=> (<= 1 j) (=> (<= j 10) (=> (= i j) (= (to_rep (get m5 i j)) 1))))))))))))))))))))))
 (check-sat)
+(exit)

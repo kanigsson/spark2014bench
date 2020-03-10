@@ -558,3 +558,4 @@ Target solver: CVC4
      (us_split_fields1 (rec__binary_search__tree_acc__pointer_value o2)))) true))))))
   (=> (= o1 true) (rec__binary_search__tree_acc__pointer_value__pred t)))))))))
 (check-sat)
+(exit)

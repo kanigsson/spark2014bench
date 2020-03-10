@@ -388,3 +388,4 @@ Target solver: CVC4
           (last1 temp___187) new_sub 1 5)) true))
   true false)) true) (in_range1 (+ pos1 1))))))))))))
 (check-sat)
+(exit)

@@ -394,3 +394,4 @@ Target solver: CVC4
   (= (select temp___loop_entry_214 (bvadd k #x01)) true))))
   (=> (bvule i #x0A) (bvuge i #x00)))))))))
 (check-sat)
+(exit)

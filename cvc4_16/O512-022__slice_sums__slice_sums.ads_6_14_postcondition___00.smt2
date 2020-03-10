@@ -838,3 +838,4 @@ Target solver: CVC4
                  (rec__sums__slice_bounds__lo
                  slice_sums__maximal_sum_slice_bounds__result))))))))))))))
 (check-sat)
+(exit)

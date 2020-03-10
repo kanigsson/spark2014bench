@@ -244,3 +244,4 @@ Target solver: CVC4
   (let ((o1 (power x e2)))
   (=> (in_range o1) (forall ((r21 Int)) (=> (= r21 o1) (<= e1 e2))))))))))))))))))
 (check-sat)
+(exit)

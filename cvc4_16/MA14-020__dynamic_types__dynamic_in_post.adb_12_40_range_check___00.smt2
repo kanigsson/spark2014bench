@@ -323,3 +323,4 @@ Target solver: CVC4
   (let ((temp___292 (first1 s)))
   (=> (<= temp___292 (last1 s)) (<= (first1 s) temp___292))))))
 (check-sat)
+(exit)

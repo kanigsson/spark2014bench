@@ -365,3 +365,4 @@ Target solver: CVC4
   (=> (= spark__branch2 (ite (= op 2) true false))
   (=> (= spark__branch2 true) (in_range2 (+ x y))))))))))))))))
 (check-sat)
+(exit)

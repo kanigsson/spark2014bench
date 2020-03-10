@@ -194,3 +194,4 @@ Target solver: CVC4
   (=> (= main__with_postcondition__result o)
   (not (= id main__with_postcondition__result)))))))))
 (check-sat)
+(exit)

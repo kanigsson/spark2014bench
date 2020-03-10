@@ -973,3 +973,4 @@ Target solver: CVC4
   (let ((o11 (+ o10 o9)))
   (=> (in_range1 o11) (<= (to_rep1 value__first) o11))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

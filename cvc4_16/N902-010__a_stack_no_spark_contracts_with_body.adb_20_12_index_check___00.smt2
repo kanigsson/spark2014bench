@@ -250,3 +250,4 @@ Target solver: CVC4
   (forall ((sp1 Int))
   (=> (= sp1 o) (forall ((o1 item)) (=> (= (to_rep o1) it) (<= 1 sp1))))))))))))))
 (check-sat)
+(exit)

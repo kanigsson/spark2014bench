@@ -449,3 +449,4 @@ Target solver: CVC4
   (=> (= (first1 (to_string (attr__ATTRIBUTE_IMAGE3 x4) 5)) 1)
   (<= (length (to_string (attr__ATTRIBUTE_IMAGE3 x4) 5)) 5)))))))))))))))))))
 (check-sat)
+(exit)

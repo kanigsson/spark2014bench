@@ -370,3 +370,4 @@ Target solver: CVC4
   (=> (forall ((a1 Int) (b1 Int)) (omod__function_guard (omod a1 b1) a1 b1))
   (= (omod a b) 0)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

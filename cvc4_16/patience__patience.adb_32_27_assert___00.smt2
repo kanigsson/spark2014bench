@@ -1077,3 +1077,4 @@ Target solver: CVC4
      (select (rec__patience__state__values s__split_fields) topstacki2)) o4)
   (=> (not (<= c o4)) (<= 0 topstacki2)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -793,3 +793,4 @@ Target solver: CVC4
                                                                false)) true)
   (<= (to_rep1 lengths__first_2) x2)))))))))))))
 (check-sat)
+(exit)

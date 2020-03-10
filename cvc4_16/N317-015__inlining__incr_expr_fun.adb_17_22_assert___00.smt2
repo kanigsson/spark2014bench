@@ -261,3 +261,4 @@ Target solver: CVC4
   (=> (forall ((x1 Int)) (incr_pub_pub__function_guard (incr_pub_pub x1) x1))
   (= (incr_pub_pub x) (+ x 1))))))))))
 (check-sat)
+(exit)

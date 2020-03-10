@@ -423,3 +423,4 @@ Target solver: CVC4
      (us_split_discrs1 (rec__rec_inv__list_acc__pointer_value x))) true)
   (< 0 rec_inv__f__result))))))))))))
 (check-sat)
+(exit)

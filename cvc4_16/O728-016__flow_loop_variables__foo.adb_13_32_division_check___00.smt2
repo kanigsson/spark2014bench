@@ -220,3 +220,4 @@ Target solver: CVC4
  ;; File "foo.adb", line 9, characters 0-0
   (not (forall ((i Int)) (=> (in_range1 i) (not (= 2 0))))))
 (check-sat)
+(exit)

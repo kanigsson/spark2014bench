@@ -998,3 +998,4 @@ Target solver: CVC4
   (<= o3 (to_rep (rec__queue__mylists__list__capacity (us_split_discrs1 o2)))))
   (in_range7 (+ o3 1))))) (not (= (is_empty queue__enqueue__result) true))))))))))))))))))
 (check-sat)
+(exit)

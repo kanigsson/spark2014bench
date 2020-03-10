@@ -1456,3 +1456,4 @@ Target solver: CVC4
      (rec__use_formal_vectors__my_vect__vector__top v__split_fields1)) o11)
   (let ((o12 (- usf o11))) (=> (in_range1 o12) (in_range6 o12)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

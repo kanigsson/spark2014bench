@@ -525,3 +525,4 @@ Target solver: CVC4
   (forall ((fd us_rep))
   (=> (default_initial_assumption fd false) (not (= (is_open fd) true))))))
 (check-sat)
+(exit)

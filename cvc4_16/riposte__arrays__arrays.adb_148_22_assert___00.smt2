@@ -300,3 +300,4 @@ Target solver: CVC4
   (= (to_rep
      (select (rec__arrays__optional_int_array__a r__split_fields1) 1)) 5)))))))
 (check-sat)
+(exit)

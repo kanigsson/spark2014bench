@@ -465,3 +465,4 @@ Target solver: CVC4
   (= (all_elements_in a 8000000) true)) (= input_space 8))
   (= (intermediate_form a ghost__) true)))))))
 (check-sat)
+(exit)

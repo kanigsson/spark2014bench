@@ -560,3 +560,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 y true false true true)
   (=> (= (to_rep (rec__p2__r__a full_s__split_fields)) o) (in_range (+ o x))))))))
 (check-sat)
+(exit)

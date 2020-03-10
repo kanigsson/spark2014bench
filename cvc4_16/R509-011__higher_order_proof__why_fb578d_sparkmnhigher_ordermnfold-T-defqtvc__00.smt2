@@ -807,3 +807,4 @@ Target solver: CVC4
      (to_rep1 (select (to_array1 temp___610) (last2 o3)))) true))))
   (<= i (last5 temp___610))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

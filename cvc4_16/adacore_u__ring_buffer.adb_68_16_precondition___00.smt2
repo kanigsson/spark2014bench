@@ -609,3 +609,4 @@ Target solver: CVC4
   (=> (= (valid_model first length2 model1 content) true)
   (=> (< (length model1) 100) (< (length model1) 2147483647))))))))))
 (check-sat)
+(exit)

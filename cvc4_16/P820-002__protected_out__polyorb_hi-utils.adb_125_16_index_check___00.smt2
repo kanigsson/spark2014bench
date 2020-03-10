@@ -355,3 +355,4 @@ Target solver: CVC4
   (ite (and (<= first2 j1) (<= j1 (last1 s))) true false)) true)
   (<= (first1 s) j1)))))))))))))))))
 (check-sat)
+(exit)

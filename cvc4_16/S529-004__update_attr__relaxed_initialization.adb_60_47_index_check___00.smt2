@@ -755,3 +755,4 @@ Target solver: CVC4
   (= (and (ite (<= o usf) true false) (ite (<= usf idx) true false)) true)
   (<= (to_rep obj__first) usf))))))))))))))))))
 (check-sat)
+(exit)

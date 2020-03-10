@@ -1464,3 +1464,4 @@ Target solver: CVC4
   (=> (= (to_rep (select d i1)) o)
   (=> (= (to_rep1 (select bit_count_c o)) o1) (in_range2 (+ total_ones1 o1))))))))))))
 (check-sat)
+(exit)

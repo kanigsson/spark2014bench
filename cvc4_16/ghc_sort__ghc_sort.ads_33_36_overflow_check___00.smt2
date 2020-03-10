@@ -851,3 +851,4 @@ Target solver: CVC4
   (let ((o5 (length s)))
   (=> (in_range1 o5) (=> (in_range1 (+ o5 1)) (in_range1 (+ usf 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

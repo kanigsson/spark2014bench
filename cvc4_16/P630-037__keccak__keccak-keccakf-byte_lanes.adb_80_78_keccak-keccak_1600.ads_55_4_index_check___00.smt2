@@ -1164,3 +1164,4 @@ Target solver: CVC4
   (=> (in_range1 o5)
   (let ((o6 (+ o5 i1))) (=> (in_range1 o6) (<= (first1 data) o6)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

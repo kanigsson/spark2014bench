@@ -552,3 +552,4 @@ Target solver: CVC4
   (and (<= (- o2) temp___176) (<= temp___176 o2))))))))) (= o1 false))
   (not (= o1 true))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

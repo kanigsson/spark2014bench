@@ -770,3 +770,4 @@ Target solver: CVC4
   (=> (and (dynamic_invariant3 1 true false true true) (= 1 1))
   (=> (not (= position1 1)) (in_range6 (- position1 1))))))))))))))))))
 (check-sat)
+(exit)

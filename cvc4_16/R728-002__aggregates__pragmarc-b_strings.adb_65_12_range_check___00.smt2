@@ -4356,3 +4356,4 @@ Target solver: CVC4
   (<= (first1
       (rec__ada___pragmarc__b_strings__b_string__value to____split_fields1)) 1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -266,3 +266,4 @@ Target solver: CVC4
 ;; G
   (not (< 0 x)))
 (check-sat)
+(exit)

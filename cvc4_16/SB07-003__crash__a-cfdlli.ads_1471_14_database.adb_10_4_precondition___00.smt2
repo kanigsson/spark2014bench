@@ -1224,3 +1224,4 @@ Target solver: CVC4
   (let ((o2 (model1 o1)))
   (=> (= (length2 o2) (length o1)) (<= o (last2 o2))))))))))))
 (check-sat)
+(exit)

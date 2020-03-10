@@ -199,3 +199,4 @@ Target solver: CVC4
   (let ((o (- e 1)))
   (=> (in_range o) (forall ((o1 et1)) (=> (= (to_rep o1) o) (<= 1 (+ i 1))))))))))
 (check-sat)
+(exit)

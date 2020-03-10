@@ -1989,3 +1989,4 @@ Target solver: CVC4
      (us_split_fieldsqtmk result____split_fields2))
      (to_rep (select (to_array a) i))) true))))))))))))))))))))))))
 (check-sat)
+(exit)

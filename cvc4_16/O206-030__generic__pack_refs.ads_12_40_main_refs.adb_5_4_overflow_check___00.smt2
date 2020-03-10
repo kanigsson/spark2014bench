@@ -114,3 +114,4 @@ Target solver: CVC4
   (forall ((main_refs__func_inst__result Int))
   (=> (= main_refs__func_inst__result o) (in_range1 (+ formal external))))))))))))
 (check-sat)
+(exit)

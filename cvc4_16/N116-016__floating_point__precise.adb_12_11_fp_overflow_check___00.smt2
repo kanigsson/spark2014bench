@@ -170,3 +170,4 @@ Target solver: CVC4
   (fp.leq z3 (fp #b0 #b10000001 #b00000000000000000010101)))
   (fp.isFinite32 (fp.div RNE x y)))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -911,3 +911,4 @@ Target solver: CVC4
   (=> (= (to_rep3 (select all_0 1)) 0)
   (=> (= (to_rep (select all_1 1)) 1) (= (to_rep2 (select all_2 1)) 2))))))))))))))))))))))))
 (check-sat)
+(exit)

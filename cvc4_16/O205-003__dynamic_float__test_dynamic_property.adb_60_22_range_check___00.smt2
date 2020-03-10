@@ -344,3 +344,4 @@ Target solver: CVC4
   (fp #b0 #b01111111 #b00000000000000000000000) last1
   test_dynamic_property__nested__dyn_param__x)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

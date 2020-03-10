@@ -66,3 +66,4 @@ Target solver: CVC4
   (forall ((a__test__result Bool))
   (=> (= a__test__result (distinct 1 0)) (= a__test__result true)))))
 (check-sat)
+(exit)

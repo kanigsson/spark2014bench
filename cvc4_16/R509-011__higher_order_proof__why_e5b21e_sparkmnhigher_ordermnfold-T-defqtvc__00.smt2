@@ -1415,3 +1415,4 @@ Target solver: CVC4
   (=> (dynamic_property first last usf)
   (let ((o5 (- usf1 1))) (=> (in_range1 o5) (<= o5 (to_rep r__last_2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

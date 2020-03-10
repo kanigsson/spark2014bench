@@ -1334,3 +1334,4 @@ Target solver: CVC4
   (= (to_rep (rec__use_formal_vectors__my_vect__vector__top v__split_fields)) o1)
   (in_range1 (+ o1 1)))))))))))))
 (check-sat)
+(exit)

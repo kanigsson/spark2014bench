@@ -448,3 +448,4 @@ Target solver: CVC4
   (and (and (<= 0 c) (<= c 2))
   (= (bool_eq (select (rec__p__painting__plain p__split_fields) c) d) true))))))))
 (check-sat)
+(exit)

@@ -483,3 +483,4 @@ Target solver: CVC4
                         temp___alloc_232))
   (= (attr__tag x__pointer_value) us_tag))))))))))))))))))))))
 (check-sat)
+(exit)

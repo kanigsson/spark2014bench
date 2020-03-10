@@ -860,3 +860,4 @@ Target solver: CVC4
         (us_repqtmk2 (us_split_fieldsqtmk2 temp___313)))))
   (= e3 1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -288,3 +288,4 @@ Target solver: CVC4
   (=> (and (<= 1 o2) (<= o2 64))
   (forall ((o3 Int)) (=> (= (to_rep (select values1 o2)) o3) (<= 1 usf)))))))))))))))))))))))
 (check-sat)
+(exit)

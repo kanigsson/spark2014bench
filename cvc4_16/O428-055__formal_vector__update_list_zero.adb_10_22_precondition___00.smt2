@@ -1008,3 +1008,4 @@ Target solver: CVC4
   (=> (not (<= o2 threshold))
   (=> (= (length1 (model1 usf)) (length usf)) (<= 1 usf1)))))))))))))))))))))
 (check-sat)
+(exit)

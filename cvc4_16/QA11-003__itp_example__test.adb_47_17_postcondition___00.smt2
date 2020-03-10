@@ -263,3 +263,4 @@ Target solver: CVC4
   (=> (= b1 (bvadd b #x01))
   (=> (= test__test_5__result b1) (= test__test_5__result #x05)))))))))
 (check-sat)
+(exit)

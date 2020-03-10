@@ -379,3 +379,4 @@ Target solver: CVC4
   (=> (and (<= 0 usf) (<= usf 30))
   (forall ((o10 Int)) (=> (= (to_rep (select a5 usf)) o10) (<= 0 usf))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

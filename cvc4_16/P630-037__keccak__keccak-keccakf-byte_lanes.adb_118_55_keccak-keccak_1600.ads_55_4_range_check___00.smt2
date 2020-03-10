@@ -1022,3 +1022,4 @@ Target solver: CVC4
   (forall ((i Int))
   (=> (= i 0) (let ((o9 (* i 8))) (=> (in_range1 o9) (in_range2 o9))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

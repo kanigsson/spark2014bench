@@ -369,3 +369,4 @@ Target solver: CVC4
   current_time__split_fields1))
   (= (bool_eq (get_current_time current_time__split_fields) zero) true)))))))
 (check-sat)
+(exit)

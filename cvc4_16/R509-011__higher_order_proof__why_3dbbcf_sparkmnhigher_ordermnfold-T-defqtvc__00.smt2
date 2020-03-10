@@ -437,3 +437,4 @@ Target solver: CVC4
   (let ((o (- i 1)))
   (=> (in_range1 o) (=> (dynamic_property first last o) (<= (first2 a) i))))))))))))))
 (check-sat)
+(exit)

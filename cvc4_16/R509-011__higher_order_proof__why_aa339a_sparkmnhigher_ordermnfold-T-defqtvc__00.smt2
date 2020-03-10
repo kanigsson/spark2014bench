@@ -1065,3 +1065,4 @@ Target solver: CVC4
   (=> (not (= k1 temp___674))
   (forall ((k2 Int)) (=> (= k2 (+ k1 1)) (in_range8 k2)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

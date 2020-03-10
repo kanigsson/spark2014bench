@@ -700,3 +700,4 @@ Target solver: CVC4
   (forall ((o9 Int))
   (=> (= (to_rep1 (select cut2 temp___429)) o9) (in_range1 (+ o9 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

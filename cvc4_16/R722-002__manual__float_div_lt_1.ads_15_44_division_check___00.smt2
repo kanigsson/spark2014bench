@@ -366,3 +366,4 @@ Target solver: CVC4
                                          false)) true)
   (not (= (of_int divisor) 0))))))))
 (check-sat)
+(exit)

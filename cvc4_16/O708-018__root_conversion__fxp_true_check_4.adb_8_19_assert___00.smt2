@@ -141,3 +141,4 @@ Target solver: CVC4
   (=> (= md2 10000000000)
   (=> (dynamic_invariant md2 true false true true) (= md (- md2)))))))))
 (check-sat)
+(exit)

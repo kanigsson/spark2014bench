@@ -187,3 +187,4 @@ Target solver: CVC4
                         temp___alloc_190))
   (= (to_rep x__pointer_value) (- 12345))))))))))))
 (check-sat)
+(exit)

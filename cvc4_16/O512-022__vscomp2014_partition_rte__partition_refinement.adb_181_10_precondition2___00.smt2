@@ -2956,3 +2956,4 @@ Target solver: CVC4
   (= (has_element x (us_repqtmk (us_split_fieldsqtmk c__split_fields))) true)
   (= (bool_eq (us_repqtmk (us_split_fieldsqtmk c__split_fields)) no_element) true))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

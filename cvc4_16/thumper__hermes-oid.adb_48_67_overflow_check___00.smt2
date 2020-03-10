@@ -908,3 +908,4 @@ Target solver: CVC4
   (let ((o10 (- i1 (first1 separates))))
   (=> (in_range1 o10) (in_range1 (- o10 2)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

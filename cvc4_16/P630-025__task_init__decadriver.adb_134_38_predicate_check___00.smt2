@@ -1942,3 +1942,4 @@ Target solver: CVC4
   (rec__decadriver__rx_frame_type__frame q_2) o13
   (rec__decadriver__rx_frame_type__overrun q_2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

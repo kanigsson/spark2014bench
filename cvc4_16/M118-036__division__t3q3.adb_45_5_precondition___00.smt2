@@ -250,3 +250,4 @@ Target solver: CVC4
   (=> (= p1 (* q1 y))
   (=> (dynamic_invariant p1 true true true true) (<= p1 (- 2147483647 r1))))))))))))))))))
 (check-sat)
+(exit)

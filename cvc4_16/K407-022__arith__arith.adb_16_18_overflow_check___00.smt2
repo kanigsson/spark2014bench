@@ -269,3 +269,4 @@ Target solver: CVC4
   (=> (= tmp13 (mod2 o8 z))
   (let ((o9 (div1 x y))) (=> (in_range o9) (in_range (* o9 z))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

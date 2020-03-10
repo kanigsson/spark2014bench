@@ -449,3 +449,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array s2) j21)) o3)
   (forall ((o4 integer)) (=> (= (to_rep o4) o3) (<= (to_rep r__first) j3))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -366,3 +366,4 @@ Target solver: CVC4
   (=> (dynamic_invariant code false false true true)
   (=> (<= from (last1 value)) (=> (<= from (last1 value)) (in_range1 from))))))))))))
 (check-sat)
+(exit)

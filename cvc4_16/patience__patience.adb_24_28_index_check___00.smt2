@@ -1051,3 +1051,4 @@ Target solver: CVC4
   (= o2 (ite (= pred1 o7) true false)))))))))))))) (= o2 false))))
   (=> (= o2 true) (<= 0 pred1))))))))))))))))))))))))))
 (check-sat)
+(exit)

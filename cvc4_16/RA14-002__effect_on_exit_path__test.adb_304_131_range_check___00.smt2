@@ -1241,3 +1241,4 @@ Target solver: CVC4
      (us_split_fields3 (select os_task_mbx_rw task_id)))) o5)
   (in_range2 (bvsub o5 #x01))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

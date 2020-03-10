@@ -956,3 +956,4 @@ Target solver: CVC4
   (forall ((o1 character))
   (=> (= (to_rep o1) 48) (<= (to_rep1 decoded_string__first) i1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1259,3 +1259,4 @@ Target solver: CVC4
   (=> (= (to_rep1 word__first) temp___253)
   (<= (to_rep1 word__first) temp___253))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -124,3 +124,4 @@ Target solver: CVC4
           true false) (ite (< a2 b2) true false)) true)
   (=> (not (<= a2 b2)) (in_range1 (- b2 1)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -879,3 +879,4 @@ Target solver: CVC4
                              result____split_fields1)))
   (in_range1 (+ (first1 separates) 2)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

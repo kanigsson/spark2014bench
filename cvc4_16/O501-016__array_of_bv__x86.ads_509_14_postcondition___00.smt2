@@ -420,3 +420,4 @@ Target solver: CVC4
   (=> (forall ((rcx2 (_ BitVec 64))) (cl__function_guard (cl rcx2) rcx2))
   (= (cl rcx1) #x01)))))))))
 (check-sat)
+(exit)

@@ -135,3 +135,4 @@ Target solver: CVC4
   (forall ((remainder3 Int))
   (=> (= remainder3 o1) (=> (<= divisor remainder3) (<= 0 remainder3)))))))))))))))))))))))))
 (check-sat)
+(exit)

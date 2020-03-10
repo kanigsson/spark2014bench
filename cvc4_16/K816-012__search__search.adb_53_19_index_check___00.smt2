@@ -271,3 +271,4 @@ Target solver: CVC4
   (=> (<= (first1 table) index2)
   (=> (<= index2 (last1 table)) (<= (first1 table) index1))))))))))))
 (check-sat)
+(exit)

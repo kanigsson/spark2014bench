@@ -884,3 +884,4 @@ Target solver: CVC4
   (rec__tester__ring_buffer__ring_buffer_type__tail buffer__split_fields2)
   (rec__tester__ring_buffer__ring_buffer_type__items buffer__split_fields2))))))))))))))))))))
 (check-sat)
+(exit)

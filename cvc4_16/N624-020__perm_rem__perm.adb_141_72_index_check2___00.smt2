@@ -500,3 +500,4 @@ Target solver: CVC4
   (=> (= o6 o5)
   (let ((o7 (+ usf 1))) (=> (in_range1 o7) (<= (first1 b) o7))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

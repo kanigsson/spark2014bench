@@ -586,3 +586,4 @@ Target solver: CVC4
   (let ((o8 (fp.mul RNE delta_lat1 delta_lat1)))
   (=> (fp.isFinite32 o8) (fp.isFinite32 (fp.add RNE o8 o7)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

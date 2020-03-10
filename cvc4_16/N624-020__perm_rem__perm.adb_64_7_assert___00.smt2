@@ -689,3 +689,4 @@ Target solver: CVC4
   (ite (and (<= (first1 a) ia1) (<= ia1 (last1 a))) true false)) true)
   (= ia1 temp___971))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

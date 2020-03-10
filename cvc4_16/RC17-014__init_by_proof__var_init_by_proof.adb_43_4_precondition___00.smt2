@@ -114,3 +114,4 @@ Target solver: CVC4
   (=> (= x__attr__init1 true)
   (=> (= x__attr__init1 true) (= x__attr__init2 true))))))))))))))))
 (check-sat)
+(exit)

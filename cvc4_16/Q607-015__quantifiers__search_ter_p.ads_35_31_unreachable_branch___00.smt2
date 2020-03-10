@@ -605,3 +605,4 @@ Target solver: CVC4
   (= search_ter_p__search__result result____split_fields)))))))))))))))))))
   (not (= (= (length1 b) 0) true)))))))))))))))))
 (check-sat)
+(exit)

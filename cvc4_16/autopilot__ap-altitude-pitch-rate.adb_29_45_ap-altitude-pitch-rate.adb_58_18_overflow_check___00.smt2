@@ -445,3 +445,4 @@ Target solver: CVC4
   (= i1 10)))))))))))) (= sum1 sum))))
   (=> (= gap1 10) (in_range1 (div1 sum1 gap1)))))))))))))))
 (check-sat)
+(exit)

@@ -742,3 +742,4 @@ Target solver: CVC4
   (=> (< i2 10)
   (or (< temp___233 i2) (and (= i2 temp___233) (< r2 temp___232))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

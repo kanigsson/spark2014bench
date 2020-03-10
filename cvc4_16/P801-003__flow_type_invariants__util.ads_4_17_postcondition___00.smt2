@@ -75,3 +75,4 @@ Target solver: CVC4
   (=> (= util__exclusive_or__result (and (or a b) (not (and a b))))
   (=> (= util__exclusive_or__result true) (=> (= a true) (not (= b true))))))))
 (check-sat)
+(exit)

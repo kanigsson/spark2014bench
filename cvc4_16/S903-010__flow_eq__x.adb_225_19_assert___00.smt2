@@ -399,3 +399,4 @@ Target solver: CVC4
   (forall ((a1 Int) (b1 Int)) (oexpon__function_guard (oexpon a1 b1) a1 b1))
   (= (oexpon a b) 0)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

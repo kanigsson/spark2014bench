@@ -685,3 +685,4 @@ Target solver: CVC4
   (= test__bit_set__result (ite (not (= (bvand o3 o) #x00000000)) true false))
   (not (= #x0000000000000020 #x0000000000000000)))))))))))))))))))))
 (check-sat)
+(exit)

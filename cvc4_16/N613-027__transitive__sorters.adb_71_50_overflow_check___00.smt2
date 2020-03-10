@@ -420,3 +420,4 @@ Target solver: CVC4
      (of_array values (to_rep values__first) (to_rep values__last))) true)
   (=> (= (to_rep values__last) o) (in_range1 (- o 1))))))))))))))
 (check-sat)
+(exit)

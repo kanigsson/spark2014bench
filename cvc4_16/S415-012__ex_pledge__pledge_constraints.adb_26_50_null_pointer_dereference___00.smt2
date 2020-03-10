@@ -907,3 +907,4 @@ Target solver: CVC4
   (rec__pledge_constraints__int_acc_option__content
   (us_split_fields1 (select (to_array temp___254) 1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

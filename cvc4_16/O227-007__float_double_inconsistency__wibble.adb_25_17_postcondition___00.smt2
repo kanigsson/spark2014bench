@@ -623,3 +623,4 @@ Target solver: CVC4
   (=> (= state1 o)
   (fp.leq state1 (fp.mul RNE ((_ to_fp_unsigned 11 53) RNE (bvadd x #x00000001)) (fp #b0 #b10000000010 #b0110000000000000000000000000000000000000000000000000))))))))))))))
 (check-sat)
+(exit)

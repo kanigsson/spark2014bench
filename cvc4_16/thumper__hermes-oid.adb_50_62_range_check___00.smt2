@@ -926,3 +926,4 @@ Target solver: CVC4
   (= result____split_fields3 result____split_fields2)))))))
   (let ((o7 (length separates))) (=> (in_range1 o7) (in_range6 (- o7 2)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

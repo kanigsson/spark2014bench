@@ -1253,3 +1253,4 @@ Target solver: CVC4
   (or (= ethernet_dissector__match__result (length buffer))
   (= ethernet_dissector__match__result 0)))))))
 (check-sat)
+(exit)

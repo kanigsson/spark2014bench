@@ -1376,3 +1376,4 @@ Target solver: CVC4
   (or (= last3 (- (to_rep1 item__first) 1))
   (and (<= (to_rep1 item__first) last3) (<= last3 (to_rep1 item__last)))))))))))))))))))))))
 (check-sat)
+(exit)

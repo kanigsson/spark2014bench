@@ -873,3 +873,4 @@ Target solver: CVC4
   (=> (not (= i1 temp___529))
   (forall ((i2 Int)) (=> (= i2 (- i1 1)) (dynamic_property first last i2))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

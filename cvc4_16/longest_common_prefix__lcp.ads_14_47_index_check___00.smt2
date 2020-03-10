@@ -413,3 +413,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array a) temp___192)) o)
   (<= (first1 a) (+ x usf)))))))))))))))))))))))))
 (check-sat)
+(exit)

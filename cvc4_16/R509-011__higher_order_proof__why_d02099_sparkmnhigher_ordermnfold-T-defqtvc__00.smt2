@@ -1254,3 +1254,4 @@ Target solver: CVC4
   (= o8 (ite (= (choose o7) true) (+ o6 1) o6)))
   (<= (to_rep r__first_2) usf1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

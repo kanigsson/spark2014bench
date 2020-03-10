@@ -468,3 +468,4 @@ Target solver: CVC4
   (and (and (<= (to_rep1 a__first) 1) (<= 3 (to_rep1 a__last)))
   (not (= (to_rep (select a 3)) 0))) (<= (to_rep1 a__first) 3))))))))
 (check-sat)
+(exit)

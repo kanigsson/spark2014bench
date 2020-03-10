@@ -556,3 +556,4 @@ Target solver: CVC4
   (let ((o8 (- length2 l1)))
   (=> (in_range1 o8) (=> (not (<= o8 l1)) (in_range1 (* 2 l1)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

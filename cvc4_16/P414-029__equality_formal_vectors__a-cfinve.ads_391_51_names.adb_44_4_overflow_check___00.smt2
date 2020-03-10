@@ -785,3 +785,4 @@ Target solver: CVC4
         2147483647)))
   (in_range7 (- o2 count)))))))))))))
 (check-sat)
+(exit)

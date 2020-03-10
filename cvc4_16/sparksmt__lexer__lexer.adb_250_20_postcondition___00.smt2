@@ -672,3 +672,4 @@ Target solver: CVC4
   (= t__split_discrs1 o2)))))))))))))))))))
   (= (to_rep1 t__split_discrs1) kind))))))))))
 (check-sat)
+(exit)

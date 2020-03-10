@@ -286,3 +286,4 @@ Target solver: CVC4
   (<= (to_rep (select values1 j)) (to_rep (select values1 (+ j 1))))))
   (=> (<= current limit) (<= 1 current))))))))))))))))))
 (check-sat)
+(exit)

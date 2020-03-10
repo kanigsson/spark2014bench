@@ -1270,3 +1270,4 @@ Target solver: CVC4
   (in_range1 (+ o3 1)))))))))))
   (<= 1 (to_rep (rec__static_discr__holder__length current__split_fields))))))))))))))))))))
 (check-sat)
+(exit)

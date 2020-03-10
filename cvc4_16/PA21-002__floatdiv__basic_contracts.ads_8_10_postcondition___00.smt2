@@ -101,3 +101,4 @@ Target solver: CVC4
   (=> (= basic_contracts__increment__result o)
   (= basic_contracts__increment__result (+ item 1))))))))))
 (check-sat)
+(exit)

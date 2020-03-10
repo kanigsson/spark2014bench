@@ -1356,3 +1356,4 @@ Target solver: CVC4
   (forall ((temp3 (_ BitVec 8)))
   (=> (= temp3 o22) (<= (to_rep result____first) right_index3)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

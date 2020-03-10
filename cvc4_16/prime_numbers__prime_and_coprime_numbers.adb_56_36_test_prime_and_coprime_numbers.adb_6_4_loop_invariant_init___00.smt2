@@ -401,3 +401,4 @@ Target solver: CVC4
   (let ((o1 right))
   (=> (in_range3 o1) (forall ((b1 Int)) (=> (= b1 o1) (< 0 a1))))))))))))))))))))))))))
 (check-sat)
+(exit)

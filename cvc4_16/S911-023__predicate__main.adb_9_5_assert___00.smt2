@@ -642,3 +642,4 @@ Target solver: CVC4
   (us_repqtmk buffer__is_null_pointer buffer__pointer_address
   buffer__pointer_value) true false true true))))))))))))))))
 (check-sat)
+(exit)

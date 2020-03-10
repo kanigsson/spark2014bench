@@ -71,3 +71,4 @@ Target solver: CVC4
   (=> (= original__opposite__result (ite (= x true) false true))
   (=> (= original__opposite__result true) (not (= x true)))))))
 (check-sat)
+(exit)

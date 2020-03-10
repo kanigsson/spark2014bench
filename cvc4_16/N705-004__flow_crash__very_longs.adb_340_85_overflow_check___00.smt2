@@ -717,3 +717,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (to_array temp___1312) digit_index1)) o)
   (=> (< digit_index1 i) (in_range2 (+ digit_index1 1)))))))))))))))))))))
 (check-sat)
+(exit)

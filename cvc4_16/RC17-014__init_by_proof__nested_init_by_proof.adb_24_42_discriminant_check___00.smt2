@@ -353,3 +353,4 @@ Target solver: CVC4
   (=> (= (rec__nested_init_by_proof__rec__d (us_split_discrs1 x)) true)
   (nested_init_by_proof__rec__f1__pred y)))))))
 (check-sat)
+(exit)

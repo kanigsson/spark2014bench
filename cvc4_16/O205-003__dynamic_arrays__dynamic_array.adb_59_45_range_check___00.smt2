@@ -1437,3 +1437,4 @@ Target solver: CVC4
   (let ((o3 (+ f1 1))) (and (in_range1 o3) (= f2 o3))) (= f2 f1))))
   (dynamic_property 0 last f2)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

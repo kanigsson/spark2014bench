@@ -225,3 +225,4 @@ Target solver: CVC4
   (=> (consistent__function_guard (consistent c i) c i)
   (not (= (consistent c i) true)))))))))))))))))
 (check-sat)
+(exit)

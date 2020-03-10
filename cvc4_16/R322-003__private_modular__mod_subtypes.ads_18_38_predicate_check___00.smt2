@@ -368,3 +368,4 @@ Target solver: CVC4
   (=> (dynamic_invariant a true false true true)
   (=> (even__function_guard (even #xFE) #xFE) (= (even #xFE) true))))))))))
 (check-sat)
+(exit)

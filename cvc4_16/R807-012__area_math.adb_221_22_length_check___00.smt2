@@ -1282,3 +1282,4 @@ Target solver: CVC4
   (=> (<= (first1 temp___428) (last1 temp___428))
   (<= 1 (+ (to_rep (rec__area_math__ensemble__size (us_split_fields1 e))) 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

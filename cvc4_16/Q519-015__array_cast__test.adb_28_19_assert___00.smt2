@@ -1133,3 +1133,4 @@ Target solver: CVC4
   (forall ((j Int))
   (=> (and (<= 1 j) (<= j 100)) (= (to_rep1 (select (select y i) j)) 1))))))))))))))))))))
 (check-sat)
+(exit)

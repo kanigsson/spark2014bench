@@ -318,3 +318,4 @@ Target solver: CVC4
   (=> (= (length s) (- i 1))
   (=> (<= 1 j) (=> (<= j (- i 1)) (= (contains s j) true)))))))))))
 (check-sat)
+(exit)

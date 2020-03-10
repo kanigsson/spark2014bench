@@ -177,3 +177,4 @@ Target solver: CVC4
   (or (and (<= 1 temp___217) (<= temp___217 9))
   (and (<= 11 temp___217) (<= temp___217 2147483647)))))))))))))
 (check-sat)
+(exit)

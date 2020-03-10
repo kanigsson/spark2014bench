@@ -809,3 +809,4 @@ Target solver: CVC4
   (=> (exists ((o4 Int)) (= (to_rep1 (select (to_array1 temp___610) i)) o4))
   (<= i (last2 a))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

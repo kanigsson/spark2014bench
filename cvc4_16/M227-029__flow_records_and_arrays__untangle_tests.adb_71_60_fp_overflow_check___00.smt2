@@ -669,3 +669,4 @@ Target solver: CVC4
              (us_split_fields3 (select tl3 t1))) v)))) o10)
   (fp.isFinite32 (fp.add RNE o10 o9)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

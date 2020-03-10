@@ -760,3 +760,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 usf) true false) (ite (<= usf o) true false)) true)
   (<= (first1 (rec__area_math__ensemble__to (us_split_fields1 a))) usf))))))))))
 (check-sat)
+(exit)

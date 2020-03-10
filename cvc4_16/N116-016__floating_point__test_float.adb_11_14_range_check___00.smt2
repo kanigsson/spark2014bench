@@ -138,3 +138,4 @@ Target solver: CVC4
   (=> (fp.leq x (fp #b0 #b10001000 #b11110011110011001100110)) (in_range
   (fp.add RNE x (fp #b0 #b01111101 #b10011001100110011001101))))))))
 (check-sat)
+(exit)

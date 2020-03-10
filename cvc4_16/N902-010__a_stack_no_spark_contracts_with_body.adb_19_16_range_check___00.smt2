@@ -246,3 +246,4 @@ Target solver: CVC4
   (=> (forall ((sp1 Int)) (is_full__function_guard (is_full sp1) sp1))
   (=> (not (= (is_full sp) true)) (in_range (+ sp 1)))))))))
 (check-sat)
+(exit)

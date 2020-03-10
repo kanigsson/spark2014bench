@@ -330,3 +330,4 @@ Target solver: CVC4
   (=> (default_initial_assumption (us_repqtmk r_var__split_fields) false)
   (= t_var (to_rep (rec__dic2__r__x r_var__split_fields)))))))))))
 (check-sat)
+(exit)

@@ -339,3 +339,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 c false false true true)
   (not (<= first_char 1024)))))))))
 (check-sat)
+(exit)

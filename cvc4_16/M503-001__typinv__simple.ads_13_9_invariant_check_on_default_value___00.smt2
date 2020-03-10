@@ -95,3 +95,4 @@ Target solver: CVC4
   (=> (dynamic_invariant usf true false true true)
   (=> (= usf 42) (type_invariant usf))))))
 (check-sat)
+(exit)

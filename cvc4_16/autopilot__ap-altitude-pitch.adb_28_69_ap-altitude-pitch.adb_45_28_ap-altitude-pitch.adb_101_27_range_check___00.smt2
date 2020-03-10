@@ -632,3 +632,4 @@ Target solver: CVC4
   (=> (dynamic_invariant5 result__1 false false true true) (in_range6
   (div1 (- c17b c16b) 10))))))))))))))))))))))))))))
 (check-sat)
+(exit)

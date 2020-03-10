@@ -1327,3 +1327,4 @@ Target solver: CVC4
                                                                  0)) 
                                                                  k l)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -290,3 +290,4 @@ Target solver: CVC4
   (let ((o3 (* k1 j)))
   (=> (in_range1 o3) (=> (in_range1 (- i o3)) (not (= j 0))))))))))))))))))))))))
 (check-sat)
+(exit)

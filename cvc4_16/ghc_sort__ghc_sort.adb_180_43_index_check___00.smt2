@@ -1402,3 +1402,4 @@ Target solver: CVC4
   (forall ((o8 Int))
   (=> (= (to_rep (select ss 1)) o8) (<= (to_rep ss__first) 2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

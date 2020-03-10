@@ -388,3 +388,4 @@ Target solver: CVC4
   (=> (= (last1 temp___407) i)
   (=> (<= (first1 temp___407) (last1 temp___407)) (<= 2 i))))))))))
 (check-sat)
+(exit)

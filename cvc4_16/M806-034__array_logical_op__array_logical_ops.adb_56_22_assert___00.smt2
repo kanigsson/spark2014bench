@@ -429,3 +429,4 @@ Target solver: CVC4
   (=> (<= 1 i)
   (=> (<= i 10) (= (distinct (to_rep1 (select (to_array r5) i)) 0) true)))))))))))
 (check-sat)
+(exit)

@@ -124,3 +124,4 @@ Target solver: CVC4
   (is_empty__function_guard (is_empty the_stack1 the_ptr1) the_stack1
   the_ptr1)) (not (= (is_empty the_stack the_ptr) true)))))))
 (check-sat)
+(exit)

@@ -241,3 +241,4 @@ Target solver: CVC4
   (=> (dynamic_invariant tmp2 false false true true)
   (let ((o (+ x y))) (=> (in_range o) (in_range (+ o z))))))))))))
 (check-sat)
+(exit)

@@ -1541,3 +1541,4 @@ Target solver: CVC4
   (=> (dynamic_invariant remaining_bits true false true true) (in_range1
   (+ bit_length 7))))))))))))))))))))))
 (check-sat)
+(exit)

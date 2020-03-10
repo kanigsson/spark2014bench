@@ -384,3 +384,4 @@ Target solver: CVC4
   (=> (= z2 (+ x x))
   (forall ((z3 Int)) (=> (= z3 (* x two)) (= z3 (+ x x))))))))))))))))))))
 (check-sat)
+(exit)

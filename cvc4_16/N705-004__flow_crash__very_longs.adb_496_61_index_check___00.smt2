@@ -1247,3 +1247,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (not (= current_borrow #x0000)) true false))
   (=> (= spark__branch true) (<= (first1 quotient__split_fields1) j)))))))))))))))))))))
 (check-sat)
+(exit)

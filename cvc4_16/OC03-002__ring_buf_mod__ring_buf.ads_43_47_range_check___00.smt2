@@ -755,3 +755,4 @@ Target solver: CVC4
   (= (to_rep1 (rec__ring_buf__ring_buffer__length (us_split_fields1 r))) o2)
   (uint_in_range o2))))))))
 (check-sat)
+(exit)

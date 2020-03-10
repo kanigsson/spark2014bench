@@ -383,3 +383,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 remainder false false true true)
   (=> (ite (<= 0 v) (= o 1) (= o (- 1))) (in_range1 (* o (div1 d 2))))))))))))))))))))
 (check-sat)
+(exit)

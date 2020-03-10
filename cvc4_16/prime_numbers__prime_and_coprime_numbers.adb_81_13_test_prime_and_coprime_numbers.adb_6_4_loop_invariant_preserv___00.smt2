@@ -437,3 +437,4 @@ Target solver: CVC4
   (forall ((v1 Int)) (are_coprime__function_guard (are_coprime value v1)
   value v1)) (= (are_coprime value v) true)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

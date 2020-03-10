@@ -1238,3 +1238,4 @@ Target solver: CVC4
   (and (dynamic_invariant4 o4 true false true true)
   (= o4 (+ 0 (length2 m2)))) (= (last2 m2) (- i2 1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

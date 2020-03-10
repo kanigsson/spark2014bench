@@ -2287,3 +2287,4 @@ Target solver: CVC4
   (=> (in_range3 u_c1)
   (=> (in_range3 i_l1) (=> (in_range3 u_c2) (in_range3 i_l2))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

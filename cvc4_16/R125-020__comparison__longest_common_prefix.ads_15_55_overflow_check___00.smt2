@@ -447,3 +447,4 @@ Target solver: CVC4
   (=> (= longest_common_prefix__lcp__result l2) (in_range1
   (+ y longest_common_prefix__lcp__result))))))))))))))))))
 (check-sat)
+(exit)

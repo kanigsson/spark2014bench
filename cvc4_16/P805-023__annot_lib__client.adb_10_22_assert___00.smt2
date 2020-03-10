@@ -209,3 +209,4 @@ Target solver: CVC4
   (=> (not (= spark__branch1 true))
   (=> (get2__function_guard (get2 Tuple0) Tuple0) (= (get2 Tuple0) 10000)))))))))
 (check-sat)
+(exit)

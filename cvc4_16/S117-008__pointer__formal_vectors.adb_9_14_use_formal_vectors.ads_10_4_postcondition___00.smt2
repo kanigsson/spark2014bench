@@ -135,3 +135,4 @@ Target solver: CVC4
   (=> (= use_formal_vectors__my_vect__new_size__result o)
   (<= size use_formal_vectors__my_vect__new_size__result)))))))
 (check-sat)
+(exit)

@@ -2235,3 +2235,4 @@ Target solver: CVC4
   (forall ((to_line3 Int))
   (=> (= to_line3 o2) (in_range1 (+ num_deleted2 1)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

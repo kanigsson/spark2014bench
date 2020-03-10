@@ -176,3 +176,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i 100) true false)) true)
   (=> (forall ((j1 Int)) (f__function_guard (f j1) j1)) (= (f j) true)))))))))))
 (check-sat)
+(exit)

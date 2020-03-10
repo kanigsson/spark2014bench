@@ -553,3 +553,4 @@ Target solver: CVC4
   (forall ((o6 Int))
   (=> (= (to_rep1 (select cut usf)) o6) (in_range1 (+ o6 1)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

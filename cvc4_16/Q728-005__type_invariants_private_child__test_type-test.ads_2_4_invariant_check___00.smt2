@@ -241,3 +241,4 @@ Target solver: CVC4
   (not
   (=> (= (us_repqtmk (us_split_fieldsqtmk rliteral)) x) (type_invariant x))))
 (check-sat)
+(exit)

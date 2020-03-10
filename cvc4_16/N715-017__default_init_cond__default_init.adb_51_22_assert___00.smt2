@@ -208,3 +208,4 @@ Target solver: CVC4
   (us_repqtmk (us_split_fieldsqtmk g__split_fields)) false n)
   (= (to_rep g__split_fields) n))))))
 (check-sat)
+(exit)

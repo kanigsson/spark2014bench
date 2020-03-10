@@ -139,3 +139,4 @@ Target solver: CVC4
   (=> (not (= i1 100))
   (=> (= i2 (+ i1 1)) (=> (= k2 i2) (= k2 temp___loop_entry_159))))))))))))))
 (check-sat)
+(exit)

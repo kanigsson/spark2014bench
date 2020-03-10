@@ -412,3 +412,4 @@ Target solver: CVC4
   (= (= (ite (select number_list value) 1 0) (ite (distinct 1 0) 1 0)) true)
   (= test_prime_and_coprime_numbers__p__nearest_number__result value))))))))))))))
 (check-sat)
+(exit)

@@ -303,3 +303,4 @@ Target solver: CVC4
           true false) (ite (and (<= (+ k 1) i1) (<= i1 100)) true false)) true)
   (let ((o1 (- i1 k))) (=> (in_range1 o1) (<= 0 o1)))))))))))))))))))
 (check-sat)
+(exit)

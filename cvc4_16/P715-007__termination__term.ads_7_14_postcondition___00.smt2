@@ -117,3 +117,4 @@ Target solver: CVC4
   (and (loop_except_on_zero__function_guard o x)
   (and (dynamic_invariant o true false true true) (and (= x 0) (= o 0)))))))))))))
 (check-sat)
+(exit)

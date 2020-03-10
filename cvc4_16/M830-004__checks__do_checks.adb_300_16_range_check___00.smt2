@@ -5718,3 +5718,4 @@ Target solver: CVC4
   (=> (do_checks__do_discriminant_check__r1__arr__pred usf1)
   (=> (<= 1 usf) (<= 0 1)))))))))
 (check-sat)
+(exit)

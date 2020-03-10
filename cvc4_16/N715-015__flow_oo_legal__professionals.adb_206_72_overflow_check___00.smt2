@@ -1169,3 +1169,4 @@ Target solver: CVC4
      killer__split_fields)) o)
   (in_range (+ o 1))))))))))))
 (check-sat)
+(exit)

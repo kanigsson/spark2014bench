@@ -1240,3 +1240,4 @@ Target solver: CVC4
   (ite (< (first_2 a) j) (= (count_length1 i (- j 1)) true)
   (=> (< (first2 a) i) (= (count_length (- i 1)) true))) (<= j (last_2 a)))))))))))))))
 (check-sat)
+(exit)

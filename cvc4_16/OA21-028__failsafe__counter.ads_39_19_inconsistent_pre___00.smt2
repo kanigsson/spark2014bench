@@ -389,3 +389,4 @@ Target solver: CVC4
   (current_chain_length__function_guard (current_chain_length inputs1)
   inputs1)) (not (= (current_chain_length inputs) count)))))))
 (check-sat)
+(exit)

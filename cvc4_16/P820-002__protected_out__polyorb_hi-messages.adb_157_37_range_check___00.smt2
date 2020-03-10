@@ -879,3 +879,4 @@ Target solver: CVC4
      stream__split_fields2)) o7)
   (let ((o8 (+ o7 o6))) (=> (in_range2 o8) (in_range o8)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -265,3 +265,4 @@ Target solver: CVC4
   (= o false))))
   (=> (= o true) (=> (in_range1 (abs1 a)) (in_range1 (abs1 bn))))))))))))))))))
 (check-sat)
+(exit)

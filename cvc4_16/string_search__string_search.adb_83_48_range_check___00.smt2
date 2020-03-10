@@ -580,3 +580,4 @@ Target solver: CVC4
                    (last1 temp___385)))
   (=> (not (= spark__branch true)) (in_range1 (length needle))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -137,3 +137,4 @@ Target solver: CVC4
   (=> (= par21 (+ par1 x))
   (=> (dynamic_invariant par21 true true true true) (<= par1 par21)))))))))
 (check-sat)
+(exit)

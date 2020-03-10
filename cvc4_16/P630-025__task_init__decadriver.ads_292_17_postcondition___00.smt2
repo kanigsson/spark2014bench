@@ -4291,3 +4291,4 @@ Target solver: CVC4
                                       (rec__decadriver__configuration_type__phr_mode
                                       (us_split_fields1 config))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

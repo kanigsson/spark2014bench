@@ -254,3 +254,4 @@ Target solver: CVC4
   (and (dynamic_invariant o2 true false true true) (= o2 price_of_apple1)))
   (let ((o3 (* apples1 o2))) (=> (in_range o3) (in_range (+ money1 o3))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

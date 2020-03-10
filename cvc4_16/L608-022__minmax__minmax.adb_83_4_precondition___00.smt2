@@ -219,3 +219,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 mine false false true true)
   (=> (dynamic_invariant2 maxe false false true true) (< x y))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -469,3 +469,4 @@ Target solver: CVC4
   (dynamic_invariant1 size1 true true true true)))))))))))))))) (in_range1
   (+ size 1))))))))))
 (check-sat)
+(exit)

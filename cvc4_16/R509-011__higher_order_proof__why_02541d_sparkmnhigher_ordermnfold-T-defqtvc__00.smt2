@@ -1506,3 +1506,4 @@ Target solver: CVC4
   (ind_prop__function_guard o4 o7 o6 temp___540 temp___541))))))))
   (= o4 false)))) (=> (= o4 true) (<= (first_2 a) (first_2 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -297,3 +297,4 @@ Target solver: CVC4
   (=> (= a__pgcd__result o)
   (=> (not (= a__pgcd__result 0)) (in_range1 (abs1 a))))))))))))))))))))
 (check-sat)
+(exit)

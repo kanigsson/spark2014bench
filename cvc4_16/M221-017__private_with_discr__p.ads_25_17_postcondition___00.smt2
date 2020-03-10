@@ -259,3 +259,4 @@ Target solver: CVC4
   (=> (dynamic_invariant l true false true true)
   (=> (= p__identity1__result l) (= (bool_eq p__identity1__result l) true))))))
 (check-sat)
+(exit)

@@ -532,3 +532,4 @@ Target solver: CVC4
   (= (to_rep (select o5 j2)) (to_rep (select a j2)))))))
   (=> (<= (to_rep a__first) (to_rep a__last)) (<= 0 (to_rep a__first))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

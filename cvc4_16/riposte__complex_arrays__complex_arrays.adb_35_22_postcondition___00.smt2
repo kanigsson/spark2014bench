@@ -272,3 +272,4 @@ Target solver: CVC4
   (=> (dynamic_invariant j true false true true)
   (= (bool_eq (select a i) 0 1001 (select a j) 0 1001) true)))))
 (check-sat)
+(exit)

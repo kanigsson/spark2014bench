@@ -537,3 +537,4 @@ Target solver: CVC4
   (=> (<= (to_rep sq__first) usf)
   (=> (<= usf (to_rep sq__last)) (<= (to_rep sq__first) usf)))))))))))))
 (check-sat)
+(exit)

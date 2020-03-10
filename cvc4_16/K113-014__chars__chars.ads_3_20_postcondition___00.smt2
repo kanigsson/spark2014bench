@@ -183,3 +183,4 @@ Target solver: CVC4
   (= chars__doit__result (ite (= (ite (= z true) wz false) true) wwz false))
   (= chars__doit__result true))))))))))))))))))))))))))
 (check-sat)
+(exit)

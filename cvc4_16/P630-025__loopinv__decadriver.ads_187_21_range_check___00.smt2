@@ -568,3 +568,4 @@ Target solver: CVC4
                                               false)) true)
   (< offset 1024)) (in_range1 (length data))))))))
 (check-sat)
+(exit)

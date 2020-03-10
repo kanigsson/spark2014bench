@@ -761,3 +761,4 @@ Target solver: CVC4
   r14b)
   (<= 1 (to_rep2 (rec__vectors__cursor__index (us_split_fields1 position)))))))))))
 (check-sat)
+(exit)

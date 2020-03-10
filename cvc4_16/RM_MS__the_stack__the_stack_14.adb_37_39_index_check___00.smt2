@@ -230,3 +230,4 @@ Target solver: CVC4
   (forall ((pointer Int))
   (=> (dynamic_invariant pointer true false true true) (<= 1 pointer)))))
 (check-sat)
+(exit)

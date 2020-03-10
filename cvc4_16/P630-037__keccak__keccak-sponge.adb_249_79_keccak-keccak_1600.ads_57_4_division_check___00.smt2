@@ -1582,3 +1582,4 @@ Target solver: CVC4
   (= (rate_of (us_repqtmk ctx__split_fields1)) initial_rate))
   (=> (dynamic_invariant1 initial_rate false true true true) (not (= 8 0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

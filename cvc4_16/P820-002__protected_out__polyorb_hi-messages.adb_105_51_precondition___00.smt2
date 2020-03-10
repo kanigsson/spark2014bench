@@ -906,3 +906,4 @@ Target solver: CVC4
   (=> (forall ((o us_rep)) (valid__function_guard (valid o) o))
   (= (valid (us_repqtmk stream__split_fields)) true)))))))))
 (check-sat)
+(exit)

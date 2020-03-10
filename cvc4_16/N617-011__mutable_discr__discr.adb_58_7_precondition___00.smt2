@@ -344,3 +344,4 @@ Target solver: CVC4
   (= (us_split_discrsqtmk discr__r4__nested1__d__discrs) d2__split_discrs))
   (not (= d2__attr__constrained true)))))))))))))))))
 (check-sat)
+(exit)

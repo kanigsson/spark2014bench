@@ -281,3 +281,4 @@ Target solver: CVC4
   (ite (= (and (= x #x02) (= y #x04)) true) 1 0)) (ite (= (and (= x #x04) (= 
                                                   y #x02)) true) 1 0)) 1)))))
 (check-sat)
+(exit)

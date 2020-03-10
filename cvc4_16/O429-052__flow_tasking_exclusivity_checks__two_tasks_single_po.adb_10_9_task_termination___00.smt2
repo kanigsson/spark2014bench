@@ -115,3 +115,4 @@ Target solver: CVC4
  ;; File "two_tasks_single_po.adb", line 10, characters 0-0
   (not false))
 (check-sat)
+(exit)

@@ -243,3 +243,4 @@ Target solver: CVC4
                                                               e) true false)))
   (=> (= spark__branch true) (in_range1 (+ e 1))))))))))
 (check-sat)
+(exit)

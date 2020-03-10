@@ -3027,3 +3027,4 @@ Target solver: CVC4
   (=> (= o14 true)
   (= (has_element x (us_repqtmk (us_split_fieldsqtmk c__split_fields2))) true)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

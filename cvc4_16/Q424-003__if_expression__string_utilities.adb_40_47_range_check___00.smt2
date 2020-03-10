@@ -1063,3 +1063,4 @@ Target solver: CVC4
         (to_rep2 (get lengths2 o4 x21)) 0))))
   (dynamic_property1 0 last2 (max o5 o3))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

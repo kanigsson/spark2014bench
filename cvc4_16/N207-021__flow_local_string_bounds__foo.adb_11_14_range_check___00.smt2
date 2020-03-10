@@ -369,3 +369,4 @@ Target solver: CVC4
   (=> (= (to_rep1 tmp_b__first) o1)
   (=> (in_range (length o1 o)) (in_range (length1 tmp_c)))))))))))))))))))))
 (check-sat)
+(exit)

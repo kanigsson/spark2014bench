@@ -60,3 +60,4 @@ Target solver: CVC4
  ;; File "main.adb", line 3, characters 0-0
   (not (=> (rec____function_guard (rec__ 3) 3) (= (rec__ 3) true))))
 (check-sat)
+(exit)

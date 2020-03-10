@@ -502,3 +502,4 @@ Target solver: CVC4
   (partial_match_at needle haystack i1 j1) needle haystack i1 j1))
   (= (partial_match_at needle haystack i j) true)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

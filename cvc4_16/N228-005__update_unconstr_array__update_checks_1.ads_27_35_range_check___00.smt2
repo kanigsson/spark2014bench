@@ -411,3 +411,4 @@ Target solver: CVC4
   (= (select usf temp___413) (select a temp___413))))
   (forall ((a1 (Array Int integer))) (=> (= a1 usf) (=> (<= 1 i) (<= 1 1))))))))))))))))))))
 (check-sat)
+(exit)

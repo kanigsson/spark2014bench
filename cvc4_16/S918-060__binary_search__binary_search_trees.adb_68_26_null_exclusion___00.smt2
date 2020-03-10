@@ -552,3 +552,4 @@ Target solver: CVC4
   (rec__binary_search_trees__node_access__pointer_value__pred
   (rec__binary_search_trees__binary_search_tree__root tree__split_fields))))))))))))))
 (check-sat)
+(exit)

@@ -594,3 +594,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 j1) (<= j1 (length s))) true false)) true)
   (in_range1 (+ (first1 s) (- j1 1)))))))))))))))))))
 (check-sat)
+(exit)

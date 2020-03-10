@@ -453,3 +453,4 @@ Target solver: CVC4
   (= (to_rep1 (rec__dynamic_preds_rte__small_pair__b (us_split_fields1 i7s))) o)
   (not (= o 0)))))))))))
 (check-sat)
+(exit)

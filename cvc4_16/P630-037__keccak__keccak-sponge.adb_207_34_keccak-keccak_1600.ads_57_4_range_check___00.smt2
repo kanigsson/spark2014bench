@@ -1559,3 +1559,4 @@ Target solver: CVC4
   (let ((o7 (- bit_length (mod2 bit_length 8))))
   (=> (in_range1 o7) (in_range2 o7))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

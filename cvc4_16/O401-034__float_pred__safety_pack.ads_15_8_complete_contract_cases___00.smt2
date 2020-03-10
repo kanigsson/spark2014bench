@@ -183,3 +183,4 @@ Target solver: CVC4
                    1 0)) (ite (= (fp.gt value threshold) true) 1 0)) 
   (ite (= (fp.lt value (fp.neg threshold)) true) 1 0)))))))
 (check-sat)
+(exit)

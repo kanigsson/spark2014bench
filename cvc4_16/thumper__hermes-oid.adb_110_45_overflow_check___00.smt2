@@ -1208,3 +1208,4 @@ Target solver: CVC4
      (us_split_fields1 identifier))) o7)
   (in_range7 (* o7 40))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

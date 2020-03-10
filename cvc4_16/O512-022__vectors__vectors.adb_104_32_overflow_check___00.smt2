@@ -791,3 +791,4 @@ Target solver: CVC4
      (select (rec__vectors__vector__elements container__split_fields1) j1)) o)
   (forall ((o1 element_type)) (=> (= (to_rep4 o1) o) (in_range7 (+ j1 1))))))))))))))))))))
 (check-sat)
+(exit)

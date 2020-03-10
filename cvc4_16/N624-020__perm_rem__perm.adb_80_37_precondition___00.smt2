@@ -505,3 +505,4 @@ Target solver: CVC4
                                               (select (to_array o2) k))))))))
   (let ((o3 (first1 a))) (=> (in_range3 o3) (<= o3 (last1 a))))))))))))))))))))))
 (check-sat)
+(exit)

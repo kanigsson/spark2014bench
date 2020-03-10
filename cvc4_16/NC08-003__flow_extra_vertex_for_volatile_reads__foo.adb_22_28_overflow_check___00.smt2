@@ -225,3 +225,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 log_size true false true true) (in_range
   (+ log_size 1)))))))
 (check-sat)
+(exit)

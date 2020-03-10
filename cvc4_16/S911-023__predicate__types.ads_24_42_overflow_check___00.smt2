@@ -159,3 +159,4 @@ Target solver: CVC4
   (=> (dynamic_invariant index true false true true)
   (let ((o (* (- index 1) 8))) (=> (in_range1 o) (in_range1 (+ o 8)))))))
 (check-sat)
+(exit)

@@ -116,3 +116,4 @@ Target solver: CVC4
   (ite (= spark__branch2 true) (= minus__minus__result 2)
   (= minus__minus__result x)))))))))) (= minus__minus__result (- x 1)))))))))
 (check-sat)
+(exit)

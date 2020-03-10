@@ -1035,3 +1035,4 @@ Target solver: CVC4
   bounded_dynamic_strings__instance__2__result1))
   (= (length1 bounded_dynamic_strings__instance__2__result) 1)))))))))))))))))))))))
 (check-sat)
+(exit)

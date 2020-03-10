@@ -1203,3 +1203,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (to_array u__split_fields) temp___1356)) o7)
   (<= (first1 v__split_fields) (- n 1)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -323,3 +323,4 @@ Target solver: CVC4
   (forall ((r21 Float32))
   (=> (= r21 o3) (fp.leq (fp #b0 #b00000000 #b00000000000000000000000) r11)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -505,3 +505,4 @@ Target solver: CVC4
   (forall ((c Int))
   (=> (and (<= 0 c) (<= c 255)) (<= 1 (to_rep (select bad_shift3 c))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

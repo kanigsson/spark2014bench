@@ -195,3 +195,4 @@ Target solver: CVC4
   (forall ((i1 Int)) (mathematical_factorial__function_guard
   (mathematical_factorial i1) i1)) (= result__2 (mathematical_factorial i)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -483,3 +483,4 @@ Target solver: CVC4
   (=> (= (to_rep (select a o3)) o4) (in_range1
   (+ x longest_common_prefix__lcp__result)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

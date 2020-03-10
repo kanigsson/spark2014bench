@@ -1957,3 +1957,4 @@ Target solver: CVC4
   (=> (= spark__branch3 (ite (bvule x7 #x7FFFFFFF) true false))
   (=> (not (= spark__branch3 true)) (in_range (bv2nat (bvnot x7)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

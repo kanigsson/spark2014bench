@@ -599,3 +599,4 @@ Target solver: CVC4
   (let ((o20 (+ a_first i3)))
   (=> (in_range1 o20) (<= (to_rep a__first) o20)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

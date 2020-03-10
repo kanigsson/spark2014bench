@@ -789,3 +789,4 @@ Target solver: CVC4
   (forall ((value4 Int))
   (=> (= value4 (div1 value3 256)) (uint_in_range value4))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

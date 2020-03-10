@@ -911,3 +911,4 @@ Target solver: CVC4
   (=> (= spark__branch2 (ite (= decode_status1 0) false true))
   (=> (not (= spark__branch2 true)) (in_range1 (+ length_stop1 length2)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -256,3 +256,4 @@ Target solver: CVC4
   (=> (in_range o3)
   (let ((o4 (+ money1 o3))) (=> (in_range o4) (in_range1 o4)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -499,3 +499,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 usf true false true true)
   (=> (<= (first1 usf) (last1 usf)) (<= zero 5))))))))))
 (check-sat)
+(exit)

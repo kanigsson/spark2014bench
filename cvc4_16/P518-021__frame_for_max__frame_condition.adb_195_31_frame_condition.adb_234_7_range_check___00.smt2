@@ -708,3 +708,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 first3 true false true true)
   (=> (not (= 1 0)) (=> (= (to_rep1 a__first) o2) (in_range3 o2)))))))))))))))))))
 (check-sat)
+(exit)

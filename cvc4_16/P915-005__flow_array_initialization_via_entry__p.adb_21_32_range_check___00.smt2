@@ -335,3 +335,4 @@ Target solver: CVC4
   (=> (= (to_rep my_array__last) temp___238)
   (=> (<= index1 temp___238) (<= (to_rep my_array__first) index1))))))))))))))
 (check-sat)
+(exit)

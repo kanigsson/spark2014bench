@@ -1462,3 +1462,4 @@ Target solver: CVC4
   (= (value (to_rep (get (to_array a) i j))) c)))))
   (=> (in_range1 (length_2 a)) (in_range1 (length a))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -256,3 +256,4 @@ Target solver: CVC4
   (forall ((arithmetic__test_rem_b__result Int))
   (=> (= arithmetic__test_rem_b__result (mod1 a b)) (not (= b 0)))))))))
 (check-sat)
+(exit)

@@ -575,3 +575,4 @@ Target solver: CVC4
                                          true false)) true))
   (not (= space1 0)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

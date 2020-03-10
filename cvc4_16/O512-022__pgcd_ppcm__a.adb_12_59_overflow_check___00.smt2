@@ -259,3 +259,4 @@ Target solver: CVC4
   (let ((o2 (abs1 an)))
   (=> (in_range1 o2) (=> (not (<= o2 o1)) (in_range1 (abs1 b))))))))))))))))))))))
 (check-sat)
+(exit)

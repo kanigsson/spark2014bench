@@ -227,3 +227,4 @@ Target solver: CVC4
   (=> (not (= spark__branch1 true))
   (=> (in_range1 (+ i 1)) (not (= done__ true))))))))))))))))))))
 (check-sat)
+(exit)

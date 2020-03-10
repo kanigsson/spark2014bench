@@ -240,3 +240,4 @@ Target solver: CVC4
   (=> (dynamic_invariant t true false true true)
   (fp.eq (fp.roundToIntegral RTN x) x)))))))))))))))))
 (check-sat)
+(exit)

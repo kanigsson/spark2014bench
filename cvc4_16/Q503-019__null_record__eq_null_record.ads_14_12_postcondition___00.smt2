@@ -178,3 +178,4 @@ Target solver: CVC4
   (=> (= eq_null_record__always_true__result (distinct 1 0))
   (= eq_null_record__always_true__result true)))))
 (check-sat)
+(exit)

@@ -630,3 +630,4 @@ Target solver: CVC4
   (=> (= first4 o2)
   (let ((o3 (- 48 val__2))) (=> (in_range o3) (in_range2 o3))))))))))))))))))))))))
 (check-sat)
+(exit)

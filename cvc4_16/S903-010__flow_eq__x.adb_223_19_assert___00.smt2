@@ -391,3 +391,4 @@ Target solver: CVC4
   (forall ((a1 Int) (b1 Int)) (omultiply__function_guard (omultiply a1 b1) a1
   b1)) (= (omultiply a b) 0)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -320,3 +320,4 @@ Target solver: CVC4
   (= (and (ite (<= (first1 a) usf) true false) (ite (<= usf last2) true
                                                false)) true)))))))))))
 (check-sat)
+(exit)

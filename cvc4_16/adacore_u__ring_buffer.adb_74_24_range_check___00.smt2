@@ -632,3 +632,4 @@ Target solver: CVC4
   (= content1 (store content temp___314 o2))))))))) (in_range4
   (+ length2 1))))))))))))))))))
 (check-sat)
+(exit)

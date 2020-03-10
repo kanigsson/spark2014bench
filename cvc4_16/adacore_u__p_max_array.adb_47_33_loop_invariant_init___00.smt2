@@ -375,3 +375,4 @@ Target solver: CVC4
   (=> (<= (first1 b) j)
   (=> (<= j (last1 b)) (= j (+ (- i (to_rep1 a__first)) (first1 b)))))))))))))))))
 (check-sat)
+(exit)

@@ -296,3 +296,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 (us_repqtmk proxy__split_discrs) false false true
   true) (in_range input)))))))
 (check-sat)
+(exit)

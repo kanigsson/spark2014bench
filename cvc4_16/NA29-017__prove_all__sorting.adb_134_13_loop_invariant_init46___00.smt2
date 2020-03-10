@@ -553,3 +553,4 @@ Target solver: CVC4
      (of_array temp___loop_entry_260 (to_rep a__first) (to_rep a__last))
      (of_array a1 (to_rep a__first) (to_rep a__last)) a_first length2) true)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -819,3 +819,4 @@ Target solver: CVC4
   (=> (<= (+ position 3) (last1 data))
   (=> (dynamic_invariant temp false false true true) (= (mod1 position 4) 0))))))))))))))
 (check-sat)
+(exit)

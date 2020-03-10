@@ -254,3 +254,4 @@ Target solver: CVC4
   (=> (not (= y 0))
   (let ((o (* y (div1 x y)))) (=> (in_range o) (in_range (+ o (mod1 x y))))))))))
 (check-sat)
+(exit)

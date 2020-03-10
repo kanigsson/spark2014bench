@@ -386,3 +386,4 @@ Target solver: CVC4
   (=> (= x__split_discrs r24b)
   (=> (= x__attr__constrained true) (= (distinct 1 0) x__split_discrs))))))
 (check-sat)
+(exit)

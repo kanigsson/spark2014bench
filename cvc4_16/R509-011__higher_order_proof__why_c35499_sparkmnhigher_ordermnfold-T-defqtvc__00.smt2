@@ -1423,3 +1423,4 @@ Target solver: CVC4
   (to_rep (get (to_array a) i1 j1))))
   (= (choose (to_rep (get (to_array a) i j))) true)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

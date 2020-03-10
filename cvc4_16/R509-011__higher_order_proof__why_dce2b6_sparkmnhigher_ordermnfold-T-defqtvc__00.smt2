@@ -862,3 +862,4 @@ Target solver: CVC4
                                                                     a))) 
   (f (to_rep (select (to_array a) (first2 a))) (first2 a) init)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

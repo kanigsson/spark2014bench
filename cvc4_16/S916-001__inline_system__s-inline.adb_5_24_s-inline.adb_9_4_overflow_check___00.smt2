@@ -90,3 +90,4 @@ Target solver: CVC4
  ;; File "s-inline.ads", line 1, characters 0-0
   (not (in_range (+ 2147483647 1))))
 (check-sat)
+(exit)

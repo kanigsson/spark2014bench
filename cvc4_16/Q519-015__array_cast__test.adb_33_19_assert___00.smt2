@@ -1141,3 +1141,4 @@ Target solver: CVC4
   (=> (= result_array (convert2 test_array))
   (= (to_rep2 (select result_array 1)) 2))))))))))))))))))))
 (check-sat)
+(exit)

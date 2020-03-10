@@ -794,3 +794,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 digit false false true true)
   (=> (dynamic_invariant3 result__ false false true true) (not (= 8 0))))))))))))
 (check-sat)
+(exit)

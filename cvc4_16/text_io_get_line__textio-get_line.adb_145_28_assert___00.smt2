@@ -1343,3 +1343,4 @@ Target solver: CVC4
   (= k (- (find_char_in_slice 10 cur_position_at_start
           (- (+ cur_position_at_start n) 2) the_file) cur_position_at_start)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

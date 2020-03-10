@@ -418,3 +418,4 @@ Target solver: CVC4
      (select winners2 latest_highest_score1) false) true)
   (=> (<= 1 (- i 1)) (<= 0 1))))))))))))))))
 (check-sat)
+(exit)

@@ -571,3 +571,4 @@ Target solver: CVC4
   (=> (= (to_rep initial_crate__first) o2)
   (= (first1 (of_array initial_crate o2 o1)) (to_rep final_crate__first)))))))))))))))))
 (check-sat)
+(exit)

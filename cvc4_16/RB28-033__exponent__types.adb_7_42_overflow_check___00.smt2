@@ -357,3 +357,4 @@ Target solver: CVC4
   (=> (dynamic_invariant offset true false true true)
   (=> (<= offset 2147483634) (in_range (+ 13 offset))))))
 (check-sat)
+(exit)

@@ -1314,3 +1314,4 @@ Target solver: CVC4
   (= file_system3 file_system2)) (= current_in3 current_in2))
   (= current_out3 current_out2)) (= sum1 sum))))) (= (is_open source1) true)))))))))))))))))))
 (check-sat)
+(exit)

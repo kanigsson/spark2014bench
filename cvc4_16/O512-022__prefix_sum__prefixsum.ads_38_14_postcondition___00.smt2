@@ -675,3 +675,4 @@ Target solver: CVC4
   (and (in_range3 o) (and (= space1 o) (not (< space1 8)))))))))))))))))))))))))))))))))))))))))))))
   (and (= a1 a) (= space1 space))) (= (all_elements_in a1 8000000) true)))))))))))
 (check-sat)
+(exit)

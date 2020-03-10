@@ -201,3 +201,4 @@ Target solver: CVC4
   (=> (= (rec__logger__msg_queue_t__not_empty self__) true)
   (< 0 (to_rep (rec__logger__msg_queue_t__num_queued self__)))))))
 (check-sat)
+(exit)

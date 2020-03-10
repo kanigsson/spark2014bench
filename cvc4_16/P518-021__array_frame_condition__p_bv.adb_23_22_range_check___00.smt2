@@ -1013,3 +1013,4 @@ Target solver: CVC4
   (let ((temp___295 (bvadd i31 #x00000001)))
   (=> (bvule temp___295 #x00000003) (bvule #x00000001 temp___295))))))))))))))
 (check-sat)
+(exit)

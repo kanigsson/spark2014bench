@@ -537,3 +537,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__with_iterable__cursor__i (us_split_fields3 usf))) o2)
   (<= 1 o2))))))))))
 (check-sat)
+(exit)

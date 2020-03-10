@@ -429,3 +429,4 @@ Target solver: CVC4
               (rec__shapes5__circle__center_x shapes5__make_circle__result)) 
   (to_rep1 (rec__shapes5__circle__radius shapes5__make_circle__result))))))))))))))))))))))))
 (check-sat)
+(exit)

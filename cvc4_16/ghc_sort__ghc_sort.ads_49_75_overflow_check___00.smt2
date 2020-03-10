@@ -489,3 +489,4 @@ Target solver: CVC4
                                                false)) true)
   (let ((o2 (length s))) (=> (in_range1 o2) (in_range1 (- o2 usf))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

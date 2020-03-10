@@ -369,3 +369,4 @@ Target solver: CVC4
   (=> (in_range o2)
   (forall ((o3 natural)) (=> (= (to_rep o3) o2) (<= (to_rep1 x__first) 1)))))))))))))))))
 (check-sat)
+(exit)

@@ -817,3 +817,4 @@ Target solver: CVC4
   (=> (= (to_rep1 current_read__split_discrs1) o1)
   (=> (= o1 0) (in_range1 (+ current_idx 1)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -174,3 +174,4 @@ Target solver: CVC4
   (=> (= temp___193 i1)
   (forall ((temp___192 Int)) (=> (= temp___192 r1) (in_range2 (- r1 i1))))))))))))))))))))
 (check-sat)
+(exit)

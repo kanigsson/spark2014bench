@@ -969,3 +969,4 @@ Target solver: CVC4
   (fp.leq (fp.mul RNE (fp.mul RNE (fp.mul RNE ((_ to_fp 11 53) RNE (to_real (+ 
   n 1))) ((_ to_fp 11 53) RNE (to_real (+ n 2)))) bound) (fp #b0 #b01111111110 #b0000000000000000000000000000000000000000000000000000)) distance1))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

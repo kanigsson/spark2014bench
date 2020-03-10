@@ -659,3 +659,4 @@ Target solver: CVC4
   (= (to_rep (select (to_array a) ia)) (to_rep
                                        (select (to_array b) perm__get_witness__result)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

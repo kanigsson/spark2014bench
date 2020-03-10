@@ -171,3 +171,4 @@ Target solver: CVC4
   (not (fp.lt value (fp.neg (fp #b0 #b10001110 #b00000000000000000000000))))
   (in_range (to_int (fp.to_real (fp.roundToIntegral RNA value)))))))))
 (check-sat)
+(exit)

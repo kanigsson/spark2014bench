@@ -433,3 +433,4 @@ Target solver: CVC4
   (let ((o5 (+ o4 o1))) (and (= o o5) (in_range o5))))))))))))))))
   (let ((o1 (length m))) (=> (in_range o1) (in_range (* 100 o1))))))))))
 (check-sat)
+(exit)

@@ -699,3 +699,4 @@ Target solver: CVC4
                                                         false true)) true)
   (in_range1 counter1)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

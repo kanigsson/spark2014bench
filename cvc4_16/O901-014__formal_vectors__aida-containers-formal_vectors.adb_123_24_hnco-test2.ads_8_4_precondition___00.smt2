@@ -6058,3 +6058,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 r261s true false true true)
   (=> (in_range r261s) (<= 1 i)))))))))))))))))))
 (check-sat)
+(exit)

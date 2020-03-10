@@ -816,3 +816,4 @@ Target solver: CVC4
   (=> (= (to_rep2 o1) digit2)
   (<= (first1 number__split_fields) digit_number1))))))))))))))))))
 (check-sat)
+(exit)

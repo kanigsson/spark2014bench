@@ -280,3 +280,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (=> (dynamic_invariant temp false false true true) (not (= 2 0)))))))
 (check-sat)
+(exit)

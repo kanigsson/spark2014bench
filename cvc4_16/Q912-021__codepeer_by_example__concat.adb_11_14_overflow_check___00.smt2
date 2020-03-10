@@ -305,3 +305,4 @@ Target solver: CVC4
   (=> (and (<= (to_rep z__first) k2) (<= k2 (to_rep z__last))) (in_range1
   (+ k2 1))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -214,3 +214,4 @@ Target solver: CVC4
   (=> (m_has_element__function_guard (m_has_element c p) c p)
   (=> (= (m_has_element c p) true) (<= 1 p))))))
 (check-sat)
+(exit)

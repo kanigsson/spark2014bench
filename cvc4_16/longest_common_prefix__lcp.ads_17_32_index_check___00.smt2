@@ -419,3 +419,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array a) temp___194)) o1)
   (<= (first1 a) (+ x lcp__result)))))))))))))))))))))))))))
 (check-sat)
+(exit)

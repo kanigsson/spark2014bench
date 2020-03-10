@@ -622,3 +622,4 @@ Target solver: CVC4
   (=> (= val__2 (mod1 int__1 10))
   (=> (in_range (- int__1 val__2)) (not (= 10 0))))))))))))))))
 (check-sat)
+(exit)

@@ -361,3 +361,4 @@ Target solver: CVC4
   (=> (and (<= (first1 a_begins) i2) (<= i2 (last1 a_begins)))
   (= (to_rep (select (to_array a_begins) i2)) 0)))))))))))))))))))))
 (check-sat)
+(exit)

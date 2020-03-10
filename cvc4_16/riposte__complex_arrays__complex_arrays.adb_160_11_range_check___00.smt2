@@ -338,3 +338,4 @@ Target solver: CVC4
           true false) (ite (and (<= 0 j1) (<= j1 i)) true false)) true)
   (= j1 temp___310)))))))) (= tmp1 tmp))))) (=> (<= i 1001) (<= 0 i))))))))
 (check-sat)
+(exit)

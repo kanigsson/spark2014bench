@@ -101,3 +101,4 @@ Target solver: CVC4
   (let ((o (prim_func t1_var)))
   (not (and (prim_func__function_guard o t1_var) (= o t1_var)))))))
 (check-sat)
+(exit)

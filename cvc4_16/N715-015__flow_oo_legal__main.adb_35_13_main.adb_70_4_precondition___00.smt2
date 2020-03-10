@@ -1611,3 +1611,4 @@ Target solver: CVC4
      (us_repqtmk1 uni_student__split_fields uni_student__attr__tag)
      skill_of_the_day) true))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

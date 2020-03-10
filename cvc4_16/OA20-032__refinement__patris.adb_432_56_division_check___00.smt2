@@ -409,3 +409,4 @@ Target solver: CVC4
   (forall ((level_nbr (_ BitVec 32)))
   (=> (dynamic_invariant1 level_nbr true false true true) (not (= 11 0))))))
 (check-sat)
+(exit)

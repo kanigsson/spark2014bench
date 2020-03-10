@@ -473,3 +473,4 @@ Target solver: CVC4
                                                   battery_threshold)))
                                              1 0)) 1)))))))
 (check-sat)
+(exit)

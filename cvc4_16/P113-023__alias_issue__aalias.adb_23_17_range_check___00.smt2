@@ -619,3 +619,4 @@ Target solver: CVC4
   (=> (= (to_rep1 b1__first) o3) (in_range1
   (length (bv2nat o3) (bv2nat o2)))))))))))))))
 (check-sat)
+(exit)

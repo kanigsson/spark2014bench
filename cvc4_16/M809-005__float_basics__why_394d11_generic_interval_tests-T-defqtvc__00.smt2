@@ -182,3 +182,4 @@ Target solver: CVC4
   (let ((o (fp.mul RNE x (fp #b0 #b10000000000 #b0000000000000000000000000000000000000000000000000000))))
   (=> (fp.isFinite64 o) (forall ((z1 Float64)) (=> (= z1 o) (fp.lt x z1))))))))))))))
 (check-sat)
+(exit)

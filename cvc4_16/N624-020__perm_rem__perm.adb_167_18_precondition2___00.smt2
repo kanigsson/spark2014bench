@@ -872,3 +872,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (rec__perm__witnesses__ia (us_split_fields1 w))) o8)
   (<= (first1 a) o8))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

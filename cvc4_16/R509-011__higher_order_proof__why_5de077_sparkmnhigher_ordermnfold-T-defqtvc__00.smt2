@@ -881,3 +881,4 @@ Target solver: CVC4
                            (choose (to_rep (select (to_array a2) i)))) true)
                            1 0)))))))))))))))))))
 (check-sat)
+(exit)

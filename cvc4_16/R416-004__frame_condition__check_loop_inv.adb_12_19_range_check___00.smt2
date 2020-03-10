@@ -1269,3 +1269,4 @@ Target solver: CVC4
   (and (= a1 (store a2 i1 rliteral1)) (= i1 temp___189))))) (= a1 a)))))
   (=> (<= 1 10) (<= (to_rep a__first) 1)))))))))))))))))))
 (check-sat)
+(exit)

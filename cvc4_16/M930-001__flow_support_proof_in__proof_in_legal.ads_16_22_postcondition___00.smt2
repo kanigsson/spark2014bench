@@ -120,3 +120,4 @@ Target solver: CVC4
   (=> (= (is_ok_to_increase body_var) true)
   (=> (= var 0) (=> (in_range (+ x 1)) (= var var1))))))))))))
 (check-sat)
+(exit)

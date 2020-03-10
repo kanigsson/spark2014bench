@@ -107,3 +107,4 @@ Target solver: CVC4
   (get__function_guard (get ext_value1 local_value1) ext_value1
   local_value1)) (<= 0 (get ext_value local_value))))))
 (check-sat)
+(exit)

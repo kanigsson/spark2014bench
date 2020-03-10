@@ -318,3 +318,4 @@ Target solver: CVC4
   (=> (= (to_rep o) 10)
   (=> (= (to_rep o1) 0) (< 0 (length (to_rep o1) (to_rep o))))))))
 (check-sat)
+(exit)

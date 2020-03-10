@@ -2026,3 +2026,4 @@ Target solver: CVC4
                   ada___keccak__keccak_1600__keccakf_1600_lanes__extract_bytes__data__compl))
   (<= (length (to_rep o24) (to_rep o23)) 200))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -561,3 +561,4 @@ Target solver: CVC4
   (=> (= spark__branch3 (ite (< o8 i) true false))
   (=> (not (= spark__branch3 true)) (<= (first1 a) med2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

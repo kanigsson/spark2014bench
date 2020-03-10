@@ -910,3 +910,4 @@ Target solver: CVC4
                                                             true false)) true)
   (=> (< 0 string_search__qs__result) (in_range2 string_search__qs__result))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

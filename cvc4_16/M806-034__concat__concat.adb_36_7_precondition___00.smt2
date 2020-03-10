@@ -540,3 +540,4 @@ Target solver: CVC4
   (=> (= (to_rep (select d1 6)) (to_rep (select y 1)))
   (let ((o2 (of_array x 1 10))) (<= (first1 o2) (last1 o2))))))))))))))))))))))))))
 (check-sat)
+(exit)

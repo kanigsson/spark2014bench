@@ -1103,3 +1103,4 @@ Target solver: CVC4
   (=> (= ada___keccak__keccak_1600__sponge__rate_of__result o1)
   (< ada___keccak__keccak_1600__sponge__rate_of__result 1600))))))))))
 (check-sat)
+(exit)

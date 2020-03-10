@@ -288,3 +288,4 @@ Target solver: CVC4
   (= (bool_eq (us_repqtmk x__split_discrs x__split_fields1)
      (us_repqtmk y__split_discrs y__split_fields1)) true)))))))))))))))))))))
 (check-sat)
+(exit)

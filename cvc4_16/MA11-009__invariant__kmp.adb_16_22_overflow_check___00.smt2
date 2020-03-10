@@ -358,3 +358,4 @@ Target solver: CVC4
   (= (and (ite (<= (first1 p) i) true false) (ite (<= i o1) true false)) true)
   (in_range1 (- i j1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

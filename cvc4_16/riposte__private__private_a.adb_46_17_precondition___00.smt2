@@ -388,3 +388,4 @@ Target solver: CVC4
   (=> (forall ((o us_rep)) (get_length__function_guard (get_length o) o))
   (< 0 (get_length (us_repqtmk s__split_fields1))))))))))))))))))
 (check-sat)
+(exit)

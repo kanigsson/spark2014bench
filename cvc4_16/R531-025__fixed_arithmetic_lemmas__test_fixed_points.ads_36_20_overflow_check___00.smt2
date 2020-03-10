@@ -330,3 +330,4 @@ Target solver: CVC4
   (let ((o1 val1))
   (=> (= (fxp_div_int (* o1 o) o) o1) (in_range2 (* val1 val2)))))))))))
 (check-sat)
+(exit)

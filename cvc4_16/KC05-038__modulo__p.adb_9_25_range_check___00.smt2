@@ -420,3 +420,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 w true false true true) (in_range3
   (bvurem (bvsub u v) #x10))))))))))))))))
 (check-sat)
+(exit)

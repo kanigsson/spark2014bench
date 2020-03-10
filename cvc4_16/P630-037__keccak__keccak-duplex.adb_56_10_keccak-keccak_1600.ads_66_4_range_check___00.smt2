@@ -1215,3 +1215,4 @@ Target solver: CVC4
   (= (- (last1 temp___1182) (first1 temp___1182)) (- (- num_bytes 1) 0)))
   (< (- num_bytes 1) 0)) (=> (<= 0 (- num_bytes 1)) (<= 0 0))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -233,3 +233,4 @@ Target solver: CVC4
   (=> (<= start_pos end_pos)
   (=> (not (= start_pos end_pos)) (in_range2 (- end_pos 1))))))))
 (check-sat)
+(exit)

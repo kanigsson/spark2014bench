@@ -954,3 +954,4 @@ Target solver: CVC4
   (=> (= (to_rep1 o9) (bvsub o8 #x00000001))
   (<= (first1 (rec__repro__ensemble__areas (us_split_fields3 e))) e_pos)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

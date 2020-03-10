@@ -1123,3 +1123,4 @@ Target solver: CVC4
                                         cur_position_at_start))))))
   (in_range1 (length1 s))))))))))))))))))
 (check-sat)
+(exit)

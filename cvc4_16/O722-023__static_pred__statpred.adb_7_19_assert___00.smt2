@@ -165,3 +165,4 @@ Target solver: CVC4
  ;; File "statpred.adb", line 1, characters 0-0
   (not (=> (id__function_guard (id 2) 2) (in_range2 (id 2)))))
 (check-sat)
+(exit)

@@ -806,3 +806,4 @@ Target solver: CVC4
                                             current_out2 current_err2)))
   (< 0 (sum_of counter)))))))))))))))
 (check-sat)
+(exit)

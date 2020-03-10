@@ -346,3 +346,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 aliasing__swap__y true true true true)
   (<= (to_rep1 a__first) i))))))))))))))
 (check-sat)
+(exit)

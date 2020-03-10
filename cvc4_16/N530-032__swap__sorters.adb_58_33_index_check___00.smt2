@@ -365,3 +365,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= smallest2 current1) false true))
   (=> (= spark__branch true) (<= (to_rep values__first) smallest2))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

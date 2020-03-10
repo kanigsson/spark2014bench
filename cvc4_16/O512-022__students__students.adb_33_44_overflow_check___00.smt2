@@ -853,3 +853,4 @@ Target solver: CVC4
   (=> (= spark__branch5 (ite (= o1 1) true false))
   (=> (= spark__branch5 true) (in_range6 (+ fees2 12800))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

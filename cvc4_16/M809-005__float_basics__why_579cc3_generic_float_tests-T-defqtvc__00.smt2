@@ -293,3 +293,4 @@ Target solver: CVC4
      (rec__foo__double_tests__test_record_1__rec__a r__split_fields1)) o5)
   (=> (= y1 o5) (fp.eq x y1)))))))))))))))
 (check-sat)
+(exit)

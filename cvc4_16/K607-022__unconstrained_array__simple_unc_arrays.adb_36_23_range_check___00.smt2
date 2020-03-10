@@ -634,3 +634,4 @@ Target solver: CVC4
   (=> (in_range1 o3)
   (forall ((low2 Int)) (=> (= low2 o3) (in_range2 (- high1 1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

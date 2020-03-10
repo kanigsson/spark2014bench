@@ -510,3 +510,4 @@ Target solver: CVC4
   (= (to_rep (select saved_a 6)) (to_rep (select ghost__ 6))))
   (= (to_rep (select saved_a 7)) 0)) (not (< 0 space1)))))))))))))))))))))))))
 (check-sat)
+(exit)

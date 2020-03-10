@@ -403,3 +403,4 @@ Target solver: CVC4
      (rec__private_discr__p_with_default__c
      (us_split_discrs1 h__split_fields2))) c)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -465,3 +465,4 @@ Target solver: CVC4
   (forall ((o8 Int))
   (=> (= (to_rep1 change__first) o8) (in_range1 (+ o8 (- len 1)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

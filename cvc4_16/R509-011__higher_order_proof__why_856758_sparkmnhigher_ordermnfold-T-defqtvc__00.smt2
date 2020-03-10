@@ -1235,3 +1235,4 @@ Target solver: CVC4
   (=> (or (= i (first2 a)) (in_range1 (- i 1)))
   (=> (not (= i (first2 a))) (=> (in_range8 (last_2 a)) (in_range1 (- i 1))))))))))))))))
 (check-sat)
+(exit)

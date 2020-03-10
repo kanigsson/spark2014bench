@@ -548,3 +548,4 @@ Target solver: CVC4
   (= (bool_eq a 1 10 #x00 #x07
      (temp_____aggregate_def_215 a_2d_arr 5 #x07 v1 x y v2) 1 10 #x00 #x07) true))))))))))
 (check-sat)
+(exit)

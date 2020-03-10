@@ -271,3 +271,4 @@ Target solver: CVC4
   (=> (dynamic_invariant upper_bound true false true true)
   (=> (not (= arg2 #x0000000000000000)) (not (= arg2 #x0000000000000000))))))))
 (check-sat)
+(exit)

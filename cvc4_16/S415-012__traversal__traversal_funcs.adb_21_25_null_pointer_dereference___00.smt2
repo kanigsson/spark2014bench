@@ -559,3 +559,4 @@ Target solver: CVC4
   (= (us_pledge_get (traversal_funcs__next__pledge o2) o2 o3) true))
   (rec__traversal_funcs__list_acc__pointer_value__pred o3)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

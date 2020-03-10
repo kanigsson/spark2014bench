@@ -309,3 +309,4 @@ Target solver: CVC4
   (=> (in_range2 o)
   (forall ((min1 Int)) (=> (= min1 o) (in_range1 (+ (first1 unsorted) 1)))))))))))))
 (check-sat)
+(exit)

@@ -1969,3 +1969,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 x4 false false true true)
   (=> (dynamic_invariant y4 false false true true) (=> (<= 17 20) (<= 1 17)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

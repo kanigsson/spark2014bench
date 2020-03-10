@@ -551,3 +551,4 @@ Target solver: CVC4
   (=> (= (to_rep b__first) o3)
   (<= (+ o1 o) (+ (last1 (of_array b1 o3 o2)) 1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -218,3 +218,4 @@ Target solver: CVC4
   (=> (dynamic_invariant n true false true true)
   (=> (= x (temp_____aggregate_def_630 0 2 1)) (= (to_rep (select x n)) 0))))))
 (check-sat)
+(exit)

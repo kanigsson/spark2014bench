@@ -119,3 +119,4 @@ Target solver: CVC4
   (=> (forall ((x3 Int)) (add_one__function_guard (add_one x3) x3))
   (= x2 (add_one x1))))))))))))
 (check-sat)
+(exit)

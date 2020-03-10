@@ -3141,3 +3141,4 @@ Target solver: CVC4
   (= (to_rep3 (rec__pupils__pupildata__numberofpupils p__split_fields1)) o20)
   (in_range4 (+ o20 1)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

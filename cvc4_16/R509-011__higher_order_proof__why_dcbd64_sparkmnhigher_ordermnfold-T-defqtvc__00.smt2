@@ -1417,3 +1417,4 @@ Target solver: CVC4
   temp___522)
   (=> (< (first4 a) i2) (dynamic_property1 first1 last1 (first_2 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

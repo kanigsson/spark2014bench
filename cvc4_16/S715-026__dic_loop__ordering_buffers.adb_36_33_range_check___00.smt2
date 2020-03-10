@@ -888,3 +888,4 @@ Target solver: CVC4
                 buffer__split_fields) ((_ int2bv 8) (mod2 o1 256)))))))
   (forall ((message1 Int)) (=> (= message1 o3) (in_range4 orig_first))))))))))))))))))))))
 (check-sat)
+(exit)

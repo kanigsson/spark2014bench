@@ -258,3 +258,4 @@ Target solver: CVC4
  ;; File "arithmetic.adb", line 282, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (in_range2 (* 2 x)))))
 (check-sat)
+(exit)

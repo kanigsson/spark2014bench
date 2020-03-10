@@ -858,3 +858,4 @@ Target solver: CVC4
   (=> (forall ((rcx4 (_ BitVec 64))) (ecx__function_guard (ecx rcx4) rcx4))
   (bvult (ecx rcx3) temp___428))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

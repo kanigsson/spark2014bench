@@ -183,3 +183,4 @@ Target solver: CVC4
   (ite (= spark__branch7 true) (= r1 8) (= r1 7)))))))))))))))))))))))))
   (=> (= enums__tick_pos__result r1) (in_range1 enums__tick_pos__result))))))))
 (check-sat)
+(exit)

@@ -402,3 +402,4 @@ Target solver: CVC4
   (forall ((sv__scale__result (_ BitVec 64)))
   (=> (= sv__scale__result res) (bvule sv__scale__result capacity)))))))))))))))))
 (check-sat)
+(exit)

@@ -334,3 +334,4 @@ Target solver: CVC4
      (us_split_fields1 (to_base dispatching_result__init__2__result)))) 
   v))))))))
 (check-sat)
+(exit)

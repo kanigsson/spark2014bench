@@ -1087,3 +1087,4 @@ Target solver: CVC4
   (and (= spark__branch1 spark__branch) (= lengths1 lengths))))))) (in_range2
   (last1 s2))))))))))))))
 (check-sat)
+(exit)

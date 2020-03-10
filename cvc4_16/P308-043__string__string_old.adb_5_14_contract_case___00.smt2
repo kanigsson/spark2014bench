@@ -340,3 +340,4 @@ Target solver: CVC4
                                      (of_array s (to_rep1 s__first)
                                      (to_rep1 s__last))) idx))))))))))
 (check-sat)
+(exit)

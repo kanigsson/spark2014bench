@@ -525,3 +525,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 0 usf) true false) (ite (<= usf 7) true false)) true)
   (=> (not (= space1 4)) (=> (= space1 2) (not (= 8 0))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -223,3 +223,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (= a (temp_____aggregate_def_357 one))
   (= a (temp_____aggregate_def_361 one))))) (=> (= b 1) (<= 1 one)))))))))
 (check-sat)
+(exit)

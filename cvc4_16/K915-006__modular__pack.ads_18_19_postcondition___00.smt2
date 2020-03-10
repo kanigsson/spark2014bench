@@ -264,3 +264,4 @@ Target solver: CVC4
   (=> (not (= a b))
   (=> (= pack__minus__result (bvsub a b)) (not (= pack__minus__result #x00)))))))))
 (check-sat)
+(exit)

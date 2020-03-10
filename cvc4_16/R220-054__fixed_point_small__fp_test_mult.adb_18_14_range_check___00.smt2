@@ -469,3 +469,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 v false false true true)
   (=> (<= (abs1 x) 6) (=> (<= (abs1 y) 20) (in_range6 (fxp_mult x y)))))))))))
 (check-sat)
+(exit)

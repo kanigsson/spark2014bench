@@ -156,3 +156,4 @@ Target solver: CVC4
   (=> (dynamic_invariant b false false true true) (in_range
   (fp #b0 #b10000011 #b01000000000000000000000))))))
 (check-sat)
+(exit)

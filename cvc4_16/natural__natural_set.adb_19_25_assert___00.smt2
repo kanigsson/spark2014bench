@@ -526,3 +526,4 @@ Target solver: CVC4
   (us_repqtmk s__split_fields3) value))
   (= (contains (us_repqtmk s__split_fields2) value) true))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

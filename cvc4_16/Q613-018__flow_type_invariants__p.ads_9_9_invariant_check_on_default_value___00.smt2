@@ -184,3 +184,4 @@ Target solver: CVC4
   (forall ((usf integer)) (type_invariant
   (us_repqtmk (us_split_fieldsqtmk usf))))))
 (check-sat)
+(exit)

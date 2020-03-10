@@ -389,3 +389,4 @@ Target solver: CVC4
   (=> (= a__attr__constrained false)
   (=> (in_range 0) (in_range1 0 (us_split_discrsqtmk a__split_discrs)))))))))
 (check-sat)
+(exit)

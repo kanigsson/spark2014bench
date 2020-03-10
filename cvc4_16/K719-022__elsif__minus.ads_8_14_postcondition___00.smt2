@@ -108,3 +108,4 @@ Target solver: CVC4
   (ite (= x 1) (= o 0) (ite (= x 2) (= o 1) (ite (= x 3) (= o 2) (= o x))))
   (=> (= minus__minus2__result o) (= minus__minus2__result (- x 1))))))))))
 (check-sat)
+(exit)

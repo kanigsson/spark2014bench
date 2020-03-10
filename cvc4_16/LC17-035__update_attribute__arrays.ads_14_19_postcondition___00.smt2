@@ -257,3 +257,4 @@ Target solver: CVC4
      (temp_____aggregate_def_179 x (+ init_val 1) (to_rep (select an_arr 5)))
      1 8) true)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -193,3 +193,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (=> (= global_a__attr__init true) (in_range (+ x global_a))))))))))))))))
 (check-sat)
+(exit)

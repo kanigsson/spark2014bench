@@ -512,3 +512,4 @@ Target solver: CVC4
            (us_split_fields1 (rec__linear_search__list__pointer_value o))))) 1))))
   (let ((o2 (+ (min 2147483646 o1) 1))) (=> (in_range o2) (in_range1 o2))))))))))
 (check-sat)
+(exit)

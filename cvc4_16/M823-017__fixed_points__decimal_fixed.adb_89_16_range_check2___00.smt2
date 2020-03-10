@@ -413,3 +413,4 @@ Target solver: CVC4
   (=> (= y21 o1)
   (let ((o2 (to_int1 (+ x x)))) (=> (in_range1 o2) (in_range5 o2)))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -394,3 +394,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 from1 true true true true) (dynamic_invariant
   result__1 false true true true)) (= first2 (first1 a))))))))))))))))))
 (check-sat)
+(exit)

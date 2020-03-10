@@ -473,3 +473,4 @@ Target solver: CVC4
   (=> (bvule temp___314 (bvsub (last1 m) #x0001))
   (bvule (first1 m) temp___314)))))))
 (check-sat)
+(exit)

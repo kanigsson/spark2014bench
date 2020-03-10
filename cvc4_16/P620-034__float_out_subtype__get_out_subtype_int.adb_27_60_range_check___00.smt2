@@ -173,3 +173,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 yaw_rate_desired true false true true) (in_range
   pitch_rate_desired)))))))))))))
 (check-sat)
+(exit)

@@ -563,3 +563,4 @@ Target solver: CVC4
   (=> (and (<= 2 v) (<= v (- usf 1))) (not (= (mod2 usf v) 0)))))))
   (<= 0 usf)))))))))))))))))))
 (check-sat)
+(exit)

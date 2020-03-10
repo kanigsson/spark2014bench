@@ -658,3 +658,4 @@ Target solver: CVC4
   (= a2 a1))
   (forall ((o1 Int)) (=> (= (to_rep (select a2 0)) o1) (not (= o1 0))))))))))))))))))))))))))
 (check-sat)
+(exit)

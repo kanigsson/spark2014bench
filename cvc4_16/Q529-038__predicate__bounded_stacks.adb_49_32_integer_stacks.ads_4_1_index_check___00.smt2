@@ -1321,3 +1321,4 @@ Target solver: CVC4
   (= (to_rep (rec__integer_stacks__stack__top this__split_fields)) temp___413)
   (<= (first1 (rec__integer_stacks__stack__values this__split_fields)) temp___413))))))))))))
 (check-sat)
+(exit)

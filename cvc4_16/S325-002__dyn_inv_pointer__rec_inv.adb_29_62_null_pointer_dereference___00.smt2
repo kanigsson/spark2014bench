@@ -419,3 +419,4 @@ Target solver: CVC4
      false) true)
   (rec__rec_inv__list_acc__pointer_value__pred x)))))))
 (check-sat)
+(exit)

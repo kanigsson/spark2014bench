@@ -789,3 +789,4 @@ Target solver: CVC4
   (not (= (and (ite (<= 0 x1) true false) (ite (<= x1 10) true false)) true))
   (dynamic_property1 0 last2 0)))))))))))))
 (check-sat)
+(exit)

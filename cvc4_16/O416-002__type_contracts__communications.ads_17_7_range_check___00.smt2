@@ -772,3 +772,4 @@ Target solver: CVC4
      (rec__communications__communication__num (us_split_discrs1 usf1))) usf)
   (=> (<= 1 usf) (<= (- 2147483648) 1)))))))
 (check-sat)
+(exit)

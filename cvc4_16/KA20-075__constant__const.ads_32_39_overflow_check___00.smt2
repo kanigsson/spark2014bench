@@ -502,3 +502,4 @@ Target solver: CVC4
   (and (dynamic_invariant o6 true false true true) (= o6 1)))
   (let ((o7 (* 2 o6))) (=> (in_range o7) (in_range (- o7 1)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

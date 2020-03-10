@@ -319,3 +319,4 @@ Target solver: CVC4
   (=> (= a__ppcm__result o3)
   (=> (not (= a__ppcm__result 0)) (in_range1 (* a b)))))))))))))))))))))))
 (check-sat)
+(exit)

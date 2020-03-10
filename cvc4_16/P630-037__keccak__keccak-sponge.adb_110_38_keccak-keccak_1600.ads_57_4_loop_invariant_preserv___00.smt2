@@ -1891,3 +1891,4 @@ Target solver: CVC4
   (=> (in_range1 (+ offset3 remaining_bytes3))
   (= (+ offset3 remaining_bytes3) initial_data_len)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

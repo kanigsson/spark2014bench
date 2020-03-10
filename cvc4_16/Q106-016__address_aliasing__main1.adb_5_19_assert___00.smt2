@@ -108,3 +108,4 @@ Target solver: CVC4
   (=> (dynamic_invariant y true false true true)
   (=> (dynamic_invariant z true false true true) (= x 0)))))))
 (check-sat)
+(exit)

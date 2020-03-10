@@ -413,3 +413,4 @@ Target solver: CVC4
   (=> (= ((_ int2bv 8) o) u)
   (=> (dynamic_invariant1 u true false true true) (in_range_int y)))))))))
 (check-sat)
+(exit)

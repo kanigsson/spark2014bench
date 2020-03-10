@@ -428,3 +428,4 @@ Target solver: CVC4
   (=> (= unconstr__constr_call__result b)
   (= unconstr__constr_call__result true))))))))))))))
 (check-sat)
+(exit)

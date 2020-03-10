@@ -711,3 +711,4 @@ Target solver: CVC4
   (=> (= deadline o)
   (not (= (bool_eq2 value 1 1000 all_zeroes 1 1000) true)))))))))
 (check-sat)
+(exit)

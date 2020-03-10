@@ -420,3 +420,4 @@ Target solver: CVC4
   (= (to_rep1 new_str__last) (last1 str))))
   (=> (<= (first1 sub) (last1 sub)) (<= 1 (first1 sub))))))))))
 (check-sat)
+(exit)

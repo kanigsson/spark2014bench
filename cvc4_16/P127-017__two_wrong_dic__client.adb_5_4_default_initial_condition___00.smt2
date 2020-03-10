@@ -112,3 +112,4 @@ Target solver: CVC4
   (=> (really_false__function_guard (really_false Tuple0) Tuple0)
   (= (really_false Tuple0) true))))))
 (check-sat)
+(exit)

@@ -569,3 +569,4 @@ Target solver: CVC4
   (=> (= result__1 (store result__ i o3))
   (=> (<= (to_rep result____first) i) (<= 0 (to_rep result____first)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

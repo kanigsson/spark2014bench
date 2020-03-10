@@ -400,3 +400,4 @@ Target solver: CVC4
   (<= (- (length left) (num_overlaps left right)) (- 2147483647 (length
                                                                 right))))))
 (check-sat)
+(exit)

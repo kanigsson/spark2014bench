@@ -1627,3 +1627,4 @@ Target solver: CVC4
      test_higher_order3__my_count_2__fold_count__acc__fold__result) usf o9)) o10)
   (=> (and (<= (first_2 a) usf1) (<= usf1 (last_2 a))) (<= (first2 a) usf))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

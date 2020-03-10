@@ -236,3 +236,4 @@ Target solver: CVC4
   (=> (= x (iter_array__x__aggregate_def 0))
   (=> (<= 1 j) (=> (<= j 10) (= (to_rep (select x j)) 0)))))))
 (check-sat)
+(exit)

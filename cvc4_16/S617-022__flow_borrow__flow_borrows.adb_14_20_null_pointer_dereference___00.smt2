@@ -395,3 +395,4 @@ Target solver: CVC4
   (rec__flow_borrows__int_ptr__pointer_value__pred
   (rec__flow_borrows__two_ptrs__f x__split_fields2)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

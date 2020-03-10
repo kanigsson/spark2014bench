@@ -376,3 +376,4 @@ Target solver: CVC4
   (forall ((v1 (Array Int value))) (sorted__function_guard (sorted v1) v1))
   (=> (= (sorted v) true) (not (= 2 0))))))))))))
 (check-sat)
+(exit)

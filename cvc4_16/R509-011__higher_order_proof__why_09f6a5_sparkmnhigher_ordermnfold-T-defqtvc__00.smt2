@@ -1293,3 +1293,4 @@ Target solver: CVC4
   (= (value (to_rep (get (to_array a) i1 j))) c)) (= (sum_cst i1 j) true))
   (=> (in_range8 j) (=> (in_range7 i1) (<= i1 (last2 a)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1551,3 +1551,4 @@ Target solver: CVC4
   (=> (forall ((i3 Int)) (index_of__function_guard (index_of i3) i3))
   (< temp___306 (index_of i2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

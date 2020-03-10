@@ -615,3 +615,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__types__option__value search_ter_p__search__result)) o)
   (<= (length1 b) (length1 a)))))))))))))))))))))))
 (check-sat)
+(exit)

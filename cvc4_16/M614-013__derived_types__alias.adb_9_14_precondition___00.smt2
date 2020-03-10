@@ -346,3 +346,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (< 0 (to_rep (rec__alias__my_rec__modulus (us_split_fields1 r)))))))
 (check-sat)
+(exit)

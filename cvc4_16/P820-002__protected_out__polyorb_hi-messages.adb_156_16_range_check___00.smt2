@@ -844,3 +844,4 @@ Target solver: CVC4
   (and (<= r23b r24b) (= (- (last1 item) (first1 item)) (- r24b r23b)))
   (< r24b r23b)) (=> (<= r23b r24b) (<= 1 r23b))))))))))))))))))))))))))))
 (check-sat)
+(exit)

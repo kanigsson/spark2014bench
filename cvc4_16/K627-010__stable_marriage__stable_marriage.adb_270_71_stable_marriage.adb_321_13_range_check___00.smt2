@@ -1366,3 +1366,4 @@ Target solver: CVC4
      unmatched_g1_set__split_fields1)) o12)
   (in_range4 (+ o12 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -406,3 +406,4 @@ Target solver: CVC4
   (forall ((x1 (Array Int us_rep))) (get_length__function_guard
   (get_length (select x1 2)) (select x1 2))) (= (get_length (select x 2)) 2)))))))))
 (check-sat)
+(exit)

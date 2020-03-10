@@ -2691,3 +2691,4 @@ Target solver: CVC4
   (let ((o2 (+ (first1 tmp) 1)))
   (=> (in_range1 o2) (=> (<= o2 (last1 tmp)) (<= (first1 tmp) o2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

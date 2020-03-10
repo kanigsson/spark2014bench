@@ -793,3 +793,4 @@ Target solver: CVC4
   (rec__use_formal_vectors__my_vect__vector__content usf) false))
   (dynamic_predicate (us_repqtmk3 usf))))))
 (check-sat)
+(exit)

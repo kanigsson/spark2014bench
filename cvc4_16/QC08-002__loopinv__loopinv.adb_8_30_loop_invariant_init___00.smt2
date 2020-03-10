@@ -114,3 +114,4 @@ Target solver: CVC4
   (=> (forall ((j2 Int)) (cond__function_guard (cond j2) j2))
   (= (cond j1) true))))))))))))))
 (check-sat)
+(exit)

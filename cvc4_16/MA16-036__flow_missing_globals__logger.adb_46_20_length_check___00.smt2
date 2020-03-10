@@ -1251,3 +1251,4 @@ Target solver: CVC4
                 (last1 temp___258)) (first1 temp___257) ((_ int2bv 16) o4))))))))))
   (=> (bvule (first1 temp___259) (last1 temp___259)) (bvule #x0000 tmp))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

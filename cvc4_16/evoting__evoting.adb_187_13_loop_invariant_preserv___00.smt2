@@ -1151,3 +1151,4 @@ Target solver: CVC4
   (=> (and (<= (+ last_candidate 1) i) (<= i 20))
   (= (to_rep2 (select counters2 i)) 0))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

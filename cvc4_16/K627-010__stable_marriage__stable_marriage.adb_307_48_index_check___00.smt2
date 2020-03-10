@@ -1310,3 +1310,4 @@ Target solver: CVC4
   (=> (in_range2 o5)
   (forall ((rank1 Int)) (=> (= rank1 o5) (<= 1 (- rank1 1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

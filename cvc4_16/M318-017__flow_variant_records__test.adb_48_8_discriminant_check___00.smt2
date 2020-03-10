@@ -476,3 +476,4 @@ Target solver: CVC4
                       (rec__test__wibble__z v__split_fields)))
   (test__wibble__z__pred (us_repqtmk v__split_discrs v__split_fields1)))))))))
 (check-sat)
+(exit)

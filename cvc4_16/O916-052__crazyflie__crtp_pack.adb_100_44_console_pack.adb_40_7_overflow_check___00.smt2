@@ -1354,3 +1354,4 @@ Target solver: CVC4
      (rec__crtp_pack__crtp_packet_handler__index handler__split_fields)) o2)
   (in_range1 (+ o2 1)))))))))))))))))))
 (check-sat)
+(exit)

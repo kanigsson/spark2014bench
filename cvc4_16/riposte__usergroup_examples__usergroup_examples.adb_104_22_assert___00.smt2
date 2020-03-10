@@ -407,3 +407,4 @@ Target solver: CVC4
   (=> (is_valid__function_guard (is_valid (to_rep (select va i)))
   (to_rep (select va i))) (= (is_valid (to_rep (select va i))) true)))))))))))
 (check-sat)
+(exit)

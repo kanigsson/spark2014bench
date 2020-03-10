@@ -592,3 +592,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array src) o)) o1)
   (forall ((o2 byte)) (=> (= (to_rep1 o2) o1) (in_range1 (+ index i))))))))))))))))))))))))))
 (check-sat)
+(exit)

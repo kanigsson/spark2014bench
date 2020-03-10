@@ -1620,3 +1620,4 @@ Target solver: CVC4
   (=> (= suffix_array1 (store suffix_array 0 o10))
   (< 0 (+ (mod2 bit_length 8) suffix_len))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

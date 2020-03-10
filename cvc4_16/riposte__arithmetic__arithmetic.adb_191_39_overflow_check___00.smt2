@@ -142,3 +142,4 @@ Target solver: CVC4
   (forall ((arithmetic__abs_test_c__result Int))
   (=> (= arithmetic__abs_test_c__result o) (in_range (abs1 n))))))))))
 (check-sat)
+(exit)

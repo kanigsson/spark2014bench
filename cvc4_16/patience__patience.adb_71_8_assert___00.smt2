@@ -1332,3 +1332,4 @@ Target solver: CVC4
                       (rec__patience__state__preds s__split_fields7))))))))))))))))))))))))))))))))))))
   (<= 0 (to_rep (rec__patience__state__numstacks s__split_fields4)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

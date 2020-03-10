@@ -409,3 +409,4 @@ Target solver: CVC4
                                                                    (to_rep
                                                                    m__last)))))))))
 (check-sat)
+(exit)

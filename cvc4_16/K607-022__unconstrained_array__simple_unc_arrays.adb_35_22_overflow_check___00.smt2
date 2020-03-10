@@ -632,3 +632,4 @@ Target solver: CVC4
                       (last1 temp___516)))
   (in_range1 (+ low1 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

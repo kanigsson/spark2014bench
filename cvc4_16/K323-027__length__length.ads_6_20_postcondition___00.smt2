@@ -174,3 +174,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (= res (distinct 1 0)) (= res (distinct 0 0)))))
   (=> (= length__f__result res) (= length__f__result true))))))
 (check-sat)
+(exit)

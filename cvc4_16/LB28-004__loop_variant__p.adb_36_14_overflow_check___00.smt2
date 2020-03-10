@@ -354,3 +354,4 @@ Target solver: CVC4
   (=> (<= (to_rep tab__first) j5)
   (=> (<= j5 (to_rep tab__last)) (in_range1 (+ j5 1)))))))))))))))))))))
 (check-sat)
+(exit)

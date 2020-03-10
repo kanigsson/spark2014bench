@@ -709,3 +709,4 @@ Target solver: CVC4
   (let ((o13 (- index1 (first1 array1))))
   (=> (in_range1 o13) (in_range1 (* o13 o12))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

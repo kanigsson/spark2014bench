@@ -429,3 +429,4 @@ Target solver: CVC4
   (or (<= (to_rep (rec__foo__point__x1 p__split_fields)) limit)
   (<= (to_rep (rec__foo__point__y1 p__split_fields)) limit)))))))
 (check-sat)
+(exit)

@@ -575,3 +575,4 @@ Target solver: CVC4
   (=> (= delta_long1 o4)
   (fp.isFinite32 (fp.mul RNE delta_long1 delta_long1))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -696,3 +696,4 @@ Target solver: CVC4
   current_time8 counter5))
   (not (= (is_raised battery_level_at4 current_time7 counter4) true))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

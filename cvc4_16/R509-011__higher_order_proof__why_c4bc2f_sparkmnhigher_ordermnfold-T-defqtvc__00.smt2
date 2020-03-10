@@ -1344,3 +1344,4 @@ Target solver: CVC4
   (=> (not (= i2 (first2 a)))
   (=> (in_range8 (last_2 a)) (in_range1 (- i2 1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

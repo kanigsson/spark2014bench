@@ -532,3 +532,4 @@ Target solver: CVC4
   (and (= (to_rep1 a__last) o7) (and (= k3 o7) (= k2 k3)))))))))))))))))))
   (=> (= (to_rep1 a__last) o3) (in_range3 o3)))))))))))))))))
 (check-sat)
+(exit)

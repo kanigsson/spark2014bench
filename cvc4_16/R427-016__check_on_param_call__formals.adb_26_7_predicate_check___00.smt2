@@ -318,3 +318,4 @@ Target solver: CVC4
   (forall ((o3 natural))
   (=> (= (to_rep o3) o2) (dynamic_predicate (store a 1 o3))))))))))))))
 (check-sat)
+(exit)

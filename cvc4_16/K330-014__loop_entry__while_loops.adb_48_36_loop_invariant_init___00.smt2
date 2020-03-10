@@ -904,3 +904,4 @@ Target solver: CVC4
   (and (sum_of__function_guard o1 2) (dynamic_invariant o1 true false true
   true)) (=> (< o1 0) (< 0 temp___loop_entry_201))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1691,3 +1691,4 @@ Target solver: CVC4
   (=> (= names__to_string__B_3__l__assume l)
   (=> (dynamic_invariant l true false true true) (=> (<= 1 l) (<= 1 1))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -375,3 +375,4 @@ Target solver: CVC4
   (=> (<= o1 (last1 (to_string (attr__ATTRIBUTE_IMAGE3 o) 12)))
   (<= (first1 (to_string (attr__ATTRIBUTE_IMAGE3 o) 12)) o1)))))))
 (check-sat)
+(exit)

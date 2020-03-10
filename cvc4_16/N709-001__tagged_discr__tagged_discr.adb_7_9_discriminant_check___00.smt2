@@ -2045,3 +2045,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r2b true false true true)
   (=> (= (to_rep2 o) 0) (= o (rec__tagged_discr__t__discr v__split_discrs))))))))))
 (check-sat)
+(exit)

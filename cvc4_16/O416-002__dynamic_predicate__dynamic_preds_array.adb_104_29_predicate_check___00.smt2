@@ -419,3 +419,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true))
   (let ((o1 (+ above 1))) (=> (in_range o1) (= (mod2 o1 2) 0))))))))))))))
 (check-sat)
+(exit)

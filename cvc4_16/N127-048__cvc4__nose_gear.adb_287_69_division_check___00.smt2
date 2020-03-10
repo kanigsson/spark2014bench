@@ -953,3 +953,4 @@ Target solver: CVC4
   (forall ((distance_km_out11 Float64))
   (=> (= distance_km_out11 o10) (not (fp.isZero ms_in_hour_out11))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

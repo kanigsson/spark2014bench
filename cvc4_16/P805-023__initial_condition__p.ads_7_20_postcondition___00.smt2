@@ -68,3 +68,4 @@ Target solver: CVC4
   (forall ((x Bool) (p__p__result Bool))
   (=> (= p__p__result x) (=> (= p__p__result true) (= x true))))))
 (check-sat)
+(exit)

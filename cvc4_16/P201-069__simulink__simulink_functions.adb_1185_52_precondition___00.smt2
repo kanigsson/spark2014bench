@@ -151,3 +151,4 @@ Target solver: CVC4
   (=> (dynamic_invariant lf true false true true)
   (fp.lt (fp.abs lf) (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000)))))
 (check-sat)
+(exit)

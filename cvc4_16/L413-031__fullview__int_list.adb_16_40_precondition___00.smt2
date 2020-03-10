@@ -887,3 +887,4 @@ Target solver: CVC4
                                                temp___loop_entry_1000))
   (<= 1 usf1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

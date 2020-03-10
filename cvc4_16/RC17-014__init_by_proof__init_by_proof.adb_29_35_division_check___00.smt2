@@ -569,3 +569,4 @@ Target solver: CVC4
   (=> (= offset o)
   (=> (dynamic_invariant offset true false true true) (not (= 4 0))))))))))))
 (check-sat)
+(exit)

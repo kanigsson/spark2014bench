@@ -243,3 +243,4 @@ Target solver: CVC4
                                 false)) true)
   (not (= i1 0))))))))))
 (check-sat)
+(exit)

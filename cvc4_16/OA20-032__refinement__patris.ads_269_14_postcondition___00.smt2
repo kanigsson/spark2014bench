@@ -2027,3 +2027,4 @@ Target solver: CVC4
   (=> (= cur_state1 new_cur_state)
   (= (valid_configuration1 cur_board cur_piece__split_fields cur_state1) true)))))))))))
 (check-sat)
+(exit)

@@ -360,3 +360,4 @@ Target solver: CVC4
   (=> (= arrays__sum__result s1)
   (=> (= (= (length1 x) 0) true) (= arrays__sum__result 0))))))))))))
 (check-sat)
+(exit)

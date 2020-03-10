@@ -554,3 +554,4 @@ Target solver: CVC4
   (=> (= (to_rep initial_crate__last) (to_rep final_crate__last))
   (< (to_rep initial_crate__first) (to_rep initial_crate__last))))))))
 (check-sat)
+(exit)

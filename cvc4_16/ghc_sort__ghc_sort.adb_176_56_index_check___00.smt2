@@ -1335,3 +1335,4 @@ Target solver: CVC4
      (us_split_fields1 (rec__ghc_sort__int_array_list__pointer_value o3)))) true)))))
   (<= (to_rep cuts__first) c)))))))))))))))))))))))))))
 (check-sat)
+(exit)

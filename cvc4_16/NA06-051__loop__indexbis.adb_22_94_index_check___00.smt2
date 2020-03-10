@@ -384,3 +384,4 @@ Target solver: CVC4
                                                true false)) true)
   (<= (first1 c) usf)))))))))))))))))))))))))))
 (check-sat)
+(exit)

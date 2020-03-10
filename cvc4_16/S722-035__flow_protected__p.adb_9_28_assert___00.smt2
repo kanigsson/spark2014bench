@@ -134,3 +134,4 @@ Target solver: CVC4
   (us_repqtmk (us_split_fieldsqtmk self__1))))
   (= (fun__ (us_repqtmk (us_split_fieldsqtmk self__))) true)))))
 (check-sat)
+(exit)

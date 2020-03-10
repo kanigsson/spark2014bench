@@ -140,3 +140,4 @@ Target solver: CVC4
   (=> (= z2 o)
   (=> (forall ((z3 Int)) (g__function_guard (g z3) z3)) (= z2 (g z1)))))))))))))
 (check-sat)
+(exit)

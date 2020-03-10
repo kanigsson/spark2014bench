@@ -1037,3 +1037,4 @@ Target solver: CVC4
      stream__split_fields)) o15)
   (in_range2 (+ o15 read_elts)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

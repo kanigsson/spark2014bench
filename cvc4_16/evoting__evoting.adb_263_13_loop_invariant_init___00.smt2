@@ -507,3 +507,4 @@ Target solver: CVC4
   (=> (and (<= (+ last_candidate 1) j) (<= j (- i 1)))
   (not (= (select winners3 j) true))))))))))))))))))))))
 (check-sat)
+(exit)

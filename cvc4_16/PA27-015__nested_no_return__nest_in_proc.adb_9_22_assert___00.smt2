@@ -60,3 +60,4 @@ Target solver: CVC4
  ;; File "nest_in_proc.adb", line 5, characters 0-0
   (not true))
 (check-sat)
+(exit)

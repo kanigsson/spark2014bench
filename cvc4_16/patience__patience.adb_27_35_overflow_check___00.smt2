@@ -1059,3 +1059,4 @@ Target solver: CVC4
   (= o2 (ite (< o4 c) true false))))) (= o2 false))))
   (=> (= o2 true) (in_range1 (- i1 1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

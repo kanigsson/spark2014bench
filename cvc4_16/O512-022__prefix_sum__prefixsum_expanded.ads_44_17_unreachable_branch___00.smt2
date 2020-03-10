@@ -911,3 +911,4 @@ Target solver: CVC4
   (and (<= (- 8000000) temp___176) (<= temp___176 8000000))))))
   (not (= o true)))))))))))))))))))))))
 (check-sat)
+(exit)

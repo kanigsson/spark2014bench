@@ -306,3 +306,4 @@ Target solver: CVC4
   (forall ((pointer2 Int) (s2 (Array Int integer))) (top__function_guard
   (top s2 pointer2) s2 pointer2)) (= (top s1 pointer1) x))))))))))))))))))
 (check-sat)
+(exit)

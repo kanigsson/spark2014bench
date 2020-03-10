@@ -831,3 +831,4 @@ Target solver: CVC4
   (=> (and (dynamic_invariant o1 true false true true) (<= o1 (capacity o)))
   (=> (= (+ o1 1) r31b) (=> (in_range7 r31b) (in_range1 r31b))))))))))
 (check-sat)
+(exit)

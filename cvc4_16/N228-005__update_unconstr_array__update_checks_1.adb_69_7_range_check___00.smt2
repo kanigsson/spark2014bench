@@ -391,3 +391,4 @@ Target solver: CVC4
   (and (<= 2 i) (= (- (last1 temp___407) (first1 temp___407)) (- i 2)))
   (< i 2)) (=> (<= 2 i) (<= (to_rep1 a__first) 2)))))))))))
 (check-sat)
+(exit)

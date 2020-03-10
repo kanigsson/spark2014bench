@@ -721,3 +721,4 @@ Target solver: CVC4
            (rec__traversal_funcs__list_acc__pointer_value usf1))))) 1)))))
   (in_range1 (+ o5 2))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

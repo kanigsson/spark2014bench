@@ -1486,3 +1486,4 @@ Target solver: CVC4
   (=> (and (<= 1 g1_id) (<= g1_id 64))
   (= (to_rep3 (select proposals_made g1_id)) 0))))))))))))))))))))))))))
 (check-sat)
+(exit)

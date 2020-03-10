@@ -187,3 +187,4 @@ Target solver: CVC4
   (=> (= pack__associativity_test__result (ite (fp.eq o3 o1) true false))
   (= pack__associativity_test__result true)))))))))))))
 (check-sat)
+(exit)

@@ -1724,3 +1724,4 @@ Target solver: CVC4
                         ctx__split_fields2)))
   (= (+ offset1 remaining_bytes1) initial_data_len)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

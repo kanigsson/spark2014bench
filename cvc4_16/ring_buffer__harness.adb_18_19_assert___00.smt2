@@ -520,3 +520,4 @@ Target solver: CVC4
   (=> (= (head (us_repqtmk r__split_fields5)) h3)
   (=> (dynamic_invariant h3 true true true true) (= h3 z)))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -131,3 +131,4 @@ Target solver: CVC4
  ;; File "generic_float_tests.adb", line 187, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (fp.eq x x))))
 (check-sat)
+(exit)

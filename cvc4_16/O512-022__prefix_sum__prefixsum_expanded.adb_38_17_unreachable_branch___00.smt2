@@ -538,3 +538,4 @@ Target solver: CVC4
   (=> (= (to_rep (select temp___loop_entry_237 3)) o4)
   (=> (= (to_rep (select a 3)) o5) (not (= o5 (+ (+ (+ o4 o3) o2) o1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

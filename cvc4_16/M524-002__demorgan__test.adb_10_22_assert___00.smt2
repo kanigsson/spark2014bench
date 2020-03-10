@@ -79,3 +79,4 @@ Target solver: CVC4
   (not (= b true)))
   (=> (= (and (or a b) (not (and a b))) true) (or (= a true) (= b true)))))))
 (check-sat)
+(exit)

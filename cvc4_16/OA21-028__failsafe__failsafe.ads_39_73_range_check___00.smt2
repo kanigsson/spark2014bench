@@ -588,3 +588,4 @@ Target solver: CVC4
   (=> (= o true) (in_range1
   (bvsub failsafe__model__time_below_threshold__result #x01))))))))))))))))))))))))
 (check-sat)
+(exit)

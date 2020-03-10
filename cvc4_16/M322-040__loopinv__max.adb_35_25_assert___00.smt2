@@ -211,3 +211,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i 10) true false)) true)
   (=> (<= 1 n) (=> (<= n (- i 1)) (<= (to_rep (select a n)) max1)))))))))))
 (check-sat)
+(exit)

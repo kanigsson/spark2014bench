@@ -863,3 +863,4 @@ Target solver: CVC4
   (let ((o4 (+ (first1 separates) 1)))
   (=> (in_range1 o4) (<= (first1 separates) o4))))))))))))))))))))))))))
 (check-sat)
+(exit)

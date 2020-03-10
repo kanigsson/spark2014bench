@@ -757,3 +757,4 @@ Target solver: CVC4
   (=> (= r1 (store r i o2))
   (=> (in_range5 (first1 a)) (dynamic_property 1 100 (first1 a) (last1 a))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

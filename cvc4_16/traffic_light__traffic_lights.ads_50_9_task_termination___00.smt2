@@ -554,3 +554,4 @@ Target solver: CVC4
  ;; File "traffic_lights.ads", line 50, characters 0-0
   (not true))
 (check-sat)
+(exit)

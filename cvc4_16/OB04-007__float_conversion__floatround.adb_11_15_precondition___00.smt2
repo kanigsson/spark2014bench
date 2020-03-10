@@ -200,3 +200,4 @@ Target solver: CVC4
   (=> (= x1 (fp #b0 #b01111110 #b00000000000000000000000))
   (=> (dynamic_invariant x1 true false true true) (in_range1 x1))))))
 (check-sat)
+(exit)

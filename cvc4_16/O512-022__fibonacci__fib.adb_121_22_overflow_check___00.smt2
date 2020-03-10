@@ -407,3 +407,4 @@ Target solver: CVC4
   (=> (in_range2 o)
   (forall ((k23 Int)) (=> (= k23 o) (in_range1 (* b21 p21)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -487,3 +487,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__mutable__t__k (us_split_discrs1 usf1))) usf)
   (=> (<= 1 usf) (<= 1 1)))))))
 (check-sat)
+(exit)

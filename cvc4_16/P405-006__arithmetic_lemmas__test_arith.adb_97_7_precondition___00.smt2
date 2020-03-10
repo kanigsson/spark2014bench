@@ -312,3 +312,4 @@ Target solver: CVC4
   (=> (= r11 (div1 x1 y))
   (forall ((r21 Int)) (=> (= r21 (div1 x2 y)) (<= x1 x2))))))))))))))
 (check-sat)
+(exit)

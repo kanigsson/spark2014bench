@@ -120,3 +120,4 @@ Target solver: CVC4
   (=> (= x__attr__init2 true)
   (=> (dynamic_invariant y1 true true true true) (= y__attr__init1 true)))))))))))))))))))))
 (check-sat)
+(exit)

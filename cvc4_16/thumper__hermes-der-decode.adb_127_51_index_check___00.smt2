@@ -631,3 +631,4 @@ Target solver: CVC4
   (ite (<= octet_count 4) true false)) true)
   (=> (= octet_count 4) (<= (first1 message) starting)))))))))))
 (check-sat)
+(exit)

@@ -277,3 +277,4 @@ Target solver: CVC4
   (=> (dynamic_invariant l false false true true)
   (=> (not (= j 0)) (in_range2 (div1 i j))))))))))
 (check-sat)
+(exit)

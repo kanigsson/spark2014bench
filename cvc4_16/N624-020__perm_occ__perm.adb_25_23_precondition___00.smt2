@@ -513,3 +513,4 @@ Target solver: CVC4
   (=> (is_set__function_guard (is_set a i v r) a i v r)
   (=> (= (is_set a i v r) true) (< 0 (length a)))))))))))))
 (check-sat)
+(exit)

@@ -297,3 +297,4 @@ Target solver: CVC4
                    (us_split_discrs1 (select memory1 i))))
   (=> (= spark__branch true) (lists__cell__next__pred (select memory1 i)))))))))
 (check-sat)
+(exit)

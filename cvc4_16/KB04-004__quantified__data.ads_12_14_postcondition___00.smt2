@@ -144,3 +144,4 @@ Target solver: CVC4
   (=> (<= i10 10)
   (=> (= (select x11 i10) true) (not (= (select x1 i10) true)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

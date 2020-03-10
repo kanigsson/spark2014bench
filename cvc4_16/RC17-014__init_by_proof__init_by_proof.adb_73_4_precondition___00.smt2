@@ -564,3 +564,4 @@ Target solver: CVC4
   (=> (= (to_rep o) 150)
   (=> (= (to_rep o1) 1) (<= 100 (length (to_rep o1) (to_rep o))))))))))
 (check-sat)
+(exit)

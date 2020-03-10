@@ -2227,3 +2227,4 @@ Target solver: CVC4
   (=> (= (last1 empty__split_fields) 0)
   (=> (= wrap__split_discrs r26b) (in_range (ite r26b 1 0))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

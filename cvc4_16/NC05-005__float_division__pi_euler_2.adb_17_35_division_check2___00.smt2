@@ -271,3 +271,4 @@ Target solver: CVC4
   (fp.leq (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000) index_float1)
   (not (fp.isZero index_float1))))))))))))))
 (check-sat)
+(exit)

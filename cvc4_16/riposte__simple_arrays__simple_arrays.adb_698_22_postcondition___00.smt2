@@ -172,3 +172,4 @@ Target solver: CVC4
   (=> (= a1 (store a 0 rliteral))
   (=> (= a2 (store a1 0 rliteral1)) (= (to_rep (select a2 0)) 1337))))))
 (check-sat)
+(exit)

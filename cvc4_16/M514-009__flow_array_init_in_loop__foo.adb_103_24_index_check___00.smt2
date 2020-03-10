@@ -193,3 +193,4 @@ Target solver: CVC4
  ;; File "foo.adb", line 98, characters 0-0
   (not (forall ((i Int)) (=> (= i 1) (<= 1 (+ i 1))))))
 (check-sat)
+(exit)

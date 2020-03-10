@@ -262,3 +262,4 @@ Target solver: CVC4
   (=> (= prefixsum_general__summation__result o3)
   (not (= start_pos end_pos))))))))))))))
 (check-sat)
+(exit)

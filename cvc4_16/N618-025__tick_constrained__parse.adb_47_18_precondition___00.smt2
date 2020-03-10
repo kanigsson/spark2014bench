@@ -1580,3 +1580,4 @@ Target solver: CVC4
                                                            true false)))
   (=> (not (= spark__branch2 true)) (<= 4 511))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

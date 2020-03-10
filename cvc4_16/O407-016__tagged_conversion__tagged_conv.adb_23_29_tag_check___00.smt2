@@ -181,3 +181,4 @@ Target solver: CVC4
   (=> (= rc2__attr__tag r2__attr__tag) (us_compatible_tags cc__attr__tag
   us_tag))))))))))))
 (check-sat)
+(exit)

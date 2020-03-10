@@ -572,3 +572,4 @@ Target solver: CVC4
   (=> (<= a 100)
   (=> (= tmp__split_fields (us_split_fields3 (select l a))) (<= 1 b)))))))))
 (check-sat)
+(exit)

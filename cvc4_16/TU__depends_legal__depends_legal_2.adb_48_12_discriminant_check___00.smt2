@@ -714,3 +714,4 @@ Target solver: CVC4
   (=> (= rec1__attr__constrained true)
   (= (rec__depends_legal_2__dis_rec__d (us_split_discrs1 par2)) rec1__split_discrs)))))))
 (check-sat)
+(exit)

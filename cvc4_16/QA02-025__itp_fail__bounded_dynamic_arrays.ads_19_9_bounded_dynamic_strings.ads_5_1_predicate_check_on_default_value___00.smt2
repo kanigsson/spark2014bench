@@ -589,3 +589,4 @@ Target solver: CVC4
                               (first1 temp___236) (last1 temp___236))))
   (dynamic_predicate usf2))))))))
 (check-sat)
+(exit)

@@ -129,3 +129,4 @@ Target solver: CVC4
   (=> (in_range1 o1)
   (forall ((b3 Int)) (=> (= b3 o1) (=> (< b3 1073741823) (< b3 1073741822)))))))))))))))))))))))
 (check-sat)
+(exit)

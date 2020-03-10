@@ -470,3 +470,4 @@ Target solver: CVC4
   (= result____split_fields (us_split_fieldsqtmk (distinct 0 0) rliteral))
   (< (length1 a) (length1 b)))))))))))
 (check-sat)
+(exit)

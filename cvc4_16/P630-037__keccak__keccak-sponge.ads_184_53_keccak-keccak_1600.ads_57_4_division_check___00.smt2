@@ -1500,3 +1500,4 @@ Target solver: CVC4
         ctx__split_fields)))
   (< o2 1600)))) (not (= 8 0))))))))))))))
 (check-sat)
+(exit)

@@ -852,3 +852,4 @@ Target solver: CVC4
   (=> (= (distinct o14 0) true) (= (is_perm o13 o8) true)))) (in_range4 
   x))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

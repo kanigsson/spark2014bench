@@ -191,3 +191,4 @@ Target solver: CVC4
   x__split_fields1 y__split_fields1))
   (= (my_prop x__split_fields y__split_fields) true))))))
 (check-sat)
+(exit)

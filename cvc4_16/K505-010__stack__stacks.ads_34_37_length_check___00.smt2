@@ -584,3 +584,4 @@ Target solver: CVC4
   (=> (= (last1 temp___256) usf)
   (=> (<= (first1 temp___256) (last1 temp___256)) (<= 1 usf))))))))))
 (check-sat)
+(exit)

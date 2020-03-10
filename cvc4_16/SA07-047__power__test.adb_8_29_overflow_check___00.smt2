@@ -200,3 +200,4 @@ Target solver: CVC4
   (and (dynamic_invariant temp___157 true false true true) (= temp___157 14)))
   (in_range (power 2 temp___157))))))
 (check-sat)
+(exit)

@@ -1227,3 +1227,4 @@ Target solver: CVC4
   (and (bvule #x0000 r11b) (bvule r11b #x0257))))
   (=> (bvule r8b #x0257) (bvule #x0000 r8b)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

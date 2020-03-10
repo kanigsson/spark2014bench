@@ -1437,3 +1437,4 @@ Target solver: CVC4
   (= (end_of_file (us_repqtmk file__split_fields) cur_position the_file) true))
   (in_range3 (- (+ cur_position n) 2))))))))))))))))))))))))))
 (check-sat)
+(exit)

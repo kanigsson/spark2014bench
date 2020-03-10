@@ -273,3 +273,4 @@ Target solver: CVC4
   (= erreur3 (fp.div RNE (fp.div RNE (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000) index_float1) index_float1))
   (fp.isFinite64 (fp.add RNE pi2 erreur3)))))))))))))))
 (check-sat)
+(exit)

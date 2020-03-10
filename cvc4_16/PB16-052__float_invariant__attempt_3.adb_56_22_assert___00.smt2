@@ -398,3 +398,4 @@ Target solver: CVC4
   (=> (high_bound__function_guard (high_bound n) n)
   (fp.leq new_speed1 (fp.add RNE (high_bound n) (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -959,3 +959,4 @@ Target solver: CVC4
   (=> (= (last1 temp___230) digit_length)
   (=> (<= (first1 temp___230) (last1 temp___230)) (<= 1 digit_length))))))))))))))
 (check-sat)
+(exit)

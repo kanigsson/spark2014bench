@@ -240,3 +240,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__dic__pr_record_t2__x (us_split_fields1 par1))) o1)
   (in_range (+ o1 o))))))))
 (check-sat)
+(exit)

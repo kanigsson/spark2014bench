@@ -2022,3 +2022,4 @@ Target solver: CVC4
   (- (+ (first1 temp___431) (+ (length (first1 temp___431)
                                (last1 temp___431)) (length 1 4))) 1))))))))))))))))))))))
 (check-sat)
+(exit)

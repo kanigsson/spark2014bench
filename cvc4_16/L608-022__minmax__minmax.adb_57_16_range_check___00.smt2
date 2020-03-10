@@ -156,3 +156,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (forall ((mint1 Int)) (=> (= mint1 o) (in_range1 (max x y))))))))))))))
 (check-sat)
+(exit)

@@ -1838,3 +1838,4 @@ Target solver: CVC4
              (rec__use_formal_vectors__my_vect__vector__content
              e__split_fields3))) j))) (get e_mod j)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

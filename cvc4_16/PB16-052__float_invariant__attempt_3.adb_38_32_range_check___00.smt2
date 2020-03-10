@@ -453,3 +453,4 @@ Target solver: CVC4
   (fp.isFinite64 (fp.add RNE distance (fp.mul RNE average1 (fp #b0 #b01111111001 #b0001000100010001000100010001000100010001000100010001))))
   (in_range1 (+ n 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

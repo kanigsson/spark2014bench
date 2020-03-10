@@ -1418,3 +1418,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 r90s true false true true) (in_range1
   (length old_content__pointer_value))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

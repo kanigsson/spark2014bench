@@ -346,3 +346,4 @@ Target solver: CVC4
   (= (rec__binary_search_trees__node_access__is_null_pointer starting_at) true))
   (rec__binary_search_trees__node_access__pointer_value__pred starting_at))))
 (check-sat)
+(exit)

@@ -265,3 +265,4 @@ Target solver: CVC4
   (=> (in_range o)
   (let ((o1 (- before_tax (div1 o 100)))) (=> (in_range o1) (in_range1 o1))))))))))
 (check-sat)
+(exit)

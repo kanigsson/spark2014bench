@@ -701,3 +701,4 @@ Target solver: CVC4
   (=> (<= 60 64) (and (and (<= 0 60) (<= 60 91)) (and (<= 0 64) (<= 64 91))))
   (= (length (of_array arr1 60 64)) 4))))))))
 (check-sat)
+(exit)

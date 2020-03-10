@@ -803,3 +803,4 @@ Target solver: CVC4
   (=> (and (<= (+ i 1) j) (<= j (to_rep1 values__last)))
   (<= (to_rep (select values3 i)) (to_rep (select values3 j))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

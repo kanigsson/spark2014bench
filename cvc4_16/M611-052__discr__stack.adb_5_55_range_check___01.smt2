@@ -557,3 +557,4 @@ Target solver: CVC4
   (let ((temp___285 (of_array (to_array temp___284) 1 temp___283)))
   (dynamic_property1 1 2147483647 (first1 temp___285) (last1 temp___285)))))))))))
 (check-sat)
+(exit)

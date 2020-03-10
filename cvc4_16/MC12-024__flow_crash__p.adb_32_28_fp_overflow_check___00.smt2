@@ -571,3 +571,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__p__r__b full_s__split_fields1)) o3)
   (fp.isFinite32 (fp.add RNE o3 y))))))))))))))))
 (check-sat)
+(exit)

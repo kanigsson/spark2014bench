@@ -631,3 +631,4 @@ Target solver: CVC4
  ;; File "t.ads", line 1, characters 0-0
   (not (in_range1 value__size)))
 (check-sat)
+(exit)

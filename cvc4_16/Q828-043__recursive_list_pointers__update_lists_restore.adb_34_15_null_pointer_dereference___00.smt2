@@ -534,3 +534,4 @@ Target solver: CVC4
   (us_repqtmk rover__is_null_pointer3 rover__pointer_address3
   (us_close (us_repqtmk1 rover__pointer_value3)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

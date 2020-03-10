@@ -135,3 +135,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (<= price_of_orange o) true false))
   (=> (= spark__branch true) (in_range (+ price_of_orange extra_cost))))))))))))
 (check-sat)
+(exit)

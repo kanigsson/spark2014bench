@@ -830,3 +830,4 @@ Target solver: CVC4
   (=> (in_range1 (* o8 o6))
   (= result_index3 (* (+ (- index12 (first1 array1)) 1) (length array2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

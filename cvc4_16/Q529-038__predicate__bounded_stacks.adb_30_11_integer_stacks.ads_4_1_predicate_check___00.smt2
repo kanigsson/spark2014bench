@@ -1247,3 +1247,4 @@ Target solver: CVC4
   (rec__integer_stacks__stack__values this__split_fields) rliteral
   (rec__ext__ this__split_fields)) this__attr__tag))))))))
 (check-sat)
+(exit)

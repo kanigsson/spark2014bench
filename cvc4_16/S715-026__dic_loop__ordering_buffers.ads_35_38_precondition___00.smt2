@@ -812,3 +812,4 @@ Target solver: CVC4
   (=> (forall ((o us_rep)) (first__function_guard (first o) o))
   (<= (first buffer) index)))))))))
 (check-sat)
+(exit)

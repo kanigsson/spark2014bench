@@ -228,3 +228,4 @@ Target solver: CVC4
   (=> (not (= (is_max (us_repqtmk x__split_fields x__attr__tag)) true))
   (=> (= (to_rep (rec__unit1__t1__c1 x__split_fields)) o) (in_range (+ o 1))))))))
 (check-sat)
+(exit)

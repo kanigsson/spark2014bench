@@ -1230,3 +1230,4 @@ Target solver: CVC4
                     r4b r5b)))
   (=> (bvule (first1 temp___251) (last1 temp___251)) (bvule #x0000 tmp))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

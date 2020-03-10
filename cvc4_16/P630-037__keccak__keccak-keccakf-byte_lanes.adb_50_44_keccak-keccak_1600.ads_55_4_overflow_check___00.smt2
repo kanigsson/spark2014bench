@@ -963,3 +963,4 @@ Target solver: CVC4
   (let ((o2 (+ remaining_bits 7)))
   (=> (in_range1 o2) (in_range1 (+ offset (div1 o2 8)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

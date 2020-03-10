@@ -5710,3 +5710,4 @@ Target solver: CVC4
  ;; File "do_checks.adb", line 7, characters 0-0
   (not true))
 (check-sat)
+(exit)

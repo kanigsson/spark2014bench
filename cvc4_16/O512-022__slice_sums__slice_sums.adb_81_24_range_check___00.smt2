@@ -749,3 +749,4 @@ Target solver: CVC4
   (= o8 (ite (<= o10 (last1 x)) true false)))) (= o8 false))))))))))
   (=> (<= (first1 x) (- current_hi 1)) (<= 1 (first1 x)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

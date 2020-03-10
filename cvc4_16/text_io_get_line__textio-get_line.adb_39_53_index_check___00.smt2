@@ -1428,3 +1428,4 @@ Target solver: CVC4
                                                 false)) true)
   (<= 1 (+ (- (- usf last2) 1) cur_position)))))))))))))))))))))))))
 (check-sat)
+(exit)

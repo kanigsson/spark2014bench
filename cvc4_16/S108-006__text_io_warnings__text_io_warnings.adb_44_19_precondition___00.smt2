@@ -1552,3 +1552,4 @@ Target solver: CVC4
                                                              current_out14))))
   (= (is_open target1) true)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -299,3 +299,4 @@ Target solver: CVC4
   (forall ((d2 (Array Int resource))) (sum__function_guard (sum d2 6) d2 6))
   (< (sum d1 6) 42)))))))))
 (check-sat)
+(exit)

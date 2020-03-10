@@ -360,3 +360,4 @@ Target solver: CVC4
   (=> (dynamic_property 1 2147483647 (to_rep1 x__first) (to_rep1 x__last))
   (<= (to_rep1 x__first) 1))))))
 (check-sat)
+(exit)

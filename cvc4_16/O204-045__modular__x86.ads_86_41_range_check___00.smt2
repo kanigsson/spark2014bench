@@ -376,3 +376,4 @@ Target solver: CVC4
   (=> (= x86__cl__result ((_ extract 7 0) (bvand rcx #x00000000000000FF)))
   (bvule ((_ zero_extend 56) #x00) (bvand rcx #x00000000000000FF))))))))
 (check-sat)
+(exit)

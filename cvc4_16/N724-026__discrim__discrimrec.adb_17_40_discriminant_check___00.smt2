@@ -2638,3 +2638,4 @@ Target solver: CVC4
   (=> (= rax__split_discrs (us_split_discrs1 temp___298)) (in_range1 0
   (us_split_discrs1 (us_repqtmk rax__split_discrs rax__split_fields1))))))))))))))))))
 (check-sat)
+(exit)

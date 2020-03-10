@@ -94,3 +94,4 @@ Target solver: CVC4
   (=> (dynamic_invariant v1 false false true true)
   (=> (= v11 88) (<= v11 100))))))
 (check-sat)
+(exit)

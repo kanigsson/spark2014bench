@@ -458,3 +458,4 @@ Target solver: CVC4
   (=> (forall ((i3 Int)) (fib__function_guard (fib (- i3 1)) (- i3 1)))
   (= old__2 (fib (- i2 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

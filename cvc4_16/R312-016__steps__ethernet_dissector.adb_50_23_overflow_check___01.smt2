@@ -1056,3 +1056,4 @@ Target solver: CVC4
   (and (convert_to_two_octets__function_guard o18 o17) (dynamic_invariant3
   o18 true false true true)) (in_range1 (+ 15 offset1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

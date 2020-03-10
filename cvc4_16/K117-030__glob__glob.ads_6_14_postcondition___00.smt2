@@ -59,3 +59,4 @@ Target solver: CVC4
   (not
   (forall ((g Bool) (g1 Bool)) (=> (not (= g true)) (not (= g1 true))))))
 (check-sat)
+(exit)

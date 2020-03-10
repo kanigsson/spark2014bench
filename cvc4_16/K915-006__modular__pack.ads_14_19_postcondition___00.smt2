@@ -260,3 +260,4 @@ Target solver: CVC4
   (=> (= pack__next255__result (bvadd m #x01))
   (= pack__next255__result #x00)))))))
 (check-sat)
+(exit)

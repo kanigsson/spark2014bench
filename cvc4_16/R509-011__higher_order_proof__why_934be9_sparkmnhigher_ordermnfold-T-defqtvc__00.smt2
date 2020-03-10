@@ -1260,3 +1260,4 @@ Target solver: CVC4
   (=> (not (= i1 (first2 a)))
   (= acc1 (to_rep1 (get1 r1 (- i1 1) (last_2 a)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

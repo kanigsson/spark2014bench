@@ -614,3 +614,4 @@ Target solver: CVC4
   (=> (= o6 true)
   (forall ((o7 Int)) (=> (= (to_rep values__last) o7) (in_range1 (- o7 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

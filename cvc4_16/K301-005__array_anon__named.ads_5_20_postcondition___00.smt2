@@ -160,3 +160,4 @@ Target solver: CVC4
  ;; File "named.ads", line 4, characters 0-0
   (not (< 10 127)))
 (check-sat)
+(exit)

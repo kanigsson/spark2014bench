@@ -1599,3 +1599,4 @@ Target solver: CVC4
   (=> (= free_bytes_in_block1 (div1 free_bits_in_block1 8))
   (< free_bits_in_block1 1600)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

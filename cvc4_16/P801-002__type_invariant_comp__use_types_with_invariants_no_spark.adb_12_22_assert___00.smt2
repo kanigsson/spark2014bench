@@ -187,3 +187,4 @@ Target solver: CVC4
   (=> (to_integer__function_guard (to_integer (from_integer i))
   (from_integer i)) (= (to_integer (from_integer i)) i)))))))))))
 (check-sat)
+(exit)

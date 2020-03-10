@@ -280,3 +280,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 j) true false) (ite (<= j 100) true false)) true)
   (=> (= (to_rep o1) tmp_value1) (dynamic_predicate (store v j o1))))))))))))))))
 (check-sat)
+(exit)

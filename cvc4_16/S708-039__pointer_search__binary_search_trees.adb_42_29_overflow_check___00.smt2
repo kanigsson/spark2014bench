@@ -420,3 +420,4 @@ Target solver: CVC4
                       true false)) true)
   (in_range (+ size 1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

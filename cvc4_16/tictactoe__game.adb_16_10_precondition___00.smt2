@@ -1161,3 +1161,4 @@ Target solver: CVC4
   (forall ((my_board2 (Array Int (Array Int slot)))) (is_full__function_guard
   (is_full my_board2) my_board2)) (not (= (is_full my_board1) true))))))))))))))))))))))
 (check-sat)
+(exit)

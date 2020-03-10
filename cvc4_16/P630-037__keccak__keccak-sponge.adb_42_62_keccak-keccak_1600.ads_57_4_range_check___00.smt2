@@ -1243,3 +1243,4 @@ Target solver: CVC4
   (=> (= (mod2 (- 1600 capacity) 8) 0)
   (=> (< capacity 1600) (in_range5 (div1 (- 1600 capacity) 8)))))))
 (check-sat)
+(exit)

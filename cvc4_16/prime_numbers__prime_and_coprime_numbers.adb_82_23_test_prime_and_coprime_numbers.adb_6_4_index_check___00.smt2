@@ -412,3 +412,4 @@ Target solver: CVC4
   (=> (and (<= 2 v) (<= v (min o2 usf)))
   (not (and (= (mod2 o2 v) 0) (= (mod2 usf v) 0)))))))) (<= 0 usf)))))))))))))))))))
 (check-sat)
+(exit)

@@ -170,3 +170,4 @@ Target solver: CVC4
   (get_current_id current_id1 current_cycles1) current_id1 current_cycles1))
   (= (get_current_id current_id current_cycles) 1)))))))))
 (check-sat)
+(exit)

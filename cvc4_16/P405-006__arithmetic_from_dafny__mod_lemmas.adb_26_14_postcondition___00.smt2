@@ -248,3 +248,4 @@ Target solver: CVC4
   (let ((o2 (+ o1 (mod2 x d))))
   (=> (in_range1 o2) (forall ((res1 Int)) (=> (= res1 o2) (= x res1)))))))))))))))))
 (check-sat)
+(exit)

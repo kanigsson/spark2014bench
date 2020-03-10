@@ -1175,3 +1175,4 @@ Target solver: CVC4
   (exists ((h4 Int)) (and (= h4 o20) (= perm__remove_perm__result h4)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
   (=> (= (distinct perm__remove_perm__result 0) true) (<= (first1 b) ib)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

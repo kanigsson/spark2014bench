@@ -56,3 +56,4 @@ Target solver: CVC4
  ;; File "a2.adb", line 2, characters 0-0
   (not (< 0 2)))
 (check-sat)
+(exit)

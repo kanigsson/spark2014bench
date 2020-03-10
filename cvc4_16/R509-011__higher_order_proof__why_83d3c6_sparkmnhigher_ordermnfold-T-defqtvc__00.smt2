@@ -1154,3 +1154,4 @@ Target solver: CVC4
   (=> (in_range1 o12)
   (let ((o13 (* o12 o11))) (=> (in_range1 o13) (in_range1 (+ o13 o10)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1356,3 +1356,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= i usf) true false) (ite (<= usf c) true false)) true)
   (<= (first1 h__split_fields) usf))))))))))))))))))))))))))
 (check-sat)
+(exit)

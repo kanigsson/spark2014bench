@@ -639,3 +639,4 @@ Target solver: CVC4
  ;; File "very_longs.ads", line 29, characters 0-0
   (not true))
 (check-sat)
+(exit)

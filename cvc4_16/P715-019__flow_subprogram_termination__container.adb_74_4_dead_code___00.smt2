@@ -743,3 +743,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 x3 true true true true)
   (let ((o (+ x3 1))) (and (in_range4 o) (and (= x2 o) (< x2 0)))))))))))))))))))))))
 (check-sat)
+(exit)

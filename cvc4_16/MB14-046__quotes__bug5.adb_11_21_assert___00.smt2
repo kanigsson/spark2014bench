@@ -336,3 +336,4 @@ Target solver: CVC4
   (of_array (temp___String_Literal_167 Tuple0) 1 4))
   (= (p (of_array (temp___String_Literal_167 Tuple0) 1 4)) true))))
 (check-sat)
+(exit)

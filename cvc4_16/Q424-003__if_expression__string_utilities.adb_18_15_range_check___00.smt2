@@ -794,3 +794,4 @@ Target solver: CVC4
                                                                false)) true))
   (dynamic_property1 0 last2 0)))))))))))))
 (check-sat)
+(exit)

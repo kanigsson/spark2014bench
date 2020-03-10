@@ -310,3 +310,4 @@ Target solver: CVC4
   c my_container_contains__element__result1))
   (= (mem c my_container_contains__element__result) true))))))))))))
 (check-sat)
+(exit)

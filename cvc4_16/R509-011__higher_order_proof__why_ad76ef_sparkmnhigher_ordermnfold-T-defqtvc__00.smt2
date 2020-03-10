@@ -777,3 +777,4 @@ Target solver: CVC4
   (= o9 (ite (= (choose o8) true) (+ o7 1) o7)))
   (<= (to_rep r__first) (first1 a)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

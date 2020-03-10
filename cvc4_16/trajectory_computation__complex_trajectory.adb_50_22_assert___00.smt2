@@ -928,3 +928,4 @@ Target solver: CVC4
   (and (fp.leq speed1 average1) (fp.leq average1 old_speed)))))
   (fp.leq (low_bound (+ n 1)) average1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

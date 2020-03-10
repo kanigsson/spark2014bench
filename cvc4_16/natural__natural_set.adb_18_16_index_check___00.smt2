@@ -516,3 +516,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__natural_set__t__len s__split_fields1)) temp___255)
   (<= 1 temp___255))))))))))))))))))))))))))))
 (check-sat)
+(exit)

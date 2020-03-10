@@ -858,3 +858,4 @@ Target solver: CVC4
   (forall ((a3 (Array Int integer)))
   (=> (= a3 (store a2 right3 o4)) (in_range1 (* space1 2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

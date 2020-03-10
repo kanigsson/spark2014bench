@@ -1154,3 +1154,4 @@ Target solver: CVC4
   (=> (in_range1 (+ o7 1))
   (= (div1 (+ (- (last1 number) string_index3) 1) 2) (+ (- index3 1) 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

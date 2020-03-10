@@ -1075,3 +1075,4 @@ Target solver: CVC4
                                (us_split_fields3 monitor))))) 1) true)
                     1 0)) 1))))))
 (check-sat)
+(exit)

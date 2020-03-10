@@ -245,3 +245,4 @@ Target solver: CVC4
  ;; File "timer.ads", line 18, characters 0-0
   (not (=> (= (milliseconds 1000) timerperiod) (<= 15 98))))
 (check-sat)
+(exit)

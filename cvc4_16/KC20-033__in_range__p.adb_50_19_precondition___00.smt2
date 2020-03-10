@@ -333,3 +333,4 @@ Target solver: CVC4
   (forall ((c Int))
   (=> (= c o1) (=> (dynamic_invariant2 c true false true true) (<= 1 5)))))))))))))
 (check-sat)
+(exit)

@@ -1378,3 +1378,4 @@ Target solver: CVC4
   (rec__use_formal_vectors__my_vect__vector__top v__split_fields)
   temp___alloc_656)))))))))))))))))))))))))))
 (check-sat)
+(exit)

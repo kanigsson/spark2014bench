@@ -1556,3 +1556,4 @@ Target solver: CVC4
   (=> (or (= (length a) 0) (= (length_2 a) 0))
   (= test_higher_order3__my_count_2__fold_count__fold__result init)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -2008,3 +2008,4 @@ Target solver: CVC4
   (rec__do_loops__u_array_acc__pointer_value__pred
   (rec__do_loops__r_array_record__f4 d__pointer_value6))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

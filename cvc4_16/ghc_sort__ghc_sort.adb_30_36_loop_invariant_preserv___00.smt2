@@ -639,3 +639,4 @@ Target solver: CVC4
         false)))))))))
   (= o6 false)) (=> (= o6 true) (<= temp___loop_entry_423 y3))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

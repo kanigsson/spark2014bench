@@ -370,3 +370,4 @@ Target solver: CVC4
   (=> (not (= linear_search__search__2__result 0))
   (<= 1 linear_search__search__2__result))))))))
 (check-sat)
+(exit)

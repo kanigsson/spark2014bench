@@ -846,3 +846,4 @@ Target solver: CVC4
                                             current_out4 current_err4))
   (= program_phase 0))))))))))))))))
 (check-sat)
+(exit)

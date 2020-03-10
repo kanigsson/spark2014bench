@@ -410,3 +410,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (and (in_range2 index1) (= min2 index1))
   (= min2 min1)))))))) (<= (first1 values) min2)))))))))))))))))
 (check-sat)
+(exit)

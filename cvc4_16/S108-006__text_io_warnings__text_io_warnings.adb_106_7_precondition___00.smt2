@@ -2277,3 +2277,4 @@ Target solver: CVC4
   (=> (= spark__branch1 (ite (= bool__ true) false true))
   (=> (= spark__branch1 true) (= (is_open target2) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

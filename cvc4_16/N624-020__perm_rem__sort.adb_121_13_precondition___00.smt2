@@ -636,3 +636,4 @@ Target solver: CVC4
   (= (bool_eq (to_array o1) (first1 o1) (last1 o1) (to_array o) (first1 o)
      (last1 o)) true))))))))))
 (check-sat)
+(exit)

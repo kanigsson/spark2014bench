@@ -2346,3 +2346,4 @@ Target solver: CVC4
   (invariant__1 name_table1) name_table1))
   (= (invariant__1 name_table) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

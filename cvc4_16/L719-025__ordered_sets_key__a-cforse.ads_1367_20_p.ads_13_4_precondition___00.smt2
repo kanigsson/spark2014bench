@@ -1063,3 +1063,4 @@ Target solver: CVC4
   (=> (= (get o1 i) (get o1 j)) (= (bool_eq i j) true))))))))
   (= (has_key o1 position) true)))))))))
 (check-sat)
+(exit)

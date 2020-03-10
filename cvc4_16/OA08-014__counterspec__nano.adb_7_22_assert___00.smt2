@@ -150,3 +150,4 @@ Target solver: CVC4
   (=> (ticks_per_second__function_guard (ticks_per_second Tuple0) Tuple0)
   (<= 1 (ticks_per_second Tuple0))))))
 (check-sat)
+(exit)

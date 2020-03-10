@@ -588,3 +588,4 @@ Target solver: CVC4
   (=> (dynamic_invariant4 z5 true true true true)
   (or (and (<= (- 10) z5) (<= z5 (- 1))) (and (<= 1 z5) (<= z5 10))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -177,3 +177,4 @@ Target solver: CVC4
   (=> (in_range1 (* (+ n 1) 65))
   (let ((o (* n 65))) (=> (in_range1 o) (in_range1 (+ o 1))))))))
 (check-sat)
+(exit)

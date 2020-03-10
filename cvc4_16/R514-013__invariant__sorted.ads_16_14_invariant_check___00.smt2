@@ -346,3 +346,4 @@ Target solver: CVC4
   (is_sorted a2) a2))
   (=> (= (is_sorted a1) true) (type_invariant (of_array a1 1 100))))))))))
 (check-sat)
+(exit)

@@ -1291,3 +1291,4 @@ Target solver: CVC4
   (=> (dynamic_property6 first6 last6 j1)
   (=> (dynamic_property5 first5 last5 i1) (not (= j1 (last_2 a)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

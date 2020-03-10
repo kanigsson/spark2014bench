@@ -1321,3 +1321,4 @@ Target solver: CVC4
   (= current_borrow2 current_borrow1)) (= carry2 carry1))
   (= future_borrow1 future_borrow)))))) (in_range2 (+ j n))))))))))))))))))))))
 (check-sat)
+(exit)

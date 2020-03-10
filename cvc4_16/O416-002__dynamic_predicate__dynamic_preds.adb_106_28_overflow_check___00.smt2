@@ -482,3 +482,4 @@ Target solver: CVC4
   (= (to_rep (rec__dynamic_preds__even_pair__a result____split_fields1)) o)
   (in_range (+ o 4))))))))))))))
 (check-sat)
+(exit)

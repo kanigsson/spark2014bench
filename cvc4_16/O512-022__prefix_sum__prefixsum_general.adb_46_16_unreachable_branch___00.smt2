@@ -542,3 +542,4 @@ Target solver: CVC4
   (ite (= o2 true) (= o1 (ite (= (mod2 (+ left2 1) space1) 0) true false))
   (= o1 false)))) (not (= o1 true)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

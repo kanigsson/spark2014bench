@@ -479,3 +479,4 @@ Target solver: CVC4
   (let ((o3 (+ o2 1)))
   (=> (in_range1 o3) (=> (<= o3 temp___386) (<= (to_rep1 s__first) o3))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

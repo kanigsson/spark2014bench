@@ -243,3 +243,4 @@ Target solver: CVC4
   (= (bool_eq (us_repqtmk (us_split_fieldsqtmk rliteral1 rliteral2))
      (us_repqtmk (us_split_fieldsqtmk rliteral3 rliteral3))) true)))))
 (check-sat)
+(exit)

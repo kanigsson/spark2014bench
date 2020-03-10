@@ -236,3 +236,4 @@ Target solver: CVC4
   (=> (= c1 (store c i rliteral))
   (= (bool_eq b1 (- 2147483648) 2147483647 c1 (- 2147483648) 2147483647) true)))))))))))
 (check-sat)
+(exit)

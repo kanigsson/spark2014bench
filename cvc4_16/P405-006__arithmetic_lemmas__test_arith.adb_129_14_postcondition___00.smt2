@@ -319,3 +319,4 @@ Target solver: CVC4
   (and (<= 0 temp___225) (<= temp___225 (- o2 1))))))))))))
   (< (abs1 r1) (abs1 y))))))))))))
 (check-sat)
+(exit)

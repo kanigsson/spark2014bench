@@ -578,3 +578,4 @@ Target solver: CVC4
                                           true false)) true)
   (let ((o2 (- (+ usf 1) space1))) (=> (in_range4 o2) (<= o2 usf)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

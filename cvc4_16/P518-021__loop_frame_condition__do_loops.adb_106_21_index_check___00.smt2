@@ -1138,3 +1138,4 @@ Target solver: CVC4
                                                           d__split_fields8) i1))))))))
   (<= 1 (- i1 1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -2569,3 +2569,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 3 usf) true false) (ite (<= usf 3) true false)) true)
   (not (= #x0000000000001000 #x0000000000000000))))))))))
 (check-sat)
+(exit)

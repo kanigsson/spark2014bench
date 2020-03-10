@@ -689,3 +689,4 @@ Target solver: CVC4
   (=> (= (to_rep (select saved_a 7)) o1)
   (forall ((o2 Int)) (=> (= (to_rep (select a2 0)) o2) (not (= o2 o1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

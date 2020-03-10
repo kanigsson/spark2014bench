@@ -1050,3 +1050,4 @@ Target solver: CVC4
   (let ((o2 (- (last3 result____split_fields1) index1)))
   (=> (in_range6 o2) (in_range6 (* 2 o2)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

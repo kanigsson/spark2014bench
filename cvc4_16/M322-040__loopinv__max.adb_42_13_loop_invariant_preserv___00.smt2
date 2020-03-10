@@ -261,3 +261,4 @@ Target solver: CVC4
   (exists ((n Int))
   (and (and (<= 1 n) (<= n i2)) (= (to_rep (select a n)) m))) (= m max4)))))))))))))))))))))))
 (check-sat)
+(exit)

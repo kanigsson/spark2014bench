@@ -418,3 +418,4 @@ Target solver: CVC4
   (=> (dynamic_predicate2 temp___569)
   (=> (<= (first1 temp___569) (last1 temp___569)) (<= (first1 s) (last1 s))))))))))))))))
 (check-sat)
+(exit)

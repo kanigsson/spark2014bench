@@ -932,3 +932,4 @@ Target solver: CVC4
   (=> (and (<= (to_rep1 b__first) i1) (<= i1 (to_rep1 b__last)))
   (= (mod2 (length (to_rep1 b__first) (to_rep1 b__last)) 5) 0)))))))))))))))))))))
 (check-sat)
+(exit)

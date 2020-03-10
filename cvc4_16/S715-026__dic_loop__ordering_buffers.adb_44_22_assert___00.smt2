@@ -1035,3 +1035,4 @@ Target solver: CVC4
                    (- (last (us_repqtmk buffer__split_fields2)) orig_first)
                    256)) #x00))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

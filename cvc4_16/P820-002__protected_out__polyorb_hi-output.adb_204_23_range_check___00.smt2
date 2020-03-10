@@ -436,3 +436,4 @@ Target solver: CVC4
   (= (- (last1 temp___374) (first1 temp___374)) (- (length s1) 1)))
   (< (length s1) 1)) (in_range1 (length s1)))))))))))))))))))))))
 (check-sat)
+(exit)

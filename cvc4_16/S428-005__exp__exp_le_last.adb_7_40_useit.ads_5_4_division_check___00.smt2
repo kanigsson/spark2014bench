@@ -361,3 +361,4 @@ Target solver: CVC4
  ;; File "useit.ads", line 6, characters 0-0
   (not (=> (dynamic_invariant offset true false true true) (not (= 31 0)))))
 (check-sat)
+(exit)

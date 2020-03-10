@@ -491,3 +491,4 @@ Target solver: CVC4
        true false))
   (= o false))))) (= (mod2 8 space) 0)))))))))))))))
 (check-sat)
+(exit)

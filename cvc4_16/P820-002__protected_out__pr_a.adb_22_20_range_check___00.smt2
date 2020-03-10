@@ -89,3 +89,4 @@ Target solver: CVC4
  ;; File "pr_a.adb", line 20, characters 0-0
   (not (<= 0 97)))
 (check-sat)
+(exit)

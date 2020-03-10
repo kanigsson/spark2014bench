@@ -1699,3 +1699,4 @@ Target solver: CVC4
   (=> (in_range1 o11)
   (<= (first1 (rec__area_math__ensemble__from (us_split_fields1 e))) o11)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

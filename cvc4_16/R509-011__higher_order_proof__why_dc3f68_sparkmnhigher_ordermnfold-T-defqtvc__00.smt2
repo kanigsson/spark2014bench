@@ -913,3 +913,4 @@ Target solver: CVC4
   (= (in_range6 (of_array (to_array o4) (first1 o4) (last1 o4)) 0
      (first1 o4)) true))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

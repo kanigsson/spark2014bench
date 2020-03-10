@@ -96,3 +96,4 @@ Target solver: CVC4
  ;; File "client.ads", line 4, characters 0-0
   (not (forall ((z Int)) (in_range (+ z 1)))))
 (check-sat)
+(exit)

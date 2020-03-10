@@ -479,3 +479,4 @@ Target solver: CVC4
   (=> (<= (first1 a) ia)
   (=> (<= ia (last1 a)) (=> (in_range3 usf) (<= (first1 b) usf)))))))))))))))))
 (check-sat)
+(exit)

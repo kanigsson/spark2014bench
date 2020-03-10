@@ -375,3 +375,4 @@ Target solver: CVC4
   (bvugt (bvadd ((_ zero_extend 32) val1) ((_ zero_extend 32) val2)) ((_ zero_extend 32) (bvadd 
   val1 val2))))))))))
 (check-sat)
+(exit)

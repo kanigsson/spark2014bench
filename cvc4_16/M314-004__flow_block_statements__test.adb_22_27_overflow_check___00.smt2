@@ -249,3 +249,4 @@ Target solver: CVC4
   (=> (in_range o)
   (forall ((temp11 Int)) (=> (= temp11 o) (in_range (- x y))))))))))))))))
 (check-sat)
+(exit)

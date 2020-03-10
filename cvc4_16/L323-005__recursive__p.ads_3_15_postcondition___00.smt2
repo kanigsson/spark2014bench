@@ -136,3 +136,4 @@ Target solver: CVC4
   (=> (id__function_guard (id (- n 1)) (- n 1))
   (= p__id__result (ite (= n 0) 0 (+ (id (- n 1)) 1)))))))))
 (check-sat)
+(exit)

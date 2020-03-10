@@ -111,3 +111,4 @@ Target solver: CVC4
   (let ((o (* par1 par2))) (and (in_range o) (= par31 o)))
   (let ((o (* par1 par1))) (and (in_range o) (= par31 o)))))) (< 0 par31)))))))))
 (check-sat)
+(exit)

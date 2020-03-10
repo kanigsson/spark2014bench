@@ -96,3 +96,4 @@ Target solver: CVC4
   (=> (dynamic_invariant free_list1 true true true true) (in_range
   (+ free_list1 1)))))))
 (check-sat)
+(exit)

@@ -626,3 +626,4 @@ Target solver: CVC4
   (=> (<= (first1 name) usf)
   (=> (<= usf (last1 name)) (<= (first1 name) usf)))))))))))))))
 (check-sat)
+(exit)

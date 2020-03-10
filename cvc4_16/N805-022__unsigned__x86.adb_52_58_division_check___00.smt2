@@ -482,3 +482,4 @@ Target solver: CVC4
   (to_rep (select xsi4 3))) #x00000100)) (bvurem (bvudiv val__ #x00010000) #x00010000))
   (not (= #x00010000 #x00000000))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -264,3 +264,4 @@ Target solver: CVC4
   (=> (dynamic_invariant res false false true true)
   (not (= #x00000002 #x00000000)))))))
 (check-sat)
+(exit)

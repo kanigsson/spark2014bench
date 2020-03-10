@@ -1848,3 +1848,4 @@ Target solver: CVC4
   (rate_of (us_repqtmk ctx__split_fields4)) (us_repqtmk ctx__split_fields4)))
   (= (rate_of (us_repqtmk ctx__split_fields3)) initial_rate)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

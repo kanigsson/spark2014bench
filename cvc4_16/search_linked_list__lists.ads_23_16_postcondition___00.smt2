@@ -784,3 +784,4 @@ Target solver: CVC4
                             (us_split_fieldsqtmk lists__search2__result))))
   (not (= (element l cu) 0)))))))))))))
 (check-sat)
+(exit)

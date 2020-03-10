@@ -124,3 +124,4 @@ Target solver: CVC4
  ;; File "main.ads", line 5, characters 0-0
   (not (forall ((x Int)) (=> (<= 1 x) (=> (<= x 2147483647) (< 0 x))))))
 (check-sat)
+(exit)

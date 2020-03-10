@@ -648,3 +648,4 @@ Target solver: CVC4
   (=> (in_range1 o18)
   (let ((o19 (* o18 2))) (=> (in_range1 o19) (in_range1 (- length2 o19))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -2284,3 +2284,4 @@ Target solver: CVC4
   (=> (<= 0 value__size4)
   (=> (<= 0 value__size5) (=> (<= 0 value__size6) (<= 0 value__size7)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

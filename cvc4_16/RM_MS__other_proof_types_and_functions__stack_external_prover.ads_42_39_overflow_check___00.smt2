@@ -503,3 +503,4 @@ Target solver: CVC4
   (count my_stack__split_fields3) my_stack__split_fields3)) (in_range1
   (+ (count my_stack__split_fields) 1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

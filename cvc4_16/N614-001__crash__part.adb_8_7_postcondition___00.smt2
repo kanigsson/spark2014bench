@@ -319,3 +319,4 @@ Target solver: CVC4
   (=> (= x3 (store x2 b o3))
   (= (to_rep (select x3 a)) (to_rep (select x1 b))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

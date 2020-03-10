@@ -434,3 +434,4 @@ Target solver: CVC4
  ;; File "uninitialized.adb", line 88, characters 0-0
   (not (forall ((i Int)) (=> (= i 1) (<= 1 (div1 i 2))))))
 (check-sat)
+(exit)

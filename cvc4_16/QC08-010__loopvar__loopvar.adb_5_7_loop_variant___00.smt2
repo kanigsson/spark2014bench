@@ -112,3 +112,4 @@ Target solver: CVC4
   (forall ((x2 Int))
   (=> (= x2 o) (=> (< 0 x2) (=> (< x2 10) (< temp___176 x2)))))))))))))))
 (check-sat)
+(exit)

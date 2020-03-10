@@ -950,3 +950,4 @@ Target solver: CVC4
   (=> (= spark__branch1 true)
   (forall ((o5 character)) (=> (= (to_rep o5) 46) (<= 1 (+ index2 skip2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

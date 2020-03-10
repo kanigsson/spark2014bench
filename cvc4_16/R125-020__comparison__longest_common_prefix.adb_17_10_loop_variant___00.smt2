@@ -454,3 +454,4 @@ Target solver: CVC4
   (=> (= r8b2 o6)
   (=> (dynamic_invariant2 r8b2 true false true true) (< temp___209 l3))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

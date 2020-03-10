@@ -1415,3 +1415,4 @@ Target solver: CVC4
   (exists ((o5 Int)) (= (to_rep1 (get1 r3 o4 temp___453)) o5)))))))))
   (dynamic_property1 first1 last1 j2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

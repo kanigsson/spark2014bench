@@ -255,3 +255,4 @@ Target solver: CVC4
   (us_repqtmk (us_split_fieldsqtmk context__split_fields2))))
   (= (valid (us_repqtmk (us_split_fieldsqtmk context__split_fields1))) true)))))))))))
 (check-sat)
+(exit)

@@ -611,3 +611,4 @@ Target solver: CVC4
   (not
   (= e__attr__tag (attr__tag1 (rec__tests__pair__a (us_split_fields7 c))))))
 (check-sat)
+(exit)

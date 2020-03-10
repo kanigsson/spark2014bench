@@ -382,3 +382,4 @@ Target solver: CVC4
   (=> (<= k i2)
   (= (to_rep1 (select result__2 k)) (to_rep (select input_array k)))))))))))))))))))
 (check-sat)
+(exit)

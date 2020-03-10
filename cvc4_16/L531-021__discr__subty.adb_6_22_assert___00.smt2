@@ -628,3 +628,4 @@ Target solver: CVC4
   (=> (dynamic_invariant (us_repqtmk z__split_discrs z__split_fields) true
   false true true) (= (to_rep2 (rec__basic__r__x z__split_discrs)) 0)))))))))))
 (check-sat)
+(exit)

@@ -281,3 +281,4 @@ Target solver: CVC4
  ;; File "t3q5.adb", line 6, characters 0-0
   (not true))
 (check-sat)
+(exit)

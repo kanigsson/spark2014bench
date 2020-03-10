@@ -228,3 +228,4 @@ Target solver: CVC4
   (=> (exists ((o1 Float32)) (= (to_rep o) o1)) (in_range
   get_out_subtype__controller_get_desired_rate__yaw_rate_desired)))))))))))))))))))))
 (check-sat)
+(exit)

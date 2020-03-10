@@ -104,3 +104,4 @@ Target solver: CVC4
   (forall ((ip21 Int))
   (=> (dynamic_invariant ip21 true true true true) (in_range (* ip1 ip21))))))))))))
 (check-sat)
+(exit)

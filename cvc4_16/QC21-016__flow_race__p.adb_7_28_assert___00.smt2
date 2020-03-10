@@ -120,3 +120,4 @@ Target solver: CVC4
   (=> (dynamic_invariant arg true false true true)
   (=> (dynamic_invariant arg true false true true) (= arg 0)))))
 (check-sat)
+(exit)

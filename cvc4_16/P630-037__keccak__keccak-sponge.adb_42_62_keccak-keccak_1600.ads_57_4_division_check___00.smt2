@@ -1242,3 +1242,4 @@ Target solver: CVC4
   (=> (dynamic_invariant capacity true false true true)
   (=> (= (mod2 (- 1600 capacity) 8) 0) (=> (< capacity 1600) (not (= 8 0)))))))
 (check-sat)
+(exit)

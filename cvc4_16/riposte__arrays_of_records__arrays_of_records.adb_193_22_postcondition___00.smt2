@@ -347,3 +347,4 @@ Target solver: CVC4
                     (rec__arrays_of_records__basic_record__second_value q_1)))))
   (= (bool_eq1 a3 0 1001 a1 0 1001) true))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1398,3 +1398,4 @@ Target solver: CVC4
   (forall ((i2 Int))
   (=> (= i2 (+ i1 1)) (=> (< (first2 a) i2) (in_range1 (- i2 1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

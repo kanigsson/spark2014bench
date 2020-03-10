@@ -405,3 +405,4 @@ Target solver: CVC4
   false true true))
   (< 0 (length (of_array (to_array a) (first2 a) (last2 a))))))))))))))))))))
 (check-sat)
+(exit)

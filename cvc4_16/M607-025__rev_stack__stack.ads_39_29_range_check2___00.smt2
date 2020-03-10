@@ -570,3 +570,4 @@ Target solver: CVC4
   (=> (in_range o3)
   (=> (<= 1 o3) (<= (first1 (to__ (us_repqtmk s__split_fields))) 1)))))))))))))))))))
 (check-sat)
+(exit)

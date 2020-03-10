@@ -240,3 +240,4 @@ Target solver: CVC4
   (exists ((n Int))
   (and (and (<= 1 n) (<= n i)) (= (to_rep (select a n)) m))) (= m max1))))))))))))))
 (check-sat)
+(exit)

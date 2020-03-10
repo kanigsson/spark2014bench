@@ -894,3 +894,4 @@ Target solver: CVC4
         (last1 a)) true false))
   (= o2 false)) (=> (= o2 true) (in_range4 (first1 a)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

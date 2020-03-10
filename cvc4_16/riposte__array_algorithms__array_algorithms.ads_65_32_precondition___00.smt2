@@ -459,3 +459,4 @@ Target solver: CVC4
   (and (= found1 found) (= location2 location1)))))))
   (=> (not (= found1 true)) (<= (first1 a) (last1 a))))))))))))
 (check-sat)
+(exit)

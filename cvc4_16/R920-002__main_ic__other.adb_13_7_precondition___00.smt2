@@ -94,3 +94,4 @@ Target solver: CVC4
   (forall ((i Int) (i1 Int))
   (=> (dynamic_invariant i true false true true) (=> (= i1 6) (< i1 10))))))
 (check-sat)
+(exit)

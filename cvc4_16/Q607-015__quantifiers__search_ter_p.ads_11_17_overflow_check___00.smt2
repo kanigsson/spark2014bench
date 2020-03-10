@@ -300,3 +300,4 @@ Target solver: CVC4
   (=> (<= j (- (+ (last1 a) 1) (length b)))
   (=> (in_range1 (length b)) (in_range1 (- j 1))))))))))))
 (check-sat)
+(exit)

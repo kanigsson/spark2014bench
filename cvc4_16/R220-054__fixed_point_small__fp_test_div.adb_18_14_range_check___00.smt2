@@ -468,3 +468,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 v false false true true)
   (=> (<= (abs1 x) 24) (=> (<= (abs1 y) 10) (in_range6 (fxp_div x y)))))))))))
 (check-sat)
+(exit)

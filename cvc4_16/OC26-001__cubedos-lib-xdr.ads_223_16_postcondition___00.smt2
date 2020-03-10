@@ -746,3 +746,4 @@ Target solver: CVC4
   (= spark__branch (ite (not (= temporary1 #x00000000)) true false)))
   (= last3 (+ position 3))))))))))))))))))
 (check-sat)
+(exit)

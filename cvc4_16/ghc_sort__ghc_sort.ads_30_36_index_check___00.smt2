@@ -819,3 +819,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array1 ghc_sort__cut__result) o11)) temp___478)
   (<= (first1 s) temp___478))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -396,3 +396,4 @@ Target solver: CVC4
   (=> (and (<= (- (* z3 2) 1) x) (<= x (+ (* z3 2) 1))) (in_range3
   (fxp_div_int x two))))))))))))))))))))
 (check-sat)
+(exit)

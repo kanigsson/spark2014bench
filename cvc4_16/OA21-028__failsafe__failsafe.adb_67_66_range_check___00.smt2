@@ -708,3 +708,4 @@ Target solver: CVC4
   (=> (= (to_rep (select battery_level_at1 o5)) o6)
   (=> (fp.leq battery_threshold o6) (in_range1 (bvsub counter1 #x01)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

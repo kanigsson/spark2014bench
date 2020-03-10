@@ -435,3 +435,4 @@ Target solver: CVC4
   (=> (= (ind_prop (of_array (to_array a) (first2 a) (last2 a)) x i) true)
   (=> (not (= i (last2 a))) (in_range1 (+ i 1))))))))))))
 (check-sat)
+(exit)

@@ -186,3 +186,4 @@ Target solver: CVC4
   (and (dynamic_invariant o1 true false true true) (= o1 price_of_apple)))
   (=> (<= o o1) (in_range (+ apples_in_fruit_salad oranges_in_fruit_salad))))))))))))))
 (check-sat)
+(exit)

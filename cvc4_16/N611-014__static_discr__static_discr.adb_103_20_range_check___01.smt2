@@ -1030,3 +1030,4 @@ Target solver: CVC4
   (=> (= static_discr__search__search_some__R38b__assume r38b)
   (=> (dynamic_invariant r38b true false true true) (in_range2 r38b)))))))))))))))
 (check-sat)
+(exit)

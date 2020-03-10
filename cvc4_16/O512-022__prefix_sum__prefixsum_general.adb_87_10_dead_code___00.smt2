@@ -426,3 +426,4 @@ Target solver: CVC4
   (=> (= a1 (store a 7 rliteral))
   (forall ((space1 Int)) (=> (= space1 (div1 space 2)) (not (< 0 space1))))))))))))))))))
 (check-sat)
+(exit)

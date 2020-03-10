@@ -1081,3 +1081,4 @@ Target solver: CVC4
   (=> (= (to_rep1 item__first) o4)
   (let ((o5 (- o4 1))) (=> (in_range1 o5) (in_range2 o5)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

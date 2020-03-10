@@ -684,3 +684,4 @@ Target solver: CVC4
   (=> (in_range1 (- n 1)) (rec__test_route__route_acc__pointer_value__pred
   r))))))))
 (check-sat)
+(exit)

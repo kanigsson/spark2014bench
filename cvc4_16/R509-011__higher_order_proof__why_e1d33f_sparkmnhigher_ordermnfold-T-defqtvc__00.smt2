@@ -1240,3 +1240,4 @@ Target solver: CVC4
   (=> (= o true)
   (=> (not (< (first_2 a) j)) (=> (< (first2 a) i) (in_range6 (- i 1)))))))))))))
 (check-sat)
+(exit)

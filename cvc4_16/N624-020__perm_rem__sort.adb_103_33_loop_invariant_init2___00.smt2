@@ -358,3 +358,4 @@ Target solver: CVC4
                                                   false)) true)
   (<= first min1)))))))))))))))))
 (check-sat)
+(exit)

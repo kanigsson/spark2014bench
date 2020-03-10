@@ -258,3 +258,4 @@ Target solver: CVC4
   (=> (= search__search__result 0)
   (=> (<= 1 pos2) (=> (<= pos2 10) (not (= (to_rep (select t pos2)) v)))))))))))))
 (check-sat)
+(exit)

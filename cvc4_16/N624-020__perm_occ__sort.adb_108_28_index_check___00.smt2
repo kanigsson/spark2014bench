@@ -710,3 +710,4 @@ Target solver: CVC4
   (forall ((o9 Int))
   (=> (= (to_rep (select values1 usf1)) o9) (<= (to_rep1 values__first) usf))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

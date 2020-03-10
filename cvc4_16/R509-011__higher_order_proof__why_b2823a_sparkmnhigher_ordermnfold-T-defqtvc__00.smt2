@@ -1229,3 +1229,4 @@ Target solver: CVC4
                                                        (last_2 a)) init)) i
                                                        (first_2 a)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

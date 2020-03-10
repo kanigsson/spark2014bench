@@ -1265,3 +1265,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 sum false false true true)
   (bvule ((_ zero_extend 8) #x00) q_hat)))))))))))))))
 (check-sat)
+(exit)

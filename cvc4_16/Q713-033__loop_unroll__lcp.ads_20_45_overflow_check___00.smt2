@@ -877,3 +877,4 @@ Target solver: CVC4
                                               (select (to_array a) y)))) true)
   (= lcp__result 0)) (=> (= (= x y) true) (in_range1 (- (last1 a) x)))))))))))))))))))))
 (check-sat)
+(exit)

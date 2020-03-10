@@ -280,3 +280,4 @@ Target solver: CVC4
   (=> (= q2 o)
   (forall ((r2 Int)) (=> (= r2 (mod2 c1 d2)) (in_range1 (* q2 y1)))))))))))))))))))))))
 (check-sat)
+(exit)

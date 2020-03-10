@@ -245,3 +245,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk rliteral
   (rec__init_pred_in_loop__partial_init__f2 x__split_fields1))))))))))))
 (check-sat)
+(exit)

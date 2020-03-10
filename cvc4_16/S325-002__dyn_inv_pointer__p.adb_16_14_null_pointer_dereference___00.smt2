@@ -456,3 +456,4 @@ Target solver: CVC4
      us_null_pointer) true))
   (rec__p__B_2__list_acc__pointer_value__pred x)))))))))))
 (check-sat)
+(exit)

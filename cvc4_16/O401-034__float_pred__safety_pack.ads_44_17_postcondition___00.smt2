@@ -282,3 +282,4 @@ Target solver: CVC4
   (=> (= safety_pack__saturate__2__result res1)
   (=> (bvult value min_value) (= safety_pack__saturate__2__result min_value))))))))))))
 (check-sat)
+(exit)

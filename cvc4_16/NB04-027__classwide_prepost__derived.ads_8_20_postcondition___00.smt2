@@ -144,3 +144,4 @@ Target solver: CVC4
                       (rec__ext__ x__split_fields)))
   (not (= (rec__object__t__b x__split_fields1) true))))))
 (check-sat)
+(exit)

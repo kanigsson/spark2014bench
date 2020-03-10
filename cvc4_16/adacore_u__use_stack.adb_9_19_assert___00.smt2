@@ -504,3 +504,4 @@ Target solver: CVC4
   (peek b_top2 b_content2) b_top2 b_content2))
   (= (peek b_top1 b_content1) f1)))))))))))))))))))))))))
 (check-sat)
+(exit)

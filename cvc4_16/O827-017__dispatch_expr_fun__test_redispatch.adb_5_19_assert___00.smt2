@@ -465,3 +465,4 @@ Target solver: CVC4
   (to_base (us_repqtmk1 x__split_fields1 x__attr__tag))))
   (= (g (to_base (us_repqtmk1 x__split_fields x__attr__tag))) 2)))))))
 (check-sat)
+(exit)

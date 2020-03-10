@@ -719,3 +719,4 @@ Target solver: CVC4
   (forall ((o13 Int))
   (=> (= (to_rep (select values2 y)) o13) (<= (to_rep1 values__first) y)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

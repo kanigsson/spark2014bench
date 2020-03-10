@@ -563,3 +563,4 @@ Target solver: CVC4
   (and (and (<= 1 j) (<= j pos2)) (= (to_rep (select o4 j)) o3))))))))))
   (<= 1 pos2))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -747,3 +747,4 @@ Target solver: CVC4
   (forall ((k Int))
   (=> (and (<= 1 k) (<= k (- i2 1))) (not (= (nth l k) v)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -603,3 +603,4 @@ Target solver: CVC4
   (= x2 x1))))
   (let ((temp___269 (+ i31 1))) (=> (<= temp___269 3) (<= 1 temp___269))))))))))))
 (check-sat)
+(exit)

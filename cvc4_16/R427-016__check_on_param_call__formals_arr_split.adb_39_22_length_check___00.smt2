@@ -502,3 +502,4 @@ Target solver: CVC4
   (=> (= (last1 temp___222) x)
   (=> (<= (first1 temp___222) (last1 temp___222)) (<= 0 x)))))))))
 (check-sat)
+(exit)

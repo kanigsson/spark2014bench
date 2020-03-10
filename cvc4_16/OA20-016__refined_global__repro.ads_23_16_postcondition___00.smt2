@@ -287,3 +287,4 @@ Target solver: CVC4
   (is_empty__function_guard (is_empty (get_board cur_board1))
   (get_board cur_board1))) (= (is_empty (get_board cur_board)) true))))))))
 (check-sat)
+(exit)

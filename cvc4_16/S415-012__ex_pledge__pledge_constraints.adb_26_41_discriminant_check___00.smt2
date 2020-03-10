@@ -906,3 +906,4 @@ Target solver: CVC4
   (pledge_constraints__int_acc_option__content__pred
   (select (to_array temp___254) 1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

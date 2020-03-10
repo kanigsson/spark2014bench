@@ -2201,3 +2201,4 @@ Target solver: CVC4
   (let ((temp___451 (to_string (attr__ATTRIBUTE_IMAGE4 o5) 5))) (in_range2
   (- (+ 1 (+ (length 1 1) (length (first1 temp___451) (last1 temp___451)))) 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

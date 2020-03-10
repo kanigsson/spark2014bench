@@ -438,3 +438,4 @@ Target solver: CVC4
   (= dynamic_ranges__search_0__nested__result1 dynamic_ranges__search_0__nested__result))))))
   (dynamic_property3 0 last4 0))))))))))))
 (check-sat)
+(exit)

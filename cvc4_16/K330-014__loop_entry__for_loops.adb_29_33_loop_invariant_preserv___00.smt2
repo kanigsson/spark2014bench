@@ -991,3 +991,4 @@ Target solver: CVC4
                                             current_out4 current_err4)))
   (=> (not (= i1 temp___201)) (< usf 0)))))))))))))))))))))))))))
 (check-sat)
+(exit)

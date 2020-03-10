@@ -412,3 +412,4 @@ Target solver: CVC4
   (let ((o (fxp_div x y)))
   (=> (in_range_int o) (in_range1 ((_ int2bv 8) o))))))))))
 (check-sat)
+(exit)

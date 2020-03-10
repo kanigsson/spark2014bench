@@ -103,3 +103,4 @@ Target solver: CVC4
   (=> (= test_annotate__f_4__result x)
   (= (= test_annotate__f_4__result x) true)))))))
 (check-sat)
+(exit)

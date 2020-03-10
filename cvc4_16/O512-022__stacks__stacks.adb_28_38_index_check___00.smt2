@@ -883,3 +883,4 @@ Target solver: CVC4
   (=> (and (<= 1 j1) (<= j1 r5b))
   (<= (first3 (rec__stacks__stack__data (us_split_fields1 s))) j1))))))))))))))))
 (check-sat)
+(exit)

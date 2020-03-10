@@ -489,3 +489,4 @@ Target solver: CVC4
   (= (and (ite (<= o2 usf) true false) (ite (<= usf o1) true false)) true)
   (=> (not (< usf q)) (=> (not (< (+ q m1) usf)) (<= (to_rep h__first) usf)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

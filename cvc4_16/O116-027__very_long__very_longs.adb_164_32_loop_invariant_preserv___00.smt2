@@ -1157,3 +1157,4 @@ Target solver: CVC4
   (and (<= (first1 number) string_index3) (<= string_index3 (last1 number)))
   (<= 1 index3)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

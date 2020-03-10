@@ -344,3 +344,4 @@ Target solver: CVC4
      (rec__records_prooffuncs__optional_pair__the_pair
      (us_split_fields3 x_old))))))))) true))))))))))))
 (check-sat)
+(exit)

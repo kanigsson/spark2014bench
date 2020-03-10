@@ -243,3 +243,4 @@ Target solver: CVC4
   (=> (= stack_top1 o1)
   (forall ((o2 integer)) (=> (= (to_rep o2) x) (<= 1 stack_top1)))))))))))))))))
 (check-sat)
+(exit)

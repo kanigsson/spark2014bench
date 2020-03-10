@@ -889,3 +889,4 @@ Target solver: CVC4
   (=> (and (dynamic_invariant o6 true false true true) (<= o6 (capacity o5)))
   (in_range1 (+ usf o6)))))))))))))))))))
 (check-sat)
+(exit)

@@ -200,3 +200,4 @@ Target solver: CVC4
   (=> (query_x1__function_guard (query_x1 Tuple0) Tuple0)
   (= (query_x1 Tuple0) true))))))))
 (check-sat)
+(exit)

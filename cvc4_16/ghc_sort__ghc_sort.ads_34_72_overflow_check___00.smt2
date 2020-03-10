@@ -861,3 +861,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array1 ghc_sort__cut__result) o7)) o8)
   (=> (not (= o8 o6)) (in_range1 (+ usf 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

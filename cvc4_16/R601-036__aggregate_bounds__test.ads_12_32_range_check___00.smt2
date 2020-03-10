@@ -485,3 +485,4 @@ Target solver: CVC4
   (=> (<= (get_pos p) (to_rep1 d__last))
   (=> (get_pos__function_guard (get_pos p) p) (<= 1 (get_pos p))))))))
 (check-sat)
+(exit)

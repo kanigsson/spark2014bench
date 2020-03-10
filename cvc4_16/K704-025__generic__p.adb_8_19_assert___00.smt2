@@ -151,3 +151,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 o true false true true) (= o 3)))
   (forall ((x1 Int)) (=> (= x1 o) (= x1 3)))))))))
 (check-sat)
+(exit)

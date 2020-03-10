@@ -420,3 +420,4 @@ Target solver: CVC4
   (and (= spark__branch1 spark__branch) (= count_bs1 count_bs)))))))
   (let ((o (length s))) (=> (in_range1 o) (in_range1 (+ o count_bs1)))))))))))
 (check-sat)
+(exit)

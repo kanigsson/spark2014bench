@@ -427,3 +427,4 @@ Target solver: CVC4
                                                                    false)) true)
   (in_range2 usf)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

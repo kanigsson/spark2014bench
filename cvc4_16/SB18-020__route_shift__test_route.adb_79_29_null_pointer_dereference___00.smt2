@@ -1000,3 +1000,4 @@ Target solver: CVC4
   (=> (in_range3 (- n 1)) (rec__test_route__route_acc__pointer_value__pred
   r)))))))))))))))
 (check-sat)
+(exit)

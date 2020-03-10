@@ -507,3 +507,4 @@ Target solver: CVC4
   (and (and (<= 1 s) (<= s (- st2 1)))
   (and (= (select sel s) true) (= (to_rep (select max s)) lowest_max2))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

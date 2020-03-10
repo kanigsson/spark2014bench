@@ -104,3 +104,4 @@ Target solver: CVC4
   (=> (<= (- 2147483648) counter)
   (=> (< counter 2147483647) (in_range1 (+ counter 1))))))))
 (check-sat)
+(exit)

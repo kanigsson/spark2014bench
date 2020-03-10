@@ -1156,3 +1156,4 @@ Target solver: CVC4
                                               (select (to_array o12) k))))))))
   (=> (in_range3 usf) (<= usf (last1 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

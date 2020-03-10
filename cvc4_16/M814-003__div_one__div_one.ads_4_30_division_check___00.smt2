@@ -221,3 +221,4 @@ Target solver: CVC4
  ;; File "div_one.ads", line 3, characters 0-0
   (not (=> (dynamic_invariant a true false true true) (not (= a 0)))))
 (check-sat)
+(exit)

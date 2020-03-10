@@ -102,3 +102,4 @@ Target solver: CVC4
   (not
   (forall ((o us_rep) (x us_rep)) (=> (= x o) (= (ole x time_last) true)))))
 (check-sat)
+(exit)

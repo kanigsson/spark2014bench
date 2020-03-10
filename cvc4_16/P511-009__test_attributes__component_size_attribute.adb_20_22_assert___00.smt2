@@ -467,3 +467,4 @@ Target solver: CVC4
   (= a2 (component_size_attribute__p__a2__aggregate_def (of_array a1 o1 o)))
   (=> (dynamic_invariant1 a2 true false true true) (<= 0 component__size1)))))))))))))))))))))
 (check-sat)
+(exit)

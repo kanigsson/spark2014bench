@@ -122,3 +122,4 @@ Target solver: CVC4
  ;; File "p.ads", line 10, characters 0-0
   (not (= (distinct 1 0) true)))
 (check-sat)
+(exit)

@@ -385,3 +385,4 @@ Target solver: CVC4
   (forall ((v2 (Array Int value))) (sorted__function_guard (sorted v2) v2))
   (=> (= (sorted v1) true) (not (= 2 0)))))))))))))
 (check-sat)
+(exit)

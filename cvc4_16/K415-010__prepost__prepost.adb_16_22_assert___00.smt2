@@ -113,3 +113,4 @@ Target solver: CVC4
   (=> (fun_is_zero__function_guard (fun_is_zero z) z)
   (=> (= (fun_is_zero z) true) (= z 0)))))))
 (check-sat)
+(exit)

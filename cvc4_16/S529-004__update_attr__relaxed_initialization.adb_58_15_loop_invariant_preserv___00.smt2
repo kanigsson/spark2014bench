@@ -819,3 +819,4 @@ Target solver: CVC4
      (rec__relaxed_initialization__rec__x
      (us_split_fields1 (select obj3 idx21)))) true)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -650,3 +650,4 @@ Target solver: CVC4
                (us_close (us_repqtmk2 x__pointer_value)))) o1)))
   (=> (in_range1 o2) (in_range1 (+ o2 1))))))))))))))))))))))))
 (check-sat)
+(exit)

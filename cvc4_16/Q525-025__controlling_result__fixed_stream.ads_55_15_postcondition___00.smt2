@@ -527,3 +527,4 @@ Target solver: CVC4
                                  (first1 new_val))))))
   (= (to_rep (select change1 i)) 0))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

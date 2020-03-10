@@ -1613,3 +1613,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r57s true false true true) (in_range1
   (+ block_offset1 remaining_bytes)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

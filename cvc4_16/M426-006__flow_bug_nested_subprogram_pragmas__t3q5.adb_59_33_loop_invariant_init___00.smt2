@@ -365,3 +365,4 @@ Target solver: CVC4
   (=> (and (<= 1 x) (<= x low))
   (<= (to_rep (select table1 x)) (to_rep (select table1 (+ x 1))))))))))))))))))))))))
 (check-sat)
+(exit)

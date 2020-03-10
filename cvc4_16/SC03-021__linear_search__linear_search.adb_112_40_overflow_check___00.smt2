@@ -998,3 +998,4 @@ Target solver: CVC4
            (us_split_fields1 (rec__linear_search__list__pointer_value usf2))))) 1))))
   (in_range1 (+ i 1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

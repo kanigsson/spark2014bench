@@ -179,3 +179,4 @@ Target solver: CVC4
   (let ((o (+ count2 1)))
   (=> (in_range1 o) (forall ((count3 Int)) (=> (= count3 o) (= count3 k)))))))))))))))))
 (check-sat)
+(exit)

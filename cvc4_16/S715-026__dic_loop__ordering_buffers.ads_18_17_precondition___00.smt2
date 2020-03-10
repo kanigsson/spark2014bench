@@ -828,3 +828,4 @@ Target solver: CVC4
   (=> (forall ((usf3 us_rep)) (first__function_guard (first usf3) usf3))
   (<= (first usf1) usf2)))))))))))))))))))
 (check-sat)
+(exit)

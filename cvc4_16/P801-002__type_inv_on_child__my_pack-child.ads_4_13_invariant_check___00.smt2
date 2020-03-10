@@ -130,3 +130,4 @@ Target solver: CVC4
   (=> (= ada___my_pack__child__incr__result o) (type_invariant
   ada___my_pack__child__incr__result)))))))))
 (check-sat)
+(exit)

@@ -387,3 +387,4 @@ Target solver: CVC4
                     (last1 word)))
   (= spark__branch2 true)))))))))))))))))))))
 (check-sat)
+(exit)

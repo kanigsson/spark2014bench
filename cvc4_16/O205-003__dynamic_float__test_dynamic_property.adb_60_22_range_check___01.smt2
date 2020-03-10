@@ -335,3 +335,4 @@ Target solver: CVC4
   (and (= y1 test_dynamic_property__dyn_param__x) (fp.leq y1 c))))))))))
   (dynamic_property (fp #b0 #b00000000 #b00000000000000000000000) last x2))))))))))))))))))))))))))))
 (check-sat)
+(exit)

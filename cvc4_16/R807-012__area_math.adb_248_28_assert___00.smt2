@@ -1415,3 +1415,4 @@ Target solver: CVC4
   (=> (= spark__branch2 (ite (= skip2 true) false true))
   (=> (= spark__branch2 true) (bvule prev1 next1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

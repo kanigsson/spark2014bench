@@ -144,3 +144,4 @@ Target solver: CVC4
                                                  false)) true)
   (=> (= temp___loop_entry_180 x1) (= x1 temp___loop_entry_180)))))))))))))
 (check-sat)
+(exit)

@@ -916,3 +916,4 @@ Target solver: CVC4
   (= (to_rep (rec__messages__network_message__size low_level__split_fields3)) o5)
   (= (to_rep (rec__messages__network_message__size low_level__split_fields3)) usf)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

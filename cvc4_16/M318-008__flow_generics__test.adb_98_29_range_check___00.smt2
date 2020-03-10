@@ -827,3 +827,4 @@ Target solver: CVC4
  ;; File "test.ads", line 1, characters 0-0
   (not (in_range 0)))
 (check-sat)
+(exit)

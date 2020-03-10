@@ -1121,3 +1121,4 @@ Target solver: CVC4
   (=> (elements__function_guard (elements this) this)
   (= (length1 fixed_stream__convert__result) (elements this))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -422,3 +422,4 @@ Target solver: CVC4
   true true))
   (forall ((k11 Int)) (=> (= k11 o1) (=> (in_range2 gap1) (<= 0 gap1))))))))))))))))))))))))
 (check-sat)
+(exit)

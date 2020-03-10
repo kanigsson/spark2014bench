@@ -136,3 +136,4 @@ Target solver: CVC4
   (and (in_range1 o1) (and (= remainder2 o1) (not (<= divisor remainder2)))))))))))
   (and (= quotient2 quotient1) (= remainder2 remainder1))) (<= 0 quotient2)))))))))))))
 (check-sat)
+(exit)

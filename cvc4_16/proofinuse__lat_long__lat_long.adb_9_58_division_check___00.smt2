@@ -571,3 +571,4 @@ Target solver: CVC4
      (rec__lat_long__coordinates__long (us_split_fields1 destination))) o3)
   (not (fp.isZero o1))))))))))))))))))
 (check-sat)
+(exit)

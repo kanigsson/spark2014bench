@@ -617,3 +617,4 @@ Target solver: CVC4
   (=> (not (= index_21 temp___336))
   (forall ((index_22 Int)) (=> (= index_22 (+ index_21 1)) (<= 2 index_22)))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -226,3 +226,4 @@ Target solver: CVC4
   (forall ((data1 (Array Int status))) (all_available__function_guard
   (all_available data1) data1)) (= (all_available data) true)))))))))
 (check-sat)
+(exit)

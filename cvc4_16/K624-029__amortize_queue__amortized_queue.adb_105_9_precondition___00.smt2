@@ -1004,3 +1004,4 @@ Target solver: CVC4
                                                                  (us_split_fields1
                                                                  amortized_queue__my_vectors__append__2__container__compl))))))))))))))))))))))
 (check-sat)
+(exit)

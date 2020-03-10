@@ -285,3 +285,4 @@ Target solver: CVC4
   (= (and (ite (= (mod2 a c) 0) true false) (ite (= (mod2 b c) 0) true false)) true))
   (not (= c 0)))))))))))))
 (check-sat)
+(exit)

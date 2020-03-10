@@ -705,3 +705,4 @@ Target solver: CVC4
                                                      arg__split_fields2
                                                      arg__attr__tag))))))))))))))))
 (check-sat)
+(exit)

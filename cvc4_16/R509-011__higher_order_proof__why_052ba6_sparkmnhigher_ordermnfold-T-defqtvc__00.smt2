@@ -971,3 +971,4 @@ Target solver: CVC4
   (=> (<= (first_21 temp___433) (last_21 temp___433))
   (<= (first_2 a) (last_2 a)))))))))))))))))
 (check-sat)
+(exit)

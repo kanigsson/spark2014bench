@@ -219,3 +219,4 @@ Target solver: CVC4
   (not
   (= (bool_eq a2 (- 2147483648) 2147483647 a1 (- 2147483648) 2147483647) true)))))))))))))))
 (check-sat)
+(exit)

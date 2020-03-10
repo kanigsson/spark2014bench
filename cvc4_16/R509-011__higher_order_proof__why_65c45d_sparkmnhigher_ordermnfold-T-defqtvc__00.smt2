@@ -1579,3 +1579,4 @@ Target solver: CVC4
   (=> (in_range1 o10)
   (<= (first5 test_higher_order3__my_sum_2__fold_sum__acc__fold__result) o10))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

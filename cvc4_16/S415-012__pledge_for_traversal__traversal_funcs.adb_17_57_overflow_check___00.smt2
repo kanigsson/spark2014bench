@@ -398,3 +398,4 @@ Target solver: CVC4
            (rec__traversal_funcs__list_acc__pointer_value o))))) 1)))))
   (in_range (+ (min 2147483646 o1) 1)))))))))
 (check-sat)
+(exit)

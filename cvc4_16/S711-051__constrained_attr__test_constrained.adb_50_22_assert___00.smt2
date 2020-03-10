@@ -149,3 +149,4 @@ Target solver: CVC4
  ;; File "test_constrained.adb", line 46, characters 0-0
   (not true))
 (check-sat)
+(exit)

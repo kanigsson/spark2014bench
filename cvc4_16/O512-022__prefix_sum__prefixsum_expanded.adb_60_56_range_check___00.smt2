@@ -782,3 +782,4 @@ Target solver: CVC4
   (=> (< left2 8)
   (=> (= (mod2 (+ left2 1) space1) 0) (in_range3 (* (* space1 2) 1000000))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

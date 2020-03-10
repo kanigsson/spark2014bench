@@ -413,3 +413,4 @@ Target solver: CVC4
   (and (= valid (distinct 0 0)) (= control_char1 control_char)))))
   (=> (= valid true) (in_range4 control_char1))))))))
 (check-sat)
+(exit)

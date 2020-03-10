@@ -151,3 +151,4 @@ Target solver: CVC4
   (=> (in_range o1)
   (forall ((res11 Int)) (=> (= res11 o1) (in_range (* x y))))))))))))))))
 (check-sat)
+(exit)

@@ -1740,3 +1740,4 @@ Target solver: CVC4
      (to_base (us_repqtmk1 s__split_discrs s__split_fields1 s__attr__tag)))
      s__attr__tag)) true)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

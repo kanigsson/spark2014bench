@@ -330,3 +330,4 @@ Target solver: CVC4
   (forall ((x Int))
   (=> (= x 2) (=> (dynamic_invariant x true false true true i) (= 10 i)))))))))
 (check-sat)
+(exit)

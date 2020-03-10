@@ -65,3 +65,4 @@ Target solver: CVC4
   (= main__get_index__result 5))))
   (=> (= cheat true) (= main__get_index__result 3))))))
 (check-sat)
+(exit)

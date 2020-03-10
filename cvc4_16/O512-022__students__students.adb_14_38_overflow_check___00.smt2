@@ -818,3 +818,4 @@ Target solver: CVC4
                    false true))
   (=> (= spark__branch true) (in_range6 (fxp_div_int tuition1 2)))))))))))))))))
 (check-sat)
+(exit)

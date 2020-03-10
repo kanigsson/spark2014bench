@@ -1703,3 +1703,4 @@ Target solver: CVC4
   (=> (= ghc_sort__sort__result o1)
   (= (last1 ghc_sort__sort__result) (last1 s))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

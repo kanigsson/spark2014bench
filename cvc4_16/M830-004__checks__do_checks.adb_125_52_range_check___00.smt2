@@ -955,3 +955,4 @@ Target solver: CVC4
   (=> (= a (temp___String_Literal_773 Tuple0))
   (=> (<= zero (- zero 1)) (<= 1 zero))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

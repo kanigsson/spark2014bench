@@ -150,3 +150,4 @@ Target solver: CVC4
   (=> (= (us_repqtmk (us_split_fieldsqtmk (distinct 1 0))) foo)
   (type_invariant foo))))))))
 (check-sat)
+(exit)

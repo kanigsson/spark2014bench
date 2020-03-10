@@ -1271,3 +1271,4 @@ Target solver: CVC4
                  ada___keccak__padding__pad101_single_block__block__compl))
   (<= (length (to_rep o7) (to_rep o6)) 268435455))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

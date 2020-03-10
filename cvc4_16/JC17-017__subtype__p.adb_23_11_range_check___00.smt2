@@ -173,3 +173,4 @@ Target solver: CVC4
   (forall ((tmp_s1 Int))
   (=> (= tmp_s1 o) (=> (<= 1 (- y x)) (<= (- 2147483648) 1)))))))))))))
 (check-sat)
+(exit)

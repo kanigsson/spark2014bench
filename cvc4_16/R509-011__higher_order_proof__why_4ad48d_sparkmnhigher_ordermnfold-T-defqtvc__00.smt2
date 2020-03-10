@@ -629,3 +629,4 @@ Target solver: CVC4
      x i (last_2 a)) true)
   (=> (in_range5 (first_2 a)) (in_range4 (+ i 1))))))))))))))
 (check-sat)
+(exit)

@@ -2240,3 +2240,4 @@ Target solver: CVC4
   (=> (= num_deleted3 o3)
   (= (to_rep (select (select cur_board4 from_line1) 1)) 0))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

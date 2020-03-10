@@ -855,3 +855,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk o1
   (rec__bounded_dynamic_strings__sequence__content to____split_fields1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

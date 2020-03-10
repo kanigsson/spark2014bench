@@ -379,3 +379,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 input true false true true)
   (=> (<= (first1 input) (last1 input)) (<= 1 (first1 input))))))
 (check-sat)
+(exit)

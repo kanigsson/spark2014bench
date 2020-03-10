@@ -605,3 +605,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r108b true false true true) (in_range3 10
   x__split_discrs))))))))))
 (check-sat)
+(exit)

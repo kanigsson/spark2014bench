@@ -1004,3 +1004,4 @@ Target solver: CVC4
   (= o4 (ite (< 0 o7) true false))))) (= o4 false))))))))))
   (=> (= o4 true) (<= 0 usf))))))))))))))))))))
 (check-sat)
+(exit)

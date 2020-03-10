@@ -368,3 +368,4 @@ Target solver: CVC4
   (= ((_ zero_extend 8) t__madd__result) (bvurem (bvadd ((_ zero_extend 8) 
   x) ((_ zero_extend 8) y)) #x00E6)))))))))
 (check-sat)
+(exit)

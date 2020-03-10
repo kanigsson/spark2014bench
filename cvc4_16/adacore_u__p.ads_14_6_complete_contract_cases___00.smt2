@@ -113,3 +113,4 @@ Target solver: CVC4
                             (ite (<= x (- 1)) true false)) true) 1 0)) 
   (ite (= (>= x 200) true) 1 0)) (ite (= (<= x (- 200)) true) 1 0)))))))))))
 (check-sat)
+(exit)

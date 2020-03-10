@@ -480,3 +480,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (fp.lt o1 battery_threshold) true false))
   (not (= spark__branch true))))))))))))))))))))
 (check-sat)
+(exit)

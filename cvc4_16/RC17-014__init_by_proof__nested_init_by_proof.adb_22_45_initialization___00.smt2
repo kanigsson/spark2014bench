@@ -345,3 +345,4 @@ Target solver: CVC4
      (rec__value (rec__nested_init_by_proof__rec__f2 (us_split_fields1 y)))) o)
   (= (attr__init (rec__nested_init_by_proof__rec__f2 (us_split_fields1 x))) true))))))))
 (check-sat)
+(exit)

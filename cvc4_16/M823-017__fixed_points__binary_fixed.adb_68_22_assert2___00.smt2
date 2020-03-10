@@ -390,3 +390,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (and (= z1 (fxp_div x x)) (= z1 256)) (= z1 z))))
   (forall ((z2 Int)) (=> (= z2 (fxp_div x y)) (= z2 (fxp_mult inv_y x))))))))))))))))
 (check-sat)
+(exit)

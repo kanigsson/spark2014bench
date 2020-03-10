@@ -689,3 +689,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (rec__stacks__buffer__first (us_split_fields3 s))) o3)
   (in_range (- (- (+ o3 o2) 1) 100))))))))))))
 (check-sat)
+(exit)

@@ -67,3 +67,4 @@ Target solver: CVC4
   (not
   (not (exists ((spark__branch Bool)) (= spark__branch (distinct 1 0))))))
 (check-sat)
+(exit)

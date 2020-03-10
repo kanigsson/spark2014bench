@@ -256,3 +256,4 @@ Target solver: CVC4
   (=> (dynamic_invariant al_test true false true true)
   (= al_test (bvand al_test #xFF))))))
 (check-sat)
+(exit)

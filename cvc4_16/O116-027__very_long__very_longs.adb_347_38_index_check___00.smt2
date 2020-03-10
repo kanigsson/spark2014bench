@@ -1201,3 +1201,4 @@ Target solver: CVC4
   (let ((o10 (+ i1 j1)))
   (=> (in_range2 o10) (<= (first1 result____split_fields3) (- o10 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

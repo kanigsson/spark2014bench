@@ -821,3 +821,4 @@ Target solver: CVC4
   (= o7 (bvshl old_overflow1 ((_ int2bv 8) (- 8 distance)))) (= o7 #x00))
   (<= (first1 number__split_fields2) i1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

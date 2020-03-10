@@ -644,3 +644,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__simple_unc_arrays__table__last a__split_discrs)) o2)
   (in_range1 (+ (- o2 usf) 1)))))))))))))))
 (check-sat)
+(exit)

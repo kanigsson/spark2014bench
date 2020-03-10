@@ -1674,3 +1674,4 @@ Target solver: CVC4
                       true false)) true)
   (<= (first1 u__split_fields2) divisor_index1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

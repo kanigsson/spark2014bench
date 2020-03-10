@@ -621,3 +621,4 @@ Target solver: CVC4
        (= inc true)))
   true false)) true) (in_range1 (+ y2 1))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

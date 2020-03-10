@@ -594,3 +594,4 @@ Target solver: CVC4
   (= (to_caml_char2 str
      (of_array ret3 (to_rep1 ret__first) (to_rep1 ret__last)) idx2) true))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1196,3 +1196,4 @@ Target solver: CVC4
   (let ((usf (get_model (us_repqtmk1 s__split_fields s__attr__tag))))
   (in_range (- (+ 1 (+ 1 (length (first1 usf) (last1 usf)))) 1))))))))
 (check-sat)
+(exit)

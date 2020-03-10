@@ -535,3 +535,4 @@ Target solver: CVC4
   (=> (not (= (select winners4 i) true))
   (< (to_rep (select counters i)) (to_rep (select counters winner)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1051,3 +1051,4 @@ Target solver: CVC4
   (=> (= length1 (slide (to_array temp___319) (first1 temp___319) 1))
   (in_range1 (length buffer))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

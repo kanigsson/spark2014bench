@@ -859,3 +859,4 @@ Target solver: CVC4
   (=> (= a3 (store a2 right3 o4))
   (let ((o5 (* space1 2))) (=> (in_range1 o5) (in_range1 (+ left3 o5)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -432,3 +432,4 @@ Target solver: CVC4
                                                         false)))
   (= o6 false))))) (<= (first1 s) courant1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -931,3 +931,4 @@ Target solver: CVC4
   (=> (not (= spark__branch1 true))
   (=> (= output__attr__constrained true) (= rliteral1 output__split_discrs)))))))))))
 (check-sat)
+(exit)

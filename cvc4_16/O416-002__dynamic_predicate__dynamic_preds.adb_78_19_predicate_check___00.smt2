@@ -354,3 +354,4 @@ Target solver: CVC4
   (=> (dynamic_invariant (us_repqtmk result____split_fields) false false true
   true) (=> (= (mod2 0 2) 0) (=> (= (to_rep o) 0) (= (mod2 0 2) 0)))))))
 (check-sat)
+(exit)

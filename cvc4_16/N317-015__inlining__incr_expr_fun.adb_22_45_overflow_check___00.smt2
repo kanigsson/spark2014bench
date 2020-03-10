@@ -272,3 +272,4 @@ Target solver: CVC4
   (forall ((x1 Int)) (incr_priv_priv__function_guard (incr_priv_priv x1) x1))
   (=> (= (incr_priv_priv x) (+ x 1)) (in_range (+ x 1)))))))))))))))))))
 (check-sat)
+(exit)

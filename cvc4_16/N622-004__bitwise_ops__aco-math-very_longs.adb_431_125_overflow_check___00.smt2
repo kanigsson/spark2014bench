@@ -1217,3 +1217,4 @@ Target solver: CVC4
   (=> (= r_hat1 (bvurem temporary_digit1 ((_ zero_extend 8) o5))) (in_range2
   (+ j n))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

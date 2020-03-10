@@ -466,3 +466,4 @@ Target solver: CVC4
   (and (dynamic_invariant o2 true false true true) (<= (+ (- 1) o2) 10000))
   (in_range4 (- (+ (- 1) o2) o1)))))))))))))))
 (check-sat)
+(exit)

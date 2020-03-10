@@ -356,3 +356,4 @@ Target solver: CVC4
   upper2 false true true true)) (dynamic_invariant1 middle1 false true true
   true)) (and (= (+ lower3 1) upper2) (= lower2 lower3)))))))))))))))))
 (check-sat)
+(exit)

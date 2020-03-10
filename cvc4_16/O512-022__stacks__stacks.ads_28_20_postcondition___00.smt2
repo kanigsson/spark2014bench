@@ -921,3 +921,4 @@ Target solver: CVC4
   (= (size (us_repqtmk s__split_discrs s__split_fields2 s__attr__tag)) (+ 
   (size (us_repqtmk s__split_discrs s__split_fields1 s__attr__tag)) 1))))))))))))))
 (check-sat)
+(exit)

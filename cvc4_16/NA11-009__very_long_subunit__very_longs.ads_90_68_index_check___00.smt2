@@ -648,3 +648,4 @@ Target solver: CVC4
   (<= (first1
       (rec__very_longs__very_long__long_digits (us_split_fields1 number))) usf))))))
 (check-sat)
+(exit)

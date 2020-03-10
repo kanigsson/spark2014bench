@@ -424,3 +424,4 @@ Target solver: CVC4
   (= (and (ite (<= 0 usf) true false) (ite (<= usf lcp__result) true false)) true)
   (in_range1 (+ y usf))))))))))))))
 (check-sat)
+(exit)

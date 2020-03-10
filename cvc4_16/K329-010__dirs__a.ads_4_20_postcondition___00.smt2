@@ -58,3 +58,4 @@ Target solver: CVC4
   (forall ((a__any__result Int))
   (=> (= a__any__result 3) (< 2 a__any__result)))))
 (check-sat)
+(exit)

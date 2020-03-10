@@ -525,3 +525,4 @@ Target solver: CVC4
      (rec__simple_oo_without_contracts__t3__z2 (us_split_fields5 par1))) o)
   (in_range1 (+ i1 o))))))))))))))
 (check-sat)
+(exit)

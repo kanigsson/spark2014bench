@@ -326,3 +326,4 @@ Target solver: CVC4
   (=> (<= usf (to_rep a__last))
   (=> (= (to_rep (select a usf)) o2) (in_range1 (+ o2 1))))))))))))))
 (check-sat)
+(exit)

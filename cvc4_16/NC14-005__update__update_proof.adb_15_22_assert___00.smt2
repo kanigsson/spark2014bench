@@ -528,3 +528,4 @@ Target solver: CVC4
   (=> (= (to_rep (select a1 1)) (to_rep (select o_a 1)))
   (= (to_rep (select a1 2)) 0))))))))
 (check-sat)
+(exit)

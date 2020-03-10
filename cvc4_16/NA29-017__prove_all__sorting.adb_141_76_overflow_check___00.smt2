@@ -553,3 +553,4 @@ Target solver: CVC4
   (=> (in_range1 o18)
   (let ((o19 (- length2 i2))) (=> (in_range1 o19) (in_range1 (- o19 o18)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

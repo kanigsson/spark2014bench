@@ -1631,3 +1631,4 @@ Target solver: CVC4
   (= (= (m_contains o4 i) true) (= (contains o5 i) true)))))
   (< (length o5) 2147483647)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

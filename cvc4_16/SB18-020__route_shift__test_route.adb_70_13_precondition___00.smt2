@@ -1139,3 +1139,4 @@ Target solver: CVC4
      (us_split_fields1 (rec__test_route__point_acc__pointer_value usf)))) o)
   (<= n (length usf1)))))))))))))))
 (check-sat)
+(exit)

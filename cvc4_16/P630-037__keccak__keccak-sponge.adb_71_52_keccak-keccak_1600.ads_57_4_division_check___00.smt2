@@ -1596,3 +1596,4 @@ Target solver: CVC4
   (forall ((free_bits_in_block1 Int))
   (=> (= free_bits_in_block1 o8) (not (= 8 0))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

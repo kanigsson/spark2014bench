@@ -342,3 +342,4 @@ Target solver: CVC4
   (and (= spark__branch2 (ite (< o1 o) true false))
   (ite (= spark__branch2 true) (= k4 i2) (= k4 k3)))))))) (<= (+ l 1) i2))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

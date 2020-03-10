@@ -677,3 +677,4 @@ Target solver: CVC4
   (=> (in_range (+ (first1 (rec__test__bytes_ptr__pointer_value buffer)) 13))
   (rec__test__bytes_ptr__pointer_value__pred buffer))))))))
 (check-sat)
+(exit)

@@ -242,3 +242,4 @@ Target solver: CVC4
   (forall ((temp___loop_entry_159 Int))
   (=> (= temp___loop_entry_159 y1) (in_range (+ y1 3))))))))))))))))))
 (check-sat)
+(exit)

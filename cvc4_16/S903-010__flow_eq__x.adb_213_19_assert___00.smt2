@@ -365,3 +365,4 @@ Target solver: CVC4
   (=> (= (oge a b) true)
   (=> (forall ((a1 Int)) (oabs__function_guard (oabs a1) a1)) (= (oabs a) 0)))))))))))))))))))))))))
 (check-sat)
+(exit)

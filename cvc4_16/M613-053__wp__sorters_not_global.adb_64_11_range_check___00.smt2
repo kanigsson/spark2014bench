@@ -254,3 +254,4 @@ Target solver: CVC4
   (=> (dynamic_invariant smallest false false true true)
   (=> (<= 1 limit) (<= 1 1)))))))
 (check-sat)
+(exit)

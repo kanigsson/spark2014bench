@@ -1201,3 +1201,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (< 0 num_bytes) true false))
   (=> (= spark__branch true) (in_range (+ (first1 in_data) (- num_bytes 1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

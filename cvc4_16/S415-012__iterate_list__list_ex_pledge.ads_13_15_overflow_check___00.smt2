@@ -420,3 +420,4 @@ Target solver: CVC4
              (us_split_fields1 (rec__list_ex_pledge__list__pointer_value o2))))))))))
   (in_range (+ 1 o3))))))))))))))))
 (check-sat)
+(exit)

@@ -294,3 +294,4 @@ Target solver: CVC4
   (=> (a__function_guard (a x2) x2)
   (fp.leq (a x2) (fp #b0 #b10000010 #b11000000000000000000000))))))))))))))))
 (check-sat)
+(exit)

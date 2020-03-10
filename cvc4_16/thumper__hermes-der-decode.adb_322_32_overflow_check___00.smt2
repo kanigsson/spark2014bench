@@ -558,3 +558,4 @@ Target solver: CVC4
   (=> (dynamic_invariant result__ true false true true) (in_range1
   (+ length_stop length1)))))))))))))))))
 (check-sat)
+(exit)

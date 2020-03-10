@@ -501,3 +501,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array s1) j12)) o)
   (forall ((o1 integer)) (=> (= (to_rep o1) o) (<= (to_rep r__first) j4)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

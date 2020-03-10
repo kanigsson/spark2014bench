@@ -233,3 +233,4 @@ Target solver: CVC4
   (=> (default_initial_assumption1 y false)
   (=> (dynamic_invariant1 y false false true true) (= x y))))))))
 (check-sat)
+(exit)

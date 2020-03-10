@@ -1191,3 +1191,4 @@ Target solver: CVC4
                         ctx__split_fields1)))
   (<= out_data_bit_length 1600)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

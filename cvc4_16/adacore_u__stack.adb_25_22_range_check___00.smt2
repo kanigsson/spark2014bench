@@ -228,3 +228,4 @@ Target solver: CVC4
   (=> (exists ((o Int)) (= (to_rep (select b_content b_top)) o)) (in_range1
   (- b_top 1))))))))))
 (check-sat)
+(exit)

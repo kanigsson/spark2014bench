@@ -902,3 +902,4 @@ Target solver: CVC4
                                                false)) true)
   (=> (< (first2 a) usf) (dynamic_property first last usf)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

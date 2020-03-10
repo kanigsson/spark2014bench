@@ -525,3 +525,4 @@ Target solver: CVC4
   (=> (= temp___loop_entry_194 a1)
   (=> (< (+ left2 space1) 8) (not (= space1 0))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

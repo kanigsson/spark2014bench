@@ -543,3 +543,4 @@ Target solver: CVC4
   (forall ((r5 (Array Int integer)))
   (=> (= r5 (store r4 j5 o1)) (in_range1 (+ j5 1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

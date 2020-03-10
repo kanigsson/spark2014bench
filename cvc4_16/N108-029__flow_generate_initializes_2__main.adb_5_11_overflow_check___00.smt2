@@ -113,3 +113,4 @@ Target solver: CVC4
   (and (foo__function_guard o Tuple0) (dynamic_invariant o true false true
   true)) (in_range (+ a visible_var))))))))))
 (check-sat)
+(exit)

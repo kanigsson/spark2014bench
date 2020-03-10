@@ -456,3 +456,4 @@ Target solver: CVC4
   (let ((o5 (+ i o4)))
   (=> (in_range1 o5) (=> (<= i o5) (<= (first1 haystack) i))))))))))))))))))))))
 (check-sat)
+(exit)

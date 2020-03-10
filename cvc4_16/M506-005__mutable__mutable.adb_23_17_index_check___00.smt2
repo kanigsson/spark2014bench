@@ -506,3 +506,4 @@ Target solver: CVC4
   true true true))))))
   (<= (first1 (rec__mutable__t__arr x__split_fields1)) 1)))))))
 (check-sat)
+(exit)

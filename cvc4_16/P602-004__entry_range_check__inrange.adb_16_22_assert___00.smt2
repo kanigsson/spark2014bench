@@ -159,3 +159,4 @@ Target solver: CVC4
   (=> (in_range1 inrange__pt__add_out__i)
   (=> (= x1 inrange__pt__add_out__i) (<= x1 10)))))))))))))
 (check-sat)
+(exit)

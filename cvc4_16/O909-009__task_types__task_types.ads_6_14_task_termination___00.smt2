@@ -146,3 +146,4 @@ Target solver: CVC4
   (and (dynamic_invariant x1 true true true true)
   (and (in_range1 (+ x1 1)) (not (= (distinct 1 0) true)))))))))))))
 (check-sat)
+(exit)

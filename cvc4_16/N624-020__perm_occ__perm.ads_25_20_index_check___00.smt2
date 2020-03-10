@@ -353,3 +353,4 @@ Target solver: CVC4
   (= o (ite (= (last1 r) (last1 a)) true false)) (= o false))
   (=> (= o true) (<= (first1 r) i))))))))))))
 (check-sat)
+(exit)

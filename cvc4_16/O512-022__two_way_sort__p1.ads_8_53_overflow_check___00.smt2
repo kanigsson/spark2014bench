@@ -389,3 +389,4 @@ Target solver: CVC4
   (=> (and (<= (to_rep a__first) j1) (<= j1 usf))
   (not (= (select a1 j1) true)))) (in_range1 (+ usf 1)))))))))))))))))
 (check-sat)
+(exit)

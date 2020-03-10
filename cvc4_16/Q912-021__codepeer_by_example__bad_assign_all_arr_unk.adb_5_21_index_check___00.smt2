@@ -273,3 +273,4 @@ Target solver: CVC4
                       true false)) true)
   (let ((o (+ j1 1))) (=> (in_range1 o) (<= (to_rep x__first) o))))))))))))
 (check-sat)
+(exit)

@@ -1223,3 +1223,4 @@ Target solver: CVC4
      (us_repqtmk1 d__split_discrs (us_split_fieldsqtmk1 d__split_fields)) 
      k) true)))))))
 (check-sat)
+(exit)

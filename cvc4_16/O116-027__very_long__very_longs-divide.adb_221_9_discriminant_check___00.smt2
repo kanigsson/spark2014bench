@@ -1588,3 +1588,4 @@ Target solver: CVC4
   (= (to_rep (rec__very_longs__very_long__length (us_split_discrs1 divisor))) o6)
   (in_range3 o6 (us_split_discrs1 divisor))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

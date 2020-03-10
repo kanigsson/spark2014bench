@@ -1344,3 +1344,4 @@ Target solver: CVC4
   (and (<= (first2 list__reverse_list__L_2__R20b) o8)
   (<= o8 (last3 list__reverse_list__L_2__R20b))))) (in_range1 (- last1 i))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

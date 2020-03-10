@@ -777,3 +777,4 @@ Target solver: CVC4
   (=> (bvult o3 o2)
   (<= (first1 (rec__area_math__ensemble__to (us_split_fields1 e))) usf)))))))))))))))))))))
 (check-sat)
+(exit)

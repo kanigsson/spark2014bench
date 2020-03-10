@@ -447,3 +447,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__const__te__y (us_split_fields1 g))) 1)
   (=> (= i 1) (=> (= j 1) (=> (= k 1) (=> (= l 1) (= m 1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

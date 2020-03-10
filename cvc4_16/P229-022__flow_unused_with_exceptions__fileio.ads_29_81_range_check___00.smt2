@@ -469,3 +469,4 @@ Target solver: CVC4
   (and (= the_file1 the_file) (= cur_position1 cur_position))))) (in_range1
   ch)))))))))
 (check-sat)
+(exit)

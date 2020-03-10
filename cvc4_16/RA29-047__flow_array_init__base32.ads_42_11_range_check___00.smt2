@@ -850,3 +850,4 @@ Target solver: CVC4
   (=> (dynamic_invariant i8s true false true true)
   (=> (dynamic_invariant s true false true true) (in_range1 (length s)))))))
 (check-sat)
+(exit)

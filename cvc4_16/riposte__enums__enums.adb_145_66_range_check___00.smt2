@@ -170,3 +170,4 @@ Target solver: CVC4
   (and (= success (distinct 0 0)) (= result__1 3)))))
   (=> (= success true) (in_range2 i))))))))
 (check-sat)
+(exit)

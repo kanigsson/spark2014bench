@@ -1796,3 +1796,4 @@ Target solver: CVC4
   (forall ((temp___899 Int))
   (=> (= temp___899 offset2) (in_range1 (+ (first1 data) offset2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

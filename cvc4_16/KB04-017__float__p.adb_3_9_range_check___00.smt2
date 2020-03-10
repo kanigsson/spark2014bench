@@ -262,3 +262,4 @@ Target solver: CVC4
   (=> (fp.leq t_FIRST t_LAST)
   (fp.leq (fp.neg (fp #b0 #b11111110 #b11111111111111111111111)) t_FIRST))))))))))))
 (check-sat)
+(exit)

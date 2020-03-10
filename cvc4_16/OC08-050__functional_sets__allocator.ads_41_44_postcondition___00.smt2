@@ -721,3 +721,4 @@ Target solver: CVC4
   (us_repqtmk allocator__m__model__result1) data1))
   (= (is_valid (us_repqtmk allocator__m__model__result) data) true)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

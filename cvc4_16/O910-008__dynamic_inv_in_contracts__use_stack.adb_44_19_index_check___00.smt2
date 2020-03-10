@@ -447,3 +447,4 @@ Target solver: CVC4
   (forall ((o1 positive))
   (=> (= (to_rep o1) e) (<= (to_rep1 content__first) top1)))))))))))))))))
 (check-sat)
+(exit)

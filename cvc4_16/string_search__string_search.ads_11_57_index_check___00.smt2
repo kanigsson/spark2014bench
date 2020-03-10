@@ -390,3 +390,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 usf) true false) (ite (<= usf len) true false)) true)
   (let ((o (+ loc (- usf 1)))) (=> (in_range1 o) (<= (first1 haystack) o)))))))))))))
 (check-sat)
+(exit)

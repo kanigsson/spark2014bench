@@ -302,3 +302,4 @@ Target solver: CVC4
   (=> (= (to_rep (select x 1)) o)
   (=> (= forall__get_one__result o) (< 1 forall__get_one__result)))))))
 (check-sat)
+(exit)

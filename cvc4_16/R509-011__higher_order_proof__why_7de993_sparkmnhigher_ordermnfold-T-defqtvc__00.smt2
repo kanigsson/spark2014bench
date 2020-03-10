@@ -1144,3 +1144,4 @@ Target solver: CVC4
   (ite (< (first4 a) i1) (= o true) (= o (ite (< (first_2 a) j) true false)))
   (=> (= o true) (dynamic_property1 first1 last1 (first_2 a))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

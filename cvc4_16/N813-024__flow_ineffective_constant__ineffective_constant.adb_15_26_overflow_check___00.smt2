@@ -191,3 +191,4 @@ Target solver: CVC4
   (= (to_rep (rec__ineffective_constant__record_t__x (us_split_fields1 c))) o)
   (in_range (+ o g))))))))
 (check-sat)
+(exit)

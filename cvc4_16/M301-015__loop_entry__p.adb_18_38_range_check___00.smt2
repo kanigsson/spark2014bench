@@ -610,3 +610,4 @@ Target solver: CVC4
   (=> (= temp___loop_entry_287 x2)
   (let ((temp___285 (+ i31 1))) (=> (<= temp___285 3) (<= 1 temp___285))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

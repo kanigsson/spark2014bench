@@ -472,3 +472,4 @@ Target solver: CVC4
   (=> (= (to_rep (select a 3)) o)
   (=> (<= (to_rep1 a__first) 2) (=> (<= 2 (to_rep1 a__last)) (not (= o 0))))))))))))))
 (check-sat)
+(exit)

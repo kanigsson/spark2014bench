@@ -1269,3 +1269,4 @@ Target solver: CVC4
   (and (= a1 (store a2 i1 rliteral1)) (= i1 temp___189))))) (= a1 a)))))
   (= (bool_eq a1 1 10 (temp_____aggregate_def_199 0) 1 10) true))))))))))))))))))
 (check-sat)
+(exit)

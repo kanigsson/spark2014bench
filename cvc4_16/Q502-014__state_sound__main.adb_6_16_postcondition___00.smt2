@@ -117,3 +117,4 @@ Target solver: CVC4
   (forall ((s12 us_private) (s22 us_private)) (get__function_guard
   (get s12 s22) s12 s22)) (not (= (get s11 s21) 1))))))))
 (check-sat)
+(exit)

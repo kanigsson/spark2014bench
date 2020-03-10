@@ -1004,3 +1004,4 @@ Target solver: CVC4
   (let ((o6 (- usf3 i)))
   (=> (in_range1 o6) (=> (in_range3 o6) (<= o6 (length usf1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

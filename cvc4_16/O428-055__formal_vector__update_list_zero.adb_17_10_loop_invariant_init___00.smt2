@@ -881,3 +881,4 @@ Target solver: CVC4
            i) threshold)
   0 (get (model1 temp___loop_entry_335) i))))))))))))))))))))))))))
 (check-sat)
+(exit)

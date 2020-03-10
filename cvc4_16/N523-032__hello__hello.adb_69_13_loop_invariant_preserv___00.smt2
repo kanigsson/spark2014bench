@@ -599,3 +599,4 @@ Target solver: CVC4
   (=> (< idx2 j)
   (= (to_rep (select ret3 j)) (to_rep (select (to_array str) j))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

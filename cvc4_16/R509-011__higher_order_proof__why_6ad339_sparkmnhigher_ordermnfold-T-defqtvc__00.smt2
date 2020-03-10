@@ -504,3 +504,4 @@ Target solver: CVC4
   (=> (= test_higher_order3__my_count_2__in_range__result true)
   (< x 2147483647))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -638,3 +638,4 @@ Target solver: CVC4
   (=> (=> (< octet_count 4) (< result__ (power 256 (- i 1))))
   (=> (= octet_count 4) (=> (= i 1) (< result__ 1)))))))))))))))))))))
 (check-sat)
+(exit)

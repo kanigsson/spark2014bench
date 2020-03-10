@@ -2082,3 +2082,4 @@ Target solver: CVC4
                                                       (last1 a)) true false)) true)
   (= (contains find_map__find_all__result usf) true))))))))))))))))))))))))))
 (check-sat)
+(exit)

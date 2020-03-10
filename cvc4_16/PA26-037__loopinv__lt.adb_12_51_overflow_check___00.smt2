@@ -353,3 +353,4 @@ Target solver: CVC4
   (=> (= r2 o1)
   (let ((o2 (* i 10))) (=> (in_range1 o2) (in_range1 (+ o2 j))))))))))))))))))
 (check-sat)
+(exit)

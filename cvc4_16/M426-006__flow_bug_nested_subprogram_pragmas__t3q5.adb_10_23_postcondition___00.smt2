@@ -334,3 +334,4 @@ Target solver: CVC4
   (=> (= t3q5__sort__find_smallest__result k2)
   (<= l t3q5__sort__find_smallest__result)))))))))))))))
 (check-sat)
+(exit)

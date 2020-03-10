@@ -557,3 +557,4 @@ Target solver: CVC4
   (=> (not (= (has_sub_range_in_prefix a i2 b) true))
   (not (= (rec__types__option__exists result____split_fields) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

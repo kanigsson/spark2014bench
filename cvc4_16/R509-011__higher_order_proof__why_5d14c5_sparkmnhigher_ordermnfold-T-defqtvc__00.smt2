@@ -465,3 +465,4 @@ Target solver: CVC4
   (=> (in_range1 (* 100 o4))
   (=> (in_range1 (- j (first_2 a))) (in_range1 (length_2 a))))))))))))))))))))))))
 (check-sat)
+(exit)

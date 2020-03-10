@@ -1540,3 +1540,4 @@ Target solver: CVC4
   (let ((o5 (+ (first1 message) (- (div1 o4 8) 1))))
   (=> (in_range1 o5) (in_range4 o5)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

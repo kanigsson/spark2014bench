@@ -1360,3 +1360,4 @@ Target solver: CVC4
   (= (to_rep (rec__static_discr__holder__unused current__split_discrs)) 
   (to_rep (rec__static_discr__holder__unused (us_split_discrs4 a)))))))))))))))))))))))))))
 (check-sat)
+(exit)

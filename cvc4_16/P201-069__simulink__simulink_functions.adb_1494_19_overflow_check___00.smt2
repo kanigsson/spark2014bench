@@ -215,3 +215,4 @@ Target solver: CVC4
   (=> (dynamic_invariant right true false true true)
   (let ((o right)) (=> (in_range o) (in_range1 (power left o))))))))
 (check-sat)
+(exit)

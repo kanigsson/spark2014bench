@@ -476,3 +476,4 @@ Target solver: CVC4
   (=> (= (to_rep v2__split_fields) o)
   (=> (= (to_rep v1__split_fields) o1) (in_range1 (div1 o1 o)))))))))))))))))))))))))))
 (check-sat)
+(exit)

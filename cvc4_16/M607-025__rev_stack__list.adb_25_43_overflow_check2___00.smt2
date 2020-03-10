@@ -1333,3 +1333,4 @@ Target solver: CVC4
      (to_array temp___459) (first1 temp___459) (last2 temp___459)))) true)
   (let ((o3 (- i first2))) (=> (in_range1 o3) (in_range1 (+ o3 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

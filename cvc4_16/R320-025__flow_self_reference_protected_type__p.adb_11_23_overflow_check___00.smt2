@@ -174,3 +174,4 @@ Target solver: CVC4
   (=> (dynamic_invariant param true false true true)
   (=> (= (to_rep self__) o) (in_range (+ param o)))))))
 (check-sat)
+(exit)

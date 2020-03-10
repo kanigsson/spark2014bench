@@ -923,3 +923,4 @@ Target solver: CVC4
   (=> (= (to_rep2 item__first) o3)
   (let ((o4 (length o3 o2))) (=> (in_range2 o4) (in_range4 (min o4 o1))))))))))))))))))
 (check-sat)
+(exit)

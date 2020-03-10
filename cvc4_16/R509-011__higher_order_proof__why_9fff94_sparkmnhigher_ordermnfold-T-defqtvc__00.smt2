@@ -951,3 +951,4 @@ Target solver: CVC4
   (=> (in_range1 o7)
   (<= (first3 test_higher_order3__my_count__count_left__acc__fold__result) o7)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

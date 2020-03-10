@@ -251,3 +251,4 @@ Target solver: CVC4
   (=> (dynamic_invariant to2 true false true true)
   (=> (r__function_guard (r Tuple0) Tuple0) (= (r Tuple0) true))))))))))))
 (check-sat)
+(exit)

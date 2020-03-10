@@ -1720,3 +1720,4 @@ Target solver: CVC4
   (=> (< k1 (last2 o3)) (= (in_range8 o3 (+ k1 1) (first_2 o3)) true)))
   (=> (in_range10 l1) (=> (in_range9 k1) (<= i (last2 a2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

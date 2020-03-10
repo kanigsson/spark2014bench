@@ -513,3 +513,4 @@ Target solver: CVC4
      (rec__stack_functional_spec__stack_type__pointer my_stack__split_fields)) temp___383)
   (<= 1 temp___383))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

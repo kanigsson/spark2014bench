@@ -113,3 +113,4 @@ Target solver: CVC4
   (=> (=> (= (< x threshold) true) (= x2 (+ temp___old_162 1)))
   (=> (=> (= (>= x threshold) true) (= x2 temp___old_163)) (<= x1 x2))))))))))))))))
 (check-sat)
+(exit)

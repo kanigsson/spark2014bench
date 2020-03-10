@@ -482,3 +482,4 @@ Target solver: CVC4
   (=> (= (to_rep o9) temp3)
   (=> (and (<= 0 left3) (<= left3 7)) (in_range1 (* space2 2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

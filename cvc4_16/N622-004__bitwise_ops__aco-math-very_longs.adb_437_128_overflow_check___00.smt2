@@ -1249,3 +1249,4 @@ Target solver: CVC4
   (=> (= spark__branch1 (ite (bvult r_hat2 #x0100) true false))
   (=> (= spark__branch1 true) (in_range2 (+ j n)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

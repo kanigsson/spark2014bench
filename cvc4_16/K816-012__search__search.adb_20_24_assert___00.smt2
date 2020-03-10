@@ -326,3 +326,4 @@ Target solver: CVC4
   (and (= found3 1) (or (= found1 true) (= found2 true))))
   (and (and (= found3 2) (= found1 true)) (= found2 true)))))))))))))))))))
 (check-sat)
+(exit)

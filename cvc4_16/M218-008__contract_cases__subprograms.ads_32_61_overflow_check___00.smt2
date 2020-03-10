@@ -106,3 +106,4 @@ Target solver: CVC4
   (=> (= val__1 o)
   (=> (= (> (+ val__ 1) 0) true) (in_range (+ temp___old_172 1))))))))))))))))
 (check-sat)
+(exit)

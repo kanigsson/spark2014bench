@@ -1585,3 +1585,4 @@ Target solver: CVC4
      (to_rep1 (get1 (to_array1 temp___1854) (last2 o) (last_2 o)))) true))))
   (<= (last_2 a) (last_21 temp___1854)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

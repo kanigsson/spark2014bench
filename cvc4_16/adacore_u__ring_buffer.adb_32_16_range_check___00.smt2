@@ -678,3 +678,4 @@ Target solver: CVC4
   (=> (default_initial_assumption1 r false) (in_range6
   (min (- (+ length2 first) 1) 100))))))))
 (check-sat)
+(exit)

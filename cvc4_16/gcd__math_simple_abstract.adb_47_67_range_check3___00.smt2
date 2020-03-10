@@ -308,3 +308,4 @@ Target solver: CVC4
   (and (and (<= 1 c1) (<= c1 2147483647)) (= (* usf c1) o1))))) (in_range1
   usf)))))))))))))))))))))))
 (check-sat)
+(exit)

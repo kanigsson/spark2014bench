@@ -459,3 +459,4 @@ Target solver: CVC4
                                   usf1))))
   (rec__traverse_list__list_acc__pointer_value__pred usf2)))))))))))
 (check-sat)
+(exit)

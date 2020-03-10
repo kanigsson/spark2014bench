@@ -807,3 +807,4 @@ Target solver: CVC4
   (=> (= (to_rep1 o4) (first1 simple_unc_arrays__swap_cells__a__compl))
   (<= (to_rep1 o4) left3))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

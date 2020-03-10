@@ -2253,3 +2253,4 @@ Target solver: CVC4
      (select (rec__skein__skein_512_context__x local_ctx__split_fields14) temp___757)) o20)
   (bvule ((_ zero_extend 56) #x00) (bvand (bvlshr o20 ((_ int2bv 64) o19)) #x00000000000000FF))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

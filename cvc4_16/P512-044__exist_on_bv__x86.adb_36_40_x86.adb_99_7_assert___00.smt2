@@ -486,3 +486,4 @@ Target solver: CVC4
   (forall ((n21 (_ BitVec 64)))
   (=> (= n21 (bvsub n var1_range_size)) (bvule n21 var2_range_size)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

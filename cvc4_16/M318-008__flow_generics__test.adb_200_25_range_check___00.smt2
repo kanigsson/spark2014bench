@@ -555,3 +555,4 @@ Target solver: CVC4
   (dynamic_property 1 2147483647 (to_rep initial_crate__first)
   (to_rep initial_crate__last))))))))
 (check-sat)
+(exit)

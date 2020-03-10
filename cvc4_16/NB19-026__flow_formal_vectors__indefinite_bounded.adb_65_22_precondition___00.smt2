@@ -1263,3 +1263,4 @@ Target solver: CVC4
   (=> (= v__split_fields7 indefinite_bounded__vect__swap__container__fields)
   (<= 1 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -483,3 +483,4 @@ Target solver: CVC4
   (=> (forall ((top2 Int)) (is_full__function_guard (is_full top2) top2))
   (= (is_full top1) true)))))))))))))))))
 (check-sat)
+(exit)

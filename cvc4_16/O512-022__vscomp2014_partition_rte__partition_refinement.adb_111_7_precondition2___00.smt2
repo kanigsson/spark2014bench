@@ -2540,3 +2540,4 @@ Target solver: CVC4
                            p_elem__split_fields) o17))
   (forall ((o18 Int)) (=> (= (to_rep5 (select f i)) o18) (<= 0 o18)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

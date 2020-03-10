@@ -310,3 +310,4 @@ Target solver: CVC4
   (test__search_result__index__pred
   (us_repqtmk (us_split_discrsqtmk x__split_discrs) x__split_fields)))))
 (check-sat)
+(exit)

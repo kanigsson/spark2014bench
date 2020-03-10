@@ -755,3 +755,4 @@ Target solver: CVC4
   (forall ((o Int))
   (=> (= (to_rep (select (to_array a) i)) o) (<= (- 2147483548) acc)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

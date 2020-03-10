@@ -1210,3 +1210,4 @@ Target solver: CVC4
         (max (slow_lcs_length o1 (tail o)) (slow_lcs_length (tail o1) o)))))))
   (in_range1 (length string_utilities__longest_common_subsequence__result)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

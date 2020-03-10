@@ -596,3 +596,4 @@ Target solver: CVC4
   (=> (in_range2 o19)
   (forall ((k3 Int)) (=> (= k3 o19) (in_range1 (+ a_first i3))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

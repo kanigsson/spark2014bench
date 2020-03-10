@@ -174,3 +174,4 @@ Target solver: CVC4
   (=> (= (to_rep (select x 1)) o)
   (=> (= forall__has_zero__result o) (= forall__has_zero__result 0)))))))
 (check-sat)
+(exit)

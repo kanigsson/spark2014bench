@@ -1968,3 +1968,4 @@ Target solver: CVC4
      (us_split_fieldsqtmk entry_table__split_fields))) 2147483647)
   (in_range1 (length s))))))))))))))
 (check-sat)
+(exit)

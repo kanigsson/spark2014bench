@@ -426,3 +426,4 @@ Target solver: CVC4
   (us_repqtmk (us_split_discrsqtmk d2__split_discrs)) false)
   (=> (not (= d__attr__constrained true)) (= d1__attr__constrained true)))))))))))))))
 (check-sat)
+(exit)

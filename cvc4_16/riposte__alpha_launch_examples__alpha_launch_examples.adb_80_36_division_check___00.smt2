@@ -256,3 +256,4 @@ Target solver: CVC4
   (=> (dynamic_invariant a true false true true)
   (=> (< (div1 1000 a) 1000) (not (= a 0))))))
 (check-sat)
+(exit)

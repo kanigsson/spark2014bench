@@ -1395,3 +1395,4 @@ Target solver: CVC4
   (=> (< 10 (to_rep (rec__pred_vis__root__g11 (us_split_fields3 x))))
   (< 15 (to_rep (rec__pred_vis__root__g21 (us_split_fields3 x)))))))))))))))))))
 (check-sat)
+(exit)

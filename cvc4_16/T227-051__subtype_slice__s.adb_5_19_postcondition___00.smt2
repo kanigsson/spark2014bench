@@ -250,3 +250,4 @@ Target solver: CVC4
   (=> (<= 1 10) (and (and (<= 1 1) (<= 1 10)) (and (<= 1 10) (<= 10 10))))
   (=> (= (to_rep (select x 1)) o) (=> (= result__1 o) (= result__1 data))))))))))))
 (check-sat)
+(exit)

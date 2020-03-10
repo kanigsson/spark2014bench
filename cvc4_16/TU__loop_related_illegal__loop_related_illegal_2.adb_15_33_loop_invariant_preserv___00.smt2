@@ -113,3 +113,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (forall ((x2 Int)) (=> (= x2 o) (=> (not (< 10 x2)) (<= 10 x2))))))))))))))))
 (check-sat)
+(exit)

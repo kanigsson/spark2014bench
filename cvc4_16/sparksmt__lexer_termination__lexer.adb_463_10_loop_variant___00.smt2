@@ -2213,3 +2213,4 @@ Target solver: CVC4
                     (ite (= temp___5061 2) true false)))
   (=> (not (= spark__branch8 true)) (< temp___535 current_idx7))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

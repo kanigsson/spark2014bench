@@ -117,3 +117,4 @@ Target solver: CVC4
  ;; File "user.ads", line 9, characters 0-0
   (not (forall ((temp___191 Bool)) (= temp___191 false))))
 (check-sat)
+(exit)

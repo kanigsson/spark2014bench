@@ -121,3 +121,4 @@ Target solver: CVC4
   (invariant____function_guard (invariant__ state_var_11 state_var_21)
   state_var_11 state_var_21)) (= (invariant__ state_var_1 state_var_2) true)))))))))
 (check-sat)
+(exit)

@@ -110,3 +110,4 @@ Target solver: CVC4
   (let ((o (+ room1 20))) (and (in_range o) (= room2 o))) (= room2 room1))))
   (in_range (+ room2 14)))))))))))
 (check-sat)
+(exit)

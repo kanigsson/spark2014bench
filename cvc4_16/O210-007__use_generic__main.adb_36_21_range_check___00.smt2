@@ -587,3 +587,4 @@ Target solver: CVC4
   (= (to_rep (rec__main__branch_type__m_height (us_split_discrs1 usf1))) usf))))
   (in_range 7))))
 (check-sat)
+(exit)

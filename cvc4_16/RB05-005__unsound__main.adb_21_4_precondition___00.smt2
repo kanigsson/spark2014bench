@@ -1172,3 +1172,4 @@ Target solver: CVC4
                                             current_out2 current_err2))))))
   (<= 1 4))))))))))))))))))
 (check-sat)
+(exit)

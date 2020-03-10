@@ -649,3 +649,4 @@ Target solver: CVC4
   (forall ((avail2 us_rep) (e1 Int)) (mem__function_guard (mem avail2 e1)
   avail2 e1)) (=> (= (mem avail1 e) true) (<= 1 e)))))))))))))))))
 (check-sat)
+(exit)

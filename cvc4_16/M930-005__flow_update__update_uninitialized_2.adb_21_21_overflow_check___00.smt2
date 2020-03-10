@@ -220,3 +220,4 @@ Target solver: CVC4
   (= (to_rep (rec__update_uninitialized_2__record_t__y r__split_fields1)) o4)
   (in_range (+ o4 1))))))))))))))
 (check-sat)
+(exit)

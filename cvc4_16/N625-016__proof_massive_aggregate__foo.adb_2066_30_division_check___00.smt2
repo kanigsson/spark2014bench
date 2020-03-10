@@ -18458,3 +18458,4 @@ Target solver: CVC4
   (=> (= (to_rep (select table tmp)) o1)
   (forall ((b1 Int)) (=> (= b1 o1) (not (= 8 0))))))))))))))))))
 (check-sat)
+(exit)

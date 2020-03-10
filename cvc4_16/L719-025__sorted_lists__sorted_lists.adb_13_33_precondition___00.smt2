@@ -1058,3 +1058,4 @@ Target solver: CVC4
      (us_split_fieldsqtmk1 container__split_fields)) o6) true)
   (= (bool_eq o6 no_element) true)))))))))))))))))))))))
 (check-sat)
+(exit)

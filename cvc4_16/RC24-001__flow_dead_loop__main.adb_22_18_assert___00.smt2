@@ -106,3 +106,4 @@ Target solver: CVC4
   (and (dynamic_invariant status1 true true true true) (not (= status1 0))))))
   (not (= status1 0)))))))
 (check-sat)
+(exit)

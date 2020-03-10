@@ -461,3 +461,4 @@ Target solver: CVC4
  ;; File "names.adb", line 44, characters 0-0
   (not (in_range1 value__size)))
 (check-sat)
+(exit)

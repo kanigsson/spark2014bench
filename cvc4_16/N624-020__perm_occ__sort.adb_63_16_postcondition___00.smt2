@@ -428,3 +428,4 @@ Target solver: CVC4
   (=> (= sort__index_of_minimum__result min2)
   (<= (first1 values) sort__index_of_minimum__result)))))))))))))))
 (check-sat)
+(exit)

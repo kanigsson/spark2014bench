@@ -2236,3 +2236,4 @@ Target solver: CVC4
      (rec__partition_refinement__interval__first p_elem__split_fields)) o5)
   (in_range11 (+ o5 o4)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

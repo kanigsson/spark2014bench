@@ -1421,3 +1421,4 @@ Target solver: CVC4
                                                           true false)))
   (=> (= spark__branch true) (in_range9 sum1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -226,3 +226,4 @@ Target solver: CVC4
   (= (to_rep (rec__prot__p_int__the_protected_int (us_split_fields1 self__))) o)
   (let ((o1 (+ o visible))) (=> (in_range o1) (in_range (+ o1 x))))))))))
 (check-sat)
+(exit)

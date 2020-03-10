@@ -752,3 +752,4 @@ Target solver: CVC4
   (= (to_rep2 (rec__perm__witnesses__ia perm__get_witnesses__result)) temp___989)
   (<= temp___989 (last1 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

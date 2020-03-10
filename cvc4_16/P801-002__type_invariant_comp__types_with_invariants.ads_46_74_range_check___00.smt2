@@ -90,3 +90,4 @@ Target solver: CVC4
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-P801-002__type_invariant_comp-16376/src/gnatprove/types_with_invariants__t.mlw", line 80, characters 5-8
   (not (in_range 1)))
 (check-sat)
+(exit)

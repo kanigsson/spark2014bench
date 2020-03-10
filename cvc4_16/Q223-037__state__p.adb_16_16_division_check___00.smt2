@@ -250,3 +250,4 @@ Target solver: CVC4
   (get_p_state p_state1) p_state1))
   (=> (< 0 (get_p_state p_state)) (not (= p_state 0)))))))))
 (check-sat)
+(exit)

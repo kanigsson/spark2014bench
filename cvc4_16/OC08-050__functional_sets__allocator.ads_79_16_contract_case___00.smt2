@@ -699,3 +699,4 @@ Target solver: CVC4
   (oeq1 (model1 data2) usf1) (model1 data2) usf1))
   (= (oeq1 (model1 data1) (model1 data)) true)))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -781,3 +781,4 @@ Target solver: CVC4
   (= o #x0000000000000000)))))
   (=> (not (bvugt ((_ int2bv 64) i) o)) (<= (first1 powers) c5b1))))))))))))))))))
 (check-sat)
+(exit)

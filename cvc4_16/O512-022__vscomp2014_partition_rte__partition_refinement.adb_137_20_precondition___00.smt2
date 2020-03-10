@@ -1073,3 +1073,4 @@ Target solver: CVC4
   (<= j1 (last_index
          (us_repqtmk p__split_discrs (us_split_fieldsqtmk p__split_fields1)))))))))))))))))))))))
 (check-sat)
+(exit)

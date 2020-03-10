@@ -720,3 +720,4 @@ Target solver: CVC4
   (= (is_perm (remove o1 ia1) (remove o o2)) true))))
   (forall ((o3 index)) (=> (= (to_rep2 o3) o2) (in_range3 ia1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

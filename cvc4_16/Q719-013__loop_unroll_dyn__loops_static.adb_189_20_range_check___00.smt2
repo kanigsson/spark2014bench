@@ -368,3 +368,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (=> (<= (first1 a) (last1 a)) (<= (- 2147483648) (first1 a)))))))))))))))))))))))
 (check-sat)
+(exit)

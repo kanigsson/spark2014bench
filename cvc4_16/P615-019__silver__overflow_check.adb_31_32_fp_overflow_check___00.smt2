@@ -271,3 +271,4 @@ Target solver: CVC4
   (=> (=> (< e 0) (not (= x ((_ to_fp 8 24) #x00000000))))
   (fp.isFinite32 (power x e)))))))))))))))))))))))
 (check-sat)
+(exit)

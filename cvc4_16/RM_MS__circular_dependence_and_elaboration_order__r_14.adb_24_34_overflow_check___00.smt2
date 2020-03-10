@@ -160,3 +160,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 r_s1 true true true true)
   (=> (< 0 global_var) (in_range2 (- 2147483647 global_var)))))))))
 (check-sat)
+(exit)

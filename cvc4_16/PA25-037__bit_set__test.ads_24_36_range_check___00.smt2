@@ -690,3 +690,4 @@ Target solver: CVC4
   (ite (< o5 4294967296) (= o4 (bvshl #x00000001 ((_ int2bv 32) o5)))
   (= o4 #x00000000)))) (in_range2 (bv2nat (bvudiv i #x0000000000000020))))))))))))))))))))))))
 (check-sat)
+(exit)

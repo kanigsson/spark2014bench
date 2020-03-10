@@ -513,3 +513,4 @@ Target solver: CVC4
                                       false)) true)
   (=> (and (<= 0 usf) (<= usf 20)) (<= 0 usf)))))))))))))))))))))))
 (check-sat)
+(exit)

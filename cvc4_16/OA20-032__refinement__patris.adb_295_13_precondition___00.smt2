@@ -2366,3 +2366,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 cur_state1 true true true true)
   (= (get_state cur_state1) 2)))))))))))))))))))
 (check-sat)
+(exit)

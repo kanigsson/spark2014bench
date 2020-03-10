@@ -958,3 +958,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (select ranking_1 usf) usf1)) o1)
   (=> (= (to_rep (select result__ o1)) o2) (=> (not (= o2 usf)) (<= 1 usf1))))))))))))))
 (check-sat)
+(exit)

@@ -794,3 +794,4 @@ Target solver: CVC4
   (= bits_manipulation_unsigned__unsigned_32__functions__extract_bits_inline_always__result (bvand 
   (shift_right value from) (make_mask (+ (- to__ from) 1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

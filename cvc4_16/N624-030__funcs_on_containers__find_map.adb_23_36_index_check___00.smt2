@@ -2002,3 +2002,4 @@ Target solver: CVC4
   (and (dynamic_invariant2 temp___862 true false true true)
   (= temp___862 (get (model1 o5) usf))) (<= (first1 a) temp___862))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

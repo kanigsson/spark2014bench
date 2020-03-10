@@ -894,3 +894,4 @@ Target solver: CVC4
   (forall ((i2 Int))
   (=> (= i2 (+ i1 1)) (dynamic_property 1 100 (first1 a) (last1 a))))))))))))))))))))))))))))
 (check-sat)
+(exit)

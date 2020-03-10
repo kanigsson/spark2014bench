@@ -484,3 +484,4 @@ Target solver: CVC4
   (+ new_val_1 1)
   (to_rep (get a1 temp___index_245 temp___index_246 temp___index_247)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

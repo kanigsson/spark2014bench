@@ -316,3 +316,4 @@ Target solver: CVC4
   (= (rec__records_prooffuncs__optional_pair__exists x__split_fields2) true)
   (= (rec__records_prooffuncs__optional_pair__exists x__split_fields1) true)))))))
 (check-sat)
+(exit)

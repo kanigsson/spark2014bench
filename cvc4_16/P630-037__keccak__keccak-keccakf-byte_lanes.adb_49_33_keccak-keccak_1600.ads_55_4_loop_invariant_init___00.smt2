@@ -964,3 +964,4 @@ Target solver: CVC4
   (=> (in_range1 o2)
   (=> (in_range1 (+ offset (div1 o2 8))) (= (mod2 offset 8) 0))))))))))))))))))))))))))))
 (check-sat)
+(exit)

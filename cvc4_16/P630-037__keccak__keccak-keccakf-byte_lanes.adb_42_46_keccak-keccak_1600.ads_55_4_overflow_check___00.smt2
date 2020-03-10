@@ -954,3 +954,4 @@ Target solver: CVC4
   (=> (dynamic_invariant offset true false true true) (in_range1
   (+ bit_len 7))))))))))))))))))
 (check-sat)
+(exit)

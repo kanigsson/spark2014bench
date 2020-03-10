@@ -263,3 +263,4 @@ Target solver: CVC4
   (=> (= start_pos end_pos)
   (= prefixsum_general__summation__result (to_rep (select a start_pos))))))))))))))))
 (check-sat)
+(exit)

@@ -412,3 +412,4 @@ Target solver: CVC4
      (rec__value (rec__rec_init_by_proof__three_fields__f2 x__split_fields1))) o2)
   (not (= 2 0))))))))))))))
 (check-sat)
+(exit)

@@ -316,3 +316,4 @@ Target solver: CVC4
   (=> (= (to_rep1 usf) temp___200) (dynamic_property first 2147483647
   temp___200))))))))))))))))))
 (check-sat)
+(exit)

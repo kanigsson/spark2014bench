@@ -358,3 +358,4 @@ Target solver: CVC4
   (fp.leq (fp.add RNE (high_bound n) (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000)) 
   (high_bound (+ n 1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

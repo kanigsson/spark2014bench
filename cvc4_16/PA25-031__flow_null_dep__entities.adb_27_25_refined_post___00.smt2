@@ -91,3 +91,4 @@ Target solver: CVC4
  ;; File "entities.ads", line 23, characters 0-0
   (not true))
 (check-sat)
+(exit)

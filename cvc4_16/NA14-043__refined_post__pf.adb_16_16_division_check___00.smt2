@@ -222,3 +222,4 @@ Target solver: CVC4
  ;; File "pf.ads", line 7, characters 0-0
   (not (=> (dynamic_invariant i true false true true) (not (= 2 0)))))
 (check-sat)
+(exit)

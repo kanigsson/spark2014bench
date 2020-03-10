@@ -262,3 +262,4 @@ Target solver: CVC4
   (=> (dynamic_invariant rate true false true true)
   (=> (<= rate 100) (=> (in_range (* before_tax rate)) (not (= 100 0))))))))
 (check-sat)
+(exit)

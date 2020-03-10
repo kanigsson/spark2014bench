@@ -527,3 +527,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 usf) true false) (ite (<= usf (- i 1)) true false)) true)
   (<= (first1 perm__remove__result) usf)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

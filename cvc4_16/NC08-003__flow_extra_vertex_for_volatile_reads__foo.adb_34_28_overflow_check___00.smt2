@@ -231,3 +231,4 @@ Target solver: CVC4
   (=> (= log_in1 tmp)
   (=> (dynamic_invariant tmp true false true true) (in_range (+ log_size 1))))))))))
 (check-sat)
+(exit)

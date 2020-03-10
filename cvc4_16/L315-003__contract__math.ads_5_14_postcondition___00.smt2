@@ -138,3 +138,4 @@ Target solver: CVC4
   (=> (=> (= (> x 0) true) (< 0 math__sqrt__result))
   (<= 0 math__sqrt__result))))))))))))))
 (check-sat)
+(exit)

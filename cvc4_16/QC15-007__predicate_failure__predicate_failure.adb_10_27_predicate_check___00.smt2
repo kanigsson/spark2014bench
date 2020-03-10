@@ -280,3 +280,4 @@ Target solver: CVC4
  ;; File "predicate_failure.adb", line 1, characters 0-0
   (not (=> (dynamic_invariant x1 true false true true) (= (mod2 1 2) 0))))
 (check-sat)
+(exit)

@@ -160,3 +160,4 @@ Target solver: CVC4
   (=> (fp.isFinite64 (fp.sub RNE x (fp.neg x)))
   (fp.isFinite64 (fp.add RNE x x))))))
 (check-sat)
+(exit)

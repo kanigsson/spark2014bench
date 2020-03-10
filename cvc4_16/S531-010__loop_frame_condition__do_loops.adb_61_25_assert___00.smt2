@@ -1672,3 +1672,4 @@ Target solver: CVC4
   (= (bool_eq3 (rec__do_loops__r_array_record__f3 d__pointer_value5)
      us_null_pointer) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

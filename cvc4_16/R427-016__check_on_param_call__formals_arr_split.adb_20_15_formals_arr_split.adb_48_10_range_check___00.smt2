@@ -553,3 +553,4 @@ Target solver: CVC4
   (=> (= spark__branch1 b2)
   (=> (not (= spark__branch1 true)) (=> (<= 0 y) (<= (- 2147483648) 0))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

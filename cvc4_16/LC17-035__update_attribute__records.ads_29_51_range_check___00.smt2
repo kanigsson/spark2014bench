@@ -341,3 +341,4 @@ Target solver: CVC4
  ;; File "records.ads", line 28, characters 0-0
   (not true))
 (check-sat)
+(exit)

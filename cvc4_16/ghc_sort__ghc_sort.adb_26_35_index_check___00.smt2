@@ -605,3 +605,4 @@ Target solver: CVC4
   (=> (exists ((o7 Int)) (= (to_rep (select (to_array s) temp___452)) o7))
   (let ((o7 (+ usf 1))) (=> (in_range1 o7) (<= (to_rep cut__first) o7)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

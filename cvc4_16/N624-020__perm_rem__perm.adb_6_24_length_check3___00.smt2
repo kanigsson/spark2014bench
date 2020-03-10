@@ -487,3 +487,4 @@ Target solver: CVC4
                 (last1 temp___855)) (first1 temp___854) o))))))))))))
   (=> (<= (first1 temp___856) (last1 temp___856)) (<= 1 (- (last1 a) 1)))))))))))))
 (check-sat)
+(exit)

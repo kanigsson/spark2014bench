@@ -1249,3 +1249,4 @@ Target solver: CVC4
                                                            (us_split_fields1
                                                            v))))))))))))))))))
 (check-sat)
+(exit)

@@ -208,3 +208,4 @@ Target solver: CVC4
  ;; File "ar.adb", line 134, characters 0-0
   (not (=> (dynamic_invariant e true false true true) (in_range (- e 1)))))
 (check-sat)
+(exit)

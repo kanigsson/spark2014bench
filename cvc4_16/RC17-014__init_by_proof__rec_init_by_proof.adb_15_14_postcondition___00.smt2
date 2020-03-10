@@ -283,3 +283,4 @@ Target solver: CVC4
                       x__split_fields)))
   (= (attr__init (rec__rec_init_by_proof__three_fields__f1 x__split_fields1)) true))))))
 (check-sat)
+(exit)

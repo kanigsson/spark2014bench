@@ -292,3 +292,4 @@ Target solver: CVC4
   (=> (dynamic_invariant b1 true true true true)
   (=> (prf_public__function_guard1 (prf_public1 a) a) (= b1 (prf_public1 a)))))))))))))
 (check-sat)
+(exit)

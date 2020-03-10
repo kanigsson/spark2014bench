@@ -752,3 +752,4 @@ Target solver: CVC4
   (and (id__function_guard temp___199 o2) (= (bool_eq temp___199 o2) true))
   (in_range4 0 (us_split_discrs1 temp___199)))))))))))))))))))
 (check-sat)
+(exit)

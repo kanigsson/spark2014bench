@@ -945,3 +945,4 @@ Target solver: CVC4
   (=> (dynamic_invariant number true false true true)
   (=> (dynamic_invariant2 length true false true true) (in_range2 length)))))
 (check-sat)
+(exit)

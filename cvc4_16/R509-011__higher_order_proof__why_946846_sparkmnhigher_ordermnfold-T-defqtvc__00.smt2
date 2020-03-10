@@ -1104,3 +1104,4 @@ Target solver: CVC4
   (forall ((o7 Int))
   (=> (= (to_rep1 (get1 r o6 temp___507)) o7) (<= (first_2 a) (last_2 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

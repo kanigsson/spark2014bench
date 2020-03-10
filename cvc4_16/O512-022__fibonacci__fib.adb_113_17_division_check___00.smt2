@@ -401,3 +401,4 @@ Target solver: CVC4
           true false) (ite (< 0 k22) true false)) true)
   (not (= 2 0)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

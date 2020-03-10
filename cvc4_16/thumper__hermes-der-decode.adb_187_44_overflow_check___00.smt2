@@ -648,3 +648,4 @@ Target solver: CVC4
   (=> (in_range1 o8)
   (forall ((stop1 Int)) (=> (= stop1 o8) (in_range1 (+ start 1))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

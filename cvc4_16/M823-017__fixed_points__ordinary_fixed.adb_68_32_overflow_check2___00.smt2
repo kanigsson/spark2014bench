@@ -391,3 +391,4 @@ Target solver: CVC4
   (forall ((z2 Int))
   (=> (= z2 (fxp_div x y)) (in_range2 (fxp_mult inv_y x))))))))))))))))
 (check-sat)
+(exit)

@@ -586,3 +586,4 @@ Target solver: CVC4
   (=> (and (<= (first_2 a) temp___407) (<= temp___407 (last_2 a)))
   (<= (first4 a) i))))))))))))))))))
 (check-sat)
+(exit)

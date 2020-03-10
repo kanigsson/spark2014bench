@@ -1424,3 +1424,4 @@ Target solver: CVC4
   (=> (<= idx last3)
   (= (to_rep (select item2 idx)) (to_rep (select item1 idx))))))))))))))))))))))))))
 (check-sat)
+(exit)

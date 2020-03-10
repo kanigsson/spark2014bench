@@ -388,3 +388,4 @@ Target solver: CVC4
   halfway1 false true true true)) (dynamic_invariant1 lower2 false true true
   true)) (=> (not (= upper2 (+ lower2 1))) (not (= 2 0)))))))))))))))))
 (check-sat)
+(exit)

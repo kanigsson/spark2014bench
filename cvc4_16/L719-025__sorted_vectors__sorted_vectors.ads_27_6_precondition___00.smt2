@@ -863,3 +863,4 @@ Target solver: CVC4
                                                          container__split_fields))) 1)))
   (<= 1 position2))))))))))))))))))))))
 (check-sat)
+(exit)

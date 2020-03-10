@@ -1625,3 +1625,4 @@ Target solver: CVC4
   (let ((temp___859 (of_array (to_array data) temp___858 r61s)))
   (=> (<= (first1 temp___859) (last1 temp___859)) (<= r57s r58s))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

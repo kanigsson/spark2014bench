@@ -371,3 +371,4 @@ Target solver: CVC4
   (let ((o1 (+ off (- 31 off))))
   (=> (in_range1 o1) (=> (in_range2 o1) (in_range3 (power 2 o1)))))))))))))))
 (check-sat)
+(exit)

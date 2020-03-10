@@ -809,3 +809,4 @@ Target solver: CVC4
                                                false)))
   (= o false)) (=> (= o true) (<= k (last1 a)))))))))))
 (check-sat)
+(exit)

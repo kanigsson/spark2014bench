@@ -62,3 +62,4 @@ Target solver: CVC4
  ;; File "proof_in_ghost.adb", line 7, characters 0-0
   (not (forall ((b Bool)) (= b true))))
 (check-sat)
+(exit)

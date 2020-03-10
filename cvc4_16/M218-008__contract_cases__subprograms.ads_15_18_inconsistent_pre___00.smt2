@@ -110,3 +110,4 @@ Target solver: CVC4
   (not
   (=> (dynamic_invariant val__ true false true true) (not (= val__ 0)))))
 (check-sat)
+(exit)

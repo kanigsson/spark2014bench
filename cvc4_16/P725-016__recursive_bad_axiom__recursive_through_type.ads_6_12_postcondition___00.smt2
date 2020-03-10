@@ -157,3 +157,4 @@ Target solver: CVC4
  ;; File "recursive_through_type.ads", line 5, characters 0-0
   (not (not (dynamic_invariant x true false true true))))
 (check-sat)
+(exit)

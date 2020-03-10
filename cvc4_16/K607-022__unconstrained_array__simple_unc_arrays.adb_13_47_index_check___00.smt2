@@ -779,3 +779,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (to_array temp___489) usf)) o2)
   (=> (in_range6 (+ o2 o1)) (<= (first1 c__split_fields) usf)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

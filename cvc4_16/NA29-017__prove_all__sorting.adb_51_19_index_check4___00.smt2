@@ -406,3 +406,4 @@ Target solver: CVC4
   (forall ((o11 Int))
   (=> (= (to_rep (select (to_array a) o10)) o11) (<= usf (to_rep b__last)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

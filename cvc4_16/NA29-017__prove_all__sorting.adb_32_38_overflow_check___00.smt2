@@ -388,3 +388,4 @@ Target solver: CVC4
   (and (= (to_rep (select b1 usf)) o5) (= o2 (ite (= o5 o4) true false))))))))
   (= o2 (distinct 1 0))))) (in_range1 (+ b_first length1)))))))))))))))))))
 (check-sat)
+(exit)

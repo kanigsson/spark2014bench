@@ -897,3 +897,4 @@ Target solver: CVC4
   (= (shift_left o3 o1) (bvand o2 (shift_left (make_mask (+ (- o o1) 1)) o1)))))
   (= result__1 o3)))))))))))) (in_range1 (+ (- to__ from) 1)))))))))))
 (check-sat)
+(exit)

@@ -230,3 +230,4 @@ Target solver: CVC4
   (forall ((index3 Int))
   (=> (= index3 o1) (=> (<= index3 10) (< temp___180 index3))))))))))))))))))))))
 (check-sat)
+(exit)

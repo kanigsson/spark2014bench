@@ -295,3 +295,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__raster_graphics__point__x (us_split_fields1 a))) o1)
   (in_range1 (abs1 (- o1 o)))))))))))))
 (check-sat)
+(exit)

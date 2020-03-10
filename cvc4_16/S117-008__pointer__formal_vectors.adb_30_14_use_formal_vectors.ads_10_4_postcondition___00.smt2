@@ -1518,3 +1518,4 @@ Target solver: CVC4
   (size (us_repqtmk3 v__split_fields2)) (us_repqtmk3 v__split_fields2)))
   (<= min_size (size (us_repqtmk3 v__split_fields1))))))))))))
 (check-sat)
+(exit)

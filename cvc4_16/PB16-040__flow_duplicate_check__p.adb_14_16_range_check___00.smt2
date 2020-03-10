@@ -552,3 +552,4 @@ Target solver: CVC4
   (and (<= 1 r2b) (= (- (last1 source) (first1 source)) (- r2b 1)))
   (< r2b 1)) (=> (<= 1 r2b) (<= 1 1)))))))))))))))))))))))
 (check-sat)
+(exit)

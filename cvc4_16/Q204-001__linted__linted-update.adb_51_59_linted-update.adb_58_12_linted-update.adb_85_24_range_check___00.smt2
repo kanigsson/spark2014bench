@@ -1998,3 +1998,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 x5 false false true true)
   (=> (dynamic_invariant y5 false false true true) (=> (<= 21 24) (<= 1 21)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

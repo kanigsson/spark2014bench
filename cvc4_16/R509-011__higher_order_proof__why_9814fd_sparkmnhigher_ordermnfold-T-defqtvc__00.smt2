@@ -1590,3 +1590,4 @@ Target solver: CVC4
   (exists ((o6 Int)) (= (to_rep1 (get1 (to_array1 temp___1785) i1 j2)) o6))
   (<= (first_2 a) j2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

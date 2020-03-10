@@ -73,3 +73,4 @@ Target solver: CVC4
   (=> (and (f1__function_guard o Tuple0) (= o true))
   (forall ((temp Bool)) (=> (= temp o) (not (= temp true))))))))
 (check-sat)
+(exit)

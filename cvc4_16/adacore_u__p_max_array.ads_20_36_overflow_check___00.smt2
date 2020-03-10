@@ -449,3 +449,4 @@ Target solver: CVC4
   (=> (not (< o5 o6))
   (forall ((o7 Int)) (=> (= (to_rep1 a__first) o7) (in_range1 (- usf o7))))))))))))))))))))))))))))
 (check-sat)
+(exit)

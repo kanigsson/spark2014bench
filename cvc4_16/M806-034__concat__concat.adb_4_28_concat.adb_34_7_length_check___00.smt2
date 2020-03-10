@@ -518,3 +518,4 @@ Target solver: CVC4
   (let ((temp___224 (of_array (concat1 x 6 10 x 1 5) 6 o)))
   (=> (<= (first1 temp___224) (last1 temp___224)) (<= 1 10))))))))))
 (check-sat)
+(exit)

@@ -950,3 +950,4 @@ Target solver: CVC4
   (=> (= (bounded_dynamic_strings__null_list__aggregate_def 32) null_list)
   (in_range2 0))))
 (check-sat)
+(exit)

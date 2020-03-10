@@ -464,3 +464,4 @@ Target solver: CVC4
   left_x1 true true true true)) (dynamic_invariant1 i2 true true true true))
   (not (= #x0000000000000004 #x0000000000000000)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -625,3 +625,4 @@ Target solver: CVC4
   (=> (= state1 o)
   (fp.leq (fp #b0 #b10000010 #b01000000000000000000000) state1))))))))))))
 (check-sat)
+(exit)

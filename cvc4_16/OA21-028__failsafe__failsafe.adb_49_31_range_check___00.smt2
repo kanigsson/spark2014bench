@@ -658,3 +658,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (let ((o2 (bvadd counter #x01))) (in_range3 (ite (bvule o2 #x32) o2 #x32)))))))))))))))))))))))
 (check-sat)
+(exit)

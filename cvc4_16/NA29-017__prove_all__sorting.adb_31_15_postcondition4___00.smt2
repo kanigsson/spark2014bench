@@ -379,3 +379,4 @@ Target solver: CVC4
                                                length1) 1)) true false))) true)
   (= (to_rep (select b2 j)) (to_rep (select b1 j))))))))))))))))))))
 (check-sat)
+(exit)

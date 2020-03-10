@@ -569,3 +569,4 @@ Target solver: CVC4
   (= o2 (to_rep (rec__stacks__stack_root__length (us_split_fields1 o1))))))
   (in_range (length stacks__get_model__result))))))))))
 (check-sat)
+(exit)

@@ -1073,3 +1073,4 @@ Target solver: CVC4
   (= (bool_eq4 (to_base4 (us_repqtmk6 g1__split_fields g1__attr__tag))
      (to_base4 (us_repqtmk6 g2__split_fields g2__attr__tag))) true))))))))))))))))))))))))
 (check-sat)
+(exit)

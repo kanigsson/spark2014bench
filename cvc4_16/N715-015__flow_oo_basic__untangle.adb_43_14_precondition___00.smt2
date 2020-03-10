@@ -751,3 +751,4 @@ Target solver: CVC4
   (=> (dynamic_invariant n true false true true)
   (=> (= (to_rep o) #x00) (= g true))))))
 (check-sat)
+(exit)

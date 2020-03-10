@@ -2107,3 +2107,4 @@ Target solver: CVC4
   (= o7 (last2 (model1 o6))))
   (let ((o8 (- o7 (- o5 1)))) (=> (in_range14 o8) (in_range10 o8)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

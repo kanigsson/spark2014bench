@@ -365,3 +365,4 @@ Target solver: CVC4
   (=> (in_range2 o)
   (=> (= o off) (=> (dynamic_invariant off true false true true) (< off 31))))))))
 (check-sat)
+(exit)

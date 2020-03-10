@@ -1126,3 +1126,4 @@ Target solver: CVC4
   (and (<= (first1 buffer) r38b) (<= r38b (last1 buffer)))))))))))))))))))))))))))))))))))))))))))))))
   (in_range2 (length buffer)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

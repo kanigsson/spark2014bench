@@ -242,3 +242,4 @@ Target solver: CVC4
   (forall ((loc__local__result Int))
   (=> (= loc__local__result k1) (= loc__local__result 1)))))))))))))))))
 (check-sat)
+(exit)

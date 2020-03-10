@@ -267,3 +267,4 @@ Target solver: CVC4
   (=> (<= x y)
   (=> (< y z) (=> (< y 32768) (=> (in_range (* x y)) (not (= z 0)))))))))))))
 (check-sat)
+(exit)

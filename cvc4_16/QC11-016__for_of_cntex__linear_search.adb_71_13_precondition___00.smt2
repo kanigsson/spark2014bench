@@ -856,3 +856,4 @@ Target solver: CVC4
   (ite (< i1 10) true false)) true)
   (= (has_element arr (us_repqtmk1 (us_split_fieldsqtmk1 c__split_fields1))) true)))))))))))))))))))))
 (check-sat)
+(exit)

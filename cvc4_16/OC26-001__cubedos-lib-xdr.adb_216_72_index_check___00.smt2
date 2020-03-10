@@ -724,3 +724,4 @@ Target solver: CVC4
   (=> (dynamic_invariant temporary_2 false false true true)
   (=> (= i 1) (<= (first1 data) (+ position i)))))))))))))))))))))
 (check-sat)
+(exit)

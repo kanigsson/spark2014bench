@@ -901,3 +901,4 @@ Target solver: CVC4
   (=> (= (mod2 (length1 s) 5) 0)
   (=> (< (length1 s) 268435455) (in_range1 (length1 s)))))))
 (check-sat)
+(exit)

@@ -1343,3 +1343,4 @@ Target solver: CVC4
   (us_repqtmk ctx__split_fields7)))
   (= (state_of (us_repqtmk ctx__split_fields6)) 0))))))))))))))))))))))
 (check-sat)
+(exit)

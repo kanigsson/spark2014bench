@@ -463,3 +463,4 @@ Target solver: CVC4
   (=> (exists ((o Int)) (= (to_rep (select a_v21 i)) o))
   (<= (to_rep a_v1__first) i)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

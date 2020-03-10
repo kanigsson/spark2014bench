@@ -146,3 +146,4 @@ Target solver: CVC4
  ;; File "init_pred_in_loop.adb", line 214, characters 0-0
   (not (in_range1 0)))
 (check-sat)
+(exit)

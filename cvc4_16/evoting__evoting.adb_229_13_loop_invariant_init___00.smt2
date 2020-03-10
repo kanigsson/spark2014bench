@@ -426,3 +426,4 @@ Target solver: CVC4
        true false))
   (= o false))) (not (= (select winners2 0) true))))))))))))))))
 (check-sat)
+(exit)

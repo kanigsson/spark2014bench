@@ -363,3 +363,4 @@ Target solver: CVC4
   (=> (= cur_position 1)
   (=> (dynamic_invariant cur_position true false true true) (not (= 256 0))))))))
 (check-sat)
+(exit)

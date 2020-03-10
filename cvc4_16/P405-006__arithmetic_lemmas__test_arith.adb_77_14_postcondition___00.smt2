@@ -247,3 +247,4 @@ Target solver: CVC4
   (let ((o (+ x y)))
   (=> (in_range1 o) (forall ((r1 Int)) (=> (= r1 (div1 o 2)) (<= x r1))))))))))))))))
 (check-sat)
+(exit)

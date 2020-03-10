@@ -293,3 +293,4 @@ Target solver: CVC4
   (=> (= new_speed1 o)
   (=> (fp.isFinite64 (fp.add RNE old_speed new_speed1)) (in_range (+ n 1))))))))))))))))))
 (check-sat)
+(exit)

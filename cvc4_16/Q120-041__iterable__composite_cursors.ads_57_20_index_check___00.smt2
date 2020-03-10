@@ -413,3 +413,4 @@ Target solver: CVC4
      (rec__composite_cursors__rec_cursor__content (us_split_fields3 p))) temp___296)
   (<= 1 temp___296))))))))))
 (check-sat)
+(exit)

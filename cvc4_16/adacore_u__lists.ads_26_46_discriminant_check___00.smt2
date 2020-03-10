@@ -296,3 +296,4 @@ Target solver: CVC4
   (= (rec__lists__cell__is_set (us_split_discrs1 (select memory1 i))) true)
   (lists__cell__next__pred (select memory1 i))))))))
 (check-sat)
+(exit)

@@ -793,3 +793,4 @@ Target solver: CVC4
   (let ((o5 (+ usf 1)))
   (=> (in_range1 o5) (<= (first3 ghc_sort__cut__result) o5)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

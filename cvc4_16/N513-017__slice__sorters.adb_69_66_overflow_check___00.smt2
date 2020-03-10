@@ -393,3 +393,4 @@ Target solver: CVC4
   (and (= (to_rep values__last) o6) (= o4 (ite (< current o6) true false))))
   (= o4 false)))) (=> (= o4 true) (in_range1 (- current 1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

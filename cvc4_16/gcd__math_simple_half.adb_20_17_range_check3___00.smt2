@@ -359,3 +359,4 @@ Target solver: CVC4
                                                           true false)))
   (=> (not (= spark__branch true)) (in_range1 (div1 c 2))))))))))))))
 (check-sat)
+(exit)

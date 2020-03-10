@@ -222,3 +222,4 @@ Target solver: CVC4
   (ext_equal__function_guard (ext_equal s4 (remove s3 e)) s4 (remove s3 e)))
   (= (ext_equal s2 (remove s1 e)) true))))))))))
 (check-sat)
+(exit)

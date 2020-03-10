@@ -318,3 +318,4 @@ Target solver: CVC4
   (=> (in_range1 o1)
   (=> (in_range1 (* i o1)) (= tmp1 (div1 (* i (+ i 1)) 2)))))))))))))))))))
 (check-sat)
+(exit)

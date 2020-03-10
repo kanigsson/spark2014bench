@@ -371,3 +371,4 @@ Target solver: CVC4
   (and (= (to_rep x__first_2) 1) (= (to_rep x__last_2) b)))
   (=> (= (to_rep x__last_2) o) (=> (= f__result o) (= f__result b))))))))))
 (check-sat)
+(exit)

@@ -156,3 +156,4 @@ Target solver: CVC4
   (= j1 2147483647)))))))))
   (=> (not (= i1 10)) (=> (= x2 0) (= x2 temp___loop_entry_184)))))))))))))
 (check-sat)
+(exit)

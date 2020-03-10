@@ -334,3 +334,4 @@ Target solver: CVC4
                                       true false)) true)
   (in_range1 (+ y usf))))))))))))))))
 (check-sat)
+(exit)

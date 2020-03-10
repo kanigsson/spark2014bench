@@ -710,3 +710,4 @@ Target solver: CVC4
   (forall ((o8 Int))
   (=> (= (to_rep1 (select cut2 top2)) o8) (<= (first1 s) (- o8 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

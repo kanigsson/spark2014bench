@@ -357,3 +357,4 @@ Target solver: CVC4
   (forall ((middle2 Int))
   (=> (= middle2 (div1 (+ lower2 upper2) 2)) (in_range1 (* middle2 middle2)))))))))))))))))))
 (check-sat)
+(exit)

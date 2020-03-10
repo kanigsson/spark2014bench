@@ -248,3 +248,4 @@ Target solver: CVC4
   (exists ((k Int))
   (and (and (<= 1 k) (<= k 10)) (= (property (to_rep (select x k)) j) true))))))))))))))
 (check-sat)
+(exit)

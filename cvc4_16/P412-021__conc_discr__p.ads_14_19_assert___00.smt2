@@ -412,3 +412,4 @@ Target solver: CVC4
   (=> (= p__to_x__assume to_x)
   (=> (dynamic_invariant to_x true false true true) (= po_x 0)))))))))))))))))
 (check-sat)
+(exit)

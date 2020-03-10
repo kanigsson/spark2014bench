@@ -270,3 +270,4 @@ Target solver: CVC4
   (=> (= (to_rep o4) o5)
   (=> (= a22 o5) (=> (in_range4 a22) (=> (in_range4 a22) (in_range4 a12)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

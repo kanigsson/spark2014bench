@@ -392,3 +392,4 @@ Target solver: CVC4
   (and (top__function_guard o1 o) (dynamic_invariant o1 true false true
   true)) (forall ((n2 Int)) (=> (= n2 o1) (= n2 n1)))))))))))))))))))))
 (check-sat)
+(exit)

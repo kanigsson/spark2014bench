@@ -80,3 +80,4 @@ Target solver: CVC4
  ;; File "user.ads", line 19, characters 0-0
   (not (<= 98 98)))
 (check-sat)
+(exit)

@@ -252,3 +252,4 @@ Target solver: CVC4
   (=> (divides__function_guard (divides x (mod2 a b)) x (mod2 a b))
   (= (divides x (mod2 a b)) true)))))))))))))
 (check-sat)
+(exit)

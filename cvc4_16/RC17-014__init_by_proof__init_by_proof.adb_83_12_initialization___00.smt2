@@ -612,3 +612,4 @@ Target solver: CVC4
   (=> (exists ((o5 Int)) (= (to_rep1 (rec__value (select buf2 20))) o5))
   (= (attr__init (select buf2 110)) true))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

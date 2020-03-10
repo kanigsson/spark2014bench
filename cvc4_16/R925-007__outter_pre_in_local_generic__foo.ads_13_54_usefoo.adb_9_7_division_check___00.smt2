@@ -567,3 +567,4 @@ Target solver: CVC4
   (=> (= (to_rep b__first) o19)
   (=> (in_range1 (length o19 o18)) (not (= 2 0))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

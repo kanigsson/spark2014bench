@@ -254,3 +254,4 @@ Target solver: CVC4
  ;; File "alpha_launch_examples.adb", line 73, characters 0-0
   (not (=> (dynamic_invariant a true false true true) (not (= a 0)))))
 (check-sat)
+(exit)

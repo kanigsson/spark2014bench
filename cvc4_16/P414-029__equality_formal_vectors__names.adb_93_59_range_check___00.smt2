@@ -2097,3 +2097,4 @@ Target solver: CVC4
   (=> (in_range1 o3)
   (forall ((o4 positive)) (=> (= (to_rep o4) o3) (in_range14 (length s)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

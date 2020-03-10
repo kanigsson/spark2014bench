@@ -222,3 +222,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 den true false true true)
   (fp.lt (fp #b0 #b01111111 #b00000000000000000000000) den))))))))
 (check-sat)
+(exit)

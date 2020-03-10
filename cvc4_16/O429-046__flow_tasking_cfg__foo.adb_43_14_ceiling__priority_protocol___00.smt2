@@ -403,3 +403,4 @@ Target solver: CVC4
   true false true true)
   (=> (dynamic_invariant d true false true true) (<= 97 97))))))
 (check-sat)
+(exit)

@@ -476,3 +476,4 @@ Target solver: CVC4
   (=> (dynamic_invariant i3b true false false true)
   (formals_rec_split_pred__rec__h__pred i3b))))
 (check-sat)
+(exit)

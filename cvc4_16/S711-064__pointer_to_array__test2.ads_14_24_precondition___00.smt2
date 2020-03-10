@@ -556,3 +556,4 @@ Target solver: CVC4
   (ite (= (last1 buffer) 10) (= o (ite (= (first1 buffer) 0) true false))
   (= o false)) (=> (= o true) (= (last1 buffer) 10)))))))
 (check-sat)
+(exit)

@@ -490,3 +490,4 @@ Target solver: CVC4
   (or (not (= o6 true)) (exists ((o7 Int)) (= (to_rep values__last) o7)))))
   (<= (to_rep values__first) current2))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

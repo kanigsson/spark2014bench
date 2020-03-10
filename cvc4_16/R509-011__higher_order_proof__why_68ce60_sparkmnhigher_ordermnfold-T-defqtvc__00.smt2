@@ -1477,3 +1477,4 @@ Target solver: CVC4
   (and (f_2__function_guard o7 o6 o5) (dynamic_invariant o7 true false true
   true)) (<= (first_2 a) (to_rep r__last_2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -141,3 +141,4 @@ Target solver: CVC4
   (=> (dynamic_invariant y false false true true)
   (<= (+ (+ 0 (ite (= (< y 5) true) 1 0)) (ite (= (> y 5) true) 1 0)) 1))))))
 (check-sat)
+(exit)

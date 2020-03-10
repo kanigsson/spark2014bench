@@ -529,3 +529,4 @@ Target solver: CVC4
   (=> (= a (slide (array_aggr__bi_dim_aggr_ok__a__aggregate_def 0) 3 1 3 1))
   (=> (<= 3 4) (<= first 3))))))))
 (check-sat)
+(exit)

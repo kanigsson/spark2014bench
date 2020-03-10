@@ -263,3 +263,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__test_pack__pid_obj__desired pid__split_fields)) o)
   (fp.isFinite32 (fp.sub RNE o measured))))))))
 (check-sat)
+(exit)

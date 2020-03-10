@@ -1091,3 +1091,4 @@ Target solver: CVC4
   (=> (and (<= (first1 a) i) (<= i (last1 a)))
   (= (value (to_rep (select (to_array a) i))) c))) (in_range1 (length a))))))))))))))))))))))))
 (check-sat)
+(exit)

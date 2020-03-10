@@ -473,3 +473,4 @@ Target solver: CVC4
   (=> (<= (first1 a) (last1 a))
   (=> (dynamic_property1 first2 last2 0) (dynamic_property1 first2 last2 1))))))
 (check-sat)
+(exit)

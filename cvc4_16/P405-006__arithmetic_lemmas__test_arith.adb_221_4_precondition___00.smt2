@@ -580,3 +580,4 @@ Target solver: CVC4
   (let ((o (+ x4 34)))
   (=> (in_range o) (=> (in_range4 o) (=> (in_range4 x4) (<= x4 o)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -159,3 +159,4 @@ Target solver: CVC4
   (=> (not (fp.eq x (fp #b0 #b00000000 #b00000000000000000000000)))
   (not (fp.isZero x))))))
 (check-sat)
+(exit)

@@ -1087,3 +1087,4 @@ Target solver: CVC4
   (forall ((o5 Int))
   (=> (= (to_rep2 (select counters1 chosen_vote2)) o5) (in_range6 (+ o5 1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

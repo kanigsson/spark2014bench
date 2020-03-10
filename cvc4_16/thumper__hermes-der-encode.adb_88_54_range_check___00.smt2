@@ -753,3 +753,4 @@ Target solver: CVC4
   (=> (= spark__branch1 true)
   (=> (= value1 length) (=> (= (to_rep1 o) #x81) (uint_in_range value1)))))))))))))
 (check-sat)
+(exit)

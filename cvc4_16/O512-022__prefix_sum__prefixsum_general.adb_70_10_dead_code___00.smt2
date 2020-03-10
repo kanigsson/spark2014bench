@@ -674,3 +674,4 @@ Target solver: CVC4
   (let ((o8 (+ left3 space1))) (and (in_range1 o8) (not (< o8 8))))))))))))))))))))))))))))))))))
   (and (= a2 a1) (= left3 left2))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

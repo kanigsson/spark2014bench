@@ -402,3 +402,4 @@ Target solver: CVC4
   (=> (dynamic_invariant dynamic_preds__init_ok_even__x true true true true)
   (= (mod2 dynamic_preds__init_ok_even__x 2) 0)))))))))))))
 (check-sat)
+(exit)

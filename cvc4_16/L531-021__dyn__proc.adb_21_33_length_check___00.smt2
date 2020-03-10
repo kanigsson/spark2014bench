@@ -591,3 +591,4 @@ Target solver: CVC4
   (=> (<= (to_rep item__first) (to_rep item__last))
   (<= 1 (length (to_rep item__first) (to_rep item__last)))))))))))))
 (check-sat)
+(exit)

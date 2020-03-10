@@ -388,3 +388,4 @@ Target solver: CVC4
            (us_split_fields1 o1))))))))
   (< (- 2147483648) o2))))))))))))
 (check-sat)
+(exit)

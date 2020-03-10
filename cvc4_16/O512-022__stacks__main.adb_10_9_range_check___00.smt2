@@ -1620,3 +1620,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 ada___ada__integer_text_io__get__2__item true true
   true true) (in_range3 ada___ada__integer_text_io__get__2__item))))))))))
 (check-sat)
+(exit)

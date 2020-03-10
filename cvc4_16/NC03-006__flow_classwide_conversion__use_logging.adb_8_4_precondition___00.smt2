@@ -442,3 +442,4 @@ Target solver: CVC4
   (us_repqtmk log__split_fields1 o)))
   (< (log_size (us_repqtmk log__split_fields log__attr__tag)) 10000)))))))
 (check-sat)
+(exit)

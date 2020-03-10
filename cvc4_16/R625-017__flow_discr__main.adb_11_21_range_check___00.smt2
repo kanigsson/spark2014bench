@@ -392,3 +392,4 @@ Target solver: CVC4
   (=> (= (us_repqtmk (us_split_discrsqtmk x) (us_split_fieldsqtmk x)) 
   q1) (in_range (ite x 1 0)))))
 (check-sat)
+(exit)

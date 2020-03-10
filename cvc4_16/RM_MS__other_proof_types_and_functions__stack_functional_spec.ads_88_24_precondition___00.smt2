@@ -559,3 +559,4 @@ Target solver: CVC4
         (us_split_fields1 o6))))))
   (<= 1 o7))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

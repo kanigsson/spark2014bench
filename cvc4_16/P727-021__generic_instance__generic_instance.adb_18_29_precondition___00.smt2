@@ -219,3 +219,4 @@ Target solver: CVC4
   (=> (forall ((o us_rep)) (is_valid__function_guard (is_valid o) o))
   (= (is_valid (us_repqtmk x__split_fields x__attr__tag)) true)))))
 (check-sat)
+(exit)

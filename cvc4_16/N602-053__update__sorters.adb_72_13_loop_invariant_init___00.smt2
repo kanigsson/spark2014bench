@@ -394,3 +394,4 @@ Target solver: CVC4
   (=> (and (<= current j) (<= j (to_rep values__last)))
   (<= (to_rep (select values1 current)) (to_rep (select values1 j)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

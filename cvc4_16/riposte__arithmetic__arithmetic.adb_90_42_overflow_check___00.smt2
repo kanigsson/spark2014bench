@@ -181,3 +181,4 @@ Target solver: CVC4
   (=> (not (= r1 (- 2147483648)))
   (forall ((r2 Int)) (=> (= r2 (- r1 1)) (in_range1 (+ a i))))))))))))))))))))
 (check-sat)
+(exit)

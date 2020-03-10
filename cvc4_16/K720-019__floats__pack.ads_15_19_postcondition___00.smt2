@@ -146,3 +146,4 @@ Target solver: CVC4
   (forall ((pack__add__result Float32))
   (=> (= pack__add__result o) (fp.eq pack__add__result (fp.add RNE r1 r2))))))))))))))
 (check-sat)
+(exit)

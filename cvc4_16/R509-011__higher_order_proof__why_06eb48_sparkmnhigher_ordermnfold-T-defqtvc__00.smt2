@@ -915,3 +915,4 @@ Target solver: CVC4
      (select (to_array1 test_higher_order__my_fold_left__acc__fold__result) o7)) o8)
   (<= (first2 a) usf))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

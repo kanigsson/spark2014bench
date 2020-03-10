@@ -670,3 +670,4 @@ Target solver: CVC4
   (fp.leq battery_threshold (to_rep (select battery_level_at1 current_time1)))
   (= counter1 #x00)) (not (= c #x32))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

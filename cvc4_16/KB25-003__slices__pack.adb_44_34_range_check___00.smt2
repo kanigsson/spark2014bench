@@ -460,3 +460,4 @@ Target solver: CVC4
  ;; File "pack.adb", line 43, characters 0-0
   (not (=> (<= 1 4) (<= 1 1))))
 (check-sat)
+(exit)

@@ -205,3 +205,4 @@ Target solver: CVC4
   (forall ((the_ptr2 Int)) (is_empty__function_guard (is_empty the_ptr2)
   the_ptr2)) (= (is_empty the_ptr1) true)))))))
 (check-sat)
+(exit)

@@ -236,3 +236,4 @@ Target solver: CVC4
   (z__is_null_pointer Bool)) (rec__spark03__ai__pointer_value__pred
   (us_repqtmk z__is_null_pointer z__pointer_address z__pointer_value)))))
 (check-sat)
+(exit)

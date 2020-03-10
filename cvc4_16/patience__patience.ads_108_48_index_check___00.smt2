@@ -980,3 +980,4 @@ Target solver: CVC4
   (= (to_rep (select (rec__patience__state__preds (us_split_fields1 s)) usf)) o3)
   (=> (< o3 0) (<= 0 usf))))))))))))))))
 (check-sat)
+(exit)

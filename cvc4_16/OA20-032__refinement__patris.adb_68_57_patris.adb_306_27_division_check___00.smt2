@@ -2362,3 +2362,4 @@ Target solver: CVC4
   (=> (= spark__branch2 true)
   (=> (dynamic_invariant3 (rand Tuple0) true false true true) (not (= 4 0))))))))))))))))))))
 (check-sat)
+(exit)

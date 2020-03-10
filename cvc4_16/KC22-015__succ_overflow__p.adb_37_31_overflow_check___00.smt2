@@ -110,3 +110,4 @@ Target solver: CVC4
   (=> (dynamic_invariant m true false true true)
   (=> (= m 999999999999999) (not (= (+ m 1) (- 9223372036854775808)))))))
 (check-sat)
+(exit)

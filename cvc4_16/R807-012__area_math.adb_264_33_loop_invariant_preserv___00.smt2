@@ -1838,3 +1838,4 @@ Target solver: CVC4
   (=> (not (= skip6 true))
   (< 0 (to_rep (rec__area_math__ensemble__size1 result____split_fields6)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

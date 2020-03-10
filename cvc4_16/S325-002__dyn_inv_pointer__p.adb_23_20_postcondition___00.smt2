@@ -456,3 +456,4 @@ Target solver: CVC4
   (forall ((p__B_2__h__result Int))
   (=> (= p__B_2__h__result o) (< i p__B_2__h__result))))))))))))))
 (check-sat)
+(exit)

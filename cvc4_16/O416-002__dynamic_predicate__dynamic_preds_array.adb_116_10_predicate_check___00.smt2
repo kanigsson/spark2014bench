@@ -387,3 +387,4 @@ Target solver: CVC4
   (forall ((o even))
   (=> (= (to_rep o) temp___331) (dynamic_predicate (store result__ 1 o)))))))))))))
 (check-sat)
+(exit)

@@ -632,3 +632,4 @@ Target solver: CVC4
   (=> (dynamic_invariant result__ true false true true)
   (=> (<= 1 octet_count) (<= 1 1)))))))))))))))
 (check-sat)
+(exit)

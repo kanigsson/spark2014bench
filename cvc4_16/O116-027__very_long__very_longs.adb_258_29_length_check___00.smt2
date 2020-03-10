@@ -1062,3 +1062,4 @@ Target solver: CVC4
   (=> (<= (first1 temp___995) (last1 temp___995))
   (<= 1 (to_rep (rec__very_longs__very_long__length (us_split_discrs1 l)))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1180,3 +1180,4 @@ Target solver: CVC4
   (forall ((r_digit3 (_ BitVec 16)))
   (=> (= r_digit3 ((_ zero_extend 8) o5)) (in_range2 (+ i1 j1)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

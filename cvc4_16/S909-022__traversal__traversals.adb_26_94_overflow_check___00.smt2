@@ -700,3 +700,4 @@ Target solver: CVC4
            (us_split_fields3 (rec__traversals__list2_acc__pointer_value o1))))) 1))))))
   (in_range1 (+ (min 2147483646 o2) 1))))))))))))))
 (check-sat)
+(exit)

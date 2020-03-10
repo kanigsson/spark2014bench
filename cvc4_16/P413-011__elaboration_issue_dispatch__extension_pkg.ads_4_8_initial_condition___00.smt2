@@ -334,3 +334,4 @@ Target solver: CVC4
   (forall ((body_elaborated1 Bool))
   (=> (= body_elaborated1 (distinct 1 0)) (= body_elaborated1 true)))))))))))
 (check-sat)
+(exit)

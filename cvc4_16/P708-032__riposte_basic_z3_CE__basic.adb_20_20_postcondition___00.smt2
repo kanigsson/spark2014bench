@@ -115,3 +115,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r1 false true true true)
   (=> (= basic__min_ub__result r1) (<= basic__min_ub__result a)))))))))))
 (check-sat)
+(exit)

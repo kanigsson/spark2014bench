@@ -170,3 +170,4 @@ Target solver: CVC4
   (forall ((x1 (Array Int integer)))
   (=> (= x1 (store x 1 o1)) (in_range (- y 1))))))))))))
 (check-sat)
+(exit)

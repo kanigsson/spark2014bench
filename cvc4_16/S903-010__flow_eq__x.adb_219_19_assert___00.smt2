@@ -378,3 +378,4 @@ Target solver: CVC4
   (=> (forall ((c1 Int) (d1 Int)) (oxor__function_guard (oxor c1 d1) c1 d1))
   (= (oxor c d) true)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

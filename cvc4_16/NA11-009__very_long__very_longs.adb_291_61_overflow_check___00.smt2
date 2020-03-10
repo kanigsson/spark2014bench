@@ -1173,3 +1173,4 @@ Target solver: CVC4
                                                             r92b) true false)))
   (=> (= spark__branch true) (in_range2 (+ i1 j1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

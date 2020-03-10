@@ -610,3 +610,4 @@ Target solver: CVC4
   (forall ((o4 Int))
   (=> (= (to_rep1 (rec__value (select buf1 i1))) o4) (not (= 2 0)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

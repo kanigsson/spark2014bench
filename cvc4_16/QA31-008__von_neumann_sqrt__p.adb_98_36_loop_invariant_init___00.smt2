@@ -445,3 +445,4 @@ Target solver: CVC4
   (=> (bvule (bvmul left_y left_y) left_x)
   (bvugt (bvmul (bvadd left_y #x0000000000000001) (bvadd left_y #x0000000000000001)) left_x))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

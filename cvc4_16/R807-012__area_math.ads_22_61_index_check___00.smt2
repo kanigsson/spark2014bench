@@ -768,3 +768,4 @@ Target solver: CVC4
   (=> (in_range1 o1)
   (<= (first1 (rec__area_math__ensemble__from (us_split_fields1 e))) o1))))))))))))
 (check-sat)
+(exit)

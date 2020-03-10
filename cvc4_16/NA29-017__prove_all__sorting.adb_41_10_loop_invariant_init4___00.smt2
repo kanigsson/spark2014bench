@@ -344,3 +344,4 @@ Target solver: CVC4
                                                true false))) true)
   (= (to_rep (select b j)) (to_rep (select temp___loop_entry_308 j))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -850,3 +850,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (rec__perm__witnesses__ib (us_split_fields1 w))) o5)
   (<= (first1 b) o5))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

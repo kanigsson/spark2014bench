@@ -812,3 +812,4 @@ Target solver: CVC4
      (rec__sum_elem__interval__first (us_split_fields3 (element o1 j)))) 
   (to_rep1 (rec__sum_elem__interval__last (us_split_fields3 (element o1 j))))))))))))))))))
 (check-sat)
+(exit)

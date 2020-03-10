@@ -872,3 +872,4 @@ Target solver: CVC4
   (=> (<= (first1 temp___268) (last1 temp___268))
   (<= 1 (+ (to_rep2 (rec__repro__ensemble__size (us_split_discrs1 e))) 1)))))))))))))))
 (check-sat)
+(exit)

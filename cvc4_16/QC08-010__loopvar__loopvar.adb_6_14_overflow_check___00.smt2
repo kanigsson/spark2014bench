@@ -107,3 +107,4 @@ Target solver: CVC4
   (= (and (ite (dynamic_invariant x1 true true true true) true false) 
   (ite (< x1 10) true false)) true) (in_range1 (+ x1 1)))))))))
 (check-sat)
+(exit)

@@ -404,3 +404,4 @@ Target solver: CVC4
      (bool_eq (to_array temp___247) (first1 temp___247) (last1 temp___247)
      (temp___String_Literal_181 Tuple0) 1 3)) true))))))))))))))))
 (check-sat)
+(exit)

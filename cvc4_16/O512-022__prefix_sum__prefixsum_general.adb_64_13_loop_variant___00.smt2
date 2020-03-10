@@ -674,3 +674,4 @@ Target solver: CVC4
   (let ((o8 (+ left4 space1)))
   (=> (in_range1 o8) (=> (< o8 8) (< temp___198 left4)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

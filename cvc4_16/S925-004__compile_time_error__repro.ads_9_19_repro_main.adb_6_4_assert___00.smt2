@@ -221,3 +221,4 @@ Target solver: CVC4
  ;; File "repro_main.adb", line 6, characters 0-0
   (not true))
 (check-sat)
+(exit)

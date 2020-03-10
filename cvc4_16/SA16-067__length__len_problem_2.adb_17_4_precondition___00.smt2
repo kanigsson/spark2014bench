@@ -326,3 +326,4 @@ Target solver: CVC4
  ;; File "len_problem_2.adb", line 1, characters 0-0
   (not (< (length (of_array (temp___String_Literal_209 Tuple0) 1 4)) 255)))
 (check-sat)
+(exit)

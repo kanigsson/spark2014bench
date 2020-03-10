@@ -557,3 +557,4 @@ Target solver: CVC4
   (= o2 (ite (= (last1 hello__to_camel_case__result) (last1 str)) true false))
   (= o2 false)) (=> (= o2 true) (<= (last1 str) (last1 str)))))))))))))))))))))))))))
 (check-sat)
+(exit)

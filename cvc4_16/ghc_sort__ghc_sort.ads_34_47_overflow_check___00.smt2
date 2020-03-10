@@ -872,3 +872,4 @@ Target solver: CVC4
   (=> (exists ((o11 Int)) (= (to_rep (select (to_array s) temp___487)) o11))
   (in_range1 (+ usf 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -2777,3 +2777,4 @@ Target solver: CVC4
   (and (dynamic_invariant5 o2 true false true true) (<= o2 (capacity o1)))
   (in_range14 (* 2 o2)))))))))))
 (check-sat)
+(exit)

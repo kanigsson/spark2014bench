@@ -1299,3 +1299,4 @@ Target solver: CVC4
                                     l__pointer_address
                                     (us_close l__pointer_value1))))))))))))))))))))
 (check-sat)
+(exit)

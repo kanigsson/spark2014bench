@@ -645,3 +645,4 @@ Target solver: CVC4
   (=> (forall ((last5 Int)) (size__function_guard (size last5) last5))
   (= (size last4) (+ (size last3) 1))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -861,3 +861,4 @@ Target solver: CVC4
                  (last1 tail)) (first1 temp___1625) o4))))))))
   (=> (<= (first1 temp___1626) (last1 temp___1626)) (<= 1 new_length)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

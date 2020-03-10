@@ -448,3 +448,4 @@ Target solver: CVC4
   (= (to_rep (select r1 k)) (to_rep
                             (select (to_array s) (+ (- (length s) k) 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

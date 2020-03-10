@@ -67,3 +67,4 @@ Target solver: CVC4
   (not
   (and (not (= (distinct 1 0) true)) (= r__proc3__result1 r__proc3__result))))))
 (check-sat)
+(exit)

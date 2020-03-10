@@ -690,3 +690,4 @@ Target solver: CVC4
   (forall ((o us_t) (o1 us_t)) (is_perm__function_guard (is_perm o1 o) o1 o))
   (= (is_perm a b) true)))))))))))))))
 (check-sat)
+(exit)

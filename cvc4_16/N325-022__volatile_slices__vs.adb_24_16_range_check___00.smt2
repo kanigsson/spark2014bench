@@ -300,3 +300,4 @@ Target solver: CVC4
   (forall ((a Int))
   (=> (dynamic_invariant a false false true true) (=> (<= 1 4) (<= 1 1))))))
 (check-sat)
+(exit)

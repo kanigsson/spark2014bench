@@ -285,3 +285,4 @@ Target solver: CVC4
   (=> (sum__function_guard (sum a) a)
   (=> (sum__function_guard (sum b) b) (not (= (sum a) (sum b)))))))))))))))
 (check-sat)
+(exit)

@@ -132,3 +132,4 @@ Target solver: CVC4
   (=> (ite (< 0 x) (< x z1) (ite (< x 0) (< z1 x) (= z1 x)))
   (forall ((z2 Int)) (=> (= z2 (+ x y)) (< x z2))))))))))))))
 (check-sat)
+(exit)

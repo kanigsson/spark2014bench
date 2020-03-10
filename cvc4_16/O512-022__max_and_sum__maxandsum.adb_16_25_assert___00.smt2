@@ -320,3 +320,4 @@ Target solver: CVC4
   (exists ((o3 Int)) (and (= (to_rep (select a i1)) o3) (= max2 o3)))
   (= max2 max1)))))) (<= sum2 (* i1 max2))))))))))))))))))
 (check-sat)
+(exit)

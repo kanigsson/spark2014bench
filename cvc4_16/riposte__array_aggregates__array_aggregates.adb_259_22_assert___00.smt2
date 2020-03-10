@@ -262,3 +262,4 @@ Target solver: CVC4
   (=> (= x (temp_____aggregate_def_590 (temp_____aggregate_def_594 12)))
   (= (to_rep (select (select x 3) 4)) 12)))))
 (check-sat)
+(exit)

@@ -730,3 +730,4 @@ Target solver: CVC4
   c03__attr__tag) false false true true)
   (=> (= r00__attr__tag us_tag) (in_range2 0 r00__split_discrs)))))))))))))))))))))))
 (check-sat)
+(exit)

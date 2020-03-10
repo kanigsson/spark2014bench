@@ -2664,3 +2664,4 @@ Target solver: CVC4
   (forall ((spark__branch1 Bool))
   (=> (= spark__branch1 o1) (not (= spark__branch1 true)))))))))))))
 (check-sat)
+(exit)

@@ -320,3 +320,4 @@ Target solver: CVC4
   (forall ((o11 Int))
   (=> (= (to_rep (select a5 0)) o11) (=> (<= 2 i2) (<= 0 2)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

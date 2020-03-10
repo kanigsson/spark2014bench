@@ -116,3 +116,4 @@ Target solver: CVC4
  ;; File "patris.ads", line 213, characters 0-0
   (not true))
 (check-sat)
+(exit)

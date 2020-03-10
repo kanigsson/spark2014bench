@@ -421,3 +421,4 @@ Target solver: CVC4
   (forall ((oldest2 Int))
   (=> (= oldest2 old__1) (in_range1 (+ old__1 temp2))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

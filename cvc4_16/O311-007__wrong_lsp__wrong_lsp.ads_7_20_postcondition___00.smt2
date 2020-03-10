@@ -191,3 +191,4 @@ Target solver: CVC4
                                                          (rec__wrong_lsp__root__f1
                                                          r__split_fields1)))))))
 (check-sat)
+(exit)

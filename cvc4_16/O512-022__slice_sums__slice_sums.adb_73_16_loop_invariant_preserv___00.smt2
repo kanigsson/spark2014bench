@@ -839,3 +839,4 @@ Target solver: CVC4
                   (us_split_fieldsqtmk (of_rep2 current_lo3)
                   (of_rep3 (- current_hi2 1)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

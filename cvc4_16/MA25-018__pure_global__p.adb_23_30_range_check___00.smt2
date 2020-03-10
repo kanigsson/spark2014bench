@@ -310,3 +310,4 @@ Target solver: CVC4
   (forall ((l1 (_ BitVec 32)))
   (=> (= l1 ((_ int2bv 32) o)) (in_range (bv2nat l1))))))))))))))
 (check-sat)
+(exit)

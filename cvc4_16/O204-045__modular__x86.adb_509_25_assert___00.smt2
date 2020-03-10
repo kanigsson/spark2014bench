@@ -604,3 +604,4 @@ Target solver: CVC4
           true false) (ite (bvugt rcx1 #x0000000000000000) true false)) true)
   (not (= rcx1 #x0000000000000000))))))))))))
 (check-sat)
+(exit)

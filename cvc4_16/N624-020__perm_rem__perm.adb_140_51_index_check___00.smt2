@@ -490,3 +490,4 @@ Target solver: CVC4
                                                 false)) true)
   (=> (< usf i) (<= usf (last1 a))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

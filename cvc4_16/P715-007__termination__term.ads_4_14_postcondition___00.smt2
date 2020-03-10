@@ -109,3 +109,4 @@ Target solver: CVC4
   (and (not (= (distinct 1 0) true)) (= term__loop_except_on_zero__result 0)))))
   (=> (= x 0) (= term__loop_except_on_zero__result 0)))))))
 (check-sat)
+(exit)

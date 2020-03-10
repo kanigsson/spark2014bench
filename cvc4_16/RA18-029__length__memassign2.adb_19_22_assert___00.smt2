@@ -569,3 +569,4 @@ Target solver: CVC4
   (=> (bvugt (bvsub #xFFFFFFFFFFFFFFFF src) #x0000000000000000)
   (bvule dest (bvadd dest #x0000000000000001))))))))
 (check-sat)
+(exit)

@@ -728,3 +728,4 @@ Target solver: CVC4
   (exists ((o9 Int)) (= (to_rep1 (select r1 temp___584)) o9))))))))))))))))))
   (=> (not (= i (first2 a))) (in_range1 (- i 1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

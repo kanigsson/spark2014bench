@@ -1319,3 +1319,4 @@ Target solver: CVC4
                                               false)) true)
   (=> (< (first2 a1) k) (=> (in_range8 (last_2 a1)) (in_range1 (- k 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

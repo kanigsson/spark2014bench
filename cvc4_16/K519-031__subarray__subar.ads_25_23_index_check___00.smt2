@@ -290,3 +290,4 @@ Target solver: CVC4
   (not
   (=> (dynamic_invariant x true false true true) (<= (first1 x) (first1 x)))))
 (check-sat)
+(exit)

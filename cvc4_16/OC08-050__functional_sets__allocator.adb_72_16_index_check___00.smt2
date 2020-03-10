@@ -648,3 +648,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (forall ((o1 status)) (=> (= (to_rep o1) 0) (<= 1 res))))))))))))))))))
 (check-sat)
+(exit)

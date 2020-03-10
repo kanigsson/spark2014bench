@@ -439,3 +439,4 @@ Target solver: CVC4
   (forall ((temp___232 Int))
   (=> (= temp___232 space2) (in_range1 (* space2 2)))))))))))))))))))))))
 (check-sat)
+(exit)

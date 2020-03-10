@@ -1295,3 +1295,4 @@ Target solver: CVC4
   (= o5 (get (keys o4) (get1 (positions o4) usf1))))
   (= (has_element d_old usf1) true)))))))))))))))))))))))
 (check-sat)
+(exit)

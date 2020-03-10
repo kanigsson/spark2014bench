@@ -305,3 +305,4 @@ Target solver: CVC4
   (=> (= (to_rep values__last) temp___195)
   (=> (<= 5 temp___195) (<= (to_rep values__first) 5))))))))
 (check-sat)
+(exit)

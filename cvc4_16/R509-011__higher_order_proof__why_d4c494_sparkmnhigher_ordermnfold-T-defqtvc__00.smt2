@@ -1747,3 +1747,4 @@ Target solver: CVC4
   (= o4 (ite (= k1 i) (ite (< l j) true false) false)))
   (=> (not (= o4 true)) (<= j (last_2 a2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

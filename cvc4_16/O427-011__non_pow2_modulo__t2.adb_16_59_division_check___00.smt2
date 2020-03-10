@@ -367,3 +367,4 @@ Target solver: CVC4
   (ite (bvule (bvsub #xE6 x) y) (= o (bvsub temp___201 #xE6))
   (= o temp___201))) (not (= #x00000000000000E6 #x0000000000000000))))))))
 (check-sat)
+(exit)

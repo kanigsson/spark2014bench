@@ -586,3 +586,4 @@ Target solver: CVC4
   (=> (not (= slop n)) (bvule x1 (bvsub #xFFFFFFFF slop))))))
   (not (= n #x00000000))))))))))))))))))))
 (check-sat)
+(exit)

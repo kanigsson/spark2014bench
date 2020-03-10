@@ -248,3 +248,4 @@ Target solver: CVC4
   (and (and (= limit temp___loop_entry_206) (<= starting_at min1))
   (<= min1 limit)) (in_range1 (- index 1)))))))))))))))))
 (check-sat)
+(exit)

@@ -1352,3 +1352,4 @@ Target solver: CVC4
  ;; File "binary_search.adb", line 147, characters 0-0
   (not true))
 (check-sat)
+(exit)

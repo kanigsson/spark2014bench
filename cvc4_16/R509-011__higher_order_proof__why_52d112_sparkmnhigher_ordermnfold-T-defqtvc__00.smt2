@@ -1110,3 +1110,4 @@ Target solver: CVC4
   (and (f_2__function_guard o9 o8 o7) (dynamic_invariant o9 true false true
   true)) (<= usf1 (to_rep r__last_2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -348,3 +348,4 @@ Target solver: CVC4
   (=> (= (first1 temp___254) (+ i 1))
   (=> (= (last1 temp___254) (+ i 1)) (= (first1 temp___254) 1)))))))))))))
 (check-sat)
+(exit)

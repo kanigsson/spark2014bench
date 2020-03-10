@@ -720,3 +720,4 @@ Target solver: CVC4
   (let ((o3 (- current_hi current_lo1)))
   (=> (in_range1 o3) (in_range1 (* o3 32767))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

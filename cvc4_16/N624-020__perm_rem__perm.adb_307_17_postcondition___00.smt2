@@ -1046,3 +1046,4 @@ Target solver: CVC4
   (= (distinct perm__perm_transitive__induction_hypothesis__result 0) true)
   (=> (is_perm__function_guard (is_perm a c) a c) (= (is_perm a c) true)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

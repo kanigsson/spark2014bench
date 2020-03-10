@@ -1213,3 +1213,4 @@ Target solver: CVC4
   (=> (= buf1 (slide (to_array temp___423) (first1 temp___423) 1))
   (= (to_rep (select buf1 n)) 10)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

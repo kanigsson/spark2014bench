@@ -754,3 +754,4 @@ Target solver: CVC4
   (let ((o1 (+ x4 1)))
   (=> (in_range4 o1) (forall ((x5 Int)) (=> (= x5 o1) (< temp___236 x5)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

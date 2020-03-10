@@ -414,3 +414,4 @@ Target solver: CVC4
   (= spark__branch (and (and true (ite (= (first1 temp___249) 1) true false)) 
   (ite (= (last1 temp___249) 10) true false))) (not (= spark__branch true)))))))))))))))))
 (check-sat)
+(exit)

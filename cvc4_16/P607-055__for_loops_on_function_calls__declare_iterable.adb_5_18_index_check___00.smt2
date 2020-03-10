@@ -342,3 +342,4 @@ Target solver: CVC4
   (= (has_element (us_repqtmk (us_split_fieldsqtmk x__split_fields)) c) true)
   (=> (= (to_rep o) e) (<= 1 c)))))))))
 (check-sat)
+(exit)

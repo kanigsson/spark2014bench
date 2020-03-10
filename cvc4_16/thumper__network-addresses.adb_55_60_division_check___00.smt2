@@ -898,3 +898,4 @@ Target solver: CVC4
   (=> (= (to_rep3 (select value_lookup_table temp___332)) o1)
   (not (= #x0A #x00)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

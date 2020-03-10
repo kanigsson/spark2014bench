@@ -122,3 +122,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 ms true false true true)
   (=> (<= 0 md) (=> (<= 0 ms) (< md 1000000000))))))))))
 (check-sat)
+(exit)

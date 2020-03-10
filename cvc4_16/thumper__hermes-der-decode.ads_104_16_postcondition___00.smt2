@@ -662,3 +662,4 @@ Target solver: CVC4
   value1 true true true true)) (dynamic_invariant5 status1 true true true
   true))))))))))) (<= start stop1)))))))))))))))))))))))
 (check-sat)
+(exit)

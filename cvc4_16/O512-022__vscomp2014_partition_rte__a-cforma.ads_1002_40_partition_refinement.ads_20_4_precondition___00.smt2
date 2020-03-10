@@ -861,3 +861,4 @@ Target solver: CVC4
          (us_split_discrs1 o)))))
   (=> (not (= o1 0)) (not (= (is_empty container) true)))))))))
 (check-sat)
+(exit)

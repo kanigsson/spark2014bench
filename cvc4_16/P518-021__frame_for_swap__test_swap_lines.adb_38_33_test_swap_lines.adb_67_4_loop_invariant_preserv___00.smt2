@@ -620,3 +620,4 @@ Target solver: CVC4
   (=> (not (= k h))
   (= (to_rep (get m6 k h)) (to_rep (get temp___loop_entry_281 k h)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

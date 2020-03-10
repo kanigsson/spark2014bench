@@ -320,3 +320,4 @@ Target solver: CVC4
   (=> (not (= a__ppcm__result 0))
   (let ((o4 (* a b))) (=> (in_range1 o4) (in_range1 (abs1 o4)))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -500,3 +500,4 @@ Target solver: CVC4
   (=> (exists ((o6 Int)) (= (to_rep (select (to_array b) usf)) o6))
   (<= (first1 aa) usf))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

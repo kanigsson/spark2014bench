@@ -1256,3 +1256,4 @@ Target solver: CVC4
                                              false)) true)
   (dynamic_property1 first1 last1 j))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

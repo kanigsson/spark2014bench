@@ -855,3 +855,4 @@ Target solver: CVC4
   (let ((o15 x))
   (=> (in_range4 o15) (<= (first1 (of_array values2 1 100)) o15)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

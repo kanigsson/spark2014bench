@@ -334,3 +334,4 @@ Target solver: CVC4
  ;; File "traffic_lights.ads", line 37, characters 0-0
   (not (<= 97 97)))
 (check-sat)
+(exit)

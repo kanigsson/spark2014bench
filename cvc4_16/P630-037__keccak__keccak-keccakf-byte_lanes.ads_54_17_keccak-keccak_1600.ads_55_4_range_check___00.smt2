@@ -956,3 +956,4 @@ Target solver: CVC4
   (=> (= (to_rep data__last) o)
   (=> (= (to_rep data__first) o1) (in_range1 (length o1 o))))))))
 (check-sat)
+(exit)

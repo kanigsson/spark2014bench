@@ -458,3 +458,4 @@ Target solver: CVC4
   (=> (dynamic_invariant f2 true false true true)
   (=> (dynamic_invariant l2 true false true true) (=> (<= f1 l1) (<= 1 f1))))))))
 (check-sat)
+(exit)

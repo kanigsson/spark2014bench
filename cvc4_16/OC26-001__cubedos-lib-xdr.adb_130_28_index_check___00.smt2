@@ -994,3 +994,4 @@ Target solver: CVC4
   (let ((o2 (- i1 (first1 value))))
   (=> (in_range1 o2) (<= (to_rep1 temporary_array__first) o2))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

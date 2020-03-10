@@ -234,3 +234,4 @@ Target solver: CVC4
   (=> (<= k i)
   (= (to_rep (select outkeys_v11 k)) (to_rep (select inkeys_v1 k)))))))))))))))))))
 (check-sat)
+(exit)

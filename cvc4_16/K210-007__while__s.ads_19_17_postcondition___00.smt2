@@ -218,3 +218,4 @@ Target solver: CVC4
   (=> (= s__check_index__result true)
   (= (to_rep (select table index)) value)))))))))))
 (check-sat)
+(exit)

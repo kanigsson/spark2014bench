@@ -537,3 +537,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 array_of_bits true false true true)
   (=> (< 0 object__size) (in_range3 (first1 array_of_bits))))))
 (check-sat)
+(exit)

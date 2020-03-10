@@ -300,3 +300,4 @@ Target solver: CVC4
   (=> (f__function_guard (f Tuple0) Tuple0)
   (=> (= x (f Tuple0)) (= value__size1 (* 10 value__size)))))))))))
 (check-sat)
+(exit)

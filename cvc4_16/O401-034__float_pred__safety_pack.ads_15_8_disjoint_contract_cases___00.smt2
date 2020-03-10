@@ -185,3 +185,4 @@ Target solver: CVC4
                                                                    threshold)) true)
                                                                    1 0)) 1)))))
 (check-sat)
+(exit)

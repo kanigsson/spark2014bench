@@ -1349,3 +1349,4 @@ Target solver: CVC4
                                                               (us_split_discrs3
                                                               (new_holder c))))))))))))))))))))))))
 (check-sat)
+(exit)

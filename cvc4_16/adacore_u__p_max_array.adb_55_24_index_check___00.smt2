@@ -414,3 +414,4 @@ Target solver: CVC4
                       true false)) true)
   (<= (first1 b) j1))))))))))))))))))))))
 (check-sat)
+(exit)

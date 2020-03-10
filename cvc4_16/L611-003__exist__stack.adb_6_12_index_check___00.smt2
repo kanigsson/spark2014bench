@@ -360,3 +360,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 n true false true true)
   (forall ((o element_t)) (=> (= (to_rep o) value) (<= 1 (+ n 1))))))))))))))))))
 (check-sat)
+(exit)

@@ -370,3 +370,4 @@ Target solver: CVC4
   (=> (= records__test_record_subtype__result true)
   (= (bool_eq1 r1 r2) true))))))))
 (check-sat)
+(exit)

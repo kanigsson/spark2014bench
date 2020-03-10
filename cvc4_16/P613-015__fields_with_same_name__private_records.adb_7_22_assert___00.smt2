@@ -343,3 +343,4 @@ Target solver: CVC4
      (rec__private_records__root__f
      (us_split_fields1 (to_base (us_repqtmk1 c__split_fields c__attr__tag))))) 1)))))
 (check-sat)
+(exit)

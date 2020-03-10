@@ -270,3 +270,4 @@ Target solver: CVC4
   (=> (in_range2 (+ a b))
   (=> (in_range1 (+ (mod1 a b) c)) (in_range1 (+ a b)))))))))))
 (check-sat)
+(exit)

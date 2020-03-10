@@ -269,3 +269,4 @@ Target solver: CVC4
   (=> (zero__function_guard (zero Tuple0) Tuple0)
   (<= 0 (div1 1 (zero Tuple0))))))
 (check-sat)
+(exit)

@@ -377,3 +377,4 @@ Target solver: CVC4
   (= x86__ah__result ((_ extract 7 0) (bvudiv (bvand rax #x000000000000FF00) #x0000000000000100)))
   (not (= #x0000000000000100 #x0000000000000000))))))))
 (check-sat)
+(exit)

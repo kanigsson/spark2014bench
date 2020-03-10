@@ -1075,3 +1075,4 @@ Target solver: CVC4
   (not (= (empty bounded_dynamic_strings__instance__result) true)))))))
   (in_range1 (length content))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

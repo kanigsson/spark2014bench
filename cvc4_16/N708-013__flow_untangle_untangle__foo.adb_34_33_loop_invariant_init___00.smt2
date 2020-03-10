@@ -135,3 +135,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (forall ((n2 Int)) (=> (= n2 o) (< temp___loop_entry_228 n2)))))))))))))
 (check-sat)
+(exit)

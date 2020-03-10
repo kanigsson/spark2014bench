@@ -453,3 +453,4 @@ Target solver: CVC4
                                                                     a) k)))
   (= (to_rep (select r k)) (to_rep (select (to_array a) k))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

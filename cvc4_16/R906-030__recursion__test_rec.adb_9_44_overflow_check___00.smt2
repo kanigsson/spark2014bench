@@ -429,3 +429,4 @@ Target solver: CVC4
            (last1 temp___200)))) (to_rep1 (select (to_array o2) (last1 o2))))))
   (<= o3 (* 100 (length o2)))))) (in_range (+ o3 o)))))))))))))))))))
 (check-sat)
+(exit)

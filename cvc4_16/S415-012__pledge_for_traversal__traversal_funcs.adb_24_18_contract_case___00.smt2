@@ -514,3 +514,4 @@ Target solver: CVC4
   (=> (= (bool_eq x us_null_pointer) true)
   (= (bool_eq traversal_funcs__next__result us_null_pointer) true))))))))
 (check-sat)
+(exit)

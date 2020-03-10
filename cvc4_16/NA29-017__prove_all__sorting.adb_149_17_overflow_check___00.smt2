@@ -628,3 +628,4 @@ Target solver: CVC4
   (= (to_rep (select o23 k4)) (to_rep (select a2 k4)))))))
   (let ((o24 (+ l1 k3))) (=> (in_range1 o24) (in_range1 (+ i3 o24)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

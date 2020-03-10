@@ -368,3 +368,4 @@ Target solver: CVC4
   (= result_index3 result_index2))))
   (=> (<= result_index3 i2) (<= result_index3 1))))))))))))))))))
 (check-sat)
+(exit)

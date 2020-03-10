@@ -129,3 +129,4 @@ Target solver: CVC4
   (=> (forall ((y2 Int)) (get__function_guard1 (get1 y2) y2))
   (= (get1 y1) 0)))))))))))))
 (check-sat)
+(exit)

@@ -1160,3 +1160,4 @@ Target solver: CVC4
                                                 false)))
   (= o false)))) (=> (= o true) (<= (first2 a) i)))))))))))))
 (check-sat)
+(exit)

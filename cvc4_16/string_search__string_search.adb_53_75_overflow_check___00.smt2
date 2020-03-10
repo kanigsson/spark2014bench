@@ -480,3 +480,4 @@ Target solver: CVC4
   (let ((o11 (length needle)))
   (=> (in_range1 o11) (in_range1 (+ (- o11 o10) 1)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

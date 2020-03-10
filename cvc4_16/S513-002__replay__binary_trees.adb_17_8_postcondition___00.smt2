@@ -339,3 +339,4 @@ Target solver: CVC4
   (=> (<= 1 i)
   (=> (<= i 100) (= (contains binary_trees__all_indexes__result i) true)))))))))
 (check-sat)
+(exit)

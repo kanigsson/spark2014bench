@@ -128,3 +128,4 @@ Target solver: CVC4
   (=> (= x1 o)
   (let ((o1 (+ one one))) (=> (in_range1 o1) (in_range1 (+ o1 one)))))))))))))))))))
 (check-sat)
+(exit)

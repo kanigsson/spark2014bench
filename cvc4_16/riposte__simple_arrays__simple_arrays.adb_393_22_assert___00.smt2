@@ -204,3 +204,4 @@ Target solver: CVC4
                                                             (select a 
                                                             k)))))))))
 (check-sat)
+(exit)

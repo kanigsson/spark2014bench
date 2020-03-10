@@ -210,3 +210,4 @@ Target solver: CVC4
   (and (dynamic_invariant o2 true false true true)
   (= o2 (to_rep c__split_fields)))) (not (= o2 0))))))))))))))
 (check-sat)
+(exit)

@@ -1319,3 +1319,4 @@ Target solver: CVC4
   (to_rep (get (to_array a) i2 l1))))
   (= (value (to_rep (get (to_array a) i1 l))) c))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -358,3 +358,4 @@ Target solver: CVC4
   (let ((o3 (+ current_increment1 o2))) (and (in_range1 o3) (= count1 o3)))))))))))
   (let ((o (- index (first1 arr)))) (=> (in_range1 o) (in_range1 (+ o 1)))))))))))))))))))
 (check-sat)
+(exit)

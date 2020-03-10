@@ -163,3 +163,4 @@ Target solver: CVC4
   (=> (= foo__float_tests__negate_wrong__result o)
   (fp.eq foo__float_tests__negate_wrong__result (fp.neg x)))))))))
 (check-sat)
+(exit)

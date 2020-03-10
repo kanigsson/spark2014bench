@@ -1353,3 +1353,4 @@ Target solver: CVC4
              (rec__use_formal_vectors__my_vect__vector__content
              v__split_fields1))) k))) (get v_mod (+ k 1))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

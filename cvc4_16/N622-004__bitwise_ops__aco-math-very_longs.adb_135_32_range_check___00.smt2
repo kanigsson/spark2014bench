@@ -1077,3 +1077,4 @@ Target solver: CVC4
                              (rt1 result____split_fields2)))
   (=> (not (= index2 1)) (in_range4 (- index2 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

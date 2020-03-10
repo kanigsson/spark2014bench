@@ -468,3 +468,4 @@ Target solver: CVC4
   (forall ((p__B_2__f__result Int))
   (=> (= p__B_2__f__result o) (rec__p__B_2__list_acc__pointer_value__pred x)))))))))))))))
 (check-sat)
+(exit)

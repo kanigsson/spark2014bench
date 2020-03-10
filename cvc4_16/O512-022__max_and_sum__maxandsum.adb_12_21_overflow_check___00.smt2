@@ -307,3 +307,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 i1) (<= i1 100)) true false)) true)
   (=> (= (to_rep (select a i1)) o) (in_range1 (+ sum1 o))))))))))))
 (check-sat)
+(exit)

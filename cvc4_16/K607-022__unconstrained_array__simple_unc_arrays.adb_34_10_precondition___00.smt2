@@ -604,3 +604,4 @@ Target solver: CVC4
   (=> (= (to_rep1 o2) (first1 simple_unc_arrays__swap_cells__a__compl))
   (<= (to_rep1 o2) low1)))))))))))))))))))))))))
 (check-sat)
+(exit)

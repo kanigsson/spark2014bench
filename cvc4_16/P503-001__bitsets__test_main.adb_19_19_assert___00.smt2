@@ -262,3 +262,4 @@ Target solver: CVC4
   (=> (forall ((s3 (Array Int Bool))) (mem__function_guard (mem s3 9) s3 9))
   (not (= (mem s2 9) true))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

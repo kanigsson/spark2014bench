@@ -1450,3 +1450,4 @@ Target solver: CVC4
   (update_count k2 l3) k2 l3))
   (=> (= (update_count k1 l2) true) (in_range8 l2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

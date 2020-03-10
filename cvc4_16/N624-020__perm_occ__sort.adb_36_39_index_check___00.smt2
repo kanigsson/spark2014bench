@@ -681,3 +681,4 @@ Target solver: CVC4
   (forall ((o7 Int))
   (=> (= (to_rep1 values__first) o7) (<= (first1 init) x)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

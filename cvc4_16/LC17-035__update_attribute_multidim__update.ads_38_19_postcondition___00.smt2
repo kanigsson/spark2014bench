@@ -300,3 +300,4 @@ Target solver: CVC4
   new_val
   (to_rep (get a1 temp___index_248 temp___index_249 temp___index_250))))))))))))))))))
 (check-sat)
+(exit)

@@ -2226,3 +2226,4 @@ Target solver: CVC4
      w_o_di__split_fields)) c)
   (= (last1 empty__split_fields) 0)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

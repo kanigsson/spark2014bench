@@ -623,3 +623,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 message true false true true) (in_range1
   (+ starting (- octet_count 1)))))))))
 (check-sat)
+(exit)

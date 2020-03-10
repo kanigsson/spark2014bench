@@ -633,3 +633,4 @@ Target solver: CVC4
   (=> (in_range2 o3)
   (forall ((o4 character)) (=> (= (to_rep o4) o3) (<= 1 first4)))))))))))))))))))))))))))
 (check-sat)
+(exit)

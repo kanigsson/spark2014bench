@@ -129,3 +129,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (< oranges 2147483637) true false))
   (=> (= spark__branch true) (in_range (+ oranges 10))))))))
 (check-sat)
+(exit)

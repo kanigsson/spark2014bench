@@ -82,3 +82,4 @@ Target solver: CVC4
  ;; File "logger.adb", line 4, characters 0-0
   (not (forall ((temp___191 Bool)) (= temp___191 false))))
 (check-sat)
+(exit)

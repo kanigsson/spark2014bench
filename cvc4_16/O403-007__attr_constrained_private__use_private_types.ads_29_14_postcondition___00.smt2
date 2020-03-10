@@ -354,3 +354,4 @@ Target solver: CVC4
   (= (us_split_discrsqtmk private_types__private_reinit__s__discrs) (us_split_discrs1
                                                                     s__split_fields)))))))))
 (check-sat)
+(exit)

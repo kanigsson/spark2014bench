@@ -99,3 +99,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (=> (= x a) (=> (dynamic_invariant a true false true true) (= x a)))))))
 (check-sat)
+(exit)

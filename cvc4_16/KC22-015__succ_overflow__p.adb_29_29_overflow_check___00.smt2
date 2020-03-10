@@ -108,3 +108,4 @@ Target solver: CVC4
   (=> (dynamic_invariant v true false true true)
   (=> (= v 2040) (not (= (+ v 1) (- 32768)))))))
 (check-sat)
+(exit)

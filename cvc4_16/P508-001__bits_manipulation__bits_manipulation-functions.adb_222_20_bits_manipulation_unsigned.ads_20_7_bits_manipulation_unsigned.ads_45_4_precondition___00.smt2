@@ -771,3 +771,4 @@ Target solver: CVC4
                              #x0000000000000000) #x0000000000000001))))
   (= (lemma2 Tuple0) true)))))))
 (check-sat)
+(exit)

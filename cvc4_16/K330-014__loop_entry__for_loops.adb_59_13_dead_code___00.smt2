@@ -1098,3 +1098,4 @@ Target solver: CVC4
   (not
   (= (and (ite (<= temp___217 y) true false) (ite (<= y 3) true false)) true))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

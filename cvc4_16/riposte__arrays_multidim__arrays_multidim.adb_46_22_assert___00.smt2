@@ -386,3 +386,4 @@ Target solver: CVC4
   (not
   (=> (= (to_rep (get x #x05 #x05)) 10) (= (to_rep (get x #x05 #x05)) 11))))
 (check-sat)
+(exit)

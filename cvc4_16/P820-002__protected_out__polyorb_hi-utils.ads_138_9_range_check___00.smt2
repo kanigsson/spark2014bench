@@ -532,3 +532,4 @@ Target solver: CVC4
      (rec__ada___polyorb_hi__utils__hi_string__l (us_split_fields1 h))) temp___419)
   (=> (<= 1 temp___419) (<= 1 1))))))))
 (check-sat)
+(exit)

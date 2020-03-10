@@ -383,3 +383,4 @@ Target solver: CVC4
   (and (= k13 o) (let ((o1 (* b11 p11))) (and (in_range1 o1) (= p12 o1)))))))
   (= b12 b11))) (=> (< 0 k13) (< k13 temp___231)))))))))))))))))))))))))))
 (check-sat)
+(exit)

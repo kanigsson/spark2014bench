@@ -81,3 +81,4 @@ Target solver: CVC4
   (=> (= y (ite (= bounded true) false true))
   (=> (= y true) (not (= bounded true))))))))
 (check-sat)
+(exit)

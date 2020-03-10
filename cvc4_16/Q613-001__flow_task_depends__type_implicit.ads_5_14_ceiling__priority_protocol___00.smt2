@@ -470,3 +470,4 @@ Target solver: CVC4
  ;; File "type_implicit.ads", line 5, characters 0-0
   (not (<= 97 97)))
 (check-sat)
+(exit)

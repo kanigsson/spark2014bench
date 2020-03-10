@@ -248,3 +248,4 @@ Target solver: CVC4
   (is_valid internal_var1) internal_var1))
   (not (= (is_valid internal_var) true)))))))))))
 (check-sat)
+(exit)

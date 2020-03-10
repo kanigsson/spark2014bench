@@ -186,3 +186,4 @@ Target solver: CVC4
   (= test_higher_order3__my_count_2__add_one__result (ite (= (choose e) true)
                                                      (+ x 1) x)))))))))))
 (check-sat)
+(exit)

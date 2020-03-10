@@ -267,3 +267,4 @@ Target solver: CVC4
   (get x body_elaborated1) x body_elaborated1))
   (=> (= (get x body_elaborated) true) (= body_elaborated true))))))
 (check-sat)
+(exit)

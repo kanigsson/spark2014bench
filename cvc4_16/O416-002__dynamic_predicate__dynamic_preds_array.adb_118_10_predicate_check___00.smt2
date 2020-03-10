@@ -388,3 +388,4 @@ Target solver: CVC4
   (forall ((o1 even))
   (=> (= (to_rep o1) o) (dynamic_predicate (store result__ 1 o1))))))))))))))
 (check-sat)
+(exit)

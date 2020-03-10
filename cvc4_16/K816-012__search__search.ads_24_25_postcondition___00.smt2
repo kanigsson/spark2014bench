@@ -285,3 +285,4 @@ Target solver: CVC4
   (=> (= search__check_index__result true)
   (= (to_rep (select (to_array table) index1)) value1))))))))))))))))))
 (check-sat)
+(exit)

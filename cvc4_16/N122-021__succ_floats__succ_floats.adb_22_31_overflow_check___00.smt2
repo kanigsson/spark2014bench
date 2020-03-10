@@ -218,3 +218,4 @@ Target solver: CVC4
   (= x4 x3)))
   (not (= x4 (fp.neg (fp #b0 #b11111110 #b11111111111111111111111)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -117,3 +117,4 @@ Target solver: CVC4
   (forall ((state2 Int)) (get_state__function_guard (get_state state2)
   state2)) (= (get_state state1) new_state))))))))
 (check-sat)
+(exit)

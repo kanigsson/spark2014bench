@@ -67,3 +67,4 @@ Target solver: CVC4
   (forall ((the_tank1 us_private)) (valid_tank__function_guard
   (valid_tank the_tank1) the_tank1)) (= (valid_tank the_tank) true)))))
 (check-sat)
+(exit)

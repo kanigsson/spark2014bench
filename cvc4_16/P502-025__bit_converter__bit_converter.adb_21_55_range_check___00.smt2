@@ -542,3 +542,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 first_index true false true true) (in_range3
   (last1 array_of_bits))))))))))
 (check-sat)
+(exit)

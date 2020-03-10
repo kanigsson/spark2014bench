@@ -418,3 +418,4 @@ Target solver: CVC4
                         test_tag__test_init_2__y__assume))
   (= (not (ite (= (attr__tag y__pointer_value) us_tag1) true false)) true)))))))))
 (check-sat)
+(exit)

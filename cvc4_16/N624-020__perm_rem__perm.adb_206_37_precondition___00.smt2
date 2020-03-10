@@ -1038,3 +1038,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (rec__perm__witnesses__ib (us_split_fields1 w))) o4)
   (<= o4 (last1 b)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

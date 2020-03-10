@@ -811,3 +811,4 @@ Target solver: CVC4
   (=> (in_range__function_guard (in_range3 a (+ k 1)) a (+ k 1))
   (= (in_range3 a (+ k 1)) true)))))))))))))))
 (check-sat)
+(exit)

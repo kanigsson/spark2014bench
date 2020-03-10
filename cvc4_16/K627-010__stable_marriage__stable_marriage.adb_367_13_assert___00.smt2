@@ -1531,3 +1531,4 @@ Target solver: CVC4
              unmatched_g1_set__split_fields2) idx)) g1_id))))
   (< 0 (to_rep3 (select proposals_made1 g1_id)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

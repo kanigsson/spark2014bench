@@ -568,3 +568,4 @@ Target solver: CVC4
   (to__ (us_repqtmk s__split_fields2)) (us_repqtmk s__split_fields2)))
   (in_range (- (last1 (to__ (us_repqtmk s__split_fields))) 1)))))))))))))))))
 (check-sat)
+(exit)

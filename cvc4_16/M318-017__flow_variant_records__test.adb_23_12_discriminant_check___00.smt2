@@ -564,3 +564,4 @@ Target solver: CVC4
   (=> (= (to_rep o) x)
   (=> (= (to_rep1 o1) 0) (= o1 (rec__test__wibble__d r__split_discrs)))))))))))))
 (check-sat)
+(exit)

@@ -323,3 +323,4 @@ Target solver: CVC4
   (let ((o (+ (first1 s) 1)))
   (=> (in_range o) (=> (<= o (last1 s)) (<= (first1 s) o)))))))
 (check-sat)
+(exit)

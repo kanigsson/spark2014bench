@@ -819,3 +819,4 @@ Target solver: CVC4
   (= (select usf1 temp___564) (select data1 temp___564))))))))))))))))))))))))))))))))
   (in_range2 (length1 value)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

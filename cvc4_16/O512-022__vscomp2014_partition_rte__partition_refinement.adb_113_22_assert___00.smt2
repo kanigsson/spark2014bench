@@ -2570,3 +2570,4 @@ Target solver: CVC4
   (= p__split_fields1 partition_refinement__partitions__replace_element__container__fields)
   (= (bool_eq8 a1 0 5 a_update 0 5) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

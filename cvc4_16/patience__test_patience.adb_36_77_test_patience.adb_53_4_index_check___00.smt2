@@ -2373,3 +2373,4 @@ Target solver: CVC4
      (select (select (rec__patience__state__stacks (us_split_fields1 c60b)) i1) j1)) o8)
   (forall ((idx2 Int)) (=> (= idx2 o8) (<= 0 idx2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

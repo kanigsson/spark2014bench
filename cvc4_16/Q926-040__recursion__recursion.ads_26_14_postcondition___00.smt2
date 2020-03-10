@@ -363,3 +363,4 @@ Target solver: CVC4
   (=> (= recursion__count_true_loop__result count1)
   (<= recursion__count_true_loop__result (length arr)))))))))))
 (check-sat)
+(exit)

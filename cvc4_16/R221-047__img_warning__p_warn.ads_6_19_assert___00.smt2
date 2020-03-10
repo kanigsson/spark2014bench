@@ -436,3 +436,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 x1 true false true true)
   (= (first1 (to_string (attr__ATTRIBUTE_IMAGE5 x1) 2040)) 1))))))
 (check-sat)
+(exit)

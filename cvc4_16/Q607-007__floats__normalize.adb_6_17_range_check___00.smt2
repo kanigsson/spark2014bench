@@ -139,3 +139,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true) (in_range
   (fp.roundToIntegral RTN x)))))
 (check-sat)
+(exit)

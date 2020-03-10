@@ -506,3 +506,4 @@ Target solver: CVC4
   (forall ((o3 Int))
   (=> (= (to_rep b__first) o3) (in_range1 (+ o3 (div1 o2 2))))))))))))))
 (check-sat)
+(exit)

@@ -917,3 +917,4 @@ Target solver: CVC4
   (= (is_perm (remove o16 ia3) (remove o15 ib3)) true)))))))))
   (forall ((h2 Int)) (=> (= h2 o17) (= (distinct h2 0) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

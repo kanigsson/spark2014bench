@@ -134,3 +134,4 @@ Target solver: CVC4
   (=> (<= 0 x)
   (let ((o x)) (=> (in_range1 o) (forall ((u1 Int)) (=> (= u1 o) (= x u1)))))))))))
 (check-sat)
+(exit)

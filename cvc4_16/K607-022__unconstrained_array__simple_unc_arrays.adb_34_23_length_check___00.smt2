@@ -590,3 +590,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r22b true false true true)
   (=> (<= (first1 a__split_fields1) (last1 a__split_fields1)) (<= 1 r22b)))))))))))))))))))
 (check-sat)
+(exit)

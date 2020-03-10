@@ -299,3 +299,4 @@ Target solver: CVC4
   (exists ((g2 Int))
   (and (and (<= 1 g2) (<= g2 64)) (= (to_rep (select g2_to_g1 g2)) g1))))))))))
 (check-sat)
+(exit)

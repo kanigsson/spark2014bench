@@ -1775,3 +1775,4 @@ Target solver: CVC4
   (=> (= test__p__get_val__result val__)
   (= (bool_eq test__p__get_val__result test__p__get_val__result) true)))))
 (check-sat)
+(exit)

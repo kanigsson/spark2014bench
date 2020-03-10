@@ -1330,3 +1330,4 @@ Target solver: CVC4
   (= (last1 logger__log_content__result) ((_ int2bv 16) (- (log_size
                                                            event_log__split_fields) 1))))))))
 (check-sat)
+(exit)

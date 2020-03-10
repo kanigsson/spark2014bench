@@ -392,3 +392,4 @@ Target solver: CVC4
   (=> (= (select inputs k) true)
   (= (select temp___loop_entry_214 (bvadd k #x01)) true))))))))))
 (check-sat)
+(exit)

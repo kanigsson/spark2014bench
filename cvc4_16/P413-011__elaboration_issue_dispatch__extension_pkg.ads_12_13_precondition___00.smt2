@@ -332,3 +332,4 @@ Target solver: CVC4
   (get1 (attr__tag o1) o1 body_elaborated1) (attr__tag o1) o1
   body_elaborated1)) (= (get1 (attr__tag o) o body_elaborated) true)))))))
 (check-sat)
+(exit)

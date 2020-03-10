@@ -370,3 +370,4 @@ Target solver: CVC4
   (=> (= b2 (store b1 o3 o2))
   (=> (<= (to_rep b__first) (to_rep b__last)) (<= 0 (to_rep b__first))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

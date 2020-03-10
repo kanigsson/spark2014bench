@@ -322,3 +322,4 @@ Target solver: CVC4
   (- (+ (first1 x) (+ (length (first1 x) (last1 x)) (length (first1 y)
                                                     (last1 y)))) 1))))))))
 (check-sat)
+(exit)

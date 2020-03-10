@@ -588,3 +588,4 @@ Target solver: CVC4
   (= o2 (ite (= o6 (+ o5 o4)) true false)))))))) (= o2 false))))
   (not (= o2 true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

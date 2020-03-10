@@ -125,3 +125,4 @@ Target solver: CVC4
  ;; File "account.ads", line 10, characters 0-0
   (not true))
 (check-sat)
+(exit)

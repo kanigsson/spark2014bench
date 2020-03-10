@@ -389,3 +389,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r48b true false true true)
   (=> (<= r48b 5) (<= 1 r48b)))))))))))))
 (check-sat)
+(exit)

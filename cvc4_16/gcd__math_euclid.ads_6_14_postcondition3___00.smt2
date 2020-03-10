@@ -411,3 +411,4 @@ Target solver: CVC4
   (divides math_euclid__gcd__result1 a) math_euclid__gcd__result1 a))
   (= (divides math_euclid__gcd__result a) true))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

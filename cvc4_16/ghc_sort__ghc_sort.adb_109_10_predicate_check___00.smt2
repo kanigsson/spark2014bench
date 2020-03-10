@@ -473,3 +473,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array s) j2)) o2)
   (forall ((o3 integer)) (=> (= (to_rep o3) o2) (= (to_rep r__first) 1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

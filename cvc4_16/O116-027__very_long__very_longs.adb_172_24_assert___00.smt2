@@ -1130,3 +1130,4 @@ Target solver: CVC4
   (=> (= (last3 result____split_fields2) r35b)
   (=> (in_range5 r35b) (<= 1 index2)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

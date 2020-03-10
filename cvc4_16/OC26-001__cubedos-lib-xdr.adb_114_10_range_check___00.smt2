@@ -799,3 +799,4 @@ Target solver: CVC4
   (= (- (last1 temp___559) (first1 temp___559)) (- r13b r12b)))
   (< r13b r12b)) (=> (<= r12b r13b) (<= (to_rep data__first) r12b)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

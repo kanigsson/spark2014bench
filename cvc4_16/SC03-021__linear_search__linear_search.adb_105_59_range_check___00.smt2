@@ -994,3 +994,4 @@ Target solver: CVC4
         (- usf1 1)))))
   (let ((o9 (- usf1 i))) (=> (in_range1 o9) (in_range3 o9)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

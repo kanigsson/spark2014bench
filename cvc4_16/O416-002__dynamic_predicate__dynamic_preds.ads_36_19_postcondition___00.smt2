@@ -374,3 +374,4 @@ Target solver: CVC4
      (rec__dynamic_preds__even_pair__a
      dynamic_preds__get_constant_even_pair__result)) 0))))))))))))
 (check-sat)
+(exit)

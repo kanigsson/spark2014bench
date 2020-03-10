@@ -315,3 +315,4 @@ Target solver: CVC4
   (=> (= res21 (mod2 (+ x y) m))
   (=> (not (< res11 m)) (in_range (- res11 m)))))))))))))))))
 (check-sat)
+(exit)

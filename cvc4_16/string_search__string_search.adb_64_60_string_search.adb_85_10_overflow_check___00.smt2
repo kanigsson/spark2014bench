@@ -590,3 +590,4 @@ Target solver: CVC4
   (=> (not (= i1 o10))
   (let ((o11 (length needle))) (=> (in_range1 o11) (in_range1 (+ i1 o11)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

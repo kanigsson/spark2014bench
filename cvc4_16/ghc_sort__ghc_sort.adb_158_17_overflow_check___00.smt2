@@ -1144,3 +1144,4 @@ Target solver: CVC4
      (us_close l__pointer_value)))))) o6)
   (in_range (+ o6 o5)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

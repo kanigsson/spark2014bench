@@ -1250,3 +1250,4 @@ Target solver: CVC4
                               (rec__tictactoe__position__x p__split_fields))) 
      (to_rep3 (rec__tictactoe__position__y p__split_fields)))) 0)))))))))
 (check-sat)
+(exit)

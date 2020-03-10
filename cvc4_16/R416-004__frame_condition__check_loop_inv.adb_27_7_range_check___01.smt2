@@ -1326,3 +1326,4 @@ Target solver: CVC4
   (and (<= (to_rep a__first) 40) (<= 40 (to_rep a__last)))))
   (=> (<= i1 i1) (<= 31 i1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

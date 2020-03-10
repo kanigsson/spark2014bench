@@ -777,3 +777,4 @@ Target solver: CVC4
   (let ((o5 (- k (first1 a))))
   (=> (in_range1 o5) (=> (in_range1 (* (- 100) o5)) (<= (first1 a) i)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

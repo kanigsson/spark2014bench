@@ -1468,3 +1468,4 @@ Target solver: CVC4
      (us_split_discrs1 divisor))) o)
   (let ((o1 (* 2 o))) (=> (in_range2 o1) (in_range2 (- o1 1)))))))))))))))))
 (check-sat)
+(exit)

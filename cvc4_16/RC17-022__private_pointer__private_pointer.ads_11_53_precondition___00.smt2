@@ -259,3 +259,4 @@ Target solver: CVC4
   private_pointer__mode_on__init_alloc__result1))
   (not (= (is_null private_pointer__mode_on__init_alloc__result) true)))))))))
 (check-sat)
+(exit)

@@ -1321,3 +1321,4 @@ Target solver: CVC4
   (=> (in_range1 o12)
   (forall ((last6 Int)) (=> (= last6 o12) (in_range4 ch1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

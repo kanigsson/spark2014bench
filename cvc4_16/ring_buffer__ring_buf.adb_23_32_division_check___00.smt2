@@ -587,3 +587,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__ring_buf__ring_buffer__first r__split_fields)) o2)
   (not (= 10000 0))))))))))))))))
 (check-sat)
+(exit)

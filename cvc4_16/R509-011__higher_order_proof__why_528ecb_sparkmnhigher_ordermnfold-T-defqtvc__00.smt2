@@ -1085,3 +1085,4 @@ Target solver: CVC4
   true)) (= o (ite (= o2 c) true false)))))))) (= o false))
   (=> (= o true) (<= (first2 a) i))))))))))))))))))
 (check-sat)
+(exit)

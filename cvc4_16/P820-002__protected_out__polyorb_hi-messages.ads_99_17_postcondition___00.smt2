@@ -865,3 +865,4 @@ Target solver: CVC4
   (=> (length__function_guard (length m) m)
   (= (length1 ada___polyorb_hi__messages__payload__result) (length m)))))))))))))
 (check-sat)
+(exit)

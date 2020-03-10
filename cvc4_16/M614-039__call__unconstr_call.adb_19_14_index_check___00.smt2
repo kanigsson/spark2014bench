@@ -300,3 +300,4 @@ Target solver: CVC4
   (=> (<= temp___209 (to_rep x__last))
   (=> (= (to_rep x__last) temp___210) (<= (to_rep x__first) temp___210)))))))))))))))))))))))))
 (check-sat)
+(exit)

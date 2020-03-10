@@ -390,3 +390,4 @@ Target solver: CVC4
   (=> (= r6b o2)
   (=> (dynamic_invariant r6b true false true true) (in_range1 (+ y l1)))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -352,3 +352,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (forall ((j1 Int)) (=> (= j1 o) (in_range1 (- (last1 p) 1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

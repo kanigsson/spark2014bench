@@ -855,3 +855,4 @@ Target solver: CVC4
   (forall ((o19 us_t)) (invariant____function_guard (invariant__ o19) o19))
   (= (invariant__ o18) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

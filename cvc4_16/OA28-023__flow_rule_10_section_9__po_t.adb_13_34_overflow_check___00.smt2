@@ -172,3 +172,4 @@ Target solver: CVC4
   (=> (= (to_rep self__) o)
   (=> (not (<= 0 o)) (=> (= (to_rep self__) o1) (in_range (+ o1 10))))))))
 (check-sat)
+(exit)

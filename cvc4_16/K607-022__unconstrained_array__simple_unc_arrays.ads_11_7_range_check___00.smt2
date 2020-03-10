@@ -576,3 +576,4 @@ Target solver: CVC4
   (= (to_rep (rec__simple_unc_arrays__table__last (us_split_discrs1 usf1))) usf)
   (=> (<= 1 usf) (<= 1 1)))))))
 (check-sat)
+(exit)

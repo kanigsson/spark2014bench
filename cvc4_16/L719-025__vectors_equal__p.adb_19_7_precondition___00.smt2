@@ -663,3 +663,4 @@ Target solver: CVC4
      (us_split_discrs1 p__identity_swap__l_in__assume))) (length2 o)))
   (=> (= p__identity_swap__l_in__assume l_in) (<= 1 i1))))))))))))))
 (check-sat)
+(exit)

@@ -183,3 +183,4 @@ Target solver: CVC4
                                                                  1 0)) 
   (ite (= (state_d flag num) true) 1 0)) 1)))))))))
 (check-sat)
+(exit)

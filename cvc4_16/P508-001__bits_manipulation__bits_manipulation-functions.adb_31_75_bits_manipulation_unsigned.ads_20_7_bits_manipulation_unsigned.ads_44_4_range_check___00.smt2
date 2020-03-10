@@ -827,3 +827,4 @@ Target solver: CVC4
   (bvule bits_manipulation_unsigned__unsigned_32__functions__extract_bits_inline_always__result 
   (make_mask (+ (- to__ from) 1)))) (in_range1 (+ (- to__ from) 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

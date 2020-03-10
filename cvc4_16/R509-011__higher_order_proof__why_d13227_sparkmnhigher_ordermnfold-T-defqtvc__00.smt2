@@ -1188,3 +1188,4 @@ Target solver: CVC4
   (= o (ite (= usf i1) (ite (< usf1 j) true false) false))) (= o false))
   (=> (= o true) (dynamic_property1 first1 last1 usf1))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

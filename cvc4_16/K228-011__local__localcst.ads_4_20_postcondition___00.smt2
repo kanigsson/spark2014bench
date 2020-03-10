@@ -100,3 +100,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (=> (= localcst__cst__result 5000) (< localcst__cst__result 10000))))))
 (check-sat)
+(exit)

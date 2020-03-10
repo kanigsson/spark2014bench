@@ -865,3 +865,4 @@ Target solver: CVC4
   (not
   (= (is_empty (rec__amortized_queue__queue__front (us_split_fields3 q))) true))))))))
 (check-sat)
+(exit)

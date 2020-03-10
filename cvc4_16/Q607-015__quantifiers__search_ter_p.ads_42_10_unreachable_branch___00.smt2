@@ -611,3 +611,4 @@ Target solver: CVC4
   (not (= (rec__types__option__exists search_ter_p__search__result) true)))
   (not (= (and (>= (length1 a) (length1 b)) (has_sub_range a b)) true)))))))))))))))))))
 (check-sat)
+(exit)

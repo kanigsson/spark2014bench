@@ -275,3 +275,4 @@ Target solver: CVC4
   (=> (bvule x y)
   (=> (bvult y z) (=> (bvult y #x00010000) (not (= z #x00000000))))))))))))
 (check-sat)
+(exit)

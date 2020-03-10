@@ -1163,3 +1163,4 @@ Target solver: CVC4
   (=> (= (last1 result____split_fields3) r94b)
   (=> (in_range2 r94b) (in_range2 (+ i1 j1))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

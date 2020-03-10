@@ -100,3 +100,4 @@ Target solver: CVC4
   (forall ((full__bump__result Int))
   (=> (= full__bump__result o) (in_range (+ x 1))))))))))
 (check-sat)
+(exit)

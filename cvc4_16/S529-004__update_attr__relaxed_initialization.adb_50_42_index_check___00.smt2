@@ -726,3 +726,4 @@ Target solver: CVC4
      (us_split_discrs1 (select obj usf))) true)
   (<= (to_rep obj__first) usf)))))))))))
 (check-sat)
+(exit)

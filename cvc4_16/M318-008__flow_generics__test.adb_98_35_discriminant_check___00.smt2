@@ -837,3 +837,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk dummy1 dummy1 dummy1
   (temp_____aggregate_def_434 1 1 1 1 1))))))))
 (check-sat)
+(exit)

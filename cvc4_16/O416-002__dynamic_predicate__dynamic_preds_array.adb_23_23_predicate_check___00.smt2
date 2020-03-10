@@ -268,3 +268,4 @@ Target solver: CVC4
   true true)
   (=> (= x1 dynamic_preds_array__call_init_even__x) (= (mod2 x1 2) 0)))))))))
 (check-sat)
+(exit)

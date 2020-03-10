@@ -217,3 +217,4 @@ Target solver: CVC4
                x) true false) (ite (fp.leq x (fp #b0 #b01111110110 #b0100011110101110000101000111101011100001010001111011))
                               true false))) true))))))))
 (check-sat)
+(exit)

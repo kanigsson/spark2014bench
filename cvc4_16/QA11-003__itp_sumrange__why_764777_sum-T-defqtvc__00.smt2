@@ -344,3 +344,4 @@ Target solver: CVC4
           true false) (ite (and (<= i k1) (<= k1 (- j 1))) true false)) true)
   (forall ((o Int)) (=> (= (to_rep (select a k1)) o) (in_range1 (+ s1 o)))))))))))))))))))))
 (check-sat)
+(exit)

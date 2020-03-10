@@ -587,3 +587,4 @@ Target solver: CVC4
   (us_repqtmk new_node__is_null_pointer1 new_node__pointer_address1
   (us_close (us_repqtmk2 new_node__pointer_value1))) o3)))))))))))))))))))))))))
 (check-sat)
+(exit)

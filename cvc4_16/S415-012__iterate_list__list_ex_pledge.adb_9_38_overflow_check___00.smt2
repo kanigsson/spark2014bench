@@ -550,3 +550,4 @@ Target solver: CVC4
   (and (dynamic_invariant o3 true false true true) (= o3 (length_aux o2))))
   (in_range1 (- lgth i))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -559,3 +559,4 @@ Target solver: CVC4
   (forall ((o2 Int))
   (=> (= (to_rep (select content o1)) o2) (in_range5 usf)))))))))))))))
 (check-sat)
+(exit)

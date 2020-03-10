@@ -173,3 +173,4 @@ Target solver: CVC4
   (let ((o5 (max o4 y)))
   (=> (in_range1 o5) (forall ((maxt2 Int)) (=> (= maxt2 o5) (= mint2 x)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

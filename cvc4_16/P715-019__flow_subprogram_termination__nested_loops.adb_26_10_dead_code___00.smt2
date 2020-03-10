@@ -128,3 +128,4 @@ Target solver: CVC4
   (forall ((j Int))
   (=> (= j 2) (=> (dynamic_invariant j true false true true) (not (< j 5)))))))
 (check-sat)
+(exit)

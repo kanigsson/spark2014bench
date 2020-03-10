@@ -1342,3 +1342,4 @@ Target solver: CVC4
                   (bvadd temp___210 #x0258) temp___210))) 1)))))
   (in_range_int (- o 1))))))))
 (check-sat)
+(exit)

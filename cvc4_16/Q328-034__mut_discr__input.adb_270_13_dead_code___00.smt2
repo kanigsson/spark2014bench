@@ -705,3 +705,4 @@ Target solver: CVC4
   (= (and (ite (<= temp___246 i) true false) (ite (<= i temp___247) true
                                              false)) true))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

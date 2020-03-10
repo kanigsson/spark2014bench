@@ -1516,3 +1516,4 @@ Target solver: CVC4
      (select (rec__stable_marriage__matching__group1_set__elements
              unmatched_g1_set__split_fields2) idx)) g1_id))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

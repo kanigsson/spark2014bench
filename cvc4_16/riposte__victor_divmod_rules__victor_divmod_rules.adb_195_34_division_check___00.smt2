@@ -261,3 +261,4 @@ Target solver: CVC4
   (=> (dynamic_invariant y true false true true)
   (=> (<= 0 x) (=> (< y 0) (=> (not (= (mod1 x y) 0)) (not (= y 0)))))))))
 (check-sat)
+(exit)

@@ -368,3 +368,4 @@ Target solver: CVC4
   (=> (< off 31)
   (=> (<= (+ off (- 31 off)) 62) (in_range1 (+ off (- 31 off))))))))))))
 (check-sat)
+(exit)

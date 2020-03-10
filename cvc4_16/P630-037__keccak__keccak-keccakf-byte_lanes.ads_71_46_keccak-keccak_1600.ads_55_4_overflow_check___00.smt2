@@ -859,3 +859,4 @@ Target solver: CVC4
   (=> (dynamic_invariant bit_len true false true true)
   (=> (<= bit_len 1600) (in_range1 (+ bit_len 7)))))))
 (check-sat)
+(exit)

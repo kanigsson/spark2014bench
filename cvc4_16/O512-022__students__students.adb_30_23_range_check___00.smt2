@@ -837,3 +837,4 @@ Target solver: CVC4
                     (us_split_fields1 student)))
   (=> (= spark__branch3 true) (in_range7 (+ fees1 512000))))))))))))))))))))))))
 (check-sat)
+(exit)

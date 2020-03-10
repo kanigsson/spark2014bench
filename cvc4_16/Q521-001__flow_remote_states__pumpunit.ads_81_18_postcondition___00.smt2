@@ -126,3 +126,4 @@ Target solver: CVC4
   (forall ((cur_state2 Int)) (is_waiting__function_guard
   (is_waiting cur_state2) cur_state2)) (= (is_waiting cur_state1) true)))))))))
 (check-sat)
+(exit)

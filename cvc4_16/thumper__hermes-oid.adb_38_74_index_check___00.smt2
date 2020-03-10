@@ -793,3 +793,4 @@ Target solver: CVC4
   (=> (not (< (length separates) 1))
   (<= (first1 separates) (first1 separates))))))))
 (check-sat)
+(exit)

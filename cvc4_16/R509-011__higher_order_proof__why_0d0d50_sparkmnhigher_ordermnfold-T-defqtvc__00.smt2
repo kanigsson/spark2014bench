@@ -434,3 +434,4 @@ Target solver: CVC4
   (= o (ite (= i (first2 a)) false true)) (= o false))
   (=> (= o true) (<= i (last2 (of_array (to_array a) (first2 a) (last2 a))))))))))))
 (check-sat)
+(exit)

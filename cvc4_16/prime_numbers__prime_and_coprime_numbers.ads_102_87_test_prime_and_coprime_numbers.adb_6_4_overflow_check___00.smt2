@@ -450,3 +450,4 @@ Target solver: CVC4
   (<= v value)) (not (= (select number_list v) true)))) (in_range1
   (- value test_prime_and_coprime_numbers__p__nearest_number__result))))))))))))))))))))
 (check-sat)
+(exit)

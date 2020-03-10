@@ -840,3 +840,4 @@ Target solver: CVC4
      (rec__relaxed_initialization__rec__z (us_split_fields1 temp___413))) true)))
   (<= (to_rep obj__first) usf)))))))))))))))))))))
 (check-sat)
+(exit)

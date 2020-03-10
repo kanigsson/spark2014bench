@@ -292,3 +292,4 @@ Target solver: CVC4
   (=> (= (rec__foo__q__found a__split_discrs) tmp_1) (in_range
   (ite tmp_1 1 0)))))
 (check-sat)
+(exit)

@@ -202,3 +202,4 @@ Target solver: CVC4
  ;; File "pedantic.ads", line 31, characters 0-0
   (not (in_range object__size)))
 (check-sat)
+(exit)

@@ -138,3 +138,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x1 true true true true)
   (forall ((temp___159 Int)) (=> (= temp___159 x1) (in_range (+ x1 par1))))))))))))))
 (check-sat)
+(exit)

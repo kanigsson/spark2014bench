@@ -875,3 +875,4 @@ Target solver: CVC4
   (and (sum_of__function_guard o2 counter3) (dynamic_invariant o2 true false
   true true)) (=> (< o2 2) (< usf 0)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

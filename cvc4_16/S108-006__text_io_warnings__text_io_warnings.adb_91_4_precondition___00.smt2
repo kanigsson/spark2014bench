@@ -2097,3 +2097,4 @@ Target solver: CVC4
   file_system42 current_in42 current_out42) true false true true)
   (= (is_open target1) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -555,3 +555,4 @@ Target solver: CVC4
   (and (= (to_rep a1__first) 1) (= (to_rep a1__last) b_max)))
   (=> (<= 1 b_max) (<= 1 1))))))))))))))
 (check-sat)
+(exit)

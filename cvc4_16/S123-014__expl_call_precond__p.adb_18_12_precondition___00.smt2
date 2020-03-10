@@ -115,3 +115,4 @@ Target solver: CVC4
   (forall ((x Int) (g Bool))
   (=> (dynamic_invariant x true false true true) (= g true)))))
 (check-sat)
+(exit)

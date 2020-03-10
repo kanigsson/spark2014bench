@@ -189,3 +189,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__dispatch__root__f (us_split_fields1 x))) o) (in_range
   (+ o 1))))))
 (check-sat)
+(exit)

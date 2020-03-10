@@ -144,3 +144,4 @@ Target solver: CVC4
  ;; File "type_invariant_legal_6.adb", line 5, characters 0-0
   (not (=> (dynamic_invariant1 x true false true true) (type_invariant x))))
 (check-sat)
+(exit)

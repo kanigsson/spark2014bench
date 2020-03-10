@@ -800,3 +800,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 last_candidate1 true true true true)
   (=> (<= 0 i) (=> (<= i 20) (= (to_rep2 (select counters i)) 0))))))))))))))
 (check-sat)
+(exit)

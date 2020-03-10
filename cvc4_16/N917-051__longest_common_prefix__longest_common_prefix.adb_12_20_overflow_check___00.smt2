@@ -279,3 +279,4 @@ Target solver: CVC4
   (let ((o (+ x l1)))
   (=> (in_range1 o) (=> (<= o 1000) (in_range1 (+ y l1))))))))))))))))
 (check-sat)
+(exit)

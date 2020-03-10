@@ -306,3 +306,4 @@ Target solver: CVC4
   (=> (= (us_repqtmk1 x__split_fields) x_old)
   (= (bool_eq1 (us_repqtmk1 x__split_fields) x_old) true))))))
 (check-sat)
+(exit)

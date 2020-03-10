@@ -1348,3 +1348,4 @@ Target solver: CVC4
   (= (to_rep2 o2) ((_ extract 7 0) (bvand (bvsub (bvsub ((_ zero_extend 8) o1) carry2) current_borrow2) #x00FF)))
   (in_range2 (+ j n))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

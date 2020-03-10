@@ -928,3 +928,4 @@ Target solver: CVC4
   (and (= r1 o1) (= i1 temp___658))))))))))) (= r1 r))))))
   (=> (not (= (length a) 0)) (dynamic_property 1 100 (first1 a) (last1 a)))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -364,3 +364,4 @@ Target solver: CVC4
   (=> (and (<= (first1 x) j) (<= j (last1 x)))
   (= (to_rep (select (to_array x) j)) 0))) (= arrays__sum__result 0)))))))))))))
 (check-sat)
+(exit)

@@ -663,3 +663,4 @@ Target solver: CVC4
  ;; File "instances.ads", line 8, characters 0-0
   (not (in_range 10)))
 (check-sat)
+(exit)

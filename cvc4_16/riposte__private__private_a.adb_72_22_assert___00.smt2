@@ -502,3 +502,4 @@ Target solver: CVC4
   (= (get_length
      (rec__private_a__optional_stack__the_stack s__split_fields1)) 2)))))))))))))))))))
 (check-sat)
+(exit)

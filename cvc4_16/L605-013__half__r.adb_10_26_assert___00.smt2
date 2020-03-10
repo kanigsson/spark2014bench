@@ -414,3 +414,4 @@ Target solver: CVC4
                                 true false)) true)
   (= (to_rep a__first) (first1 a_old)))))))))))))))))))))))
 (check-sat)
+(exit)

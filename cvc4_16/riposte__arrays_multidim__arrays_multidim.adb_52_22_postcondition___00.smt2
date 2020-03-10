@@ -410,3 +410,4 @@ Target solver: CVC4
   (=> (= x2 x)
   (= (bool_eq x2 #x00 #xFF #x00 #xFF x1 #x00 #xFF #x00 #xFF) true))))))
 (check-sat)
+(exit)

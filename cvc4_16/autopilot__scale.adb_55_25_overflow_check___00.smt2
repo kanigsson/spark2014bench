@@ -431,3 +431,4 @@ Target solver: CVC4
   (=> (= k21 o2)
   (let ((o3 (+ 1 k21))) (=> (in_range1 o3) (in_range1 (+ o3 k11)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

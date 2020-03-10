@@ -577,3 +577,4 @@ Target solver: CVC4
   (forall ((result__2 (_ BitVec 8)))
   (=> (= result__2 (bvadd result__1 o2)) (in_range1 (+ i1 1))))))))))))))))))))))
 (check-sat)
+(exit)

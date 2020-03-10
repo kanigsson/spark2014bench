@@ -902,3 +902,4 @@ Target solver: CVC4
   (= o7 (or (ite (= left4 8) true false) (ite (= left4 9) true false)))
   (= o7 (distinct 1 0))) (= o7 false))))) (= (mod2 (+ left4 1) space1) 0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

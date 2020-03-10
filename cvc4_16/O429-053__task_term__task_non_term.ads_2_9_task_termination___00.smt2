@@ -125,3 +125,4 @@ Target solver: CVC4
   (let ((o (+ a1 f1)))
   (and (in_range1 o) (exists ((f2 Int)) (and (= f2 o) (not (< f2 1000))))))))))))))))))))))
 (check-sat)
+(exit)

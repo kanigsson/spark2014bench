@@ -508,3 +508,4 @@ Target solver: CVC4
   (=> (in_range2 (min l1 o10))
   (let ((o11 (* usf l1))) (=> (in_range1 o11) (in_range1 (+ a_first o11))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

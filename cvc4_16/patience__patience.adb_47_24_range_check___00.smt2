@@ -1140,3 +1140,4 @@ Target solver: CVC4
                       (rec__patience__state__preds s__split_fields)))
   (let ((o2 (+ idx1 1))) (=> (in_range1 o2) (in_range2 o2))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

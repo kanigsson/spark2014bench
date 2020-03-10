@@ -670,3 +670,4 @@ Target solver: CVC4
   (remove b perm__get_witness__result1)))
   (= (is_perm (remove a ia) (remove b perm__get_witness__result)) true))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

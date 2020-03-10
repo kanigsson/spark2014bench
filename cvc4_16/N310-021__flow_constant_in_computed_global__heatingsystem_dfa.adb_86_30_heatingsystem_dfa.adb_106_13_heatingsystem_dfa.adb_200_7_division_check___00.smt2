@@ -700,3 +700,4 @@ Target solver: CVC4
   (exists ((spark__branch4 Bool)) (= spark__branch4 changetoslowmode)))))))))))
   (not (= 86400 0))))))))))))))))))))
 (check-sat)
+(exit)

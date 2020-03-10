@@ -936,3 +936,4 @@ Target solver: CVC4
   (and (= b1 (store b2 i1 o2)) (= i1 temp___297))))))))))))) (= b1 b))))))
   (dynamic_property1 0 2147483646 (to_rep1 b__first) (to_rep1 b__last)))))))))))
 (check-sat)
+(exit)

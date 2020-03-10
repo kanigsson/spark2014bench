@@ -145,3 +145,4 @@ Target solver: CVC4
   (= (and (ite (dynamic_invariant y2 false true true true) true false) 
   (ite (not (= x y2)) true false)) true) (in_range1 (+ y2 1))))))))))
 (check-sat)
+(exit)

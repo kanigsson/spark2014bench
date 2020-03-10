@@ -326,3 +326,4 @@ Target solver: CVC4
                                                                     mode 2)) true)
                                                                     1 0)) 1)))))))))))
 (check-sat)
+(exit)

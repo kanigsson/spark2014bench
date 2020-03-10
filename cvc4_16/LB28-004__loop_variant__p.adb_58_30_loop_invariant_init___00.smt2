@@ -408,3 +408,4 @@ Target solver: CVC4
   (forall ((l Int))
   (=> (and (<= a l) (<= l (- j10 1))) (= (to_rep (select tab5 l)) l)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

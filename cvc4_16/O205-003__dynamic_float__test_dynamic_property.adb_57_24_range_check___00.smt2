@@ -330,3 +330,4 @@ Target solver: CVC4
   true) (dynamic_property (fp #b0 #b00000000 #b00000000000000000000000) 
   last test_dynamic_property__dyn_param__x)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

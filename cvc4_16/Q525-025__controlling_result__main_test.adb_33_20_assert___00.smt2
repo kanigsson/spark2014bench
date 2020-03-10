@@ -1933,3 +1933,4 @@ Target solver: CVC4
   (us_repqtmk field_10__split_fields1 field_10__attr__tag)))
   (= (elements (us_repqtmk field_10__split_fields field_10__attr__tag)) 10)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

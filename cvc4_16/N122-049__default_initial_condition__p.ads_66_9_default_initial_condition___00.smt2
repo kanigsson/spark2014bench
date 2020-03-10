@@ -223,3 +223,4 @@ Target solver: CVC4
   (=> (forall ((usf1 us_rep)) (p12__function_guard (p12 usf1) usf1))
   (= (p12 (us_repqtmk usf)) true)))))))
 (check-sat)
+(exit)

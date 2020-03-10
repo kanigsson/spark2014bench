@@ -611,3 +611,4 @@ Target solver: CVC4
   (=> (<= (first1 res__split_fields2) (last1 res__split_fields2))
   (<= 1 r59b)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

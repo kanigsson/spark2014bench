@@ -802,3 +802,4 @@ Target solver: CVC4
   (=> (= perm__remove_perm__aa__assume aa)
   (=> (dynamic_invariant aa true false true true) (<= (first1 b) ib)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)
