@@ -497,3 +497,4 @@ Target solver: CVC4
   (= (to_rep1 (rec__stack__stack_type__pointer my_stack__split_fields1)) o5)
   (<= 1 (- o5 1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

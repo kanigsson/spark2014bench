@@ -284,3 +284,4 @@ Target solver: CVC4
   (=> (= unconstr_call__test_2__x__assume x)
   (=> (dynamic_invariant x true false true true) (= x (to_rep z__first)))))))))
 (check-sat)
+(exit)

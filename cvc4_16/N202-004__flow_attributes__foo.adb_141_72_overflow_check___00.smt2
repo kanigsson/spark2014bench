@@ -789,3 +789,4 @@ Target solver: CVC4
   (= (and (ite true true false) (ite (and (<= 1 i1) (<= i1 r53b)) true false)) true)
   (let ((o4 (+ (first1 text) i1))) (=> (in_range1 o4) (in_range1 (- o4 1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

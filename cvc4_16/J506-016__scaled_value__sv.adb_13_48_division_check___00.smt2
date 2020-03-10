@@ -393,3 +393,4 @@ Target solver: CVC4
   (=> (bvugt requested_capacity capacity)
   (=> (bvule value capacity) (not (= requested_capacity #x0000000000000000)))))))))
 (check-sat)
+(exit)

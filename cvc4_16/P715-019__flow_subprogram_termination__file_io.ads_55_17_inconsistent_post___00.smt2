@@ -402,3 +402,4 @@ Target solver: CVC4
   (=> (forall ((f1 us_rep)) (index__function_guard (index f1) f1))
   (not (= (index f) 0)))))))
 (check-sat)
+(exit)

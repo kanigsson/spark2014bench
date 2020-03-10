@@ -459,3 +459,4 @@ Target solver: CVC4
   (=> (= spark__branch true) (test__fruit_rec__record_t__single_item__pred
   (us_repqtmk (us_split_discrsqtmk rec2__split_discrs) rec2__split_fields)))))))))
 (check-sat)
+(exit)

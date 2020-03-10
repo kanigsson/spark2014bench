@@ -303,3 +303,4 @@ Target solver: CVC4
   (= (bool_eq1 seen1 1 64 (temp_____aggregate_def_503 (distinct 1 0)) 1 64) true)
   (=> (<= 1 g1) (=> (<= g1 64) (= (select seen1 g1) true)))))))))
 (check-sat)
+(exit)

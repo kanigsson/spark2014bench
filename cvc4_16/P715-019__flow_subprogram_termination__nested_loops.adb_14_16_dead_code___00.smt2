@@ -153,3 +153,4 @@ Target solver: CVC4
   (forall ((temp___159 Int))
   (=> (= temp___159 i1) (forall ((x3 Int)) (=> (= x3 i1) (not (< 0 x3))))))))))))))))))))))))))
 (check-sat)
+(exit)

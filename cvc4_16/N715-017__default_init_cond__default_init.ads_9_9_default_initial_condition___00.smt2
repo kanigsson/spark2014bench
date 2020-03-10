@@ -166,3 +166,4 @@ Target solver: CVC4
   (=> (forall ((usf1 Int)) (wrong_ok__function_guard (wrong_ok usf1) usf1))
   (= (wrong_ok usf) true))))))))
 (check-sat)
+(exit)

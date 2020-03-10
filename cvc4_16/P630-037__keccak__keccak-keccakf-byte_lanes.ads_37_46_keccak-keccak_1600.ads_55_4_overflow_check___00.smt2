@@ -944,3 +944,4 @@ Target solver: CVC4
   (=> (<= o 268435455)
   (let ((o1 (length data))) (=> (in_range1 o1) (in_range1 (* o1 8)))))))))))
 (check-sat)
+(exit)

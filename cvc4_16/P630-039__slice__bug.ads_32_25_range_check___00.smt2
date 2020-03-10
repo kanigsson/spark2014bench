@@ -435,3 +435,4 @@ Target solver: CVC4
   (let ((o (length a)))
   (=> (in_range o) (=> (<= size_a o) (in_range (length b)))))))))))
 (check-sat)
+(exit)

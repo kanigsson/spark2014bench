@@ -235,3 +235,4 @@ Target solver: CVC4
   (= (and (ite (<= (- 2147483648) usf) true false) (ite (<= usf 2147483647)
                                                    true false)) true)))))))))))
 (check-sat)
+(exit)

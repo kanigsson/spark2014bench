@@ -459,3 +459,4 @@ Target solver: CVC4
   (=> (= x86__readmem8__result o)
   (= x86__readmem8__result (to_rep (select memory addr)))))))))
 (check-sat)
+(exit)

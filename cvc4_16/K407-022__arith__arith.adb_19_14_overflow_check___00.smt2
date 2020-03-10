@@ -273,3 +273,4 @@ Target solver: CVC4
   (=> (in_range o10)
   (forall ((tmp23 Int)) (=> (= tmp23 o10) (in_range (* x y))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

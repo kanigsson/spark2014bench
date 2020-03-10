@@ -5594,3 +5594,4 @@ Target solver: CVC4
      (us_split_discrs3 source))) o)
   (in_range1 o))))))))))))))
 (check-sat)
+(exit)

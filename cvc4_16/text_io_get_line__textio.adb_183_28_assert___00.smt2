@@ -1189,3 +1189,4 @@ Target solver: CVC4
   (=> (= textio__get_line_function__get_rest__B_1__r__assume r)
   (=> (dynamic_invariant3 r true false true true) (= (first1 r) (first1 s))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

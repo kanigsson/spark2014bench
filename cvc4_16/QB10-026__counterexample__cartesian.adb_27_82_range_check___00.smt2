@@ -687,3 +687,4 @@ Target solver: CVC4
                                              o4)))
   (=> (in_range1 (- index2 (first1 array2))) (in_range1 (length array2))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

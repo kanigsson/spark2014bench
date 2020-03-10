@@ -291,3 +291,4 @@ Target solver: CVC4
   (and (dynamic_invariant o2 true false true true) (= o2 (bvsub o1 o))))
   (not (= o2 #x00)))))))))))
 (check-sat)
+(exit)

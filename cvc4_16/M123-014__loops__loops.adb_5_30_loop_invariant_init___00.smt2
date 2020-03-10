@@ -170,3 +170,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i 5) true false)) true)
   (= count (- i 1)))))))))
 (check-sat)
+(exit)

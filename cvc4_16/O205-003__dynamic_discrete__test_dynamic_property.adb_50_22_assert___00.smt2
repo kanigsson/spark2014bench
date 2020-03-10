@@ -253,3 +253,4 @@ Target solver: CVC4
   (forall ((y1 Int))
   (=> (= y1 test_dynamic_property__dyn_param__x) (<= y1 c))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

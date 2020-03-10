@@ -855,3 +855,4 @@ Target solver: CVC4
   (= (to_rep (select memory8 i)) (to_rep (select memory7 i)))))))
   (bvule ((_ zero_extend 56) #x00) (bvand (bvlshr val__ ((_ int2bv 64) 32)) #x00000000000000FF)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

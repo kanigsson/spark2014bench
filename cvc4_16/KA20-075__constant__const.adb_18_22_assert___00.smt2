@@ -438,3 +438,4 @@ Target solver: CVC4
   (=> (= (to_rep (select c2 1)) 1)
   (=> (= (to_rep (select c2 2)) 1) (= (to_rep (select d2 1)) 1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

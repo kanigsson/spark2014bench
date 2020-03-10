@@ -5618,3 +5618,4 @@ Target solver: CVC4
      (us_split_discrs1 temp___1391))) o1)))
   (in_range2 capacity (us_split_discrs1 temp___1391)))))))))))))))
 (check-sat)
+(exit)

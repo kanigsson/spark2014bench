@@ -607,3 +607,4 @@ Target solver: CVC4
   (forall ((relative_error1 (_ BitVec 32)))
   (=> (= relative_error1 abs_out11) (not (= requested_force #x00000000))))))))))))))))
 (check-sat)
+(exit)

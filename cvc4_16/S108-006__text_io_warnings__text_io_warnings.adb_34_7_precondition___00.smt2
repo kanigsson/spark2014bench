@@ -1422,3 +1422,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (=> (in_range9 sum1) (= (is_open source2) true))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

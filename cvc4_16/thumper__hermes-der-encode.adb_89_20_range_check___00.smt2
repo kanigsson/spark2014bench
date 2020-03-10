@@ -756,3 +756,4 @@ Target solver: CVC4
   (=> (uint_in_range value1)
   (=> (= (to_rep1 o1) ((_ int2bv 8) value1)) (=> (<= 1 2) (<= 1 1))))))))))))))))
 (check-sat)
+(exit)

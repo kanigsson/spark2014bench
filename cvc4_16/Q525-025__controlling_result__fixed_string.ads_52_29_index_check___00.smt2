@@ -555,3 +555,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array new_val) o19)) o20)
   (<= (to_rep1 change__first) usf1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

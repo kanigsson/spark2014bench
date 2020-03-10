@@ -239,3 +239,4 @@ Target solver: CVC4
   (forall ((o Int))
   (=> (= (to_rep (rec__p__t__discr (us_split_discrs1 arg))) o) (in_range o)))))
 (check-sat)
+(exit)

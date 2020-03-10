@@ -483,3 +483,4 @@ Target solver: CVC4
                     1 o2)))
   (=> (<= (first3 temp___217) (last3 temp___217)) (<= 1 10))))))))))))))))))))))
 (check-sat)
+(exit)

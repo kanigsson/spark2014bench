@@ -507,3 +507,4 @@ Target solver: CVC4
   (=> (= (to_rep b__last) o23)
   (forall ((o24 Int)) (=> (= (to_rep b__first) o24) (in_range1 (+ o24 j))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

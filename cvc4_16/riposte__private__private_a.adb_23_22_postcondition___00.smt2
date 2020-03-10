@@ -210,3 +210,4 @@ Target solver: CVC4
   (=> (create__function_guard (create n 0) n 0)
   (= (bool_eq (us_repqtmk dst__split_fields) (create n 0)) true))))))))))
 (check-sat)
+(exit)

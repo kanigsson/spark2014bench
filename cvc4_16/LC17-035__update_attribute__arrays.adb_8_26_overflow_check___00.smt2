@@ -242,3 +242,4 @@ Target solver: CVC4
   (=> (= arr (arrays__f1__arr__aggregate_def o))
   (=> (= (to_rep o1) x) (=> (= (to_rep o2) x) (in_range1 (+ init_val 1))))))))))))
 (check-sat)
+(exit)

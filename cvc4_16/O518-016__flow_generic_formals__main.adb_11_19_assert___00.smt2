@@ -161,3 +161,4 @@ Target solver: CVC4
   (=> (get_bounded__function_guard (get_bounded Tuple0) Tuple0)
   (= (get_bounded Tuple0) true))))))))
 (check-sat)
+(exit)

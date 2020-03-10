@@ -247,3 +247,4 @@ Target solver: CVC4
   (not
   (= (oeq (us_repqtmk x__split_fields) (us_repqtmk y__split_fields)) true))))))))
 (check-sat)
+(exit)

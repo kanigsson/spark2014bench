@@ -108,3 +108,4 @@ Target solver: CVC4
   (=> (dynamic_invariant par2 false false true true)
   (=> (<= 5 par1) (=> (<= par1 1000) (in_range1 (* 2 par1)))))))))
 (check-sat)
+(exit)

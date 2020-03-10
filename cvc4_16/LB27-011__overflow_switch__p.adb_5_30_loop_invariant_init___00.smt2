@@ -192,3 +192,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 j) true false) (ite (<= j 5) true false)) true)
   (= result__ (power n j))))))))))
 (check-sat)
+(exit)

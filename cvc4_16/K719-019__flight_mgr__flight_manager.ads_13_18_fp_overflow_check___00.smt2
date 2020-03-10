@@ -355,3 +355,4 @@ Target solver: CVC4
      flight_manager__set_engine_speed__result)) o8)
   (fp.isFinite32 (fp.add RNE position_y o8))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

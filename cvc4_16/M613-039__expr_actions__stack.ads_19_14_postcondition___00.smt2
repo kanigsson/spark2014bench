@@ -702,3 +702,4 @@ Target solver: CVC4
   (top (us_repqtmk s__split_fields3)) (us_repqtmk s__split_fields3)))
   (= (top (us_repqtmk s__split_fields2)) x)))))))))))))))))))))))
 (check-sat)
+(exit)

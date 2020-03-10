@@ -896,3 +896,4 @@ Target solver: CVC4
   (us_repqtmk buffer__split_fields1)))
   (<= (first (us_repqtmk buffer__split_fields)) o4)))))))))))))))))))))))))
 (check-sat)
+(exit)

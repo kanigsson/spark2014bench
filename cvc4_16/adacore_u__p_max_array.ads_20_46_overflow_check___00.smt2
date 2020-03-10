@@ -451,3 +451,4 @@ Target solver: CVC4
   (=> (= (to_rep1 a__first) o7)
   (let ((o8 (- usf o7))) (=> (in_range1 o8) (in_range1 (+ o8 (first1 b)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

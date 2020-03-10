@@ -167,3 +167,4 @@ Target solver: CVC4
   n) (= (+ (+ arithmetic__halve_a__result arithmetic__halve_a__result) 1) 
   n))))))))))
 (check-sat)
+(exit)

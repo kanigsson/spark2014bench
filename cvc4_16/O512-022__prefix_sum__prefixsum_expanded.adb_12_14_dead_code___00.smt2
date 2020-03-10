@@ -507,3 +507,4 @@ Target solver: CVC4
   (=> (dynamic_invariant left false false true true)
   (=> (dynamic_invariant right false false true true) (not (< space 8))))))))))))
 (check-sat)
+(exit)

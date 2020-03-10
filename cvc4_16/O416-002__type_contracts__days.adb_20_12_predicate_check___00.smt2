@@ -172,3 +172,4 @@ Target solver: CVC4
   (= tmp2 tmp1))
   (or (and (<= 1 tmp2) (<= tmp2 1)) (and (<= 3 tmp2) (<= tmp2 3)))))))))))))
 (check-sat)
+(exit)

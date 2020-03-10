@@ -1050,3 +1050,4 @@ Target solver: CVC4
   (and (dynamic_invariant5 o5 true false true true)
   (= o5 (+ 0 (length1 a2)))) (= (last a2) (- n2 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

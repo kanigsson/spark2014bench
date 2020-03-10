@@ -66,3 +66,4 @@ Target solver: CVC4
   (forall ((spark__branch Bool))
   (=> (= spark__branch (distinct 0 0)) (= spark__branch true)))))
 (check-sat)
+(exit)

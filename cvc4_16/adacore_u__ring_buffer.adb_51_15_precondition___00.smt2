@@ -740,3 +740,4 @@ Target solver: CVC4
   (forall ((o2 Int))
   (=> (= (to_rep (select content j1)) o2) (< (length r2) 2147483647)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

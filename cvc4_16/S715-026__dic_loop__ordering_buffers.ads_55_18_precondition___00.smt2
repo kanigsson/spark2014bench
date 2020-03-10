@@ -1095,3 +1095,4 @@ Target solver: CVC4
   (=> (forall ((usf2 us_rep)) (first__function_guard (first usf2) usf2))
   (<= (first (us_repqtmk buffer__split_fields)) o6)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

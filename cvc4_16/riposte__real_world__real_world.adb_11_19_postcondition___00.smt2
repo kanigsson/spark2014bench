@@ -146,3 +146,4 @@ Target solver: CVC4
   (=> (= real_world__example_a__result r1)
   (=> (= sort 2) (= real_world__example_a__result 3)))))))))
 (check-sat)
+(exit)

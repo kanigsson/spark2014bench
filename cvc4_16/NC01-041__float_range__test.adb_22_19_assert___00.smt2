@@ -321,3 +321,4 @@ Target solver: CVC4
   (=> (dynamic_invariant value2 true true true true)
   (fp.leq (fp.neg (fp #b0 #b01110101 #b10001001001101110100110)) value2)))))))))
 (check-sat)
+(exit)

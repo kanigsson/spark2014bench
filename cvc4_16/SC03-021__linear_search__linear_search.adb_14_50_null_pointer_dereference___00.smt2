@@ -502,3 +502,4 @@ Target solver: CVC4
   (=> (not (= (bool_eq l us_null_pointer1) true))
   (rec__linear_search__list__pointer_value__pred l)))))
 (check-sat)
+(exit)

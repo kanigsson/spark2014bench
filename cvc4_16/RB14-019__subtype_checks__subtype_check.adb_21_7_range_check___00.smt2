@@ -491,3 +491,4 @@ Target solver: CVC4
   (=> (dynamic_invariant zero true false true true)
   (=> (= (id 1) zero) (=> (<= zero 10) (<= 1 zero))))))
 (check-sat)
+(exit)

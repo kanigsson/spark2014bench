@@ -853,3 +853,4 @@ Target solver: CVC4
   (= o2 (ite (<= o4 (last1 x)) true false)))) (= o2 false))))
   (=> (= o2 true) (=> (<= (first1 x) (last1 x)) (<= 1 (first1 x))))))))))))))))))
 (check-sat)
+(exit)

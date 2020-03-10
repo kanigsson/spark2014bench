@@ -773,3 +773,4 @@ Target solver: CVC4
   (ite (and (<= (first1 powers) c5b1) (<= c5b1 (last1 powers))) true false)) true)
   (<= (first1 powers) c5b1)))))))))))))))
 (check-sat)
+(exit)

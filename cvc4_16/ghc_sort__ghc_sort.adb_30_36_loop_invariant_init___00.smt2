@@ -605,3 +605,4 @@ Target solver: CVC4
   (forall ((temp___loop_entry_420 Int))
   (=> (= temp___loop_entry_420 y1) (<= temp___loop_entry_423 y1))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

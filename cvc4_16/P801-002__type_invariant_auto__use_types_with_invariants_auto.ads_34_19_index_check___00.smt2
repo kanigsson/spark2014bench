@@ -603,3 +603,4 @@ Target solver: CVC4
       (rec__use_types_with_invariants_auto__container__content
       (us_split_fields3 c))) i))))))
 (check-sat)
+(exit)

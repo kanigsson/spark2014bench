@@ -268,3 +268,4 @@ Target solver: CVC4
   (=> (= arithmetic__ispositive_wrong__result o2)
   (=> (<= 0 x) (= arithmetic__ispositive_wrong__result 0)))))))))))))
 (check-sat)
+(exit)

@@ -60,3 +60,4 @@ Target solver: CVC4
   (forall ((pkg__nested__get__result Bool))
   (= pkg__nested__get__result true))))
 (check-sat)
+(exit)

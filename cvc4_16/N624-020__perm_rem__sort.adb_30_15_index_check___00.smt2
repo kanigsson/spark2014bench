@@ -715,3 +715,4 @@ Target solver: CVC4
      (to_array temp___320) (first1 temp___320) (last1 temp___320)))) true)
   (=> (in_range2 temp1) (=> (= (to_rep o3) temp1) (<= y 100)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

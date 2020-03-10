@@ -724,3 +724,4 @@ Target solver: CVC4
   (=> (< 0 string_search__brute_force__result1) (in_range3
   string_search__brute_force__result1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

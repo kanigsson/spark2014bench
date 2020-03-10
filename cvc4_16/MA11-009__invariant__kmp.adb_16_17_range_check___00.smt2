@@ -375,3 +375,4 @@ Target solver: CVC4
   (and (<= (first1 p) r12b) (<= r12b (last1 p)))))
   (=> (<= r8b r9b) (<= (first1 p) r8b)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

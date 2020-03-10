@@ -816,3 +816,4 @@ Target solver: CVC4
   (= (occ (of_array values (to_rep1 values__first) (to_rep1 values__last)) f) 
   (occ (of_array (to_array init) (first1 init) (last1 init)) f))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

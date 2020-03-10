@@ -405,3 +405,4 @@ Target solver: CVC4
   (=> (<= (fxp_div left 1) (div1 9223372036854775807 right)) (in_range1
   (* left right)))))))))))
 (check-sat)
+(exit)

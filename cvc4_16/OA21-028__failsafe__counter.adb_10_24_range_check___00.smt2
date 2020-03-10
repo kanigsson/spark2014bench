@@ -372,3 +372,4 @@ Target solver: CVC4
   (ite (and (bvult res1 #x0A) (= (select inputs (bvsub #x0A res1)) true))
   true false)) true) (in_range1 (bvadd res1 #x01)))))))))))
 (check-sat)
+(exit)

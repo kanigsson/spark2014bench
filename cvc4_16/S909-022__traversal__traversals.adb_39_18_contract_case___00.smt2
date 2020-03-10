@@ -891,3 +891,4 @@ Target solver: CVC4
   (=> (= (bool_eq1 x us_null_pointer) true)
   (= (bool_eq traversals__next__result us_null_pointer1) true))))))))
 (check-sat)
+(exit)

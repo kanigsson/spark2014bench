@@ -340,3 +340,4 @@ Target solver: CVC4
   (forall ((v Int))
   (=> (= v o2) (=> (dynamic_invariant3 v true false true true) (<= 10 120))))))))))))))))))
 (check-sat)
+(exit)

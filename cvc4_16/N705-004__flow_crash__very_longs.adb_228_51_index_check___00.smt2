@@ -1075,3 +1075,4 @@ Target solver: CVC4
   (=> (= l_digit2 ((_ zero_extend 8) o2))
   (<= (first1 (rec__very_longs__very_long__long_digits (us_split_fields1 r))) i1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -251,3 +251,4 @@ Target solver: CVC4
   (=> (<= k 10)
   (=> (= (to_rep (select a k)) o1) (=> (= (to_rep o2) o1) (<= 1 j)))))))))))))))))))
 (check-sat)
+(exit)

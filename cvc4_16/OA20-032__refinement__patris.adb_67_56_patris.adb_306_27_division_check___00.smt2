@@ -2366,3 +2366,4 @@ Target solver: CVC4
   (=> (= (to_rep4 o2) (mod2 o1 4))
   (=> (dynamic_invariant3 (rand Tuple0) true false true true) (not (= 7 0))))))))))))))))))))))))
 (check-sat)
+(exit)

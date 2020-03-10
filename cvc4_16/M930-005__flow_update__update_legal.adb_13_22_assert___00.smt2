@@ -181,3 +181,4 @@ Target solver: CVC4
           (distinct 1 0)))
   (= (select arr1 1) true)))))
 (check-sat)
+(exit)

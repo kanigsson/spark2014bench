@@ -315,3 +315,4 @@ Target solver: CVC4
  ;; File "test.adb", line 16, characters 0-0
   (not (=> (dynamic_invariant a true false true true) (<= (first1 a) 1))))
 (check-sat)
+(exit)

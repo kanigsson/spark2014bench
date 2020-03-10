@@ -80,3 +80,4 @@ Target solver: CVC4
   (let ((o1 (recurse2 o))) (and (recurse2__function_guard o1 o) (= tmp o1)))))))
   (=> (= res tmp) (= res true))))))
 (check-sat)
+(exit)

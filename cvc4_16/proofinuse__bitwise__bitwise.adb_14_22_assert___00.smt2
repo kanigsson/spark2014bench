@@ -386,3 +386,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 lmask_8 true false true true)
   (=> (= res1 #x000000FF) (= (bvand x res1) (bvand x #x000000FF)))))))))
 (check-sat)
+(exit)

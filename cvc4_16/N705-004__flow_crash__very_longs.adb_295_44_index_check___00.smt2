@@ -1234,3 +1234,4 @@ Target solver: CVC4
   (let ((o8 (+ o7 j1)))
   (=> (in_range2 o8) (<= (first1 result____split_fields3) o8)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

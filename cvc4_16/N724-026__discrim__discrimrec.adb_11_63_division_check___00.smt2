@@ -1758,3 +1758,4 @@ Target solver: CVC4
      (rec__discrimrec__register_type__value_64 (us_split_fields1 reg))) o)
   (not (= #x0000000100000000 #x0000000000000000)))))))
 (check-sat)
+(exit)

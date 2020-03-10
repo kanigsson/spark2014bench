@@ -130,3 +130,4 @@ Target solver: CVC4
   (=> (and (h_false__function_guard o2 Tuple0) (not (= o2 true)))
   (forall ((z2 Bool)) (=> (= z2 o2) (not (= z2 true))))))))))))))))))
 (check-sat)
+(exit)

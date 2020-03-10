@@ -361,3 +361,4 @@ Target solver: CVC4
   (=> (not (= j (first1 str)))
   (let ((o (- j 1))) (=> (in_range1 o) (<= (first1 str) o)))))))))))))
 (check-sat)
+(exit)

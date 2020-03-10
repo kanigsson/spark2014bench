@@ -1243,3 +1243,4 @@ Target solver: CVC4
   (forall ((o6 Int))
   (=> (= (to_rep1 (get1 r1 usf o5)) o6) (<= (first_2 a) usf1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

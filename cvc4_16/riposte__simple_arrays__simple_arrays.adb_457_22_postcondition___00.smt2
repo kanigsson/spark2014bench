@@ -156,3 +156,4 @@ Target solver: CVC4
   (=> (= (to_rep o1) 1)
   (=> (= a2 (store a1 1 o1)) (not (= (to_rep (select a2 0)) 0)))))))))
 (check-sat)
+(exit)

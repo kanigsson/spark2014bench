@@ -663,3 +663,4 @@ Target solver: CVC4
   (forall ((formals__p2__a1 (Array Int natural))) (dynamic_predicate
   formals__p2__a1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

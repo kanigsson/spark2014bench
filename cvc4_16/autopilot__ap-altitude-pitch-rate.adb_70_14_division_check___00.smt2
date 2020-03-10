@@ -469,3 +469,4 @@ Target solver: CVC4
   (=> (= spark__branch1 true)
   (=> (in_range1 (* (- pitch early_pitch1) 10)) (not (= 20 0)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

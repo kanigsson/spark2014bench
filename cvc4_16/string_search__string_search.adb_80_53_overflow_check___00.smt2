@@ -563,3 +563,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r52b true false true true) (in_range1
   (- (last1 needle) 1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -361,3 +361,4 @@ Target solver: CVC4
   (=> (= a3 temp___202) (rec__pointers__t_ptr__pointer_value__pred
   (select a3 j))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

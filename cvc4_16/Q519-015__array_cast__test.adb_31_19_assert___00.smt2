@@ -1137,3 +1137,4 @@ Target solver: CVC4
   (=> (and (<= 1 i) (<= i 3))
   (= (to_rep (rec__test__rec__y (us_split_fields1 (select z i)))) 1)))))))))))))))))))
 (check-sat)
+(exit)

@@ -1566,3 +1566,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r105s true false true true)
   (=> (<= 0 r105s) (<= 0 0)))))))))))))))))
 (check-sat)
+(exit)

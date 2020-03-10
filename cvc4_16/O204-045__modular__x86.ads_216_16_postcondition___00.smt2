@@ -385,3 +385,4 @@ Target solver: CVC4
   (= rsp2 (bvor (bvand rsp #xFFFFFFFF00000000) ((_ zero_extend 32) val__)))
   (= rsp2 (bvor (bvand rsp1 #xFFFFFFFF00000000) ((_ zero_extend 32) val__))))))))))
 (check-sat)
+(exit)

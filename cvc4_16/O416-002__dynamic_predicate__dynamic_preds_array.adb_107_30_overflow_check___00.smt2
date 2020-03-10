@@ -426,3 +426,4 @@ Target solver: CVC4
   (forall ((o1 Int))
   (=> (= (to_rep (select result__1 1)) o1) (in_range (+ o1 4))))))))))))))
 (check-sat)
+(exit)

@@ -1096,3 +1096,4 @@ Target solver: CVC4
   (= (distinct 1 0) (rec__test_dic__nested__p2__x (us_split_discrs9 usf)))
   (= (rec__test_dic__nested__p2__x (us_split_discrs9 usf)) true)))))))))
 (check-sat)
+(exit)

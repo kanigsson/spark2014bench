@@ -963,3 +963,4 @@ Target solver: CVC4
   (=> (= (to_rep1 o11) (bvadd o10 #x00000001))
   (<= (to_rep result_arr__first) result_pos1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

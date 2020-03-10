@@ -365,3 +365,4 @@ Target solver: CVC4
   (=> (low_bound__function_guard (low_bound n) n)
   (fp.leq (low_bound n) old_speed)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

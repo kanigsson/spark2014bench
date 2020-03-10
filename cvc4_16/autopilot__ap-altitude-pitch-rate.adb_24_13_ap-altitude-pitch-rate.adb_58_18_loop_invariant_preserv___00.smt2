@@ -451,3 +451,4 @@ Target solver: CVC4
   (=> (in_range1 (* i2 (- 10)))
   (=> (in_range1 (* i2 20)) (<= sum3 (* i2 20))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

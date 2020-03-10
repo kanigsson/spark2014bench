@@ -366,3 +366,4 @@ Target solver: CVC4
   (=> (= quotient (fxp_div (of_int dividend) (of_int divisor)))
   (< quotient 1073741824)))))))))
 (check-sat)
+(exit)

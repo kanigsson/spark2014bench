@@ -997,3 +997,4 @@ Target solver: CVC4
                     buffer__split_fields)))
   (=> (<= (first1 temp___333) (last1 temp___333)) (<= 1 r27b))))))))))))))))))))))
 (check-sat)
+(exit)

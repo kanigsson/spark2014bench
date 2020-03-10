@@ -310,3 +310,4 @@ Target solver: CVC4
   (=> (= loop_tutorial__isqrt__result lower2)
   (<= (* loop_tutorial__isqrt__result loop_tutorial__isqrt__result) n))))))))))))))
 (check-sat)
+(exit)

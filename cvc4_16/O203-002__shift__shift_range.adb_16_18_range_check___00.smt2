@@ -289,3 +289,4 @@ Target solver: CVC4
   (=> (ite (< 8 16) (= o (bvlshr x ((_ int2bv 16) 8))) (= o #x0000))
   (in_range (bv2nat o)))))))
 (check-sat)
+(exit)

@@ -250,3 +250,4 @@ Target solver: CVC4
   (=> (in_range o)
   (forall ((o1 integer)) (=> (= (to_rep o1) o) (<= (to_rep x__first) 1)))))))))
 (check-sat)
+(exit)

@@ -480,3 +480,4 @@ Target solver: CVC4
   (forall ((x__split_discrs Bool))
   (=> (= x__split_discrs tmp) (in_range (ite tmp 1 0))))))
 (check-sat)
+(exit)

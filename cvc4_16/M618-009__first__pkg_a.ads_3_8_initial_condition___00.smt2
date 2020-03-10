@@ -123,3 +123,4 @@ Target solver: CVC4
   (and (dynamic_invariant o true false true true) (= o (* 2147483647 2))))
   (forall ((y1 Int)) (=> (= y1 o) (= x y1)))))))))))
 (check-sat)
+(exit)

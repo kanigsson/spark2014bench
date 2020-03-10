@@ -399,3 +399,4 @@ Target solver: CVC4
   (=> (bvule ux1 #x000000007FFFFFFF)
   (=> (= m1 #x0000000040000000) (= m1 #x0000000000000000))))))))))))))
 (check-sat)
+(exit)

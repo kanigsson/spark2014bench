@@ -1001,3 +1001,4 @@ Target solver: CVC4
   (=> (= (to_rep2 item__first) temp___482)
   (=> (<= temp___482 r15b) (<= (to_rep2 item__first) temp___482))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

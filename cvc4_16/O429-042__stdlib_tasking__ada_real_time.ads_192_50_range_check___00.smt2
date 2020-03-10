@@ -403,3 +403,4 @@ Target solver: CVC4
   true true))
   (let ((o6 (fxp_div o5 o3))) (=> (in_range2 o6) (in_range3 o6))))))))))))))))
 (check-sat)
+(exit)

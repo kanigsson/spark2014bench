@@ -307,3 +307,4 @@ Target solver: CVC4
   (forall ((o11 Int))
   (=> (= (to_rep (select memory c13b)) o11) (in_range1 (+ o11 c14b))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

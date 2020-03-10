@@ -662,3 +662,4 @@ Target solver: CVC4
   (let ((o1 container))
   (let ((o2 (model1 o1))) (=> (= (length o2) (length1 o1)) (<= o (last o2))))))))))
 (check-sat)
+(exit)

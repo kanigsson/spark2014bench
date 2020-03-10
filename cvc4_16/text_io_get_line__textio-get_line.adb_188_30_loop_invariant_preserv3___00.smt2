@@ -1221,3 +1221,4 @@ Target solver: CVC4
   (exists ((o13 Int)) (= (to_rep1 item__last) o13)))))
   (= (+ last6 n3) (to_rep1 item__last)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

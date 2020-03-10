@@ -399,3 +399,4 @@ Target solver: CVC4
   (=> (dynamic_property1 o3 1 x)
   (=> (<= (first1 usf) (last1 usf)) (<= (to_rep1 s__first) 1)))))))))))))))))))
 (check-sat)
+(exit)

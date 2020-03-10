@@ -538,3 +538,4 @@ Target solver: CVC4
   (and (to_string__function_guard o1 o) (dynamic_invariant o1 true false true
   true)) (= i1 temp___229)))))))))))))))))
 (check-sat)
+(exit)

@@ -68,3 +68,4 @@ Target solver: CVC4
   (forall ((exit_called Bool))
   (=> (= exit_called (distinct 1 0)) (= exit_called true)))))
 (check-sat)
+(exit)

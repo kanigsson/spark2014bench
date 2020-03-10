@@ -655,3 +655,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 r1b true false true true)
   (=> (<= r1b 11) (<= 1 r1b)))))))))))))))
 (check-sat)
+(exit)

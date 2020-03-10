@@ -289,3 +289,4 @@ Target solver: CVC4
   (=> (= b1 (div1 a 2))
   (=> (prf_public__function_guard1 (prf_public1 a) a) (= b1 (prf_public1 a))))))))))
 (check-sat)
+(exit)

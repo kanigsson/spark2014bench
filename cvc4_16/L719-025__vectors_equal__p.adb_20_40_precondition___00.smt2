@@ -671,3 +671,4 @@ Target solver: CVC4
      i1 i2) true)
   (<= 1 i2)))))))))))))))))
 (check-sat)
+(exit)

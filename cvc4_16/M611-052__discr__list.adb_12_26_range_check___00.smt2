@@ -1402,3 +1402,4 @@ Target solver: CVC4
   (=> (= list__reverse_list__R1b__assume r1b)
   (=> (dynamic_invariant1 r1b true false true true) (in_range7 r1b)))))))))
 (check-sat)
+(exit)

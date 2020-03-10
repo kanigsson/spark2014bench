@@ -708,3 +708,4 @@ Target solver: CVC4
   (forall ((j Int))
   (=> (and (<= 0 j) (<= j i)) (bvugt (shift_right value j) #x00000001))))))))))))))))
 (check-sat)
+(exit)

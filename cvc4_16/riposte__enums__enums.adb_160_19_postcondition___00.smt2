@@ -133,3 +133,4 @@ Target solver: CVC4
   (= r1 3))))
   (=> (= enums__next_a__result r1) (=> (= a 3) (= enums__next_a__result 4)))))))))
 (check-sat)
+(exit)

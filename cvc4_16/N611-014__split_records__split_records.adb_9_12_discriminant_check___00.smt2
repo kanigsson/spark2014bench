@@ -317,3 +317,4 @@ Target solver: CVC4
   (=> (= (to_rep o) new_field)
   (=> (= r__attr__constrained true) (= (distinct 1 0) r__split_discrs))))))))))))
 (check-sat)
+(exit)

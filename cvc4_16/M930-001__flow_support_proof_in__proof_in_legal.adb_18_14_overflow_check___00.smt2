@@ -119,3 +119,4 @@ Target solver: CVC4
   (is_ok_to_increase body_var1) body_var1))
   (=> (= (is_ok_to_increase body_var) true) (in_range (+ x 1)))))))))))
 (check-sat)
+(exit)

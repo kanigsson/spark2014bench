@@ -452,3 +452,4 @@ Target solver: CVC4
   (= (in_range_last (of_array (to_array a) (first1 a) (last1 a))
      (add_one (to_rep (select (to_array a) (last1 a))) x)) true)))))))))
 (check-sat)
+(exit)

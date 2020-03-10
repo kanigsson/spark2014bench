@@ -342,3 +342,4 @@ Target solver: CVC4
   (= (and (ite (dynamic_invariant3 i1 true true true true) true false) 
   (ite (< i1 10) true false)) true) (<= 1 i1)))))))))))
 (check-sat)
+(exit)

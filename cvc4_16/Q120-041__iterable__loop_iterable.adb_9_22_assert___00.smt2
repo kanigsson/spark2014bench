@@ -780,3 +780,4 @@ Target solver: CVC4
   (and (= (has_element (us_repqtmk c1__split_fields) temp___308) true)
   (= e2 (element (us_repqtmk c1__split_fields) temp___308))) (= e2 1)))))))))))))))))))))))))
 (check-sat)
+(exit)

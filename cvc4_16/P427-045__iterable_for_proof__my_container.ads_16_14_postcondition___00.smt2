@@ -389,3 +389,4 @@ Target solver: CVC4
   (=> (forall ((e Int)) (valid__function_guard (valid e) e))
   (= (valid (element c1 temp___230)) true)))))))))))
 (check-sat)
+(exit)

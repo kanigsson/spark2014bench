@@ -1157,3 +1157,4 @@ Target solver: CVC4
   (=> (forall ((o8 us_rep2)) (inv__function_guard (inv o8) o8))
   (= (inv (us_repqtmk1 amortized_queue__tail__result)) true)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

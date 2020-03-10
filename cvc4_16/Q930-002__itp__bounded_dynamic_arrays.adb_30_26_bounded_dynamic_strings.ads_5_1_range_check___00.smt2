@@ -957,3 +957,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 content true false true true)
   (=> (<= (length content) capacity) (in_range3 capacity))))))
 (check-sat)
+(exit)

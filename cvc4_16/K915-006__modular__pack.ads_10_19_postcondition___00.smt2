@@ -259,3 +259,4 @@ Target solver: CVC4
   (=> (= m #x01)
   (=> (= pack__next1__result (bvadd m #x01)) (= pack__next1__result #x02)))))))
 (check-sat)
+(exit)

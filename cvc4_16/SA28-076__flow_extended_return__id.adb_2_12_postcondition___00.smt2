@@ -81,3 +81,4 @@ Target solver: CVC4
   (= spark__branch (ite (= (ite x 1 0) 1) true false)))
   (=> (= identity__result y) (=> (= identity__result true) (= x true))))))))
 (check-sat)
+(exit)

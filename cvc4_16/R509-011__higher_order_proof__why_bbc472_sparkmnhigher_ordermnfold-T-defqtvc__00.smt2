@@ -954,3 +954,4 @@ Target solver: CVC4
   (of_array (to_array a) (first2 a) (last2 a)) r3 i3))
   (= (ind_prop (of_array (to_array a) (first2 a) (last2 a)) r2 i2) true)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

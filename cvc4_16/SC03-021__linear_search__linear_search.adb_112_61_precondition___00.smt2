@@ -1018,3 +1018,4 @@ Target solver: CVC4
         (- o6 1)))))
   (=> (in_range3 usf3) (<= usf3 (length usf2)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

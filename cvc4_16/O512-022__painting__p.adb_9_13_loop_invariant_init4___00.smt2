@@ -407,3 +407,4 @@ Target solver: CVC4
   (= (bool_eq (select (rec__p__painting__plain p__split_fields) j) d) true)
   (= (bool_eq (select (rec__p__painting__shadow p__split_fields) j) d) true))))))))))))
 (check-sat)
+(exit)

@@ -820,3 +820,4 @@ Target solver: CVC4
      (rec__relaxed_initialization__rec__z (us_split_fields1 elem)))) o2)
   (relaxed_initialization__rec__z__pred elem)))))))))))))
 (check-sat)
+(exit)

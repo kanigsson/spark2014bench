@@ -406,3 +406,4 @@ Target solver: CVC4
   (= (= o1 true) (= x true))))
   (forall ((y Bool)) (=> (= y (and o1 o)) (=> (= y true) (= x true)))))))))))))
 (check-sat)
+(exit)

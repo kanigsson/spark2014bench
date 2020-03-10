@@ -339,3 +339,4 @@ Target solver: CVC4
   (is_sorted__function_guard (is_sorted sorted__open__result1)
   sorted__open__result1)) (= (is_sorted sorted__open__result) true)))))))
 (check-sat)
+(exit)

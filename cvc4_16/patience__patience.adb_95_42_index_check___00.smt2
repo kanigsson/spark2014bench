@@ -1399,3 +1399,4 @@ Target solver: CVC4
                                                 true false))))))))))))
   (= o6 false))))))) (=> (= o6 true) (<= 0 usf)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

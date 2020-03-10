@@ -1128,3 +1128,4 @@ Target solver: CVC4
   (= (and (ite (<= 0 i) true false) (ite (<= i last_candidate) true false)) true)
   (in_range7 (* i 10000))))))))))))))))
 (check-sat)
+(exit)

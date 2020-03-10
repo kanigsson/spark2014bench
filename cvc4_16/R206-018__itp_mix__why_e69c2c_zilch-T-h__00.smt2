@@ -260,3 +260,4 @@ Target solver: CVC4
 ;; h
   (not (= b (* x (div b x)))))
 (check-sat)
+(exit)

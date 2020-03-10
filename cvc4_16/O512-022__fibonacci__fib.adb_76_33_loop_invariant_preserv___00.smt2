@@ -255,3 +255,4 @@ Target solver: CVC4
   (forall ((i3 Int)) (factorial__function_guard (factorial (- i3 1))
   (- i3 1))) (= p12 (factorial (- i2 1)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

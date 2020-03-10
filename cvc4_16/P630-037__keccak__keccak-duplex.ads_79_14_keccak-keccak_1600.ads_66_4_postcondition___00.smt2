@@ -717,3 +717,4 @@ Target solver: CVC4
   (rate_of (us_repqtmk ctx__split_fields3)) (us_repqtmk ctx__split_fields3)))
   (= (rate_of (us_repqtmk ctx__split_fields2)) (- 1600 capacity)))))))))))))))
 (check-sat)
+(exit)

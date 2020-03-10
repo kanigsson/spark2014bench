@@ -1075,3 +1075,4 @@ Target solver: CVC4
   (=> (not (= j (first_2 a)))
   (=> (<= (first_2 a) j) (=> (<= j (last_2 a)) (<= (first2 a) i))))))))))))))))))
 (check-sat)
+(exit)

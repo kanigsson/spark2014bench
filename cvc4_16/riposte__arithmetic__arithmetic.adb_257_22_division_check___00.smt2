@@ -271,3 +271,4 @@ Target solver: CVC4
   (let ((o (+ (mod1 a b) c)))
   (=> (in_range1 o) (=> (in_range1 (+ a b)) (not (= o 0)))))))))))))
 (check-sat)
+(exit)

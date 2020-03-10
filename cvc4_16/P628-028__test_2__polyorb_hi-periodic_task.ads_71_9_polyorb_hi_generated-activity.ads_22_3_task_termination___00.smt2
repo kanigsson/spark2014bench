@@ -294,3 +294,4 @@ Target solver: CVC4
  ;; File "polyorb_hi-periodic_task.ads", line 71, characters 0-0
   (not true))
 (check-sat)
+(exit)

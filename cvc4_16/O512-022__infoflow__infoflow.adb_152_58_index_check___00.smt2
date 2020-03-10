@@ -490,3 +490,4 @@ Target solver: CVC4
   (=> (not (< usf q))
   (=> (< (+ q m1) usf) (<= (to_rep h__first) (- usf m1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

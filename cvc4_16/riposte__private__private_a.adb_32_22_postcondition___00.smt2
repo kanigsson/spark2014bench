@@ -206,3 +206,4 @@ Target solver: CVC4
   (=> (create__function_guard (create 0 0) 0 0)
   (= (bool_eq (us_repqtmk dst__split_fields) (create 0 0)) true))))))
 (check-sat)
+(exit)

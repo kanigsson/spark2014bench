@@ -496,3 +496,4 @@ Target solver: CVC4
   (= (to_rep (rec__binary_search_trees__binary_search_tree__size usf)) 0))
   (dynamic_predicate (us_repqtmk1 usf))))))
 (check-sat)
+(exit)

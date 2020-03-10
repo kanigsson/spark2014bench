@@ -201,3 +201,4 @@ Target solver: CVC4
  ;; File "p.ads", line 13, characters 0-0
   (not (forall ((z Bool)) (=> (= z (ite true true false)) (= z true)))))
 (check-sat)
+(exit)

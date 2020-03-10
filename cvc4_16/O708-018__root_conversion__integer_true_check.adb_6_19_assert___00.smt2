@@ -96,3 +96,4 @@ Target solver: CVC4
   (forall ((mi Int))
   (=> (= mi 0) (=> (dynamic_invariant mi true false true true) (<= 0 mi))))))
 (check-sat)
+(exit)

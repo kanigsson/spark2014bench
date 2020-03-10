@@ -950,3 +950,4 @@ Target solver: CVC4
   (<= (length_with_padding (length1 value)) (+ (- (to_rep1 data__last) 
   position) 1)) (in_range1 (length1 value)))))))))))))))))
 (check-sat)
+(exit)

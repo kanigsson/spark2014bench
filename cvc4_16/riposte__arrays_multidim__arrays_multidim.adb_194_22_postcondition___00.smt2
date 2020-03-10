@@ -298,3 +298,4 @@ Target solver: CVC4
   (=> (= a3 (set a2 j i k o3))
   (not (= (bool_eq a3 0 1001 0 1001 0 1001 a1 0 1001 0 1001 0 1001) true))))))))))))))))))
 (check-sat)
+(exit)

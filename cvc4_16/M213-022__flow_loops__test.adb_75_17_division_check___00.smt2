@@ -274,3 +274,4 @@ Target solver: CVC4
           true false) (ite (not (= d2 1)) true false)) true)
   (not (= d2 0)))))))))))))))))
 (check-sat)
+(exit)

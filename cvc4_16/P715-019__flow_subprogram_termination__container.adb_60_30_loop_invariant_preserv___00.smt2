@@ -743,3 +743,4 @@ Target solver: CVC4
   (let ((o3 (* 10 i2)))
   (=> (in_range1 o3) (=> (in_range1 (- 100 o3)) (<= (- 100 (* 10 i2)) r2)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

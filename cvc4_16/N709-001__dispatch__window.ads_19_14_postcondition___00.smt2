@@ -700,3 +700,4 @@ Target solver: CVC4
   (dynamic_invariant total_area3 true true true true))
   (= total_area3 (- total_area1 100)))))))))))))))))))))
 (check-sat)
+(exit)

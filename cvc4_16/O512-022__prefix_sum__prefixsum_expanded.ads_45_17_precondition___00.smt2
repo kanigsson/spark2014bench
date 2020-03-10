@@ -915,3 +915,4 @@ Target solver: CVC4
   (ite (= o1 true) (= o (ite (= output_space1 8) true false)) (= o false))))
   (=> (= o true) (= (all_elements_in a1 8000000) true)))))))))))))))))))))))
 (check-sat)
+(exit)

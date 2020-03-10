@@ -198,3 +198,4 @@ Target solver: CVC4
   (and (dynamic_invariant o3 true false true true) (= o3 (+ (+ o2 o1) o))))
   (in_range (+ (+ i1 i2) o3)))))))))))
 (check-sat)
+(exit)

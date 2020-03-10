@@ -1461,3 +1461,4 @@ Target solver: CVC4
   (=> (and (<= (first_2 a) j) (<= j (last_2 a)))
   (= (value (to_rep (get (to_array a) i j))) c))))) (in_range1 (length_2 a)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

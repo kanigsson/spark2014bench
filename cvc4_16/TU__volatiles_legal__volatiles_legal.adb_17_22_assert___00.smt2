@@ -190,3 +190,4 @@ Target solver: CVC4
   (=> (= tmp11 o4)
   (=> (= (to_rep par__split_fields3) o5) (=> (= tmp21 o5) (= tmp11 tmp21))))))))))))))
 (check-sat)
+(exit)

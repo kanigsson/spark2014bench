@@ -147,3 +147,4 @@ Target solver: CVC4
   (let ((o1 (* (- x) (- y))))
   (=> (in_range o1) (forall ((res21 Int)) (=> (= res21 o1) (= res11 res21))))))))))))))))
 (check-sat)
+(exit)

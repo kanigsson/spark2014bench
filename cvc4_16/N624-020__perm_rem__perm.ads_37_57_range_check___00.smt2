@@ -442,3 +442,4 @@ Target solver: CVC4
   (=> (= o2 o1)
   (=> (<= (first1 a) usf) (=> (<= usf (last1 a)) (in_range3 usf1))))))))))))))))))))
 (check-sat)
+(exit)

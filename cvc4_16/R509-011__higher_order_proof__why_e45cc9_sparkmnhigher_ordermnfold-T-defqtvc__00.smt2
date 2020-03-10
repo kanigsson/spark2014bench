@@ -1139,3 +1139,4 @@ Target solver: CVC4
   (=> (update_count__function_guard (update_count k l) k l)
   (= (update_count k l) true))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

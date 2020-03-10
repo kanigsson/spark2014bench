@@ -574,3 +574,4 @@ Target solver: CVC4
   (=> (= temp___loop_entry_311 x1)
   (let ((temp___309 (+ i31 1))) (=> (<= temp___309 3) (<= 1 temp___309))))))))))))))))))))))
 (check-sat)
+(exit)

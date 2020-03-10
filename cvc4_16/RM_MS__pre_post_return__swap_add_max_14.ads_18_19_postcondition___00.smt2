@@ -104,3 +104,4 @@ Target solver: CVC4
   (=> (= swap_add_max_14__max__result o)
   (= swap_add_max_14__max__result (ite (<= y x) x y)))))))))
 (check-sat)
+(exit)

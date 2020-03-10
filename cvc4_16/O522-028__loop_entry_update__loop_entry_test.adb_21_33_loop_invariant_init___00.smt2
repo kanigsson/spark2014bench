@@ -323,3 +323,4 @@ Target solver: CVC4
   (= (bool_eq a1 1 1000 (temp_____aggregate_def_201 a_loop_entry first j 0) 1
      1000) true))))))))))))))
 (check-sat)
+(exit)

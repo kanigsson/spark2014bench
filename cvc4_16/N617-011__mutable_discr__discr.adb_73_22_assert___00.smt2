@@ -424,3 +424,4 @@ Target solver: CVC4
   (forall ((h__split_fields2 natural))
   (=> (= h__split_fields2 d2__split_discrs) (= (to_rep h__split_fields2) c)))))))))))))))))))))))
 (check-sat)
+(exit)

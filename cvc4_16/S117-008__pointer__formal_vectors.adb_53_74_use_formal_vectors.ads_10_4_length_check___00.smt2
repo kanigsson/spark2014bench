@@ -1428,3 +1428,4 @@ Target solver: CVC4
   (<= (first1 old_content__pointer_value) (last1 old_content__pointer_value))
   (<= 1 r91s))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

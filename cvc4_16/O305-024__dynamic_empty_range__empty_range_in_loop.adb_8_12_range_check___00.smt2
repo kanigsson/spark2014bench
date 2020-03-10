@@ -240,3 +240,4 @@ Target solver: CVC4
   (ite (and (<= 0 j1) (<= j1 100)) true false)) true) (dynamic_property 
   first 100 c))))))))))
 (check-sat)
+(exit)

@@ -273,3 +273,4 @@ Target solver: CVC4
   (=> (= (to_rep (select b 4)) o1)
   (=> (= (to_rep (select b 5)) o2) (in_range (+ o2 o1)))))))))))
 (check-sat)
+(exit)

@@ -309,3 +309,4 @@ Target solver: CVC4
   a (bvsub (_ bv64 64) (bvurem ((_ int2bv 64) o) (_ bv64 64))))))
   (not (= test_rotate__r__result #x0000000000000000)))))))))))))
 (check-sat)
+(exit)

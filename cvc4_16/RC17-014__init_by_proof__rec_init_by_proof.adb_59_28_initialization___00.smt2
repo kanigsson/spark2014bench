@@ -331,3 +331,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c false false true true)
   (= (attr__init (rec__rec_init_by_proof__three_fields__f3 x__split_fields)) true))))))))
 (check-sat)
+(exit)

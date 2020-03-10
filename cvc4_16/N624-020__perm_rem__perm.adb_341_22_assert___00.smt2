@@ -883,3 +883,4 @@ Target solver: CVC4
   (=> (= (distinct o14 0) true) (= (is_perm o12 o13) true))))
   (forall ((h1 Int)) (=> (= h1 o14) (= (distinct h1 0) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

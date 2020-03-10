@@ -1067,3 +1067,4 @@ Target solver: CVC4
   (let ((o10 (- r3 1)))
   (=> (in_range4 o10) (forall ((r4 Int)) (=> (= r4 o10) (= b6 true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

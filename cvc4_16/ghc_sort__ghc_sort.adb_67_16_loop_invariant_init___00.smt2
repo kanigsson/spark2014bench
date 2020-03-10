@@ -425,3 +425,4 @@ Target solver: CVC4
   (=> (and (<= 2 l) (<= l (- j 1)))
   (<= (to_rep (select r1 (- l 1))) (to_rep (select r1 l))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

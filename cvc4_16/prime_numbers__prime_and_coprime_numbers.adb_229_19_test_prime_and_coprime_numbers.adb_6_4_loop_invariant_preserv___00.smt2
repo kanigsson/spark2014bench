@@ -619,3 +619,4 @@ Target solver: CVC4
   (=> (forall ((v1 Int)) (is_prime__function_guard (is_prime v1) v1))
   (= (is_prime v) true)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

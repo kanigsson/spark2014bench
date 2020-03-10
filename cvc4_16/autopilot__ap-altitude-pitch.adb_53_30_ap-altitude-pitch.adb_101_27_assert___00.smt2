@@ -656,3 +656,4 @@ Target solver: CVC4
   (let ((o1 c13b)) (and (in_range8 o1) (= floor_climb_rate1 o1)))))))))
   (in_range8 floor_climb_rate1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

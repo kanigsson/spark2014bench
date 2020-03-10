@@ -402,3 +402,4 @@ Target solver: CVC4
   (forall ((p31 Int) (o1 (Array Int natural))) (m_has_element__function_guard
   (m_has_element o1 p31) o1 p31)) (= (m_has_element o p3) true)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

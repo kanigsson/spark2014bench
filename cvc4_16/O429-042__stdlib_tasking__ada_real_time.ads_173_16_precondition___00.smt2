@@ -485,3 +485,4 @@ Target solver: CVC4
   (=> (= o2 true)
   (=> (= left (- 1)) (not (= (bool_eq right time_span_first) true)))))))))))))
 (check-sat)
+(exit)

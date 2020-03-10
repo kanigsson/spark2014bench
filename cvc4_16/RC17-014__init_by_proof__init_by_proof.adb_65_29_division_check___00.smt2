@@ -477,3 +477,4 @@ Target solver: CVC4
   (=> (and (<= (to_rep buf__first) i1) (<= i1 (to_rep buf__last)))
   (forall ((o2 Int)) (=> (= (to_rep (select buf1 i1)) o2) (not (= 2 0))))))))))))))))))))
 (check-sat)
+(exit)

@@ -882,3 +882,4 @@ Target solver: CVC4
                                                                false)))
   (=> (not (= spark__branch true)) (< 5 (length buffer))))))))))
 (check-sat)
+(exit)

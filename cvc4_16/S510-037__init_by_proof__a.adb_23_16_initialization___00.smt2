@@ -166,3 +166,4 @@ Target solver: CVC4
   (=> (dynamic_invariant aa__useaa__x true true true true)
   (= global_a__attr__init1 true)))))))))))))
 (check-sat)
+(exit)

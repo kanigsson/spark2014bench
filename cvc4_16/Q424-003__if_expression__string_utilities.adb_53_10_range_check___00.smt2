@@ -1120,3 +1120,4 @@ Target solver: CVC4
   (=> (dynamic_invariant last5 true false true true)
   (=> (<= 1 last5) (<= 1 1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

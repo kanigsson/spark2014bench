@@ -273,3 +273,4 @@ Target solver: CVC4
   (=> (<= j 10)
   (= (to_rep (select dest2 j)) (to_rep (select temp___loop_entry_221 j))))))))))))))))))))))
 (check-sat)
+(exit)

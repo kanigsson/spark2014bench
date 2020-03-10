@@ -699,3 +699,4 @@ Target solver: CVC4
      y (to_rep (select (to_array init) x))
      (of_array values2 (to_rep1 values__first) (to_rep1 values__last))) true)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

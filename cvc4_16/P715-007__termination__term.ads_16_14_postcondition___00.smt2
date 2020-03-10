@@ -165,3 +165,4 @@ Target solver: CVC4
   (and (loop_if_c_is_neg__function_guard o Tuple0) (dynamic_invariant1 o true
   false true true)))))) (<= 0 c)))))))
 (check-sat)
+(exit)

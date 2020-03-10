@@ -745,3 +745,4 @@ Target solver: CVC4
   position))) (< (- (+ position (length1 value)) 1) position)) (in_range1
   (length1 value)))))))))))))))))))
 (check-sat)
+(exit)

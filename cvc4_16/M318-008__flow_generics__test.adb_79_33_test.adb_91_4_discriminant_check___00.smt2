@@ -463,3 +463,4 @@ Target solver: CVC4
   (=> (not (= spark__branch1 true)) (test__fruit_rec__record_t__arr__pred
   rec1)))))))))))
 (check-sat)
+(exit)

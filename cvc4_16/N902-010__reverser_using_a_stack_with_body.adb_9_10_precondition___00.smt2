@@ -371,3 +371,4 @@ Target solver: CVC4
   (=> (forall ((sp1 us_private)) (is_full__function_guard (is_full sp1) sp1))
   (not (= (is_full sp) true)))))))))))))))))))
 (check-sat)
+(exit)

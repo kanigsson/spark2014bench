@@ -120,3 +120,4 @@ Target solver: CVC4
   (=> (dynamic_invariant n1 true true true false)
   (let ((o (+ n1 1))) (=> (in_range1 o) (< 0 o))))))))))))))))
 (check-sat)
+(exit)

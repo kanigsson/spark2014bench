@@ -137,3 +137,4 @@ Target solver: CVC4
  ;; File "example.ads", line 17, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (not (fp.isZero x)))))
 (check-sat)
+(exit)

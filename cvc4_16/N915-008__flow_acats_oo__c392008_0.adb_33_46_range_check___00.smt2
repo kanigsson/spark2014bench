@@ -228,3 +228,4 @@ Target solver: CVC4
   (= (to_rep (rec__c392008_0__account__current_balance a__split_fields)) o)
   (let ((o1 (+ o interest_on_account))) (=> (in_range1 o1) (in_range o1)))))))))
 (check-sat)
+(exit)

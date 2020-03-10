@@ -454,3 +454,4 @@ Target solver: CVC4
   (and (<= 1 temp___213) (<= temp___213 1000)))) (in_range1
   (+ x longest_common_prefix__lcp__result))))))))))))))))))))))
 (check-sat)
+(exit)

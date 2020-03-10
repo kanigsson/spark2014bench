@@ -385,3 +385,4 @@ Target solver: CVC4
   (=> (not (= (bool_eq2 x us_null_pointer1) true))
   (rec__traversal__two_acc_acc__pointer_value__pred x))))
 (check-sat)
+(exit)

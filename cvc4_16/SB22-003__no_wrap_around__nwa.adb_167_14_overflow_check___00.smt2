@@ -391,3 +391,4 @@ Target solver: CVC4
   (=> (in_range1 (bvsub x y))
   (bvult (bvmul ((_ zero_extend 32) x) ((_ zero_extend 32) y)) #x0000000100000000))))))))))))))
 (check-sat)
+(exit)

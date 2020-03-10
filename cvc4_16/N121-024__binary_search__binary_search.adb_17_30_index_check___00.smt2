@@ -518,3 +518,4 @@ Target solver: CVC4
   (=> (in_range3 o3)
   (forall ((right1 Int)) (=> (= right1 o3) (<= (first1 a) left1)))))))))))))))))))))))))
 (check-sat)
+(exit)

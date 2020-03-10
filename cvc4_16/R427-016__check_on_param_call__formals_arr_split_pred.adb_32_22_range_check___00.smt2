@@ -528,3 +528,4 @@ Target solver: CVC4
   (and (<= (to_rep1 x__first) 1) (<= 3 (to_rep1 x__last)))) (dynamic_property
   (- 2147483648) 2147483647 1 10)))))))))))
 (check-sat)
+(exit)

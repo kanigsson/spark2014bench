@@ -300,3 +300,4 @@ Target solver: CVC4
   (rec__test_constrained__r_acc__pointer_value__pred
   (us_repqtmk1 y__is_null_pointer y__pointer_address y__pointer_value))))))))))))
 (check-sat)
+(exit)

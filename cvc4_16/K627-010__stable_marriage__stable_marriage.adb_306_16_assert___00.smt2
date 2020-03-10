@@ -1327,3 +1327,4 @@ Target solver: CVC4
      (select result__ (to_rep2 (select (select ranking_1 g11) (- rank1 1)))))
      (select ranking_2 (to_rep2 (select (select ranking_1 g11) (- rank1 1))))) true)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

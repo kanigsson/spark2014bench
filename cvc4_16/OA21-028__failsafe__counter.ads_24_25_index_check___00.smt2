@@ -395,3 +395,4 @@ Target solver: CVC4
           true false) (ite (bvule usf #x0A) true false)) true)
   (bvule #x01 usf))))))))))
 (check-sat)
+(exit)

@@ -199,3 +199,4 @@ Target solver: CVC4
   (=> (<= y 10)
   (=> (= x1 (store x y rliteral)) (= (to_rep (select x1 y)) 5))))))))))
 (check-sat)
+(exit)

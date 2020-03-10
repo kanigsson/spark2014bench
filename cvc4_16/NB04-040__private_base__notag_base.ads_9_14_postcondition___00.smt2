@@ -198,3 +198,4 @@ Target solver: CVC4
   (= (sum (us_repqtmk (us_split_fieldsqtmk notag_base__create__result))) 
   c))))))))
 (check-sat)
+(exit)

@@ -454,3 +454,4 @@ Target solver: CVC4
   (= at_rest_switch_out11 1))))
   (or (not (= vehicle_speed #x00000000)) (= at_rest_switch_out11 1)))))))))))))
 (check-sat)
+(exit)

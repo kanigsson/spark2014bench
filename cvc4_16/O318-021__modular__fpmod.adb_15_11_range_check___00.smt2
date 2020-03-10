@@ -403,3 +403,4 @@ Target solver: CVC4
   (=> (uint_in_range (to_int2 x2))
   (forall ((x3 Int)) (=> (= x3 (- 64)) (uint_in_range (to_int2 x3))))))))))))))
 (check-sat)
+(exit)

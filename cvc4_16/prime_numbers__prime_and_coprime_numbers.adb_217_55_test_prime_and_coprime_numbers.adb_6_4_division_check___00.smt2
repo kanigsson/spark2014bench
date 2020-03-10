@@ -560,3 +560,4 @@ Target solver: CVC4
                                        false)) true)
   (not (= usf1 0))))))))))))))))))))
 (check-sat)
+(exit)

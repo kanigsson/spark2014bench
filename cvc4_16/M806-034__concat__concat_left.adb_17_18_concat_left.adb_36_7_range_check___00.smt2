@@ -462,3 +462,4 @@ Target solver: CVC4
   (=> (=> (<= 1 9) (and (and (<= 1 1) (<= 1 10)) (and (<= 1 9) (<= 9 10))))
   (in_range (- (+ (- 2147483648) (+ 1 (length 1 9))) 1)))))
 (check-sat)
+(exit)

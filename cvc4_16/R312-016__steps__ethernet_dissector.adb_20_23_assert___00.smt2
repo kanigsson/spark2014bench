@@ -883,3 +883,4 @@ Target solver: CVC4
   (ite (< 1520 (length buffer)) true false)))
   (=> (not (= spark__branch true)) (< 5 (length buffer))))))))))
 (check-sat)
+(exit)

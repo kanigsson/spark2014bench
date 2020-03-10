@@ -370,3 +370,4 @@ Target solver: CVC4
   (= o (bvsub temp___201 #x00000000000000E6)) (= o temp___201)))
   (not (= #x00E6 #x0000))))))))
 (check-sat)
+(exit)

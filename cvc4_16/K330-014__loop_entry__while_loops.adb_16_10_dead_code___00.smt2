@@ -785,3 +785,4 @@ Target solver: CVC4
   (and (sum_of__function_guard o counter) (dynamic_invariant o true false
   true true)) (not (< 5 o)))))))))))
 (check-sat)
+(exit)

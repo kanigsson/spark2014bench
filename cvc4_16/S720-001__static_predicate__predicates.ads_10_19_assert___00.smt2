@@ -625,3 +625,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x1 true false true true)
   (=> (test1__function_guard (test1 x0) x0) (not (= (test1 x0) true)))))))
 (check-sat)
+(exit)

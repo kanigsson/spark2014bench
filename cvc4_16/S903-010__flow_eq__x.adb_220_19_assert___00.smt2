@@ -380,3 +380,4 @@ Target solver: CVC4
   (=> (forall ((a1 Int) (b1 Int)) (oadd__function_guard (oadd a1 b1) a1 b1))
   (= (oadd a b) 0)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -403,3 +403,4 @@ Target solver: CVC4
   (=> (= (to_rep m__first) o1)
   (let ((o2 (length o1 o))) (=> (in_range o2) (in_range (* 100 o2))))))))))
 (check-sat)
+(exit)

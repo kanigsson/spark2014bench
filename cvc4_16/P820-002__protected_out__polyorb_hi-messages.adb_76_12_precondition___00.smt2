@@ -1133,3 +1133,4 @@ Target solver: CVC4
   (=> (forall ((o2 us_rep)) (valid__function_guard (valid o2) o2))
   (= (valid message) true))))))))))))))))))))))))))
 (check-sat)
+(exit)

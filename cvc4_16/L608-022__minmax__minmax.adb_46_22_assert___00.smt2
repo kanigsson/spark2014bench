@@ -166,3 +166,4 @@ Target solver: CVC4
   (=> (= max2 (max x y))
   (=> (= max2 y) (=> (= min3 (min x (+ x y))) (= min3 x))))))))))))))
 (check-sat)
+(exit)

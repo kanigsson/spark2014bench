@@ -607,3 +607,4 @@ Target solver: CVC4
   (= i1 temp___254))))))))))))))))) (= result__1 result__))))))))
   (=> (<= (first1 left) (last1 left)) (<= 0 (first1 left))))))))))))))))
 (check-sat)
+(exit)

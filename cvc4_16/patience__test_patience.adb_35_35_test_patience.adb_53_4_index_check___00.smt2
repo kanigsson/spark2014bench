@@ -2367,3 +2367,4 @@ Target solver: CVC4
                          (us_split_fields1 c60b)) i1)) 1)))
   true false)) true) (<= 0 j1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

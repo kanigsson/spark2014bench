@@ -483,3 +483,4 @@ Target solver: CVC4
                                                 false)) true)
   (=> (in_range1 (+ j11 j21)) (= j3 (- (+ j11 j21) 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

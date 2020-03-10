@@ -1079,3 +1079,4 @@ Target solver: CVC4
   (us_repqtmk3 p__split_fields1 p__attr__tag)))
   (= (get_f2 (us_repqtmk3 p__split_fields p__attr__tag)) 0))))))))))))))))))))))))))
 (check-sat)
+(exit)

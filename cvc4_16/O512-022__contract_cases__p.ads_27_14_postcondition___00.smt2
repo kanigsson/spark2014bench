@@ -116,3 +116,4 @@ Target solver: CVC4
   (let ((o (+ x 1))) (and (in_range1 o) (= x2 o))) (= x2 x))))
   (=> (< x1 threshold1) (= x2 (+ x1 1))))))))))))
 (check-sat)
+(exit)

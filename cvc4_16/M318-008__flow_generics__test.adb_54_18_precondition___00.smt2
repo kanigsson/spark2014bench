@@ -444,3 +444,4 @@ Target solver: CVC4
   (=> (dynamic_property 1 2147483647 (first1 a) (last1 a))
   (= (first1 (of_array (to_array a) (first1 a) (last1 a))) (to_rep c__first))))))))))))
 (check-sat)
+(exit)

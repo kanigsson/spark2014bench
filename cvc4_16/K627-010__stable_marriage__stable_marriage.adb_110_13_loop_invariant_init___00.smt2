@@ -309,3 +309,4 @@ Target solver: CVC4
   (=> (and (<= 1 prev) (<= prev (- g2 1)))
   (= (to_rep1 (select result__ (to_rep (select g2_to_g1 prev)))) prev)))))))))))))
 (check-sat)
+(exit)

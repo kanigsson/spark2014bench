@@ -291,3 +291,4 @@ Target solver: CVC4
   (=> (dynamic_invariant j true false true true)
   (=> (not (= i j)) (rec__pointers__t_ptr__pointer_value__pred (select a i)))))))))))
 (check-sat)
+(exit)

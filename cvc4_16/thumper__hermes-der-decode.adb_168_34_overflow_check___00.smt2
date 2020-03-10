@@ -631,3 +631,4 @@ Target solver: CVC4
   (=> (= length_of_length1 o4) (in_range1
   (- (last1 message) length_of_length1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

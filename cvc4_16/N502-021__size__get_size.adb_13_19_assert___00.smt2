@@ -299,3 +299,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (=> (f__function_guard (f Tuple0) Tuple0) (= x (f Tuple0))))))))))
 (check-sat)
+(exit)

@@ -761,3 +761,4 @@ Target solver: CVC4
   (= (to_rep (rec__dimensions__vector_type__dy (us_split_fields5 c46b))) o12)
   (let ((o13 (fp.mul RNE o12 o11))) (=> (fp.isFinite64 o13) (in_range3 o13))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

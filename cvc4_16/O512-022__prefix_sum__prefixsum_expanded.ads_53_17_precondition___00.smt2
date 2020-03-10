@@ -487,3 +487,4 @@ Target solver: CVC4
   (ite (= o1 true) (= o (ite (= input_space 8) true false)) (= o false))))
   (=> (= o true) (= (all_elements_in a 8000000) true)))))))
 (check-sat)
+(exit)

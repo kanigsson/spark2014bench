@@ -935,3 +935,4 @@ Target solver: CVC4
   (of_array (to_array o2) (first1 o2) (last1 o2)) o1 (first1 o2)))
   (= (in_range3 (of_array (to_array o) (first1 o) (last1 o)) init (first1 o)) true)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

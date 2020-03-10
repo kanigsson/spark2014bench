@@ -344,3 +344,4 @@ Target solver: CVC4
   (=> (not (= spark__branch1 true))
   (rec__binary_search_trees__node_access__pointer_value__pred starting_at)))))))))))))
 (check-sat)
+(exit)

@@ -283,3 +283,4 @@ Target solver: CVC4
   (let ((o6 (+ o5 o4))) (and (= o o6) (in_range o6))))))))))))
   (=> (= sum__sum__result o) (<= (abs1 sum__sum__result) (* (- j i) 3000))))))))))
 (check-sat)
+(exit)

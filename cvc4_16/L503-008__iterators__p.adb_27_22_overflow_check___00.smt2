@@ -835,3 +835,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 o3 true false true true)
   (= o3 (get (model1 o2) (get1 (positions o2) o1)))) (in_range1 (+ sum1 o3)))))))))))))))))))))
 (check-sat)
+(exit)

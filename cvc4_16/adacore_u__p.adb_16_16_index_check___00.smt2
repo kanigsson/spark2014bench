@@ -326,3 +326,4 @@ Target solver: CVC4
   (=> (in_range1 o2)
   (forall ((o3 positive)) (=> (= (to_rep o3) o2) (<= (to_rep1 a__first) i)))))))))))))))))))))
 (check-sat)
+(exit)

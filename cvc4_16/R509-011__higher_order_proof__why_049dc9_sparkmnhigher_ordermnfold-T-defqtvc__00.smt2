@@ -1121,3 +1121,4 @@ Target solver: CVC4
   (=> (< 0 (length_2 a))
   (=> (in_range1 (length_2 a)) (in_range1 (- i (first2 a))))))))))))
 (check-sat)
+(exit)

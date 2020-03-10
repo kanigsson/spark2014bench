@@ -112,3 +112,4 @@ Target solver: CVC4
   (forall ((value3 us_private)) (get_data__function_guard (get_data value3)
   value3)) (= (get_data value2) value1))))))))
 (check-sat)
+(exit)

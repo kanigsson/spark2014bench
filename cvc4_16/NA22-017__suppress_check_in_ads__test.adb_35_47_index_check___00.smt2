@@ -554,3 +554,4 @@ Target solver: CVC4
                                              false)) true)
   (<= (first1 right) i)))))))))))))))
 (check-sat)
+(exit)

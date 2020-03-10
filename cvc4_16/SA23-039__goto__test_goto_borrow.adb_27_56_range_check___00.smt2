@@ -1046,3 +1046,4 @@ Target solver: CVC4
         (us_close (us_repqtmk1 l__pointer_value))))))
   (in_range3 i1))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

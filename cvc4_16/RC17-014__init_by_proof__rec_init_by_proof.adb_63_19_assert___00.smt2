@@ -393,3 +393,4 @@ Target solver: CVC4
   (rec__value (rec__rec_init_by_proof__three_fields__f3 x__split_fields1))))))
   (= (bool_eq (us_repqtmk x__split_fields2) (us_repqtmk y__split_fields)) true))))))))))))))))
 (check-sat)
+(exit)

@@ -620,3 +620,4 @@ Target solver: CVC4
   (= (to_rep (select a2 k)) (to_rep (select temp___loop_entry_268 k)))))
   (= (to_rep (select a2 k)) (to_rep (select temp___loop_entry_269 k)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

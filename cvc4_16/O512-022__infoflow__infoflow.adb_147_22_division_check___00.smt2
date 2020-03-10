@@ -465,3 +465,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 t1 false false true true)
   (=> (dynamic_invariant m false false true true) (not (= 2 0))))))))))
 (check-sat)
+(exit)

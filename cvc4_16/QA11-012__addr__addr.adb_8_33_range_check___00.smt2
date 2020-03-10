@@ -173,3 +173,4 @@ Target solver: CVC4
   (=> (= arr (temp___String_Literal_192 Tuple0))
   (=> (dynamic_invariant val__ false false true true) (not (= val__ 0)))))))
 (check-sat)
+(exit)

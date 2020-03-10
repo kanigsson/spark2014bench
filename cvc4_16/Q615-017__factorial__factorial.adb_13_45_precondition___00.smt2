@@ -182,3 +182,4 @@ Target solver: CVC4
   (let ((o (* result__1 i)))
   (=> (in_range1 o) (forall ((result__2 Int)) (=> (= result__2 o) (<= 1 i))))))))))))))))
 (check-sat)
+(exit)

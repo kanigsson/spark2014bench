@@ -107,3 +107,4 @@ Target solver: CVC4
   (=> (< 0 par31)
   (=> (dynamic_invariant par31 true true true true) (< 101 par31))))))))))
 (check-sat)
+(exit)

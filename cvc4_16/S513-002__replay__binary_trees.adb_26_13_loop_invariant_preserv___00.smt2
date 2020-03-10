@@ -340,3 +340,4 @@ Target solver: CVC4
   (forall ((j Int))
   (=> (and (<= 1 j) (<= j (- i2 1))) (= (contains s2 j) true)))))))))))))))))))))))
 (check-sat)
+(exit)

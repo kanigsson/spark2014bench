@@ -144,3 +144,4 @@ Target solver: CVC4
   (forall ((normalize__r3__result Float32))
   (=> (= normalize__r3__result o) (fp.leq normalize__r3__result x)))))))))
 (check-sat)
+(exit)

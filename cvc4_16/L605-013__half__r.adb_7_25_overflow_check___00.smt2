@@ -400,3 +400,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 a_old true false true true)
   (=> (= (to_rep a__last) o2) (=> (= h1 (div1 o2 2)) (in_range1 (* 2 h1)))))))))))))))
 (check-sat)
+(exit)

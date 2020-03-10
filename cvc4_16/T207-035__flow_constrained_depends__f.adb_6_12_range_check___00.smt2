@@ -168,3 +168,4 @@ Target solver: CVC4
   (=> (dynamic_invariant last true false true true)
   (=> (<= first last) (<= (- 2147483648) first))))))
 (check-sat)
+(exit)

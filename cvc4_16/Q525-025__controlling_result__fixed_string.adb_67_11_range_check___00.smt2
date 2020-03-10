@@ -691,3 +691,4 @@ Target solver: CVC4
   (let ((temp___274 (first1 in_string)))
   (=> (<= temp___274 r22b) (<= (first1 in_string) temp___274))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -210,3 +210,4 @@ Target solver: CVC4
   (=> (= arr2 (temp_____aggregate_def_178 arr 5 5))
   (= (to_rep (select arr2 2)) (to_rep (select arr1 2))))))))
 (check-sat)
+(exit)

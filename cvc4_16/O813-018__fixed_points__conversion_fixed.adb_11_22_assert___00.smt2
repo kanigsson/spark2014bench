@@ -522,3 +522,4 @@ Target solver: CVC4
   (=> (= y1 (fxp_mult x4 1))
   (=> (=> (= x4 (- 5)) (= y1 (- 25))) (=> (= x4 1) (= y1 5)))))))))))))))
 (check-sat)
+(exit)

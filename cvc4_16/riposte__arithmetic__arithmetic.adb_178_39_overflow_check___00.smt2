@@ -148,3 +148,4 @@ Target solver: CVC4
   (let ((o (- n))) (and (in_range o) (and (in_range1 o) (= r1 o)))))))
   (in_range (abs1 n)))))))))
 (check-sat)
+(exit)

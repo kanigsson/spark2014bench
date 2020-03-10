@@ -438,3 +438,4 @@ Target solver: CVC4
   (=> (= (to_rep b__first) o6)
   (let ((o7 (+ o6 j))) (=> (in_range1 o7) (<= (to_rep b__first) o7))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

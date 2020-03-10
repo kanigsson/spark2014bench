@@ -1201,3 +1201,4 @@ Target solver: CVC4
   (= temporary_digit1 (bvadd (bvmul #x0100 ((_ zero_extend 8) o3)) ((_ zero_extend 8) o1)))
   (<= (first1 v__split_fields) (- n 1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

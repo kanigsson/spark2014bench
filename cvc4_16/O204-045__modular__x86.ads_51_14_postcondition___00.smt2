@@ -382,3 +382,4 @@ Target solver: CVC4
   (= rax2 (bvor (bvand rax #xFFFFFFFFFFFFFF00) ((_ zero_extend 56) val__)))
   (= rax2 (bvor (bvand rax1 #xFFFFFFFFFFFFFF00) ((_ zero_extend 56) val__))))))))))
 (check-sat)
+(exit)

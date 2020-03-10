@@ -242,3 +242,4 @@ Target solver: CVC4
   (and (fibonacci__function_guard o i3) (dynamic_invariant o true false true
   true)) (=> (= a21 o) (let ((o1 (- i3 1))) (=> (in_range2 o1) (<= o1 23))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

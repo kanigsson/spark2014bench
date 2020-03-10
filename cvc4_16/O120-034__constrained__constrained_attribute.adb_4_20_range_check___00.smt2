@@ -388,3 +388,4 @@ Target solver: CVC4
   (=> (= a__split_discrs rliteral)
   (=> (= a__attr__constrained false) (in_range 0)))))))
 (check-sat)
+(exit)

@@ -1393,3 +1393,4 @@ Target solver: CVC4
   (=> (dynamic_invariant4 z true false true true)
   (< 0 (to_rep (rec__pred_vis__root__f11 (us_split_fields3 x)))))))))))))))))
 (check-sat)
+(exit)

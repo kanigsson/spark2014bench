@@ -1143,3 +1143,4 @@ Target solver: CVC4
                            p_elem__split_fields1) rliteral))
   (<= 0 j1))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

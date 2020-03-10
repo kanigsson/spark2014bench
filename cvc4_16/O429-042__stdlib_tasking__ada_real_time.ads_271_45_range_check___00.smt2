@@ -498,3 +498,4 @@ Target solver: CVC4
   (= o10 (+ o9 (ts_sc o8)))))
   (let ((o11 (- o10 10))) (=> (in_range3 o11) (in_range1 (of_int o11))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

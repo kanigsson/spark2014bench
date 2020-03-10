@@ -922,3 +922,4 @@ Target solver: CVC4
   (us_repqtmk (us_split_discrsqtmk z__pointer_value))) true false true true)
   (in_range 0)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

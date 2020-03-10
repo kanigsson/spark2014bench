@@ -256,3 +256,4 @@ Target solver: CVC4
   (=> (<= 0 numerator)
   (=> (< 0 denominator) (in_range3 ((_ to_fp 8 24) RNE (to_real numerator)))))))))
 (check-sat)
+(exit)

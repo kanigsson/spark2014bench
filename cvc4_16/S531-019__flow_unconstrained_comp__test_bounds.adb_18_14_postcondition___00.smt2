@@ -707,3 +707,4 @@ Target solver: CVC4
   (= (us_split_discrsqtmk x__split_discrs2) (us_split_discrs1 temp___222))
   (= (to_rep x__split_discrs2) (to_rep x__split_discrs1)))))))))))))))))
 (check-sat)
+(exit)

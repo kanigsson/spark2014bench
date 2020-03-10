@@ -627,3 +627,4 @@ Target solver: CVC4
   (=> (forall ((last3 Int)) (full__function_guard (full last3) last3))
   (= (full last2) true))))))
 (check-sat)
+(exit)

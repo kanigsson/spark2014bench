@@ -118,3 +118,4 @@ Target solver: CVC4
   (get_red_count red_counter2) red_counter2))
   (= (get_red_count red_counter1) 0)))))))
 (check-sat)
+(exit)

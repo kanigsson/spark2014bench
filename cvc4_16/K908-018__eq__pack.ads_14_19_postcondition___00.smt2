@@ -208,3 +208,4 @@ Target solver: CVC4
   (=> (= pack__equal__2__result (bool_eq a b))
   (=> (= pack__equal__2__result true) (= (bool_eq a b) true))))))
 (check-sat)
+(exit)

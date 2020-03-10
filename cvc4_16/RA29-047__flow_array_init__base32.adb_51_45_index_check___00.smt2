@@ -924,3 +924,4 @@ Target solver: CVC4
                       false)) true)
   (let ((o (+ (first1 s) (- i1 1)))) (=> (in_range1 o) (<= (first1 s) o)))))))))))))))
 (check-sat)
+(exit)

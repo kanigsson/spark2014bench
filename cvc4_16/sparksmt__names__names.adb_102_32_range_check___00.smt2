@@ -2107,3 +2107,4 @@ Target solver: CVC4
   (= char_table__split_fields1 char_table__split_fields)))))) (in_range2
   (length s)))))))))))))))))))))))
 (check-sat)
+(exit)

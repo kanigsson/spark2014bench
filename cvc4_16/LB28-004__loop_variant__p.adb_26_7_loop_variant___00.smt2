@@ -360,3 +360,4 @@ Target solver: CVC4
   (and (let ((o4 (+ k3 1))) (and (in_range1 o4) (= k4 o4))) (= j6 j5)))))
   (or (< temp___179 j6) (and (= j6 temp___179) (< temp___178 k4))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -396,3 +396,4 @@ Target solver: CVC4
   (= (to_rep (select a_v1 m)) (to_rep (select (to_array b_v1) m)))))
   (in_range1 (+ k_1 1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

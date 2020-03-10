@@ -1950,3 +1950,4 @@ Target solver: CVC4
   (forall ((o7 Int))
   (=> (= (to_rep3 total_stream__first) o7) (in_range (length o7 o6))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

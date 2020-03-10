@@ -2034,3 +2034,4 @@ Target solver: CVC4
   (= (to_rep5 (rec__names__name_entry__next_hash (us_split_fields5 o4))) o5)
   (=> (not (= o5 0)) (in_range15 ptr2))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

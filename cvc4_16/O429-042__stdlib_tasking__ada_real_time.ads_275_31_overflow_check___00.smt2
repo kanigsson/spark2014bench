@@ -480,3 +480,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 o5 true false true true) (= o5 (+ o4 (ts_sc o3)))))
   (=> (not (< 0 o5)) (in_range1 (+ (- 9223372036854775808) fudged))))))))))))))))))))
 (check-sat)
+(exit)

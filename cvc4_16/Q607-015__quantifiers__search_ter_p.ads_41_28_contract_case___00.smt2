@@ -612,3 +612,4 @@ Target solver: CVC4
   (=> (= (and (>= (length1 a) (length1 b)) (has_sub_range a b)) true)
   (= (rec__types__option__exists search_ter_p__search__result) true)))))))))))))))))))
 (check-sat)
+(exit)

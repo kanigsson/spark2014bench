@@ -616,3 +616,4 @@ Target solver: CVC4
   (= (and (ite (<= r58b k) true false) (ite (<= k r59b) true false)) true)
   (in_range1 (length needle))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

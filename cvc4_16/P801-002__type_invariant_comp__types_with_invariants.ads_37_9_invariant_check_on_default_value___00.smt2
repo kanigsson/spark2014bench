@@ -990,3 +990,4 @@ Target solver: CVC4
   (=> (<= temp___263 (last1 usf)) (type_invariant
   (select (to_array usf) temp___263)))))))))
 (check-sat)
+(exit)

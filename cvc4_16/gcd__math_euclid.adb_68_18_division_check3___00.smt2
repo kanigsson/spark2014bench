@@ -323,3 +323,4 @@ Target solver: CVC4
   (=> (= c1 an)
   (=> (in_range2 bn) (forall ((an1 Int)) (=> (= an1 bn) (not (= bn 0)))))))))))))))))))))
 (check-sat)
+(exit)

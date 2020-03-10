@@ -939,3 +939,4 @@ Target solver: CVC4
   (=> (= save_result_arr1 (to_array temp___276)) (in_range2
   (+ result_pos 1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

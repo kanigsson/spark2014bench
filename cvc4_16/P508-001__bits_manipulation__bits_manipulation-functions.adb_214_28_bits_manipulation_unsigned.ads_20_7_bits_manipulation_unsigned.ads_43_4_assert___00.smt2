@@ -738,3 +738,4 @@ Target solver: CVC4
  ;; File "bits_manipulation-functions.ads", line 302, characters 0-0
   (not (=> (= (lemma8 Tuple0) true) (= (make_mask 1) #x0001))))
 (check-sat)
+(exit)

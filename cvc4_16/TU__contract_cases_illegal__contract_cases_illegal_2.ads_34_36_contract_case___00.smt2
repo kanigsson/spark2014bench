@@ -133,3 +133,4 @@ Target solver: CVC4
   (=> (= c1 (min a b))
   (=> (=> (= (< a b) true) (= c1 b)) (=> (= (< b a) true) (= c1 a)))))))))))
 (check-sat)
+(exit)

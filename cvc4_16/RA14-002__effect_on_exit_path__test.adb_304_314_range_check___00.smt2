@@ -1235,3 +1235,4 @@ Target solver: CVC4
   (ite (bvult o8 #x01) (= o4 (bvadd temp___681 #x03)) (= o4 temp___681)))))))))
   (in_range1 o4))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

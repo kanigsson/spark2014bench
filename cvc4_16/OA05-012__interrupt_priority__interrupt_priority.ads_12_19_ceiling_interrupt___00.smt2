@@ -272,3 +272,4 @@ Target solver: CVC4
          (rec__interrupt_priority__interrupt_needed_1__c
          (us_split_discrs1 self__))))))
 (check-sat)
+(exit)

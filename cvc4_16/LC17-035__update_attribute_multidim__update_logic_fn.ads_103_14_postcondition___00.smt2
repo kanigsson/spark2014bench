@@ -501,3 +501,4 @@ Target solver: CVC4
   (=> (= a2 (set a1 x y o1))
   (=> (= x 5) (=> (= y #x07) (= (to_rep (get a2 5 #x07)) v2))))))))))))))))
 (check-sat)
+(exit)

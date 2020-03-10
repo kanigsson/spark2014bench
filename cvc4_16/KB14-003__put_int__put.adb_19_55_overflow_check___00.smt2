@@ -628,3 +628,4 @@ Target solver: CVC4
   (=> (in_range1 o2)
   (forall ((first4 Int)) (=> (= first4 o2) (in_range (- 48 val__2)))))))))))))))))))))))
 (check-sat)
+(exit)

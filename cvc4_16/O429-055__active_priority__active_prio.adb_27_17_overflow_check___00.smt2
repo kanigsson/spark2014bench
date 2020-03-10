@@ -169,3 +169,4 @@ Target solver: CVC4
   (forall ((self__ integer) (o Int))
   (=> (= (to_rep self__) o) (in_range (+ o 1))))))
 (check-sat)
+(exit)

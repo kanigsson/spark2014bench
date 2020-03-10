@@ -556,3 +556,4 @@ Target solver: CVC4
                       false)) true)
   (=> (= (to_rep1 o) #x00) (<= (to_rep sq__first) i1))))))))))))))
 (check-sat)
+(exit)

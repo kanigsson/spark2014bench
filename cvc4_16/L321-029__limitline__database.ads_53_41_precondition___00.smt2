@@ -1272,3 +1272,4 @@ Target solver: CVC4
   (existing__function_guard (existing account2 links2) account2 links2))
   (= (existing account1 links1) true)))))))))))))))))))
 (check-sat)
+(exit)

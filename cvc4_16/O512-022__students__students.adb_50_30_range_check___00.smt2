@@ -908,3 +908,4 @@ Target solver: CVC4
                                                       false)))
   (=> (= spark__branch5 true) (in_range7 (+ grants1 32000)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

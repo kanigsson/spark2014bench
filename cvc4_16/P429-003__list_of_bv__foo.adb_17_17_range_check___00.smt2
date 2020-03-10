@@ -1029,3 +1029,4 @@ Target solver: CVC4
   (forall ((x (_ BitVec 8)))
   (=> (dynamic_invariant1 x false false true true) (in_range 5)))))
 (check-sat)
+(exit)

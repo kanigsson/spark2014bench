@@ -142,3 +142,4 @@ Target solver: CVC4
   (=> (in_range o)
   (forall ((x2 Int)) (=> (= x2 o) (=> (not (< 2000 x2)) (< temp___159 x2))))))))))))))))))
 (check-sat)
+(exit)

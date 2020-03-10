@@ -111,3 +111,4 @@ Target solver: CVC4
   (forall ((z Int))
   (=> (= z o) (=> (dynamic_invariant z true false true true) (< z 0))))))))
 (check-sat)
+(exit)

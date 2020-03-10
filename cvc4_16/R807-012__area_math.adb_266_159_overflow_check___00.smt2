@@ -1590,3 +1590,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__area_math__ensemble__size (us_split_fields1 e))) o6)
   (=> (< i o6) (in_range1 (+ i 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

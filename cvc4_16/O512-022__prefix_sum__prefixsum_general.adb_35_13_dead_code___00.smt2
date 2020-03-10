@@ -520,3 +520,4 @@ Target solver: CVC4
   (=> (dynamic_invariant right1 false true true true)
   (let ((o (+ left2 space1))) (=> (in_range1 o) (not (< o 8))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

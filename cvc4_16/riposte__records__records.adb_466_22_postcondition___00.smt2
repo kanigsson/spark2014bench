@@ -338,3 +338,4 @@ Target solver: CVC4
      (rec__records_prooffuncs__optional_pair__exists r__split_fields1)
      (us_repqtmk (us_split_fieldsqtmk (of_rep x) (of_rep x)))))) true))))))))))
 (check-sat)
+(exit)

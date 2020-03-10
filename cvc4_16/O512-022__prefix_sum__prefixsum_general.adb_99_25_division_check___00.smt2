@@ -490,3 +490,4 @@ Target solver: CVC4
   (exists ((right4 Int)) (and (= right4 o11) (not (< right4 8))))))))))))))))))))))))))))))))))))))))
   (not (= 2 0)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -56,3 +56,4 @@ Target solver: CVC4
  ;; File "component_size_attribute.adb", line 40, characters 0-0
   (not false))
 (check-sat)
+(exit)

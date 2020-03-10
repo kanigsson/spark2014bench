@@ -64,3 +64,4 @@ Target solver: CVC4
  ;; File "nest_in_proc.ads", line 1, characters 0-0
   (not (= (distinct 0 0) true)))
 (check-sat)
+(exit)

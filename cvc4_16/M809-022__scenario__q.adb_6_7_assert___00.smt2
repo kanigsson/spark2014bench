@@ -56,3 +56,4 @@ Target solver: CVC4
  ;; File "q.ads", line 4, characters 0-0
   (not false))
 (check-sat)
+(exit)

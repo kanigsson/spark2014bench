@@ -293,3 +293,4 @@ Target solver: CVC4
  ;; File "get_size.adb", line 1, characters 0-0
   (not (in_range value__size)))
 (check-sat)
+(exit)

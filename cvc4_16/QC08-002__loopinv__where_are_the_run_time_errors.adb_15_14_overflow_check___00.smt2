@@ -263,3 +263,4 @@ Target solver: CVC4
   (and (= x2 x1) (= y2 y1)))
   (let ((o1 (* 3 k1))) (=> (in_range o1) (in_range (+ o1 100)))))))))))))))))))
 (check-sat)
+(exit)

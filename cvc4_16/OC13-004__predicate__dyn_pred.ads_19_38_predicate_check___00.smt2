@@ -233,3 +233,4 @@ Target solver: CVC4
  ;; File "dyn_pred.ads", line 1, characters 0-0
   (not (dynamic_predicate (us_repqtmk (us_split_fieldsqtmk rliteral)))))
 (check-sat)
+(exit)

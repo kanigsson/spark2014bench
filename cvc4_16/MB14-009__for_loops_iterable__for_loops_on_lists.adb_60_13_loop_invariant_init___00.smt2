@@ -909,3 +909,4 @@ Target solver: CVC4
   (exists ((cu us_rep))
   (and (= (has_element l cu) true) (= (element l cu) 0)))))))))))))))))))))))
 (check-sat)
+(exit)

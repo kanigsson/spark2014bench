@@ -284,3 +284,4 @@ Target solver: CVC4
   (=> (= arithmetic__halve_d__result r1)
   (= arithmetic__halve_d__result (div1 n 2)))))))))
 (check-sat)
+(exit)

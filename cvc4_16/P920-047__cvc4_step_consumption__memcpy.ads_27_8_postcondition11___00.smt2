@@ -1546,3 +1546,4 @@ Target solver: CVC4
   (= (insaferegion64 i rsp1) true))
   (= (to_rep (select memory10 i)) (to_rep (select memory1 i))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

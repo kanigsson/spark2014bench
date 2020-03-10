@@ -422,3 +422,4 @@ Target solver: CVC4
   (=> (= (us_split_discrsqtmk h__split_fields1) d1__split_discrs)
   (= (to_rep h__split_fields1) c))))))))))))))))))))
 (check-sat)
+(exit)

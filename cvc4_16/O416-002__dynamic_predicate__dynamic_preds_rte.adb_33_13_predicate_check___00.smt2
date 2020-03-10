@@ -378,3 +378,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 x false false true true)
   (=> (< (* 2 2) 100000) (< (* 2 1) 100000))))))))))
 (check-sat)
+(exit)

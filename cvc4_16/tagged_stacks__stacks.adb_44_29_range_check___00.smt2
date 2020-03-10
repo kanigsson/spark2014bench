@@ -1216,3 +1216,4 @@ Target solver: CVC4
   (=> (= (to_rep3 (rec__stacks__buffer__first s__split_fields1)) o4)
   (in_range4 (- o4 1))))))))))))))))))))))
 (check-sat)
+(exit)

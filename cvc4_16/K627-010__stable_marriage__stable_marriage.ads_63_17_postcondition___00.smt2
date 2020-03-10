@@ -180,3 +180,4 @@ Target solver: CVC4
   (=> (not (= g21 g22))
   (not (= (to_rep (select g2_to_g1 g21)) (to_rep (select g2_to_g1 g22)))))))))))))
 (check-sat)
+(exit)

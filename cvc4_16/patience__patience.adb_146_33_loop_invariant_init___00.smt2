@@ -1181,3 +1181,4 @@ Target solver: CVC4
   (= (to_rep (rec__patience__state__numelts s__split_fields)) (- i (first1
                                                                    cards)))))))))))))))))
 (check-sat)
+(exit)

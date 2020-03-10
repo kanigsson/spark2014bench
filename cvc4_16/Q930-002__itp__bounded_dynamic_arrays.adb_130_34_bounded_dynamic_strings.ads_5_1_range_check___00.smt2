@@ -684,3 +684,4 @@ Target solver: CVC4
                       to____split_discrs)))
   (in_range3 (length source))))))))))
 (check-sat)
+(exit)

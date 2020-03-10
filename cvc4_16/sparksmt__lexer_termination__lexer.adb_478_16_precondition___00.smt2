@@ -2130,3 +2130,4 @@ Target solver: CVC4
   (=> (= spark__branch2 (ite (= c2 41) true false))
   (=> (= spark__branch2 true) (not (= t__attr__constrained true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

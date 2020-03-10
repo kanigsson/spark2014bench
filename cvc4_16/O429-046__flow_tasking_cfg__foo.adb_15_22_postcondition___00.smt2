@@ -229,3 +229,4 @@ Target solver: CVC4
   (=> (= b true)
   (=> (= (rec__foo__thing__a (us_split_fields1 self__)) true) (= b true))))))))
 (check-sat)
+(exit)

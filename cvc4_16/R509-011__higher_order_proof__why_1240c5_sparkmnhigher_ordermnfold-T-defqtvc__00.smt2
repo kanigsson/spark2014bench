@@ -929,3 +929,4 @@ Target solver: CVC4
                                                false)) true)
   (=> (< (first1 a) usf) (=> (in_range5 usf) (in_range1 (- usf 1))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

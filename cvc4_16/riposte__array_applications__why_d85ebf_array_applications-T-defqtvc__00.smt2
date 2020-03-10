@@ -377,3 +377,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 0 usf) true false) (ite (<= usf i2) true false)) true)
   (=> (in_range1 (power 2 usf)) (<= 0 usf)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

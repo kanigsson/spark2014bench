@@ -1270,3 +1270,4 @@ Target solver: CVC4
   (=> (= (bool_eq a1 1 10 (temp_____aggregate_def_199 0) 1 10) true)
   (=> (<= 21 100) (<= (to_rep a__first) 21))))))))))))))))))))
 (check-sat)
+(exit)

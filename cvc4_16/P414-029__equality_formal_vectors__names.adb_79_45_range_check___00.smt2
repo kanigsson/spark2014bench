@@ -2025,3 +2025,4 @@ Target solver: CVC4
                     (last1 temp___657) (to_array s) (first1 s) (last1 s)))
   (=> (not (= spark__branch2 true)) (in_range15 ptr2)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

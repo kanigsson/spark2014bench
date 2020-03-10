@@ -394,3 +394,4 @@ Target solver: CVC4
   (and (<= (first1 s2) temp___416) (<= temp___416 (last1 s2))))))
   (<= (+ (+ 0 (ite (= (= n 0) true) 1 0)) (ite (= (not (= n 0)) true) 1 0)) 1)))))))))
 (check-sat)
+(exit)

@@ -809,3 +809,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array separates) temp___305)) o1) (in_range4
   o1)))))))))))))
 (check-sat)
+(exit)

@@ -2070,3 +2070,4 @@ Target solver: CVC4
   (and (dynamic_invariant4 ptr2 true true true true) (dynamic_invariant4 n1
   false true true true)) (=> (in_range12 ptr2) (<= 1 ptr2))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

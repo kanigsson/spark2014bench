@@ -107,3 +107,4 @@ Target solver: CVC4
   (not
   (=> (zero__function_guard (zero Tuple0) Tuple0) (not (= (zero Tuple0) 0)))))
 (check-sat)
+(exit)

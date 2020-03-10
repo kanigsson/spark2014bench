@@ -2074,3 +2074,4 @@ Target solver: CVC4
   (= (= o1 true) (= (has_key (model1 find_map__find_all__result) usf) true))
   (=> (= o1 true) (= (contains find_map__find_all__result usf) true)))))))))))))))))))))))
 (check-sat)
+(exit)

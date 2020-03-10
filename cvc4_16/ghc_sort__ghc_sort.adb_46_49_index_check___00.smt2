@@ -708,3 +708,4 @@ Target solver: CVC4
   (<= (to_rep (select (to_array s) l)) (to_rep (select (to_array s) (- l 1))))))
   (<= (to_rep cut__first) top2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

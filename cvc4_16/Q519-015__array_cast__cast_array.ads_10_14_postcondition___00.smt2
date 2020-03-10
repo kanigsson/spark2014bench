@@ -386,3 +386,4 @@ Target solver: CVC4
   (= (to_rep1 (select cast_array__cast__result k)) (to_rep
                                                    (select input_array k))))))))))
 (check-sat)
+(exit)

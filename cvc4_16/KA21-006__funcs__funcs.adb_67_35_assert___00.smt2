@@ -298,3 +298,4 @@ Target solver: CVC4
   (=> (= y1 o1)
   (=> (= y1 true) (=> (f2__function_guard (f2 3) 3) (= (f2 3) true)))))))))))))))))))))
 (check-sat)
+(exit)

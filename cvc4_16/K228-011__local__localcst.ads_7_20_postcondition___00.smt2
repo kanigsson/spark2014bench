@@ -106,3 +106,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (=> (= localcst__id__result x) (= localcst__id__result n))))))))
 (check-sat)
+(exit)

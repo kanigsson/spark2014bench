@@ -322,3 +322,4 @@ Target solver: CVC4
                                                        false)) true)
   (=> (<= (first1 unsorted) (- index 1)) (<= 1 (first1 unsorted))))))))))))))))))))
 (check-sat)
+(exit)

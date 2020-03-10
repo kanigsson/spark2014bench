@@ -262,3 +262,4 @@ Target solver: CVC4
   (=> (dynamic_invariant temp___177 true false true true)
   (=> (= h21 temp___177) (= h11 h21)))))))))))))
 (check-sat)
+(exit)

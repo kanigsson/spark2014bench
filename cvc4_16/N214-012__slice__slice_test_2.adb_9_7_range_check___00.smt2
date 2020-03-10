@@ -258,3 +258,4 @@ Target solver: CVC4
   (=> (ite (<= 2 4) (and (<= 0 d) (= (- 4 2) (- d 0))) (< d 0))
   (=> (<= 0 d) (<= 0 0))))))))
 (check-sat)
+(exit)

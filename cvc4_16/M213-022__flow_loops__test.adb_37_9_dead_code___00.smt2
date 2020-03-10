@@ -158,3 +158,4 @@ Target solver: CVC4
   (exists ((i10 Int))
   (and (= i10 10) (exists ((x13 Int)) (and (= x13 i10) (< y x13)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

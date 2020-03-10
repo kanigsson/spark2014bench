@@ -537,3 +537,4 @@ Target solver: CVC4
   (=> (in_range1 o2)
   (=> (in_range1 (+ o2 1)) (< label_length2 (+ (- i2 (first1 name)) 1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

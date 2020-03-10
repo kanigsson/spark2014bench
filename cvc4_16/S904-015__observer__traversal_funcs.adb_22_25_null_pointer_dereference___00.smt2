@@ -380,3 +380,4 @@ Target solver: CVC4
   (=> (next__function_guard o3 o2)
   (rec__traversal_funcs__list_acc__pointer_value__pred o3))))))))))))))))))))
 (check-sat)
+(exit)

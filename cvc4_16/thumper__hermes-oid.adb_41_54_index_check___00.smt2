@@ -804,3 +804,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true))
   (<= (first1 separates) (first1 separates))))))))))
 (check-sat)
+(exit)

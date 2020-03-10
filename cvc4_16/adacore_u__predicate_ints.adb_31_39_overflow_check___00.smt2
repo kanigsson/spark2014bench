@@ -255,3 +255,4 @@ Target solver: CVC4
   (= (to_rep (rec__predicate_ints__int__value (us_split_fields1 arg1))) o1)
   (in_range (+ o1 o)))))))))
 (check-sat)
+(exit)

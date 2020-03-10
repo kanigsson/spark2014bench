@@ -484,3 +484,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r28b true false true true)
   (=> (and (<= r27b c) (<= c r28b)) (<= (first1 a__pointer_value) c))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -546,3 +546,4 @@ Target solver: CVC4
   (- (+ (bv2nat (first1 m)) (+ (length (bv2nat (first1 m))
                                (bv2nat (last1 m))) 1)) 1)))))))
 (check-sat)
+(exit)

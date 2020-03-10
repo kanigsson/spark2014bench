@@ -418,3 +418,4 @@ Target solver: CVC4
   (=> (<= (first1 y__split_fields) 10)
   (=> (<= 10 (last1 y__split_fields)) (<= (first1 x__split_fields) 1))))))))
 (check-sat)
+(exit)

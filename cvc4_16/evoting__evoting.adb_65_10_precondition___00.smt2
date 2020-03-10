@@ -915,3 +915,4 @@ Target solver: CVC4
   (=> (= (to_rep1 o1) 70)
   (forall ((o2 integer)) (=> (= (to_rep1 o2) 1) (= (is_open file1) true))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -560,3 +560,4 @@ Target solver: CVC4
      (rec__ada___demo__core__p_mlms__all_f__q__t__c (us_split_discrs1 usf1))) usf)
   (=> (<= 1 usf) (<= 1 1)))))))
 (check-sat)
+(exit)

@@ -382,3 +382,4 @@ Target solver: CVC4
   (= (to_rep (select b2 j)) (to_rep
                             (select (to_array a) (- (+ a_first j) b_first))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

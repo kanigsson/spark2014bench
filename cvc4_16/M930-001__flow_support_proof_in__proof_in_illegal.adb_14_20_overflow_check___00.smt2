@@ -141,3 +141,4 @@ Target solver: CVC4
   (=> (in_range o)
   (forall ((temp1 Int)) (=> (= temp1 o) (in_range (+ temp1 var)))))))))))))
 (check-sat)
+(exit)

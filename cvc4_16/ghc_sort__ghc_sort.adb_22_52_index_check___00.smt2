@@ -546,3 +546,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 usf) true false) (ite (<= usf (- top 1)) true false)) true)
   (let ((o4 (+ usf 1))) (=> (in_range1 o4) (<= (to_rep cut__first) o4))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

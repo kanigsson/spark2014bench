@@ -159,3 +159,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (fp.eq (fp.add RNE x x) (fp.sub RNE x (fp.neg x))))))
 (check-sat)
+(exit)

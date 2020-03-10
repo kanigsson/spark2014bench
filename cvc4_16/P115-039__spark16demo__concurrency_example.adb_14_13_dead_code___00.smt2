@@ -298,3 +298,4 @@ Target solver: CVC4
   (= (concurrency_example__all_ones__aggregate_def (- 2147483648)) all_ones)
   (=> (= deadline o) (= spark__branch true)))))))
 (check-sat)
+(exit)

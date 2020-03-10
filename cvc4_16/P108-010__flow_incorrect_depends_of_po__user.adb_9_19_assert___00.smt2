@@ -221,3 +221,4 @@ Target solver: CVC4
   (and (get__function_guard o1 o) (dynamic_invariant o1 true false true
   true)) (forall ((tmp1 Int)) (=> (= tmp1 o1) (= tmp1 10))))))))))
 (check-sat)
+(exit)

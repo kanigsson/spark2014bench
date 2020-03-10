@@ -217,3 +217,4 @@ Target solver: CVC4
   (=> (= b o)
   (=> (dynamic_invariant2 b true false true true) (in_range4 havok_b)))))))))))))))))
 (check-sat)
+(exit)

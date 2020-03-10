@@ -385,3 +385,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 (to_upper o1) true false true true)
   (<= (first1 res) j))))))))))))))))))
 (check-sat)
+(exit)

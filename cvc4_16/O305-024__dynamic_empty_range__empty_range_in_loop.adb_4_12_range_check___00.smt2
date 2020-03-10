@@ -233,3 +233,4 @@ Target solver: CVC4
   (=> (dynamic_invariant max true false true true)
   (=> (<= (+ c 1) 100) (<= 0 (+ c 1)))))))
 (check-sat)
+(exit)

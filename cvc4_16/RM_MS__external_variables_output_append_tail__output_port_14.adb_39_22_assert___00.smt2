@@ -133,3 +133,4 @@ Target solver: CVC4
   output_port1 true true true true))) (= out_21 out_11))))))
   (=> (= output_value (- 1)) (= out_11 0))))))))))
 (check-sat)
+(exit)

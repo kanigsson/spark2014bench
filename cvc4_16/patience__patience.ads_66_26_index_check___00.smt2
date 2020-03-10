@@ -779,3 +779,4 @@ Target solver: CVC4
      (select (rec__patience__state__stacksizes (us_split_fields1 s)) usf)) o2))
   (<= 0 usf)))))))))))
 (check-sat)
+(exit)

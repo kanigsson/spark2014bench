@@ -872,3 +872,4 @@ Target solver: CVC4
                            stream__split_fields1)))
   (in_range2 (length item))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

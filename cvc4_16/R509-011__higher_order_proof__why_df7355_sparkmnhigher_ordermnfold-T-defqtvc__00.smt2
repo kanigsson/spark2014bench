@@ -393,3 +393,4 @@ Target solver: CVC4
   (= (ind_prop (of_array (to_array a) (first2 a) (last2 a)) x (first2 a)) true)
   (<= (first2 a) (last2 a)))))))))
 (check-sat)
+(exit)

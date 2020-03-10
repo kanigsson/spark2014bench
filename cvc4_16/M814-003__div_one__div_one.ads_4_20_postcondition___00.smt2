@@ -224,3 +224,4 @@ Target solver: CVC4
   (=> (dynamic_invariant a true false true true)
   (=> (= div_one__f__result a) (= (div1 div_one__f__result a) 1))))))
 (check-sat)
+(exit)

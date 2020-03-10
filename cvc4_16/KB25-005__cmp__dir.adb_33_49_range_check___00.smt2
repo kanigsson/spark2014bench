@@ -448,3 +448,4 @@ Target solver: CVC4
   (=> (dynamic_invariant test_value true false true true) (in_range1
   (length value))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -137,3 +137,4 @@ Target solver: CVC4
   (let ((o (+ x par1)))
   (=> (in_range o) (=> (in_range (+ o par2)) (in_range (+ y par2)))))))))))
 (check-sat)
+(exit)

@@ -609,3 +609,4 @@ Target solver: CVC4
   (and (and (<= (to_rep1 y__first) 1) (<= 3 (to_rep1 y__last)))
   (not (= (to_rep (select y3 3)) 0))) (<= (to_rep1 y__first) 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

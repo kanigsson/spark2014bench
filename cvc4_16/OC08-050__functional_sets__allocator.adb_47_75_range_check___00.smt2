@@ -652,3 +652,4 @@ Target solver: CVC4
   (=> (<= usf 3)
   (=> (= (to_rep (select data usf)) o1) (=> (not (= o1 0)) (in_range2 usf)))))))))))))))))))))
 (check-sat)
+(exit)

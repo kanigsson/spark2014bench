@@ -218,3 +218,4 @@ Target solver: CVC4
   (=> (= (= value_v1 value_v2) true)
   (= (to_rep (select flags_v11 flag_v1)) (to_rep (select flags_v21 flag_v2)))))))))))))))))))
 (check-sat)
+(exit)

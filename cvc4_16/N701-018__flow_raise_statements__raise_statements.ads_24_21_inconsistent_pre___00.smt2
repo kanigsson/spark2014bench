@@ -100,3 +100,4 @@ Target solver: CVC4
   (forall ((g Int))
   (=> (dynamic_invariant g false false true true) (not (= ok true))))))
 (check-sat)
+(exit)

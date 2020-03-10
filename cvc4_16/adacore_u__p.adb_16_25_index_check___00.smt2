@@ -320,3 +320,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (<= (- threshold 10) o) true false))
   (=> (not (= spark__branch true)) (<= (to_rep1 a__first) i))))))))))))))
 (check-sat)
+(exit)

@@ -430,3 +430,4 @@ Target solver: CVC4
  ;; File "member.adb", line 10, characters 0-0
   (not (=> (init__function_guard (init 2) 2) (= (first1 (init 2)) 1))))
 (check-sat)
+(exit)

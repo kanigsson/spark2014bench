@@ -273,3 +273,4 @@ Target solver: CVC4
   (=> (= x__attr__constrained false)
   (=> (= x__attr__constrained true) (= rliteral x__split_discrs))))))
 (check-sat)
+(exit)

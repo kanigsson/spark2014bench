@@ -356,3 +356,4 @@ Target solver: CVC4
   (<= (+ (- 1) o2) 2147483646))
   (=> (in_range3 (- (+ (- 1) o2) o1)) (in_range3 fst)))))))))))))))
 (check-sat)
+(exit)

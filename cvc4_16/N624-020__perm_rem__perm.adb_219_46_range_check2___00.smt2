@@ -1151,3 +1151,4 @@ Target solver: CVC4
   (forall ((ih1 Int))
   (=> (= ih1 o13) (=> (= (distinct ih1 0) true) (in_range3 ia)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

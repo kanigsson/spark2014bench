@@ -957,3 +957,4 @@ Target solver: CVC4
   (let ((o6 (+ skip2 1))) (and (in_range9 o6) (= skip3 o6)))))))
   (= skip3 skip2)))) (=> (< i1 4) (<= skip3 4))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

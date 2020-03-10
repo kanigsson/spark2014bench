@@ -345,3 +345,4 @@ Target solver: CVC4
      (rec__walker__int_acc__pointer_value
      (rec__walker__two_acc__fst x__split_fields3))) 1))))))))))))))))))))))))))
 (check-sat)
+(exit)

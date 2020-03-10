@@ -104,3 +104,4 @@ Target solver: CVC4
   (forall ((basic__add_i__result Int))
   (=> (= basic__add_i__result o) (= basic__add_i__result (+ a b))))))))))
 (check-sat)
+(exit)

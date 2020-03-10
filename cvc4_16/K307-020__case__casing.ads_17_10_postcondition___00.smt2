@@ -130,3 +130,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (= res1 0) (= res1 1))))
   (=> (= casing__g__result res1) (= casing__g__result (ite (= x 0) 0 1)))))))))
 (check-sat)
+(exit)

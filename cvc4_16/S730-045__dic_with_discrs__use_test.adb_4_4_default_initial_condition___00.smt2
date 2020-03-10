@@ -422,3 +422,4 @@ Target solver: CVC4
   (< (to_rep (rec__test_2__context_type__first (us_split_discrs1 usf))) 
   (to_rep (rec__test_2__context_type__last (us_split_discrs1 usf))))))))))))))
 (check-sat)
+(exit)

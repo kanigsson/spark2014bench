@@ -156,3 +156,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c6b true false true true)
   (=> (<= 1 2) (<= (- 2147483648) 1))))))
 (check-sat)
+(exit)

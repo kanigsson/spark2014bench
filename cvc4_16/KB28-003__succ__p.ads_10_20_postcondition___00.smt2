@@ -93,3 +93,4 @@ Target solver: CVC4
   (forall ((p__id_not_d__result Int))
   (=> (= p__id_not_d__result (- o1 1)) (= p__id_not_d__result x)))))))))))
 (check-sat)
+(exit)

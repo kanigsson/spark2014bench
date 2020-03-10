@@ -878,3 +878,4 @@ Target solver: CVC4
                                       (us_split_fields1 o1)))) 1)))))
   (in_range2 (length1 ada___polyorb_hi__messages__payload__result)))))))))))))))
 (check-sat)
+(exit)

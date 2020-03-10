@@ -465,3 +465,4 @@ Target solver: CVC4
                                              (select (to_array o4) k))))))))
   (=> (in_range3 usf) (<= (first1 a) usf))))))))))))))))))))))))))
 (check-sat)
+(exit)

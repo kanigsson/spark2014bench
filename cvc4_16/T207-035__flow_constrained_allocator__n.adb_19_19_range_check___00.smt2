@@ -306,3 +306,4 @@ Target solver: CVC4
   (=> (and (= (to_rep1 usf) 0) (dynamic_property first1 last1 (to_rep1 usf)))
   (in_range1 (to_rep1 usf))))))))))))))
 (check-sat)
+(exit)

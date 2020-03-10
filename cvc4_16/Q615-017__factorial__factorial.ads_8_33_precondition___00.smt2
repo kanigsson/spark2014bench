@@ -123,3 +123,4 @@ Target solver: CVC4
   (=> (<= x 12)
   (=> (not (<= x 1)) (let ((o (- x 1))) (=> (in_range1 o) (<= 1 o)))))))))
 (check-sat)
+(exit)

@@ -1283,3 +1283,4 @@ Target solver: CVC4
                                                (get (to_array a1) k l)))))
   (<= (first_2 a2) l)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

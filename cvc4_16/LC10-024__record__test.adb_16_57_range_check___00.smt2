@@ -688,3 +688,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__test__t__remaining s__split_fields1)) o2)
   (in_range_int (mod1 o2 5)))))))))))))
 (check-sat)
+(exit)

@@ -257,3 +257,4 @@ Target solver: CVC4
   (=> (= arithmetic__test_rem_b__result (mod1 a b))
   (let ((o (div1 a b))) (=> (in_range o) (in_range (* o b)))))))))))
 (check-sat)
+(exit)

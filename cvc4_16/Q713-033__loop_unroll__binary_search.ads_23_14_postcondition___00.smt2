@@ -877,3 +877,4 @@ Target solver: CVC4
   (=> (<= binary_search__search__result 10)
   (= (to_rep (select a binary_search__search__result)) i))))))))))))
 (check-sat)
+(exit)

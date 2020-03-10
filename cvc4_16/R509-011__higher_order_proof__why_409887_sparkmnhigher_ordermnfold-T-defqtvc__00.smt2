@@ -1383,3 +1383,4 @@ Target solver: CVC4
   (exists ((o4 Int)) (= (to_rep1 (get1 (to_array1 temp___1785) i1 j)) o4))
   (<= (first_2 a) j)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

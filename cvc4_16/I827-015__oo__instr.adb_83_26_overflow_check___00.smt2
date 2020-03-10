@@ -813,3 +813,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__instr__clock__seconds x__split_fields1)) o3)
   (in_range (+ o3 inc))))))))))))))))
 (check-sat)
+(exit)

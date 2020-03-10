@@ -1521,3 +1521,4 @@ Target solver: CVC4
   (=> (= (is_open source4) true)
   (=> (= (mode source4) 0) (= (is_open source4) true))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

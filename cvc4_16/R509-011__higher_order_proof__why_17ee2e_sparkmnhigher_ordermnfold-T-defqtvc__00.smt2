@@ -860,3 +860,4 @@ Target solver: CVC4
   (= (to_rep (select (to_array a1) k)) (to_rep (select (to_array a2) k))))))
   (<= (first1 a2) i)))))))))))
 (check-sat)
+(exit)

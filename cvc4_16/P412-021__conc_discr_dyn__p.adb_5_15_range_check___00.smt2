@@ -773,3 +773,4 @@ Target solver: CVC4
   (=> (<= 1 (to_rep (rec__p__pp__c (us_split_discrs4 self__))))
   (<= (- 2147483648) 1))))))
 (check-sat)
+(exit)

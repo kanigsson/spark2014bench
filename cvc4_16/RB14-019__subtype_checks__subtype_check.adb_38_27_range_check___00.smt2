@@ -900,3 +900,4 @@ Target solver: CVC4
   (us_repqtmk1 x2__is_null_pointer x2__pointer_address x2__pointer_value)
   true false true true) (in_range 10)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

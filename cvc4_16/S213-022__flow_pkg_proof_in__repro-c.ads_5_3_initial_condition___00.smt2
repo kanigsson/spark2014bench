@@ -134,3 +134,4 @@ Target solver: CVC4
   (forall ((foo1 us_private) (y1 Int)) (invariant____function_guard
   (invariant__ y1 foo1) y1 foo1)) (= (invariant__ y foo) true))))))))))
 (check-sat)
+(exit)

@@ -180,3 +180,4 @@ Target solver: CVC4
   (=> (dynamic_invariant high true false true true)
   (=> (<= low high) (<= first1 low))))))))
 (check-sat)
+(exit)

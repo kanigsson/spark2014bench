@@ -366,3 +366,4 @@ Target solver: CVC4
   (= ((_ zero_extend 8) t__mmul__result) (bvurem (bvmul ((_ zero_extend 8) 
   x) ((_ zero_extend 8) y)) #x00E6))))))))
 (check-sat)
+(exit)

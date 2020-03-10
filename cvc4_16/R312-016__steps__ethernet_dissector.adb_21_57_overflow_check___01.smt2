@@ -883,3 +883,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true))
   (=> (< 5 (length buffer)) (in_range1 (+ (first1 buffer) 5)))))))))))
 (check-sat)
+(exit)

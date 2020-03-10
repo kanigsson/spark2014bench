@@ -1152,3 +1152,4 @@ Target solver: CVC4
   (=> (and (model__function_guard1 o6 o5) (= (is_model o5 o6) true))
   (not (= (is_empty o6) true)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

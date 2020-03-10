@@ -563,3 +563,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__c910003_pack__buffer__tc_last self__)) temp___233)
   (=> (<= 1 temp___233) (<= 1 1)))))))
 (check-sat)
+(exit)

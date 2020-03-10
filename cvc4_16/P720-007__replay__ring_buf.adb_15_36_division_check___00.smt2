@@ -556,3 +556,4 @@ Target solver: CVC4
   (=> (not (= (is_full (us_repqtmk r__split_fields)) true))
   (=> (= (to_rep o) x) (not (= 10000 0)))))))))
 (check-sat)
+(exit)

@@ -288,3 +288,4 @@ Target solver: CVC4
   (= (to_rep (rec__array_borrows__int_ptr__pointer_value (select x1 1))) 
   i)))))))))))))))))))))))))
 (check-sat)
+(exit)

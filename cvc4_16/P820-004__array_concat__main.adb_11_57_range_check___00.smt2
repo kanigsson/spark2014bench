@@ -884,3 +884,4 @@ Target solver: CVC4
                                (last1 temp___209)) (length (first1 vstring)
                                                    (last1 vstring)))) 1)))))))))))))))
 (check-sat)
+(exit)

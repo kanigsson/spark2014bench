@@ -1348,3 +1348,4 @@ Target solver: CVC4
   (= (to_rep2 o2) ((_ extract 7 0) (bvand (bvsub (bvsub ((_ zero_extend 8) o1) carry2) current_borrow2) #x00FF)))
   (let ((o3 (+ j n))) (=> (in_range2 o3) (<= (first1 u__split_fields1) o3)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

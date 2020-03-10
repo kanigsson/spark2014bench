@@ -1423,3 +1423,4 @@ Target solver: CVC4
   (=> (<= (to_rep1 item__first) usf)
   (=> (<= usf (to_rep1 item__last)) (<= (to_rep1 item__first) usf))))))))))))))))))))))))
 (check-sat)
+(exit)

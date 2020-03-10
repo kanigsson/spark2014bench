@@ -1291,3 +1291,4 @@ Target solver: CVC4
   (=> (in_range1 (* j 20))
   (=> (in_range1 (* j (- 20))) (<= (* j (- 20)) sum1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

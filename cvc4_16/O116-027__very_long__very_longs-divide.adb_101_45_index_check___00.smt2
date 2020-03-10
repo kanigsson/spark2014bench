@@ -789,3 +789,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 i1) (<= i1 r124b)) true false)) true)
   (<= (first1 number__split_fields1) i1)))))))))))))))))))))))
 (check-sat)
+(exit)

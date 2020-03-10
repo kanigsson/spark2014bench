@@ -621,3 +621,4 @@ Target solver: CVC4
   (<= (first1
       (rec__communication__ring_buffer__buffer__content b__split_fields)) o7)))))))))))))))))))))))))
 (check-sat)
+(exit)

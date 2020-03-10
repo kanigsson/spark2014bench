@@ -1362,3 +1362,4 @@ Target solver: CVC4
   (=> (= (invariant__ name_table) true)
   (=> (<= first_idx current_idx) (in_range1 (- current_idx first_idx)))))))))))))))
 (check-sat)
+(exit)

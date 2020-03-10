@@ -76,3 +76,4 @@ Target solver: CVC4
   (= functions__non_ter_func__result1 (distinct 0 0)))))
   (= functions__non_ter_func__result1 true)))))
 (check-sat)
+(exit)

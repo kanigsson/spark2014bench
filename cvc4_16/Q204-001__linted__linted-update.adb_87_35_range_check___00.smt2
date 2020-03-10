@@ -2042,3 +2042,4 @@ Target solver: CVC4
   (= (to_rep1 o34) (bvor (bvor (bvor ((_ zero_extend 24) o33) (bvshl ((_ zero_extend 24) o32) ((_ int2bv 32) 8))) (bvshl ((_ zero_extend 24) o31) ((_ int2bv 32) 16))) (bvshl ((_ zero_extend 24) o30) ((_ int2bv 32) 24))))
   (=> (<= 29 32) (<= 1 29)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

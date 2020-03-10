@@ -348,3 +348,4 @@ Target solver: CVC4
   (=> (<= lastindex (last1 a))
   (=> (<= (first1 a) lastindex) (<= (- 2147483648) (first1 a))))))))))
 (check-sat)
+(exit)

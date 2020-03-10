@@ -916,3 +916,4 @@ Target solver: CVC4
   (=> (length__function_guard1 (length1 x) x)
   (= (length traversals__next__result) (- (length1 x) 1)))))))))))))
 (check-sat)
+(exit)

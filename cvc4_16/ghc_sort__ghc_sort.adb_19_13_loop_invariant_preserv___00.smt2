@@ -694,3 +694,4 @@ Target solver: CVC4
   (=> (and (<= 1 k) (<= k (- top2 1)))
   (< (to_rep1 (select cut2 k)) (to_rep1 (select cut2 (+ k 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

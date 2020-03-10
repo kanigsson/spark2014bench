@@ -610,3 +610,4 @@ Target solver: CVC4
                                           false)) true))
   (<= (to_rep dest__first) usf)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

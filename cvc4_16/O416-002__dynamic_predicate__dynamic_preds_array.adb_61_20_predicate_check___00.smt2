@@ -394,3 +394,4 @@ Target solver: CVC4
   (forall ((result__1 (Array Int even)))
   (=> (= result__1 (store result__ 1 o)) (= (mod2 b 2) 0)))))))))))))))
 (check-sat)
+(exit)

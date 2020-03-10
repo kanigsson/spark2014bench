@@ -304,3 +304,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r false false true true)
   (=> (<= x (div1 z y)) (let ((o y)) (or (= o 0) (<= x (div1 z o))))))))))))
 (check-sat)
+(exit)

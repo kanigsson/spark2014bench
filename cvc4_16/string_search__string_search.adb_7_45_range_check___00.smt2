@@ -459,3 +459,4 @@ Target solver: CVC4
   (and (<= 1 temp___341) (<= temp___341 (length haystack)))) (in_range1
   (length needle)))))))
 (check-sat)
+(exit)

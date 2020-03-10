@@ -343,3 +343,4 @@ Target solver: CVC4
   (forall ((v Int))
   (=> (and (<= value v) (<= v right1)) (not (= (select number_list v) true)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

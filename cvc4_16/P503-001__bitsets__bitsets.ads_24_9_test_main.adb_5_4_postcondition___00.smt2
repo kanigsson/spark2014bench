@@ -179,3 +179,4 @@ Target solver: CVC4
   test_main__my_sets__remove__result1 elt1))
   (=> (= (mem test_main__my_sets__remove__result elt) true) (not (= elt e)))))))))))))
 (check-sat)
+(exit)

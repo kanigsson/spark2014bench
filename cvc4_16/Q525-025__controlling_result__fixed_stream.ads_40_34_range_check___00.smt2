@@ -1126,3 +1126,4 @@ Target solver: CVC4
   (= o7 (to_rep (rec__fixed_stream__object__width (us_split_fields1 o6))))))
   (in_range1 (length1 fixed_stream__convert__result))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

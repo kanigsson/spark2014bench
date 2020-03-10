@@ -372,3 +372,4 @@ Target solver: CVC4
                                              false)) true)
   (=> (in_range1 (min a b)) (in_range1 j))))))))))))))))))))))))
 (check-sat)
+(exit)

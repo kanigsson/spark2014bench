@@ -1357,3 +1357,4 @@ Target solver: CVC4
                    v__split_fields) us_null_pointer2))
   (=> (= spark__branch true) (=> (<= 1 ns) (<= 1 1))))))))))))))))))))
 (check-sat)
+(exit)

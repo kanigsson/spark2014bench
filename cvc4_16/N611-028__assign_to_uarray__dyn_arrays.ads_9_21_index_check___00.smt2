@@ -393,3 +393,4 @@ Target solver: CVC4
   (forall ((o6 Int))
   (=> (= (to_rep (select from o5)) o6) (<= (to_rep1 to____first) usf)))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -625,3 +625,4 @@ Target solver: CVC4
      (rec__communication__ring_buffer__buffer__first b__split_fields1)) o2)
   (in_range (+ o2 1)))))))))))))))))))))
 (check-sat)
+(exit)

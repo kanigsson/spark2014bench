@@ -375,3 +375,4 @@ Target solver: CVC4
   (= o3 (ite (= (to_rep (select (select my_board 2) 1)) 0) 1 0))))
   (let ((o4 (+ o3 o2))) (=> (in_range o4) (in_range (+ o4 o1)))))))))))))))
 (check-sat)
+(exit)

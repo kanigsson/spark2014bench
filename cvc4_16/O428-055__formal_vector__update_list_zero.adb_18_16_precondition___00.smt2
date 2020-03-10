@@ -901,3 +901,4 @@ Target solver: CVC4
              (us_split_fieldsqtmk l__split_fields))))
   (=> (= (length1 (model1 o10)) (length o10)) (<= 1 usf)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

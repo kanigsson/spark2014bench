@@ -163,3 +163,4 @@ Target solver: CVC4
   (let ((o (fp.div RNE (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000) 
   a))) (=> (fp.isFinite64 o) (not (fp.isZero o))))))))
 (check-sat)
+(exit)

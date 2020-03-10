@@ -312,3 +312,4 @@ Target solver: CVC4
        (ite (bvule val__ (bvudiv #xFFFFFFFF scale_num)) true false)))
   (= o false)) (=> (= o true) (not (= scale_denom #x00000000)))))))))))
 (check-sat)
+(exit)

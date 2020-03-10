@@ -167,3 +167,4 @@ Target solver: CVC4
   (=> (forall ((o2 us_rep)) (is_zero__function_guard (is_zero o2) o2))
   (not (= (is_zero x) true)))))))))))
 (check-sat)
+(exit)

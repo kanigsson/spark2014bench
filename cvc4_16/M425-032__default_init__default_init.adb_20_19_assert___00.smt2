@@ -318,3 +318,4 @@ Target solver: CVC4
   (=> (default_initial_assumption1 x3 false)
   (= (to_rep x2__split_fields) 100))))))))))
 (check-sat)
+(exit)

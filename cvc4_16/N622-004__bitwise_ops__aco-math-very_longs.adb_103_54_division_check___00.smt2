@@ -1019,3 +1019,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 index1) (<= index1 r26b)) true false)) true)
   (not (= 256 0)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

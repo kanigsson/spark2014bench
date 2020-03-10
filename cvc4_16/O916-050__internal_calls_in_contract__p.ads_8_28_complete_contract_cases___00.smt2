@@ -99,3 +99,4 @@ Target solver: CVC4
  ;; File "p.ads", line 8, characters 0-0
   (not (<= 1 (+ 0 (ite (= (distinct 1 0) true) 1 0)))))
 (check-sat)
+(exit)

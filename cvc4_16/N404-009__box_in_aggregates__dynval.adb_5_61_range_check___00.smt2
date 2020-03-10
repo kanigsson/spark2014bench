@@ -334,3 +334,4 @@ Target solver: CVC4
   (=> (dynamic_invariant u true false true true)
   (=> (< 0 (length first last)) (dynamic_property first last 5))))))
 (check-sat)
+(exit)

@@ -402,3 +402,4 @@ Target solver: CVC4
   (=> (<= (length s2) 255)
   (=> (in_range1 (length s2)) (in_range1 (length s1)))))))))
 (check-sat)
+(exit)

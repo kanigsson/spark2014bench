@@ -595,3 +595,4 @@ Target solver: CVC4
   (us_pledge_ty__refqtmk test_goto_borrow__truncate_after_v__B_1__d__pledge))
   temp___borrowed_255 temp___brower_254)) ))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

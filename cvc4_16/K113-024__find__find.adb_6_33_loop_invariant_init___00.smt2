@@ -232,3 +232,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i 10) true false)) true)
   (= res 0)))))))))
 (check-sat)
+(exit)

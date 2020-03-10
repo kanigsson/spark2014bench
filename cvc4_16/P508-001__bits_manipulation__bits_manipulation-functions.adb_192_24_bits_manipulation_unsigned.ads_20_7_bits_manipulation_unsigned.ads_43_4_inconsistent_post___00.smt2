@@ -244,3 +244,4 @@ Target solver: CVC4
                               (bvshl #x0001 ((_ int2bv 16) n)) #x0000)) 
   (ite (< n 65536) (bvshl #x0001 ((_ int2bv 16) n)) #x0000))))))))))))
 (check-sat)
+(exit)

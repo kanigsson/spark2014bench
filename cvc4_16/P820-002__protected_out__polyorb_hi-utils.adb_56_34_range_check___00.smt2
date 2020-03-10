@@ -603,3 +603,4 @@ Target solver: CVC4
   (and (and (<= 1 j1) (<= j1 80)) (and (= r1 (store r2 j1 o3)) (= j1 o))))))))))))
   (= r1 r)))))) (in_range2 (length s))))))))))))
 (check-sat)
+(exit)

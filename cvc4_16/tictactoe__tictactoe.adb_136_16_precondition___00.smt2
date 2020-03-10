@@ -7769,3 +7769,4 @@ Target solver: CVC4
   (=> (= spark__branch2 true)
   (= (to_rep1 (select (select my_board (to_rep2 o2)) (to_rep2 o1))) 0))))))))))))))))))))))))
 (check-sat)
+(exit)

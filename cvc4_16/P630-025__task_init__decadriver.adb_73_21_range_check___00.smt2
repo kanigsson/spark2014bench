@@ -1173,3 +1173,4 @@ Target solver: CVC4
   (=> (= (to_rep1 frame__last) o2)
   (=> (= (to_rep1 frame__first) o3) (in_range1 (length o3 o2))))))))))))))))))
 (check-sat)
+(exit)

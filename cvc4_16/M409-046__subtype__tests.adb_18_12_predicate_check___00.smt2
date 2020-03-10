@@ -118,3 +118,4 @@ Target solver: CVC4
   (=> (not (= v 15))
   (or (and (<= 1 10) (<= 10 9)) (and (<= 21 10) (<= 10 2147483647))))))))))
 (check-sat)
+(exit)

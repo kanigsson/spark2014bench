@@ -390,3 +390,4 @@ Target solver: CVC4
   (=> (not (= (mod2 (+ usf 1) 8) 0))
   (=> (= (mod2 (+ usf 1) 4) 0) (<= 0 (- usf 3))))))))))
 (check-sat)
+(exit)

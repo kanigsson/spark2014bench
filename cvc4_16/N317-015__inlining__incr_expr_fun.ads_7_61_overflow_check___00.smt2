@@ -94,3 +94,4 @@ Target solver: CVC4
  ;; File "incr_expr_fun.ads", line 6, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (in_range (+ x 1)))))
 (check-sat)
+(exit)

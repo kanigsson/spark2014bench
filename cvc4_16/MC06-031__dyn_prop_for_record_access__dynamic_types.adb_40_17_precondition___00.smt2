@@ -656,3 +656,4 @@ Target solver: CVC4
   (us_repqtmk tmp__split_fields1) false true true true))
   (=> (in_range2 from1) (<= (first1 a) from1)))))))))))))))))))
 (check-sat)
+(exit)

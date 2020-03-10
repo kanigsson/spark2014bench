@@ -1205,3 +1205,4 @@ Target solver: CVC4
   (let ((temp___1180 (first1 in_data)))
   (=> (<= temp___1180 o2) (<= (first1 in_data) temp___1180)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

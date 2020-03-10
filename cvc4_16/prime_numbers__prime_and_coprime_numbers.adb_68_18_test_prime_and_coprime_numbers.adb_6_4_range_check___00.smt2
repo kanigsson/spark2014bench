@@ -429,3 +429,4 @@ Target solver: CVC4
   (=> (= (= (are_coprime a2 b2) true) (= (are_coprime b2 r2) true))
   (forall ((a3 Int)) (=> (= a3 b2) (in_range3 r2)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

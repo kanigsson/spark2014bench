@@ -599,3 +599,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array message) o3)) o4) (in_range1
   (+ length_stop1 1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

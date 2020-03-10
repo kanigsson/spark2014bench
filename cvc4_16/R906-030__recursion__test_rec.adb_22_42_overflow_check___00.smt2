@@ -432,3 +432,4 @@ Target solver: CVC4
   (and (and (<= (first1 b) temp___269) (<= temp___269 (last1 b)))
   (and (<= (first1 b) o) (<= o (last1 b))))) (in_range (- (last1 a) 1))))))))))))))
 (check-sat)
+(exit)

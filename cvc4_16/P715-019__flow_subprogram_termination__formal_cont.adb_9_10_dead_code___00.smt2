@@ -111,3 +111,4 @@ Target solver: CVC4
   (=> (dynamic_invariant b true false true true)
   (not (= (distinct 1 0) true))))))
 (check-sat)
+(exit)

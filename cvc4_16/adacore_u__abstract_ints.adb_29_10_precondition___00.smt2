@@ -677,3 +677,4 @@ Target solver: CVC4
   (us_repqtmk arg__split_fields1 o1)))
   (= (small1 o (us_repqtmk arg__split_fields o)) true))))))))
 (check-sat)
+(exit)

@@ -1136,3 +1136,4 @@ Target solver: CVC4
           true false) (ite (<= 80 n2) true false)) true)
   (=> (<= cur_position1 10000) (<= 80 80))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

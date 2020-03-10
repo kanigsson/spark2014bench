@@ -399,3 +399,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array c) possible1)) o3)
   (<= (first1 s) courant1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

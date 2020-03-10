@@ -380,3 +380,4 @@ Target solver: CVC4
                       (rec__dynamic_preds__even_pair__a x__split_fields1) o1))
   (= (to_rep (rec__dynamic_preds__even_pair__a x__split_fields2)) 0)))))))))))))
 (check-sat)
+(exit)

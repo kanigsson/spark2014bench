@@ -514,3 +514,4 @@ Target solver: CVC4
   (=> (in_range1 o6)
   (let ((o7 (+ (- o6 o5) 1))) (=> (in_range1 o7) (<= (first1 needle) o7))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

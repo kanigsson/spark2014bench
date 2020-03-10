@@ -70,3 +70,4 @@ Target solver: CVC4
   (forall ((body2_elaborated Bool))
   (=> (= body2_elaborated (distinct 1 0)) (= body2_elaborated true)))))
 (check-sat)
+(exit)

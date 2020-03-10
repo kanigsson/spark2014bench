@@ -326,3 +326,4 @@ Target solver: CVC4
   (and (= (to_rep (select a o6)) o7) (= o2 (ite (= o7 o5) true false))))))))))))
   (= o2 false))))) (=> (= o2 true) (< temp___195 l3))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -110,3 +110,4 @@ Target solver: CVC4
                                                  0)) (ite (= (< val__ 0) true)
                                                      1 0)) 1))))))
 (check-sat)
+(exit)

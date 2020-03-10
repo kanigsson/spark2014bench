@@ -2121,3 +2121,4 @@ Target solver: CVC4
   (=> (= (to_rep1 input__first) o1)
   (<= (length2 (of_array1 input o1 o)) 100)))))))))))))))))))))))))))
 (check-sat)
+(exit)

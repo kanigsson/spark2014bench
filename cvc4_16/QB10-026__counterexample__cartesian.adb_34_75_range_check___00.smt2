@@ -705,3 +705,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array array2) usf)) o11)
   (=> (in_range1 (- usf (first1 array2))) (in_range1 (length array2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

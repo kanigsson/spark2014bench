@@ -455,3 +455,4 @@ Target solver: CVC4
   (=> (<= size (length (to_rep buf__first) (to_rep buf__last)))
   (=> (= (to_rep buf__first) o) (in_range1 (+ o (- size 1))))))))))
 (check-sat)
+(exit)

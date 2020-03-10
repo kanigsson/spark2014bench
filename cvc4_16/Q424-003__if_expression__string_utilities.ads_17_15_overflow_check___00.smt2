@@ -518,3 +518,4 @@ Target solver: CVC4
         (max (slow_lcs_length o7 (tail o5)) (slow_lcs_length (tail o7) o5)))))))
   (in_range1 (+ 1 o8)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

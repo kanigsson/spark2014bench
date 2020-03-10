@@ -912,3 +912,4 @@ Target solver: CVC4
   (forall ((counter1 Int)) (sum_of__function_guard (sum_of counter1)
   counter1)) (< 0 (sum_of counter))))))))))))))))))
 (check-sat)
+(exit)

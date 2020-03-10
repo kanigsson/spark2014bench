@@ -286,3 +286,4 @@ Target solver: CVC4
   (not
   (=> (dynamic_invariant bit_index true false true true) (not (= 8 0)))))
 (check-sat)
+(exit)

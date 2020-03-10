@@ -220,3 +220,4 @@ Target solver: CVC4
   true true) (in_range
   get_out_subtype__controller_get_desired_rate__roll_rate_desired)))))))))))))))))
 (check-sat)
+(exit)

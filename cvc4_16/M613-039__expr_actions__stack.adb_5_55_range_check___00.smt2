@@ -562,3 +562,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__stack__stack__top (us_split_fields1 s))) o)
   (=> (<= 1 (- o 1)) (<= 1 1))))))
 (check-sat)
+(exit)

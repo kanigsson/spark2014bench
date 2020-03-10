@@ -179,3 +179,4 @@ Target solver: CVC4
   (valid (get_state state_var1) state_var1) (get_state state_var1)
   state_var1)) (= (valid (get_state state_var) state_var) true)))))))))))
 (check-sat)
+(exit)

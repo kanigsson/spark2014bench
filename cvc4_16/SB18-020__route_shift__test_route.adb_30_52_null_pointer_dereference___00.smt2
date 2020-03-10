@@ -601,3 +601,4 @@ Target solver: CVC4
   (=> (not (= (bool_eq r us_null_pointer1) true))
   (rec__test_route__route_acc__pointer_value__pred r)))))
 (check-sat)
+(exit)

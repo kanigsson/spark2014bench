@@ -438,3 +438,4 @@ Target solver: CVC4
   (=> (dynamic_invariant current true false true true) (in_range1
   (mod2 (+ current 1) 100))))))
 (check-sat)
+(exit)

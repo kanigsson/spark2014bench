@@ -639,3 +639,4 @@ Target solver: CVC4
   (=> (< 1 i)
   (let ((o (- i 2))) (=> (in_range2 o) (in_range1 (power 256 o)))))))))))))))))))))))
 (check-sat)
+(exit)

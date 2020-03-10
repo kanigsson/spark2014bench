@@ -1154,3 +1154,4 @@ Target solver: CVC4
   (and (dynamic_invariant3 o1 true false true true) (= o1 (- (rate_of o) 2))))
   (=> (<= in_data_bit_length o1) (in_range (+ in_data_bit_length 7))))))))))))
 (check-sat)
+(exit)

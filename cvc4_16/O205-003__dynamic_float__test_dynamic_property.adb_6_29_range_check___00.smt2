@@ -296,3 +296,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 c true false true true) (dynamic_property1
   (fp #b0 #b01111111 #b00000000000000000000000) last1 c))))))))))
 (check-sat)
+(exit)

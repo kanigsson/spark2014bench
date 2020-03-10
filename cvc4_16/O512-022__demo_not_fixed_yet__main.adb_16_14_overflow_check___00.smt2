@@ -828,3 +828,4 @@ Target solver: CVC4
   (forall ((a2 Int))
   (=> (dynamic_invariant a2 true true true true) (in_range1 (+ y1 a2))))))))))))))))))))))
 (check-sat)
+(exit)

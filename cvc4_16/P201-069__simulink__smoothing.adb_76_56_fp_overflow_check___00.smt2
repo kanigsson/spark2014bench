@@ -190,3 +190,4 @@ Target solver: CVC4
   (=> (= smoother_value_out11 o3)
   (fp.isFinite64 (fp.sub RNE smoother_value_out11 prior_value)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

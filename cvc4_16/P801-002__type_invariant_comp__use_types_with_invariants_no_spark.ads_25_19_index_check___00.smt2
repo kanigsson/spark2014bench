@@ -489,3 +489,4 @@ Target solver: CVC4
       (rec__use_types_with_invariants_no_spark__container__content
       (us_split_fields1 c))) i))))))
 (check-sat)
+(exit)

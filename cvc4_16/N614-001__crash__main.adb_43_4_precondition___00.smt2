@@ -1357,3 +1357,4 @@ Target solver: CVC4
   (= (subset1 (of_array1 x o3 o2)
      (of_array1 a (to_rep1 a__first) (to_rep1 a__last))) true))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

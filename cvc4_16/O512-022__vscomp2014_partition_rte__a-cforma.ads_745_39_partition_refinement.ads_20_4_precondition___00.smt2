@@ -1056,3 +1056,4 @@ Target solver: CVC4
  ;; File "a-cforma.ads", line 735, characters 0-0
   (not true))
 (check-sat)
+(exit)

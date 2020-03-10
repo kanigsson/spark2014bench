@@ -330,3 +330,4 @@ Target solver: CVC4
   (forall ((k (Array Int integer)))
   (=> (= k agg1) (= (to_rep (select k 1)) 2)))))))))))))))))))
 (check-sat)
+(exit)

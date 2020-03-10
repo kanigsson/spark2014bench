@@ -1629,3 +1629,4 @@ Target solver: CVC4
   (forall ((q_hat2 (_ BitVec 16)))
   (=> (dynamic_invariant6 q_hat2 true true true true) (in_range1 j1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

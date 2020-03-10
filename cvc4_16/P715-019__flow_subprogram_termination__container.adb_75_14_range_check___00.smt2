@@ -744,3 +744,4 @@ Target solver: CVC4
   (let ((o (+ x3 1))) (and (in_range4 o) (and (= x2 o) (< x2 0))))))
   (in_range4 (+ x2 1)))))))))))))))))))
 (check-sat)
+(exit)

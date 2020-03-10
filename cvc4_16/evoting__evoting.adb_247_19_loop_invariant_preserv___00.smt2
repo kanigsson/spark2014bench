@@ -483,3 +483,4 @@ Target solver: CVC4
   (forall ((k Int))
   (=> (and (<= 0 k) (<= k (- j2 1))) (not (= (select winners5 k) true)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

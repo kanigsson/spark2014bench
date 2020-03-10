@@ -621,3 +621,4 @@ Target solver: CVC4
   (=> (not (= spark__branch2 true))
   (bvuge (bvsub (to_rep1 (select (to_array message) start)) #x80) #x01)))))))))))))))))))))))))))
 (check-sat)
+(exit)

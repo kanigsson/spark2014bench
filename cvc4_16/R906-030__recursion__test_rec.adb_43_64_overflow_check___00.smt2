@@ -500,3 +500,4 @@ Target solver: CVC4
   (=> (in_range1 o3)
   (forall ((cs1 Int)) (=> (= cs1 o3) (in_range1 (- i 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

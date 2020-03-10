@@ -469,3 +469,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 o2) true false) (ite (<= o2 1000) true false)) true)
   (in_range1 (+ longest_common_prefix__lcp__result y))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

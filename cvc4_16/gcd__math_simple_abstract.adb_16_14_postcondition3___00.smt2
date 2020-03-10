@@ -271,3 +271,4 @@ Target solver: CVC4
   (=> (divides__function_guard (divides arg2 arg1) arg2 arg1)
   (not (= (divides arg2 arg1) true)))))))))
 (check-sat)
+(exit)

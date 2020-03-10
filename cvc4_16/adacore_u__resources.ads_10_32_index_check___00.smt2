@@ -327,3 +327,4 @@ Target solver: CVC4
   (= o2 (ite (= o 0) 0 (+ (to_rep (select o1 o)) (sum o1 (- o 1)))))))
   (<= 1 to__)))))))))))
 (check-sat)
+(exit)

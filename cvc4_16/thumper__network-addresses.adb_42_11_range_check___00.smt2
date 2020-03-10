@@ -870,3 +870,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 value false false true true)
   (=> (<= (first1 text) (last1 text)) (<= 1 (first1 text)))))))))))
 (check-sat)
+(exit)

@@ -405,3 +405,4 @@ Target solver: CVC4
   (=> (forall ((rax2 (_ BitVec 64))) (ax__function_guard (ax rax2) rax2))
   (= (ax rax1) val__))))))))
 (check-sat)
+(exit)

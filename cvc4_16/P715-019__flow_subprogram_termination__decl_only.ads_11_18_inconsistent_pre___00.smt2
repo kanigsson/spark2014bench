@@ -105,3 +105,4 @@ Target solver: CVC4
   (=> (returning_precondition__function_guard (returning_precondition 4 4) 4
   4) (not (= (returning_precondition 4 4) true)))))
 (check-sat)
+(exit)

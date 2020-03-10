@@ -662,3 +662,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select cut2 top2)) o7)
   (<= (to_rep cut__first) (- top2 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

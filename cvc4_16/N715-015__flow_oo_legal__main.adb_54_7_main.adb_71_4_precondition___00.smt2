@@ -2078,3 +2078,4 @@ Target solver: CVC4
   (to_base (us_repqtmk1 rambo__split_fields2 o9))))
   (= (is_alive (to_base (us_repqtmk1 rambo__split_fields1 rambo__attr__tag))) true)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

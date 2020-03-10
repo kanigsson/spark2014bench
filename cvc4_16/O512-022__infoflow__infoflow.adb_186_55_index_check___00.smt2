@@ -413,3 +413,4 @@ Target solver: CVC4
                                               false)) true)
   (<= (first1 c_v1) (- usf k_1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -320,3 +320,4 @@ Target solver: CVC4
   (and (and (<= 0 i1) (<= i1 100)) (and (= a12 (store a13 i1 o3)) (= i1 0))))))))))))
   (= a12 a11)))))) (=> (<= 0 k2) (<= 0 0))))))))))))))))
 (check-sat)
+(exit)

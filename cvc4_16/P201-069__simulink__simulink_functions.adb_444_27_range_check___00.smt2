@@ -179,3 +179,4 @@ Target solver: CVC4
   (=> (fp.isFinite32 o) (in_range
   (to_int (fp.to_real (fp.roundToIntegral RNA (fp.roundToIntegral RTN o))))))))))))))
 (check-sat)
+(exit)

@@ -366,3 +366,4 @@ Target solver: CVC4
   (not (= (ite (= left_is_out true) true (select number_list left1)) true))
   (<= 0 left1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

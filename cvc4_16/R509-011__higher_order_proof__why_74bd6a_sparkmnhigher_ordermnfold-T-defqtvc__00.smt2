@@ -1418,3 +1418,4 @@ Target solver: CVC4
   (=> (count__function_guard (count a) a)
   (= (count a) (* (length a) (length_2 a))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

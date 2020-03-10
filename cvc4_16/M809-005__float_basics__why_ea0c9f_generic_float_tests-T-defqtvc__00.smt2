@@ -171,3 +171,4 @@ Target solver: CVC4
   (=> (fp.isFinite32 o)
   (forall ((a1 Float32)) (=> (= a1 o) (not (fp.isZero a1)))))))))))))
 (check-sat)
+(exit)

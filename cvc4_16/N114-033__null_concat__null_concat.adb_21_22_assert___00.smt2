@@ -426,3 +426,4 @@ Target solver: CVC4
   (=> (= null_concat__p_bad__a3__assume a3)
   (=> (dynamic_invariant a3 true false true true) (= (first1 a3) 1)))))))))))
 (check-sat)
+(exit)

@@ -422,3 +422,4 @@ Target solver: CVC4
   (=> (<= 0 temp___230)
   (=> (<= temp___230 2) (= (attr__init (select y3 temp___230)) true))))))))))))))))))))
 (check-sat)
+(exit)

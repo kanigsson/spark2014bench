@@ -800,3 +800,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select r1 o3)) o4) (dynamic_property 1 100 (first1 a)
   (last1 a))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

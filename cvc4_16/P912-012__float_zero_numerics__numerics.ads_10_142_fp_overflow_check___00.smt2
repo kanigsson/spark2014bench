@@ -167,3 +167,4 @@ Target solver: CVC4
   (forall ((numerics__Oadd__result Float32))
   (=> (= numerics__Oadd__result o) (fp.isFinite32 (fp.add RNE left right))))))))))
 (check-sat)
+(exit)

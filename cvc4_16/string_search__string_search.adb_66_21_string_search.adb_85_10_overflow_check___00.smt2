@@ -601,3 +601,4 @@ Target solver: CVC4
   (=> (= shift o14)
   (=> (dynamic_invariant shift true false true true) (in_range1 (+ i1 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

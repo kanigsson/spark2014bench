@@ -240,3 +240,4 @@ Target solver: CVC4
      (rec__main__my_complex_pkg__complex_type__imag (us_split_fields1 left))) o1)
   (let ((o2 (+ o1 o))) (=> (in_range1 o2) (in_range o2))))))))
 (check-sat)
+(exit)

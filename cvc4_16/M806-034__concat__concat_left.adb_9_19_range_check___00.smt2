@@ -319,3 +319,4 @@ Target solver: CVC4
   (=> (or (< (last1 y) 2147483647) (< (- 2147483648) (first1 y))) (in_range
   (- (+ (- 2147483648) (+ 1 (length (first1 y) (last1 y)))) 1)))))))
 (check-sat)
+(exit)

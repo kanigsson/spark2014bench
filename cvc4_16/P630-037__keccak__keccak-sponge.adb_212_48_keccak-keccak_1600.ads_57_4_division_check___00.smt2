@@ -1601,3 +1601,4 @@ Target solver: CVC4
                                                            ctx__split_fields1))))))))))))
   (= ctx__split_fields1 ctx__split_fields)))) (not (= 8 0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -938,3 +938,4 @@ Target solver: CVC4
   q amortized_queue__model__result1))
   (= (is_model q amortized_queue__model__result) true))))))))))))))))))))))
 (check-sat)
+(exit)

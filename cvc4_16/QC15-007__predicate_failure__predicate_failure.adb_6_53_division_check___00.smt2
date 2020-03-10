@@ -229,3 +229,4 @@ Target solver: CVC4
  ;; File "predicate_failure.adb", line 6, characters 0-0
   (not (=> (dynamic_invariant i4b true false false true) (not (= 2 0)))))
 (check-sat)
+(exit)

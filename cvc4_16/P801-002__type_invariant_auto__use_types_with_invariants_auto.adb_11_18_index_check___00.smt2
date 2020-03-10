@@ -640,3 +640,4 @@ Target solver: CVC4
         c__split_discrs)))
   (<= (first1 c__split_fields) i))))))))
 (check-sat)
+(exit)

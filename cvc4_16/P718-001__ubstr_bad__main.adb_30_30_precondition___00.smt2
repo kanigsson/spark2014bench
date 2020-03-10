@@ -616,3 +616,4 @@ Target solver: CVC4
   (=> (forall ((o7 us_rep)) (length__function_guard (length1 o7) o7))
   (< (length1 o6) 500000))))))))))))))))))))))))))
 (check-sat)
+(exit)

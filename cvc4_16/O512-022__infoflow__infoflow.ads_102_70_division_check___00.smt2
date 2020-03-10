@@ -477,3 +477,4 @@ Target solver: CVC4
   (and (= (to_rep h_v1__last) o2) (= o (ite (< (div1 o2 2) i) true false))))
   (= o false)))) (=> (= o true) (not (= 2 0))))))))))
 (check-sat)
+(exit)

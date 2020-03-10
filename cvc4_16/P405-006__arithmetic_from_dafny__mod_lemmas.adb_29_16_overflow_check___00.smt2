@@ -243,3 +243,4 @@ Target solver: CVC4
   (=> (=> (= d (- 1)) (not (= x (- 2147483648))))
   (let ((o (div1 x d))) (=> (in_range1 o) (in_range1 (* d o))))))))))))
 (check-sat)
+(exit)

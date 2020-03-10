@@ -518,3 +518,4 @@ Target solver: CVC4
   (=> (exists ((o8 Int)) (= (to_rep (select (to_array b) o7)) o8))
   (<= (first1 p_max_array__max_array_2__result) usf))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -450,3 +450,4 @@ Target solver: CVC4
   (=> (in_range2 (+ x2 1))
   (=> (in_range4 (- z1 1)) (=> (in_range3 (- y1 1)) (in_range2 (- x1 1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

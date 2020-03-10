@@ -199,3 +199,4 @@ Target solver: CVC4
   (my_prop__function_guard (my_prop (select w1 1) (select z1 1))
   (select w1 1) (select z1 1))) (= (my_prop (select w 1) (select z 1)) true))))))
 (check-sat)
+(exit)

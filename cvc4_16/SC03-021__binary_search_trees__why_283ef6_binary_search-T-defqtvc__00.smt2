@@ -478,3 +478,4 @@ Target solver: CVC4
         2147483647))))
   (let ((o9 (+ o8 o6))) (=> (in_range o9) (in_range (+ o9 1))))))))))))))))))))))
 (check-sat)
+(exit)

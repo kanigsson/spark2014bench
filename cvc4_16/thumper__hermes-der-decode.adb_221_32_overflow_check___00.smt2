@@ -548,3 +548,4 @@ Target solver: CVC4
   (=> (< (first1 message) length_stop)
   (=> (< length_stop (last1 message)) (in_range1 (+ length_stop length1))))))))))))))
 (check-sat)
+(exit)

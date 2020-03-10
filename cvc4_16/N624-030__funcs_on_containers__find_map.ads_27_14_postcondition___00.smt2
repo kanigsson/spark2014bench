@@ -2070,3 +2070,4 @@ Target solver: CVC4
   (=> (and (<= (first1 a) i) (<= i (last1 a)))
   (= (contains find_map__find_all__result (to_rep (select (to_array a) i))) true))))))))))))))))))))
 (check-sat)
+(exit)

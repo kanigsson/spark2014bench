@@ -1119,3 +1119,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 (argument 1) true false true true)
   (not (= (is_open file) true)))))))))))))))
 (check-sat)
+(exit)

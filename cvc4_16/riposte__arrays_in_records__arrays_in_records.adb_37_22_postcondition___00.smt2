@@ -370,3 +370,4 @@ Target solver: CVC4
      (select (rec__arrays_in_records__record_with_arrays__first_array
              a__split_fields1) 17)) 23)))))
 (check-sat)
+(exit)

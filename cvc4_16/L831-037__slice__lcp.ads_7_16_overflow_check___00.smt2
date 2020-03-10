@@ -458,3 +458,4 @@ Target solver: CVC4
   (and (and (<= (first1 a) y) (<= y (last1 a)))
   (and (<= (first1 a) o1) (<= o1 (last1 a))))) (in_range1 (+ x lcp__result))))))))))))))))))))))))
 (check-sat)
+(exit)

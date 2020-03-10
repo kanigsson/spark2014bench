@@ -362,3 +362,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 eof true false true true)
   (=> (dynamic_invariant cur_position false false true true) (not (= 256 0)))))))
 (check-sat)
+(exit)

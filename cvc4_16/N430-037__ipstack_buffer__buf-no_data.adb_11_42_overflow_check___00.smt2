@@ -98,3 +98,4 @@ Target solver: CVC4
   (=> (dynamic_invariant buf_list true false true true) (in_range
   (+ buf_list 1)))))))
 (check-sat)
+(exit)

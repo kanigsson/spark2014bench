@@ -425,3 +425,4 @@ Target solver: CVC4
  ;; File "hello.adb", line 39, characters 0-0
   (not true))
 (check-sat)
+(exit)

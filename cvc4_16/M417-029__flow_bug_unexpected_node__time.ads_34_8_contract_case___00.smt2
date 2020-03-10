@@ -488,3 +488,4 @@ Target solver: CVC4
   (to_rep1 (rec__time__t__minutes (us_split_fields1 x))) 59)) true)
   (= (to_rep2 (rec__time__t__seconds time__t_increment__result)) 0)))))))))
 (check-sat)
+(exit)

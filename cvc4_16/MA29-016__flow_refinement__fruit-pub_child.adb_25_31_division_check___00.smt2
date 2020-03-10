@@ -336,3 +336,4 @@ Target solver: CVC4
   apples oranges extra_cost) (dynamic_invariant o2 true false true true))
   (not (= oranges_in_fruit_salad 0)))))))))))))))))
 (check-sat)
+(exit)

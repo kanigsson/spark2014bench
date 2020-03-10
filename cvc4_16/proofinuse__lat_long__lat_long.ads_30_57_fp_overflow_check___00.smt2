@@ -672,3 +672,4 @@ Target solver: CVC4
   (= (olt (fp.abs o22) (fp #b0 #b10010111 #b00110001001111000100110)) true))))
   (fp.isFinite32 (fp.mul RNE o22 o19))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

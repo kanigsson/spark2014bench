@@ -1278,3 +1278,4 @@ Target solver: CVC4
   (=> (= (to_rep result____first) o15)
   (<= (to_rep result____first) result_index2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -131,3 +131,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c false false true true)
   (<= 1 (+ (+ 0 (ite (= (> a b) true) 1 0)) (ite (= (< b a) true) 1 0)))))))))
 (check-sat)
+(exit)

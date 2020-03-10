@@ -459,3 +459,4 @@ Target solver: CVC4
   (=> (<= n (length l))
   (=> (= n 1) (rec__test_goto_borrow__list__pointer_value__pred l)))))))
 (check-sat)
+(exit)

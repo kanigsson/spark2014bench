@@ -308,3 +308,4 @@ Target solver: CVC4
   (fp #b0 #b10000011 #b11100000000000000000000)) (dynamic_invariant2 o2 true
   false true true)) (forall ((x1 Float32)) (=> (= x1 o2) (fp.leq x1 c)))))))))))))))))))))
 (check-sat)
+(exit)

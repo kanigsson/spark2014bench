@@ -426,3 +426,4 @@ Target solver: CVC4
   (= mul_div_2__mul_div__result (ite (<= 0 v) (div1 (+ (* v m) (div1 d 2)) d)
                                 (- (div1 (+ (* (- v) m) (div1 d 2)) d))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -800,3 +800,4 @@ Target solver: CVC4
   (=> (forall ((o3 us_rep)) (empty__function_guard (empty o3) o3))
   (not (= (empty a) true)))))))))))))))))))))
 (check-sat)
+(exit)

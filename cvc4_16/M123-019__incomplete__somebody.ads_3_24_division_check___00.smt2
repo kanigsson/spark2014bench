@@ -243,3 +243,4 @@ Target solver: CVC4
   (and (dynamic_invariant o true false true true) (= o (div1 x 2))))
   (forall ((x1 Int)) (=> (= x1 o) (not (= 2 0))))))))))
 (check-sat)
+(exit)

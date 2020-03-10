@@ -224,3 +224,4 @@ Target solver: CVC4
   (=> (not (= (rec__alloc__int_ptr__is_null_pointer temp___alloc_190) true))
   (=> (= (to_rep usf) (- 12345)) (=> (= (to_rep usf) o) (in_range o))))))))
 (check-sat)
+(exit)

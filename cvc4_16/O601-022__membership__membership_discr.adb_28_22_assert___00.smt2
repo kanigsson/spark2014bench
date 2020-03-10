@@ -335,3 +335,4 @@ Target solver: CVC4
   r02__attr__tag) false false true true)
   (=> (= r02__attr__tag us_tag) (in_range2 0 r02__split_discrs)))))))
 (check-sat)
+(exit)

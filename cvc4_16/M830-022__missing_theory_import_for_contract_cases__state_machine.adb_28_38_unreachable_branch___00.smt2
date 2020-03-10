@@ -231,3 +231,4 @@ Target solver: CVC4
   (=> (=> (= (state_c flag num) true) (= (state_b flag1 num1) true))
   (not (= (state_d flag num) true)))))))))))))))))))
 (check-sat)
+(exit)

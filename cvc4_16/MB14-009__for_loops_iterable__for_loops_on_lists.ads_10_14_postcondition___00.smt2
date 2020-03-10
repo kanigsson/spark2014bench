@@ -946,3 +946,4 @@ Target solver: CVC4
   (= (iter_has_element temp___1009 temp___1008) true))
   (not (= (get temp___1009 temp___1008) 0))))))))))))
 (check-sat)
+(exit)

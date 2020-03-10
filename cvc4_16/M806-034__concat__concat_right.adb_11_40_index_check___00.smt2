@@ -338,3 +338,4 @@ Target solver: CVC4
   (to_rep z__last))
   (=> (= (to_rep z__first) (first1 y)) (<= (first1 y) (first1 y))))))))))))))
 (check-sat)
+(exit)

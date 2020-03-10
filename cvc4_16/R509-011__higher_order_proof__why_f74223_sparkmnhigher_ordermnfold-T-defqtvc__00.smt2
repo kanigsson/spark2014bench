@@ -1291,3 +1291,4 @@ Target solver: CVC4
   (=> (= o1 true)
   (=> (<= (first_2 a2) usf1) (=> (<= usf1 (last_2 a2)) (<= (first2 a2) usf))))))))))))))))
 (check-sat)
+(exit)

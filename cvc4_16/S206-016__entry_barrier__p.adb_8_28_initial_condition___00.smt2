@@ -121,3 +121,4 @@ Target solver: CVC4
  ;; File "p.adb", line 8, characters 0-0
   (not (forall ((self__ Bool)) (= self__ true))))
 (check-sat)
+(exit)

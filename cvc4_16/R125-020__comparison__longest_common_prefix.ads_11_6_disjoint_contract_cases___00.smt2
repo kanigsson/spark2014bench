@@ -372,3 +372,4 @@ Target solver: CVC4
   (<= (+ (+ 0 (ite (= (not (= (to_rep (select a x)) (to_rep (select a y)))) true)
               1 0)) (ite (= (= x y) true) 1 0)) 1))))))))))
 (check-sat)
+(exit)

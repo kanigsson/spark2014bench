@@ -421,3 +421,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 usf) true false) (ite (<= usf (- i 1)) true false)) true)
   (=> (< latest_highest_score1 usf) (<= 0 usf))))))))))))))))))
 (check-sat)
+(exit)

@@ -100,3 +100,4 @@ Target solver: CVC4
   (=> (in_range o)
   (forall ((tmp1 Int)) (=> (= tmp1 o) (in_range (+ tmp1 1)))))))))))
 (check-sat)
+(exit)

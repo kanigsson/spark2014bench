@@ -321,3 +321,4 @@ Target solver: CVC4
   (= i1 temp___183)))))))) (= a1 a))))))
   (=> (<= l n) (=> (<= n u) (= (to_rep (select a1 n)) 0)))))))))
 (check-sat)
+(exit)

@@ -342,3 +342,4 @@ Target solver: CVC4
   (= (bool_eq s (to_rep1 s__first) (to_rep1 s__last) s1 (to_rep1 s__first)
      (to_rep1 s__last)) true)))))))))))))))
 (check-sat)
+(exit)

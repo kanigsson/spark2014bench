@@ -115,3 +115,4 @@ Target solver: CVC4
   (=> (dynamic_invariant tmp_s false false true true)
   (=> (<= 1 (- y x)) (<= (- 2147483648) 1))))))))
 (check-sat)
+(exit)

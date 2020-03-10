@@ -281,3 +281,4 @@ Target solver: CVC4
   (=> (= max tmp)
   (=> (dynamic_invariant tmp true false true true) (in_range tmp))))))))
 (check-sat)
+(exit)

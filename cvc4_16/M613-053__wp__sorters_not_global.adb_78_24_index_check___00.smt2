@@ -291,3 +291,4 @@ Target solver: CVC4
   (forall ((o2 Int))
   (=> (= (to_rep (select values1 usf)) o2) (<= 1 current))))))))))))))))))))))
 (check-sat)
+(exit)

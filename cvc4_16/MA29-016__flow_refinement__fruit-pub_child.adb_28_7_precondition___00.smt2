@@ -364,3 +364,4 @@ Target solver: CVC4
   (<= o2 (number_of_oranges price_of_apple1 price_of_orange1 apples1 oranges1
          extra_cost1)))))))))))))))))))))
 (check-sat)
+(exit)

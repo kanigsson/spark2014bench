@@ -323,3 +323,4 @@ Target solver: CVC4
   (=> (dynamic_invariant denom true false true true)
   (=> (<= num1 num2) (in_range1 (fxp_div_int num1 denom))))))))
 (check-sat)
+(exit)

@@ -333,3 +333,4 @@ Target solver: CVC4
   (=> (= (length s1) k)
   (forall ((j Int)) (=> (and (<= 1 j) (<= j k)) (= (get s1 j) j))))))))))))))))
 (check-sat)
+(exit)

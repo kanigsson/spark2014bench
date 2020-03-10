@@ -451,3 +451,4 @@ Target solver: CVC4
   (=> (dynamic_invariant right false false true true)
   (=> (< space 8) (not (= space 0)))))))))))))
 (check-sat)
+(exit)

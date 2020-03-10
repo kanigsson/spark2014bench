@@ -213,3 +213,4 @@ Target solver: CVC4
   (=> (<= 1 temp___205)
   (=> (<= temp___205 2) (type_invariant (to_rep (select x temp___205)))))))))
 (check-sat)
+(exit)

@@ -304,3 +304,4 @@ Target solver: CVC4
   (=> (not (= (or (ite (= n 0) true false) (ite (= n 1) true false)) true))
   (in_range3 (- n 2))))))
 (check-sat)
+(exit)

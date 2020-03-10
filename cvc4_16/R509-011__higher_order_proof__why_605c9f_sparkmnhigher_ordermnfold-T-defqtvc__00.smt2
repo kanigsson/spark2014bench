@@ -1408,3 +1408,4 @@ Target solver: CVC4
   (= j1 temp___1871)))))))))))))))) (= i1 temp___1869))))))))))))))))
   (in_range1 (length_2 a))))))))))))))))))))))))))))
 (check-sat)
+(exit)

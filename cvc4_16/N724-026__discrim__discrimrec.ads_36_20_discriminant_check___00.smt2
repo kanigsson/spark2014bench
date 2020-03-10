@@ -2672,3 +2672,4 @@ Target solver: CVC4
   (discrimrec__register_type__value_64__pred
   (us_repqtmk rax__split_discrs rax__split_fields2)))))))))))))))))))))))))
 (check-sat)
+(exit)

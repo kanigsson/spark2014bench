@@ -1973,3 +1973,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i o) true false)) true)
   (let ((o1 (- (first1 s) 1))) (=> (in_range1 o1) (in_range1 (+ i o1)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -2144,3 +2144,4 @@ Target solver: CVC4
   (= (select usf temp___1083) (select digest2 temp___1083)))) (in_range6
   remaining2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

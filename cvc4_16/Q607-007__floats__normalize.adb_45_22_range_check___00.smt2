@@ -215,3 +215,4 @@ Target solver: CVC4
   (=> (fp.leq v11 (fp #b0 #b10000000 #b00000000000000000000000)) (in_range1
   (fp.roundToIntegral RTN v11)))))))))))
 (check-sat)
+(exit)

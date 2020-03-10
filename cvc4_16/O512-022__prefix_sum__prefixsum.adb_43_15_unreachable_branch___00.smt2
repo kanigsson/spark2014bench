@@ -587,3 +587,4 @@ Target solver: CVC4
   (and (<= (- o1) temp___180) (<= temp___180 o1)))))))))) (= o false))
   (not (= o true)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

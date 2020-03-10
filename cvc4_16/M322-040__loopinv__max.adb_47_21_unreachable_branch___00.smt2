@@ -234,3 +234,4 @@ Target solver: CVC4
                            (= (to_rep (select a n)) usf)))
                       true false)) true))))))))))))))
 (check-sat)
+(exit)

@@ -210,3 +210,4 @@ Target solver: CVC4
                                                           true false)))
   (=> (= s__result true) (= low 1))))))))
 (check-sat)
+(exit)

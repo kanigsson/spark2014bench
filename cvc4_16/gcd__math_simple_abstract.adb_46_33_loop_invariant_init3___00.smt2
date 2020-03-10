@@ -295,3 +295,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (not (= (divides c a) true))
   (not (= (divides c b) true)))) (< 1 c))))))))))))))))
 (check-sat)
+(exit)

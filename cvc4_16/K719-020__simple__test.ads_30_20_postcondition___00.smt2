@@ -303,3 +303,4 @@ Target solver: CVC4
                       (store (rec__test__t__c x__split_fields) 2 rliteral)))
   (= (to_rep (select (rec__test__t__c x__split_fields1) 2)) 1)))))
 (check-sat)
+(exit)

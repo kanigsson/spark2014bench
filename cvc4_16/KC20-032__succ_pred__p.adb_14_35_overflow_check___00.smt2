@@ -130,3 +130,4 @@ Target solver: CVC4
   (=> (not (= n 2147483647))
   (let ((o n)) (=> (not (= o 2147483647)) (not (= (+ o 1) (- 2147483648)))))))))
 (check-sat)
+(exit)

@@ -343,3 +343,4 @@ Target solver: CVC4
                               rliteral))
   (= (to_rep (rec__p__type_1__field_0 p__create_type_1__result)) 0)))))
 (check-sat)
+(exit)

@@ -60,3 +60,4 @@ Target solver: CVC4
   (forall ((proc__nested__get__result Bool))
   (= proc__nested__get__result true))))
 (check-sat)
+(exit)

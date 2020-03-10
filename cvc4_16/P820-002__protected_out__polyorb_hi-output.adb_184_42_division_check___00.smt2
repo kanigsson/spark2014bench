@@ -1028,3 +1028,4 @@ Target solver: CVC4
   (forall ((o1 (_ BitVec 8)))
   (=> (= (to_rep3 (select (to_array1 stream) j1)) o1) (not (= #x10 #x00)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

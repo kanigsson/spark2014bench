@@ -548,3 +548,4 @@ Target solver: CVC4
   (=> (<= (to_rep result____first) (to_rep result____last))
   (<= 0 (to_rep result____first))))))))))))
 (check-sat)
+(exit)

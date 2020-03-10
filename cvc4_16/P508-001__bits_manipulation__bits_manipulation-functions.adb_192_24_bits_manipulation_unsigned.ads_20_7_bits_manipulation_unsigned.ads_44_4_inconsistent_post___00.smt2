@@ -247,3 +247,4 @@ Target solver: CVC4
   (ite (< n 4294967296) (bvshl #x00000001 ((_ int2bv 32) n)) #x00000000)) 
   (ite (< n 4294967296) (bvshl #x00000001 ((_ int2bv 32) n)) #x00000000))))))))))))
 (check-sat)
+(exit)

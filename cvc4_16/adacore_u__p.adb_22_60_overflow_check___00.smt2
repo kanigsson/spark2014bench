@@ -255,3 +255,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 size1) true false) (ite (<= size1 10) true false)) true)
   (let ((o3 (* 2 size1))) (=> (in_range1 o3) (in_range1 (- 2147483647 o3)))))))))))))))))))))))))))
 (check-sat)
+(exit)

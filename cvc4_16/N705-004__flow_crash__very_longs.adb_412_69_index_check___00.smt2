@@ -797,3 +797,4 @@ Target solver: CVC4
   (=> (= new_overflow2 (bvand o2 overflow_mask1))
   (<= (first1 number__split_fields1) i1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

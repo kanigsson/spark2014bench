@@ -368,3 +368,4 @@ Target solver: CVC4
   (=> (forall ((c1 Int)) (oand__function_guard (oand c1 c1) c1 c1))
   (= (oand c c) true)))))))))))))))))))))))))))
 (check-sat)
+(exit)

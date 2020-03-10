@@ -152,3 +152,4 @@ Target solver: CVC4
   (= spark__branch true)))))))))
   (=> (= count__count__result res1) (< max count__count__result)))))))))))))
 (check-sat)
+(exit)

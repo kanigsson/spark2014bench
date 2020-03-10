@@ -1103,3 +1103,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (get1 r usf o6)) o7)
   (=> (and (<= (first_2 a) usf1) (<= usf1 (last_2 a))) (<= (first4 a) usf)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

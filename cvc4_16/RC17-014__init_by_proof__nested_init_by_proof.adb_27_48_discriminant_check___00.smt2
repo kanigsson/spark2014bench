@@ -363,3 +363,4 @@ Target solver: CVC4
      (rec__value (rec__nested_init_by_proof__rec__f3 (us_split_fields1 y)))) o1)
   (nested_init_by_proof__rec__f3__pred x)))))))))))
 (check-sat)
+(exit)

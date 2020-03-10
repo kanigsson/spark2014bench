@@ -103,3 +103,4 @@ Target solver: CVC4
   (=> (dynamic_invariant y true false true true)
   (=> (= x1 10) (=> (not (<= y x1)) (< temp___loop_entry_157 y)))))))))))
 (check-sat)
+(exit)

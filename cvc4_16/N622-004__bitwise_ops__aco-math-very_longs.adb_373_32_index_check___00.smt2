@@ -930,3 +930,4 @@ Target solver: CVC4
   (=> (= (to_rep2 o8) (bvor o7 old_overflow1))
   (<= (first1 result____split_fields3) i1)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

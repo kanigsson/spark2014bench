@@ -880,3 +880,4 @@ Target solver: CVC4
   (and (sum_of__function_guard temp___235 2) (dynamic_invariant temp___235
   true false true true)) (<= 1 temp___235))))))))))
 (check-sat)
+(exit)

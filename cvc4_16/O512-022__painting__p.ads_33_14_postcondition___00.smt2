@@ -464,3 +464,4 @@ Target solver: CVC4
   (=> (= (plain_is_dot (us_repqtmk1 p__split_fields1) c d) true)
   (= (bool_eq (select (rec__p__painting__shadow p__split_fields2) c) d) true))))))))))))))
 (check-sat)
+(exit)

@@ -438,3 +438,4 @@ Target solver: CVC4
   (to_rep1 (select inventory2 i1))))
   (not (= (found_none (to_rep1 (select inventory1 i))) true))))))))))))
 (check-sat)
+(exit)

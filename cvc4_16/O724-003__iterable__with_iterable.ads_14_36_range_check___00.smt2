@@ -96,3 +96,4 @@ Target solver: CVC4
  ;; File "with_iterable.ads", line 1, characters 0-0
   (not (=> (dynamic_invariant max true false true true) (in_range 101))))
 (check-sat)
+(exit)

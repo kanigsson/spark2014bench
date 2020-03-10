@@ -303,3 +303,4 @@ Target solver: CVC4
   (=> (= j (- 3))
   (=> (dynamic_invariant j true false true true) (in_range (- 1)))))))))))
 (check-sat)
+(exit)

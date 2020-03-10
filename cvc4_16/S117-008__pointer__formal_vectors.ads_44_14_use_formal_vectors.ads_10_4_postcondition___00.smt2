@@ -1205,3 +1205,4 @@ Target solver: CVC4
   (=> (model__function_guard2 (model3 v) v)
   (= (model1 use_formal_vectors__my_vect__element__result) (get (model3 v) i)))))))))))))))))))))))
 (check-sat)
+(exit)

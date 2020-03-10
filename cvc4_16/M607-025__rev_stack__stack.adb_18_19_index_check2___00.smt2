@@ -699,3 +699,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__stack__stack__top s__split_fields1)) temp___296)
   (<= 1 temp___296))))))))))))))))))))
 (check-sat)
+(exit)

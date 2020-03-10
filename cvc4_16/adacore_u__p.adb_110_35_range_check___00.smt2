@@ -432,3 +432,4 @@ Target solver: CVC4
   (=> (= spark__branch end_of_seq)
   (=> (= spark__branch true) (in_range2 (max size_of_seq2 biggest_seq1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

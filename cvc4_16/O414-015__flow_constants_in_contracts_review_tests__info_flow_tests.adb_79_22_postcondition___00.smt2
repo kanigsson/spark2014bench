@@ -97,3 +97,4 @@ Target solver: CVC4
  ;; File "info_flow_tests.adb", line 75, characters 0-0
   (not true))
 (check-sat)
+(exit)

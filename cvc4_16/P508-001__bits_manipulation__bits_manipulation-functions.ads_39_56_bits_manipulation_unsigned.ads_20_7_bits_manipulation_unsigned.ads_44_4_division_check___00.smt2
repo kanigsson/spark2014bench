@@ -622,3 +622,4 @@ Target solver: CVC4
   (ite (< usf1 4294967296) (= o1 (bvshl #x00000001 ((_ int2bv 32) usf1)))
   (= o1 #x00000000)) (not (= o1 #x00000000))))))))))
 (check-sat)
+(exit)

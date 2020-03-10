@@ -1044,3 +1044,4 @@ Target solver: CVC4
   (rec__tester__ring_buffer__ring_buffer_type__head buffer__split_fields) o1
   (of_array (to_array temp___336) (first1 temp___336) (last1 temp___336)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

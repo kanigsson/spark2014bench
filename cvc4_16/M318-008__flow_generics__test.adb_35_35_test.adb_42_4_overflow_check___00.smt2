@@ -323,3 +323,4 @@ Target solver: CVC4
                       false)) true)
   (in_range1 (+ i1 (first1 b)))))))))))))))))))
 (check-sat)
+(exit)

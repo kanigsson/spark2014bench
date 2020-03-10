@@ -240,3 +240,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i 10) true false)) true)
   (=> (<= 1 (- i 1)) (<= 1 1))))))))))
 (check-sat)
+(exit)

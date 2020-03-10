@@ -84,3 +84,4 @@ Target solver: CVC4
  ;; File "test_might_not_return.ads", line 9, characters 0-0
   (not true))
 (check-sat)
+(exit)

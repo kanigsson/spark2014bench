@@ -220,3 +220,4 @@ Target solver: CVC4
  ;; File "pack.ads", line 11, characters 0-0
   (not true))
 (check-sat)
+(exit)

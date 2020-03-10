@@ -637,3 +637,4 @@ Target solver: CVC4
   (=> (length__function_guard (length1 this) this)
   (= (length bounded_dynamic_strings__value__result) (length1 this))))))))))))))))
 (check-sat)
+(exit)

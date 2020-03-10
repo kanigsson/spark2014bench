@@ -121,3 +121,4 @@ Target solver: CVC4
   (=> (forall ((gn1 Int)) (foo__function_guard (foo gn1) gn1))
   (= g (foo gn))))))))))
 (check-sat)
+(exit)

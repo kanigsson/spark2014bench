@@ -301,3 +301,4 @@ Target solver: CVC4
   (=> (= addr1 c13b)
   (=> (dynamic_invariant c13b true false true true) (in_range1 (- size1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

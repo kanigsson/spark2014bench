@@ -660,3 +660,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 acc true false true true)
   (=> (<= (first2 a) (last2 a)) (<= first3 (first2 a)))))))))))))
 (check-sat)
+(exit)

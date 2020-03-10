@@ -222,3 +222,4 @@ Target solver: CVC4
   (=> (dynamic_invariant res true false true true)
   (=> (not (= res 0)) (<= 1 res)))))
 (check-sat)
+(exit)

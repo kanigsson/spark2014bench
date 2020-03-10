@@ -574,3 +574,4 @@ Target solver: CVC4
                       false)) true)
   (<= 0 index_21)))))))))))))))))))
 (check-sat)
+(exit)

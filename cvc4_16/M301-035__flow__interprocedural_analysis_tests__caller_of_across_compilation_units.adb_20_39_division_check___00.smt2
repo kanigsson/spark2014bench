@@ -291,3 +291,4 @@ Target solver: CVC4
   (forall ((i1 Int))
   (=> (and (<= 2 i1) (<= i1 r4b)) (=> (= (mod2 x i1) 0) (not (= i1 0))))))))))))))))))))))))))
 (check-sat)
+(exit)

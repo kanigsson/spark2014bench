@@ -764,3 +764,4 @@ Target solver: CVC4
      (rec__linked_list__mylists__list__capacity target__split_discrs)) o1)
   (in_range3 (- o1 o))))))))))
 (check-sat)
+(exit)

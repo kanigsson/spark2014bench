@@ -409,3 +409,4 @@ Target solver: CVC4
   (us_repqtmk shapes5__make_circle__result1) wild_man1))
   (= (in_bounds (us_repqtmk shapes5__make_circle__result) wild_man) true)))))))))))))
 (check-sat)
+(exit)

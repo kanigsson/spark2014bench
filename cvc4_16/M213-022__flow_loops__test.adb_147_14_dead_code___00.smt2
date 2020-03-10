@@ -118,3 +118,4 @@ Target solver: CVC4
   (and (dynamic_invariant o true false true true) (= o 5)))
   (and (= a1 o) (< 1000 a1)))))))))))
 (check-sat)
+(exit)

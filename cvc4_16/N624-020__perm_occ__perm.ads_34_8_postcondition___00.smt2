@@ -605,3 +605,4 @@ Target solver: CVC4
   (=> (occ__function_guard (occ r e) r e)
   (=> (occ__function_guard (occ a e) a e) (= (occ r e) (occ a e)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

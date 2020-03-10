@@ -445,3 +445,4 @@ Target solver: CVC4
   (=> (<= (- 2147483648) i)
   (=> (<= i 2147483647) (=> (= (m_contains t i) true) (< i v))))))))))
 (check-sat)
+(exit)

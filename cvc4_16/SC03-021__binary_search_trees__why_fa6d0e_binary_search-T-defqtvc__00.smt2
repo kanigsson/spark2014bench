@@ -798,3 +798,4 @@ Target solver: CVC4
   (= (= (m_contains o2 i) true) (= (contains o3 i) true)))))
   (<= (- (length o3) (num_overlaps o3 o1)) (- 2147483647 (length o1))))))))))))))))
 (check-sat)
+(exit)

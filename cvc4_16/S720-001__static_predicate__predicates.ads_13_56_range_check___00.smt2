@@ -362,3 +362,4 @@ Target solver: CVC4
   (=> (dynamic_invariant i5s true false false true) (dynamic_property 1
   2147483647 1 4))))
 (check-sat)
+(exit)

@@ -362,3 +362,4 @@ Target solver: CVC4
   (let ((o10 (fp.add RNE position_y o9)))
   (=> (fp.isFinite32 o10) (fp.isFinite32 (fp.sub RNE o10 target_y)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -353,3 +353,4 @@ Target solver: CVC4
   (=> (from_integer__function_guard (from_integer (to_integer e))
   (to_integer e)) (= (bool_eq (from_integer (to_integer e)) e) true))))))))
 (check-sat)
+(exit)

@@ -296,3 +296,4 @@ Target solver: CVC4
   (=> (<= 1 temp___194)
   (=> (<= temp___194 2) (type_invariant (to_rep (select usf temp___194)))))))))
 (check-sat)
+(exit)

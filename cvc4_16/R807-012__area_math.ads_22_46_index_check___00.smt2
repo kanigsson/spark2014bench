@@ -772,3 +772,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (to_array temp___362) o1)) o2)
   (<= (first1 (rec__area_math__ensemble__to (us_split_fields1 e))) usf))))))))))))))))
 (check-sat)
+(exit)

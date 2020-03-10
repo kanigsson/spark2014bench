@@ -670,3 +670,4 @@ Target solver: CVC4
                     y__pointer_value))))
   (not (= spark__branch1 true)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

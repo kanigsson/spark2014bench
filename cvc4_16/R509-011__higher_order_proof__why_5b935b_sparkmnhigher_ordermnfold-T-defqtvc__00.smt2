@@ -852,3 +852,4 @@ Target solver: CVC4
   (=> (ind_prop__function_guard o9 o8 o7 temp___778)
   (=> (= o9 true) (dynamic_property first last (first2 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

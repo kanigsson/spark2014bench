@@ -135,3 +135,4 @@ Target solver: CVC4
   true true))
   (let ((o1 (+ o par1))) (=> (in_range o1) (in_range (- o1 y1))))))))))))))))
 (check-sat)
+(exit)

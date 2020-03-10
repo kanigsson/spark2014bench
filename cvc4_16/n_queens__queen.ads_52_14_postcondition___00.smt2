@@ -315,3 +315,4 @@ Target solver: CVC4
   (forall ((b2 (Array Int index))) (consistent__function_guard
   (consistent b2 8) b2 8)) (= (consistent b1 8) true))))))))))))))))))
 (check-sat)
+(exit)

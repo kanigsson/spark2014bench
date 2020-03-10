@@ -291,3 +291,4 @@ Target solver: CVC4
   (=> (= (is_nat32 strong_data_type) true)
   (data__t_strong_data_type__min_nat32__pred strong_data_type)))))
 (check-sat)
+(exit)

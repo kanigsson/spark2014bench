@@ -878,3 +878,4 @@ Target solver: CVC4
   (forall ((space2 Int))
   (=> (= space2 o) (=> (< space2 8) (< temp___253 space2)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

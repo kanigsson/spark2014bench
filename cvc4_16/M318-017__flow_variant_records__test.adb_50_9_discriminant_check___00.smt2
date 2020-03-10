@@ -477,3 +477,4 @@ Target solver: CVC4
   (= (rec__test__wibble__d v__split_discrs) (rec__test__wibble__d
                                             r__split_discrs))))))))))))
 (check-sat)
+(exit)

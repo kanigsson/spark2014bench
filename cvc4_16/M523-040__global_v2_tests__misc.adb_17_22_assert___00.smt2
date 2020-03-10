@@ -197,3 +197,4 @@ Target solver: CVC4
  ;; File "misc.ads", line 5, characters 0-0
   (not (forall ((g2 Bool)) (= g2 true))))
 (check-sat)
+(exit)

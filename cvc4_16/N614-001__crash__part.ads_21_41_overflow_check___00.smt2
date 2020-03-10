@@ -301,3 +301,4 @@ Target solver: CVC4
   (=> (dynamic_invariant p true false true true)
   (=> (not (< (length p) 2)) (in_range1 (- (last1 p) 1))))))
 (check-sat)
+(exit)

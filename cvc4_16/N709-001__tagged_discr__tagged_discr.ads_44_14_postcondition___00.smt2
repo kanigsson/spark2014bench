@@ -971,3 +971,4 @@ Target solver: CVC4
   (us_repqtmk1 v__split_discrs v__split_fields4 v__attr__tag)))
   (= (is_zero (us_repqtmk1 v__split_discrs v__split_fields3 v__attr__tag)) true))))))))
 (check-sat)
+(exit)

@@ -1652,3 +1652,4 @@ Target solver: CVC4
                          (us_repqtmk1 tmp__pointer_value1)))
   (rec__spark05__data__ap__pointer_value__pred aam__pointer_value2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

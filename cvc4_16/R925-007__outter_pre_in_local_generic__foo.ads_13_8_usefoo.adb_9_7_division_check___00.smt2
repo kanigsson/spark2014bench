@@ -545,3 +545,4 @@ Target solver: CVC4
   (=> (= (to_rep b__first) o13)
   (=> (in_range1 (length o13 o12)) (not (= 2 0))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

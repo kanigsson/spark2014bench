@@ -703,3 +703,4 @@ Target solver: CVC4
   (let ((usf1 (us_repqtmk usf)))
   (=> (default_initial_assumption2 usf1 false) (dynamic_predicate2 usf1))))))))))
 (check-sat)
+(exit)

@@ -270,3 +270,4 @@ Target solver: CVC4
   (=> (in_range1 o2)
   (=> (not (<= o2 o1)) (=> (in_range1 (abs1 b)) (in_range1 (abs1 bn)))))))))))))))))))))))
 (check-sat)
+(exit)

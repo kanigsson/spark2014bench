@@ -737,3 +737,4 @@ Target solver: CVC4
                   this__split_discrs)))))
   (in_range1 (length by__)))))))))))
 (check-sat)
+(exit)

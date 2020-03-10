@@ -68,3 +68,4 @@ Target solver: CVC4
  ;; File "p.ads", line 7, characters 0-0
   (not (=> (bad__function_guard (bad Tuple0) Tuple0) (= (bad Tuple0) true))))
 (check-sat)
+(exit)

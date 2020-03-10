@@ -146,3 +146,4 @@ Target solver: CVC4
   (not (= (and (ite (<= 1 j) true false) (ite (<= j x) true false)) true))
   (= dead_code__while_loop4__result1 dead_code__while_loop4__result)))))))))
 (check-sat)
+(exit)

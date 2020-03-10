@@ -390,3 +390,4 @@ Target solver: CVC4
   (=> (= (last1 temp___501) (+ (length s1) (length s2))) (dynamic_predicate2
   temp___501))))))))))))))))))))
 (check-sat)
+(exit)

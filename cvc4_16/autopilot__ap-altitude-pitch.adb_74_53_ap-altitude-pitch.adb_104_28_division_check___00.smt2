@@ -650,3 +650,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c22b true false true true)
   (=> (dynamic_invariant1 target_angle false false true true) (not (= 2 0))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -924,3 +924,4 @@ Target solver: CVC4
   (=> (= text3 (store text2 temp___350 o6))
   (forall ((o7 character)) (=> (= (to_rep o7) digit_02) (<= 1 (+ index2 2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1546,3 +1546,4 @@ Target solver: CVC4
   (and (<= (first1 message) message_last1)
   (<= message_last1 (last1 message))) (not (= 8 0))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

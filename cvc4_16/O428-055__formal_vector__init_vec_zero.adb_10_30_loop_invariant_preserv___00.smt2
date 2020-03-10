@@ -777,3 +777,4 @@ Target solver: CVC4
   (= (last_index
      (us_repqtmk v__split_discrs (us_split_fieldsqtmk v__split_fields3))) usf))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

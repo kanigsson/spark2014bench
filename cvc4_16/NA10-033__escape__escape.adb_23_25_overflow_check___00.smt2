@@ -469,3 +469,4 @@ Target solver: CVC4
   (forall ((result__3 (Array Int character)))
   (=> (= result__3 (store result__2 ti2 o6)) (in_range1 (+ ti2 1))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

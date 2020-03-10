@@ -477,3 +477,4 @@ Target solver: CVC4
                                                                1 0)) 
   (ite (= (and (not (is_prime value)) (= mode 2)) true) 1 0))))))))))))))))))))
 (check-sat)
+(exit)

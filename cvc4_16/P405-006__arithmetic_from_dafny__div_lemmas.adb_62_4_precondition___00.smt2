@@ -253,3 +253,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r3 true true true true)
   (fp.lt (fp #b0 #b10000011 #b01010000100010001100111) (fp #b0 #b10000101 #b11101100010111000010100)))))))))))))))))))
 (check-sat)
+(exit)

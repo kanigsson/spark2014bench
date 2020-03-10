@@ -264,3 +264,4 @@ Target solver: CVC4
  ;; File "spark-arithmetic_lemmas.ads", line 106, characters 0-0
   (not true))
 (check-sat)
+(exit)

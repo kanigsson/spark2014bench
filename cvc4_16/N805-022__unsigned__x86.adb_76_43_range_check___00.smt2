@@ -461,3 +461,4 @@ Target solver: CVC4
   (=> (= xdi1 (store xdi 0 o))
   (bvule ((_ zero_extend 24) #x00) (bvurem (bvudiv val__ #x00000100) #x00000100))))))))))
 (check-sat)
+(exit)

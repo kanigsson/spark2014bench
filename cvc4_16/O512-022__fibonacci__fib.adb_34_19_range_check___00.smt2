@@ -220,3 +220,4 @@ Target solver: CVC4
   (forall ((a13 Int))
   (=> (= a13 o1) (let ((o2 (- a13 b11))) (=> (in_range1 o2) (in_range2 o2))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

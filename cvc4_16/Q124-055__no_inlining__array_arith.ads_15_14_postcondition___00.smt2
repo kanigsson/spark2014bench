@@ -205,3 +205,4 @@ Target solver: CVC4
   (=> (dynamic_invariant one true false true true)
   (=> (<= 1 j) (=> (<= j 10) (= (to_rep (select x j)) (+ j 1)))))))))
 (check-sat)
+(exit)

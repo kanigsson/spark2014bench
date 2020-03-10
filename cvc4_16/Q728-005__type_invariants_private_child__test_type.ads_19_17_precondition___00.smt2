@@ -252,3 +252,4 @@ Target solver: CVC4
   (=> (type_invariant x)
   (< (- 2147483648) (to_rep (rec__test_type__t__f (us_split_fields1 x)))))))
 (check-sat)
+(exit)

@@ -581,3 +581,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true))
   (=> (in_range1 (length needle)) (in_range1 (length haystack)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

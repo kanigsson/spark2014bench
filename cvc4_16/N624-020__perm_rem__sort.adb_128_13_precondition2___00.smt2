@@ -662,3 +662,4 @@ Target solver: CVC4
   (forall ((prec1 (Array Int natural)))
   (=> (= prec1 values) (<= 1 smallest1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

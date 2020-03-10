@@ -140,3 +140,4 @@ Target solver: CVC4
   (=> (=> (= (>= x 200) true) (= x1 200))
   (=> (= (<= x (- 200)) true) (= x1 (- 200))))))))))))))))
 (check-sat)
+(exit)

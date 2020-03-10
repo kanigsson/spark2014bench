@@ -391,3 +391,4 @@ Target solver: CVC4
   (=> (= b21 a2)
   (=> (= k21 n2) (=> (< 0 k21) (= (power a2 n2) (* p21 (power b21 k21)))))))))))))))))))))))))))
 (check-sat)
+(exit)

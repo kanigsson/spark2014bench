@@ -998,3 +998,4 @@ Target solver: CVC4
   (let ((o4 (bv2nat (bvnot x1))))
   (=> (in_range1 o4) (in_range2 (- (- o4) 1))))))))))))))))))))))
 (check-sat)
+(exit)

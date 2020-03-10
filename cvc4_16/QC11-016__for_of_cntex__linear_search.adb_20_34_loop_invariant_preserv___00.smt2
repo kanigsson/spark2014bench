@@ -227,3 +227,4 @@ Target solver: CVC4
   (forall ((j Int))
   (=> (and (<= 1 j) (<= j (- i2 1))) (not (= (to_rep (select arr j)) n)))))))))))))))))))))
 (check-sat)
+(exit)

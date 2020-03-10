@@ -494,3 +494,4 @@ Target solver: CVC4
   (=> (= fail__create__result (of_array r o1 o))
   (= (last2 fail__create__result) last))))))))))))))))))))
 (check-sat)
+(exit)

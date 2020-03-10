@@ -393,3 +393,4 @@ Target solver: CVC4
            (us_split_fields1 (rec__test_goto_borrow__list__pointer_value o))))) 1)))))
   (in_range (+ (min 2147483646 o1) 1)))))))))
 (check-sat)
+(exit)

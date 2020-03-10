@@ -173,3 +173,4 @@ Target solver: CVC4
   (=> (= foo__double_tests__bad_optimisation_1__result o1)
   (not (fp.isZero b)))))))))))))
 (check-sat)
+(exit)

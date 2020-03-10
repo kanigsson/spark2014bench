@@ -353,3 +353,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 modesetting1 true true true true)
   (=> (dynamic_invariant currenttime1 true true true true) (not (= 86400 0))))))))))
 (check-sat)
+(exit)

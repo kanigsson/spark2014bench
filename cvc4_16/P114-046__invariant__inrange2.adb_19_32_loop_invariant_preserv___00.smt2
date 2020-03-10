@@ -313,3 +313,4 @@ Target solver: CVC4
   (and (bvule #x0000000000000000 n) (bvule n (bvsub i2 #x0000000000000001)))
   (= var (bvadd bottom n))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -434,3 +434,4 @@ Target solver: CVC4
   (let ((o4 (+ o3 k11)))
   (=> (in_range1 o4) (forall ((k22 Int)) (=> (= k22 o4) (in_range3 k11))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

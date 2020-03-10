@@ -174,3 +174,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c_old true false true true)
   (=> (= (to_rep (select m c)) o) (=> (= c1 o) (= c1 c_old))))))))))
 (check-sat)
+(exit)

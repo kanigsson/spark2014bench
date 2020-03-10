@@ -914,3 +914,4 @@ Target solver: CVC4
   (ite (= (mod1 position 4) 0) (= o (ite (< 0 (length2 data)) true false))
   (= o false)) (=> (= o true) (not (= 4 0)))))))))))
 (check-sat)
+(exit)

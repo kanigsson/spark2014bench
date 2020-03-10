@@ -265,3 +265,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__foo__r__y tmp__split_fields)) o2) (in_range1
   (+ o2 1)))))))))))))
 (check-sat)
+(exit)

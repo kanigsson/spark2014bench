@@ -449,3 +449,4 @@ Target solver: CVC4
   (=> (= o2 true)
   (=> (= right (- 1)) (not (= (bool_eq left time_span_first) true)))))))))))))
 (check-sat)
+(exit)

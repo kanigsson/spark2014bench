@@ -613,3 +613,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__formals_rec_split_pred__rec__h a__split_fields)) o)
   (not (= o 0)))))))))
 (check-sat)
+(exit)

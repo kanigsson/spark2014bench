@@ -1889,3 +1889,4 @@ Target solver: CVC4
   (let ((o11 (+ offset2 (- remaining_bytes2 1))))
   (=> (in_range1 o11) (in_range1 (+ (first1 data) o11)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

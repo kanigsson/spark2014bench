@@ -260,3 +260,4 @@ Target solver: CVC4
   (=> (dynamic_invariant a true false true true)
   (=> (= a2 (bvlshr a ((_ int2bv 32) 17))) (= a2 (bvudiv a1 #x00020000))))))))
 (check-sat)
+(exit)

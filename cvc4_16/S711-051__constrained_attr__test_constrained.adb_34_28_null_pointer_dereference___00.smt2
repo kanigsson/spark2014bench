@@ -286,3 +286,4 @@ Target solver: CVC4
   (not (= (bool_eq2 o us_null_pointer) true)))
   (rec__test_constrained__cc_acc__pointer_value__pred o)))))
 (check-sat)
+(exit)

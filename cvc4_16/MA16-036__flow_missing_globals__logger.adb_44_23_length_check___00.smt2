@@ -1260,3 +1260,4 @@ Target solver: CVC4
   (=> (bvule (first1 temp___260) (last1 temp___260))
   (bvule (to_rep result____first) (to_rep result____last)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

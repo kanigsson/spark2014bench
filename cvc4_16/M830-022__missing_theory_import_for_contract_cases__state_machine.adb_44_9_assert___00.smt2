@@ -203,3 +203,4 @@ Target solver: CVC4
   (forall ((spark__branch3 Bool))
   (=> (= spark__branch3 o3) (= spark__branch3 true))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -58,3 +58,4 @@ Target solver: CVC4
   (forall ((localcst__glob__result Int))
   (=> (= localcst__glob__result 1000) (< localcst__glob__result 4000)))))
 (check-sat)
+(exit)

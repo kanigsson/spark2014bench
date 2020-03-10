@@ -394,3 +394,4 @@ Target solver: CVC4
   (=> (= test_name_len1 r4b)
   (=> (dynamic_invariant r4b true false true true) (=> (<= 1 7) (<= 1 r4b))))))))))
 (check-sat)
+(exit)

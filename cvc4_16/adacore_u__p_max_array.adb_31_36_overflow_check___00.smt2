@@ -462,3 +462,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array a) usf)) o5)
   (=> (not (< o4 o5)) (in_range1 (- usf (first1 a)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

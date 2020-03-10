@@ -300,3 +300,4 @@ Target solver: CVC4
   (=> (= complex_arrays__use_step_array__result c1)
   (= i complex_arrays__use_step_array__result))))))))))))))))
 (check-sat)
+(exit)

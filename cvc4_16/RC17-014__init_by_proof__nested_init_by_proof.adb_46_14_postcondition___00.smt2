@@ -420,3 +420,4 @@ Target solver: CVC4
   (= x__split_fields1 x__split_fields))))
   (=> (= x__split_discrs true) (= x__split_discrs1 true)))))))
 (check-sat)
+(exit)

@@ -971,3 +971,4 @@ Target solver: CVC4
   (let ((o17 (+ (first1 buffer) 16)))
   (=> (in_range1 o17) (=> (<= o17 o16) (<= (first1 buffer) o17)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

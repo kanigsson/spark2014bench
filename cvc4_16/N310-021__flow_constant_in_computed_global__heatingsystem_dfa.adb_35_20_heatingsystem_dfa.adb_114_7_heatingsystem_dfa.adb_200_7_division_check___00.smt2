@@ -744,3 +744,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 hour false false true true)
   (=> (dynamic_invariant4 minute false false true true) (not (= 3600 0)))))))))))))))))))
 (check-sat)
+(exit)

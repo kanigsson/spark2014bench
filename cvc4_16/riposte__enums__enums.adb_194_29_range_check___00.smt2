@@ -86,3 +86,4 @@ Target solver: CVC4
  ;; File "enums.adb", line 190, characters 0-0
   (not (=> (dynamic_invariant a true false true true) (not (= a 8)))))
 (check-sat)
+(exit)

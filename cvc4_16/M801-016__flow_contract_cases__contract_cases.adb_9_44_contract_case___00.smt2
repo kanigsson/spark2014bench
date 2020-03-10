@@ -149,3 +149,4 @@ Target solver: CVC4
   (=> (=> (= (< num_out 10) true) (< num_out1 100))
   (=> (= (> num_out 10) true) (<= 81 num_out1)))))))))))))
 (check-sat)
+(exit)

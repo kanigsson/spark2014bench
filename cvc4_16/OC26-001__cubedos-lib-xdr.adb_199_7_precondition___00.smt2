@@ -821,3 +821,4 @@ Target solver: CVC4
   (=> (dynamic_invariant temporary false false true true)
   (= (mod1 position 4) 0))))))))))))))
 (check-sat)
+(exit)

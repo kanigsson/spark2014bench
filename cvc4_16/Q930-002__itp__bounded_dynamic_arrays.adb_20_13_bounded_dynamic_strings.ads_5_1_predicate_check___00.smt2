@@ -964,3 +964,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk1 rliteral
   (rec__bounded_dynamic_strings__sequence__content1 result____split_fields)))))))))))
 (check-sat)
+(exit)

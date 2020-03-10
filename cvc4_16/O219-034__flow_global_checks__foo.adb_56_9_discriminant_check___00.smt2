@@ -384,3 +384,4 @@ Target solver: CVC4
   (=> (in_range1 (+ y 1))
   (=> (= z__attr__constrained true) (= (distinct 0 0) z__split_discrs)))))))))))
 (check-sat)
+(exit)

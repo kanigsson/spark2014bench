@@ -3166,3 +3166,4 @@ Target solver: CVC4
   (=> (= (= o25 true) (= (has_key (positions o24) usf1) true))
   (=> (= (and (ite true true false) o25) true) (= (has_element x usf1) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

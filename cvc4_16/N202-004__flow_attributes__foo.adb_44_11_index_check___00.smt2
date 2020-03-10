@@ -360,3 +360,4 @@ Target solver: CVC4
   (=> (= (to_rep o) 32)
   (=> (= (to_rep1 a__first) temp___288) (<= (to_rep1 a__first) temp___288))))))))
 (check-sat)
+(exit)

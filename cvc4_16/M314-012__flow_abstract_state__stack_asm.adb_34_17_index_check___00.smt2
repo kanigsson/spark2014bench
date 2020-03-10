@@ -244,3 +244,4 @@ Target solver: CVC4
   (=> (= the_ptr1 o)
   (forall ((o1 integer)) (=> (= (to_rep o1) v) (<= 1 the_ptr1))))))))))))
 (check-sat)
+(exit)

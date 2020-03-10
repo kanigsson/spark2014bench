@@ -641,3 +641,4 @@ Target solver: CVC4
   (=> (in_range2 o)
   (let ((o1 (power 256 o))) (=> (in_range1 o1) (in_range1 (* 128 o1)))))))))))))))))))))))))
 (check-sat)
+(exit)

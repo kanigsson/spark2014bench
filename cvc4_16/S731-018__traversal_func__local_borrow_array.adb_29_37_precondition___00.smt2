@@ -1205,3 +1205,4 @@ Target solver: CVC4
   (=> (and (<= (first1 temp___245) 1) (<= 1 (last1 temp___245)))
   (not (= (bool_eq (select (to_array temp___245) 1) us_null_pointer1) true)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

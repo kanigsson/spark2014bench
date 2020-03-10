@@ -540,3 +540,4 @@ Target solver: CVC4
   (=> (= spark__branch2 o12)
   (=> (not (= spark__branch2 true)) (< temp___255 i2)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

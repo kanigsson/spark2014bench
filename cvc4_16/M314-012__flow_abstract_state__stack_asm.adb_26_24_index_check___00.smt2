@@ -237,3 +237,4 @@ Target solver: CVC4
   (forall ((the_ptr1 Int)) (is_empty__function_guard (is_empty the_ptr1)
   the_ptr1)) (=> (not (= (is_empty the_ptr) true)) (<= 1 the_ptr)))))))
 (check-sat)
+(exit)

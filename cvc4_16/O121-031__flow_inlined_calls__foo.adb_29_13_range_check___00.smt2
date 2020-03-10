@@ -199,3 +199,4 @@ Target solver: CVC4
   (=> (= c6b tmp_b)
   (=> (dynamic_invariant tmp_b true false true true) (in_range last)))))))))))
 (check-sat)
+(exit)

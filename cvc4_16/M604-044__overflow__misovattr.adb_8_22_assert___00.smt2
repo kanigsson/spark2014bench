@@ -88,3 +88,4 @@ Target solver: CVC4
   (=> (dynamic_invariant a true false true true)
   (=> (< a (+ a 1)) (=> (< a (+ a 1)) (< (- a 1) a))))))
 (check-sat)
+(exit)

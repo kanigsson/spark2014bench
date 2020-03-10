@@ -3041,3 +3041,4 @@ Target solver: CVC4
      (us_repqtmk3 d__split_discrs (us_split_fieldsqtmk3 d__split_fields2))
      (to_rep (select a2 j))) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

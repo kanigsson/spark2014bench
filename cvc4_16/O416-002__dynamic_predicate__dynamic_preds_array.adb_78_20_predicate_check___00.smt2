@@ -334,3 +334,4 @@ Target solver: CVC4
   (forall ((result__ (Array Int even)))
   (=> (dynamic_invariant result__ false false true true) (= (mod2 0 2) 0)))))
 (check-sat)
+(exit)

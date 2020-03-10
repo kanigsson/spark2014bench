@@ -515,3 +515,4 @@ Target solver: CVC4
                                         false)) true)
   (<= (first1 needle) usf1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

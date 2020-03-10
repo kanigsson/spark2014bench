@@ -1855,3 +1855,4 @@ Target solver: CVC4
  ;; File "linted-update.ads", line 41, characters 0-0
   (not (=> (<= 1 4) (<= 1 1))))
 (check-sat)
+(exit)

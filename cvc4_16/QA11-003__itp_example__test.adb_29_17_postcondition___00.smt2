@@ -194,3 +194,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__test__w__f (us_split_fields1 a))) o)
   (=> (= test__test_3__result o) (= test__test_3__result 2))))))
 (check-sat)
+(exit)

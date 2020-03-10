@@ -311,3 +311,4 @@ Target solver: CVC4
   (=> (= v_hi o)
   (=> (dynamic_invariant1 v_hi true false true true) (not (= 4294967296 0)))))))))))))
 (check-sat)
+(exit)

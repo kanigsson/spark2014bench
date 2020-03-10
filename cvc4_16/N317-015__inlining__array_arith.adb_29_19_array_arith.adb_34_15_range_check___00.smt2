@@ -219,3 +219,4 @@ Target solver: CVC4
   (=> (= x2 (store x1 2 o3))
   (let ((o4 (+ 3 one))) (=> (in_range1 o4) (in_range2 o4))))))))))))))))))))))
 (check-sat)
+(exit)

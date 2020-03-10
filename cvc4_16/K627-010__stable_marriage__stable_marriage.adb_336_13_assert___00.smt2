@@ -1460,3 +1460,4 @@ Target solver: CVC4
   (not
   (= (to_rep (select result__1 g21_id)) (to_rep (select result__1 g22_id)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

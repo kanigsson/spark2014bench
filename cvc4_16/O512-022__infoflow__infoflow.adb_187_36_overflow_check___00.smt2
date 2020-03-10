@@ -427,3 +427,4 @@ Target solver: CVC4
                       true false)) true)
   (in_range1 (- i_v11 k_1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

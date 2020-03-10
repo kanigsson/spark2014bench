@@ -198,3 +198,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (< 10 j1) true false))
   (=> (not (= spark__branch true)) (<= 1 j1))))))))))
 (check-sat)
+(exit)

@@ -450,3 +450,4 @@ Target solver: CVC4
   (=> (= perm__remove_eq__aa__assume aa)
   (=> (dynamic_invariant aa true false true true) (<= i (last1 b)))))))))))))))))))))
 (check-sat)
+(exit)

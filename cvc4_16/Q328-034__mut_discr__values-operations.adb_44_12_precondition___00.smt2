@@ -431,3 +431,4 @@ Target solver: CVC4
   (=> (forall ((last3 Int)) (empty__function_guard (empty last3) last3))
   (not (= (empty last2) true))))))))))))))))
 (check-sat)
+(exit)

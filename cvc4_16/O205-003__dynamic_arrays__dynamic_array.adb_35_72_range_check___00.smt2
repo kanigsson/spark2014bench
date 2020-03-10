@@ -1317,3 +1317,4 @@ Target solver: CVC4
   (= (to_rep (rec__dynamic_array__holder__d (us_split_discrs3 usf1))) usf))))
   (=> (in_range2 c) (dynamic_property 0 last c))))))
 (check-sat)
+(exit)

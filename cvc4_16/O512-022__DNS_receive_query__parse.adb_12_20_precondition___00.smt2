@@ -1514,3 +1514,4 @@ Target solver: CVC4
   (=> (dynamic_invariant qdcount false false true true)
   (=> (dynamic_invariant count false false true true) (<= 0 511))))))))
 (check-sat)
+(exit)

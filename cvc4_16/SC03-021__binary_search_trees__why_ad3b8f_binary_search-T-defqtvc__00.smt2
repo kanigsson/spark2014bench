@@ -678,3 +678,4 @@ Target solver: CVC4
   (= binary_search__contains__result1 (distinct 0 0))))))))))))
   (=> (= (m_contains t v) true) (= binary_search__contains__result1 true))))))))
 (check-sat)
+(exit)

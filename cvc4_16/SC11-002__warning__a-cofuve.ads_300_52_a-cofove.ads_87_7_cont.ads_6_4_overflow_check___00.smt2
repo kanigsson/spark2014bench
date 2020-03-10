@@ -346,3 +346,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 o2 true false true true) (= o2 (+ 0 (length o1))))
   (not (= o2 32767)))))))))))))
 (check-sat)
+(exit)

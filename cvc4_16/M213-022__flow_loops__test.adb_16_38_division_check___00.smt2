@@ -233,3 +233,4 @@ Target solver: CVC4
  ;; File "test.adb", line 12, characters 0-0
   (not (=> (dynamic_invariant n true false true true) (not (= 2 0)))))
 (check-sat)
+(exit)

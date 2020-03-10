@@ -640,3 +640,4 @@ Target solver: CVC4
   (=> (<= max_bit_length 2147483640)
   (=> (in_range (+ max_bit_length 7)) (not (= 8 0)))))))))))))
 (check-sat)
+(exit)

@@ -404,3 +404,4 @@ Target solver: CVC4
   (forall ((x (Array Int character)))
   (=> (= x (p__x__aggregate_def 32)) (=> (<= 2 5) (<= 1 2))))))
 (check-sat)
+(exit)

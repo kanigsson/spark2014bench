@@ -1550,3 +1550,4 @@ Target solver: CVC4
   (<= temp___547 (last_21 test_higher_order1__my_fold_2__acc__fold__result)))
   (in_range1 (- usf 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

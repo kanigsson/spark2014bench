@@ -866,3 +866,4 @@ Target solver: CVC4
   (forall ((o5 Int))
   (=> (= (to_rep1 (select (to_array separates) o4)) o5) (in_range5 o5)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

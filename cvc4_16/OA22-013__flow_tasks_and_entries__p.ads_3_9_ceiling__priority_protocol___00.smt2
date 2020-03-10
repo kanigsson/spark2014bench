@@ -194,3 +194,4 @@ Target solver: CVC4
   (forall ((x Int))
   (=> (dynamic_invariant x true false true true) (<= 97 97)))))
 (check-sat)
+(exit)

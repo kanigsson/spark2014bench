@@ -475,3 +475,4 @@ Target solver: CVC4
   (forall ((temp___386 Int))
   (=> (= (to_rep1 s__last) temp___386) (in_range1 (length s1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

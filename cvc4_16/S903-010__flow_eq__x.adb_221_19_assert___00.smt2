@@ -383,3 +383,4 @@ Target solver: CVC4
   (forall ((a1 Int) (b1 Int)) (osubtract__function_guard (osubtract a1 b1) a1
   b1)) (= (osubtract a b) 0)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

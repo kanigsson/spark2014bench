@@ -106,3 +106,4 @@ Target solver: CVC4
   (=> (both_are_true__function_guard (both_are_true Tuple0) Tuple0)
   (= (both_are_true Tuple0) true)))))))))))
 (check-sat)
+(exit)

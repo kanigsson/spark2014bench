@@ -290,3 +290,4 @@ Target solver: CVC4
   (=> (= a_pointer1 o)
   (forall ((o1 integer)) (=> (= (to_rep o1) i) (<= 1 a_pointer1))))))))))))))
 (check-sat)
+(exit)

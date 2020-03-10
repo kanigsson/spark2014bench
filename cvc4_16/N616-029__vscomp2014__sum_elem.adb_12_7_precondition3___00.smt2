@@ -806,3 +806,4 @@ Target solver: CVC4
   (=> (= p__split_fields1 sum_elem__partitions__append__2__container__fields)
   (<= 0 0))))))))))
 (check-sat)
+(exit)

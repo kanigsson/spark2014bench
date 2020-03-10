@@ -105,3 +105,4 @@ Target solver: CVC4
   (=> (= res1 o)
   (=> (= casing__g__result res1) (= casing__g__result (+ x 1)))))))))))
 (check-sat)
+(exit)

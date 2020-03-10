@@ -870,3 +870,4 @@ Target solver: CVC4
      (f (to_rep (select (to_array o) i1)) i1 r1) (+ i1 1)) true)))))))
   (dynamic_property first last i1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

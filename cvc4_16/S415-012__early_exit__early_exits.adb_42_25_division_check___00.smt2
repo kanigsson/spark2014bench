@@ -473,3 +473,4 @@ Target solver: CVC4
                         early_exits__p2__B_4__y__assume))
   (forall ((o Int)) (=> (= (to_rep y__pointer_value) o) (not (= 2 0)))))))))))))))))))
 (check-sat)
+(exit)

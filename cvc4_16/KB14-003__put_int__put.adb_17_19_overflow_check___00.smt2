@@ -621,3 +621,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 first3 true true true true)
   (=> (= val__2 (mod1 int__1 10)) (in_range (- int__1 val__2)))))))))))))))
 (check-sat)
+(exit)

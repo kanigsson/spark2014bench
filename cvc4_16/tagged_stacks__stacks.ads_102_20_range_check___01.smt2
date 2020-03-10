@@ -1104,3 +1104,4 @@ Target solver: CVC4
                      temp___1018 stacks__get_model__3__R74s)))
   (dynamic_property 1 2147483647 (first3 temp___1020) (last5 temp___1020))))))))))))))))
 (check-sat)
+(exit)

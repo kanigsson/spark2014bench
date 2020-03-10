@@ -380,3 +380,4 @@ Target solver: CVC4
   (forall ((j Int))
   (=> (and (<= 0 j) (<= j i2)) (< (to_rep (select a5 j)) (power 2 j)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

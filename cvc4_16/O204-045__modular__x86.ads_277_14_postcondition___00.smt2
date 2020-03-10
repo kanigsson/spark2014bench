@@ -384,3 +384,4 @@ Target solver: CVC4
   (= rdi2 (bvor (bvand rdi #xFFFFFFFFFFFF0000) ((_ zero_extend 48) val__)))
   (= rdi2 (bvor (bvand rdi1 #xFFFFFFFFFFFF0000) ((_ zero_extend 48) val__))))))))))
 (check-sat)
+(exit)

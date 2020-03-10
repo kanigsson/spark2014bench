@@ -1394,3 +1394,4 @@ Target solver: CVC4
   (us_repqtmk s__split_fields12 s__attr__tag)))
   (= (is_empty (us_repqtmk s__split_fields11 s__attr__tag)) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

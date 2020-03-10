@@ -497,3 +497,4 @@ Target solver: CVC4
   (=> (= perm__remove_eq__result 1)
   (=> (= (distinct perm__remove_eq__result 0) true) (<= i (last1 b)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

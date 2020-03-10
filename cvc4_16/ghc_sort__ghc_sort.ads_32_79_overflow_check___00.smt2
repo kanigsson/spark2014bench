@@ -849,3 +849,4 @@ Target solver: CVC4
   (forall ((o9 Int))
   (=> (= (to_rep (select (to_array s) usf1)) o9) (in_range1 (- usf1 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

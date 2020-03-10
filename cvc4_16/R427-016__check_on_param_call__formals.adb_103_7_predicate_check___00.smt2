@@ -637,3 +637,4 @@ Target solver: CVC4
   (and (<= 1 formals__p2__2__a2) (<= formals__p2__2__a2 10)))
   (dynamic_predicate x)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1079,3 +1079,4 @@ Target solver: CVC4
   (=> (= item (slide (to_array temp___362) (first1 temp___362) o3))
   (forall ((o4 Int)) (=> (= (to_rep1 item__first) o4) (in_range1 (- o4 1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -321,3 +321,4 @@ Target solver: CVC4
                                  (rec__priv_disp__root__f1
                                  (us_split_fields3 x)))))))))
 (check-sat)
+(exit)

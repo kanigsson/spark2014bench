@@ -138,3 +138,4 @@ Target solver: CVC4
   (=> (in_range o)
   (forall ((par21 Int)) (=> (= par21 o) (= par21 (+ par1 x))))))))))))
 (check-sat)
+(exit)

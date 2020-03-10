@@ -114,3 +114,4 @@ Target solver: CVC4
   (=> (dynamic_invariant a_pointer true false true true) (in_range
   (- a_pointer 1))))))
 (check-sat)
+(exit)

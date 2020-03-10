@@ -220,3 +220,4 @@ Target solver: CVC4
  ;; File "alloc.adb", line 3, characters 0-0
   (not (in_range1 (- 12345))))
 (check-sat)
+(exit)

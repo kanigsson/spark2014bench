@@ -78,3 +78,4 @@ Target solver: CVC4
   (forall ((spark__branch Bool))
   (=> (= spark__branch (and a b)) (not (= spark__branch true))))))
 (check-sat)
+(exit)

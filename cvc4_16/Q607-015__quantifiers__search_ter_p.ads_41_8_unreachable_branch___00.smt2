@@ -460,3 +460,4 @@ Target solver: CVC4
   (=> (< (last1 a) 2147483647)
   (=> (<= (first1 b) (last1 b)) (not (<= (length1 b) (length1 a)))))))))
 (check-sat)
+(exit)

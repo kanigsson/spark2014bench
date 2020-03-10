@@ -1432,3 +1432,4 @@ Target solver: CVC4
      (select (rec__stable_marriage__matching__group1_set__elements
              unmatched_g1_set__split_fields) prev)) prev))))))))))))))))))))))))))))
 (check-sat)
+(exit)

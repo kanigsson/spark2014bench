@@ -165,3 +165,4 @@ Target solver: CVC4
   (us_repqtmk (us_split_discrsqtmk x__split_discrs1))))
   (= (get_constr (us_repqtmk (us_split_discrsqtmk x__split_discrs))) true))))))))
 (check-sat)
+(exit)

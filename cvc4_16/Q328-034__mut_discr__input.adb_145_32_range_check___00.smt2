@@ -368,3 +368,4 @@ Target solver: CVC4
   (=> (exists ((o Int)) (= (to_rep (select line1 first_char1)) o)) (in_range4
   (+ first_char1 1)))))))))))))))
 (check-sat)
+(exit)

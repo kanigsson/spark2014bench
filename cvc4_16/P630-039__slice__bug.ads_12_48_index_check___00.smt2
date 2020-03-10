@@ -386,3 +386,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array b) o)) o1)
   (let ((o2 (+ (first1 a) usf))) (=> (in_range1 o2) (<= (first1 a) o2)))))))))))))))))
 (check-sat)
+(exit)

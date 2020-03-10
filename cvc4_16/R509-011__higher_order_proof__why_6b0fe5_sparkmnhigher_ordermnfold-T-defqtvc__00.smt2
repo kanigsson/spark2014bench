@@ -811,3 +811,4 @@ Target solver: CVC4
   (and (dynamic_invariant o10 true false true true)
   (= o10 (ite (= (choose o9) true) (+ o8 1) o8))) (<= (to_rep r__first) usf)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

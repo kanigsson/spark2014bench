@@ -486,3 +486,4 @@ Target solver: CVC4
   (= (bool_eq (get_current_time current_time__split_fields2)
      (t_increment (get_current_time current_time__split_fields1))) true))))))))))))))))))
 (check-sat)
+(exit)

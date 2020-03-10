@@ -2285,3 +2285,4 @@ Target solver: CVC4
   (=> (= psu_monitoring__do_monitoring__i_l2__assume i_l2)
   (=> (dynamic_invariant i_l2 true false true true) (in_range3 u_c1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

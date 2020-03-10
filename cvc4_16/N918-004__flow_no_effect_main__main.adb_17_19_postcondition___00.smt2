@@ -163,3 +163,4 @@ Target solver: CVC4
   (=> (= (* long_side long_side) (+ (* side_2 side_2) (* side_3 side_3)))
   (= main__is_right_angle_triangle__result true)))))))))
 (check-sat)
+(exit)

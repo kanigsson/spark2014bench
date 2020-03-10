@@ -862,3 +862,4 @@ Target solver: CVC4
   (= (length (to_rep data__first) (to_rep data__last)) (div1 (+ bit_len 7) 8))
   (not (= 8 0))))))))
 (check-sat)
+(exit)

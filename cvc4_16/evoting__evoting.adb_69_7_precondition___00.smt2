@@ -967,3 +967,4 @@ Target solver: CVC4
   (and (= candidates2 candidates1) (= current_candidate1 current_candidate)))
   (= (is_open file1) true)))))))))))))))))))
 (check-sat)
+(exit)

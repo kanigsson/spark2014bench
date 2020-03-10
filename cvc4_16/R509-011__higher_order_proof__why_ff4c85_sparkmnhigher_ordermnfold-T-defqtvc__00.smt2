@@ -1189,3 +1189,4 @@ Target solver: CVC4
   (= o7 (fold1 (of_array (to_array o6) (first1 o6) (last1 o6)) 0))))
   (in_range1 (- o7 o5))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

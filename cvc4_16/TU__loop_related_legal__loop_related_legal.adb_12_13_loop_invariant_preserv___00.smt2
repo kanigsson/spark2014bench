@@ -299,3 +299,4 @@ Target solver: CVC4
   (=> (<= i 10)
   (<= (to_rep (select temp___loop_entry_171 i)) (to_rep (select arr3 i)))))))))))))))))
 (check-sat)
+(exit)

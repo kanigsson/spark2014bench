@@ -368,3 +368,4 @@ Target solver: CVC4
   (and (in_range1 o2) (= o (ite (<= o2 (last1 a)) true false)))) (= o false))))
   (=> (= o true) (in_range1 (+ y l1))))))))))))))))))
 (check-sat)
+(exit)

@@ -724,3 +724,4 @@ Target solver: CVC4
                                                        memory)) (bvmul ((_ zero_extend 16) 
   (readmem16 (bvadd addr #x0000000000000002) memory)) #x00010000)))))))))))))))))
 (check-sat)
+(exit)

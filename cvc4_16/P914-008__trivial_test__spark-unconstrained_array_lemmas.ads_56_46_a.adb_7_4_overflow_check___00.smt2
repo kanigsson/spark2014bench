@@ -386,3 +386,4 @@ Target solver: CVC4
   (=> (exists ((o Float32)) (= (to_rep1 (select (to_array arr) usf)) o))
   (not (= usf (- 128))))))))))))
 (check-sat)
+(exit)

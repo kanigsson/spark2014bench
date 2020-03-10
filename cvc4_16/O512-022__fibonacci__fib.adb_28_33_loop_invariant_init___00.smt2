@@ -197,3 +197,4 @@ Target solver: CVC4
   (=> (forall ((i2 Int)) (fibonacci__function_guard (fibonacci i2) i2))
   (= a11 (fibonacci i1))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -483,3 +483,4 @@ Target solver: CVC4
   (=> (= b 1)
   (=> (<= 1 j) (=> (<= j 2) (= (to_rep (select (select a j) one)) one)))))))))))
 (check-sat)
+(exit)

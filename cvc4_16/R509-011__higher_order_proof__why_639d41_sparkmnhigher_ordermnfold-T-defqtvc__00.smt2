@@ -1403,3 +1403,4 @@ Target solver: CVC4
   (let ((o (first_2 a1)))
   (=> (in_range10 o) (=> (in_range9 k) (<= o (last_2 a1))))))))))))))))))))))))
 (check-sat)
+(exit)

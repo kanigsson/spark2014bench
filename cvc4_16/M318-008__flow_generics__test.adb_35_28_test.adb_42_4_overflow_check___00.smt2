@@ -331,3 +331,4 @@ Target solver: CVC4
   (forall ((o3 Int))
   (=> (= (to_rep (select (to_array a) i1)) o3) (in_range1 (+ o3 o2)))))))))))))))))))))))))))
 (check-sat)
+(exit)

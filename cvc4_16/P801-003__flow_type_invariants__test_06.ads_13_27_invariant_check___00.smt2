@@ -166,3 +166,4 @@ Target solver: CVC4
  ;; File "test_06.ads", line 1, characters 0-0
   (not (forall ((usf us_split_fields)) (type_invariant (us_repqtmk usf)))))
 (check-sat)
+(exit)

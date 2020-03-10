@@ -826,3 +826,4 @@ Target solver: CVC4
      (us_split_fields1 (rec__binary_search__tree_acc__pointer_value t)))) o7)
   (not (= (contains s1 o7) true))))))))))))))))))))))))))))
 (check-sat)
+(exit)

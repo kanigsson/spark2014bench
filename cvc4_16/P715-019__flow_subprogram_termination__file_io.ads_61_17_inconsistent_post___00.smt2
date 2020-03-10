@@ -363,3 +363,4 @@ Target solver: CVC4
   (or (not (= (to_rep1 r__split_discrs) 0)) (= (index f1) (+ (index f) 1))))
   (or (= (to_rep1 r__split_discrs) 0) (= (index f1) (index f)))))))))))))))))
 (check-sat)
+(exit)

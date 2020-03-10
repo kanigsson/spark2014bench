@@ -221,3 +221,4 @@ Target solver: CVC4
   (= (to_rep (rec__prot__p_int__the_protected_int (us_split_fields1 self__))) o)
   (in_range (+ visible o)))))))
 (check-sat)
+(exit)

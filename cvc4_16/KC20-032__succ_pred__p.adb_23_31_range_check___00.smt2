@@ -88,3 +88,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c true false true true)
   (=> (not (= c 2)) (let ((o c)) (=> (not (= o 2)) (not (= (+ o 1) 0))))))))
 (check-sat)
+(exit)

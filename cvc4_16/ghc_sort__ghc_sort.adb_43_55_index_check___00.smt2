@@ -677,3 +677,4 @@ Target solver: CVC4
   (forall ((o7 Int))
   (=> (= (to_rep1 (select cut2 top2)) o7) (<= (first1 s) (- o7 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

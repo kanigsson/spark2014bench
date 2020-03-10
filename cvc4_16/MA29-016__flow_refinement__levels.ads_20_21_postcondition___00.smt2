@@ -117,3 +117,4 @@ Target solver: CVC4
   (forall ((x01 Int)) (read_partial_0__function_guard (read_partial_0 x01)
   x01)) (< (read_partial_0 x0) (+ (read_partial_0 x0) 1))))))))))
 (check-sat)
+(exit)

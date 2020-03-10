@@ -520,3 +520,4 @@ Target solver: CVC4
   (=> (sum__function_guard (sum (to_base b)) (to_base b))
   (= (sum (to_base a)) (sum (to_base b)))))))))))))))
 (check-sat)
+(exit)

@@ -182,3 +182,4 @@ Target solver: CVC4
   o1 (us_repqtmk x__split_fields1 o1)))
   (= (is_valid1 o (us_repqtmk x__split_fields o)) true))))))))
 (check-sat)
+(exit)

@@ -1116,3 +1116,4 @@ Target solver: CVC4
                                                                (last5
                                                                temp___1016)))) 1)))))))))))))))))))
 (check-sat)
+(exit)

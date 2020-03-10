@@ -289,3 +289,4 @@ Target solver: CVC4
   (let ((o (+ n 1))) (and (in_range1 o) (= upper1 o))))
   (=> (in_range1 (* lower1 lower1)) (in_range1 (* upper1 upper1))))))))))))))
 (check-sat)
+(exit)

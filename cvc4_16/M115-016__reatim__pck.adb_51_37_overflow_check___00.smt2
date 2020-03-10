@@ -341,3 +341,4 @@ Target solver: CVC4
   (=> (= result_hi1 o5)
   (=> (< result_hi1 2147483647) (in_range1 (* result_hi1 d)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

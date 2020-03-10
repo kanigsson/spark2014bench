@@ -613,3 +613,4 @@ Target solver: CVC4
   (=> (= (to_rep3 (select (to_array temp___368) k1)) o2)
   (<= (first1 (rec__integer_stacks__stack__values (us_split_fields1 left))) k1)))))))))))))))))))))))
 (check-sat)
+(exit)

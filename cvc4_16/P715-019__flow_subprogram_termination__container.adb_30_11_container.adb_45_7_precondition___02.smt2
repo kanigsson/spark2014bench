@@ -573,3 +573,4 @@ Target solver: CVC4
   (forall ((o4 us_rep1) (o5 us_rep)) (has_element__function_guard
   (has_element o5 o4) o5 o4)) (= (has_element c12b o1) true))))))))))))))))
 (check-sat)
+(exit)

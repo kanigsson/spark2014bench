@@ -1335,3 +1335,4 @@ Target solver: CVC4
   (=> (= (to_rep2 o6) (bvadd o5 o3))
   (let ((o7 (+ j n))) (=> (in_range2 o7) (<= (first1 u__split_fields1) o7))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

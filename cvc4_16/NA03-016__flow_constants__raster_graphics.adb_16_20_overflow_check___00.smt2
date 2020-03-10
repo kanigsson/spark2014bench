@@ -312,3 +312,4 @@ Target solver: CVC4
   (=> (in_range1 (* min_distance min_distance))
   (=> (in_range1 (* delta_y delta_y)) (in_range1 (* delta_x delta_x))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

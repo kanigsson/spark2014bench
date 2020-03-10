@@ -618,3 +618,4 @@ Target solver: CVC4
   (forall ((temp___264 Int))
   (=> (= temp___264 right3) (in_range1 (- right3 space2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

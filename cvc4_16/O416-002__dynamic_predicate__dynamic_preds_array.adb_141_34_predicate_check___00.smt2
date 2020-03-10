@@ -383,3 +383,4 @@ Target solver: CVC4
   (=> (= x2 dynamic_preds_array__update_constant_even_pair__x)
   (dynamic_predicate1 x2))))))))))))))))
 (check-sat)
+(exit)

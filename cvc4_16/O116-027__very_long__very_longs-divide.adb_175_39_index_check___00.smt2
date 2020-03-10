@@ -1328,3 +1328,4 @@ Target solver: CVC4
   (= future_borrow1 future_borrow))))))
   (let ((o (+ j n))) (=> (in_range2 o) (<= (first1 u__split_fields1) o)))))))))))))))))))))))))
 (check-sat)
+(exit)

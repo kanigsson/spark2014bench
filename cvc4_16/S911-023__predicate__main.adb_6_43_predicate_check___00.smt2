@@ -613,3 +613,4 @@ Target solver: CVC4
   (let ((temp___242 (temp_____aggregate_def_238 #x00)))
   (=> (dynamic_predicate1 temp___242) (dynamic_predicate temp___242)))))
 (check-sat)
+(exit)

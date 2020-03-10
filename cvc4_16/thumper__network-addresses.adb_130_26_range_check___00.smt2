@@ -953,3 +953,4 @@ Target solver: CVC4
   (let ((temp___353 (+ index2 skip2)))
   (=> (and (<= 1 temp___353) (<= temp___353 15)) (in_range9 (+ skip2 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

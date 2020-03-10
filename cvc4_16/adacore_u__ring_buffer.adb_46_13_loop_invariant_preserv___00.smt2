@@ -760,3 +760,4 @@ Target solver: CVC4
   (=> (and (<= first i) (<= i (min (- (+ first length2) 1) 100)))
   (= (to_rep (select content i)) (get r3 (+ (- i first) 1)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -634,3 +634,4 @@ Target solver: CVC4
         (last3 temp___254))))))
   (in_range (length o1)))))))
 (check-sat)
+(exit)

@@ -863,3 +863,4 @@ Target solver: CVC4
   (forall ((o4 Int))
   (=> (= (to_rep (select (to_array a) i2)) o4) (< acc2 2147483647))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

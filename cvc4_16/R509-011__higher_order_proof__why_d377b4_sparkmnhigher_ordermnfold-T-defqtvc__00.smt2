@@ -1145,3 +1145,4 @@ Target solver: CVC4
               (fold (of_array (to_array o1) (first1 o1) (last1 o1)) 0)) k2)) (+ 2147483647 
   (value (to_rep (select (to_array o1) i)))))))))) (in_range8 k2))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

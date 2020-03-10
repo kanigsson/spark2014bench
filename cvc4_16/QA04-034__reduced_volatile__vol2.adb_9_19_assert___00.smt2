@@ -252,3 +252,4 @@ Target solver: CVC4
   (=> (dynamic_invariant h11 true true true true)
   (=> (dynamic_invariant h21 true true true true) (= h11 h21))))))))
 (check-sat)
+(exit)

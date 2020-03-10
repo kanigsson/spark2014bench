@@ -129,3 +129,4 @@ Target solver: CVC4
  ;; File "p.ads", line 10, characters 0-0
   (not (=> (dynamic_invariant d true false true true) (in_range1 (- d 2)))))
 (check-sat)
+(exit)

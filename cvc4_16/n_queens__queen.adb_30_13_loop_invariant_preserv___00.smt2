@@ -343,3 +343,4 @@ Target solver: CVC4
   (=> (and (<= 1 k) (<= k i))
   (= (to_rep (select r3 k)) (to_rep (select b k)))))))))))))))))))))))))
 (check-sat)
+(exit)

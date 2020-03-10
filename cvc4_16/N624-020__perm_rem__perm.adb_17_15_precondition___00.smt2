@@ -695,3 +695,4 @@ Target solver: CVC4
                                              (select (to_array o2) k))))))))
   (<= ia (last1 a))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

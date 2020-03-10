@@ -788,3 +788,4 @@ Target solver: CVC4
   (= (is_perm (of_array temp___loop_entry_305 1 100)
      (of_array values3 1 100)) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

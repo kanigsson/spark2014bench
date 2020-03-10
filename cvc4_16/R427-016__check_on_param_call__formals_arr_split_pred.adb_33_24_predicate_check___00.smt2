@@ -542,3 +542,4 @@ Target solver: CVC4
   (not (= (to_rep (select y 3)) 0)))) (dynamic_predicate3
   (formals_arr_split_pred__u__aggregate_def 1))))))))))))))))))))))
 (check-sat)
+(exit)

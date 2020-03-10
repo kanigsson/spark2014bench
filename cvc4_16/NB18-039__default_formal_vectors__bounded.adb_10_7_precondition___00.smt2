@@ -626,3 +626,4 @@ Target solver: CVC4
   (< (length (us_repqtmk o2 (us_split_fieldsqtmk v__split_fields2))) 
   (capacity (us_repqtmk o2 (us_split_fieldsqtmk v__split_fields2)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -899,3 +899,4 @@ Target solver: CVC4
                                                     true false)) true)
   (=> (= (to_rep (select (to_array powers) usf)) k) (in_range2 (power 2 k))))))))))))
 (check-sat)
+(exit)

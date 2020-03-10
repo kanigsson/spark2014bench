@@ -524,3 +524,4 @@ Target solver: CVC4
                                              (select (to_array temp___887) k))))))))
   (<= i (last1 a))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

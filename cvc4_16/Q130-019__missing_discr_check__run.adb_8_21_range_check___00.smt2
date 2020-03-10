@@ -804,3 +804,4 @@ Target solver: CVC4
      (us_split_fieldsqtmk rliteral dummy)) c1)
   (=> (dynamic_invariant2 c1 true false true true) (in_range1 1))))))))
 (check-sat)
+(exit)

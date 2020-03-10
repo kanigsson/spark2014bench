@@ -302,3 +302,4 @@ Target solver: CVC4
   (= (same_elements (of_array list1 (to_rep list__first) (to_rep list__last))
      (of_array list3 (to_rep list__first) (to_rep list__last))) true)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

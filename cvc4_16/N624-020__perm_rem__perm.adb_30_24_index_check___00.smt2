@@ -667,3 +667,4 @@ Target solver: CVC4
   (forall ((o6 Int))
   (=> (= (to_rep (select (to_array b) usf)) o6) (<= ia (last1 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

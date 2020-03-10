@@ -195,3 +195,4 @@ Target solver: CVC4
   (forall ((i2 Int))
   (=> (= i2 o1) (=> (<= i2 n) (= (* 2 totalsum2) (* i2 (- i2 1))))))))))))))))))))))))
 (check-sat)
+(exit)

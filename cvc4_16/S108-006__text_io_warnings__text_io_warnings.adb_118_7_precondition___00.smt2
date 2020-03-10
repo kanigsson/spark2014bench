@@ -2414,3 +2414,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 ch7 true true true true)
   (=> (= spark__branch3 true) (= (is_open target2) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

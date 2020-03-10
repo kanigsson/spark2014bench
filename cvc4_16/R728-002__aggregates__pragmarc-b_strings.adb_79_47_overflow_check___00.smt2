@@ -4357,3 +4357,4 @@ Target solver: CVC4
      (rec__ada___pragmarc__b_strings__b_string__len to____split_fields1)) o4)
   (let ((o5 (- (last1 from) o4))) (=> (in_range o5) (in_range (+ o5 1)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

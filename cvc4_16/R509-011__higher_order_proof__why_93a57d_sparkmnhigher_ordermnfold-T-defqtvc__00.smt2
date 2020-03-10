@@ -1463,3 +1463,4 @@ Target solver: CVC4
   (=> (sum__function_guard (sum a) a)
   (= (sum a) (* (* c (length a)) (length_2 a)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

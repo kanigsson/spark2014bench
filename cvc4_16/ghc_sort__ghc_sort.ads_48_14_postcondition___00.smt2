@@ -484,3 +484,4 @@ Target solver: CVC4
   (=> (= ghc_sort__s_reverse__result (of_array r2 o1 o))
   (= (length ghc_sort__s_reverse__result) (length s)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

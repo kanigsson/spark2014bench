@@ -282,3 +282,4 @@ Target solver: CVC4
   (=> (= k1 o)
   (let ((o1 (* k1 j))) (=> (in_range1 o1) (in_range1 (- i o1))))))))))))))))
 (check-sat)
+(exit)

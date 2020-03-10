@@ -511,3 +511,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk res__split_fields)) false)
   (=> (<= pos 10) (<= 1 pos)))))))))))))
 (check-sat)
+(exit)

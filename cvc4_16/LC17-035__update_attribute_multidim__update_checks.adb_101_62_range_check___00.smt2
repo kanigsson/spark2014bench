@@ -423,3 +423,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 new_val_2 true false true true) (in_range
   (- new_val_2 1)))))))))))))))
 (check-sat)
+(exit)

@@ -336,3 +336,4 @@ Target solver: CVC4
   (= (and (ite (<= temp___186 k) true false) (ite (<= k (- j 1)) true false)) true)
   (=> (in_range1 (* k 2000)) (in_range1 (abs1 s)))))))))))))))
 (check-sat)
+(exit)

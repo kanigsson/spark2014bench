@@ -1101,3 +1101,4 @@ Target solver: CVC4
                                               false)) true)
   (=> (in_range6 (first_2 a)) (in_range5 i)))))))))))))))))
 (check-sat)
+(exit)

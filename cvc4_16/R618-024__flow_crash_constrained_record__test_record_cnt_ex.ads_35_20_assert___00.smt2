@@ -925,3 +925,4 @@ Target solver: CVC4
      (us_split_fieldsqtmk rliteral o1)) z)
   (= (bool_eq x y) true))))))))))))))
 (check-sat)
+(exit)

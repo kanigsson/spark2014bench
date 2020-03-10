@@ -261,3 +261,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 0 usf) true false) (ite (<= usf k) true false)) true)
   (=> (<= 0 usf) (=> (<= usf 100) (<= 0 usf))))))))))
 (check-sat)
+(exit)

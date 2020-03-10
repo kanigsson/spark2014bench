@@ -252,3 +252,4 @@ Target solver: CVC4
   (=> (<= 1 j)
   (=> (<= j (- index2 1)) (not (= (to_rep (select table j)) value)))))))))))))))))
 (check-sat)
+(exit)

@@ -1061,3 +1061,4 @@ Target solver: CVC4
   (ite (= (length a) 0) (= o true) (= o (ite (= (length_2 a) 0) true false)))
   (=> (not (= o true)) (dynamic_property1 first1 last1 (first_2 a)))))))))
 (check-sat)
+(exit)

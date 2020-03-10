@@ -1602,3 +1602,4 @@ Target solver: CVC4
   (=> (not (= spark__branch3 true))
   (=> (= l__attr__constrained true) (= (distinct 1 0) l__split_discrs1))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

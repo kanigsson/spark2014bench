@@ -799,3 +799,4 @@ Target solver: CVC4
      (to_rep (select (to_array array2) j)))
      cartesian__cartesian_product__result) true))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

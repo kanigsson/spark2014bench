@@ -301,3 +301,4 @@ Target solver: CVC4
   (= (= formal_cont__new_set_02__Oeq__result true)
   (and (= (ole left right) true) (= (ole right left) true)))))))
 (check-sat)
+(exit)

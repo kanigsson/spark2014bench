@@ -492,3 +492,4 @@ Target solver: CVC4
   (=> (dynamic_invariant s true false true true)
   (=> (< (length s) 255) (bvult ((_ int2bv 32) (length s)) #x000000FF)))))
 (check-sat)
+(exit)

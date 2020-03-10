@@ -2180,3 +2180,4 @@ Target solver: CVC4
      (us_repqtmk entry_table__split_discrs
      (us_split_fieldsqtmk entry_table__split_fields))) 1)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

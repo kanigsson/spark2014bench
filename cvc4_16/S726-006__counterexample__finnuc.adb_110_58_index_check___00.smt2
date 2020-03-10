@@ -656,3 +656,4 @@ Target solver: CVC4
   (=> (= demux_out1 (get logic_table temp___267 1))
   (<= 1 (+ (bv2nat logic_index1) 1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

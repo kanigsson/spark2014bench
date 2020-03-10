@@ -739,3 +739,4 @@ Target solver: CVC4
   (=> (dynamic_invariant e true false true true)
   (= (to_rep (rec__record_discr__interm_result__upto (us_split_discrs2 r))) 3)))))
 (check-sat)
+(exit)

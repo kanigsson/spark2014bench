@@ -197,3 +197,4 @@ Target solver: CVC4
  ;; File "tag_check.adb", line 38, characters 0-0
   (not (= (attr__tag x) (attr__tag y))))
 (check-sat)
+(exit)

@@ -252,3 +252,4 @@ Target solver: CVC4
   (=> (= b (ite (= (length x) 20) true false))
   (=> (= b true) (= (length x) 20)))))))
 (check-sat)
+(exit)

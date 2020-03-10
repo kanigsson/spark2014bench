@@ -276,3 +276,4 @@ Target solver: CVC4
   (=> (dynamic_invariant temp false false true true)
   (<= (to_rep list__first) i))))))))))))
 (check-sat)
+(exit)

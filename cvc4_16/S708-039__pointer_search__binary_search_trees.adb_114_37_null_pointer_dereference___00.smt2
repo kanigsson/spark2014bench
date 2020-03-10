@@ -501,3 +501,4 @@ Target solver: CVC4
   (not (= (rec__binary_search_trees__node_access__is_null_pointer o1) true)))
   (rec__binary_search_trees__node_access__pointer_value__pred o1))))))))
 (check-sat)
+(exit)

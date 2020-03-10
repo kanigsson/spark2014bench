@@ -1195,3 +1195,4 @@ Target solver: CVC4
   (let ((o1 (- j (first_2 a))))
   (=> (in_range1 o1) (=> (in_range2 o1) (in_range1 (length_2 a))))))))))))))))))
 (check-sat)
+(exit)

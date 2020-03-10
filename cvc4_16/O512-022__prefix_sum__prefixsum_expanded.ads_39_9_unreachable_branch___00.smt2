@@ -318,3 +318,4 @@ Target solver: CVC4
   (and (= (to_rep (select a 4)) o3) (= o (ite (= o3 o2) true false))))))
   (= o false)))) (not (= o true))))))))
 (check-sat)
+(exit)

@@ -1003,3 +1003,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 index1) (<= index1 r4b)) true false)) true)
   (uint_in_range (mod1 temp2 256)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

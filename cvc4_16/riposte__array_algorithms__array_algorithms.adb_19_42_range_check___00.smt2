@@ -383,3 +383,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true))
   (=> (<= (first1 a) i) (<= (- 2147483648) (first1 a)))))))))))))))))))))))
 (check-sat)
+(exit)

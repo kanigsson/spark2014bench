@@ -194,3 +194,4 @@ Target solver: CVC4
   (fp.lt (next_representable x1) (fp #b0 #b01111111 #b00000000000000000000000))
   (fp.lt (prev_representable x1) (fp #b0 #b00000000 #b00000000000000000000000)))))))))
 (check-sat)
+(exit)

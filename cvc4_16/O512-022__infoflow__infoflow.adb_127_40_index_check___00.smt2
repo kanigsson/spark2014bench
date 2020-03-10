@@ -542,3 +542,4 @@ Target solver: CVC4
   (= (to_rep1 (select temp___loop_entry_452 temp___453)) o3))
   (<= (to_rep h_v2__first) usf)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

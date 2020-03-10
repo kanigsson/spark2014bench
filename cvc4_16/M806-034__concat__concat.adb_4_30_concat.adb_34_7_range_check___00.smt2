@@ -510,3 +510,4 @@ Target solver: CVC4
  ;; File "concat.ads", line 10, characters 0-0
   (not (=> (<= 1 5) (<= 1 1))))
 (check-sat)
+(exit)

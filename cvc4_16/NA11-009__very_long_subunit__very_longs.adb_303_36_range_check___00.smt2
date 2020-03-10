@@ -1059,3 +1059,4 @@ Target solver: CVC4
   (= (to_rep (rec__very_longs__very_long__length (us_split_discrs1 l))) o1)
   (in_range1 (+ o1 o)))))))))
 (check-sat)
+(exit)

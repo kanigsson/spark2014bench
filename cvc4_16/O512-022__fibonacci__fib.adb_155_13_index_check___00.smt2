@@ -331,3 +331,4 @@ Target solver: CVC4
   (=> (= (to_rep (select b2 i1)) o)
   (forall ((o1 integer)) (=> (= (to_rep o1) o) (<= 0 i1))))))))))))))))))))))
 (check-sat)
+(exit)

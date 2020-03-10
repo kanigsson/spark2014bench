@@ -1215,3 +1215,4 @@ Target solver: CVC4
   (forall ((q_hat2 (_ BitVec 16)))
   (=> (= q_hat2 (bvsub q_hat1 #x0001)) (<= (first1 v__split_fields) n)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

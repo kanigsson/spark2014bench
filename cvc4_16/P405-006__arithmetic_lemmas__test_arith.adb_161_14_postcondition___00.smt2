@@ -315,3 +315,4 @@ Target solver: CVC4
   (let ((o2 y)) (= (mod2 (- r1) (- o2)) (- (mod2 r1 o2))))))))))
   (= (mod2 r1 y) 0)))))))))))))
 (check-sat)
+(exit)

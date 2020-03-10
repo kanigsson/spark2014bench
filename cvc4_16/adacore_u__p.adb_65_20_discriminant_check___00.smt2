@@ -564,3 +564,4 @@ Target solver: CVC4
   (=> (= result____attr__constrained true)
   (= (distinct 1 0) result____split_discrs))))))))))))))))))))))
 (check-sat)
+(exit)

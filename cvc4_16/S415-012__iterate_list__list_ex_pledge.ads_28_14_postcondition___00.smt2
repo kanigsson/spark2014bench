@@ -800,3 +800,4 @@ Target solver: CVC4
                                                   (us_repqtmk1
                                                   l__pointer_value1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

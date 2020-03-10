@@ -518,3 +518,4 @@ Target solver: CVC4
   (to_rep (select memory8 (bvadd addr #x0000000000000007)))) #x0100000000000000)) 
   val__))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1717,3 +1717,4 @@ Target solver: CVC4
   (is_permutation_2 o6) o6))
   (= (is_permutation_2 (select ranking_1 usf)) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -329,3 +329,4 @@ Target solver: CVC4
   (=> (= x 3000000000)
   (=> (dynamic_invariant x true false true true) (in_range1 (fxp_div x x)))))))
 (check-sat)
+(exit)

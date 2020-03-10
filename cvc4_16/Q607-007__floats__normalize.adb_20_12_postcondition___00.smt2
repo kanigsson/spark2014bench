@@ -145,3 +145,4 @@ Target solver: CVC4
   (=> (= normalize__r4__result o)
   (fp.eq normalize__r4__result (fp.roundToIntegral RTN x))))))))))
 (check-sat)
+(exit)

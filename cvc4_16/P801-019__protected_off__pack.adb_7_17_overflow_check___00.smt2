@@ -202,3 +202,4 @@ Target solver: CVC4
              (rec__pack__prot__x self__)))
   (=> (= (to_rep (rec__pack__prot__x self__1)) o) (in_range (+ o 1)))))))
 (check-sat)
+(exit)

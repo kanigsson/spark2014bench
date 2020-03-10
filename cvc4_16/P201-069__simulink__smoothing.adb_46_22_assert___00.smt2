@@ -178,3 +178,4 @@ Target solver: CVC4
   (fp.lt (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000) 
   smoothing_factor))))))))))))))))))))
 (check-sat)
+(exit)

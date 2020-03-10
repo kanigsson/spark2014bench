@@ -279,3 +279,4 @@ Target solver: CVC4
   (=> (dynamic_invariant4 call_actuals__fs__y true true true true) (in_range2
   call_actuals__fs__x))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

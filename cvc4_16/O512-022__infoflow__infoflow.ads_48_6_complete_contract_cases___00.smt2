@@ -205,3 +205,4 @@ Target solver: CVC4
  ;; File "infoflow.ads", line 47, characters 0-0
   (not (<= 1 (+ 0 (ite (= (distinct 1 0) true) 1 0)))))
 (check-sat)
+(exit)

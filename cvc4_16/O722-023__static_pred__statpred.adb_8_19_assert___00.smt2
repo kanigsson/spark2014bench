@@ -172,3 +172,4 @@ Target solver: CVC4
   (and (<= 2 temp___190) (<= temp___190 2147483647)))))
   (=> (id__function_guard (id (- 2)) (- 2)) (in_range2 (id (- 2))))))))
 (check-sat)
+(exit)

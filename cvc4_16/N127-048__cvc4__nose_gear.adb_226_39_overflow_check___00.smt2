@@ -905,3 +905,4 @@ Target solver: CVC4
                               validity_period) true false))
   (in_range1 (- max_uint16_out11 sum1_out11))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

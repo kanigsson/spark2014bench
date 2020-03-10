@@ -843,3 +843,4 @@ Target solver: CVC4
   (readmem16 (bvadd addr #x0000000000000002) memory8)) ((_ int2bv 32) 16))) 
   val__)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -220,3 +220,4 @@ Target solver: CVC4
   (forall ((p21 us_rep1)) (wrong_priv_ok__function_guard (wrong_priv_ok p21)
   p21)) (= (wrong_priv_ok p2) true))))))))))
 (check-sat)
+(exit)

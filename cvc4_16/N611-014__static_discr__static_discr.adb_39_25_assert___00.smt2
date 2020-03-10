@@ -1333,3 +1333,4 @@ Target solver: CVC4
      (us_split_fields7
      (rec__static_discr__holder__content1 current__split_fields2))) 1 100) true)))))))))))))))))))))))))
 (check-sat)
+(exit)

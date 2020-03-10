@@ -342,3 +342,4 @@ Target solver: CVC4
   (forall ((o5 Int))
   (=> (= (to_rep (select a3 0)) o5) (= (to_rep (select a3 1)) 1))))))))))))))))))))
 (check-sat)
+(exit)

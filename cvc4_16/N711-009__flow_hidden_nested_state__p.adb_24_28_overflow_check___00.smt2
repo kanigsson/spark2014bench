@@ -140,3 +140,4 @@ Target solver: CVC4
   (and (dynamic_invariant o true false true true) (= o (+ gn pr_var))))
   (in_range (+ 0 o))))))))))))
 (check-sat)
+(exit)

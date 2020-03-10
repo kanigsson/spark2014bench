@@ -248,3 +248,4 @@ Target solver: CVC4
   (=> (= (to_rep (select b usf)) o2)
   (=> (< threshold o2) (=> (<= 1 cur) (<= 1 1))))))))))))))))))))
 (check-sat)
+(exit)

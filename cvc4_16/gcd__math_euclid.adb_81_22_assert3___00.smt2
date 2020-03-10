@@ -404,3 +404,4 @@ Target solver: CVC4
   (=> (forall ((x1 Int)) (divides__function_guard (divides x1 b) x1 b))
   (not (and (= (divides x a) true) (= (divides x b) true))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

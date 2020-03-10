@@ -588,3 +588,4 @@ Target solver: CVC4
   (global_a_initalized global_a1) global_a1))
   (= (global_a_initalized global_a) true)))))))))))))
 (check-sat)
+(exit)

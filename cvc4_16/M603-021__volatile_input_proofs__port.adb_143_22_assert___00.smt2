@@ -103,3 +103,4 @@ Target solver: CVC4
   (=> (dynamic_invariant v12 true true true true)
   (=> (= t21 v12) (= t11 t21)))))))))))
 (check-sat)
+(exit)

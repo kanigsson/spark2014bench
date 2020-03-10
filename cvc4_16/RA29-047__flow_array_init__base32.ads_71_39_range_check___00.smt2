@@ -899,3 +899,4 @@ Target solver: CVC4
   (not
   (=> (dynamic_invariant s true false true true) (in_range1 (length1 s)))))
 (check-sat)
+(exit)

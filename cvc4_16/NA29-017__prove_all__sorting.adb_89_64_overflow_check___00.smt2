@@ -389,3 +389,4 @@ Target solver: CVC4
   (=> (le_array__function_guard (le_array o10 o7 o4 o3 o1 o) o10 o7 o4 o3 o1
   o) (in_range1 (- length11 i1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

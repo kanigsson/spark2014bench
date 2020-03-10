@@ -697,3 +697,4 @@ Target solver: CVC4
   (let ((usf1 (us_repqtmk1 (us_split_fieldsqtmk1 usf))))
   (=> (default_initial_assumption1 usf1 true) (dynamic_predicate1 usf1))))))))
 (check-sat)
+(exit)

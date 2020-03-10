@@ -350,3 +350,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 j) true false) (ite (<= j 10) true false)) true)
   (=> (< 1 j) (= prop4 true)))))))))))))
 (check-sat)
+(exit)

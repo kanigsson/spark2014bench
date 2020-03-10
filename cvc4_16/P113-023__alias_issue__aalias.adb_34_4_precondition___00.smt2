@@ -658,3 +658,4 @@ Target solver: CVC4
                                                         (bv2nat (to_rep o1))
                                                         (bv2nat (to_rep o))))))))))))))
 (check-sat)
+(exit)

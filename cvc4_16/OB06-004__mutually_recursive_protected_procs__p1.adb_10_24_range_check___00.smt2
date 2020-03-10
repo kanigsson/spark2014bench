@@ -166,3 +166,4 @@ Target solver: CVC4
   (not
   (=> (prio__function_guard (prio Tuple0) Tuple0) (<= 0 (prio Tuple0)))))
 (check-sat)
+(exit)

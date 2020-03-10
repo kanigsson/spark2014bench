@@ -734,3 +734,4 @@ Target solver: CVC4
   (= o4 (to_rep (rec__repro_main__int_table__t__last table__split_fields)))
   (= o4 (length1 (model1 usf)))))) (in_range1 (+ o4 1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

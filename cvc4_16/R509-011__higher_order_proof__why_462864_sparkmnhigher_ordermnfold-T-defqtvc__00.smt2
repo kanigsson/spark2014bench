@@ -458,3 +458,4 @@ Target solver: CVC4
   (forall ((o Int))
   (=> (= (to_rep (select (to_array a) temp___614)) o) (<= (- 2147483548) x))))))))))))
 (check-sat)
+(exit)

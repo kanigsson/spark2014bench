@@ -319,3 +319,4 @@ Target solver: CVC4
                                                  true)) true)
   (bvugt i2 temp___174))))))))))))))))))))))
 (check-sat)
+(exit)

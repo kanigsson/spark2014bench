@@ -762,3 +762,4 @@ Target solver: CVC4
   (=> (bvule temp___304 (bvsub (bvadd o3 ((_ int2bv 16) o2)) #x0001))
   (bvule #x0000 temp___304)))))))))))))
 (check-sat)
+(exit)

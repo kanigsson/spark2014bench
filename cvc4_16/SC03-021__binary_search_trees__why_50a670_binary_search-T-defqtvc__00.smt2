@@ -454,3 +454,4 @@ Target solver: CVC4
      (us_split_fields1 (rec__binary_search__tree_acc__pointer_value t)))) true)))
   (= binary_search__Olt__result true)))))))
 (check-sat)
+(exit)

@@ -291,3 +291,4 @@ Target solver: CVC4
   (size top3 data3) top3 data3))
   (= (size top2 data2) (+ (size top1 data1) 1)))))))))))))))))))))
 (check-sat)
+(exit)

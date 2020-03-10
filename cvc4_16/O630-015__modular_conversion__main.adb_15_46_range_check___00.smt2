@@ -403,3 +403,4 @@ Target solver: CVC4
   (=> (dynamic_invariant foo__get__data true true true true)
   (bvule ((_ zero_extend 32) #x00000000) foo__get__data)))))))
 (check-sat)
+(exit)

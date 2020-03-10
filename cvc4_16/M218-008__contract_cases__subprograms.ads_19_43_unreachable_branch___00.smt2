@@ -99,3 +99,4 @@ Target solver: CVC4
   (forall ((subprograms__f3__result Int))
   (=> (= subprograms__f3__result val__) (not (= (>= val__ 0) true)))))))
 (check-sat)
+(exit)

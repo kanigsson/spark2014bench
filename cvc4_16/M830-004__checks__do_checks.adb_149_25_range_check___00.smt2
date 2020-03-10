@@ -963,3 +963,4 @@ Target solver: CVC4
   (= (rec__do_checks__do_range_check__B_18__s__b (us_split_discrs3 usf1)) usf)))
   (=> (<= zero (- zero 1)) (<= 1 zero))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

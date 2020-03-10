@@ -1123,3 +1123,4 @@ Target solver: CVC4
                                         cur_position_at_start))))))
   (=> (<= 1 (max 500 (length1 s))) (<= 1 1))))))))))))))))))
 (check-sat)
+(exit)

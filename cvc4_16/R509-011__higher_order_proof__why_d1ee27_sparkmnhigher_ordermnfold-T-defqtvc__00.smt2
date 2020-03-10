@@ -1285,3 +1285,4 @@ Target solver: CVC4
                                               false)) true)
   (in_range5 j))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

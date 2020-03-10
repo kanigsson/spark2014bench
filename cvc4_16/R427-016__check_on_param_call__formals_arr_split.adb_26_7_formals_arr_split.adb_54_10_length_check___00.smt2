@@ -560,3 +560,4 @@ Target solver: CVC4
   (and (<= 0 y) (= (- (last1 temp___261) (first1 temp___261)) (- y 0)))
   (< y 0)) (=> (<= (to_rep v__first) (to_rep v__last)) (<= 0 y))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

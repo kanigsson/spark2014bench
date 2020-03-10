@@ -487,3 +487,4 @@ Target solver: CVC4
   (let ((o3 (bvsub res1 #x01)))
   (=> (in_range1 o3) (not (bvuge current_time o3))))))))))))))))))))))))))))
 (check-sat)
+(exit)

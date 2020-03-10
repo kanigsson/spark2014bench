@@ -1240,3 +1240,4 @@ Target solver: CVC4
  ;; File "keccak-sponge.ads", line 92, characters 0-0
   (not (=> (dynamic_invariant capacity true false true true) (not (= 8 0)))))
 (check-sat)
+(exit)

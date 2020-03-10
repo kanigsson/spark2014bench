@@ -1312,3 +1312,4 @@ Target solver: CVC4
   (forall ((i1 Int)) (count_length__function_guard (count_length (- i1 1))
   (- i1 1))) (= (count_length (- i 1)) true))))))))))))))))))))
 (check-sat)
+(exit)

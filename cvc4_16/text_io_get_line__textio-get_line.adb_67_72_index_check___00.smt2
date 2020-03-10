@@ -1491,3 +1491,4 @@ Target solver: CVC4
                                                  false)) true)
   (<= 1 usf))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

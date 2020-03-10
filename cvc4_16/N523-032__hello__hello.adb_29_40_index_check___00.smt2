@@ -363,3 +363,4 @@ Target solver: CVC4
                                                  false)) true)
   (=> (= usf (first1 str)) (<= (first1 str) usf))))))))))))
 (check-sat)
+(exit)

@@ -1831,3 +1831,4 @@ Target solver: CVC4
                                                    (first1 message_imprint)
                                                    (last1 message_imprint)))) 1))))))))))))))))))))
 (check-sat)
+(exit)

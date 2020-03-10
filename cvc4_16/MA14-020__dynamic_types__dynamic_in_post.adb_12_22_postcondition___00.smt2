@@ -326,3 +326,4 @@ Target solver: CVC4
                                                (of_array (to_array s)
                                                (first1 s) (last1 s)))))))))
 (check-sat)
+(exit)

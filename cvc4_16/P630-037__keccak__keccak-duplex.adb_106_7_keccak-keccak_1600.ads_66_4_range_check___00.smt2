@@ -1165,3 +1165,4 @@ Target solver: CVC4
   (< (- (length in_data) 1) 0))
   (let ((o (length in_data))) (=> (in_range o) (=> (<= 0 (- o 1)) (<= 0 0)))))))))))))))
 (check-sat)
+(exit)

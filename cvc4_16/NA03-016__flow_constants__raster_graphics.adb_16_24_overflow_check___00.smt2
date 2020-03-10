@@ -314,3 +314,4 @@ Target solver: CVC4
   (=> (in_range1 o6)
   (let ((o7 (* delta_x delta_x))) (=> (in_range1 o7) (in_range1 (+ o7 o6)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

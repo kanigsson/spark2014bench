@@ -184,3 +184,4 @@ Target solver: CVC4
   (=> (= y1 (fp.roundToIntegral RNA x))
   (fp.leq (fp.sub RNE x (fp #b0 #b01111110 #b00000000000000000000000)) y1)))))))))))
 (check-sat)
+(exit)

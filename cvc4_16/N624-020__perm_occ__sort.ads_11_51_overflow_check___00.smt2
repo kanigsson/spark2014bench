@@ -770,3 +770,4 @@ Target solver: CVC4
   (=> (< 0 (length o8 o7))
   (forall ((o9 Int)) (=> (= (to_rep1 values__last) o9) (in_range1 (- o9 1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

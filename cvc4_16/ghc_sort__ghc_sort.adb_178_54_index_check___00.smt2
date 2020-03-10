@@ -1373,3 +1373,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r79b true false true true)
   (let ((o4 (+ c1 1))) (=> (in_range1 o4) (<= (to_rep cuts__first) o4)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

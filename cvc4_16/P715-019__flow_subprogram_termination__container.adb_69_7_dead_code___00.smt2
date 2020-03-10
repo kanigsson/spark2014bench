@@ -739,3 +739,4 @@ Target solver: CVC4
   (and (in_range5 o2) (exists ((i2 Int)) (and (= i2 o2) (not (< i2 10)))))))))))))))))))
   (= r1 r))))))))))))))))))
 (check-sat)
+(exit)

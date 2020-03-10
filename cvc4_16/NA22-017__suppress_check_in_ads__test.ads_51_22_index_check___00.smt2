@@ -620,3 +620,4 @@ Target solver: CVC4
   (and (dynamic_invariant o2 true false true true) (= o2 (bvxor o1 o))))
   (<= (to_rep result____first) usf)))))))))))))))))))))))
 (check-sat)
+(exit)

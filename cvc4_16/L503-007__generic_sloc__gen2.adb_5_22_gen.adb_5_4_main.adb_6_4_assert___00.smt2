@@ -90,3 +90,4 @@ Target solver: CVC4
  ;; File "gen2.ads", line 4, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (= 10 x))))
 (check-sat)
+(exit)

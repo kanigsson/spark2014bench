@@ -777,3 +777,4 @@ Target solver: CVC4
                            (= (element l cu) 0)))
                       1 0))))))
 (check-sat)
+(exit)

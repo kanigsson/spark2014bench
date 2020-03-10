@@ -934,3 +934,4 @@ Target solver: CVC4
   (ite (= spark__branch2 true) (= left_2_out11 sum2_2_out11)
   (= left_2_out11 sum_3_out11))) (uint_in_range left_out11)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

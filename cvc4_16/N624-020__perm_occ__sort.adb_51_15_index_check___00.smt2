@@ -683,3 +683,4 @@ Target solver: CVC4
   (forall ((o11 natural))
   (=> (= (to_rep o11) temp1) (<= (to_rep1 values__first) y)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1660,3 +1660,4 @@ Target solver: CVC4
      (rec__use_formal_vectors__my_vect__element_access__pointer_value
      use_formal_vectors__my_vect__move__from__compl)) us_null_pointer1) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

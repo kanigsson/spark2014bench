@@ -1938,3 +1938,4 @@ Target solver: CVC4
   (= ctx__split_fields5 ctx__split_fields4))))
   (= (mod2 remaining_bits2 8) (mod2 bit_length 8))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

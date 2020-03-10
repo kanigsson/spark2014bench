@@ -749,3 +749,4 @@ Target solver: CVC4
   (let ((o8 (- usf (first1 array1))))
   (=> (in_range1 o8) (in_range1 (* o8 o7)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

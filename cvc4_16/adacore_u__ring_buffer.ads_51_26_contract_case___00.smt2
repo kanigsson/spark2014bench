@@ -647,3 +647,4 @@ Target solver: CVC4
   (is_prepend__function_guard (is_prepend model3 temp___old_3281 e2) model3
   temp___old_3281 e2)) (= (is_prepend model2 temp___old_328 e1) true)))))))))))))))))))))
 (check-sat)
+(exit)

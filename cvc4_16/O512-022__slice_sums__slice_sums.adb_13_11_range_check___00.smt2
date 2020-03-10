@@ -710,3 +710,4 @@ Target solver: CVC4
   (=> (dynamic_invariant current_sum false false true true)
   (=> (<= (first1 x) (last1 x)) (<= 1 (first1 x))))))))))
 (check-sat)
+(exit)

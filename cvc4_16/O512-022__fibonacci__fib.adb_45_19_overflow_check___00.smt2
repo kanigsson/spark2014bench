@@ -268,3 +268,4 @@ Target solver: CVC4
           true false) (ite (< 2 n21) true false)) true)
   (forall ((temp___205 Int)) (=> (= temp___205 n21) (in_range1 (+ a22 b21)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

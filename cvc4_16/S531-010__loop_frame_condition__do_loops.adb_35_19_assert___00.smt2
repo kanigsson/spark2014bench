@@ -1209,3 +1209,4 @@ Target solver: CVC4
   (us_repqtmk1 a__is_null_pointer1 a__pointer_address1 a__pointer_value1)
   true true true true)) (= (first1 a__pointer_value1) 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -562,3 +562,4 @@ Target solver: CVC4
   (forall ((cur_state1 Int)) (is_base__function_guard (is_base cur_state1)
   cur_state1)) (= (is_base cur_state) true))))))))))))))
 (check-sat)
+(exit)

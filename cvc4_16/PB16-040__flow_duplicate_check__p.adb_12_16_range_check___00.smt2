@@ -521,3 +521,4 @@ Target solver: CVC4
   (=> (dynamic_invariant source true false true true) (in_range
   (length source)))))
 (check-sat)
+(exit)

@@ -476,3 +476,4 @@ Target solver: CVC4
      (rec__main__rec__comp (us_split_fields1 (select arr_obj1 the_index)))) o1)
   (in_range1 (+ o1 1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

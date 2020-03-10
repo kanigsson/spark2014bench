@@ -829,3 +829,4 @@ Target solver: CVC4
   (=> (= (last1 temp___231) upper_bound)
   (=> (<= (first1 temp___231) (last1 temp___231)) (<= 1 upper_bound))))))))))))))
 (check-sat)
+(exit)

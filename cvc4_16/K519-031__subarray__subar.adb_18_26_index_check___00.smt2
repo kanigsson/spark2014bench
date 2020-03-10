@@ -292,3 +292,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array x) (first1 x))) 1)
   (<= (first1 x) (first1 x))))))
 (check-sat)
+(exit)

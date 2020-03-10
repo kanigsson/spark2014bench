@@ -1535,3 +1535,4 @@ Target solver: CVC4
   (forall ((i2 Int))
   (=> (= i2 (+ i1 1)) (=> (in_range5 (first_2 a)) (in_range4 i2)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

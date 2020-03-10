@@ -1409,3 +1409,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (get1 (to_array1 temp___1620) k l)) o2) (dynamic_property2
   1 100 (first2 a1) (last2 a1) 1 100 (first_2 a1) (last_2 a1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

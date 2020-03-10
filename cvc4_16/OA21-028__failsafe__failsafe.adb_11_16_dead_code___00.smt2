@@ -470,3 +470,4 @@ Target solver: CVC4
   (not
   (= (and (ite (bvule #x00 s) true false) (ite (bvule s #x31) true false)) true)))))))))))))
 (check-sat)
+(exit)

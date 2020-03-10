@@ -98,3 +98,4 @@ Target solver: CVC4
   (=> (dynamic_invariant last true false true true)
   (=> (<= last 0) (= (length 1 last) 0)))))
 (check-sat)
+(exit)

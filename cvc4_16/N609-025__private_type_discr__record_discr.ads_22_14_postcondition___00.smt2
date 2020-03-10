@@ -907,3 +907,4 @@ Target solver: CVC4
      (select (to_array a) (get_content record_discr__search__result))) 
   e)))))))))))))))))))))))))
 (check-sat)
+(exit)

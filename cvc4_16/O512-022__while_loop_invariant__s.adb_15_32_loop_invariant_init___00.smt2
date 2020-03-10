@@ -214,3 +214,4 @@ Target solver: CVC4
   (=> (= found (distinct 0 0))
   (=> (= found true) (=> (= index1 1) (not (<= index1 10))))))))))
 (check-sat)
+(exit)

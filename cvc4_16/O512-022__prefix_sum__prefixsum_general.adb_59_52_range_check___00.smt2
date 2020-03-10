@@ -578,3 +578,4 @@ Target solver: CVC4
                                           true false)) true)
   (in_range4 (- (+ usf 1) space1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -283,3 +283,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (=> (is_even__function_guard (is_even x) x) (= (is_even x) true)))))))))
 (check-sat)
+(exit)

@@ -576,3 +576,4 @@ Target solver: CVC4
              (rec__simple_unc_arrays__table__v (us_split_fields1 a))) j)) 
   v))))))))))))))
 (check-sat)
+(exit)

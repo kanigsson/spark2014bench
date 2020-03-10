@@ -223,3 +223,4 @@ Target solver: CVC4
   (=> (bad_priority__function_guard (bad_priority Tuple0) Tuple0)
   (<= 0 (bad_priority Tuple0)))))
 (check-sat)
+(exit)

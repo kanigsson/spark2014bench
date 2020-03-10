@@ -4241,3 +4241,4 @@ Target solver: CVC4
   (= (oeq (oadd2 temp___821) ada___pragmarc__b_strings__Oadd__2__result) true))))
   (in_range1 (length source)))))))))))))))))))))
 (check-sat)
+(exit)

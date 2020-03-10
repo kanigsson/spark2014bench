@@ -478,3 +478,4 @@ Target solver: CVC4
   (=> (= (in_range3 (of_array (to_array a) (first1 a) (last1 a)) x i) true)
   (=> (not (= i (last1 a))) (=> (in_range5 (+ i 1)) (<= i (last1 a)))))))))))))
 (check-sat)
+(exit)

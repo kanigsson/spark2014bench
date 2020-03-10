@@ -1121,3 +1121,4 @@ Target solver: CVC4
   (=> (= (to_rep1 item__first) o13)
   (<= 1 (+ (- usf o13) temp___loop_entry_373)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

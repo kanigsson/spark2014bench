@@ -901,3 +901,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select digit_lookup_table temp___349)) o3)
   (forall ((digit_12 Int)) (=> (= digit_12 o3) (not (= #x0A #x00)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

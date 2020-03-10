@@ -122,3 +122,4 @@ Target solver: CVC4
   (=> (= p__compare__result o2)
   (=> (= p__compare__result true) (not (= left right)))))))))))))
 (check-sat)
+(exit)

@@ -411,3 +411,4 @@ Target solver: CVC4
   (=> (=> (= usf1 true) (= lcp__result (+ (- (last1 a) x) 1)))
   (=> (not (= (or usf usf1) true)) (< 0 lcp__result)))))))))))))))))))))))
 (check-sat)
+(exit)

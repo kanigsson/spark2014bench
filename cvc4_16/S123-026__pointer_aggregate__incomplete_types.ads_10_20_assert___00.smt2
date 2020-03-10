@@ -297,3 +297,4 @@ Target solver: CVC4
   x)
   (= (to_rep (rec__incomplete_types__list_cell__value (us_split_fields1 x))) 2))))
 (check-sat)
+(exit)

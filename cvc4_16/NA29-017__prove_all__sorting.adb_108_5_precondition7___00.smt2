@@ -549,3 +549,4 @@ Target solver: CVC4
   (forall ((o2 Int))
   (=> (= (to_rep b__first) o2) (<= (to_rep a__first) a_first)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

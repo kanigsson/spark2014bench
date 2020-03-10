@@ -948,3 +948,4 @@ Target solver: CVC4
   (let ((o9 (us_repqtmk (us_split_fieldsqtmk temp___1052))))
   (or (= (has_element l o9) true) (= (bool_eq o9 no_element) true)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

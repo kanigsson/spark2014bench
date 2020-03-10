@@ -95,3 +95,4 @@ Target solver: CVC4
   (=> (dynamic_invariant par1 false false true true)
   (=> (= par2 11) (< 0 par2))))))
 (check-sat)
+(exit)

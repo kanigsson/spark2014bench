@@ -116,3 +116,4 @@ Target solver: CVC4
   (and (= result__1 (ite (= a b) true false)) (not (= (distinct 1 0) true)))
   (= result__1 result__)))))))))
 (check-sat)
+(exit)

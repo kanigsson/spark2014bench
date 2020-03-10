@@ -1117,3 +1117,4 @@ Target solver: CVC4
   (= (rec__p__pp__dummy (us_split_fields5 o1)) true))))
   (=> (= p__e__assume e) (= e true))))))))))))))))))))))))
 (check-sat)
+(exit)

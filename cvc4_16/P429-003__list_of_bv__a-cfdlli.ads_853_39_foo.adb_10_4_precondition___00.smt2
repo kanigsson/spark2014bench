@@ -928,3 +928,4 @@ Target solver: CVC4
   (=> (= (get o1 i) (get o1 j)) (= (bool_eq i j) true))))))))
   (= (has_key o1 (us_repqtmk (us_split_fieldsqtmk position__split_fields))) true)))))))))
 (check-sat)
+(exit)

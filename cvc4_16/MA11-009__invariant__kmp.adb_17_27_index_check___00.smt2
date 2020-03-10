@@ -384,3 +384,4 @@ Target solver: CVC4
   true true true)) (= (- i1 j2) r8b1)) (= j2 r9b1)) (= (- j2 1) r12b1))
   (<= (first1 p) j2))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

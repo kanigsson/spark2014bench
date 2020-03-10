@@ -808,3 +808,4 @@ Target solver: CVC4
      (us_split_discrs1 buffer))) o2)
   (in_range (- o2 o1))))))))))))
 (check-sat)
+(exit)

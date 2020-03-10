@@ -388,3 +388,4 @@ Target solver: CVC4
                                               (bvshl ((_ zero_extend 8) sndhalf1) ((_ int2bv 16) 8))
                                               #x0000)))))))))))))))
 (check-sat)
+(exit)

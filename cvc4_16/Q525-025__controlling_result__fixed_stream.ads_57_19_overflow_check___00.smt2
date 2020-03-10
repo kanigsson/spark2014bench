@@ -529,3 +529,4 @@ Target solver: CVC4
   (forall ((o16 Int))
   (=> (= (to_rep1 change__first) o16) (in_range1 (- usf1 o16)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

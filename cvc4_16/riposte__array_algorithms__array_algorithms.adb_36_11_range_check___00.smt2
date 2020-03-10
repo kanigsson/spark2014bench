@@ -402,3 +402,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 location false false true true)
   (=> (<= (first1 a) (last1 a)) (<= (- 2147483648) (first1 a)))))))))
 (check-sat)
+(exit)

@@ -511,3 +511,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select h1 o2)) o3)
   (forall ((o4 content)) (=> (= (to_rep1 o4) o3) (<= (to_rep h__first) q1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

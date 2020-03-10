@@ -271,3 +271,4 @@ Target solver: CVC4
   (forall ((o1 Int))
   (=> (= (to_rep (select c2 temp___294)) o1) (<= 0 (- usf k)))))))))))))
 (check-sat)
+(exit)

@@ -149,3 +149,4 @@ Target solver: CVC4
                                           false)) true))
   (< (+ (+ r1 r1) 1) n)))))))))))
 (check-sat)
+(exit)

@@ -739,3 +739,4 @@ Target solver: CVC4
        (< (to_rep2 (select (to_array a__split_fields1) left3)) pivot_value1))
   true false)) true) (in_range1 (+ left3 1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -105,3 +105,4 @@ Target solver: CVC4
   (=> (= arithmetic__minus_i__result o)
   (= arithmetic__minus_i__result (- a b))))))))))
 (check-sat)
+(exit)

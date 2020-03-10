@@ -766,3 +766,4 @@ Target solver: CVC4
   (= (bool_eq (id (us_repqtmk x__split_discrs x__split_fields))
      (id (us_repqtmk y__split_discrs y__split_fields))) true))))))))))))))))))))))))
 (check-sat)
+(exit)

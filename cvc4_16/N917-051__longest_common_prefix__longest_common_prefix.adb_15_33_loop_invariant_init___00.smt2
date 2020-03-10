@@ -297,3 +297,4 @@ Target solver: CVC4
   (=> (<= k (- l1 1))
   (= (to_rep (select a (+ x k))) (to_rep (select a (+ y k)))))))))))))))))))
 (check-sat)
+(exit)

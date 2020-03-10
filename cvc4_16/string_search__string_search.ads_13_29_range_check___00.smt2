@@ -385,3 +385,4 @@ Target solver: CVC4
   (=> (dynamic_invariant len true false true true) (in_range1
   (length needle))))))))
 (check-sat)
+(exit)

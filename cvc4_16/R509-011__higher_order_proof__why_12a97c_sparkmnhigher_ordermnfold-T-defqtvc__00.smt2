@@ -1191,3 +1191,4 @@ Target solver: CVC4
   (exists ((o1 Int)) (= (to_rep1 (get1 r1 o temp___453)) o1)))))))))
   (=> (dynamic_property1 first1 last1 j) (dynamic_property first last i1)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

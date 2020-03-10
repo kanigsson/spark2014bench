@@ -585,3 +585,4 @@ Target solver: CVC4
   (us_repqtmk stack__empty_stack__result1)))
   (= (is_empty (us_repqtmk stack__empty_stack__result)) true))))))))
 (check-sat)
+(exit)

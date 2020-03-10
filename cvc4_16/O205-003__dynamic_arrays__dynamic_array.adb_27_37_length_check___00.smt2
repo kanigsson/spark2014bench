@@ -1159,3 +1159,4 @@ Target solver: CVC4
   (=> (= (last2 temp___273) d)
   (=> (<= (first1 temp___273) (last2 temp___273)) (<= 1 d)))))))))))))))
 (check-sat)
+(exit)

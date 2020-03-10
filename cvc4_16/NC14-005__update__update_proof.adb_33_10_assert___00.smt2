@@ -548,3 +548,4 @@ Target solver: CVC4
      (bool_eq (select b1 i) 1 2 (to_array temp___271) (first1 temp___271)
      (last1 temp___271))) true))))))))))))))))))
 (check-sat)
+(exit)

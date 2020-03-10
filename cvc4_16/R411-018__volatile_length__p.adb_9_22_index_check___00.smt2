@@ -518,3 +518,4 @@ Target solver: CVC4
   (=> (= (to_rep buf__first) o4)
   (let ((o5 (+ o4 i))) (=> (in_range o5) (<= (to_rep buf__first) o5))))))))))))))))))))))
 (check-sat)
+(exit)

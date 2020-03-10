@@ -1173,3 +1173,4 @@ Target solver: CVC4
   (<= temp___1401 (to_rep r__last_2)))
   (let ((o8 (- usf 1))) (=> (in_range1 o8) (<= o8 (to_rep r__last))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

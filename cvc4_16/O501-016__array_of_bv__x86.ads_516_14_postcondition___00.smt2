@@ -481,3 +481,4 @@ Target solver: CVC4
   (to_rep (select mem (bvadd addr #x0000000000000006)))) ((_ int2bv 64) 48))) (bvshl ((_ zero_extend 56) 
   (to_rep (select mem (bvadd addr #x0000000000000007)))) ((_ int2bv 64) 56)))))))))))))))))
 (check-sat)
+(exit)

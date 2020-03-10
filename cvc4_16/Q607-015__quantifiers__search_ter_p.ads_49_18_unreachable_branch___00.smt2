@@ -643,3 +643,4 @@ Target solver: CVC4
      b) true)))))
   (= (or (or usf usf2) usf1) true))))))))))))))))))))))))
 (check-sat)
+(exit)

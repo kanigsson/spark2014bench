@@ -648,3 +648,4 @@ Target solver: CVC4
   (=> (in_range (+ o4 1)) (basic__r__a_field__pred
   (us_repqtmk z__split_discrs z__split_fields1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

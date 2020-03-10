@@ -1298,3 +1298,4 @@ Target solver: CVC4
   (forall ((rest2 Int))
   (=> (= rest2 textio__get_line__get_chunk__rest) (in_range2 rest2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

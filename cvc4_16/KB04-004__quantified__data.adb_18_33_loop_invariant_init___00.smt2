@@ -174,3 +174,4 @@ Target solver: CVC4
   (=> (<= k (- i 1))
   (=> (= (select x k) true) (not (= (select x_old k) true)))))))))))
 (check-sat)
+(exit)

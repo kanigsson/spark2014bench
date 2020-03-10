@@ -207,3 +207,4 @@ Target solver: CVC4
   (=> (get_my_t2__function_guard (get_my_t2 o us_HEAP) o us_HEAP) (in_range1
   y)))))))))
 (check-sat)
+(exit)

@@ -750,3 +750,4 @@ Target solver: CVC4
   (=> (forall ((o3 us_t)) (invariant____function_guard (invariant__ o3) o3))
   (= (invariant__ (of_array values1 1 100)) true))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

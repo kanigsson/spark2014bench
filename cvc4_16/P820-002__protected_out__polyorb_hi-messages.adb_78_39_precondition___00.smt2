@@ -1166,3 +1166,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 p true false true true)
   (let ((o3 (- l 1))) (=> (in_range o3) (< o3 65535)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

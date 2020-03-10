@@ -256,3 +256,4 @@ Target solver: CVC4
   (fp.isFinite32 (fp.sub RNE (fp #b0 #b11111110 #b11111111111111111111111) (fp.mul RNE ((_ to_fp 8 24) RNE (to_real (+ 
   nb_of_fp nb_of_pp))) delta_time))))))))))
 (check-sat)
+(exit)

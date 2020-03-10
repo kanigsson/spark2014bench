@@ -265,3 +265,4 @@ Target solver: CVC4
   (and (dynamic_invariant o5 true false true true) (= o5 price_of_orange1)))
   (in_range (* oranges1 o5)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

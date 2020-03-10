@@ -855,3 +855,4 @@ Target solver: CVC4
                                                                  rear__split_fields))
                                                                  i)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

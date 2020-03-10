@@ -132,3 +132,4 @@ Target solver: CVC4
   state_var_12 state_var_22))
   (= (invariant__ state_var_11 state_var_21) true))))))))))))))))
 (check-sat)
+(exit)

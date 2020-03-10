@@ -99,3 +99,4 @@ Target solver: CVC4
  ;; File "inst.adb", line 3, characters 0-0
   (not (=> (get__function_guard (get Tuple0) Tuple0) (= (get Tuple0) 4))))
 (check-sat)
+(exit)

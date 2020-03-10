@@ -407,3 +407,4 @@ Target solver: CVC4
   (=> (forall ((rsi2 (_ BitVec 64))) (esi__function_guard (esi rsi2) rsi2))
   (= (esi rsi1) val__))))))))
 (check-sat)
+(exit)

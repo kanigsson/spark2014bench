@@ -185,3 +185,4 @@ Target solver: CVC4
   (=> (< i2 10)
   (or (< temp___193 i2) (and (= i2 temp___193) (< r2 temp___192))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

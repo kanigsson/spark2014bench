@@ -250,3 +250,4 @@ Target solver: CVC4
   (=> (<= 1 j)
   (=> (<= j i2) (= (rec__foo__r__x (us_split_fields1 (select a2 j))) true)))))))))))))
 (check-sat)
+(exit)

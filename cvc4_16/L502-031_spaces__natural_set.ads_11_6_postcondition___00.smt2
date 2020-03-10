@@ -325,3 +325,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__natural_set__t__len (us_split_fields1 s))) o)
   (=> (= natural_set__members__result o) (<= 0 natural_set__members__result))))))
 (check-sat)
+(exit)

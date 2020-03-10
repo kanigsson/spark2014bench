@@ -1335,3 +1335,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk3
   (of_array (to_array temp___227) (first1 temp___227) (last2 temp___227))))))))))))))))))))
 (check-sat)
+(exit)

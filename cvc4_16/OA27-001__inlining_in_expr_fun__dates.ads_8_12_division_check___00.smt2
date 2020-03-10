@@ -237,3 +237,4 @@ Target solver: CVC4
   (= o (ite (= temp___193 200) true (ite (= temp___193 300) true false)))))
   (not (= 4 0)))))))
 (check-sat)
+(exit)

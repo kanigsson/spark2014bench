@@ -198,3 +198,4 @@ Target solver: CVC4
   (rec__pointers__t_ptr__pointer_value__pred
   (us_repqtmk x__is_null_pointer x__pointer_address x__pointer_value))))))))))
 (check-sat)
+(exit)

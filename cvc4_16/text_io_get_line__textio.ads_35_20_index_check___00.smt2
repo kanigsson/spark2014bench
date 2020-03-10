@@ -1396,3 +1396,4 @@ Target solver: CVC4
   (=> (= (to_rep (select the_file temp___378)) o5)
   (<= (to_rep1 item__first) usf1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

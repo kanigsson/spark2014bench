@@ -532,3 +532,4 @@ Target solver: CVC4
   (let ((temp___231 (of_array1 (slide (concat1 y 6 10 y 1 5) 6 1) 1 o1)))
   (=> (<= (first3 temp___231) (last3 temp___231)) (<= 1 10))))))))))))))))))))
 (check-sat)
+(exit)

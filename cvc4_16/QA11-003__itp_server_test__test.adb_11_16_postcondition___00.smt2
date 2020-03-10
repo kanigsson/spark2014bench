@@ -105,3 +105,4 @@ Target solver: CVC4
   (exists ((x Int))
   (and (and (<= 0 x) (<= x 255)) (or (= a (+ x x)) (= a (+ (+ x x) 2)))))))))
 (check-sat)
+(exit)

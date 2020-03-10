@@ -362,3 +362,4 @@ Target solver: CVC4
   (= count1 count2)))) (= index1 temp___188)))))))) (= count1 count))))))
   (in_range1 (length arr))))))))))
 (check-sat)
+(exit)

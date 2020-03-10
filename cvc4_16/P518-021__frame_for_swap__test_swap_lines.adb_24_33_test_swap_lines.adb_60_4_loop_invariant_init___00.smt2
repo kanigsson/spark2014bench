@@ -526,3 +526,4 @@ Target solver: CVC4
   (=> (<= i 10)
   (= (to_rep (get m2 5 i)) (to_rep (get temp___loop_entry_264 5 i))))))))))))))))))))))
 (check-sat)
+(exit)

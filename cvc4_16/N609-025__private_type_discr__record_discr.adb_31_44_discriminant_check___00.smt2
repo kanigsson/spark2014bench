@@ -828,3 +828,4 @@ Target solver: CVC4
   (= (to_rep (rec__record_discr__interm_result__upto (us_split_discrs3 r))) o3)
   (in_range3 (not (= o3 0)) (us_split_discrs1 result__))))))))))))))))
 (check-sat)
+(exit)

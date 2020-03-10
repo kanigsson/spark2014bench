@@ -675,3 +675,4 @@ Target solver: CVC4
   (forall ((a5 (Array Int integer)))
   (=> (= a5 (store a4 left3 o9)) (in_range1 (* space2 2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

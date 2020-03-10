@@ -891,3 +891,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__main__r__hd (us_split_discrs1 usf2))) usf)
   (=> (<= usf1 usf) (<= (- 2147483648) usf1)))))))))))
 (check-sat)
+(exit)

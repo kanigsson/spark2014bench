@@ -1178,3 +1178,4 @@ Target solver: CVC4
   (=> (and (model__function_guard1 o8 o7) (= (is_model o7 o8) true))
   (<= (+ 1 (length o8)) 1000)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

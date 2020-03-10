@@ -688,3 +688,4 @@ Target solver: CVC4
                       (rec__random__generator__index g__split_fields)))
   (bvule #x00000000 (bvand value1 #x00000001))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

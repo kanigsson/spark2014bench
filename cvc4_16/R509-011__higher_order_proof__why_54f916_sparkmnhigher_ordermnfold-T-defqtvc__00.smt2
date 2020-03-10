@@ -845,3 +845,4 @@ Target solver: CVC4
   (=> (dynamic_property2 first3 last3 i1) (dynamic_property1 first last
   (first2 a) (last2 a)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

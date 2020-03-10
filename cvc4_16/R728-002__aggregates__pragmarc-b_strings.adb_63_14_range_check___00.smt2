@@ -4319,3 +4319,4 @@ Target solver: CVC4
                     to____split_discrs))))
   (in_range (length from)))))))))
 (check-sat)
+(exit)

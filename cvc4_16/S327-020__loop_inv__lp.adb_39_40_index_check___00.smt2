@@ -934,3 +934,4 @@ Target solver: CVC4
                       true false)) true)
   (<= (first1 powers) c13b1)))))))))))))))))
 (check-sat)
+(exit)

@@ -839,3 +839,4 @@ Target solver: CVC4
   (- (+ (first1 vstring) (+ (length (first1 vstring) (last1 vstring)) 
   (length (first1 vstring) (last1 vstring)))) 1))))))))))
 (check-sat)
+(exit)

@@ -237,3 +237,4 @@ Target solver: CVC4
   (= o (ite (= y (- 1)) false true))) (= o false))
   (=> (= spark__branch o) (=> (= spark__branch true) (not (= y 0)))))))))))
 (check-sat)
+(exit)

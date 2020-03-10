@@ -706,3 +706,4 @@ Target solver: CVC4
   (=> (= pivot_index1 (div1 o1 2))
   (<= (first1 a__split_fields) pivot_index1))))))))))))))))))))
 (check-sat)
+(exit)

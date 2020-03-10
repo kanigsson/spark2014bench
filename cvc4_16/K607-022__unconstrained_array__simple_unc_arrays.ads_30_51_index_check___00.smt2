@@ -645,3 +645,4 @@ Target solver: CVC4
   (let ((o3 (+ (- o2 usf) 1)))
   (=> (in_range1 o3) (<= (first1 a__split_fields) o3))))))))))))))))
 (check-sat)
+(exit)

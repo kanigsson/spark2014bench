@@ -466,3 +466,4 @@ Target solver: CVC4
   (and (to_duration__function_guard o10 o9) (dynamic_invariant1 o10 true
   false true true)) (in_range3 (fxp_div o10 1))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -626,3 +626,4 @@ Target solver: CVC4
   (=> (= full_s__split_fields (us_split_fields1 null_r))
   (= (bool_eq (us_repqtmk full_s__split_fields) null_r) true))))))))
 (check-sat)
+(exit)

@@ -558,3 +558,4 @@ Target solver: CVC4
   (forall ((h__split_fields2 (Array Int natural)))
   (=> (= h__split_fields2 declare_iterable__set__x__fields) (= e2 0)))))))))))))))))))))))))))
 (check-sat)
+(exit)

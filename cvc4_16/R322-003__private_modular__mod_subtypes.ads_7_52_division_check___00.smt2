@@ -262,3 +262,4 @@ Target solver: CVC4
  ;; File "mod_subtypes.ads", line 7, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (not (= #x02 #x00)))))
 (check-sat)
+(exit)

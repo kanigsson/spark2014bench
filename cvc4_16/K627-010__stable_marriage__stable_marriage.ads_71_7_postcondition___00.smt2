@@ -337,3 +337,4 @@ Target solver: CVC4
      (select g2_to_g1 (to_rep1
                       (select stable_marriage__invert_map__result g1)))) g1))))))))))))))
 (check-sat)
+(exit)

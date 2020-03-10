@@ -259,3 +259,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (=> (= (to_rep (select arr n)) o1) (in_range1 (+ o1 1)))))))))))
 (check-sat)
+(exit)

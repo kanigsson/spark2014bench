@@ -308,3 +308,4 @@ Target solver: CVC4
   (=> (not (= (rec__foo__misc_private_t__valid (us_split_discrs1 a)) true))
   (in_range 0)))))
 (check-sat)
+(exit)

@@ -329,3 +329,4 @@ Target solver: CVC4
   (let ((o val2))
   (let ((o1 val1)) (=> (= (fxp_div_int (* o1 o) o) o1) (not (= val2 0)))))))))))
 (check-sat)
+(exit)

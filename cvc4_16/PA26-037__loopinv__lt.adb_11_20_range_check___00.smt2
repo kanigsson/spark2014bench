@@ -348,3 +348,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 0 j) true false) (ite (<= j 9) true false)) true)
   (=> (= (to_rep (select (select x i) j)) o) (in_range4 (+ r1 o))))))))))))
 (check-sat)
+(exit)

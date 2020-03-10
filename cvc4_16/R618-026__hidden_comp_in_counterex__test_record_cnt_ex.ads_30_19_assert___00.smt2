@@ -2717,3 +2717,4 @@ Target solver: CVC4
   (= (bool_eq2 (us_repqtmk2 x_1__split_fields x_1__attr__tag)
      (us_repqtmk2 y_1__split_fields y_1__attr__tag)) true))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

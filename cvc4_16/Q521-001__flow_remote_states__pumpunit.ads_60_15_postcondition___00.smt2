@@ -768,3 +768,4 @@ Target solver: CVC4
   (forall ((cur_state2 Int)) (is_pumping__function_guard
   (is_pumping cur_state2) cur_state2)) (= (is_pumping cur_state1) true)))))))))))))))))
 (check-sat)
+(exit)

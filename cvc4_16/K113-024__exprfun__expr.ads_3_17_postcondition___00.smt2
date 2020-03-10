@@ -126,3 +126,4 @@ Target solver: CVC4
   (forall ((expr__echo__result Int))
   (=> (= expr__echo__result r1) (= expr__echo__result a)))))))))))))
 (check-sat)
+(exit)

@@ -329,3 +329,4 @@ Target solver: CVC4
   (= r__split_discrs1 r__split_discrs))))))))
   (=> (= r__split_discrs1 true) (= (to_rep r__split_fields1) new_field)))))))
 (check-sat)
+(exit)

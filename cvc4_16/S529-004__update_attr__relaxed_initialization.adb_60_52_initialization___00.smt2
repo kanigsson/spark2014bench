@@ -765,3 +765,4 @@ Target solver: CVC4
   (rec__relaxed_initialization__rec__z q_1))))
   (= (attr__init1 (rec__relaxed_initialization__rec__y q_1)) true))))))))))))))))))))))))
 (check-sat)
+(exit)

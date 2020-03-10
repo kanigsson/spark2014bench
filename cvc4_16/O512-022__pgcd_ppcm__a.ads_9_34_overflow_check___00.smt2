@@ -303,3 +303,4 @@ Target solver: CVC4
                                                   (abs1 a)) true false))) true))
   (in_range1 (abs1 b)))))))))))))))))))))
 (check-sat)
+(exit)

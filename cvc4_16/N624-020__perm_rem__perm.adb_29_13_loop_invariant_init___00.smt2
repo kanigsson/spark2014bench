@@ -571,3 +571,4 @@ Target solver: CVC4
   (= (to_rep (select (to_array a) ia)) (to_rep (select (to_array b) kb)))
   (= (is_perm (remove a ia) (remove b kb)) true)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

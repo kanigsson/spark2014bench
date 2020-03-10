@@ -240,3 +240,4 @@ Target solver: CVC4
   (=> (<= 1 temp___191)
   (=> (<= temp___191 10) (= (to_rep (select x temp___191)) 0))))))))
 (check-sat)
+(exit)

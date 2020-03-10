@@ -379,3 +379,4 @@ Target solver: CVC4
   (=> (<= (- (+ (first1 s) n) 1) (last1 s))
   (let ((o s)) (<= (- (+ (first1 o) n) 1) (last1 o)))))))))
 (check-sat)
+(exit)

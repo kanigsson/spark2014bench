@@ -665,3 +665,4 @@ Target solver: CVC4
                                              (select (to_array o3) k))))))))
   (=> (in_range3 ia) (<= (first1 a) ia)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

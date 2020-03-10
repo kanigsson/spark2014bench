@@ -576,3 +576,4 @@ Target solver: CVC4
   (forall ((bits3 (_ BitVec 8)))
   (=> (= bits3 (bvmul bits2 #x02)) (<= (first1 array_of_bits) i1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

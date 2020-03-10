@@ -100,3 +100,4 @@ Target solver: CVC4
   (=> (= enum_rep__my_enum_enumrep_2__result (pos_to_rep x))
   (<= 0 enum_rep__my_enum_enumrep_2__result))))))
 (check-sat)
+(exit)

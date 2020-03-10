@@ -387,3 +387,4 @@ Target solver: CVC4
   (=> (exists ((o4 Int)) (= (to_rep values__last) o4)) (in_range1
   (- current 1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

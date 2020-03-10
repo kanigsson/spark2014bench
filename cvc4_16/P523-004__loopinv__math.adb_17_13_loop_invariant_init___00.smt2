@@ -303,3 +303,4 @@ Target solver: CVC4
   (=> (and (<= (+ j 1) k) (<= k 100))
   (= (to_rep (select v1 k)) (to_rep (select temp___loop_entry_216 k))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

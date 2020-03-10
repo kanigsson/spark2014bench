@@ -86,3 +86,4 @@ Target solver: CVC4
  ;; File "misovattr.ads", line 7, characters 0-0
   (not (=> (dynamic_invariant a true false true true) (not (= a 2)))))
 (check-sat)
+(exit)

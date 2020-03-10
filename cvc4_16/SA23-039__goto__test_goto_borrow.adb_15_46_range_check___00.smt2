@@ -458,3 +458,4 @@ Target solver: CVC4
   (=> (length__function_guard (length l) l)
   (=> (<= n (length l)) (=> (not (= n 1)) (in_range1 (- n 1))))))))
 (check-sat)
+(exit)

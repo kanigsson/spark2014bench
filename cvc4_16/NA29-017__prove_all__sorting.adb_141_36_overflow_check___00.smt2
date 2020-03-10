@@ -558,3 +558,4 @@ Target solver: CVC4
   (=> (in_range2 (min l1 o20))
   (=> (in_range1 (* usf l1)) (in_range1 (+ a_first i2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

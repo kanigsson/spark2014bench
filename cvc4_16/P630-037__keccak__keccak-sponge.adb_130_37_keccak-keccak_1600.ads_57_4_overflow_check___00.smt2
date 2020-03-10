@@ -1884,3 +1884,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 r78s true false true true) (in_range1
   (+ (first1 data) offset2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

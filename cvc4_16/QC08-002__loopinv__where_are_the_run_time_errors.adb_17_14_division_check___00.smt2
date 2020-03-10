@@ -273,3 +273,4 @@ Target solver: CVC4
   (forall ((y3 Int))
   (=> (= y3 o3) (let ((o4 (- x2 y3))) (=> (in_range o4) (not (= o4 0))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

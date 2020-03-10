@@ -1636,3 +1636,4 @@ Target solver: CVC4
   true true true) (dynamic_invariant6 current_borrow2 true true true true))
   (in_range1 j1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

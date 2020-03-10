@@ -1041,3 +1041,4 @@ Target solver: CVC4
   false true true) (dynamic_predicate
   (us_repqtmk x__split_discrs x__split_fields)))))))))))))))))))
 (check-sat)
+(exit)

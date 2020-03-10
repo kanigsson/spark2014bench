@@ -320,3 +320,4 @@ Target solver: CVC4
  ;; File "discr.ads", line 18, characters 0-0
   (not (=> (dynamic_invariant c true false true true) (in_range (+ c 1)))))
 (check-sat)
+(exit)

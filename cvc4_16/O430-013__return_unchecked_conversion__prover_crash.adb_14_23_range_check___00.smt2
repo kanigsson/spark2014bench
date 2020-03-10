@@ -218,3 +218,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 x true false true true)
   (=> (dynamic_invariant2 y true false true true) (in_range (+ x y))))))
 (check-sat)
+(exit)

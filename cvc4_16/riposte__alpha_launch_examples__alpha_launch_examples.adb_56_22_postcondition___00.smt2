@@ -180,3 +180,4 @@ Target solver: CVC4
   (=> (= alpha_launch_examples__example_5__result true)
   (= (to_rep (select a v1)) (to_rep (select a v2)))))))))))
 (check-sat)
+(exit)

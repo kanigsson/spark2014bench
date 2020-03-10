@@ -1504,3 +1504,4 @@ Target solver: CVC4
   (forall ((name_table2 us_private)) (invariant____function_guard
   (invariant__ name_table2) name_table2)) (= (invariant__ name_table1) true))))))))))))))))))))))))))
 (check-sat)
+(exit)

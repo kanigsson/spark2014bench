@@ -1139,3 +1139,4 @@ Target solver: CVC4
             p_prime__split_fields)) 1)))
   (= (to_rep3 (select f3 j2)) (to_rep3 (select temp___loop_entry_694 j2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

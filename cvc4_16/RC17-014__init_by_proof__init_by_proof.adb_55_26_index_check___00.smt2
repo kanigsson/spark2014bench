@@ -608,3 +608,4 @@ Target solver: CVC4
                       true false)) true)
   (<= (to_rep buf__first) i1)))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -476,3 +476,4 @@ Target solver: CVC4
      (us_split_fields1
      (rec__private_a__optional_stack__the_stack s__split_fields)))) 100))))))))))))
 (check-sat)
+(exit)

@@ -485,3 +485,4 @@ Target solver: CVC4
      (us_repqtmk (us_split_fields1 unit1__bump__x__compl)
      (attr__tag unit1__bump__x__compl))) true)))))))))
 (check-sat)
+(exit)

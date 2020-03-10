@@ -267,3 +267,4 @@ Target solver: CVC4
   (=> (<= i j)
   (=> (not (<= j i)) (let ((o (+ i 1))) (=> (in_range2 o) (<= o j)))))))))
 (check-sat)
+(exit)

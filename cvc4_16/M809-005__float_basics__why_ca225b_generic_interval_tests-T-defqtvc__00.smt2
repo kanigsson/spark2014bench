@@ -170,3 +170,4 @@ Target solver: CVC4
   (fp.leq temp___179 (fp #b0 #b01111111 #b00000000000000000000000))))
   (fp.leq x (fp #b0 #b01111111 #b00000000000000000000000))))))
 (check-sat)
+(exit)

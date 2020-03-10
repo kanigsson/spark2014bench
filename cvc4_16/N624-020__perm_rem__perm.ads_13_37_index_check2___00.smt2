@@ -532,3 +532,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array perm__remove__result) usf)) o3)
   (<= (first1 a) usf))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

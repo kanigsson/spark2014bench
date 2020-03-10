@@ -1538,3 +1538,4 @@ Target solver: CVC4
   (=> (bvule start_index #x000000000000003F)
   (bvuge start_index #x0000000000000000)))))
 (check-sat)
+(exit)

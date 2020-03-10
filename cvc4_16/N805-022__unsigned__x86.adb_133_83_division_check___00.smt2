@@ -608,3 +608,4 @@ Target solver: CVC4
   (to_rep (select memory4 (bvadd addr #x0000000000000001)))) #x00000100)) (bvurem 
   val__ #x00010000)) (not (= #x00010000 #x00000000))))))))))))))))))))))))
 (check-sat)
+(exit)

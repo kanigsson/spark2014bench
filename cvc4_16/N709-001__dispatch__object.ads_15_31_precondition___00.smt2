@@ -389,3 +389,4 @@ Target solver: CVC4
   o2))
   (= (has_stored_area (us_repqtmk obj__split_fields obj__attr__tag)) true))))))))))
 (check-sat)
+(exit)

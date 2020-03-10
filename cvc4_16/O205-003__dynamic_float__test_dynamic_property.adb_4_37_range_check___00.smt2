@@ -291,3 +291,4 @@ Target solver: CVC4
   (=> (fp.leq (fp #b0 #b01111111 #b00000000000000000000000) d)
   (=> (fp.leq d (fp #b0 #b10000101 #b10010000000000000000000)) (in_range1 d))))))
 (check-sat)
+(exit)

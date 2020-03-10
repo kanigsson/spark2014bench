@@ -225,3 +225,4 @@ Target solver: CVC4
   (=> (= arithmetic__test_mod_b__result (mod2 n (- 10)))
   (= arithmetic__test_mod_b__result n))))))
 (check-sat)
+(exit)

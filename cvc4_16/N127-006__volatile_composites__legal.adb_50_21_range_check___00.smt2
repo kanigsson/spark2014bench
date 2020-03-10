@@ -418,3 +418,4 @@ Target solver: CVC4
   (=> (= legal__rv3uc__tmp__assume tmp)
   (=> (dynamic_invariant2 tmp true false true true) (in_range (bv2nat tmp)))))))))))
 (check-sat)
+(exit)

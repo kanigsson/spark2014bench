@@ -696,3 +696,4 @@ Target solver: CVC4
   (=> (dynamic_invariant capacity true false true true)
   (=> (< capacity 1598) (in_range1 (- 1600 capacity))))))
 (check-sat)
+(exit)

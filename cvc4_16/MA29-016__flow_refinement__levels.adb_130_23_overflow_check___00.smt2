@@ -170,3 +170,4 @@ Target solver: CVC4
   (and (read_partial_2__function_guard o x2) (dynamic_invariant o true false
   true true)) (let ((o1 (+ x0 x1))) (=> (in_range o1) (in_range (+ o1 o))))))))))))))
 (check-sat)
+(exit)

@@ -1217,3 +1217,4 @@ Target solver: CVC4
   (and (physical__function_guard o1 o) (dynamic_invariant1 o1 true false true
   true)) (not (= #x0000000000000010 #x0000000000000000)))))))))))))
 (check-sat)
+(exit)

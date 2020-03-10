@@ -340,3 +340,4 @@ Target solver: CVC4
   (=> (in_bounds__function_guard (in_bounds (low_bound n)) (low_bound n))
   (= (in_bounds (low_bound n)) true)))))))))))))))))))))))))))
 (check-sat)
+(exit)

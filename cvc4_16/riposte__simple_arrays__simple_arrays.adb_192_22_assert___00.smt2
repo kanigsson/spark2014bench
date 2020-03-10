@@ -198,3 +198,4 @@ Target solver: CVC4
      (- 2147483648) 2147483647) true)
   (= (to_rep (select a i)) 42)))))
 (check-sat)
+(exit)

@@ -224,3 +224,4 @@ Target solver: CVC4
   (=> (not (= spark__branch1 true))
   (not (= x5 (fp #b0 #b11111110 #b11111111111111111111111))))))))))))))))))))))))
 (check-sat)
+(exit)

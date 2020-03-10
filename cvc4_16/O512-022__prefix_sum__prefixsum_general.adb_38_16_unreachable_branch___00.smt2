@@ -524,3 +524,4 @@ Target solver: CVC4
   (forall ((temp___loop_entry_194 (Array Int integer)))
   (=> (= temp___loop_entry_194 a1) (not (< (+ left2 space1) 8)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

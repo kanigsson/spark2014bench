@@ -437,3 +437,4 @@ Target solver: CVC4
   (=> (= found1 true)
   (=> (<= (first1 a) (- location2 1)) (<= (- 2147483648) (first1 a)))))))))))))))
 (check-sat)
+(exit)

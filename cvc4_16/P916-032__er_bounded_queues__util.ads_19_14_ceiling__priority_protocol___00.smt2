@@ -155,3 +155,4 @@ Target solver: CVC4
  ;; File "util.ads", line 19, characters 0-0
   (not (<= 97 97)))
 (check-sat)
+(exit)

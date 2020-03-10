@@ -229,3 +229,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (temp_____aggregate_def_172 data) 1)) o)
   (=> (= result__1 o) (= result__1 data))))))))))
 (check-sat)
+(exit)

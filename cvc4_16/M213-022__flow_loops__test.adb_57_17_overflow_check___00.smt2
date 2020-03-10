@@ -276,3 +276,4 @@ Target solver: CVC4
           true false) (ite (not (= d2 1)) true false)) true)
   (in_range1 (div1 c1 d2)))))))))))))))))
 (check-sat)
+(exit)

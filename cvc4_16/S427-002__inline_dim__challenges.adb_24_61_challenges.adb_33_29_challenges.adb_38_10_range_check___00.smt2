@@ -794,3 +794,4 @@ Target solver: CVC4
   (forall ((c43b1 Float64))
   (=> (= c43b1 c47b1) (in_range4 (fp.sub RNE c43b1 c38b)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

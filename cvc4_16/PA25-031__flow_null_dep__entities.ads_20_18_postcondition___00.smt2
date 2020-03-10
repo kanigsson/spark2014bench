@@ -202,3 +202,4 @@ Target solver: CVC4
   (get_current_id1 current_id2) current_id2))
   (= (get_current_id1 current_id1) value))))))))))
 (check-sat)
+(exit)

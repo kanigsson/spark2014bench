@@ -1356,3 +1356,4 @@ Target solver: CVC4
   (forall ((i3 Int)) (sum_cst__function_guard (sum_cst (- i3 1) (last_2 a))
   (- i3 1) (last_2 a))) (= (sum_cst (- i2 1) (last_2 a)) true))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

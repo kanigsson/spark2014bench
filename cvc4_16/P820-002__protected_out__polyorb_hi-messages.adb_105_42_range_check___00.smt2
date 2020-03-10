@@ -922,3 +922,4 @@ Target solver: CVC4
   (forall ((o3 Int))
   (=> (= (to_rep2 item__first) o3) (in_range2 (length o3 o2))))))))))))))))
 (check-sat)
+(exit)

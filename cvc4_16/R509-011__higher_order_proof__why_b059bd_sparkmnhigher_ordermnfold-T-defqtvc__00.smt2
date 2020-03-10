@@ -717,3 +717,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 acc true false true true)
   (=> (<= (first1 a) (last1 a)) (<= (last1 a) 100))))))))))))
 (check-sat)
+(exit)

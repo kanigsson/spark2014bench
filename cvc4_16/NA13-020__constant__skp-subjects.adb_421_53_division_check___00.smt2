@@ -2569,3 +2569,4 @@ Target solver: CVC4
              (us_split_fields7 (select subject_specs 4)))) #x0000000000001000) #x0000000000000000)
   (not (= #x0000000000001000 #x0000000000000000))))))))))
 (check-sat)
+(exit)

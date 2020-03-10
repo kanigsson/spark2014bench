@@ -229,3 +229,4 @@ Target solver: CVC4
   (=> (<= 2 x)
   (=> (<= x 29) (< (+ (power 2 x) (power 2 (- x 1))) (power 2 (+ x 1))))))))
 (check-sat)
+(exit)

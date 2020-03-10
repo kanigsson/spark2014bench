@@ -754,3 +754,4 @@ Target solver: CVC4
   (= o2 (ite (= o6 o5) true false)))))))))) (= o2 false))))
   (=> (= o2 true) (in_range1 (- (last3 ghc_sort__cut__result) 1)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

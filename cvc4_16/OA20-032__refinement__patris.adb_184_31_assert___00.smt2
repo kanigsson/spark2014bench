@@ -2464,3 +2464,4 @@ Target solver: CVC4
   (=> (= to_line3 o2)
   (= (to_rep (select (select cur_board4 from_line1) 1)) 0)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

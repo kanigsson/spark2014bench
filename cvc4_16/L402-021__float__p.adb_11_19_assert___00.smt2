@@ -156,3 +156,4 @@ Target solver: CVC4
   (=> (fp.lt x (fp.add RNE f (fp #b0 #b01111111 #b00000000000000000000000)))
   (or (fp.eq r c) (fp.eq r f))))))))))))))))))
 (check-sat)
+(exit)

@@ -589,3 +589,4 @@ Target solver: CVC4
   (forall ((memory1 (Array (_ BitVec 64) unsigned8)))
   (=> (= memory1 (store memory addr o)) (not (= #x00000100 #x00000000)))))))))))
 (check-sat)
+(exit)

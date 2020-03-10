@@ -398,3 +398,4 @@ Target solver: CVC4
   (=> (in_range3 o)
   (=> (= i o) (=> (dynamic_invariant1 i true false true true) (<= 3 n)))))))))))))))
 (check-sat)
+(exit)

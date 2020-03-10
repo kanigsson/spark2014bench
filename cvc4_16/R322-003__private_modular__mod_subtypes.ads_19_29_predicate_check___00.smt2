@@ -384,3 +384,4 @@ Target solver: CVC4
   (forall ((temp___1871 (_ BitVec 8))) (even__function_guard
   (even temp___1871) temp___1871)) (= (even temp___187) true))))))))))))))))))
 (check-sat)
+(exit)

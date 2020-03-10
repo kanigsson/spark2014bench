@@ -530,3 +530,4 @@ Target solver: CVC4
   (forall ((o5 Int))
   (=> (= (to_rep (select (to_array a) right1)) o5) (<= (first1 a) left1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

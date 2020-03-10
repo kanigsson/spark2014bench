@@ -1558,3 +1558,4 @@ Target solver: CVC4
      (us_split_fields1 (rec__ghc_sort__int_array_list__pointer_value o1)))) true)))))
   (in_range1 (length1 s))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

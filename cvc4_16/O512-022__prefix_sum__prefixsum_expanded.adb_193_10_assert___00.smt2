@@ -686,3 +686,4 @@ Target solver: CVC4
   (exists ((space3 Int)) (and (= space3 (div1 space2 2)) (not (< 0 space3))))))))))))))))))))))))))))))))))))))))))))))
   (= a2 a1)) (= (to_rep (select a2 0)) (to_rep (select saved_a 7))))))))))))))))))))))))))))
 (check-sat)
+(exit)

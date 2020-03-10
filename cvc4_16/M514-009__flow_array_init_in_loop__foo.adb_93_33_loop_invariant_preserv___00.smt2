@@ -226,3 +226,4 @@ Target solver: CVC4
   (=> (= a2 (store a1 i2 rliteral))
   (=> (<= 1 n) (=> (<= n i2) (< 0 (to_rep (select a2 n)))))))))))))))
 (check-sat)
+(exit)

@@ -360,3 +360,4 @@ Target solver: CVC4
   (<= dynamic_ranges__search__result1 (last1 a)))
   (= (to_rep (select (to_array a) dynamic_ranges__search__result1)) e)))))))))
 (check-sat)
+(exit)

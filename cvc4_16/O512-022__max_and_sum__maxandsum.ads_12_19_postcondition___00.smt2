@@ -324,3 +324,4 @@ Target solver: CVC4
   (= max2 max3)))))) (and (<= sum2 (* i1 max2)) (= i1 100)))))))))))
   (and (= sum2 sum1) (= max2 max1))))) (<= sum2 (* 100 max2))))))))))
 (check-sat)
+(exit)

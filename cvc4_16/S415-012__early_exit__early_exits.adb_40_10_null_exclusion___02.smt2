@@ -545,3 +545,4 @@ Target solver: CVC4
   (rec__early_exits__int_acc__pointer_value__pred
   (rec__early_exits__two_acc__f usf3))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -122,3 +122,4 @@ Target solver: CVC4
  ;; File "fraction_fixed.ads", line 10, characters 0-0
   (not true))
 (check-sat)
+(exit)

@@ -269,3 +269,4 @@ Target solver: CVC4
   (= x4 (bvor (bvshl x3 (bvurem ((_ int2bv 32) 1) (_ bv32 32))) (bvlshr x3 (bvsub (_ bv32 32) (bvurem ((_ int2bv 32) 1) (_ bv32 32))))))
   (= x4 #x00000001)))))))))))))
 (check-sat)
+(exit)

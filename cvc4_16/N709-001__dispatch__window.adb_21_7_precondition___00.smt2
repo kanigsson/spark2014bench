@@ -693,3 +693,4 @@ Target solver: CVC4
   (has_stored_area1 (attr__tag o2) o2) (attr__tag o2) o2))
   (= (has_stored_area1 (attr__tag o1) o1) true)))))))))))))))
 (check-sat)
+(exit)

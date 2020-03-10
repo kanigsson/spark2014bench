@@ -288,3 +288,4 @@ Target solver: CVC4
   (=> (= (to_rep usf) 0) (dynamic_predicate
   (us_repqtmk (us_split_fieldsqtmk usf))))))))
 (check-sat)
+(exit)

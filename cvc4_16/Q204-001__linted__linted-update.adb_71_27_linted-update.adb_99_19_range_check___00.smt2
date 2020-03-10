@@ -1575,3 +1575,4 @@ Target solver: CVC4
   (=> (= spark__branch5 true)
   (let ((o (- c256b (- 2147483648)))) (=> (in_range1 o) (uint_in_range1 o)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

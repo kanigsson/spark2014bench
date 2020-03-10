@@ -449,3 +449,4 @@ Target solver: CVC4
  ;; File "subtype_check.adb", line 28, characters 0-0
   (not (=> (dynamic_invariant i7b true false false true) (not (= 2 0)))))
 (check-sat)
+(exit)

@@ -1001,3 +1001,4 @@ Target solver: CVC4
            (us_repqtmk (us_split_fieldsqtmk cu2))) 1)))
   (< 0 (get (model1 temp___loop_entry_1030) i))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

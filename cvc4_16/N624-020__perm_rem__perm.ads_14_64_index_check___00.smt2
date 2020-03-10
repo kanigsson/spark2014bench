@@ -539,3 +539,4 @@ Target solver: CVC4
   (let ((o3 (- usf 1)))
   (=> (in_range1 o3) (<= o3 (last1 perm__remove__result))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

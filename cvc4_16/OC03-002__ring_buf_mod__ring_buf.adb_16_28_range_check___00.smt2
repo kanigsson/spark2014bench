@@ -892,3 +892,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (rec__ring_buf__ring_buffer__length r__split_fields1)) o3)
   (in_range1 (+ o3 1))))))))))))))))))))
 (check-sat)
+(exit)

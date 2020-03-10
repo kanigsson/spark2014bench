@@ -191,3 +191,4 @@ Target solver: CVC4
   (= priv_disp__get_f__result (to_rep
                               (rec__priv_disp__root__f (us_split_fields1 x)))))))))
 (check-sat)
+(exit)

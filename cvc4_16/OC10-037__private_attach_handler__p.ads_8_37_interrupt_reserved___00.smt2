@@ -242,3 +242,4 @@ Target solver: CVC4
  ;; File "p.ads", line 5, characters 0-0
   (not (forall ((temp___219 Bool)) (= temp___219 false))))
 (check-sat)
+(exit)

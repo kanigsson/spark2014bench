@@ -358,3 +358,4 @@ Target solver: CVC4
                                                                   true false)) true)
   (in_range1 (+ a_first i1)))))))))))))))))))))))))
 (check-sat)
+(exit)

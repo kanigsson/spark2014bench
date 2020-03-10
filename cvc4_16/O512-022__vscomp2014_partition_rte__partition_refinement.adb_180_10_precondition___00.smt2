@@ -3045,3 +3045,4 @@ Target solver: CVC4
                 (us_repqtmk3 o18 (us_split_fieldsqtmk3 d__split_fields2)) c))) 
   (key (us_repqtmk3 o18 (us_split_fieldsqtmk3 d__split_fields2)) c))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -562,3 +562,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array s) usf1)) o8)
   (let ((o9 (- usf1 1))) (=> (in_range1 o9) (<= (first1 s) o9)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

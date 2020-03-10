@@ -822,3 +822,4 @@ Target solver: CVC4
                                 true false)) true)
   (= (has_element l (us_repqtmk (us_split_fieldsqtmk c__split_fields1))) true))))))))))))))))))
 (check-sat)
+(exit)

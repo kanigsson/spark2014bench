@@ -688,3 +688,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__test__t__remaining s__split_fields1)) o2)
   (not (= 5 0)))))))))))))
 (check-sat)
+(exit)

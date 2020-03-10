@@ -589,3 +589,4 @@ Target solver: CVC4
   (=> (= (to_rep buf__first) o3)
   (let ((o4 (+ o3 o2))) (=> (in_range1 o4) (in_range1 (- o4 1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

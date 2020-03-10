@@ -172,3 +172,4 @@ Target solver: CVC4
   (=> (dynamic_property first last o)
   (forall ((tmp_s1 Int)) (=> (= tmp_s1 o) (in_range1 (- y x)))))))))))))
 (check-sat)
+(exit)

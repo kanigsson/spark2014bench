@@ -372,3 +372,4 @@ Target solver: CVC4
   (<= (- 9223372036854775808) (- (div1 (+ (* (- v) m) (div1 d 2)) d))))
   (not (= 4294967296 0))))))))
 (check-sat)
+(exit)

@@ -232,3 +232,4 @@ Target solver: CVC4
   (forall ((x4 (Array Int natural)))
   (=> (= x4 (store x3 4 o7)) (in_range1 (+ 5 one)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

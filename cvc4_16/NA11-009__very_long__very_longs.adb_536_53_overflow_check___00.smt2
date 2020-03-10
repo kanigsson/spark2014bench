@@ -1326,3 +1326,4 @@ Target solver: CVC4
   (and (takelsb_from16__function_guard o3 carry2) (dynamic_invariant3 o3 true
   false true true)) (in_range2 (+ j n))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

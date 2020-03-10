@@ -214,3 +214,4 @@ Target solver: CVC4
   (let ((o (fp.sub RNE requested_force calculated_force)))
   (=> (fp.isFinite64 o) (fp.isFinite64 (fp.div RNE o requested_force)))))))))))))
 (check-sat)
+(exit)

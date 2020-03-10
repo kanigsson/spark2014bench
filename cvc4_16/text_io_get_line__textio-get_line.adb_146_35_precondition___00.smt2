@@ -1352,3 +1352,4 @@ Target solver: CVC4
   (=> (in_range3 o17)
   (= (has_char_in_slice 10 cur_position_at_start o17 the_file) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

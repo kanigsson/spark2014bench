@@ -69,3 +69,4 @@ Target solver: CVC4
   (and (not (= (distinct 1 0) true))
   (= functions__non_ter_func__result1 functions__non_ter_func__result))))))
 (check-sat)
+(exit)

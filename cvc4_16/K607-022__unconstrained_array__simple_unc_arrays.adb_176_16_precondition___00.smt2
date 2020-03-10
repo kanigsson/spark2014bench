@@ -804,3 +804,4 @@ Target solver: CVC4
   (=> (= spark__branch3 (ite (< left2 last2) true false))
   (=> (= spark__branch3 true) (let ((o3 last2)) (or (= o3 0) (<= left2 o3))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -523,3 +523,4 @@ Target solver: CVC4
   (=> (= (and (not (is_prime value)) (= mode 2)) true) (in_range1
   (- value test_prime_and_coprime_numbers__p__nearest_prime_number__result)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

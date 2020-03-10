@@ -347,3 +347,4 @@ Target solver: CVC4
              (us_split_fields1 (rec__base_repr__list__pointer_value o)))))))))
   (in_range (+ 1 o1)))))))))
 (check-sat)
+(exit)

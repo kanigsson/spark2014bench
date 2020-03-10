@@ -516,3 +516,4 @@ Target solver: CVC4
   (=> (= h2 (store h1 q1 o4))
   (forall ((o5 content)) (=> (= (to_rep1 o5) t3) (in_range1 (+ q1 m1)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

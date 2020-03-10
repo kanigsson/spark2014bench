@@ -1756,3 +1756,4 @@ Target solver: CVC4
   (= (invariant_holds unmatched_g1_set__split_fields3 unmatched_g2_set2
      result__2 proposals_made2) true)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

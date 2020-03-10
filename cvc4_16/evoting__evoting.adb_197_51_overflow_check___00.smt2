@@ -1094,3 +1094,4 @@ Target solver: CVC4
   (=> (= counters2 (store counters1 chosen_vote2 o7)) (in_range1
   (+ number_of_votes1 1))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

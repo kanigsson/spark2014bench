@@ -163,3 +163,4 @@ Target solver: CVC4
   (=> (in_range o)
   (forall ((free1 Int)) (=> (= free1 o) (< free_init1 free1)))))))))))))))
 (check-sat)
+(exit)

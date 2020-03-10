@@ -95,3 +95,4 @@ Target solver: CVC4
   (=> (dynamic_invariant j true false true true)
   (=> (< j 2147483647) (in_range (+ j 1)))))))
 (check-sat)
+(exit)

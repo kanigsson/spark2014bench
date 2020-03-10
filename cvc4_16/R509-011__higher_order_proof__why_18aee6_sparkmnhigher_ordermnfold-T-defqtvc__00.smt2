@@ -1361,3 +1361,4 @@ Target solver: CVC4
   k l)) (value (to_rep (get (to_array a2) i j))))))))))))))))
   (=> (not (= l (first_2 a1))) (= (last_2 a1) (last_2 a2)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

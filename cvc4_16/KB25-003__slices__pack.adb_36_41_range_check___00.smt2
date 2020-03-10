@@ -464,3 +464,4 @@ Target solver: CVC4
   (=> (=> (<= 1 4) (and (and (<= 1 1) (<= 1 26)) (and (<= 1 4) (<= 4 26))))
   (=> (= (pack__an21__my_a__aggregate_def 42) my_a) (=> (<= 1 4) (<= 1 1))))))))
 (check-sat)
+(exit)

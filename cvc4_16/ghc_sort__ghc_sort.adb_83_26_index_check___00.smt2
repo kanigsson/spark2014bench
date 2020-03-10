@@ -498,3 +498,4 @@ Target solver: CVC4
                       true false)) true)
   (<= (first1 s1) j12))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -157,3 +157,4 @@ Target solver: CVC4
   (=> (<= apples_to_consume (number_of_apples apples))
   (let ((o (- apples apples_to_consume))) (=> (in_range o) (in_range1 o))))))))))
 (check-sat)
+(exit)

@@ -821,3 +821,4 @@ Target solver: CVC4
   record_discr__search_upto_3__result) (dynamic_invariant1 temp___298 true
   false true true)) (<= 1 temp___298)))))))))))))))))))
 (check-sat)
+(exit)

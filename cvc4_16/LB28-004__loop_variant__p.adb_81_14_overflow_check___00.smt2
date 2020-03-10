@@ -452,3 +452,4 @@ Target solver: CVC4
   (=> (<= (to_rep tab__first) j13)
   (=> (<= j13 (to_rep tab__last)) (in_range1 (+ j13 1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

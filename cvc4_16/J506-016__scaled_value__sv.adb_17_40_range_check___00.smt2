@@ -399,3 +399,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 res true false true true) (in_range4
   requested_capacity)))))))))))))
 (check-sat)
+(exit)

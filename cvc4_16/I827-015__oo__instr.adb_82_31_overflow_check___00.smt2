@@ -800,3 +800,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__instr__clock__seconds x__split_fields)) o) (in_range
   (+ o inc))))))))
 (check-sat)
+(exit)

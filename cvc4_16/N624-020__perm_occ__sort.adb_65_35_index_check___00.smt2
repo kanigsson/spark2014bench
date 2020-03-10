@@ -440,3 +440,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array values) usf)) o1)
   (<= (first1 values) sort__index_of_minimum__result)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -553,3 +553,4 @@ Target solver: CVC4
   (forall ((o4 natural))
   (=> (= (to_rep o4) max4) (<= (to_rep1 a__first) k3)))))))))))))))))))))))))
 (check-sat)
+(exit)

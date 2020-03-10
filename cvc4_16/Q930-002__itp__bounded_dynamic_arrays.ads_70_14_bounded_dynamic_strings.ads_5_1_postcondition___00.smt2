@@ -711,3 +711,4 @@ Target solver: CVC4
   (us_repqtmk this__split_discrs this__split_fields3)))
   (= (length1 (us_repqtmk this__split_discrs this__split_fields2)) 0)))))))))))))))))))))))))
 (check-sat)
+(exit)

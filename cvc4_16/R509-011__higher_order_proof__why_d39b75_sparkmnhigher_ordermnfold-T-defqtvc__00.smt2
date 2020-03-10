@@ -775,3 +775,4 @@ Target solver: CVC4
   (<= o4 (* 100 (- o3 (first1 o5)))))))
   (=> (= o6 true) (<= (first1 a) (first1 a)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

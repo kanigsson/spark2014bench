@@ -731,3 +731,4 @@ Target solver: CVC4
   (= (and (ite (<= i usf) true false) (ite (<= usf (last2 a)) true false)) true)
   (=> (< usf (last2 a)) (dynamic_property first last usf)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

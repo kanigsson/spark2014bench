@@ -2589,3 +2589,4 @@ Target solver: CVC4
      (select (rec__ada___skp__subjects__subject_spec_type__event_table
              (us_split_fields7 (select subject_specs 0))) 0)))) 0))))))
 (check-sat)
+(exit)

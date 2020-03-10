@@ -222,3 +222,4 @@ Target solver: CVC4
   (=> (= x10 (store x9 10 o9))
   (=> (<= 1 j) (=> (<= j 10) (= (to_rep (select x10 j)) 0))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

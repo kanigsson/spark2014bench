@@ -2112,3 +2112,4 @@ Target solver: CVC4
   (= (is_alive
      (to_base (us_repqtmk1 dr_house__split_fields1 dr_house__attr__tag))) true))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

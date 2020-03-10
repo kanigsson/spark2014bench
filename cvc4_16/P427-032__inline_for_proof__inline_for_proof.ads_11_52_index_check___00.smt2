@@ -237,3 +237,4 @@ Target solver: CVC4
   (and (and (<= 1 i) (<= i 100)) (= (to_rep (select y i)) o)))
   (=> (not (= b true)) (<= 1 i)))))))))
 (check-sat)
+(exit)

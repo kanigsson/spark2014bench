@@ -1386,3 +1386,4 @@ Target solver: CVC4
   (=> (= i2 (+ i1 1))
   (=> (not (= i2 (first2 a))) (<= (last_2 a) (to_rep r__last_2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

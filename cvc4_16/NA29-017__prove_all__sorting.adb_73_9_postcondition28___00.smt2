@@ -539,3 +539,4 @@ Target solver: CVC4
                                                false))) true)
   (= (to_rep (select a2 k)) (to_rep (select a1 k))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

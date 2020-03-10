@@ -519,3 +519,4 @@ Target solver: CVC4
   (us_repqtmk x__is_null_pointer x__pointer_address
   (us_close (us_repqtmk1 x__pointer_value2)))))))))))))))))))
 (check-sat)
+(exit)

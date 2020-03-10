@@ -115,3 +115,4 @@ Target solver: CVC4
   (and (in_range o) (and (= y1 o) (and (= x1 10) (<= y1 x1)))))))))))))
   (in_range (+ x1 y1))))))))))
 (check-sat)
+(exit)

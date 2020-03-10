@@ -179,3 +179,4 @@ Target solver: CVC4
   (let ((o1 (choose o)))
   (=> (choose__function_guard o1 o) (=> (= o1 true) (in_range (+ x 1)))))))))))
 (check-sat)
+(exit)

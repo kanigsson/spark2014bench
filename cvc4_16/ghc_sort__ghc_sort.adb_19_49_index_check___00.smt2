@@ -549,3 +549,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select cut usf)) o4)
   (let ((o5 (+ usf 1))) (=> (in_range1 o5) (<= (to_rep cut__first) o5)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -234,3 +234,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__display__controlT__current self__)) o1) (in_range
   (+ o1 1)))))))))
 (check-sat)
+(exit)

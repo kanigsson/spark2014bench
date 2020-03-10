@@ -1471,3 +1471,4 @@ Target solver: CVC4
   (=> (not (= l (first_2 a1)))
   (let ((o1 (- l 1))) (=> (in_range10 o1) (<= (first_2 a1) o1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

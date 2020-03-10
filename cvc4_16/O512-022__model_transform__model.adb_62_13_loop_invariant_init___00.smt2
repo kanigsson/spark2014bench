@@ -1413,3 +1413,4 @@ Target solver: CVC4
   (name1 (select av1 t1)) (select av1 t1)))
   (= (name (select (owned_state sm) t)) (name1 (select av t)))))))))))))))))))))))))
 (check-sat)
+(exit)

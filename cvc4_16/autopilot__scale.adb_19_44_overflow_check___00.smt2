@@ -314,3 +314,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 ans false false true true) (in_range1
   (+ flatness val__))))))))))))
 (check-sat)
+(exit)

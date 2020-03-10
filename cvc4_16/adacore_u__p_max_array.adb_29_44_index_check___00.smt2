@@ -454,3 +454,4 @@ Target solver: CVC4
   (=> (in_range1 o2)
   (let ((o3 (+ o2 (first1 b)))) (=> (in_range1 o3) (<= (first1 b) o3))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

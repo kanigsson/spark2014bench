@@ -498,3 +498,4 @@ Target solver: CVC4
   (= (and (ite (<= idx usf) true false) (ite (<= usf (last1 str)) true false)) true)
   (=> (< idx usf) (<= (first1 str) usf))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

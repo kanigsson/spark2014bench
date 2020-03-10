@@ -555,3 +555,4 @@ Target solver: CVC4
   (=> (= (to_rep1 o) pos1)
   (=> (= res__attr__constrained true) (= (distinct 1 0) res__split_discrs))))))))))))))))))))
 (check-sat)
+(exit)

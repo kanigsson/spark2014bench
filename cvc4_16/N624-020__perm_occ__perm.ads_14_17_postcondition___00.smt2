@@ -486,3 +486,4 @@ Target solver: CVC4
   (<= o (length o4))))))))))))))))
   (=> (= perm__occ_def__result o) (<= perm__occ_def__result (length a)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -225,3 +225,4 @@ Target solver: CVC4
   (forall ((root_idx2 Int)) (root__function_guard (root root_idx2)
   root_idx2)) (= (root root_idx) (root root_idx1))))))))))
 (check-sat)
+(exit)

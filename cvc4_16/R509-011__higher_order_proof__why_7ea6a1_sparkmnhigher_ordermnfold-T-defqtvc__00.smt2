@@ -1311,3 +1311,4 @@ Target solver: CVC4
   (=> (not (= spark__branch1 true))
   (=> (<= (first_2 a2) j) (=> (<= j (last_2 a2)) (<= (first2 a2) i))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

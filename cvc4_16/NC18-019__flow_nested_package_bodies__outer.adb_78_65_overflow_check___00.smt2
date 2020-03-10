@@ -102,3 +102,4 @@ Target solver: CVC4
   (let ((o (+ nested_var nested_var2)))
   (=> (in_range o) (in_range (+ o used))))))))))
 (check-sat)
+(exit)

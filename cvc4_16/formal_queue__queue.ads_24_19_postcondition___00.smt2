@@ -478,3 +478,4 @@ Target solver: CVC4
   (forall ((queue__front__result Int))
   (=> (= queue__front__result o1) (= (last_element q) queue__front__result)))))))))
 (check-sat)
+(exit)

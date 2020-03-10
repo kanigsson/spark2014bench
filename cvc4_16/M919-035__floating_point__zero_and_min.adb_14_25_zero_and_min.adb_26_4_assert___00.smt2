@@ -550,3 +550,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= x y) false true))
   (=> (= spark__branch true) (not (fp.eq (fp.min c1b c2b) (fp.min c2b c1b))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

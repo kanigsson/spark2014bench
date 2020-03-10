@@ -338,3 +338,4 @@ Target solver: CVC4
   (forall ((a3 (Array Int natural)))
   (=> (= a3 (store a2 i o3)) (=> (<= 0 i) (<= i 30)))))))))))))))))
 (check-sat)
+(exit)

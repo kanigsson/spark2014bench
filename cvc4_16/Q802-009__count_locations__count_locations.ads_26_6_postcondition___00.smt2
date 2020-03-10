@@ -493,3 +493,4 @@ Target solver: CVC4
   (count_selected_locations sel) sel)
   (<= (count_selected_locations sel) (to_rep (select max s))))))))))))))))))))))))))))
 (check-sat)
+(exit)

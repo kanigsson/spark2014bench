@@ -2126,3 +2126,4 @@ Target solver: CVC4
   (=> (= (to_rep3 (rec__patris__piece__y cur_piece__split_fields)) o7)
   (<= 1 (+ o7 y))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

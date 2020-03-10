@@ -311,3 +311,4 @@ Target solver: CVC4
   (=> (= l1 (bvlshr ((_ int2bv 32) o) ((_ int2bv 32) 5))) (in_range
   (bv2nat l1))))))))))))))
 (check-sat)
+(exit)

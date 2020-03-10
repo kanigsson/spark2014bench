@@ -520,3 +520,4 @@ Target solver: CVC4
                                                 false)) true)
   (=> (in_range1 (+ j12 j21)) (= j4 (- (+ j12 j21) 1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

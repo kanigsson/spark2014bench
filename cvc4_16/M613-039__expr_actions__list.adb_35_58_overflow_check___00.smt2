@@ -1336,3 +1336,4 @@ Target solver: CVC4
   (dynamic_invariant5 list__reverse_list__L_2__R16b true false true true))
   (in_range1 (- last1 i)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -419,3 +419,4 @@ Target solver: CVC4
  ;; File "test_record_cnt_ex.ads", line 12, characters 0-0
   (not (in_range 0)))
 (check-sat)
+(exit)

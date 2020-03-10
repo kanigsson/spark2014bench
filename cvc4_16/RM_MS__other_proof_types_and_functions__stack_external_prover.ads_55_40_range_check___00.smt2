@@ -489,3 +489,4 @@ Target solver: CVC4
   (and (count__function_guard o6 my_stack__split_fields2) (dynamic_invariant1
   o6 true false true true)) (in_range2 (- o6 1)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

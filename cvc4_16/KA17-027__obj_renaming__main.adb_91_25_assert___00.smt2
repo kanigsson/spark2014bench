@@ -493,3 +493,4 @@ Target solver: CVC4
   (=> (= spark__branch2 (ite (= choose 2) true false))
   (=> (= spark__branch2 true) (= (to_rep rec_obj__split_fields1) 5678))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

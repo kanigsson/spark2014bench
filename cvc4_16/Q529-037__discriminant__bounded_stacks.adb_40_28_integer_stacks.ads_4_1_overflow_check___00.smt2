@@ -1730,3 +1730,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__integer_stacks__stack__top this__split_fields)) o)
   (in_range (+ o 1))))))))))))
 (check-sat)
+(exit)

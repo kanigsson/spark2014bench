@@ -115,3 +115,4 @@ Target solver: CVC4
  ;; File "two_tasks_single_po.adb", line 11, characters 0-0
   (not (<= 97 97)))
 (check-sat)
+(exit)

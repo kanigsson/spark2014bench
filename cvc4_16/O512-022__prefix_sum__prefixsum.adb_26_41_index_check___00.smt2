@@ -528,3 +528,4 @@ Target solver: CVC4
   (=> (= (to_rep (select temp___loop_entry_241 temp___242)) o3)
   (<= 0 (- usf 2))))))))))))))))))))))))
 (check-sat)
+(exit)

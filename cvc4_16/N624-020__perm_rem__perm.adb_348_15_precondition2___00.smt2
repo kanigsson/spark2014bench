@@ -951,3 +951,4 @@ Target solver: CVC4
   (= (is_perm (remove o20 o18) (remove o19 o21)) true))))
   (forall ((ia21 Int)) (=> (= ia21 o21) (<= ib (last1 b))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

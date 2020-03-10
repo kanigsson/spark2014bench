@@ -941,3 +941,4 @@ Target solver: CVC4
   (= (to_rep (rec__foo__lists__list__capacity container__split_discrs)) o)
   (in_range3 (- o count)))))))))
 (check-sat)
+(exit)

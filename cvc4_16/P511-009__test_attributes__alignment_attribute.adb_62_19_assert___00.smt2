@@ -1144,3 +1144,4 @@ Target solver: CVC4
   (=> (= ca (alignment_attribute__ca__aggregate_def 2))
   (=> (<= 0 alignment) (=> (<= 0 alignment2) (<= 0 alignment3))))))))))))))))))))))
 (check-sat)
+(exit)

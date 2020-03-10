@@ -503,3 +503,4 @@ Target solver: CVC4
   (is_empty__function_guard (is_empty b_top2 b_content2) b_top2 b_content2))
   (not (= (is_empty b_top1 b_content1) true)))))))))))))))))))))))))))
 (check-sat)
+(exit)

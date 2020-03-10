@@ -863,3 +863,4 @@ Target solver: CVC4
   (=> (= test_higher_order2__my_sum__update_sum__in_range__result true)
   (=> (< i k) (<= i (last1 a)))))))))))))))))))))))
 (check-sat)
+(exit)

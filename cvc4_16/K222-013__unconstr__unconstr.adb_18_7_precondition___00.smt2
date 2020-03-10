@@ -323,3 +323,4 @@ Target solver: CVC4
   (=> (= (to_rep o1) (first1 unconstr__p__x__compl))
   (< 0 (length (to_rep o1) (to_rep o))))))))))))
 (check-sat)
+(exit)

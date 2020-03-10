@@ -211,3 +211,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 y) true false) (ite (<= y 200) true false)) true)
   (=> (= (to_rep (select r1 x1)) o) (in_range1 (+ o y)))))))))))
 (check-sat)
+(exit)

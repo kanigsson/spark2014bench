@@ -390,3 +390,4 @@ Target solver: CVC4
   (fp.lt (to_rep (select a (- i 1))) (to_rep (select a i)))))
   (dynamic_property 1 10 1 10))))
 (check-sat)
+(exit)

@@ -255,3 +255,4 @@ Target solver: CVC4
   (=> (exists ((o Int)) (= (to_rep (select s pointer)) o)) (in_range1
   (- pointer 1))))))))))))
 (check-sat)
+(exit)

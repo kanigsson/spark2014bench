@@ -647,3 +647,4 @@ Target solver: CVC4
   (=> (= first4 o1)
   (forall ((o2 character)) (=> (= (to_rep o2) 45) (<= 1 first4)))))))))))))))))))
 (check-sat)
+(exit)

@@ -275,3 +275,4 @@ Target solver: CVC4
   (= index1 temp___202)))))))) (= min2 min1))))))
   (=> (<= starting_at limit) (<= 1 starting_at)))))))))))
 (check-sat)
+(exit)

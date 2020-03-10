@@ -1246,3 +1246,4 @@ Target solver: CVC4
   (and (to____function_guard temp___589 o9) (dynamic_invariant5 temp___589
   true false true true)) (<= (first2 temp___589) usf))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

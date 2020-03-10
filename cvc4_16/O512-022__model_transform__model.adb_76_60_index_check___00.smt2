@@ -1485,3 +1485,4 @@ Target solver: CVC4
                 (us_split_fields5 o7))))
   (<= 0 usf))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

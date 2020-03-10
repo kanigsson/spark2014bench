@@ -1066,3 +1066,4 @@ Target solver: CVC4
   (= (has_message (us_repqtmk buffer__split_fields2)
      (last (us_repqtmk buffer__split_fields2))) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

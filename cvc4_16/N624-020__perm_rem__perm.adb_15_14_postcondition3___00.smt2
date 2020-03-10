@@ -658,3 +658,4 @@ Target solver: CVC4
   (and (in_range3 ib2) (= perm__get_witness__result ib2)))))))))))))))))))))))))))))))))))
   (<= perm__get_witness__result (last1 b))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

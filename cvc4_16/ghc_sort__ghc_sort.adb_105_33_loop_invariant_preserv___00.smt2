@@ -482,3 +482,4 @@ Target solver: CVC4
   (let ((o4 (length s)))
   (=> (in_range1 o4) (=> (in_range1 (- o4 i2)) (= j2 (- (length s) i2))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

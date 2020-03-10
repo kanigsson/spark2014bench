@@ -503,3 +503,4 @@ Target solver: CVC4
   (forall ((temp___loop_entry_428 (Array Int Bool)))
   (=> (= temp___loop_entry_428 winners3) (in_range3 (- i 1)))))))))))))))))))
 (check-sat)
+(exit)

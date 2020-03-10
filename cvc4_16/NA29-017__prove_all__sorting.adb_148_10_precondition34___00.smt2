@@ -599,3 +599,4 @@ Target solver: CVC4
   (=> (in_range1 (+ a_first i3))
   (<= (+ l1 k3) (length (to_rep b__first) (to_rep b__last))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

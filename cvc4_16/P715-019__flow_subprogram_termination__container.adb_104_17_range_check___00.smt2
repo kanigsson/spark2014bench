@@ -1004,3 +1004,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 i1) true false) (ite (<= i1 200) true false)) true)
   (in_range4 (+ x5 1)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

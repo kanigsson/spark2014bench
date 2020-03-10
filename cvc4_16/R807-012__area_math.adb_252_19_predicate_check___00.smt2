@@ -1436,3 +1436,4 @@ Target solver: CVC4
   (rec__area_math__ensemble__from1 result____split_fields3)
   (rec__area_math__ensemble__to1 result____split_fields3))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -466,3 +466,4 @@ Target solver: CVC4
   (= (= o2 true) (= (bool_eq (get_plain usf usf1) o1) true)))
   (not (= o2 true)))))))))))))))))
 (check-sat)
+(exit)

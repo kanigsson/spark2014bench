@@ -7760,3 +7760,4 @@ Target solver: CVC4
   (num_free_slots__function_guard (num_free_slots my_board1) my_board1))
   (< 0 (num_free_slots my_board)))))))))))))))))
 (check-sat)
+(exit)

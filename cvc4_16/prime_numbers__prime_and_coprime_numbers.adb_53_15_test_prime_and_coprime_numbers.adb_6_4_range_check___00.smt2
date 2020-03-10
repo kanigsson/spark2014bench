@@ -397,3 +397,4 @@ Target solver: CVC4
   (let ((o left))
   (=> (in_range2 o) (forall ((a1 Int)) (=> (= a1 o) (in_range3 right))))))))))))))))))))))
 (check-sat)
+(exit)

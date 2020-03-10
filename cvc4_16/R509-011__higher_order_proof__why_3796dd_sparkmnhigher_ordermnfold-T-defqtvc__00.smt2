@@ -1146,3 +1146,4 @@ Target solver: CVC4
   (value (to_rep (select (to_array o1) i))))))))))
   (=> (in_range8 k2) (<= (first1 a2) k2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

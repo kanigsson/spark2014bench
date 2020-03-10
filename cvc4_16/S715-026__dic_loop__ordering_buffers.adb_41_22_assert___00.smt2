@@ -1020,3 +1020,4 @@ Target solver: CVC4
                                                                orig_first
                                                                256))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

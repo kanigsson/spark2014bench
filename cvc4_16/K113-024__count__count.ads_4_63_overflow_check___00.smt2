@@ -136,3 +136,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 step true false true true)
   (=> (< 0 step) (=> (<= 0 max) (in_range (- 2147483647 step))))))))
 (check-sat)
+(exit)

@@ -241,3 +241,4 @@ Target solver: CVC4
   (=> (= (is_prime 15487469) true)
   (or (= 10 15486209) (or (= 10 15487001) (= 10 15487469)))))))))))))
 (check-sat)
+(exit)

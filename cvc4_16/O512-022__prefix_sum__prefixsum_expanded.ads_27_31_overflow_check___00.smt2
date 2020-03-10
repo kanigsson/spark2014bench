@@ -254,3 +254,4 @@ Target solver: CVC4
   (=> (= (to_rep (select b 3)) o19)
   (let ((o20 (+ o19 o18))) (=> (in_range o20) (in_range (+ o20 o17))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

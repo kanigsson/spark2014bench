@@ -927,3 +927,4 @@ Target solver: CVC4
   (=> (= o2 true)
   (<= (first5 test_higher_order__my_fold_left__acc__fold__result) (last2 a)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -680,3 +680,4 @@ Target solver: CVC4
   (store y5 3 rliteral1))))))
   (forall ((x6 (Array Int natural))) (dynamic_predicate x6)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

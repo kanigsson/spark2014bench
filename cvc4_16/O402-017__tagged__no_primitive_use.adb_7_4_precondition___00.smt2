@@ -90,3 +90,4 @@ Target solver: CVC4
  ;; File "no_primitive_use.adb", line 2, characters 0-0
   (not (< 0 0)))
 (check-sat)
+(exit)

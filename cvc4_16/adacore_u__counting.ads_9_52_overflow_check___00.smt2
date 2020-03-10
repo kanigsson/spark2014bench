@@ -159,3 +159,4 @@ Target solver: CVC4
   (get_black_count black_counter2) black_counter2)) (in_range
   (+ (get_black_count black_counter) 1)))))))))))))
 (check-sat)
+(exit)

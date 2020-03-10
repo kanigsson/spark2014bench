@@ -714,3 +714,4 @@ Target solver: CVC4
   (exists ((o13 Int)) (= (to_rep1 values__first) o13))))
   (<= (to_rep1 values__first) x)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -172,3 +172,4 @@ Target solver: CVC4
   (=> (fp.eq (fp.roundToIntegral RTP x) x)
   (fp.eq (fp.roundToIntegral RTP y) y)))))))))))))))))))))))
 (check-sat)
+(exit)

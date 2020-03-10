@@ -510,3 +510,4 @@ Target solver: CVC4
   (= (to_rep (rec__predicate_ints__int__value1 (us_split_fields3 arg1))) o3)
   (let ((o4 (- o3 o2))) (=> (in_range o4) (in_range (abs1 o4))))))))))))))
 (check-sat)
+(exit)

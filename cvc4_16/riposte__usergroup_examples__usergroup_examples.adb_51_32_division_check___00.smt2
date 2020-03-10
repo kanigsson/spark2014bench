@@ -596,3 +596,4 @@ Target solver: CVC4
   (= tmp1 (bvxor (bvmul #x0000000000000005 salt) (bvmul #x0000000000000007 
   hash))) (=> (in_range (bv2nat tmp1)) (not (= 256 0))))))))))
 (check-sat)
+(exit)

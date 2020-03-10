@@ -569,3 +569,4 @@ Target solver: CVC4
                     temp___258)))
   (dynamic_property 1 2147483647 (first3 temp___260) (last3 temp___260)))))))))
 (check-sat)
+(exit)

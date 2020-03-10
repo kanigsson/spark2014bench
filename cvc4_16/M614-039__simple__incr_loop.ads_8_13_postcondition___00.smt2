@@ -324,3 +324,4 @@ Target solver: CVC4
   (=> (<= i (to_rep a__last))
   (= (to_rep (select a2 i)) (+ (to_rep (select a1 i)) 1)))))))))))
 (check-sat)
+(exit)

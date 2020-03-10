@@ -1489,3 +1489,4 @@ Target solver: CVC4
   (=> (= (last1 temp___1174) r130b)
   (=> (<= (first1 temp___1174) (last1 temp___1174)) (<= 1 r130b)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

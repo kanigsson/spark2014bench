@@ -673,3 +673,4 @@ Target solver: CVC4
   (get_stored_area1 (attr__tag obj) obj) (attr__tag obj) obj)
   (= total_area2 (- total_area1 (get_stored_area1 (attr__tag obj) obj))))))))))))))))))))
 (check-sat)
+(exit)

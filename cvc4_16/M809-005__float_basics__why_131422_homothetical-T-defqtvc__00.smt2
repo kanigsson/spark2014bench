@@ -389,3 +389,4 @@ Target solver: CVC4
   (fp.lt (fp #b0 #b00000000 #b00000000000000000000000) (to_rep
                                                        (select kvp j))))))))))))))
 (check-sat)
+(exit)

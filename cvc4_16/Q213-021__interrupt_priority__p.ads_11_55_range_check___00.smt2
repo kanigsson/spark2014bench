@@ -122,3 +122,4 @@ Target solver: CVC4
  ;; File "p.ads", line 10, characters 0-0
   (not (<= 0 95)))
 (check-sat)
+(exit)

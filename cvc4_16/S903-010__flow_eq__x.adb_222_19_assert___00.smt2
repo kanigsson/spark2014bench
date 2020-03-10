@@ -387,3 +387,4 @@ Target solver: CVC4
   (forall ((a1 Int) (b1 Int)) (oconcat__function_guard (oconcat a1 b1) a1
   b1)) (= (oconcat a b) 0)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

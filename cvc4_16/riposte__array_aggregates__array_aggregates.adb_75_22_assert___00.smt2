@@ -167,3 +167,4 @@ Target solver: CVC4
   (forall ((m (Array Int enum_t)))
   (=> (= m (temp_____aggregate_def_458 0 1)) (= (to_rep (select m 1)) 0)))))
 (check-sat)
+(exit)

@@ -1604,3 +1604,4 @@ Target solver: CVC4
                            header__split_fields2) o13))
   (<= 6 511))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

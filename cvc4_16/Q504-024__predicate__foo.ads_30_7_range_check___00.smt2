@@ -738,3 +738,4 @@ Target solver: CVC4
   (= (to_rep (rec__foo__subject_state__max_id (us_split_discrs1 usf1))) usf)
   (=> (<= 0 usf) (<= 0 0)))))))))
 (check-sat)
+(exit)

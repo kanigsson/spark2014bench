@@ -1493,3 +1493,4 @@ Target solver: CVC4
      current_err11 file_system11 current_in11 current_out11) 0)))
   (= (is_open target1) true)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

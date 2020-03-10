@@ -2213,3 +2213,4 @@ Target solver: CVC4
      current_err48 file_system48 current_in48 current_out48) 0)))
   (= (is_open source5) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

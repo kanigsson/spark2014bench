@@ -544,3 +544,4 @@ Target solver: CVC4
   (=> (< i2 length2)
   (let ((o16 (* l1 2))) (=> (in_range1 o16) (not (= o16 0)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

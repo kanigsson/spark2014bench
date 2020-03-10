@@ -505,3 +505,4 @@ Target solver: CVC4
  ;; File "base32.ads", line 28, characters 0-0
   (not (=> (dynamic_invariant1 i8s true false false true) (not (= 8 0)))))
 (check-sat)
+(exit)

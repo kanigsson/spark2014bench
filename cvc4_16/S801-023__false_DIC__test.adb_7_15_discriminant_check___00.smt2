@@ -472,3 +472,4 @@ Target solver: CVC4
   (=> (= context__attr__constrained true)
   (= o2 (rec__test__context_type__first context__split_discrs)))))))))))))))))))))))
 (check-sat)
+(exit)

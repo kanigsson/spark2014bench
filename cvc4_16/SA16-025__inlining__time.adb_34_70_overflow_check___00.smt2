@@ -542,3 +542,4 @@ Target solver: CVC4
   (and (ddays_in_year__function_guard o1 temp_years1) (dynamic_invariant2 o1
   true false true true)) (in_range (* o1 86400))))))))))))))))
 (check-sat)
+(exit)

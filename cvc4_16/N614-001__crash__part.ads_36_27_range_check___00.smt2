@@ -495,3 +495,4 @@ Target solver: CVC4
   (let ((temp___325 (first1 a)))
   (=> (<= temp___325 (- o 1)) (<= (first1 a) temp___325)))))))))))))))))
 (check-sat)
+(exit)

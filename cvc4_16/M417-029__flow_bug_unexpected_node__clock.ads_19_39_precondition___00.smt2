@@ -463,3 +463,4 @@ Target solver: CVC4
   (=> (= current_time__split_fields1 (us_split_fields1 temp___203))
   (not (= (bool_eq (get_current_time current_time__split_fields) max) true))))))))))))))
 (check-sat)
+(exit)

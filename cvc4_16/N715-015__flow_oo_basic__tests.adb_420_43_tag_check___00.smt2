@@ -850,3 +850,4 @@ Target solver: CVC4
   (us_compatible_tags
   (attr__tag (to_base (us_repqtmk1 y__split_fields y__attr__tag))) us_tag2)))))))))))))))
 (check-sat)
+(exit)

@@ -69,3 +69,4 @@ Target solver: CVC4
   (=> (= b (distinct 1 0))
   (=> (= pack__f__result b) (not (= pack__f__result true)))))))
 (check-sat)
+(exit)

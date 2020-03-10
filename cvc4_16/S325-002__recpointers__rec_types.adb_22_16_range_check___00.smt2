@@ -1441,3 +1441,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 i1) (<= i1 10)) true false)) true)
   (=> (<= 1 i1) (<= 1 1)))))))))))))))))))
 (check-sat)
+(exit)

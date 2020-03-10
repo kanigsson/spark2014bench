@@ -247,3 +247,4 @@ Target solver: CVC4
   (=> (<= sp 100)
   (=> (exists ((o Int)) (= (to_rep (select vec sp)) o)) (in_range (- sp 1))))))))))))
 (check-sat)
+(exit)

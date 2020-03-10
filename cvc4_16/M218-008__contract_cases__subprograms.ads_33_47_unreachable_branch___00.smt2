@@ -107,3 +107,4 @@ Target solver: CVC4
   (=> (=> (= (> (+ val__ 1) 0) true) (= val__1 (+ temp___old_172 1)))
   (not (= (<= (+ val__ 1) 0) true))))))))))))))))
 (check-sat)
+(exit)

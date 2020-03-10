@@ -910,3 +910,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 all_2 false false true true)
   (= (to_rep3 (select all_0 1)) 0))))))))))))))))))))))
 (check-sat)
+(exit)

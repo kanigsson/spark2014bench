@@ -558,3 +558,4 @@ Target solver: CVC4
   (= t__is_null_pointer (rec__list_ex_pledge__list__is_null_pointer usf1))))
   (in_range1 (- 2147483647 i))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

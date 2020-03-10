@@ -275,3 +275,4 @@ Target solver: CVC4
   (= (to_rep (select c1 (- i k1))) (to_rep (select c2 (- i k2))))))
   (=> (<= 0 k1) (<= 0 0)))))))))))))
 (check-sat)
+(exit)

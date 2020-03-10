@@ -1025,3 +1025,4 @@ Target solver: CVC4
      (rec__tester__ring_buffer__ring_buffer_type__tail buffer__split_fields)) o3)
   (in_range3 (+ o3 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

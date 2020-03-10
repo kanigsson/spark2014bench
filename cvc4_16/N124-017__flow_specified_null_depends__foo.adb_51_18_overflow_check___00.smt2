@@ -199,3 +199,4 @@ Target solver: CVC4
   (ite (and (<= 1 i1) (<= i1 x)) true false)) true) (= i1 temp___170)))))))
   (=> (= (to_rep g__split_fields) o) (in_range1 (+ o 1)))))))))
 (check-sat)
+(exit)

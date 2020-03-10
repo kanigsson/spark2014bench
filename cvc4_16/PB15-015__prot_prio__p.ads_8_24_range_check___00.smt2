@@ -117,3 +117,4 @@ Target solver: CVC4
  ;; File "p.ads", line 7, characters 0-0
   (not (forall ((x Int)) (<= 0 x))))
 (check-sat)
+(exit)

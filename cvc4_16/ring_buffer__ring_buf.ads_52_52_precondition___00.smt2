@@ -611,3 +611,4 @@ Target solver: CVC4
   (=> (forall ((usf us_rep)) (is_empty__function_guard (is_empty usf) usf))
   (not (= (is_empty (us_repqtmk r__split_fields)) true))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

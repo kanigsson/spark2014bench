@@ -310,3 +310,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r false false true true)
   (forall ((r1 Int)) (=> (= r1 (div1 x y)) (=> (= r1 0) (< x (abs1 y)))))))))))
 (check-sat)
+(exit)

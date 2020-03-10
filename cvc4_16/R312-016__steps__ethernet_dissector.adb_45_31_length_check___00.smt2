@@ -1007,3 +1007,4 @@ Target solver: CVC4
   (let ((temp___318 (of_array (to_array buffer) r21b r22b)))
   (=> (<= (first1 temp___318) (last1 temp___318)) (<= 1 2)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

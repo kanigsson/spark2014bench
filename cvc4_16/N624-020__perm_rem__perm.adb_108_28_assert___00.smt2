@@ -874,3 +874,4 @@ Target solver: CVC4
   (select (to_array a) (to_rep2
                        (rec__perm__witnesses__ia (us_split_fields1 w)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

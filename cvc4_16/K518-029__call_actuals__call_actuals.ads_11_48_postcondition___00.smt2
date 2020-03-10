@@ -167,3 +167,4 @@ Target solver: CVC4
   (let ((o (+ g 1)))
   (=> (in_range2 o) (forall ((y1 Int)) (=> (= y1 o) (= y1 (+ x1 1))))))))))))))))
 (check-sat)
+(exit)

@@ -1038,3 +1038,4 @@ Target solver: CVC4
   (forall ((o16 us_t) (o17 us_t)) (is_perm__function_guard (is_perm o17 o16)
   o17 o16)) (= (is_perm o15 o12) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

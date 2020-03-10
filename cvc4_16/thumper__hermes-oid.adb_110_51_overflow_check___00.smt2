@@ -1208,3 +1208,4 @@ Target solver: CVC4
      (us_split_fields1 identifier))) o7)
   (let ((o8 (* o7 40))) (=> (in_range7 o8) (in_range7 (+ o8 o6))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

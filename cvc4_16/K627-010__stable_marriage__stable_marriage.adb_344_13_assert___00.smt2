@@ -1475,3 +1475,4 @@ Target solver: CVC4
              unmatched_g1_set__split_fields2) idx)) (to_rep
                                                     (select result__1 g2_id))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

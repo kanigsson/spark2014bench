@@ -747,3 +747,4 @@ Target solver: CVC4
   start o)
   (rt (rec__bounded_dynamic_strings__sequence__content this__split_fields))))))))))))))))))))
 (check-sat)
+(exit)

@@ -485,3 +485,4 @@ Target solver: CVC4
   (is_full (us_repqtmk r__split_fields1)) (us_repqtmk r__split_fields1)))
   (not (= (is_full (us_repqtmk r__split_fields)) true))))))))))))
 (check-sat)
+(exit)

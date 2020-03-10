@@ -322,3 +322,4 @@ Target solver: CVC4
   (=> (dynamic_invariant delta_speed true false true true)
   (fp.isFinite64 (fp.add RNE old_speed delta_speed))))))))))))))
 (check-sat)
+(exit)

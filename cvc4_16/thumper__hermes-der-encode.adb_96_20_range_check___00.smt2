@@ -773,3 +773,4 @@ Target solver: CVC4
   (forall ((result__3 (Array Int octet)))
   (=> (= result__3 (store result__2 2 o3)) (=> (<= 1 3) (<= 1 1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

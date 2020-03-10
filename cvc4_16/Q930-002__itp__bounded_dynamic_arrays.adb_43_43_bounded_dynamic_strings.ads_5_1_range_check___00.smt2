@@ -686,3 +686,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 content true false true true)
   (=> (<= (length content) 2147483647) (in_range3 (length content))))))
 (check-sat)
+(exit)

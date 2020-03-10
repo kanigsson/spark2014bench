@@ -191,3 +191,4 @@ Target solver: CVC4
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-Q106-015__default_init-32673/src/gnatprove/private_types__p4__t2.mlw", line 296, characters 5-8
   (not (dynamic_property first 2147483647 0)))
 (check-sat)
+(exit)

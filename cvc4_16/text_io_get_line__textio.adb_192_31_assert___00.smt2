@@ -1205,3 +1205,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (< last3 o6) true false))
   (=> (not (= spark__branch true)) (= last3 (to_rep1 buffer__last))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

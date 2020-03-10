@@ -148,3 +148,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c false false true true) (in_range
   (fp.rem (fp.add RNE a b) (fp #b0 #b10000111 #b01101000000000000000000)))))))))
 (check-sat)
+(exit)

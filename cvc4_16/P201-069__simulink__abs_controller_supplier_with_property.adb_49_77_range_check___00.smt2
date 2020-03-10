@@ -419,3 +419,4 @@ Target solver: CVC4
   (=> (= spark__branch true) (in_range2
   (bv2nat (bvmul #x00000008 vehicle_speed)))))))))))))))
 (check-sat)
+(exit)

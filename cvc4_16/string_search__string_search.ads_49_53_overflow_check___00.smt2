@@ -498,3 +498,4 @@ Target solver: CVC4
   (= (and (ite (<= 0 usf) true false) (ite (<= usf 255) true false)) true)
   (let ((o2 (length needle))) (=> (in_range1 o2) (in_range1 (+ o2 1)))))))))))))))))))
 (check-sat)
+(exit)

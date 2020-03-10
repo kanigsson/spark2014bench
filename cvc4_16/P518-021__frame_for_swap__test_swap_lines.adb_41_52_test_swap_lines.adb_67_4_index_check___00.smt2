@@ -583,3 +583,4 @@ Target solver: CVC4
   (=> (exists ((o Int)) (= (to_rep (get temp___loop_entry_281 usf usf1)) o))
   (<= 1 usf1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

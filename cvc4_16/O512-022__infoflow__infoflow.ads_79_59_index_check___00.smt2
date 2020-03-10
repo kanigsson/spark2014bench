@@ -536,3 +536,4 @@ Target solver: CVC4
   (forall ((o1 Int))
   (=> (= (to_rep h_v2__last) o1) (<= (to_rep h_v2__first) (+ i (div1 o1 2)))))))))))))
 (check-sat)
+(exit)

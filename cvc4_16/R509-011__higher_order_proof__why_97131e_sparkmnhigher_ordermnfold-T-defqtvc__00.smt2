@@ -753,3 +753,4 @@ Target solver: CVC4
   (and (f__function_guard o10 o9 o8) (dynamic_invariant o10 true false true
   true)) (<= usf (to_rep r__last))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

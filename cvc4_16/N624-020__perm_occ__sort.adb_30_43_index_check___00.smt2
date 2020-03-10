@@ -659,3 +659,4 @@ Target solver: CVC4
   (= (to_rep (select (to_array o4) j)) (to_rep (select (to_array o7) j)))))))))))))))))))))
   (= o false)))) (=> (= o true) (<= (first1 init) x)))))))))))))
 (check-sat)
+(exit)

@@ -170,3 +170,4 @@ Target solver: CVC4
   (=> (<= i 255)
   (=> (= (select arrays__single_char_set__result i) true) (= i c))))))))))
 (check-sat)
+(exit)

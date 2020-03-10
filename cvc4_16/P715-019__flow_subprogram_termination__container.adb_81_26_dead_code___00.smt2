@@ -751,3 +751,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 x3 true true true true)
   (exists ((temp___236 Int)) (and (= temp___236 x3) (= x3 5))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -261,3 +261,4 @@ Target solver: CVC4
   (let ((o (* a2 i1))) (and (in_range1 o) (and (= a1 o) (= i1 temp___182))))))
   (= a1 a)))))) (not (= 2 0))))))))))))
 (check-sat)
+(exit)

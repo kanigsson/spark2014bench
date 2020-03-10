@@ -689,3 +689,4 @@ Target solver: CVC4
   (= logic_index_11 (bvadd (bvadd (bvmul o12 #x04) (bvmul o10 #x02)) (bvmul o8 #x01)))
   (<= 1 (+ (bv2nat logic_index_11) 1)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

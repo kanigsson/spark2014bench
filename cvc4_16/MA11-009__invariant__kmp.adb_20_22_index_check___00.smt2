@@ -402,3 +402,4 @@ Target solver: CVC4
   (forall ((o8 integer))
   (=> (= (to_rep o8) j3) (<= (to_rep next__first) i2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

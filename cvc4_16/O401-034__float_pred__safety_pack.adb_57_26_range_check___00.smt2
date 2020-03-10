@@ -180,3 +180,4 @@ Target solver: CVC4
   (=> (not (= spark__branch1 true)) (in_range
   (to_int (fp.to_real (fp.roundToIntegral RNA value)))))))))))))
 (check-sat)
+(exit)

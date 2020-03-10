@@ -787,3 +787,4 @@ Target solver: CVC4
   (forall ((result__1 (_ BitVec 32)))
   (=> (= result__1 (bvand o4 mask)) (bvule result__1 mask)))))))))))))))))))))))))
 (check-sat)
+(exit)

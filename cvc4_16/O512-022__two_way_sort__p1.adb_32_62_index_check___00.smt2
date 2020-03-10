@@ -317,3 +317,4 @@ Target solver: CVC4
   (= (and (ite (<= o5 usf) true false) (ite (<= usf (- i1 1)) true false)) true)
   (<= (to_rep a__first) usf))))))))))))))))))))))
 (check-sat)
+(exit)

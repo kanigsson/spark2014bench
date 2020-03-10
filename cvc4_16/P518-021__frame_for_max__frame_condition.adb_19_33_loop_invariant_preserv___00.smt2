@@ -565,3 +565,4 @@ Target solver: CVC4
   (forall ((o10 Int))
   (=> (= (to_rep1 a__first) o10) (<= (to_rep1 a__first) k3))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

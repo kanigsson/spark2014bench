@@ -207,3 +207,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (=> (= (to_rep self__) o) (in_range (+ o x)))))))
 (check-sat)
+(exit)

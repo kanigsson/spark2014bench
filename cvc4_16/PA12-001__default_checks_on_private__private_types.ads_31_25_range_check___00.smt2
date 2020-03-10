@@ -381,3 +381,4 @@ Target solver: CVC4
   (us_repqtmk x__split_discrs x__split_fields x__attr__tag) false false true
   true) (in_range 1))))))
 (check-sat)
+(exit)

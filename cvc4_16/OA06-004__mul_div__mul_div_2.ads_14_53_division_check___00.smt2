@@ -424,3 +424,4 @@ Target solver: CVC4
   (forall ((mul_div_2__mul_div__result Int))
   (=> (= mul_div_2__mul_div__result o9) (=> (not (<= 0 v)) (not (= d 0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

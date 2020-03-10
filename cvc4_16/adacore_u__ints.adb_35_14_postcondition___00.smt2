@@ -525,3 +525,4 @@ Target solver: CVC4
                                                          (rec__ints__int__value
                                                          arg__split_fields2)))))))))))))
 (check-sat)
+(exit)

@@ -411,3 +411,4 @@ Target solver: CVC4
   (=> (dynamic_invariant n true false true true)
   (=> (<= 1 n) (=> (<= n 5) (<= 1 n))))))
 (check-sat)
+(exit)

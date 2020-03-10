@@ -778,3 +778,4 @@ Target solver: CVC4
   (=> (= (vector_elementqtint (select (elts x) current_hi1)) o3) (in_range1
   (+ current_sum1 o3)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -494,3 +494,4 @@ Target solver: CVC4
   (=> (dynamic_invariant v true false true true)
   (=> (<= (first1 v) (last1 v)) (<= 3 (first1 v))))))
 (check-sat)
+(exit)

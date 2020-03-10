@@ -395,3 +395,4 @@ Target solver: CVC4
   (rec__early_exits__int_acc__pointer_value__pred
   (us_repqtmk z__is_null_pointer z__pointer_address z__pointer_value)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

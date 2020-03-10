@@ -119,3 +119,4 @@ Target solver: CVC4
   (=> (r__function_guard o1 o g h)
   (forall ((g1 Bool)) (=> (= g1 o1) (= g1 true))))))))))
 (check-sat)
+(exit)

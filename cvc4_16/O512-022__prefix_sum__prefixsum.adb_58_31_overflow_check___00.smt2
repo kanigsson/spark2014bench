@@ -636,3 +636,4 @@ Target solver: CVC4
           true false) (ite (< left3 8) true false)) true)
   (in_range1 (+ left3 space1)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -612,3 +612,4 @@ Target solver: CVC4
   (forall ((o5 my_int))
   (=> (= (to_rep1 o5) (+ (div1 o4 2) 5)) (<= (to_rep buf__first) i1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

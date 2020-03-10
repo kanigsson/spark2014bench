@@ -792,3 +792,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r63b true false true true)
   (=> (<= (first1 a__split_fields1) (last1 a__split_fields1)) (<= 1 r63b)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -269,3 +269,4 @@ Target solver: CVC4
   (=> (= res1 (bvmul (bvudiv (bvadd x #x0000003F) #x00000040) #x00000040))
   (=> (= spark__branch b) (=> (not (= spark__branch true)) (bvuge res1 x)))))))))
 (check-sat)
+(exit)

@@ -283,3 +283,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true))
   (=> (= temp1 2) (=> (< temp1 x) (<= 2 temp1))))))))))
 (check-sat)
+(exit)

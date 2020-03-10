@@ -187,3 +187,4 @@ Target solver: CVC4
   (=> (= (global_a_init global_a__attr__init global_a) true)
   (=> (= global_a__attr__init true) (in_range (- 2147483647 global_a))))))))))
 (check-sat)
+(exit)

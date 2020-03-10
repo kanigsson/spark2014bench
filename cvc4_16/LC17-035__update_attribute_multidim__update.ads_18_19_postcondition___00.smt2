@@ -296,3 +296,4 @@ Target solver: CVC4
   (=> (or (or (not (= i j)) (not (= i k))) (not (= i l)))
   (= (to_rep (get a2 j k l)) (to_rep (get a1 j j j))))))))))))))))))
 (check-sat)
+(exit)

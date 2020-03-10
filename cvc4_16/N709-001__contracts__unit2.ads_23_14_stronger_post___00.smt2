@@ -423,3 +423,4 @@ Target solver: CVC4
   (= (bool_eq1 (us_repqtmk1 x__split_fields1 x__attr__tag)
      (next (us_repqtmk1 x__split_fields x__attr__tag))) true)))))))))
 (check-sat)
+(exit)

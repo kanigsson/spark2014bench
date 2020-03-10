@@ -610,3 +610,4 @@ Target solver: CVC4
                     (us_split_fields1 table)) 1 temp___313)))
   (dynamic_property 0 2147483647 (first3 temp___315) (last3 temp___315))))))))
 (check-sat)
+(exit)

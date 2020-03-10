@@ -5333,3 +5333,4 @@ Target solver: CVC4
   (=> (= (length temp___1353) 0) (in_range1 r179s
   (us_split_discrs1 temp___1353))))))))))))
 (check-sat)
+(exit)

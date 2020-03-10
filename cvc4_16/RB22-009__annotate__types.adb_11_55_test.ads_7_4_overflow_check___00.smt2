@@ -571,3 +571,4 @@ Target solver: CVC4
           true false) (ite (< i1 (length buffer)) true false)) true)
   (in_range1 (+ (first1 buffer) i1)))))))))))))))
 (check-sat)
+(exit)

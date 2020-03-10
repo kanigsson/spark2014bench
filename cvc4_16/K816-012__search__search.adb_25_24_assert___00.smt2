@@ -333,3 +333,4 @@ Target solver: CVC4
   (or (not (= found2 true))
   (= (to_rep (select (to_array table) index21)) value2)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -489,3 +489,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 (us_repqtmk1 (us_split_fieldsqtmk x__split_fields))
   false false true true) (=> (<= 1 c) (<= 1 1))))))))
 (check-sat)
+(exit)

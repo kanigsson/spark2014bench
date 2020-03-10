@@ -518,3 +518,4 @@ Target solver: CVC4
   (=> (= (to_rep1 o5) t3)
   (let ((o6 (+ q1 m1))) (=> (in_range1 o6) (<= (to_rep h__first) o6))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

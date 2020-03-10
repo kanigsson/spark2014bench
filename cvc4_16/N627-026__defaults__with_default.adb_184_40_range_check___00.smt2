@@ -2154,3 +2154,4 @@ Target solver: CVC4
      (us_split_discrs11 usf1)) usf)
   (in_range (ite usf 1 0))))))))
 (check-sat)
+(exit)

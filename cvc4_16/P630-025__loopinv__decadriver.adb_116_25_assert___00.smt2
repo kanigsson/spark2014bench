@@ -1829,3 +1829,4 @@ Target solver: CVC4
   (forall ((frame_length2 Int))
   (=> (= frame_length2 o3) (<= frame_length2 1024))))))))))))))))))
 (check-sat)
+(exit)

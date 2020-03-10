@@ -877,3 +877,4 @@ Target solver: CVC4
   (in_bounds o wild_man2) o wild_man2))
   (= (in_bounds (us_repqtmk my_circle__split_fields) wild_man1) true)))))))))))))
 (check-sat)
+(exit)

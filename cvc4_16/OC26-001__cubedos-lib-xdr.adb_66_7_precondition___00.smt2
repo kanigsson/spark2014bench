@@ -748,3 +748,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (= temporary1 #x00000000)
   (= temporary1 #x00000001)))) (= (mod1 position 4) 0)))))))))))))))
 (check-sat)
+(exit)

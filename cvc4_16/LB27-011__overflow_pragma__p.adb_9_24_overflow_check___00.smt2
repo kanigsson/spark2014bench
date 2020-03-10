@@ -197,3 +197,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 j1) (<= j1 5)) true false)) true)
   (in_range1 (* result__1 n))))))))))))
 (check-sat)
+(exit)

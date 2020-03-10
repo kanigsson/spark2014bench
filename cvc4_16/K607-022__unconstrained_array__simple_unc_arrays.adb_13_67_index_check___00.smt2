@@ -771,3 +771,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 usf) true false) (ite (<= usf (- i 1)) true false)) true)
   (<= (first1 (rec__simple_unc_arrays__table__v (us_split_fields1 b))) usf))))))))))))))))))))
 (check-sat)
+(exit)

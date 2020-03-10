@@ -404,3 +404,4 @@ Target solver: CVC4
   (=> (forall ((rax2 (_ BitVec 64))) (al__function_guard (al rax2) rax2))
   (= (al rax1) val__))))))))
 (check-sat)
+(exit)

@@ -190,3 +190,4 @@ Target solver: CVC4
   (= (bool_eq (us_repqtmk (us_split_fieldsqtmk main__get_rec__result))
      (us_repqtmk (us_split_fieldsqtmk rliteral))) true))))))
 (check-sat)
+(exit)

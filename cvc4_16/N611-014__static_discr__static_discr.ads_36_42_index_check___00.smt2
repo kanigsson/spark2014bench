@@ -1818,3 +1818,4 @@ Target solver: CVC4
   (=> (not (= static_discr__search_array__result 0))
   (<= (first1 a) static_discr__search_array__result))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

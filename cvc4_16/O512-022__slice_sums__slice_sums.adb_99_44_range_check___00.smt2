@@ -791,3 +791,4 @@ Target solver: CVC4
   (=> (= spark__branch3 true)
   (let ((o5 (+ current_hi1 1))) (=> (in_range1 o5) (in_range3 o5)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

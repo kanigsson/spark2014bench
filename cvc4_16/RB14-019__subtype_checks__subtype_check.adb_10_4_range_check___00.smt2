@@ -845,3 +845,4 @@ Target solver: CVC4
   (=> (dynamic_invariant zero true false true true)
   (=> (<= zero 5) (<= 1 zero))))))))
 (check-sat)
+(exit)

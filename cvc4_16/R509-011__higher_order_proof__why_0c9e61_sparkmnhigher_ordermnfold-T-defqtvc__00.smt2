@@ -1319,3 +1319,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (=> (in_range7 j1) (=> (in_range6 i1) (<= j1 (last_2 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

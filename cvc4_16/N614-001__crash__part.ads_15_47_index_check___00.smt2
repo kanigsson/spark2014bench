@@ -306,3 +306,4 @@ Target solver: CVC4
                                                false)) true)
   (<= (first1 x) usf)))))))
 (check-sat)
+(exit)

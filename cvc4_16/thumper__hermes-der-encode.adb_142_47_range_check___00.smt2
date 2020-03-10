@@ -681,3 +681,4 @@ Target solver: CVC4
   (dynamic_invariant temp___398 true false true true)) (in_range
   (- (+ 0 (+ 1 (length (first1 temp___399) (last1 temp___399)))) 1)))))))))))
 (check-sat)
+(exit)

@@ -527,3 +527,4 @@ Target solver: CVC4
   (=> (= y1 ((_ int2bv 8) (mod1 (power (bv2nat y) 4) 5)))
   (=> (in_range (power z 4)) (not (= 5 0))))))))))))))))))))))))
 (check-sat)
+(exit)

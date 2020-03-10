@@ -118,3 +118,4 @@ Target solver: CVC4
   (=> (= (invariant__ state_var_1 state_var_2) true) (in_range
   (+ state_var_1 1)))))))))
 (check-sat)
+(exit)

@@ -367,3 +367,4 @@ Target solver: CVC4
      (rec__types__rec__s3 r__split_fields1)
      (rec__types__rec__s1 r__split_fields1)))) true)))))))))
 (check-sat)
+(exit)

@@ -1863,3 +1863,4 @@ Target solver: CVC4
   (=> (= (div1 o2 100) lg)
   (=> (dynamic_invariant lg true false true true) (=> (<= 1 lg) (<= 1 1)))))))))))
 (check-sat)
+(exit)

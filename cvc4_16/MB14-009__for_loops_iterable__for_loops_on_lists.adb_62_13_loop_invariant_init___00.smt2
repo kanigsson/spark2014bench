@@ -913,3 +913,4 @@ Target solver: CVC4
   (exists ((cu us_rep))
   (and (= (has_element l cu) true) (= (element l cu) 1))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -460,3 +460,4 @@ Target solver: CVC4
                              (select h_v1 (- k (div1 (to_rep o) 2))))))))
   (= (to_rep h_v2__first) 1)))))))))))
 (check-sat)
+(exit)

@@ -728,3 +728,4 @@ Target solver: CVC4
   (=> (dynamic_invariant6 init true false true true)
   (=> (not (= (length a) 0)) (dynamic_property first last (last2 a)))))))
 (check-sat)
+(exit)

@@ -540,3 +540,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__with_iterable__cursor__i (us_split_fields1 cu))) o)
   (in_range (+ o 1)))))))))))
 (check-sat)
+(exit)

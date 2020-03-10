@@ -874,3 +874,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i c) true false)) true)
   (forall ((i1 Int)) (=> (and (<= 1 i1) (<= i1 c)) (=> (<= 1 c) (<= 1 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

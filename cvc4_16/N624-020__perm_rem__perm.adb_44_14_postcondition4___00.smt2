@@ -728,3 +728,4 @@ Target solver: CVC4
   (<= (first1 a) (to_rep2
                  (rec__perm__witnesses__ia perm__get_witnesses__result)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

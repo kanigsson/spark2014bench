@@ -1309,3 +1309,4 @@ Target solver: CVC4
   (ite (<= find_map__find_upto__result last2) true false)) true)
   (<= (first1 a) find_map__find_upto__result))))))))))))
 (check-sat)
+(exit)

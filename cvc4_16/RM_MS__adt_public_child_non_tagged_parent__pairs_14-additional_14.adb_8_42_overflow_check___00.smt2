@@ -213,3 +213,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__pairs_14__pair__value_two value__split_fields1)) o3)
   (in_range (+ o3 1))))))))))))))
 (check-sat)
+(exit)

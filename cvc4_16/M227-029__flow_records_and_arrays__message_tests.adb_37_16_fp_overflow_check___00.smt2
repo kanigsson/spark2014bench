@@ -393,3 +393,4 @@ Target solver: CVC4
   (= (to_rep (rec__message_tests__coordinate__x (us_split_fields3 c))) o1)
   (fp.isFinite32 (fp.add RNE o1 o))))))))
 (check-sat)
+(exit)

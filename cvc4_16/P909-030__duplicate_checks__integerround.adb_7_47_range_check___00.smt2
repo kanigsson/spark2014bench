@@ -145,3 +145,4 @@ Target solver: CVC4
   (=> (let ((temp___199 x)) (and (<= (- 1) temp___199) (<= temp___199 1)))
   (in_range2 x))))))
 (check-sat)
+(exit)

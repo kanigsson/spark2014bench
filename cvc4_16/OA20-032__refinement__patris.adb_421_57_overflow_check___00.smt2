@@ -2049,3 +2049,4 @@ Target solver: CVC4
   (= (valid_configuration cur_board cur_piece__split_fields1 cur_state) true)
   (=> (= spark__branch3 true) (in_range1 (+ action_request_nbr 1)))))))))))))))))
 (check-sat)
+(exit)

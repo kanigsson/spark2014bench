@@ -168,3 +168,4 @@ Target solver: CVC4
   (=> (dynamic_invariant sum true false true true)
   (=> (= j 1) (=> (= (to_rep (select x j)) o) (in_range (+ sum o)))))))))
 (check-sat)
+(exit)

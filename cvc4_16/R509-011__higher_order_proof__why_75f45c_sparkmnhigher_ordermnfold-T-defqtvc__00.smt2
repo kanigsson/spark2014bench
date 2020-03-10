@@ -1410,3 +1410,4 @@ Target solver: CVC4
   (exists ((o1 Int)) (= (to_rep1 (get1 r2 o temp___526)) o1))))))))
   (=> (= i2 (first4 a)) (= acc2 init))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

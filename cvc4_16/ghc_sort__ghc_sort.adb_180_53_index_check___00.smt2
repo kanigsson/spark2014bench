@@ -1399,3 +1399,4 @@ Target solver: CVC4
   (=> (= (to_rep ss__first) o7)
   (=> (< 1 (length o7 o6)) (<= (to_rep ss__first) 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

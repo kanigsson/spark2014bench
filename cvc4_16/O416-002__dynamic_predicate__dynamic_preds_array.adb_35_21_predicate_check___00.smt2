@@ -376,3 +376,4 @@ Target solver: CVC4
   (=> (= (to_rep o2) dynamic_preds_array__init_ok_even__x) (dynamic_predicate
   (store x1 2 o2))))))))))))))))))))
 (check-sat)
+(exit)

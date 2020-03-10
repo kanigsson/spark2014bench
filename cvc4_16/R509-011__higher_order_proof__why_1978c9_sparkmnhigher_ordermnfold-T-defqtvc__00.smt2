@@ -1875,3 +1875,4 @@ Target solver: CVC4
   (last2 a1) (last_2 a1))) (value (to_rep (get (to_array a2) i j)))))
   (=> (<= (first_2 a1) j) (=> (<= j (last_2 a1)) (<= (first2 a1) i)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

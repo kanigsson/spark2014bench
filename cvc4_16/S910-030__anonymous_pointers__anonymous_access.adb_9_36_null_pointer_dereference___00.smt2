@@ -413,3 +413,4 @@ Target solver: CVC4
                         anonymous_access__copy__B_1__n__assume))
   (rec__anonymous_access__list_acc__pointer_value__pred x))))))))))))))))
 (check-sat)
+(exit)

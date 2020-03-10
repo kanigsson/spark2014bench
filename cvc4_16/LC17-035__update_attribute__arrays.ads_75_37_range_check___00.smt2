@@ -341,3 +341,4 @@ Target solver: CVC4
   (=> (= (to_rep o) new_val)
   (=> (<= (to_rep1 a__first) i) (=> (<= i (to_rep1 a__last)) (in_range3 i))))))))))))
 (check-sat)
+(exit)

@@ -608,3 +608,4 @@ Target solver: CVC4
         (rec__use_types_with_invariants_auto__container__c c__split_discrs)))
   (<= (first1 c__split_fields) i))))))))
 (check-sat)
+(exit)

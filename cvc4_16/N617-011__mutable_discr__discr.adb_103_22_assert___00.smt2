@@ -311,3 +311,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk d2__split_fields)) false)
   (=> (not (= d__attr__constrained true)) (= d1__attr__constrained true))))))))))))))))))))
 (check-sat)
+(exit)

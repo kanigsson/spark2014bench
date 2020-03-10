@@ -517,3 +517,4 @@ Target solver: CVC4
   (=> (= (to_rep m__first) o4)
   (let ((o5 (length o4 o3))) (=> (in_range o5) (in_range (* 100 o5))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

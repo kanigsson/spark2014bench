@@ -255,3 +255,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__bad_lsp__root__f x__split_fields)) o1) (in_range1
   (+ o1 o)))))))
 (check-sat)
+(exit)

@@ -400,3 +400,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 i true false true true)
   (=> (<= 3 n) (=> (<= n 7) (<= 2 n)))))))))))))))))
 (check-sat)
+(exit)

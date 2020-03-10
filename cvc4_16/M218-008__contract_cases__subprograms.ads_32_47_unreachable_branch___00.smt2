@@ -104,3 +104,4 @@ Target solver: CVC4
   (=> (in_range o)
   (forall ((val__1 Int)) (=> (= val__1 o) (not (= (> (+ val__ 1) 0) true)))))))))))))))
 (check-sat)
+(exit)

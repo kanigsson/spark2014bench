@@ -339,3 +339,4 @@ Target solver: CVC4
   (=> (dynamic_invariant length2 true false true true) (in_range1
   (+ a_first length11)))))))))
 (check-sat)
+(exit)

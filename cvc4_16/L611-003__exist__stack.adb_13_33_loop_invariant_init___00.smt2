@@ -288,3 +288,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 index) true false) (ite (<= index 100) true false)) true)
   (=> (<= 1 i) (=> (<= i (- index 1)) (not (= (to_rep (select t i)) (- 1))))))))))))
 (check-sat)
+(exit)

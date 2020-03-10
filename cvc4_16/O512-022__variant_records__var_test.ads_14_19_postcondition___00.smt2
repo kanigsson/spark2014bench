@@ -687,3 +687,4 @@ Target solver: CVC4
   (= var_test__decision_eval__result o5)))))))))))))))))))))))))))))))
   (not (= var_test__decision_eval__result 2))))))))
 (check-sat)
+(exit)

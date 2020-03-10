@@ -226,3 +226,4 @@ Target solver: CVC4
   (= (my_equal_01 e item) true)))
   (= formal_cont__new_set_01__contains__result true)))))))))
 (check-sat)
+(exit)

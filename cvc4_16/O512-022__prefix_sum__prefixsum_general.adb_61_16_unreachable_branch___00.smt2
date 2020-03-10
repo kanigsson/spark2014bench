@@ -578,3 +578,4 @@ Target solver: CVC4
         true false))
   (= o1 false)))) (not (= o1 true)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1470,3 +1470,4 @@ Target solver: CVC4
   (=> (= o true)
   (=> (not (= l (first_2 a1))) (=> (in_range10 (- l 1)) (<= i (last2 a1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

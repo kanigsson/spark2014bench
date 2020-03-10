@@ -285,3 +285,4 @@ Target solver: CVC4
  ;; File "semaphores1.ads", line 7, characters 0-0
   (not true))
 (check-sat)
+(exit)

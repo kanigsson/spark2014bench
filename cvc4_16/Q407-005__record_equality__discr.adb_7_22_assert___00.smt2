@@ -655,3 +655,4 @@ Target solver: CVC4
      (to_array temp___240) (first2 temp___240) (last2 temp___240)
      (first_2 temp___240) (last_2 temp___240))) true)))))))))))))
 (check-sat)
+(exit)

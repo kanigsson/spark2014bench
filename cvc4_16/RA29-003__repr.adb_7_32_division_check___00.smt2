@@ -666,3 +666,4 @@ Target solver: CVC4
   (=> (uint_in_range1 (length1 b))
   (not (= #x0000000000000010 #x0000000000000000)))))))))))))))
 (check-sat)
+(exit)

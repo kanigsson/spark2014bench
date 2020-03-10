@@ -382,3 +382,4 @@ Target solver: CVC4
   val__)))
   (= r82 (bvor (bvand r81 #xFFFFFFFFFFFFFF00) ((_ zero_extend 56) val__))))))))))
 (check-sat)
+(exit)

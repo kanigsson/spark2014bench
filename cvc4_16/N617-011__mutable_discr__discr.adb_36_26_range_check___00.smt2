@@ -333,3 +333,4 @@ Target solver: CVC4
   (=> (= d1__split_discrs o)
   (=> (= d1__attr__constrained false) (in_range c))))))))
 (check-sat)
+(exit)

@@ -155,3 +155,4 @@ Target solver: CVC4
   (=> (fp.leq z (fp #b0 #b01111111 #b00000000000000000000000))
   (fp.isFinite32 (fp.add RNE x y)))))))))))))))
 (check-sat)
+(exit)

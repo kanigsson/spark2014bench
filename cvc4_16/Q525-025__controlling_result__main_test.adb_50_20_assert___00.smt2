@@ -2026,3 +2026,4 @@ Target solver: CVC4
   (=> (= total_string1 (to_array temp___320))
   (= (length (to_rep1 total_string__first) (to_rep1 total_string__last)) total_len1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1231,3 +1231,4 @@ Target solver: CVC4
                       (rec__patience__state__preds s__split_fields5)))
   (forall ((o11 cardindex)) (=> (= (to_rep o11) stackisize2) (<= 0 idx1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

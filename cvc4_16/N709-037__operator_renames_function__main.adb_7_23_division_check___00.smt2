@@ -319,3 +319,4 @@ Target solver: CVC4
   (=> (= (to_rep b__split_fields) o)
   (=> (= (to_rep a__split_fields) o1) (=> (in_range (+ o1 o)) (not (= 2 0))))))))
 (check-sat)
+(exit)

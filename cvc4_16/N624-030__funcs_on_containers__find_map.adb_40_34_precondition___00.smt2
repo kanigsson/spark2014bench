@@ -1191,3 +1191,4 @@ Target solver: CVC4
   (=> (= (= o2 true) (= (has_key (model1 o1) o) true))
   (=> (= o2 true) (= (contains m e) true))))))))))))))))
 (check-sat)
+(exit)

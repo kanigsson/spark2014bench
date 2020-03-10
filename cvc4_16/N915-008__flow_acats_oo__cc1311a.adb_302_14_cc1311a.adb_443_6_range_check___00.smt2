@@ -485,3 +485,4 @@ Target solver: CVC4
  ;; File "cc1311a.adb", line 443, characters 0-0
   (not (in_range4 0)))
 (check-sat)
+(exit)

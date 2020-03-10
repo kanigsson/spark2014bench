@@ -429,3 +429,4 @@ Target solver: CVC4
                                                                    true
                                                                    false)) true))))))))))))))))))
 (check-sat)
+(exit)

@@ -1266,3 +1266,4 @@ Target solver: CVC4
           true false) (ite (and (<= 11 i1) (<= i1 r6b)) true false)) true)
   (<= (to_rep a__first) i1))))))))))))))))))))))
 (check-sat)
+(exit)

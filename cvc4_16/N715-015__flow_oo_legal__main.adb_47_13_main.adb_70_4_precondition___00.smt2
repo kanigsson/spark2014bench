@@ -1634,3 +1634,4 @@ Target solver: CVC4
   (= (has_training (us_repqtmk1 dr_house__split_fields dr_house__attr__tag)
      skill_of_the_day) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -430,3 +430,4 @@ Target solver: CVC4
   (- (+ (first1 a1) (+ (length (first1 a1) (last1 a1)) (length (first1 a2)
                                                        (last1 a2)))) 1)))))))))
 (check-sat)
+(exit)

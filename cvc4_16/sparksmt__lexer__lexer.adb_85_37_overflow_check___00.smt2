@@ -397,3 +397,4 @@ Target solver: CVC4
   (or (= spark__branch2 true) (in_range (+ current_col 1))))))))))))
   (in_range (+ current_pos 1))))))))))))))))
 (check-sat)
+(exit)

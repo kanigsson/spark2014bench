@@ -619,3 +619,4 @@ Target solver: CVC4
   (=> (in_range1 o6)
   (forall ((o7 Int)) (=> (= (to_rep buf__first) o7) (in_range1 (+ o7 o6)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

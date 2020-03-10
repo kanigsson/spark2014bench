@@ -712,3 +712,4 @@ Target solver: CVC4
   (= string_search__brute_force__result1 0))))
   (=> (in_range1 (length needle)) (in_range1 (length haystack)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1164,3 +1164,4 @@ Target solver: CVC4
   (=> (not (= spark__branch4 true))
   (=> (dynamic_property7 1 last9 (- rx1 1)) (in_range1 (- x11 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

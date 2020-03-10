@@ -459,3 +459,4 @@ Target solver: CVC4
      v) true)))
   (= binary_search__Olt__2__result true)))))))
 (check-sat)
+(exit)

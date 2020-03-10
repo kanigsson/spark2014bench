@@ -502,3 +502,4 @@ Target solver: CVC4
   (=> (< (last1 s) 2147483646)
   (let ((o (length s))) (=> (in_range1 o) (in_range1 (+ o 1))))))))
 (check-sat)
+(exit)

@@ -323,3 +323,4 @@ Target solver: CVC4
   (=> (dynamic_invariant denom true false true true)
   (=> (<= num1 num2) (not (= denom 0))))))))
 (check-sat)
+(exit)

@@ -202,3 +202,4 @@ Target solver: CVC4
   (=> (not (= j1 5))
   (forall ((j2 Int)) (=> (= j2 (+ j1 1)) (= result__2 (power n j2)))))))))))))))))))
 (check-sat)
+(exit)

@@ -518,3 +518,4 @@ Target solver: CVC4
   (=> (= v__attr__constrained false)
   (=> (= v__attr__constrained true) (= (distinct 0 0) v__split_discrs))))))))))))))
 (check-sat)
+(exit)

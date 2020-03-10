@@ -792,3 +792,4 @@ Target solver: CVC4
   (forall ((o1 element_type))
   (=> (= (to_rep4 o1) o) (let ((o2 (+ j1 1))) (=> (in_range7 o2) (<= 1 o2)))))))))))))))))))))
 (check-sat)
+(exit)

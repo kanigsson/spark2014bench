@@ -472,3 +472,4 @@ Target solver: CVC4
   (=> (and (<= 1 k) (<= k j))
   (not (= c (to_rep1 (select (to_array needle) k)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

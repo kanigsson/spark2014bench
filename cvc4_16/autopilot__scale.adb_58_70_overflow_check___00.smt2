@@ -419,3 +419,4 @@ Target solver: CVC4
   (=> (dynamic_invariant k21 false true true true)
   (let ((o (* max k11))) (=> (in_range1 o) (in_range1 (div1 o k21)))))))))))))))))))))))
 (check-sat)
+(exit)

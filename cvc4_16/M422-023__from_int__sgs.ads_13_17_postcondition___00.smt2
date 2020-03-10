@@ -224,3 +224,4 @@ Target solver: CVC4
   (=> (= sgs__a__result o1)
   (fp.leq (fp #b0 #b00000000 #b00000000000000000000000) sgs__a__result)))))))))
 (check-sat)
+(exit)

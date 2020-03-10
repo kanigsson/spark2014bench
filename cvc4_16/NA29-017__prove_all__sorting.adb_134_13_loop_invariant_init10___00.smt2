@@ -555,3 +555,4 @@ Target solver: CVC4
   (= (sorted (of_array a1 (to_rep a__first) (to_rep a__last))
      (+ (+ a_first i2) (* j l1)) (min l1 (- (- length2 i2) (* j l1)))) true))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

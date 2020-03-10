@@ -442,3 +442,4 @@ Target solver: CVC4
                 #x0000000000000000)))
   (= (bvurem ux2 m1) (bvurem ((_ int2bv 64) x) m1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

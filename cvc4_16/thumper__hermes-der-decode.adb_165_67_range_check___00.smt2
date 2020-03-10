@@ -627,3 +627,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array message) start)) o3) (in_range3
   (bv2nat (bvand o3 #x7F))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

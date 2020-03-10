@@ -808,3 +808,4 @@ Target solver: CVC4
   (=> (in_range__function_guard (in_range3 a k) a k)
   (=> (= (in_range3 a k) true) (=> (< k (last1 a)) (in_range6 (+ k 1)))))))))))))))
 (check-sat)
+(exit)

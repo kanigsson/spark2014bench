@@ -1498,3 +1498,4 @@ Target solver: CVC4
   (= o11 (to_rep (rec__model__uml_state__name_data (us_split_fields1 o10))))))
   (in_range4 usf)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

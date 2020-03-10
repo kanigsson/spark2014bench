@@ -362,3 +362,4 @@ Target solver: CVC4
   (=> (= (to_rep (select buf temp___1601)) o1)
   (fp.isFinite64 (fp.mul RNE ((_ to_fp 11 53) RNE o1) ((_ to_fp 11 53) RNE o))))))))))))))))))
 (check-sat)
+(exit)

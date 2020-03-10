@@ -320,3 +320,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 c false false true true)
   (=> (not (= bn 0)) (forall ((c1 Int)) (=> (= c1 an) (in_range2 bn)))))))))))))))))
 (check-sat)
+(exit)

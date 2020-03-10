@@ -961,3 +961,4 @@ Target solver: CVC4
   (=> (= (last1 temp___887) length)
   (=> (<= (first1 temp___887) (last1 temp___887)) (<= 1 length)))))))))))))))
 (check-sat)
+(exit)

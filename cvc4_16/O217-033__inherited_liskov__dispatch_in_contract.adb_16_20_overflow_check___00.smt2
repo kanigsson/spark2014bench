@@ -384,3 +384,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__dispatch_in_contract__child__f2 o__split_fields1)) o3)
   (in_range (+ o3 1))))))))))))))))
 (check-sat)
+(exit)

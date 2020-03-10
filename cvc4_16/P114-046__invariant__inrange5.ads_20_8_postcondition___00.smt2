@@ -306,3 +306,4 @@ Target solver: CVC4
   (=> (bvule k (bvsub range_size #x0000000000000001))
   (not (= var (bvadd bottom k)))))))))))))))
 (check-sat)
+(exit)

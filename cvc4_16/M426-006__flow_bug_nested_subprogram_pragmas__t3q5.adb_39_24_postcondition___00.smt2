@@ -248,3 +248,4 @@ Target solver: CVC4
   (=> (= (perm t3 t_old) true)
   (= (to_rep (select t3 i)) (to_rep (select t1 j))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1021,3 +1021,4 @@ Target solver: CVC4
           (rec__types_with_invariants__container__content
           (us_split_fields3 usf))) temp___272))))))))))
 (check-sat)
+(exit)

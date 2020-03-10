@@ -980,3 +980,4 @@ Target solver: CVC4
   (let ((o (length1 a)))
   (=> (in_range o) (=> (in_range1 o) (in_range (length1 a))))))))))
 (check-sat)
+(exit)

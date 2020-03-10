@@ -319,3 +319,4 @@ Target solver: CVC4
   (=> (is_even__function_guard (is_even x) x)
   (=> (= (is_even x) true) (not (= ghost_legal__is_prime__result1 true)))))))))))
 (check-sat)
+(exit)

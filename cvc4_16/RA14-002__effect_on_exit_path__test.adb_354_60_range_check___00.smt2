@@ -1822,3 +1822,4 @@ Target solver: CVC4
   (=> (= spark__branch1 o8)
   (=> (= spark__branch1 true) (in_range2 iterator1)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -432,3 +432,4 @@ Target solver: CVC4
   (=> (= x 3)
   (=> (= y 5) (forall ((u1 Int)) (=> (= u1 (fxp_div x y)) (not (= y 0)))))))))))))
 (check-sat)
+(exit)

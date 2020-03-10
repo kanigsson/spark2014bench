@@ -884,3 +884,4 @@ Target solver: CVC4
   (<= (first5 test_higher_order2__my_fold_left_i__acc__fold__result) 
   (first2 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -699,3 +699,4 @@ Target solver: CVC4
   (=> (= (rec__tests__test_15__holder__present (us_split_discrs3 usf1)) usf)
   (in_range (ite usf 1 0))))))
 (check-sat)
+(exit)

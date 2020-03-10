@@ -917,3 +917,4 @@ Target solver: CVC4
   (= o12 (get (model1 o11) (get1 (positions o11) o10)))) (in_range6
   (- o12 1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

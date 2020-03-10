@@ -334,3 +334,4 @@ Target solver: CVC4
   (=> (forall ((g7 Int)) (g1__function_guard (g1 3 g7) 3 g7))
   (= (g1 3 g6) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

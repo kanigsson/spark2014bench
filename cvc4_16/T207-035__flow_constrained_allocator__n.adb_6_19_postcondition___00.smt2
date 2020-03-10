@@ -319,3 +319,4 @@ Target solver: CVC4
   (=> (= (to_rep x__pointer_value) o1)
   (forall ((result__1 Int)) (=> (= result__1 o1) (= result__1 0))))))))))))))))))))))))))))
 (check-sat)
+(exit)

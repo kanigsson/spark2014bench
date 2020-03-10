@@ -1151,3 +1151,4 @@ Target solver: CVC4
   (dynamic_invariant1 e1 true true true true)) (pop__specific_post o6
   s__split_fields7 o6 e1 s__split_fields6 e)) (= e1 i5))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

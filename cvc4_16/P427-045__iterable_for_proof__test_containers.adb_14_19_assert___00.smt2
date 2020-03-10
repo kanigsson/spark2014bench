@@ -354,3 +354,4 @@ Target solver: CVC4
   (element c11 (us_repqtmk (us_split_fieldsqtmk p1__split_fields1)))))
   (= (valid (element c1 (us_repqtmk (us_split_fieldsqtmk p1__split_fields)))) true)))))))))))))))
 (check-sat)
+(exit)

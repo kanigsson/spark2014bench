@@ -101,3 +101,4 @@ Target solver: CVC4
  ;; File "task_int_prio.ads", line 5, characters 0-0
   (not (forall ((x Int)) (<= 0 x))))
 (check-sat)
+(exit)

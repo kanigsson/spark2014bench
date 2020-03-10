@@ -137,3 +137,4 @@ Target solver: CVC4
   (forall ((p__ident__result Int))
   (=> (= p__ident__result o2) (= p__ident__result n)))))))))))))
 (check-sat)
+(exit)

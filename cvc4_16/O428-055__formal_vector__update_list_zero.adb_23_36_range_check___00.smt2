@@ -920,3 +920,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 (get o10 usf) true false true true) (in_range4
   usf))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

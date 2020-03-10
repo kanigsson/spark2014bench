@@ -365,3 +365,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r2b true false true true)
   (=> (<= 1 5) (<= r1b r2b)))))))))))))
 (check-sat)
+(exit)

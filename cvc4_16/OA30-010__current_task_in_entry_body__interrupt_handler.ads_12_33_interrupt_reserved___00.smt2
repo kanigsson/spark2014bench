@@ -154,3 +154,4 @@ Target solver: CVC4
  ;; File "interrupt_handler.ads", line 9, characters 0-0
   (not (forall ((temp___197 Bool)) (= temp___197 false))))
 (check-sat)
+(exit)

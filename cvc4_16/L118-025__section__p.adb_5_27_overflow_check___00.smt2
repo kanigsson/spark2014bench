@@ -207,3 +207,4 @@ Target solver: CVC4
   (=> (< (to_rep (get x 1 2)) 20)
   (=> (= (to_rep (get x 1 2)) o) (in_range (+ o 1)))))))
 (check-sat)
+(exit)

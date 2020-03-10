@@ -570,3 +570,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 r53b true false true true)
   (=> (<= r52b r53b) (<= (first1 haystack) r52b)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

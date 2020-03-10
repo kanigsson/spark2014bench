@@ -198,3 +198,4 @@ Target solver: CVC4
   (=> (= spark__branch2 true)
   (forall ((flag1 Bool)) (=> (= flag1 (distinct 1 0)) (in_range1 (- num)))))))))))))))))))))))))))
 (check-sat)
+(exit)

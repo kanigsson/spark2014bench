@@ -359,3 +359,4 @@ Target solver: CVC4
   (=> (and (not (= k i2)) (not (= k j2)))
   (= (= (select o4 k) true) (= (select a1 k) true)))))) (in_range2 (+ i2 1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

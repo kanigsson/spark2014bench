@@ -68,3 +68,4 @@ Target solver: CVC4
   (=> (forall ((x1 us_private)) (is_valid__function_guard (is_valid x1) x1))
   (= (is_valid x) true)))))))
 (check-sat)
+(exit)

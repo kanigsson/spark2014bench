@@ -2215,3 +2215,4 @@ Target solver: CVC4
   (<= o2 (last_index
          (us_repqtmk2 p__split_discrs (us_split_fieldsqtmk2 p__split_fields)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1825,3 +1825,4 @@ Target solver: CVC4
      rx_finfo_reg__split_fields)) o2)
   (let ((o3 (+ (bv2nat o2) o1))) (=> (in_range1 o3) (in_range2 o3)))))))))))))))
 (check-sat)
+(exit)

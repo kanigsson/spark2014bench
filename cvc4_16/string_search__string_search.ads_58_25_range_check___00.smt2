@@ -522,3 +522,4 @@ Target solver: CVC4
   (let ((o (length needle)))
   (=> (in_range1 o) (=> (< o 2147483647) (in_range1 (length haystack)))))))))
 (check-sat)
+(exit)

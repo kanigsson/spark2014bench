@@ -391,3 +391,4 @@ Target solver: CVC4
   (=> (= bad__R1s__assume r1s)
   (=> (dynamic_invariant r1s true false true true) (in_range1 r1s)))))))
 (check-sat)
+(exit)

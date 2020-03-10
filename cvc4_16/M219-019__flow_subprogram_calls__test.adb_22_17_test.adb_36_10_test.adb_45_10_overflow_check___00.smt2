@@ -114,3 +114,4 @@ Target solver: CVC4
           true false) (ite (< i2 11) true false)) true)
   (in_range1 (+ sum1 i2))))))))))
 (check-sat)
+(exit)

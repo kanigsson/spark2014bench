@@ -514,3 +514,4 @@ Target solver: CVC4
   (invariant__ perm__remove__result1) perm__remove__result1))
   (= (invariant__ perm__remove__result) true)))))))))))))))))))))))))
 (check-sat)
+(exit)

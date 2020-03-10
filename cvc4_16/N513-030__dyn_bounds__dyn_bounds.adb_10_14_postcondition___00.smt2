@@ -190,3 +190,4 @@ Target solver: CVC4
   (=> (= dyn_bounds__f_simple_2__result o)
   (< 0 dyn_bounds__f_simple_2__result))))))))))))
 (check-sat)
+(exit)

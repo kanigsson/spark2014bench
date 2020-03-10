@@ -367,3 +367,4 @@ Target solver: CVC4
   (and (= (to_rep o2) o1) (and (<= 1 result_index3) (<= result_index3 10))))))))))
   (= result_index3 result_index2)))) (<= result_index3 i2)))))))))))))))))
 (check-sat)
+(exit)

@@ -605,3 +605,4 @@ Target solver: CVC4
   (=> (= memory4 (store memory3 (bvadd addr #x0000000000000003) o3))
   (not (= #x00010000 #x00000000)))))))))))))))))))))))
 (check-sat)
+(exit)

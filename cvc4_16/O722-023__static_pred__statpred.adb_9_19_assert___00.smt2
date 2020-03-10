@@ -187,3 +187,4 @@ Target solver: CVC4
                                                             (<= temp___200 2147483647)))
                                                        true false)))) true))))))))
 (check-sat)
+(exit)

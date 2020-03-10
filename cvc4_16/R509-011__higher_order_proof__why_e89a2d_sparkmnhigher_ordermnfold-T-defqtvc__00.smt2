@@ -1752,3 +1752,4 @@ Target solver: CVC4
   (forall ((k2 Int) (o6 Int)) (update_sum__function_guard
   (update_sum k2 (- o6 1)) k2 (- o6 1))) (= (update_sum k1 (- o5 1)) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

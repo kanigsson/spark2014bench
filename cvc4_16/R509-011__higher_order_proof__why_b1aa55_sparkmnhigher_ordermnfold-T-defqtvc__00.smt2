@@ -1665,3 +1665,4 @@ Target solver: CVC4
   (forall ((o7 Int) (o8 Int)) (in_range__function_guard1 (in_range8 a1 o8 o7)
   a1 o8 o7)) (= (in_range8 a1 k o6) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

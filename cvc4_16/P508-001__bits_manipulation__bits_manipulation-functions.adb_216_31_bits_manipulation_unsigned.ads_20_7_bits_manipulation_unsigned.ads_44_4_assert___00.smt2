@@ -748,3 +748,4 @@ Target solver: CVC4
   (= (make_mask i) (bvsub (ite (< i 4294967296)
                           (bvshl #x00000001 ((_ int2bv 32) i)) #x00000000) #x00000001)))))))))
 (check-sat)
+(exit)

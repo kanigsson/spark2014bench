@@ -611,3 +611,4 @@ Target solver: CVC4
   (< (to_rep (select (to_array s) (- k 1))) (to_rep (select (to_array s) k)))
   (= inc true))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

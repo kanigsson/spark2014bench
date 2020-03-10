@@ -431,3 +431,4 @@ Target solver: CVC4
   (=> (in_range1 (+ i1 j1))
   (forall ((o30 Int)) (=> (= (to_rep b__first) o30) (in_range2 o30))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

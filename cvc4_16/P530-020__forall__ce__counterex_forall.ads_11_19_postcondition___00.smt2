@@ -208,3 +208,4 @@ Target solver: CVC4
   (=> (= (select counterex_forall__single_char_set_broken__result i) true)
   (< c i))))))))))
 (check-sat)
+(exit)

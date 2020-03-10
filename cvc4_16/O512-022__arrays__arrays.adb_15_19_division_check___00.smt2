@@ -481,3 +481,4 @@ Target solver: CVC4
   (forall ((o Int))
   (=> (= (to_rep (select (to_array x) j1)) o) (not (= 2 0))))))))))))))))
 (check-sat)
+(exit)

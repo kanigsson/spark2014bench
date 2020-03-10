@@ -490,3 +490,4 @@ Target solver: CVC4
   (=> (= (to_rep (select z1 1)) 1)
   (= (to_rep (select z1 10)) (to_rep (select y 9)))))))))))))))))))))))))))
 (check-sat)
+(exit)

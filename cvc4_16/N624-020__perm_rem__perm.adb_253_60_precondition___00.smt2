@@ -1271,3 +1271,4 @@ Target solver: CVC4
   (forall ((o22 us_t)) (invariant____function_guard (invariant__ o22) o22))
   (= (invariant__ bb) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

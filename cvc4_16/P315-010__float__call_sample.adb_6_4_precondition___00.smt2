@@ -133,3 +133,4 @@ Target solver: CVC4
   (=> (= time (fp #b0 #b11111110 #b11111111111111111111110))
   (=> (dynamic_invariant time true false true true) (< 0 1))))))
 (check-sat)
+(exit)

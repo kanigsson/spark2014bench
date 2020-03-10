@@ -1714,3 +1714,4 @@ Target solver: CVC4
   (= (to_rep (rec__tetris_integrity__piece__s (us_split_fields1 p))) temp___788)
   (<= 3 temp___788)))))))))))))
 (check-sat)
+(exit)

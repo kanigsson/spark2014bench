@@ -713,3 +713,4 @@ Target solver: CVC4
   (=> (and (<= 0 j) (<= j i))
   (bvugt (shift_right value j) #x0000000000000001))))))))))))))))
 (check-sat)
+(exit)

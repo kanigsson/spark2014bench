@@ -321,3 +321,4 @@ Target solver: CVC4
   (fp.leq o3 (fp #b0 #b10000010 #b11000000000000000000000)))))) (in_range1
   o3))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

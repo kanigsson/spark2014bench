@@ -676,3 +676,4 @@ Target solver: CVC4
   (=> (not (= error1 true))
   (=> (= (to_rep buf__first) o) (in_range1 (+ o (- size 1))))))))))))
 (check-sat)
+(exit)

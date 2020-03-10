@@ -306,3 +306,4 @@ Target solver: CVC4
   (let ((o (+ lower2 1)))
   (=> (in_range1 o) (=> (not (= o upper2)) (in_range1 (+ lower2 upper2)))))))))))))))))))))))))
 (check-sat)
+(exit)

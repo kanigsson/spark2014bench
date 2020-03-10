@@ -685,3 +685,4 @@ Target solver: CVC4
   (=> (and (<= 1 top2) (<= top2 x2))
   (=> (= (to_rep1 (select cut2 1)) 1) (= x2 (to_rep1 (select cut2 top2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -260,3 +260,4 @@ Target solver: CVC4
   (=> (forall ((s3 (Array Int Bool))) (mem__function_guard (mem s3 7) s3 7))
   (not (= (mem s2 7) true))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

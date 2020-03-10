@@ -1223,3 +1223,4 @@ Target solver: CVC4
   (=> (= spark__branch2 (ite (< 1 n2) true false))
   (=> (= spark__branch2 true) (=> (<= cur_position1 10000) (in_range3 n2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

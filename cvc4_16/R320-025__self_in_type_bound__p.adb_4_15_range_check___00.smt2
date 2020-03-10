@@ -174,3 +174,4 @@ Target solver: CVC4
   (=> (dynamic_invariant inner_data true false true true)
   (=> (<= inner_data (to_rep self__)) (<= (- 2147483648) inner_data))))))
 (check-sat)
+(exit)

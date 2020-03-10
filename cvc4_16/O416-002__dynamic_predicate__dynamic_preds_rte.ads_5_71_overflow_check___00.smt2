@@ -135,3 +135,4 @@ Target solver: CVC4
   (not
   (=> (dynamic_invariant i5s true false false true) (in_range (* i5s i5s)))))
 (check-sat)
+(exit)

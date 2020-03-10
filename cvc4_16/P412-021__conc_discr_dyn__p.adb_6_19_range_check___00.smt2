@@ -772,3 +772,4 @@ Target solver: CVC4
   (=> (dynamic_invariant self__ true false true true) (dynamic_property1 1
   (last2 self__) 3)))))
 (check-sat)
+(exit)

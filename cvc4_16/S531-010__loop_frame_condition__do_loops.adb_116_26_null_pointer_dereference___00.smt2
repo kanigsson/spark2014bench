@@ -2593,3 +2593,4 @@ Target solver: CVC4
   (rec__do_loops__u_array_acc__pointer_value__pred
   (rec__do_loops__r_array_record__f3 d_outer__split_fields4)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

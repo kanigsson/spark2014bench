@@ -445,3 +445,4 @@ Target solver: CVC4
   (rec__rec_inv__list_d__next
   (us_split_fields1 (rec__rec_inv__list_acc__pointer_value x)))))))))))))))))))
 (check-sat)
+(exit)

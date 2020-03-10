@@ -755,3 +755,4 @@ Target solver: CVC4
   (not (= o5 true))))))))) (= left3 left2))))
   (=> (< first2 right2) (<= (first1 a__split_fields1) right2))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

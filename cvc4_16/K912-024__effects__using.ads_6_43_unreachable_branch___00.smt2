@@ -141,3 +141,4 @@ Target solver: CVC4
   (=> (and (x_is_positive__function_guard o x) (= (= o true) (< 0 x)))
   (not (= o true))))))))
 (check-sat)
+(exit)

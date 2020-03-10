@@ -975,3 +975,4 @@ Target solver: CVC4
   (=> (= (last1 temp___1094) octet_length)
   (=> (<= (first1 temp___1094) (last1 temp___1094)) (<= 1 octet_length))))))))))))))
 (check-sat)
+(exit)

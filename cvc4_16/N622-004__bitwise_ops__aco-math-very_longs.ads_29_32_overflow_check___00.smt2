@@ -986,3 +986,4 @@ Target solver: CVC4
      result____split_discrs)) o)
   (in_range5 (* 2 o))))))))
 (check-sat)
+(exit)

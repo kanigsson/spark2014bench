@@ -216,3 +216,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c5b true false true true)
   (forall ((res3 Int)) (=> (= res3 c5b) (= res3 x))))))))))))))))))))))
 (check-sat)
+(exit)

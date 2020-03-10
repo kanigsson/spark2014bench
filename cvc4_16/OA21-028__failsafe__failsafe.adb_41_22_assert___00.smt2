@@ -647,3 +647,4 @@ Target solver: CVC4
   (fp.lt (to_rep (select battery_level_at s)) battery_threshold))))
   (bvuge counter #x31)))))))))))))))))
 (check-sat)
+(exit)

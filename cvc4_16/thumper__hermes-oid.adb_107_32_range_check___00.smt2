@@ -1191,3 +1191,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (forall ((o5 Int)) (=> (= (to_rep result____first) o5) (in_range2 o5))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

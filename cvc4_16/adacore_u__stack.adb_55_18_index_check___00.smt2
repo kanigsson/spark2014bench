@@ -452,3 +452,4 @@ Target solver: CVC4
   (=> (= p_top1 o)
   (forall ((o1 element)) (=> (= (to_rep1 o1) e) (<= 1 p_top1))))))))))))))))
 (check-sat)
+(exit)

@@ -1182,3 +1182,4 @@ Target solver: CVC4
   (forall ((o10 Int))
   (=> (= (to_rep (get (to_array a) usf temp___1399)) o10) (<= o9 2147483547)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -639,3 +639,4 @@ Target solver: CVC4
   (=> (= o true)
   (=> (<= max_bit_length 2147483640) (in_range (+ max_bit_length 7))))))))))))
 (check-sat)
+(exit)

@@ -381,3 +381,4 @@ Target solver: CVC4
   (= index22 index21)))))))
   (=> (= found11 true) (<= (first1 table) index12)))))))))))))))))
 (check-sat)
+(exit)

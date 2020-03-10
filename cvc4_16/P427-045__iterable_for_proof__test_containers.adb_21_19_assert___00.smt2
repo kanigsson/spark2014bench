@@ -419,3 +419,4 @@ Target solver: CVC4
   (valid2 (m_element (get_model c31) p31)) (m_element (get_model c31) p31)))
   (= (valid2 (m_element (get_model c3) p3)) true)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

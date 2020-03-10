@@ -397,3 +397,4 @@ Target solver: CVC4
   (bvule i #x0A)) (= (select inputs i) true)))
   (= counter__model__current_chain_length__result #x0A))))))))))
 (check-sat)
+(exit)

@@ -151,3 +151,4 @@ Target solver: CVC4
   (=> (dynamic_invariant z true false true true)
   (=> (fp.lt x y) (=> (fp.lt y z) (fp.lt x z))))))))
 (check-sat)
+(exit)

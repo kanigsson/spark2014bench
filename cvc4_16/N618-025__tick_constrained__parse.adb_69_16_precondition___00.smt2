@@ -1623,3 +1623,4 @@ Target solver: CVC4
   (=> (= spark__branch5 (ite (not (= count2 #x0000)) true false))
   (=> (not (= spark__branch5 true)) (<= 10 511))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

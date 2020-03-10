@@ -427,3 +427,4 @@ Target solver: CVC4
      (rec__dimensions__line_parameter_type__a (us_split_fields1 i101s))) o3)
   (fp.isFinite64 (fp.mul RNE o3 o2)))))))))))))
 (check-sat)
+(exit)

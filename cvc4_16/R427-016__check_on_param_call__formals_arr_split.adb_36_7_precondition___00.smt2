@@ -422,3 +422,4 @@ Target solver: CVC4
   (=> (= (to_rep o3) (first3 formals_arr_split__f__a__compl))
   (< 0 (length (to_rep o3) (to_rep o2))))))))))))))))
 (check-sat)
+(exit)

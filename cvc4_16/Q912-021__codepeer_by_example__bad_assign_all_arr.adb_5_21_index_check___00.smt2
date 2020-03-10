@@ -185,3 +185,4 @@ Target solver: CVC4
  ;; File "bad_assign_all_arr.adb", line 2, characters 0-0
   (not (forall ((j Int)) (=> (= j 1) (<= 1 (+ j 1))))))
 (check-sat)
+(exit)

@@ -608,3 +608,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__unit3__t3__c3 x__split_fields)) 0)
   (= (to_rep (rec__unit1__t1__c12 x__split_fields)) 0)))))))
 (check-sat)
+(exit)

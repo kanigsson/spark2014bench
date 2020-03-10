@@ -116,3 +116,4 @@ Target solver: CVC4
  ;; File "tetris_initial.ads", line 161, characters 0-0
   (not true))
 (check-sat)
+(exit)

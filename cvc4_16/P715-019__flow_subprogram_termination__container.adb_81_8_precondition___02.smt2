@@ -770,3 +770,4 @@ Target solver: CVC4
   (= (has_element
      (us_repqtmk (us_split_fieldsqtmk my_container__split_fields)) o1) true)))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1145,3 +1145,4 @@ Target solver: CVC4
   (=> (in_range4 o5)
   (forall ((index3 Int)) (=> (= index3 o5) (in_range1 (+ string_index2 2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -106,3 +106,4 @@ Target solver: CVC4
   (=> (dynamic_invariant third true false true true)
   (let ((o (+ first second))) (=> (in_range o) (in_range (+ o third)))))))))
 (check-sat)
+(exit)

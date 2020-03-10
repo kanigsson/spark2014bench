@@ -1242,3 +1242,4 @@ Target solver: CVC4
   (=> (< (first2 a) i)
   (let ((o1 (- i 1))) (=> (in_range6 o1) (<= o1 (last2 a)))))))))))))))
 (check-sat)
+(exit)

@@ -562,3 +562,4 @@ Target solver: CVC4
   (=> (= ghc_sort__merge__result (of_array r4 o1 o))
   (= (length ghc_sort__merge__result) (+ (length s1) (length s2)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

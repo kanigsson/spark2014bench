@@ -421,3 +421,4 @@ Target solver: CVC4
   (and (inverse__function_guard o1 o 20) (dynamic_invariant2 o1 true false
   true true)) (forall ((k11 Int)) (=> (= k11 o1) (in_range2 gap1)))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -74,3 +74,4 @@ Target solver: CVC4
   (=> (= y2 (and (or x1 y) (not (and x1 y))))
   (=> (= x2 (and (or x1 y2) (not (and x1 y2)))) (= x2 true)))))))))
 (check-sat)
+(exit)

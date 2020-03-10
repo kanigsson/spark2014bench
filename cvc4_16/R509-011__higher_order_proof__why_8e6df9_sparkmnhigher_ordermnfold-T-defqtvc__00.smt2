@@ -1474,3 +1474,4 @@ Target solver: CVC4
   (let ((o (- k2 1)))
   (=> (in_range1 o) (=> (in_range7 o) (<= (first_2 a1) j)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

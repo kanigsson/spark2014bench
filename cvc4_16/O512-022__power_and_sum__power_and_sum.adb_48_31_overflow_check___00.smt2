@@ -219,3 +219,4 @@ Target solver: CVC4
   (=> (= (* 2 innersum3) (* i1 (+ i1 1))) (in_range1
   (+ totalsum1 innersum3)))))))))))))))))))))))
 (check-sat)
+(exit)

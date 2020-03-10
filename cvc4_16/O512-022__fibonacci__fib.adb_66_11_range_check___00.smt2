@@ -143,3 +143,4 @@ Target solver: CVC4
   (=> (<= n 7)
   (=> (dynamic_invariant p false false true true) (=> (<= 2 n) (<= 0 2))))))))
 (check-sat)
+(exit)

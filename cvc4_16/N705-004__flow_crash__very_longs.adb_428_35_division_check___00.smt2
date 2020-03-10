@@ -1193,3 +1193,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (to_array v__split_fields) temp___1398)) o5)
   (not (= ((_ zero_extend 8) o5) #x0000))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

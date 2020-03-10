@@ -1913,3 +1913,4 @@ Target solver: CVC4
   (= (to_rep3 (rec__tetris_initial__piece__y cur_piece__split_fields)) o18)
   (<= 1 (+ o18 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -130,3 +130,4 @@ Target solver: CVC4
   (=> (dynamic_invariant j true false true true)
   (=> (< j 5) (in_range1 (+ j 1))))))))
 (check-sat)
+(exit)

@@ -161,3 +161,4 @@ Target solver: CVC4
   (=> (= numerics__Odivide__result o)
   (fp.eq numerics__Odivide__result (fp.div RNE left right)))))))))))
 (check-sat)
+(exit)

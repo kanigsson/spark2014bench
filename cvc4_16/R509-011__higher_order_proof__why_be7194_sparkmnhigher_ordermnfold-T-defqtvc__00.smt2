@@ -1151,3 +1151,4 @@ Target solver: CVC4
   (=> (in_range__function_guard (in_range3 a k l) a k l)
   (=> (= (in_range3 a k l) true) (=> (< l (last_2 a)) (in_range8 (+ l 1))))))))))))))))))))))
 (check-sat)
+(exit)

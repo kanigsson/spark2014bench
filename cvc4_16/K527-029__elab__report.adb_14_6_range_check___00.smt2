@@ -396,3 +396,4 @@ Target solver: CVC4
   (=> (ite (<= 1 7) (and (<= 1 r4b) (= (- 7 1) (- r4b 1))) (< r4b 1))
   (=> (<= 1 r4b) (<= 1 1)))))))))))
 (check-sat)
+(exit)

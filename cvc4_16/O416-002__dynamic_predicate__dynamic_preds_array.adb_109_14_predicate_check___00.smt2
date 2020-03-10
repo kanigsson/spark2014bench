@@ -433,3 +433,4 @@ Target solver: CVC4
   (forall ((result__2 (Array Int even)))
   (=> (= result__2 (store result__1 2 o3)) (dynamic_predicate result__2))))))))))))))))))))
 (check-sat)
+(exit)

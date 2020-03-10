@@ -866,3 +866,4 @@ Target solver: CVC4
      (bool_eq (to_array temp___1448) (first1 temp___1448) (last1 temp___1448)
      (to_array temp___1449) (first1 temp___1449) (last1 temp___1449)))) true))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

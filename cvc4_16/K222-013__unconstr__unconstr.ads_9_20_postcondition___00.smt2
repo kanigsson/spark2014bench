@@ -339,3 +339,4 @@ Target solver: CVC4
   (=> (= x (slide (to_array temp___208) (first1 temp___208) o2))
   (= (to_rep1 (select x (to_rep x__first))) 0)))))))))))))))))
 (check-sat)
+(exit)

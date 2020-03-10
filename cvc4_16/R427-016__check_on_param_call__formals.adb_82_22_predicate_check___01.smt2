@@ -549,3 +549,4 @@ Target solver: CVC4
   (=> (= x (formals__x__aggregate_def 1)) (dynamic_predicate4
   (formals__y__aggregate_def 1))))))
 (check-sat)
+(exit)

@@ -549,3 +549,4 @@ Target solver: CVC4
   (<= k (last1 o))) (not (= (to_rep1 (select (to_array o) k)) c)))))))))
   (forall ((i1 Int)) (=> (= i1 1) (in_range1 (length needle))))))))))))))))
 (check-sat)
+(exit)

@@ -344,3 +344,4 @@ Target solver: CVC4
                       (rec__dynamic_preds_rte__small_pair__b x__split_fields)))
   (let ((o2 y)) (=> (in_range2 o2) (< (* o2 o2) 100000)))))))))))))))))))
 (check-sat)
+(exit)

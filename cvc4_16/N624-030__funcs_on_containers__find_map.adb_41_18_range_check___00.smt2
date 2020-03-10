@@ -1204,3 +1204,4 @@ Target solver: CVC4
   (= o (distinct 1 0))))))) (= o false))
   (=> (= o true) (=> (<= (first1 a) (- (element m e) 1)) (<= 1 (first1 a)))))))))))))))
 (check-sat)
+(exit)

@@ -258,3 +258,4 @@ Target solver: CVC4
   (=> (in_range1 (- pos 1))
   (=> (<= 1 pos) (=> (<= pos 10) (=> (<= 1 (- i 1)) (<= 1 1)))))))))))))
 (check-sat)
+(exit)

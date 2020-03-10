@@ -471,3 +471,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 r2b true false true true)
   (=> (in_range1 r2b) (p__s__bool_field__pred v__split_fields)))))))))
 (check-sat)
+(exit)

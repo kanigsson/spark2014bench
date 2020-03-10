@@ -569,3 +569,4 @@ Target solver: CVC4
   (=> (= bounded_dynamic_strings__empty__result true)
   (=> (length__function_guard (length1 this) this) (= (length1 this) 1)))))))))))
 (check-sat)
+(exit)

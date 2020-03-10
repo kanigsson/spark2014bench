@@ -319,3 +319,4 @@ Target solver: CVC4
   (forall ((tmp1 (Array Int value)))
   (=> (= tmp1 (store tmp j rliteral1)) (=> (<= 0 j) (<= 0 0))))))))))))))
 (check-sat)
+(exit)

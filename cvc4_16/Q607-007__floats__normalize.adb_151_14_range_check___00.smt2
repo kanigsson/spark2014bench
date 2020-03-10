@@ -232,3 +232,4 @@ Target solver: CVC4
   (fp.eq o (fp.roundToIntegral RTN v11)))))
   (forall ((v21 Float32)) (=> (= v21 o) (in_range2 v21))))))))))))
 (check-sat)
+(exit)

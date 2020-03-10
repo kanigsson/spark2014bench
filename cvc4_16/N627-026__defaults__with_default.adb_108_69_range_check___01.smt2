@@ -431,3 +431,4 @@ Target solver: CVC4
   (=> (with_default__bad_record3__rec_with_bad_discr__f1__pred usf)
   (in_range2 0)))))))
 (check-sat)
+(exit)

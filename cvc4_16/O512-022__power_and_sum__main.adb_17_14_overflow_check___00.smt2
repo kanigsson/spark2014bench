@@ -689,3 +689,4 @@ Target solver: CVC4
                                             current_out2 current_err2))
   (in_range1 (+ i1 1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

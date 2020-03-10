@@ -1260,3 +1260,4 @@ Target solver: CVC4
                                             call_dispatch__w3__assume))
   (=> (= w3__attr__constrained false) (= x1__attr__tag x2__attr__tag)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -388,3 +388,4 @@ Target solver: CVC4
   (let ((o4 (- usf o3)))
   (=> (in_range1 o4) (let ((o5 (+ o4 1))) (=> (in_range1 o5) (<= 1 o5))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1495,3 +1495,4 @@ Target solver: CVC4
   (has_element o6 i2) o6 i2))
   (= (has_element (us_repqtmk table__split_fields5) i1) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

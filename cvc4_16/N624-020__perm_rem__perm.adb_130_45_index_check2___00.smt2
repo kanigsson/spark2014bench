@@ -628,3 +628,4 @@ Target solver: CVC4
   (=> (not (< usf (- i2 1)))
   (let ((o12 (+ usf 2))) (=> (in_range1 o12) (<= (first1 a) o12)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

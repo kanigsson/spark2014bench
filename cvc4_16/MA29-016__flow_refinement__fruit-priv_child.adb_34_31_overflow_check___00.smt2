@@ -245,3 +245,4 @@ Target solver: CVC4
   extra_cost1) (dynamic_invariant o true false true true)) (in_range
   (* fruit_salads1 o)))))))))))))))))))))
 (check-sat)
+(exit)

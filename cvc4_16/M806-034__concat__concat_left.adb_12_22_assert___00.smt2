@@ -334,3 +334,4 @@ Target solver: CVC4
   (=> (= (to_rep z__first) (- 2147483648))
   (= (to_rep (select z (to_rep z__first))) x)))))))))))))))))
 (check-sat)
+(exit)

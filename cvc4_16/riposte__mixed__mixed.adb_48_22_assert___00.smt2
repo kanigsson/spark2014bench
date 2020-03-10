@@ -297,3 +297,4 @@ Target solver: CVC4
   (=> (= n1 o1)
   (forall ((x Bool)) (=> (= x (ite (= n1 0) true false)) (= x true))))))))))))))))
 (check-sat)
+(exit)

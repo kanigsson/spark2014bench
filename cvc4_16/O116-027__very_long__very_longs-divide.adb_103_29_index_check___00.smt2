@@ -827,3 +827,4 @@ Target solver: CVC4
   (forall ((o9 octet))
   (=> (= (to_rep2 o9) (bvor o8 o7)) (<= (first1 number__split_fields2) i1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -885,3 +885,4 @@ Target solver: CVC4
   (= (and (ite (<= temp___661 idx) true false) (ite (<= idx r24b) true false)) true)
   (in_range5 idx)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

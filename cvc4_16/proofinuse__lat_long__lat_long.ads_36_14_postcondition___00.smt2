@@ -375,3 +375,4 @@ Target solver: CVC4
   (= (olt (fp.abs lat_long__delta_lat_in_meters__result)
      (fp #b0 #b10010111 #b00110001001111000100110)) true))))))))))))
 (check-sat)
+(exit)

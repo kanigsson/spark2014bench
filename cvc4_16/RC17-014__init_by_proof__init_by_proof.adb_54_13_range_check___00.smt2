@@ -578,3 +578,4 @@ Target solver: CVC4
   (=> (= (to_rep buf__first) temp___343)
   (=> (<= temp___343 o3) (<= (to_rep buf__first) temp___343))))))))))))))))))))))
 (check-sat)
+(exit)

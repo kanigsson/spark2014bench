@@ -1593,3 +1593,4 @@ Target solver: CVC4
   (=> (= suffix_array2 (store suffix_array1 0 o8))
   (=> (in_range1 (+ bit_length suffix_len)) (not (= 8 0))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

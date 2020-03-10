@@ -295,3 +295,4 @@ Target solver: CVC4
                       r__split_fields)))
   (= (rec__arrays__optional_int_array__exists r__split_fields1) true)))))
 (check-sat)
+(exit)

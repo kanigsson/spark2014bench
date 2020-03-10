@@ -109,3 +109,4 @@ Target solver: CVC4
   (forall ((tmp Int))
   (=> (= tmp o) (=> (dynamic_invariant tmp true false true true) (< g2 tmp)))))))))))))
 (check-sat)
+(exit)

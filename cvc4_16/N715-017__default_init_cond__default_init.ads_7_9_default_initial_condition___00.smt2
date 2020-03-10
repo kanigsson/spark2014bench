@@ -119,3 +119,4 @@ Target solver: CVC4
   (=> (forall ((usf1 Int)) (nat_ok__function_guard (nat_ok usf1) usf1))
   (= (nat_ok usf) true))))))))
 (check-sat)
+(exit)

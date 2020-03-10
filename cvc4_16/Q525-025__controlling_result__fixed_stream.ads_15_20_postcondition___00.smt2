@@ -633,3 +633,4 @@ Target solver: CVC4
   (elements fixed_stream__create__result1) fixed_stream__create__result1))
   (= (elements fixed_stream__create__result) elem_width))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1708,3 +1708,4 @@ Target solver: CVC4
   (ite (and (<= (first_2 a1) l1) (<= l1 (last_2 a1))) true false)) true)
   (=> (in_range10 l1) (=> (in_range9 k1) (<= (first_2 a1) l1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

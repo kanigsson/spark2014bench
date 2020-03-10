@@ -995,3 +995,4 @@ Target solver: CVC4
   (= (length amortized_queue__Oconcat__result) (+ (length left) (length
                                                                 right)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

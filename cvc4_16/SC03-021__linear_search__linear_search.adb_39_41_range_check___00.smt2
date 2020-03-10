@@ -827,3 +827,4 @@ Target solver: CVC4
   (ite (<= linear_search__linear_search__result o1) true false)) true)
   (in_range2 linear_search__linear_search__result))))))))))))))
 (check-sat)
+(exit)

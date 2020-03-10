@@ -933,3 +933,4 @@ Target solver: CVC4
   (rec__constr_ty__a_acc_2__pointer_value__pred
   (us_repqtmk2 w__is_null_pointer w__pointer_address w__pointer_value)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

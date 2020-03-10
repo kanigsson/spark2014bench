@@ -912,3 +912,4 @@ Target solver: CVC4
   (=> (init__function_guard temp___241 Tuple0) (in_range4 1
   (us_split_discrs1 temp___241)))))))))))))))))))))))
 (check-sat)
+(exit)

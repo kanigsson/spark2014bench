@@ -2057,3 +2057,4 @@ Target solver: CVC4
   (move_is_possible o4 o3) o4 o3))
   (= (move_is_possible (us_repqtmk cur_piece__split_fields) a) true)))))))))))))
 (check-sat)
+(exit)

@@ -632,3 +632,4 @@ Target solver: CVC4
   (=> (in_range1 o20)
   (let ((o21 (* l1 2))) (=> (in_range1 o21) (in_range2 (min o21 o20)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

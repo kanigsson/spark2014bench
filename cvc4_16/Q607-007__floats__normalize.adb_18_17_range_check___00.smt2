@@ -140,3 +140,4 @@ Target solver: CVC4
   (=> (fp.leq (fp.neg (fp #b0 #b11111110 #b11111111111111111101110)) 
   x) (in_range (fp.roundToIntegral RTN x))))))
 (check-sat)
+(exit)

@@ -1189,3 +1189,4 @@ Target solver: CVC4
                                                  true false)) true)
   (<= (first_2 a) usf1)))))))))))))))
 (check-sat)
+(exit)

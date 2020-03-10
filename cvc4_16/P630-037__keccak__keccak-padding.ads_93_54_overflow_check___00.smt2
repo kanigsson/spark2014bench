@@ -618,3 +618,4 @@ Target solver: CVC4
   (=> (and (<= o2 268435455) (<= max_bit_length 2147483640)) (in_range
   (+ max_bit_length 7)))))))))))))
 (check-sat)
+(exit)

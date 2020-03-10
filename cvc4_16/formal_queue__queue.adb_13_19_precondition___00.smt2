@@ -950,3 +950,4 @@ Target solver: CVC4
  ;; File "queue.ads", line 31, characters 0-0
   (not true))
 (check-sat)
+(exit)

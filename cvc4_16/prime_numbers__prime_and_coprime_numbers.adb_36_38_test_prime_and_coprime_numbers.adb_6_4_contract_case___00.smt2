@@ -443,3 +443,4 @@ Target solver: CVC4
   (=> (= (are_coprime left right) true)
   (= test_prime_and_coprime_numbers__p__initialize_coprime_list__euclid__result 1))))))))))))))))))
 (check-sat)
+(exit)

@@ -836,3 +836,4 @@ Target solver: CVC4
  ;; File "main.adb", line 14, characters 0-0
   (not (=> (dynamic_invariant1 a true false true true) (in_range1 a))))
 (check-sat)
+(exit)

@@ -588,3 +588,4 @@ Target solver: CVC4
   false true true)
   (forall ((y1 Int)) (=> (= y1 (last1 a__split_fields)) (= y1 x))))))))))))
 (check-sat)
+(exit)

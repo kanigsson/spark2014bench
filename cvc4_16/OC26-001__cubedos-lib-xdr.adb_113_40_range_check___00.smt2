@@ -783,3 +783,4 @@ Target solver: CVC4
   (let ((o3 (length1 value)))
   (=> (in_range1 o3) (in_range3 (+ padding_start1 (- 3 (mod1 o3 4)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

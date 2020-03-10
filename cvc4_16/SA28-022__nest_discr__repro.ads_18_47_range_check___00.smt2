@@ -649,3 +649,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__repro__fnord_type__opt (us_split_discrs3 usf1))) usf)
   (=> (repro__fnord_type__blech__pred usf1) (in_range1 usf)))))))
 (check-sat)
+(exit)

@@ -495,3 +495,4 @@ Target solver: CVC4
   (=> (= (mod2 (+ usf 1) space) 0)
   (let ((o1 (- (+ usf 1) space))) (=> (in_range4 o1) (<= o1 usf))))))))))))))))))))
 (check-sat)
+(exit)

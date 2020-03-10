@@ -129,3 +129,4 @@ Target solver: CVC4
   (=> (dynamic_invariant size true false true true)
   (=> (not (< size 33)) (=> (not (< 715827882 size)) (in_range (* size 3)))))))
 (check-sat)
+(exit)

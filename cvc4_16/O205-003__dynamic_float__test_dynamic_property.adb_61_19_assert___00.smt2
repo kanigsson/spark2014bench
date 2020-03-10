@@ -346,3 +346,4 @@ Target solver: CVC4
   (forall ((x3 Float32))
   (=> (= x3 test_dynamic_property__nested__dyn_param__x) (fp.leq x3 c))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

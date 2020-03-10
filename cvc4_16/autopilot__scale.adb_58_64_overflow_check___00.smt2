@@ -418,3 +418,4 @@ Target solver: CVC4
   (=> (dynamic_invariant k11 false true true true)
   (=> (dynamic_invariant k21 false true true true) (in_range1 (* max k11)))))))))))))))))))))
 (check-sat)
+(exit)

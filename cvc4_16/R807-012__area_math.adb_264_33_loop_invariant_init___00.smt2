@@ -1550,3 +1550,4 @@ Target solver: CVC4
   (=> (not (= skip2 true))
   (< 0 (to_rep (rec__area_math__ensemble__size1 result____split_fields4))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -515,3 +515,4 @@ Target solver: CVC4
   (=> (and (bvule #x0000000000000000 j) (bvule j var2_range_size))
   (not (= (bvadd var1 n11) (bvadd var2 j))))))))))))))))))))))))))))
 (check-sat)
+(exit)

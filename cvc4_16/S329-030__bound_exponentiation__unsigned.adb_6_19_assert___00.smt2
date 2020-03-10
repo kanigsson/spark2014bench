@@ -246,3 +246,4 @@ Target solver: CVC4
                             (bvshl #x0000000000000001 ((_ int2bv 64) i))
                             #x0000000000000000)))))))
 (check-sat)
+(exit)

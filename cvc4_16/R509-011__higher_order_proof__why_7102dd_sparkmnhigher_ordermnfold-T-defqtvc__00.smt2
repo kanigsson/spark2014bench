@@ -865,3 +865,4 @@ Target solver: CVC4
   (=> (< usf (last2 a))
   (=> (dynamic_property first last usf) (in_range1 (+ usf 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

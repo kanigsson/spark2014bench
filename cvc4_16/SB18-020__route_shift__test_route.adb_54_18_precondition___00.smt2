@@ -1036,3 +1036,4 @@ Target solver: CVC4
         (- n1 1)))))
   (< (length1 a1) 2147483647))))))))))))))))))))))
 (check-sat)
+(exit)

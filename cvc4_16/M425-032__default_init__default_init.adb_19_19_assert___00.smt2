@@ -316,3 +316,4 @@ Target solver: CVC4
   (us_repqtmk (us_split_fieldsqtmk x2__split_fields)) false)
   (=> (default_initial_assumption1 x3 false) (= x1 100)))))))))
 (check-sat)
+(exit)

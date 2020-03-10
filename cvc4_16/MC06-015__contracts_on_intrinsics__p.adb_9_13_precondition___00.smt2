@@ -314,3 +314,4 @@ Target solver: CVC4
   (forall ((a (_ BitVec 32)))
   (=> (dynamic_invariant1 a true false true true) (<= 2 16)))))
 (check-sat)
+(exit)

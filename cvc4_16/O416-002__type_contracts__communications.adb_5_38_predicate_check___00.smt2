@@ -927,3 +927,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk (temp___String_Literal_157 Tuple0)
   (temp___String_Literal_158 Tuple0)))))))))))
 (check-sat)
+(exit)

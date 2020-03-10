@@ -1606,3 +1606,4 @@ Target solver: CVC4
                                                              current_out16))
   (= (is_open target1) true))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

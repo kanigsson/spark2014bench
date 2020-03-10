@@ -88,3 +88,4 @@ Target solver: CVC4
  ;; File "task_type_array_single_so.ads", line 7, characters 0-0
   (not false))
 (check-sat)
+(exit)

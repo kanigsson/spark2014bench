@@ -1113,3 +1113,4 @@ Target solver: CVC4
      (select (rec__patience__state__posheight s__split_fields) topstacki2)) (- stackisize2 1)))
   (forall ((pred3 Int)) (=> (= pred3 topstacki2) (in_range1 (+ i2 1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

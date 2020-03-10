@@ -185,3 +185,4 @@ Target solver: CVC4
   (ite (< 0 y5) true false)) true)
   (forall ((temp___161 Int)) (=> (= temp___161 y5) (in_range1 (- y5 1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

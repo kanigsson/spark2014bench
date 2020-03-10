@@ -892,3 +892,4 @@ Target solver: CVC4
   (=> (< (first2 a) usf)
   (=> (dynamic_property first last usf) (in_range1 (- usf 1)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

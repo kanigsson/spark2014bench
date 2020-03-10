@@ -405,3 +405,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 latest_highest_score false false true true)
   (= program_phase 2))))))))
 (check-sat)
+(exit)

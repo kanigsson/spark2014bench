@@ -580,3 +580,4 @@ Target solver: CVC4
   (=> (<= (+ index src_length) (+ (to_rep dest__last) 1))
   (=> (<= 0 (- src_length 1)) (<= 0 0)))))))))))))
 (check-sat)
+(exit)

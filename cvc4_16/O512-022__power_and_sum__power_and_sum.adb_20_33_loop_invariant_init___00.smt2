@@ -182,3 +182,4 @@ Target solver: CVC4
   (=> (dynamic_invariant totalsum true false true true)
   (=> (<= i n) (= (* 2 totalsum) (* i (- i 1)))))))))))))
 (check-sat)
+(exit)

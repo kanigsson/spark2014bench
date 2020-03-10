@@ -765,3 +765,4 @@ Target solver: CVC4
   (let ((o1 (- k (first1 a))))
   (=> (in_range1 o1) (=> (in_range1 (* 100 o1)) (<= i (last1 a))))))))))))))))))))))))))
 (check-sat)
+(exit)

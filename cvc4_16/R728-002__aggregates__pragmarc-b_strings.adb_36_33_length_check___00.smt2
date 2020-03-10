@@ -4250,3 +4250,4 @@ Target solver: CVC4
   (=> (<= (first1 temp___863) (last1 temp___863))
   (<= (first1 temp___866) (last1 temp___866)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

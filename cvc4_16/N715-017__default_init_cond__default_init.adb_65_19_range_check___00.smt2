@@ -770,3 +770,4 @@ Target solver: CVC4
  ;; File "default_init.ads", line 46, characters 0-0
   (not (in_range 1)))
 (check-sat)
+(exit)

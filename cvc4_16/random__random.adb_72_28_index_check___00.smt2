@@ -840,3 +840,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 o true false true true) (= o ((_ int2bv 32) j))))
   (<= (first1 initiator) j))))))))))))))))))))
 (check-sat)
+(exit)

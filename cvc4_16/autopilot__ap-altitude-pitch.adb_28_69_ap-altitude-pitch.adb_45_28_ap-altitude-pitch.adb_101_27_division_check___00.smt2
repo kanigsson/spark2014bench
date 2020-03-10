@@ -631,3 +631,4 @@ Target solver: CVC4
   (=> (dynamic_invariant4 c17b true false true true)
   (=> (dynamic_invariant5 result__1 false false true true) (not (= 10 0))))))))))))))))))))))))))))
 (check-sat)
+(exit)

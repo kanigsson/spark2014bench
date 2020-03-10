@@ -443,3 +443,4 @@ Target solver: CVC4
   (=> (= (bvurem ux2 m1) (bvurem ((_ int2bv 64) x) m1))
   (= left_ux (bvsub left_x (bvmul left_y left_y))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

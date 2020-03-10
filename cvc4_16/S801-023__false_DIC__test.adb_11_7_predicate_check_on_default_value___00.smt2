@@ -331,3 +331,4 @@ Target solver: CVC4
                 (rec__test__context_type__last (us_split_discrs1 usf))))
   (=> (default_initial_assumption usf1 false) (dynamic_predicate usf1)))))))
 (check-sat)
+(exit)

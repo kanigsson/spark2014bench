@@ -98,3 +98,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c true false true true)
   (=> (in_range (+ c step)) (in_range (+ step 1))))))))
 (check-sat)
+(exit)

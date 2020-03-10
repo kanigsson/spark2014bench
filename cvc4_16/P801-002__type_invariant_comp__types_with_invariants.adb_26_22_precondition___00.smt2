@@ -361,3 +361,4 @@ Target solver: CVC4
            (rec__types_with_invariants__my_integer__val (us_split_fields1 o))))))))
   (< (- 2147483648) o1))))))))
 (check-sat)
+(exit)

@@ -442,3 +442,4 @@ Target solver: CVC4
   (=> (= temp___loop_entry_262 b)
   (forall ((o3 Int)) (=> (= (to_rep b__first) o3) (in_range1 (+ o3 j))))))))))))))))))))))))))))
 (check-sat)
+(exit)

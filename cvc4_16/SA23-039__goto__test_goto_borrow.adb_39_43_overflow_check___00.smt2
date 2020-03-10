@@ -587,3 +587,4 @@ Target solver: CVC4
            (rec__test_goto_borrow__list__pointer_value usf2))))) 1)))))
   (in_range1 (+ i1 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

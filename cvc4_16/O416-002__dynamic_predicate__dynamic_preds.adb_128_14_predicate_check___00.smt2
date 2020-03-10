@@ -412,3 +412,4 @@ Target solver: CVC4
                       (rec__dynamic_preds__even_pair__b x__split_fields)))
   (= (mod2 b 2) 0)))))))))))))))
 (check-sat)
+(exit)

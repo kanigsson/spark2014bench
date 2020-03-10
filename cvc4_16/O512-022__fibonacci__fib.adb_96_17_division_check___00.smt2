@@ -369,3 +369,4 @@ Target solver: CVC4
           true false) (ite (< 0 k12) true false)) true)
   (not (= 2 0))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -180,3 +180,4 @@ Target solver: CVC4
   (= spark__branch1 (ite (fp.leq (fp.abs left) (fp.abs right)) true false))
   (=> (= spark__branch1 true) (fp.isFinite64 (fp.div RNE left right))))))))))))))
 (check-sat)
+(exit)

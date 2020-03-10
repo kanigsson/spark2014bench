@@ -1055,3 +1055,4 @@ Target solver: CVC4
                                                (get (to_array a) (first4 a)
                                                (first_2 a))) init)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

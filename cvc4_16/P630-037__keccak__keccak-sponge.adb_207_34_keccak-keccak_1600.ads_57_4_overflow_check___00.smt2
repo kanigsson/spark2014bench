@@ -1558,3 +1558,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 r88s true false true true) (in_range1
   (- bit_length (mod2 bit_length 8))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

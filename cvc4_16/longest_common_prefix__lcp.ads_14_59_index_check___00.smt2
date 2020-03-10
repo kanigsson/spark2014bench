@@ -409,3 +409,4 @@ Target solver: CVC4
                                       false)) true)
   (<= (first1 a) (+ y usf)))))))))))))))))))))
 (check-sat)
+(exit)

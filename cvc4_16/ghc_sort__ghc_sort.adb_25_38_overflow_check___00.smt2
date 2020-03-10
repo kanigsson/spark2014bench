@@ -589,3 +589,4 @@ Target solver: CVC4
   (forall ((o7 Int))
   (=> (= (to_rep1 (select cut usf)) o7) (in_range1 (+ o7 1))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

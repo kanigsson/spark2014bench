@@ -827,3 +827,4 @@ Target solver: CVC4
   (= (= (bool_eq k usf1) true) (= (witness o12 usf1) (witness o12 k))))))))
   (=> (< o13 o10) (= (has_element l usf1) true)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

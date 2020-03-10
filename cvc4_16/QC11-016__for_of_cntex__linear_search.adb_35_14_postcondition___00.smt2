@@ -372,3 +372,4 @@ Target solver: CVC4
   (=> (= (iter_has_element arr temp___441) true)
   (not (= (get arr temp___441) n)))))))))))
 (check-sat)
+(exit)

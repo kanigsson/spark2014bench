@@ -195,3 +195,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= mode 0) true false))
   (=> (= spark__branch true) (type_invariant x)))))))))
 (check-sat)
+(exit)

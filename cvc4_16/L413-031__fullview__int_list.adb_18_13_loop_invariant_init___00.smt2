@@ -870,3 +870,4 @@ Target solver: CVC4
      (us_repqtmk1 l__split_discrs (us_split_fieldsqtmk1 l__split_fields))) i) 
   (get (model1 temp___loop_entry_998) i)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

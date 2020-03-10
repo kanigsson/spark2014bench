@@ -122,3 +122,4 @@ Target solver: CVC4
   (and (and (not (< 0 x1)) (= x2 x1)) (= y1 y)))))) (and (= x2 x1) (= y1 y)))
   (not (= y1 true)))))))))))
 (check-sat)
+(exit)

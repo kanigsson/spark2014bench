@@ -1153,3 +1153,4 @@ Target solver: CVC4
   (=> (= k2 (+ k1 1))
   (=> (not (< k2 i)) (dynamic_property 1 100 (first1 a2) (last1 a2)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

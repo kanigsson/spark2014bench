@@ -659,3 +659,4 @@ Target solver: CVC4
   (and (dynamic_invariant4 status1 true true true true) (dynamic_invariant
   stop1 true true true true))))))))))) (<= start stop1))))))))))))))))))))))
 (check-sat)
+(exit)

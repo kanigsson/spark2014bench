@@ -117,3 +117,4 @@ Target solver: CVC4
   (and (in_range1 o) (exists ((x2 Int)) (and (= x2 o) (< 10 x2))))))))))
   (= y1 10))))))))
 (check-sat)
+(exit)

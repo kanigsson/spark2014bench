@@ -303,3 +303,4 @@ Target solver: CVC4
           true false) (ite (and (<= (+ k 1) i1) (<= i1 100)) true false)) true)
   (in_range1 (- i1 k))))))))))))))))))
 (check-sat)
+(exit)

@@ -1278,3 +1278,4 @@ Target solver: CVC4
      unmatched_g1_set__split_fields)) temp___753)
   (<= 1 temp___753)))))))))))))))))
 (check-sat)
+(exit)

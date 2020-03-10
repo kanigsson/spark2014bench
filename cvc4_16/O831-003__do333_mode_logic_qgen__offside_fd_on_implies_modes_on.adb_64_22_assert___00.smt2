@@ -96,3 +96,4 @@ Target solver: CVC4
   (=> (= or_out1 (ite (= unit_delay_out1 true) true not5_out1))
   (= or_out1 true)))))))))
 (check-sat)
+(exit)

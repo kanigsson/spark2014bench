@@ -1272,3 +1272,4 @@ Target solver: CVC4
                                   q_)))))
   (<= length 65536)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -698,3 +698,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 i32 false false true true)
   (=> (<= 60 64) (<= 0 60)))))))
 (check-sat)
+(exit)

@@ -394,3 +394,4 @@ Target solver: CVC4
   (forall ((o Int))
   (=> (= (to_rep (select b temp___208)) o) (<= 0 (- usf 2))))))))))))))
 (check-sat)
+(exit)

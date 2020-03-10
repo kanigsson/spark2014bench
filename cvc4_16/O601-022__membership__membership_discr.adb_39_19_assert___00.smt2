@@ -732,3 +732,4 @@ Target solver: CVC4
   (=> (in_range2 0 r00__split_discrs)
   (=> (= r00__attr__tag us_tag1) (= c00__attr__tag us_tag7)))))))))))))))))))))))))
 (check-sat)
+(exit)

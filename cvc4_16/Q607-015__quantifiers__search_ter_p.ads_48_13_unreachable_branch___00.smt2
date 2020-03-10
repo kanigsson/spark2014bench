@@ -631,3 +631,4 @@ Target solver: CVC4
   (= (to_rep (rec__types__option__value search_ter_p__search__result)) o1)
   (not (< (first1 a) o1)))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -912,3 +912,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array powers) c23b)) temp___312)
   (let ((o (power 2 temp___312))) (=> (in_range2 o) (uint_in_range o)))))))))))))))))))
 (check-sat)
+(exit)

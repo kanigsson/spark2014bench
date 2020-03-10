@@ -170,3 +170,4 @@ Target solver: CVC4
   (=> (<= i 255)
   (=> (= (select arrays__single_char_set_broken__result i) true) (< c i))))))))))
 (check-sat)
+(exit)

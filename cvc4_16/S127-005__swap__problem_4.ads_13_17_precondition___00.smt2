@@ -299,3 +299,4 @@ Target solver: CVC4
   (=> (= (to_rep list__first) o7)
   (= (first1 (of_array list o7 o6)) (first1 (of_array list2 o5 o4)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

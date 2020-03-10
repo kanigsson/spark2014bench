@@ -150,3 +150,4 @@ Target solver: CVC4
   (=> (=> (= usf true) (<= 12 y1))
   (=> (not (= (or usf1 usf) true)) (= y1 10))))))))))))))))
 (check-sat)
+(exit)

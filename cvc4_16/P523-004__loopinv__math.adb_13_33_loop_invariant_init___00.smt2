@@ -291,3 +291,4 @@ Target solver: CVC4
   (=> (= (to_rep (select temp___loop_entry_221 j)) o3)
   (= prev_value1 (to_rep (select temp___loop_entry_221 j))))))))))))))))))))))))))
 (check-sat)
+(exit)

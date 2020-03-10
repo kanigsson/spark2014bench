@@ -385,3 +385,4 @@ Target solver: CVC4
   (= (and (ite (<= o3 usf) true false) (ite (<= usf o2) true false)) true)
   (forall ((o4 Int)) (=> (= (to_rep1 a__first) o4) (in_range1 (- usf o4))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -147,3 +147,4 @@ Target solver: CVC4
   (forall ((stash1 Int))
   (=> (= stash1 (- stash s)) (in_range1 (+ pocket s)))))))))))))
 (check-sat)
+(exit)

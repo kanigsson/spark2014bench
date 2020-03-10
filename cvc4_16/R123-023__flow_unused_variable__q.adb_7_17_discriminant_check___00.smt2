@@ -202,3 +202,4 @@ Target solver: CVC4
  ;; File "q.adb", line 5, characters 0-0
   (not (in_range1 (distinct 0 0) (us_split_discrs1 a))))
 (check-sat)
+(exit)

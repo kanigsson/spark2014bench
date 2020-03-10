@@ -86,3 +86,4 @@ Target solver: CVC4
  ;; File "copy_values.ads", line 6, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (< x 80))))
 (check-sat)
+(exit)

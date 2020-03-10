@@ -1363,3 +1363,4 @@ Target solver: CVC4
   (=> (<= first_pos current_pos)
   (let ((o (- current_pos first_pos))) (=> (in_range1 o) (in_range2 o))))))))))))))))
 (check-sat)
+(exit)

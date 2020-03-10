@@ -650,3 +650,4 @@ Target solver: CVC4
   (= spark__branch (and (ite (<= 1 o) true false) (ite (<= o o1) true false)))
   (=> (= spark__branch true) (in_range1 (length fragment)))))))))))))))
 (check-sat)
+(exit)

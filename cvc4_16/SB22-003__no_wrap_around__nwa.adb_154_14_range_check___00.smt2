@@ -375,3 +375,4 @@ Target solver: CVC4
   (=> (in_range (bvudiv x y))
   (=> (in_range (bvadd x y)) (in_range (bvsub x y)))))))))))
 (check-sat)
+(exit)

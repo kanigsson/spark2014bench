@@ -163,3 +163,4 @@ Target solver: CVC4
   (=> (= (to_rep (select x 1)) o)
   (=> (= ar__get__result o) (= ar__get__result (to_rep (select x 1))))))))
 (check-sat)
+(exit)

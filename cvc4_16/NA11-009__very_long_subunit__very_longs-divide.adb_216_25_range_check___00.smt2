@@ -1557,3 +1557,4 @@ Target solver: CVC4
      (rec__very_longs__very_long__length (us_split_discrs1 dividend))) o3)
   (dynamic_property2 first2 last3 (- o3 n1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

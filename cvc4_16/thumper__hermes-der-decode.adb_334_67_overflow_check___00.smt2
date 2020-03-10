@@ -575,3 +575,4 @@ Target solver: CVC4
   (ite (and (<= 1 i1) (<= i1 length1)) true false)) true) (in_range1
   (+ length_stop i1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

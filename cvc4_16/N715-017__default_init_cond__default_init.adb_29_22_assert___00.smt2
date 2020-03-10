@@ -370,3 +370,4 @@ Target solver: CVC4
   (=> (dynamic_invariant n false false true true)
   (=> (default_initial_assumption1 a false) (= (to_rep r__split_fields) 0))))))))
 (check-sat)
+(exit)

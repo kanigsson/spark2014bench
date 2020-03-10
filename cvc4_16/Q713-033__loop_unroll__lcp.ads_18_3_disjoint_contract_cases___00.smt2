@@ -337,3 +337,4 @@ Target solver: CVC4
                                                                a) y)))) true)
               1 0)) (ite (= (= x y) true) 1 0)) 1))))))))))
 (check-sat)
+(exit)

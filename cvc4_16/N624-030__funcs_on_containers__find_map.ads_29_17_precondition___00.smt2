@@ -2082,3 +2082,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array a) usf)) o3)
   (= (contains find_map__find_all__result o3) true)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -536,3 +536,4 @@ Target solver: CVC4
      x (last4 a) (last_2 a)) true)
   (<= (first_2 a) (last_2 a))))))))))
 (check-sat)
+(exit)

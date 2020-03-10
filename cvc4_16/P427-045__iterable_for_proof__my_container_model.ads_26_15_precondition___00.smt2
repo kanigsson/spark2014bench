@@ -337,3 +337,4 @@ Target solver: CVC4
   (m_has_element__function_guard (m_has_element temp___2661 usf1) temp___2661
   usf1)) (= (m_has_element temp___266 usf) true))))))))))))))
 (check-sat)
+(exit)

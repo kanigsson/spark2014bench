@@ -596,3 +596,4 @@ Target solver: CVC4
   (= tmp1 (bvxor (bvmul #x0000000000000005 salt) (bvmul #x0000000000000007 
   hash))) (let ((o (bv2nat tmp1))) (=> (in_range o) (<= 1 (mod2 o 256)))))))))))
 (check-sat)
+(exit)

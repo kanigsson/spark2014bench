@@ -91,3 +91,4 @@ Target solver: CVC4
   (forall ((enums__succ_a__result Int))
   (=> (= enums__succ_a__result (+ o 1)) (not (= a 8)))))))))
 (check-sat)
+(exit)

@@ -182,3 +182,4 @@ Target solver: CVC4
   (=> (forall ((elt1 Int)) (mem__function_guard (mem s elt1) s elt1))
   (= (mem s elt) true))))))))))))))
 (check-sat)
+(exit)

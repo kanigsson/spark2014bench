@@ -104,3 +104,4 @@ Target solver: CVC4
   (forall ((arithmetic__minus_i__result Int))
   (=> (= arithmetic__minus_i__result o) (in_range (- a b))))))))))
 (check-sat)
+(exit)

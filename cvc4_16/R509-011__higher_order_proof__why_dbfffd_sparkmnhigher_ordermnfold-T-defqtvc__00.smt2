@@ -887,3 +887,4 @@ Target solver: CVC4
   (= (ind_prop (of_array (to_array o4) (first2 o4) (last2 o4)) init
      (last2 o4)) true))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

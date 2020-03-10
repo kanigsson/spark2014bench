@@ -623,3 +623,4 @@ Target solver: CVC4
   (of_array m2 (to_rep m__first) (to_rep m__last))))
   (<= (sum (of_array m1 (to_rep m__first) (to_rep m__last))) s)))))))))))))))))))))))))))
 (check-sat)
+(exit)

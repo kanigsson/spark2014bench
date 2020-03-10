@@ -745,3 +745,4 @@ Target solver: CVC4
   (= (to_rep (rec__dimensions__position_type__y (us_split_fields1 c42b))) o7)
   (in_range (fp.sub RNE o7 o6)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

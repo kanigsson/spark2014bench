@@ -285,3 +285,4 @@ Target solver: CVC4
   (rec__counterexamples__int_access__pointer_value__pred
   (rec__counterexamples__two_access__second (us_split_fields1 x)))))))
 (check-sat)
+(exit)

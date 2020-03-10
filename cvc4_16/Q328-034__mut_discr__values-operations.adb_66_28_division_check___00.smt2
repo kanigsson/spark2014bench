@@ -475,3 +475,4 @@ Target solver: CVC4
   (=> (= spark__branch2 true)
   (=> (= (to_rep v2__split_fields) o) (not (= o 0))))))))))))))))))))))))))
 (check-sat)
+(exit)

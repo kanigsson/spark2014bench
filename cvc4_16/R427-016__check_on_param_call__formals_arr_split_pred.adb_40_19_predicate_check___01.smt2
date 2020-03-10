@@ -578,3 +578,4 @@ Target solver: CVC4
   (forall ((o3 Int))
   (=> (= (to_rep1 x__first) o3) (dynamic_predicate4 (of_array x3 o3 o2))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

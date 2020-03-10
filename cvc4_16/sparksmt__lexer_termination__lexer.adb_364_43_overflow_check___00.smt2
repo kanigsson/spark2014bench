@@ -1502,3 +1502,4 @@ Target solver: CVC4
   (= t__split_discrs1 o5)))))))))))))))))))))))))))))))) (in_range1
   (- current_idx first_idx))))))))))))))))))))))))))
 (check-sat)
+(exit)

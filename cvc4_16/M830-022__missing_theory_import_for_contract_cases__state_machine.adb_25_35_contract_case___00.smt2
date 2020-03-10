@@ -217,3 +217,4 @@ Target solver: CVC4
   (forall ((flag2 Bool) (num2 Int)) (state_a__function_guard
   (state_a flag2 num2) flag2 num2)) (= (state_a flag1 num1) true)))))))))))))
 (check-sat)
+(exit)

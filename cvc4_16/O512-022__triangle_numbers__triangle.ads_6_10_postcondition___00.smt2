@@ -329,3 +329,4 @@ Target solver: CVC4
   (=> (= triangle__sum_up_to__result tmp1)
   (= triangle__sum_up_to__result (div1 (* n (+ n 1)) 2)))))))))))
 (check-sat)
+(exit)

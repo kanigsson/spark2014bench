@@ -504,3 +504,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (rec__tetris_functional__piece__y (us_split_fields1 p))) o)
   (in_range2 (+ o 1))))))))))))
 (check-sat)
+(exit)

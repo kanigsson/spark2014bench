@@ -631,3 +631,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__basic__r__base z__split_fields)) 1)
   (basic__r__a_field__pred (us_repqtmk z__split_discrs z__split_fields))))))))))))))
 (check-sat)
+(exit)

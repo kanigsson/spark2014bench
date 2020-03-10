@@ -1016,3 +1016,4 @@ Target solver: CVC4
   (= ((_ int2bv 8) (mod2 (last (us_repqtmk buffer__split_fields2)) 256)) ((_ int2bv 8) 
   (mod2 (+ orig_first 16) 256)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

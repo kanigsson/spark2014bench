@@ -907,3 +907,4 @@ Target solver: CVC4
   (= (= o3 true) (<= r2 (- i2 (first1 o2)))))
   (=> (= o3 true) (dynamic_property 1 100 (first1 a) (last1 a))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -325,3 +325,4 @@ Target solver: CVC4
   (=> (and (<= (to_rep a__first) k) (<= k (- i2 1)))
   (= (to_rep (select a2 k)) (+ (to_rep (select temp___loop_entry_182 k)) 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

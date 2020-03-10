@@ -1460,3 +1460,4 @@ Target solver: CVC4
   (<= 1 (to_rep
         (rec__very_longs__very_long__length (us_split_discrs1 divisor)))))))))))))))))
 (check-sat)
+(exit)

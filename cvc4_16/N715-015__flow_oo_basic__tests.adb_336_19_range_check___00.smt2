@@ -718,3 +718,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r17b true false true true) (in_range
   (ite (rec__tests__test_15__holder__present (us_split_discrs3 r17b)) 1 0)))))))))))))
 (check-sat)
+(exit)

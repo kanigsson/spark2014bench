@@ -1389,3 +1389,4 @@ Target solver: CVC4
   (and (<= (first1 h__split_fields) usf) (<= usf (last2 h__split_fields)))
   (dynamic_array__rec__f1__pred (select (to_array h__split_fields) usf))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

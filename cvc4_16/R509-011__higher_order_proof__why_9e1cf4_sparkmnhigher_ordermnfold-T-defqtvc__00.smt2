@@ -331,3 +331,4 @@ Target solver: CVC4
   (=> (<= i (last1 a))
   (let ((o (- i (first1 a)))) (=> (in_range1 o) (in_range1 (* 100 o)))))))))))
 (check-sat)
+(exit)

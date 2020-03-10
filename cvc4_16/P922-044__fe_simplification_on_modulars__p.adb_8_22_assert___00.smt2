@@ -269,3 +269,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (=> (bvult x (bvadd x #x0000000000000001)) (bvult x #xFFFFFFFFFFFFFFFF)))))
 (check-sat)
+(exit)

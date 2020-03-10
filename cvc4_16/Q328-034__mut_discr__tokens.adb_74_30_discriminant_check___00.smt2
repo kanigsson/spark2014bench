@@ -566,3 +566,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= o 0) true false))
   (=> (= spark__branch true) (tokens__token__val__pred t)))))))))))
 (check-sat)
+(exit)

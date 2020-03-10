@@ -370,3 +370,4 @@ Target solver: CVC4
   (ite (= o1 true) (= o true) (= o (ite (< hi (last1 x)) true false)))))
   (=> (not (= o true)) (<= (first1 x) hi)))))))))
 (check-sat)
+(exit)

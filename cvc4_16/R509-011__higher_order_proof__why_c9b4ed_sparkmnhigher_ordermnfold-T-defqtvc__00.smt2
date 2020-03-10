@@ -1071,3 +1071,4 @@ Target solver: CVC4
   (let ((o1 (last_2 a)))
   (=> (in_range8 o1) (=> (in_range7 (- i 1)) (<= o1 (last_2 a))))))))))))))))
 (check-sat)
+(exit)

@@ -1724,3 +1724,4 @@ Target solver: CVC4
   (= o (to_rep1 (rec__integer_stacks__stack__top this__split_fields)))))
   (in_range1 (+ o 1))))))))))))
 (check-sat)
+(exit)

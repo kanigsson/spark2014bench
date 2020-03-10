@@ -161,3 +161,4 @@ Target solver: CVC4
   (=> (s__function_guard (s 1 2) 1 2)
   (=> (s__function_guard (s 1 3) 1 3) (not (= (s 1 2) (s 1 3)))))))
 (check-sat)
+(exit)

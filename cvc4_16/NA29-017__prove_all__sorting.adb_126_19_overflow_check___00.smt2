@@ -500,3 +500,4 @@ Target solver: CVC4
   (= (and (ite (<= 0 usf) true false) (ite (<= usf 2147483647) true false)) true)
   (in_range1 (* usf l1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

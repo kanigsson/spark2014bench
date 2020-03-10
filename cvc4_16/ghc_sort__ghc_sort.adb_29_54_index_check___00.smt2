@@ -590,3 +590,4 @@ Target solver: CVC4
                                               false)) true)
   (<= (first1 s) y1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

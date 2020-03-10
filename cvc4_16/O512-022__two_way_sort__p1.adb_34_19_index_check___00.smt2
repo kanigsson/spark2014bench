@@ -341,3 +341,4 @@ Target solver: CVC4
           true false) (ite (<= i2 j2) true false)) true)
   (<= (to_rep a__first) i2))))))))))))))))))))))))))
 (check-sat)
+(exit)

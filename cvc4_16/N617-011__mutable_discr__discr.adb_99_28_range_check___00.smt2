@@ -297,3 +297,4 @@ Target solver: CVC4
                                            discr__p2__d__assume))
   (=> (= d__attr__constrained false) (in_range c))))))))))))
 (check-sat)
+(exit)

@@ -1095,3 +1095,4 @@ Target solver: CVC4
   (= h2 (func_head (to_model (us_repqtmk r__split_fields4)))))
   (dynamic_invariant h2 true true true true)) (= h2 y)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

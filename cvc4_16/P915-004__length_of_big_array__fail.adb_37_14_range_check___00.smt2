@@ -853,3 +853,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (< 9223372036854775807 o) true false))
   (=> (not (= spark__branch true)) (in_range1 (length1 c)))))))))))))
 (check-sat)
+(exit)

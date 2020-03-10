@@ -247,3 +247,4 @@ Target solver: CVC4
   (and (in_range1 o1) (and (= total2 o1) (= i1 temp___207))))))))))))
   (= total2 total1)))))) (=> (= s1 total2) (<= s1 100))))))))))))))))))
 (check-sat)
+(exit)

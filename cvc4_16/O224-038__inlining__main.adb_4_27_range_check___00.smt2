@@ -655,3 +655,4 @@ Target solver: CVC4
  ;; File "main.adb", line 2, characters 0-0
   (not (=> (dynamic_invariant max true false true true) (in_range max))))
 (check-sat)
+(exit)

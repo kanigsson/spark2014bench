@@ -595,3 +595,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (to_array res__split_fields2) i1)) o1) (in_range1
   (+ i1 1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

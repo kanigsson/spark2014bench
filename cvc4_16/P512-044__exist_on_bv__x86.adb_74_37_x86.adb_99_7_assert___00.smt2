@@ -494,3 +494,4 @@ Target solver: CVC4
   (=> (dynamic_invariant n true false true true)
   (bvule #x0000000000000000 n)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

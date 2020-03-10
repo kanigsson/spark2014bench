@@ -361,3 +361,4 @@ Target solver: CVC4
   (=> (high_bound__function_guard (high_bound (+ n 1)) (+ n 1))
   (fp.leq new_speed1 (high_bound (+ n 1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1965,3 +1965,4 @@ Target solver: CVC4
   (forall ((o13 Int))
   (=> (= (to_rep1 total_string__first) o13) (in_range (length o13 o12)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

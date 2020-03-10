@@ -662,3 +662,4 @@ Target solver: CVC4
                                                                y i32) i21
                                                                i22) 3))))))))))))))))))
 (check-sat)
+(exit)

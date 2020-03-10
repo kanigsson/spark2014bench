@@ -359,3 +359,4 @@ Target solver: CVC4
   c) (in_range
   (+ (to_rep (rec__dynamic_array__rec__f2 (us_split_fields1 r))) 1)))))))))
 (check-sat)
+(exit)

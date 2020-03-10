@@ -286,3 +286,4 @@ Target solver: CVC4
   (forall ((o integer))
   (=> (= (to_rep o) max) (in_range1 tmp (us_split_discrsqtmk o))))))))))))))
 (check-sat)
+(exit)

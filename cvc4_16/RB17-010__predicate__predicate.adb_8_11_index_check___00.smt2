@@ -338,3 +338,4 @@ Target solver: CVC4
   (=> (= (to_rep o) 120)
   (=> (= (to_rep1 p__first) temp___201) (<= (to_rep1 p__first) temp___201)))))))))
 (check-sat)
+(exit)

@@ -242,3 +242,4 @@ Target solver: CVC4
   (=> (<= 1 j)
   (=> (<= j index) (= (to_rep (select dest1 j)) (to_rep (select src_old j))))))))))))))
 (check-sat)
+(exit)

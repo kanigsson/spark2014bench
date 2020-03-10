@@ -451,3 +451,4 @@ Target solver: CVC4
   (=> (= lcp__result l2)
   (let ((o (+ y lcp__result))) (=> (in_range1 o) (in_range1 (- o 1)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -350,3 +350,4 @@ Target solver: CVC4
   (forall ((dynamic__p__result Int))
   (=> (= dynamic__p__result og) (in_range (+ x 2)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -403,3 +403,4 @@ Target solver: CVC4
   (=> (not (= spark__branch2 true))
   (= (* (* p21 b21) (power b21 (- k22 1))) (power a2 n2)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

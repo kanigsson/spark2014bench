@@ -539,3 +539,4 @@ Target solver: CVC4
   (= (bool_eq1 b1 1 2
      (temp_____aggregate_def_240 o_b 2 (temp_____aggregate_def_246 0)) 1 2) true)))))))))))))))
 (check-sat)
+(exit)

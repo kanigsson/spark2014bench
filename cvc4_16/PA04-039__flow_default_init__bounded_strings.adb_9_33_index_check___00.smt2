@@ -605,3 +605,4 @@ Target solver: CVC4
   (<= (first1
       (rec__bounded_strings__bounded_string__text target__split_fields)) (+ o1 1)))))))))))))
 (check-sat)
+(exit)

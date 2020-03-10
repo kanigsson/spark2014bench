@@ -1333,3 +1333,4 @@ Target solver: CVC4
   (forall ((o13 character))
   (=> (= (to_rep o13) ch1) (<= last6 (to_rep1 item__last))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

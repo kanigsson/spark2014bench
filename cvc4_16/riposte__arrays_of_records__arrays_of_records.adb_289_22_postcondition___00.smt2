@@ -359,3 +359,4 @@ Target solver: CVC4
                     o3))))
   (not (= (bool_eq1 a3 0 1001 a1 0 1001) true)))))))))))))))))))))))
 (check-sat)
+(exit)

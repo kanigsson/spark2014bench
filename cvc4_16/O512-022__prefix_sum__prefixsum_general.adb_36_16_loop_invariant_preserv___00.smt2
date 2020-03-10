@@ -761,3 +761,4 @@ Target solver: CVC4
   (exists ((o14 Int)) (= (to_rep (select a3 temp___195)) o14))))))))))))))
   (< (+ left4 space1) 8))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

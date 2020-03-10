@@ -340,3 +340,4 @@ Target solver: CVC4
   (= (length (to_rep d__first) (to_rep d__last)) (+ (length1 a) (length1 b)))
   (= (to_rep d__last) (+ (+ (last1 a) 1) (- (last1 b) (first1 b))))))))))))))))))
 (check-sat)
+(exit)

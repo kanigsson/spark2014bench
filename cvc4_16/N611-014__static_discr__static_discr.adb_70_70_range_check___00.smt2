@@ -1636,3 +1636,4 @@ Target solver: CVC4
   (let ((temp___461 (last1 a))) (and (<= 0 temp___461) (<= temp___461 100)))
   (=> (in_range2 (last1 a)) (=> (in_range2 (last1 a)) (in_range2 (last1 a))))))))))
 (check-sat)
+(exit)

@@ -590,3 +590,4 @@ Target solver: CVC4
           false) (ite (and (<= 1 i1) (<= i1 r56b)) true false)) true)
   (<= (first1 res__split_fields2) i1)))))))))))))))))))))))))
 (check-sat)
+(exit)

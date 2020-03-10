@@ -262,3 +262,4 @@ Target solver: CVC4
   (=> (= a1 (set a i j rliteral))
   (=> (= a2 (set a1 j i rliteral1)) (not (= (to_rep (get a2 i j)) 23))))))))))
 (check-sat)
+(exit)

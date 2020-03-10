@@ -375,3 +375,4 @@ Target solver: CVC4
   (=> (not (= (bool_eq l us_null_pointer) true))
   (rec__test_goto_borrow__list__pointer_value__pred l))))
 (check-sat)
+(exit)

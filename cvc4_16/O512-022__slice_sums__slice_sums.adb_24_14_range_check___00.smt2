@@ -745,3 +745,4 @@ Target solver: CVC4
                       false)) true)
   (=> (<= (first1 x) (last1 x)) (<= 1 (first1 x))))))))))))))))))
 (check-sat)
+(exit)

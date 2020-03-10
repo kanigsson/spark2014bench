@@ -1217,3 +1217,4 @@ Target solver: CVC4
   (and (<= 5 r5b) (= (- (last1 p) (first1 p)) (- r5b 5))) (< r5b 5))
   (=> (<= 5 r5b) (<= (to_rep2 r__first) 5))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -501,3 +501,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 s true false true true)
   (=> (< (last1 s) 2147483646) (in_range1 (length s))))))
 (check-sat)
+(exit)

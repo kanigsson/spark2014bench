@@ -596,3 +596,4 @@ Target solver: CVC4
   (let ((o2 (+ left2 space1)))
   (=> (in_range4 o2) (let ((o3 (+ left2 1))) (=> (in_range4 o3) (<= o3 o2)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

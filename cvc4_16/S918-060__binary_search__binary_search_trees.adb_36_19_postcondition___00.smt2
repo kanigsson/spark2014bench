@@ -470,3 +470,4 @@ Target solver: CVC4
   (dynamic_invariant1 size2 true true true true))))))))))))))))
   (or (= size2 size1) (= size2 (+ size1 1))))))))))))
 (check-sat)
+(exit)

@@ -263,3 +263,4 @@ Target solver: CVC4
   (=> (= x3 (bvudiv x2 #x00000004))
   (=> (= x4 (bvudiv x3 #x00000004)) (= x4 (bvudiv x1 #x00000040))))))))))
 (check-sat)
+(exit)

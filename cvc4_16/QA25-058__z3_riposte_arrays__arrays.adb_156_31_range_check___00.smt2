@@ -384,3 +384,4 @@ Target solver: CVC4
   (=> (<= (+ (to_rep1 (rec__arrays__string_t__len s__split_fields2)) 1) 5)
   (<= 1 (+ (to_rep1 (rec__arrays__string_t__len s__split_fields2)) 1))))))))))))))))))))))
 (check-sat)
+(exit)

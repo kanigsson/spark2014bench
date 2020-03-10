@@ -385,3 +385,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 lsw false false true true)
   (bvule ((_ zero_extend 32) #x00000000) (bvlshr whole ((_ int2bv 64) 32)))))))))
 (check-sat)
+(exit)

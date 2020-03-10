@@ -264,3 +264,4 @@ Target solver: CVC4
   (=> (and (<= 1 k) (<= k 1)) (= (to_rep (select a k)) one))))
   (=> (= b 1) (= (bool_eq a 1 1 (temp_____aggregate_def_205 one) 1 1) true)))))))))
 (check-sat)
+(exit)

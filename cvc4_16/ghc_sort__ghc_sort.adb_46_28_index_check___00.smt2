@@ -716,3 +716,4 @@ Target solver: CVC4
   (forall ((temp___431 Int))
   (=> (= (to_rep1 (select cut2 top2)) temp___431) (<= (first1 s) temp___431)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

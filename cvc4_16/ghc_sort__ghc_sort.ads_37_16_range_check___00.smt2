@@ -363,3 +363,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (=> (in_range1 (- 2147483647 o)) (in_range1 (length s1)))))))))
 (check-sat)
+(exit)

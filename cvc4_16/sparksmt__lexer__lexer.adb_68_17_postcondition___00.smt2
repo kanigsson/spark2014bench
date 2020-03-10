@@ -402,3 +402,4 @@ Target solver: CVC4
   (let ((o1 (+ current_pos 1))) (and (in_range o1) (= current_pos2 o1))))
   (= current_pos2 current_pos)))))) (<= current_pos1 current_pos2)))))))))))))
 (check-sat)
+(exit)

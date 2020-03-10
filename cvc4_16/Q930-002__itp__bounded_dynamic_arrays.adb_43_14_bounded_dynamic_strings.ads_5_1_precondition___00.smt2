@@ -687,3 +687,4 @@ Target solver: CVC4
   (=> (<= (length content) 2147483647)
   (let ((o (length content))) (=> (in_range3 o) (<= (length content) o)))))))
 (check-sat)
+(exit)

@@ -111,3 +111,4 @@ Target solver: CVC4
   (=> (dynamic_invariant a true false true true)
   (=> (ok__function_guard (ok a) a) (not (= (< 0 a) (= (ok a) true)))))))
 (check-sat)
+(exit)

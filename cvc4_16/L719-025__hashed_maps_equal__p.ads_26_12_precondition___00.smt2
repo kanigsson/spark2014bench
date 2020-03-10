@@ -1577,3 +1577,4 @@ Target solver: CVC4
      (us_repqtmk l__split_discrs (us_split_fieldsqtmk l__split_fields2))
      usf2) true))))))))))))))))))))))))
 (check-sat)
+(exit)

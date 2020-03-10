@@ -97,3 +97,4 @@ Target solver: CVC4
  ;; File "inst.adb", line 9, characters 0-0
   (not (=> (dynamic_invariant h true false true true) (< 7 0))))
 (check-sat)
+(exit)

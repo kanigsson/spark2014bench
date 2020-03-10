@@ -497,3 +497,4 @@ Target solver: CVC4
   (last3 temp___243))
   (let ((temp___239 (+ 1 count))) (=> (<= temp___239 10) (<= 1 temp___239)))))))))))
 (check-sat)
+(exit)

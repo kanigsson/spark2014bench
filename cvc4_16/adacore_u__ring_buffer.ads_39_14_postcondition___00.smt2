@@ -640,3 +640,4 @@ Target solver: CVC4
   (valid_model first1 length4 model3 content2) first1 length4 model3
   content2)) (= (valid_model first length3 model2 content1) true))))))))))))))))))))))
 (check-sat)
+(exit)

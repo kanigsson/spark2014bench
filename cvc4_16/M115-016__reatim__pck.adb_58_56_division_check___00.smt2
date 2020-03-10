@@ -357,3 +357,4 @@ Target solver: CVC4
   (let ((o10 (+ v_lo2 o9)))
   (=> (in_range1 o10) (=> (in_range1 (+ o10 (div1 d 2))) (not (= d 0))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

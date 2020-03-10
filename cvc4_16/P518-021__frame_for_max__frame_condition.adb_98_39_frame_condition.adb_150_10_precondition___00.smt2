@@ -600,3 +600,4 @@ Target solver: CVC4
   (=> (= (to_rep1 a__first) o4)
   (= (first2 (of_array temp___loop_entry_378 o4 o3)) (to_rep1 a__first)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

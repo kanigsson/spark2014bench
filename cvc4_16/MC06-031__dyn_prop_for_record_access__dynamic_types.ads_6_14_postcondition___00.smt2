@@ -707,3 +707,4 @@ Target solver: CVC4
   (<= dynamic_types__search__result (last1 a)))
   (= (to_rep (select (to_array a) dynamic_types__search__result)) c))))))))))
 (check-sat)
+(exit)

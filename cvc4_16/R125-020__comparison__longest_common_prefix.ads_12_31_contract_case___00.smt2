@@ -451,3 +451,4 @@ Target solver: CVC4
   (=> (= (= x y) true)
   (= longest_common_prefix__lcp__result (+ (- 1000 x) 1))))))))))))))))))))
 (check-sat)
+(exit)

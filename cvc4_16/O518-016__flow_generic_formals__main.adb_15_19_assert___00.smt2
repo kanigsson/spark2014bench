@@ -164,3 +164,4 @@ Target solver: CVC4
   (=> (= var1 10)
   (=> (dynamic_invariant var1 true true true true) (= var1 10))))))))))))
 (check-sat)
+(exit)

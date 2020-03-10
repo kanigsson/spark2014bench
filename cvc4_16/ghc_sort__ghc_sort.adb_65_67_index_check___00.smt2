@@ -424,3 +424,4 @@ Target solver: CVC4
   (exists ((o1 Int)) (= (to_rep (select r1 temp___523)) o1)))))))
   (=> (< 1 j) (<= (first1 s2) j2)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

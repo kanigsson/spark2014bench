@@ -900,3 +900,4 @@ Target solver: CVC4
                                    b__split_fields3)))
   (in_range (length initializer)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

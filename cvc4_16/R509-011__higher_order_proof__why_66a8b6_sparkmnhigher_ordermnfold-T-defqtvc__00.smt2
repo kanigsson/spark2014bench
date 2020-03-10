@@ -1535,3 +1535,4 @@ Target solver: CVC4
                                                false)) true)
   (=> (< (first2 a) usf) (in_range5 (first_2 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

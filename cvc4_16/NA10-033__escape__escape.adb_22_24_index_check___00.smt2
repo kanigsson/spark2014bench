@@ -465,3 +465,4 @@ Target solver: CVC4
   (forall ((o6 character))
   (=> (= (to_rep o6) 92) (<= (to_rep1 result____first) ti2))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

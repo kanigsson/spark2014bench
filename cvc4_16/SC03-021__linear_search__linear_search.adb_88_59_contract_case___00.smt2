@@ -1358,3 +1358,4 @@ Target solver: CVC4
   (not
   (= (bool_eq1 linear_search__linear_search__2__result us_null_pointer) true)))))))))))
 (check-sat)
+(exit)

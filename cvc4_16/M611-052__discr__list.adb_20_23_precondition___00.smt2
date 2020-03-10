@@ -1512,3 +1512,4 @@ Target solver: CVC4
   (not
   (= (is_empty1 (to_base (us_repqtmk2 s__split_discrs s__split_fields1))) true))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

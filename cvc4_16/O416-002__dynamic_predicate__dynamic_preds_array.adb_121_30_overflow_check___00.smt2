@@ -399,3 +399,4 @@ Target solver: CVC4
   (and (dynamic_predicate temp___336) (= result__1 temp___336)))))))))))
   (=> (= (to_rep (select result__1 1)) o) (in_range (+ o 2)))))))))
 (check-sat)
+(exit)

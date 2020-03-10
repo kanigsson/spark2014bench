@@ -215,3 +215,4 @@ Target solver: CVC4
   (let ((o1 (+ y 5)))
   (=> (in_range o1) (forall ((y1 Int)) (=> (= y1 o1) (<= 1 y1)))))))))))))))))))
 (check-sat)
+(exit)

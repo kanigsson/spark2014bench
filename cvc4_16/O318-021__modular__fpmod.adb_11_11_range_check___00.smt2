@@ -398,3 +398,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 y false false true true)
   (=> (= x1 64) (uint_in_range (to_int2 x1))))))))
 (check-sat)
+(exit)

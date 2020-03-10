@@ -129,3 +129,4 @@ Target solver: CVC4
   (=> (= real_world__k616_030_a__result (ite (<= x c2) true false))
   (= real_world__k616_030_a__result true)))))))))))))
 (check-sat)
+(exit)

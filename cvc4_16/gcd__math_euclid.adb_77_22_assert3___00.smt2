@@ -395,3 +395,4 @@ Target solver: CVC4
   (forall ((an2 Int)) (divides__function_guard (divides an2 an2) an2 an2))
   (= (divides an1 an1) true)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

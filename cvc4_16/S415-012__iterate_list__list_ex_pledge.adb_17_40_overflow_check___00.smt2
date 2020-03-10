@@ -565,3 +565,4 @@ Target solver: CVC4
   (and (dynamic_invariant o4 true false true true) (= o4 (length_aux usf2))))
   (in_range1 (+ i 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

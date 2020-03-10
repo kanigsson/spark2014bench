@@ -248,3 +248,4 @@ Target solver: CVC4
   (=> (<= 0 find__find__result)
   (=> (not (= find__find__result 0)) (<= 1 find__find__result)))))))))))
 (check-sat)
+(exit)

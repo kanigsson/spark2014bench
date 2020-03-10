@@ -1174,3 +1174,4 @@ Target solver: CVC4
   (=> (= l_digit3 ((_ zero_extend 8) o4))
   (<= (first1 (rec__very_longs__very_long__long_digits (us_split_fields1 r))) j1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

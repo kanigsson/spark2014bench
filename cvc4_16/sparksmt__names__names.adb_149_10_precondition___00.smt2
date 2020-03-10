@@ -2161,3 +2161,4 @@ Target solver: CVC4
   (forall ((o4 name_id))
   (=> (= (to_rep5 o4) n2) (=> (in_range12 ptr1) (<= 1 ptr1)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

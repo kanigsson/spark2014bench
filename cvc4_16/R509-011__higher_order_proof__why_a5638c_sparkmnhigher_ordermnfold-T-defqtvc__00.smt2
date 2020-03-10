@@ -1490,3 +1490,4 @@ Target solver: CVC4
   (=> (not (= j1 temp___1452))
   (forall ((j2 Int)) (=> (= j2 (+ j1 1)) (=> (in_range5 j2) (in_range4 i1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -421,3 +421,4 @@ Target solver: CVC4
   (let ((temp___582 (- i 1)))
   (ite (< temp___582 65536) (bvshl #x0001 ((_ int2bv 16) temp___582)) #x0000)))))))))))))))))))))
 (check-sat)
+(exit)

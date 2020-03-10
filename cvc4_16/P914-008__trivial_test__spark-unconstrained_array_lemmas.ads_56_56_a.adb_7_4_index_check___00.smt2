@@ -382,3 +382,4 @@ Target solver: CVC4
                                                  true false)) true)
   (=> (not (= usf (first1 arr))) (<= (first1 arr) usf)))))))
 (check-sat)
+(exit)

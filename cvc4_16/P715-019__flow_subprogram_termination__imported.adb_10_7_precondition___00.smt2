@@ -63,3 +63,4 @@ Target solver: CVC4
   (nonreturning_precondition 3 3) 3 3)
   (= (nonreturning_precondition 3 3) true))))
 (check-sat)
+(exit)

@@ -1641,3 +1641,4 @@ Target solver: CVC4
   (forall ((o1 natural))
   (=> (= (to_rep o1) o) (=> (<= (first1 a) (last1 a)) (<= 1 (last1 a)))))))))))))))
 (check-sat)
+(exit)

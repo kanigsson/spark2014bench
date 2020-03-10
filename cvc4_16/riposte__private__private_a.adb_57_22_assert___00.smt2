@@ -463,3 +463,4 @@ Target solver: CVC4
   (=> (= s__split_fields (us_split_fieldsqtmk1 (distinct 1 0) o))
   (= (rec__private_a__optional_stack__exists s__split_fields) true))))))))))
 (check-sat)
+(exit)

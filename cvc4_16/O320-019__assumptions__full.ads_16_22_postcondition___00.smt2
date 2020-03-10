@@ -133,3 +133,4 @@ Target solver: CVC4
   (=> (= z1 o)
   (=> (forall ((z2 Int)) (id__function_guard (id z2) z2)) (< 0 (id z1))))))))))))
 (check-sat)
+(exit)

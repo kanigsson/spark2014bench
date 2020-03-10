@@ -900,3 +900,4 @@ Target solver: CVC4
                         usf1))))
   (rec__pledge_constraints__int_acc__pointer_value__pred usf1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

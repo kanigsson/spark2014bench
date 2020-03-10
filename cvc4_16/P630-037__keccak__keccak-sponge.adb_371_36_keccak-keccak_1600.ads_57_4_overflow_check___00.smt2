@@ -1732,3 +1732,4 @@ Target solver: CVC4
   (forall ((offset1 Int))
   (=> (= offset1 o22) (in_range1 (- remaining bytes_to_squeeze1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -205,3 +205,4 @@ Target solver: CVC4
   (=> (= main__with_invariant__result o)
   (not (= id main__with_invariant__result))))))))))
 (check-sat)
+(exit)

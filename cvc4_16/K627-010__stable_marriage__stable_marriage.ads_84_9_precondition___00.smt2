@@ -357,3 +357,4 @@ Target solver: CVC4
   (forall ((o6 (Array Int group2_id))) (is_permutation_2__function_guard
   (is_permutation_2 o6) o6)) (= (is_permutation_2 r2) true))))))))))))))))))))))))
 (check-sat)
+(exit)

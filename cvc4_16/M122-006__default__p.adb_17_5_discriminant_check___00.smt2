@@ -373,3 +373,4 @@ Target solver: CVC4
   (=> (dynamic_invariant (us_repqtmk y__split_discrs) true false true true)
   (=> (= x__attr__constrained true) (= rliteral1 x__split_discrs)))))))))))
 (check-sat)
+(exit)

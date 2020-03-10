@@ -532,3 +532,4 @@ Target solver: CVC4
   (=> (= (to_rep m__first) temp___297)
   (=> (<= temp___297 i) (<= (to_rep m__first) temp___297)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

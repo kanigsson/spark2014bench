@@ -318,3 +318,4 @@ Target solver: CVC4
   (= (includes_intersection formal_cont__new_set_02__intersection__result
      left right) true))))))
 (check-sat)
+(exit)

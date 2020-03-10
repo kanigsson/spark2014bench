@@ -676,3 +676,4 @@ Target solver: CVC4
   (=> (= (to_rep1 a__first) o1)
   (= (first2 (of_array a o1 o)) (to_rep1 a__first))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

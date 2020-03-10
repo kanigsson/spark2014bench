@@ -1119,3 +1119,4 @@ Target solver: CVC4
   (=> (<= (first2 a) i)
   (=> (<= i (last2 a)) (=> (< 0 (length_2 a)) (in_range1 (length_2 a))))))))))
 (check-sat)
+(exit)

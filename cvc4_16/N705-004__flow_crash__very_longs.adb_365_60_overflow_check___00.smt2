@@ -807,3 +807,4 @@ Target solver: CVC4
      (rec__very_longs__very_long__octet_length (us_split_discrs1 number))) o)
   (in_range2 (+ o 1)))))))))
 (check-sat)
+(exit)

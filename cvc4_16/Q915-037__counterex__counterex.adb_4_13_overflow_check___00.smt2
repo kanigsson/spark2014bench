@@ -114,3 +114,4 @@ Target solver: CVC4
   (let ((o (+ v 10))) (and (in_range1 o) (= v1 o))))))))) (in_range1
   (+ v1 10)))))))
 (check-sat)
+(exit)

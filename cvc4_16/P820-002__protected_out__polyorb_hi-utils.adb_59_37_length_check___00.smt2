@@ -590,3 +590,4 @@ Target solver: CVC4
   (let ((temp___407 (of_array (to_array s) temp___405 temp___406)))
   (=> (<= (first1 temp___407) (last1 temp___407)) (<= 1 80)))))))))))))))))
 (check-sat)
+(exit)

@@ -68,3 +68,4 @@ Target solver: CVC4
  ;; File "port.ads", line 90, characters 0-0
   (not (forall ((x Bool)) (in_range (ite x 1 0)))))
 (check-sat)
+(exit)

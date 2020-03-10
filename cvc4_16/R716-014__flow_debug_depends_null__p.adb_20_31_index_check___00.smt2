@@ -225,3 +225,4 @@ Target solver: CVC4
   (=> (dynamic_invariant register true false true true)
   (=> (dynamic_invariant value false false true true) (<= 1 register))))))
 (check-sat)
+(exit)

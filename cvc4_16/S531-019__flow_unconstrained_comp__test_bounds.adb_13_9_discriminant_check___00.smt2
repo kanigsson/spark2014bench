@@ -699,3 +699,4 @@ Target solver: CVC4
      (us_repqtmk1 (us_split_discrsqtmk rliteral1)
      (us_split_fieldsqtmk1 (temp_____aggregate_def_210 0)))))) x__split_discrs))))))))))
 (check-sat)
+(exit)

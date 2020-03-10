@@ -977,3 +977,4 @@ Target solver: CVC4
   (= avoid_div_by_zero_out11 ms_in_our1_out11)))
   (fp.isFinite64 (fp.div RNE distance_km_out11 avoid_div_by_zero_out11))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

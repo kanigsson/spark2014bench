@@ -153,3 +153,4 @@ Target solver: CVC4
   (=> (= (to_rep o) types_with_inv__set_to_zero__x)
   (=> (= (to_rep o) o1) (=> (= x1 o1) (type_invariant x1))))))))))
 (check-sat)
+(exit)

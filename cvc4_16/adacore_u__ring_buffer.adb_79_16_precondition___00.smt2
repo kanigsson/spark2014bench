@@ -605,3 +605,4 @@ Target solver: CVC4
   (=> (= (valid_model first length2 model1 content) true)
   (=> (< 0 (length model1)) (<= 1 1))))))))))
 (check-sat)
+(exit)

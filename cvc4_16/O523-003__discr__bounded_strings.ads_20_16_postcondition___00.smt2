@@ -903,3 +903,4 @@ Target solver: CVC4
   (size bounded_strings__make__result1) bounded_strings__make__result1))
   (= (size bounded_strings__make__result) (length initializer))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

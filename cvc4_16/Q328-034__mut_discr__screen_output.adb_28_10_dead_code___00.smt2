@@ -450,3 +450,4 @@ Target solver: CVC4
                                             current_out2 current_err2))
   (=> (= spark__branch end_line) (not (= spark__branch true))))))))))))
 (check-sat)
+(exit)

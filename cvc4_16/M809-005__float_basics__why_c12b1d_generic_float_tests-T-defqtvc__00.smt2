@@ -159,3 +159,4 @@ Target solver: CVC4
   (let ((o (fp.sub RNE f (fp #b0 #b00000000 #b00000000000000000000000))))
   (=> (fp.isFinite32 o) (forall ((f2 Float32)) (=> (= f2 o) (fp.eq f2 f1))))))))))
 (check-sat)
+(exit)

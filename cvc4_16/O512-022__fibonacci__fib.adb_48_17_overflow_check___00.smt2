@@ -281,3 +281,4 @@ Target solver: CVC4
   (=> (in_range2 o3)
   (forall ((n22 Int)) (=> (= n22 o3) (in_range1 (+ i4 1))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

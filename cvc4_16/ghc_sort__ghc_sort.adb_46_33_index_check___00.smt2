@@ -714,3 +714,4 @@ Target solver: CVC4
   (=> (exists ((o9 Int)) (= (to_rep (select (to_array s) temp___432)) o9))
   (<= (to_rep cut__first) top2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

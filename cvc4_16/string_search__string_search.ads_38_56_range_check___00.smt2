@@ -560,3 +560,4 @@ Target solver: CVC4
   (=> (< 0 string_search__brute_force_slice__result1) (in_range2
   string_search__brute_force_slice__result1)))))))))))))))))))))
 (check-sat)
+(exit)

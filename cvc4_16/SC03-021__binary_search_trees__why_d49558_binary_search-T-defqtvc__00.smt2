@@ -1888,3 +1888,4 @@ Target solver: CVC4
   (=> (and (in_range3 i) (= (contains seen2 i) true))
   (= (contains t_old i) true))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

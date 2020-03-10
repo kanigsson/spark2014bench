@@ -456,3 +456,4 @@ Target solver: CVC4
   (=> (= (invariant__ a) true)
   (=> (<= (first1 a) i) (=> (<= i (last1 a)) (in_range1 (- (last1 a) 1))))))))))
 (check-sat)
+(exit)

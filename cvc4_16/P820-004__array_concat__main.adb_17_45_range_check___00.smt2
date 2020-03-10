@@ -987,3 +987,4 @@ Target solver: CVC4
   (- (+ (first1 vstring) (+ (length (first1 vstring) (last1 vstring)) 
   (length (first1 temp___213) (last1 temp___213)))) 1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

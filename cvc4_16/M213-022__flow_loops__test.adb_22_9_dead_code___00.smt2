@@ -248,3 +248,4 @@ Target solver: CVC4
   (and (= spark__branch (ite (= (mod2 n i1) 0) true false))
   (and (not (= spark__branch true)) (= i1 temp___171))))))))))))))
 (check-sat)
+(exit)

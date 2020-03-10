@@ -2650,3 +2650,4 @@ Target solver: CVC4
         dummy1 dummy2 dummy2 dummy1 dummy2 dummy3 dummy3)))))
   (in_range1 1 (us_split_discrs1 o2))))))))))))))))))))
 (check-sat)
+(exit)

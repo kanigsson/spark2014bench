@@ -148,3 +148,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c false false true true)
   (=> (= c1 323) (not (= (* double_a double_b) c1)))))))))))
 (check-sat)
+(exit)

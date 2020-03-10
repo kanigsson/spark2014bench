@@ -439,3 +439,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk
   (rec__dynamic_preds__ext_even_pair__a x__split_fields1) o2))))))))))))))))))))
 (check-sat)
+(exit)

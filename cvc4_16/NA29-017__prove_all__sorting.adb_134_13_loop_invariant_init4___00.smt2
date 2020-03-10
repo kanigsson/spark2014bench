@@ -544,3 +544,4 @@ Target solver: CVC4
   (=> (or (not (< i2 length2)) (in_range1 (* l1 2)))
   (=> (< i2 length2) (= (mod2 i2 (* l1 2)) 0)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

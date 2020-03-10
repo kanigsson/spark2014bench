@@ -669,3 +669,4 @@ Target solver: CVC4
  ;; File "bits_manipulation-functions.adb", line 186, characters 0-0
   (not (not (= (lemma2 Tuple0) true))))
 (check-sat)
+(exit)

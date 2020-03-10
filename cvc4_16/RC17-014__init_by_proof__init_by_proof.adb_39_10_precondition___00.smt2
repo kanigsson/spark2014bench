@@ -640,3 +640,4 @@ Target solver: CVC4
   (=> (= (to_rep o14) (first1 init_by_proof__init_by_4__a__compl))
   (= (length (to_rep o14) (to_rep o13)) 4))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -589,3 +589,4 @@ Target solver: CVC4
            (rec__test_goto_borrow__list__pointer_value usf1))))) 1)))))
   (in_range1 (+ i1 (min o3 o2)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

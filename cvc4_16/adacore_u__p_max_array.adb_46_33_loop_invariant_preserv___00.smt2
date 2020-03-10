@@ -434,3 +434,4 @@ Target solver: CVC4
   (=> (not (= i1 temp___308))
   (forall ((i2 Int)) (=> (= i2 (+ i1 1)) (<= (first1 b) j2))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

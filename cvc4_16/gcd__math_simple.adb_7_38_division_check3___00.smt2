@@ -278,3 +278,4 @@ Target solver: CVC4
   (=> (= c o)
   (=> (dynamic_invariant c true false true true) (=> (< 1 c) (not (= c 0))))))))))))
 (check-sat)
+(exit)

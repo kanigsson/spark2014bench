@@ -853,3 +853,4 @@ Target solver: CVC4
   (forall ((o8 us_t) (o9 us_t)) (is_perm__function_guard (is_perm o9 o8) o9
   o8)) (= (is_perm o7 o4) true)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

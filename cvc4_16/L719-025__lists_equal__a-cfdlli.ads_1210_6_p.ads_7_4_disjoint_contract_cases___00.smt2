@@ -733,3 +733,4 @@ Target solver: CVC4
                                                                     no_element) true)
                                                             1 0)) 1)))))))
 (check-sat)
+(exit)

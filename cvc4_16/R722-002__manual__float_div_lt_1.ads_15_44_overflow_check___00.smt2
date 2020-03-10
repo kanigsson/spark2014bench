@@ -366,3 +366,4 @@ Target solver: CVC4
                                          false)) true)
   (in_range2 (fxp_div (of_int dividend) (of_int divisor)))))))))
 (check-sat)
+(exit)

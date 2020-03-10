@@ -827,3 +827,4 @@ Target solver: CVC4
                                             run__y2__assume))
   (=> (= y2__attr__constrained false) (in_range1 0)))))))))))))))))))))))))
 (check-sat)
+(exit)

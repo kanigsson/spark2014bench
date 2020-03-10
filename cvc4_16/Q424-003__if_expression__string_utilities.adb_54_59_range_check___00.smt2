@@ -1129,3 +1129,4 @@ Target solver: CVC4
   (=> (= (to_rep1 result____last) temp___352) (dynamic_property7 1 last9
   temp___352))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

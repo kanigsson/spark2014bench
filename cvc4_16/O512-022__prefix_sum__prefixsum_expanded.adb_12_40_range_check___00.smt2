@@ -508,3 +508,4 @@ Target solver: CVC4
   (=> (dynamic_invariant right false false true true)
   (=> (< space 8) (in_range3 (* space 1000000)))))))))))))
 (check-sat)
+(exit)

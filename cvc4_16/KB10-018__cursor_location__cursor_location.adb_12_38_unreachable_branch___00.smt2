@@ -180,3 +180,4 @@ Target solver: CVC4
   (=> (= other_side1 o1)
   (=> (= (select du_available side) true) (= (select request side) true))))))))))))
 (check-sat)
+(exit)

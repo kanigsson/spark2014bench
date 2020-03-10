@@ -1191,3 +1191,4 @@ Target solver: CVC4
   (let ((o2 (+ j n)))
   (=> (in_range2 o2) (<= (first1 u__split_fields) (- o2 1))))))))))))))))))))))
 (check-sat)
+(exit)

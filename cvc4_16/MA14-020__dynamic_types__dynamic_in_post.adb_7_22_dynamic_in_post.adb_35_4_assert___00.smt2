@@ -489,3 +489,4 @@ Target solver: CVC4
   (get_last (of_array y1 1 3)) (of_array y1 1 3)))
   (= (get_last (of_array x 1 5)) (get_last (of_array y 1 3))))))))))
 (check-sat)
+(exit)

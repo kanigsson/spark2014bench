@@ -634,3 +634,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (<= first (- 100 length2)) true false))
   (=> (= spark__branch true) (=> (= (to_rep o) e) (<= 1 (+ first length2)))))))))))))
 (check-sat)
+(exit)

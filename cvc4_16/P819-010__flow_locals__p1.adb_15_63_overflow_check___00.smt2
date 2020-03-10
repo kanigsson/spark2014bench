@@ -102,3 +102,4 @@ Target solver: CVC4
   (let ((o (+ visible_var private_var)))
   (=> (in_range o) (in_range (+ o body_var))))))))))
 (check-sat)
+(exit)

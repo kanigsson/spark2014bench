@@ -1010,3 +1010,4 @@ Target solver: CVC4
   (us_repqtmk buffer__split_fields3)))
   (= (last (us_repqtmk buffer__split_fields2)) (+ orig_first 16))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -155,3 +155,4 @@ Target solver: CVC4
   (=> (dynamic_invariant free_init false false true true) (in_range
   (+ free 1)))))))))
 (check-sat)
+(exit)

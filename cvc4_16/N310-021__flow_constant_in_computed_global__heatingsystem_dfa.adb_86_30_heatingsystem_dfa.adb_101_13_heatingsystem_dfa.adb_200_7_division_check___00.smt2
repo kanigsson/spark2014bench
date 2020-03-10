@@ -670,3 +670,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (=> (dynamic_invariant2 timer1 true true true true) (not (= 86400 0)))))))))))))))))
 (check-sat)
+(exit)

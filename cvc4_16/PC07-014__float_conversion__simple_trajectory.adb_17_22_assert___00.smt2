@@ -332,3 +332,4 @@ Target solver: CVC4
   (=> (in_bounds__function_guard (in_bounds old_speed) old_speed)
   (= (in_bounds old_speed) true)))))))))))))))))))
 (check-sat)
+(exit)

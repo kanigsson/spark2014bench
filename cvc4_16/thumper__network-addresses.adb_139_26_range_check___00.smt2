@@ -964,3 +964,4 @@ Target solver: CVC4
   (and (in_range1 o5) (and (= count2 o5) (= i1 4))))))))))))))))))))))))))))))))))))))))))
   (= count2 count1)))) (in_range7 count2))))))))))))))))
 (check-sat)
+(exit)

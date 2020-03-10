@@ -267,3 +267,4 @@ Target solver: CVC4
   (=> (in_range o6)
   (let ((o7 (+ money2 o6))) (=> (in_range o7) (in_range1 o7))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

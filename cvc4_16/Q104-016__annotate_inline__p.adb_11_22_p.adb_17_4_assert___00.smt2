@@ -153,3 +153,4 @@ Target solver: CVC4
   (=> (= o dummy1)
   (=> (dynamic_invariant1 dummy1 true false true true) (<= 1 dummy1))))))))))))
 (check-sat)
+(exit)

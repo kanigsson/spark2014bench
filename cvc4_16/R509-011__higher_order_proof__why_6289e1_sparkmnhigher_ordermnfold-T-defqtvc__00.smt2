@@ -1294,3 +1294,4 @@ Target solver: CVC4
   1 0)) (ite (= (and (not (choose (to_rep (get (to_array a1) i j)))) 
         (choose (to_rep (get (to_array a2) i j)))) true) 1 0)) 1))))))))))))))))))))))
 (check-sat)
+(exit)

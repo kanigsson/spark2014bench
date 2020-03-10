@@ -221,3 +221,4 @@ Target solver: CVC4
  ;; File "arithmetic.adb", line 204, characters 0-0
   (not (=> (dynamic_invariant n true false true true) (not (= (- 10) 0)))))
 (check-sat)
+(exit)

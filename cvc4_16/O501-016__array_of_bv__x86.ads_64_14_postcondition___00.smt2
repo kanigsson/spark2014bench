@@ -377,3 +377,4 @@ Target solver: CVC4
   (=> (= x86__ax__result ((_ extract 15 0) (bvand rax #x000000000000FFFF)))
   (= x86__ax__result ((_ extract 15 0) (bvand rax #x000000000000FFFF)))))))))
 (check-sat)
+(exit)

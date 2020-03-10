@@ -1074,3 +1074,4 @@ Target solver: CVC4
   (=> (or (= j (first_2 a)) (= (sum_cst i (- j 1)) true))
   (=> (not (= j (first_2 a))) (<= j (last_2 a)))))))))))))))))
 (check-sat)
+(exit)

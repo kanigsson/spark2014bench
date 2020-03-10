@@ -2099,3 +2099,4 @@ Target solver: CVC4
   (= (to_rep1 (rec__patris__piece__s cur_piece__split_fields)) temp___888)
   (<= 3 temp___888))))))))))))))))))
 (check-sat)
+(exit)

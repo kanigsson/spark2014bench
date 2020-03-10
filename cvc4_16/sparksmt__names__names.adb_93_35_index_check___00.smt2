@@ -1975,3 +1975,4 @@ Target solver: CVC4
   (=> (in_range1 o1)
   (let ((o2 (+ i o1))) (=> (in_range1 o2) (<= (first1 s) o2))))))))))))))))))))))
 (check-sat)
+(exit)

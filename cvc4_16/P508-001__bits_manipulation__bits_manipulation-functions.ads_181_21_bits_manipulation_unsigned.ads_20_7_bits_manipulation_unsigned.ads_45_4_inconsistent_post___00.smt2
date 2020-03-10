@@ -625,3 +625,4 @@ Target solver: CVC4
   (= bits_manipulation_unsigned__unsigned_64__functions__lemmas__shift_right__lemma4__result true)
   (= (lemma4 Tuple0) true))))))
 (check-sat)
+(exit)

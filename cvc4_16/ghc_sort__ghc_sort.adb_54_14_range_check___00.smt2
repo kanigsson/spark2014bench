@@ -699,3 +699,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r33b true false true true)
   (=> (<= 1 r33b) (<= (to_rep cut__first) 1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

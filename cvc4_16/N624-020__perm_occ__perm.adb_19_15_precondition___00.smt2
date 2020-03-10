@@ -488,3 +488,4 @@ Target solver: CVC4
         (last1 temp___183))))))
   (< 0 (length a)))))))))))))))
 (check-sat)
+(exit)

@@ -286,3 +286,4 @@ Target solver: CVC4
   (=> (= x11 (store x10 j rliteral2))
   (=> (<= 1 k) (=> (<= k j) (= (to_rep (select x11 k)) 2)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

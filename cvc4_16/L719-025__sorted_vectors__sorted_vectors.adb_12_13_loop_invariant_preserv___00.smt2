@@ -832,3 +832,4 @@ Target solver: CVC4
      (us_split_fieldsqtmk container__split_fields)) (- position3 1)) 
   new_item))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

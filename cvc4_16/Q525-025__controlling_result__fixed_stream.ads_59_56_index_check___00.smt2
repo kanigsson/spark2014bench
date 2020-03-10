@@ -551,3 +551,4 @@ Target solver: CVC4
   (let ((o19 (+ o18 (first1 new_val))))
   (=> (in_range1 o19) (<= (first1 new_val) o19)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

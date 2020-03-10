@@ -1241,3 +1241,4 @@ Target solver: CVC4
   (=> (not (< (first_2 a) j))
   (=> (< (first2 a) i) (=> (in_range6 (- i 1)) (< 0 (length_2 a))))))))))))))
 (check-sat)
+(exit)

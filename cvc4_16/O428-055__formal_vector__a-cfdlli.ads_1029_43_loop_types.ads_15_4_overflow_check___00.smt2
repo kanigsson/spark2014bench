@@ -760,3 +760,4 @@ Target solver: CVC4
   (= (to_rep (rec__loop_types__lists__list__capacity target__split_discrs)) o1)
   (in_range3 (- o1 o))))))))))
 (check-sat)
+(exit)

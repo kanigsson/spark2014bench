@@ -1003,3 +1003,4 @@ Target solver: CVC4
   (= (and (ite (<= o5 usf3) true false) (ite (<= usf3 o4) true false)) true)
   (let ((o6 (- usf3 i))) (=> (in_range1 o6) (in_range3 o6))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

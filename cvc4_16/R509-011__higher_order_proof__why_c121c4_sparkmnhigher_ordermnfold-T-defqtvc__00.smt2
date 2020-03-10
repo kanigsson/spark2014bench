@@ -441,3 +441,4 @@ Target solver: CVC4
   (=> (< 0 (length a))
   (=> (in_range4 (last1 a)) (dynamic_property 1 100 (first1 a) (last1 a))))))))
 (check-sat)
+(exit)

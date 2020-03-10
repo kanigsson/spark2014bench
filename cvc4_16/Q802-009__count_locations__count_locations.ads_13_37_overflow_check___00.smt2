@@ -262,3 +262,4 @@ Target solver: CVC4
   (<= o (+ (- 100 o2) 1))))))))) (= o 0))
   (=> (ite (= (select sel from) true) (= o1 1) (= o1 0)) (in_range (+ o1 o)))))))))
 (check-sat)
+(exit)

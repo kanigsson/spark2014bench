@@ -1234,3 +1234,4 @@ Target solver: CVC4
   (=> (= (to_rep result____first) o12)
   (<= (to_rep result____first) result_index1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

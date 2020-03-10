@@ -537,3 +537,4 @@ Target solver: CVC4
                                              false)) true)
   (<= (to_rep cut__first) 1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

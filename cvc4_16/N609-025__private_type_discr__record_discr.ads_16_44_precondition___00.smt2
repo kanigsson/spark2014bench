@@ -818,3 +818,4 @@ Target solver: CVC4
   (= (rec__private_record__result_ty__found
      (us_split_discrs4 record_discr__search_upto_3__result)) true)))))))))))))))))
 (check-sat)
+(exit)

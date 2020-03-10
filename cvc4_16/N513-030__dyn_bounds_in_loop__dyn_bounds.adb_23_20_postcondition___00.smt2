@@ -226,3 +226,4 @@ Target solver: CVC4
   (=> (= dyn_bounds__B_2__f_with_expr_2__result o)
   (< (first i) dyn_bounds__B_2__f_with_expr_2__result))))))))))))))
 (check-sat)
+(exit)

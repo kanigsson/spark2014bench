@@ -634,3 +634,4 @@ Target solver: CVC4
           true false) (ite (<= first_char1 1024) true false)) true)
   (<= first_char1 1024))))))))))))))
 (check-sat)
+(exit)

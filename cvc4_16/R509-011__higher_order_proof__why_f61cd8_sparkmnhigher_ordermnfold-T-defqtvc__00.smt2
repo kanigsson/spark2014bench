@@ -1254,3 +1254,4 @@ Target solver: CVC4
   true false))
   (=> (= i (last2 a)) (=> (in_range1 (length_2 a)) (in_range1 (length a)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

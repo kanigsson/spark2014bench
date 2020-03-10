@@ -501,3 +501,4 @@ Target solver: CVC4
   (let ((o8 (* usf l1)))
   (=> (in_range1 o8) (=> (< o8 length2) (in_range1 (* usf l1)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

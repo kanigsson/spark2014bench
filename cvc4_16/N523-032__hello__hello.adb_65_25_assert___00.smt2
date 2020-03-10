@@ -467,3 +467,4 @@ Target solver: CVC4
   (and (= (to_rep o2) o1) (= ret1 (store ret idx o2))))))))))
   (<= (first1 str) idx)))))))))))))))))))
 (check-sat)
+(exit)

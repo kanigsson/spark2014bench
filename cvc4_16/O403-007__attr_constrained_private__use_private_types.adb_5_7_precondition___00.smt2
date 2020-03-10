@@ -269,3 +269,4 @@ Target solver: CVC4
   (forall ((s__split_discrs natural))
   (or (= (to_rep s__split_discrs) 0) (not (= s__attr__constrained true))))))
 (check-sat)
+(exit)

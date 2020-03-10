@@ -1437,3 +1437,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (let ((o (- c206b (- 2147483648)))) (=> (in_range1 o) (uint_in_range1 o)))))))))))))
 (check-sat)
+(exit)

@@ -575,3 +575,4 @@ Target solver: CVC4
   (forall ((o5 (_ BitVec 32)))
   (=> (= (to_rep1 (select (to_array right) usf)) o5) (<= (first1 left) usf))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

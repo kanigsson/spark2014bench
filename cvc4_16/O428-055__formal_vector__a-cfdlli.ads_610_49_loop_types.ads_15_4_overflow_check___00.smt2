@@ -795,3 +795,4 @@ Target solver: CVC4
      (rec__loop_types__lists__list__capacity container__split_discrs)) o)
   (in_range3 (- o count)))))))))
 (check-sat)
+(exit)

@@ -122,3 +122,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (= t21 t11) (= t21 x)))) (in_range
   (- t21 t11))))))))))))))))))
 (check-sat)
+(exit)

@@ -60,3 +60,4 @@ Target solver: CVC4
  ;; File "pack.ads", line 3, characters 0-0
   (not (not (= b true))))
 (check-sat)
+(exit)

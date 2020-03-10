@@ -432,3 +432,4 @@ Target solver: CVC4
   (forall ((sum1 Int))
   (=> (= sum1 o1) (=> (in_range1 (* i (- 10))) (in_range1 (* i 20)))))))))))))))))))))
 (check-sat)
+(exit)

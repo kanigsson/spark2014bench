@@ -1177,3 +1177,4 @@ Target solver: CVC4
   (=> (<= (first1 a) usf)
   (=> (<= usf (last1 a)) (=> (in_range3 usf1) (<= (first1 b) usf1)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

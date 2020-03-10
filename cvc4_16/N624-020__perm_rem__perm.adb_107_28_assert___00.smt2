@@ -867,3 +867,4 @@ Target solver: CVC4
   ih)
   (=> (dynamic_invariant2 ih true false true true) (= (distinct ih 0) true)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

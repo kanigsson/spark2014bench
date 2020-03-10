@@ -459,3 +459,4 @@ Target solver: CVC4
   (=> (to_unsigned__function_guard (to_unsigned y) y)
   (= (to_unsigned y) #x0000000000000000)))))))))
 (check-sat)
+(exit)

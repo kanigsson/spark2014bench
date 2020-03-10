@@ -95,3 +95,4 @@ Target solver: CVC4
  ;; File "c.adb", line 5, characters 0-0
   (not true))
 (check-sat)
+(exit)

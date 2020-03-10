@@ -100,3 +100,4 @@ Target solver: CVC4
   (not
   (=> (proxy__function_guard (proxy Tuple0) Tuple0) (= (proxy Tuple0) 0))))
 (check-sat)
+(exit)

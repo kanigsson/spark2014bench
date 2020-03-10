@@ -389,3 +389,4 @@ Target solver: CVC4
   (forall ((o7 integer))
   (=> (= (to_rep o7) sorters__swap__y) (<= (to_rep values__first) smallest2)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

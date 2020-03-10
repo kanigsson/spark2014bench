@@ -672,3 +672,4 @@ Target solver: CVC4
   (forall ((o4 us_t) (o5 us_t)) (is_perm__function_guard (is_perm o5 o4) o5
   o4)) (= (is_perm (of_array init 1 100) (of_array prec1 1 100)) true)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

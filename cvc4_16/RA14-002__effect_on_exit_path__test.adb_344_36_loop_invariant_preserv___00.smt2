@@ -1844,3 +1844,4 @@ Target solver: CVC4
   (os_ghost_mbx_are_well_formed os_task_mbx_rw1) os_task_mbx_rw1))
   (= (os_ghost_mbx_are_well_formed os_task_mbx_rw) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -709,3 +709,4 @@ Target solver: CVC4
   (=> (= (first3 ghc_sort__cut__result) 1)
   (let ((o2 (length s))) (=> (in_range1 o2) (in_range1 (+ o2 1)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

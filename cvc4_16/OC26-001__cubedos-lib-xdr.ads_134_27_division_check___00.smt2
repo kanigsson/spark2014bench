@@ -257,3 +257,4 @@ Target solver: CVC4
  ;; File "cubedos-lib-xdr.ads", line 133, characters 0-0
   (not (=> (dynamic_invariant length true false true true) (not (= 4 0)))))
 (check-sat)
+(exit)

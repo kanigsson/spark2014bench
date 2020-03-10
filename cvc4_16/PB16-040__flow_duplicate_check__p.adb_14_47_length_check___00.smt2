@@ -549,3 +549,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 r2b true false true true)
   (=> (<= (first1 source) (last1 source)) (<= 1 r2b))))))))))))))))))))))
 (check-sat)
+(exit)

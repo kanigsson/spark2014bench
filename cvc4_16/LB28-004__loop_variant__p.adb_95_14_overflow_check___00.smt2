@@ -489,3 +489,4 @@ Target solver: CVC4
   (=> (in_range1 o1)
   (forall ((j16 Int)) (=> (= j16 o1) (in_range1 (+ k9 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

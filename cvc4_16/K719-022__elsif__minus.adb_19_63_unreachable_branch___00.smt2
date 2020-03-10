@@ -104,3 +104,4 @@ Target solver: CVC4
   (=> (<= 1 x)
   (=> (<= x 3) (=> (not (= x 1)) (=> (not (= x 2)) (not (= x 3)))))))))
 (check-sat)
+(exit)

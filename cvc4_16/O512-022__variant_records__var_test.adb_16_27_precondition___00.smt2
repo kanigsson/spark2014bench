@@ -634,3 +634,4 @@ Target solver: CVC4
   (=> (and (<= 1 x) (<= x 1000))
   (not (= (to_rep2 (select condition_values x)) 2))))))))))))))))))))))))))))
 (check-sat)
+(exit)

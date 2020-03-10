@@ -1550,3 +1550,4 @@ Target solver: CVC4
              (rec__very_longs__very_long__long_digits (us_split_fields1 o2))) i)) #x00))))))
   (dynamic_property1 1 last2 temp___1194))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -586,3 +586,4 @@ Target solver: CVC4
   (forall ((temp___loop_entry_210 (Array Int byte)))
   (=> (= temp___loop_entry_210 dest) (in_range1 (+ src_first i)))))))))))))))))))
 (check-sat)
+(exit)

@@ -805,3 +805,4 @@ Target solver: CVC4
   (=> (= digit_number1 (+ 1 (div1 bit_number 8)))
   (<= (first1 number__split_fields) digit_number1)))))))))))
 (check-sat)
+(exit)

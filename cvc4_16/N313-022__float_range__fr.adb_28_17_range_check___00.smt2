@@ -179,3 +179,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 z false false true true) (in_range2
   (fp.mul RNE (fp #b0 #b10000000 #b00101011100001010001111) x)))))))
 (check-sat)
+(exit)

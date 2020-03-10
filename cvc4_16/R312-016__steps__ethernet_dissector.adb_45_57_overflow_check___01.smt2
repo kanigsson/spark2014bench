@@ -990,3 +990,4 @@ Target solver: CVC4
   (let ((o5 (+ (first1 buffer) 12)))
   (=> (in_range1 o5) (in_range1 (+ o5 offset1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

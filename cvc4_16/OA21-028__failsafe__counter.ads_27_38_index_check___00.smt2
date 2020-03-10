@@ -398,3 +398,4 @@ Target solver: CVC4
   (=> (not (= counter__model__current_chain_length__result #x0A))
   (bvule #x01 (bvsub #x0A counter__model__current_chain_length__result))))))))))))
 (check-sat)
+(exit)

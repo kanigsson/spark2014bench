@@ -303,3 +303,4 @@ Target solver: CVC4
   (=> (<= 1 temp___207)
   (=> (<= temp___207 10) (= (to_rep (select x11 temp___207)) 2)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

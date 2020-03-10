@@ -466,3 +466,4 @@ Target solver: CVC4
   (count my_stack__split_fields3) my_stack__split_fields3))
   (= (count my_stack__split_fields2) (- (count my_stack__split_fields1) 1))))))))))))))))))))))
 (check-sat)
+(exit)

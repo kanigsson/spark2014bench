@@ -1562,3 +1562,4 @@ Target solver: CVC4
   (let ((temp___938 (first1 message)))
   (=> (<= temp___938 r88s) (<= (first1 message) temp___938)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

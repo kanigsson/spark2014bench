@@ -1164,3 +1164,4 @@ Target solver: CVC4
   (= (- (last1 in_data) (first1 in_data)) (- (- (length in_data) 1) 0)))
   (< (- (length in_data) 1) 0)) (in_range (length in_data)))))))))))))
 (check-sat)
+(exit)

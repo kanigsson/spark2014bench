@@ -2281,3 +2281,4 @@ Target solver: CVC4
                                                              d__split_fields))
                                                              c)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

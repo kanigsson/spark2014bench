@@ -839,3 +839,4 @@ Target solver: CVC4
   (forall ((counter2 Int)) (sum_of__function_guard (sum_of counter2)
   counter2)) (< (sum_of counter1) 0)))))))))))))))
 (check-sat)
+(exit)

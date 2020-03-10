@@ -226,3 +226,4 @@ Target solver: CVC4
   (=> (= (add c5 c7) c8)
   (let ((o (+ 86 c3))) (=> (in_range1 o) (in_range1 (+ o c4))))))))))))))))))
 (check-sat)
+(exit)

@@ -603,3 +603,4 @@ Target solver: CVC4
   (and (dynamic_invariant2 o5 true false true true)
   (=> (= o3 o2) (= o5 (to_rep (select o4 o3))))) (<= 0 (+ left2 space1)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

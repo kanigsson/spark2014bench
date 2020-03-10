@@ -203,3 +203,4 @@ Target solver: CVC4
                                                        x2))
   (not (= x2 (fp #b0 #b11111110 #b11111111111111111111111))))))))))))))
 (check-sat)
+(exit)

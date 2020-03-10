@@ -657,3 +657,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 i true false true true) (in_range1
   (bv2nat (bvurem i #x0000000000000020))))))))
 (check-sat)
+(exit)

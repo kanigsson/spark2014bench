@@ -325,3 +325,4 @@ Target solver: CVC4
  ;; File "dynamic_fixed.adb", line 1, characters 0-0
   (not (forall ((i Int)) (=> (= i 1) (=> (<= 0 (of_int i)) (<= 0 0))))))
 (check-sat)
+(exit)

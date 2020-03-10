@@ -424,3 +424,4 @@ Target solver: CVC4
   (=> (= visible 0)
   (=> (dynamic_invariant visible true false true true) (in_range 5))))))
 (check-sat)
+(exit)

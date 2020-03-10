@@ -754,3 +754,4 @@ Target solver: CVC4
   (=> (= (to_rep1 s__first) o8) (in_range3
   (- (+ o8 (+ (length o7 o6) (length (first1 temp___257) (last1 temp___257)))) 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

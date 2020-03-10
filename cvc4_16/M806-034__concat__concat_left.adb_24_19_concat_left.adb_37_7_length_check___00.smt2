@@ -483,3 +483,4 @@ Target solver: CVC4
   (let ((temp___217 (of_array1 (concat_singleton_left o3 1 y 1 9) 1 o2)))
   (=> (<= (first3 temp___217) (last3 temp___217)) (<= 1 10))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -418,3 +418,4 @@ Target solver: CVC4
   (= (to_rep (rec__dynamic_preds__even_pair__a (us_split_fields1 i10s))) o)
   (in_range (+ o 2)))))))))
 (check-sat)
+(exit)

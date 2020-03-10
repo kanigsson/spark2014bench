@@ -1602,3 +1602,4 @@ Target solver: CVC4
   (=> (and (<= (first3 temp___318) ids1) (<= ids1 (last3 temp___318)))
   (repro__ssp__s__pred (select (to_array1 temp___318) ids1))))))))))))
 (check-sat)
+(exit)

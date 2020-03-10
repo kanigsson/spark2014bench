@@ -385,3 +385,4 @@ Target solver: CVC4
                                                          val____split_fields))) true)
                     1 0)) 1))))))))))
 (check-sat)
+(exit)

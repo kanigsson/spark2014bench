@@ -489,3 +489,4 @@ Target solver: CVC4
   (=> (= (to_rep1 new_sub__first) o9)
   (let ((o10 (length o9 o8))) (=> (in_range1 o10) (in_range1 (+ pos o10))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

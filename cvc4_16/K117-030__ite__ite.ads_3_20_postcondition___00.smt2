@@ -99,3 +99,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (let ((o (+ x 1))) (and (in_range o) (= x1 o)))
   (= x1 x)))) (not (= x1 0)))))))
 (check-sat)
+(exit)

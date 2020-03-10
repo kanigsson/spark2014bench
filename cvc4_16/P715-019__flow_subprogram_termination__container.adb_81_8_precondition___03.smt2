@@ -862,3 +862,4 @@ Target solver: CVC4
      (us_repqtmk (us_split_fieldsqtmk my_container__split_fields))
      (us_repqtmk1 (us_split_fieldsqtmk1 temp___2401))) true))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

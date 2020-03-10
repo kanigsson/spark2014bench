@@ -102,3 +102,4 @@ Target solver: CVC4
   (=> (= subprograms__f1__result o)
   (=> (= (= val__ 0) true) (= subprograms__f1__result 0)))))))))
 (check-sat)
+(exit)

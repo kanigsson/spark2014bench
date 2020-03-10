@@ -399,3 +399,4 @@ Target solver: CVC4
   (= (bool_eq1 (rec__p__painting__plain p__split_fields) 0 2
      (rec__p__painting__plain temp___loop_entry_264) 0 2) true)))))))))
 (check-sat)
+(exit)

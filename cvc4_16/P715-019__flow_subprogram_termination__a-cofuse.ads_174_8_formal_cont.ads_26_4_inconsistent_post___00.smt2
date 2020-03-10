@@ -308,3 +308,4 @@ Target solver: CVC4
   (or (not (= (contains left item) true))
   (not (= (contains right item) true))))))))))
 (check-sat)
+(exit)

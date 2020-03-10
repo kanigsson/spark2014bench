@@ -418,3 +418,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__shapes5__circle__center_x (us_split_fields1 c))) o)
   (in_range3 (fp.abs (fp.sub RNE x o))))))))))))))
 (check-sat)
+(exit)

@@ -766,3 +766,4 @@ Target solver: CVC4
   r10b)
   (<= 1 (to_rep2 (rec__vectors__cursor__index (us_split_fields1 before))))))))))))
 (check-sat)
+(exit)

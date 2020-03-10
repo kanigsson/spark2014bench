@@ -151,3 +151,4 @@ Target solver: CVC4
  ;; File "array_aggr.adb", line 32, characters 0-0
   (not (=> (<= 1 2) (<= first 1))))
 (check-sat)
+(exit)

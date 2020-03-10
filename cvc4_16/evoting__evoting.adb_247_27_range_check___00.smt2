@@ -461,3 +461,4 @@ Target solver: CVC4
   (= (and (ite (<= 0 j) true false) (ite (<= j (- i1 1)) true false)) true)
   (=> (<= 0 (- j 1)) (<= 0 0)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

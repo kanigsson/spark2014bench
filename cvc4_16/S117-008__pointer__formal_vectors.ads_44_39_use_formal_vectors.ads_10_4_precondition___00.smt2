@@ -1232,3 +1232,4 @@ Target solver: CVC4
                          (us_split_fields1 o2)))) i1))))))))
   (<= 1 i))))))))))))))))))))))))
 (check-sat)
+(exit)

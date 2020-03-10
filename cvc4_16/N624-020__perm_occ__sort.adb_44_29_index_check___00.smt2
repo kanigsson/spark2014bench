@@ -639,3 +639,4 @@ Target solver: CVC4
   (= (to_rep1 interm__last) (to_rep1 values__last))))
   (<= (to_rep1 values__first) x))))))))))))))))))))))
 (check-sat)
+(exit)

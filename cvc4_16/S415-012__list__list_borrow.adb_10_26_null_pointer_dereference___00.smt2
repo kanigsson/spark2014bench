@@ -317,3 +317,4 @@ Target solver: CVC4
      (us_split_fields1 (rec__list_borrow__list__pointer_value x)))) o)
   (=> (< 0 o) (rec__list_borrow__list__pointer_value__pred x)))))))
 (check-sat)
+(exit)

@@ -2220,3 +2220,4 @@ Target solver: CVC4
   (=> (invariant____function_guard (invariant__ Tuple0) Tuple0)
   (= (invariant__ Tuple0) true))))))))))))
 (check-sat)
+(exit)

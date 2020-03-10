@@ -311,3 +311,4 @@ Target solver: CVC4
  ;; File "my_generic.ads", line 10, characters 0-0
   (not (=> (dynamic_invariant i true false true true) (<= 1 i))))
 (check-sat)
+(exit)

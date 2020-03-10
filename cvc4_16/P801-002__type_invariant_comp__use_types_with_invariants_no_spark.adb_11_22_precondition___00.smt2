@@ -183,3 +183,4 @@ Target solver: CVC4
   (and (to_integer__function_guard o1 o) (dynamic_invariant1 o1 true false
   true true)) (< (- 2147483648) o1)))))))
 (check-sat)
+(exit)

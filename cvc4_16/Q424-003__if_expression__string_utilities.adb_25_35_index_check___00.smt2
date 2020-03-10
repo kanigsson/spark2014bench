@@ -789,3 +789,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 0 x2) true false) (ite (<= x2 10) true false)) true)
   (<= (to_rep1 lengths__first_2) x2))))))))))))))
 (check-sat)
+(exit)

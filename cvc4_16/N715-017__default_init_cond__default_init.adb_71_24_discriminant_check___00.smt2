@@ -802,3 +802,4 @@ Target solver: CVC4
   false false true true) (default_init__discr__f__pred
   (us_repqtmk d1__split_discrs (us_split_fieldsqtmk d1__split_fields))))))))))))))))))
 (check-sat)
+(exit)

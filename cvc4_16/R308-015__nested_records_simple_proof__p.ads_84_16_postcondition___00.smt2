@@ -1129,3 +1129,4 @@ Target solver: CVC4
   (= (bool_eq (rec__p__type_6__field_0 p__create_type_6__result)
      (create_type_1 Tuple0)) true)))))))))))))))))))))))))))
 (check-sat)
+(exit)

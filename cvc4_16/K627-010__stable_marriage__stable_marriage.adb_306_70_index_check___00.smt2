@@ -1316,3 +1316,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (select ranking_1 g11) temp___759)) o6)
   (<= 1 (- rank1 1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -392,3 +392,4 @@ Target solver: CVC4
   (and (= (to_rep (select b2 usf)) o10) (= o6 (ite (= o10 o9) true false))))))))
   (= o6 (distinct 1 0))))))) (in_range1 (+ i1 1)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

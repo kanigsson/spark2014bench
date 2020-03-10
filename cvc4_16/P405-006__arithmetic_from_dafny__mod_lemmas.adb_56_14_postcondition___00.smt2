@@ -271,3 +271,4 @@ Target solver: CVC4
   (=> (= res11 (mod2 x m))
   (forall ((res21 Int)) (=> (= res21 (mod2 res11 m)) (= res11 res21))))))))))))
 (check-sat)
+(exit)

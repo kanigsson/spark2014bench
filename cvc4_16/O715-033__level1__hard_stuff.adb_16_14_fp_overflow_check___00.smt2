@@ -172,3 +172,4 @@ Target solver: CVC4
                                      true false)))
   (=> (= spark__branch2 true) (fp.isFinite32 (fp.mul RNE x2 x2))))))))))))
 (check-sat)
+(exit)

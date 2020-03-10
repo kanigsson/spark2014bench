@@ -933,3 +933,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 s2 true false true true)
   (=> (<= (first1 s2) (last1 s2)) (<= (- 2147483648) (first1 s2)))))))
 (check-sat)
+(exit)

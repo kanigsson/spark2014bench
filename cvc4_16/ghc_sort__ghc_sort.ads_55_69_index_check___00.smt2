@@ -1714,3 +1714,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array ghc_sort__sort__result) usf)) o2)
   (<= (first1 ghc_sort__sort__result) (- usf 1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -195,3 +195,4 @@ Target solver: CVC4
                       (rec__ext__ x__split_fields)))
   (= (to_rep (rec__unit1__t1__c1 x__split_fields1)) 0)))))
 (check-sat)
+(exit)

@@ -318,3 +318,4 @@ Target solver: CVC4
   (exists ((rank Int))
   (and (and (<= 1 rank) (<= rank 64)) (= (to_rep (select r1 rank)) g1)))))))))))))
 (check-sat)
+(exit)

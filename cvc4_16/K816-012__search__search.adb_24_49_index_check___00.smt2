@@ -329,3 +329,4 @@ Target solver: CVC4
   (=> (or (not (= found1 true)) (not (= found2 true)))
   (=> (= found1 true) (<= (first1 table) index11))))))))))))))))))))
 (check-sat)
+(exit)

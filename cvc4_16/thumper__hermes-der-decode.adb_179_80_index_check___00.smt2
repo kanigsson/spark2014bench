@@ -636,3 +636,4 @@ Target solver: CVC4
   (=> (not (= spark__branch3 true))
   (let ((o6 (+ start 1))) (=> (in_range1 o6) (<= (first1 message) o6)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

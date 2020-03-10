@@ -1214,3 +1214,4 @@ Target solver: CVC4
   (=> (is_empty__function_guard (is_empty (to_base s)) (to_base s))
   (not (= (is_empty (to_base s)) true))))))))))))))))
 (check-sat)
+(exit)

@@ -153,3 +153,4 @@ Target solver: CVC4
   (=> (down__function_guard (down (- x 1)) (- x 1))
   (= (down x) (+ (down (- x 1)) 1))))))))
 (check-sat)
+(exit)

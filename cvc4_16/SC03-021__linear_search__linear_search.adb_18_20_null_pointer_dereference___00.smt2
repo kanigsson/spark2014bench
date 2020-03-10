@@ -581,3 +581,4 @@ Target solver: CVC4
   (=> (<= n (length l))
   (=> (= n 1) (rec__linear_search__list__pointer_value__pred l)))))))
 (check-sat)
+(exit)

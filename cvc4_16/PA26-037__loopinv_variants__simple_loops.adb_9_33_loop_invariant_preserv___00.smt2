@@ -283,3 +283,4 @@ Target solver: CVC4
                                           true false)) true)
   (=> (= prop (distinct 1 0)) (=> (not (= j1 10)) (= prop true)))))))))))
 (check-sat)
+(exit)

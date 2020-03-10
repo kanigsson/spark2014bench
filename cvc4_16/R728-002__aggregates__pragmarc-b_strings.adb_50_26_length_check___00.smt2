@@ -4246,3 +4246,4 @@ Target solver: CVC4
   (let ((temp___876 (of_array (to_array temp___875) r29b temp___874)))
   (=> (<= (first1 temp___876) (last1 temp___876)) (<= 1 r27b)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

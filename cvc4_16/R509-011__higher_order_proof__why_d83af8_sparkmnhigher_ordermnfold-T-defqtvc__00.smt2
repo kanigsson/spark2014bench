@@ -1467,3 +1467,4 @@ Target solver: CVC4
   (= o4 false))))
   (=> (= o4 true) (=> (in_range6 (first_2 a)) (in_range5 (first2 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

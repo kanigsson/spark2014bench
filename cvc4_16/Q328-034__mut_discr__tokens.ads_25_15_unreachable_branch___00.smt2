@@ -561,3 +561,4 @@ Target solver: CVC4
   (=> (and (full__function_guard o1 last) (= (= o1 true) (<= 200 last)))
   (= o1 true)))))))))
 (check-sat)
+(exit)

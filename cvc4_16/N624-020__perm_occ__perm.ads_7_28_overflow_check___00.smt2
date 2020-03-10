@@ -329,3 +329,4 @@ Target solver: CVC4
   (=> (dynamic_invariant a true false true true)
   (=> (< 0 (length a)) (in_range (- (last1 a) 1))))))
 (check-sat)
+(exit)

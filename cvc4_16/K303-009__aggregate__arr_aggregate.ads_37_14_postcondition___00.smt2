@@ -401,3 +401,4 @@ Target solver: CVC4
   (=> (= b 1)
   (= (bool_eq a 1 2 (temp_____aggregate_def_221 one 2) 1 2) true)))))))))))))
 (check-sat)
+(exit)

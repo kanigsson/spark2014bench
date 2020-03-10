@@ -310,3 +310,4 @@ Target solver: CVC4
   (forall ((o7 Int))
   (=> (= (to_rep (select a4 (- i2 1))) o7) (in_range1 (+ o7 o6)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

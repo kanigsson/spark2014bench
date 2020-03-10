@@ -1292,3 +1292,4 @@ Target solver: CVC4
   (=> (= temporary_digit2 (bvand product3 #x00FF)) (in_range2
   (+ j divisor_index1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

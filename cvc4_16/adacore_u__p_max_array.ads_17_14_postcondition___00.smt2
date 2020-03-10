@@ -439,3 +439,4 @@ Target solver: CVC4
   (< (to_rep (select (to_array b) (+ (- k (to_rep1 a__first)) (first1 b)))) 
   (to_rep (select a1 k))) (= (to_rep (select a2 k)) (to_rep (select a1 k))))))))))))))))
 (check-sat)
+(exit)

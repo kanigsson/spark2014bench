@@ -187,3 +187,4 @@ Target solver: CVC4
   (=> (not (<= o o1)) (in_range
   (+ apples_in_fruit_salad oranges_in_fruit_salad))))))))))))))
 (check-sat)
+(exit)

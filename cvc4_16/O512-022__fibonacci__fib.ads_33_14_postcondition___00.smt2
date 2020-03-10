@@ -421,3 +421,4 @@ Target solver: CVC4
   (and (= k23 o) (let ((o1 (* b21 p23))) (and (in_range1 o1) (= p22 o1)))))))
   (= b22 b21))))) (not (< 0 k23))))))))) (= p22 p21)) (= p12 p22))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -133,3 +133,4 @@ Target solver: CVC4
   (=> (<= i 10)
   (=> (= inrange__add1__result (+ i j)) (<= inrange__add1__result 20))))))))
 (check-sat)
+(exit)

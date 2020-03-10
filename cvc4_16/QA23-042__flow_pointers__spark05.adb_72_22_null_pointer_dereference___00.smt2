@@ -1660,3 +1660,4 @@ Target solver: CVC4
   (=> (= getx2 o4) (rec__spark05__data__ap__pointer_value__pred
   aam__pointer_value2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

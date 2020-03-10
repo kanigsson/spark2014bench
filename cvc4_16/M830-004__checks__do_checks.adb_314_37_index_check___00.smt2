@@ -416,3 +416,4 @@ Target solver: CVC4
   (us_repqtmk y__split_discrs (us_split_fieldsqtmk y__split_fields)) true
   false true true) (<= (first1 y__split_fields) 10))))))
 (check-sat)
+(exit)

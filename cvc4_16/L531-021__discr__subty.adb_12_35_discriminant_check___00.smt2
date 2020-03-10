@@ -645,3 +645,4 @@ Target solver: CVC4
                       (rec__basic__r__c_field2 z__split_fields)))
   (basic__r__a_field__pred v)))))))))))))))))))))))
 (check-sat)
+(exit)

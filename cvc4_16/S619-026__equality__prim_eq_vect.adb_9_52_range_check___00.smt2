@@ -91,3 +91,4 @@ Target solver: CVC4
  ;; File "prim_eq_vect.adb", line 5, characters 0-0
   (not (in_range 200)))
 (check-sat)
+(exit)

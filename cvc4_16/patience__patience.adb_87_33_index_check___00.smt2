@@ -1370,3 +1370,4 @@ Target solver: CVC4
      (select (select (rec__patience__state__stacks s__split_fields4) usf) usf1)) o8)
   (=> (and (<= 0 usf) (<= usf 99)) (<= 0 usf1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -182,3 +182,4 @@ Target solver: CVC4
   (=> (fp.isFinite32 o)
   (forall ((time2 Float32)) (=> (= time2 o) (fp.leq time1 time2)))))))))))))
 (check-sat)
+(exit)

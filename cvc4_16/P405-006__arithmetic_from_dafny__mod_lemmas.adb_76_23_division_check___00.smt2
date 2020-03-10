@@ -309,3 +309,4 @@ Target solver: CVC4
   (let ((o (- (mod2 x m) (mod2 y m))))
   (=> (in_range o) (forall ((res11 Int)) (=> (= res11 o) (not (= m 0))))))))))))))
 (check-sat)
+(exit)

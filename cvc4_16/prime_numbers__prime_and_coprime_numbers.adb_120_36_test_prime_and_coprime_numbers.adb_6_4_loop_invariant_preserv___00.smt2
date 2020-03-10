@@ -356,3 +356,4 @@ Target solver: CVC4
   (= (ite (= right_is_out1 true) true (select number_list right3)) true))
   (=> (in_range1 (+ value 1)) (<= (+ value 1) right3))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

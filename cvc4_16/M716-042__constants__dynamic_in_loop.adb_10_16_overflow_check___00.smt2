@@ -207,3 +207,4 @@ Target solver: CVC4
   true true true)) (dynamic_invariant1 x1 true true true true c1)) (= z1 c1))
   (in_range1 (+ z1 1))))))))))))))))
 (check-sat)
+(exit)

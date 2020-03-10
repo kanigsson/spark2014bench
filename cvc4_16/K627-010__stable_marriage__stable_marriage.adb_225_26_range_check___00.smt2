@@ -950,3 +950,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 usf) true false) (ite (<= usf 64) true false)) true)
   (=> (<= 1 (to_rep3 (select proposals_made usf))) (<= 1 1))))))))
 (check-sat)
+(exit)

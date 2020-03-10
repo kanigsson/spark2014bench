@@ -150,3 +150,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (fp.isFinite32 (fp.mul RNE f distance_to_target)))))))))
 (check-sat)
+(exit)

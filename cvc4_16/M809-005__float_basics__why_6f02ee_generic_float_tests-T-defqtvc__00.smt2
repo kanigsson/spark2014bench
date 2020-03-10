@@ -187,3 +187,4 @@ Target solver: CVC4
   (=> (fp.leq x biggest_representable_int)
   (fp.isFinite64 (fp.add RNE x (fp #b0 #b01111111110 #b0000000000000000000000000000000000000000000000000000))))))))))))
 (check-sat)
+(exit)

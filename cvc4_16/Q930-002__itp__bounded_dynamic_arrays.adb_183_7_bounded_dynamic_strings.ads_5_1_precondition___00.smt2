@@ -736,3 +736,4 @@ Target solver: CVC4
   (= (last1 o1) (length1 o))) (= (< 0 (length1 o)) (not (= (empty o) true)))))))
   (<= 1 (- (+ start (length o1)) 1)))))))))))))))))))
 (check-sat)
+(exit)

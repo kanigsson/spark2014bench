@@ -678,3 +678,4 @@ Target solver: CVC4
   (= o2 (ite (in_range7 temp___244) true false))))) (= o2 false))
   (not (= o2 true))))))))) (= first_char2 first_char1)))))))))))))))))
 (check-sat)
+(exit)

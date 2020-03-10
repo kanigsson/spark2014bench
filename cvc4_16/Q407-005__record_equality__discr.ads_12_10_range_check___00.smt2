@@ -614,3 +614,4 @@ Target solver: CVC4
   (= (to_rep (rec__discr__t_record__col_last (us_split_discrs1 usf4))) usf)
   (=> (<= usf1 usf) (<= 1 usf1)))))))))))))
 (check-sat)
+(exit)

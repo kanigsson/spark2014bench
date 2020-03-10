@@ -485,3 +485,4 @@ Target solver: CVC4
   (=> (and (<= r27b c) (<= c r28b))
   (= (to_rep (select (to_array a__pointer_value) c)) 15))))))))))))))))))))))))
 (check-sat)
+(exit)

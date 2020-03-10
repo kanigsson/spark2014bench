@@ -761,3 +761,4 @@ Target solver: CVC4
   (= (make_mask size) (bvsub (ite (< size 256)
                              (bvshl #x01 ((_ int2bv 8) size)) #x00) #x01))))))))))
 (check-sat)
+(exit)

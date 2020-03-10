@@ -262,3 +262,4 @@ Target solver: CVC4
      (us_split_fields1 self__))) o1)
   (in_range (+ o1 1)))))))))
 (check-sat)
+(exit)

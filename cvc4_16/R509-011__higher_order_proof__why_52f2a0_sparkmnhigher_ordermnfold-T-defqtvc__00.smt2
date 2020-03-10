@@ -1524,3 +1524,4 @@ Target solver: CVC4
   (<= temp___543 (last_21 test_higher_order1__my_fold_2__acc__fold__result)))
   (<= (first9 test_higher_order1__my_fold_2__acc__fold__result) (first4 a)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

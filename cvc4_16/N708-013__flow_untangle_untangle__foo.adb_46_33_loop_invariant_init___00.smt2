@@ -279,3 +279,4 @@ Target solver: CVC4
                                                  (rec__foo__r__x
                                                  temp___loop_entry_237)))))))))))))))))))))))
 (check-sat)
+(exit)

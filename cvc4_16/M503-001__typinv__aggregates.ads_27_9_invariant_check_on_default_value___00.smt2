@@ -294,3 +294,4 @@ Target solver: CVC4
   (= (to_rep (rec__aggregates__rec_t__b usf)) 42)) (type_invariant
   (to_rep (rec__aggregates__rec_t__a usf)))))))
 (check-sat)
+(exit)

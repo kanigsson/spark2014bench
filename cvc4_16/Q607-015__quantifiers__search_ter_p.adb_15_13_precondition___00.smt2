@@ -488,3 +488,4 @@ Target solver: CVC4
   (= (and (ite (<= temp___243 i) true false) (ite (<= i o3) true false)) true)
   (<= (length1 b) (length1 a))))))))))))))))))))))))))
 (check-sat)
+(exit)

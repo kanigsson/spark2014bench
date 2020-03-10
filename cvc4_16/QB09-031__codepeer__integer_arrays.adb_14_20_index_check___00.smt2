@@ -334,3 +334,4 @@ Target solver: CVC4
   (=> (= (to_rep (select arr i)) o1)
   (forall ((o2 element_type)) (=> (= (to_rep o2) o1) (<= 1 result_index1))))))))))))))))))))
 (check-sat)
+(exit)

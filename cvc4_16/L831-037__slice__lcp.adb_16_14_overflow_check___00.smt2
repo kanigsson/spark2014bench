@@ -419,3 +419,4 @@ Target solver: CVC4
   (= (- (+ x l2) 1) r6b1)) (= (- (+ y l2) 1) r9b1))
   (forall ((temp___208 Int)) (=> (= temp___208 l2) (in_range1 (+ l2 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

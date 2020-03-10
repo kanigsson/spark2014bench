@@ -271,3 +271,4 @@ Target solver: CVC4
   (=> (bvule val1 val2)
   (=> (not (= factor #x00000000)) (not (= factor #x00000000)))))))))
 (check-sat)
+(exit)

@@ -726,3 +726,4 @@ Target solver: CVC4
   (= index2 index21)))))))
   (=> (in_range1 (length array2)) (in_range1 (- index1 (first1 array1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

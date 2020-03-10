@@ -575,3 +575,4 @@ Target solver: CVC4
   (and (state__function_guard o6 my_stack__split_fields2)
   (= o6 (us_repqtmk my_stack__split_fields2))) (<= 1 o5)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

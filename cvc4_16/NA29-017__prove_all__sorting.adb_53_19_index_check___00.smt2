@@ -388,3 +388,4 @@ Target solver: CVC4
   (=> (= (to_rep (select temp___loop_entry_299 usf)) o8)
   (<= (to_rep b__first) usf))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

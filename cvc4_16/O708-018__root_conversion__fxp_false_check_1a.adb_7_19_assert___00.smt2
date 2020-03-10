@@ -130,3 +130,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 ms true false true true)
   (or (<= 1000000000 md) (<= 1000000000 ms)))))))))
 (check-sat)
+(exit)

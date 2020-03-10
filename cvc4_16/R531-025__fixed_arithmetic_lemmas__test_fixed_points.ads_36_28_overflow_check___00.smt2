@@ -331,3 +331,4 @@ Target solver: CVC4
   (=> (= (fxp_div_int (* o1 o) o) o1) (in_range2
   (fxp_div_int (* val1 val2) val2)))))))))))
 (check-sat)
+(exit)

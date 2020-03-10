@@ -978,3 +978,4 @@ Target solver: CVC4
   (= o10 (+ (value o9) o8)))
   (<= (first3 test_higher_order2__my_sum__sum_left__acc__fold__result) usf))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

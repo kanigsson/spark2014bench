@@ -936,3 +936,4 @@ Target solver: CVC4
   (us_repqtmk s__split_fields2 o1)))
   (not (= (is_full (us_repqtmk s__split_fields1 s__attr__tag)) true)))))))))))))
 (check-sat)
+(exit)

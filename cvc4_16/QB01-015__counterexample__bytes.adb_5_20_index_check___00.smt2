@@ -704,3 +704,4 @@ Target solver: CVC4
   (=> (= (to_rep1 output__first) temp___202)
   (bvule (to_rep1 output__first) temp___202)))))))))
 (check-sat)
+(exit)

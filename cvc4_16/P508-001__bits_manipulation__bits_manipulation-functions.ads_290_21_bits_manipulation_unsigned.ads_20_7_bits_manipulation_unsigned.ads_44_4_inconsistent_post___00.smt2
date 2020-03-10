@@ -675,3 +675,4 @@ Target solver: CVC4
   (= bits_manipulation_unsigned__unsigned_32__functions__lemmas__make_mask__lemma2__result true)
   (= (lemma2 Tuple0) true))))))
 (check-sat)
+(exit)

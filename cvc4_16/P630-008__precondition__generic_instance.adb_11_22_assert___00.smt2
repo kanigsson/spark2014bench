@@ -204,3 +204,4 @@ Target solver: CVC4
   (=> (p__function_guard (p x) x)
   (=> (= (p x) true) (=> (p__function_guard (p x) x) (= (p x) true))))))
 (check-sat)
+(exit)

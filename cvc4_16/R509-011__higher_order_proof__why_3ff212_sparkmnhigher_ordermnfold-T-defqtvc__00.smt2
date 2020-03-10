@@ -1232,3 +1232,4 @@ Target solver: CVC4
   (=> (in_range4 usf)
   (let ((o1 (- usf1 1))) (=> (in_range1 o1) (<= (to_rep r__first_2) o1)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

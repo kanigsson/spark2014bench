@@ -1241,3 +1241,4 @@ Target solver: CVC4
   true true))
   (bvule ((_ zero_extend 56) #x00) (bvudiv (bvsub pointer o7) #x0000000000000010)))))))))))))))))))))))))
 (check-sat)
+(exit)

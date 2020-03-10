@@ -138,3 +138,4 @@ Target solver: CVC4
   (and (= q2 q1) (= r2 r1)))
   (let ((o (* q2 n))) (=> (in_range1 o) (in_range1 (+ o r2))))))))))))))))
 (check-sat)
+(exit)

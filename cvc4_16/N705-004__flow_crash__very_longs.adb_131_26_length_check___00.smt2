@@ -998,3 +998,4 @@ Target solver: CVC4
   (=> (<= (first3 temp___941) (last3 temp___941))
   (<= (first3 result____split_fields) (last3 result____split_fields)))))))))))))))))))))
 (check-sat)
+(exit)

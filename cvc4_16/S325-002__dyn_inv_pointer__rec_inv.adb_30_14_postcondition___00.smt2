@@ -450,3 +450,4 @@ Target solver: CVC4
      (us_split_fields1 (rec__rec_inv__list_acc__pointer_value x))))))))) true)
   (< 0 rec_inv__i__result))))))))))))))
 (check-sat)
+(exit)

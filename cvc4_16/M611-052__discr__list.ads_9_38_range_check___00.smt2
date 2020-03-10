@@ -89,3 +89,4 @@ Target solver: CVC4
  ;; File "list.ads", line 3, characters 0-0
   (not true))
 (check-sat)
+(exit)

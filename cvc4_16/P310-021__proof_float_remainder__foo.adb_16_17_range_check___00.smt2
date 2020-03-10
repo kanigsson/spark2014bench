@@ -147,3 +147,4 @@ Target solver: CVC4
   (=> (dynamic_invariant b true false true true)
   (=> (dynamic_invariant c false false true true) (in_range (fp.rem a b))))))))
 (check-sat)
+(exit)

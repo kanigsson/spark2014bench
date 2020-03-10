@@ -1803,3 +1803,4 @@ Target solver: CVC4
   (os_mbx_is_empty__function_guard (os_mbx_is_empty o7 os_task_mbx_rw1) o7
   os_task_mbx_rw1)) (not (= (os_mbx_is_empty current os_task_mbx_rw) true)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

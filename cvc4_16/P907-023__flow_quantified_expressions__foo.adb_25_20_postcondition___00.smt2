@@ -110,3 +110,4 @@ Target solver: CVC4
        true false))
   (=> (= b true) (=> (<= 1 j) (=> (<= j a) (< (- j 1) j)))))))))
 (check-sat)
+(exit)

@@ -215,3 +215,4 @@ Target solver: CVC4
   (=> (= (fp.lt value (fp.neg threshold)) true)
   (fp.isFinite32 (fp.add RNE value threshold))))))))))))))))
 (check-sat)
+(exit)

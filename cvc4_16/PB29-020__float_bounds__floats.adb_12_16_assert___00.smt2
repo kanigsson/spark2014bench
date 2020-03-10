@@ -449,3 +449,4 @@ Target solver: CVC4
                                                                  (select 
                                                                  a 2)))))))))))
 (check-sat)
+(exit)

@@ -939,3 +939,4 @@ Target solver: CVC4
   (forall ((usf3 (Array Int natural)))
   (=> (default_initial_assumption2 usf3 false) (=> (<= 6 10) (<= zero 5)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

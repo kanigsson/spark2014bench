@@ -3916,3 +3916,4 @@ Target solver: CVC4
   (forall ((o5 (_ BitVec 16)))
   (=> (= (to_rep13 lde_repc_reg__split_fields) o5) (not (= #x0008 #x0000))))))))))))))))))))))))
 (check-sat)
+(exit)

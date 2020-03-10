@@ -341,3 +341,4 @@ Target solver: CVC4
   (= o1 (+ (- 1) (length o))))
   (=> (<= lst o1) (=> (< offset 0) (in_range3 (- (- 2147483648) offset))))))))))))
 (check-sat)
+(exit)

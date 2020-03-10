@@ -56,3 +56,4 @@ Target solver: CVC4
  ;; File "nonreturning_spec.ads", line 2, characters 0-0
   (not false))
 (check-sat)
+(exit)

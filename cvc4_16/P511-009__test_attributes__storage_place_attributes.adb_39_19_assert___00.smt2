@@ -670,3 +670,4 @@ Target solver: CVC4
   false false true true)
   (= storage_place_attributes__r2__d3__first__bit storage_place_attributes__r2__d3__first__bit2))))))))))))))))))
 (check-sat)
+(exit)

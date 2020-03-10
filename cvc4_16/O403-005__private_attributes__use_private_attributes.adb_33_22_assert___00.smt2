@@ -1061,3 +1061,4 @@ Target solver: CVC4
   (= (to_rep (rec__private_with_attributes__root__f1 (us_split_fields11 c1))) 
   (to_rep (rec__private_with_attributes__root__f1 (us_split_fields11 c2)))))))))))))))))))))))))
 (check-sat)
+(exit)

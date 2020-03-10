@@ -1236,3 +1236,4 @@ Target solver: CVC4
   (forall ((data3 (Array Int byte)))
   (=> (= data3 (store data2 o12 o10)) (in_range1 (+ shift1 8))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

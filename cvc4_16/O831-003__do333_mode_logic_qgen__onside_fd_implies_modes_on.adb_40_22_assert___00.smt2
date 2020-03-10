@@ -79,3 +79,4 @@ Target solver: CVC4
   (=> (= not5_out1 (ite (= not1_out1 true) true modes_on_out1))
   (= not5_out1 true))))))))
 (check-sat)
+(exit)

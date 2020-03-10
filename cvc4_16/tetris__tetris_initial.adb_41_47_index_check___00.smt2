@@ -1842,3 +1842,4 @@ Target solver: CVC4
   (= (to_rep2 (rec__tetris_initial__piece__x cur_piece__split_fields)) temp___766)
   (<= 1 temp___766))))))))))))
 (check-sat)
+(exit)

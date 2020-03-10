@@ -420,3 +420,4 @@ Target solver: CVC4
   (=> (= rec_inv__f__result o) (rec__rec_inv__list_acc__pointer_value__pred
   x)))))))))))
 (check-sat)
+(exit)

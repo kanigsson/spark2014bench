@@ -176,3 +176,4 @@ Target solver: CVC4
   (let ((o2 (fp.mul RNE asl asl_alpha)))
   (=> (fp.isFinite32 o2) (fp.isFinite32 (fp.add RNE o2 o1)))))))))))))))))))))
 (check-sat)
+(exit)

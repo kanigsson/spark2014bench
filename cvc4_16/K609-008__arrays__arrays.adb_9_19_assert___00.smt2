@@ -238,3 +238,4 @@ Target solver: CVC4
   (=> (= obj1 (store obj 1 (store (select obj 1) 1 rliteral)))
   (= (to_rep (select (select obj1 1) 1)) 1)))))
 (check-sat)
+(exit)

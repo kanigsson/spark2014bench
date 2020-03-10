@@ -388,3 +388,4 @@ Target solver: CVC4
   (= o (ite (= o1 value1) true false))))))
   (=> (= o true) (<= (first1 table) index22)))))))))))))))))))
 (check-sat)
+(exit)

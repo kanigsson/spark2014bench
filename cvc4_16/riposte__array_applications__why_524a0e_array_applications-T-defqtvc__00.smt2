@@ -330,3 +330,4 @@ Target solver: CVC4
   (forall ((o13 Int))
   (=> (= (to_rep (select a5 temp___178)) o13) (in_range1 (+ o13 o12)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

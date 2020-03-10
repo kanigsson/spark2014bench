@@ -1058,3 +1058,4 @@ Target solver: CVC4
                       (us_split_fields11 c2)) us_null_ext__))
   (=> (= g2__attr__tag us_tag6) (not (= (bool_eq5 c1 c2) true))))))))))))))))))))))
 (check-sat)
+(exit)

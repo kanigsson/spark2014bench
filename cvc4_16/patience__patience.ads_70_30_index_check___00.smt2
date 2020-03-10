@@ -781,3 +781,4 @@ Target solver: CVC4
   (=> (<= 0 usf)
   (=> (<= usf 99) (=> (<= 0 usf1) (=> (<= usf1 99) (<= 0 usf))))))))))))))))
 (check-sat)
+(exit)

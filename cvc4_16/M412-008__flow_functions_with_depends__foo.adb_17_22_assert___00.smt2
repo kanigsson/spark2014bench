@@ -102,3 +102,4 @@ Target solver: CVC4
  ;; File "foo.adb", line 9, characters 0-0
   (not true))
 (check-sat)
+(exit)

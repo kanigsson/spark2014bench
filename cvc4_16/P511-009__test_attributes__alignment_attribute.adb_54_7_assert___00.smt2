@@ -440,3 +440,4 @@ Target solver: CVC4
   (=> (= a2 (alignment_attribute__q__a2__aggregate_def (of_array a1 o1 o)))
   (not (dynamic_invariant1 a2 true false true true)))))))))))))))))))))
 (check-sat)
+(exit)

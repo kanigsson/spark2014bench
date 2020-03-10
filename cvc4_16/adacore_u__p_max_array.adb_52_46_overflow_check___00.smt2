@@ -403,3 +403,4 @@ Target solver: CVC4
   (let ((o10 (- usf o9)))
   (=> (in_range1 o10) (in_range1 (+ o10 (first1 b)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -321,3 +321,4 @@ Target solver: CVC4
   (=> (not (= (length1 y) 0)) (in_range
   (- (+ (first1 y) (+ (length (first1 y) (last1 y)) 1)) 1)))))))))
 (check-sat)
+(exit)

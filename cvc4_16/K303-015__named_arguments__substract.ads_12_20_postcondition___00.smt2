@@ -124,3 +124,4 @@ Target solver: CVC4
   (=> (= substract__subinv__result o2)
   (= substract__subinv__result (- first second))))))))))))
 (check-sat)
+(exit)

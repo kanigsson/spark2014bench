@@ -150,3 +150,4 @@ Target solver: CVC4
   (=> (= t (fp.roundToIntegral RTZ x))
   (=> (dynamic_invariant t true false true true) (fp.leq x c)))))))))))))
 (check-sat)
+(exit)

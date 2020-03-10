@@ -352,3 +352,4 @@ Target solver: CVC4
   (and (= (to_rep a__first) r4b) (= (to_rep a__last) 10)))
   (=> (<= (to_rep a__first) (to_rep a__last)) (<= 0 10))))))))))))))))))
 (check-sat)
+(exit)

@@ -498,3 +498,4 @@ Target solver: CVC4
   (=> (= foo__test_02_ok__R6b__assume r6b)
   (=> (dynamic_invariant1 r6b true false true true) (in_range1 r6b))))))))
 (check-sat)
+(exit)

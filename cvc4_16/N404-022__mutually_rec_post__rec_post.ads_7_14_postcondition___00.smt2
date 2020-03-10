@@ -253,3 +253,4 @@ Target solver: CVC4
   (=> (= rec_post__is_odd__result (ite (= (mod2 i 2) 1) true false))
   (=> (= rec_post__is_odd__result true) (not (= i 0))))))))
 (check-sat)
+(exit)

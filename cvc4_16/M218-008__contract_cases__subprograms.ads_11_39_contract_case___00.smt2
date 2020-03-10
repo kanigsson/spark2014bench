@@ -233,3 +233,4 @@ Target solver: CVC4
   (and (in_range o) (= subprograms__f2__result o))))))
   (=> (= (= val__ 0) true) (= subprograms__f2__result 0)))))))
 (check-sat)
+(exit)

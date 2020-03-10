@@ -1374,3 +1374,4 @@ Target solver: CVC4
   (=> (= (oeq2 x y) true)
   (=> (= (contains x id) true) (= (contains y id) true))))))
 (check-sat)
+(exit)

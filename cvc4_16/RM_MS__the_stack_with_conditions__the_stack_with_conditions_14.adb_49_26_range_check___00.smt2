@@ -252,3 +252,4 @@ Target solver: CVC4
   (forall ((pointer1 Int)) (is_full__function_guard (is_full pointer1)
   pointer1)) (=> (not (= (is_full pointer) true)) (in_range1 (+ pointer 1)))))))))
 (check-sat)
+(exit)

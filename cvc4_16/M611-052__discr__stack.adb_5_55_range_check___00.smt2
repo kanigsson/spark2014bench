@@ -550,3 +550,4 @@ Target solver: CVC4
   (=> (<= 1 (- o 1))
   (<= (first1 (rec__stack__stack__content (us_split_fields1 s))) 1)))))))
 (check-sat)
+(exit)

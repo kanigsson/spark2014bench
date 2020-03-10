@@ -572,3 +572,4 @@ Target solver: CVC4
                                                  (* space1 2)) 0)
                                          true false)) true)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

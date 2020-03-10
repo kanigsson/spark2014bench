@@ -459,3 +459,4 @@ Target solver: CVC4
   (let ((temp___852 (+ i 1)))
   (=> (<= temp___852 (last1 a)) (<= temp___852 (last1 a))))))))))))
 (check-sat)
+(exit)

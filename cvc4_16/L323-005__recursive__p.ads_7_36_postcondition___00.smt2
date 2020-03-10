@@ -69,3 +69,4 @@ Target solver: CVC4
   (not
   (=> (bad__function_guard (bad Tuple0) Tuple0) (not (= (bad Tuple0) true)))))
 (check-sat)
+(exit)

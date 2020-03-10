@@ -972,3 +972,4 @@ Target solver: CVC4
   (=> (= (to_rep1 data__last) o1)
   (let ((o2 (- o1 position))) (=> (in_range1 o2) (in_range1 (+ o2 1))))))))))))))
 (check-sat)
+(exit)

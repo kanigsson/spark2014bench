@@ -1426,3 +1426,4 @@ Target solver: CVC4
   (=> (ind_prop__function_guard o8 o7 o6 usf temp___466)
   (=> (= o8 true) (<= (last_2 a) (to_rep r__last_2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

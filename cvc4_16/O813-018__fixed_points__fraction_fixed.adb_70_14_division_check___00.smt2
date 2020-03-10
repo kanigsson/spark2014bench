@@ -440,3 +440,4 @@ Target solver: CVC4
   (exists ((zint1 Int)) (and (= zint1 (fxp_div x x)) (= zint1 1))))))
   (not (= 2 0)))))))))))))))
 (check-sat)
+(exit)

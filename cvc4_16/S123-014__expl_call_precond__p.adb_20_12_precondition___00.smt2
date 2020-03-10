@@ -120,3 +120,4 @@ Target solver: CVC4
   (forall ((g1 Bool))
   (=> (= g1 o1) (=> (r__function_guard (r f g1 h) f g1 h) (= g1 true)))))))))))
 (check-sat)
+(exit)

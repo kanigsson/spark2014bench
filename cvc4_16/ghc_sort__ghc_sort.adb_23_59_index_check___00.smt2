@@ -565,3 +565,4 @@ Target solver: CVC4
   (forall ((o5 Int))
   (=> (= (to_rep1 (select cut o4)) o5) (<= (first1 s) (- o5 1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

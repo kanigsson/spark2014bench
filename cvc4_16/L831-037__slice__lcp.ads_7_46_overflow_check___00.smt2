@@ -450,3 +450,4 @@ Target solver: CVC4
   (forall ((lcp__result Int))
   (=> (= lcp__result l2) (in_range1 (+ y lcp__result)))))))))))))))))))
 (check-sat)
+(exit)

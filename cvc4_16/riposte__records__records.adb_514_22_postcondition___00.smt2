@@ -430,3 +430,4 @@ Target solver: CVC4
      (rec__records_prooffuncs__part_private__hidden (us_split_fields3 r2))) true)
   (= (bool_eq2 (us_repqtmk1 r1__split_fields1) r2) true))))))
 (check-sat)
+(exit)

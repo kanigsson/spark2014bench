@@ -505,3 +505,4 @@ Target solver: CVC4
   (=> (= (last3 temp___415) (+ (length s) 1))
   (=> (<= (first3 temp___415) (last3 temp___415)) (<= 1 (+ (length s) 1))))))))))
 (check-sat)
+(exit)

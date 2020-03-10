@@ -530,3 +530,4 @@ Target solver: CVC4
                         test_tag__test_init_4__z__assume))
   (= (attr__tag x__pointer_value) us_tag))))))))))))))))))
 (check-sat)
+(exit)

@@ -889,3 +889,4 @@ Target solver: CVC4
   (and (in_range1 o4) (= o (ite (= o4 o3) true false)))))))))))
   (=> (not (= o true)) (in_range1 (+ y lcp__result)))))))))))))))))))))))
 (check-sat)
+(exit)

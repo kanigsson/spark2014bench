@@ -537,3 +537,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__time__t__year temp_time__split_fields)) o)
   (=> (= temp_years1 o) (in_range2 temp_years1))))))))))))
 (check-sat)
+(exit)

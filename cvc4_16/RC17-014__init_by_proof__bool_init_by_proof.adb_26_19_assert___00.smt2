@@ -398,3 +398,4 @@ Target solver: CVC4
   (=> (<= 0 temp___219)
   (=> (<= temp___219 1) (= (attr__init1 (select c2 temp___219)) true)))))))))))))
 (check-sat)
+(exit)

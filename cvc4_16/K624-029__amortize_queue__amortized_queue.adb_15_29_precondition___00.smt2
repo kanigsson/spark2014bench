@@ -916,3 +916,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 idx) true false) (ite (<= idx r10b) true false)) true)
   (=> (in_range6 idx) (<= 1 idx)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1971,3 +1971,4 @@ Target solver: CVC4
   (= result____split_fields2 find_map__index_maps__insert__2__container__fields)))))))
   (= result____split_fields2 result____split_fields1)))))))) (in_range2 k))))))))))))))))))
 (check-sat)
+(exit)

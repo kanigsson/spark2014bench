@@ -178,3 +178,4 @@ Target solver: CVC4
   (=> (= t3 index1)
   (=> (not (= index1 1)) (=> (= index2 (- index1 1)) (= t3 (+ index2 1))))))))))))))))
 (check-sat)
+(exit)

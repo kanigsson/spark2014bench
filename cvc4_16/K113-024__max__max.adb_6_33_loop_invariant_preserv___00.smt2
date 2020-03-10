@@ -215,3 +215,4 @@ Target solver: CVC4
   (exists ((o2 Int)) (and (= (to_rep (select t i1)) o2) (= imax2 o2)))
   (= imax2 imax1)))))) (=> (not (= i1 10)) (<= (to_rep (select t 1)) imax2)))))))))))))
 (check-sat)
+(exit)

@@ -170,3 +170,4 @@ Target solver: CVC4
                    true false))
   (=> (not (= spark__branch true)) (not (fp.isZero right)))))))))))
 (check-sat)
+(exit)

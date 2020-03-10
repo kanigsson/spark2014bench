@@ -219,3 +219,4 @@ Target solver: CVC4
   (=> (= x (temp_____aggregate_def_648 0 2 1))
   (=> (not (= (to_rep (select x n)) 1)) (= (to_rep (select x n)) 2)))))))
 (check-sat)
+(exit)

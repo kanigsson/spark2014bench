@@ -878,3 +878,4 @@ Target solver: CVC4
                                                                 true false)) true)
   (<= 1 binary_search__search__result)))))))))))
 (check-sat)
+(exit)

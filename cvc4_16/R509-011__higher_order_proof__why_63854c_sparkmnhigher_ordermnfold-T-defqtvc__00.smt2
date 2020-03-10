@@ -861,3 +861,4 @@ Target solver: CVC4
   (of_array (to_array a) (first1 a) (last1 a)) r1 i1))
   (= (in_range3 (of_array (to_array a) (first1 a) (last1 a)) r i) true))))))))))))))))))))
 (check-sat)
+(exit)

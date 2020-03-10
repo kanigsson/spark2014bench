@@ -478,3 +478,4 @@ Target solver: CVC4
         2147483647))))
   (in_range (+ o8 o6))))))))))))))))))))
 (check-sat)
+(exit)

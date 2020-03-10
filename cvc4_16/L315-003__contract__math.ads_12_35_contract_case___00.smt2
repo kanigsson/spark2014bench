@@ -101,3 +101,4 @@ Target solver: CVC4
   (=> (= math__bad__result 0)
   (=> (= (= (+ x x) 0) true) (= math__bad__result 0))))))))
 (check-sat)
+(exit)

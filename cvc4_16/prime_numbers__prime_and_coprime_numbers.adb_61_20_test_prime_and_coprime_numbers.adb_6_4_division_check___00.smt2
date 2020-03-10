@@ -417,3 +417,4 @@ Target solver: CVC4
   false true true true)) (dynamic_invariant1 a2 false true true true))
   (not (= b2 0))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

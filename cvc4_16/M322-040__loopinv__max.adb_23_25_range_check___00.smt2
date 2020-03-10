@@ -236,3 +236,4 @@ Target solver: CVC4
                                                    true false)) true)
   (=> (<= 1 i) (<= 1 1))))))))))))
 (check-sat)
+(exit)

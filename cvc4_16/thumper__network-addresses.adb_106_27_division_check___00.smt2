@@ -893,3 +893,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select digit_lookup_table (bvudiv value2 #x64))) o2)
   (forall ((digit_22 Int)) (=> (= digit_22 o2) (not (= #x64 #x00)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

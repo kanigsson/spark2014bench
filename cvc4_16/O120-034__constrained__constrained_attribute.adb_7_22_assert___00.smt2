@@ -413,3 +413,4 @@ Target solver: CVC4
   (= (is_constrained
      (us_repqtmk b__split_discrs (us_split_fieldsqtmk b__split_fields))) true))))))))))))))))
 (check-sat)
+(exit)

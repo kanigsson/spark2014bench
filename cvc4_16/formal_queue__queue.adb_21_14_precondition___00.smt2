@@ -470,3 +470,4 @@ Target solver: CVC4
  ;; File "queue.ads", line 22, characters 0-0
   (not (=> (< 0 (length q)) (not (= (is_empty q) true)))))
 (check-sat)
+(exit)

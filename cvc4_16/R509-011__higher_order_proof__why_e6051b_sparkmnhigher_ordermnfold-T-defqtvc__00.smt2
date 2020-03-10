@@ -764,3 +764,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array1 temp___727) k)) temp___728)
   (let ((o1 (- k (first1 a)))) (=> (in_range1 o1) (in_range1 (* 100 o1)))))))))))))))))))))))))
 (check-sat)
+(exit)

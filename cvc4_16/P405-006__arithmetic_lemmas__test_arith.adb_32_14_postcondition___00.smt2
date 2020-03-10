@@ -150,3 +150,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (forall ((r1 Int)) (=> (= r1 o) (=> (= r1 0) (or (= x 0) (= y 0)))))))))))))
 (check-sat)
+(exit)

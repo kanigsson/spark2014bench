@@ -242,3 +242,4 @@ Target solver: CVC4
   (= (= formal_cont__new_set_01__num_overlaps__result 0)
   (= (no_overlap left right) true)))))))
 (check-sat)
+(exit)

@@ -802,3 +802,4 @@ Target solver: CVC4
   (= (in_range3 (of_array (to_array a) (first1 a) (last1 a))
      (to_rep1 (select r1 (- k 1))) k) true))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -4212,3 +4212,4 @@ Target solver: CVC4
                                              (last1 temp___848)))
   (= (first1 ada___pragmarc__b_strings__Oadd__result) 1)))))))))))
 (check-sat)
+(exit)

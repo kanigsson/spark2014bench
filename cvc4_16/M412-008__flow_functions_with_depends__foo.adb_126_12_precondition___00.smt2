@@ -133,3 +133,4 @@ Target solver: CVC4
   (ite (= o2 true) (= o1 a)
   (let ((o3 (+ a 1))) (and (= o1 o3) (in_range o3)))))) (= o g2))))))))))
 (check-sat)
+(exit)

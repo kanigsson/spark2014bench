@@ -406,3 +406,4 @@ Target solver: CVC4
   (=> (= (to_rep (select kvp1 j)) o4)
   (=> (fp.isFinite32 (fp.mul RNE o4 (fp.abs o3))) (not (fp.isZero o2)))))))))))))))))))))))
 (check-sat)
+(exit)

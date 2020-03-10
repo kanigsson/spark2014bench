@@ -261,3 +261,4 @@ Target solver: CVC4
   (= (to_rep (rec__p__private_types__t1__capacity (us_split_discrs1 l))) o)
   (=> (= p__my_capacity__result o) (= p__my_capacity__result 10)))))))
 (check-sat)
+(exit)

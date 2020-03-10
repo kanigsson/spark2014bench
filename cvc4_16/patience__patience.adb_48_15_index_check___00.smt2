@@ -1156,3 +1156,4 @@ Target solver: CVC4
   (=> (in_range2 pred2)
   (forall ((o4 cardindex)) (=> (= (to_rep o4) pred2) (<= 0 idx1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

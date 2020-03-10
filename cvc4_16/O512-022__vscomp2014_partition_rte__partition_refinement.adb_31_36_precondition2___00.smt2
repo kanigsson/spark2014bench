@@ -2226,3 +2226,4 @@ Target solver: CVC4
   (= o9 (get2 (model1 o8) o7)))
   (forall ((o10 Int)) (=> (= (to_rep5 (select f o9)) o10) (<= 0 o10)))))))))))))))))))))))))))
 (check-sat)
+(exit)

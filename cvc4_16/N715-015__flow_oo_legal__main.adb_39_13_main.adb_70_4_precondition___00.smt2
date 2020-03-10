@@ -1618,3 +1618,4 @@ Target solver: CVC4
   (= (has_training (us_repqtmk1 zerocool__split_fields zerocool__attr__tag)
      skill_of_the_day) true))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -288,3 +288,4 @@ Target solver: CVC4
      (rec__private_discr__p_with_default__c (us_split_discrs1 temp___391))) o))
   (in_range1 c (us_split_discrs1 temp___391)))))))))))))
 (check-sat)
+(exit)

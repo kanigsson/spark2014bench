@@ -231,3 +231,4 @@ Target solver: CVC4
   (=> (dynamic_invariant a true false true true)
   (=> (< 1 a) (=> (< a 100) (not (= (mod1 100 a) 0)))))))
 (check-sat)
+(exit)

@@ -509,3 +509,4 @@ Target solver: CVC4
   (=> (= x__attr__constrained true)
   (= (rec__test__search_result__found r__split_discrs) x__split_discrs)))))))))))
 (check-sat)
+(exit)

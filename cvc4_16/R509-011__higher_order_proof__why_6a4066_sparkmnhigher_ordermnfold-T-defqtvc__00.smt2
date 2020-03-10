@@ -665,3 +665,4 @@ Target solver: CVC4
   (=> (not (<= (first5 temp___562) (last5 temp___562)))
   (< (last2 a) (first2 a))))))))))))))))
 (check-sat)
+(exit)

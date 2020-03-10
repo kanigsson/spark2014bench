@@ -537,3 +537,4 @@ Target solver: CVC4
   (=> (exists ((o5 Int)) (= (to_rep1 (select h temp___547)) o5))
   (<= (to_rep h__first) usf)))))))))))))))))))))))
 (check-sat)
+(exit)

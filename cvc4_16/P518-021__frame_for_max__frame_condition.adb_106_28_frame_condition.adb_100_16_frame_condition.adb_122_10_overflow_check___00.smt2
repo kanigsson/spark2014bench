@@ -654,3 +654,4 @@ Target solver: CVC4
   true true true true)) (dynamic_invariant c239b1 true true true true))
   (=> (not (= k1 last3)) (in_range1 (+ k1 1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -760,3 +760,4 @@ Target solver: CVC4
   (forall ((value3 (_ BitVec 32)))
   (=> (= value3 temporary_26) (in_range2 (+ position 3))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

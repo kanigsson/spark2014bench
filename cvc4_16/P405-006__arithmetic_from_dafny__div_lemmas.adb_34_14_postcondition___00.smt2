@@ -299,3 +299,4 @@ Target solver: CVC4
   (=> (dynamic_invariant res false false true true)
   (=> (< x d) (forall ((res1 Int)) (=> (= res1 (div1 x d)) (= res1 0))))))))))
 (check-sat)
+(exit)

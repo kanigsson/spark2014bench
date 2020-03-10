@@ -162,3 +162,4 @@ Target solver: CVC4
   (= main__is_right_angle_triangle__result (distinct 0 0)))))))))))))
   (=> (in_range1 (* side_3 side_3)) (in_range1 (* side_2 side_2))))))))))
 (check-sat)
+(exit)

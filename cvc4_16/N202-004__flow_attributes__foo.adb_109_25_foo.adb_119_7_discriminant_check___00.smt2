@@ -343,3 +343,4 @@ Target solver: CVC4
   (=> (= (rec__foo__dt__found a__split_discrs) r42b)
   (= (distinct 1 0) (rec__foo__dt__found a__split_discrs))))))))
 (check-sat)
+(exit)

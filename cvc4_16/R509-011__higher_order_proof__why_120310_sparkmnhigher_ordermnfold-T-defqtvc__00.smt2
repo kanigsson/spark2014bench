@@ -924,3 +924,4 @@ Target solver: CVC4
   (ite (and (<= (first1 a) i1) (<= i1 (last1 a))) true false)) true)
   (= i1 temp___1300)))))))))))))))))))) (in_range1 (length a))))))))))))))))
 (check-sat)
+(exit)

@@ -565,3 +565,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 bytes true false true true)
   (=> (= (length bytes) 4) (=> (<= (first1 bytes) (last1 bytes)) (<= 1 4))))))
 (check-sat)
+(exit)

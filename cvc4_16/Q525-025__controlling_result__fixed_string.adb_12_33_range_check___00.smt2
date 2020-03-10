@@ -438,3 +438,4 @@ Target solver: CVC4
   (=> (= (to_rep1 change__first) o2)
   (let ((o3 (length o2 o1))) (=> (in_range1 o3) (in_range2 (min o3 o))))))))))))))
 (check-sat)
+(exit)

@@ -930,3 +930,4 @@ Target solver: CVC4
   (= o7 (to_rep (select (to_array usf) (first1 usf))))))
   (< 0 (length (to_model (us_repqtmk r__split_fields)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

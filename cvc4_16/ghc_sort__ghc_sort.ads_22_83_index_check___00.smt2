@@ -759,3 +759,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 usf) true false) (ite (<= usf o3) true false)) true)
   (<= (first3 ghc_sort__cut__result) usf))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

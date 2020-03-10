@@ -939,3 +939,4 @@ Target solver: CVC4
   (let ((o13 (+ 1 usf)))
   (=> (in_range1 o13) (=> (in_range5 o13) (<= 1 o13))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

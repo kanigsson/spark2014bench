@@ -204,3 +204,4 @@ Target solver: CVC4
   (= vol__split_fields1 rliteral1))))
   (=> (< 0 temp) (= (to_rep vol__split_fields1) 1)))))))))
 (check-sat)
+(exit)

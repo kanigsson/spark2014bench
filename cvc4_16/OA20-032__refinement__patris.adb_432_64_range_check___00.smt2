@@ -411,3 +411,4 @@ Target solver: CVC4
   (let ((o (* (- 11 (mod2 (bv2nat level_nbr) 11)) 50)))
   (=> (in_range o) (in_range1 o)))))))
 (check-sat)
+(exit)

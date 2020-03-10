@@ -521,3 +521,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 y4 false false true true)
   (=> (= y1 (fxp_mult x4 1)) (=> (= x4 (- 5)) (= y1 (- 25)))))))))))))))
 (check-sat)
+(exit)

@@ -665,3 +665,4 @@ Target solver: CVC4
   false true true))
   (let ((o3 (- total_area o2))) (=> (in_range o3) (in_range1 o3)))))))))))))
 (check-sat)
+(exit)

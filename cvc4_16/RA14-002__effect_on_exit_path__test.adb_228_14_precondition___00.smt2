@@ -1497,3 +1497,4 @@ Target solver: CVC4
                                                          o3 os_task_mbx_rw)
                                                          index))))))))))))))))))))))
 (check-sat)
+(exit)

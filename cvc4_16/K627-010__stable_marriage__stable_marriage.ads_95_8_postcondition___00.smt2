@@ -1675,3 +1675,4 @@ Target solver: CVC4
   (and (and (<= 1 g2) (<= g2 64))
   (= (to_rep (select stable_marriage__matching__result g2)) g1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

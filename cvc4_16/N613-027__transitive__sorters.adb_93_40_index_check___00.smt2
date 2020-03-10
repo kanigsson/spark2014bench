@@ -543,3 +543,4 @@ Target solver: CVC4
   (let ((o15 (+ usf 1)))
   (=> (in_range1 o15) (<= (to_rep values__first) o15))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

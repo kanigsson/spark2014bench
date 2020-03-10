@@ -239,3 +239,4 @@ Target solver: CVC4
   (=> (<= x1 c)
   (=> (dyn_return__function_guard (dyn_return 40) 40) (<= (dyn_return 40) c)))))))))))))))))
 (check-sat)
+(exit)

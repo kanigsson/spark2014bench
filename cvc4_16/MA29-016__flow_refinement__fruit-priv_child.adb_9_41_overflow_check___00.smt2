@@ -131,3 +131,4 @@ Target solver: CVC4
   (=> (dynamic_invariant price_of_apple true false true true) (in_range
   (- 2147483647 extra_cost)))))))
 (check-sat)
+(exit)

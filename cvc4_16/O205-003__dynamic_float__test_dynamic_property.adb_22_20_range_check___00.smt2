@@ -250,3 +250,4 @@ Target solver: CVC4
   (=> (fp.isFinite32 o1) (dynamic_property
   (fp #b0 #b00000000 #b00000000000000000000000) last o1))))))))))))))))
 (check-sat)
+(exit)

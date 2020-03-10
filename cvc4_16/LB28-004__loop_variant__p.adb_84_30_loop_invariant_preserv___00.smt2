@@ -495,3 +495,4 @@ Target solver: CVC4
   (forall ((l Int))
   (=> (and (<= a l) (<= l (- j16 1))) (= (to_rep (select tab8 l)) l)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

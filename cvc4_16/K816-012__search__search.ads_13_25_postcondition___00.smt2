@@ -382,3 +382,4 @@ Target solver: CVC4
   (or (not (= found11 true))
   (= (to_rep (select (to_array table) index12)) value1)))))))))))))))))
 (check-sat)
+(exit)

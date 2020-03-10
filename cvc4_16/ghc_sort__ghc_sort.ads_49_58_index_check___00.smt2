@@ -498,3 +498,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array s) o4)) o5)
   (<= (first1 ghc_sort__s_reverse__result) usf))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

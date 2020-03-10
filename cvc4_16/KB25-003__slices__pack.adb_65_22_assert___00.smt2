@@ -226,3 +226,4 @@ Target solver: CVC4
   (=> (= (to_rep (select my_s41 2)) (to_rep (select g 2)))
   (not (= (to_rep (select my_s41 2)) (to_rep (select g 2)))))))))))
 (check-sat)
+(exit)

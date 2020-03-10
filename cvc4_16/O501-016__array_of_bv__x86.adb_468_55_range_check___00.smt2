@@ -828,3 +828,4 @@ Target solver: CVC4
   val__ #x00FF0000) ((_ int2bv 32) 16))))
   (bvule ((_ zero_extend 16) #x0000) (bvand val__ #x0000FFFF))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

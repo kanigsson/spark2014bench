@@ -412,3 +412,4 @@ Target solver: CVC4
   (=> (= spark__branch2 true)
   (=> (not (= courant1 2147483647)) (in_range2 (+ courant1 1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

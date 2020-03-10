@@ -1152,3 +1152,4 @@ Target solver: CVC4
      (rec__ada___instr__child__accurate_clock__millisec x__split_fields)) o)
   (in_range (+ o inc))))))))
 (check-sat)
+(exit)

@@ -477,3 +477,4 @@ Target solver: CVC4
   (* (+ p__sqrt_von_neumann__result 1) (+ p__sqrt_von_neumann__result 1)))
   (in_range1 (* p__sqrt_von_neumann__result p__sqrt_von_neumann__result))))))))))))))))))))))
 (check-sat)
+(exit)

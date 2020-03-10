@@ -202,3 +202,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 length) true false) (ite (<= length 1024) true false)) true)
   (=> (< offset 1024) (in_range1 (+ length offset))))))))
 (check-sat)
+(exit)

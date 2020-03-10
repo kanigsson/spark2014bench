@@ -519,3 +519,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 pos) true false) (ite (<= pos 10) true false)) true)
   (in_range2 pos))))))))))))))))))))
 (check-sat)
+(exit)

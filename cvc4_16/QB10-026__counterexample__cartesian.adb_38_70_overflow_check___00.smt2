@@ -728,3 +728,4 @@ Target solver: CVC4
   (let ((o3 (- index1 (first1 array1))))
   (=> (in_range1 o3) (in_range1 (+ o3 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

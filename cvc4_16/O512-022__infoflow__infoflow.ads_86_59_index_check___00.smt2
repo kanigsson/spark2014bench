@@ -535,3 +535,4 @@ Target solver: CVC4
   (=> (= o true)
   (=> (= (to_rep h_v2__last) o1) (<= (to_rep h_v2__first) (- i (div1 o1 2))))))))))))
 (check-sat)
+(exit)

@@ -254,3 +254,4 @@ Target solver: CVC4
   (let ((o4 (* 3 o3)))
   (=> (in_range o4) (in_range (+ temp___loop_entry_159 o4))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -714,3 +714,4 @@ Target solver: CVC4
   (< (to_rep (select (to_array s) (- (to_rep1 (select cut2 (+ k 1))) 1))) 
   (to_rep (select (to_array s) (to_rep1 (select cut2 (+ k 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

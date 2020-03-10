@@ -200,3 +200,4 @@ Target solver: CVC4
  ;; File "pedantic.ads", line 17, characters 0-0
   (not (in_range alignment)))
 (check-sat)
+(exit)

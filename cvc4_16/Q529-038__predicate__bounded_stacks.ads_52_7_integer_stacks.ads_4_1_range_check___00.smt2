@@ -571,3 +571,4 @@ Target solver: CVC4
   (= (to_rep (rec__integer_stacks__stack__capacity (us_split_discrs1 usf1))) usf)
   (=> (<= 1 usf) (<= 1 1))))))))
 (check-sat)
+(exit)

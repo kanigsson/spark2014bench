@@ -187,3 +187,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (=> (in_range (* x x)) (fp.isFinite32 (fp.mul RNE y y)))))))))))))
 (check-sat)
+(exit)

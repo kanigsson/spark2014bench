@@ -261,3 +261,4 @@ Target solver: CVC4
   (=> (= (milliseconds 100) dispatch_offset)
   (=> (= (milliseconds 500) task_period) (<= 48 97)))))
 (check-sat)
+(exit)

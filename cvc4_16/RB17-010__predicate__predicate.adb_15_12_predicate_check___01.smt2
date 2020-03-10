@@ -373,3 +373,4 @@ Target solver: CVC4
   (=> (= (last1 temp___214) (to_rep1 p__last)) (dynamic_predicate1
   temp___214))))))))))))
 (check-sat)
+(exit)

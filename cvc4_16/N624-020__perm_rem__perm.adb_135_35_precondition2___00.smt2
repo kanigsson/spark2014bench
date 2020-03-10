@@ -420,3 +420,4 @@ Target solver: CVC4
      (last1 b)) true)
   (<= (first1 a) i)))))))))))))
 (check-sat)
+(exit)

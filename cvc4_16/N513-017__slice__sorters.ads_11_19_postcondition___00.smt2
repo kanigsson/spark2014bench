@@ -432,3 +432,4 @@ Target solver: CVC4
   (=> (<= j (- (to_rep values__last) 1))
   (<= (to_rep (select values1 j)) (to_rep (select values1 (+ j 1)))))))))))))
 (check-sat)
+(exit)

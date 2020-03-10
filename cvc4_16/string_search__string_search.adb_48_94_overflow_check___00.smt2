@@ -467,3 +467,4 @@ Target solver: CVC4
   (=> (= (to_rep (select bad_shift1 usf)) temp___373)
   (let ((o7 (length needle))) (=> (in_range1 o7) (in_range1 (+ o7 1)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

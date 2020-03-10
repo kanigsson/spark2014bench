@@ -513,3 +513,4 @@ Target solver: CVC4
   (=> (= v__split_discrs (us_split_discrsqtmk o))
   (= (to_rep2 (rec__basic__r__x v__split_discrs)) 0)))))))
 (check-sat)
+(exit)

@@ -123,3 +123,4 @@ Target solver: CVC4
   (=> (and (f1__function_guard o flag) (= (= o true) (= flag true)))
   (= var 0)))))))))
 (check-sat)
+(exit)

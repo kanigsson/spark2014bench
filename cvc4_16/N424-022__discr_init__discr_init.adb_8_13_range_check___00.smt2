@@ -634,3 +634,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__discr_init__r1__j (us_split_discrs1 usf1))) usf)
   (=> (discr_init__r1__arr__pred usf1) (=> (<= 1 usf) (<= 0 1))))))))
 (check-sat)
+(exit)

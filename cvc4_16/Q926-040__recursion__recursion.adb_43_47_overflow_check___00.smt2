@@ -344,3 +344,4 @@ Target solver: CVC4
                                                  true false)) true)
   (in_range1 (- index (first1 arr))))))))))))))
 (check-sat)
+(exit)

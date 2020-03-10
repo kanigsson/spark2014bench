@@ -253,3 +253,4 @@ Target solver: CVC4
   pointer1))
   (=> (not (= (is_empty pointer) true)) (=> (= (to_rep o) x) (<= 1 pointer)))))))))
 (check-sat)
+(exit)

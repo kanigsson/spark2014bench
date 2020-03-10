@@ -265,3 +265,4 @@ Target solver: CVC4
   (forall ((res1 Int))
   (=> (= res1 o) (=> (in_range (* res1 y)) (not (= res1 0))))))))))))))
 (check-sat)
+(exit)

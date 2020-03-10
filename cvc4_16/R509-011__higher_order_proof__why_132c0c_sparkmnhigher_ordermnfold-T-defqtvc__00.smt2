@@ -1329,3 +1329,4 @@ Target solver: CVC4
   (count_length1 i2 (- j1 1)) i2 (- j1 1)))
   (= (count_length1 i1 (- j 1)) true))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

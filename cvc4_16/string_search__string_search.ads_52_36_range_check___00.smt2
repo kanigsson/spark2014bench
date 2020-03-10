@@ -511,3 +511,4 @@ Target solver: CVC4
   (forall ((o5 Int))
   (=> (= (to_rep (select bad_shift1 usf)) o5) (in_range1 (length needle)))))))))))))))))))))))))))
 (check-sat)
+(exit)

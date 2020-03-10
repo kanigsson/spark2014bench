@@ -991,3 +991,4 @@ Target solver: CVC4
      (rec__tester__ring_buffer__ring_buffer_type__tail buffer__split_fields)) o2)
   (dynamic_property1 1 r27b (+ o2 1))))))))))))))))))))))))))
 (check-sat)
+(exit)

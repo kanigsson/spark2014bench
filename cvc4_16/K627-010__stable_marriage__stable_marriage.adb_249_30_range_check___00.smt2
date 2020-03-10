@@ -954,3 +954,4 @@ Target solver: CVC4
         unmatched_g1_set__split_fields)))
   (<= 0 1))))))))
 (check-sat)
+(exit)

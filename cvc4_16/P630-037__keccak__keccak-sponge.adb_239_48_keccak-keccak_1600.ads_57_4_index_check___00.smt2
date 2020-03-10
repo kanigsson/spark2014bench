@@ -1609,3 +1609,4 @@ Target solver: CVC4
   (ite (< temp___954 256) (= o8 (bvshl #x01 ((_ int2bv 8) temp___954)))
   (= o8 #x00))) (<= (first1 message) (last1 message)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

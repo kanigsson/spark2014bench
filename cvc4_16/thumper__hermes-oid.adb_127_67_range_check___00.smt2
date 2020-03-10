@@ -1293,3 +1293,4 @@ Target solver: CVC4
   (forall ((result_index4 Int))
   (=> (= result_index4 o17) (uint_in_range (mod1 current_component3 128))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

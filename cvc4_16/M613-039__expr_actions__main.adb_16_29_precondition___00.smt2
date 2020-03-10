@@ -875,3 +875,4 @@ Target solver: CVC4
   (us_repqtmk rev_l__split_discrs (us_split_fieldsqtmk rev_l__split_fields))
   true false true true) (forall ((i10 Int)) (=> (= i10 1) (<= 1 i10))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

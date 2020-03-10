@@ -252,3 +252,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 call_actuals__fn__y true true true true)
   (=> (in_range call_actuals__fn__x) (in_range call_actuals__fn__y))))))))))))))))
 (check-sat)
+(exit)

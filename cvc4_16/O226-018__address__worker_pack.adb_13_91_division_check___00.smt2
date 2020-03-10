@@ -645,3 +645,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= worker_queue #x0000000000000000) true false))
   (=> (= spark__branch true) (=> (in_range value__size) (not (= 8 0))))))))
 (check-sat)
+(exit)

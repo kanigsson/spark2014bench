@@ -202,3 +202,4 @@ Target solver: CVC4
   (=> (= (distinct 1 0) true)
   (=> (dynamic_invariant x true false true true) (=> (<= 1 x) (<= 1 1))))))))))))))
 (check-sat)
+(exit)

@@ -499,3 +499,4 @@ Target solver: CVC4
                                         (select (to_array o7) (+ i (- i1 1)))))))))
   (in_range1 (+ j (- i 1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -411,3 +411,4 @@ Target solver: CVC4
   (=> (are_coprime__function_guard (are_coprime left right) left right)
   (= (are_coprime left right) true)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

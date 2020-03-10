@@ -1195,3 +1195,4 @@ Target solver: CVC4
                       (rec__patience__state__preds s__split_fields3)))
   (<= 0 i3))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

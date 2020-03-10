@@ -144,3 +144,4 @@ Target solver: CVC4
   (=> (in_range2 o)
   (forall ((y1 Int)) (=> (= y1 o) (=> (= (< y 5) true) (< y1 10))))))))))))
 (check-sat)
+(exit)

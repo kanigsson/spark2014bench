@@ -286,3 +286,4 @@ Target solver: CVC4
   (forall ((al_test2 (_ BitVec 8))) (al__function_guard (al al_test2)
   al_test2)) (= (al al_test1) val__)))))))))
 (check-sat)
+(exit)

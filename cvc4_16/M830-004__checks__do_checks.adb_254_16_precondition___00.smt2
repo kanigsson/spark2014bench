@@ -579,3 +579,4 @@ Target solver: CVC4
   (= x (do_checks__do_length_check__B_24__x__aggregate_def (distinct 0 0)))
   (= (first1 (of_array x 1 11)) 1))))))))))))))
 (check-sat)
+(exit)

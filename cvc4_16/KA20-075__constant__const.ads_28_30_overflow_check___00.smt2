@@ -485,3 +485,4 @@ Target solver: CVC4
   (and (dynamic_invariant o3 true false true true) (= o3 1))) (in_range
   (* 2 o3)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -636,3 +636,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 i) true false) (ite (<= i octet_count) true false)) true)
   (=> (< octet_count 4) (in_range1 (power 256 (- i 1))))))))))))))))))))
 (check-sat)
+(exit)

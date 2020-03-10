@@ -1416,3 +1416,4 @@ Target solver: CVC4
      (select (select (rec__patience__state__stacks s__split_fields4) usf) usf1)) temp___728)
   (<= 0 temp___728)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

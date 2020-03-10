@@ -97,3 +97,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (=> (= p__id__result x) (in_range (- p__id__result x)))))))
 (check-sat)
+(exit)

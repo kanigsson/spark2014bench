@@ -343,3 +343,4 @@ Target solver: CVC4
                                            (select (to_array y) (first1 y))))
   (= (to_rep (select z (to_rep z__last))) x)))))))))))))))
 (check-sat)
+(exit)

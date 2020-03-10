@@ -1587,3 +1587,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk1 char_table__split_fields)) false false true true)
   (in_range 256)))))))))
 (check-sat)
+(exit)

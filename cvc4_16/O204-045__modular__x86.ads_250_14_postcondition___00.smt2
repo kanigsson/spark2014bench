@@ -377,3 +377,4 @@ Target solver: CVC4
   (=> (= x86__si__result ((_ extract 15 0) (bvand rsi #x000000000000FFFF)))
   (= x86__si__result ((_ extract 15 0) (bvand rsi #x000000000000FFFF)))))))))
 (check-sat)
+(exit)

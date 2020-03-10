@@ -702,3 +702,4 @@ Target solver: CVC4
   (=> (= interm values1)
   (let ((o2 x)) (=> (in_range4 o2) (<= (first1 (of_array interm 1 100)) o2))))))))))))))))))))))))))
 (check-sat)
+(exit)

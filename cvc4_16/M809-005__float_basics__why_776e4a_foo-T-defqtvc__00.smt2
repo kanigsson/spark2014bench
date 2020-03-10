@@ -213,3 +213,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 y true false true true)
   (=> (fp.eq ((_ to_fp 11 53) RNE x) y) (fp.eq ((_ to_fp 8 24) RNE y) x))))))
 (check-sat)
+(exit)

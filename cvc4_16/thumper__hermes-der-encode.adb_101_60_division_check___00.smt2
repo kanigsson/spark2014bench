@@ -762,3 +762,4 @@ Target solver: CVC4
                                                             true false)))
   (=> (= spark__branch3 true) (=> (= (to_rep1 o) #x83) (not (= 256 0)))))))))))))))))
 (check-sat)
+(exit)

@@ -378,3 +378,4 @@ Target solver: CVC4
   (=> (= (to_rep (select v j)) o)
   (=> (= (to_rep o1) (div1 o 2)) (dynamic_predicate (store v j o1))))))))))))))
 (check-sat)
+(exit)

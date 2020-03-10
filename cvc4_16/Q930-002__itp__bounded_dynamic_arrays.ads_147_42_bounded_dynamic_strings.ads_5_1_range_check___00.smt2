@@ -910,3 +910,4 @@ Target solver: CVC4
   (- (+ (first1 temp___1674) (+ (length (first1 temp___1674)
                                 (last1 temp___1674)) 1)) 1)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

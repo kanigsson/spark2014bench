@@ -353,3 +353,4 @@ Target solver: CVC4
                    (temp___String_Literal_211 Tuple0) 1 1))
   (not (= spark__branch true)))))))
 (check-sat)
+(exit)

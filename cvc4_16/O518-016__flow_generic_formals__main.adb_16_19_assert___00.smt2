@@ -167,3 +167,4 @@ Target solver: CVC4
   (=> (forall ((var2 Int)) (get__function_guard (get var2) var2))
   (= (get var1) var1))))))))))))))
 (check-sat)
+(exit)

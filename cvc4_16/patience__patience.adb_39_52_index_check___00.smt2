@@ -1137,3 +1137,4 @@ Target solver: CVC4
      (select (rec__patience__state__posheight s__split_fields) topstacki2)) temp___598)
   (<= 0 temp___598))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

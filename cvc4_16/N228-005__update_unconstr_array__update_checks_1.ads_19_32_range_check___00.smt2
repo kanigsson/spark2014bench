@@ -399,3 +399,4 @@ Target solver: CVC4
   (=> (= a1 (slide (to_array temp___388) (first1 temp___388) o5)) (in_range3
   i)))))))))))))))))))))))))
 (check-sat)
+(exit)

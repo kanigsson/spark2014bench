@@ -360,3 +360,4 @@ Target solver: CVC4
   (= a (temp_____aggregate_def_210 2 one one one))))))))))))))
   (=> (= b 1) (=> (<= 1 k) (=> (<= k 2) (= (to_rep (get a k one)) one)))))))))))
 (check-sat)
+(exit)

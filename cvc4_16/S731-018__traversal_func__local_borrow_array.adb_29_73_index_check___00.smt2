@@ -1232,3 +1232,4 @@ Target solver: CVC4
   (= (us_pledge_get (local_borrow_array__get_nexts__pledge o4) o4 o5) true)))
   (<= (first1 (rec__local_borrow_array__list_acc_arr_acc__pointer_value o5)) 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

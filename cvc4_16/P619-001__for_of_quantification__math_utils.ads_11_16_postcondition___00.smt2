@@ -394,3 +394,4 @@ Target solver: CVC4
   (=> (<= temp___200 (last1 v))
   (<= (to_rep (select (to_array v) temp___200)) math_utils__max__result))))))))))))))
 (check-sat)
+(exit)

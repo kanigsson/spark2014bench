@@ -932,3 +932,4 @@ Target solver: CVC4
          (us_split_fields1 bounded_strings__append__target__compl))) 1) 
   (to_rep (rec__bounded_strings__bounded_string__bound o))))))))))
 (check-sat)
+(exit)

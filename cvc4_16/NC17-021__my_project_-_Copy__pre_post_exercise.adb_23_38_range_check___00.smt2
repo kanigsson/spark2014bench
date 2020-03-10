@@ -235,3 +235,4 @@ Target solver: CVC4
   (=> (exists ((o Int)) (= (to_rep (select stack stack_pointer)) o))
   (in_range1 (- stack_pointer 1))))))))))
 (check-sat)
+(exit)

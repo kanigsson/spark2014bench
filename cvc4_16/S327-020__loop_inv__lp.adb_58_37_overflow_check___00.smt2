@@ -932,3 +932,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array powers) c23b1)) temp___307) (in_range2
   (power 2 temp___307)))))))))))))))))))))
 (check-sat)
+(exit)

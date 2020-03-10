@@ -279,3 +279,4 @@ Target solver: CVC4
   (=> (in_range o)
   (=> (in_range (* 2 o)) (in_range (- (last1 a) (first1 b))))))))))
 (check-sat)
+(exit)

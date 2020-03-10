@@ -549,3 +549,4 @@ Target solver: CVC4
   (=> (not (= (empty a) true))
   (<= (first1 (rec__simple_unc_arrays__table__v (us_split_fields1 a))) 1))))))
 (check-sat)
+(exit)

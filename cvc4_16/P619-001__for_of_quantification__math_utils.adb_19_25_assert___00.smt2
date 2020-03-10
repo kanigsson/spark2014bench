@@ -367,3 +367,4 @@ Target solver: CVC4
   (and (= (to_rep (select (to_array v) i)) o1) (= result__1 o1)))
   (= result__1 result__))))) (<= (first1 v) i)))))))))))))))
 (check-sat)
+(exit)

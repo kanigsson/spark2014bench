@@ -414,3 +414,4 @@ Target solver: CVC4
   (= o (ite (= (+ y lcp__result) (+ (last1 a) 1)) true false)))
   (=> (not (= o true)) (<= (first1 a) (+ y lcp__result)))))))))))))))))))))))
 (check-sat)
+(exit)

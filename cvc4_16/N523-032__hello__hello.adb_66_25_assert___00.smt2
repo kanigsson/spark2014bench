@@ -468,3 +468,4 @@ Target solver: CVC4
   (=> (and (<= (first1 str) idx) (<= idx (last1 str)))
   (<= (to_rep1 ret__first) idx))))))))))))))))))))
 (check-sat)
+(exit)

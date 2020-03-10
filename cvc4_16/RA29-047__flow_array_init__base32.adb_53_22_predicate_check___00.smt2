@@ -938,3 +938,4 @@ Target solver: CVC4
   (=> (= (to_rep1 b__last) o)
   (=> (= (to_rep1 b__first) o1) (dynamic_predicate1 (of_array1 b1 o1 o))))))))))))))
 (check-sat)
+(exit)

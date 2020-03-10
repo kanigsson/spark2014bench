@@ -1099,3 +1099,4 @@ Target solver: CVC4
   (<= 3 (to_rep
         (rec__indefinite_bounded__vect__vector__capacity v__split_discrs))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

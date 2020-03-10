@@ -483,3 +483,4 @@ Target solver: CVC4
   (and (<= (to_rep b__first) o18) (<= o18 (to_rep b__last)))))
   (forall ((o19 Int)) (=> (= (to_rep b__first) o19) (in_range1 (+ o19 j))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

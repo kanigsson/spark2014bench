@@ -390,3 +390,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c true false true true)
   (=> (<= c (+ c 9)) (<= 1 c)))))
 (check-sat)
+(exit)

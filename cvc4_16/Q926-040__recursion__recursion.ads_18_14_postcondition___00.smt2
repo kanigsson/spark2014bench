@@ -360,3 +360,4 @@ Target solver: CVC4
   (=> (= recursion__count_true_recursive__result count1)
   (<= recursion__count_true_recursive__result (+ (- index (first1 arr)) 1))))))))))))))))))
 (check-sat)
+(exit)

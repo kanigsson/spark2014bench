@@ -894,3 +894,4 @@ Target solver: CVC4
   (forall ((temp___332 Int))
   (=> (= (to_rep (select (to_array text) i1)) temp___332) (<= 48 temp___332)))))))))))))))))))))))))))
 (check-sat)
+(exit)

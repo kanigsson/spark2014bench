@@ -718,3 +718,4 @@ Target solver: CVC4
   (and (and (<= (first1 x) current_lo1) (<= current_lo1 current_hi))
   (<= 0 current_sum)) (in_range1 (- current_hi current_lo1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

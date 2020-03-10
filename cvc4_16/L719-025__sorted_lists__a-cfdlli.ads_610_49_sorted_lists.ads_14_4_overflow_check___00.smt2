@@ -795,3 +795,4 @@ Target solver: CVC4
      (rec__sorted_lists__my_lists__list__capacity container__split_discrs)) o)
   (in_range4 (- o count)))))))))
 (check-sat)
+(exit)

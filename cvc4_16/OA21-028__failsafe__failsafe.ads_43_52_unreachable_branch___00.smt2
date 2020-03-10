@@ -594,3 +594,4 @@ Target solver: CVC4
   (= (and (ite (bvule #x00 usf1) true false) (ite (bvule usf1 current_time)
                                              true false)) true))))))))))))))))))))))))))))
 (check-sat)
+(exit)

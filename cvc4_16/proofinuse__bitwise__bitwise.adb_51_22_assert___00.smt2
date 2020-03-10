@@ -494,3 +494,4 @@ Target solver: CVC4
   val3) (ite (< 8 16) (bvshl ((_ zero_extend 8) val4) ((_ int2bv 16) 8))
         #x0000))) ((_ int2bv 32) 16)))))))))))))
 (check-sat)
+(exit)

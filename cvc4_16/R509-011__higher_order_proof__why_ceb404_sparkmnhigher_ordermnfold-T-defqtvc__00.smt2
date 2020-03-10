@@ -1566,3 +1566,4 @@ Target solver: CVC4
   (=> (= o8 true)
   (<= (last_2 a) (last_21 test_higher_order1__my_fold_2__acc__fold__result)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -309,3 +309,4 @@ Target solver: CVC4
   (or (<= o2 o1) (and (in_range1 (abs1 b)) (in_range1 (abs1 bn2)))))))))))
   (not (= an2 (- 2147483648)))))))))))))))))))))))))))
 (check-sat)
+(exit)

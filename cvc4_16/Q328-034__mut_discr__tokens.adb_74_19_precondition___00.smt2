@@ -568,3 +568,4 @@ Target solver: CVC4
   (=> (forall ((last1 Int)) (full__function_guard (full last1) last1))
   (not (= (full last) true)))))))))))))
 (check-sat)
+(exit)

@@ -283,3 +283,4 @@ Target solver: CVC4
  ;; File "pf.ads", line 9, characters 0-0
   (not true))
 (check-sat)
+(exit)

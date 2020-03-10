@@ -186,3 +186,4 @@ Target solver: CVC4
   (=> (= spark__branch3 true)
   (fp.leq (fp #b0 #b00000000 #b00000000000000000000000) x3)))))))))))))
 (check-sat)
+(exit)

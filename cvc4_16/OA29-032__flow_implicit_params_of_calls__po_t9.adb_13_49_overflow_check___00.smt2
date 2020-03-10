@@ -206,3 +206,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__po_t9__p_intT__the_protected_int self__1)) o)
   (in_range1 (+ o 1))))))))
 (check-sat)
+(exit)

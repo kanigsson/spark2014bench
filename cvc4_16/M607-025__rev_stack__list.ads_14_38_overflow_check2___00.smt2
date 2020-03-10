@@ -1558,3 +1558,4 @@ Target solver: CVC4
   (= o4 (last (model1 o3))))
   (let ((o5 (- o4 usf))) (=> (in_range1 o5) (in_range1 (+ o5 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

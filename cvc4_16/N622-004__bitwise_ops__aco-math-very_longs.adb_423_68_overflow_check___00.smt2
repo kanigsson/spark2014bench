@@ -1190,3 +1190,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (to_array u__split_fields) temp___1602)) o1)
   (in_range2 (+ j n))))))))))))))))))))
 (check-sat)
+(exit)

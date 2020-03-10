@@ -58,3 +58,4 @@ Target solver: CVC4
  ;; File "main.adb", line 4, characters 0-0
   (not (forall ((x Bool)) (= x true))))
 (check-sat)
+(exit)

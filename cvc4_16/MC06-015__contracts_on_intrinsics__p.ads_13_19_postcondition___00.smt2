@@ -322,3 +322,4 @@ Target solver: CVC4
                  #x00000000)))))
   (forall ((a2 (_ BitVec 32))) (=> (= a2 o) (= a2 (bvudiv a1 #x00020000)))))))))))
 (check-sat)
+(exit)

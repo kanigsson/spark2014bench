@@ -154,3 +154,4 @@ Target solver: CVC4
   (let ((o (abs1 x))) (and (in_range2 o) (= x1 o))) (= x1 x)))))))
   (type_invariant x1)))))))
 (check-sat)
+(exit)

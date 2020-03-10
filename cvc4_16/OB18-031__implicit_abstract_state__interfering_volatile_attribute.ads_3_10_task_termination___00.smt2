@@ -66,3 +66,4 @@ Target solver: CVC4
  ;; File "interfering_volatile_attribute.ads", line 3, characters 0-0
   (not true))
 (check-sat)
+(exit)

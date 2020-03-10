@@ -390,3 +390,4 @@ Target solver: CVC4
   (= (and (ite (<= 0 index) true false) (ite (<= index 100000) true false)) true)
   (<= 2 value))))))))
 (check-sat)
+(exit)

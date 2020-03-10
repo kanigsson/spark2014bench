@@ -415,3 +415,4 @@ Target solver: CVC4
   (=> (<= x 1)
   (let ((o (+ y 5))) (=> (in_range1 o) (=> (<= x (- o 1)) (<= 1 x))))))))))))
 (check-sat)
+(exit)

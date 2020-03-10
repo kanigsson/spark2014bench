@@ -396,3 +396,4 @@ Target solver: CVC4
   (< (+ (length s1) (length s2)) 1)) (dynamic_predicate1
   (of_array (to_array temp___501) (first1 temp___501) (last1 temp___501))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1021,3 +1021,4 @@ Target solver: CVC4
            (us_split_fields3 (rec__test_route__route_acc__pointer_value o))))) 1))))
   (=> (< n o1) (=> (< 0 s) (in_range1 (- 2147483647 s)))))))))))))
 (check-sat)
+(exit)

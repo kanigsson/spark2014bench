@@ -612,3 +612,4 @@ Target solver: CVC4
   (forall ((o5 Int))
   (=> (= (to_rep (select (to_array s) usf)) o5) (in_range1 (- usf 1))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

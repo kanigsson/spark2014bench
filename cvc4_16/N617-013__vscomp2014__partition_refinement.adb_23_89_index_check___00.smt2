@@ -1137,3 +1137,4 @@ Target solver: CVC4
   (forall ((o14 Int))
   (=> (= (to_rep3 (select temp___loop_entry_692 usf)) o14) (<= usf 5))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

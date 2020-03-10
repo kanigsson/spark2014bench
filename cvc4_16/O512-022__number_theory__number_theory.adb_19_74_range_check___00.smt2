@@ -381,3 +381,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 2 i) true false) (ite (<= i n) true false)) true)
   (in_range4 (- i 2)))))))))))))))
 (check-sat)
+(exit)

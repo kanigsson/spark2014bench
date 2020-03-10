@@ -92,3 +92,4 @@ Target solver: CVC4
  ;; File "type_invariant_legal_5.adb", line 87, characters 0-0
   (not true))
 (check-sat)
+(exit)

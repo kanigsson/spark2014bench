@@ -334,3 +334,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 (us_repqtmk x__split_fields) false false true true)
   (=> (dynamic_invariant y true false true true) (in_range1 y))))))))))
 (check-sat)
+(exit)

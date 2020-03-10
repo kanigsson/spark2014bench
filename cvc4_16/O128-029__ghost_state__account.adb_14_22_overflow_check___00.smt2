@@ -103,3 +103,4 @@ Target solver: CVC4
   (=> (dynamic_invariant incr true false true true) (in_range
   (+ total incr))))))))
 (check-sat)
+(exit)

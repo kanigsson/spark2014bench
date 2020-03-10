@@ -912,3 +912,4 @@ Target solver: CVC4
   (=> (fp.leq speed1 (high_bound (+ n 1)))
   (= (invariant__ (+ n 1) speed1) true))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

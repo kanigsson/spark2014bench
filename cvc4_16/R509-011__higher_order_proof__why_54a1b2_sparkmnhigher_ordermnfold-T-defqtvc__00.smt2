@@ -1415,3 +1415,4 @@ Target solver: CVC4
                                                  true false)) true)
   (<= usf1 (last_2 a)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

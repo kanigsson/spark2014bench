@@ -239,3 +239,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 k true false true true)
   (=> (<= 1 j) (=> (<= j 10) (=> (<= 1 k) (=> (<= k 10) (<= 1 j)))))))))
 (check-sat)
+(exit)

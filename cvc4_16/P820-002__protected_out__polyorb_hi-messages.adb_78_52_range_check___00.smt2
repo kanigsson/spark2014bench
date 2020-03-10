@@ -1165,3 +1165,4 @@ Target solver: CVC4
   (=> (= ada___polyorb_hi__messages__encapsulate__p__assume p)
   (=> (dynamic_invariant2 p true false true true) (in_range (- l 1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

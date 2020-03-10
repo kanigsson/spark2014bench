@@ -519,3 +519,4 @@ Target solver: CVC4
   (=> (= (bool_eq1 my_b 1 4 my_a 1 4) true)
   (not (= (bool_eq my_s2 1 3 glob 1 3) true))))))))))))
 (check-sat)
+(exit)

@@ -224,3 +224,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__records_prooffuncs__pair__b (us_split_fields1 a))) o1)
   (in_range1 (+ o1 o)))))))))
 (check-sat)
+(exit)

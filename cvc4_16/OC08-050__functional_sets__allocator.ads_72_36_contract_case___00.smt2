@@ -670,3 +670,4 @@ Target solver: CVC4
      (rec__allocator__m__t__available (us_split_fields1 (model1 data))) 
      res (rec__allocator__m__t__available (us_split_fields1 (model1 data1)))) true)))))))))))))))))
 (check-sat)
+(exit)

@@ -203,3 +203,4 @@ Target solver: CVC4
   (=> (= (fp.eq x (fp #b0 #b00000000 #b00000000000000000000000)) true)
   (= i1 0)))))))))))))))))
 (check-sat)
+(exit)

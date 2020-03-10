@@ -676,3 +676,4 @@ Target solver: CVC4
   (us_repqtmk (us_split_discrsqtmk o2__split_discrs) o2__split_fields) false)
   (= storage_place_attributes__r2__d3__first__bit1 storage_place_attributes__r2__d3__first__bit)))))))))))))))))))))
 (check-sat)
+(exit)

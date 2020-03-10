@@ -621,3 +621,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__stacks__stack__top (us_split_fields1 s))) temp___290)
   (<= (first1 (rec__stacks__stack__data (us_split_fields1 s))) temp___290))))))))
 (check-sat)
+(exit)

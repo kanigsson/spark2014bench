@@ -420,3 +420,4 @@ Target solver: CVC4
   (=> (has_element__function_guard (has_element table cursor) table cursor)
   (=> (= (has_element table cursor) true) (in_range3 cursor))))))
 (check-sat)
+(exit)

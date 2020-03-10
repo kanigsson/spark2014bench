@@ -655,3 +655,4 @@ Target solver: CVC4
   result__1 false true true true)) (dynamic_invariant1
   (us_repqtmk tmp__split_fields1) false true true true)) (in_range2 from1))))))))))))))))))
 (check-sat)
+(exit)

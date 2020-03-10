@@ -644,3 +644,4 @@ Target solver: CVC4
   (ite (bvule (bvsub #x32 current_time) #x01) (= o (bvsub temp___261 #x32))
   (= o temp___261))) (= usf o))))))))))))))))))
 (check-sat)
+(exit)

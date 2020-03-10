@@ -495,3 +495,4 @@ Target solver: CVC4
   (=> (= (to_rep b__first) temp___289)
   (=> (<= temp___289 r8b) (<= (to_rep b__first) temp___289)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

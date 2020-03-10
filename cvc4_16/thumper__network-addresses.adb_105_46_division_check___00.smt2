@@ -889,3 +889,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select address i1)) o1)
   (forall ((value2 (_ BitVec 8))) (=> (= value2 o1) (not (= #x64 #x00)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

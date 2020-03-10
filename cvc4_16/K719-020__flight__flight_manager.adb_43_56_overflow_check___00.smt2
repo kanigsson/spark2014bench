@@ -454,3 +454,4 @@ Target solver: CVC4
   (= result____split_fields3 result____split_fields2))) (in_range1
   (- position_y target_y)))))))))))))))))))
 (check-sat)
+(exit)

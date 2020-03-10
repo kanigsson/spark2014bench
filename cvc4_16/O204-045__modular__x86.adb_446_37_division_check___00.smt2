@@ -468,3 +468,4 @@ Target solver: CVC4
   (=> (dynamic_invariant val__ true false true true)
   (not (= #x0000000000000100 #x0000000000000000))))))
 (check-sat)
+(exit)

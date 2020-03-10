@@ -1292,3 +1292,4 @@ Target solver: CVC4
   (us_repqtmk r_pu2__split_discrs r_pu2__split_fields r_pu2__attr__tag) false
   false true true) (in_range1 0)))))))))
 (check-sat)
+(exit)

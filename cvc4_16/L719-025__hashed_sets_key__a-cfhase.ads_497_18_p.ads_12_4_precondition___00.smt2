@@ -1267,3 +1267,4 @@ Target solver: CVC4
  ;; File "a-cfhase.ads", line 474, characters 0-0
   (not true))
 (check-sat)
+(exit)

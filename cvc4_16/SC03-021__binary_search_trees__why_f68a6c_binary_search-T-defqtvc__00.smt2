@@ -835,3 +835,4 @@ Target solver: CVC4
   (=> (= binary_search__all_v__result s1)
   (<= (length binary_search__all_v__result) (size t)))))))))
 (check-sat)
+(exit)

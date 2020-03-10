@@ -504,3 +504,4 @@ Target solver: CVC4
   (=> (= spark__branch o)
   (=> (not (= spark__branch true)) (in_range (+ cur_position 1)))))))))))))))))
 (check-sat)
+(exit)

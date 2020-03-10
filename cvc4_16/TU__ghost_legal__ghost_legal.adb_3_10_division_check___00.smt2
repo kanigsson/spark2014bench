@@ -221,3 +221,4 @@ Target solver: CVC4
  ;; File "ghost_legal.ads", line 4, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (not (= 2 0)))))
 (check-sat)
+(exit)

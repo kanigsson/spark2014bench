@@ -542,3 +542,4 @@ Target solver: CVC4
   (=> (and (<= 1 g1) (<= g1 64))
   (= (to_rep (select o (to_rep1 (select temp___688 g1)))) g1))))) (<= 1 usf))))))))))))))
 (check-sat)
+(exit)

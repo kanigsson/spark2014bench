@@ -355,3 +355,4 @@ Target solver: CVC4
                                                                  (select 
                                                                  a 1))))))
 (check-sat)
+(exit)

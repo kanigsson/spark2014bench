@@ -2534,3 +2534,4 @@ Target solver: CVC4
                     (ite (bvult level_nbr #x0000000A) true false) false)))
   (=> (= cur_state1 3) (= (get_state cur_state1) 3)))))))))))))))))))))))
 (check-sat)
+(exit)

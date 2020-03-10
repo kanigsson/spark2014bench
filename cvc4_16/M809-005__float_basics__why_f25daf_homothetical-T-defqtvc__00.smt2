@@ -495,3 +495,4 @@ Target solver: CVC4
   (forall ((o5 Float32))
   (=> (= (to_rep (select upsilon1 i)) o5) (fp.isFinite32 (fp.mul RNE o5 o4))))))))))))))))))))))))
 (check-sat)
+(exit)

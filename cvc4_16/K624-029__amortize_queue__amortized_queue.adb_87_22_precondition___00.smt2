@@ -922,3 +922,4 @@ Target solver: CVC4
                                                         (rec__amortized_queue__queue__front
                                                         (us_split_fields3 q)))) 1000)))))))))))))))
 (check-sat)
+(exit)

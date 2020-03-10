@@ -603,3 +603,4 @@ Target solver: CVC4
   (=> (and (<= index_21 index_32) (<= index_32 100000))
   (= (mod2 index_32 index_21) 0)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -777,3 +777,4 @@ Target solver: CVC4
   (and (= result__2 result__1) (= v2 v1)))))
   (=> (not (= shift_amount1 1)) (not (= 2 0)))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1721,3 +1721,4 @@ Target solver: CVC4
   (=> (= last5 ada___ada__text_io__get_line__2__last)
   (=> (= last5 3) (=> (<= 1 3) (<= 1 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

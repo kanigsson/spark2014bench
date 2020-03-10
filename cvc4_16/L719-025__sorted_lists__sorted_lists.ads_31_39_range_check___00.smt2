@@ -1313,3 +1313,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 (get o9 usf1) true false true true)
   (let ((o10 (+ usf1 1))) (=> (in_range8 o10) (in_range4 o10)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

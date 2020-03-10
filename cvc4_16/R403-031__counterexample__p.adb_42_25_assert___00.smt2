@@ -332,3 +332,4 @@ Target solver: CVC4
   (=> (= res1 (bvmul res_g1 (pow21 (bvadd m2 #x0001))))
   (=> (= b2 (bvor res1 bits2)) (= b2 (bvadd res1 bits2))))))))))))))))))))))
 (check-sat)
+(exit)

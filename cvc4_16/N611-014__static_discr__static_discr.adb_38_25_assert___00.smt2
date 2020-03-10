@@ -1325,3 +1325,4 @@ Target solver: CVC4
   true) (dynamic_invariant result__2 true true true true)))
   (= (to_rep (rec__static_discr__holder__unused current__split_discrs)) 100))))))))))))))))))))))))
 (check-sat)
+(exit)

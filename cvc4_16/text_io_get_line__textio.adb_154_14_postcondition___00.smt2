@@ -1289,3 +1289,4 @@ Target solver: CVC4
   (= (to_rep (select result__1 idx)) (to_rep
                                      (select the_file1 (+ (- idx 1) cur_position_at_start))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

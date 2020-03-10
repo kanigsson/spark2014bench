@@ -238,3 +238,4 @@ Target solver: CVC4
   (=> (= (rec__binary_search__int_option__present (us_split_discrs1 v)) true)
   (binary_search__int_option__value__pred v)))))
 (check-sat)
+(exit)

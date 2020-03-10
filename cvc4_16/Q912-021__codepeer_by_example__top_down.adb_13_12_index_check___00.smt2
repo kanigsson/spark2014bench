@@ -219,3 +219,4 @@ Target solver: CVC4
   (and (ident__function_guard temp___171 3 a) (dynamic_invariant temp___171
   true false true true)) (<= 1 temp___171))))))))
 (check-sat)
+(exit)

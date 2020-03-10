@@ -502,3 +502,4 @@ Target solver: CVC4
   (=> (<= (first1 temp___214) (last1 temp___214))
   (<= (first1 x__split_fields) (last1 x__split_fields)))))))))))))))
 (check-sat)
+(exit)

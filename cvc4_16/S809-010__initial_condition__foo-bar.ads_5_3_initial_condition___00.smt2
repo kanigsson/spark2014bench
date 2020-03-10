@@ -72,3 +72,4 @@ Target solver: CVC4
   (=> (foobar__function_guard (foobar Tuple0) Tuple0)
   (= (foobar Tuple0) true))))))
 (check-sat)
+(exit)

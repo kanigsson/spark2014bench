@@ -541,3 +541,4 @@ Target solver: CVC4
   (=> (= (to_rep1 b__last) o2)
   (forall ((o3 Int)) (=> (= (to_rep1 b__first) o3) (< 0 (length r))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

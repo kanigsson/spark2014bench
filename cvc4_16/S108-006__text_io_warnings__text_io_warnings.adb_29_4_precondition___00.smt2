@@ -1328,3 +1328,4 @@ Target solver: CVC4
      current_err4 file_system4 current_in4 current_out4) 0)))
   (= (is_open source2) true))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -391,3 +391,4 @@ Target solver: CVC4
   (=> (= x__split_fields rliteral)
   (not (= x__split_discrs (us_split_discrsqtmk (distinct 1 0))))))))
 (check-sat)
+(exit)

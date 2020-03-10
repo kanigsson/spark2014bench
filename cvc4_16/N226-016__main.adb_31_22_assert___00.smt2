@@ -200,3 +200,4 @@ Target solver: CVC4
   (=> (dynamic_invariant id true false true true)
   (=> (<= 0 id1) (=> (<= id1 1) (not (= (to_rep (select map1 id1)) id1)))))))))
 (check-sat)
+(exit)

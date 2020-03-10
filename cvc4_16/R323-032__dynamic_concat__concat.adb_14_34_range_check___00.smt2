@@ -619,3 +619,4 @@ Target solver: CVC4
   (and (= (to_rep1 b__first) d) (= (to_rep1 b__last) 8)))
   (=> (<= 5 8) (<= (to_rep1 b__first) 5)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

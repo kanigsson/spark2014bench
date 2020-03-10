@@ -888,3 +888,4 @@ Target solver: CVC4
   (select (to_array1
           test_higher_order3__my_count__count_left__acc__fold__result) (- i 1))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1363,3 +1363,4 @@ Target solver: CVC4
   (=> (<= first_idx current_idx)
   (let ((o (- current_idx first_idx))) (=> (in_range1 o) (in_range2 o))))))))))))))))
 (check-sat)
+(exit)

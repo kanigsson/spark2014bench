@@ -471,3 +471,4 @@ Target solver: CVC4
   (=> (= (to_rep1 ret__last) o)
   (forall ((o1 Int)) (=> (= (to_rep1 ret__first) o1) (<= idx (last1 str))))))))))))))))))))))))))
 (check-sat)
+(exit)

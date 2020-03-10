@@ -625,3 +625,4 @@ Target solver: CVC4
                                       (to_rep1 (select (to_array left) pos))
                                       (to_rep1 (select (to_array right) pos))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

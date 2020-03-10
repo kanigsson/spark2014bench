@@ -239,3 +239,4 @@ Target solver: CVC4
   (=> (= loopframe__get__result v1)
   (=> (not (= loopframe__get__result 0)) (<= 1 loopframe__get__result)))))))))
 (check-sat)
+(exit)

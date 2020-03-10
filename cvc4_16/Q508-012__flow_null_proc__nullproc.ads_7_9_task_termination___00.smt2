@@ -56,3 +56,4 @@ Target solver: CVC4
  ;; File "nullproc.ads", line 7, characters 0-0
   (not false))
 (check-sat)
+(exit)

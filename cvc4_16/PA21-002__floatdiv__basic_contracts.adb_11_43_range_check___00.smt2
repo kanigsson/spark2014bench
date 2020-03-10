@@ -261,3 +261,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 num true false true true) (in_range2
   ((_ to_fp 8 24) RNE (to_real denominator)))))))))))))
 (check-sat)
+(exit)

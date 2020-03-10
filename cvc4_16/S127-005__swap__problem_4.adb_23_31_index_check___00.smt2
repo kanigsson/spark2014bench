@@ -314,3 +314,4 @@ Target solver: CVC4
   (and (count__function_guard o2 o1 o) (dynamic_invariant1 o2 true false true
   true)) (<= (first1 left) usf)))))))))))))))
 (check-sat)
+(exit)

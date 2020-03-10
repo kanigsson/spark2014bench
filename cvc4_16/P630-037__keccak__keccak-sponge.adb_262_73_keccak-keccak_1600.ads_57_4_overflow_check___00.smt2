@@ -1779,3 +1779,4 @@ Target solver: CVC4
         ctx__split_fields1)))
   (< o9 1600)))) (in_range1 (+ bit_length suffix_len))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

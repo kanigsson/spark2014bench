@@ -1880,3 +1880,4 @@ Target solver: CVC4
   (let ((o6 (- (- o5) 1))) (and (in_range1 o6) (= y1 o6))))))
   (=> (= (to_rep o4) y1) (=> (<= 5 8) (<= 1 5)))))))))))))))))))))
 (check-sat)
+(exit)

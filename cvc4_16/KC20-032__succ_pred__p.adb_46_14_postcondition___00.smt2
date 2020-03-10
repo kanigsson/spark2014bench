@@ -184,3 +184,4 @@ Target solver: CVC4
   (=> (= p__ident__5__result (prev_representable (next_representable f)))
   (fp.eq p__ident__5__result f)))))))
 (check-sat)
+(exit)

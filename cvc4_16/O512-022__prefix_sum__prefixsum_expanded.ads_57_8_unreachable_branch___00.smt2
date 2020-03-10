@@ -713,3 +713,4 @@ Target solver: CVC4
   (to_rep (select saved_a 5))) (to_rep (select saved_a 7)))))
   (forall ((o1 Int)) (=> (= (to_rep (select a2 0)) o1) (not (= o1 0))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -487,3 +487,4 @@ Target solver: CVC4
   (=> (= (to_rep1 s1__first) o7) (in_range1
   (- (+ o7 (+ (length o6 o5) (length o4 o3))) 1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -841,3 +841,4 @@ Target solver: CVC4
      (us_repqtmk o (us_split_fieldsqtmk container__split_fields))) 1) true))
   (<= 1 position2)))))))))))))))
 (check-sat)
+(exit)

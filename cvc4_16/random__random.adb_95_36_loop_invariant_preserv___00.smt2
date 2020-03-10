@@ -999,3 +999,4 @@ Target solver: CVC4
   (exists ((o11 unsigned_32)) (and (= (to_rep1 o11) o10) (= i4 1)))))
   (let ((o10 (+ i3 1))) (and (in_range4 o10) (= i4 o10)))))) (< 0 i4))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1606,3 +1606,4 @@ Target solver: CVC4
   (= o7 (bvshl suffix ((_ int2bv 8) (mod2 bit_length 8)))) (= o7 #x00))
   (not (= 8 0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

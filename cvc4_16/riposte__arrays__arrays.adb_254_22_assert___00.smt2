@@ -254,3 +254,4 @@ Target solver: CVC4
   (=> (random_array__function_guard (random_array 5) 5)
   (= (bool_eq a 1 1000 (random_array 5) 1 1000) true))))))
 (check-sat)
+(exit)

@@ -543,3 +543,4 @@ Target solver: CVC4
   (=> (perm__function_guard (perm o15 o12 o9 o8) o15 o12 o9 o8)
   (=> (not (< i2 length2)) (<= i2 length2))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

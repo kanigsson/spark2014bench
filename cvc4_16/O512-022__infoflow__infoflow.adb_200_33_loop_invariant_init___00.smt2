@@ -411,3 +411,4 @@ Target solver: CVC4
   (=> (and (<= (to_rep a_v2__first) m) (<= m (- i_v2 1)))
   (= (to_rep (select a_v2 m)) (to_rep (select (to_array b_v2) m))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

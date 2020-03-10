@@ -1181,3 +1181,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__patience__state__numstacks s__split_fields3)) o7)
   (in_range2 (+ o7 1)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

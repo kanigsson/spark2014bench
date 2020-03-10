@@ -510,3 +510,4 @@ Target solver: CVC4
   (=> (in_range1 (+ length11 length2))
   (forall ((o Int)) (=> (= (to_rep b__first) o) (in_range2 o))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

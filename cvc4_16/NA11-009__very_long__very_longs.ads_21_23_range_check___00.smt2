@@ -1007,3 +1007,4 @@ Target solver: CVC4
   (= (to_rep2 (rec__very_longs__very_long__length result____split_discrs)) o)
   (=> (in_range6 (* 2 o)) (in_range6 (length number)))))))))
 (check-sat)
+(exit)

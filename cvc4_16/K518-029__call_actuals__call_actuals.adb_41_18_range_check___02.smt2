@@ -281,3 +281,4 @@ Target solver: CVC4
   (=> (= (to_rep o6) call_actuals__fs__x)
   (=> (exists ((o7 Int)) (= (to_rep o6) o7)) (in_range2 call_actuals__fs__y)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -339,3 +339,4 @@ Target solver: CVC4
      (rec__simple_oo_without_contracts__t__x1 (us_split_fields3 par1))) o)
   (in_range (+ g3 o)))))))))))
 (check-sat)
+(exit)

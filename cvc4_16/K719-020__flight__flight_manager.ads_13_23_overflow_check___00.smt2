@@ -493,3 +493,4 @@ Target solver: CVC4
      flight_manager__set_engine_speed__result)) o3)
   (in_range1 (+ position_y o3))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

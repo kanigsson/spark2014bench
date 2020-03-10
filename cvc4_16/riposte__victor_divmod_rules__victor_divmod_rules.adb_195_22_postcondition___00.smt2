@@ -262,3 +262,4 @@ Target solver: CVC4
   (=> (<= 0 x)
   (=> (< y 0) (=> (not (= (mod1 x y) 0)) (= (mod2 x y) (+ (mod1 x y) y)))))))))
 (check-sat)
+(exit)

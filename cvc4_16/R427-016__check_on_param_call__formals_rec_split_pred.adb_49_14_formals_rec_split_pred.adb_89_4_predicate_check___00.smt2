@@ -1151,3 +1151,4 @@ Target solver: CVC4
      (rec__formals_rec_split_pred__rec__h (us_split_fields1 temp___250))) o3)
   (dynamic_predicate1 (us_repqtmk x__split_discrs x__split_fields8)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -120,3 +120,4 @@ Target solver: CVC4
   (=> (forall ((usf1 Int)) (bar__function_guard (bar usf1) usf1))
   (= (bar usf) true))))))))
 (check-sat)
+(exit)

@@ -246,3 +246,4 @@ Target solver: CVC4
      (+ (to_rep (rec__records_prooffuncs__pair__b (us_split_fields1 a))) 
      (to_rep (rec__records_prooffuncs__pair__b (us_split_fields1 b)))))))) true))))))))))))))))))))))
 (check-sat)
+(exit)

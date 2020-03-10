@@ -366,3 +366,4 @@ Target solver: CVC4
                                                                   (select a1 
                                                                   j)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

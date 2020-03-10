@@ -106,3 +106,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (and (= y1 0) (= z1 0))
   (and (= z1 z) (= y1 y))))) (=> (= y2 0) (in_range (+ z1 y2)))))))))
 (check-sat)
+(exit)

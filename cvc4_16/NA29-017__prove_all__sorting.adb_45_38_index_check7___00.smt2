@@ -387,3 +387,4 @@ Target solver: CVC4
                                             false)) true))
   (<= (to_rep b__first) usf))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

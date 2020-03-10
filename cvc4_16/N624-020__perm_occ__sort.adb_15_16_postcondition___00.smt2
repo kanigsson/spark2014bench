@@ -720,3 +720,4 @@ Target solver: CVC4
      (of_array values1 (to_rep1 values__first) (to_rep1 values__last))
      (of_array values3 (to_rep1 values__first) (to_rep1 values__last))) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

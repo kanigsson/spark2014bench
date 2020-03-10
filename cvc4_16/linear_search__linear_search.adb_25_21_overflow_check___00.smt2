@@ -538,3 +538,4 @@ Target solver: CVC4
   (=> (in_range4 pos1)
   (forall ((temp___216 Int)) (=> (= temp___216 pos1) (in_range4 (+ pos1 1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -603,3 +603,4 @@ Target solver: CVC4
   (rec__traversals__list1__n
   (us_split_fields1 (rec__traversals__list1_acc__pointer_value l))))))))
 (check-sat)
+(exit)

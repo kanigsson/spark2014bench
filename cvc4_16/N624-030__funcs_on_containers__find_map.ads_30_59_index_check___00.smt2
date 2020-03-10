@@ -2090,3 +2090,4 @@ Target solver: CVC4
                                                          true false))))))))
   (= o1 false))))))) (=> (= o1 true) (<= (first1 a) usf)))))))))))))))))))))))
 (check-sat)
+(exit)

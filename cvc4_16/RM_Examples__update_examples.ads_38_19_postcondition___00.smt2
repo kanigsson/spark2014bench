@@ -305,3 +305,4 @@ Target solver: CVC4
                                                            temp___index_320
                                                            temp___index_321)))))))))))))))))
 (check-sat)
+(exit)

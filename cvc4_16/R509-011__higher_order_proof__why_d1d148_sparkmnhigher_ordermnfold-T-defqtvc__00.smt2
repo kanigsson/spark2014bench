@@ -1045,3 +1045,4 @@ Target solver: CVC4
                                                         (last1 a2)) 0)) k)) 
   (value (to_rep (select (to_array a2) i)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

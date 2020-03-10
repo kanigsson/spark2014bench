@@ -153,3 +153,4 @@ Target solver: CVC4
   (fp.eq (fp.roundToIntegral RTN x) (fp #b0 #b10000010 #b10000000000000000000000))
   (fp.eq (fp.roundToIntegral RTP x) (fp #b0 #b10000010 #b10000000000000000000000)))))))))))))))
 (check-sat)
+(exit)

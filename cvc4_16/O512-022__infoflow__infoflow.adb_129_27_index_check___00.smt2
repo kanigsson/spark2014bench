@@ -547,3 +547,4 @@ Target solver: CVC4
                       true false)) true)
   (<= (to_rep h_v2__first) q_v21))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -286,3 +286,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array table) index1)) o1)
   (=> (= o1 value1) (<= (first1 table) index2))))))))))))))))))))
 (check-sat)
+(exit)

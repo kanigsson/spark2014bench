@@ -240,3 +240,4 @@ Target solver: CVC4
   (=> (= (to_rep (select a i1)) o)
   (forall ((item2 Int)) (=> (= item2 o) (in_range1 (+ total1 item2))))))))))))))))))))))))))))
 (check-sat)
+(exit)

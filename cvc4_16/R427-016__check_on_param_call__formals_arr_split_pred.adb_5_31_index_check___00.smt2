@@ -319,3 +319,4 @@ Target solver: CVC4
   (not
   (=> (dynamic_invariant i7b true false false true) (<= (first1 i7b) 3))))
 (check-sat)
+(exit)

@@ -610,3 +610,4 @@ Target solver: CVC4
   (=> (dynamic_invariant first true false true true)
   (=> (= (to_rep1 a__last) o3) (in_range2 o3))))))))))))))
 (check-sat)
+(exit)

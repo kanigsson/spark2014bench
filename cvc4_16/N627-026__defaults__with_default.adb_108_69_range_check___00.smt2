@@ -431,3 +431,4 @@ Target solver: CVC4
   (=> (with_default__bad_record3__rec_with_bad_discr__f2__pred usf)
   (dynamic_property first 2147483647 0)))))))
 (check-sat)
+(exit)

@@ -1031,3 +1031,4 @@ Target solver: CVC4
   (=> (= (to_rep (select hex (bv2nat (bvudiv o1 #x10)))) temp___349)
   (in_range1 (- (+ 1 (+ 1 1)) 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

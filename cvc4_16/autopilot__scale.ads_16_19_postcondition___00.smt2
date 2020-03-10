@@ -432,3 +432,4 @@ Target solver: CVC4
   (=> (= scale__scale_movement__result target_angle1)
   (<= (- max) scale__scale_movement__result)))))))))))))))
 (check-sat)
+(exit)

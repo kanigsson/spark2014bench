@@ -598,3 +598,4 @@ Target solver: CVC4
   (= o3 (ite (= (mod2 usf index_21) 0) false true)) (= o3 (distinct 1 0)))))
   (<= 0 usf)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

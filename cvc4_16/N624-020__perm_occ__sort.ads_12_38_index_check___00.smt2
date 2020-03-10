@@ -780,3 +780,4 @@ Target solver: CVC4
   (let ((o12 (+ usf 1)))
   (=> (in_range1 o12) (<= (to_rep1 values__first) o12)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

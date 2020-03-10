@@ -583,3 +583,4 @@ Target solver: CVC4
   (=> (in_range1 o7)
   (let ((o8 (length haystack))) (=> (in_range1 o8) (in_range1 (- o8 o7))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

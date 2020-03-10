@@ -179,3 +179,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 index1) (<= index1 10)) true false)) true)
   (and (= t3 index1) (= index1 1))))) (= t3 t2)))) (= t3 1))))))))))
 (check-sat)
+(exit)

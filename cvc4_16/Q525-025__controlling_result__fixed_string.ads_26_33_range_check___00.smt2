@@ -657,3 +657,4 @@ Target solver: CVC4
   (= o4 (to_rep (rec__fixed_string__object__width (us_split_fields1 o3))))))
   (in_range (length fixed_string__null_string__result)))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -236,3 +236,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c3b true false true true)
   (=> (= (to_rep (select memory c3b)) o) (in_range1 (+ o 0)))))))))))))
 (check-sat)
+(exit)

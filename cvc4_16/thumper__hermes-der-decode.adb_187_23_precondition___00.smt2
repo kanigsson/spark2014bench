@@ -650,3 +650,4 @@ Target solver: CVC4
   (=> (= stop1 o8)
   (let ((o9 (+ start 1))) (=> (in_range1 o9) (< (first1 message) o9)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

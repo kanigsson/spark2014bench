@@ -327,3 +327,4 @@ Target solver: CVC4
   (=> (= tv 22)
   (=> (dynamic_invariant2 tv true false true true global) (= (mod2 22 2) 0)))))))))))))
 (check-sat)
+(exit)

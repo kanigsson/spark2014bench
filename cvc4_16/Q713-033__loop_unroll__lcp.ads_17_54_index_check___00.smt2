@@ -890,3 +890,4 @@ Target solver: CVC4
   (=> (not (= o true))
   (let ((o1 (+ y lcp__result))) (=> (in_range1 o1) (<= (first1 a) o1))))))))))))))))))))))))
 (check-sat)
+(exit)

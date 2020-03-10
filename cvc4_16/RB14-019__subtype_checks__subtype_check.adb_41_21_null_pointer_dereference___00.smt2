@@ -959,3 +959,4 @@ Target solver: CVC4
   false true true) (rec__subtype_check__nat_array_access__pointer_value__pred
   (us_repqtmk1 x__is_null_pointer x__pointer_address x__pointer_value))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

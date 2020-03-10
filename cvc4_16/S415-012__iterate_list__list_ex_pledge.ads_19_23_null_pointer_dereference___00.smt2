@@ -470,3 +470,4 @@ Target solver: CVC4
   (=> (<= n (length l))
   (=> (= n 1) (rec__list_ex_pledge__list__pointer_value__pred l)))))))
 (check-sat)
+(exit)

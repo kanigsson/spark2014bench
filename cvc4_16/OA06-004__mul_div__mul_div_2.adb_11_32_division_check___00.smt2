@@ -373,3 +373,4 @@ Target solver: CVC4
   (=> (= (div1 v 4294967296) v_hi)
   (=> (dynamic_invariant2 v_hi true false true true) (not (= 4294967296 0))))))))))
 (check-sat)
+(exit)

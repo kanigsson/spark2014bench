@@ -470,3 +470,4 @@ Target solver: CVC4
   (=> (bvule #x0000000000000000 last)
   (bvuge #x0000000000000000 #x0000000000000000)))))
 (check-sat)
+(exit)

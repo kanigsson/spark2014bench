@@ -220,3 +220,4 @@ Target solver: CVC4
   (=> (and (in_range item) (= (contains left item) true))
   (not (= (contains right item) true)))))))))
 (check-sat)
+(exit)

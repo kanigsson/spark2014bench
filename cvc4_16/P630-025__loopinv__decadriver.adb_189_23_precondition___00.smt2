@@ -567,3 +567,4 @@ Target solver: CVC4
   (=> (< offset 1024)
   (=> (<= (+ (length data) offset) 1024) (< 0 (length data)))))))))
 (check-sat)
+(exit)

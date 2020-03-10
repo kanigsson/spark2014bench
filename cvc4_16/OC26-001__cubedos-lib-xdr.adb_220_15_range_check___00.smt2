@@ -818,3 +818,4 @@ Target solver: CVC4
   (forall ((value7 (_ BitVec 64)))
   (=> (= value7 temporary_214) (in_range2 (+ position 7))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

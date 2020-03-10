@@ -552,3 +552,4 @@ Target solver: CVC4
   (my_sm (get_state state3) trigger) (get_state state3) trigger))
   (= (get_state state2) (my_sm (get_state state1) trigger))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

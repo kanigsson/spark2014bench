@@ -582,3 +582,4 @@ Target solver: CVC4
   (=> (< o18 length2)
   (let ((o19 (* usf l2))) (=> (in_range1 o19) (in_range1 (- length2 o19))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

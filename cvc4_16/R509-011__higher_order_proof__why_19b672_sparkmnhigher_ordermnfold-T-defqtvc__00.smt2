@@ -1482,3 +1482,4 @@ Target solver: CVC4
   (forall ((j2 Int))
   (=> (= j2 (+ j1 1)) (dynamic_property1 first1 last1 j2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -565,3 +565,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 drop true false true true)
   (=> (= drop 2) (in_range1 (length from)))))))))
 (check-sat)
+(exit)

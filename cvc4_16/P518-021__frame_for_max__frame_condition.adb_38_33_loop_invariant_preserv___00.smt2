@@ -634,3 +634,4 @@ Target solver: CVC4
   (forall ((o11 Int))
   (=> (= (to_rep1 a__first) o11) (<= (to_rep1 a__first) k5)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

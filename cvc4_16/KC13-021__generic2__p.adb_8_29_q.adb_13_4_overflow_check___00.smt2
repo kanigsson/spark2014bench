@@ -382,3 +382,4 @@ Target solver: CVC4
   (and (qf1__function_guard o 3) (dynamic_invariant o true false true true))
   (let ((o1 (+ tmp1 o))) (=> (in_range o1) (in_range (+ o1 3)))))))))))))
 (check-sat)
+(exit)

@@ -1361,3 +1361,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__patience__state__numelts s__split_fields4)) o6)
   (<= 0 usf))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

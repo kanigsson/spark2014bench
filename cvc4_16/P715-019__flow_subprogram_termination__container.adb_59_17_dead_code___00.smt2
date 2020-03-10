@@ -718,3 +718,4 @@ Target solver: CVC4
   (let ((o (+ x2 1))) (and (in_range4 o) (= x1 o))) (= x1 x2))))
   (not (< 0 x1)))))) (and (= x1 x) (= b1 b))))))))))))))))))
 (check-sat)
+(exit)

@@ -1158,3 +1158,4 @@ Target solver: CVC4
        true false))
   (= o false)))) (=> (= o true) (=> (< (first_2 a1) l) (in_range7 (- l 1)))))))))))))))))))))
 (check-sat)
+(exit)

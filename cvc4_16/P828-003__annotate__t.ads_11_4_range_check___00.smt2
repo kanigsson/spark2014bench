@@ -631,3 +631,4 @@ Target solver: CVC4
  ;; File "t.ads", line 1, characters 0-0
   (not (=> (<= 0 (div1 value__size 8)) (<= (- 2147483648) 0))))
 (check-sat)
+(exit)

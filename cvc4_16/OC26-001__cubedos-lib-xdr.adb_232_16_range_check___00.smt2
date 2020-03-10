@@ -706,3 +706,4 @@ Target solver: CVC4
   (=> (in_range1 o2)
   (=> (<= position (- (+ position o2) 1)) (<= (first1 data) position)))))))))))))))))))
 (check-sat)
+(exit)

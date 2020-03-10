@@ -317,3 +317,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 low) true false) (ite (<= low 99) true false)) true)
   (<= 1 low)))))))
 (check-sat)
+(exit)

@@ -684,3 +684,4 @@ Target solver: CVC4
   (=> (= spark__branch3 fastadvance)
   (=> (= spark__branch3 true) (not (= 86400 0))))))))))))))))))))))))))))
 (check-sat)
+(exit)

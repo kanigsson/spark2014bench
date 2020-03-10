@@ -643,3 +643,4 @@ Target solver: CVC4
      (us_close (us_repqtmk1 x__pointer_value2))) v) true)
   (= (m_contains t v) true)))))))))))))))))))))))))
 (check-sat)
+(exit)

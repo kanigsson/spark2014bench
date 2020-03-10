@@ -1065,3 +1065,4 @@ Target solver: CVC4
            (rec__traversals__list2_acc__pointer_value usf1))))) 1))))))
   (in_range1 (+ (min 2147483646 o3) 1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

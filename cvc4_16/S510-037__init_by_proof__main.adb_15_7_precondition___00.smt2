@@ -639,3 +639,4 @@ Target solver: CVC4
   (global_a_init global_a__attr__init1 global_a2) global_a__attr__init1
   global_a2)) (= (global_a_init global_a__attr__init global_a1) true)))))))))))))))
 (check-sat)
+(exit)

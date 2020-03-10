@@ -359,3 +359,4 @@ Target solver: CVC4
   (and (= (to_rep (select a right1)) o2) (= o (ite (< o2 i) true false)))))))
   (=> (= spark__branch o) (=> (not (= spark__branch true)) (not (= 2 0)))))))))))))))
 (check-sat)
+(exit)

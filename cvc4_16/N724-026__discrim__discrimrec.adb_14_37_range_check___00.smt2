@@ -2621,3 +2621,4 @@ Target solver: CVC4
   (=> (dynamic_invariant (us_repqtmk rax__split_discrs rax__split_fields)
   false false true true) (=> (= rax__attr__constrained true) (in_range 1))))))
 (check-sat)
+(exit)

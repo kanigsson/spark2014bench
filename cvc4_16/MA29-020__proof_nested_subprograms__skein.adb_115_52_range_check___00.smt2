@@ -2029,3 +2029,4 @@ Target solver: CVC4
      (rec__skein__skein_512_context__h local_ctx__split_fields2)))) o3)
   (in_range7 (bvudiv (bvadd o3 #x0000000000000007) #x0000000000000008))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

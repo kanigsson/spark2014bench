@@ -641,3 +641,4 @@ Target solver: CVC4
   (= o6 false)) (not (= o6 true)))))))))))))) (= y2 y1)))) (in_range1
   (+ top1 1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

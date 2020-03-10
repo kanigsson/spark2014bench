@@ -94,3 +94,4 @@ Target solver: CVC4
  ;; File "prepost.ads", line 2, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (=> (< 0 x) (< x 0)))))
 (check-sat)
+(exit)

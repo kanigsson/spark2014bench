@@ -642,3 +642,4 @@ Target solver: CVC4
  ;; File "gen.ads", line 24, characters 0-0
   (not false))
 (check-sat)
+(exit)

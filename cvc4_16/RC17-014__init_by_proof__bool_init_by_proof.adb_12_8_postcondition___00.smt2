@@ -221,3 +221,4 @@ Target solver: CVC4
   (=> (= (attr__init (select x2 i)) true)
   (= (attr__init (select x1 i)) true))))))))))))
 (check-sat)
+(exit)

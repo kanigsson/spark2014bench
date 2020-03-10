@@ -359,3 +359,4 @@ Target solver: CVC4
   (and (= (to_rep (select tmp2 usf)) o1) (= o (ite (= o1 69) true false)))))
   (= o (distinct 1 0))) (=> (< usf i) (<= 0 usf))))))))))))))))))
 (check-sat)
+(exit)

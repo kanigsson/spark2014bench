@@ -216,3 +216,4 @@ Target solver: CVC4
   (fp.isFinite32 (fp.mul RNE (fp #b0 #b10000001 #b11000000000000000000000) o))
   (=> (< 4 0) (not (= x ((_ to_fp 8 24) #x00000000)))))))))))))
 (check-sat)
+(exit)

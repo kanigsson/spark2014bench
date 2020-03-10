@@ -180,3 +180,4 @@ Target solver: CVC4
   (=> (dynamic_invariant y true false true true)
   (=> (= (to_rep g__split_fields) o) (in_range (+ o x))))))))
 (check-sat)
+(exit)

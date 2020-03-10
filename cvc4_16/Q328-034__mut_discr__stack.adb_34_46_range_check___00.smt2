@@ -635,3 +635,4 @@ Target solver: CVC4
   temp___202 true false true true)) (in_range1
   (- (+ 1 (+ (length 1 11) (length (first1 temp___202) (last1 temp___202)))) 1)))))))))))))
 (check-sat)
+(exit)

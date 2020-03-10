@@ -472,3 +472,4 @@ Target solver: CVC4
      (to_array temp___216) (first1 temp___216) (last1 temp___216)) true)
   (=> (in_range1 (+ (last1 a) 1)) (in_range1 (+ x lcp__result)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

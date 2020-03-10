@@ -555,3 +555,4 @@ Target solver: CVC4
      (rec__binary_search_trees__binary_search_tree__size tree__split_fields)) o)
   (< o 2147483647)))))))))))))))
 (check-sat)
+(exit)

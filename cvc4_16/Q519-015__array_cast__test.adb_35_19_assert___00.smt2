@@ -1149,3 +1149,4 @@ Target solver: CVC4
   (forall ((result_array1 (Array Int integer_subtype)))
   (=> (= result_array1 o) (= (to_rep2 (select result_array1 1)) 2)))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -263,3 +263,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk1 (us_repqtmk (us_split_fieldsqtmk self__)))) true
   false true true) (<= 0 (to_rep self__))))))
 (check-sat)
+(exit)

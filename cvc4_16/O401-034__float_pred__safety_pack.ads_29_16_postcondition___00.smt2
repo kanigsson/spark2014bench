@@ -159,3 +159,4 @@ Target solver: CVC4
   (=> (fp.lt value min_value)
   (fp.eq safety_pack__saturate__result min_value))))))))))))
 (check-sat)
+(exit)

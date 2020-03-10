@@ -350,3 +350,4 @@ Target solver: CVC4
   (and (= spark__branch (ite (= o 0) true false))
   (and (not (= spark__branch true)) (= i1 temp___177)))))))))))))))))
 (check-sat)
+(exit)

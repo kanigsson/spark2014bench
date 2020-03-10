@@ -657,3 +657,4 @@ Target solver: CVC4
      x i j) true)
   (in_range6 (+ j 1)))))))))))))))
 (check-sat)
+(exit)

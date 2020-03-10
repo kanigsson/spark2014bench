@@ -125,3 +125,4 @@ Target solver: CVC4
   (=> (= mine1 (min x y))
   (=> (= mine1 x) (=> (= maxe1 (max x y)) (= maxe1 y))))))))))))
 (check-sat)
+(exit)

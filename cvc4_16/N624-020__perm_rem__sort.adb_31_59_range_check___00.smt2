@@ -716,3 +716,4 @@ Target solver: CVC4
   (=> (in_range2 temp1)
   (=> (= (to_rep o3) temp1) (=> (<= 1 y) (=> (<= y 100) (in_range4 y)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

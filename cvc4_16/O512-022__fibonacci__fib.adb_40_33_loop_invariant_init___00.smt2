@@ -251,3 +251,4 @@ Target solver: CVC4
   (=> (forall ((i4 Int)) (fibonacci__function_guard (fibonacci i4) i4))
   (= a21 (fibonacci i3))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

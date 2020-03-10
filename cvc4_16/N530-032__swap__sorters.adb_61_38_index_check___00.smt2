@@ -405,3 +405,4 @@ Target solver: CVC4
   (=> (= (to_rep (select values1 usf)) o5)
   (<= (to_rep values__first) current1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

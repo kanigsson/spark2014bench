@@ -149,3 +149,4 @@ Target solver: CVC4
  ;; File "protected_objects.ads", line 8, characters 0-0
   (not (<= 0 1)))
 (check-sat)
+(exit)

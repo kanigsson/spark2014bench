@@ -143,3 +143,4 @@ Target solver: CVC4
   (=> (ghost_func__function_guard (ghost_func Tuple0) Tuple0)
   (not (= formal (ghost_func Tuple0))))))))
 (check-sat)
+(exit)

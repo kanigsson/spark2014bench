@@ -451,3 +451,4 @@ Target solver: CVC4
  ;; File "tests.adb", line 301, characters 0-0
   (not true))
 (check-sat)
+(exit)

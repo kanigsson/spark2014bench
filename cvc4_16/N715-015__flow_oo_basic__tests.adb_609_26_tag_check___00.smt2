@@ -618,3 +618,4 @@ Target solver: CVC4
                   (to_base1 (rec__tests__pair__b (us_split_fields7 c))))))
   (= h__attr__tag (attr__tag1 (of_base (to_base1 nw)))))))))
 (check-sat)
+(exit)

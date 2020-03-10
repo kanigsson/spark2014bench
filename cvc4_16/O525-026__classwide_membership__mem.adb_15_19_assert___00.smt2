@@ -217,3 +217,4 @@ Target solver: CVC4
   (= (test_mem_class
      (us_repqtmk (us_split_fieldsqtmk x__split_fields) x__attr__tag)) true))))))))
 (check-sat)
+(exit)

@@ -345,3 +345,4 @@ Target solver: CVC4
   (let ((o2 (length x)))
   (=> (in_range o2) (let ((o3 (- o2 o1))) (=> (in_range o3) (in_range1 o3)))))))))))
 (check-sat)
+(exit)

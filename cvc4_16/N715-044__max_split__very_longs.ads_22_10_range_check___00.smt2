@@ -630,3 +630,4 @@ Target solver: CVC4
      (rec__very_longs__very_long__digit_length (us_split_discrs1 usf1))) usf)
   (=> (<= 1 usf) (<= 1 1)))))))
 (check-sat)
+(exit)

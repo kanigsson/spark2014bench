@@ -205,3 +205,4 @@ Target solver: CVC4
   (=> (= v11 (fp.div RNE x (fp #b0 #b10000111 #b01101000000000000000000)))
   (in_range (fp.roundToIntegral RTN v11)))))))))
 (check-sat)
+(exit)

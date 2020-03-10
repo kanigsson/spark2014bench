@@ -1679,3 +1679,4 @@ Target solver: CVC4
   (let ((o14 (- remaining_bits free_bits_in_block1)))
   (=> (in_range1 o14) (in_range2 o14))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

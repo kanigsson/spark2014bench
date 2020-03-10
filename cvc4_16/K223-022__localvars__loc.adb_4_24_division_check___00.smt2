@@ -229,3 +229,4 @@ Target solver: CVC4
   (not
   (=> (dynamic_invariant z true false true true) (=> (= z 1) (not (= z 0))))))
 (check-sat)
+(exit)

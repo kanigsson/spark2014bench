@@ -606,3 +606,4 @@ Target solver: CVC4
                       true false)) true)
   (<= (first1 y__split_fields1) j1)))))))))))))))))
 (check-sat)
+(exit)

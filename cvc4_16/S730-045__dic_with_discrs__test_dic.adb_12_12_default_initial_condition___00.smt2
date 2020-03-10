@@ -247,3 +247,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__test_dic__nested__p4__c (us_split_fields1 usf))) 0)
   (= (rec__test_dic__nested__p4__x (us_split_discrs1 usf)) true)))))
 (check-sat)
+(exit)

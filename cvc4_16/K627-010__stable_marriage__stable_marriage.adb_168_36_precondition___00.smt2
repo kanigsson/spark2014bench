@@ -569,3 +569,4 @@ Target solver: CVC4
   (forall ((o (Array Int group1_id))) (is_permutation_1__function_guard
   (is_permutation_1 o) o)) (= (is_permutation_1 (select r2 usf)) true))))))))))))
 (check-sat)
+(exit)

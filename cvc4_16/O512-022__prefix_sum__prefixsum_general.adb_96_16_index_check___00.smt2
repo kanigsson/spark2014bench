@@ -480,3 +480,4 @@ Target solver: CVC4
   (=> (= a3 (store a2 right3 o8))
   (forall ((o9 integer)) (=> (= (to_rep o9) temp3) (<= 0 left3)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

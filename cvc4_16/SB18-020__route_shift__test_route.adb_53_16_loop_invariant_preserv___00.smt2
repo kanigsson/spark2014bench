@@ -1053,3 +1053,4 @@ Target solver: CVC4
   (forall ((i Int))
   (=> (and (<= 1 i) (<= i (- n2 1))) (= (get a2 i) (nth_x r i))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

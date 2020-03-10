@@ -323,3 +323,4 @@ Target solver: CVC4
   (=> (not (= i1 100))
   (forall ((i2 Int)) (=> (= i2 (+ i1 1)) (<= sum2 (* (- i2 1) max2))))))))))))))))))))))
 (check-sat)
+(exit)

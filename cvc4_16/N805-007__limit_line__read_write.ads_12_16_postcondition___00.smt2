@@ -68,3 +68,4 @@ Target solver: CVC4
   (forall ((v Bool) (v1 Bool))
   (=> (not (= v true)) (=> (= v1 (distinct 1 0)) (= v1 true))))))
 (check-sat)
+(exit)

@@ -348,3 +348,4 @@ Target solver: CVC4
   (=> (and (<= 1 i2) (<= i2 a_length1))
   (= (to_rep (select a2 (+ (to_rep1 a__first) i2))) 0)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

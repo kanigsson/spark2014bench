@@ -1180,3 +1180,4 @@ Target solver: CVC4
   (forall ((stackisize2 Int))
   (=> (= stackisize2 o6) (in_range2 (+ stackisize2 1))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -203,3 +203,4 @@ Target solver: CVC4
   (=> (dynamic_invariant y true false true true)
   (=> (= y 3) (= (to_rep r__split_fields) 3)))))))))))
 (check-sat)
+(exit)

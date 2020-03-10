@@ -300,3 +300,4 @@ Target solver: CVC4
   (=> (forall ((i6 Int)) (fibonacci__function_guard (fibonacci i6) i6))
   (= a23 (fibonacci i5)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

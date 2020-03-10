@@ -690,3 +690,4 @@ Target solver: CVC4
   (=> (and (<= 0 k) (<= k 7))
   (=> (= (is_even k) true) (= (to_rep (select a1 k)) (to_rep (select a k))))))))))))))))))
 (check-sat)
+(exit)

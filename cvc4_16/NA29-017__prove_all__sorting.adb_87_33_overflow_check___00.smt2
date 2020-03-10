@@ -429,3 +429,4 @@ Target solver: CVC4
   (=> (perm2__function_guard (perm2 o29 o26 o23 o22 o21 i1 j1) o29 o26 o23
   o22 o21 i1 j1) (in_range1 (+ i1 j1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

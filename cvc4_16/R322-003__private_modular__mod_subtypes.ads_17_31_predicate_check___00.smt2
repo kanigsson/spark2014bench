@@ -358,3 +358,4 @@ Target solver: CVC4
  ;; File "mod_subtypes.ads", line 1, characters 0-0
   (not (=> (even__function_guard (even #x02) #x02) (= (even #x02) true))))
 (check-sat)
+(exit)

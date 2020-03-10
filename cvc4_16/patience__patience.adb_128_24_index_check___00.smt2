@@ -1531,3 +1531,4 @@ Target solver: CVC4
   (= (to_rep (select (rec__patience__state__preds s__split_fields4) usf)) temp___805)
   (<= 0 temp___805))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

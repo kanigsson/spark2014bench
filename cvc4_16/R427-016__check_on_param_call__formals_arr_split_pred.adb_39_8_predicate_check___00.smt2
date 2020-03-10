@@ -571,3 +571,4 @@ Target solver: CVC4
   (=> (and (<= (to_rep1 x__first) 1) (<= 3 (to_rep1 x__last)))
   (<= (to_rep1 x__first) 1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

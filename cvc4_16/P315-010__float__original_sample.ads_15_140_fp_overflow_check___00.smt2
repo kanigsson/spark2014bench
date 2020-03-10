@@ -141,3 +141,4 @@ Target solver: CVC4
   (let ((o (fp.sub RNE float_tested float_ref)))
   (=> (fp.isFinite32 o) (fp.isFinite32 (fp.div RNE (fp.abs o) float_ref)))))))))
 (check-sat)
+(exit)

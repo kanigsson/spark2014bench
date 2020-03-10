@@ -1075,3 +1075,4 @@ Target solver: CVC4
   (= (us_pledge_get (traverse_list__get_nth__pledge o4 2) o4 o5) true))
   (rec__traverse_list__list_acc__pointer_value__pred o5))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -240,3 +240,4 @@ Target solver: CVC4
   (= (to_rep (select a2 j)) (to_rep
                             (select temp___loop_entry_174 (+ (- 10 j) 1))))))))))))))))))))
 (check-sat)
+(exit)

@@ -808,3 +808,4 @@ Target solver: CVC4
   (forall ((o4 value))
   (=> (= (to_rep2 o4) o3) (<= (first1 c__split_fields1) i1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

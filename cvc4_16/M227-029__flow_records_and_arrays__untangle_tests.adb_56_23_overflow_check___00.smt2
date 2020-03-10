@@ -240,3 +240,4 @@ Target solver: CVC4
   (ite (<= n3 1000) true false)) true)
   (=> (and (<= 1 n3) (<= n3 1000)) (in_range1 (+ n3 i1))))))))))))))))))))
 (check-sat)
+(exit)

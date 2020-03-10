@@ -404,3 +404,4 @@ Target solver: CVC4
   (=> (= valid1 (distinct 1 0))
   (let ((o2 (+ (first1 s) 4))) (=> (in_range1 o2) (<= (first1 s) o2))))))))))))))))))))))))
 (check-sat)
+(exit)

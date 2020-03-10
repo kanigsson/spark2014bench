@@ -146,3 +146,4 @@ Target solver: CVC4
   (=> (= y1 o)
   (=> (=> (= (< y 5) true) (< y1 10)) (=> (= (> y 5) true) (<= 12 y1)))))))))))))
 (check-sat)
+(exit)

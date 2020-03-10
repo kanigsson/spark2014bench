@@ -877,3 +877,4 @@ Target solver: CVC4
                                       false)) true)
   (let ((o (+ y usf))) (=> (in_range1 o) (<= (first1 a) o))))))))))))))))))))))
 (check-sat)
+(exit)

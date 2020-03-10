@@ -254,3 +254,4 @@ Target solver: CVC4
   (=> (<= (first1 arr) usf)
   (=> (<= usf (last1 arr)) (<= (first1 arr) (- usf 1)))))))))
 (check-sat)
+(exit)

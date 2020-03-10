@@ -620,3 +620,4 @@ Target solver: CVC4
   (and (and (bvule #x0000000000000000 j) (bvule j var2_range_size))
   (= (bvadd var1 i) (bvadd var2 j)))))))))))))))))))))))
 (check-sat)
+(exit)

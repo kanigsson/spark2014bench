@@ -242,3 +242,4 @@ Target solver: CVC4
   (and (fibonacci__function_guard o i3) (dynamic_invariant o true false true
   true)) (=> (= a21 o) (in_range2 (- i3 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

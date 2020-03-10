@@ -707,3 +707,4 @@ Target solver: CVC4
   (ite (<= dynamic_types__search__result (last1 a)) true false)) true)
   (<= (first1 a) dynamic_types__search__result))))))))))
 (check-sat)
+(exit)

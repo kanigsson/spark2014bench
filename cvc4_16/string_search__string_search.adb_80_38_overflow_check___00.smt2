@@ -563,3 +563,4 @@ Target solver: CVC4
   (=> (dynamic_invariant r52b true false true true)
   (let ((o5 (- (last1 needle) 1))) (=> (in_range1 o5) (in_range1 (+ i1 o5))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -228,3 +228,4 @@ Target solver: CVC4
   (and (in_range1 o1) (exists ((i2 Int)) (and (= i2 o1) (not (<= i2 n))))))))))))))))))))
   (= totalsum1 totalsum)) (= (* 6 totalsum1) (* (* n (+ n 1)) (+ n 2)))))))))))))))))
 (check-sat)
+(exit)

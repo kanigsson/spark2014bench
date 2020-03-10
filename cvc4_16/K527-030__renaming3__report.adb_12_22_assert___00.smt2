@@ -88,3 +88,4 @@ Target solver: CVC4
   (and (original__function_guard o3 o2) (= (= o3 true) (not (= o2 true))))
   (forall ((x1 Bool)) (=> (= x1 o3) (not (= x1 true)))))))))))))))
 (check-sat)
+(exit)

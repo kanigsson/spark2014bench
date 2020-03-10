@@ -1786,3 +1786,4 @@ Target solver: CVC4
   (<= i (to_rep (rec__simple_unc_arrays__table__last t3__split_discrs))))
   (= (to_rep3 (select t3__split_fields1 i)) 9)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

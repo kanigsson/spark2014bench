@@ -1930,3 +1930,4 @@ Target solver: CVC4
   (forall ((o15 Int))
   (=> (= (to_rep digest__first) o15) (in_range1 (+ o15 offset2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

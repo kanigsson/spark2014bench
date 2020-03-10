@@ -445,3 +445,4 @@ Target solver: CVC4
   (=> (= (to_rep1 o9) o8)
   (forall ((o10 Int)) (=> (= (to_rep a__first) o10) (in_range1 (+ o10 j))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

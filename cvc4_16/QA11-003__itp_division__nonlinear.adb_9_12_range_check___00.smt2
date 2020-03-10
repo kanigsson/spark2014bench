@@ -275,3 +275,4 @@ Target solver: CVC4
   (let ((o (div1 x y)))
   (=> (in_range o) (forall ((r11 Int)) (=> (= r11 o) (in_range (div1 x z)))))))))))))))
 (check-sat)
+(exit)

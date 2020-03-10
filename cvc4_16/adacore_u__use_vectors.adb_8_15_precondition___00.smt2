@@ -324,3 +324,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 k) true false) (ite (<= k 42) true false)) true)
   (< (length s) 2147483647)))))))
 (check-sat)
+(exit)

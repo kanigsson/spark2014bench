@@ -387,3 +387,4 @@ Target solver: CVC4
         (+ (sum o4 o3 (- o2 1)) (to_rep1 (select (to_array o4) o2)))))))
   (in_range (+ o5 o1))))))))))))))))))))
 (check-sat)
+(exit)

@@ -103,3 +103,4 @@ Target solver: CVC4
   (= sub__remove_absent__result 2))))
   (=> (= x 2) (= sub__remove_absent__result 2)))))))
 (check-sat)
+(exit)

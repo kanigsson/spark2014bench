@@ -419,3 +419,4 @@ Target solver: CVC4
   (=> (= (to_rep values__last) temp___192)
   (=> (<= current temp___192) (<= (to_rep values__first) current))))))))))))))))))))))
 (check-sat)
+(exit)

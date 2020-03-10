@@ -426,3 +426,4 @@ Target solver: CVC4
   (=> (count__function_guard (count s) s)
   (=> (<= n (count s)) (in_range4 n)))))))
 (check-sat)
+(exit)

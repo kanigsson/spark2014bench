@@ -493,3 +493,4 @@ Target solver: CVC4
   (=> (exists ((o3 Int)) (= (to_rep1 (select temp___loop_entry_543 usf)) o3))
   (<= (to_rep h__first) usf)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

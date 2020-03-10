@@ -128,3 +128,4 @@ Target solver: CVC4
   (=> (= x (distinct 0 0))
   (=> (= y__split_fields (distinct 0 0)) (not (= x true)))))))
 (check-sat)
+(exit)

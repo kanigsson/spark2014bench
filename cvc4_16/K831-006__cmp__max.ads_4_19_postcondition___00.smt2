@@ -142,3 +142,4 @@ Target solver: CVC4
   (=> (= max__max__result o)
   (=> (fp.lt left right) (fp.eq max__max__result right)))))))))
 (check-sat)
+(exit)

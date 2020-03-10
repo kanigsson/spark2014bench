@@ -570,3 +570,4 @@ Target solver: CVC4
   (=> (= spark__branch1 (ite (= o1 1) true false))
   (=> (not (= spark__branch1 true)) (tokens__token__instr__pred t))))))))))))))
 (check-sat)
+(exit)

@@ -1166,3 +1166,4 @@ Target solver: CVC4
   (=> (= stacks__get_model__3__result o) (in_range1
   (first1 stacks__get_model__3__result)))))))))
 (check-sat)
+(exit)

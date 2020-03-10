@@ -365,3 +365,4 @@ Target solver: CVC4
   (and (to_string__function_guard o1 o) (dynamic_invariant1 o1 true false
   true true)) (in_range (length o1)))))))
 (check-sat)
+(exit)

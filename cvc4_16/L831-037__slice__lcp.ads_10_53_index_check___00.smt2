@@ -484,3 +484,4 @@ Target solver: CVC4
   (=> (not (= o4 true))
   (let ((o5 (+ y lcp__result))) (=> (in_range1 o5) (<= (first1 a) o5))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

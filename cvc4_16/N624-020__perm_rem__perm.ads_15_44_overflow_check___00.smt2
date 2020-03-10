@@ -553,3 +553,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array perm__remove__result) usf)) o4) (in_range1
   (+ usf 1)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -762,3 +762,4 @@ Target solver: CVC4
       (rec__ghc_sort__int_array_list_cell__value
       (us_split_fields1 (rec__ghc_sort__int_array_list__pointer_value l)))) (- usf 1))))))))))))))
 (check-sat)
+(exit)

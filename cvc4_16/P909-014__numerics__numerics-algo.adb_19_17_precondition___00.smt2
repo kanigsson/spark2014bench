@@ -274,3 +274,4 @@ Target solver: CVC4
   (= o4 (fp.sub RNE x41 x41))))
   (not (fp.eq o4 (fp #b0 #b00000000 #b00000000000000000000000))))))))))))))))))))))))))))
 (check-sat)
+(exit)

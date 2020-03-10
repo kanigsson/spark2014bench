@@ -109,3 +109,4 @@ Target solver: CVC4
   (= (and (ite (<= (- 2147483648) v) true false) (ite (<= v 0) true false)) true))
   (= v1 1)))))))))
 (check-sat)
+(exit)

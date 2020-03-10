@@ -449,3 +449,4 @@ Target solver: CVC4
                                              false)) true)
   (let ((o2 (length needle))) (=> (in_range1 o2) (in_range1 (- o2 j))))))))))))))))))
 (check-sat)
+(exit)

@@ -489,3 +489,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__foo__record_b__kind (us_split_discrs3 usf1))) usf)
   (in_range usf)))))))))
 (check-sat)
+(exit)

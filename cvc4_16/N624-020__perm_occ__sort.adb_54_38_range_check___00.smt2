@@ -693,3 +693,4 @@ Target solver: CVC4
   (forall ((o14 Int))
   (=> (= (to_rep (select (to_array init) x)) o14) (in_range4 y)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -99,3 +99,4 @@ Target solver: CVC4
   (forall ((assume_call__f1__result Int))
   (=> (= assume_call__f1__result o) (in_range (+ x 1)))))))))
 (check-sat)
+(exit)

@@ -413,3 +413,4 @@ Target solver: CVC4
                                                  false)))
   (= o false)) (=> (= o true) (in_range1 (+ j1 j2)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

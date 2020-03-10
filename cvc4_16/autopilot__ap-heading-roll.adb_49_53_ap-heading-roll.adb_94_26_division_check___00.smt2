@@ -600,3 +600,4 @@ Target solver: CVC4
   (let ((o3 (- 360 offset1))) (and (in_range6 o3) (= result__2 o3)))))))))))
   (forall ((target_bank1 Int)) (=> (= target_bank1 result__2) (not (= 5 0)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

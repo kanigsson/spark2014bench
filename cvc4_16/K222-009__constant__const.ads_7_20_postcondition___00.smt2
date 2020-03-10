@@ -98,3 +98,4 @@ Target solver: CVC4
   (forall ((const__incr__result Int))
   (=> (= const__incr__result o) (<= x 10000)))))))))
 (check-sat)
+(exit)

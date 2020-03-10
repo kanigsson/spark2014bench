@@ -72,3 +72,4 @@ Target solver: CVC4
  ;; File "test.adb", line 3, characters 0-0
   (not (=> (not (or (= a true) (= b true))) (not (= a true)))))
 (check-sat)
+(exit)

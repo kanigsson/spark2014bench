@@ -1229,3 +1229,4 @@ Target solver: CVC4
   (= k1 temp___1249)))))))))) (dynamic_property 1 100 (first1 a2)
   (last1 a2)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -301,3 +301,4 @@ Target solver: CVC4
      (rec__private_discr__p_with_default__c (us_split_discrs1 temp___395))) o1))
   (in_range1 c (us_split_discrs1 temp___395)))))))))))))))))
 (check-sat)
+(exit)

@@ -729,3 +729,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 default_aft true false true true)
   (=> (dynamic_invariant2 default_exp true false true true) (<= 48 97)))))))
 (check-sat)
+(exit)

@@ -1348,3 +1348,4 @@ Target solver: CVC4
   (=> (<= temp___931 100)
   (=> (is_empty__function_guard (is_empty s) s) (not (= (is_empty s) true)))))))))))
 (check-sat)
+(exit)

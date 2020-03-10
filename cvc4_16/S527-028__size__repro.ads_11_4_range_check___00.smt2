@@ -254,3 +254,4 @@ Target solver: CVC4
  ;; File "repro.ads", line 1, characters 0-0
   (not (=> (bvule #x00000000 #x00000001) (bvuge #x00000000 #x00000000))))
 (check-sat)
+(exit)

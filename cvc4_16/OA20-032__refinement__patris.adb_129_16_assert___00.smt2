@@ -2104,3 +2104,4 @@ Target solver: CVC4
      (+ (to_rep3 (rec__patris__piece__y cur_piece__split_fields)) yy)
      (+ (to_rep2 (rec__patris__piece__x cur_piece__split_fields)) xx)) true))))))))))))))))))))
 (check-sat)
+(exit)

@@ -377,3 +377,4 @@ Target solver: CVC4
   (=> (<= (to_rep a__first) i)
   (=> (<= i (to_rep a__last)) (<= (to_rep a__first) j))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

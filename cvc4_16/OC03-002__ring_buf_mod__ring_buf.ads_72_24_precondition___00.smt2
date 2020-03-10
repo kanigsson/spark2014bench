@@ -924,3 +924,4 @@ Target solver: CVC4
                       o6))
   (< 0 (length (to_model (us_repqtmk r__split_fields))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

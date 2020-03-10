@@ -273,3 +273,4 @@ Target solver: CVC4
   (=> (not (= factor #x0000000000000000))
   (not (= factor #x0000000000000000)))))))))
 (check-sat)
+(exit)

@@ -92,3 +92,4 @@ Target solver: CVC4
  ;; File "foo.adb", line 24, characters 0-0
   (not (forall ((a Int)) (in_range (+ a 1)))))
 (check-sat)
+(exit)

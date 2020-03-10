@@ -354,3 +354,4 @@ Target solver: CVC4
   upper2 false true true true)) (dynamic_invariant1 middle1 false true true
   true)) (=> (not (= (+ lower2 1) upper2)) (not (= 2 0)))))))))))))))))
 (check-sat)
+(exit)

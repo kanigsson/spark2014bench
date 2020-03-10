@@ -420,3 +420,4 @@ Target solver: CVC4
                       true false)) true)
   (<= (first1 b_v1) i_v11))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -371,3 +371,4 @@ Target solver: CVC4
   (=> (not (= o true))
   (=> (<= (first1 x) hi) (=> (<= hi (last1 x)) (in_range2 (- hi 1))))))))))))
 (check-sat)
+(exit)

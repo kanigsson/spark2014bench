@@ -434,3 +434,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array temp___223) 1)) o)
   (=> (= o 97) (=> (<= x 5) (<= 1 x))))))))))))))))))))
 (check-sat)
+(exit)

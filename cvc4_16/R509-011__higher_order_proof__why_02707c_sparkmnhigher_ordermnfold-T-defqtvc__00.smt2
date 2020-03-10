@@ -1605,3 +1605,4 @@ Target solver: CVC4
   (=> (not (= o true)) (dynamic_property4 first last (first4 a) (last4 a)
   first1 last1 (first_2 a) (last_2 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

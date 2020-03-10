@@ -527,3 +527,4 @@ Target solver: CVC4
   (forall ((o9 Int))
   (=> (= (to_rep b__first) o9) (in_range1 (+ o9 (div1 o8 2)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

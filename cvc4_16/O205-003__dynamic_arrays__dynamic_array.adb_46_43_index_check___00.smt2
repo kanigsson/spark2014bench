@@ -1419,3 +1419,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 hh true false true true)
   (<= (first1 (rec__dynamic_array__holder__content (us_split_fields3 hh))) i1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

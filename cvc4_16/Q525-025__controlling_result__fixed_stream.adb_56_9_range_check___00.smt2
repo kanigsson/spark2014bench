@@ -919,3 +919,4 @@ Target solver: CVC4
   (<= 1 (to_rep (rec__fixed_stream__object__width (us_split_fields1 this))))
   (<= (- 9223372036854775808) 1))))
 (check-sat)
+(exit)

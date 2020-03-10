@@ -173,3 +173,4 @@ Target solver: CVC4
   (=> (= z1 (- x x))
   (=> (= z1 0) (forall ((z2 Int)) (=> (= z2 (- x y)) (< z2 x)))))))))))))))
 (check-sat)
+(exit)

@@ -947,3 +947,4 @@ Target solver: CVC4
   (=> (= to_uint16_result_2_out11 ((_ int2bv 16) left_2_out11))
   (fp.isFinite64 (fp.mul RNE ((_ to_fp_unsigned 11 53) RNE to_uint16_result_out11) wheel_circunference_out11)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

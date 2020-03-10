@@ -133,3 +133,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (fp.leq (fp.roundToIntegral RTN x) (fp.roundToIntegral RTP x)))))
 (check-sat)
+(exit)

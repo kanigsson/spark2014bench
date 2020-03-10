@@ -1110,3 +1110,4 @@ Target solver: CVC4
   (ite (and (<= (first1 a1) k1) (<= k1 (last1 a1))) true false)) true)
   (= k1 temp___674))))))))))))) (<= i (last1 a2)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

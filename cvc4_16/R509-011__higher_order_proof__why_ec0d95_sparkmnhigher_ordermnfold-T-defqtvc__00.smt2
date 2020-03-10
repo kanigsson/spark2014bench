@@ -1425,3 +1425,4 @@ Target solver: CVC4
   (=> (ind_prop__function_guard o8 o7 o6 usf usf1)
   (=> (= o8 true) (in_range1 (- usf1 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

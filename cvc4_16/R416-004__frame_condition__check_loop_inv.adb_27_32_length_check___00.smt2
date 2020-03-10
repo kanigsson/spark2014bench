@@ -1318,3 +1318,4 @@ Target solver: CVC4
   (=> (= (last1 temp___335) i1)
   (=> (<= (first1 temp___335) (last1 temp___335)) (<= i1 i1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

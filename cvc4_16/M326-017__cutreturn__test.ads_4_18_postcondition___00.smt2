@@ -102,3 +102,4 @@ Target solver: CVC4
   (and (not (= x 0))
   (and (dynamic_invariant x false true true true) (= x1 0)))) (= x1 0))))))
 (check-sat)
+(exit)

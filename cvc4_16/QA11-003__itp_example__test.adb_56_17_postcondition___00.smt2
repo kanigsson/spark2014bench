@@ -145,3 +145,4 @@ Target solver: CVC4
   (=> (= test__test_6__result b1)
   (fp.eq test__test_6__result (fp #b0 #b01111011 #b10011001100110011001101))))))))))))))
 (check-sat)
+(exit)

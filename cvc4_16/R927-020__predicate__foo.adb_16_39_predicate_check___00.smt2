@@ -113,3 +113,4 @@ Target solver: CVC4
  ;; File "foo.adb", line 13, characters 0-0
   (not (<= 42 23)))
 (check-sat)
+(exit)

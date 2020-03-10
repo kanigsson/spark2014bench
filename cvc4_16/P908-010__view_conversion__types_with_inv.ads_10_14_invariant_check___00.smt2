@@ -133,3 +133,4 @@ Target solver: CVC4
   (=> (dynamic_invariant types_with_inv__set_to_zero__x true true true true)
   (=> (= x1 types_with_inv__set_to_zero__x) (type_invariant x1))))))))
 (check-sat)
+(exit)

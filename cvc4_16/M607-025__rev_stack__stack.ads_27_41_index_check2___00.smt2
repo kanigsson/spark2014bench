@@ -608,3 +608,4 @@ Target solver: CVC4
   (and (= (first1 o2) 1) (<= 0 (last1 o2))))))
   (<= (first1 temp___286) (last1 o2))))))))))))))))
 (check-sat)
+(exit)

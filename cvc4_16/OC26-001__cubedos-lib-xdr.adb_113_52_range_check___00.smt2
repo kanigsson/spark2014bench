@@ -781,3 +781,4 @@ Target solver: CVC4
   (forall ((padding_start1 Int))
   (=> (= padding_start1 o2) (in_range1 (length1 value)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

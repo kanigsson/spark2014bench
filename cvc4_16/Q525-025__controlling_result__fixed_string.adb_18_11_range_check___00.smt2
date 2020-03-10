@@ -475,3 +475,4 @@ Target solver: CVC4
   (let ((temp___296 (first1 new_val)))
   (=> (<= temp___296 r8b) (<= (first1 new_val) temp___296)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

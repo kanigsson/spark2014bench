@@ -1542,3 +1542,4 @@ Target solver: CVC4
   (select (to_array (rec__area_math__ensemble__from (us_split_fields1 e))) (+ i 1))) #x00000001)))))))))))))))))))))))))))))))))
   (= result____split_fields4 result____split_fields3))) (in_range1 (+ i 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

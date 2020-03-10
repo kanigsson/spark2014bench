@@ -1190,3 +1190,4 @@ Target solver: CVC4
       (rec__use_formal_vectors__my_vect__vector__content
       (us_split_fields1 v)))) usf))))))))))))))))))
 (check-sat)
+(exit)

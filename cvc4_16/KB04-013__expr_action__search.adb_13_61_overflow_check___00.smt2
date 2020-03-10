@@ -267,3 +267,4 @@ Target solver: CVC4
   (=> (<= pos 10)
   (=> (= (to_rep (select t pos)) o1) (=> (= o1 v) (in_range1 (- pos 1))))))))))))))))
 (check-sat)
+(exit)

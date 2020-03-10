@@ -252,3 +252,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 i1) (<= i1 10)) true false)) true)
   (= (to_rep (select t2 i1)) (* a i1)))))))))))))))))
 (check-sat)
+(exit)

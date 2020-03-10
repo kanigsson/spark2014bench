@@ -382,3 +382,4 @@ Target solver: CVC4
   (forall ((o6 integer))
   (=> (= (to_rep o6) sorters__swap__x) (<= (to_rep values__first) current1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

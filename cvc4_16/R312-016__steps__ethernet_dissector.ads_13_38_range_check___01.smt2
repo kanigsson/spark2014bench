@@ -1252,3 +1252,4 @@ Target solver: CVC4
   (and (in_range2 o9) (= ethernet_dissector__match__result o9))))))))))))))))))))))))))))))))))))))))))))))))))
   (in_range1 (length buffer)))))))
 (check-sat)
+(exit)

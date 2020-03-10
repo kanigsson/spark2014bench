@@ -330,3 +330,4 @@ Target solver: CVC4
   (=> (dynamic_invariant new_val true false true true)
   (=> (= (to_rep o) new_val) (<= (to_rep1 a__first) i))))))))
 (check-sat)
+(exit)

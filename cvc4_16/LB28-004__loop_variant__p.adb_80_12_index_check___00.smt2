@@ -449,3 +449,4 @@ Target solver: CVC4
   (=> (= j13 a)
   (=> (<= j13 b) (=> (= (to_rep o) j13) (<= (to_rep tab__first) j13))))))))))))))))))))))))))))
 (check-sat)
+(exit)

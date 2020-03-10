@@ -210,3 +210,4 @@ Target solver: CVC4
   (=> (<= j 100)
   (=> (= (to_rep (select b1 i)) (to_rep (select b1 j))) (= i j)))))))))))))
 (check-sat)
+(exit)

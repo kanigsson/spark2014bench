@@ -2013,3 +2013,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= n 0) true false))
   (=> (not (= spark__branch true)) (in_range12 n))))))))))))
 (check-sat)
+(exit)

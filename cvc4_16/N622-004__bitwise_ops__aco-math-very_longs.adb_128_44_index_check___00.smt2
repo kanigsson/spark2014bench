@@ -1059,3 +1059,4 @@ Target solver: CVC4
   (let ((o5 (+ string_index2 1)))
   (=> (in_range1 o5) (<= (first1 number) o5))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

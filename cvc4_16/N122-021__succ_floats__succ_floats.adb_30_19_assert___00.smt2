@@ -230,3 +230,4 @@ Target solver: CVC4
   (= x6 x5)))))
   (fp.lt (next_representable x6) (fp #b0 #b00000000 #b00000000000000000000000))))))))))))))))))))))
 (check-sat)
+(exit)

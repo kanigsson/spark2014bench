@@ -784,3 +784,4 @@ Target solver: CVC4
                                                                    (us_split_fieldsqtmk
                                                                    p__split_fields)))))))))
 (check-sat)
+(exit)

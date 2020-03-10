@@ -509,3 +509,4 @@ Target solver: CVC4
   (= o1 (to_rep1 (rec__p_heir2__t_heir2__x2 this__split_fields))))) (in_range
   (+ o1 2))))))))
 (check-sat)
+(exit)

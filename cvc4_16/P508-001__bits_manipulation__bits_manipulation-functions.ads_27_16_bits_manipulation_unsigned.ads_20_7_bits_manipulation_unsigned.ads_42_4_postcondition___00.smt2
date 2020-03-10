@@ -791,3 +791,4 @@ Target solver: CVC4
   (= (shift_right value
      bits_manipulation_unsigned__unsigned_8__functions__msb_index__result) #x01)))))))))
 (check-sat)
+(exit)

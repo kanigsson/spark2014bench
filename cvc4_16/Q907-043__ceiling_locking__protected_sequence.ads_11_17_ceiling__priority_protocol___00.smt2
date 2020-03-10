@@ -181,3 +181,4 @@ Target solver: CVC4
  ;; File "protected_sequence.ads", line 11, characters 0-0
   (not (=> (dynamic_invariant value true false true true) (<= 3 2))))
 (check-sat)
+(exit)

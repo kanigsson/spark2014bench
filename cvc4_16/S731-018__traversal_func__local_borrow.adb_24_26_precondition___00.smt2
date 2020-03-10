@@ -505,3 +505,4 @@ Target solver: CVC4
   (= (us_pledge_get (local_borrow__get_next__pledge o1) o1 o2) true))
   (not (= (bool_eq o2 us_null_pointer) true)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

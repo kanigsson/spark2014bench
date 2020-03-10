@@ -664,3 +664,4 @@ Target solver: CVC4
   (=> (or (not (< octet_count 4)) (in_range1 (power 256 (- i2 1))))
   (=> (< octet_count 4) (< result__2 (power 256 (- i2 1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -314,3 +314,4 @@ Target solver: CVC4
   (=> (dynamic_invariant local1 true true true true)
   (=> (in_range (+ local1 1)) (not (= 100 0)))))))))
 (check-sat)
+(exit)

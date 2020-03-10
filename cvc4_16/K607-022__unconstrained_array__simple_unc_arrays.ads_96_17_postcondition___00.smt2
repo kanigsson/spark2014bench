@@ -520,3 +520,4 @@ Target solver: CVC4
                                                        (select (to_array
                                                                a__split_fields1) (+ j 1))))))))))))))
 (check-sat)
+(exit)

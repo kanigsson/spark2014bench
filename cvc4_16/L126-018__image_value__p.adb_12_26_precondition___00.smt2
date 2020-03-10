@@ -673,3 +673,4 @@ Target solver: CVC4
       (of_array (to_array temp___363) (first1 temp___363) (last1 temp___363))) (- 2147483647 
   (length2 unb_str1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

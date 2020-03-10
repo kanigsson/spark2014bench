@@ -476,3 +476,4 @@ Target solver: CVC4
         (rec__list_ex_pledge__list_cell__next
         (us_split_fields1 (rec__list_ex_pledge__list__pointer_value l))))))))))))))
 (check-sat)
+(exit)

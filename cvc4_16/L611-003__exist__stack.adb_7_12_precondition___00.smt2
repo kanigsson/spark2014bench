@@ -370,3 +370,4 @@ Target solver: CVC4
   (exists ((s1 Int))
   (and (and (<= 0 s1) (<= s1 100)) (= (valid t1 s1) true))))))))))))))))))))))))
 (check-sat)
+(exit)

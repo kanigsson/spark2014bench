@@ -219,3 +219,4 @@ Target solver: CVC4
   (=> (< (to_rep up_time__split_fields) 9223372036854775807)
   (=> (= (to_rep up_time__split_fields) o) (in_range2 (+ o 1)))))))
 (check-sat)
+(exit)

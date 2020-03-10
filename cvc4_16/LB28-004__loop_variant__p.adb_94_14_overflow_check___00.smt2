@@ -485,3 +485,4 @@ Target solver: CVC4
   (=> (<= (to_rep tab__first) j15)
   (=> (<= j15 (to_rep tab__last)) (in_range1 (+ j15 1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

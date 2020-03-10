@@ -231,3 +231,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 stack_pointer true false true true)
   (=> (dynamic_invariant x false false true true) (<= 1 stack_pointer))))))
 (check-sat)
+(exit)

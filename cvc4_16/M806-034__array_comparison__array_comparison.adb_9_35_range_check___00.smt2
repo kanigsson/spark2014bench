@@ -558,3 +558,4 @@ Target solver: CVC4
        (to_rep y__last)))
   (=> (<= 1 5) (<= (to_rep z__first) 1)))))))))))))))))))))))
 (check-sat)
+(exit)

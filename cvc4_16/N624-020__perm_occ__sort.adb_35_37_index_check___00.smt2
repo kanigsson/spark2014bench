@@ -657,3 +657,4 @@ Target solver: CVC4
   (=> (= (to_rep1 interm__last) o)
   (=> (= (to_rep1 interm__first) o1) (<= (first1 init) y)))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -452,3 +452,4 @@ Target solver: CVC4
   (=> (= usf true) (= longest_common_prefix__lcp__result (+ (- 1000 x) 1)))
   (=> (not (= (or usf1 usf) true)) (< 0 longest_common_prefix__lcp__result))))))))))))))))))))))
 (check-sat)
+(exit)

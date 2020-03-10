@@ -110,3 +110,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 0 x) true false) (ite (<= 0 y) true false)) true)
   (in_range1 (- 2147483647 y)))))))
 (check-sat)
+(exit)

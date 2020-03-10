@@ -1394,3 +1394,4 @@ Target solver: CVC4
      (rec__use_formal_vectors__my_vect__vector__top v__split_fields2)) o5)
   (in_range (+ o5 1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

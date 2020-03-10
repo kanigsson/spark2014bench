@@ -673,3 +673,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= i usf) true false) (ite (<= usf o4) true false)) true)
   (let ((o5 (- usf i))) (=> (in_range1 o5) (in_range1 (+ o5 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

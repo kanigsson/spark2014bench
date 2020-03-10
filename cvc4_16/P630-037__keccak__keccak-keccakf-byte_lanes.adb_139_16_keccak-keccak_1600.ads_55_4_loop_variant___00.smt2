@@ -1253,3 +1253,4 @@ Target solver: CVC4
   (or (< temp___812 shift2)
   (and (= shift2 temp___812) (< remaining_bytes3 temp___811))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

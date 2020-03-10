@@ -908,3 +908,4 @@ Target solver: CVC4
   (=> (= perm__shift_perm_l__induction_hypothesis__B_5__ih__assume ih)
   (=> (dynamic_invariant2 ih true false true true) (= (distinct ih 0) true)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

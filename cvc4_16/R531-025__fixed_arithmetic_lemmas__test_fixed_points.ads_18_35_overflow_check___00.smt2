@@ -326,3 +326,4 @@ Target solver: CVC4
   (=> (<= (fxp_div_int val1 o) (fxp_div_int val2 o)) (in_range1
   (fxp_div_int val2 denom))))))))))
 (check-sat)
+(exit)

@@ -367,3 +367,4 @@ Target solver: CVC4
   (=> (dynamic_property 1 2147483647 1 4) (dynamic_predicate
   (of_array (temp___String_Literal_178 Tuple0) 1 4))))))))))
 (check-sat)
+(exit)

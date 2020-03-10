@@ -202,3 +202,4 @@ Target solver: CVC4
   (=> (<= length 1024)
   (=> (< offset 1024) (=> (<= (+ length offset) 1024) (< length 1024)))))))))
 (check-sat)
+(exit)

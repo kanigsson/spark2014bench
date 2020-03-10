@@ -308,3 +308,4 @@ Target solver: CVC4
   (= (and (ite (<= 0 value) true false) (ite (<= value 100000) true false)) true)
   (=> (= mode 0) (<= 0 value)))))))
 (check-sat)
+(exit)

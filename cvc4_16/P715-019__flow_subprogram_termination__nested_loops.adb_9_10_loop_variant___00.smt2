@@ -165,3 +165,4 @@ Target solver: CVC4
   (let ((o1 (+ j2 1)))
   (=> (in_range1 o1) (forall ((j3 Int)) (=> (= j3 o1) (< temp___162 j3))))))))))))))))))))))
 (check-sat)
+(exit)

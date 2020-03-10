@@ -552,3 +552,4 @@ Target solver: CVC4
   (let ((o7 (+ left2 (div1 (- right2 left2) 2))))
   (=> (in_range2 o7) (in_range3 o7))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

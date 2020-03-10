@@ -430,3 +430,4 @@ Target solver: CVC4
   (= current1 o2)))))))))))))))) (= values1 values))))))))))
   (=> (= (to_rep values__last) o) (in_range1 (- o 1))))))))))
 (check-sat)
+(exit)

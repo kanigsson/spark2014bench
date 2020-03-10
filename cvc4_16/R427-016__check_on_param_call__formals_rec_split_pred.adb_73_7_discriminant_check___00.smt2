@@ -1048,3 +1048,4 @@ Target solver: CVC4
   (=> (= x__split_fields1 formals_rec_split_pred__p__a__fields) (in_range3
   (distinct 1 0) x__split_discrs)))))))))))))))))))))))
 (check-sat)
+(exit)

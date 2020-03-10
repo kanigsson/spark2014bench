@@ -411,3 +411,4 @@ Target solver: CVC4
   (=> (dynamic_invariant y true false true true)
   (=> (<= x 1280) (=> (<= y 3328) (uint_in_range (fxp_mult x y))))))))
 (check-sat)
+(exit)

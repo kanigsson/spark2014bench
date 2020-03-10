@@ -1468,3 +1468,4 @@ Target solver: CVC4
   (=> (in_range3 o7)
   (= (has_char_in_slice 10 cur_position o7 the_file) true)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

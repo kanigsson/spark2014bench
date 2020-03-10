@@ -440,3 +440,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 x true false true true)
   (=> (< 0 (length a)) (in_range4 (last1 a)))))))
 (check-sat)
+(exit)

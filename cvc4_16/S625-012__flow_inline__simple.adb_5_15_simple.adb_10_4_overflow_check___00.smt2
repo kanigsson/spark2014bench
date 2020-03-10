@@ -205,3 +205,4 @@ Target solver: CVC4
      true false) r7b)
   (=> (= (to_rep (select x (ite r7b 1 0))) o) (in_range1 (+ o 1))))))))
 (check-sat)
+(exit)

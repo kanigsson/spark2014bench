@@ -162,3 +162,4 @@ Target solver: CVC4
   (forall ((o2 Int))
   (=> (= (to_rep o1) o2) (forall ((y1 Int)) (=> (= y1 o2) (= y1 11))))))))))))))))))
 (check-sat)
+(exit)

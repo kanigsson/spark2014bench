@@ -996,3 +996,4 @@ Target solver: CVC4
   (=> (<= (first1 temp___362) (last1 temp___362))
   (<= (first1 coms__split_fields) (last1 coms__split_fields))))))))))))))))
 (check-sat)
+(exit)

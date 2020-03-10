@@ -95,3 +95,4 @@ Target solver: CVC4
   (=> (dynamic_invariant param true false true true)
   (=> (or (= param 1) (= param 3)) (< param 4)))))
 (check-sat)
+(exit)

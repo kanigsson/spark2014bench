@@ -120,3 +120,4 @@ Target solver: CVC4
   (=> (forall ((s22 Int)) (get__function_guard (get s22) s22))
   (= (get s21) x))))))))
 (check-sat)
+(exit)

@@ -479,3 +479,4 @@ Target solver: CVC4
   (= o2 false))
   (=> (= o2 true) (=> (in_range1 (+ j12 j22)) (= j4 (- (+ j12 j22) 1)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

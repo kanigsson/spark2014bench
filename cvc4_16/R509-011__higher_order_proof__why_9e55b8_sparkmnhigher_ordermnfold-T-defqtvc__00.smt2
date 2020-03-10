@@ -1363,3 +1363,4 @@ Target solver: CVC4
   (=> (update_sum__function_guard (update_sum k l) k l)
   (= (update_sum k l) true)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -381,3 +381,4 @@ Target solver: CVC4
   (=> (and (<= (to_rep1 to____first) i) (<= i (to_rep1 to____last)))
   (= (to_rep (select to__ i)) (to_rep (select from i)))))))))))))))))
 (check-sat)
+(exit)

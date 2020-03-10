@@ -478,3 +478,4 @@ Target solver: CVC4
      (us_split_fields1 (rec__p__B_2__list_acc__pointer_value x))))))))) true)
   (< i p__B_2__f__result))))))))))))))))
 (check-sat)
+(exit)

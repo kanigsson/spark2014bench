@@ -432,3 +432,4 @@ Target solver: CVC4
   (forall ((z1 (Array Int integer)))
   (=> (= z1 (to_array temp___282)) (<= (to_rep1 z__first) x)))))))))))))))))
 (check-sat)
+(exit)

@@ -543,3 +543,4 @@ Target solver: CVC4
   (ite (= space1 1) true false)) true) (in_range3
   (* (* (div1 4 space1) 8) 1000000)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

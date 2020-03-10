@@ -251,3 +251,4 @@ Target solver: CVC4
   (=> (<= 1 n)
   (=> (<= n 10) (= (rec__foo__r__x (us_split_fields1 (select a1 n))) true)))))))
 (check-sat)
+(exit)

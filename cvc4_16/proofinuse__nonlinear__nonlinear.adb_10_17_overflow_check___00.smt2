@@ -266,3 +266,4 @@ Target solver: CVC4
   (=> (dynamic_invariant res false false true true)
   (=> (<= x y) (=> (< y z) (=> (< y 32768) (in_range (* x y))))))))))))
 (check-sat)
+(exit)

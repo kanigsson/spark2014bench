@@ -229,3 +229,4 @@ Target solver: CVC4
  ;; File "predicates.ads", line 3, characters 0-0
   (not (=> (dynamic_invariant i5s true false false true) (not (= 2 0)))))
 (check-sat)
+(exit)

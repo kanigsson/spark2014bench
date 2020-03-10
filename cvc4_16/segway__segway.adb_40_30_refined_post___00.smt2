@@ -200,3 +200,4 @@ Target solver: CVC4
  ;; File "segway.ads", line 32, characters 0-0
   (not true))
 (check-sat)
+(exit)

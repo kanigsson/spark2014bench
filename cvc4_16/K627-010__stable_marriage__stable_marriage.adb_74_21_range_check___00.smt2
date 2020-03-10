@@ -321,3 +321,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 rank) true false) (ite (<= rank 64) true false)) true)
   (=> (<= 1 (- rank 1)) (<= 1 1)))))))))))))
 (check-sat)
+(exit)

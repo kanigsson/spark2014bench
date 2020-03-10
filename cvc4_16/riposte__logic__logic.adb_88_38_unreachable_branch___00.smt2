@@ -76,3 +76,4 @@ Target solver: CVC4
   (ite (not (= a true)) (= o (ite (= b true) false true))
   (= o (distinct 1 0))) (=> (= o true) (not (= b true)))))))
 (check-sat)
+(exit)

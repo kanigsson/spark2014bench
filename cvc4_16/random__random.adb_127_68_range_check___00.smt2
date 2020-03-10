@@ -672,3 +672,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__random__generator__index g__split_fields)) o9)
   (in_range1 (+ o9 (- 227)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

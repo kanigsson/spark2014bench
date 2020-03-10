@@ -484,3 +484,4 @@ Target solver: CVC4
   (= (bvadd (bvurem val__ #x00010000) (bvmul (bvurem (bvudiv val__ #x00010000) #x00010000) #x00010000)) 
   val__) (not (= #x00010000 #x00000000)))))))))))))))))))))))))
 (check-sat)
+(exit)

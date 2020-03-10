@@ -192,3 +192,4 @@ Target solver: CVC4
   (=> (= (and (ite (< i2 10) true false) (ite (< 10 r2) true false)) true)
   (or (< temp___171 i2) (and (= i2 temp___171) (< r2 temp___170))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -94,3 +94,4 @@ Target solver: CVC4
   (forall ((gn Int))
   (=> (dynamic_invariant gn true false true true) (in_range (+ gn 1))))))
 (check-sat)
+(exit)

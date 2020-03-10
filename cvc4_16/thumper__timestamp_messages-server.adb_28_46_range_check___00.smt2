@@ -1820,3 +1820,4 @@ Target solver: CVC4
   (dynamic_invariant1 temp___376 true false true true)) (in_range1
   (- (+ 0 (+ 1 (length (first1 temp___377) (last1 temp___377)))) 1))))))))))))))
 (check-sat)
+(exit)

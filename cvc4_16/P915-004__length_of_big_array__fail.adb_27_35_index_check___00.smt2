@@ -799,3 +799,4 @@ Target solver: CVC4
   (=> (= (first3 c) #x0000000000000000)
   (=> (= (last3 c) #xFFFFFFFFFFFFFFFF) (bvule (first3 c) #x0000000000000000)))))))
 (check-sat)
+(exit)

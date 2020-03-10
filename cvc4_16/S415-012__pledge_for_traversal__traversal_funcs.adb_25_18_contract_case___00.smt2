@@ -538,3 +538,4 @@ Target solver: CVC4
   (=> (length__function_guard (length x) x)
   (= (length traversal_funcs__next__result) (- (length x) 1)))))))))))))
 (check-sat)
+(exit)

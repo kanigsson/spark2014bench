@@ -107,3 +107,4 @@ Target solver: CVC4
   (and (dynamic_invariant o true false true true) (< 2 o)))
   (forall ((x1 Int)) (=> (= x1 o) (< 2 x1)))))))))
 (check-sat)
+(exit)

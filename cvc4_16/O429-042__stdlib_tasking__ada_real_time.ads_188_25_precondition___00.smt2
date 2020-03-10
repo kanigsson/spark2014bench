@@ -387,3 +387,4 @@ Target solver: CVC4
   (=> (not (= (bool_eq right time_span_zero) true))
   (not (= (bool_eq time_span_unit time_span_first) true)))))
 (check-sat)
+(exit)

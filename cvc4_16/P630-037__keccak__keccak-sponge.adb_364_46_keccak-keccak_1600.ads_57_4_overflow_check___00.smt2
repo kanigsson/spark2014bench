@@ -1647,3 +1647,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 r123s true false true true) (in_range1
   (+ offset bytes_to_squeeze1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

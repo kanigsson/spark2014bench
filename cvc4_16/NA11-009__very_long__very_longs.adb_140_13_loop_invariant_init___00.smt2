@@ -1056,3 +1056,4 @@ Target solver: CVC4
   (= string_index1 (+ (* 2 (- (last3 result____split_fields1) index1)) 
   (first1 number))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

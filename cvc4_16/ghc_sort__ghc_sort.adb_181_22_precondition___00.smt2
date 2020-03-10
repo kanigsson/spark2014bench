@@ -1415,3 +1415,4 @@ Target solver: CVC4
   (forall ((o8 Int))
   (=> (= (to_rep ss__first) o8) (< (length1 (of_array ss o8 o7)) 2147483647)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

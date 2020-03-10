@@ -374,3 +374,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (=> (in_range2 current) (<= (to_rep values__first) current))))))))))))))))))))))))))))
 (check-sat)
+(exit)

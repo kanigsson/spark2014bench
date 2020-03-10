@@ -989,3 +989,4 @@ Target solver: CVC4
   (=> (in_range1 o3)
   (=> (in_range2 o3) (in_range1 (+ (first1 data) offset1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

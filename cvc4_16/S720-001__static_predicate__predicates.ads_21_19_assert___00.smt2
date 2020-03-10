@@ -632,3 +632,4 @@ Target solver: CVC4
   (=> (test2__function_guard (test2 (of_array y1 1 4)) (of_array y1 1 4))
   (= (test2 (of_array y1 1 4)) true))))))))))))
 (check-sat)
+(exit)

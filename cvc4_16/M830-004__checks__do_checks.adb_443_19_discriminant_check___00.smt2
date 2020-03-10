@@ -5792,3 +5792,4 @@ Target solver: CVC4
   (to_base5
   (us_repqtmk6 x__split_discrs9 (us_split_fieldsqtmk6 x__split_fields)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -299,3 +299,4 @@ Target solver: CVC4
   (let ((o2 (- search__search__result 1)))
   (=> (in_range1 o2) (in_range2 o2))))))))))))))))))
 (check-sat)
+(exit)

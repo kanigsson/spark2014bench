@@ -223,3 +223,4 @@ Target solver: CVC4
   (and (priv__function_guard o1 x) (dynamic_invariant o1 true false true
   true)) (type_invariant x)))))))))))))
 (check-sat)
+(exit)

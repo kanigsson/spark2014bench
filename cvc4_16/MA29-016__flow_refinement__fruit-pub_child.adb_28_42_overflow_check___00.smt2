@@ -352,3 +352,4 @@ Target solver: CVC4
   (dynamic_invariant price_of_orange1 true true true true)) (in_range
   (* fruit_salads_made1 oranges_in_fruit_salad)))))))))))))))))
 (check-sat)
+(exit)

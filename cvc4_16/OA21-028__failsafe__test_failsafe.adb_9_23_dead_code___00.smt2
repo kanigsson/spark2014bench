@@ -614,3 +614,4 @@ Target solver: CVC4
   (and (= current_time1 current_time) (= battery_level_at1 battery_level_at))
   (= counter1 counter))))))))))
 (check-sat)
+(exit)

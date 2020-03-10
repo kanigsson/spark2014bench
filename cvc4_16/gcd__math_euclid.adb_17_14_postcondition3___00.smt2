@@ -249,3 +249,4 @@ Target solver: CVC4
   (=> (= (divides x b) true)
   (=> (divides__function_guard (divides x a) x a) (= (divides x a) true)))))))))))
 (check-sat)
+(exit)

@@ -217,3 +217,4 @@ Target solver: CVC4
   (=> (= x__split_fields (us_split_fieldsqtmk rliteral rliteral))
   (type_invariant (to_rep (rec__aggregates__rec_t__a x__split_fields)))))))
 (check-sat)
+(exit)

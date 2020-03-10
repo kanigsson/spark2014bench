@@ -1146,3 +1146,4 @@ Target solver: CVC4
   (= (- (sum a2) (value (to_rep (select (to_array a2) i)))) (- (sum a1) 
   (value (to_rep (select (to_array a1) i)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

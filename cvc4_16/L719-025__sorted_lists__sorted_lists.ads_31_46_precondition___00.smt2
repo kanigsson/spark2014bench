@@ -1310,3 +1310,4 @@ Target solver: CVC4
   (=> (in_range4 usf1)
   (=> (= (length1 (model1 usf)) (length usf)) (<= 1 usf1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1554,3 +1554,4 @@ Target solver: CVC4
   (=> (= spark__branch4 (ite (< 1 message_byte_length) true false))
   (=> (= spark__branch4 true) (< (first1 message) message_last1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

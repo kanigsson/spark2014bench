@@ -418,3 +418,4 @@ Target solver: CVC4
                              result____split_fields)))
   (= (mod2 b 2) 0)))))))))))))))
 (check-sat)
+(exit)

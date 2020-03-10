@@ -345,3 +345,4 @@ Target solver: CVC4
   (=> (and (<= 0 k) (<= k j2))
   (=> (<= k j2) (= (to_rep (select tmp3 k)) (- 23))))))))))))))))))))))))))
 (check-sat)
+(exit)

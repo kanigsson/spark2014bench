@@ -1028,3 +1028,4 @@ Target solver: CVC4
                                                              true false)))
   (=> (= spark__branch2 true) (in_range1 (+ (first1 buffer) 12)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

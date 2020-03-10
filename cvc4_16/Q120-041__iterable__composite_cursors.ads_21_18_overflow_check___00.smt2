@@ -362,3 +362,4 @@ Target solver: CVC4
   (=> (= (has_element c p) true)
   (=> (= (to_rep (select p 1)) o) (in_range (+ o 1)))))))))))
 (check-sat)
+(exit)

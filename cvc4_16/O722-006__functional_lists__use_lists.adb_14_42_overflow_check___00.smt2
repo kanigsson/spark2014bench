@@ -914,3 +914,4 @@ Target solver: CVC4
          (find (get_cursor_model o12 us_HEAP5) cu1 us_HEAP5)))))
   (in_range1 (+ o13 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

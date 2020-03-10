@@ -335,3 +335,4 @@ Target solver: CVC4
   (valid_prime_data is_prime2) is_prime2))
   (= (valid_prime_data is_prime1) true)))))))))))
 (check-sat)
+(exit)

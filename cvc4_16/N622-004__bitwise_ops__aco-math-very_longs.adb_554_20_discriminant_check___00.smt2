@@ -1066,3 +1066,4 @@ Target solver: CVC4
      (us_split_discrs1 l))) o5)
   (in_range3 o5 (us_split_discrs1 temp___1420)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

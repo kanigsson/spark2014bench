@@ -1619,3 +1619,4 @@ Target solver: CVC4
   (forall ((suffix_array1 (Array Int byte)))
   (=> (= suffix_array1 (store suffix_array 0 o10)) (not (= 8 0))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

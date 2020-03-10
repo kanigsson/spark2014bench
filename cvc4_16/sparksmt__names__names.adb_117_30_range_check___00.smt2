@@ -1980,3 +1980,4 @@ Target solver: CVC4
   (=> (dynamic_invariant5 o true false true true) (in_range13
   (bvurem o #x00000100)))))))))))))))
 (check-sat)
+(exit)

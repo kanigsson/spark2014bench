@@ -1446,3 +1446,4 @@ Target solver: CVC4
   (=> (<= temp___876 o1)
   (<= (first1 (get_model (us_repqtmk s__split_fields s__attr__tag))) temp___876)))))))))))))))))))))
 (check-sat)
+(exit)

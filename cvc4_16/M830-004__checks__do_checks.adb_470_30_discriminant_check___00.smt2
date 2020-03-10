@@ -5762,3 +5762,4 @@ Target solver: CVC4
   (us_repqtmk23 (us_split_discrsqtmk rliteral)
   (us_split_fieldsqtmk23 (temp_____aggregate_def_937 (distinct 1 0)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

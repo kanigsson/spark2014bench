@@ -294,3 +294,4 @@ Target solver: CVC4
   (forall ((a_vector1 (Array Int integer)))
   (=> (= a_vector1 (store a_vector a_pointer1 o1)) (in_range3 a_pointer1)))))))))))))))))
 (check-sat)
+(exit)

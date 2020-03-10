@@ -392,3 +392,4 @@ Target solver: CVC4
   (forall ((x (Array Int Bool)))
   (=> (= x (concat__x__aggregate_def (distinct 1 0))) (=> (<= 1 5) (<= 1 1))))))
 (check-sat)
+(exit)

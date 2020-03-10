@@ -1296,3 +1296,4 @@ Target solver: CVC4
   (and (= a2 usf) (= i1 30)))))) (= a2 a1))))
   (=> (<= 1 10) (<= (to_rep a__first) 1))))))))))))))))))))))))
 (check-sat)
+(exit)

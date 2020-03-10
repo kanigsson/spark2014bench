@@ -521,3 +521,4 @@ Target solver: CVC4
   (=> (dynamic_invariant offset true false true true)
   (=> (<= offset 511) (<= 0 (+ offset 1))))))
 (check-sat)
+(exit)

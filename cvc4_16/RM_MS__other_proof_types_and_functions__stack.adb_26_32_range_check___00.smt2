@@ -430,3 +430,4 @@ Target solver: CVC4
   (count my_stack__split_fields1) my_stack__split_fields1))
   (=> (<= n (count my_stack__split_fields)) (in_range4 n))))))))
 (check-sat)
+(exit)

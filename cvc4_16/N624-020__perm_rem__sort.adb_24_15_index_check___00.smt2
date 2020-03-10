@@ -696,3 +696,4 @@ Target solver: CVC4
   (=> (<= y 100)
   (=> (= (to_rep (select values y)) o) (=> (= (to_rep o1) o) (<= x 100))))))))))))))))))))
 (check-sat)
+(exit)

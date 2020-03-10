@@ -239,3 +239,4 @@ Target solver: CVC4
   (=> (= result__1 x)
   (=> (< i n) (=> (in_range2 i) (= result__1 (power x i)))))))))))))
 (check-sat)
+(exit)

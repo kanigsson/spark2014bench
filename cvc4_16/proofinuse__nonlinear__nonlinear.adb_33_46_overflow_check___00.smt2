@@ -230,3 +230,4 @@ Target solver: CVC4
   (=> (<= x 29)
   (let ((o (+ x 1))) (=> (in_range1 o) (in_range3 (power 2 o)))))))))
 (check-sat)
+(exit)

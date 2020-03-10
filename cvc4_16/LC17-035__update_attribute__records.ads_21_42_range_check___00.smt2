@@ -364,3 +364,4 @@ Target solver: CVC4
   (forall ((o3 my_range))
   (=> (= (to_rep2 o3) new_data_2) (in_range1 new_data)))))))))))))))
 (check-sat)
+(exit)

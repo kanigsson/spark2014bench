@@ -388,3 +388,4 @@ Target solver: CVC4
   (and (= (to_rep a__first) 0) (= (to_rep a__last) x)))
   (=> (<= 0 x) (<= (- 2147483648) 0)))))))
 (check-sat)
+(exit)

@@ -327,3 +327,4 @@ Target solver: CVC4
   (fp.leq (fp.neg (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000)) 
   delta_speed)))))))))))))))))
 (check-sat)
+(exit)

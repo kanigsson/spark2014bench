@@ -1228,3 +1228,4 @@ Target solver: CVC4
   (rec__do_loops__u_array_acc__pointer_value__pred
   (rec__do_loops__r_array_record__f3 d__pointer_value2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

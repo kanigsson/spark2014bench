@@ -480,3 +480,4 @@ Target solver: CVC4
   (=> (<= (first1 c) usf)
   (=> (<= usf (last1 c)) (<= (first1 s) indexbis__result)))))))))))))
 (check-sat)
+(exit)

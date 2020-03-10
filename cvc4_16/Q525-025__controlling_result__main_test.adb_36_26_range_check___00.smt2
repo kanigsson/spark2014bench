@@ -1945,3 +1945,4 @@ Target solver: CVC4
   (forall ((o5 Int))
   (=> (= (to_rep3 total_stream__first) o5) (in_range2 (length o5 o4)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

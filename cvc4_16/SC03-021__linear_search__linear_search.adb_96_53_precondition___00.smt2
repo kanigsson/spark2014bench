@@ -1418,3 +1418,4 @@ Target solver: CVC4
   (= (to_rep (rec__linear_search__int_acc__pointer_value usf)) o4))
   (<= usf2 (length usf1))))))))))))))))))))))))))
 (check-sat)
+(exit)

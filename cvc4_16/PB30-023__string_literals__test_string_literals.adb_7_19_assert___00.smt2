@@ -418,3 +418,4 @@ Target solver: CVC4
   (id (of_array s1 1 4)) (of_array s1 1 4)))
   (= (first1 (id (of_array s 1 4))) 1)))))))
 (check-sat)
+(exit)

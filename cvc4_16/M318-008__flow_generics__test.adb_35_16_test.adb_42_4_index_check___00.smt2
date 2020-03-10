@@ -334,3 +334,4 @@ Target solver: CVC4
   (=> (in_range1 o4)
   (forall ((o5 integer)) (=> (= (to_rep o5) o4) (<= (to_rep c__first) i1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

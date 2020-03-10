@@ -404,3 +404,4 @@ Target solver: CVC4
   (forall ((x_21 us_rep1)) (is_null__function_guard1 (is_null1 x_21) x_21))
   (= (is_null1 x_2) true))))))))))))))
 (check-sat)
+(exit)

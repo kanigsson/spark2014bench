@@ -341,3 +341,4 @@ Target solver: CVC4
   (=> (dynamic_invariant time_span_zero true false true true)
   (=> (dynamic_invariant time_span_unit true false true true) (< 0 1)))))))
 (check-sat)
+(exit)

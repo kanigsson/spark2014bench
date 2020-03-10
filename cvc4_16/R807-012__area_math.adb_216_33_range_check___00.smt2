@@ -1242,3 +1242,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__area_math__ensemble__size (us_split_fields1 e))) o)
   (let ((o1 (+ o 1))) (=> (in_range1 o1) (in_range2 o1)))))))))))))
 (check-sat)
+(exit)

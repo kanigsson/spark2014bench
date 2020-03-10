@@ -433,3 +433,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 b true false true true)
   (=> (dynamic_invariant size_b true false true true) (in_range (length a))))))))
 (check-sat)
+(exit)

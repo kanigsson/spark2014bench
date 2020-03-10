@@ -84,3 +84,4 @@ Target solver: CVC4
   (=> (get__function_guard o1 s1)
   (forall ((y Bool)) (=> (= y o1) (=> (= x true) (= y true))))))))))))))
 (check-sat)
+(exit)

@@ -982,3 +982,4 @@ Target solver: CVC4
   (rec__bounded_dynamic_strings__sequence__current_length1
   result____split_fields1) usf)))))))))))))))
 (check-sat)
+(exit)

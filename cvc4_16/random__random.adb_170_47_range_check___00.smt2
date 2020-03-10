@@ -590,3 +590,4 @@ Target solver: CVC4
   (and (bvule #x00000000 x1) (bvule x1 (bvsub n #x00000001)))))))))))))))
   (in_range1 (+ min1 (bv2nat x1))))))))))))
 (check-sat)
+(exit)

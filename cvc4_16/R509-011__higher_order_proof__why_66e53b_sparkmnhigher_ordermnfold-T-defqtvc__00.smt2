@@ -911,3 +911,4 @@ Target solver: CVC4
   (<= (first3 test_higher_order3__my_count__count_left__acc__fold__result) 
   (first1 a)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

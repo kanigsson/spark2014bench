@@ -193,3 +193,4 @@ Target solver: CVC4
   (ite (= (fp.eq x (fp #b0 #b01111111 #b10000000000000000000000)) true) 1 0)) 
   (ite (= (fp.eq x (fp #b0 #b01111111 #b10011001100110011001101)) true) 1 0)) 1))))))))
 (check-sat)
+(exit)

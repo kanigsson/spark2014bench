@@ -566,3 +566,4 @@ Target solver: CVC4
                                                      (rec__simple_unc_arrays__table__last
                                                      a__split_discrs)) j) 1)))))))))))))))))
 (check-sat)
+(exit)

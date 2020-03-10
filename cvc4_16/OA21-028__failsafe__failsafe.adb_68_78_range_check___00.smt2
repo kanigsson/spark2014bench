@@ -711,3 +711,4 @@ Target solver: CVC4
   (=> (in_range1 o7)
   (=> (bvuge current_time1 o7) (in_range1 (bvsub counter1 #x01))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

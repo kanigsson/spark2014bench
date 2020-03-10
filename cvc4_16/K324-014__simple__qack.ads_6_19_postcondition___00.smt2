@@ -66,3 +66,4 @@ Target solver: CVC4
  ;; File "qack.ads", line 5, characters 0-0
   (not (forall ((x Bool)) (= x true))))
 (check-sat)
+(exit)

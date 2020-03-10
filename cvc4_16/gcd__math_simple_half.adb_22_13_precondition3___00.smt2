@@ -373,3 +373,4 @@ Target solver: CVC4
   (let ((o2 (min a b)))
   (=> (in_range1 o2) (=> (in_range1 j) (<= (+ (div1 o2 2) 1) j))))))))))))))))))))))))))
 (check-sat)
+(exit)

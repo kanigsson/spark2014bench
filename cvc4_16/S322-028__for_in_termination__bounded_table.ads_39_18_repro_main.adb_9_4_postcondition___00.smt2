@@ -460,3 +460,4 @@ Target solver: CVC4
   repro_main__int_table__next__result1))
   (< (index_of cursor) (index_of repro_main__int_table__next__result)))))))))))))
 (check-sat)
+(exit)

@@ -267,3 +267,4 @@ Target solver: CVC4
   (forall ((index1 Int))
   (=> (= index1 o) (forall ((o1 item)) (=> (= (to_rep o1) e) (<= 1 index1))))))))))))))
 (check-sat)
+(exit)

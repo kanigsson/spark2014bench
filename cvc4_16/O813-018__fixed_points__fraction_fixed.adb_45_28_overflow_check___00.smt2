@@ -426,3 +426,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 z2 false false true true)
   (forall ((z1 Int)) (=> (= z1 (* x 2)) (in_range2 (+ x x)))))))))))))))
 (check-sat)
+(exit)

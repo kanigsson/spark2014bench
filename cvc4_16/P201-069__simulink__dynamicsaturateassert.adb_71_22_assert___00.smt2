@@ -322,3 +322,4 @@ Target solver: CVC4
   (=> (bvule saturation_dynamic_out11 max1)
   (=> (bvuge saturation_dynamic_out11 min1) (bvuge max1 min1)))))))))))))
 (check-sat)
+(exit)

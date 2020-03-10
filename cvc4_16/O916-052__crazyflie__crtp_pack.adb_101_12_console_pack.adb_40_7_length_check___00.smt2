@@ -1360,3 +1360,4 @@ Target solver: CVC4
   (=> (data_to_byte_array__function_guard (data_to_byte_array o4) o4)
   (=> (<= 1 1) (<= r6b r7b)))))))))))))))))))))))))
 (check-sat)
+(exit)

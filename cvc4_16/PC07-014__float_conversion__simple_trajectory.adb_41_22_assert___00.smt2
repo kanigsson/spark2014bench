@@ -378,3 +378,4 @@ Target solver: CVC4
   (=> (low_bound__function_guard (low_bound n) n)
   (fp.leq (low_bound (+ n 1)) (fp.sub RNE (low_bound n) (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -686,3 +686,4 @@ Target solver: CVC4
   (=> (in_range1 o2)
   (forall ((top2 Int)) (=> (= top2 o2) (in_range1 (length s)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

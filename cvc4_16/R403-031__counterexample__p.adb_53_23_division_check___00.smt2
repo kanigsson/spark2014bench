@@ -342,3 +342,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (= res3 (bvor res2 bits2)) (= res3 res2))))
   (not (= #x0004 #x0000)))))))))))))))))))))))))))
 (check-sat)
+(exit)

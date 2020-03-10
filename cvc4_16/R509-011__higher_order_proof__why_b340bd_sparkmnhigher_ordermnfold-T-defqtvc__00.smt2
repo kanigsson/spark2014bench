@@ -1247,3 +1247,4 @@ Target solver: CVC4
   (forall ((o7 Int))
   (=> (= (to_rep (get (to_array a) usf usf1)) o7) (< o6 2147483647))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

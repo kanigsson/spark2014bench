@@ -232,3 +232,4 @@ Target solver: CVC4
   (=> (in_range1 o4)
   (forall ((i3 Int)) (=> (= i3 o4) (=> (< 2 n12) (< n12 temp___197))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

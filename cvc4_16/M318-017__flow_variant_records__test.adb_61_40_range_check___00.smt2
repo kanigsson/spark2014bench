@@ -539,3 +539,4 @@ Target solver: CVC4
   (= (to_rep (rec__test__matrix__r (us_split_discrs1 usf2))) usf)))))))
   (in_range1 4))))
 (check-sat)
+(exit)

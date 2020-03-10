@@ -282,3 +282,4 @@ Target solver: CVC4
   (=> (= t__msub__result o)
   (=> (= (and (= x #x00) (= y #x00)) true) (= t__msub__result #x00))))))))))
 (check-sat)
+(exit)

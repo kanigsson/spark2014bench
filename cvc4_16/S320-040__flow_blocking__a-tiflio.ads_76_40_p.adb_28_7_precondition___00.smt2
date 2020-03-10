@@ -360,3 +360,4 @@ Target solver: CVC4
  ;; File "a-tiflio.ads", line 69, characters 0-0
   (not true))
 (check-sat)
+(exit)

@@ -1385,3 +1385,4 @@ Target solver: CVC4
   (forall ((temp___loop_entry_625 us_split_fields2))
   (=> (= temp___loop_entry_625 s__split_fields1) (in_range1 (- i first2)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

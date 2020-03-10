@@ -940,3 +940,4 @@ Target solver: CVC4
   (let ((temp___305 (of_array1 b1 o1 o)))
   (=> (dynamic_predicate1 temp___305) (< (length2 temp___305) 268435455)))))))))))))))
 (check-sat)
+(exit)

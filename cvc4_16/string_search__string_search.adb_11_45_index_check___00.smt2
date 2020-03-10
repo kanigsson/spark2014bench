@@ -478,3 +478,4 @@ Target solver: CVC4
                                              false)) true)
   (let ((o4 (+ j (- i 1)))) (=> (in_range1 o4) (<= (first1 haystack) o4)))))))))))))))))))))))))
 (check-sat)
+(exit)

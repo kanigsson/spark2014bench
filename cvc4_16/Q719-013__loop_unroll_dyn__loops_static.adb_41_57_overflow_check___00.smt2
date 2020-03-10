@@ -323,3 +323,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 usf) true false) (ite (<= usf a_length) true false)) true)
   (forall ((o3 Int)) (=> (= (to_rep1 a__first) o3) (in_range1 (+ o3 usf))))))))))))))))))))))
 (check-sat)
+(exit)

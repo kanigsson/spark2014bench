@@ -402,3 +402,4 @@ Target solver: CVC4
   (=> (dynamic_invariant right true false true true)
   (=> (< 0 right) (=> (< time_span_zero left) (in_range2 (fxp_div left 1))))))))))
 (check-sat)
+(exit)

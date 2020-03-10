@@ -818,3 +818,4 @@ Target solver: CVC4
   temp___3082))
   (= (has_element (us_repqtmk c1__split_fields) temp___3081) true)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

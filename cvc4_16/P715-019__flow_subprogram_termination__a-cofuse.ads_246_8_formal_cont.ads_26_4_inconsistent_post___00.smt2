@@ -410,3 +410,4 @@ Target solver: CVC4
   (= (ole right formal_cont__new_set_02__union__result) true))
   (= (included_in_union formal_cont__new_set_02__union__result left right) true)))))))
 (check-sat)
+(exit)

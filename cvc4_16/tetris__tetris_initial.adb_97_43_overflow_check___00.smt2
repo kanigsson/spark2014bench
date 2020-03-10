@@ -472,3 +472,4 @@ Target solver: CVC4
   (= cur_board3 (store cur_board2 to_line2 (select cur_board2 from_line1)))
   (=> (in_range4 (- to_line2 1)) (in_range1 (+ num_deleted1 1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

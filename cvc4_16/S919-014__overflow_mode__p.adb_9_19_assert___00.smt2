@@ -185,3 +185,4 @@ Target solver: CVC4
   (=> (= (+ x x) (* 2 x))
   (=> (= (* x y) (* y x)) (<= (min x 1) (power x y)))))))))
 (check-sat)
+(exit)

@@ -1068,3 +1068,4 @@ Target solver: CVC4
   (=> (or (= i (first2 a)) (= (sum_cst (- i 1) (last_2 a)) true))
   (<= (first_2 a) (last_2 a))))))))))))))
 (check-sat)
+(exit)

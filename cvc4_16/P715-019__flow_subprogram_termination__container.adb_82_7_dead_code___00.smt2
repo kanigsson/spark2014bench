@@ -785,3 +785,4 @@ Target solver: CVC4
                     (rec__container__cursor__index (us_split_fields3 o1)))))
   (and (<= 1 temp___206) (<= temp___206 200))))) (not (= o3 true))))))))))))))))))))))))))))
 (check-sat)
+(exit)

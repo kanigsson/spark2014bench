@@ -905,3 +905,4 @@ Target solver: CVC4
   (dynamic_invariant1 temp___312 true false true true))
   (<= (first1 a) temp___312))))))))))))))))))))))))))
 (check-sat)
+(exit)

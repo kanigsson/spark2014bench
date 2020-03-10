@@ -798,3 +798,4 @@ Target solver: CVC4
   (=> (= (to_rep2 o7) ((_ int2bv 8) o6))
   (forall ((o8 Int)) (=> (= (to_rep1 data__first) o8) (in_range1 (+ o8 i1)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

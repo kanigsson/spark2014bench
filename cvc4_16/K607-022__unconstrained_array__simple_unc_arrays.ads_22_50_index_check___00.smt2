@@ -841,3 +841,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (to_array temp___501) usf)) o4)
   (<= (first1 (rec__simple_unc_arrays__table__v (us_split_fields1 a))) usf)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

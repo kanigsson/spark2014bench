@@ -127,3 +127,4 @@ Target solver: CVC4
   (=> (dynamic_invariant col_count true false true true)
   (=> (dynamic_invariant c true false true true) (in_range (+ col_count c)))))))
 (check-sat)
+(exit)

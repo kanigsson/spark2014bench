@@ -250,3 +250,4 @@ Target solver: CVC4
   (forall ((x2 Int))
   (=> (= x2 o2) (let ((o3 (- x2 2))) (=> (in_range o3) (in_range (* 3 o3))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -713,3 +713,4 @@ Target solver: CVC4
   (=> (<= i (last1 a))
   (=> (not (< k i)) (dynamic_property 1 100 (first1 a) (last1 a)))))))))))))
 (check-sat)
+(exit)

@@ -318,3 +318,4 @@ Target solver: CVC4
   (forall ((a1 (Array Int component_t)))
   (=> (= a1 (store a j rliteral)) (in_range2 j))))))))))))
 (check-sat)
+(exit)

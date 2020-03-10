@@ -1095,3 +1095,4 @@ Target solver: CVC4
   (us_repqtmk1 structure__split_discrs structure__split_fields) false false
   true true) (dynamic_property 1 2147483647 1 4))))))))
 (check-sat)
+(exit)

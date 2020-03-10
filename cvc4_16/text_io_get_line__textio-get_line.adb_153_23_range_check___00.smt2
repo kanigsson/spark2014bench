@@ -1358,3 +1358,4 @@ Target solver: CVC4
   (=> (= spark__branch3 true)
   (=> (= (to_rep (select buf2 k)) 0) (in_range2 (- k 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

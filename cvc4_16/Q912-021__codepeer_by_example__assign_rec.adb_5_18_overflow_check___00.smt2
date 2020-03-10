@@ -294,3 +294,4 @@ Target solver: CVC4
                       (rec__assign_rec__rec__d x__split_fields)))
   (in_range (- y 1))))))))))))
 (check-sat)
+(exit)

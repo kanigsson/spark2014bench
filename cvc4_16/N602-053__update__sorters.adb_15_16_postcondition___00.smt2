@@ -395,3 +395,4 @@ Target solver: CVC4
   (select (to_array
           (of_array values1 (to_rep values__first) (to_rep values__last))) temp___index_229)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

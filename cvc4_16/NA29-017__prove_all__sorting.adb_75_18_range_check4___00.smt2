@@ -566,3 +566,4 @@ Target solver: CVC4
   (=> (<= (to_rep a__first) (to_rep a__last))
   (<= (to_rep a__last) 2147483647)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

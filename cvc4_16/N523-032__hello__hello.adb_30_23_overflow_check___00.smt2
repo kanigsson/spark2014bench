@@ -363,3 +363,4 @@ Target solver: CVC4
                                                  false)) true)
   (=> (not (= usf (first1 str))) (in_range1 (- usf 1)))))))))))))
 (check-sat)
+(exit)

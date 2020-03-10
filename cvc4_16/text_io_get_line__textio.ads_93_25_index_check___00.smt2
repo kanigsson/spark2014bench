@@ -982,3 +982,4 @@ Target solver: CVC4
   (=> (= (to_rep (select the_file1 (+ (- usf 1) cur_position))) o1)
   (<= (to_rep1 result____first) usf))))))))))))))))))))))
 (check-sat)
+(exit)

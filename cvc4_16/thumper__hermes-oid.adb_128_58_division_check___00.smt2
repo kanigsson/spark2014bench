@@ -1303,3 +1303,4 @@ Target solver: CVC4
   (forall ((result__3 (Array Int octet)))
   (=> (= result__3 (store result__2 result_index4 o19)) (not (= 128 0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

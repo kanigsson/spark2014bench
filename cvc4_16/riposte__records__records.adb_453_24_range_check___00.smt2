@@ -360,3 +360,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__records_prooffuncs__pair__a r__split_fields)) o1)
   (in_range (+ o1 1))))))))))
 (check-sat)
+(exit)

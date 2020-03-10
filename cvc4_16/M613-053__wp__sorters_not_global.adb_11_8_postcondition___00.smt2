@@ -225,3 +225,4 @@ Target solver: CVC4
   (=> (= values3 (store values2 y o3))
   (= (to_rep (select values3 x)) (to_rep (select values1 y))))))))))))))))))
 (check-sat)
+(exit)

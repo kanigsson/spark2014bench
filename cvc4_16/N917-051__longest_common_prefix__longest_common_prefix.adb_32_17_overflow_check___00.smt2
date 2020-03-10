@@ -303,3 +303,4 @@ Target solver: CVC4
        (= (to_rep (select a (+ x l2))) (to_rep (select a (+ y l2)))))
   true false)) true) (in_range1 (+ l2 1)))))))))))))))))
 (check-sat)
+(exit)

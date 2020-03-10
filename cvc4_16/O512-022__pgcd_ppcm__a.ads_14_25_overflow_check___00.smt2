@@ -295,3 +295,4 @@ Target solver: CVC4
   (=> (not (= b (- 2147483648)))
   (let ((o (* a b))) (=> (in_range2 o) (in_range2 (abs1 o))))))))))
 (check-sat)
+(exit)

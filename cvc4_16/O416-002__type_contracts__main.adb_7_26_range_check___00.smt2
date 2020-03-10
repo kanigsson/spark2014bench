@@ -1139,3 +1139,4 @@ Target solver: CVC4
   (dynamic_invariant1 (select a temp___270) true false true true))))
   (in_range1 2)))))))))))))
 (check-sat)
+(exit)

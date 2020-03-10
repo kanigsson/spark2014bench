@@ -1177,3 +1177,4 @@ Target solver: CVC4
   (us_pledge_ty__refqtmk1 linear_search__linear_search__2__x__pledge3))
   temp___borrowed_337 temp___brower_336)) )))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

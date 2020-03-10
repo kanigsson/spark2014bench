@@ -165,3 +165,4 @@ Target solver: CVC4
   (=> (= a b)
   (= (bool_eq a (- 2147483648) 2147483647 b (- 2147483648) 2147483647) true)))))
 (check-sat)
+(exit)

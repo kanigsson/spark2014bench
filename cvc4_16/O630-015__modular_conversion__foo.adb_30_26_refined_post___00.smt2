@@ -374,3 +374,4 @@ Target solver: CVC4
   (=> (= (to_rep (select value field)) o)
   (=> (= data1 o) (= data1 (to_rep (select value field))))))))))
 (check-sat)
+(exit)

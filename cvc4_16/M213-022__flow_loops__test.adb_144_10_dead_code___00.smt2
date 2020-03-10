@@ -108,3 +108,4 @@ Target solver: CVC4
  ;; File "test.adb", line 138, characters 0-0
   (not (forall ((a Int)) (not (dynamic_invariant a false false true true)))))
 (check-sat)
+(exit)

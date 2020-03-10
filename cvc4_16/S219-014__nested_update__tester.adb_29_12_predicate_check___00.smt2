@@ -2068,3 +2068,4 @@ Target solver: CVC4
   (=> (= x__split_discrs (us_split_discrs2 temp___299)) (dynamic_predicate1
   (us_repqtmk1 x__split_discrs x__split_fields8)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

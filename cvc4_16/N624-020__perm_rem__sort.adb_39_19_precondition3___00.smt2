@@ -799,3 +799,4 @@ Target solver: CVC4
   (let ((o12 y))
   (=> (in_range4 o12) (<= (first1 (of_array interm 1 100)) o12)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

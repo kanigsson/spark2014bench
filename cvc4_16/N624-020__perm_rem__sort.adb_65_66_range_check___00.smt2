@@ -735,3 +735,4 @@ Target solver: CVC4
   (=> (dynamic_invariant4 hr1 false false true true)
   (=> (in_range4 x) (in_range4 y)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

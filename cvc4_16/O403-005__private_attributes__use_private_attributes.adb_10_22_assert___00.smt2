@@ -363,3 +363,4 @@ Target solver: CVC4
   (us_repqtmk c__split_discrs (us_split_fieldsqtmk c__split_fields)) false
   false true true) (= u__attr__constrained true))))))))))))))
 (check-sat)
+(exit)

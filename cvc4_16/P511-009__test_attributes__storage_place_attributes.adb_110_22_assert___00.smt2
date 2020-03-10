@@ -423,3 +423,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (<= 0 storage_place_attributes__r2__d1__first__bit))))
 (check-sat)
+(exit)

@@ -252,3 +252,4 @@ Target solver: CVC4
  ;; File "test_constr.adb", line 27, characters 0-0
   (not false))
 (check-sat)
+(exit)

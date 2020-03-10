@@ -738,3 +738,4 @@ Target solver: CVC4
                                       (select (to_array a) (first2 a)))
                                       (first2 a) init)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

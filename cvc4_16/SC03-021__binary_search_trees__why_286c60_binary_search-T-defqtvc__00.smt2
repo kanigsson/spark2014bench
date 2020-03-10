@@ -1457,3 +1457,4 @@ Target solver: CVC4
      (us_close (us_repqtmk1 x__pointer_value))) i) true)
   (= (contains t_old i) true)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -945,3 +945,4 @@ Target solver: CVC4
   (us_repqtmk buffer__split_fields2) orig_first))
   (not (= (has_message (us_repqtmk buffer__split_fields1) orig_first) true)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

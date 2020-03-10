@@ -98,3 +98,4 @@ Target solver: CVC4
  ;; File "output_port_14.adb", line 14, characters 0-0
   (not true))
 (check-sat)
+(exit)

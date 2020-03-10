@@ -896,3 +896,4 @@ Target solver: CVC4
   (forall ((value3 (_ BitVec 8)))
   (=> (= value3 (bvurem value2 #x64)) (bvule #x00 (bvudiv value3 #x0A)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1452,3 +1452,4 @@ Target solver: CVC4
   (update_count (- k2 1) (last_2 a1)) (- k2 1) (last_2 a1)))
   (= (update_count (- k1 1) (last_2 a1)) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

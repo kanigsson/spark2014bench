@@ -1232,3 +1232,4 @@ Target solver: CVC4
   (and (value__function_guard o4 o3) (dynamic_invariant1 o4 true false true
   true)) (dynamic_property 1 100 (first1 a2) (last1 a2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1962,3 +1962,4 @@ Target solver: CVC4
                                               (model3
                                               (us_repqtmk3 e__split_fields)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1506,3 +1506,4 @@ Target solver: CVC4
   (=> (count__function_guard (count a1) a1)
   (=> (count__function_guard (count a2) a2) (= (count a1) (+ (count a2) 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

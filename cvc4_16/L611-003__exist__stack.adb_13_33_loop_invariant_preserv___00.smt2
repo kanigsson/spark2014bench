@@ -303,3 +303,4 @@ Target solver: CVC4
   (=> (<= 1 i)
   (=> (<= i (- index2 1)) (not (= (to_rep (select t i)) (- 1)))))))))))))))))))
 (check-sat)
+(exit)

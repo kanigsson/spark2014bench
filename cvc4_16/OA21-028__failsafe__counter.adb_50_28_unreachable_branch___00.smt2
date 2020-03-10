@@ -435,3 +435,4 @@ Target solver: CVC4
   (ite (= input true) (= o (ite (bvult count1 #x0A) true false)) (= o false))
   (not (= o true))))))))))))))))))))
 (check-sat)
+(exit)

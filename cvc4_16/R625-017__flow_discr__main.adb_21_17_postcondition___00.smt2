@@ -296,3 +296,4 @@ Target solver: CVC4
   (=> (= main__f2__result (rec__main__t__d (us_split_discrs1 q2)))
   (=> (= main__f2__result true) (= x true))))))))
 (check-sat)
+(exit)

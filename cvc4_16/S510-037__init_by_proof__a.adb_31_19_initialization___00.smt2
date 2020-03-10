@@ -192,3 +192,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (< x o) true false))
   (=> (= spark__branch true) (= global_a__attr__init true))))))))))))))
 (check-sat)
+(exit)

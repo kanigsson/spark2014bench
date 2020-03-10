@@ -807,3 +807,4 @@ Target solver: CVC4
      (get_element_model (us_repqtmk l2__split_fields1 l2__attr__tag)
      us_HEAP3) n)) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

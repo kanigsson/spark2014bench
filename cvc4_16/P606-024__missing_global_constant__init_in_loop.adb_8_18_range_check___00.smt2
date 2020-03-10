@@ -243,3 +243,4 @@ Target solver: CVC4
   (=> (dynamic_invariant lst true false true true)
   (=> (<= fst lst) (<= 0 fst)))))))))))))))
 (check-sat)
+(exit)

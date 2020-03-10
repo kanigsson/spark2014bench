@@ -1754,3 +1754,4 @@ Target solver: CVC4
   (=> (dynamic_invariant reg true false true true)
   (discrimrec__register_type__value_64__pred reg))))
 (check-sat)
+(exit)

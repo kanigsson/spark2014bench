@@ -566,3 +566,4 @@ Target solver: CVC4
   (fp.lt (to_rep (select battery_level_at s1)) battery_threshold)))
   (= failsafe__model__time_below_threshold__result #x32))))))))))))))))))
 (check-sat)
+(exit)

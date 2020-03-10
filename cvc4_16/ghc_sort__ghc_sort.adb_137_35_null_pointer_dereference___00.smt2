@@ -796,3 +796,4 @@ Target solver: CVC4
      (us_split_discrs1 (rec__ghc_sort__int_array_list__pointer_value l)))) o3)
   (=> (<= o3 o2) (rec__ghc_sort__int_array_list__pointer_value__pred l)))))))))))))))
 (check-sat)
+(exit)

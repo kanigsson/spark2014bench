@@ -351,3 +351,4 @@ Target solver: CVC4
   (=> (= find_map__R252s__assume r252s)
   (=> (dynamic_invariant1 r252s true false true true) (in_range1 100))))))))
 (check-sat)
+(exit)

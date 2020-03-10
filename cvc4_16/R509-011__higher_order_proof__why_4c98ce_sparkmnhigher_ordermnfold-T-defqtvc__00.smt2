@@ -1080,3 +1080,4 @@ Target solver: CVC4
   (=> (= temp___inv_1739 true) (< acc 2147483647))))
   (=> (< (first2 a) i) (in_range6 (first_2 a))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

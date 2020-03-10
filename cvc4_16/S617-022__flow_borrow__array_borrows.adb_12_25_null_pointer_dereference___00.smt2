@@ -287,3 +287,4 @@ Target solver: CVC4
   (=> (= x1 (store x (ite j 1 0) (select usf1 (ite j 1 0))))
   (rec__array_borrows__int_ptr__pointer_value__pred (select x1 1))))))))))))))))))))))))))
 (check-sat)
+(exit)

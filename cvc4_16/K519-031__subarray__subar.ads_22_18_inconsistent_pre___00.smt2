@@ -160,3 +160,4 @@ Target solver: CVC4
  ;; File "subar.ads", line 21, characters 0-0
   (not (not (= (to_rep (select x 1)) 1))))
 (check-sat)
+(exit)

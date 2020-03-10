@@ -235,3 +235,4 @@ Target solver: CVC4
   (let ((o4 (+ i4 1))) (and (in_range1 o4) (and (= i2 o4) (not (< 2 n12)))))))))))))))))))))))))
   (and (= a12 a11) (= i2 i1))) (=> (= i3 2) (=> (< 2 n2) (<= i3 23))))))))))))))))))))))))))))
 (check-sat)
+(exit)

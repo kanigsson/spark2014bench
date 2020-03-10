@@ -711,3 +711,4 @@ Target solver: CVC4
      (us_split_discrs3 usf1))) usf)
   (in_range2 usf)))))))
 (check-sat)
+(exit)

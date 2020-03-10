@@ -442,3 +442,4 @@ Target solver: CVC4
   (=> (= (length a) (length b)) (dynamic_property 1 2147483647 (first1 b)
   (last1 b))))))))))
 (check-sat)
+(exit)

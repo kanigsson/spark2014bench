@@ -1519,3 +1519,4 @@ Target solver: CVC4
   (=> (and (= o1 0) (<= bit_length 2147483640))
   (=> (in_range1 (length data)) (in_range1 (+ bit_length 7))))))))))))
 (check-sat)
+(exit)

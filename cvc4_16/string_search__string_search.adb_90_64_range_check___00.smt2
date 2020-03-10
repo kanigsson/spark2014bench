@@ -644,3 +644,4 @@ Target solver: CVC4
   (=> (in_range1 o18)
   (=> (in_range1 (- o18 o17)) (in_range1 (length needle))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

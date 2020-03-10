@@ -153,3 +153,4 @@ Target solver: CVC4
   (=> (= x__split_fields us_null_ext__)
   (=> (= x__attr__tag us_tag) (us_compatible_tags x__attr__tag us_tag1))))))
 (check-sat)
+(exit)

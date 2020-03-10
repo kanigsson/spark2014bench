@@ -466,3 +466,4 @@ Target solver: CVC4
      (to_array temp___217) (first1 temp___217) (last1 temp___217)) true)
   (in_range1 (+ longest_common_prefix__lcp__result x)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

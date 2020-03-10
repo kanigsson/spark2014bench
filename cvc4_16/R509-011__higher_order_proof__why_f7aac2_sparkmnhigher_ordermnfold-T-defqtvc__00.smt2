@@ -928,3 +928,4 @@ Target solver: CVC4
      (to_rep1 (select (to_array1 temp___729) (last1 o5)))) true))))
   (<= k (last3 temp___729))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

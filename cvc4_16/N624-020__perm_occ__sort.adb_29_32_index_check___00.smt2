@@ -634,3 +634,4 @@ Target solver: CVC4
   (= o (and (ite (<= o4 y) true false) (ite (<= y o3) true false)))))))
   (= o false)))))) (=> (= o true) (<= (first1 init) y)))))))))))))
 (check-sat)
+(exit)

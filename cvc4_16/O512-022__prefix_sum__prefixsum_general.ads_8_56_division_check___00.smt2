@@ -222,3 +222,4 @@ Target solver: CVC4
  ;; File "prefixsum_general.ads", line 8, characters 0-0
   (not (=> (dynamic_invariant k true false true true) (not (= 2 0)))))
 (check-sat)
+(exit)

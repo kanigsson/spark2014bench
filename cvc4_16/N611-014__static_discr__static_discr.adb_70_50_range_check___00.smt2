@@ -1648,3 +1648,4 @@ Target solver: CVC4
   (=> (in_range2 o2)
   (forall ((o3 natural)) (=> (= (to_rep o3) o2) (in_range2 (last1 a)))))))))))))))))))
 (check-sat)
+(exit)

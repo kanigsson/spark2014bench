@@ -1356,3 +1356,4 @@ Target solver: CVC4
      (us_split_fields3 record_equality__test_eq_ok__c_gp1__assume) us_tag5) 
   c_gp1) (in_range1 0))))))))))))))))))))))))))))
 (check-sat)
+(exit)

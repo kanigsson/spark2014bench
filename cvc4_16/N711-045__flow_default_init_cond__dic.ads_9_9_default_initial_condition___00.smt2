@@ -241,3 +241,4 @@ Target solver: CVC4
   (forall ((g1 Int) (usf1 us_rep)) (foo__function_guard (foo usf1 g1) usf1
   g1)) (= (foo (us_repqtmk usf) g) true)))))))
 (check-sat)
+(exit)

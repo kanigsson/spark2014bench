@@ -708,3 +708,4 @@ Target solver: CVC4
                            (first3 temp___466) (last3 temp___466)))
   (=> (= (first3 ghc_sort__cut__result) 1) (in_range1 (length s)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

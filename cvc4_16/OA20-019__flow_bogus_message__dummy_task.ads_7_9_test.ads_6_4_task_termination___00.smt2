@@ -56,3 +56,4 @@ Target solver: CVC4
  ;; File "dummy_task.ads", line 7, characters 0-0
   (not true))
 (check-sat)
+(exit)

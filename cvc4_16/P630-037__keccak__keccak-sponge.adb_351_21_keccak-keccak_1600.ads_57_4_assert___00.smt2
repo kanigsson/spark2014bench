@@ -1611,3 +1611,4 @@ Target solver: CVC4
   (= (+ offset remaining) (length (to_rep digest__first)
                           (to_rep digest__last)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

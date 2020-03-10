@@ -977,3 +977,4 @@ Target solver: CVC4
   (=> (= p__create_type_5__result (us_split_fieldsqtmk3 rliteral o3 o2 o1 o))
   (= (to_rep1 (rec__p__type_5__field_0 p__create_type_5__result)) 0))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

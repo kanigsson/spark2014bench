@@ -218,3 +218,4 @@ Target solver: CVC4
   (= (= formal_cont__new_set_01__is_empty__result true)
   (= (length container) 0)))))))
 (check-sat)
+(exit)

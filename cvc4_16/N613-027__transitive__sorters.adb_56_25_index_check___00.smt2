@@ -330,3 +330,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array unsorted) usf)) o2)
   (<= (first1 unsorted) min1)))))))))))))))))))))))
 (check-sat)
+(exit)

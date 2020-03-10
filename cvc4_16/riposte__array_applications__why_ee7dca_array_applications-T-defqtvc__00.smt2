@@ -292,3 +292,4 @@ Target solver: CVC4
   (forall ((o6 Int))
   (=> (= (to_rep (select a3 temp___179)) o6) (<= (- usf 1) 30))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -457,3 +457,4 @@ Target solver: CVC4
   (=> (= temp___225 right3)
   (let ((o3 (- right3 space2))) (=> (in_range1 o3) (in_range2 o3))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

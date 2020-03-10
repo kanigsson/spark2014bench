@@ -248,3 +248,4 @@ Target solver: CVC4
   (forall ((o5 Int))
   (=> (= (to_rep (select temp___loop_entry_174 temp___175)) o5) (<= 1 usf))))))))))))))))))))))))))
 (check-sat)
+(exit)

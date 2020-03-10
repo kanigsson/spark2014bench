@@ -923,3 +923,4 @@ Target solver: CVC4
                              (rt result____split_fields2)))
   (<= (first1 result____split_fields3) i1))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -908,3 +908,4 @@ Target solver: CVC4
   (=> (default_initial_assumption3 all_1 false)
   (=> (< 0 (length 1 100)) (dynamic_property first 2147483647 2)))))))))))))))))))))
 (check-sat)
+(exit)

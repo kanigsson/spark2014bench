@@ -626,3 +626,4 @@ Target solver: CVC4
   (=> (model__function_guard (model1 table) table)
   (= repro_main__int_table__length__result (length (model1 table)))))))))
 (check-sat)
+(exit)

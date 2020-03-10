@@ -119,3 +119,4 @@ Target solver: CVC4
   (= o (ite (= (select du_available 2) true) false true)) (= o false))
   (not (= (select du_available 1) true))))))
 (check-sat)
+(exit)

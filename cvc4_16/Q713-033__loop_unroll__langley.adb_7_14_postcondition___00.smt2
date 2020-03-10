@@ -340,3 +340,4 @@ Target solver: CVC4
   (= (to_rep (select langley__add__result i10)) (+ (to_rep (select x i10)) 
   (to_rep (select y i10)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

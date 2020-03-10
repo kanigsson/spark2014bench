@@ -1318,3 +1318,4 @@ Target solver: CVC4
              (us_split_fieldsqtmk1 container__split_fields1))))
   (=> (= (length1 (model1 o11)) (length o11)) (<= 1 o10))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

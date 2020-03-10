@@ -235,3 +235,4 @@ Target solver: CVC4
   (us_repqtmk (us_split_fieldsqtmk rliteral1 rliteral1)))
   (= (f_of_pair (us_repqtmk (us_split_fieldsqtmk rliteral1 rliteral1))) true))))))
 (check-sat)
+(exit)

@@ -424,3 +424,4 @@ Target solver: CVC4
   (=> (and (<= 1 usf) (<= usf 100))
   (forall ((o4 Int)) (=> (= (to_rep (select max usf)) o4) (<= 1 usf))))))))))))))))))))))))
 (check-sat)
+(exit)

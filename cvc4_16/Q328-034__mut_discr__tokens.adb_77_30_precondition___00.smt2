@@ -575,3 +575,4 @@ Target solver: CVC4
   (=> (forall ((last1 Int)) (size__function_guard (size last1) last1))
   (<= 2 (size last)))))))))))))))))
 (check-sat)
+(exit)

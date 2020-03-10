@@ -912,3 +912,4 @@ Target solver: CVC4
   (forall ((o3 Int))
   (=> (= (to_rep (select (to_array a) temp___647)) o3) (<= init 2147483547))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

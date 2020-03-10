@@ -367,3 +367,4 @@ Target solver: CVC4
   (=> (dynamic_invariant off true false true true)
   (=> (< off 31) (in_range1 (+ off (- 31 off)))))))))))
 (check-sat)
+(exit)

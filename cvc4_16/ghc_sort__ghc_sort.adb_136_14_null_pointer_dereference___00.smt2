@@ -790,3 +790,4 @@ Target solver: CVC4
   (=> (in_range (- 2147483647 o1))
   (rec__ghc_sort__int_array_list__pointer_value__pred l)))))))))))
 (check-sat)
+(exit)

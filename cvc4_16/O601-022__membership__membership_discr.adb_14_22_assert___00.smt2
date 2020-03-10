@@ -335,3 +335,4 @@ Target solver: CVC4
   (us_repqtmk r1__split_discrs (us_split_fieldsqtmk r1__split_fields)
   r1__attr__tag) false false true true) (in_range2 0 r1__split_discrs)))))))
 (check-sat)
+(exit)

@@ -252,3 +252,4 @@ Target solver: CVC4
   (is_empty1 a_pointer1) a_pointer1))
   (=> (not (= (is_empty1 a_pointer) true)) (<= 1 a_pointer)))))))
 (check-sat)
+(exit)

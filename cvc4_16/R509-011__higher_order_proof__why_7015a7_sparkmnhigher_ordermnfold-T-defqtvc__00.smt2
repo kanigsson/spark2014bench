@@ -1451,3 +1451,4 @@ Target solver: CVC4
   (update_count k2 (- l3 1)) k2 (- l3 1)))
   (= (update_count k1 (- l2 1)) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

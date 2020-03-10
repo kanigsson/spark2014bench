@@ -103,3 +103,4 @@ Target solver: CVC4
   (=> (dynamic_invariant v true false true true)
   (=> (<= (- 10) v) (=> (<= v 0) (in_range1 (* v 2))))))))
 (check-sat)
+(exit)

@@ -265,3 +265,4 @@ Target solver: CVC4
   (= o1 (to_rep (rec__my_types__prot__f (us_split_fields1 o))))))
   (forall ((x1 Int)) (=> (= x1 o1) (in_range (+ x1 1)))))))))))
 (check-sat)
+(exit)

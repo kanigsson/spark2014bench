@@ -1491,3 +1491,4 @@ Target solver: CVC4
   (store (to_array (rec__area_math__ensemble__to1 result____split_fields5)) temp___468 o8)
   (rt (rec__area_math__ensemble__to1 result____split_fields5))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

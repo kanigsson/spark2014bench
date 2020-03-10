@@ -847,3 +847,4 @@ Target solver: CVC4
   (=> (and (<= 0 right3) (<= right3 7))
   (forall ((o1 Int)) (=> (= (to_rep (select a2 right3)) o1) (<= 0 left3))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -461,3 +461,4 @@ Target solver: CVC4
   (not
   (forall ((x (Array Int integer))) (< (last1 (of_array x 1 10)) 2147483647))))
 (check-sat)
+(exit)

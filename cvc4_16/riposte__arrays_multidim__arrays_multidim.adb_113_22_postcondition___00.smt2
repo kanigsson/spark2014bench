@@ -256,3 +256,4 @@ Target solver: CVC4
   (=> (= (to_rep o3) o2)
   (=> (= a2 (set a1 i j o3)) (= (to_rep (get a2 i j)) (to_rep (get a2 j i))))))))))))))
 (check-sat)
+(exit)

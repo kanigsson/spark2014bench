@@ -926,3 +926,4 @@ Target solver: CVC4
   (not (= (choose (to_rep (select (to_array a) i))) true))))
   (=> (count__function_guard (count a) a) (= (count a) 0))))))))))))))))))
 (check-sat)
+(exit)

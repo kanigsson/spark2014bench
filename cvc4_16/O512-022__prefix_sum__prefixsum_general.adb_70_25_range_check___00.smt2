@@ -675,3 +675,4 @@ Target solver: CVC4
   (and (= a2 a1) (= left3 left2)))))
   (let ((o (* space1 2))) (=> (in_range1 o) (in_range3 o))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1077,3 +1077,4 @@ Target solver: CVC4
   (forall ((output2 (Array Int character)))
   (=> (= output2 usf) (in_range7 (+ index1 3))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

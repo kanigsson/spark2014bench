@@ -247,3 +247,4 @@ Target solver: CVC4
   (=> (= (divides x b) true)
   (=> (not (= (divides b a) true)) (= (divides x (mod2 a b)) true)))))))))
 (check-sat)
+(exit)

@@ -569,3 +569,4 @@ Target solver: CVC4
   (< offset 1024))
   (let ((o (length data))) (=> (in_range1 o) (in_range1 (+ o offset))))))))))
 (check-sat)
+(exit)

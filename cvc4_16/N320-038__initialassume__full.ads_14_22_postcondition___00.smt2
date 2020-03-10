@@ -97,3 +97,4 @@ Target solver: CVC4
   (=> (= z1 (+ z 1))
   (=> (dynamic_invariant z1 true true true true) (< 0 z1))))))))
 (check-sat)
+(exit)

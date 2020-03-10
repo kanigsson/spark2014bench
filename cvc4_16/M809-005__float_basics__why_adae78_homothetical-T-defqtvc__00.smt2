@@ -400,3 +400,4 @@ Target solver: CVC4
   (=> (= (to_rep (select d i1)) o)
   (not (fp.eq o (fp #b0 #b00000000 #b00000000000000000000000)))))))))))))))
 (check-sat)
+(exit)

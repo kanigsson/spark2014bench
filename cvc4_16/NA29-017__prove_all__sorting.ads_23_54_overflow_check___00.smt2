@@ -480,3 +480,4 @@ Target solver: CVC4
   (=> (= (to_rep a__last) o2)
   (=> (in_range1 (+ o2 1)) (in_range1 (+ a_first length2)))))))))))))))
 (check-sat)
+(exit)

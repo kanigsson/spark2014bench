@@ -675,3 +675,4 @@ Target solver: CVC4
      i1) (element l_in i2))
   (<= 1 i1))))))))))))))))))
 (check-sat)
+(exit)

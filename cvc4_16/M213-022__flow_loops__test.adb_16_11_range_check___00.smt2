@@ -235,3 +235,4 @@ Target solver: CVC4
   (=> (dynamic_invariant n true false true true)
   (=> (<= 2 (div1 n 2)) (<= 1 2)))))
 (check-sat)
+(exit)

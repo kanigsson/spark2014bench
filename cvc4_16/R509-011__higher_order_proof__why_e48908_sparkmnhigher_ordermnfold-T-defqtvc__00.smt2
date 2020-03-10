@@ -668,3 +668,4 @@ Target solver: CVC4
   (=> (in_range5 (+ j 1))
   (=> (and (<= (first_2 a) j) (<= j (last_2 a))) (<= (first2 a) i))))))))))))))))
 (check-sat)
+(exit)

@@ -398,3 +398,4 @@ Target solver: CVC4
   (forall ((o2 Int))
   (=> (= (to_rep z__pointer_value) o2) (in_range1 (+ o2 1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

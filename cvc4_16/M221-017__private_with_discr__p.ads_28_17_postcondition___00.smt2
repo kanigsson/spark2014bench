@@ -94,3 +94,4 @@ Target solver: CVC4
   (forall ((p__identity2__result us_rep))
   (=> (= p__identity2__result l) (= (bool_eq p__identity2__result l) true)))))
 (check-sat)
+(exit)

@@ -881,3 +881,4 @@ Target solver: CVC4
   (forall ((r3 (Array Int element_out)))
   (=> (= r3 (store r2 i2 o6)) (in_range4 (first1 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1218,3 +1218,4 @@ Target solver: CVC4
   (rec__use_formal_vectors__my_vect__element_access__pointer_value__pred
   (select (to_array temp___411) i1)))))))))))))))))))))))
 (check-sat)
+(exit)

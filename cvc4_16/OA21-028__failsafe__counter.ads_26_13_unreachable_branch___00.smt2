@@ -396,3 +396,4 @@ Target solver: CVC4
   (bvule (bvadd (bvsub #x0A counter__model__current_chain_length__result) #x01) i)
   (bvule i #x0A)) (= (select inputs i) true))))))))))))
 (check-sat)
+(exit)

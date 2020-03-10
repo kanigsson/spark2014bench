@@ -2662,3 +2662,4 @@ Target solver: CVC4
  ;; File "psu_monitoring.ads", line 74, characters 0-0
   (not true))
 (check-sat)
+(exit)

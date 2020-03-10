@@ -614,3 +614,4 @@ Target solver: CVC4
   (to_rep
   (rec__frame_condition__cell__value (us_split_fields1 (select a1 i)))))))))))))))
 (check-sat)
+(exit)

@@ -288,3 +288,4 @@ Target solver: CVC4
   (=> (<= temp___207 (to_rep x__last))
   (=> (= (to_rep x__last) temp___208) (<= (to_rep x__first) temp___208))))))))))))))
 (check-sat)
+(exit)

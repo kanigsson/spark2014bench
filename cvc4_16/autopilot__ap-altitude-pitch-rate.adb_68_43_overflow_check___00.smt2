@@ -468,3 +468,4 @@ Target solver: CVC4
   (ite (<= pitch average3) true false)))
   (=> (= spark__branch1 true) (in_range1 (* (- pitch early_pitch1) 10))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1239,3 +1239,4 @@ Target solver: CVC4
   (=> (in_range1 o13)
   (forall ((shift2 Int)) (=> (= shift2 o13) (in_range1 (+ offset2 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

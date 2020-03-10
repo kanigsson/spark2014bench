@@ -1220,3 +1220,4 @@ Target solver: CVC4
   (forall ((word_size Int))
   (not (dynamic_invariant word_size false false true true)))))
 (check-sat)
+(exit)

@@ -348,3 +348,4 @@ Target solver: CVC4
   (=> (= (first2 temp___179) l)
   (=> (= (last2 temp___179) u) (= (first2 temp___179) first))))))))))))
 (check-sat)
+(exit)

@@ -416,3 +416,4 @@ Target solver: CVC4
   (=> (<= gap1 100)
   (=> (dynamic_invariant gap1 false true true true) (<= 0 mach))))))))))))))))))
 (check-sat)
+(exit)

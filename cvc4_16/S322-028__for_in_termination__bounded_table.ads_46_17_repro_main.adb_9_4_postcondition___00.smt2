@@ -431,3 +431,4 @@ Target solver: CVC4
   (exists ((e Int))
   (and (and (in_range2 e) (= (member1 table e) true)) (= e elem)))))))))))
 (check-sat)
+(exit)

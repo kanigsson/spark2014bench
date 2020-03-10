@@ -1292,3 +1292,4 @@ Target solver: CVC4
   (=> (and (<= (to_rep1 a__first) c28b1) (<= c28b1 (to_rep1 a__last)))
   (<= (to_rep1 a__first) c28b1))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

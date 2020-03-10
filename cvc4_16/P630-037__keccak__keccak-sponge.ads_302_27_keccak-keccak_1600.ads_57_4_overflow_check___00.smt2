@@ -1098,3 +1098,4 @@ Target solver: CVC4
      (us_split_fields1 ctx))) o)
   (in_range (* o 8))))))
 (check-sat)
+(exit)

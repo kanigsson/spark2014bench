@@ -1055,3 +1055,4 @@ Target solver: CVC4
         (to_rep2 (get lengths2 o3 o2)) 0))))
   (in_range5 (+ 1 o4)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

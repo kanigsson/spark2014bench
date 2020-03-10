@@ -747,3 +747,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 to__ true false true true)
   (=> (<= from to__) (in_range (+ (- to__ from) 1))))))))
 (check-sat)
+(exit)

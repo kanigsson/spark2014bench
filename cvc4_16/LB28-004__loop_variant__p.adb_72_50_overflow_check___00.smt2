@@ -428,3 +428,4 @@ Target solver: CVC4
   (forall ((k6 Int))
   (=> (= k6 o2) (=> (in_range1 (+ a k6)) (in_range1 (- j12 1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

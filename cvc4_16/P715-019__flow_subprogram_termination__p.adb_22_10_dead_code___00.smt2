@@ -64,3 +64,4 @@ Target solver: CVC4
  ;; File "p.adb", line 7, characters 0-0
   (not (not (= (distinct 1 0) true))))
 (check-sat)
+(exit)

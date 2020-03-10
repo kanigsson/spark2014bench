@@ -136,3 +136,4 @@ Target solver: CVC4
   (=> (size__function_guard (size f) f)
   (not (<= file_io__index__result (size f)))))))
 (check-sat)
+(exit)

@@ -253,3 +253,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 a_tag true false true true) (in_range
   (+ finger 1)))))))
 (check-sat)
+(exit)

@@ -836,3 +836,4 @@ Target solver: CVC4
   (= (= (bool_eq k o4) true) (= (witness o6 o4) (witness o6 k))))))))))))))))))
   (= (has_element l (us_repqtmk (us_split_fieldsqtmk cu__split_fields))) true)))))))))))
 (check-sat)
+(exit)

@@ -1733,3 +1733,4 @@ Target solver: CVC4
   (=> (= x__split_discrs (us_split_discrs2 temp___291)) (dynamic_predicate1
   (us_repqtmk1 x__split_discrs x__split_fields1)))))))))))))))))))))
 (check-sat)
+(exit)

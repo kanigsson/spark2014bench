@@ -286,3 +286,4 @@ Target solver: CVC4
   (invariant__ (+ n 1) speed2 distance2) (+ n 1) speed2 distance2))
   (= (invariant__ (+ n 1) speed1 distance1) true)))))))))))))))))))))))))))
 (check-sat)
+(exit)

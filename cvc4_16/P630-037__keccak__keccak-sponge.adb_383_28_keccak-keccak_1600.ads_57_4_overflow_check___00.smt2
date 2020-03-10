@@ -1846,3 +1846,4 @@ Target solver: CVC4
   (=> (= (to_rep digest__first) o9)
   (=> (in_range1 (length o9 o8)) (in_range1 (+ offset1 remaining1)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

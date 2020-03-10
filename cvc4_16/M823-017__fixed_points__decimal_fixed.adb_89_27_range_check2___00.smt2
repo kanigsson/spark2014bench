@@ -411,3 +411,4 @@ Target solver: CVC4
   (=> (in_range4 o1)
   (forall ((y21 Int)) (=> (= y21 o1) (in_range1 (to_int1 (+ x x)))))))))))))))))))))))))
 (check-sat)
+(exit)

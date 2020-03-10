@@ -167,3 +167,4 @@ Target solver: CVC4
   (forall ((usf Int))
   (=> (dynamic_invariant1 usf true false true true) (type_invariant1 usf)))))
 (check-sat)
+(exit)

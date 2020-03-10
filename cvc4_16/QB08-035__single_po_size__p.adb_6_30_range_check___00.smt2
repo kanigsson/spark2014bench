@@ -201,3 +201,4 @@ Target solver: CVC4
  ;; File "p.adb", line 4, characters 0-0
   (not (in_range object__size)))
 (check-sat)
+(exit)

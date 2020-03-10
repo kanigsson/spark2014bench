@@ -886,3 +886,4 @@ Target solver: CVC4
   (let ((o7 (+ j 1))) (and (= o6 o7) (in_range1 o7))))
   (forall ((j1 Int)) (=> (= j1 o6) (< 0 i1)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

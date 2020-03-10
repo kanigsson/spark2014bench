@@ -504,3 +504,4 @@ Target solver: CVC4
   (=> (dynamic_invariant hash true false true true)
   (not (dynamic_invariant timestamp true false true true)))))
 (check-sat)
+(exit)

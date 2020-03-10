@@ -129,3 +129,4 @@ Target solver: CVC4
   (forall ((var Int))
   (=> (dynamic_invariant var true false true true) (in_range1 var)))))
 (check-sat)
+(exit)

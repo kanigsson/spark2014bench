@@ -463,3 +463,4 @@ Target solver: CVC4
   (=> (= input_space 8)
   (=> (= (intermediate_form a ghost__) true) (in_range2 input_space)))))))))
 (check-sat)
+(exit)

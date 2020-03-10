@@ -468,3 +468,4 @@ Target solver: CVC4
   (let ((o5 (+ j21 1))) (and (in_range1 o5) (= j22 o5))))))))))) (= j12 j11)))))))))))
   (in_range1 (+ j3 1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

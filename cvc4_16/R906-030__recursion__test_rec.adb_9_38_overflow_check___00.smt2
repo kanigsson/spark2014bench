@@ -401,3 +401,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array m) temp___265)) o) (in_range
   (- (last1 m) 1))))))))))
 (check-sat)
+(exit)

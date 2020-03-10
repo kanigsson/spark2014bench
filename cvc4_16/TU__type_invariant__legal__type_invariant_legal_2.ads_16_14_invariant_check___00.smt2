@@ -210,3 +210,4 @@ Target solver: CVC4
   (and (dynamic_invariant o3 true false true true) (= o3 1))) (type_invariant
   x1)))))))))))))))))
 (check-sat)
+(exit)

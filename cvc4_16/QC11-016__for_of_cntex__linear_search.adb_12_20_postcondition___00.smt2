@@ -246,3 +246,4 @@ Target solver: CVC4
   (=> (<= 1 temp___435)
   (=> (<= temp___435 10) (not (= (to_rep (select arr temp___435)) n))))))))))
 (check-sat)
+(exit)

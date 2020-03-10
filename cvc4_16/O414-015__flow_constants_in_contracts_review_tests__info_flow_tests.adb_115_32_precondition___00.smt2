@@ -239,3 +239,4 @@ Target solver: CVC4
   (=> (= info_flow_tests__test_05__c3__assume c3)
   (=> (dynamic_invariant c3 true false true true) (<= 0 a))))))))))))))
 (check-sat)
+(exit)

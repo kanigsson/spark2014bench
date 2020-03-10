@@ -114,3 +114,4 @@ Target solver: CVC4
                                                           formal 0) true) 1
                                                           0)))))))))
 (check-sat)
+(exit)

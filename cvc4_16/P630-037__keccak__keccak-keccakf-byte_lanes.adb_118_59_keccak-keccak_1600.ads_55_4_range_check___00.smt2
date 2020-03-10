@@ -1026,3 +1026,4 @@ Target solver: CVC4
   (=> (in_range2 o9)
   (bvule ((_ zero_extend 56) #x00) (bvand (bvlshr lane2 ((_ int2bv 64) o9)) #x00000000000000FF))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

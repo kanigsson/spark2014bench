@@ -107,3 +107,4 @@ Target solver: CVC4
   (=> (not (= spark__branch1 true))
   (let ((o (+ par1 par2))) (=> (in_range o) (in_range (- o 3))))))))))))))
 (check-sat)
+(exit)

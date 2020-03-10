@@ -2013,3 +2013,4 @@ Target solver: CVC4
      (us_repqtmk result____split_discrs
      (us_split_fieldsqtmk result____split_fields2)) o3) true)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

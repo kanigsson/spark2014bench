@@ -443,3 +443,4 @@ Target solver: CVC4
   (=> (and (<= (- (* z1 2) 1) x) (<= x (+ (* z1 2) 1)))
   (forall ((z2 Int)) (=> (= z2 (fxp_div_int x two)) (in_range2 (* z2 2))))))))))))))))))))
 (check-sat)
+(exit)

@@ -249,3 +249,4 @@ Target solver: CVC4
  ;; File "rec_post.ads", line 2, characters 0-0
   (not (=> (dynamic_invariant i true false true true) (not (= 2 0)))))
 (check-sat)
+(exit)

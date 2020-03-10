@@ -315,3 +315,4 @@ Target solver: CVC4
   (let ((o4 (div1 o3 r))) (and (in_range1 o4) (= r1 o4))))) (= r1 r))))
   (in_range1 (abs1 r1))))))))))))))))))
 (check-sat)
+(exit)

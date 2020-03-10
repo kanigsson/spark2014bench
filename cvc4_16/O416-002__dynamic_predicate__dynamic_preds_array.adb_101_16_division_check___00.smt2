@@ -415,3 +415,4 @@ Target solver: CVC4
   (=> (= result__ o)
   (=> (dynamic_invariant1 result__ true false true true) (not (= 2 0))))))))))
 (check-sat)
+(exit)

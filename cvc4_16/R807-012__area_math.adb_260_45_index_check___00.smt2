@@ -1534,3 +1534,4 @@ Target solver: CVC4
   (= (to_rep (rec__area_math__ensemble__size1 result____split_fields6)) temp___483)
   (<= (first1 (rec__area_math__ensemble__to1 result____split_fields6)) temp___483)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

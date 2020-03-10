@@ -904,3 +904,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 x5 true true true true)
   (exists ((temp___246 Int)) (and (= temp___246 x5) (= x5 5))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

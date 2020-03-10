@@ -1542,3 +1542,4 @@ Target solver: CVC4
                       v__split_fields2)))))))
   (in_range1 (+ j1 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

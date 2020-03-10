@@ -128,3 +128,4 @@ Target solver: CVC4
   (=> (dynamic_invariant out_subcheck__read__z true true true true)
   (in_range1 out_subcheck__read__z))))))
 (check-sat)
+(exit)

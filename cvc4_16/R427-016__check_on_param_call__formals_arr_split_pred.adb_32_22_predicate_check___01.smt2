@@ -531,3 +531,4 @@ Target solver: CVC4
   (=> (dynamic_predicate2 temp___286) (dynamic_predicate4
   (of_array temp___286 1 10)))))))))))))))
 (check-sat)
+(exit)

@@ -911,3 +911,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk3
   (of_array (slide (to_array temp___238) (first1 temp___238) l) l h)))))))))))))))))))))
 (check-sat)
+(exit)

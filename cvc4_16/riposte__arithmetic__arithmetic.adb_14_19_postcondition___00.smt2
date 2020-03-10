@@ -100,3 +100,4 @@ Target solver: CVC4
   (=> (= arithmetic__negation_i__result o)
   (= arithmetic__negation_i__result (- a)))))))))
 (check-sat)
+(exit)

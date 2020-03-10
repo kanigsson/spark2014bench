@@ -555,3 +555,4 @@ Target solver: CVC4
   (=> (<= i (min length2 (+ (- 100 first) 1)))
   (= (get m i) (to_rep (select content (+ (- i 1) first))))))))))))))
 (check-sat)
+(exit)

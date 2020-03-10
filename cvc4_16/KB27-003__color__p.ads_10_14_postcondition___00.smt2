@@ -182,3 +182,4 @@ Target solver: CVC4
   (=> (= (to_rep (select d2 c2)) o4)
   (=> (= (to_rep o5) o4) (=> (<= 0 c3) (not (<= c3 2)))))))))))))))))
 (check-sat)
+(exit)

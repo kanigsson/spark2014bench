@@ -185,3 +185,4 @@ Target solver: CVC4
   (=> (= i2 (+ i1 1))
   (=> (in_range1 (* (- i2 1) 10)) (= x3 (* (- i2 1) 10)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1347,3 +1347,4 @@ Target solver: CVC4
   (<= 1 (to_rep
         (select (rec__patience__state__stacksizes s__split_fields4) i3))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -728,3 +728,4 @@ Target solver: CVC4
   (and (and (<= (to_rep1 s__first) i1) (<= i1 (to_rep1 s__last)))
   (and (= s1 (store s2 i1 o2)) (= i1 temp___247)))))))))))) (= s1 s))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -422,3 +422,4 @@ Target solver: CVC4
                       (rec__assign_rec__rec__d x__split_fields)))
   (not (= 1000000 0))))))))))))
 (check-sat)
+(exit)

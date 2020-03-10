@@ -364,3 +364,4 @@ Target solver: CVC4
                       false)) true)
   (<= 1 min1)))))))))))))))))))
 (check-sat)
+(exit)

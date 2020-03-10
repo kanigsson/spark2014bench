@@ -543,3 +543,4 @@ Target solver: CVC4
   (forall ((k Int))
   (=> (and (<= 1 k) (<= k top)) (<= 1 (to_rep1 (select cut k)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

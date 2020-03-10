@@ -924,3 +924,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (fp.leq old_speed speed1) true false))
   (=> (= spark__branch true) (fp.leq old_speed average1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

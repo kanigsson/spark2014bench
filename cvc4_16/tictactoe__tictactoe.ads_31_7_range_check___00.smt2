@@ -508,3 +508,4 @@ Target solver: CVC4
                                      (one_free_slot 3 2 my_board) 0)) 
   (ite (<= 3 3) (one_free_slot 3 3 my_board) 0)) 0))))) (in_range o)))))))))))))))
 (check-sat)
+(exit)

@@ -383,3 +383,4 @@ Target solver: CVC4
   (forall ((x1 Int)) (divides__function_guard (divides x1 (min a b)) x1
   (min a b))) (not (= (divides x (min a b)) true))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

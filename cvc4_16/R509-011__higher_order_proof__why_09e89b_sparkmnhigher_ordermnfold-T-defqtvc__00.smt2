@@ -1291,3 +1291,4 @@ Target solver: CVC4
   (=> (choose__function_guard (choose o) o)
   (=> (and (<= (first_2 a1) j) (<= j (last_2 a1))) (<= (first2 a1) i))))))))))))))))))))))))))))
 (check-sat)
+(exit)

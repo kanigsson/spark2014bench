@@ -323,3 +323,4 @@ Target solver: CVC4
   (=> (<= o b)
   (let ((o1 (+ j3 k1))) (=> (in_range1 o1) (<= (to_rep tab__first) o1)))))))))))))))))))
 (check-sat)
+(exit)

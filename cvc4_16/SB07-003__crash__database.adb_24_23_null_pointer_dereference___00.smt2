@@ -1334,3 +1334,4 @@ Target solver: CVC4
   (rec__database__email_access__pointer_value__pred
   (rec__database__db_entry_type__email ent2))))))))))))))))))
 (check-sat)
+(exit)

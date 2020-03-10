@@ -307,3 +307,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (=> (not (= o upper2)) (=> (in_range1 (+ lower2 upper2)) (not (= 2 0))))))))))))))))))))))))))
 (check-sat)
+(exit)

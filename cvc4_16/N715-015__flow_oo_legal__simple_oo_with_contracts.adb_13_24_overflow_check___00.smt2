@@ -340,3 +340,4 @@ Target solver: CVC4
   (= (to_rep (rec__simple_oo_with_contracts__t__x1 (us_split_fields3 par1))) o1)
   (let ((o2 (+ g3 o1))) (=> (in_range o2) (in_range (+ o2 o))))))))))))))
 (check-sat)
+(exit)

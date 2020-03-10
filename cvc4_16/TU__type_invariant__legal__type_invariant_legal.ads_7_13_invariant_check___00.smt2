@@ -61,3 +61,4 @@ Target solver: CVC4
   (=> (= type_invariant_legal__pub__result 0) (type_invariant
   type_invariant_legal__pub__result)))))
 (check-sat)
+(exit)

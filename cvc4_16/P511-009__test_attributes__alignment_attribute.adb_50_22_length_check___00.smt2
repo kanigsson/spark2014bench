@@ -420,3 +420,4 @@ Target solver: CVC4
   (=> (= (last1 temp___312) x)
   (=> (<= (first1 temp___312) (last1 temp___312)) (<= 1 x))))))))
 (check-sat)
+(exit)

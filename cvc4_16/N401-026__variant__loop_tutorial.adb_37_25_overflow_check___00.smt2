@@ -304,3 +304,4 @@ Target solver: CVC4
   (forall ((temp___159 Int))
   (=> (= temp___159 upper2) (in_range1 (+ lower2 1))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -441,3 +441,4 @@ Target solver: CVC4
   (=> (sorted__function_guard (sorted o34 o31 o30) o34 o31 o30)
   (<= j1 length2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

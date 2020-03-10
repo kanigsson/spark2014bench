@@ -1184,3 +1184,4 @@ Target solver: CVC4
   (ite (= o1 true) (= o (ite (= (last_2 a1) (last_2 a2)) true false))
   (= o false)))) (=> (= o true) (<= (first2 a1) k))))))))))))))))
 (check-sat)
+(exit)

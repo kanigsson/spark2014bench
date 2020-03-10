@@ -334,3 +334,4 @@ Target solver: CVC4
   (us_repqtmk w__is_null_pointer w__pointer_address w__pointer_value) true
   false true true) (dynamic_property first 2147483647 j)))))))))))))))))))))))))))
 (check-sat)
+(exit)

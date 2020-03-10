@@ -335,3 +335,4 @@ Target solver: CVC4
   (=> (<= x (to_rep1 a__last))
   (=> (= (to_rep o2) tmp) (<= (to_rep1 a__first) y))))))))))))))))))))))))
 (check-sat)
+(exit)

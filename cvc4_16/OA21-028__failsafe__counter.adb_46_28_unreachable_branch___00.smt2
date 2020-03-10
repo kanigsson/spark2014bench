@@ -423,3 +423,4 @@ Target solver: CVC4
   (=> (= counter__p__B_3__a__assume a)
   (=> (dynamic_invariant a true false true true) (not (= input true))))))))))))))))
 (check-sat)
+(exit)

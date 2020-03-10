@@ -182,3 +182,4 @@ Target solver: CVC4
   (=> (= (to_rep (select b usf)) o1)
   (=> (not (= o1 o)) (=> (<= 1 usf1) (=> (<= usf1 8) (<= 1 usf))))))))))))))))
 (check-sat)
+(exit)

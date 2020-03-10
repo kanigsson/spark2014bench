@@ -81,3 +81,4 @@ Target solver: CVC4
   (=> (get__function_guard o1 x us_HEAP1)
   (forall ((b Bool)) (=> (= b o1) (=> (= a true) (= b true))))))))))))))
 (check-sat)
+(exit)

@@ -729,3 +729,4 @@ Target solver: CVC4
   (=> (<= usf (to_rep obj__last)) (relaxed_initialization__rec__z__pred
   (select obj usf))))))))))))))
 (check-sat)
+(exit)

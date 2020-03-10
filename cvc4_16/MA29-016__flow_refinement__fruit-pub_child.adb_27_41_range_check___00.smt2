@@ -346,3 +346,4 @@ Target solver: CVC4
   (let ((o1 (* fruit_salads_made1 apples_in_fruit_salad)))
   (=> (in_range o1) (in_range1 o1)))))))))))))
 (check-sat)
+(exit)

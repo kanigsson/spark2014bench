@@ -346,3 +346,4 @@ Target solver: CVC4
   (ite (< temp___190 256) (= o (bvshl #x01 ((_ int2bv 8) temp___190)))
   (= o #x00)))) (=> (= x1 o) (= x1 #x00))))))))
 (check-sat)
+(exit)

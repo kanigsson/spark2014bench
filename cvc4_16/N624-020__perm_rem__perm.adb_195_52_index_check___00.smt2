@@ -1171,3 +1171,4 @@ Target solver: CVC4
                                                 false)) true)
   (=> (<= (first1 b) usf1) (=> (<= usf1 (last1 b)) (<= usf (last1 a)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

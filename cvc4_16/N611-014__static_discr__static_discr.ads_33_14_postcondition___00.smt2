@@ -1816,3 +1816,4 @@ Target solver: CVC4
   (=> (= static_discr__search_array__result result__1)
   (<= static_discr__search_array__result (last1 a)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

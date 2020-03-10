@@ -284,3 +284,4 @@ Target solver: CVC4
   (=> (dynamic_invariant g true false true true)
   (=> (f1__function_guard (f1 3) 3) (= (f1 3) true))))))
 (check-sat)
+(exit)

@@ -202,3 +202,4 @@ Target solver: CVC4
                         counterexamples__bad_2__y__assume))
   (<= c (to_rep y__pointer_value)))))))))))
 (check-sat)
+(exit)

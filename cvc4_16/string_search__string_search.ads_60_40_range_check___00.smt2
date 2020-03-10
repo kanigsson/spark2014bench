@@ -899,3 +899,4 @@ Target solver: CVC4
   (= string_search__qs__result 0))))))))
   (=> (in_range1 (length needle)) (in_range1 (length haystack))))))))))))))))))))))
 (check-sat)
+(exit)

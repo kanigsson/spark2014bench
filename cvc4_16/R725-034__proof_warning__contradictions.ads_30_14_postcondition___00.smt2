@@ -106,3 +106,4 @@ Target solver: CVC4
   (let ((o (* v 2)))
   (=> (in_range1 o) (forall ((v1 Int)) (=> (= v1 o) (not (< 0 v1))))))))))))
 (check-sat)
+(exit)

@@ -1538,3 +1538,4 @@ Target solver: CVC4
              (rec__very_longs__very_long__long_digits (us_split_fields1 o4))) i)) #x00))))))
   (let ((o6 (+ o5 1))) (=> (in_range2 o6) (dynamic_property1 1 last2 o6)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -263,3 +263,4 @@ Target solver: CVC4
   (=> (dynamic_invariant (us_repqtmk1 po__split_discrs) true false true true)
   (<= 48 97))))
 (check-sat)
+(exit)

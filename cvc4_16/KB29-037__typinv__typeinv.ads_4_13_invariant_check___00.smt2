@@ -283,3 +283,4 @@ Target solver: CVC4
   (forall ((typeinv__new_t__result Int))
   (=> (= typeinv__new_t__result o) (type_invariant typeinv__new_t__result)))))))))
 (check-sat)
+(exit)

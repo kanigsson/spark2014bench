@@ -1273,3 +1273,4 @@ Target solver: CVC4
   (< 0 (length
        (us_repqtmk v__split_discrs (us_split_fieldsqtmk v__split_fields7)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

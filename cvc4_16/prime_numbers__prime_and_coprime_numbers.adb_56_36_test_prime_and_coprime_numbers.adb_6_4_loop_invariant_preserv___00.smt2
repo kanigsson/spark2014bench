@@ -431,3 +431,4 @@ Target solver: CVC4
   (=> (= a3 b2)
   (=> (in_range3 r2) (forall ((b3 Int)) (=> (= b3 r2) (< 0 a3))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

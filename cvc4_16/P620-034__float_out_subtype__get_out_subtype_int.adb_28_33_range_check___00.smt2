@@ -195,3 +195,4 @@ Target solver: CVC4
   (=> (exists ((o1 Int)) (= (to_rep o) o1)) (in_range1
   get_out_subtype_int__controller_get_desired_rate__yaw_rate_desired))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -258,3 +258,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 current) true false) (ite (<= current limit) true false)) true)
   (<= current limit)))))))))
 (check-sat)
+(exit)

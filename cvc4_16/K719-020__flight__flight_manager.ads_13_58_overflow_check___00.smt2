@@ -494,3 +494,4 @@ Target solver: CVC4
   (let ((o4 (+ position_y o3)))
   (=> (in_range1 o4) (in_range1 (- o4 target_y))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

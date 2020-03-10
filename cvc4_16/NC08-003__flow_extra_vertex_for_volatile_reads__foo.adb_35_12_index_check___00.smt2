@@ -236,3 +236,4 @@ Target solver: CVC4
   (=> (= log_size1 o)
   (forall ((o1 integer)) (=> (= (to_rep o1) tmp) (<= 1 log_size1)))))))))))))))
 (check-sat)
+(exit)

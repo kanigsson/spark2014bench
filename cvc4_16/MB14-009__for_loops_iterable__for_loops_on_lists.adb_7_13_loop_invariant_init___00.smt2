@@ -837,3 +837,4 @@ Target solver: CVC4
   (<= i (- (get1 (positions l) (us_repqtmk (us_split_fieldsqtmk cu))) 1)))
   (not (= (get (model1 l) i) 0))))))))))))))))))
 (check-sat)
+(exit)

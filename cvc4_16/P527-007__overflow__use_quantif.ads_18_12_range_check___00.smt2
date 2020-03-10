@@ -154,3 +154,4 @@ Target solver: CVC4
   (=> (dynamic_invariant last_index true false true true)
   (=> (<= first_index last_index) (<= (- 2147483648) first_index))))))))))
 (check-sat)
+(exit)

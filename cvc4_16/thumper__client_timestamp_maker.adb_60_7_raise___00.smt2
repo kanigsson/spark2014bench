@@ -503,3 +503,4 @@ Target solver: CVC4
   (to_rep timestamp__last))
   (not (dynamic_invariant timestamp_size false false true true)))))))
 (check-sat)
+(exit)

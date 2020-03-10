@@ -503,3 +503,4 @@ Target solver: CVC4
   (= (= (select o1 v) true) (= (are_coprime 2000 v) true)))))
   (forall ((coprimes (Array Int Bool))) (=> (= coprimes o1) (<= 0 555))))))))))))))))))))))))
 (check-sat)
+(exit)

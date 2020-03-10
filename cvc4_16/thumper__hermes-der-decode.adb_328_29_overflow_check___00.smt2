@@ -580,3 +580,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select (to_array message) o2)) o3) (in_range1
   (* 256 result__1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

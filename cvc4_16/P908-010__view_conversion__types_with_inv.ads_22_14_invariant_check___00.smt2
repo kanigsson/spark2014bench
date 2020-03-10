@@ -235,3 +235,4 @@ Target solver: CVC4
   (=> (= x__split_fields1 types_with_inv__set_to_zero__2__x__fields)
   (type_invariant (us_repqtmk (us_split_fieldsqtmk x__split_fields1))))))))
 (check-sat)
+(exit)

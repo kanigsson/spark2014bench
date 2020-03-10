@@ -285,3 +285,4 @@ Target solver: CVC4
   a_pointer1))
   (=> (not (= (is_full1 a_pointer) true)) (in_range2 (+ a_pointer 1)))))))))
 (check-sat)
+(exit)

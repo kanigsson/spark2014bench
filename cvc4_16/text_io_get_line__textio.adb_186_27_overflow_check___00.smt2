@@ -1191,3 +1191,4 @@ Target solver: CVC4
   (=> (= (first1 r) (first1 s))
   (=> (= (last1 r) (+ (last1 s) last3)) (in_range1 (- (last1 s) (first1 s)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -574,3 +574,4 @@ Target solver: CVC4
              true false)) true))
   (not (bvult failsafe__model__time_below_threshold__result #x32)))))))))))))))))))))
 (check-sat)
+(exit)

@@ -2108,3 +2108,4 @@ Target solver: CVC4
   (=> (= (to_rep3 (rec__patris__piece__y cur_piece__split_fields)) o5)
   (<= 1 (+ o5 1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

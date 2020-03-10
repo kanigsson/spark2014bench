@@ -918,3 +918,4 @@ Target solver: CVC4
   (us_pledge_ty__refqtmk pledge_constraints__update__y__pledge))
   temp___borrowed_257 temp___brower_256)) ))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

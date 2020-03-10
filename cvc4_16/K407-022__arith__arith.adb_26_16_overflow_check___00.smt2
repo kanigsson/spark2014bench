@@ -294,3 +294,4 @@ Target solver: CVC4
   (forall ((tmp15 Int))
   (=> (= tmp15 (mod2 o17 z)) (in_range (- tmp24 tmp15))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

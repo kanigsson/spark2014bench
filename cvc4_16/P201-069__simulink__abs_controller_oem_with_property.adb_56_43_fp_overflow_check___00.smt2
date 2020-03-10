@@ -181,3 +181,4 @@ Target solver: CVC4
   (= epsifzero_out11 (fp #b0 #b01111001010 #b1111111111111101010010000001111110010111011010000010)))))
   (fp.isFinite64 (fp.div RNE wheel_speed epsifzero_out11)))))))))))))))
 (check-sat)
+(exit)

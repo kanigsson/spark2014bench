@@ -645,3 +645,4 @@ Target solver: CVC4
   (ite (= length_of_length1 4) true false) (ite (bvuge o7 #x80) true false))))
   (=> (= spark__branch4 true) (in_range1 (+ start length_of_length1))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

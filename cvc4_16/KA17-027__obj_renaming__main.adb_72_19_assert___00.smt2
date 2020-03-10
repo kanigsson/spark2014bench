@@ -454,3 +454,4 @@ Target solver: CVC4
   (= (to_rep
      (rec__main__rec__comp (us_split_fields1 (select arr_obj the_index)))) 9012))))))))))))))))))))))))))))
 (check-sat)
+(exit)

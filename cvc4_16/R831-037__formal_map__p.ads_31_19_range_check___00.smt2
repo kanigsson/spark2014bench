@@ -318,3 +318,4 @@ Target solver: CVC4
   (=> (= p__modulus__assume modulus)
   (=> (dynamic_invariant1 modulus true false true true) (in_range 1000))))))))
 (check-sat)
+(exit)

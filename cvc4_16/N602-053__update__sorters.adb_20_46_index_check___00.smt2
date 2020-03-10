@@ -343,3 +343,4 @@ Target solver: CVC4
   (=> (<= y (to_rep values__last))
   (=> (not (= x y)) (<= (to_rep values__first) x)))))))))))
 (check-sat)
+(exit)

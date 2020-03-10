@@ -561,3 +561,4 @@ Target solver: CVC4
   (forall ((o6 float__))
   (=> (= (to_rep o6) o5) (fp.isFinite32 (fp.sub RNE a1 a2)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

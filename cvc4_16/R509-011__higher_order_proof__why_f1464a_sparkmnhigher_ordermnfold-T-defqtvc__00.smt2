@@ -1572,3 +1572,4 @@ Target solver: CVC4
   (<= (first_21 test_higher_order3__my_sum_2__fold_sum__acc__fold__result) 
   (last_2 a)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -548,3 +548,4 @@ Target solver: CVC4
   (forall ((o15 Int))
   (=> (= (to_rep b__first) o15) (in_range1 (+ o15 (div1 o14 2))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

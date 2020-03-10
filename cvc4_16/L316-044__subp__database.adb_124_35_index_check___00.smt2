@@ -396,3 +396,4 @@ Target solver: CVC4
      (us_split_fields1 (select links1 account)))) temp___448)
   (<= 1 temp___448)))))))))))))))
 (check-sat)
+(exit)

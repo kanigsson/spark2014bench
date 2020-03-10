@@ -1014,3 +1014,4 @@ Target solver: CVC4
   (= ethertype_length_3 (slide (to_array temp___318) (first1 temp___318) 1))
   (= (length (of_array ethertype_length_3 1 2)) 2)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

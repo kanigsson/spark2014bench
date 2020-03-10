@@ -209,3 +209,4 @@ Target solver: CVC4
   (forall ((handler__split_fields positive) (o Int))
   (=> (= (to_rep handler__split_fields) o) (in_range (+ o 0))))))
 (check-sat)
+(exit)

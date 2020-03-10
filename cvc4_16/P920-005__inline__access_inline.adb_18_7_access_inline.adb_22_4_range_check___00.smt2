@@ -284,3 +284,4 @@ Target solver: CVC4
   (let ((o2 (fp.sub RNE o1 o)))
   (=> (fp.isFinite32 o2) (=> (fp.isFinite32 o2) (in_range o2))))))))))))))
 (check-sat)
+(exit)

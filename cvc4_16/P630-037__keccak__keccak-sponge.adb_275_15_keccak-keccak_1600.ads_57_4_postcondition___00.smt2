@@ -1870,3 +1870,4 @@ Target solver: CVC4
   (us_repqtmk ctx__split_fields10)))
   (= (state_of (us_repqtmk ctx__split_fields9)) 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

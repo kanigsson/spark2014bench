@@ -105,3 +105,4 @@ Target solver: CVC4
   (=> (= arithmetic__multiply_a__result o)
   (= arithmetic__multiply_a__result (* a b))))))))))
 (check-sat)
+(exit)

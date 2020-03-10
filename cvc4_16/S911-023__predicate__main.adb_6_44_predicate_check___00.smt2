@@ -611,3 +611,4 @@ Target solver: CVC4
  ;; File "main.adb", line 2, characters 0-0
   (not (dynamic_predicate1 (temp_____aggregate_def_238 #x00))))
 (check-sat)
+(exit)

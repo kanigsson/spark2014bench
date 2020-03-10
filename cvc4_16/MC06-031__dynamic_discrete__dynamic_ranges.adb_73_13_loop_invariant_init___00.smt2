@@ -320,3 +320,4 @@ Target solver: CVC4
   (forall ((j Int))
   (=> (and (<= (to_rep a__first) j) (<= j i)) (= (to_rep (select a1 j)) 0))))))))))))))))
 (check-sat)
+(exit)

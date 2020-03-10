@@ -258,3 +258,4 @@ Target solver: CVC4
   (=> (dynamic_invariant s3 true true true true)
   (=> (= z4 827) (in_range3 z4))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

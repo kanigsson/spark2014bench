@@ -69,3 +69,4 @@ Target solver: CVC4
   (=> (= p__dummy__B17b__h_y__result z)
   (=> (= p__dummy__B17b__h_y__result true) (= z true))))))
 (check-sat)
+(exit)

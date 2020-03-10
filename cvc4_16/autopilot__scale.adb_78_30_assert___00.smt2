@@ -156,3 +156,4 @@ Target solver: CVC4
   (ite (= spark__branch true)
   (let ((o (- v1 360))) (and (in_range1 o) (= v2 o))) (= v2 v1)))) (<= 0 v2))))))))))))
 (check-sat)
+(exit)

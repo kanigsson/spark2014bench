@@ -1315,3 +1315,4 @@ Target solver: CVC4
   (us_repqtmk table__split_fields3)))
   (< (length2 (us_repqtmk table__split_fields2)) 32)))))))))))))))))))))))))))
 (check-sat)
+(exit)

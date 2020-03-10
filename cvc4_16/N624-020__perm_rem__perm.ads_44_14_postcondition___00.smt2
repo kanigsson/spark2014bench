@@ -503,3 +503,4 @@ Target solver: CVC4
   (=> (= (distinct perm__perm_symmetric__result 0) true)
   (=> (is_perm__function_guard (is_perm b a) b a) (= (is_perm b a) true))))))))))))))))))))
 (check-sat)
+(exit)

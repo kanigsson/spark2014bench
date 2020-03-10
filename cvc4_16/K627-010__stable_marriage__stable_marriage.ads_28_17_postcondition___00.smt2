@@ -194,3 +194,4 @@ Target solver: CVC4
   (=> (not (= rank1 rank2))
   (not (= (to_rep (select r1 rank1)) (to_rep (select r1 rank2))))))))))))))
 (check-sat)
+(exit)

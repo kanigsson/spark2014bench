@@ -333,3 +333,4 @@ Target solver: CVC4
  ;; File "sorting.adb", line 59, characters 0-0
   (not true))
 (check-sat)
+(exit)

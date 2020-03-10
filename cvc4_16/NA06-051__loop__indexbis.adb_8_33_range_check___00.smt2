@@ -339,3 +339,4 @@ Target solver: CVC4
   (=> (= spark__branch o)
   (=> (not (= spark__branch true)) (in_range2 (first1 s))))))))))
 (check-sat)
+(exit)

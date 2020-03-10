@@ -866,3 +866,4 @@ Target solver: CVC4
   (=> (dynamic_property first last usf)
   (let ((o7 (+ usf 1))) (=> (in_range1 o7) (<= o7 (to_rep r__last))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

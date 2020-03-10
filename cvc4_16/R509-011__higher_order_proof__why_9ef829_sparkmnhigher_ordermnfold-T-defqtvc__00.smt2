@@ -810,3 +810,4 @@ Target solver: CVC4
   (=> (< k (last1 a))
   (let ((o (+ k 1))) (=> (in_range6 o) (<= (first1 a) o))))))))))))))))
 (check-sat)
+(exit)

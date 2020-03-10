@@ -1486,3 +1486,4 @@ Target solver: CVC4
   unmatched_g1_set__split_fields4))
   (= (all_unmatched_g1_set_elements_distinct unmatched_g1_set__split_fields3) true)))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

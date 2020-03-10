@@ -309,3 +309,4 @@ Target solver: CVC4
   (=> (= (last1 temp___170) y)
   (=> (<= (first1 temp___170) (last1 temp___170)) (<= x y)))))))))
 (check-sat)
+(exit)

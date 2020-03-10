@@ -858,3 +858,4 @@ Target solver: CVC4
   (=> (= to_int32_right_out11 (bv2nat old_ngrotations_out11)) (in_range1
   (- to_int32_right_out11 to_int32_left_out11))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

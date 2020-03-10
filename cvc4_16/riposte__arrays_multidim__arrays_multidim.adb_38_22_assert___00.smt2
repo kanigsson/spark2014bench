@@ -390,3 +390,4 @@ Target solver: CVC4
   (forall ((x map1) (x1 map1))
   (=> (= x1 (set x #x05 #x05 rliteral)) (= (to_rep (get x1 #x05 #x05)) 11)))))
 (check-sat)
+(exit)

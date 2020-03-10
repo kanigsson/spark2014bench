@@ -190,3 +190,4 @@ Target solver: CVC4
   (=> (<= 1 y)
   (=> (<= y 10) (let ((o (+ y 10))) (=> (in_range o) (<= 1 o))))))))
 (check-sat)
+(exit)

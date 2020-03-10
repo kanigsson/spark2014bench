@@ -100,3 +100,4 @@ Target solver: CVC4
   (=> (= (f Tuple0) true)
   (=> (g__function_guard (g Tuple0) Tuple0) (= (g Tuple0) true))))))
 (check-sat)
+(exit)

@@ -1225,3 +1225,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (rec__perm__witnesses__ia (us_split_fields1 w))) o17)
   (=> (in_range3 (- o17 1)) (in_range3 ia2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

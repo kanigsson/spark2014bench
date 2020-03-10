@@ -971,3 +971,4 @@ Target solver: CVC4
   n 1))) ((_ to_fp 11 53) RNE (to_real (+ n 2)))) bound) (fp #b0 #b01111111110 #b0000000000000000000000000000000000000000000000000000)) distance1)
   (= (invariant__ (+ n 1) speed1 distance1) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

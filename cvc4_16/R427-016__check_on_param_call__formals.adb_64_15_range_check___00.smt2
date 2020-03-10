@@ -251,3 +251,4 @@ Target solver: CVC4
   (=> (dynamic_invariant i7b true false true true)
   (=> (dynamic_invariant a true false true true) (in_range1 (div1 10 a))))))))
 (check-sat)
+(exit)

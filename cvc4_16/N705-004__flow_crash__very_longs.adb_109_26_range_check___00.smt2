@@ -947,3 +947,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 octet_length true false true true) (in_range2
   octet_length)))))
 (check-sat)
+(exit)

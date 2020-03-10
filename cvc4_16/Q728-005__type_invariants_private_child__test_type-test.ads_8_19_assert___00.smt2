@@ -257,3 +257,4 @@ Target solver: CVC4
                                            ada___test_type__test__y__assume))
   (= (bool_eq x (us_repqtmk (us_split_fieldsqtmk y__split_fields))) true))))))))))
 (check-sat)
+(exit)

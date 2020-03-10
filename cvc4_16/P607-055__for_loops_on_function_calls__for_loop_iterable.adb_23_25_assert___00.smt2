@@ -233,3 +233,4 @@ Target solver: CVC4
           true false) (ite (and (<= 1 c8b1) (<= c8b1 100)) true false)) true)
   (=> (= a2 (store a1 2 rliteral1)) (= (to_rep (select a2 c8b1)) 0)))))))))
 (check-sat)
+(exit)

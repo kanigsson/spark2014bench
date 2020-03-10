@@ -846,3 +846,4 @@ Target solver: CVC4
   (=> (= bounded_dynamic_strings__Oconcat__2__result o4) (in_range1
   (length1 right)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

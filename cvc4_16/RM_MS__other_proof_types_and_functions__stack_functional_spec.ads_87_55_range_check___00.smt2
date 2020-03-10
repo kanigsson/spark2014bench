@@ -578,3 +578,4 @@ Target solver: CVC4
          (us_split_fields1 o9))))))
   (in_range2 (- o10 1))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

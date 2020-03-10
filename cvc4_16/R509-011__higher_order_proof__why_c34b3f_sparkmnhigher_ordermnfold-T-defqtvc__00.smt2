@@ -807,3 +807,4 @@ Target solver: CVC4
                              (to_rep1 (select r1 (- k 1)))))))))
   (=> (= i (first1 a)) (= acc init)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

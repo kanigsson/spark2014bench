@@ -643,3 +643,4 @@ Target solver: CVC4
   (=> (= (last1 temp___212) 10)
   (=> (<= (first1 temp___212) (last1 temp___212)) (<= 1 10))))))))))))
 (check-sat)
+(exit)

@@ -516,3 +516,4 @@ Target solver: CVC4
   (=> (= (to_rep1 o3) (bvadd temp #x01))
   (forall ((o4 Int)) (=> (= (to_rep buf__first) o4) (in_range (+ o4 i)))))))))))))))))))))
 (check-sat)
+(exit)

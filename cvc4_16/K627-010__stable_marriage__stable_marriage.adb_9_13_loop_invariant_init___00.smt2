@@ -289,3 +289,4 @@ Target solver: CVC4
   (and (and (<= 1 prev) (<= prev (- rank 1)))
   (= (to_rep (select r1 prev)) g1))))))))))))
 (check-sat)
+(exit)

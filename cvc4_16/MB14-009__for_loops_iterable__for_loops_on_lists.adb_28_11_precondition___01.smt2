@@ -960,3 +960,4 @@ Target solver: CVC4
      o21) true)
   (= (bool_eq o21 no_element) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

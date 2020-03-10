@@ -156,3 +156,4 @@ Target solver: CVC4
   (=> (= spark__branch4 true)
   (fp.eq (fp.roundToIntegral RTN x) (fp.neg (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000)))))))))))))))))
 (check-sat)
+(exit)

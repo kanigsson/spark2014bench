@@ -234,3 +234,4 @@ Target solver: CVC4
   (speed_is_valid status1 speed1) status1 speed1))
   (= (speed_is_valid status speed) true)))))))))))))))))
 (check-sat)
+(exit)

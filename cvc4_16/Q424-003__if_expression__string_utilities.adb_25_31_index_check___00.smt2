@@ -790,3 +790,4 @@ Target solver: CVC4
   (=> (<= (to_rep1 lengths__first_2) x2)
   (=> (<= x2 (to_rep1 lengths__last_2)) (<= (to_rep1 lengths__first) x1))))))))))))))))
 (check-sat)
+(exit)

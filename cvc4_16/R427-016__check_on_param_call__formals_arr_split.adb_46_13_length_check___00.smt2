@@ -554,3 +554,4 @@ Target solver: CVC4
   (=> (= spark__branch1 true)
   (=> (<= (to_rep u__first) (to_rep u__last)) (<= 0 x))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

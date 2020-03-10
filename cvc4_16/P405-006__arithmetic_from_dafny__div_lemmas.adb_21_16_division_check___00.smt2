@@ -224,3 +224,4 @@ Target solver: CVC4
  ;; File "div_lemmas.adb", line 16, characters 0-0
   (not true))
 (check-sat)
+(exit)

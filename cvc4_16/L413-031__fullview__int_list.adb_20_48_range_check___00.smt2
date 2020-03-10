@@ -888,3 +888,4 @@ Target solver: CVC4
   (and (dynamic_invariant4 o8 true false true true)
   (= o8 (get (model1 o7) (get1 (positions o7) o6)))) (in_range6 (+ o8 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

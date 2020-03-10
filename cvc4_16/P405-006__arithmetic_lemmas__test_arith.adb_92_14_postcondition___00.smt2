@@ -314,3 +314,4 @@ Target solver: CVC4
   (=> (= r21 (div1 x2 y))
   (let ((o y)) (=> (<= (div1 x1 o) (div1 x2 o)) (<= r11 r21))))))))))))))))
 (check-sat)
+(exit)

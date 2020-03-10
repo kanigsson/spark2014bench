@@ -804,3 +804,4 @@ Target solver: CVC4
   (and (xdr_hyper_to_unsigned__function_guard o1 o) (dynamic_invariant2 o1
   true false true true)) (= (mod1 position 4) 0))))))))))))))))
 (check-sat)
+(exit)

@@ -693,3 +693,4 @@ Target solver: CVC4
   (forall ((o5 positive))
   (=> (= (to_rep1 o5) o4) (<= (to_rep cut__first) top2))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

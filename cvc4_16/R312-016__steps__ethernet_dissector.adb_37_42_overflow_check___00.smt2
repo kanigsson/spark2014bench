@@ -976,3 +976,4 @@ Target solver: CVC4
   (and (<= (first1 buffer) o16) (<= o16 (last1 buffer))))) (in_range1
   (+ offset1 4))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

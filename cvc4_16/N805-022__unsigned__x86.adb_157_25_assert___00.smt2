@@ -824,3 +824,4 @@ Target solver: CVC4
   (forall ((xcx2 (Array Int unsigned_8))) (ecx__function_guard (ecx xcx2)
   xcx2)) (not (= (ecx xcx1) #x00000000))))))))))))))
 (check-sat)
+(exit)

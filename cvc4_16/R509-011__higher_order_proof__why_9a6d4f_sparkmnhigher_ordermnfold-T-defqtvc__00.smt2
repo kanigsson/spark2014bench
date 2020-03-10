@@ -1241,3 +1241,4 @@ Target solver: CVC4
   (=> (< (first2 a) i) (= (count_length (- i 1)) true))) (<= (first2 a) 
   i))))))))))))))
 (check-sat)
+(exit)

@@ -104,3 +104,4 @@ Target solver: CVC4
   (=> (dynamic_invariant press1 true true true true)
   (let ((o (* temp1 1234))) (=> (in_range o) (in_range (+ press1 o))))))))))))
 (check-sat)
+(exit)

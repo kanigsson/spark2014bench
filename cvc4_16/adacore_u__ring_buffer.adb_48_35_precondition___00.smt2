@@ -733,3 +733,4 @@ Target solver: CVC4
                                           true false)) true)
   (let ((o2 (+ (- usf first) 1))) (=> (in_range5 o2) (<= 1 o2)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

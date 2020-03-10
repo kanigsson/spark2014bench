@@ -267,3 +267,4 @@ Target solver: CVC4
   (type_invariant
   (us_repqtmk (us_split_fieldsqtmk test_type__decr__result)))))))))))))
 (check-sat)
+(exit)

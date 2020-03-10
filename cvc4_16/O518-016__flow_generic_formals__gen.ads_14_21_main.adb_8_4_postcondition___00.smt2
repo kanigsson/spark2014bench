@@ -66,3 +66,4 @@ Target solver: CVC4
  ;; File "gen.ads", line 11, characters 0-0
   (not (forall ((y Bool)) (=> (= y (distinct 0 0)) (not (= y true))))))
 (check-sat)
+(exit)

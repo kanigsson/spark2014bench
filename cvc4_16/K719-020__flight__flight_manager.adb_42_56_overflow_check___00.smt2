@@ -429,3 +429,4 @@ Target solver: CVC4
   (= result____split_fields2 result____split_fields1)))))) (in_range1
   (- position_x target_x)))))))))))
 (check-sat)
+(exit)

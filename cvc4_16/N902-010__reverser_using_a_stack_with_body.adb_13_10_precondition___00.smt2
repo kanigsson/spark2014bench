@@ -400,3 +400,4 @@ Target solver: CVC4
   (forall ((sp3 us_private)) (is_empty__function_guard (is_empty sp3) sp3))
   (not (= (is_empty sp2) true))))))))))))))))))))
 (check-sat)
+(exit)

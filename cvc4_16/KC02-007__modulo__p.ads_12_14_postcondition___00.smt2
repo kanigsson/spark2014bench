@@ -269,3 +269,4 @@ Target solver: CVC4
   (=> (dynamic_invariant y true false true true)
   (=> (= p__g__result (bv2nat y)) (= p__g__result 1)))))))))
 (check-sat)
+(exit)

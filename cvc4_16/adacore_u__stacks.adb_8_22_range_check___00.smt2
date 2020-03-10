@@ -401,3 +401,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__stacks__stack__top s__split_fields)) o1) (in_range1
   (+ o1 1))))))))))))
 (check-sat)
+(exit)

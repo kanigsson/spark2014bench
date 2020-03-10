@@ -147,3 +147,4 @@ Target solver: CVC4
   (forall ((temp___166 Int))
   (=> (= temp___166 i1) (not (= (distinct 1 0) true)))))))))))))))))))))))
 (check-sat)
+(exit)

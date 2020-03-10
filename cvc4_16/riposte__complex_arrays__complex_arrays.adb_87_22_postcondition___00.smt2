@@ -293,3 +293,4 @@ Target solver: CVC4
   (=> (= a2 (store a1 j (store (select a1 j) i rliteral1)))
   (not (= (to_rep (select (select a2 i) j)) 23))))))))))
 (check-sat)
+(exit)

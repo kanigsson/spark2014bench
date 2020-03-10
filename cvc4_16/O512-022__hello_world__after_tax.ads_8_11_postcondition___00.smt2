@@ -269,3 +269,4 @@ Target solver: CVC4
   (forall ((after_tax__result Int))
   (=> (= after_tax__result o1) (<= after_tax__result before_tax)))))))))))))
 (check-sat)
+(exit)

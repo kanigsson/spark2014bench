@@ -230,3 +230,4 @@ Target solver: CVC4
  ;; File "dates.ads", line 7, characters 0-0
   (not (=> (dynamic_invariant year true false true true) (not (= 400 0)))))
 (check-sat)
+(exit)

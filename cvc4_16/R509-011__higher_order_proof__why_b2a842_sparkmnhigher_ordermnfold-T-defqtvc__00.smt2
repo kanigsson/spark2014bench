@@ -835,3 +835,4 @@ Target solver: CVC4
   (= (ind_prop (of_array (to_array a) (first2 a) (last2 a)) acc2 i2) true)
   (dynamic_property first last i2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

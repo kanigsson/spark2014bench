@@ -187,3 +187,4 @@ Target solver: CVC4
   (forall ((y Int))
   (=> (= y 1) (=> (dynamic_invariant y true false true true) (<= 1 y))))))
 (check-sat)
+(exit)

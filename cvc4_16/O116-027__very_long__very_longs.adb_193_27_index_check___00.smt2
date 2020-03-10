@@ -685,3 +685,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (to_array temp___945) i1)) o2)
   (<= (first1 (rec__very_longs__very_long__long_digits (us_split_fields1 l))) i1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -982,3 +982,4 @@ Target solver: CVC4
                                                                r_g2__split_fields
                                                                r_g2__attr__tag))) true)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

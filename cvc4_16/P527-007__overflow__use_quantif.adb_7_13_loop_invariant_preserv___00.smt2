@@ -236,3 +236,4 @@ Target solver: CVC4
   (=> (and (<= first j) (<= j (- fst 2)))
   (=> (forall ((j1 Int)) (id__function_guard (id j1) j1)) (= (id j) j))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -737,3 +737,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__sum_elem__interval__last (us_split_fields3 o2))) o3)
   (<= x (last_index p))))))))))))))
 (check-sat)
+(exit)

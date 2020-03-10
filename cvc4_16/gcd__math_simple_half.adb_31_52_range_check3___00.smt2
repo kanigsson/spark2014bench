@@ -410,3 +410,4 @@ Target solver: CVC4
   (and (divides__function_guard o3 usf o2)
   (= (= o3 true) (= (mod2 o2 usf) 0))) (in_range1 usf))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

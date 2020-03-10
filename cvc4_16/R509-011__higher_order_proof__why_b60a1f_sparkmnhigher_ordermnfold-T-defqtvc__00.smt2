@@ -922,3 +922,4 @@ Target solver: CVC4
   true))
   (<= (first5 test_higher_order__my_fold_left__acc__fold__result) usf)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

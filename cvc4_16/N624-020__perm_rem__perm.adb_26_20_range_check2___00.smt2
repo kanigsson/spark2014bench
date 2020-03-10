@@ -557,3 +557,4 @@ Target solver: CVC4
   (forall ((spark__branch Bool))
   (=> (= spark__branch o2) (=> (= spark__branch true) (in_range3 ib))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -757,3 +757,4 @@ Target solver: CVC4
   (= o (bvshl #x0000000000000001 ((_ int2bv 64) usf)))
   (= o #x0000000000000000)) (in_range1 usf)))))))))))
 (check-sat)
+(exit)

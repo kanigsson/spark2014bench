@@ -779,3 +779,4 @@ Target solver: CVC4
   (=> (min__function_guard (min a) a)
   (<= (min a) simple_unc_arrays__average__result))))))))))))))))
 (check-sat)
+(exit)

@@ -213,3 +213,4 @@ Target solver: CVC4
   (let ((o4 (+ num 1))) (and (in_range1 o4) (= num1 o4))))))))
   (= flag1 flag))))))))))))))))) (not (= (state_a flag num) true))))))))))))
 (check-sat)
+(exit)

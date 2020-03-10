@@ -308,3 +308,4 @@ Target solver: CVC4
   (=> (oeq__function_guard (oeq content_x content_y) content_x content_y)
   (= (oeq content_x content_y) true))))))))
 (check-sat)
+(exit)

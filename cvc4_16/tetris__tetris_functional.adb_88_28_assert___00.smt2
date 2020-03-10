@@ -2138,3 +2138,4 @@ Target solver: CVC4
   (=> (= to_line1 del_line)
   (= (to_rep (select (select cur_board1 del_line) 1)) 0))))))))))))))))))))))))))
 (check-sat)
+(exit)

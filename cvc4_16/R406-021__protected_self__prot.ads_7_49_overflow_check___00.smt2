@@ -196,3 +196,4 @@ Target solver: CVC4
  ;; File "prot.ads", line 7, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (in_range (* 2 x)))))
 (check-sat)
+(exit)

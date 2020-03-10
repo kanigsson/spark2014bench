@@ -872,3 +872,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 current_candidate true false true true)
   (=> (dynamic_invariant last2 false false true true) (= program_phase 0)))))))))))))
 (check-sat)
+(exit)

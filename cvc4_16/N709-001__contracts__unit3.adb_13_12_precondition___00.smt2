@@ -713,3 +713,4 @@ Target solver: CVC4
      (us_repqtmk1 (us_split_fields3 unit2__bump__x__compl)
      (attr__tag1 unit2__bump__x__compl))) true)))))))))
 (check-sat)
+(exit)

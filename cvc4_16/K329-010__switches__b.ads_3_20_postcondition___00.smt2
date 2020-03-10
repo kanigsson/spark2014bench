@@ -107,3 +107,4 @@ Target solver: CVC4
   (and (dynamic_invariant o true false true true) (= o 2)))
   (forall ((b__f__result Int)) (=> (= b__f__result o) (= b__f__result 2)))))))
 (check-sat)
+(exit)

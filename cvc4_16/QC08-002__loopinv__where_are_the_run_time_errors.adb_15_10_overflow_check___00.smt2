@@ -262,3 +262,4 @@ Target solver: CVC4
   false true true true)) (not (< x2 10)))))))))))))))))))
   (and (= x2 x1) (= y2 y1))) (in_range (* 3 k1)))))))))))))))))
 (check-sat)
+(exit)

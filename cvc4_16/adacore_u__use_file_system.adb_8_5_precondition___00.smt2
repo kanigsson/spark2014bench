@@ -581,3 +581,4 @@ Target solver: CVC4
   (us_repqtmk f__split_fields2 o2)))
   (= (closed1 o1 (us_repqtmk f__split_fields1 o1)) true))))))))))
 (check-sat)
+(exit)

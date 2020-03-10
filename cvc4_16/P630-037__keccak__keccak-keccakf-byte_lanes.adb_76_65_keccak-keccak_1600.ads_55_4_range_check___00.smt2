@@ -1144,3 +1144,4 @@ Target solver: CVC4
   (let ((o2 (+ remaining_bits1 7)))
   (=> (in_range1 o2) (in_range2 (div1 o2 8)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

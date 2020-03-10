@@ -165,3 +165,4 @@ Target solver: CVC4
  ;; File "task_and_po_arrays.ads", line 5, characters 0-0
   (not (=> (dynamic_invariant id true false true true) (<= 97 97))))
 (check-sat)
+(exit)

@@ -363,3 +363,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true))
   (let ((o1 (- current_index beginning))) (=> (in_range1 o1) (in_range2 o1))))))))))))))))))))
 (check-sat)
+(exit)

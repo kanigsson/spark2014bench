@@ -366,3 +366,4 @@ Target solver: CVC4
   (=> (dynamic_invariant amount true false true true)
   (=> (<= amount 4) (in_range (- 4 amount)))))))
 (check-sat)
+(exit)

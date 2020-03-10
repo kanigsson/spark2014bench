@@ -165,3 +165,4 @@ Target solver: CVC4
                    false))
   (=> (= spark__branch true) (in_range2 (+ r_s1 global_var)))))))))))
 (check-sat)
+(exit)

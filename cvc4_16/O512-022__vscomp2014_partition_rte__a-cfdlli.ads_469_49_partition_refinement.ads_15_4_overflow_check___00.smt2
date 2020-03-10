@@ -803,3 +803,4 @@ Target solver: CVC4
      container__split_discrs)) o)
   (in_range4 (- o count)))))))))
 (check-sat)
+(exit)

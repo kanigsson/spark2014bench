@@ -1275,3 +1275,4 @@ Target solver: CVC4
       (us_split_fields3
       (rec__static_discr__holder__content (us_split_fields5 a))))) usf))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

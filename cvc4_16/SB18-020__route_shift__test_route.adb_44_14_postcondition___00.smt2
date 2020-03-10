@@ -1045,3 +1045,4 @@ Target solver: CVC4
   (=> (= test_route__all_x__result a1)
   (= (last test_route__all_x__result) (length r))))))))))))))))
 (check-sat)
+(exit)

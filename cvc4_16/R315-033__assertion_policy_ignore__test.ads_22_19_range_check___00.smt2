@@ -618,3 +618,4 @@ Target solver: CVC4
   (=> (<= (to_rep dest__first) (to_rep dest__last))
   (<= 0 (to_rep dest__first))))))))))))))))
 (check-sat)
+(exit)

@@ -1042,3 +1042,4 @@ Target solver: CVC4
   (forall ((result__ Int))
   (=> (dynamic_invariant result__ false false true true) (<= 1 1)))))
 (check-sat)
+(exit)

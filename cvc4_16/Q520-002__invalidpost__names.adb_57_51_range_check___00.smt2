@@ -499,3 +499,4 @@ Target solver: CVC4
   (=> (= spark__branch5 true)
   (forall ((state2 Int)) (=> (= state2 2) (in_range5 (+ label_length1 1))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

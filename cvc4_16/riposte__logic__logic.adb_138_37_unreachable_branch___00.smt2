@@ -80,3 +80,4 @@ Target solver: CVC4
   (ite (= a true) (ite (= b true) (= o c) (= o (distinct 1 0)))
   (= o (distinct 1 0))) (not (= a true))))))
 (check-sat)
+(exit)

@@ -556,3 +556,4 @@ Target solver: CVC4
   (has_sub_range_in_prefix a i3 b) a i3 b))
   (not (= (has_sub_range_in_prefix a i2 b) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

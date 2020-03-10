@@ -410,3 +410,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 level_nbr true false true true) (in_range
   (* (- 11 (mod2 (bv2nat level_nbr) 11)) 50))))))
 (check-sat)
+(exit)

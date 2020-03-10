@@ -655,3 +655,4 @@ Target solver: CVC4
   (forall ((k2 Int)) (match_at__function_guard (match_at needle haystack k2)
   needle haystack k2)) (not (= (match_at needle haystack k1) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

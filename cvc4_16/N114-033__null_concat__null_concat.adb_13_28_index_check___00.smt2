@@ -462,3 +462,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array a3) 1)) 1)
   (=> (= (first1 a4) (- 2147483648)) (<= (first1 a4) (first1 a4))))))))))))))))))
 (check-sat)
+(exit)

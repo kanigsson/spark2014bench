@@ -520,3 +520,4 @@ Target solver: CVC4
   (ite (= (mod2 (+ usf 1) 4) 0) (= o2 (ite (<= 4 space) true false))
   (= o2 false)) (=> (not (= o2 true)) (not (= (mod2 (+ usf 1) 2) 0)))))))))))))))))))
 (check-sat)
+(exit)

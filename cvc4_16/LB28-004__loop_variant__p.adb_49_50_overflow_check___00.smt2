@@ -381,3 +381,4 @@ Target solver: CVC4
   (let ((o1 (+ j7 1)))
   (=> (in_range1 o1) (forall ((j8 Int)) (=> (= j8 o1) (in_range1 (- j8 1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

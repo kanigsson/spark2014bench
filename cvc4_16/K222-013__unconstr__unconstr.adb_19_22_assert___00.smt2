@@ -329,3 +329,4 @@ Target solver: CVC4
   (=> (= a1 (slide (to_array temp___214) (first1 temp___214) 0))
   (= (to_rep1 (select a1 0)) 1)))))))))))))))
 (check-sat)
+(exit)

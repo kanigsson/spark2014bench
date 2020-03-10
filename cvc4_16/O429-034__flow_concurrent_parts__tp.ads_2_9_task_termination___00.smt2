@@ -110,3 +110,4 @@ Target solver: CVC4
   (and (in_range1 o)
   (exists ((b42 Int)) (and (= b42 o) (not (<= b42 10000)))))))))))))
 (check-sat)
+(exit)

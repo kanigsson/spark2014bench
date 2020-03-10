@@ -405,3 +405,4 @@ Target solver: CVC4
   (forall ((o natural))
   (=> (= (to_rep o) c) (in_range1 c (us_split_discrsqtmk o))))))))
 (check-sat)
+(exit)

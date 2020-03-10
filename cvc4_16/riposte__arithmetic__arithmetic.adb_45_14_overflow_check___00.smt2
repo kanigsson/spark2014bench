@@ -140,3 +140,4 @@ Target solver: CVC4
   (=> (= b 40)
   (=> (dynamic_invariant r false false true true) (in_range1 (* a b))))))))))
 (check-sat)
+(exit)

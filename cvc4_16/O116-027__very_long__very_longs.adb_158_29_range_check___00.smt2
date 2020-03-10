@@ -1087,3 +1087,4 @@ Target solver: CVC4
   (=> (in_range4 o)
   (forall ((index1 Int)) (=> (= index1 o) (in_range2 (first1 number)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

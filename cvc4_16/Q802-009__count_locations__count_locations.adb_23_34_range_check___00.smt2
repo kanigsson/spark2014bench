@@ -446,3 +446,4 @@ Target solver: CVC4
   (=> (= spark__branch (select sel st1))
   (=> (= spark__branch true) (in_range3 (+ st_count1 1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

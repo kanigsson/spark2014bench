@@ -1638,3 +1638,4 @@ Target solver: CVC4
   (<= (first_21
       test_higher_order3__my_count_2__fold_count__acc__fold__result) usf1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

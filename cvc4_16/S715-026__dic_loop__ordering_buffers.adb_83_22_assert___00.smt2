@@ -972,3 +972,4 @@ Target solver: CVC4
   (<= i (last (us_repqtmk buffer__split_fields1))))
   (=> (not (= i index)) (not (= ((_ int2bv 8) (mod2 i 256)) ring_index)))))))))))))))))))))))))))
 (check-sat)
+(exit)

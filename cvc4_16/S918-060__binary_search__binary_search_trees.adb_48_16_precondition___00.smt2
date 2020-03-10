@@ -405,3 +405,4 @@ Target solver: CVC4
                     us_null_pointer))
   (=> (not (= spark__branch2 true)) (< size 2147483647)))))))))))))))))))))
 (check-sat)
+(exit)

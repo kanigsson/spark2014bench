@@ -1900,3 +1900,4 @@ Target solver: CVC4
   (let ((o9 (bv2nat (bvnot x3))))
   (=> (in_range o9) (in_range1 (- (- o9) 1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

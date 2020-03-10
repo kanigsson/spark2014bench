@@ -407,3 +407,4 @@ Target solver: CVC4
   (=> (= (to_rep usf) 42) (type_invariant1
   (us_repqtmk (us_split_fieldsqtmk usf)))))))
 (check-sat)
+(exit)

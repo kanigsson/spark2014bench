@@ -2074,3 +2074,4 @@ Target solver: CVC4
   (=> (<= (first3 temp___323) (last3 temp___323))
   (<= (to_rep3 total_stream__first) (to_rep3 total_stream__last))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

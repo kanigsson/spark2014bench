@@ -650,3 +650,4 @@ Target solver: CVC4
                 (last1 temp___221))))))
   (<= (first1 temp___244) 2)))))))))))))))))
 (check-sat)
+(exit)

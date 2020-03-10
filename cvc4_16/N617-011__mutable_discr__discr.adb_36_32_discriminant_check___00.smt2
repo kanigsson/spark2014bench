@@ -336,3 +336,4 @@ Target solver: CVC4
   (forall ((o1 natural))
   (=> (= (to_rep o1) c) (in_range1 c (us_split_discrsqtmk o1))))))))))))
 (check-sat)
+(exit)

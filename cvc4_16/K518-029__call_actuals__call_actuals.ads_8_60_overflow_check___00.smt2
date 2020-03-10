@@ -138,3 +138,4 @@ Target solver: CVC4
   (=> (in_range o)
   (=> (in_range1 o) (forall ((y1 Int)) (=> (= y1 o) (in_range (+ x1 1)))))))))))))))
 (check-sat)
+(exit)

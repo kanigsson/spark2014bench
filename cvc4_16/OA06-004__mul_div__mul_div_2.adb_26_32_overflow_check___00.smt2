@@ -393,3 +393,4 @@ Target solver: CVC4
   (let ((o4 (* v_hi m)))
   (=> (in_range1 o4) (in_range1 (+ o4 (div1 v_m_lo1 4294967296))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

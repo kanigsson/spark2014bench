@@ -401,3 +401,4 @@ Target solver: CVC4
   (=> (dynamic_invariant dir_sep true false true true) (in_range
   (- (+ 1 (+ 1 (length 1 0))) 1)))))
 (check-sat)
+(exit)

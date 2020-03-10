@@ -828,3 +828,4 @@ Target solver: CVC4
       (of_array (to_array temp___1431) (first1 temp___1431)
       (last1 temp___1431))) (+ o1 o)))))))))))))))))))))
 (check-sat)
+(exit)

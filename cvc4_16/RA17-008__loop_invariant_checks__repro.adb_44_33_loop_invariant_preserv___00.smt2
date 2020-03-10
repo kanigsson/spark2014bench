@@ -1051,3 +1051,4 @@ Target solver: CVC4
                                                 (us_split_fieldsqtmk o19 o17))))
   (=> (in_range1 (+ e_pos2 1)) (<= result_pos3 (+ e_pos2 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

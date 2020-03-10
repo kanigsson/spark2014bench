@@ -487,3 +487,4 @@ Target solver: CVC4
   (=> (exists ((o2 Int)) (= (to_rep1 (select h_v2 temp___470)) o2))
   (forall ((o2 Int)) (=> (= (to_rep h_v1__last) o2) (not (= 2 0))))))))))))))))))
 (check-sat)
+(exit)

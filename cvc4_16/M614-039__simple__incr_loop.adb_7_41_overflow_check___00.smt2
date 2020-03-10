@@ -282,3 +282,4 @@ Target solver: CVC4
                                              false)) true)
   (=> (exists ((o Int)) (= (to_rep a__last) o)) (in_range1 (- i 1))))))))))))
 (check-sat)
+(exit)

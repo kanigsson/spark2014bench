@@ -225,3 +225,4 @@ Target solver: CVC4
   (=> (dynamic_invariant c8 true false true true)
   (=> (= (add c5 c7) c8) (in_range1 (+ 86 c3))))))))))))))))
 (check-sat)
+(exit)

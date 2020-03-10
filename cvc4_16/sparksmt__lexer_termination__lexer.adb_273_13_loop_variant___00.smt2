@@ -715,3 +715,4 @@ Target solver: CVC4
   (=> (= (to_rep1 current_read__split_discrs5) o6)
   (=> (= o6 0) (< temp___611 current_idx9)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

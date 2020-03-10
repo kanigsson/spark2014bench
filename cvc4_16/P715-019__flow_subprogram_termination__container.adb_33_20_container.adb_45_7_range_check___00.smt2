@@ -605,3 +605,4 @@ Target solver: CVC4
        (= e2 (element c12b (us_repqtmk1 (us_split_fieldsqtmk1 temp___299)))))
   true false)) true) (in_range4 (+ int__1 1))))))))))))))))))))))
 (check-sat)
+(exit)

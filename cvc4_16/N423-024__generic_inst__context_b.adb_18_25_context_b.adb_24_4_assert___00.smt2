@@ -105,3 +105,4 @@ Target solver: CVC4
   (=> (greater_than_zero__function_guard (greater_than_zero 6) 6)
   (= (greater_than_zero 6) true))))
 (check-sat)
+(exit)

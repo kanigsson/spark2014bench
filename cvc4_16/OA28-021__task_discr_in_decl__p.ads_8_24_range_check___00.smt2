@@ -127,3 +127,4 @@ Target solver: CVC4
   (not
   (=> (dynamic_invariant countdown true false true true) (<= 0 countdown))))
 (check-sat)
+(exit)

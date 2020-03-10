@@ -2008,3 +2008,4 @@ Target solver: CVC4
   (=> (exists ((o3 Int)) (= (to_rep (select (to_array a) usf)) o3))
   (<= (first1 a) usf))))))))))))))))))))))))))))
 (check-sat)
+(exit)

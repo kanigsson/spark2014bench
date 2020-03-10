@@ -698,3 +698,4 @@ Target solver: CVC4
   (forall ((usf1 us_rep1)) (is_empty__function_guard (is_empty usf1) usf1))
   (= (is_empty usf) true)))))))))
 (check-sat)
+(exit)

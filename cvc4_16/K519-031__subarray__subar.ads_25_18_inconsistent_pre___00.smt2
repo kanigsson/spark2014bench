@@ -291,3 +291,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (not (= (to_rep1 (select (to_array x) (first1 x))) 1)))))
 (check-sat)
+(exit)

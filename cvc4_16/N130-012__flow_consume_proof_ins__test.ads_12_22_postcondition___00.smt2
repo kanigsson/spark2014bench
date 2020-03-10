@@ -106,3 +106,4 @@ Target solver: CVC4
   (=> (dynamic_invariant z true false true true)
   (=> (dynamic_invariant tmp true false true true) (= proof_var true)))))))))
 (check-sat)
+(exit)

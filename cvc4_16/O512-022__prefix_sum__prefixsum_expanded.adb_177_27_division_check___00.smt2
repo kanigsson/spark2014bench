@@ -621,3 +621,4 @@ Target solver: CVC4
   (= (to_rep (select a2 k)) (to_rep (select temp___loop_entry_269 k))))))
   (not (= (* space2 2) 0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

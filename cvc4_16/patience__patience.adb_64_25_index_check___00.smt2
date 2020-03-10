@@ -1199,3 +1199,4 @@ Target solver: CVC4
   (=> (in_range2 idx1)
   (forall ((o9 cardindex)) (=> (= (to_rep o9) idx1) (<= 0 stackisize2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

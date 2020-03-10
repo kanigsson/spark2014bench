@@ -171,3 +171,4 @@ Target solver: CVC4
   (=> (fp.isFinite32 o2)
   (forall ((x21 Float32)) (=> (= x21 o2) (fp.leq x11 x21))))))))))))))))))))))))
 (check-sat)
+(exit)

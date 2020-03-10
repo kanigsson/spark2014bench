@@ -179,3 +179,4 @@ Target solver: CVC4
   (=> (dynamic_invariant k false false true true)
   (=> (= k1 0) (in_range1 (+ k1 1)))))))
 (check-sat)
+(exit)

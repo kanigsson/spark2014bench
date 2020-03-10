@@ -1223,3 +1223,4 @@ Target solver: CVC4
   (=> (= (to_rep1 o) 1024)
   (=> (= (to_rep1 o1) 1) (<= 1024 (length (to_rep1 o1) (to_rep1 o))))))))))
 (check-sat)
+(exit)

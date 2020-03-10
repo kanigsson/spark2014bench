@@ -255,3 +255,4 @@ Target solver: CVC4
   (= o (ite (= bn (- 2147483648)) false true)) (= o false))
   (=> (= o true) (in_range1 (abs1 a)))))))))))))))))
 (check-sat)
+(exit)

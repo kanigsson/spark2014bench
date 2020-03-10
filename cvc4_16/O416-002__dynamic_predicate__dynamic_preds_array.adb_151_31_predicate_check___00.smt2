@@ -361,3 +361,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 i10s true false true true)
   (=> (dynamic_invariant2 x true false true true) (dynamic_predicate x)))))))
 (check-sat)
+(exit)

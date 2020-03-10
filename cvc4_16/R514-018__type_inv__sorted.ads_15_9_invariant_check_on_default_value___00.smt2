@@ -329,3 +329,4 @@ Target solver: CVC4
   (not
   (forall ((usf (Array Int natural))) (type_invariant (of_array usf 1 100)))))
 (check-sat)
+(exit)

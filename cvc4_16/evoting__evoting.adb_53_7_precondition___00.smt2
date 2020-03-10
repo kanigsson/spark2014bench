@@ -881,3 +881,4 @@ Target solver: CVC4
   (= (select usf temp___331) (select (select candidates 0) temp___331))))
   (not (= (is_open file) true))))))))))))))))
 (check-sat)
+(exit)

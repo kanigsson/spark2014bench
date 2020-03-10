@@ -157,3 +157,4 @@ Target solver: CVC4
   (=> (and (<= 0 i) (<= i 255)) (= (= (select o i) true) (= i 68)))))
   (forall ((a (Array Int Bool))) (=> (= a o) (= (select a 65) true)))))))
 (check-sat)
+(exit)

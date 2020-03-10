@@ -317,3 +317,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 o true false true true)
   (= o (- 9223372036854775808)))) (in_range1 (fxp_div_int o right))))))))
 (check-sat)
+(exit)

@@ -236,3 +236,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__semaphores1__protected_naturalT__the_data self__)) o)
   (in_range1 (+ o 1)))))))
 (check-sat)
+(exit)

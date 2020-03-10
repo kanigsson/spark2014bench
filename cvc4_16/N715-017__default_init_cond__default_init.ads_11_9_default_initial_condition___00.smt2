@@ -302,3 +302,4 @@ Target solver: CVC4
   (forall ((n1 Int) (usf1 (Array Int nat))) (rte_ok__function_guard
   (rte_ok usf1 n1) usf1 n1)) (= (rte_ok usf n) true)))))))
 (check-sat)
+(exit)

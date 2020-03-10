@@ -345,3 +345,4 @@ Target solver: CVC4
   (=> (= fruit_salads_made1 o) (in_range
   (* fruit_salads_made1 apples_in_fruit_salad))))))))))))
 (check-sat)
+(exit)

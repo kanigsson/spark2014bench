@@ -114,3 +114,4 @@ Target solver: CVC4
   (forall ((spark__branch Bool))
   (=> (= spark__branch o) (=> (= spark__branch true) (in_range (+ 1 var4))))))))))))))
 (check-sat)
+(exit)

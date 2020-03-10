@@ -883,3 +883,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 empty1 false false true true)
   (=> (< 0 (length 1 0)) (dynamic_property1 first1 2147483647 0)))))))))
 (check-sat)
+(exit)

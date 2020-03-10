@@ -393,3 +393,4 @@ Target solver: CVC4
   (=> (and (bvule #x0000000000000000 k) (bvule k i3))
   (not (= var (bvadd bottom k))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

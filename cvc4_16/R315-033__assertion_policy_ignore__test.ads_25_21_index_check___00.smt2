@@ -628,3 +628,4 @@ Target solver: CVC4
   (=> (exists ((o2 (_ BitVec 8))) (= (to_rep1 (select dest usf)) o2))
   (<= (to_rep dest__first) usf)))))))))))))))))))))
 (check-sat)
+(exit)

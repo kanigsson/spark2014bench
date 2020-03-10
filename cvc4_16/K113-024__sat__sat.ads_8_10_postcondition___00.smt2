@@ -112,3 +112,4 @@ Target solver: CVC4
   (or (and (< (+ x y) 10000) (= sat__add__result (+ x y)))
   (and (<= 10000 (+ x y)) (= sat__add__result 10000)))))))))))
 (check-sat)
+(exit)

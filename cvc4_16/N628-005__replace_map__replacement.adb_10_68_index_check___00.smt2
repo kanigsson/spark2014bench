@@ -1518,3 +1518,4 @@ Target solver: CVC4
   (= temp___807 (get2 (model1 o9) (key o9 usf1))))
   (<= (first1 a) temp___807)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -393,3 +393,4 @@ Target solver: CVC4
   (= min2 min3))))))))) (= index2 temp___209))))) (= min2 min1))))))
   (in_range4 min2)))))))))))))
 (check-sat)
+(exit)

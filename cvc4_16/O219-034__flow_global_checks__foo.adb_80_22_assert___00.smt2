@@ -108,3 +108,4 @@ Target solver: CVC4
   (=> (dynamic_invariant tmp1 false false true true)
   (=> (dynamic_invariant tmp2 false false true true) (= x 12))))))))))
 (check-sat)
+(exit)

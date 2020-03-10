@@ -224,3 +224,4 @@ Target solver: CVC4
   (and (= o1 (fp.roundToIntegral RTN o))
   (fp.eq o1 (fp.roundToIntegral RTN o))))) (in_range2 o1)))))))
 (check-sat)
+(exit)

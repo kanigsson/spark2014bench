@@ -498,3 +498,4 @@ Target solver: CVC4
   (=> (<= 21 i)
   (=> (<= i 30) (= (distinct (to_rep1 (select (to_array r1) i)) 0) true)))))))))))))))
 (check-sat)
+(exit)

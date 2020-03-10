@@ -1217,3 +1217,4 @@ Target solver: CVC4
   (=> (= (to_rep1 frame__first) temp___987)
   (=> (<= temp___987 r6b) (<= (to_rep1 frame__first) temp___987)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

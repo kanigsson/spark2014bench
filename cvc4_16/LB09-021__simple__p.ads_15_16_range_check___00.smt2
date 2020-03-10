@@ -458,3 +458,4 @@ Target solver: CVC4
   (=> (dynamic_invariant usf true true true true)
   (=> (= (to_rep (rec__p__t__z (us_split_discrs3 usf1))) usf) (in_range usf))))))
 (check-sat)
+(exit)

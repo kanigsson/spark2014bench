@@ -445,3 +445,4 @@ Target solver: CVC4
   (=> (in_range3 (+ y3 1))
   (=> (in_range2 (+ x3 1)) (in_range1 (+ new_val_1 1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

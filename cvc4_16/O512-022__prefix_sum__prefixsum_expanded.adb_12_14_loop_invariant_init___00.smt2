@@ -718,3 +718,4 @@ Target solver: CVC4
   (exists ((o2 Int)) (= (to_rep (select a 6)) o2))))))))))))
   (= (all_elements_in a (* space 1000000)) true)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -580,3 +580,4 @@ Target solver: CVC4
                                             false)) true))
   (<= usf (to_rep a__last))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

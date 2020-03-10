@@ -146,3 +146,4 @@ Target solver: CVC4
                 1 0)) (ite (= (and (and (= out_0_dat_v1 out_0_dat_v2) (or (not in_1_rdy_v1) out_0_rdy_v1)) (or (not in_1_rdy_v2) out_0_rdy_v2)) true)
                       1 0))))))))))))))
 (check-sat)
+(exit)

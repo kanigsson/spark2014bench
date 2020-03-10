@@ -422,3 +422,4 @@ Target solver: CVC4
   (us_repqtmk1 po_1__split_discrs po_1__split_fields4) true true true true)
   (< 10 42))))))))))))))))))))
 (check-sat)
+(exit)

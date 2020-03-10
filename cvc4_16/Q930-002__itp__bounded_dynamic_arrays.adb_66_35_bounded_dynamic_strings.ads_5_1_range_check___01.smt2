@@ -834,3 +834,4 @@ Target solver: CVC4
                                                      (first1 temp___1377)
                                                      (last1 temp___1377)))) 1))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -824,3 +824,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk1 states__split_fields)) true false true true)
   (<= 5 (to_rep (select cpu_lsid_last cpu_id)))))))))
 (check-sat)
+(exit)

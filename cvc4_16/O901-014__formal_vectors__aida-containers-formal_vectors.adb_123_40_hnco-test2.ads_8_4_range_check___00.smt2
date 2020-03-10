@@ -6057,3 +6057,4 @@ Target solver: CVC4
   (=> (= ada___hnco__test2__v_type_owner__swap__R261s__assume r261s)
   (=> (dynamic_invariant2 r261s true false true true) (in_range r261s))))))))))))))))))
 (check-sat)
+(exit)

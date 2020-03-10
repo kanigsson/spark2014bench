@@ -193,3 +193,4 @@ Target solver: CVC4
   (=> (fp.lt a d)
   (=> (fp.lt d b) (=> (fp.leq c a) (=> (fp.leq b c) (fp.lt a b)))))))))))))))))))
 (check-sat)
+(exit)

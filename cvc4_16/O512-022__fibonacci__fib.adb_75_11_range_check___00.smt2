@@ -219,3 +219,4 @@ Target solver: CVC4
   (=> (dynamic_invariant p2 false false true true)
   (=> (= n1 n2) (=> (<= n1 7) (=> (<= 2 n1) (<= 0 2)))))))))))
 (check-sat)
+(exit)

@@ -316,3 +316,4 @@ Target solver: CVC4
   (exists ((j Int))
   (and (and (<= 6 j) (<= j (+ y 1))) (= (to_rep (select a1 j)) 1))))))))))))))))))))))))
 (check-sat)
+(exit)

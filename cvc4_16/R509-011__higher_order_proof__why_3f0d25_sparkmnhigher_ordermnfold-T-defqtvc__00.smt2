@@ -294,3 +294,4 @@ Target solver: CVC4
   (=> (in_range1 (* 100 o))
   (let ((o1 (length a))) (=> (in_range1 o1) (in_range1 (* (- 100) o1)))))))))))
 (check-sat)
+(exit)

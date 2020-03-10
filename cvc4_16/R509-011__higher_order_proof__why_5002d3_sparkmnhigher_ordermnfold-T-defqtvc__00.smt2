@@ -1404,3 +1404,4 @@ Target solver: CVC4
                                                    (first_2 a) (last_2 a))
                                                    init)) i1 j))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

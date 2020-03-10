@@ -373,3 +373,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= smallest1 current) false true))
   (=> (= spark__branch true) (in_range2 current)))))))))))))))))))))))))))
 (check-sat)
+(exit)

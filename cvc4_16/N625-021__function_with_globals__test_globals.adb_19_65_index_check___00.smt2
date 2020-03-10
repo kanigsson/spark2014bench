@@ -614,3 +614,4 @@ Target solver: CVC4
   (and (= (to_rep (select as__ 1)) o2) (= o (ite (= o2 0) true false))))
   (= o false)))) (=> (= o true) (<= (to_rep1 ad__first) 1)))))))))))))))))
 (check-sat)
+(exit)

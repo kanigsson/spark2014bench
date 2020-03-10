@@ -163,3 +163,4 @@ Target solver: CVC4
  ;; File "watchdog.ads", line 6, characters 0-0
   (not (<= 97 97)))
 (check-sat)
+(exit)

@@ -1339,3 +1339,4 @@ Target solver: CVC4
   (ite (= spark__branch2 true) (= future_borrow2 #x0000)
   (= future_borrow2 #x0001))))))))) (in_range2 (+ j n)))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -340,3 +340,4 @@ Target solver: CVC4
   (=> (ite (not (= usf a)) (= o7 (ite (= usf b) false true)) (= o7 false))
   (=> (= o7 true) (<= (to_rep x__first) usf))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1076,3 +1076,4 @@ Target solver: CVC4
   (=> (dynamic_invariant catstring5 true false true true) (in_range2
   (- (+ 1 (+ (length 1 5) (length (first1 vstring) (last1 vstring)))) 1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

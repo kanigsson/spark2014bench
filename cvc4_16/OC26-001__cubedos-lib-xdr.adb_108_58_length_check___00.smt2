@@ -741,3 +741,4 @@ Target solver: CVC4
   (=> (<= (first1 value) (last1 value))
   (<= position (- (+ position (length1 value)) 1)))))))))))))))))))
 (check-sat)
+(exit)

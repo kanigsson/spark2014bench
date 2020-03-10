@@ -620,3 +620,4 @@ Target solver: CVC4
   (forall ((x__split_fields us_split_fields4)) (in_range
   (+ (to_rep (rec__unit1__t1__c12 x__split_fields)) 1)))))
 (check-sat)
+(exit)

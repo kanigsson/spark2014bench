@@ -872,3 +872,4 @@ Target solver: CVC4
   (bvsub rbp2 #x0000000000000010) memory7))
   (= (readmem64 (bvsub rbp1 #x0000000000000010) memory6) rsi)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

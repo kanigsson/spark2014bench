@@ -305,3 +305,4 @@ Target solver: CVC4
   (=> (= a (slide (to_array temp___592) (first1 temp___592) 7))
   (= (to_rep (select a 8)) 1))))))))))
 (check-sat)
+(exit)

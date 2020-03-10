@@ -322,3 +322,4 @@ Target solver: CVC4
   (= dst__split_fields2 dst__split_fields1))))
   (= (bool_eq1 (us_repqtmk1 dst__split_fields2) src) true))))))
 (check-sat)
+(exit)

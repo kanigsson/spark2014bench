@@ -453,3 +453,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i o3) true false)) true)
   (let ((o4 (- (last1 needle) 1))) (=> (in_range1 o4) (in_range1 (+ i o4))))))))))))))))))))
 (check-sat)
+(exit)

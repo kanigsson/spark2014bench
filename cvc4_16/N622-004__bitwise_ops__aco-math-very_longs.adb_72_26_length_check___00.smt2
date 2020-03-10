@@ -886,3 +886,4 @@ Target solver: CVC4
   (=> (<= (first1 temp___1491) (last1 temp___1491))
   (<= (first1 result____split_fields) (last1 result____split_fields))))))))))))))))))))))
 (check-sat)
+(exit)

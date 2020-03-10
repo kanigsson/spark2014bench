@@ -609,3 +609,4 @@ Target solver: CVC4
   (=> (and (<= (to_rep buf__first) i1) (<= i1 (to_rep buf__last)))
   (= (attr__init (select buf1 i1)) true))))))))))))))))))))))))))
 (check-sat)
+(exit)

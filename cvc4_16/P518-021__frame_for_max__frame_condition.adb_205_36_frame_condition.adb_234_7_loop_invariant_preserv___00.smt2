@@ -858,3 +858,4 @@ Target solver: CVC4
                          (rec__frame_condition__cell__max_left q_) o2)))))))))))
   (<= (to_rep1 a__first) k2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

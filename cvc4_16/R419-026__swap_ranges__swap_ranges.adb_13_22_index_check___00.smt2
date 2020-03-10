@@ -459,3 +459,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (select a k1)) o7)
   (forall ((temp1 Int)) (=> (= temp1 o7) (<= (to_rep b__first) l1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

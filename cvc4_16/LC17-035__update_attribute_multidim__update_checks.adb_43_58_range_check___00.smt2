@@ -372,3 +372,4 @@ Target solver: CVC4
                    (ite (< new_val 99) true false) false))
   (=> (= spark__branch true) (in_range (+ new_val 1)))))))))))
 (check-sat)
+(exit)

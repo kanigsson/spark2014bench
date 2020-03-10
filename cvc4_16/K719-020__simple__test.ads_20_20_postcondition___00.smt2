@@ -297,3 +297,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (rec__test__t__c (us_split_fields1 x)) 1)) o)
   (=> (= test__f2__result o) (< 11 test__f2__result)))))))
 (check-sat)
+(exit)

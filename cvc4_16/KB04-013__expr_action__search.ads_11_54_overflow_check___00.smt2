@@ -307,3 +307,4 @@ Target solver: CVC4
   (=> (= (to_rep (select t search__search__result)) o1)
   (=> (= o1 v) (in_range1 (- search__search__result 1)))))))))))))))))
 (check-sat)
+(exit)

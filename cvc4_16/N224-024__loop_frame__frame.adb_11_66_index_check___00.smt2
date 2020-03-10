@@ -220,3 +220,4 @@ Target solver: CVC4
   (=> (= (to_rep (select temp___loop_entry_209 usf)) o)
   (=> (not (< 10 o)) (<= 1 usf)))))))))))))
 (check-sat)
+(exit)

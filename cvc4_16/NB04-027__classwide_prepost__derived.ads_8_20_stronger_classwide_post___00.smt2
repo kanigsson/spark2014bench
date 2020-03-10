@@ -141,3 +141,4 @@ Target solver: CVC4
   (=> (not (= (rec__object__t__b x__split_fields) true))
   (= (rec__object__t__b x__split_fields) true)))))
 (check-sat)
+(exit)

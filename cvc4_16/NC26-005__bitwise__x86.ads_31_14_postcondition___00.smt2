@@ -587,3 +587,4 @@ Target solver: CVC4
                             (select memory (bvadd addr #x0000000000000001)))) ((_ int2bv 16) 8))
   #x0000)))))))))))))
 (check-sat)
+(exit)

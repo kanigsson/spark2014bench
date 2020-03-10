@@ -307,3 +307,4 @@ Target solver: CVC4
   (divides math_simple__gcd__result1 a) math_simple__gcd__result1 a))
   (= (divides math_simple__gcd__result a) true)))))))))))))))))))
 (check-sat)
+(exit)

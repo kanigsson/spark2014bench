@@ -614,3 +614,4 @@ Target solver: CVC4
                                       true false)) true)
   (not (= (mod2 (+ usf 1) (* 2 space2)) 0)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

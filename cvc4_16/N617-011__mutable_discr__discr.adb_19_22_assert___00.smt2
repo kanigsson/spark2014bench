@@ -429,3 +429,4 @@ Target solver: CVC4
   (= (bool_eq (us_repqtmk (us_split_discrsqtmk d__split_discrs))
      (us_repqtmk d1__split_discrs)) true))))))))))))))))
 (check-sat)
+(exit)

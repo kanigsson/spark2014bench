@@ -5448,3 +5448,4 @@ Target solver: CVC4
   (= (constant_range (model1 temp___1360) 1 (last_index temp___1360) o1) true))
   (in_range1 length (us_split_discrs1 temp___1360))))))))))
 (check-sat)
+(exit)

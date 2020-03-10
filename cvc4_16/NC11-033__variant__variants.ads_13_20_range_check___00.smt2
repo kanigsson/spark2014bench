@@ -81,3 +81,4 @@ Target solver: CVC4
  ;; File "variants.ads", line 1, characters 0-0
   (not (in_range 0)))
 (check-sat)
+(exit)

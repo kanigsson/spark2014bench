@@ -372,3 +372,4 @@ Target solver: CVC4
   (=> (and (<= 1 y) (<= y 1000))
   (forall ((o Int)) (=> (= (to_rep (select a y)) o) (<= 1 x)))))))))))))
 (check-sat)
+(exit)

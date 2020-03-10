@@ -573,3 +573,4 @@ Target solver: CVC4
                                                                  true false)))
   (=> (not (= spark__branch true)) (uint_in_range (+ (- max1 min1) 1))))))))))))
 (check-sat)
+(exit)

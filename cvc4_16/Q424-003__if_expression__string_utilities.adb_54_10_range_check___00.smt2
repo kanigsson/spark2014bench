@@ -1127,3 +1127,4 @@ Target solver: CVC4
   (and (= (to_rep1 result____first) 1) (= (to_rep1 result____last) last5)))
   (=> (<= 1 (to_rep1 result____last)) (<= (- 2147483648) 1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

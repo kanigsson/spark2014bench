@@ -607,3 +607,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array a) i)) o)
   (=> (not (= v o)) (=> (not (= v e)) (<= (first1 a) i)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

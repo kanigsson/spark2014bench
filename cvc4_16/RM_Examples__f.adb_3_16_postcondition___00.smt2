@@ -392,3 +392,4 @@ Target solver: CVC4
   (ite (= spark__branch3 true) (= f__result 42) (= f__result 99))))))))))
   (= f__result 999))))))) (<= 0 f__result)))))))
 (check-sat)
+(exit)

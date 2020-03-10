@@ -329,3 +329,4 @@ Target solver: CVC4
   (valid t stack__size__result2) t stack__size__result2))
   (= (valid t stack__size__result1) true))))))))
 (check-sat)
+(exit)

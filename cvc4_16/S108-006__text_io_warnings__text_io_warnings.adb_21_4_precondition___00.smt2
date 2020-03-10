@@ -1250,3 +1250,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 ch false false true true)
   (not (= (is_open source) true))))))))))))))))
 (check-sat)
+(exit)

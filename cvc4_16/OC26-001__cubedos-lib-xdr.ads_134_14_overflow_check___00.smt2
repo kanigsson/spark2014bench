@@ -261,3 +261,4 @@ Target solver: CVC4
   (=> (ite (= (mod1 length 4) 0) (= o 0) (= o (- 4 (mod1 length 4))))
   (in_range (+ length o)))))))
 (check-sat)
+(exit)

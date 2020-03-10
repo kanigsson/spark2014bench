@@ -448,3 +448,4 @@ Target solver: CVC4
   (has_element temp___2631 o2) temp___2631 o2))
   (= (has_element temp___263 o) true)))))))))))))
 (check-sat)
+(exit)

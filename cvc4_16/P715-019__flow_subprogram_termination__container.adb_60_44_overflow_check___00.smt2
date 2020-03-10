@@ -719,3 +719,4 @@ Target solver: CVC4
   (not (< 0 x1)))))) (and (= x1 x) (= b1 b)))
   (=> (< i 10) (in_range1 (* 10 i))))))))))))))))))
 (check-sat)
+(exit)

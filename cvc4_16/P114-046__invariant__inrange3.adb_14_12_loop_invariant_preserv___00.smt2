@@ -319,3 +319,4 @@ Target solver: CVC4
         true false)))
   (bvule #x0000000000000000 i2))))))))))))))))))))))
 (check-sat)
+(exit)

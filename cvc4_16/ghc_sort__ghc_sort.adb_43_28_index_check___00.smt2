@@ -684,3 +684,4 @@ Target solver: CVC4
   (forall ((temp___427 Int))
   (=> (= (to_rep1 (select cut2 top2)) temp___427) (<= (first1 s) temp___427)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

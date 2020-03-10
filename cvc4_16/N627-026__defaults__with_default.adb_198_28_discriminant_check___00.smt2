@@ -2219,3 +2219,4 @@ Target solver: CVC4
   (us_repqtmk3 (us_split_discrsqtmk2 w_d_di__split_discrs)
   w_d_di__split_fields)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

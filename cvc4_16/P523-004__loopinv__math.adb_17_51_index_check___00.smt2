@@ -295,3 +295,4 @@ Target solver: CVC4
   (forall ((o3 Int))
   (=> (= (to_rep (select temp___loop_entry_216 usf)) o3) (<= 1 usf))))))))))))))))))))))))))))
 (check-sat)
+(exit)

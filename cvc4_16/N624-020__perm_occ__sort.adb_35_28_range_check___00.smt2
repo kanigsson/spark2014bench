@@ -660,3 +660,4 @@ Target solver: CVC4
   (forall ((o2 Int))
   (=> (= (to_rep (select (to_array init) y)) o2) (in_range4 x))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1449,3 +1449,4 @@ Target solver: CVC4
           true false) (ite (and (<= r4b i1) (<= i1 r5b)) true false)) true)
   (in_range5 i1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

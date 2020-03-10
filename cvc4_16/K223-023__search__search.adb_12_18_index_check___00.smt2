@@ -257,3 +257,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i 10) true false)) true)
   (=> (in_range1 (- pos 1)) (<= 1 pos))))))))))
 (check-sat)
+(exit)

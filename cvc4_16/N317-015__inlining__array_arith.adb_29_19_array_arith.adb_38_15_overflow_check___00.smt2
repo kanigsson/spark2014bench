@@ -246,3 +246,4 @@ Target solver: CVC4
   (forall ((x6 (Array Int natural)))
   (=> (= x6 (store x5 6 o11)) (in_range1 (+ 7 one)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

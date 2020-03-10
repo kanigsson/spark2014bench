@@ -340,3 +340,4 @@ Target solver: CVC4
   (let ((temp___174 (of_array a k l)))
   (=> (<= (first1 temp___174) (last1 temp___174)) (<= i j)))))))))))))
 (check-sat)
+(exit)

@@ -648,3 +648,4 @@ Target solver: CVC4
   (first1 buf))) #x0000000000000001)) (= o #x0000000000000000))
   (bvule ((_ zero_extend 32) #x00000000) o))))))
 (check-sat)
+(exit)

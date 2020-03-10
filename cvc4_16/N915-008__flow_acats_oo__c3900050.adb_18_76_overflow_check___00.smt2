@@ -529,3 +529,4 @@ Target solver: CVC4
   (= (to_rep1 (rec__c3900050__alert_type__display_on (us_split_fields1 a))) o)
   (=> (= (to_rep (select display_count_for o)) o1) (in_range (+ o1 1)))))))
 (check-sat)
+(exit)

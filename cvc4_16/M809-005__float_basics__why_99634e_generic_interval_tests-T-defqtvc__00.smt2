@@ -201,3 +201,4 @@ Target solver: CVC4
   (let ((o (fp.add RNE a b)))
   (=> (fp.isFinite32 o) (fp.isFinite32 (fp.add RNE o c))))))))))))))))))))))))))
 (check-sat)
+(exit)

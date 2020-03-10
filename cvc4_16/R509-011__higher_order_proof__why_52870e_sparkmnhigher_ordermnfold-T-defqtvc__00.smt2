@@ -464,3 +464,4 @@ Target solver: CVC4
   (and (dynamic_invariant o2 true false true true) (= o2 (+ (value o1) o)))
   (dynamic_property 1 100 (first1 a) (last1 a)))))))))))))))))
 (check-sat)
+(exit)

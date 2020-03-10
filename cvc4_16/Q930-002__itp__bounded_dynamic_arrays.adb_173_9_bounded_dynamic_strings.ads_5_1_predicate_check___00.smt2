@@ -843,3 +843,4 @@ Target solver: CVC4
   new_length o2)
   (rt (rec__bounded_dynamic_strings__sequence__content to____split_fields)))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -298,3 +298,4 @@ Target solver: CVC4
   (and (divides__function_guard o2 o1 o) (= (= o2 true) (= (mod2 o o1) 0)))
   (=> (not (= o2 true)) (in_range1 (mod2 a b))))))))))))))))))
 (check-sat)
+(exit)

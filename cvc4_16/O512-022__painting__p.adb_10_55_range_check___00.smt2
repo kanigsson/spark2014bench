@@ -400,3 +400,4 @@ Target solver: CVC4
      (rec__p__painting__plain temp___loop_entry_264) 0 2) true)
   (not (= c 0))))))))))
 (check-sat)
+(exit)

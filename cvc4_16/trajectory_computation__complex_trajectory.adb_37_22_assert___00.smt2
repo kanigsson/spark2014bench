@@ -904,3 +904,4 @@ Target solver: CVC4
   (fp.leq (fp.sub RNE (fp.mul RNE ((_ to_fp 11 53) RNE (to_real n)) (fp.neg (fp #b0 #b10000000101 #b0000010000000000000000000000000000000000000000000000))) 
   bound) speed1))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

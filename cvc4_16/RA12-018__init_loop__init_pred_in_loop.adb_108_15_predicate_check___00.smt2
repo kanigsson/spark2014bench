@@ -245,3 +245,4 @@ Target solver: CVC4
   (=> (dynamic_invariant (us_repqtmk x__split_fields1) false true true true)
   (dynamic_predicate (us_repqtmk (us_split_fieldsqtmk rliteral rliteral))))))))
 (check-sat)
+(exit)

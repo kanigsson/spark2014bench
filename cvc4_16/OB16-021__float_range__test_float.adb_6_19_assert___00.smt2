@@ -183,3 +183,4 @@ Target solver: CVC4
   x)
   (=> (fp.leq x (fp #b0 #b01111111 #b00000000000000000000000)) (<= (- 1) y)))))))
 (check-sat)
+(exit)

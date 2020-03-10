@@ -520,3 +520,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__dic__pr_record_t__x a__split_fields)) o1) (in_range
   (+ o1 o)))))))
 (check-sat)
+(exit)

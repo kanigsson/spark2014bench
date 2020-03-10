@@ -185,3 +185,4 @@ Target solver: CVC4
   (=> (not (= i1 100))
   (=> (forall ((j3 Int)) (f__function_guard (f j3) j3)) (= (f j2) true))))))))))))))))
 (check-sat)
+(exit)

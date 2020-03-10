@@ -195,3 +195,4 @@ Target solver: CVC4
   (or (= compare_to_zero_out1 true)
   (fp.lt abs_new_delta_out11 abs_delta_out11)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

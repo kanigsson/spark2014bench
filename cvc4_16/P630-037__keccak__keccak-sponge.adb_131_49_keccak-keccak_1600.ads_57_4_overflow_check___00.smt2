@@ -1888,3 +1888,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 r81s true false true true) (in_range1
   (+ offset2 (- remaining_bytes2 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

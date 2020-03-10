@@ -748,3 +748,4 @@ Target solver: CVC4
                                                        true false)))
   (=> (= spark__branch true) (=> (= value1 length) (uint_in_range value1))))))))))
 (check-sat)
+(exit)

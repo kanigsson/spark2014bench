@@ -1459,3 +1459,4 @@ Target solver: CVC4
   (=> (in_range6 (first_2 a))
   (=> (in_range5 usf) (<= (last_2 a) (to_rep r__last_2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

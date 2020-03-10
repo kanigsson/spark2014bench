@@ -236,3 +236,4 @@ Target solver: CVC4
   (= x__split_fields1 (us_split_fieldsqtmk o2 (rec__ext__ x__split_fields)))
   (in_range (+ (to_rep (rec__unit1__t1__c1 x__split_fields)) 1))))))))))))))
 (check-sat)
+(exit)

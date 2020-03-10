@@ -1258,3 +1258,4 @@ Target solver: CVC4
                              (to_rep1 (get1 r1 k (- l 1)))))))))))
   (=> (= j (first_2 a)) (=> (= i1 (first2 a)) (= acc1 init))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -640,3 +640,4 @@ Target solver: CVC4
   (= k r59b)))) (= k k1))))
   (=> (in_range1 (length needle)) (in_range1 (length haystack))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

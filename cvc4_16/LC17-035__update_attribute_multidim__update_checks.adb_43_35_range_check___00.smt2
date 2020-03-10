@@ -373,3 +373,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (=> (in_range (+ new_val 1)) (=> (in_range3 (+ z 1)) (in_range2 (- y 1)))))))))))))
 (check-sat)
+(exit)

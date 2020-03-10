@@ -920,3 +920,4 @@ Target solver: CVC4
   (last_index
   (us_repqtmk rear__split_discrs (us_split_fieldsqtmk rear__split_fields)))) idx2) 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

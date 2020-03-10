@@ -441,3 +441,4 @@ Target solver: CVC4
      (rec__record_discr__interm_result__upto (us_split_discrs1 usf1))) usf))))
   (in_range 3))))
 (check-sat)
+(exit)

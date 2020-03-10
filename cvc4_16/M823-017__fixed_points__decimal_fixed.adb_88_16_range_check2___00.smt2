@@ -408,3 +408,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (let ((o1 (to_int1 x))) (=> (in_range1 o1) (in_range4 o1))))))))))))))))))))
 (check-sat)
+(exit)

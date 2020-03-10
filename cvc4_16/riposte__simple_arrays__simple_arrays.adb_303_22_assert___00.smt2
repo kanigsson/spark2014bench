@@ -257,3 +257,4 @@ Target solver: CVC4
   (= (bool_eq b (- 2147483648) 2147483647 d (- 2147483648) 2147483647) true)
   (= x (to_rep (select g i)))))))))))))))
 (check-sat)
+(exit)

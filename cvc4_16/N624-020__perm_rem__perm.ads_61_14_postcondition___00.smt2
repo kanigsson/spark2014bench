@@ -1182,3 +1182,4 @@ Target solver: CVC4
   (remove a ia) (remove b ib))
   (= (is_perm (remove a ia) (remove b ib)) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

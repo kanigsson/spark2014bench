@@ -3154,3 +3154,4 @@ Target solver: CVC4
   (=> (= (get o22 i) (get o22 j)) (= (bool_eq i j) true))))))))
   (= (has_key o22 (us_repqtmk (us_split_fieldsqtmk c__split_fields3))) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

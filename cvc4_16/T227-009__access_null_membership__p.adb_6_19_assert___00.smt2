@@ -191,3 +191,4 @@ Target solver: CVC4
   (=> (= y__is_null_pointer (rec__p__t__is_null_pointer p__y__assume))
   (not (= y__is_null_pointer true)))))))))))
 (check-sat)
+(exit)

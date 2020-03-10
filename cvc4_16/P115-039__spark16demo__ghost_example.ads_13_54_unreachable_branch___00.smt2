@@ -128,3 +128,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (and (= done__ (distinct 1 0)) (= state1 3))
   (and (= done__ (distinct 0 0)) (= state1 state))))) (= done__ true)))))))))
 (check-sat)
+(exit)

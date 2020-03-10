@@ -779,3 +779,4 @@ Target solver: CVC4
   (=> (forall ((usf6 us_rep)) (all_pos__function_guard (all_pos usf6) usf6))
   (= (all_pos usf5) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

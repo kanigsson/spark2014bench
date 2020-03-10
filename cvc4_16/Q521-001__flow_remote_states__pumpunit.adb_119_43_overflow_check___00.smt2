@@ -744,3 +744,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (rec__pump__pump_record__price cur_pump__split_fields)) o1)
   (in_range (+ outstanding o1))))))))))))))))))))))))
 (check-sat)
+(exit)

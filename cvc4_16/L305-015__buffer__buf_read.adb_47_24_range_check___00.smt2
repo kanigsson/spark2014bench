@@ -409,3 +409,4 @@ Target solver: CVC4
   (=> (= buffer1 (slide (to_array temp___198) (first1 temp___198) 1))
   (in_range3 buf_read__read__count)))))))))))))))))))))
 (check-sat)
+(exit)

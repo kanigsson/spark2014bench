@@ -622,3 +622,4 @@ Target solver: CVC4
   (forall ((o4 Int))
   (=> (= (to_rep block__first) o4) (in_range (length o4 o3))))))))))))))))))
 (check-sat)
+(exit)

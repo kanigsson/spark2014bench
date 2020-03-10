@@ -106,3 +106,4 @@ Target solver: CVC4
   (=> (= funcs__q5__result (ite (< 0 x) true false))
   (=> (= funcs__q5__result true) (< 0 x)))))))
 (check-sat)
+(exit)

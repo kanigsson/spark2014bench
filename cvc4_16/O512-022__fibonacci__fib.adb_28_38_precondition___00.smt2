@@ -182,3 +182,4 @@ Target solver: CVC4
   (=> (dynamic_invariant copy_n2 false false true true)
   (=> (= i1 2) (=> (< 2 n1) (<= i1 23))))))))))))))))))))
 (check-sat)
+(exit)

@@ -168,3 +168,4 @@ Target solver: CVC4
   (=> (dynamic_invariant res false false true true)
   (=> (= res1 0) (in_range (+ res1 1))))))))
 (check-sat)
+(exit)

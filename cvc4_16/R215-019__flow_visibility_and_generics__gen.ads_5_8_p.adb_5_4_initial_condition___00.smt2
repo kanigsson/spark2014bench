@@ -106,3 +106,4 @@ Target solver: CVC4
   (forall ((constituent1 Int)) (foo_ghost__function_guard
   (foo_ghost constituent1) constituent1)) (= (foo_ghost constituent) true))))))))
 (check-sat)
+(exit)

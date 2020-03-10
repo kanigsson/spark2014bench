@@ -522,3 +522,4 @@ Target solver: CVC4
   (ite (= space 4) true false))) (= o false))))))
   (=> (= o true) (= space 1))))))))))))))
 (check-sat)
+(exit)

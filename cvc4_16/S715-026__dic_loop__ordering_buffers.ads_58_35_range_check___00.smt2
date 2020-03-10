@@ -1095,3 +1095,4 @@ Target solver: CVC4
                 buffer__split_fields) ((_ int2bv 8) (mod2 usf2 256)))))))
   (in_range3 usf2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

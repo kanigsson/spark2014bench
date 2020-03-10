@@ -850,3 +850,4 @@ Target solver: CVC4
   (<= (to_rep (select (to_array s) l)) (to_rep (select (to_array s) (- l 1))))))
   (let ((o5 (length s))) (=> (in_range1 o5) (in_range1 (+ o5 1))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

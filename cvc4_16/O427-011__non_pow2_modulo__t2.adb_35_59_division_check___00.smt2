@@ -456,3 +456,4 @@ Target solver: CVC4
   (=> (dynamic_invariant y true false true true)
   (not (= #x00000000000000E6 #x0000000000000000))))))
 (check-sat)
+(exit)

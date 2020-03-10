@@ -379,3 +379,4 @@ Target solver: CVC4
   (=> (= x86__esi__result ((_ extract 31 0) (bvand rsi #x00000000FFFFFFFF)))
   (= x86__esi__result ((_ extract 31 0) (bvand rsi #x00000000FFFFFFFF)))))))))
 (check-sat)
+(exit)

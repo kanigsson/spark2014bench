@@ -560,3 +560,4 @@ Target solver: CVC4
   (= (fp.geq (to_rep (select battery_level_at current_time)) battery_threshold) true)
   (= failsafe__model__time_below_threshold__result #x00)))))))))))))))))
 (check-sat)
+(exit)

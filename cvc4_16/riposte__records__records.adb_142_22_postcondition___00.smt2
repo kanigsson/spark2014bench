@@ -343,3 +343,4 @@ Target solver: CVC4
   (us_repqtmk1 dst__split_fields2)))
   (= (is_valid (us_repqtmk1 dst__split_fields1)) true)))))))))
 (check-sat)
+(exit)

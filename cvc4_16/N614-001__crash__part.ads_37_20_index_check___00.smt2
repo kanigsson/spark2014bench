@@ -493,3 +493,4 @@ Target solver: CVC4
   (=> (<= i (last3 p))
   (=> (= (to_rep (select (to_array1 p) i)) o) (<= (first3 p) (- i 1))))))))))))))))
 (check-sat)
+(exit)

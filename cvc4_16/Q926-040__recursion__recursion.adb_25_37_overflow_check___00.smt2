@@ -354,3 +354,4 @@ Target solver: CVC4
   (and (dynamic_invariant o2 true false true true)
   (<= o2 (+ (- o (first1 o1)) 1)))) (in_range1 (+ current_increment1 o2)))))))))))))))))))))))
 (check-sat)
+(exit)

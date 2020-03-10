@@ -281,3 +281,4 @@ Target solver: CVC4
   (=> (fp.isFinite64 o2)
   (forall ((distance1 Float64)) (=> (= distance1 o2) (in_range (+ n 1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

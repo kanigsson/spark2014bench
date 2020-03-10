@@ -545,3 +545,4 @@ Target solver: CVC4
   (forall ((c1 (Array Int us_rep2))) (oeq__function_guard1 (oeq1 c1 c1) c1
   c1)) (= (oeq1 c c) true)))))))))
 (check-sat)
+(exit)

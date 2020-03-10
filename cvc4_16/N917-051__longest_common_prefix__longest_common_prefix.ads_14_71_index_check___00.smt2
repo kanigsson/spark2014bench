@@ -334,3 +334,4 @@ Target solver: CVC4
                                       true false)) true)
   (let ((o (+ usf y))) (=> (in_range1 o) (<= 1 o)))))))))))))))))
 (check-sat)
+(exit)

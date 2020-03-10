@@ -641,3 +641,4 @@ Target solver: CVC4
   (=> (<= (first1 temp___191) (last1 temp___191))
   (<= 0 (div1 value__size 8))))))))))
 (check-sat)
+(exit)

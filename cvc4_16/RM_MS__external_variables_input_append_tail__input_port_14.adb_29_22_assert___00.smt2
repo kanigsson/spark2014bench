@@ -118,3 +118,4 @@ Target solver: CVC4
   (or (and (= first_read1 0) (= input_value1 second_read2))
   (= input_value1 first_read1)))))))))))))
 (check-sat)
+(exit)

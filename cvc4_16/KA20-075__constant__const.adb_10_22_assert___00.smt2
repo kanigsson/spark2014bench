@@ -434,3 +434,4 @@ Target solver: CVC4
   (=> (dynamic_invariant o true false true true)
   (=> (dynamic_invariant p true false true true) (= (to_rep (select c 1)) 1))))))))))))))))))))))))
 (check-sat)
+(exit)

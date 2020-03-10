@@ -394,3 +394,4 @@ Target solver: CVC4
   (=> (= c 0)
   (not (= (and (ite (<= 0 c) true false) (ite (<= c 2) true false)) true)))))))
 (check-sat)
+(exit)

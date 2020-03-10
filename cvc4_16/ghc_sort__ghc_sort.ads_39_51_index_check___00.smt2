@@ -380,3 +380,4 @@ Target solver: CVC4
   (=> (<= (first1 s2) usf)
   (=> (<= usf (last1 s2)) (<= (first1 s2) (- usf 1))))))))))))
 (check-sat)
+(exit)

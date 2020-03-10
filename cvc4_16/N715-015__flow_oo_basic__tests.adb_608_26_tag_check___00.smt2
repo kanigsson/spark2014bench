@@ -616,3 +616,4 @@ Target solver: CVC4
                   (of_base
                   (to_base1 (rec__tests__pair__b (us_split_fields7 c))))))))))
 (check-sat)
+(exit)

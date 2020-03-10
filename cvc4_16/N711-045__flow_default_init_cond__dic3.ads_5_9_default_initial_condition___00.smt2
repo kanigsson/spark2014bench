@@ -173,3 +173,4 @@ Target solver: CVC4
   (=> (forall ((usf1 Int)) (to_int__function_guard (to_int1 usf1) usf1))
   (<= 1 (to_int1 usf)))))))))
 (check-sat)
+(exit)

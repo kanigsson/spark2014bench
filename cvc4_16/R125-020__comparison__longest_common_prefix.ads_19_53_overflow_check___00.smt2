@@ -477,3 +477,4 @@ Target solver: CVC4
         false true)))))))
   (=> (not (= o2 true)) (in_range1 (+ y longest_common_prefix__lcp__result))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

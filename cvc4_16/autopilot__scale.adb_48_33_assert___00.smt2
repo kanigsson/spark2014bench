@@ -421,3 +421,4 @@ Target solver: CVC4
   (and (= spark__branch2 (ite (< 100 gap1) true false))
   (ite (= spark__branch2 true) (= gap2 100) (= gap2 gap1)))) (< 0 gap2))))))))))))))))))
 (check-sat)
+(exit)

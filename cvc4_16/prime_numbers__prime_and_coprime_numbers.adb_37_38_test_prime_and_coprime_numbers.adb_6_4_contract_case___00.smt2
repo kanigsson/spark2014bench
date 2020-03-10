@@ -447,3 +447,4 @@ Target solver: CVC4
   (=> (not (= usf true))
   (< 1 test_prime_and_coprime_numbers__p__initialize_coprime_list__euclid__result))))))))))))))))))))
 (check-sat)
+(exit)

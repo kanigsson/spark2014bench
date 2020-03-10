@@ -1420,3 +1420,4 @@ Target solver: CVC4
   (and (and (in_range3 (first1 o4)) (in_range3 (last1 o4)))
   (= (length o4) (size o3))))) (<= (first1 temp___839) (last1 o4)))))))))))))))))
 (check-sat)
+(exit)

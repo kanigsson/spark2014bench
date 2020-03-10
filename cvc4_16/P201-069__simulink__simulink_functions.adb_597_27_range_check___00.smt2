@@ -615,3 +615,4 @@ Target solver: CVC4
   (fp.lt (fp #b0 #b00000000 #b00000000000000000000000) o1))))
   (fp.leq ((_ to_fp_unsigned 8 24) RTP #x00000000) (fp.roundToIntegral RNA o1))))))))
 (check-sat)
+(exit)

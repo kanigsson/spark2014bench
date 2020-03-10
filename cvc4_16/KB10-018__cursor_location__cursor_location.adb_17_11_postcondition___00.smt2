@@ -121,3 +121,4 @@ Target solver: CVC4
   (=> (not (= (select du_available 2) true))
   (not (= (select du_available 1) true))))))))
 (check-sat)
+(exit)

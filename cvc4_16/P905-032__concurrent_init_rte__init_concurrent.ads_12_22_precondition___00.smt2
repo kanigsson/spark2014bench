@@ -189,3 +189,4 @@ Target solver: CVC4
  ;; File "init_concurrent.ads", line 8, characters 0-0
   (not (< 0 0)))
 (check-sat)
+(exit)

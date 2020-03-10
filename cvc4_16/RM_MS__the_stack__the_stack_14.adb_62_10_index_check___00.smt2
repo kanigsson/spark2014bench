@@ -236,3 +236,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (=> (= (to_rep o) x) (<= 1 pointer)))))))
 (check-sat)
+(exit)

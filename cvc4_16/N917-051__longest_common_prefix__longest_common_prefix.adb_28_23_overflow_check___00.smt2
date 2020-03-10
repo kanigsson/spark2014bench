@@ -285,3 +285,4 @@ Target solver: CVC4
   (=> (and (<= 1 o1) (<= o1 1000))
   (forall ((o2 Int)) (=> (= (to_rep (select a o1)) o2) (in_range1 (+ x l1))))))))))))))))))))))
 (check-sat)
+(exit)

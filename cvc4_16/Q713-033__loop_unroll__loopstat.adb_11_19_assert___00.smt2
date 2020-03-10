@@ -217,3 +217,4 @@ Target solver: CVC4
   (let ((o9 (+ k10 1)))
   (=> (in_range1 o9) (forall ((k11 Int)) (=> (= k11 o9) (= k11 10))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

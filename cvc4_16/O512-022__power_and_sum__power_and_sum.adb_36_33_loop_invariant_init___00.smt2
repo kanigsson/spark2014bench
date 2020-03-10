@@ -190,3 +190,4 @@ Target solver: CVC4
   (=> (dynamic_invariant innersum true false true true)
   (=> (<= i n) (= (* 6 totalsum) (* (* (- i 1) i) (+ i 1)))))))))))))))))
 (check-sat)
+(exit)

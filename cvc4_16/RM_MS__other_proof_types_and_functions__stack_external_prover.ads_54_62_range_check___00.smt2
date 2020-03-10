@@ -437,3 +437,4 @@ Target solver: CVC4
   (and (count__function_guard o my_stack__split_fields) (dynamic_invariant1 o
   true false true true)) (in_range2 (- o 1)))))))))
 (check-sat)
+(exit)

@@ -1745,3 +1745,4 @@ Target solver: CVC4
          ctx__split_fields3)))))
   (=> (in_range1 (+ remaining_bits1 7)) (not (= 8 0))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

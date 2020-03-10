@@ -109,3 +109,4 @@ Target solver: CVC4
   (let ((o (+ x 1))) (and (in_range o) (= res1 o)))))))))
   (=> (= casing__f__result res1) (= casing__f__result (+ x 1))))))))))
 (check-sat)
+(exit)

@@ -145,3 +145,4 @@ Target solver: CVC4
   (and (dynamic_invariant o true false true true) (= o deep_ref))) (in_range
   (+ deep_var o))))))))))))))))
 (check-sat)
+(exit)

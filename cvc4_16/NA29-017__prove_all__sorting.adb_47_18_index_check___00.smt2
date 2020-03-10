@@ -365,3 +365,4 @@ Target solver: CVC4
   (=> (= (to_rep o2) o1)
   (let ((o3 (+ b_first i1))) (=> (in_range1 o3) (<= (to_rep b__first) o3)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

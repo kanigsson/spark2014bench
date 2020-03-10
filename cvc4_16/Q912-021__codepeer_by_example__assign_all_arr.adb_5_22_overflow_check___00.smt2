@@ -162,3 +162,4 @@ Target solver: CVC4
   (forall ((x (Array Int integer)) (j Int) (o Int))
   (=> (= j 1) (=> (= (to_rep (select x j)) o) (in_range (+ o 1)))))))
 (check-sat)
+(exit)

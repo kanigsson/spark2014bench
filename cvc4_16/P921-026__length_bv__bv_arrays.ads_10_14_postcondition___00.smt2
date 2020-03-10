@@ -539,3 +539,4 @@ Target solver: CVC4
   (=> (= bv_arrays__create__result (of_array a o1 o))
   (= (first1 bv_arrays__create__result) #x0000))))))))))))))))))))
 (check-sat)
+(exit)

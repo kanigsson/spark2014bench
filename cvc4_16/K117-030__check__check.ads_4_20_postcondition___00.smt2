@@ -234,3 +234,4 @@ Target solver: CVC4
   (=> (< 0 (div1 1 y))
   (=> (= check__div__result x) (< 0 check__div__result)))))))))))
 (check-sat)
+(exit)

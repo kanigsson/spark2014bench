@@ -686,3 +686,4 @@ Target solver: CVC4
      (model1
      (us_repqtmk l__split_discrs (us_split_fieldsqtmk l__split_fields)))) true)))))))))))))))))))))
 (check-sat)
+(exit)

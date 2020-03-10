@@ -269,3 +269,4 @@ Target solver: CVC4
   (<= count_locations__partial_count_selected_locations__result (+ (- 100 
   from) 1))))))))))))))
 (check-sat)
+(exit)

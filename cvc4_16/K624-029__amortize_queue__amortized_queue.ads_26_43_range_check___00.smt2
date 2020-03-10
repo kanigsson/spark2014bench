@@ -984,3 +984,4 @@ Target solver: CVC4
   (= o10 (get (model1 o9) usf)))
   (let ((o11 (+ 1 usf))) (=> (in_range1 o11) (in_range5 o11)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -327,3 +327,4 @@ Target solver: CVC4
         true false))
   (= o1 false)) (bvugt i2 #x0000000000000000)))))))))))))))))))))))
 (check-sat)
+(exit)

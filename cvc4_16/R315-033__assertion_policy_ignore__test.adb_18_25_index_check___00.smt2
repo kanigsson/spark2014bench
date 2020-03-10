@@ -614,3 +614,4 @@ Target solver: CVC4
   (= (to_rep1 (select (to_array src) temp___209)) o6))
   (<= (to_rep dest__first) usf))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

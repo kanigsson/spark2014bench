@@ -220,3 +220,4 @@ Target solver: CVC4
   (=> (dynamic_invariant item true false true true)
   (not (= (contains container item) true)))))
 (check-sat)
+(exit)

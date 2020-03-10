@@ -499,3 +499,4 @@ Target solver: CVC4
  ;; File "r.ads", line 3, characters 0-0
   (not (=> (in_range1 2) (=> (in_range1 4) (in_range1 1)))))
 (check-sat)
+(exit)

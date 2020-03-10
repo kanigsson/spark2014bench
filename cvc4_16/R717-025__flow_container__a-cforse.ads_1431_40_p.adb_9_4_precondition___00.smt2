@@ -849,3 +849,4 @@ Target solver: CVC4
   (<= o1 (to_rep (rec__p__sets__set__capacity (us_split_discrs1 o)))))
   (=> (not (= o1 0)) (not (= (is_empty container) true)))))))))
 (check-sat)
+(exit)

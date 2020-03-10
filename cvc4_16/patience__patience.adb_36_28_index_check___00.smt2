@@ -1089,3 +1089,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__patience__state__numstacks s__split_fields)) o6)
   (<= 0 topstacki2))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

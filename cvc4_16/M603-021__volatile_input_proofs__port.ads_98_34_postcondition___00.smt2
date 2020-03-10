@@ -303,3 +303,4 @@ Target solver: CVC4
   (=> (c2__function_guard o tmp1)
   (forall ((x Bool)) (=> (= x o) (in_range (ite x 1 0)))))))))))))
 (check-sat)
+(exit)

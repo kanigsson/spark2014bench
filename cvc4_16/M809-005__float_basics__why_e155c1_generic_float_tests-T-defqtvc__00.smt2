@@ -180,3 +180,4 @@ Target solver: CVC4
   (fp.eq (fp.sub RNE x y) (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000))
   (fp.eq x y))))))))
 (check-sat)
+(exit)

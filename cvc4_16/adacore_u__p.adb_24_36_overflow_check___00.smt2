@@ -275,3 +275,4 @@ Target solver: CVC4
   (=> (= from c9b)
   (=> (dynamic_invariant c9b true false true true) (in_range1 (+ size1 1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

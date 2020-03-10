@@ -439,3 +439,4 @@ Target solver: CVC4
   (=> (in_range4 smallest1)
   (=> (in_range4 current) (<= (to_rep values__first) current)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

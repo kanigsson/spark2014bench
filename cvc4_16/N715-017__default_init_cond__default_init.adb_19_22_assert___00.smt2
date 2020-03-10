@@ -229,3 +229,4 @@ Target solver: CVC4
   (forall ((p11 us_rep)) (simple_priv_ok__function_guard (simple_priv_ok p11)
   p11)) (= (simple_priv_ok p1) true))))))))))))))
 (check-sat)
+(exit)

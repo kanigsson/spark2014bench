@@ -333,3 +333,4 @@ Target solver: CVC4
                                                false)) true)
   (<= (first1 a) usf))))))))
 (check-sat)
+(exit)

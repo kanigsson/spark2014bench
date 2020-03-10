@@ -677,3 +677,4 @@ Target solver: CVC4
   (< (to_rep (select (to_array s) (- (to_rep1 (select cut2 top2)) 1))) 
   (to_rep (select (to_array s) (to_rep1 (select cut2 top2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

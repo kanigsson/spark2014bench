@@ -496,3 +496,4 @@ Target solver: CVC4
   (=> (= (attr__init1 (rec__empty_type__rec__g x__split_fields)) true)
   (< 0 c))))))))
 (check-sat)
+(exit)

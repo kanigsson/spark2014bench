@@ -320,3 +320,4 @@ Target solver: CVC4
   (=> (= kmp__init_next__result (of_array next o1 o))
   (= (length kmp__init_next__result) (length p))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -410,3 +410,4 @@ Target solver: CVC4
   (forall ((o1 even))
   (=> (= (to_rep o1) o) (let ((o2 a)) (=> (in_range1 o2) (= (mod2 o2 2) 0))))))))))))))))
 (check-sat)
+(exit)

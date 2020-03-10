@@ -150,3 +150,4 @@ Target solver: CVC4
   (=> (dynamic_invariant m false false true true)
   (=> (= m1 (fp.max x y)) (or (fp.eq m1 x) (fp.eq m1 y)))))))))
 (check-sat)
+(exit)

@@ -102,3 +102,4 @@ Target solver: CVC4
   (=> (<= (- 2147483648) (+ x y))
   (=> (<= (+ x y) 2147483647) (in_range (+ x y))))))))
 (check-sat)
+(exit)

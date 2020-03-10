@@ -478,3 +478,4 @@ Target solver: CVC4
   (forall ((queue__front__result Int))
   (=> (= queue__front__result o1) (not (= (is_empty q) true))))))))))
 (check-sat)
+(exit)

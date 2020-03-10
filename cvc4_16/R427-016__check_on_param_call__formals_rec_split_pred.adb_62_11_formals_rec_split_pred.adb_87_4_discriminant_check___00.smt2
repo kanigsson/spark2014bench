@@ -1140,3 +1140,4 @@ Target solver: CVC4
   (=> (= spark__branch1 true) (formals_rec_split_pred__rec__h__pred
   (us_repqtmk u__split_discrs u__split_fields3))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

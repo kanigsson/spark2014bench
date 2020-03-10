@@ -892,3 +892,4 @@ Target solver: CVC4
   (=> (= sum1_1_1_out11 o4) (in_range1
   (- data_type_conversion1_out11 data_type_conversion_out11)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

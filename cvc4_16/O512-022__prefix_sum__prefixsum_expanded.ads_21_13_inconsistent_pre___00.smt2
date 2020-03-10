@@ -219,3 +219,4 @@ Target solver: CVC4
   (and (= (all_elements_in a 8000000) true)
   (= (all_elements_in b 1000000) true)))))
 (check-sat)
+(exit)

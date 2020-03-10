@@ -320,3 +320,4 @@ Target solver: CVC4
      (rec__foo__r__x (us_split_fields1 (rec__foo__t__f tmp__split_fields1)))) o2)
   (in_range (+ a o2)))))))))))))))
 (check-sat)
+(exit)

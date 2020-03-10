@@ -968,3 +968,4 @@ Target solver: CVC4
   (=> (= (= o2 true) (and (<= 1 usf) (<= usf (last temp___1054))))
   (=> (= (and (ite (in_range5 usf) true false) o2) true) (<= 1 usf))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -888,3 +888,4 @@ Target solver: CVC4
   (let ((temp___297 (first1 buffer)))
   (=> (<= temp___297 o) (<= (first1 buffer) temp___297))))))))))))))
 (check-sat)
+(exit)

@@ -94,3 +94,4 @@ Target solver: CVC4
   (forall ((visible Int))
   (not (dynamic_invariant visible true false true true)))))
 (check-sat)
+(exit)

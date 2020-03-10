@@ -1229,3 +1229,4 @@ Target solver: CVC4
  ;; File "text_io_warnings.adb", line 3, characters 0-0
   (not true))
 (check-sat)
+(exit)

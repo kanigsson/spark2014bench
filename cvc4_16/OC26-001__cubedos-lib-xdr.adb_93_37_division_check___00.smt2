@@ -736,3 +736,4 @@ Target solver: CVC4
   (=> (= data1 (store data temp___539 o))
   (not (= #x0000000000000100 #x0000000000000000))))))))))))))))))))))))
 (check-sat)
+(exit)

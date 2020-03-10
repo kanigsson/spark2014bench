@@ -1423,3 +1423,4 @@ Target solver: CVC4
   (forall ((i2 Int) (j3 Int)) (count_length__function_guard1
   (count_length1 i2 j3) i2 j3)) (= (count_length1 i1 j2) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

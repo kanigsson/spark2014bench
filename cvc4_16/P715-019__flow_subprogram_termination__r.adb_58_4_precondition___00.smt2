@@ -92,3 +92,4 @@ Target solver: CVC4
  ;; File "r.ads", line 2, characters 0-0
   (not (forall ((y Int)) (not (dynamic_invariant y false false true true)))))
 (check-sat)
+(exit)

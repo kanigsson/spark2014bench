@@ -421,3 +421,4 @@ Target solver: CVC4
   (= (to_rep (rec__do_checks__do_discriminant_check__r1__j y__split_discrs)) 10)
   (<= (first1 y__split_fields) 10))))))))
 (check-sat)
+(exit)

@@ -173,3 +173,4 @@ Target solver: CVC4
   (forall ((usf us_main_type)) (dynamic_predicate
   (us_repqtmk1 (us_split_fieldsqtmk1 usf))))))
 (check-sat)
+(exit)

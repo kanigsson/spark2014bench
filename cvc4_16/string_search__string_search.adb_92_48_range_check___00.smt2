@@ -670,3 +670,4 @@ Target solver: CVC4
   (forall ((temp___407 Int))
   (=> (= temp___407 i2) (in_range1 (length needle))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

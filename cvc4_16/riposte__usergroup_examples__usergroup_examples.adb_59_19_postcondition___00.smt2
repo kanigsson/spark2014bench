@@ -279,3 +279,4 @@ Target solver: CVC4
   (= usergroup_examples__example_5__result (bvxor #x0000000000000049 (bvmul 
   a b))) (bvugt usergroup_examples__example_5__result #x0000000000000000)))))))))
 (check-sat)
+(exit)

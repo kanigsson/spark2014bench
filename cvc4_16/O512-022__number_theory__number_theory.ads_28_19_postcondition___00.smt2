@@ -442,3 +442,4 @@ Target solver: CVC4
   (=> (fib__function_guard (fib n) n)
   (= number_theory__fibonacci__result (fib n)))))))))))))))))))))))))
 (check-sat)
+(exit)

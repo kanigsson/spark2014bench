@@ -144,3 +144,4 @@ Target solver: CVC4
   (=> (type_invariant (us_repqtmk (us_split_fieldsqtmk bad__split_fields)))
   (= bar__split_fields true))))))
 (check-sat)
+(exit)

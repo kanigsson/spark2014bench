@@ -831,3 +831,4 @@ Target solver: CVC4
   (and (in_range1 o5) (in_range1 (* o5 32767)))))
   (<= (first1 x) current_lo3)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

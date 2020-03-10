@@ -2434,3 +2434,4 @@ Target solver: CVC4
   (=> (= cur_piece__split_fields1 next_piece__split_fields1)
   (=> (dynamic_invariant3 (rand Tuple0) true false true true) (not (= 4 0)))))))))))))))))))))))))
 (check-sat)
+(exit)

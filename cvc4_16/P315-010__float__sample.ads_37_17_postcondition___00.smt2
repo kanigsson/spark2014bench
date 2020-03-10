@@ -384,3 +384,4 @@ Target solver: CVC4
   (forall ((time2 Float32))
   (=> (= time2 o2) (=> (< 0 nb_of_fp) (fp.leq time1 time2)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

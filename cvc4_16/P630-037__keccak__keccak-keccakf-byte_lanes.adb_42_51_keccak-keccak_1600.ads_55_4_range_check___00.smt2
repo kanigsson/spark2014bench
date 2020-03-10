@@ -954,3 +954,4 @@ Target solver: CVC4
   (=> (dynamic_invariant offset true false true true)
   (let ((o (+ bit_len 7))) (=> (in_range1 o) (in_range2 (div1 o 8))))))))))))))))))))
 (check-sat)
+(exit)

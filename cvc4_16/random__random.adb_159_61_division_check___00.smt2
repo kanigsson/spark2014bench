@@ -577,3 +577,4 @@ Target solver: CVC4
   (=> (= ((_ int2bv 32) o) n)
   (=> (dynamic_invariant1 n true false true true) (not (= n #x00000000))))))))))))))))
 (check-sat)
+(exit)

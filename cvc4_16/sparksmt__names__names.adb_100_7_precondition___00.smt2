@@ -2127,3 +2127,4 @@ Target solver: CVC4
      (us_repqtmk o7 (us_split_fieldsqtmk entry_table__split_fields))) 
   (capacity (us_repqtmk o7 (us_split_fieldsqtmk entry_table__split_fields))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

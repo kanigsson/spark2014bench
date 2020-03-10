@@ -196,3 +196,4 @@ Target solver: CVC4
   (=> (not (= i1 10))
   (= (bool_eq temp___loop_entry_182 1 10 saved 1 10) true))))))))))))))))
 (check-sat)
+(exit)

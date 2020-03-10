@@ -4204,3 +4204,4 @@ Target solver: CVC4
   (=> (dynamic_invariant length1 true false true true)
   (=> (<= (first1 source) (last1 source)) (<= 1 length1)))))))))
 (check-sat)
+(exit)

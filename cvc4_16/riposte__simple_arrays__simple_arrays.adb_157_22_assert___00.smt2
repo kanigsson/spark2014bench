@@ -362,3 +362,4 @@ Target solver: CVC4
      2147483647 (temp_____aggregate_def_512 a_old k 3 i 1 j 2) (- 2147483648)
      2147483647) true))))))))))))
 (check-sat)
+(exit)

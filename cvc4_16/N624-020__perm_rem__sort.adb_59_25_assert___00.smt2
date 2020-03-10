@@ -1131,3 +1131,4 @@ Target solver: CVC4
   (= (to_rep (select (to_array (remove (of_array init 1 100) x)) y)) 
   (to_rep (select (to_array (remove (of_array values2 1 100) y)) (- x 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

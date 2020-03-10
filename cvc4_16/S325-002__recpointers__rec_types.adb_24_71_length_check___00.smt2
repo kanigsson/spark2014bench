@@ -1453,3 +1453,4 @@ Target solver: CVC4
   (select next temp___320) false false true true))))
   (=> (<= (to_rep next__first) (to_rep next__last)) (<= 1 i1)))))))))))))))))))))
 (check-sat)
+(exit)

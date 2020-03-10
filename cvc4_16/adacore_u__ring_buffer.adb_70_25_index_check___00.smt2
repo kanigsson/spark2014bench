@@ -620,3 +620,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (forall ((o2 natural)) (=> (= (to_rep o2) e) (<= 1 (+ first length2)))))))))))))))))))))
 (check-sat)
+(exit)

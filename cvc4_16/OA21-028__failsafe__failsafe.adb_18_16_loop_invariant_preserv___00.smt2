@@ -591,3 +591,4 @@ Target solver: CVC4
   (bvule s3 current_time))
   (fp.lt (to_rep (select battery_level_at s3)) battery_threshold))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

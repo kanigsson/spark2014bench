@@ -1194,3 +1194,4 @@ Target solver: CVC4
   (= o (distinct 1 0)))
   (let ((o1 (- j (first_2 a)))) (=> (in_range1 o1) (in_range2 o1))))))))))))))))
 (check-sat)
+(exit)

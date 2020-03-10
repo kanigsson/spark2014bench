@@ -943,3 +943,4 @@ Target solver: CVC4
   (forall ((offset1 Int))
   (=> (= offset1 o11) (in_range1 (+ (first1 buffer) 17))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

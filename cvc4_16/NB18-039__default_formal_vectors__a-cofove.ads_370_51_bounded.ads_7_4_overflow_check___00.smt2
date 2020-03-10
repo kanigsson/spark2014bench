@@ -586,3 +586,4 @@ Target solver: CVC4
         (rec__bounded__vect__vector__capacity container__split_discrs))))
   (in_range5 (- o2 count))))))))))))))
 (check-sat)
+(exit)

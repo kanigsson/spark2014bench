@@ -575,3 +575,4 @@ Target solver: CVC4
                                                 (state
                                                 my_stack__split_fields1)) 1)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

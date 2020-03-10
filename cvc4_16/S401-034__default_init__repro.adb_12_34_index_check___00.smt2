@@ -1621,3 +1621,4 @@ Target solver: CVC4
       (rec__repro__ssp__s
       (us_split_fields5 (select (to_array1 temp___321) ids1)))))) diff))))))))))))))))))))
 (check-sat)
+(exit)

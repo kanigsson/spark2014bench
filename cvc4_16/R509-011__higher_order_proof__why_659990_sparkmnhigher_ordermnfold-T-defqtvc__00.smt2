@@ -1498,3 +1498,4 @@ Target solver: CVC4
   (forall ((k2 Int) (l3 Int)) (update_count__function_guard
   (update_count k2 l3) k2 l3)) (= (update_count k1 l2) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

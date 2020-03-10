@@ -277,3 +277,4 @@ Target solver: CVC4
   (let ((o y))
   (let ((o1 x)) (=> (= (mod2 (- o1) (- o)) (- (mod2 o1 o))) (= r11 (- r21)))))))))))))))))
 (check-sat)
+(exit)

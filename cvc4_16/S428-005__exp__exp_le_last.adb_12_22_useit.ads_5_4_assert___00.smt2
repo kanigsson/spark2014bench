@@ -369,3 +369,4 @@ Target solver: CVC4
   (=> (<= (+ off (- 31 off)) 62)
   (=> (= (+ off (- 31 off)) 31) (= (power 2 (+ off (- 31 off))) 2147483648)))))))))))
 (check-sat)
+(exit)

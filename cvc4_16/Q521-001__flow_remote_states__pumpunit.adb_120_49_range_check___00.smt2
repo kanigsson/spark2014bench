@@ -751,3 +751,4 @@ Target solver: CVC4
   (= (to_rep2 (rec__pump__pump_record__resevoir cur_pump__split_fields)) o3)
   (in_range4 (- o3 1))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

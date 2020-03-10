@@ -247,3 +247,4 @@ Target solver: CVC4
   (=> (= r21 o1)
   (let ((o2 e)) (=> (<= (power x1 o2) (power x2 o2)) (<= r11 r21))))))))))))))))))))
 (check-sat)
+(exit)

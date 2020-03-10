@@ -287,3 +287,4 @@ Target solver: CVC4
   (=> (fp.isFinite32 (fp.add RNE scalar_const o2))
   (fp.isFinite32 (fp.add RNE scalar_const temp))))))))))))))))))
 (check-sat)
+(exit)

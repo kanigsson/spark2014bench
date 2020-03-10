@@ -1382,3 +1382,4 @@ Target solver: CVC4
                                               false)) true)
   (=> (in_range8 l) (in_range7 k1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

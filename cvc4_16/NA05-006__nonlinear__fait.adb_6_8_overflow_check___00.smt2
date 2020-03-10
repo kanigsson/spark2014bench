@@ -120,3 +120,4 @@ Target solver: CVC4
   (=> (<= (- 10) i)
   (=> (<= i (- 1)) (=> (<= 1 j) (=> (<= j 10) (in_range1 (* i j))))))))))))))
 (check-sat)
+(exit)

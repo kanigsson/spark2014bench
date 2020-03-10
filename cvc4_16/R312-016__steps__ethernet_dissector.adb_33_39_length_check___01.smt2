@@ -952,3 +952,4 @@ Target solver: CVC4
   (let ((temp___314 (of_array (to_array buffer) o13 o12)))
   (=> (<= (first1 temp___314) (last1 temp___314)) (<= 1 2))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

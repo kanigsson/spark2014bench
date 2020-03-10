@@ -240,3 +240,4 @@ Target solver: CVC4
   (forall ((j Int))
   (=> (and (<= 1 j) (<= j i)) (= (to_rep (select t1 j)) (* a j))))))))))))))))
 (check-sat)
+(exit)

@@ -534,3 +534,4 @@ Target solver: CVC4
   (=> (not (< usf q_v1))
   (=> (not (< (+ q_v1 m_v11) usf)) (<= (to_rep h_v1__first) usf))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

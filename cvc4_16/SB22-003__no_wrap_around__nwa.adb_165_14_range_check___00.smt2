@@ -389,3 +389,4 @@ Target solver: CVC4
   (or (not (= spark__branch true)) (in_range1 (bvneg x))))) (in_range1
   (bvadd x y)))))))))))))
 (check-sat)
+(exit)

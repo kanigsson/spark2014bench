@@ -553,3 +553,4 @@ Target solver: CVC4
   (=> (= hello__to_camel_case__result (of_array ret1 o1 o))
   (= (first1 hello__to_camel_case__result) (first1 str))))))))))))))))))))))))
 (check-sat)
+(exit)

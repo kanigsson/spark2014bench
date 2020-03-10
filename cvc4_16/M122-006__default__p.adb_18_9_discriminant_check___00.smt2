@@ -374,3 +374,4 @@ Target solver: CVC4
   (=> (=> (= x__attr__constrained true) (= rliteral1 x__split_discrs))
   (in_range1 2 (us_split_discrsqtmk rliteral1))))))))))))
 (check-sat)
+(exit)

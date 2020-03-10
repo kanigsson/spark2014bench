@@ -364,3 +364,4 @@ Target solver: CVC4
   (=> (forall ((a1 Int) (b1 Int)) (oge__function_guard (oge a1 b1) a1 b1))
   (= (oge a b) true)))))))))))))))))))))))
 (check-sat)
+(exit)

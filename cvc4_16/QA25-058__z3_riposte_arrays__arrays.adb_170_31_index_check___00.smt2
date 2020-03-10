@@ -369,3 +369,4 @@ Target solver: CVC4
   (= (to_rep1 (rec__arrays__string_t__len (us_split_fields1 s))) temp___353)
   (<= 1 temp___353)))))))
 (check-sat)
+(exit)

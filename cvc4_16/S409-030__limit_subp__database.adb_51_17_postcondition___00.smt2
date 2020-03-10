@@ -458,3 +458,4 @@ Target solver: CVC4
   (is_available account links6) account links6))
   (= (is_available account links5) true))))))))))))))))))))
 (check-sat)
+(exit)

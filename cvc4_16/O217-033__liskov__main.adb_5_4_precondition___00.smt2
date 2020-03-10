@@ -563,3 +563,4 @@ Target solver: CVC4
   (= (less_than_max1 o
      (us_repqtmk (us_split_fields1 dispatch_in_contract__incr__o__compl) o)) true)))))))))
 (check-sat)
+(exit)

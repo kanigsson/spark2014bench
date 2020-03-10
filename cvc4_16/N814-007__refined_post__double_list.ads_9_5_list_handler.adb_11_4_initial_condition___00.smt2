@@ -475,3 +475,4 @@ Target solver: CVC4
   (=> (forall ((count2 Int)) (size__function_guard1 (size1 count2) count2))
   (= (size1 count1) 0))))))))))))))
 (check-sat)
+(exit)

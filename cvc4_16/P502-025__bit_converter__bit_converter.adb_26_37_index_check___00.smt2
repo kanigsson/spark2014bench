@@ -551,3 +551,4 @@ Target solver: CVC4
   (=> (dynamic_invariant bit false false true true)
   (<= (first1 array_of_bits) first_index))))))))))))))))))
 (check-sat)
+(exit)

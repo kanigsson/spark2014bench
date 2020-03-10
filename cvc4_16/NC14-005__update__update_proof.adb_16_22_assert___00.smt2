@@ -529,3 +529,4 @@ Target solver: CVC4
   (=> (= (to_rep (select a1 2)) 0)
   (= (bool_eq a1 1 2 (temp_____aggregate_def_200 o_a 2 0) 1 2) true)))))))))
 (check-sat)
+(exit)

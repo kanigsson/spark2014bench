@@ -223,3 +223,4 @@ Target solver: CVC4
   (forall ((usf1 (Array Int natural))) (arr_ok__function_guard (arr_ok usf1)
   usf1)) (= (arr_ok usf) true)))))))
 (check-sat)
+(exit)

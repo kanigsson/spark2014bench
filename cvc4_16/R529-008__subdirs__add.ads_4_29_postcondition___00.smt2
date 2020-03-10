@@ -106,3 +106,4 @@ Target solver: CVC4
   (forall ((add__addtwo__result Int))
   (=> (= add__addtwo__result o) (= add__addtwo__result (+ x y))))))))))))
 (check-sat)
+(exit)

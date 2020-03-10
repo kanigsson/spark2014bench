@@ -263,3 +263,4 @@ Target solver: CVC4
   (get_total total_pay2) total_pay2)) (in_range
   (+ (get_total total_pay) o1))))))))))))))))))))
 (check-sat)
+(exit)

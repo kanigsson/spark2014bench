@@ -252,3 +252,4 @@ Target solver: CVC4
   (=> (= z3 827)
   (=> (in_range3 z3) (=> (in_range1 y6) (=> (in_range1 x6) (< x6 y6))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -701,3 +701,4 @@ Target solver: CVC4
                (rec__ada___hnco__test2__v_type_owner__vector_type__hidden_vector
                container__split_fields))))))))))))))))
 (check-sat)
+(exit)

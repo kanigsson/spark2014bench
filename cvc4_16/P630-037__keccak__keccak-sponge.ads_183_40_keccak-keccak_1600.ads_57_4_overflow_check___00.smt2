@@ -1484,3 +1484,4 @@ Target solver: CVC4
   (=> (and (and (= o1 0) (<= suffix_len 8)) (<= bit_length 2147483639))
   (=> (in_range1 (length message)) (in_range1 (+ bit_length 7))))))))))))))
 (check-sat)
+(exit)

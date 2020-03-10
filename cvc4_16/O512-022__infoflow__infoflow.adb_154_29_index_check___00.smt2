@@ -501,3 +501,4 @@ Target solver: CVC4
                       false)) true)
   (<= (to_rep h__first) q1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

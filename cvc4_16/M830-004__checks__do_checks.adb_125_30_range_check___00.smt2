@@ -955,3 +955,4 @@ Target solver: CVC4
   (=> (= a (temp___String_Literal_773 Tuple0))
   (let ((o (- zero 1))) (=> (in_range1 o) (=> (<= zero o) (<= 1 zero))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -396,3 +396,4 @@ Target solver: CVC4
   (forall ((table2 (Array Int contents_type))) (ordered__function_guard
   (ordered table2 1 100) table2 1 100)) (= (ordered table1 1 100) true)))))))))))
 (check-sat)
+(exit)

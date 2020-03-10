@@ -1212,3 +1212,4 @@ Target solver: CVC4
   (=> (= find_map__find_upto__find_map_bad__result 0)
   (=> (<= (first1 a) last2) (<= 1 (first1 a))))))))))))))))))))
 (check-sat)
+(exit)

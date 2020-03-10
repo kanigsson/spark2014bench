@@ -1220,3 +1220,4 @@ Target solver: CVC4
   (exists ((o1 Int)) (= (to_rep1 (get1 r1 o temp___1689)) o1)))))))))
   (in_range6 j)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

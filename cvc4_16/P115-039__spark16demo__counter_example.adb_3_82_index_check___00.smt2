@@ -439,3 +439,4 @@ Target solver: CVC4
   (=> (dynamic_invariant cat true false true true)
   (<= (first1 num_item_per_category) cat))))))
 (check-sat)
+(exit)

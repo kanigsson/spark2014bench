@@ -669,3 +669,4 @@ Target solver: CVC4
   (and (fp.isFinite32 o) (= x2 o))) (= x2 x1))
   (fp.leq (fp.neg (fp #b0 #b10000011 #b01000000000000000000000)) x2)))))))))))
 (check-sat)
+(exit)

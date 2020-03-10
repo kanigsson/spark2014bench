@@ -930,3 +930,4 @@ Target solver: CVC4
   (forall ((o2 byte))
   (=> (= (to_rep2 o2) ((_ int2bv 8) o1)) (<= (to_rep1 b__first) i1))))))))))))))))))))
 (check-sat)
+(exit)

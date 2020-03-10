@@ -594,3 +594,4 @@ Target solver: CVC4
        (temp_____aggregate_def_210 #x00 #x00) 0 1))))))))
   (= o false)))) (=> (= o true) (in_range (+ (first1 buffer) 13))))))))
 (check-sat)
+(exit)

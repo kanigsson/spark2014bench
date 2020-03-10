@@ -402,3 +402,4 @@ Target solver: CVC4
                         temp___alloc_216))
   (= (not (ite (= (attr__tag y__pointer_value) us_tag1) true false)) true))))))))))
 (check-sat)
+(exit)

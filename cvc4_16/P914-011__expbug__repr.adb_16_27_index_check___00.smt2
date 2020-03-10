@@ -350,3 +350,4 @@ Target solver: CVC4
   (and (f__function_guard temp___160 Tuple0) (dynamic_invariant1 temp___160
   true false true true)) (<= 0 temp___160)))))))
 (check-sat)
+(exit)

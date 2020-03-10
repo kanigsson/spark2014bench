@@ -1200,3 +1200,4 @@ Target solver: CVC4
   (let ((o3 (- i (first2 a))))
   (=> (in_range1 o3) (=> (in_range2 o3) (in_range1 (* o3 o2)))))))))))))))))))))))
 (check-sat)
+(exit)

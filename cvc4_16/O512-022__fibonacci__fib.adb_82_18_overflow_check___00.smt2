@@ -263,3 +263,4 @@ Target solver: CVC4
           true false) (ite (and (<= 2 i1) (<= i1 n2)) true false)) true)
   (in_range1 (* i1 p21)))))))))))))))))))))))))
 (check-sat)
+(exit)

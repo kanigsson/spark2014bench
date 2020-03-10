@@ -2018,3 +2018,4 @@ Target solver: CVC4
   (=> (<= (first1 temp___320) (last1 temp___320))
   (<= (to_rep1 total_string__first) (to_rep1 total_string__last)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

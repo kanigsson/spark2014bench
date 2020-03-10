@@ -115,3 +115,4 @@ Target solver: CVC4
   (=> (forall ((z2 Int)) (id__function_guard (id z2) z2))
   (=> (forall ((z2 Int)) (id__function_guard (id z2) z2)) (= (id z) (id z1)))))))))
 (check-sat)
+(exit)

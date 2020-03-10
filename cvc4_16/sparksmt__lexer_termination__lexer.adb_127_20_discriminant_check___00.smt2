@@ -809,3 +809,4 @@ Target solver: CVC4
   (=> (= next_read__attr__constrained true)
   (= current_read__split_discrs next_read__split_discrs))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

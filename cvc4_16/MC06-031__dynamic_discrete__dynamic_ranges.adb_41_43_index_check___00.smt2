@@ -414,3 +414,4 @@ Target solver: CVC4
   (= (and (ite (<= temp___299 i) true false) (ite (<= i last4) true false)) true)
   (<= (first1 a) i))))))))))))))
 (check-sat)
+(exit)

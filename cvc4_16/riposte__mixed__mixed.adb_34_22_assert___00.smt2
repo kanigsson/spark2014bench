@@ -291,3 +291,4 @@ Target solver: CVC4
   (= o1 (to_rep (rec__mixed__rec__i (us_split_fields1 o))))))
   (forall ((n1 Int)) (=> (= n1 o1) (= n1 0))))))))))
 (check-sat)
+(exit)

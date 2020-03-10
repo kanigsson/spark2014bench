@@ -264,3 +264,4 @@ Target solver: CVC4
   (forall ((tmp22 Int))
   (=> (= tmp22 o7) (=> (in_range (* x y)) (not (= z 0)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

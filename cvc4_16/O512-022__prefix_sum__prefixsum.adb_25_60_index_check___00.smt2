@@ -534,3 +534,4 @@ Target solver: CVC4
   (=> (= (to_rep (select temp___loop_entry_239 temp___240)) o4)
   (<= 0 (- usf 1)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

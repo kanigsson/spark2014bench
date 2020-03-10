@@ -789,3 +789,4 @@ Target solver: CVC4
   (< (to_rep (select (to_array s) (- l 1))) (to_rep (select (to_array s) l)))))
   (in_range1 (length s)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

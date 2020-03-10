@@ -311,3 +311,4 @@ Target solver: CVC4
   (=> (= i2 (bvadd i1 #x0000000000000001))
   (=> (bvult i2 range_size) (bvugt i2 temp___171))))))))))))))))))))))
 (check-sat)
+(exit)

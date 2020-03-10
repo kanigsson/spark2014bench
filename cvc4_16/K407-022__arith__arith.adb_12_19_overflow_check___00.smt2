@@ -257,3 +257,4 @@ Target solver: CVC4
   (=> (in_range o5)
   (forall ((tmp12 Int)) (=> (= tmp12 o5) (in_range (- y z))))))))))))))))))))))))))))
 (check-sat)
+(exit)

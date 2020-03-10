@@ -458,3 +458,4 @@ Target solver: CVC4
   (= spark__branch (and (ite (<= 1 i) true false) (ite (<= i o) true false)))
   (=> (= spark__branch true) (<= (first1 p__split_fields) i)))))))))
 (check-sat)
+(exit)

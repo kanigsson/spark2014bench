@@ -572,3 +572,4 @@ Target solver: CVC4
   (let ((o1 (+ (first1 buffer) i1)))
   (=> (in_range1 o1) (<= (first1 buffer) o1))))))))))))))))
 (check-sat)
+(exit)

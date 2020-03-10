@@ -528,3 +528,4 @@ Target solver: CVC4
   (ite (< (+ left2 space1) 8) (= o1 (ite (= (mod2 8 space1) 0) true false))
   (= o1 false)) (not (= o1 true)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

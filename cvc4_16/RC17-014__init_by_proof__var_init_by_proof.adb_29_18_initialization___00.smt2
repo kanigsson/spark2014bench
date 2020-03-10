@@ -93,3 +93,4 @@ Target solver: CVC4
  ;; File "var_init_by_proof.adb", line 29, characters 0-0
   (not true))
 (check-sat)
+(exit)

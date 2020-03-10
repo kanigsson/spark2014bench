@@ -175,3 +175,4 @@ Target solver: CVC4
   (= (and (ite (<= 20 i1) true false) (ite (<= i1 temp___290) true false)) true))
   (exists ((i2 Int)) (and (and (<= 20 i2) (<= i2 r13b)) (= i2 temp___290)))))))))))))))))))))))))
 (check-sat)
+(exit)

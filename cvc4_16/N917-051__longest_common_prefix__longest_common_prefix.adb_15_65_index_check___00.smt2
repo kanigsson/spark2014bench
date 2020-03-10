@@ -302,3 +302,4 @@ Target solver: CVC4
   (=> (= (to_rep (select a o1)) o2)
   (let ((o3 (+ x usf))) (=> (in_range1 o3) (<= 1 o3))))))))))))))))))))))
 (check-sat)
+(exit)

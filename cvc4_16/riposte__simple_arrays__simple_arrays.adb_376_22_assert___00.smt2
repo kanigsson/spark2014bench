@@ -188,3 +188,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (= (to_rep (select (temp_____aggregate_def_958 a i x) i)) x)))))
 (check-sat)
+(exit)

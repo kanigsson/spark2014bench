@@ -89,3 +89,4 @@ Target solver: CVC4
   (=> (= ms 0)
   (=> (dynamic_invariant ms true false true true) (in_range ms))))))
 (check-sat)
+(exit)

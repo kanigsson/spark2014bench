@@ -1321,3 +1321,4 @@ Target solver: CVC4
       (of_array (to_array a) (first2 a) (last2 a) (first_2 a) (last_2 a)) 0))
       k l)) (+ 2147483647 (value (to_rep (get (to_array a) i j)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

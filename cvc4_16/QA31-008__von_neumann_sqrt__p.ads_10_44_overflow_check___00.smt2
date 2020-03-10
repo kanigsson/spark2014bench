@@ -358,3 +358,4 @@ Target solver: CVC4
   (=> (= p__sqrt_binary__result lower2) (in_range1
   (* (+ p__sqrt_binary__result 1) (+ p__sqrt_binary__result 1))))))))))))))
 (check-sat)
+(exit)

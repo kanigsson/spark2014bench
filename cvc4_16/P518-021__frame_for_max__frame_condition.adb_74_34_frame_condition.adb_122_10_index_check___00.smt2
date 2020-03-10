@@ -697,3 +697,4 @@ Target solver: CVC4
         (us_split_fields1 (select a1 usf)))))))
   (<= (to_rep1 a__first) usf1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

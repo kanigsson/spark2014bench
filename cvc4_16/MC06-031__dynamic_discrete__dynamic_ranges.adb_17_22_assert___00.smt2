@@ -339,3 +339,4 @@ Target solver: CVC4
   (=> (= (of_array (to_array a) 1 100) a2)
   (=> (dynamic_invariant a2 true false true true) (= (first1 a2) 1)))))))))
 (check-sat)
+(exit)

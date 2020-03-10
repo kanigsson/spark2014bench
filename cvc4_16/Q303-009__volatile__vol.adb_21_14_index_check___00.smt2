@@ -192,3 +192,4 @@ Target solver: CVC4
   (=> (dynamic_invariant idx true false true true)
   (=> (dynamic_invariant val__ false false true true) (<= 1 idx))))))
 (check-sat)
+(exit)

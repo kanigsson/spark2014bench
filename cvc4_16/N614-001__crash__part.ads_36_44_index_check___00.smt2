@@ -488,3 +488,4 @@ Target solver: CVC4
   (=> (<= (first3 p) i)
   (=> (<= i (last3 p)) (=> (= i (first3 p)) (<= (first3 p) i)))))))))))
 (check-sat)
+(exit)

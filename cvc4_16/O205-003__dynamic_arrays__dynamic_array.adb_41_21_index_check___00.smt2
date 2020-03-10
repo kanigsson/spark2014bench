@@ -1387,3 +1387,4 @@ Target solver: CVC4
         (to_rep1 (rec__dynamic_array__rec__f2 (us_split_fields1 o4))))))))
   (<= (first1 h__split_fields) usf))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

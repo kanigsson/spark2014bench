@@ -97,3 +97,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x x__attr__init false true true)
   (=> (= x__attr__init true) (= g__attr__init true)))))))
 (check-sat)
+(exit)

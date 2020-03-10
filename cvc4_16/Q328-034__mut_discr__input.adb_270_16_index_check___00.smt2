@@ -725,3 +725,4 @@ Target solver: CVC4
   (forall ((o2 character))
   (=> (= (to_rep o2) o1) (<= (to_rep1 s__first) i1)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

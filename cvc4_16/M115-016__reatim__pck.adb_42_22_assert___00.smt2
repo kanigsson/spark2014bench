@@ -340,3 +340,4 @@ Target solver: CVC4
   (forall ((result_hi1 Int))
   (=> (= result_hi1 o5) (< result_hi1 2147483647)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

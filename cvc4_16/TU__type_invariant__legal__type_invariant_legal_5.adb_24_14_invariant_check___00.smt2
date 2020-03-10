@@ -211,3 +211,4 @@ Target solver: CVC4
   (and (pub__function_guard o x) (dynamic_invariant o true false true true))
   (type_invariant x))))))))))
 (check-sat)
+(exit)

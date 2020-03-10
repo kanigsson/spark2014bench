@@ -576,3 +576,4 @@ Target solver: CVC4
   (and (= (to_rep b__first_2) g) (= (to_rep b__last_2) (+ g 2))))
   (= (to_rep b__first_2) 1))))))))))))))))))
 (check-sat)
+(exit)

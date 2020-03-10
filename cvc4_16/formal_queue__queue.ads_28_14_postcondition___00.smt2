@@ -867,3 +867,4 @@ Target solver: CVC4
                          (us_split_fieldsqtmk r__split_fields1)))
   (= (length queue__tail__result) (- (length q) 1))))))))))))))))
 (check-sat)
+(exit)

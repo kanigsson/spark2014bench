@@ -1688,3 +1688,4 @@ Target solver: CVC4
      rliteral1 us_null_ext__) us_tag1)))) (rec__integer_stacks__stack__capacity
                                           this__split_discrs))))))))))))))))
 (check-sat)
+(exit)

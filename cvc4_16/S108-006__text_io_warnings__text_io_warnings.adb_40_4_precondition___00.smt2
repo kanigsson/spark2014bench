@@ -1480,3 +1480,4 @@ Target solver: CVC4
                                                          current_out10))
   (=> (not (= (is_open source3) true)) (not (= (is_open target) true)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

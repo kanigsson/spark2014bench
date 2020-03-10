@@ -550,3 +550,4 @@ Target solver: CVC4
   (let ((temp___253 (formals__y__aggregate_def 1)))
   (=> (dynamic_predicate4 temp___253) (dynamic_predicate temp___253)))))))
 (check-sat)
+(exit)

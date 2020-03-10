@@ -639,3 +639,4 @@ Target solver: CVC4
                                                            true false)) true)
   (= k r59b)))) (= k k1)))) (in_range1 (length needle)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

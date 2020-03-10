@@ -574,3 +574,4 @@ Target solver: CVC4
   (let ((o10 (- med2 1))) (and (in_range3 o10) (= right3 o10)))))))))
   (= left3 left2)))))))) (=> (< left3 right3) (<= (first1 a) left3))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

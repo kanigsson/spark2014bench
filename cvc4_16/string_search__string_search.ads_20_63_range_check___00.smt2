@@ -395,3 +395,4 @@ Target solver: CVC4
   (let ((o2 (- o1 o)))
   (=> (in_range o2) (=> (<= (- loc 1) o2) (in_range1 (length needle))))))))))))))
 (check-sat)
+(exit)

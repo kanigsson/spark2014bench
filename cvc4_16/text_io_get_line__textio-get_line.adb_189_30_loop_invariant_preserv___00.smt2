@@ -1228,3 +1228,4 @@ Target solver: CVC4
                                  (select the_file (+ (- idx (to_rep1
                                                             item__first)) temp___loop_entry_373))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

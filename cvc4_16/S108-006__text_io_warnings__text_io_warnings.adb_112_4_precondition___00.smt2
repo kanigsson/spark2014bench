@@ -2350,3 +2350,4 @@ Target solver: CVC4
   (= file_system54 file_system53)) (= current_in54 current_in53))
   (= current_out54 current_out53))) (= (is_open source5) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

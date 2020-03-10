@@ -261,3 +261,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true i1) (in_range1
   (to_int (fp.to_real (fp.roundToIntegral RNA (last i1))))))))))))))))
 (check-sat)
+(exit)

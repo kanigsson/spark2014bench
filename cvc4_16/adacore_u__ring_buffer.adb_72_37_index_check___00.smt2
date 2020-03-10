@@ -621,3 +621,4 @@ Target solver: CVC4
   (forall ((o2 natural))
   (=> (= (to_rep o2) e) (<= 1 (+ (- length2 100) first)))))))))))))))))))))
 (check-sat)
+(exit)

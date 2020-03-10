@@ -223,3 +223,4 @@ Target solver: CVC4
   (or (and (<= (- 2147483648) temp___453) (<= temp___453 (- 1)))
   (and (<= 1 temp___453) (<= temp___453 2147483647)))))))))))
 (check-sat)
+(exit)

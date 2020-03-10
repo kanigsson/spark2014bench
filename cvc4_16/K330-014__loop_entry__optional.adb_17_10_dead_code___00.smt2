@@ -856,3 +856,4 @@ Target solver: CVC4
   (not
   (= (and (ite (<= 1 index) true false) (ite (<= index 5) true false)) true)))))))))
 (check-sat)
+(exit)

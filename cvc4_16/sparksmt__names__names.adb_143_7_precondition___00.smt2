@@ -2111,3 +2111,4 @@ Target solver: CVC4
   (and (= o8 0) (= ptr1 ptr3)))))))))))))))))))))))
   (and (= spark__branch1 spark__branch2) (= ptr1 ptr))))) (< 0 (length s))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

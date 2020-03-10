@@ -421,3 +421,4 @@ Target solver: CVC4
      (rec__composite_cursors__rec_cursor__content (us_split_fields1 p))) o)
   (in_range (+ o 1)))))))))))
 (check-sat)
+(exit)

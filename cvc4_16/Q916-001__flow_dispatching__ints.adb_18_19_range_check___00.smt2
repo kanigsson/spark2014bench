@@ -726,3 +726,4 @@ Target solver: CVC4
   (=> (not (= (length1 msg) 0)) (in_range1
   (- (+ (first1 msg) (+ (length (first1 msg) (last1 msg)) (length 1 3))) 1)))))))))
 (check-sat)
+(exit)

@@ -905,3 +905,4 @@ Target solver: CVC4
   (=> (= rsp1 (bvsub rsp #x0000000000000008))
   (= rsp1 (bvsub saversp #x0000000000000008))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1240,3 +1240,4 @@ Target solver: CVC4
   (= (line_length standard_in standard_out standard_err current_err
      file_system current_in current_out) 0))))))
 (check-sat)
+(exit)

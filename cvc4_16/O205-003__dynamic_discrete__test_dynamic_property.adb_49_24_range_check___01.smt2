@@ -250,3 +250,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 test_dynamic_property__dyn_param__x true true true
   true) (dynamic_property 0 last test_dynamic_property__dyn_param__x)))))))))))))))))))))))))))
 (check-sat)
+(exit)

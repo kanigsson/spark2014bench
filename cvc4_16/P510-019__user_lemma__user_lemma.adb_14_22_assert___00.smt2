@@ -240,3 +240,4 @@ Target solver: CVC4
   (=> (is_prime__function_guard (is_prime 15487469) 15487469)
   (= (is_prime 15487469) true))))))))))
 (check-sat)
+(exit)

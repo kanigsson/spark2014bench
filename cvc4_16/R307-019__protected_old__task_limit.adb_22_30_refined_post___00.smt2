@@ -197,3 +197,4 @@ Target solver: CVC4
   (exists ((o3 natural)) (and (= (to_rep o3) o2) (= self__1 o3)))))))
   (= self__1 self__)))))) (<= (to_rep self__) (to_rep self__1))))))
 (check-sat)
+(exit)

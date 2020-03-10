@@ -660,3 +660,4 @@ Target solver: CVC4
   (forall ((left4 Int))
   (=> (= left4 o6) (=> (< left4 8) (< temp___221 left4))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -681,3 +681,4 @@ Target solver: CVC4
   (forall ((o4 Int))
   (=> (= (to_rep2 out_string__first) o4) (in_range (+ o4 (- len 1))))))))))))))))))))))))))
 (check-sat)
+(exit)

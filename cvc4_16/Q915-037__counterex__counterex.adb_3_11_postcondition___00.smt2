@@ -113,3 +113,4 @@ Target solver: CVC4
   (ite (= spark__branch1 true) (= v1 20)
   (let ((o (+ v 10))) (and (in_range1 o) (= v1 o))))))))) (= v1 (+ v1 10)))))))
 (check-sat)
+(exit)

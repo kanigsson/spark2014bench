@@ -913,3 +913,4 @@ Target solver: CVC4
   (= grants1 grants2)))))))))) (= grants1 grants)))))) (in_range6
   (+ (- (+ tuition2 fees2) grants1) insurance1))))))))))))))))))))))))
 (check-sat)
+(exit)

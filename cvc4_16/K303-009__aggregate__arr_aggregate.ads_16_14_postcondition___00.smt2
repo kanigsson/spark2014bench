@@ -283,3 +283,4 @@ Target solver: CVC4
   (= a (temp_____aggregate_def_386 2 one))))))))))))))
   (=> (= b 1) (= (to_rep (select a one1)) one1))))))))))
 (check-sat)
+(exit)

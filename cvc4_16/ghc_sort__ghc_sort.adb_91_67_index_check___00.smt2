@@ -520,3 +520,4 @@ Target solver: CVC4
                                                 false)) true)
   (=> (in_range1 (+ j12 j21)) (=> (< 1 j4) (<= (first1 s2) j21))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -601,3 +601,4 @@ Target solver: CVC4
      us_null_pointer1) true))
   (rec__traversals__list1_acc__pointer_value__pred l)))))
 (check-sat)
+(exit)

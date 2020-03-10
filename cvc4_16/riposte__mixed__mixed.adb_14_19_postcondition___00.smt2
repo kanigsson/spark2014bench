@@ -272,3 +272,4 @@ Target solver: CVC4
   (=> (= mixed__get_i__result o)
   (= mixed__get_i__result (to_rep (rec__mixed__rec__i (us_split_fields1 r)))))))))
 (check-sat)
+(exit)

@@ -94,3 +94,4 @@ Target solver: CVC4
   (forall ((p__ident__2__result Int))
   (=> (= p__ident__2__result (- o1 1)) (= p__ident__2__result c)))))))))))
 (check-sat)
+(exit)

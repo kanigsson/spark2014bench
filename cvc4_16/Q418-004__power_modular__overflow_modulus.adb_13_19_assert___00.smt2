@@ -357,3 +357,4 @@ Target solver: CVC4
   (= o1 #x00))
   (forall ((y1 (_ BitVec 8))) (=> (= y1 (bvurem o1 #x08)) (= y1 #x00)))))))))))))))
 (check-sat)
+(exit)

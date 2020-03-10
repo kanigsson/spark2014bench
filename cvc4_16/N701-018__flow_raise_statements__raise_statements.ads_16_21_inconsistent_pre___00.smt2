@@ -101,3 +101,4 @@ Target solver: CVC4
   (=> (dynamic_invariant par1 true false true true)
   (=> (dynamic_invariant par2 true false true true) (not (= par2 3)))))))
 (check-sat)
+(exit)

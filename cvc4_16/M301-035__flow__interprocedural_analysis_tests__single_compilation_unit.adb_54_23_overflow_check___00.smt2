@@ -137,3 +137,4 @@ Target solver: CVC4
   (forall ((fact1 Int))
   (=> (dynamic_invariant fact1 true true true true) (in_range (* fact1 var))))))))))))
 (check-sat)
+(exit)

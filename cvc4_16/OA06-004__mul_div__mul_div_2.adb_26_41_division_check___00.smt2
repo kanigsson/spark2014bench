@@ -390,3 +390,4 @@ Target solver: CVC4
   (=> (in_range1 o3)
   (forall ((v_m_lo1 Int)) (=> (= v_m_lo1 o3) (not (= 4294967296 0)))))))))))))))))))))))))))
 (check-sat)
+(exit)

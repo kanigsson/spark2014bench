@@ -403,3 +403,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (=> (= (mod2 o 2) 0) (let ((o1 a)) (=> (in_range1 o1) (= (mod2 o1 2) 0))))))))))))))
 (check-sat)
+(exit)

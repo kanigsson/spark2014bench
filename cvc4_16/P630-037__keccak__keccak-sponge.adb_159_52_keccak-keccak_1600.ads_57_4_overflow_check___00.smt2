@@ -1505,3 +1505,4 @@ Target solver: CVC4
                   suffix))
   (in_range1 (+ bit_length 7)))))))))))))))))))))
 (check-sat)
+(exit)

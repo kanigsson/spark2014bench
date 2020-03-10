@@ -257,3 +257,4 @@ Target solver: CVC4
   (=> (= x4 4)
   (=> (= y1 2356) (=> (in_range2 y1) (=> (in_range1 x4) (< x4 y1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -91,3 +91,4 @@ Target solver: CVC4
  ;; File "inst.adb", line 1, characters 0-0
   (not (forall ((usf a_subtype)) (dynamic_predicate usf))))
 (check-sat)
+(exit)

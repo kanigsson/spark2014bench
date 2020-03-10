@@ -1927,3 +1927,4 @@ Target solver: CVC4
   (=> (bvule (first1 temp___705) (last1 temp___705))
   (bvule (to_rep7 hash__first) (to_rep7 hash__last)))))))))))))))))
 (check-sat)
+(exit)

@@ -596,3 +596,4 @@ Target solver: CVC4
   (=> (in_range2 o2)
   (forall ((right2 Int)) (=> (= right2 o2) (not (< right2 8)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

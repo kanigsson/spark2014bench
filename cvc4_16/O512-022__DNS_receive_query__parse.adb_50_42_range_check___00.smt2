@@ -1592,3 +1592,4 @@ Target solver: CVC4
                                                                   true false)))
   (=> (= spark__branch3 true) (in_range2 (bv2nat qdcount1)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

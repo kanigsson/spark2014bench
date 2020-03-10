@@ -432,3 +432,4 @@ Target solver: CVC4
   (=> (dynamic_invariant zero true false true true)
   (=> (<= zero 100) (<= (- 2147483648) zero))))))))
 (check-sat)
+(exit)

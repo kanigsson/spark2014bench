@@ -545,3 +545,4 @@ Target solver: CVC4
   (fp.lt (fp #b0 #b00000000 #b00000000000000000000000) o)))) (in_range2
   (to_int (fp.to_real (fp.roundToIntegral RNA o)))))))))))
 (check-sat)
+(exit)

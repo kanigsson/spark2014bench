@@ -231,3 +231,4 @@ Target solver: CVC4
   (forall ((simple__foo__result (Array Int integer)))
   (=> (= simple__foo__result arr1) (in_range (+ init_val 1)))))))))))))
 (check-sat)
+(exit)

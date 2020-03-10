@@ -278,3 +278,4 @@ Target solver: CVC4
   (forall ((res1 (_ BitVec 32)))
   (=> (= res1 (bvudiv (bvmul x y) z)) (bvule res1 x)))))))))))))
 (check-sat)
+(exit)

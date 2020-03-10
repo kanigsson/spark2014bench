@@ -628,3 +628,4 @@ Target solver: CVC4
      (add_one (to_rep (get (to_array a) i (last_2 a))) x) (+ i 1)
      (first_2 a)) true)))))))))))))
 (check-sat)
+(exit)

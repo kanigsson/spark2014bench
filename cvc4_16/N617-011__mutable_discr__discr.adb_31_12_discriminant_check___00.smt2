@@ -338,3 +338,4 @@ Target solver: CVC4
   (=> (= d__split_discrs (us_split_discrsqtmk o)) (in_range1 c
   (us_split_discrsqtmk rliteral))))))))))))
 (check-sat)
+(exit)

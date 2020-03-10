@@ -707,3 +707,4 @@ Target solver: CVC4
   (=> (not (= (length1 usf) 0)) (in_range1
   (- (+ (first1 usf) (+ (length (first1 usf) (last1 usf)) (length 1 1))) 1))))))))))))))))))))))))))
 (check-sat)
+(exit)

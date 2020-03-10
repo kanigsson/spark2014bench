@@ -1462,3 +1462,4 @@ Target solver: CVC4
      (rec__very_longs__very_long__length (us_split_discrs1 dividend))) o)
   (in_range1 (+ o 1))))))))))))))))))
 (check-sat)
+(exit)

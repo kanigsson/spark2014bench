@@ -1259,3 +1259,4 @@ Target solver: CVC4
   (<= temp___1856 (last_21 temp___1854)))
   (let ((o1 (- i 1))) (=> (in_range1 o1) (<= o1 (last5 temp___1854))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -647,3 +647,4 @@ Target solver: CVC4
  ;; File "storage_place_attributes.adb", line 1, characters 0-0
   (not true))
 (check-sat)
+(exit)

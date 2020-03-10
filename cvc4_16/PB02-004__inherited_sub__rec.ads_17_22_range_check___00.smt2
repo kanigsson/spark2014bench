@@ -1333,3 +1333,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (rec__rec__sub_rec__z (us_split_discrs3 usf1))) usf)
   (in_range3 usf))))))
 (check-sat)
+(exit)

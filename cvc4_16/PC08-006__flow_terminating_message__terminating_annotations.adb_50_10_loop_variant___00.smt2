@@ -189,3 +189,4 @@ Target solver: CVC4
   (=> (in_range1 o4)
   (forall ((y6 Int)) (=> (= y6 o4) (=> (< 0 y6) (< y6 temp___161)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

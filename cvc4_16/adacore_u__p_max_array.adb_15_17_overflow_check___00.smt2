@@ -442,3 +442,4 @@ Target solver: CVC4
   (exists ((o3 natural)) (and (= (to_rep o3) o2) (= r2 (store r1 i1 o3)))))))))))))))
   (in_range1 (+ j1 1))))))))))))))))))))))
 (check-sat)
+(exit)

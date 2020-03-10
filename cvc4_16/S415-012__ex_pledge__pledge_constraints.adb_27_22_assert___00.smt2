@@ -986,3 +986,4 @@ Target solver: CVC4
   (us_pledge_ty__content pledge_constraints__update__y__pledge1)
   temp___borrowed_273 temp___brower_272)) ))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

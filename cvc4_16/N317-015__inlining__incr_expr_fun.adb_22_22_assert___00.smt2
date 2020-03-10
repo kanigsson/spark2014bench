@@ -275,3 +275,4 @@ Target solver: CVC4
   (forall ((x1 Int)) (incr_priv_body__function_guard (incr_priv_body x1) x1))
   (= (incr_priv_body x) (+ x 1))))))))))))))))))))
 (check-sat)
+(exit)

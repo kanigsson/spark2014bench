@@ -432,3 +432,4 @@ Target solver: CVC4
                                              false)) true)
   (in_range1 (+ y lcp__result)))))))))))))))))
 (check-sat)
+(exit)

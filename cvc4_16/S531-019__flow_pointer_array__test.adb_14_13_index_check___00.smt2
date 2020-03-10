@@ -457,3 +457,4 @@ Target solver: CVC4
           true false) (ite (and (<= r5b i1) (<= i1 r6b)) true false)) true)
   (<= (first1 a__pointer_value1) i1)))))))))))))))))
 (check-sat)
+(exit)

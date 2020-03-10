@@ -643,3 +643,4 @@ Target solver: CVC4
   (=> (= (to_rep1 (rec__pred__r__d (us_split_discrs1 i13b))) o2)
   (=> (= o2 1) (pred__r__c1__pred i13b))))))))))))
 (check-sat)
+(exit)

@@ -396,3 +396,4 @@ Target solver: CVC4
   (forall ((o3 Int))
   (=> (= (to_rep1 s__first) o3) (dynamic_property1 o3 1 x))))))))))))))))
 (check-sat)
+(exit)

@@ -1389,3 +1389,4 @@ Target solver: CVC4
   (=> (or (not (= k2 i)) (not (= l1 j)))
   (= (to_rep (get (to_array a1) k2 l1)) (to_rep (get (to_array a2) k2 l1))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

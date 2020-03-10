@@ -942,3 +942,4 @@ Target solver: CVC4
              test_higher_order3__my_count__count_left__acc__fold__result) o3)) o4)
   (dynamic_property 1 100 (first1 a) (last1 a)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

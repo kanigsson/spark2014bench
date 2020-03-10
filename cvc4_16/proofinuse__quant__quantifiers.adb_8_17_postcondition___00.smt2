@@ -190,3 +190,4 @@ Target solver: CVC4
   (=> (<= j 10)
   (= (to_rep (select quantifiers__previous_seen__all_zero__result j)) 0)))))))
 (check-sat)
+(exit)

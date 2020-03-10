@@ -801,3 +801,4 @@ Target solver: CVC4
   (= (to_rep (rec__record_discr__interm_result__upto (us_split_discrs3 r))) o1)
   (in_range2 o1)))))))))
 (check-sat)
+(exit)

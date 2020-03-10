@@ -236,3 +236,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__account8__protected_natural__the_data self__)) o)
   (in_range1 (+ o 1)))))))
 (check-sat)
+(exit)

@@ -740,3 +740,4 @@ Target solver: CVC4
   (=> (elements__function_guard (elements this) this)
   (= (length fixed_string__convert__result) (elements this))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

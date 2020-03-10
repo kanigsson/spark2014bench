@@ -364,3 +364,4 @@ Target solver: CVC4
   (and (end_line__function_guard o1 1 first_char1 last_char2)
   (not (= o1 true)))))))) (and (= line1 line) (= first_char1 first_char)))))))))))))))
 (check-sat)
+(exit)

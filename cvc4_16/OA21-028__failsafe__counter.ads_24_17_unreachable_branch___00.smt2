@@ -394,3 +394,4 @@ Target solver: CVC4
   (= (and (ite (bvule (bvadd (bvsub #x0A counter__model__current_chain_length__result) #x01) usf)
           true false) (ite (bvule usf #x0A) true false)) true))))))))))
 (check-sat)
+(exit)

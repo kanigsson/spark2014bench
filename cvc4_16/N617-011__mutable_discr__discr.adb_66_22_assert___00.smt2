@@ -418,3 +418,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk (us_repqtmk (us_split_discrsqtmk h__split_fields))))
   false) (= (to_rep h__split_fields) 0)))))))))))))))))
 (check-sat)
+(exit)

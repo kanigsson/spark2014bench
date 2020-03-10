@@ -561,3 +561,4 @@ Target solver: CVC4
   (let ((o2 (is_even usf)))
   (=> (= (= o2 true) (= (mod2 usf 2) 0)) (not (= o2 true))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

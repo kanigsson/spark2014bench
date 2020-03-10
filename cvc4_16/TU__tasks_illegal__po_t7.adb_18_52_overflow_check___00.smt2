@@ -186,3 +186,4 @@ Target solver: CVC4
   (=> (not (= spark__branch true))
   (=> (= (to_rep self__) o1) (in_range (+ o1 1)))))))))))
 (check-sat)
+(exit)

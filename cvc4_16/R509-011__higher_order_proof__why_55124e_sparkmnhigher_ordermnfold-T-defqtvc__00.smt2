@@ -1378,3 +1378,4 @@ Target solver: CVC4
   (=> (= j2 (+ j1 1))
   (=> (in_range8 j2) (=> (in_range7 i1) (<= (first2 a) i1))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

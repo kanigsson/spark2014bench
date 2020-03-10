@@ -157,3 +157,4 @@ Target solver: CVC4
   (=> (<= oranges_to_consume (number_of_oranges oranges)) (in_range
   (- oranges oranges_to_consume)))))))))
 (check-sat)
+(exit)

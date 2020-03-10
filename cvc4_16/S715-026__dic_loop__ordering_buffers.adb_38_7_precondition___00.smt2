@@ -951,3 +951,4 @@ Target solver: CVC4
   (us_repqtmk buffer__split_fields2))) (in_range4
   (first (us_repqtmk buffer__split_fields1))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

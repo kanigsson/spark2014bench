@@ -595,3 +595,4 @@ Target solver: CVC4
   (=> (= spark__branch2 (ite (<= offset1 40) true false))
   (=> (= spark__branch2 true) (in_range6 offset1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

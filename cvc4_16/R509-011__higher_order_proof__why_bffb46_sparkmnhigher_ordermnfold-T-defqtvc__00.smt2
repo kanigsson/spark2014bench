@@ -1559,3 +1559,4 @@ Target solver: CVC4
                                               false)) true)
   (=> (in_range10 l) (=> (in_range9 k1) (<= (first_2 a1) j))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

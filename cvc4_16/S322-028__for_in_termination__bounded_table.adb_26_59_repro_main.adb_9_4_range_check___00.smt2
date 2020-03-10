@@ -368,3 +368,4 @@ Target solver: CVC4
   (=> (dynamic_invariant cursor true false true true)
   (=> (< cursor 33) (in_range cursor)))))
 (check-sat)
+(exit)

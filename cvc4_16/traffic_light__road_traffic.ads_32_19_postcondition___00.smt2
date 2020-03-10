@@ -432,3 +432,4 @@ Target solver: CVC4
   (safety_property__function_guard (safety_property l2 conflicts1) l2
   conflicts1)) (= (safety_property l1 conflicts) true))))))))))))
 (check-sat)
+(exit)

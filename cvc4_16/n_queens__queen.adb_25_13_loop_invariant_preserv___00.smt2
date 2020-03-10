@@ -320,3 +320,4 @@ Target solver: CVC4
   (=> (and (<= 1 k) (<= k (- j2 1)))
   (= (to_rep (select r2 k)) (to_rep (select b k))))))))))))))))))))))))))
 (check-sat)
+(exit)

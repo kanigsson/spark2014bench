@@ -403,3 +403,4 @@ Target solver: CVC4
                                                      (last1 a)) true false)) true)
   (<= (first1 a) result__1))))))))))))))))
 (check-sat)
+(exit)

@@ -408,3 +408,4 @@ Target solver: CVC4
   (or (not (= o4 true)) (exists ((o5 Int)) (= (to_rep values__last) o5)))))
   (<= (to_rep values__first) current))))))))))))))))))))))))))
 (check-sat)
+(exit)

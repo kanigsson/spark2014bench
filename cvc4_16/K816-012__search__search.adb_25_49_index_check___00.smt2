@@ -332,3 +332,4 @@ Target solver: CVC4
   (= (to_rep (select (to_array table) index11)) value1))
   (=> (= found2 true) (<= (first1 table) index21)))))))))))))))))))))
 (check-sat)
+(exit)

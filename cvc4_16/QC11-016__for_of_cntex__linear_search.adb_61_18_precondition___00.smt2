@@ -926,3 +926,4 @@ Target solver: CVC4
   (= (has_element arr
      (us_repqtmk1 (us_split_fieldsqtmk1 linear_search__search__3__result))) true)))))))))
 (check-sat)
+(exit)

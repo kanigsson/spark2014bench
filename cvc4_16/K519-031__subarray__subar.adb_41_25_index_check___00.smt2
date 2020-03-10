@@ -422,3 +422,4 @@ Target solver: CVC4
   (=> (= (first1 temp___280) (- x 1))
   (=> (= (last1 temp___280) (+ x 1)) (= (first1 temp___280) (- x 1)))))))))))))
 (check-sat)
+(exit)

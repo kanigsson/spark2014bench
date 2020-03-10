@@ -99,3 +99,4 @@ Target solver: CVC4
   (=> (<= 0 x)
   (<= 1 (+ (+ 0 (ite (= (= (+ x x) 0) true) 1 0)) (ite (= (> x 0) true) 1 0)))))))
 (check-sat)
+(exit)

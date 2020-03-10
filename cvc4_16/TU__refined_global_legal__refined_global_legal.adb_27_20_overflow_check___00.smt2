@@ -117,3 +117,4 @@ Target solver: CVC4
   (=> (in_range (- 1 var4))
   (=> (in_range (- 2 var4)) (=> (in_range (- 3 var4)) (in_range (- 4 var4)))))))))))))))))
 (check-sat)
+(exit)

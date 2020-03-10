@@ -469,3 +469,4 @@ Target solver: CVC4
   (=> (dynamic_invariant e1 true true true true)
   (=> (dynamic_invariant1 top3 true true true true) (= e1 1)))))))))))))))))))))))))
 (check-sat)
+(exit)

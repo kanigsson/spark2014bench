@@ -1429,3 +1429,4 @@ Target solver: CVC4
   (=> (in_range7 i1) (dynamic_property2 1 100 (first2 a) (last2 a) 1 100
   (first_2 a) (last_2 a))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

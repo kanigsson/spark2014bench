@@ -415,3 +415,4 @@ Target solver: CVC4
   (=> (and (= (to_rep1 y__first) 2) (= (to_rep1 y__last) 5))
   (=> (<= 2 5) (<= 1 2))))))))))))))))
 (check-sat)
+(exit)

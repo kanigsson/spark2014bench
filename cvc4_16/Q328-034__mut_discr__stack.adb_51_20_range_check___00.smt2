@@ -636,3 +636,4 @@ Target solver: CVC4
                                            (select tab last2)))
   (in_range3 (- last2 1))))))))))))))))
 (check-sat)
+(exit)

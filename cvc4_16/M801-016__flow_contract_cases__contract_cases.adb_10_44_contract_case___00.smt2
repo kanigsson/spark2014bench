@@ -152,3 +152,4 @@ Target solver: CVC4
   (=> (=> (= usf true) (<= 81 num_out1))
   (=> (not (= (or usf1 usf) true)) (= num_out1 100))))))))))))))))
 (check-sat)
+(exit)

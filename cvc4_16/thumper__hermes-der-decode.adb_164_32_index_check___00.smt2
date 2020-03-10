@@ -622,3 +622,4 @@ Target solver: CVC4
   (=> (bvuge (bvsub (to_rep1 (select (to_array message) start)) #x80) #x01)
   (<= (first1 message) start))))))))))))))))))))))))))))
 (check-sat)
+(exit)

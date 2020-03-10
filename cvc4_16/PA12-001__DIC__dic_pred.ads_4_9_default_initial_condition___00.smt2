@@ -290,3 +290,4 @@ Target solver: CVC4
   (=> (forall ((usf2 us_rep)) (get__function_guard (get usf2) usf2))
   (< 0 (get usf1)))))))))
 (check-sat)
+(exit)

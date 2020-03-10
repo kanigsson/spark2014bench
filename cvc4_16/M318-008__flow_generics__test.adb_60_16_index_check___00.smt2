@@ -475,3 +475,4 @@ Target solver: CVC4
   (=> (= (to_rep (select c o5)) o6)
   (forall ((o7 integer)) (=> (= (to_rep o7) o6) (<= (to_rep c__first) i1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -400,3 +400,4 @@ Target solver: CVC4
   (=> (= (to_rep (select kv i1)) o)
   (fp.lt (fp #b0 #b00000000 #b00000000000000000000000) o)))))))))))))
 (check-sat)
+(exit)

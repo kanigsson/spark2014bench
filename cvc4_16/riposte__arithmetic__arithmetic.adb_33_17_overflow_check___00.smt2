@@ -218,3 +218,4 @@ Target solver: CVC4
   (forall ((temp___loop_entry_211 Int))
   (=> (= temp___loop_entry_211 b) (in_range1 (+ r1 a))))))))))))))
 (check-sat)
+(exit)

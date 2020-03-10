@@ -225,3 +225,4 @@ Target solver: CVC4
  ;; File "const.ads", line 7, characters 0-0
   (not (=> (dynamic_invariant i1s true false false true) (not (= 2 0)))))
 (check-sat)
+(exit)

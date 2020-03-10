@@ -332,3 +332,4 @@ Target solver: CVC4
   (=> (= records__is_null_b__result true)
   (= (bool_eq1 x null_optional_pair) true))))))))
 (check-sat)
+(exit)

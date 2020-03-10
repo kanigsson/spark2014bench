@@ -212,3 +212,4 @@ Target solver: CVC4
   (=> (< i 10)
   (=> (<= 1 j) (=> (<= j (- i 1)) (not (= (to_rep (select arr j)) n)))))))))))
 (check-sat)
+(exit)

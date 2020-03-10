@@ -303,3 +303,4 @@ Target solver: CVC4
   (=> (dynamic_invariant temp false false true true)
   (<= (to_rep values__first) x)))))))))))))
 (check-sat)
+(exit)

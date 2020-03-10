@@ -401,3 +401,4 @@ Target solver: CVC4
   (=> (<= 1 (to_rep (rec__natural_set__t__len (us_split_fields1 s))))
   (<= 1 1)))))
 (check-sat)
+(exit)

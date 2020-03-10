@@ -345,3 +345,4 @@ Target solver: CVC4
   (let ((o (of_array ad1 1 10)))
   (= (to_rep1 (select (to_array o) (first1 o))) 1)))))))
 (check-sat)
+(exit)

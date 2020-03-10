@@ -122,3 +122,4 @@ Target solver: CVC4
   (and (dynamic_invariant o true false true true) (= o extr))) (in_range
   (+ x o)))))))))
 (check-sat)
+(exit)

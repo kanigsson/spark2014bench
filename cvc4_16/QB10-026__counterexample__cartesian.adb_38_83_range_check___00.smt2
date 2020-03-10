@@ -725,3 +725,4 @@ Target solver: CVC4
   (and (and (= result__1 result__) (= result_index1 result_index))
   (= index2 index21))))))) (in_range1 (length array2))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

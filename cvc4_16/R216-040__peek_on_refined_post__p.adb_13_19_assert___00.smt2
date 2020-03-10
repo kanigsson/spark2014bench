@@ -136,3 +136,4 @@ Target solver: CVC4
  ;; File "p.ads", line 1, characters 0-0
   (not (=> (f__function_guard (f Tuple0) Tuple0) (= (f Tuple0) 0))))
 (check-sat)
+(exit)

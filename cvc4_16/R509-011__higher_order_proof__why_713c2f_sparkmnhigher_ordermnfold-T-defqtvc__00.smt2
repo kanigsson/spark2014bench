@@ -755,3 +755,4 @@ Target solver: CVC4
   (= (ind_prop (of_array (to_array o2) (first2 o2) (last2 o2)) init
      (last2 o2)) true))))))))))))))))))))))
 (check-sat)
+(exit)

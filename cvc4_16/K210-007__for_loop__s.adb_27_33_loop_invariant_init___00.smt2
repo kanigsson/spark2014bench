@@ -172,3 +172,4 @@ Target solver: CVC4
   (= (and (ite (<= 1 index) true false) (ite (<= index 10) true false)) true)
   (= t2 (+ index 1))))))))))))
 (check-sat)
+(exit)

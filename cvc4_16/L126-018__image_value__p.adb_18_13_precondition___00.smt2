@@ -722,3 +722,4 @@ Target solver: CVC4
   (=> (= (to_rep1 s__first) o1) (attr__ATTRIBUTE_VALUE__pre_check5
   (from_string (of_array s o1 o))))))))))))))))))))))))))
 (check-sat)
+(exit)

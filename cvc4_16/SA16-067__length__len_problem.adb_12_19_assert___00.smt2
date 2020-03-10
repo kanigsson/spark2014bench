@@ -606,3 +606,4 @@ Target solver: CVC4
   (and (= (to_rep s__first) 65535) (= (to_rep s__last) r1b)))
   (bvult ((_ int2bv 16) (length (to_rep s__first) (to_rep s__last))) #x00FF)))))))))))))))))
 (check-sat)
+(exit)

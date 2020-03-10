@@ -1146,3 +1146,4 @@ Target solver: CVC4
   (formals_rec_split_pred__rec__f__pred
   (us_repqtmk x__split_discrs x__split_fields8)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

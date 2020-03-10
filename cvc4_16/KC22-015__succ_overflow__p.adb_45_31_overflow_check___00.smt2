@@ -183,3 +183,4 @@ Target solver: CVC4
   (not
   (= (next_representable f) (fp.neg (fp #b0 #b11111110 #b11111111111111111111111))))))))
 (check-sat)
+(exit)

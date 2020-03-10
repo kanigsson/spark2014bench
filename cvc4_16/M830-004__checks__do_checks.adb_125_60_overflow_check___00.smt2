@@ -954,3 +954,4 @@ Target solver: CVC4
   (=> (= spark__branch15 true)
   (=> (= a (temp___String_Literal_773 Tuple0)) (in_range1 (- zero 1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

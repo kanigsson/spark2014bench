@@ -96,3 +96,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (=> (= subnat__f__result x) (<= 0 subnat__f__result))))))
 (check-sat)
+(exit)

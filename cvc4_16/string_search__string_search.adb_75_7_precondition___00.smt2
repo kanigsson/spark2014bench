@@ -528,3 +528,4 @@ Target solver: CVC4
   (=> (dynamic_invariant i false false true true)
   (< (length needle) 2147483647))))))))))
 (check-sat)
+(exit)

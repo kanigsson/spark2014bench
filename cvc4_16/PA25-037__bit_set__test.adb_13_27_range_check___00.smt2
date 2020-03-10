@@ -669,3 +669,4 @@ Target solver: CVC4
   (bvule (bvudiv i #x0000000000000020) ((_ int2bv 64) (- (last1 a) a_first)))
   (in_range2 (bv2nat (bvurem i #x0000000000000020)))))))))))
 (check-sat)
+(exit)

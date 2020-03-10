@@ -484,3 +484,4 @@ Target solver: CVC4
   (let ((o5 (+ x longest_common_prefix__lcp__result)))
   (=> (in_range1 o5) (<= 1 o5))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

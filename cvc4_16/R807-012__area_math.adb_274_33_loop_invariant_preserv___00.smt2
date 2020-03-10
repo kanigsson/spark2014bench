@@ -1882,3 +1882,4 @@ Target solver: CVC4
   (=> (is_consistent__function_guard (is_consistent e) e)
   (= (is_consistent e) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

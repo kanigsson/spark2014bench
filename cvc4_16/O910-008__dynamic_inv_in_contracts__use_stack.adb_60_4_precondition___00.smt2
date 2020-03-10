@@ -460,3 +460,4 @@ Target solver: CVC4
   (=> (forall ((top2 Int)) (is_empty__function_guard (is_empty top2) top2))
   (not (= (is_empty top1) true)))))))))))))))))))
 (check-sat)
+(exit)

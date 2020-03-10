@@ -585,3 +585,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 val__ true false true true)
   (bvule ((_ zero_extend 24) #x00) (bvurem val__ #x00000100))))))
 (check-sat)
+(exit)

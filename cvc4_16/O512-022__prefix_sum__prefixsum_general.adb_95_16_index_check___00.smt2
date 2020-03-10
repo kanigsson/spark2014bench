@@ -475,3 +475,4 @@ Target solver: CVC4
   (=> (in_range1 o7)
   (forall ((o8 integer)) (=> (= (to_rep o8) o7) (<= 0 right3))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

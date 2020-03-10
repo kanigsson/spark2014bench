@@ -208,3 +208,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 value_v2 true false true true)
   (<= 1 (+ 0 (ite (= (= value_v1 value_v2) true) 1 0)))))))))
 (check-sat)
+(exit)

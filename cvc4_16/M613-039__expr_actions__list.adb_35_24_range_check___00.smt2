@@ -1338,3 +1338,4 @@ Target solver: CVC4
   (=> (in_range1 o8)
   (=> (<= first o8) (<= (first2 list__reverse_list__L_2__R20b) first)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

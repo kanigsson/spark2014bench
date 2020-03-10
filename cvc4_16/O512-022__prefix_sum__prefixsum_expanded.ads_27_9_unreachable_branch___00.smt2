@@ -243,3 +243,4 @@ Target solver: CVC4
   (=> (in_range o14)
   (forall ((o15 Int)) (=> (= (to_rep (select a 7)) o15) (not (= o15 o14)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

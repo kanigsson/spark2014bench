@@ -180,3 +180,4 @@ Target solver: CVC4
   (=> (<= 1 j)
   (=> (<= j 10) (=> (< i j) (< (to_rep (select a i)) (to_rep (select a j))))))))))))
 (check-sat)
+(exit)

@@ -934,3 +934,4 @@ Target solver: CVC4
   (= (rec__private_record__result_ty__found
      (us_split_discrs1 record_discr__search_upto__result)) true)))))))))))))))
 (check-sat)
+(exit)

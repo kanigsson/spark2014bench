@@ -424,3 +424,4 @@ Target solver: CVC4
   (of_array (slide (to_array temp___569) (first1 temp___569) (first1 s))
   (first1 s) (last1 s)))))))))))))))))
 (check-sat)
+(exit)

@@ -731,3 +731,4 @@ Target solver: CVC4
   (=> (= temp___233 i1)
   (forall ((temp___232 Int)) (=> (= temp___232 r1) (in_range4 (- r1 i1))))))))))))))))))))))))))))
 (check-sat)
+(exit)

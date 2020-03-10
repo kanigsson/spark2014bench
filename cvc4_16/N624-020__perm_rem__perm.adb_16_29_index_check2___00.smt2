@@ -661,3 +661,4 @@ Target solver: CVC4
   (ite (<= perm__get_witness__result (last1 b)) true false)) true)
   (<= (first1 b) perm__get_witness__result))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

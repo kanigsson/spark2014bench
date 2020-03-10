@@ -210,3 +210,4 @@ Target solver: CVC4
   (=> (not (= k flag))
   (= (to_rep (select flags2 k)) (to_rep (select flags1 k))))))))))))))
 (check-sat)
+(exit)

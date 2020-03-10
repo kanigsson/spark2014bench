@@ -249,3 +249,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 2 i) true false) (ite (<= i n2) true false)) true)
   (<= (- i 1) 7)))))))))))))))))
 (check-sat)
+(exit)

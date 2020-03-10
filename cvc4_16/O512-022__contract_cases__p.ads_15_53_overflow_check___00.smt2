@@ -109,3 +109,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (let ((o (+ x 1))) (and (in_range o) (= x1 o)))
   (= x1 x)))) (=> (= (< x threshold) true) (in_range (+ temp___old_157 1))))))))))))))
 (check-sat)
+(exit)

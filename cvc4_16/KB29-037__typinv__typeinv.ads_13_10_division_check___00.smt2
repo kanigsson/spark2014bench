@@ -219,3 +219,4 @@ Target solver: CVC4
  ;; File "typeinv.ads", line 12, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (not (= 2 0)))))
 (check-sat)
+(exit)

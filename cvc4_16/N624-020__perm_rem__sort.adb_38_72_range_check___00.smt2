@@ -734,3 +734,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (=> (dynamic_invariant4 hr1 false false true true) (in_range4 (- x 1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -333,3 +333,4 @@ Target solver: CVC4
   (forall ((j Int))
   (=> (and (<= (first1 a) j) (<= j i)) (= (to_rep (select r1 j)) 0))))))))))))))))))))
 (check-sat)
+(exit)

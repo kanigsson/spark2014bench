@@ -555,3 +555,4 @@ Target solver: CVC4
                                       true false)) true)
   (in_range1 (+ (- usf 1) first)))))))))))
 (check-sat)
+(exit)

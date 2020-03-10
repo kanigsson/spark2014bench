@@ -822,3 +822,4 @@ Target solver: CVC4
   (and (pop__function_guard o stack_top stack_vector) (dynamic_invariant o
   true false true true)) (in_range1 (+ x1 o))))))))))))))))
 (check-sat)
+(exit)

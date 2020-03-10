@@ -608,3 +608,4 @@ Target solver: CVC4
   (=> (<= k1 r26b)
   (<= (first1 (rec__integer_stacks__stack__values (us_split_fields1 right))) k1)))))))))))))))))))
 (check-sat)
+(exit)

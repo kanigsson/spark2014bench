@@ -214,3 +214,4 @@ Target solver: CVC4
   (or (= b__attr__tag us_tag)
   (or (= b__attr__tag us_tag2) (= b__attr__tag us_tag3)))))))
 (check-sat)
+(exit)

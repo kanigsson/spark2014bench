@@ -576,3 +576,4 @@ Target solver: CVC4
   (= (bool_eq1 (select stable_marriage__matching__invert__result g2) 1 64
      (invert_1 (select r2 g2)) 1 64) true))))))))))))))
 (check-sat)
+(exit)

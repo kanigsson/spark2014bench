@@ -359,3 +359,4 @@ Target solver: CVC4
   (forall ((arrays__sum__result Int))
   (=> (= arrays__sum__result s1) (in_range1 (length1 x))))))))))))
 (check-sat)
+(exit)

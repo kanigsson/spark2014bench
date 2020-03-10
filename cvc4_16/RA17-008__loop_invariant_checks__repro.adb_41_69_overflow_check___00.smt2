@@ -942,3 +942,4 @@ Target solver: CVC4
   (forall ((result_pos1 Int))
   (=> (= result_pos1 o6) (in_range1 (+ e_pos 1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

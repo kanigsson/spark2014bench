@@ -238,3 +238,4 @@ Target solver: CVC4
   (=> (= stack_pointer1 o)
   (forall ((o1 integer)) (=> (= (to_rep o1) x) (<= 1 stack_pointer1))))))))))))
 (check-sat)
+(exit)

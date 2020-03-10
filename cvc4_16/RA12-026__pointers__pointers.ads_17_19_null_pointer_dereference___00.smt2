@@ -363,3 +363,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__pointers__t_ptr__pointer_value (select a3 j))) o)
   (rec__pointers__t_ptr__pointer_value__pred (select a3 i))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

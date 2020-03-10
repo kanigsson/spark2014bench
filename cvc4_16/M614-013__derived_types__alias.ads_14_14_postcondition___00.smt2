@@ -354,3 +354,4 @@ Target solver: CVC4
   (=> (get_content__function_guard (get_content r) r)
   (= alias__add__result (+ (get_content r) x)))))))))))
 (check-sat)
+(exit)

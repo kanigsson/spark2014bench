@@ -261,3 +261,4 @@ Target solver: CVC4
  ;; File "dynamic_preds_array.ads", line 15, characters 0-0
   (not true))
 (check-sat)
+(exit)

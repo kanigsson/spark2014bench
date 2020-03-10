@@ -64,3 +64,4 @@ Target solver: CVC4
  ;; File "use_ext_ax.adb", line 2, characters 0-0
   (not (= (my_eq__logic 1 1) true)))
 (check-sat)
+(exit)

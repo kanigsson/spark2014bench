@@ -340,3 +340,4 @@ Target solver: CVC4
   (=> (dynamic_invariant a2 true false true true)
   (=> (= (first1 a2) 1) (= (last1 a2) 100))))))))))
 (check-sat)
+(exit)

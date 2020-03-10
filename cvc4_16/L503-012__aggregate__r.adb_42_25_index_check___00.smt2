@@ -389,3 +389,4 @@ Target solver: CVC4
   (=> (dynamic_invariant n true false true true)
   (=> (<= 3 n) (=> (<= n 4) (=> (<= 3 n) (=> (<= n 7) (<= 2 n))))))))
 (check-sat)
+(exit)

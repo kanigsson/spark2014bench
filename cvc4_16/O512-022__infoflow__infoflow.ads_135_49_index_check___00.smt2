@@ -397,3 +397,4 @@ Target solver: CVC4
   (= o (and (ite (<= (+ k_1 1) i) true false) (ite (<= i o1) true false)))))
   (= o false)) (=> (= o true) (<= (first1 c_v2) (- i k_1)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

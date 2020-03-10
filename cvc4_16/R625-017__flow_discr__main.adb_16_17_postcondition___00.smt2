@@ -228,3 +228,4 @@ Target solver: CVC4
   (=> (= main__f1__result (rec__main__t__d (us_split_discrs1 q1)))
   (=> (= main__f1__result true) (= x true)))))))
 (check-sat)
+(exit)

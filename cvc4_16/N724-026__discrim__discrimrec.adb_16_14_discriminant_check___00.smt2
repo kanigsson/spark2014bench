@@ -2635,3 +2635,4 @@ Target solver: CVC4
   (us_split_fieldsqtmk o dummy1 dummy1 dummy1 dummy2 dummy2 dummy1 dummy2
   dummy3 dummy3)))))))))))))))
 (check-sat)
+(exit)

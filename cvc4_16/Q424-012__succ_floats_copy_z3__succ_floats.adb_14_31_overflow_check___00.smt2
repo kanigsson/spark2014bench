@@ -207,3 +207,4 @@ Target solver: CVC4
   (fp.lt (prev_representable x2) (fp #b0 #b01111111 #b00000000000000000000000))
   (not (= x2 (fp.neg (fp #b0 #b11111110 #b11111111111111111111111)))))))))))))))))
 (check-sat)
+(exit)

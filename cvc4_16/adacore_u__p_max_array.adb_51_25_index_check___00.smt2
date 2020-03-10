@@ -404,3 +404,4 @@ Target solver: CVC4
   (=> (exists ((o9 Int)) (= (to_rep (select temp___loop_entry_317 usf)) o9))
   (<= (to_rep1 a__first) usf))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

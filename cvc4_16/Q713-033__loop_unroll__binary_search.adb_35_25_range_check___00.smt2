@@ -369,3 +369,4 @@ Target solver: CVC4
   (=> (= spark__branch1 (ite (< o2 i) true false))
   (=> (= spark__branch1 true) (in_range2 (+ med1 1))))))))))))))))))))))))
 (check-sat)
+(exit)

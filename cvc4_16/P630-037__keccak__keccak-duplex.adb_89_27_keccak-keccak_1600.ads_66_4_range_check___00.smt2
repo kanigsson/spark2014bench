@@ -1172,3 +1172,4 @@ Target solver: CVC4
         ctx__split_fields)))))
   (=> (<= 0 r171s) (<= 0 0)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

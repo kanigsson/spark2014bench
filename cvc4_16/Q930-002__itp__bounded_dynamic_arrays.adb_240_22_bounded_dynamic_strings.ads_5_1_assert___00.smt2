@@ -709,3 +709,4 @@ Target solver: CVC4
   (=> (contains__function_guard (contains within fragment) within fragment)
   (not (= (contains within fragment) true)))))))))))
 (check-sat)
+(exit)

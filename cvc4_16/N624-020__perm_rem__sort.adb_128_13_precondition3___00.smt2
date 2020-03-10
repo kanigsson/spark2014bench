@@ -662,3 +662,4 @@ Target solver: CVC4
   (forall ((prec1 (Array Int natural)))
   (=> (= prec1 values) (<= current 100)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

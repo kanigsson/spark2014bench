@@ -760,3 +760,4 @@ Target solver: CVC4
   (=> (= data (slide1 (to_array1 temp___346) (first3 temp___346) o2))
   (in_range2 (length1 text)))))))))))))))))))
 (check-sat)
+(exit)

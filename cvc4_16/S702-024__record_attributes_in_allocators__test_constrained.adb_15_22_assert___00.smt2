@@ -298,3 +298,4 @@ Target solver: CVC4
   (= y__is_null_pointer (rec__test_constrained__r_acc__is_null_pointer
                         temp___alloc_268))))))))))))
 (check-sat)
+(exit)

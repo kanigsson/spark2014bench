@@ -343,3 +343,4 @@ Target solver: CVC4
                                 false)) true)
   (<= (to_rep1 r__first) j1))))))))))))))))))))))))))
 (check-sat)
+(exit)

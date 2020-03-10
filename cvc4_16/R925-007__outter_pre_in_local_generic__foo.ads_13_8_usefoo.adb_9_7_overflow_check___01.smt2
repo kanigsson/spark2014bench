@@ -550,3 +550,4 @@ Target solver: CVC4
   (let ((o16 (+ o15 (div1 o14 2))))
   (=> (in_range1 o16) (in_range1 (- o16 1)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

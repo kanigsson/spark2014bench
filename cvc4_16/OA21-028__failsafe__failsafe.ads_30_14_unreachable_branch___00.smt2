@@ -565,3 +565,4 @@ Target solver: CVC4
   (=> (and (bvule #x00 s1) (bvule s1 #x31))
   (fp.lt (to_rep (select battery_level_at s1)) battery_threshold))))))))))))))))))))
 (check-sat)
+(exit)

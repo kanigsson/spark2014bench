@@ -169,3 +169,4 @@ Target solver: CVC4
   (=> (= arrays__is_id_2__result (ite (= o 97) true false))
   (=> (= arrays__is_id_2__result true) (= (to_rep (select m c)) c))))))))
 (check-sat)
+(exit)

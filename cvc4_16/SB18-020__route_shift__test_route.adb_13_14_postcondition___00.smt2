@@ -284,3 +284,4 @@ Target solver: CVC4
                                                                p__pointer_value1)) 
   s))))))))))))))))
 (check-sat)
+(exit)

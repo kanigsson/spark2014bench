@@ -828,3 +828,4 @@ Target solver: CVC4
   (and (xdr_unsigned_to_integer__function_guard o temp1) (dynamic_invariant3
   o true false true true)) (= last3 (+ position 3)))))))))))))))))))
 (check-sat)
+(exit)

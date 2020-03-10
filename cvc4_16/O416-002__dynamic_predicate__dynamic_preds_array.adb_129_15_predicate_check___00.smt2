@@ -389,3 +389,4 @@ Target solver: CVC4
   (=> (= (to_rep o) temp___341)
   (forall ((x1 (Array Int even))) (=> (= x1 (store x 1 o)) (= (mod2 b 2) 0)))))))))))))))
 (check-sat)
+(exit)

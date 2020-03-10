@@ -753,3 +753,4 @@ Target solver: CVC4
                                   (first3 temp___915) (last3 temp___915)))
   (in_range1 (first1 stacks__get_model__2__result)))))))))))
 (check-sat)
+(exit)

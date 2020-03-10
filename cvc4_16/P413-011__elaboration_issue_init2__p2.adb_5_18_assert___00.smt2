@@ -68,3 +68,4 @@ Target solver: CVC4
  ;; File "p2.ads", line 1, characters 0-0
   (not (forall ((body1_elaborated Bool)) (= body1_elaborated true))))
 (check-sat)
+(exit)

@@ -543,3 +543,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 i3) true false) (ite (<= i3 3) true false)) true)
   (let ((temp___333 (+ i3 1))) (=> (<= temp___333 3) (<= 1 temp___333)))))))))
 (check-sat)
+(exit)

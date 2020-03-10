@@ -604,3 +604,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 length_of_length false false true true)
   (<= (first1 message) start))))))))))))
 (check-sat)
+(exit)

@@ -1672,3 +1672,4 @@ Target solver: CVC4
   (forall ((offset1 Int))
   (=> (= offset1 o12) (in_range1 (- remaining_bytes free_bytes_in_block1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

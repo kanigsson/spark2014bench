@@ -298,3 +298,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__foo__r__x temp___loop_entry_237)) o9)
   (= usf (to_rep (rec__foo__r__x temp___loop_entry_237))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

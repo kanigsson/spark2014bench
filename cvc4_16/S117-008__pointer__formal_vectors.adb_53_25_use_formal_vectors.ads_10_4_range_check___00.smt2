@@ -1433,3 +1433,4 @@ Target solver: CVC4
   r91s 1))) (< r91s 1))
   (=> (<= 1 r91s) (<= (first1 new_content__pointer_value) 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

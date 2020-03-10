@@ -168,3 +168,4 @@ Target solver: CVC4
   (=> (= numerics__Omultiply__result o)
   (fp.eq numerics__Omultiply__result (fp.mul RNE left right))))))))))
 (check-sat)
+(exit)

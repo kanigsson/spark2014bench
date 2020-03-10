@@ -1266,3 +1266,4 @@ Target solver: CVC4
   (balance account2 accounts_balance2 links2)))
   (= (is_empty (balance account1 accounts_balance1 links1)) true)))))))))))))))
 (check-sat)
+(exit)

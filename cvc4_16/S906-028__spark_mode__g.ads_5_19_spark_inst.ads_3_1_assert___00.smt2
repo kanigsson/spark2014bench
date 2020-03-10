@@ -97,3 +97,4 @@ Target solver: CVC4
  ;; File "spark_inst.ads", line 3, characters 0-0
   (not (=> (func__function_guard (func 0) 0) (= (func 0) true))))
 (check-sat)
+(exit)

@@ -159,3 +159,4 @@ Target solver: CVC4
   (forall ((z2 Float32))
   (=> (= z2 o1) (fp.leq (fp #b0 #b10000010 #b00110011001100110001111) z2))))))))))))))))))
 (check-sat)
+(exit)

@@ -413,3 +413,4 @@ Target solver: CVC4
      (us_repqtmk
      (us_split_fieldsqtmk rliteral (temp_____aggregate_def_691 32)))) true)))))))
 (check-sat)
+(exit)

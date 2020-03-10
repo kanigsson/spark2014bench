@@ -168,3 +168,4 @@ Target solver: CVC4
   (=> (in_range1 o3)
   (forall ((mint2 Int)) (=> (= mint2 o3) (in_range (+ x y))))))))))))))))))))))))))
 (check-sat)
+(exit)

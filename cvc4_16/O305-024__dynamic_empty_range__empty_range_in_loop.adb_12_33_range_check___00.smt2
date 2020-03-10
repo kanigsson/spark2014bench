@@ -250,3 +250,4 @@ Target solver: CVC4
   (=> (<= j1 100)
   (let ((o (+ c 1))) (=> (in_range1 o) (dynamic_property1 first1 100 o))))))))))))))
 (check-sat)
+(exit)

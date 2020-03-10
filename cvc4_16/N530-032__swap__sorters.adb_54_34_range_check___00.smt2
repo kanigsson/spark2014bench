@@ -359,3 +359,4 @@ Target solver: CVC4
   (=> (= smallest2 o3)
   (=> (<= current1 (to_rep values__last)) (<= 1 current1)))))))))))))))))))))))))))
 (check-sat)
+(exit)

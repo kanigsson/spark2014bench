@@ -1123,3 +1123,4 @@ Target solver: CVC4
                                                            item__first)) temp___loop_entry_373))))))
   (= cur_position (+ (- (+ temp___loop_entry_371 last3) (to_rep1 item__first)) 1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

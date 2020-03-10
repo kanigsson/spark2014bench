@@ -286,3 +286,4 @@ Target solver: CVC4
   (=> (dynamic_invariant i true false true true)
   (=> (= z (ite true true false)) (= z true))))))
 (check-sat)
+(exit)

@@ -702,3 +702,4 @@ Target solver: CVC4
   (=> (dynamic_predicate1 temp___235) (in_range2 (distinct 1 0)
   (us_split_discrs1 temp___235))))))
 (check-sat)
+(exit)

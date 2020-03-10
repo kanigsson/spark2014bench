@@ -510,3 +510,4 @@ Target solver: CVC4
   (=> (= tmp o)
   (=> (dynamic_invariant tmp true false true true) (or (= tmp 0) (<= 1 tmp)))))))))
 (check-sat)
+(exit)

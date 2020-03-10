@@ -1469,3 +1469,4 @@ Target solver: CVC4
   (= o false))))))))
   (=> (= o true) (=> (not (= l (first_2 a1))) (in_range10 (- l 1))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

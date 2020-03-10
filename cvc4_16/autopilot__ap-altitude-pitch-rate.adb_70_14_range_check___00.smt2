@@ -470,3 +470,4 @@ Target solver: CVC4
   (let ((o2 (* (- pitch early_pitch1) 10)))
   (=> (in_range1 o2) (in_range3 (div1 o2 20))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -227,3 +227,4 @@ Target solver: CVC4
   (=> (= (rec__default_init__discr__b (us_split_discrs1 x)) true)
   (default_init__discr__f__pred x))))
 (check-sat)
+(exit)

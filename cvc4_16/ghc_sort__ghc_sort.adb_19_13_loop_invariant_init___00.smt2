@@ -549,3 +549,4 @@ Target solver: CVC4
   (=> (and (<= 1 k) (<= k (- top 1)))
   (< (to_rep1 (select cut k)) (to_rep1 (select cut (+ k 1)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

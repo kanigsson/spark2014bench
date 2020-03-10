@@ -578,3 +578,4 @@ Target solver: CVC4
   (and (and (<= 1 temp___309) (<= temp___309 3)) (and (<= 1 3) (<= 3 3))))
   (let ((temp___307 (+ i31 1))) (=> (<= temp___307 3) (<= 1 temp___307))))))))))))))))))))))))
 (check-sat)
+(exit)

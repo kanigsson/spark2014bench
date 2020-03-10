@@ -229,3 +229,4 @@ Target solver: CVC4
  ;; File "dynamic_preds_array.ads", line 4, characters 0-0
   (not (=> (dynamic_invariant i10s true false false true) (not (= 2 0)))))
 (check-sat)
+(exit)

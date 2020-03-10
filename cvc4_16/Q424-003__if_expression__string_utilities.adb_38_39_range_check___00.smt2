@@ -1055,3 +1055,4 @@ Target solver: CVC4
         (to_rep2 (get lengths2 o3 o2)) 0))))
   (let ((o5 (+ 1 o4))) (=> (in_range5 o5) (dynamic_property1 0 last2 o5))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

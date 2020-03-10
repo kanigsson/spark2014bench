@@ -321,3 +321,4 @@ Target solver: CVC4
                                                false)) true)
   (<= (length b) (length a))))))))))))
 (check-sat)
+(exit)

@@ -420,3 +420,4 @@ Target solver: CVC4
   (=> (in_range2 (bv2nat (bvmul #x00000008 vehicle_speed))) (in_range2
   (bv2nat (bvmul #x0000000A wheel_speed))))))))))))))))
 (check-sat)
+(exit)

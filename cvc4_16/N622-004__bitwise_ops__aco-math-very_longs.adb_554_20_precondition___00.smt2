@@ -1055,3 +1055,4 @@ Target solver: CVC4
                                                          (rec__ada___ada___aco__math__very_longs__very_long__octet_length
                                                          (us_split_discrs1 p)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

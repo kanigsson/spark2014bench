@@ -776,3 +776,4 @@ Target solver: CVC4
   (=> (= (= o1 true) (= (has_key (positions o) usf1) true))
   (=> (= (and (ite true true false) o1) true) (= (has_element l usf1) true))))))))))
 (check-sat)
+(exit)

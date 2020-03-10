@@ -400,3 +400,4 @@ Target solver: CVC4
                     false true))
   (=> (= spark__branch1 true) (in_range1 (- pos 1))))))))))))))))
 (check-sat)
+(exit)

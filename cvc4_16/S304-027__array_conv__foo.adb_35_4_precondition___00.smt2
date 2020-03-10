@@ -1115,3 +1115,4 @@ Target solver: CVC4
                                         (us_repqtmk1 structure__split_discrs
                                         structure__split_fields1))))))))))))))))))))
 (check-sat)
+(exit)

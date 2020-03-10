@@ -1084,3 +1084,4 @@ Target solver: CVC4
      (us_split_discrs1 l))) o1)
   (in_range2 (+ o1 o)))))))))
 (check-sat)
+(exit)

@@ -584,3 +584,4 @@ Target solver: CVC4
   (=> (<= temp___301 (last1 c__split_fields1)) (type_invariant
   (select (to_array c__split_fields1) temp___301)))))))))))))))
 (check-sat)
+(exit)

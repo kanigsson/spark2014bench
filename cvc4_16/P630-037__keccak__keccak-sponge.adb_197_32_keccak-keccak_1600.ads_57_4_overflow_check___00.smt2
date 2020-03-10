@@ -1547,3 +1547,4 @@ Target solver: CVC4
   (<= message_last1 (last1 message))) (in_range1
   (+ (mod2 bit_length 8) suffix_len))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

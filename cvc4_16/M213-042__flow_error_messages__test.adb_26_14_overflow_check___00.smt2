@@ -110,3 +110,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (and (= n1 12) (= m1 m))
   (and (= m1 12) (= n1 n))))) (in_range (+ n1 m1))))))))))
 (check-sat)
+(exit)

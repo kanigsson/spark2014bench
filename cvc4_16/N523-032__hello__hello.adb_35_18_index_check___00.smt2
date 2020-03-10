@@ -387,3 +387,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 (to_lower o1) true false true true)
   (<= (first1 res) usf))))))))))))))))))
 (check-sat)
+(exit)

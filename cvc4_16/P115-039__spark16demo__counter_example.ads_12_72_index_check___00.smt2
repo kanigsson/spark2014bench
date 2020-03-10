@@ -573,3 +573,4 @@ Target solver: CVC4
   (= (to_rep2 (rec__counter_example__item__cat (us_split_fields1 i5s))) temp___198)
   (<= (first1 num_item_per_category) temp___198))))))))
 (check-sat)
+(exit)

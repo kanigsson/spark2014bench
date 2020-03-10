@@ -324,3 +324,4 @@ Target solver: CVC4
   (=> (< (last1 a) 2147483647)
   (=> (in_range (length b)) (in_range (+ (last1 a) 1)))))))))
 (check-sat)
+(exit)

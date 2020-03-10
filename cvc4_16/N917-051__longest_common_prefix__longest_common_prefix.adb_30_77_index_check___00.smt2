@@ -297,3 +297,4 @@ Target solver: CVC4
   (= (and (ite (<= 0 usf) true false) (ite (<= usf (- l1 1)) true false)) true)
   (let ((o1 (+ y usf))) (=> (in_range1 o1) (<= 1 o1)))))))))))))))))
 (check-sat)
+(exit)

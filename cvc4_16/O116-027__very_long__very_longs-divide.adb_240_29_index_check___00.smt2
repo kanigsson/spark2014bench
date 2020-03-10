@@ -1679,3 +1679,4 @@ Target solver: CVC4
   (=> (= (to_rep2 o9) o8)
   (<= (first1 remainder__split_fields2) divisor_index1)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

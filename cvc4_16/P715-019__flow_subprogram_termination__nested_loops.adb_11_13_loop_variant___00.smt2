@@ -161,3 +161,4 @@ Target solver: CVC4
   (=> (not (= i1 5))
   (forall ((i2 Int)) (=> (= i2 (+ i1 1)) (< temp___159 i2)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

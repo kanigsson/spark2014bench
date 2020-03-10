@@ -604,3 +604,4 @@ Target solver: CVC4
   (= (to_rep (rec__repro_main__int_table__t__last (us_split_fields1 table))) temp___313)
   (=> (<= 1 temp___313) (<= 1 1))))))
 (check-sat)
+(exit)

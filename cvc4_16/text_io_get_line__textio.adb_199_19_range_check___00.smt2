@@ -1218,3 +1218,4 @@ Target solver: CVC4
   (and (<= 1 r67b) (= (- (last1 r) (first1 r)) (- r67b 1))) (< r67b 1))
   (=> (<= 1 r67b) (<= (to_rep1 result____first) 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -807,3 +807,4 @@ Target solver: CVC4
                              (to_rep1 (select r1 (- k 1)))))))))
   (=> (not (= i (first1 a))) (= acc (to_rep1 (select r1 (- i 1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

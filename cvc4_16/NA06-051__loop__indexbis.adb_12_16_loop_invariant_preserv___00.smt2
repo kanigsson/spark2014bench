@@ -415,3 +415,4 @@ Target solver: CVC4
   (=> (in_range2 o3)
   (forall ((courant2 Int)) (=> (= courant2 o3) (<= (first1 s) courant2))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

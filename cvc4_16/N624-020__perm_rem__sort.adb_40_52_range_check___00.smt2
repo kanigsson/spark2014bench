@@ -878,3 +878,4 @@ Target solver: CVC4
                                               (select (to_array temp___334) k))))))))
   (=> (in_range4 y) (in_range4 x)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

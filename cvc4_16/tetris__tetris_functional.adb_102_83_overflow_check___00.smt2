@@ -2200,3 +2200,4 @@ Target solver: CVC4
   (not (= (is_complete_line (select cur_board1 y)) true)))))) (in_range1
   (+ temp___loop_entry_888 temp___loop_entry_889)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

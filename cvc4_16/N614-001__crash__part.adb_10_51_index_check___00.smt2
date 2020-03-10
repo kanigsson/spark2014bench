@@ -344,3 +344,4 @@ Target solver: CVC4
   (=> (exists ((o8 Int)) (= (to_rep (select x usf)) o8))
   (<= (to_rep x__first) usf)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

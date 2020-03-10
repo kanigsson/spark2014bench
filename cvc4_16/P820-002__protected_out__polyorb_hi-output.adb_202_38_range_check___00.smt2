@@ -400,3 +400,4 @@ Target solver: CVC4
   (=> (dynamic_invariant s2 true false true true)
   (=> (<= (length s1) 255) (=> (<= (length s2) 255) (in_range1 (length s2))))))))
 (check-sat)
+(exit)

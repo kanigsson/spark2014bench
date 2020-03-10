@@ -451,3 +451,4 @@ Target solver: CVC4
   (to_rep (select (to_array b_v2) i)))) true)
   (= (to_rep (select a_v1 i)) (to_rep (select a_v21 i))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

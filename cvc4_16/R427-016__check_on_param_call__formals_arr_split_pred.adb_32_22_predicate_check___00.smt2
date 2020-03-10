@@ -529,3 +529,4 @@ Target solver: CVC4
   (=> (dynamic_property (- 2147483648) 2147483647 1 10) (dynamic_predicate2
   (formals_arr_split_pred__y__aggregate_def 1)))))))))))))
 (check-sat)
+(exit)

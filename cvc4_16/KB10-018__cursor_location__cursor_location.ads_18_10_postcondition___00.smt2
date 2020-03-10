@@ -188,3 +188,4 @@ Target solver: CVC4
   (=> (= cursor_location__fulfill_condition__result o2)
   (= (select du_available side) true)))))))))))))))
 (check-sat)
+(exit)

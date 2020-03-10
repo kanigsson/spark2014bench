@@ -3204,3 +3204,4 @@ Target solver: CVC4
   (= (to_rep3 (rec__pupils__pupildata__numberofpupils p__split_fields4)) temp___485)
   (<= 1 temp___485))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

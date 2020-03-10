@@ -1200,3 +1200,4 @@ Target solver: CVC4
   (os_mbx_is_empty__function_guard (os_mbx_is_empty o3 os_task_mbx_rw4) o3
   os_task_mbx_rw4)) (not (= (os_mbx_is_empty task_id os_task_mbx_rw3) true)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

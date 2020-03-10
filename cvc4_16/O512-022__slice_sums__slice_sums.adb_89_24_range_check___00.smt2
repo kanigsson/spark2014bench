@@ -750,3 +750,4 @@ Target solver: CVC4
   (=> (in_range1 (- current_hi 1))
   (=> (<= current_lo1 (- current_hi 1)) (<= 1 current_lo1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

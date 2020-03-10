@@ -230,3 +230,4 @@ Target solver: CVC4
   (=> (= mm1 (store mm 97 (store (select mm 97) 0 o)))
   (= (to_rep (select (select mm1 97) 0)) 1))))))
 (check-sat)
+(exit)

@@ -1580,3 +1580,4 @@ Target solver: CVC4
   (<= o5 (last_21
          test_higher_order3__my_count_2__fold_count__acc__fold__result)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

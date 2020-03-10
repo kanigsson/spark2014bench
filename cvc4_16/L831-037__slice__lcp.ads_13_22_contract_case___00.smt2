@@ -456,3 +456,4 @@ Target solver: CVC4
   (= lcp__result 0))
   (=> (= (= x y) true) (= lcp__result (+ (- (last1 a) x) 1)))))))))))))))))))))
 (check-sat)
+(exit)

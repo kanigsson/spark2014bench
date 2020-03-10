@@ -893,3 +893,4 @@ Target solver: CVC4
   (= o13 (ite (= (choose o12) true) (+ o11 1) o11)))
   (<= (to_rep r__first) (first1 a))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

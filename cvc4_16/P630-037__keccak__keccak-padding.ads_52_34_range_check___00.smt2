@@ -627,3 +627,4 @@ Target solver: CVC4
   (=> (= (to_rep first_block__last) o4)
   (=> (= (to_rep first_block__first) o5) (in_range (length o5 o4))))))))))))))))
 (check-sat)
+(exit)

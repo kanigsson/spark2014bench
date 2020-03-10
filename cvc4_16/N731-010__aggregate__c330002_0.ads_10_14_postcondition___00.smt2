@@ -362,3 +362,4 @@ Target solver: CVC4
   (= (bool_eq a (to_rep a__first) (to_rep a__last)
      (temp_____aggregate_def_167 85 36) 1 2) true))))))))))))))))
 (check-sat)
+(exit)

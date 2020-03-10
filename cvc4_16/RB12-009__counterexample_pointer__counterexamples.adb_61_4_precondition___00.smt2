@@ -283,3 +283,4 @@ Target solver: CVC4
   (= (bool_eq (rec__counterexamples__two_access__second x__split_fields)
      us_null_pointer) true)))))))
 (check-sat)
+(exit)

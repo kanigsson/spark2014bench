@@ -797,3 +797,4 @@ Target solver: CVC4
      (to_array temp___230) (first1 temp___230) (last1 temp___230)))) true))))
   (=> (in_range4 x) (in_range4 y)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

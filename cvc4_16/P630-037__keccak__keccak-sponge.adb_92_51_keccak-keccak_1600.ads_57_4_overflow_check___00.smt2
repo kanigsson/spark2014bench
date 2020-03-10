@@ -1669,3 +1669,4 @@ Target solver: CVC4
                         ctx__split_fields)))
   (in_range1 (+ offset free_bytes_in_block1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

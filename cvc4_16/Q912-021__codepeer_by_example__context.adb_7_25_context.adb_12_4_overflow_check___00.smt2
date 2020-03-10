@@ -177,3 +177,4 @@ Target solver: CVC4
   (=> (= x (temp_____aggregate_def_186 1))
   (=> (= j 1) (=> (= (to_rep (select x j)) o) (in_range (+ o 1))))))))
 (check-sat)
+(exit)

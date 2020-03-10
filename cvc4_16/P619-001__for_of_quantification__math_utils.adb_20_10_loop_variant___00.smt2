@@ -399,3 +399,4 @@ Target solver: CVC4
   (= result__3 result__2))))))
   (=> (and (<= (first1 v) i2) (<= i2 (last1 v))) (< temp___191 i2))))))))))))))))))))))))))))
 (check-sat)
+(exit)

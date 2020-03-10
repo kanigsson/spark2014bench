@@ -507,3 +507,4 @@ Target solver: CVC4
   (let ((temp___176 (to_rep (select a k))))
   (and (<= (- o) temp___176) (<= temp___176 o)))))) (not (= o1 true))))))))))))))))
 (check-sat)
+(exit)

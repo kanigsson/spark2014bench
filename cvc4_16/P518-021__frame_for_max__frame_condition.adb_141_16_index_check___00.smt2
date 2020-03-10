@@ -455,3 +455,4 @@ Target solver: CVC4
   (=> (<= (to_rep1 a__first) index)
   (=> (<= index (to_rep1 a__last)) (<= (to_rep1 a__first) index)))))))
 (check-sat)
+(exit)

@@ -376,3 +376,4 @@ Target solver: CVC4
   (and (= (to_rep a__last) o5) (exists ((o6 Int)) (= (to_rep a__first) o6))))
   (<= (to_rep a__first) i))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

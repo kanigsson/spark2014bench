@@ -333,3 +333,4 @@ Target solver: CVC4
   (=> (<= y (last1 a))
   (=> (<= (first1 a) y) (=> (<= y (last1 a)) (<= (first1 a) x))))))))))))
 (check-sat)
+(exit)

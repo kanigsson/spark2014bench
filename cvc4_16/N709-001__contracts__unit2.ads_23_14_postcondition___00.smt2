@@ -505,3 +505,4 @@ Target solver: CVC4
                                                         (rec__unit1__t1__c11
                                                         x__split_fields1)) 1)))))))))))))))))))))
 (check-sat)
+(exit)

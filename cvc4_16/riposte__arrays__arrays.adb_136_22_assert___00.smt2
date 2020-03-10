@@ -176,3 +176,4 @@ Target solver: CVC4
   (=> (= (arrays__zero_enum_map__aggregate_def 2 0) zero_enum_map)
   (=> (= m zero_enum_map) (= (to_rep (select m 1)) 0))))))
 (check-sat)
+(exit)

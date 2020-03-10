@@ -563,3 +563,4 @@ Target solver: CVC4
   (< (compare x (to_rep x__first) (to_rep x__last) z (to_rep z__first)
      (to_rep z__last)) 0))))))))))))))))))))))))
 (check-sat)
+(exit)

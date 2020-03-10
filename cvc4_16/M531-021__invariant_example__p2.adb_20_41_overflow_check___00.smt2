@@ -378,3 +378,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 halfway false false true true)
   (=> (= upper1 46341) (in_range2 (* upper1 upper1))))))))))
 (check-sat)
+(exit)

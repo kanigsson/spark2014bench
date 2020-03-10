@@ -1148,3 +1148,4 @@ Target solver: CVC4
   (=> (<= 0 alignment4)
   (=> (<= 0 alignment5) (=> (<= 0 1) (=> (<= 0 4) (<= 0 alignment6)))))))))))))))))))))))))))
 (check-sat)
+(exit)

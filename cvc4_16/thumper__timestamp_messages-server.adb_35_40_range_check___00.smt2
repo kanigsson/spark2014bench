@@ -1854,3 +1854,4 @@ Target solver: CVC4
      (us_split_fields3 stamp))) o)
   (in_range (bv2nat o))))))))))))
 (check-sat)
+(exit)

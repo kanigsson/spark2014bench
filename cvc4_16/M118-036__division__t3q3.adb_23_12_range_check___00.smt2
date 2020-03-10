@@ -139,3 +139,4 @@ Target solver: CVC4
   (=> (<= (* i j) 2147483647)
   (let ((o (* i j))) (=> (in_range o) (in_range1 o))))))))))
 (check-sat)
+(exit)

@@ -272,3 +272,4 @@ Target solver: CVC4
   (=> (in_range1 o1)
   (forall ((a23 Int)) (=> (= a23 o1) (in_range1 (- a23 b21)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

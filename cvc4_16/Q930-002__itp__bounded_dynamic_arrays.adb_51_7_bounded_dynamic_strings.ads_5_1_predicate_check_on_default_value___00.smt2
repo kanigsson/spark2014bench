@@ -982,3 +982,4 @@ Target solver: CVC4
   (forall ((usf1 us_rep1))
   (=> (default_initial_assumption usf1 false) (dynamic_predicate1 usf1)))))))))))
 (check-sat)
+(exit)

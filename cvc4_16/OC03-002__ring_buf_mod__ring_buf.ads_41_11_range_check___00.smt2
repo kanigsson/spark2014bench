@@ -766,3 +766,4 @@ Target solver: CVC4
   (= (to_rep (rec__ring_buf__ring_buffer__first (us_split_fields1 r))) temp___296)
   (=> (bvule temp___296 #xFFFF) (bvule #x0000 temp___296)))))))))))))))
 (check-sat)
+(exit)

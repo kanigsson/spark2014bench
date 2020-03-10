@@ -379,3 +379,4 @@ Target solver: CVC4
   (forall ((z1 Int))
   (=> (= z1 (* x 2)) (=> (= z1 (+ x x)) (in_range3 (* x 2)))))))))))))))
 (check-sat)
+(exit)

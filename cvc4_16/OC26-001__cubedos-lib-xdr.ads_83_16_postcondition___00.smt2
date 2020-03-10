@@ -776,3 +776,4 @@ Target solver: CVC4
   (=> (in_range2 o4)
   (forall ((last3 Int)) (=> (= last3 o4) (= last3 (+ position 3))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -117,3 +117,4 @@ Target solver: CVC4
           true false) (ite (< x12 y) true false)) true)
   (in_range1 (+ x12 2)))))))))))
 (check-sat)
+(exit)

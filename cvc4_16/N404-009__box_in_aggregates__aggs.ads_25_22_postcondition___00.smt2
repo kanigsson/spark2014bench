@@ -208,3 +208,4 @@ Target solver: CVC4
   (forall ((x (Array Int t1)))
   (=> (= x (temp_____aggregate_def_218 6)) (= (to_rep (select x 2)) 5)))))
 (check-sat)
+(exit)

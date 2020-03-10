@@ -131,3 +131,4 @@ Target solver: CVC4
   (forall ((quotient2 Int))
   (=> (= quotient2 o) (in_range1 (- remainder2 divisor)))))))))))))))))))))
 (check-sat)
+(exit)

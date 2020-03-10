@@ -2421,3 +2421,4 @@ Target solver: CVC4
   (= to_line1 to_line)) (= complete_lines1 complete_lines)))))
   (= (no_complete_lines cur_board1) true))))))))))))))))
 (check-sat)
+(exit)

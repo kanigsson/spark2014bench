@@ -760,3 +760,4 @@ Target solver: CVC4
   (=> (= (to_rep (select (to_array temp___624) usf)) o1)
   (rec__ghc_sort__int_array_list__pointer_value__pred l)))))))))))))
 (check-sat)
+(exit)

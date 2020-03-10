@@ -327,3 +327,4 @@ Target solver: CVC4
                                           true false)) true)
   (not (= (contains s1 i1) true)))))))))))))
 (check-sat)
+(exit)

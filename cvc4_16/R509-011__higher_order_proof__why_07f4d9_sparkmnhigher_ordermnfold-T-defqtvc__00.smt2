@@ -613,3 +613,4 @@ Target solver: CVC4
   (ite (= o1 true) (= o (ite (= i (last2 a)) false true)) (= o false))))
   (=> (= o true) (in_range6 (last_2 a))))))))))
 (check-sat)
+(exit)

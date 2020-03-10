@@ -109,3 +109,4 @@ Target solver: CVC4
   (=> (= alpha_launch_examples__example_1__result o)
   (= alpha_launch_examples__example_1__result (abs1 x)))))))))
 (check-sat)
+(exit)

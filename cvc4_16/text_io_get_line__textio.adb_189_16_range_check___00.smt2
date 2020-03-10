@@ -1211,3 +1211,4 @@ Target solver: CVC4
   (and (<= 1 r64b) (= (- (last1 r) (first1 r)) (- r64b 1))) (< r64b 1))
   (=> (<= 1 r64b) (<= (to_rep1 result____first) 1)))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

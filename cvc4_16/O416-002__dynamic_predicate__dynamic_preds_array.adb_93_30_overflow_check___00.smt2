@@ -408,3 +408,4 @@ Target solver: CVC4
   (and (= (to_rep o2) o1) (= result__1 (store result__ 1 o2))))))))))
   (=> (= (to_rep (select result__1 1)) o) (in_range (+ o 2)))))))))
 (check-sat)
+(exit)

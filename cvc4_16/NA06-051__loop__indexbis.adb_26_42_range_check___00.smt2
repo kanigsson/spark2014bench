@@ -408,3 +408,4 @@ Target solver: CVC4
   (=> (= spark__branch2 true)
   (=> (not (= possible1 2147483647)) (in_range2 (+ possible1 1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -430,3 +430,4 @@ Target solver: CVC4
   (and (and (<= 1 n) (<= n 5)) (and (<= 1 r67b) (<= r67b 5))))
   (<= (first1 (of_array new_str n r67b)) 1))))))))))))))
 (check-sat)
+(exit)

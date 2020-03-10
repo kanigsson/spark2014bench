@@ -439,3 +439,4 @@ Target solver: CVC4
   (=> (<= (first1 b) location2)
   (=> (<= location2 (last1 b)) (<= (first1 a) location2))))))))))))))))
 (check-sat)
+(exit)

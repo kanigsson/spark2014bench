@@ -609,3 +609,4 @@ Target solver: CVC4
   (= relative_error1 (bvudiv (bvsub requested_force calculated_force) 
   requested_force))))))))))))))))
 (check-sat)
+(exit)

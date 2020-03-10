@@ -645,3 +645,4 @@ Target solver: CVC4
   (= (frame_left (of_array a1 (to_rep1 a__first) (to_rep1 a__last)) a2) true)
   (< 0 (length (to_rep1 a__first) (to_rep1 a__last))))))))))))))))))))))))))
 (check-sat)
+(exit)

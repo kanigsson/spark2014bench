@@ -926,3 +926,4 @@ Target solver: CVC4
      (us_repqtmk front__split_discrs
      (us_split_fieldsqtmk front__split_fields3)) i) (element ofront i))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

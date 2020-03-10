@@ -967,3 +967,4 @@ Target solver: CVC4
   (forall ((o8 character))
   (=> (= (to_rep o8) (bv2nat o7)) (in_range1 (- i1 position)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

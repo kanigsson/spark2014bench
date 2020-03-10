@@ -503,3 +503,4 @@ Target solver: CVC4
   (=> (= a (temp_____aggregate_def_213 1 2 3 4 5 1 2 3 4 5 0))
   (=> (= (bool_eq a 1 5 a 6 10) true) (<= 1 1))))))
 (check-sat)
+(exit)

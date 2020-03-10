@@ -760,3 +760,4 @@ Target solver: CVC4
   (= (is_perm (of_array (to_array init) (first1 init) (last1 init))
      (of_array values (to_rep1 values__first) (to_rep1 values__last))) true)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

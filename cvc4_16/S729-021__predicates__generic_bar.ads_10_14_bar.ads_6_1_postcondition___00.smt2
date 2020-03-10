@@ -273,3 +273,4 @@ Target solver: CVC4
   (us_repqtmk (us_split_fieldsqtmk context__split_fields1))))
   (= (valid (us_repqtmk (us_split_fieldsqtmk context__split_fields))) true))))))))))))
 (check-sat)
+(exit)

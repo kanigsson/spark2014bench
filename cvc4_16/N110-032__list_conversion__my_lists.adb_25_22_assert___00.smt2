@@ -989,3 +989,4 @@ Target solver: CVC4
   (= (to_rep (rec__my_lists__my_lists__list__capacity l5__split_discrs)) 100)
   (= (to_rep (rec__my_lists__my_lists__list__capacity l6__split_discrs)) 100)))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

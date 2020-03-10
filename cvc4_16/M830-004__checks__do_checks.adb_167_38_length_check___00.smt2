@@ -967,3 +967,4 @@ Target solver: CVC4
   (=> (= (last1 temp___793) (- zero 1))
   (=> (<= (first1 temp___793) (last1 temp___793)) (<= 1 0))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

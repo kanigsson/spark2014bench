@@ -659,3 +659,4 @@ Target solver: CVC4
   (= o false))
   (=> (= o true) (rec__test__bytes_ptr__pointer_value__pred buffer)))))))
 (check-sat)
+(exit)

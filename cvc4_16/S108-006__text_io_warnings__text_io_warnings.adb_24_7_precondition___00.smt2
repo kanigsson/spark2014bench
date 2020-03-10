@@ -1282,3 +1282,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 j) true false) (ite (<= j 100) true false)) true)
   (= (is_open source1) true))))))))))))))))))))
 (check-sat)
+(exit)

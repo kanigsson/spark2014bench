@@ -397,3 +397,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 i true false true true)
   (=> (= ux1 ((_ int2bv 64) x)) (bvule ux1 #x000000007FFFFFFF))))))))))))
 (check-sat)
+(exit)

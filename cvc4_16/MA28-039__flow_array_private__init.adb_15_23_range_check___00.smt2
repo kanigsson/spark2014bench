@@ -158,3 +158,4 @@ Target solver: CVC4
  ;; File "init.adb", line 6, characters 0-0
   (not (forall ((i Int)) (=> (= i 1) (in_range (+ i 1))))))
 (check-sat)
+(exit)

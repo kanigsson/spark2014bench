@@ -727,3 +727,4 @@ Target solver: CVC4
   (=> (and (<= first i) (<= i (- j2 1)))
   (= (to_rep (select content i)) (get r2 (+ (- i first) 1))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

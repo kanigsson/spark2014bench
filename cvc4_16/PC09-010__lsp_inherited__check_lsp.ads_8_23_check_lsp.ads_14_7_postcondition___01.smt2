@@ -503,3 +503,4 @@ Target solver: CVC4
                                                (rec__check_lsp__p_overridden__root__f2
                                                (us_split_fields5 x)))))))))
 (check-sat)
+(exit)

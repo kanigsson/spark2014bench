@@ -1980,3 +1980,4 @@ Target solver: CVC4
   (and (elements__function_guard o19 o18) (dynamic_invariant2 o19 true false
   true true)) (in_range (+ o19 o17))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

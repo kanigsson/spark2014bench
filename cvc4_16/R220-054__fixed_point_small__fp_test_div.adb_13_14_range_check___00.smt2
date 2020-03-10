@@ -433,3 +433,4 @@ Target solver: CVC4
   (=> (= y 5)
   (forall ((u1 Int)) (=> (= u1 (fxp_div x y)) (in_range6 (fxp_div1 x y)))))))))))))
 (check-sat)
+(exit)

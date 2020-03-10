@@ -353,3 +353,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 new_data_2 true false true true)
   (=> (= (to_rep2 o) new_data_2) (in_range1 new_data)))))))
 (check-sat)
+(exit)

@@ -1411,3 +1411,4 @@ Target solver: CVC4
   (=> (dynamic_property1 first1 last1 (first_2 a))
   (=> (dynamic_property first last usf) (<= (last_2 a) (to_rep r__last_2))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

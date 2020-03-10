@@ -1447,3 +1447,4 @@ Target solver: CVC4
      (select (rec__patience__state__stacksizes s__split_fields4) usf)) o8)
   (in_range1 (+ usf1 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

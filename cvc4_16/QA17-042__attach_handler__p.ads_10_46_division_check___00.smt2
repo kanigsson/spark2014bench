@@ -298,3 +298,4 @@ Target solver: CVC4
   (and (dynamic_invariant o true false true true) (= o 0)))
   (=> (in_range1 o) (not (= o 0)))))))
 (check-sat)
+(exit)

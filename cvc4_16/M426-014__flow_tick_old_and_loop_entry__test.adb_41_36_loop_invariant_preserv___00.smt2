@@ -150,3 +150,4 @@ Target solver: CVC4
                                           true false)) true)
   (=> (not (= j1 2147483647)) (= x1 temp___loop_entry_180))))))))))))))))
 (check-sat)
+(exit)

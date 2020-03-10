@@ -182,3 +182,4 @@ Target solver: CVC4
   state1 true true true true))))) (= state1 0)))))))
   (and (= speed1 speed) (= state1 state))) (= state1 0)))))))))))))
 (check-sat)
+(exit)

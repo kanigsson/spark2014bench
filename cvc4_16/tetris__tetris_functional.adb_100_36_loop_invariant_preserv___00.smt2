@@ -2260,3 +2260,4 @@ Target solver: CVC4
   (no_complete_lines__function_guard (no_complete_lines cur_board4)
   cur_board4)) (= (no_complete_lines cur_board3) true)))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

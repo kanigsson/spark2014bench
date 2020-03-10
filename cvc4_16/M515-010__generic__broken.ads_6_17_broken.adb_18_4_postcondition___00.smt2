@@ -69,3 +69,4 @@ Target solver: CVC4
   (=> (found_none__function_guard (found_none Tuple0) Tuple0)
   (= (found_none Tuple0) true)))))
 (check-sat)
+(exit)

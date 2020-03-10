@@ -579,3 +579,4 @@ Target solver: CVC4
   (=> (= (last1 temp___239) usf)
   (=> (<= (first1 temp___239) (last1 temp___239)) (<= 1 usf))))))))))
 (check-sat)
+(exit)

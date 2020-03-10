@@ -196,3 +196,4 @@ Target solver: CVC4
                     true false))
   (=> (= spark__branch2 true) (fp.isFinite32 (fp.add RNE res threshold))))))))))))))))))
 (check-sat)
+(exit)

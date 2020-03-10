@@ -296,3 +296,4 @@ Target solver: CVC4
   (valid (to_rep (select c4 j1))) (to_rep (select c4 j1))))
   (= (valid (to_rep (select c3 j))) true))))))))))))))))
 (check-sat)
+(exit)

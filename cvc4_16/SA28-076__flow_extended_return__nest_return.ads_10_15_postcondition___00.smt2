@@ -89,3 +89,4 @@ Target solver: CVC4
   (=> (= nest_return__nesting_func__result z)
   (=> (= nest_return__nesting_func__result true) (= x true))))))))
 (check-sat)
+(exit)

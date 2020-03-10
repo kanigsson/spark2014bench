@@ -232,3 +232,4 @@ Target solver: CVC4
   (= (rec__p__t__locked usf) (distinct 0 0))) (dynamic_predicate
   (us_repqtmk usf))))))
 (check-sat)
+(exit)

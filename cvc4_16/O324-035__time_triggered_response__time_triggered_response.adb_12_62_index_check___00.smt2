@@ -238,3 +238,4 @@ Target solver: CVC4
   (=> (and (<= 0 t) (<= t o1)) (= (select idle_history t) true)))))))
   (=> (= o true) (=> (<= time_idle 50) (<= 0 time_idle))))))))))
 (check-sat)
+(exit)

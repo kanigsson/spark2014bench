@@ -970,3 +970,4 @@ Target solver: CVC4
  ;; File "indefinite_bounded.ads", line 13, characters 0-0
   (not true))
 (check-sat)
+(exit)

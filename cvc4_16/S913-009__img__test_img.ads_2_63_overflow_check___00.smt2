@@ -372,3 +372,4 @@ Target solver: CVC4
   (=> (dynamic_invariant o true false true true) (in_range
   (+ (first1 (to_string (attr__ATTRIBUTE_IMAGE3 o) 12)) 1)))))
 (check-sat)
+(exit)

@@ -69,3 +69,4 @@ Target solver: CVC4
   (=> (= loop_cond (distinct 1 0))
   (=> (= loop_cond true) (= loop_cond1 true))))))
 (check-sat)
+(exit)

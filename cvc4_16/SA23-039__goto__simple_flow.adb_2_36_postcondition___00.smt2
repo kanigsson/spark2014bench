@@ -160,3 +160,4 @@ Target solver: CVC4
   (and (= spark__branch5 (ite (= x 3) true false)) (= spark__branch5 true))))))))))))))))))
   (= y1 3))) (= y1 x)))))))))
 (check-sat)
+(exit)

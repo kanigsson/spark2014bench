@@ -512,3 +512,4 @@ Target solver: CVC4
   (of_array x1 (to_rep x__first) (to_rep x__last))))
   (= (sum (of_array x (to_rep x__first) (to_rep x__last))) 6))))))))))))))))))))))))
 (check-sat)
+(exit)

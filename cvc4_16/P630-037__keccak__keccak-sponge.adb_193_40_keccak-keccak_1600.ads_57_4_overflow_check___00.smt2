@@ -1538,3 +1538,4 @@ Target solver: CVC4
   (let ((o4 (+ bit_length 7)))
   (=> (in_range1 o4) (in_range1 (+ (first1 message) (- (div1 o4 8) 1)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

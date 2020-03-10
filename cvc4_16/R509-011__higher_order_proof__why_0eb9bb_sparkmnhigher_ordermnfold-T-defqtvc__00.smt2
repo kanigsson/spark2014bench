@@ -763,3 +763,4 @@ Target solver: CVC4
   (forall ((r1 (Array Int element_out)))
   (=> (= r1 (store r i o2)) (in_range4 (first1 a)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

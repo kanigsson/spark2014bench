@@ -985,3 +985,4 @@ Target solver: CVC4
   (=> (dynamic_invariant2 lane true false true true)
   (forall ((i Int)) (=> (= i 0) (in_range1 (* i 8)))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

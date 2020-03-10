@@ -604,3 +604,4 @@ Target solver: CVC4
   (= abs_out11 (bvudiv (bvsub requested_force calculated_force) requested_force))
   (fp.leq ((_ to_fp_unsigned 11 53) RNE abs_out11) (fp #b0 #b01111111000 #b0100011110101110000101000111101011100001010001111011)))))))))))))
 (check-sat)
+(exit)

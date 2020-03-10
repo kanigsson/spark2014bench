@@ -733,3 +733,4 @@ Target solver: CVC4
   (or (< (usrec__hi o6) (usrec__lo o6))
   (and (<= (first1 o7) (usrec__lo o6)) (<= (usrec__hi o6) (last1 o7)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

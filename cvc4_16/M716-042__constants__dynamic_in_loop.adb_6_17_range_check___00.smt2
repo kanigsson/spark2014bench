@@ -195,3 +195,4 @@ Target solver: CVC4
   (=> (= c z)
   (=> (dynamic_invariant c true false true true) (=> (<= 1 c) (<= 1 1)))))))))
 (check-sat)
+(exit)

@@ -247,3 +247,4 @@ Target solver: CVC4
   (=> (dynamic_invariant result__ false false true true)
   (=> (= x (s__x__aggregate_def data)) (=> (<= 1 10) (<= first1 1))))))))))
 (check-sat)
+(exit)

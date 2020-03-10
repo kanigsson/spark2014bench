@@ -136,3 +136,4 @@ Target solver: CVC4
   (=> (forall ((m1 Int)) (is_green__function_guard (is_green m1) m1))
   (not (= (is_green m) true)))))))))))))
 (check-sat)
+(exit)

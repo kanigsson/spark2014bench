@@ -444,3 +444,4 @@ Target solver: CVC4
   (let ((temp___214 (to_rep (select a k))))
   (and (<= (- 268435455) temp___214) (<= temp___214 268435455))))))))))
 (check-sat)
+(exit)

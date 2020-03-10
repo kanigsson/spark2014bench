@@ -751,3 +751,4 @@ Target solver: CVC4
   (ite (< usf 65536) (= o (bvshl #x0001 ((_ int2bv 16) usf))) (= o #x0000))
   (in_range1 usf)))))))))))
 (check-sat)
+(exit)

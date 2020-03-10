@@ -245,3 +245,4 @@ Target solver: CVC4
   (ite (= spark__branch true) (= res1 i1) (and (= i1 10) (= res1 res))))))))))
   (= res1 res)))) (=> (= find__find__result res1) (<= 0 find__find__result)))))))))
 (check-sat)
+(exit)

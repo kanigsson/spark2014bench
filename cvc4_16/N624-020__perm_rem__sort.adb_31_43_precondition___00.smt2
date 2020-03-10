@@ -720,3 +720,4 @@ Target solver: CVC4
   (=> (= values2 (store values1 y o3))
   (let ((o4 y)) (=> (in_range4 o4) (<= o4 (last1 (of_array values2 1 100))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

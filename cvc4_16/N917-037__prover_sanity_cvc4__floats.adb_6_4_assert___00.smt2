@@ -135,3 +135,4 @@ Target solver: CVC4
  ;; File "floats.adb", line 2, characters 0-0
   (not (not (dynamic_invariant dummy1 true false true true))))
 (check-sat)
+(exit)

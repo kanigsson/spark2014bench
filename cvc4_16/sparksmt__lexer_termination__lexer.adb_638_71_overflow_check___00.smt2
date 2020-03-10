@@ -3004,3 +3004,4 @@ Target solver: CVC4
   (= (or (ite (= state2 2) true false) (ite (= state2 9) true false)) true)
   (in_range1 (- (last1 tmp) 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

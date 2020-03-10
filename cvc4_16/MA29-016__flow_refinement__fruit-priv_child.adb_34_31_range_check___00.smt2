@@ -245,3 +245,4 @@ Target solver: CVC4
   extra_cost1) (dynamic_invariant o true false true true))
   (let ((o1 (* fruit_salads1 o))) (=> (in_range o1) (in_range1 o1))))))))))))))))))))))
 (check-sat)
+(exit)

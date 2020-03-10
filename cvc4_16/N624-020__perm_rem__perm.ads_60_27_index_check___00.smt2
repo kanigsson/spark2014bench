@@ -747,3 +747,4 @@ Target solver: CVC4
   (= (is_perm (remove o3 ia1) (remove o2 ib3)) true))))))))))))
   (=> (= o1 true) (<= ib (last1 b))))))))))))))))))
 (check-sat)
+(exit)

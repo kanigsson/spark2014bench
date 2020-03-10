@@ -514,3 +514,4 @@ Target solver: CVC4
   (forall ((a1 (Array Int integer))) (lcp__function_guard (lcp 1 1001 a1) 1
   1001 a1)) (= (lcp 1 1001 a) 0)))))))))))
 (check-sat)
+(exit)

@@ -334,3 +334,4 @@ Target solver: CVC4
   (=> (= for_loop_array__L_1__R6b__assume r6b)
   (= (to_rep (select r6b c3b1)) 0))))))))))))))))))))
 (check-sat)
+(exit)

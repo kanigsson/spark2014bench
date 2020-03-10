@@ -962,3 +962,4 @@ Target solver: CVC4
   (=> (and (<= (first1 x__pointer_value) 1) (<= 1 (last1 x__pointer_value)))
   (<= (first1 x2__pointer_value) 3))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -93,3 +93,4 @@ Target solver: CVC4
  ;; File "inconsistent.adb", line 1, characters 0-0
   (not (=> (dynamic_invariant x true false true true) (not (= x (- 1))))))
 (check-sat)
+(exit)

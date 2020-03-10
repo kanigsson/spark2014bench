@@ -199,3 +199,4 @@ Target solver: CVC4
   (=> (dynamic_invariant id true false true true)
   (= (to_rep (select map1 0)) 1)))))
 (check-sat)
+(exit)

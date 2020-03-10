@@ -169,3 +169,4 @@ Target solver: CVC4
   (forall ((free3 Int)) (free_memory__function_guard (free_memory free3)
   free3)) (< (free_memory free2) (free_memory free1))))))))))))))))))))
 (check-sat)
+(exit)

@@ -377,3 +377,4 @@ Target solver: CVC4
   (us_repqtmk1 o__split_fields1 o__attr__tag)))
   (= (less_than_max (us_repqtmk1 o__split_fields o__attr__tag)) true)))))))
 (check-sat)
+(exit)

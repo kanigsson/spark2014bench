@@ -325,3 +325,4 @@ Target solver: CVC4
   (us_repqtmk saved_first__is_null_pointer saved_first__pointer_address
   (us_close (us_repqtmk1 saved_first__pointer_value)))))))))))))))))))))
 (check-sat)
+(exit)

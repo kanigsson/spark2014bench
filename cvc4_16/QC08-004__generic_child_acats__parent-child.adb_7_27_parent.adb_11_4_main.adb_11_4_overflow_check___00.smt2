@@ -253,3 +253,4 @@ Target solver: CVC4
      (rec__main__my_complex_pkg__complex_type__real (us_split_fields1 left))) o5)
   (in_range1 (+ o5 o4))))))))))))))))
 (check-sat)
+(exit)

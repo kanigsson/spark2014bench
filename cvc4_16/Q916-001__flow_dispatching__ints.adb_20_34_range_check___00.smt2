@@ -760,3 +760,4 @@ Target solver: CVC4
   (let ((temp___247 (to_string (attr__ATTRIBUTE_IMAGE o2) 12))) (in_range1
   (- (+ 1 (+ (length 1 14) (length (first1 temp___247) (last1 temp___247)))) 1)))))))))))))
 (check-sat)
+(exit)

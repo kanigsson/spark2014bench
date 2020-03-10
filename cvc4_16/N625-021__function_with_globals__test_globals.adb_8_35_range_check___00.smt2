@@ -855,3 +855,4 @@ Target solver: CVC4
  ;; File "test_globals.adb", line 1, characters 0-0
   (not (=> (dynamic_invariant c true false true true) (in_range1 100))))
 (check-sat)
+(exit)

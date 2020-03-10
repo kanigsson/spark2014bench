@@ -596,3 +596,4 @@ Target solver: CVC4
   (ite (and (<= (first1 b) ib1) (<= ib1 (last1 b))) true false)) true)
   (= ib1 temp___950))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

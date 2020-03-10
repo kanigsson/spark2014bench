@@ -650,3 +650,4 @@ Target solver: CVC4
                                                            v))) 1))
   (= (to_rep2 (rec__basic__r__x z__split_discrs)) 0))))))))))))))))))))))))
 (check-sat)
+(exit)

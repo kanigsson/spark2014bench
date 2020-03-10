@@ -428,3 +428,4 @@ Target solver: CVC4
   (=> (<= 0 temp___226)
   (=> (<= temp___226 2) (= (attr__init (select x1 temp___226)) true))))))))))))))))))))))
 (check-sat)
+(exit)

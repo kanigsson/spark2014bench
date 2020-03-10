@@ -231,3 +231,4 @@ Target solver: CVC4
   (=> (= r__result (ite (in_range2 y (us_split_discrsqtmk o)) true false))
   (=> (= r__result true) (= x y)))))))))))
 (check-sat)
+(exit)

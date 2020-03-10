@@ -326,3 +326,4 @@ Target solver: CVC4
   (= (ole formal_cont__new_set_02__remove__result container) true))
   (= (included_except container formal_cont__new_set_02__remove__result item) true))))))))
 (check-sat)
+(exit)

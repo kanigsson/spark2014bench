@@ -550,3 +550,4 @@ Target solver: CVC4
   (forall ((temp___203 Int))
   (=> (= temp___203 (- right2 left2)) (not (= 2 0)))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

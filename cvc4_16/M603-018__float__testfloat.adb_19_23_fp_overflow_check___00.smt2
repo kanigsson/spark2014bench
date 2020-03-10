@@ -161,3 +161,4 @@ Target solver: CVC4
   (=> (fp.eq (fp.roundToIntegral RTN z) x)
   (=> (fp.eq (fp.roundToIntegral RTP z) y) (fp.isFinite32 (fp.add RNE x y))))))))))))))
 (check-sat)
+(exit)

@@ -133,3 +133,4 @@ Target solver: CVC4
   (=> (dynamic_invariant x true false true true)
   (fp.eq (fp.neg (fp.neg x)) x))))
 (check-sat)
+(exit)

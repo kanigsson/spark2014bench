@@ -269,3 +269,4 @@ Target solver: CVC4
   (=> (< y 32768)
   (let ((o (* x y))) (=> (in_range o) (in_range1 (div1 o z))))))))))))))
 (check-sat)
+(exit)

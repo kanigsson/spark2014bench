@@ -961,3 +961,4 @@ Target solver: CVC4
   (=> (in_range1 o7)
   (<= (first3 test_higher_order2__my_sum__sum_left__acc__fold__result) o7)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

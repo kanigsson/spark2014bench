@@ -126,3 +126,4 @@ Target solver: CVC4
   (forall ((left1 Int) (right1 Int)) (oeq__function_guard (oeq left1 right1)
   left1 right1)) (= (oeq left right) true)))))))))
 (check-sat)
+(exit)

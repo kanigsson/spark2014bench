@@ -806,3 +806,4 @@ Target solver: CVC4
   (=> (= spark__branch (ite (= o1 0) true false))
   (=> (= spark__branch true) (not (= next_read__attr__constrained true))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

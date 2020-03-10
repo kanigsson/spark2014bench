@@ -202,3 +202,4 @@ Target solver: CVC4
   (=> (= innersum2 0)
   (=> (= j2 1) (=> (<= j2 i1) (= (* 2 innersum2) (* j2 (- j2 1))))))))))))))))))))))
 (check-sat)
+(exit)

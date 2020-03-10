@@ -1552,3 +1552,4 @@ Target solver: CVC4
                                                              current_out14))))
   (= (mode target1) 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

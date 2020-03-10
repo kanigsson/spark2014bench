@@ -486,3 +486,4 @@ Target solver: CVC4
   (=> (< 1 j4)
   (<= (to_rep (select r3 (- j4 1))) (to_rep (select (to_array s2) j22)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

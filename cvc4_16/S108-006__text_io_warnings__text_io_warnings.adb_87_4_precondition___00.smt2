@@ -2035,3 +2035,4 @@ Target solver: CVC4
   (<= 2 (page_length standard_in39 standard_out39 standard_err39
         current_err39 file_system39 current_in39 current_out39)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

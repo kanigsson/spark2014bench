@@ -460,3 +460,4 @@ Target solver: CVC4
   (=> (= my_a my_b)
   (= (bool_eq1 my_a 1 4 (temp_____aggregate_def_411 42) 1 4) true)))))))))
 (check-sat)
+(exit)

@@ -1068,3 +1068,4 @@ Target solver: CVC4
   (= o false))
   (=> (= o true) (=> (not (= i (first2 a))) (in_range8 (last_2 a)))))))))))))
 (check-sat)
+(exit)

@@ -959,3 +959,4 @@ Target solver: CVC4
   (=> (= i 2)
   (not (= (and (ite (<= 2 i) true false) (ite (<= i r5b) true false)) true))))))))))))))))))
 (check-sat)
+(exit)

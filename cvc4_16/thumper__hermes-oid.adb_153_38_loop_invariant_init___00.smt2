@@ -1336,3 +1336,4 @@ Target solver: CVC4
   (=> (= (to_rep result____first) o21)
   (<= (to_rep result____first) left_index2)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

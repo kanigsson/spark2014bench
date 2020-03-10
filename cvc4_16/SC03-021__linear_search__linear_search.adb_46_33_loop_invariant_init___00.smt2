@@ -657,3 +657,4 @@ Target solver: CVC4
                  (us_close (us_repqtmk2 x__pointer_value))))) 1))
   (forall ((k Int)) (=> (and (<= 1 k) (<= k (- i 1))) (not (= (nth l k) v)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

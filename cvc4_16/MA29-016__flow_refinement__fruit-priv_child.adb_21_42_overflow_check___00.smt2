@@ -131,3 +131,4 @@ Target solver: CVC4
   (=> (dynamic_invariant price_of_orange true false true true) (in_range
   (- 2147483647 extra_cost)))))))
 (check-sat)
+(exit)

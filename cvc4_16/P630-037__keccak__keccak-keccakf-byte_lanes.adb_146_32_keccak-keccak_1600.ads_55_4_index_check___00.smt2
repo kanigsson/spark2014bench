@@ -1232,3 +1232,4 @@ Target solver: CVC4
   (let ((o12 (+ o11 offset2)))
   (=> (in_range1 o12) (<= (to_rep data__first) o12))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

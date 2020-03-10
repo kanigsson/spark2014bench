@@ -375,3 +375,4 @@ Target solver: CVC4
   (=> (dynamic_invariant rcx true false true true)
   (bvule ((_ zero_extend 48) #x0000) (bvand rcx #x000000000000FFFF))))))
 (check-sat)
+(exit)

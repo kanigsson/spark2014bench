@@ -420,3 +420,4 @@ Target solver: CVC4
   (= (count_selected_locations sel) (+ st_count (partial_count_selected_locations
                                                 sel st))))))))))))))))))))))
 (check-sat)
+(exit)

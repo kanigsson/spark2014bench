@@ -211,3 +211,4 @@ Target solver: CVC4
   (=> (in_range1 o)
   (forall ((innersum3 Int)) (=> (= innersum3 o) (in_range1 (+ j3 1))))))))))))))))))))))))))
 (check-sat)
+(exit)

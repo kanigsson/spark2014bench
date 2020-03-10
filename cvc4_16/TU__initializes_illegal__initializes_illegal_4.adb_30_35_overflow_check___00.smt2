@@ -132,3 +132,4 @@ Target solver: CVC4
   (and (dynamic_invariant o1 true false true true) (= o1 g_var2))) (in_range
   (- g_var o1)))))))))))))
 (check-sat)
+(exit)

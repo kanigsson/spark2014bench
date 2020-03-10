@@ -123,3 +123,4 @@ Target solver: CVC4
   (=> (dynamic_invariant y true false true true)
   (=> (< x y) (=> (= mine1 (min x y)) (= mine1 x))))))))))
 (check-sat)
+(exit)

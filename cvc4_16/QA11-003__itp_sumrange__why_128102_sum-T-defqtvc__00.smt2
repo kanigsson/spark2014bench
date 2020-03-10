@@ -350,3 +350,4 @@ Target solver: CVC4
   (and (in_range1 o1) (and (= s1 o1) (= k1 temp___187))))))))))) (= s1 s))))))
   (<= i j))))))))))
 (check-sat)
+(exit)

@@ -701,3 +701,4 @@ Target solver: CVC4
   (let ((o (+ first2 last2)))
   (=> (in_range1 o) (=> (in_range1 (+ o 1)) (not (= 2 0))))))))))))))))))
 (check-sat)
+(exit)

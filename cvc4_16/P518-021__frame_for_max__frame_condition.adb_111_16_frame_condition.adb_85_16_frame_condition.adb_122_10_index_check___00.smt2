@@ -575,3 +575,4 @@ Target solver: CVC4
   (forall ((o natural))
   (=> (= (to_rep o) c239b) (<= (to_rep1 a__first) c238b)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

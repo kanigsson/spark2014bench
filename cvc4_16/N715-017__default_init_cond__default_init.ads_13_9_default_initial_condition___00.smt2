@@ -210,3 +210,4 @@ Target solver: CVC4
   (glob1_ok usf1 n1) usf1 n1))
   (= (glob1_ok (us_repqtmk (us_split_fieldsqtmk usf)) n) true)))))))
 (check-sat)
+(exit)

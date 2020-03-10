@@ -1066,3 +1066,4 @@ Target solver: CVC4
   (forall ((k2 Int))
   (=> (= k2 (+ k1 1)) (=> (in_range8 k2) (<= (first1 a1) i))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -2272,3 +2272,4 @@ Target solver: CVC4
   (= (rec__split_records__record_with_mutable_discrs__present
      (us_split_discrs1 h1__split_fields1)) true))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

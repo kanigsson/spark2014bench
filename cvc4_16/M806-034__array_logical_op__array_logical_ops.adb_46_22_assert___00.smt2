@@ -459,3 +459,4 @@ Target solver: CVC4
      (last1 w)) (first1 z) (last1 z)) r4)
   (=> (dynamic_invariant r4 true false true true) (= (first1 r4) 6)))))))))
 (check-sat)
+(exit)

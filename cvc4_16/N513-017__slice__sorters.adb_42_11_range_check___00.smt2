@@ -312,3 +312,4 @@ Target solver: CVC4
   (=> (<= (+ (first1 unsorted) 1) (last1 unsorted))
   (<= 1 (+ (first1 unsorted) 1))))))))))))))
 (check-sat)
+(exit)

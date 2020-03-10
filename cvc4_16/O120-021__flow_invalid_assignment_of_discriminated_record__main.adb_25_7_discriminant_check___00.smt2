@@ -661,3 +661,4 @@ Target solver: CVC4
   (=> (= u0__attr__constrained true)
   (= (rec__main__variant_type__discr u2__split_discrs) u0__split_discrs))))))))))))))))))))))))
 (check-sat)
+(exit)

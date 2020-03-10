@@ -1458,3 +1458,4 @@ Target solver: CVC4
   true))
   (=> (and (<= (first_2 a1) l) (<= l (last_2 a1))) (<= (first2 a1) k))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -668,3 +668,4 @@ Target solver: CVC4
                                                    true false)) true)
   (let ((o (- (last1 a) a_first))) (=> (in_range1 o) (uint_in_range1 o)))))))))
 (check-sat)
+(exit)

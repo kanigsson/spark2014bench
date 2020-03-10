@@ -577,3 +577,4 @@ Target solver: CVC4
   (<= i (to_rep (rec__types_with_invariants__container__c c__split_discrs)))
   (<= (first1 c__split_fields) i)))))))))
 (check-sat)
+(exit)

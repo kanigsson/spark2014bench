@@ -305,3 +305,4 @@ Target solver: CVC4
   (not (= (and (ite (<= 1 x) true false) (ite (<= x 5) true false)) true))
   (in_range1 (+ y 1))))))))))))))))))
 (check-sat)
+(exit)

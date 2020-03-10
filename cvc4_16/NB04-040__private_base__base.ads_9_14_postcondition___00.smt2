@@ -229,3 +229,4 @@ Target solver: CVC4
   (sum base__create__result1) base__create__result1))
   (= (sum base__create__result) c))))))))
 (check-sat)
+(exit)

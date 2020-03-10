@@ -448,3 +448,4 @@ Target solver: CVC4
   (and (f__function_guard o4 o3 o2 o1) (dynamic_invariant o4 true false true
   true)) (<= o (last2 (of_array (to_array a) (first2 a) (last2 a))))))))))))))))))))))))
 (check-sat)
+(exit)

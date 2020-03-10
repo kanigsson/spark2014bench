@@ -503,3 +503,4 @@ Target solver: CVC4
                     true))
   (=> (not (= spark__branch6 true)) (in_range5 (+ label_length1 1)))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

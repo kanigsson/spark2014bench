@@ -661,3 +661,4 @@ Target solver: CVC4
   (=> (= spark__branch true)
   (forall ((prec1 (Array Int natural))) (=> (= prec1 values) (<= 1 current)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1274,3 +1274,4 @@ Target solver: CVC4
   (=> (<= divisor_index1 (last1 v__split_fields)) (in_range2
   (+ j divisor_index1)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

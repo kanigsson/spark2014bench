@@ -260,3 +260,4 @@ Target solver: CVC4
      (rec__alpha_launch_examples__rec_t__b r__split_fields1)
      (rec__alpha_launch_examples__rec_t__a r__split_fields1)))) true)))))))))))))
 (check-sat)
+(exit)

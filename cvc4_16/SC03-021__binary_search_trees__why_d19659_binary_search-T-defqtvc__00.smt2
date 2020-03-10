@@ -783,3 +783,4 @@ Target solver: CVC4
      (rec__binary_search__tree__right
      (us_split_fields1 (rec__binary_search__tree_acc__pointer_value t)))) 2147483647))))))))
 (check-sat)
+(exit)

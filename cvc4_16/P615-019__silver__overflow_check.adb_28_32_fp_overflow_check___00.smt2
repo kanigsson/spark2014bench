@@ -264,3 +264,4 @@ Target solver: CVC4
   (=> (= spark__branch3 (ite (= op 3) true false))
   (=> (= spark__branch3 true) (fp.isFinite32 (fp.sub RNE x y))))))))))))))))))
 (check-sat)
+(exit)

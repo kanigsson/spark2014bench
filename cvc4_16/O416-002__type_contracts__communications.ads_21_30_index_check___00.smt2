@@ -786,3 +786,4 @@ Target solver: CVC4
   (<= (first1
       (rec__communications__communication__msgs (us_split_fields3 usf))) usf1))))))))))))
 (check-sat)
+(exit)

@@ -325,3 +325,4 @@ Target solver: CVC4
                         array_borrows__B_1__y__assume))
   (= (to_rep y__pointer_value) 5))))))))))))))))))))))))
 (check-sat)
+(exit)

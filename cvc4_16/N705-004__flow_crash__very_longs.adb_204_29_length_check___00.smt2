@@ -1065,3 +1065,4 @@ Target solver: CVC4
   (<= 1 (to_rep
         (rec__very_longs__very_long__octet_length (us_split_discrs1 l)))))))))))))))))))))))
 (check-sat)
+(exit)

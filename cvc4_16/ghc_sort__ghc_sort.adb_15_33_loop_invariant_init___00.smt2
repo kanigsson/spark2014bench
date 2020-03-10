@@ -540,3 +540,4 @@ Target solver: CVC4
   (=> (and (<= 1 top) (<= top x))
   (=> (= (to_rep1 (select cut 1)) 1) (= x (to_rep1 (select cut top))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

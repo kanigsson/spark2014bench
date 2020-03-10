@@ -525,3 +525,4 @@ Target solver: CVC4
   (forall ((temp___2201 us_rep)) (all_pos__function_guard
   (all_pos temp___2201) temp___2201)) (= (all_pos temp___220) true))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

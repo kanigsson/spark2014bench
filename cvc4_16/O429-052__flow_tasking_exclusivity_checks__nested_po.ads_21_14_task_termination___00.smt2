@@ -224,3 +224,4 @@ Target solver: CVC4
  ;; File "nested_po.ads", line 21, characters 0-0
   (not false))
 (check-sat)
+(exit)

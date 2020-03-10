@@ -856,3 +856,4 @@ Target solver: CVC4
   (=> (<= 1 o)
   (<= (first1 (rec__bounded_strings__bounded_string__text1 b__split_fields1)) 1)))))))))))))))))))))))
 (check-sat)
+(exit)

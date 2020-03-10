@@ -270,3 +270,4 @@ Target solver: CVC4
   (=> (not (= spark__branch5 true))
   (=> (< e 0) (not (= x ((_ to_fp 8 24) #x00000000))))))))))))))))))))))))
 (check-sat)
+(exit)

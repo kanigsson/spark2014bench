@@ -326,3 +326,4 @@ Target solver: CVC4
   (=> (dynamic_invariant val2 true false true true) (in_range2
   (- (fxp_div_int 2147483647 val2) 1))))))
 (check-sat)
+(exit)

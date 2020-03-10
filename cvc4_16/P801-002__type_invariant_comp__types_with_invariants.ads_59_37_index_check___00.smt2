@@ -991,3 +991,4 @@ Target solver: CVC4
   (=> (dynamic_invariant5 usf true false true true)
   (<= (first3 usf) (first3 usf))))))))
 (check-sat)
+(exit)

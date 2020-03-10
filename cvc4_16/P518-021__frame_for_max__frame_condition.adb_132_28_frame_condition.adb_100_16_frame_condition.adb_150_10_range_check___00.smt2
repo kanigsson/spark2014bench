@@ -660,3 +660,4 @@ Target solver: CVC4
   (dynamic_invariant1 k1 true true true true))
   (=> (not (= k1 last3)) (in_range2 (- k1 1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

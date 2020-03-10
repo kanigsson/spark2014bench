@@ -2799,3 +2799,4 @@ Target solver: CVC4
      (us_split_fields15 test_record_cnt_ex__z__assume) us_tag9) z1)
   (=> (dynamic_invariant4 z1 true false true true) (= (bool_eq6 x1 y1) true))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

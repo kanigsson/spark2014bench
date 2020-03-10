@@ -879,3 +879,4 @@ Target solver: CVC4
   (=> (= (to_rep data__last) temp___820)
   (<= (to_rep data__first) temp___820)))))))))))))))))
 (check-sat)
+(exit)

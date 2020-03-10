@@ -119,3 +119,4 @@ Target solver: CVC4
   (not
   (= (and (ite (<= hidden 0) true false) (ite (<= visible2 0) true false)) true)))))))))))))))
 (check-sat)
+(exit)

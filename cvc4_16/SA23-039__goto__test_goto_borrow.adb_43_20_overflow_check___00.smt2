@@ -663,3 +663,4 @@ Target solver: CVC4
           (us_close (us_repqtmk1 d__pointer_value1))) us_null_pointer) true))
   true false)) true) (in_range1 (+ i2 1))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

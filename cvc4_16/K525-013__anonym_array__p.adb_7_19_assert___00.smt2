@@ -243,3 +243,4 @@ Target solver: CVC4
   (=> (= x2 (store x1 b rliteral2))
   (=> (not (= a b)) (= (to_rep (select x2 a)) 1))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -1552,3 +1552,4 @@ Target solver: CVC4
   (=> (forall ((o4 us_rep)) (is_zero__function_guard (is_zero o4) o4))
   (not (= (is_zero divisor) true))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

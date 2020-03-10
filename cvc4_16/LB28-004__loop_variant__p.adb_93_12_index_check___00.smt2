@@ -482,3 +482,4 @@ Target solver: CVC4
   (=> (= j15 a)
   (=> (<= j15 b) (=> (= (to_rep o) j15) (<= (to_rep tab__first) j15)))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

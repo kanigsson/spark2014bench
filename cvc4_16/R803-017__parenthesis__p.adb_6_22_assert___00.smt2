@@ -248,3 +248,4 @@ Target solver: CVC4
   (=> (= s (temp___String_Literal_164 Tuple0))
   (= (bool_eq s 1 5 (temp___String_Literal_167 Tuple0) 1 5) true)))))
 (check-sat)
+(exit)

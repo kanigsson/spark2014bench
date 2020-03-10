@@ -455,3 +455,4 @@ Target solver: CVC4
   (=> (dynamic_invariant (us_repqtmk x__split_fields) false false true true)
   (=> (< (* 2 2) 100000) (=> (= (to_rep1 o) 2) (< (* 2 1) 100000)))))))))))))
 (check-sat)
+(exit)

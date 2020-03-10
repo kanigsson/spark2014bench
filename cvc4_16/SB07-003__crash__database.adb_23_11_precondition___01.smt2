@@ -1377,3 +1377,4 @@ Target solver: CVC4
      (us_split_fieldsqtmk1 database__split_fields))
      (us_repqtmk (us_split_fieldsqtmk temp___7031))) true))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

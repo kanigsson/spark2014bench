@@ -136,3 +136,4 @@ Target solver: CVC4
   (not (fp.eq x (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000)))
   (not (fp.isZero cycle))))))))
 (check-sat)
+(exit)

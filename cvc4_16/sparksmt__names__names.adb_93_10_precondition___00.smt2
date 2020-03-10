@@ -1984,3 +1984,4 @@ Target solver: CVC4
   (capacity1
   (us_repqtmk1 o4 (us_split_fieldsqtmk1 char_table__split_fields)))))))))))))))))))))))))))))
 (check-sat)
+(exit)

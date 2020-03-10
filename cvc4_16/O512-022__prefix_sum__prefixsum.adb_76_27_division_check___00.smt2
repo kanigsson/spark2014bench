@@ -478,3 +478,4 @@ Target solver: CVC4
   (forall ((a1 (Array Int integer)))
   (=> (= a1 (store a 7 rliteral)) (not (= 2 0))))))))))))))))))))
 (check-sat)
+(exit)

@@ -959,3 +959,4 @@ Target solver: CVC4
   false true true)
   (=> (= (first1 x__pointer_value) 1) (= (first1 x2__pointer_value) 1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

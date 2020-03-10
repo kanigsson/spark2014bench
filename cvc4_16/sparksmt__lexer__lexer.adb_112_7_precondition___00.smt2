@@ -701,3 +701,4 @@ Target solver: CVC4
   (=> (dynamic_invariant3 the_filename1 true true true true)
   (not (= current_read__attr__constrained true)))))))))))))))))))
 (check-sat)
+(exit)

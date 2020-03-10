@@ -206,3 +206,4 @@ Target solver: CVC4
   (=> (dynamic_invariant high true false true true)
   (=> (<= low high) (<= 1 low))))))
 (check-sat)
+(exit)

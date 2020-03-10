@@ -1008,3 +1008,4 @@ Target solver: CVC4
                                                queue__enqueue__result))
   (<= 1 usf))))))))))))))))))))))))))))
 (check-sat)
+(exit)

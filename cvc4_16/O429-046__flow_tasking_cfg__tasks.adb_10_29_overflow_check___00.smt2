@@ -111,3 +111,4 @@ Target solver: CVC4
   (ite (and (<= hidden 0) (<= visible1 0)) true false)) true) (in_range1
   (+ visible1 hidden)))))))))
 (check-sat)
+(exit)

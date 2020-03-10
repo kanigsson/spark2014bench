@@ -307,3 +307,4 @@ Target solver: CVC4
   (=> (= (first1 x) 1)
   (=> (= (last1 x) 11) (=> (<= (first1 x) (last1 x)) (<= 0 10)))))))
 (check-sat)
+(exit)

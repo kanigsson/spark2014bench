@@ -1285,3 +1285,4 @@ Target solver: CVC4
   (=> (choose__function_guard (choose (to_rep (get (to_array a2) i j)))
   (to_rep (get (to_array a2) i j))) (<= j (last_2 a2)))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -666,3 +666,4 @@ Target solver: CVC4
                                       (rec__traversals__list2_acc__pointer_value
                                       l))))) 1)))))))))))
 (check-sat)
+(exit)

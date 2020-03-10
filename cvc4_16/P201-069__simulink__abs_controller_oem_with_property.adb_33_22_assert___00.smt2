@@ -171,3 +171,4 @@ Target solver: CVC4
   (fp.leq (fp #b0 #b01111001010 #b1111111111111101010010000001111110010111011010000010) 
   wheel_speed))))))))))))
 (check-sat)
+(exit)

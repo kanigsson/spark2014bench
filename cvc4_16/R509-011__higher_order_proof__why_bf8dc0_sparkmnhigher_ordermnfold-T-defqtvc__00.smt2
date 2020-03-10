@@ -896,3 +896,4 @@ Target solver: CVC4
                                                        true))) true))
   (<= i (last1 a1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

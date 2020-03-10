@@ -498,3 +498,4 @@ Target solver: CVC4
   (=> (not (= var1 (bvadd (bvsub var2 var1_range_size) n)))
   (not (= (bvadd var1 n11) (bvadd var2 n2)))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

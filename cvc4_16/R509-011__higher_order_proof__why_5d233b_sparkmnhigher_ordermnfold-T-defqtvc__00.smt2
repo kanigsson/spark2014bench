@@ -729,3 +729,4 @@ Target solver: CVC4
   (=> (not (= i (last2 a)))
   (let ((o3 (+ i 1))) (=> (in_range1 o3) (<= o3 (to_rep r__last))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

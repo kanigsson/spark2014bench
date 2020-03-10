@@ -483,3 +483,4 @@ Target solver: CVC4
   (=> (and (<= 0 left3) (<= left3 7))
   (let ((o10 (* space2 2))) (=> (in_range1 o10) (in_range1 (+ right3 o10)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

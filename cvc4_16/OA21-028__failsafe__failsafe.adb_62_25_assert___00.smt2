@@ -697,3 +697,4 @@ Target solver: CVC4
                                                       (bvadd temp___270 #x32)
                                                       temp___270)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -3491,3 +3491,4 @@ Target solver: CVC4
   (=> (= word2 (bvlshr word1 ((_ int2bv 32) 16)))
   (bvule ((_ zero_extend 16) #x0000) (bvand word2 #x0000FFFF)))))))))))))))))))))
 (check-sat)
+(exit)

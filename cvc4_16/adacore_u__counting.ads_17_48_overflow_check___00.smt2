@@ -159,3 +159,4 @@ Target solver: CVC4
   (get_red_count red_counter2) red_counter2)) (in_range
   (+ (get_red_count red_counter) 1)))))))))))))
 (check-sat)
+(exit)

@@ -104,3 +104,4 @@ Target solver: CVC4
   (=> (dynamic_invariant buf true false true true)
   (=> (dynamic_invariant err false false true true) (in_range (+ nid buf))))))))
 (check-sat)
+(exit)

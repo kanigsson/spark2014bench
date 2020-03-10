@@ -1222,3 +1222,4 @@ Target solver: CVC4
      (rec__database__db_pack__list__capacity container__split_discrs)) o)
   (in_range6 (- o count)))))))))
 (check-sat)
+(exit)

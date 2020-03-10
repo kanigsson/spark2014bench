@@ -428,3 +428,4 @@ Target solver: CVC4
   (=> (= (and (ite (<= 1 i) true false) (ite (<= i 10) true false)) true)
   (=> (= (to_rep (select pitch_history_c i)) o) (in_range1 (+ sum o))))))))))))))))
 (check-sat)
+(exit)

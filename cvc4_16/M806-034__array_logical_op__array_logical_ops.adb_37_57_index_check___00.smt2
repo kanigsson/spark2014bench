@@ -495,3 +495,4 @@ Target solver: CVC4
   (= (and (ite (<= (first1 r3) usf) true false) (ite (<= usf 25) true false)) true)
   (<= (first1 r3) usf))))))))))))
 (check-sat)
+(exit)

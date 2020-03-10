@@ -391,3 +391,4 @@ Target solver: CVC4
   (=> (not (= (select inputs #x0A) true))
   (= counter__model__current_chain_length__result #x00)))))))))
 (check-sat)
+(exit)

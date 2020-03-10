@@ -314,3 +314,4 @@ Target solver: CVC4
   (=> (= (to_rep (rec__base__t__c1 (us_split_fields3 x))) o1) (in_range
   (+ o1 o)))))))
 (check-sat)
+(exit)

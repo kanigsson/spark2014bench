@@ -160,3 +160,4 @@ Target solver: CVC4
   (=> (<= n 255)
   (= (bool_eq x 0 255 (temp_____aggregate_def_754 (= n n)) 0 255) true)))))))
 (check-sat)
+(exit)

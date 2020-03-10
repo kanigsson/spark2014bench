@@ -2188,3 +2188,4 @@ Target solver: CVC4
   (=> (with_default__ok_record__rec_with_ok_discr__f1__pred usf) (in_range2
   0)))))))))))))))))))))))))
 (check-sat)
+(exit)

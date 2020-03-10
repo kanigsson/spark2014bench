@@ -605,3 +605,4 @@ Target solver: CVC4
   (=> (= anon_type__increment__result var_out1)
   (= anon_type__increment__result (+ var_in 1)))))))))))))))))))
 (check-sat)
+(exit)

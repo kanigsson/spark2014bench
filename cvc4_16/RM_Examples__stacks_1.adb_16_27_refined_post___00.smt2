@@ -469,3 +469,4 @@ Target solver: CVC4
   (= (to_rep1 (rec__stacks_1__stack_type__pointer s__split_fields2)) (+ 
   (to_rep1 (rec__stacks_1__stack_type__pointer s__split_fields)) 1)))))))))))))))))))))))
 (check-sat)
+(exit)

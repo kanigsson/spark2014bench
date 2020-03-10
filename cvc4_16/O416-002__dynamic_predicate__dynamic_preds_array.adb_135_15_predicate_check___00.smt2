@@ -349,3 +349,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 x true false true true)
   (=> (= (mod2 0 2) 0) (=> (= (to_rep o) 0) (= (mod2 2 2) 0)))))))))
 (check-sat)
+(exit)

@@ -1501,3 +1501,4 @@ Target solver: CVC4
                                                  true false)) true)
   (=> (and (<= (first_2 a) usf1) (<= usf1 (last_2 a))) (<= (first2 a) usf))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

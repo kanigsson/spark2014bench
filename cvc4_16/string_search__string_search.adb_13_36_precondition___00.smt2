@@ -487,3 +487,4 @@ Target solver: CVC4
   (=> (= diff1 (ite (= o6 o5) false true))
   (=> (not (= diff1 true)) (=> (in_range2 j) (<= j (length needle)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

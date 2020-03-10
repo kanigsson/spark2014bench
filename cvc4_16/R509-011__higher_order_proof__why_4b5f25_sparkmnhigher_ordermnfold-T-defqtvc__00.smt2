@@ -203,3 +203,4 @@ Target solver: CVC4
   (=> (value__function_guard (value x) x)
   (= test_higher_order3__my_sum_2__add_value__result (+ (value x) y))))))))))))))))
 (check-sat)
+(exit)

@@ -1299,3 +1299,4 @@ Target solver: CVC4
   (=> (not (= (ite o3 1 0) (ite o1 1 0)))
   (=> (and (<= (first_2 a1) j) (<= j (last_2 a1))) (<= i (last2 a1)))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

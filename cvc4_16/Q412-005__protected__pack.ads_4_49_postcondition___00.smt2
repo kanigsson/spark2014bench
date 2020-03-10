@@ -91,3 +91,4 @@ Target solver: CVC4
   (=> (= pack__po_funcT__func__result (distinct 1 0))
   (= pack__po_funcT__func__result true)))))
 (check-sat)
+(exit)

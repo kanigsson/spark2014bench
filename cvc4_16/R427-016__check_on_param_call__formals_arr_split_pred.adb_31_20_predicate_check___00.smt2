@@ -516,3 +516,4 @@ Target solver: CVC4
  ;; File "formals_arr_split_pred.adb", line 1, characters 0-0
   (not (dynamic_predicate1 (formals_arr_split_pred__x__aggregate_def 1))))
 (check-sat)
+(exit)

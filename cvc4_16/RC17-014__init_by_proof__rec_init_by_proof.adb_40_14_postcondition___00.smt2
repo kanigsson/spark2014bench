@@ -434,3 +434,4 @@ Target solver: CVC4
                       x__split_fields2) (my_nat__init_wrapperqtmk o5 true)))
   (= (attr__init (rec__rec_init_by_proof__three_fields__f1 x__split_fields3)) true)))))))))))))))))))))))
 (check-sat)
+(exit)

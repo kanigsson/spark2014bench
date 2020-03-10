@@ -480,3 +480,4 @@ Target solver: CVC4
   (=> (= (to_rep1 new_str__last) o5)
   (let ((o6 (- o5 o4))) (=> (in_range1 o6) (in_range1 (+ o6 1)))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -540,3 +540,4 @@ Target solver: CVC4
   (=> (shift_perm_l__function_guard (shift_perm_l b a c) b a c)
   (= (distinct (shift_perm_l b a c) 0) true))))))))))))))))))
 (check-sat)
+(exit)

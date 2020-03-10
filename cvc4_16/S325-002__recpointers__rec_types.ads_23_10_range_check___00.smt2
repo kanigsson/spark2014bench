@@ -757,3 +757,4 @@ Target solver: CVC4
   (= (to_rep (rec__rec_types__test2__tree_node__d (us_split_discrs1 usf1))) usf)
   (=> (<= 1 usf) (<= 1 1)))))))
 (check-sat)
+(exit)

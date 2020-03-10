@@ -1543,3 +1543,4 @@ Target solver: CVC4
   (forall ((message_last1 Int))
   (=> (= message_last1 o5) (<= (first1 message) message_last1))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

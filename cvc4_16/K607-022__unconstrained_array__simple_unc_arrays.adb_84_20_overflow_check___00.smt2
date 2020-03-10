@@ -768,3 +768,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (select (to_array temp___589) i1)) o) (in_range6
   (+ sum1 o))))))))))))))))))))
 (check-sat)
+(exit)

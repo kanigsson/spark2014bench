@@ -2793,3 +2793,4 @@ Target solver: CVC4
   (rec__test_record_cnt_ex__nested_3__complex__f (us_split_fields11 z))
   us_null_ext__) us_tag21))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

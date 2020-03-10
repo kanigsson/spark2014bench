@@ -570,3 +570,4 @@ Target solver: CVC4
   (=> (dynamic_invariant offset true false true true) (in_range2
   (div1 size 4))))))))))))
 (check-sat)
+(exit)

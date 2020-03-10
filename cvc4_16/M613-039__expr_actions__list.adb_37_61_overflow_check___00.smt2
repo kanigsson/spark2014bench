@@ -1370,3 +1370,4 @@ Target solver: CVC4
   (and (dynamic_invariant1 o8 true false true true)
   (= o8 (last (model1 o7)))) (in_range1 (- o8 usf))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

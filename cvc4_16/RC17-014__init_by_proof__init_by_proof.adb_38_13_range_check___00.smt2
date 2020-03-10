@@ -595,3 +595,4 @@ Target solver: CVC4
   (=> (= (to_rep buf__first) temp___315)
   (=> (<= temp___315 o5) (<= (to_rep buf__first) temp___315)))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

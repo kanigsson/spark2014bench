@@ -740,3 +740,4 @@ Target solver: CVC4
      (select (select result__1 (+ (+ (* (- i (first1 array1)) (length array2)) (- j 
      (first1 array2))) 1)) 1)) (to_rep (select (to_array array1) i)))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

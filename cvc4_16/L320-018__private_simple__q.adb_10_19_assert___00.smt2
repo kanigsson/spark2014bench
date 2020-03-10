@@ -106,3 +106,4 @@ Target solver: CVC4
   (=> (and (get__function_guard o1 y) (= (bool_eq o1 y) true))
   (forall ((z us_rep)) (=> (= z o1) (= (bool_eq z y) true)))))))))))
 (check-sat)
+(exit)

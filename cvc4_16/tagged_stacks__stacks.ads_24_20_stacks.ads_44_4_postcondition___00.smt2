@@ -503,3 +503,4 @@ Target solver: CVC4
   (us_repqtmk s__split_fields2 s__attr__tag)))
   (= (is_empty (us_repqtmk s__split_fields1 s__attr__tag)) true))))))
 (check-sat)
+(exit)

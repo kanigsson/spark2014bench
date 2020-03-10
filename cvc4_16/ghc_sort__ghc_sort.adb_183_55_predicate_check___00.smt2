@@ -1447,3 +1447,4 @@ Target solver: CVC4
   (=> (= (to_rep ss__first) o8) (dynamic_predicate1
   (of_array (slide ss1 o8 1) 1 (length o7 o6)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

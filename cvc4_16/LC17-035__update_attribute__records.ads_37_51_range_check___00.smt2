@@ -378,3 +378,4 @@ Target solver: CVC4
   (=> (= (to_rep2 (rec__types__rec__s3 r__split_fields)) o6) (in_range3
   (- o6 1))))))))))))))))))))))))
 (check-sat)
+(exit)

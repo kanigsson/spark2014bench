@@ -393,3 +393,4 @@ Target solver: CVC4
   (=> (in_range1 (* (+ p2__sqrt__result 1) (+ p2__sqrt__result 1)))
   (in_range1 (* p2__sqrt__result p2__sqrt__result))))))))))))))
 (check-sat)
+(exit)

@@ -272,3 +272,4 @@ Target solver: CVC4
   (= (to_rep (rec__pragma_predicate__tuple_type__y tuple__split_fields)) o2)
   (in_range (+ o2 1))))))))))))))
 (check-sat)
+(exit)

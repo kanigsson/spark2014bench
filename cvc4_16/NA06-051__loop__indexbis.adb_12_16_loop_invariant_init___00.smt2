@@ -345,3 +345,4 @@ Target solver: CVC4
   (=> (dynamic_invariant courant true false true true)
   (<= (first1 s) courant))))))))))))))
 (check-sat)
+(exit)

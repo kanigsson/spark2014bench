@@ -480,3 +480,4 @@ Target solver: CVC4
   e) (not (= (to_rep (select (to_array b) (last1 b))) e)))))))))
   (< 0 (length b))))))))))))
 (check-sat)
+(exit)

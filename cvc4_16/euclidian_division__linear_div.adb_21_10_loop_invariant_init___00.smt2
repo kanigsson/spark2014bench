@@ -118,3 +118,4 @@ Target solver: CVC4
   (=> (<= 0 dividend)
   (=> (= remainder1 dividend) (=> (<= divisor remainder1) (<= 0 remainder1))))))))))))
 (check-sat)
+(exit)

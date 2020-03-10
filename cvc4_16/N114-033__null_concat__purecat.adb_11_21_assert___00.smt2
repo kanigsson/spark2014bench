@@ -360,3 +360,4 @@ Target solver: CVC4
   (=> (= x1 (store x 1 o))
   (not (= (bool_eq x1 1 1000 (to_array y) (first1 y) (last1 y)) true)))))))))))
 (check-sat)
+(exit)

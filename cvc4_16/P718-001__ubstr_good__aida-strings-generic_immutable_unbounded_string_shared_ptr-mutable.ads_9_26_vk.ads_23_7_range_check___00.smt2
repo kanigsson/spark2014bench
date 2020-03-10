@@ -525,3 +525,4 @@ Target solver: CVC4
   (not
   (=> (dynamic_invariant text true false true true) (in_range (length text)))))
 (check-sat)
+(exit)

@@ -807,3 +807,4 @@ Target solver: CVC4
   (=> (= (= o3 true) (= (has_key (positions o2) o1) true))
   (=> (= o3 true) (= (has_element l o1) true))))))))))
 (check-sat)
+(exit)

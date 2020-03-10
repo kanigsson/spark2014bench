@@ -758,3 +758,4 @@ Target solver: CVC4
   (let ((o4 x))
   (=> (in_range4 o4) (<= (first1 (of_array values2 1 100)) o4))))))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)

@@ -298,3 +298,4 @@ Target solver: CVC4
   (=> (dynamic_invariant1 c true false true true)
   (= (ite (< 256 8) (bvshl #x0A ((_ int2bv 8) 256)) #x00) #x00)))))
 (check-sat)
+(exit)

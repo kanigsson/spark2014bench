@@ -795,3 +795,4 @@ Target solver: CVC4
                              result____split_fields1)))
   (in_range5 current_hi1))))))))))))))))))))))))))))))))))))))))))))))
 (check-sat)
+(exit)
