@@ -114,3 +114,5 @@ Target solver: Z3
  ;; File "calendar_clock.adb", line 3, characters 0-0
   (not (= (bool_eq t1 t2) true)))
 (check-sat)
+
+(exit)

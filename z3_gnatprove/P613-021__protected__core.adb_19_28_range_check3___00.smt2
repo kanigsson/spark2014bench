@@ -767,3 +767,5 @@ Target solver: Z3
  ;; File "core.ads", line 29, characters 0-0
   (not (in_range3 (+ o8 1))))
 (check-sat)
+
+(exit)

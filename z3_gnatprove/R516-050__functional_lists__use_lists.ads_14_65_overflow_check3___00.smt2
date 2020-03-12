@@ -104,3 +104,5 @@ Target solver: Z3
  ;; File "use_lists.ads", line 13, characters 0-0
   (not (in_range (+ i1 1))))
 (check-sat)
+
+(exit)

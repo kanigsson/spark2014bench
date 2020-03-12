@@ -971,3 +971,5 @@ Target solver: Z3
  ;; File "binary_trees.ads", line 36, characters 0-0
   (not (<= 1 temp___358)))
 (check-sat)
+
+(exit)

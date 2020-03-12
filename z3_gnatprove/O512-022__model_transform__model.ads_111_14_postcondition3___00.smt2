@@ -280,3 +280,5 @@ Target solver: Z3
  ;; File "model.ads", line 108, characters 0-0
   (not (= (from (us_repqtmk self__split_fields2)) val__)))
 (check-sat)
+
+(exit)

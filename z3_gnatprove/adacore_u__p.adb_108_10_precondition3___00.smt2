@@ -468,3 +468,5 @@ Target solver: Z3
  ;; File "p.ads", line 30, characters 0-0
   (not (<= (first1 a) i1)))
 (check-sat)
+
+(exit)

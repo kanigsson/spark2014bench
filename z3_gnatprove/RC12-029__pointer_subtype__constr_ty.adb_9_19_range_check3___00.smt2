@@ -849,3 +849,5 @@ Target solver: Z3
  ;; File "constr_ty.adb", line 1, characters 0-0
   (not (in_range6 1 10 o)))
 (check-sat)
+
+(exit)

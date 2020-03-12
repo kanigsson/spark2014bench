@@ -832,3 +832,5 @@ Target solver: Z3
  ;; File "fixed_string.ads", line 31, characters 0-0
   (not (= (length fixed_string__convert__result) (elements this))))
 (check-sat)
+
+(exit)

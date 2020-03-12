@@ -198,3 +198,5 @@ Target solver: Z3
  ;; File "pack.ads", line 7, characters 0-0
   (not (< 0 (div1 1 x))))
 (check-sat)
+
+(exit)

@@ -97,3 +97,5 @@ Target solver: Z3
  ;; File "records_and_array.ads", line 16, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

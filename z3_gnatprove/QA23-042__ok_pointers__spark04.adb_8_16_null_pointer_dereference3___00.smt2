@@ -268,3 +268,5 @@ Target solver: Z3
  ;; File "spark04.ads", line 11, characters 0-0
   (not (rec__spark04__data__ai__pointer_value__pred x)))
 (check-sat)
+
+(exit)

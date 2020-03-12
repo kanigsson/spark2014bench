@@ -117,3 +117,5 @@ Target solver: Z3
  ;; File "contract_cases_legal.ads", line 17, characters 0-0
   (not (<= (+ (+ 0 (ite (= usf1 true) 1 0)) (ite (= usf true) 1 0)) 1)))
 (check-sat)
+
+(exit)

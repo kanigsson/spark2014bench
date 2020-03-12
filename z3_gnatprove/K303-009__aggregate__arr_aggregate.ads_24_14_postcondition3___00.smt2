@@ -515,3 +515,5 @@ Target solver: Z3
  ;; File "arr_aggregate.ads", line 22, characters 0-0
   (not (= (to_rep (select (select a1 j) one)) one)))
 (check-sat)
+
+(exit)

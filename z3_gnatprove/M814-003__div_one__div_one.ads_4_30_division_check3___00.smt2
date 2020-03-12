@@ -180,3 +180,5 @@ Target solver: Z3
  ;; File "div_one.ads", line 3, characters 0-0
   (not (not (= a 0))))
 (check-sat)
+
+(exit)

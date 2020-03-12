@@ -189,3 +189,5 @@ Target solver: Z3
  ;; File "bitwise_swap.adb", line 3, characters 0-0
   (not (= x2 y1)))
 (check-sat)
+
+(exit)

@@ -211,3 +211,5 @@ Target solver: Z3
  ;; File "scalar_types.ads", line 1, characters 0-0
   (not (<= (- 2147483648) 1)))
 (check-sat)
+
+(exit)

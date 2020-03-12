@@ -303,3 +303,5 @@ Target solver: Z3
  ;; File "c45532o.adb", line 1, characters 0-0
   (not (in_range2 (fxp_mult a b))))
 (check-sat)
+
+(exit)

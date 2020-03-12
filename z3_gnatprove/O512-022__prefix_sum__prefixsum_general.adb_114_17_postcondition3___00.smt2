@@ -268,3 +268,5 @@ Target solver: Z3
   (= prefixsum_general__summation__rec_summation__result (to_rep
                                                          (select a start_pos)))))
 (check-sat)
+
+(exit)

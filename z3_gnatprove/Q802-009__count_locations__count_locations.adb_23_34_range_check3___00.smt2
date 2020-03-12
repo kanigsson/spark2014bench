@@ -510,3 +510,5 @@ Target solver: Z3
  ;; File "count_locations.ads", line 22, characters 0-0
   (not (in_range3 (+ st_count1 1))))
 (check-sat)
+
+(exit)

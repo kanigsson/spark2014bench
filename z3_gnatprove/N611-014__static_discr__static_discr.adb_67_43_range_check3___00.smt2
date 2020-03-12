@@ -1299,3 +1299,5 @@ Target solver: Z3
  ;; File "static_discr.adb", line 47, characters 0-0
   (not (in_range2 o3)))
 (check-sat)
+
+(exit)

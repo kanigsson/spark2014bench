@@ -1118,3 +1118,5 @@ Target solver: Z3
  ;; File "test_route.adb", line 43, characters 0-0
   (not (= (last a2) (- n2 1))))
 (check-sat)
+
+(exit)

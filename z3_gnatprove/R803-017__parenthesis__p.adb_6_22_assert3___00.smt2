@@ -249,3 +249,5 @@ Target solver: Z3
  ;; File "p.ads", line 4, characters 0-0
   (not (= (bool_eq s 1 5 (temp___String_Literal_167 Tuple0) 1 5) true)))
 (check-sat)
+
+(exit)

@@ -252,3 +252,5 @@ Target solver: Z3
  ;; File "init_pred_in_loop.adb", line 112, characters 0-0
   (not (dynamic_predicate temp___348)))
 (check-sat)
+
+(exit)

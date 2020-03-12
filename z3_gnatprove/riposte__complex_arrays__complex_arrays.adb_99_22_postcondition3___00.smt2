@@ -286,3 +286,5 @@ Target solver: Z3
  ;; File "complex_arrays.adb", line 95, characters 0-0
   (not (not (= (bool_eq (select a2 i) 0 1001 (select a2 23) 0 1001) true))))
 (check-sat)
+
+(exit)

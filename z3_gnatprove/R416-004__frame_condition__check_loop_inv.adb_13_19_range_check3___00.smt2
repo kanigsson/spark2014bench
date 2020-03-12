@@ -1272,3 +1272,5 @@ Target solver: Z3
  ;; File "check_loop_inv.adb", line 1, characters 0-0
   (not (<= (to_rep a__first) 21)))
 (check-sat)
+
+(exit)

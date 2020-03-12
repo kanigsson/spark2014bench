@@ -1031,3 +1031,5 @@ Target solver: Z3
  ;; File "evoting.ads", line 51, characters 0-0
   (not (= (is_open file1) true)))
 (check-sat)
+
+(exit)

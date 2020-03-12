@@ -1236,3 +1236,5 @@ Target solver: Z3
  ;; File "find_map.ads", line 36, characters 0-0
   (not (<= (first1 a) find_map__find_upto__result)))
 (check-sat)
+
+(exit)

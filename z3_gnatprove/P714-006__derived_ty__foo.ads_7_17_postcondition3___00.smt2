@@ -129,3 +129,5 @@ Target solver: Z3
  ;; File "foo.ads", line 6, characters 0-0
   (not (= (select a1 5) true)))
 (check-sat)
+
+(exit)

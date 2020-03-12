@@ -99,3 +99,5 @@ Target solver: Z3
  ;; File "inst.adb", line 3, characters 0-0
   (not (= (get Tuple0) 4)))
 (check-sat)
+
+(exit)

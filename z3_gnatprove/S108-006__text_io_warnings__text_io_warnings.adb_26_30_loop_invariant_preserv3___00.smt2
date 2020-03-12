@@ -1476,3 +1476,5 @@ Target solver: Z3
  ;; File "text_io_warnings.adb", line 3, characters 0-0
   (not (<= (* j2 (- 20)) sum3)))
 (check-sat)
+
+(exit)

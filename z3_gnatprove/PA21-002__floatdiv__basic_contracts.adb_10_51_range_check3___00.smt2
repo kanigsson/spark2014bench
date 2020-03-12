@@ -262,3 +262,5 @@ Target solver: Z3
  ;; File "basic_contracts.ads", line 12, characters 0-0
   (not (in_range3 o)))
 (check-sat)
+
+(exit)

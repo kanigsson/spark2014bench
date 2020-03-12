@@ -1071,3 +1071,5 @@ Target solver: Z3
   (not
   (= (div1 (+ (- (last1 number) string_index1) 1) 2) (+ (- index1 1) 1))))
 (check-sat)
+
+(exit)

@@ -94,3 +94,5 @@ Target solver: Z3
  ;; File "ov_pre.ads", line 3, characters 0-0
   (not (in_range (* x x))))
 (check-sat)
+
+(exit)

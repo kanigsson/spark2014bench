@@ -224,3 +224,5 @@ Target solver: Z3
  ;; File "abs_controller_oem_with_property.ads", line 17, characters 0-0
   (not (fp.isFinite64 o)))
 (check-sat)
+
+(exit)

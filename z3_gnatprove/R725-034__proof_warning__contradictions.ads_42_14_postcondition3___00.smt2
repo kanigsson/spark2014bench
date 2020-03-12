@@ -319,3 +319,5 @@ Target solver: Z3
  ;; File "contradictions.ads", line 40, characters 0-0
   (not (= (to_rep (select v i)) 0)))
 (check-sat)
+
+(exit)

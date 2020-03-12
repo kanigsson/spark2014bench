@@ -817,3 +817,5 @@ Target solver: Z3
   (to_rep
   (rec__frame_condition__cell__max_right (us_split_fields1 (select a5 i)))))))
 (check-sat)
+
+(exit)

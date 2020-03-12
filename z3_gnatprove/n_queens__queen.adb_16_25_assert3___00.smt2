@@ -263,3 +263,5 @@ Target solver: Z3
   (not
   (forall ((j Int)) (=> (and (<= i j) (<= j 8)) (= (consistent c j) true))))))
 (check-sat)
+
+(exit)

@@ -334,3 +334,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__default_checks_on_private-25155/src/gnatprove/dic_and_predicate_checks__nested_1__t.mlw", line 566, characters 5-8
   (not (dynamic_predicate usf1)))
 (check-sat)
+
+(exit)

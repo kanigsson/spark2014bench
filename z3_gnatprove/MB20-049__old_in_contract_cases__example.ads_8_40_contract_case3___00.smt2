@@ -288,3 +288,5 @@ Target solver: Z3
  ;; File "example.ads", line 6, characters 0-0
   (not (= (bool_eq a1 1 10 temp___old_181 1 10) true)))
 (check-sat)
+
+(exit)

@@ -263,3 +263,5 @@ Target solver: Z3
  ;; File "r.ads", line 5, characters 0-0
   (not (= temp___219 false)))
 (check-sat)
+
+(exit)

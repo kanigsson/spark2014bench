@@ -415,3 +415,5 @@ Target solver: Z3
  ;; File "constr.ads", line 4, characters 0-0
   (not (= (to_rep (select x10 1)) 1)))
 (check-sat)
+
+(exit)

@@ -331,3 +331,5 @@ Target solver: Z3
  ;; File "loop_tutorial.adb", line 9, characters 0-0
   (not (in_range1 (* middle2 middle2))))
 (check-sat)
+
+(exit)

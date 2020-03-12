@@ -352,3 +352,5 @@ Target solver: Z3
  ;; File "test_main.adb", line 3, characters 0-0
   (not (not (= (mem s2 10) true))))
 (check-sat)
+
+(exit)

@@ -206,3 +206,5 @@ Target solver: Z3
  ;; File "a.ads", line 13, characters 0-0
   (not (= (global_a_init global_a__attr__init1 global_a1) true)))
 (check-sat)
+
+(exit)

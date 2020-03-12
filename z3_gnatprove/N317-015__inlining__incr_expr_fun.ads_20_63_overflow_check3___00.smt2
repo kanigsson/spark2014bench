@@ -94,3 +94,5 @@ Target solver: Z3
  ;; File "incr_expr_fun.ads", line 19, characters 0-0
   (not (in_range (+ x 1))))
 (check-sat)
+
+(exit)

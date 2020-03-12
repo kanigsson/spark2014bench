@@ -517,3 +517,5 @@ Target solver: Z3
  ;; File "double_list.ads", line 14, characters 0-0
   (not (= (size1 count1) 0)))
 (check-sat)
+
+(exit)

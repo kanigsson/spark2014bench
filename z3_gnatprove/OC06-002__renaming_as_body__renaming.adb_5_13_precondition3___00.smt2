@@ -109,3 +109,5 @@ Target solver: Z3
  ;; File "renaming.ads", line 3, characters 0-0
   (not (not (= x 0))))
 (check-sat)
+
+(exit)

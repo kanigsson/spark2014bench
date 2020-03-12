@@ -1895,3 +1895,5 @@ Target solver: Z3
   (us_repqtmk3 d_outer__is_null_pointer d_outer__pointer_address
   (us_repqtmk2 d_outer__pointer_value)))))
 (check-sat)
+
+(exit)

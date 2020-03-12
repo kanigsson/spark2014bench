@@ -406,3 +406,5 @@ Target solver: Z3
   (not
   (= (to_rep (select complex_arrays__create_step_array__result j2)) (- 23))))
 (check-sat)
+
+(exit)

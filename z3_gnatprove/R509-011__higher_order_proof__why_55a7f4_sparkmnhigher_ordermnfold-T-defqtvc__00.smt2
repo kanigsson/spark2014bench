@@ -1251,3 +1251,5 @@ Target solver: Z3
  ;; File "spark-higher_order-fold.adb", line 163, characters 0-0
   (not (= (count_length1 i j) true)))
 (check-sat)
+
+(exit)

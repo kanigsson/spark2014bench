@@ -1572,3 +1572,5 @@ Target solver: Z3
  ;; File "list.ads", line 11, characters 0-0
   (not (<= (first1 temp___624) usf)))
 (check-sat)
+
+(exit)

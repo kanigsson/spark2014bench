@@ -697,3 +697,5 @@ Target solver: Z3
  ;; File "test_arith.adb", line 3, characters 0-0
   (not (< x6 o1)))
 (check-sat)
+
+(exit)

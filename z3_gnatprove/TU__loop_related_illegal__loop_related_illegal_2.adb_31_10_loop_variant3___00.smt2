@@ -168,3 +168,5 @@ Target solver: Z3
  ;; File "loop_related_illegal_2.ads", line 5, characters 0-0
   (not (< temp___159 x2)))
 (check-sat)
+
+(exit)

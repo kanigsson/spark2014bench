@@ -321,3 +321,5 @@ Target solver: Z3
   (not (rec__spark03__ai__pointer_value__pred
   (us_repqtmk z__is_null_pointer1 z__pointer_address1 z__pointer_value1))))
 (check-sat)
+
+(exit)

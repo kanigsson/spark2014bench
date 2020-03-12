@@ -258,3 +258,5 @@ Target solver: Z3
  ;; File "discr.adb", line 38, characters 0-0
   (not (= rliteral d__split_discrs)))
 (check-sat)
+
+(exit)

@@ -83,3 +83,5 @@ Target solver: Z3
  ;; File "indirect.ads", line 2, characters 0-0
   (not (= x1 true)))
 (check-sat)
+
+(exit)

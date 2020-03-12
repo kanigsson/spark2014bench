@@ -377,3 +377,5 @@ Target solver: Z3
  ;; File "dyn_arrays.ads", line 11, characters 0-0
   (not (<= (to_rep1 to____first) (to_rep1 to____last))))
 (check-sat)
+
+(exit)

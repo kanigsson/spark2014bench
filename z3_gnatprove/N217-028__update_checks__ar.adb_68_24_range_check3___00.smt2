@@ -350,3 +350,5 @@ Target solver: Z3
  ;; File "ar.adb", line 64, characters 0-0
   (not (in_range2 (+ i 1))))
 (check-sat)
+
+(exit)

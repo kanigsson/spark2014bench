@@ -804,3 +804,5 @@ Target solver: Z3
              (value (us_repqtmk this__split_discrs this__split_fields2))) 
      start)) by__)))
 (check-sat)
+
+(exit)

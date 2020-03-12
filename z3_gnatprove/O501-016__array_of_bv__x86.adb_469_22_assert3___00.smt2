@@ -649,3 +649,5 @@ Target solver: Z3
   (readmem16 (bvadd addr #x0000000000000002) memory9)) ((_ int2bv 32) 16))) 
   val__)))
 (check-sat)
+
+(exit)

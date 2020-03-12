@@ -278,3 +278,5 @@ Target solver: Z3
  ;; File "array_aggregates.adb", line 237, characters 0-0
   (not (= (to_rep (select (select x1 3) 4)) 12)))
 (check-sat)
+
+(exit)

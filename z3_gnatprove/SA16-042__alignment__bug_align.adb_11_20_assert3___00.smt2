@@ -239,3 +239,5 @@ Target solver: Z3
  ;; File "bug_align.adb", line 1, characters 0-0
   (not (= (alignment_of_var var) #x0000000000000001)))
 (check-sat)
+
+(exit)

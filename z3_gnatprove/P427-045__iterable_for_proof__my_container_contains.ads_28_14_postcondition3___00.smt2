@@ -332,3 +332,5 @@ Target solver: Z3
  ;; File "my_container_contains.ads", line 26, characters 0-0
   (not (= (mem c my_container_contains__element__result) true)))
 (check-sat)
+
+(exit)

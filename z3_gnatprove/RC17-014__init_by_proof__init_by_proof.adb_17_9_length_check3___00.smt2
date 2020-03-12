@@ -401,3 +401,5 @@ Target solver: Z3
  ;; File "init_by_proof.adb", line 12, characters 0-0
   (not (<= (to_rep a__first) (to_rep a__last))))
 (check-sat)
+
+(exit)

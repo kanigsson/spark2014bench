@@ -256,3 +256,5 @@ Target solver: Z3
  ;; File "pack.adb", line 59, characters 0-0
   (not (not (= (to_rep (select my_s41 2)) (to_rep (select g 2))))))
 (check-sat)
+
+(exit)

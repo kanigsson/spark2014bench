@@ -1070,3 +1070,5 @@ Target solver: Z3
                    (- (last (us_repqtmk buffer__split_fields3)) orig_first)
                    256)) #x00)))
 (check-sat)
+
+(exit)

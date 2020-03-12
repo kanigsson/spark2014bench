@@ -393,3 +393,5 @@ Target solver: Z3
   (= (bool_eq (temp_____aggregate_def_720 32) 1 5
      (temp_____aggregate_def_724 32 32) 1 5) true)))
 (check-sat)
+
+(exit)

@@ -170,3 +170,5 @@ Target solver: Z3
  ;; File "scale.ads", line 21, characters 0-0
   (not (in_range2 v1)))
 (check-sat)
+
+(exit)

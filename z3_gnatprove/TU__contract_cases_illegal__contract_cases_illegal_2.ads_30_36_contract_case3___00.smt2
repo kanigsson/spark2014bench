@@ -149,3 +149,5 @@ Target solver: Z3
  ;; File "contract_cases_illegal_2.ads", line 28, characters 0-0
   (not (= c1 b)))
 (check-sat)
+
+(exit)

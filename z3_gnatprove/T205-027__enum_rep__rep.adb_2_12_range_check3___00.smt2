@@ -165,3 +165,5 @@ Target solver: Z3
  ;; File "rep.adb", line 1, characters 0-0
   (not (<= (- 2147483648) low)))
 (check-sat)
+
+(exit)

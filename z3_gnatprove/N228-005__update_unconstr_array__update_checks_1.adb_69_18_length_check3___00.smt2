@@ -411,3 +411,5 @@ Target solver: Z3
  ;; File "update_checks_1.ads", line 26, characters 0-0
   (not (<= (first1 temp___411) (last1 temp___411))))
 (check-sat)
+
+(exit)

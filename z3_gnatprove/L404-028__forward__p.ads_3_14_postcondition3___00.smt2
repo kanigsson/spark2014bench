@@ -130,3 +130,5 @@ Target solver: Z3
  ;; File "p.ads", line 2, characters 0-0
   (not (= x2 (add_one x1))))
 (check-sat)
+
+(exit)

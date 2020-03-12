@@ -342,3 +342,5 @@ Target solver: Z3
  ;; File "natural_set.ads", line 21, characters 0-0
   (not (<= 0 natural_set__members__result)))
 (check-sat)
+
+(exit)

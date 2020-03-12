@@ -657,3 +657,5 @@ Target solver: Z3
  ;; File "init_by_proof.adb", line 45, characters 0-0
   (not (= (attr__init (select (to_array temp___350) temp___351)) true)))
 (check-sat)
+
+(exit)

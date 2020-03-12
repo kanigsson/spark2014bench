@@ -269,3 +269,5 @@ Target solver: Z3
   (not
   (not (= (is_null private_pointer__mode_on__init_alloc__result) true))))
 (check-sat)
+
+(exit)

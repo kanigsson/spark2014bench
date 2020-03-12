@@ -125,3 +125,5 @@ Target solver: Z3
  ;; File "multi_cond_assign.adb", line 1, characters 0-0
   (not (in_range (* y 2))))
 (check-sat)
+
+(exit)

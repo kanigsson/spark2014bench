@@ -510,3 +510,5 @@ Target solver: Z3
  ;; File "mutable.ads", line 12, characters 0-0
   (not (<= (first1 temp___209) 1)))
 (check-sat)
+
+(exit)

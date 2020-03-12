@@ -1698,3 +1698,5 @@ Target solver: Z3
  ;; File "bounded_stacks.ads", line 17, characters 0-0
   (not (<= 1 r20b)))
 (check-sat)
+
+(exit)

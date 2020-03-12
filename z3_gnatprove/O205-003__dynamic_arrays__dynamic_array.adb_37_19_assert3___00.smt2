@@ -1394,3 +1394,5 @@ Target solver: Z3
                                                               (us_split_discrs3
                                                               (new_holder c)))))))
 (check-sat)
+
+(exit)

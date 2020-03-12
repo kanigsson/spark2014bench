@@ -196,3 +196,5 @@ Target solver: Z3
  ;; File "p.ads", line 9, characters 0-0
   (not (in_range1 (div1 x o))))
 (check-sat)
+
+(exit)

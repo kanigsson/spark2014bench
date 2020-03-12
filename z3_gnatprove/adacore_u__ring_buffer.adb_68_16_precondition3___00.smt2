@@ -635,3 +635,5 @@ Target solver: Z3
  ;; File "ring_buffer.ads", line 37, characters 0-0
   (not (< (length model1) 2147483647)))
 (check-sat)
+
+(exit)

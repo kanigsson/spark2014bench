@@ -302,3 +302,5 @@ Target solver: Z3
  ;; File "kmp.ads", line 7, characters 0-0
   (not (<= (first1 p) (last1 p))))
 (check-sat)
+
+(exit)

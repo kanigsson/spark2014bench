@@ -379,3 +379,5 @@ Target solver: Z3
  ;; File "fib.ads", line 12, characters 0-0
   (not (< n12 temp___197)))
 (check-sat)
+
+(exit)

@@ -210,3 +210,5 @@ Target solver: Z3
  ;; File "formals.adb", line 67, characters 0-0
   (not (not (= a 0))))
 (check-sat)
+
+(exit)

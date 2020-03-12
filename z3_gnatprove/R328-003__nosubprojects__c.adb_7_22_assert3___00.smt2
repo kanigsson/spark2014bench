@@ -124,3 +124,5 @@ Target solver: Z3
  ;; File "c.ads", line 4, characters 0-0
   (not (= old__ (get state1))))
 (check-sat)
+
+(exit)

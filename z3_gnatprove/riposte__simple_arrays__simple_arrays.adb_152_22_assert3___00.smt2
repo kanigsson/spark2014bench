@@ -390,3 +390,5 @@ Target solver: Z3
      2147483647 (temp_____aggregate_def_484 a_old i 1 k 3 j 2) (- 2147483648)
      2147483647) true)))
 (check-sat)
+
+(exit)

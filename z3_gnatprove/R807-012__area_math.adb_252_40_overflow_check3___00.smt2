@@ -1484,3 +1484,5 @@ Target solver: Z3
  ;; File "area_math.ads", line 46, characters 0-0
   (not (in_range1 o14)))
 (check-sat)
+
+(exit)

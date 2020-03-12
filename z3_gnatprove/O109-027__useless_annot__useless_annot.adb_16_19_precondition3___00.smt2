@@ -145,3 +145,5 @@ Target solver: Z3
  ;; File "useless_annot.adb", line 1, characters 0-0
   (not (< 1 2147483647)))
 (check-sat)
+
+(exit)

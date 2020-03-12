@@ -483,3 +483,5 @@ Target solver: Z3
  ;; File "lat_long.ads", line 38, characters 0-0
   (not (not (fp.isZero o1))))
 (check-sat)
+
+(exit)

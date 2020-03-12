@@ -1004,3 +1004,5 @@ Target solver: Z3
  ;; File "for_loops_on_lists.ads", line 9, characters 0-0
   (not (not (= (get (model1 l) i) 0))))
 (check-sat)
+
+(exit)

@@ -1559,3 +1559,5 @@ Target solver: Z3
  ;; File "formal_vectors.adb", line 29, characters 0-0
   (not (<= min_size (size (us_repqtmk3 v__split_fields2)))))
 (check-sat)
+
+(exit)

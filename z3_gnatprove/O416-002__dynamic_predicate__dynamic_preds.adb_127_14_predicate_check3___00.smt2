@@ -369,3 +369,5 @@ Target solver: Z3
  ;; File "dynamic_preds.ads", line 43, characters 0-0
   (not (= (mod2 temp___333 2) 0)))
 (check-sat)
+
+(exit)

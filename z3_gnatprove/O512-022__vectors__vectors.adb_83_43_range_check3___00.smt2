@@ -359,3 +359,5 @@ Target solver: Z3
  ;; File "vectors.ads", line 34, characters 0-0
   (not (in_range1 (+ o2 1))))
 (check-sat)
+
+(exit)

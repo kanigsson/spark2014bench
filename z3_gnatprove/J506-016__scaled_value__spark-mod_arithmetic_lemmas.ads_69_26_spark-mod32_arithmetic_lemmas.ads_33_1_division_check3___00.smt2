@@ -198,3 +198,5 @@ Target solver: Z3
  ;; File "spark-mod_arithmetic_lemmas.ads", line 63, characters 0-0
   (not (not (= arg2 #x00000000))))
 (check-sat)
+
+(exit)

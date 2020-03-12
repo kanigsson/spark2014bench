@@ -258,3 +258,5 @@ Target solver: Z3
  ;; File "search.ads", line 4, characters 0-0
   (not (<= 1 usf)))
 (check-sat)
+
+(exit)

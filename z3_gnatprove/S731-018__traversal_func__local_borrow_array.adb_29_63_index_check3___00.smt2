@@ -1321,3 +1321,5 @@ Target solver: Z3
  ;; File "local_borrow_array.adb", line 1, characters 0-0
   (not (<= (first1 temp___245) 1)))
 (check-sat)
+
+(exit)

@@ -453,3 +453,5 @@ Target solver: Z3
  ;; File "stacks_14.ads", line 16, characters 0-0
   (not (not (= (is_full (us_repqtmk s__split_fields1)) true))))
 (check-sat)
+
+(exit)

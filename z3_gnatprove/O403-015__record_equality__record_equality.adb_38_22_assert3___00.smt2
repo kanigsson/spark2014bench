@@ -987,3 +987,5 @@ Target solver: Z3
      (and (ite (= (attr__tag temp___364) (attr__tag temp___365)) true false) 
      (us_dispatch_eq temp___364 temp___365)))) true)))
 (check-sat)
+
+(exit)

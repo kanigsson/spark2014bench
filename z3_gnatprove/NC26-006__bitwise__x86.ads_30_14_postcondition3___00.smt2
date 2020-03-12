@@ -504,3 +504,5 @@ Target solver: Z3
   (= x86__readmem32__result (bvor ((_ zero_extend 16) (readmem16 addr memory)) (bvshl ((_ zero_extend 16) 
   (readmem16 (bvadd addr #x0000000000000002) memory)) ((_ int2bv 32) 16))))))
 (check-sat)
+
+(exit)

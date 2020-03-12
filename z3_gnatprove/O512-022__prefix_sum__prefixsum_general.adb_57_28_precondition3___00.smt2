@@ -652,3 +652,5 @@ Target solver: Z3
  ;; File "prefixsum_general.ads", line 15, characters 0-0
   (not (<= o14 usf)))
 (check-sat)
+
+(exit)

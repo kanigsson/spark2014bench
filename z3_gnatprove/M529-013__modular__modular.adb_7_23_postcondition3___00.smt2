@@ -278,3 +278,5 @@ Target solver: Z3
  ;; File "modular.adb", line 5, characters 0-0
   (not (= modular__add_byte_c__result ((_ int2bv 8) (mod2 (+ a b) 256)))))
 (check-sat)
+
+(exit)

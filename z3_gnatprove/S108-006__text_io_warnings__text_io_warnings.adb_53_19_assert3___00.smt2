@@ -2047,3 +2047,5 @@ Target solver: Z3
   (= (line_length1 target1 standard_in19 standard_out19 standard_err19
      current_err19 file_system19 current_in19 current_out19) 40)))
 (check-sat)
+
+(exit)

@@ -327,3 +327,5 @@ Target solver: Z3
  ;; File "p.adb", line 1, characters 0-0
   (not (dynamic_property 1 2147483647 (- 10) 1000)))
 (check-sat)
+
+(exit)

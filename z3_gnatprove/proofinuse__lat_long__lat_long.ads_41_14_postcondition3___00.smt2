@@ -504,3 +504,5 @@ Target solver: Z3
   (= (olt (fp.abs lat_long__delta_long_in_meters__result)
      (fp #b0 #b10011000 #b00110001001111000100110)) true)))
 (check-sat)
+
+(exit)

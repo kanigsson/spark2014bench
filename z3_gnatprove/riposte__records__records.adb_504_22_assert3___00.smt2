@@ -304,3 +304,5 @@ Target solver: Z3
   (not
   (= (rec__records_prooffuncs__optional_pair__exists (us_split_fields3 r)) true)))
 (check-sat)
+
+(exit)

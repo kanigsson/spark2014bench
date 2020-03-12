@@ -347,3 +347,5 @@ Target solver: Z3
  ;; File "test.ads", line 11, characters 0-0
   (not (dynamic_predicate usf1)))
 (check-sat)
+
+(exit)

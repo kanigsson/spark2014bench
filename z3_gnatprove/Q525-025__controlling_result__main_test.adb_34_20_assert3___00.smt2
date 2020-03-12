@@ -2042,3 +2042,5 @@ Target solver: Z3
   (not
   (= (elements (us_repqtmk field_06__split_fields field_06__attr__tag)) 6)))
 (check-sat)
+
+(exit)

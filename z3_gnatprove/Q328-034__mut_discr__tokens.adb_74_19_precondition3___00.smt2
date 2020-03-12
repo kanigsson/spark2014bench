@@ -595,3 +595,5 @@ Target solver: Z3
  ;; File "tokens.ads", line 23, characters 0-0
   (not (not (= (full last) true))))
 (check-sat)
+
+(exit)

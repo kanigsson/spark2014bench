@@ -733,3 +733,5 @@ Target solver: Z3
  ;; File "pair_insertion_sort.adb", line 4, characters 0-0
   (not (<= (first1 o18) o15)))
 (check-sat)
+
+(exit)

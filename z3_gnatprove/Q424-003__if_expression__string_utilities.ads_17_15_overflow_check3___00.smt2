@@ -583,3 +583,5 @@ Target solver: Z3
  ;; File "string_utilities.ads", line 13, characters 0-0
   (not (in_range1 (+ 1 o8))))
 (check-sat)
+
+(exit)

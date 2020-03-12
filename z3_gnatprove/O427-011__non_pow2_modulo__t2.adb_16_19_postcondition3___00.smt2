@@ -217,3 +217,5 @@ Target solver: Z3
   (= ((_ zero_extend 56) t2__madd__result) (bvurem (bvurem (bvadd ((_ zero_extend 56) 
   x) ((_ zero_extend 56) y)) #x0000000000010000) #x00000000000000E6))))
 (check-sat)
+
+(exit)

@@ -230,3 +230,5 @@ Target solver: Z3
  ;; File "sandbox.ads", line 9, characters 0-0
   (not (bvule ((_ zero_extend 32) #x00000000) o)))
 (check-sat)
+
+(exit)

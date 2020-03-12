@@ -328,3 +328,5 @@ Target solver: Z3
  ;; File "ident_arr.ads", line 2, characters 0-0
   (not (= (to_rep (select x10 j10)) j10)))
 (check-sat)
+
+(exit)

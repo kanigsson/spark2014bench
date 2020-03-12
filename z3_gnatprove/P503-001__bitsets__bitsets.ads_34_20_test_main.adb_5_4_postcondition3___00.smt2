@@ -182,3 +182,5 @@ Target solver: Z3
  ;; File "bitsets.ads", line 33, characters 0-0
   (not (not (= (mem test_main__my_sets__empty__result elt) true))))
 (check-sat)
+
+(exit)

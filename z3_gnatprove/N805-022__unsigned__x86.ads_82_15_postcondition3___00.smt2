@@ -404,3 +404,5 @@ Target solver: Z3
                                                       addr))) (bvmul ((_ zero_extend 8) 
   (to_rep (select memory (bvadd addr #x0000000000000001)))) #x0100)))))
 (check-sat)
+
+(exit)

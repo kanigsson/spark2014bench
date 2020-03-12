@@ -630,3 +630,5 @@ Target solver: Z3
  ;; File "init_by_proof.adb", line 2, characters 0-0
   (not (<= 100 (length (to_rep o6) (to_rep o5)))))
 (check-sat)
+
+(exit)

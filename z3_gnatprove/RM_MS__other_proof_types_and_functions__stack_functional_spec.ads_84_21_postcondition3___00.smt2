@@ -656,3 +656,5 @@ Target solver: Z3
   (= (count (state my_stack__split_fields3)) (count
                                              (state my_stack__split_fields1)))))
 (check-sat)
+
+(exit)

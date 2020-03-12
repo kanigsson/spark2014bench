@@ -2187,3 +2187,5 @@ Target solver: Z3
             (rec__do_loops__r__f1
             (us_split_fields1 (select (to_array usf5) i4)))))))
 (check-sat)
+
+(exit)

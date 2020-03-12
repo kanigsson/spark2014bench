@@ -355,3 +355,5 @@ Target solver: Z3
  ;; File "math.ads", line 16, characters 0-0
   (not (= (sorted v1) true)))
 (check-sat)
+
+(exit)

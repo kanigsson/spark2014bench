@@ -428,3 +428,5 @@ Target solver: Z3
   (not
   (= (in_bounds (us_repqtmk shapes5__make_circle__result) wild_man) true)))
 (check-sat)
+
+(exit)

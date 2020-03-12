@@ -175,3 +175,5 @@ Target solver: Z3
  ;; File "arrays.adb", line 230, characters 0-0
   (not (= (select a1 65) true)))
 (check-sat)
+
+(exit)

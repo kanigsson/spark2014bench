@@ -99,3 +99,5 @@ Target solver: Z3
  ;; File "above_call_unknown.adb", line 2, characters 0-0
   (not (not (= x1 10))))
 (check-sat)
+
+(exit)

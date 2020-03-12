@@ -195,3 +195,5 @@ Target solver: Z3
  ;; File "u.adb", line 3, characters 0-0
   (not (= (ite (< 256 8) (bvshl #x0A ((_ int2bv 8) 256)) #x00) #x00)))
 (check-sat)
+
+(exit)

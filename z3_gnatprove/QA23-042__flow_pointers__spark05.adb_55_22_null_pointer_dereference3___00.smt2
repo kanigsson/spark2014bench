@@ -1664,3 +1664,5 @@ Target solver: Z3
  ;; File "spark05.adb", line 4, characters 0-0
   (not (rec__spark05__data__ap__pointer_value__pred aam__pointer_value1)))
 (check-sat)
+
+(exit)

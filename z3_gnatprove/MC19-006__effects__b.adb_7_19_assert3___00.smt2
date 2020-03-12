@@ -104,3 +104,5 @@ Target solver: Z3
  ;; File "b.adb", line 3, characters 0-0
   (not (= tmp a)))
 (check-sat)
+
+(exit)

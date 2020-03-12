@@ -1366,3 +1366,5 @@ Target solver: Z3
  ;; File "p.ads", line 25, characters 0-0
   (not (= (contains o1 o) true)))
 (check-sat)
+
+(exit)

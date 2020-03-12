@@ -424,3 +424,5 @@ Target solver: Z3
  ;; File "stack.ads", line 21, characters 0-0
   (not (= (valid t1 s1) true)))
 (check-sat)
+
+(exit)

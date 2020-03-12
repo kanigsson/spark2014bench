@@ -781,3 +781,5 @@ Target solver: Z3
  ;; File "membership_discr.adb", line 1, characters 0-0
   (not (in_range2 0 c00__split_discrs)))
 (check-sat)
+
+(exit)

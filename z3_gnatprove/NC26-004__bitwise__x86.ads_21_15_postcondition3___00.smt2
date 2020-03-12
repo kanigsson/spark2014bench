@@ -199,3 +199,5 @@ Target solver: Z3
  ;; File "x86.ads", line 19, characters 0-0
   (not (= (al al_test2) val__)))
 (check-sat)
+
+(exit)

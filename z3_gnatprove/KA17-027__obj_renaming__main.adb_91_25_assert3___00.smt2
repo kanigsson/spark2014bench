@@ -619,3 +619,5 @@ Target solver: Z3
  ;; File "main.adb", line 1, characters 0-0
   (not (= (to_rep rec_obj__split_fields1) 5678)))
 (check-sat)
+
+(exit)

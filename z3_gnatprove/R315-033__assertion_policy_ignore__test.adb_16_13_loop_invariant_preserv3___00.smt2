@@ -636,3 +636,5 @@ Target solver: Z3
                                 (select (to_array src) (- (+ src_first 
                                 j) index))))))
 (check-sat)
+
+(exit)

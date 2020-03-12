@@ -278,3 +278,5 @@ Target solver: Z3
  ;; File "infoflow.ads", line 47, characters 0-0
   (not (= (to_rep (select cache_v13 k)) 0)))
 (check-sat)
+
+(exit)

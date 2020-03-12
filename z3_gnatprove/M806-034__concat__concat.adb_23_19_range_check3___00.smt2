@@ -326,3 +326,5 @@ Target solver: Z3
   (- (+ (first1 a) (+ (length (first1 a) (last1 a)) (length (first1 b)
                                                     (last1 b)))) 1))))
 (check-sat)
+
+(exit)

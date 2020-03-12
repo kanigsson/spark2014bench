@@ -429,3 +429,5 @@ Target solver: Z3
   (not (in_range1
   (* p__sqrt_von_neumann__result p__sqrt_von_neumann__result))))
 (check-sat)
+
+(exit)

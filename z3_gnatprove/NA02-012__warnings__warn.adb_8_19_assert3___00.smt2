@@ -119,3 +119,5 @@ Target solver: Z3
  ;; File "warn.adb", line 1, characters 0-0
   (not (= x2 5)))
 (check-sat)
+
+(exit)

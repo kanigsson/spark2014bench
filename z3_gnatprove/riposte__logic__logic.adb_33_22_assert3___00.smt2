@@ -72,3 +72,5 @@ Target solver: Z3
  ;; File "logic.adb", line 12, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

@@ -489,3 +489,5 @@ Target solver: Z3
  ;; File "prime_and_coprime_numbers.ads", line 60, characters 0-0
   (not (< test_prime_and_coprime_numbers__p__nearest_number__result value)))
 (check-sat)
+
+(exit)

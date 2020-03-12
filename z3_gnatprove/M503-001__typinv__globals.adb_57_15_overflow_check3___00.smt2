@@ -141,3 +141,5 @@ Target solver: Z3
  ;; File "globals.ads", line 25, characters 0-0
   (not (in_range (abs1 y))))
 (check-sat)
+
+(exit)

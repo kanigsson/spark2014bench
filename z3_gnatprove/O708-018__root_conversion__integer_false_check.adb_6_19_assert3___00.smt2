@@ -99,3 +99,5 @@ Target solver: Z3
  ;; File "integer_false_check.adb", line 3, characters 0-0
   (not (< mi 0)))
 (check-sat)
+
+(exit)

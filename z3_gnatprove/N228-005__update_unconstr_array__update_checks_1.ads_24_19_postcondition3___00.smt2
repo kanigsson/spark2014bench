@@ -344,3 +344,5 @@ Target solver: Z3
  ;; File "update_checks_1.ads", line 23, characters 0-0
   (not (= (to_rep (select a1 i)) new_val)))
 (check-sat)
+
+(exit)

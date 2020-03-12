@@ -591,3 +591,5 @@ Target solver: Z3
  ;; File "infoflow.ads", line 73, characters 0-0
   (not (<= (to_rep h_v1__first) usf2)))
 (check-sat)
+
+(exit)

@@ -950,3 +950,5 @@ Target solver: Z3
   (not
   (= (element l (us_repqtmk (us_split_fieldsqtmk lists__search__result))) 0)))
 (check-sat)
+
+(exit)

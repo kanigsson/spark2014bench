@@ -418,3 +418,5 @@ Target solver: Z3
  ;; File "fib.ads", line 47, characters 0-0
   (not (= (to_rep (select a12 i4)) (to_rep (select a22 i4)))))
 (check-sat)
+
+(exit)

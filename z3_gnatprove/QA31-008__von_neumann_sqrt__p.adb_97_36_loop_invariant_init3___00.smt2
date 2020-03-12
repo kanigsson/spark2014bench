@@ -469,3 +469,5 @@ Target solver: Z3
  ;; File "p.ads", line 13, characters 0-0
   (not (bvule (bvmul left_y left_y) left_x)))
 (check-sat)
+
+(exit)

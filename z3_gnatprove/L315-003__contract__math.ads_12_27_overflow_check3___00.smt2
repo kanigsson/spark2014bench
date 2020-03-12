@@ -99,3 +99,5 @@ Target solver: Z3
  ;; File "math.ads", line 9, characters 0-0
   (not (in_range (+ x x))))
 (check-sat)
+
+(exit)

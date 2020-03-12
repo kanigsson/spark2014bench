@@ -909,3 +909,5 @@ Target solver: Z3
  ;; File "prefixsum_expanded.ads", line 41, characters 0-0
   (not (= (all_elements_in a2 8000000) true)))
 (check-sat)
+
+(exit)

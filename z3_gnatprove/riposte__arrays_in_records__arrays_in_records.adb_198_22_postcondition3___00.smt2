@@ -444,3 +444,5 @@ Target solver: Z3
   (not
   (= (bool_eq1 (us_repqtmk a__split_fields3) (us_repqtmk a__split_fields1)) true))))
 (check-sat)
+
+(exit)

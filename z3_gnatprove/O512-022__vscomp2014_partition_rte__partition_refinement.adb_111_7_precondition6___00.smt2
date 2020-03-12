@@ -2820,3 +2820,5 @@ Target solver: Z3
   (<= o18 (last_index
           (us_repqtmk2 o19 (us_split_fieldsqtmk2 p__split_fields))))))
 (check-sat)
+
+(exit)

@@ -894,3 +894,5 @@ Target solver: Z3
  ;; File "ordering_buffers.adb", line 3, characters 0-0
   (not (< (- 16) (- i index))))
 (check-sat)
+
+(exit)

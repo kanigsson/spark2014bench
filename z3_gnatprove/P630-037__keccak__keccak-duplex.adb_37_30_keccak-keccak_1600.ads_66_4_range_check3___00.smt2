@@ -559,3 +559,5 @@ Target solver: Z3
  ;; File "keccak-duplex.ads", line 75, characters 0-0
   (not (in_range1 o)))
 (check-sat)
+
+(exit)

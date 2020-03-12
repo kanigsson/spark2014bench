@@ -116,3 +116,5 @@ Target solver: Z3
  ;; File "a~b.ads", line 4, characters 0-0
   (not (in_range (+ data11 data2))))
 (check-sat)
+
+(exit)

@@ -1193,3 +1193,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 64, characters 0-0
   (not (<= (first1 result____split_fields3) temp___1269)))
 (check-sat)
+
+(exit)

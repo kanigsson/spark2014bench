@@ -163,3 +163,5 @@ Target solver: Z3
  ;; File "discr_checks.ads", line 16, characters 0-0
   (not (in_range1 r6b)))
 (check-sat)
+
+(exit)

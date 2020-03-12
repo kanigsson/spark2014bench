@@ -2208,3 +2208,5 @@ Target solver: Z3
  ;; File "split_records.ads", line 27, characters 0-0
   (not (in_range2 (distinct 0 0) (us_split_discrs1 temp___284))))
 (check-sat)
+
+(exit)

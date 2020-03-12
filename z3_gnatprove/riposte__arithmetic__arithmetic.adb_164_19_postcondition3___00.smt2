@@ -163,3 +163,5 @@ Target solver: Z3
  ;; File "arithmetic.adb", line 163, characters 0-0
   (not (= arithmetic__abs_test_a__result (abs1 n))))
 (check-sat)
+
+(exit)

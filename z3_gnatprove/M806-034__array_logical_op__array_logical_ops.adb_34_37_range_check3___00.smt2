@@ -491,3 +491,5 @@ Target solver: Z3
  ;; File "array_logical_ops.ads", line 16, characters 0-0
   (not (not (= 0 1))))
 (check-sat)
+
+(exit)

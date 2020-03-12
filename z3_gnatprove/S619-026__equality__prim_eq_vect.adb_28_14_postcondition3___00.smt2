@@ -1292,3 +1292,5 @@ Target solver: Z3
   (= (oeq (rec__prim_eq_vect__two_vects__f (us_split_fields5 (element x id)))
      (rec__prim_eq_vect__two_vects__f (us_split_fields5 (element y id)))) true)))
 (check-sat)
+
+(exit)

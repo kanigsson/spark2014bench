@@ -1604,3 +1604,5 @@ Target solver: Z3
  ;; File "keccak-sponge.ads", line 175, characters 0-0
   (not (= (state_of (us_repqtmk ctx__split_fields2)) 0)))
 (check-sat)
+
+(exit)

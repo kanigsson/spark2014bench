@@ -102,3 +102,5 @@ Target solver: Z3
  ;; File "p.ads", line 4, characters 0-0
   (not (= p__id_not_a__result x)))
 (check-sat)
+
+(exit)

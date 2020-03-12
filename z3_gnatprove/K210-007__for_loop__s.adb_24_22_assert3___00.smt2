@@ -173,3 +173,5 @@ Target solver: Z3
  ;; File "s.ads", line 11, characters 0-0
   (not (= t1 10)))
 (check-sat)
+
+(exit)

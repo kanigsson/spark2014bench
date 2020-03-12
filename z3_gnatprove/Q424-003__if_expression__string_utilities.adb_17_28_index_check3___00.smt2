@@ -804,3 +804,5 @@ Target solver: Z3
  ;; File "string_utilities.adb", line 15, characters 0-0
   (not (<= (to_rep1 lengths__first_2) x2)))
 (check-sat)
+
+(exit)

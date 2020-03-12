@@ -278,3 +278,5 @@ Target solver: Z3
  ;; File "x86.ads", line 506, characters 0-0
   (not (= (cl rcx1) #x01)))
 (check-sat)
+
+(exit)

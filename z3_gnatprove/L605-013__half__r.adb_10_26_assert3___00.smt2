@@ -414,3 +414,5 @@ Target solver: Z3
  ;; File "r.ads", line 4, characters 0-0
   (not (= (to_rep a__first) (first1 a_old))))
 (check-sat)
+
+(exit)

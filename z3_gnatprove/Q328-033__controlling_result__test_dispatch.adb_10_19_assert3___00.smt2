@@ -512,3 +512,5 @@ Target solver: Z3
                                                          (rec__dispatch__root__f
                                                          cc__split_fields1)))))
 (check-sat)
+
+(exit)

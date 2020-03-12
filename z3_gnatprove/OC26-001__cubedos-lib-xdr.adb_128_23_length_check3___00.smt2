@@ -901,3 +901,5 @@ Target solver: Z3
   (not
   (<= (to_rep1 temporary_array__first) (to_rep1 temporary_array__last))))
 (check-sat)
+
+(exit)

@@ -908,3 +908,5 @@ Target solver: Z3
  ;; File "test_globals.adb", line 1, characters 0-0
   (not (<= 1 c)))
 (check-sat)
+
+(exit)

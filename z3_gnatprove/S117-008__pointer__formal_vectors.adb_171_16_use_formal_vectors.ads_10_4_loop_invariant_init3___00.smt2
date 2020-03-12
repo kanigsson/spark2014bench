@@ -1398,3 +1398,5 @@ Target solver: Z3
              v__split_fields1))) j1)
      us_null_pointer1) true))))
 (check-sat)
+
+(exit)

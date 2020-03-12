@@ -364,3 +364,5 @@ Target solver: Z3
  ;; File "math_simple_half.ads", line 5, characters 0-0
   (not (<= (+ (div1 o2 2) 1) j)))
 (check-sat)
+
+(exit)

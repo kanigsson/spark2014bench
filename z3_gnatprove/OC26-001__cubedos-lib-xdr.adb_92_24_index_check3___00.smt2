@@ -608,3 +608,5 @@ Target solver: Z3
  ;; File "cubedos-lib-xdr.ads", line 118, characters 0-0
   (not (<= (to_rep data__first) temp___539)))
 (check-sat)
+
+(exit)

@@ -185,3 +185,5 @@ Target solver: Z3
  ;; File "arithmetic.adb", line 223, characters 0-0
   (not (< (div1 n 10) 0)))
 (check-sat)
+
+(exit)

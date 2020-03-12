@@ -856,3 +856,5 @@ Target solver: Z3
   (= (sorted (of_array a4 (to_rep a__first) (to_rep a__last)) (+ j2 1)
      (+ i1 1)) true)))
 (check-sat)
+
+(exit)

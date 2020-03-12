@@ -980,3 +980,5 @@ Target solver: Z3
  ;; File "communications.ads", line 12, characters 0-0
   (not (<= (first1 com__split_fields) (last1 com__split_fields))))
 (check-sat)
+
+(exit)

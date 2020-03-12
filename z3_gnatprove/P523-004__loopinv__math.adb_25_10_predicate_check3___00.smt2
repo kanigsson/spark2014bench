@@ -368,3 +368,5 @@ Target solver: Z3
  ;; File "math.ads", line 16, characters 0-0
   (not (dynamic_predicate (store v1 j1 o1))))
 (check-sat)
+
+(exit)

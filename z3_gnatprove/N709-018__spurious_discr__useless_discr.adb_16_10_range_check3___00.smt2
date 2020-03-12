@@ -547,3 +547,5 @@ Target solver: Z3
  ;; File "useless_discr.adb", line 1, characters 0-0
   (not (in_range2 0)))
 (check-sat)
+
+(exit)

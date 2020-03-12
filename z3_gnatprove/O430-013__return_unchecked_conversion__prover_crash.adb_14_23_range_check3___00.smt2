@@ -221,3 +221,5 @@ Target solver: Z3
  ;; File "prover_crash.ads", line 11, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

@@ -209,3 +209,5 @@ Target solver: Z3
  ;; File "various_no_optim.adb", line 4, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

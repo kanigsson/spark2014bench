@@ -355,3 +355,5 @@ Target solver: Z3
  ;; File "string_old.adb", line 3, characters 0-0
   (not (<= (first1 usf1) usf2)))
 (check-sat)
+
+(exit)

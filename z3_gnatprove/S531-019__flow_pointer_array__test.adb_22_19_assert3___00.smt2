@@ -518,3 +518,5 @@ Target solver: Z3
  ;; File "test.adb", line 1, characters 0-0
   (not (= (first1 a__pointer_value1) 1)))
 (check-sat)
+
+(exit)

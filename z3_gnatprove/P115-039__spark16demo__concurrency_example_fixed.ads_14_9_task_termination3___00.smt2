@@ -426,3 +426,5 @@ Target solver: Z3
  ;; File "concurrency_example_fixed.ads", line 14, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

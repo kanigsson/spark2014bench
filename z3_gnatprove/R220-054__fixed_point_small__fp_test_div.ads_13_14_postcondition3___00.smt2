@@ -405,3 +405,5 @@ Target solver: Z3
  ;; File "fp_test_div.ads", line 11, characters 0-0
   (not (= u1 15)))
 (check-sat)
+
+(exit)

@@ -573,3 +573,5 @@ Target solver: Z3
  ;; File "ring_buf.ads", line 49, characters 0-0
   (not (not (= 10000 0))))
 (check-sat)
+
+(exit)

@@ -943,3 +943,5 @@ Target solver: Z3
  ;; File "ordering_buffers.ads", line 49, characters 0-0
   (not (in_range4 (first (us_repqtmk buffer__split_fields2)))))
 (check-sat)
+
+(exit)

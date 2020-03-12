@@ -873,3 +873,5 @@ Target solver: Z3
  ;; File "record_discr.ads", line 20, characters 0-0
   (not (<= 1 (last1 a))))
 (check-sat)
+
+(exit)

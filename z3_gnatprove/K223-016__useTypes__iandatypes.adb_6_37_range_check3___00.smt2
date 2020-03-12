@@ -100,3 +100,5 @@ Target solver: Z3
  ;; File "iandatypes.ads", line 5, characters 0-0
   (not (in_range (+ x y))))
 (check-sat)
+
+(exit)

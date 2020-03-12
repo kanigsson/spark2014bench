@@ -208,3 +208,5 @@ Target solver: Z3
  ;; File "swap_add_max_14.ads", line 20, characters 0-0
   (not (not (= o2 0))))
 (check-sat)
+
+(exit)

@@ -160,3 +160,5 @@ Target solver: Z3
  ;; File "math.ads", line 3, characters 0-0
   (not (<= 0 math__sqrt__result)))
 (check-sat)
+
+(exit)

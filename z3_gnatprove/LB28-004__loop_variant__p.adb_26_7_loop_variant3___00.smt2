@@ -443,3 +443,5 @@ Target solver: Z3
  ;; File "p.adb", line 1, characters 0-0
   (not (or (< temp___179 j6) (and (= j6 temp___179) (< temp___178 k4)))))
 (check-sat)
+
+(exit)

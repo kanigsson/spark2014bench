@@ -415,3 +415,5 @@ Target solver: Z3
   (not
   (fp.isFinite32 (fp.sub RNE x1 (fp #b0 #b10000011 #b01000000000000000000000)))))
 (check-sat)
+
+(exit)

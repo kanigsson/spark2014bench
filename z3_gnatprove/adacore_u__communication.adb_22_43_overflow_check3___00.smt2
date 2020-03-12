@@ -672,3 +672,5 @@ Target solver: Z3
  ;; File "communication.ads", line 17, characters 0-0
   (not (in_range o8)))
 (check-sat)
+
+(exit)

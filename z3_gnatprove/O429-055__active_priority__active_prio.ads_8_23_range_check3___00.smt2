@@ -202,3 +202,5 @@ Target solver: Z3
  ;; File "active_prio.ads", line 7, characters 0-0
   (not (<= 0 10)))
 (check-sat)
+
+(exit)

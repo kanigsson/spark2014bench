@@ -578,3 +578,5 @@ Target solver: Z3
  ;; File "arr_aggregate.ads", line 43, characters 0-0
   (not (= one 1)))
 (check-sat)
+
+(exit)

@@ -297,3 +297,5 @@ Target solver: Z3
  ;; File "repro.ads", line 20, characters 0-0
   (not (= (is_empty (get_board cur_board1)) true)))
 (check-sat)
+
+(exit)

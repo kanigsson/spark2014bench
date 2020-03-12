@@ -965,3 +965,5 @@ Target solver: Z3
  ;; File "amortized_queue.ads", line 51, characters 0-0
   (not (in_range6 o7)))
 (check-sat)
+
+(exit)

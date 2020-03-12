@@ -205,3 +205,5 @@ Target solver: Z3
  ;; File "logger.ads", line 5, characters 0-0
   (not (< 0 (to_rep (rec__logger__msg_queue_t__num_queued self__)))))
 (check-sat)
+
+(exit)

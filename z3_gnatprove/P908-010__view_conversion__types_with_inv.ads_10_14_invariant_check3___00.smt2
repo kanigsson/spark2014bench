@@ -142,3 +142,5 @@ Target solver: Z3
  ;; File "types_with_inv.ads", line 10, characters 0-0
   (not (type_invariant x1)))
 (check-sat)
+
+(exit)

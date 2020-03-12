@@ -411,3 +411,5 @@ Target solver: Z3
  ;; File "values-operations.ads", line 16, characters 0-0
   (not (not (= (empty last) true))))
 (check-sat)
+
+(exit)

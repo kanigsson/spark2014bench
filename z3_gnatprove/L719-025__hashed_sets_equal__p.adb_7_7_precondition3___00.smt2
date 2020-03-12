@@ -1275,3 +1275,5 @@ Target solver: Z3
   (to_rep (rec__p__my_sets__set__capacity o1)))
   (= (contains1 (us_repqtmk1 o1 (us_split_fieldsqtmk1 l__split_fields)) o) true))))
 (check-sat)
+
+(exit)

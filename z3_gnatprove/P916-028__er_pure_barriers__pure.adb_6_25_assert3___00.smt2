@@ -203,3 +203,5 @@ Target solver: Z3
  ;; File "pure.ads", line 4, characters 0-0
   (not (< 0 (to_rep (rec__pure__pt__n self__)))))
 (check-sat)
+
+(exit)

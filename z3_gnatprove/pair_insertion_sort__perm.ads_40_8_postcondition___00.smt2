@@ -549,3 +549,5 @@ Target solver: Z3
  ;; File "perm.ads", line 34, characters 0-0
   (not (= (occ r e) (occ a e))))
 (check-sat)
+
+(exit)

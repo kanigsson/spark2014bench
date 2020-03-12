@@ -1505,3 +1505,5 @@ Target solver: Z3
  ;; File "evoting.ads", line 116, characters 0-0
   (not (= program_phase 2)))
 (check-sat)
+
+(exit)

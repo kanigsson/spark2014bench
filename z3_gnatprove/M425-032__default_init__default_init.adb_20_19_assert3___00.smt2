@@ -335,3 +335,5 @@ Target solver: Z3
  ;; File "default_init.adb", line 1, characters 0-0
   (not (= (to_rep x2__split_fields) 100)))
 (check-sat)
+
+(exit)

@@ -685,3 +685,5 @@ Target solver: Z3
  ;; File "var_test.ads", line 9, characters 0-0
   (not (not (= (to_rep2 (select condition_values x)) 2))))
 (check-sat)
+
+(exit)

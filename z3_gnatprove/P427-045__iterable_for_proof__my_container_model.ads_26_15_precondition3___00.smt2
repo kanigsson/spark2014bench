@@ -366,3 +366,5 @@ Target solver: Z3
  ;; File "my_container_model.ads", line 25, characters 0-0
   (not (= (m_has_element temp___266 usf) true)))
 (check-sat)
+
+(exit)

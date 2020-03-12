@@ -423,3 +423,5 @@ Target solver: Z3
  ;; File "dynamic_preds_rte.ads", line 27, characters 0-0
   (not (< (* 2 2) 100000)))
 (check-sat)
+
+(exit)

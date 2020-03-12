@@ -114,3 +114,5 @@ Target solver: Z3
  ;; File "assume_and_assert_and_cut_legal.adb", line 2, characters 0-0
   (not (in_range1 o)))
 (check-sat)
+
+(exit)

@@ -1146,3 +1146,5 @@ Target solver: Z3
  ;; File "sdc.ads", line 24, characters 0-0
   (not (<= 1 (argument_count Tuple0))))
 (check-sat)
+
+(exit)

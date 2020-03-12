@@ -300,3 +300,5 @@ Target solver: Z3
  ;; File "partial_init.ads", line 15, characters 0-0
   (not (= (to_rep (rec__partial_init__t__x v__split_fields1)) 0)))
 (check-sat)
+
+(exit)

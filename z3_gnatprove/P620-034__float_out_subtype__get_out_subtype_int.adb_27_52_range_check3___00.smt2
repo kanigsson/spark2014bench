@@ -194,3 +194,5 @@ Target solver: Z3
  ;; File "get_out_subtype_int.adb", line 2, characters 0-0
   (not (in_range pitch_rate_desired)))
 (check-sat)
+
+(exit)

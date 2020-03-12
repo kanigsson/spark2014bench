@@ -152,3 +152,5 @@ Target solver: Z3
  ;; File "normalize.adb", line 12, characters 0-0
   (not (fp.leq normalize__r3__result x)))
 (check-sat)
+
+(exit)

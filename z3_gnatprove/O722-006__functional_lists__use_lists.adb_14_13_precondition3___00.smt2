@@ -1173,3 +1173,5 @@ Target solver: Z3
                                                      l2__split_fields2 
                                                      o16)) 1))))
 (check-sat)
+
+(exit)

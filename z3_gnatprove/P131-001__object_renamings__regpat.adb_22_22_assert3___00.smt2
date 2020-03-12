@@ -306,3 +306,5 @@ Target solver: Z3
      (select (rec__regpat__pattern_matcher__program (us_split_fields1 self)) 1))
      0) true))))
 (check-sat)
+
+(exit)

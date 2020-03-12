@@ -967,3 +967,5 @@ Target solver: Z3
                           (length (to_rep1 value__first)
                           (to_rep1 value__last))) 1)))))
 (check-sat)
+
+(exit)

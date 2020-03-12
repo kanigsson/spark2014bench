@@ -473,3 +473,5 @@ Target solver: Z3
   (to_rep (select memory5 (bvadd addr #x0000000000000003)))) #x01000000)) 
   val__)))
 (check-sat)
+
+(exit)

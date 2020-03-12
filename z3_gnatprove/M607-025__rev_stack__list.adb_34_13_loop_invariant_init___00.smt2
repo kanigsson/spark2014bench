@@ -1545,3 +1545,5 @@ Target solver: Z3
      (us_repqtmk res__split_discrs (us_split_fieldsqtmk res__split_fields1))) (- 
   i1 first2))))
 (check-sat)
+
+(exit)

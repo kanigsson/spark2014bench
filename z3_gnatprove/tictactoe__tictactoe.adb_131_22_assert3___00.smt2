@@ -7812,3 +7812,5 @@ Target solver: Z3
  ;; File "tictactoe.ads", line 42, characters 0-0
   (not (< 0 (num_free_slots my_board))))
 (check-sat)
+
+(exit)

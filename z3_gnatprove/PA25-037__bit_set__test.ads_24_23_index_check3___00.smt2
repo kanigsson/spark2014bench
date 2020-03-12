@@ -567,3 +567,5 @@ Target solver: Z3
  ;; File "test.ads", line 13, characters 0-0
   (not (<= (first1 a) o6)))
 (check-sat)
+
+(exit)

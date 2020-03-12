@@ -1141,3 +1141,5 @@ Target solver: Z3
                                                                   e))) (+ 
                                                                   e_pos2 1))))) #x00000001))))
 (check-sat)
+
+(exit)

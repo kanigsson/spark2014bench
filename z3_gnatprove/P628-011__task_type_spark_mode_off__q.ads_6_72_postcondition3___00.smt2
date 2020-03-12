@@ -127,3 +127,5 @@ Target solver: Z3
  ;; File "q.ads", line 6, characters 0-0
   (not (= x1 0)))
 (check-sat)
+
+(exit)

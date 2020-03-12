@@ -171,3 +171,5 @@ Target solver: Z3
  ;; File "test_if.ads", line 3, characters 0-0
   (not (< b3 1073741822)))
 (check-sat)
+
+(exit)

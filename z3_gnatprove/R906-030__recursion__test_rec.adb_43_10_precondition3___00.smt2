@@ -600,3 +600,5 @@ Target solver: Z3
   (= (bool_eq (to_array o9) (first1 o9) (last1 o9) (to_array o7) (first1 o7)
      (last1 o7)) true)))
 (check-sat)
+
+(exit)

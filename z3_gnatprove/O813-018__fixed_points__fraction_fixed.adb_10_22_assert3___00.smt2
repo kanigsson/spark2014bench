@@ -149,3 +149,5 @@ Target solver: Z3
  ;; File "fraction_fixed.ads", line 7, characters 0-0
   (not (<= z2 x)))
 (check-sat)
+
+(exit)

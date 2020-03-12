@@ -497,3 +497,5 @@ Target solver: Z3
  ;; File "zero_and_min.adb", line 5, characters 0-0
   (not (not (fp.eq (fp.min c1b c2b) (fp.min c2b c1b)))))
 (check-sat)
+
+(exit)

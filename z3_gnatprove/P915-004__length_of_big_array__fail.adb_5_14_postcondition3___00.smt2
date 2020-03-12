@@ -412,3 +412,5 @@ Target solver: Z3
  ;; File "fail.adb", line 4, characters 0-0
   (not (= (last2 fail__create__result) last)))
 (check-sat)
+
+(exit)

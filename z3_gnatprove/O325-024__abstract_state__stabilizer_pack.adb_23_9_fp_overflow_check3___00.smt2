@@ -247,3 +247,5 @@ Target solver: Z3
  ;; File "stabilizer_pack.ads", line 37, characters 0-0
   (not (fp.isFinite32 (fp.add RNE o6 o5))))
 (check-sat)
+
+(exit)

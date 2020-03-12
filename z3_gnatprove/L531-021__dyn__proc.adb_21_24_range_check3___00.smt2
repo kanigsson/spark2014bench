@@ -630,3 +630,5 @@ Target solver: Z3
  ;; File "proc.adb", line 19, characters 0-0
   (not (in_range2 (length o4 o3))))
 (check-sat)
+
+(exit)

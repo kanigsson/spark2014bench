@@ -228,3 +228,5 @@ Target solver: Z3
  ;; File "get_out_subtype.adb", line 2, characters 0-0
   (not (fp.isFinite32 pitch_rate_desired)))
 (check-sat)
+
+(exit)

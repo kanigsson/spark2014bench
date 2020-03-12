@@ -363,3 +363,5 @@ Target solver: Z3
  ;; File "ring_buffer.ads", line 13, characters 0-0
   (not (<= 1 o4)))
 (check-sat)
+
+(exit)

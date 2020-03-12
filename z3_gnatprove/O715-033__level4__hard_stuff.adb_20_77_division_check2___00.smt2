@@ -211,3 +211,5 @@ Target solver: Z3
  ;; File "hard_stuff.adb", line 1, characters 0-0
   (not (not (fp.isZero (fp #b0 #b10001111 #b10000110101000000000000)))))
 (check-sat)
+
+(exit)

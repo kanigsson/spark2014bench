@@ -122,3 +122,5 @@ Target solver: Z3
  ;; File "term.ads", line 6, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

@@ -124,3 +124,5 @@ Target solver: Z3
  ;; File "main.ads", line 3, characters 0-0
   (not (= x 1)))
 (check-sat)
+
+(exit)

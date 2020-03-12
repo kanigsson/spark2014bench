@@ -156,3 +156,5 @@ Target solver: Z3
  ;; File "inside_out.ads", line 7, characters 0-0
   (not (type_invariant x2)))
 (check-sat)
+
+(exit)

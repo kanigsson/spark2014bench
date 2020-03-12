@@ -454,3 +454,5 @@ Target solver: Z3
  ;; File "road_traffic.ads", line 26, characters 0-0
   (not (= (safety_property l1 conflicts) true)))
 (check-sat)
+
+(exit)

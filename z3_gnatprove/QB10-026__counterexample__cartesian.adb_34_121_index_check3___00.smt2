@@ -796,3 +796,5 @@ Target solver: Z3
  ;; File "cartesian.ads", line 43, characters 0-0
   (not (<= (first1 array2) usf)))
 (check-sat)
+
+(exit)

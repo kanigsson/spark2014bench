@@ -964,3 +964,5 @@ Target solver: Z3
      (to_rep1 values__last))
      (of_array values4 (to_rep1 values__first) (to_rep1 values__last))) true)))
 (check-sat)
+
+(exit)

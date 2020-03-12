@@ -1896,3 +1896,5 @@ Target solver: Z3
  ;; File "my_test.adb", line 3, characters 0-0
   (not (= (to_rep3 (select t3__split_fields1 i)) 9)))
 (check-sat)
+
+(exit)

@@ -419,3 +419,5 @@ Target solver: Z3
  ;; File "fp_test_div.ads", line 15, characters 0-0
   (not (in_range3 (abs1 y))))
 (check-sat)
+
+(exit)

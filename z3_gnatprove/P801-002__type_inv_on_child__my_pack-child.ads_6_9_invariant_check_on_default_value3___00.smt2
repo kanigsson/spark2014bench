@@ -93,3 +93,5 @@ Target solver: Z3
  ;; File "my_pack-child.ads", line 1, characters 0-0
   (not (type_invariant usf)))
 (check-sat)
+
+(exit)

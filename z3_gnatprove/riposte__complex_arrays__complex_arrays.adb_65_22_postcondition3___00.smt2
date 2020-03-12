@@ -312,3 +312,5 @@ Target solver: Z3
   (not
   (= (to_rep (select (select a2 i) j)) (to_rep (select (select a2 j) i)))))
 (check-sat)
+
+(exit)

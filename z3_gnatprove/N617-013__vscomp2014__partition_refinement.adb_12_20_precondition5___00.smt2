@@ -1073,3 +1073,5 @@ Target solver: Z3
  ;; File "partition_refinement.ads", line 28, characters 0-0
   (not (<= j1 (last_index o2))))
 (check-sat)
+
+(exit)

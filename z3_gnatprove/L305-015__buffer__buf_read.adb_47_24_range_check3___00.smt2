@@ -466,3 +466,5 @@ Target solver: Z3
  ;; File "buf_read.ads", line 7, characters 0-0
   (not (in_range3 buf_read__read__count)))
 (check-sat)
+
+(exit)

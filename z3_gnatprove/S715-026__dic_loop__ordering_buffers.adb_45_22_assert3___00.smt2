@@ -1081,3 +1081,5 @@ Target solver: Z3
   (= ((_ int2bv 8) (mod2 (last (us_repqtmk buffer__split_fields3)) 256)) ((_ int2bv 8) 
   (mod2 orig_first 256)))))
 (check-sat)
+
+(exit)

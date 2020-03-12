@@ -347,3 +347,5 @@ Target solver: Z3
  ;; File "string_old.adb", line 3, characters 0-0
   (not (= (to_rep (select s idx)) (to_rep (select (to_array usf1) idx)))))
 (check-sat)
+
+(exit)

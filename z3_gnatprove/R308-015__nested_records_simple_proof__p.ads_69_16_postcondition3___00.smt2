@@ -1077,3 +1077,5 @@ Target solver: Z3
  ;; File "p.ads", line 67, characters 0-0
   (not (= (to_rep1 (rec__p__type_5__field_0 p__create_type_5__result)) 0)))
 (check-sat)
+
+(exit)

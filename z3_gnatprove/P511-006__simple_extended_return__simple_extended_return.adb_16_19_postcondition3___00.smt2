@@ -125,3 +125,5 @@ Target solver: Z3
  ;; File "simple_extended_return.adb", line 15, characters 0-0
   (not (= simple_extended_return__simple_extended_r2__result true)))
 (check-sat)
+
+(exit)

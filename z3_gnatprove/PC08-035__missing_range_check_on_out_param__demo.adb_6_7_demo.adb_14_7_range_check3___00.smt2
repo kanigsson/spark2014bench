@@ -156,3 +156,5 @@ Target solver: Z3
  ;; File "demo.ads", line 7, characters 0-0
   (not (in_range (fp #b0 #b10000011 #b01000000000000000000000))))
 (check-sat)
+
+(exit)

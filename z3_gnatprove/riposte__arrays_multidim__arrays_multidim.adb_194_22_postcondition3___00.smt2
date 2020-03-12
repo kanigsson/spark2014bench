@@ -342,3 +342,5 @@ Target solver: Z3
   (not
   (not (= (bool_eq a3 0 1001 0 1001 0 1001 a1 0 1001 0 1001 0 1001) true))))
 (check-sat)
+
+(exit)

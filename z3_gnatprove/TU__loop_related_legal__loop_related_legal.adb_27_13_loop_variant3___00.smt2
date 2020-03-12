@@ -152,3 +152,5 @@ Target solver: Z3
  ;; File "loop_related_legal.adb", line 17, characters 0-0
   (not (< par3 temp___175)))
 (check-sat)
+
+(exit)

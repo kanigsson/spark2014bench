@@ -468,3 +468,5 @@ Target solver: Z3
  ;; File "shapes5.ads", line 16, characters 0-0
   (not (in_range3 (fp.abs (fp.sub RNE y o2)))))
 (check-sat)
+
+(exit)

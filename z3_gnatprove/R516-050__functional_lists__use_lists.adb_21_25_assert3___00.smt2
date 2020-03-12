@@ -2026,3 +2026,5 @@ Target solver: Z3
      (get_element_model (us_repqtmk l2__split_fields3 l2__attr__tag)
      us_HEAP10) (- (length (us_repqtmk l2__split_fields3 l2__attr__tag)) 1))) true)))
 (check-sat)
+
+(exit)

@@ -1554,3 +1554,5 @@ Target solver: Z3
   (not
   (= (last2 (to__ (us_repqtmk1 s__split_fields3))) (+ (- i2 first2) 1))))
 (check-sat)
+
+(exit)

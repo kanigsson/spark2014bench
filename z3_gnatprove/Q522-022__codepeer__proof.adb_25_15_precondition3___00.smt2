@@ -277,3 +277,5 @@ Target solver: Z3
  ;; File "proof.ads", line 30, characters 0-0
   (not (fp.leq o (fp #b0 #b11111101 #b11111111111111111111111))))
 (check-sat)
+
+(exit)

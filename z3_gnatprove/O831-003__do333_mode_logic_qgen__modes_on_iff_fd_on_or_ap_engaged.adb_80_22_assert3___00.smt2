@@ -144,3 +144,5 @@ Target solver: Z3
  ;; File "modes_on_iff_fd_on_or_ap_engaged.ads", line 17, characters 0-0
   (not (= or_out1 true)))
 (check-sat)
+
+(exit)

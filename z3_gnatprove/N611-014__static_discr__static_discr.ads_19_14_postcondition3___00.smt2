@@ -1390,3 +1390,5 @@ Target solver: Z3
                                        (rec__static_discr__holder__length1
                                        (us_split_fields9 a))))))
 (check-sat)
+
+(exit)

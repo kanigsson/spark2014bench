@@ -394,3 +394,5 @@ Target solver: Z3
  ;; File "abs_controller_supplier_with_property.ads", line 19, characters 0-0
   (not (or (not (= vehicle_speed #x00000000)) (= at_rest_switch_out11 1))))
 (check-sat)
+
+(exit)

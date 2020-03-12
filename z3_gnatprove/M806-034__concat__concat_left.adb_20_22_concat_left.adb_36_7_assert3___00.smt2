@@ -498,3 +498,5 @@ Target solver: Z3
  ;; File "concat_left.ads", line 2, characters 0-0
   (not (= (to_rep (select z 10)) (to_rep (select x 9)))))
 (check-sat)
+
+(exit)

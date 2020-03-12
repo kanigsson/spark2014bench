@@ -632,3 +632,5 @@ Target solver: Z3
  ;; File "use_file_system.adb", line 3, characters 0-0
   (not (= (closed1 o3 (us_repqtmk f__split_fields3 o3)) true)))
 (check-sat)
+
+(exit)

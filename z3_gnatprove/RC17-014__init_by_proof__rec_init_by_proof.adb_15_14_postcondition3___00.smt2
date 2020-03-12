@@ -305,3 +305,5 @@ Target solver: Z3
   (not
   (= (attr__init (rec__rec_init_by_proof__three_fields__f1 x__split_fields2)) true)))
 (check-sat)
+
+(exit)

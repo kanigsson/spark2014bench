@@ -5854,3 +5854,5 @@ Target solver: Z3
   (not
   (= (to_rep (rec__do_checks__do_discriminant_check__r1__j x__split_discrs1)) 10)))
 (check-sat)
+
+(exit)

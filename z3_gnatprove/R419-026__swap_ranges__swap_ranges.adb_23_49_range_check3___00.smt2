@@ -684,3 +684,5 @@ Target solver: Z3
  ;; File "swap_ranges.ads", line 6, characters 0-0
   (not (<= (to_rep b__first) o12)))
 (check-sat)
+
+(exit)

@@ -1515,3 +1515,5 @@ Target solver: Z3
  ;; File "call_dispatch.adb", line 2, characters 0-0
   (not (= x1__attr__tag x2__attr__tag)))
 (check-sat)
+
+(exit)

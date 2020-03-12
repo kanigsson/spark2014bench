@@ -710,3 +710,5 @@ Target solver: Z3
  ;; File "p.adb", line 1, characters 0-0
   (not (= j18 (+ a k12))))
 (check-sat)
+
+(exit)

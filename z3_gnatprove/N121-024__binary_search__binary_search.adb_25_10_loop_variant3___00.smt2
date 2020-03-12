@@ -638,3 +638,5 @@ Target solver: Z3
  ;; File "binary_search.ads", line 14, characters 0-0
   (not (< (- right3 left3) temp___203)))
 (check-sat)
+
+(exit)

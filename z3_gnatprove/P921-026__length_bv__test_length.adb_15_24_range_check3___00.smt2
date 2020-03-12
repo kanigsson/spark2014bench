@@ -473,3 +473,5 @@ Target solver: Z3
  ;; File "test_length.adb", line 12, characters 0-0
   (not (bvule ((_ zero_extend 48) #x0000) o)))
 (check-sat)
+
+(exit)

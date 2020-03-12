@@ -596,3 +596,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-K505-010__stack-972/src/gnatprove/stacks__stack.mlw", line 946, characters 5-8
   (not (<= 1 usf)))
 (check-sat)
+
+(exit)

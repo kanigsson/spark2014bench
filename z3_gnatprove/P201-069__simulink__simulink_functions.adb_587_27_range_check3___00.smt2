@@ -356,3 +356,5 @@ Target solver: Z3
  ;; File "simulink_functions.ads", line 99, characters 0-0
   (not (fp.leq ((_ to_fp_unsigned 8 24) RTP #x0000) o2)))
 (check-sat)
+
+(exit)

@@ -194,3 +194,5 @@ Target solver: Z3
  ;; File "private_pointer.ads", line 6, characters 0-0
   (not (rec__private_pointer__mode_on__t__pointer_value__pred x)))
 (check-sat)
+
+(exit)

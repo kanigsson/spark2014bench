@@ -667,3 +667,5 @@ Target solver: Z3
  ;; File "prime_and_coprime_numbers.adb", line 196, characters 0-0
   (not (<= 2 index_22)))
 (check-sat)
+
+(exit)

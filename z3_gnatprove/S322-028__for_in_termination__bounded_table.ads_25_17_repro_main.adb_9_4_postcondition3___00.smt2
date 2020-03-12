@@ -649,3 +649,5 @@ Target solver: Z3
   (= (length
      (model1 (us_repqtmk repro_main__int_table__empty_table__result))) 0)))
 (check-sat)
+
+(exit)

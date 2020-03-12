@@ -904,3 +904,5 @@ Target solver: Z3
  ;; File "input.ads", line 9, characters 0-0
   (not (<= (to_rep1 v__first) (to_rep1 v__last))))
 (check-sat)
+
+(exit)

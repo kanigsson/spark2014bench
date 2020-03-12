@@ -182,3 +182,5 @@ Target solver: Z3
  ;; File "protectedfloat.ads", line 10, characters 0-0
   (not (fp.isFinite32 (fp.div RNE left o))))
 (check-sat)
+
+(exit)

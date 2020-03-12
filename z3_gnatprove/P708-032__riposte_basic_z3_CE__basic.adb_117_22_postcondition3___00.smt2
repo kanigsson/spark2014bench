@@ -112,3 +112,5 @@ Target solver: Z3
  ;; File "basic.adb", line 113, characters 0-0
   (not (= basic__equality_rewrite_loop_test__result y)))
 (check-sat)
+
+(exit)

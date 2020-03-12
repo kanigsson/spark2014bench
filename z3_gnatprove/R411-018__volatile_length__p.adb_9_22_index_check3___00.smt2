@@ -448,3 +448,5 @@ Target solver: Z3
  ;; File "p.ads", line 6, characters 0-0
   (not (<= (to_rep buf__first) o5)))
 (check-sat)
+
+(exit)

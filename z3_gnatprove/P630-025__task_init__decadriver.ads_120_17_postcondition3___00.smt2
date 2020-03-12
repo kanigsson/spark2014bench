@@ -944,3 +944,5 @@ Target solver: Z3
  ;; File "decadriver.ads", line 114, characters 0-0
   (not (= result__1 0)))
 (check-sat)
+
+(exit)

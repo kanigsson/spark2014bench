@@ -515,3 +515,5 @@ Target solver: Z3
  ;; File "special.ads", line 8, characters 0-0
   (not (= (to_rep2 (rec__basic__r__x v__split_discrs)) 0)))
 (check-sat)
+
+(exit)

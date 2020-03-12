@@ -3231,3 +3231,5 @@ Target solver: Z3
  ;; File "partition_refinement.ads", line 40, characters 0-0
   (not (<= 0 temp___1431)))
 (check-sat)
+
+(exit)

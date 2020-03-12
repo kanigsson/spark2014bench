@@ -682,3 +682,5 @@ Target solver: Z3
                                    (rec__traversals__list1_acc__pointer_value
                                    l))))) 1))))
 (check-sat)
+
+(exit)

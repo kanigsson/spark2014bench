@@ -2474,3 +2474,5 @@ Target solver: Z3
      (rec__ada___skp__subjects__event_entry_type__dst_subject
      ada___skp__subjects__get_event__result)) subject_id))))
 (check-sat)
+
+(exit)

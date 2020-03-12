@@ -429,3 +429,5 @@ Target solver: Z3
  ;; File "rng.ads", line 10, characters 0-0
   (not (bvule ((_ zero_extend 32) #x00000000) o)))
 (check-sat)
+
+(exit)

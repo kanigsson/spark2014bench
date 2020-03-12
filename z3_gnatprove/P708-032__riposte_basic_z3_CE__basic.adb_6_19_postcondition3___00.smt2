@@ -111,3 +111,5 @@ Target solver: Z3
  ;; File "basic.adb", line 5, characters 0-0
   (not (= basic__add_ub__result (+ a b))))
 (check-sat)
+
+(exit)

@@ -97,3 +97,5 @@ Target solver: Z3
  ;; File "spark_inst2.ads", line 3, characters 0-0
   (not (= (func 0) true)))
 (check-sat)
+
+(exit)

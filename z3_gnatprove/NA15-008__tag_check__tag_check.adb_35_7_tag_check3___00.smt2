@@ -197,3 +197,5 @@ Target solver: Z3
  ;; File "tag_check.adb", line 33, characters 0-0
   (not (= (attr__tag x) (attr__tag y))))
 (check-sat)
+
+(exit)

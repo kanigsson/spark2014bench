@@ -343,3 +343,5 @@ Target solver: Z3
   (= (to_rep (rec__frame__rec__c1 (us_split_fields1 (select a2 j1)))) 
   (to_rep (rec__frame__rec__c2 (us_split_fields1 (select a1 j1)))))))
 (check-sat)
+
+(exit)

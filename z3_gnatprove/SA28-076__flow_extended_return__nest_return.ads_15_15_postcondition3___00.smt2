@@ -97,3 +97,5 @@ Target solver: Z3
  ;; File "nest_return.ads", line 14, characters 0-0
   (not (= x true)))
 (check-sat)
+
+(exit)

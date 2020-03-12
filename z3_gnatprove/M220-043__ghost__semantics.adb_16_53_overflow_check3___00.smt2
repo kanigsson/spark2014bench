@@ -233,3 +233,5 @@ Target solver: Z3
  ;; File "semantics.ads", line 10, characters 0-0
   (not (in_range1 (+ formal3 o4))))
 (check-sat)
+
+(exit)

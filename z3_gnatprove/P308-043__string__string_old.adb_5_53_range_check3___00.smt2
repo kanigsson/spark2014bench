@@ -350,3 +350,5 @@ Target solver: Z3
  ;; File "string_old.adb", line 3, characters 0-0
   (not (<= (to_rep1 s__first) temp___203)))
 (check-sat)
+
+(exit)

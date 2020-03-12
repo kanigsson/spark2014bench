@@ -623,3 +623,5 @@ Target solver: Z3
  ;; File "pred.adb", line 16, characters 0-0
   (not (pred__r__c2__pred i13b)))
 (check-sat)
+
+(exit)

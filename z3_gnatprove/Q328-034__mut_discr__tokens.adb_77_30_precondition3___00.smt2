@@ -617,3 +617,5 @@ Target solver: Z3
  ;; File "tokens.ads", line 23, characters 0-0
   (not (<= 2 (size last))))
 (check-sat)
+
+(exit)

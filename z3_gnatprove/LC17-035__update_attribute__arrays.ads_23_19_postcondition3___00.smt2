@@ -239,3 +239,5 @@ Target solver: Z3
  ;; File "arrays.ads", line 20, characters 0-0
   (not (= (to_rep (select a2 j)) (to_rep (select a1 j)))))
 (check-sat)
+
+(exit)

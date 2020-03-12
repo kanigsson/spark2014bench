@@ -393,3 +393,5 @@ Target solver: Z3
   (= (bool_eq a4 1 1000 (temp_____aggregate_def_201 a_loop_entry1 first j2 0)
      1 1000) true)))
 (check-sat)
+
+(exit)

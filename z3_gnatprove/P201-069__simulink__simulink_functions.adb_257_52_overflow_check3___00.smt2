@@ -277,3 +277,5 @@ Target solver: Z3
  ;; File "simulink_functions.ads", line 65, characters 0-0
   (not (in_range1 o5)))
 (check-sat)
+
+(exit)

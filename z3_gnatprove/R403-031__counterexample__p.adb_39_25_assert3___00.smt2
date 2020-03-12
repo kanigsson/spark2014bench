@@ -320,3 +320,5 @@ Target solver: Z3
  ;; File "p.ads", line 19, characters 0-0
   (not (= res2 (bvmul res_g2 (pow21 (bvadd m3 #x0001))))))
 (check-sat)
+
+(exit)

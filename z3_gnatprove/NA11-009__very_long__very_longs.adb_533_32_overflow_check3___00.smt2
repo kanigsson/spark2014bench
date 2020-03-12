@@ -1274,3 +1274,5 @@ Target solver: Z3
  ;; File "very_longs.adb", line 515, characters 0-0
   (not (in_range2 o8)))
 (check-sat)
+
+(exit)

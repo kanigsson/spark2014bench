@@ -332,3 +332,5 @@ Target solver: Z3
  ;; File "unconstr.adb", line 15, characters 0-0
   (not (< 0 (length (to_rep o1) (to_rep o)))))
 (check-sat)
+
+(exit)

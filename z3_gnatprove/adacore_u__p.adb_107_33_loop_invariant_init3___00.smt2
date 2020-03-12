@@ -442,3 +442,5 @@ Target solver: Z3
  ;; File "p.ads", line 30, characters 0-0
   (not (<= (first1 a) temp___325)))
 (check-sat)
+
+(exit)

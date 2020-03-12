@@ -704,3 +704,5 @@ Target solver: Z3
  ;; File "frame_condition.ads", line 17, characters 0-0
   (not (< 0 (length (to_rep1 a__first) (to_rep1 a__last)))))
 (check-sat)
+
+(exit)

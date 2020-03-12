@@ -501,3 +501,5 @@ Target solver: Z3
   (<= dynamic_ranges__search_0__result (last1 a)))
   (= (to_rep (select (to_array a) dynamic_ranges__search_0__result)) 0)))))
 (check-sat)
+
+(exit)

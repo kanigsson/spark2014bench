@@ -214,3 +214,5 @@ Target solver: Z3
  ;; File "use_my_eq_arr.adb", line 2, characters 0-0
   (not (= (my_prop (select w 1) (select z 1)) true)))
 (check-sat)
+
+(exit)

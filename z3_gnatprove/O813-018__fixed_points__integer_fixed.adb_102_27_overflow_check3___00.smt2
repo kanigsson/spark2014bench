@@ -253,3 +253,5 @@ Target solver: Z3
  ;; File "integer_fixed.ads", line 23, characters 0-0
   (not (in_range1 (* x 2))))
 (check-sat)
+
+(exit)

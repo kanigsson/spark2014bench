@@ -586,3 +586,5 @@ Target solver: Z3
  ;; File "attempt_3.adb", line 29, characters 0-0
   (not (= (invariant__ (+ n 1) new_speed1) true)))
 (check-sat)
+
+(exit)

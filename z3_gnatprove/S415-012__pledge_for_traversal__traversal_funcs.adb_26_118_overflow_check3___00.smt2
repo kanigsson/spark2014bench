@@ -683,3 +683,5 @@ Target solver: Z3
  ;; File "traversal_funcs.adb", line 21, characters 0-0
   (not (in_range1 (+ o4 1))))
 (check-sat)
+
+(exit)

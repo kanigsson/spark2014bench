@@ -309,3 +309,5 @@ Target solver: Z3
  ;; File "tab_init.ads", line 5, characters 0-0
   (not (= (to_rep (select t3 j)) (* a j))))
 (check-sat)
+
+(exit)

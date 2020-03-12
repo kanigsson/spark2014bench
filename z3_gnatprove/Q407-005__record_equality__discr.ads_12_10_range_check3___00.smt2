@@ -643,3 +643,5 @@ Target solver: Z3
  ;; File "discr.ads", line 1, characters 0-0
   (not (<= 1 usf1)))
 (check-sat)
+
+(exit)

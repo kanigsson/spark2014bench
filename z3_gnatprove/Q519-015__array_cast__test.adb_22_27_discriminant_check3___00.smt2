@@ -1137,3 +1137,5 @@ Target solver: Z3
  ;; File "test.adb", line 5, characters 0-0
   (not (in_range4 10 (us_split_discrs1 temp___334))))
 (check-sat)
+
+(exit)

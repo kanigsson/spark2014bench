@@ -933,3 +933,5 @@ Target solver: Z3
  ;; File "input.ads", line 9, characters 0-0
   (not (<= size1 1024)))
 (check-sat)
+
+(exit)

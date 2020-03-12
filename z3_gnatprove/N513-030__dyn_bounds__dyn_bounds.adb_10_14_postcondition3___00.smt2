@@ -206,3 +206,5 @@ Target solver: Z3
  ;; File "dyn_bounds.adb", line 8, characters 0-0
   (not (< 0 dyn_bounds__f_simple_2__result)))
 (check-sat)
+
+(exit)

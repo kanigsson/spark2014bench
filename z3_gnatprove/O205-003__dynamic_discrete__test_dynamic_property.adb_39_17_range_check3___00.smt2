@@ -208,3 +208,5 @@ Target solver: Z3
  ;; File "test_dynamic_property.adb", line 34, characters 0-0
   (not (dynamic_property 1 last o)))
 (check-sat)
+
+(exit)

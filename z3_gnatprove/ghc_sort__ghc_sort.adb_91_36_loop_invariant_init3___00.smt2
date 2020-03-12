@@ -598,3 +598,5 @@ Target solver: Z3
   (not
   (<= (to_rep (select r3 (- j4 1))) (to_rep (select (to_array s2) j21)))))
 (check-sat)
+
+(exit)

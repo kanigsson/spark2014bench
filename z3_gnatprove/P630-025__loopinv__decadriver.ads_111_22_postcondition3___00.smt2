@@ -906,3 +906,5 @@ Target solver: Z3
  ;; File "decadriver.ads", line 110, characters 0-0
   (not (<= decadriver__receiver_type__pending_frames_count__result 2)))
 (check-sat)
+
+(exit)

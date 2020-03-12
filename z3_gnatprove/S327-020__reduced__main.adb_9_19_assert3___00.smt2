@@ -441,3 +441,5 @@ Target solver: Z3
  ;; File "main.adb", line 3, characters 0-0
   (not (bvule #x0000000000000000 temp___198)))
 (check-sat)
+
+(exit)

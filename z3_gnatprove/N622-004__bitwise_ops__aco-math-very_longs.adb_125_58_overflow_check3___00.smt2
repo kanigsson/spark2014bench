@@ -1003,3 +1003,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 26, characters 0-0
   (not (in_range5 o3)))
 (check-sat)
+
+(exit)

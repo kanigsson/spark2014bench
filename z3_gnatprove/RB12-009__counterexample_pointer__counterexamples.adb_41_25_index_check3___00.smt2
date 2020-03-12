@@ -775,3 +775,5 @@ Target solver: Z3
  ;; File "counterexamples.adb", line 37, characters 0-0
   (not (<= (first3 a__pointer_value) 1)))
 (check-sat)
+
+(exit)

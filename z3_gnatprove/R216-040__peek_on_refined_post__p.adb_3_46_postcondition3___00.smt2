@@ -108,3 +108,5 @@ Target solver: Z3
  ;; File "p.adb", line 3, characters 0-0
   (not (<= 0 p__nested__f__result)))
 (check-sat)
+
+(exit)

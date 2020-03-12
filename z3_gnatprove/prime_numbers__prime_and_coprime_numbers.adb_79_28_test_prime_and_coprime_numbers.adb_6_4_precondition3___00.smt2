@@ -359,3 +359,5 @@ Target solver: Z3
  ;; File "prime_and_coprime_numbers.ads", line 51, characters 0-0
   (not (<= 2 o)))
 (check-sat)
+
+(exit)

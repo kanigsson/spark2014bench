@@ -2846,3 +2846,5 @@ Target solver: Z3
  ;; File "test_record_cnt_ex.ads", line 1, characters 0-0
   (not (in_range 1)))
 (check-sat)
+
+(exit)

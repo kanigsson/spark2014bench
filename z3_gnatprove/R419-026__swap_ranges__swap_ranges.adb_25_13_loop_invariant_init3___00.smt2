@@ -666,3 +666,5 @@ Target solver: Z3
      (bool_eq (to_array temp___258) (first1 temp___258) (last1 temp___258)
      (to_array temp___259) (first1 temp___259) (last1 temp___259)))) true)))
 (check-sat)
+
+(exit)

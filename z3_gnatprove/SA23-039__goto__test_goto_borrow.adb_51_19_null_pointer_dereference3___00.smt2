@@ -821,3 +821,5 @@ Target solver: Z3
  ;; File "test_goto_borrow.adb", line 24, characters 0-0
   (not (rec__test_goto_borrow__list__pointer_value__pred o6)))
 (check-sat)
+
+(exit)

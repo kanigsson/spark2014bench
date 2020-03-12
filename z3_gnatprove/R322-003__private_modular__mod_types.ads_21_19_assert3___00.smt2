@@ -246,3 +246,5 @@ Target solver: Z3
      (ite (bvule (bvsub #xFF a) b) (bvsub temp___167 #xFF) temp___167)) 
   c)))
 (check-sat)
+
+(exit)

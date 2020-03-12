@@ -1477,3 +1477,5 @@ Target solver: Z3
  ;; File "main.adb", line 4, characters 0-0
   (not (= (subset1 o4 (of_array1 a (to_rep1 o9) (to_rep1 o8))) true)))
 (check-sat)
+
+(exit)

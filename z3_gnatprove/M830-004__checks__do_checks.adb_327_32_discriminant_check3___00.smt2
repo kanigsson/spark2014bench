@@ -427,3 +427,5 @@ Target solver: Z3
   (not (do_checks__do_discriminant_check__r1__arr__pred
   (us_repqtmk y__split_discrs (us_split_fieldsqtmk y__split_fields)))))
 (check-sat)
+
+(exit)

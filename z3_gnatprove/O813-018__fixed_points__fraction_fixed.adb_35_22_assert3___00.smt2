@@ -203,3 +203,5 @@ Target solver: Z3
  ;; File "fraction_fixed.ads", line 13, characters 0-0
   (not (= z3 (- 7))))
 (check-sat)
+
+(exit)

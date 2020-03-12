@@ -712,3 +712,5 @@ Target solver: Z3
  ;; File "test_rec.adb", line 32, characters 0-0
   (not (<= (to_rep o_m__first) (to_rep o_m__last))))
 (check-sat)
+
+(exit)

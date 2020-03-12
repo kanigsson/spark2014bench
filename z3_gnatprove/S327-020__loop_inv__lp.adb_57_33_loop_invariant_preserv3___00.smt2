@@ -904,3 +904,5 @@ Target solver: Z3
  ;; File "lp.ads", line 10, characters 0-0
   (not (bvule #x0000000000000000 temp___316)))
 (check-sat)
+
+(exit)

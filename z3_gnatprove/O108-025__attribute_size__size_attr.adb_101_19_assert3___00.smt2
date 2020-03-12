@@ -2414,3 +2414,5 @@ Target solver: Z3
  ;; File "size_attr.adb", line 3, characters 0-0
   (not (<= 0 value__size4)))
 (check-sat)
+
+(exit)

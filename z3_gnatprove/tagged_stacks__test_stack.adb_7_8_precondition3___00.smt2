@@ -958,3 +958,5 @@ Target solver: Z3
  ;; File "test_stack.adb", line 2, characters 0-0
   (not (not (= (is_full (us_repqtmk s__split_fields1 o1)) true))))
 (check-sat)
+
+(exit)

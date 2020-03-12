@@ -568,3 +568,5 @@ Target solver: Z3
  ;; File "sorters.ads", line 15, characters 0-0
   (not (in_range2 current)))
 (check-sat)
+
+(exit)

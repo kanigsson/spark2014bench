@@ -912,3 +912,5 @@ Target solver: Z3
   (not
   (= (empty (us_repqtmk buffer__split_discrs buffer__split_fields1)) true)))
 (check-sat)
+
+(exit)

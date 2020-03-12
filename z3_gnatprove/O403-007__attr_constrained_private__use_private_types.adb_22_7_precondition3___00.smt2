@@ -361,3 +361,5 @@ Target solver: Z3
      (rec__private_types__simple__d
      (us_split_discrs1 private_types__private_reinit__s__compl))) 0)))
 (check-sat)
+
+(exit)

@@ -1122,3 +1122,5 @@ Target solver: Z3
  ;; File "keccak-duplex.ads", line 115, characters 0-0
   (not (<= (first1 temp___1186) (last1 temp___1186))))
 (check-sat)
+
+(exit)

@@ -790,3 +790,5 @@ Target solver: Z3
  ;; File "rectangle.ads", line 6, characters 0-0
   (not (= (has_stored_area o2) true)))
 (check-sat)
+
+(exit)

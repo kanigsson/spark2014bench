@@ -140,3 +140,5 @@ Target solver: Z3
  ;; File "p_inst.adb", line 5, characters 0-0
   (not (<= 0 x)))
 (check-sat)
+
+(exit)

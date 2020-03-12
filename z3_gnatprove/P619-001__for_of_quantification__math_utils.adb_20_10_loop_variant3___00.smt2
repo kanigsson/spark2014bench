@@ -453,3 +453,5 @@ Target solver: Z3
  ;; File "math_utils.ads", line 6, characters 0-0
   (not (< temp___191 i2)))
 (check-sat)
+
+(exit)

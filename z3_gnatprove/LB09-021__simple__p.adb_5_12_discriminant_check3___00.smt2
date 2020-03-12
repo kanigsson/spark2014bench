@@ -486,3 +486,5 @@ Target solver: Z3
  ;; File "p.ads", line 18, characters 0-0
   (not (p__s__bool_field__pred v__split_fields)))
 (check-sat)
+
+(exit)

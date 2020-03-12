@@ -1293,3 +1293,5 @@ Target solver: Z3
  ;; File "formals_rec_split_pred.adb", line 1, characters 0-0
   (not (formals_rec_split_pred__rec__h__pred temp___250)))
 (check-sat)
+
+(exit)

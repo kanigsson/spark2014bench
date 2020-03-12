@@ -426,3 +426,5 @@ Target solver: Z3
  ;; File "dynamic_ranges.adb", line 28, characters 0-0
   (not (<= (first1 a) i)))
 (check-sat)
+
+(exit)

@@ -240,3 +240,5 @@ Target solver: Z3
      (rec__dispatch__root__f (us_split_fields1 dispatch__incr3__result))) (+ 
   (to_rep (rec__dispatch__root__f (us_split_fields1 x))) 1))))
 (check-sat)
+
+(exit)

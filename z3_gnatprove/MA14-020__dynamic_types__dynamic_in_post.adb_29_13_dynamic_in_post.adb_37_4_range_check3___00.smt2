@@ -521,3 +521,5 @@ Target solver: Z3
  ;; File "dynamic_in_post.adb", line 1, characters 0-0
   (not (<= 1 1)))
 (check-sat)
+
+(exit)

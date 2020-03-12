@@ -238,3 +238,5 @@ Target solver: Z3
  ;; File "allocator.ads", line 5, characters 0-0
   (not (= (all_available data) true)))
 (check-sat)
+
+(exit)

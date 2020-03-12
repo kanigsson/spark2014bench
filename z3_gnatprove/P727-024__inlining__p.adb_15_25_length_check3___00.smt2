@@ -351,3 +351,5 @@ Target solver: Z3
  ;; File "p.adb", line 1, characters 0-0
   (not (<= r4b 10)))
 (check-sat)
+
+(exit)

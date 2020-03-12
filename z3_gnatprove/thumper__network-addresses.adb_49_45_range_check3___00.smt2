@@ -877,3 +877,5 @@ Target solver: Z3
  ;; File "network-addresses.ads", line 25, characters 0-0
   (not (in_range5 (+ result_index2 1))))
 (check-sat)
+
+(exit)

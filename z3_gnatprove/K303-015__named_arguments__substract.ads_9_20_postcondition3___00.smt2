@@ -136,3 +136,5 @@ Target solver: Z3
  ;; File "substract.ads", line 8, characters 0-0
   (not (= substract__oppsub__result (- second first))))
 (check-sat)
+
+(exit)

@@ -312,3 +312,5 @@ Target solver: Z3
  ;; File "mod_array.ads", line 6, characters 0-0
   (not (uint_in_range (length x))))
 (check-sat)
+
+(exit)

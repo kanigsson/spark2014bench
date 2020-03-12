@@ -217,3 +217,5 @@ Target solver: Z3
  ;; File "arithmetic.adb", line 240, characters 0-0
   (not (= arithmetic__test_rem_b__result (+ (- (* (div1 a b) b)) a))))
 (check-sat)
+
+(exit)

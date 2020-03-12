@@ -104,3 +104,5 @@ Target solver: Z3
  ;; File "arith.ads", line 5, characters 0-0
   (not (in_range (- 2147483647 x))))
 (check-sat)
+
+(exit)

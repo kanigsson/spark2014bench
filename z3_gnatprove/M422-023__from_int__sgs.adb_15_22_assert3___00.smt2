@@ -332,3 +332,5 @@ Target solver: Z3
  ;; File "sgs.ads", line 10, characters 0-0
   (not (fp.leq (fp #b0 #b00000000 #b00000000000000000000000) (a x3))))
 (check-sat)
+
+(exit)

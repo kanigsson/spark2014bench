@@ -204,3 +204,5 @@ Target solver: Z3
  ;; File "precise.adb", line 1, characters 0-0
   (not (fp.leq (fp #b0 #b10000000 #b10110011001100101110000) z3)))
 (check-sat)
+
+(exit)

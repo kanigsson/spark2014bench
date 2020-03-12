@@ -1320,3 +1320,5 @@ Target solver: Z3
  ;; File "console_pack.adb", line 40, characters 0-0
   (not (<= r6b r7b)))
 (check-sat)
+
+(exit)

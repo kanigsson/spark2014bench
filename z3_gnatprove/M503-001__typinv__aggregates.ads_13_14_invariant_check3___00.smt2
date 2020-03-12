@@ -223,3 +223,5 @@ Target solver: Z3
   (not (type_invariant
   (to_rep (rec__aggregates__rec_t__a x__split_fields1)))))
 (check-sat)
+
+(exit)

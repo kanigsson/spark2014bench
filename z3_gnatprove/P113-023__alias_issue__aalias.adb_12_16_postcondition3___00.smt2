@@ -202,3 +202,5 @@ Target solver: Z3
  ;; File "aalias.adb", line 10, characters 0-0
   (not (= e12 e21)))
 (check-sat)
+
+(exit)

@@ -206,3 +206,5 @@ Target solver: Z3
  ;; File "nested.ads", line 3, characters 0-0
   (not (<= 44 nested__search__result)))
 (check-sat)
+
+(exit)

@@ -2784,3 +2784,5 @@ Target solver: Z3
                                                               d__split_fields2))
                                                               c))))
 (check-sat)
+
+(exit)

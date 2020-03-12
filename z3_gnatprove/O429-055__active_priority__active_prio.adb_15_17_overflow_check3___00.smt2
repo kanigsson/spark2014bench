@@ -176,3 +176,5 @@ Target solver: Z3
  ;; File "active_prio.ads", line 9, characters 0-0
   (not (in_range (+ o 1))))
 (check-sat)
+
+(exit)

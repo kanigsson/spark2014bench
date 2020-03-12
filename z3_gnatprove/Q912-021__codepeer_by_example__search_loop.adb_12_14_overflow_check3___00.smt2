@@ -231,3 +231,5 @@ Target solver: Z3
  ;; File "search_loop.adb", line 2, characters 0-0
   (not (in_range (+ j1 1))))
 (check-sat)
+
+(exit)

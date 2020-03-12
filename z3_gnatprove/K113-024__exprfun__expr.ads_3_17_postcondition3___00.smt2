@@ -145,3 +145,5 @@ Target solver: Z3
  ;; File "expr.ads", line 2, characters 0-0
   (not (= expr__echo__result a)))
 (check-sat)
+
+(exit)

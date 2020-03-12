@@ -509,3 +509,5 @@ Target solver: Z3
   (not
   (= (count my_stack__split_fields2) (- (count my_stack__split_fields1) 1))))
 (check-sat)
+
+(exit)

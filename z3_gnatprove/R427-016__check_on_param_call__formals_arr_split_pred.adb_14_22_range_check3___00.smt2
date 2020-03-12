@@ -443,3 +443,5 @@ Target solver: Z3
  ;; File "formals_arr_split_pred.adb", line 10, characters 0-0
   (not (in_range2 o2)))
 (check-sat)
+
+(exit)

@@ -466,3 +466,5 @@ Target solver: Z3
  ;; File "stacks.ads", line 6, characters 0-0
   (not (= (peek (us_repqtmk s__split_fields2)) e)))
 (check-sat)
+
+(exit)

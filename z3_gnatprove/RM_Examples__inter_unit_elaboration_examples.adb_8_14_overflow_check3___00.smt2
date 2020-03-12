@@ -94,3 +94,5 @@ Target solver: Z3
  ;; File "inter_unit_elaboration_examples.ads", line 10, characters 0-0
   (not (in_range (* 2 i))))
 (check-sat)
+
+(exit)

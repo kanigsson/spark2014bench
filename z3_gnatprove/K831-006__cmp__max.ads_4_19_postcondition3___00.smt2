@@ -153,3 +153,5 @@ Target solver: Z3
  ;; File "max.ads", line 3, characters 0-0
   (not (fp.eq max__max__result right)))
 (check-sat)
+
+(exit)

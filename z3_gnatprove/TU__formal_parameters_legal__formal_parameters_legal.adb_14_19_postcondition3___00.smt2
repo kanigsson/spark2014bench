@@ -195,3 +195,5 @@ Target solver: Z3
  ;; File "formal_parameters_legal.adb", line 13, characters 0-0
   (not (= (to_rep (select arr1 i)) 1)))
 (check-sat)
+
+(exit)

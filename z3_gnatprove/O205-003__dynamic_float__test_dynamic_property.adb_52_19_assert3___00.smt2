@@ -345,3 +345,5 @@ Target solver: Z3
  ;; File "test_dynamic_property.adb", line 1, characters 0-0
   (not (fp.leq x1 c)))
 (check-sat)
+
+(exit)

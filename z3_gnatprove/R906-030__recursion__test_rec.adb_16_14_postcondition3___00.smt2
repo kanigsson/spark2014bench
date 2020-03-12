@@ -462,3 +462,5 @@ Target solver: Z3
  ;; File "test_rec.adb", line 13, characters 0-0
   (not (= (sum a) (sum b))))
 (check-sat)
+
+(exit)

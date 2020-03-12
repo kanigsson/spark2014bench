@@ -652,3 +652,5 @@ Target solver: Z3
  ;; File "stack_functional_spec.ads", line 55, characters 0-0
   (not (<= 1 o5)))
 (check-sat)
+
+(exit)

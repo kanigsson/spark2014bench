@@ -258,3 +258,5 @@ Target solver: Z3
  ;; File "fib.ads", line 23, characters 0-0
   (not (= p11 (factorial (- i 1)))))
 (check-sat)
+
+(exit)

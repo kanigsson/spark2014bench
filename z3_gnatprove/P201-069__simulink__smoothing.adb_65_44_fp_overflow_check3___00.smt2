@@ -237,3 +237,5 @@ Target solver: Z3
  ;; File "smoothing.ads", line 16, characters 0-0
   (not (fp.isFinite64 o4)))
 (check-sat)
+
+(exit)

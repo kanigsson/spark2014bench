@@ -791,3 +791,5 @@ Target solver: Z3
  ;; File "relaxed_initialization.adb", line 22, characters 0-0
   (not (<= (to_rep obj__first) temp___329)))
 (check-sat)
+
+(exit)

@@ -1644,3 +1644,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 75, characters 0-0
   (not (in_range3 o14 (us_split_discrs1 divisor))))
 (check-sat)
+
+(exit)

@@ -442,3 +442,5 @@ Target solver: Z3
  ;; File "rec_inv.adb", line 12, characters 0-0
   (not (< 0 rec_inv__f__result)))
 (check-sat)
+
+(exit)

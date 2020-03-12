@@ -337,3 +337,5 @@ Target solver: Z3
  ;; File "simple_trajectory.ads", line 31, characters 0-0
   (not (fp.isFinite64 o)))
 (check-sat)
+
+(exit)

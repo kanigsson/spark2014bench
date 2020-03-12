@@ -174,3 +174,5 @@ Target solver: Z3
  ;; File "testfloat.adb", line 11, characters 0-0
   (not (not (fp.isZero (fp #b0 #b10000000 #b00000000000000000000000)))))
 (check-sat)
+
+(exit)

@@ -393,3 +393,5 @@ Target solver: Z3
  ;; File "lt.ads", line 12, characters 0-0
   (not (<= r2 (* (+ i 1) 10))))
 (check-sat)
+
+(exit)

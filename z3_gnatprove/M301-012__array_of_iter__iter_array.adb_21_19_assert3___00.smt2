@@ -397,3 +397,5 @@ Target solver: Z3
  ;; File "iter_array.adb", line 1, characters 0-0
   (not (= (to_rep (select x11 temp___207)) 2)))
 (check-sat)
+
+(exit)

@@ -137,3 +137,5 @@ Target solver: Z3
  ;; File "random_testing.adb", line 9, characters 0-0
   (not (<= 0 200)))
 (check-sat)
+
+(exit)

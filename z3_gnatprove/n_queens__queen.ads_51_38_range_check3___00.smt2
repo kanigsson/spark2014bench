@@ -233,3 +233,5 @@ Target solver: Z3
  ;; File "queen.ads", line 47, characters 0-0
   (not (in_range1 (- i 1))))
 (check-sat)
+
+(exit)

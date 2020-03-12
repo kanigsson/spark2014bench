@@ -215,3 +215,5 @@ Target solver: Z3
  ;; File "prot.ads", line 7, characters 0-0
   (not (in_range (+ o x))))
 (check-sat)
+
+(exit)

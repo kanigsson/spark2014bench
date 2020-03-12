@@ -495,3 +495,5 @@ Target solver: Z3
  ;; File "kmp.ads", line 7, characters 0-0
   (not (<= (to_rep next__first) j2)))
 (check-sat)
+
+(exit)

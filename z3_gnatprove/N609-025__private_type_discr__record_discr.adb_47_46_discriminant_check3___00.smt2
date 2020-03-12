@@ -892,3 +892,5 @@ Target solver: Z3
  ;; File "record_discr.ads", line 20, characters 0-0
   (not (in_range5 (last1 a) (us_split_discrs3 temp___310))))
 (check-sat)
+
+(exit)

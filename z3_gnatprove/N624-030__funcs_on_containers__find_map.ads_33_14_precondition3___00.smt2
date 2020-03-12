@@ -2015,3 +2015,5 @@ Target solver: Z3
  ;; File "find_map.ads", line 26, characters 0-0
   (not (= (contains find_map__find_all__result usf) true)))
 (check-sat)
+
+(exit)

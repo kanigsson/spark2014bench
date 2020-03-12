@@ -702,3 +702,5 @@ Target solver: Z3
   (not
   (= total_area2 (- total_area1 (get_stored_area1 (attr__tag obj) obj)))))
 (check-sat)
+
+(exit)

@@ -1681,3 +1681,5 @@ Target solver: Z3
      (select (to_array (rec__area_math__ensemble__to (us_split_fields1 e))) 
      i)) #xFFFFFFFF)))))
 (check-sat)
+
+(exit)

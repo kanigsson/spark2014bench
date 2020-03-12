@@ -1784,3 +1784,5 @@ Target solver: Z3
  ;; File "text_io_warnings.adb", line 3, characters 0-0
   (not (not (= (is_open source3) true))))
 (check-sat)
+
+(exit)

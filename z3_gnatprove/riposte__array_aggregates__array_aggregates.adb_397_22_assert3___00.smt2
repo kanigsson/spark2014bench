@@ -426,3 +426,5 @@ Target solver: Z3
  ;; File "array_aggregates.adb", line 392, characters 0-0
   (not (= (get_length (select x1 2)) 2)))
 (check-sat)
+
+(exit)

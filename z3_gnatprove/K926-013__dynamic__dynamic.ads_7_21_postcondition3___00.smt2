@@ -424,3 +424,5 @@ Target solver: Z3
  ;; File "dynamic.ads", line 5, characters 0-0
   (not (<= (+ x 2) dynamic__p__result)))
 (check-sat)
+
+(exit)

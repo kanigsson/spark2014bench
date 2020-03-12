@@ -238,3 +238,5 @@ Target solver: Z3
  ;; File "pre_post_exercise.ads", line 23, characters 0-0
   (not (in_range1 o)))
 (check-sat)
+
+(exit)

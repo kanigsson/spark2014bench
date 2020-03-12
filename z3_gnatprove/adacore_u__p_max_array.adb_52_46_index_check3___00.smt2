@@ -495,3 +495,5 @@ Target solver: Z3
  ;; File "p_max_array.ads", line 15, characters 0-0
   (not (<= (first1 b) o12)))
 (check-sat)
+
+(exit)

@@ -161,3 +161,5 @@ Target solver: Z3
  ;; File "reentrancy.ads", line 7, characters 0-0
   (not (in_range2 (abs1 x))))
 (check-sat)
+
+(exit)

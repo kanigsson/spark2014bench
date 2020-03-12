@@ -250,3 +250,5 @@ Target solver: Z3
  ;; File "frame.ads", line 10, characters 0-0
   (not (<= 1 usf)))
 (check-sat)
+
+(exit)

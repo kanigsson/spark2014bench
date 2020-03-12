@@ -91,3 +91,5 @@ Target solver: Z3
  ;; File "type_invariant_legal_2.ads", line 8, characters 0-0
   (not (type_invariant usf)))
 (check-sat)
+
+(exit)

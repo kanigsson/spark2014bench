@@ -219,3 +219,5 @@ Target solver: Z3
  ;; File "loopvariant.adb", line 3, characters 0-0
   (not (or (< temp___182 i6) (and (= i6 temp___182) (< j6 temp___181)))))
 (check-sat)
+
+(exit)

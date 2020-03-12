@@ -357,3 +357,5 @@ Target solver: Z3
  ;; File "part.adb", line 5, characters 0-0
   (not (= (to_rep (select x3 a)) (to_rep (select x1 b)))))
 (check-sat)
+
+(exit)

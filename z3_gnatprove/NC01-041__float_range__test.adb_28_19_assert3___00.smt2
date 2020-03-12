@@ -244,3 +244,5 @@ Target solver: Z3
  ;; File "test.adb", line 7, characters 0-0
   (not (fp.leq (fp #b0 #b10000011 #b11111111111110111110100) value3)))
 (check-sat)
+
+(exit)

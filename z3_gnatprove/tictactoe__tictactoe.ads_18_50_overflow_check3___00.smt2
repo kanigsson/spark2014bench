@@ -444,3 +444,5 @@ Target solver: Z3
  ;; File "tictactoe.ads", line 15, characters 0-0
   (not (in_range o11)))
 (check-sat)
+
+(exit)

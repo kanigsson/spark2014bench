@@ -2320,3 +2320,5 @@ Target solver: Z3
  ;; File "psu_monitoring.ads", line 88, characters 0-0
   (not (= all_config_is_set true)))
 (check-sat)
+
+(exit)

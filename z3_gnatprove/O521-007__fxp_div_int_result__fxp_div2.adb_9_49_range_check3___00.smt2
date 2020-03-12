@@ -305,3 +305,5 @@ Target solver: Z3
  ;; File "fxp_div2.adb", line 1, characters 0-0
   (not (in_range2 o1)))
 (check-sat)
+
+(exit)

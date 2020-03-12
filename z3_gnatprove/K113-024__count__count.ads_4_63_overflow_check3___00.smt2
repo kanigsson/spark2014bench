@@ -142,3 +142,5 @@ Target solver: Z3
  ;; File "count.ads", line 2, characters 0-0
   (not (in_range (- 2147483647 step))))
 (check-sat)
+
+(exit)

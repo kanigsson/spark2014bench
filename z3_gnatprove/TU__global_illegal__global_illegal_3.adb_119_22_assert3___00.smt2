@@ -101,3 +101,5 @@ Target solver: Z3
  ;; File "global_illegal_3.adb", line 110, characters 0-0
   (not (< 5 x)))
 (check-sat)
+
+(exit)

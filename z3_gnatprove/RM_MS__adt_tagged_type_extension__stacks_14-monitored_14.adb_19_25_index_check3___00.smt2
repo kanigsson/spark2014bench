@@ -653,3 +653,5 @@ Target solver: Z3
  ;; File "stacks_14-monitored_14.ads", line 12, characters 0-0
   (not (<= 1 temp___281)))
 (check-sat)
+
+(exit)

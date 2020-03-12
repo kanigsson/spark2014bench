@@ -433,3 +433,5 @@ Target solver: Z3
   (us_split_fieldsqtmk
   (rec__dynamic_preds__even_pair__a result____split_fields1) o4)))))
 (check-sat)
+
+(exit)

@@ -456,3 +456,5 @@ Target solver: Z3
  ;; File "dimensions.ads", line 370, characters 0-0
   (not (fp.isFinite64 (fp.add RNE o5 o2))))
 (check-sat)
+
+(exit)

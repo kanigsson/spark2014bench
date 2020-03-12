@@ -274,3 +274,5 @@ Target solver: Z3
  ;; File "keccak-types.ads", line 91, characters 0-0
   (not (<= o 4)))
 (check-sat)
+
+(exit)

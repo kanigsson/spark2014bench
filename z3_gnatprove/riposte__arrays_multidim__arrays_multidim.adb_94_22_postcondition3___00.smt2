@@ -258,3 +258,5 @@ Target solver: Z3
  ;; File "arrays_multidim.adb", line 90, characters 0-0
   (not (= (to_rep (get a i j)) v)))
 (check-sat)
+
+(exit)

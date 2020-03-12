@@ -101,3 +101,5 @@ Target solver: Z3
  ;; File "enum_rep.adb", line 17, characters 0-0
   (not (<= 0 enum_rep__my_enum_enumrep_2__result)))
 (check-sat)
+
+(exit)

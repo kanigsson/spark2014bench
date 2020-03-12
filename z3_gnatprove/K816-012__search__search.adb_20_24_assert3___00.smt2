@@ -379,3 +379,5 @@ Target solver: Z3
   (and (= found3 1) (or (= found11 true) (= found21 true))))
   (and (and (= found3 2) (= found11 true)) (= found21 true)))))
 (check-sat)
+
+(exit)

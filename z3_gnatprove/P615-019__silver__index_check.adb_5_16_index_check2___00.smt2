@@ -322,3 +322,5 @@ Target solver: Z3
  ;; File "index_check.adb", line 3, characters 0-0
   (not (<= (first1 s) j)))
 (check-sat)
+
+(exit)

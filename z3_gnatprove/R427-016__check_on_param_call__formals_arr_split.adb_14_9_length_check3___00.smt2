@@ -408,3 +408,5 @@ Target solver: Z3
  ;; File "formals_arr_split.adb", line 10, characters 0-0
   (not (<= (to_rep a__first) (to_rep a__last))))
 (check-sat)
+
+(exit)

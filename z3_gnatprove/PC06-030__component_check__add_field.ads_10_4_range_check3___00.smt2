@@ -375,3 +375,5 @@ Target solver: Z3
  ;; File "add_field.ads", line 2, characters 0-0
   (not (<= 0 d)))
 (check-sat)
+
+(exit)

@@ -739,3 +739,5 @@ Target solver: Z3
  ;; File "test_bounds.adb", line 16, characters 0-0
   (not (= (to_rep x__split_discrs2) (to_rep x__split_discrs1))))
 (check-sat)
+
+(exit)

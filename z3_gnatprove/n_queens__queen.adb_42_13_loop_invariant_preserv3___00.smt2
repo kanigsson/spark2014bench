@@ -414,3 +414,5 @@ Target solver: Z3
  ;; File "queen.ads", line 47, characters 0-0
   (not (not (= done__2 true))))
 (check-sat)
+
+(exit)

@@ -579,3 +579,5 @@ Target solver: Z3
  ;; File "pair_insertion_sort.adb", line 4, characters 0-0
   (not (dynamic_predicate1 temp___365)))
 (check-sat)
+
+(exit)

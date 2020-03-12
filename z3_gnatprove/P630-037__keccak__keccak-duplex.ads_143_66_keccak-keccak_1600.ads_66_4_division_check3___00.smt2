@@ -965,3 +965,5 @@ Target solver: Z3
  ;; File "keccak-duplex.ads", line 137, characters 0-0
   (not (not (= 8 0))))
 (check-sat)
+
+(exit)

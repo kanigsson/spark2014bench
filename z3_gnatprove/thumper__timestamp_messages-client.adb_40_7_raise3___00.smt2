@@ -517,3 +517,5 @@ Target solver: Z3
  ;; File "timestamp_messages-client.ads", line 38, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

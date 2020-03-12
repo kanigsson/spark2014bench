@@ -2116,3 +2116,5 @@ Target solver: Z3
   (= (page_length1 target1 standard_in21 standard_out21 standard_err21
      current_err21 file_system21 current_in21 current_out21) 80)))
 (check-sat)
+
+(exit)

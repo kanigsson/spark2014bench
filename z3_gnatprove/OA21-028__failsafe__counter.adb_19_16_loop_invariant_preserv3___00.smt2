@@ -353,3 +353,5 @@ Target solver: Z3
  ;; File "counter.ads", line 29, characters 0-0
   (not (= (select temp___loop_entry_214 (bvadd k #x01)) true)))
 (check-sat)
+
+(exit)

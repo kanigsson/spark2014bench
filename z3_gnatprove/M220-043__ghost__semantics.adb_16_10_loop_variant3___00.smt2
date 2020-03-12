@@ -228,3 +228,5 @@ Target solver: Z3
  ;; File "semantics.ads", line 10, characters 0-0
   (not (< temp___172 (+ formal3 (ghost_func Tuple0)))))
 (check-sat)
+
+(exit)

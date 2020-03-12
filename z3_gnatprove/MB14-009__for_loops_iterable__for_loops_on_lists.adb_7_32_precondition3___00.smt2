@@ -869,3 +869,5 @@ Target solver: Z3
  ;; File "for_loops_on_lists.ads", line 9, characters 0-0
   (not (= (has_key o7 o5) true)))
 (check-sat)
+
+(exit)

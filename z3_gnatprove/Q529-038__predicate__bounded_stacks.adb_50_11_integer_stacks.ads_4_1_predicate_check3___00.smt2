@@ -1381,3 +1381,5 @@ Target solver: Z3
  ;; File "bounded_stacks.ads", line 35, characters 0-0
   (not (dynamic_predicate temp___415)))
 (check-sat)
+
+(exit)

@@ -539,3 +539,5 @@ Target solver: Z3
  ;; File "predicate_ints.ads", line 28, characters 0-0
   (not (in_range o5)))
 (check-sat)
+
+(exit)

@@ -248,3 +248,5 @@ Target solver: Z3
  ;; File "example.ads", line 6, characters 0-0
   (not (<= 1 j)))
 (check-sat)
+
+(exit)

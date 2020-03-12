@@ -98,3 +98,5 @@ Target solver: Z3
  ;; File "pack.ads", line 3, characters 0-0
   (not (= b true)))
 (check-sat)
+
+(exit)

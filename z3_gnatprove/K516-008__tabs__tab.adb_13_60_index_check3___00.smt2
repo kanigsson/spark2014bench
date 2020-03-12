@@ -310,3 +310,5 @@ Target solver: Z3
  ;; File "tab.ads", line 4, characters 0-0
   (not (<= 1 usf1)))
 (check-sat)
+
+(exit)

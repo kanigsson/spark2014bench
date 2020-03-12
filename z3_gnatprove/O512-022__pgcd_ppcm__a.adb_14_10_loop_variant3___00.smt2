@@ -300,3 +300,5 @@ Target solver: Z3
  ;; File "a.ads", line 3, characters 0-0
   (not (< bn2 temp___160)))
 (check-sat)
+
+(exit)

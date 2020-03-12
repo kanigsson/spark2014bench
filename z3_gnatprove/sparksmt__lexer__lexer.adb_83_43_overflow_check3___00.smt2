@@ -452,3 +452,5 @@ Target solver: Z3
  ;; File "lexer.adb", line 63, characters 0-0
   (not (in_range (+ current_col 1))))
 (check-sat)
+
+(exit)

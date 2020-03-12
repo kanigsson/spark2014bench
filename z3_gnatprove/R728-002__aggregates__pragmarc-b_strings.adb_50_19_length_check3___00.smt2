@@ -4354,3 +4354,5 @@ Target solver: Z3
  ;; File "pragmarc-b_strings.ads", line 37, characters 0-0
   (not (<= (first1 temp___878) (last1 temp___878))))
 (check-sat)
+
+(exit)

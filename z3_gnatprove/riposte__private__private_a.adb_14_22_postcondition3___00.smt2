@@ -226,3 +226,5 @@ Target solver: Z3
  ;; File "private_a.adb", line 11, characters 0-0
   (not (= (bool_eq (us_repqtmk dst__split_fields1) (create n 0)) true)))
 (check-sat)
+
+(exit)

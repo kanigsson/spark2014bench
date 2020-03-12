@@ -222,3 +222,5 @@ Target solver: Z3
  ;; File "various_no_optim.adb", line 4, characters 0-0
   (not (= loop_counter1 #x0000000A)))
 (check-sat)
+
+(exit)

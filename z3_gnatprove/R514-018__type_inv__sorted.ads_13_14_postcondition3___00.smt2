@@ -347,3 +347,5 @@ Target solver: Z3
  ;; File "sorted.ads", line 12, characters 0-0
   (not (= (is_sorted sorted__open__result) true)))
 (check-sat)
+
+(exit)

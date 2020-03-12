@@ -2362,3 +2362,5 @@ Target solver: Z3
  ;; File "split_records.ads", line 27, characters 0-0
   (not (not (= c2__split_discrs1 true))))
 (check-sat)
+
+(exit)

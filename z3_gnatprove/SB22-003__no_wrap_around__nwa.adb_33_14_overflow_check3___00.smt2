@@ -207,3 +207,5 @@ Target solver: Z3
   (not
   (bvult (bvadd ((_ zero_extend 16) x) ((_ zero_extend 16) y)) #x00010000)))
 (check-sat)
+
+(exit)

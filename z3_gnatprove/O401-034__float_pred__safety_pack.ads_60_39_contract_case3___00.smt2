@@ -273,3 +273,5 @@ Target solver: Z3
   (not
   (not (fp.eq safety_pack__lift_away_from_zero__result (fp #b0 #b00000000 #b00000000000000000000000)))))
 (check-sat)
+
+(exit)

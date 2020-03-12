@@ -515,3 +515,5 @@ Target solver: Z3
   (= (sorted (of_array a2 (to_rep a__first) (to_rep a__last)) a_first
      (+ length11 length2)) true)))
 (check-sat)
+
+(exit)

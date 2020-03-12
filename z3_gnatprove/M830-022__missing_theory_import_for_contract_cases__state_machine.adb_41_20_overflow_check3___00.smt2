@@ -258,3 +258,5 @@ Target solver: Z3
  ;; File "state_machine.adb", line 24, characters 0-0
   (not (in_range1 (+ num 1))))
 (check-sat)
+
+(exit)

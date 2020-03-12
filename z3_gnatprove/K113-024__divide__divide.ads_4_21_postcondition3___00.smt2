@@ -160,3 +160,5 @@ Target solver: Z3
  ;; File "divide.ads", line 2, characters 0-0
   (not (= m (+ (* q2 n) r2))))
 (check-sat)
+
+(exit)

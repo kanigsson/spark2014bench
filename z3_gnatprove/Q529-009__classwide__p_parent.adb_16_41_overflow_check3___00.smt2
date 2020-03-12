@@ -285,3 +285,5 @@ Target solver: Z3
  ;; File "p_parent.ads", line 14, characters 0-0
   (not (in_range o2)))
 (check-sat)
+
+(exit)

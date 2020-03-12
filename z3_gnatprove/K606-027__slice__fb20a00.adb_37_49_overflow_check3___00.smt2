@@ -541,3 +541,5 @@ Target solver: Z3
  ;; File "fb20a00.ads", line 43, characters 0-0
   (not (in_range1 o7)))
 (check-sat)
+
+(exit)

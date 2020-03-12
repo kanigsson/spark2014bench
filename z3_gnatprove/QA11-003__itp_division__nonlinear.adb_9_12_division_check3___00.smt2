@@ -253,3 +253,5 @@ Target solver: Z3
  ;; File "nonlinear.adb", line 2, characters 0-0
   (not (not (= o2 0))))
 (check-sat)
+
+(exit)

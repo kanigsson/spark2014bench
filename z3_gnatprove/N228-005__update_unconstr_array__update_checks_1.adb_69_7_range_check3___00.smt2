@@ -403,3 +403,5 @@ Target solver: Z3
  ;; File "update_checks_1.ads", line 26, characters 0-0
   (not (<= (to_rep1 a__first) 2)))
 (check-sat)
+
+(exit)

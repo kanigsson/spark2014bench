@@ -495,3 +495,5 @@ Target solver: Z3
  ;; File "test.ads", line 10, characters 0-0
   (not (<= 1 (get_pos p))))
 (check-sat)
+
+(exit)

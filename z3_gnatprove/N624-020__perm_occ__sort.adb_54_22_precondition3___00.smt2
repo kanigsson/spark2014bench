@@ -823,3 +823,5 @@ Target solver: Z3
  ;; File "sort.adb", line 7, characters 0-0
   (not (<= (first1 o18) o15)))
 (check-sat)
+
+(exit)

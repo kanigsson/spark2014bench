@@ -285,3 +285,5 @@ Target solver: Z3
  ;; File "example.ads", line 6, characters 0-0
   (not (= v2 usf1)))
 (check-sat)
+
+(exit)

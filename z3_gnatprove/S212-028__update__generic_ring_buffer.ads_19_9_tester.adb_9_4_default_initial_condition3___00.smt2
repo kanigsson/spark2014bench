@@ -850,3 +850,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S212-028__update-22668/src/gnatprove/tester__ring_buffer__ring_buffer_type.mlw", line 1071, characters 5-8
   (not (= (empty usf) true)))
 (check-sat)
+
+(exit)

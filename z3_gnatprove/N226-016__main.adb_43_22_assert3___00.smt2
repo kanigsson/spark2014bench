@@ -202,3 +202,5 @@ Target solver: Z3
  ;; File "main.adb", line 35, characters 0-0
   (not (= (to_rep (select map1 0)) 1)))
 (check-sat)
+
+(exit)

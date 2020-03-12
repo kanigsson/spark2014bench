@@ -330,3 +330,5 @@ Target solver: Z3
  ;; File "update.ads", line 15, characters 0-0
   (not (= (to_rep (get a2 j k l)) (to_rep (get a1 j j j)))))
 (check-sat)
+
+(exit)

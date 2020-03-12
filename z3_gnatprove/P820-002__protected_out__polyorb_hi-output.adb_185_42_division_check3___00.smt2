@@ -980,3 +980,5 @@ Target solver: Z3
  ;; File "polyorb_hi-output.ads", line 87, characters 0-0
   (not (not (= #x10 #x00))))
 (check-sat)
+
+(exit)

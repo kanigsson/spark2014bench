@@ -644,3 +644,5 @@ Target solver: Z3
  ;; File "subty.ads", line 7, characters 0-0
   (not (= (to_rep (rec__basic__r__base z__split_fields)) 1)))
 (check-sat)
+
+(exit)

@@ -206,3 +206,5 @@ Target solver: Z3
  ;; File "simulink_functions.ads", line 179, characters 0-0
   (not (not (fp.isZero o))))
 (check-sat)
+
+(exit)

@@ -242,3 +242,5 @@ Target solver: Z3
  ;; File "generic_stack.ads", line 8, characters 0-0
   (not (<= 1 index)))
 (check-sat)
+
+(exit)

@@ -276,3 +276,5 @@ Target solver: Z3
  ;; File "sorters_not_global.ads", line 14, characters 0-0
   (not (<= current o)))
 (check-sat)
+
+(exit)

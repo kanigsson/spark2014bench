@@ -213,3 +213,5 @@ Target solver: Z3
  ;; File "somebody.ads", line 2, characters 0-0
   (not (= x2 (div1 x1 2))))
 (check-sat)
+
+(exit)

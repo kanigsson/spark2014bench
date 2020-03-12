@@ -1202,3 +1202,5 @@ Target solver: Z3
   (< (length (us_repqtmk1 o2 (us_split_fieldsqtmk1 container__split_fields))) 
   (to_rep (rec__sorted_lists__my_lists__list__capacity o2)))))
 (check-sat)
+
+(exit)

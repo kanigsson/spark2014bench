@@ -939,3 +939,5 @@ Target solver: Z3
  ;; File "network-addresses.ads", line 37, characters 0-0
   (not (in_range7 count2)))
 (check-sat)
+
+(exit)

@@ -830,3 +830,5 @@ Target solver: Z3
  ;; File "ghc_sort.adb", line 134, characters 0-0
   (not (rec__ghc_sort__int_array_list__pointer_value__pred o6)))
 (check-sat)
+
+(exit)

@@ -415,3 +415,5 @@ Target solver: Z3
  ;; File "add_field.ads", line 2, characters 0-0
   (not (<= (to_rep x__first) usf)))
 (check-sat)
+
+(exit)

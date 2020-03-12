@@ -517,3 +517,5 @@ Target solver: Z3
  ;; File "failsafe.ads", line 60, characters 0-0
   (not (= (is_valid counter battery_level_at current_time) true)))
 (check-sat)
+
+(exit)

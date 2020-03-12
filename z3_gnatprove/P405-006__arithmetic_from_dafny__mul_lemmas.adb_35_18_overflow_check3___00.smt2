@@ -174,3 +174,5 @@ Target solver: Z3
  ;; File "mul_lemmas.adb", line 30, characters 0-0
   (not (in_range o2)))
 (check-sat)
+
+(exit)

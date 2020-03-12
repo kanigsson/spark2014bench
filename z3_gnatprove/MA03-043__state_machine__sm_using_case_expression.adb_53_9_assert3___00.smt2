@@ -593,3 +593,5 @@ Target solver: Z3
      (rec__sm_using_case_expression__invalid_transition_record_t__trigger
      (us_split_fields1 (select invalid_transition_array idx)))) trigger1)))))))
 (check-sat)
+
+(exit)

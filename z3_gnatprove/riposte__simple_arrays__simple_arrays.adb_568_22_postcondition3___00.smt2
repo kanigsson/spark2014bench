@@ -172,3 +172,5 @@ Target solver: Z3
  ;; File "simple_arrays.adb", line 566, characters 0-0
   (not (= (to_rep (select a2 42)) 1)))
 (check-sat)
+
+(exit)

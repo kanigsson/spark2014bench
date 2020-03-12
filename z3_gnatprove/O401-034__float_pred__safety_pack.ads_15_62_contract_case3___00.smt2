@@ -234,3 +234,5 @@ Target solver: Z3
   (not
   (fp.eq safety_pack__dead_band__result (fp #b0 #b00000000 #b00000000000000000000000))))
 (check-sat)
+
+(exit)

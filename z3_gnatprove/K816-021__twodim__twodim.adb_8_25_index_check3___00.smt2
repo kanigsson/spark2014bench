@@ -372,3 +372,5 @@ Target solver: Z3
  ;; File "twodim.ads", line 10, characters 0-0
   (not (<= 1 temp___206)))
 (check-sat)
+
+(exit)

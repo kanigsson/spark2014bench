@@ -1134,3 +1134,5 @@ Target solver: Z3
  ;; File "amortized_queue.ads", line 69, characters 0-0
   (not (or (= 1000 0) (<= (length o9) 1000))))
 (check-sat)
+
+(exit)

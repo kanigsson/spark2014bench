@@ -1348,3 +1348,5 @@ Target solver: Z3
  ;; File "database.ads", line 44, characters 0-0
   (not (= (existing account1 links1) true)))
 (check-sat)
+
+(exit)

@@ -272,3 +272,5 @@ Target solver: Z3
  ;; File "p.ads", line 21, characters 0-0
   (not (= p__my_capacity__result 10)))
 (check-sat)
+
+(exit)

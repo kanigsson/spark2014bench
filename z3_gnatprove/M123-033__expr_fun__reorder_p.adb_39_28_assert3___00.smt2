@@ -308,3 +308,5 @@ Target solver: Z3
  ;; File "reorder_p.adb", line 27, characters 0-0
   (not (= (g1 Tuple0) 1)))
 (check-sat)
+
+(exit)

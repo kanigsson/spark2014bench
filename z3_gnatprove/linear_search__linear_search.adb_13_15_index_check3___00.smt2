@@ -544,3 +544,5 @@ Target solver: Z3
  ;; File "linear_search.ads", line 33, characters 0-0
   (not (<= 1 pos)))
 (check-sat)
+
+(exit)

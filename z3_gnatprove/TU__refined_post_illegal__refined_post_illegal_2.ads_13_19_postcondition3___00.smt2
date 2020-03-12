@@ -102,3 +102,5 @@ Target solver: Z3
  ;; File "refined_post_illegal_2.ads", line 4, characters 0-0
   (not (<= 10 par2)))
 (check-sat)
+
+(exit)

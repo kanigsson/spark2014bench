@@ -150,3 +150,5 @@ Target solver: Z3
  ;; File "ghost_example.ads", line 7, characters 0-0
   (not (= (cur_state state1) (ite (= done__ true) 2 1))))
 (check-sat)
+
+(exit)

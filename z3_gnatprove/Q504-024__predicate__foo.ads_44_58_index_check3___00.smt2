@@ -752,3 +752,5 @@ Target solver: Z3
  ;; File "foo.ads", line 44, characters 0-0
   (not (<= (first1 states__split_fields) 5)))
 (check-sat)
+
+(exit)

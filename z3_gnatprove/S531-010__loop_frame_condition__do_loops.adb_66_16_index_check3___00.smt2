@@ -1998,3 +1998,5 @@ Target solver: Z3
  ;; File "do_loops.adb", line 1, characters 0-0
   (not (<= (first1 temp___403) i3)))
 (check-sat)
+
+(exit)

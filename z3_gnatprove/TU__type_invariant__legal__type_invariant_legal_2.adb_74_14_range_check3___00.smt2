@@ -207,3 +207,5 @@ Target solver: Z3
  ;; File "type_invariant_legal_2.adb", line 5, characters 0-0
   (not (in_range2 o)))
 (check-sat)
+
+(exit)

@@ -106,3 +106,5 @@ Target solver: Z3
  ;; File "gen.ads", line 4, characters 0-0
   (not (= x1 v)))
 (check-sat)
+
+(exit)

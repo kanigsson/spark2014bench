@@ -973,3 +973,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 22, characters 0-0
   (not (not (= 256 0))))
 (check-sat)
+
+(exit)

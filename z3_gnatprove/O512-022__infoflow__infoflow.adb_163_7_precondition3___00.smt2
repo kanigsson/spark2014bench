@@ -464,3 +464,5 @@ Target solver: Z3
  ;; File "infoflow.ads", line 89, characters 0-0
   (not (= (to_rep o4) 1)))
 (check-sat)
+
+(exit)

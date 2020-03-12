@@ -105,3 +105,5 @@ Target solver: Z3
  ;; File "pkg_a.ads", line 9, characters 0-0
   (not (in_range1 (* x 2))))
 (check-sat)
+
+(exit)

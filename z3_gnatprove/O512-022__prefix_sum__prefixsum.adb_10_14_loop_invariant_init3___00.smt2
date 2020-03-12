@@ -579,3 +579,5 @@ Target solver: Z3
  ;; File "prefixsum.ads", line 36, characters 0-0
   (not (= (all_elements_in a (* space 1000000)) true)))
 (check-sat)
+
+(exit)

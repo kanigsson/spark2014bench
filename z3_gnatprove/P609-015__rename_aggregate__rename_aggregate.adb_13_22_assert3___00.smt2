@@ -223,3 +223,5 @@ Target solver: Z3
  ;; File "rename_aggregate.adb", line 1, characters 0-0
   (not (= (to_rep (select r7b c12b1)) 1)))
 (check-sat)
+
+(exit)

@@ -621,3 +621,5 @@ Target solver: Z3
  ;; File "x86.ads", line 445, characters 0-0
   (not (bvule ((_ zero_extend 16) #x0000) o8)))
 (check-sat)
+
+(exit)

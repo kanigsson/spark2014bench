@@ -64,3 +64,5 @@ Target solver: Z3
  ;; File "use_ext_ax.adb", line 2, characters 0-0
   (not (not (= (my_eq__logic 1 2) true))))
 (check-sat)
+
+(exit)

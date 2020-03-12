@@ -326,3 +326,5 @@ Target solver: Z3
  ;; File "sv.ads", line 12, characters 0-0
   (not (bvule sv__scale__result capacity)))
 (check-sat)
+
+(exit)

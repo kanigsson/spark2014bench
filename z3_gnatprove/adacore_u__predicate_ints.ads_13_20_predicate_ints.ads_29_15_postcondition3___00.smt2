@@ -528,3 +528,5 @@ Target solver: Z3
                                                                     (rec__predicate_ints__int__value1
                                                                     arg__split_fields2)))))
 (check-sat)
+
+(exit)

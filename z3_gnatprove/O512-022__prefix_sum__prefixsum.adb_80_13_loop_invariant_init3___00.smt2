@@ -566,3 +566,5 @@ Target solver: Z3
  ;; File "prefixsum.ads", line 42, characters 0-0
   (not (or (or (= space1 4) (= space1 2)) (= space1 1))))
 (check-sat)
+
+(exit)

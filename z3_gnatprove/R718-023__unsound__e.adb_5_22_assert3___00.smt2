@@ -183,3 +183,5 @@ Target solver: Z3
  ;; File "e.ads", line 5, characters 0-0
   (not (not (= k 0))))
 (check-sat)
+
+(exit)

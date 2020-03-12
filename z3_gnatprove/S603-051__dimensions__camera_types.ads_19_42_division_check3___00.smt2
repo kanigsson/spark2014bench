@@ -663,3 +663,5 @@ Target solver: Z3
  ;; File "camera_types.ads", line 12, characters 0-0
   (not (not (= 2 0))))
 (check-sat)
+
+(exit)

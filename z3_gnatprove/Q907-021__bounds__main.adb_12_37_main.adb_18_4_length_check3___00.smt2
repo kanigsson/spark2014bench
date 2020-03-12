@@ -496,3 +496,5 @@ Target solver: Z3
  ;; File "main.adb", line 4, characters 0-0
   (not (<= (first1 temp___247) (last1 temp___247))))
 (check-sat)
+
+(exit)

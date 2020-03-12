@@ -643,3 +643,5 @@ Target solver: Z3
   (peek2__function_guard (peek2 p_top3 p_content3) p_top3 p_content3))
   (= (peek2 p_top2 p_content2) f2)))))
 (check-sat)
+
+(exit)

@@ -112,3 +112,5 @@ Target solver: Z3
  ;; File "assume_and_assert_and_cut_illegal.adb", line 2, characters 0-0
   (not (= x1 0)))
 (check-sat)
+
+(exit)

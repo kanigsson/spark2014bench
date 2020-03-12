@@ -1464,3 +1464,5 @@ Target solver: Z3
  ;; File "keccak-sponge.ads", line 175, characters 0-0
   (not (not (= 8 0))))
 (check-sat)
+
+(exit)

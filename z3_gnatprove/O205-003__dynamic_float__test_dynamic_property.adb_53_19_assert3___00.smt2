@@ -355,3 +355,5 @@ Target solver: Z3
   (fp.leq (dyn_return (fp #b0 #b10000100 #b01000000000000000000000)) 
   c)))
 (check-sat)
+
+(exit)

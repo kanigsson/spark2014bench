@@ -136,3 +136,5 @@ Target solver: Z3
  ;; File "regpat.ads", line 3, characters 0-0
   (not (= (oeq left right) true)))
 (check-sat)
+
+(exit)

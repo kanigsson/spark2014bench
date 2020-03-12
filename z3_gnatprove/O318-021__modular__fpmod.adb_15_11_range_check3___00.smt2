@@ -328,3 +328,5 @@ Target solver: Z3
  ;; File "fpmod.adb", line 1, characters 0-0
   (not (uint_in_range (to_int2 x3))))
 (check-sat)
+
+(exit)

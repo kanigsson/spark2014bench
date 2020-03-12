@@ -742,3 +742,5 @@ Target solver: Z3
  ;; File "x86.ads", line 486, characters 0-0
   (not (bvult (ecx rcx3) temp___428)))
 (check-sat)
+
+(exit)

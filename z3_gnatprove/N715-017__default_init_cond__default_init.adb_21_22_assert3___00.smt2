@@ -282,3 +282,5 @@ Target solver: Z3
  ;; File "default_init.ads", line 34, characters 0-0
   (not (= (priv_with_glob_ok p3 glob1) true)))
 (check-sat)
+
+(exit)

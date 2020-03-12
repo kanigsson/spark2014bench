@@ -148,3 +148,5 @@ Target solver: Z3
  ;; File "derived.ads", line 7, characters 0-0
   (not (not (= (rec__object__t__b x__split_fields1) true))))
 (check-sat)
+
+(exit)

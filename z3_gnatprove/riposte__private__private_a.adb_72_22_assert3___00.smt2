@@ -554,3 +554,5 @@ Target solver: Z3
   (= (get_length
      (rec__private_a__optional_stack__the_stack s__split_fields2)) 2)))
 (check-sat)
+
+(exit)

@@ -454,3 +454,5 @@ Target solver: Z3
  ;; File "use_stack.adb", line 15, characters 0-0
   (not (in_range1 o)))
 (check-sat)
+
+(exit)

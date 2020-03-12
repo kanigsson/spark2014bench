@@ -738,3 +738,5 @@ Target solver: Z3
  ;; File "conv.ads", line 3, characters 0-0
   (not (in_range4 0 (us_split_discrs1 temp___198))))
 (check-sat)
+
+(exit)

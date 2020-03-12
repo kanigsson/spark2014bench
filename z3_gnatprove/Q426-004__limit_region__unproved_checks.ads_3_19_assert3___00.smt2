@@ -105,3 +105,5 @@ Target solver: Z3
  ;; File "unproved_checks.ads", line 1, characters 0-0
   (not (= x1 0)))
 (check-sat)
+
+(exit)

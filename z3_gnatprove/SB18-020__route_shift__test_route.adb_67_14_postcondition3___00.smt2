@@ -1163,3 +1163,5 @@ Target solver: Z3
  ;; File "test_route.adb", line 64, characters 0-0
   (not (= (length temp___borrowed_314) (length r))))
 (check-sat)
+
+(exit)

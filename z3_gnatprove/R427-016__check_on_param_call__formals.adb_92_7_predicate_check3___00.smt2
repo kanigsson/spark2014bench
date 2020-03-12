@@ -591,3 +591,5 @@ Target solver: Z3
  ;; File "formals.adb", line 1, characters 0-0
   (not (or (and (<= (- 10) z3) (<= z3 (- 1))) (and (<= 1 z3) (<= z3 10)))))
 (check-sat)
+
+(exit)

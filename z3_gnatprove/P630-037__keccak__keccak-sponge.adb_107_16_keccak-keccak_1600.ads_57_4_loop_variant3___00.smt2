@@ -2007,3 +2007,5 @@ Target solver: Z3
   (or (< remaining_bits3 temp___900)
   (and (= remaining_bits3 temp___900) (< temp___899 offset3)))))))
 (check-sat)
+
+(exit)

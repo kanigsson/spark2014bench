@@ -758,3 +758,5 @@ Target solver: Z3
  ;; File "fixed_string.ads", line 31, characters 0-0
   (not (<= (to_rep2 out_string__first) r19b)))
 (check-sat)
+
+(exit)

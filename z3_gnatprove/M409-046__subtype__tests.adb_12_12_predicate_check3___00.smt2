@@ -124,3 +124,5 @@ Target solver: Z3
  ;; File "tests.ads", line 6, characters 0-0
   (not (or (and (<= 1 10) (<= 10 9)) (and (<= 11 10) (<= 10 2147483647)))))
 (check-sat)
+
+(exit)

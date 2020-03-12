@@ -470,3 +470,5 @@ Target solver: Z3
  ;; File "infoflow.ads", line 89, characters 0-0
   (not (<= (to_rep h_v2__first) temp___472)))
 (check-sat)
+
+(exit)

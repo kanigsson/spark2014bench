@@ -1166,3 +1166,5 @@ Target solver: Z3
   (= string_index3 (+ (* 2 (- (last3 result____split_fields3) index3)) 
   (first1 number)))))
 (check-sat)
+
+(exit)

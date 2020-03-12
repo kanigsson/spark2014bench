@@ -1425,3 +1425,5 @@ Target solver: Z3
                                                                     (rec__p__my_maps__map__capacity
                                                                     o1)))))
 (check-sat)
+
+(exit)

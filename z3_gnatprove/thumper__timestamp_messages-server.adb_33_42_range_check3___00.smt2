@@ -1832,3 +1832,5 @@ Target solver: Z3
                                                    (last1
                                                    message_imprint_value)))) 1))))
 (check-sat)
+
+(exit)

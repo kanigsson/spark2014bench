@@ -687,3 +687,5 @@ Target solver: Z3
  ;; File "distributed_file_system.ads", line 11, characters 0-0
   (not (= (closed (us_repqtmk1 f__split_fields f__attr__tag)) true)))
 (check-sat)
+
+(exit)

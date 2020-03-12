@@ -245,3 +245,5 @@ Target solver: Z3
  ;; File "invertinjection.ads", line 7, characters 0-0
   (not (= (to_rep (select b2 (to_rep (select a j)))) j)))
 (check-sat)
+
+(exit)

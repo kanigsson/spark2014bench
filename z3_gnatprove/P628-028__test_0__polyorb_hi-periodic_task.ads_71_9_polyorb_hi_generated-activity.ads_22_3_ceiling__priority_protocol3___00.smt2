@@ -308,3 +308,5 @@ Target solver: Z3
  ;; File "polyorb_hi-periodic_task.ads", line 71, characters 0-0
   (not (<= 48 97)))
 (check-sat)
+
+(exit)

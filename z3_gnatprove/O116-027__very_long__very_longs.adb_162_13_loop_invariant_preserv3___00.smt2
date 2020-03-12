@@ -1208,3 +1208,5 @@ Target solver: Z3
   (not
   (= (div1 (+ (- (last1 number) string_index3) 1) 2) (+ (- index3 1) 1))))
 (check-sat)
+
+(exit)

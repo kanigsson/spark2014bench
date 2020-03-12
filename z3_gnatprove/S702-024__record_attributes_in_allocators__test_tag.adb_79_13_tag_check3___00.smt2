@@ -458,3 +458,5 @@ Target solver: Z3
                                   (to_base
                                   (us_repqtmk1 c__split_fields c__attr__tag))))))
 (check-sat)
+
+(exit)

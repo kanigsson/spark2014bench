@@ -203,3 +203,5 @@ Target solver: Z3
  ;; File "integer_fixed.ads", line 11, characters 0-0
   (not (= z3 (- 1))))
 (check-sat)
+
+(exit)

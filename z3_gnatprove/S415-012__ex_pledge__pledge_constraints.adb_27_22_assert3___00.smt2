@@ -1047,3 +1047,5 @@ Target solver: Z3
              (rec__pledge_constraints__two_arrays__a2
              (us_split_fields3 temp___borrowed_273)))) 1))) true))))
 (check-sat)
+
+(exit)

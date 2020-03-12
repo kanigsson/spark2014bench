@@ -110,3 +110,5 @@ Target solver: Z3
  ;; File "sub.ads", line 6, characters 0-0
   (not (= sub__remove_absent__result 2)))
 (check-sat)
+
+(exit)

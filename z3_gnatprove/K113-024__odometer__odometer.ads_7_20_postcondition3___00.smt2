@@ -99,3 +99,5 @@ Target solver: Z3
  ;; File "odometer.ads", line 6, characters 0-0
   (not (= trip1 0)))
 (check-sat)
+
+(exit)

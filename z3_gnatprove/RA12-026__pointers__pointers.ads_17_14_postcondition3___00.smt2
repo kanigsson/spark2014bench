@@ -478,3 +478,5 @@ Target solver: Z3
                                                                   a1 
                                                                   j))))))
 (check-sat)
+
+(exit)

@@ -910,3 +910,5 @@ Target solver: Z3
  ;; File "bounded_strings.ads", line 19, characters 0-0
   (not (<= (first1 temp___237) (last1 temp___237))))
 (check-sat)
+
+(exit)

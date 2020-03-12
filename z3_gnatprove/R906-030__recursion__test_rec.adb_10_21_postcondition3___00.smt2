@@ -440,3 +440,5 @@ Target solver: Z3
  ;; File "test_rec.adb", line 7, characters 0-0
   (not (<= test_rec__sum__result (* 100 (length m)))))
 (check-sat)
+
+(exit)

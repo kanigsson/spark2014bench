@@ -425,3 +425,5 @@ Target solver: Z3
  ;; File "memassign2.adb", line 11, characters 0-0
   (not (bvule #x0000000000000000 src)))
 (check-sat)
+
+(exit)

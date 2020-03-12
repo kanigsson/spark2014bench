@@ -330,3 +330,5 @@ Target solver: Z3
  ;; File "evoting.ads", line 83, characters 0-0
   (not (<= sum2 (* 10000 i2))))
 (check-sat)
+
+(exit)

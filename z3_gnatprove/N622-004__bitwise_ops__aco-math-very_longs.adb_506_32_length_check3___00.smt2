@@ -1499,3 +1499,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 75, characters 0-0
   (not (<= 1 r139b)))
 (check-sat)
+
+(exit)

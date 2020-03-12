@@ -859,3 +859,5 @@ Target solver: Z3
  ;; File "alloc.adb", line 1, characters 0-0
   (not (in_range 0)))
 (check-sat)
+
+(exit)

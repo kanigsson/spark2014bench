@@ -387,3 +387,5 @@ Target solver: Z3
  ;; File "update_checks_1.ads", line 5, characters 0-0
   (not (dynamic_property1 o2 o1 o)))
 (check-sat)
+
+(exit)

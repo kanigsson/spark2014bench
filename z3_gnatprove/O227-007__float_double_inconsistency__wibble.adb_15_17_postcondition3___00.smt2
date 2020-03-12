@@ -361,3 +361,5 @@ Target solver: Z3
   (not
   (fp.leq state1 (fp.mul RNE ((_ to_fp_unsigned 8 24) RNE (bvadd x #x00000001)) (fp #b0 #b10000010 #b01100000000000000000000)))))
 (check-sat)
+
+(exit)

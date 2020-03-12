@@ -232,3 +232,5 @@ Target solver: Z3
   (not
   (= r82 (bvor (bvand r81 #xFFFFFFFFFFFFFF00) ((_ zero_extend 56) val__)))))
 (check-sat)
+
+(exit)

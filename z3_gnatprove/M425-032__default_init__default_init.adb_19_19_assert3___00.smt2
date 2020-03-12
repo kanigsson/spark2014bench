@@ -332,3 +332,5 @@ Target solver: Z3
  ;; File "default_init.adb", line 1, characters 0-0
   (not (= x1 100)))
 (check-sat)
+
+(exit)

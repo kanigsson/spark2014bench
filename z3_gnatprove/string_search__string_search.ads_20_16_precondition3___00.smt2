@@ -413,3 +413,5 @@ Target solver: Z3
  ;; File "string_search.ads", line 18, characters 0-0
   (not (<= o3 (length needle))))
 (check-sat)
+
+(exit)

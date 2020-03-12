@@ -2925,3 +2925,5 @@ Target solver: Z3
  ;; File "test_record_cnt_ex.ads", line 1, characters 0-0
   (not (= (bool_eq7 z1 w1) true)))
 (check-sat)
+
+(exit)

@@ -491,3 +491,5 @@ Target solver: Z3
  ;; File "test.ads", line 12, characters 0-0
   (not (= o (rec__test__element_type__state (us_split_discrs1 temp___227)))))
 (check-sat)
+
+(exit)

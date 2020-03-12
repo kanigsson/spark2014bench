@@ -187,3 +187,5 @@ Target solver: Z3
  ;; File "test_float.adb", line 1, characters 0-0
   (not (<= (- 1) y)))
 (check-sat)
+
+(exit)

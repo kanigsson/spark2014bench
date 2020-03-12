@@ -203,3 +203,5 @@ Target solver: Z3
  ;; File "use_simple_private_type.ads", line 9, characters 0-0
   (not (not (= (is_zero o3) true))))
 (check-sat)
+
+(exit)

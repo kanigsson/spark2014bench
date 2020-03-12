@@ -160,3 +160,5 @@ Target solver: Z3
  ;; File "p.ads", line 13, characters 0-0
   (not (<= temp___old_172 x1)))
 (check-sat)
+
+(exit)

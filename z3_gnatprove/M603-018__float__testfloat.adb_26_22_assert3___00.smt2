@@ -194,3 +194,5 @@ Target solver: Z3
  ;; File "testfloat.adb", line 11, characters 0-0
   (not (fp.eq (fp.roundToIntegral RTP x) x)))
 (check-sat)
+
+(exit)

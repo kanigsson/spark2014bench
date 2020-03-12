@@ -259,3 +259,5 @@ Target solver: Z3
   (not
   (= (bool_eq b1 (- 2147483648) 2147483647 c1 (- 2147483648) 2147483647) true)))
 (check-sat)
+
+(exit)

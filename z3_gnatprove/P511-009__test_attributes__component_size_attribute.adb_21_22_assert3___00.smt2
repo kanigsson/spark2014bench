@@ -501,3 +501,5 @@ Target solver: Z3
  ;; File "component_size_attribute.adb", line 13, characters 0-0
   (not (= component__size1 32)))
 (check-sat)
+
+(exit)

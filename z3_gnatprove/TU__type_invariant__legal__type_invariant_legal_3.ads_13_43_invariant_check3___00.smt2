@@ -122,3 +122,5 @@ Target solver: Z3
  ;; File "type_invariant_legal_3.ads", line 13, characters 0-0
   (not (type_invariant o)))
 (check-sat)
+
+(exit)

@@ -673,3 +673,5 @@ Target solver: Z3
   (not
   (= (valid (us_repqtmk ada___polyorb_hi__utils__to_hi_string__result)) true)))
 (check-sat)
+
+(exit)

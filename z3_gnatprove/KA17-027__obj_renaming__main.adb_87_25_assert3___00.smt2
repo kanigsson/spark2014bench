@@ -604,3 +604,5 @@ Target solver: Z3
   (not
   (= (to_rep (rec__main__rec__comp (us_split_fields1 (select arr_obj2 1)))) 9012)))
 (check-sat)
+
+(exit)

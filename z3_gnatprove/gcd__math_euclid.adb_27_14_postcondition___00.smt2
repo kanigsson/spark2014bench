@@ -218,3 +218,5 @@ Target solver: Z3
  ;; File "math_euclid.adb", line 23, characters 0-0
   (not (= (divides x a) true)))
 (check-sat)
+
+(exit)

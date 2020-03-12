@@ -748,3 +748,5 @@ Target solver: Z3
   (and (= (to_rep (select a2 j1)) x2) (= (to_rep (select a2 (+ j1 1))) y2))
   (and (= (to_rep (select a2 j1)) y2) (= (to_rep (select a2 (+ j1 1))) x2)))))
 (check-sat)
+
+(exit)

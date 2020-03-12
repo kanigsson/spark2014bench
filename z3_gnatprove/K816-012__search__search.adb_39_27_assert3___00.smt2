@@ -471,3 +471,5 @@ Target solver: Z3
  ;; File "search.ads", line 5, characters 0-0
   (not (<= found5 2)))
 (check-sat)
+
+(exit)

@@ -655,3 +655,5 @@ Target solver: Z3
  ;; File "stack_functional_spec.ads", line 81, characters 0-0
   (not (<= 1 usf4)))
 (check-sat)
+
+(exit)

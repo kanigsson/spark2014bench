@@ -484,3 +484,5 @@ Target solver: Z3
  ;; File "lcp.ads", line 3, characters 0-0
   (not (= lcp__result (+ (- (last1 a) x) 1))))
 (check-sat)
+
+(exit)

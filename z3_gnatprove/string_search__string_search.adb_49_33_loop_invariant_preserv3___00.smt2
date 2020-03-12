@@ -602,3 +602,5 @@ Target solver: Z3
  ;; File "string_search.ads", line 45, characters 0-0
   (not (not (= c (to_rep1 (select (to_array needle) k))))))
 (check-sat)
+
+(exit)

@@ -258,3 +258,5 @@ Target solver: Z3
   (= (to_rep (select a2 j1)) (ite (< 10 (to_rep (select a1 j1))) 10
                              (to_rep (select a1 j1))))))
 (check-sat)
+
+(exit)

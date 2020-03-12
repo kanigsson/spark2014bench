@@ -101,3 +101,5 @@ Target solver: Z3
  ;; File "swap_add_14.ads", line 12, characters 0-0
   (not (in_range (+ x y))))
 (check-sat)
+
+(exit)

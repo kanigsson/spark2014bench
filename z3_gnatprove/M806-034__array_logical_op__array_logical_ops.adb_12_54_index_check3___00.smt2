@@ -502,3 +502,5 @@ Target solver: Z3
  ;; File "array_logical_ops.ads", line 12, characters 0-0
   (not (<= (first1 r1) usf)))
 (check-sat)
+
+(exit)

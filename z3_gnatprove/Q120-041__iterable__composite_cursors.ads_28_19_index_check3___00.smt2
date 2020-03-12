@@ -358,3 +358,5 @@ Target solver: Z3
  ;; File "composite_cursors.ads", line 27, characters 0-0
   (not (<= 1 temp___286)))
 (check-sat)
+
+(exit)

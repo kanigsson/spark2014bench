@@ -186,3 +186,5 @@ Target solver: Z3
  ;; File "shift_range.adb", line 10, characters 0-0
   (not (in_range (bv2int o))))
 (check-sat)
+
+(exit)

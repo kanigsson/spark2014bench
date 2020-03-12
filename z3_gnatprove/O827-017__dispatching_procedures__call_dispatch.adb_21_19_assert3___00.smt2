@@ -1688,3 +1688,5 @@ Target solver: Z3
  ;; File "call_dispatch.adb", line 2, characters 0-0
   (not (= (to_rep (rec__dispatch__root__i x3__split_fields1)) 3)))
 (check-sat)
+
+(exit)

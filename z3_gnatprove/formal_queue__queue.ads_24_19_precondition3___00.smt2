@@ -495,3 +495,5 @@ Target solver: Z3
  ;; File "queue.ads", line 22, characters 0-0
   (not (not (= (is_empty q) true))))
 (check-sat)
+
+(exit)

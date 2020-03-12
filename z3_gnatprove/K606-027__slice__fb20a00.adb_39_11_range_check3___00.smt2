@@ -575,3 +575,5 @@ Target solver: Z3
  ;; File "fb20a00.ads", line 43, characters 0-0
   (not (<= (to_rep1 new_str__first) pos)))
 (check-sat)
+
+(exit)

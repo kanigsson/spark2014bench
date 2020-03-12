@@ -516,3 +516,5 @@ Target solver: Z3
  ;; File "binary_search_trees.ads", line 12, characters 0-0
   (not (rec__binary_search_trees__node_access__pointer_value__pred o)))
 (check-sat)
+
+(exit)

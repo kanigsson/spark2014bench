@@ -2566,3 +2566,5 @@ Target solver: Z3
   (not
   (= (valid_configuration cur_board cur_state cur_piece__split_fields1) true)))
 (check-sat)
+
+(exit)

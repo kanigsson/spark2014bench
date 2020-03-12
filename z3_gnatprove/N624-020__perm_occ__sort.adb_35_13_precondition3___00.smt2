@@ -704,3 +704,5 @@ Target solver: Z3
  ;; File "sort.adb", line 27, characters 0-0
   (not (<= (first1 o5) o4)))
 (check-sat)
+
+(exit)

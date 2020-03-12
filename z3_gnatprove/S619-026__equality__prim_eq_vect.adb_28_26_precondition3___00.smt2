@@ -1306,3 +1306,5 @@ Target solver: Z3
  ;; File "prim_eq_vect.adb", line 25, characters 0-0
   (not (= (contains o4 o3) true)))
 (check-sat)
+
+(exit)

@@ -1294,3 +1294,5 @@ Target solver: Z3
   (= (+ offset3 remaining_bytes3) (length (to_rep data__first)
                                   (to_rep data__last)))))
 (check-sat)
+
+(exit)

@@ -321,3 +321,5 @@ Target solver: Z3
  ;; File "types.ads", line 6, characters 0-0
   (not (in_range2 (power 2 offset))))
 (check-sat)
+
+(exit)

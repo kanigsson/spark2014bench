@@ -385,3 +385,5 @@ Target solver: Z3
   (fp.isFinite64 (fp.mul RNE ((_ to_fp 11 53) RNE o1) ((_ to_fp 11 53) RNE 
   o)))))
 (check-sat)
+
+(exit)

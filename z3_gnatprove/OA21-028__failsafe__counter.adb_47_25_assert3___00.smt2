@@ -367,3 +367,5 @@ Target solver: Z3
  ;; File "counter.ads", line 38, characters 0-0
   (not (or (= a #x0A) (not (= (select inputs2 (bvsub #x0A a)) true)))))
 (check-sat)
+
+(exit)

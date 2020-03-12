@@ -2109,3 +2109,5 @@ Target solver: Z3
      (rec__use_formal_vectors__my_vect__vector__content v__split_fields4)
      us_null_pointer2) true))))
 (check-sat)
+
+(exit)

@@ -181,3 +181,5 @@ Target solver: Z3
  ;; File "pf.ads", line 7, characters 0-0
   (not (= pf__prf_hidden__result (div1 i 2))))
 (check-sat)
+
+(exit)

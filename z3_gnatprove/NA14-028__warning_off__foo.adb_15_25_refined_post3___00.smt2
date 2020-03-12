@@ -98,3 +98,5 @@ Target solver: Z3
  ;; File "foo.ads", line 8, characters 0-0
   (not (= foo__get_data__result value)))
 (check-sat)
+
+(exit)

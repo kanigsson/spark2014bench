@@ -58,3 +58,5 @@ Target solver: Z3
  ;; File "a.ads", line 3, characters 0-0
   (not (< 2 a__any__result)))
 (check-sat)
+
+(exit)

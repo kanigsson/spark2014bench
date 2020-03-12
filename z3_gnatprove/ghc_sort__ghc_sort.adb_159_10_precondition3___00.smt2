@@ -1341,3 +1341,5 @@ Target solver: Z3
      (rec__ghc_sort__int_array_list__pointer_value
      ghc_sort__merge_by_two__l__compl)))) 2147483647)))
 (check-sat)
+
+(exit)

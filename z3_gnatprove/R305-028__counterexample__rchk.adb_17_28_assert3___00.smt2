@@ -357,3 +357,5 @@ Target solver: Z3
  ;; File "rchk.ads", line 9, characters 0-0
   (not (bvult (last1 buf) #xFFFFFFFF)))
 (check-sat)
+
+(exit)

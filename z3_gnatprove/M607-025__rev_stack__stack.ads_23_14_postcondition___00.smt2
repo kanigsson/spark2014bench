@@ -598,3 +598,5 @@ Target solver: Z3
  ;; File "stack.ads", line 22, characters 0-0
   (not (= (is_empty (us_repqtmk stack__empty_stack__result)) true)))
 (check-sat)
+
+(exit)

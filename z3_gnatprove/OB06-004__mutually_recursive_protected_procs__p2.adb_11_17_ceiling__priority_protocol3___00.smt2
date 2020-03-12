@@ -172,3 +172,5 @@ Target solver: Z3
  ;; File "p2.adb", line 11, characters 0-0
   (not (= (prio Tuple0) 0)))
 (check-sat)
+
+(exit)

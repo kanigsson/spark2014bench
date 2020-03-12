@@ -654,3 +654,5 @@ Target solver: Z3
  ;; File "prefixsum.ads", line 36, characters 0-0
   (not (in_range3 (* (* space1 2) 1000000))))
 (check-sat)
+
+(exit)

@@ -219,3 +219,5 @@ Target solver: Z3
  ;; File "ap-altitude-pitch-rate.adb", line 33, characters 0-0
   (not (<= 1 temp___201)))
 (check-sat)
+
+(exit)

@@ -1005,3 +1005,5 @@ Target solver: Z3
  ;; File "update_list_zero.adb", line 5, characters 0-0
   (not (= (has_key o8 o6) true)))
 (check-sat)
+
+(exit)

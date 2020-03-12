@@ -243,3 +243,5 @@ Target solver: Z3
  ;; File "bool_init_by_proof.adb", line 10, characters 0-0
   (not (= (attr__init (select x1 i)) true)))
 (check-sat)
+
+(exit)

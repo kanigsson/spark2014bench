@@ -121,3 +121,5 @@ Target solver: Z3
  ;; File "port.ads", line 132, characters 0-0
   (not (= t11 t21)))
 (check-sat)
+
+(exit)

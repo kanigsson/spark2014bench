@@ -984,3 +984,5 @@ Target solver: Z3
  ;; File "formal_vectors.ads", line 30, characters 0-0
   (not (rec__use_formal_vectors__element_type__pointer_value__pred o1)))
 (check-sat)
+
+(exit)

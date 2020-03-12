@@ -378,3 +378,5 @@ Target solver: Z3
  ;; File "predicate.ads", line 6, characters 0-0
   (not (<= 97 temp___189)))
 (check-sat)
+
+(exit)

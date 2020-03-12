@@ -2059,3 +2059,5 @@ Target solver: Z3
                                                                 model__transform__result)) 
                                                                 t)))))))
 (check-sat)
+
+(exit)

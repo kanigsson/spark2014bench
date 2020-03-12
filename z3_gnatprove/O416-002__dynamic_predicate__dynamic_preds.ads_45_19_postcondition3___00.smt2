@@ -358,3 +358,5 @@ Target solver: Z3
  ;; File "dynamic_preds.ads", line 44, characters 0-0
   (not (= (to_rep (rec__dynamic_preds__even_pair__a x__split_fields2)) 0)))
 (check-sat)
+
+(exit)

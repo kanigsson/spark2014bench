@@ -639,3 +639,5 @@ Target solver: Z3
                                                                     (us_split_fields1
                                                                     o))))))
 (check-sat)
+
+(exit)

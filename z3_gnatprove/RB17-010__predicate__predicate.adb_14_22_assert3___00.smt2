@@ -365,3 +365,5 @@ Target solver: Z3
  ;; File "predicate.ads", line 10, characters 0-0
   (not (< 2 (length (to_rep1 p__first) (to_rep1 p__last)))))
 (check-sat)
+
+(exit)

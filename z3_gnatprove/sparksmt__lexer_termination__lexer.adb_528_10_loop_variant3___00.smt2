@@ -2985,3 +2985,5 @@ Target solver: Z3
  ;; File "lexer.ads", line 79, characters 0-0
   (not (< temp___555 current_idx6)))
 (check-sat)
+
+(exit)

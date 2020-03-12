@@ -716,3 +716,5 @@ Target solver: Z3
  ;; File "ap-heading-roll.ads", line 7, characters 0-0
   (not (< 0 40)))
 (check-sat)
+
+(exit)

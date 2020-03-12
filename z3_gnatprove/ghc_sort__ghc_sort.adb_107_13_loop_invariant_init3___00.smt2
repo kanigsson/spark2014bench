@@ -498,3 +498,5 @@ Target solver: Z3
   (= (to_rep (select r1 k)) (to_rep
                             (select (to_array s) (+ (- (length s) k) 1))))))
 (check-sat)
+
+(exit)

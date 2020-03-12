@@ -1091,3 +1091,5 @@ Target solver: Z3
           (us_repqtmk x__is_null_pointer x__pointer_address
           (us_close (us_repqtmk2 x__pointer_value)))))))
 (check-sat)
+
+(exit)

@@ -481,3 +481,5 @@ Target solver: Z3
  ;; File "stack_external_prover.ads", line 39, characters 0-0
   (not (in_range3 o1)))
 (check-sat)
+
+(exit)

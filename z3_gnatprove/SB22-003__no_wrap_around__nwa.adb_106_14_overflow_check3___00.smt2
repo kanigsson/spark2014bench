@@ -212,3 +212,5 @@ Target solver: Z3
  ;; File "nwa.ads", line 34, characters 0-0
   (not (bvult (bvsub ((_ zero_extend 8) x) ((_ zero_extend 8) y)) #x0011)))
 (check-sat)
+
+(exit)

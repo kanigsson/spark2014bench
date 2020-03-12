@@ -507,3 +507,5 @@ Target solver: Z3
  ;; File "ap-altitude-pitch-rate.ads", line 8, characters 0-0
   (not (in_range3 (div1 o2 20))))
 (check-sat)
+
+(exit)

@@ -517,3 +517,5 @@ Target solver: Z3
  ;; File "counterexamples.adb", line 51, characters 0-0
   (not (= (to_rep (select (to_array a__pointer_value) c)) 15)))
 (check-sat)
+
+(exit)

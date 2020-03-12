@@ -169,3 +169,5 @@ Target solver: Z3
  ;; File "my_div.ads", line 6, characters 0-0
   (not (not (= #x00000004 #x00000000))))
 (check-sat)
+
+(exit)

@@ -1062,3 +1062,5 @@ Target solver: Z3
      (us_split_fieldsqtmk result____split_fields2)) (+ 1 i)) (element 
                                                              right i))))
 (check-sat)
+
+(exit)

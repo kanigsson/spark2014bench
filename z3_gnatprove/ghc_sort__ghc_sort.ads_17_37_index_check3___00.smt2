@@ -832,3 +832,5 @@ Target solver: Z3
  ;; File "ghc_sort.ads", line 6, characters 0-0
   (not (<= (first3 ghc_sort__cut__result) temp___472)))
 (check-sat)
+
+(exit)

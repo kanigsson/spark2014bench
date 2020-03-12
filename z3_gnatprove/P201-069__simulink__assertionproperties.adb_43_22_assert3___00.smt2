@@ -222,3 +222,5 @@ Target solver: Z3
   (not
   (not (fp.eq sqrt_out11 (fp #b0 #b10000000001 #b0000000000000000000000000000000000000000000000000000)))))
 (check-sat)
+
+(exit)

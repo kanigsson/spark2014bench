@@ -503,3 +503,5 @@ Target solver: Z3
  ;; File "use_types_with_invariants_no_spark.ads", line 10, characters 0-0
   (not (<= (first1 c__split_fields) i)))
 (check-sat)
+
+(exit)

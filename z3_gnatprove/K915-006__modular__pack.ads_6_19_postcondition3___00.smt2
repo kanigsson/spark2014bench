@@ -158,3 +158,5 @@ Target solver: Z3
  ;; File "pack.ads", line 5, characters 0-0
   (not (= pack__next__result (bvadd m #x01))))
 (check-sat)
+
+(exit)

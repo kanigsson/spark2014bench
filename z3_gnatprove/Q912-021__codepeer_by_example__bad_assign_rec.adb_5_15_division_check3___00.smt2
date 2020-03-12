@@ -390,3 +390,5 @@ Target solver: Z3
  ;; File "bad_assign_rec.adb", line 2, characters 0-0
   (not (not (= 1000000 0))))
 (check-sat)
+
+(exit)

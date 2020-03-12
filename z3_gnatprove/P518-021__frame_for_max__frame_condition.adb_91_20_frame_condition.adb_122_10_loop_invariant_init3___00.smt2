@@ -717,3 +717,5 @@ Target solver: Z3
       (rec__frame_condition__cell__value (us_split_fields1 (select a2 i)))) 
   (get_max_left j a2))))
 (check-sat)
+
+(exit)

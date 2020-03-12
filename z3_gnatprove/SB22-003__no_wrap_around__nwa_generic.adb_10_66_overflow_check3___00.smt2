@@ -225,3 +225,5 @@ Target solver: Z3
   (not
   (bvult (bvadd ((_ zero_extend 32) ucode_instr_offset_in_uproc1) ((_ zero_extend 32) #x00000004)) #x0000000001000000)))
 (check-sat)
+
+(exit)

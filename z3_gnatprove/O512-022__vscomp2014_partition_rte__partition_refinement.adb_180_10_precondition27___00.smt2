@@ -3226,3 +3226,5 @@ Target solver: Z3
   (not
   (< (length3 (us_repqtmk4 o18 (us_split_fieldsqtmk4 p__split_fields2))) 10000)))
 (check-sat)
+
+(exit)

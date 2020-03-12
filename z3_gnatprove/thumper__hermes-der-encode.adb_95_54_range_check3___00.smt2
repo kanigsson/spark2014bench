@@ -711,3 +711,5 @@ Target solver: Z3
  ;; File "hermes-der-encode.ads", line 23, characters 0-0
   (not (uint_in_range value2)))
 (check-sat)
+
+(exit)

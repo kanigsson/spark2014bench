@@ -94,3 +94,5 @@ Target solver: Z3
  ;; File "repro.ads", line 14, characters 0-0
   (not (= (contrainte1 sortie1 sortie2) true)))
 (check-sat)
+
+(exit)

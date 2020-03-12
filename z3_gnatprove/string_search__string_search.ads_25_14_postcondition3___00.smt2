@@ -736,3 +736,5 @@ Target solver: Z3
  ;; File "string_search.ads", line 23, characters 0-0
   (not (<= 0 string_search__brute_force__result1)))
 (check-sat)
+
+(exit)

@@ -256,3 +256,5 @@ Target solver: Z3
                                        k)))
                             10 (to_rep (select temp___loop_entry_208 k))))))
 (check-sat)
+
+(exit)

@@ -162,3 +162,5 @@ Target solver: Z3
  ;; File "call_actuals.ads", line 8, characters 0-0
   (not (in_range (+ x1 1))))
 (check-sat)
+
+(exit)

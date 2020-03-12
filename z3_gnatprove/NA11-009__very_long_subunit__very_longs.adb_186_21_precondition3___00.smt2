@@ -551,3 +551,5 @@ Target solver: Z3
   (= (to_rep (rec__very_longs__very_long__length (us_split_discrs1 l))) 
   (to_rep (rec__very_longs__very_long__length (us_split_discrs1 r))))))
 (check-sat)
+
+(exit)

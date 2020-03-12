@@ -1218,3 +1218,5 @@ Target solver: Z3
  ;; File "ghc_sort.adb", line 147, characters 0-0
   (not (dynamic_predicate1 temp___630)))
 (check-sat)
+
+(exit)

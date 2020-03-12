@@ -745,3 +745,5 @@ Target solver: Z3
  ;; File "sum_elem.ads", line 23, characters 0-0
   (not (in_range6 o1)))
 (check-sat)
+
+(exit)

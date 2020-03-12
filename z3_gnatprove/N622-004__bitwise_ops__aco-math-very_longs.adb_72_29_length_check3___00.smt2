@@ -768,3 +768,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.adb", line 62, characters 0-0
   (not (<= 1 r19b)))
 (check-sat)
+
+(exit)

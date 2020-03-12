@@ -155,3 +155,5 @@ Target solver: Z3
  ;; File "div_lemmas.adb", line 40, characters 0-0
   (not (not (fp.isZero o))))
 (check-sat)
+
+(exit)

@@ -425,3 +425,5 @@ Target solver: Z3
  ;; File "scale.ads", line 9, characters 0-0
   (not (not (= k21 0))))
 (check-sat)
+
+(exit)

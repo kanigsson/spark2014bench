@@ -733,3 +733,5 @@ Target solver: Z3
   (= (is_append (get_model first1 length3 content1)
      (get_model first length4 content2) e) true)))
 (check-sat)
+
+(exit)

@@ -2282,3 +2282,5 @@ Target solver: Z3
  ;; File "tetris_functional.ads", line 220, characters 0-0
   (not (= (no_complete_lines cur_board1) true)))
 (check-sat)
+
+(exit)

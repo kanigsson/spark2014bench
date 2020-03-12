@@ -489,3 +489,5 @@ Target solver: Z3
  ;; File "pack.adb", line 43, characters 0-0
   (not (not (= (bool_eq my_s2 1 3 glob 1 3) true))))
 (check-sat)
+
+(exit)

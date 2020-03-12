@@ -870,3 +870,5 @@ Target solver: Z3
  ;; File "simple_unc_arrays.adb", line 135, characters 0-0
   (not (<= (to_rep1 o8) left3)))
 (check-sat)
+
+(exit)

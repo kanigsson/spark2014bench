@@ -216,3 +216,5 @@ Target solver: Z3
  ;; File "inline_init.adb", line 1, characters 0-0
   (not (= y 3)))
 (check-sat)
+
+(exit)

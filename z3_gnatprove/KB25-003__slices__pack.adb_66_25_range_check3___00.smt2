@@ -262,3 +262,5 @@ Target solver: Z3
  ;; File "pack.adb", line 59, characters 0-0
   (not (<= 1 2)))
 (check-sat)
+
+(exit)

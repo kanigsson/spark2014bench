@@ -402,3 +402,5 @@ Target solver: Z3
   (or (=> (f__function_guard (f 1) 1) (= (user_eq1 temp___198 (f 1)) true))
   (=> (f__function_guard (f 2) 2) (= (user_eq1 temp___198 (f 2)) true)))))
 (check-sat)
+
+(exit)

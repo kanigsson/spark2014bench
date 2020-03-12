@@ -205,3 +205,5 @@ Target solver: Z3
  ;; File "simple_arrays.adb", line 34, characters 0-0
   (not (<= (- 2147483648) (- 2147483648))))
 (check-sat)
+
+(exit)

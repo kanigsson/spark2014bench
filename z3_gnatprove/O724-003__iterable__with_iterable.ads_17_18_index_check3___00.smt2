@@ -293,3 +293,5 @@ Target solver: Z3
  ;; File "with_iterable.ads", line 16, characters 0-0
   (not (<= 1 i)))
 (check-sat)
+
+(exit)

@@ -72,3 +72,5 @@ Target solver: Z3
  ;; File "logic.adb", line 59, characters 0-0
   (not (or (not (= a true)) (not (= b true)))))
 (check-sat)
+
+(exit)

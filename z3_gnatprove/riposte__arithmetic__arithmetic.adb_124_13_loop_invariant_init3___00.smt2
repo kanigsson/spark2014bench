@@ -168,3 +168,5 @@ Target solver: Z3
  ;; File "arithmetic.adb", line 112, characters 0-0
   (not (< (+ (+ r1 r1) 1) n)))
 (check-sat)
+
+(exit)

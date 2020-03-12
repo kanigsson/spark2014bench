@@ -604,3 +604,5 @@ Target solver: Z3
  ;; File "evoting.ads", line 99, characters 0-0
   (not (not (= (select winners5 j) true))))
 (check-sat)
+
+(exit)

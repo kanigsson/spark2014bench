@@ -441,3 +441,5 @@ Target solver: Z3
  ;; File "p_warn.ads", line 1, characters 0-0
   (not (<= (length (to_string (attr__ATTRIBUTE_IMAGE5 x1) 2040)) 2040)))
 (check-sat)
+
+(exit)

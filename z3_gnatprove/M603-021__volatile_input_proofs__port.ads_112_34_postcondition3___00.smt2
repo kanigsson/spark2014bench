@@ -286,3 +286,5 @@ Target solver: Z3
  ;; File "port.ads", line 109, characters 0-0
   (not (in_range2 x1)))
 (check-sat)
+
+(exit)

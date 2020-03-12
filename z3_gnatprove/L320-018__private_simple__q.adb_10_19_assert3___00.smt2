@@ -140,3 +140,5 @@ Target solver: Z3
  ;; File "q.adb", line 3, characters 0-0
   (not (= (bool_eq z1 y1) true)))
 (check-sat)
+
+(exit)

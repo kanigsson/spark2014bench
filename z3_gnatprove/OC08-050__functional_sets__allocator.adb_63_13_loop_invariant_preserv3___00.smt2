@@ -737,3 +737,5 @@ Target solver: Z3
  ;; File "allocator.ads", line 49, characters 0-0
   (not (= (bool_eq data 1 3 temp___loop_entry_415 1 3) true)))
 (check-sat)
+
+(exit)

@@ -1161,3 +1161,5 @@ Target solver: Z3
  ;; File "very_longs-divide.adb", line 185, characters 0-0
   (not (<= (first1 quotient__split_fields1) j)))
 (check-sat)
+
+(exit)

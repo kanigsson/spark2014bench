@@ -698,3 +698,5 @@ Target solver: Z3
  ;; File "ghc_sort.ads", line 6, characters 0-0
   (not (<= temp___loop_entry_423 y1)))
 (check-sat)
+
+(exit)

@@ -862,3 +862,5 @@ Target solver: Z3
  ;; File "init_list_zero.adb", line 5, characters 0-0
   (not (<= 1 usf)))
 (check-sat)
+
+(exit)

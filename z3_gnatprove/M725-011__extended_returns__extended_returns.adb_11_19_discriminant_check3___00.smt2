@@ -542,3 +542,5 @@ Target solver: Z3
   (not (extended_returns__record_t__b__pred
   (us_repqtmk result____split_discrs result____split_fields1))))
 (check-sat)
+
+(exit)

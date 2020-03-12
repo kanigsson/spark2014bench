@@ -254,3 +254,5 @@ Target solver: Z3
  ;; File "loopframe.ads", line 11, characters 0-0
   (not (<= 1 loopframe__get__result)))
 (check-sat)
+
+(exit)

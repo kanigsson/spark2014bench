@@ -1335,3 +1335,5 @@ Target solver: Z3
  ;; File "database.ads", line 44, characters 0-0
   (not (= (is_empty (balance account1 accounts_balance1 links1)) true)))
 (check-sat)
+
+(exit)

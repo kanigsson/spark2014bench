@@ -107,3 +107,5 @@ Target solver: Z3
  ;; File "basic_contracts.ads", line 6, characters 0-0
   (not (= basic_contracts__increment__result (+ item 1))))
 (check-sat)
+
+(exit)

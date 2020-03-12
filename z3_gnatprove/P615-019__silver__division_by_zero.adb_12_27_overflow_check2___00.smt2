@@ -232,3 +232,5 @@ Target solver: Z3
  ;; File "division_by_zero.adb", line 9, characters 0-0
   (not (in_range (div1 x o))))
 (check-sat)
+
+(exit)

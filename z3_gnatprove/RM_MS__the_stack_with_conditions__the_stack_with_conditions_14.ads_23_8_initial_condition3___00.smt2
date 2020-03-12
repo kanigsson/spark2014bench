@@ -262,3 +262,5 @@ Target solver: Z3
  ;; File "the_stack_with_conditions_14.ads", line 19, characters 0-0
   (not (= (is_empty pointer1) true)))
 (check-sat)
+
+(exit)

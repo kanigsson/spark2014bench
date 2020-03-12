@@ -216,3 +216,5 @@ Target solver: Z3
  ;; File "victor_divmod_rules.adb", line 62, characters 0-0
   (not (<= (* y (div1 x y)) x)))
 (check-sat)
+
+(exit)

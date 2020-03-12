@@ -807,3 +807,5 @@ Target solver: Z3
  ;; File "a-cforse.ads", line 1021, characters 0-0
   (not (in_range2 o2)))
 (check-sat)
+
+(exit)

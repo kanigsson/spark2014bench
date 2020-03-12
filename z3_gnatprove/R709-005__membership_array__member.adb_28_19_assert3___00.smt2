@@ -550,3 +550,5 @@ Target solver: Z3
   (=> (init__function_guard (init 3) 3)
   (= (bool_eq1 temp___227 (init 3)) true)))))
 (check-sat)
+
+(exit)

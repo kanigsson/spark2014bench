@@ -81,3 +81,5 @@ Target solver: Z3
  ;; File "my_loop.adb", line 1, characters 0-0
   (not (= loop_cond2 true)))
 (check-sat)
+
+(exit)

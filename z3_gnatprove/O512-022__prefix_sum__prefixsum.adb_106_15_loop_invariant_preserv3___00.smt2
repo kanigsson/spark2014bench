@@ -854,3 +854,5 @@ Target solver: Z3
   (= (to_rep (select a5 k)) (+ (to_rep (select temp___loop_entry_257 k)) 
   (to_rep (select temp___loop_entry_258 (- k space2)))))))
 (check-sat)
+
+(exit)

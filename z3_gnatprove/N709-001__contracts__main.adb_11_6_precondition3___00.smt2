@@ -981,3 +981,5 @@ Target solver: Z3
  ;; File "main.adb", line 5, characters 0-0
   (not (not (= (is_max (us_repqtmk x1__split_fields1 o)) true))))
 (check-sat)
+
+(exit)

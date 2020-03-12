@@ -800,3 +800,5 @@ Target solver: Z3
  ;; File "string_utilities.adb", line 20, characters 0-0
   (not (dynamic_property1 0 last2 0)))
 (check-sat)
+
+(exit)

@@ -67,3 +67,5 @@ Target solver: Z3
  ;; File "p1.ads", line 1, characters 0-0
   (not (= body2_elaborated true)))
 (check-sat)
+
+(exit)

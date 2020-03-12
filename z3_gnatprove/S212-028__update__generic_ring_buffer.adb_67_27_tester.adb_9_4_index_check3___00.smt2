@@ -1001,3 +1001,5 @@ Target solver: Z3
  ;; File "generic_ring_buffer.ads", line 70, characters 0-0
   (not (<= (first1 temp___317) temp___318)))
 (check-sat)
+
+(exit)

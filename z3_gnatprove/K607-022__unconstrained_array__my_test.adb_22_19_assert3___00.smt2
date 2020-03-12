@@ -1983,3 +1983,5 @@ Target solver: Z3
      (to_base
      (us_repqtmk1 t3__split_discrs (us_split_fieldsqtmk1 t3__split_fields2)))) true)))
 (check-sat)
+
+(exit)

@@ -310,3 +310,5 @@ Target solver: Z3
  ;; File "math_euclid.ads", line 5, characters 0-0
   (not (not (= bn 0))))
 (check-sat)
+
+(exit)

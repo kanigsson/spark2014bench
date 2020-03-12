@@ -1040,3 +1040,5 @@ Target solver: Z3
  ;; File "communications.ads", line 10, characters 0-0
   (not (type_invariant communications__create__result)))
 (check-sat)
+
+(exit)

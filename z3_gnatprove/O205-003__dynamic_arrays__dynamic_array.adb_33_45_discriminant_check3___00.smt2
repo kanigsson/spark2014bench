@@ -371,3 +371,5 @@ Target solver: Z3
  ;; File "dynamic_array.adb", line 31, characters 0-0
   (not (dynamic_array__rec__f2__pred r)))
 (check-sat)
+
+(exit)

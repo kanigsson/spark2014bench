@@ -1070,3 +1070,5 @@ Target solver: Z3
  ;; File "update_list_zero.adb", line 5, characters 0-0
   (not (<= 1 usf2)))
 (check-sat)
+
+(exit)

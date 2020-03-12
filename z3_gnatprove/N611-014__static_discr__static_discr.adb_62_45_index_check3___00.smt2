@@ -1259,3 +1259,5 @@ Target solver: Z3
  ;; File "static_discr.adb", line 47, characters 0-0
   (not (<= (first1 temp___485) temp___486)))
 (check-sat)
+
+(exit)

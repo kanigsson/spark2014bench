@@ -325,3 +325,5 @@ Target solver: Z3
   (= (bool_eq1 (us_repqtmk1 records__make_optional_pair_b__result)
      (us_repqtmk1 (us_split_fieldsqtmk1 (distinct 1 0) x))) true)))
 (check-sat)
+
+(exit)

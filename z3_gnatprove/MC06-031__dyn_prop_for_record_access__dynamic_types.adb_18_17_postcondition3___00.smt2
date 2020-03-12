@@ -683,3 +683,5 @@ Target solver: Z3
                           dynamic_types__search__search_range__result)))) 
   c)))))
 (check-sat)
+
+(exit)

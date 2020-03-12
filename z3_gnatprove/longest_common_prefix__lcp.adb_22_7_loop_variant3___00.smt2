@@ -454,3 +454,5 @@ Target solver: Z3
  ;; File "lcp.ads", line 10, characters 0-0
   (not (< temp___188 l3)))
 (check-sat)
+
+(exit)

@@ -1533,3 +1533,5 @@ Target solver: Z3
  ;; File "p.ads", line 21, characters 0-0
   (not (= (has_element usf usf3) true)))
 (check-sat)
+
+(exit)

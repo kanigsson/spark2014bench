@@ -1861,3 +1861,5 @@ Target solver: Z3
                                                          (rec__dispatch__root__i
                                                          v1__split_fields)))))
 (check-sat)
+
+(exit)

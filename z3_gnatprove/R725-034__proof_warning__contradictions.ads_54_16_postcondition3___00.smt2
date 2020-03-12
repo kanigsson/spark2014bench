@@ -113,3 +113,5 @@ Target solver: Z3
  ;; File "contradictions.ads", line 52, characters 0-0
   (not (= v1 1)))
 (check-sat)
+
+(exit)

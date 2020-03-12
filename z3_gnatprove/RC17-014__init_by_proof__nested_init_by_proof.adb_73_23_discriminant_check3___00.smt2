@@ -1471,3 +1471,5 @@ Target solver: Z3
  ;; File "nested_init_by_proof.adb", line 1, characters 0-0
   (not (nested_init_by_proof__rec__f1__pred o8)))
 (check-sat)
+
+(exit)

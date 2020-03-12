@@ -678,3 +678,5 @@ Target solver: Z3
  ;; File "stack.ads", line 18, characters 0-0
   (not (<= 1 last4)))
 (check-sat)
+
+(exit)

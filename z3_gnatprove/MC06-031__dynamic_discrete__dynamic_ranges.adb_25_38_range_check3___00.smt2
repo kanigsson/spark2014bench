@@ -442,3 +442,5 @@ Target solver: Z3
  ;; File "dynamic_ranges.ads", line 19, characters 0-0
   (not (dynamic_property3 o2 o1 o)))
 (check-sat)
+
+(exit)

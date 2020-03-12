@@ -264,3 +264,5 @@ Target solver: Z3
  ;; File "spark-test_array_lemmas.ads", line 60, characters 0-0
   (not (<= (first1 arr) temp___202)))
 (check-sat)
+
+(exit)

@@ -923,3 +923,5 @@ Target solver: Z3
                                                                    array2)) (- 
      j (first1 array2))) 1)) 2)) (to_rep (select (to_array array2) j)))))
 (check-sat)
+
+(exit)

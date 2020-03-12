@@ -395,3 +395,5 @@ Target solver: Z3
  ;; File "abs_controller_supplier_with_property.ads", line 19, characters 0-0
   (not (in_range3 o7)))
 (check-sat)
+
+(exit)

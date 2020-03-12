@@ -145,3 +145,5 @@ Target solver: Z3
  ;; File "contract_cases_legal.ads", line 13, characters 0-0
   (not (= x2 (min (+ x1 1) threshold))))
 (check-sat)
+
+(exit)

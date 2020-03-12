@@ -168,3 +168,5 @@ Target solver: Z3
  ;; File "attach_test.ads", line 3, characters 0-0
   (not (= temp___192 false)))
 (check-sat)
+
+(exit)

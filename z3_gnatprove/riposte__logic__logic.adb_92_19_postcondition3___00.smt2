@@ -101,3 +101,5 @@ Target solver: Z3
   (= (and (or (= (ite logic__xor_test_a__result 1 0) (ite a 1 0)) b) (not (and (= (ite 
   logic__xor_test_a__result 1 0) (ite a 1 0)) b))) true)))
 (check-sat)
+
+(exit)

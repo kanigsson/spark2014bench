@@ -332,3 +332,5 @@ Target solver: Z3
   new_val
   (to_rep (get a1 temp___index_232 temp___index_233 temp___index_234))))))
 (check-sat)
+
+(exit)

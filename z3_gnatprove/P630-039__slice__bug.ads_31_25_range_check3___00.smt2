@@ -436,3 +436,5 @@ Target solver: Z3
  ;; File "bug.ads", line 26, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

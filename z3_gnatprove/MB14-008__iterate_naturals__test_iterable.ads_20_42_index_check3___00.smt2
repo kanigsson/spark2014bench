@@ -504,3 +504,5 @@ Target solver: Z3
  ;; File "test_iterable.ads", line 19, characters 0-0
   (not (<= (first1 temp___207) usf)))
 (check-sat)
+
+(exit)

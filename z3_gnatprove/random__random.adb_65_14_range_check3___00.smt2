@@ -759,3 +759,5 @@ Target solver: Z3
  ;; File "random.ads", line 43, characters 0-0
   (not (<= (- 9223372036854775808) 1)))
 (check-sat)
+
+(exit)

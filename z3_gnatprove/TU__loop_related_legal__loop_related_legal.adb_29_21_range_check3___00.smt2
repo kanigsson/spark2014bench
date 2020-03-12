@@ -130,3 +130,5 @@ Target solver: Z3
  ;; File "loop_related_legal.adb", line 17, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

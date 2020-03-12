@@ -249,3 +249,5 @@ Target solver: Z3
  ;; File "prefixsum_general.adb", line 108, characters 0-0
   (not (<= o1 o)))
 (check-sat)
+
+(exit)

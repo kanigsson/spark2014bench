@@ -291,3 +291,5 @@ Target solver: Z3
   (and (and (<= 1 k) (<= k cur))
   (= (to_rep (select a k)) (to_rep (select b j)))))))
 (check-sat)
+
+(exit)

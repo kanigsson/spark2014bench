@@ -244,3 +244,5 @@ Target solver: Z3
  ;; File "alias.ads", line 16, characters 0-0
   (not (in_range (+ o1 o))))
 (check-sat)
+
+(exit)

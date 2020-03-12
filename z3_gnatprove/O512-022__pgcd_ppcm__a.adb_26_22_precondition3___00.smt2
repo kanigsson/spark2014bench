@@ -257,3 +257,5 @@ Target solver: Z3
  ;; File "a.ads", line 11, characters 0-0
   (not (not (= o1 (- 2147483648)))))
 (check-sat)
+
+(exit)

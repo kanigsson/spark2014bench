@@ -906,3 +906,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.adb", line 39, characters 0-0
   (not (<= (first1 temp___1471) i1)))
 (check-sat)
+
+(exit)

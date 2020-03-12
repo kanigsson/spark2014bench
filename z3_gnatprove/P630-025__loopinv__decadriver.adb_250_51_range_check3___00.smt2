@@ -3333,3 +3333,5 @@ Target solver: Z3
  ;; File "decadriver.ads", line 246, characters 0-0
   (not (bvule ((_ zero_extend 16) #x0000) o4)))
 (check-sat)
+
+(exit)

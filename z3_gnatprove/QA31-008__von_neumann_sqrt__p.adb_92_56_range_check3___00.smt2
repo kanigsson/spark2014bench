@@ -443,3 +443,5 @@ Target solver: Z3
   (not (in_range1
   (bv2int (bvsub #x0000000000000020 (bvmul #x0000000000000002 i1))))))
 (check-sat)
+
+(exit)

@@ -266,3 +266,5 @@ Target solver: Z3
  ;; File "foo.adb", line 38, characters 0-0
   (not (us_compatible_tags (attr__tag temp___230) us_tag1)))
 (check-sat)
+
+(exit)

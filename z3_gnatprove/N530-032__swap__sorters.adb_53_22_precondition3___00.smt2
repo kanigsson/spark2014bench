@@ -386,3 +386,5 @@ Target solver: Z3
  ;; File "sorters.ads", line 7, characters 0-0
   (not (<= (first1 o2) (last1 o2))))
 (check-sat)
+
+(exit)

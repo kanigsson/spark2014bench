@@ -596,3 +596,5 @@ Target solver: Z3
  ;; File "array_types.ads", line 2, characters 0-0
   (not (= (to_rep b__first_2) 1)))
 (check-sat)
+
+(exit)

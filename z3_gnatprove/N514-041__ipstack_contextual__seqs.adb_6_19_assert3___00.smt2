@@ -123,3 +123,5 @@ Target solver: Z3
  ;; File "seqs.adb", line 1, characters 0-0
   (not (= (seq_le x y) true)))
 (check-sat)
+
+(exit)

@@ -327,3 +327,5 @@ Target solver: Z3
  ;; File "test.adb", line 16, characters 0-0
   (not (= test__test_2__result 97)))
 (check-sat)
+
+(exit)

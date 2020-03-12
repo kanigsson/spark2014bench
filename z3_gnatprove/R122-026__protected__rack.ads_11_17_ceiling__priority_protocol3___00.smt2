@@ -277,3 +277,5 @@ Target solver: Z3
  ;; File "rack.ads", line 11, characters 0-0
   (not (<= 97 97)))
 (check-sat)
+
+(exit)

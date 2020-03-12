@@ -1062,3 +1062,5 @@ Target solver: Z3
  ;; File "linked_list.ads", line 9, characters 0-0
   (not (<= 1 usf)))
 (check-sat)
+
+(exit)

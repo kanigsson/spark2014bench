@@ -649,3 +649,5 @@ Target solver: Z3
   (rec__binary_search_trees__binary_search_tree__root tree__split_fields1)
   o2)))))
 (check-sat)
+
+(exit)

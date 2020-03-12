@@ -215,3 +215,5 @@ Target solver: Z3
  ;; File "alloc.adb", line 3, characters 0-0
   (not (= (to_rep x__pointer_value) (- 12345))))
 (check-sat)
+
+(exit)

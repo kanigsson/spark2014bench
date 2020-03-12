@@ -612,3 +612,5 @@ Target solver: Z3
  ;; File "linear_search.ads", line 33, characters 0-0
   (not (= (distinct 1 0) res__split_discrs)))
 (check-sat)
+
+(exit)

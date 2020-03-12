@@ -194,3 +194,5 @@ Target solver: Z3
  ;; File "dispatch.ads", line 15, characters 0-0
   (not (in_range (+ o 1))))
 (check-sat)
+
+(exit)

@@ -796,3 +796,5 @@ Target solver: Z3
  ;; File "communications.ads", line 3, characters 0-0
   (not (type_invariant usf2)))
 (check-sat)
+
+(exit)

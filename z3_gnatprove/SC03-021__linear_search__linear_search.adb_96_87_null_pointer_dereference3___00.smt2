@@ -1499,3 +1499,5 @@ Target solver: Z3
  ;; File "linear_search.adb", line 82, characters 0-0
   (not (rec__linear_search__int_acc__pointer_value__pred usf5)))
 (check-sat)
+
+(exit)

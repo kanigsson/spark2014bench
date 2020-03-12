@@ -1398,3 +1398,5 @@ Target solver: Z3
  ;; File "r.ads", line 13, characters 0-0
   (not (in_range2 (+ total_ones2 o1))))
 (check-sat)
+
+(exit)

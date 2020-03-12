@@ -641,3 +641,5 @@ Target solver: Z3
      (rec__update_examples__nested_rec__c nr__split_fields1) 1 5)
      (rec__update_examples__nested_rec__d nr__split_fields1)))) true)))
 (check-sat)
+
+(exit)

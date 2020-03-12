@@ -312,3 +312,5 @@ Target solver: Z3
  ;; File "discr.ads", line 24, characters 0-0
   (not (in_range1 c (us_split_discrs1 temp___391))))
 (check-sat)
+
+(exit)

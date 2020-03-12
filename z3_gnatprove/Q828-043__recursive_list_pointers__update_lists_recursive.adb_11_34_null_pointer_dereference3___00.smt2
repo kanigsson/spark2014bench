@@ -370,3 +370,5 @@ Target solver: Z3
  ;; File "update_lists_recursive.ads", line 6, characters 0-0
   (not (rec__linked_list_types_types__list__pointer_value__pred o2)))
 (check-sat)
+
+(exit)

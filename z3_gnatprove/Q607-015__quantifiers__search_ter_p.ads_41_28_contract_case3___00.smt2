@@ -654,3 +654,5 @@ Target solver: Z3
  ;; File "search_ter_p.ads", line 32, characters 0-0
   (not (= (rec__types__option__exists search_ter_p__search__result) true)))
 (check-sat)
+
+(exit)

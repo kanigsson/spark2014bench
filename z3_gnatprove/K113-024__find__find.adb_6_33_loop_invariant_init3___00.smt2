@@ -243,3 +243,5 @@ Target solver: Z3
  ;; File "find.ads", line 3, characters 0-0
   (not (= res 0)))
 (check-sat)
+
+(exit)

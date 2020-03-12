@@ -7848,3 +7848,5 @@ Target solver: Z3
  ;; File "tictactoe.ads", line 42, characters 0-0
   (not (= (to_rep1 (select (select my_board (to_rep2 o2)) (to_rep2 o1))) 0)))
 (check-sat)
+
+(exit)

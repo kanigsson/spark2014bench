@@ -306,3 +306,5 @@ Target solver: Z3
  ;; File "types.ads", line 5, characters 0-0
   (not (= (check__ (us_repqtmk x__split_fields x__attr__tag)) true)))
 (check-sat)
+
+(exit)

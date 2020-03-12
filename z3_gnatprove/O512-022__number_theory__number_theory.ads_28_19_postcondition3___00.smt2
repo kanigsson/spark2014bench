@@ -505,3 +505,5 @@ Target solver: Z3
  ;; File "number_theory.ads", line 27, characters 0-0
   (not (= number_theory__fibonacci__result (fib n))))
 (check-sat)
+
+(exit)

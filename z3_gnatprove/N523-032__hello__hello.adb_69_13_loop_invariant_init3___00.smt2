@@ -570,3 +570,5 @@ Target solver: Z3
  ;; File "hello.adb", line 39, characters 0-0
   (not (= (to_rep (select ret1 j)) (to_rep (select (to_array str) j)))))
 (check-sat)
+
+(exit)

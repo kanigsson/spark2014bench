@@ -508,3 +508,5 @@ Target solver: Z3
  ;; File "foo.ads", line 10, characters 0-0
   (not (not (= #x0000000000000020 #x0000000000000000))))
 (check-sat)
+
+(exit)

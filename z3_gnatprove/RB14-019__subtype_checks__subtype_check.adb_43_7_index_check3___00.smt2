@@ -1087,3 +1087,5 @@ Target solver: Z3
  ;; File "subtype_check.adb", line 1, characters 0-0
   (not (<= (first1 x__pointer_value) 1)))
 (check-sat)
+
+(exit)

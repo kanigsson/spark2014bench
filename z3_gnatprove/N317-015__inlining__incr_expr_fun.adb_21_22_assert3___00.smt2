@@ -296,3 +296,5 @@ Target solver: Z3
  ;; File "incr_expr_fun.ads", line 13, characters 0-0
   (not (= (incr_priv_priv x) (+ x 1))))
 (check-sat)
+
+(exit)

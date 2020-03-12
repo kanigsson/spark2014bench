@@ -691,3 +691,5 @@ Target solver: Z3
  ;; File "counter_example.ads", line 14, characters 0-0
   (not (dynamic_predicate (us_repqtmk (us_split_fieldsqtmk o3 o2)))))
 (check-sat)
+
+(exit)

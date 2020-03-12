@@ -738,3 +738,5 @@ Target solver: Z3
  ;; File "dynamic_types.ads", line 4, characters 0-0
   (not (<= (first1 a) dynamic_types__search__result1)))
 (check-sat)
+
+(exit)

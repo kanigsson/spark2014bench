@@ -473,3 +473,5 @@ Target solver: Z3
                                                                   usf1 true)
                                                                   1 0)) 1)))
 (check-sat)
+
+(exit)

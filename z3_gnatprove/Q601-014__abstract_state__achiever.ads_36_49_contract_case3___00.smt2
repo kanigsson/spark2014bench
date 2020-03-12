@@ -616,3 +616,5 @@ Target solver: Z3
   (not
   (= (prf_do_something st 0 usf2 (get_internal_state my_internal_state)) true)))
 (check-sat)
+
+(exit)

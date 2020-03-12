@@ -275,3 +275,5 @@ Target solver: Z3
  ;; File "test_pack.ads", line 9, characters 0-0
   (not (fp.isFinite32 (fp.sub RNE o measured))))
 (check-sat)
+
+(exit)

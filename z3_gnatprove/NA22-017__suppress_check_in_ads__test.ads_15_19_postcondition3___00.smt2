@@ -166,3 +166,5 @@ Target solver: Z3
  ;; File "test.ads", line 14, characters 0-0
   (not (= test__xor2__result (bvxor v0 v1))))
 (check-sat)
+
+(exit)

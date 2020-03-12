@@ -226,3 +226,5 @@ Target solver: Z3
  ;; File "division_by_zero.adb", line 37, characters 0-0
   (not (fp.isFinite32 (power x y))))
 (check-sat)
+
+(exit)

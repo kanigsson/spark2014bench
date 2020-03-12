@@ -317,3 +317,5 @@ Target solver: Z3
  ;; File "math_simple_abstract.ads", line 7, characters 0-0
   (not (= (mod2 o2 c1) 0)))
 (check-sat)
+
+(exit)

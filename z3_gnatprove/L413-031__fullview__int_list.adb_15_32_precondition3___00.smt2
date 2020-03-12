@@ -953,3 +953,5 @@ Target solver: Z3
  ;; File "int_list.ads", line 23, characters 0-0
   (not (= (has_key o10 o8) true)))
 (check-sat)
+
+(exit)

@@ -663,3 +663,5 @@ Target solver: Z3
   (= (rec__linear_search__search_result__found
      (us_split_discrs1 linear_search__search__result)) true)))
 (check-sat)
+
+(exit)

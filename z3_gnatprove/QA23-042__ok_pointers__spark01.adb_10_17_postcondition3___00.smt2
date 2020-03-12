@@ -222,3 +222,5 @@ Target solver: Z3
                                  (rec__spark01__data__mystruct__a
                                  (us_split_fields1 x))))))
 (check-sat)
+
+(exit)

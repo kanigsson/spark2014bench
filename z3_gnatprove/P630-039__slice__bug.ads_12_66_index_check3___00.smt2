@@ -389,3 +389,5 @@ Target solver: Z3
  ;; File "bug.ads", line 8, characters 0-0
   (not (<= (first1 b) o)))
 (check-sat)
+
+(exit)

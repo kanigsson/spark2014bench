@@ -911,3 +911,5 @@ Target solver: Z3
  ;; File "repro.adb", line 22, characters 0-0
   (not (in_range2 o6)))
 (check-sat)
+
+(exit)

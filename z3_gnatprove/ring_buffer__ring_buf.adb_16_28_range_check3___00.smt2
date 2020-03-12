@@ -559,3 +559,5 @@ Target solver: Z3
  ;; File "ring_buf.ads", line 45, characters 0-0
   (not (in_range2 o4)))
 (check-sat)
+
+(exit)

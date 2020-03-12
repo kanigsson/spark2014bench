@@ -281,3 +281,5 @@ Target solver: Z3
  ;; File "fib.ads", line 6, characters 0-0
   (not (<= b1 a1)))
 (check-sat)
+
+(exit)

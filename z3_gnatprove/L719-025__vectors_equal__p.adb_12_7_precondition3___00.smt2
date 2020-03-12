@@ -685,3 +685,5 @@ Target solver: Z3
   (not
   (< 0 (length2 (us_repqtmk o3 (us_split_fieldsqtmk l__split_fields))))))
 (check-sat)
+
+(exit)

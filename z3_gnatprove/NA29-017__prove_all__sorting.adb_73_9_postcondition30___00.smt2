@@ -769,3 +769,5 @@ Target solver: Z3
  ;; File "sorting.adb", line 59, characters 0-0
   (not (= (to_rep (select a2 k)) (to_rep (select a1 k)))))
 (check-sat)
+
+(exit)

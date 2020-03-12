@@ -1845,3 +1845,5 @@ Target solver: Z3
  ;; File "find_map.ads", line 26, characters 0-0
   (not (in_range4 k)))
 (check-sat)
+
+(exit)

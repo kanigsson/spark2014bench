@@ -460,3 +460,5 @@ Target solver: Z3
  ;; File "anonymous_access.ads", line 16, characters 0-0
   (not (= (length anonymous_access__copy__result) (length x))))
 (check-sat)
+
+(exit)

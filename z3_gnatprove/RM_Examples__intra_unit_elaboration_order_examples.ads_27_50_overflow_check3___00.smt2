@@ -125,3 +125,5 @@ Target solver: Z3
  ;; File "intra_unit_elaboration_order_examples.ads", line 27, characters 0-0
   (not (in_range (* 2 o1))))
 (check-sat)
+
+(exit)

@@ -271,3 +271,5 @@ Target solver: Z3
  ;; File "div_lemmas.adb", line 3, characters 0-0
   (not (not (= x1 0))))
 (check-sat)
+
+(exit)

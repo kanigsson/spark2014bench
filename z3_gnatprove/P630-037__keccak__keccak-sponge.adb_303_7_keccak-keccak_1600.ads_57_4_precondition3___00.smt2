@@ -1659,3 +1659,5 @@ Target solver: Z3
  ;; File "keccak-sponge.adb", line 273, characters 0-0
   (not (<= (length o14) 268435455)))
 (check-sat)
+
+(exit)

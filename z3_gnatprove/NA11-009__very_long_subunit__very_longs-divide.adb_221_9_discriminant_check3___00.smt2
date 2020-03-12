@@ -1612,3 +1612,5 @@ Target solver: Z3
  ;; File "very_longs.ads", line 65, characters 0-0
   (not (in_range3 o12 (us_split_discrs1 divisor))))
 (check-sat)
+
+(exit)

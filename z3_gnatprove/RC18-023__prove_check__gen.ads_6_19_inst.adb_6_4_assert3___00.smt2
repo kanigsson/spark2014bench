@@ -97,3 +97,5 @@ Target solver: Z3
  ;; File "inst.adb", line 6, characters 0-0
   (not (< 4 0)))
 (check-sat)
+
+(exit)

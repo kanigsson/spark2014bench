@@ -153,3 +153,5 @@ Target solver: Z3
  ;; File "task_types.ads", line 6, characters 0-0
   (not (in_range1 (+ x1 1))))
 (check-sat)
+
+(exit)

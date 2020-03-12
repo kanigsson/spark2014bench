@@ -746,3 +746,5 @@ Target solver: Z3
  ;; File "depends_legal_2.adb", line 17, characters 0-0
   (not (= (distinct 0 0) par1__split_discrs)))
 (check-sat)
+
+(exit)

@@ -129,3 +129,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S715-026__dic_loop_minimal-11291/src/gnatprove/p__t.mlw", line 158, characters 5-8
   (not (< 0 j)))
 (check-sat)
+
+(exit)

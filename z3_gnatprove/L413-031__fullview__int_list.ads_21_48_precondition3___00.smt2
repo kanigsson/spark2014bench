@@ -1036,3 +1036,5 @@ Target solver: Z3
  ;; File "int_list.ads", line 14, characters 0-0
   (not (= (has_element usf usf4) true)))
 (check-sat)
+
+(exit)

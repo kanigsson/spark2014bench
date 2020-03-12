@@ -1314,3 +1314,5 @@ Target solver: Z3
  ;; File "a-cfhama.ads", line 744, characters 0-0
   (not (in_range6 128 (us_split_discrs1 (to_base key)))))
 (check-sat)
+
+(exit)

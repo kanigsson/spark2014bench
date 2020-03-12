@@ -140,3 +140,5 @@ Target solver: Z3
  ;; File "p.ads", line 18, characters 0-0
   (not (in_range (+ temp___old_162 1))))
 (check-sat)
+
+(exit)

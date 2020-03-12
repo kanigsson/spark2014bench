@@ -200,3 +200,5 @@ Target solver: Z3
  ;; File "pack.ads", line 21, characters 0-0
   (not (not (= o2 #x00))))
 (check-sat)
+
+(exit)

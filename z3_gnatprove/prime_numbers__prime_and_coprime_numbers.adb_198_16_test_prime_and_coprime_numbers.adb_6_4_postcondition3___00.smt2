@@ -644,3 +644,5 @@ Target solver: Z3
  ;; File "prime_and_coprime_numbers.adb", line 196, characters 0-0
   (not (= (valid_prime_data is_prime5) true)))
 (check-sat)
+
+(exit)

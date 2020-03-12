@@ -707,3 +707,5 @@ Target solver: Z3
  ;; File "very_longs.ads", line 40, characters 0-0
   (not (<= (first1 temp___976) very_longs__number_of_digits__result)))
 (check-sat)
+
+(exit)

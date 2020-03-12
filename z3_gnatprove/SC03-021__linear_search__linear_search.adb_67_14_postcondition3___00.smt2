@@ -966,3 +966,5 @@ Target solver: Z3
  ;; File "linear_search.adb", line 66, characters 0-0
   (not (= (last linear_search__all_data__result) (length r))))
 (check-sat)
+
+(exit)

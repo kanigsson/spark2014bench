@@ -811,3 +811,5 @@ Target solver: Z3
   (= (has_stored_area
      (to_base (us_repqtmk1 rec____split_fields1 rec____attr__tag))) true)))
 (check-sat)
+
+(exit)

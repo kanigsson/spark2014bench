@@ -99,3 +99,5 @@ Target solver: Z3
  ;; File "buf-no_data.ads", line 7, characters 0-0
   (not (in_range (+ free_list1 1))))
 (check-sat)
+
+(exit)

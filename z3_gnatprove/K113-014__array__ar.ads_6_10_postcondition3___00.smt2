@@ -170,3 +170,5 @@ Target solver: Z3
  ;; File "ar.ads", line 4, characters 0-0
   (not (= ar__get__result (to_rep (select x 1)))))
 (check-sat)
+
+(exit)

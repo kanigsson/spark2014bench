@@ -553,3 +553,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-R728-002__aggregates-11070/src/gnatprove/ada___pragmarc__b_strings__b_string.mlw", line 909, characters 5-8
   (not (<= 1 1)))
 (check-sat)
+
+(exit)

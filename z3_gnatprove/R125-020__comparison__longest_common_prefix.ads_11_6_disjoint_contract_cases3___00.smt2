@@ -374,3 +374,5 @@ Target solver: Z3
  ;; File "longest_common_prefix.ads", line 8, characters 0-0
   (not (<= (+ (+ 0 (ite (= usf1 true) 1 0)) (ite (= usf true) 1 0)) 1)))
 (check-sat)
+
+(exit)

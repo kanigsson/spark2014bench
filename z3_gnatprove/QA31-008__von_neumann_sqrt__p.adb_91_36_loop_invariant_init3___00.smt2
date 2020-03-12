@@ -442,3 +442,5 @@ Target solver: Z3
  ;; File "p.ads", line 13, characters 0-0
   (not (bvule #x0000000000000001 i1)))
 (check-sat)
+
+(exit)

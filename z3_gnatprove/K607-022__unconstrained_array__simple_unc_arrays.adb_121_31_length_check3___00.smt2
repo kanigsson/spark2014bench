@@ -679,3 +679,5 @@ Target solver: Z3
  ;; File "simple_unc_arrays.ads", line 83, characters 0-0
   (not (<= 1 r59b)))
 (check-sat)
+
+(exit)

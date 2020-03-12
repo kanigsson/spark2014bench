@@ -528,3 +528,5 @@ Target solver: Z3
  ;; File "escape.ads", line 5, characters 0-0
   (not (<= (length s) (length escape__backslash_escape__result))))
 (check-sat)
+
+(exit)

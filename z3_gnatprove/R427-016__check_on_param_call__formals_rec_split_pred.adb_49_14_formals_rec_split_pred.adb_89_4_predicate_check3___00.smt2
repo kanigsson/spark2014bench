@@ -1304,3 +1304,5 @@ Target solver: Z3
  ;; File "formals_rec_split_pred.adb", line 1, characters 0-0
   (not (dynamic_predicate1 temp___248)))
 (check-sat)
+
+(exit)

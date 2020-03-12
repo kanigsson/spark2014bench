@@ -211,3 +211,5 @@ Target solver: Z3
  ;; File "tagged_conv.adb", line 18, characters 0-0
   (not (us_compatible_tags cc__attr__tag us_tag)))
 (check-sat)
+
+(exit)

@@ -1159,3 +1159,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.adb", line 481, characters 0-0
   (not (<= (first1 quotient__split_fields) j)))
 (check-sat)
+
+(exit)

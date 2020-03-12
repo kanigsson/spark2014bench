@@ -159,3 +159,5 @@ Target solver: Z3
  ;; File "main.adb", line 7, characters 0-0
   (not (< 0 (get_p_state p_state1))))
 (check-sat)
+
+(exit)

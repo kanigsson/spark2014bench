@@ -346,3 +346,5 @@ Target solver: Z3
  ;; File "tab.ads", line 4, characters 0-0
   (not (<= temp___loop_entry_187 cur2)))
 (check-sat)
+
+(exit)

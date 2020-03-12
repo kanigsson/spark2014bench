@@ -211,3 +211,5 @@ Target solver: Z3
  ;; File "p.adb", line 4, characters 0-0
   (not (< 0 (to_rep x__split_fields))))
 (check-sat)
+
+(exit)

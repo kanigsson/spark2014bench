@@ -406,3 +406,5 @@ Target solver: Z3
   (not
   (fp.leq new_speed1 (fp.add RNE (high_bound n) (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000)))))
 (check-sat)
+
+(exit)

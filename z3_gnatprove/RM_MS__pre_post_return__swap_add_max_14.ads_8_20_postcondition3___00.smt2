@@ -144,3 +144,5 @@ Target solver: Z3
  ;; File "swap_add_max_14.ads", line 7, characters 0-0
   (not (= x2 y1)))
 (check-sat)
+
+(exit)

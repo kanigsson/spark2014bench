@@ -483,3 +483,5 @@ Target solver: Z3
  ;; File "pack.ads", line 3, characters 0-0
   (not (= (bool_eq1 my_b 1 4 (temp_____aggregate_def_421 42) 1 4) true)))
 (check-sat)
+
+(exit)

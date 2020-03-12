@@ -1337,3 +1337,5 @@ Target solver: Z3
  ;; File "names.ads", line 1, characters 0-0
   (not (in_range3 128)))
 (check-sat)
+
+(exit)

@@ -342,3 +342,5 @@ Target solver: Z3
  ;; File "array_arith.ads", line 11, characters 0-0
   (not (in_range2 o14)))
 (check-sat)
+
+(exit)

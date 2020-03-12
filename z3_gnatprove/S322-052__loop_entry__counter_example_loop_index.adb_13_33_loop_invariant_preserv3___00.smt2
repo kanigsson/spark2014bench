@@ -174,3 +174,5 @@ Target solver: Z3
  ;; File "counter_example_loop_index.ads", line 8, characters 0-0
   (not (= k3 temp___loop_entry_159)))
 (check-sat)
+
+(exit)

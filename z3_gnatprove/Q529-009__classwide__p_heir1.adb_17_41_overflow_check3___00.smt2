@@ -554,3 +554,5 @@ Target solver: Z3
  ;; File "p_heir1.ads", line 15, characters 0-0
   (not (in_range o7)))
 (check-sat)
+
+(exit)

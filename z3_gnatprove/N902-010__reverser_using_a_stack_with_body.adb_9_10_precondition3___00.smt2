@@ -404,3 +404,5 @@ Target solver: Z3
  ;; File "reverser_using_a_stack_with_body.ads", line 9, characters 0-0
   (not (not (= (is_full sp1) true))))
 (check-sat)
+
+(exit)

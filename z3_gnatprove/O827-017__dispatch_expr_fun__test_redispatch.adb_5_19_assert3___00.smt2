@@ -474,3 +474,5 @@ Target solver: Z3
  ;; File "test_redispatch.adb", line 2, characters 0-0
   (not (= (g (to_base (us_repqtmk1 x__split_fields x__attr__tag))) 2)))
 (check-sat)
+
+(exit)

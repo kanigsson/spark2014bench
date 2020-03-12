@@ -401,3 +401,5 @@ Target solver: Z3
  ;; File "private_a.adb", line 38, characters 0-0
   (not (< (get_length (us_repqtmk s__split_fields1)) 100)))
 (check-sat)
+
+(exit)

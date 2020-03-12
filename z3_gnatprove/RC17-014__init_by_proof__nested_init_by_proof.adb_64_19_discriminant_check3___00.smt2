@@ -1206,3 +1206,5 @@ Target solver: Z3
   (= (distinct 1 0) (rec__nested_init_by_proof__rec__d
                     (us_split_discrs1 temp___285)))))
 (check-sat)
+
+(exit)

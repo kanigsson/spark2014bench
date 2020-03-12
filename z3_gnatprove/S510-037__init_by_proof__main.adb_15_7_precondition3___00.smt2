@@ -685,3 +685,5 @@ Target solver: Z3
  ;; File "main.adb", line 5, characters 0-0
   (not (= (global_a_init global_a__attr__init global_a1) true)))
 (check-sat)
+
+(exit)

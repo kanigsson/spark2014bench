@@ -578,3 +578,5 @@ Target solver: Z3
  ;; File "counter_example.ads", line 9, characters 0-0
   (not (<= (first1 num_item_per_category) temp___198)))
 (check-sat)
+
+(exit)

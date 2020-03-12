@@ -1020,3 +1020,5 @@ Target solver: Z3
                                                       (rec__record_discr__interm_result__upto
                                                       (us_split_discrs3 r))))))
 (check-sat)
+
+(exit)

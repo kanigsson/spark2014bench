@@ -1191,3 +1191,5 @@ Target solver: Z3
  ;; File "very_longs.adb", line 437, characters 0-0
   (not (<= (first1 u__split_fields) temp___1360)))
 (check-sat)
+
+(exit)

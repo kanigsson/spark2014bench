@@ -236,3 +236,5 @@ Target solver: Z3
  ;; File "arithmetic.adb", line 75, characters 0-0
   (not (= arithmetic__plus__result (+ a b))))
 (check-sat)
+
+(exit)

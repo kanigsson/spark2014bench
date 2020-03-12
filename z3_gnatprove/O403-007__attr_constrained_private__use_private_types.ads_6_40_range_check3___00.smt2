@@ -95,3 +95,5 @@ Target solver: Z3
  ;; File "use_private_types.ads", line 3, characters 0-0
   (not (in_range 1)))
 (check-sat)
+
+(exit)

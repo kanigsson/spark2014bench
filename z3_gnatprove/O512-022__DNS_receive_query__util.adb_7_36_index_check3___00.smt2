@@ -370,3 +370,5 @@ Target solver: Z3
  ;; File "util.ads", line 5, characters 0-0
   (not (<= 0 temp___208)))
 (check-sat)
+
+(exit)

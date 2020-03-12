@@ -232,3 +232,5 @@ Target solver: Z3
  ;; File "default_init.ads", line 31, characters 0-0
   (not (default_init__discr__f__pred x)))
 (check-sat)
+
+(exit)

@@ -972,3 +972,5 @@ Target solver: Z3
  ;; File "list_ex_pledge.ads", line 26, characters 0-0
   (not (= (get_nth_val temp___borrowed_223 k) 0)))
 (check-sat)
+
+(exit)

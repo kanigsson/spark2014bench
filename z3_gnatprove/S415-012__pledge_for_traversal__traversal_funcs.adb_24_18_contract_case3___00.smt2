@@ -531,3 +531,5 @@ Target solver: Z3
  ;; File "traversal_funcs.adb", line 21, characters 0-0
   (not (= (bool_eq traversal_funcs__next__result us_null_pointer) true)))
 (check-sat)
+
+(exit)

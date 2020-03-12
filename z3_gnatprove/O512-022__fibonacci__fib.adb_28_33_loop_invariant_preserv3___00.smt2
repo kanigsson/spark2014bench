@@ -399,3 +399,5 @@ Target solver: Z3
  ;; File "fib.ads", line 12, characters 0-0
   (not (= a13 (fibonacci i3))))
 (check-sat)
+
+(exit)

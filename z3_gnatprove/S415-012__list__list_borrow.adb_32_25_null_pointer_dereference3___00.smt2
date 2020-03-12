@@ -878,3 +878,5 @@ Target solver: Z3
   (rec__list_borrow__list_cell__next
   (us_split_fields1 (rec__list_borrow__list__pointer_value o1))))))
 (check-sat)
+
+(exit)

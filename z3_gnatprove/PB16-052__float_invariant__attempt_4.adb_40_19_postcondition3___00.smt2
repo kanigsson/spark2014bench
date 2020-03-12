@@ -325,3 +325,5 @@ Target solver: Z3
  ;; File "attempt_4.adb", line 32, characters 0-0
   (not (= (invariant__ (+ n 1) speed1 distance1) true)))
 (check-sat)
+
+(exit)

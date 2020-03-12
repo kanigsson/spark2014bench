@@ -411,3 +411,5 @@ Target solver: Z3
  ;; File "object.ads", line 9, characters 0-0
   (not (= (has_stored_area o2) true)))
 (check-sat)
+
+(exit)

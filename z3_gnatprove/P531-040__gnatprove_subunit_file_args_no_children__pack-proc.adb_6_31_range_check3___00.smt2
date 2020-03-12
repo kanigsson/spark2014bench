@@ -540,3 +540,5 @@ Target solver: Z3
  ;; File "pack.adb", line 10, characters 0-0
   (not (in_range2 (+ i 1))))
 (check-sat)
+
+(exit)

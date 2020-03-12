@@ -184,3 +184,5 @@ Target solver: Z3
  ;; File "pack.ads", line 15, characters 0-0
   (not (= (to_rep y__pointer_value) 0)))
 (check-sat)
+
+(exit)

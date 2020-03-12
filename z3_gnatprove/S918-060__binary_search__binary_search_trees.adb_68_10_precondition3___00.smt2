@@ -591,3 +591,5 @@ Target solver: Z3
  ;; File "binary_search_trees.ads", line 12, characters 0-0
   (not (< o1 2147483647)))
 (check-sat)
+
+(exit)

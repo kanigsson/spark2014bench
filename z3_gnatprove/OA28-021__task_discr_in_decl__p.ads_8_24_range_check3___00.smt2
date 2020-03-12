@@ -126,3 +126,5 @@ Target solver: Z3
  ;; File "p.ads", line 6, characters 0-0
   (not (<= 0 countdown)))
 (check-sat)
+
+(exit)

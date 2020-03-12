@@ -263,3 +263,5 @@ Target solver: Z3
  ;; File "t3q3.adb", line 27, characters 0-0
   (not (in_range2 o3)))
 (check-sat)
+
+(exit)

@@ -250,3 +250,5 @@ Target solver: Z3
   (=> (signedlt_32__function_guard (signedlt_32 val1 val2) val1 val2)
   (= (signedlt_32 val1 val2) true)))))
 (check-sat)
+
+(exit)

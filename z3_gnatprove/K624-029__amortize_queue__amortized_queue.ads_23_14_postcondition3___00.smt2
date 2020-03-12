@@ -1036,3 +1036,5 @@ Target solver: Z3
   (not
   (= (length amortized_queue__Oconcat__2__result) (+ 1 (length right)))))
 (check-sat)
+
+(exit)

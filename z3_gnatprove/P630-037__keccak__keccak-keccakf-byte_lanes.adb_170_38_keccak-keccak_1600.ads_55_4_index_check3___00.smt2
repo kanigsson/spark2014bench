@@ -731,3 +731,5 @@ Target solver: Z3
  ;; File "keccak-keccakf-byte_lanes.ads", line 66, characters 0-0
   (not (<= (to_rep data__first) temp___818)))
 (check-sat)
+
+(exit)

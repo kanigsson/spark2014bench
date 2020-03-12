@@ -1104,3 +1104,5 @@ Target solver: Z3
  ;; File "very_longs-divide.adb", line 109, characters 0-0
   (not (not (= o5 #x0000))))
 (check-sat)
+
+(exit)

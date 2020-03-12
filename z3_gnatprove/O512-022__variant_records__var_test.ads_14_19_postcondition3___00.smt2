@@ -731,3 +731,5 @@ Target solver: Z3
  ;; File "var_test.ads", line 9, characters 0-0
   (not (not (= var_test__decision_eval__result 2))))
 (check-sat)
+
+(exit)

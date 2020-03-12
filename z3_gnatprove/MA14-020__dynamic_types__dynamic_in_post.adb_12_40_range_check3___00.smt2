@@ -330,3 +330,5 @@ Target solver: Z3
  ;; File "dynamic_in_post.adb", line 11, characters 0-0
   (not (<= (first1 s) temp___292)))
 (check-sat)
+
+(exit)

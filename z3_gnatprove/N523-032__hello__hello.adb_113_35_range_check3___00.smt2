@@ -707,3 +707,5 @@ Target solver: Z3
                                                                 (last1
                                                                 prefix)))) 1))))
 (check-sat)
+
+(exit)

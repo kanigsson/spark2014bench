@@ -440,3 +440,5 @@ Target solver: Z3
  ;; File "indexbis.ads", line 2, characters 0-0
   (not (<= (first1 c) possible1)))
 (check-sat)
+
+(exit)

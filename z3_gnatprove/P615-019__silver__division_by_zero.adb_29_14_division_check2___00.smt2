@@ -149,3 +149,5 @@ Target solver: Z3
  ;; File "division_by_zero.adb", line 27, characters 0-0
   (not (not (fp.isZero o))))
 (check-sat)
+
+(exit)

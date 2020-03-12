@@ -947,3 +947,5 @@ Target solver: Z3
  ;; File "lexer.ads", line 72, characters 0-0
   (not (not (= next_read__attr__constrained true))))
 (check-sat)
+
+(exit)

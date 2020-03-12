@@ -241,3 +241,5 @@ Target solver: Z3
  ;; File "types.ads", line 17, characters 0-0
   (not (not (= 8 0))))
 (check-sat)
+
+(exit)

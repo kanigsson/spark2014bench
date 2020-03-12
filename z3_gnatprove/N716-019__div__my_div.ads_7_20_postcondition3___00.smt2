@@ -174,3 +174,5 @@ Target solver: Z3
  ;; File "my_div.ads", line 6, characters 0-0
   (not (= x4 (bvudiv x1 #x00000040))))
 (check-sat)
+
+(exit)

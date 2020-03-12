@@ -231,3 +231,5 @@ Target solver: Z3
  ;; File "loop_variant.adb", line 2, characters 0-0
   (not (or (< temp___171 i2) (and (= i2 temp___171) (< r2 temp___170)))))
 (check-sat)
+
+(exit)

@@ -736,3 +736,5 @@ Target solver: Z3
                                     (delta_long_in_meters source destination) 
                                     (delta_long_in_meters source destination)))))))
 (check-sat)
+
+(exit)

@@ -600,3 +600,5 @@ Target solver: Z3
  ;; File "prefixsum.ads", line 42, characters 0-0
   (not (<= 0 temp___277)))
 (check-sat)
+
+(exit)

@@ -699,3 +699,5 @@ Target solver: Z3
  ;; File "complex_trajectory.ads", line 39, characters 0-0
   (not (fp.leq speed1 (fp.mul RNE (of_int RNE (+ n 1)) bound))))
 (check-sat)
+
+(exit)

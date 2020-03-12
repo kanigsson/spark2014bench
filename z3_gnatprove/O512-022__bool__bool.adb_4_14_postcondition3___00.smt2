@@ -107,3 +107,5 @@ Target solver: Z3
  ;; File "bool.adb", line 3, characters 0-0
   (not (= y1 true)))
 (check-sat)
+
+(exit)

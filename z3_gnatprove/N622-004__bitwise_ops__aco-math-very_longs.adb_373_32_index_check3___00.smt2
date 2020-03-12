@@ -934,3 +934,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.adb", line 359, characters 0-0
   (not (<= (first1 result____split_fields3) i1)))
 (check-sat)
+
+(exit)

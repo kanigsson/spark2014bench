@@ -1495,3 +1495,5 @@ Target solver: Z3
      (us_repqtmk r_pu1__split_discrs r_pu1__split_fields r_pu1__attr__tag)
      temp___325))) true))))
 (check-sat)
+
+(exit)

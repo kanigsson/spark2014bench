@@ -1171,3 +1171,5 @@ Target solver: Z3
  ;; File "partition_refinement.ads", line 28, characters 0-0
   (not (in_range5 o10)))
 (check-sat)
+
+(exit)

@@ -523,3 +523,5 @@ Target solver: Z3
  ;; File "random.ads", line 51, characters 0-0
   (not (<= min1 value1)))
 (check-sat)
+
+(exit)

@@ -318,3 +318,5 @@ Target solver: Z3
  ;; File "sv.ads", line 12, characters 0-0
   (not (bvule o3 o2)))
 (check-sat)
+
+(exit)

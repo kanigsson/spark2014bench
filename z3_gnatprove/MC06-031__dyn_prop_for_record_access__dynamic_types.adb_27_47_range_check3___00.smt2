@@ -645,3 +645,5 @@ Target solver: Z3
  ;; File "dynamic_types.adb", line 13, characters 0-0
   (not (dynamic_property1 first2 last2 from)))
 (check-sat)
+
+(exit)

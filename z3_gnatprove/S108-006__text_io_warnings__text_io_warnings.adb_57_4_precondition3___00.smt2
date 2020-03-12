@@ -2082,3 +2082,5 @@ Target solver: Z3
  ;; File "text_io_warnings.adb", line 3, characters 0-0
   (not (= (is_open target1) true)))
 (check-sat)
+
+(exit)

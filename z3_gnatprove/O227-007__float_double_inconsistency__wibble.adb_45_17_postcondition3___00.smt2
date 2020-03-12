@@ -362,3 +362,5 @@ Target solver: Z3
  ;; File "wibble.adb", line 41, characters 0-0
   (not (fp.leq (fp #b0 #b10000010 #b01000000000000000000000) state1)))
 (check-sat)
+
+(exit)

@@ -416,3 +416,5 @@ Target solver: Z3
  ;; File "sorters.adb", line 6, characters 0-0
   (not (<= (to_rep values__first) (to_rep values__last))))
 (check-sat)
+
+(exit)

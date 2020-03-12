@@ -904,3 +904,5 @@ Target solver: Z3
  ;; File "with_default.ads", line 11, characters 0-0
   (not (dynamic_property1 first1 2147483647 0)))
 (check-sat)
+
+(exit)

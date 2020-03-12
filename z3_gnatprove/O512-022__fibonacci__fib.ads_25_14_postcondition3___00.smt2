@@ -309,3 +309,5 @@ Target solver: Z3
  ;; File "fib.ads", line 23, characters 0-0
   (not (= p12 p22)))
 (check-sat)
+
+(exit)

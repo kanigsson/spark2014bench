@@ -268,3 +268,5 @@ Target solver: Z3
  ;; File "find.ads", line 3, characters 0-0
   (not (<= 1 find__find__result)))
 (check-sat)
+
+(exit)

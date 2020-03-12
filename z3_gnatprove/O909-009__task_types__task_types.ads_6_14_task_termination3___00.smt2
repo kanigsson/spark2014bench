@@ -152,3 +152,5 @@ Target solver: Z3
  ;; File "task_types.ads", line 6, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

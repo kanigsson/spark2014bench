@@ -556,3 +556,5 @@ Target solver: Z3
   (= (to_caml_char2 str
      (of_array ret1 (to_rep1 ret__first) (to_rep1 ret__last)) idx) true)))
 (check-sat)
+
+(exit)

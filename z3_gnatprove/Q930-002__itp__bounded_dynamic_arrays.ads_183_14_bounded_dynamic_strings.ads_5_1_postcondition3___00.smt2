@@ -810,3 +810,5 @@ Target solver: Z3
  ;; File "bounded_dynamic_arrays.ads", line 182, characters 0-0
   (not (<= 0 bounded_dynamic_strings__location__2__result1)))
 (check-sat)
+
+(exit)

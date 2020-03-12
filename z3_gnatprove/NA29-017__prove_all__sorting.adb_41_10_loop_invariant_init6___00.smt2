@@ -385,3 +385,5 @@ Target solver: Z3
  ;; File "sorting.adb", line 18, characters 0-0
   (not (= (to_rep (select b j)) (to_rep (select temp___loop_entry_308 j)))))
 (check-sat)
+
+(exit)

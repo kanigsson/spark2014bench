@@ -321,3 +321,5 @@ Target solver: Z3
  ;; File "main.adb", line 2, characters 0-0
   (not (<= (to_rep o1) 5)))
 (check-sat)
+
+(exit)

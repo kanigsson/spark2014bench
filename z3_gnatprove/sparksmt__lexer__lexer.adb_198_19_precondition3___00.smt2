@@ -780,3 +780,5 @@ Target solver: Z3
      (us_split_fieldsqtmk next_read__split_fields5)
      (us_split_discrsqtmk next_read__split_discrs5)) true)))
 (check-sat)
+
+(exit)

@@ -382,3 +382,5 @@ Target solver: Z3
  ;; File "types_with_invariants.ads", line 12, characters 0-0
   (not (type_invariant temp___310)))
 (check-sat)
+
+(exit)

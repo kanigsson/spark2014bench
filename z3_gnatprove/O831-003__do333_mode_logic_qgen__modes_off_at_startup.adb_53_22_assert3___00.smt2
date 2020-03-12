@@ -99,3 +99,5 @@ Target solver: Z3
  ;; File "modes_off_at_startup.ads", line 17, characters 0-0
   (not (= or_out1 true)))
 (check-sat)
+
+(exit)

@@ -1122,3 +1122,5 @@ Target solver: Z3
   (to_rep
   (rec__frame_condition__cell__max_left (us_split_fields1 (select a5 j)))))))
 (check-sat)
+
+(exit)

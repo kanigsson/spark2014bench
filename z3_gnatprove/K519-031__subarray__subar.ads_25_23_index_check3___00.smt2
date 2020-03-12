@@ -289,3 +289,5 @@ Target solver: Z3
  ;; File "subar.ads", line 24, characters 0-0
   (not (<= (first1 x) temp___271)))
 (check-sat)
+
+(exit)

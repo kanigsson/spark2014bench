@@ -4262,3 +4262,5 @@ Target solver: Z3
      (us_split_discrs1 ada___pragmarc__b_strings__Oadd__2__result))) 
   (length source))))
 (check-sat)
+
+(exit)

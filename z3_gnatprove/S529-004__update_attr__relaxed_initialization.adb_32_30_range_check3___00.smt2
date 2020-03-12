@@ -758,3 +758,5 @@ Target solver: Z3
  ;; File "relaxed_initialization.adb", line 22, characters 0-0
   (not (in_range4 (of_int RNE idx))))
 (check-sat)
+
+(exit)

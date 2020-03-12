@@ -1255,3 +1255,5 @@ Target solver: Z3
  ;; File "tokens.ads", line 19, characters 0-0
   (not (<= 1024 (length (to_rep1 o1) (to_rep1 o)))))
 (check-sat)
+
+(exit)

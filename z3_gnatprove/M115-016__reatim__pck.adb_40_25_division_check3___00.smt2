@@ -358,3 +358,5 @@ Target solver: Z3
  ;; File "pck.ads", line 4, characters 0-0
   (not (not (= o5 0))))
 (check-sat)
+
+(exit)

@@ -961,3 +961,5 @@ Target solver: Z3
  ;; File "run.ads", line 3, characters 0-0
   (not (in_range4 1 (us_split_discrs1 temp___241))))
 (check-sat)
+
+(exit)

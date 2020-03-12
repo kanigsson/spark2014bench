@@ -706,3 +706,5 @@ Target solver: Z3
  ;; File "traffic_lights.ads", line 34, characters 0-0
   (not (dynamic_predicate temp___272)))
 (check-sat)
+
+(exit)

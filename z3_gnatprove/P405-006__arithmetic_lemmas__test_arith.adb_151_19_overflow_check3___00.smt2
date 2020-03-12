@@ -257,3 +257,5 @@ Target solver: Z3
  ;; File "test_arith.adb", line 149, characters 0-0
   (not (in_range (- r21))))
 (check-sat)
+
+(exit)

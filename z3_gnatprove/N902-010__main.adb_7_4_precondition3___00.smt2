@@ -377,3 +377,5 @@ Target solver: Z3
  ;; File "main.adb", line 4, characters 0-0
   (not (< 0 (length (to_rep o1) (to_rep o)))))
 (check-sat)
+
+(exit)

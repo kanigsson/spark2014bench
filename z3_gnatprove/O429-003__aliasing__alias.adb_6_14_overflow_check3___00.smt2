@@ -101,3 +101,5 @@ Target solver: Z3
  ;; File "alias.ads", line 5, characters 0-0
   (not (in_range (+ g x))))
 (check-sat)
+
+(exit)

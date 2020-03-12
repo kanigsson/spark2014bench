@@ -280,3 +280,5 @@ Target solver: Z3
  ;; File "normalize.ads", line 22, characters 0-0
   (not (fp.leq v21 v11)))
 (check-sat)
+
+(exit)

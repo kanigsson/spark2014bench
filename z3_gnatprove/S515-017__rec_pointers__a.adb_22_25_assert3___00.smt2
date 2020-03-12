@@ -467,3 +467,5 @@ Target solver: Z3
  ;; File "a.adb", line 1, characters 0-0
   (not (= (to_rep (rec__a__list__val l__split_fields)) 1)))
 (check-sat)
+
+(exit)

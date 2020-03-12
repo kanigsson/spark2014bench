@@ -2120,3 +2120,5 @@ Target solver: Z3
   (= (is_consistent
      (to_base (us_repqtmk1 result____split_discrs result____split_fields8))) true)))
 (check-sat)
+
+(exit)

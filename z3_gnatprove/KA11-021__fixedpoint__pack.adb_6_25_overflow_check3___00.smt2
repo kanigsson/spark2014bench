@@ -172,3 +172,5 @@ Target solver: Z3
  ;; File "pack.ads", line 16, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

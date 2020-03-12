@@ -244,3 +244,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__DIC-25055/src/gnatprove/dic_pred__s.mlw", line 435, characters 5-8
   (not (in_range1 c)))
 (check-sat)
+
+(exit)

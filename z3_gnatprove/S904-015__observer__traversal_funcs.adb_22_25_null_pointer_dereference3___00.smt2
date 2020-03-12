@@ -400,3 +400,5 @@ Target solver: Z3
  ;; File "traversal_funcs.adb", line 18, characters 0-0
   (not (rec__traversal_funcs__list_acc__pointer_value__pred o4)))
 (check-sat)
+
+(exit)

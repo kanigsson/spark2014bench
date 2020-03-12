@@ -460,3 +460,5 @@ Target solver: Z3
                                                        memory4)) ((_ int2bv 16) 8))
                                                        #x0000)) val__)))
 (check-sat)
+
+(exit)

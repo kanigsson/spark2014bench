@@ -71,3 +71,5 @@ Target solver: Z3
  ;; File "broken.ads", line 5, characters 0-0
   (not (= (found_none Tuple0) true)))
 (check-sat)
+
+(exit)

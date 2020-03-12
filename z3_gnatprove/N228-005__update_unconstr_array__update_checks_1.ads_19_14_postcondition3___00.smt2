@@ -449,3 +449,5 @@ Target solver: Z3
                                 (of_array a1 (to_rep1 a__first)
                                 (to_rep1 a__last))) temp___index_396))))))
 (check-sat)
+
+(exit)

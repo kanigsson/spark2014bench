@@ -834,3 +834,5 @@ Target solver: Z3
   (< (length (us_repqtmk o3 (us_split_fieldsqtmk front__split_fields))) 
   (capacity (us_repqtmk o3 (us_split_fieldsqtmk front__split_fields))))))
 (check-sat)
+
+(exit)

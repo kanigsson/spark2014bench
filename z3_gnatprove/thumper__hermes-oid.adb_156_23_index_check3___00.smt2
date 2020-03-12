@@ -1502,3 +1502,5 @@ Target solver: Z3
  ;; File "hermes-oid.ads", line 52, characters 0-0
   (not (<= (to_rep result____first) left_index3)))
 (check-sat)
+
+(exit)

@@ -271,3 +271,5 @@ Target solver: Z3
  ;; File "a_stack_no_spark_contracts_with_body.ads", line 11, characters 0-0
   (not (<= 1 sp1)))
 (check-sat)
+
+(exit)

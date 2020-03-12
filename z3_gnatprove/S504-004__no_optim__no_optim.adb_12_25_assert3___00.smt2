@@ -117,3 +117,5 @@ Target solver: Z3
  ;; File "no_optim.ads", line 5, characters 0-0
   (not (= ret_val 0)))
 (check-sat)
+
+(exit)

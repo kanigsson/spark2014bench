@@ -210,3 +210,5 @@ Target solver: Z3
  ;; File "bitsets.ads", line 17, characters 0-0
   (not (= (mem s elt) true)))
 (check-sat)
+
+(exit)

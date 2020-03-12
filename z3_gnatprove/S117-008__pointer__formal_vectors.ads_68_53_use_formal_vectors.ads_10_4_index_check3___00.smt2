@@ -851,3 +851,5 @@ Target solver: Z3
  ;; File "formal_vectors.ads", line 60, characters 0-0
   (not (<= (first1 temp___653) usf)))
 (check-sat)
+
+(exit)

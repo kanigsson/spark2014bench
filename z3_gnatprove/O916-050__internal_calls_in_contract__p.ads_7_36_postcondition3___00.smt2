@@ -97,3 +97,5 @@ Target solver: Z3
  ;; File "p.ads", line 7, characters 0-0
   (not (= (internal self__) true)))
 (check-sat)
+
+(exit)

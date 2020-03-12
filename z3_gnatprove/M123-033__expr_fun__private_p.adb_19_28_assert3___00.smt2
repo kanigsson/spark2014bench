@@ -340,3 +340,5 @@ Target solver: Z3
  ;; File "private_p.adb", line 3, characters 0-0
   (not (= (g3 Tuple0) 1)))
 (check-sat)
+
+(exit)

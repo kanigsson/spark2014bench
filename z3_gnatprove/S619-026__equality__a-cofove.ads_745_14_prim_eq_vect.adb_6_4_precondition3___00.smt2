@@ -619,3 +619,5 @@ Target solver: Z3
  ;; File "a-cofove.ads", line 734, characters 0-0
   (not (<= o (last o2))))
 (check-sat)
+
+(exit)

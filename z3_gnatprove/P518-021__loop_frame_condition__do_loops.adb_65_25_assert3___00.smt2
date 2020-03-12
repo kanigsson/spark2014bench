@@ -977,3 +977,5 @@ Target solver: Z3
   (us_split_fields1
   (select (rec__do_loops__r_array_record__f3 d__split_fields3) i4)))))))
 (check-sat)
+
+(exit)

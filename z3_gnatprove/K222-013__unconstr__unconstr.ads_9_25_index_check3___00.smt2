@@ -361,3 +361,5 @@ Target solver: Z3
  ;; File "unconstr.ads", line 7, characters 0-0
   (not (<= (to_rep x__first) temp___211)))
 (check-sat)
+
+(exit)

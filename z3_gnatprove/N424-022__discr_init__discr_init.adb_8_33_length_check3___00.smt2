@@ -675,3 +675,5 @@ Target solver: Z3
  ;; File "discr_init.adb", line 1, characters 0-0
   (not (<= 1 10)))
 (check-sat)
+
+(exit)

@@ -874,3 +874,5 @@ Target solver: Z3
   (to_rep
   (rec__frame_condition__cell__value (us_split_fields1 (select a1 i)))))))
 (check-sat)
+
+(exit)

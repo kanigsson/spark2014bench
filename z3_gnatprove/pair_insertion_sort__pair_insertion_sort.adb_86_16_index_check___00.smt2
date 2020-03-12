@@ -727,3 +727,5 @@ Target solver: Z3
  ;; File "pair_insertion_sort.ads", line 13, characters 0-0
   (not (<= (to_rep a__first) o13)))
 (check-sat)
+
+(exit)

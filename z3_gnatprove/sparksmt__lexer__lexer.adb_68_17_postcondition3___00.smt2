@@ -446,3 +446,5 @@ Target solver: Z3
  ;; File "lexer.adb", line 63, characters 0-0
   (not (<= current_pos1 current_pos2)))
 (check-sat)
+
+(exit)

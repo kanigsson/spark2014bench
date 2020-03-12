@@ -1332,3 +1332,5 @@ Target solver: Z3
   (not (rec__do_loops__u_array_acc__pointer_value__pred
   (us_repqtmk1 a__is_null_pointer1 a__pointer_address1 a__pointer_value1))))
 (check-sat)
+
+(exit)

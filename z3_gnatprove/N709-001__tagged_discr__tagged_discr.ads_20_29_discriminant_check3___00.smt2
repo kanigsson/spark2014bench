@@ -458,3 +458,5 @@ Target solver: Z3
  ;; File "tagged_discr.ads", line 16, characters 0-0
   (not (tagged_discr__t__y__pred v)))
 (check-sat)
+
+(exit)

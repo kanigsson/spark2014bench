@@ -552,3 +552,5 @@ Target solver: Z3
  ;; File "simple_unc_arrays.ads", line 95, characters 0-0
   (not (<= (first1 a__split_fields2) o2)))
 (check-sat)
+
+(exit)

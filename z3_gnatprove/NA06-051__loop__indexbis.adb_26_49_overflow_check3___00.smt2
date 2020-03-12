@@ -472,3 +472,5 @@ Target solver: Z3
  ;; File "indexbis.ads", line 2, characters 0-0
   (not (not (= possible1 2147483647))))
 (check-sat)
+
+(exit)

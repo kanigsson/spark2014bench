@@ -307,3 +307,5 @@ Target solver: Z3
  ;; File "test.ads", line 26, characters 0-0
   (not (= (to_rep (rec__test__t__a x__split_fields1)) 1)))
 (check-sat)
+
+(exit)

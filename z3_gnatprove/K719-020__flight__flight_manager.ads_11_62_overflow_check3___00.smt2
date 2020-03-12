@@ -570,3 +570,5 @@ Target solver: Z3
  ;; File "flight_manager.ads", line 7, characters 0-0
   (not (in_range1 (- o14 target_x))))
 (check-sat)
+
+(exit)

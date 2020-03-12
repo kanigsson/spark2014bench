@@ -199,3 +199,5 @@ Target solver: Z3
  ;; File "mem.ads", line 5, characters 0-0
   (not (< free_init2 free2)))
 (check-sat)
+
+(exit)

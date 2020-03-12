@@ -1374,3 +1374,5 @@ Target solver: Z3
  ;; File "stacks.ads", line 46, characters 0-0
   (not (not (= (is_empty s) true))))
 (check-sat)
+
+(exit)

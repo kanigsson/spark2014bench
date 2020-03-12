@@ -79,3 +79,5 @@ Target solver: Z3
  ;; File "no_inlining.ads", line 5, characters 0-0
   (not (= res true)))
 (check-sat)
+
+(exit)

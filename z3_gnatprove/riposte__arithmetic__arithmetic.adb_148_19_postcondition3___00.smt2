@@ -254,3 +254,5 @@ Target solver: Z3
  ;; File "arithmetic.adb", line 147, characters 0-0
   (not (= arithmetic__halve_d__result (div1 n 2))))
 (check-sat)
+
+(exit)

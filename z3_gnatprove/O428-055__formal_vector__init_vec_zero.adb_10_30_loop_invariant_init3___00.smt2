@@ -789,3 +789,5 @@ Target solver: Z3
      (us_repqtmk v__split_discrs (us_split_fieldsqtmk v__split_fields1))) 
   usf)))
 (check-sat)
+
+(exit)

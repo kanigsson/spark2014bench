@@ -356,3 +356,5 @@ Target solver: Z3
  ;; File "overflow_check.adb", line 35, characters 0-0
   (not (in_range2 (fxp_mult x y))))
 (check-sat)
+
+(exit)

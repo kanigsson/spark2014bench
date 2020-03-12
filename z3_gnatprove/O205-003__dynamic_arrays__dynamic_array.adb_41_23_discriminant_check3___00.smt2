@@ -1472,3 +1472,5 @@ Target solver: Z3
   (not (dynamic_array__rec__f1__pred
   (select (to_array h__split_fields) usf2))))
 (check-sat)
+
+(exit)

@@ -279,3 +279,5 @@ Target solver: Z3
  ;; File "s.ads", line 7, characters 0-0
   (not (< temp___180 index3)))
 (check-sat)
+
+(exit)

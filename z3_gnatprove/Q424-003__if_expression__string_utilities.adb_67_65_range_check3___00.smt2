@@ -1264,3 +1264,5 @@ Target solver: Z3
  ;; File "string_utilities.ads", line 22, characters 0-0
   (not (in_range2 x21)))
 (check-sat)
+
+(exit)

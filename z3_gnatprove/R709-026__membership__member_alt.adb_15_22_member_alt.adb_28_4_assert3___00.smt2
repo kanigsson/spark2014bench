@@ -508,3 +508,5 @@ Target solver: Z3
                                                       (us_split_fieldsqtmk
                                                       z__split_fields)))))) true)))
 (check-sat)
+
+(exit)

@@ -162,3 +162,5 @@ Target solver: Z3
  ;; File "depends_illegal_4.adb", line 7, characters 0-0
   (not (in_range o1)))
 (check-sat)
+
+(exit)

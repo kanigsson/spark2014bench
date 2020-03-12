@@ -334,3 +334,5 @@ Target solver: Z3
  ;; File "sorters_not_global.adb", line 28, characters 0-0
   (not (= limit temp___loop_entry_206)))
 (check-sat)
+
+(exit)

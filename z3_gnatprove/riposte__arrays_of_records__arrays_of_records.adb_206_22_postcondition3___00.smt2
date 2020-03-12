@@ -401,3 +401,5 @@ Target solver: Z3
  ;; File "arrays_of_records.adb", line 202, characters 0-0
   (not (not (= (bool_eq1 a3 0 1001 a1 0 1001) true))))
 (check-sat)
+
+(exit)

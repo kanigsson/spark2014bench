@@ -1005,3 +1005,5 @@ Target solver: Z3
  ;; File "foo.adb", line 5, characters 0-0
   (not (<= 1 1)))
 (check-sat)
+
+(exit)

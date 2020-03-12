@@ -103,3 +103,5 @@ Target solver: Z3
  ;; File "type_invariant_legal_6.adb", line 6, characters 0-0
   (not (type_invariant o)))
 (check-sat)
+
+(exit)

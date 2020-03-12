@@ -5695,3 +5695,5 @@ Target solver: Z3
  ;; File "aida-containers-formal_vectors.ads", line 74, characters 0-0
   (not (or (= o1 0) (<= (length2 o2) o1))))
 (check-sat)
+
+(exit)

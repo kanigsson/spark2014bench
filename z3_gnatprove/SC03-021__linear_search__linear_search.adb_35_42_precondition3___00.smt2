@@ -633,3 +633,5 @@ Target solver: Z3
  ;; File "linear_search.adb", line 32, characters 0-0
   (not (<= usf (length l))))
 (check-sat)
+
+(exit)

@@ -304,3 +304,5 @@ Target solver: Z3
  ;; File "counter.ads", line 19, characters 0-0
   (not (= counter__model__current_chain_length__result #x00)))
 (check-sat)
+
+(exit)

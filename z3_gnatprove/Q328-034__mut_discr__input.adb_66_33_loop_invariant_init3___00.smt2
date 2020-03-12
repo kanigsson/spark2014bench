@@ -424,3 +424,5 @@ Target solver: Z3
  ;; File "input.ads", line 34, characters 0-0
   (not (< col (* i 8))))
 (check-sat)
+
+(exit)

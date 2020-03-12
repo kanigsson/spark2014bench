@@ -1760,3 +1760,5 @@ Target solver: Z3
  ;; File "my_test.adb", line 3, characters 0-0
   (not (not (= (empty o4) true))))
 (check-sat)
+
+(exit)

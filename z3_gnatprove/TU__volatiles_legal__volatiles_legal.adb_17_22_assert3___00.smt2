@@ -267,3 +267,5 @@ Target solver: Z3
  ;; File "volatiles_legal.adb", line 7, characters 0-0
   (not (= tmp11 tmp21)))
 (check-sat)
+
+(exit)

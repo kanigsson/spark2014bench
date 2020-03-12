@@ -426,3 +426,5 @@ Target solver: Z3
  ;; File "dynamic_preds_rte.ads", line 14, characters 0-0
   (not (not (= o 0))))
 (check-sat)
+
+(exit)

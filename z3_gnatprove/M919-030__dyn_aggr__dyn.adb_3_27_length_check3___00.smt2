@@ -458,3 +458,5 @@ Target solver: Z3
  ;; File "dyn.adb", line 1, characters 0-0
   (not (<= r1b r2b)))
 (check-sat)
+
+(exit)

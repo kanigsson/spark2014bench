@@ -2421,3 +2421,5 @@ Target solver: Z3
  ;; File "discrimrec.ads", line 33, characters 0-0
   (not (in_range1 1 (us_split_discrs1 temp___301))))
 (check-sat)
+
+(exit)

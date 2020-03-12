@@ -1944,3 +1944,5 @@ Target solver: Z3
  ;; File "use_lists.ads", line 16, characters 0-0
   (not (in_range2 o13)))
 (check-sat)
+
+(exit)

@@ -676,3 +676,5 @@ Target solver: Z3
  ;; File "main.adb", line 2, characters 0-0
   (not (< 0 (to_rep (rec__priv__priv_rec__c o1)))))
 (check-sat)
+
+(exit)

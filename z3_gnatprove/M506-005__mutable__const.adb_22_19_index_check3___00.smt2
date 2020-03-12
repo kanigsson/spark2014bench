@@ -497,3 +497,5 @@ Target solver: Z3
  ;; File "const.ads", line 14, characters 0-0
   (not (<= (first1 temp___203) 1)))
 (check-sat)
+
+(exit)

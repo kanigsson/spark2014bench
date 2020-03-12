@@ -944,3 +944,5 @@ Target solver: Z3
                                                                  rear__split_fields))
                                                                  i))))
 (check-sat)
+
+(exit)

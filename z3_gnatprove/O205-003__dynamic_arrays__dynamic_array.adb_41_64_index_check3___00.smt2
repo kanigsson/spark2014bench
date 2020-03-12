@@ -1442,3 +1442,5 @@ Target solver: Z3
  ;; File "dynamic_array.adb", line 1, characters 0-0
   (not (<= (first1 temp___252) usf2)))
 (check-sat)
+
+(exit)

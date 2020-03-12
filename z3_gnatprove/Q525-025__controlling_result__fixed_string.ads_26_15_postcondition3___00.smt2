@@ -687,3 +687,5 @@ Target solver: Z3
  ;; File "fixed_string.ads", line 24, characters 0-0
   (not (= (length fixed_string__null_string__result) (elements this))))
 (check-sat)
+
+(exit)

@@ -103,3 +103,5 @@ Target solver: Z3
  ;; File "context_b.adb", line 10, characters 0-0
   (not (= (greater_than_zero 6) true)))
 (check-sat)
+
+(exit)

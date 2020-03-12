@@ -315,3 +315,5 @@ Target solver: Z3
   (not
   (= records__field_suppression_on_computation_is_insufficient__result true)))
 (check-sat)
+
+(exit)

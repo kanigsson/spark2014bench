@@ -373,3 +373,5 @@ Target solver: Z3
  ;; File "use_private_types.ads", line 28, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

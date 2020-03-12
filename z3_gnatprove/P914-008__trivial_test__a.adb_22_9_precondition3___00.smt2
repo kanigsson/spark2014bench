@@ -418,3 +418,5 @@ Target solver: Z3
                                                 (select (to_array o) 
                                                 i)))))
 (check-sat)
+
+(exit)

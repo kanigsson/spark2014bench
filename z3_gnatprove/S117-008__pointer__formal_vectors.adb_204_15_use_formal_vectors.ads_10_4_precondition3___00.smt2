@@ -1291,3 +1291,5 @@ Target solver: Z3
  ;; File "formal_vectors.ads", line 52, characters 0-0
   (not (< (length2 m1) 2147483647)))
 (check-sat)
+
+(exit)

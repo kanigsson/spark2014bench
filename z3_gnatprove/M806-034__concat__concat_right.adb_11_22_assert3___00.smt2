@@ -358,3 +358,5 @@ Target solver: Z3
   (= (to_rep (select z (to_rep z__first))) (to_rep
                                            (select (to_array y) (first1 y))))))
 (check-sat)
+
+(exit)

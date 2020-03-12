@@ -527,3 +527,5 @@ Target solver: Z3
                                                            (rec__ints__int__max
                                                            arg__split_fields)) 10))))
 (check-sat)
+
+(exit)

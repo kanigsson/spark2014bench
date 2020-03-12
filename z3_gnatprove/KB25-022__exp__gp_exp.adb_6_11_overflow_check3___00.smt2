@@ -294,3 +294,5 @@ Target solver: Z3
  ;; File "gp_exp.adb", line 1, characters 0-0
   (not (in_range o2)))
 (check-sat)
+
+(exit)

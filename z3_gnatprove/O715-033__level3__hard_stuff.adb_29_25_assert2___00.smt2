@@ -263,3 +263,5 @@ Target solver: Z3
  ;; File "hard_stuff.adb", line 1, characters 0-0
   (not (fp.leq (fp #b0 #b00000000 #b00000000000000000000000) x4)))
 (check-sat)
+
+(exit)

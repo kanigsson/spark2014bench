@@ -1111,3 +1111,5 @@ Target solver: Z3
  ;; File "generic_ring_buffer.ads", line 70, characters 0-0
   (not (not (= (empty o10) true))))
 (check-sat)
+
+(exit)

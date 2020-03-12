@@ -376,3 +376,5 @@ Target solver: Z3
      (of_rep new_data) (rec__types__rec__s3 r__split_fields1)
      (rec__types__rec__s4 r__split_fields1)))) true)))
 (check-sat)
+
+(exit)

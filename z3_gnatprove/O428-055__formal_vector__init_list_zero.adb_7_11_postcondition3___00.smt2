@@ -934,3 +934,5 @@ Target solver: Z3
  ;; File "init_list_zero.adb", line 5, characters 0-0
   (not (= (get1 temp___355 temp___354) 0)))
 (check-sat)
+
+(exit)

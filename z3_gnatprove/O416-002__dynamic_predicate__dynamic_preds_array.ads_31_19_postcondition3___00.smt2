@@ -323,3 +323,5 @@ Target solver: Z3
   (not
   (= (to_rep (select dynamic_preds_array__get_constant_even_pair__result 1)) 0)))
 (check-sat)
+
+(exit)

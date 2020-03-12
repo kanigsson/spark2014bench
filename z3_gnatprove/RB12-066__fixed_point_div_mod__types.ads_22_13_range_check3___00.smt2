@@ -312,3 +312,5 @@ Target solver: Z3
  ;; File "types.ads", line 21, characters 0-0
   (not (in_range_int o1)))
 (check-sat)
+
+(exit)

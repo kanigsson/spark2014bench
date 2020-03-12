@@ -1582,3 +1582,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-Q529-037__discriminant-10517/src/gnatprove/integer_stacks__stack.mlw", line 2573, characters 5-8
   (not (<= 1 usf)))
 (check-sat)
+
+(exit)

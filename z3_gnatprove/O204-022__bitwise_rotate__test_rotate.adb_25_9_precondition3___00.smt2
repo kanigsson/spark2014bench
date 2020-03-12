@@ -177,3 +177,5 @@ Target solver: Z3
  ;; File "test_rotate.adb", line 4, characters 0-0
   (not (bvule #x0000000000000001 #xFFFFFFFFFFFFFFFF)))
 (check-sat)
+
+(exit)

@@ -657,3 +657,5 @@ Target solver: Z3
   (not (dynamic_property1 o27 (- (+ o26 (div1 (length o25 o24) 2)) 1)
   (first1 (of_array b temp___211 o23)))))
 (check-sat)
+
+(exit)

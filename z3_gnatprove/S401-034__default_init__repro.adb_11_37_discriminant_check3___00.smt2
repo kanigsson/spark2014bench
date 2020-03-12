@@ -1616,3 +1616,5 @@ Target solver: Z3
  ;; File "repro.ads", line 40, characters 0-0
   (not (repro__ssp__s__pred o)))
 (check-sat)
+
+(exit)

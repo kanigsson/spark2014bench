@@ -194,3 +194,5 @@ Target solver: Z3
  ;; File "bad_assign_all_arr.adb", line 2, characters 0-0
   (not (<= 1 temp___167)))
 (check-sat)
+
+(exit)

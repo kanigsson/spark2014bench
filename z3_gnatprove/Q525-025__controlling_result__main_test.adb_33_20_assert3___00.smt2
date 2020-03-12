@@ -2031,3 +2031,5 @@ Target solver: Z3
   (not
   (= (elements (us_repqtmk field_10__split_fields field_10__attr__tag)) 10)))
 (check-sat)
+
+(exit)

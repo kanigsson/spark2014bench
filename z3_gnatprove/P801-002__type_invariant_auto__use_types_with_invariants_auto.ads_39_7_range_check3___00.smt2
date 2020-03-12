@@ -1046,3 +1046,5 @@ Target solver: Z3
  ;; File "use_types_with_invariants_auto.ads", line 3, characters 0-0
   (not (<= 1 1)))
 (check-sat)
+
+(exit)

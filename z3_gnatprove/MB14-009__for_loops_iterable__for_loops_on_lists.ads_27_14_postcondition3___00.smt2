@@ -1009,3 +1009,5 @@ Target solver: Z3
   (= (iter_has_element temp___1063 temp___1062) true))
   (= (get temp___1063 temp___1062) 0)))))
 (check-sat)
+
+(exit)

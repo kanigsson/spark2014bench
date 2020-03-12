@@ -246,3 +246,5 @@ Target solver: Z3
  ;; File "default_init.ads", line 34, characters 0-0
   (not (= (wrong_priv_ok p2) true)))
 (check-sat)
+
+(exit)

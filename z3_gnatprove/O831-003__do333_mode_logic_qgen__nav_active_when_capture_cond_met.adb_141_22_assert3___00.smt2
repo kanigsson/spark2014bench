@@ -332,3 +332,5 @@ Target solver: Z3
  ;; File "nav_active_when_capture_cond_met.ads", line 19, characters 0-0
   (not (= not5_out1 true)))
 (check-sat)
+
+(exit)

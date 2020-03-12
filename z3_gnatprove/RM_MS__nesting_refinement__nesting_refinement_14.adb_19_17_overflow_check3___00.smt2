@@ -101,3 +101,5 @@ Target solver: Z3
  ;; File "nesting_refinement_14.adb", line 14, characters 0-0
   (not (in_range (+ x z))))
 (check-sat)
+
+(exit)

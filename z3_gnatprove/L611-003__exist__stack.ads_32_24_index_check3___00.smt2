@@ -236,3 +236,5 @@ Target solver: Z3
  ;; File "stack.ads", line 13, characters 0-0
   (not (<= 1 s)))
 (check-sat)
+
+(exit)

@@ -2066,3 +2066,5 @@ Target solver: Z3
   (not (tagged_discr__t__x__pred
   (us_repqtmk v__split_discrs v__split_fields1 v__attr__tag))))
 (check-sat)
+
+(exit)

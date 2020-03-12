@@ -462,3 +462,5 @@ Target solver: Z3
   (and (and (<= (first1 v) k) (<= k i2))
   (= result__3 (to_rep (select (to_array v) k)))))))
 (check-sat)
+
+(exit)

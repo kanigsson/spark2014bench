@@ -383,3 +383,5 @@ Target solver: Z3
  ;; File "iter_array.adb", line 1, characters 0-0
   (not (<= 1 usf)))
 (check-sat)
+
+(exit)

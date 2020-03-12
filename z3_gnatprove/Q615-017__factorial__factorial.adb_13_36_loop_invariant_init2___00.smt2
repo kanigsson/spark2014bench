@@ -228,3 +228,5 @@ Target solver: Z3
  ;; File "factorial.ads", line 12, characters 0-0
   (not (= result__2 (mathematical_factorial i))))
 (check-sat)
+
+(exit)

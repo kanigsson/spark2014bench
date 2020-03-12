@@ -439,3 +439,5 @@ Target solver: Z3
  ;; File "usergroup_examples.adb", line 85, characters 0-0
   (not (= (is_valid (to_rep (select va i))) true)))
 (check-sat)
+
+(exit)

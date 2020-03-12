@@ -282,3 +282,5 @@ Target solver: Z3
   (not
   (not (fp.eq (fp #b0 #b00000000 #b00000000000000000000000) (last i1)))))
 (check-sat)
+
+(exit)

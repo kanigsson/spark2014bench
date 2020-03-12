@@ -244,3 +244,5 @@ Target solver: Z3
  ;; File "math_simple.ads", line 5, characters 0-0
   (not (not (= c 0))))
 (check-sat)
+
+(exit)

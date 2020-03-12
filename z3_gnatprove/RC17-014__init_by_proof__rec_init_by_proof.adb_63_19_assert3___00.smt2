@@ -458,3 +458,5 @@ Target solver: Z3
   (not
   (= (bool_eq (us_repqtmk x__split_fields2) (us_repqtmk y__split_fields)) true)))
 (check-sat)
+
+(exit)

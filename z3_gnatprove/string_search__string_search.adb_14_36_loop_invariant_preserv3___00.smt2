@@ -648,3 +648,5 @@ Target solver: Z3
                                             (select (to_array haystack) (+ 
                                             j2 (- i 1))))))))
 (check-sat)
+
+(exit)

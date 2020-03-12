@@ -613,3 +613,5 @@ Target solver: Z3
                                (last1 temp___400)) (length (first1 value)
                                                    (last1 value)))) 1))))
 (check-sat)
+
+(exit)

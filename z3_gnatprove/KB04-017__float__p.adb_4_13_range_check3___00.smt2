@@ -280,3 +280,5 @@ Target solver: Z3
   (not (dynamic_property first last
   (fp #b0 #b01111111 #b10000000000000000000000))))
 (check-sat)
+
+(exit)

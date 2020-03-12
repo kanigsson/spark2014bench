@@ -3207,3 +3207,5 @@ Target solver: Z3
  ;; File "partition_refinement.ads", line 40, characters 0-0
   (not (= (has_element o16 o15) true)))
 (check-sat)
+
+(exit)

@@ -430,3 +430,5 @@ Target solver: Z3
  ;; File "use_private_attributes.ads", line 5, characters 0-0
   (not (= u__split_discrs u1__split_discrs)))
 (check-sat)
+
+(exit)

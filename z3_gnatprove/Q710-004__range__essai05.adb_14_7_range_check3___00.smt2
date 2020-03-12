@@ -492,3 +492,5 @@ Target solver: Z3
  ;; File "essai05.adb", line 13, characters 0-0
   (not (<= 3 (first1 v))))
 (check-sat)
+
+(exit)

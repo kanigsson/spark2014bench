@@ -445,3 +445,5 @@ Target solver: Z3
  ;; File "binary_search_trees.adb", line 29, characters 0-0
   (not (rec__binary_search_trees__node_access__pointer_value__pred o5)))
 (check-sat)
+
+(exit)

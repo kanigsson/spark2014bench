@@ -474,3 +474,5 @@ Target solver: Z3
  ;; File "list_ex_pledge.ads", line 18, characters 0-0
   (not (rec__list_ex_pledge__list__pointer_value__pred l)))
 (check-sat)
+
+(exit)

@@ -107,3 +107,5 @@ Target solver: Z3
  ;; File "check.adb", line 3, characters 0-0
   (not (= x 2147483647)))
 (check-sat)
+
+(exit)

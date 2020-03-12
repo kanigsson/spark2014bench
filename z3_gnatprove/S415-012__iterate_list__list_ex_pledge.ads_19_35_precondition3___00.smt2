@@ -488,3 +488,5 @@ Target solver: Z3
  ;; File "list_ex_pledge.ads", line 18, characters 0-0
   (not (<= o (length o2))))
 (check-sat)
+
+(exit)

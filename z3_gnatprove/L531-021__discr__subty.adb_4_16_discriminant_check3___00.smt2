@@ -627,3 +627,5 @@ Target solver: Z3
  ;; File "subty.ads", line 7, characters 0-0
   (not (in_range4 0 (us_split_discrs1 temp___182))))
 (check-sat)
+
+(exit)

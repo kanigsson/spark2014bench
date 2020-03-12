@@ -546,3 +546,5 @@ Target solver: Z3
  ;; File "test_constrained.adb", line 36, characters 0-0
   (not (in_range (ite r30b 1 0))))
 (check-sat)
+
+(exit)

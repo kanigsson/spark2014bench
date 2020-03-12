@@ -1628,3 +1628,5 @@ Target solver: Z3
  ;; File "keccak-sponge.ads", line 146, characters 0-0
   (not (<= (first1 data) temp___870)))
 (check-sat)
+
+(exit)

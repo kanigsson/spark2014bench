@@ -2158,3 +2158,5 @@ Target solver: Z3
      (us_split_fieldsqtmk result____split_fields4))
      (to_rep (select (to_array a) i))) true)))
 (check-sat)
+
+(exit)

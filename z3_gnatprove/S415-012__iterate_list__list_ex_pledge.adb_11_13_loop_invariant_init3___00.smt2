@@ -669,3 +669,5 @@ Target solver: Z3
  ;; File "list_ex_pledge.ads", line 26, characters 0-0
   (not (= (length temp___borrowed_233) (+ i (length temp___brower_232)))))
 (check-sat)
+
+(exit)

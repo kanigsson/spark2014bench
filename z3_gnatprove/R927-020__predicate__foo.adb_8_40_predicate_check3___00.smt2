@@ -172,3 +172,5 @@ Target solver: Z3
  ;; File "foo.adb", line 5, characters 0-0
   (not (dynamic_predicate (temp___String_Literal_157 Tuple0))))
 (check-sat)
+
+(exit)

@@ -1587,3 +1587,5 @@ Target solver: Z3
                                                           (us_split_discrs1
                                                           dividend))) 1))))
 (check-sat)
+
+(exit)

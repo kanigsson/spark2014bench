@@ -714,3 +714,5 @@ Target solver: Z3
  ;; File "stacks.ads", line 19, characters 0-0
   (not (<= (first1 temp___266) temp___267)))
 (check-sat)
+
+(exit)

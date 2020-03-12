@@ -136,3 +136,5 @@ Target solver: Z3
  ;; File "test_annotate.adb", line 2, characters 0-0
   (not (= (= 4 4) true)))
 (check-sat)
+
+(exit)

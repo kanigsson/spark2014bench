@@ -1154,3 +1154,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.adb", line 481, characters 0-0
   (not (bvule ((_ zero_extend 8) #x00) q_hat)))
 (check-sat)
+
+(exit)

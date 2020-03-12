@@ -329,3 +329,5 @@ Target solver: Z3
   (not (rec__test_constr__h_acc__pointer_value__pred
   (rec__test_constr__i__c (us_split_fields3 o)))))
 (check-sat)
+
+(exit)

@@ -917,3 +917,5 @@ Target solver: Z3
   (= (bool_eq (us_repqtmk (us_split_fieldsqtmk cu__split_fields1))
      no_element) true))))
 (check-sat)
+
+(exit)

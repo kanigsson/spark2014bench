@@ -275,3 +275,5 @@ Target solver: Z3
  ;; File "infoflow.ads", line 58, characters 0-0
   (not (= (to_rep (select outkeys_v11 k)) (to_rep (select inkeys_v1 k)))))
 (check-sat)
+
+(exit)

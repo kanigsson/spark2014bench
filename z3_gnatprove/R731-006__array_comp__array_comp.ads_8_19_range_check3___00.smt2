@@ -514,3 +514,5 @@ Target solver: Z3
  ;; File "array_comp.ads", line 1, characters 0-0
   (not (<= (to_rep yy__first) 1)))
 (check-sat)
+
+(exit)

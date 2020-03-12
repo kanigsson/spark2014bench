@@ -157,3 +157,5 @@ Target solver: Z3
  ;; File "loop_related_illegal_3.adb", line 4, characters 0-0
   (not (< temp___loop_entry_157 y2)))
 (check-sat)
+
+(exit)

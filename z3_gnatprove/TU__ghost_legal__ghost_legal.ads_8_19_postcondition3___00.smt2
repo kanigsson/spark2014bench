@@ -293,3 +293,5 @@ Target solver: Z3
  ;; File "ghost_legal.ads", line 7, characters 0-0
   (not (not (= ghost_legal__is_prime__result1 true))))
 (check-sat)
+
+(exit)

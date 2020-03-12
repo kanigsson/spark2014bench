@@ -1118,3 +1118,5 @@ Target solver: Z3
   (= (has_message (us_repqtmk buffer__split_fields3)
      (last (us_repqtmk buffer__split_fields3))) true)))
 (check-sat)
+
+(exit)

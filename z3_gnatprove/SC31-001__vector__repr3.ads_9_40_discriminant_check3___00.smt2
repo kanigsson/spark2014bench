@@ -1343,3 +1343,5 @@ Target solver: Z3
  ;; File "repr3.ads", line 5, characters 0-0
   (not (in_range4 20 (us_split_discrs1 (to_base o1)))))
 (check-sat)
+
+(exit)

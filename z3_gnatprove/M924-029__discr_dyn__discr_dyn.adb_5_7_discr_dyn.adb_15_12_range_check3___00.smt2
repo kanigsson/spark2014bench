@@ -835,3 +835,5 @@ Target solver: Z3
  ;; File "discr_dyn.adb", line 1, characters 0-0
   (not (in_range1 3)))
 (check-sat)
+
+(exit)

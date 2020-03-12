@@ -1008,3 +1008,5 @@ Target solver: Z3
  ;; File "bounded_dynamic_arrays.ads", line 39, characters 0-0
   (not (<= 1 capacity)))
 (check-sat)
+
+(exit)

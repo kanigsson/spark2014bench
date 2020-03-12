@@ -649,3 +649,5 @@ Target solver: Z3
  ;; File "init_by_proof.adb", line 21, characters 0-0
   (not (in_range1 o9)))
 (check-sat)
+
+(exit)

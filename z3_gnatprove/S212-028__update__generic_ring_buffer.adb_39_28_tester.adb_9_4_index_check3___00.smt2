@@ -847,3 +847,5 @@ Target solver: Z3
  ;; File "generic_ring_buffer.ads", line 51, characters 0-0
   (not (<= (first1 temp___292) temp___293)))
 (check-sat)
+
+(exit)

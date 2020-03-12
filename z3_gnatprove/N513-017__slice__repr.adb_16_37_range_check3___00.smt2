@@ -314,3 +314,5 @@ Target solver: Z3
  ;; File "repr.adb", line 10, characters 0-0
   (not (<= (to_rep values__first) 5)))
 (check-sat)
+
+(exit)

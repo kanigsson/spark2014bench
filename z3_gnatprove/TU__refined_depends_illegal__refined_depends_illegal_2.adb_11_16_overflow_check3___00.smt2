@@ -105,3 +105,5 @@ Target solver: Z3
  ;; File "refined_depends_illegal_2.ads", line 6, characters 0-0
   (not (in_range (+ x y))))
 (check-sat)
+
+(exit)

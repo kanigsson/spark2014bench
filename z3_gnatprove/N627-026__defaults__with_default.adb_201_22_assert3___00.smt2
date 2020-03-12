@@ -2351,3 +2351,5 @@ Target solver: Z3
  ;; File "with_default.ads", line 14, characters 0-0
   (not (= (last1 empty__split_fields) 0)))
 (check-sat)
+
+(exit)

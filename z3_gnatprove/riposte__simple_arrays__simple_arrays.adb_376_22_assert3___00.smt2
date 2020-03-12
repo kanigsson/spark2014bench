@@ -191,3 +191,5 @@ Target solver: Z3
  ;; File "simple_arrays.adb", line 372, characters 0-0
   (not (= (to_rep (select (temp_____aggregate_def_958 a i x) i)) x)))
 (check-sat)
+
+(exit)

@@ -900,3 +900,5 @@ Target solver: Z3
  ;; File "my_lists.ads", line 32, characters 0-0
   (not (in_range 100)))
 (check-sat)
+
+(exit)

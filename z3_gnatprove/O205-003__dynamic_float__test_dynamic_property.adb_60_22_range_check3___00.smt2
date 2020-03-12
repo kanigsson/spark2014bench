@@ -408,3 +408,5 @@ Target solver: Z3
   (not (dynamic_property1 o8 o7
   test_dynamic_property__nested__dyn_param__x)))
 (check-sat)
+
+(exit)

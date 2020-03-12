@@ -877,3 +877,5 @@ Target solver: Z3
  ;; File "server_timestamp_maker.ads", line 18, characters 0-0
   (not (<= (first1 o2) 2)))
 (check-sat)
+
+(exit)

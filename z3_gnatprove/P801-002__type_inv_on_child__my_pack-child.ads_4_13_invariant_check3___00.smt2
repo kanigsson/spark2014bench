@@ -134,3 +134,5 @@ Target solver: Z3
  ;; File "my_pack-child.ads", line 4, characters 0-0
   (not (type_invariant ada___my_pack__child__incr__result)))
 (check-sat)
+
+(exit)

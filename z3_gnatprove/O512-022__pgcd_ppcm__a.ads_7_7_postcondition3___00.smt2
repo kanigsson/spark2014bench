@@ -284,3 +284,5 @@ Target solver: Z3
   (and (<= 1 a__pgcd__result) (<= a__pgcd__result (abs1 a))))
   (and (<= 1 a__pgcd__result) (<= a__pgcd__result (abs1 b))))))
 (check-sat)
+
+(exit)

@@ -72,3 +72,5 @@ Target solver: Z3
  ;; File "spark_modes.ads", line 4, characters 0-0
   (not (= b1 true)))
 (check-sat)
+
+(exit)

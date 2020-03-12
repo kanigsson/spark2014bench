@@ -781,3 +781,5 @@ Target solver: Z3
  ;; File "counterexamples.adb", line 37, characters 0-0
   (not (rec__counterexamples__string_access__pointer_value__pred o)))
 (check-sat)
+
+(exit)

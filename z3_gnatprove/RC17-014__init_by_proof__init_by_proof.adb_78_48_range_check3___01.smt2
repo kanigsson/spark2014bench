@@ -649,3 +649,5 @@ Target solver: Z3
  ;; File "init_by_proof.adb", line 2, characters 0-0
   (not (dynamic_property1 1 2147483647 1 100)))
 (check-sat)
+
+(exit)

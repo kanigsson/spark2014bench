@@ -742,3 +742,5 @@ Target solver: Z3
  ;; File "bounded_dynamic_arrays.ads", line 159, characters 0-0
   (not (in_range1 (length by__))))
 (check-sat)
+
+(exit)

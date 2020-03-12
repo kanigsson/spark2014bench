@@ -847,3 +847,5 @@ Target solver: Z3
  ;; File "polyorb_hi-messages.ads", line 102, characters 0-0
   (not (= (valid o2) true)))
 (check-sat)
+
+(exit)

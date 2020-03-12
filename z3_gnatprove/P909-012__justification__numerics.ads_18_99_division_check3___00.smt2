@@ -163,3 +163,5 @@ Target solver: Z3
  ;; File "numerics.ads", line 18, characters 0-0
   (not (not (fp.isZero o))))
 (check-sat)
+
+(exit)

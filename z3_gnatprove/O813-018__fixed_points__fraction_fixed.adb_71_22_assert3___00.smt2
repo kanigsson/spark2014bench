@@ -425,3 +425,5 @@ Target solver: Z3
  ;; File "fraction_fixed.ads", line 19, characters 0-0
   (not (<= (- (* z1 2) 1) x)))
 (check-sat)
+
+(exit)

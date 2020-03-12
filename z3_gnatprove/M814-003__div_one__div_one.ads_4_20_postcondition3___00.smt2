@@ -180,3 +180,5 @@ Target solver: Z3
  ;; File "div_one.ads", line 3, characters 0-0
   (not (= (div1 div_one__f__result a) 1)))
 (check-sat)
+
+(exit)

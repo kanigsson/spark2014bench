@@ -299,3 +299,5 @@ Target solver: Z3
  ;; File "aggregates.ads", line 1, characters 0-0
   (not (type_invariant (to_rep (rec__aggregates__rec_t__a usf)))))
 (check-sat)
+
+(exit)

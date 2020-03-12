@@ -501,3 +501,5 @@ Target solver: Z3
   (not (rec__test__u_array_acc__pointer_value__pred
   (us_repqtmk1 a__is_null_pointer a__pointer_address a__pointer_value2))))
 (check-sat)
+
+(exit)

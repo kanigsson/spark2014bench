@@ -531,3 +531,5 @@ Target solver: Z3
   (= (to_rep1 (select h2 k)) (to_rep1
                              (select h1 (+ k (div1 (to_rep h__last) 2)))))))
 (check-sat)
+
+(exit)

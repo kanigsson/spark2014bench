@@ -476,3 +476,5 @@ Target solver: Z3
  ;; File "ring_buf.ads", line 39, characters 0-0
   (not (= (is_empty (us_repqtmk r__split_fields3)) true)))
 (check-sat)
+
+(exit)

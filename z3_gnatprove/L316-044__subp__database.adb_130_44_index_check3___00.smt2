@@ -469,3 +469,5 @@ Target solver: Z3
  ;; File "database.adb", line 48, characters 0-0
   (not (<= 1 first_available)))
 (check-sat)
+
+(exit)

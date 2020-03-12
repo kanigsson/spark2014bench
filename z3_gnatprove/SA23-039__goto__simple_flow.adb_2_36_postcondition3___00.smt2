@@ -167,3 +167,5 @@ Target solver: Z3
  ;; File "simple_flow.adb", line 1, characters 0-0
   (not (= y1 x)))
 (check-sat)
+
+(exit)

@@ -107,3 +107,5 @@ Target solver: Z3
  ;; File "use_incomplete_type_auto.ads", line 2, characters 0-0
   (not (= (ok w1) true)))
 (check-sat)
+
+(exit)

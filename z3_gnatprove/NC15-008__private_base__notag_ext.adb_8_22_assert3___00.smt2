@@ -313,3 +313,5 @@ Target solver: Z3
  ;; File "notag_ext.ads", line 12, characters 0-0
   (not (not (= (sum a) (sum b)))))
 (check-sat)
+
+(exit)

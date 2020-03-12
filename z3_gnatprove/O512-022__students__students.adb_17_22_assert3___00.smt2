@@ -817,3 +817,5 @@ Target solver: Z3
  ;; File "students.ads", line 17, characters 0-0
   (not (<= tuition2 3840000)))
 (check-sat)
+
+(exit)

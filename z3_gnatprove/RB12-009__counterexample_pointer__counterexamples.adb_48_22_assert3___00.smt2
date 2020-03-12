@@ -788,3 +788,5 @@ Target solver: Z3
      (rec__counterexamples__string_access__pointer_value
      (select (to_array1 a__pointer_value) 1))) c)))
 (check-sat)
+
+(exit)

@@ -230,3 +230,5 @@ Target solver: Z3
  ;; File "assert_loop_14.ads", line 7, characters 0-0
   (not (<= 1 usf)))
 (check-sat)
+
+(exit)

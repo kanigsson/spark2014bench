@@ -596,3 +596,5 @@ Target solver: Z3
  ;; File "harness.adb", line 3, characters 0-0
   (not (not (= (is_empty (us_repqtmk r__split_fields6)) true))))
 (check-sat)
+
+(exit)

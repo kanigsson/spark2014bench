@@ -428,3 +428,5 @@ Target solver: Z3
  ;; File "array_logical_ops.ads", line 22, characters 0-0
   (not (<= (first1 z) (last1 z))))
 (check-sat)
+
+(exit)

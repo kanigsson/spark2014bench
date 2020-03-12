@@ -219,3 +219,5 @@ Target solver: Z3
   (ite (= ((_ extract 128 128) ((_ fp.to_sbv 129) RNA o1)) #b0) (bv2int ((_ fp.to_sbv 129) RNA 
   o1)) (- (bv2int ((_ fp.to_sbv 129) RNA o1)) (bv2int (bvshl (_ bv1 130) (_ bv129 130))))))))
 (check-sat)
+
+(exit)

@@ -322,3 +322,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__default_checks_on_private-25155/src/gnatprove/dic_and_predicate_checks__nested_3__p.mlw", line 550, characters 5-8
   (not (= (is_valid usf1) true)))
 (check-sat)
+
+(exit)

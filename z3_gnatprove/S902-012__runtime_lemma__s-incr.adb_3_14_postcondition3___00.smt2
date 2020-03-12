@@ -94,3 +94,5 @@ Target solver: Z3
  ;; File "s-incr.adb", line 2, characters 0-0
   (not (< x 2147483647)))
 (check-sat)
+
+(exit)

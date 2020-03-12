@@ -193,3 +193,5 @@ Target solver: Z3
  ;; File "prime_and_coprime_numbers.ads", line 24, characters 0-0
   (not (not (= usf 0))))
 (check-sat)
+
+(exit)

@@ -110,3 +110,5 @@ Target solver: Z3
  ;; File "funcs.ads", line 20, characters 0-0
   (not (< 0 x)))
 (check-sat)
+
+(exit)

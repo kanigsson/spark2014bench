@@ -107,3 +107,5 @@ Target solver: Z3
  ;; File "repro.ads", line 8, characters 0-0
   (not (in_range (+ a b))))
 (check-sat)
+
+(exit)

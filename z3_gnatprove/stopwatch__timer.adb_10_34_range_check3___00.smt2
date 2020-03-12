@@ -157,3 +157,5 @@ Target solver: Z3
  ;; File "timer.adb", line 9, characters 0-0
   (not (<= 0 98)))
 (check-sat)
+
+(exit)

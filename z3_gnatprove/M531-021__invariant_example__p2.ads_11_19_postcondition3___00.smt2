@@ -380,3 +380,5 @@ Target solver: Z3
  ;; File "p2.ads", line 10, characters 0-0
   (not (<= (* p2__sqrt__result p2__sqrt__result) n)))
 (check-sat)
+
+(exit)

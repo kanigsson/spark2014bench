@@ -1042,3 +1042,5 @@ Target solver: Z3
   (not
   (not (= (is_max2 (us_repqtmk1 x2__split_fields2 x2__attr__tag)) true))))
 (check-sat)
+
+(exit)

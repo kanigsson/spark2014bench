@@ -876,3 +876,5 @@ Target solver: Z3
  ;; File "p.ads", line 18, characters 0-0
   (not (= (has_element o2 o1) true)))
 (check-sat)
+
+(exit)

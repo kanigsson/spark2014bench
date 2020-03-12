@@ -415,3 +415,5 @@ Target solver: Z3
  ;; File "my_container.ads", line 15, characters 0-0
   (not (= (has_element c1 usf1) true)))
 (check-sat)
+
+(exit)

@@ -1029,3 +1029,5 @@ Target solver: Z3
  ;; File "network-addresses.ads", line 37, characters 0-0
   (not (in_range9 (+ skip2 1))))
 (check-sat)
+
+(exit)

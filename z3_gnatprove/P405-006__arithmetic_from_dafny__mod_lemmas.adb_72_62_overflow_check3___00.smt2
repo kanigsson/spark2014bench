@@ -296,3 +296,5 @@ Target solver: Z3
  ;; File "mod_lemmas.adb", line 71, characters 0-0
   (not (in_range (+ res11 m))))
 (check-sat)
+
+(exit)

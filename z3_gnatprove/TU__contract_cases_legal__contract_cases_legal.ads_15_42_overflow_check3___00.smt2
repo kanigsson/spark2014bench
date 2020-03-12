@@ -145,3 +145,5 @@ Target solver: Z3
  ;; File "contract_cases_legal.ads", line 13, characters 0-0
   (not (in_range (+ x 1))))
 (check-sat)
+
+(exit)

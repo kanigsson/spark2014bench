@@ -263,3 +263,5 @@ Target solver: Z3
  ;; File "nonlinear.adb", line 2, characters 0-0
   (not (<= r11 r21)))
 (check-sat)
+
+(exit)

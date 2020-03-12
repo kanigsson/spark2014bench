@@ -170,3 +170,5 @@ Target solver: Z3
   (not (type_invariant
   (us_repqtmk (us_split_fieldsqtmk bar__split_fields)))))
 (check-sat)
+
+(exit)

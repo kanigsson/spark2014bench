@@ -288,3 +288,5 @@ Target solver: Z3
  ;; File "unconstr_call.adb", line 28, characters 0-0
   (not (= x (to_rep z__first))))
 (check-sat)
+
+(exit)

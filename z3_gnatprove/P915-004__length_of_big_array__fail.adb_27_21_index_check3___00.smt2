@@ -700,3 +700,5 @@ Target solver: Z3
  ;; File "fail.adb", line 24, characters 0-0
   (not (bvule (first3 c) #xFFFFFFFFFFFFFFFF)))
 (check-sat)
+
+(exit)

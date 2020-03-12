@@ -599,3 +599,5 @@ Target solver: Z3
  ;; File "proc.adb", line 19, characters 0-0
   (not (<= 1 (length (to_rep item__first) (to_rep item__last)))))
 (check-sat)
+
+(exit)

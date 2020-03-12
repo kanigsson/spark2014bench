@@ -393,3 +393,5 @@ Target solver: Z3
  ;; File "input.adb", line 30, characters 0-0
   (not (<= 1 first_char1)))
 (check-sat)
+
+(exit)

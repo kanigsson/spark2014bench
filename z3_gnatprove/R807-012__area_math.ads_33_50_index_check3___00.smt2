@@ -687,3 +687,5 @@ Target solver: Z3
  ;; File "area_math.ads", line 32, characters 0-0
   (not (<= (first1 temp___396) usf)))
 (check-sat)
+
+(exit)

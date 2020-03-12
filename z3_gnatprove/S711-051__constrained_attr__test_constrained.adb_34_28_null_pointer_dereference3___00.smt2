@@ -296,3 +296,5 @@ Target solver: Z3
  ;; File "test_constrained.adb", line 1, characters 0-0
   (not (rec__test_constrained__cc_acc__pointer_value__pred o)))
 (check-sat)
+
+(exit)

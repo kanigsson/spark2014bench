@@ -547,3 +547,5 @@ Target solver: Z3
  ;; File "main.adb", line 1, characters 0-0
   (not (= (to_rep (rec__main__rec__comp (us_split_fields1 r15b))) 5678)))
 (check-sat)
+
+(exit)

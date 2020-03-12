@@ -1104,3 +1104,5 @@ Target solver: Z3
  ;; File "communication.ads", line 9, characters 0-0
   (not (<= 1 15)))
 (check-sat)
+
+(exit)

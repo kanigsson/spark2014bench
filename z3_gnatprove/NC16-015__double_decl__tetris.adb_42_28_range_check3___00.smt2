@@ -435,3 +435,5 @@ Target solver: Z3
  ;; File "tetris.ads", line 55, characters 0-0
   (not (in_range1 (- xnew 1))))
 (check-sat)
+
+(exit)

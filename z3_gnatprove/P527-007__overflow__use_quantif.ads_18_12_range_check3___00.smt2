@@ -165,3 +165,5 @@ Target solver: Z3
  ;; File "use_quantif.ads", line 1, characters 0-0
   (not (<= (- 2147483648) first_index)))
 (check-sat)
+
+(exit)

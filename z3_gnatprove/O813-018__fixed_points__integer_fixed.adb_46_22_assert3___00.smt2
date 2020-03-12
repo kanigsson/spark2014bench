@@ -358,3 +358,5 @@ Target solver: Z3
  ;; File "integer_fixed.ads", line 14, characters 0-0
   (not (= z2 (+ x x))))
 (check-sat)
+
+(exit)

@@ -331,3 +331,5 @@ Target solver: Z3
  ;; File "loop_entry.ads", line 9, characters 0-0
   (not (= (to_rep (select a2 n)) 0)))
 (check-sat)
+
+(exit)

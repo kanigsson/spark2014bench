@@ -602,3 +602,5 @@ Target solver: Z3
  ;; File "concat.adb", line 1, characters 0-0
   (not (<= first 8)))
 (check-sat)
+
+(exit)

@@ -460,3 +460,5 @@ Target solver: Z3
  ;; File "empty_type.adb", line 12, characters 0-0
   (not (< 0 c)))
 (check-sat)
+
+(exit)

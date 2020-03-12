@@ -963,3 +963,5 @@ Target solver: Z3
  ;; File "test_arith.adb", line 3, characters 0-0
   (not (<= x15 (div1 z3 y15))))
 (check-sat)
+
+(exit)

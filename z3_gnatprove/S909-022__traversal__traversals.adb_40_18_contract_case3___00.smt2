@@ -960,3 +960,5 @@ Target solver: Z3
  ;; File "traversals.adb", line 36, characters 0-0
   (not (= (length traversals__next__result) (- (length1 x) 1))))
 (check-sat)
+
+(exit)

@@ -1035,3 +1035,5 @@ Target solver: Z3
  ;; File "linked_list.ads", line 9, characters 0-0
   (not (= (has_key o6 o4) true)))
 (check-sat)
+
+(exit)

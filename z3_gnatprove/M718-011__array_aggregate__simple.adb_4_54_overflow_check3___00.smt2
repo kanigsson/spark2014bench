@@ -223,3 +223,5 @@ Target solver: Z3
  ;; File "simple.ads", line 7, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

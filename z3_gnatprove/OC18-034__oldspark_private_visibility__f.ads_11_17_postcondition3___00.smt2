@@ -312,3 +312,5 @@ Target solver: Z3
  ;; File "f.ads", line 10, characters 0-0
   (not (= (sf (rec__f__r1__f1 (us_split_fields3 x))) 2)))
 (check-sat)
+
+(exit)

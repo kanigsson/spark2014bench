@@ -230,3 +230,5 @@ Target solver: Z3
  ;; File "ar.adb", line 39, characters 0-0
   (not (<= 1 temp___242)))
 (check-sat)
+
+(exit)

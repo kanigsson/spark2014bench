@@ -386,3 +386,5 @@ Target solver: Z3
  ;; File "aliasing.ads", line 17, characters 0-0
   (not (<= (to_rep1 a__first) j)))
 (check-sat)
+
+(exit)

@@ -813,3 +813,5 @@ Target solver: Z3
  ;; File "input.ads", line 9, characters 0-0
   (not (<= (to_rep1 s__first) i1)))
 (check-sat)
+
+(exit)

@@ -441,3 +441,5 @@ Target solver: Z3
  ;; File "perm.adb", line 3, characters 0-0
   (not (= (occ a e) (occ b e))))
 (check-sat)
+
+(exit)

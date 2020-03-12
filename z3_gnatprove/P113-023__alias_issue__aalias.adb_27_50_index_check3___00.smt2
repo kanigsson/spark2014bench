@@ -568,3 +568,5 @@ Target solver: Z3
  ;; File "aalias.adb", line 21, characters 0-0
   (not (bvule (to_rep1 b2__first) temp___250)))
 (check-sat)
+
+(exit)

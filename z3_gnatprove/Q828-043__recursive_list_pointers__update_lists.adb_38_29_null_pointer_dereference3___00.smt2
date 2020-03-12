@@ -457,3 +457,5 @@ Target solver: Z3
   (us_repqtmk prev__is_null_pointer2 prev__pointer_address2
   (us_close (us_repqtmk1 prev__pointer_value2))))))
 (check-sat)
+
+(exit)

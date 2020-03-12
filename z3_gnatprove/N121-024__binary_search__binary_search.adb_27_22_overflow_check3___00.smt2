@@ -590,3 +590,5 @@ Target solver: Z3
  ;; File "binary_search.ads", line 14, characters 0-0
   (not (in_range2 o7)))
 (check-sat)
+
+(exit)

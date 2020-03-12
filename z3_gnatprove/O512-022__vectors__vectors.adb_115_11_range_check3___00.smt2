@@ -782,3 +782,5 @@ Target solver: Z3
   (not
   (<= 1 (to_rep2 (rec__vectors__cursor__index (us_split_fields1 position))))))
 (check-sat)
+
+(exit)

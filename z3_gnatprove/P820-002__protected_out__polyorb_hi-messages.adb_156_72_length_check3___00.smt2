@@ -817,3 +817,5 @@ Target solver: Z3
  ;; File "polyorb_hi-messages.ads", line 85, characters 0-0
   (not (<= (first1 temp___497) (last1 temp___497))))
 (check-sat)
+
+(exit)

@@ -261,3 +261,5 @@ Target solver: Z3
  ;; File "forall.ads", line 4, characters 0-0
   (not (not (= o 0))))
 (check-sat)
+
+(exit)

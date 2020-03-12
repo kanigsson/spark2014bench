@@ -3502,3 +3502,5 @@ Target solver: Z3
  ;; File "pupils.ads", line 88, characters 0-0
   (not (<= 0 1)))
 (check-sat)
+
+(exit)

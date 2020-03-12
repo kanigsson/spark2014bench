@@ -220,3 +220,5 @@ Target solver: Z3
   (not
   (not (fp.eq smoothing_factor (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000)))))
 (check-sat)
+
+(exit)

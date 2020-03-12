@@ -873,3 +873,5 @@ Target solver: Z3
   (us_split_fieldsqtmk o3
   (rec__bounded_dynamic_strings__sequence__content this__split_fields2))))))
 (check-sat)
+
+(exit)

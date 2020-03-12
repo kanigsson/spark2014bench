@@ -2270,3 +2270,5 @@ Target solver: Z3
  ;; File "split_records.ads", line 27, characters 0-0
   (not (in_range 0)))
 (check-sat)
+
+(exit)

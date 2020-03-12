@@ -444,3 +444,5 @@ Target solver: Z3
  ;; File "subtype_check.ads", line 1, characters 0-0
   (not (<= (- 2147483648) zero)))
 (check-sat)
+
+(exit)

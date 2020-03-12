@@ -768,3 +768,5 @@ Target solver: Z3
  ;; File "simple_unc_arrays.ads", line 61, characters 0-0
   (not (<= (min a) simple_unc_arrays__average__result)))
 (check-sat)
+
+(exit)

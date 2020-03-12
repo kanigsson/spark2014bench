@@ -1652,3 +1652,5 @@ Target solver: Z3
  ;; File "repro.ads", line 40, characters 0-0
   (not (<= (first1 temp___322) diff)))
 (check-sat)
+
+(exit)

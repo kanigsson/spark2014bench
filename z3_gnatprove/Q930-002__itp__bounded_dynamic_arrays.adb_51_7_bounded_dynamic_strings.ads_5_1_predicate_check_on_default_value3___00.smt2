@@ -1002,3 +1002,5 @@ Target solver: Z3
  ;; File "bounded_dynamic_arrays.ads", line 39, characters 0-0
   (not (dynamic_predicate1 usf1)))
 (check-sat)
+
+(exit)

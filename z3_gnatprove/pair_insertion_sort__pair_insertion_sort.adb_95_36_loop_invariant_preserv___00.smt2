@@ -973,3 +973,5 @@ Target solver: Z3
   (not
   (= (sorted (of_array a6 (to_rep a__first) (to_rep a__last)) 0 (- j4 1)) true)))
 (check-sat)
+
+(exit)

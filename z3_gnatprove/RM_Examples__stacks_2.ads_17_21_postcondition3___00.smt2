@@ -319,3 +319,5 @@ Target solver: Z3
  ;; File "stacks_2.ads", line 14, characters 0-0
   (not (not (= (is_empty1 a_pointer1) true))))
 (check-sat)
+
+(exit)

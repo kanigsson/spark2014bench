@@ -751,3 +751,5 @@ Target solver: Z3
  ;; File "bounded_dynamic_arrays.ads", line 69, characters 0-0
   (not (= (length1 (us_repqtmk this__split_discrs this__split_fields2)) 0)))
 (check-sat)
+
+(exit)

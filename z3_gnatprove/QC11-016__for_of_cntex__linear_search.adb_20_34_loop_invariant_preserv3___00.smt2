@@ -265,3 +265,5 @@ Target solver: Z3
  ;; File "linear_search.adb", line 11, characters 0-0
   (not (not (= (to_rep (select arr j)) n))))
 (check-sat)
+
+(exit)

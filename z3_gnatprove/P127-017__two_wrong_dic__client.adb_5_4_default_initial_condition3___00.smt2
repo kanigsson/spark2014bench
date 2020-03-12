@@ -115,3 +115,5 @@ Target solver: Z3
  ;; File "client.adb", line 3, characters 0-0
   (not (= (really_false Tuple0) true)))
 (check-sat)
+
+(exit)

@@ -175,3 +175,5 @@ Target solver: Z3
  ;; File "pack.ads", line 17, characters 0-0
   (not (in_range (+ stash pocket))))
 (check-sat)
+
+(exit)

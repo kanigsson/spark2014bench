@@ -640,3 +640,5 @@ Target solver: Z3
  ;; File "with_iterable.ads", line 32, characters 0-0
   (not (dynamic_predicate temp___281)))
 (check-sat)
+
+(exit)

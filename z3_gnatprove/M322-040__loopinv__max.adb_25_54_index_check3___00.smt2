@@ -264,3 +264,5 @@ Target solver: Z3
  ;; File "max.ads", line 5, characters 0-0
   (not (<= 1 usf1)))
 (check-sat)
+
+(exit)

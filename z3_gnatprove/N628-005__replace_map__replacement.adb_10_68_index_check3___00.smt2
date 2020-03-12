@@ -1593,3 +1593,5 @@ Target solver: Z3
  ;; File "replacement.ads", line 15, characters 0-0
   (not (<= (first1 a) temp___807)))
 (check-sat)
+
+(exit)

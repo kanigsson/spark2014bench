@@ -149,3 +149,5 @@ Target solver: Z3
  ;; File "refinement.ads", line 10, characters 0-0
   (not (< (- 1) (get_highest_reading high_reading1))))
 (check-sat)
+
+(exit)

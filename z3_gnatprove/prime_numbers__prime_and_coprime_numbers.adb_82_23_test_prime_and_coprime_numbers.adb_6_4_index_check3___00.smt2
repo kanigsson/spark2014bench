@@ -401,3 +401,5 @@ Target solver: Z3
  ;; File "prime_and_coprime_numbers.ads", line 51, characters 0-0
   (not (<= 0 usf)))
 (check-sat)
+
+(exit)

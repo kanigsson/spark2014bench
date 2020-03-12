@@ -940,3 +940,5 @@ Target solver: Z3
   (not
   (= (has_element l (us_repqtmk (us_split_fieldsqtmk lists__search__result))) true))))
 (check-sat)
+
+(exit)

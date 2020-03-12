@@ -5779,3 +5779,5 @@ Target solver: Z3
  ;; File "do_checks.adb", line 7, characters 0-0
   (not (in_range1 10)))
 (check-sat)
+
+(exit)

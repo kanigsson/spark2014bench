@@ -947,3 +947,5 @@ Target solver: Z3
  ;; File "bounded_dynamic_arrays.ads", line 140, characters 0-0
   (not (<= 1 new_length)))
 (check-sat)
+
+(exit)

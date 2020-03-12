@@ -258,3 +258,5 @@ Target solver: Z3
   (exists ((m Int))
   (and (and (<= 1 m) (<= m 10)) (= (to_rep (select a m)) x)))))
 (check-sat)
+
+(exit)

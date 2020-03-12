@@ -2101,3 +2101,5 @@ Target solver: Z3
                 (rec__ada___keccak__keccak_1600__sponge__context__rate
                 ctx__split_fields10)))))
 (check-sat)
+
+(exit)

@@ -411,3 +411,5 @@ Target solver: Z3
                                                    (select input_array 
                                                    k)))))
 (check-sat)
+
+(exit)

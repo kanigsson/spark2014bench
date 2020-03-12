@@ -808,3 +808,5 @@ Target solver: Z3
  ;; File "p.adb", line 3, characters 0-0
   (not (attr__ATTRIBUTE_VALUE__pre_check5 (from_string (of_array s o1 o)))))
 (check-sat)
+
+(exit)

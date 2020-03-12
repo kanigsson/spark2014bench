@@ -374,3 +374,5 @@ Target solver: Z3
   (not (dynamic_predicate
   (of_array (temp___String_Literal_178 Tuple0) 1 4))))
 (check-sat)
+
+(exit)

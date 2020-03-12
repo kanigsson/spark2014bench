@@ -1804,3 +1804,5 @@ Target solver: Z3
      (us_split_fields1
      (to_base (us_repqtmk1 x__split_discrs x__split_fields1))))) true))))
 (check-sat)
+
+(exit)

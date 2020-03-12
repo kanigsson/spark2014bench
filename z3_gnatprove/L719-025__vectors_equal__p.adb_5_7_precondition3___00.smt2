@@ -564,3 +564,5 @@ Target solver: Z3
                                                                    (us_split_fieldsqtmk
                                                                    l__split_fields))))))
 (check-sat)
+
+(exit)

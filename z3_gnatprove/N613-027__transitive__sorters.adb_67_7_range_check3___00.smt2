@@ -412,3 +412,5 @@ Target solver: Z3
  ;; File "sorters.ads", line 15, characters 0-0
   (not (<= 1 (to_rep values__first))))
 (check-sat)
+
+(exit)

@@ -479,3 +479,5 @@ Target solver: Z3
  ;; File "aalias.adb", line 1, characters 0-0
   (not (bvule #x0000000000000000 #x0000000000000032)))
 (check-sat)
+
+(exit)

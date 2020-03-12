@@ -179,3 +179,5 @@ Target solver: Z3
  ;; File "nonlinear.adb", line 1, characters 0-0
   (not (fp.isFinite32 o)))
 (check-sat)
+
+(exit)

@@ -608,3 +608,5 @@ Target solver: Z3
  ;; File "tokens.ads", line 23, characters 0-0
   (not (tokens__token__op__pred o2)))
 (check-sat)
+
+(exit)

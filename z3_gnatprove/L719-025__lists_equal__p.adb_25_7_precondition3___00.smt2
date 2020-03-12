@@ -909,3 +909,5 @@ Target solver: Z3
   (not
   (= (has_element (us_repqtmk o6 (us_split_fieldsqtmk l__split_fields1)) o5) true)))
 (check-sat)
+
+(exit)

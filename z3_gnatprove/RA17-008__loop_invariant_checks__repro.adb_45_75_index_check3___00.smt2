@@ -987,3 +987,5 @@ Target solver: Z3
  ;; File "repro.adb", line 22, characters 0-0
   (not (<= (first1 temp___288) o13)))
 (check-sat)
+
+(exit)

@@ -676,3 +676,5 @@ Target solver: Z3
  ;; File "p.ads", line 22, characters 0-0
   (not true))
 (check-sat)
+
+(exit)

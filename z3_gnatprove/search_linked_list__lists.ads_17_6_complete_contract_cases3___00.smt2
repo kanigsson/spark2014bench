@@ -791,3 +791,5 @@ Target solver: Z3
                            (= (element l cu) 0)))
                       1 0)))))
 (check-sat)
+
+(exit)

@@ -1374,3 +1374,5 @@ Target solver: Z3
                                                          o1 os_task_mbx_rw)
                                                          o))))))))
 (check-sat)
+
+(exit)

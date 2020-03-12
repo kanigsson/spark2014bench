@@ -3005,3 +3005,5 @@ Target solver: Z3
  ;; File "partition_refinement.ads", line 40, characters 0-0
   (not (<= usf2 (last_index o7))))
 (check-sat)
+
+(exit)

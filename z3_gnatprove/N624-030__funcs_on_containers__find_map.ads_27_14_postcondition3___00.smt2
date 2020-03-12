@@ -2009,3 +2009,5 @@ Target solver: Z3
   (not
   (= (contains find_map__find_all__result (to_rep (select (to_array a) i))) true)))
 (check-sat)
+
+(exit)

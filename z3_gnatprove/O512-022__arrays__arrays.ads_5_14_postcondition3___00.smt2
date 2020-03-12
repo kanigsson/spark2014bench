@@ -381,3 +381,5 @@ Target solver: Z3
  ;; File "arrays.ads", line 4, characters 0-0
   (not (<= (length1 x) arrays__sum__result)))
 (check-sat)
+
+(exit)

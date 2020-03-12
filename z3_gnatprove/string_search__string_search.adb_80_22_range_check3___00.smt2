@@ -626,3 +626,5 @@ Target solver: Z3
  ;; File "string_search.ads", line 56, characters 0-0
   (not (<= (first1 haystack) r52b)))
 (check-sat)
+
+(exit)

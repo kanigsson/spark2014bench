@@ -963,3 +963,5 @@ Target solver: Z3
  ;; File "rec_types.ads", line 13, characters 0-0
   (not (<= (first1 temp___308) i)))
 (check-sat)
+
+(exit)

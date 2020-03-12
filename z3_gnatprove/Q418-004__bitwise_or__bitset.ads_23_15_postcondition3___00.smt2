@@ -259,3 +259,5 @@ Target solver: Z3
  ;; File "bitset.ads", line 18, characters 0-0
   (not (= (bit_test bitset__bit_set__result pos) true)))
 (check-sat)
+
+(exit)

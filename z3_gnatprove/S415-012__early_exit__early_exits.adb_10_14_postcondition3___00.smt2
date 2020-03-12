@@ -1365,3 +1365,5 @@ Target solver: Z3
                                                        (rec__early_exits__two_acc__g
                                                        x__split_fields2)))))))
 (check-sat)
+
+(exit)

@@ -907,3 +907,5 @@ Target solver: Z3
  ;; File "sorters.ads", line 15, characters 0-0
   (not (<= (to_rep (select values4 current2)) (to_rep (select values4 j)))))
 (check-sat)
+
+(exit)

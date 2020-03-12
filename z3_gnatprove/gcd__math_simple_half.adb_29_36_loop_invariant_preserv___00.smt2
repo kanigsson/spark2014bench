@@ -432,3 +432,5 @@ Target solver: Z3
  ;; File "math_simple_half.ads", line 5, characters 0-0
   (not (< 1 c3)))
 (check-sat)
+
+(exit)

@@ -505,3 +505,5 @@ Target solver: Z3
  ;; File "part.ads", line 32, characters 0-0
   (not (<= (first3 p) temp___328)))
 (check-sat)
+
+(exit)

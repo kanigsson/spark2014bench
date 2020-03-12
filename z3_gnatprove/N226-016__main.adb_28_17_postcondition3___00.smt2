@@ -217,3 +217,5 @@ Target solver: Z3
  ;; File "main.adb", line 23, characters 0-0
   (not (not (= id main__with_invariant__result))))
 (check-sat)
+
+(exit)

@@ -345,3 +345,5 @@ Target solver: Z3
  ;; File "search.ads", line 5, characters 0-0
   (not (<= (- 2147483648) (first1 table))))
 (check-sat)
+
+(exit)

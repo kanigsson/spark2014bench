@@ -192,3 +192,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-Q106-022__default_value-493/src/gnatprove/check_default_value__p__t.mlw", line 296, characters 5-8
   (not (dynamic_property first 2147483647 0)))
 (check-sat)
+
+(exit)

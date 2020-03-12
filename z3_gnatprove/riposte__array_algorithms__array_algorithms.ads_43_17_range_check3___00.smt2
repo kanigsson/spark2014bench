@@ -357,3 +357,5 @@ Target solver: Z3
  ;; File "array_algorithms.ads", line 39, characters 0-0
   (not (<= (- 2147483648) (first1 a))))
 (check-sat)
+
+(exit)

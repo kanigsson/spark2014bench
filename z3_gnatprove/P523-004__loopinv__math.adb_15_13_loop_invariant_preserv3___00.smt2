@@ -449,3 +449,5 @@ Target solver: Z3
   (= (to_rep (select v3 k)) (to_rep
                             (select temp___loop_entry_218 (max 1 (- k 1)))))))
 (check-sat)
+
+(exit)

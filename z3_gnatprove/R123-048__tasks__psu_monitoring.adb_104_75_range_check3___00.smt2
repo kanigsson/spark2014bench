@@ -1192,3 +1192,5 @@ Target solver: Z3
  ;; File "psu_monitoring.ads", line 94, characters 0-0
   (not (in_range4 (fp.mul RNE o8 o7))))
 (check-sat)
+
+(exit)

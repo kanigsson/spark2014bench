@@ -1189,3 +1189,5 @@ Target solver: Z3
  ;; File "ghc_sort.adb", line 147, characters 0-0
   (not (< (length o16) (- 2147483647 (length o14)))))
 (check-sat)
+
+(exit)

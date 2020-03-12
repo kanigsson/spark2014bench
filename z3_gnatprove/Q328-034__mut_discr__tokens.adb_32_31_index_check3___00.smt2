@@ -1336,3 +1336,5 @@ Target solver: Z3
  ;; File "tokens.ads", line 19, characters 0-0
   (not (<= (to_rep1 word__first) temp___253)))
 (check-sat)
+
+(exit)

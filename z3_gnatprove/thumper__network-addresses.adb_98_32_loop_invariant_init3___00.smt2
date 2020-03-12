@@ -846,3 +846,5 @@ Target solver: Z3
  ;; File "network-addresses.ads", line 37, characters 0-0
   (not (<= (* 2 (- i 1)) count1)))
 (check-sat)
+
+(exit)

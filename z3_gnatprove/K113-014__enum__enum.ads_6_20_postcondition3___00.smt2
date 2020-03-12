@@ -58,3 +58,5 @@ Target solver: Z3
  ;; File "enum.ads", line 5, characters 0-0
   (not (= enum__sunday__result 6)))
 (check-sat)
+
+(exit)

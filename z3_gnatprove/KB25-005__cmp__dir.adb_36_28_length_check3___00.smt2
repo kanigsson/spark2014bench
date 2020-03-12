@@ -484,3 +484,5 @@ Target solver: Z3
  ;; File "dir.ads", line 3, characters 0-0
   (not (<= 1 (length value))))
 (check-sat)
+
+(exit)

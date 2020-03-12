@@ -2980,3 +2980,5 @@ Target solver: Z3
                     (us_repqtmk3 o8 (us_split_fieldsqtmk3 d__split_fields))
                     c))))
 (check-sat)
+
+(exit)

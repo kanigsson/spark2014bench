@@ -647,3 +647,5 @@ Target solver: Z3
   (not
   (= (bool_eq2 (us_repqtmk2 x__split_fields1 x__attr__tag) (next usf1)) true)))
 (check-sat)
+
+(exit)

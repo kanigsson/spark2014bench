@@ -298,3 +298,5 @@ Target solver: Z3
      (temp_____aggregate_def_218 arr_in 1 4 x 2 1 3
      (to_rep (select an_arr 4))) 1 8) true)))
 (check-sat)
+
+(exit)

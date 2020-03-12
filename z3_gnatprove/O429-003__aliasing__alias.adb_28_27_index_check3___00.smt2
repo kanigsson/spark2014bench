@@ -359,3 +359,5 @@ Target solver: Z3
  ;; File "alias.ads", line 24, characters 0-0
   (not (<= (first1 x) 1)))
 (check-sat)
+
+(exit)

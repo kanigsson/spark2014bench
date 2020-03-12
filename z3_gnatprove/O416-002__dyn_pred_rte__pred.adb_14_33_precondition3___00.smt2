@@ -400,3 +400,5 @@ Target solver: Z3
  ;; File "pred.adb", line 12, characters 0-0
   (not (not (= usf 0))))
 (check-sat)
+
+(exit)

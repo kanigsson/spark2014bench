@@ -346,3 +346,5 @@ Target solver: Z3
  ;; File "split_records.ads", line 22, characters 0-0
   (not (= (distinct 1 0) r__split_discrs)))
 (check-sat)
+
+(exit)

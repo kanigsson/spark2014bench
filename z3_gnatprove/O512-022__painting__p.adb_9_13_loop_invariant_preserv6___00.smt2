@@ -504,3 +504,5 @@ Target solver: Z3
   (not
   (= (bool_eq (select (rec__p__painting__shadow p__split_fields3) j) d) true)))
 (check-sat)
+
+(exit)

@@ -458,3 +458,5 @@ Target solver: Z3
  ;; File "polyorb_hi-messages.ads", line 104, characters 0-0
   (not (<= (first1 m) 4)))
 (check-sat)
+
+(exit)

@@ -690,3 +690,5 @@ Target solver: Z3
  ;; File "subty.ads", line 7, characters 0-0
   (not (in_range o7)))
 (check-sat)
+
+(exit)

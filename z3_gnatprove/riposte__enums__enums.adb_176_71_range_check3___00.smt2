@@ -154,3 +154,5 @@ Target solver: Z3
  ;; File "enums.adb", line 174, characters 0-0
   (not (not (= a 8))))
 (check-sat)
+
+(exit)

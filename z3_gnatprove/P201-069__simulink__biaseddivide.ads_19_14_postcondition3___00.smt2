@@ -167,3 +167,5 @@ Target solver: Z3
   (not
   (fp.eq r1 (fp.div RNE y (fp.sub RNE z (fp #b0 #b10000000001 #b0000000000000000000000000000000000000000000000000000))))))
 (check-sat)
+
+(exit)

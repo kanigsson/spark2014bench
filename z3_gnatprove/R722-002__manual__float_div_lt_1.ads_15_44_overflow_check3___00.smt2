@@ -327,3 +327,5 @@ Target solver: Z3
  ;; File "float_div_lt_1.ads", line 8, characters 0-0
   (not (in_range2 (fxp_div o1 o))))
 (check-sat)
+
+(exit)

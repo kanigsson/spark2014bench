@@ -472,3 +472,5 @@ Target solver: Z3
  ;; File "kmp.ads", line 7, characters 0-0
   (not (= (length kmp__init_next__result) (length p))))
 (check-sat)
+
+(exit)

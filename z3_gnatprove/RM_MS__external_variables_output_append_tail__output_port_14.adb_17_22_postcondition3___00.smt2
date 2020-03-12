@@ -113,3 +113,5 @@ Target solver: Z3
  ;; File "output_port_14.adb", line 14, characters 0-0
   (not (= output_shadow1 output_value)))
 (check-sat)
+
+(exit)

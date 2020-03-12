@@ -407,3 +407,5 @@ Target solver: Z3
  ;; File "list_borrow.adb", line 1, characters 0-0
   (not (= (all_pos temp___208) true)))
 (check-sat)
+
+(exit)

@@ -401,3 +401,5 @@ Target solver: Z3
  ;; File "client_timestamp_maker.ads", line 23, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

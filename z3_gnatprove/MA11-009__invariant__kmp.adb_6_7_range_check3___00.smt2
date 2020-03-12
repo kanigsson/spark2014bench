@@ -321,3 +321,5 @@ Target solver: Z3
  ;; File "kmp.ads", line 7, characters 0-0
   (not (<= (- 2147483648) (first1 p))))
 (check-sat)
+
+(exit)

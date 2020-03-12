@@ -302,3 +302,5 @@ Target solver: Z3
  ;; File "s.ads", line 16, characters 0-0
   (not (= (to_rep (select dest1 j)) (to_rep (select src1 j)))))
 (check-sat)
+
+(exit)

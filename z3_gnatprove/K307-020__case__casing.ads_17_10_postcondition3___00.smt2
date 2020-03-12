@@ -144,3 +144,5 @@ Target solver: Z3
  ;; File "casing.ads", line 15, characters 0-0
   (not (= casing__g__result (ite (= x 0) 0 1))))
 (check-sat)
+
+(exit)

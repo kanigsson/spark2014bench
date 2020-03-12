@@ -354,3 +354,5 @@ Target solver: Z3
   (= (bvadd ((_ zero_extend 24) (to_rep (select xcx5 0))) (bvmul ((_ zero_extend 24) 
   (to_rep (select xcx5 1))) #x00000100)) (bvurem val__ #x00010000))))
 (check-sat)
+
+(exit)

@@ -253,3 +253,5 @@ Target solver: Z3
  ;; File "s.ads", line 7, characters 0-0
   (not (or (not (= found1 true)) (= (to_rep (select table index2)) value))))
 (check-sat)
+
+(exit)

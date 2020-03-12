@@ -649,3 +649,5 @@ Target solver: Z3
  ;; File "formals_arr_split.adb", line 1, characters 0-0
   (not (<= (first1 temp___264) (last1 temp___264))))
 (check-sat)
+
+(exit)

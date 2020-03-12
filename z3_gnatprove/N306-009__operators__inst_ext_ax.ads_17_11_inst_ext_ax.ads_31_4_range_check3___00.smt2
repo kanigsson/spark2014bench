@@ -100,3 +100,5 @@ Target solver: Z3
  ;; File "inst_ext_ax.ads", line 16, characters 0-0
   (not (in_range (+ i1 i2))))
 (check-sat)
+
+(exit)

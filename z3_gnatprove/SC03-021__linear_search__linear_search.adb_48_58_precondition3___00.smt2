@@ -717,3 +717,5 @@ Target solver: Z3
  ;; File "linear_search.adb", line 32, characters 0-0
   (not (<= o7 (length o8))))
 (check-sat)
+
+(exit)

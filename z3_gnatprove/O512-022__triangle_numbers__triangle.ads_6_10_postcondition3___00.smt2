@@ -298,3 +298,5 @@ Target solver: Z3
  ;; File "triangle.ads", line 3, characters 0-0
   (not (= triangle__sum_up_to__result (div1 (* n (+ n 1)) 2))))
 (check-sat)
+
+(exit)

@@ -879,3 +879,5 @@ Target solver: Z3
  ;; File "p_bv.adb", line 1, characters 0-0
   (not (bvule #x00000001 temp___295)))
 (check-sat)
+
+(exit)

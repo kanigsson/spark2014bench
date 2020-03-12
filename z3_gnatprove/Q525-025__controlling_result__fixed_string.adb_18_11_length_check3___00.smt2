@@ -540,3 +540,5 @@ Target solver: Z3
  ;; File "fixed_string.ads", line 45, characters 0-0
   (not (<= (to_rep1 change__first) r5b)))
 (check-sat)
+
+(exit)

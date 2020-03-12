@@ -372,3 +372,5 @@ Target solver: Z3
  ;; File "a-cofuve.ads", line 217, characters 0-0
   (not (in_range3 (- (- 32768) offset))))
 (check-sat)
+
+(exit)

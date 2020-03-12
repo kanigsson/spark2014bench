@@ -202,3 +202,5 @@ Target solver: Z3
  ;; File "user_lemma.ads", line 6, characters 0-0
   (not (= (is_prime n) true)))
 (check-sat)
+
+(exit)

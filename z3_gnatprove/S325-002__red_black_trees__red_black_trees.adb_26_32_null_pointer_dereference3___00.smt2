@@ -462,3 +462,5 @@ Target solver: Z3
   (rec__red_black_trees__tree_cell__left
   (us_split_fields1 (rec__red_black_trees__tree__pointer_value o6))))))
 (check-sat)
+
+(exit)

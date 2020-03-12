@@ -177,3 +177,5 @@ Target solver: Z3
  ;; File "pack.ads", line 16, characters 0-0
   (not (= (+ stash2 pocket2) (+ stash1 pocket1))))
 (check-sat)
+
+(exit)

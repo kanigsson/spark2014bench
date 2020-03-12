@@ -680,3 +680,5 @@ Target solver: Z3
  ;; File "sm_using_case_expression.ads", line 94, characters 0-0
   (not (= (get_state state2) (my_sm (get_state state1) trigger))))
 (check-sat)
+
+(exit)

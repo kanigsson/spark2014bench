@@ -220,3 +220,5 @@ Target solver: Z3
  ;; File "x86.ads", line 18, characters 0-0
   (not (= x86__al__result ((_ extract 7 0) (bvand rax #x00000000000000FF)))))
 (check-sat)
+
+(exit)

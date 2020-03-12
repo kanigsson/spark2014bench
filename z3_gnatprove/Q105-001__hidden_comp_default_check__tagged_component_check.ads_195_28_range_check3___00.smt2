@@ -6129,3 +6129,5 @@ Target solver: Z3
  ;; File "tagged_component_check.ads", line 1, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

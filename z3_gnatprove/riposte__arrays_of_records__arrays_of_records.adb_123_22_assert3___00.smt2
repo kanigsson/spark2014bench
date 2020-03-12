@@ -387,3 +387,5 @@ Target solver: Z3
      (rec__arrays_of_records__basic_record__second_value
      (us_split_fields1 (select a4 i)))) 69)))
 (check-sat)
+
+(exit)

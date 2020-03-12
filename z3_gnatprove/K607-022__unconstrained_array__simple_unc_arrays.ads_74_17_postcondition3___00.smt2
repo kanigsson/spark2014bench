@@ -632,3 +632,5 @@ Target solver: Z3
   (- simple_unc_arrays__search__result1 1)))
   (= (not_in a v 1 (- simple_unc_arrays__search__result 1)) true))))))
 (check-sat)
+
+(exit)

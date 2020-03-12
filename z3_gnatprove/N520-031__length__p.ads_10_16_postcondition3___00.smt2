@@ -381,3 +381,5 @@ Target solver: Z3
                                 (of_array v1 (to_rep v__first)
                                 (to_rep v__last))) temp___index_185)))))))
 (check-sat)
+
+(exit)

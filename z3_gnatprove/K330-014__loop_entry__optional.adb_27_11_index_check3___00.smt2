@@ -920,3 +920,5 @@ Target solver: Z3
  ;; File "optional.adb", line 5, characters 0-0
   (not (<= 1 temp___235)))
 (check-sat)
+
+(exit)

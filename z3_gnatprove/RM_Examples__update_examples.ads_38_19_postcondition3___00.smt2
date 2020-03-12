@@ -332,3 +332,5 @@ Target solver: Z3
                                                            temp___index_320
                                                            temp___index_321))))))))
 (check-sat)
+
+(exit)

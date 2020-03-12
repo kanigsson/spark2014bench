@@ -1585,3 +1585,5 @@ Target solver: Z3
  ;; File "replacement.ads", line 15, characters 0-0
   (not (= (has_element o9 usf1) true)))
 (check-sat)
+
+(exit)

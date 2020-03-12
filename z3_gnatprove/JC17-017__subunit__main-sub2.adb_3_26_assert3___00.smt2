@@ -68,3 +68,5 @@ Target solver: Z3
  ;; File "main.adb", line 17, characters 0-0
   (not (not (= x true))))
 (check-sat)
+
+(exit)

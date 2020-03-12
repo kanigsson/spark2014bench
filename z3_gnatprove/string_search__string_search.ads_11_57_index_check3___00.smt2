@@ -402,3 +402,5 @@ Target solver: Z3
  ;; File "string_search.ads", line 8, characters 0-0
   (not (<= (first1 haystack) o)))
 (check-sat)
+
+(exit)

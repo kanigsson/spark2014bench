@@ -332,3 +332,5 @@ Target solver: Z3
  ;; File "sorters.adb", line 5, characters 0-0
   (not (<= (to_rep values__first) y)))
 (check-sat)
+
+(exit)

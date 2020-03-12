@@ -1262,3 +1262,5 @@ Target solver: Z3
      (select (rec__do_loops__r_array_record__f3 d__split_fields8) i7)))) 
   (to_rep (rec__do_loops__r__f2 (us_split_fields1 (select usf1 i7)))))))
 (check-sat)
+
+(exit)

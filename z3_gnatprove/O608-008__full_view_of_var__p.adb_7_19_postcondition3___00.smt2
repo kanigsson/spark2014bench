@@ -66,3 +66,5 @@ Target solver: Z3
  ;; File "p.adb", line 6, characters 0-0
   (not (not (= p__g_false__result true))))
 (check-sat)
+
+(exit)

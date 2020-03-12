@@ -217,3 +217,5 @@ Target solver: Z3
  ;; File "formal_parameters_illegal.adb", line 18, characters 0-0
   (not (= (to_rep (select arr2 2)) (to_rep (select arr1 2)))))
 (check-sat)
+
+(exit)

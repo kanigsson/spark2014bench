@@ -1916,3 +1916,5 @@ Target solver: Z3
  ;; File "keccak-sponge.adb", line 273, characters 0-0
   (not (= (state_of (us_repqtmk ctx__split_fields14)) 1)))
 (check-sat)
+
+(exit)

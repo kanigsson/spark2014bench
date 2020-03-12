@@ -343,3 +343,5 @@ Target solver: Z3
  ;; File "lcp.ads", line 10, characters 0-0
   (not (<= (first1 a) x)))
 (check-sat)
+
+(exit)

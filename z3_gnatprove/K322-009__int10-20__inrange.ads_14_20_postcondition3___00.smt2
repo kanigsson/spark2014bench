@@ -147,3 +147,5 @@ Target solver: Z3
  ;; File "inrange.ads", line 12, characters 0-0
   (not (= i2 (+ i1 j))))
 (check-sat)
+
+(exit)

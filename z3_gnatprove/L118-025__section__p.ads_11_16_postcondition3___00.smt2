@@ -233,3 +233,5 @@ Target solver: Z3
  ;; File "p.ads", line 9, characters 0-0
   (not (<= (to_rep (get x2 1 2)) 20)))
 (check-sat)
+
+(exit)

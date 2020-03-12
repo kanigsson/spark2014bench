@@ -125,3 +125,5 @@ Target solver: Z3
  ;; File "sm_using_case_expression.ads", line 15, characters 0-0
   (not (= (get_state state1) new_state)))
 (check-sat)
+
+(exit)

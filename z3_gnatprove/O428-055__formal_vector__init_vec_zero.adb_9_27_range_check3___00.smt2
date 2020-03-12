@@ -728,3 +728,5 @@ Target solver: Z3
  ;; File "init_vec_zero.adb", line 3, characters 0-0
   (not (in_range3 j)))
 (check-sat)
+
+(exit)

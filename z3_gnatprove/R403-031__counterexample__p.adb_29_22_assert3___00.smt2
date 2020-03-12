@@ -254,3 +254,5 @@ Target solver: Z3
  ;; File "p.ads", line 19, characters 0-0
   (not (bvule num1 #xFFFF)))
 (check-sat)
+
+(exit)

@@ -590,3 +590,5 @@ Target solver: Z3
   (not (dynamic_predicate
   (of_array (to_array usf) (first1 usf) (last1 usf)))))
 (check-sat)
+
+(exit)

@@ -212,3 +212,5 @@ Target solver: Z3
                                                             (select a 
                                                             k)))))
 (check-sat)
+
+(exit)

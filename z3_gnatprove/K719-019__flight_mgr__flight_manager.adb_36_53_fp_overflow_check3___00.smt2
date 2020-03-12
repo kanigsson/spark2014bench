@@ -351,3 +351,5 @@ Target solver: Z3
  ;; File "flight_manager.ads", line 7, characters 0-0
   (not (fp.isFinite32 o5)))
 (check-sat)
+
+(exit)

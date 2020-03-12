@@ -1922,3 +1922,5 @@ Target solver: Z3
   (not
   (= (is_empty (us_repqtmk o4 (us_split_fields1 stacks__pop__s__compl) o3)) true))))
 (check-sat)
+
+(exit)

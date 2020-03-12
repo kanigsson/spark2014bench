@@ -138,3 +138,5 @@ Target solver: Z3
  ;; File "unref.adb", line 4, characters 0-0
   (not (fp.eq x1 (fp #b0 #b01111111 #b00000000000000000000000))))
 (check-sat)
+
+(exit)

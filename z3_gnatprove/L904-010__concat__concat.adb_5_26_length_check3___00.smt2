@@ -409,3 +409,5 @@ Target solver: Z3
  ;; File "concat.adb", line 1, characters 0-0
   (not (<= 1 10)))
 (check-sat)
+
+(exit)

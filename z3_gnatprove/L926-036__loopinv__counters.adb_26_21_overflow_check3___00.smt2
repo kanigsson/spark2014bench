@@ -445,3 +445,5 @@ Target solver: Z3
  ;; File "counters.ads", line 11, characters 0-0
   (not (in_range (- o6 1))))
 (check-sat)
+
+(exit)

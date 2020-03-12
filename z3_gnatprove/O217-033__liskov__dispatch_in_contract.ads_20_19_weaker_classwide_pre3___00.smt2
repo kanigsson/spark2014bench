@@ -492,3 +492,5 @@ Target solver: Z3
  ;; File "dispatch_in_contract.ads", line 19, characters 0-0
   (not (= (less_than_max (us_repqtmk1 o__split_fields o__attr__tag)) true)))
 (check-sat)
+
+(exit)

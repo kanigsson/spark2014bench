@@ -154,3 +154,5 @@ Target solver: Z3
  ;; File "my_type_invariant_test_init.ads", line 9, characters 0-0
   (not (= bar__split_fields true)))
 (check-sat)
+
+(exit)

@@ -1130,3 +1130,5 @@ Target solver: Z3
  ;; File "string_utilities.ads", line 22, characters 0-0
   (not (dynamic_property1 0 last2 (max o5 o3))))
 (check-sat)
+
+(exit)

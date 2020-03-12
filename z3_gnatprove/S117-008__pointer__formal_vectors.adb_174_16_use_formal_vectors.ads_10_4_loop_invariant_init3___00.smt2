@@ -1426,3 +1426,5 @@ Target solver: Z3
              (rec__use_formal_vectors__my_vect__vector__content
              v__split_fields1))) j1))) (get v_mod j1))))
 (check-sat)
+
+(exit)

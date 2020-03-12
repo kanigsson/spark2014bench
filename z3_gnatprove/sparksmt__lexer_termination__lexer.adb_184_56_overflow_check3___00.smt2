@@ -941,3 +941,5 @@ Target solver: Z3
  ;; File "lexer.adb", line 178, characters 0-0
   (not (in_range1 (+ current_idx 1))))
 (check-sat)
+
+(exit)

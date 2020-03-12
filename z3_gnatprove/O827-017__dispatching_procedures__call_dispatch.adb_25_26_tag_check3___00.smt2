@@ -1867,3 +1867,5 @@ Target solver: Z3
  ;; File "call_dispatch.adb", line 2, characters 0-0
   (not (us_compatible_tags v2__attr__tag us_tag1)))
 (check-sat)
+
+(exit)

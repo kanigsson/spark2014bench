@@ -432,3 +432,5 @@ Target solver: Z3
  ;; File "a.ads", line 13, characters 0-0
   (not (fp.lt (to_rep (select a i)) (to_rep (select a j)))))
 (check-sat)
+
+(exit)

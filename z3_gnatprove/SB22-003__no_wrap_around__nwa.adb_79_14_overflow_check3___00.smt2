@@ -209,3 +209,5 @@ Target solver: Z3
   (not
   (bvult (bvmul ((_ zero_extend 64) x) ((_ zero_extend 64) y)) #x00000000000000010000000000000000)))
 (check-sat)
+
+(exit)

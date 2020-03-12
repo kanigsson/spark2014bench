@@ -488,3 +488,5 @@ Target solver: Z3
  ;; File "tetris_initial.ads", line 168, characters 0-0
   (not (in_range4 a)))
 (check-sat)
+
+(exit)

@@ -352,3 +352,5 @@ Target solver: Z3
   (not
   (not (fp.eq (fp #b0 #b01111111 #b10011110001110111100111) ((_ to_fp 8 24) #x00000000)))))
 (check-sat)
+
+(exit)

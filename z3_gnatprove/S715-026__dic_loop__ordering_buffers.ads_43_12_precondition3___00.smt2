@@ -807,3 +807,5 @@ Target solver: Z3
  ;; File "ordering_buffers.ads", line 38, characters 0-0
   (not (<= (first o5) o4)))
 (check-sat)
+
+(exit)

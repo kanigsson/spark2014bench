@@ -898,3 +898,5 @@ Target solver: Z3
  ;; File "bounded_strings.ads", line 19, characters 0-0
   (not (<= 1 upper_bound)))
 (check-sat)
+
+(exit)

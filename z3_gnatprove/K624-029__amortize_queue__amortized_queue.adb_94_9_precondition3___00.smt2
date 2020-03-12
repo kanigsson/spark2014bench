@@ -1035,3 +1035,5 @@ Target solver: Z3
        (us_split_fields1
        amortized_queue__my_vectors__delete_last__container__compl))))))
 (check-sat)
+
+(exit)

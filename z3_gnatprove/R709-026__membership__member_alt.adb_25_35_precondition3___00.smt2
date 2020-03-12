@@ -417,3 +417,5 @@ Target solver: Z3
  ;; File "member_alt.adb", line 18, characters 0-0
   (not (not (= 2 1))))
 (check-sat)
+
+(exit)

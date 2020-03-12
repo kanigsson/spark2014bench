@@ -499,3 +499,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__DIC-25055/src/gnatprove/containers__container.mlw", line 710, characters 5-8
   (not (= (length1 usf) 0)))
 (check-sat)
+
+(exit)

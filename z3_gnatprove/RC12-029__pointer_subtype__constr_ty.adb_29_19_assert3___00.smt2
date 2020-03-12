@@ -986,3 +986,5 @@ Target solver: Z3
   (and (and (<= 1 temp___224) (<= temp___224 10))
   (not (= (to_rep (select w__pointer_value temp___224)) 0))))))
 (check-sat)
+
+(exit)

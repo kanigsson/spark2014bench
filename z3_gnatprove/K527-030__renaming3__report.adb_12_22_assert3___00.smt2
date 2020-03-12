@@ -107,3 +107,5 @@ Target solver: Z3
  ;; File "report.ads", line 3, characters 0-0
   (not (not (= x1 true))))
 (check-sat)
+
+(exit)

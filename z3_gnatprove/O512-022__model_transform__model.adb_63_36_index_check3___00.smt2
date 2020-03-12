@@ -1513,3 +1513,5 @@ Target solver: Z3
  ;; File "model.ads", line 160, characters 0-0
   (not (<= 0 usf)))
 (check-sat)
+
+(exit)

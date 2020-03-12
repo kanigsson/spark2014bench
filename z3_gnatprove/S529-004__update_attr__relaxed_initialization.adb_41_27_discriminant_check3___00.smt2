@@ -821,3 +821,5 @@ Target solver: Z3
  ;; File "relaxed_initialization.adb", line 22, characters 0-0
   (not (relaxed_initialization__rec__z__pred elem)))
 (check-sat)
+
+(exit)

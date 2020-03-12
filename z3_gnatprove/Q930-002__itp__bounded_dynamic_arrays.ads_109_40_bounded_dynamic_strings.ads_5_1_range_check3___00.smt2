@@ -1036,3 +1036,5 @@ Target solver: Z3
  ;; File "bounded_dynamic_arrays.ads", line 107, characters 0-0
   (not (in_range1 o14)))
 (check-sat)
+
+(exit)

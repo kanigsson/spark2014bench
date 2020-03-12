@@ -791,3 +791,5 @@ Target solver: Z3
  ;; File "allocator.ads", line 41, characters 0-0
   (not (= (is_valid (us_repqtmk allocator__m__model__result) data) true)))
 (check-sat)
+
+(exit)

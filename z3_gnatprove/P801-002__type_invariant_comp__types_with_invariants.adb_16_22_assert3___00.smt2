@@ -399,3 +399,5 @@ Target solver: Z3
  ;; File "types_with_invariants.adb", line 8, characters 0-0
   (not (= (bool_eq (from_integer (to_integer e)) e) true)))
 (check-sat)
+
+(exit)

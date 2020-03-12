@@ -472,3 +472,5 @@ Target solver: Z3
  ;; File "part.ads", line 23, characters 0-0
   (not (<= (first3 p) usf)))
 (check-sat)
+
+(exit)

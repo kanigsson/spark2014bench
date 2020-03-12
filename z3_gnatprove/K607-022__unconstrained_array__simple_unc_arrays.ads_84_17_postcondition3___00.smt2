@@ -702,3 +702,5 @@ Target solver: Z3
                   (us_split_fields1 simple_unc_arrays__bubble_sort__result))) (+ 
           j 1))))))
 (check-sat)
+
+(exit)

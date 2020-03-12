@@ -1039,3 +1039,5 @@ Target solver: Z3
  ;; File "sorted_vectors.ads", line 20, characters 0-0
   (not (<= 1 o9)))
 (check-sat)
+
+(exit)

@@ -306,3 +306,5 @@ Target solver: Z3
                                                                p__pointer_value1)) 
   s))))
 (check-sat)
+
+(exit)

@@ -475,3 +475,5 @@ Target solver: Z3
  ;; File "infoflow.ads", line 111, characters 0-0
   (not (<= (first1 b_v1) i_v11)))
 (check-sat)
+
+(exit)

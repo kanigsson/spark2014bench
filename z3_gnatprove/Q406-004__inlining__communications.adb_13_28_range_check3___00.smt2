@@ -581,3 +581,5 @@ Target solver: Z3
  ;; File "communications.ads", line 14, characters 0-0
   (not (in_range2 (+ o5 1))))
 (check-sat)
+
+(exit)

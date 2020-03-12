@@ -747,3 +747,5 @@ Target solver: Z3
  ;; File "fail.adb", line 32, characters 0-0
   (not (in_range1 o)))
 (check-sat)
+
+(exit)

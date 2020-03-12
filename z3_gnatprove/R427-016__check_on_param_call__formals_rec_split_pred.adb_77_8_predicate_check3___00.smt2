@@ -1126,3 +1126,5 @@ Target solver: Z3
  ;; File "formals_rec_split_pred.adb", line 1, characters 0-0
   (not (dynamic_predicate (us_repqtmk y__split_discrs y__split_fields2))))
 (check-sat)
+
+(exit)

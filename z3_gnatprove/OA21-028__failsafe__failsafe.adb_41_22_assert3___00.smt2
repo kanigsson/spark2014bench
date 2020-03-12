@@ -584,3 +584,5 @@ Target solver: Z3
  ;; File "failsafe.ads", line 54, characters 0-0
   (not (bvuge counter #x31)))
 (check-sat)
+
+(exit)

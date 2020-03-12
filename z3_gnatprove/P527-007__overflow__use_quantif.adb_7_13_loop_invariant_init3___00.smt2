@@ -249,3 +249,5 @@ Target solver: Z3
  ;; File "use_quantif.ads", line 20, characters 0-0
   (not (= (id j) j)))
 (check-sat)
+
+(exit)

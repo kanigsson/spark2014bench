@@ -2357,3 +2357,5 @@ Target solver: Z3
  ;; File "with_default.ads", line 14, characters 0-0
   (not (in_range (ite r26b 1 0))))
 (check-sat)
+
+(exit)

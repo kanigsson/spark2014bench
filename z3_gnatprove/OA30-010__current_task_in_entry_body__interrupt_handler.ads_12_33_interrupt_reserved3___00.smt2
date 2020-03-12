@@ -154,3 +154,5 @@ Target solver: Z3
  ;; File "interrupt_handler.ads", line 9, characters 0-0
   (not (= temp___197 false)))
 (check-sat)
+
+(exit)

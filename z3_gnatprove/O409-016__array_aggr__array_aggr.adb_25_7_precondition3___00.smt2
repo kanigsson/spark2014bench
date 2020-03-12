@@ -542,3 +542,5 @@ Target solver: Z3
  ;; File "array_aggr.ads", line 2, characters 0-0
   (not (<= one 1)))
 (check-sat)
+
+(exit)

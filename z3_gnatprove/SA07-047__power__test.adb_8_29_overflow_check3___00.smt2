@@ -204,3 +204,5 @@ Target solver: Z3
  ;; File "test.ads", line 5, characters 0-0
   (not (in_range (power 2 temp___157))))
 (check-sat)
+
+(exit)

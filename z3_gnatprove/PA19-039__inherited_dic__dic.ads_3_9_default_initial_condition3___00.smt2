@@ -296,3 +296,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA19-039__inherited_dic-25845/src/gnatprove/dic__parent.mlw", line 487, characters 5-8
   (not (= (is_ok usf) true)))
 (check-sat)
+
+(exit)

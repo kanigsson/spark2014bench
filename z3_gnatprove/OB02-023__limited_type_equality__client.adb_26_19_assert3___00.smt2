@@ -605,3 +605,5 @@ Target solver: Z3
  ;; File "client.adb", line 8, characters 0-0
   (not (= (oeq1 c c) true)))
 (check-sat)
+
+(exit)

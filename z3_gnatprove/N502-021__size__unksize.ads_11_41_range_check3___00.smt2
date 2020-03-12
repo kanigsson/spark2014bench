@@ -235,3 +235,5 @@ Target solver: Z3
  ;; File "unksize.ads", line 1, characters 0-0
   (not (in_range value__size)))
 (check-sat)
+
+(exit)

@@ -134,3 +134,5 @@ Target solver: Z3
  ;; File "initial_condition_legal.ads", line 1, characters 0-0
   (not (= var 0)))
 (check-sat)
+
+(exit)

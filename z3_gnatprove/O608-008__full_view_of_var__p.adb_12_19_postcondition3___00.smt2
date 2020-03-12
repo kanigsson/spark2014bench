@@ -73,3 +73,5 @@ Target solver: Z3
  ;; File "p.adb", line 11, characters 0-0
   (not (= y true)))
 (check-sat)
+
+(exit)

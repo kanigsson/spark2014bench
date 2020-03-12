@@ -214,3 +214,5 @@ Target solver: Z3
   (= (test_mem
      (us_repqtmk (us_split_fieldsqtmk x__split_fields) x__attr__tag)) true)))
 (check-sat)
+
+(exit)

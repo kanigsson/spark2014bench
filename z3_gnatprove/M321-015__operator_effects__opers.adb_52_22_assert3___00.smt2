@@ -692,3 +692,5 @@ Target solver: Z3
  ;; File "opers.ads", line 24, characters 0-0
   (not (= (true1R a4) true)))
 (check-sat)
+
+(exit)

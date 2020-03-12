@@ -117,3 +117,5 @@ Target solver: Z3
  ;; File "ap_engaged_implies_modes_on.ads", line 17, characters 0-0
   (not (= or_out1 true)))
 (check-sat)
+
+(exit)

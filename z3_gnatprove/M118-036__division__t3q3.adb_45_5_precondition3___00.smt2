@@ -257,3 +257,5 @@ Target solver: Z3
  ;; File "t3q3.ads", line 4, characters 0-0
   (not (<= p1 (- 2147483647 r1))))
 (check-sat)
+
+(exit)

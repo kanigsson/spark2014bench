@@ -402,3 +402,5 @@ Target solver: Z3
  ;; File "loops_static.adb", line 17, characters 0-0
   (not (<= (first1 a_begins) usf)))
 (check-sat)
+
+(exit)

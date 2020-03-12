@@ -972,3 +972,5 @@ Target solver: Z3
      (rec__bounded_strings__bounded_string__bound
      (us_split_discrs1 bounded_strings__make__result))) upper_bound)))
 (check-sat)
+
+(exit)

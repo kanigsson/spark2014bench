@@ -303,3 +303,5 @@ Target solver: Z3
   (= (bool_eq (rec__equality__sf_record_t__x (us_split_fields1 a)) 0 255
      (rec__equality__sf_record_t__x (us_split_fields1 d)) 0 255) true)))
 (check-sat)
+
+(exit)

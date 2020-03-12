@@ -221,3 +221,5 @@ Target solver: Z3
   (not
   (= x86__ch__result ((_ extract 7 0) (bvurem (bvudiv (bvand rcx #x000000000000FF00) #x0000000000000100) ((_ int2bv 64) 256))))))
 (check-sat)
+
+(exit)

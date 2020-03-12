@@ -654,3 +654,5 @@ Target solver: Z3
   (= (occ (of_array values (to_rep values__first) (to_rep values__last)) f) 
   (occ (of_array (to_array init) (first1 init) (last1 init)) f))))
 (check-sat)
+
+(exit)

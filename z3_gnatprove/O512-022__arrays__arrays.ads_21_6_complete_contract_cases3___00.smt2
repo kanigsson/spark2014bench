@@ -419,3 +419,5 @@ Target solver: Z3
  ;; File "arrays.ads", line 19, characters 0-0
   (not (<= 1 (+ 0 (ite (= usf true) 1 0)))))
 (check-sat)
+
+(exit)

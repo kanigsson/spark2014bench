@@ -905,3 +905,5 @@ Target solver: Z3
  ;; File "simple_unc_arrays.ads", line 18, characters 0-0
   (not (<= (first1 temp___500) usf)))
 (check-sat)
+
+(exit)

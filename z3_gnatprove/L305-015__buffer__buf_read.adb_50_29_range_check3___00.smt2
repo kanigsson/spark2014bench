@@ -422,3 +422,5 @@ Target solver: Z3
  ;; File "buf_read.ads", line 7, characters 0-0
   (not (in_range3 (+ pointer 1))))
 (check-sat)
+
+(exit)

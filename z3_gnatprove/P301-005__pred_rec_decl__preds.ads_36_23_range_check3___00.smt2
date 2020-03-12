@@ -143,3 +143,5 @@ Target solver: Z3
  ;; File "preds.ads", line 39, characters 0-0
   (not (in_range 0)))
 (check-sat)
+
+(exit)

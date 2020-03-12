@@ -1106,3 +1106,5 @@ Target solver: Z3
  ;; File "evoting.ads", line 51, characters 0-0
   (not (<= (first1 temp___339) (last1 temp___339))))
 (check-sat)
+
+(exit)

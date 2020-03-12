@@ -431,3 +431,5 @@ Target solver: Z3
  ;; File "private_a.adb", line 38, characters 0-0
   (not (< 0 (get_length o))))
 (check-sat)
+
+(exit)

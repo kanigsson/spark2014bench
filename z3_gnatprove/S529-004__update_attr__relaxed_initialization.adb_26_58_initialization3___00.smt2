@@ -853,3 +853,5 @@ Target solver: Z3
  ;; File "relaxed_initialization.adb", line 22, characters 0-0
   (not (= (attr__init2 o2) true)))
 (check-sat)
+
+(exit)

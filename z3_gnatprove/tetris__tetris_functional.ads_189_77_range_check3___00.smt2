@@ -125,3 +125,5 @@ Target solver: Z3
  ;; File "tetris_functional.ads", line 184, characters 0-0
   (not (not (= d 3))))
 (check-sat)
+
+(exit)

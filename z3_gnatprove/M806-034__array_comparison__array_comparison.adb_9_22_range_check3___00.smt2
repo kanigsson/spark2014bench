@@ -589,3 +589,5 @@ Target solver: Z3
  ;; File "array_comparison.ads", line 5, characters 0-0
   (not (<= (to_rep x__first) 1)))
 (check-sat)
+
+(exit)

@@ -567,3 +567,5 @@ Target solver: Z3
  ;; File "lib-mlm-g_fum_cm-g_q.ads", line 6, characters 0-0
   (not (<= 1 1)))
 (check-sat)
+
+(exit)

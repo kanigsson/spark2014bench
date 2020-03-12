@@ -482,3 +482,5 @@ Target solver: Z3
  ;; File "variants.ads", line 16, characters 0-0
   (not (in_range2 1 (us_split_discrs1 temp___213))))
 (check-sat)
+
+(exit)

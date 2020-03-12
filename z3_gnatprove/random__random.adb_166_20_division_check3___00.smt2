@@ -525,3 +525,5 @@ Target solver: Z3
  ;; File "random.ads", line 51, characters 0-0
   (not (not (= o2 #x00000000))))
 (check-sat)
+
+(exit)

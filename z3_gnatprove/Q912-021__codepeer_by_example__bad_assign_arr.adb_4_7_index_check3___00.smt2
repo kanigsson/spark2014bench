@@ -192,3 +192,5 @@ Target solver: Z3
  ;; File "bad_assign_arr.adb", line 2, characters 0-0
   (not (<= 1 y)))
 (check-sat)
+
+(exit)

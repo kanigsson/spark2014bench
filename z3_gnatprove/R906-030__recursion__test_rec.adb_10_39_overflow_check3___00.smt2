@@ -445,3 +445,5 @@ Target solver: Z3
  ;; File "test_rec.adb", line 7, characters 0-0
   (not (in_range (* 100 o2))))
 (check-sat)
+
+(exit)

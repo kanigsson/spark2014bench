@@ -311,3 +311,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__default_checks_on_private-25155/src/gnatprove/private_types__p3__t.mlw", line 477, characters 5-8
   (not (in_range o)))
 (check-sat)
+
+(exit)

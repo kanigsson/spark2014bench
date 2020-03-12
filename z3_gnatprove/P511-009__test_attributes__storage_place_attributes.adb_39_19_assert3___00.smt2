@@ -708,3 +708,5 @@ Target solver: Z3
   (not
   (= storage_place_attributes__r2__d3__first__bit storage_place_attributes__r2__d3__first__bit2)))
 (check-sat)
+
+(exit)

@@ -738,3 +738,5 @@ Target solver: Z3
   (= (bool_eq1 (rec__do_loops__r_array_record__f4 d__split_fields2) 1 100
      (rec__do_loops__r_array_record__f4 d__split_fields) 1 100) true)))
 (check-sat)
+
+(exit)

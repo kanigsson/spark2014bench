@@ -826,3 +826,5 @@ Target solver: Z3
  ;; File "a-cfinve.ads", line 718, characters 0-0
   (not (<= o3 (last o5))))
 (check-sat)
+
+(exit)

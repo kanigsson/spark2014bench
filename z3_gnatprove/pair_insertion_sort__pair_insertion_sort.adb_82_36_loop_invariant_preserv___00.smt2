@@ -867,3 +867,5 @@ Target solver: Z3
   (= (is_perm (of_array (to_array b) (first1 b) (last1 b))
      (of_array a4 (to_rep a__first) (to_rep a__last))) true)))
 (check-sat)
+
+(exit)

@@ -478,3 +478,5 @@ Target solver: Z3
  ;; File "task_types.ads", line 5, characters 0-0
   (not (in_range 1)))
 (check-sat)
+
+(exit)

@@ -168,3 +168,5 @@ Target solver: Z3
  ;; File "arrays.adb", line 197, characters 0-0
   (not (<= 0 0)))
 (check-sat)
+
+(exit)

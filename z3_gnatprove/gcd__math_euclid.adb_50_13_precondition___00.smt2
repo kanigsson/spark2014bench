@@ -332,3 +332,5 @@ Target solver: Z3
  ;; File "math_euclid.adb", line 33, characters 0-0
   (not (not (= (divides o6 o7) true))))
 (check-sat)
+
+(exit)

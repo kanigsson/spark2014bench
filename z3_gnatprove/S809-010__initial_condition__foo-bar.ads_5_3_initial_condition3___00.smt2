@@ -76,3 +76,5 @@ Target solver: Z3
  ;; File "foo-bar.ads", line 3, characters 0-0
   (not (= (foobar Tuple0) true)))
 (check-sat)
+
+(exit)

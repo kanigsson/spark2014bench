@@ -394,3 +394,5 @@ Target solver: Z3
  ;; File "cast_array.ads", line 9, characters 0-0
   (not (= (to_rep1 (select result__1 k)) (to_rep (select input_array k)))))
 (check-sat)
+
+(exit)

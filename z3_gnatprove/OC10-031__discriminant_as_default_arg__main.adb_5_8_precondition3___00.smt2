@@ -278,3 +278,5 @@ Target solver: Z3
        (rec__p__pt__d
        (us_split_discrs1 (to_base (us_repqtmk1 po__split_discrs)))))))))
 (check-sat)
+
+(exit)

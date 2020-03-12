@@ -586,3 +586,5 @@ Target solver: Z3
  ;; File "subtype_check.adb", line 27, characters 0-0
   (not (dynamic_property 1 2147483647 (first1 usf) (last1 usf))))
 (check-sat)
+
+(exit)

@@ -523,3 +523,5 @@ Target solver: Z3
  ;; File "const.ads", line 39, characters 0-0
   (not (= (to_rep (rec__const__te__y (us_split_fields1 g))) 1)))
 (check-sat)
+
+(exit)

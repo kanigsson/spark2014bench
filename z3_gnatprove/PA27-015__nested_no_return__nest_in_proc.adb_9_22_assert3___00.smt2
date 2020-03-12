@@ -60,3 +60,5 @@ Target solver: Z3
  ;; File "nest_in_proc.adb", line 5, characters 0-0
   (not (= x true)))
 (check-sat)
+
+(exit)

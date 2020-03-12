@@ -316,3 +316,5 @@ Target solver: Z3
  ;; File "fxp_div_int_res.adb", line 1, characters 0-0
   (not (= (div1 d11 d21) 2)))
 (check-sat)
+
+(exit)

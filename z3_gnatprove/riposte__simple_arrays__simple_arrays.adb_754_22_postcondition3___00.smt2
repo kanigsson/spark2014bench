@@ -253,3 +253,5 @@ Target solver: Z3
  ;; File "simple_arrays.adb", line 750, characters 0-0
   (not (not (= (bool_eq a3 0 2 a1 0 2) true))))
 (check-sat)
+
+(exit)

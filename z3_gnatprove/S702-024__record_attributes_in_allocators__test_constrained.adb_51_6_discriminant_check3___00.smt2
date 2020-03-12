@@ -561,3 +561,5 @@ Target solver: Z3
  ;; File "test_constrained.adb", line 1, characters 0-0
   (not (= (distinct 0 0) v__split_discrs)))
 (check-sat)
+
+(exit)

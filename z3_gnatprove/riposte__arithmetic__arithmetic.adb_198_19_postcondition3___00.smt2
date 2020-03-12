@@ -179,3 +179,5 @@ Target solver: Z3
  ;; File "arithmetic.adb", line 197, characters 0-0
   (not (= arithmetic__test_mod_a__result n)))
 (check-sat)
+
+(exit)

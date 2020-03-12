@@ -436,3 +436,5 @@ Target solver: Z3
  ;; File "integer_fixed.ads", line 20, characters 0-0
   (not (in_range3 (of_int y32))))
 (check-sat)
+
+(exit)

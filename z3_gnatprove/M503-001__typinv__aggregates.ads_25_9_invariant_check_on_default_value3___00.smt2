@@ -306,3 +306,5 @@ Target solver: Z3
  ;; File "aggregates.ads", line 1, characters 0-0
   (not (type_invariant (to_rep (select usf temp___194)))))
 (check-sat)
+
+(exit)

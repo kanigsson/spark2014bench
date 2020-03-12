@@ -474,3 +474,5 @@ Target solver: Z3
  ;; File "dynamic_in_post.adb", line 10, characters 0-0
   (not (= a b)))
 (check-sat)
+
+(exit)

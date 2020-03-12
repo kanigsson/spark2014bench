@@ -501,3 +501,5 @@ Target solver: Z3
   (not
   (= (is_max2 (us_repqtmk (us_split_fields1 unit1__bump__x__compl) o)) true))))
 (check-sat)
+
+(exit)

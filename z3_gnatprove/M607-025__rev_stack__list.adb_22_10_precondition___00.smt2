@@ -1391,3 +1391,5 @@ Target solver: Z3
  ;; File "list.ads", line 11, characters 0-0
   (not (not (= (is_full (us_repqtmk1 s__split_fields)) true))))
 (check-sat)
+
+(exit)

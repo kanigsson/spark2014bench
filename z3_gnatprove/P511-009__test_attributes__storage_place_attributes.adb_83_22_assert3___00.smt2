@@ -176,3 +176,5 @@ Target solver: Z3
  ;; File "storage_place_attributes.adb", line 81, characters 0-0
   (not (<= 0 storage_place_attributes__r3__e1__first__bit)))
 (check-sat)
+
+(exit)

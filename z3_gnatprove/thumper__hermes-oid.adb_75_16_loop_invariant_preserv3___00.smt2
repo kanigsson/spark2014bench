@@ -1081,3 +1081,5 @@ Target solver: Z3
          (rec__ada___hermes__oid__object_identifier__other_component_count
          (us_split_fields1 identifier))))))
 (check-sat)
+
+(exit)

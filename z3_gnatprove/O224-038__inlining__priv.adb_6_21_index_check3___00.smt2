@@ -471,3 +471,5 @@ Target solver: Z3
  ;; File "priv.adb", line 3, characters 0-0
   (not (<= (first1 p__split_fields) i)))
 (check-sat)
+
+(exit)

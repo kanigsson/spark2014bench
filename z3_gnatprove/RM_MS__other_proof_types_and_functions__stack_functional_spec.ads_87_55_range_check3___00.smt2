@@ -717,3 +717,5 @@ Target solver: Z3
  ;; File "stack_functional_spec.ads", line 81, characters 0-0
   (not (in_range2 o11)))
 (check-sat)
+
+(exit)

@@ -339,3 +339,5 @@ Target solver: Z3
  ;; File "binary_trees.adb", line 10, characters 0-0
   (not (= (contains s j) true)))
 (check-sat)
+
+(exit)

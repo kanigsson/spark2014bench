@@ -439,3 +439,5 @@ Target solver: Z3
  ;; File "counter_example.adb", line 3, characters 0-0
   (not (<= (first1 num_item_per_category) cat)))
 (check-sat)
+
+(exit)

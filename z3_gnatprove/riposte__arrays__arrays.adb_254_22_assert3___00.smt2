@@ -265,3 +265,5 @@ Target solver: Z3
  ;; File "arrays.adb", line 248, characters 0-0
   (not (= (bool_eq a1 1 1000 (random_array 5) 1 1000) true)))
 (check-sat)
+
+(exit)

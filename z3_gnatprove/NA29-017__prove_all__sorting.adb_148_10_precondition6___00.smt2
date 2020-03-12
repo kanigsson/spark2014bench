@@ -703,3 +703,5 @@ Target solver: Z3
  ;; File "sorting.ads", line 17, characters 0-0
   (not (<= (+ (+ o20 l2) k3) (+ (to_rep o23) 1))))
 (check-sat)
+
+(exit)

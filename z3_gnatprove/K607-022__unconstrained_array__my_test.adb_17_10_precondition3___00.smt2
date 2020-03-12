@@ -1852,3 +1852,5 @@ Target solver: Z3
  ;; File "my_test.adb", line 3, characters 0-0
   (not (= (same_range o11 o10) true)))
 (check-sat)
+
+(exit)

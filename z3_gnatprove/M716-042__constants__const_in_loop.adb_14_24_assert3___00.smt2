@@ -240,3 +240,5 @@ Target solver: Z3
  ;; File "const_in_loop.adb", line 1, characters 0-0
   (not (= v11 v21)))
 (check-sat)
+
+(exit)

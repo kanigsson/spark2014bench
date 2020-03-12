@@ -340,3 +340,5 @@ Target solver: Z3
  ;; File "unconstr.adb", line 8, characters 0-0
   (not (= (to_rep1 (select a1 0)) 1)))
 (check-sat)
+
+(exit)

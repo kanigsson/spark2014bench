@@ -672,3 +672,5 @@ Target solver: Z3
  ;; File "test_rec.adb", line 32, characters 0-0
   (not (<= (sum (of_array m1 (to_rep m__first) (to_rep m__last))) s)))
 (check-sat)
+
+(exit)

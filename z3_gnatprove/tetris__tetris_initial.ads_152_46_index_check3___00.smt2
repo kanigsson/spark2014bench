@@ -1930,3 +1930,5 @@ Target solver: Z3
  ;; File "tetris_initial.ads", line 141, characters 0-0
   (not (<= 3 temp___746)))
 (check-sat)
+
+(exit)

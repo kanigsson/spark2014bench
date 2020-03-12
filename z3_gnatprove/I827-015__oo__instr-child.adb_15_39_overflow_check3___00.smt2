@@ -1126,3 +1126,5 @@ Target solver: Z3
  ;; File "instr-child.ads", line 8, characters 0-0
   (not (in_range o1)))
 (check-sat)
+
+(exit)

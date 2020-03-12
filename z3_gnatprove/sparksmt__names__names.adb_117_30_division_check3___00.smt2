@@ -1923,3 +1923,5 @@ Target solver: Z3
  ;; File "names.ads", line 44, characters 0-0
   (not (not (= #x00000100 #x00000000))))
 (check-sat)
+
+(exit)

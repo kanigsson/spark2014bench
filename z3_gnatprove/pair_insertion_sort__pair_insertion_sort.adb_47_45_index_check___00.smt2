@@ -646,3 +646,5 @@ Target solver: Z3
  ;; File "pair_insertion_sort.adb", line 4, characters 0-0
   (not (<= (first1 init) y)))
 (check-sat)
+
+(exit)

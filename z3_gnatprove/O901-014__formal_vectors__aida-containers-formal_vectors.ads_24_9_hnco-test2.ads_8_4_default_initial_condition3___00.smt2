@@ -722,3 +722,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-O901-014__formal_vectors-11035/src/gnatprove/ada___hnco__test2__v_type_owner__vector_type.mlw", line 1524, characters 5-8
   (not (= (is_empty usf) true)))
 (check-sat)
+
+(exit)

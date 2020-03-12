@@ -419,3 +419,5 @@ Target solver: Z3
  ;; File "split_records.ads", line 1, characters 0-0
   (not (in_range (ite usf 1 0))))
 (check-sat)
+
+(exit)

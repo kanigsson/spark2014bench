@@ -937,3 +937,5 @@ Target solver: Z3
   (not (rec__rec_types__test1__tree_array_access__pointer_value__pred
   temp___309)))
 (check-sat)
+
+(exit)

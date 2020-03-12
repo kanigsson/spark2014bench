@@ -521,3 +521,5 @@ Target solver: Z3
  ;; File "ints.ads", line 15, characters 0-0
   (not (in_range (- o 10))))
 (check-sat)
+
+(exit)

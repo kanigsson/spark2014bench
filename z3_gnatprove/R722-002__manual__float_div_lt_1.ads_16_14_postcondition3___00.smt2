@@ -323,3 +323,5 @@ Target solver: Z3
  ;; File "float_div_lt_1.ads", line 8, characters 0-0
   (not (< quotient 1073741824)))
 (check-sat)
+
+(exit)

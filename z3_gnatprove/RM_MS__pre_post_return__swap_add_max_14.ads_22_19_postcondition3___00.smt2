@@ -206,3 +206,5 @@ Target solver: Z3
  ;; File "swap_add_max_14.ads", line 20, characters 0-0
   (not (= swap_add_max_14__divide__result (div1 x y))))
 (check-sat)
+
+(exit)

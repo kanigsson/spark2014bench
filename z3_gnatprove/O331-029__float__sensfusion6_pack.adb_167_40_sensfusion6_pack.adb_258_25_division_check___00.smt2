@@ -894,3 +894,5 @@ Target solver: Z3
  ;; File "sensfusion6_pack.ads", line 17, characters 0-0
   (not (not (fp.isZero (fp #b0 #b10000110 #b01101000000000000000000)))))
 (check-sat)
+
+(exit)

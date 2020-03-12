@@ -383,3 +383,5 @@ Target solver: Z3
  ;; File "binary_trees.adb", line 10, characters 0-0
   (not (= (length s2) (- i2 1))))
 (check-sat)
+
+(exit)

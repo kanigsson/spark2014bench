@@ -522,3 +522,5 @@ Target solver: Z3
  ;; File "with_default.ads", line 18, characters 0-0
   (not (<= 0 c)))
 (check-sat)
+
+(exit)

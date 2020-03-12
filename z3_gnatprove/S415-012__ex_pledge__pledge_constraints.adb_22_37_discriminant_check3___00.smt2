@@ -1094,3 +1094,5 @@ Target solver: Z3
           (rec__pledge_constraints__int_arr_acc__pointer_value
           (rec__pledge_constraints__two_arrays__a1 x__split_fields1))) 1))))
 (check-sat)
+
+(exit)

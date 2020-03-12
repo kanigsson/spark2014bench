@@ -1088,3 +1088,5 @@ Target solver: Z3
  ;; File "evoting.ads", line 51, characters 0-0
   (not (<= 0 usf1)))
 (check-sat)
+
+(exit)

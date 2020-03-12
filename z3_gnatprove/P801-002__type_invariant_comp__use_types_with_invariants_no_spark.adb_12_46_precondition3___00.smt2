@@ -195,3 +195,5 @@ Target solver: Z3
  ;; File "use_types_with_invariants_no_spark.ads", line 13, characters 0-0
   (not (< (- 2147483648) o)))
 (check-sat)
+
+(exit)

@@ -344,3 +344,5 @@ Target solver: Z3
  ;; File "test.ads", line 11, characters 0-0
   (not (not (= context__attr__constrained true))))
 (check-sat)
+
+(exit)

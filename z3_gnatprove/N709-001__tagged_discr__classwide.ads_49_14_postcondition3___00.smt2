@@ -869,3 +869,5 @@ Target solver: Z3
  ;; File "classwide.ads", line 48, characters 0-0
   (not (= (c_is_zero (us_repqtmk v__split_fields1 v__attr__tag)) true)))
 (check-sat)
+
+(exit)

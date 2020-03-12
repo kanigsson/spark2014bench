@@ -147,3 +147,5 @@ Target solver: Z3
  ;; File "full.ads", line 13, characters 0-0
   (not (< 0 (id z1))))
 (check-sat)
+
+(exit)

@@ -899,3 +899,5 @@ Target solver: Z3
   (= result_index3 (+ (+ (* (- index1 (first1 array1)) (length array2)) (- 
   index22 (first1 array2))) 1))))
 (check-sat)
+
+(exit)

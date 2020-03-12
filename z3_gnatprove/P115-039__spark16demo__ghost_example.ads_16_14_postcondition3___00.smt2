@@ -116,3 +116,5 @@ Target solver: Z3
  ;; File "ghost_example.ads", line 15, characters 0-0
   (not (= (cur_state state1) 0)))
 (check-sat)
+
+(exit)

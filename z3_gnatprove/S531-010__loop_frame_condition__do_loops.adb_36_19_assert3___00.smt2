@@ -1334,3 +1334,5 @@ Target solver: Z3
  ;; File "do_loops.adb", line 1, characters 0-0
   (not (= (last1 a__pointer_value1) 100)))
 (check-sat)
+
+(exit)

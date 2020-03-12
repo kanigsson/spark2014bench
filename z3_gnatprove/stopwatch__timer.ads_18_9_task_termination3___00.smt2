@@ -270,3 +270,5 @@ Target solver: Z3
  ;; File "timer.ads", line 18, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

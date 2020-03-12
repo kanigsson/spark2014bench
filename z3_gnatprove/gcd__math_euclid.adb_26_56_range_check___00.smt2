@@ -218,3 +218,5 @@ Target solver: Z3
  ;; File "math_euclid.adb", line 23, characters 0-0
   (not (in_range (mod2 a o3))))
 (check-sat)
+
+(exit)

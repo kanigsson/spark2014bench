@@ -355,3 +355,5 @@ Target solver: Z3
   (not
   (= (to_rep (select dest3 j)) (to_rep (select temp___loop_entry_221 j)))))
 (check-sat)
+
+(exit)

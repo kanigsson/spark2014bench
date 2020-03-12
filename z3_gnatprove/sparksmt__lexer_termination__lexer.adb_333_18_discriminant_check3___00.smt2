@@ -685,3 +685,5 @@ Target solver: Z3
  ;; File "lexer.adb", line 319, characters 0-0
   (not (= o2 t__split_discrs)))
 (check-sat)
+
+(exit)

@@ -526,3 +526,5 @@ Target solver: Z3
  ;; File "conversion_fixed.ads", line 8, characters 0-0
   (not (= y21 50)))
 (check-sat)
+
+(exit)

@@ -621,3 +621,5 @@ Target solver: Z3
      (temp_____aggregate_def_263 (temp_____aggregate_def_268 one 2)
      (temp_____aggregate_def_273 one 2)) 1 2) true)))
 (check-sat)
+
+(exit)

@@ -992,3 +992,5 @@ Target solver: Z3
  ;; File "main.adb", line 5, characters 0-0
   (not (not (= (is_max (us_repqtmk x1__split_fields2 x1__attr__tag)) true))))
 (check-sat)
+
+(exit)

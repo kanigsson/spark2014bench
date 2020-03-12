@@ -370,3 +370,5 @@ Target solver: Z3
   (fp.leq (fp #b0 #b01111110 #b11001100110011001100110) ((_ to_fp_unsigned 8 24) RNE 
   x))))
 (check-sat)
+
+(exit)

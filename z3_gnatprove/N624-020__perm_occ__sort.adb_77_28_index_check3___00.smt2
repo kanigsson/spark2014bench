@@ -463,3 +463,5 @@ Target solver: Z3
  ;; File "sort.adb", line 59, characters 0-0
   (not (<= (first1 values) min2)))
 (check-sat)
+
+(exit)

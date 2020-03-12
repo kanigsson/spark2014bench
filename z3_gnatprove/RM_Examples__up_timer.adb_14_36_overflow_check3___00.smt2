@@ -228,3 +228,5 @@ Target solver: Z3
  ;; File "up_timer.ads", line 8, characters 0-0
   (not (in_range2 (+ o 1))))
 (check-sat)
+
+(exit)

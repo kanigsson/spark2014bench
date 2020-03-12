@@ -223,3 +223,5 @@ Target solver: Z3
  ;; File "types_with_inv.ads", line 1, characters 0-0
   (not (type_invariant usf1)))
 (check-sat)
+
+(exit)

@@ -670,3 +670,5 @@ Target solver: Z3
  ;; File "communication.ads", line 17, characters 0-0
   (not (<= (first1 temp___269) o7)))
 (check-sat)
+
+(exit)

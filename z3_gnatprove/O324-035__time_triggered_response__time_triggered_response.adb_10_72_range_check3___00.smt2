@@ -234,3 +234,5 @@ Target solver: Z3
  ;; File "time_triggered_response.ads", line 14, characters 0-0
   (not (in_range2 (min 50 (- time_idle 1)))))
 (check-sat)
+
+(exit)

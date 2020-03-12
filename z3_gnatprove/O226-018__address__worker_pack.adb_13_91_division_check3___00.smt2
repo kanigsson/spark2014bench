@@ -497,3 +497,5 @@ Target solver: Z3
  ;; File "worker_pack.ads", line 23, characters 0-0
   (not (not (= 8 0))))
 (check-sat)
+
+(exit)

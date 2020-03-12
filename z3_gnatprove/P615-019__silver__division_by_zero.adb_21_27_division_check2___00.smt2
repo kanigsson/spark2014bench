@@ -208,3 +208,5 @@ Target solver: Z3
  ;; File "division_by_zero.adb", line 18, characters 0-0
   (not (not (= y #x00000000))))
 (check-sat)
+
+(exit)

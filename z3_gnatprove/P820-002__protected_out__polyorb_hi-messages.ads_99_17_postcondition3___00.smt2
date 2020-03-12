@@ -788,3 +788,5 @@ Target solver: Z3
  ;; File "polyorb_hi-messages.ads", line 97, characters 0-0
   (not (= (length1 ada___polyorb_hi__messages__payload__result) (length m))))
 (check-sat)
+
+(exit)

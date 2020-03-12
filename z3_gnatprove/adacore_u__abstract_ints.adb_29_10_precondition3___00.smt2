@@ -693,3 +693,5 @@ Target solver: Z3
  ;; File "abstract_ints.ads", line 15, characters 0-0
   (not (= (small1 o (us_repqtmk arg__split_fields o)) true)))
 (check-sat)
+
+(exit)

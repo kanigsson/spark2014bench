@@ -844,3 +844,5 @@ Target solver: Z3
  ;; File "simple_unc_arrays.adb", line 135, characters 0-0
   (not (or (= o3 0) (<= left2 o3))))
 (check-sat)
+
+(exit)

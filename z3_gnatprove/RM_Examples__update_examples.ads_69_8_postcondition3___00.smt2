@@ -840,3 +840,5 @@ Target solver: Z3
      (rec__update_examples__nested_rec__d (us_split_fields3 (select na1 1)))
      2 2 0)))) (select na1 temp___index_378))))) true)))
 (check-sat)
+
+(exit)

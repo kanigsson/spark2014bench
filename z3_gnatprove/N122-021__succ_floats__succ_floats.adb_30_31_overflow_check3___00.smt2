@@ -281,3 +281,5 @@ Target solver: Z3
  ;; File "succ_floats.adb", line 1, characters 0-0
   (not (not (= x6 (fp #b0 #b11111110 #b11111111111111111111111)))))
 (check-sat)
+
+(exit)

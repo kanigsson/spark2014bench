@@ -134,3 +134,5 @@ Target solver: Z3
  ;; File "repro.ads", line 1, characters 0-0
   (not (= (invariant__ b a) true)))
 (check-sat)
+
+(exit)

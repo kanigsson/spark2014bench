@@ -1100,3 +1100,5 @@ Target solver: Z3
   (= (to_rep (rec__subtype_check__r__d (us_split_discrs1 y__pointer_value))) 
   (id 10))))
 (check-sat)
+
+(exit)

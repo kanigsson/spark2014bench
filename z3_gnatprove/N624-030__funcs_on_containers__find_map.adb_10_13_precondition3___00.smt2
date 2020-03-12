@@ -1857,3 +1857,5 @@ Target solver: Z3
   (< (length (us_repqtmk o5 (us_split_fieldsqtmk result____split_fields1))) 
   (to_rep2 (rec__find_map__index_maps__map__capacity o5)))))
 (check-sat)
+
+(exit)

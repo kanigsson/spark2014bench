@@ -413,3 +413,5 @@ Target solver: Z3
  ;; File "f.adb", line 1, characters 0-0
   (not (<= 0 f__result)))
 (check-sat)
+
+(exit)

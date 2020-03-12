@@ -176,3 +176,5 @@ Target solver: Z3
  ;; File "p.ads", line 5, characters 0-0
   (not (= p__f__result 17)))
 (check-sat)
+
+(exit)

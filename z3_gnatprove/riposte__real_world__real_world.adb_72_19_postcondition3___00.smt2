@@ -138,3 +138,5 @@ Target solver: Z3
  ;; File "real_world.adb", line 63, characters 0-0
   (not (= real_world__k616_030_b__result true)))
 (check-sat)
+
+(exit)

@@ -296,3 +296,5 @@ Target solver: Z3
  ;; File "queen.ads", line 34, characters 0-0
   (not (= (consistent b2 8) true)))
 (check-sat)
+
+(exit)

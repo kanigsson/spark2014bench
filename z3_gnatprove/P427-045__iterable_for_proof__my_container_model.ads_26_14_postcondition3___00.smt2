@@ -368,3 +368,5 @@ Target solver: Z3
  ;; File "my_container_model.ads", line 25, characters 0-0
   (not (= (valid e) true)))
 (check-sat)
+
+(exit)

@@ -298,3 +298,5 @@ Target solver: Z3
  ;; File "complex_arrays.adb", line 42, characters 0-0
   (not (= (to_rep (select (select a1 i) j)) 17)))
 (check-sat)
+
+(exit)

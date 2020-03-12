@@ -474,3 +474,5 @@ Target solver: Z3
   (not
   (= (to_rep1 (select (to_array a) j)) (to_rep1 (select (to_array b) j)))))
 (check-sat)
+
+(exit)

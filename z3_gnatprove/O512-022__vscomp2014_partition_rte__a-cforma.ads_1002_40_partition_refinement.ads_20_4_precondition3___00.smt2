@@ -879,3 +879,5 @@ Target solver: Z3
  ;; File "a-cforma.ads", line 999, characters 0-0
   (not (not (= (is_empty container) true))))
 (check-sat)
+
+(exit)

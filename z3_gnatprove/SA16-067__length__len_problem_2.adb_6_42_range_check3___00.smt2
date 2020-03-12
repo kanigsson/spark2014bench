@@ -409,3 +409,5 @@ Target solver: Z3
  ;; File "len_problem_2.adb", line 6, characters 0-0
   (not (uint_in_range (length s))))
 (check-sat)
+
+(exit)

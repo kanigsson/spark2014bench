@@ -243,3 +243,5 @@ Target solver: Z3
  ;; File "safety_pack.ads", line 10, characters 0-0
   (not (fp.eq safety_pack__dead_band__result (fp.add RNE value threshold))))
 (check-sat)
+
+(exit)

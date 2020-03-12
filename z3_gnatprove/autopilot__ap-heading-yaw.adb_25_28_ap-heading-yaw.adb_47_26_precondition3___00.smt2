@@ -445,3 +445,5 @@ Target solver: Z3
  ;; File "ap-heading-yaw.ads", line 7, characters 0-0
   (not (< 0 20)))
 (check-sat)
+
+(exit)

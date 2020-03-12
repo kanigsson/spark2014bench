@@ -557,3 +557,5 @@ Target solver: Z3
                                                        memory)) (bvmul ((_ zero_extend 32) 
   (readmem32 (bvadd addr #x0000000000000004) memory)) #x0000000100000000)))))
 (check-sat)
+
+(exit)

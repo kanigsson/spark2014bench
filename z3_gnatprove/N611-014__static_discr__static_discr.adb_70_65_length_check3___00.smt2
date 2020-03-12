@@ -1678,3 +1678,5 @@ Target solver: Z3
  ;; File "static_discr.ads", line 31, characters 0-0
   (not (<= 1 (last1 a))))
 (check-sat)
+
+(exit)

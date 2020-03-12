@@ -264,3 +264,5 @@ Target solver: Z3
  ;; File "spark-arithmetic_lemmas.ads", line 115, characters 0-0
   (not (not (= scale_denom 0))))
 (check-sat)
+
+(exit)

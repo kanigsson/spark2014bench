@@ -254,3 +254,5 @@ Target solver: Z3
   (= inline_for_proof__get2__result (ite (= b true) (to_rep (select x i))
                                     (to_rep (select y i))))))
 (check-sat)
+
+(exit)

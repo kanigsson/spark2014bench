@@ -312,3 +312,5 @@ Target solver: Z3
   (us_split_fieldsqtmk
   (rec__pragma_predicate__tuple_type__x tuple__split_fields) o4)))))
 (check-sat)
+
+(exit)

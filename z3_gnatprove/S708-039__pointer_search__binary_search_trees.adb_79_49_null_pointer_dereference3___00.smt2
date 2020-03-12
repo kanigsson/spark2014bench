@@ -385,3 +385,5 @@ Target solver: Z3
   (not (rec__binary_search_trees__node_access__pointer_value__pred
   starting_at)))
 (check-sat)
+
+(exit)

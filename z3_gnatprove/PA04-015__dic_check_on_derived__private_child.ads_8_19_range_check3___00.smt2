@@ -466,3 +466,5 @@ Target solver: Z3
  ;; File "private_child.ads", line 2, characters 0-0
   (not (in_range 10)))
 (check-sat)
+
+(exit)

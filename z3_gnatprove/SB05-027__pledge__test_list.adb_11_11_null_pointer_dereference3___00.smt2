@@ -379,3 +379,5 @@ Target solver: Z3
   (rec__test_list__list_cell__next
   (us_split_fields1 (rec__test_list__list__pointer_value o))))))
 (check-sat)
+
+(exit)

@@ -166,3 +166,5 @@ Target solver: Z3
  ;; File "array_component.ads", line 1, characters 0-0
   (not (<= 1 d)))
 (check-sat)
+
+(exit)

@@ -1044,3 +1044,5 @@ Target solver: Z3
  ;; File "polyorb_hi-output.ads", line 87, characters 0-0
   (not (<= 1 r19b)))
 (check-sat)
+
+(exit)

@@ -1259,3 +1259,5 @@ Target solver: Z3
      (us_repqtmk (us_split_fieldsqtmk rliteral rliteral1)))))
      (select os_task_mbx_rw1 temp___index_694))) true)))
 (check-sat)
+
+(exit)

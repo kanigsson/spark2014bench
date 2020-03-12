@@ -478,3 +478,5 @@ Target solver: Z3
  ;; File "frame_condition.adb", line 118, characters 0-0
   (not (<= (first1 old_a) usf)))
 (check-sat)
+
+(exit)

@@ -215,3 +215,5 @@ Target solver: Z3
  ;; File "decadriver.ads", line 193, characters 0-0
   (not (in_range1 (+ length offset))))
 (check-sat)
+
+(exit)

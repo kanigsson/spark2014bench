@@ -242,3 +242,5 @@ Target solver: Z3
   (fp.leq temp___213 (fp.neg (fp #b0 #b00110101 #b00000000000000000000000))))
   (fp.leq (fp #b0 #b00110101 #b00000000000000000000000) temp___213))))
 (check-sat)
+
+(exit)

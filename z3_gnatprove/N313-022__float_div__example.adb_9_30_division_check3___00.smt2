@@ -137,3 +137,5 @@ Target solver: Z3
  ;; File "example.ads", line 17, characters 0-0
   (not (not (fp.isZero x))))
 (check-sat)
+
+(exit)

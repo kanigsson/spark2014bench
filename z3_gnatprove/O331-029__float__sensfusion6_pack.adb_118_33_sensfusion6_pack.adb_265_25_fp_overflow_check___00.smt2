@@ -1588,3 +1588,5 @@ Target solver: Z3
  ;; File "sensfusion6_pack.ads", line 17, characters 0-0
   (not (fp.isFinite32 o60)))
 (check-sat)
+
+(exit)

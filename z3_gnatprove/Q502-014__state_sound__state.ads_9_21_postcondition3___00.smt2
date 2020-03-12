@@ -127,3 +127,5 @@ Target solver: Z3
  ;; File "state.ads", line 7, characters 0-0
   (not (= (get s21) x)))
 (check-sat)
+
+(exit)

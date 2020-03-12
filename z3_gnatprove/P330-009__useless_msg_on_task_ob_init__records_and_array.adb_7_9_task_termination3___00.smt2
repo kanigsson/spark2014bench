@@ -100,3 +100,5 @@ Target solver: Z3
  ;; File "records_and_array.adb", line 7, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

@@ -1385,3 +1385,5 @@ Target solver: Z3
  ;; File "linear_search.adb", line 82, characters 0-0
   (not (= (nth temp___borrowed_327 k) (nth temp___brower_326 (- k i2)))))
 (check-sat)
+
+(exit)

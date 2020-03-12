@@ -144,3 +144,5 @@ Target solver: Z3
  ;; File "refined_post_legal.ads", line 10, characters 0-0
   (not (= refined_post_legal__func__result (+ par1 x))))
 (check-sat)
+
+(exit)

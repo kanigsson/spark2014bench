@@ -2243,3 +2243,5 @@ Target solver: Z3
   (= (length (to_rep1 total_string__first) (to_rep1 total_string__last)) 
   total_len1)))
 (check-sat)
+
+(exit)

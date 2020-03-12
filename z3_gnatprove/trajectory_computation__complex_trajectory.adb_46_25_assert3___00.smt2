@@ -726,3 +726,5 @@ Target solver: Z3
  ;; File "complex_trajectory.ads", line 39, characters 0-0
   (not (fp.leq old_speed average1)))
 (check-sat)
+
+(exit)

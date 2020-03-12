@@ -291,3 +291,5 @@ Target solver: Z3
  ;; File "segway.ads", line 38, characters 0-0
   (not (= (speed_is_valid status1 speed1) true)))
 (check-sat)
+
+(exit)

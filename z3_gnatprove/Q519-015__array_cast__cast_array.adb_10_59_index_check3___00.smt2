@@ -392,3 +392,5 @@ Target solver: Z3
  ;; File "cast_array.ads", line 9, characters 0-0
   (not (<= 0 usf)))
 (check-sat)
+
+(exit)

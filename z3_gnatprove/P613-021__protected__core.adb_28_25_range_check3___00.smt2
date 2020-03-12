@@ -691,3 +691,5 @@ Target solver: Z3
  ;; File "core.ads", line 33, characters 0-0
   (not (in_range2 (- o4 1))))
 (check-sat)
+
+(exit)

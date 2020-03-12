@@ -743,3 +743,5 @@ Target solver: Z3
   (not
   (= (rec__depends_legal_2__dis_rec__d (us_split_discrs1 par2)) rec1__split_discrs)))
 (check-sat)
+
+(exit)

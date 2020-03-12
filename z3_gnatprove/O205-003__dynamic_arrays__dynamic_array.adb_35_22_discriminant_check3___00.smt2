@@ -1370,3 +1370,5 @@ Target solver: Z3
  ;; File "dynamic_array.adb", line 1, characters 0-0
   (not (in_range5 c (us_split_discrs3 temp___229))))
 (check-sat)
+
+(exit)

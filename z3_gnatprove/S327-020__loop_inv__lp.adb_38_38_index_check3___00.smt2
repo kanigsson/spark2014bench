@@ -820,3 +820,5 @@ Target solver: Z3
  ;; File "lp.ads", line 9, characters 0-0
   (not (<= (first1 powers) c13b)))
 (check-sat)
+
+(exit)

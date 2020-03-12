@@ -2462,3 +2462,5 @@ Target solver: Z3
   (not
   (= (to_rep (rec__discrimrec__register_type__value_64 rax__split_fields2)) #x0000000000000020)))
 (check-sat)
+
+(exit)

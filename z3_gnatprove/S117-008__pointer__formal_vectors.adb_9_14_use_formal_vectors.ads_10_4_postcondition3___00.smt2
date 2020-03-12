@@ -140,3 +140,5 @@ Target solver: Z3
  ;; File "formal_vectors.adb", line 8, characters 0-0
   (not (<= size use_formal_vectors__my_vect__new_size__result)))
 (check-sat)
+
+(exit)

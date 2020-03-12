@@ -240,3 +240,5 @@ Target solver: Z3
  ;; File "max.ads", line 3, characters 0-0
   (not (<= (to_rep (select t 1)) max__max__result)))
 (check-sat)
+
+(exit)

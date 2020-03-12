@@ -402,3 +402,5 @@ Target solver: Z3
  ;; File "arrays.adb", line 151, characters 0-0
   (not (<= 1 temp___343)))
 (check-sat)
+
+(exit)

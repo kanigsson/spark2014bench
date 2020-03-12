@@ -1230,3 +1230,5 @@ Target solver: Z3
  ;; File "decadriver.ads", line 80, characters 0-0
   (not (<= (first1 temp___988) (last1 temp___988))))
 (check-sat)
+
+(exit)

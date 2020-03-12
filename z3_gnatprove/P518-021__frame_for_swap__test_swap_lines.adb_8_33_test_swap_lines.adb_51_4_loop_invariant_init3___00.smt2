@@ -500,3 +500,5 @@ Target solver: Z3
  ;; File "test_swap_lines.adb", line 1, characters 0-0
   (not (= (to_rep (get m1 5 i)) (to_rep (get temp___loop_entry_247 7 i)))))
 (check-sat)
+
+(exit)

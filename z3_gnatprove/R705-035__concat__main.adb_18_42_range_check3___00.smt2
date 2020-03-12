@@ -516,3 +516,5 @@ Target solver: Z3
  ;; File "main.adb", line 16, characters 0-0
   (not (<= 1 temp___239)))
 (check-sat)
+
+(exit)

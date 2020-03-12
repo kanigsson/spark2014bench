@@ -758,3 +758,5 @@ Target solver: Z3
  ;; File "test_list.adb", line 1, characters 0-0
   (not (not (= (bool_eq o4 us_null_pointer) true))))
 (check-sat)
+
+(exit)

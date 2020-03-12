@@ -5710,3 +5710,5 @@ Target solver: Z3
  ;; File "aida-containers-formal_vectors.ads", line 74, characters 0-0
   (not (in_range2 capacity (us_split_discrs1 temp___1391))))
 (check-sat)
+
+(exit)

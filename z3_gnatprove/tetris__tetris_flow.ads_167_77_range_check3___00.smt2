@@ -125,3 +125,5 @@ Target solver: Z3
  ;; File "tetris_flow.ads", line 164, characters 0-0
   (not (not (= d 0))))
 (check-sat)
+
+(exit)

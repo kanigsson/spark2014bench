@@ -2464,3 +2464,5 @@ Target solver: Z3
              (us_split_fields7 (select subject_specs subject))) event)))) 
   subject))))
 (check-sat)
+
+(exit)

@@ -1785,3 +1785,5 @@ Target solver: Z3
  ;; File "simple1_zstspark.ads", line 12, characters 0-0
   (not (= rsp2 (bvsub saversp #x0000000000000008))))
 (check-sat)
+
+(exit)

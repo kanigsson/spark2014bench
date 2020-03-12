@@ -335,3 +335,5 @@ Target solver: Z3
                                                            (rec__wrong_lsp__root__f11
                                                            r__split_fields)))))
 (check-sat)
+
+(exit)

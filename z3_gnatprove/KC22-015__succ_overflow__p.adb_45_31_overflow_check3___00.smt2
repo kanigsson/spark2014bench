@@ -187,3 +187,5 @@ Target solver: Z3
   (not
   (= (next_representable o) (fp.neg (fp #b0 #b11111110 #b11111111111111111111111))))))
 (check-sat)
+
+(exit)

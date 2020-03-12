@@ -304,3 +304,5 @@ Target solver: Z3
  ;; File "problem_4.ads", line 10, characters 0-0
   (not (<= (to_rep list__first) j)))
 (check-sat)
+
+(exit)

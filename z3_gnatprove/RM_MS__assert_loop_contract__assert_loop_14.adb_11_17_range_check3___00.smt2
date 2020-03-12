@@ -239,3 +239,5 @@ Target solver: Z3
  ;; File "assert_loop_14.ads", line 7, characters 0-0
   (not (in_range2 o1)))
 (check-sat)
+
+(exit)

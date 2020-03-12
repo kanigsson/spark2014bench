@@ -1013,3 +1013,5 @@ Target solver: Z3
  ;; File "p.ads", line 18, characters 0-0
   (not (or (= (has_element o6 o5) true) (= (bool_eq o5 no_element) true))))
 (check-sat)
+
+(exit)

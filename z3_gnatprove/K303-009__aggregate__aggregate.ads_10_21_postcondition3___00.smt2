@@ -321,3 +321,5 @@ Target solver: Z3
  ;; File "aggregate.ads", line 8, characters 0-0
   (not (= (to_rep (select k1 1)) 2)))
 (check-sat)
+
+(exit)

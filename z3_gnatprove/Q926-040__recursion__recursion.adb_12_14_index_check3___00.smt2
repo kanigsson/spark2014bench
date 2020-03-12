@@ -352,3 +352,5 @@ Target solver: Z3
  ;; File "recursion.ads", line 15, characters 0-0
   (not (<= (first1 arr) index)))
 (check-sat)
+
+(exit)

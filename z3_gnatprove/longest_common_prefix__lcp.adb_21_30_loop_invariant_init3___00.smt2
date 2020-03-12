@@ -398,3 +398,5 @@ Target solver: Z3
                                             (select (to_array a) (+ y 
                                             k))))))
 (check-sat)
+
+(exit)

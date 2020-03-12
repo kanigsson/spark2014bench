@@ -544,3 +544,5 @@ Target solver: Z3
  ;; File "init_by_proof.adb", line 45, characters 0-0
   (not (<= (to_rep buf__first) temp___359)))
 (check-sat)
+
+(exit)

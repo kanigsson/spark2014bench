@@ -543,3 +543,5 @@ Target solver: Z3
  ;; File "test.ads", line 37, characters 0-0
   (not (<= (to_rep result____first) usf)))
 (check-sat)
+
+(exit)

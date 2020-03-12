@@ -166,3 +166,5 @@ Target solver: Z3
  ;; File "numerics.ads", line 16, characters 0-0
   (not (fp.isFinite32 (fp.mul RNE left right))))
 (check-sat)
+
+(exit)

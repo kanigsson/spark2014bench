@@ -501,3 +501,5 @@ Target solver: Z3
  ;; File "essai05.adb", line 9, characters 0-0
   (not (<= (first1 v) (last1 v))))
 (check-sat)
+
+(exit)

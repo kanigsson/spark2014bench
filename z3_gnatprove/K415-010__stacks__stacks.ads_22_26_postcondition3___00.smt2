@@ -307,3 +307,5 @@ Target solver: Z3
  ;; File "stacks.ads", line 20, characters 0-0
   (not (= (size top2 data) (- (size top1 data1) 1))))
 (check-sat)
+
+(exit)

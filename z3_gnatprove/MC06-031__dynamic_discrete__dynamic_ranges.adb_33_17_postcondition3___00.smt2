@@ -496,3 +496,5 @@ Target solver: Z3
   (and (<= (first1 a) dynamic_ranges__search_0__nested__result1)
   (= (to_rep (select (to_array a) dynamic_ranges__search_0__nested__result1)) 0)))))
 (check-sat)
+
+(exit)

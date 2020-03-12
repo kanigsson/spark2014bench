@@ -1141,3 +1141,5 @@ Target solver: Z3
  ;; File "use_private_attributes.ads", line 8, characters 0-0
   (not (not (= (bool_eq5 c1 c2) true))))
 (check-sat)
+
+(exit)

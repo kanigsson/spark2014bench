@@ -360,3 +360,5 @@ Target solver: Z3
  ;; File "toto.ads", line 1, characters 0-0
   (not (in_range usf)))
 (check-sat)
+
+(exit)

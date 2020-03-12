@@ -794,3 +794,5 @@ Target solver: Z3
  ;; File "pair_insertion_sort.adb", line 4, characters 0-0
   (not (<= (to_rep values__first) usf)))
 (check-sat)
+
+(exit)

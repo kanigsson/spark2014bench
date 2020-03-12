@@ -359,3 +359,5 @@ Target solver: Z3
  ;; File "loops_static.adb", line 17, characters 0-0
   (not (<= (to_rep1 a__first) i1)))
 (check-sat)
+
+(exit)

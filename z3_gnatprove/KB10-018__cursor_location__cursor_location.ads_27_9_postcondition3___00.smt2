@@ -287,3 +287,5 @@ Target solver: Z3
  ;; File "cursor_location.ads", line 22, characters 0-0
   (not (not (= current1 1))))
 (check-sat)
+
+(exit)

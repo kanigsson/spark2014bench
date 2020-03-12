@@ -930,3 +930,5 @@ Target solver: Z3
  ;; File "very_longs.ads", line 61, characters 0-0
   (not (in_range1 o2)))
 (check-sat)
+
+(exit)

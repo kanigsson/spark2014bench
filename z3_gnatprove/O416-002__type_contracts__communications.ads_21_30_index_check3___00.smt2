@@ -815,3 +815,5 @@ Target solver: Z3
  ;; File "communications.ads", line 3, characters 0-0
   (not (<= (first1 temp___333) usf3)))
 (check-sat)
+
+(exit)

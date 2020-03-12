@@ -1609,3 +1609,5 @@ Target solver: Z3
  ;; File "ghc_sort.ads", line 52, characters 0-0
   (not (in_range2 o18)))
 (check-sat)
+
+(exit)

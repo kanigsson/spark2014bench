@@ -271,3 +271,5 @@ Target solver: Z3
  ;; File "smod.adb", line 4, characters 0-0
   (not (uint_in_range y)))
 (check-sat)
+
+(exit)

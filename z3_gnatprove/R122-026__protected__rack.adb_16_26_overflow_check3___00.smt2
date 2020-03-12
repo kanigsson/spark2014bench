@@ -294,3 +294,5 @@ Target solver: Z3
  ;; File "rack.ads", line 11, characters 0-0
   (not (in_range (+ arg const1))))
 (check-sat)
+
+(exit)

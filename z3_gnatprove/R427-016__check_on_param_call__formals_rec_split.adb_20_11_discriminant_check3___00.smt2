@@ -325,3 +325,5 @@ Target solver: Z3
   (not (formals_rec_split__rec__f__pred
   (us_repqtmk a__split_discrs (us_split_fieldsqtmk a__split_fields)))))
 (check-sat)
+
+(exit)

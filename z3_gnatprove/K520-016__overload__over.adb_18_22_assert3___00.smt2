@@ -131,3 +131,5 @@ Target solver: Z3
  ;; File "over.ads", line 7, characters 0-0
   (not (= y 2)))
 (check-sat)
+
+(exit)

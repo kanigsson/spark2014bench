@@ -1505,3 +1505,5 @@ Target solver: Z3
      (bool_eq1 (to_array temp___345) (first1 temp___345) (last1 temp___345)
      (to_array usf6) (first1 usf6) (last1 usf6))) true)))
 (check-sat)
+
+(exit)

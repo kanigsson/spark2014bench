@@ -1013,3 +1013,5 @@ Target solver: Z3
  ;; File "main.adb", line 5, characters 0-0
   (not (= (is_zero2 (us_repqtmk1 x2__split_fields1 x2__attr__tag)) true)))
 (check-sat)
+
+(exit)

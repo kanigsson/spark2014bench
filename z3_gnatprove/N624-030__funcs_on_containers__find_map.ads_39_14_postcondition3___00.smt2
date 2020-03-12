@@ -1239,3 +1239,5 @@ Target solver: Z3
  ;; File "find_map.ads", line 36, characters 0-0
   (not (not (= (to_rep (select (to_array a) i)) e))))
 (check-sat)
+
+(exit)

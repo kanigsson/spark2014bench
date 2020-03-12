@@ -235,3 +235,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-KB29-037__typinv2-13605/src/gnatprove/p__t.mlw", line 346, characters 5-8
   (not (dynamic_predicate usf1)))
 (check-sat)
+
+(exit)

@@ -466,3 +466,5 @@ Target solver: Z3
  ;; File "array_algorithms.ads", line 25, characters 0-0
   (not (<= (first1 b) usf)))
 (check-sat)
+
+(exit)

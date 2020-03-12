@@ -404,3 +404,5 @@ Target solver: Z3
  ;; File "p.ads", line 40, characters 0-0
   (not (<= (to_rep o4) i1)))
 (check-sat)
+
+(exit)

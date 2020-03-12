@@ -1857,3 +1857,5 @@ Target solver: Z3
  ;; File "instr.ads", line 54, characters 0-0
   (not (<= 1 lg)))
 (check-sat)
+
+(exit)

@@ -590,3 +590,5 @@ Target solver: Z3
   (rec__linear_search__list_cell__data
   (us_split_fields1 (rec__linear_search__list__pointer_value o))))))
 (check-sat)
+
+(exit)

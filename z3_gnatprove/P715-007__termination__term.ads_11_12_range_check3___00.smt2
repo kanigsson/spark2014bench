@@ -107,3 +107,5 @@ Target solver: Z3
  ;; File "term.ads", line 2, characters 0-0
   (not (<= (- 2147483648) 0)))
 (check-sat)
+
+(exit)

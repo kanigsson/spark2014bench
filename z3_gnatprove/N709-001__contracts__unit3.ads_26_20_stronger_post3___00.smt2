@@ -659,3 +659,5 @@ Target solver: Z3
  ;; File "unit3.ads", line 23, characters 0-0
   (not (= (to_rep (rec__unit1__t1__c12 x__split_fields1)) (+ usf 1))))
 (check-sat)
+
+(exit)

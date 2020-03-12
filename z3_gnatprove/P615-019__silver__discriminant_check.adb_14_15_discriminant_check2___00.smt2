@@ -354,3 +354,5 @@ Target solver: Z3
  ;; File "discriminant_check.adb", line 12, characters 0-0
   (not (discriminant_check__rec__x__pred r)))
 (check-sat)
+
+(exit)

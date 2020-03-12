@@ -240,3 +240,5 @@ Target solver: Z3
  ;; File "p.adb", line 2, characters 0-0
   (not (= (blah (slide x 5 1)) true)))
 (check-sat)
+
+(exit)

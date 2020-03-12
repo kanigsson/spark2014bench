@@ -801,3 +801,5 @@ Target solver: Z3
  ;; File "sum_elem.ads", line 23, characters 0-0
   (not (<= usf (last_index o8))))
 (check-sat)
+
+(exit)

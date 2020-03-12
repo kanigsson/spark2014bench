@@ -957,3 +957,5 @@ Target solver: Z3
  ;; File "pair_insertion_sort.ads", line 13, characters 0-0
   (not (< (- 2147483648) o14)))
 (check-sat)
+
+(exit)

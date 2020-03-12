@@ -819,3 +819,5 @@ Target solver: Z3
   (length
   (rec__use_formal_vectors__my_vect__element_array_access__pointer_value o)))))
 (check-sat)
+
+(exit)

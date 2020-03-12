@@ -675,3 +675,5 @@ Target solver: Z3
   (= (sorted (of_array a3 (to_rep a__first) (to_rep a__last))
      (+ a_first (* j l3)) (min l3 (- length2 (* j l3)))) true)))
 (check-sat)
+
+(exit)

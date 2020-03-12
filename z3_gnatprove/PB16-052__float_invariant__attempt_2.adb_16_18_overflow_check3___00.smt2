@@ -166,3 +166,5 @@ Target solver: Z3
  ;; File "attempt_2.adb", line 15, characters 0-0
   (not (in_range (* n n))))
 (check-sat)
+
+(exit)

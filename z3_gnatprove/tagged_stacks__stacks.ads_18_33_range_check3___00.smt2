@@ -584,3 +584,5 @@ Target solver: Z3
  ;; File "stacks.ads", line 14, characters 0-0
   (not (in_range (length stacks__get_model__result))))
 (check-sat)
+
+(exit)

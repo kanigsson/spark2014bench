@@ -272,3 +272,5 @@ Target solver: Z3
   (not (in_range
   get_out_subtype__controller_get_desired_rate__yaw_rate_desired)))
 (check-sat)
+
+(exit)

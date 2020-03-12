@@ -309,3 +309,5 @@ Target solver: Z3
  ;; File "lists.ads", line 5, characters 0-0
   (not (lists__cell__next__pred (select memory1 i))))
 (check-sat)
+
+(exit)

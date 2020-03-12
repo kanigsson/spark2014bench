@@ -475,3 +475,5 @@ Target solver: Z3
   (not (rec__early_exits__int_acc__pointer_value__pred
   (rec__early_exits__two_acc__g usf2))))
 (check-sat)
+
+(exit)

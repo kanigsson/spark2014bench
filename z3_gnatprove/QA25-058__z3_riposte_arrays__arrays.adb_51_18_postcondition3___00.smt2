@@ -154,3 +154,5 @@ Target solver: Z3
  ;; File "arrays.adb", line 48, characters 0-0
   (not (= (select s c) true)))
 (check-sat)
+
+(exit)

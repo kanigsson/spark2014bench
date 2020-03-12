@@ -236,3 +236,5 @@ Target solver: Z3
  ;; File "loop_var_loop_invar.adb", line 1, characters 0-0
   (not (<= (- 100 (* 10 i2)) r2)))
 (check-sat)
+
+(exit)

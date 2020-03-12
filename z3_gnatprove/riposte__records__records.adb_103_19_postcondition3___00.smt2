@@ -343,3 +343,5 @@ Target solver: Z3
      (rec__records_prooffuncs__optional_pair__the_pair (us_split_fields3 a))
      null_pair) true)))
 (check-sat)
+
+(exit)

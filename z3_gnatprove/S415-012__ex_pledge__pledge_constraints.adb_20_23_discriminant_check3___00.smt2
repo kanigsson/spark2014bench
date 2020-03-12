@@ -816,3 +816,5 @@ Target solver: Z3
   (not (pledge_constraints__int_acc_option__content__pred
   (select (to_array temp___296) 1))))
 (check-sat)
+
+(exit)

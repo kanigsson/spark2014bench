@@ -1516,3 +1516,5 @@ Target solver: Z3
   (us_repqtmk2 new_content__is_null_pointer new_content__pointer_address
   new_content__pointer_value))))
 (check-sat)
+
+(exit)

@@ -551,3 +551,5 @@ Target solver: Z3
  ;; File "usefoo.ads", line 6, characters 0-0
   (not (<= (to_rep b__first) temp___200)))
 (check-sat)
+
+(exit)

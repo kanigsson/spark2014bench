@@ -219,3 +219,5 @@ Target solver: Z3
  ;; File "inline_init.adb", line 1, characters 0-0
   (not (= (to_rep r__split_fields) 3)))
 (check-sat)
+
+(exit)

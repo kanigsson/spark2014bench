@@ -379,3 +379,5 @@ Target solver: Z3
  ;; File "dynamic_preds.ads", line 46, characters 0-0
   (not (dynamic_predicate (us_repqtmk x__split_fields1))))
 (check-sat)
+
+(exit)

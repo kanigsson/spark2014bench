@@ -578,3 +578,5 @@ Target solver: Z3
  ;; File "local_borrow.adb", line 1, characters 0-0
   (not (not (= (bool_eq o1 us_null_pointer) true))))
 (check-sat)
+
+(exit)

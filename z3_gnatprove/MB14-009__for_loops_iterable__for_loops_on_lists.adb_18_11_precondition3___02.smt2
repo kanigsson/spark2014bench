@@ -833,3 +833,5 @@ Target solver: Z3
  ;; File "for_loops_on_lists.ads", line 15, characters 0-0
   (not (= (has_element l o1) true)))
 (check-sat)
+
+(exit)

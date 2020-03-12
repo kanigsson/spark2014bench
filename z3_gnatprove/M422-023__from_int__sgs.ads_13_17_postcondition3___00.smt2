@@ -233,3 +233,5 @@ Target solver: Z3
   (not
   (fp.leq (fp #b0 #b00000000 #b00000000000000000000000) sgs__a__result)))
 (check-sat)
+
+(exit)

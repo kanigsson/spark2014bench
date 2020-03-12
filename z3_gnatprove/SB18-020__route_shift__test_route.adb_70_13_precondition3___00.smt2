@@ -1178,3 +1178,5 @@ Target solver: Z3
  ;; File "test_route.adb", line 64, characters 0-0
   (not (<= o1 (length usf4))))
 (check-sat)
+
+(exit)

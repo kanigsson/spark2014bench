@@ -139,3 +139,5 @@ Target solver: Z3
  ;; File "linear_div.adb", line 3, characters 0-0
   (not (<= 0 remainder1)))
 (check-sat)
+
+(exit)

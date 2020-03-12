@@ -784,3 +784,5 @@ Target solver: Z3
  ;; File "counterexamples.adb", line 37, characters 0-0
   (not (<= (first1 temp___221) 3)))
 (check-sat)
+
+(exit)

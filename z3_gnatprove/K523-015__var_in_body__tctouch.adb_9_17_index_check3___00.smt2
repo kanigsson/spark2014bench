@@ -275,3 +275,5 @@ Target solver: Z3
  ;; File "tctouch.ads", line 2, characters 0-0
   (not (<= 1 finger1)))
 (check-sat)
+
+(exit)

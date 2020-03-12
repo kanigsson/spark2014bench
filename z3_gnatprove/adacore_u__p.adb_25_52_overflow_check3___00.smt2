@@ -414,3 +414,5 @@ Target solver: Z3
  ;; File "p.ads", line 11, characters 0-0
   (not (in_range1 (+ o10 size1))))
 (check-sat)
+
+(exit)

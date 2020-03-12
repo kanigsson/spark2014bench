@@ -867,3 +867,5 @@ Target solver: Z3
  ;; File "pair_insertion_sort.ads", line 13, characters 0-0
   (not (<= (- 1) j3)))
 (check-sat)
+
+(exit)

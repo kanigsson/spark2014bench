@@ -436,3 +436,5 @@ Target solver: Z3
  ;; File "test_string_literals.adb", line 1, characters 0-0
   (not (= (first1 (id (of_array t1 5 8))) 5)))
 (check-sat)
+
+(exit)

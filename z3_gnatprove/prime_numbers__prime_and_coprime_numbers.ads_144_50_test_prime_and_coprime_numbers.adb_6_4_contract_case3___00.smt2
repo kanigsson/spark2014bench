@@ -559,3 +559,5 @@ Target solver: Z3
  ;; File "prime_and_coprime_numbers.ads", line 105, characters 0-0
   (not (not (= (is_prime v) true))))
 (check-sat)
+
+(exit)

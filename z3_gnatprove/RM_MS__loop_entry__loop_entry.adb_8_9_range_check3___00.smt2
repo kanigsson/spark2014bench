@@ -297,3 +297,5 @@ Target solver: Z3
  ;; File "loop_entry.ads", line 9, characters 0-0
   (not (<= 1 l)))
 (check-sat)
+
+(exit)

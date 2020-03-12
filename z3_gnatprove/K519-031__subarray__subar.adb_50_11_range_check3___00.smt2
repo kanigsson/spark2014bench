@@ -161,3 +161,5 @@ Target solver: Z3
  ;; File "subar.adb", line 45, characters 0-0
   (not (<= 11 12)))
 (check-sat)
+
+(exit)

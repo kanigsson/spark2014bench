@@ -424,3 +424,5 @@ Target solver: Z3
      (select (rec__arrays_in_records__record_with_arrays__second_array
              a__split_fields4) 23)) 69)))
 (check-sat)
+
+(exit)

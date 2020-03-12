@@ -264,3 +264,5 @@ Target solver: Z3
  ;; File "queen.ads", line 34, characters 0-0
   (not (not (= done__ true))))
 (check-sat)
+
+(exit)

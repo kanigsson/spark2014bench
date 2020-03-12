@@ -2214,3 +2214,5 @@ Target solver: Z3
  ;; File "tetris_functional.ads", line 211, characters 0-0
   (not (<= 3 temp___847)))
 (check-sat)
+
+(exit)

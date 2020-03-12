@@ -986,3 +986,5 @@ Target solver: Z3
  ;; File "ordering_buffers.adb", line 3, characters 0-0
   (not (in_range3 usf2)))
 (check-sat)
+
+(exit)

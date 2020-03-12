@@ -613,3 +613,5 @@ Target solver: Z3
  ;; File "foo.ads", line 7, characters 0-0
   (not (dynamic_property1 o21 (- (+ o20 (div1 (length o19 o18) 2)) 1) pos)))
 (check-sat)
+
+(exit)

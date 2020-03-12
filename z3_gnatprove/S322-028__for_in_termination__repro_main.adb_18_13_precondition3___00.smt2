@@ -1394,3 +1394,5 @@ Target solver: Z3
  ;; File "repro_main.adb", line 4, characters 0-0
   (not (< (length2 (us_repqtmk table__split_fields2)) 32)))
 (check-sat)
+
+(exit)

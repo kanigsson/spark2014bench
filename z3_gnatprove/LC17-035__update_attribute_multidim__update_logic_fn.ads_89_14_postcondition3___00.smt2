@@ -462,3 +462,5 @@ Target solver: Z3
   (= (bool_eq a3 1 10 #x00 #x07 (temp_____aggregate_def_315 v2 1000 1000) 1
      10 #x00 #x07) true)))
 (check-sat)
+
+(exit)

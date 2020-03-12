@@ -308,3 +308,5 @@ Target solver: Z3
  ;; File "assign_rec.ads", line 9, characters 0-0
   (not (in_range (- y 1))))
 (check-sat)
+
+(exit)

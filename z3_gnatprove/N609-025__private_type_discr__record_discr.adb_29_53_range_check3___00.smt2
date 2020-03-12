@@ -835,3 +835,5 @@ Target solver: Z3
  ;; File "record_discr.ads", line 25, characters 0-0
   (not (in_range2 o3)))
 (check-sat)
+
+(exit)

@@ -925,3 +925,5 @@ Target solver: Z3
      (us_repqtmk front__split_discrs
      (us_split_fieldsqtmk front__split_fields1)) i) (element ofront i))))
 (check-sat)
+
+(exit)

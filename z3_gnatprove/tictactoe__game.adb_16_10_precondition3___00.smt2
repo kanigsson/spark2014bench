@@ -1243,3 +1243,5 @@ Target solver: Z3
  ;; File "game.adb", line 4, characters 0-0
   (not (not (= (is_full my_board2) true))))
 (check-sat)
+
+(exit)

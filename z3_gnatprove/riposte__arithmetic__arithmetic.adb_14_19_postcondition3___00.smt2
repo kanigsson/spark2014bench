@@ -104,3 +104,5 @@ Target solver: Z3
  ;; File "arithmetic.adb", line 13, characters 0-0
   (not (= arithmetic__negation_i__result (- a))))
 (check-sat)
+
+(exit)

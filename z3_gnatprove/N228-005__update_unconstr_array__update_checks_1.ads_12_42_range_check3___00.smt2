@@ -429,3 +429,5 @@ Target solver: Z3
  ;; File "update_checks_1.ads", line 11, characters 0-0
   (not (in_range3 i)))
 (check-sat)
+
+(exit)

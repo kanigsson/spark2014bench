@@ -1514,3 +1514,5 @@ Target solver: Z3
                                                    (first1 temp___247)
                                                    (last1 temp___247)))) 1))))
 (check-sat)
+
+(exit)

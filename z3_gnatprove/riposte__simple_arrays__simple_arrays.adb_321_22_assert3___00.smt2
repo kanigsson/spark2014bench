@@ -304,3 +304,5 @@ Target solver: Z3
  ;; File "simple_arrays.adb", line 316, characters 0-0
   (not (= x y)))
 (check-sat)
+
+(exit)

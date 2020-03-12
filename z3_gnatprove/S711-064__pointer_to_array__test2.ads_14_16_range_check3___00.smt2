@@ -470,3 +470,5 @@ Target solver: Z3
  ;; File "test2.ads", line 11, characters 0-0
   (not (<= (first1 buffer) test2__check_array__R11s)))
 (check-sat)
+
+(exit)

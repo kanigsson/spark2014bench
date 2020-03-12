@@ -1076,3 +1076,5 @@ Target solver: Z3
  ;; File "linear_search.adb", line 82, characters 0-0
   (not (<= usf8 (length usf7))))
 (check-sat)
+
+(exit)

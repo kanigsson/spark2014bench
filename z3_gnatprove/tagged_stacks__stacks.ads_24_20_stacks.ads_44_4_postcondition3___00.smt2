@@ -511,3 +511,5 @@ Target solver: Z3
  ;; File "stacks.ads", line 44, characters 0-0
   (not (= (is_empty (us_repqtmk s__split_fields1 s__attr__tag)) true)))
 (check-sat)
+
+(exit)

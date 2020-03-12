@@ -1144,3 +1144,5 @@ Target solver: Z3
   (not
   (= string_index3 (+ (* 2 (- (last3 result____split_fields3) index3)) 1))))
 (check-sat)
+
+(exit)

@@ -194,3 +194,5 @@ Target solver: Z3
   (not
   (not (= user_of_types_and_subtypes_legal__same_as_next__result true))))
 (check-sat)
+
+(exit)

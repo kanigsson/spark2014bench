@@ -171,3 +171,5 @@ Target solver: Z3
  ;; File "testfloat.adb", line 11, characters 0-0
   (not (fp.isFinite32 o)))
 (check-sat)
+
+(exit)

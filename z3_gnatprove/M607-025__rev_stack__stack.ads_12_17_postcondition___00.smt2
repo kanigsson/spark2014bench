@@ -557,3 +557,5 @@ Target solver: Z3
  ;; File "stack.ads", line 11, characters 0-0
   (not (= (first1 stack__model__to__result) 1)))
 (check-sat)
+
+(exit)

@@ -1327,3 +1327,5 @@ Target solver: Z3
   (<= (- (to_rep2
          (rec__partition_refinement__interval__first p_prime__split_fields2)) 1) 5)))
 (check-sat)
+
+(exit)

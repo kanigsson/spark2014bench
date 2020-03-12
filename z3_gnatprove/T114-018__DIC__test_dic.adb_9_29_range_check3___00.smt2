@@ -297,3 +297,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-T114-018__DIC-20969/src/gnatprove/test_dic__nested__t.mlw", line 468, characters 5-8
   (not (in_range1 c)))
 (check-sat)
+
+(exit)

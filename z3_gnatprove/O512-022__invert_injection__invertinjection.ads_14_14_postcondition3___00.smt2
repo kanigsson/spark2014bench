@@ -239,3 +239,5 @@ Target solver: Z3
  ;; File "invertinjection.ads", line 7, characters 0-0
   (not (= i1 j)))
 (check-sat)
+
+(exit)

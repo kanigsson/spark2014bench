@@ -1032,3 +1032,5 @@ Target solver: Z3
  ;; File "sorted_vectors.ads", line 20, characters 0-0
   (not (in_range5 usf3)))
 (check-sat)
+
+(exit)

@@ -1125,3 +1125,5 @@ Target solver: Z3
      i) (ite (<= (get usf3 i) threshold) 0
         (get (model1 temp___loop_entry_335) i)))))
 (check-sat)
+
+(exit)

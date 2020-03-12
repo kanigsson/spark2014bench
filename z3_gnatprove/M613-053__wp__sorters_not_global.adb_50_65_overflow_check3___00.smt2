@@ -284,3 +284,5 @@ Target solver: Z3
  ;; File "sorters_not_global.adb", line 28, characters 0-0
   (not (in_range1 o)))
 (check-sat)
+
+(exit)

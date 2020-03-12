@@ -319,3 +319,5 @@ Target solver: Z3
  ;; File "foo.ads", line 19, characters 0-0
   (not (in_range1 (+ total2 item2))))
 (check-sat)
+
+(exit)

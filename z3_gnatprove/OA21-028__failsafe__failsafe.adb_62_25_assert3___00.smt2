@@ -680,3 +680,5 @@ Target solver: Z3
                                                       (bvadd temp___270 #x32)
                                                       temp___270)))))))
 (check-sat)
+
+(exit)

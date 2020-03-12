@@ -550,3 +550,5 @@ Target solver: Z3
  ;; File "a-cofove.ads", line 557, characters 0-0
   (not (in_range5 o)))
 (check-sat)
+
+(exit)

@@ -583,3 +583,5 @@ Target solver: Z3
  ;; File "instructions.ads", line 14, characters 0-0
   (not (not (= (empty last2) true))))
 (check-sat)
+
+(exit)

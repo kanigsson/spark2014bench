@@ -329,3 +329,5 @@ Target solver: Z3
  ;; File "sorters_not_global.ads", line 14, characters 0-0
   (not (<= (to_rep (select values1 j)) (to_rep (select values1 (+ j 1))))))
 (check-sat)
+
+(exit)

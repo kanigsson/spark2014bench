@@ -149,3 +149,5 @@ Target solver: Z3
  ;; File "protected_objects.ads", line 8, characters 0-0
   (not (= temp___191 false)))
 (check-sat)
+
+(exit)

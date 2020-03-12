@@ -1099,3 +1099,5 @@ Target solver: Z3
  ;; File "n02.adb", line 6, characters 0-0
   (not (rec__n02__data__ai__pointer_value__pred o3)))
 (check-sat)
+
+(exit)

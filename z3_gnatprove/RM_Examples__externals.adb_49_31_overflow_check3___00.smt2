@@ -129,3 +129,5 @@ Target solver: Z3
  ;; File "externals.ads", line 10, characters 0-0
   (not (in_range (+ press1 o))))
 (check-sat)
+
+(exit)

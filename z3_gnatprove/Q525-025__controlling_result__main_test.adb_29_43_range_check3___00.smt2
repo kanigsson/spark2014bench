@@ -1984,3 +1984,5 @@ Target solver: Z3
                                                    (first3 temp___314)
                                                    (last3 temp___314)))) 1))))
 (check-sat)
+
+(exit)

@@ -342,3 +342,5 @@ Target solver: Z3
                                                            (rec__wrong_lsp__child__f2
                                                            r__split_fields1)))))
 (check-sat)
+
+(exit)

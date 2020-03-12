@@ -566,3 +566,5 @@ Target solver: Z3
  ;; File "funcs.adb", line 61, characters 0-0
   (not (= (p4 3) true)))
 (check-sat)
+
+(exit)

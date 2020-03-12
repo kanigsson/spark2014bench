@@ -810,3 +810,5 @@ Target solver: Z3
  ;; File "ghc_sort.ads", line 6, characters 0-0
   (not (= x2 (to_rep1 (select cut2 top2)))))
 (check-sat)
+
+(exit)

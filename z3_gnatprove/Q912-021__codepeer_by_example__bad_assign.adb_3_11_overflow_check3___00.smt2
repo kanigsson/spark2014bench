@@ -101,3 +101,5 @@ Target solver: Z3
  ;; File "bad_assign.adb", line 1, characters 0-0
   (not (in_range (+ x 1))))
 (check-sat)
+
+(exit)

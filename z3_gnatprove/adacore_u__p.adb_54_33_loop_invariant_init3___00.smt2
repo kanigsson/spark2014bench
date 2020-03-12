@@ -373,3 +373,5 @@ Target solver: Z3
  ;; File "p.ads", line 23, characters 0-0
   (not (not (= (to_rep (select (to_array a) k)) e))))
 (check-sat)
+
+(exit)

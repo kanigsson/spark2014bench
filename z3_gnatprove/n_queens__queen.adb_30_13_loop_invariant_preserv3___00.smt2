@@ -387,3 +387,5 @@ Target solver: Z3
  ;; File "queen.ads", line 44, characters 0-0
   (not (= (to_rep (select r3 k)) (to_rep (select b k)))))
 (check-sat)
+
+(exit)

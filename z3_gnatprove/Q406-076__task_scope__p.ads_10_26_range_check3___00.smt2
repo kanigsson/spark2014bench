@@ -221,3 +221,5 @@ Target solver: Z3
  ;; File "p.ads", line 9, characters 0-0
   (not (<= 0 (div1 1 (zero Tuple0)))))
 (check-sat)
+
+(exit)

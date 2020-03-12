@@ -333,3 +333,5 @@ Target solver: Z3
  ;; File "useit.ads", line 6, characters 0-0
   (not (in_range1 (+ off (- 31 off)))))
 (check-sat)
+
+(exit)

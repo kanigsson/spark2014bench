@@ -1352,3 +1352,5 @@ Target solver: Z3
  ;; File "partition_refinement.adb", line 45, characters 0-0
   (not (in_range5 o16)))
 (check-sat)
+
+(exit)

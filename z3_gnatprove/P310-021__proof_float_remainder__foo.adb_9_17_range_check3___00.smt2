@@ -152,3 +152,5 @@ Target solver: Z3
   (not (in_range
   (fp.rem (fp.add RNE a b) (fp #b0 #b10000111 #b01101000000000000000000)))))
 (check-sat)
+
+(exit)

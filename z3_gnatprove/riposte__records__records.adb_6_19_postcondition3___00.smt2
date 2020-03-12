@@ -224,3 +224,5 @@ Target solver: Z3
   (= (bool_eq (us_repqtmk records__init_a__result)
      (us_repqtmk (us_split_fieldsqtmk rliteral rliteral))) true)))
 (check-sat)
+
+(exit)

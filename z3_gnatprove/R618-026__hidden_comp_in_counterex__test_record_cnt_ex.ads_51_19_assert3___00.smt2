@@ -2843,3 +2843,5 @@ Target solver: Z3
   (= (bool_eq4 (us_repqtmk4 x_2__split_fields x_2__attr__tag)
      (us_repqtmk4 y_2__split_fields y_2__attr__tag)) true)))
 (check-sat)
+
+(exit)

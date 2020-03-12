@@ -229,3 +229,5 @@ Target solver: Z3
   (= rec__next__result (+ (to_rep
                           (rec__rec__counter__count (us_split_fields1 x))) 1))))
 (check-sat)
+
+(exit)

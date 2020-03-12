@@ -535,3 +535,5 @@ Target solver: Z3
  ;; File "sorters.ads", line 15, characters 0-0
   (not (<= (first1 o6) (last1 o6))))
 (check-sat)
+
+(exit)

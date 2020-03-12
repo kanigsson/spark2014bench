@@ -482,3 +482,5 @@ Target solver: Z3
  ;; File "perm.ads", line 18, characters 0-0
   (not (<= perm__occ__result (length a))))
 (check-sat)
+
+(exit)

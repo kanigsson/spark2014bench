@@ -602,3 +602,5 @@ Target solver: Z3
  ;; File "a-cfinve.ads", line 578, characters 0-0
   (not (in_range7 o)))
 (check-sat)
+
+(exit)

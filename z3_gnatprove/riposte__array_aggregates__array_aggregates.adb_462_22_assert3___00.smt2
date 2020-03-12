@@ -272,3 +272,5 @@ Target solver: Z3
   (not
   (= (bool_eq x1 0 255 (temp_____aggregate_def_771 (= n n)) 0 255) true)))
 (check-sat)
+
+(exit)

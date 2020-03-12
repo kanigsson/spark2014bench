@@ -214,3 +214,5 @@ Target solver: Z3
  ;; File "signed.adb", line 3, characters 0-0
   (not (<= i 62)))
 (check-sat)
+
+(exit)

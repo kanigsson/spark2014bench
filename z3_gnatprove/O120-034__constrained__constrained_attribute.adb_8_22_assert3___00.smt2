@@ -444,3 +444,5 @@ Target solver: Z3
  ;; File "constrained_attribute.ads", line 9, characters 0-0
   (not (not (= a__attr__constrained true))))
 (check-sat)
+
+(exit)

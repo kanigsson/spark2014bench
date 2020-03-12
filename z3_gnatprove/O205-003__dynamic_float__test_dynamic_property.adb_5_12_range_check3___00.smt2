@@ -314,3 +314,5 @@ Target solver: Z3
   (not
   (fp.leq (fp.neg (fp #b0 #b11111110 #b11111111111111111111111)) (fp #b0 #b01111111 #b00000000000000000000000))))
 (check-sat)
+
+(exit)

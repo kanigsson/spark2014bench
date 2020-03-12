@@ -264,3 +264,5 @@ Target solver: Z3
  ;; File "segway.ads", line 38, characters 0-0
   (not (in_range1 (- speed 1))))
 (check-sat)
+
+(exit)

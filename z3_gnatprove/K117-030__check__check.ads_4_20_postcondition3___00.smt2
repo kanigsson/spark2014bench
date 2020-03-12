@@ -193,3 +193,5 @@ Target solver: Z3
  ;; File "check.ads", line 2, characters 0-0
   (not (< 0 check__div__result)))
 (check-sat)
+
+(exit)

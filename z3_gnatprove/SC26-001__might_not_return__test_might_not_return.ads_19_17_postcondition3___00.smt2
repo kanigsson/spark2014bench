@@ -153,3 +153,5 @@ Target solver: Z3
  ;; File "test_might_not_return.ads", line 17, characters 0-0
   (not (= state1 2)))
 (check-sat)
+
+(exit)

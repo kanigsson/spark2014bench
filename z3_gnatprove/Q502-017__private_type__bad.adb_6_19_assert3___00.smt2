@@ -271,3 +271,5 @@ Target solver: Z3
  ;; File "bad.adb", line 3, characters 0-0
   (not (= (always_true1 y y) true)))
 (check-sat)
+
+(exit)

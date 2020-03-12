@@ -2409,3 +2409,5 @@ Target solver: Z3
  ;; File "psu_monitoring.ads", line 85, characters 0-0
   (not (in_range3 u_c2)))
 (check-sat)
+
+(exit)

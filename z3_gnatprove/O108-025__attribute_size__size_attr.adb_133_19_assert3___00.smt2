@@ -2477,3 +2477,5 @@ Target solver: Z3
  ;; File "size_attr.adb", line 3, characters 0-0
   (not (<= 0 object__size8)))
 (check-sat)
+
+(exit)

@@ -193,3 +193,5 @@ Target solver: Z3
  ;; File "fixed_mem.ads", line 4, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

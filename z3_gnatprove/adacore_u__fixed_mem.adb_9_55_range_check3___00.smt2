@@ -93,3 +93,5 @@ Target solver: Z3
  ;; File "fixed_mem.ads", line 8, characters 0-0
   (not (in_range (+ (- 1000 free) 1))))
 (check-sat)
+
+(exit)

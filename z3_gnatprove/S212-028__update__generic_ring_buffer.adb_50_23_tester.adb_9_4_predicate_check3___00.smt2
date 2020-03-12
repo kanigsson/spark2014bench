@@ -1025,3 +1025,5 @@ Target solver: Z3
  ;; File "generic_ring_buffer.ads", line 59, characters 0-0
   (not (dynamic_predicate temp___299)))
 (check-sat)
+
+(exit)

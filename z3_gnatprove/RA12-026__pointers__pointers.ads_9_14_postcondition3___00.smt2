@@ -246,3 +246,5 @@ Target solver: Z3
  ;; File "pointers.ads", line 7, characters 0-0
   (not (= (to_rep x__pointer_value2) (to_rep y__pointer_value1))))
 (check-sat)
+
+(exit)

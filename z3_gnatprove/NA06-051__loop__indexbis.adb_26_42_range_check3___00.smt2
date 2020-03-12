@@ -477,3 +477,5 @@ Target solver: Z3
  ;; File "indexbis.ads", line 2, characters 0-0
   (not (in_range2 o7)))
 (check-sat)
+
+(exit)

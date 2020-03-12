@@ -277,3 +277,5 @@ Target solver: Z3
   (not
   (or (= (to_rep s__split_discrs) 0) (not (= s__attr__constrained true)))))
 (check-sat)
+
+(exit)

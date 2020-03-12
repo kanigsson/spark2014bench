@@ -608,3 +608,5 @@ Target solver: Z3
  ;; File "types_with_invariants.ads", line 9, characters 0-0
   (not (type_invariant (select (to_array c__split_fields1) temp___301))))
 (check-sat)
+
+(exit)

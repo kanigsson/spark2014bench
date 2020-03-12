@@ -1487,3 +1487,5 @@ Target solver: Z3
  ;; File "discrimrec.adb", line 8, characters 0-0
   (not (discrimrec__register_type__value_64__pred o)))
 (check-sat)
+
+(exit)

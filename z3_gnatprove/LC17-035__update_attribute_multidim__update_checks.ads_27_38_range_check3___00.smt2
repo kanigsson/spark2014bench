@@ -533,3 +533,5 @@ Target solver: Z3
  ;; File "update_checks.ads", line 14, characters 0-0
   (not (in_range3 o12)))
 (check-sat)
+
+(exit)

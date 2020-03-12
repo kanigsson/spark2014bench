@@ -353,3 +353,5 @@ Target solver: Z3
  ;; File "math.ads", line 14, characters 0-0
   (not (= prev_value1 (to_rep (select temp___loop_entry_221 j)))))
 (check-sat)
+
+(exit)

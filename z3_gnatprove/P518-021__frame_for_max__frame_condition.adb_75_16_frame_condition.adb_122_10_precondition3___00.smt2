@@ -739,3 +739,5 @@ Target solver: Z3
  ;; File "frame_condition.adb", line 122, characters 0-0
   (not (= (first2 o2) (to_rep1 a__first))))
 (check-sat)
+
+(exit)

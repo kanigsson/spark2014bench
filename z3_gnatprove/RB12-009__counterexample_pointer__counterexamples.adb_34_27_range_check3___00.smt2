@@ -460,3 +460,5 @@ Target solver: Z3
  ;; File "counterexamples.adb", line 31, characters 0-0
   (not (in_range1 (length v__pointer_value))))
 (check-sat)
+
+(exit)

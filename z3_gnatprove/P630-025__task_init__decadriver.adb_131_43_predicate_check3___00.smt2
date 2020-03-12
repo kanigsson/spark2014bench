@@ -1874,3 +1874,5 @@ Target solver: Z3
  ;; File "decadriver.ads", line 127, characters 0-0
   (not (dynamic_predicate temp___1014)))
 (check-sat)
+
+(exit)

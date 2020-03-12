@@ -300,3 +300,5 @@ Target solver: Z3
   (+ (to_rep (rec__records_prooffuncs__pair__a (us_split_fields1 o6))) 
   (to_rep (rec__records_prooffuncs__pair__a (us_split_fields1 o5)))))))
 (check-sat)
+
+(exit)

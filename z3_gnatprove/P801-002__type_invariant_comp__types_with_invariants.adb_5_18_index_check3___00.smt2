@@ -589,3 +589,5 @@ Target solver: Z3
  ;; File "types_with_invariants.ads", line 9, characters 0-0
   (not (<= (first1 c__split_fields) i)))
 (check-sat)
+
+(exit)

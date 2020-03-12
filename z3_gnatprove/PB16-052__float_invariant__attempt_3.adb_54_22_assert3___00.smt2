@@ -447,3 +447,5 @@ Target solver: Z3
  ;; File "attempt_3.adb", line 29, characters 0-0
   (not (fp.leq old_speed (high_bound n))))
 (check-sat)
+
+(exit)

@@ -376,3 +376,5 @@ Target solver: Z3
  ;; File "recursion.ads", line 24, characters 0-0
   (not (in_range1 (length arr))))
 (check-sat)
+
+(exit)

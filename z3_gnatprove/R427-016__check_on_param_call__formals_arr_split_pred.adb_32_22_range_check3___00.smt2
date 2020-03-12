@@ -535,3 +535,5 @@ Target solver: Z3
  ;; File "formals_arr_split_pred.adb", line 1, characters 0-0
   (not (dynamic_property (- 2147483648) 2147483647 1 10)))
 (check-sat)
+
+(exit)

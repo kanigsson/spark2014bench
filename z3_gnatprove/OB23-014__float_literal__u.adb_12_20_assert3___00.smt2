@@ -202,3 +202,5 @@ Target solver: Z3
  ;; File "u.adb", line 3, characters 0-0
   (not (fp.eq x (fp #b0 #b01111011 #b10011001100110011001101))))
 (check-sat)
+
+(exit)

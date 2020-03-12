@@ -505,3 +505,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S918-060__binary_search-20127/src/gnatprove/binary_search_trees__binary_search_tree.mlw", line 897, characters 5-8
   (not (dynamic_predicate usf1)))
 (check-sat)
+
+(exit)

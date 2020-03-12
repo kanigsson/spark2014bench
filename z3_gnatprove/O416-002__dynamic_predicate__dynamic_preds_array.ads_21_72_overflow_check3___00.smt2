@@ -345,3 +345,5 @@ Target solver: Z3
  ;; File "dynamic_preds_array.ads", line 20, characters 0-0
   (not (in_range (+ o 2))))
 (check-sat)
+
+(exit)

@@ -565,3 +565,5 @@ Target solver: Z3
  ;; File "stack_external_prover.ads", line 50, characters 0-0
   (not (= (count my_stack__split_fields3) (count my_stack__split_fields1))))
 (check-sat)
+
+(exit)

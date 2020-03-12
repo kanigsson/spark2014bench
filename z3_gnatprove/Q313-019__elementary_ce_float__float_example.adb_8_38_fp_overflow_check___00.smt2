@@ -167,3 +167,5 @@ Target solver: Z3
  ;; File "float_example.adb", line 7, characters 0-0
   (not (fp.isFinite64 (fp.add RNE a b))))
 (check-sat)
+
+(exit)

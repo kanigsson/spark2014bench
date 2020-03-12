@@ -1559,3 +1559,5 @@ Target solver: Z3
  ;; File "keccak-sponge.ads", line 146, characters 0-0
   (not (< free_bits_in_block1 1600)))
 (check-sat)
+
+(exit)

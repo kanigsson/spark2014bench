@@ -900,3 +900,5 @@ Target solver: Z3
  ;; File "frame_condition.ads", line 24, characters 0-0
   (not (<= (to_rep1 a__first) usf1)))
 (check-sat)
+
+(exit)

@@ -659,3 +659,5 @@ Target solver: Z3
  ;; File "predicate_ints.ads", line 33, characters 0-0
   (not (in_range1 (max o3 o2))))
 (check-sat)
+
+(exit)

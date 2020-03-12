@@ -114,3 +114,5 @@ Target solver: Z3
  ;; File "add.ads", line 2, characters 0-0
   (not (in_range (+ x y))))
 (check-sat)
+
+(exit)

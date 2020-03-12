@@ -502,3 +502,5 @@ Target solver: Z3
  ;; File "len_problem.adb", line 1, characters 0-0
   (not (<= 65535 r1b)))
 (check-sat)
+
+(exit)

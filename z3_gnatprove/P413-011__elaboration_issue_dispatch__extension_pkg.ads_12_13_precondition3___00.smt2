@@ -337,3 +337,5 @@ Target solver: Z3
  ;; File "extension_pkg.ads", line 3, characters 0-0
   (not (= (get1 (attr__tag o) o body_elaborated) true)))
 (check-sat)
+
+(exit)

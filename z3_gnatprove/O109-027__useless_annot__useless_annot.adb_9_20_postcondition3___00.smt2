@@ -107,3 +107,5 @@ Target solver: Z3
  ;; File "useless_annot.adb", line 7, characters 0-0
   (not (< x useless_annot__posit__result)))
 (check-sat)
+
+(exit)

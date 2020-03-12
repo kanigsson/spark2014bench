@@ -555,3 +555,5 @@ Target solver: Z3
  ;; File "p.adb", line 11, characters 0-0
   (not (= o2 x__split_discrs)))
 (check-sat)
+
+(exit)

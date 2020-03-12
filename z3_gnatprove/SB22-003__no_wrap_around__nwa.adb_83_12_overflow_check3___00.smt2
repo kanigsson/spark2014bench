@@ -208,3 +208,5 @@ Target solver: Z3
  ;; File "nwa.ads", line 27, characters 0-0
   (not (= x #x0000000000000000)))
 (check-sat)
+
+(exit)

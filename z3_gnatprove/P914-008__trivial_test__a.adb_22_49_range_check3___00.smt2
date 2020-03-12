@@ -393,3 +393,5 @@ Target solver: Z3
  ;; File "a.ads", line 13, characters 0-0
   (not (dynamic_property 1 10 1 10)))
 (check-sat)
+
+(exit)

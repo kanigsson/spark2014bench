@@ -174,3 +174,5 @@ Target solver: Z3
   (not
   (fp.lt float_example__bounded_add__result (fp #b0 #b10000000001 #b1100000000000000000000000000000000000000000000000000))))
 (check-sat)
+
+(exit)

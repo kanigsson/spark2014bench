@@ -436,3 +436,5 @@ Target solver: Z3
  ;; File "indexbis.ads", line 2, characters 0-0
   (not (<= (first1 s) courant1)))
 (check-sat)
+
+(exit)

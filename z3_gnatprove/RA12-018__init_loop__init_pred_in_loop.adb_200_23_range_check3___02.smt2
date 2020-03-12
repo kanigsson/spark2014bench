@@ -140,3 +140,5 @@ Target solver: Z3
  ;; File "init_pred_in_loop.adb", line 226, characters 0-0
   (not (in_range 0)))
 (check-sat)
+
+(exit)

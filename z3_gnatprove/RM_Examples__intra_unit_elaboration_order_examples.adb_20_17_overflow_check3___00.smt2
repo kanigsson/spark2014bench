@@ -102,3 +102,5 @@ Target solver: Z3
  ;; File "intra_unit_elaboration_order_examples.ads", line 9, characters 0-0
   (not (in_range (- j 10))))
 (check-sat)
+
+(exit)

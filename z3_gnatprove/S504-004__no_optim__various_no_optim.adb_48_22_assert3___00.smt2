@@ -248,3 +248,5 @@ Target solver: Z3
  ;; File "various_no_optim.adb", line 4, characters 0-0
   (not (= counter3 #x0000005D)))
 (check-sat)
+
+(exit)

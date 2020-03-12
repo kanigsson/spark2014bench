@@ -457,3 +457,5 @@ Target solver: Z3
  ;; File "prefixsum_general.ads", line 15, characters 0-0
   (not (not (= space 0))))
 (check-sat)
+
+(exit)

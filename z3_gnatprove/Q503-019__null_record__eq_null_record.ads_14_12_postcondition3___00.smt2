@@ -182,3 +182,5 @@ Target solver: Z3
  ;; File "eq_null_record.ads", line 13, characters 0-0
   (not (= eq_null_record__always_true__result true)))
 (check-sat)
+
+(exit)

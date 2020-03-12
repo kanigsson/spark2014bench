@@ -857,3 +857,5 @@ Target solver: Z3
      (us_repqtmk x__is_null_pointer2 x__pointer_address2
      (us_close (us_repqtmk2 x__pointer_value2))) k) (nth l (- (+ k i2) 1)))))
 (check-sat)
+
+(exit)

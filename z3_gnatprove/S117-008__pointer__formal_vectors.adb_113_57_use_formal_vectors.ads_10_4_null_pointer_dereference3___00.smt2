@@ -1646,3 +1646,5 @@ Target solver: Z3
   (rec__use_formal_vectors__my_vect__element_array_access__pointer_value__pred
   o17)))
 (check-sat)
+
+(exit)

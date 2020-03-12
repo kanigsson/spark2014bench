@@ -288,3 +288,5 @@ Target solver: Z3
  ;; File "test_fixed_points.ads", line 30, characters 0-0
   (not (= (fxp_div_int (* val1 val2) val2) val1)))
 (check-sat)
+
+(exit)

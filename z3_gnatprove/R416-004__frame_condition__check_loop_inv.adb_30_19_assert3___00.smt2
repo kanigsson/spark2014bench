@@ -1377,3 +1377,5 @@ Target solver: Z3
  ;; File "check_loop_inv.adb", line 1, characters 0-0
   (not (= (bool_eq a3 41 100 (temp_____aggregate_def_375 0) 41 100) true)))
 (check-sat)
+
+(exit)

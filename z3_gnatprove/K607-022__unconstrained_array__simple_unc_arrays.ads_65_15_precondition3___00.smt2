@@ -803,3 +803,5 @@ Target solver: Z3
  ;; File "simple_unc_arrays.ads", line 61, characters 0-0
   (not (not (= (empty o3) true))))
 (check-sat)
+
+(exit)

@@ -204,3 +204,5 @@ Target solver: Z3
  ;; File "main.adb", line 12, characters 0-0
   (not (not (= id main__with_postcondition__result))))
 (check-sat)
+
+(exit)

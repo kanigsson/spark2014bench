@@ -217,3 +217,5 @@ Target solver: Z3
   (not
   (fp.leq (fp #b0 #b01111011 #b10011001100110011001101) lat_long__cos__result)))
 (check-sat)
+
+(exit)

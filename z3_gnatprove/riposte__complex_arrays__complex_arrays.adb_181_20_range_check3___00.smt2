@@ -315,3 +315,5 @@ Target solver: Z3
  ;; File "complex_arrays.adb", line 171, characters 0-0
   (not (in_range3 (+ c 1))))
 (check-sat)
+
+(exit)

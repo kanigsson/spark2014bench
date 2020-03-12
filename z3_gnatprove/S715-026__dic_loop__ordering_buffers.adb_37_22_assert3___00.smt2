@@ -934,3 +934,5 @@ Target solver: Z3
   (not
   (not (= (has_message (us_repqtmk buffer__split_fields2) orig_first) true))))
 (check-sat)
+
+(exit)

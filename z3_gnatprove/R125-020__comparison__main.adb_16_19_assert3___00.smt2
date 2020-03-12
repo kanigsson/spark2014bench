@@ -501,3 +501,5 @@ Target solver: Z3
  ;; File "main.adb", line 3, characters 0-0
   (not (= (bool_eq a1 1 5 a1 6 10) true)))
 (check-sat)
+
+(exit)

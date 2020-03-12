@@ -157,3 +157,5 @@ Target solver: Z3
  ;; File "simple.adb", line 6, characters 0-0
   (not (not (= (is_set (us_repqtmk (us_split_fieldsqtmk self__))) true))))
 (check-sat)
+
+(exit)

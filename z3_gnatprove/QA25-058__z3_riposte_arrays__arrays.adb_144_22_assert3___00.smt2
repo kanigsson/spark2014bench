@@ -302,3 +302,5 @@ Target solver: Z3
  ;; File "arrays.adb", line 139, characters 0-0
   (not (= (rec__arrays__optional_int_array__exists r__split_fields1) true)))
 (check-sat)
+
+(exit)

@@ -1017,3 +1017,5 @@ Target solver: Z3
   (us_repqtmk1 (us_split_discrsqtmk rliteral)
   (us_split_fieldsqtmk1 rliteral empty_array empty_array)))))
 (check-sat)
+
+(exit)

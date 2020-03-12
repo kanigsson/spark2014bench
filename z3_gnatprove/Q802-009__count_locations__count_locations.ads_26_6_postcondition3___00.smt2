@@ -553,3 +553,5 @@ Target solver: Z3
  ;; File "count_locations.ads", line 22, characters 0-0
   (not (<= (count_selected_locations sel) (to_rep (select max s)))))
 (check-sat)
+
+(exit)

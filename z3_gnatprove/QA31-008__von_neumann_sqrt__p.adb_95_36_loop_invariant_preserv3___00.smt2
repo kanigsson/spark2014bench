@@ -639,3 +639,5 @@ Target solver: Z3
  ;; File "p.ads", line 13, characters 0-0
   (not (= (bvurem ux4 m3) (bvurem ((_ int2bv 64) x) m3))))
 (check-sat)
+
+(exit)

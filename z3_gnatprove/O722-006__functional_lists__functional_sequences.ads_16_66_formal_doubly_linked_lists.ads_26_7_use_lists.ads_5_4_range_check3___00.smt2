@@ -258,3 +258,5 @@ Target solver: Z3
  ;; File "functional_sequences.ads", line 14, characters 0-0
   (not (in_range1 o6)))
 (check-sat)
+
+(exit)

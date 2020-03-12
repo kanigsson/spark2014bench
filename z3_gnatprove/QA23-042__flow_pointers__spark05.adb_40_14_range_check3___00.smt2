@@ -1440,3 +1440,5 @@ Target solver: Z3
   (- (+ (first1 temp___234) (+ (length (first1 temp___234)
                                (last1 temp___234)) (length 1 7))) 1))))
 (check-sat)
+
+(exit)

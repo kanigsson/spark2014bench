@@ -591,3 +591,5 @@ Target solver: Z3
  ;; File "p_max_array.ads", line 8, characters 0-0
   (not (= (to_rep (select r2 k)) (to_rep (select (to_array a) k)))))
 (check-sat)
+
+(exit)

@@ -802,3 +802,5 @@ Target solver: Z3
  ;; File "lexer.ads", line 72, characters 0-0
   (not (= (invariant__ name_table) true)))
 (check-sat)
+
+(exit)

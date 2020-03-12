@@ -796,3 +796,5 @@ Target solver: Z3
  ;; File "fixed_string.ads", line 31, characters 0-0
   (not (<= (first1 temp___278) (last1 temp___278))))
 (check-sat)
+
+(exit)

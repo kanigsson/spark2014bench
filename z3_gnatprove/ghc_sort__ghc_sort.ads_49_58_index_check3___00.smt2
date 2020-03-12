@@ -559,3 +559,5 @@ Target solver: Z3
  ;; File "ghc_sort.ads", line 46, characters 0-0
   (not (<= (first1 ghc_sort__s_reverse__result) usf)))
 (check-sat)
+
+(exit)

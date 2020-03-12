@@ -395,3 +395,5 @@ Target solver: Z3
  ;; File "lists.ads", line 9, characters 0-0
   (not (= (goes_to2 i j memory11) true)))
 (check-sat)
+
+(exit)

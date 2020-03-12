@@ -806,3 +806,5 @@ Target solver: Z3
  ;; File "a-cfdlli.ads", line 760, characters 0-0
   (not (in_range3 o1)))
 (check-sat)
+
+(exit)

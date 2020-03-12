@@ -1441,3 +1441,5 @@ Target solver: Z3
  ;; File "test_new.adb", line 2, characters 0-0
   (not (< 10 (to_rep (rec__pred_vis__root__g13 (us_split_fields7 y))))))
 (check-sat)
+
+(exit)

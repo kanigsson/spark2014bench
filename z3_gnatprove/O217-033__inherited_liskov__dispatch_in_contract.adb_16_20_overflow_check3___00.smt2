@@ -412,3 +412,5 @@ Target solver: Z3
  ;; File "dispatch_in_contract.ads", line 22, characters 0-0
   (not (in_range (+ o3 1))))
 (check-sat)
+
+(exit)

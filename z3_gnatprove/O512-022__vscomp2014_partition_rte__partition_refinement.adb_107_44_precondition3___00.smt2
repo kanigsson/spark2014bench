@@ -2770,3 +2770,5 @@ Target solver: Z3
  ;; File "partition_refinement.adb", line 16, characters 0-0
   (not (= (has_element o17 usf8) true)))
 (check-sat)
+
+(exit)

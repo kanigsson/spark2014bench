@@ -1833,3 +1833,5 @@ Target solver: Z3
  ;; File "keccak-sponge.ads", line 222, characters 0-0
   (not (= (rate_of (us_repqtmk ctx__split_fields6)) initial_rate)))
 (check-sat)
+
+(exit)

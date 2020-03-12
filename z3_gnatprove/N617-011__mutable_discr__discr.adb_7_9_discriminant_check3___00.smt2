@@ -315,3 +315,5 @@ Target solver: Z3
  ;; File "discr.ads", line 8, characters 0-0
   (not (= o1 (rec__discr__no_default__c d__split_discrs))))
 (check-sat)
+
+(exit)

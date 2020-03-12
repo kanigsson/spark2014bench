@@ -1188,3 +1188,5 @@ Target solver: Z3
   (us_repqtmk o12
   (us_split_fields1 amortized_queue__reverse_insert__front__compl)))))))
 (check-sat)
+
+(exit)

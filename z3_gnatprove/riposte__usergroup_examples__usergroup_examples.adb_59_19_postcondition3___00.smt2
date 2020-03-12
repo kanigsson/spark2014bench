@@ -179,3 +179,5 @@ Target solver: Z3
  ;; File "usergroup_examples.adb", line 55, characters 0-0
   (not (bvugt usergroup_examples__example_5__result #x0000000000000000)))
 (check-sat)
+
+(exit)

@@ -490,3 +490,5 @@ Target solver: Z3
  ;; File "dynamic_ranges.ads", line 19, characters 0-0
   (not (<= c (last1 a))))
 (check-sat)
+
+(exit)

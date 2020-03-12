@@ -564,3 +564,5 @@ Target solver: Z3
   (us_repqtmk temp__is_null_pointer1 temp__pointer_address1
   (us_close (us_repqtmk2 temp__pointer_value1))) rliteral)))))
 (check-sat)
+
+(exit)

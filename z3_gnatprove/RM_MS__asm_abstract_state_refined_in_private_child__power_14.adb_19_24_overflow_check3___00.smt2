@@ -124,3 +124,5 @@ Target solver: Z3
  ;; File "power_14.ads", line 7, characters 0-0
   (not (in_range (+ level_a1 level_b1))))
 (check-sat)
+
+(exit)

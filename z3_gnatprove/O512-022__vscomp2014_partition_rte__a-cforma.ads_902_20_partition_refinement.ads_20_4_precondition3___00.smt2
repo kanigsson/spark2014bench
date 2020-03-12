@@ -836,3 +836,5 @@ Target solver: Z3
  ;; File "a-cforma.ads", line 896, characters 0-0
   (not (= (has_key o3 position) true)))
 (check-sat)
+
+(exit)

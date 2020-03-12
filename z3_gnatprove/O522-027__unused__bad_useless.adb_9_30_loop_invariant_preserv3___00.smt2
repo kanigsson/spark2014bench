@@ -202,3 +202,5 @@ Target solver: Z3
  ;; File "bad_useless.adb", line 1, characters 0-0
   (not (= x3 (+ tmp1 j2))))
 (check-sat)
+
+(exit)

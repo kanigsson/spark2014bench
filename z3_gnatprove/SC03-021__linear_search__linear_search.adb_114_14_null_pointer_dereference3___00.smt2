@@ -1161,3 +1161,5 @@ Target solver: Z3
  ;; File "linear_search.adb", line 82, characters 0-0
   (not (rec__linear_search__list__pointer_value__pred o5)))
 (check-sat)
+
+(exit)

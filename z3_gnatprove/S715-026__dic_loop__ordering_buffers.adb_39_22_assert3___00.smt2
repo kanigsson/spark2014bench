@@ -1030,3 +1030,5 @@ Target solver: Z3
  ;; File "ordering_buffers.ads", line 49, characters 0-0
   (not (= (last (us_repqtmk buffer__split_fields3)) (+ orig_first 16))))
 (check-sat)
+
+(exit)

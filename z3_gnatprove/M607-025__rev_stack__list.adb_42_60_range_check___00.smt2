@@ -1563,3 +1563,5 @@ Target solver: Z3
  ;; File "list.ads", line 11, characters 0-0
   (not (in_range5 o6)))
 (check-sat)
+
+(exit)

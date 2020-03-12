@@ -701,3 +701,5 @@ Target solver: Z3
  ;; File "for_loop_iterable.adb", line 37, characters 0-0
   (not (= (has_element o12 temp___2911) true)))
 (check-sat)
+
+(exit)

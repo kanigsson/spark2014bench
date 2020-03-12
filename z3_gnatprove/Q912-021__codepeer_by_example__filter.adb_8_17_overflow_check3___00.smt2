@@ -233,3 +233,5 @@ Target solver: Z3
  ;; File "filter.adb", line 2, characters 0-0
   (not (in_range (+ k 1))))
 (check-sat)
+
+(exit)

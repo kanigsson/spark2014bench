@@ -703,3 +703,5 @@ Target solver: Z3
  ;; File "swap_ranges.ads", line 10, characters 0-0
   (not (in_range1 o31)))
 (check-sat)
+
+(exit)

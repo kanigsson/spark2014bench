@@ -971,3 +971,5 @@ Target solver: Z3
  ;; File "communications.ads", line 12, characters 0-0
   (not (<= 1 r4b)))
 (check-sat)
+
+(exit)

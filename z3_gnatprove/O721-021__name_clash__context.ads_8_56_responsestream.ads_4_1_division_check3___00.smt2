@@ -176,3 +176,5 @@ Target solver: Z3
  ;; File "context.ads", line 8, characters 0-0
   (not (not (= 100 0))))
 (check-sat)
+
+(exit)

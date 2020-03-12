@@ -744,3 +744,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 99, characters 0-0
   (not (not (= 8 0))))
 (check-sat)
+
+(exit)

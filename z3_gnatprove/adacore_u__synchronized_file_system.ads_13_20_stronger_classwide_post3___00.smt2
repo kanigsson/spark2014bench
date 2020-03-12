@@ -739,3 +739,5 @@ Target solver: Z3
  ;; File "synchronized_file_system.ads", line 11, characters 0-0
   (not (= (is_open (us_repqtmk1 f__split_fields1 f__attr__tag)) true)))
 (check-sat)
+
+(exit)

@@ -1051,3 +1051,5 @@ Target solver: Z3
  ;; File "polyorb_hi-output.ads", line 87, characters 0-0
   (not (<= (first1 temp___354) (last1 temp___354))))
 (check-sat)
+
+(exit)

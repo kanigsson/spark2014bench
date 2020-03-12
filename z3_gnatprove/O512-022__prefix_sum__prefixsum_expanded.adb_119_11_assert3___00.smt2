@@ -498,3 +498,5 @@ Target solver: Z3
  ;; File "prefixsum_expanded.ads", line 47, characters 0-0
   (not (= (to_rep (select saved_a1 0)) (to_rep (select ghost__ 0)))))
 (check-sat)
+
+(exit)

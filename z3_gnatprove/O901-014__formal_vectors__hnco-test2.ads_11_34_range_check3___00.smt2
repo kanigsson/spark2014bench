@@ -5369,3 +5369,5 @@ Target solver: Z3
  ;; File "hnco-test2.ads", line 5, characters 0-0
   (not (in_range2 10)))
 (check-sat)
+
+(exit)

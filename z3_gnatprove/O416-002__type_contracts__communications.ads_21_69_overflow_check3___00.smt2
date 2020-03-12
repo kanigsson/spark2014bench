@@ -806,3 +806,5 @@ Target solver: Z3
  ;; File "communications.ads", line 3, characters 0-0
   (not (in_range1 o1)))
 (check-sat)
+
+(exit)

@@ -247,3 +247,5 @@ Target solver: Z3
  ;; File "division_by_zero.adb", line 32, characters 0-0
   (not (in_range (fxp_div x o))))
 (check-sat)
+
+(exit)

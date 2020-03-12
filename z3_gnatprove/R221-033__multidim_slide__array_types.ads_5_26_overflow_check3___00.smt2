@@ -554,3 +554,5 @@ Target solver: Z3
  ;; File "array_types.ads", line 2, characters 0-0
   (not (in_range (+ g 2))))
 (check-sat)
+
+(exit)

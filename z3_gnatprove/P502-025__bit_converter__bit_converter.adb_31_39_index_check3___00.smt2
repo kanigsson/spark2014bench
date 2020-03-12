@@ -529,3 +529,5 @@ Target solver: Z3
  ;; File "bit_converter.ads", line 15, characters 0-0
   (not (<= (first1 array_of_bits) i1)))
 (check-sat)
+
+(exit)

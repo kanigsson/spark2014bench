@@ -191,3 +191,5 @@ Target solver: Z3
  ;; File "call_actuals.ads", line 11, characters 0-0
   (not (= y1 (+ x1 1))))
 (check-sat)
+
+(exit)

@@ -184,3 +184,5 @@ Target solver: Z3
   (not (in_range2
   (fp.mul RNE (fp #b0 #b10000000 #b00101011100001010001111) x))))
 (check-sat)
+
+(exit)

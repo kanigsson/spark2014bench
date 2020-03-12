@@ -495,3 +495,5 @@ Target solver: Z3
  ;; File "perm.adb", line 3, characters 0-0
   (not (= (to_rep (select (to_array b) (last1 b))) e)))
 (check-sat)
+
+(exit)

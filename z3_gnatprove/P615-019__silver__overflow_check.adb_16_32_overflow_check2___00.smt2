@@ -357,3 +357,5 @@ Target solver: Z3
  ;; File "overflow_check.adb", line 9, characters 0-0
   (not (in_range (* x y))))
 (check-sat)
+
+(exit)

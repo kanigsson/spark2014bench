@@ -361,3 +361,5 @@ Target solver: Z3
  ;; File "a-tiinio.ads", line 68, characters 0-0
   (not (= (is_open o) true)))
 (check-sat)
+
+(exit)

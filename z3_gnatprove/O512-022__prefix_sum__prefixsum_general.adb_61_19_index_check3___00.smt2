@@ -667,3 +667,5 @@ Target solver: Z3
  ;; File "prefixsum_general.ads", line 15, characters 0-0
   (not (<= 0 left2)))
 (check-sat)
+
+(exit)

@@ -360,3 +360,5 @@ Target solver: Z3
  ;; File "purecat.adb", line 1, characters 0-0
   (not (= (bool_eq x 1 1000 (to_array o) (first1 o) (last1 o)) true)))
 (check-sat)
+
+(exit)

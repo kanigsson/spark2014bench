@@ -935,3 +935,5 @@ Target solver: Z3
  ;; File "test_list.adb", line 1, characters 0-0
   (not (rec__test_list__list__pointer_value__pred o7)))
 (check-sat)
+
+(exit)

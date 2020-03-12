@@ -804,3 +804,5 @@ Target solver: Z3
  ;; File "binary_trees.ads", line 11, characters 0-0
   (not (type_invariant usf1)))
 (check-sat)
+
+(exit)

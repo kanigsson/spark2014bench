@@ -1061,3 +1061,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 26, characters 0-0
   (not (<= (first1 number) o6)))
 (check-sat)
+
+(exit)

@@ -135,3 +135,5 @@ Target solver: Z3
  ;; File "default_init.ads", line 51, characters 0-0
   (not (in_range1 (- 2147483647 x))))
 (check-sat)
+
+(exit)

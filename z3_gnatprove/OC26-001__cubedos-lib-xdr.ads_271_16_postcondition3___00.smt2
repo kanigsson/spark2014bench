@@ -697,3 +697,5 @@ Target solver: Z3
   (= last3 (+ position (- (length_with_padding
                           (length (to_rep value__first) (to_rep value__last))) 1)))))
 (check-sat)
+
+(exit)

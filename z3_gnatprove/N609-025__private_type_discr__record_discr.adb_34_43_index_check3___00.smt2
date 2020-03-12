@@ -919,3 +919,5 @@ Target solver: Z3
  ;; File "record_discr.ads", line 25, characters 0-0
   (not (<= (first1 temp___319) temp___320)))
 (check-sat)
+
+(exit)

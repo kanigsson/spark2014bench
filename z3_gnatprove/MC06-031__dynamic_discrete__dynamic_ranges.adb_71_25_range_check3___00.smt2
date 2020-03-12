@@ -321,3 +321,5 @@ Target solver: Z3
  ;; File "dynamic_ranges.ads", line 30, characters 0-0
   (not (in_range2 i)))
 (check-sat)
+
+(exit)

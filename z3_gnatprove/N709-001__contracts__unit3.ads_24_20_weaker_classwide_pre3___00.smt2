@@ -646,3 +646,5 @@ Target solver: Z3
  ;; File "unit3.ads", line 23, characters 0-0
   (not (not (= (is_max (us_repqtmk2 x__split_fields x__attr__tag)) true))))
 (check-sat)
+
+(exit)

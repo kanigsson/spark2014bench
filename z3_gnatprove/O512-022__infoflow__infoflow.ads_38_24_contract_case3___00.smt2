@@ -247,3 +247,5 @@ Target solver: Z3
   (not
   (= (to_rep (select flags_v11 flag_v1)) (to_rep (select flags_v21 flag_v2)))))
 (check-sat)
+
+(exit)

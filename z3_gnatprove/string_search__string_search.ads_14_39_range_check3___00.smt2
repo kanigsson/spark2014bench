@@ -397,3 +397,5 @@ Target solver: Z3
  ;; File "string_search.ads", line 8, characters 0-0
   (not (in_range1 o1)))
 (check-sat)
+
+(exit)

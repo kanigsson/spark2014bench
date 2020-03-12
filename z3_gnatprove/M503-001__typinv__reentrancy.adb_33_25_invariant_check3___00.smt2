@@ -154,3 +154,5 @@ Target solver: Z3
  ;; File "reentrancy.ads", line 9, characters 0-0
   (not (type_invariant x)))
 (check-sat)
+
+(exit)

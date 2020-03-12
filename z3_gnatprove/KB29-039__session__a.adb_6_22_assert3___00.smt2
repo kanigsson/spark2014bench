@@ -104,3 +104,5 @@ Target solver: Z3
  ;; File "a.ads", line 3, characters 0-0
   (not (< (+ x 1) y)))
 (check-sat)
+
+(exit)

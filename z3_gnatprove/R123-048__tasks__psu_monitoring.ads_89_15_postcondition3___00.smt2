@@ -2852,3 +2852,5 @@ Target solver: Z3
   (= (to_rep4
      (rec__psu_monitoring__monitor_t__next_state monitor__split_fields3)) 0))))
 (check-sat)
+
+(exit)

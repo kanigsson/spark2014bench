@@ -465,3 +465,5 @@ Target solver: Z3
  ;; File "bounded_table.ads", line 37, characters 0-0
   (not (< cursor repro_main__int_table__next__result)))
 (check-sat)
+
+(exit)

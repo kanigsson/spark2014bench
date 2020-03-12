@@ -207,3 +207,5 @@ Target solver: Z3
  ;; File "user_lemma.ads", line 13, characters 0-0
   (not (or (= 10 15486209) (or (= 10 15487001) (= 10 15487469)))))
 (check-sat)
+
+(exit)

@@ -317,3 +317,5 @@ Target solver: Z3
  ;; File "simple_loops.adb", line 1, characters 0-0
   (not (= prop2 true)))
 (check-sat)
+
+(exit)

@@ -915,3 +915,5 @@ Target solver: Z3
  ;; File "linear_search.adb", line 56, characters 0-0
   (not (= (has_element o4 o3) true)))
 (check-sat)
+
+(exit)

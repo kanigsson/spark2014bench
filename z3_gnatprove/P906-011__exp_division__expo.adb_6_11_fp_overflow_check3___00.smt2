@@ -152,3 +152,5 @@ Target solver: Z3
   (fp.isFinite32 (fp.div RNE (fp #b0 #b01111111 #b00000000000000000000000) (fp.mul RNE 
   x (fp.mul RNE x x))))))
 (check-sat)
+
+(exit)

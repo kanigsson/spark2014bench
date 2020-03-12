@@ -104,3 +104,5 @@ Target solver: Z3
  ;; File "const.ads", line 5, characters 0-0
   (not (<= x 10000)))
 (check-sat)
+
+(exit)

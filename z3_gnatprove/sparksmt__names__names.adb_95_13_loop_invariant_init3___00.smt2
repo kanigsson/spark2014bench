@@ -2061,3 +2061,5 @@ Target solver: Z3
   (= (invariant__ hash_table (us_split_fieldsqtmk1 char_table__split_fields1)
      (us_split_fieldsqtmk entry_table__split_fields)) true)))
 (check-sat)
+
+(exit)

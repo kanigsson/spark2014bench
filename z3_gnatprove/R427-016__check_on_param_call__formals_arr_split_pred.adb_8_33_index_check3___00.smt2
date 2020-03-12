@@ -317,3 +317,5 @@ Target solver: Z3
  ;; File "formals_arr_split_pred.adb", line 7, characters 0-0
   (not (<= (first1 i9b) 3)))
 (check-sat)
+
+(exit)

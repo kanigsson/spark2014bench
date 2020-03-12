@@ -128,3 +128,5 @@ Target solver: Z3
  ;; File "type_invariant_legal_6.ads", line 12, characters 0-0
   (not (type_invariant x4)))
 (check-sat)
+
+(exit)

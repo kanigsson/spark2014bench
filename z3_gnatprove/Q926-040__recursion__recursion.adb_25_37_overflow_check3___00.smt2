@@ -393,3 +393,5 @@ Target solver: Z3
  ;; File "recursion.ads", line 15, characters 0-0
   (not (in_range1 (+ current_increment1 o2))))
 (check-sat)
+
+(exit)

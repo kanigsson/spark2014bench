@@ -367,3 +367,5 @@ Target solver: Z3
  ;; File "p.adb", line 1, characters 0-0
   (not (in_range1 2 (us_split_discrsqtmk rliteral))))
 (check-sat)
+
+(exit)

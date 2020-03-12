@@ -1482,3 +1482,5 @@ Target solver: Z3
   (not
   (= (attr__init (rec__nested_init_by_proof__rec__f3 (us_split_fields1 o11))) true)))
 (check-sat)
+
+(exit)

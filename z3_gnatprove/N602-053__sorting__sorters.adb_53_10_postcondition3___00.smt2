@@ -369,3 +369,5 @@ Target solver: Z3
  ;; File "sorters.adb", line 48, characters 0-0
   (not (<= (first1 unsorted) sorters__index_of_minimum__result)))
 (check-sat)
+
+(exit)

@@ -139,3 +139,5 @@ Target solver: Z3
  ;; File "test_float.adb", line 3, characters 0-0
   (not (fp.leq x (fp #b0 #b10001000 #b11110011110011001100110))))
 (check-sat)
+
+(exit)

@@ -418,3 +418,5 @@ Target solver: Z3
  ;; File "r.adb", line 47, characters 0-0
   (not (<= 2 n)))
 (check-sat)
+
+(exit)

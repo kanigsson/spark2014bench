@@ -1623,3 +1623,5 @@ Target solver: Z3
   (<= (to_rep (rec__area_math__ensemble__size1 result____split_fields4)) (+ 
   i 1))))
 (check-sat)
+
+(exit)

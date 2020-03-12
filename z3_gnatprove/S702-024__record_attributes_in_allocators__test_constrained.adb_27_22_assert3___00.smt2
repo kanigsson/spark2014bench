@@ -384,3 +384,5 @@ Target solver: Z3
  ;; File "test_constrained.adb", line 24, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

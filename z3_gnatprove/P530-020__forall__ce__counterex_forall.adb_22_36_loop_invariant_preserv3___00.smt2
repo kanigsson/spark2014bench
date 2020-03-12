@@ -310,3 +310,5 @@ Target solver: Z3
  ;; File "counterex_forall.ads", line 14, characters 0-0
   (not (< (+ i j) (+ (+ x1 y2) 1))))
 (check-sat)
+
+(exit)

@@ -393,3 +393,5 @@ Target solver: Z3
   (not
   (<= recursion__count_true_recursive__result (+ (- index (first1 arr)) 1))))
 (check-sat)
+
+(exit)

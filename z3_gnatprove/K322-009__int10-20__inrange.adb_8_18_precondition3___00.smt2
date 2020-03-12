@@ -183,3 +183,5 @@ Target solver: Z3
  ;; File "inrange.ads", line 9, characters 0-0
   (not (<= o1 10)))
 (check-sat)
+
+(exit)

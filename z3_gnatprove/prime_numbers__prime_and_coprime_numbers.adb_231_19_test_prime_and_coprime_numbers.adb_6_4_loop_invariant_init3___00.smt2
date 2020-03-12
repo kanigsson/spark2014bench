@@ -670,3 +670,5 @@ Target solver: Z3
  ;; File "prime_and_coprime_numbers.adb", line 196, characters 0-0
   (not (not (= (mod2 v div2) 0))))
 (check-sat)
+
+(exit)

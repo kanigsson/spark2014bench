@@ -326,3 +326,5 @@ Target solver: Z3
  ;; File "subar.adb", line 30, characters 0-0
   (not (= (to_rep1 (select (to_array o) (first1 o))) 1)))
 (check-sat)
+
+(exit)

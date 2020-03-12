@@ -310,3 +310,5 @@ Target solver: Z3
  ;; File "concat.adb", line 2, characters 0-0
   (not (<= (to_rep z__first) k1)))
 (check-sat)
+
+(exit)

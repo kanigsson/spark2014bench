@@ -1745,3 +1745,5 @@ Target solver: Z3
  ;; File "bounded_stacks.ads", line 31, characters 0-0
   (not (<= (first1 temp___440) temp___441)))
 (check-sat)
+
+(exit)

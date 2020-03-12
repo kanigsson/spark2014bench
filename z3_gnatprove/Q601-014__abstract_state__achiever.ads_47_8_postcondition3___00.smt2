@@ -692,3 +692,5 @@ Target solver: Z3
   (= (prf_do_stuff st (get_internal_state my_internal_state1)
      (get_internal_state my_internal_state)) true)))
 (check-sat)
+
+(exit)

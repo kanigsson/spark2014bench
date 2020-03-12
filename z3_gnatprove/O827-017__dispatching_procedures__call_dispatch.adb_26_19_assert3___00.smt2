@@ -1878,3 +1878,5 @@ Target solver: Z3
      (us_split_fields5
      (of_base (us_repqtmk v3__split_fields1 v3__attr__tag))))) 3)))
 (check-sat)
+
+(exit)

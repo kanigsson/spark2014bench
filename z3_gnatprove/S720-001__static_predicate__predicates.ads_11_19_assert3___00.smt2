@@ -632,3 +632,5 @@ Target solver: Z3
  ;; File "predicates.ads", line 1, characters 0-0
   (not (= (test1 x1) true)))
 (check-sat)
+
+(exit)

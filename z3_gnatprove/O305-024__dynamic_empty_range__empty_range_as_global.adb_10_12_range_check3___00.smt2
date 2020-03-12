@@ -194,3 +194,5 @@ Target solver: Z3
  ;; File "empty_range_as_global.adb", line 6, characters 0-0
   (not (dynamic_property first 100 c)))
 (check-sat)
+
+(exit)

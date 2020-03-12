@@ -661,3 +661,5 @@ Target solver: Z3
  ;; File "simple_unc_arrays.ads", line 28, characters 0-0
   (not (<= (to_rep1 o3) low1)))
 (check-sat)
+
+(exit)

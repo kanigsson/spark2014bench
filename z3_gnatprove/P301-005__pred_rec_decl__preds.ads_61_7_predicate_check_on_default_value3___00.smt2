@@ -542,3 +542,5 @@ Target solver: Z3
   (or (and (<= (- 2147483648) temp___427) (<= temp___427 (- 1)))
   (and (<= 1 temp___427) (<= temp___427 2147483647)))))
 (check-sat)
+
+(exit)

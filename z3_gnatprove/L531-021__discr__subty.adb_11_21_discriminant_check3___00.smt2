@@ -655,3 +655,5 @@ Target solver: Z3
  ;; File "subty.ads", line 7, characters 0-0
   (not (basic__r__a_field__pred o1)))
 (check-sat)
+
+(exit)

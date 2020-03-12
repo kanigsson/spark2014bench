@@ -233,3 +233,5 @@ Target solver: Z3
   (not
   (= rbp2 (bvor (bvand rbp1 #xFFFFFFFF00000000) ((_ zero_extend 32) val__)))))
 (check-sat)
+
+(exit)

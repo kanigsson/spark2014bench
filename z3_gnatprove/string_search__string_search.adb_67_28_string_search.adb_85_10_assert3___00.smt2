@@ -740,3 +740,5 @@ Target solver: Z3
                                                                    needle)) 
                                                                    k) 1)))))))
 (check-sat)
+
+(exit)

@@ -117,3 +117,5 @@ Target solver: Z3
  ;; File "bar.ads", line 4, characters 0-0
   (not (<= 1 temp___169)))
 (check-sat)
+
+(exit)

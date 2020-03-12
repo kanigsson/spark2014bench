@@ -388,3 +388,5 @@ Target solver: Z3
  ;; File "concat.ads", line 2, characters 0-0
   (not (in_range (- (+ 1 (+ (length 1 0) 1)) 1))))
 (check-sat)
+
+(exit)

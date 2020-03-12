@@ -302,3 +302,5 @@ Target solver: Z3
   (us_split_fieldsqtmk (rec__p__t__access_count var__split_fields1)
   (distinct 1 0))))))
 (check-sat)
+
+(exit)

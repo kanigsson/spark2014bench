@@ -393,3 +393,5 @@ Target solver: Z3
  ;; File "search.ads", line 5, characters 0-0
   (not (<= (first1 table) index22)))
 (check-sat)
+
+(exit)

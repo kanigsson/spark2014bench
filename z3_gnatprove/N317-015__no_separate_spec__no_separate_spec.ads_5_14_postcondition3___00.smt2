@@ -80,3 +80,5 @@ Target solver: Z3
  ;; File "no_separate_spec.ads", line 4, characters 0-0
   (not (= b1 true)))
 (check-sat)
+
+(exit)

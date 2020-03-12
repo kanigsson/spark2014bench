@@ -148,3 +148,5 @@ Target solver: Z3
  ;; File "loop_exit3.adb", line 1, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

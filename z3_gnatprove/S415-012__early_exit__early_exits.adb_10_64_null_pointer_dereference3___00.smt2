@@ -1360,3 +1360,5 @@ Target solver: Z3
  ;; File "early_exits.adb", line 8, characters 0-0
   (not (rec__early_exits__int_acc__pointer_value__pred o2)))
 (check-sat)
+
+(exit)

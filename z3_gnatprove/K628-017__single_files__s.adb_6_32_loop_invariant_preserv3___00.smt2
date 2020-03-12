@@ -287,3 +287,5 @@ Target solver: Z3
  ;; File "s.ads", line 7, characters 0-0
   (not (not (= (to_rep (select table j)) value))))
 (check-sat)
+
+(exit)

@@ -431,3 +431,5 @@ Target solver: Z3
  ;; File "bug.ads", line 16, characters 0-0
   (not (<= (first1 a) o2)))
 (check-sat)
+
+(exit)

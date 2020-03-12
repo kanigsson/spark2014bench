@@ -182,3 +182,5 @@ Target solver: Z3
  ;; File "math_simple_abstract.adb", line 3, characters 0-0
   (not (not (= arg2 0))))
 (check-sat)
+
+(exit)

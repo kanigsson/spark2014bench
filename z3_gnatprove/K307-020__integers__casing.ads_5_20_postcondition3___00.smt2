@@ -128,3 +128,5 @@ Target solver: Z3
  ;; File "casing.ads", line 3, characters 0-0
   (not (= casing__f__result (+ x 1))))
 (check-sat)
+
+(exit)

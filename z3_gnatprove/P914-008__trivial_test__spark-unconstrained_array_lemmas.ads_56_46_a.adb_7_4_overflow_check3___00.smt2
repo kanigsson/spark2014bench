@@ -396,3 +396,5 @@ Target solver: Z3
  ;; File "spark-unconstrained_array_lemmas.ads", line 52, characters 0-0
   (not (not (= usf (- 128)))))
 (check-sat)
+
+(exit)

@@ -839,3 +839,5 @@ Target solver: Z3
  ;; File "foo.ads", line 38, characters 0-0
   (not (<= 5 (to_rep (select cpu_lsid_last cpu_id)))))
 (check-sat)
+
+(exit)

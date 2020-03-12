@@ -941,3 +941,5 @@ Target solver: Z3
  ;; File "string_utilities.ads", line 22, characters 0-0
   (not (<= (- 2147483648) 0)))
 (check-sat)
+
+(exit)

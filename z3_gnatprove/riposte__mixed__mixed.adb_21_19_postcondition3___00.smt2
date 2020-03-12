@@ -275,3 +275,5 @@ Target solver: Z3
  ;; File "mixed.adb", line 20, characters 0-0
   (not (= (bool_eq r (us_repqtmk mixed__id__result)) true)))
 (check-sat)
+
+(exit)

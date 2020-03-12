@@ -747,3 +747,5 @@ Target solver: Z3
      (rec__sum_elem__interval__first (us_split_fields3 (element p x)))) 
   (to_rep1 (rec__sum_elem__interval__last (us_split_fields3 (element p x))))))))
 (check-sat)
+
+(exit)

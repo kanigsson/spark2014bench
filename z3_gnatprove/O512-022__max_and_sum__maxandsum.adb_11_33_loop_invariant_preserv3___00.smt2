@@ -384,3 +384,5 @@ Target solver: Z3
  ;; File "maxandsum.ads", line 11, characters 0-0
   (not (<= sum3 (* (- i2 1) max3))))
 (check-sat)
+
+(exit)

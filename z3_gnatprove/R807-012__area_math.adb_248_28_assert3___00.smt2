@@ -1461,3 +1461,5 @@ Target solver: Z3
  ;; File "area_math.ads", line 46, characters 0-0
   (not (bvule prev1 next1)))
 (check-sat)
+
+(exit)

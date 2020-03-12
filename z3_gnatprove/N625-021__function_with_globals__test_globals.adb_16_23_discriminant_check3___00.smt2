@@ -980,3 +980,5 @@ Target solver: Z3
  ;; File "test_globals.adb", line 1, characters 0-0
   (not (in_range3 c (us_split_discrs1 temp___246))))
 (check-sat)
+
+(exit)

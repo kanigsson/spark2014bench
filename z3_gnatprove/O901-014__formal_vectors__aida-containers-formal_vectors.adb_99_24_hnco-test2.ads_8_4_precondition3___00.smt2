@@ -5792,3 +5792,5 @@ Target solver: Z3
   ada___hnco__test2__v_type_owner__vector_type_owner__append__container__compl))) 
   (length2 o2)))))
 (check-sat)
+
+(exit)

@@ -102,3 +102,5 @@ Target solver: Z3
  ;; File "initial_condition_illegal_4.ads", line 1, characters 0-0
   (not (= var1 0)))
 (check-sat)
+
+(exit)

@@ -1212,3 +1212,5 @@ Target solver: Z3
  ;; File "evoting.ads", line 116, characters 0-0
   (not (<= (to_rep2 (select counters 0)) total)))
 (check-sat)
+
+(exit)

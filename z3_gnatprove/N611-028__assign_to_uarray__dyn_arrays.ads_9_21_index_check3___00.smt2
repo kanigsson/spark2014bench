@@ -430,3 +430,5 @@ Target solver: Z3
  ;; File "dyn_arrays.ads", line 6, characters 0-0
   (not (<= (to_rep1 to____first) usf)))
 (check-sat)
+
+(exit)

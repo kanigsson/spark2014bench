@@ -340,3 +340,5 @@ Target solver: Z3
  ;; File "math.ads", line 14, characters 0-0
   (not (dynamic_predicate temp___209)))
 (check-sat)
+
+(exit)

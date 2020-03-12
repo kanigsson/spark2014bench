@@ -282,3 +282,5 @@ Target solver: Z3
   (not
   (= prefixsum_general__summation__result (to_rep (select a start_pos)))))
 (check-sat)
+
+(exit)

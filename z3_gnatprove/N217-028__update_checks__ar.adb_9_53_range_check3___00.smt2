@@ -255,3 +255,5 @@ Target solver: Z3
  ;; File "ar.ads", line 16, characters 0-0
   (not (in_range2 o1)))
 (check-sat)
+
+(exit)

@@ -381,3 +381,5 @@ Target solver: Z3
  ;; File "test_img.ads", line 2, characters 0-0
   (not (<= (first1 temp___167) o1)))
 (check-sat)
+
+(exit)

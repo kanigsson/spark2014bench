@@ -553,3 +553,5 @@ Target solver: Z3
  ;; File "hermes-der-encode.ads", line 37, characters 0-0
   (not (in_range (- (+ 0 (+ 1 1)) 1))))
 (check-sat)
+
+(exit)

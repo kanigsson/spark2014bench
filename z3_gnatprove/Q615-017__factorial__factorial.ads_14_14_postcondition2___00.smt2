@@ -243,3 +243,5 @@ Target solver: Z3
  ;; File "factorial.ads", line 12, characters 0-0
   (not (= factorial__fact__result (mathematical_factorial x))))
 (check-sat)
+
+(exit)

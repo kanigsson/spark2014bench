@@ -793,3 +793,5 @@ Target solver: Z3
  ;; File "sorting.ads", line 17, characters 0-0
   (not (<= i4 length2)))
 (check-sat)
+
+(exit)

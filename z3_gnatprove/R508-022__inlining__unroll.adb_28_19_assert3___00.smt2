@@ -104,3 +104,5 @@ Target solver: Z3
  ;; File "unroll.adb", line 1, characters 0-0
   (not (= value1 4)))
 (check-sat)
+
+(exit)

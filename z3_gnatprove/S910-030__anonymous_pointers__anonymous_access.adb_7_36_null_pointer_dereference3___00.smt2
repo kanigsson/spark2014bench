@@ -396,3 +396,5 @@ Target solver: Z3
  ;; File "anonymous_access.ads", line 16, characters 0-0
   (not (rec__anonymous_access__list_acc__pointer_value__pred o)))
 (check-sat)
+
+(exit)

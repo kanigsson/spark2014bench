@@ -491,3 +491,5 @@ Target solver: Z3
  ;; File "stack.ads", line 38, characters 0-0
   (not (<= 1 p_top2)))
 (check-sat)
+
+(exit)

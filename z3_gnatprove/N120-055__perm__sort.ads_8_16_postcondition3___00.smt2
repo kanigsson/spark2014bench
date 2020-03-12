@@ -502,3 +502,5 @@ Target solver: Z3
      (of_array values1 (to_rep values__first) (to_rep values__last))
      (of_array values2 (to_rep values__first) (to_rep values__last))) true)))
 (check-sat)
+
+(exit)

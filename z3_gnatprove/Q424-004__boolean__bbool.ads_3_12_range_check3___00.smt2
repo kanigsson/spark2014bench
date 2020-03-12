@@ -118,3 +118,5 @@ Target solver: Z3
  ;; File "bbool.ads", line 1, characters 0-0
   (not (<= 0 (ite b_FIRST 1 0))))
 (check-sat)
+
+(exit)

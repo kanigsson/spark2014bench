@@ -1624,3 +1624,5 @@ Target solver: Z3
  ;; File "gen.ads", line 11, characters 0-0
   (not (= (bool_eq test__p__get_val__result test__p__get_val__result) true)))
 (check-sat)
+
+(exit)

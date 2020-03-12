@@ -502,3 +502,5 @@ Target solver: Z3
  ;; File "flight_manager.ads", line 7, characters 0-0
   (not (not (= 10 0))))
 (check-sat)
+
+(exit)

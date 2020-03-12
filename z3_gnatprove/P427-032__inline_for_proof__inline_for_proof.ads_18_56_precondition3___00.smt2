@@ -226,3 +226,5 @@ Target solver: Z3
  ;; File "inline_for_proof.ads", line 15, characters 0-0
   (not (<= 1 usf1)))
 (check-sat)
+
+(exit)

@@ -133,3 +133,5 @@ Target solver: Z3
  ;; File "fxp_true_check_1.adb", line 3, characters 0-0
   (not (<= 0 ms)))
 (check-sat)
+
+(exit)

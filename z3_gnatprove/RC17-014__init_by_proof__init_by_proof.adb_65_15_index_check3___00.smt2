@@ -468,3 +468,5 @@ Target solver: Z3
  ;; File "init_by_proof.adb", line 59, characters 0-0
   (not (<= (to_rep buf__first) i1)))
 (check-sat)
+
+(exit)

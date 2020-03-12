@@ -145,3 +145,5 @@ Target solver: Z3
  ;; File "minmax.adb", line 70, characters 0-0
   (not (= maxe1 y)))
 (check-sat)
+
+(exit)

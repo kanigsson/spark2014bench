@@ -1110,3 +1110,5 @@ Target solver: Z3
  ;; File "test.adb", line 5, characters 0-0
   (not (in_range1 10)))
 (check-sat)
+
+(exit)

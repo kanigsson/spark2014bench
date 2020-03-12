@@ -202,3 +202,5 @@ Target solver: Z3
  ;; File "protectedfloat.ads", line 5, characters 0-0
   (not (not (fp.isZero o))))
 (check-sat)
+
+(exit)

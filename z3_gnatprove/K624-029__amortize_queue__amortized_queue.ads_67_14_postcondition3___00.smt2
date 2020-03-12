@@ -898,3 +898,5 @@ Target solver: Z3
  ;; File "amortized_queue.ads", line 65, characters 0-0
   (not (= (last_element (model2 q)) amortized_queue__front__result)))
 (check-sat)
+
+(exit)

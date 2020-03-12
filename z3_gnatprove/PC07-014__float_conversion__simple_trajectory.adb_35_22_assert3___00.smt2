@@ -433,3 +433,5 @@ Target solver: Z3
   (fp.leq (fp.sub RNE old_speed (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000)) 
   new_speed1)))
 (check-sat)
+
+(exit)

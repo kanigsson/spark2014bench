@@ -658,3 +658,5 @@ Target solver: Z3
  ;; File "prefixsum.ads", line 42, characters 0-0
   (not (= (to_rep (select a2 0)) 0)))
 (check-sat)
+
+(exit)

@@ -95,3 +95,5 @@ Target solver: Z3
  ;; File "pack.ads", line 4, characters 0-0
   (not (= pack__po_funcT__func__result true)))
 (check-sat)
+
+(exit)

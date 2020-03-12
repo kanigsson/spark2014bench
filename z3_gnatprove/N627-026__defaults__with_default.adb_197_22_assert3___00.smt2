@@ -2333,3 +2333,5 @@ Target solver: Z3
   (= (to_rep
      (rec__with_default__ok_record__rec_with_discr__f1 w_disc__split_fields)) 0)))
 (check-sat)
+
+(exit)

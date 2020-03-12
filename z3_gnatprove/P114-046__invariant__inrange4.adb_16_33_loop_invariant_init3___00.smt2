@@ -300,3 +300,5 @@ Target solver: Z3
  ;; File "inrange4.ads", line 15, characters 0-0
   (not (not (= var (bvadd bottom k)))))
 (check-sat)
+
+(exit)

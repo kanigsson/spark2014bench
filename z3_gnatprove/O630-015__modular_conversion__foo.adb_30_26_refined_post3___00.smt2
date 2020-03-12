@@ -281,3 +281,5 @@ Target solver: Z3
  ;; File "foo.ads", line 16, characters 0-0
   (not (= data1 (to_rep (select value field)))))
 (check-sat)
+
+(exit)

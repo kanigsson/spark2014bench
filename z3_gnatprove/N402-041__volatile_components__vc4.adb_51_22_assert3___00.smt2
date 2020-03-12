@@ -280,3 +280,5 @@ Target solver: Z3
  ;; File "vc4.ads", line 40, characters 0-0
   (not (= t31 t41)))
 (check-sat)
+
+(exit)

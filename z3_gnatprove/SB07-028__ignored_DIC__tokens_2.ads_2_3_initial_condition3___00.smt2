@@ -220,3 +220,5 @@ Target solver: Z3
  ;; File "tokens_2.ads", line 1, characters 0-0
   (not (= (init x c) true)))
 (check-sat)
+
+(exit)

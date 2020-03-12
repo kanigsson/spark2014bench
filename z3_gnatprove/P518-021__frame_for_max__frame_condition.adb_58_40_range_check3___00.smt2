@@ -644,3 +644,5 @@ Target solver: Z3
  ;; File "frame_condition.ads", line 17, characters 0-0
   (not (in_range2 o3)))
 (check-sat)
+
+(exit)

@@ -1371,3 +1371,5 @@ Target solver: Z3
  ;; File "static_discr.adb", line 47, characters 0-0
   (not (<= (first1 temp___499) result__1)))
 (check-sat)
+
+(exit)

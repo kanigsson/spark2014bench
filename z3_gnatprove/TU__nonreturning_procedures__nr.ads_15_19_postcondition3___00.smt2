@@ -120,3 +120,5 @@ Target solver: Z3
  ;; File "nr.ads", line 12, characters 0-0
   (not (= x2 (+ x1 1))))
 (check-sat)
+
+(exit)

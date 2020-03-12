@@ -645,3 +645,5 @@ Target solver: Z3
  ;; File "predicates.ads", line 1, characters 0-0
   (not (not (= (test2 (of_array y0 1 4)) true))))
 (check-sat)
+
+(exit)

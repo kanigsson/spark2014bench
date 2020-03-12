@@ -497,3 +497,5 @@ Target solver: Z3
  ;; File "foo.ads", line 10, characters 0-0
   (not (in_range1 (bv2int (bvurem i #x0000000000000020)))))
 (check-sat)
+
+(exit)

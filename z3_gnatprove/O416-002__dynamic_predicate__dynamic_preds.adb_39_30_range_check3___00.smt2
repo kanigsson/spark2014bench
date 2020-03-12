@@ -371,3 +371,5 @@ Target solver: Z3
  ;; File "dynamic_preds.ads", line 28, characters 0-0
   (not (in_range1 o)))
 (check-sat)
+
+(exit)

@@ -198,3 +198,5 @@ Target solver: Z3
  ;; File "div_lemmas.adb", line 24, characters 0-0
   (not (= res1 1)))
 (check-sat)
+
+(exit)

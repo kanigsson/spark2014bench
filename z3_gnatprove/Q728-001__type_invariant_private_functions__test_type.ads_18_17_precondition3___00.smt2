@@ -256,3 +256,5 @@ Target solver: Z3
   (not
   (< (- 2147483648) (to_rep (rec__test_type__t__f (us_split_fields1 o))))))
 (check-sat)
+
+(exit)

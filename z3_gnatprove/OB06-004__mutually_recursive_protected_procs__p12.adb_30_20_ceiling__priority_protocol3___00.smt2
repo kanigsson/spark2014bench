@@ -151,3 +151,5 @@ Target solver: Z3
  ;; File "p12.adb", line 30, characters 0-0
   (not (<= 97 97)))
 (check-sat)
+
+(exit)

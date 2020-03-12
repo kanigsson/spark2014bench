@@ -296,3 +296,5 @@ Target solver: Z3
  ;; File "semaphores1.ads", line 7, characters 0-0
   (not (<= 97 7)))
 (check-sat)
+
+(exit)

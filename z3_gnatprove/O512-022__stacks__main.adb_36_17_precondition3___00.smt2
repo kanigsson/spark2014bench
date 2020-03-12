@@ -1965,3 +1965,5 @@ Target solver: Z3
   (not
   (= (is_full (us_repqtmk o4 (us_split_fields1 stacks__push__s__compl) o3)) true))))
 (check-sat)
+
+(exit)

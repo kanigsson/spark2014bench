@@ -658,3 +658,5 @@ Target solver: Z3
  ;; File "tictactoe.adb", line 11, characters 0-0
   (not (= (num_free_slots my_board2) (- (num_free_slots my_board1) 1))))
 (check-sat)
+
+(exit)

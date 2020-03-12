@@ -381,3 +381,5 @@ Target solver: Z3
  ;; File "counter.ads", line 38, characters 0-0
   (not (= (current_chain_length inputs2) count1)))
 (check-sat)
+
+(exit)

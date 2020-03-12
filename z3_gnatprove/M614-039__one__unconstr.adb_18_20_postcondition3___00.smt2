@@ -449,3 +449,5 @@ Target solver: Z3
  ;; File "unconstr.adb", line 17, characters 0-0
   (not (= unconstr__constr_call__result true)))
 (check-sat)
+
+(exit)

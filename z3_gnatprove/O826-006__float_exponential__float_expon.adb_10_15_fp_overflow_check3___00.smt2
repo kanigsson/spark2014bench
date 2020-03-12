@@ -237,3 +237,5 @@ Target solver: Z3
  ;; File "float_expon.adb", line 6, characters 0-0
   (not (fp.isFinite32 o4)))
 (check-sat)
+
+(exit)

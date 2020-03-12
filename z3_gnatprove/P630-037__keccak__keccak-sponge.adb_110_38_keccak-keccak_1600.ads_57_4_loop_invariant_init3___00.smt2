@@ -1791,3 +1791,5 @@ Target solver: Z3
  ;; File "keccak-sponge.ads", line 146, characters 0-0
   (not (= (+ offset1 remaining_bytes1) initial_data_len)))
 (check-sat)
+
+(exit)

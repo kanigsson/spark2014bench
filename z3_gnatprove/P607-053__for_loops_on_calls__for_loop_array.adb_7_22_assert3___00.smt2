@@ -390,3 +390,5 @@ Target solver: Z3
  ;; File "for_loop_array.adb", line 3, characters 0-0
   (not (= (to_rep (select r6b c3b1)) 0)))
 (check-sat)
+
+(exit)

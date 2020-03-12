@@ -364,3 +364,5 @@ Target solver: Z3
  ;; File "records.adb", line 138, characters 0-0
   (not (= (is_valid (us_repqtmk1 dst__split_fields2)) true)))
 (check-sat)
+
+(exit)

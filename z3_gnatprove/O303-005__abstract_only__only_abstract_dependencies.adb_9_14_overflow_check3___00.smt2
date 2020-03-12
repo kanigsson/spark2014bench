@@ -101,3 +101,5 @@ Target solver: Z3
  ;; File "only_abstract_dependencies.ads", line 5, characters 0-0
   (not (in_range (+ v x))))
 (check-sat)
+
+(exit)

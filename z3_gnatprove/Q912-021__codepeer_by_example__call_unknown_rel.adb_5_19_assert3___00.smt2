@@ -106,3 +106,5 @@ Target solver: Z3
  ;; File "call_unknown_rel.adb", line 2, characters 0-0
   (not (< x1 (+ (* 2 y) 1))))
 (check-sat)
+
+(exit)

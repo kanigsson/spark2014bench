@@ -425,3 +425,5 @@ Target solver: Z3
  ;; File "alignment_attribute.adb", line 47, characters 0-0
   (not (<= 1 x)))
 (check-sat)
+
+(exit)

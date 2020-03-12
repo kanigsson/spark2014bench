@@ -2163,3 +2163,5 @@ Target solver: Z3
   (not
   (or (= (contains seen2 i) true) (= (m_contains temp___brower_333 i) true))))
 (check-sat)
+
+(exit)

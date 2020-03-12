@@ -373,3 +373,5 @@ Target solver: Z3
  ;; File "purecat.adb", line 4, characters 0-0
   (not (not (= (bool_eq x1 1 1000 (to_array y) (first1 y) (last1 y)) true))))
 (check-sat)
+
+(exit)

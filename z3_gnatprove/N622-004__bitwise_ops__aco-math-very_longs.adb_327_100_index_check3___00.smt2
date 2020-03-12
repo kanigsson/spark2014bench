@@ -704,3 +704,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.adb", line 323, characters 0-0
   (not (<= (first1 temp___1526) usf)))
 (check-sat)
+
+(exit)

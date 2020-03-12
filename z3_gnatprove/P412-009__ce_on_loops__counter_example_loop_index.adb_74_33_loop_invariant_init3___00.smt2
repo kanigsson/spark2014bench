@@ -159,3 +159,5 @@ Target solver: Z3
  ;; File "counter_example_loop_index.adb", line 67, characters 0-0
   (not (<= j1 50)))
 (check-sat)
+
+(exit)

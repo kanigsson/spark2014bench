@@ -420,3 +420,5 @@ Target solver: Z3
  ;; File "update_lists.ads", line 6, characters 0-0
   (not (rec__linked_list_types_types__list__pointer_value__pred o)))
 (check-sat)
+
+(exit)

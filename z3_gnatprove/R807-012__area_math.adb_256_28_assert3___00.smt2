@@ -1642,3 +1642,5 @@ Target solver: Z3
   (= (olt b
      (to_base (us_repqtmk1 result____split_discrs result____split_fields6))) true)))
 (check-sat)
+
+(exit)

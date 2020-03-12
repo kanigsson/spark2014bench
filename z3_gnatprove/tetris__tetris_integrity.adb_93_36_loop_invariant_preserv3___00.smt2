@@ -617,3 +617,5 @@ Target solver: Z3
  ;; File "tetris_integrity.ads", line 208, characters 0-0
   (not (< from_line2 to_line3)))
 (check-sat)
+
+(exit)

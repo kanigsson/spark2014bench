@@ -337,3 +337,5 @@ Target solver: Z3
  ;; File "sorted.ads", line 1, characters 0-0
   (not (type_invariant (of_array usf 1 100))))
 (check-sat)
+
+(exit)

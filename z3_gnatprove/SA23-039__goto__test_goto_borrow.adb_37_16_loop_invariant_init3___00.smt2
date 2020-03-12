@@ -661,3 +661,5 @@ Target solver: Z3
   (= (length temp___borrowed_255) (+ i1 (min (length temp___brower_254)
                                         (- 2147483647 i1))))))
 (check-sat)
+
+(exit)

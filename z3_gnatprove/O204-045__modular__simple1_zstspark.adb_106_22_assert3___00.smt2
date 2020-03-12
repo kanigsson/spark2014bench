@@ -1824,3 +1824,5 @@ Target solver: Z3
   (not
   (= rsp3 (bvadd (bvsub saversp #x0000000000000008) #x0000000000000008))))
 (check-sat)
+
+(exit)

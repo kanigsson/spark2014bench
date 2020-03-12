@@ -837,3 +837,5 @@ Target solver: Z3
  ;; File "queue.ads", line 26, characters 0-0
   (not true))
 (check-sat)
+
+(exit)

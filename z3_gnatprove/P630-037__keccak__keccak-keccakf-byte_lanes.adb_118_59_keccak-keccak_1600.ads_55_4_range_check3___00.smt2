@@ -979,3 +979,5 @@ Target solver: Z3
  ;; File "keccak-keccakf-byte_lanes.ads", line 51, characters 0-0
   (not (bvule ((_ zero_extend 56) #x00) o12)))
 (check-sat)
+
+(exit)

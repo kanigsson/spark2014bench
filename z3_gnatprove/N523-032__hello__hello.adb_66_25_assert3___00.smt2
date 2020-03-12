@@ -505,3 +505,5 @@ Target solver: Z3
  ;; File "hello.adb", line 39, characters 0-0
   (not (<= (to_rep1 ret__first) idx)))
 (check-sat)
+
+(exit)

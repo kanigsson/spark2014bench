@@ -307,3 +307,5 @@ Target solver: Z3
  ;; File "part.ads", line 14, characters 0-0
   (not (<= (first1 x) usf)))
 (check-sat)
+
+(exit)

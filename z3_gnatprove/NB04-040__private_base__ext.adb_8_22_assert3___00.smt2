@@ -552,3 +552,5 @@ Target solver: Z3
  ;; File "ext.ads", line 17, characters 0-0
   (not (= (sum (to_base a)) (sum (to_base b)))))
 (check-sat)
+
+(exit)

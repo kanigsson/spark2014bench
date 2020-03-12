@@ -564,3 +564,5 @@ Target solver: Z3
  ;; File "instructions.ads", line 14, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

@@ -563,3 +563,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 49, characters 0-0
   (not (<= (first1 temp___1170) usf)))
 (check-sat)
+
+(exit)

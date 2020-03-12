@@ -516,3 +516,5 @@ Target solver: Z3
  ;; File "perm.adb", line 3, characters 0-0
   (not (< 0 (length o3))))
 (check-sat)
+
+(exit)

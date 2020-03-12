@@ -180,3 +180,5 @@ Target solver: Z3
   (or (and (bvule #x01 temp___187) (bvule temp___187 #x03))
   (and (bvule #x05 temp___187) (bvule temp___187 #xFF)))))
 (check-sat)
+
+(exit)

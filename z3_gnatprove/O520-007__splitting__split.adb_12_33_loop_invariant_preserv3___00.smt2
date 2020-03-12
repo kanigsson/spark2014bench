@@ -155,3 +155,5 @@ Target solver: Z3
  ;; File "split.ads", line 9, characters 0-0
   (not (<= 1 u)))
 (check-sat)
+
+(exit)

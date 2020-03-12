@@ -575,3 +575,5 @@ Target solver: Z3
  ;; File "pragmarc-b_strings.ads", line 52, characters 0-0
   (not (<= (first1 temp___956) 1)))
 (check-sat)
+
+(exit)

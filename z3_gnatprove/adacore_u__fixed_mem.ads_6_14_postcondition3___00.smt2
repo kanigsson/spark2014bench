@@ -203,3 +203,5 @@ Target solver: Z3
  ;; File "fixed_mem.ads", line 4, characters 0-0
   (not (< (free_memory free2) (free_memory free1))))
 (check-sat)
+
+(exit)

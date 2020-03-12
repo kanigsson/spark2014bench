@@ -548,3 +548,5 @@ Target solver: Z3
   (not (rec__early_exits__int_acc__pointer_value__pred
   temp___borrowed_expr_226)))
 (check-sat)
+
+(exit)

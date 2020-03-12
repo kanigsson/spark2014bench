@@ -252,3 +252,5 @@ Target solver: Z3
  ;; File "state_machine.adb", line 24, characters 0-0
   (not (= (state_a flag1 num1) true)))
 (check-sat)
+
+(exit)

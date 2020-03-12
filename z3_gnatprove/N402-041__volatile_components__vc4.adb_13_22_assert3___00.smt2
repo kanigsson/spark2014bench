@@ -237,3 +237,5 @@ Target solver: Z3
  ;; File "vc4.ads", line 31, characters 0-0
   (not (= t11 t21)))
 (check-sat)
+
+(exit)

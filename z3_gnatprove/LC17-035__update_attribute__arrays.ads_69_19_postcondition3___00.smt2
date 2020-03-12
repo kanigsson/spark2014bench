@@ -277,3 +277,5 @@ Target solver: Z3
      (to_rep (select arrays__swap_fun__result j)) j
      (to_rep (select arrays__swap_fun__result i))) 1 8 arr_in 1 8) true)))
 (check-sat)
+
+(exit)

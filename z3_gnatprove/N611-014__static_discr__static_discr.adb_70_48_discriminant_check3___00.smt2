@@ -1707,3 +1707,5 @@ Target solver: Z3
  ;; File "static_discr.ads", line 31, characters 0-0
   (not (in_range4 (last1 a) (last1 a) (us_split_discrs1 temp___440))))
 (check-sat)
+
+(exit)

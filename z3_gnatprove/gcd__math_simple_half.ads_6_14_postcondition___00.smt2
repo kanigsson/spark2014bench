@@ -414,3 +414,5 @@ Target solver: Z3
  ;; File "math_simple_half.ads", line 5, characters 0-0
   (not (= (divides math_simple_half__gcd__result a) true)))
 (check-sat)
+
+(exit)

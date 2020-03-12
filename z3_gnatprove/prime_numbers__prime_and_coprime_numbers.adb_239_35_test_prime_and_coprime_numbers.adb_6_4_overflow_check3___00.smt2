@@ -677,3 +677,5 @@ Target solver: Z3
  ;; File "prime_and_coprime_numbers.adb", line 196, characters 0-0
   (not (in_range1 o3)))
 (check-sat)
+
+(exit)

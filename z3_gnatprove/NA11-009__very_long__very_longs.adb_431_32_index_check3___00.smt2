@@ -820,3 +820,5 @@ Target solver: Z3
  ;; File "very_longs.adb", line 420, characters 0-0
   (not (<= (first1 number__split_fields2) i1)))
 (check-sat)
+
+(exit)

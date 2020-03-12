@@ -499,3 +499,5 @@ Target solver: Z3
  ;; File "p.ads", line 30, characters 0-0
   (not (in_range2 (max size_of_seq2 biggest_seq1))))
 (check-sat)
+
+(exit)

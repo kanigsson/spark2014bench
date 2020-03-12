@@ -552,3 +552,5 @@ Target solver: Z3
  ;; File "repr.ads", line 10, characters 0-0
   (not (bvule (to_rep1 a__first) (to_rep1 a__last))))
 (check-sat)
+
+(exit)

@@ -182,3 +182,5 @@ Target solver: Z3
  ;; File "assign_arr.ads", line 3, characters 0-0
   (not (in_range (- y 1))))
 (check-sat)
+
+(exit)

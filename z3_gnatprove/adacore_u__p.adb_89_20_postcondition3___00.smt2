@@ -398,3 +398,5 @@ Target solver: Z3
  ;; File "p.adb", line 80, characters 0-0
   (not (<= (- (first1 a) 1) beginning1)))
 (check-sat)
+
+(exit)

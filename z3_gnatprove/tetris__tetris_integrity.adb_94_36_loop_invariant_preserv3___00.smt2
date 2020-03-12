@@ -621,3 +621,5 @@ Target solver: Z3
   (not
   (= (+ num_deleted3 to_line3) (+ temp___loop_entry_874 temp___loop_entry_875))))
 (check-sat)
+
+(exit)

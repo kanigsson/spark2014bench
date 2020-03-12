@@ -206,3 +206,5 @@ Target solver: Z3
  ;; File "dynamic_in_loop.adb", line 1, characters 0-0
   (not (dynamic_property o1 o z)))
 (check-sat)
+
+(exit)

@@ -440,3 +440,5 @@ Target solver: Z3
  ;; File "bit_converter.ads", line 15, characters 0-0
   (not (in_range3 o)))
 (check-sat)
+
+(exit)

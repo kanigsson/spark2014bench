@@ -499,3 +499,5 @@ Target solver: Z3
  ;; File "red_black_trees.adb", line 19, characters 0-0
   (not (rec__red_black_trees__tree__pointer_value__pred o8)))
 (check-sat)
+
+(exit)

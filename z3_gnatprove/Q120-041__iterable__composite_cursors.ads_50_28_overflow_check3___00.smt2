@@ -438,3 +438,5 @@ Target solver: Z3
  ;; File "composite_cursors.ads", line 49, characters 0-0
   (not (in_range (+ o 1))))
 (check-sat)
+
+(exit)

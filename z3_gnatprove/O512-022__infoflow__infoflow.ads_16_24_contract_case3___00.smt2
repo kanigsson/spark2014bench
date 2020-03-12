@@ -282,3 +282,5 @@ Target solver: Z3
  ;; File "infoflow.ads", line 8, characters 0-0
   (not (= out_0_dat_v11 out_0_dat_v21)))
 (check-sat)
+
+(exit)

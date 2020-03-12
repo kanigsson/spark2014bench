@@ -709,3 +709,5 @@ Target solver: Z3
  ;; File "ring_buffer.ads", line 47, characters 0-0
   (not (= (is_prepend model2 temp___old_328 e1) true)))
 (check-sat)
+
+(exit)

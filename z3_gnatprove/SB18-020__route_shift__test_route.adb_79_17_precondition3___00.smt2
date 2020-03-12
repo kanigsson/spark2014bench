@@ -1032,3 +1032,5 @@ Target solver: Z3
         (rec__test_route__route__rest
         (us_split_fields3 (rec__test_route__route_acc__pointer_value o2)))))))
 (check-sat)
+
+(exit)

@@ -121,3 +121,5 @@ Target solver: Z3
  ;; File "pr_01.ads", line 2, characters 0-0
   (not (in_range (- n 1))))
 (check-sat)
+
+(exit)

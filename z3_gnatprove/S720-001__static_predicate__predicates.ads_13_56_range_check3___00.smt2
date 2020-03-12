@@ -358,3 +358,5 @@ Target solver: Z3
  ;; File "predicates.ads", line 13, characters 0-0
   (not (dynamic_property 1 2147483647 1 4)))
 (check-sat)
+
+(exit)

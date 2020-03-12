@@ -278,3 +278,5 @@ Target solver: Z3
  ;; File "test_arith.adb", line 180, characters 0-0
   (not (<= o4 o3)))
 (check-sat)
+
+(exit)

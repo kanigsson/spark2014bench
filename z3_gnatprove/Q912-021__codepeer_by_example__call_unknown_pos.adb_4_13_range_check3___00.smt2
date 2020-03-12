@@ -132,3 +132,5 @@ Target solver: Z3
  ;; File "call_unknown_pos.adb", line 2, characters 0-0
   (not (in_range unknown__x)))
 (check-sat)
+
+(exit)

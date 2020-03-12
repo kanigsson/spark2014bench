@@ -262,3 +262,5 @@ Target solver: Z3
  ;; File "bitset.ads", line 26, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

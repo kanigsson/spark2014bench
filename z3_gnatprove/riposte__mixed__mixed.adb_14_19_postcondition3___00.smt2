@@ -281,3 +281,5 @@ Target solver: Z3
   (not
   (= mixed__get_i__result (to_rep (rec__mixed__rec__i (us_split_fields1 r))))))
 (check-sat)
+
+(exit)

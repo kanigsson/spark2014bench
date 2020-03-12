@@ -577,3 +577,5 @@ Target solver: Z3
  ;; File "search_ter_p.ads", line 32, characters 0-0
   (not (not (= (rec__types__option__exists result____split_fields) true))))
 (check-sat)
+
+(exit)

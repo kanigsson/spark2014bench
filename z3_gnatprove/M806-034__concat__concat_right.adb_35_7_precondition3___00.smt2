@@ -463,3 +463,5 @@ Target solver: Z3
  ;; File "concat_right.ads", line 2, characters 0-0
   (not (< (last1 o) 2147483647)))
 (check-sat)
+
+(exit)

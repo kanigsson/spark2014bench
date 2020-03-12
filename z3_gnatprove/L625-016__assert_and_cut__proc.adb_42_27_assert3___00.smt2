@@ -163,3 +163,5 @@ Target solver: Z3
  ;; File "proc.adb", line 1, characters 0-0
   (not (= h1 0)))
 (check-sat)
+
+(exit)

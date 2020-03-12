@@ -252,3 +252,5 @@ Target solver: Z3
  ;; File "values.ads", line 18, characters 0-0
   (not (not (= (full last) true))))
 (check-sat)
+
+(exit)

@@ -434,3 +434,5 @@ Target solver: Z3
   (rec__rec_inv__list_d__next
   (us_split_fields1 (rec__rec_inv__list_acc__pointer_value o1))))))
 (check-sat)
+
+(exit)

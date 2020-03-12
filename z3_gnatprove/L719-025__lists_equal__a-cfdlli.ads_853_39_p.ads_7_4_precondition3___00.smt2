@@ -795,3 +795,5 @@ Target solver: Z3
  ;; File "a-cfdlli.ads", line 826, characters 0-0
   (not (= (has_key o2 o) true)))
 (check-sat)
+
+(exit)

@@ -666,3 +666,5 @@ Target solver: Z3
  ;; File "fixed_string.ads", line 11, characters 0-0
   (not (= (elements fixed_string__create__result) elem_width)))
 (check-sat)
+
+(exit)

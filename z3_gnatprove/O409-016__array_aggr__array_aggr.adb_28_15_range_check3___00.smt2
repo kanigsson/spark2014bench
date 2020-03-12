@@ -96,3 +96,5 @@ Target solver: Z3
  ;; File "array_aggr.ads", line 4, characters 0-0
   (not (<= 0 one)))
 (check-sat)
+
+(exit)

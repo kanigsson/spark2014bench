@@ -445,3 +445,5 @@ Target solver: Z3
  ;; File "dynamic_ranges.adb", line 28, characters 0-0
   (not (dynamic_property3 0 last4 0)))
 (check-sat)
+
+(exit)

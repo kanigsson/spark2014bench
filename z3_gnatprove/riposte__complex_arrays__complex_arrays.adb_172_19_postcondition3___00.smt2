@@ -330,3 +330,5 @@ Target solver: Z3
  ;; File "complex_arrays.adb", line 171, characters 0-0
   (not (= i complex_arrays__use_step_array__result)))
 (check-sat)
+
+(exit)

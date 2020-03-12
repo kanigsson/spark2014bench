@@ -387,3 +387,5 @@ Target solver: Z3
  ;; File "update_checks_1.adb", line 29, characters 0-0
   (not (dynamic_property1 o3 o2 1)))
 (check-sat)
+
+(exit)

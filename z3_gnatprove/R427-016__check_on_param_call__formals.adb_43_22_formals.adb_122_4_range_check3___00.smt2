@@ -937,3 +937,5 @@ Target solver: Z3
  ;; File "formals.adb", line 1, characters 0-0
   (not (in_range (div1 o13 o12))))
 (check-sat)
+
+(exit)

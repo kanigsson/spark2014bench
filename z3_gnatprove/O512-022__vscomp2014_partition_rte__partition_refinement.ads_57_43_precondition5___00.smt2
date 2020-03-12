@@ -2992,3 +2992,5 @@ Target solver: Z3
  ;; File "partition_refinement.ads", line 40, characters 0-0
   (not (<= o8 (last_index o9))))
 (check-sat)
+
+(exit)

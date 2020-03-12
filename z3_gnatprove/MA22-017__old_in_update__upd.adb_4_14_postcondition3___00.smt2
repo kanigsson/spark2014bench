@@ -145,3 +145,5 @@ Target solver: Z3
   (= (bool_eq a2 0 1
      (temp_____aggregate_def_186 a2 b (not (select a1 (ite b 1 0)))) 0 1) true)))
 (check-sat)
+
+(exit)

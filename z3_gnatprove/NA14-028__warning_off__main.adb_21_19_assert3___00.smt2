@@ -124,3 +124,5 @@ Target solver: Z3
  ;; File "main.adb", line 3, characters 0-0
   (not (= (get_data value2) value1)))
 (check-sat)
+
+(exit)

@@ -586,3 +586,5 @@ Target solver: Z3
  ;; File "use_protected_types.adb", line 3, characters 0-0
   (not (<= 48 97)))
 (check-sat)
+
+(exit)

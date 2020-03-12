@@ -368,3 +368,5 @@ Target solver: Z3
  ;; File "longest_common_prefix.ads", line 12, characters 0-0
   (not (= (to_rep (select a (+ i x))) (to_rep (select a (+ i y))))))
 (check-sat)
+
+(exit)

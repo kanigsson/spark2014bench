@@ -140,3 +140,5 @@ Target solver: Z3
  ;; File "task_non_term.ads", line 2, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

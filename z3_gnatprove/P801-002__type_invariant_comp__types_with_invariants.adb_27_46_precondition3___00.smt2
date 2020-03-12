@@ -370,3 +370,5 @@ Target solver: Z3
  ;; File "types_with_invariants.ads", line 12, characters 0-0
   (not (< (- 2147483648) o)))
 (check-sat)
+
+(exit)

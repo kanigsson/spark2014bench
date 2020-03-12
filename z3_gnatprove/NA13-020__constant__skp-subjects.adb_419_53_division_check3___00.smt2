@@ -2430,3 +2430,5 @@ Target solver: Z3
  ;; File "skp-subjects.ads", line 44, characters 0-0
   (not (not (= #x0000000000001000 #x0000000000000000))))
 (check-sat)
+
+(exit)

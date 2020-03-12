@@ -1138,3 +1138,5 @@ Target solver: Z3
  ;; File "find_map.adb", line 36, characters 0-0
   (not (<= 1 (first1 a))))
 (check-sat)
+
+(exit)

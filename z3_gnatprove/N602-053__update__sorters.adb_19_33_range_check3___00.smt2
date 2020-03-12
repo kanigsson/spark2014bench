@@ -397,3 +397,5 @@ Target solver: Z3
  ;; File "sorters.adb", line 6, characters 0-0
   (not (dynamic_property1 o7 o6 o5)))
 (check-sat)
+
+(exit)

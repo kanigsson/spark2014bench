@@ -563,3 +563,5 @@ Target solver: Z3
      (temp_____aggregate_def_367 a_3d_arr 1 #x02 2 x1 y1 z1 v1 x2 y2 z2 v2) 1
      10 #x00 #x07 0 2) true)))
 (check-sat)
+
+(exit)

@@ -258,3 +258,5 @@ Target solver: Z3
  ;; File "assign_arr_unk.ads", line 3, characters 0-0
   (not (<= (to_rep x__first) 1)))
 (check-sat)
+
+(exit)

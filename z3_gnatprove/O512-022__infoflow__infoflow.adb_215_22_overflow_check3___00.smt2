@@ -447,3 +447,5 @@ Target solver: Z3
  ;; File "infoflow.ads", line 111, characters 0-0
   (not (in_range1 o)))
 (check-sat)
+
+(exit)

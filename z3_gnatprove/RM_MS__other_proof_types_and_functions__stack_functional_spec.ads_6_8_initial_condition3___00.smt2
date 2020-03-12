@@ -496,3 +496,5 @@ Target solver: Z3
  ;; File "stack_functional_spec.ads", line 2, characters 0-0
   (not (= (is_empty my_stack__split_fields1) true)))
 (check-sat)
+
+(exit)

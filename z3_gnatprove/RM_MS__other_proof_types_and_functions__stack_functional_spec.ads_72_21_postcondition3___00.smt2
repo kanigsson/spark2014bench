@@ -621,3 +621,5 @@ Target solver: Z3
                                                 (state
                                                 my_stack__split_fields1)) 1))))
 (check-sat)
+
+(exit)

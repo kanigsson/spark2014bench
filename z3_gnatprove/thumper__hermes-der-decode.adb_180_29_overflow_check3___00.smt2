@@ -629,3 +629,5 @@ Target solver: Z3
  ;; File "hermes-der-decode.ads", line 44, characters 0-0
   (not (in_range1 (+ start length_of_length1))))
 (check-sat)
+
+(exit)

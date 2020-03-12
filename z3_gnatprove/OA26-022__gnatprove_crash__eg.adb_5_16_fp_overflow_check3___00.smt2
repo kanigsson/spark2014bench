@@ -140,3 +140,5 @@ Target solver: Z3
  ;; File "eg.adb", line 3, characters 0-0
   (not (fp.isFinite32 (fp.mul RNE a b))))
 (check-sat)
+
+(exit)

@@ -1726,3 +1726,5 @@ Target solver: Z3
  ;; File "decadriver.ads", line 127, characters 0-0
   (not (<= frame_length2 1024)))
 (check-sat)
+
+(exit)

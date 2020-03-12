@@ -435,3 +435,5 @@ Target solver: Z3
  ;; File "bool_init_by_proof.adb", line 1, characters 0-0
   (not (= (attr__init1 (select c2 temp___219)) true)))
 (check-sat)
+
+(exit)

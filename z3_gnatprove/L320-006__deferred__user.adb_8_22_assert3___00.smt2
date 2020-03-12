@@ -207,3 +207,5 @@ Target solver: Z3
  ;; File "user.adb", line 2, characters 0-0
   (not (= (query_x1 Tuple0) true)))
 (check-sat)
+
+(exit)

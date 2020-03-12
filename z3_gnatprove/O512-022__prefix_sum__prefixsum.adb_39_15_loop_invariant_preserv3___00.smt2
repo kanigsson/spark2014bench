@@ -848,3 +848,5 @@ Target solver: Z3
  ;; File "prefixsum.ads", line 36, characters 0-0
   (not (= (mod2 (+ left4 1) space1) 0)))
 (check-sat)
+
+(exit)

@@ -498,3 +498,5 @@ Target solver: Z3
  ;; File "p.ads", line 30, characters 0-0
   (not (fp.isFinite32 o4)))
 (check-sat)
+
+(exit)

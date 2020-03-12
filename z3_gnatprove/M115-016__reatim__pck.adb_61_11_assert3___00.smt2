@@ -429,3 +429,5 @@ Target solver: Z3
  ;; File "pck.ads", line 4, characters 0-0
   (not (<= result_lo1 (- 9223372032559808512 result_hi2))))
 (check-sat)
+
+(exit)

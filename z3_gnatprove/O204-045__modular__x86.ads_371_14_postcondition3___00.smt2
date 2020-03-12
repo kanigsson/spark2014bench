@@ -221,3 +221,5 @@ Target solver: Z3
   (not
   (= x86__r13l__result ((_ extract 7 0) (bvand r13 #x00000000000000FF)))))
 (check-sat)
+
+(exit)

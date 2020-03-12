@@ -982,3 +982,5 @@ Target solver: Z3
  ;; File "very_longs.ads", line 12, characters 0-0
   (not (not (= 256 0))))
 (check-sat)
+
+(exit)

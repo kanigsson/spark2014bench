@@ -1194,3 +1194,5 @@ Target solver: Z3
  ;; File "decadriver.ads", line 80, characters 0-0
   (not (<= (to_rep1 frame__first) r6b)))
 (check-sat)
+
+(exit)

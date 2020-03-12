@@ -234,3 +234,5 @@ Target solver: Z3
  ;; File "arithmetic.adb", line 291, characters 0-0
   (not (= arithmetic__ispositive_wrong__result 0)))
 (check-sat)
+
+(exit)

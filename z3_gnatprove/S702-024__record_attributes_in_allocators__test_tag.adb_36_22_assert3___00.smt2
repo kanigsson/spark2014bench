@@ -582,3 +582,5 @@ Target solver: Z3
  ;; File "test_tag.adb", line 31, characters 0-0
   (not (= (attr__tag x__pointer_value) us_tag)))
 (check-sat)
+
+(exit)

@@ -110,3 +110,5 @@ Target solver: Z3
  ;; File "fsb.ads", line 12, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

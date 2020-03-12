@@ -1111,3 +1111,5 @@ Target solver: Z3
  ;; File "find_map.adb", line 36, characters 0-0
   (not (= (contains o1 o) true)))
 (check-sat)
+
+(exit)

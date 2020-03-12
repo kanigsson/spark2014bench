@@ -803,3 +803,5 @@ Target solver: Z3
   (not
   (= (valid_model1 ring_buffer__get_model__result first length2 content) true)))
 (check-sat)
+
+(exit)

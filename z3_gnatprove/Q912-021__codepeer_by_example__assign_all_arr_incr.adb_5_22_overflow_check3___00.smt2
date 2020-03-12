@@ -174,3 +174,5 @@ Target solver: Z3
  ;; File "assign_all_arr_incr.adb", line 2, characters 0-0
   (not (in_range o1)))
 (check-sat)
+
+(exit)

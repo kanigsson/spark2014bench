@@ -1008,3 +1008,5 @@ Target solver: Z3
                                                                     (rec__queue__mylists__list__capacity
                                                                     o1)))))
 (check-sat)
+
+(exit)

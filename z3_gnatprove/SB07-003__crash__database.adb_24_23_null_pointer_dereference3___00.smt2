@@ -1375,3 +1375,5 @@ Target solver: Z3
  ;; File "database.ads", line 6, characters 0-0
   (not (rec__database__email_access__pointer_value__pred o4)))
 (check-sat)
+
+(exit)

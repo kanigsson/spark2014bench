@@ -698,3 +698,5 @@ Target solver: Z3
  ;; File "test_route.adb", line 33, characters 0-0
   (not (rec__test_route__route_acc__pointer_value__pred o1)))
 (check-sat)
+
+(exit)

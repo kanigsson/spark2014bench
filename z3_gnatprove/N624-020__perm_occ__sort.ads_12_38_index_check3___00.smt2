@@ -868,3 +868,5 @@ Target solver: Z3
  ;; File "sort.ads", line 7, characters 0-0
   (not (<= (to_rep1 values__first) o15)))
 (check-sat)
+
+(exit)

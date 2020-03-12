@@ -221,3 +221,5 @@ Target solver: Z3
  ;; File "generic_parent.ads", line 17, characters 0-0
   (not (in_range (+ o1 step))))
 (check-sat)
+
+(exit)

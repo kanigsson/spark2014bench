@@ -1001,3 +1001,5 @@ Target solver: Z3
  ;; File "types_with_invariants.ads", line 1, characters 0-0
   (not (<= (first3 usf2) temp___286)))
 (check-sat)
+
+(exit)

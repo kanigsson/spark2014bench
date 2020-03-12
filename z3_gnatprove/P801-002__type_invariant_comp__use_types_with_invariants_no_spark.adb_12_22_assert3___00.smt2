@@ -203,3 +203,5 @@ Target solver: Z3
  ;; File "use_types_with_invariants_no_spark.ads", line 13, characters 0-0
   (not (= (to_integer (from_integer i)) i)))
 (check-sat)
+
+(exit)

@@ -315,3 +315,5 @@ Target solver: Z3
  ;; File "x86.ads", line 525, characters 0-0
   (not (= x86__readmem8ghost__result (to_rep (select mem addr)))))
 (check-sat)
+
+(exit)

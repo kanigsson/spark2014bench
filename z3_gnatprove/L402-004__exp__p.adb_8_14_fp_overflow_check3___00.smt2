@@ -217,3 +217,5 @@ Target solver: Z3
  ;; File "p.adb", line 1, characters 0-0
   (not (fp.isFinite32 (fp.mul RNE y y))))
 (check-sat)
+
+(exit)

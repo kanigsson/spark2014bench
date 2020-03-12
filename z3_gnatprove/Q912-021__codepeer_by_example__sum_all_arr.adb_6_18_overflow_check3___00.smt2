@@ -184,3 +184,5 @@ Target solver: Z3
  ;; File "sum_all_arr.adb", line 2, characters 0-0
   (not (in_range o1)))
 (check-sat)
+
+(exit)

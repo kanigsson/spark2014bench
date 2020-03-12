@@ -284,3 +284,5 @@ Target solver: Z3
  ;; File "arith.adb", line 1, characters 0-0
   (not (not (= o10 0))))
 (check-sat)
+
+(exit)

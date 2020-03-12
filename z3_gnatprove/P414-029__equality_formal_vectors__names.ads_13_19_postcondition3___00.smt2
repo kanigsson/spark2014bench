@@ -2173,3 +2173,5 @@ Target solver: Z3
  ;; File "names.ads", line 9, characters 0-0
   (not (= (invariant__ Tuple0) true)))
 (check-sat)
+
+(exit)

@@ -317,3 +317,5 @@ Target solver: Z3
   (= (rec__q__t__b (us_split_discrs1 temp___195)) (rec__q__t__b
                                                   y__split_discrs))))
 (check-sat)
+
+(exit)

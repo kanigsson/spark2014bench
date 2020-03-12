@@ -566,3 +566,5 @@ Target solver: Z3
   (and (and (<= 0 trigger2) (<= trigger2 4))
   (= final_state (my_sm initial_state trigger2))))))))
 (check-sat)
+
+(exit)

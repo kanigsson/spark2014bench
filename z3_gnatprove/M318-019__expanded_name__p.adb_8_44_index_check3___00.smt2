@@ -346,3 +346,5 @@ Target solver: Z3
  ;; File "p.adb", line 2, characters 0-0
   (not (<= (to_rep x__first) usf)))
 (check-sat)
+
+(exit)

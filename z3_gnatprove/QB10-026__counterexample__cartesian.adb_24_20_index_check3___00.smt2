@@ -747,3 +747,5 @@ Target solver: Z3
  ;; File "cartesian.ads", line 43, characters 0-0
   (not (<= (to_rep result____first) result_index1)))
 (check-sat)
+
+(exit)

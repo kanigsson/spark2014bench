@@ -922,3 +922,5 @@ Target solver: Z3
  ;; File "very_longs.adb", line 49, characters 0-0
   (not (<= (first1 temp___1241) i1)))
 (check-sat)
+
+(exit)

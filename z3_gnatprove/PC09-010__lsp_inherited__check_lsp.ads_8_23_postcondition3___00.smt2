@@ -205,3 +205,5 @@ Target solver: Z3
                                             (rec__check_lsp__p_overridden__root__f
                                             (us_split_fields1 x))))))
 (check-sat)
+
+(exit)

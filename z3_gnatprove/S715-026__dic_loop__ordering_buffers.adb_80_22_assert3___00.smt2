@@ -916,3 +916,5 @@ Target solver: Z3
   (not
   (not (= ((_ int2bv 8) (mod2 i 256)) ((_ int2bv 8) (mod2 index 256))))))
 (check-sat)
+
+(exit)

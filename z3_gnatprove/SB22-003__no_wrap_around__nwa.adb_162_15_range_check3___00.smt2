@@ -238,3 +238,5 @@ Target solver: Z3
  ;; File "nwa.ads", line 47, characters 0-0
   (not (in_range1 (bvneg x))))
 (check-sat)
+
+(exit)

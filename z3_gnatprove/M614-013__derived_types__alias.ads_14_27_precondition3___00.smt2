@@ -364,3 +364,5 @@ Target solver: Z3
  ;; File "alias.ads", line 13, characters 0-0
   (not (< 0 (to_rep (rec__alias__my_rec__modulus (us_split_fields1 r))))))
 (check-sat)
+
+(exit)

@@ -849,3 +849,5 @@ Target solver: Z3
  ;; File "hermes-der-encode.ads", line 40, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

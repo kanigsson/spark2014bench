@@ -930,3 +930,5 @@ Target solver: Z3
   (< (length (us_repqtmk1 o1 (us_split_fieldsqtmk1 l__split_fields))) 
   (to_rep (rec__p__my_lists__list__capacity o1)))))
 (check-sat)
+
+(exit)

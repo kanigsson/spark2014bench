@@ -1227,3 +1227,5 @@ Target solver: Z3
  ;; File "names.adb", line 57, characters 0-0
   (not (in_range10 o3)))
 (check-sat)
+
+(exit)

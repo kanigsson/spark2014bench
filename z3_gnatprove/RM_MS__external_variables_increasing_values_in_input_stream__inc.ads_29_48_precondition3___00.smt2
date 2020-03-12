@@ -457,3 +457,5 @@ Target solver: Z3
  ;; File "inc.ads", line 27, characters 0-0
   (not (= (is_valid o10) true)))
 (check-sat)
+
+(exit)

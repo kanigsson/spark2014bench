@@ -207,3 +207,5 @@ Target solver: Z3
  ;; File "use_my_eq.adb", line 2, characters 0-0
   (not (= (my_prop x__split_fields y__split_fields) true)))
 (check-sat)
+
+(exit)

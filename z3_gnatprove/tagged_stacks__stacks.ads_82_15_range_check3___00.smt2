@@ -757,3 +757,5 @@ Target solver: Z3
   (not (dynamic_property 1 2147483647 (first3 temp___915)
   (last3 temp___915))))
 (check-sat)
+
+(exit)

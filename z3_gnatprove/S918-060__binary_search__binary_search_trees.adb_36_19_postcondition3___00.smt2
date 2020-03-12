@@ -504,3 +504,5 @@ Target solver: Z3
  ;; File "binary_search_trees.adb", line 32, characters 0-0
   (not (or (= size2 size1) (= size2 (+ size1 1)))))
 (check-sat)
+
+(exit)

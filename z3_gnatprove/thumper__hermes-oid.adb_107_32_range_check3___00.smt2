@@ -1179,3 +1179,5 @@ Target solver: Z3
  ;; File "hermes-oid.ads", line 52, characters 0-0
   (not (in_range2 o5)))
 (check-sat)
+
+(exit)

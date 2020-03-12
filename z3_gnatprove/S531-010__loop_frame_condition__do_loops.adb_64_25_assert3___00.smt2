@@ -1945,3 +1945,5 @@ Target solver: Z3
      (rec__do_loops__u_array_acc__pointer_value
      (rec__do_loops__r_array_record__f4 d__pointer_value5))) 1)))
 (check-sat)
+
+(exit)

@@ -227,3 +227,5 @@ Target solver: Z3
  ;; File "preds.adb", line 69, characters 0-0
   (not (in_range 0)))
 (check-sat)
+
+(exit)

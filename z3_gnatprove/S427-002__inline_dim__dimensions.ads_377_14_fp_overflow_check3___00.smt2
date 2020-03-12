@@ -432,3 +432,5 @@ Target solver: Z3
  ;; File "dimensions.ads", line 370, characters 0-0
   (not (fp.isFinite64 o2)))
 (check-sat)
+
+(exit)

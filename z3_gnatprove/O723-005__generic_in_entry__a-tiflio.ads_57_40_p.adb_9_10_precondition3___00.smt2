@@ -292,3 +292,5 @@ Target solver: Z3
  ;; File "a-tiflio.ads", line 52, characters 0-0
   (not (= (is_open file) true)))
 (check-sat)
+
+(exit)

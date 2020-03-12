@@ -190,3 +190,5 @@ Target solver: Z3
  ;; File "use_types_with_invariants_no_spark.ads", line 13, characters 0-0
   (not (= (bool_eq (from_integer (to_integer e)) e) true)))
 (check-sat)
+
+(exit)

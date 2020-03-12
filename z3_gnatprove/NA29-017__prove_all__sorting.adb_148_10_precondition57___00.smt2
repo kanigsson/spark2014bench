@@ -711,3 +711,5 @@ Target solver: Z3
   (not
   (= (sorted (of_array a3 (to_rep o24) (to_rep o23)) (+ o20 l2) k3) true)))
 (check-sat)
+
+(exit)

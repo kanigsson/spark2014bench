@@ -583,3 +583,5 @@ Target solver: Z3
  ;; File "communications.ads", line 14, characters 0-0
   (not (< 0 (item_count (us_repqtmk self__1)))))
 (check-sat)
+
+(exit)

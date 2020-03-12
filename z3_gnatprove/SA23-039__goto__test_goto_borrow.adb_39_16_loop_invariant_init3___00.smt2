@@ -702,3 +702,5 @@ Target solver: Z3
  ;; File "test_goto_borrow.adb", line 24, characters 0-0
   (not (= (nth temp___brower_244 (- k i1)) (nth temp___borrowed_245 k))))
 (check-sat)
+
+(exit)

@@ -261,3 +261,5 @@ Target solver: Z3
  ;; File "empty_range_in_loop.adb", line 1, characters 0-0
   (not (dynamic_property first 100 c)))
 (check-sat)
+
+(exit)

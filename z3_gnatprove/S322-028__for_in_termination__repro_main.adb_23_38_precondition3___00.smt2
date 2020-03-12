@@ -1630,3 +1630,5 @@ Target solver: Z3
  ;; File "repro_main.adb", line 4, characters 0-0
   (not (= (has_element o4 i) true)))
 (check-sat)
+
+(exit)

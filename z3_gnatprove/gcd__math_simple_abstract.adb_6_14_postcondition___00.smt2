@@ -182,3 +182,5 @@ Target solver: Z3
  ;; File "math_simple_abstract.adb", line 3, characters 0-0
   (not (= (div1 (* arg1 arg2) arg2) arg1)))
 (check-sat)
+
+(exit)

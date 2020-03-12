@@ -77,3 +77,5 @@ Target solver: Z3
  ;; File "mypre.adb", line 1, characters 0-0
   (not (= a true)))
 (check-sat)
+
+(exit)

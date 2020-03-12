@@ -646,3 +646,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA14-032__dic-25465/src/gnatprove/bounded_strings__bounded_string.mlw", line 1039, characters 5-8
   (not (= (length1 usf) 0)))
 (check-sat)
+
+(exit)

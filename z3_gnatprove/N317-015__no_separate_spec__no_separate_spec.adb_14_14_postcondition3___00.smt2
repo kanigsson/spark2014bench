@@ -72,3 +72,5 @@ Target solver: Z3
  ;; File "no_separate_spec.adb", line 13, characters 0-0
   (not (or (= b true) (not (= b true)))))
 (check-sat)
+
+(exit)

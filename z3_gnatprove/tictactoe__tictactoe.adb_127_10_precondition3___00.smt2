@@ -7811,3 +7811,5 @@ Target solver: Z3
                               (rec__tictactoe__position__x p__split_fields1))) 
      (to_rep2 (rec__tictactoe__position__y p__split_fields1)))) 0)))
 (check-sat)
+
+(exit)

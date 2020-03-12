@@ -979,3 +979,5 @@ Target solver: Z3
  ;; File "repro.adb", line 22, characters 0-0
   (not (<= result_pos1 (+ e_pos 1))))
 (check-sat)
+
+(exit)

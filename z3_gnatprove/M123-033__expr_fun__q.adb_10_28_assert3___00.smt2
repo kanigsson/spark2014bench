@@ -268,3 +268,5 @@ Target solver: Z3
  ;; File "q.adb", line 4, characters 0-0
   (not (= (f2 Tuple0) 1)))
 (check-sat)
+
+(exit)

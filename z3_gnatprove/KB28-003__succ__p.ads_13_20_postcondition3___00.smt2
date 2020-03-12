@@ -89,3 +89,5 @@ Target solver: Z3
  ;; File "p.ads", line 12, characters 0-0
   (not (= p__id_gen__result x)))
 (check-sat)
+
+(exit)

@@ -428,3 +428,5 @@ Target solver: Z3
  ;; File "use_test.adb", line 2, characters 0-0
   (not (dynamic_predicate usf1)))
 (check-sat)
+
+(exit)

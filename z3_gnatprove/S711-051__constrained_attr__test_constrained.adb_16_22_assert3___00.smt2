@@ -174,3 +174,5 @@ Target solver: Z3
   (not
   (= (get_constr (us_repqtmk (us_split_discrsqtmk x__split_discrs))) true)))
 (check-sat)
+
+(exit)

@@ -359,3 +359,5 @@ Target solver: Z3
  ;; File "repr.ads", line 3, characters 0-0
   (not (<= 0 temp___160)))
 (check-sat)
+
+(exit)

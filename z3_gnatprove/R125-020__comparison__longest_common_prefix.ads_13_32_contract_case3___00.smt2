@@ -482,3 +482,5 @@ Target solver: Z3
  ;; File "longest_common_prefix.ads", line 8, characters 0-0
   (not (< 0 longest_common_prefix__lcp__result)))
 (check-sat)
+
+(exit)

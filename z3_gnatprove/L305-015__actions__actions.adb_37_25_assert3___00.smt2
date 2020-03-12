@@ -399,3 +399,5 @@ Target solver: Z3
  ;; File "actions.adb", line 1, characters 0-0
   (not (< x 5)))
 (check-sat)
+
+(exit)

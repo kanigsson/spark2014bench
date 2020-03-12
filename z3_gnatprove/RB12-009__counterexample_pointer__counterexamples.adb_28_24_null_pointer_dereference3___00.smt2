@@ -222,3 +222,5 @@ Target solver: Z3
   (not (rec__counterexamples__int_access__pointer_value__pred
   (us_repqtmk y__is_null_pointer y__pointer_address y__pointer_value))))
 (check-sat)
+
+(exit)

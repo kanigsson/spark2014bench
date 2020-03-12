@@ -526,3 +526,5 @@ Target solver: Z3
  ;; File "database.adb", line 48, characters 0-0
   (not (= (is_available account links6) true)))
 (check-sat)
+
+(exit)

@@ -1484,3 +1484,5 @@ Target solver: Z3
  ;; File "list.ads", line 11, characters 0-0
   (not (in_range1 o11)))
 (check-sat)
+
+(exit)

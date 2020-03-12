@@ -237,3 +237,5 @@ Target solver: Z3
  ;; File "after_tax.ads", line 3, characters 0-0
   (not (<= after_tax__result before_tax)))
 (check-sat)
+
+(exit)

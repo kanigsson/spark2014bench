@@ -568,3 +568,5 @@ Target solver: Z3
  ;; File "use_stack.adb", line 2, characters 0-0
   (not (not (= (is_empty2 p_top) true))))
 (check-sat)
+
+(exit)

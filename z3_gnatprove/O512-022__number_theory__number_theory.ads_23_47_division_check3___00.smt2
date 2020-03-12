@@ -360,3 +360,5 @@ Target solver: Z3
  ;; File "number_theory.ads", line 17, characters 0-0
   (not (not (fp.isZero (fp #b0 #b10000000 #b00011110001101010100000)))))
 (check-sat)
+
+(exit)

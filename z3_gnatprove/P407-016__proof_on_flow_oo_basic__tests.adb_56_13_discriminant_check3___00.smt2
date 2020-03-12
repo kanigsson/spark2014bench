@@ -468,3 +468,5 @@ Target solver: Z3
   (= (distinct 0 0) (rec__tests__test_14__record_with_mutable_discrs__present
                     (us_split_discrs1 (select a 1))))))
 (check-sat)
+
+(exit)

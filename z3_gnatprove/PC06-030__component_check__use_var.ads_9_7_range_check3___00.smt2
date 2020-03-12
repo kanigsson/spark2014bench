@@ -172,3 +172,5 @@ Target solver: Z3
  ;; File "use_var.ads", line 1, characters 0-0
   (not (<= 0 d)))
 (check-sat)
+
+(exit)

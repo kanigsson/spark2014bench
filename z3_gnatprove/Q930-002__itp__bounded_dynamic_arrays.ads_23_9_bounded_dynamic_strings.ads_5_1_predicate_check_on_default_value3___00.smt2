@@ -599,3 +599,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-Q930-002__itp-19718/src/objs/gnatprove/bounded_dynamic_strings__sequence.mlw", line 913, characters 5-8
   (not (dynamic_predicate usf2)))
 (check-sat)
+
+(exit)

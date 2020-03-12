@@ -173,3 +173,5 @@ Target solver: Z3
  ;; File "subar.adb", line 9, characters 0-0
   (not (= (to_rep (select ab1 1)) 1)))
 (check-sat)
+
+(exit)

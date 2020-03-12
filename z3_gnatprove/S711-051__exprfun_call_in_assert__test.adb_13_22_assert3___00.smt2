@@ -527,3 +527,5 @@ Target solver: Z3
  ;; File "test.ads", line 12, characters 0-0
   (not (= (context_field (us_repqtmk1 context__split_fields2)) 1)))
 (check-sat)
+
+(exit)

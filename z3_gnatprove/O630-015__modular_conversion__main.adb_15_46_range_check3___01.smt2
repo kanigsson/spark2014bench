@@ -256,3 +256,5 @@ Target solver: Z3
  ;; File "main.adb", line 4, characters 0-0
   (not (bvule ((_ zero_extend 32) #x00000000) foo__get__data)))
 (check-sat)
+
+(exit)

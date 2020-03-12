@@ -469,3 +469,5 @@ Target solver: Z3
      (us_repqtmk1 (us_split_fieldsqtmk1 (us_repqtmk x__split_fields)))
      (us_repqtmk1 (us_split_fieldsqtmk1 (us_repqtmk y__split_fields)))) true)))
 (check-sat)
+
+(exit)

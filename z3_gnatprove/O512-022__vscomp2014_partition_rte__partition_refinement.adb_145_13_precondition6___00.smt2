@@ -1300,3 +1300,5 @@ Target solver: Z3
   (not
   (<= j1 (last_index (us_repqtmk o14 (us_split_fieldsqtmk p__split_fields1))))))
 (check-sat)
+
+(exit)

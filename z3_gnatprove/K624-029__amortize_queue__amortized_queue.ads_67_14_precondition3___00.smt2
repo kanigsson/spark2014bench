@@ -913,3 +913,5 @@ Target solver: Z3
  ;; File "amortized_queue.ads", line 65, characters 0-0
   (not (not (= (is_empty o3) true))))
 (check-sat)
+
+(exit)

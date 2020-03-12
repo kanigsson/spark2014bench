@@ -98,3 +98,5 @@ Target solver: Z3
  ;; File "client1.ads", line 5, characters 0-0
   (not (in_range (+ v 1))))
 (check-sat)
+
+(exit)

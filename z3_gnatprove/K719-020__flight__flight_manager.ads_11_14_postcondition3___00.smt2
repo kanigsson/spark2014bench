@@ -519,3 +519,5 @@ Target solver: Z3
              (rec__flight_manager__engine_values__x_speed
              flight_manager__set_engine_speed__result))))))
 (check-sat)
+
+(exit)

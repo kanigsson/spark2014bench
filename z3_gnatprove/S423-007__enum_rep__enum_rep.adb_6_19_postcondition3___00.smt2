@@ -94,3 +94,5 @@ Target solver: Z3
   (not
   (= enum_rep__my_enum_enumrep__result (ite (= x 0) 0 (ite (= x 1) 12 25)))))
 (check-sat)
+
+(exit)

@@ -623,3 +623,5 @@ Target solver: Z3
  ;; File "polyorb_hi-utils.ads", line 88, characters 0-0
   (not (in_range1 o1)))
 (check-sat)
+
+(exit)

@@ -132,3 +132,5 @@ Target solver: Z3
  ;; File "basic.adb", line 62, characters 0-0
   (not (in_range1 o1)))
 (check-sat)
+
+(exit)

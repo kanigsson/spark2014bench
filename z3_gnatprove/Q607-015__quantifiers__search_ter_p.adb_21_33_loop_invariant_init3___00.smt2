@@ -574,3 +574,5 @@ Target solver: Z3
  ;; File "search_ter_p.ads", line 32, characters 0-0
   (not (not (= (has_sub_range_in_prefix a i b) true))))
 (check-sat)
+
+(exit)

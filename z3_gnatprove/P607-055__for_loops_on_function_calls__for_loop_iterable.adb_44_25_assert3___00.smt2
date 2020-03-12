@@ -634,3 +634,5 @@ Target solver: Z3
  ;; File "for_loop_iterable.adb", line 37, characters 0-0
   (not (= e2 0)))
 (check-sat)
+
+(exit)

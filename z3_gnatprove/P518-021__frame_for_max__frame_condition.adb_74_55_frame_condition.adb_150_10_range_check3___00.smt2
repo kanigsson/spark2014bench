@@ -778,3 +778,5 @@ Target solver: Z3
  ;; File "frame_condition.adb", line 150, characters 0-0
   (not (in_range2 usf)))
 (check-sat)
+
+(exit)

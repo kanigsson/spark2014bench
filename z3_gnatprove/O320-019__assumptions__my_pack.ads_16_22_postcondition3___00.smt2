@@ -134,3 +134,5 @@ Target solver: Z3
  ;; File "my_pack.ads", line 13, characters 0-0
   (not (= z2 (+ (id z1) 1))))
 (check-sat)
+
+(exit)

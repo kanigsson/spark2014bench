@@ -295,3 +295,5 @@ Target solver: Z3
   (not
   (fp.leq (fp #b0 #b00000000 #b00000000000000000000000) basic_contracts__average__result)))
 (check-sat)
+
+(exit)

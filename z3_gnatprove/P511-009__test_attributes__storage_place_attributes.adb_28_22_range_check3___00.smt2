@@ -665,3 +665,5 @@ Target solver: Z3
  ;; File "storage_place_attributes.adb", line 1, characters 0-0
   (not (in_range2 1)))
 (check-sat)
+
+(exit)

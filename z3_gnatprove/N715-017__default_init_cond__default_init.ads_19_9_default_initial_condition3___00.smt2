@@ -302,3 +302,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-N715-017__default_init_cond-15469/src/gnatprove/default_init__mut_discr.mlw", line 453, characters 5-8
   (not (= (mut_discr_ok usf) true)))
 (check-sat)
+
+(exit)

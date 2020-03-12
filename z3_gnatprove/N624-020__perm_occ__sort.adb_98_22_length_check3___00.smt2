@@ -753,3 +753,5 @@ Target solver: Z3
  ;; File "sort.ads", line 7, characters 0-0
   (not (<= (to_rep1 previous__first) (to_rep1 previous__last))))
 (check-sat)
+
+(exit)

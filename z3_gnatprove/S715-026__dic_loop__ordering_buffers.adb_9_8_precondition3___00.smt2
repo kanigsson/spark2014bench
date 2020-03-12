@@ -967,3 +967,5 @@ Target solver: Z3
  ;; File "ordering_buffers.adb", line 3, characters 0-0
   (not (<= (first o2) o1)))
 (check-sat)
+
+(exit)

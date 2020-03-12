@@ -917,3 +917,5 @@ Target solver: Z3
  ;; File "for_loops_on_lists.ads", line 9, characters 0-0
   (not (or (= (has_element o9 o8) true) (= (bool_eq o8 no_element) true))))
 (check-sat)
+
+(exit)

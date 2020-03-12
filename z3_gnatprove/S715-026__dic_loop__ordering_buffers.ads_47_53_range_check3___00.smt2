@@ -925,3 +925,5 @@ Target solver: Z3
  ;; File "ordering_buffers.ads", line 38, characters 0-0
   (not (in_range3 usf2)))
 (check-sat)
+
+(exit)

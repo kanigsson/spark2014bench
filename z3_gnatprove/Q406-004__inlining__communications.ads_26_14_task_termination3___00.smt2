@@ -566,3 +566,5 @@ Target solver: Z3
  ;; File "communications.ads", line 26, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

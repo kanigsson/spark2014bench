@@ -449,3 +449,5 @@ Target solver: Z3
  ;; File "math_euclid.ads", line 5, characters 0-0
   (not (= (divides math_euclid__gcd__result a) true)))
 (check-sat)
+
+(exit)

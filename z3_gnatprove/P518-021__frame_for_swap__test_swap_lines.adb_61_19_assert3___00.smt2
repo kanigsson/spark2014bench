@@ -626,3 +626,5 @@ Target solver: Z3
  ;; File "test_swap_lines.adb", line 1, characters 0-0
   (not (= (to_rep (get m4 i j)) 2)))
 (check-sat)
+
+(exit)

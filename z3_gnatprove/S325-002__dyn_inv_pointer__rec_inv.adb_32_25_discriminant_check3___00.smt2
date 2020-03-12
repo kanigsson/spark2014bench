@@ -707,3 +707,5 @@ Target solver: Z3
  ;; File "rec_inv.adb", line 1, characters 0-0
   (not (in_range2 (distinct 1 0) (us_split_discrs1 temp___236))))
 (check-sat)
+
+(exit)

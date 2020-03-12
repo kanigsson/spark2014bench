@@ -1050,3 +1050,5 @@ Target solver: Z3
   (not (rec__spark04__data__ai__pointer_value__pred
   (us_repqtmk ax__is_null_pointer ax__pointer_address ax__pointer_value))))
 (check-sat)
+
+(exit)

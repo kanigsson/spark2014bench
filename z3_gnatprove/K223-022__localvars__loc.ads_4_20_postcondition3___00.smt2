@@ -221,3 +221,5 @@ Target solver: Z3
  ;; File "loc.ads", line 2, characters 0-0
   (not (= loc__local__result 1)))
 (check-sat)
+
+(exit)

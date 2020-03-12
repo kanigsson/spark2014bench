@@ -303,3 +303,5 @@ Target solver: Z3
  ;; File "vol2.ads", line 1, characters 0-0
   (not (= h11 h21)))
 (check-sat)
+
+(exit)

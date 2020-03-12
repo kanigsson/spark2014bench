@@ -822,3 +822,5 @@ Target solver: Z3
                                                                     b))) 
                                                             j))))))
 (check-sat)
+
+(exit)

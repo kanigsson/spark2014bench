@@ -1575,3 +1575,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 75, characters 0-0
   (not (dynamic_property2 o10 o9 temp___1386)))
 (check-sat)
+
+(exit)

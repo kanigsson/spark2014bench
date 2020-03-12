@@ -116,3 +116,5 @@ Target solver: Z3
  ;; File "p.ads", line 7, characters 0-0
   (not (<= 0 x)))
 (check-sat)
+
+(exit)

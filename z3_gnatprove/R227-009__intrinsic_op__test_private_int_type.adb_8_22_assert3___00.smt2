@@ -146,3 +146,5 @@ Target solver: Z3
  ;; File "test_private_int_type.adb", line 3, characters 0-0
   (not (= x true)))
 (check-sat)
+
+(exit)

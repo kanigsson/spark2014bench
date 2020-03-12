@@ -157,3 +157,5 @@ Target solver: Z3
  ;; File "my_type_invariant_test.ads", line 1, characters 0-0
   (not (type_invariant baz)))
 (check-sat)
+
+(exit)

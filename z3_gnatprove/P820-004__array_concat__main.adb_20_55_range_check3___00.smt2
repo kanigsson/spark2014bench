@@ -1089,3 +1089,5 @@ Target solver: Z3
                                (last1 temp___215)) (length (first1 vstring)
                                                    (last1 vstring)))) 1))))
 (check-sat)
+
+(exit)

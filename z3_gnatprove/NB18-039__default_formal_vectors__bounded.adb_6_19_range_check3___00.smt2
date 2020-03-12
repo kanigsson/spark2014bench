@@ -583,3 +583,5 @@ Target solver: Z3
  ;; File "bounded.ads", line 12, characters 0-0
   (not (in_range 2)))
 (check-sat)
+
+(exit)

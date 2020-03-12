@@ -274,3 +274,5 @@ Target solver: Z3
  ;; File "smod.adb", line 4, characters 0-0
   (not (bvuge ((_ int2bv 8) x) #x00)))
 (check-sat)
+
+(exit)

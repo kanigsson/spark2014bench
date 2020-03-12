@@ -339,3 +339,5 @@ Target solver: Z3
  ;; File "stack.ads", line 17, characters 0-0
   (not (= (valid t stack__size__result1) true)))
 (check-sat)
+
+(exit)

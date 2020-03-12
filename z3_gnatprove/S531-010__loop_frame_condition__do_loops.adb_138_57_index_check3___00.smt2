@@ -3058,3 +3058,5 @@ Target solver: Z3
  ;; File "do_loops.adb", line 1, characters 0-0
   (not (<= (first1 usf7) i7)))
 (check-sat)
+
+(exit)

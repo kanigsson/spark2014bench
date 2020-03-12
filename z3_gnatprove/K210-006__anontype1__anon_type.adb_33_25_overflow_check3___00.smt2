@@ -644,3 +644,5 @@ Target solver: Z3
  ;; File "anon_type.ads", line 6, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

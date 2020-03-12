@@ -263,3 +263,5 @@ Target solver: Z3
  ;; File "tab_init.ads", line 5, characters 0-0
   (not (in_range1 o2)))
 (check-sat)
+
+(exit)

@@ -400,3 +400,5 @@ Target solver: Z3
  ;; File "math_utils.ads", line 6, characters 0-0
   (not (<= (first1 v) usf)))
 (check-sat)
+
+(exit)

@@ -511,3 +511,5 @@ Target solver: Z3
  ;; File "dynamic_ranges.ads", line 19, characters 0-0
   (not (<= (first1 a) dynamic_ranges__search_0__result)))
 (check-sat)
+
+(exit)

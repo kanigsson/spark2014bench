@@ -216,3 +216,5 @@ Target solver: Z3
  ;; File "normalize.ads", line 17, characters 0-0
   (not (fp.leq (fp.neg (fp #b0 #b11111110 #b11111111111111111101110)) o)))
 (check-sat)
+
+(exit)

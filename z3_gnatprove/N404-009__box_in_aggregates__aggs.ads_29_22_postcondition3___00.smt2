@@ -201,3 +201,5 @@ Target solver: Z3
  ;; File "aggs.ads", line 27, characters 0-0
   (not (= (to_rep (select x1 2)) 20)))
 (check-sat)
+
+(exit)

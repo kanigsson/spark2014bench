@@ -1114,3 +1114,5 @@ Target solver: Z3
  ;; File "while_loops.adb", line 5, characters 0-0
   (not (in_range1 (+ counter4 1))))
 (check-sat)
+
+(exit)

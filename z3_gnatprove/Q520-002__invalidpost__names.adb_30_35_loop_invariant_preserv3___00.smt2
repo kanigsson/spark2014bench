@@ -634,3 +634,5 @@ Target solver: Z3
  ;; File "names.ads", line 12, characters 0-0
   (not (< label_length3 (+ (- i2 (first1 name)) 1))))
 (check-sat)
+
+(exit)

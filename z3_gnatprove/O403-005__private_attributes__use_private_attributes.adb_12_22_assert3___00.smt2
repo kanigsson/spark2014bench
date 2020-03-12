@@ -409,3 +409,5 @@ Target solver: Z3
  ;; File "use_private_attributes.ads", line 5, characters 0-0
   (not (= u2__attr__constrained true)))
 (check-sat)
+
+(exit)

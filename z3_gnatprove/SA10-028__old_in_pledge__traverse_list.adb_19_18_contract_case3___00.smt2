@@ -488,3 +488,5 @@ Target solver: Z3
   (rec__traverse_list__list__val
   (us_split_fields1 (rec__traverse_list__list_acc__pointer_value l)))))))
 (check-sat)
+
+(exit)

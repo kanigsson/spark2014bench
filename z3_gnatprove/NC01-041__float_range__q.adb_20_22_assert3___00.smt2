@@ -419,3 +419,5 @@ Target solver: Z3
  ;; File "q.ads", line 8, characters 0-0
   (not (fp.leq (fp.neg (fp #b0 #b10000011 #b01000000000000000000000)) x2)))
 (check-sat)
+
+(exit)

@@ -164,3 +164,5 @@ Target solver: Z3
  ;; File "p.adb", line 2, characters 0-0
   (not (= x1 3)))
 (check-sat)
+
+(exit)

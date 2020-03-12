@@ -231,3 +231,5 @@ Target solver: Z3
                            (select (temp_____aggregate_def_619 a i 42) 
                            i)))))
 (check-sat)
+
+(exit)

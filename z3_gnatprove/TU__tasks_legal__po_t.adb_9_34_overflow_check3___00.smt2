@@ -200,3 +200,5 @@ Target solver: Z3
  ;; File "po_t.ads", line 44, characters 0-0
   (not (in_range (+ o1 10))))
 (check-sat)
+
+(exit)

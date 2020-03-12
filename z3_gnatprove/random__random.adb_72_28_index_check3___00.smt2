@@ -778,3 +778,5 @@ Target solver: Z3
  ;; File "random.ads", line 43, characters 0-0
   (not (<= (first1 initiator) j)))
 (check-sat)
+
+(exit)

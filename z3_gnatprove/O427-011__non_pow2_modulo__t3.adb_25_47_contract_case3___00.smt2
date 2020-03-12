@@ -209,3 +209,5 @@ Target solver: Z3
   (not
   (= t3__msub__result (bvurem (bvsub #x00000000000000E6 y) #x00000000000000E6))))
 (check-sat)
+
+(exit)

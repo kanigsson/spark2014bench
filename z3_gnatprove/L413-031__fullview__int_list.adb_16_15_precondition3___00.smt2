@@ -992,3 +992,5 @@ Target solver: Z3
  ;; File "int_list.ads", line 23, characters 0-0
   (not (<= 1 usf3)))
 (check-sat)
+
+(exit)

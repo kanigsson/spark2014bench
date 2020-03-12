@@ -392,3 +392,5 @@ Target solver: Z3
  ;; File "use_stack.adb", line 8, characters 0-0
   (not (<= (to_rep1 content__first) top)))
 (check-sat)
+
+(exit)

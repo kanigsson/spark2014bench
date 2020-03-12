@@ -998,3 +998,5 @@ Target solver: Z3
  ;; File "run.ads", line 3, characters 0-0
   (not (= (rec__p_init__t__e (us_split_discrs1 c1)) y1__split_discrs1)))
 (check-sat)
+
+(exit)

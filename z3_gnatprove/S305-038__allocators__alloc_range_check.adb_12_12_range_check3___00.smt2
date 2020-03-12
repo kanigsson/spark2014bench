@@ -311,3 +311,5 @@ Target solver: Z3
  ;; File "alloc_range_check.adb", line 1, characters 0-0
   (not (<= (- 2147483648) c)))
 (check-sat)
+
+(exit)

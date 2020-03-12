@@ -360,3 +360,5 @@ Target solver: Z3
   (= (bool_eq old__ (to_rep1 old____first) (to_rep1 old____last) s
      (to_rep1 s__first) (to_rep1 s__last)) true)))
 (check-sat)
+
+(exit)

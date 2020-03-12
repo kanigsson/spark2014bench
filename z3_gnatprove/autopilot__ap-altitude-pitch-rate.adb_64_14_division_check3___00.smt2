@@ -497,3 +497,5 @@ Target solver: Z3
  ;; File "ap-altitude-pitch-rate.ads", line 8, characters 0-0
   (not (not (= 10 0))))
 (check-sat)
+
+(exit)

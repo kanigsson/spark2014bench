@@ -446,3 +446,5 @@ Target solver: Z3
  ;; File "basic.ads", line 45, characters 0-0
   (not (basic__r__c_field2__pred v)))
 (check-sat)
+
+(exit)

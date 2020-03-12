@@ -354,3 +354,5 @@ Target solver: Z3
  ;; File "dynval.adb", line 1, characters 0-0
   (not (= (first2 temp___179) first)))
 (check-sat)
+
+(exit)

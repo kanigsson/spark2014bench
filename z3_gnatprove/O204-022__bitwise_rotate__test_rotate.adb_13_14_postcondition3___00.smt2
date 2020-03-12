@@ -213,3 +213,5 @@ Target solver: Z3
  ;; File "test_rotate.adb", line 8, characters 0-0
   (not (not (= test_rotate__r__result #x0000000000000000))))
 (check-sat)
+
+(exit)

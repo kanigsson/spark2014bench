@@ -388,3 +388,5 @@ Target solver: Z3
  ;; File "multi.ads", line 8, characters 0-0
   (not (= (to_rep (get a1 k one)) one)))
 (check-sat)
+
+(exit)

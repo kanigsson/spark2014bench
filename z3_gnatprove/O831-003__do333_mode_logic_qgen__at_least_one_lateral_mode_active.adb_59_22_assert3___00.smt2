@@ -120,3 +120,5 @@ Target solver: Z3
  ;; File "at_least_one_lateral_mode_active.ads", line 15, characters 0-0
   (not (= or_out1 true)))
 (check-sat)
+
+(exit)

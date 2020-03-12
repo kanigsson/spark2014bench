@@ -325,3 +325,5 @@ Target solver: Z3
  ;; File "sorters.adb", line 29, characters 0-0
   (not (<= 1 (+ (first1 unsorted) 1))))
 (check-sat)
+
+(exit)

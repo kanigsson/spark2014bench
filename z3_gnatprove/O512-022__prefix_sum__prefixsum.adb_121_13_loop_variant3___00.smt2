@@ -817,3 +817,5 @@ Target solver: Z3
  ;; File "prefixsum.ads", line 42, characters 0-0
   (not (< temp___264 right4)))
 (check-sat)
+
+(exit)

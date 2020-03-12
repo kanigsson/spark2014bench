@@ -1232,3 +1232,5 @@ Target solver: Z3
  ;; File "alignment_attribute.ads", line 1, characters 0-0
   (not (<= 0 alignment6)))
 (check-sat)
+
+(exit)

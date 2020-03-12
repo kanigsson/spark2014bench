@@ -363,3 +363,5 @@ Target solver: Z3
  ;; File "dynval.adb", line 1, characters 0-0
   (not (<= (to_rep x__first) (to_rep x__last))))
 (check-sat)
+
+(exit)

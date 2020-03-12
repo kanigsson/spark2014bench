@@ -2633,3 +2633,5 @@ Target solver: Z3
   (<= 8 (line_length standard_in37 standard_out37 standard_err37
         current_err37 file_system37 current_in37 current_out37)))))
 (check-sat)
+
+(exit)

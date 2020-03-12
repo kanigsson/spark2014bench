@@ -244,3 +244,5 @@ Target solver: Z3
  ;; File "mod_lemmas.adb", line 55, characters 0-0
   (not (= res11 res21)))
 (check-sat)
+
+(exit)

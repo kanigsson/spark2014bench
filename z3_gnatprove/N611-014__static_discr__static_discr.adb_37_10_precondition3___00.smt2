@@ -1346,3 +1346,5 @@ Target solver: Z3
  ;; File "static_discr.ads", line 17, characters 0-0
   (not (<= 1 temp___239)))
 (check-sat)
+
+(exit)

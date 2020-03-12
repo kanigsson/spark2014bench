@@ -2193,3 +2193,5 @@ Target solver: Z3
  ;; File "tetris_functional.ads", line 220, characters 0-0
   (not (= (to_rep (select (select cur_board1 del_line) 1)) 0)))
 (check-sat)
+
+(exit)

@@ -981,3 +981,5 @@ Target solver: Z3
  ;; File "optional.adb", line 5, characters 0-0
   (not (= (to_rep (get temp___loop_entry_242 outer inner2)) 0)))
 (check-sat)
+
+(exit)

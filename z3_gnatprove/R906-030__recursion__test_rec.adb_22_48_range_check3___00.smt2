@@ -439,3 +439,5 @@ Target solver: Z3
  ;; File "test_rec.adb", line 13, characters 0-0
   (not (<= (first1 b) temp___269)))
 (check-sat)
+
+(exit)

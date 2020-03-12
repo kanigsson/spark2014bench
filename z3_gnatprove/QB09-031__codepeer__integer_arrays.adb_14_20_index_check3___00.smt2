@@ -375,3 +375,5 @@ Target solver: Z3
  ;; File "integer_arrays.ads", line 4, characters 0-0
   (not (<= 1 result_index1)))
 (check-sat)
+
+(exit)

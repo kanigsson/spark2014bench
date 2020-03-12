@@ -111,3 +111,5 @@ Target solver: Z3
  ;; File "locfunc.adb", line 5, characters 0-0
   (not (= x1 0)))
 (check-sat)
+
+(exit)

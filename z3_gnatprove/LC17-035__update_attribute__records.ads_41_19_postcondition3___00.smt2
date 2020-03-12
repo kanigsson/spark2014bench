@@ -401,3 +401,5 @@ Target solver: Z3
      (us_split_fieldsqtmk (rec__types__rec__s1 r__split_fields1) rliteral
      rliteral1 (rec__types__rec__s1 r__split_fields1)))) true)))
 (check-sat)
+
+(exit)

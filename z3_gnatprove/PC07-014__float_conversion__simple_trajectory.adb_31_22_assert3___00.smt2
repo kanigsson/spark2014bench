@@ -428,3 +428,5 @@ Target solver: Z3
  ;; File "simple_trajectory.ads", line 31, characters 0-0
   (not (fp.leq new_speed1 (high_bound (+ n 1)))))
 (check-sat)
+
+(exit)

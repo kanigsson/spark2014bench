@@ -336,3 +336,5 @@ Target solver: Z3
  ;; File "math_simple_abstract.ads", line 7, characters 0-0
   (not (= (divides math_simple_abstract__gcd__result a) true)))
 (check-sat)
+
+(exit)

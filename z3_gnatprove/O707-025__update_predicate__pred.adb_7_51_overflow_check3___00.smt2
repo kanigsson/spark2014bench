@@ -215,3 +215,5 @@ Target solver: Z3
  ;; File "pred.adb", line 4, characters 0-0
   (not (in_range (+ o 2))))
 (check-sat)
+
+(exit)

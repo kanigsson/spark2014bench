@@ -173,3 +173,5 @@ Target solver: Z3
  ;; File "inside_out.adb", line 7, characters 0-0
   (not (type_invariant o)))
 (check-sat)
+
+(exit)

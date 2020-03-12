@@ -638,3 +638,5 @@ Target solver: Z3
  ;; File "string_search.ads", line 23, characters 0-0
   (not (= (partial_match_at needle haystack i j2) true)))
 (check-sat)
+
+(exit)

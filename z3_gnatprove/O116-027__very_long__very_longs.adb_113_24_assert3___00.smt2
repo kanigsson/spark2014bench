@@ -920,3 +920,5 @@ Target solver: Z3
  ;; File "very_longs.adb", line 82, characters 0-0
   (not (<= 1 i1)))
 (check-sat)
+
+(exit)

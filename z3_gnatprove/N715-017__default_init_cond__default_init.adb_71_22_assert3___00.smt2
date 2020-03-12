@@ -841,3 +841,5 @@ Target solver: Z3
  ;; File "default_init.ads", line 46, characters 0-0
   (not (= (to_rep d1__split_fields) 0)))
 (check-sat)
+
+(exit)

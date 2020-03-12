@@ -136,3 +136,5 @@ Target solver: Z3
  ;; File "loopvar.adb", line 1, characters 0-0
   (not (< temp___176 x2)))
 (check-sat)
+
+(exit)

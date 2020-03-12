@@ -864,3 +864,5 @@ Target solver: Z3
  ;; File "lists.ads", line 16, characters 0-0
   (not (not (= (get (model1 l) i) 0))))
 (check-sat)
+
+(exit)

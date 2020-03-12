@@ -741,3 +741,5 @@ Target solver: Z3
  ;; File "loop_iterable.adb", line 2, characters 0-0
   (not (dynamic_predicate1 temp___305)))
 (check-sat)
+
+(exit)

@@ -151,3 +151,5 @@ Target solver: Z3
  ;; File "fxp_true_check_4.adb", line 3, characters 0-0
   (not (= md (- md2))))
 (check-sat)
+
+(exit)

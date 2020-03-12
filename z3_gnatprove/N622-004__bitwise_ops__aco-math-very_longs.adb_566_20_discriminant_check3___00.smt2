@@ -955,3 +955,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 92, characters 0-0
   (not (in_range3 o5 (us_split_discrs1 temp___1435))))
 (check-sat)
+
+(exit)

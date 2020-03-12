@@ -1060,3 +1060,5 @@ Target solver: Z3
  ;; File "a-cfhase.ads", line 1066, characters 0-0
   (not (in_range5 o7)))
 (check-sat)
+
+(exit)

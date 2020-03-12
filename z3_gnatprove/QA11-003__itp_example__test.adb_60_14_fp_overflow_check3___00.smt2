@@ -145,3 +145,5 @@ Target solver: Z3
  ;; File "test.adb", line 55, characters 0-0
   (not (fp.isFinite32 o)))
 (check-sat)
+
+(exit)

@@ -322,3 +322,5 @@ Target solver: Z3
      (us_split_fields3
      (rec__sc_status_type__object_type__sc_state (us_split_fields5 this))))) true)))
 (check-sat)
+
+(exit)

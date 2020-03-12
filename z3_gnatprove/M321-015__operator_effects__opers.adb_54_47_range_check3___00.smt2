@@ -701,3 +701,5 @@ Target solver: Z3
  ;; File "opers.ads", line 24, characters 0-0
   (not (in_range13 a4)))
 (check-sat)
+
+(exit)

@@ -309,3 +309,5 @@ Target solver: Z3
  ;; File "test_prime_and_coprime_numbers.adb", line 6, characters 0-0
   (not (= (valid_prime_data is_prime2) true)))
 (check-sat)
+
+(exit)

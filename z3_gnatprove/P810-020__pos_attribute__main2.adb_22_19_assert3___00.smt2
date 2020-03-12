@@ -797,3 +797,5 @@ Target solver: Z3
  ;; File "main2.adb", line 4, characters 0-0
   (not (= off_c2 0)))
 (check-sat)
+
+(exit)

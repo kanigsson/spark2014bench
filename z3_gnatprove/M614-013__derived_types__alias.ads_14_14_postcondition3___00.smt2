@@ -367,3 +367,5 @@ Target solver: Z3
  ;; File "alias.ads", line 13, characters 0-0
   (not (= alias__add__result (+ (get_content r) x))))
 (check-sat)
+
+(exit)

@@ -1528,3 +1528,5 @@ Target solver: Z3
   (not
   (= (length1 (to_rep o5) (to_rep o4)) (length1 (to_rep o10) (to_rep o9)))))
 (check-sat)
+
+(exit)

@@ -1259,3 +1259,5 @@ Target solver: Z3
  ;; File "area_math.ads", line 46, characters 0-0
   (not (dynamic_predicate1 temp___433)))
 (check-sat)
+
+(exit)

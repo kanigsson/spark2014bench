@@ -289,3 +289,5 @@ Target solver: Z3
  ;; File "test_fixed_points.ads", line 20, characters 0-0
   (not (<= (fxp_div_int num denom2) (fxp_div_int num denom1))))
 (check-sat)
+
+(exit)

@@ -474,3 +474,5 @@ Target solver: Z3
   (bvugt (bvmul (bvadd left_y #x0000000000000001) (bvadd left_y #x0000000000000001)) 
   left_x)))
 (check-sat)
+
+(exit)

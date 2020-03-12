@@ -67,3 +67,5 @@ Target solver: Z3
  ;; File "main.adb", line 2, characters 0-0
   (not (= (valid_tank the_tank) true)))
 (check-sat)
+
+(exit)

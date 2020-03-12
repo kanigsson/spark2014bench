@@ -422,3 +422,5 @@ Target solver: Z3
  ;; File "fib.ads", line 29, characters 0-0
   (not (< k13 temp___231)))
 (check-sat)
+
+(exit)

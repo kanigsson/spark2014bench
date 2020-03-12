@@ -527,3 +527,5 @@ Target solver: Z3
  ;; File "do_loops.adb", line 18, characters 0-0
   (not (<= (first1 a__pointer_value2) i1)))
 (check-sat)
+
+(exit)

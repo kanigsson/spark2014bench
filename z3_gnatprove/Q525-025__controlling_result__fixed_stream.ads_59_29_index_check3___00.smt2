@@ -673,3 +673,5 @@ Target solver: Z3
  ;; File "fixed_stream.ads", line 52, characters 0-0
   (not (<= (to_rep1 change__first) usf1)))
 (check-sat)
+
+(exit)

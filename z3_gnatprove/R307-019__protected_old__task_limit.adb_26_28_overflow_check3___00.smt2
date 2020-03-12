@@ -206,3 +206,5 @@ Target solver: Z3
  ;; File "task_limit.ads", line 10, characters 0-0
   (not (in_range (+ o1 1))))
 (check-sat)
+
+(exit)

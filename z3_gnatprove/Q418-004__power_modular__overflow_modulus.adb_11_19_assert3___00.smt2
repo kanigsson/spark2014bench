@@ -265,3 +265,5 @@ Target solver: Z3
  ;; File "overflow_modulus.adb", line 1, characters 0-0
   (not (= x1 #x00)))
 (check-sat)
+
+(exit)

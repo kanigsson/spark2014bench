@@ -514,3 +514,5 @@ Target solver: Z3
  ;; File "main.adb", line 2, characters 0-0
   (not (= (less_than_max2 (us_repqtmk1 c2__split_fields o)) true)))
 (check-sat)
+
+(exit)

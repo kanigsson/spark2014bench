@@ -438,3 +438,5 @@ Target solver: Z3
  ;; File "usergroup_examples.adb", line 65, characters 0-0
   (not (= (is_valid v1) true)))
 (check-sat)
+
+(exit)

@@ -787,3 +787,5 @@ Target solver: Z3
  ;; File "local_borrow_array.adb", line 12, characters 0-0
   (not (rec__local_borrow_array__list_acc__pointer_value__pred x)))
 (check-sat)
+
+(exit)

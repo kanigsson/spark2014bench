@@ -411,3 +411,5 @@ Target solver: Z3
  ;; File "empty_type.adb", line 1, characters 0-0
   (not (= (attr__init1 (rec__empty_type__rec__g x__split_fields1)) true)))
 (check-sat)
+
+(exit)

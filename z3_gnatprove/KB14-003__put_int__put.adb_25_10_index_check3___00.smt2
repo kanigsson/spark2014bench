@@ -655,3 +655,5 @@ Target solver: Z3
  ;; File "put.adb", line 2, characters 0-0
   (not (<= 1 first4)))
 (check-sat)
+
+(exit)

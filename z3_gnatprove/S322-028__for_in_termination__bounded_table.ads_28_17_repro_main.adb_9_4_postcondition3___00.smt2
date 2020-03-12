@@ -635,3 +635,5 @@ Target solver: Z3
  ;; File "bounded_table.ads", line 27, characters 0-0
   (not (= repro_main__int_table__length__result (length (model1 table)))))
 (check-sat)
+
+(exit)

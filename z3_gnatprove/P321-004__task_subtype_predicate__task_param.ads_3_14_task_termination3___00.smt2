@@ -56,3 +56,5 @@ Target solver: Z3
  ;; File "task_param.ads", line 3, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

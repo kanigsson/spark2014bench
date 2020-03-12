@@ -417,3 +417,5 @@ Target solver: Z3
  ;; File "update_checks_1.ads", line 17, characters 0-0
   (not (<= (to_rep1 a__first) (to_rep1 a__last))))
 (check-sat)
+
+(exit)

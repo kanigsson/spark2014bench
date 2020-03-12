@@ -665,3 +665,5 @@ Target solver: Z3
  ;; File "fixed_string.ads", line 45, characters 0-0
   (not (<= (first1 new_val) o22)))
 (check-sat)
+
+(exit)

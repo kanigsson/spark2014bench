@@ -2138,3 +2138,5 @@ Target solver: Z3
  ;; File "binary_search.adb", line 147, characters 0-0
   (not (= (m_contains temp___borrowed_339 i) true)))
 (check-sat)
+
+(exit)

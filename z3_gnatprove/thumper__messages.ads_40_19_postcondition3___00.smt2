@@ -829,3 +829,5 @@ Target solver: Z3
   (to_rep
   (rec__messages__network_message__size (us_split_fields1 low_level))))))
 (check-sat)
+
+(exit)

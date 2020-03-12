@@ -645,3 +645,5 @@ Target solver: Z3
   (not
   (not (= (rec__types__option__exists search_ter_p__search__result) true))))
 (check-sat)
+
+(exit)

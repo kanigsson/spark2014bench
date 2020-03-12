@@ -554,3 +554,5 @@ Target solver: Z3
                                  (select (to_array src) (- (+ src_first 
                                  i1) index))))))
 (check-sat)
+
+(exit)

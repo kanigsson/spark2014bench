@@ -798,3 +798,5 @@ Target solver: Z3
  ;; File "sorting.ads", line 17, characters 0-0
   (not (not (= o36 0))))
 (check-sat)
+
+(exit)

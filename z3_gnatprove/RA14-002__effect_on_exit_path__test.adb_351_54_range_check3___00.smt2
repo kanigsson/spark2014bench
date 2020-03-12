@@ -1744,3 +1744,5 @@ Target solver: Z3
  ;; File "test.ads", line 80, characters 0-0
   (not (in_range2 iterator1)))
 (check-sat)
+
+(exit)

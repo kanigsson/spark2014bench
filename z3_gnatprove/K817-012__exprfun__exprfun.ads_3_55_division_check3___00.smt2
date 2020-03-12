@@ -185,3 +185,5 @@ Target solver: Z3
  ;; File "exprfun.ads", line 3, characters 0-0
   (not (not (= o 0))))
 (check-sat)
+
+(exit)

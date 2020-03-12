@@ -275,3 +275,5 @@ Target solver: Z3
                                            (to_rep
                                            (select a1 temp___index_439))))))
 (check-sat)
+
+(exit)

@@ -612,3 +612,5 @@ Target solver: Z3
  ;; File "main.adb", line 5, characters 0-0
   (not (= (length (of_array arr1 60 64)) 4)))
 (check-sat)
+
+(exit)

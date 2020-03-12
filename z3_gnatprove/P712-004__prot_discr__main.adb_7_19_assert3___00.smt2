@@ -272,3 +272,5 @@ Target solver: Z3
  ;; File "main.adb", line 3, characters 0-0
   (not (not (= d1 d2))))
 (check-sat)
+
+(exit)

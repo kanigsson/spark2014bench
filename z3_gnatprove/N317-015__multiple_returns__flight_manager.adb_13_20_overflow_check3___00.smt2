@@ -102,3 +102,5 @@ Target solver: Z3
  ;; File "flight_manager.adb", line 9, characters 0-0
   (not (in_range (- i))))
 (check-sat)
+
+(exit)

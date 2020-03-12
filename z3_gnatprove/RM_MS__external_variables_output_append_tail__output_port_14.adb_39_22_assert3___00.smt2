@@ -162,3 +162,5 @@ Target solver: Z3
  ;; File "output_port_14.ads", line 5, characters 0-0
   (not (= out_11 0)))
 (check-sat)
+
+(exit)

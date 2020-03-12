@@ -106,3 +106,5 @@ Target solver: Z3
  ;; File "p.ads", line 1, characters 0-0
   (not (not (= (zero Tuple0) 0))))
 (check-sat)
+
+(exit)

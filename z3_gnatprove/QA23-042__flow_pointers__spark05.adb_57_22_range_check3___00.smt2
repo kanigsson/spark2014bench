@@ -1715,3 +1715,5 @@ Target solver: Z3
  ;; File "spark05.adb", line 4, characters 0-0
   (not (in_range1 o12)))
 (check-sat)
+
+(exit)

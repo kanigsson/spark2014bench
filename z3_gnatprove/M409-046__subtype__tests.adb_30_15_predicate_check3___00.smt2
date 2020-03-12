@@ -173,3 +173,5 @@ Target solver: Z3
   (or (and (<= 0 temp___214) (<= temp___214 0))
   (and (<= 4 temp___214) (<= temp___214 4)))))
 (check-sat)
+
+(exit)

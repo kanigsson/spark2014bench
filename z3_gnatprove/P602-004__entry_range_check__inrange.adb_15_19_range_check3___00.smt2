@@ -185,3 +185,5 @@ Target solver: Z3
  ;; File "inrange.ads", line 13, characters 0-0
   (not (in_range1 inrange__pt__add_out__i)))
 (check-sat)
+
+(exit)

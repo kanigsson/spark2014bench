@@ -359,3 +359,5 @@ Target solver: Z3
  ;; File "param_1_legal.adb", line 3, characters 0-0
   (not (<= (to_rep1 x__first) 1)))
 (check-sat)
+
+(exit)

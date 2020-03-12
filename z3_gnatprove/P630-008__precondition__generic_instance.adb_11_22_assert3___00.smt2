@@ -212,3 +212,5 @@ Target solver: Z3
  ;; File "generic_instance.ads", line 17, characters 0-0
   (not (= (p x) true)))
 (check-sat)
+
+(exit)

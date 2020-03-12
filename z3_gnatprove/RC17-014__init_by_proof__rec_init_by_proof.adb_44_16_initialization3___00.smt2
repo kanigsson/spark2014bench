@@ -380,3 +380,5 @@ Target solver: Z3
  ;; File "rec_init_by_proof.adb", line 38, characters 0-0
   (not (= (attr__init o3) true)))
 (check-sat)
+
+(exit)

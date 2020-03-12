@@ -887,3 +887,5 @@ Target solver: Z3
  ;; File "record_discr.ads", line 25, characters 0-0
   (not (in_range3 (not (= o7 0)) (us_split_discrs1 result__))))
 (check-sat)
+
+(exit)

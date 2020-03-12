@@ -425,3 +425,5 @@ Target solver: Z3
  ;; File "hello.adb", line 39, characters 0-0
   (not (<= (first1 str) (last1 str))))
 (check-sat)
+
+(exit)

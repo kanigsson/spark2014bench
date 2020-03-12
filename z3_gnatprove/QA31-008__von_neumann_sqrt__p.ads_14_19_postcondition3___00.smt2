@@ -423,3 +423,5 @@ Target solver: Z3
  ;; File "p.ads", line 13, characters 0-0
   (not (<= (* p__sqrt_von_neumann__result p__sqrt_von_neumann__result) x)))
 (check-sat)
+
+(exit)

@@ -105,3 +105,5 @@ Target solver: Z3
  ;; File "my_pack.ads", line 11, characters 0-0
   (not (< 0 z1)))
 (check-sat)
+
+(exit)

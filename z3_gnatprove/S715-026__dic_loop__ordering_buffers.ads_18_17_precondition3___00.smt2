@@ -771,3 +771,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S715-026__dic_loop-11199/src/gnatprove/ordering_buffers__ordering_buffer_type.mlw", line 915, characters 5-8
   (not (<= (first usf1) usf2)))
 (check-sat)
+
+(exit)

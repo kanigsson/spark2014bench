@@ -735,3 +735,5 @@ Target solver: Z3
        (us_split_fields1
        ada___hnco__test2__v_type_owner__vector_type_owner__delete_last__container__compl))))))
 (check-sat)
+
+(exit)

@@ -797,3 +797,5 @@ Target solver: Z3
   (not
   (<= 1 (+ (to_rep2 (rec__repro__ensemble__size (us_split_discrs1 e))) 1))))
 (check-sat)
+
+(exit)

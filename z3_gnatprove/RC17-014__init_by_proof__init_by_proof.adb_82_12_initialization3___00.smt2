@@ -678,3 +678,5 @@ Target solver: Z3
  ;; File "init_by_proof.adb", line 2, characters 0-0
   (not (= (attr__init o7) true)))
 (check-sat)
+
+(exit)

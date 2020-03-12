@@ -224,3 +224,5 @@ Target solver: Z3
  ;; File "after_tax.ads", line 3, characters 0-0
   (not (not (= 100 0))))
 (check-sat)
+
+(exit)

@@ -312,3 +312,5 @@ Target solver: Z3
  ;; File "arr_aggregate.ads", line 14, characters 0-0
   (not (<= 1 one)))
 (check-sat)
+
+(exit)

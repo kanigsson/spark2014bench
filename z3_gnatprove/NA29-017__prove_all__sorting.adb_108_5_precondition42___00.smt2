@@ -735,3 +735,5 @@ Target solver: Z3
  ;; File "sorting.adb", line 59, characters 0-0
   (not (<= (+ o31 o32) (+ (to_rep o34) 1))))
 (check-sat)
+
+(exit)

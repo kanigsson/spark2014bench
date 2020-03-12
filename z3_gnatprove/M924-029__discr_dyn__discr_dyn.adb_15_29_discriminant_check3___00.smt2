@@ -848,3 +848,5 @@ Target solver: Z3
   (us_split_fieldsqtmk2 (temp_____aggregate_def_215 (- 1) (- 2))
   (distinct 0 0))))))))
 (check-sat)
+
+(exit)

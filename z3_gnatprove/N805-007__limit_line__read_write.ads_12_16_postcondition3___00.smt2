@@ -78,3 +78,5 @@ Target solver: Z3
  ;; File "read_write.ads", line 10, characters 0-0
   (not (= v2 true)))
 (check-sat)
+
+(exit)

@@ -760,3 +760,5 @@ Target solver: Z3
  ;; File "foo.ads", line 1, characters 0-0
   (not (<= 0 0)))
 (check-sat)
+
+(exit)

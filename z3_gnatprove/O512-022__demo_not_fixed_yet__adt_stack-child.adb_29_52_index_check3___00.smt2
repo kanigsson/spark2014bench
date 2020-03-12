@@ -648,3 +648,5 @@ Target solver: Z3
  ;; File "adt_stack-child.ads", line 10, characters 0-0
   (not (<= 1 temp___274)))
 (check-sat)
+
+(exit)

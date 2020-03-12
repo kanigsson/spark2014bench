@@ -101,3 +101,5 @@ Target solver: Z3
  ;; File "callee.ads", line 2, characters 0-0
   (not (in_range (+ a b))))
 (check-sat)
+
+(exit)

@@ -538,3 +538,5 @@ Target solver: Z3
  ;; File "const.ads", line 39, characters 0-0
   (not (= m 1)))
 (check-sat)
+
+(exit)

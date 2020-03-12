@@ -457,3 +457,5 @@ Target solver: Z3
                                                               (us_split_discrs1
                                                               h__split_fields)))))
 (check-sat)
+
+(exit)

@@ -260,3 +260,5 @@ Target solver: Z3
  ;; File "slice_test_2.ads", line 8, characters 0-0
   (not (<= 0 2)))
 (check-sat)
+
+(exit)

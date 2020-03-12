@@ -380,3 +380,5 @@ Target solver: Z3
  ;; File "info_messages.ads", line 4, characters 0-0
   (not (in_range2 i1)))
 (check-sat)
+
+(exit)

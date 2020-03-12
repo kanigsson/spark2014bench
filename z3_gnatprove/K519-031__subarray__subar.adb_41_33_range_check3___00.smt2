@@ -427,3 +427,5 @@ Target solver: Z3
  ;; File "subar.ads", line 27, characters 0-0
   (not (<= 1 (- x 1))))
 (check-sat)
+
+(exit)

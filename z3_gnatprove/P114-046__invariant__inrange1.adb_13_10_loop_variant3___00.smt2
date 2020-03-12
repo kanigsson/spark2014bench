@@ -258,3 +258,5 @@ Target solver: Z3
  ;; File "inrange1.ads", line 15, characters 0-0
   (not (bvugt i2 temp___174)))
 (check-sat)
+
+(exit)

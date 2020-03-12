@@ -1375,3 +1375,5 @@ Target solver: Z3
  ;; File "check_loop_inv.adb", line 1, characters 0-0
   (not (<= (first1 temp___342) (last1 temp___342))))
 (check-sat)
+
+(exit)

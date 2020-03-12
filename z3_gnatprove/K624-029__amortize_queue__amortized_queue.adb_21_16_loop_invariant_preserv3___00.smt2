@@ -1227,3 +1227,5 @@ Target solver: Z3
      (us_split_fieldsqtmk result____split_fields4)) (+ (last_index left) 
      i)) (element right i))))
 (check-sat)
+
+(exit)

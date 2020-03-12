@@ -210,3 +210,5 @@ Target solver: Z3
  ;; File "bug_align.adb", line 8, characters 0-0
   (not (uint_in_range1 16)))
 (check-sat)
+
+(exit)

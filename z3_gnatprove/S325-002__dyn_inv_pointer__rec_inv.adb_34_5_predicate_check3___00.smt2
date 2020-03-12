@@ -755,3 +755,5 @@ Target solver: Z3
   (us_split_fieldsqtmk (rec__rec_inv__list_d__val x__split_fields)
   temp___239)))))
 (check-sat)
+
+(exit)

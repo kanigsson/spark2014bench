@@ -86,3 +86,5 @@ Target solver: Z3
  ;; File "init.adb", line 3, characters 0-0
   (not (<= 48 97)))
 (check-sat)
+
+(exit)

@@ -225,3 +225,5 @@ Target solver: Z3
  ;; File "volatiles_legal.ads", line 49, characters 0-0
   (not (= (to_rep vol__split_fields1) 1)))
 (check-sat)
+
+(exit)

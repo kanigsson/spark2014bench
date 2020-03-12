@@ -386,3 +386,5 @@ Target solver: Z3
  ;; File "generic_parent-child_instance.ads", line 19, characters 0-0
   (not (in_range (- o4 step))))
 (check-sat)
+
+(exit)

@@ -428,3 +428,5 @@ Target solver: Z3
  ;; File "sorters.ads", line 7, characters 0-0
   (not (not (= current smallest1))))
 (check-sat)
+
+(exit)

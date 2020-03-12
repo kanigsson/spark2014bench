@@ -300,3 +300,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-PA12-001__DIC-25055/src/gnatprove/dic_pred__t.mlw", line 470, characters 5-8
   (not (< 0 (get usf1))))
 (check-sat)
+
+(exit)

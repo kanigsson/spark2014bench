@@ -137,3 +137,5 @@ Target solver: Z3
  ;; File "a-ngelfu.ads", line 115, characters 0-0
   (not (not (fp.isZero cycle))))
 (check-sat)
+
+(exit)

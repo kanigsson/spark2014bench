@@ -594,3 +594,5 @@ Target solver: Z3
  ;; File "evoting.ads", line 99, characters 0-0
   (not (< (to_rep (select counters i2)) (to_rep (select counters winner)))))
 (check-sat)
+
+(exit)

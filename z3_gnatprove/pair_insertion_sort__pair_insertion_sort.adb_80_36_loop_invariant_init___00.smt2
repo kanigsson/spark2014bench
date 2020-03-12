@@ -737,3 +737,5 @@ Target solver: Z3
  ;; File "pair_insertion_sort.ads", line 13, characters 0-0
   (not (< x2 (to_rep (select a2 (+ j1 2))))))
 (check-sat)
+
+(exit)

@@ -1096,3 +1096,5 @@ Target solver: Z3
   (rec__traverse_list__list__next
   (us_split_fields1 (rec__traverse_list__list_acc__pointer_value o6))))))
 (check-sat)
+
+(exit)

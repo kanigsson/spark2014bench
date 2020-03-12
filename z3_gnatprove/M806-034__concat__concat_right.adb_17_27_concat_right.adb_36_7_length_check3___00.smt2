@@ -483,3 +483,5 @@ Target solver: Z3
  ;; File "concat_right.ads", line 2, characters 0-0
   (not (<= 1 10)))
 (check-sat)
+
+(exit)

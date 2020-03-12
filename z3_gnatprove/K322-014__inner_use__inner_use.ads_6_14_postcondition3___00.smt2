@@ -103,3 +103,5 @@ Target solver: Z3
  ;; File "inner_use.ads", line 5, characters 0-0
   (not (not (= x1 5))))
 (check-sat)
+
+(exit)

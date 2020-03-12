@@ -295,3 +295,5 @@ Target solver: Z3
  ;; File "x86.ads", line 135, characters 0-0
   (not (= (dh rdx2) val__)))
 (check-sat)
+
+(exit)

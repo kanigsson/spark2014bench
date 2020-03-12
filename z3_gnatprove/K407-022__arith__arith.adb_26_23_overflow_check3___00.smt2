@@ -358,3 +358,5 @@ Target solver: Z3
  ;; File "arith.adb", line 1, characters 0-0
   (not (in_range (+ o22 x))))
 (check-sat)
+
+(exit)

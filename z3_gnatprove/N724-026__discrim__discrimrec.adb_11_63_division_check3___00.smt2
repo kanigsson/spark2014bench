@@ -1494,3 +1494,5 @@ Target solver: Z3
  ;; File "discrimrec.adb", line 8, characters 0-0
   (not (not (= #x0000000100000000 #x0000000000000000))))
 (check-sat)
+
+(exit)

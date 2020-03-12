@@ -121,3 +121,5 @@ Target solver: Z3
  ;; File "fixed.adb", line 1, characters 0-0
   (not (in_range (min x (max x x)))))
 (check-sat)
+
+(exit)

@@ -384,3 +384,5 @@ Target solver: Z3
  ;; File "call_actuals.ads", line 13, characters 0-0
   (not (in_range4 a24)))
 (check-sat)
+
+(exit)

@@ -983,3 +983,5 @@ Target solver: Z3
  ;; File "generic_queue.ads", line 45, characters 0-0
   (not (in_range (length o3 o2))))
 (check-sat)
+
+(exit)

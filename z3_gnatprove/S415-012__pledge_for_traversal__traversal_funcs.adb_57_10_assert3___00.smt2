@@ -768,3 +768,5 @@ Target solver: Z3
  ;; File "traversal_funcs.adb", line 49, characters 0-0
   (not (= (length temp___borrowed_323) l)))
 (check-sat)
+
+(exit)

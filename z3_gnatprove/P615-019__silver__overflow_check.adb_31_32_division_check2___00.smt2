@@ -312,3 +312,5 @@ Target solver: Z3
  ;; File "overflow_check.adb", line 22, characters 0-0
   (not (not (= x ((_ to_fp 8 24) #x00000000)))))
 (check-sat)
+
+(exit)

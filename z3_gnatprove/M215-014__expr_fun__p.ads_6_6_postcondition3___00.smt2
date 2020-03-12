@@ -115,3 +115,5 @@ Target solver: Z3
  ;; File "p.ads", line 3, characters 0-0
   (not (= current_mode current_mode1)))
 (check-sat)
+
+(exit)

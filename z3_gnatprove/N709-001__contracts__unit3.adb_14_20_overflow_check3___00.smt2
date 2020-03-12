@@ -762,3 +762,5 @@ Target solver: Z3
  ;; File "unit3.ads", line 23, characters 0-0
   (not (in_range o2)))
 (check-sat)
+
+(exit)

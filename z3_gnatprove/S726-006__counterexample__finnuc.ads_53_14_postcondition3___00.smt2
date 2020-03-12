@@ -743,3 +743,5 @@ Target solver: Z3
  ;; File "finnuc.ads", line 45, characters 0-0
   (not (= (r_1 seta a b) true)))
 (check-sat)
+
+(exit)

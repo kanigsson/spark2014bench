@@ -957,3 +957,5 @@ Target solver: Z3
  ;; File "use_unchecked_union.ads", line 29, characters 0-0
   (not (= rliteral1 output__split_discrs)))
 (check-sat)
+
+(exit)

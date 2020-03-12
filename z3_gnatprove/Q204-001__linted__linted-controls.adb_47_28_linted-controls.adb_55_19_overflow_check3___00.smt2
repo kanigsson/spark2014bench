@@ -1008,3 +1008,5 @@ Target solver: Z3
  ;; File "linted-controls.ads", line 37, characters 0-0
   (not (in_range2 (- (- o9) 1))))
 (check-sat)
+
+(exit)

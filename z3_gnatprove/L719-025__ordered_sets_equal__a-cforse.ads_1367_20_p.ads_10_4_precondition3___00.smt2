@@ -1029,3 +1029,5 @@ Target solver: Z3
  ;; File "a-cforse.ads", line 1361, characters 0-0
   (not (= (has_key o1 position) true)))
 (check-sat)
+
+(exit)

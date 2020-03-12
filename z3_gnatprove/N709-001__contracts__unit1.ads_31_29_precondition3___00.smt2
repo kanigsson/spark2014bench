@@ -254,3 +254,5 @@ Target solver: Z3
  ;; File "unit1.ads", line 27, characters 0-0
   (not (not (= (is_max usf1) true))))
 (check-sat)
+
+(exit)

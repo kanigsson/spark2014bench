@@ -158,3 +158,5 @@ Target solver: Z3
  ;; File "intra_unit_elaboration_order_examples.ads", line 19, characters 0-0
   (not (= z2 (g z1))))
 (check-sat)
+
+(exit)

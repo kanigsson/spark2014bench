@@ -260,3 +260,5 @@ Target solver: Z3
  ;; File "inrange2.ads", line 15, characters 0-0
   (not (bvuge #x0000000000000000 #x0000000000000000)))
 (check-sat)
+
+(exit)

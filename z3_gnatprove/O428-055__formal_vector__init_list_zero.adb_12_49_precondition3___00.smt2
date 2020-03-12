@@ -834,3 +834,5 @@ Target solver: Z3
  ;; File "init_list_zero.adb", line 5, characters 0-0
   (not (= (has_key o6 o4) true)))
 (check-sat)
+
+(exit)

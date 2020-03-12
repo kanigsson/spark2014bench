@@ -848,3 +848,5 @@ Target solver: Z3
  ;; File "allocator.ads", line 41, characters 0-0
   (not (<= 1 e)))
 (check-sat)
+
+(exit)

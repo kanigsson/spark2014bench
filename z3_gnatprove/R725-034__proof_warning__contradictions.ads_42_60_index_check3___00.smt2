@@ -322,3 +322,5 @@ Target solver: Z3
  ;; File "contradictions.ads", line 40, characters 0-0
   (not (<= (to_rep v__first) usf)))
 (check-sat)
+
+(exit)

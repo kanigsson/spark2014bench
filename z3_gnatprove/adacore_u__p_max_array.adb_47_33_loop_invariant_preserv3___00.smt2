@@ -515,3 +515,5 @@ Target solver: Z3
  ;; File "p_max_array.ads", line 15, characters 0-0
   (not (= j2 (+ (- i2 (to_rep1 a__first)) (first1 b)))))
 (check-sat)
+
+(exit)

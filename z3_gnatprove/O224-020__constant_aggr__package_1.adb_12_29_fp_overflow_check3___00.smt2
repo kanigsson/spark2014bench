@@ -331,3 +331,5 @@ Target solver: Z3
  ;; File "package_1.ads", line 15, characters 0-0
   (not (fp.isFinite32 (fp.add RNE scalar_const temp))))
 (check-sat)
+
+(exit)

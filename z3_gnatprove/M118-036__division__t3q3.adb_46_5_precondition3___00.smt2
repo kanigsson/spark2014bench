@@ -265,3 +265,5 @@ Target solver: Z3
  ;; File "t3q3.ads", line 4, characters 0-0
   (not (not (= q1 0))))
 (check-sat)
+
+(exit)

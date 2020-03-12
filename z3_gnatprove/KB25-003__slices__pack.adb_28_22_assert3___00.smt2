@@ -538,3 +538,5 @@ Target solver: Z3
  ;; File "pack.ads", line 5, characters 0-0
   (not (= (bool_eq1 my_b 1 4 my_a 1 4) true)))
 (check-sat)
+
+(exit)

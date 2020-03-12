@@ -283,3 +283,5 @@ Target solver: Z3
  ;; File "modular.adb", line 5, characters 0-0
   (not (uint_in_range (mod2 o1 256))))
 (check-sat)
+
+(exit)

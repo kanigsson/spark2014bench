@@ -214,3 +214,5 @@ Target solver: Z3
   (=> (is_odd__function_guard (is_odd (- i 1)) (- i 1))
   (= (is_odd (- i 1)) true)))))
 (check-sat)
+
+(exit)

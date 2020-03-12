@@ -177,3 +177,5 @@ Target solver: Z3
  ;; File "mult.adb", line 6, characters 0-0
   (not (fp.leq (of_int RNE (+ (* n 65) 1)) (of_int RNE (* (+ n 1) 65)))))
 (check-sat)
+
+(exit)

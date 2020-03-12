@@ -3939,3 +3939,5 @@ Target solver: Z3
  ;; File "pragmarc-b_strings.ads", line 19, characters 0-0
   (not (<= 1 1)))
 (check-sat)
+
+(exit)

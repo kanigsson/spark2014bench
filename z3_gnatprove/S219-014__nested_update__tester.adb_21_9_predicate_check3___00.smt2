@@ -1871,3 +1871,5 @@ Target solver: Z3
  ;; File "tester.adb", line 7, characters 0-0
   (not (dynamic_predicate1 (us_repqtmk1 x__split_discrs x__split_fields2))))
 (check-sat)
+
+(exit)

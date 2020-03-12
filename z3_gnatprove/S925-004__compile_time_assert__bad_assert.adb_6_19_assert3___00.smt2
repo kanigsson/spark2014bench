@@ -97,3 +97,5 @@ Target solver: Z3
  ;; File "bad_assert.adb", line 3, characters 0-0
   (not (= x 42)))
 (check-sat)
+
+(exit)

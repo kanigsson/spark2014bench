@@ -284,3 +284,5 @@ Target solver: Z3
  ;; File "strlit.ads", line 4, characters 0-0
   (not (= strlit__dosome__result 10)))
 (check-sat)
+
+(exit)

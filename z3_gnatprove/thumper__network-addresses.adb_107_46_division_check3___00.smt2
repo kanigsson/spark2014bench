@@ -923,3 +923,5 @@ Target solver: Z3
  ;; File "network-addresses.ads", line 37, characters 0-0
   (not (not (= #x0A #x00))))
 (check-sat)
+
+(exit)

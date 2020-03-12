@@ -218,3 +218,5 @@ Target solver: Z3
  ;; File "victor_divmod_rules.adb", line 89, characters 0-0
   (not (in_range1 (* y (div1 x o)))))
 (check-sat)
+
+(exit)

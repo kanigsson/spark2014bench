@@ -783,3 +783,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 100, characters 0-0
   (not (<= (first1 number__split_fields) digit_number1)))
 (check-sat)
+
+(exit)

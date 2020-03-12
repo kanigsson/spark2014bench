@@ -478,3 +478,5 @@ Target solver: Z3
  ;; File "aalias.adb", line 21, characters 0-0
   (not (in_range1 (length (bv2int o4) (bv2int o3)))))
 (check-sat)
+
+(exit)

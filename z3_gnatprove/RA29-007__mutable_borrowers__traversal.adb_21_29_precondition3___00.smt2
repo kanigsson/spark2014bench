@@ -532,3 +532,5 @@ Target solver: Z3
  ;; File "traversal.adb", line 1, characters 0-0
   (not (not (= (bool_eq2 o us_null_pointer1) true))))
 (check-sat)
+
+(exit)

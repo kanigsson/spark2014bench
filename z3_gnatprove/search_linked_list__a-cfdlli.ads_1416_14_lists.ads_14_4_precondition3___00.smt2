@@ -834,3 +834,5 @@ Target solver: Z3
  ;; File "a-cfdlli.ads", line 1403, characters 0-0
   (not (<= o1 (last o4))))
 (check-sat)
+
+(exit)

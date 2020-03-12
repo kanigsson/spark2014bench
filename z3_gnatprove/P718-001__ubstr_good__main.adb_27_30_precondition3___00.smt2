@@ -703,3 +703,5 @@ Target solver: Z3
  ;; File "main.adb", line 7, characters 0-0
   (not (< (length1 o5) 500000)))
 (check-sat)
+
+(exit)

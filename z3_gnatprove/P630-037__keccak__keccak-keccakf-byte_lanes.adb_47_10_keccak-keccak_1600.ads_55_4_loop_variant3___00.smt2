@@ -1270,3 +1270,5 @@ Target solver: Z3
   (or (< temp___764 offset2)
   (and (= offset2 temp___764) (< remaining_bits2 temp___763)))))
 (check-sat)
+
+(exit)

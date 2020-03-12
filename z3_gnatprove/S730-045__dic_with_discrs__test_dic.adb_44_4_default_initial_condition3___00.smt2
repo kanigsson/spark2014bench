@@ -1120,3 +1120,5 @@ Target solver: Z3
  ;; File "test_dic.adb", line 1, characters 0-0
   (not (= (rec__test_dic__nested__p2__x (us_split_discrs9 usf)) true)))
 (check-sat)
+
+(exit)

@@ -1038,3 +1038,5 @@ Target solver: Z3
  ;; File "generic_ring_buffer.ads", line 85, characters 0-0
   (not (dynamic_property1 1 r27b 1)))
 (check-sat)
+
+(exit)

@@ -113,3 +113,5 @@ Target solver: Z3
  ;; File "foo.adb", line 2, characters 0-0
   (not (= (ole x time_last) true)))
 (check-sat)
+
+(exit)

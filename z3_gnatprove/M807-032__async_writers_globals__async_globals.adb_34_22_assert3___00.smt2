@@ -126,3 +126,5 @@ Target solver: Z3
  ;; File "async_globals.adb", line 27, characters 0-0
   (not (= x1 y1)))
 (check-sat)
+
+(exit)

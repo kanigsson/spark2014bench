@@ -1711,3 +1711,5 @@ Target solver: Z3
   (not (rec__do_loops__u_array_acc__pointer_value__pred
   (rec__do_loops__r_array_record__f3 d__pointer_value4))))
 (check-sat)
+
+(exit)

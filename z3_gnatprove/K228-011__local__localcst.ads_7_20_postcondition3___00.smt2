@@ -112,3 +112,5 @@ Target solver: Z3
  ;; File "localcst.ads", line 6, characters 0-0
   (not (= localcst__id__result n)))
 (check-sat)
+
+(exit)

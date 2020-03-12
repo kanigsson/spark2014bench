@@ -304,3 +304,5 @@ Target solver: Z3
  ;; File "p2.ads", line 11, characters 0-0
   (not (= p2__always_true__result true)))
 (check-sat)
+
+(exit)

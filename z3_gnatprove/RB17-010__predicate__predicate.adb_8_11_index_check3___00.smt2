@@ -346,3 +346,5 @@ Target solver: Z3
  ;; File "predicate.ads", line 8, characters 0-0
   (not (<= (to_rep1 p__first) temp___201)))
 (check-sat)
+
+(exit)

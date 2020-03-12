@@ -1364,3 +1364,5 @@ Target solver: Z3
  ;; File "main.adb", line 4, characters 0-0
   (not (<= (to_rep1 a__first) c28b1)))
 (check-sat)
+
+(exit)

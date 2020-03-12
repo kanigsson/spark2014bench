@@ -232,3 +232,5 @@ Target solver: Z3
  ;; File "infoflow.ads", line 28, characters 0-0
   (not (= (to_rep (select flags2 k)) (to_rep (select flags1 k)))))
 (check-sat)
+
+(exit)

@@ -892,3 +892,5 @@ Target solver: Z3
  ;; File "very_longs-divide.adb", line 51, characters 0-0
   (not (<= (first1 result____split_fields2) temp___1311)))
 (check-sat)
+
+(exit)

@@ -322,3 +322,5 @@ Target solver: Z3
  ;; File "where_are_the_run_time_errors.adb", line 2, characters 0-0
   (not (= y4 (+ temp___loop_entry_159 (* 3 (- x4 2))))))
 (check-sat)
+
+(exit)

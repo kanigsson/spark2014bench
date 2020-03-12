@@ -949,3 +949,5 @@ Target solver: Z3
  ;; File "record_discr.ads", line 25, characters 0-0
   (not (<= (first1 temp___317) 1)))
 (check-sat)
+
+(exit)

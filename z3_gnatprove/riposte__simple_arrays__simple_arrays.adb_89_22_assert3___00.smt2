@@ -256,3 +256,5 @@ Target solver: Z3
      2147483647 (temp_____aggregate_def_410 a n 6 1 5) (- 2147483648)
      2147483647) true)))
 (check-sat)
+
+(exit)

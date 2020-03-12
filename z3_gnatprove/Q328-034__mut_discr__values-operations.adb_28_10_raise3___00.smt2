@@ -386,3 +386,5 @@ Target solver: Z3
  ;; File "values-operations.ads", line 12, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

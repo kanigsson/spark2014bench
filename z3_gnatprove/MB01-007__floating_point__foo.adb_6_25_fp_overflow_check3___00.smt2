@@ -152,3 +152,5 @@ Target solver: Z3
  ;; File "foo.adb", line 5, characters 0-0
   (not (fp.isFinite64 (fp.add RNE o c))))
 (check-sat)
+
+(exit)

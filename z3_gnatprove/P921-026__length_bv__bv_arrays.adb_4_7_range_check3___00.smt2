@@ -413,3 +413,5 @@ Target solver: Z3
  ;; File "bv_arrays.ads", line 9, characters 0-0
   (not (bvuge #x0000 #x0000)))
 (check-sat)
+
+(exit)

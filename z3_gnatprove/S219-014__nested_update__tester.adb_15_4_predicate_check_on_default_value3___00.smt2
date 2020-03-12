@@ -1705,3 +1705,5 @@ Target solver: Z3
  ;; File "tester.adb", line 7, characters 0-0
   (not (dynamic_predicate1 usf1)))
 (check-sat)
+
+(exit)

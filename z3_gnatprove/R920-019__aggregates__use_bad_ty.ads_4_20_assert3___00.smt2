@@ -114,3 +114,5 @@ Target solver: Z3
  ;; File "use_bad_ty.ads", line 2, characters 0-0
   (not (= t 1)))
 (check-sat)
+
+(exit)

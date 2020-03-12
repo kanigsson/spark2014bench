@@ -1049,3 +1049,5 @@ Target solver: Z3
      (select (rec__do_loops__r_array_record__f3 d__split_fields6) i5)))) 
   (to_rep (rec__do_loops__r__f2 (us_split_fields1 (select usf i5)))))))
 (check-sat)
+
+(exit)

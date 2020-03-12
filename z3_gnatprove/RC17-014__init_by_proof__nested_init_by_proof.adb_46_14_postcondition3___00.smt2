@@ -446,3 +446,5 @@ Target solver: Z3
  ;; File "nested_init_by_proof.adb", line 45, characters 0-0
   (not (= x__split_discrs1 true)))
 (check-sat)
+
+(exit)

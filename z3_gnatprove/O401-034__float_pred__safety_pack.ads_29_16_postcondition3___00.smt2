@@ -180,3 +180,5 @@ Target solver: Z3
  ;; File "safety_pack.ads", line 24, characters 0-0
   (not (fp.eq safety_pack__saturate__result min_value)))
 (check-sat)
+
+(exit)

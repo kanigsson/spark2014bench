@@ -155,3 +155,5 @@ Target solver: Z3
  ;; File "check_14.ads", line 7, characters 0-0
   (not (< (+ a b) c1)))
 (check-sat)
+
+(exit)

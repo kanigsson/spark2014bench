@@ -57,3 +57,5 @@ Target solver: Z3
  ;; File "sccs.adb", line 1, characters 0-0
   (not (= b true)))
 (check-sat)
+
+(exit)

@@ -441,3 +441,5 @@ Target solver: Z3
  ;; File "records.adb", line 510, characters 0-0
   (not (= (bool_eq2 (us_repqtmk1 r1__split_fields1) r2) true)))
 (check-sat)
+
+(exit)

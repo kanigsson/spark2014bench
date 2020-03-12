@@ -991,3 +991,5 @@ Target solver: Z3
  ;; File "types_with_invariants.ads", line 1, characters 0-0
   (not (in_range5 0)))
 (check-sat)
+
+(exit)

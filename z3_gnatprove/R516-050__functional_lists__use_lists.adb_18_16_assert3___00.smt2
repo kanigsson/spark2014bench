@@ -1546,3 +1546,5 @@ Target solver: Z3
      us_HEAP8) (- (length (us_repqtmk l2__split_fields3 l2__attr__tag)) 1)) 
   (element l1 cu1 us_HEAP8))))
 (check-sat)
+
+(exit)

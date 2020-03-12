@@ -657,3 +657,5 @@ Target solver: Z3
  ;; File "p.adb", line 1, characters 0-0
   (not (< temp___217 j16)))
 (check-sat)
+
+(exit)

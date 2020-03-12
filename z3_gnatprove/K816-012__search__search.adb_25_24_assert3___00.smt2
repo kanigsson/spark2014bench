@@ -392,3 +392,5 @@ Target solver: Z3
   (or (not (= found21 true))
   (= (to_rep (select (to_array table) index22)) value2))))
 (check-sat)
+
+(exit)

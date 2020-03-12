@@ -411,3 +411,5 @@ Target solver: Z3
  ;; File "types_with_invariants.adb", line 8, characters 0-0
   (not (= (to_integer (from_integer i)) i)))
 (check-sat)
+
+(exit)

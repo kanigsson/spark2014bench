@@ -774,3 +774,5 @@ Target solver: Z3
              (value (us_repqtmk to____split_discrs to____split_fields2))) 1)) 
   source)))
 (check-sat)
+
+(exit)

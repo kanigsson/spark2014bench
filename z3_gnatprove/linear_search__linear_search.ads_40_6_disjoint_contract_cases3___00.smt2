@@ -536,3 +536,5 @@ Target solver: Z3
                                                                   val__)))) 1
                                                                   0)) 1)))
 (check-sat)
+
+(exit)

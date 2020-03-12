@@ -255,3 +255,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S730-045__dic_with_discrs-13998/src/gnatprove/test_dic__nested__p4.mlw", line 442, characters 5-8
   (not (= (rec__test_dic__nested__p4__x (us_split_discrs1 usf)) true)))
 (check-sat)
+
+(exit)

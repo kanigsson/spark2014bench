@@ -183,3 +183,5 @@ Target solver: Z3
  ;; File "forall.ads", line 8, characters 0-0
   (not (= forall__has_zero__result 0)))
 (check-sat)
+
+(exit)

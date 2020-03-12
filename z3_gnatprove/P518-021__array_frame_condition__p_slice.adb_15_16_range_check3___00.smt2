@@ -690,3 +690,5 @@ Target solver: Z3
  ;; File "p_slice.adb", line 1, characters 0-0
   (not (<= 1 i11)))
 (check-sat)
+
+(exit)

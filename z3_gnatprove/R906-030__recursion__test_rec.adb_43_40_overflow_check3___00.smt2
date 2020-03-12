@@ -578,3 +578,5 @@ Target solver: Z3
  ;; File "test_rec.adb", line 32, characters 0-0
   (not (in_range1 o8)))
 (check-sat)
+
+(exit)

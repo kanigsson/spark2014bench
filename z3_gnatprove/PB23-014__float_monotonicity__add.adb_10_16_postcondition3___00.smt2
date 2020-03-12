@@ -193,3 +193,5 @@ Target solver: Z3
  ;; File "add.adb", line 3, characters 0-0
   (not (fp.leq x11 x21)))
 (check-sat)
+
+(exit)

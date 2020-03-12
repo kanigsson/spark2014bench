@@ -73,3 +73,5 @@ Target solver: Z3
  ;; File "p.ads", line 13, characters 0-0
   (not (= x true)))
 (check-sat)
+
+(exit)

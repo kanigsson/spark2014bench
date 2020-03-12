@@ -1484,3 +1484,5 @@ Target solver: Z3
      (us_repqtmk1 c_pu1__split_discrs c_pu1__split_fields c_pu1__attr__tag)
      (us_repqtmk1 c_pu2__split_discrs c_pu2__split_fields c_pu2__attr__tag)) true)))
 (check-sat)
+
+(exit)

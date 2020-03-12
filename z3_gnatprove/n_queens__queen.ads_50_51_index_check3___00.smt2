@@ -256,3 +256,5 @@ Target solver: Z3
  ;; File "queen.ads", line 47, characters 0-0
   (not (<= 1 usf)))
 (check-sat)
+
+(exit)

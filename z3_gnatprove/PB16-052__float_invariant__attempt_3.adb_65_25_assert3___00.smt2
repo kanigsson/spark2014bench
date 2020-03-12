@@ -492,3 +492,5 @@ Target solver: Z3
  ;; File "attempt_3.adb", line 29, characters 0-0
   (not (fp.eq fnp1t65 (of_int RNE (* (+ n 1) 65)))))
 (check-sat)
+
+(exit)

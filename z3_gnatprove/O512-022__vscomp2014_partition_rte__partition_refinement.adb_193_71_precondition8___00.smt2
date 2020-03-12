@@ -3398,3 +3398,5 @@ Target solver: Z3
   (not
   (= (has_key o22 (us_repqtmk (us_split_fieldsqtmk c__split_fields3))) true)))
 (check-sat)
+
+(exit)

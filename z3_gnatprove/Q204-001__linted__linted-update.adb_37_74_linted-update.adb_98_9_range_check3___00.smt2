@@ -1672,3 +1672,5 @@ Target solver: Z3
  ;; File "linted-update.ads", line 40, characters 0-0
   (not (bvule ((_ zero_extend 24) #x00) o18)))
 (check-sat)
+
+(exit)

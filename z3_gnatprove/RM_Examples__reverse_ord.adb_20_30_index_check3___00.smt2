@@ -310,3 +310,5 @@ Target solver: Z3
  ;; File "reverse_ord.adb", line 6, characters 0-0
   (not (<= 1 temp___176)))
 (check-sat)
+
+(exit)

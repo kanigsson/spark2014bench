@@ -2071,3 +2071,5 @@ Target solver: Z3
  ;; File "names.adb", line 71, characters 0-0
   (not (in_range2 o)))
 (check-sat)
+
+(exit)

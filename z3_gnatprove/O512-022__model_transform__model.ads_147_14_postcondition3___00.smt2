@@ -660,3 +660,5 @@ Target solver: Z3
   (= (bool_eq3 (owned_flow (us_repqtmk2 self__split_fields2)) 0 100 val__ 0
      100) true)))
 (check-sat)
+
+(exit)

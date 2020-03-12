@@ -207,3 +207,5 @@ Target solver: Z3
  ;; File "t.adb", line 22, characters 0-0
   (not (= t__msub__result #xE4)))
 (check-sat)
+
+(exit)

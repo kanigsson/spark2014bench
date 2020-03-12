@@ -291,3 +291,5 @@ Target solver: Z3
  ;; File "bad_assign_all_arr_unk.adb", line 2, characters 0-0
   (not (in_range1 o)))
 (check-sat)
+
+(exit)

@@ -601,3 +601,5 @@ Target solver: Z3
                                                      a__split_discrs)) 
                                                      j) 1))))))
 (check-sat)
+
+(exit)

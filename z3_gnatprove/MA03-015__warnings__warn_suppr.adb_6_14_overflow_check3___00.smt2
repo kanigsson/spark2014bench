@@ -123,3 +123,5 @@ Target solver: Z3
  ;; File "warn_suppr.ads", line 3, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

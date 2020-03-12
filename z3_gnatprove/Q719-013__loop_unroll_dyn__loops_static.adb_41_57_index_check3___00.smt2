@@ -366,3 +366,5 @@ Target solver: Z3
  ;; File "loops_static.ads", line 6, characters 0-0
   (not (<= (to_rep1 a__first) o4)))
 (check-sat)
+
+(exit)

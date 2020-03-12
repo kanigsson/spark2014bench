@@ -646,3 +646,5 @@ Target solver: Z3
      (rec__traversal__int_acc__pointer_value
      (rec__traversal__two_acc__fst x__pointer_value1))) 1)))
 (check-sat)
+
+(exit)

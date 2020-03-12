@@ -593,3 +593,5 @@ Target solver: Z3
  ;; File "math.ads", line 18, characters 0-0
   (not (fp.leq (fp.abs a1) (fp #b0 #b10000001 #b01011101110111011101111))))
 (check-sat)
+
+(exit)

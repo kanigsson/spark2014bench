@@ -85,3 +85,5 @@ Target solver: Z3
  ;; File "copy_values.ads", line 6, characters 0-0
   (not (< x 80)))
 (check-sat)
+
+(exit)

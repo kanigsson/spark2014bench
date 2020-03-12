@@ -422,3 +422,5 @@ Target solver: Z3
  ;; File "bv_arrays.ads", line 9, characters 0-0
   (not (bvule #x0000 c)))
 (check-sat)
+
+(exit)

@@ -388,3 +388,5 @@ Target solver: Z3
  ;; File "len_problem_2.adb", line 11, characters 0-0
   (not (bvult ((_ int2bv 32) (length s)) #x000000FF)))
 (check-sat)
+
+(exit)

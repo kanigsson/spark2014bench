@@ -659,3 +659,5 @@ Target solver: Z3
  ;; File "lat_long.ads", line 28, characters 0-0
   (not (fp.isFinite32 o8)))
 (check-sat)
+
+(exit)

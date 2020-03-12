@@ -136,3 +136,5 @@ Target solver: Z3
  ;; File "sorters.adb", line 5, characters 0-0
   (not (= x2 y1)))
 (check-sat)
+
+(exit)

@@ -112,3 +112,5 @@ Target solver: Z3
  ;; File "sub.adb", line 1, characters 0-0
   (not (= (- (+ x y) 1) 2147483647)))
 (check-sat)
+
+(exit)

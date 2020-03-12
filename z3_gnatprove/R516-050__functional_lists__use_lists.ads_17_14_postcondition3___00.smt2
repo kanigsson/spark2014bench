@@ -2262,3 +2262,5 @@ Target solver: Z3
   (not
   (= (length (us_repqtmk l2__split_fields2 l2__attr__tag)) (length l1))))
 (check-sat)
+
+(exit)

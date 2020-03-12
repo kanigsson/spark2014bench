@@ -759,3 +759,5 @@ Target solver: Z3
  ;; File "simple_unc_arrays.ads", line 61, characters 0-0
   (not (in_range6 (+ sum1 o))))
 (check-sat)
+
+(exit)

@@ -633,3 +633,5 @@ Target solver: Z3
   (< (get_value (to_base (us_repqtmk1 arg__split_fields1 arg__attr__tag))) 
   (get_value (to_base (us_repqtmk1 arg__split_fields2 arg__attr__tag))))))
 (check-sat)
+
+(exit)

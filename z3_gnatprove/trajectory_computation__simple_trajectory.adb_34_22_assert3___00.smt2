@@ -660,3 +660,5 @@ Target solver: Z3
   (fp.eq (fp.add RNE (of_int RNE n) (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000)) 
   (of_int RNE (+ n 1)))))
 (check-sat)
+
+(exit)

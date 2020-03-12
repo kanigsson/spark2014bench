@@ -268,3 +268,5 @@ Target solver: Z3
  ;; File "assign_arr_unk.ads", line 3, characters 0-0
   (not (in_range o2)))
 (check-sat)
+
+(exit)

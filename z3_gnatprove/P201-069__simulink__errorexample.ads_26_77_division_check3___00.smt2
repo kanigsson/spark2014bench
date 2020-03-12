@@ -362,3 +362,5 @@ Target solver: Z3
  ;; File "errorexample.ads", line 19, characters 0-0
   (not (not (= requested_force #x00000000))))
 (check-sat)
+
+(exit)

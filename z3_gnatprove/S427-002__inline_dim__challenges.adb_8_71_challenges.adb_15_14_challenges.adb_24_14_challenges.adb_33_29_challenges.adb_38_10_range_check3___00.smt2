@@ -892,3 +892,5 @@ Target solver: Z3
  ;; File "challenges.ads", line 5, characters 0-0
   (not (in_range3 o13)))
 (check-sat)
+
+(exit)

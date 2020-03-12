@@ -352,3 +352,5 @@ Target solver: Z3
  ;; File "indexbis.ads", line 2, characters 0-0
   (not (in_range2 o1)))
 (check-sat)
+
+(exit)

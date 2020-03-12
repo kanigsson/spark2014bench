@@ -432,3 +432,5 @@ Target solver: Z3
  ;; File "rec_inv.adb", line 27, characters 0-0
   (not (rec__rec_inv__list_acc__pointer_value__pred o1)))
 (check-sat)
+
+(exit)

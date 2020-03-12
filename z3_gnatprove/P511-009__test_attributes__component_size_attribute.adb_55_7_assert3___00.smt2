@@ -53,3 +53,5 @@ Target solver: Z3
  ;; File "component_size_attribute.adb", line 52, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

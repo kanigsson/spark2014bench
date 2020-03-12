@@ -291,3 +291,5 @@ Target solver: Z3
  ;; File "test_fixed_points.ads", line 20, characters 0-0
   (not (not (= o3 0))))
 (check-sat)
+
+(exit)

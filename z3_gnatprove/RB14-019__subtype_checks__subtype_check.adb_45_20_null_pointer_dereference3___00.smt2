@@ -1107,3 +1107,5 @@ Target solver: Z3
   (not (rec__subtype_check__r_access__pointer_value__pred
   (us_repqtmk3 y__is_null_pointer y__pointer_address y__pointer_value))))
 (check-sat)
+
+(exit)

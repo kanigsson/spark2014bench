@@ -241,3 +241,5 @@ Target solver: Z3
  ;; File "interrupt_priority.ads", line 18, characters 0-0
   (not (<= 0 (to_rep temp___209))))
 (check-sat)
+
+(exit)

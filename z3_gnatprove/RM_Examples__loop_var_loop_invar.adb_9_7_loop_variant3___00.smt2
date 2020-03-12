@@ -226,3 +226,5 @@ Target solver: Z3
  ;; File "loop_var_loop_invar.adb", line 1, characters 0-0
   (not (or (< temp___193 i2) (and (= i2 temp___193) (< r2 temp___192)))))
 (check-sat)
+
+(exit)

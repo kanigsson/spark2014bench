@@ -318,3 +318,5 @@ Target solver: Z3
   (not (in_range1
   (* loop_tutorial__isqrt__result loop_tutorial__isqrt__result))))
 (check-sat)
+
+(exit)

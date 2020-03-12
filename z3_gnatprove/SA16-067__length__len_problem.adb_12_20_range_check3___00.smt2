@@ -536,3 +536,5 @@ Target solver: Z3
  ;; File "len_problem.adb", line 1, characters 0-0
   (not (uint_in_range (length o1 o))))
 (check-sat)
+
+(exit)

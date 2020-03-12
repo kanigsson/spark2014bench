@@ -88,3 +88,5 @@ Target solver: Z3
  ;; File "id.adb", line 1, characters 0-0
   (not (= x true)))
 (check-sat)
+
+(exit)

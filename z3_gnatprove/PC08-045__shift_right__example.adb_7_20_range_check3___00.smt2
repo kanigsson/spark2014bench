@@ -280,3 +280,5 @@ Target solver: Z3
  ;; File "example.ads", line 15, characters 0-0
   (not (bvule ((_ zero_extend 8) #x00) o1)))
 (check-sat)
+
+(exit)

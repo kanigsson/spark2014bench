@@ -976,3 +976,5 @@ Target solver: Z3
  ;; File "while_loops.adb", line 5, characters 0-0
   (not (< usf 0)))
 (check-sat)
+
+(exit)

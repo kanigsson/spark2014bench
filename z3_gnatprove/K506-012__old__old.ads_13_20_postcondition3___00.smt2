@@ -102,3 +102,5 @@ Target solver: Z3
  ;; File "old.ads", line 12, characters 0-0
   (not (= (and (ite (<= 1 x) true false) (ite (<= x 10) true false)) true)))
 (check-sat)
+
+(exit)

@@ -521,3 +521,5 @@ Target solver: Z3
  ;; File "subtype_check.adb", line 20, characters 0-0
   (not (<= zero 5)))
 (check-sat)
+
+(exit)

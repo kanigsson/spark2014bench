@@ -313,3 +313,5 @@ Target solver: Z3
  ;; File "counter.ads", line 19, characters 0-0
   (not (bvugt res2 temp___202)))
 (check-sat)
+
+(exit)

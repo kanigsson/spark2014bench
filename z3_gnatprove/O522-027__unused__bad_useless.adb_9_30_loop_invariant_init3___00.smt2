@@ -166,3 +166,5 @@ Target solver: Z3
  ;; File "bad_useless.adb", line 1, characters 0-0
   (not (= x1 (+ tmp1 j))))
 (check-sat)
+
+(exit)

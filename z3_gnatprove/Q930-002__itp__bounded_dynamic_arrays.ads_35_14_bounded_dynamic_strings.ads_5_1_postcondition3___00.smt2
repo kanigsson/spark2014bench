@@ -1095,3 +1095,5 @@ Target solver: Z3
      (rec__bounded_dynamic_strings__sequence__capacity
      (us_split_discrs1 bounded_dynamic_strings__instance__result))) capacity)))
 (check-sat)
+
+(exit)

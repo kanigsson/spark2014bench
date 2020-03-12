@@ -266,3 +266,5 @@ Target solver: Z3
   (fp.isFinite32 (fp.add RNE (fp.neg (fp #b0 #b11111110 #b11111111111111111111111)) 
   measured))))
 (check-sat)
+
+(exit)

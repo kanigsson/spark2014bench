@@ -242,3 +242,5 @@ Target solver: Z3
  ;; File "a.adb", line 1, characters 0-0
   (not (= result__1 data)))
 (check-sat)
+
+(exit)

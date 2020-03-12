@@ -211,3 +211,5 @@ Target solver: Z3
  ;; File "client.adb", line 3, characters 0-0
   (not (= (to_rep (rec__const__r__d (us_split_fields1 c))) 10000)))
 (check-sat)
+
+(exit)

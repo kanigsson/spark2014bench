@@ -726,3 +726,5 @@ Target solver: Z3
   (not
   (= (rec__test_bounds__my_t__x (us_split_discrs1 temp___214)) x__split_discrs)))
 (check-sat)
+
+(exit)

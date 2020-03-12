@@ -759,3 +759,5 @@ Target solver: Z3
  ;; File "types.ads", line 3, characters 0-0
   (not (<= 1 1)))
 (check-sat)
+
+(exit)

@@ -304,3 +304,5 @@ Target solver: Z3
   (= (to_rep (select a3 j)) (to_rep
                             (select temp___loop_entry_174 (+ (- 10 j) 1))))))
 (check-sat)
+
+(exit)

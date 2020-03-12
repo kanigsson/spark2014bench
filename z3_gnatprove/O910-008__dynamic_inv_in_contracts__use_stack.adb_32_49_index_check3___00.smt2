@@ -359,3 +359,5 @@ Target solver: Z3
  ;; File "use_stack.adb", line 10, characters 0-0
   (not (<= (to_rep1 content__first) usf)))
 (check-sat)
+
+(exit)

@@ -950,3 +950,5 @@ Target solver: Z3
  ;; File "lexer.ads", line 72, characters 0-0
   (not (= current_read__split_discrs1 next_read__split_discrs)))
 (check-sat)
+
+(exit)

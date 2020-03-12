@@ -180,3 +180,5 @@ Target solver: Z3
  ;; File "counting.ads", line 15, characters 0-0
   (not (= (get_red_count red_counter2) (+ (get_red_count red_counter1) 1))))
 (check-sat)
+
+(exit)

@@ -160,3 +160,5 @@ Target solver: Z3
  ;; File "arithmetic.adb", line 52, characters 0-0
   (not (not (= (* double_a double_b) c1))))
 (check-sat)
+
+(exit)

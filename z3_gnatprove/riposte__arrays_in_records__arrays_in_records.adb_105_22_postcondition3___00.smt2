@@ -430,3 +430,5 @@ Target solver: Z3
      (select (rec__arrays_in_records__record_with_arrays__first_array
              a__split_fields4) 17)) 42)))
 (check-sat)
+
+(exit)

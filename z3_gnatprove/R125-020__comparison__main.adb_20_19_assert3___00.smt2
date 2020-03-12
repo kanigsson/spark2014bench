@@ -517,3 +517,5 @@ Target solver: Z3
  ;; File "main.adb", line 3, characters 0-0
   (not (= (lcp 1 7 a1) 0)))
 (check-sat)
+
+(exit)

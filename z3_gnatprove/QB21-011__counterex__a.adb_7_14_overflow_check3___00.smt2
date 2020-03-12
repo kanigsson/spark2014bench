@@ -103,3 +103,5 @@ Target solver: Z3
  ;; File "a.ads", line 3, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

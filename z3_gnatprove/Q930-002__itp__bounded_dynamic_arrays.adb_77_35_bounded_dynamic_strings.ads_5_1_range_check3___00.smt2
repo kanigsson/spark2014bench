@@ -844,3 +844,5 @@ Target solver: Z3
                                 (last1 temp___1407)) (length (first1 right)
                                                      (last1 right)))) 1))))
 (check-sat)
+
+(exit)

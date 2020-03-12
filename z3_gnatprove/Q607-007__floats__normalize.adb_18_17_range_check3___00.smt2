@@ -144,3 +144,5 @@ Target solver: Z3
  ;; File "normalize.adb", line 17, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

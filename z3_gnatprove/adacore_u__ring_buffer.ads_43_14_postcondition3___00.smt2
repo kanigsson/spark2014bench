@@ -688,3 +688,5 @@ Target solver: Z3
  ;; File "ring_buffer.ads", line 41, characters 0-0
   (not (= (valid_model first1 length3 model2 content) true)))
 (check-sat)
+
+(exit)

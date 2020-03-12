@@ -123,3 +123,5 @@ Target solver: Z3
  ;; File "old.ads", line 9, characters 0-0
   (not (= (id z) (id z1))))
 (check-sat)
+
+(exit)

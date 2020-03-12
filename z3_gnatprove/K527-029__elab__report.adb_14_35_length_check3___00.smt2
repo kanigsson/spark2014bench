@@ -429,3 +429,5 @@ Target solver: Z3
  ;; File "report.ads", line 1, characters 0-0
   (not (<= (first1 temp___180) (last1 temp___180))))
 (check-sat)
+
+(exit)

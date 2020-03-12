@@ -904,3 +904,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 22, characters 0-0
   (not (<= 1 octet_length)))
 (check-sat)
+
+(exit)

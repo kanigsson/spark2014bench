@@ -290,3 +290,5 @@ Target solver: Z3
  ;; File "formals.adb", line 15, characters 0-0
   (not (dynamic_predicate (store a 1 o3))))
 (check-sat)
+
+(exit)

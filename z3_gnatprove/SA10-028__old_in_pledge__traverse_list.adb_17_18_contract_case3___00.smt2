@@ -442,3 +442,5 @@ Target solver: Z3
  ;; File "traverse_list.adb", line 15, characters 0-0
   (not (= (bool_eq traverse_list__tail__result us_null_pointer) true)))
 (check-sat)
+
+(exit)

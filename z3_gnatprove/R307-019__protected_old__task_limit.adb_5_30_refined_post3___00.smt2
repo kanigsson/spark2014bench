@@ -229,3 +229,5 @@ Target solver: Z3
  ;; File "task_limit.ads", line 3, characters 0-0
   (not (<= (to_rep self__) (to_rep self__1))))
 (check-sat)
+
+(exit)

@@ -632,3 +632,5 @@ Target solver: Z3
   (not
   (<= 1 (to_rep (rec__fixed_string__object__width (us_split_fields1 this))))))
 (check-sat)
+
+(exit)

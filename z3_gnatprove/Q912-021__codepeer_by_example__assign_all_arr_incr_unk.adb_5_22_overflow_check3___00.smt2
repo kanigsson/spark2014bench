@@ -294,3 +294,5 @@ Target solver: Z3
  ;; File "assign_all_arr_incr_unk.adb", line 2, characters 0-0
   (not (in_range1 (+ o j1))))
 (check-sat)
+
+(exit)

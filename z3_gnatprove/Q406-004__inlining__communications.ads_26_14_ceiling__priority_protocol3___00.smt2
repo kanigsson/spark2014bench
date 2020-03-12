@@ -552,3 +552,5 @@ Target solver: Z3
  ;; File "communications.ads", line 26, characters 0-0
   (not (<= 97 97)))
 (check-sat)
+
+(exit)

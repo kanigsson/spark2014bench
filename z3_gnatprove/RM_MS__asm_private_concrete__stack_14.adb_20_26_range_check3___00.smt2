@@ -249,3 +249,5 @@ Target solver: Z3
  ;; File "stack_14.ads", line 8, characters 0-0
   (not (in_range1 (- pointer 1))))
 (check-sat)
+
+(exit)

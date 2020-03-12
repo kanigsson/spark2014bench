@@ -666,3 +666,5 @@ Target solver: Z3
  ;; File "fixed_stream.ads", line 13, characters 0-0
   (not (= (elements fixed_stream__create__result) elem_width)))
 (check-sat)
+
+(exit)

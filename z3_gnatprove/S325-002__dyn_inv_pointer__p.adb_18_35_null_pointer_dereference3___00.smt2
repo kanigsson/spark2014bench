@@ -498,3 +498,5 @@ Target solver: Z3
   (rec__p__B_2__list_d__next
   (us_split_fields1 (rec__p__B_2__list_acc__pointer_value o5))))))
 (check-sat)
+
+(exit)

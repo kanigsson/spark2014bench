@@ -427,3 +427,5 @@ Target solver: Z3
  ;; File "competition.ads", line 11, characters 0-0
   (not (in_range3 o1)))
 (check-sat)
+
+(exit)

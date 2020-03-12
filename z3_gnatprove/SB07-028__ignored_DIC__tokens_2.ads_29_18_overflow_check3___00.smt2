@@ -192,3 +192,5 @@ Target solver: Z3
  ;; File "tokens_2.ads", line 19, characters 0-0
   (not (in_range (+ o c))))
 (check-sat)
+
+(exit)

@@ -677,3 +677,5 @@ Target solver: Z3
  ;; File "concat.adb", line 1, characters 0-0
   (not (dynamic_property o2 o1 temp___218)))
 (check-sat)
+
+(exit)

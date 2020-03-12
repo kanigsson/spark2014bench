@@ -259,3 +259,5 @@ Target solver: Z3
  ;; File "simulink_functions.ads", line 106, characters 0-0
   (not (fp.isFinite32 ((_ to_fp 8 24) RNE o1))))
 (check-sat)
+
+(exit)

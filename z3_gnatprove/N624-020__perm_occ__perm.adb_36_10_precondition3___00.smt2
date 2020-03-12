@@ -655,3 +655,5 @@ Target solver: Z3
  ;; File "perm.ads", line 30, characters 0-0
   (not (<= (first1 o14) o12)))
 (check-sat)
+
+(exit)

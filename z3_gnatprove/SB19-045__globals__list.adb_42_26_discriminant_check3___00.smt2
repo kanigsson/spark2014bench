@@ -431,3 +431,5 @@ Target solver: Z3
   (= (distinct 1 0) (rec__list__t_item__used
                     (us_split_discrs1 (select items i1))))))
 (check-sat)
+
+(exit)

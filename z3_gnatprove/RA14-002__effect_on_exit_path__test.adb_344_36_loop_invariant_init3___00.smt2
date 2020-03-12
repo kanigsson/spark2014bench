@@ -1723,3 +1723,5 @@ Target solver: Z3
  ;; File "test.ads", line 80, characters 0-0
   (not (= (os_ghost_mbx_are_well_formed os_task_mbx_rw) true)))
 (check-sat)
+
+(exit)

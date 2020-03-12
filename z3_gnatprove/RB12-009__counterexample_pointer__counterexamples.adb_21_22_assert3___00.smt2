@@ -287,3 +287,5 @@ Target solver: Z3
      (rec__counterexamples__int_access__pointer_value
      (rec__counterexamples__two_access__first (us_split_fields1 x)))) 1)))
 (check-sat)
+
+(exit)

@@ -468,3 +468,5 @@ Target solver: Z3
  ;; File "alignment_attribute.adb", line 47, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

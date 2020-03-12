@@ -450,3 +450,5 @@ Target solver: Z3
  ;; File "binary_search_trees.adb", line 29, characters 0-0
   (not (< size 2147483647)))
 (check-sat)
+
+(exit)

@@ -336,3 +336,5 @@ Target solver: Z3
  ;; File "mixed.adb", line 38, characters 0-0
   (not (= x true)))
 (check-sat)
+
+(exit)

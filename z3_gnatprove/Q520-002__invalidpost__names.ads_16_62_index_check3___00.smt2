@@ -658,3 +658,5 @@ Target solver: Z3
  ;; File "names.ads", line 12, characters 0-0
   (not (<= (first1 name) usf)))
 (check-sat)
+
+(exit)

@@ -1499,3 +1499,5 @@ Target solver: Z3
  ;; File "model.ads", line 160, characters 0-0
   (not (= (name (select (owned_state sm) t)) (name1 (select av t)))))
 (check-sat)
+
+(exit)

@@ -334,3 +334,5 @@ Target solver: Z3
  ;; File "use_vectors.ads", line 12, characters 0-0
   (not (< (length s) 2147483647)))
 (check-sat)
+
+(exit)

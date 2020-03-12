@@ -172,3 +172,5 @@ Target solver: Z3
  ;; File "inrange.ads", line 13, characters 0-0
   (not (<= x 10)))
 (check-sat)
+
+(exit)

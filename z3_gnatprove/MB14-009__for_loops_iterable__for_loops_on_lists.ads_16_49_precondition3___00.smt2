@@ -916,3 +916,5 @@ Target solver: Z3
  ;; File "for_loops_on_lists.ads", line 15, characters 0-0
   (not (<= 1 usf)))
 (check-sat)
+
+(exit)

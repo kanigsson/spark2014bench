@@ -121,3 +121,5 @@ Target solver: Z3
  ;; File "counterex.adb", line 1, characters 0-0
   (not (= v1 (+ v1 10))))
 (check-sat)
+
+(exit)

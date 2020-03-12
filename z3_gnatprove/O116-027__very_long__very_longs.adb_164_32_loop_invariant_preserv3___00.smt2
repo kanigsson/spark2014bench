@@ -1215,3 +1215,5 @@ Target solver: Z3
  ;; File "very_longs.ads", line 16, characters 0-0
   (not (<= 1 index3)))
 (check-sat)
+
+(exit)

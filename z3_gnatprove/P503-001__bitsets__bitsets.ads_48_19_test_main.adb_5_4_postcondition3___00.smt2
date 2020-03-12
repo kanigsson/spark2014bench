@@ -285,3 +285,5 @@ Target solver: Z3
  ;; File "bitsets.ads", line 47, characters 0-0
   (not (= (ext_equal a2 (union1 a1 b)) true)))
 (check-sat)
+
+(exit)

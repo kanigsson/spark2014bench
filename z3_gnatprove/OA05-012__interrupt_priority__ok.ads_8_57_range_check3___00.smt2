@@ -1042,3 +1042,5 @@ Target solver: Z3
  ;; File "ok.ads", line 4, characters 0-0
   (not (in_range1 98)))
 (check-sat)
+
+(exit)

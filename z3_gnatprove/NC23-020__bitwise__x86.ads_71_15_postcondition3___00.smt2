@@ -418,3 +418,5 @@ Target solver: Z3
   (to_rep (select memory9 (bvadd addr #x0000000000000007)))) ((_ int2bv 64) 56))) 
   val__)))
 (check-sat)
+
+(exit)

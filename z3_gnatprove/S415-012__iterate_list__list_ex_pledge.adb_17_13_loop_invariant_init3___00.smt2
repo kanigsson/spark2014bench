@@ -742,3 +742,5 @@ Target solver: Z3
   (= (get_nth_val temp___borrowed_213 k) (get_nth_val temp___brower_212
                                          (- k i)))))
 (check-sat)
+
+(exit)

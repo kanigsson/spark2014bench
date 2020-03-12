@@ -202,3 +202,5 @@ Target solver: Z3
  ;; File "counterex_forall.ads", line 10, characters 0-0
   (not (<= (- 2147483648) 1)))
 (check-sat)
+
+(exit)

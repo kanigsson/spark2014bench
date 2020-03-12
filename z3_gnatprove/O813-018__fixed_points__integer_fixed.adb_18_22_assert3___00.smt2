@@ -144,3 +144,5 @@ Target solver: Z3
  ;; File "integer_fixed.ads", line 8, characters 0-0
   (not (< x z1)))
 (check-sat)
+
+(exit)

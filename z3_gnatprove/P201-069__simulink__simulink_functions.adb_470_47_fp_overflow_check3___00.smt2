@@ -154,3 +154,5 @@ Target solver: Z3
  ;; File "simulink_functions.ads", line 85, characters 0-0
   (not (fp.isFinite64 o1)))
 (check-sat)
+
+(exit)

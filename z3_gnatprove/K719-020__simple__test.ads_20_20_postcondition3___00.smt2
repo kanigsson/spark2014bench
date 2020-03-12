@@ -308,3 +308,5 @@ Target solver: Z3
  ;; File "test.ads", line 18, characters 0-0
   (not (< 11 test__f2__result)))
 (check-sat)
+
+(exit)

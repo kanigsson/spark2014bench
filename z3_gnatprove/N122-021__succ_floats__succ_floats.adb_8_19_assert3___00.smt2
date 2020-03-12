@@ -211,3 +211,5 @@ Target solver: Z3
   (fp.lt (fp.neg (fp #b0 #b01111111 #b00000000000000000000000)) (prev_representable
                                                                 x1))))
 (check-sat)
+
+(exit)

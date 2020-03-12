@@ -223,3 +223,5 @@ Target solver: Z3
  ;; File "repro_main.adb", line 6, characters 0-0
   (not (= value__size 256)))
 (check-sat)
+
+(exit)

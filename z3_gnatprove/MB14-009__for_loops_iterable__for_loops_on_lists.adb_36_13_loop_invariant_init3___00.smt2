@@ -962,3 +962,5 @@ Target solver: Z3
  ;; File "for_loops_on_lists.ads", line 18, characters 0-0
   (not (< 0 (get (model1 temp___loop_entry_1030) i))))
 (check-sat)
+
+(exit)

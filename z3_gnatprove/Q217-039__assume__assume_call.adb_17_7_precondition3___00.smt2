@@ -121,3 +121,5 @@ Target solver: Z3
  ;; File "assume_call.adb", line 14, characters 0-0
   (not (< z 0)))
 (check-sat)
+
+(exit)

@@ -252,3 +252,5 @@ Target solver: Z3
  ;; File "ghost_legal.ads", line 7, characters 0-0
   (not (= (is_even x) true)))
 (check-sat)
+
+(exit)

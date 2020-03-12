@@ -876,3 +876,5 @@ Target solver: Z3
  ;; File "binary_search.ads", line 17, characters 0-0
   (not (<= 1 binary_search__search__result)))
 (check-sat)
+
+(exit)

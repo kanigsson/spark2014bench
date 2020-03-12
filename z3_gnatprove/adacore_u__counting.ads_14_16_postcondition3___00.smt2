@@ -123,3 +123,5 @@ Target solver: Z3
  ;; File "counting.ads", line 12, characters 0-0
   (not (= (get_red_count red_counter1) 0)))
 (check-sat)
+
+(exit)

@@ -367,3 +367,5 @@ Target solver: Z3
  ;; File "array_arith.ads", line 8, characters 0-0
   (not (= (to_rep (select x10 j)) j)))
 (check-sat)
+
+(exit)

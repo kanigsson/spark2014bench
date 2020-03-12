@@ -497,3 +497,5 @@ Target solver: Z3
   (fp.leq (fp.add RNE fnt65 (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000)) 
   fnp1t65)))
 (check-sat)
+
+(exit)

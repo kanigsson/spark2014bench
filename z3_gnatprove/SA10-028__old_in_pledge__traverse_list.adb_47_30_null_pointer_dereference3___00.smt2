@@ -1129,3 +1129,5 @@ Target solver: Z3
  ;; File "traverse_list.adb", line 1, characters 0-0
   (not (rec__traverse_list__list_acc__pointer_value__pred o8)))
 (check-sat)
+
+(exit)

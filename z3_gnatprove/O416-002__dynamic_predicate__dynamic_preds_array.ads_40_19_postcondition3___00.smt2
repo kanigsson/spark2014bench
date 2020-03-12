@@ -332,3 +332,5 @@ Target solver: Z3
  ;; File "dynamic_preds_array.ads", line 39, characters 0-0
   (not (= (to_rep (select x2 1)) 0)))
 (check-sat)
+
+(exit)

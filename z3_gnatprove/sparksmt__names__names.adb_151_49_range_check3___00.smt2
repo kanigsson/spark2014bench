@@ -2166,3 +2166,5 @@ Target solver: Z3
  ;; File "names.ads", line 44, characters 0-0
   (not (in_range12 ptr1)))
 (check-sat)
+
+(exit)

@@ -503,3 +503,5 @@ Target solver: Z3
  ;; File "array_types.ads", line 1, characters 0-0
   (not (= (to_rep a__first) (to_rep a__first_2))))
 (check-sat)
+
+(exit)

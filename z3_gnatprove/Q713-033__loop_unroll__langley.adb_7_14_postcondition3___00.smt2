@@ -545,3 +545,5 @@ Target solver: Z3
   (= (to_rep (select langley__add__result i10)) (+ (to_rep (select x i10)) 
   (to_rep (select y i10))))))
 (check-sat)
+
+(exit)

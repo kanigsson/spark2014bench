@@ -847,3 +847,5 @@ Target solver: Z3
   (= (attr__init
      (rec__relaxed_initialization__rec__x (us_split_fields1 temp___442))) true)))
 (check-sat)
+
+(exit)

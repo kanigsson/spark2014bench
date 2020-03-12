@@ -388,3 +388,5 @@ Target solver: Z3
   (= (to_rep (select b j)) (to_rep
                            (select (to_array a) (- (+ a_first j) b_first))))))
 (check-sat)
+
+(exit)

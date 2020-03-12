@@ -404,3 +404,5 @@ Target solver: Z3
   (not
   (= (has_stored_area (us_repqtmk obj__split_fields1 obj__attr__tag)) true)))
 (check-sat)
+
+(exit)

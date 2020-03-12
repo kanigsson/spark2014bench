@@ -489,3 +489,5 @@ Target solver: Z3
  ;; File "kmp.ads", line 7, characters 0-0
   (not (in_range1 o6)))
 (check-sat)
+
+(exit)

@@ -638,3 +638,5 @@ Target solver: Z3
  ;; File "with_iterable.ads", line 32, characters 0-0
   (not (in_range1 101 (us_split_discrs1 temp___280))))
 (check-sat)
+
+(exit)

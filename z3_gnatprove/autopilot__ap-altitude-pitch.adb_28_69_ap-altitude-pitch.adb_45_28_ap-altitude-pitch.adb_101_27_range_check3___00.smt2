@@ -673,3 +673,5 @@ Target solver: Z3
  ;; File "ap-altitude-pitch.ads", line 7, characters 0-0
   (not (in_range6 o)))
 (check-sat)
+
+(exit)

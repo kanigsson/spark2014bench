@@ -1282,3 +1282,5 @@ Target solver: Z3
  ;; File "tokens.ads", line 19, characters 0-0
   (not (<= 1 1)))
 (check-sat)
+
+(exit)

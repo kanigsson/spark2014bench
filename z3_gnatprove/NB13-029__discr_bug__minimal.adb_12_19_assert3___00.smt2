@@ -308,3 +308,5 @@ Target solver: Z3
  ;; File "minimal.adb", line 1, characters 0-0
   (not (= c2__split_discrs true)))
 (check-sat)
+
+(exit)

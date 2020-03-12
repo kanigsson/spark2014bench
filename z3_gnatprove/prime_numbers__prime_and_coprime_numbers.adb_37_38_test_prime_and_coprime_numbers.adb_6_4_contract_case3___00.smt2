@@ -454,3 +454,5 @@ Target solver: Z3
   (not
   (< 1 test_prime_and_coprime_numbers__p__initialize_coprime_list__euclid__result)))
 (check-sat)
+
+(exit)

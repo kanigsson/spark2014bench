@@ -246,3 +246,5 @@ Target solver: Z3
  ;; File "account8.ads", line 5, characters 0-0
   (not (in_range1 (+ o 1))))
 (check-sat)
+
+(exit)

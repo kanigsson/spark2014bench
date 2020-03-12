@@ -466,3 +466,5 @@ Target solver: Z3
  ;; File "empty_type.adb", line 12, characters 0-0
   (not (= (attr__init1 o) true)))
 (check-sat)
+
+(exit)

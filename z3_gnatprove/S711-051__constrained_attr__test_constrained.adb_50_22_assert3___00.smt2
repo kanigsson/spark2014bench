@@ -153,3 +153,5 @@ Target solver: Z3
  ;; File "test_constrained.adb", line 46, characters 0-0
   (not (not (= x__attr__constrained true))))
 (check-sat)
+
+(exit)

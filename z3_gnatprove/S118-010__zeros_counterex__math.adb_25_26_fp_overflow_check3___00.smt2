@@ -648,3 +648,5 @@ Target solver: Z3
  ;; File "math.ads", line 18, characters 0-0
   (not (fp.isFinite32 o7)))
 (check-sat)
+
+(exit)

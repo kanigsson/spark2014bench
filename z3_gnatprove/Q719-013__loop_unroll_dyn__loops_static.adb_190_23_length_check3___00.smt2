@@ -409,3 +409,5 @@ Target solver: Z3
  ;; File "loops_static.ads", line 22, characters 0-0
   (not (<= (first1 a) (last1 a))))
 (check-sat)
+
+(exit)

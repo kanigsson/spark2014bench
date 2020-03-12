@@ -1179,3 +1179,5 @@ Target solver: Z3
  ;; File "linear_search.adb", line 82, characters 0-0
   (not (= (nth l (+ i1 1)) v)))
 (check-sat)
+
+(exit)

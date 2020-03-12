@@ -1481,3 +1481,5 @@ Target solver: Z3
   (not
   (<= (first1 remainder__split_fields) (last1 remainder__split_fields))))
 (check-sat)
+
+(exit)

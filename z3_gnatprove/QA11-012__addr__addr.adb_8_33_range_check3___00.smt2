@@ -188,3 +188,5 @@ Target solver: Z3
  ;; File "addr.adb", line 1, characters 0-0
   (not (not (= val__ 0))))
 (check-sat)
+
+(exit)

@@ -272,3 +272,5 @@ Target solver: Z3
  ;; File "test_arith.adb", line 116, characters 0-0
   (not (or (= o1 0) (<= o2 (div1 o o1)))))
 (check-sat)
+
+(exit)

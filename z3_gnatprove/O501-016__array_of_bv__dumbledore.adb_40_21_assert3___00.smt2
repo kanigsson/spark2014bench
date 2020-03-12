@@ -663,3 +663,5 @@ Target solver: Z3
  ;; File "dumbledore.ads", line 15, characters 0-0
   (not (= (readmem64 (bvsub rbp1 #x0000000000000010) memory6) rsi)))
 (check-sat)
+
+(exit)

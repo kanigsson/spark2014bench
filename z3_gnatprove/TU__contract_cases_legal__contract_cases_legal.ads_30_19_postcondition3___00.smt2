@@ -139,3 +139,5 @@ Target solver: Z3
  ;; File "contract_cases_legal.ads", line 27, characters 0-0
   (not (= x2 (+ x1 1))))
 (check-sat)
+
+(exit)

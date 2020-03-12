@@ -560,3 +560,5 @@ Target solver: Z3
  ;; File "test.ads", line 7, characters 0-0
   (not (<= (first1 src) temp___212)))
 (check-sat)
+
+(exit)

@@ -232,3 +232,5 @@ Target solver: Z3
  ;; File "max.ads", line 6, characters 0-0
   (not (<= 1 1)))
 (check-sat)
+
+(exit)

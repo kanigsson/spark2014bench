@@ -556,3 +556,5 @@ Target solver: Z3
                                                                    (to_rep
                                                                    m__last))))))
 (check-sat)
+
+(exit)

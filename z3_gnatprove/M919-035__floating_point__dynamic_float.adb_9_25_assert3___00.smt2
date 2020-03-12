@@ -278,3 +278,5 @@ Target solver: Z3
   (last i1))) (- (bv2int ((_ fp.to_sbv 129) RNA (last i1))) (bv2int (bvshl (_ bv1 130) (_ bv129 130))))) 
   i1)))
 (check-sat)
+
+(exit)

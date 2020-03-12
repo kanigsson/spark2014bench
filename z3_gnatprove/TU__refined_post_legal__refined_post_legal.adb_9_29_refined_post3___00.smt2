@@ -151,3 +151,5 @@ Target solver: Z3
  ;; File "refined_post_legal.ads", line 5, characters 0-0
   (not (= par21 (+ par1 x))))
 (check-sat)
+
+(exit)

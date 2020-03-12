@@ -276,3 +276,5 @@ Target solver: Z3
  ;; File "generic_stack.ads", line 7, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

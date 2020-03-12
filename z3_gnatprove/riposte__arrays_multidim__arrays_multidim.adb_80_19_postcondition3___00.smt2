@@ -359,3 +359,5 @@ Target solver: Z3
  ;; File "arrays_multidim.adb", line 76, characters 0-0
   (not (= arrays_multidim__tuple_test__result true)))
 (check-sat)
+
+(exit)

@@ -1163,3 +1163,5 @@ Target solver: Z3
      (us_repqtmk1 l__split_discrs (us_split_fieldsqtmk1 l__split_fields1))
      (us_repqtmk (us_split_fieldsqtmk c__split_fields1))) 0)))
 (check-sat)
+
+(exit)

@@ -124,3 +124,5 @@ Target solver: Z3
  ;; File "stacks_2.ads", line 19, characters 0-0
   (not (= a_pointer1 (- a_pointer 1))))
 (check-sat)
+
+(exit)

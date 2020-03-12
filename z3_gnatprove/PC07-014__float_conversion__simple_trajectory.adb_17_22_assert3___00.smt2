@@ -355,3 +355,5 @@ Target solver: Z3
  ;; File "simple_trajectory.ads", line 31, characters 0-0
   (not (= (in_bounds old_speed) true)))
 (check-sat)
+
+(exit)

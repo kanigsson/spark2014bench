@@ -204,3 +204,5 @@ Target solver: Z3
  ;; File "user.adb", line 2, characters 0-0
   (not (= (rec__pack__t1__x (us_split_fields1 x1)) true)))
 (check-sat)
+
+(exit)

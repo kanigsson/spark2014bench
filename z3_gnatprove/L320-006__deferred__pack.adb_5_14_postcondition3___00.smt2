@@ -138,3 +138,5 @@ Target solver: Z3
  ;; File "pack.adb", line 4, characters 0-0
   (not (= pack__query_x1_bis__result true)))
 (check-sat)
+
+(exit)

@@ -1352,3 +1352,5 @@ Target solver: Z3
  ;; File "local_borrow_array.adb", line 1, characters 0-0
   (not (not (= (bool_eq o4 us_null_pointer1) true))))
 (check-sat)
+
+(exit)

@@ -305,3 +305,5 @@ Target solver: Z3
  ;; File "minmax.adb", line 1, characters 0-0
   (not (< x y)))
 (check-sat)
+
+(exit)

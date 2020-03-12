@@ -372,3 +372,5 @@ Target solver: Z3
  ;; File "fail.adb", line 4, characters 0-0
   (not (bvule #x0000000000000000 last)))
 (check-sat)
+
+(exit)

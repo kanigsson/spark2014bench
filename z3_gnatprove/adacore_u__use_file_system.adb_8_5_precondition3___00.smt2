@@ -594,3 +594,5 @@ Target solver: Z3
  ;; File "use_file_system.adb", line 3, characters 0-0
   (not (= (closed1 o1 (us_repqtmk f__split_fields1 o1)) true)))
 (check-sat)
+
+(exit)

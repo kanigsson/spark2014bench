@@ -150,3 +150,5 @@ Target solver: Z3
  ;; File "my_type_invariant_test.ads", line 1, characters 0-0
   (not (type_invariant usf1)))
 (check-sat)
+
+(exit)

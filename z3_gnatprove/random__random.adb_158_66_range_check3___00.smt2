@@ -497,3 +497,5 @@ Target solver: Z3
  ;; File "random.ads", line 51, characters 0-0
   (not (uint_in_range o)))
 (check-sat)
+
+(exit)

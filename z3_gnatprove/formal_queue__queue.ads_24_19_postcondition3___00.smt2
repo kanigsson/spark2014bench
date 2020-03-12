@@ -495,3 +495,5 @@ Target solver: Z3
  ;; File "queue.ads", line 22, characters 0-0
   (not (= (last_element q) queue__front__result)))
 (check-sat)
+
+(exit)

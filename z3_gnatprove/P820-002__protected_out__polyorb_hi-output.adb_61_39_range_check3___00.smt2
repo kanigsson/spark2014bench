@@ -112,3 +112,5 @@ Target solver: Z3
  ;; File "polyorb_hi-output.adb", line 52, characters 0-0
   (not (<= 0 97)))
 (check-sat)
+
+(exit)

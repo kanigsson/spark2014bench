@@ -163,3 +163,5 @@ Target solver: Z3
  ;; File "p.ads", line 9, characters 0-0
   (not (= a2 (bvudiv a1 #x00000004))))
 (check-sat)
+
+(exit)

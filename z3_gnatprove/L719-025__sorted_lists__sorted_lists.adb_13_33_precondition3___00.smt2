@@ -1121,3 +1121,5 @@ Target solver: Z3
  ;; File "sorted_lists.ads", line 20, characters 0-0
   (not (or (= (has_element o8 o7) true) (= (bool_eq o7 no_element) true))))
 (check-sat)
+
+(exit)

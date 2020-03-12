@@ -216,3 +216,5 @@ Target solver: Z3
  ;; File "foo.adb", line 19, characters 0-0
   (not (in_range (div1 a b))))
 (check-sat)
+
+(exit)

@@ -333,3 +333,5 @@ Target solver: Z3
   (not
   (= (bool_eq1 (us_repqtmk1 records__init_e__result) null_optional_pair) true)))
 (check-sat)
+
+(exit)

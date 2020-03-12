@@ -168,3 +168,5 @@ Target solver: Z3
  ;; File "pack.ads", line 16, characters 0-0
   (not (not (= pack__minus__result #x00))))
 (check-sat)
+
+(exit)

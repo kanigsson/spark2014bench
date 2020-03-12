@@ -863,3 +863,5 @@ Target solver: Z3
  ;; File "simple_unc_arrays.ads", line 18, characters 0-0
   (not (= (same_range simple_unc_arrays__add__result a) true)))
 (check-sat)
+
+(exit)

@@ -98,3 +98,5 @@ Target solver: Z3
  ;; File "real_world.adb", line 40, characters 0-0
   (not (not (= param 4))))
 (check-sat)
+
+(exit)

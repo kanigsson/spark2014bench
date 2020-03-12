@@ -386,3 +386,5 @@ Target solver: Z3
  ;; File "discr.ads", line 14, characters 0-0
   (not (not (= d2__attr__constrained true))))
 (check-sat)
+
+(exit)

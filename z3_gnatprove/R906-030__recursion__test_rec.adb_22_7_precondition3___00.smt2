@@ -467,3 +467,5 @@ Target solver: Z3
   (= (bool_eq (to_array o3) (first1 o3) (last1 o3) (to_array o1) (first1 o1)
      (last1 o1)) true)))
 (check-sat)
+
+(exit)

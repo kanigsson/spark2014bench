@@ -603,3 +603,5 @@ Target solver: Z3
   (not (dynamic_predicate4
   (of_array x (to_rep1 x__first) (to_rep1 x__last)))))
 (check-sat)
+
+(exit)

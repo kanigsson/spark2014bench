@@ -425,3 +425,5 @@ Target solver: Z3
  ;; File "p.ads", line 4, characters 0-0
   (not (<= (to_rep1 s__first) 1)))
 (check-sat)
+
+(exit)

@@ -374,3 +374,5 @@ Target solver: Z3
   (not (in_range
   (+ (to_rep (rec__dynamic_array__rec__f2 (us_split_fields1 o1))) 1))))
 (check-sat)
+
+(exit)

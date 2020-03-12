@@ -387,3 +387,5 @@ Target solver: Z3
  ;; File "mod_lemmas.adb", line 3, characters 0-0
   (not (in_range2 y3)))
 (check-sat)
+
+(exit)

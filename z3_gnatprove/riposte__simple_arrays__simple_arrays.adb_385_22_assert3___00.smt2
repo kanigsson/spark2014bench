@@ -186,3 +186,5 @@ Target solver: Z3
   (= (bool_eq (temp_____aggregate_def_966 a i (to_rep (select a i)))
      (- 2147483648) 2147483647 a (- 2147483648) 2147483647) true)))
 (check-sat)
+
+(exit)

@@ -456,3 +456,5 @@ Target solver: Z3
      (us_repqtmk starting_at__is_null_pointer1 starting_at__pointer_address1
      (us_close (us_repqtmk1 starting_at__pointer_value1))) us_null_pointer) true)))
 (check-sat)
+
+(exit)

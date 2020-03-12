@@ -457,3 +457,5 @@ Target solver: Z3
  ;; File "database.adb", line 48, characters 0-0
   (not (<= 1 temp___448)))
 (check-sat)
+
+(exit)

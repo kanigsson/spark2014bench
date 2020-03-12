@@ -574,3 +574,5 @@ Target solver: Z3
  ;; File "test.ads", line 9, characters 0-0
   (not (rec__test__bytes_ptr__pointer_value__pred buffer)))
 (check-sat)
+
+(exit)

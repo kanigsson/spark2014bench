@@ -603,3 +603,5 @@ Target solver: Z3
  ;; File "do_checks.adb", line 462, characters 0-0
   (not (in_range3 10 x__split_discrs)))
 (check-sat)
+
+(exit)

@@ -846,3 +846,5 @@ Target solver: Z3
      (us_split_fieldsqtmk container__split_fields)) (- position1 1)) 
   new_item))))
 (check-sat)
+
+(exit)

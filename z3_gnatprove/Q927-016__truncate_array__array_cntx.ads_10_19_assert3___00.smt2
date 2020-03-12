@@ -385,3 +385,5 @@ Target solver: Z3
   (< 0 (compare v1 #x0000000000000000 #xFFFFFFFFFFFFFFFE v2
        #x0000000000000000 #xFFFFFFFFFFFFFFFF))))
 (check-sat)
+
+(exit)

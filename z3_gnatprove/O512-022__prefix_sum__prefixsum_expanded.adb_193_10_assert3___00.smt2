@@ -700,3 +700,5 @@ Target solver: Z3
  ;; File "prefixsum_expanded.ads", line 47, characters 0-0
   (not (= (to_rep (select a2 0)) (to_rep (select saved_a1 7)))))
 (check-sat)
+
+(exit)

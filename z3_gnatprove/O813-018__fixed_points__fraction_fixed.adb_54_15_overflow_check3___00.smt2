@@ -436,3 +436,5 @@ Target solver: Z3
  ;; File "fraction_fixed.ads", line 16, characters 0-0
   (not (in_range4 o4)))
 (check-sat)
+
+(exit)

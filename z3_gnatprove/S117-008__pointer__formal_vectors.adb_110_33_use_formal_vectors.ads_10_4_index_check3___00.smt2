@@ -1603,3 +1603,5 @@ Target solver: Z3
  ;; File "formal_vectors.ads", line 21, characters 0-0
   (not (<= (first1 temp___486) usf3)))
 (check-sat)
+
+(exit)

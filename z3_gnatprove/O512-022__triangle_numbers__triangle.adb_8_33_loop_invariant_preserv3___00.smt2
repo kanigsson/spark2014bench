@@ -339,3 +339,5 @@ Target solver: Z3
  ;; File "triangle.ads", line 3, characters 0-0
   (not (= tmp3 (div1 (* i2 (+ i2 1)) 2))))
 (check-sat)
+
+(exit)

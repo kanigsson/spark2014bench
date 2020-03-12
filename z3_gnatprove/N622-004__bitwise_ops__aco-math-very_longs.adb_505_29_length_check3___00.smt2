@@ -1460,3 +1460,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 75, characters 0-0
   (not (<= (first1 quotient__split_fields) (last1 quotient__split_fields))))
 (check-sat)
+
+(exit)

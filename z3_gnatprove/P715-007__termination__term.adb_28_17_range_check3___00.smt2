@@ -152,3 +152,5 @@ Target solver: Z3
  ;; File "term.ads", line 13, characters 0-0
   (not (dynamic_property 0 last c)))
 (check-sat)
+
+(exit)

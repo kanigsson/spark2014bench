@@ -460,3 +460,5 @@ Target solver: Z3
   (not
   (= (to_rep1 (select sq j)) (to_rep1 (select temp___loop_entry_202 j)))))
 (check-sat)
+
+(exit)

@@ -99,3 +99,5 @@ Target solver: Z3
  ;; File "c.ada", line 2, characters 0-0
   (not (in_range (+ x1 1))))
 (check-sat)
+
+(exit)

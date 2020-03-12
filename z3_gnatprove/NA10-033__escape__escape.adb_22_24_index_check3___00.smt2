@@ -541,3 +541,5 @@ Target solver: Z3
  ;; File "escape.ads", line 5, characters 0-0
   (not (<= (to_rep1 result____first) ti2)))
 (check-sat)
+
+(exit)

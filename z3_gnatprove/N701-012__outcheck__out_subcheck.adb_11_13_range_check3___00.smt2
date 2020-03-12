@@ -135,3 +135,5 @@ Target solver: Z3
  ;; File "out_subcheck.ads", line 8, characters 0-0
   (not (in_range1 out_subcheck__read__z)))
 (check-sat)
+
+(exit)

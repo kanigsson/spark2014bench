@@ -414,3 +414,5 @@ Target solver: Z3
  ;; File "dyn_arrays.ads", line 6, characters 0-0
   (not (in_range1 o4)))
 (check-sat)
+
+(exit)

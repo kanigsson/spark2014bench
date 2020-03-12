@@ -1241,3 +1241,5 @@ Target solver: Z3
  ;; File "test_route.adb", line 83, characters 0-0
   (not (in_range1 o5)))
 (check-sat)
+
+(exit)

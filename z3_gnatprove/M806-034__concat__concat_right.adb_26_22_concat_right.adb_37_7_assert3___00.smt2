@@ -532,3 +532,5 @@ Target solver: Z3
  ;; File "concat_right.ads", line 2, characters 0-0
   (not (= (to_rep (select z1 1)) (to_rep (select y 1)))))
 (check-sat)
+
+(exit)

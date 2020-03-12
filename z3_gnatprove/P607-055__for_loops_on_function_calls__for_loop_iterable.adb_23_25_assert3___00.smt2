@@ -252,3 +252,5 @@ Target solver: Z3
  ;; File "for_loop_iterable.adb", line 18, characters 0-0
   (not (= (to_rep (select a2 c8b1)) 0)))
 (check-sat)
+
+(exit)

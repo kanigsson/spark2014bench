@@ -422,3 +422,5 @@ Target solver: Z3
  ;; File "fib.ads", line 29, characters 0-0
   (not (= (power a1 n1) (* p13 (power b13 k13)))))
 (check-sat)
+
+(exit)

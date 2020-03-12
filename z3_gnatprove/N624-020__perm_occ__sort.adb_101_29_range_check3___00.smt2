@@ -758,3 +758,5 @@ Target solver: Z3
  ;; File "sort.ads", line 7, characters 0-0
   (not (in_range3 current)))
 (check-sat)
+
+(exit)

@@ -1445,3 +1445,5 @@ Target solver: Z3
  ;; File "sorted_lists.ads", line 20, characters 0-0
   (not (in_range4 o10)))
 (check-sat)
+
+(exit)

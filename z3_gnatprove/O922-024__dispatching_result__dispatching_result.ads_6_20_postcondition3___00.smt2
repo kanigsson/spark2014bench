@@ -205,3 +205,5 @@ Target solver: Z3
      (rec__dispatching_result__root__f1
      (us_split_fields1 dispatching_result__init__result))) v)))
 (check-sat)
+
+(exit)

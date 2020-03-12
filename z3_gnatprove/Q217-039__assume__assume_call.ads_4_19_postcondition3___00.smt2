@@ -104,3 +104,5 @@ Target solver: Z3
  ;; File "assume_call.ads", line 3, characters 0-0
   (not (= assume_call__f1__result (+ x 1))))
 (check-sat)
+
+(exit)

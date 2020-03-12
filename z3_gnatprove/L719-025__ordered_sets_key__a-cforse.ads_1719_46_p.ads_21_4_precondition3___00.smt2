@@ -952,3 +952,5 @@ Target solver: Z3
  ;; File "a-cforse.ads", line 1715, characters 0-0
   (not (not (= (is_empty o2) true))))
 (check-sat)
+
+(exit)

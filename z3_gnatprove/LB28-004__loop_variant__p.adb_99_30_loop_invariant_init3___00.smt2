@@ -651,3 +651,5 @@ Target solver: Z3
  ;; File "p.adb", line 1, characters 0-0
   (not (= (to_rep (select tab8 l)) l)))
 (check-sat)
+
+(exit)

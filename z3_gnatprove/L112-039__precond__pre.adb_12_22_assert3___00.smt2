@@ -110,3 +110,5 @@ Target solver: Z3
  ;; File "pre.ads", line 8, characters 0-0
   (not (= (pred z) true)))
 (check-sat)
+
+(exit)

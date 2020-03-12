@@ -5534,3 +5534,5 @@ Target solver: Z3
  ;; File "aida-containers-formal_vectors.ads", line 41, characters 0-0
   (not (in_range1 length (us_split_discrs1 temp___1360))))
 (check-sat)
+
+(exit)

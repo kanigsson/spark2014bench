@@ -320,3 +320,5 @@ Target solver: Z3
  ;; File "local_borrow.adb", line 10, characters 0-0
   (not (rec__local_borrow__list_acc__pointer_value__pred x)))
 (check-sat)
+
+(exit)

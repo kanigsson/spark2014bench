@@ -1204,3 +1204,5 @@ Target solver: Z3
      (us_split_fieldsqtmk result____split_fields4))) (+ (last_index left) 
   idx3))))
 (check-sat)
+
+(exit)

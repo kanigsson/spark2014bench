@@ -865,3 +865,5 @@ Target solver: Z3
  ;; File "ghc_sort.ads", line 6, characters 0-0
   (not (<= (first1 s) temp___432)))
 (check-sat)
+
+(exit)

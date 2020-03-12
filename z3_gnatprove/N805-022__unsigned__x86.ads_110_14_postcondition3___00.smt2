@@ -726,3 +726,5 @@ Target solver: Z3
   (forall ((xcx2 (Array Int unsigned_8))) (ecx__function_guard (ecx xcx2)
   xcx2)) (= (ecx xcx1) #x00000000)) (not (= zeroflag1 true)))))
 (check-sat)
+
+(exit)

@@ -1394,3 +1394,5 @@ Target solver: Z3
  ;; File "database.ads", line 6, characters 0-0
   (not (or (= (has_element o6 o5) true) (= (bool_eq2 o5 no_element) true))))
 (check-sat)
+
+(exit)

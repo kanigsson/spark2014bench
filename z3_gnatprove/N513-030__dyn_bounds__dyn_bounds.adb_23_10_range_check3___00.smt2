@@ -203,3 +203,5 @@ Target solver: Z3
  ;; File "dyn_bounds.adb", line 18, characters 0-0
   (not (dynamic_property o2 o1 o)))
 (check-sat)
+
+(exit)

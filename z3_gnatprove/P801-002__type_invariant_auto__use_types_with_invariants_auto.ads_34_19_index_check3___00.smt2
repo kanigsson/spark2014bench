@@ -611,3 +611,5 @@ Target solver: Z3
  ;; File "use_types_with_invariants_auto.ads", line 9, characters 0-0
   (not (<= (first1 temp___242) i)))
 (check-sat)
+
+(exit)

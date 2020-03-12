@@ -386,3 +386,5 @@ Target solver: Z3
  ;; File "traversal.adb", line 11, characters 0-0
   (not (rec__traversal__two_acc_acc__pointer_value__pred x)))
 (check-sat)
+
+(exit)

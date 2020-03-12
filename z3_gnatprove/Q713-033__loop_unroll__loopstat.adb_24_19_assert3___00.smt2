@@ -1463,3 +1463,5 @@ Target solver: Z3
  ;; File "loopstat.adb", line 1, characters 0-0
   (not (= (to_rep (select a10 k113)) k113)))
 (check-sat)
+
+(exit)

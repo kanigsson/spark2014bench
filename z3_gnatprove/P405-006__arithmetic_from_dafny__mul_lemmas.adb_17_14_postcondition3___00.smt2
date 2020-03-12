@@ -153,3 +153,5 @@ Target solver: Z3
  ;; File "mul_lemmas.adb", line 16, characters 0-0
   (not (< 0 res1)))
 (check-sat)
+
+(exit)

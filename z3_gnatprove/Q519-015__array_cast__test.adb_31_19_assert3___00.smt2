@@ -1182,3 +1182,5 @@ Target solver: Z3
  ;; File "test.adb", line 5, characters 0-0
   (not (= (to_rep (rec__test__rec__y (us_split_fields1 (select z i)))) 1)))
 (check-sat)
+
+(exit)

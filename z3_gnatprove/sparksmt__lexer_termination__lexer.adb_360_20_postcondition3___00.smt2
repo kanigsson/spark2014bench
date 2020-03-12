@@ -1604,3 +1604,5 @@ Target solver: Z3
  ;; File "lexer.adb", line 349, characters 0-0
   (not (= (invariant__ name_table1) true)))
 (check-sat)
+
+(exit)

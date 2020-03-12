@@ -1525,3 +1525,5 @@ Target solver: Z3
   (not (rec__use_formal_vectors__my_vect__element_access__pointer_value__pred
   (us_repqtmk1 x__is_null_pointer x__pointer_address x__pointer_value))))
 (check-sat)
+
+(exit)

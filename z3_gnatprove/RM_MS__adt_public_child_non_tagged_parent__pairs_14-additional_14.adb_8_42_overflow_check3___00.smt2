@@ -232,3 +232,5 @@ Target solver: Z3
  ;; File "pairs_14-additional_14.ads", line 6, characters 0-0
   (not (in_range (+ o3 1))))
 (check-sat)
+
+(exit)

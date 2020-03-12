@@ -288,3 +288,5 @@ Target solver: Z3
  ;; File "semaphores1.ads", line 6, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

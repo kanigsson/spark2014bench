@@ -504,3 +504,5 @@ Target solver: Z3
  ;; File "array_logical_ops.ads", line 12, characters 0-0
   (not (not (= (distinct (to_rep1 (select (to_array r1) i)) 0) true))))
 (check-sat)
+
+(exit)

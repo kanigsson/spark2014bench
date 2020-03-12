@@ -1129,3 +1129,5 @@ Target solver: Z3
  ;; File "amortized_queue.ads", line 69, characters 0-0
   (not (in_range1 1000 (us_split_discrs1 temp___703))))
 (check-sat)
+
+(exit)

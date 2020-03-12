@@ -703,3 +703,5 @@ Target solver: Z3
  ;; File "search_ter_p.ads", line 32, characters 0-0
   (not (<= (length1 o4) (length1 o7))))
 (check-sat)
+
+(exit)

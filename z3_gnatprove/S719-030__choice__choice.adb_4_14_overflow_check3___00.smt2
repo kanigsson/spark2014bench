@@ -118,3 +118,5 @@ Target solver: Z3
  ;; File "choice.adb", line 1, characters 0-0
   (not (in_range1 (+ y 1))))
 (check-sat)
+
+(exit)

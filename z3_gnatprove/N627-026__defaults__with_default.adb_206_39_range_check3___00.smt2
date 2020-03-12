@@ -344,3 +344,5 @@ Target solver: Z3
  ;; File "with_default.ads", line 22, characters 0-0
   (not (in_range1 c)))
 (check-sat)
+
+(exit)

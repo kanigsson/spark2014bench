@@ -424,3 +424,5 @@ Target solver: Z3
  ;; File "simple_unc_arrays.ads", line 119, characters 0-0
   (not (= (to_rep1 (select a3 i)) (to_rep1 (select a1 j)))))
 (check-sat)
+
+(exit)

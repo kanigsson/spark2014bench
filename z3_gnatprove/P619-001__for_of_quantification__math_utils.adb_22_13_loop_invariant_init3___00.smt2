@@ -402,3 +402,5 @@ Target solver: Z3
  ;; File "math_utils.ads", line 6, characters 0-0
   (not (<= (to_rep (select (to_array v) k)) result__1)))
 (check-sat)
+
+(exit)

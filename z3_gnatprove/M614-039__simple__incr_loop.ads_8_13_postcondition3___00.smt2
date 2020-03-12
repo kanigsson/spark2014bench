@@ -345,3 +345,5 @@ Target solver: Z3
  ;; File "incr_loop.ads", line 5, characters 0-0
   (not (= (to_rep (select a2 i1)) (+ (to_rep (select a1 i1)) 1))))
 (check-sat)
+
+(exit)

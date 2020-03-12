@@ -748,3 +748,5 @@ Target solver: Z3
  ;; File "sum_elem.ads", line 23, characters 0-0
   (not (<= o (last_index o1))))
 (check-sat)
+
+(exit)

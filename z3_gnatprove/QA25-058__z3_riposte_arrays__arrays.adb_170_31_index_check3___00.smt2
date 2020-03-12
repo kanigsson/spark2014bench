@@ -376,3 +376,5 @@ Target solver: Z3
  ;; File "arrays.adb", line 164, characters 0-0
   (not (<= 1 temp___353)))
 (check-sat)
+
+(exit)

@@ -931,3 +931,5 @@ Target solver: Z3
  ;; File "ordering_buffers.adb", line 3, characters 0-0
   (not (not (= ((_ int2bv 8) (mod2 i 256)) ring_index))))
 (check-sat)
+
+(exit)

@@ -434,3 +434,5 @@ Target solver: Z3
  ;; File "alloc_range_check.adb", line 1, characters 0-0
   (not (dynamic_property o5 o4 (- 1))))
 (check-sat)
+
+(exit)

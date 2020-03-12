@@ -449,3 +449,5 @@ Target solver: Z3
  ;; File "sorting.adb", line 59, characters 0-0
   (not (<= (first1 o7) o2)))
 (check-sat)
+
+(exit)

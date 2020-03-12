@@ -2088,3 +2088,5 @@ Target solver: Z3
  ;; File "tetris_integrity.ads", line 200, characters 0-0
   (not (= (move_is_possible o4 o3) true)))
 (check-sat)
+
+(exit)

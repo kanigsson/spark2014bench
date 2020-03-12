@@ -433,3 +433,5 @@ Target solver: Z3
   (us_repqtmk current__is_null_pointer1 current__pointer_address1
   (us_close (us_repqtmk1 current__pointer_value1))))))
 (check-sat)
+
+(exit)

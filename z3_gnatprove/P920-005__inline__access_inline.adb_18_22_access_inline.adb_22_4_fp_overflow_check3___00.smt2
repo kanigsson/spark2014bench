@@ -305,3 +305,5 @@ Target solver: Z3
  ;; File "access_inline.adb", line 1, characters 0-0
   (not (fp.isFinite32 o2)))
 (check-sat)
+
+(exit)

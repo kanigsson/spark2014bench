@@ -3375,3 +3375,5 @@ Target solver: Z3
                  (- (get (positions x)
                     (us_repqtmk (us_split_fieldsqtmk c__split_fields3))) 1)))))
 (check-sat)
+
+(exit)

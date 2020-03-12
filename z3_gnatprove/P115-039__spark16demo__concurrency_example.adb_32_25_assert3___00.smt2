@@ -794,3 +794,5 @@ Target solver: Z3
   (or (= (bool_eq2 value2 1 1000 all_zeroes 1 1000) true)
   (= (bool_eq2 value2 1 1000 all_ones 1 1000) true))))
 (check-sat)
+
+(exit)

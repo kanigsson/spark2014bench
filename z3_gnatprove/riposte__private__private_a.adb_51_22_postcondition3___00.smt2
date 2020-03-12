@@ -562,3 +562,5 @@ Target solver: Z3
  ;; File "private_a.adb", line 49, characters 0-0
   (not (= n2 n1)))
 (check-sat)
+
+(exit)

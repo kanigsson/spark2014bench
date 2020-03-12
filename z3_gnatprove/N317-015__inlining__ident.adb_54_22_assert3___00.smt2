@@ -258,3 +258,5 @@ Target solver: Z3
  ;; File "ident.ads", line 6, characters 0-0
   (not (= res3 x)))
 (check-sat)
+
+(exit)

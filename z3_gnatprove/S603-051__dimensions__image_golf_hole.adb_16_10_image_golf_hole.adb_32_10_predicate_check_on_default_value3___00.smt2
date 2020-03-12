@@ -1070,3 +1070,5 @@ Target solver: Z3
  ;; File "image_golf_hole.ads", line 5, characters 0-0
   (not (dynamic_predicate usf1)))
 (check-sat)
+
+(exit)

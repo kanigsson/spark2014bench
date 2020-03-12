@@ -514,3 +514,5 @@ Target solver: Z3
  ;; File "sort.ads", line 6, characters 0-0
   (not (<= (to_rep o7) current)))
 (check-sat)
+
+(exit)

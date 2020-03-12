@@ -818,3 +818,5 @@ Target solver: Z3
  ;; File "record_discr.ads", line 25, characters 0-0
   (not (in_range (ite (ite (= o1 0) false true) 1 0))))
 (check-sat)
+
+(exit)

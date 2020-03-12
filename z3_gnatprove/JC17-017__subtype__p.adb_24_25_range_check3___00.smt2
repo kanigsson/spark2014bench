@@ -219,3 +219,5 @@ Target solver: Z3
  ;; File "p.adb", line 4, characters 0-0
   (not (dynamic_property first last o4)))
 (check-sat)
+
+(exit)

@@ -145,3 +145,5 @@ Target solver: Z3
  ;; File "foo2.ads", line 1, characters 0-0
   (not (= (f2 c1) true)))
 (check-sat)
+
+(exit)

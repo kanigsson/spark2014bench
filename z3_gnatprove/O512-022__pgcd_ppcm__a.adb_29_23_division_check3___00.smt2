@@ -291,3 +291,5 @@ Target solver: Z3
  ;; File "a.ads", line 11, characters 0-0
   (not (not (= r 0))))
 (check-sat)
+
+(exit)

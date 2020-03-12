@@ -1821,3 +1821,5 @@ Target solver: Z3
  ;; File "repro_main.adb", line 4, characters 0-0
   (not (< temp___306 (index_of i2))))
 (check-sat)
+
+(exit)

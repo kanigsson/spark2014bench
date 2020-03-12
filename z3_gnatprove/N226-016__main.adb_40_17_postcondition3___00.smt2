@@ -221,3 +221,5 @@ Target solver: Z3
  ;; File "main.adb", line 35, characters 0-0
   (not (not (= id main__with_spoon_feeding__result))))
 (check-sat)
+
+(exit)

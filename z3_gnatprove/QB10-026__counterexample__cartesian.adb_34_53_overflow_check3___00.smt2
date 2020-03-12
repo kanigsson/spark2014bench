@@ -816,3 +816,5 @@ Target solver: Z3
  ;; File "cartesian.ads", line 43, characters 0-0
   (not (in_range1 o15)))
 (check-sat)
+
+(exit)

@@ -974,3 +974,5 @@ Target solver: Z3
  ;; File "students.ads", line 17, characters 0-0
   (not (in_range6 o11)))
 (check-sat)
+
+(exit)

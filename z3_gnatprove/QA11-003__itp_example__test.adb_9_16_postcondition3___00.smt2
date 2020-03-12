@@ -112,3 +112,5 @@ Target solver: Z3
   (exists ((x Int))
   (and (and (<= 0 x) (<= x 255)) (or (= a (+ x x)) (= a (+ (+ x x) 1)))))))
 (check-sat)
+
+(exit)

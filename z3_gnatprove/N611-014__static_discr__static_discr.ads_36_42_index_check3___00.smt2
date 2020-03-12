@@ -1902,3 +1902,5 @@ Target solver: Z3
  ;; File "static_discr.ads", line 31, characters 0-0
   (not (<= (first1 a) static_discr__search_array__result)))
 (check-sat)
+
+(exit)

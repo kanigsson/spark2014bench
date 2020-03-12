@@ -484,3 +484,5 @@ Target solver: Z3
  ;; File "simple_trajectory.ads", line 31, characters 0-0
   (not (= (invariant__ (+ n 1) new_speed1) true)))
 (check-sat)
+
+(exit)

@@ -192,3 +192,5 @@ Target solver: Z3
  ;; File "dispatcher.adb", line 3, characters 0-0
   (not (= (is_valid1 o (us_repqtmk x__split_fields o)) true)))
 (check-sat)
+
+(exit)

@@ -1171,3 +1171,5 @@ Target solver: Z3
   (<= (to_rep (rec__test_route__point__x p__pointer_value)) (- 2147483647 
   o2))))
 (check-sat)
+
+(exit)

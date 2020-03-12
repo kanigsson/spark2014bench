@@ -601,3 +601,5 @@ Target solver: Z3
  ;; File "number_theory.ads", line 27, characters 0-0
   (not (= old__3 (fib (- i2 1)))))
 (check-sat)
+
+(exit)

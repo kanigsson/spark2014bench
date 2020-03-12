@@ -542,3 +542,5 @@ Target solver: Z3
  ;; File "update_proof.adb", line 1, characters 0-0
   (not (= (bool_eq a1 1 2 (temp_____aggregate_def_200 o_a 2 0) 1 2) true)))
 (check-sat)
+
+(exit)

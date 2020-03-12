@@ -187,3 +187,5 @@ Target solver: Z3
  ;; File "days.ads", line 11, characters 0-0
   (not (or (and (<= 1 tmp2) (<= tmp2 1)) (and (<= 3 tmp2) (<= tmp2 3)))))
 (check-sat)
+
+(exit)

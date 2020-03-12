@@ -326,3 +326,5 @@ Target solver: Z3
  ;; File "user.adb", line 2, characters 0-0
   (not (= (bool_eq s 1 10 (temp___String_Literal_197 Tuple0) 1 10) true)))
 (check-sat)
+
+(exit)

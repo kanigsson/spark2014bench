@@ -98,3 +98,5 @@ Target solver: Z3
  ;; File "subnat.ads", line 2, characters 0-0
   (not (<= 0 subnat__f__result)))
 (check-sat)
+
+(exit)

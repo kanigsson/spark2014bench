@@ -306,3 +306,5 @@ Target solver: Z3
      (temp_____aggregate_def_193 (us_repqtmk (us_split_fieldsqtmk rliteral)))
      1 10) true)))
 (check-sat)
+
+(exit)

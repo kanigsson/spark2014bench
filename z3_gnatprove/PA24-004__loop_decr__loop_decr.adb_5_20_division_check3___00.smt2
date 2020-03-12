@@ -181,3 +181,5 @@ Target solver: Z3
  ;; File "loop_decr.adb", line 1, characters 0-0
   (not (not (= c 0))))
 (check-sat)
+
+(exit)

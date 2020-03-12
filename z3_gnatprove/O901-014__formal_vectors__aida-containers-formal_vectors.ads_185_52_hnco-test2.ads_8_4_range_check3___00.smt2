@@ -731,3 +731,5 @@ Target solver: Z3
  ;; File "hnco-test2.ads", line 8, characters 0-0
   (not (in_range2 usf)))
 (check-sat)
+
+(exit)

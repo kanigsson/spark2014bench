@@ -211,3 +211,5 @@ Target solver: Z3
  ;; File "rec_post.ads", line 6, characters 0-0
   (not (not (= i 0))))
 (check-sat)
+
+(exit)

@@ -334,3 +334,5 @@ Target solver: Z3
  ;; File "dynval.adb", line 1, characters 0-0
   (not (dynamic_property first last 5)))
 (check-sat)
+
+(exit)

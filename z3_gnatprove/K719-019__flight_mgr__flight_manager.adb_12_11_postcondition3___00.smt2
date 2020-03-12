@@ -175,3 +175,5 @@ Target solver: Z3
   (not
   (fp.eq f2 (fp.div RNE (fp.mul RNE f1 distance_to_target) (fp #b0 #b10000010 #b01000000000000000000000)))))
 (check-sat)
+
+(exit)

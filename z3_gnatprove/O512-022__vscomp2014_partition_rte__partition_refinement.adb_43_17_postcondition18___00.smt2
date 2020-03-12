@@ -2876,3 +2876,5 @@ Target solver: Z3
      (keys
      (us_repqtmk1 d__split_discrs (us_split_fieldsqtmk1 d__split_fields2)))) true)))
 (check-sat)
+
+(exit)

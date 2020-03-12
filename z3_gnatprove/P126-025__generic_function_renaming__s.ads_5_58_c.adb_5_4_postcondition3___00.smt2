@@ -100,3 +100,5 @@ Target solver: Z3
  ;; File "c.adb", line 5, characters 0-0
   (not (= c__dummy__result e)))
 (check-sat)
+
+(exit)

@@ -269,3 +269,5 @@ Target solver: Z3
  ;; File "asm_stack.ads", line 10, characters 0-0
   (not (<= 1 stack_top1)))
 (check-sat)
+
+(exit)

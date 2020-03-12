@@ -440,3 +440,5 @@ Target solver: Z3
  ;; File "fp_test_div.ads", line 15, characters 0-0
   (not (<= (abs1 u1) 60)))
 (check-sat)
+
+(exit)

@@ -330,3 +330,5 @@ Target solver: Z3
  ;; File "numerics-algo.ads", line 5, characters 0-0
   (not (not (fp.eq o4 (fp #b0 #b00000000 #b00000000000000000000000)))))
 (check-sat)
+
+(exit)

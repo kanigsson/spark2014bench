@@ -130,3 +130,5 @@ Target solver: Z3
  ;; File "p.ads", line 9, characters 0-0
   (not (= (get_p_state p_state1) value)))
 (check-sat)
+
+(exit)

@@ -600,3 +600,5 @@ Target solver: Z3
  ;; File "natural_set.ads", line 22, characters 0-0
   (not (<= 1 temp___258)))
 (check-sat)
+
+(exit)

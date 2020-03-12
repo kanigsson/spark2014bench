@@ -550,3 +550,5 @@ Target solver: Z3
  ;; File "p.ads", line 3, characters 0-0
   (not (= o1 x__split_discrs)))
 (check-sat)
+
+(exit)

@@ -387,3 +387,5 @@ Target solver: Z3
  ;; File "update_checks.adb", line 22, characters 0-0
   (not (in_range1 (- x 1))))
 (check-sat)
+
+(exit)

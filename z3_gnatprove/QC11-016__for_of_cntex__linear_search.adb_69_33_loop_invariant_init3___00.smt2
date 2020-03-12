@@ -904,3 +904,5 @@ Target solver: Z3
  ;; File "linear_search.adb", line 56, characters 0-0
   (not (not (= (get (model1 arr) j) n))))
 (check-sat)
+
+(exit)

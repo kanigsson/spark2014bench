@@ -946,3 +946,5 @@ Target solver: Z3
   (- (+ (first1 vstring) (+ (length (first1 vstring) (last1 vstring)) 
   (length (first1 temp___210) (last1 temp___210)))) 1))))
 (check-sat)
+
+(exit)

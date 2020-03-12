@@ -215,3 +215,5 @@ Target solver: Z3
  ;; File "a.ads", line 16, characters 0-0
   (not (in_range (+ x global_a))))
 (check-sat)
+
+(exit)

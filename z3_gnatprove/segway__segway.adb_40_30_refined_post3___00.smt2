@@ -217,3 +217,5 @@ Target solver: Z3
  ;; File "segway.ads", line 32, characters 0-0
   (not (= status1 0)))
 (check-sat)
+
+(exit)

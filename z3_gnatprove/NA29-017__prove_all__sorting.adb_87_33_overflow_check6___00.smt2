@@ -954,3 +954,5 @@ Target solver: Z3
  ;; File "sorting.adb", line 59, characters 0-0
   (not (in_range1 o82)))
 (check-sat)
+
+(exit)

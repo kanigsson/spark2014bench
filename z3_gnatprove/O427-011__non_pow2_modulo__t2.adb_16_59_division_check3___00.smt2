@@ -215,3 +215,5 @@ Target solver: Z3
  ;; File "t2.adb", line 15, characters 0-0
   (not (not (= #x00000000000000E6 #x0000000000000000))))
 (check-sat)
+
+(exit)

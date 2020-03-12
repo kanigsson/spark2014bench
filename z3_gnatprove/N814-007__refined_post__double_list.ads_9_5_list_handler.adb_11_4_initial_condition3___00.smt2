@@ -537,3 +537,5 @@ Target solver: Z3
  ;; File "list_handler.adb", line 11, characters 0-0
   (not (= (size1 count1) 0)))
 (check-sat)
+
+(exit)

@@ -360,3 +360,5 @@ Target solver: Z3
   (not
   (= (to_rep (select (rec__test__t__c (us_split_fields1 (select x1 11))) 2)) 1)))
 (check-sat)
+
+(exit)

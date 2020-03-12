@@ -330,3 +330,5 @@ Target solver: Z3
  ;; File "saturation.adb", line 10, characters 0-0
   (not (= (bool_eq (us_repqtmk val____split_fields1) temp___old_1801) true)))
 (check-sat)
+
+(exit)

@@ -220,3 +220,5 @@ Target solver: Z3
  ;; File "my_container_model.ads", line 39, characters 0-0
   (not (<= 1 p)))
 (check-sat)
+
+(exit)

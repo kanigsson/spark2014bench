@@ -983,3 +983,5 @@ Target solver: Z3
  ;; File "lexer.adb", line 171, characters 0-0
   (not (< temp___611 current_idx10)))
 (check-sat)
+
+(exit)

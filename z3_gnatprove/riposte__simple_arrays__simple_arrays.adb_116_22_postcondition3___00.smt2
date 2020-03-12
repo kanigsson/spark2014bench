@@ -258,3 +258,5 @@ Target solver: Z3
  ;; File "simple_arrays.adb", line 108, characters 0-0
   (not (= simple_arrays__array_axiom_transitivity_worse__result 42)))
 (check-sat)
+
+(exit)

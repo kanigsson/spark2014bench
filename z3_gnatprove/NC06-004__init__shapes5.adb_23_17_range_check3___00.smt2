@@ -431,3 +431,5 @@ Target solver: Z3
   (not (in_range3
   (fp.sub RNE x (fp.neg (fp #b0 #b10000000101 #b1001000000000000000000000000000000000000000000000000))))))
 (check-sat)
+
+(exit)

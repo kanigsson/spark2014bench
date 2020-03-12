@@ -514,3 +514,5 @@ Target solver: Z3
  ;; File "counterexamples.adb", line 51, characters 0-0
   (not (<= r27b c)))
 (check-sat)
+
+(exit)

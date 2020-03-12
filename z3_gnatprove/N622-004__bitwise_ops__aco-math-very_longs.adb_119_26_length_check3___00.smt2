@@ -958,3 +958,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 26, characters 0-0
   (not (<= (first3 result____split_fields) (last3 result____split_fields))))
 (check-sat)
+
+(exit)

@@ -255,3 +255,5 @@ Target solver: Z3
  ;; File "length.ads", line 15, characters 0-0
   (not (= (length x) 20)))
 (check-sat)
+
+(exit)

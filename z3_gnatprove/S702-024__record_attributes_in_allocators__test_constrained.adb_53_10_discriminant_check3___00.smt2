@@ -580,3 +580,5 @@ Target solver: Z3
   (= v__split_discrs1 (rec__test_constrained__r__b
                       (us_split_discrs1 (select x__pointer_value 1))))))
 (check-sat)
+
+(exit)

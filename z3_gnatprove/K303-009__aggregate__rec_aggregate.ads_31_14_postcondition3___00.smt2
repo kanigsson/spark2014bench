@@ -205,3 +205,5 @@ Target solver: Z3
      (us_repqtmk
      (us_split_fieldsqtmk (rec__rec_aggregate__r1__x (us_split_fields1 r))))) true)))
 (check-sat)
+
+(exit)

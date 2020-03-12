@@ -139,3 +139,5 @@ Target solver: Z3
  ;; File "contracts.adb", line 15, characters 0-0
   (not (in_range1 o)))
 (check-sat)
+
+(exit)

@@ -251,3 +251,5 @@ Target solver: Z3
  ;; File "depends_exercise.ads", line 13, characters 0-0
   (not (<= 1 stack_pointer1)))
 (check-sat)
+
+(exit)

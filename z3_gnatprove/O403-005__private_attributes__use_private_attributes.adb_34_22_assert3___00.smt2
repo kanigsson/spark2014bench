@@ -1157,3 +1157,5 @@ Target solver: Z3
                                                            fc__split_fields
                                                            fc__attr__tag))) true))))
 (check-sat)
+
+(exit)

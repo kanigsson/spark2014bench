@@ -580,3 +580,5 @@ Target solver: Z3
  ;; File "array_comparison.ads", line 5, characters 0-0
   (not (= (bool_eq x 1 5 z 1 5) true)))
 (check-sat)
+
+(exit)

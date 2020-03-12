@@ -405,3 +405,5 @@ Target solver: Z3
  ;; File "test_containers.adb", line 4, characters 0-0
   (not (= (has_element c11 o) true)))
 (check-sat)
+
+(exit)

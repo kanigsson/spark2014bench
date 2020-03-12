@@ -240,3 +240,5 @@ Target solver: Z3
   (not
   (= (f_of_pair (us_repqtmk (us_split_fieldsqtmk rliteral1 rliteral1))) true)))
 (check-sat)
+
+(exit)

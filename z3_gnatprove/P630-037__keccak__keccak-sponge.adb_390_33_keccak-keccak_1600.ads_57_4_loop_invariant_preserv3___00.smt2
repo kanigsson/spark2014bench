@@ -2293,3 +2293,5 @@ Target solver: Z3
   (= (+ offset3 remaining3) (length (to_rep digest__first)
                             (to_rep digest__last)))))
 (check-sat)
+
+(exit)

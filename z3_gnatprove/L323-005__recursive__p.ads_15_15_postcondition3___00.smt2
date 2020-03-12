@@ -157,3 +157,5 @@ Target solver: Z3
  ;; File "p.ads", line 13, characters 0-0
   (not (= (down x) (+ (down (- x 1)) 1))))
 (check-sat)
+
+(exit)

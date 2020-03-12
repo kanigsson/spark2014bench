@@ -128,3 +128,5 @@ Target solver: Z3
  ;; File "aip-net.ads", line 4, characters 0-0
   (not (in_range (+ room2 14))))
 (check-sat)
+
+(exit)

@@ -419,3 +419,5 @@ Target solver: Z3
  ;; File "number_theory.ads", line 27, characters 0-0
   (not (<= 0 2)))
 (check-sat)
+
+(exit)

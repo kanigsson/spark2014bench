@@ -365,3 +365,5 @@ Target solver: Z3
  ;; File "conts-lists.ads", line 456, characters 0-0
   (not (= (has_element o1 o) true)))
 (check-sat)
+
+(exit)

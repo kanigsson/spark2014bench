@@ -82,3 +82,5 @@ Target solver: Z3
  ;; File "test_reals.adb", line 3, characters 0-0
   (not (= (oge__logic (* r r) 0.0) true)))
 (check-sat)
+
+(exit)

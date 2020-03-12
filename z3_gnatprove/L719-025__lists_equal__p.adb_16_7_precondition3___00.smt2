@@ -1038,3 +1038,5 @@ Target solver: Z3
   (= (has_element (us_repqtmk1 o7 (us_split_fieldsqtmk1 l__split_fields))
      (us_repqtmk (us_split_fieldsqtmk cu__split_fields))) true)))
 (check-sat)
+
+(exit)

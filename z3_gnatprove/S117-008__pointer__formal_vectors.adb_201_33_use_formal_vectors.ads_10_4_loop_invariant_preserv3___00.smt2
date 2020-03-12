@@ -1326,3 +1326,5 @@ Target solver: Z3
  ;; File "formal_vectors.ads", line 52, characters 0-0
   (not (= (last2 m2) (- i2 1))))
 (check-sat)
+
+(exit)

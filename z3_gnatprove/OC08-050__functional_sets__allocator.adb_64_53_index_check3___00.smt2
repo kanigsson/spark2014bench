@@ -711,3 +711,5 @@ Target solver: Z3
  ;; File "allocator.ads", line 49, characters 0-0
   (not (<= 1 usf4)))
 (check-sat)
+
+(exit)

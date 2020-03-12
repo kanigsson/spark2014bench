@@ -789,3 +789,5 @@ Target solver: Z3
  ;; File "stack.ads", line 21, characters 0-0
   (not (not (= (is_empty o5) true))))
 (check-sat)
+
+(exit)

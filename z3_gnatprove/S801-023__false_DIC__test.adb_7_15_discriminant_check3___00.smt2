@@ -518,3 +518,5 @@ Target solver: Z3
  ;; File "test.ads", line 8, characters 0-0
   (not (= o2 (rec__test__context_type__first context__split_discrs))))
 (check-sat)
+
+(exit)

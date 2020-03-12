@@ -2137,3 +2137,5 @@ Target solver: Z3
  ;; File "formal_vectors.ads", line 21, characters 0-0
   (not (<= usf (last2 (model3 (us_repqtmk3 e__split_fields))))))
 (check-sat)
+
+(exit)

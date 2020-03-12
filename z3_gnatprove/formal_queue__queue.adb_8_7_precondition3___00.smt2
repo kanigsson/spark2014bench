@@ -873,3 +873,5 @@ Target solver: Z3
   (not
   (= (is_empty (us_repqtmk o1 (us_split_fieldsqtmk r__split_fields))) true))))
 (check-sat)
+
+(exit)

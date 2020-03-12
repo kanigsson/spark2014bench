@@ -404,3 +404,5 @@ Target solver: Z3
  ;; File "traverse_list.adb", line 13, characters 0-0
   (not (rec__traverse_list__list_acc__pointer_value__pred o4)))
 (check-sat)
+
+(exit)

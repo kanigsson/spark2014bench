@@ -962,3 +962,5 @@ Target solver: Z3
  ;; File "challenges.ads", line 5, characters 0-0
   (not (in_range4 (fp.sub RNE c43b1 c38b))))
 (check-sat)
+
+(exit)

@@ -939,3 +939,5 @@ Target solver: Z3
   (not
   (= result_index3 (* (+ (- index12 (first1 array1)) 1) (length array2)))))
 (check-sat)
+
+(exit)

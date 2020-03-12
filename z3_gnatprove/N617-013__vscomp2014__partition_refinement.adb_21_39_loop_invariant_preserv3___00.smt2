@@ -1328,3 +1328,5 @@ Target solver: Z3
  ;; File "partition_refinement.ads", line 28, characters 0-0
   (not (= (to_rep3 (select f4 j2)) p_prime_index2)))
 (check-sat)
+
+(exit)

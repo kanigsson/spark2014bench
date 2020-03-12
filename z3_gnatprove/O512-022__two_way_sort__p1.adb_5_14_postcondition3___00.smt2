@@ -335,3 +335,5 @@ Target solver: Z3
  ;; File "p1.adb", line 2, characters 0-0
   (not (= (select a1 j) true)))
 (check-sat)
+
+(exit)

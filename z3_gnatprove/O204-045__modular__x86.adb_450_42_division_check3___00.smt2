@@ -366,3 +366,5 @@ Target solver: Z3
  ;; File "x86.ads", line 453, characters 0-0
   (not (not (= #x0000000100000000 #x0000000000000000))))
 (check-sat)
+
+(exit)

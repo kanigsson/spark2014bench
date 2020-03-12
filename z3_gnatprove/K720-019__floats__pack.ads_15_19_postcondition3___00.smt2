@@ -159,3 +159,5 @@ Target solver: Z3
  ;; File "pack.ads", line 10, characters 0-0
   (not (fp.eq pack__add__result (fp.add RNE r1 r2))))
 (check-sat)
+
+(exit)

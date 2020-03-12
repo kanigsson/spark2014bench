@@ -290,3 +290,5 @@ Target solver: Z3
   (= (rec__private_discr__p_no_default__c (us_split_discrs1 temp___370)) 
   (rec__private_discr__p_no_default__c d__split_discrs))))
 (check-sat)
+
+(exit)

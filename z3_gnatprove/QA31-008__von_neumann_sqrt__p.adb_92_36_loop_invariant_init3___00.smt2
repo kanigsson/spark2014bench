@@ -450,3 +450,5 @@ Target solver: Z3
         (bvshl #x0000000000000001 ((_ int2bv 64) temp___214))
         #x0000000000000000)))))
 (check-sat)
+
+(exit)

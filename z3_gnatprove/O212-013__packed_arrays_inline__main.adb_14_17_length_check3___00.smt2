@@ -543,3 +543,5 @@ Target solver: Z3
  ;; File "main.adb", line 12, characters 0-0
   (not (<= (first1 d__split_fields) (last1 d__split_fields))))
 (check-sat)
+
+(exit)

@@ -2945,3 +2945,5 @@ Target solver: Z3
  ;; File "do_loops.adb", line 1, characters 0-0
   (not (rec__do_loops__u_array_acc__pointer_value__pred temp___539)))
 (check-sat)
+
+(exit)

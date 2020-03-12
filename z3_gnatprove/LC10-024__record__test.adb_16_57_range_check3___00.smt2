@@ -614,3 +614,5 @@ Target solver: Z3
  ;; File "test.ads", line 8, characters 0-0
   (not (in_range_int o5)))
 (check-sat)
+
+(exit)

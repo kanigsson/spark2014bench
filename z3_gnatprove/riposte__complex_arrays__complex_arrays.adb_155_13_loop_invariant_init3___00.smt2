@@ -352,3 +352,5 @@ Target solver: Z3
  ;; File "complex_arrays.adb", line 141, characters 0-0
   (not (= (to_rep (select tmp2 k)) (- 23))))
 (check-sat)
+
+(exit)

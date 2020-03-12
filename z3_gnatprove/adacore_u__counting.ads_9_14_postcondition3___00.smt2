@@ -181,3 +181,5 @@ Target solver: Z3
   (not
   (= (get_black_count black_counter2) (+ (get_black_count black_counter1) 1))))
 (check-sat)
+
+(exit)

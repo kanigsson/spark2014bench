@@ -209,3 +209,5 @@ Target solver: Z3
  ;; File "my_types.ads", line 7, characters 0-0
   (not (= (get_f (us_repqtmk (us_split_fieldsqtmk self__1))) v)))
 (check-sat)
+
+(exit)

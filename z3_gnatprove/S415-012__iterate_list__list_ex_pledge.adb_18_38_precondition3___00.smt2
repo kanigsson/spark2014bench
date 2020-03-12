@@ -666,3 +666,5 @@ Target solver: Z3
  ;; File "list_ex_pledge.ads", line 26, characters 0-0
   (not (<= o7 (length usf1))))
 (check-sat)
+
+(exit)

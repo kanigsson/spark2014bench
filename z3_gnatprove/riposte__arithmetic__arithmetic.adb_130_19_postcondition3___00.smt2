@@ -185,3 +185,5 @@ Target solver: Z3
   n) (= (+ (+ arithmetic__halve_c__result arithmetic__halve_c__result) 1) 
   n))))
 (check-sat)
+
+(exit)

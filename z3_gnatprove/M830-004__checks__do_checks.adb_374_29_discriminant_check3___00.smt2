@@ -5872,3 +5872,5 @@ Target solver: Z3
   (us_repqtmk13 (us_split_discrsqtmk rliteral1)
   (us_split_fieldsqtmk13 (temp_____aggregate_def_869 (distinct 1 0)))))))))
 (check-sat)
+
+(exit)

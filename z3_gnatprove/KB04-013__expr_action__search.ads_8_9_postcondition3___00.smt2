@@ -320,3 +320,5 @@ Target solver: Z3
   (- search__search__result1 1)))
   (= (no_v_in_range t v 1 (- search__search__result 1)) true))))))
 (check-sat)
+
+(exit)

@@ -204,3 +204,5 @@ Target solver: Z3
  ;; File "test_dynamic_property.adb", line 2, characters 0-0
   (not (<= (- 2147483648) (- c))))
 (check-sat)
+
+(exit)

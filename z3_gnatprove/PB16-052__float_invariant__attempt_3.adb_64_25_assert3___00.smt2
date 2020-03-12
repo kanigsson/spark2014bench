@@ -489,3 +489,5 @@ Target solver: Z3
   (fp.eq (fp.add RNE fnt65 (fp #b0 #b01111111111 #b0000000000000000000000000000000000000000000000000000)) 
   (of_int RNE (+ (* n 65) 1)))))
 (check-sat)
+
+(exit)

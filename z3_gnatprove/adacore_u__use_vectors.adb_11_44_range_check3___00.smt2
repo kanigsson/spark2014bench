@@ -367,3 +367,5 @@ Target solver: Z3
  ;; File "use_vectors.ads", line 12, characters 0-0
   (not (in_range2 usf)))
 (check-sat)
+
+(exit)

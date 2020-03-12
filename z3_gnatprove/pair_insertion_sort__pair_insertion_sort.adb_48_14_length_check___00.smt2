@@ -676,3 +676,5 @@ Target solver: Z3
  ;; File "pair_insertion_sort.adb", line 4, characters 0-0
   (not (<= (to_rep interm__first) (to_rep interm__last))))
 (check-sat)
+
+(exit)

@@ -204,3 +204,5 @@ Target solver: Z3
  ;; File "inrange.ads", line 9, characters 0-0
   (not (<= inrange__add__result 40)))
 (check-sat)
+
+(exit)

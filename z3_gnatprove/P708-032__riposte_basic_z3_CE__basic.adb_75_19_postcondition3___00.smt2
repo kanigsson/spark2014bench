@@ -150,3 +150,5 @@ Target solver: Z3
  ;; File "basic.adb", line 74, characters 0-0
   (not (= basic__int_min_a__result (min a b))))
 (check-sat)
+
+(exit)

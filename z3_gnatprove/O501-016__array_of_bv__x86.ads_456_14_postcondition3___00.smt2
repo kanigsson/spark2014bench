@@ -643,3 +643,5 @@ Target solver: Z3
   (= x86__readmem64__result (bvor ((_ zero_extend 32) (readmem32 addr memory)) (bvshl ((_ zero_extend 32) 
   (readmem32 (bvadd addr #x0000000000000004) memory)) ((_ int2bv 64) 32))))))
 (check-sat)
+
+(exit)

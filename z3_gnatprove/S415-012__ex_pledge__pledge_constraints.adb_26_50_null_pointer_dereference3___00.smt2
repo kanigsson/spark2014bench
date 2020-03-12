@@ -969,3 +969,5 @@ Target solver: Z3
   (not (rec__pledge_constraints__int_acc__pointer_value__pred
   (rec__pledge_constraints__int_acc_option__content (us_split_fields1 o5)))))
 (check-sat)
+
+(exit)

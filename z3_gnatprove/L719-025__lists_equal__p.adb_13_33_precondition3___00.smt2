@@ -988,3 +988,5 @@ Target solver: Z3
  ;; File "p.ads", line 18, characters 0-0
   (not (or (= (has_element o4 o3) true) (= (bool_eq o3 no_element) true))))
 (check-sat)
+
+(exit)

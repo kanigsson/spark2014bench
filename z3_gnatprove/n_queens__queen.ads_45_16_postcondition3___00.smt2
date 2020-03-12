@@ -374,3 +374,5 @@ Target solver: Z3
   (not
   (= (to_rep (select queen__copy_until__result j2)) (to_rep (select b j2)))))
 (check-sat)
+
+(exit)

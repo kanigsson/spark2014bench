@@ -516,3 +516,5 @@ Target solver: Z3
   (not
   (< value test_prime_and_coprime_numbers__p__nearest_prime_number__result)))
 (check-sat)
+
+(exit)

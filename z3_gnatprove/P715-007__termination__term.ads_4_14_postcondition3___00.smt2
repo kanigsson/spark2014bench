@@ -116,3 +116,5 @@ Target solver: Z3
  ;; File "term.ads", line 3, characters 0-0
   (not (= term__loop_except_on_zero__result 0)))
 (check-sat)
+
+(exit)

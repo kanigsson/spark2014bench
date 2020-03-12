@@ -191,3 +191,5 @@ Target solver: Z3
  ;; File "protected_sequence.ads", line 11, characters 0-0
   (not (<= 3 2)))
 (check-sat)
+
+(exit)

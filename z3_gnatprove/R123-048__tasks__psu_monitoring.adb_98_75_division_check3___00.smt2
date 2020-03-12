@@ -1135,3 +1135,5 @@ Target solver: Z3
  ;; File "psu_monitoring.ads", line 94, characters 0-0
   (not (not (fp.isZero o2))))
 (check-sat)
+
+(exit)

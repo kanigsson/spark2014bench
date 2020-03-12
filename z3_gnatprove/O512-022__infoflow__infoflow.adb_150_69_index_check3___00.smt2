@@ -506,3 +506,5 @@ Target solver: Z3
  ;; File "infoflow.adb", line 137, characters 0-0
   (not (<= (to_rep h__first) temp___540)))
 (check-sat)
+
+(exit)

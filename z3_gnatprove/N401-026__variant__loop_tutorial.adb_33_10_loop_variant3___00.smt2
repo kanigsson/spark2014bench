@@ -350,3 +350,5 @@ Target solver: Z3
   (or (< temp___160 lower3)
   (and (= lower3 temp___160) (< upper3 temp___159)))))
 (check-sat)
+
+(exit)

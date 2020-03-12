@@ -941,3 +941,5 @@ Target solver: Z3
   (not
   (= (rec__p_init__t__e (us_split_discrs1 temp___237)) y2__split_discrs)))
 (check-sat)
+
+(exit)

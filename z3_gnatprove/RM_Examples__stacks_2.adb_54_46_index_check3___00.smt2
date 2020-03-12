@@ -262,3 +262,5 @@ Target solver: Z3
  ;; File "stacks_2.ads", line 23, characters 0-0
   (not (<= 1 a_pointer)))
 (check-sat)
+
+(exit)

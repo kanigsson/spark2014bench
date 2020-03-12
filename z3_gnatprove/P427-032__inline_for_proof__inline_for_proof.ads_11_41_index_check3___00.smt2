@@ -255,3 +255,5 @@ Target solver: Z3
  ;; File "inline_for_proof.ads", line 9, characters 0-0
   (not (<= 1 i)))
 (check-sat)
+
+(exit)

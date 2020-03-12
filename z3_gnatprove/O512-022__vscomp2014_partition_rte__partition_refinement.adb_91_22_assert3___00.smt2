@@ -2438,3 +2438,5 @@ Target solver: Z3
  ;; File "partition_refinement.adb", line 16, characters 0-0
   (not (= (bool_eq8 a2 0 5 a_update 0 5) true)))
 (check-sat)
+
+(exit)

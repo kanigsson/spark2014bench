@@ -673,3 +673,5 @@ Target solver: Z3
  ;; File "test_goto_borrow.adb", line 24, characters 0-0
   (not (<= o5 (length usf3))))
 (check-sat)
+
+(exit)

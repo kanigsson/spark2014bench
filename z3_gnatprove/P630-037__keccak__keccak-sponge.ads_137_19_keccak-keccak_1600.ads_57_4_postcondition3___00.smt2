@@ -955,3 +955,5 @@ Target solver: Z3
  ;; File "keccak-sponge.ads", line 136, characters 0-0
   (not (< ada___keccak__keccak_1600__sponge__rate_of__result 1600)))
 (check-sat)
+
+(exit)

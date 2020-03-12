@@ -176,3 +176,5 @@ Target solver: Z3
  ;; File "flight_manager.adb", line 9, characters 0-0
   (not (fp.isFinite32 o)))
 (check-sat)
+
+(exit)

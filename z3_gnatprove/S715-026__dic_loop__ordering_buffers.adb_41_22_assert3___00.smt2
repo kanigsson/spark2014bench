@@ -1047,3 +1047,5 @@ Target solver: Z3
                                                                orig_first
                                                                256)))))
 (check-sat)
+
+(exit)

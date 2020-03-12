@@ -201,3 +201,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-SB07-028__ignored_DIC-19599/src/gnatprove/tokens_2__token_set.mlw", line 377, characters 5-8
   (not (in_range (+ o c))))
 (check-sat)
+
+(exit)

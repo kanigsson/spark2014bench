@@ -120,3 +120,5 @@ Target solver: Z3
  ;; File "fxp_false_check_3.adb", line 3, characters 0-0
   (not (<= 0 m)))
 (check-sat)
+
+(exit)

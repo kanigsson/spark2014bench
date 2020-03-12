@@ -602,3 +602,5 @@ Target solver: Z3
                                                                    (us_split_fieldsqtmk
                                                                    v__split_fields))))))
 (check-sat)
+
+(exit)

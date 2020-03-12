@@ -484,3 +484,5 @@ Target solver: Z3
  ;; File "test_iterable.ads", line 17, characters 0-0
   (not (in_range1 (+ position 1))))
 (check-sat)
+
+(exit)

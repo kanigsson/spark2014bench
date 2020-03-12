@@ -280,3 +280,5 @@ Target solver: Z3
  ;; File "counter.ads", line 19, characters 0-0
   (not (= (select inputs i) true)))
 (check-sat)
+
+(exit)

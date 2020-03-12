@@ -207,3 +207,5 @@ Target solver: Z3
  ;; File "ar.ads", line 8, characters 0-0
   (not (<= 1 y)))
 (check-sat)
+
+(exit)

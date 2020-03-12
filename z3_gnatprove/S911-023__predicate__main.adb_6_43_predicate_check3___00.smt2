@@ -510,3 +510,5 @@ Target solver: Z3
  ;; File "main.adb", line 2, characters 0-0
   (not (dynamic_predicate temp___242)))
 (check-sat)
+
+(exit)

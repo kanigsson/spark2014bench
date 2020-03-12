@@ -3350,3 +3350,5 @@ Target solver: Z3
   (= (has_element o20 (us_repqtmk (us_split_fieldsqtmk c__split_fields2))) true)
   (= (bool_eq (us_repqtmk (us_split_fieldsqtmk c__split_fields2)) no_element) true))))
 (check-sat)
+
+(exit)

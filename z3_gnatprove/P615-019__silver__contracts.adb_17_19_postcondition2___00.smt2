@@ -147,3 +147,5 @@ Target solver: Z3
  ;; File "contracts.adb", line 15, characters 0-0
   (not (= x u1)))
 (check-sat)
+
+(exit)

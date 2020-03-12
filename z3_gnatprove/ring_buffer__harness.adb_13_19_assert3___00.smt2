@@ -552,3 +552,5 @@ Target solver: Z3
  ;; File "harness.adb", line 3, characters 0-0
   (not (= h1 x)))
 (check-sat)
+
+(exit)

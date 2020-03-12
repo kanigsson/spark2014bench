@@ -86,3 +86,5 @@ Target solver: Z3
  ;; File "fakemain.adb", line 3, characters 0-0
   (not (<= 0 97)))
 (check-sat)
+
+(exit)

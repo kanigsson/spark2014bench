@@ -1041,3 +1041,5 @@ Target solver: Z3
  ;; File "test_arith.adb", line 3, characters 0-0
   (not (not (= y18 0))))
 (check-sat)
+
+(exit)

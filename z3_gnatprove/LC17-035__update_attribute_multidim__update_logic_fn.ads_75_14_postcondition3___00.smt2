@@ -529,3 +529,5 @@ Target solver: Z3
      (temp_____aggregate_def_289 (temp_____aggregate_def_303 1000) 5 #x07 1
      v1 x y 2 v2) 1 10 #x00 #x07 0 2) true)))
 (check-sat)
+
+(exit)

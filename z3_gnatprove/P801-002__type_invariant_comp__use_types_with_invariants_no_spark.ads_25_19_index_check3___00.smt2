@@ -495,3 +495,5 @@ Target solver: Z3
  ;; File "use_types_with_invariants_no_spark.ads", line 7, characters 0-0
   (not (<= (first1 temp___193) i)))
 (check-sat)
+
+(exit)

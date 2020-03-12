@@ -215,3 +215,5 @@ Target solver: Z3
  ;; File "cursor_location.ads", line 13, characters 0-0
   (not (= (select du_available side) true)))
 (check-sat)
+
+(exit)

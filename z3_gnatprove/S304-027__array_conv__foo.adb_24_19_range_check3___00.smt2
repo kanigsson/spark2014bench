@@ -652,3 +652,5 @@ Target solver: Z3
  ;; File "foo.adb", line 20, characters 0-0
   (not (in_range (length o2 o1))))
 (check-sat)
+
+(exit)

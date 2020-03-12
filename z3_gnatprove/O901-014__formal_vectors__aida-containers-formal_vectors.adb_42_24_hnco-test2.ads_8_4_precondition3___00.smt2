@@ -737,3 +737,5 @@ Target solver: Z3
                (rec__ada___hnco__test2__v_type_owner__vector_type_owner__vector__capacity
                o1)))))
 (check-sat)
+
+(exit)

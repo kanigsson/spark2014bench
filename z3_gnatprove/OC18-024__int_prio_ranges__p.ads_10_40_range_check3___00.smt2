@@ -170,3 +170,5 @@ Target solver: Z3
  ;; File "p.ads", line 9, characters 0-0
   (not (<= 98 (bad_interrupt_priority Tuple0))))
 (check-sat)
+
+(exit)

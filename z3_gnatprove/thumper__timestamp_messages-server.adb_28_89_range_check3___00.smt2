@@ -1732,3 +1732,5 @@ Target solver: Z3
                                                    (first1 message_imprint)
                                                    (last1 message_imprint)))) 1))))
 (check-sat)
+
+(exit)

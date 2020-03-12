@@ -337,3 +337,5 @@ Target solver: Z3
  ;; File "inrange4.ads", line 15, characters 0-0
   (not (not (= matched true))))
 (check-sat)
+
+(exit)

@@ -200,3 +200,5 @@ Target solver: Z3
  ;; File "random_numbers.ads", line 10, characters 0-0
   (not (not (= n 0))))
 (check-sat)
+
+(exit)

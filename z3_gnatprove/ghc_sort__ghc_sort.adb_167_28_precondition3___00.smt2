@@ -1225,3 +1225,5 @@ Target solver: Z3
  ;; File "ghc_sort.ads", line 52, characters 0-0
   (not (< (last1 o) 2147483646)))
 (check-sat)
+
+(exit)

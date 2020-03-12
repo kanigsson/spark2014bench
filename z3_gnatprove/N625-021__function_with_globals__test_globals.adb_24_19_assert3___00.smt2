@@ -1013,3 +1013,5 @@ Target solver: Z3
      (us_split_fieldsqtmk rs__split_fields) as__
      (us_split_fieldsqtmk rd__split_fields) ad) true)))
 (check-sat)
+
+(exit)

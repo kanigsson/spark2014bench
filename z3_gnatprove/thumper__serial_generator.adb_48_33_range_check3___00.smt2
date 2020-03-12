@@ -535,3 +535,5 @@ Target solver: Z3
  ;; File "serial_generator.ads", line 16, characters 0-0
   (not (uint_in_range (- year1 1901))))
 (check-sat)
+
+(exit)

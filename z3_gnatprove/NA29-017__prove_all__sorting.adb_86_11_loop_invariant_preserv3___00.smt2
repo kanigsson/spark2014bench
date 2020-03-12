@@ -980,3 +980,5 @@ Target solver: Z3
  ;; File "sorting.adb", line 59, characters 0-0
   (not (<= i3 length11)))
 (check-sat)
+
+(exit)

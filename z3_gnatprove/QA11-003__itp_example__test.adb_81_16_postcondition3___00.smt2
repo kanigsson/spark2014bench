@@ -189,3 +189,5 @@ Target solver: Z3
  ;; File "test.adb", line 76, characters 0-0
   (not (= (mod2 (- (* x (* x x)) x) 3) 0)))
 (check-sat)
+
+(exit)

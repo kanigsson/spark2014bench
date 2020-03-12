@@ -99,3 +99,5 @@ Target solver: Z3
  ;; File "other.ads", line 4, characters 0-0
   (not (< i1 10)))
 (check-sat)
+
+(exit)

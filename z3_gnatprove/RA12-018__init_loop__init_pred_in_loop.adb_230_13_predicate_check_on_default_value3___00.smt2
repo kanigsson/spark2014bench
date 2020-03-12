@@ -148,3 +148,5 @@ Target solver: Z3
  ;; File "init_pred_in_loop.adb", line 226, characters 0-0
   (not (= (my_false Tuple0) true)))
 (check-sat)
+
+(exit)

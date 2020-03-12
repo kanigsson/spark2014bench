@@ -93,3 +93,5 @@ Target solver: Z3
  ;; File "days.ads", line 9, characters 0-0
   (not (not (= d 6))))
 (check-sat)
+
+(exit)

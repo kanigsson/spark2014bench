@@ -237,3 +237,5 @@ Target solver: Z3
  ;; File "base.ads", line 8, characters 0-0
   (not (= (sum base__create__result) c)))
 (check-sat)
+
+(exit)

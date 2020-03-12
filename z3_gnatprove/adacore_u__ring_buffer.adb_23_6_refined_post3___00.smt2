@@ -589,3 +589,5 @@ Target solver: Z3
  ;; File "ring_buffer.ads", line 28, characters 0-0
   (not (= (get m i) (to_rep (select content (+ (- i 1) first))))))
 (check-sat)
+
+(exit)

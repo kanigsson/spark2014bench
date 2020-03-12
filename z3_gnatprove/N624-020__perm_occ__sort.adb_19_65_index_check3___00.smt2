@@ -839,3 +839,5 @@ Target solver: Z3
  ;; File "sort.adb", line 7, characters 0-0
   (not (<= (to_rep1 values__first) usf)))
 (check-sat)
+
+(exit)

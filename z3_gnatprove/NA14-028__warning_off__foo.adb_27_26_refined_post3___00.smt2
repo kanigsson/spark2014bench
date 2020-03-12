@@ -105,3 +105,5 @@ Target solver: Z3
  ;; File "foo.ads", line 12, characters 0-0
   (not (= value1 data)))
 (check-sat)
+
+(exit)

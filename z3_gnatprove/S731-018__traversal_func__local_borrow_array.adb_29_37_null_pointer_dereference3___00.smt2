@@ -1344,3 +1344,5 @@ Target solver: Z3
  ;; File "local_borrow_array.adb", line 1, characters 0-0
   (not (rec__local_borrow_array__list_acc_arr_acc__pointer_value__pred o3)))
 (check-sat)
+
+(exit)

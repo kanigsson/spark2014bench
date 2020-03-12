@@ -126,3 +126,5 @@ Target solver: Z3
  ;; File "rt.ads", line 8, characters 0-0
   (not (= (bool_eq t11 t21) true)))
 (check-sat)
+
+(exit)

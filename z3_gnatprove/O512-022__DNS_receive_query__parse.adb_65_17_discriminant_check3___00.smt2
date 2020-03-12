@@ -1627,3 +1627,5 @@ Target solver: Z3
  ;; File "parse.ads", line 15, characters 0-0
   (not (= o20 result____split_discrs)))
 (check-sat)
+
+(exit)

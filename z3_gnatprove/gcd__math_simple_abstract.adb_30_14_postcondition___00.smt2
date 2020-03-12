@@ -202,3 +202,5 @@ Target solver: Z3
  ;; File "math_simple_abstract.adb", line 26, characters 0-0
   (not (= (divides arg2 arg1) true)))
 (check-sat)
+
+(exit)

@@ -305,3 +305,5 @@ Target solver: Z3
  ;; File "search.ads", line 16, characters 0-0
   (not (= (to_rep (select (to_array table) index1)) value1)))
 (check-sat)
+
+(exit)

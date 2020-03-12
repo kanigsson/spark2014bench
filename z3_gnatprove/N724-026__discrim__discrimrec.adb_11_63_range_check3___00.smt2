@@ -1496,3 +1496,5 @@ Target solver: Z3
  ;; File "discrimrec.adb", line 8, characters 0-0
   (not (bvule ((_ zero_extend 32) #x00000000) o2)))
 (check-sat)
+
+(exit)

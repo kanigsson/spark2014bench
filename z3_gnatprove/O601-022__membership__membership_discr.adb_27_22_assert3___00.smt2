@@ -339,3 +339,5 @@ Target solver: Z3
  ;; File "membership_discr.adb", line 24, characters 0-0
   (not (= r02__attr__tag us_tag)))
 (check-sat)
+
+(exit)

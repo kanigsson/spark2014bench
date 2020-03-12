@@ -627,3 +627,5 @@ Target solver: Z3
  ;; File "main.adb", line 12, characters 0-0
   (not (<= (first1 branch__split_fields2) i1)))
 (check-sat)
+
+(exit)

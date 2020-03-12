@@ -1096,3 +1096,5 @@ Target solver: Z3
      (rec__relaxed_initialization__rec__y
      (us_split_fields1 (select obj1 idx)))) true)))
 (check-sat)
+
+(exit)

@@ -216,3 +216,5 @@ Target solver: Z3
  ;; File "safety_pack.ads", line 10, characters 0-0
   (not (fp.isFinite32 (fp.sub RNE res threshold))))
 (check-sat)
+
+(exit)

@@ -372,3 +372,5 @@ Target solver: Z3
      (rec__array_aggregates__basic_record__c
      (us_split_fields1 (select x1 3)))) 2)))
 (check-sat)
+
+(exit)

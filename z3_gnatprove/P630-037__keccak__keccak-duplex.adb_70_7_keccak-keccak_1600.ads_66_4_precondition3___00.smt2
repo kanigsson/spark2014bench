@@ -1286,3 +1286,5 @@ Target solver: Z3
  ;; File "keccak-duplex.ads", line 115, characters 0-0
   (not (<= o12 1600)))
 (check-sat)
+
+(exit)

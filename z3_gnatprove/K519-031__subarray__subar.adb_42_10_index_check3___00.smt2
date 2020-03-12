@@ -451,3 +451,5 @@ Target solver: Z3
  ;; File "subar.ads", line 27, characters 0-0
   (not (<= (to_rep1 z__first) x)))
 (check-sat)
+
+(exit)

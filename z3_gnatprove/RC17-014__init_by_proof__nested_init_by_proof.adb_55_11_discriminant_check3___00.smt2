@@ -431,3 +431,5 @@ Target solver: Z3
   (not (nested_init_by_proof__rec__f3__pred
   (us_repqtmk (us_split_discrsqtmk x__split_discrs) x__split_fields))))
 (check-sat)
+
+(exit)

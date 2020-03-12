@@ -189,3 +189,5 @@ Target solver: Z3
  ;; File "user_lemma.ads", line 3, characters 0-0
   (not (not (= usf 0))))
 (check-sat)
+
+(exit)

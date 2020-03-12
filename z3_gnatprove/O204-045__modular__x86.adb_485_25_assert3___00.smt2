@@ -544,3 +544,5 @@ Target solver: Z3
  ;; File "x86.ads", line 485, characters 0-0
   (not (not (= (ecx rcx1) #x00000000))))
 (check-sat)
+
+(exit)

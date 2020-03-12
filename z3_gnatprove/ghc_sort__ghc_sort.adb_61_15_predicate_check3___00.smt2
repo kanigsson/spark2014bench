@@ -417,3 +417,5 @@ Target solver: Z3
  ;; File "ghc_sort.ads", line 36, characters 0-0
   (not (dynamic_predicate2 temp___501)))
 (check-sat)
+
+(exit)

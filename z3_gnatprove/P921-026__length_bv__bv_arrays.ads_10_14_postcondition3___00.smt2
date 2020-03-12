@@ -462,3 +462,5 @@ Target solver: Z3
  ;; File "bv_arrays.ads", line 9, characters 0-0
   (not (= (first1 bv_arrays__create__result) #x0000)))
 (check-sat)
+
+(exit)

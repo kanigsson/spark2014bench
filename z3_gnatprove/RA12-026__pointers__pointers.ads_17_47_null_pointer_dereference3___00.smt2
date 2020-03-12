@@ -475,3 +475,5 @@ Target solver: Z3
  ;; File "pointers.ads", line 15, characters 0-0
   (not (rec__pointers__t_ptr__pointer_value__pred o6)))
 (check-sat)
+
+(exit)

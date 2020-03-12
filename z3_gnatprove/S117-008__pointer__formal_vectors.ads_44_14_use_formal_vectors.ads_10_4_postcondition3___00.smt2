@@ -1249,3 +1249,5 @@ Target solver: Z3
   (not
   (= (model1 use_formal_vectors__my_vect__element__result) (get (model3 v) i))))
 (check-sat)
+
+(exit)

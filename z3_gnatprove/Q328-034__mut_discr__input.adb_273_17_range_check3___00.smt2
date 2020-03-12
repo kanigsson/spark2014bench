@@ -879,3 +879,5 @@ Target solver: Z3
   (not (in_range3
   (- (+ o9 (+ (length o8 o7) (length (first1 temp___257) (last1 temp___257)))) 1))))
 (check-sat)
+
+(exit)

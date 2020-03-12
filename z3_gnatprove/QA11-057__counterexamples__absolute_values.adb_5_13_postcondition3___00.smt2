@@ -115,3 +115,5 @@ Target solver: Z3
  ;; File "absolute_values.adb", line 1, characters 0-0
   (not (= absolute_value__result (abs1 x))))
 (check-sat)
+
+(exit)

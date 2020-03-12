@@ -891,3 +891,5 @@ Target solver: Z3
  ;; File "ghc_sort.adb", line 134, characters 0-0
   (not (in_range (+ o10 o8))))
 (check-sat)
+
+(exit)

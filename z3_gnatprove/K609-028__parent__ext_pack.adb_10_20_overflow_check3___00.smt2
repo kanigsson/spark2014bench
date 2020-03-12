@@ -106,3 +106,5 @@ Target solver: Z3
  ;; File "ext_pack.ads", line 8, characters 0-0
   (not (in_range (+ step 1))))
 (check-sat)
+
+(exit)

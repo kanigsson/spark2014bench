@@ -1558,3 +1558,5 @@ Target solver: Z3
   (= (distinct 1 0) (rec__dynamic_array__rec__b
                     (us_split_discrs1 temp___236)))))
 (check-sat)
+
+(exit)

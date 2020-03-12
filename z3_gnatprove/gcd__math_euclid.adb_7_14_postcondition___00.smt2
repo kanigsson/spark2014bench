@@ -218,3 +218,5 @@ Target solver: Z3
  ;; File "math_euclid.adb", line 3, characters 0-0
   (not (= (divides x (mod2 a b)) true)))
 (check-sat)
+
+(exit)

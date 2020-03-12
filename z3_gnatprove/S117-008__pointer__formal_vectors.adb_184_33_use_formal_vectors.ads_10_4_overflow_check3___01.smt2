@@ -1790,3 +1790,5 @@ Target solver: Z3
  ;; File "formal_vectors.ads", line 36, characters 0-0
   (not (in_range1 o9)))
 (check-sat)
+
+(exit)

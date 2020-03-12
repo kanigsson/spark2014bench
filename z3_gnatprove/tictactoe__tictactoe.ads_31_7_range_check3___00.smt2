@@ -532,3 +532,5 @@ Target solver: Z3
  ;; File "tictactoe.ads", line 30, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

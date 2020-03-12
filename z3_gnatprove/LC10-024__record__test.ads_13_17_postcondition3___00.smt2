@@ -573,3 +573,5 @@ Target solver: Z3
                                                     (us_repqtmk
                                                     s__split_fields1)))))
 (check-sat)
+
+(exit)

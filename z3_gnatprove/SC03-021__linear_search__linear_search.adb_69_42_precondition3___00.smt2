@@ -989,3 +989,5 @@ Target solver: Z3
  ;; File "linear_search.adb", line 66, characters 0-0
   (not (<= usf (length o3))))
 (check-sat)
+
+(exit)

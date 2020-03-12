@@ -99,3 +99,5 @@ Target solver: Z3
  ;; File "len.ads", line 1, characters 0-0
   (not (= (length 1 last) 0)))
 (check-sat)
+
+(exit)

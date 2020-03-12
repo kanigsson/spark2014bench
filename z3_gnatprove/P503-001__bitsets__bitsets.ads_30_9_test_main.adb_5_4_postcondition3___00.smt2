@@ -241,3 +241,5 @@ Target solver: Z3
   (=> (forall ((elt1 Int)) (mem__function_guard (mem b elt1) b elt1))
   (= (mem b elt) true)))))
 (check-sat)
+
+(exit)

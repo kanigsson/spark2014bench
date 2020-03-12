@@ -529,3 +529,5 @@ Target solver: Z3
  ;; File "p.adb", line 1, characters 0-0
   (not (not (= (to_rep (select my_s23 2)) 2))))
 (check-sat)
+
+(exit)

@@ -1519,3 +1519,5 @@ Target solver: Z3
  ;; File "a-cfhama.ads", line 714, characters 0-0
   (not (= (has_key o3 position) true)))
 (check-sat)
+
+(exit)

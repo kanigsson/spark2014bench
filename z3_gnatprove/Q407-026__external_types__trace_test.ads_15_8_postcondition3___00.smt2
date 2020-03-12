@@ -320,3 +320,5 @@ Target solver: Z3
  ;; File "trace_test.ads", line 10, characters 0-0
   (not (= (element trace2 c) (+ (element trace2 (previous trace2 c)) 1))))
 (check-sat)
+
+(exit)

@@ -174,3 +174,5 @@ Target solver: Z3
                                              temp___199))) #x01)
                      (bvsub temp___200 #xE6) temp___200)))))
 (check-sat)
+
+(exit)

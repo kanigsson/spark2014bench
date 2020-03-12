@@ -1425,3 +1425,5 @@ Target solver: Z3
  ;; File "linted-update.ads", line 40, characters 0-0
   (not (uint_in_range1 o4)))
 (check-sat)
+
+(exit)

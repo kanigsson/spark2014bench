@@ -489,3 +489,5 @@ Target solver: Z3
  ;; File "prime_and_coprime_numbers.ads", line 60, characters 0-0
   (not (in_range2 right1)))
 (check-sat)
+
+(exit)

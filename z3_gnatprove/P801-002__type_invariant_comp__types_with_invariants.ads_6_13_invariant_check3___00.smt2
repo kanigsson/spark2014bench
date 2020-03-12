@@ -599,3 +599,5 @@ Target solver: Z3
  ;; File "types_with_invariants.ads", line 6, characters 0-0
   (not (type_invariant (us_repqtmk types_with_invariants__get__result))))
 (check-sat)
+
+(exit)

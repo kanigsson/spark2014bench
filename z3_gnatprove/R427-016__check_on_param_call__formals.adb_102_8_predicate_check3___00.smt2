@@ -724,3 +724,5 @@ Target solver: Z3
   (or (and (<= (- 10) formals__p2__2__a2) (<= formals__p2__2__a2 (- 1)))
   (and (<= 1 formals__p2__2__a2) (<= formals__p2__2__a2 10)))))
 (check-sat)
+
+(exit)

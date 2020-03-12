@@ -203,3 +203,5 @@ Target solver: Z3
  ;; File "misc.ads", line 5, characters 0-0
   (not (= g2 true)))
 (check-sat)
+
+(exit)

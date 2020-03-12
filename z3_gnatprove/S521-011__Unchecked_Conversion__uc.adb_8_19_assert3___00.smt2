@@ -225,3 +225,5 @@ Target solver: Z3
  ;; File "uc.adb", line 3, characters 0-0
   (not (= object__size 32)))
 (check-sat)
+
+(exit)

@@ -475,3 +475,5 @@ Target solver: Z3
   (= d2__split_discrs (rec__private_discr__p_with_default__c
                       (us_split_discrs1 h__split_fields1)))))
 (check-sat)
+
+(exit)

@@ -431,3 +431,5 @@ Target solver: Z3
  ;; File "member.adb", line 10, characters 0-0
   (not (= (first1 temp___244) 1)))
 (check-sat)
+
+(exit)

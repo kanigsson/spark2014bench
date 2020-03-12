@@ -232,3 +232,5 @@ Target solver: Z3
  ;; File "data.ads", line 11, characters 0-0
   (not (not (= (select x1 i10) true))))
 (check-sat)
+
+(exit)

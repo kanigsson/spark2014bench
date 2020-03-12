@@ -300,3 +300,5 @@ Target solver: Z3
  ;; File "fxp_div2.adb", line 1, characters 0-0
   (not (not (= 2 0))))
 (check-sat)
+
+(exit)

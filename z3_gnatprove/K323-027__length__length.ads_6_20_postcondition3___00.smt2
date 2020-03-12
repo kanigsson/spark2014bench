@@ -189,3 +189,5 @@ Target solver: Z3
  ;; File "length.ads", line 5, characters 0-0
   (not (= length__f__result true)))
 (check-sat)
+
+(exit)

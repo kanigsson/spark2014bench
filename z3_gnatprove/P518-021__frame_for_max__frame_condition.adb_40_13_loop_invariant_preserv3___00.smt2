@@ -800,3 +800,5 @@ Target solver: Z3
       (rec__frame_condition__cell__value (us_split_fields1 (select a5 i)))) 
   max6)))
 (check-sat)
+
+(exit)

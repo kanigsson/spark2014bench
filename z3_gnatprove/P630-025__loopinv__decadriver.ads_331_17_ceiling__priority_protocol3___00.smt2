@@ -3620,3 +3620,5 @@ Target solver: Z3
  ;; File "decadriver.ads", line 331, characters 0-0
   (not (<= 98 98)))
 (check-sat)
+
+(exit)

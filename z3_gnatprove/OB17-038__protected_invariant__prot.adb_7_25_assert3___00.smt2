@@ -263,3 +263,5 @@ Target solver: Z3
  ;; File "prot.ads", line 10, characters 0-0
   (not (<= 0 (to_rep self__))))
 (check-sat)
+
+(exit)

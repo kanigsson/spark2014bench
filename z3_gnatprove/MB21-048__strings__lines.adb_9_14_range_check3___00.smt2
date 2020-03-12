@@ -387,3 +387,5 @@ Target solver: Z3
  ;; File "lines.ads", line 3, characters 0-0
   (not (<= (first1 s) 1)))
 (check-sat)
+
+(exit)

@@ -943,3 +943,5 @@ Target solver: Z3
  ;; File "network-addresses.ads", line 37, characters 0-0
   (not (bvule #x00 value4)))
 (check-sat)
+
+(exit)

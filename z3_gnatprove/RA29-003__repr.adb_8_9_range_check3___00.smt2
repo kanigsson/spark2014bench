@@ -534,3 +534,5 @@ Target solver: Z3
  ;; File "repr.ads", line 10, characters 0-0
   (not (bvuge (to_rep1 a__first) #x0000000000000000)))
 (check-sat)
+
+(exit)

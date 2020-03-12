@@ -71,3 +71,5 @@ Target solver: Z3
  ;; File "interfering_volatile_attribute.ads", line 3, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

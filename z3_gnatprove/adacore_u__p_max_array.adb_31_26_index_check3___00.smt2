@@ -543,3 +543,5 @@ Target solver: Z3
  ;; File "p_max_array.ads", line 8, characters 0-0
   (not (<= (to_rep1 r__first) usf)))
 (check-sat)
+
+(exit)

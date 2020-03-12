@@ -634,3 +634,5 @@ Target solver: Z3
   (= (bool_eq3 (owned_transition (us_repqtmk2 self__split_fields1)) 0 100
      val__ 0 100) true)))
 (check-sat)
+
+(exit)

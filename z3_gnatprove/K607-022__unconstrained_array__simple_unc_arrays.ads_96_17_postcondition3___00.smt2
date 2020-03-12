@@ -548,3 +548,5 @@ Target solver: Z3
                                                                a__split_fields2) (+ 
                                                        j 1))))))
 (check-sat)
+
+(exit)

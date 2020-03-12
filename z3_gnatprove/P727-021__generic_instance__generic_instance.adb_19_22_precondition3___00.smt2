@@ -240,3 +240,5 @@ Target solver: Z3
  ;; File "generic_instance.ads", line 25, characters 0-0
   (not (= (is_valid o1) true)))
 (check-sat)
+
+(exit)

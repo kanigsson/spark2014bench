@@ -665,3 +665,5 @@ Target solver: Z3
      (of_array temp___loop_entry_281 (to_rep a__first) (to_rep a__last))
      (of_array a3 (to_rep a__first) (to_rep a__last)) a_first length2) true)))
 (check-sat)
+
+(exit)

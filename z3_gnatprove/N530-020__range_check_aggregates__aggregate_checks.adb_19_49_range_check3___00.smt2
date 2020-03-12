@@ -468,3 +468,5 @@ Target solver: Z3
  ;; File "aggregate_checks.ads", line 6, characters 0-0
   (not (dynamic_property1 first2 last2 0)))
 (check-sat)
+
+(exit)

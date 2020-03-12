@@ -288,3 +288,5 @@ Target solver: Z3
  ;; File "ghost_legal.ads", line 7, characters 0-0
   (not (<= 2 temp3)))
 (check-sat)
+
+(exit)

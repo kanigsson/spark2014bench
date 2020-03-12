@@ -153,3 +153,5 @@ Target solver: Z3
  ;; File "enums.adb", line 159, characters 0-0
   (not (= enums__next_a__result 4)))
 (check-sat)
+
+(exit)

@@ -2090,3 +2090,5 @@ Target solver: Z3
   (= (rec__tagged_discr__t__discr (us_split_discrs1 r12b)) (rec__tagged_discr__t__discr
                                                            v__split_discrs))))
 (check-sat)
+
+(exit)

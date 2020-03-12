@@ -1758,3 +1758,5 @@ Target solver: Z3
  ;; File "tetris_integrity.ads", line 157, characters 0-0
   (not (<= 3 temp___788)))
 (check-sat)
+
+(exit)

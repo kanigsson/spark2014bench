@@ -517,3 +517,5 @@ Target solver: Z3
  ;; File "counterexamples.adb", line 51, characters 0-0
   (not (<= (first1 a__pointer_value) c)))
 (check-sat)
+
+(exit)

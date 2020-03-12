@@ -1755,3 +1755,5 @@ Target solver: Z3
  ;; File "test.ads", line 80, characters 0-0
   (not (not (= (os_mbx_is_empty o7 os_task_mbx_rw) true))))
 (check-sat)
+
+(exit)

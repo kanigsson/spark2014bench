@@ -622,3 +622,5 @@ Target solver: Z3
  ;; File "formals_arr_split.adb", line 1, characters 0-0
   (not (<= 0 y)))
 (check-sat)
+
+(exit)

@@ -144,3 +144,5 @@ Target solver: Z3
  ;; File "refined_global_legal.ads", line 6, characters 0-0
   (not (in_range o2)))
 (check-sat)
+
+(exit)

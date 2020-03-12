@@ -277,3 +277,5 @@ Target solver: Z3
  ;; File "init_in_loop.adb", line 1, characters 0-0
   (not (= i j)))
 (check-sat)
+
+(exit)

@@ -355,3 +355,5 @@ Target solver: Z3
  ;; File "p.adb", line 6, characters 0-0
   (not (<= (to_rep1 a__first) i)))
 (check-sat)
+
+(exit)

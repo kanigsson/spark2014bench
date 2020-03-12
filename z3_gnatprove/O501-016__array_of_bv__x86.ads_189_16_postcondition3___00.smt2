@@ -222,3 +222,5 @@ Target solver: Z3
   (not
   (= x86__ebx__result ((_ extract 31 0) (bvand rbx #x00000000FFFFFFFF)))))
 (check-sat)
+
+(exit)

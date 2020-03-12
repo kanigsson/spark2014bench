@@ -293,3 +293,5 @@ Target solver: Z3
  ;; File "counter.ads", line 19, characters 0-0
   (not (in_range1 o1)))
 (check-sat)
+
+(exit)

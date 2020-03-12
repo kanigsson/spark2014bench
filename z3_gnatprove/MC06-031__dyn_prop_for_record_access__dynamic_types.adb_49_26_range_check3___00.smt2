@@ -783,3 +783,5 @@ Target solver: Z3
  ;; File "dynamic_types.ads", line 4, characters 0-0
   (not (dynamic_property1 o5 o4 o3)))
 (check-sat)
+
+(exit)

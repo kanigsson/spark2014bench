@@ -577,3 +577,5 @@ Target solver: Z3
   (< 0 (compare x (to_rep x__first) (to_rep x__last) y (to_rep y__first)
        (to_rep y__last)))))
 (check-sat)
+
+(exit)

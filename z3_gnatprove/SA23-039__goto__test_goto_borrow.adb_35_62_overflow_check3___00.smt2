@@ -611,3 +611,5 @@ Target solver: Z3
  ;; File "test_goto_borrow.adb", line 24, characters 0-0
   (not (in_range1 o2)))
 (check-sat)
+
+(exit)

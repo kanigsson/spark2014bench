@@ -509,3 +509,5 @@ Target solver: Z3
  ;; File "main.adb", line 3, characters 0-0
   (not (= (lcp 1 6 a1) 5)))
 (check-sat)
+
+(exit)

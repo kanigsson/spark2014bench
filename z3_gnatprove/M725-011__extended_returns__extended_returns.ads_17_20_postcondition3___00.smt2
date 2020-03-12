@@ -592,3 +592,5 @@ Target solver: Z3
      (rec__extended_returns__record_t__a
      (us_split_fields1 extended_returns__init__result))) init_val)))
 (check-sat)
+
+(exit)

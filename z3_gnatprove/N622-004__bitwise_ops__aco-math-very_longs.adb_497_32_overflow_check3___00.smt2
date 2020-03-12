@@ -1293,3 +1293,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.adb", line 481, characters 0-0
   (not (in_range2 o8)))
 (check-sat)
+
+(exit)

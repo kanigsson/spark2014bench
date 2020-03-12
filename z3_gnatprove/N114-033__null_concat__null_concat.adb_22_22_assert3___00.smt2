@@ -439,3 +439,5 @@ Target solver: Z3
  ;; File "null_concat.ads", line 8, characters 0-0
   (not (= (to_rep (select (to_array a3) 1)) 2)))
 (check-sat)
+
+(exit)

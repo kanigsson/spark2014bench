@@ -158,3 +158,5 @@ Target solver: Z3
  ;; File "biaseddivide.ads", line 16, characters 0-0
   (not (fp.isFinite64 o1)))
 (check-sat)
+
+(exit)

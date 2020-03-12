@@ -689,3 +689,5 @@ Target solver: Z3
  ;; File "test_failsafe.adb", line 3, characters 0-0
   (not (= (is_valid battery_level_at4 current_time7 counter4) true)))
 (check-sat)
+
+(exit)

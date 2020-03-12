@@ -901,3 +901,5 @@ Target solver: Z3
   (us_split_fieldsqtmk rliteral (temp_____aggregate_def_407 #x00) o
   (distinct 0 0))))))
 (check-sat)
+
+(exit)

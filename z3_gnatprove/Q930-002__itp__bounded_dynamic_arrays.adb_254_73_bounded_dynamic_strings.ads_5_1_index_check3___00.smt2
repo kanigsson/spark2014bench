@@ -722,3 +722,5 @@ Target solver: Z3
  ;; File "bounded_dynamic_arrays.ads", line 193, characters 0-0
   (not (<= (first1 temp___1834) usf)))
 (check-sat)
+
+(exit)

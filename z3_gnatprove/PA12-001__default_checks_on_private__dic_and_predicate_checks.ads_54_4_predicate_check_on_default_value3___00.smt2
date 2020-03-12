@@ -705,3 +705,5 @@ Target solver: Z3
  ;; File "dic_and_predicate_checks.ads", line 1, characters 0-0
   (not (dynamic_predicate1 usf1)))
 (check-sat)
+
+(exit)

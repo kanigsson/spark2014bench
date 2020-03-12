@@ -882,3 +882,5 @@ Target solver: Z3
   (= (to_rep (rec__messages__message__size high_level__split_fields3)) 
   usf)))
 (check-sat)
+
+(exit)

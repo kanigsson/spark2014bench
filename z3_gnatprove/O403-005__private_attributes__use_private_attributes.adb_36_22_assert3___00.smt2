@@ -1171,3 +1171,5 @@ Target solver: Z3
  ;; File "use_private_attributes.ads", line 8, characters 0-0
   (not (= (get_f2 (us_repqtmk3 p__split_fields p__attr__tag)) 0)))
 (check-sat)
+
+(exit)

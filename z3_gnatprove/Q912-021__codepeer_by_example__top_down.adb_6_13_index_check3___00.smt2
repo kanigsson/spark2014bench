@@ -192,3 +192,5 @@ Target solver: Z3
  ;; File "top_down.adb", line 4, characters 0-0
   (not (<= 1 x)))
 (check-sat)
+
+(exit)

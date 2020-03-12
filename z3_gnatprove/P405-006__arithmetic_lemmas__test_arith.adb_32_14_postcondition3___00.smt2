@@ -165,3 +165,5 @@ Target solver: Z3
  ;; File "test_arith.adb", line 31, characters 0-0
   (not (or (= x 0) (= y 0))))
 (check-sat)
+
+(exit)

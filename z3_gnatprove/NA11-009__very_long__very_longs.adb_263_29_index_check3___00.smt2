@@ -1049,3 +1049,5 @@ Target solver: Z3
  ;; File "very_longs.ads", line 49, characters 0-0
   (not (<= (first1 result____split_fields2) i1)))
 (check-sat)
+
+(exit)

@@ -80,3 +80,5 @@ Target solver: Z3
  ;; File "refined_post_illegal_2.ads", line 17, characters 0-0
   (not (not (= temp true))))
 (check-sat)
+
+(exit)

@@ -437,3 +437,5 @@ Target solver: Z3
  ;; File "fp_test_mult.ads", line 15, characters 0-0
   (not (in_range7 (abs1 v1))))
 (check-sat)
+
+(exit)

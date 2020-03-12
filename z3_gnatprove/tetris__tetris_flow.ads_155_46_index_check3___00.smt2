@@ -1926,3 +1926,5 @@ Target solver: Z3
  ;; File "tetris_flow.ads", line 144, characters 0-0
   (not (<= 3 temp___756)))
 (check-sat)
+
+(exit)

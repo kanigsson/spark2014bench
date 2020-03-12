@@ -499,3 +499,5 @@ Target solver: Z3
  ;; File "test_prime_and_coprime_numbers.adb", line 3, characters 0-0
   (not (<= 2 2000)))
 (check-sat)
+
+(exit)

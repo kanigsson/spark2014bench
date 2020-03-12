@@ -423,3 +423,5 @@ Target solver: Z3
  ;; File "fraction_fixed.ads", line 19, characters 0-0
   (not (= zint1 1)))
 (check-sat)
+
+(exit)

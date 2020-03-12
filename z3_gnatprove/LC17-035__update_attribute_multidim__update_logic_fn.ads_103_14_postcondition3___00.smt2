@@ -435,3 +435,5 @@ Target solver: Z3
  ;; File "update_logic_fn.ads", line 97, characters 0-0
   (not (= (to_rep (get a3 5 #x07)) v2)))
 (check-sat)
+
+(exit)

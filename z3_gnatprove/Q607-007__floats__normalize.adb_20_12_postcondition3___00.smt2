@@ -152,3 +152,5 @@ Target solver: Z3
  ;; File "normalize.adb", line 17, characters 0-0
   (not (fp.eq normalize__r4__result (fp.roundToIntegral RTN x))))
 (check-sat)
+
+(exit)

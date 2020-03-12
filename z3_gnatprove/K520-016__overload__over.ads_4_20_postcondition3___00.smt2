@@ -99,3 +99,5 @@ Target solver: Z3
  ;; File "over.ads", line 3, characters 0-0
   (not (= over__f__result x)))
 (check-sat)
+
+(exit)

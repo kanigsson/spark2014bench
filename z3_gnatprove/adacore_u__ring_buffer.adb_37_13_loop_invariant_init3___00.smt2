@@ -758,3 +758,5 @@ Target solver: Z3
  ;; File "ring_buffer.ads", line 30, characters 0-0
   (not (= (to_rep (select content i)) (get r (+ (- i first) 1)))))
 (check-sat)
+
+(exit)

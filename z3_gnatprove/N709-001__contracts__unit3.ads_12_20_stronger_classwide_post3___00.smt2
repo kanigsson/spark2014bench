@@ -626,3 +626,5 @@ Target solver: Z3
  ;; File "unit3.ads", line 11, characters 0-0
   (not (= (is_zero (us_repqtmk2 x__split_fields1 x__attr__tag)) true)))
 (check-sat)
+
+(exit)

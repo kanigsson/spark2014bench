@@ -1756,3 +1756,5 @@ Target solver: Z3
  ;; File "decadriver.ads", line 242, characters 0-0
   (not (= temp___1068 false)))
 (check-sat)
+
+(exit)

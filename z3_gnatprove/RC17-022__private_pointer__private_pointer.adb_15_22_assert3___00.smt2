@@ -440,3 +440,5 @@ Target solver: Z3
      (us_repqtmk x_4__is_null_pointer3 x_4__pointer_address3
      x_4__pointer_value3)) 6)))
 (check-sat)
+
+(exit)

@@ -383,3 +383,5 @@ Target solver: Z3
  ;; File "polyorb_hi-messages.ads", line 67, characters 0-0
   (not (uint_in_range o)))
 (check-sat)
+
+(exit)

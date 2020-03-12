@@ -176,3 +176,5 @@ Target solver: Z3
  ;; File "term.ads", line 15, characters 0-0
   (not (<= 0 c)))
 (check-sat)
+
+(exit)

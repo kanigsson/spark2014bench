@@ -366,3 +366,5 @@ Target solver: Z3
  ;; File "sorters.adb", line 5, characters 0-0
   (not (= (to_rep (select values3 x)) (to_rep (select values1 y)))))
 (check-sat)
+
+(exit)

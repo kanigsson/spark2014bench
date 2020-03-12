@@ -665,3 +665,5 @@ Target solver: Z3
  ;; File "init_by_proof.adb", line 2, characters 0-0
   (not (= (attr__init (select buf2 temp___284)) true)))
 (check-sat)
+
+(exit)

@@ -372,3 +372,5 @@ Target solver: Z3
  ;; File "do_checks.adb", line 221, characters 0-0
   (not (<= (to_rep x__first) (to_rep x__last))))
 (check-sat)
+
+(exit)

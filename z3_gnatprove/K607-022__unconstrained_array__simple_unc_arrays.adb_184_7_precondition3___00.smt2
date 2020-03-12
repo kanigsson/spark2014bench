@@ -528,3 +528,5 @@ Target solver: Z3
  ;; File "simple_unc_arrays.ads", line 95, characters 0-0
   (not (or (= tmp 0) (<= 1 tmp))))
 (check-sat)
+
+(exit)

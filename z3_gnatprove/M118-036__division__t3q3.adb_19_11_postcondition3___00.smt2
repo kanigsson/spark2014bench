@@ -157,3 +157,5 @@ Target solver: Z3
  ;; File "t3q3.adb", line 16, characters 0-0
   (not (= k1 (* i j))))
 (check-sat)
+
+(exit)

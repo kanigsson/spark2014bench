@@ -2059,3 +2059,5 @@ Target solver: Z3
  ;; File "tagged_discr.ads", line 22, characters 0-0
   (not (= o (rec__tagged_discr__t__discr v__split_discrs))))
 (check-sat)
+
+(exit)

@@ -674,3 +674,5 @@ Target solver: Z3
                                                                 arg__split_fields2
                                                                 arg__attr__tag)))))
 (check-sat)
+
+(exit)

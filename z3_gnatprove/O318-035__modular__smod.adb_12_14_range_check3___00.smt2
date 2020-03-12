@@ -285,3 +285,5 @@ Target solver: Z3
  ;; File "smod.adb", line 4, characters 0-0
   (not (dynamic_property_int (bv2int first) (bv2int last) v)))
 (check-sat)
+
+(exit)

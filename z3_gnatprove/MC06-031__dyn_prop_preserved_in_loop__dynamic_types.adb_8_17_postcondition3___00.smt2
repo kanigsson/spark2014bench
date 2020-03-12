@@ -425,3 +425,5 @@ Target solver: Z3
   (and (and (<= (first1 a) result__1) (<= result__1 (last1 a)))
   (= (to_rep (select (to_array a) result__1)) c)))))
 (check-sat)
+
+(exit)

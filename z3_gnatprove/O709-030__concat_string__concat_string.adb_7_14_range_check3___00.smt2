@@ -539,3 +539,5 @@ Target solver: Z3
  ;; File "concat_string.adb", line 1, characters 0-0
   (not (in_range1 (- (+ o7 (+ (length o6 o5) (length o4 o3))) 1))))
 (check-sat)
+
+(exit)

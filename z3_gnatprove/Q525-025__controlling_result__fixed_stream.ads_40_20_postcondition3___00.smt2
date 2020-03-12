@@ -1082,3 +1082,5 @@ Target solver: Z3
  ;; File "fixed_stream.ads", line 38, characters 0-0
   (not (= (length1 fixed_stream__convert__result) (elements this))))
 (check-sat)
+
+(exit)

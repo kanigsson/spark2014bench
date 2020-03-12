@@ -1876,3 +1876,5 @@ Target solver: Z3
  ;; File "keccak-sponge.ads", line 222, characters 0-0
   (not (<= (length (to_rep o33) (to_rep o32)) 200)))
 (check-sat)
+
+(exit)

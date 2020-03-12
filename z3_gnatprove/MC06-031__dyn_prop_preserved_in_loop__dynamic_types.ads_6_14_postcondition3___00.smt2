@@ -438,3 +438,5 @@ Target solver: Z3
   (<= dynamic_types__search__result1 (last1 a)))
   (= (to_rep (select (to_array a) dynamic_types__search__result1)) c)))))
 (check-sat)
+
+(exit)

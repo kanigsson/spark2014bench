@@ -153,3 +153,5 @@ Target solver: Z3
  ;; File "nano.ads", line 2, characters 0-0
   (not (<= 1 temp___158)))
 (check-sat)
+
+(exit)

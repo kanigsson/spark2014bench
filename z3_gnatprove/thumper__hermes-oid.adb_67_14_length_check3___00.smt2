@@ -809,3 +809,5 @@ Target solver: Z3
  ;; File "hermes-oid.ads", line 38, characters 0-0
   (not (<= (to_rep result____first) (to_rep result____last))))
 (check-sat)
+
+(exit)

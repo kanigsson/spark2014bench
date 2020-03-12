@@ -2427,3 +2427,5 @@ Target solver: Z3
               (us_split_fields1
               (rec__psu_monitoring__monitor_t__config monitor__split_fields2)))) (fp #b0 #b00000000 #b00000000000000000000000)))))
 (check-sat)
+
+(exit)

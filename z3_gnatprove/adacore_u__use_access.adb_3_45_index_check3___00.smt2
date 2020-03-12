@@ -442,3 +442,5 @@ Target solver: Z3
  ;; File "use_access.ads", line 4, characters 0-0
   (not (<= (first1 w) temp___194)))
 (check-sat)
+
+(exit)

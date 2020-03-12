@@ -701,3 +701,5 @@ Target solver: Z3
  ;; File "cubedos-lib-xdr.ads", line 177, characters 0-0
   (not (= last3 (+ position 3))))
 (check-sat)
+
+(exit)

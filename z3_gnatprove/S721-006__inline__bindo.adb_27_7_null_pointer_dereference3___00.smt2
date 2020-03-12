@@ -373,3 +373,5 @@ Target solver: Z3
   (us_repqtmk1 g__is_null_pointer g__pointer_address
   (us_repqtmk (us_split_fieldsqtmk g__pointer_value))))))
 (check-sat)
+
+(exit)

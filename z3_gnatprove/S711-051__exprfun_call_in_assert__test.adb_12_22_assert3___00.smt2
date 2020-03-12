@@ -517,3 +517,5 @@ Target solver: Z3
   (not
   (= (to_rep (rec__test__context_type__field context__split_fields2)) 1)))
 (check-sat)
+
+(exit)

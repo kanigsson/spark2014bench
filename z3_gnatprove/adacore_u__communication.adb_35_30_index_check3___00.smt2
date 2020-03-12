@@ -639,3 +639,5 @@ Target solver: Z3
  ;; File "communication.ads", line 18, characters 0-0
   (not (<= (first1 temp___288) temp___289)))
 (check-sat)
+
+(exit)

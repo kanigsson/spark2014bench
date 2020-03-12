@@ -92,3 +92,5 @@ Target solver: Z3
  ;; File "misovattr.ads", line 7, characters 0-0
   (not (< (- a 1) a)))
 (check-sat)
+
+(exit)

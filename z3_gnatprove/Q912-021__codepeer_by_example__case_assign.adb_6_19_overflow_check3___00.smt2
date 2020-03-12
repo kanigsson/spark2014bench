@@ -141,3 +141,5 @@ Target solver: Z3
  ;; File "case_assign.ads", line 3, characters 0-0
   (not (in_range (+ y 1))))
 (check-sat)
+
+(exit)

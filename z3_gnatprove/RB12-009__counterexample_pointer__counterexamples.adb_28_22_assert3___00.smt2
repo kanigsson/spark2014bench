@@ -221,3 +221,5 @@ Target solver: Z3
  ;; File "counterexamples.adb", line 25, characters 0-0
   (not (<= c (to_rep y__pointer_value))))
 (check-sat)
+
+(exit)

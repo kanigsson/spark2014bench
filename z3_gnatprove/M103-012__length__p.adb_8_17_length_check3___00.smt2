@@ -264,3 +264,5 @@ Target solver: Z3
  ;; File "p.adb", line 7, characters 0-0
   (not (<= 1 10)))
 (check-sat)
+
+(exit)

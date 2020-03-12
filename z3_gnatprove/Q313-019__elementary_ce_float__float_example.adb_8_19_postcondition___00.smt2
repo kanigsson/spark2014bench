@@ -167,3 +167,5 @@ Target solver: Z3
  ;; File "float_example.adb", line 7, characters 0-0
   (not (fp.eq float_example__minus_i__result (fp.add RNE a b))))
 (check-sat)
+
+(exit)

@@ -1029,3 +1029,5 @@ Target solver: Z3
  ;; File "amortized_queue.ads", line 27, characters 0-0
   (not (= (length amortized_queue__Oconcat__3__result) (+ (length left) 1))))
 (check-sat)
+
+(exit)

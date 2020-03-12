@@ -98,3 +98,5 @@ Target solver: Z3
  ;; File "double_list.ads", line 31, characters 0-0
   (not (= list_handler__integer_list__size__result count)))
 (check-sat)
+
+(exit)

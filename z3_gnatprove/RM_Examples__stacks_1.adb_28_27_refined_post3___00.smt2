@@ -403,3 +403,5 @@ Target solver: Z3
   (= (to_rep (rec__stacks_1__stack_type__pointer s__split_fields1)) (- 
   usf 1))))
 (check-sat)
+
+(exit)

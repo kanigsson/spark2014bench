@@ -328,3 +328,5 @@ Target solver: Z3
  ;; File "list_borrow.adb", line 8, characters 0-0
   (not (rec__list_borrow__list__pointer_value__pred x)))
 (check-sat)
+
+(exit)

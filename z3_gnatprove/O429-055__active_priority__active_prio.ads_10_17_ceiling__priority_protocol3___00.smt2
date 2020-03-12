@@ -239,3 +239,5 @@ Target solver: Z3
  ;; File "active_prio.ads", line 10, characters 0-0
   (not (<= 10 8)))
 (check-sat)
+
+(exit)

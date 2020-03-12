@@ -1091,3 +1091,5 @@ Target solver: Z3
  ;; File "evoting.ads", line 51, characters 0-0
   (not (= (to_rep (select (select candidates3 i) j)) 32)))
 (check-sat)
+
+(exit)

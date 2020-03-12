@@ -997,3 +997,5 @@ Target solver: Z3
   (= (has_element l
      (us_repqtmk (us_split_fieldsqtmk linked_list__search__result))) true)))
 (check-sat)
+
+(exit)

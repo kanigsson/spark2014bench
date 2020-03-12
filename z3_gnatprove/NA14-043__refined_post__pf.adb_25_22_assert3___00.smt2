@@ -253,3 +253,5 @@ Target solver: Z3
  ;; File "pf.ads", line 9, characters 0-0
   (not (= b1 (prf_public1 a))))
 (check-sat)
+
+(exit)

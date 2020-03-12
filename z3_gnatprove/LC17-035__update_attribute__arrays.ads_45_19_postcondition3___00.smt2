@@ -275,3 +275,5 @@ Target solver: Z3
   (= (bool_eq arrays__f4__result 1 8
      (temp_____aggregate_def_241 arr_in 1 i 10 i j 20) 1 8) true)))
 (check-sat)
+
+(exit)

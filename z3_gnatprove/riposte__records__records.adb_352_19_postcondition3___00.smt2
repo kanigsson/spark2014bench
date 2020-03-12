@@ -339,3 +339,5 @@ Target solver: Z3
  ;; File "records.adb", line 351, characters 0-0
   (not (= (bool_eq1 x null_optional_pair) true)))
 (check-sat)
+
+(exit)

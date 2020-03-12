@@ -340,3 +340,5 @@ Target solver: Z3
  ;; File "resources.ads", line 9, characters 0-0
   (not (<= 1 to__)))
 (check-sat)
+
+(exit)

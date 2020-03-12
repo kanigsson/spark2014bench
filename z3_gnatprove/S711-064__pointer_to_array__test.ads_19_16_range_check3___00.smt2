@@ -506,3 +506,5 @@ Target solver: Z3
  ;; File "test.ads", line 15, characters 0-0
   (not (<= (first1 buffer) o3)))
 (check-sat)
+
+(exit)

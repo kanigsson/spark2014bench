@@ -702,3 +702,5 @@ Target solver: Z3
                                                                 i211 
                                                                 i22) 3)))))
 (check-sat)
+
+(exit)

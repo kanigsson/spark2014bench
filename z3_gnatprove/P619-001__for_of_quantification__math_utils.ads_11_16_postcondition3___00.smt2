@@ -416,3 +416,5 @@ Target solver: Z3
   (not
   (<= (to_rep (select (to_array v) temp___200)) math_utils__max__result)))
 (check-sat)
+
+(exit)

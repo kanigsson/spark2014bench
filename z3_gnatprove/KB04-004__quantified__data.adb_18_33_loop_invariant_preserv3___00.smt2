@@ -237,3 +237,5 @@ Target solver: Z3
  ;; File "data.ads", line 16, characters 0-0
   (not (not (= (select x_old k) true))))
 (check-sat)
+
+(exit)

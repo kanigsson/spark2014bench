@@ -1576,3 +1576,5 @@ Target solver: Z3
  ;; File "ghc_sort.ads", line 52, characters 0-0
   (not (<= (to_rep ss__first) (to_rep ss__last))))
 (check-sat)
+
+(exit)

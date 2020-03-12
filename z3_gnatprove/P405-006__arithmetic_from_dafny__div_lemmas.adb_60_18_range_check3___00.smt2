@@ -302,3 +302,5 @@ Target solver: Z3
  ;; File "div_lemmas.adb", line 3, characters 0-0
   (not (in_range2 y1)))
 (check-sat)
+
+(exit)

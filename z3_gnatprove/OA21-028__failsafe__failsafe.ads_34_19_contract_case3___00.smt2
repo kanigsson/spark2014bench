@@ -507,3 +507,5 @@ Target solver: Z3
  ;; File "failsafe.ads", line 22, characters 0-0
   (not (bvult failsafe__model__time_below_threshold__result #x32)))
 (check-sat)
+
+(exit)

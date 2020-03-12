@@ -1803,3 +1803,5 @@ Target solver: Z3
  ;; File "ghc_sort.ads", line 52, characters 0-0
   (not (= (last1 ghc_sort__sort__result) (last1 s))))
 (check-sat)
+
+(exit)

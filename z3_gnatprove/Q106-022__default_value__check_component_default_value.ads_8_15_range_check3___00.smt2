@@ -316,3 +316,5 @@ Target solver: Z3
  ;; File "check_component_default_value.ads", line 4, characters 0-0
   (not (<= 0 one)))
 (check-sat)
+
+(exit)

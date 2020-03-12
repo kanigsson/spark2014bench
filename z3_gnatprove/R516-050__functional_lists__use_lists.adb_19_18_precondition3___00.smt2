@@ -1519,3 +1519,5 @@ Target solver: Z3
  ;; File "use_lists.ads", line 16, characters 0-0
   (not (<= 0 (find (get_cursor_model o16 us_HEAP7) cu1 us_HEAP7))))
 (check-sat)
+
+(exit)

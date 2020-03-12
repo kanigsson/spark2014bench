@@ -633,3 +633,5 @@ Target solver: Z3
  ;; File "ghc_sort.ads", line 36, characters 0-0
   (not (<= (to_rep (select r4 (- l 1))) (to_rep (select r4 l)))))
 (check-sat)
+
+(exit)

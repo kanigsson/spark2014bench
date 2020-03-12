@@ -527,3 +527,5 @@ Target solver: Z3
   (not
   (bvult ((_ int2bv 16) (length (to_rep s__first) (to_rep s__last))) #x00FF)))
 (check-sat)
+
+(exit)

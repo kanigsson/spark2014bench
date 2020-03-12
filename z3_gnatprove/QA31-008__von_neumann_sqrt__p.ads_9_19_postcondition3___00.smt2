@@ -345,3 +345,5 @@ Target solver: Z3
  ;; File "p.ads", line 8, characters 0-0
   (not (<= (* p__sqrt_binary__result p__sqrt_binary__result) x)))
 (check-sat)
+
+(exit)

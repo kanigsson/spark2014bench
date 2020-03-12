@@ -208,3 +208,5 @@ Target solver: Z3
  ;; File "counterex_forall.ads", line 10, characters 0-0
   (not (= i (+ c 1))))
 (check-sat)
+
+(exit)

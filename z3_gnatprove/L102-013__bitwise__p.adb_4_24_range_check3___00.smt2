@@ -283,3 +283,5 @@ Target solver: Z3
  ;; File "p.adb", line 1, characters 0-0
   (not (uint_in_range o1)))
 (check-sat)
+
+(exit)

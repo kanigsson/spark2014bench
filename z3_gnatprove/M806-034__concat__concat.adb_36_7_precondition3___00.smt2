@@ -584,3 +584,5 @@ Target solver: Z3
  ;; File "concat.ads", line 10, characters 0-0
   (not (<= (first1 o3) (last1 o3))))
 (check-sat)
+
+(exit)

@@ -424,3 +424,5 @@ Target solver: Z3
  ;; File "dynamic.ads", line 5, characters 0-0
   (not (in_range (+ x 2))))
 (check-sat)
+
+(exit)

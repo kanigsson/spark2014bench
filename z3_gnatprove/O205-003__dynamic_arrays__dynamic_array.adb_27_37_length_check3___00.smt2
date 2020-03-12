@@ -1190,3 +1190,5 @@ Target solver: Z3
  ;; File "dynamic_array.adb", line 18, characters 0-0
   (not (<= 1 d)))
 (check-sat)
+
+(exit)

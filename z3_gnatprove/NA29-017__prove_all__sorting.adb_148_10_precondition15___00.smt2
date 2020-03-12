@@ -710,3 +710,5 @@ Target solver: Z3
  ;; File "sorting.ads", line 17, characters 0-0
   (not (= (sorted (of_array a3 (to_rep o24) (to_rep o23)) o20 l2) true)))
 (check-sat)
+
+(exit)

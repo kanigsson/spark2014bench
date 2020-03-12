@@ -222,3 +222,5 @@ Target solver: Z3
  ;; File "client.adb", line 3, characters 0-0
   (not (= (get2 Tuple0) 10000)))
 (check-sat)
+
+(exit)

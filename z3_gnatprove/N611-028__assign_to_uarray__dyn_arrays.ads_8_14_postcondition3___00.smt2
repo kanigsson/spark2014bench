@@ -401,3 +401,5 @@ Target solver: Z3
   (= (to_rep (select to__ i)) (to_rep
                               (select from (+ (- i (to_rep1 to____first)) 1))))))
 (check-sat)
+
+(exit)

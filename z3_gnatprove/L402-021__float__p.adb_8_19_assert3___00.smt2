@@ -178,3 +178,5 @@ Target solver: Z3
   (fp.lt (fp.sub RNE c (fp #b0 #b01111111 #b00000000000000000000000)) 
   x)))
 (check-sat)
+
+(exit)

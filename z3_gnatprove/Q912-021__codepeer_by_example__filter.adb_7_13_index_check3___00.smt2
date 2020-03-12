@@ -225,3 +225,5 @@ Target solver: Z3
  ;; File "filter.adb", line 2, characters 0-0
   (not (<= 1 k)))
 (check-sat)
+
+(exit)

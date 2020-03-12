@@ -131,3 +131,5 @@ Target solver: Z3
  ;; File "refined_depends_legal.ads", line 6, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

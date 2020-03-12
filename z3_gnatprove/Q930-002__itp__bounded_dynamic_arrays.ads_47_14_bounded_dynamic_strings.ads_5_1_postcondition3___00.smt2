@@ -738,3 +738,5 @@ Target solver: Z3
   (not
   (= (length1 bounded_dynamic_strings__instance__3__result) (length content))))
 (check-sat)
+
+(exit)

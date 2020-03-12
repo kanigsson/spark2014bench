@@ -424,3 +424,5 @@ Target solver: Z3
   (not
   (= (to_rep (select (rec__arrays__string_t__elem s__split_fields2) i)) 32)))
 (check-sat)
+
+(exit)

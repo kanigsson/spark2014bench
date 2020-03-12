@@ -1040,3 +1040,5 @@ Target solver: Z3
  ;; File "amortized_queue.adb", line 56, characters 0-0
   (not (<= 1 o9)))
 (check-sat)
+
+(exit)

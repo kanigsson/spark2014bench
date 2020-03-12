@@ -157,3 +157,5 @@ Target solver: Z3
  ;; File "semantics.ads", line 17, characters 0-0
   (not (in_range o3)))
 (check-sat)
+
+(exit)

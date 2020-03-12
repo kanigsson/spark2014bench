@@ -2471,3 +2471,5 @@ Target solver: Z3
  ;; File "lexer.ads", line 79, characters 0-0
   (not (in_range3 o4)))
 (check-sat)
+
+(exit)

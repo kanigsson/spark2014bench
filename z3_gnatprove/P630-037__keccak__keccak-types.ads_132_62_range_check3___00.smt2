@@ -269,3 +269,5 @@ Target solver: Z3
  ;; File "keccak-types.ads", line 86, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

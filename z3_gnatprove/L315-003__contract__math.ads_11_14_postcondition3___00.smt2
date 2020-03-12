@@ -114,3 +114,5 @@ Target solver: Z3
  ;; File "math.ads", line 9, characters 0-0
   (not (<= 0 math__bad__result)))
 (check-sat)
+
+(exit)

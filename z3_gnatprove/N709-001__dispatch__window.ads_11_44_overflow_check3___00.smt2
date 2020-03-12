@@ -709,3 +709,5 @@ Target solver: Z3
  ;; File "window.ads", line 8, characters 0-0
   (not (in_range (- total_area o6))))
 (check-sat)
+
+(exit)

@@ -292,3 +292,5 @@ Target solver: Z3
      (temp_____aggregate_def_312 (temp_____aggregate_def_321 1) i 2 4 5 x) 1
      8) true)))
 (check-sat)
+
+(exit)

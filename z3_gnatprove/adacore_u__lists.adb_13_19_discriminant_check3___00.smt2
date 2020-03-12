@@ -383,3 +383,5 @@ Target solver: Z3
   (not
   (= (distinct 1 0) (rec__lists__cell__is_set (us_split_discrs1 temp___209)))))
 (check-sat)
+
+(exit)

@@ -524,3 +524,5 @@ Target solver: Z3
  ;; File "hermes-der-decode.adb", line 350, characters 0-0
   (not (in_range1 o2)))
 (check-sat)
+
+(exit)

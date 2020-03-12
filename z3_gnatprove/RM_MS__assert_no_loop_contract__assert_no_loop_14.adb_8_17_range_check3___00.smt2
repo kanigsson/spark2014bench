@@ -150,3 +150,5 @@ Target solver: Z3
  ;; File "assert_no_loop_14.ads", line 7, characters 0-0
   (not (in_range1 o)))
 (check-sat)
+
+(exit)

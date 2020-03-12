@@ -1655,3 +1655,5 @@ Target solver: Z3
  ;; File "test_stack.adb", line 2, characters 0-0
   (not (= (is_empty (us_repqtmk s__split_fields11 s__attr__tag)) true)))
 (check-sat)
+
+(exit)

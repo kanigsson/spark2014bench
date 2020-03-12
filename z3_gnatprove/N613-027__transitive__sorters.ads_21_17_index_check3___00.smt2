@@ -717,3 +717,5 @@ Target solver: Z3
  ;; File "sorters.ads", line 15, characters 0-0
   (not (<= (to_rep values__first) usf)))
 (check-sat)
+
+(exit)

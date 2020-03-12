@@ -344,3 +344,5 @@ Target solver: Z3
                                               (select (to_array x) j)) 0)))
                                       1 0)) 1)))
 (check-sat)
+
+(exit)

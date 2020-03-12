@@ -433,3 +433,5 @@ Target solver: Z3
  ;; File "scale.ads", line 9, characters 0-0
   (not (<= 0 gap1)))
 (check-sat)
+
+(exit)

@@ -674,3 +674,5 @@ Target solver: Z3
   (not
   (fp.leq new_speed1 (fp.add RNE (fp.mul RNE (of_int RNE n) bound) bound))))
 (check-sat)
+
+(exit)

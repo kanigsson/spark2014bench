@@ -650,3 +650,5 @@ Target solver: Z3
   (not (in_range5 1 5
   (us_repqtmk y__is_null_pointer y__pointer_address y__pointer_value))))
 (check-sat)
+
+(exit)

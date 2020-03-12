@@ -1668,3 +1668,5 @@ Target solver: Z3
  ;; File "main.adb", line 6, characters 0-0
   (not (in_range3 ada___ada__integer_text_io__get__2__item)))
 (check-sat)
+
+(exit)

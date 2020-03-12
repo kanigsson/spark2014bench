@@ -661,3 +661,5 @@ Target solver: Z3
  ;; File "sorting.adb", line 59, characters 0-0
   (not (<= 0 (to_rep a__first))))
 (check-sat)
+
+(exit)

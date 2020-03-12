@@ -169,3 +169,5 @@ Target solver: Z3
  ;; File "nested.ads", line 3, characters 0-0
   (not (= x (* (- i 1) 10))))
 (check-sat)
+
+(exit)

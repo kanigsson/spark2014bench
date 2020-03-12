@@ -382,3 +382,5 @@ Target solver: Z3
  ;; File "search.ads", line 5, characters 0-0
   (not (or (not (= found11 true)) (not (= found21 true)))))
 (check-sat)
+
+(exit)

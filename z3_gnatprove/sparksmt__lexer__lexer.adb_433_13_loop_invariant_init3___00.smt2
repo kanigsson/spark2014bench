@@ -2221,3 +2221,5 @@ Target solver: Z3
  ;; File "lexer.ads", line 79, characters 0-0
   (not (= (to_rep3 current_read__split_discrs1) 0)))
 (check-sat)
+
+(exit)

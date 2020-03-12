@@ -138,3 +138,5 @@ Target solver: Z3
  ;; File "loopvariant.adb", line 3, characters 0-0
   (not (in_range1 (- j1 1))))
 (check-sat)
+
+(exit)

@@ -548,3 +548,5 @@ Target solver: Z3
  ;; File "aco-math-very_longs.ads", line 14, characters 0-0
   (not (<= 1 1)))
 (check-sat)
+
+(exit)

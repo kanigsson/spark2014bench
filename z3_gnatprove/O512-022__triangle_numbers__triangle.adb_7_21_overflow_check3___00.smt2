@@ -280,3 +280,5 @@ Target solver: Z3
  ;; File "triangle.ads", line 3, characters 0-0
   (not (in_range1 o)))
 (check-sat)
+
+(exit)

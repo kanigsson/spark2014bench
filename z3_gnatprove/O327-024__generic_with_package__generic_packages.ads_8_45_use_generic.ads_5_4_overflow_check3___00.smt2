@@ -137,3 +137,5 @@ Target solver: Z3
  ;; File "generic_packages.ads", line 7, characters 0-0
   (not (in_range (- 2147483647 e1))))
 (check-sat)
+
+(exit)

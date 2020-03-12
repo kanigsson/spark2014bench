@@ -192,3 +192,5 @@ Target solver: Z3
  ;; File "p.adb", line 4, characters 0-0
   (not (<= (min x 1) (power x y))))
 (check-sat)
+
+(exit)

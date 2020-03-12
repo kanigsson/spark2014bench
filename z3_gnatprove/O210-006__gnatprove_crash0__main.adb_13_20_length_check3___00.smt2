@@ -532,3 +532,5 @@ Target solver: Z3
  ;; File "main.adb", line 11, characters 0-0
   (not (<= 0 r6b)))
 (check-sat)
+
+(exit)

@@ -529,3 +529,5 @@ Target solver: Z3
  ;; File "test.ads", line 17, characters 0-0
   (not (<= 0 (first1 left))))
 (check-sat)
+
+(exit)

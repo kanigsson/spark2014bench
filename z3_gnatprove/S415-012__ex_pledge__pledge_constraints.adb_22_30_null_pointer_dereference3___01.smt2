@@ -803,3 +803,5 @@ Target solver: Z3
  ;; File "pledge_constraints.adb", line 18, characters 0-0
   (not (rec__pledge_constraints__int_arr_acc__pointer_value__pred o)))
 (check-sat)
+
+(exit)

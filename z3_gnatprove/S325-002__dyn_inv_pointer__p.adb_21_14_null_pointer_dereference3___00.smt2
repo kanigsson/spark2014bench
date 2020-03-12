@@ -460,3 +460,5 @@ Target solver: Z3
  ;; File "p.adb", line 20, characters 0-0
   (not (rec__p__B_2__list_acc__pointer_value__pred o)))
 (check-sat)
+
+(exit)

@@ -1718,3 +1718,5 @@ Target solver: Z3
   (= (rec__integer_stacks__stack__capacity (us_split_discrs1 temp___409)) 
   (rec__integer_stacks__stack__capacity this__split_discrs))))
 (check-sat)
+
+(exit)

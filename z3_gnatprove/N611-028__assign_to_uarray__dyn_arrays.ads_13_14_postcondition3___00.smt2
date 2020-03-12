@@ -405,3 +405,5 @@ Target solver: Z3
  ;; File "dyn_arrays.ads", line 11, characters 0-0
   (not (= (to_rep (select to__ i)) (to_rep (select from i)))))
 (check-sat)
+
+(exit)

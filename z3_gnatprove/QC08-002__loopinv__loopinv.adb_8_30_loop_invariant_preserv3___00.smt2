@@ -163,3 +163,5 @@ Target solver: Z3
  ;; File "loopinv.adb", line 1, characters 0-0
   (not (= (cond j3) true)))
 (check-sat)
+
+(exit)

@@ -734,3 +734,5 @@ Target solver: Z3
  ;; File "rec_inv.adb", line 1, characters 0-0
   (not (dynamic_predicate2 temp___238)))
 (check-sat)
+
+(exit)

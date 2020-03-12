@@ -364,3 +364,5 @@ Target solver: Z3
  ;; File "unchecked_conv.adb", line 3, characters 0-0
   (not (= (to_unsigned y) #x0000000000000000)))
 (check-sat)
+
+(exit)

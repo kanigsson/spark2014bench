@@ -384,3 +384,5 @@ Target solver: Z3
  ;; File "fp_test_div.ads", line 9, characters 0-0
   (not (in_range4 o3)))
 (check-sat)
+
+(exit)

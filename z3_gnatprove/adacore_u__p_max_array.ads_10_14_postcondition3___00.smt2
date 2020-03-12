@@ -553,3 +553,5 @@ Target solver: Z3
   (= (to_rep (select (to_array p_max_array__max_array_2__result) k)) 
   (to_rep (select (to_array a) k)))))
 (check-sat)
+
+(exit)

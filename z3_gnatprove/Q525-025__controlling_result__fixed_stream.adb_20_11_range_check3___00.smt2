@@ -532,3 +532,5 @@ Target solver: Z3
  ;; File "fixed_stream.ads", line 52, characters 0-0
   (not (<= (first1 new_val) temp___322)))
 (check-sat)
+
+(exit)

@@ -487,3 +487,5 @@ Target solver: Z3
  ;; File "aggregate_checks.ads", line 10, characters 0-0
   (not (<= first2 0)))
 (check-sat)
+
+(exit)

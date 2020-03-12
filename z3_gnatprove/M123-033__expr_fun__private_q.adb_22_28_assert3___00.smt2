@@ -364,3 +364,5 @@ Target solver: Z3
  ;; File "private_q.adb", line 4, characters 0-0
   (not (= (g4 Tuple0) 1)))
 (check-sat)
+
+(exit)

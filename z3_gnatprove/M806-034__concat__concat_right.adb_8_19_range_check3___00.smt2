@@ -322,3 +322,5 @@ Target solver: Z3
  ;; File "concat_right.adb", line 4, characters 0-0
   (not (in_range (- (+ (first1 y) (+ (length (first1 y) (last1 y)) 1)) 1))))
 (check-sat)
+
+(exit)

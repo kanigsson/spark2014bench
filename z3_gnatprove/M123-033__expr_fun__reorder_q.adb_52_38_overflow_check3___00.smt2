@@ -143,3 +143,5 @@ Target solver: Z3
  ;; File "reorder_q.ads", line 3, characters 0-0
   (not (in_range o2)))
 (check-sat)
+
+(exit)

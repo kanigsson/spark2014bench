@@ -341,3 +341,5 @@ Target solver: Z3
  ;; File "stack.ads", line 17, characters 0-0
   (not (not (= (to_rep (select t i)) (- 1)))))
 (check-sat)
+
+(exit)

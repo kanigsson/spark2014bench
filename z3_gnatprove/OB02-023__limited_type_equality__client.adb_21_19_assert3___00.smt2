@@ -581,3 +581,5 @@ Target solver: Z3
   (= (bool_eq (us_repqtmk (us_split_fieldsqtmk x__split_fields))
      (us_repqtmk (us_split_fieldsqtmk x__split_fields))) true)))
 (check-sat)
+
+(exit)

@@ -801,3 +801,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S117-008__pointer-12565/src/gnatprove/use_formal_vectors__my_vect__vector.mlw", line 1180, characters 5-8
   (not (dynamic_predicate usf1)))
 (check-sat)
+
+(exit)

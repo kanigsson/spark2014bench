@@ -369,3 +369,5 @@ Target solver: Z3
  ;; File "counter.ads", line 38, characters 0-0
   (not (bvule #x01 usf)))
 (check-sat)
+
+(exit)

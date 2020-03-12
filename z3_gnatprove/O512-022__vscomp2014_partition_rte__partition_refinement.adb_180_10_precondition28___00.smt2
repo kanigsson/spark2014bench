@@ -3226,3 +3226,5 @@ Target solver: Z3
   (not
   (= (contains (us_repqtmk3 o19 (us_split_fieldsqtmk3 d__split_fields2)) o17) true)))
 (check-sat)
+
+(exit)

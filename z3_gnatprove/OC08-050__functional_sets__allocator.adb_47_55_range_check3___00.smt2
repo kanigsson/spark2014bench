@@ -728,3 +728,5 @@ Target solver: Z3
  ;; File "allocator.ads", line 41, characters 0-0
   (not (in_range2 usf2)))
 (check-sat)
+
+(exit)

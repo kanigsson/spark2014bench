@@ -494,3 +494,5 @@ Target solver: Z3
  ;; File "private_a.adb", line 62, characters 0-0
   (not (= (rec__private_a__optional_stack__exists s__split_fields1) true)))
 (check-sat)
+
+(exit)

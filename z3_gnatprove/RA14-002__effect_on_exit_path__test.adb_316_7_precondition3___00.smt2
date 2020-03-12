@@ -1193,3 +1193,5 @@ Target solver: Z3
  ;; File "test.adb", line 299, characters 0-0
   (not (not (= (os_mbx_is_empty o3 os_task_mbx_rw4) true))))
 (check-sat)
+
+(exit)

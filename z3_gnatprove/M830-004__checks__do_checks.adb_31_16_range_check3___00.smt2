@@ -944,3 +944,5 @@ Target solver: Z3
  ;; File "do_checks.adb", line 5, characters 0-0
   (not (<= 1 zero)))
 (check-sat)
+
+(exit)

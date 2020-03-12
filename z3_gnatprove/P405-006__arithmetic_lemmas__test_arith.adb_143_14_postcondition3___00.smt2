@@ -297,3 +297,5 @@ Target solver: Z3
  ;; File "test_arith.adb", line 141, characters 0-0
   (not (= (sign r1) (sign y))))
 (check-sat)
+
+(exit)

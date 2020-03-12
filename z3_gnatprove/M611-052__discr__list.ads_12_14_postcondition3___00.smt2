@@ -1730,3 +1730,5 @@ Target solver: Z3
   (= (element l i2) (element list__reverse_list__result
                     (+ (- (last_index l) i2) 1)))))
 (check-sat)
+
+(exit)

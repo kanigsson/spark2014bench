@@ -1011,3 +1011,5 @@ Target solver: Z3
  ;; File "linear_search.adb", line 66, characters 0-0
   (not (= (last a2) (- n2 1))))
 (check-sat)
+
+(exit)

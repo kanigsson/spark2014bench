@@ -1657,3 +1657,5 @@ Target solver: Z3
  ;; File "static_discr.ads", line 31, characters 0-0
   (not (in_range2 o)))
 (check-sat)
+
+(exit)

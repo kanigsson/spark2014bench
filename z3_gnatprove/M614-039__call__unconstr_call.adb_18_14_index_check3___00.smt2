@@ -345,3 +345,5 @@ Target solver: Z3
  ;; File "unconstr_call.ads", line 7, characters 0-0
   (not (<= (to_rep x__first) temp___209)))
 (check-sat)
+
+(exit)

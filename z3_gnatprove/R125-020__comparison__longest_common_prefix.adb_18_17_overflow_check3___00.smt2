@@ -478,3 +478,5 @@ Target solver: Z3
  ;; File "longest_common_prefix.ads", line 8, characters 0-0
   (not (in_range1 o5)))
 (check-sat)
+
+(exit)

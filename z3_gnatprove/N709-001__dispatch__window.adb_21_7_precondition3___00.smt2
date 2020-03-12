@@ -733,3 +733,5 @@ Target solver: Z3
  ;; File "window.ads", line 17, characters 0-0
   (not (= (has_stored_area1 (attr__tag o1) o1) true)))
 (check-sat)
+
+(exit)

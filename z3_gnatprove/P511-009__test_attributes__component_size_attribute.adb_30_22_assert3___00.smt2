@@ -137,3 +137,5 @@ Target solver: Z3
  ;; File "component_size_attribute.adb", line 28, characters 0-0
   (not (<= 0 component__size)))
 (check-sat)
+
+(exit)

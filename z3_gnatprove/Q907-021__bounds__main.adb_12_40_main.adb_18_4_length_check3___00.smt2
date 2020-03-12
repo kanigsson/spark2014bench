@@ -475,3 +475,5 @@ Target solver: Z3
  ;; File "main.adb", line 4, characters 0-0
   (not (<= (first1 c8b) (last1 c8b))))
 (check-sat)
+
+(exit)

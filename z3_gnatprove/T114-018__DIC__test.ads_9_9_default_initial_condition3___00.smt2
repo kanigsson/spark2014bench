@@ -102,3 +102,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-T114-018__DIC-20969/src/gnatprove/test__sequence.mlw", line 82, characters 5-8
   (not false))
 (check-sat)
+
+(exit)

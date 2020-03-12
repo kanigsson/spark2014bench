@@ -437,3 +437,5 @@ Target solver: Z3
  ;; File "my_container.ads", line 15, characters 0-0
   (not (= (valid (to_rep (select c3 j))) true)))
 (check-sat)
+
+(exit)

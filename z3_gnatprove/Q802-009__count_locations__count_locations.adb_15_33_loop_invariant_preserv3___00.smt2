@@ -593,3 +593,5 @@ Target solver: Z3
   (= (count_selected_locations sel) (+ st_count2 (partial_count_selected_locations
                                                  sel st2)))))
 (check-sat)
+
+(exit)

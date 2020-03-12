@@ -762,3 +762,5 @@ Target solver: Z3
  ;; File "core.ads", line 29, characters 0-0
   (not (< 0 (item_count (us_repqtmk1 self__1)))))
 (check-sat)
+
+(exit)

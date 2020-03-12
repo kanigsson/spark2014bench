@@ -651,3 +651,5 @@ Target solver: Z3
   (or (and (<= (- 10) temp___272) (<= temp___272 (- 1)))
   (and (<= 1 temp___272) (<= temp___272 10)))))
 (check-sat)
+
+(exit)

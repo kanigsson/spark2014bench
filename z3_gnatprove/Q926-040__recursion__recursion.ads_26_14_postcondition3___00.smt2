@@ -376,3 +376,5 @@ Target solver: Z3
  ;; File "recursion.ads", line 24, characters 0-0
   (not (<= recursion__count_true_loop__result (length arr))))
 (check-sat)
+
+(exit)

@@ -2091,3 +2091,5 @@ Target solver: Z3
   (not
   (= (is_zero (us_repqtmk v__split_discrs v__split_fields2 v__attr__tag)) true)))
 (check-sat)
+
+(exit)

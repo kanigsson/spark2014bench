@@ -418,3 +418,5 @@ Target solver: Z3
  ;; File "dynamic_types.ads", line 4, characters 0-0
   (not (not (= (to_rep (select (to_array a) i)) c))))
 (check-sat)
+
+(exit)

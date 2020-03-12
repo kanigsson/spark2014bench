@@ -198,3 +198,5 @@ Target solver: Z3
  ;; File "vol.ads", line 4, characters 0-0
   (not (<= 1 idx)))
 (check-sat)
+
+(exit)

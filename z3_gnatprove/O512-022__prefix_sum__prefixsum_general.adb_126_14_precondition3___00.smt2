@@ -260,3 +260,5 @@ Target solver: Z3
  ;; File "prefixsum_general.ads", line 10, characters 0-0
   (not (<= o1 o)))
 (check-sat)
+
+(exit)

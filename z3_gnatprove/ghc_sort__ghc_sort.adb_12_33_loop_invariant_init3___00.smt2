@@ -581,3 +581,5 @@ Target solver: Z3
  ;; File "ghc_sort.ads", line 6, characters 0-0
   (not (= x (- y 1))))
 (check-sat)
+
+(exit)

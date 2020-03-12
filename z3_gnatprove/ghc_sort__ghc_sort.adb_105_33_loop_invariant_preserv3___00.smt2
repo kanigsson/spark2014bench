@@ -566,3 +566,5 @@ Target solver: Z3
  ;; File "ghc_sort.ads", line 46, characters 0-0
   (not (= j2 (- (length s) i2))))
 (check-sat)
+
+(exit)

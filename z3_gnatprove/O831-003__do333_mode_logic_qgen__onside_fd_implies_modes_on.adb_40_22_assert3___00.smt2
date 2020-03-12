@@ -89,3 +89,5 @@ Target solver: Z3
  ;; File "onside_fd_implies_modes_on.ads", line 15, characters 0-0
   (not (= not5_out1 true)))
 (check-sat)
+
+(exit)

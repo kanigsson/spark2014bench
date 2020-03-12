@@ -1359,3 +1359,5 @@ Target solver: Z3
  ;; File "keccak-sponge.ads", line 222, characters 0-0
   (not (<= (to_rep digest__first) (to_rep digest__last))))
 (check-sat)
+
+(exit)

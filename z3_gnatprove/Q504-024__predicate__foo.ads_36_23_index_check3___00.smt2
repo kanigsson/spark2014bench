@@ -814,3 +814,5 @@ Target solver: Z3
  ;; File "foo.ads", line 35, characters 0-0
   (not (<= (first1 states__split_fields) id)))
 (check-sat)
+
+(exit)

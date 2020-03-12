@@ -500,3 +500,5 @@ Target solver: Z3
  ;; File "infoflow.ads", line 111, characters 0-0
   (not (<= (to_rep a_v2__first) i_v21)))
 (check-sat)
+
+(exit)

@@ -426,3 +426,5 @@ Target solver: Z3
  ;; File "do_checks.adb", line 323, characters 0-0
   (not (<= (first1 y__split_fields) 10)))
 (check-sat)
+
+(exit)

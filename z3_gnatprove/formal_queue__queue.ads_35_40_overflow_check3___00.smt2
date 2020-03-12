@@ -1055,3 +1055,5 @@ Target solver: Z3
  ;; File "queue.ads", line 31, characters 0-0
   (not (in_range7 o4)))
 (check-sat)
+
+(exit)

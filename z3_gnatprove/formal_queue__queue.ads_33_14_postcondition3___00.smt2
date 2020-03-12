@@ -1040,3 +1040,5 @@ Target solver: Z3
  ;; File "queue.ads", line 31, characters 0-0
   (not (= (length queue__enqueue__result) (+ (length q) 1))))
 (check-sat)
+
+(exit)

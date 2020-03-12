@@ -627,3 +627,5 @@ Target solver: Z3
  ;; File "search_ter_p.ads", line 32, characters 0-0
   (not (< temp___255 i2)))
 (check-sat)
+
+(exit)

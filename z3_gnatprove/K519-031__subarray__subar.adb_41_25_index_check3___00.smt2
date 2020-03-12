@@ -432,3 +432,5 @@ Target solver: Z3
  ;; File "subar.ads", line 27, characters 0-0
   (not (= (first1 temp___280) (- x 1))))
 (check-sat)
+
+(exit)

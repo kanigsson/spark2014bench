@@ -1214,3 +1214,5 @@ Target solver: Z3
   (not (rec__use_formal_vectors__my_vect__element_access__pointer_value__pred
   o1)))
 (check-sat)
+
+(exit)

@@ -182,3 +182,5 @@ Target solver: Z3
  ;; File "r_14.ads", line 4, characters 0-0
   (not (in_range2 (+ r_s1 global_var))))
 (check-sat)
+
+(exit)

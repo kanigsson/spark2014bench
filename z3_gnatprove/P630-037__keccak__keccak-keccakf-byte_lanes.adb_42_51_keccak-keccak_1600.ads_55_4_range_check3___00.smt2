@@ -830,3 +830,5 @@ Target solver: Z3
  ;; File "keccak-keccakf-byte_lanes.ads", line 32, characters 0-0
   (not (in_range2 o1)))
 (check-sat)
+
+(exit)

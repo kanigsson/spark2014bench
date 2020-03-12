@@ -542,3 +542,5 @@ Target solver: Z3
                                      (to_rep1 (select (to_array left) i1))
                                      (to_rep1 (select (to_array right) i1))))))
 (check-sat)
+
+(exit)

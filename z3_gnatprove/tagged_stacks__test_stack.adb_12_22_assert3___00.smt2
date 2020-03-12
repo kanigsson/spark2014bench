@@ -1277,3 +1277,5 @@ Target solver: Z3
  ;; File "test_stack.adb", line 2, characters 0-0
   (not (= e1 i5)))
 (check-sat)
+
+(exit)

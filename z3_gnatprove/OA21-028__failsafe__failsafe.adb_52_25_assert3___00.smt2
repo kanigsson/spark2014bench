@@ -639,3 +639,5 @@ Target solver: Z3
  ;; File "failsafe.ads", line 54, characters 0-0
   (not (= counter1 #x32)))
 (check-sat)
+
+(exit)

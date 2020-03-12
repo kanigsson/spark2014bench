@@ -642,3 +642,5 @@ Target solver: Z3
  ;; File "p.ads", line 13, characters 0-0
   (not (= left_ux2 (bvsub left_x2 (bvmul left_y2 left_y2)))))
 (check-sat)
+
+(exit)

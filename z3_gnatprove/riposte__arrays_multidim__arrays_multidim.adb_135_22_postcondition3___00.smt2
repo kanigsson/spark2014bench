@@ -304,3 +304,5 @@ Target solver: Z3
  ;; File "arrays_multidim.adb", line 132, characters 0-0
   (not (not (= (bool_eq a3 0 1001 0 1001 a1 0 1001 0 1001) true))))
 (check-sat)
+
+(exit)

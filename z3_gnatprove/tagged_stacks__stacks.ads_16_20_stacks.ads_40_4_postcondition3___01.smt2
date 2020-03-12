@@ -1185,3 +1185,5 @@ Target solver: Z3
  ;; File "stacks.ads", line 60, characters 0-0
   (not (in_range1 (first1 stacks__get_model__3__result))))
 (check-sat)
+
+(exit)

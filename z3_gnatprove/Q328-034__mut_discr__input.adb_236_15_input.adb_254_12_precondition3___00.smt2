@@ -680,3 +680,5 @@ Target solver: Z3
  ;; File "input.ads", line 9, characters 0-0
   (not (<= first_char1 1024)))
 (check-sat)
+
+(exit)

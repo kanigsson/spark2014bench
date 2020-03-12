@@ -707,3 +707,5 @@ Target solver: Z3
  ;; File "keccak-keccakf-byte_lanes.ads", line 66, characters 0-0
   (not (not (= 8 0))))
 (check-sat)
+
+(exit)

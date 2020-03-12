@@ -415,3 +415,5 @@ Target solver: Z3
  ;; File "arr_aggregate.ads", line 35, characters 0-0
   (not (= (bool_eq a1 1 2 (temp_____aggregate_def_221 one 2) 1 2) true)))
 (check-sat)
+
+(exit)

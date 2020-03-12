@@ -119,3 +119,5 @@ Target solver: Z3
  ;; File "proveline.adb", line 1, characters 0-0
   (not (< 0 x1)))
 (check-sat)
+
+(exit)

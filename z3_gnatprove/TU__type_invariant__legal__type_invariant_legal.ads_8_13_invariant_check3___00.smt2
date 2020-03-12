@@ -60,3 +60,5 @@ Target solver: Z3
  ;; File "type_invariant_legal.ads", line 8, characters 0-0
   (not (type_invariant type_invariant_legal__e_pub__result)))
 (check-sat)
+
+(exit)

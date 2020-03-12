@@ -520,3 +520,5 @@ Target solver: Z3
  ;; File "memassign.adb", line 18, characters 0-0
   (not (bvule (first1 temp___220) (last1 temp___220))))
 (check-sat)
+
+(exit)

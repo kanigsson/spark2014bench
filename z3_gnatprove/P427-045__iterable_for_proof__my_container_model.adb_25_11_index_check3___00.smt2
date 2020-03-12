@@ -296,3 +296,5 @@ Target solver: Z3
  ;; File "my_container_model.ads", line 32, characters 0-0
   (not (<= 1 temp___253)))
 (check-sat)
+
+(exit)

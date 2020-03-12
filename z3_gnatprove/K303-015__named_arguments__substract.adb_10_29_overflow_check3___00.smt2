@@ -113,3 +113,5 @@ Target solver: Z3
  ;; File "substract.ads", line 14, characters 0-0
   (not (in_range (+ o third))))
 (check-sat)
+
+(exit)

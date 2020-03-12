@@ -607,3 +607,5 @@ Target solver: Z3
  ;; File "cubedos-lib-xdr.ads", line 258, characters 0-0
   (not (in_range2 o2)))
 (check-sat)
+
+(exit)

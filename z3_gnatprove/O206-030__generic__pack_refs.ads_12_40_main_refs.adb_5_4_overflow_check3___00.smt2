@@ -130,3 +130,5 @@ Target solver: Z3
  ;; File "main_refs.adb", line 5, characters 0-0
   (not (in_range1 (+ formal external))))
 (check-sat)
+
+(exit)

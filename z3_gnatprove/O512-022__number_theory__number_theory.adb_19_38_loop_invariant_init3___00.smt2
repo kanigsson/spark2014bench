@@ -488,3 +488,5 @@ Target solver: Z3
  ;; File "number_theory.ads", line 27, characters 0-0
   (not (= old__1 (fib (- i 1)))))
 (check-sat)
+
+(exit)

@@ -162,3 +162,5 @@ Target solver: Z3
  ;; File "mod_bound.ads", line 5, characters 0-0
   (not (= x2 #x00000000)))
 (check-sat)
+
+(exit)

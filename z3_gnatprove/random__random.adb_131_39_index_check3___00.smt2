@@ -656,3 +656,5 @@ Target solver: Z3
  ;; File "random.ads", line 47, characters 0-0
   (not (bvule #x00000000 temp___295)))
 (check-sat)
+
+(exit)

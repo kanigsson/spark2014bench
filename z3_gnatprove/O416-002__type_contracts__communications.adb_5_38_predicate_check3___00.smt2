@@ -938,3 +938,5 @@ Target solver: Z3
  ;; File "communications.ads", line 12, characters 0-0
   (not (dynamic_predicate temp___373)))
 (check-sat)
+
+(exit)

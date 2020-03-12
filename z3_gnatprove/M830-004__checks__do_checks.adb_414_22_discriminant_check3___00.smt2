@@ -5917,3 +5917,5 @@ Target solver: Z3
   (to_base4
   (us_repqtmk5 x__split_discrs7 (us_split_fieldsqtmk5 x__split_fields)))))))
 (check-sat)
+
+(exit)

@@ -134,3 +134,5 @@ Target solver: Z3
  ;; File "main.adb", line 2, characters 0-0
   (not (= m true)))
 (check-sat)
+
+(exit)

@@ -167,3 +167,5 @@ Target solver: Z3
  ;; File "r_14.ads", line 9, characters 0-0
   (not (in_range1 (+ r_s x))))
 (check-sat)
+
+(exit)

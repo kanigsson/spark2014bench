@@ -440,3 +440,5 @@ Target solver: Z3
                                                   (us_repqtmk
                                                   result____split_fields3)))))
 (check-sat)
+
+(exit)

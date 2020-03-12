@@ -1228,3 +1228,5 @@ Target solver: Z3
   (= (attr__init
      (rec__nested_init_by_proof__rec__f2 (us_split_fields1 temp___298))) true)))
 (check-sat)
+
+(exit)

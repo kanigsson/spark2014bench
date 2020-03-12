@@ -224,3 +224,5 @@ Target solver: Z3
      (us_split_fieldsqtmk rliteral
      (rec__update_examples__rec__y r__split_fields1)))) true)))
 (check-sat)
+
+(exit)

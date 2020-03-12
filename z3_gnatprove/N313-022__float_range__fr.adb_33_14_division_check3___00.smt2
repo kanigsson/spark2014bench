@@ -190,3 +190,5 @@ Target solver: Z3
  ;; File "fr.adb", line 31, characters 0-0
   (not (not (fp.isZero y))))
 (check-sat)
+
+(exit)

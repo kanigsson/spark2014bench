@@ -705,3 +705,5 @@ Target solver: Z3
  ;; File "input.ads", line 9, characters 0-0
   (not (<= 1 first_char1)))
 (check-sat)
+
+(exit)

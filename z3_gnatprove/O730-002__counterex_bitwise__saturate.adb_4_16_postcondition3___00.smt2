@@ -169,3 +169,5 @@ Target solver: Z3
  ;; File "saturate.adb", line 2, characters 0-0
   (not (bvult saturate__result #x0100)))
 (check-sat)
+
+(exit)

@@ -550,3 +550,5 @@ Target solver: Z3
  ;; File "tetris_flow.ads", line 186, characters 0-0
   (not (in_range1 (+ num_deleted2 1))))
 (check-sat)
+
+(exit)

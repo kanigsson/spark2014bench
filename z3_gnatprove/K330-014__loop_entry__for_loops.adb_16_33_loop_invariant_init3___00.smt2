@@ -952,3 +952,5 @@ Target solver: Z3
  ;; File "for_loops.adb", line 5, characters 0-0
   (not (< 0 usf)))
 (check-sat)
+
+(exit)

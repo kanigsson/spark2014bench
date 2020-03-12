@@ -226,3 +226,5 @@ Target solver: Z3
  ;; File "preds.ads", line 50, characters 0-0
   (not (dynamic_predicate usf)))
 (check-sat)
+
+(exit)

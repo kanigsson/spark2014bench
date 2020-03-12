@@ -594,3 +594,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-Q105-001__hidden_comp_default_check-32587/src/gnatprove/tagged_component_check__r__d2.mlw", line 1006, characters 5-8
   (not (in_range o)))
 (check-sat)
+
+(exit)

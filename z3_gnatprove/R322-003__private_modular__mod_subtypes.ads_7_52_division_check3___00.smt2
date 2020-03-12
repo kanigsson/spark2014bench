@@ -160,3 +160,5 @@ Target solver: Z3
  ;; File "mod_subtypes.ads", line 7, characters 0-0
   (not (not (= #x02 #x00))))
 (check-sat)
+
+(exit)

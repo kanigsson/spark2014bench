@@ -555,3 +555,5 @@ Target solver: Z3
  ;; File "pair_insertion_sort.ads", line 13, characters 0-0
   (not (dynamic_predicate1 temp___296)))
 (check-sat)
+
+(exit)

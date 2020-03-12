@@ -101,3 +101,5 @@ Target solver: Z3
  ;; File "incr.adb", line 1, characters 0-0
   (not (in_range o)))
 (check-sat)
+
+(exit)

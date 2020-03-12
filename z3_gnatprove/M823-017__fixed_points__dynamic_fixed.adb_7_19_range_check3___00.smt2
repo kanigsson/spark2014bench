@@ -282,3 +282,5 @@ Target solver: Z3
  ;; File "dynamic_fixed.adb", line 1, characters 0-0
   (not (dynamic_property o1 o 2)))
 (check-sat)
+
+(exit)

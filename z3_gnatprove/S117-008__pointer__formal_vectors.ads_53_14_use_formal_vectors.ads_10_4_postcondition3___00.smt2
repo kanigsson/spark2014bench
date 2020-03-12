@@ -1225,3 +1225,5 @@ Target solver: Z3
   (not
   (= (last2 use_formal_vectors__my_vect__model__2__result) (length1 v))))
 (check-sat)
+
+(exit)

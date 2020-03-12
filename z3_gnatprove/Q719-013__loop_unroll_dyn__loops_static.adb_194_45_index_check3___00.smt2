@@ -402,3 +402,5 @@ Target solver: Z3
  ;; File "loops_static.ads", line 22, characters 0-0
   (not (<= (to_rep1 r__first) usf)))
 (check-sat)
+
+(exit)

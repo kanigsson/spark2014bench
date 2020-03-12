@@ -309,3 +309,5 @@ Target solver: Z3
  ;; File "resources.ads", line 17, characters 0-0
   (not (< (sum d1 6) 42)))
 (check-sat)
+
+(exit)

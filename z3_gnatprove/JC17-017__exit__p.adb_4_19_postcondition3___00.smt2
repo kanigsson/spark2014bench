@@ -99,3 +99,5 @@ Target solver: Z3
  ;; File "p.adb", line 3, characters 0-0
   (not (= (- p__id__result x) 0)))
 (check-sat)
+
+(exit)

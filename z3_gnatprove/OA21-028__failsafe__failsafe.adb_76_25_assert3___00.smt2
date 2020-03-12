@@ -704,3 +704,5 @@ Target solver: Z3
  ;; File "failsafe.ads", line 54, characters 0-0
   (not (= counter1 (time_below_threshold battery_level_at1 current_time2))))
 (check-sat)
+
+(exit)

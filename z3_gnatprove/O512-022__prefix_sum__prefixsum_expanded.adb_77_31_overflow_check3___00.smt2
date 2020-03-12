@@ -992,3 +992,5 @@ Target solver: Z3
  ;; File "prefixsum_expanded.ads", line 41, characters 0-0
   (not (in_range1 o5)))
 (check-sat)
+
+(exit)

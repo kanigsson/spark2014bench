@@ -441,3 +441,5 @@ Target solver: Z3
  ;; File "kmp.ads", line 7, characters 0-0
   (not (<= (first1 p) r8b)))
 (check-sat)
+
+(exit)

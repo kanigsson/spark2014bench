@@ -347,3 +347,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S801-023__false_DIC-14333/src/gnatprove/test__context_type.mlw", line 418, characters 5-8
   (not (dynamic_predicate usf3)))
 (check-sat)
+
+(exit)

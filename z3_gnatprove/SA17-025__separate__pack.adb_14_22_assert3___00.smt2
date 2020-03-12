@@ -150,3 +150,5 @@ Target solver: Z3
  ;; File "pack.adb", line 3, characters 0-0
   (not (= x2 3)))
 (check-sat)
+
+(exit)

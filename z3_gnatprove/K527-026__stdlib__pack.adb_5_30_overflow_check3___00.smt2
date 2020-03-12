@@ -130,3 +130,5 @@ Target solver: Z3
  ;; File "pack.ads", line 5, characters 0-0
   (not (in_range (+ col_count c))))
 (check-sat)
+
+(exit)

@@ -301,3 +301,5 @@ Target solver: Z3
  ;; File "sorters_not_global.adb", line 28, characters 0-0
   (not (<= starting_at sorters_not_global__index_of_minimum__result)))
 (check-sat)
+
+(exit)

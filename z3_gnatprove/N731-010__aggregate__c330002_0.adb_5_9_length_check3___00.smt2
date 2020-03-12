@@ -327,3 +327,5 @@ Target solver: Z3
  ;; File "c330002_0.ads", line 7, characters 0-0
   (not (<= (to_rep a__first) (to_rep a__last))))
 (check-sat)
+
+(exit)

@@ -567,3 +567,5 @@ Target solver: Z3
  ;; File "keccak-padding.ads", line 43, characters 0-0
   (not (not (= 8 0))))
 (check-sat)
+
+(exit)

@@ -369,3 +369,5 @@ Target solver: Z3
  ;; File "unconstr.adb", line 56, characters 0-0
   (not (<= 1 1)))
 (check-sat)
+
+(exit)

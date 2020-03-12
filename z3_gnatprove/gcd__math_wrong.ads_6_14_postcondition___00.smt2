@@ -204,3 +204,5 @@ Target solver: Z3
  ;; File "math_wrong.ads", line 5, characters 0-0
   (not (= (divides math_wrong__gcd__result a) true)))
 (check-sat)
+
+(exit)

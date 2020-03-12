@@ -494,3 +494,5 @@ Target solver: Z3
  ;; File "len_problem.adb", line 1, characters 0-0
   (not (<= 1 65535)))
 (check-sat)
+
+(exit)

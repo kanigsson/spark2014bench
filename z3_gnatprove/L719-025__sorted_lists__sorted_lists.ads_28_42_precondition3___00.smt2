@@ -1374,3 +1374,5 @@ Target solver: Z3
  ;; File "sorted_lists.ads", line 20, characters 0-0
   (not (<= 1 usf2)))
 (check-sat)
+
+(exit)

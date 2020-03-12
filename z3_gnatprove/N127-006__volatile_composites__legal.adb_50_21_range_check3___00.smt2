@@ -337,3 +337,5 @@ Target solver: Z3
  ;; File "legal.ads", line 110, characters 0-0
   (not (in_range (bv2int tmp))))
 (check-sat)
+
+(exit)

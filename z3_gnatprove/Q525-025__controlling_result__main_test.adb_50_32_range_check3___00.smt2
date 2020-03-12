@@ -2251,3 +2251,5 @@ Target solver: Z3
  ;; File "main_test.adb", line 8, characters 0-0
   (not (in_range (length o27 o26))))
 (check-sat)
+
+(exit)

@@ -526,3 +526,5 @@ Target solver: Z3
   (not (basic__r__a_field__pred
   (us_repqtmk v__split_discrs v__split_fields))))
 (check-sat)
+
+(exit)

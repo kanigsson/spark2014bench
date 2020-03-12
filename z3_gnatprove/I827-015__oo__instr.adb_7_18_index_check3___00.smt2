@@ -538,3 +538,5 @@ Target solver: Z3
  ;; File "instr.ads", line 17, characters 0-0
   (not (<= 1 j1)))
 (check-sat)
+
+(exit)

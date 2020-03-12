@@ -101,3 +101,5 @@ Target solver: Z3
  ;; File "bool.adb", line 14, characters 0-0
   (not (<= (ite x1 1 0) (ite y1 1 0))))
 (check-sat)
+
+(exit)

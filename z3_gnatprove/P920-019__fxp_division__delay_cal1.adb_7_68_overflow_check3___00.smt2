@@ -328,3 +328,5 @@ Target solver: Z3
  ;; File "delay_cal1.adb", line 3, characters 0-0
   (not (in_range (fxp_div_int 1000000000 o))))
 (check-sat)
+
+(exit)

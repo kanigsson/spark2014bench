@@ -161,3 +161,5 @@ Target solver: Z3
  ;; File "x86.ads", line 15, characters 0-0
   (not (= x86__al__result (bvand al_test #xFF))))
 (check-sat)
+
+(exit)

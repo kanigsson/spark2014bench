@@ -1125,3 +1125,5 @@ Target solver: Z3
  ;; File "psu_monitoring.ads", line 94, characters 0-0
   (not (fp.isFinite32 (fp.sub RNE o3 signal_value))))
 (check-sat)
+
+(exit)

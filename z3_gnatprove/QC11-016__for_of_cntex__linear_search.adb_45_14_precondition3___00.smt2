@@ -362,3 +362,5 @@ Target solver: Z3
  ;; File "linear_search.adb", line 33, characters 0-0
   (not (<= 1 i1)))
 (check-sat)
+
+(exit)

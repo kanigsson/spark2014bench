@@ -93,3 +93,5 @@ Target solver: Z3
  ;; File "gen2.ads", line 4, characters 0-0
   (not (= 2147483647 x)))
 (check-sat)
+
+(exit)

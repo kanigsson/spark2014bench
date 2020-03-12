@@ -704,3 +704,5 @@ Target solver: Z3
      y (to_rep (select (to_array init) x))
      (of_array values3 (to_rep values__first) (to_rep values__last))) true)))
 (check-sat)
+
+(exit)

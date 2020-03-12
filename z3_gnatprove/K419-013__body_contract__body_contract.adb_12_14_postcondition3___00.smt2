@@ -112,3 +112,5 @@ Target solver: Z3
  ;; File "body_contract.adb", line 10, characters 0-0
   (not (= x2 (- x1 1))))
 (check-sat)
+
+(exit)

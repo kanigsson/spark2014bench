@@ -439,3 +439,5 @@ Target solver: Z3
          (of_array (to_array temp___207) (first1 temp___207)
          (last1 temp___207))))))
 (check-sat)
+
+(exit)

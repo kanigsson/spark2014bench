@@ -398,3 +398,5 @@ Target solver: Z3
  ;; File "usergroup_examples.adb", line 32, characters 0-0
   (not (not (= 100 0))))
 (check-sat)
+
+(exit)

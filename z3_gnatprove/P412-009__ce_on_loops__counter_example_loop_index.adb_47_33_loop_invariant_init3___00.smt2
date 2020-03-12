@@ -195,3 +195,5 @@ Target solver: Z3
  ;; File "counter_example_loop_index.adb", line 41, characters 0-0
   (not (= (f j) true)))
 (check-sat)
+
+(exit)

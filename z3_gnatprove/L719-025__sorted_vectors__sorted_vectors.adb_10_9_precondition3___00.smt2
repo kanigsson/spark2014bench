@@ -810,3 +810,5 @@ Target solver: Z3
  ;; File "sorted_vectors.ads", line 20, characters 0-0
   (not (<= 1 position1)))
 (check-sat)
+
+(exit)

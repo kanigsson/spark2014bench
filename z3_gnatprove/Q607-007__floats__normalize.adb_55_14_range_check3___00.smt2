@@ -225,3 +225,5 @@ Target solver: Z3
  ;; File "normalize.ads", line 14, characters 0-0
   (not (in_range2 o1)))
 (check-sat)
+
+(exit)

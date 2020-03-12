@@ -292,3 +292,5 @@ Target solver: Z3
  ;; File "reverse_ord.adb", line 6, characters 0-0
   (not (= (to_rep (select a2 j)) (to_rep (select a1 (+ (- 10 j) 1))))))
 (check-sat)
+
+(exit)

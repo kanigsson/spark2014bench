@@ -105,3 +105,5 @@ Target solver: Z3
  ;; File "no_return_illegal.ads", line 6, characters 0-0
   (not (in_range (+ x 2))))
 (check-sat)
+
+(exit)

@@ -530,3 +530,5 @@ Target solver: Z3
  ;; File "array_aggr.adb", line 10, characters 0-0
   (not (<= first 3)))
 (check-sat)
+
+(exit)

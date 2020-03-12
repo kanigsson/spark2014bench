@@ -1420,3 +1420,5 @@ Target solver: Z3
   (not (rec__linear_search__int_acc__pointer_value__pred
   linear_search__linear_search__2__result)))
 (check-sat)
+
+(exit)

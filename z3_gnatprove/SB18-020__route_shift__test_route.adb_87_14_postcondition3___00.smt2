@@ -1226,3 +1226,5 @@ Target solver: Z3
                                                   (us_repqtmk3
                                                   r__pointer_value1)))))))
 (check-sat)
+
+(exit)

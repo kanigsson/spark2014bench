@@ -889,3 +889,5 @@ Target solver: Z3
  ;; File "run.ads", line 1, characters 0-0
   (not (in_range2 1 (us_split_discrs1 c2))))
 (check-sat)
+
+(exit)

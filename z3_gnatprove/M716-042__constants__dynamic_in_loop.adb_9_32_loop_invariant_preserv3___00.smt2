@@ -270,3 +270,5 @@ Target solver: Z3
  ;; File "dynamic_in_loop.adb", line 1, characters 0-0
   (not (= x2 z2)))
 (check-sat)
+
+(exit)

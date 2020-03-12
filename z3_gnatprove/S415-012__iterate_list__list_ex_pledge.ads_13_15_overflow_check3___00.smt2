@@ -451,3 +451,5 @@ Target solver: Z3
  ;; File "list_ex_pledge.ads", line 9, characters 0-0
   (not (in_range (+ 1 o5))))
 (check-sat)
+
+(exit)

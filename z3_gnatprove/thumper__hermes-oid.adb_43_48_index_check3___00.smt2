@@ -902,3 +902,5 @@ Target solver: Z3
  ;; File "hermes-oid.ads", line 25, characters 0-0
   (not (<= (first1 separates) temp___321)))
 (check-sat)
+
+(exit)

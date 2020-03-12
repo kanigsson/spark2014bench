@@ -534,3 +534,5 @@ Target solver: Z3
  ;; File "keccak-padding.ads", line 87, characters 0-0
   (not (in_range o3)))
 (check-sat)
+
+(exit)

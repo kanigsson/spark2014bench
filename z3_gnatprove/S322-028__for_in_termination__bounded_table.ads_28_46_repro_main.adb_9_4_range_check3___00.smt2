@@ -653,3 +653,5 @@ Target solver: Z3
  ;; File "bounded_table.ads", line 27, characters 0-0
   (not (in_range (length o2))))
 (check-sat)
+
+(exit)

@@ -409,3 +409,5 @@ Target solver: Z3
  ;; File "dynamic_ranges.ads", line 30, characters 0-0
   (not (= (to_rep (select a3 j)) 0)))
 (check-sat)
+
+(exit)

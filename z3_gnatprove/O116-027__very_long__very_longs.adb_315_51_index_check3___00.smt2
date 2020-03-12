@@ -1119,3 +1119,5 @@ Target solver: Z3
  ;; File "very_longs.ads", line 55, characters 0-0
   (not (<= (first1 temp___1078) j1)))
 (check-sat)
+
+(exit)

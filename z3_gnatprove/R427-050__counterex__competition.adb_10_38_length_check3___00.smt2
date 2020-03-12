@@ -384,3 +384,5 @@ Target solver: Z3
  ;; File "competition.ads", line 11, characters 0-0
   (not (<= (first1 input) (last1 input))))
 (check-sat)
+
+(exit)

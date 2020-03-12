@@ -302,3 +302,5 @@ Target solver: Z3
   (not
   (= (not (ite (= (attr__tag x__pointer_value) us_tag) true false)) true)))
 (check-sat)
+
+(exit)

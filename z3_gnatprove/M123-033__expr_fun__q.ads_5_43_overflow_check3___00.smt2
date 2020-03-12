@@ -146,3 +146,5 @@ Target solver: Z3
  ;; File "q.ads", line 5, characters 0-0
   (not (in_range (- o2 1))))
 (check-sat)
+
+(exit)

@@ -554,3 +554,5 @@ Target solver: Z3
  ;; File "p2.ads", line 24, characters 0-0
   (not (= (bool_eq (us_repqtmk full_s__split_fields1) null_r) true)))
 (check-sat)
+
+(exit)

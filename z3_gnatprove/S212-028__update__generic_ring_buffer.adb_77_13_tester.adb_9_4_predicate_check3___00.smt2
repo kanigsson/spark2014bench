@@ -894,3 +894,5 @@ Target solver: Z3
  ;; File "generic_ring_buffer.ads", line 81, characters 0-0
   (not (dynamic_predicate temp___335)))
 (check-sat)
+
+(exit)

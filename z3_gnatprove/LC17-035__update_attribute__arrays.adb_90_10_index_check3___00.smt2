@@ -352,3 +352,5 @@ Target solver: Z3
  ;; File "arrays.ads", line 73, characters 0-0
   (not (<= (to_rep1 a__first) i)))
 (check-sat)
+
+(exit)

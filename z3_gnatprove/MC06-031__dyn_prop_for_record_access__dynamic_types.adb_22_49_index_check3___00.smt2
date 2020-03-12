@@ -708,3 +708,5 @@ Target solver: Z3
  ;; File "dynamic_types.adb", line 13, characters 0-0
   (not (<= (first1 a) temp___232)))
 (check-sat)
+
+(exit)

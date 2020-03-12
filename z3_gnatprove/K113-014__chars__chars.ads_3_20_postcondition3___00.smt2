@@ -249,3 +249,5 @@ Target solver: Z3
  ;; File "chars.ads", line 2, characters 0-0
   (not (= chars__doit__result true)))
 (check-sat)
+
+(exit)

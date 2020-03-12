@@ -1572,3 +1572,5 @@ Target solver: Z3
  ;; File "formal_vectors.adb", line 29, characters 0-0
   (not (<= (first1 temp___665) (last1 temp___665))))
 (check-sat)
+
+(exit)

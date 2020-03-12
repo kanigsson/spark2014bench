@@ -243,3 +243,5 @@ Target solver: Z3
  ;; File "loops.adb", line 1, characters 0-0
   (not (= count5 k2)))
 (check-sat)
+
+(exit)

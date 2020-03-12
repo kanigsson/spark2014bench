@@ -169,3 +169,5 @@ Target solver: Z3
  ;; File "default_init.ads", line 38, characters 0-0
   (not (= w (init 0))))
 (check-sat)
+
+(exit)

@@ -455,3 +455,5 @@ Target solver: Z3
  ;; File "natural_set.ads", line 27, characters 0-0
   (not (= (valid (us_repqtmk s__split_fields1)) true)))
 (check-sat)
+
+(exit)

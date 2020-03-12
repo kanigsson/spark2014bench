@@ -543,3 +543,5 @@ Target solver: Z3
  ;; File "test_containers.adb", line 4, characters 0-0
   (not (= (valid2 (m_element (get_model c31) p3)) true)))
 (check-sat)
+
+(exit)

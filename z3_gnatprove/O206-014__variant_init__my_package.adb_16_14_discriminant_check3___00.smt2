@@ -373,3 +373,5 @@ Target solver: Z3
   (not (my_package__variant_type__m_b__pred
   (us_repqtmk v__split_discrs v__split_fields1))))
 (check-sat)
+
+(exit)

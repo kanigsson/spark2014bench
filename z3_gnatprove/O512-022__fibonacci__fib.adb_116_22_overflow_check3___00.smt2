@@ -463,3 +463,5 @@ Target solver: Z3
  ;; File "fib.ads", line 29, characters 0-0
   (not (in_range1 (* b22 b22))))
 (check-sat)
+
+(exit)

@@ -110,3 +110,5 @@ Target solver: Z3
  ;; File "stacks_2.ads", line 10, characters 0-0
   (not (= a_pointer 100)))
 (check-sat)
+
+(exit)

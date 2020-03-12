@@ -126,3 +126,5 @@ Target solver: Z3
  ;; File "client_unit.ads", line 4, characters 0-0
   (not (= (cur_state state1) 0)))
 (check-sat)
+
+(exit)

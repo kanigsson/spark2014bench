@@ -58,3 +58,5 @@ Target solver: Z3
  ;; File "localcst.ads", line 9, characters 0-0
   (not (< localcst__glob__result 4000)))
 (check-sat)
+
+(exit)

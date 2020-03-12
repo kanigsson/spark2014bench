@@ -1208,3 +1208,5 @@ Target solver: Z3
  ;; File "amortized_queue.ads", line 69, characters 0-0
   (not (= (inv (us_repqtmk1 amortized_queue__tail__result)) true)))
 (check-sat)
+
+(exit)

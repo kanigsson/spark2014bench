@@ -967,3 +967,5 @@ Target solver: Z3
   (exists ((cu us_rep))
   (and (= (has_element l cu) true) (= (element l cu) 1)))))
 (check-sat)
+
+(exit)

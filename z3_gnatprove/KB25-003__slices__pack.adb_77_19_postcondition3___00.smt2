@@ -349,3 +349,5 @@ Target solver: Z3
  ;; File "pack.adb", line 76, characters 0-0
   (not (= (to_rep (select a j)) 1)))
 (check-sat)
+
+(exit)

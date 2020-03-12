@@ -247,3 +247,5 @@ Target solver: Z3
  ;; File "pf.ads", line 9, characters 0-0
   (not (= b1 (div1 a 2))))
 (check-sat)
+
+(exit)

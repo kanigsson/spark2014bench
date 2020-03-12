@@ -1527,3 +1527,5 @@ Target solver: Z3
  ;; File "very_longs.ads", line 65, characters 0-0
   (not (dynamic_property1 o5 o4 temp___1196)))
 (check-sat)
+
+(exit)

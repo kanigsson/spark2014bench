@@ -634,3 +634,5 @@ Target solver: Z3
  ;; File "cartesian.ads", line 43, characters 0-0
   (not (in_range2 o2)))
 (check-sat)
+
+(exit)

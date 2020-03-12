@@ -989,3 +989,5 @@ Target solver: Z3
  ;; File "tictactoe.ads", line 42, characters 0-0
   (not (in_range1 (+ score1 10))))
 (check-sat)
+
+(exit)

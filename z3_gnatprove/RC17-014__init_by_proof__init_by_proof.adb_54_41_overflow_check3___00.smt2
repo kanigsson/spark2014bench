@@ -550,3 +550,5 @@ Target solver: Z3
  ;; File "init_by_proof.adb", line 45, characters 0-0
   (not (in_range1 o3)))
 (check-sat)
+
+(exit)

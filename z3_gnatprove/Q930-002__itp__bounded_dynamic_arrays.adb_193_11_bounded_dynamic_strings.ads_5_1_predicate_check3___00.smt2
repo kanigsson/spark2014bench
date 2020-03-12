@@ -838,3 +838,5 @@ Target solver: Z3
  ;; File "bounded_dynamic_arrays.ads", line 159, characters 0-0
   (not (dynamic_predicate temp___1731)))
 (check-sat)
+
+(exit)

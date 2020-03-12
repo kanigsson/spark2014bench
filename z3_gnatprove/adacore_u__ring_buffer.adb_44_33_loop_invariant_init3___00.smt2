@@ -780,3 +780,5 @@ Target solver: Z3
  ;; File "ring_buffer.ads", line 30, characters 0-0
   (not (= (length r1) (+ (- c first) j1))))
 (check-sat)
+
+(exit)

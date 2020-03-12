@@ -637,3 +637,5 @@ Target solver: Z3
   (< (to_rep (select (to_array s) (- (to_rep1 (select cut (+ k 1))) 1))) 
   (to_rep (select (to_array s) (to_rep1 (select cut (+ k 1))))))))))
 (check-sat)
+
+(exit)

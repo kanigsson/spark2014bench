@@ -1038,3 +1038,5 @@ Target solver: Z3
           (rec__types_with_invariants__container__content
           (us_split_fields3 usf2))) temp___272))))
 (check-sat)
+
+(exit)

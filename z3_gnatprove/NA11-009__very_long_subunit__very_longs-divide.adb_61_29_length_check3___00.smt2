@@ -760,3 +760,5 @@ Target solver: Z3
  ;; File "very_longs-divide.adb", line 51, characters 0-0
   (not (<= 1 r116b)))
 (check-sat)
+
+(exit)

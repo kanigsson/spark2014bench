@@ -667,3 +667,5 @@ Target solver: Z3
  ;; File "ghc_sort.ads", line 6, characters 0-0
   (not (<= (to_rep cut__first) o10)))
 (check-sat)
+
+(exit)

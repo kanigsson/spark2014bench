@@ -971,3 +971,5 @@ Target solver: Z3
      (select (select result__3 (+ (+ (* (- i (first1 array1)) (length array2)) (- 
      j (first1 array2))) 1)) 2)) (to_rep (select (to_array array2) j)))))
 (check-sat)
+
+(exit)

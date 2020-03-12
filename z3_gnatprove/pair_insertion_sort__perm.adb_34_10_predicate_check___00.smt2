@@ -507,3 +507,5 @@ Target solver: Z3
  ;; File "perm.ads", line 34, characters 0-0
   (not (= (to_rep b__first) 0)))
 (check-sat)
+
+(exit)

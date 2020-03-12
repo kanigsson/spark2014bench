@@ -145,3 +145,5 @@ Target solver: Z3
  ;; File "unsigned.adb", line 1, characters 0-0
   (not (bvule #x0000000000000000 temp___184)))
 (check-sat)
+
+(exit)

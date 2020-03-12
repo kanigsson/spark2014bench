@@ -634,3 +634,5 @@ Target solver: Z3
  ;; File "do_checks.adb", line 6, characters 0-0
   (not (= (to_rep o1) 1)))
 (check-sat)
+
+(exit)

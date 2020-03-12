@@ -749,3 +749,5 @@ Target solver: Z3
  ;; File "stack.ads", line 21, characters 0-0
   (not (= (top (us_repqtmk s__split_discrs s__split_fields3)) x)))
 (check-sat)
+
+(exit)

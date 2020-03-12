@@ -348,3 +348,5 @@ Target solver: Z3
  ;; File "maxandsum.ads", line 11, characters 0-0
   (not (<= sum2 (* 100 max2))))
 (check-sat)
+
+(exit)

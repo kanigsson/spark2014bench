@@ -75,3 +75,5 @@ Target solver: Z3
  ;; File "qack.adb", line 11, characters 0-0
   (not (= x1 true)))
 (check-sat)
+
+(exit)

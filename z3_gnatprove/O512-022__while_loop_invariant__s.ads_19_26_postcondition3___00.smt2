@@ -231,3 +231,5 @@ Target solver: Z3
  ;; File "s.ads", line 14, characters 0-0
   (not (= (to_rep (select table index)) value)))
 (check-sat)
+
+(exit)

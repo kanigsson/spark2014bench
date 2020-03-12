@@ -608,3 +608,5 @@ Target solver: Z3
   (= (to_rep1 (select h4 k)) (to_rep1
                              (select temp___loop_entry_539 (+ k m1))))))
 (check-sat)
+
+(exit)

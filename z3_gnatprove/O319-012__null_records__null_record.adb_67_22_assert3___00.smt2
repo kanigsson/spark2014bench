@@ -225,3 +225,5 @@ Target solver: Z3
  ;; File "null_record.ads", line 10, characters 0-0
   (not true))
 (check-sat)
+
+(exit)

@@ -912,3 +912,5 @@ Target solver: Z3
  ;; File "queue.ads", line 26, characters 0-0
   (not (= (length queue__tail__result) (- (length q) 1))))
 (check-sat)
+
+(exit)

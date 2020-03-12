@@ -124,3 +124,5 @@ Target solver: Z3
  ;; File "minus.ads", line 2, characters 0-0
   (not (= minus__minus__result (- x 1))))
 (check-sat)
+
+(exit)

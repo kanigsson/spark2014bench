@@ -882,3 +882,5 @@ Target solver: Z3
   (not
   (< ada___keccak__keccak_1600__sponge__in_queue_bit_length__result 1600)))
 (check-sat)
+
+(exit)

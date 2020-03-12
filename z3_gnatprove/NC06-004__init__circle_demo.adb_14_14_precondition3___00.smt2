@@ -906,3 +906,5 @@ Target solver: Z3
  ;; File "circle_demo.adb", line 8, characters 0-0
   (not (= (in_bounds o wild_man1) true)))
 (check-sat)
+
+(exit)

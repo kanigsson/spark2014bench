@@ -385,3 +385,5 @@ Target solver: Z3
  ;; File "loops_static.ads", line 22, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

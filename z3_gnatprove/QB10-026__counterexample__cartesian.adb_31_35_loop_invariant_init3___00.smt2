@@ -806,3 +806,5 @@ Target solver: Z3
                                                                    array2)) (- 
      j (first1 array2))) 1)) 1)) (to_rep (select (to_array array1) index1)))))
 (check-sat)
+
+(exit)

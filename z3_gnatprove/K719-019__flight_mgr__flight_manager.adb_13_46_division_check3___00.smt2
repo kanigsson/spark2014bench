@@ -179,3 +179,5 @@ Target solver: Z3
  ;; File "flight_manager.adb", line 9, characters 0-0
   (not (not (fp.isZero (fp #b0 #b10000010 #b01000000000000000000000)))))
 (check-sat)
+
+(exit)

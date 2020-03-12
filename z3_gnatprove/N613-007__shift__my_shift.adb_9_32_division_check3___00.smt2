@@ -177,3 +177,5 @@ Target solver: Z3
  ;; File "my_shift.ads", line 10, characters 0-0
   (not (not (= #x00000008 #x00000000))))
 (check-sat)
+
+(exit)

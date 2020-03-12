@@ -1514,3 +1514,5 @@ Target solver: Z3
  ;; File "rec_types.ads", line 26, characters 0-0
   (not (<= 1 i1)))
 (check-sat)
+
+(exit)

@@ -1627,3 +1627,5 @@ Target solver: Z3
   (= (name (select (owned_state sm) (from (select (owned_transition sm) t)))) 
   (name1 (select av1 (from1 (select cfv t)))))))
 (check-sat)
+
+(exit)

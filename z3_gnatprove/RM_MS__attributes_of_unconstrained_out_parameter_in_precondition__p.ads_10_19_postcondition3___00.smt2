@@ -373,3 +373,5 @@ Target solver: Z3
  ;; File "p.ads", line 8, characters 0-0
   (not (= (to_rep (select x i)) (to_rep x__last))))
 (check-sat)
+
+(exit)

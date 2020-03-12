@@ -522,3 +522,5 @@ Target solver: Z3
  ;; File "hello.adb", line 39, characters 0-0
   (not (<= idx (last1 o7))))
 (check-sat)
+
+(exit)

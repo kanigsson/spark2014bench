@@ -1471,3 +1471,5 @@ Target solver: Z3
  ;; File "record_equality.ads", line 15, characters 0-0
   (not (= (bool_eq1 c_gp1 c_gp2) true)))
 (check-sat)
+
+(exit)

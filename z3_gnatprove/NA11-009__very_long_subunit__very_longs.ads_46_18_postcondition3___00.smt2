@@ -1086,3 +1086,5 @@ Target solver: Z3
                                                      (rec__very_longs__very_long__length
                                                      (us_split_discrs1 l))))))
 (check-sat)
+
+(exit)

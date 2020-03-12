@@ -58,3 +58,5 @@ Target solver: Z3
  ;; File "pack.ads", line 12, characters 0-0
   (not (= pack__query_x2__result 3)))
 (check-sat)
+
+(exit)

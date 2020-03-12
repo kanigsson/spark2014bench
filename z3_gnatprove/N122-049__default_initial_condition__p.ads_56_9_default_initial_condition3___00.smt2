@@ -226,3 +226,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-N122-049__default_initial_condition-31581/src/gnatprove/p__t10.mlw", line 370, characters 5-8
   (not (= (p10 usf1) true)))
 (check-sat)
+
+(exit)

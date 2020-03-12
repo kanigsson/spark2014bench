@@ -115,3 +115,5 @@ Target solver: Z3
  ;; File "body_contract.ads", line 5, characters 0-0
   (not (< x2 x)))
 (check-sat)
+
+(exit)

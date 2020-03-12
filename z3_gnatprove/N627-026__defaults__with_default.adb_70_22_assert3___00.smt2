@@ -970,3 +970,5 @@ Target solver: Z3
  ;; File "with_default.ads", line 11, characters 0-0
   (not (= (to_rep (select all_1 1)) 1)))
 (check-sat)
+
+(exit)

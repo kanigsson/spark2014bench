@@ -495,3 +495,5 @@ Target solver: Z3
  ;; File "failsafe.ads", line 22, characters 0-0
   (not (= failsafe__model__time_below_threshold__result #x00)))
 (check-sat)
+
+(exit)

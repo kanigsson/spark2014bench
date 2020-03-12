@@ -386,3 +386,5 @@ Target solver: Z3
                                                                     xdi5 2))) #x00010000)) (bvmul ((_ zero_extend 24) 
   (to_rep (select xdi5 3))) #x01000000)) val__)))
 (check-sat)
+
+(exit)

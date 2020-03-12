@@ -302,3 +302,5 @@ Target solver: Z3
  ;; File "loop_tutorial.adb", line 9, characters 0-0
   (not (<= (* loop_tutorial__isqrt__result loop_tutorial__isqrt__result) n)))
 (check-sat)
+
+(exit)

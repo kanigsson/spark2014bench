@@ -517,3 +517,5 @@ Target solver: Z3
                                                         (bv2int (to_rep o1))
                                                         (bv2int (to_rep o))))))
 (check-sat)
+
+(exit)

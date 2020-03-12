@@ -4313,3 +4313,5 @@ Target solver: Z3
  ;; File "pragmarc-b_strings.ads", line 37, characters 0-0
   (not (<= 1 r34b)))
 (check-sat)
+
+(exit)

@@ -321,3 +321,5 @@ Target solver: Z3
  ;; File "dyn_pred_in_loop.adb", line 1, characters 0-0
   (not (in_range2 o)))
 (check-sat)
+
+(exit)

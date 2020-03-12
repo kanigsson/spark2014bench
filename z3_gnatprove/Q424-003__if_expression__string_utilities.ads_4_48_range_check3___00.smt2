@@ -328,3 +328,5 @@ Target solver: Z3
  ;; File "string_utilities.ads", line 4, characters 0-0
   (not (<= (first1 s) o)))
 (check-sat)
+
+(exit)

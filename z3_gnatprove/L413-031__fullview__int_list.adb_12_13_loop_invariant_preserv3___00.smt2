@@ -1071,3 +1071,5 @@ Target solver: Z3
      (us_repqtmk1 l__split_discrs (us_split_fieldsqtmk1 l__split_fields2))) 
   (length temp___loop_entry_1004))))
 (check-sat)
+
+(exit)

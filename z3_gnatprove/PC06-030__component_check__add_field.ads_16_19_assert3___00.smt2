@@ -407,3 +407,5 @@ Target solver: Z3
  ;; File "add_field.ads", line 2, characters 0-0
   (not (<= 0 (to_rep (select x i)))))
 (check-sat)
+
+(exit)

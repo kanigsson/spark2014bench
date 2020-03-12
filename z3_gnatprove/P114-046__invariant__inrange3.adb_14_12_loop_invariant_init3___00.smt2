@@ -209,3 +209,5 @@ Target solver: Z3
  ;; File "inrange3.ads", line 15, characters 0-0
   (not (bvule #x0000000000000000 i)))
 (check-sat)
+
+(exit)

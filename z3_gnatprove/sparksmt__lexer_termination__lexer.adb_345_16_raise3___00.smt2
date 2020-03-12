@@ -663,3 +663,5 @@ Target solver: Z3
  ;; File "lexer.adb", line 319, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

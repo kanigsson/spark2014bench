@@ -377,3 +377,5 @@ Target solver: Z3
  ;; File "sorters.adb", line 22, characters 0-0
   (not (<= (first1 unsorted) index1)))
 (check-sat)
+
+(exit)

@@ -411,3 +411,5 @@ Target solver: Z3
  ;; File "use_vectors.ads", line 12, characters 0-0
   (not (= (length s3) k2)))
 (check-sat)
+
+(exit)

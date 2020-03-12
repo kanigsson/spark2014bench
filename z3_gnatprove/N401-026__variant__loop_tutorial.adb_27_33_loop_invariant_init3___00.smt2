@@ -284,3 +284,5 @@ Target solver: Z3
  ;; File "loop_tutorial.adb", line 9, characters 0-0
   (not (<= 0 lower1)))
 (check-sat)
+
+(exit)

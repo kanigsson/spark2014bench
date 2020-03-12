@@ -413,3 +413,5 @@ Target solver: Z3
   (forall ((j2 Int))
   (=> (and (<= (+ k 1) j2) (<= j2 (to_rep a__last))) (= (select a1 j2) true)))))))))
 (check-sat)
+
+(exit)

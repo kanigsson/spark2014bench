@@ -837,3 +837,5 @@ Target solver: Z3
  ;; File "test.adb", line 148, characters 0-0
   (not (in_range1 (bvsub o4 #x01))))
 (check-sat)
+
+(exit)

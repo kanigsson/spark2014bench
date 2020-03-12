@@ -978,3 +978,5 @@ Target solver: Z3
                                                               (rec__pledge_constraints__int_acc__pointer_value
                                                               temp___brower_256)))))
 (check-sat)
+
+(exit)

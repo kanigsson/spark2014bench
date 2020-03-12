@@ -877,3 +877,5 @@ Target solver: Z3
   (us_split_fieldsqtmk3
   (of_array (to_array temp___249) (first1 temp___249) (last1 temp___249)))))))))
 (check-sat)
+
+(exit)

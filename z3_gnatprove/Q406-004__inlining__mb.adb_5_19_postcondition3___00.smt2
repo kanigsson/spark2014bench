@@ -113,3 +113,5 @@ Target solver: Z3
  ;; File "mb.adb", line 4, characters 0-0
   (not (< 0 (item_count Tuple0))))
 (check-sat)
+
+(exit)

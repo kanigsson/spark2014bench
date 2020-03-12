@@ -898,3 +898,5 @@ Target solver: Z3
  ;; File "lcp.ads", line 10, characters 0-0
   (not (= lcp__result 0)))
 (check-sat)
+
+(exit)

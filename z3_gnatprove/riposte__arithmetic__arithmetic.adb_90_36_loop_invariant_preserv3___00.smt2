@@ -254,3 +254,5 @@ Target solver: Z3
  ;; File "arithmetic.adb", line 75, characters 0-0
   (not (= r4 (+ a i2))))
 (check-sat)
+
+(exit)

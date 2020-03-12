@@ -500,3 +500,5 @@ Target solver: Z3
  ;; File "usefoo.ads", line 6, characters 0-0
   (not (in_range o5)))
 (check-sat)
+
+(exit)

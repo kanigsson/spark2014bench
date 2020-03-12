@@ -1148,3 +1148,5 @@ Target solver: Z3
                                                           (us_split_discrs1
                                                           l))))))
 (check-sat)
+
+(exit)

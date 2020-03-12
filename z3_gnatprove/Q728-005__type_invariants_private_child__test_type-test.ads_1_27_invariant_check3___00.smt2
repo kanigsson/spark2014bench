@@ -279,3 +279,5 @@ Target solver: Z3
  ;; File "test_type-test.ads", line 1, characters 0-0
   (not (type_invariant (us_repqtmk (us_split_fieldsqtmk y__split_fields)))))
 (check-sat)
+
+(exit)

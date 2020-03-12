@@ -421,3 +421,5 @@ Target solver: Z3
   (= (valid
      (element c11 (us_repqtmk (us_split_fieldsqtmk p1__split_fields)))) true)))
 (check-sat)
+
+(exit)

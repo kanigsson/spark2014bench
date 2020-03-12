@@ -422,3 +422,5 @@ Target solver: Z3
  ;; File "use_vectors.ads", line 12, characters 0-0
   (not (= (get s3 j) j)))
 (check-sat)
+
+(exit)

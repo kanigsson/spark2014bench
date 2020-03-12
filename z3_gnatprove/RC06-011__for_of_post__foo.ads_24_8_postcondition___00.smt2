@@ -567,3 +567,5 @@ Target solver: Z3
           (select (rec__foo__potato_metrics_t__parameters
                   (us_split_fields3 metrics)) temp___221)))) max3)))
 (check-sat)
+
+(exit)

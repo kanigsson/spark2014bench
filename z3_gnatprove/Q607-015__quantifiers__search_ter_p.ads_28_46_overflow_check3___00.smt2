@@ -336,3 +336,5 @@ Target solver: Z3
  ;; File "search_ter_p.ads", line 25, characters 0-0
   (not (in_range o3)))
 (check-sat)
+
+(exit)

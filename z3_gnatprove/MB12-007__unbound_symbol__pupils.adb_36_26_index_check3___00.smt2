@@ -3426,3 +3426,5 @@ Target solver: Z3
  ;; File "pupils.ads", line 88, characters 0-0
   (not (<= 1 temp___485)))
 (check-sat)
+
+(exit)

@@ -389,3 +389,5 @@ Target solver: Z3
   (to_rep
   (rec__frame__rec__c2 (us_split_fields1 (select temp___loop_entry_223 k)))))))
 (check-sat)
+
+(exit)

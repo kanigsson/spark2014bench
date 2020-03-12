@@ -454,3 +454,5 @@ Target solver: Z3
                                                       #x0000)) (readmem16
                                                                addr memory))))
 (check-sat)
+
+(exit)

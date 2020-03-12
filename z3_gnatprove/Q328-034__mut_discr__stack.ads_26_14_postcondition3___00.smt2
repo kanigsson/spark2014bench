@@ -702,3 +702,5 @@ Target solver: Z3
  ;; File "stack.ads", line 24, characters 0-0
   (not (= (size last4) (- (size last3) 1))))
 (check-sat)
+
+(exit)

@@ -333,3 +333,5 @@ Target solver: Z3
  ;; File "bug5.ads", line 3, characters 0-0
   (not (= (p (of_array (temp___String_Literal_167 Tuple0) 1 4)) true)))
 (check-sat)
+
+(exit)

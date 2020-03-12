@@ -405,3 +405,5 @@ Target solver: Z3
  ;; File "conv.adb", line 5, characters 0-0
   (not (= (bool_eq conv__id__result x) true)))
 (check-sat)
+
+(exit)

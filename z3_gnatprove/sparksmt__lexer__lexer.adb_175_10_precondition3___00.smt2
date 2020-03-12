@@ -526,3 +526,5 @@ Target solver: Z3
  ;; File "lexer.adb", line 139, characters 0-0
   (not (not (= next_read__attr__constrained true))))
 (check-sat)
+
+(exit)

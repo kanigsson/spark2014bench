@@ -1369,3 +1369,5 @@ Target solver: Z3
  ;; File "stacks.ads", line 50, characters 0-0
   (not (in_range3 o1)))
 (check-sat)
+
+(exit)

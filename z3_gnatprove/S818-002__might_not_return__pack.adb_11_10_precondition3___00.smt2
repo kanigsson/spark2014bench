@@ -73,3 +73,5 @@ Target solver: Z3
  ;; File "pack.ads", line 5, characters 0-0
   (not (= (distinct 0 0) true)))
 (check-sat)
+
+(exit)

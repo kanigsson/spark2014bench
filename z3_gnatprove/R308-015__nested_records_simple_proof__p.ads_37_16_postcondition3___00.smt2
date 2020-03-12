@@ -677,3 +677,5 @@ Target solver: Z3
   (= (bool_eq (rec__p__type_2__field_0 p__create_type_2__result)
      (create_type_1 Tuple0)) true)))
 (check-sat)
+
+(exit)

@@ -1737,3 +1737,5 @@ Target solver: Z3
  ;; File "formal_vectors.ads", line 36, characters 0-0
   (not (dynamic_predicate temp___613)))
 (check-sat)
+
+(exit)

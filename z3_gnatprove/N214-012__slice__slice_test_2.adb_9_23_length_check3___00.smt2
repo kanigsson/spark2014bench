@@ -275,3 +275,5 @@ Target solver: Z3
  ;; File "slice_test_2.ads", line 8, characters 0-0
   (not (<= (first1 temp___179) (last1 temp___179))))
 (check-sat)
+
+(exit)

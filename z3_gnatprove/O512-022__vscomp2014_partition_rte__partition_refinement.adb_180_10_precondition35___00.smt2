@@ -2976,3 +2976,5 @@ Target solver: Z3
   (<= temp___1431 (- (length3
                      (us_repqtmk4 o7 (us_split_fieldsqtmk4 p__split_fields))) 1))))
 (check-sat)
+
+(exit)

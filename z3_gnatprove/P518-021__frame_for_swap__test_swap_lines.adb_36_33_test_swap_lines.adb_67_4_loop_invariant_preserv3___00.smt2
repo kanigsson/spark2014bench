@@ -719,3 +719,5 @@ Target solver: Z3
   (not
   (= (to_rep (get m7 k k)) (+ (to_rep (get temp___loop_entry_283 k k)) 1))))
 (check-sat)
+
+(exit)

@@ -460,3 +460,5 @@ Target solver: Z3
  ;; File "arrays.ads", line 19, characters 0-0
   (not (= arrays__count_even__result 0)))
 (check-sat)
+
+(exit)

@@ -351,3 +351,5 @@ Target solver: Z3
  ;; File "split_records.ads", line 22, characters 0-0
   (not (= (to_rep r__split_fields1) new_field)))
 (check-sat)
+
+(exit)

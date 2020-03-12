@@ -311,3 +311,5 @@ Target solver: Z3
  ;; File "overflow_check.adb", line 22, characters 0-0
   (not (fp.isFinite32 (fp.div RNE x o))))
 (check-sat)
+
+(exit)

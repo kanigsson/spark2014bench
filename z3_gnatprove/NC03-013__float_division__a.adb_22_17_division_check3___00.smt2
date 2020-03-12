@@ -375,3 +375,5 @@ Target solver: Z3
  ;; File "a.ads", line 8, characters 0-0
   (not (not (fp.isZero o))))
 (check-sat)
+
+(exit)

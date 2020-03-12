@@ -185,3 +185,5 @@ Target solver: Z3
  ;; File "exprfun.ads", line 3, characters 0-0
   (not (in_range (div1 x o))))
 (check-sat)
+
+(exit)

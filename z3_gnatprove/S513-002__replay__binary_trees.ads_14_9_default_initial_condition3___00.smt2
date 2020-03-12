@@ -811,3 +811,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-S513-002__replay-15661/src/gnatprove/binary_trees__forest.mlw", line 1249, characters 5-8
   (not (= (size usf1) 0)))
 (check-sat)
+
+(exit)

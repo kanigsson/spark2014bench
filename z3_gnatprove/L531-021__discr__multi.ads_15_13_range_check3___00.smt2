@@ -525,3 +525,5 @@ Target solver: Z3
  ;; File "multi.ads", line 1, characters 0-0
   (not (<= 0 1)))
 (check-sat)
+
+(exit)

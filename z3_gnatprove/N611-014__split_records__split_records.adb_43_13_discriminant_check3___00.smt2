@@ -2456,3 +2456,5 @@ Target solver: Z3
   (= (distinct 0 0) (rec__split_records__record_with_mutable_discrs__present
                     (us_split_discrs1 temp___305)))))
 (check-sat)
+
+(exit)

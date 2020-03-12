@@ -586,3 +586,5 @@ Target solver: Z3
  ;; File "a-cfinve.ads", line 718, characters 0-0
   (not (in_range6 o3)))
 (check-sat)
+
+(exit)

@@ -441,3 +441,5 @@ Target solver: Z3
  ;; File "po_t.ads", line 1, characters 0-0
   (not (= x y)))
 (check-sat)
+
+(exit)

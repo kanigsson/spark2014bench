@@ -90,3 +90,5 @@ Target solver: Z3
  ;; File "p.adb", line 17, characters 0-0
   (not (not (= o 2))))
 (check-sat)
+
+(exit)

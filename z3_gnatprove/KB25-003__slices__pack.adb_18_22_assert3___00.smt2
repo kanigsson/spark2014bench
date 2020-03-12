@@ -487,3 +487,5 @@ Target solver: Z3
   (not
   (not (= (bool_eq1 my_b 1 4 (temp_____aggregate_def_431 42) 1 4) true))))
 (check-sat)
+
+(exit)

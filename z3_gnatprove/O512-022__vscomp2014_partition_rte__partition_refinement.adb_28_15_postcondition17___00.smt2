@@ -2948,3 +2948,5 @@ Target solver: Z3
                                        x_elem)))
                             (to_rep (select a1 k)))))))
 (check-sat)
+
+(exit)

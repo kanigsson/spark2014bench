@@ -515,3 +515,5 @@ Target solver: Z3
  ;; File "random.ads", line 51, characters 0-0
   (not (in_range1 o)))
 (check-sat)
+
+(exit)

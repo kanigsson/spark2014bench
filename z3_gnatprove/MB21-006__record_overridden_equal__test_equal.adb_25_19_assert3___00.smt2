@@ -331,3 +331,5 @@ Target solver: Z3
  ;; File "test_equal.adb", line 1, characters 0-0
   (not (= (oeq content_x content_y) true)))
 (check-sat)
+
+(exit)

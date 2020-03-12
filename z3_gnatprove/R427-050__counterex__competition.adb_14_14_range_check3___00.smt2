@@ -452,3 +452,5 @@ Target solver: Z3
  ;; File "competition.ads", line 11, characters 0-0
   (not (<= (to_rep result____first) temp___208)))
 (check-sat)
+
+(exit)

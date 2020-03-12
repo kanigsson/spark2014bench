@@ -160,3 +160,5 @@ Target solver: Z3
  ;; File "initialization_and_elaboration.ads", line 4, characters 0-0
   (not (= v vp)))
 (check-sat)
+
+(exit)

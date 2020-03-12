@@ -1059,3 +1059,5 @@ Target solver: Z3
   (not
   (or (= (has_element o17 o16) true) (= (bool_eq o16 no_element) true))))
 (check-sat)
+
+(exit)

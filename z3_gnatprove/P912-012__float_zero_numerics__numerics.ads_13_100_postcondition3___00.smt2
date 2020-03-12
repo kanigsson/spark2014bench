@@ -176,3 +176,5 @@ Target solver: Z3
  ;; File "numerics.ads", line 13, characters 0-0
   (not (fp.eq numerics__Osubtract__result (fp.sub RNE left right))))
 (check-sat)
+
+(exit)

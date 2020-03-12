@@ -530,3 +530,5 @@ Target solver: Z3
  ;; File "aida-strings-generic_immutable_unbounded_string_shared_ptr-mutable.ads", line 6, characters 0-0
   (not (in_range (length text))))
 (check-sat)
+
+(exit)

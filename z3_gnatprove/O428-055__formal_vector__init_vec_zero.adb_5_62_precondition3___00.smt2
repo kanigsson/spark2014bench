@@ -806,3 +806,5 @@ Target solver: Z3
  ;; File "init_vec_zero.adb", line 3, characters 0-0
   (not (<= 1 usf)))
 (check-sat)
+
+(exit)

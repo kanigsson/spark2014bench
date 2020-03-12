@@ -703,3 +703,5 @@ Target solver: Z3
  ;; File "test_goto_borrow.adb", line 24, characters 0-0
   (not (<= usf4 (length usf2))))
 (check-sat)
+
+(exit)

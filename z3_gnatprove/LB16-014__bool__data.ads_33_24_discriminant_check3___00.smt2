@@ -300,3 +300,5 @@ Target solver: Z3
  ;; File "data.ads", line 10, characters 0-0
   (not (data__t_strong_data_type__min_nat32__pred strong_data_type)))
 (check-sat)
+
+(exit)

@@ -566,3 +566,5 @@ Target solver: Z3
  ;; File "update_proof.adb", line 1, characters 0-0
   (not (= (bool_eq (select b1 1) 1 2 (select o_b 1) 1 2) true)))
 (check-sat)
+
+(exit)

@@ -586,3 +586,5 @@ Target solver: Z3
  ;; File "failsafe.ads", line 22, characters 0-0
   (not (fp.lt (to_rep (select battery_level_at s3)) battery_threshold)))
 (check-sat)
+
+(exit)

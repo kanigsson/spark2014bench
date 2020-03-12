@@ -280,3 +280,5 @@ Target solver: Z3
  ;; File "spark-fixed_point_arithmetic_lemmas.ads", line 88, characters 0-0
   (not (in_range2 (fxp_div_int 2147483647 o))))
 (check-sat)
+
+(exit)

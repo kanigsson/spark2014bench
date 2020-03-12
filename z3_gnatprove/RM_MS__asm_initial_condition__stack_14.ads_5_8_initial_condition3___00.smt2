@@ -261,3 +261,5 @@ Target solver: Z3
  ;; File "stack_14.ads", line 1, characters 0-0
   (not (= (is_empty pointer1) true)))
 (check-sat)
+
+(exit)

@@ -577,3 +577,5 @@ Target solver: Z3
  ;; File "fixed_stream.ads", line 52, characters 0-0
   (not (<= (first1 temp___326) (last1 temp___326))))
 (check-sat)
+
+(exit)

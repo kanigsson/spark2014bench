@@ -380,3 +380,5 @@ Target solver: Z3
  ;; File "r.ads", line 4, characters 0-0
   (not (<= (* 2 h1) (to_rep a__last))))
 (check-sat)
+
+(exit)

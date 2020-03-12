@@ -456,3 +456,5 @@ Target solver: Z3
  ;; File "test2.ads", line 11, characters 0-0
   (not (= (last1 o1) 10)))
 (check-sat)
+
+(exit)

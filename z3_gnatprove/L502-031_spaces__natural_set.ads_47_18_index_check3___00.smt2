@@ -409,3 +409,5 @@ Target solver: Z3
  ;; File "natural_set.ads", line 6, characters 0-0
   (not (<= 1 usf)))
 (check-sat)
+
+(exit)

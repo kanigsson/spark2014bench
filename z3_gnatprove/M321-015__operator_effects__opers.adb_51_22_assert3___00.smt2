@@ -686,3 +686,5 @@ Target solver: Z3
  ;; File "opers.ads", line 24, characters 0-0
   (not (= (fixed_false2R a4) true)))
 (check-sat)
+
+(exit)

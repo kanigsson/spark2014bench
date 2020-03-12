@@ -241,3 +241,5 @@ Target solver: Z3
  ;; File "generic_instance.ads", line 25, characters 0-0
   (not (= (f (us_repqtmk x__split_fields1 x__attr__tag)) true)))
 (check-sat)
+
+(exit)

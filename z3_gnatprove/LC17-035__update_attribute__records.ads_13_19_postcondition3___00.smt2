@@ -422,3 +422,5 @@ Target solver: Z3
      (us_split_fieldsqtmk rliteral (of_rep1 new_data) rliteral1
      (rec__types__rec__s1 r__split_fields1)))) true)))
 (check-sat)
+
+(exit)

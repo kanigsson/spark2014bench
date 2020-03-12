@@ -370,3 +370,5 @@ Target solver: Z3
  ;; File "arrays.adb", line 151, characters 0-0
   (not (<= 1 (+ (to_rep1 (rec__arrays__string_t__len s__split_fields)) 1))))
 (check-sat)
+
+(exit)

@@ -184,3 +184,5 @@ Target solver: Z3
  ;; File "dates.ads", line 7, characters 0-0
   (not (not (= 400 0))))
 (check-sat)
+
+(exit)

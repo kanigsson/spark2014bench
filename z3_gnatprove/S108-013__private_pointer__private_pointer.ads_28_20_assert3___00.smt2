@@ -291,3 +291,5 @@ Target solver: Z3
  ;; File "private_pointer.ads", line 1, characters 0-0
   (not (= (is_null1 x_2) true)))
 (check-sat)
+
+(exit)

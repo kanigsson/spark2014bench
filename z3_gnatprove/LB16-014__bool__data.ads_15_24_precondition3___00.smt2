@@ -409,3 +409,5 @@ Target solver: Z3
  ;; File "data.ads", line 13, characters 0-0
   (not (= (is_nat32 data__create_type__result) true)))
 (check-sat)
+
+(exit)

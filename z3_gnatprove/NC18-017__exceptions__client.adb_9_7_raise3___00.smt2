@@ -102,3 +102,5 @@ Target solver: Z3
  ;; File "client.adb", line 4, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

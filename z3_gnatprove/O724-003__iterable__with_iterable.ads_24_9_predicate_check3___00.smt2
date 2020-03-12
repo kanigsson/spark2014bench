@@ -574,3 +574,5 @@ Target solver: Z3
   (not (dynamic_predicate
   (us_repqtmk (us_split_discrs1 cu) (us_split_fieldsqtmk o2)))))
 (check-sat)
+
+(exit)

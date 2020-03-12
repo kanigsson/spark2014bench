@@ -285,3 +285,5 @@ Target solver: Z3
   (exists ((j Int))
   (and (and (<= 1 j) (<= j 10)) (= (to_rep (select table j)) value)))))
 (check-sat)
+
+(exit)

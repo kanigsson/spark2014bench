@@ -170,3 +170,5 @@ Target solver: Z3
  ;; File "recursive_through_type.ads", line 5, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

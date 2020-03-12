@@ -274,3 +274,5 @@ Target solver: Z3
  ;; File "where_are_the_run_time_errors.adb", line 2, characters 0-0
   (not (in_range o3)))
 (check-sat)
+
+(exit)

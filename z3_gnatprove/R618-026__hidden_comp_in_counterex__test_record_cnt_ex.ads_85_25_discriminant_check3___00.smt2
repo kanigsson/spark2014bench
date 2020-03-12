@@ -2855,3 +2855,5 @@ Target solver: Z3
  ;; File "test_record_cnt_ex.ads", line 1, characters 0-0
   (not (in_range2 (distinct 0 0) (us_split_discrs1 temp___270))))
 (check-sat)
+
+(exit)

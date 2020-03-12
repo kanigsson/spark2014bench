@@ -147,3 +147,5 @@ Target solver: Z3
   (not
   (not (fp.eq (fp.mul RNE x (fp.mul RNE x x)) ((_ to_fp 8 24) #x00000000)))))
 (check-sat)
+
+(exit)

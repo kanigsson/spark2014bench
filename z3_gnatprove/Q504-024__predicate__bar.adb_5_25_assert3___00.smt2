@@ -68,3 +68,5 @@ Target solver: Z3
  ;; File "bar.ads", line 5, characters 0-0
   (not (= (distinct x 0) true)))
 (check-sat)
+
+(exit)

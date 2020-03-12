@@ -208,3 +208,5 @@ Target solver: Z3
  ;; File "account8.ads", line 15, characters 0-0
   (not false))
 (check-sat)
+
+(exit)

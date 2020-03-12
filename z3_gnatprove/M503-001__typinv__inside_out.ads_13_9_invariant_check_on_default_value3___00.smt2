@@ -124,3 +124,5 @@ Target solver: Z3
  ;; File "inside_out.ads", line 1, characters 0-0
   (not (type_invariant usf)))
 (check-sat)
+
+(exit)

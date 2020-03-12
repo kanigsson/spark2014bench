@@ -1543,3 +1543,5 @@ Target solver: Z3
  ;; File "parse.ads", line 15, characters 0-0
   (not (in_range2 o14)))
 (check-sat)
+
+(exit)

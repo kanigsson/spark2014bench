@@ -2238,3 +2238,5 @@ Target solver: Z3
   (or (< temp___1076 offset3)
   (and (= offset3 temp___1076) (< remaining3 temp___1075)))))
 (check-sat)
+
+(exit)

@@ -265,3 +265,5 @@ Target solver: Z3
  ;; File "p.ads", line 24, characters 0-0
   (not (= (bool_eq p__identity1__result l) true)))
 (check-sat)
+
+(exit)

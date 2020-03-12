@@ -657,3 +657,5 @@ Target solver: Z3
  ;; File "test_globals.adb", line 18, characters 0-0
   (not (<= (to_rep1 ad__first) 1)))
 (check-sat)
+
+(exit)

@@ -482,3 +482,5 @@ Target solver: Z3
  ;; File "use_stack.adb", line 12, characters 0-0
   (not (dynamic_property o2 o1 temp___238)))
 (check-sat)
+
+(exit)

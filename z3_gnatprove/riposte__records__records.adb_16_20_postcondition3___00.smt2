@@ -231,3 +231,5 @@ Target solver: Z3
   (not
   (= (to_rep (rec__records_prooffuncs__pair__a records__init_b__result)) 0)))
 (check-sat)
+
+(exit)

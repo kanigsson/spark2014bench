@@ -1418,3 +1418,5 @@ Target solver: Z3
   (= (rec__dynamic_array__rec__b
      (us_split_discrs1 (select (to_array h__split_fields) j))) true)))
 (check-sat)
+
+(exit)

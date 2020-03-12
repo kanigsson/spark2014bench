@@ -349,3 +349,5 @@ Target solver: Z3
  ;; File "x86.ads", line 23, characters 0-0
   (not (= (readmem8 addr memory2) val__)))
 (check-sat)
+
+(exit)

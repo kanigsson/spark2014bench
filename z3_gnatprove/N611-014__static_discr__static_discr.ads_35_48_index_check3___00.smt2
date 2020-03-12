@@ -1909,3 +1909,5 @@ Target solver: Z3
  ;; File "static_discr.ads", line 31, characters 0-0
   (not (<= (first1 a) usf)))
 (check-sat)
+
+(exit)

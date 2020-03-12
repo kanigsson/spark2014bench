@@ -774,3 +774,5 @@ Target solver: Z3
  ;; File "p.ads", line 11, characters 0-0
   (not (dynamic_property1 1 (last2 self__) 3)))
 (check-sat)
+
+(exit)

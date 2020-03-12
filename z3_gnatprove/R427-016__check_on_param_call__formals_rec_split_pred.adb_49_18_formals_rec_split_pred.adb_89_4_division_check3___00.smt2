@@ -1315,3 +1315,5 @@ Target solver: Z3
  ;; File "formals_rec_split_pred.adb", line 1, characters 0-0
   (not (not (= o5 0))))
 (check-sat)
+
+(exit)

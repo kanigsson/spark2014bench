@@ -498,3 +498,5 @@ Target solver: Z3
  ;; File "unint_alloc.adb", line 1, characters 0-0
   (not (dynamic_predicate usf)))
 (check-sat)
+
+(exit)

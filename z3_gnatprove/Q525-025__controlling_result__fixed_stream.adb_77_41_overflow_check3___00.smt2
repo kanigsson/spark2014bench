@@ -1073,3 +1073,5 @@ Target solver: Z3
  ;; File "fixed_stream.ads", line 38, characters 0-0
   (not (in_range5 o8)))
 (check-sat)
+
+(exit)

@@ -478,3 +478,5 @@ Target solver: Z3
  ;; File "test_goto_borrow.adb", line 14, characters 0-0
   (not (<= o (length o2))))
 (check-sat)
+
+(exit)

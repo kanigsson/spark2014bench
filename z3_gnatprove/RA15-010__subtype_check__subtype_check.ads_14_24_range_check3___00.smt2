@@ -445,3 +445,5 @@ Target solver: Z3
  ;; File "subtype_check.ads", line 1, characters 0-0
   (not (dynamic_property o1 o (- 1))))
 (check-sat)
+
+(exit)

@@ -166,3 +166,5 @@ Target solver: Z3
  ;; File "count.ads", line 2, characters 0-0
   (not (< max count__count__result)))
 (check-sat)
+
+(exit)

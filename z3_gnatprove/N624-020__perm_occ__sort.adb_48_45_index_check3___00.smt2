@@ -725,3 +725,5 @@ Target solver: Z3
  ;; File "sort.adb", line 7, characters 0-0
   (not (<= (first1 init) y)))
 (check-sat)
+
+(exit)

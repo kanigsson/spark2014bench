@@ -984,3 +984,5 @@ Target solver: Z3
            (us_repqtmk (us_split_fieldsqtmk linked_list__search__result))) 1)))
   (not (= (get (model1 l) i) 0))))))))
 (check-sat)
+
+(exit)

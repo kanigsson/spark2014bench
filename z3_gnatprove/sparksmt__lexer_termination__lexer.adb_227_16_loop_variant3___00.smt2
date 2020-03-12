@@ -806,3 +806,5 @@ Target solver: Z3
   (and (= next_idx3 temp___648)
   (< (ite (= (to_rep1 next_read__split_discrs3) 0) 1 0) temp___647)))))
 (check-sat)
+
+(exit)

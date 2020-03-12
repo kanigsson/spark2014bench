@@ -687,3 +687,5 @@ Target solver: Z3
   (fp.leq (fp.mul RNE (of_int RNE (+ n 1)) (fp.neg (fp #b0 #b10000000101 #b0000010000000000000000000000000000000000000000000000))) 
   speed1)))
 (check-sat)
+
+(exit)

@@ -1212,3 +1212,5 @@ Target solver: Z3
  ;; File "/home/kanig/dev/spark2014/benchmark_script/data/tmp-test-Q529-038__predicate-10627/src/gnatprove/integer_stacks__stack.mlw", line 1825, characters 5-8
   (not (= (empty usf) true)))
 (check-sat)
+
+(exit)

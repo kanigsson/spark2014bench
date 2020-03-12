@@ -602,3 +602,5 @@ Target solver: Z3
  ;; File "natural_set.ads", line 22, characters 0-0
   (not (= (contains (us_repqtmk s__split_fields1) value) true)))
 (check-sat)
+
+(exit)

@@ -2978,3 +2978,5 @@ Target solver: Z3
   (= (contains (us_repqtmk3 o8 (us_split_fieldsqtmk3 d__split_fields))
      (to_rep (select a j))) true)))
 (check-sat)
+
+(exit)

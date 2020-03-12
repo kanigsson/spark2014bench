@@ -155,3 +155,5 @@ Target solver: Z3
   (not
   (fp.eq x2 (fp.add RNE x1 (fp #b0 #b01111101 #b10011001100110011001101)))))
 (check-sat)
+
+(exit)

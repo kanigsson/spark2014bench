@@ -560,3 +560,5 @@ Target solver: Z3
  ;; File "harness.adb", line 3, characters 0-0
   (not (not (= (is_full (us_repqtmk r__split_fields4)) true))))
 (check-sat)
+
+(exit)

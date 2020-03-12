@@ -148,3 +148,5 @@ Target solver: Z3
  ;; File "initializes_illegal_4.ads", line 39, characters 0-0
   (not (in_range (- g_var o1))))
 (check-sat)
+
+(exit)

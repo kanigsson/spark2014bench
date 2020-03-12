@@ -488,3 +488,5 @@ Target solver: Z3
  ;; File "failsafe.ads", line 22, characters 0-0
   (not (= res1 (bvadd s #x01))))
 (check-sat)
+
+(exit)

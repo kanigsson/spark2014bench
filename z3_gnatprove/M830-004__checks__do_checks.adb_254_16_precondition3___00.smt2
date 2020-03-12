@@ -616,3 +616,5 @@ Target solver: Z3
  ;; File "do_checks.adb", line 6, characters 0-0
   (not (= (first1 o) 1)))
 (check-sat)
+
+(exit)

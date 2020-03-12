@@ -107,3 +107,5 @@ Target solver: Z3
  ;; File "records_and_array.ads", line 24, characters 0-0
   (not (in_range (+ z1 2))))
 (check-sat)
+
+(exit)

@@ -792,3 +792,5 @@ Target solver: Z3
   (not (in_range1
   (length (rec__counterexamples__string_access__pointer_value o)))))
 (check-sat)
+
+(exit)

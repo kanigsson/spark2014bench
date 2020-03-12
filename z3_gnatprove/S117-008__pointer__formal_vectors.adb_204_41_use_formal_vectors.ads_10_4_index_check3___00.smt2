@@ -1271,3 +1271,5 @@ Target solver: Z3
  ;; File "formal_vectors.ads", line 52, characters 0-0
   (not (<= (first1 temp___411) i1)))
 (check-sat)
+
+(exit)

@@ -336,3 +336,5 @@ Target solver: Z3
  ;; File "useit.ads", line 6, characters 0-0
   (not (= (power 2 (+ off (- 31 off))) 2147483648)))
 (check-sat)
+
+(exit)

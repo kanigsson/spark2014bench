@@ -689,3 +689,5 @@ Target solver: Z3
  ;; File "sort.ads", line 7, characters 0-0
   (not (< 0 (length1 o4))))
 (check-sat)
+
+(exit)
